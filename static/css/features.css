@@ -1,0 +1,64 @@
+#content .sprite
+{
+  background-image: url(../img/sprite-features.png);
+}
+
+.topic-small .feature-adblocking
+{
+  background-position: 0px -228px;
+}
+
+.topic-small .feature-acceptable
+{
+  background-position: -51px -228px;
+}
+
+.topic-small .feature-typo
+{
+  background-position: -102px -228px;
+}
+
+.topic-small .feature-malware
+{
+  background-position: -153px -228px;
+}
+
+.topic-small .feature-socialmedia
+{
+  background-position: -204px -228px;
+}
+
+.topic-small .feature-tracking
+{
+  background-position: -255px -228px;
+}
+
+.topic .feature-adblocking
+{
+  background-position: 0px 0px;
+}
+
+.topic .feature-acceptable
+{
+  background-position: -114px 0px;
+}
+
+.topic .feature-typo
+{
+  background-position: -228px 0px;
+}
+
+.topic .feature-malware
+{
+  background-position: 0px -114px;
+}
+
+.topic .feature-socialmedia
+{
+  background-position: -114px -114px;
+}
+
+.topic .feature-tracking
+{
+  background-position: -228px -114px;
+}

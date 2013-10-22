@@ -1,0 +1,30 @@
+#content
+{
+  width: 980px;
+}
+
+.topic
+{
+  width: 500px;
+}
+
+.topic-small
+{
+  -webkit-transition: margin-top .2s;
+  -moz-transition: margin-top .2s;
+  -ms-transition: margin-top .2s;
+  transition: margin-top .2s;
+}
+
+.topic-small:hover
+{
+  text-decoration: underline;
+  margin-top: 2px;
+}
+
+#pageactions
+{
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
