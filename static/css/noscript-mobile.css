@@ -1,0 +1,14 @@
+#menu:hover>li
+{
+  display: block;
+}
+
+footer nav section:hover h1::after
+{
+  content: url(/static/img/mobile/arrow-down.png);
+}
+
+footer nav section:hover li
+{
+  display: block;
+}

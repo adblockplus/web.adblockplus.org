@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="{{language}}" dir="{{"rtl" if language in ("ar", "he") else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+  <head>
+    <title>{{title|translate}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css" class="cssfx">
+    <link rel="stylesheet" href="/css/main-desktop.css" media="(min-width: 40.5em)" class="cssfx">
+    <link rel="stylesheet" href="/css/main-mobile.css" media="screen and (max-width: 40.5em)">
+    <noscript>
+      <link rel="stylesheet" href="/css/noscript-desktop.css" media="(min-width: 40.5em)"/>
+      <link rel="stylesheet" href="/css/noscript-mobile.css" media="screen and (max-width: 40.5em)"/>
+    </noscript>
+
+    <link rel="canonical" href="https://adblockplus.org/{{page}}">
+
+    <!--[if lt IE 7]>
+      <script src="/js/vendor/DD_belatedPNG.js"></script>
+      <script>DD_belatedPNG.fix(".sprite");</script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="/js/vendor/html5shiv.js"></script>
+      <script src="/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 10]><script src="/js/vendor/cssfx.min.js"></script><![endif]-->
+    <!-- Fixes cssfx issues in IE8. -->
+    <!--[if IE 8]>
+      <link rel="stylesheet" href="/css/empty.css" class="cssfx"/>
+    <![endif]-->
+  </head>
+
+  <body>
+    {% macro pageitem(name) %}
+      {% if name == page %}
+        <li class="selected">{{"title"|translate(name)}}</li>
+      {% else %}
+        <li>{{name|linkify}}{{"title"|translate(name)}}</a></li>
+      {% endif %}
+    {% endmacro %}
+
+    <header>
+      <a id="logo" class="sprite" itemprop="image" href="/"></a>
+      <nav>
+        <ul>
+          {% if page in ["firefox", "chrome", "opera", "android", "internet-explorer"] %}
+            <li class="selected first">{{"installation"|translate("menu")}}</li>
+          {% else %}
+            <li class="install-link first">{{"index"|linkify}}{{"installation"|translate("menu")}} <span class="sprite install-link-icon"></span></a></li>
+          {% endif %}
+          {% for name in ["about", "features", "bugs", "contribute"] %}
+            {{pageitem(name)}}
+          {% endfor %}
+          <li id="search">
+            <form action="https://www.google.com/cse" id="search-box">
+              <input name="cx" value="001104437084080304350:n8odfuv0gvi" type="hidden">
+              <input name="ie" value="UTF-8" type="hidden">
+              <label id="search-field-label-plain" for="search-field">{{"search"|translate("menu")}}</label>
+              <input id="search-field" name="q" type="search">
+              <label id="search-field-label-button" for="search-field">
+                <button id="search-button" type="submit">{{"search"|translate("menu")}}</button>
+              </label>
+            </form>
+          </li>
+          <li id="language">
+            <div id="current-language">
+              <div id="flag-{{language}}" class="flag sprite"></div>
+              <span id="language-arrow" class="sprite"></span>
+            </div>
+            <ul id="language-selector">
+              {% for lang in available_languages %}
+                <li class="language-entry">
+                  {{page|linkify(lang)}}
+                    <div id="flag-{{lang}}" class="flag sprite"></div>{{lang|langname}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="content">
+      <h1>{{title|translate}}</h1>
+      {{content|safe}}
+    </div>
+
+    <footer>
+      <div id="footer-content">
+        <nav>
+          <section class="first">
+            <h1>{{"resources"|translate("menu")}}</h1>
+            <ul>
+              {% for name in ["screenshots", "documentation", "privacy", "impressum"] %}
+                {{pageitem(name)}}
+              {% endfor %}
+            </ul>
+          </section>
+
+          <section>
+            <h1>{{"community"|translate("menu")}}</h1>
+            <ul>
+              <li><a href="/releases/" hreflang="en">{{"releases"|translate("menu")}}</a></li>
+              <li><a href="/blog/" hreflang="en">{{"blog"|translate("menu")}}</a></li>
+              <li><a href="/forum/" hreflang="en">{{"forum"|translate("menu")}}</a></li>
+              {{pageitem("development-builds")}}
+            </ul>
+          </section>
+
+          <section>
+            <h1>{{"development"|translate("menu")}}</h1>
+            <ul>
+              {{pageitem("source")}}
+              <li><a href="/forum/viewforum.php?f=11" hreflang="en">{{"bugs"|translate("menu")}}</a></li>
+              <li><a href="/category/roadmap/" hreflang="en">{{"roadmap"|translate("menu")}}</a></li>
+              {{pageitem("tools")}}
+            </ul>
+          </section>
+        </nav>
+
+        <section id="social">
+          <h1>{{"follow-us"|translate("menu")}}</h1>
+          <ul id="social-list">
+            <li class="social-entry">
+              <a rel="nofollow" id="social-facebook" class="sprite" href="https://www.facebook.com/adblockplus"></a>
+            </li>
+            <li class="social-entry">
+              <a rel="nofollow" id="social-twitter" class="sprite" href="https://twitter.com/adblockplus"></a>
+            </li>
+            <li class="social-entry">
+              <a rel="nofollow" id="social-gplus" class="sprite" href="https://plus.google.com/110020691898167279887"></a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <!-- Workaround for IE6 multiple classes selector bug -->
+    <!--[if lt IE 7]>
+      <script>document.all.content.className += " " + document.all.content.className.split(" ").join("_");</script>
+    <![endif]-->
+  </body>
+</html>

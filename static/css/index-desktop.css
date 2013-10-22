@@ -1,0 +1,157 @@
+#content
+{
+  width: 990px;
+  margin-bottom: 290px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#main
+{
+  width: 421px;
+  height: 307px;
+  position: relative;
+  float: right;
+  margin-left: 0px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
+
+html[dir="rtl"] #main
+{
+  float: left;
+  margin-right: 0px;
+  margin-left: 8px;
+}
+
+#install .install-button, #install ul, #information-android
+{
+  position: absolute;
+}
+
+#install .install-button
+{
+  bottom: 2px;
+  left: 0;
+}
+
+#install .install-button:active
+{
+  bottom: 0px;
+}
+
+#install ul
+{
+  bottom: -2px;
+  right: 0;
+  width: 110px;
+}
+
+#information-android
+{
+  left: 2px;
+  bottom: -25px;
+}
+
+.warning-platform
+{
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  float: right;
+}
+
+#key-facts
+{
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 0px;
+}
+
+html[dir="rtl"] #key-facts
+{
+  margin-right: 80px;
+  margin-left: 0px;
+}
+
+#key-facts section
+{
+  width: 215px;
+  vertical-align: top;
+  margin-left: 20px;
+  margin-right: 0px;
+  padding-left: 95px;
+  padding-right: 0px;
+  border-left: 1px dotted black;
+  border-right-width: 0px;
+}
+
+html[dir="rtl"] #key-facts section
+{
+  margin-right: 20px;
+  margin-left: 0px;
+  padding-right: 95px;
+  padding-left: 0px;
+  border-right: 1px dotted black;
+  border-left-width: 0px;
+}
+
+html #key-facts section.first
+{
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+#key-facts section p
+{
+  width: 225px;
+}
+
+#pageactions
+{
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+#more, #less
+{
+  position: absolute;
+  left: 50%;
+  bottom: 220px;
+  *bottom: -70px;
+  *margin-bottom: 0px;
+  _margin-bottom: 470px;
+  width: 200px;
+  margin-left: 200px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+#more-container.hidden #more,
+#more-container.hidden #less
+{
+  *bottom: -30px;
+  _bottom: 10px;
+  *margin-bottom: -40px;
+  _margin-bottom: 390px;
+}
+
+#sidebar
+{
+  width: 220px;
+  padding-top: 60px;
+}
+
+#more-tabs #sidebar button
+{
+  display: block;
+}
+
+.more-tab
+{
+  width: 760px;
+}

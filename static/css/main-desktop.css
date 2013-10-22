@@ -1,0 +1,326 @@
+html
+{
+  position: relative;
+  min-height: 100%;
+}
+
+header, #content, #footer-content
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header
+{
+  width: 1000px;
+  border-radius: 0 0 5px 5px;
+}
+
+header nav
+{
+  padding: 40px 12px 10px 140px;
+}
+
+html[dir="rtl"] header nav
+{
+  padding: 40px 140px 10px 12px;
+}
+
+header nav ul,
+html[dir="rtl"] header nav ul *
+{
+  text-align: right;
+  white-space: nowrap;
+}
+
+header nav ul *,
+html[dir="rtl"] header nav ul
+{
+  text-align: left;
+}
+
+header nav li, #search form, #search-field, #search-field-label-button
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+header nav li
+{
+  height: 18px;
+  border-left: 1px dotted #848484;
+  border-right-width: 0;
+  margin-left: 8px;
+  margin-right: 0;
+  padding: 2px 0 2px 12px;
+}
+
+html[dir="rtl"] header nav li
+{
+  border-right: 1px dotted #848484;
+  border-left-width: 0;
+  margin-right: 8px;
+  margin-left: 0;
+  padding: 2px 12px 2px 0;
+}
+
+html[dir] header nav li.first, html[dir] .language-entry
+{
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Needs to be duplicated because IE6 ignores the above rule */
+header nav li.first, .language-entry
+{
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#search
+{
+  height: 22px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#search-box
+{
+  height: 20px;
+}
+
+#search-field-label-plain
+{
+  display: none;
+}
+
+#search-field-label-button
+{
+  border: none;
+}
+
+#search-field
+{
+  width: 160px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#search-button
+{
+  font-size: 12px;
+  padding: 0 10px;
+  margin-left: 5px;
+  margin-right: 0;
+  background: #ededed;
+  background: -webkit-linear-gradient(top, #fefefe, #ededed);
+  background: -moz-linear-gradient(top, #fefefe, #ededed);
+  background: -ms-linear-gradient(top, #fefefe, #ededed);
+  background: -o-linear-gradient(top, #fefefe, #ededed);
+  background: linear-gradient(top, #fefefe, #ededed);
+}
+
+html[dir="rtl"] #search-button
+{
+  margin-right: 5px;
+  margin-left: 0;
+}
+
+#search-button:active
+{
+  position: relative;
+  top: 1px;
+  background: #ddd;
+  background: -webkit-linear-gradient(bottom, #fefefe, #ededed);
+  background: -moz-linear-gradient(bottom, #fefefe, #ededed);
+  background: -ms-linear-gradient(bottom, #fefefe, #ededed);
+  background: -o-linear-gradient(bottom, #fefefe, #ededed);
+  background: linear-gradient(bottom, #fefefe, #ededed);
+}
+
+#language
+{
+  position: relative;
+  cursor: pointer;
+}
+
+#language-arrow
+{
+  width: 16px;
+  height: 9px;
+  background-position: -31px -190px;
+}
+
+#language-selector
+{
+  display: none;
+  position: absolute;
+  right: -12px;
+  left: auto;
+  margin-top: 2px;
+  min-width: 100%;
+  padding: 5px 5px 5px 5px;
+  background: white;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+}
+
+html[dir="rtl"] #language-selector
+{
+  left: -12px;
+  right: auto;
+}
+
+#language-selector.visible
+{
+  display: block;
+}
+
+.language-entry
+{
+  display: block;
+  margin: 4px;
+  white-space: nowrap;
+}
+
+#logo
+{
+  top: -5px;
+  left: 10px;
+  right: auto;
+}
+
+html[dir="rtl"] #logo
+{
+  right: 25px;
+  left: auto;
+}
+
+#content, #footer-content
+{
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#content
+{
+  width: 680px;
+  margin-top: 71px;
+  margin-bottom: 280px;
+}
+
+footer
+{
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  width: 100%;
+  height: 220px;
+
+  /* Disable the sticky footer in IE6/7 */
+  .position: relative;
+  .bottom: 220px;
+}
+
+html[dir="rtl"] footer
+{
+  right: 0;
+  left: auto;
+}
+
+footer nav
+{
+  width: 600px;
+}
+
+footer nav h1, footer nav li
+{
+  width: 160px;
+  padding-bottom: 5px;
+}
+
+footer nav, footer nav section, #social
+{
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer nav section
+{
+  margin-left: 55px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] footer nav section
+{
+  margin-right: 55px;
+  margin-left: 0;
+}
+
+html footer nav section.first
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#footer-content
+{
+  position: relative;
+  width: 980px;
+}
+
+#social
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+}
+
+html[dir="rtl"] #social
+{
+  left: 0;
+  right: auto;
+}
+
+#anwiki-admin
+{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  left: 0;
+}
+
+html[dir="rtl"] #anwiki-admin
+{
+  left: 10px;
+  right: 0;
+}
+
+#pageactions
+{
+  float: right;
+  margin-top: -21px;
+  margin-left: -150px;
+  margin-right: -150px;
+  width: 980px;
+}
+
+#globalnav
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
