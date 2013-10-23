@@ -84,6 +84,27 @@
 
     <div id="content">
       <h1>{{title|translate}}</h1>
+
+      {% if toc == True %}
+        {% macro toc(toclist) %}
+          <ul>
+            {% for item in toclist %}
+              <li>
+                <a href="#{{item.anchor}}">{{item.title}}</a>
+                {% if item.subitems %}{{toc(item.subitems)}}{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endmacro %}
+
+        {% set toclist = body|toclist %}
+        {% if toclist %}
+          <div class="toc">
+            {{toc(toclist)}}
+          </div>
+        {% endif %}
+      {% endif %}
+
       {{body|safe}}
     </div>
 
