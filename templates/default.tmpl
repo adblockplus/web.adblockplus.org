@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{locale}}" dir="{{"rtl" if locale in ("ar", "he") else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<html lang="{{locale}}" dir="{{"rtl" if config.has_option("rtl", locale) else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
   <head>
     <title>{{title|translate}}</title>
 
@@ -72,7 +72,7 @@
               {% for lang in available_locales %}
                 <li class="language-entry">
                   {{page|linkify(lang)}}
-                    <div id="flag-{{lang}}" class="flag sprite"></div>{{lang|langname}}
+                    <div id="flag-{{lang}}" class="flag sprite"></div>{{config.get("langnames", lang)}}
                   </a>
                 </li>
               {% endfor %}
