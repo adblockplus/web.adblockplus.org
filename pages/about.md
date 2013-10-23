@@ -1,40 +1,42 @@
 title=title-full
 
-<style type="text/css">
-  .expandable
-  {
-    display: none;
-  }
-</style>
-
-<script type="text/javascript">
-  function toggleExpand(button, targetId)
-  {
-    var element = document.getElementById(targetId);
-    var isVisible = element.style.display == "inherit";
-    element.style.display = isVisible ? "none" : "inherit";
-
-    var textContainer = document.getElementById("expand-button-" + (isVisible ? "more" : "less"));
-    if ("textContent" in button)
-      button.textContent = textContainer.textContent;
-    else
-      button.innerText = textContainer.innerText;
-  }
-</script>
-
-<noscript>
+<head>
   <style type="text/css">
-    .expand-button
+    .expandable
     {
       display: none;
     }
-
-    .expandable
-    {
-      display: block;
-    }
   </style>
-</noscript>
+
+  <script type="text/javascript">
+    function toggleExpand(button, targetId)
+    {
+      var element = document.getElementById(targetId);
+      var isVisible = element.style.display == "inherit";
+      element.style.display = isVisible ? "none" : "inherit";
+
+      var textContainer = document.getElementById("expand-button-" + (isVisible ? "more" : "less"));
+      if ("textContent" in button)
+        button.textContent = textContainer.textContent;
+      else
+        button.innerText = textContainer.innerText;
+    }
+  </script>
+
+  <noscript>
+    <style type="text/css">
+      .expand-button
+      {
+        display: none;
+      }
+
+      .expandable
+      {
+        display: block;
+      }
+    </style>
+  </noscript>
+</head>
 
 $show-more$
 {:#expand-button-more style="display: none;"}

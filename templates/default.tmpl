@@ -27,6 +27,8 @@
     <!--[if IE 8]>
       <link rel="stylesheet" href="/css/empty.css" class="cssfx"/>
     <![endif]-->
+
+    {{head|safe}}
   </head>
 
   <body>
@@ -82,7 +84,7 @@
 
     <div id="content">
       <h1>{{title|translate}}</h1>
-      {{content|safe}}
+      {{body|safe}}
     </div>
 
     <footer>
