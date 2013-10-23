@@ -240,6 +240,11 @@ a[hreflang="en"]:not(:lang(en)):after
   background-position: -51px 0px;
 }
 
+#language-selector a:after
+{
+  display: none;
+}
+
 #logo
 {
   position: absolute;
