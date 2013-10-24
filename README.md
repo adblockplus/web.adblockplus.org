@@ -33,6 +33,9 @@ sections can be defined:
   codes.
 * `[rtl]`: any language codes listed here are treated as right-to-left languages.
   The values of the settings are ignored.
+* `[locale_overrides]`: every entry defines that a page should use a different
+  locale file, not the one matching its name (to be used when multiple pages
+  share localization data).
 
 ## Locales ##
 
@@ -72,8 +75,6 @@ actual content.  The following settings can be changed:
   file extension). By default the `default` template is used for all pages.
 * `title`: The locale string to be used as page title. By default the `title`
   string is used.
-* `localefile`: Locale file to be used, by default the name of the locale file
-  matches page name.
 * `noheading`: Setting this to any value will make sure no heading is displayed.
   By default a `<h1>` tag with the page title is added above the content.
 * `notoc`: Setting this to any value will prevent a table of contents from being

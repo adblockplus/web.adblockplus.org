@@ -1,3 +1,1 @@
-localefile=index
-
 <? include index ?>
