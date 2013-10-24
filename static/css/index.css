@@ -87,7 +87,7 @@ html[dir="rtl"] #summary li .sprite
 
 /* This cannot be just .install-button because a:link will have a higher
    specificity otherwise (overrides text color) */
-#install .install-button
+#install-container .install-button
 {
   display: none;
   position: relative;
@@ -138,16 +138,16 @@ html[dir="rtl"] #summary li .sprite
   bottom: 4px;
 }
 
-#content.android .install-button,
-#content.firefox.ua-firefox .install-button,
-#content.chrome.ua-chrome .install-button,
-#content.opera.ua-opera .install-button,
-#content.internet-explorer.ua-internet-explorer .install-button,
+#install-container.android .install-button,
+#install-container.firefox.ua-firefox .install-button,
+#install-container.chrome.ua-chrome .install-button,
+#install-container.opera.ua-opera .install-button,
+#install-container.internet-explorer.ua-internet-explorer .install-button,
 /* IE6 fixes */
-#content.firefox_ua-firefox .install-button,
-#content.chrome_ua-chrome .install-button,
-#content.opera_ua-opera .install-button,
-#content.internet-explorer_ua-internet-explorer .install-button
+#install-container.firefox_ua-firefox .install-button,
+#install-container.chrome_ua-chrome .install-button,
+#install-container.opera_ua-opera .install-button,
+#install-container.internet-explorer_ua-internet-explorer .install-button
 {
   background: #62c52b;
   background: -webkit-linear-gradient(top, #62c52b, #4f9d22);
@@ -159,30 +159,30 @@ html[dir="rtl"] #summary li .sprite
   text-shadow: 2px 2px 2px #327d14;
 }
 
-#content.android .install-button:hover,
-#content.firefox.ua-firefox .install-button:hover,
-#content.chrome.ua-chrome .install-button:hover,
-#content.opera.ua-opera .install-button:hover,
-#content.internet-explorer.ua-internet-explorer .install-button:hover,
+#install-container.android .install-button:hover,
+#install-container.firefox.ua-firefox .install-button:hover,
+#install-container.chrome.ua-chrome .install-button:hover,
+#install-container.opera.ua-opera .install-button:hover,
+#install-container.internet-explorer.ua-internet-explorer .install-button:hover,
 /* IE6 fixes */
-#content.firefox_ua-firefox .install-button:hover,
-#content.chrome_ua-chrome .install-button:hover,
-#content.opera_ua-opera .install-button:hover,
-#content.internet-explorer_ua-internet-explorer .install-button:hover
+#install-container.firefox_ua-firefox .install-button:hover,
+#install-container.chrome_ua-chrome .install-button:hover,
+#install-container.opera_ua-opera .install-button:hover,
+#install-container.internet-explorer_ua-internet-explorer .install-button:hover
 {
   box-shadow: 0px 2px 7px #486c15, 0 1px 0 0 #486c15;
 }
 
-#content.android .install-button:active,
-#content.firefox.ua-firefox .install-button:active,
-#content.chrome.ua-chrome .install-button:active,
-#content.opera.ua-opera .install-button:active,
-#content.internet-explorer.ua-internet-explorer .install-button:active,
+#install-container.android .install-button:active,
+#install-container.firefox.ua-firefox .install-button:active,
+#install-container.chrome.ua-chrome .install-button:active,
+#install-container.opera.ua-opera .install-button:active,
+#install-container.internet-explorer.ua-internet-explorer .install-button:active,
 /* IE6 fixes */
-#content.firefox_ua-firefox .install-button:active,
-#content.chrome_ua-chrome .install-button:active,
-#content.opera_ua-opera .install-button:active
-#content.internet-explorer_ua-internet-explorer .install-button:active
+#install-container.firefox_ua-firefox .install-button:active,
+#install-container.chrome_ua-chrome .install-button:active,
+#install-container.opera_ua-opera .install-button:active
+#install-container.internet-explorer_ua-internet-explorer .install-button:active
 {
   background: #4f9d22;
   background: -webkit-linear-gradient(bottom, #62c52b, #4f9d22);
@@ -193,9 +193,11 @@ html[dir="rtl"] #summary li .sprite
   box-shadow: 0px 0px 7px #486c15;
 }
 
-#content.firefox #install-firefox, #content.chrome #install-chrome,
-#content.opera #install-opera, #content.android #install-android,
-#content.internet-explorer #install-internet-explorer
+#install-container.firefox #install-firefox,
+#install-container.chrome #install-chrome,
+#install-container.opera #install-opera,
+#install-container.android #install-android,
+#install-container.internet-explorer #install-internet-explorer
 {
   display: inline-block;
 }
@@ -237,12 +239,12 @@ html[dir="rtl"] #install ul
   display: none;
 }
 
-#content.android #information-android
+#install-container.android #information-android
 {
   display: block;
 }
 
-#content.firefox #platform-firefox
+#install-container.firefox #platform-firefox
 {
   background-position: -108px -68px;
 }
@@ -252,7 +254,7 @@ html[dir="rtl"] #install ul
   background-position: -88px -89px;
 }
 
-#content.chrome #platform-chrome
+#install-container.chrome #platform-chrome
 {
   background-position: -88px -68px;
 }
@@ -262,7 +264,7 @@ html[dir="rtl"] #install ul
   background-position: -68px -89px;
 }
 
-#content.android #platform-android
+#install-container.android #platform-android
 {
   background-position: -68px -68px;
 }
@@ -272,7 +274,7 @@ html[dir="rtl"] #install ul
   background-position: -68px -131px;
 }
 
-#content.opera #platform-opera
+#install-container.opera #platform-opera
 {
   background-position: -68px -110px;
 }
@@ -282,7 +284,7 @@ html[dir="rtl"] #install ul
   background-position: -108px -131px;
 }
 
-#content.internet-explorer #platform-internet-explorer
+#install-container.internet-explorer #platform-internet-explorer
 {
   background-position: -108px -110px;
 }
@@ -297,25 +299,25 @@ html[dir="rtl"] #install ul
   border-radius: 5px;
 }
 
-#content.ua-firefox .warning-platform.firefox,
-#content.ua-chrome .warning-platform.chrome,
-#content.ua-android .warning-platform.android,
-#content.ua-opera .warning-platform.opera,
-#content.ua-internet-explorer .warning-platform.internet-explorer
+#install-container.ua-firefox .warning-platform.firefox,
+#install-container.ua-chrome .warning-platform.chrome,
+#install-container.ua-android .warning-platform.android,
+#install-container.ua-opera .warning-platform.opera,
+#install-container.ua-internet-explorer .warning-platform.internet-explorer
 {
   display: block;
 }
 
-#content.firefox.ua-firefox .warning-platform.firefox,
-#content.chrome.ua-chrome .warning-platform.chrome,
-#content.android.ua-android .warning-platform.android,
-#content.opera.ua-opera .warning-platform.opera,
-#content.internet-explorer.ua-internet-explorer .warning-platform.internet-explorer,
+#install-container.firefox.ua-firefox .warning-platform.firefox,
+#install-container.chrome.ua-chrome .warning-platform.chrome,
+#install-container.android.ua-android .warning-platform.android,
+#install-container.opera.ua-opera .warning-platform.opera,
+#install-container.internet-explorer.ua-internet-explorer .warning-platform.internet-explorer,
 /* IE6 fixes */
-#content.firefox_ua-firefox .warning-platform.firefox,
-#content.chrome_ua-chrome .warning-platform.chrome,
-#content.opera_ua-opera .warning-platform.opera,
-#content.internet-explorer_ua-internet-explorer .warning-platform.internet-explorer
+#install-container.firefox_ua-firefox .warning-platform.firefox,
+#install-container.chrome_ua-chrome .warning-platform.chrome,
+#install-container.opera_ua-opera .warning-platform.opera,
+#install-container.internet-explorer_ua-internet-explorer .warning-platform.internet-explorer
 {
   display: none;
 }

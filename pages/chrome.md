@@ -1,0 +1,3 @@
+localefile=index
+
+<? include index ?>

@@ -44,7 +44,7 @@
       <a id="logo" class="sprite" itemprop="image" href="/"></a>
       <nav>
         <ul>
-          {% if page in ["firefox", "chrome", "opera", "android", "internet-explorer"] %}
+          {% if localefile == "index" %}
             <li class="selected first">{{"installation"|translate("menu")}}</li>
           {% else %}
             <li class="install-link first">{{"index"|linkify}}{{"installation"|translate("menu")}} <span class="sprite install-link-icon"></span></a></li>
@@ -83,9 +83,11 @@
     </header>
 
     <div id="content">
+      {% if not noheading %}
       <h1>{{title|translate}}</h1>
+      {% endif %}
 
-      {% if toc == True %}
+      {% if not notoc %}
         {% macro toc(toclist) %}
           <ul>
             {% for item in toclist %}
@@ -159,9 +161,5 @@
     </footer>
 
     <script src="/js/main.js"></script>
-    <!-- Workaround for IE6 multiple classes selector bug -->
-    <!--[if lt IE 7]>
-      <script>document.all.content.className += " " + document.all.content.className.split(" ").join("_");</script>
-    <![endif]-->
   </body>
 </html>
