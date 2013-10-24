@@ -72,11 +72,22 @@ actual content.  The following settings can be changed:
   file extension). By default the `default` template is used for all pages.
 * `title`: The locale string to be used as page title. By default the `title`
   string is used.
-* `page`: Page name, this can be changed to allow multiple pages to share the
-  same locale file.
-* `toc`: This can be set to `false` to prevent a table of contents from being
+* `localefile`: Locale file to be used, by default the name of the locale file
+  matches page name.
+* `noheading`: Setting this to any value will make sure no heading is displayed.
+  By default a `<h1>` tag with the page title is added above the content.
+* `notoc`: Setting this to any value will prevent a table of contents from being
   generated. By default a table of contents is always generated if the page
   contains any headers with an `id` attribute.
+
+The following tag inserts an include file into the page (can be in a different
+format):
+
+    <? include foo ?>
+
+Include files should be placed into the `includes` directory of the repository.
+In the case above the contents of `includes/foo.md` or `includes/foo.tmpl` will
+be inserted (whichever is present).
 
 ### Markdown format (md) ###
 
