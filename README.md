@@ -60,9 +60,25 @@ The pages are defined in the `pages` directory. The file extension defines the
 format in which a page is specified and won't be visible on the web server.
 The page name is prepended by the locale code in the URL, e.g. `pages/foo.md`
 can be available under the URLs `/en/foo` and `/de/foo` (the English and German
-versions respectively). Currently the following formats are available:
+versions respectively). Regardless of the format, a page can define a number of
+settings using the following format:
 
-### Markdown (md) ###
+    setting = value
+
+Note that the settings have to placed at the beginning of the file, before the
+actual content.  The following settings can be changed:
+
+* `template`: This defines the template to be used for this page (without the
+  file extension). By default the `default` template is used for all pages.
+* `title`: The locale string to be used as page title. By default the `title`
+  string is used.
+* `page`: Page name, this can be changed to allow multiple pages to share the
+  same locale file.
+* `toc`: This can be set to `false` to prevent a table of contents from being
+  generated. By default a table of contents is always generated if the page
+  contains any headers with an `id` attribute.
+
+### Markdown format (md) ###
 
 This format should normally be used, it allows the pages to be defined using the
 [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax. Raw HTML
@@ -83,24 +99,14 @@ of the generated web page, this is meant for styles, scripts and the like.
 Other pages should be linked by using their name as link target (relative links),
 these links will be resolved to point to the most appropriate page language.
 Embedding localizable images works the same, use the image name as image source.
-In addition, a number of settings can be defined using the following format:
 
-    setting = value
+### Raw HTML format (raw) ###
 
-Note that the settings have to placed at the beginning of the file, before any
-Markdown content. The following settings can be changed:
+This format is similar to the Markdown format but uses regular HTML syntax.
+No processing is performed beyond inserting localized strings and resolving
+links to pages and images. This format is mainly meant for legacy content.
 
-* `template`: This defines the template to be used for this page (without the
-  file extension). By default the `default` template is used for all pages.
-* `title`: The locale string to be used as page title. By default the `title`
-  string is used.
-* `page`: Page name, this can be changed to allow multiple pages to share the
-  same locale file.
-* `toc`: This can be set to `false` to prevent a table of contents from being
-  generated. By default a table of contents is always generated if the page
-  contains any headers with an `id` attribute.
-
-### Jinja2 (tmpl) ###
+### Jinja2 format (tmpl) ###
 
 Complicated pages can be defined using the
 [Jinja2 template format](http://jinja.pocoo.org/docs/templates/). Automatic
