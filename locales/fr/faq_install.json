@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "FAQ - Installation"
+  },
+  "s1": {
+    "message": "Comment installer Adblock Plus pour tous les utilisateurs et faire utiliser par tout le monde la même liste de filtres ?"
+  },
+  "s2": {
+    "message": "Êtes-vous un administrateur souhaitant mettre à disposition Adblock Plus à tous les utilisateurs ? Vous devrez alors installer  Adblock Plus dans le dossier d'installation de votre application. Pour SeaMonkey c'est (malheureusement) la seule solution, dans Firefox vous créez un sous-dossier"
+  },
+  "s3": {
+    "message": "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}"
+  },
+  "s4": {
+    "message": "dans le dossier"
+  },
+  "s5": {
+    "message": "extensions"
+  },
+  "s6": {
+    "message": "et vous y décompressez le contenu de l'archive adblockplus.xpi (c'est un fichier ZIP ordinaire en fait)."
+  },
+  "s7": {
+    "message": "À présent, vous devez modifier les paramètres par défaut d'Adblock Plus. Localisez le fichier adblockplus.js (il est ici"
+  },
+  "s8": {
+    "message": "extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js"
+  },
+  "s9": {
+    "message": "dans Firefox et ici"
+  },
+  "s10": {
+    "message": "defaults/pref/adblockplus.js"
+  },
+  "s11": {
+    "message": "dans SeaMonkey) et éditez-le. Vous ne souhaitez probablement pas que les utilisateurs soient embêtés par l'icône Adblock Plus vous pouvez donc passer la valeur de <a>extensions.adblockplus.showintoolbar</a> et <a>extensions.adblockplus.showinstatusbar</a> à"
+  },
+  "s12": {
+    "message": "false"
+  },
+  "s13": {
+    "message": ". si vous ne souhaitez pas que les utilisateurs aient la possibilité de s'abonner à une liste de filtre au premier démarrrage de Firefox vous modifiez également"
+  },
+  "s14": {
+    "message": "à \"2.0\"."
+  },
+  "s15": {
+    "message": "Enfin vous souhaiterez probablement que tout le monde utilise la même liste de filtres. Pour cela, modifiez les paramètres par défaut de <a>extensions.adblockplus.patternsfile</a>. Par défaut, ce fichier est stocké dans le profil de l'utilisateur (chemin relatif), utilisez un chemin absolu pour définir un emplacement fixe pour tout le monde. Vérifiez que tout le monde puisse lire le fichier mais vous êtes le seul qui puisse le modifier -- vous pouvez à présent lancer votre navigateur et ajouter des filtres/abonnements que tout le monde pourra utiliser. Les modifications faites par les utilisateurs ne seront pas prises en compte puisqu'ils n'ont pas d'autorisation pour modifier les filtres."
+  },
+  "s16": {
+    "message": "Si vous voulez vraiment rendre Adblock Plus invisible dans l'interface utilisateur, vous pouvez également ajouter un filtre pour le <a>supprimer de la barre d'outils</a> et <a>du menu contextuel</a>."
+  },
+  "s17": {
+    "message": "Comment installer Adblock Plus dans K-Meleon ?"
+  },
+  "s18": {
+    "message": "Des versions d'Adblock plus pour K-meleon et des instructions d'installation peuvent être trouvées <a>ici</a>."
+  }
+}

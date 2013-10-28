@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "Translate regular expressions back into simple filters"
+  },
+  "s1": {
+    "message": "Starting with Adblock Plus 0.7 matching of simple filters (not regular expressions) has been optimized in such a way that even huge numbers of filters won't slow down your browsing experience. Unfortunately this optimization doesn't work for regular expressions, every regular expression on your list makes browsing with Adblock Plus a little slower. Regular expressions have been used for a long time to \"compress\" a list of filters, resulting in long and incomprehensible filter rules -- this is no longer necessary."
+  },
+  "s2": {
+    "message": "This page will evaluate a list of filters and try to convert regular expressions into a set of simple filters to improve performance of the list. For example, it will convert the filter"
+  },
+  "s3": {
+    "message": "/ad|banner/"
+  },
+  "s4": {
+    "message": "into two filters"
+  },
+  "s5": {
+    "message": "ad"
+  },
+  "s6": {
+    "message": "and"
+  },
+  "s7": {
+    "message": "banner"
+  },
+  "s8": {
+    "message": ". It will leave regular expressions like"
+  },
+  "s9": {
+    "message": "/ads|ad\\d+/"
+  },
+  "s10": {
+    "message": "unchanged since the expression"
+  },
+  "s11": {
+    "message": "\\d"
+  },
+  "s12": {
+    "message": "doesn't have a direct equivalent in the simple filter syntax and this tool cannot extract parts of regular expressions yet."
+  },
+  "s13": {
+    "message": "Please open Adblock Plus preferences and mark all the filters you would like to check. Copy them (select Edit -- Copy from the menu or press Ctrl+C) and paste them into the text field below. Alternatively you can export your filters and paste the contents of the file into the text field."
+  },
+  "s14": {
+    "message": "<em>Privacy statement</em>: No data is transmitted to the server. All the necessary calculations are performed on your computer, and your data never leaves it."
+  },
+  "s15": {
+    "message": "Convert regular expressions"
+  },
+  "s16": {
+    "message": "Your filter list with regular expressions replaced whereever possible is quoted below. You can copy it and paste into your Adblock Plus preferences (remove existing filters first). Alternatively you can"
+  },
+  "s17": {
+    "message": "click here"
+  },
+  "s18": {
+    "message": "to get the filters on a separate page. Save them as a file and import it in Adblock Plus preferences. It is recommended that you also <a>test your list for useless filters</a>."
+  }
+}

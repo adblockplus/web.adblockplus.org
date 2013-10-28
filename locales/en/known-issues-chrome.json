@@ -1,0 +1,62 @@
+{
+  "title": {
+    "message": "Known issues in Adblock Plus for Google Chrome"
+  },
+  "s1": {
+    "message": "The following lists issues known to affect Adblock Plus for Google Chrome."
+  },
+  "s2": {
+    "message": "If your problem isn't listed, please check <a>the forum</a>\n  and create a new topic if necessary (registration is not required)."
+  },
+  "s3": {
+    "message": "The page \"Adblock Plus has been installed\" opens each time the browser is started"
+  },
+  "s4": {
+    "message": "Cause:"
+  },
+  "s5": {
+    "message": "Chrome issue 158709"
+  },
+  "s6": {
+    "message": ", file storage got corrupted and Adblock Plus data cannot be saved"
+  },
+  "s7": {
+    "message": "<strong>Solution:</strong> Remove Adblock Plus and install it again from\n  <a>Google Web Store</a>\n  (this clears all Adblock Plus data and should resolve the breakage). If this doesn't help:\n  go to the directory where Chrome stores your data (on Windows:"
+  },
+  "s8": {
+    "message": ", Linux:"
+  },
+  "s9": {
+    "message": ", Mac OS X:"
+  },
+  "s10": {
+    "message": ") and remove the\n  folder"
+  },
+  "s11": {
+    "message": "."
+  },
+  "s12": {
+    "message": "This won't make matters worse: the\n  data in this folder is already corrupted."
+  },
+  "s13": {
+    "message": "Removing the directory will allow Chrome\n  to create it again and use it correctly."
+  },
+  "s14": {
+    "message": "Adblock Plus doesn't block in-video ads, background images, XMLHttpRequests"
+  },
+  "s15": {
+    "message": "Cause: Google Chrome currently doesn't allow blocking any of these request types"
+  },
+  "s16": {
+    "message": "<strong>Solution:</strong>\n  Update to Chrome 17."
+  },
+  "s17": {
+    "message": "Text-based ads sometimes don't get blocked"
+  },
+  "s18": {
+    "message": "Cause: Delay in blocking caused by the way Adblock Plus currently blocks things"
+  },
+  "s19": {
+    "message": "<strong>Solution:</strong>\n  Update to Chrome 17."
+  }
+}

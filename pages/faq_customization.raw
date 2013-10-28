@@ -1,0 +1,72 @@
+
+<h2 id="toolbar_add">$s1$</h2>
+
+	<p>$s2$</p>
+
+	<h2 id="toolbar_remove">$s3$</h2>
+
+	<p>$s4$</p>
+
+<h2 id="icon_green">$s5$</h2>
+
+<p>
+  $s6(http://userstyles.org/styles/44467, https://addons.mozilla.org/addon/stylish/)$
+</p>
+
+	<h2 id="blockable_position">$s7$</h2>
+
+	<p>$s8(http://userstyles.org/styles/2300, https://addons.mozilla.org/addon/stylish/)$</p>
+
+	<p>$s9$</p>
+
+	<h2 id="statusbar_text">$s10$</h2>
+
+	<p>$s11(http://userstyles.org/styles/2301, https://addons.mozilla.org/addon/stylish/)$</p>
+
+	<h2 id="statusdrag">$s12$</h2>
+
+	<p>$s13(https://addons.mozilla.org/addon/1759)$</p>
+
+<h2 id="menu_remove">$s14$</h2>
+
+<p>
+  $s15(https://addons.mozilla.org/addon/abpcustomization/)$ $s16$ $s17$
+</p>
+
+	<h2 id="icon_change">$s18$</h2>
+
+	<p>$s19(http://userstyles.org/styles/1196, https://addons.mozilla.org/addon/stylish/)$</p>
+
+	<pre>
+@namespace url(&quot;http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul&quot;);
+
+@-moz-document url(&quot;chrome://browser/content/browser.xul&quot;),
+      url(&quot;chrome://navigator/content/navigator.xul&quot;),
+      url(&quot;chrome://messenger/content/messenger.xul&quot;),
+      url(&quot;chrome://messenger/content/messageWindow.xul&quot;),
+      url(&quot;chrome://midbrowser/content/midbrowser.xul&quot;),
+      url(&quot;chrome://emusic/content/startup.xul&quot;),
+      url(&quot;chrome://webrunner/content/webrunner.xul&quot;),
+      url(&quot;chrome://global/content/customizeToolbar.xul&quot;) {
+
+  toolbar[iconsize=&quot;small&quot;] #abp-toolbarbutton,
+  #PersonalToolbar #abp-toolbarbutton,
+  #abp-status {
+    list-style-image: url(&quot;file:///c:/icons/abp-16x16.png&quot;) !important;
+  }
+
+  #abp-toolbarbutton {
+    list-style-image: url(&quot;file:///c:/icons/abp-24x24.png&quot;) !important;
+  }
+}
+</pre>
+
+	<p>$s20(https://addons.mozilla.org/addon/stylish/)$<a href="$s21$">$s22$</a>$s23$</p>
+
+	<p>$s24$</p>
+
+	<h2 id="shortcuts">$s25$</h2>
+
+	<p>$s26$ <a href="$s27$">$s28$</a> $s29(preferences#sidebar_key, preferences#settings_key, preferences#enable_key)$</p>
+
+	<p>$s30$</p>

@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "Zet reguliere expressies om in eenvoudige filters"
+  },
+  "s1": {
+    "message": "Vanaf Adblock Plus 0.7 is het controleren van eenvoudige filters (zonder reguliere expressies) op zo'n manier geöptimaliseerd, dat zelfs enorme aantallen filters uw browser ervaring niet zullen vertragen. Deze optimalisatie werkt jammer genoeg niet bij reguliere expressies, elke reguliere expressie in uw lijst maakt browsen met Adblock Plus een beetje langzamer. Reguliere expressies worden al heel lang gebruikt om een lijst met filters te \"comprimeren\", wat resulteert in lange en onbegrijpelijke filterregels -- dit is niet meer noodzakelijk."
+  },
+  "s2": {
+    "message": "Deze pagina evalueert een filterlijst en probeert reguliere expressie om te zetten in een aantal simpele filters om de performance van een lijst te verbeteren. Het zal bijvoorbeeld het filter"
+  },
+  "s3": {
+    "message": "/ad|banner/"
+  },
+  "s4": {
+    "message": "vervangen door twee filters"
+  },
+  "s5": {
+    "message": "ad"
+  },
+  "s6": {
+    "message": "en"
+  },
+  "s7": {
+    "message": "banner"
+  },
+  "s8": {
+    "message": ". Het zal reguliere expressies zoals"
+  },
+  "s9": {
+    "message": "/ads|ad\\d+/"
+  },
+  "s10": {
+    "message": "ongemoeid laten, omdat de expressie"
+  },
+  "s11": {
+    "message": "\\d"
+  },
+  "s12": {
+    "message": "geen equivalent in de eenvoudige filtersyntax heeft en dit hulpmiddel nog geen delen uit reguliere expressies kan halen."
+  },
+  "s13": {
+    "message": "Open alstublieft de Adblock Plus voorkeuren en markeer alle filters die u wilt controleren. Kopieer ze (selecteer Bwerken -- Kopiëren uit het menu of druk op Ctrl+C) en plak ze in het tekstveld hieronder. U kunt uw filters ook exporteren en de inhoud van het exportbestand in het tekstveld plakken."
+  },
+  "s14": {
+    "message": "<em>Privacy statement</em>: Er worden geen gegevens naar de server gestuurd. Alle benodigde berekeningen worden op uw computer uitgevoerd, en de gegevens zullen uw computer nooit verlaten."
+  },
+  "s15": {
+    "message": "Zet reguliere expressie om"
+  },
+  "s16": {
+    "message": "Uw filterlijst met reguliere expressies waar mogelijk vervangen zal hieronder getoond worden. U kunt het kopiëren en in uw Adblokc Plus voorkeuren plakken (verwijder eerst de bestaande filters). U kunt ook"
+  },
+  "s17": {
+    "message": "hier klikken"
+  },
+  "s18": {
+    "message": "om de filters in een aprte pagina te krijgen. Sla ze op als een bestand en importeer dat bestand in Adblock Plus voorkeuren. Het is het beste als u uw filters ook <a>controleert op overbodige filters</a>."
+  }
+}

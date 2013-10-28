@@ -1,0 +1,143 @@
+{
+  "title": {
+    "message": "Povolenie akceptovateľných reklám v Adblocku Plus"
+  },
+  "s1": {
+    "message": "Akceptované reklamy - Adblock Plus"
+  },
+  "s2": {
+    "message": "Adblock Plus zaviedol iniciatívu akceptovaných reklám: Podpora webových stránok ktoré sú závislé na reklame, ale len tie, ktoré majú nedotieravú a prijateľnú reklamu."
+  },
+  "s3": {
+    "message": "Akceptované reklamy - Adblock Plus"
+  },
+  "s4": {
+    "message": "Adblock Plus zaviedol iniciatívu akceptovaných reklám: Podpora webových stránok ktoré sú závislé na reklame, ale len tie, ktoré majú nedotieravú a prijateľnú reklamu."
+  },
+  "s5": {
+    "message": "O čom to je?"
+  },
+  "s6": {
+    "message": "Adblock Plus s verziou 2.0 predstavil funkciu \"Akceptované reklamy\", ktorá povoľuje niektoré reklamy, ktoré nie sú dotieravé. Zapnutím týmto funkcie podporujete webové stránky závislé na reklame, ale len v prijateľnej forme. Webové stránky môžu stále profitovať, aj keď máte blokovač reklám nainštalovaný. Touto formou reklamy chceme dosiahnuť, aby si webové stránky začali uvedomovať svoju budúcnosť -- dávať na stránky reklamy len v prijateľnej forme. V dlhodobom hľadisku je táto funkcia výhodná nie len pre Adblock Plus používateľov. Bez tejto funkcie tu je riziko, že vzrastajúce používanie Adblocku Plus zahltí malé webové stránky."
+  },
+  "s7": {
+    "message": "Prečo je táto funkcia štandardne zapnutá?"
+  },
+  "s8": {
+    "message": "Pretože je to jediná cesta, ako dosiahnuť ciele, ktoré sú napísané vyššie -- dosiahnutie spokojnosti používateľov ako aj prevádzkovateľov serverov. Ak sa pýtame používateľov aby zapli túto funkciu tak väčšina to nespraví -- jednoducho preto že nikdy nič nemuseli nastavovať okrem pár absolútne potrebných krokov. Avšak, inzerenti reklamy budú zaujatí na prechod na inú formu reklamy, ak väčšina používateľov Adblocku Plus túto funkciu nechá zapnutú."
+  },
+  "s9": {
+    "message": "Ale ja neznášam všetky reklamy!"
+  },
+  "s10": {
+    "message": "Žiaden problém, túto funkciu môžete vypnúť v každom čase. Takto to vypnete:"
+  },
+  "s11": {
+    "message": "Vo Firefoxe: kliknite na Adblock Plus ikonu a zvoľte Nastavenia filtrov... z menu. Odčiarknite \"Povoľ nevtieravú reklamu\" a to je všetko."
+  },
+  "s12": {
+    "message": "V Chrome: pravým klikom kliknite na Adblock Plus ikonu ktorá je umiestnená napravo v poli na zadávanie adresy, potom zvoľte Nastavenia a odčarknite možnosť \"Povoľ nevtieravú reklamu\"."
+  },
+  "s13": {
+    "message": "V Opere: kliknite na Opera menu tlačidlo v ľavom hornom rohu (v OS X: kliknite na Window navrchu), zvoľte možnosť Rozšírenia, nájdete tu Adblock Plus, kliknite na Nastavenia a odčiarknite možnosť \"Povoľ nevtieravú reklamu.\""
+  },
+  "s14": {
+    "message": "Aké reklamy sú \"akceptovateľné\"?"
+  },
+  "s15": {
+    "message": "Momentálne máme tieto požiadavky:"
+  },
+  "s16": {
+    "message": "Len statická reklama (žiadne animácie, žiadne zvuky ani nič podobné)"
+  },
+  "s17": {
+    "message": "Reklama musí mať len text, žiadne upozorňujúce reklamy"
+  },
+  "s18": {
+    "message": "Umiestnenie reklamy:"
+  },
+  "s19": {
+    "message": "Reklama nemôže zakrývať obsah stránky (napr. návštevník musí najprv zavrieť okno s reklamou predtým ako môže vidieť stránku)"
+  },
+  "s20": {
+    "message": "Pre stránky obsahujúce čitateľný text reklama nemôže byť reklama umiestnená v strede textu, pretože narúša obsah textu. Reklama môže byť umiestnená len pred textom, pod textom alebo vedľa textu. To isté platí aj pre vyhľadávanie: platené výsledky yhľadávania sa nemôžu miešať s neplatenými."
+  },
+  "s21": {
+    "message": "Keď je reklama umiestnená nad obsahom hlavnej stránky, nemôže reklama požadovať aby návštevník musel pre zobrazenie obsahu stránky skrolovať nadol. Výška strany musí mať najmenej 700 pixlov. Reklama nemôže obsahovať viac ako jednu tretinu stránky. Platené výsledky vyhľadávania môžu obsahovať viac miesta, ale nemôže ich byť viac ako neplatených."
+  },
+  "s22": {
+    "message": "Ak je reklama umiestnená na ľavej alebo pravej strane, mala by nechať dostatočné voľné miesto pre hlavný obsah stránky. Dostupná šírka by mala byť aspoň 1000 pixlov a reklama nemôže zaberať viac ako tretinu tejto šírky."
+  },
+  "s23": {
+    "message": "Reklama by mala byť viditeľne označená so slovom napr. \"Reklama\" alebo niečo podobné, mala by byť rozlíšiteľná od hlavného obsahu napríklad iným okrajom alebo inou farbou pozadia."
+  },
+  "s24": {
+    "message": "Požiadavky na umiestnenie a označenie neplatia pre odkazy na iné stránky s referenčným ID, ktorý je vložený v obsahu stránky. Dodatočné kritériá pre odkazy s referenčným ID:"
+  },
+  "s25": {
+    "message": "Presmerovanie z linku by nemalo byť na inú stránku ako na cieľ stránky."
+  },
+  "s26": {
+    "message": "V texte môžu byť maximálne 2% slov nalinkovaných na iný obsah pre peňažné účely."
+  },
+  "s27": {
+    "message": "Linky by nemali byť formátované inak ako ostatné linky."
+  },
+  "s28": {
+    "message": "Odkazy by nemali byť zavádzajúce, ani v obsahu ani v umiestnení."
+  },
+  "s29": {
+    "message": "Tieto kritériá nie sú konečné; vždy pracujeme na ich vylepšení. Požadujeme aby každého súkromie bolo rešpektované (napr. povinná <a>Do Not Track</a> podpora). Avšak, ešte nie sme v takej pozícií, aby sme mohli túto možnosť uplatňovať."
+  },
+  "s30": {
+    "message": "Budú všetky \"akceptovateľné\" reklamy odblokované?"
+  },
+  "s31": {
+    "message": "Nie. Momentálne nie je technicky možné automaticky uznať reklamu ako Akceptovanú reklamu. Máme <a>dohody </a> s niektorými webovými stránkami a inzerentami, že len reklama ktorá spĺňa naše kritéria bude používaná. Tieto reklamy budú odblokované -- pridané do zoznamu akceptovaných reklám, ktorý je štandardne zapnutý."
+  },
+  "s32": {
+    "message": "Žiadny inzerent nie je zvýhodňovaný a nikto si nemôže kúpiť reklamu, aby bola vo &quot;whiteliste&quot;.<strong>Všetci musia byť v súlade </strong> s kritériami a každý prechádza cez ten istý proces posudzovania reklamy, predtým ako bude kvalifikovaná ako &quot;akceptovateľná&quot;."
+  },
+  "s33": {
+    "message": "Čo ak reklama ktorá je povolená nespĺňa požiadavky?"
+  },
+  "s34": {
+    "message": "Prosím <a>nahláste to</a>. Ak inzerent zneužíva umiestnenie reklamy na zozname výnimiek, vždy ju môžeme zmazať zo zoznamu akceptovaných reklám."
+  },
+  "s35": {
+    "message": "Ako môžem vidieť čo povoľujete?"
+  },
+  "s36": {
+    "message": "Políčko &quot;Povoľ nevtieravú reklamu&quot; jednoducho pridáva jeden zoznam filtrov. Filtre môžete vidieť <a>tu</a>. Taktiež bola pridaná špeciálna úprava tohto zoznamu filtrov - ktorá bola pridaná pre zlepšenie využiteľnosti - nájdete prejdením na stránku &quot;about:config&quot; a zmenením <a>extensions.adblockplus.subscriptions_exceptionscheckbox</a> nastavenia na false. Toto vám umožní vidieť filtre pre tento zoznam ako obvykle."
+  },
+  "s37": {
+    "message": "Máte nejaké otázky alebo odporúčanie pre tento zoznam filtrov? Spýtajte sa <a>na našom fóre </a> alebo <a>kontaktujte nás priamo cez e-mail</a>."
+  },
+  "s38": {
+    "message": "Ako môžem dostať na zoznam povolených moju webovú stránku?"
+  },
+  "s39": {
+    "message": "Proces, ktorý posudzuje vaše reklamy či budú akceptované alebo blokované trvá zvyčajne 10 pracovných dní:"
+  },
+  "s40": {
+    "message": "Ak vaša webová stránka má reklamy ktoré spĺňajú naše <a>kritérium akceptovateľných reklám</a>, jednoducho vyplňte <a>tento dotazník</a>."
+  },
+  "s41": {
+    "message": "Niekto z <a>Eyeo</a>, spoločnosť stojaca za Adblock Plus, vás bude kontaktovať ohľadom procesu zaradenia reklamy."
+  },
+  "s42": {
+    "message": "Po tom čo sa spravia nútené zmeny, obidve strany podpíšu <a>dohodu</a>."
+  },
+  "s43": {
+    "message": "Výsledok procesu hodnotenia reklamy bude vyvesený <a>na našom fórume. </a>Nastavili sme týždeň ako dĺžku pre diskusiu, kde sa môže každý vyjadriť, či má byť reklama zablokovaná alebo akceptovaná."
+  },
+  "s44": {
+    "message": "Ak nebudú žiadne námietky, pridáme reklamy do nášho zoznamu filtrov, ktorý tieto reklamy odblokuje. Tieto reklamy budú zobrazované používateľom Adblocku Plus, ktorý majú štandardné nastavenia."
+  },
+  "s45": {
+    "message": "Ste sprostý? Nikto nechce reklamy!"
+  },
+  "s46": {
+    "message": " <a>Výsledky nášho prieskumu </a> hovoria niečo iné. Podľa prieskumu, len 25% používateľov Adblocku Plus je striktne proti reklamám. Títo používatelia vypli túto funkciu. Názor ostatných spočíval v tom, že akceptujú tento druh reklamy aby mohli pomôcť webovým stránkam. Niektorí používatelia sa pýtali na cestu, ako zapnúť Adblock Plus len na určitých stránkach."
+  }
+}

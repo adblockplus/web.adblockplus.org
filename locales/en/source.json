@@ -1,5 +1,125 @@
 {
   "title": {
     "message": "Source Code"
+  },
+  "s1": {
+    "message": "Getting the source code"
+  },
+  "s2": {
+    "message": "The Adblock Plus source code can viewed throught the HG <a>web interface</a>. A local copy may be downloaded by running the following from the command line:"
+  },
+  "s3": {
+    "message": "Similar repositories are set up for <a>Element Hiding Helper</a> and <a>Diagnostics for Adblock Plus</a>. The local copy may be reset to the state of a particular release by running the command:"
+  },
+  "s4": {
+    "message": "(replace"
+  },
+  "s5": {
+    "message": "with the tag of the required version)."
+  },
+  "s6": {
+    "message": "Alternatively, you can also <a>download the source code of the latest release</a>."
+  },
+  "s7": {
+    "message": "The <a>Adblock Plus source code documentation</a> provides an overview of the add-on internals."
+  },
+  "s8": {
+    "message": "HG client and documentation links"
+  },
+  "s9": {
+    "message": "http://mercurial.selenic.com/"
+  },
+  "s10": {
+    "message": "Mercurial"
+  },
+  "s11": {
+    "message": "("
+  },
+  "s12": {
+    "message": "http://mercurial.selenic.com/wiki/QuickStart"
+  },
+  "s13": {
+    "message": "quickstart"
+  },
+  "s14": {
+    "message": ")"
+  },
+  "s15": {
+    "message": "https://developer.mozilla.org/en/Mercurial_FAQ"
+  },
+  "s16": {
+    "message": "Mozilla's Mercurial FAQ"
+  },
+  "s17": {
+    "message": "http://hgbook.red-bean.com/"
+  },
+  "s18": {
+    "message": "Distributed Revision Control with Mercurial"
+  },
+  "s19": {
+    "message": "(hgbook)"
+  },
+  "s20": {
+    "message": "http://mercurial.selenic.com/wiki/OtherTools"
+  },
+  "s21": {
+    "message": "GUI clients and other tools"
+  },
+  "s22": {
+    "message": "Creating an Adblock Plus build"
+  },
+  "s23": {
+    "message": "A development build may be created by entering the \"adblockplus\" directory (your local copy of the repository) and running the command:"
+  },
+  "s24": {
+    "message": "The script will create a development build with a name in the form"
+  },
+  "s25": {
+    "message": "."
+  },
+  "s26": {
+    "message": "This file will contain the source code currently in the repository and all available locales."
+  },
+  "s27": {
+    "message": "<em>Note</em>: You need"
+  },
+  "s28": {
+    "message": "with"
+  },
+  "s29": {
+    "message": "<a>Jinja2 module</a> to create builds."
+  },
+  "s30": {
+    "message": "To\n  install Jinja2 in Python run this command:"
+  },
+  "s31": {
+    "message": "Testing your changes"
+  },
+  "s32": {
+    "message": "To simplify the process of testing your changes you can install\n  <a>Extension Auto-Installer</a>\n  in your browser."
+  },
+  "s33": {
+    "message": "Assuming that Extension Auto-Installer is configured to use\n  port 8888 (the default value), you can push your changes to this browser by running:"
+  },
+  "s34": {
+    "message": "The browser will be restarted automatically if necessary."
+  },
+  "s35": {
+    "message": "Running unit tests"
+  },
+  "s36": {
+    "message": "To verify your changes you can use the existing\n  <a>unit test suite</a>."
+  },
+  "s37": {
+    "message": "The\n  unit tests are a separate extension that is installed in addition to Adblock\n  Plus."
+  },
+  "s38": {
+    "message": "You can either install the\n  <a>existing unit test builds</a>\n  or clone the repository and create your own build."
+  },
+  "s39": {
+    "message": "After installing the unit tests\n  go to"
+  },
+  "s40": {
+    "message": "to run the tests."
   }
 }

@@ -1,0 +1,263 @@
+{
+  "title": {
+    "message": "Known issues"
+  },
+  "s1": {
+    "message": "Known Issues - Adblock Plus"
+  },
+  "s2": {
+    "message": "Having problems with Adblock Plus? This list of known issues may help you quickly solve them. Download Adblock Plus for Chrome and other platforms here."
+  },
+  "s3": {
+    "message": "Known Issues - Adblock Plus"
+  },
+  "s4": {
+    "message": "Having problems with Adblock Plus? This list of known issues may help you quickly solve them. Download Adblock Plus for Chrome and other platforms here."
+  },
+  "s5": {
+    "message": "The following lists issues known to affect Adblock Plus. If your problem isn't listed, please check <a>the forum</a> and create a new topic if necessary (registration is not required)."
+  },
+  "s6": {
+    "message": "Installation fails with error message \"Signing could not be verified\""
+  },
+  "s7": {
+    "message": "<strong>Cause 1</strong>: Outdated browser version"
+  },
+  "s8": {
+    "message": "Outdated browsers such as early Firefox 3.0 releases will be unable to verify signing of\nthe Adblock Plus package."
+  },
+  "s9": {
+    "message": "<strong>Solution</strong>: Verify that your browser meets <a>the system requirements</a>, update to the current version if necessary."
+  },
+  "s10": {
+    "message": "<strong>Cause 2</strong>: Corrupted installation package"
+  },
+  "s11": {
+    "message": "Adblock Plus packages are signed to prevent unauthorized modification. This error message might indicate such modification when installing from third-party websites."
+  },
+  "s12": {
+    "message": "<strong>Solution</strong>: Install Adblock Plus from <a>addons.mozilla.org</a>."
+  },
+  "s13": {
+    "message": "<strong>Cause 3</strong>: Outdated certificate store"
+  },
+  "s14": {
+    "message": "To verify Adblock Plus signature the browser needs to accept certificates issued by StartCom Ltd. On systems where the certificate store is independent of the browser the certificate store might be outdated and prevent recognition of the signature."
+  },
+  "s15": {
+    "message": "<strong>Affected</strong>: Some Linux distributions (only distribution-supplied browser builds)"
+  },
+  "s16": {
+    "message": "<strong>Solution</strong>: Update &quot;nss&quot; package to version 1.3.1 or higher. See &quot;Cause 4&quot; for an alternative solution."
+  },
+  "s17": {
+    "message": "<strong>Cause 4</strong>: Misconfigured certificate store"
+  },
+  "s18": {
+    "message": "The certificate store is misconfigured on some systems and certificates issues by StartCom Ltd. are marked as not trusted. This prevents recognition of Adblock Plus signature."
+  },
+  "s19": {
+    "message": "<strong>Solution</strong>: Go into the"
+  },
+  "s20": {
+    "message": "http://support.mozilla.com/en-US/kb/Options+window+-+Advanced+panel#Encryption_tab"
+  },
+  "s21": {
+    "message": "encryption/certificates tab of the browser options"
+  },
+  "s22": {
+    "message": "and click \"View certificates\". Under \"Authorities\" find \"StartCom Certification Authority\", click it and click \"Edit\". Make sure all fields are checked and confirm by clicking OK."
+  },
+  "s23": {
+    "message": "Installation fails with other error message (e.g. -228 or -203)"
+  },
+  "s24": {
+    "message": "For other installation issues, please refer to the"
+  },
+  "s25": {
+    "message": "http://support.mozilla.com/en-US/kb/Unable+to+install+add-ons"
+  },
+  "s26": {
+    "message": "general troubleshooting page"
+  },
+  "s27": {
+    "message": "."
+  },
+  "s28": {
+    "message": "Adblock Plus icon and Adblock Plus entry in Tools menu don't appear after installation"
+  },
+  "s29": {
+    "message": "<strong>Cause 1</strong>: Adblock Plus extension is disabled"
+  },
+  "s30": {
+    "message": "When opening the Add-on Manager (menu Tools / Add-ons) and finding Adblock Plus under extensions, the entry is gray rather than black (disabled)."
+  },
+  "s31": {
+    "message": "<strong>Solution</strong>: Click the Adblock Plus entry in Add-on Manager and click the &quot;Enable&quot; button."
+  },
+  "s32": {
+    "message": "<strong>Cause 2</strong>: <a>Mozilla bug 770669</a>"
+  },
+  "s33": {
+    "message": "This can happen due to a browser crash after updating from Adblock Plus 2.0.x to a newer\n  Adblock Plus version."
+  },
+  "s34": {
+    "message": "<strong>Affected</strong>: Adblock Plus 2.1 and higher"
+  },
+  "s35": {
+    "message": "<strong>Solution</strong>:"
+  },
+  "s36": {
+    "message": "http://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_how-to-disable-extensions0-personassf-and-plugins"
+  },
+  "s37": {
+    "message": "Disable Adblock Plus"
+  },
+  "s38": {
+    "message": "and then immediately enable it again. No browser restart required."
+  },
+  "s39": {
+    "message": "<strong>Cause 3</strong>: <a>Mozilla bug 744833</a>"
+  },
+  "s40": {
+    "message": "If the path to the user profile changes, e.g. when using Firefox Portable\n  on different computers, all restartless extensions will stop working."
+  },
+  "s41": {
+    "message": "<strong>Affected</strong>: Adblock Plus 2.1 and higher"
+  },
+  "s42": {
+    "message": "<strong>Solution</strong>: Update to Firefox 15 or higher. If that isn't possible,"
+  },
+  "s43": {
+    "message": "http://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_how-to-disable-extensions0-personassf-and-plugins"
+  },
+  "s44": {
+    "message": "disable Adblock Plus"
+  },
+  "s45": {
+    "message": "and then immediately enable it again (no browser restart required)."
+  },
+  "s46": {
+    "message": "Firefox cannot open new browser windows"
+  },
+  "s47": {
+    "message": "<strong>Cause</strong>: Zone Alarm Spy Blocker Toolbar extension"
+  },
+  "s48": {
+    "message": "This issue is <a>caused by Ask Toolbar 2.1.0.5 extension</a> (particularly the variation called &quot;Zone Alarm Spy Blocker Toolbar&quot;) due to use of bad coding practices."
+  },
+  "s49": {
+    "message": "<strong>Solution</strong>:"
+  },
+  "s50": {
+    "message": "http://support.mozilla.com/en-US/kb/Uninstalling+add-ons"
+  },
+  "s51": {
+    "message": "Uninstall or disable"
+  },
+  "s52": {
+    "message": "Ask Toolbar."
+  },
+  "s53": {
+    "message": "Adblock Plus doesn't block any ads"
+  },
+  "s54": {
+    "message": "<strong>Cause 1</strong>: No filters have been added"
+  },
+  "s55": {
+    "message": "Adblock Plus won't block anything &quot;by itself&quot;, if you declined to add a filter subscription after Adblock Plus installation it won't have any effect unless you define filters manually. <a>More info</a>"
+  },
+  "s56": {
+    "message": "<strong>Solution</strong>: Add a filter subscription (ideally one matching your language) <a>from the list</a>."
+  },
+  "s57": {
+    "message": "<strong>Cause 2</strong>: Adblock Plus filter database got corrupted"
+  },
+  "s58": {
+    "message": "For some people the Adblock Plus filter database gets corrupted occasionally (very rare event, usually only happens once) resulting in their filter list becoming empty (can be verified by going to menu Tools / Adblock Plus preferences). The root cause of this problem is currently unknown."
+  },
+  "s59": {
+    "message": "<strong>Solution</strong>: Re-add a filter subscription <a>from the list</a>. Alternatively, restore the filter database from automatically created backup:"
+  },
+  "s60": {
+    "message": "Open"
+  },
+  "s61": {
+    "message": "http://support.mozilla.com/en-US/kb/Profiles#How_to_find_your_profile"
+  },
+  "s62": {
+    "message": "your profile directory"
+  },
+  "s63": {
+    "message": "."
+  },
+  "s64": {
+    "message": "Open the \"adblockplus\" subdirectory of the profile."
+  },
+  "s65": {
+    "message": "Close your browser."
+  },
+  "s66": {
+    "message": "Note that patterns.ini is small (less than 1 KB), remove it."
+  },
+  "s67": {
+    "message": "Rename patterns-backupN.ini into patterns.ini (where N is a number -- take the first file that is larger than 1 KB)."
+  },
+  "s68": {
+    "message": "<strong>Cause 3</strong>: Adblock Plus turned off"
+  },
+  "s69": {
+    "message": "Adblock Plus can be disabled temporarily, which can be recognized by a gray ABP icon as opposed to the customary red color."
+  },
+  "s70": {
+    "message": "<strong>Solution</strong>: Enable Adblock Plus by clicking on the ABP icon with the middle mouse button or by right-clicking the icon and checking &quot;Enable Adblock Plus&quot; in the context menu."
+  },
+  "s71": {
+    "message": "Adblock Plus doesn't block redirects in Firefox Mobile 4"
+  },
+  "s72": {
+    "message": "<strong>Cause</strong>: <a>Mozilla bug 646373</a>"
+  },
+  "s73": {
+    "message": "<strong>Affected</strong>: Adblock Plus 1.3.6 and higher on Firefox Mobile 4"
+  },
+  "s74": {
+    "message": "<strong>Solution</strong>: Currently none, the bug needs to be fixed in a future version of Firefox Mobile."
+  },
+  "s75": {
+    "message": "Do Not Track header isn't sent in Firefox Mobile 4 despite"
+  },
+  "s76": {
+    "message": "filter"
+  },
+  "s77": {
+    "message": "<strong>Cause</strong>: Do Not Track is currently not supported in Firefox Mobile 4"
+  },
+  "s78": {
+    "message": "<strong>Solution</strong>: Currently none, future Adblock Plus versions might add support however."
+  },
+  "s79": {
+    "message": "Tabs on Flash and Java don't appear reliably"
+  },
+  "s80": {
+    "message": "<strong>Cause</strong>: Adblock Plus doesn't know when to display the tab"
+  },
+  "s81": {
+    "message": "<strong>Affected</strong>: Adblock Plus 1.1 and higher on Fedora Linux"
+  },
+  "s82": {
+    "message": "<strong>Solution</strong>: Use <a>official browser builds</a> instead of the distribution-supplied builds."
+  },
+  "s83": {
+    "message": "Untranslated (English) strings in some languages"
+  },
+  "s84": {
+    "message": "<strong>Cause</strong>: Unmaintained translations"
+  },
+  "s85": {
+    "message": "Unfortunately, not all Adblock Plus translations are equally well-maintained. Some miss the deadline before an Adblock Plus release or even stop being updated altogether."
+  },
+  "s86": {
+    "message": "<strong>Solution</strong>:\n  <a>Help translate Adblock Plus into your language!</a>"
+  }
+}

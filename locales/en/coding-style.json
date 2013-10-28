@@ -1,0 +1,110 @@
+{
+  "title": {
+    "message": "Coding Style"
+  },
+  "s1": {
+    "message": "Precedence"
+  },
+  "s2": {
+    "message": "The Adblock Plus coding style is based on others. The general section below overrules any referenced style guides, and the language specific sections overrule the general section."
+  },
+  "s3": {
+    "message": "Consistency"
+  },
+  "s4": {
+    "message": "Consistency is most important: Be consistent within functions, files, modules and projects. Making existing code conform with this style guide is fine, but it should happen in dedicated commits, preferably for a whole module or project at once."
+  },
+  "s5": {
+    "message": "General"
+  },
+  "s6": {
+    "message": "Follow the Mozilla Coding Style's <a>general practices</a> and its <a>naming and formatting rules</a>."
+  },
+  "s7": {
+    "message": "All files should have a license header, but no mode line comments."
+  },
+  "s8": {
+    "message": "Newline at end of file."
+  },
+  "s9": {
+    "message": "Lines can be longer than 80 characters if limiting line length would hurt readability in a particular case."
+  },
+  "s10": {
+    "message": "Opening braces always go on their own line."
+  },
+  "s11": {
+    "message": "No hungarian notation, no special variable name prefixes or suffixes denoting type or scope."
+  },
+  "s12": {
+    "message": "JavaScript"
+  },
+  "s13": {
+    "message": "Follow the Mozilla Coding Style's <a>JavaScript practices</a>."
+  },
+  "s14": {
+    "message": "Opening braces of object literals don't go on their own line."
+  },
+  "s15": {
+    "message": "Use"
+  },
+  "s16": {
+    "message": "bind()"
+  },
+  "s17": {
+    "message": "to ensure the desired value of the"
+  },
+  "s18": {
+    "message": "this"
+  },
+  "s19": {
+    "message": "variable, don’t use temporary variables as a replacement."
+  },
+  "s20": {
+    "message": "In classes, prefix private functions with a single underscore to make them pseudo-private."
+  },
+  "s21": {
+    "message": "Python"
+  },
+  "s22": {
+    "message": "Follow the Mozilla Coding Style's <a>Python practices</a>."
+  },
+  "s23": {
+    "message": "In modules, prefix private functions and variables with a single underscore."
+  },
+  "s24": {
+    "message": "Java"
+  },
+  "s25": {
+    "message": "Follow the Mozilla Coding Style's <a>Java practices</a>."
+  },
+  "s26": {
+    "message": "C++"
+  },
+  "s27": {
+    "message": "Follow the Mozilla Coding Style's <a>C++ practices</a>."
+  },
+  "s28": {
+    "message": "Indent namespace bodies."
+  },
+  "s29": {
+    "message": "Don't use anything from C++11."
+  },
+  "s30": {
+    "message": "std::tr1"
+  },
+  "s31": {
+    "message": "can and should be used."
+  },
+  "s32": {
+    "message": "Avoid manual memory management: Use references and values when possible, smart pointers when necessary, raw pointers only for weak references."
+  },
+  "s33": {
+    "message": "Puppet"
+  },
+  "s34": {
+    "message": "Follow the <a>Puppet Style Guide</a>."
+  },
+  "s35": {
+    "message": "Opening braces don't go on their own line."
+  }
+}

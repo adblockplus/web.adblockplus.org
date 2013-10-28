@@ -1,0 +1,155 @@
+{
+  "title": {
+    "message": "Detaillierte Versionshinweise für Adblock Plus 1.3"
+  },
+  "s1": {
+    "message": "Nachfolgend sind die wesentlichen Änderungen zu Adblock Plus 1.2.2 aufgelistet. Falls Sie mit dieser Version auf Probleme stoßen, konsultieren Sie bitte zuerst die <a>Liste bekannter Probleme</a>."
+  },
+  "s2": {
+    "message": "Benutzeroberfläche"
+  },
+  "s3": {
+    "message": "Neue Übersetzung: mexikanisches Spanisch"
+  },
+  "s4": {
+    "message": "Sprachen entfernt wegen veralteter Übersetzung: Indonesisch, Malaiisch, brasilianisches Portugiesisch"
+  },
+  "s5": {
+    "message": "Fehlerberichts-Assistent hinzugefügt, mit dem Adblock Plus-Fehler auf Webseiten sehr einfach gemeldet werden können (&quot;Fehler auf dieser Seite melden&quot; im Menü des Adblock Plus-Symbols,\n    <a>Thema im Forum</a>)"
+  },
+  "s6": {
+    "message": "Verweissensitive Grafiken (image maps) können nun wie gewöhnliche Grafiken über das Kontextmenü blockiert werden (<a>Bug 16605</a>)"
+  },
+  "s7": {
+    "message": "Links zur Dokumentation auf adblockplus.org werden automatisch in der Sprache des Nutzer geöffnet, falls eine Übersetzung vorhanden ist"
+  },
+  "s8": {
+    "message": "Adblock Plus-Symbol"
+  },
+  "s9": {
+    "message": "Standardmäßig wird nun das Menü beim Klick geöffnet (altes Verhalten kann durch Ändern der Einstellung <a>extensions.adblockplus.defaulttoolbaraction</a>\nwiederhergestellt werden)"
+  },
+  "s10": {
+    "message": "Der neue Fehlerberrichts-Assistent ist jetzt das erste Element im Menü (<a>Thema im Forum</a>)"
+  },
+  "s11": {
+    "message": "Deaktivierte Filter und Filterabonnements werden im Tooltip-Text nicht mehr gezählt"
+  },
+  "s12": {
+    "message": "Liste der blockierbaren Elemente"
+  },
+  "s13": {
+    "message": "Beim Auswählen von &quot;Adresse im neuen Tab öffnen&quot; werden mehrere Tabs geöffnet, wenn mehrere Elemente ausgewählt sind (<a>Thema im Forum</a>)"
+  },
+  "s14": {
+    "message": "Die Spalte der Ursprungsdomain zeigt an, ob die Anfrage zur selben Domain oder einer Drittseite erfolgt ist, Filtern und Sortieren nach dieser Information ist möglich (<a>Thema im Forum</a>)"
+  },
+  "s15": {
+    "message": "Tooltip-Text zeigt nun auch Informationen über deaktivierte Filter an (<a>Thema im Forum</a>)"
+  },
+  "s16": {
+    "message": "Behoben: Scrollen zum ausgewählten Element funktioniert in Firefox 4 nicht"
+  },
+  "s17": {
+    "message": "\"timed textboxes are deprecated\"-Warnung behoben"
+  },
+  "s18": {
+    "message": "Filter-Assistent"
+  },
+  "s19": {
+    "message": "Die Vorschläge beinhalten das Netzwerkprotokoll der Anfrage nicht mehr (<a>Thema im Forum</a>)"
+  },
+  "s20": {
+    "message": "Eine Warnung wird angezeigt, wenn ein benutzerdefiniertes Muster nicht mehr der Adresse entspricht, die geblockt werden soll (<a>Thema im Forum</a>)"
+  },
+  "s21": {
+    "message": "\"Filterabonnement hinzufügen\"-Dialog"
+  },
+  "s22": {
+    "message": "Warnung entfernt, die angezeigt wurde, falls Adblock oder Filterset.G installiert sind (beide haben mittlerweile eine unbedeutende Verbreitung)"
+  },
+  "s23": {
+    "message": "Sichergestellt, dass die Tasten nicht zu weit unterhalb der Abonnementauswahl angezeigt werden, wenn diese Seite im Browser nach der ersten Installation geöffnet wird"
+  },
+  "s24": {
+    "message": "Einstellungsfenster"
+  },
+  "s25": {
+    "message": "Ein Schnecken-Symbol wird bei langsamen Filtern angezeigt (war zuvor ein Ausrufezeichen,\n    <a>Thema im Forum</a>)"
+  },
+  "s26": {
+    "message": "Bei manuell angestoßenen Abonnementsaktualisierungen wird die Datei jetzt immer erneut heruntergeladen, auch wenn der Server behauptet, sie habe sich nicht geändert"
+  },
+  "s27": {
+    "message": "Die Auswahl des Benutzers, die Filterliste eines Abonnements zu schließen, wird nicht mehr gespeichert, wenn das Abonnement anschließend entfernt wurde"
+  },
+  "s28": {
+    "message": "Kern"
+  },
+  "s29": {
+    "message": "Unterstützung für Firefox 3.0, Songbird 1.8 und Midbrowser gestrichen"
+  },
+  "s30": {
+    "message": "Implementierung verbessert, mit Schwerpunkt auf mehr Modularität (dabei wurde auch geändert, wie andere Erweiterungen <a>auf Adblock Plus zugreifen</a>)"
+  },
+  "s31": {
+    "message": "Unterscheidung zwischen Hintergrundgrafiken und \"normalen\" Grafiken entfernt,"
+  },
+  "s32": {
+    "message": "$background"
+  },
+  "s33": {
+    "message": "und"
+  },
+  "s34": {
+    "message": "$image"
+  },
+  "s35": {
+    "message": "-Attribute sind nun identisch (eine zuverlässige Unterscheidung ist nicht mehr möglich)"
+  },
+  "s36": {
+    "message": "Filter, die von anderen Erweiterungen wie Element Hiding Helper hinzugefügt werden, sind jetzt immer aktiviert (<a>Thema im Forum</a>)"
+  },
+  "s37": {
+    "message": "Datei default/patterns.ini zur Erweiterung hinzugefügt. Diese kann geändert werden, um Standardfilter und Standardabonnements für neue Nutzer zu definieren"
+  },
+  "s38": {
+    "message": "(<a>Thema im Forum</a>)"
+  },
+  "s39": {
+    "message": "Filterabonnements, die von anderen Erweiterungen hinzugefügt werden, werden nicht mehr gespeichert und müssen nach jedem Browserstart erneut hinzugefügt werden (verhindert, dass das Abonnements in Adblock Plus bleibt, nachdem die dazugehörige Erweiterung deinstalliert wurde)"
+  },
+  "s40": {
+    "message": "Import der Filter und Einstellungen aus Adblock und Adblock Plus 0.5 entfernt (beide haben mittlerweile eine unbedeutende Verbreitung)"
+  },
+  "s41": {
+    "message": "Geschwindigkeit"
+  },
+  "s42": {
+    "message": "Geändert, wie Adblock Plus seine Daten abspeichert, um Geschwindigkeit und Speicherverbrauch zu optimieren"
+  },
+  "s43": {
+    "message": "Geschwindigkeit der Filterprüfung um 20-35% angehoben"
+  },
+  "s44": {
+    "message": "Zeit für die Initialisierung des Versteckens von Elementen beim Browserstart verkleinert"
+  },
+  "s45": {
+    "message": "Ein effizienterer Ansatz für die Arbeit mit Einstellungen wird jetzt verwendet"
+  },
+  "s46": {
+    "message": "Aktualisierung von Abonnements"
+  },
+  "s47": {
+    "message": "Besserer Algorithmus wird verwendet, um zu bestimmen, wann die Aktualisierung passieren soll (<a>Blog-Artikel</a>)"
+  },
+  "s48": {
+    "message": "Maßnahmen für den Fall ergriffen, dass die Uhr des Computers falsch eingestellt ist"
+  },
+  "s49": {
+    "message": "Zeit der letzten Änderung wird bei einer Umleitung auf die neue Adresse der Filterliste zurückgesetzt"
+  },
+  "s50": {
+    "message": "Versionshinweise der vorherigen Version"
+  }
+}

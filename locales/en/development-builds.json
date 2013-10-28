@@ -1,5 +1,152 @@
 {
   "title": {
     "message": "Development builds"
+  },
+  "s1": {
+    "message": "What are development builds?"
+  },
+  "s2": {
+    "message": "Development builds represent the most current state of development for Adblock Plus and other extensions hosted on this website. By installing a development build you can try features that haven't been released in a stable version yet."
+  },
+  "s3": {
+    "message": "How reliable are development builds?"
+  },
+  "s4": {
+    "message": "Naturally, development builds are less reliable than stable versions and you are using them at your own risk. However, changes are thoroughly tested before they are added to the source code repository. This means that development builds will work fine most of the time. There will be occasional issues however, especially when using some uncommon configuration -- please report these so that they can be fixed. For non-English languages the new strings will usually stay untranslated until shortly before a release. Development builds may also interact with other extensions in a manner that isn't expected from a stable release."
+  },
+  "s5": {
+    "message": "How do I report bugs in development builds?"
+  },
+  "s6": {
+    "message": "Please do so <a>in the forum</a>, simply create a new topic (but look around a little, the same issue might have been reported already). You don't need to register but you can do so if you want to be notified about changes in your topic. Please provide all the information necessary to reproduce the issue, especially development build version, browser and browser version, operating system. Please consider temporarily installing the latest stable version of the extension and verifying that the issue doesn't exist there, as this information is generally very helpful."
+  },
+  "s7": {
+    "message": "How do I install/update development builds?"
+  },
+  "s8": {
+    "message": "To install a development build click one of the links below:"
+  },
+  "s9": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)"
+  },
+  "s10": {
+    "message": "for"
+  },
+  "s11": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)."
+  },
+  "s12": {
+    "message": "For installation <a>see below</a>!"
+  },
+  "s13": {
+    "message": "for"
+  },
+  "s14": {
+    "message": "(Opera 15 or above required)"
+  },
+  "s15": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)."
+  },
+  "s16": {
+    "message": "For installation <a>see below</a>!"
+  },
+  "s17": {
+    "message": "for"
+  },
+  "s18": {
+    "message": ": <a>64-bit Windows</a>, <a>32-bit Windows</a>"
+  },
+  "s19": {
+    "message": "(<a>older builds</a>)"
+  },
+  "s20": {
+    "message": "for"
+  },
+  "s21": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)."
+  },
+  "s22": {
+    "message": "Element Hiding Helper"
+  },
+  "s23": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)"
+  },
+  "s24": {
+    "message": "Customizations for"
+  },
+  "s25": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)"
+  },
+  "s26": {
+    "message": "Diagnostics for"
+  },
+  "s27": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)"
+  },
+  "s28": {
+    "message": "URL Fixer"
+  },
+  "s29": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)"
+  },
+  "s30": {
+    "message": "JavaScript Deobfuscator"
+  },
+  "s31": {
+    "message": "(<a>changelog</a>,\n    <a>older builds</a>)"
+  },
+  "s32": {
+    "message": "Your browser will check for updates automatically and offer you an update to the more\n  recent development build once it is available."
+  },
+  "s33": {
+    "message": "Note that you will never be updated to\n  the stable release, instead you will get the development build immediately following the\n  stable release."
+  },
+  "s34": {
+    "message": "<strong>Important Chrome installation notice</strong>: Starting with Chrome 21 extension installation\n  from third-party sites is no longer allowed."
+  },
+  "s35": {
+    "message": "To fix this you have to start Chrome\n  with the"
+  },
+  "s36": {
+    "message": "command line\n  flag."
+  },
+  "s37": {
+    "message": "The other option is automatic system-wide installation of Adblock Plus\n  development builds (affects all users on the computer, browser restart required):"
+  },
+  "s38": {
+    "message": "On <em>Windows</em> download and run\n    <a>this registry file</a>\n    (requires administrator privileges)."
+  },
+  "s39": {
+    "message": "To remove Adblock Plus again download\n    and run"
+  },
+  "s40": {
+    "message": "this registry\n    file"
+  },
+  "s41": {
+    "message": "."
+  },
+  "s42": {
+    "message": "On <em>Linux</em> download <a>this\n    file</a> and put it into the directories"
+  },
+  "s43": {
+    "message": "and"
+  },
+  "s44": {
+    "message": "(create the directories if\n    necessary, requires administrator privileges)."
+  },
+  "s45": {
+    "message": "To remove Adblock Plus again\n    simply remove the file."
+  },
+  "s46": {
+    "message": "<strong>Important Opera installation notice</strong>: Opera doesn't allow extension installation\n  from third-party sites."
+  },
+  "s47": {
+    "message": "You have to download the development build and then drag the file\n  into Opera's extensions page."
+  },
+  "s48": {
+    "message": "How do I know what has changed?"
+  },
+  "s49": {
+    "message": "When the browser shows you the notification about available updates, click the development build and then &quot;Show Information&quot; button. This will display the list of all changes in this build. For a more high-level overview of the changes and additional information please follow the <a>development build announcements</a>. You can subscribe to the <a>RSS feed</a> in your favorite feed reader."
   }
 }

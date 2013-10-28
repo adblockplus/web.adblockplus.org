@@ -1,0 +1,164 @@
+{
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 1.2"
+  },
+  "s1": {
+    "message": "Voici les principales modifications en comparaison avec la version 1.1.3 d’Adblock Plus. Si vous rencontrez des problèmes avec cette version, merci de vous rendre à la <a>liste des problèmes connus</a>."
+  },
+  "s2": {
+    "message": "Interface utilisateur"
+  },
+  "s3": {
+    "message": "Nouvelles traductions : Bulgare, espagnole argentin"
+  },
+  "s4": {
+    "message": "Suppression des traductinos non mses à jour : estonienne, perse,norvégienne (Bokmål), lithuanienne"
+  },
+  "s5": {
+    "message": "Le blocage de sons et vidéos HTML5 est à présent possible via le menu contextuel"
+  },
+  "s6": {
+    "message": "Ajout davantage d'informations à l'infobulle de l'icône ABP (<a>discussion sur le forum</a>)"
+  },
+  "s7": {
+    "message": "Réparé : Certains messages Adblock Plus apparaissaient avec le titre générique &quot;JavaScript Application&quot; (<a>discussion sur le forum</a>)"
+  },
+  "s8": {
+    "message": "Simplification de la barre d'état en supprimant le texte masqué &quot;Adblock&quot; (le <a>style utilisateur</a> a été mis à jour pour ceux qui veulent voir s'afficher ce texte)"
+  },
+  "s9": {
+    "message": "Boîte de dialogue \"Ajout d'abonnement\" (également affichée juste après l'installation)"
+  },
+  "s10": {
+    "message": "Complètement relookée pour rendre cette boîte plus facile à utiliser (<a>disucussion sur le forum</a>)"
+  },
+  "s11": {
+    "message": "Le meilleur abonnement recommandé est présélectionné"
+  },
+  "s12": {
+    "message": "Lors du choix juste après l'installation : ajout d'un avertissement lorsqu'aucun abonnement n'a été choisi"
+  },
+  "s13": {
+    "message": "Ajout d'abonnements \"personnalisés\" possible dans la même boîte de dialogue"
+  },
+  "s14": {
+    "message": "La liste complète des abonnements se charge dans la même boîte de dialogue, il n'est plus nécessaire de se rendre à la page Web"
+  },
+  "s15": {
+    "message": "Les abonnements correspondant à la langue de l'utilisateur sont mis en évidence"
+  },
+  "s16": {
+    "message": "Pour des abonnements supplémentaires : l'ajout de l'abonnement principal est suggéré si l'utilisateur n'y est pas encore abonné. Il est également possible de spécifier l'abonnement principal avec abp : liens dans les pages Web (<a>discussion sur le forum</a>)"
+  },
+  "s17": {
+    "message": "Réparé : la page d'\"Ajout d'abonnement\" à la première installation pouvait être fermée par le rétablissement de session"
+  },
+  "s18": {
+    "message": "Fonctionnalité \"Étiquettes sur Flash et Java\""
+  },
+  "s19": {
+    "message": "Amélioration du positionnement des étiquettes, la position est ajustée lors des modifications dynamiques de la page Web et du défilement"
+  },
+  "s20": {
+    "message": "Réparé le fait que l'étiquette devienne invisible pour les principales causes liées à la mise en page (<a>bogue 12910</a>)"
+  },
+  "s21": {
+    "message": "Réparé les cas où les étiquettes causaient des effets secondaires indésirables lorsqu'elles s'affichaient (ex : <a>bogue 22246</a>)"
+  },
+  "s22": {
+    "message": "Réparé les cas où les étiquettes altéraient les suppositions faites par des pages Web, plus particulièrement lors du test Acid3 (<a>bogue 22435</a>)"
+  },
+  "s23": {
+    "message": "Les étiquettes disparaissent à présent en fondu lorsque la souris s'éloigne et non immédiatemment"
+  },
+  "s24": {
+    "message": "Liste des éléments filtrables"
+  },
+  "s25": {
+    "message": "Lorsque de nouveaux onglets sont ouverts, les préférences du navigateur sont respectées (particulièrement lorsque l'onglet doit s'ouvrir en arrière-plan)"
+  },
+  "s26": {
+    "message": "Réparé : La touche de clavier du menu contextuel ne fonctionnait pas dans la liste"
+  },
+  "s27": {
+    "message": "Réparé : La chaîne recherchée n'était pas mémorisée lorsqu'on détachait/réattachait (<a>discussion du forum</a>)"
+  },
+  "s28": {
+    "message": "&quot;Désactiver le filtre sur ...&quot; était malencontreusement masquée pour certains filtres (<a>bogue 22481</a>)"
+  },
+  "s29": {
+    "message": "Ne liste plus les filtres désactivés si Adblock Plus est désactivée (<a>discussion du forum</a>)"
+  },
+  "s30": {
+    "message": "Vérification du bon fonctionnement même lorsque l'option de préférence browser.frames.enabled a été désactivée"
+  },
+  "s31": {
+    "message": "Fenêtre des préférences"
+  },
+  "s32": {
+    "message": "Les groupes de filtre tel que &quot;Mes règles de filtrage de pub&quot; sont automatiquement ré-activés lorsque leur dernier filtre est supprimé (<a>discussion sur le forum</a>)"
+  },
+  "s33": {
+    "message": "Réparé : La fenêtre des préférences est mal affichée sur des systèmes d'exploitations avec des paramètres régionaux &quot;exotiques&quot; tel que le géorgien (solution pour le <a>bogue Mozilla 508783</a>)"
+  },
+  "s34": {
+    "message": "Réparé : La touche de clavier du menu contextuel ne fonctionnait pas dans la liste"
+  },
+  "s35": {
+    "message": "Réparé : Les raccourcis-clavier tel que Ctrl+X ne fonctionnaient parfois pas tant que le menu contextuel n'avait été ouvert"
+  },
+  "s36": {
+    "message": "Création de filtres"
+  },
+  "s37": {
+    "message": "Ajout de &quot;filtrer tout le domaine&quot; comme suggestion de filtre en plus de &quot;filtrer ce serveur&quot; (<a>discussion du forum</a>)"
+  },
+  "s38": {
+    "message": "Boîte de dialogue \"À propos d'Adblock Plus\""
+  },
+  "s39": {
+    "message": "Modification de la présentation de la liste des contributeurs pour la rendre plus compacte, le défilement de la page est à présent moins long"
+  },
+  "s40": {
+    "message": "Une grande partie de la liste des contributeurs est à présent générée dynamiquement (les auteurs d'abonnements tirés de la liste des abonnements recommandés, les traducteurs des infos du fichier \"manifest\" de l'extension)"
+  },
+  "s41": {
+    "message": "Prise en charge des applications"
+  },
+  "s42": {
+    "message": "Firefox Mobile/Fennec : l'état d'Adblock Plus est affiché dans le panneau \"identité\" ou comme une action de site (Fennec 1.0 et Fennec 1.1 respectivement) et permet d'activer/de désactiver Adblock Plus sur un site"
+  },
+  "s43": {
+    "message": "Firefox Mobile/Fennec : affichage de la page juste après installation de façon correcte (<a>bogue Mozilla 531071</a>)"
+  },
+  "s44": {
+    "message": "Thunderbird : Positionnement de l'icône de la barre d'outils avec les actions du message, c'est l'emplacement le plus logique"
+  },
+  "s45": {
+    "message": "Thunderbird : les onglets ouverts par les fenêtres de dialogues Adblock Plus s'ouvrent dans Thunderbird au lieu du navigateur externe"
+  },
+  "s46": {
+    "message": "SeaMonkey Mail : l'ouverture d'onglets sans qu'une fenêtre de navigateur ne soit ouverte ouvre à présent une nouvelle fenêtre de navigateur (même comportement que les liens sont traités dans les courriels)"
+  },
+  "s47": {
+    "message": "Songbird : réparation de l'icône de la barre des tâches dans le nouveau thème Purplerain (il subsiste le <a>bogue Songbird 20787</a>)"
+  },
+  "s48": {
+    "message": "Noyau"
+  },
+  "s49": {
+    "message": "Implémentation de plusieurs mesures d'amélioration des performances, notamment pour réduire le délai de démarrage de l'application"
+  },
+  "s50": {
+    "message": "Ajout d'une nouvelle option de filtre $elemhide pour les règles d'exception qui permet de désactiver toutes les règles de masquage d'élément sur une page (<a>discussion du forum</a>)"
+  },
+  "s51": {
+    "message": "Les erreur de téléchargement d'abonnement sont à présent signalées dans la console d'erreur"
+  },
+  "s52": {
+    "message": "Réparé : le chargement des règles de filtrage avec la chaîne de substitution de séparateur (^) ets très lent"
+  },
+  "s53": {
+    "message": "Historique des modifications pour la version précédente"
+  }
+}

@@ -1,0 +1,216 @@
+title=title-full
+
+<head>
+<link class="cssfx" href="/css/topics.css" rel="stylesheet">
+<link class="cssfx" href="/css/topics-desktop.css" media="(min-width: 40.5em)" rel="stylesheet">
+<link href="/css/topics-mobile.css" media="screen  and (max-width: 40.5em)" rel="stylesheet">
+<link class="cssfx" href="/css/contribute.css" rel="stylesheet">
+</head>
+<meta name="title" content="$s1$">
+<meta name="description" content="$s2$">
+<meta property="og:title" content="$s3$">
+<meta property="og:description" content="$s4$">
+
+<p>
+  $s5$
+</p>
+
+<p><strong>$s6$</strong></p>
+
+<div id="toc">
+  <a class="topic-small" href="#spread-the-word">
+    <div class="task-spread-the-word sprite"></div>
+    <p>$s7$</p>
+  </a>
+  <a class="topic-small" href="#report-bugs">
+    <div class="task-report-bugs sprite"></div>
+    <p>$s8$</p>
+  </a>
+  <a class="topic-small" href="#contribute-code">
+    <div class="task-contribute-code sprite"></div>
+    <p>$s9$</p>
+  </a>
+  <a class="topic-small" href="#help">
+    <div class="task-help sprite"></div>
+    <p>$s10$</p>
+  </a>
+  <a class="topic-small" href="#translate">
+    <div class="task-translate sprite"></div>
+    <p>$s11$</p>
+  </a>
+  <a class="topic-small" href="#suggest">
+    <div class="task-suggest sprite"></div>
+    <p>$s12$</p>
+  </a>
+  <a class="topic-small" href="#donate">
+    <div class="task-donate sprite"></div>
+    <p>$s13$</p>
+  </a>
+  <a class="topic-small" href="#filters">
+    <div class="task-filters sprite"></div>
+    <p>$s14$</p>
+  </a>
+  <a class="topic-small" href="#acceptable">
+    <div class="task-acceptable sprite"></div>
+    <p>$s15$</p>
+  </a>
+</div>
+
+<div id="list">
+  <div class="topic first">
+    <div class="task-spread-the-word sprite"></div>
+    <a name="spread-the-word">
+      <h3>$s16$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s17$ $s18$
+        </p>
+
+        <p><strong>
+          $s19$
+        </strong></p>
+
+        <ul>
+          <li>$s20(https://twitter.com/adblockplus, http://facebook.com/adblockplus, https://plus.google.com/110020691898167279887)$</li>
+          <li>$s21$</li>
+          <li>$s22(index)$</li>
+          <li>$s23$</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="topic">
+    <div class="task-report-bugs sprite"></div>
+    <a name="report-bugs">
+      <h3>$s24$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s25(bugs)$ $s26$ $s27$ $s28$
+        </p>
+
+        <h4>$s29$</h4>                                                                   
+
+        <p>
+          $s30(development-builds)$ $s31$ $s32(/atom/?section=development-builds)$
+        </p>
+      </div>
+    </div>
+  </div>  
+
+  <div class="topic">
+    <div class="task-contribute-code sprite"></div>
+    <a name="contribute-code">
+      <h3>$s33$</h3>
+    </a>
+    <div class="description">
+      $s34$
+
+      <div class="longtext">
+        $s35(/en/contribute-code)$
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="task-help sprite"></div>
+    <a name="help">
+      <h3>$s36$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s37$ $s38$
+          <a href="/forum/" hreflang="end">$s39$</a>$s40$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="task-translate sprite"></div>
+    <a name="translate">
+      <h3>$s41$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s42$ $s43(http://crowdin.net/, http://crowdin.net/project/adblockplus, http://crowdin.net/project/adblockpluschrome, http://crowdin.net/project/elemhidehelper, http://crowdin.net/project/abpcustomization)$ $s44$ $s45$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="task-suggest sprite"></div>
+    <a name="suggest">
+      <h3>$s46$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s47$ $s48$ $s49$ <a href="/forum/" hreflang="en">$s50$</a> $s51$ $s52$
+         </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="task-donate sprite"></div>
+    <a name="donate">
+      <h3>$s53$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s54$ $s55$ <a href="/redirect?link=donate&amp;variant=2" hreflang="en">$s56$</a>$s57$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="task-filters sprite"></div>
+    <a name="filters">
+      <h3>$s58$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s59$ $s60$
+          $s61$
+        </p>
+
+        <p>
+          $s62(getting_started#false-positives)$
+          $s63$ <a href="filters">$s64$</a> $s65$
+          $s66$ <a href="/forum/viewforum.php?f=2" hreflang="en">$s67$</a> $s68$
+          $s69$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="task-acceptable sprite"></div>
+    <a name="acceptable">
+      <h3>$s70$</h3>
+    </a>
+    <div class="description">
+      <div class="longtext">
+        <p>
+          $s71(acceptable-ads)$
+          $s72$ <a href="acceptable-ads#criteria">$s73$</a> $s74$
+        </p>
+
+        <p>
+          $s75$ <a href="/forum/viewforum.php?f=12" hreflang="en">$s76$</a> $s77$ 
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

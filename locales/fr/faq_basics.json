@@ -1,0 +1,116 @@
+{
+  "title": {
+    "message": "FAQ - Fonctionnalités de base"
+  },
+  "s1": {
+    "message": "Comment bloquer une publicité ?"
+  },
+  "s2": {
+    "message": "Vous pouvez cliquer droit sur n'importe quelle image ou cadre et choisir de &quot;Bloquer ... avec Adblock...&quot; dans le menu contextuel (copie d'écran ci-dessous). Une boîte de dialogue s'ouvrira dans laquelle vous pourrez remanier le nouveau filtre avant de l'ajouter. Vous pouvez remplacer des fragments de l'adresse de la publicité en utilisant des jokers (* -- l'astérisque) pour permettre au filtre de bloquer des publicités dont l'adresse est similaire. Pour de plus amples informations, veuillez consulter <a>Créer des filtres Adblock Plus</a>."
+  },
+  "s3": {
+    "message": "Me montrer comment faire"
+  },
+  "s4": {
+    "message": "Je souhaiterais de temps à autre désactiver Adblock Plus. Quel est le moyen le plus simple pour faire cela ?"
+  },
+  "s5": {
+    "message": "Vous pouvez cliquer sur la flèche de l'icône d'Adblock Plus dans la barre d'outils pour dérouler un menu. Vous y trouverez l'option \"Activer Adblock Plus\", désactivez cette option. Si vous êtes pressé, cliquez milieu sur l'icône, cela désactivera ou réactivera également Adblock Plus."
+  },
+  "s6": {
+    "message": "Dans ce menu, vous trouverez aussi une option permettant de désactiver Adblock pour une page donnée. Cela ajoutera un filtre du type"
+  },
+  "s7": {
+    "message": "@@||adblockplus.org^$document"
+  },
+  "s8": {
+    "message": "à la liste -- @@ au début signifie que ceci est une règle d'exception, Adblock Plus sera désactivée pour les pages concernées par ce filtre. Vous trouverez davantage d'information sur les règles d'exception dans la rubrique <a>Créer des filtres Adblock Plus</a>."
+  },
+  "s9": {
+    "message": "Me montrer comment faire"
+  },
+  "s32": {
+    "message": "La publicité est un objet (Flash ou Java) et ne peut être bloquée en utilisant le menu contextuel. Que faire ?"
+  },
+  "s33": {
+    "message": "Adblock Plus intègre une option appelée \"Afficher une étiquette pour Flash et Java\". Lorsqu'elle est activée (ce qui est le cas par défaut) une petite étiquette libellée \"Bloquer\" sera affichée dans le coin en haut à droite (en bas à droite s'il n'y a pas suffisamment de place) de chaque objet. En cliquant sur cette étiquette vous pourrez bloquer l'objet."
+  },
+  "s34": {
+    "message": "Me montrer comment faire"
+  },
+  "s35": {
+    "message": "Une autre solution est d'afficher la liste des éléments filtrables (cliquez sur la flèche à côté de l'icône ABP pour faire apparaître le menu déroulant et sélectionnez \"Ouvrir la liste des éléments filtrables\") et de rechercher l'adresse de l'objet dans la liste."
+  },
+  "s36": {
+    "message": "Me montrer comment faire"
+  },
+  "s37": {
+    "message": "Vous pouvez cliquer sur le titre de colonne Type -- cela permettra de trier la liste par type d'éléments et facilitera la recherche des objets."
+  },
+  "s38": {
+    "message": "La liste des éléments filtrables affiche beaucoup d'adresses. Comment repérer celle de la publicité ?"
+  },
+  "s39": {
+    "message": "Vous pouvez rechercher les adresses ne commençant pas comme l'adresse de la page que vous êtes en train de visualiser. Les adresses des publicités contiennent souvent des mots tels que \"banner\" ou \"ad\". Cliquez sur une des adresses pour faire clignoter l'élément correspondant sur la page (hélas, cela ne fonctionne pas pour tous types d'éléments !). Si vous n'êtes toujours pas sûr de vous, cliquez milieu sur l'adresse pour ouvrir l'élément dans un nouvel onglet -- et vérifier ainsi si c'est effectivement une publicité."
+  },
+  "s40": {
+    "message": "L'ordre dans lequel sont triés les filtres a-t-il une importance pour une meilleure performance ?"
+  },
+  "s41": {
+    "message": "Non. Ce qui se passe en réalité, c'est qu'Adblock Plus vérifie la liste de filtres jusqu'à ce qu'il trouve une correspondance. Pour cette raison, beaucoup de personnes pensent, à tort, qu'il faut placer les filtres les plus généraux (appliqués souvent) au début de la liste. Ce qu'ils oublient c'est que dans la plupart des pages la grande majorité des éléments vérifiés ne seront pas bloqués, cela signifie que pour ces éléments là aussi, chaque filtre devra être testé. Donc, si vous avez 50 filtres dans la liste et si 2 des 30 éléments de la page ont été bloqués -- vous ne verrez aucune différence entre 1500 vérifications (dans le pire des cas) et 1402 vérifications (dans le meilleur des cas). Adblock Plus vous permet de mettre la liste de filtres dans l'ordre alphabétique pour votre convenance uniquement, cela n'a aucune réelle incidence sur la performance."
+  },
+  "s42": {
+    "message": "Les expressions régulières sont-elles plus rapides que les filtres \"normaux\" ?"
+  },
+  "s43": {
+    "message": "Normalement non. Adblock Plus transformera n'importe quel filtre \"normal\" en expression régulière et fonctionnera en interne uniquement avec des expressions régulières -- il n'y a pas de différence entre les filtres"
+  },
+  "s44": {
+    "message": "banner"
+  },
+  "s45": {
+    "message": "et"
+  },
+  "s46": {
+    "message": "/banner/"
+  },
+  "s47": {
+    "message": "."
+  },
+  "s48": {
+    "message": "Les expressions régulières sont souvent utilisées pour \"compacter\" la liste de filtres et remplacer plusieurs filtres par une seule expression régulière. On pourrait penser que, logiquement, \"s'il y a moins de filtres, la vitesse d'exécution sera accrue\" mais cela n'est pas tout à fait fondé. Des expressions régulières complexes requièrent plus de temps pour être évaluées, il serait plus rapide d'utiliser plusieurs expressions plus simples."
+  },
+  "s49": {
+    "message": "Les expressions régulières vous donnent davantage de flexibilité, ce qui justifie toujours leur emploi. Par exemple l'expression régulière"
+  },
+  "s50": {
+    "message": "/adv(?!ice)/"
+  },
+  "s51": {
+    "message": "bloquera"
+  },
+  "s52": {
+    "message": "adv"
+  },
+  "s53": {
+    "message": "et"
+  },
+  "s54": {
+    "message": "advert"
+  },
+  "s55": {
+    "message": "et"
+  },
+  "s56": {
+    "message": "advertisement"
+  },
+  "s57": {
+    "message": "mais pas"
+  },
+  "s58": {
+    "message": "advice"
+  },
+  "s59": {
+    "message": "-- ceci ne serait pas faisable avec de simples jokers !"
+  }
+}

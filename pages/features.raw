@@ -1,0 +1,135 @@
+title=title-full
+
+<head>
+<link class="cssfx" href="/css/topics.css" rel="stylesheet">
+<link class="cssfx" href="/css/topics-desktop.css" media="(min-width: 40.5em)" rel="stylesheet">
+<link href="/css/topics-mobile.css" media="screen  and (max-width: 40.5em)" rel="stylesheet">
+<link class="cssfx" href="/css/features.css" rel="stylesheet">
+</head>
+<meta name="title" content="$s1$">
+<meta name="description" content="$s2$">
+<meta property="og:title" content="$s3$">
+<meta property="og:description" content="$s4$">
+
+<div id="toc">
+  <a class="topic-small" href="#adblocking">
+    <div class="feature-adblocking sprite"></div>
+    <p>$s5$</p>
+  </a>
+  <a class="topic-small" href="#acceptable">
+    <div class="feature-acceptable sprite"></div>
+    <p>$s6$</p>
+  </a>
+  <a class="topic-small" href="#tracking">
+    <div class="feature-tracking sprite"></div>
+    <p>$s7$</p>
+  </a>
+  <a class="topic-small" href="#malware">
+    <div class="feature-malware sprite"></div>
+    <p>$s8$</p>
+  </a>
+  <a class="topic-small" href="#socialmedia">
+    <div class="feature-socialmedia sprite"></div>
+    <p>$s9$</p>
+  </a>
+  <a class="topic-small" href="#typo">
+    <div class="feature-typo sprite"></div>
+    <p>$s10$</p>
+  </a>
+</div>
+
+<div id="list">
+  <div class="topic first">
+    <div class="feature-block sprite"></div>
+    <a name="block">
+      <h3>$s11$</h3>
+    </a>
+    <div class="description">
+      $s12$
+      <div class="longtext">
+        $s13(firefox, chrome, opera, android)$
+      </div>
+    </div>
+  </div>
+  
+  <div class="topic">
+    <div class="feature-acceptable sprite"></div>
+    <a name="acceptable">
+      <h3>$s14$</h3>
+    </a>
+    <div class="description">
+      $s15$
+      <div class="longtext">
+        $s16$ $s17(acceptable-ads#criteria)$ $s18$
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="feature-tracking sprite"></div>
+    <a name="tracking">
+      <h3>$s19$</h3>
+    </a>
+    <div class="description">
+      $s20$ $s21$
+      <div class="longtext">
+        <p>
+          $s22(http://cyberlaw.stanford.edu/node/6730)$
+        </p>
+        <p>
+          $s23(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Feasyprivacy.txt&amp;title=Disable%20Tracking, getting_started#remove-subscription)$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="feature-malware sprite"></div>
+    <a name="malware">
+      <h3>$s24$</h3>
+    </a>
+    <div class="description">
+      $s25$ $s26$ $s27$  
+      <div class="longtext">
+        <p>
+          $s28$
+        </p>
+        <p>
+          $s29(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Fmalwaredomains_full.txt&amp;title=Disable%20Malware, getting_started#remove-subscription)$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="feature-socialmedia sprite"></div>
+    <a name="socialmedia">
+      <h3>$s30$</h3>
+    </a>
+    <div class="description">
+      $s31$ $s32$
+      <div class="longtext">
+        <p>
+          $s33$
+        </p>
+      	  <p>
+          $s34(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Ffanboy-social.txt&amp;title=Fanboy's%20Social%20Blocking%20List, getting_started#remove-subscription)$
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="feature-typo sprite"></div>
+    <a name="typo">
+      <h3>$s35$</h3>
+    </a>
+    <div class="description">
+      $s36(/blog/type-correction-feature-removed, http://urlfixer.org)$
+
+      <div class="longtext">
+      $s37$ $s38$
+      </div>
+    </div>
+  </div>
+</div>

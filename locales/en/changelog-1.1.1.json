@@ -1,0 +1,38 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 1.1.1"
+  },
+  "s1": {
+    "message": "Added ChinaList as recommended filter subscription."
+  },
+  "s2": {
+    "message": "Fixed: Very bad performance on some webpages."
+  },
+  "s3": {
+    "message": "Made sure that collapsing of blocked elements works reliably again and that Image Toolbar extension doesn't disable this feature (<a>bug 21278</a>)"
+  },
+  "s4": {
+    "message": "Made Adblock Plus initialization more bulletproof, it can no longer be disrupted by other extensions like FoxyProxy or Sxipper (<a>forum topic</a>)."
+  },
+  "s5": {
+    "message": "Worked around a bug in .NET Framework Assistant causing Adblock Plus user interface to break (<a>forum topic</a>)."
+  },
+  "s6": {
+    "message": "Fixed: &quot;Apply&quot; button doesn't enable in Preferences if a filter subscription is moved with the mouse (<a>bug 21337</a>)."
+  },
+  "s7": {
+    "message": "Fixed: List of blockable items occasionally misses out some items if it is open while page is loading."
+  },
+  "s8": {
+    "message": "Fixed: Error shows up in Error Console if Adblock Plus needs to process certain types of addresses (<a>forum topic</a>)."
+  },
+  "s9": {
+    "message": "Known issues"
+  },
+  "s10": {
+    "message": "The extension <a>Custom Buttons 0.0.4.3</a> malfunctions if Adblock Plus is installed. This is due to wrong assumptions in Custom Buttons (<a>bug 21391</a>)."
+  },
+  "s11": {
+    "message": "Changelog for the previous release"
+  }
+}

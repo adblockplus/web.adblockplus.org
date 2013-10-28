@@ -1,0 +1,62 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.7.2.3"
+  },
+  "s1": {
+    "message": "Added Persian translation"
+  },
+  "s2": {
+    "message": "SeaMonkey: Major security issue fixed -- switched on XPCNativeWrappers that aren't used by default for some reason"
+  },
+  "s3": {
+    "message": "Improved storage of internal data, old way was less efficient and potentially insecure (<a>bug 15758</a>)"
+  },
+  "s4": {
+    "message": "Made sure that web pages constantly reloading images won't increase memory usage (<a>bug 15317</a>)"
+  },
+  "s5": {
+    "message": "&quot;Show tabs on Flash and Java&quot; again can be used when JavaScript is disabled (<a>bug 15637</a>)"
+  },
+  "s6": {
+    "message": "Made it harder for web sites to tamper with tabs on objects like Flash or Java"
+  },
+  "s7": {
+    "message": "Made tab displayed by &quot;Show tabs on Flash and Java&quot; a link (because of the context menu and ability to middle-click, <a>bug 15638</a>)"
+  },
+  "s8": {
+    "message": "Improved check for objects opened on its own (tabs shouldn't be shown for these objects)"
+  },
+  "s9": {
+    "message": "Toolbar icon now looses its drop marker in vertical toolbars like the one created by All-In-One Sidebar extension to prevent resizing of the toolbar, menu available with a right-click then (<a>forum thread</a>)"
+  },
+  "s10": {
+    "message": "Firefox: Default placement of the toolbar icon is now the right edge of the navigation toolbar (<a>forum thread</a>)"
+  },
+  "s11": {
+    "message": "\"Disable Adblock Plus on ...\" options are no longer disabled when Preferences dialog is open"
+  },
+  "s12": {
+    "message": "Added methods addPatterns() and removePatterns() to the public <a>IAdblockPlus interface</a> (can be used from other extensions)"
+  },
+  "s13": {
+    "message": "Using Gecko's built-in feature for scrolling to node when selecting in the sidebar -- should be less error-prone"
+  },
+  "s14": {
+    "message": "No longer relying on extension version reported by the browser (is unreliable in SeaMonkey, <a>forum thread</a>)"
+  },
+  "s15": {
+    "message": "Can be installed in Songbird 0.3 now"
+  },
+  "s16": {
+    "message": "Removed obsolete"
+  },
+  "s17": {
+    "message": "file"
+  },
+  "s18": {
+    "message": "property from install manifest (not required for Firefox 1.5 and higher)"
+  },
+  "s19": {
+    "message": "Changelog for the previous release"
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 1.0"
+  },
+  "s1": {
+    "message": "Voici les modifications principales par rapport à Adblock Plus 0.7.5.4 :"
+  },
+  "s2": {
+    "message": "Problèmes connus"
+  },
+  "s3": {
+    "message": "Le format de stockage de filtre a été modifié, donc pour retourner à une version précédente il faut exporter les filtres et les réimporter après la remise à niveau"
+  },
+  "s4": {
+    "message": "Mac OS X : les animations Flash ne s'afficheront pas correctement si l'option « Afficher une étiquette pour Flash et Java » est activée"
+  },
+  "s5": {
+    "message": "Certaines traductions comportent des chaînes de caractères en anglais non traduites"
+  },
+  "s6": {
+    "message": "Nouvelles fonctionnalités"
+  },
+  "s7": {
+    "message": "La nouvelle boîte de composition de filtres simplifie l'ajout de filtres"
+  },
+  "s8": {
+    "message": "Les nouvelles options de filtre"
+  },
+  "s9": {
+    "message": "$third-party"
+  },
+  "s10": {
+    "message": "et"
+  },
+  "s11": {
+    "message": "$~third-party"
+  },
+  "s12": {
+    "message": "restreint l'action des filtres sur le début ou la fin des adresses (<a>sujet du forum</a>)"
+  },
+  "s13": {
+    "message": "Interface utilisateur"
+  },
+  "s14": {
+    "message": "Traductions ajoutées : Arménien, Galicien, Indonésien"
+  },
+  "s15": {
+    "message": "Liste des éléments filtrables"
+  },
+  "s16": {
+    "message": "L'infobulle affiche la source du filtre en plus du filtre lui-même (<a>sujet du forum</a>)"
+  },
+  "s17": {
+    "message": "Les filtres peuvent à présent être désactivés et réactivés à partir du menu contextuel (<a>sujet du forum</a>)"
+  },
+  "s18": {
+    "message": "Modification de l'action par défaut pour les éléments filtrés pour « Ajouter une règle d'exception » à la place d'« Éditer le filtre »"
+  },
+  "s19": {
+    "message": "Le critère d'organisation par défaut est l'« État » (éléments bloqués en premiers)"
+  },
+  "s20": {
+    "message": "Prise en charge de la sélection et de la copie multiple d'adresses/de filtres (<a>sujet du forum</a>)"
+  },
+  "s21": {
+    "message": "Ajout de l'entrée « Tout sélectionner » au menu contextuel"
+  },
+  "s22": {
+    "message": "Ajout de l'entrée « Copier le filtre » au menu contextuel (<a>sujet du forum</a>)"
+  },
+  "s23": {
+    "message": "Ajout de la colonne « Taille » (masquée par défaut), même information affichée dans l'infobulle"
+  },
+  "s24": {
+    "message": "Modification de la couleur du filtre pour le nombre de masquage d'éléments (<a>sujet du forum</a>)"
+  },
+  "s25": {
+    "message": "Réparé : titre masqué en mode plein-écran"
+  },
+  "s26": {
+    "message": "Fenêtre des préférences"
+  },
+  "s27": {
+    "message": "Élimination du délai quand la fenêtre est ouverte et une bonne partie du délai lorsque des modifications sont appliquées"
+  },
+  "s28": {
+    "message": "Mac OS X : Le menu des préférences a été modifié en barre d'outils pour s'assurer qu'elle reste à l'intérieur de la fenêtre (<a>sujet du forum</a>)"
+  },
+  "s29": {
+    "message": "Modification des noms pour les groupes des filtres définis par l'utilisateur (<a>sujet du forum</a>)"
+  },
+  "s30": {
+    "message": "Titre des groupes/abonnements en gras à présent (<a>sujet du forum</a>)"
+  },
+  "s31": {
+    "message": "Ajout d'un menu « Affichage » pour contrôler les colonnes visibles et le tri, suppression du sélecteur de colonne"
+  },
+  "s32": {
+    "message": "Nouveau menu « Affichage » le menu contextuel pour les titres de liste"
+  },
+  "s33": {
+    "message": "Les groupes contenant des filtres définis par l'utilisateur peuvent être à présent désactivés (<a>sujet du forum</a>)"
+  },
+  "s34": {
+    "message": "Les images pour la colonne « Activé » ont été améliorées pour rendre leur signification plus intuitive (<a>sujet du forum</a>, <a>sujet du forum</a>)"
+  },
+  "s35": {
+    "message": "Suppression de « Ajouter le filtre » dans la liste (<a>sujet du forum</a>)"
+  },
+  "s36": {
+    "message": "Ajout de la prise en charge de commentaires dans tous les groupes de filtres, pas uniquement dans les « filtres de publicité »"
+  },
+  "s37": {
+    "message": "Les commentaires restent à présent toujours avant le même filtre, même lors d'un tri (ils peuvent également être déplacés, même si la liste est triée)"
+  },
+  "s38": {
+    "message": "Pour les filtres invalides, une infobulle explique pour quelle raisons ils le sont"
+  },
+  "s39": {
+    "message": "Suppression des éléments de l'interface utilisateur devenus obsolète après ajout de la fenêtre de composition de filtres : avertissement d'expressions régulières et l'option de préférences"
+  },
+  "s40": {
+    "message": "extensions.adblockplus.warnregexp"
+  },
+  "s41": {
+    "message": "correspondante, liste déroulante dans l'éditeur de filtres (<a>sujet du forum</a>)"
+  },
+  "s42": {
+    "message": "L'exportation de filtre insère à commentaire checksum dans le fichier (<a>sujet du forum</a>)"
+  },
+  "s43": {
+    "message": "Ajout d'une infobulle expliquant la signification du point d'exclamation"
+  },
+  "s44": {
+    "message": "Ajout d'un moyen de désactiver/activer les filtres et abonnements à partir du menu contextuel"
+  },
+  "s45": {
+    "message": "« Réinitialiser les statistiques » remets à zéro à présent également la « dernière utilisation » (<a>bogue 18650</a>)"
+  },
+  "s46": {
+    "message": "Réparé : la barre de recherche dans la boîte de dialogue des préférences ne comporte aucune aucune (Firefox 3)"
+  },
+  "s47": {
+    "message": "Réparé : les dates utilisent parfois le mauvais encodage de caractères (<a>bogue 441370</a>)"
+  },
+  "s48": {
+    "message": "Réparé : « Modifier le filtre actif… » peut sélectionner un filtre se trouvant dans un abonnement désactivé alors qu'il se trouve également dans des abonnements activés (<a>sujet du forum</a>)"
+  },
+  "s49": {
+    "message": "Réparé : En cliquant deux fois sur la colonne « Activé » l'éditeur de filtre est lancé"
+  },
+  "s50": {
+    "message": "Réparé : les modifications dans l'état de l'option « Télécharger automatiquement » ne sont pas affichées immédiatement"
+  },
+  "s51": {
+    "message": "Le collage de filtres avec espaces (dans des commentaires particuliers) est à présent possible (<a>bogue 18920</a>)"
+  },
+  "s52": {
+    "message": "Sélection d'abonnements"
+  },
+  "s53": {
+    "message": "Premier démarrage : La liste de sélection d'abonnements est ouverte dans un nouvel onglet au lieu d'une nouvelle fenêtre (<a>bogue 15786</a>)"
+  },
+  "s54": {
+    "message": "Premier démarrage : La liste de sélection d'abonnements s'affichera même si d'autres extensions ont déjà ajouté un abonnement dont elles s'occupent."
+  },
+  "s55": {
+    "message": "« Ajouter un abonnement » à partir des préférences affichera la sélection d'abonnements plutôt que la boîte de dialogue des abonnements personnalisés."
+  },
+  "s56": {
+    "message": "Ajout d'un avertissement si Filterset.G est installée avec une option permettant de la désinstaller automatiquement"
+  },
+  "s57": {
+    "message": "Ajout d'un avertissement avec une option permettant de désinstaller automatiquement (c'était une question contenue dans une fenêtre popup séparée auparavant)"
+  },
+  "s58": {
+    "message": "Autres modifications de l'interface utilisateur"
+  },
+  "s59": {
+    "message": "L'avertissement concernant les expressions régulières concerne également les filtres qui sont trop courts pour être optimisés"
+  },
+  "s60": {
+    "message": "L'avertissement informant de la désactivation d'Adblock Plus permet de la réactiver en un seul clic"
+  },
+  "s61": {
+    "message": "Suppression de l'ancien code se chargeant du clic/glisser (nulle part utilisé et non découvert)"
+  },
+  "s62": {
+    "message": "Réparé : « Désactiver pour cette page uniquement » ne fonctionne pas avec des pages comportant un « query string;»"
+  },
+  "s63": {
+    "message": "À propos d'Adblock Plus : le numéro de version peut être sélectionné pour qu'il puisse être copié"
+  },
+  "s64": {
+    "message": "À propos d'Adblock Plus : Le lien vers la page Web est à présent traduisible (et différent pour les locales allemandes/françaises, <a>bogue 17136</a>)"
+  },
+  "s65": {
+    "message": "Ajout de « Adblock Plus : éléments filtrables » dans le menu « Affichage » de Firefox ( menu Affichage » Barres d'outils dans SeaMonkey)"
+  },
+  "s66": {
+    "message": "Noyau"
+  },
+  "s67": {
+    "message": "Le code du noyau a été réécrit afin d'améliorer la maintenance, des commentaires de code et des tests automatisés (basés sur"
+  },
+  "s68": {
+    "message": "https://developer.mozilla.org/en/Mochitest"
+  },
+  "s69": {
+    "message": "Mochitest"
+  },
+  "s70": {
+    "message": ") ont été ajoutés sur une grande partie du noyau"
+  },
+  "s71": {
+    "message": "Il a été vérifié que le fichier de stockage des filtres ne soit pas remplacé avant que l'écriture n'ait eu lieu avec succès (<a>bogue 16488</a>)"
+  },
+  "s72": {
+    "message": "Amélioration des performances (et l'enregistrement de filtres pour de longues listes), réduction de l'utilisation de la mémoire"
+  },
+  "s73": {
+    "message": "Réparé : les règles d'exceptions ne s'appliquent pas toujours dans Firefox 3 (<a>bogue 20034</a>)"
+  },
+  "s74": {
+    "message": "Firefox 1.5, Thunderbird 1.5, SeaMonkey 1.0, Songbird 0.5/0.6 ne sont plus pris en charge (les hacks de rétro-compatibilité ont été supprimés)"
+  },
+  "s75": {
+    "message": "Flock 1.2/2.0 et Songbird 0.7/1.0 sont à présent pris en charge"
+  },
+  "s76": {
+    "message": "Ajout de la prise en charge de Prism 0.9 (<a>sujet du forum</a>)"
+  },
+  "s77": {
+    "message": "Ajout de l'option de préférence cachée <a>extensions.adblockplus.savestats</a> pour désactiver les statistiques d'utilisation (utile si patterns.ini se trouve dans un système de contrôle de version) (<a>bogue 18650</a>)"
+  },
+  "s78": {
+    "message": "Ajout de la prise en charge de la navigation privée dans Firefox 3.1, les statistiques d'utilisation sont automatiquement désactivées"
+  },
+  "s79": {
+    "message": "Tous les nouveaux lancements sont à présent contrôlés par <a>l'option de préférences extensions.adblockplus.currentversion</a> (remplace les options de préférences"
+  },
+  "s80": {
+    "message": "showsubscriptions"
+  },
+  "s81": {
+    "message": ","
+  },
+  "s82": {
+    "message": "checkedtoolbar"
+  },
+  "s83": {
+    "message": ","
+  },
+  "s84": {
+    "message": "checkedadblockinstalled"
+  },
+  "s85": {
+    "message": ")"
+  },
+  "s86": {
+    "message": "Modification du format de patterns.ini pour autoriser le stockage des commentaires définis par l'utilisateur (et potentiellement d'autres filtres aussi) dans n'importe quel groupe de filtres"
+  },
+  "s87": {
+    "message": "Les préférences d'Adblock Plus 0.6 ne sont plus importés lors de la mise à niveau"
+  },
+  "s88": {
+    "message": "Les préférences d'Adblock ne sont plus importés lors de la mise à niveau (en revanche, la liste de filtres le sera)"
+  },
+  "s89": {
+    "message": "Réparé : les étiquettes sont affichées lors de l'impression (<a>bogue 19405</a>)"
+  },
+  "s90": {
+    "message": "Réparé : l'avertissement « getBoxObjectFor() est dépréciée » dans la console d'erreurs (<a>bogue 19126</a>)"
+  },
+  "s91": {
+    "message": "Téléchargement d'abonnements"
+  },
+  "s92": {
+    "message": "Pour le téléchargement d'abonnements, un commentaire « ! Checksum : abcd » est à présent interprété et les fichiers comportant un mauvais checksum sont rejetés pour éviter les téléchargements partiels (<a>sujet du forum</a>, <a>implémentation de référence pour ajouter des checksums</a>)"
+  },
+  "s93": {
+    "message": "La prochaine tentative après un échec de téléchargement se fait un jour aprsè et plus une heure après pour éviter la surcharge du serveur (ajustement de l'option de préférences <a>extensions.adblockplus.subscriptions_fallbackerrors</a> en conséquence)"
+  },
+  "s94": {
+    "message": "le « Fallback request » peut à présent désactiver les téléchargements automatiques pour les abonnements qui ne sont plus disponibles"
+  },
+  "s95": {
+    "message": "Réparé : les téléchargements d'abonnements se retrouvent parfois dans le cache du navigateur"
+  },
+  "s96": {
+    "message": "Historique des modifications pour la version précédente"
+  }
+}

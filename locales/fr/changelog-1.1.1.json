@@ -1,0 +1,38 @@
+{
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 1.1.1"
+  },
+  "s1": {
+    "message": "Ajout de la liste « ChinaList » comme abonnement recommandé."
+  },
+  "s2": {
+    "message": "Réparé : très mauvaises performances sur certaines pages Web."
+  },
+  "s3": {
+    "message": "Il a été vérifié que la fonction d'utilisation de l'espace laissé libre par les éléments bloqués fonctionne correctement et que l'extension « Image Toolbar » ne désactive pas cette fonctionnalité (<a>bogue 21278</a>)"
+  },
+  "s4": {
+    "message": "L'initialisation d'Adblock Plus a été rendue plus résistante, elle ne peut plus être perturbée par d'autres extensions telles que « Foxyproxy » ou « Sxipper »  (<a>Sujet sur le forum [en]</a>)."
+  },
+  "s5": {
+    "message": "Contourné un problème dans l'assistant .NET Framework qui détériorait l'interface utilisateur (<a>Sujet sur le forum [en]</a>)."
+  },
+  "s6": {
+    "message": "Réparé : le bouton « Appliquer » n'activait pas dans les « Préférences » si un abonnement était déplacé avec la souris (<a>bogue 21337</a>)."
+  },
+  "s7": {
+    "message": "Réparé : la liste des éléments filtrables oubliait certains éléments occasionnellement si elle était affichée lors du chargement de la page."
+  },
+  "s8": {
+    "message": "Réparé : des erreurs apparaissaient dans la console d'erreurs lorsque Adblock Plus devait traiter un certain type d'adresses (<a>Sujet sur le forum [en]</a>)."
+  },
+  "s9": {
+    "message": "Problèmes connus"
+  },
+  "s10": {
+    "message": "L'extension <a>Custom Buttons 0.0.4.3</a> fonctionne mal si Adblock Plus est installée. Cela est dû à une mauvaise interprtéation dans « Custom Buttons » (<a>bogue 21391</a>)."
+  },
+  "s11": {
+    "message": "Historique des modifications pour la version précédente"
+  }
+}

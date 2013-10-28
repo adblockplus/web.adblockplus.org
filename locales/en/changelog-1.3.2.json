@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 1.3.2"
+  },
+  "s1": {
+    "message": "The following lists the changes compared to Adblock Plus 1.3.1. If you experience issues\n  with this release please check <a>the list of known issues</a>."
+  },
+  "s2": {
+    "message": "Persian translation added again, some other translations updated."
+  },
+  "s3": {
+    "message": "Issue reporter: Page referrer is being sent to allow recognizing/investigating pop-up issues\n    more easily."
+  },
+  "s4": {
+    "message": "Issue reporter: Sending a report is no longer possible in some scenarios (prevents useless\n    reports)."
+  },
+  "s5": {
+    "message": "Fixed: Element hiding rules stop working after they have been subject to an exception\n    ("
+  },
+  "s6": {
+    "message": "bug"
+  },
+  "s7": {
+    "message": ")."
+  },
+  "s8": {
+    "message": "Fixed: Toolbar icon's text shows up to the right of the icon rather than below it\n    (<a>forum topic</a>)."
+  },
+  "s9": {
+    "message": "Fixed: Hit counts might not get saved when the browser is closed (Firefox 4 only)."
+  },
+  "s10": {
+    "message": "Fixed: Links in About dialog open in an external application on Linux\n    ("
+  },
+  "s11": {
+    "message": "bug"
+  },
+  "s12": {
+    "message": ")."
+  },
+  "s13": {
+    "message": "Fixed: List of recently reported issues has horizontal scrolling with some themes\n    (<a>forum topic</a>)."
+  },
+  "s14": {
+    "message": "Fixed: Toolbar icon is broken in SeaMonkey Mail nightly builds."
+  },
+  "s15": {
+    "message": "Fixed: Dragging a filter in Preferences might cause \"unresponsive script\" warning."
+  },
+  "s16": {
+    "message": "Fixed: \"Invalid XBL binding\" warning in Firefox 4."
+  },
+  "s17": {
+    "message": "Fixed: Adblock Plus is confusing memory leak detection tools, a bogus leak is being reported."
+  },
+  "s18": {
+    "message": "Changelog for the previous release"
+  }
+}

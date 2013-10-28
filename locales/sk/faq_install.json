@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "FAQ - Inštalácia"
+  },
+  "s1": {
+    "message": "Ako nainštalovať Adblock Plus pre všetkých používateľov a nastaviť im, aby používali ten istý zoznam filrov?"
+  },
+  "s2": {
+    "message": "Ste administrátor ktorý chce sprístupniť Adblock Plus pre všetkých používateľov? Potom potrebujete nainštalovať Adblock Plus do priečinka prehliadača. Pre SeaMonkey je toto jediná možnosť, vo Firefoxe vytvoríte priečinok"
+  },
+  "s3": {
+    "message": "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}"
+  },
+  "s4": {
+    "message": "do"
+  },
+  "s5": {
+    "message": "extensions"
+  },
+  "s6": {
+    "message": "priečinka a rozbalíte tu obsah balíka adblockplus.xpi (je to ZIP súbor)"
+  },
+  "s7": {
+    "message": "Teraz sa musia zmeniť nastavenia Adblocku Plus. Nájdite súbor adblockplus.js ("
+  },
+  "s8": {
+    "message": "extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js"
+  },
+  "s9": {
+    "message": "vo FIrefoxe a"
+  },
+  "s10": {
+    "message": "defaults/pref/adblockplus.js"
+  },
+  "s11": {
+    "message": "v SeaMonkey) a editujte ho. Ak nechcete aby používatelia videli Adblock Plus ikonu, môžete zmeniť <a>extensions.adblockplus.showintoolbar</a> a <a>extensions.adblockplus.showinstatusbar</a> na"
+  },
+  "s12": {
+    "message": "false"
+  },
+  "s13": {
+    "message": ". Ak nechcete aby používatelia dostali možnosť zmeniť subskripciu, tak zmeňte"
+  },
+  "s14": {
+    "message": "to \"2.0\"."
+  },
+  "s15": {
+    "message": "Nakoniec možno budete chcieť, aby každý použil ten istý zoznam filtrov. Pre túto zmenu stačí upraviť <a>extensions.adblockplus.patternsfile</a>. Štandardne je tento súbor uložený v používateľskom priečinku (relatívna cesta), použite absolútnu cestu aby mohlo byť toto nastavenie filtra aplikované. Uistite sa že každý môže prečítať súbor ale len vy máte prístup k jeho prepísaniu -- teraz môžete spustiť prehliadač a pridať niekoľko filtrov/subskripcií aby ich každý mohol použiť."
+  },
+  "s16": {
+    "message": "Ak naozaj chcete aby bol Adblock Plus neviditeľný stačí ak pridáte filter na <a>jeho vymazanie z prostredia </a> a <a>kontextového menu</a>."
+  },
+  "s17": {
+    "message": "Ako nainštalovať Adblock Plus pre K-Meleon?"
+  },
+  "s18": {
+    "message": "K-Meleon pre Adblock Plus a inštrukcie ako nainštalovať Adblock Plus môžete nájsť <a>tu</a>."
+  }
+}
