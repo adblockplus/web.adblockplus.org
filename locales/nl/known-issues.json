@@ -1,0 +1,248 @@
+{
+  "title": {
+    "message": "Bekende problemen"
+  },
+  "s5": {
+    "message": "Deze pagina geeft een overzicht van bekende fouten in Adblock Plus. Als uw probleem er niet bij staat, controleer dan alstublieft <a>het forum</a> en maak een nieuw onderwerp indien nodig (registratie is niet verplicht)."
+  },
+  "s6": {
+    "message": "Installatie mislukt met de melding \"Signing could not be verified\""
+  },
+  "s7": {
+    "message": "<strong>Oorzaak 1</strong>: Verouderde browser versie"
+  },
+  "s8": {
+    "message": "Verouderde browsers zoals vroege Firefox 3.0 releases kunnen de digitale ondertekening van het Adblock Plus pakket niet controleren."
+  },
+  "s9": {
+    "message": "<strong>Oplossing</strong>: Controleer dat uw browser voldoet aan <a>de systeemeisen</a>, werk bij naar de huidige versie indien nodig."
+  },
+  "s10": {
+    "message": "<strong>Oorzaak 2</strong>: Corrupt installatiepakket"
+  },
+  "s11": {
+    "message": "Adblock Plus pakketten zijn digitaal ondertekend om ongeautoriseerde wijzigingen tegen te gaan. Deze foutmelding kan er op wijzen dat het pakket is gewijzigd, als u het van een website van een derde partij installeert."
+  },
+  "s12": {
+    "message": "<strong>Oplossing</strong>: Installeer Adblock Plus van <a>addons.mozilla.org</a>."
+  },
+  "s13": {
+    "message": "<strong>Oorzaak 3</strong>: Verouderde certificate store"
+  },
+  "s14": {
+    "message": "Om de digitale ondertekening van Adblock Plus te kunnen controleren moet uw browser certificaten uitgegeven door StartCom Ltd. accepteren. Op systemen waar de certificate store onafhankelijk van de browser is kan de certificate store verouderd zijn wat voorkomt dat de digitale ondertekening herkend wordt."
+  },
+  "s15": {
+    "message": "<strong>Van toepassing op</strong>: Enkele Linux distributies (alleen distribution-supplied browser builds)"
+  },
+  "s16": {
+    "message": "<strong>Oplossing</strong>: Werk &quot;nss&quot; pakket bij naar versie 1.3.1 of hoger. Zie &quot;Oorzaak 4&quot; voor een alternatieve oplossing."
+  },
+  "s17": {
+    "message": "<strong>Oorzaak 4</strong>: Verkeerd geconfigureerde certificate store"
+  },
+  "s18": {
+    "message": "Op sommige systemen is de certificate store fout geconfigureerd en worden certificaten uitgegeven door StatrCom Ltd. gemarkeerd als niet vertrouwd. Hierdoor wordt de Adblock Plus digitale ondertekening niet herkend."
+  },
+  "s19": {
+    "message": "<strong>Oplossing</strong>: Ga naar het"
+  },
+  "s20": {
+    "message": "http://support.mozilla.org/nl/kb/Opties-venster%20-%20paneel%20Geavanceerd#w_tabblad-encryptie"
+  },
+  "s21": {
+    "message": "encryptie/certificaten tabblad van uw browsers opties"
+  },
+  "s22": {
+    "message": "en klik \"Certificaten bekijken\". Zoek onder \"Organisaties\" naar \"StartCom Certification Authority\", klik deze aan en selecteer \"Vertrouwen bewerken\". Let er op dat alle velden aangevinkt zijn en bevestig dit door op OK te klikken."
+  },
+  "s23": {
+    "message": "Installatie mislukt met een andere foutmelding (bijvoorbeeld -228 of -203)"
+  },
+  "s24": {
+    "message": "Voor overige installatieproblemen verwijzen wij u naar de"
+  },
+  "s25": {
+    "message": "http://support.mozilla.org/nl/kb/Kan%20geen%20add-ons%20installeren"
+  },
+  "s26": {
+    "message": "algemene probleem pagina"
+  },
+  "s27": {
+    "message": "."
+  },
+  "s28": {
+    "message": "Adblock Plus pictogram en Adblock Plus regel in het Extra menu verschijnen niet na installatie"
+  },
+  "s29": {
+    "message": "<strong>Oorzaak 1</strong>: De Adblock Plus extensie is uitgeschakeld"
+  },
+  "s30": {
+    "message": "Als u de Add-on beheerder (menu Extra / Add-ons) opent en Adblock Plus opzoekt bij de extensies is de regel grijs in plaats van zwart (uitgeschakeld)."
+  },
+  "s31": {
+    "message": "<strong>Oplossing</strong>: Klik op de Adblock Plus regel in de Add-onbeheerder en klik op de &quot;Inschakelen&quot; knop."
+  },
+  "s32": {
+    "message": "<strong>Oorzaak 2</strong>: <a>Mozilla bug 770669</a>"
+  },
+  "s33": {
+    "message": "Dit kan voorkomen doordat de browser crasht na het updaten van Adblock Plus 2.0.x naar een nieuwere Adblock Plus versie."
+  },
+  "s34": {
+    "message": "<strong>Van toepassing op</strong>: Adblock Plus 2.1 en hoger"
+  },
+  "s35": {
+    "message": "<strong>Oplossing</strong>:"
+  },
+  "s36": {
+    "message": "http://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_how-to-disable-extensions0-personassf-and-plugins"
+  },
+  "s37": {
+    "message": "Schakel Adblock Plus uit"
+  },
+  "s38": {
+    "message": "en dan meteen weer in te schakelen. Het is niet nodig om je browser te herstarten."
+  },
+  "s39": {
+    "message": "<strong>Oorzaak 3</strong>: <a>Mozilla bug 744833</a>"
+  },
+  "s40": {
+    "message": "Als het pad van het gebruikersprofiel wijzigt, bijvoorbeeld als je Firefox portable op verschillende computers gebruikt, zullen alle herstart-loze extensies stoppen met werken."
+  },
+  "s41": {
+    "message": "<strong>Van toepassing op</strong>: Adblock Plus 2.1 en hoger"
+  },
+  "s42": {
+    "message": "<strong>Oplossing</strong>: Update naar Firefox 15 of hoger. Als dat niet mogelijk is,"
+  },
+  "s43": {
+    "message": "http://support.mozilla.org/nl/kb/disable-or-remove-add-ons#w_how-to-disable-extensions0-personassf-and-plugins"
+  },
+  "s44": {
+    "message": "schakel Adblock Plus dan uit"
+  },
+  "s45": {
+    "message": "en meteen weer in (hiervoor is geen herstart van uw browser nodig)."
+  },
+  "s46": {
+    "message": "Firefox kan geen nieuwe vensters openen"
+  },
+  "s47": {
+    "message": "<strong>Oorzaak</strong>: Zone Alarm Spy Blocker Toolbar extensie"
+  },
+  "s48": {
+    "message": "Dit probleem wordt veroorzaakt door de <a>Ask Toolbar 2.1.0.5 extensie</a> (met name de variant genaamd &quot;Zone Alarm Spy Blocker Toolbar&quot;) door het gebruik van slechte codering."
+  },
+  "s49": {
+    "message": "<strong>Oplossing</strong>:"
+  },
+  "s50": {
+    "message": "http://support.mozilla.org/nl/kb/add-ons-de-installeren"
+  },
+  "s51": {
+    "message": "Verwijderen of uitschakelen"
+  },
+  "s52": {
+    "message": "van de Ask Toolbar."
+  },
+  "s53": {
+    "message": "Adblock Plus blokkeert geen een advertentie"
+  },
+  "s54": {
+    "message": "<strong>Oorzaak 1</strong>: Er zijn geen filters toegevoegd"
+  },
+  "s55": {
+    "message": "&quot;Uit zichzelf&quot; blokkert Adblock Plus niets, als u weigert een filterabonnement toe te voegen na de installatie van Adblock Plus, dan heeft het geen effect tenzij u zelf handmatig filters definieert. <a>Meer informatie</a>"
+  },
+  "s56": {
+    "message": "<strong>Oplossing</strong>: Voeg een filterabonnement toe (liefst een die overeenkomt met uw taal) <a>uit de lijst</a>."
+  },
+  "s57": {
+    "message": "<strong>Oorzaak 2</strong>: De Adblock Plus gegevensbank is corrupt geraakt"
+  },
+  "s58": {
+    "message": "Bij sommige mensen wordt de Adblock Plus gegevensbank soms corrupt (dit komt zelden voor, gebeurt meestal maximaal een keer) wat tot gevolg heeft dat hun filterlijst leeg wordt (dit kan gecontroleerd worden via menu Extra / Adblock Plus opties). De oorzaak van dit probleem is nog onbekend."
+  },
+  "s59": {
+    "message": "<strong>Oplossing</strong>: Voeg opnieuw een filterabonnement toe <a>uit de lijst</a>. U kunt de gegevensbank ook herstellen van een automatisch gecreëerde back-up:"
+  },
+  "s60": {
+    "message": "Open"
+  },
+  "s61": {
+    "message": "http://support.mozilla.org/nl/kb/Profielen#w_hoe-vind-ik-mijn-profiel"
+  },
+  "s62": {
+    "message": "uw profielmap"
+  },
+  "s63": {
+    "message": "."
+  },
+  "s64": {
+    "message": "Open de \"adblockplus\" submap van uw profiel."
+  },
+  "s65": {
+    "message": "Sluit uw browser af."
+  },
+  "s66": {
+    "message": "Merk op dat het bestand patterns.ini klein is (minder dan 1 KB), verwijder het."
+  },
+  "s67": {
+    "message": "Hernoem patterns-backupN.ini naar patterns.ini (waar N een getal is -- neem het eerste bestand dat groter is dan 1 KB)."
+  },
+  "s68": {
+    "message": "<strong>Oorzaak 3</strong>: Adblock Plus is uitgeschakeld"
+  },
+  "s69": {
+    "message": "Adblock Plus kan tijdelijk uitgeschakeld zijn, wat u kunt herkennen aan een grijs ABP pictogram in tegenstelling tot de normale rode kleur."
+  },
+  "s70": {
+    "message": "<strong>Oplossing</strong>: Schakel Adblock Plus in door ophet ABP pictogram te klikken met de middelste muisknop of door met rechts op het pictogram te kliken en &quot;Overal inschakelen&quot; uit het keuzemenu te selecteren."
+  },
+  "s71": {
+    "message": "Adblock Plus blokkeert geen redirects in Firefox Mobile 4"
+  },
+  "s72": {
+    "message": "<strong>Oorzaak</strong>: <a>Mozilla bug 646373</a>"
+  },
+  "s73": {
+    "message": "<strong>Van toepassing op</strong>: Adblock Plus 1.3.6 en hoger op Firefox Mobile 4"
+  },
+  "s74": {
+    "message": "<strong>Oplossing</strong>: Op het moment geen, de bug moet opgelost worden in een toekomstige versie van Firefox Mobile."
+  },
+  "s75": {
+    "message": "Volg-mij-niet kopregel wordt niet verstuurd in Firefox Mobile 4 ondanks"
+  },
+  "s76": {
+    "message": "filter"
+  },
+  "s77": {
+    "message": "<strong>Oorzaak</strong>: Volg-mij-niet wordt niet ondersteund in Firefox Mobile 4"
+  },
+  "s78": {
+    "message": "<strong>Oplossing</strong>: Op het moment is er geen oplossing, toekomstige versies van Adblock Plus hebben mogelijk wel ondersteuning."
+  },
+  "s79": {
+    "message": "Tabs in Flash en Java lijken niet betrouwbaar"
+  },
+  "s80": {
+    "message": "<strong>Oorzaak</strong>: Adblock Plus weet niet wanneer een tab getoond moet worden"
+  },
+  "s81": {
+    "message": "<strong>Van toepassing op</strong>: Adblock Plus 1.1 en hoger op Fedora Linux"
+  },
+  "s82": {
+    "message": "<strong>Oplossing</strong>: Gebruik <a>officiële browser builds</a> in plaats van de distributie-geleverde builds."
+  },
+  "s83": {
+    "message": "Onvertaalde (Engelse) strings in sommige talen"
+  },
+  "s84": {
+    "message": "<strong>Oorzaak</strong>: Onbeheerde vertalingen"
+  },
+  "s85": {
+    "message": "Helaas, niet alle Adblock Plus vertalingen worden even goed onderhouden. Sommige missen de deadline voor een Adblock Plus release of worden zelfs helemaal niet meer bijgewerkt."
+  }
+}

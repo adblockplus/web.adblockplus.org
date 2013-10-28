@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "Convertir expresiones regulares en filtros simples"
+  },
+  "s1": {
+    "message": "A partir de Adblock Plus 0.7 la comprobación de filtros simples (que no son expresiones regulares) se ha optimizado de tal manera que aunque utilice una enorme cantidad de filtros su navegador no irá más lento. Desgraciadamente, esta optimización no funciona para expresiones regulares, así que cada expresión regular de su lista provoca que navegar con Adblock Plus sea un poco más lento. Durante mucho tiempo se han usado expresiones regulares para \"comprimir\" una lista de filtros, lo que originaba reglas de filtros largas e incompresibles -- lo que ya no resulta necesario."
+  },
+  "s2": {
+    "message": "Esta página evaluará una lista de filtros e intentará convertir las expresiones regulares en un conjunto de filtros simples para mejorar el rendimiento de la lista. Por ejmplo, convertirá el filtro"
+  },
+  "s3": {
+    "message": "/ad|banner/"
+  },
+  "s4": {
+    "message": "en dos filtros,"
+  },
+  "s5": {
+    "message": "ad"
+  },
+  "s6": {
+    "message": "y"
+  },
+  "s7": {
+    "message": "banner"
+  },
+  "s8": {
+    "message": ". Y dejará inalteradas expresiones regulares como"
+  },
+  "s9": {
+    "message": "/ads|ad\\d+/"
+  },
+  "s10": {
+    "message": "puesto que la expresión"
+  },
+  "s11": {
+    "message": "\\d"
+  },
+  "s12": {
+    "message": "no tiene un equivalente directo en la sintaxis de filtros simples y esta herramienta por ahora no puede extraer fragmentos de expresiones regulares."
+  },
+  "s13": {
+    "message": "Por favor, abra las preferencias de Adblock Plus y marque todos los filtros que desea comprobar. Cópielos (seleccione Editar -- Copiar en el menú o pulse Ctrl+C) y péguelos en el campo de texto de la parte inferior."
+  },
+  "s14": {
+    "message": "<em>Declaración de privacidad</em>: No se enviará ningún dato al servidor. Todos los cálculos y operaciones necesarios se llevan a cabo dentro de su ordenador, y sus datos nunca saldrán de él."
+  },
+  "s15": {
+    "message": "Convertir expresiones regulares"
+  },
+  "s16": {
+    "message": "Debajo de este texto puede ver su lista de filtros con las expresiones regulares ya sustituidas siempre que haya sido posible. Ahora puede copiar y pegarla en sus preferencias de Adblock Plus (antes tendrá que eliminar los filtros ya existentes). O también puede"
+  },
+  "s17": {
+    "message": "pulsar aquí"
+  },
+  "s18": {
+    "message": "para que los filtros se muestren en una página separada. Guárdelos en un archivo que luego deberá importar en las preferencias de Adblock Plus. También le recomendamos que <a>compruebe su lista de filtros redundantes</a>."
+  }
+}

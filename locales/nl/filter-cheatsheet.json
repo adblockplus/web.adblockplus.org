@@ -1,0 +1,512 @@
+{
+  "title": {
+    "message": "Het gebruik van Adblock Filters nader toegelicht"
+  },
+  "s2": {
+    "message": "Eenvoudige blokkerende regels"
+  },
+  "s3": {
+    "message": "Blokkerende filters bepalen welke adressen Adblock Plus moet blokkeren."
+  },
+  "s4": {
+    "message": "Voorbeeld 1: Blokkeren op deel van adres"
+  },
+  "s5": {
+    "message": "Letterlijke tekst"
+  },
+  "s6": {
+    "message": "Deze tekst moet voorkomen in het adres dat geblokkeerd moet worden."
+  },
+  "s7": {
+    "message": "Jokerteken"
+  },
+  "s8": {
+    "message": "Dit staat voor elk willekeurig aantal karakters."
+  },
+  "s9": {
+    "message": "Scheidingsteken"
+  },
+  "s10": {
+    "message": "Het adres moet of hier eindigen of er moet een scheidingsteken zoals ? of / volgen."
+  },
+  "s11": {
+    "message": "/banner/"
+  },
+  "s12": {
+    "message": "*"
+  },
+  "s13": {
+    "message": "/img"
+  },
+  "s14": {
+    "message": "^"
+  },
+  "s15": {
+    "message": "Deze regel blokkeert:"
+  },
+  "s16": {
+    "message": "Deze regel blokkeert niet:"
+  },
+  "s17": {
+    "message": "Voorbeeld 2: Blokkeren op adresnaam"
+  },
+  "s18": {
+    "message": "Domeinnaam anker"
+  },
+  "s19": {
+    "message": "De volgende tekst moet de domeinnaam van het adres zijn."
+  },
+  "s20": {
+    "message": "Letterlijke tekst"
+  },
+  "s21": {
+    "message": "Deze tekst moet voorkomen in het adres dat geblokkeerd moet worden."
+  },
+  "s22": {
+    "message": "Scheidingsteken"
+  },
+  "s23": {
+    "message": "Een scheidingsteken moet volgen om het eind van de domeinnaam aan te geven, bijvoorbeeld / of :."
+  },
+  "s24": {
+    "message": "||"
+  },
+  "s25": {
+    "message": "ads.example.com"
+  },
+  "s26": {
+    "message": "^"
+  },
+  "s27": {
+    "message": "Deze regel blokkeert:"
+  },
+  "s28": {
+    "message": "Deze regel blokkeert niet:"
+  },
+  "s29": {
+    "message": "Voorbeeld 3: Blokkeer exact adres"
+  },
+  "s30": {
+    "message": "Start anker"
+  },
+  "s31": {
+    "message": "De volgende tekst moet het begin van het adres zijn."
+  },
+  "s32": {
+    "message": "Letterlijke tekst"
+  },
+  "s33": {
+    "message": "Deze tekst moet voorkomen in het adres dat geblokkeerd moet worden."
+  },
+  "s34": {
+    "message": "Einde anker"
+  },
+  "s35": {
+    "message": "De voorafgaande tekst moet het eind van het adres zijn."
+  },
+  "s36": {
+    "message": "|"
+  },
+  "s37": {
+    "message": "http://example.com/"
+  },
+  "s38": {
+    "message": "|"
+  },
+  "s39": {
+    "message": "Deze regel blokkeert:"
+  },
+  "s40": {
+    "message": "Deze regel blokkeert niet:"
+  },
+  "s41": {
+    "message": "Opties in blokkerende regels"
+  },
+  "s42": {
+    "message": "Blokkerende regels kunnen een aantal opties hebben om hun gedrag te beïnvloeden."
+  },
+  "s43": {
+    "message": "Adres dat geblokkeerd moet worden"
+  },
+  "s44": {
+    "message": "Dit deel van de regel definieert het adres waarop het toegepast wordt."
+  },
+  "s45": {
+    "message": "Optie scheidingsteken"
+  },
+  "s46": {
+    "message": "Dit karakter geeft aan dat de volgende tekst de filter opties bepalen."
+  },
+  "s47": {
+    "message": "Type optie"
+  },
+  "s48": {
+    "message": "Type opties definiëren verzoektypes die geblokkeerd moeten worden. Veel voorkomende type opties zijn"
+  },
+  "s49": {
+    "message": "script"
+  },
+  "s50": {
+    "message": "of"
+  },
+  "s51": {
+    "message": "image"
+  },
+  "s52": {
+    "message": "die aangeven dat alleen scripts/afbeeldingen geblokkeerd moeten worden. De omgekeerde type optie"
+  },
+  "s53": {
+    "message": "~script"
+  },
+  "s54": {
+    "message": "betekent dat het filter niet op scripts moet worden toegepast."
+  },
+  "s55": {
+    "message": "Domein optie"
+  },
+  "s56": {
+    "message": "Domein opties beperken het filter tot een aantal domeinen (hier"
+  },
+  "s57": {
+    "message": "example.com"
+  },
+  "s58": {
+    "message": ").\nHet maakt het ook mogelijk om de regel op sommige domeinen uit te schakelen (hier op"
+  },
+  "s59": {
+    "message": "foo.example.com"
+  },
+  "s60": {
+    "message": ")."
+  },
+  "s61": {
+    "message": "||ads.example.com^"
+  },
+  "s62": {
+    "message": "$"
+  },
+  "s63": {
+    "message": "script"
+  },
+  "s64": {
+    "message": ","
+  },
+  "s65": {
+    "message": "image"
+  },
+  "s66": {
+    "message": ","
+  },
+  "s67": {
+    "message": "domain=example.com|~foo.example.info"
+  },
+  "s68": {
+    "message": "Deze regel blokkeert"
+  },
+  "s69": {
+    "message": "alleen als de volgende condities waar zijn:"
+  },
+  "s70": {
+    "message": "Het adres wordt geladen als een script of afbeelding."
+  },
+  "s71": {
+    "message": "De pagina die geladen wordt komt van het domein"
+  },
+  "s72": {
+    "message": "(bijvoorbeeld"
+  },
+  "s73": {
+    "message": "zelf of"
+  },
+  "s74": {
+    "message": ") maar niet van"
+  },
+  "s75": {
+    "message": "of zijn subdomeinen."
+  },
+  "s76": {
+    "message": "Uitzonderingsregels"
+  },
+  "s77": {
+    "message": "Uitzonderingsregels zijn op dezelfde manier opgebouwd als blokkerende regels, ze definiëren welke adressen toegestaan moeten worden, zelfs als er een overeenkomende blokkerende regel bestaat."
+  },
+  "s78": {
+    "message": "Voorbeeld 1: Uitzondering voor bepaalde verzoeken"
+  },
+  "s79": {
+    "message": "Uitzonderingsregel"
+  },
+  "s80": {
+    "message": "Regels die zo beginnen zijn uitzonderingen, ze overschrijven blokkerende regels."
+  },
+  "s81": {
+    "message": "Adres dat toegestaan moet worden"
+  },
+  "s82": {
+    "message": "Dit deel van de regel definieert op welke adressen het van toepassing is, het is op dezelfde manier opgebouwd als voor <a>blokkerende regels</a>."
+  },
+  "s83": {
+    "message": "Type optie"
+  },
+  "s84": {
+    "message": "Dit type optie voorkomt dat de uitzondering wordt toegepast op scripts."
+  },
+  "s85": {
+    "message": "@@"
+  },
+  "s86": {
+    "message": "||ads.example.com/notbanner^"
+  },
+  "s87": {
+    "message": "$"
+  },
+  "s88": {
+    "message": "~script"
+  },
+  "s89": {
+    "message": "Voorbeeld 2: Uitzondering voor een hele website"
+  },
+  "s90": {
+    "message": "Uitzonderingsregel"
+  },
+  "s91": {
+    "message": "Regels die zo beginnen zijn uitzonderingen, ze overschrijven blokkerende regels."
+  },
+  "s92": {
+    "message": "Adres dat toegestaan moet worden"
+  },
+  "s93": {
+    "message": "Dit deel van de regel definieert op welke adressen het van toepassing is, het is op dezelfde manier opgebouwd als voor <a>blokkerende regels</a>."
+  },
+  "s94": {
+    "message": "Type optie"
+  },
+  "s95": {
+    "message": "Dit speciale type optie geeft aan de Adblock Plus volledig uitgeschakeld moet worden op pagina's die aan deze regel voldoen."
+  },
+  "s96": {
+    "message": "@@"
+  },
+  "s97": {
+    "message": "||example.com^"
+  },
+  "s98": {
+    "message": "$"
+  },
+  "s99": {
+    "message": "document"
+  },
+  "s100": {
+    "message": "Opmerkingen"
+  },
+  "s101": {
+    "message": "Commentaar"
+  },
+  "s102": {
+    "message": "Een uitroepteken aan het begin van de regel geeft een commentaar aan."
+  },
+  "s103": {
+    "message": "Commentaar tekst"
+  },
+  "s104": {
+    "message": "Deze tekst wordt niet gebruikt om te blokkeren, je kan alles schrijven wat je wilt."
+  },
+  "s105": {
+    "message": "!"
+  },
+  "s106": {
+    "message": "Dit is commentaar"
+  },
+  "s107": {
+    "message": "Filter opties"
+  },
+  "s108": {
+    "message": "Optie"
+  },
+  "s109": {
+    "message": "Doel"
+  },
+  "s110": {
+    "message": "Types"
+  },
+  "s111": {
+    "message": "Bevat of schakel javascript bestanden uit"
+  },
+  "s112": {
+    "message": "Bevat of schakel afbeeldingen uit"
+  },
+  "s113": {
+    "message": "Bevat of schakel stylesheets (CSS bestanden) uit"
+  },
+  "s114": {
+    "message": "Bevat of schakel inhoud die door browser plug-ins zoals Flash of Java wordt afgehandeld uit"
+  },
+  "s115": {
+    "message": "Bevat of schakel bestanden die door browser plug-ins geladen worden uit"
+  },
+  "s116": {
+    "message": "Bevat of schakel pagina's in pagina's (frames) uit"
+  },
+  "s117": {
+    "message": "Uitzonderingen"
+  },
+  "s118": {
+    "message": "Wordt gebruikt om de pagina zelf toe te staan (bijvoorbeeld"
+  },
+  "s119": {
+    "message": ")"
+  },
+  "s120": {
+    "message": "Wordt gebruikt om te voorkomen dat een regel op een pagina wordt toegepast (bijvoorbeeld"
+  },
+  "s121": {
+    "message": ")"
+  },
+  "s122": {
+    "message": "Domeinen"
+  },
+  "s123": {
+    "message": "Geef een lijst van domeinen op, gescheiden door pipe symbolen (|), waarop een filter actief zou moeten zijn. Een filter kan worden uitgeschakeld op een domein door de domeinnaam door een tilde (~) vooraf te laten gaan."
+  },
+  "s124": {
+    "message": "Geef aan of een filter actief moet zijn op"
+  },
+  "s125": {
+    "message": "Minder vaak gebruikte opties, zoals bijvoorbeeld"
+  },
+  "s126": {
+    "message": ","
+  },
+  "s127": {
+    "message": ","
+  },
+  "s128": {
+    "message": ","
+  },
+  "s129": {
+    "message": ","
+  },
+  "s130": {
+    "message": ","
+  },
+  "s131": {
+    "message": ","
+  },
+  "s132": {
+    "message": "en"
+  },
+  "s133": {
+    "message": "worden in de <a>volledige documentatie</a>."
+  },
+  "s134": {
+    "message": "Element verbergen"
+  },
+  "s135": {
+    "message": "Het is in het algemeen aanbevolen dat gebruikers de <a>Element Hiding Helper extensie voor Adblock Plus</a> installeren om ze te helpen bij het maken van element verbergende regels."
+  },
+  "s136": {
+    "message": "Domein selectie"
+  },
+  "s137": {
+    "message": "wordt gebruikt ale vervanger voor <a>element selectors</a>."
+  },
+  "s138": {
+    "message": "Voorbeeld regels"
+  },
+  "s139": {
+    "message": "Domein selectie"
+  },
+  "s140": {
+    "message": "Actief op:"
+  },
+  "s141": {
+    "message": "Alle domeinen, inclusief:"
+  },
+  "s142": {
+    "message": "Niet actief op:"
+  },
+  "s143": {
+    "message": "Niet van toepassing"
+  },
+  "s144": {
+    "message": "Bijvoorbeeld actief op:"
+  },
+  "s145": {
+    "message": "Niet actief op:"
+  },
+  "s146": {
+    "message": "Alle overige domeinen inclusief"
+  },
+  "s147": {
+    "message": "Actief op:"
+  },
+  "s148": {
+    "message": "Alle overige domeinen inclusief"
+  },
+  "s149": {
+    "message": "Niet actief op, bijvoorbeeld:"
+  },
+  "s150": {
+    "message": "Bijvoorbeeld actief op:"
+  },
+  "s151": {
+    "message": "Niet actief op:"
+  },
+  "s152": {
+    "message": "Alle o9verige domeinen, zoals:"
+  },
+  "s153": {
+    "message": "Actief op:"
+  },
+  "s154": {
+    "message": "Niet actief op:"
+  },
+  "s155": {
+    "message": "Alle overige domeinen"
+  },
+  "s156": {
+    "message": "Element selection"
+  },
+  "s157": {
+    "message": "Selector"
+  },
+  "s158": {
+    "message": "Doel"
+  },
+  "s159": {
+    "message": "Komt overeen met het element met de unieke id \"adsvert\""
+  },
+  "s160": {
+    "message": "Komt overeen met elementen met de klasse \"advert\""
+  },
+  "s161": {
+    "message": "Komt overeen met een tabel met hoogte 100 en breedte 100"
+  },
+  "s162": {
+    "message": "Komt overeen met snelkoppelingen naar http://example.com/"
+  },
+  "s163": {
+    "message": "Komt overeen met div elementen die precies de opgegeven stijl hebben"
+  },
+  "s164": {
+    "message": "Komt overeen met elementen met de klasse \"link\" die omvat worden door elemten met de id \"advert\""
+  },
+  "s165": {
+    "message": "Komt overeen met elementen met de klasse \"link:  die direct worden voorafgegaan door elementen met de id \"advert\""
+  },
+  "s166": {
+    "message": "Komt overeen met snelkoppelingen naar alle pagina's van de website http://example.com/"
+  },
+  "s167": {
+    "message": "Komt overeen met div elementen die beginnen met de opgegeven stijl"
+  },
+  "s168": {
+    "message": "Komt overeen met div elementen die eindigen met de opgegeven stijl"
+  },
+  "s169": {
+    "message": "Komt overeen met div elementen die de opgegeven stijl bevatten"
+  },
+  "s170": {
+    "message": "Bovenstaande filters zijn slechts voorbeelden van geldige element verbergende regels. Elke <a>CSS selector</a> die door Firefox wordt ondersteund kan worden gebruikt om elementen te verbergen."
+  }
+}

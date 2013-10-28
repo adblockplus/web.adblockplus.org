@@ -1,0 +1,110 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.7.1"
+  },
+  "s1": {
+    "message": "The following lists the major changes compared to Adblock Plus 0.7:"
+  },
+  "s2": {
+    "message": "New features"
+  },
+  "s3": {
+    "message": "Toolbar icon's tooltip shows number of blocked items and three most used filters for the current page"
+  },
+  "s4": {
+    "message": "The time when a filter was last applied is stored now (is shown in the \"Last hit\" column in Preferences, this column is hidden by default)"
+  },
+  "s5": {
+    "message": "User interface"
+  },
+  "s6": {
+    "message": "Added translations: Korean, Thai, Catalan, Croatian"
+  },
+  "s7": {
+    "message": "Added welcome dialog that allows new users to add subscriptions easily (appears on first start unless there the user has some subscriptions already)"
+  },
+  "s8": {
+    "message": "Toolbar icon changes when entering a whitelisted page"
+  },
+  "s9": {
+    "message": "Preferences dialog: made adding new filters easier, using inline editor instead of a dedicated input field now"
+  },
+  "s10": {
+    "message": "Preferences dialog: Ctrl+Enter or Alt+Enter will save and close the dialog now (can be pressed from the inline editor as well)"
+  },
+  "s11": {
+    "message": "Preferences dialog: applying filter changes doesn't slow down the browser's user interface any more"
+  },
+  "s12": {
+    "message": "Preferences dialog: added an icon to abort inline editor"
+  },
+  "s13": {
+    "message": "Preferences dialog: added \"Update all subscriptions\" menu item (keyboard shortcut Ctrl+Shift+T)"
+  },
+  "s14": {
+    "message": "Preferences dialog: mark regular expressions with an exclamation mark"
+  },
+  "s15": {
+    "message": "Preferences dialog: added Apply button, removed Help button"
+  },
+  "s16": {
+    "message": "Preferences dialog: Replaced \"Writing regular expressions\" by \"Writing Adblock Plus filters\" in the Help menu"
+  },
+  "s17": {
+    "message": "Preferences dialog: Using browser's browser.downloads.lastDir preference to determine default directory for import/export of filter lists"
+  },
+  "s18": {
+    "message": "Preferences dialog: Made keyboard shortcuts for the filters list respect ui.key.accelKey preference"
+  },
+  "s19": {
+    "message": "Sidebar: Selected item is kept when switching tabs and closing/opening sidebar"
+  },
+  "s20": {
+    "message": "Sidebar: Tooltip now shows only images that are in browser's cache, no additional server requests"
+  },
+  "s21": {
+    "message": "Hiding &quot;Block images from ...&quot; in the context menu (image manager's entry) to avoid confusion -- unless image manager is already blocking something or <a>extensions.adblockplus.hideimagemanager</a>"
+  },
+  "s22": {
+    "message": "Core"
+  },
+  "s23": {
+    "message": "Changed lower bounds for required browser versions to improve stability and performance: at least Firefox 1.5 and SeaMonkey 1.0 are required now. Netscape Browser and Mozilla Suite are not supported any more. SeaMonkey's suiterunner nightlies are supported now."
+  },
+  "s24": {
+    "message": "Filters now support options to specify the type of element they should be applied to"
+  },
+  "s25": {
+    "message": "Implemented workaround for crash with Mozilla ActiveX Plugin is installed"
+  },
+  "s26": {
+    "message": "Fixed: object tabs not hidden properly when blocking objects (regression in Adblock Plus 0.7.0.2)"
+  },
+  "s27": {
+    "message": "Importing filter lists starting with [Adblock Plus] or [Adblock Plus {version}] now supported"
+  },
+  "s28": {
+    "message": "Filter list export determines lowest required Adblock/Adblock Plus version and starts the list with either [Adblock] (no special requirements), comment+[Adblock] (a version of Adblock Plus lower than 0.7.1 is required) or [Adblock Plus {version}] (Adblock Plus 0.7.1 or higher required)"
+  },
+  "s29": {
+    "message": "Subscription download now sends \"If-Modified-Since\" headers (user can override by holding Shift when clicking \"Update subscription\")"
+  },
+  "s30": {
+    "message": "Subscription download respects \"Expires\" header received from subscription now, subscriptions will only be downloaded again after the expiration date (but no longer than two weeks after previous download)"
+  },
+  "s31": {
+    "message": "Fixed: Subscription download sometimes fails without an obvious reason"
+  },
+  "s32": {
+    "message": "Known issues"
+  },
+  "s33": {
+    "message": "Yahoo Application State plugin (npYState.dll, installed by Yahoo Messenger) causes crashes on Yahoo Mail if Adblock Plus is installed. It is suggested to remove this plugin, its only function seems to be to notify Yahoo Mail about your version of Yahoo Messenger."
+  },
+  "s34": {
+    "message": "Turkish translation contains some English strings"
+  },
+  "s35": {
+    "message": "Changelog for the previous release"
+  }
+}

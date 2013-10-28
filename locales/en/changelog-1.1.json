@@ -1,0 +1,173 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 1.1"
+  },
+  "s1": {
+    "message": "The following lists the major changes compared to Adblock Plus 1.0.2:"
+  },
+  "s2": {
+    "message": "Known issues"
+  },
+  "s3": {
+    "message": "Thunderbird: When clicking &quot;Subscribe&quot; in the subscription list on first run, the entire Thunderbird window is closed. This should be fixed in Thunderbird soon (<a>bug 503299</a>)."
+  },
+  "s4": {
+    "message": "SeaMonkey: Toolbar icon looks ugly with the Modern theme. Modern theme doesn't seem to consider the possibility of extensions, using it with Adblock Plus isn't recommended."
+  },
+  "s5": {
+    "message": "Some translations contain untranslated English strings."
+  },
+  "s6": {
+    "message": "New features"
+  },
+  "s7": {
+    "message": "Added handling of HTTP redirects, the redirect address now shows up in the list of blockable items as well as the original address, both can be blocked."
+  },
+  "s8": {
+    "message": "Added support for <a>flexible anchors at start of filter</a> (<a>forum topic</a>)."
+  },
+  "s9": {
+    "message": "Added support for ^ character that will match a <a>single separator character or end of address</a> (<a>forum topic</a>)."
+  },
+  "s10": {
+    "message": "Added support for <a>domain exceptions in element hiding</a> analogous to the $domain option of regular filters, e.g. &quot;example.com,~foo.example.com##foo&quot; or &quot;~example.com##foo&quot; (<a>forum topic</a>)."
+  },
+  "s11": {
+    "message": "User interface"
+  },
+  "s12": {
+    "message": "\"Block\" button on plug-ins (e.g. Flash or Java) is no longer shown permanently, it only shows up when the mouse is on the plug-in area."
+  },
+  "s13": {
+    "message": "Added \"Re-enable Adblock Plus on this page\" context menu item for pages where Adblock Plus is disabled, this removes/disables the filter responsible."
+  },
+  "s14": {
+    "message": "Browser integration code runs in its own context now, this makes conflicts with other extensions less likely."
+  },
+  "s15": {
+    "message": "Changed the way \"add subscription\" links work, these can now only be triggered by user clicking a link."
+  },
+  "s16": {
+    "message": "Added diagnostic page displaying all errors related to Adblock Plus as well as Adblock Plus version/source code revision, can be opened by typing"
+  },
+  "s17": {
+    "message": "chrome://adblockplus/content/errors.html"
+  },
+  "s18": {
+    "message": "into the location bar."
+  },
+  "s19": {
+    "message": "Fixed: ABP icon updates its status every two seconds, hogs CPU time."
+  },
+  "s20": {
+    "message": "Fixed: Detection of background images breaks the context menu."
+  },
+  "s21": {
+    "message": "Fixed: \"Disable on ...\" doesn't work correctly if the exception rule already exists but is disabled."
+  },
+  "s22": {
+    "message": "Fixed: \"Disable on ...\" doesn't work correctly with rules that already exist in filter subscriptions rather than user-defined filters."
+  },
+  "s23": {
+    "message": "Fixed: Input focus issues when closing list of blockable items in current Firefox nightly builds."
+  },
+  "s24": {
+    "message": "List of blockable items"
+  },
+  "s25": {
+    "message": "Added &quot;document source&quot; column, hidden by default (domain name to be used for the $domain filter option, <a>forum topic</a>)."
+  },
+  "s26": {
+    "message": "Added \"Disable this filter on example.com\" context menu item for user-defined filters (adds $domain option as required)."
+  },
+  "s27": {
+    "message": "Fixed: Creating a filter for an item matching a disabled exception rule wasn't possible again (<a>forum topic</a>)."
+  },
+  "s28": {
+    "message": "Preferences window"
+  },
+  "s29": {
+    "message": "\"Slow filter\" warning is now a separate list column which can be used for sorting."
+  },
+  "s30": {
+    "message": "Using browser's real find bar now instead of faking it."
+  },
+  "s31": {
+    "message": "\"Close\" button moved to the right side of the filter editor, made the button use Firefox 3 look."
+  },
+  "s32": {
+    "message": "Improved position calculations for the filter editor, no longer makes the text position change."
+  },
+  "s33": {
+    "message": "Fixed: Enabling/disabling many element hiding rules at once is slow."
+  },
+  "s34": {
+    "message": "When a list of filters is pasted or imported, always insert comments before the filter that follows them (<a>forum topic</a>, <a>forum topic</a>)."
+  },
+  "s35": {
+    "message": "Fixed: Adding a filter subscription that redirects to a different address causes download failure."
+  },
+  "s36": {
+    "message": "Fixed: Same filter might appear twice in the list in a particular scenario."
+  },
+  "s37": {
+    "message": "Fixed: Wrong row is selected when the window is opened (worked around <a>bug 489881</a>)."
+  },
+  "s38": {
+    "message": "Filter composer"
+  },
+  "s39": {
+    "message": "Added flexible anchors as an option -- &quot;at the beginning of domain name&quot; (<a>forum topic</a>)."
+  },
+  "s40": {
+    "message": "Added &quot;example.com^&quot; as fourth suggestion, block the entire domain (<a>forum topic</a>)."
+  },
+  "s41": {
+    "message": "Added warning when adding a filter to a disabled filter group (<a>forum topic</a>)."
+  },
+  "s42": {
+    "message": "Application support"
+  },
+  "s43": {
+    "message": "Dropped compatibility with old application versions and cleaned up code, now requiring at least: Firefox 3.0.9, SeaMonkey 2.0b1, Thunderbird 3.0b3, Songbird 1.2, Prism 1.0b1."
+  },
+  "s44": {
+    "message": "Moved almost all application-specific code to the overlay file corresponding with that application, this should make application-specific changes easier in future."
+  },
+  "s45": {
+    "message": "Fixed: Toolbar icon cannot be moved to a different location (SeaMonkey)."
+  },
+  "s46": {
+    "message": "Fixed: Toolbar icon might be added in one window but not another on first start (SeaMonkey and Thunderbird)."
+  },
+  "s47": {
+    "message": "Fixed: Indentation of some menu items of the toolbar icon's menu too large (Songbird)."
+  },
+  "s48": {
+    "message": "Fixed: Adblock Plus initialization fails (Prism)."
+  },
+  "s49": {
+    "message": "Core"
+  },
+  "s50": {
+    "message": "Added explicit support for blocking fonts (@font-type CSS directive in Firefox 3.5)."
+  },
+  "s51": {
+    "message": "Clearing browsing history in Firefox now clears hit statistics in Adblock Plus as well (this can be disabled with the hidden <a>extensions.adblockplus.clearStatsOnHistoryPurge</a> preference, <a>forum topic</a>)."
+  },
+  "s52": {
+    "message": "Cleaned up data management code, made sure Adblock Plus doesn't use up more memory than necessary."
+  },
+  "s53": {
+    "message": "Fixed: Webpages can easily detect \"Collapse blocked elements\" option."
+  },
+  "s54": {
+    "message": "Fixed: An error is reported to console on first run (patterns.ini not found)."
+  },
+  "s55": {
+    "message": "Fixed: Domain-restricted filters were applied to pages opened from disk."
+  },
+  "s56": {
+    "message": "Changelog for the previous release"
+  }
+}

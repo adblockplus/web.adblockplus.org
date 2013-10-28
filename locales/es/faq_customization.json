@@ -1,0 +1,95 @@
+{
+  "title": {
+    "message": "Preguntas frecuentes - Personalización de la interfaz de usuario"
+  },
+  "s1": {
+    "message": "¿Cómo pongo el icono de Adblock Plus en la barra de herramientas?"
+  },
+  "s2": {
+    "message": "Normalmente el icono se añade automáticamente la primera vez que instala Adblock Plus, pero quizás se eliminó de algún modo después. En Firefox puede personalizar la barra de herramientas haciendo clic derecho en la barra de herramientas y seleccionando \"Personalizar...\". Se abrirá una ventana con iconos, y entre ellos debe estar el de Adblock Plus. Arrástrelo con el ratón hasta la barra de herramientas y colóquelo donde desee. Puede cambiar de lugar los iconos de la barra arrastrándolos mientras sigue abierta la ventana de personalización."
+  },
+  "s3": {
+    "message": "¿Cómo puedo quitar el icono de Adblock Plus de la barra de herramientas?"
+  },
+  "s4": {
+    "message": "Si no le gusta el icono o necesita el espacio para cosas más importantes, pulse sobre la flecha al lado del icono, seleccione menú \"Opciones\" y luego \"Mostrar en la barra de herramientas\". También puede acceder al menú de Opciones en la ventana de Preferencias -- por si acaso decide más tarde reponer el icono. Por cierto, puede utilizar la personalización de barras de herramientas que trae de serie Firefox."
+  },
+  "s5": {
+    "message": "¿Cómo puedo hacer que el icono se vuelva verde en los sitios web de la lista blanca?"
+  },
+  "s6": {
+    "message": "Si quiere que el icono de Adblock Plus vuelva a comportarse como antes de Adblock Plus 1.3.5\n  (verde cuando Adblock Plus está desactivado en un sitio web, gris si está desactivado de forma global), puede instalar <a>este estilo de usuario</a>\n  (necesitará la <a>extensión Stylish</a>)."
+  },
+  "s7": {
+    "message": "¿Cómo consigo que la lista de elementos bloqueables se muestre en el lateral/en la parte superior?"
+  },
+  "s8": {
+    "message": "¿Prefiere que la lista de elementos bloqueables esté en el lado izquierdo del navegador como ocurría antes de Adblock Plus 0.7.5? Puede hacer que sea así con <a>este estilo de usuario</a> (necesitará la <a>extensión Stylish</a>). De este modo el estilo se asegurará de que la lista se muestre en el lado izquierdo de la ventana del navegador, como un panel lateral. También puede eliminar una de las líneas marcadas cuando aparezca el mensaje para añadir el estilo -- en ese caso la lista de elementos bloqueables se mostrará en el lado derecho o en la parte superior."
+  },
+  "s9": {
+    "message": "<em>Nota</em>: Esto no hace que la lista de elementos bloqueables sea un verdadero panel lateral. Se puede abrir al mismo tiempo que un verdadero panel lateral como el del Historial."
+  },
+  "s10": {
+    "message": "¿Cómo puedo hacer para que aparezca texto en la barra de estado en vez de un icono?"
+  },
+  "s11": {
+    "message": "Las versiones anterior de Adblock Plus mostraban la palabra &quot;Adblock&quot; en la barra de estado. Este comportamiento puede reponerse con <a>este estilo de usuario</a> (necesitará la <a>extensión Stylish</a>)."
+  },
+  "s12": {
+    "message": "¿Cómo puedo mover el icono de Adblock Plus desde la barra de estado a otro lugar?"
+  },
+  "s13": {
+    "message": "Adblock Plus 0.5 permitía arrastrar el icono dentro de la barra de estado. En las siguientes versiones se decidió que esta funcionalidad se usa raramente y que no debería ir integrada. Una extensión como <a>Organize Status Bar</a> puede hacer eso mucho mejor."
+  },
+  "s14": {
+    "message": "¿Cómo elimino Adblock Plus de todos los menús del navegador?"
+  },
+  "s15": {
+    "message": "Para ocultar las entradas de Adblock Plus del menú Herramientas y del menú contextual tendrá que instalar la extensión <a>Customizations for\n  Adblock Plus</a>."
+  },
+  "s16": {
+    "message": "Después de instalarla, búsquela en el Administrador de complementos y pulse el botón de Opciones de la extensión."
+  },
+  "s17": {
+    "message": "Marque la opción de \n  \"Eliminar Adblock Plus de los menús del navegador\"."
+  },
+  "s18": {
+    "message": "¿Cómo cambio los iconos que muestra Adblock Plus?"
+  },
+  "s19": {
+    "message": "Si prefiere los iconos utilizados antes de Adblock Plus 0.7.2 (la cucaracha), puede usar <a>este estilo de usuario</a> para reponerlo (se recomienda usarlo con <a>Stylish</a>). Pero si tienen un icono mejor, puede crear su propio estilo utilizando esta plantilla:"
+  },
+  "s20": {
+    "message": "Se asume que las imágenes (una con tres iconos de 16×16 y otra con tres iconos de 24×24 apilados verticalmente) están ubicados en el directorio c:\\icons, si no es así tiene que cambiar la dirección. Para aplicar este estilo puede usar <a>Stylish</a> o editar el archivo chrome/userChrome.css en su directorio de perfil ("
+  },
+  "s21": {
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+  },
+  "s22": {
+    "message": "¿dónde está mi directorio de perfil?"
+  },
+  "s23": {
+    "message": ") y añadir este código. Si no existe el archivo userChrome.css tendrá que crearlo."
+  },
+  "s24": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
+  },
+  "s25": {
+    "message": "¿Cómo puedo cambiar el atajo de teclado para... / añadir un atajo de teclado para desactivar Adblock Plus?"
+  },
+  "s26": {
+    "message": "Existen tres preferencias ocultas a las que se puede llegar a través de"
+  },
+  "s27": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s28": {
+    "message": "about:config"
+  },
+  "s29": {
+    "message": "y que definen los atajos de teclado para Adblock Plus <a>extensions.adblockplus.sidebar_key</a> (abrir/cerrar la ventana de elementos bloqueables), <a>extensions.adblockplus.settings_key</a> (abrir el diálogo de Preferencias), y <a>extensions.adblockplus.enable_key</a> (activar/desactivar Adblock Plus). Puede cambiar los tres como desee."
+  },
+  "s30": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
+  }
+}

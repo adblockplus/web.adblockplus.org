@@ -1,0 +1,95 @@
+{
+  "title": {
+    "message": "FAQ - 自訂使用者介面"
+  },
+  "s1": {
+    "message": "我要怎麼把 Adblock Plus 的圖示放在我的工具列上？"
+  },
+  "s2": {
+    "message": "圖示會在您初次安裝 Adblock Plus 時自動加入，但後來也許因為某些原因被移除。在 Firefox 中您可以自訂工具列，只需在工具列點擊右鍵並選擇「自訂」。此時會出現一個帶有圖示的視窗，Adblock Plus 應該會出現在裡頭。只要利用滑鼠將圖示拖曳至您想要在工具列上面放的位置即可。您也可以在視窗開啟時利用拖曳功能重新排列圖示。"
+  },
+  "s3": {
+    "message": "我要怎麼從工具列上移除 Adblock Plus 的圖示？"
+  },
+  "s4": {
+    "message": "您不喜歡這個圖示，或想要騰出空間來擺更重要的東西嗎？請點擊該圖示，並取消勾選「選項」裡的「在工具列顯示」即可。若想要還原圖示，偏好設定中同樣也有選項目錄。另外，您同樣可以利用 Firefox 內建的自訂工具列功能來達成。"
+  },
+  "s5": {
+    "message": "我要怎麼在瀏覽白名單網站時讓圖示變成綠色的？"
+  },
+  "s6": {
+    "message": "如果您想要還原成 Adblock Plus 1.3.5 之前版本的圖示 (綠色表示在某網站停用，灰色表示完全停用)，您可以安裝 <a>這個使用者樣式</a>\n  (需要 <a>Stylish</a>)。"
+  },
+  "s7": {
+    "message": "我要怎麼讓可阻擋項目顯示在兩邊或上面？"
+  },
+  "s8": {
+    "message": "您比較喜歡 Adblock Plus 0.7.5 之前版本那樣，將可阻擋項目放在瀏覽器左側嗎？您可以安裝 <a>這個使用者樣式</a> (需要 <a>Stylish</a>)。此樣式會使該列表像側邊欄一樣顯示在瀏覽器視窗的左邊。您也可以在加入樣式的視窗中刪除特別標記的其中一行 -- 這會使可阻擋項目顯示在右邊或上面。"
+  },
+  "s9": {
+    "message": "<em>備註</em>：這不會讓可阻擋項目變成真的側邊欄。它可以和瀏覽紀錄之類的側邊欄同時開啟。"
+  },
+  "s10": {
+    "message": "我要怎麼讓狀態列顯示文字而非圖示？"
+  },
+  "s11": {
+    "message": "過去的 Adblock Plus 版本在狀態列使用「Adblock」字樣。使用 <a>這個使用者樣式</a> (需要 <a>Stylish</a>) 可以還原這種表現方式。"
+  },
+  "s12": {
+    "message": "我要怎麼將 Adblock Plus 的圖示從狀態列移到其他位置？"
+  },
+  "s13": {
+    "message": "Adblock Plus 0.5 版本曾允許在狀態列拖曳圖示。後來因為很少用到所以就不再內建此功能。擴充套件 <a>Organize Status Bar</a> 在這方面能作得更好。"
+  },
+  "s14": {
+    "message": "我要怎麼將 Adblock Plus 從瀏覽器所有的目錄中移除？"
+  },
+  "s15": {
+    "message": "您可以安裝 <a>Customizations for Adblock Plus</a> 擴充套件來隱藏工具選單和右鍵選單裡的 Adblock Plus 選項。"
+  },
+  "s16": {
+    "message": "安裝完成後，請在附加元件管理員找出 Customizations 並按下選項按鈕。"
+  },
+  "s17": {
+    "message": "勾選「從瀏覽器目錄中移除 Adblock Plus 選項」即可。"
+  },
+  "s18": {
+    "message": "我要怎麼改變 Adblock Plus 顯示的圖示？"
+  },
+  "s19": {
+    "message": "若您比較喜歡 Adblock Plus 0.7.2 前使用的圖示(蟑螂)，您可以使用 <a>這個使用者樣式</a> 來恢復它 (建議搭配 <a>Stylish</a>) 使用。如果您有更好的圖示，可以用這個範本建立您自己的樣式："
+  },
+  "s20": {
+    "message": "這裡的圖片 (一張三個 16x16 垂直堆疊的圖示及另一張三個 24x24 垂直堆疊的圖示) 且這裡假設圖片位於 c:\\icons 目錄底下，所以您可能需要改變路徑。您可以用 <a>Stylish</a> 或編輯您個人設定檔中 ("
+  },
+  "s21": {
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+  },
+  "s22": {
+    "message": "我的個人設定檔目錄在哪裡？"
+  },
+  "s23": {
+    "message": ") 的 chrome/userChrome.css 並加入這段程式來套用本樣式。若 userChrome.css 不存在，您就必須自行建立。"
+  },
+  "s24": {
+    "message": "<em>備註</em>：這項修改會在您重新啟動瀏覽器後生效。"
+  },
+  "s25": {
+    "message": "我要怎麼修改某功能的鍵盤快捷鍵，或新增一個停用 Adblock Plus 的快捷鍵？"
+  },
+  "s26": {
+    "message": "有三個隱藏的偏好設定可以透過"
+  },
+  "s27": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s28": {
+    "message": "about:config"
+  },
+  "s29": {
+    "message": "存取並定義 Adblock Plus 的鍵盤快速鍵：<a>extensions.adblockplus.sidebar_key</a> (開啟/關閉可阻擋項目)，<a>extensions.adblockplus.settings_key</a> (開啟偏好設定視窗)，<a>extensions.adblockplus.enable_key</a> (啟用/停用 Adblock Plus )。您可以改成任何您喜歡的按鍵。"
+  },
+  "s30": {
+    "message": "<em>備註</em>：這項修改會在您重新啟動瀏覽器後生效。"
+  }
+}

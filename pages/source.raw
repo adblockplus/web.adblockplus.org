@@ -1,0 +1,64 @@
+
+<h2 id="source">$s1$</h2>
+
+	<p>$s2(https://hg.adblockplus.org/adblockplus/)$</p>
+
+	<pre>
+hg clone https://hg.adblockplus.org/adblockplus/
+</pre>
+
+	<p>$s3(https://hg.adblockplus.org/elemhidehelper/, https://hg.adblockplus.org/abpwatcher/)$</p>
+
+	<pre>
+hg up -r 1.0.1
+</pre>
+
+	<p>$s4$ <code>1.0.1</code> $s5$</p>
+
+	<p>$s6(/downloads/adblockplus-%EXTENSION(abp,version)%-source.tgz)$</p>
+
+	<p>$s7(/jsdoc/adblockplus/)$</p>
+
+	<h2 id="docs">$s8$</h2>
+
+	<ul>
+		<li><a href="$s9$">$s10$</a> $s11$<a href="$s12$">$s13$</a>$s14$</li>
+		<li><a href="$s15$">$s16$</a></li>
+		<li><a href="$s17$">$s18$</a> $s19$</li>
+		<li><a href="$s20$">$s21$</a></li>
+	</ul>
+
+	<h2 id="build">$s22$</h2>
+
+	<p>$s23$</p>
+
+	<pre>python build.py build</pre>
+
+	<p>$s24$ adblockplus-1.2.3.4+.nnnn.xpi$s25$ $s26$</p>
+
+<p>
+  $s27$ <a href="http://www.python.org/">Python 2.x</a> $s28$
+  $s29(http://jinja.pocoo.org/docs/)$ $s30$
+</p>
+
+<pre>easy_install Jinja2</pre>
+
+<h2 id="test">$s31$</h2>
+
+<p>
+  $s32(https://addons.mozilla.org/addon/autoinstaller/)$ $s33$
+</p>
+
+<pre>
+  python build.py autoinstall 8888
+</pre>
+
+<p>
+  $s34$
+</p>
+
+<h2 id="unittests">$s35$</h2>
+
+<p>
+  $s36(https://hg.adblockplus.org/adblockplustests/)$ $s37$ $s38(/devbuilds/adblockplustests/)$ $s39$ <code>chrome://adblockplustests/content/index.html</code> $s40$
+</p>

@@ -1,0 +1,143 @@
+{
+  "title": {
+    "message": "Allowing acceptable ads in Adblock Plus"
+  },
+  "s1": {
+    "message": "Acceptable Ads - Adblock Plus"
+  },
+  "s2": {
+    "message": "Adblock Plus introduces the Acceptable Ads initiative: Support websites that rely on advertising but choose to do it in a non-intrusive way."
+  },
+  "s3": {
+    "message": "Acceptable Ads - Adblock Plus"
+  },
+  "s4": {
+    "message": "Adblock Plus introduces the Acceptable Ads initiative: Support websites that rely on advertising but choose to do it in a non-intrusive way."
+  },
+  "s5": {
+    "message": "What is this about?"
+  },
+  "s6": {
+    "message": "Starting with Adblock Plus 2.0 you can allow some of the advertising not considered annoying to be viewed. By doing this you support websites that rely on advertising but choose to do it in a non-intrusive way. And you give these websites an advantage over their competition, one which encourages other websites to use non-intrusive advertising as well. In the long term the web will become a better place for everyone, not just Adblock Plus users. Without this feature there is a risk that increasing Adblock Plus usage will make small websites unsustainable."
+  },
+  "s7": {
+    "message": "Why is this feature enabled by default?"
+  },
+  "s8": {
+    "message": "Because that's unfortunately the only way to reach the goals outlined above. If we ask users to enable this feature then most of them won't do it - simply because they never change any settings unless absolutely necessary. However, advertisers will only be interested in switching to better ways of advertising if the majority of Adblock Plus users utilize the feature."
+  },
+  "s9": {
+    "message": "But I hate all ads!"
+  },
+  "s10": {
+    "message": "No problem, you can disable this feature at any time. To do so:"
+  },
+  "s11": {
+    "message": "On Firefox: click the Adblock Plus icon and choose Filter Preferences from the menu. Uncheck \"Allow non-intrusive advertising\" and you are done."
+  },
+  "s12": {
+    "message": "On Chrome: right-click the Adblock Plus icon in the address bar on the right, then choose Options and uncheck \"Allow non-intrusive advertising.\""
+  },
+  "s13": {
+    "message": "On Opera: click the Opera menu button in the left corner at the top (on OS X: click Window at the top), choose Extensions, find Adblock Plus there, click on Options and uncheck \"Allow non-intrusive advertising.\""
+  },
+  "s14": {
+    "message": "Which ads are \"acceptable\"?"
+  },
+  "s15": {
+    "message": "We currently have the following requirements:"
+  },
+  "s16": {
+    "message": "Static advertisements only (no animations, sounds or similar)"
+  },
+  "s17": {
+    "message": "Preferably text only, no attention-grabbing images"
+  },
+  "s18": {
+    "message": "Ad placement:"
+  },
+  "s19": {
+    "message": "Ads should never obscure page content (e.g. require users to click a button to close the ad before viewing the page)."
+  },
+  "s20": {
+    "message": "For pages featuring a reading text ads should not be placed in the middle, where they interrupt the reading flow. However, they can be placed above the text content, below it or on the sides. The same applies to search results pages: paid search results cannot be mixed with organic results."
+  },
+  "s21": {
+    "message": "When ads are placed above the content of a main page, they should not require the user to scroll down. The available vertical space is likely to be at least 700 pixels. Advertising should not occupy more than one-third of that height. Paid search results on search pages are allowed to occupy more space, but they should never outnumber organic results."
+  },
+  "s22": {
+    "message": "When placed on the side ads should leave enough space for the main content. The available horizontal space can be expected to be at least 1000 pixels, and advertising should not occupy more than a third of that width."
+  },
+  "s23": {
+    "message": "Advertising should be clearly marked as such with the word \"advertising\" or its equivalent, and it should be distinguishable from page content, for instance via a border and/or different a background color."
+  },
+  "s24": {
+    "message": "Marking and placement requirements do not apply for hyperlinks with affiliate referrer IDs embedded in the content of the page. Additional criteria for hyperlinks with affiliate referrer IDs:"
+  },
+  "s25": {
+    "message": "Redirects originating from the hyperlink should not present any other webpage than the destination page."
+  },
+  "s26": {
+    "message": "In texts, not more than 2 percent of the words can be hyperlinked for monetization purposes."
+  },
+  "s27": {
+    "message": "Hyperlinks should not be formatted or behave differently than other links."
+  },
+  "s28": {
+    "message": "Hyperlinks should not be misleading, in either content or placement."
+  },
+  "s29": {
+    "message": "These criteria are not necessarily final; we are always working at improving them. In particular, we want to require that every user's privacy is respected (e.g. mandatory <a>Do Not Track</a> support). However, we are not yet in a position to enforce that requirement."
+  },
+  "s30": {
+    "message": "Will all \"acceptable\" ads be unblocked?"
+  },
+  "s31": {
+    "message": "No. Unfortunately, it isn't technically possible to recognize ads that meet our Acceptable Ads criteria automatically. We have <a>agreements</a> with some websites and advertisers that only advertising matching our criteria will be used. These ads will be unblocked, i.e., added to the Acceptable Ads exception list which is enabled per default."
+  },
+  "s32": {
+    "message": "No applicant will be favored or treated differently, and no one can buy their way onto the whitelist. <strong>Everyone has to comply</strong> with the criteria and everyone has to go through the same process before the ads qualify as &quot;acceptable.&quot;"
+  },
+  "s33": {
+    "message": "What if an ad is allowed that doesn't meet the requirements?"
+  },
+  "s34": {
+    "message": "Please <a>report it</a> as you usually would. If an advertiser abuses his placement on the exception list we can always remove it from the list."
+  },
+  "s35": {
+    "message": "How can I see what you are allowing?"
+  },
+  "s36": {
+    "message": "The &quot;Allow non-intrusive advertising&quot; checkbox simply adds one more filter subscription to your list. You can view the filters <a>here</a>. Also, the special treatment of this filter subscription - which was added for reasons of usability - can be disabled by going to &quot;about:config&quot; and changing the <a>extensions.adblockplus.subscriptions_exceptionscheckbox</a> preference to false. This will allow you to view the filters for this subscription as usual."
+  },
+  "s37": {
+    "message": "Do you have questions or suggestions concerning this list? Feel free to get in touch with the community <a>in our forum</a> or <a>contact us directly via email</a>."
+  },
+  "s38": {
+    "message": "How can I get my website whitelisted?"
+  },
+  "s39": {
+    "message": "The process of getting your ads whitelisted takes about 10 working days:"
+  },
+  "s40": {
+    "message": "If your website has ads that comply with the <a>Acceptable Ads criteria</a>, simply fill out <a>this form</a>."
+  },
+  "s41": {
+    "message": "Someone from <a>Eyeo</a>, the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria."
+  },
+  "s42": {
+    "message": "After you have made any necessary changes, both sides sign an <a>agreement</a>."
+  },
+  "s43": {
+    "message": "We submit the whitelisting proposal <a>in the forum</a>. We set a period of about a week for community discussion in order to determine if each particular candidate complies with our criteria."
+  },
+  "s44": {
+    "message": "If there are no valid concerns, we will add the ads to our whitelist. The ads will then be shown to Adblock Plus users with default settings."
+  },
+  "s45": {
+    "message": "Are you stupid? Nobody wants this!"
+  },
+  "s46": {
+    "message": "The <a>results of our user survey</a> say something different. According to it, only 25 percent of Adblock Plus users are strictly against any advertising. They will disable this feature and that's fine. The other users replied that they would accept some kinds of advertising to help websites. Some users are even asking for a way to enable Adblock Plus on some websites only."
+  }
+}

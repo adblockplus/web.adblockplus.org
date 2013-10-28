@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "Adblock Plus for Android FAQ"
+  },
+  "s1": {
+    "message": "Is a rooted device required?"
+  },
+  "s2": {
+    "message": "If you're running Android 3.1 or higher, or if your device supports manually configuring a proxy, root is not required.\nBut it is always desirable, since it is the only way to seamlessly block ads on all connections."
+  },
+  "s3": {
+    "message": "Why am I asked to make changes to my network settings, even if Adblock Plus used to work fine?"
+  },
+  "s4": {
+    "message": "Adblock Plus tries to automatically change the proxy settings for you. Android 4.1.2, 4.2.1 and later versions contain a security fix making our approach impossible.\nSo there is no way around configuring it manually now. We are trying to make this process as simple as possible. There's a"
+  },
+  "s5": {
+    "message": "blog post with more information"
+  },
+  "s6": {
+    "message": "."
+  },
+  "s7": {
+    "message": "Can I move the app to an SD card?"
+  },
+  "s8": {
+    "message": "Adblock Plus has the option to automatically start at boot time.\nOn Android, this is only possible with apps that are installed on the device's internal storage.\nIf you're not interested in starting the app at boot time, you can safely move it to an SD card."
+  },
+  "s9": {
+    "message": "Why aren't any ads blocked in Firefox for Android?"
+  },
+  "s10": {
+    "message": "Firefox does not support Android's system proxy settings, so it won't work on non-rooted devices.\nBut if you're using Firefox for Android, we recommend you use the more powerful\n<a>Adblock Plus for Firefox</a> instead."
+  },
+  "s11": {
+    "message": "Why does Adblock Plus appear to consume so much traffic?"
+  },
+  "s12": {
+    "message": "To filter ads, all traffic has to pass through Adblock Plus. Android considers this to be the traffic\ncaused by the app, while it is in reality the sum of all traffic."
+  },
+  "s13": {
+    "message": "How can I make the icon in the notification area go away?"
+  },
+  "s14": {
+    "message": "We hear you, the icon is a bit annoying. But right now, it has to be there - otherwise the Android system\nwill just stop the app, and it won't be able to block ads anymore. We have added an option to hide it -\nthis is the best we can do."
+  },
+  "s15": {
+    "message": "Why is Adblock Plus not on the Google Play store?"
+  },
+  "s16": {
+    "message": "It used to be, but"
+  },
+  "s17": {
+    "message": "they removed Adblock Plus"
+  },
+  "s18": {
+    "message": ", somewhat arbitrarily."
+  }
+}

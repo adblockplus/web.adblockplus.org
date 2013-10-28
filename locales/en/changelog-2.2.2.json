@@ -1,0 +1,38 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 2.2.2"
+  },
+  "s1": {
+    "message": "The following lists the changes compared to"
+  },
+  "s2": {
+    "message": "."
+  },
+  "s3": {
+    "message": "If \n  you experience issues with this release please check\n  <a>the list of known issues</a>."
+  },
+  "s4": {
+    "message": "Worked around regression in Firefox 18 causing entries on the blockable items list to disappear and preventing context menu from working reliably."
+  },
+  "s5": {
+    "message": "Issue reporter now encourages users to enter an email address when submitting issue reports."
+  },
+  "s6": {
+    "message": "Removed Do-Not-Track handling which is redundant with Firefox supporting it as well (<a>blog post</a>)."
+  },
+  "s7": {
+    "message": "Added support for per-window private browsing in Firefox 20."
+  },
+  "s8": {
+    "message": "Fixed: Changes in Firefox 19 broke issue reporter."
+  },
+  "s9": {
+    "message": "Fixed: \"null\" access keys show up in Firefox 20."
+  },
+  "s10": {
+    "message": "Fixed: Context menu broken on background images in Firefox 20."
+  },
+  "s11": {
+    "message": "Changelog for the previous release"
+  }
+}

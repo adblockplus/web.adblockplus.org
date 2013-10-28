@@ -1,0 +1,95 @@
+{
+  "title": {
+    "message": "常见问题 - 定制用户界面"
+  },
+  "s1": {
+    "message": "我该如何将 Adblock Plus 图标放到我的工具栏上？"
+  },
+  "s2": {
+    "message": "　　通常工具栏图标会在您初次安装 Adblock Plus 时就自动添加，有可能事后由于什么原因导致它被移除。在 Firefox 中要定制工具栏，只要在工具栏点击右键，选择\"定制\"，在打开的窗口中您应该可以看到其中包含 Adblock Plus 图标。接着用鼠标将其拖动到工具栏任意位置，您也可以在保持定制窗口打开的情况下拖动工具栏图标重新排列它们。"
+  },
+  "s3": {
+    "message": "我该如何从我的工具栏中移除 Adblock Plus 图标？"
+  },
+  "s4": {
+    "message": "　　您不喜欢我们的图标或想要腾出空间给更重要的东西？您只要点击图标右侧的小箭头，在菜单中选择\"选项\"下的\"在工具栏显示\"。如果想要恢复显示工具栏图标，您还可以进入首选项对话框的\"选项\"菜单找到相同的选项。顺便说一下，您也可以使用 Firefox 内建的工具栏定制功能。"
+  },
+  "s5": {
+    "message": "我该如何让图标在遇到白名单网站时显示为绿色？"
+  },
+  "s6": {
+    "message": "　　如果您想要恢复显示 Adblock Plus 1.3.5 之前版本的图标（在某一网站禁用 Adblock Plus 时显示为绿色，完全禁用时显示为灰色），请安装<a>这个用户样式</a>\n（需要安装 <a>Stylish</a>）。"
+  },
+  "s7": {
+    "message": "我该如何让可过滤项目列表在两侧或顶部显示？"
+  },
+  "s8": {
+    "message": "　　您想要让可过滤项目列表像 Adblock Plus 0.7.5 之前版本一样显示在浏览器窗口左侧吗？不妨使用<a>这个用户样式</a>（需要安装 <a>Stylish</a>）。安装这个样式之后可过滤项目列表就会像侧边栏一样显示在浏览器窗口左侧。您也可以在提示添加样式时删除某一标记行来让可过滤项目列表显示在右侧或顶部。"
+  },
+  "s9": {
+    "message": "<em>注意</em>：这么做并不会让可过滤项目列表变成真正的侧边栏，它还是可以与历史侧边栏等一起打开。"
+  },
+  "s10": {
+    "message": "我该如何让状态栏显示文本而不是图标？"
+  },
+  "s11": {
+    "message": "　　如果要像之前版本的 Adblock Plus 那样在状态栏显示 &quot;Adblock&quot; 字样，请使用<a>这个用户样式</a>（需要安装 <a>Stylish</a>）。"
+  },
+  "s12": {
+    "message": "我该如何将 Adblock Plus 图标挪到状态栏的其他位置？"
+  },
+  "s13": {
+    "message": "　　Adblock Plus 0.5 允许用户拖动状态栏的图标，但考虑到这项功能很少用到，在接下来的版本中就取消了这项功能。像是 <a>Organize Status Bar</a> 这样的扩展可以很好地替代这项功能。"
+  },
+  "s14": {
+    "message": "我该如何删除 Adblock Plus 的所有浏览器菜单项？"
+  },
+  "s15": {
+    "message": "　　要隐藏工具菜单项以及 Adblock Plus 右键菜单项，您可以安装 <a>Customizations for\n  Adblock Plus</a> 扩展。"
+  },
+  "s16": {
+    "message": "安装以后，请在附加组件管理器中找到 Customizations 扩展并点击选项按钮，"
+  },
+  "s17": {
+    "message": "勾选\"移除 Adblock Plus 的浏览器菜单项\"。"
+  },
+  "s18": {
+    "message": "我该如何修改 Adblock Plus 的图标？"
+  },
+  "s19": {
+    "message": "　　如果想要恢复显示 Adblock Plus 0.7.2 之前版本的&quot;蟑螂&quot;图标，您可以使用<a>这个用户样式</a>（最好搭配使用 <a>Stylish</a>）。但如果您有更好的图标，您也可以根据下面的模板建立自己的样式："
+  },
+  "s20": {
+    "message": "　　上述代码中图片（两张图片分别垂直放置三个 16×16 大小和 24×24 大小的图标） 假定是位于 c:\\icons 目录下，因此您可能需要修改图片所保存的位置。要让这个样式生效您可以使用 <a>Stylish</a> 或添加上述代码到您配置文件夹 ("
+  },
+  "s21": {
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+  },
+  "s22": {
+    "message": "where is my profile directory?"
+  },
+  "s23": {
+    "message": ") 下的 chrome/userChrome.css 文件。如果该文件不存在您可以手动创建它。"
+  },
+  "s24": {
+    "message": "<em>注意</em>：以上更改将在浏览器重新启动后生效。"
+  },
+  "s25": {
+    "message": "我该如何修改某项功能的快捷键或新增一个禁用 Adblock Plus 的快捷键？"
+  },
+  "s26": {
+    "message": "　　Adblock Plus 在"
+  },
+  "s27": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s28": {
+    "message": "about:config"
+  },
+  "s29": {
+    "message": "中添加了三个可定义键盘快捷键的隐藏首选项：<a>extensions.adblockplus.sidebar_key</a>（打开/关闭可过滤项目列表），<a>extensions.adblockplus.settings_key</a>（打开首选项对话框）和 <a>extensions.adblockplus.enable_key</a>（启用/禁用 Adblock Plus）。您可以任意修改这些快捷键。"
+  },
+  "s30": {
+    "message": "<em>注意</em>：以上更改将在浏览器重新启动后生效。"
+  }
+}

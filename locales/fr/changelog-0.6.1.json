@@ -1,0 +1,137 @@
+{
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.6.1"
+  },
+  "s1": {
+    "message": "Ci-dessous l'énumération des modifications majeures par comparaison avec Adblock Plus 0.6 :"
+  },
+  "s2": {
+    "message": "Nouvelles fonctionnalités"
+  },
+  "s3": {
+    "message": "Abonnement à des listes de filtres (anciennement \"synchronisation\")"
+  },
+  "s4": {
+    "message": "Le panneau latéral peut être détaché (bouton dans le coin en haut à droite)"
+  },
+  "s5": {
+    "message": "Afficher le filtre qui a été appliqué dans l'infobulle du panneau latéral"
+  },
+  "s6": {
+    "message": "Le double-clic dans le panneau latéral sur un élément bloqué ou autorisé a pour effet de sélectionner automatiquement le filtre dans la boîte de dialogue des préférences"
+  },
+  "s7": {
+    "message": "Icône de la barre d'outils dans Firefox (personnalisable -- peut être déplacée ou supprimée)"
+  },
+  "s8": {
+    "message": "L'icône de la barre d'état a un menu contextuel (le même que celui de l'icône de a barre d'outils)"
+  },
+  "s9": {
+    "message": "Le clic du milieu sur une des deux icônes désactive/réactive Adblock Plus"
+  },
+  "s10": {
+    "message": "Ajout d'une compatibilité minimale pour &quot;bloquer les DIV&quot; (voyez la <a>FAQ</a> pour davantage d'informations)"
+  },
+  "s11": {
+    "message": "Interface Utilisateur"
+  },
+  "s12": {
+    "message": "Ajout des traductions : allemande, espagnole, italienne, russe, polonaise, slovaque, lithuanienne, roumaine, finlandaise, turque, japonaise"
+  },
+  "s13": {
+    "message": "Indiquer l'activité d'Adblock Plus par une icône dans la barre d'état (à présent optionnel, peut être supprimé via les options)"
+  },
+  "s14": {
+    "message": "Suite Mozilla/Seamonkey : Ajout du panneau latéral et le faire fonctionner de la même manière que dans Firefox (l'ouverture via le menu ou Ctrl+Shift+B fonctionne)"
+  },
+  "s15": {
+    "message": "Suppression de la limite de taille des infobulles das le panneau latéral"
+  },
+  "s16": {
+    "message": "Le panneau latéral indique à présent qu'une page est dans la liste blanche au lieu du \"Aucun élément filtrable\""
+  },
+  "s17": {
+    "message": "Le panneau latéral se met à présent correctement à jour même lorsque l'on ouvre une page sans éléments filtrables"
+  },
+  "s18": {
+    "message": "Il est possible de mettre un site ou une page dans la liste blanche via le menu de l'icône de la barre d'outils"
+  },
+  "s19": {
+    "message": "Préférences : Les filtres sont groupés par type"
+  },
+  "s20": {
+    "message": "Préférences : Ajout d'un avertissement lorsqu'Adblock Plus est désactivée"
+  },
+  "s21": {
+    "message": "Préférences : \"Conserver l'ordre alphabétique\" ne tri que visuellement et tout tri est appliqué immédiatement"
+  },
+  "s22": {
+    "message": "Préférences : Le tri ignore les carctères non-alphabétiques"
+  },
+  "s23": {
+    "message": "Préférences : Possibilité de sélection multiple"
+  },
+  "s24": {
+    "message": "Préférences : Rangement des filtres via le menu contextuel ou Ctrl-Haut/Bas (pas lorsque \"conserver l'ordre alphabétique\" est sélectionné)"
+  },
+  "s25": {
+    "message": "Préférences : Les éléments bloqués dans le menu déroulant peuvent à présent également être sélectionnés"
+  },
+  "s26": {
+    "message": "Préférences : Utilisation du retour à la ligne de la plateforme pour exporter les filtres"
+  },
+  "s27": {
+    "message": "Préférences : Ajout d'une option pour annuler l'avertissement lors de l'importation de filtres"
+  },
+  "s28": {
+    "message": "Préférences : OK ne permet plus d'\"Ajouter le filtre\" automatiquement"
+  },
+  "s29": {
+    "message": "Préférences : Déplacement de parties du menu \"options\" vers le nouveau menu \"Filtes\""
+  },
+  "s30": {
+    "message": "Préférences : Permettre de désactiver si nécessaire les éléments de menu et le bouton OK"
+  },
+  "s31": {
+    "message": "Préférences : Les options sont appliquées immédiatement à présent"
+  },
+  "s32": {
+    "message": "Préférences : Hauteur de ligne réduite pour la liste de filtres et le menu déroulant"
+  },
+  "s33": {
+    "message": "Noyau"
+  },
+  "s34": {
+    "message": "Faire appliquer la liste blanche aux éléments individuels également, pas seulement pour les pages Web complètes"
+  },
+  "s35": {
+    "message": "Amélioration du traitement des cadres (réparé : les cadres bloqués ne s'affichaient pas dans le panneau latéral)"
+  },
+  "s36": {
+    "message": "Lorsque l'option \"Bloquer en utilisant l'adresse cible des publicités\" est utilisée, ces liens sont traités comme un élément à part et peuvent être bloquer via le menu contextuel"
+  },
+  "s37": {
+    "message": "Bloquer les publicités dans les pages locales est à présent possible optionnellement (activée par défaut, certains lecteurs de flux RSS en ont besoin)"
+  },
+  "s38": {
+    "message": "Désinstallation automatique d'Adblock/Adblock Plus 0.5 àprésent (Désinstallation manuelle conseillée pour la suite Mozilla et Seamonkey)"
+  },
+  "s39": {
+    "message": "Amélioration de la performance"
+  },
+  "s40": {
+    "message": "Problèmes connus"
+  },
+  "s41": {
+    "message": "Les étiquettes Flash/Java ne sont pas toujours visibles et endommagent le style des pages dans certains rares cas"
+  },
+  "s42": {
+    "message": "Les cadres sans éléments filtrables (cadres bloqués y compris) ne s'affichent pas dans le panneau latéral lorsqu'on revient sur une page via l'historique"
+  },
+  "s43": {
+    "message": "L'infobulle pour l'icône de la barre d'outils est la même que pour la barre d'état, ce n'est pas tout à fait pour l'instant"
+  },
+  "s44": {
+    "message": "Historique des modifications pour la version précédente"
+  }
+}

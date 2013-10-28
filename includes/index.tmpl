@@ -1,266 +1,247 @@
 noheading=True
 
 <head>
-  <link rel="stylesheet" href="/css/index.css" class="cssfx">
-  <link rel="stylesheet" href="/css/index-desktop.css" media="(min-width: 40.5em)" class="cssfx">
-  <link rel="stylesheet" href="/css/index-mobile.css" media="screen and (max-width: 40.5em)">
+<link class="cssfx" href="/css/index.css" rel="stylesheet">
+<link class="cssfx" href="/css/index-desktop.css" media="(min-width: 40.5em)" rel="stylesheet">
+<link href="/css/index-mobile.css" media="screen and (max-width: 40.5em)" rel="stylesheet">
 
-  <link rel="canonical" href="http://adblockplus.org/">
-  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb">
-
-  <meta property="og:type" content="product">
-  <meta property="og:image" content="http://adblockplus.org/img/adblockplus_128.png">
-  <meta property="og:url" content="http://adblockplus.org/">
-
-  <meta name="title" content="{{"title"|translate}}">
-  <meta name="description" content="{{"description-s1"|translate}} {{"description-s2"|translate}} {{"description-s3"|translate}} {{"description-s4"|translate}} {{"description-s5"|translate}}">
-  <meta property="og:title" content="{{"title"|translate}}">
-  <meta property="og:description" content="{{"description-s1"|translate}} {{"description-s2"|translate}} {{"description-s3"|translate}} {{"description-s4"|translate}} {{"description-s5"|translate}}">
+<link href="http://adblockplus.org/" rel="canonical">
+<link href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" rel="chrome-webstore-item">
+<meta content="product" property="og:type">
+<meta content="http://adblockplus.org/img/adblockplus_128.png" property="og:image">
+<meta content="http://adblockplus.org/" property="og:url">
 </head>
+<meta name="title" content="{{"s1"|translate}}">
+<meta name="description" content="{{"s2"|translate}}">
+<meta property="og:title" content="{{"s3"|translate}}">
+<meta property="og:description" content="{{"s4"|translate}}"> 
 
-<div id="install-container" class="{{page}}" itemscope="itemscope" itemtype="http://schema.org/SoftwareApplication">
+
+<div class="{{page}}" id="install-container" itemscope="itemscope" itemtype="http://schema.org/SoftwareApplication">
   <section id="main">
     <div id="summary">
-      <h1 itemprop="name">Adblock Plus</h1>
-      <h2 itemprop="description">{{"subtitle"|translate}}</h2>
+      <h1 itemprop="name">{{"s5"|translate}}</h1>
+      <h2 itemprop="description">{{"s6"|translate}}</h2>
 
       <ul>
         <li itemprop="featureList">
-          <div class="sprite"></div> {{"feature1"|translate}}
+          <div class="sprite"></div>
+{{"s7"|translate}}
         </li>
         <li itemprop="featureList">
-          <div class="sprite"></div> {{"feature2"|translate}}
+          <div class="sprite"></div>
+{{"s8"|translate}}
         </li>
         <li itemprop="featureList">
-          <div class="sprite"></div> {{"feature3"|translate}}
+          <div class="sprite"></div>
+{{"s9"|translate}}
         </li>
-        <li itemprop="featureList" class="emphasized">
-          <div class="sprite"></div> {{"feature4"|translate}}
+        <li class="emphasized" itemprop="featureList">
+          <div class="sprite"></div>
+{{"s10"|translate}}
         </li>
       </ul>
     </div>
 
     <div id="install">
-      {% if page == "firefox" %}
-        <a id="install-firefox" class="install-button" href="%EXTENSION(abp,downloadurl)%">{{"install-firefox"|translate}}</a>
-      {% elif page == "chrome" %}
-        <a id="install-chrome" class="install-button" onclick="chrome.webstore.install(); return false;" href="https://clients2.google.com/service/update2/crx?response=redirect&amp;x=id%3Dcfhdojbkjhnklbpkdaibdccddilifddb%26uc">{{"install-chrome"|translate}}</a>
-      {% elif page == "opera" %}
-        <a id="install-opera" class="install-button" href="https://addons.opera.com/extensions/download/opera-adblock/">{{"install-opera"|translate}}</a>
-      {% elif page == "android" %}
-        <a id="install-android" class="install-button" href="/en/android-install">{{"install-android"|translate}}</a>
-      {% elif page == "internet-explorer" %}
-        <a id="install-internet-explorer" class="install-button" href="https://downloads.adblockplus.org/adblockplusie-1.1.exe">{{"install-internet-explorer"|translate}}</a>
-      {% endif %}
+      <a class="install-button" href="%EXTENSION(abp,downloadurl)%" id="install-firefox">{{"s11"|translate}}</a>
+      <a class="install-button" href="https://clients2.google.com/service/update2/crx?response=redirect&amp;x=id%3Dcfhdojbkjhnklbpkdaibdccddilifddb%26uc" id="install-chrome" onclick="chrome.webstore.install(); return false;">{{"s12"|translate}}</a>
+      <a class="install-button" href="https://addons.opera.com/extensions/download/opera-adblock/" id="install-opera">{{"s13"|translate}}</a>
+      <a class="install-button" href="/en/android-install" id="install-android">{{"s14"|translate}}</a>
+      <a class="install-button" href="https://downloads.adblockplus.org/adblockplusie-1.1.exe" id="install-internet-explorer">{{"s15"|translate}}</a> 
       <ul>
         <li>
-          <a id="platform-firefox" class="sprite" href="firefox" title="{{"install-firefox"|translate}}"></a>
+          <a class="sprite" href="firefox" id="platform-firefox" title="{{"s16"|translate}}"></a>
         </li>
         <li>
-          <a id="platform-chrome" class="sprite" href="chrome" title="{{"install-chrome"|translate}}"></a>
+          <a class="sprite" href="chrome" id="platform-chrome" title="{{"s17"|translate}}"></a>
         </li>
         <li>
-          <a id="platform-android" class="sprite" href="android" title="{{"install-android"|translate}}"></a>
+          <a class="sprite" href="android" id="platform-android" title="{{"s18"|translate}}"></a>
         </li>
         <li>
-          <a id="platform-opera" class="sprite" href="opera" title="{{"install-opera"|translate}}"></a>
-        </li>
+          <a class="sprite" href="opera" id="platform-opera" title="{{"s19"|translate}}"></a>
+	</li>
         <li>
-          <a id="platform-internet-explorer" class="sprite" href="internet-explorer" title="{{"install-internet-explorer"|translate}}"></a>
+          <a class="sprite" href="internet-explorer" id="platform-internet-explorer" title="{{"s20"|translate}}"></a>
         </li>
       </ul>
     </div>
   </section>
 
-  {% if page != "firefox" %}
-    <div class="warning-platform firefox">{{"firefox-warning-s1"|translate}} <a href="firefox">{{"firefox-warning-s2"|translate}}</a></div>
-  {% endif %}
-  {% if page != "chrome" %}
-    <div class="warning-platform chrome">{{"chrome-warning-s1"|translate}} <a href="chrome">{{"chrome-warning-s2"|translate}}</a></div>
-  {% endif %}
-  {% if page != "opera" %}
-    <div class="warning-platform opera">{{"opera-warning-s1"|translate}} <a href="opera">{{"opera-warning-s2"|translate}}</a></div>
-  {% endif %}
-  {% if page != "android" %}
-    <div class="warning-platform android">{{"android-warning-s1"|translate}} <a href="android">{{"android-warning-s2"|translate}}</a></div>
-  {% endif %}
-  {% if page != "internet-explorer" %}
-    <div class="warning-platform internet-explorer">{{"internet-explorer-warning-s1"|translate}} <a href="internet-explorer">{{"internet-explorer-warning-s2"|translate}}</a></div>
-  {% endif %}
+  <div class="warning-platform firefox">{{"s21"|translate}} <a href="firefox">{{"s22"|translate}}</a></div>
+  <div class="warning-platform chrome">{{"s23"|translate}} <a href="chrome">{{"s24"|translate}}</a></div>
+  <div class="warning-platform android">{{"s25"|translate}} <a href="android">{{"s26"|translate}}</a></div>
+  <div class="warning-platform opera">{{"s27"|translate}} <a href="opera">{{"s28"|translate}}</a></div>
+  <div class="warning-platform internet-explorer">{{"s29"|translate}} <a href="internet-explorer">{{"s30"|translate}}</a></div>
 
-  <iframe id="video" width="520" height="285" frameborder="0" src="//www.youtube-nocookie.com/embed/pVYtzF5SemU?html5=1&amp;autohide=1&amp;enablejsapi=1&amp;controls=2&amp;fs=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;theme=light" itemprop="video"></iframe>
+  <iframe frameborder="0" height="285" id="video" itemprop="video" src="//www.youtube-nocookie.com/embed/pVYtzF5SemU?html5=1&amp;autohide=1&amp;enablejsapi=1&amp;controls=2&amp;fs=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;theme=light" width="520"></iframe>
 </div>
 
 <div id="key-facts">
   <section class="first">
-    <div id="facts-open-source" class="sprite"/>
-    <h1>Open Source</h1>
+    <div class="sprite" id="facts-open-source"></div>
+    <h1>{{"s31"|translate}}</h1>
     <p>
-        Adblock Plus is a community project.
-      <a href="en/contribute">Join us!</a>
+      	{{"s32"|translate(links=["contribute"])}}
     </p>
   </section>
 
   <section>
-    <div id="facts-downloads" class="sprite"/>
-    <h1>Over <fix>200</fix> million downloads</h1>
+    <div class="sprite" id="facts-downloads"></div>
+    <h1>{{"s33"|translate}} 200 {{"s34"|translate}}</h1>
     <p>
-Adblock Plus is the most popular browser extension.
+{{"s35"|translate}}
     </p>
   </section>
 
   <section>
-    <div id="facts-acceptable-ads" class="sprite"/>
-    <h1>Support Free Content</h1>
+    <div class="sprite" id="facts-acceptable-ads"></div>
+    <h1>{{"s36"|translate}}</h1>
     <p>
-      Help free web content stay that way with <a href="en/acceptable-ads">Acceptable Ads</a>.
+      {{"s37"|translate(links=["acceptable-ads"])}}
     </p>
 
   </section>
 </div>
 
-<section id="more-container" class="hidden">
+<section class="hidden" id="more-container">
   <div class="noscript-hidden">
     <button id="more" onclick="toggleMore();return false;">
-      Learn More
+      {{"s38"|translate}}
     </button>
     <button id="less" onclick="toggleMore();return false;">
-      Show Less
+      {{"s39"|translate}}
     </button>
   </div>
-
+  
   <div id="more-tabs">
     <div id="sidebar">
       <button id="more-firefox" onclick="showTab(this);return false;">
-        Mozilla Firefox
+        {{"s40"|translate}}
       </button>
       <button id="more-chrome" onclick="showTab(this);return false;">
-        Google Chrome
+        {{"s41"|translate}}
       </button>
       <button id="more-opera" onclick="showTab(this);return false;">
-        Opera
+        {{"s42"|translate}}
       </button>
       <button id="more-android" onclick="showTab(this);return false;">
-        Android
+        {{"s43"|translate}}
       </button>
       <button id="more-internet-explorer" onclick="showTab(this);return false;">
-        Internet Explorer
+        {{"s44"|translate}}
       </button>
     </div>
-
-    <div id="tab-firefox" class="more-tab">
-      <h2>Download Firefox Adblock Plus</h2>
-
+    
+    <div class="more-tab" id="tab-firefox">
+      <h2>{{"s45"|translate}}</h2>
+      
       <p>
-        Firefox is a free and open source browser available for Windows, OS X, Linux, and Android which supports addons. Addons are extensions to your browser to improve privacy and security and the way you view the web. Since its launch in 2006, Adblock Plus has continuously been the most popular addon for the Mozilla Firefox web browser.
+        {{"s46"|translate}}
       </p>
-
+      
       <p>
-        Adblock Plus for Firefox is more than a popup blocker. Are you troubled by banners, overlays and other annoying advertisements? Just install the Firefox ad blocker and experience the web as it should be. Depending on the filter lists you have activated, you can even block YouTube video ads and block Facebook tracking. Filter lists are created by members of the open source community and free to use. If you don't want to rely on filter lists, you can create your own <a href="en/filters">blocking rules</a> to customize your web experience.
+        {{"s47"|translate(links=["filters"])}}
       </p>
-
+      
       <p>
-        Adblock Plus for Firefox is the most downloaded browser extension worldwide and winner of the About.com Reader's Choice Award 2011 and 2013, as well as the Linux New Media award for the Best Open Source Firefox Extension.
+        {{"s48"|translate}}
       </p>
     </div>
-
-    <div id="tab-chrome" class="more-tab">
-      <h2>Ad Blocker for Chrome</h2>
-
+    
+    <div class="more-tab" id="tab-chrome">
+      <h2>{{"s49"|translate}}</h2>
+      
       <p>
-        Adblock Plus is the most advanced adblocker for the Google Chrome browser. Are you fed up with advertisers infringing on your browsing experience? Simply install the extension and all annoying ads will be automatically blocked from the internet. Blinking banners, popups, video commercials on YouTube and Facebook ads: The Chrome Adblock Plus extension will automatically remove any unwanted ad from every website you visit. Want more? You can easily activate additional privacy and security <a href="en/features">features</a> such as tracking and malware protection.
+        {{"s50"|translate(links=["features"])}}
       </p>
-
+      
       <p>
-        Installing the Chrome Adblock Plus addon to your browser only takes a few seconds. Simply click the "Install for Chrome" button above and confirm the installation by clicking the "Add" button. Please note: The Chrome browser displays a warning that Adblock Plus can access the data on any website you visit. This is a standard warning for Chrome extensions running on every tab. We promise to never collect any data about you.
+        {{"s51"|translate}}
       </p>
-
+      
       <p>
-        The add-on is developed by the open source community and free to use for everybody. With more than <fix>10</fix> million users, it is one of the most popular extensions for Chrome. Here's what others are saying about it:
+        {{"s52"|translate}} 10 {{"s53"|translate}}
         <ul>
           <li>
             <blockquote cite="http://download.cnet.com/Adblock-Plus-for-Chrome/3000-33362_4-75118867.html?tag=mncol;3">
-              If you use Google Chrome, there's no reason to surf without it.
+              {{"s54"|translate}}
             </blockquote>
-            <a href="http://download.cnet.com/Adblock-Plus-for-Chrome/3000-33362_4-75118867.html?tag=mncol;3">Download.com on Adblock Plus for Chrome</a>
+            <a href="http://download.cnet.com/Adblock-Plus-for-Chrome/3000-33362_4-75118867.html?tag=mncol;3">{{"s55"|translate}}</a>
           </li>
           <li>
             <blockquote cite="http://adblock-plus.en.softonic.com/">
-              If you're bothered by ads while on the internet, try Adblock Plus. You won't regret it.
+              {{"s56"|translate}}
             </blockquote>
-            <a rel="nofollow" href="http://adblock-plus.en.softonic.com/">Softonic.com</a>
+            <a href="http://adblock-plus.en.softonic.com/" rel="nofollow">{{"s57"|translate}}</a>
           </li>
         </ul>
       </p>
     </div>
-
-    <div id="tab-opera" class="more-tab">
-      <h2>Blocking ads on Opera</h2>
-
+    
+    <div class="more-tab" id="tab-opera">
+      <h2>{{"s58"|translate}}</h2>
+      
       <p>
-        Adblock Plus is one of the most popular add-ons available for Opera and has been downloaded over <fix>4</fix> million times. The installation of Opera extensions only takes a few seconds. By adding Adblock Plus to your Opera browser, you can remove all online advertising such as banners, pop-ups, 30-second YouTube commercials, Facebook ads and any other unwanted online ad. After installing this extension, all annoying ads will automatically be removed from all websites, which makes browsing the internet less distracting and more enjoyable.
+        {{"s59"|translate}} 4 {{"s60"|translate}}
       </p>
-
+      
       <p>
-        Besides blocking all obtrusive advertising from your browsing experience, Adblock Plus significantly increases the speed of your Opera browser. By preventing advertisements from being loaded by your browser, the ad blocker helps you to save bandwidth and makes surfing the internet faster, especially if you are on a slow internet connection.
+        {{"s61"|translate}}
       </p>
-
+      
       <p>
-        Add Adblock Plus to your Opera browser by clicking on the green button "Install for Opera" above. Click "Install" to confirm the installation and to add the extension to Opera. There are no additional steps or configurations necessary, you will automatically be protected against all obtrusive online advertising.
+        {{"s62"|translate}}
       </p>
-
+      
       <p>
-        Adblock Plus for Opera works great. Don't believe us? Don't just take our word for it. Here is what the popular download portal Softpedia has to say: "Adblock Plus for Opera is a very useful add-on that was especially designed to help users get rid of nuisances like pop-up ads, flashing banners and other such things."
+        {{"s63"|translate}}
+      </p>
+    </div>
+    
+    <div class="more-tab" id="tab-android">
+      <h2>{{"s64"|translate}}</h2>
+      
+      <p>
+        {{"s65"|translate}} 1 {{"s66"|translate}}
+      </p>
+      
+      <p>
+        {{"s67"|translate}}
+      </p>
+      
+      <p>
+        {{"s68"|translate}}
       </p>
     </div>
 
-    <div id="tab-android" class="more-tab">
-      <h2>Android Adblock app</h2>
+    <div class="more-tab" id="tab-internet-explorer">
+      <h2>{{"s69"|translate}}</h2>
 
       <p>
-        Adblock Plus is the most popular ad blocking app for Android, and is used by over <fix>1</fix> million users every day. It is the first mobile ad blocker which works on non-rooted devices, which makes it much more convenient to use than any other ad blocking app on Android. By adding Adblock Plus to your Android device, all banners and other nasty ads will automatically be blocked from most apps and the websites you visit on your smartphone or tablet. The Android adblocker works with most browsers such as Google Chrome on Android.
+        {{"s70"|translate}}  
       </p>
 
       <p>
-        By installing the Android Adblock Plus app, you can significantly increase the speed of browsing with your mobile device. The app filters the web traffic and prevents unwanted ads from being downloaded, which reduces bandwidth and jacks up the speed of your browsing. Blocking ads on Android is also useful to protect your privacy and to eliminate the threat of downloading malicious apps, which are often distributed through misleading advertisements.
+        {{"s71"|translate}} 
       </p>
 
       <p>
-        Please note that there are some limitations in Android which may require some manual efforts for the app to block ads. For non-rooted devices running on 4.1.2, 4.2.1 and higher, some minor configuration is required. For non-rooted devices with Android 3.1 or higher, Adblock Plus will automatically block all ads over your WiFi connection. Android devices without root will not be able to block ads on 3G connections.
-      </p>
-    </div>
-
-    <div id="tab-internet-explorer" class="more-tab">
-      <h2>Adblock Plus for Internet Explorer</h2>
-
-      <p>
-        Although you might not expect it, Internet Explorer is still the world's second most popular browser with hundreds of millions of daily users. We developed Adblock Plus for Internet Explorer precisely for those users ΓÇö so that they can finally experience the web without annoying ads.
-      </p>
-
-      <p>
-        Developing an extension for Internet Explorer is challenging ΓÇö thatΓÇÖs one of the reasons there are not as many extensions on Internet Explorer as on Mozilla Firefox, Google Chrome and Opera. The installation of Adblock Plus for Internet Explorer is different than on other browsers. Usually, the extension is directly added to the browser; however, for Internet Explorer you need to install it through a so-called installer. But donΓÇÖt worry: it takes under 30 seconds to install Adblock Plus for Internet Explorer. Just click on the green button above called ΓÇ£Install for Internet ExplorerΓÇ¥ to protect yourself from annoying advertising.
-      </p>
-
-      <p>
-        Current limitations: Due to the limitations of some of the fragmented versions of Internet Explorer, Adblock Plus currently doesnΓÇÖt work for:
+        {{"s72"|translate}} 
       </p>
 
       <ul>
-        <li>Enhanced Protected Mode of Internet Explorer 10</li>
-        <li>Metro Mode of Internet Explorer in Windows 8</li>
-        <li>Internet Explorer in Windows RT</li>
+        <li>{{"s73"|translate}}</li>
+        <li>{{"s74"|translate}}</li>
+        <li>{{"s75"|translate}}</li>
       </ul>
 
       <p>
-        It is expected that the support for the Enhanced Protected Mode of Internet Explorer 10 will be added in the follow-up release.
+        {{"s76"|translate}} 
       </p>
     </div>
   </div>
 </section>
 
 <script src="/js/index.js"></script>
-
-<!-- Workaround for IE6 multiple classes selector bug -->
-<!--[if lt IE 7]>
-  <script>document.all["install-container"].className += " " + document.all.["install-container"].className.split(" ").join("_");</script>
-<![endif]-->

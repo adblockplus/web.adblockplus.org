@@ -1,0 +1,110 @@
+{
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.7.1"
+  },
+  "s1": {
+    "message": "Ci-dessous l'énumération des modifications majeures en comparaison avec Adblock Plus 0.7 :"
+  },
+  "s2": {
+    "message": "Nouvelles fonctionnalités"
+  },
+  "s3": {
+    "message": "L'infobulle de l'icône de la barre d'outils affiche le nombre d'éléments bloqués et les trois filtres les plus utilisés sur la page courante"
+  },
+  "s4": {
+    "message": "La dernière utilisation d'un filtre est désormais mémorisée (affichée dans la colonne \"Dernière utilisation\" dans les préférences, cette colonne est masquée par défaut)"
+  },
+  "s5": {
+    "message": "Interface utilisateur"
+  },
+  "s6": {
+    "message": "Ajout des traductions : Coréenne, Thaïllandaise, Catalane, Croate"
+  },
+  "s7": {
+    "message": "Ajout d'une boîte de dialogue permettant aux nouveaux utilisateurs de s'abonner facilement (apparaît au premier démarrage à moins qu'il ne soit déjà abonné)"
+  },
+  "s8": {
+    "message": "L'icône de la barre des tâches change lorsque la page en cours se trouve dans la liste blanche"
+  },
+  "s9": {
+    "message": "Boîte de dialogue des préférences : ajout des filtres simplifié, le champ de saisi se trouve à présent dans la fenêtre d'édition de filtres et non à part"
+  },
+  "s10": {
+    "message": "Boîte de dialogue des préférences : Ctrl+Entrée ou Alt+Entrée sauvegarde les modifications et ferme la boîte de dialogue à présent (fonctionne également à partir de la fenêtre d'édition de filtres)"
+  },
+  "s11": {
+    "message": "Boîte de dialogue des préférences : Lors de la prise en compte des modifications de filtre, l'interface utilisateur du navigateur ne ralentit plus"
+  },
+  "s12": {
+    "message": "Boîte de dialogue des préférences : ajout d'une icône pour fermer le champ d'édition de filtre"
+  },
+  "s13": {
+    "message": "Boîte de dialogue des préférences : ajout d'une entrée \"Mettre à jour tous les abonnements\" (Raccourci clavier Ctrl+Shift+T)"
+  },
+  "s14": {
+    "message": "Boîte de dialogue des préférences : les expressions régulières sont signalées par un point d'exclamation"
+  },
+  "s15": {
+    "message": "Boîte de dialogue des préférences : ajout d'un bouton \"Appliquer\", suppression du bouton \"Aide\""
+  },
+  "s16": {
+    "message": "Boîte de dialogue des préférences : Remplacement de \"Créer des expressions régulières\" par \"Créer des filtres Adblock Plus\" Dans le menu d'aide"
+  },
+  "s17": {
+    "message": "Boîte de dialogue des préférences : Utilisation de l'option browser.downloads.lastDir des préférences du navigateur (about:config) pour déterminer le dossier d'importation/exportation par défaut des listes de filtres"
+  },
+  "s18": {
+    "message": "Boîte de dialogue des préférences : Définition des raccourcis claviers pour les listes de filtres afin de respecter l'option ui.key.accelKey des préférences"
+  },
+  "s19": {
+    "message": "Panneau latéral : L'élément sélectionné est conservé lors du changement d'onglet et de la femreture/ouverture du panneau latéral"
+  },
+  "s20": {
+    "message": "Panneau latéral : L'infobulle n'affiche à présent plus que les images contenues dans le cache du navigateur, pas de requêtes supplémentaires du serveur"
+  },
+  "s21": {
+    "message": "L'entrée &quot;Bloquer les images provenant de ...&quot; du menu contextuel est masquée pour éviter la confusion -- à moins que le gestionnaire d'image bloque déjà quelque chose ou l'option <a>extensions.adblockplus.hideimagemanager</a>"
+  },
+  "s22": {
+    "message": "Noyau"
+  },
+  "s23": {
+    "message": "Modification des limites inférieures pour les versions de navigateur requises afin d'améliorer la stabilité et les performances : Firefox 1.5 et SeaMonkey 1.0 sont requis à présent au minimum. Netscape et la suite Mozilla Suite ne sont plus compatibles. Les versions en développement de SeaMonkey suiterunner sont à présent compatibles."
+  },
+  "s24": {
+    "message": "Les filtres acceptent à présent des options afin de spécifier le type d'élément auxquels ils seront appliqués"
+  },
+  "s25": {
+    "message": "Implémentation d'une solution afin de contourner le plantage lorsque le plugin Mozilla ActiveX est installé"
+  },
+  "s26": {
+    "message": "Réparé : Les étiquettes n'étaient pas masquée correctement lors du blocage d'un objet (régression dans Adblock Plus 0.7.0.2)"
+  },
+  "s27": {
+    "message": "L'importation de liste de filtre commençant par [Adblock Plus] ou [Adblock Plus {version}] est à présent possible"
+  },
+  "s28": {
+    "message": "L'exportation de liste de filtres détermine la version minimale d'Adblock/AdblockPlus et insère au début de la liste soit [Adblock] (aucune recommandation), soit commentaire+[Adblock] (Une version d'Adblock Plus inférieure à 0.7.1 est requise), soit [Adblock Plus {version}] (Adblock Plus 0.7.1 ou supérieur est requis)"
+  },
+  "s29": {
+    "message": "Le téléchargement de la liste souscrite envoi à présent l'en-tête HTTP \"If-Modified-Since\" (les utilisateurs peuvent forcer le téléchargement en appuyant sur la touche Shift lors du clic sur \"Mettre à jour l'abonnement\")"
+  },
+  "s30": {
+    "message": "Le téléchargement de la liste souscrite respecte l'en-tête \"Expires\" reçu de l'abonnement à présent, les listes d'abonnement ne seront téléchargées à nouveau qu'après la date d'expiration (pas plus de deux semaines après le téléchargement précédent)"
+  },
+  "s31": {
+    "message": "Réparé : Le téléchargement de la liste souscrite ne fonctionnait pas pour une raison inconnue"
+  },
+  "s32": {
+    "message": "Problèmes connus"
+  },
+  "s33": {
+    "message": "Le plugin Yahoo Application State (npYState.dll, installé par Yahoo Messenger) occasionnait un plantage sur Yahoo Mail si Adblock Plus était installée. Il est suggéré de désinstaller ce plugin, sa seule fonction semble être d'indiquer à Yahoo Mail la version de Yahoo Messenger utilisée."
+  },
+  "s34": {
+    "message": "La traduction turque contient des caractères anglais"
+  },
+  "s35": {
+    "message": "Historique des modifications pour la version précédente"
+  }
+}

@@ -1,0 +1,83 @@
+<head>
+<style><!--
+#download>*
+{
+  display: block;
+  margin: 30px auto;
+}
+
+#download-button
+{
+  width: 250px;
+  padding: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  background: #62c52b;
+  background: -webkit-linear-gradient(top, #62c52b, #4f9d22);
+  background: -moz-linear-gradient(top, #62c52b, #4f9d22);
+  background: -ms-linear-gradient(top, #62c52b, #4f9d22);
+  background: -o-linear-gradient(top, #62c52b, #4f9d22);
+  background: linear-gradient(top, #62c52b, #4f9d22);
+  box-shadow: 0 1px 0 0 #486c15, 0 2px 0 0 #517422;
+  text-shadow: 2px 2px 2px #327d14;
+  border: none;
+  border-radius: 3px;
+  bottom: 6px;
+  -webkit-transition: box-shadow 0.3s ease;
+  -moz-transition: box-shadow 0.3s ease;
+  -ms-transition: box-shadow 0.3s ease;
+  -o-transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+#download-button:hover
+{
+  box-shadow: 0px 2px 7px #486c15, 0 1px 0 0 #486c15;
+}
+
+#download-button:active
+{
+  background: #4f9d22;
+  background: -webkit-linear-gradient(bottom, #62c52b, #4f9d22);
+  background: -moz-linear-gradient(bottom, #62c52b, #4f9d22);
+  background: -ms-linear-gradient(bottom, #62c52b, #4f9d22);
+  background: -o-linear-gradient(bottom, #62c52b, #4f9d22);
+  background: linear-gradient(bottom, #62c52b, #4f9d22);
+  box-shadow: 0px 0px 7px #486c15;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  bottom: 4px;
+}
+
+#links
+{
+  text-align: center;
+}
+--></style>
+</head>
+<p>
+$s1$
+</p>
+
+<ol>
+  <li>$s2$</li>
+  <li>$s3$</li>
+</ol>
+
+<div id="download">
+  <a href="%EXTENSION(abpandroid,downloadurl)%" id="download-button">$s4$</a>
+  <img src="%EXTENSION(abpandroid,qrcode)%">
+</div>
+
+<div id="links">
+  <a href="/en/android-about">$s5$</a> - 
+  <a href="/en/android-faq">$s6$</a> - 
+  <a href="/en/android-config">$s7$</a>
+</div>

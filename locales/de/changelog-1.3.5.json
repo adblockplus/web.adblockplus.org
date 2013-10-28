@@ -1,0 +1,104 @@
+{
+  "title": {
+    "message": "Detaillierte Änderungsliste für Adblock Plus 1.3.5"
+  },
+  "s1": {
+    "message": "Im Folgenden werden die wesentlichen Änderungen im Vergleich zu Adblock Plus 1.3.3 aufgelistet."
+  },
+  "s2": {
+    "message": "Falls Sie Probleme mit der Erweiterung feststellen, konsultieren Sie bitte zuerst \n  <a>die Liste der bekannten Probleme</a>."
+  },
+  "s3": {
+    "message": "Funktionalität"
+  },
+  "s4": {
+    "message": "Firefox Mobile 4 wird jetzt unterstützt, die Unterstützung von Firefox Mobile 1.0 wurde aufgegeben."
+  },
+  "s5": {
+    "message": "K-Meleon 1.6 wird größtenteils unterstützt (<a>spezielle Installationspakete</a> erforderlich)."
+  },
+  "s6": {
+    "message": "Unterstützung für <a>vorgeschlagene Do-Not-Track Kopfzeile</a> (DNT) hinzugefügt, mit einen Filter wie"
+  },
+  "s7": {
+    "message": "wird diese Kopfzeile stets gesendet ("
+  },
+  "s8": {
+    "message": "Thema im Forum"
+  },
+  "s9": {
+    "message": ")."
+  },
+  "s10": {
+    "message": "Experimentelle Taste \"Empfehlen Sie uns auf Facebook\" hinzugefügt, um eine einfache Empfehlungsabgabe zu ermöglichen — wird nur Facebook-Nutzern angezeigt."
+  },
+  "s11": {
+    "message": "Benutzeroberfläche"
+  },
+  "s12": {
+    "message": "Übersetzungen für Malaiisch und Estnisch sind wieder enthalten."
+  },
+  "s13": {
+    "message": "Tastaturkürzel-Einstellungen können jetzt mehrere Werte haben, der erste verfügbare Tastaturkürzel wird benutzt."
+  },
+  "s14": {
+    "message": "Für Einstellungen ist das standardmäßig Ctrl-Shift-E (verwendet in Firefox 3.x), Ctrl-Shift-F (verwendet in Firefox 4) oder Ctrl-Shift-O (Firefox 4 unter Mac OS X)."
+  },
+  "s15": {
+    "message": "Spezielles Symbol für Webseiten, auf denen Adblock Plus deaktiviert ist, wurde entfernt, es wird das übliche graue ABP-Symbol angezeigt (<a>Thema im Forum</a>)."
+  },
+  "s16": {
+    "message": "\"Adblock Plus aktivieren\" im ABP-Menü wurde in \"Überall deaktivieren\" umbenannt."
+  },
+  "s17": {
+    "message": "Firefox Mobile: Die Seite, die beim ersten Start erscheint, ist jetzt besser an kleine Bildschirme angepasst."
+  },
+  "s18": {
+    "message": "Behoben: Inhalt der Seite, die beim ersten Start erscheint, ist manchmal abgeschnitten (<a>Thema im Forum</a>)."
+  },
+  "s19": {
+    "message": "Behoben: \"Angewandten Filter bearbeiten\" in der Liste blockierbarer Elemente funktioniert nicht korrekt, wenn das Einstellungsfenster bereits geöffnet ist."
+  },
+  "s20": {
+    "message": "Fehlerberichte"
+  },
+  "s21": {
+    "message": "Fehlerberichte, die zu viele Filterlisten betreffen, werden nicht mehr angenommen."
+  },
+  "s22": {
+    "message": "Fehlerberichte für bestimmte Seiten werden nicht mehr angenommen (insbesondere leere Browsertabs, Emails, lokale Seiten, Erweiterungsseiten)."
+  },
+  "s23": {
+    "message": "Thunderbird: Bessere Fehlerberichte für Blog-Artikel, statt der nichtssagenden Mailbox-Adresse wird nun die Adresse des Artikels übermittelt."
+  },
+  "s24": {
+    "message": "Behoben: Deaktivierte Fehlerlisten sollten nicht im Fehlerbericht erscheinen (<a>Thema im Forum</a>)."
+  },
+  "s25": {
+    "message": "Kern"
+  },
+  "s26": {
+    "message": "Ein schnellerer Algorithmus zum Filterabgleich wurde implementiert (<a>Thema im Forum</a>)."
+  },
+  "s27": {
+    "message": "Die Datei patterns.ini wird nur dann beim Schließen des Browsers gespeichert, wenn sich wirklich etwas geändert hat."
+  },
+  "s28": {
+    "message": "Daten für Filterabgleich und Verstecken von Elementen werden auf der Festplatte zwischengespeichert, um die Verzögerung beim Browserstart minimal zu halten."
+  },
+  "s29": {
+    "message": "Die Datei patterns.ini wird jetzt anders auf die Festplatte geschrieben, um Datenverlust beim plötzlichen Ausschalten des Computers zu vermeiden."
+  },
+  "s30": {
+    "message": "Fehlerhafte Datei patterns.ini wird jetzt erkannt, falls vorhanden wird eine Backup-Datei automatisch eingelesen."
+  },
+  "s31": {
+    "message": "Behoben: Verstecken von Elementen kann unter bestimmten Umständen Abstürze verursachen (zuerst aufgetreten in Adblock Plus 1.3.3)."
+  },
+  "s32": {
+    "message": "Behoben: Das Deaktivieren von Filtern aus der Liste blockierbarer Elemente funktioniert in Firefox 3.6 nicht."
+  },
+  "s33": {
+    "message": "Änderungsliste der vorherigen Version"
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "title": {
+    "message": "已知問題"
+  },
+  "s5": {
+    "message": "以下列出的是已知會影響 Adblock Plus 的問題。如果您的問題不在裡面，請看看 <a>討論區</a> 或發表一篇文章 (不必註冊)。"
+  },
+  "s6": {
+    "message": "安裝失敗並顯示「無法驗證簽署」"
+  },
+  "s7": {
+    "message": "<strong>原因 1</strong>：瀏覽器太舊"
+  },
+  "s8": {
+    "message": "過時的瀏覽器像 Firefox 3.0 將無法驗證 Adblock Plus 套件的簽署。"
+  },
+  "s9": {
+    "message": "<strong>解決方案</strong>：請確認您的瀏覽器有達到 <a>系統需求</a>，若有需要請更新至最新版。"
+  },
+  "s10": {
+    "message": "<strong>原因 2</strong>：安裝套件損毀"
+  },
+  "s11": {
+    "message": "Adblock Plus 套件皆有簽署以免受到未經授權的修改。當您在第三方網站安裝時可能會出現這個錯誤。"
+  },
+  "s12": {
+    "message": "<strong>解決方案</strong>：從 <a>addons.mozilla.org</a> 安裝 Adblock Plus。"
+  },
+  "s13": {
+    "message": "<strong>原因 3</strong>：儲存的憑證過期"
+  },
+  "s14": {
+    "message": "瀏覽器需要接收由 StartCom Ltd. 所發布的憑證來驗證 Adblock Plus 的簽署。由於系統中儲存的憑證獨立於瀏覽器之外，所以過期的憑證可能導致驗證失敗。"
+  },
+  "s15": {
+    "message": "<strong>影響範圍</strong>：部份由 Linux 發行版提供的瀏覽器。"
+  },
+  "s16": {
+    "message": "<strong>解決方案</strong>：請更新「nss」套件至 1.3.1 以上。並參考「原因4」作為替代解決方案。"
+  },
+  "s17": {
+    "message": "<strong>原因 4</strong>：憑證設定錯誤"
+  },
+  "s18": {
+    "message": "某些系統上由 StartCom Ltd. 所發布的憑證設定錯誤，並被標記為不可信任。這也會導致無法驗證 Adblock Plus 套件。"
+  },
+  "s19": {
+    "message": "<strong>解決方案</strong>：請至"
+  },
+  "s20": {
+    "message": "http://support.mozilla.com/en-US/kb/Options+window+-+Advanced+panel#Encryption_tab"
+  },
+  "s21": {
+    "message": "瀏覽器中「加密」的分頁選項"
+  },
+  "s22": {
+    "message": "並點擊「檢視憑證清單」。在「授權」底下找出「StartCom Certification Authority」，按下「編輯信任」。所有動作結束後請按下確定。"
+  },
+  "s23": {
+    "message": "安裝失敗時顯示其他錯誤訊息 (如 -228 或 -203)"
+  },
+  "s24": {
+    "message": "針對這些問題，請參考"
+  },
+  "s25": {
+    "message": "http://support.mozilla.com/en-US/kb/Unable+to+install+add-ons"
+  },
+  "s26": {
+    "message": "除錯頁面的說明"
+  },
+  "s27": {
+    "message": "。"
+  },
+  "s28": {
+    "message": "安裝 Adblock Plus 後圖示與工具目錄中的選項無法顯示"
+  },
+  "s29": {
+    "message": "<strong>原因 1</strong>：Adblock Plus 被停用"
+  },
+  "s30": {
+    "message": "打開附加元件 (工具/附加元件) 並找出 Adblock Plus ，它應該會顯示成灰色的 (停用)。"
+  },
+  "s31": {
+    "message": "<strong>解決方案</strong>：在附加元件中按下 Adblock Plus 並點擊「啟用」按鈕。"
+  },
+  "s32": {
+    "message": "<strong>原因 2</strong>：<a>Mozilla bug 770669</a>"
+  },
+  "s33": {
+    "message": "瀏覽器在 Adblock Plus 2.0.x 更新之後當掉就會發生這個問題。"
+  },
+  "s34": {
+    "message": "<strong>影響範圍</strong>：Adblock Plus 2.1 以上版本"
+  },
+  "s35": {
+    "message": "<strong>解決方案</strong>："
+  },
+  "s36": {
+    "message": "http://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_how-to-disable-extensions0-personassf-and-plugins"
+  },
+  "s37": {
+    "message": "停用 Adblock Plus"
+  },
+  "s38": {
+    "message": "並再次啟用即可。不需要重新啟動瀏覽器。"
+  },
+  "s39": {
+    "message": "<strong>原因 3</strong>：<a>Mozilla bug 744833</a>"
+  },
+  "s40": {
+    "message": "若個人設定檔的路徑改變，像是在不同電腦上使用 Firefox Portable，則任何不須重啟的擴充套件都將停止運作。"
+  },
+  "s41": {
+    "message": "<strong>影響範圍</strong>：Adblock Plus 2.1 以上版本"
+  },
+  "s42": {
+    "message": "<strong>解決方案</strong>：更新至 Firefox 15 以上版本。若對您無法這麼做，請"
+  },
+  "s43": {
+    "message": "http://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_how-to-disable-extensions0-personassf-and-plugins"
+  },
+  "s44": {
+    "message": "停用 Adblock Plus"
+  },
+  "s45": {
+    "message": "並再次重新啟用即可 (不用重新啟動瀏覽器)。"
+  },
+  "s46": {
+    "message": "Firefox 無法開啟新的瀏覽視窗"
+  },
+  "s47": {
+    "message": "<strong>原因</strong>：Zone Alarm Spy Blocker Toolbar 擴充套件"
+  },
+  "s48": {
+    "message": "這個問題是 <a>由 Ask Toolbar 2.1.0.5 套件所引起</a> (特別是名為 Zone Alarm Spy Blocker Toolbar 的變種)，因為使用品質不佳的程式碼實作的關係。"
+  },
+  "s49": {
+    "message": "<strong>解決方案</strong>："
+  },
+  "s50": {
+    "message": "http://support.mozilla.com/en-US/kb/Uninstalling+add-ons"
+  },
+  "s51": {
+    "message": "移除或停用"
+  },
+  "s52": {
+    "message": "Ask Toolbar。"
+  },
+  "s53": {
+    "message": "Adblock Plus 沒有過濾廣告"
+  },
+  "s54": {
+    "message": "<strong>原因 1</strong>：沒有加入過濾條件"
+  },
+  "s55": {
+    "message": "Adblock Plus 「本身」不知道該過濾哪些東西，如果您在安裝後沒有訂閱過濾條件集，那麼直到您定義規則前，它都不會產生任何作用。<a>詳細資訊</a>"
+  },
+  "s56": {
+    "message": "<strong>解決方案</strong>：從 <a>已知的 Adblock Plus 過濾條件集</a> 中訂閱一個過濾條件集 (選擇符合您語系的條件集更為理想)。"
+  },
+  "s57": {
+    "message": "<strong>原因 2</strong>：Adblock Plus 過濾條件損毀"
+  },
+  "s58": {
+    "message": "某些使用者的 Adblock PLus 有時會出現損毀 (這種情況非常罕見，而且通常只發生一次) ，導致他們的過濾列表變成空白的 (可以在工具/Adblock Plus偏好設定中驗證)。造成這種情形的原因仍然未知。"
+  },
+  "s59": {
+    "message": "<strong>解決方案</strong>：從 <a>已知的 Adblock Plus 過濾條件集</a> 再次訂閱過濾條件集。或者您也可以從自動建立的備份檔還原："
+  },
+  "s60": {
+    "message": "開啟"
+  },
+  "s61": {
+    "message": "http://support.mozilla.com/en-US/kb/Profiles#How_to_find_your_profile"
+  },
+  "s62": {
+    "message": "您的個人設定檔"
+  },
+  "s63": {
+    "message": "。"
+  },
+  "s64": {
+    "message": "打開裡面的「adblockplus」資料夾"
+  },
+  "s65": {
+    "message": "關閉瀏覽器。"
+  },
+  "s66": {
+    "message": "如果發現 patterns.ini 的檔案很小 (小於 1 KB)，請移除它。"
+  },
+  "s67": {
+    "message": "將 patterns-backupN.ini 重新命名為 patterns.ini (這裡的 N 是一個數字，選擇第一個大於 1 KB的檔案就可以了)。"
+  },
+  "s68": {
+    "message": "<strong>原因 3</strong>：Adblock Plus 被關閉"
+  },
+  "s69": {
+    "message": "Adblock Plus 可以暫時停用，從它顯示灰色的圖示 (停用) 而紅色的圖示 (啟用) 來判斷。"
+  },
+  "s70": {
+    "message": "<strong>解決方案</strong>：以滑鼠中鍵點擊 Adblock Plus 圖示或者右鍵點擊並選擇「啟用Adblock Plus」。"
+  },
+  "s71": {
+    "message": "Adblock Plus 在 Firefox Mobile 4 無法阻擋轉向後的請求。"
+  },
+  "s72": {
+    "message": "<strong>原因</strong>：<a>Mozilla bug 646373</a>"
+  },
+  "s73": {
+    "message": "<strong>影響範圍</strong>：Firefox Mobile 4 的 Adblock Plus 1.3.6 以上版本"
+  },
+  "s74": {
+    "message": "<strong>解決方案</strong>：目前沒有，這個bug可能會在 Firefox Mobile 未來的版本中修正。"
+  },
+  "s75": {
+    "message": "Firefox Mobile 4 即使設定了"
+  },
+  "s76": {
+    "message": "也無法傳送 Do Not Track 標頭"
+  },
+  "s77": {
+    "message": "<strong>原因</strong>：Firefox Mobile 4 尚不支援 Do Not Track"
+  },
+  "s78": {
+    "message": "<strong>解決方案</strong>：目前沒有，也許以後的 Adblock Plus 會增加這種功能。"
+  },
+  "s79": {
+    "message": "Flash 與 Java 上的按鈕無法正確顯示"
+  },
+  "s80": {
+    "message": "<strong>原因</strong>：Adblock Plus 不知道何時該顯示按鈕"
+  },
+  "s81": {
+    "message": "<strong>影響範圍</strong>：Fedora Linux 上的 Adblock Plus 1.1 以上版本"
+  },
+  "s82": {
+    "message": "<strong>解決方案</strong>：以 <a>官方提供的瀏覽器</a> 取代由發行版提供的版本。"
+  },
+  "s83": {
+    "message": "某些語系中出現尚未翻譯的英文字串"
+  },
+  "s84": {
+    "message": "<strong>原因</strong>：無人維護該語系的翻譯"
+  },
+  "s85": {
+    "message": "不幸的是，並不是每個 Adblock Plus 的語系翻譯都受到良好的維護。有些語系在 Adblock Plus 新版發布前仍未被釋出，或者根本已停止維護。"
+  }
+}

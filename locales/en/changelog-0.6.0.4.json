@@ -1,0 +1,41 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.6.0.4"
+  },
+  "s1": {
+    "message": "Fixed: \"Not loaded\" in the status bar on startup and context menu resetting to default (dropping compatibily with Mozilla Suite before 1.7 and Firefox before 0.9 for that reason)"
+  },
+  "s2": {
+    "message": "Added an icon to the toolbar (Firefox only, can be moved/removed via standard \"Customize\" dialog)"
+  },
+  "s3": {
+    "message": "Added an option to hide \"Adblock\" in the status bar"
+  },
+  "s4": {
+    "message": "Added an option to block ads in local pages (for compatibility with Sage)"
+  },
+  "s5": {
+    "message": "Made whitelist filters apply to both whole pages and individual items"
+  },
+  "s6": {
+    "message": "Made \"Disable on site\" add more specific filters"
+  },
+  "s7": {
+    "message": "Preferences dialog: Parts of the \"Options\" menu moved into the new \"Filters\" menu and the context menu"
+  },
+  "s8": {
+    "message": "Preferences dialog: Made \"Options\" menu apply changes immediately and not when \"OK\" was pressed"
+  },
+  "s9": {
+    "message": "Preferences dialog: Made menu items to disable whenever necessary"
+  },
+  "s10": {
+    "message": "Added \"Adblock Link\" to the context menu (if \"Check banner links\" is enabled)"
+  },
+  "s11": {
+    "message": "Many minor changes"
+  },
+  "s12": {
+    "message": "Changelog for the previous release"
+  }
+}

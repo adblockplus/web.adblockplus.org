@@ -1,0 +1,125 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.7.5"
+  },
+  "s1": {
+    "message": "The following lists the major changes compared to Adblock Plus 0.7.2:"
+  },
+  "s2": {
+    "message": "New features"
+  },
+  "s3": {
+    "message": "Matching element hiding rules are now visible in the list of blockable items"
+  },
+  "s4": {
+    "message": "Hit counts for element hiding rules"
+  },
+  "s5": {
+    "message": "Subscription authors can now specify the new address of the list using permanent redirects (<a>bug 16786</a>, <a>documentation</a>)"
+  },
+  "s6": {
+    "message": "Only Firefox 2.0.0.4/SeaMonkey 1.1.2 and higher: XMLHttpRequests and object subrequests appear in list of blockable items with type &quot;other&quot; (<a>blog post</a>)"
+  },
+  "s7": {
+    "message": "Compatibility with K-Meleon 1.1, multi-language packages are available now (those will <strong>not</strong> work correctly in K-Meleon 1.02)"
+  },
+  "s8": {
+    "message": "User interface"
+  },
+  "s9": {
+    "message": "Added translations: Persian, Arabic, Mongolian"
+  },
+  "s10": {
+    "message": "List of blockable items now appears at the bottom of the window instead of being placed in the sidebar, the behavior is now the same throughout host applications with exception of K-Meleon (<a>forum thread</a>)"
+  },
+  "s11": {
+    "message": "Appearance of tabs on Flash and Java changed to make them less intrusive (<a>forum thread</a>)"
+  },
+  "s12": {
+    "message": "Icons for the optional &quot;State&quot; column in blockable items list replaced to make them better recognizable for colorblind people (<a>forum thread</a>)"
+  },
+  "s13": {
+    "message": "Removed useless &quot;Block remote ads in local pages&quot; option (<a>forum thread</a>)"
+  },
+  "s14": {
+    "message": "Made sure tabs on Flash and Java do not break page layout (<a>bug 12911</a>)"
+  },
+  "s15": {
+    "message": "Tabs on Flash and Java now adapt to changes in text size"
+  },
+  "s16": {
+    "message": "Firefox: Default placement of the toolbar icon is now the right edge of the navigation toolbar (<a>forum thread</a>)"
+  },
+  "s17": {
+    "message": "Core"
+  },
+  "s18": {
+    "message": "Removed example filters added to the list by default, these have been superseded by subscriptions"
+  },
+  "s19": {
+    "message": "More consistent handling of frames, less likely to trigger bugs in Gecko (<a>bug 16726</a>)"
+  },
+  "s20": {
+    "message": "Added"
+  },
+  "s21": {
+    "message": "collapse"
+  },
+  "s22": {
+    "message": "and"
+  },
+  "s23": {
+    "message": "~collapse"
+  },
+  "s24": {
+    "message": "filter options to override the global &quot;Collapse blocked elements&quot; option (<a>documentation</a>)"
+  },
+  "s25": {
+    "message": "Removed SeaMonkey sidebar customization hacks"
+  },
+  "s26": {
+    "message": "Removed several no longer useful preferences (<a>documentation</a>) and simplified the application logic"
+  },
+  "s27": {
+    "message": "Removed exceptions for about:blank, javascript: and data: addresses"
+  },
+  "s28": {
+    "message": "Now ignoring effectively empty rows/cols attributes when collapsing frames in a frameset"
+  },
+  "s29": {
+    "message": "Made handling of frames and images loaded with OBJECT and EMBED tags consistent (<a>bug 16144</a>)"
+  },
+  "s30": {
+    "message": "Dropped Songbird 0.1 support, requiring Songbird 0.2 or higher now"
+  },
+  "s31": {
+    "message": "Fixed: items with same address but different type always appear as one item in the list"
+  },
+  "s32": {
+    "message": "Fixed: \"Open in new tab\" and \"Flash item's borders\" context menu entries (blockable items list) don't work in Thunderbird and Songbird"
+  },
+  "s33": {
+    "message": "Fixed: Tabs on Flash and Java only visible after restarting twice after installation in Firefox 3.0 alphas (<a>bug 16077</a>)"
+  },
+  "s34": {
+    "message": "Now preventing web pages from probing for Adblock Plus by abusing <a>bug 292789</a> in Gecko (<a>bug 16027</a>, <a>documentation</a>)."
+  },
+  "s35": {
+    "message": "Improved storage of internal data (<a>bug 15758</a>)"
+  },
+  "s36": {
+    "message": "Known issues"
+  },
+  "s37": {
+    "message": "Mac OS X: Flash movies might not be displayed properly if \"Show tabs on Flash and Java\" option is switched on"
+  },
+  "s38": {
+    "message": "Thunderbird/SeaMonkey Mail: Default keyboard shortcut Ctrl+Shift+A for Adblock Plus Preferences doesn't work due to a conflict with a built-in keyboard shortcut (<a>bug 16791</a>)"
+  },
+  "s39": {
+    "message": "SeaMonkey Mail and Songbird: No toolbar icon available (status bar icon shows up instead)"
+  },
+  "s40": {
+    "message": "Changelog for the previous release"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "title": {
+    "message": "Preguntas frecuentes - Funcionalidad básica"
+  },
+  "s1": {
+    "message": "¿Cómo bloqueo un anuncio?"
+  },
+  "s2": {
+    "message": "Puede pulsar con el botón derecho del ratón en cualquier imagen o frame y seleccionar &quot;ABP - Bloquear imagen&quot; en el menú contextual. Se abrirá un diálogo con el que podrá ajustar el nuevo filtro antes de añadirlo. Puede reemplazar partes de la dirección del anuncio por comodines (usando el carácter *) para que así el filtro bloquee otros anuncios con direcciones similares. Para obtener más información puede leer la sección <a>Cómo escribir filtros para Adblock Plus</a>."
+  },
+  "s3": {
+    "message": "Quiero que me muestren cómo se hace"
+  },
+  "s4": {
+    "message": "A veces quiero que Adblock Plus esté desactivado. ¿Cuál es la forma más fácil de conseguirlo?"
+  },
+  "s5": {
+    "message": "Puede pulsar en la flecha del icono de Adblock Plus en la barra de Herramientas para que aparezca el menú, donde puede encontrar la opción de activar/desactivar Adblock Plus. Si eso no es lo bastante rápido para usted, pulse en el icono con el botón intermedio del ratón, lo que desactivará o activará Adblock Plus."
+  },
+  "s6": {
+    "message": "Dentro del menú existe también la opción de desactivar Adblock Plus en una página concreta. Esto añadirá una regla de excepción como"
+  },
+  "s7": {
+    "message": "@@||adblockplus.org^$document"
+  },
+  "s8": {
+    "message": "a su lista de filtros. Puede obtener más información sobre las reglas de excepción en <a>Cómo escribir filtros para Adblock Plus</a>."
+  },
+  "s9": {
+    "message": "Quiero que me muestren cómo se hace"
+  },
+  "s32": {
+    "message": "El anuncio es un objeto (Flash o Java) y no aparece un menú contextual. ¿Qué hago?"
+  },
+  "s33": {
+    "message": "Adblock Plus tiene una opción denominada \"Mostrar pestañas en Flash y Java\". Cuando está activada (predisposición por defecto) aparecerá un botón en el pondrá \"Bloquear\" en la esquina superior derecha (inferior derecha si no hay suficiente espacio) de cada objeto. Pulsando en ese botón bloqueará el objeto."
+  },
+  "s34": {
+    "message": "Quiero que me muestren cómo se hace"
+  },
+  "s35": {
+    "message": "También puede abrir la lista de elementos bloqueables (teclee Ctrl+Mayús+V o pulse en la flecha junto al icono de ABP en la barra de Herramientas y seleccione Abrir ventana elementos bloqueables) y busque allí el objeto."
+  },
+  "s36": {
+    "message": "Quiero que me muestren cómo se hace"
+  },
+  "s37": {
+    "message": "Puede pulsar en el encabezado de la columna Tipo -- eso ordenará la lista por tipo, lo que le permitirá encontrar los objetos más fácilmente."
+  },
+  "s38": {
+    "message": "La lista de elementos a bloquear muestra muchas direcciones. ¿Cómo sé cuál de ellas es un anuncio?"
+  },
+  "s39": {
+    "message": "Puede buscar direcciones que comiencen de forma diferente a la de la página que está viendo. Además los anuncios suelen tener palabras clave como \"banner\" o \"ad\" en su dirección. Si pulsa una dirección el elemento o elementos correspondientes parpadearán en la página (desgraciadamente esto no funciona con todos los tipos de objetos). Si aún no está seguro, pulse con el botón intermedio del ratón en la dirección para abrir el elemento en una nueva pestaña -- allí podrá comprobar definitivamente si es un anuncio."
+  },
+  "s40": {
+    "message": "¿Afecta el orden de los filtros al rendimiento?"
+  },
+  "s41": {
+    "message": "No. Cuando Adblock Plus compara una dirección con su lista de filtros determina el mejor ordenamiento para comprobar los filtros automáticamente, de hecho la mayoría de ellos no se tendrán siquiera en cuenta. Puede modificar a su gusto el orden de los filtros en la ventana de Preferencias, no tendrá ningún efecto sobre el rendimiento de la extensión."
+  },
+  "s42": {
+    "message": "¿Son más rápidas las expresiones regulares que los filtros \"normales\"?"
+  },
+  "s43": {
+    "message": "Normalmente no es así. Adblock Plus transformará cualquier filtro \"normal\" en una expresión regular, y trabajará internamente exclusivamente con expresiones regulares -- no hay ninguna diferencia entre los filtros"
+  },
+  "s44": {
+    "message": "banner"
+  },
+  "s45": {
+    "message": "y"
+  },
+  "s46": {
+    "message": "/banner/"
+  },
+  "s47": {
+    "message": "."
+  },
+  "s48": {
+    "message": "Las expresiones regulares suelen usarse para \"comprimir\" la lista de filtros y sustituir varios filtros individuales por una sola expresión regular. La regla práctica habitual suele ser que \"menos filtros implican más velocidad\" pero eso no es siempre cierto en nuestro caso. Evaluar expresiones regulares complicadas lleva mucho tiempo, de modo que puede ser más rápido utilizar varios filtros simples."
+  },
+  "s49": {
+    "message": "Sin embargo, las expresiones regulares aportan más flexibilidad, y en ese caso su uso está siempre justificado Por ejemplo, la expresión regular"
+  },
+  "s50": {
+    "message": "/adv(?!ice)/"
+  },
+  "s51": {
+    "message": "bloqueará"
+  },
+  "s52": {
+    "message": "adv"
+  },
+  "s53": {
+    "message": ","
+  },
+  "s54": {
+    "message": "advert"
+  },
+  "s55": {
+    "message": "y"
+  },
+  "s56": {
+    "message": "advertisement"
+  },
+  "s57": {
+    "message": ", pero no"
+  },
+  "s58": {
+    "message": "advice"
+  },
+  "s59": {
+    "message": "-- algo que no podría conseguir usando solamente comodines."
+  }
+}

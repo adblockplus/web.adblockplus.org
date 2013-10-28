@@ -1,0 +1,41 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.7.0.1"
+  },
+  "s1": {
+    "message": "Added translations: Korean, Thai"
+  },
+  "s2": {
+    "message": "Fixed issues with configurable shortcut keys on Mac OS X (Tab key would trigger an Adblock Plus action)"
+  },
+  "s3": {
+    "message": "Fixed tiny memory leak"
+  },
+  "s4": {
+    "message": "Moved Tools menu entry to a more suitable location"
+  },
+  "s5": {
+    "message": "Hiding &quot;Block images from ...&quot; in the context menu (image manager's entry) to avoid confusion -- unless image manager is already blocking something or <a>extensions.adblockplus.hideimagemanager</a> is"
+  },
+  "s6": {
+    "message": "false"
+  },
+  "s7": {
+    "message": "Added subscription recommendation for the Russian region"
+  },
+  "s8": {
+    "message": "Made links in the German locale point to the German version of adblockplus.mozdev.org"
+  },
+  "s9": {
+    "message": "Changed example exception rule to"
+  },
+  "s10": {
+    "message": "@@|http://www.mozilla.org/"
+  },
+  "s11": {
+    "message": "(@@https:// sometimes whitelists pages containing ads)"
+  },
+  "s12": {
+    "message": "Changelog for the previous release"
+  }
+}

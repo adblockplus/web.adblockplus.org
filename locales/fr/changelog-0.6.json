@@ -1,0 +1,146 @@
+{
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.6"
+  },
+  "s1": {
+    "message": "Voici les principales modifications en comparaison avec la version 0.5.2.039 d’Adblock :"
+  },
+  "s2": {
+    "message": "Interface utilisateur"
+  },
+  "s3": {
+    "message": "Cliquer sur \"Bloquer ... avec Adblock...\" dans le menu contextuel, le menu principal et la barre d'état ouvre trois boîtes de dialogue différentes -- RÉPARÉ"
+  },
+  "s4": {
+    "message": "La boîte de dialogue des préférences comporte les boutons \"OK\" et \"Annuler\" à la place de \"Valider\" et \"Restaurer maintenant\""
+  },
+  "s5": {
+    "message": "La liste de filtres dans la boîte de dialogue des préférences est un dérivé bogué du widget boîte de liste par défaut -- RÉPARÉ"
+  },
+  "s6": {
+    "message": "Le menu dans la boîte de dialogue des préférences est à présent le widget menu standard en remplacement du bouton de la barre d'état et des popups"
+  },
+  "s7": {
+    "message": "La routine de traitement global des touches dans la boîte de dialogue des préférences a été clarifiée en utilisant preventDefault pour s'assurer du bon comportement des touches"
+  },
+  "s8": {
+    "message": "la touche ENTRÉE est à présent interprétée comme un clic sur OK dans la boîte de dialogue des préférences (le traitement de la touche Échap a également été réparé, voyez le point précédent)"
+  },
+  "s9": {
+    "message": "Le clignotement des URL sélectionnées/entrées fonctionne partout à présent"
+  },
+  "s10": {
+    "message": "Si l'option \"Conserver l'ordre alphabétique\" dans le menu de la boîte de dialogue des préférences est sélectionnée, elle est appliquée immédiatement, il n'est plus nécessaire de fermer la boîte et de la réouvrir pour que cette fonctionnalité soit prise en compte"
+  },
+  "s11": {
+    "message": "Ajout d'une entrée dans le menu \"Outils\" à la place d'un sous-menu comportant 3 entrées"
+  },
+  "s12": {
+    "message": "Ajout de deux raccourcis clavier dans la fenêtre du navigateur au lieu de cinq"
+  },
+  "s13": {
+    "message": "Ne supprime plus le style CSS du thème courant"
+  },
+  "s14": {
+    "message": "Sécurité"
+  },
+  "s15": {
+    "message": "Aucune donnée n'est stockée dans le DOM sinon, elles seraient accessibles par des scripts du contenu"
+  },
+  "s16": {
+    "message": "Limiter l'interaction avec le DOM au minimum"
+  },
+  "s17": {
+    "message": "Sécuriser l'accès au DOM sans XPCNativeWrappers"
+  },
+  "s18": {
+    "message": "Nouvelles fonctionnalités"
+  },
+  "s19": {
+    "message": "Le panneau latéral d'Adblock (uniquement pour Firefox) affiche les URLS filtrables dans l'onglet courant sélectionné de manière dynamique"
+  },
+  "s20": {
+    "message": "La définition d'une liste blanche est compatible avec Adblock Plus. À faire : Une meilleure intégration liste blanche + interface utilisateur"
+  },
+  "s21": {
+    "message": "La boîte de dialoque \"À propos de...\" affiche le numéro de la version installée indiqué par le gestionnaire d'extension (pas besoin de modifier cela manuellement pour chaque version)"
+  },
+  "s22": {
+    "message": "Ajout de trois filtres par défaut comme exemples (ne se référents pas à des sites spécifiques)"
+  },
+  "s23": {
+    "message": "Glisser les URL à bloquer dans la barre d'état (je ne vois pas à quoi cela peut servir mais c'était peut-être la fonction du code glisser/déposer qui a été supprimé)"
+  },
+  "s24": {
+    "message": "Activer/désactiver Adblock par un clic de souris dans la barre des tâches (une autre fonctionnalité, je pense, de ce code glisser/déposer)"
+  },
+  "s25": {
+    "message": "Les localisations sont possibles"
+  },
+  "s26": {
+    "message": "Fonctionnalités supprimées"
+  },
+  "s27": {
+    "message": "Décider de ce que les filtres ne pourront probablement pas appliquer en se basant sur le nom de l'hôte -- mon implémentation originale a été conçue pour accélérer les choses, elle a été sévèrement modifiée et ralenti à présent le fonctionnement de l'extension. Il n'est plus possible de l'utiliser avec l'Adblock actuel qui fonctionne différemment."
+  },
+  "s28": {
+    "message": "Un étrange code non fonctionnel de glisser/déposer -- je ne peux que deviner ce à quoi cela devait servir, voyez la rubrique \"Nouvelles fonctionnalités\" plus haut"
+  },
+  "s29": {
+    "message": "Cacher les objets -- cela remplaçait les objets par un DIV cliquable et permettait de les bloquer, très facile de courir à sa perte ainsi. Vraiment la mauvaise manière de faire cela."
+  },
+  "s30": {
+    "message": "QuickBlock -- Je n'arrive pas à me eprésenter ce que cela faisait, même en regardant le code. Michael McDonald m'a renségné à présent (un Ctrl-Shift-DblClic supprimait les images temporairement) mais je ne pense pas que plus de dix personnes connaissaient cette fonctionnalité."
+  },
+  "s31": {
+    "message": "Bloquer les sites -- très bogué et totalement inefficace. Bloquer une page explicitement requise -- qu'est-ce que cela a-t-il à voir avec le blocage de publicités ?"
+  },
+  "s32": {
+    "message": "Désactiver les zones d'images map -- aucune idée en quoi cela devait bloquer des publicités. S'il y a une raison cachée, l'utilisateur ne pourra pas se la représenter."
+  },
+  "s33": {
+    "message": "Supprimer du menu les raccourcis claviers en conflit -- ce n'est vraiment pas une chose à faire, les extensions ne devraient pas faire cela."
+  },
+  "s34": {
+    "message": "Modifier le format d'affichage du numéro de version dans la fenêtre du gestionnaire d'extension -- à côté du fait qu'une extension ne devrait pas faire cela, le format du numéro de version standard eszt tout à fait lisible dans différents endroits."
+  },
+  "s35": {
+    "message": "Installation d'un composant dans le dossier profile des versions de navigateurs n'étant pas compatible avec cela -- mon très laid hack n'était prévu que pour prendre des mesures temporairement jusqu'à ce qu'une solution correcte soit trouvée afin d'installer des composants dans le dossier profile. Ceci est le cas depuis longtemps."
+  },
+  "s36": {
+    "message": "Code de désinstallation très dangereux pour la suite Mozilla"
+  },
+  "s37": {
+    "message": "Nettoyage"
+  },
+  "s38": {
+    "message": "Beaucoup de codes lourds et bogués ont été réécrits."
+  },
+  "s39": {
+    "message": "Beaucoup de corrections d'erreurs ont été ajoutées."
+  },
+  "s40": {
+    "message": "Amélioration de la communication entre différentes parties (parmi d'autre, suppression de la communication par les préférences)."
+  },
+  "s41": {
+    "message": "Dans la liste des filtres, l'édition en ligne des filtres a été réécrite pour réduire les effets secondaires."
+  },
+  "s42": {
+    "message": "Suppression l'utilisation absurde des marques CSS !important."
+  },
+  "s43": {
+    "message": "Réduction de la taille du XPI de 60%"
+  },
+  "s44": {
+    "message": "Nouveaux problèmes connus"
+  },
+  "s45": {
+    "message": "La nouvelle interface d'utilisateur des préférences concentre trop d'informations/fonctions sur un trop petit espace. Cela devra être travaillé mais reste bien meilleur que l'actuelle interface d'utilisateur d'Adblock."
+  },
+  "s46": {
+    "message": "Le panneau latéral ne supprime des données que si de nouvelles données sont ajoutées, il faudra dynamiser cela."
+  },
+  "s47": {
+    "message": "Le panneau latéral pourrait s'agrémenter de nouvelles fonctionnalités efficaces, cela sera fait bientôt."
+  }
+}

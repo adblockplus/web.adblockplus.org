@@ -1,0 +1,65 @@
+{
+  "title": {
+    "message": "Identificar los filtros redundantes"
+  },
+  "s1": {
+    "message": "'{filter}' no es un filtro válido"
+  },
+  "s2": {
+    "message": "'{filter1}' resulta redundante a causa de '{filter2}'"
+  },
+  "s3": {
+    "message": "No se ha encontrado ningún filtro redundante"
+  },
+  "s4": {
+    "message": "Preparando la comprobación..."
+  },
+  "s5": {
+    "message": "Comprobando filtro {current} de {count}"
+  },
+  "s6": {
+    "message": "Preparando la lista de resultados..."
+  },
+  "s7": {
+    "message": "Finalizado"
+  },
+  "s8": {
+    "message": "Esta página evaluará una lista de filtros para averiguar cuáles de ellos pueden ser eliminados. Puede detectar casos como por ejemplo el de"
+  },
+  "s9": {
+    "message": "http://example.com/ads/*"
+  },
+  "s10": {
+    "message": "y"
+  },
+  "s11": {
+    "message": "*/ads/*,"
+  },
+  "s12": {
+    "message": "en el que el primer filtro resulta redundante a causa del segundo, más genérico. Al terminar le entregará su lista modificada, con los filtros redundantes eliminados."
+  },
+  "s13": {
+    "message": "Esta herramienta tiene algunas limitaciones. No puede evaluar reglas de ocultación de elementos, así que éstas nunca se verán afectadas por los cambios, y tampoco puede determinar si se puede eliminar una expresión regular, aunque sí puede detectar si un filtro simple puede eliminarse a causa de una expresión regular que lo haga redundante."
+  },
+  "s14": {
+    "message": "Por favor, abra las preferencias de Adblock Plus y marque todos los filtros que quiere comprobar. Cópielos (seleccione Editar -- Copiar en el menú o pulse Ctrl+C) y péguelos en el campo de texto de la parte inferior. También tiene la opción de exportar sus filtros y pegar el contenido del archivo dentro del campo de texto."
+  },
+  "s15": {
+    "message": "<em>Declaración de privacidad</em>: No se enviará ningún dato al servidor. Todos los cálculos y operaciones necesarios se llevan a cabo dentro de su ordenador, y sus datos nunca saldrán del mismo."
+  },
+  "s16": {
+    "message": "Localizar los filtros redundantes"
+  },
+  "s17": {
+    "message": "Estado:"
+  },
+  "s18": {
+    "message": "Puede ver en la parte inferior su lista de filtros con los filtros redundantes ya eliminados. Puede copiar y pegarla en sus preferencias de Adblock Plus (eliminando antes los filtros ya existentes). O también puede"
+  },
+  "s19": {
+    "message": "pulsar aquí"
+  },
+  "s20": {
+    "message": "para que los filtros se muestren en una página separada. Guárdelos en un archivo que luego deberá importar en las preferencias de Adblock Plus."
+  }
+}

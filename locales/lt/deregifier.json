@@ -1,0 +1,59 @@
+{
+  "title": {
+    "message": "Konvertuoti reguliariąsias išraiškas atgal į paprastus filtrus"
+  },
+  "s1": {
+    "message": "Pradedant Adblock Plus 0.7 buvo optimizuotas panašių filtrų sutapatinimas (ne reguliariosios išraiškos) ir net be proto daug filtrų nebeturėjo įtakos naršymo greičiui. Deja ši optimizacija neveikia su reguliariosiomis išraiškomis, kiekviena reguliarioji išraiška lėtina jūsų naršymą. Reguliariosios išraiškos ilgą laiką buvo naudojamos „suspausti“ filtrų sąrašus, daugiau to nebereikia."
+  },
+  "s2": {
+    "message": "Šis puslapis įvertins filtrų sąrašo įrašus ir pabandys konvertuoti reguliariąsias išraiškas į paprastą filtrų rinkinį, taip pagerinant greitaveiką. Pavyzdžiui, jis konvertuos filtrą"
+  },
+  "s3": {
+    "message": "/ad|banner/"
+  },
+  "s4": {
+    "message": "į du filtrus"
+  },
+  "s5": {
+    "message": "ad"
+  },
+  "s6": {
+    "message": "ir"
+  },
+  "s7": {
+    "message": "banner"
+  },
+  "s8": {
+    "message": ". Jis paliks reguliariąsias išraiškas, tokias kaip"
+  },
+  "s9": {
+    "message": "/ads|ad\\d+/"
+  },
+  "s10": {
+    "message": "nepaliestas, kadangi išraiška"
+  },
+  "s11": {
+    "message": "\\d"
+  },
+  "s12": {
+    "message": "neturi tiesioginio atitikmens paprastoje filtrų sintaksėje ir kol kas šis įrankis negali ištraukti atitinkamų išraiškos dalių."
+  },
+  "s13": {
+    "message": "Atverkite Adblock Plus nustatymus ir pažymėkite visus filtrus kuriuos norėsite patikrinti. Nukopijuokite juos ir įklijuokite juos į žemiau esantį laukelį. Taipogi galite eksportuoti filtrus ir įklijuoti to failo turinį."
+  },
+  "s14": {
+    "message": "<em>Privatumo pranešimas</em>: jokie duomenys nėra perduodami į serverį. Visi reikalingi skaičiavimai atliekami jūsų kompiuteryje, duomenys iš jūsų kompiuterio jo niekad nepalieka."
+  },
+  "s15": {
+    "message": "Konvertuoti reguliariąsias išraiškas"
+  },
+  "s16": {
+    "message": "Jūsų filtrų sąrašas su pakeistomis reguliariosiomis išraiškomis pateiktas žemiau. Galite nukopijuoti jį ir įklijuoti į Adblock Plus nustatymus (pirmiausia pašalinkite esamus filtrus). Taipogi galite"
+  },
+  "s17": {
+    "message": "paspausti čia"
+  },
+  "s18": {
+    "message": "ir gausite filtrus atskirame puslapyje. Išsaugokite juos kaip failą ir importuokite Adblock Plus nustatymuose. <a>išbandykite savo sąrašą ir įsitikinkite jog ten nėra nereikalingų filtrų</a>."
+  }
+}

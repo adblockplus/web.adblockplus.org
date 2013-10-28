@@ -1,0 +1,515 @@
+{
+  "title": {
+    "message": "Adblock Plus filters explained"
+  },
+  "s1": {
+    "message": "Unfinished, not for translating"
+  },
+  "s2": {
+    "message": "Simple blocking rules"
+  },
+  "s3": {
+    "message": "Blocking rules determine addresses that Adblock Plus should block."
+  },
+  "s4": {
+    "message": "Example 1: Blocking by address parts"
+  },
+  "s5": {
+    "message": "Verbatim text"
+  },
+  "s6": {
+    "message": "This text must be present in the address to be blocked."
+  },
+  "s7": {
+    "message": "Wildcard character"
+  },
+  "s8": {
+    "message": "This stands for any number of characters."
+  },
+  "s9": {
+    "message": "Separator"
+  },
+  "s10": {
+    "message": "The address must either end here or a separator character like ? or / has to follow."
+  },
+  "s11": {
+    "message": "/banner/"
+  },
+  "s12": {
+    "message": "*"
+  },
+  "s13": {
+    "message": "/img"
+  },
+  "s14": {
+    "message": "^"
+  },
+  "s15": {
+    "message": "This rule blocks:"
+  },
+  "s16": {
+    "message": "This rule doesn't block:"
+  },
+  "s17": {
+    "message": "Example 2: Blocking by domain name"
+  },
+  "s18": {
+    "message": "Domain name anchor"
+  },
+  "s19": {
+    "message": "The following text must be the domain name of the address."
+  },
+  "s20": {
+    "message": "Verbatim text"
+  },
+  "s21": {
+    "message": "This text must be present in the address to be blocked."
+  },
+  "s22": {
+    "message": "Separator"
+  },
+  "s23": {
+    "message": "A separator character has to follow that will indicate the end of the domain name, e.g. / or :."
+  },
+  "s24": {
+    "message": "||"
+  },
+  "s25": {
+    "message": "ads.example.com"
+  },
+  "s26": {
+    "message": "^"
+  },
+  "s27": {
+    "message": "This rule blocks:"
+  },
+  "s28": {
+    "message": "This rule doesn't block:"
+  },
+  "s29": {
+    "message": "Example 3: Blocking exact address"
+  },
+  "s30": {
+    "message": "Start anchor"
+  },
+  "s31": {
+    "message": "The following text must be the beginning of the address."
+  },
+  "s32": {
+    "message": "Verbatim text"
+  },
+  "s33": {
+    "message": "This text must be present in the address to be blocked."
+  },
+  "s34": {
+    "message": "End anchor"
+  },
+  "s35": {
+    "message": "The preceding text must be the end of the address."
+  },
+  "s36": {
+    "message": "|"
+  },
+  "s37": {
+    "message": "http://example.com/"
+  },
+  "s38": {
+    "message": "|"
+  },
+  "s39": {
+    "message": "This rule blocks:"
+  },
+  "s40": {
+    "message": "This rule doesn't block:"
+  },
+  "s41": {
+    "message": "Options in blocking rules"
+  },
+  "s42": {
+    "message": "Blocking rules can have a number of options to fine-tune their behavior."
+  },
+  "s43": {
+    "message": "Address to be blocked"
+  },
+  "s44": {
+    "message": "This part of the rule defines which addresses it is applied to."
+  },
+  "s45": {
+    "message": "Option separator"
+  },
+  "s46": {
+    "message": "This character indicates that the following text defines filter option."
+  },
+  "s47": {
+    "message": "Type option"
+  },
+  "s48": {
+    "message": "Type options define request types to be blocked. Common type options are"
+  },
+  "s49": {
+    "message": "script"
+  },
+  "s50": {
+    "message": "or"
+  },
+  "s51": {
+    "message": "image"
+  },
+  "s52": {
+    "message": "indicating that only\n        scripts/images should be blocked. The inverse type option"
+  },
+  "s53": {
+    "message": "~script"
+  },
+  "s54": {
+    "message": "means that the filter should not be applied to scripts."
+  },
+  "s55": {
+    "message": "Domain option"
+  },
+  "s56": {
+    "message": "Domain option restricts the filter to a set of domains (here"
+  },
+  "s57": {
+    "message": "example.com"
+  },
+  "s58": {
+    "message": ").\n        It also allows to disable the rule on dome domains (here on"
+  },
+  "s59": {
+    "message": "foo.example.com"
+  },
+  "s60": {
+    "message": ")."
+  },
+  "s61": {
+    "message": "||ads.example.com^"
+  },
+  "s62": {
+    "message": "$"
+  },
+  "s63": {
+    "message": "script"
+  },
+  "s64": {
+    "message": ","
+  },
+  "s65": {
+    "message": "image"
+  },
+  "s66": {
+    "message": ","
+  },
+  "s67": {
+    "message": "domain=example.com|~foo.example.info"
+  },
+  "s68": {
+    "message": "This rule blocks"
+  },
+  "s69": {
+    "message": "only if the following conditions are met:"
+  },
+  "s70": {
+    "message": "This address is being loaded as a script or an image."
+  },
+  "s71": {
+    "message": "The page loading it comes from"
+  },
+  "s72": {
+    "message": "domain (for example"
+  },
+  "s73": {
+    "message": "itself\n    or"
+  },
+  "s74": {
+    "message": ") but not from"
+  },
+  "s75": {
+    "message": "or its subdomains."
+  },
+  "s76": {
+    "message": "Exception rules"
+  },
+  "s77": {
+    "message": "Exception rules are built the same as blocking rules, they define which addresses should be allowed even if matching blocking rules exists."
+  },
+  "s78": {
+    "message": "Example 1: Exception for particular requests"
+  },
+  "s79": {
+    "message": "Exception rule"
+  },
+  "s80": {
+    "message": "Rules starting like this are exceptions, they will override blocking rules."
+  },
+  "s81": {
+    "message": "Address to be allowed"
+  },
+  "s82": {
+    "message": "This part of the rule defines which addresses it is applied to, it is structured the same as for <a>blocking rules</a>."
+  },
+  "s83": {
+    "message": "Type option"
+  },
+  "s84": {
+    "message": "This type option prevents the exception from being applied to scripts."
+  },
+  "s85": {
+    "message": "@@"
+  },
+  "s86": {
+    "message": "||ads.example.com/notbanner^"
+  },
+  "s87": {
+    "message": "$"
+  },
+  "s88": {
+    "message": "~script"
+  },
+  "s89": {
+    "message": "Example 2: Exception for an entire site"
+  },
+  "s90": {
+    "message": "Exception rule"
+  },
+  "s91": {
+    "message": "Rules starting like this are exceptions, they will override blocking rules."
+  },
+  "s92": {
+    "message": "Address to be allowed"
+  },
+  "s93": {
+    "message": "This part of the rule defines which addresses it is applied to, it is structured the same as for <a>blocking rules</a>."
+  },
+  "s94": {
+    "message": "Type option"
+  },
+  "s95": {
+    "message": "This special type option indicates that Adblock Plus should be completely disabled on pages that this rule applies to."
+  },
+  "s96": {
+    "message": "@@"
+  },
+  "s97": {
+    "message": "||example.com^"
+  },
+  "s98": {
+    "message": "$"
+  },
+  "s99": {
+    "message": "document"
+  },
+  "s100": {
+    "message": "Comments"
+  },
+  "s101": {
+    "message": "Comment"
+  },
+  "s102": {
+    "message": "An exclamation mark at the beginning of the rule indicates a comment."
+  },
+  "s103": {
+    "message": "Comment text"
+  },
+  "s104": {
+    "message": "This text will not be used for blocking, you can write anything you want."
+  },
+  "s105": {
+    "message": "!"
+  },
+  "s106": {
+    "message": "This is a comment"
+  },
+  "s107": {
+    "message": "Filter options"
+  },
+  "s108": {
+    "message": "Option"
+  },
+  "s109": {
+    "message": "Purpose"
+  },
+  "s110": {
+    "message": "Types"
+  },
+  "s111": {
+    "message": "Include or exclude JavaScript files"
+  },
+  "s112": {
+    "message": "Include or exclude image files"
+  },
+  "s113": {
+    "message": "Include or exclude stylesheets (CSS files)"
+  },
+  "s114": {
+    "message": "Include or exclude content handled by browser plugins like Flash or Java"
+  },
+  "s115": {
+    "message": "Include or exclude files loaded by browser plugins"
+  },
+  "s116": {
+    "message": "Include or exclude pages loaded within pages (frames)"
+  },
+  "s117": {
+    "message": "Exceptions"
+  },
+  "s118": {
+    "message": "Used to whitelist the page itself (e.g."
+  },
+  "s119": {
+    "message": ")"
+  },
+  "s120": {
+    "message": "Used to prevent element rules from applying on a page (e.g."
+  },
+  "s121": {
+    "message": ")"
+  },
+  "s122": {
+    "message": "Domains"
+  },
+  "s123": {
+    "message": "Specify a list of domains, separated by bar lines (|), on which a filter should be active. A filter may be prevented from being activated on a domain by preceding the domain name with a tilde (~)."
+  },
+  "s124": {
+    "message": "Specify whether a filter should be active on third-party or first domains"
+  },
+  "s125": {
+    "message": "Less frequently used options, including"
+  },
+  "s126": {
+    "message": ","
+  },
+  "s127": {
+    "message": ","
+  },
+  "s128": {
+    "message": ","
+  },
+  "s129": {
+    "message": ","
+  },
+  "s130": {
+    "message": ","
+  },
+  "s131": {
+    "message": ","
+  },
+  "s132": {
+    "message": "and"
+  },
+  "s133": {
+    "message": "are explained in the <a>full documentation</a>."
+  },
+  "s134": {
+    "message": "Element hiding"
+  },
+  "s135": {
+    "message": "It is generally recommended that users install the <a>Element Hiding Helper for Adblock Plus</a> to assist them in the generation of  element hiding rules."
+  },
+  "s136": {
+    "message": "Domain selection"
+  },
+  "s137": {
+    "message": "is used as a placeholder for <a>element selectors</a>."
+  },
+  "s138": {
+    "message": "Example rules"
+  },
+  "s139": {
+    "message": "Domain selection"
+  },
+  "s140": {
+    "message": "Active on:"
+  },
+  "s141": {
+    "message": "All domains, including:"
+  },
+  "s142": {
+    "message": "Not active on:"
+  },
+  "s143": {
+    "message": "Not applicable"
+  },
+  "s144": {
+    "message": "Active on, for example:"
+  },
+  "s145": {
+    "message": "Not active on:"
+  },
+  "s146": {
+    "message": "All other domains, including"
+  },
+  "s147": {
+    "message": "Active on:"
+  },
+  "s148": {
+    "message": "All other domains, including"
+  },
+  "s149": {
+    "message": "Not active on, for example:"
+  },
+  "s150": {
+    "message": "Active on, for example:"
+  },
+  "s151": {
+    "message": "Not active on:"
+  },
+  "s152": {
+    "message": "All other domains, including:"
+  },
+  "s153": {
+    "message": "Active on:"
+  },
+  "s154": {
+    "message": "Not active on:"
+  },
+  "s155": {
+    "message": "All other domains"
+  },
+  "s156": {
+    "message": "Element selection"
+  },
+  "s157": {
+    "message": "Selector"
+  },
+  "s158": {
+    "message": "Purpose"
+  },
+  "s159": {
+    "message": "Matches the element with the unique id \"advert\""
+  },
+  "s160": {
+    "message": "Matches elements with the class \"advert\""
+  },
+  "s161": {
+    "message": "Matches a table with a height of 100 and a width of 100"
+  },
+  "s162": {
+    "message": "Matches links to http://example.com/"
+  },
+  "s163": {
+    "message": "Matches div elements that have exactly the style specified"
+  },
+  "s164": {
+    "message": "Matches elements with the class \"link\" that are enclosed within elements with the id \"advert\""
+  },
+  "s165": {
+    "message": "Matches elements with the class \"link\" that are immediately preceded by elements with the id \"advert\""
+  },
+  "s166": {
+    "message": "Matches links to any pages hosted on http://example.com/"
+  },
+  "s167": {
+    "message": "Matches div elements that start with the style specified"
+  },
+  "s168": {
+    "message": "Matches div elements that end the style specified"
+  },
+  "s169": {
+    "message": "Matches div elements that containing the style specified"
+  },
+  "s170": {
+    "message": "The above filters are only examples of valid element hiding rules. Any <a>CSS selector</a> supported by Firefox can be used for element hiding."
+  }
+}
