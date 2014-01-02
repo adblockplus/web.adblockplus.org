@@ -18,7 +18,7 @@ You can easily test your changes to these files locally. What you need:
 
 Run the following command from the directory of the sitescripts repository:
 
-    python -m sitescripts.web.bin.test_server www_directory
+    python -m sitescripts.cms.bin.test_server www_directory
 
 Here `www_directory` should be replaced by the directory of this repository.
 This will start a local web server on port 5000, e.g. you can open the about
