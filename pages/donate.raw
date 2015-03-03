@@ -1,0 +1,571 @@
+<head>
+<style type="text/css">
+h2
+{
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+label
+{
+  display: block;
+}
+
+#form button,
+#form-fields label
+{
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+#form button:hover
+{
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+
+#form button:active
+{
+  background-color: #ebebeb;
+  border-color: #adadad;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+.hidden
+{
+  display: none;
+}
+
+.contentfield_content .hidden
+{
+  display: block;
+}
+
+#form strong
+{
+  display: block;
+  margin: 10px 0px;
+}
+
+#form button
+{
+  font-size: 18px;
+}
+
+/* Credit Card */
+
+#form.none button.credit-card,
+#form.credit-card button.credit-card
+{
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+#form.none button.credit-card:hover,
+#form.credit-card button.credit-card:hover
+{
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+
+/* Paypal */
+
+#form.none button.paypal,
+#form.paypal button.paypal
+{
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+#form.none button.paypal:hover,
+#form.paypal button.paypal:hover
+{
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+/* Bitcoin */
+
+#form.none button.bitcoin,
+#form.bitcoin button.bitcoin
+{
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+#form.none button.bitcoin:hover,
+#form.bitcoin button.bitcoin:hover
+{
+  background-color: #ed9c28;
+  border-color: #d58512;
+}
+
+/* Secondary Form Elements */
+
+#form-fields
+{
+  display: none;
+}
+
+#form.credit-card #form-fields,
+#form.paypal #form-fields,
+#form.bitcoin #form-fields
+{
+  display: block;
+}
+
+#form.credit-card #form-recurrence,
+#form.credit-card #recurrent-cancellation,
+#form.bitcoin #form-currency,
+#form.bitcoin #form-price
+{
+  display: none;
+}
+
+/* This cannot be #donate because specificity is too low */
+#form #donate
+{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+#form #donate:hover
+{
+  background-color: #47a447;
+  border-color: #398439;
+}
+
+#error
+{
+  color: #d9534f;
+  vertical-align: middle;
+}
+
+#refund-message
+{
+  margin-top: 50px;
+  font-style: italic;
+}
+
+#refund-message *
+{
+  font-size: 12px;
+}
+
+#refund-message div
+{
+  margin-bottom: 5px;
+}
+
+#refund-message ul
+{
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.custom-input
+{
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.custom-input .currency-label
+{
+  padding: 2px 6px;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-right: 0;
+  border-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #eee;
+}
+
+.custom-input input
+{
+  width: 75px;
+  margin: 0px;
+  padding: 2px;
+  text-align: right;
+  font-size: 14px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+</style>
+
+<script type="text/javascript">
+// <!--
+(function()
+{
+  var textAttr = ("textContent" in document.documentElement) ? "textContent" : "innerText";
+
+  var formValues = {
+    name: null
+  };
+
+  var currencyValue = {
+    get: function()
+    {
+      return document.querySelector("input[name=currency]:checked").value;
+    }
+  };
+
+  var priceValue = {
+    get: function()
+    {
+      var value = document.querySelector("input[name=price]:checked").value;
+      if (value == 0)
+        value = document.getElementById("price-other").value >> 0;
+      return value;
+    },
+    min: function()
+    {
+      return parseInt(document.getElementById("price-other").getAttribute("min"), 10);
+    },
+    verify: function()
+    {
+      var selected = document.querySelector("input[name=price]:checked");
+      if (!selected)
+        return "Please select an amount";
+      if (this.get() < this.min())
+        return "Please select a valid amount";
+      return null;
+    }
+  };
+
+  var langValue = {
+    get: function(langs)
+    {
+      var lang = document.documentElement.lang;
+      if (lang in langs)
+        return langs[lang];
+      if ("en" in langs)
+        return langs["en"];
+      return "en";
+    }
+  };
+
+  var recurrenceValue = {
+    get: function(recurrences)
+    {
+      var checked = document.getElementById("recurrence").checked;
+      return (checked && recurrences.monthly) ? recurrences.monthly : undefined
+    }
+  };
+
+  var providers = {
+    "bitcoin": function()
+    {
+      var recurring = recurrenceValue.get({
+        "monthly": "https://coinbase.com/checkouts/d46825e3f22461f6a25b3249f8ce7c2a"
+      });
+      openProviderPage({
+        action: (recurring) ? recurring : "https://coinbase.com/checkouts/ab08a165e21d72b503cff8f30bece652"
+      });
+    },
+    "credit-card": function()
+    {
+      if (verify(priceValue))
+        return;
+
+      openProviderPage({
+        action: "https://billing.micropayment.de/creditcard/file/",
+        fields: {
+          project: "dblock",
+          paytext: formValues.name,
+          currency: currencyValue.get(),
+          theme: "x1",
+          gfx: "29497-0BEA1C8A61",
+          lang: langValue.get({
+            "de": "de",
+            "en": "en",
+            "es": "es",
+            "fr": "fr",
+            "hr": "hr",
+            "it": "it",
+            "hu": "hu",
+            "nl": "nl",
+            "nb_no": "no",
+            "pt_pt": "pt",
+            "pt_br": "bt",
+            "sl": "sl",
+            "fi": "fi",
+            "sv": "sv",
+            "tr": "tr",
+            "ru": "ru",
+            "ar": "ae"
+          }),
+          amount: priceValue.get() * 100
+        }
+      });
+    },
+    // see https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/#id08A6HI00JQU
+    "paypal": function()
+    {
+      if (verify(priceValue))
+        return;
+
+      var recurrence = recurrenceValue.get({
+        "monthly": "M"
+      });
+
+      var fields = {
+        business: "till@adblockplus.org",
+        item_name: formValues.name,
+        currency_code: currencyValue.get(),
+        page_style: "paypal",
+        cpp_header_image: "https://adblockplus.org/paypal_header.png",
+        cpp_payflow_color: "F6F4EF",
+        lc: langValue.get({
+          "de": "DE",
+          "en": "US",
+          "es": "ES",
+          "fr": "FR",
+          "nl": "NL",
+          "pt_br": "BR",
+          "zh_cn": "C2",
+          "zh_tw": "TW"
+        })
+      };
+      if (recurrence)
+      {
+        fields.cmd = "_xclick-subscriptions";
+        fields.a3 = priceValue.get();
+        fields.p3 = 1;
+        fields.t3 = recurrence;
+        fields.src = 1;
+        fields.modify = 1;
+      }
+      else
+      {
+        fields.cmd = "_donations";
+        fields.amount = priceValue.get();
+      }
+
+      openProviderPage({
+        action: "https://www.paypal.com/cgi-bin/webscr",
+        fields: fields
+      });
+    }
+  };
+
+  function verify()
+  {
+    var error = null;
+    for (var i in arguments)
+    {
+      error = arguments[i].verify();
+      if (error)
+      {
+        document.getElementById("error")[textAttr] = error;
+        break;
+      }
+    }
+    return error;
+  }
+
+  function openProviderPage(provider)
+  {
+    document.getElementById("error")[textAttr] = "";
+
+    var form = document.createElement("form");
+    form.target = "_blank";
+    form.action = provider.action;
+
+    var fields = provider.fields;
+    if (fields)
+    {
+      for (var i in fields)
+      {
+        var field = document.createElement("input");
+        field.name = i;
+        field.value = fields[i];
+        form.appendChild(field);
+      }
+    }
+
+    // To submit a form in Firefox it needs to be part of the DOM
+    document.head.appendChild(form);
+    form.submit();
+    document.head.removeChild(form);
+  }
+
+  function getText(id)
+  {
+    var element = document.getElementById(id);
+    return element[textAttr];
+  }
+
+  function ensureMinPrice()
+  {
+    // Credit card payments have to be above 1 EUR, meaning at least 2 USD.
+    var provider = document.getElementById("form").className;
+    var minPrice = (provider == "credit-card" && currencyValue.get() == "USD" ? 2 : 1);
+    var priceOther = document.getElementById("price-other");
+    priceOther.setAttribute("min", minPrice);
+    if (priceOther.value >> 0 < minPrice)
+      priceOther.value = minPrice;
+  }
+
+  function updateCurrency()
+  {
+    var checkbox = document.querySelector("input[name=currency]:checked");
+    if (!checkbox)
+      return;
+
+    var currencyLabel = checkbox.parentNode[textAttr];
+    if (!currencyLabel)
+      return;
+
+    var elements = document.getElementsByClassName("currency-label");
+    for (var i = 0; i < elements.length; i++)
+      elements[i][textAttr] = currencyLabel;
+    ensureMinPrice();
+  }
+
+  document.addEventListener("DOMContentLoaded", function()
+  {
+    formValues.name = getText("i18n_name");
+
+    document.getElementById("payment").addEventListener("click", function(event)
+    {
+      if (event.target.localName != "button")
+        return;
+
+      document.getElementById("form").className = event.target.className;
+      ensureMinPrice();
+    }, true);
+
+    document.getElementById("form-currency").addEventListener("click", function(event)
+    {
+      if (event.target.localName == "input")
+        updateCurrency();
+    }, true);
+    updateCurrency();
+
+    document.getElementById("donate").addEventListener("click", function(event)
+    {
+      var provider = providers[document.getElementById("form").className];
+      if (provider)
+        provider();
+    }, false);
+  }, false);
+})();
+
+// -->
+</script>
+</head>
+<span class="hidden" id="i18n_name">$s1$ </span>
+
+<p>
+  $s2$
+</p>
+
+<div class="paypal" id="form">
+  <p id="payment">
+    <strong>$s3$</strong>
+
+    <button class="paypal">$s4$</button>
+    <button class="credit-card">$s5$</button>
+    <button class="bitcoin">$s6$</button>
+  </p>
+
+  <div id="form-fields">
+    <p id="form-currency">
+      <strong>$s7$</strong>
+
+      <label>
+        <input checked="checked" name="currency" type="radio" value="USD">
+        $
+      </label>
+      <label>
+        <input name="currency" type="radio" value="EUR">
+        €
+      </label>
+    </p>
+
+    <p id="form-price">
+      <strong>$s8$</strong>
+
+      <label>
+        <input name="price" type="radio" value="5">
+        <span class="currency-label"></span>5
+      </label>
+      <label>
+        <input name="price" type="radio" value="10">
+        <span class="currency-label"></span>10
+      </label>
+      <label>
+        <input name="price" type="radio" value="20">
+        <span class="currency-label"></span>20
+      </label>
+      <label>
+        <input name="price" type="radio" value="40">
+        <span class="currency-label"></span>40
+      </label>
+      <label>
+        <input name="price" type="radio" value="0">
+        $s9$
+        <span class="custom-input">
+          <span class="currency-label"></span><input id="price-other" min="1" type="number" value="1">
+        </span>
+      </label>
+    </p>
+
+    <p id="form-recurrence">
+      <label>
+        <input id="recurrence" type="checkbox">
+        $s10$*
+      </label>
+    </p>
+
+    <button id="donate">$s11$</button>
+    <span id="error"></span>
+
+    <div id="refund-message">
+      <div>
+        $s12$ <a href="mailto:info@adblockplus.org">info@adblockplus.org</a>$s13$
+      </div>
+      <div id="recurrent-cancellation">
+        * $s14$
+        <ul>
+          <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_manage-paylist" target="_blank">$s15$</a></li>
+          <li><a href="https://coinbase.com/recurring_payments" target="_blank">$s16$</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

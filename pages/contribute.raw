@@ -6,10 +6,10 @@ title=title-full
 <link href="/css/topics-mobile.css" media="screen  and (max-width: 40.5em)" rel="stylesheet">
 <link class="cssfx" href="/css/contribute.css" rel="stylesheet">
 </head>
-<meta name="title" content="$s1$">
-<meta name="description" content="$s2$">
-<meta property="og:title" content="$s3$">
-<meta property="og:description" content="$s4$">
+<meta content="$s1$" name="title">
+<meta content="$s2$" name="description">
+<meta content="$s1$" property="og:title">
+<meta content="$s2$" property="og:description">
 
 <p>
   $s5$
@@ -60,7 +60,7 @@ title=title-full
   <div class="topic first">
     <div class="task-spread-the-word sprite"></div>
     <a name="spread-the-word">
-      <h3>$s16$</h3>
+      <h3>$s7$</h3>
     </a>
     <div class="description">
       <div class="longtext">
@@ -81,11 +81,11 @@ title=title-full
       </div>
     </div>
   </div>
-  
+
   <div class="topic">
     <div class="task-report-bugs sprite"></div>
     <a name="report-bugs">
-      <h3>$s24$</h3>
+      <h3>$s8$</h3>
     </a>
     <div class="description">
       <div class="longtext">
@@ -93,19 +93,19 @@ title=title-full
           $s25(bugs)$ $s26$ $s27$ $s28$
         </p>
 
-        <h4>$s29$</h4>                                                                   
+        <h4>$s29$</h4>
 
         <p>
           $s30(development-builds)$ $s31$ $s32(/atom/?section=development-builds)$
         </p>
       </div>
     </div>
-  </div>  
+  </div>
 
   <div class="topic">
     <div class="task-contribute-code sprite"></div>
     <a name="contribute-code">
-      <h3>$s33$</h3>
+      <h3>$s9$</h3>
     </a>
     <div class="description">
       $s34$
@@ -119,7 +119,7 @@ title=title-full
   <div class="topic">
     <div class="task-help sprite"></div>
     <a name="help">
-      <h3>$s36$</h3>
+      <h3>$s10$</h3>
     </a>
     <div class="description">
       <div class="longtext">
@@ -134,7 +134,7 @@ title=title-full
   <div class="topic">
     <div class="task-translate sprite"></div>
     <a name="translate">
-      <h3>$s41$</h3>
+      <h3>$s11$</h3>
     </a>
     <div class="description">
       <div class="longtext">
@@ -148,7 +148,7 @@ title=title-full
   <div class="topic">
     <div class="task-suggest sprite"></div>
     <a name="suggest">
-      <h3>$s46$</h3>
+      <h3>$s12$</h3>
     </a>
     <div class="description">
       <div class="longtext">
@@ -167,7 +167,7 @@ title=title-full
     <div class="description">
       <div class="longtext">
         <p>
-          $s54$ $s55$ <a href="/redirect?link=donate&amp;variant=2" hreflang="en">$s56$</a>$s57$
+          $s54$ $s55(donate)$
         </p>
       </div>
     </div>
@@ -176,20 +176,20 @@ title=title-full
   <div class="topic">
     <div class="task-filters sprite"></div>
     <a name="filters">
-      <h3>$s58$</h3>
+      <h3>$s14$</h3>
     </a>
     <div class="description">
       <div class="longtext">
         <p>
-          $s59$ $s60$
-          $s61$
+          $s57$ $s58$
+          $s59$
         </p>
 
         <p>
-          $s62(getting_started#false-positives)$
-          $s63$ <a href="filters">$s64$</a> $s65$
-          $s66$ <a href="/forum/viewforum.php?f=2" hreflang="en">$s67$</a> $s68$
-          $s69$
+          $s60(getting_started#false-positives)$
+          $s61$ <a href="filters">$s62$</a> $s63$
+          $s64$ <a href="/forum/viewforum.php?f=2" hreflang="en">$s65$</a> $s66$
+          $s67$
         </p>
       </div>
     </div>
@@ -198,17 +198,17 @@ title=title-full
   <div class="topic">
     <div class="task-acceptable sprite"></div>
     <a name="acceptable">
-      <h3>$s70$</h3>
+      <h3>$s15$</h3>
     </a>
     <div class="description">
       <div class="longtext">
         <p>
-          $s71(acceptable-ads)$
-          $s72$ <a href="acceptable-ads#criteria">$s73$</a> $s74$
+          $s69(acceptable-ads)$
+          $s70$ <a href="acceptable-ads#criteria">$s71$</a> $s72$
         </p>
 
         <p>
-          $s75$ <a href="/forum/viewforum.php?f=12" hreflang="en">$s76$</a> $s77$ 
+          $s73$ <a href="/forum/viewforum.php?f=12" hreflang="en">$s74$</a> $s75$
         </p>
       </div>
     </div>

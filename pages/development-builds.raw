@@ -21,40 +21,40 @@
     <small>$s9(/devbuilds/adblockplus/00latest.changelog.xhtml, /devbuilds/adblockplus/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/adblockpluschrome/00latest.crx">Adblock Plus $s10$ Google Chrome™</a>
-    <small>$s11(/devbuilds/adblockpluschrome/00latest.changelog.xhtml, /devbuilds/adblockpluschrome/)$</small> $s12(#chrome-install)$
+    <a href="https://chrome.google.com/webstore/detail/ldcecbkkoecffmfljeihcmifjjdoepkn/details">Adblock Plus $s10$ Google Chrome™</a>
+    <small>$s11(/devbuilds/adblockpluschrome/00latest.changelog.xhtml, /devbuilds/adblockpluschrome/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/adblockpluschrome/00latest.crx">Adblock Plus $s13$ Opera $s14$</a>
-    <small>$s15(/devbuilds/adblockpluschrome/00latest.changelog.xhtml, /devbuilds/adblockpluschrome/)$</small> $s16(#opera-install)$
+    <a href="/devbuilds/adblockplusopera/00latest.crx">Adblock Plus $s12$ Opera $s13$</a>
+    <small>$s14(/devbuilds/adblockplusopera/00latest.changelog.xhtml, /devbuilds/adblockplusopera/)$</small> $s15(#opera-install)$
   </li>
   <li>
-    Adblock Plus $s17$ Internet Explorer$s18(/devbuilds/adblockplusie/00latest-x64.msi, /devbuilds/adblockplusie/00latest-x86.msi)$
-    <small>$s19(/devbuilds/adblockplusie/)$</small>
+    <a href="/devbuilds/adblockplussafari/00latest.safariextz">Adblock Plus $s16$ Safari $s17$</a>
+    <small>$s18(/devbuilds/adblockplussafari/00latest.changelog.xhtml, /devbuilds/adblockplussafari/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/adblockplusandroid/00latest.apk">Adblock Plus $s20$ Android</a>
-    <small>$s21(/devbuilds/adblockplusandroid/00latest.changelog.xhtml, /devbuilds/adblockplusandroid/)$</small>
+    <a href="/devbuilds/adblockplusie/00latest.exe">Adblock Plus $s19$ Internet Explorer $s20$</a>
+    <small>$s21(/devbuilds/adblockplusie/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/elemhidehelper/00latest.xpi">$s22$</a>
-    <small>$s23(/devbuilds/elemhidehelper/00latest.changelog.xhtml, /devbuilds/elemhidehelper/)$</small>
+    <a href="/devbuilds/adblockplusandroid/00latest.apk">Adblock Plus $s22$ Android</a>
+    <small>$s23(/devbuilds/adblockplusandroid/00latest.changelog.xhtml, /devbuilds/adblockplusandroid/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/abpcustomization/00latest.xpi">$s24$ Adblock Plus</a>
-    <small>$s25(/devbuilds/abpcustomization/00latest.changelog.xhtml, /devbuilds/abpcustomization/)$</small>
+    <a href="/devbuilds/elemhidehelper/00latest.xpi">$s24$</a>
+    <small>$s25(/devbuilds/elemhidehelper/00latest.changelog.xhtml, /devbuilds/elemhidehelper/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/abpwatcher/00latest.xpi">$s26$ Adblock Plus</a>
-    <small>$s27(/devbuilds/abpwatcher/00latest.changelog.xhtml, /devbuilds/abpwatcher/)$</small>
+    <a href="/devbuilds/abpcustomization/00latest.xpi">$s26$ Adblock Plus</a>
+    <small>$s27(/devbuilds/abpcustomization/00latest.changelog.xhtml, /devbuilds/abpcustomization/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/url-fixer/00latest.xpi">$s28$</a>
-    <small>$s29(/devbuilds/url-fixer/00latest.changelog.xhtml, /devbuilds/url-fixer/)$</small>
+    <a href="/devbuilds/abpwatcher/00latest.xpi">$s28$ Adblock Plus</a>
+    <small>$s29(/devbuilds/abpwatcher/00latest.changelog.xhtml, /devbuilds/abpwatcher/)$</small>
   </li>
   <li>
-    <a href="/devbuilds/jsdeobfuscator/00latest.xpi">$s30$</a>
-    <small>$s31(/devbuilds/jsdeobfuscator/00latest.changelog.xhtml, /devbuilds/jsdeobfuscator/)$</small>
+    <a href="/devbuilds/url-fixer/00latest.xpi">$s30$</a>
+    <small>$s31(/devbuilds/url-fixer/00latest.changelog.xhtml, /devbuilds/url-fixer/)$</small>
   </li>
 </ul>
 
@@ -62,25 +62,10 @@
   $s32$ $s33$
 </p>
 
-<p id="chrome-install">
-  $s34$ $s35$ <code>--enable-easy-off-store-extension-install</code> $s36$ $s37$
-</p>
-
-<ul>
-  <li>
-    $s38(/devbuilds/adblockpluschrome/adblockplus_add.reg)$ $s39$ <a href="/devbuilds/adblockpluschrome/adblockplus_remove.reg">$s40$</a>$s41$
-  </li>
-  <li>
-    $s42(/devbuilds/adblockpluschrome/adblockplus.json)$
-    <code>/etc/opt/chrome/policies/managed/</code> $s43$
-    <code>/etc/chromium/policies/managed/</code> $s44$ $s45$
-  </li>
-</ul>
-
 <p id="opera-install">
-  $s46$ $s47$
+  $s34$
 </p>
 
-<h2 id="changes">$s48$</h2>
+<h2 id="changes">$s35$</h2>
 
-<p>$s49(/development-builds/, /rss/?section=development-builds)$</p>
+<p>$s36(/development-builds/, /rss/?section=development-builds)$</p>

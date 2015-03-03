@@ -6,7 +6,7 @@
     "message": "Hoe blokkeer ik een banner?"
   },
   "s2": {
-    "message": "U kunt op elke afbeelding of frame rechtsklikken en &quot;Adblock&quot; uit het contextmenu kiezen. Dit opent een dialoogvenster waar u het nieuwe filter kunt verbeteren voordat u het toevoegt. Vervang regust delen van het banner's adres door wildcards (* -- het ster symbool) op een filter te maken die ook andere banners met vergelijkbare adressen blokkeert. Kijk voor meer informatie op <a>Het schrijven van Adblock Plus filters</a>."
+    "message": "U kunt op elke afbeelding of frame rechtsklikken en \"Adblock\" uit het contextmenu kiezen. Dit opent een dialoogvenster waar u het nieuwe filter kunt verbeteren voordat u het toevoegt. Vervang regust delen van het banner's adres door wildcards (* — het ster symbool) op een filter te maken die ook andere banners met vergelijkbare adressen blokkeert. Kijk voor meer informatie op <a>Het schrijven van Adblock Plus filters</a>."
   },
   "s3": {
     "message": "Laat me zien hoe dat werkt"
@@ -26,91 +26,82 @@
   "s8": {
     "message": "aan uw filterlijst. U kunt meer informatie over uitzonderingsregeks vinden in <a>Het schrijven van Adblock Plus filters</a>."
   },
-  "s9": {
-    "message": "Laat me zien hoe dat werkt"
-  },
-  "s32": {
+  "s35": {
     "message": "De banner is een object (Flash of Java) en heeft geen context menu. Wat nu?"
   },
-  "s33": {
+  "s36": {
     "message": "Adblock Plus heeft de mogelijkheid genaamd \"Tabbladen weergeven op Flash en Java\". Als deze optie geactiveerd is (standaard), laat het een knop genaamd \"Blokkeren\" zien in de rechter bovenhoek van elk object (rechts onder als er niet genoeg ruimte is). Als u op deze knop klikt, wordt het object geblokkeerd."
   },
-  "s34": {
-    "message": "Laat me zien hoe dat werkt"
-  },
-  "s35": {
+  "s38": {
     "message": "U kunt ook de lijst met blokkeerbare onderdelen openen (druk op Ctrl+Shift+V of klik op het selectie pijltje naast het Adblock Plus pictogram in de werkbalk en kies \"Blokkeerbare onderdelen openen\") en kijk daar voor een object."
   },
-  "s36": {
-    "message": "Laate me zien hoe dat werkt"
-  },
-  "s37": {
-    "message": "U kunt op de Type kolom kop klikken -- dit sorteert de lijst op type en maakt het makkelijker om objecten te vinden."
-  },
-  "s38": {
-    "message": "De lijst met blokkeerbare onderdelen toont veel adressen. Hoe weer ik welke de banner is?"
-  },
-  "s39": {
-    "message": "U kunt kijken naar adressen die anders beginnen dan het adres van de pagina die u bekijkt. Banners hebben meestal ook kenmerkende sleutelwoorden zoals \"banner\" of \"ad\" in hun adres. Klik op een adres om het overeenkomende element te laten knipperen op de pagina (helaas werkt dit niet voor alle objecttypen). Als u het nog niet zeker weet, klik dan met de middelste muis knop op het adres om het in een nieuw tabblad te openen -- daar ziet u zeker of het een banner is."
-  },
   "s40": {
-    "message": "Is de volgorde van filters van belang voor de prestatie?"
+    "message": "U kunt op de Type kolom kop klikken — dit sorteert de lijst op type en maakt het makkelijker om objecten te vinden."
   },
   "s41": {
-    "message": "Nee. Als Adblock Plus een adres vergelijkt met uw filterlijst, bepaalt het zelf automatisch de beste volgorde waarop de filters getest moeten worden, in feite worden de meeste filters helemaal niet meegenomen. De volgorde van filters die u kunt wijzigen in het Voorkeuren scherm is er alleen voor uw gemak, het heeft geen gevolgen voor de prestatie."
+    "message": "De lijst met blokkeerbare onderdelen toont veel adressen. Hoe weer ik welke de banner is?"
   },
   "s42": {
-    "message": "Zijn reguliere expressie sneller dan \"gewone\" filters?"
+    "message": "U kunt kijken naar adressen die anders beginnen dan het adres van de pagina die u bekijkt. Banners hebben meestal ook kenmerkende sleutelwoorden zoals \"banner\" of \"ad\" in hun adres. Klik op een adres om het overeenkomende element te laten knipperen op de pagina (helaas werkt dit niet voor alle objecttypen). Als u het nog niet zeker weet, klik dan met de middelste muis knop op het adres om het in een nieuw tabblad te openen — daar ziet u zeker of het een banner is."
   },
   "s43": {
-    "message": "Meestal niet. Adblock Plus zet \"normale\" filters om in reguliere expressies en werkt intern alleen met reguliere expressies -- er is geen verschil tussen de filters"
+    "message": "Is de volgorde van filters van belang voor de prestatie?"
   },
   "s44": {
-    "message": "banner"
+    "message": "Nee. Als Adblock Plus een adres vergelijkt met uw filterlijst, bepaalt het zelf automatisch de beste volgorde waarop de filters getest moeten worden, in feite worden de meeste filters helemaal niet meegenomen. De volgorde van filters die u kunt wijzigen in het Voorkeuren scherm is er alleen voor uw gemak, het heeft geen gevolgen voor de prestatie."
   },
   "s45": {
-    "message": "en"
+    "message": "Zijn reguliere expressie sneller dan \"gewone\" filters?"
   },
   "s46": {
-    "message": "/banner/"
+    "message": "Meestal niet. Adblock Plus zet \"normale\" filters om in reguliere expressies en werkt intern alleen met reguliere expressies — er is geen verschil tussen de filters"
   },
   "s47": {
-    "message": "."
+    "message": "banner"
   },
   "s48": {
-    "message": "Reguliere expressies worden vaak gebruikt om de filterlijst kleiner te maken en vervangen een aantal filters door een reguliere expressie. De vuistregel is \"minder filters is sneller\", maar in dit geval gaat dat niet altijd op. Ingewikkelde reguliere expressies hebben veel meer tijd nodig om geëvalueerd te worden, het kan sneller zijn om een aantal eenvoudige filters te gebruiken."
+    "message": "en"
   },
   "s49": {
-    "message": "Reguliere expressies geven u meer flexibiliteit, daar is hun gebruik altijd gerechtvaardigd. Bijvoorbeeld de reguliere expressie"
+    "message": "/banner/"
   },
   "s50": {
-    "message": "/adv(?!ies)/"
+    "message": "."
   },
   "s51": {
-    "message": "zal"
+    "message": "Reguliere expressies worden vaak gebruikt om de filterlijst kleiner te maken en vervangen een aantal filters door een reguliere expressie. De vuistregel is \"minder filters is sneller\", maar in dit geval gaat dat niet altijd op. Ingewikkelde reguliere expressies hebben veel meer tijd nodig om geëvalueerd te worden, het kan sneller zijn om een aantal eenvoudige filters te gebruiken."
   },
   "s52": {
-    "message": "adv"
+    "message": "Reguliere expressies geven u meer flexibiliteit, daar is hun gebruik altijd gerechtvaardigd. Bijvoorbeeld de reguliere expressie"
   },
   "s53": {
-    "message": "en"
+    "message": "/adv(?!ies)/"
   },
   "s54": {
-    "message": "advert"
+    "message": "zal"
   },
   "s55": {
-    "message": "en"
+    "message": "adv"
   },
   "s56": {
-    "message": "advertentie"
+    "message": "en"
   },
   "s57": {
-    "message": "blokkeren, maar niet"
+    "message": "advert"
   },
   "s58": {
-    "message": "advies"
+    "message": "en"
   },
   "s59": {
+    "message": "advertentie"
+  },
+  "s60": {
+    "message": "blokkeren, maar niet"
+  },
+  "s61": {
+    "message": "advies"
+  },
+  "s62": {
     "message": "-- iets wat zonder eenvoudige wildcards niet mogelijk zou zijn."
   }
 }

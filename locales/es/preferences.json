@@ -1,0 +1,239 @@
+{
+  "title": {
+    "message": "Preferencias de Adblock Plus"
+  },
+  "prefnamecol": {
+    "message": "Preferencia"
+  },
+  "defaultcol": {
+    "message": "Valor por defecto"
+  },
+  "descriptioncol": {
+    "message": "Comentarios"
+  },
+  "visible_optionsTitle": {
+    "message": "Opciones visibles"
+  },
+  "hidden_optionsTitle": {
+    "message": "Opciones ocultas"
+  },
+  "remembered_actionsTitle": {
+    "message": "Acciones memorizadas"
+  },
+  "internal_preferencesTitle": {
+    "message": "Preferencias internas (no las cambie si no está realmente seguro de lo que está haciendo)"
+  },
+  "removed_preferencesTitle": {
+    "message": "Preferencias eliminadas"
+  },
+  "s1": {
+    "message": "La siguiente tabla detalla y explica todas las preferencias utilizadas por Adblock Plus, que pueden visualizarse y modificarse a través de"
+  },
+  "s2": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s3": {
+    "message": "."
+  },
+  "enabled-s1": {
+    "message": "Valor de la opción \"Activar Adblock Plus\""
+  },
+  "frameobjects-s1": {
+    "message": "Valor de la opción \"Mostrar pestañas en Flash y Java\""
+  },
+  "showinstatusbar-s1": {
+    "message": "Valor de la opción \"Mostrar en la barra de estado\""
+  },
+  "savestats-s1": {
+    "message": "Valor de la opción \"Contar usos de filtros\""
+  },
+  "synchronizationinterval-s1": {
+    "message": "No se utiliza en Adblock Plus 2.0 y posteriores"
+  },
+  "patternsfile-s1": {
+    "message": "Nombre del archivo a utilizar para guardar la lista de filtros. Puede ser un direccionamiento absoluto o un direccionamiento relativo del archivo respecto al directorio de perfil del usuario."
+  },
+  "patternsbackups-s1": {
+    "message": "Número de copias de seguridad a mantener para el archivo \"patterns.ini\". Si el valor es 0 se deshabilitarán las copias de seguridad."
+  },
+  "patternsbackupinterval-s1": {
+    "message": "Intervalo mínimo entre dos copias de seguridad sucesivas de patterns.ini (en horas)"
+  },
+  "defaulttoolbaraction-s1": {
+    "message": "Determina la acción a ejecutar cuando se pulsa el icono de la barra de herramientas. Los valores posibles son:"
+  },
+  "defaulttoolbaraction-s2": {
+    "message": "0 — mostrar menú"
+  },
+  "defaulttoolbaraction-s3": {
+    "message": "1 — abrir/cerrar ventana de elementos bloqueables"
+  },
+  "defaulttoolbaraction-s4": {
+    "message": "2 — mostrar la ventana de Preferencias"
+  },
+  "defaulttoolbaraction-s5": {
+    "message": "3 — activar/desactivar Adblock Plus"
+  },
+  "defaulttoolbaraction-s6": {
+    "message": "cualquier otro — no hacer nada"
+  },
+  "defaultstatusbaraction-s1": {
+    "message": "Determina la acción a ejecutar cuando se pulsa el icono de la barra de estado. Puede ver una lista de posibles valores en"
+  },
+  "defaultstatusbaraction-s2": {
+    "message": "."
+  },
+  "sidebar_key-s1": {
+    "message": "Determina el atajo de teclado a usar para abrir la ventana de elementos bloqueables. Esta preferencia puede estar vacía o tener el siguiente formato <em>modificador1 modificador2 tecla</em>. Los modificadores reconocidos son: Shift, Accel (tecla de aceleración preterminada, como Ctrl en Windows, Comando en Mac OS X), Ctrl/Control, Alt, Meta. La tecla puede ser una letra o una tecla especial como F7 o FLECHA DERECHA (puede buscar en <a>la interfaz de nsIDOMKeyEvent</a> la lista de teclas especiales)."
+  },
+  "sidebar_key-s2": {
+    "message": "A partir de Adblock Plus 1.3.5 se pueden especificar varios atajos de teclado separado por comas, se utilizará el primero de la lista que se halle disponible."
+  },
+  "sidebar_key-s3": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
+  },
+  "filters_key-s1": {
+    "message": "Define el atajo de teclado a usar para abrir la ventana de preferencias de filtros. Para ver una descripción de los posibles valores puede consultar"
+  },
+  "filters_key-s2": {
+    "message": "."
+  },
+  "enable_key-s1": {
+    "message": "Determina el atajo de teclado a utilizar para activar/desactivar Adblock Plus. Para una descripción de sus posibles valores puede consultar"
+  },
+  "enable_key-s2": {
+    "message": "."
+  },
+  "flash_scrolltoitem-s1": {
+    "message": "Determina si los \"bordes de elementos Flash\" en la lista de la ventana de elementos bloqueables deben intentar desplazar la ventana de forma que el elemento sea visible."
+  },
+  "previewimages-s1": {
+    "message": "Determina si el aviso emergente (tooltip) en la lista de la ventana de elementos bloqueables debe mostrar la imagen representada por el elemento."
+  },
+  "clearStatsOnHistoryPurge-s1": {
+    "message": "Si tiene el valor"
+  },
+  "clearStatsOnHistoryPurge-s2": {
+    "message": "true"
+  },
+  "clearStatsOnHistoryPurge-s3": {
+    "message": ", al borrar el historial de navegación se borrarán también los resultados de los contadores de uso de los filtros de Adblock Plus. Tenga en cuenta que los resultados de los contadores de uso a menudo permiten deducir qué sitios visitó el usuario, cuando y con qué frecuencia."
+  },
+  "composer_default-s1": {
+    "message": "Determina qué sugerencia debe estar seleccionada por defecto en la ventana de elaboración de filtros:"
+  },
+  "composer_default-s2": {
+    "message": "0 — modelo personalizado"
+  },
+  "composer_default-s3": {
+    "message": "1 — sólo dirección exacta"
+  },
+  "composer_default-s4": {
+    "message": "2 — todo el directorio"
+  },
+  "composer_default-s5": {
+    "message": "3 — todo el sitio web"
+  },
+  "sendReport_key-s1": {
+    "message": "Determina el atajo de teclado a utilizar para enviar informes de errores."
+  },
+  "sendReport_key-s2": {
+    "message": "Para ver la descripción de sus posibles valores consulte"
+  },
+  "sendReport_key-s3": {
+    "message": "."
+  },
+  "data_directory-s1": {
+    "message": "El directorio donde Adblock Plus debe guardar sus datos. Puede ser o bien un direccionamiento absoluto o un direccionamiento relativo respecto al directorio de perfil de usuario. Si la preferencia"
+  },
+  "data_directory-s2": {
+    "message": "está establecida, será ésta la que fije la ubicación para el archivo patterns.ini mientras que los demás archivos seguirán en este directorio."
+  },
+  "subscriptions_exceptionscheckbox-s1": {
+    "message": "Si tiene el valor"
+  },
+  "subscriptions_exceptionscheckbox-s2": {
+    "message": ", la lista de filtros para <a>publicidad no intrusiva</a> tendrá un tratamiento especial y se mostrará como una opción seleccionable en la interfaz de usuario."
+  },
+  "subscriptions_autoupdate-s1": {
+    "message": "Define si los filtros de las suscripciones se actualizarán automáticamente."
+  },
+  "subscriptions_autoupdate-s2": {
+    "message": "<em>Nota</em>: No es recomendable desactivar las actualizaciones."
+  },
+  "currentVersion-s1": {
+    "message": "Guarda la última versión utilizada de Adblock Plus, esto desencadenará las actuaciones necesarias en una actualización o primera instalación"
+  },
+  "detachsidebar-s1": {
+    "message": "Guarda el estado de la ventana de elementos bloqueables — el valor"
+  },
+  "detachsidebar-s2": {
+    "message": "true"
+  },
+  "detachsidebar-s3": {
+    "message": "corresponde a separada (no fija en el lateral)"
+  },
+  "recentReports-s1": {
+    "message": "Datos codificados en formato JSON sobre los informes de errores enviados recientemente (dirección del informe, página web implicada y fecha/hora de envío)"
+  },
+  "hideContributeButton-s1": {
+    "message": "Si tiene el valor"
+  },
+  "hideContributeButton-s2": {
+    "message": "significa que el usuario a elegido ocultar el botón de Contribuir."
+  },
+  "blockableItemsSize-s1": {
+    "message": "Tamaño guardado de la lista de elementos bloqueables (la predisposición de la anchura sólo es aplicable cuando se muestra como panel lateral)."
+  },
+  "subscriptions_fallbackurl-s1": {
+    "message": "Dirección del script a consultar si no se consigue descargar una suscripción un determinado número de veces (consulte"
+  },
+  "subscriptions_fallbackurl-s2": {
+    "message": "). Se sustituye %s por la dirección de dicha suscripción. El script debe imprimir algo similar a \"301 http://example.com/new_list.txt\" si se conoce la nueva ubicación de la suscripción."
+  },
+  "subscriptions_fallbackerrors-s1": {
+    "message": "Establece el número de intentos fallidos de descarga de una suscripción que deben producirse antes de consultar el script de dirección alternativa (consulte"
+  },
+  "subscriptions_fallbackerrors-s2": {
+    "message": ") para obtener la nueva dirección de la suscripción. Tenga en cuenta que Adblock Plus siempre intentará descargar de nuevo cuando haya pasado un día desde un intento fallido de descarga."
+  },
+  "subscriptions_listurl-s1": {
+    "message": "Dirección de la que descargar la lista completa de suscripciones de filtros."
+  },
+  "whitelistschemes-s1": {
+    "message": "Lista de configuraciones de URL que no deben ser bloqueadas (se aplica tanto a documentos completos como a ubicaciones de elementos)"
+  },
+  "documentation_link-s1": {
+    "message": "Dirección de adblockplus.org a abrir en los enlaces de documentación."
+  },
+  "documentation_link-s2": {
+    "message": "Redireccionará a la ubicación real de la documentación en función del idioma utilizado."
+  },
+  "report_submiturl-s1": {
+    "message": "Dirección de adblockplus.org a la que enviar informes de errores."
+  },
+  "subscriptions_exceptionsurl-s1": {
+    "message": "Ubicación de la lista de filtros usada para \n<a>permitir publicidad no intrusiva</a>."
+  },
+  "notificationurl-s1": {
+    "message": "Ubicación del archivo que contiene las notificaciones de emergencia."
+  },
+  "notificationdata-s1": {
+    "message": "Datos de las notificaciones de emergencia actuales."
+  },
+  "blocklocalpages-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "linkcheck-s1": {
+    "message": "No usado en Adblock Plus 0.7.5.4 y posteriores"
+  },
+  "checkedadblockinstalled-s1": {
+    "message": "No usado en Adblock Plus 1.0 y posteriores"
+  },
+  "hideimagemanager-s1": {
+    "message": "No se utiliza en Adblock Plus 2.1 y versiones posteriores"
+  },
+  "lastRuleUpdate-s1": {
+    "message": "No utilizado a partir de las version 2.3 de Adblock Plus"
+  }
+}

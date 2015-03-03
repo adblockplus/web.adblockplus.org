@@ -201,93 +201,84 @@
     "message": "Noyau"
   },
   "s67": {
-    "message": "Le code du noyau a été réécrit afin d'améliorer la maintenance, des commentaires de code et des tests automatisés (basés sur"
+    "message": "Le code du noyau a été réécrit afin d'améliorer la maintenance, des commentaires de code et des tests automatisés (basés sur <a>Mochitest</a>) ont été ajoutés sur une grande partie du noyau"
   },
   "s68": {
-    "message": "https://developer.mozilla.org/en/Mochitest"
-  },
-  "s69": {
-    "message": "Mochitest"
-  },
-  "s70": {
-    "message": ") ont été ajoutés sur une grande partie du noyau"
-  },
-  "s71": {
     "message": "Il a été vérifié que le fichier de stockage des filtres ne soit pas remplacé avant que l'écriture n'ait eu lieu avec succès (<a>bogue 16488</a>)"
   },
-  "s72": {
+  "s69": {
     "message": "Amélioration des performances (et l'enregistrement de filtres pour de longues listes), réduction de l'utilisation de la mémoire"
   },
-  "s73": {
+  "s70": {
     "message": "Réparé : les règles d'exceptions ne s'appliquent pas toujours dans Firefox 3 (<a>bogue 20034</a>)"
   },
-  "s74": {
+  "s71": {
     "message": "Firefox 1.5, Thunderbird 1.5, SeaMonkey 1.0, Songbird 0.5/0.6 ne sont plus pris en charge (les hacks de rétro-compatibilité ont été supprimés)"
   },
-  "s75": {
+  "s72": {
     "message": "Flock 1.2/2.0 et Songbird 0.7/1.0 sont à présent pris en charge"
   },
-  "s76": {
+  "s73": {
     "message": "Ajout de la prise en charge de Prism 0.9 (<a>sujet du forum</a>)"
   },
-  "s77": {
+  "s74": {
     "message": "Ajout de l'option de préférence cachée <a>extensions.adblockplus.savestats</a> pour désactiver les statistiques d'utilisation (utile si patterns.ini se trouve dans un système de contrôle de version) (<a>bogue 18650</a>)"
   },
-  "s78": {
+  "s75": {
     "message": "Ajout de la prise en charge de la navigation privée dans Firefox 3.1, les statistiques d'utilisation sont automatiquement désactivées"
   },
-  "s79": {
+  "s76": {
     "message": "Tous les nouveaux lancements sont à présent contrôlés par <a>l'option de préférences extensions.adblockplus.currentversion</a> (remplace les options de préférences"
   },
-  "s80": {
+  "s77": {
     "message": "showsubscriptions"
   },
-  "s81": {
+  "s78": {
     "message": ","
   },
-  "s82": {
+  "s79": {
     "message": "checkedtoolbar"
   },
-  "s83": {
+  "s80": {
     "message": ","
   },
-  "s84": {
+  "s81": {
     "message": "checkedadblockinstalled"
   },
-  "s85": {
+  "s82": {
     "message": ")"
   },
-  "s86": {
+  "s83": {
     "message": "Modification du format de patterns.ini pour autoriser le stockage des commentaires définis par l'utilisateur (et potentiellement d'autres filtres aussi) dans n'importe quel groupe de filtres"
   },
-  "s87": {
+  "s84": {
     "message": "Les préférences d'Adblock Plus 0.6 ne sont plus importés lors de la mise à niveau"
   },
-  "s88": {
+  "s85": {
     "message": "Les préférences d'Adblock ne sont plus importés lors de la mise à niveau (en revanche, la liste de filtres le sera)"
   },
-  "s89": {
+  "s86": {
     "message": "Réparé : les étiquettes sont affichées lors de l'impression (<a>bogue 19405</a>)"
   },
-  "s90": {
+  "s87": {
     "message": "Réparé : l'avertissement « getBoxObjectFor() est dépréciée » dans la console d'erreurs (<a>bogue 19126</a>)"
   },
-  "s91": {
+  "s88": {
     "message": "Téléchargement d'abonnements"
   },
-  "s92": {
+  "s89": {
     "message": "Pour le téléchargement d'abonnements, un commentaire « ! Checksum : abcd » est à présent interprété et les fichiers comportant un mauvais checksum sont rejetés pour éviter les téléchargements partiels (<a>sujet du forum</a>, <a>implémentation de référence pour ajouter des checksums</a>)"
   },
-  "s93": {
+  "s90": {
     "message": "La prochaine tentative après un échec de téléchargement se fait un jour aprsè et plus une heure après pour éviter la surcharge du serveur (ajustement de l'option de préférences <a>extensions.adblockplus.subscriptions_fallbackerrors</a> en conséquence)"
   },
-  "s94": {
+  "s91": {
     "message": "le « Fallback request » peut à présent désactiver les téléchargements automatiques pour les abonnements qui ne sont plus disponibles"
   },
-  "s95": {
+  "s92": {
     "message": "Réparé : les téléchargements d'abonnements se retrouvent parfois dans le cache du navigateur"
   },
-  "s96": {
+  "s93": {
     "message": "Historique des modifications pour la version précédente"
   }
 }

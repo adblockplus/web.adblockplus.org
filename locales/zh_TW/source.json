@@ -2,124 +2,13 @@
   "title": {
     "message": "原始碼"
   },
-  "s1": {
-    "message": "取得原始碼"
-  },
-  "s2": {
-    "message": "Adblock Plus 原始碼可以經由 HG <a>web interface</a> 網頁介面檢視。可以執行這條指令並下載一份本機端的副本："
-  },
-  "s3": {
-    "message": " <a>Element Hiding Helper</a> 及 <a>Diagnostics for Adblock Plus</a>也有建置相似的套件庫。執行這條指令可以還原本機端副本至剛發布的狀態："
-  },
-  "s4": {
-    "message": "(將"
-  },
-  "s5": {
-    "message": "置換為所需要的版本編號)。"
-  },
   "s6": {
-    "message": "另外，您也可以 <a>下載最新發布的原始碼</a> 。"
+    "message": "web interface"
   },
   "s7": {
-    "message": "這份 <a>Adblock Plus 原始碼文件</a> 提供一份該套件的內部概論。"
-  },
-  "s8": {
-    "message": "HG 用戶端及文件連結"
-  },
-  "s9": {
-    "message": "http://mercurial.selenic.com/"
-  },
-  "s10": {
-    "message": "Mercurial"
-  },
-  "s11": {
-    "message": "("
-  },
-  "s12": {
-    "message": "http://mercurial.selenic.com/wiki/QuickStart"
+    "message": "。"
   },
   "s13": {
-    "message": "quickstart"
-  },
-  "s14": {
-    "message": ")"
-  },
-  "s15": {
-    "message": "https://developer.mozilla.org/en/Mercurial_FAQ"
-  },
-  "s16": {
     "message": "Mozilla's Mercurial FAQ"
-  },
-  "s17": {
-    "message": "http://hgbook.red-bean.com/"
-  },
-  "s18": {
-    "message": "Distributed Revision Control with Mercurial"
-  },
-  "s19": {
-    "message": "(hgbook)"
-  },
-  "s20": {
-    "message": "http://mercurial.selenic.com/wiki/OtherTools"
-  },
-  "s21": {
-    "message": "GUI clients and other tools"
-  },
-  "s22": {
-    "message": "建立一個 Adblock Plus 版本"
-  },
-  "s23": {
-    "message": "要建立一個開發版，可以進入 \"adblockplus\" 資料夾(您的本機端副本)，並執行這條指令："
-  },
-  "s24": {
-    "message": "該指令會以"
-  },
-  "s25": {
-    "message": "這樣的形式來建立一個新的開發中板本。"
-  },
-  "s26": {
-    "message": "這個檔案會包含目前套件庫中的原始碼與所有可取得的語言包。"
-  },
-  "s27": {
-    "message": "<em>備註</em>：您需要"
-  },
-  "s28": {
-    "message": "及"
-  },
-  "s29": {
-    "message": "<a>Jinja2 模組</a> 來建置版本。"
-  },
-  "s30": {
-    "message": "執行這條指令可以在 Python 中安裝 Jinja2 ："
-  },
-  "s31": {
-    "message": "測試您更動的部分"
-  },
-  "s32": {
-    "message": "要簡化測試變更的流程，可在瀏覽器中安裝 \n  <a>Extension Auto-Installer</a>\n。"
-  },
-  "s33": {
-    "message": "假設 Extension Auto-Installer 設定為使用連接埠 8888 (預設值)，您可以執行下列指令加入欲變更的部分"
-  },
-  "s34": {
-    "message": "若有需要，瀏覽器將自動重新啟動。"
-  },
-  "s35": {
-    "message": "執行單元測試"
-  },
-  "s36": {
-    "message": "您可以使用現有的 \n  <a>單元測試套件</a> 來檢驗修改的部分。"
-  },
-  "s37": {
-    "message": "單元測試是一個獨立於 Adblock Plus 的擴充套件。"
-  },
-  "s38": {
-    "message": "您可以安裝現有的 \n  <a>單元測試版本</a>\n，或者複製套件庫之後建立您自己的版本。"
-  },
-  "s39": {
-    "message": "安裝單元測試套件後開啟"
-  },
-  "s40": {
-    "message": "即可開始執行。"
   }
 }

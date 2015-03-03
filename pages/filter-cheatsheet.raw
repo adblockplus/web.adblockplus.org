@@ -16,7 +16,7 @@
     font-size: 200%;
     padding: 0px 5px;
   }
-  .filter &gt; *
+  .filter > *
   {
     display: inline-block;
     border-top: 2px solid;
@@ -26,12 +26,12 @@
     padding: 3px;
     opacity: 0.6;
   }
-  .filter &gt; .active
+  .filter > .active
   {
     opacity: 1.0;
   }
 
-  .explanations &gt; *
+  .explanations > *
   {
     display: inline-block;
     text-align: left;
@@ -42,7 +42,7 @@
     padding: 0px 5px;
     opacity: 0.6;
   }
-  .explanations &gt; .active
+  .explanations > .active
   {
     opacity: 1.0;
   }
@@ -55,96 +55,96 @@
     margin-bottom: 0px !important;
   }
 
-  .filter &gt; .verbatim
+  .filter > .verbatim
   {
     color: #000000;
     border-top-color: #000000;
   }
-  .explanations &gt; .verbatim
+  .explanations > .verbatim
   {
     border-color: #000000;
   }
 
-  .filter &gt; .wildcard
+  .filter > .wildcard
   {
     color: #FF8000;
     border-top-color: #FF8000;
   }
-  .explanations &gt; .wildcard
+  .explanations > .wildcard
   {
     border-color: #FF8000;
   }
 
-  .filter &gt; .separator
+  .filter > .separator
   {
     color: #FF0000;
     border-top-color: #FF0000;
   }
-  .explanations &gt; .separator
+  .explanations > .separator
   {
     border-color: #FF0000;
   }
 
-  .filter &gt; .domainAnchor
+  .filter > .domainAnchor
   {
     color: #00C080;
     border-top-color: #00C080;
   }
-  .explanations &gt; .domainAnchor
+  .explanations > .domainAnchor
   {
     border-color: #00C080;
   }
 
-  .filter &gt; .startAnchor,
-  .filter &gt; .endAnchor
+  .filter > .startAnchor,
+  .filter > .endAnchor
   {
     color: #00C0C0;
     border-top-color: #00C0C0;
   }
-  .explanations &gt; .startAnchor,
-  .explanations &gt; .endAnchor
+  .explanations > .startAnchor,
+  .explanations > .endAnchor
   {
     border-color: #00C0C0;
   }
 
-  .filter &gt; .optionSeparator
+  .filter > .optionSeparator
   {
     color: #FF0080;
     border-top-color: #FF0080;
   }
-  .explanations &gt; .optionSeparator
+  .explanations > .optionSeparator
   {
     border-color: #FF0080;
   }
 
-  .filter &gt; .typeOption,
-  .filter &gt; .domainOption
+  .filter > .typeOption,
+  .filter > .domainOption
   {
     color: #800040;
     border-top-color: #800040;
   }
-  .explanations &gt; .typeOption,
-  .explanations &gt; .domainOption
+  .explanations > .typeOption,
+  .explanations > .domainOption
   {
     border-color: #800040;
   }
 
-  .filter &gt; .exception
+  .filter > .exception
   {
     color: #00C000;
     border-top-color: #00C000;
   }
-  .explanations &gt; .exception
+  .explanations > .exception
   {
     border-color: #00C000;
   }
 
-  .filter &gt; .comment
+  .filter > .comment
   {
     color: #C0C0C0;
     border-top-color: #C0C0C0;
   }
-  .explanations &gt; .comment
+  .explanations > .comment
   {
     border-color: #C0C0C0;
   }
@@ -164,7 +164,7 @@
     vertical-align: top;
     padding: 5px;
   }
-  td &gt; p:first-child
+  td > p:first-child
   {
     margin-top: 0px;
   }
@@ -365,11 +365,11 @@
       <p>$s19$</p>
     </div>
     <div class="verbatim">
-      <h4>$s20$</h4>
-      <p>$s21$</p>
+      <h4>$s5$</h4>
+      <p>$s6$</p>
     </div>
     <div class="separator">
-      <h4><a href="filters#separators">$s22$</a></h4>
+      <h4><a href="filters#separators">$s9$</a></h4>
       <p>$s23$</p>
     </div>
   </div>
@@ -380,7 +380,7 @@
 </div>
 
 <p>
-  $s27$
+  $s15$
 </p>
 <ul>
   <li><code>http://ads.example.com/foo.gif</code></li>
@@ -388,7 +388,7 @@
   <li><code>https://ads.example.com:8000/</code></li>
 </ul>
 <p>
-  $s28$
+  $s16$
 </p>
 <ul>
   <li><code>http://ads.example.com.ua/foo.gif</code></li>
@@ -404,8 +404,8 @@
       <p>$s31$</p>
     </div>
     <div class="verbatim">
-      <h4>$s32$</h4>
-      <p>$s33$</p>
+      <h4>$s5$</h4>
+      <p>$s6$</p>
     </div>
     <div class="endAnchor">
       <h4><a href="filters#anchors">$s34$</a></h4>
@@ -419,13 +419,13 @@
 </div>
 
 <p>
-  $s39$
+  $s15$
 </p>
 <ul>
   <li><code>http://example.com/</code></li>
 </ul>
 <p>
-  $s40$
+  $s16$
 </p>
 <ul>
   <li><code>http://example.com/foo.gif</code></li>
@@ -498,7 +498,7 @@
       <p>$s82(#blocking)$</p>
     </div>
     <div class="typeOption">
-      <h4><a href="#options">$s83$</a></h4>
+      <h4><a href="#options">$s47$</a></h4>
       <p>
         $s84$
       </p>
@@ -515,15 +515,15 @@
 <div class="example">
   <div class="explanations">
     <div class="exception">
-      <h4>$s90$</h4>
-      <p>$s91$</p>
+      <h4>$s79$</h4>
+      <p>$s80$</p>
     </div>
     <div class="verbatim">
-      <h4>$s92$</h4>
-      <p>$s93(#blocking)$</p>
+      <h4>$s81$</h4>
+      <p>$s82(#blocking)$</p>
     </div>
     <div class="typeOption">
-      <h4><a href="#options">$s94$</a></h4>
+      <h4><a href="#options">$s47$</a></h4>
       <p>
         $s95$
       </p>
@@ -629,7 +629,7 @@
   <col class="selectorPurpose">
   <tr>
     <th>$s138$</th>
-    <th>$s139$</th>
+    <th>$s136$</th>
   </tr>
   <tr>
     <td><code>##selector</code></td>
@@ -662,7 +662,7 @@
         </ul>
       </p>
       <p>
-        $s145$
+        $s142$
         <ul class="example-list">
           <li>$s146$</li>
           <li><code>http://example.edu/</code></li>
@@ -675,9 +675,9 @@
     <td><code>~example.com##selector</code></td>
     <td>
       <p>
-        $s147$
+        $s140$
         <ul class="example-list">
-          <li>$s148$</li>
+          <li>$s146$</li>
           <li><code>http://example.edu/</code></li>
           <li><code>ftp://example.net/</code></li>
         </ul>
@@ -695,7 +695,7 @@
     <td><code>example.com,example.edu##selector</code></td>
     <td>
       <p>
-        $s150$
+        $s144$
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>https://subdomain.example.com/</code></li>
@@ -703,7 +703,7 @@
         </ul>
       </p>
       <p>
-        $s151$
+        $s142$
         <ul class="example-list">
           <li>$s152$</li>
           <li><code>http://example.net/</code></li>
@@ -715,7 +715,7 @@
     <td><code>example.com,~mail.example.com#selector</code></td>
     <td>
       <p>
-        $s153$
+        $s140$
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>https://adverts.example.com/</code></li>
@@ -723,7 +723,7 @@
         </ul>
       </p>
       <p>
-        $s154$
+        $s142$
         <ul class="example-list">
           <li><code>http://mail.example.com/</code></li>
           <li>$s155$</li>

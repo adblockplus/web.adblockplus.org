@@ -1,0 +1,681 @@
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+<style type="text/css">
+#preftable th, #preftable td
+{
+  background-color: #fff;
+}
+
+#preftable td span
+{
+  display: block;
+}
+
+#preftable
+{
+  table-layout: fixed;
+  width: 99%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+#preftable .section
+{
+  text-align: center;
+  font-weight: bold;
+}
+
+#preftable td, #preftable th
+{
+  border: 1px solid #ccc;
+  padding: 2px;
+  vertical-align: top;
+}
+
+.prefname
+{
+  font-weight: bold;
+}
+</style>
+
+<p>{{"s1"|translate}} <a href="{{"s2"|translate}}">about:config</a>{{"s3"|translate}}</p>
+
+{% macro enabledDescription() %}
+{{"enabled-s1"|translate}}
+{% endmacro %}
+
+{% macro frameobjectsDescription() %}
+{{"frameobjects-s1"|translate}}
+{% endmacro %}
+
+{% macro showinstatusbarDescription() %}
+{{"showinstatusbar-s1"|translate}}
+{% endmacro %}
+
+{% macro savestatsDescription() %}
+{{"savestats-s1"|translate}}
+{% endmacro %}
+
+{% macro synchronizationintervalDescription() %}
+{{"synchronizationinterval-s1"|translate}}
+{% endmacro %}
+
+{% macro patternsfileDescription() %}
+{{"patternsfile-s1"|translate}}
+{% endmacro %}
+
+{% macro patternsbackupsDescription() %}
+{{"patternsbackups-s1"|translate}}
+{% endmacro %}
+
+{% macro patternsbackupintervalDescription() %}
+{{"patternsbackupinterval-s1"|translate}}
+{% endmacro %}
+
+{% macro defaulttoolbaractionDescription() %}
+{{"defaulttoolbaraction-s1"|translate}}<br>
+
+ <br>
+
+{{"defaulttoolbaraction-s2"|translate}}<br>
+
+{{"defaulttoolbaraction-s3"|translate}}<br>
+
+{{"defaulttoolbaraction-s4"|translate}}<br>
+
+{{"defaulttoolbaraction-s5"|translate}}<br>
+
+{{"defaulttoolbaraction-s6"|translate}}
+{% endmacro %}
+
+{% macro defaultstatusbaractionDescription() %}
+{{"defaultstatusbaraction-s1"|translate}} <a href="#defaulttoolbaraction">defaulttoolbaraction</a>{{"defaultstatusbaraction-s2"|translate}}
+{% endmacro %}
+
+{% macro sidebar_keyDescription() %}
+{{"sidebar_key-s1"|translate(links=["http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"])}} {{"sidebar_key-s2"|translate}}<br>
+
+ <br>
+
+ {{"sidebar_key-s3"|translate}}
+{% endmacro %}
+
+{% macro filters_keyDescription() %}
+{{"filters_key-s1"|translate}} <a href="#sidebar_key">sidebar_key</a>{{"filters_key-s2"|translate}}<br>
+
+ <br>
+
+ {{"sidebar_key-s3"|translate}}
+{% endmacro %}
+
+{% macro enable_keyDescription() %}
+{{"enable_key-s1"|translate}} <a href="#sidebar_key">sidebar_key</a>{{"enable_key-s2"|translate}}<br>
+
+ <br>
+
+ {{"sidebar_key-s3"|translate}}
+{% endmacro %}
+
+{% macro flash_scrolltoitemDescription() %}
+{{"flash_scrolltoitem-s1"|translate}}
+{% endmacro %}
+
+{% macro previewimagesDescription() %}
+{{"previewimages-s1"|translate}}
+{% endmacro %}
+
+{% macro clearStatsOnHistoryPurgeDescription() %}
+{{"clearStatsOnHistoryPurge-s1"|translate}} <code>{{"clearStatsOnHistoryPurge-s2"|translate}}</code>{{"clearStatsOnHistoryPurge-s3"|translate}}
+{% endmacro %}
+
+{% macro composer_defaultDescription() %}
+{{"composer_default-s1"|translate}}<br>
+
+ <br>
+
+{{"composer_default-s2"|translate}}<br>
+
+{{"composer_default-s3"|translate}}<br>
+
+{{"composer_default-s4"|translate}}<br>
+
+{{"composer_default-s5"|translate}}
+{% endmacro %}
+
+{% macro sendReport_keyDescription() %}
+{{"sendReport_key-s1"|translate}} {{"sendReport_key-s2"|translate}} <a href="#sidebar_key">sidebar_key</a>{{"sendReport_key-s3"|translate}}
+<br><br>
+
+{{"sidebar_key-s3"|translate}}
+{% endmacro %}
+
+{% macro data_directoryDescription() %}
+{{"data_directory-s1"|translate}} <a href="#patternsfile">patternsfile</a> {{"data_directory-s2"|translate}}
+{% endmacro %}
+
+{% macro subscriptions_exceptionscheckboxDescription() %}
+{{"subscriptions_exceptionscheckbox-s1"|translate}} <code>true</code>{{"subscriptions_exceptionscheckbox-s2"|translate(links=["acceptable-ads"])}}
+{% endmacro %}
+
+{% macro subscriptions_autoupdateDescription() %}
+{{"subscriptions_autoupdate-s1"|translate}}<br><br>
+
+{{"subscriptions_autoupdate-s2"|translate}}
+{% endmacro %}
+
+{% macro please_kill_startup_performanceDescription() %}
+{{"please_kill_startup_performance-s1"|translate}} <code>true</code> {{"please_kill_startup_performance-s2"|translate}} {{"please_kill_startup_performance-s3"|translate}}
+{% endmacro %}
+
+{% macro fastcollapseDescription() %}
+{{"please_kill_startup_performance-s1"|translate}} <code>true</code> {{"fastcollapse-s2"|translate}} {{"fastcollapse-s3"|translate}} {{"fastcollapse-s4"|translate}}
+{% endmacro %}
+
+{% macro currentVersionDescription() %}
+{{"currentVersion-s1"|translate}}
+{% endmacro %}
+
+{% macro detachsidebarDescription() %}
+{{"detachsidebar-s1"|translate}} <tt>{{"detachsidebar-s2"|translate}}</tt> {{"detachsidebar-s3"|translate}}
+{% endmacro %}
+
+{% macro recentReportsDescription() %}
+{{"recentReports-s1"|translate}}
+{% endmacro %}
+
+{% macro hideContributeButtonDescription() %}
+{{"hideContributeButton-s1"|translate}} <code>true</code> {{"hideContributeButton-s2"|translate}}
+{% endmacro %}
+
+{% macro blockableItemsSizeDescription() %}
+{{"blockableItemsSize-s1"|translate}}
+{% endmacro %}
+
+{% macro subscriptions_fallbackurlDescription() %}
+{{"subscriptions_fallbackurl-s1"|translate}} <a href="#subscriptions_fallbackerrors">subscriptions_fallbackerrors</a>{{"subscriptions_fallbackurl-s2"|translate}}
+{% endmacro %}
+
+{% macro subscriptions_fallbackerrorsDescription() %}
+{{"subscriptions_fallbackerrors-s1"|translate}} <a href="#subscriptions_fallbackurl">subscriptions_fallbackurl</a>{{"subscriptions_fallbackerrors-s2"|translate}}
+{% endmacro %}
+
+{% macro subscriptions_listurlDescription() %}
+{{"subscriptions_listurl-s1"|translate}}
+{% endmacro %}
+
+{% macro whitelistschemesDescription() %}
+{{"whitelistschemes-s1"|translate}}
+{% endmacro %}
+
+{% macro documentation_linkDescription() %}
+{{"documentation_link-s1"|translate}} {{"documentation_link-s2"|translate}}
+{% endmacro %}
+
+{% macro report_submiturlDescription() %}
+{{"report_submiturl-s1"|translate}}
+{% endmacro %}
+
+{% macro subscriptions_exceptionsurlDescription() %}
+{{"subscriptions_exceptionsurl-s1"|translate(links=["acceptable-ads"])}}
+{% endmacro %}
+
+{% macro notificationurlDescription() %}
+{{"notificationurl-s1"|translate}}
+{% endmacro %}
+
+{% macro notificationdataDescription() %}
+{{"notificationdata-s1"|translate}}
+{% endmacro %}
+
+{% macro subscriptions_antiadblockurlDescription() %}
+{{"subscriptions_antiadblockurl-s1"|translate}}
+{% endmacro %}
+
+{% macro blocklocalpagesDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro blocktypesDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro checkedadblockprefsDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro checkedadblocksyncDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro grouporderDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro linktypesDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro localschemesDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro noncollapsabletypesDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro patternsDescription() %}
+{{"blocklocalpages-s1"|translate}}
+{% endmacro %}
+
+{% macro linkcheckDescription() %}
+{{"linkcheck-s1"|translate}}
+{% endmacro %}
+
+{% macro checkedadblockinstalledDescription() %}
+{{"checkedadblockinstalled-s1"|translate}}
+{% endmacro %}
+
+{% macro checktoolbarDescription() %}
+{{"checkedadblockinstalled-s1"|translate}}
+{% endmacro %}
+
+{% macro protectchromeDescription() %}
+{{"checkedadblockinstalled-s1"|translate}}
+{% endmacro %}
+
+{% macro showsubscriptionsDescription() %}
+{{"checkedadblockinstalled-s1"|translate}}
+{% endmacro %}
+
+{% macro warnregexpDescription() %}
+{{"checkedadblockinstalled-s1"|translate}}
+{% endmacro %}
+
+{% macro showintoolbarDescription() %}
+{{"synchronizationinterval-s1"|translate}}
+{% endmacro %}
+
+{% macro settings_keyDescription() %}
+{{"synchronizationinterval-s1"|translate}}
+{% endmacro %}
+
+{% macro hideimagemanagerDescription() %}
+{{"hideimagemanager-s1"|translate}}
+{% endmacro %}
+
+{% macro lastRuleUpdateDescription() %}
+{{"lastRuleUpdate-s1"|translate}}
+{% endmacro %}
+
+{% macro correctTyposAskedDescription() %}
+{{"lastRuleUpdate-s1"|translate}}
+{% endmacro %}
+
+{% macro correctTyposDescription() %}
+{{"lastRuleUpdate-s1"|translate}}
+{% endmacro %}
+
+{% macro whitelistDescription() %}
+{{"lastRuleUpdate-s1"|translate}}
+{% endmacro %}
+
+
+{#
+  Preference descriptions are defined in the macros above and only referenced
+  here.
+#}
+
+{% from "includes/preftable" import display_preftable %}
+
+{{ display_preftable([
+  {
+    "id": "visible_options",
+    "title": 'visible_optionsTitle'|translate,
+    "preferences": [
+      {
+        "name": "enabled",
+        "default": "true",
+        "description": enabledDescription
+      },
+      {
+        "name": "frameobjects",
+        "default": "true",
+        "description": frameobjectsDescription
+      },
+      {
+        "name": "savestats",
+        "default": "true",
+        "description": savestatsDescription
+      },
+      {
+        "name": "showinstatusbar",
+        "default": "false",
+        "description": showinstatusbarDescription
+      }
+    ]
+  },
+  {
+    "id": "hidden_options",
+    "title": 'hidden_optionsTitle'|translate,
+    "preferences": [
+      {
+        "name": "clearStatsOnHistoryPurge",
+        "default": "true",
+        "description": clearStatsOnHistoryPurgeDescription
+      },
+      {
+        "name": "composer_default",
+        "default": "2",
+        "description": composer_defaultDescription
+      },
+      {
+        "name": "data_directory",
+        "default": "adblockplus",
+        "description": data_directoryDescription
+      },
+      {
+        "name": "defaultstatusbaraction",
+        "default": "0",
+        "description": defaultstatusbaractionDescription
+      },
+      {
+        "name": "defaulttoolbaraction",
+        "default": "0",
+        "description": defaulttoolbaractionDescription
+      },
+      {
+        "name": "enable_key",
+        "default": None,
+        "description": enable_keyDescription
+      },
+      {
+        "name": "fastcollapse",
+        "default": "false",
+        "description": fastcollapseDescription
+      },
+      {
+        "name": "filters_key",
+        "default": "Accel Shift E, Accel Shift F, Accel Shift O",
+        "description": filters_keyDescription
+      },
+      {
+        "name": "flash_scrolltoitem",
+        "default": "true",
+        "description": flash_scrolltoitemDescription
+      },
+      {
+        "name": "patternsbackupinterval",
+        "default": "24",
+        "description": patternsbackupintervalDescription
+      },
+      {
+        "name": "patternsbackups",
+        "default": "5",
+        "description": patternsbackupsDescription
+      },
+      {
+        "name": "patternsfile",
+        "default": None,
+        "description": patternsfileDescription
+      },
+      {
+        "name": "please_kill_startup_performance",
+        "default": "false",
+        "description": please_kill_startup_performanceDescription
+      },
+      {
+        "name": "previewimages",
+        "default": "true",
+        "description": previewimagesDescription
+      },
+      {
+        "name": "sendReport_key",
+        "default": None,
+        "description": sendReport_keyDescription
+      },
+      {
+        "name": "sidebar_key",
+        "default": "Accel Shift V, Accel Shift U",
+        "description": sidebar_keyDescription
+      },
+      {
+        "name": "subscriptions_autoupdate",
+        "default": "true",
+        "description": subscriptions_autoupdateDescription
+      },
+      {
+        "name": "subscriptions_exceptionscheckbox",
+        "default": "true",
+        "description": subscriptions_exceptionscheckboxDescription
+      },
+      {
+        "name": "synchronizationinterval",
+        "default": "24",
+        "description": synchronizationintervalDescription
+      }
+    ]
+  },
+  {
+    "id": "remembered_actions",
+    "title": 'remembered_actionsTitle'|translate,
+    "preferences": [
+      {
+        "name": "blockableItemsSize",
+        "default": "{width: 200, height: 200}",
+        "description": blockableItemsSizeDescription
+      },
+      {
+        "name": "currentVersion",
+        "default": "0.0",
+        "description": currentVersionDescription
+      },
+      {
+        "name": "detachsidebar",
+        "default": "false",
+        "description": detachsidebarDescription
+      },
+      {
+        "name": "hideContributeButton",
+        "default": "false",
+        "description": hideContributeButtonDescription
+      },
+      {
+        "name": "recentReports",
+        "default": "[]",
+        "description": recentReportsDescription
+      }
+    ]
+  },
+  {
+    "id": "internal_preferences",
+    "title": 'internal_preferencesTitle'|translate,
+    "preferences": [
+      {
+        "name": "documentation_link",
+        "default": "",
+        "description": documentation_linkDescription
+      },
+      {
+        "name": "notificationdata",
+        "default": "{}",
+        "description": notificationdataDescription
+      },
+      {
+        "name": "notificationurl",
+        "default": "",
+        "description": notificationurlDescription
+      },
+      {
+        "name": "report_submiturl",
+        "default": "",
+        "description": report_submiturlDescription
+      },
+      {
+        "name": "subscriptions_antiadblockurl",
+        "default": "",
+        "description": subscriptions_antiadblockurlDescription
+      },
+      {
+        "name": "subscriptions_exceptionsurl",
+        "default": "",
+        "description": subscriptions_exceptionsurlDescription
+      },
+      {
+        "name": "subscriptions_fallbackerrors",
+        "default": "5",
+        "description": subscriptions_fallbackerrorsDescription
+      },
+      {
+        "name": "subscriptions_fallbackurl",
+        "default": "",
+        "description": subscriptions_fallbackurlDescription
+      },
+      {
+        "name": "subscriptions_listurl",
+        "default": "",
+        "description": subscriptions_listurlDescription
+      },
+      {
+        "name": "whitelistschemes",
+        "default": "about chrome file irc keyword moz-safe-about news resource snews x-jsd addbook cid imap mailbox nntp pop data javascript",
+        "description": whitelistschemesDescription
+      }
+    ]
+  },
+  {
+    "id": "removed_preferences",
+    "title": 'removed_preferencesTitle'|translate,
+    "preferences": [
+      {
+        "name": "blocklocalpages",
+        "default": "",
+        "description": blocklocalpagesDescription
+      },
+      {
+        "name": "blocktypes",
+        "default": "",
+        "description": blocktypesDescription
+      },
+      {
+        "name": "checkedadblockinstalled",
+        "default": "",
+        "description": checkedadblockinstalledDescription
+      },
+      {
+        "name": "checkedadblockprefs",
+        "default": "",
+        "description": checkedadblockprefsDescription
+      },
+      {
+        "name": "checkedadblocksync",
+        "default": "",
+        "description": checkedadblocksyncDescription
+      },
+      {
+        "name": "checktoolbar",
+        "default": "",
+        "description": checktoolbarDescription
+      },
+      {
+        "name": "correctTypos",
+        "default": "",
+        "description": correctTyposDescription
+      },
+      {
+        "name": "correctTyposAsked",
+        "default": "",
+        "description": correctTyposAskedDescription
+      },
+      {
+        "name": "grouporder",
+        "default": "",
+        "description": grouporderDescription
+      },
+      {
+        "name": "hideimagemanager",
+        "default": "",
+        "description": hideimagemanagerDescription
+      },
+      {
+        "name": "lastRuleUpdate",
+        "default": "",
+        "description": lastRuleUpdateDescription
+      },
+      {
+        "name": "linkcheck",
+        "default": "",
+        "description": linkcheckDescription
+      },
+      {
+        "name": "linktypes",
+        "default": "",
+        "description": linktypesDescription
+      },
+      {
+        "name": "localschemes",
+        "default": "",
+        "description": localschemesDescription
+      },
+      {
+        "name": "noncollapsabletypes",
+        "default": "",
+        "description": noncollapsabletypesDescription
+      },
+      {
+        "name": "patterns",
+        "default": "",
+        "description": patternsDescription
+      },
+      {
+        "name": "protectchrome.*",
+        "default": "",
+        "description": protectchromeDescription
+      },
+      {
+        "name": "settings_key",
+        "default": "",
+        "description": settings_keyDescription
+      },
+      {
+        "name": "showintoolbar",
+        "default": "",
+        "description": showintoolbarDescription
+      },
+      {
+        "name": "showsubscriptions",
+        "default": "",
+        "description": showsubscriptionsDescription
+      },
+      {
+        "name": "synchronizationinterval",
+        "default": "",
+        "description": synchronizationintervalDescription
+      },
+      {
+        "name": "warnregexp",
+        "default": "",
+        "description": warnregexpDescription
+      },
+      {
+        "name": "whitelist",
+        "default": "",
+        "description": whitelistDescription
+      }
+    ]
+  }
+]) }}

@@ -25,13 +25,13 @@
 
   <p>$s22$ <code>ad</code> $s23$ <code>*ad*</code>$s24$ <code>swf</code> $s25$ <code>http://example.com/swf/index.html</code> $s26$</p>
 
-  <p>$s27$ <code>swf|</code> $s28$ <code>http://example.com/annoyingflash.swf</code> $s29$ <code>http://example.com/swf/index.html</code>$s30$ <code>$s31$</code> $s32$ <code>$s33$</code> $s34$ <code>$s35$</code>$s36$</p>
+  <p>$s27$ <code>swf|</code> $s28$ <code>http://example.com/annoyingflash.swf</code> $s29$ <code>http://example.com/swf/index.html</code>$s30$ <code>$s31$</code> $s28$ <code>$s33$</code> $s34$ <code>$s35$</code>$s36$</p>
 
   <p id="flexible-anchors">$s37$ <code>http://example.com/banner.gif</code> $s38$ <code>https://example.com/banner.gif</code> $s39$ <code>http://www.example.com/banner.gif</code>$s40$ <code>||example.com/banner.gif</code> $s41$ <code>$s42$</code> $s43$ <code>$s44$</code> $s45$</p>
 
   <h3 id="separators">$s46$</h3>
 
-  <p>$s47$ <code>http://example.com/</code> $s48$ <code>http://example.com:8000/</code> $s49$ <code>http://example.com.ar/</code>$s50$ <code>http://example.com^</code> $s51$</p>
+  <p>$s47$ <code>http://example.com/</code> $s48$ <code>http://example.com:8000/</code> $s49$ <code>http://example.com.ar/</code>$s50$ <code>http://example.com^</code> $s45$</p>
 
   <p>$s52$ _ - . %$s53$ http:<b style="color: red;">//</b>example.com<b style="color: red;">:</b>8000<b style="color: red;">/</b>foo.bar<b style="color: red;">?</b>a<b style="color: red;">=</b>12<b style="color: red;">&amp;</b>b<b style="color: red;">=</b>%D1%82%D0%B5%D1%81%D1%82$s54$ <code>^example.com^</code> $s55$ <code>^%D1%82%D0%B5%D1%81%D1%82^</code> $s56$ <code>^foo.bar^</code>$s57$</p>
 
@@ -77,9 +77,9 @@
     <p>
       $s72$ $s73$ <code>$s74$</code> $s75$ $s76$ <code>**</code>$s77$ $s78$
     </p>
-    <p>   
+    <p>
       $s79$
-    </p>  
+    </p>
     <ul>
       <li>$s80$</li>
       <li>$s81$</li>
@@ -96,7 +96,7 @@
       <code>! Redirect: http://example.com/list.txt</code>
     </p>
     <p>
-      $s91$ $s92$ $s93$ $s94$	
+      $s91$ $s92$ $s93$ $s94$
     </p>
   </li>
   <li>
@@ -130,78 +130,111 @@
         <li><code>image</code> $s107$</li>
         <li><code>stylesheet</code> $s108$</li>
         <li><code>object</code> $s109$</li>
-        <li><code>xmlhttprequest</code> $s110$ <a href="$s111$">$s112$</a> </li>
-        <li><code>object-subrequest</code> $s113$</li>
-        <li><code>subdocument</code> $s114$</li>
-        <li><code>document</code> $s115(#whitelist)$</li>
-        <li><code>elemhide</code> $s116$ <code>document</code> $s117(#elemhide)$</li>
-        <li><code>other</code> $s118$</li>
+        <li><code>xmlhttprequest</code> $s110(http://www.w3.org/TR/XMLHttpRequest/)$ </li>
+        <li><code>object-subrequest</code> $s111$</li>
+        <li><code>subdocument</code> $s112$</li>
+        <li><code>document</code> $s113(#whitelist)$</li>
+        <li><code>elemhide</code> $s114$ <code>document</code> $s115(#elemhide)$</li>
+        <li><code>other</code> $s116$</li>
       </ul>
-      $s119$ <code>background</code>$s120$ <code>xbl</code>$s121$
-      <code>ping</code> $s122$ <code>dtd</code> $s123$
+      $s117$ <code>background</code>$s118$ <code>xbl</code>$s119$
+      <code>ping</code> $s120$ <code>dtd</code> $s121$
     </li>
-    <li>$s124$ <code>~script</code>$s125$ <code>~image</code>$s126$ <code>~stylesheet</code>$s127$ <code>~object</code>$s128$ <code>~xmlhttprequest</code>$s129$ <code>~object-subrequest</code>$s130$ <code>~subdocument</code>$s131$ <code>~document</code>$s132$ <code>~elemhide</code>$s133$ <code>~other</code></li>
-    <li>$s134$ <code>third-party</code> $s135$ <code>~third-party</code> $s136$</li>
-    <li>$s137$ <code>domain=example.com</code> $s138$ <code>domain=example.com|example.net</code> $s139$ <code>domain=~example.com</code> $s140$ <code>domain=example.com|~foo.example.com</code> $s141$</li>
-    <li><code>match-case</code> $s142$ <code>*/BannerAd.gif$match-case</code> $s143$ <code>http://example.com/BannerAd.gif</code> $s144$ <code>http://example.com/bannerad.gif</code>$s145$</li>
-    <li><code>collapse</code> $s146$ <code>~collapse</code> $s147$</li>
+    <li>$s122$ <code>~script</code>$s123$ <code>~image</code>$s124$ <code>~stylesheet</code>$s125$ <code>~object</code>$s126$ <code>~xmlhttprequest</code>$s127$ <code>~object-subrequest</code>$s128$ <code>~subdocument</code>$s129$ <code>~document</code>$s130$ <code>~elemhide</code>$s131$ <code>~other</code></li>
+    <li>$s132$ <code>third-party</code> $s133$ <code>~third-party</code> $s134$</li>
+    <li>$s135$ <code>domain=example.com</code> $s136$ <code>domain=example.com|example.net</code> $s137$ <code>domain=~example.com</code> $s138$ <code>domain=example.com|~foo.example.com</code> $s139$</li>
     <li>
-      <code>donottrack</code> $s148(http://donottrack.us/)$ $s149$
+      $s140$ <code>sitekey=abcdsitekeydcba</code> $s141$ <code>sitekey=abcdsitekeydcba|bcdesitekeyedcb</code> $s142(#sitekey_server)$
+    </li>
+    <li><code>match-case</code> $s143$ <code>*/BannerAd.gif$match-case</code> $s28$ <code>http://example.com/BannerAd.gif</code> $s145$ <code>http://example.com/bannerad.gif</code>$s146$</li>
+    <li><code>collapse</code> $s147$ <code>~collapse</code> $s148$</li>
+    <li>
+      <code>donottrack</code> $s149(http://donottrack.us/)$ $s150$
       <code>*$donottrack,image,~image</code>
     </li>
   </ul>
 
-  <h4 id="regexps">$s150$</h4>
+  <h4 id="regexps">$s151$</h4>
 
-  <p>$s151$ <code>/banner\d+/</code> $s152$ <code>banner123</code> $s153$ <code>banner321</code> $s154$ <code>banners</code>$s155$ <a href="$s156$">$s157$</a> $s158$</p>
+  <p>$s152$ <code>/banner\d+/</code> $s153$ <code>banner123</code> $s154$ <code>banner321</code> $s155$ <code>banners</code>$s156(https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern)$</p>
 
-  <p>$s159$</p>
+  <p>$s157$</p>
 
-  <h2 id="elemhide">$s160$</h2>
+  <h2 id="elemhide">$s158$</h2>
 
-  <h3 id="elemhide_basic">$s161$</h3>
+  <h3 id="elemhide_basic">$s159$</h3>
 
-  <p>$s162$</p>
+  <p>$s160$</p>
 
-  <pre>$s163$
+  <pre>&lt;div class=&quot;textad&quot;&gt;
+Cheapest tofu, only here and now!
+&lt;/div&gt;
+&lt;div id=&quot;sponsorad&quot;&gt;
+Really cheap tofu, click here!
+&lt;/div&gt;
+&lt;textad&gt;
+Only here you get the best tofu!
+&lt;/textad&gt;
 </pre>
 
-  <p>$s164$</p>
+  <p>$s161$</p>
 
-  <p>$s165$ <code>##div.textad</code>$s166$ <code>##div#sponsorad</code> $s167$ <code>##*#sponsorad</code> $s168$ <code>##textad</code> $s169$</p>
+  <p>$s162$ <code>##div.textad</code>$s163$ <code>##div#sponsorad</code> $s164$ <code>##*#sponsorad</code> $s165$ <code>##textad</code> $s166$</p>
 
-  <p>$s170(elemhidehelper)$</p>
+  <p>$s167(elemhidehelper)$</p>
 
-  <p>$s171$</p>
+  <p>$s168$</p>
 
-  <h3 id="elemhide_domains">$s172$</h3>
+  <h3 id="elemhide_domains">$s169$</h3>
 
-  <p>$s173$ <code>##*.sponsor</code> $s174$ <code>example.com##*.sponsor</code> $s175$ <code>http://example.com/</code> $s176$ <code>http://something.example.com/</code> $s177$ <code>http://example.org/</code>$s178$ <code>domain1.example,domain2.example,domain3.example##*.sponsor</code>$s179$</p>
+  <p>$s170$ <code>##*.sponsor</code> $s171$ <code>example.com##*.sponsor</code> $s172$ <code>http://example.com/</code> $s173$ <code>http://something.example.com/</code> $s174$ <code>http://example.org/</code>$s175$ <code>domain1.example,domain2.example,domain3.example##*.sponsor</code>$s176$</p>
 
-  <p>$s180$ <code>~example.com##*.sponsor</code> $s181$ <code>example.com,~foo.example.com##*.sponsor</code> $s182$</p>
+  <p>$s177$ <code>~example.com##*.sponsor</code> $s178$ <code>example.com,~foo.example.com##*.sponsor</code> $s179$</p>
 
-  <p>$s183$ <code>domain</code> $s184$ <code>domain.example,domain.test</code>$s185$</p>
+  <p>$s180$ <code>domain</code> $s181$ <code>domain.example,domain.test</code>$s182$</p>
 
-  <p>$s186$ <code>browser##menuitem#javascriptConsole</code> $s187$</p>
+  <p>$s183$ <code>browser##menuitem#javascriptConsole</code> $s184$</p>
 
-  <h3 id="elemhide_attributes">$s188$</h3>
+  <h3 id="elemhide_attributes">$s185$</h3>
 
-  <p>$s189$ <code>##table[width=&quot;80%&quot;]</code> $s190$ <code>##div[title*=&quot;adv&quot;]</code> $s191$ <code>##div[title^=&quot;adv&quot;][title$=&quot;ert&quot;]</code> $s192$ <code>table[width=&quot;80%&quot;][bgcolor=&quot;white&quot;]</code> $s193$</p>
+  <p>$s186$ <code>##table[width=&quot;80%&quot;]</code> $s187$ <code>##div[title*=&quot;adv&quot;]</code> $s188$ <code>##div[title^=&quot;adv&quot;][title$=&quot;ert&quot;]</code> $s189$ <code>table[width=&quot;80%&quot;][bgcolor=&quot;white&quot;]</code> $s190$</p>
 
-  <h3 id="elemhide_css">$s194$</h3>
+  <h3 id="elemhide_css">$s191$</h3>
 
-  <p>$s195$ <code>##div.adheader + *</code>$s196$ <a href="$s197$">$s198$</a> $s199$</p>
+  <p>$s192$ <code>##div.adheader + *</code>$s193(http://www.w3.org/TR/css3-selectors/)$</p>
 
-  <p>$s200$</p>
+  <p>$s194$</p>
 
-<h3 id="elemhide_exceptions">$s201$</h3>
+<h3 id="elemhide_exceptions">$s195$</h3>
 
 <p>
-  $s202$ $s203$ $s204$ <code>##div.textad</code> $s205$ <code>example.com</code> $s206$
-  <code>example.com#@#div.textad</code>$s207$ $s208$
-  <code>~example.com##div.textad</code>$s209$ $s210$
+  $s196$ $s197$ $s198$ <code>##div.textad</code> $s199$ <code>example.com</code> $s200$
+  <code>example.com#@#div.textad</code>$s201$ $s202$
+  <code>~example.com##div.textad</code>$s203$ $s204$
 </p>
 
-  <h3 id="elemhide_simplified">$s211$</h3>
+  <h3 id="elemhide_simplified">$s205$</h3>
 
-  <p>$s212$ <code>#div(id=foo)</code>$s213$</p>
+  <p>$s206$ <code>#div(id=foo)</code>$s207$</p>
+
+  <h2 id="sitekey_server">$s208$</h2>
+
+<p>
+  $s209(#options)$<code>X-Adblock-Key: abcdpublickeydcba_abcdsignaturedcba</code>$s210$<code>&lt;html data-adblockkey=&quot;abcdpublickeydcba_abcdsignaturedcba&quot;&gt;</code>$s211$
+</p>
+
+<p>
+  $s212$
+</p>
+
+<p>
+  $s213$ <code>NUL</code> $s214$
+</p>
+
+<pre>
+  /index.html?q=foo\0www.example.com\0Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:30.0) Gecko/20100101 Firefox/30.0
+</pre>
+
+<p>
+  $s215$
+</p>

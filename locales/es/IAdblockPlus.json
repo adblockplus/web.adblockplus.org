@@ -1,0 +1,98 @@
+{
+  "title": {
+    "message": "IAdblockPlus"
+  },
+  "s1": {
+    "message": "Esta interfaz esta diseñada para ser utilizada por aquellas extensiones que quieran integrarse con Adblock Plus."
+  },
+  "s2": {
+    "message": "Entre otras cosas, permite obtener información de Adblock Plus o añadir suscripciones \"especiales\" que serán actualizadas por otra extensión."
+  },
+  "subscriptionCountDescription-s1": {
+    "message": "Número de suscripciones de la lista (incluyendo las suscripciones especiales)"
+  },
+  "getSubscriptionDescription-s1": {
+    "message": "Devuelve una suscripción a partir de su identificador"
+  },
+  "getSubscription_returnDescription-s1": {
+    "message": "la suscripción solicitada o"
+  },
+  "getSubscription_returnDescription-s2": {
+    "message": "null"
+  },
+  "getSubscription_returnDescription-s3": {
+    "message": "si no existe ninguna suscripción con el identificador elegido"
+  },
+  "getSubscription_idDescription-s1": {
+    "message": "identificador de la suscripción (en las suscripciones normales es la URL de la suscripción)"
+  },
+  "getSubscriptionAtDescription-s1": {
+    "message": "Devuelve una suscripción a partir de su posición en la lista"
+  },
+  "getSubscriptionAt_returnDescription-s2": {
+    "message": "null"
+  },
+  "getSubscriptionAt_returnDescription-s3": {
+    "message": "si el índice proporcionado no es válido"
+  },
+  "getSubscriptionAt_indexDescription-s1": {
+    "message": "posición de la suscripción en la lista, con base cero"
+  },
+  "updateExternalSubscriptionDescription-s1": {
+    "message": "Actualiza una suscripción externa (a la crea si no existe dicha suscripción), que no será actualizada por Adblock Plus. La extensión que llama a este método tendrá la responsabilidad de actualizarla y eliminarla cuando ya no sea necesaria."
+  },
+  "updateExternalSubscriptionDescription-s2": {
+    "message": "Adblock Plus 1.3 y posteriores: Las suscripciones externas ya no guardarán en el disco junto al resto de las suscripciones, en lugar de eso deberá llamar el método updateExternalSubscription() cada vez que se inicie el navegador para reponer la suscripción. El objetivo de esto es evitar que se mantenga una suscripción externa obsoleta en la lista si el usuario desinstala la suscripción que la gestiona."
+  },
+  "updateExternalSubscriptionDescription-s3": {
+    "message": "También, antes de Adblock Plus 1.3 este método devolvía un valor booleano que indicaba si se podía crear la suscripción. En Adblock Plus 1.3 y versiones posteriores la creación de una suscripción ya no puede fallar, pero es posible que haya que sobrescribir su identificador — devolverá entonces el valor del nuevo identificador."
+  },
+  "updateExternalSubscription_returnDescription-s1": {
+    "message": "identificador efectivo de suscripción (que puede no ser exactamente igual que el parámetro id)"
+  },
+  "updateExternalSubscription_idDescription-s1": {
+    "message": "identificador de suscripción (en las suscripciones externas puede ser cualquier cadena de texto)"
+  },
+  "updateExternalSubscription_titleDescription-s1": {
+    "message": "título para la nueva suscripción a crear. Este parámetro se ignorará si la suscripción ya existe."
+  },
+  "updateExternalSubscription_patternsDescription-s1": {
+    "message": "lista de patrones de filtros que la suscripción debe incluir"
+  },
+  "removeExternalSubscriptionDescription-s1": {
+    "message": "Elimina una suscripción externa"
+  },
+  "removeExternalSubscription_returnDescription-s1": {
+    "message": "true"
+  },
+  "removeExternalSubscription_returnDescription-s2": {
+    "message": "si se ha conseguido eliminar la suscripción,"
+  },
+  "removeExternalSubscription_returnDescription-s3": {
+    "message": "false"
+  },
+  "removeExternalSubscription_returnDescription-s4": {
+    "message": "si la suscripción no existe o existe pero no está gestionada externamente"
+  },
+  "addPatternsDescription-s1": {
+    "message": "Añade patrones a la lista de filtros definidos por el usuario"
+  },
+  "addPatterns_patternsDescription-s1": {
+    "message": "lista de patrones a añadir"
+  },
+  "removePatternsDescription-s1": {
+    "message": "Elimina patrones de la lista de filtros definidos por el usuario"
+  },
+  "removePatterns_patternsDescription-s1": {
+    "message": "lista de patrones a eliminar"
+  },
+  "getInstalledVersionDescription-s1": {
+    "message": "Devuelve la versión de la extensión Adblock Plus instalada. Tenga en cuenta que se trata del número de versión que le entregan o bien el Administrador de extensiones o bien InstallTrigger, y que podría ser incorrecto si se usa este último (en Mozilla Suite o SeaMonkey)."
+  },
+  "getInstalledVersion_returnDescription-s1": {
+    "message": "Versión de Adblock Plus, por ejemplo"
+  },
+  "getInstalledVersion_returnDescription-s2": {
+    "message": "0.7.0.1"
+  }
+}

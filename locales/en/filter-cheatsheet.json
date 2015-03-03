@@ -59,15 +59,6 @@
   "s19": {
     "message": "The following text must be the domain name of the address."
   },
-  "s20": {
-    "message": "Verbatim text"
-  },
-  "s21": {
-    "message": "This text must be present in the address to be blocked."
-  },
-  "s22": {
-    "message": "Separator"
-  },
   "s23": {
     "message": "A separator character has to follow that will indicate the end of the domain name, e.g. / or :."
   },
@@ -80,12 +71,6 @@
   "s26": {
     "message": "^"
   },
-  "s27": {
-    "message": "This rule blocks:"
-  },
-  "s28": {
-    "message": "This rule doesn't block:"
-  },
   "s29": {
     "message": "Example 3: Blocking exact address"
   },
@@ -94,12 +79,6 @@
   },
   "s31": {
     "message": "The following text must be the beginning of the address."
-  },
-  "s32": {
-    "message": "Verbatim text"
-  },
-  "s33": {
-    "message": "This text must be present in the address to be blocked."
   },
   "s34": {
     "message": "End anchor"
@@ -115,12 +94,6 @@
   },
   "s38": {
     "message": "|"
-  },
-  "s39": {
-    "message": "This rule blocks:"
-  },
-  "s40": {
-    "message": "This rule doesn't block:"
   },
   "s41": {
     "message": "Options in blocking rules"
@@ -156,7 +129,7 @@
     "message": "image"
   },
   "s52": {
-    "message": "indicating that only\n        scripts/images should be blocked. The inverse type option"
+    "message": "indicating that only scripts/images should be blocked. The inverse type option"
   },
   "s53": {
     "message": "~script"
@@ -174,7 +147,7 @@
     "message": "example.com"
   },
   "s58": {
-    "message": ").\n        It also allows to disable the rule on dome domains (here on"
+    "message": "). It also allows to disable the rule on dome domains (here on"
   },
   "s59": {
     "message": "foo.example.com"
@@ -219,7 +192,7 @@
     "message": "domain (for example"
   },
   "s73": {
-    "message": "itself\n    or"
+    "message": "itself or"
   },
   "s74": {
     "message": ") but not from"
@@ -248,9 +221,6 @@
   "s82": {
     "message": "This part of the rule defines which addresses it is applied to, it is structured the same as for <a>blocking rules</a>."
   },
-  "s83": {
-    "message": "Type option"
-  },
   "s84": {
     "message": "This type option prevents the exception from being applied to scripts."
   },
@@ -268,21 +238,6 @@
   },
   "s89": {
     "message": "Example 2: Exception for an entire site"
-  },
-  "s90": {
-    "message": "Exception rule"
-  },
-  "s91": {
-    "message": "Rules starting like this are exceptions, they will override blocking rules."
-  },
-  "s92": {
-    "message": "Address to be allowed"
-  },
-  "s93": {
-    "message": "This part of the rule defines which addresses it is applied to, it is structured the same as for <a>blocking rules</a>."
-  },
-  "s94": {
-    "message": "Type option"
   },
   "s95": {
     "message": "This special type option indicates that Adblock Plus should be completely disabled on pages that this rule applies to."
@@ -416,9 +371,6 @@
   "s138": {
     "message": "Example rules"
   },
-  "s139": {
-    "message": "Domain selection"
-  },
   "s140": {
     "message": "Active on:"
   },
@@ -434,35 +386,14 @@
   "s144": {
     "message": "Active on, for example:"
   },
-  "s145": {
-    "message": "Not active on:"
-  },
   "s146": {
-    "message": "All other domains, including"
-  },
-  "s147": {
-    "message": "Active on:"
-  },
-  "s148": {
     "message": "All other domains, including"
   },
   "s149": {
     "message": "Not active on, for example:"
   },
-  "s150": {
-    "message": "Active on, for example:"
-  },
-  "s151": {
-    "message": "Not active on:"
-  },
   "s152": {
     "message": "All other domains, including:"
-  },
-  "s153": {
-    "message": "Active on:"
-  },
-  "s154": {
-    "message": "Not active on:"
   },
   "s155": {
     "message": "All other domains"

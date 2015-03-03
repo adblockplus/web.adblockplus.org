@@ -6,7 +6,7 @@
     "message": "Precedence"
   },
   "s2": {
-    "message": "The Adblock Plus coding style is based on others. The general section below overrules any referenced style guides, and the language specific sections overrule the general section."
+    "message": "The Adblock Plus coding style is based on others. Our rules (both general and language specific) always overrule referenced style guides. The language specific sections overrule the general section."
   },
   "s3": {
     "message": "Consistency"
@@ -21,90 +21,96 @@
     "message": "Follow the Mozilla Coding Style's <a>general practices</a> and its <a>naming and formatting rules</a>."
   },
   "s7": {
-    "message": "All files should have a license header, but no mode line comments."
+    "message": "Use 2 spaces per indentation level."
   },
   "s8": {
-    "message": "Newline at end of file."
+    "message": "All files should have a <a>license header</a>, but no mode line comments."
   },
   "s9": {
-    "message": "Lines can be longer than 80 characters if limiting line length would hurt readability in a particular case."
+    "message": "Newline at end of file, otherwise no trailing whitespace."
   },
   "s10": {
-    "message": "Opening braces always go on their own line."
+    "message": "Lines can be longer than the limit, if limiting line length would hurt readability in a particular case."
   },
   "s11": {
-    "message": "No hungarian notation, no special variable name prefixes or suffixes denoting type or scope."
+    "message": "Opening braces always go on their own line."
   },
   "s12": {
-    "message": "JavaScript"
+    "message": "No hungarian notation, no special variable name prefixes or suffixes denoting type or scope. All variable names start with a lower case letter."
   },
   "s13": {
-    "message": "Follow the Mozilla Coding Style's <a>JavaScript practices</a>."
+    "message": "Don't comment code out, delete it."
   },
   "s14": {
-    "message": "Opening braces of object literals don't go on their own line."
+    "message": "JavaScript"
   },
   "s15": {
-    "message": "Use"
+    "message": "Follow the Mozilla Coding Style's <a>JavaScript practices</a>."
   },
   "s16": {
-    "message": "bind()"
+    "message": "Opening braces of object literals in don't go on their own line when that would cause a syntax error."
   },
   "s17": {
-    "message": "to ensure the desired value of the"
+    "message": "Use"
   },
   "s18": {
-    "message": "this"
+    "message": "bind()"
   },
   "s19": {
-    "message": "variable, don’t use temporary variables as a replacement."
+    "message": "to ensure the desired value of the"
   },
   "s20": {
-    "message": "In classes, prefix private functions with a single underscore to make them pseudo-private."
+    "message": "this"
   },
   "s21": {
-    "message": "Python"
+    "message": "variable, don’t use temporary variables as a replacement."
   },
   "s22": {
-    "message": "Follow the Mozilla Coding Style's <a>Python practices</a>."
+    "message": "In classes, prefix private functions with a single underscore to make them pseudo-private."
   },
   "s23": {
-    "message": "In modules, prefix private functions and variables with a single underscore."
+    "message": "Python"
   },
   "s24": {
-    "message": "Java"
+    "message": "Follow the Mozilla Coding Style's <a>Python practices</a>."
   },
   "s25": {
-    "message": "Follow the Mozilla Coding Style's <a>Java practices</a>."
+    "message": "In modules, prefix private functions and variables with a single underscore."
   },
   "s26": {
-    "message": "C++"
+    "message": "Java"
   },
   "s27": {
-    "message": "Follow the Mozilla Coding Style's <a>C++ practices</a>."
+    "message": "Follow the Mozilla Coding Style's <a>Java practices</a>."
   },
   "s28": {
-    "message": "Indent namespace bodies."
+    "message": "Imports should be organised consistently per file, we don't use global rules."
   },
   "s29": {
-    "message": "Don't use anything from C++11."
+    "message": "C++"
   },
   "s30": {
-    "message": "std::tr1"
+    "message": "Follow the Mozilla Coding Style's <a>C++ practices</a>."
   },
   "s31": {
-    "message": "can and should be used."
+    "message": "Indent namespace bodies."
   },
   "s32": {
     "message": "Avoid manual memory management: Use references and values when possible, smart pointers when necessary, raw pointers only for weak references."
   },
   "s33": {
-    "message": "Puppet"
+    "message": "Don't use C-style casts unless its exact semantics are required."
   },
   "s34": {
-    "message": "Follow the <a>Puppet Style Guide</a>."
+    "message": "We tend to use anonymous namespaces instead of static."
   },
   "s35": {
+    "message": "Puppet"
+  },
+  "s36": {
+    "message": "Follow the <a>Puppet Style Guide</a>."
+  },
+  "s37": {
     "message": "Opening braces don't go on their own line."
   }
 }

@@ -1,0 +1,57 @@
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+
+<style type="text/css">
+.subscriptions
+{
+  border-collapse: collapse;
+}
+
+.subscriptions td
+{
+  width: 50%;
+}
+
+.subscriptions td, .subscriptions th
+{
+  vertical-align: top;
+  border: 1px dashed black;
+  padding: 5px;
+}
+
+.subscriptions .dummy
+{
+  border-style: none;
+  width: 20px;
+  min-width: 20px;
+}
+
+.subscriptions .deprecated
+{
+  opacity: 0.5;
+}
+</style>
+
+<p>{{"s1"|translate(links=["getting_started#subscription"])}}</p>
+
+
+{% from "includes/subscriptionList" import display_subscriptions %}
+{{ display_subscriptions(1|get_subscriptions) }}
+
+
+<p>{{"s2"|translate(links=["mailto:subscriptionlist@adblockplus.org"])}}</p>

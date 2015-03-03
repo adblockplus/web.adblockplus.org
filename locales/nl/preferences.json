@@ -1,0 +1,230 @@
+{
+  "title": {
+    "message": "Adblock Plus voorkeuren"
+  },
+  "prefnamecol": {
+    "message": "Voorkeur"
+  },
+  "defaultcol": {
+    "message": "Standaard waarde"
+  },
+  "descriptioncol": {
+    "message": "Commentaar"
+  },
+  "visible_optionsTitle": {
+    "message": "Zichtbare opties"
+  },
+  "hidden_optionsTitle": {
+    "message": "Verborgen opties"
+  },
+  "remembered_actionsTitle": {
+    "message": "Onthouden acties"
+  },
+  "internal_preferencesTitle": {
+    "message": "Interne voorkeuren (wijzig deze niet, tenzij je zeker weet wat je doet)"
+  },
+  "removed_preferencesTitle": {
+    "message": "Verwijderde voorkeuren"
+  },
+  "s1": {
+    "message": "De volgende tabel legt het gebruik van alle voorkeuren die door Adblock Plus gebruikt worden uit. U kunt deze voorkeuren zien en wijzigen via"
+  },
+  "s2": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s3": {
+    "message": "."
+  },
+  "enabled-s1": {
+    "message": "Waarde van de optie \"Adblock Plus inschakelen\""
+  },
+  "frameobjects-s1": {
+    "message": "Waarde van de optie \"Tabbladen weergeven op Flash en Java\""
+  },
+  "showinstatusbar-s1": {
+    "message": "Waarde van de optie \"In statusbalk weergeven\""
+  },
+  "savestats-s1": {
+    "message": "Waarde van de optie \"Filtertreffers tellen\""
+  },
+  "synchronizationinterval-s1": {
+    "message": "Niet gebruikt in Adblock Plus 2.0 en hoger"
+  },
+  "patternsfile-s1": {
+    "message": "Naam van het bestand dat gebruikt moet worden om de filterlijst in op te slaan. Dit kan of een absoluut pad zjin of het kan de relatieve locatie van het bestand ten opzicht van de gebruiker zijn profiel zijn."
+  },
+  "patternsbackups-s1": {
+    "message": "Aantal back-ups dat er van patterns.ini bewaart moet worden. Als deze waarde 0 is, worden er geen back-ups gemaakt"
+  },
+  "patternsbackupinterval-s1": {
+    "message": "Minimum interval tussen twee back-ups van patterns.ini (in uren)"
+  },
+  "defaulttoolbaraction-s1": {
+    "message": "Definieetr wat er moet gebeuren als het werkbalk pictogram wordt aangeklikt. Mogelijke waarden zijn:"
+  },
+  "defaulttoolbaraction-s2": {
+    "message": "0 — toon menu"
+  },
+  "defaulttoolbaraction-s3": {
+    "message": "1 — open/sluit blokkeerbare onderdelen"
+  },
+  "defaulttoolbaraction-s4": {
+    "message": "2 — toon Voorkeuren venster"
+  },
+  "defaulttoolbaraction-s5": {
+    "message": "3 — schakel Adblock Plus in/uit"
+  },
+  "defaulttoolbaraction-s6": {
+    "message": "iets anders — doe niets"
+  },
+  "defaultstatusbaraction-s1": {
+    "message": "Definieert wat er moet gebeuren als het statusbalk pictogram wordt aangeklikt. Voor een lijst van toegestane waarden zie"
+  },
+  "defaultstatusbaraction-s2": {
+    "message": "."
+  },
+  "sidebar_key-s1": {
+    "message": "Definieert de sneltoets die gebruikt wordt om de lijst met blokkeerbare onderdelen te openen. Deze voorkeur kan leeg zijn of het kan in de vorm <em>modifier1 modifier2 key</em> zijn. Herkende modifiers zijn: Shift, Accel (standaard accelarator toets, bijvoorbeeld Ctrl in Windows, Command in Mac OS X), Ctrl/Control, Alt, Meta. Key kan zowel een letter zijn als een speciale toets als F7 of RIGHT (zie <a>nsIDOMKeyEvent interface</a> voor een lijst van bijzondere toetsen)."
+  },
+  "sidebar_key-s2": {
+    "message": "Vanaf Adblock Plus 1.3.5 kunnen meerdere comma-gescheiden sneltoetsen worden opgegeven, de eerst beschikbare sneltoets uit de lijst zal worden gebruikt."
+  },
+  "sidebar_key-s3": {
+    "message": "<em>N.B.</em>: Deze instelling heeft pas effect als de browser herstart is."
+  },
+  "filters_key-s1": {
+    "message": "Definieert de sneltoets die gebruikt wordt om het Filter voorkeuren venster te openen. Voor een beschrijving van toegestane waarden, zie"
+  },
+  "filters_key-s2": {
+    "message": "."
+  },
+  "enable_key-s1": {
+    "message": "Definieert de sneltoets die gebruikt kan worden om Adblock Plus in- en uit te schakelen. Voor een beschrijving van toegestane waarden, zie"
+  },
+  "enable_key-s2": {
+    "message": "."
+  },
+  "flash_scrolltoitem-s1": {
+    "message": "Definieert of \"Randen laten knipperen\" in de lijst van blokkeerbare onderdelen moet proberen om het onderdeel in beeld te laten scrollen."
+  },
+  "previewimages-s1": {
+    "message": "Definieert of de tooltip in de lijst van blokkeerbare onderdelen de afbeelding die het onderdeel voorstelt moet laten zien."
+  },
+  "clearStatsOnHistoryPurge-s1": {
+    "message": "Als"
+  },
+  "clearStatsOnHistoryPurge-s2": {
+    "message": "true"
+  },
+  "clearStatsOnHistoryPurge-s3": {
+    "message": ", het leegmaken van de browser geschiedenis maakt dan ook de trefstatistieken van Adblock Plus filters leeg. Let er op dat de trefstatistieken het vaak mogelijk maken om af te leiden welke sites een gebruiker heeft bezocht, wanneer en hoe vaak."
+  },
+  "composer_default-s1": {
+    "message": "Bepaalt welke suggestie standaard in de filter ontwerper geselecteerd moet worden:"
+  },
+  "composer_default-s2": {
+    "message": "0 — aangepast patroon"
+  },
+  "composer_default-s3": {
+    "message": "1 — alleen exact adres"
+  },
+  "composer_default-s4": {
+    "message": "2 — volledige map"
+  },
+  "composer_default-s5": {
+    "message": "3 — volledige site"
+  },
+  "sendReport_key-s1": {
+    "message": "Definieert de sneltoets voor het versturen van probleemrapportages."
+  },
+  "sendReport_key-s2": {
+    "message": "Voor een beschrijving vantoegestane waarden, zie"
+  },
+  "sendReport_key-s3": {
+    "message": "."
+  },
+  "data_directory-s1": {
+    "message": "De map waar Adb lock Plus zijn gegevens moet opslaan. Dit kan een absoluut pad zijn of een locatie relatief ten opzichte van de gebruiker's profielmap. Als de"
+  },
+  "data_directory-s2": {
+    "message": "voorkeur is ingesteld, overschrijft deze de locatie van patterns.ini terwijl andere bestanden in deze map blijven."
+  },
+  "subscriptions_exceptionscheckbox-s1": {
+    "message": "Als"
+  },
+  "subscriptions_exceptionscheckbox-s2": {
+    "message": ", dan wordt de filterlijst voor <a>niet-opdringerige reclames</a>\nspeciaal afgehandeld en wordt getoond als een checkbox in de gebruikersinterface."
+  },
+  "subscriptions_autoupdate-s1": {
+    "message": "Definieert of filters in een filterabonnement automatisch bijgewerkt worden."
+  },
+  "subscriptions_autoupdate-s2": {
+    "message": "<em>N.B.</em>: Het is niet aanbevolen updates uit te schakelen."
+  },
+  "currentVersion-s1": {
+    "message": "Bevat de laatst gebruikte Adblock Plus versie, dit zet acties in gang die na een upgrade of eerste installatie gedaan moeten worden"
+  },
+  "detachsidebar-s1": {
+    "message": "Bevat de status van de lijst van blokkeerbare onderdelen —"
+  },
+  "detachsidebar-s2": {
+    "message": "true"
+  },
+  "detachsidebar-s3": {
+    "message": "betekent ontkoppeld"
+  },
+  "recentReports-s1": {
+    "message": "JSON-gecodeerde gegevens van recent ingestuurde probleemrapportages (adres van het verslag, betreffende website en tijd van indienen)"
+  },
+  "hideContributeButton-s1": {
+    "message": "Dit is ingesteld op"
+  },
+  "hideContributeButton-s2": {
+    "message": "als de gebruiker ervoor koos om de Draag bij knop te verbergen."
+  },
+  "blockableItemsSize-s1": {
+    "message": "De onthouden grootte van de lijst van Blokkeerbare onderdelen (de instelling van de breedte is alleen van toepassing als zijbalk)."
+  },
+  "subscriptions_fallbackurl-s1": {
+    "message": "Adres van het script dat moet worden geraadpleegd als een abonnement een aantal keer niet  gedwonload kan worden (zie"
+  },
+  "subscriptions_fallbackurl-s2": {
+    "message": "). %s wordt vervangen door het adres van het betreffende abonnement. Het script moet iets als \"301 http://example.com/new_list.txt\" retourneren als de nieuwe locatie van het abonnement bekend is."
+  },
+  "subscriptions_fallbackerrors-s1": {
+    "message": "Stelt het benodigde aantal mislukte download pogingen voor een abonnement in voordat het fallback script (zie"
+  },
+  "subscriptions_fallbackerrors-s2": {
+    "message": ") wordt geraadpleegd voor het nieuwe adres van het abonnement. Let er op dat Adblock Plus een download altijd opnieuw probeert een dag na de mislukte download poging."
+  },
+  "subscriptions_listurl-s1": {
+    "message": "Adres waarvan de volledige lijst van filterabonnementen kan worden gedownload."
+  },
+  "whitelistschemes-s1": {
+    "message": "Lijst met URL schema's die niet geblokkeerd moeten worden (zowel van toepassing op hele documenten als op locaties van onderdelen)"
+  },
+  "documentation_link-s1": {
+    "message": "Adres op adblockplus.org dat moet worden geopend voor snelkoppelingen naar de documentatie."
+  },
+  "documentation_link-s2": {
+    "message": "Het wordt doorgestuurd naar de echte locatie, afhankelijk van de gebruikte taal."
+  },
+  "report_submiturl-s1": {
+    "message": "Adres op adblockplus.org om probleemrapportages naar toe te sturen."
+  },
+  "subscriptions_exceptionsurl-s1": {
+    "message": "Locatie van de filterlijst die gebruikt wordt voor \n<a>niet-opdringerige reclames</a>."
+  },
+  "blocklocalpages-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "linkcheck-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5.4 en hoger"
+  },
+  "checkedadblockinstalled-s1": {
+    "message": "Niet gebruikt in Adblock Plus 1.0 en hoger"
+  },
+  "hideimagemanager-s1": {
+    "message": "Niet gebruikt in Adblock Plus 2.1 en hoger"
+  }
+}

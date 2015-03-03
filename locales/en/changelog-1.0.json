@@ -66,7 +66,7 @@
     "message": "Added \"Select all\" to the context menu"
   },
   "s22": {
-    "message": "Added &quot;Copy filter&quot; item to the context menu (<a>forum topic</a>)"
+    "message": "Added \"Copy filter\" item to the context menu (<a>forum topic</a>)"
   },
   "s23": {
     "message": "Added \"Size\" column (hidden by default), same information shown in the tooltip"
@@ -102,10 +102,10 @@
     "message": "Groups containing user-defined filters can now be disabled (<a>forum topic</a>)"
   },
   "s34": {
-    "message": "Images for &quot;Enabled&quot; column made more obvious (<a>forum topic</a>, <a>forum topic</a>)"
+    "message": "Images for \"Enabled\" column made more obvious (<a>forum topic</a>, <a>forum topic</a>)"
   },
   "s35": {
-    "message": "Removed &quot;Add filter&quot; dummy from the list (<a>forum topic</a>)"
+    "message": "Removed \"Add filter\" dummy from the list (<a>forum topic</a>)"
   },
   "s36": {
     "message": "Added support for comments in all filter groups, not only \"Advertisement filters\""
@@ -135,7 +135,7 @@
     "message": "Added a way to disable/enable filters and subscriptions from context menu"
   },
   "s45": {
-    "message": "&quot;Reset filter statistics&quot; now resets &quot;Last hit&quot; as well (<a>bug 18650</a>)"
+    "message": "\"Reset filter statistics\" now resets \"Last hit\" as well (<a>bug 18650</a>)"
   },
   "s46": {
     "message": "Fixed: Findbar in preferences dialog has no icons (Firefox 3)"
@@ -144,7 +144,7 @@
     "message": "Fixed: Dates would sometimes use wrong character encoding (<a>bug 441370</a>)"
   },
   "s48": {
-    "message": "Fixed: &quot;Edit filter in effect&quot; might select a filter in a disabled subscription even though it exists in enabled subscriptions as well (<a>forum topic</a>)"
+    "message": "Fixed: \"Edit filter in effect\" might select a filter in a disabled subscription even though it exists in enabled subscriptions as well (<a>forum topic</a>)"
   },
   "s49": {
     "message": "Fixed: Clicking twice on the Enabled column starts filter editor"
@@ -201,93 +201,84 @@
     "message": "Core"
   },
   "s67": {
-    "message": "Core code was redesigned for better maintainability, code documentation and automated tests (based on"
+    "message": "Core code was redesigned for better maintainability, code documentation and automated tests (based on <a>Mochitest</a>) were added for large parts of the core"
   },
   "s68": {
-    "message": "https://developer.mozilla.org/en/Mochitest"
-  },
-  "s69": {
-    "message": "Mochitest"
-  },
-  "s70": {
-    "message": ") were added for large parts of the core"
-  },
-  "s71": {
     "message": "Made sure filter storage file isn't overwritten unless write was successful (<a>bug 16488</a>)"
   },
-  "s72": {
+  "s69": {
     "message": "Improved performance (esp. reading filter from disk and saving filters for large filter lists), reduced the amount of memory used"
   },
-  "s73": {
+  "s70": {
     "message": "Fixed: Exception rules don’t always apply to element hiding in Firefox 3 (<a>bug 20034</a>)"
   },
-  "s74": {
+  "s71": {
     "message": "Firefox 1.5, Thunderbird 1.5, SeaMonkey 1.0, Songbird 0.5/0.6 are no longer supported (removed some backwards compatibility hacks)"
   },
-  "s75": {
+  "s72": {
     "message": "Flock 1.2/2.0 and Songbird 0.7/1.0 are supported now"
   },
-  "s76": {
+  "s73": {
     "message": "Added support for Prism 0.9 (<a>forum topic</a>)"
   },
-  "s77": {
+  "s74": {
     "message": "Added hidden preference <a>extensions.adblockplus.savestats</a> to allow turning off hit statistics (useful if patterns.ini is put into a version control system) (<a>bug 18650</a>)"
   },
-  "s78": {
+  "s75": {
     "message": "Added support for private browsing mode in Firefox 3.1, hit statistics are disabled automatically"
   },
-  "s79": {
+  "s76": {
     "message": "All first run actions are now controlled by <a>extensions.adblockplus.currentversion preference</a> (replaces"
   },
-  "s80": {
+  "s77": {
     "message": "showsubscriptions"
   },
-  "s81": {
+  "s78": {
     "message": ","
   },
-  "s82": {
+  "s79": {
     "message": "checkedtoolbar"
   },
-  "s83": {
+  "s80": {
     "message": ","
   },
-  "s84": {
+  "s81": {
     "message": "checkedadblockinstalled"
   },
-  "s85": {
+  "s82": {
     "message": "preferences)"
   },
-  "s86": {
+  "s83": {
     "message": "Changed patterns.ini format to allow user-defined comments (and potentially other filters as well) to be stored in any filter group"
   },
-  "s87": {
+  "s84": {
     "message": "Adblock Plus 0.6 preferences are no longer imported on upgrade"
   },
-  "s88": {
+  "s85": {
     "message": "Adblock preferences are no longer imported on upgrade (filter list still imported)"
   },
-  "s89": {
+  "s86": {
     "message": "Fixed: Object tabs show up on print (<a>bug 19405</a>)"
   },
-  "s90": {
-    "message": "Fixed: &quot;getBoxObjectFor() is deprecated&quot; warning in error console (<a>bug 19126</a>)"
+  "s87": {
+    "message": "Fixed: \"getBoxObjectFor() is deprecated\" warning in error console (<a>bug 19126</a>)"
   },
-  "s91": {
+  "s88": {
     "message": "Subscription downloads"
   },
-  "s92": {
-    "message": "For subscription downloads, a comment &quot;! Checksum: abcd&quot; is now interpreted and files with wrong checksum are rejected to prevent broken downloads (<a>forum topic</a>, <a>reference implementation to add checksums</a>)"
+  "s89": {
+    "message": "For subscription downloads, a comment \"! Checksum: abcd\" is now interpreted and files with wrong checksum are rejected to prevent broken downloads (<a>forum topic</a>, <a>reference implementation to add checksums</a>)"
   },
-  "s93": {
+  "s90": {
     "message": "Next attempt after failed download is after one day now rather than after one hour to prevent server overload (adjusted preference <a>extensions.adblockplus.subscriptions_fallbackerrors</a> accordingly)"
   },
-  "s94": {
+  "s91": {
     "message": "Fallback request can now disable automatic downloads for subscriptions that are no longer available"
   },
-  "s95": {
+  "s92": {
     "message": "Fixed: Subscription downloads sometimes go to browser cache"
   },
-  "s96": {
+  "s93": {
     "message": "Changelog for the previous release"
   }
 }

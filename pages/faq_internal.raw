@@ -1,67 +1,79 @@
 <head>
 <script type="text/javascript">
-  if (location.hash == &quot;#checksum&quot; || location.hash == &quot;#subscription_redirect&quot; || location.hash == &quot;#subscription_update&quot;)
-    window.location.href = &quot;/en/filters#special-comments&quot;;
+  if (location.hash == "#checksum" || location.hash == "#subscription_redirect" || location.hash == "#subscription_update")
+    window.location.href = "/en/filters#special-comments";
 </script>
 </head>
 <h2 id="preferences">$s1$</h2>
 
-	<p>$s2$ <a href="$s3$">$s4$</a>$s5$ <tt>$s6$</tt> $s7$ <tt>$s8$</tt>$s9(preferences)$</p>
+        <p>$s2(http://kb.mozillazine.org/About:config)$ <tt>$s3$</tt> $s4$ <tt>$s5$</tt>$s6(preferences)$</p>
 
-	<h2 id="interface">$s10$</h2>
+        <h2 id="interface">$s7$</h2>
 
-	<p>$s11$ <tt>$s12$</tt> $s13(IAdblockPlus)$</p>
+        <p>$s8$ <tt>$s9$</tt> $s10(IAdblockPlus)$</p>
 
-	<h2 id="policies">$s14$</h2>
+        <h2 id="policies">$s11$</h2>
 
-	<p>$s15$</p>
+        <p>$s12$</p>
 
-	<p>$s16$ <a href="$s17$">$s18$</a> $s19$ <a href="$s20$">$s21$</a>$s22$ <a href="$s23$">$s24$</a> $s25$</p>
+        <p>$s13(http://developer.mozilla.org/en/docs/How_to_Build_an_XPCOM_Component_in_Javascript, http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html, http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html)$</p>
 
-	<h2 id="filters">$s26$</h2>
+        <h2 id="filters">$s14$</h2>
 
-	<p>$s27(filters#regexps)$ <code>$s28$</code> $s29$ <code>$s30$</code>$s31$</p>
+        <p>$s15(filters#regexps)$ <code>$s16$</code> $s17$ <code>$s18$</code>$s19$</p>
 
-	<p>$s32$ <code>$s33$</code> $s34$</p>
+        <p>$s20$ <code>$s21$</code> $s22$</p>
 
-	<p>$s35$</p>
+        <p>$s23$</p>
 
-	<p>$s36(deregifier)$</p>
+        <p>$s24(deregifier)$</p>
 
-	<p><a href="/blog/investigating-filter-matching-algorithms">$s37$</a></p>
+        <p><a href="/blog/investigating-filter-matching-algorithms">$s25$</a></p>
 
-	<h2 id="elemhide">$s38$</h2>
+        <h2 id="elemhide">$s26$</h2>
 
-	<p>$s39$ <a href="$s40$">$s41$</a> $s42$ <code>$s43$</code> $s44$</p>
+        <p>$s27(http://www.w3.org/TR/CSS21/)$ <code>$s28$</code> $s29$</p>
 
-	<pre>
-$s45$
+        <pre>
+@-moz-document domain(example.com)
+{
+  div#evil_ad, div.evil_ad
+  {
+    display: none !important;
+  }
+}
 </pre>
 
-	<p>$s46$ <a href="$s47$">$s48$</a>$s49$</p>
+        <p>$s30(http://developer.mozilla.org/en/docs/CSS:%40-moz-document)$</p>
 
-	<p>$s50$ <code>$s51$</code> $s52$</p>
+        <p>$s31$ <code>$s32$</code> $s33$</p>
 
-	<pre>
-$s53$
+        <pre>
+@-moz-document url-prefix(http://),url-prefix(https://)
+{
+  div#evil_ad, div.evil_ad
+  {
+    display: none !important;
+  }
+}
 </pre>
 
-	<p>$s54$ <a href="$s55$">$s56$</a> $s57$ <a href="$s58$">$s59$</a>$s60$</p>
+        <p>$s34(https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService, http://www.w3.org/TR/CSS21/cascade.html#cascading-order)$</p>
 
-	<h2 id="filtersfile">$s61$</h2>
+        <h2 id="filtersfile">$s35$</h2>
 
-	<p>$s62$ <code>$s63$</code>$s64$</p>
+        <p>$s36$ <code>$s37$</code>$s38$</p>
 
-	<pre>
-$s65$
+        <pre>
+(Adblock Plus 0.6.1.2 or higher required) [Adblock]
 </pre>
 
-	<p>$s66$</p>
+        <p>$s39$</p>
 
-	<pre>
-$s67$
+        <pre>
+[Adblock Plus 0.7.1]
 </pre>
 
-	<p>$s68$</p>
+        <p>$s40$</p>
 
-	<p>$s69$ <code>$s70$</code>$s71$</p>
+        <p>$s41$ <code>$s42$</code>$s43$</p>

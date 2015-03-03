@@ -14,7 +14,7 @@ function toggleExpand(button, targetId)
   var element = document.getElementById(targetId);
   var isVisible = element.style.display == "inherit";
   element.style.display = isVisible ? "none" : "inherit";
-  
+
   var textContainer = document.getElementById("expand-button-" + (isVisible ? "more" : "less"));
   if ("textContent" in button)
     button.textContent = textContainer.textContent;
@@ -29,7 +29,7 @@ function toggleExpand(button, targetId)
   {
     display: none;
   }
-  
+
   .expandable
   {
     display: inherit;
@@ -83,11 +83,11 @@ function toggleExpand(button, targetId)
   $s18$
 </p>
 
-<button class="expand-button" onclick="toggleExpand(this, 'expand-monetization')">$s19$</button>
+<button class="expand-button" onclick="toggleExpand(this, 'expand-monetization')">$s1$</button>
 
 <div class="expandable" id="expand-monetization">
   <p>
-    $s20$ 
+    $s20$
   </p>
 
   <p>
@@ -105,15 +105,15 @@ function toggleExpand(button, targetId)
   $s24(https://eyeo.com)$
 </p>
 
-<button class="expand-button" onclick="toggleExpand(this, 'expand-whymoney')">$s25$</button>
+<button class="expand-button" onclick="toggleExpand(this, 'expand-whymoney')">$s1$</button>
 
 <div class="expandable" id="expand-whymoney">
   <p>
-    $s26(firefox, chrome, android, opera, internet-explorer, https://easylist.adblockplus.org)$
+    $s26(firefox, chrome, android, opera, internet-explorer, safari, https://easylist.adblockplus.org)$
   </p>
 
   <p>
-    $s27$ 
+    $s27$
   </p>
 
   <p>

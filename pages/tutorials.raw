@@ -1,8 +1,8 @@
 
-<meta name="title" content="$s1$">
-<meta name="description" content="$s2$">
-<meta property="og:title" content="$s3$">
-<meta property="og:description" content="$s4$">
+<meta content="$s1$" name="title">
+<meta content="$s2$" name="description">
+<meta content="$s1$" property="og:title">
+<meta content="$s2$" property="og:description">
 
 <h2 id="adblocker">$s5$</h2>
 
@@ -87,7 +87,7 @@
 </p>
 
 <h3>$s29$</h3>
- 
+
 <p>
   $s30(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Feasyprivacy%2Beasylist.txt&amp;title=EasyPrivacy%2BEasyList)$
 </p>
@@ -108,7 +108,7 @@
 
 <p>
   $s36(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Fmalwaredomains_full.txt&amp;title=Malware%20Domains)$
-</p> 
+</p>
 
 <h3>$s37$</h3>
 
@@ -142,7 +142,7 @@
 
 <p>
   $s47$
-</p> 
+</p>
 
 <p>
   $s48(chrome)$

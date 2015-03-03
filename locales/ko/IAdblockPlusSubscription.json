@@ -1,0 +1,119 @@
+{
+  "title": {
+    "message": "IAdblockPlusSubscription"
+  },
+  "s1": {
+    "message": "이 인터페이스는 Adblock Plus의 필터 관리 대화상자에서 하나의 그룹이며, 그것은 <a>IAdblockPlus</a>에 의해 되돌아갑니다. 모든 접근은 읽기 전용입니다."
+  },
+  "s2": {
+    "message": "<em>참고 </em>: 이 객체 에 대한 참조는 유지하지 않아야 합니다. 만약 이윽고 이후 어느 시점에 같은 구독 필터의 상태가 필요하다면 알맞은 정보를 얻기 위해 IAdblockPlus로부터 그것을 다시 요청해야 합니다."
+  },
+  "urlDescription-s1": {
+    "message": "Subscription identifier. This can be any string for externally managed subscriptions and special groups, for other subscriptions this will be their update URL."
+  },
+  "specialDescription-s1": {
+    "message": "Defines whether the subscription is a special group containing user filters. Currently there are four special groups, namely"
+  },
+  "specialDescription-s2": {
+    "message": "fl"
+  },
+  "specialDescription-s3": {
+    "message": "(normal filters),"
+  },
+  "specialDescription-s4": {
+    "message": "wl"
+  },
+  "specialDescription-s5": {
+    "message": "(exception rules),"
+  },
+  "specialDescription-s6": {
+    "message": "eh"
+  },
+  "specialDescription-s7": {
+    "message": "(element hiding rules) and"
+  },
+  "specialDescription-s8": {
+    "message": "il"
+  },
+  "specialDescription-s9": {
+    "message": "(invalid rules)."
+  },
+  "titleDescription-s1": {
+    "message": "Subscription's title as displayed in the Preferences dialog"
+  },
+  "autoDownloadDescription-s1": {
+    "message": "Defines whether the subscription will be updated automatically. Note that this attribute is meaningless for externally managed subscriptions and special groups."
+  },
+  "disabledDescription-s1": {
+    "message": "Defines whether the subscription is disabled. If this attribute is set to"
+  },
+  "disabledDescription-s2": {
+    "message": "true"
+  },
+  "disabledDescription-s3": {
+    "message": "the filters in the subscription won't be applied."
+  },
+  "externalDescription-s1": {
+    "message": "Defines whether the subscription is managed externally. If this attribute is set to"
+  },
+  "externalDescription-s2": {
+    "message": "true"
+  },
+  "externalDescription-s3": {
+    "message": "the filters in the subscription will only be updated if some extension calls <a>IAdblockPlus.updateExternalSubscription</a>."
+  },
+  "lastDownloadDescription-s1": {
+    "message": "Timestamp (return value of"
+  },
+  "lastDownloadDescription-s2": {
+    "message": "new Date().getTime()"
+  },
+  "lastDownloadDescription-s3": {
+    "message": ") of last attempt to download the subscription. The value 0 means that the subscription was never downloaded."
+  },
+  "downloadStatusDescription-s1": {
+    "message": "Result code for the last download attempt. This can have the following values:"
+  },
+  "downloadStatusDescription-s2": {
+    "message": "ok"
+  },
+  "downloadStatusDescription-s3": {
+    "message": "-- Success"
+  },
+  "downloadStatusDescription-s4": {
+    "message": "invalid_url"
+  },
+  "downloadStatusDescription-s5": {
+    "message": "-- Subscription URL is invalid"
+  },
+  "downloadStatusDescription-s6": {
+    "message": "connection_error"
+  },
+  "downloadStatusDescription-s7": {
+    "message": "-- Subscription could not be downloaded"
+  },
+  "downloadStatusDescription-s8": {
+    "message": "invalid_data"
+  },
+  "downloadStatusDescription-s9": {
+    "message": "-- Subscription was downloaded but the first line wasn't"
+  },
+  "downloadStatusDescription-s10": {
+    "message": "[Adblock]"
+  },
+  "lastModifiedDescription-s1": {
+    "message": "Value of the"
+  },
+  "lastModifiedDescription-s2": {
+    "message": "Last-Modified"
+  },
+  "lastModifiedDescription-s3": {
+    "message": "HTTP header received with the last successful download. This isn't used yet and will always be empty."
+  },
+  "getPatternsDescription-s1": {
+    "message": "Retrieves the list of filter rules for a subscription. Note that this method usually will not return anything useful for special groups."
+  },
+  "getPatterns_returnDescription-s1": {
+    "message": "array with subscription's filter rules"
+  }
+}

@@ -1,0 +1,193 @@
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+<h2>{{ "general_notes"|translate }}</h2>
+
+<style type="text/css">
+.propname, .methodname, .argumentname
+{
+  font-weight: bold;
+}
+</style>
+
+<p>
+  {{"s1"|translate}} {{"s2"|translate}}
+</p>
+
+<pre>
+if (&quot;@adblockplus.org/abp/public;1&quot; in Components.classes)
+{
+  var abpURL = Components.classes[&quot;@adblockplus.org/abp/public;1&quot;]
+                         .getService(Components.interfaces.nsIURI);
+  var AdblockPlus = Components.utils.import(abpURL.spec, null).AdblockPlus;
+  alert(AdblockPlus.subscriptionCount);
+}
+else
+{
+  // Adblock Plus is not installed
+}
+</pre>
+
+{% macro subscriptionCountDescription() %}
+<p>{{"subscriptionCountDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro getSubscriptionDescription() %}
+<p>{{"getSubscriptionDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro getSubscription_returnDescription() %}
+{{"getSubscription_returnDescription-s1"|translate}} <tt>{{"getSubscription_returnDescription-s2"|translate}}</tt> {{"getSubscription_returnDescription-s3"|translate}}
+{% endmacro %}
+
+{% macro getSubscription_idDescription() %}
+{{"getSubscription_idDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro getSubscriptionAtDescription() %}
+<p>{{"getSubscriptionAtDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro getSubscriptionAt_returnDescription() %}
+{{"getSubscription_returnDescription-s1"|translate}} <tt>{{"getSubscriptionAt_returnDescription-s2"|translate}}</tt> {{"getSubscriptionAt_returnDescription-s3"|translate}}
+{% endmacro %}
+
+{% macro getSubscriptionAt_indexDescription() %}
+{{"getSubscriptionAt_indexDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro updateExternalSubscriptionDescription() %}
+<p>
+{{"updateExternalSubscriptionDescription-s1"|translate}}
+</p>
+
+<p>
+{{"updateExternalSubscriptionDescription-s2"|translate}}
+</p>
+
+<p>
+{{"updateExternalSubscriptionDescription-s3"|translate}}
+</p>
+{% endmacro %}
+
+{% macro updateExternalSubscription_returnDescription() %}
+{{"updateExternalSubscription_returnDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro updateExternalSubscription_idDescription() %}
+{{"updateExternalSubscription_idDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro updateExternalSubscription_titleDescription() %}
+{{"updateExternalSubscription_titleDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro updateExternalSubscription_patternsDescription() %}
+{{"updateExternalSubscription_patternsDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro removeExternalSubscriptionDescription() %}
+<p>{{"removeExternalSubscriptionDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro removeExternalSubscription_returnDescription() %}
+<tt>{{"removeExternalSubscription_returnDescription-s1"|translate}}</tt> {{"removeExternalSubscription_returnDescription-s2"|translate}} <tt>{{"removeExternalSubscription_returnDescription-s3"|translate}}</tt> {{"removeExternalSubscription_returnDescription-s4"|translate}}
+{% endmacro %}
+
+{% macro removeExternalSubscription_idDescription() %}
+{{"updateExternalSubscription_idDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro addPatternsDescription() %}
+<p>{{"addPatternsDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro addPatterns_returnDescription() %}
+{% endmacro %}
+
+{% macro addPatterns_patternsDescription() %}
+{{"addPatterns_patternsDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro removePatternsDescription() %}
+<p>{{"removePatternsDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro removePatterns_returnDescription() %}
+{% endmacro %}
+
+{% macro removePatterns_patternsDescription() %}
+{{"removePatterns_patternsDescription-s1"|translate}}
+{% endmacro %}
+
+{% macro getInstalledVersionDescription() %}
+<p>{{"getInstalledVersionDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro getInstalledVersion_returnDescription() %}
+{{"getInstalledVersion_returnDescription-s1"|translate}} <tt>{{"getInstalledVersion_returnDescription-s2"|translate}}</tt>
+{% endmacro %}
+
+
+{#
+  Property, method and method argument descriptions are defined in the macros
+  above and only referenced here.
+#}
+
+{% from "includes/interface" import display_interface %}
+
+{{ display_interface({
+  "void addPatterns(arrayof wstring patterns)": {
+    "description": addPatternsDescription,
+    "description-patterns": addPatterns_patternsDescription,
+    "version": "0.7.2.3"
+  },
+  "AString getInstalledVersion()": {
+    "description": getInstalledVersionDescription,
+    "description-return": getInstalledVersion_returnDescription
+  },
+  "IAdblockPlusSubscription getSubscription(AString id)": {
+    "description": getSubscriptionDescription,
+    "description-id": getSubscription_idDescription,
+    "description-return": getSubscription_returnDescription
+  },
+  "IAdblockPlusSubscription getSubscriptionAt(PRInt32 index)": {
+    "description": getSubscriptionAtDescription,
+    "description-index": getSubscriptionAt_indexDescription,
+    "description-return": getSubscriptionAt_returnDescription
+  },
+  "boolean removeExternalSubscription(AString id)": {
+    "description": removeExternalSubscriptionDescription,
+    "description-id": removeExternalSubscription_idDescription,
+    "description-return": removeExternalSubscription_returnDescription
+  },
+  "void removePatterns(arrayof wstring patterns)": {
+    "description": removePatternsDescription,
+    "description-patterns": removePatterns_patternsDescription,
+    "version": "0.7.2.3"
+  },
+  "readonly PRInt32 subscriptionCount": {
+    "description": subscriptionCountDescription
+  },
+  "wstring updateExternalSubscription(AString id, AUTF8String title, arrayof wstring patterns)": {
+    "description": updateExternalSubscriptionDescription,
+    "description-id": updateExternalSubscription_idDescription,
+    "description-title": updateExternalSubscription_titleDescription,
+    "description-patterns": updateExternalSubscription_patternsDescription,
+    "description-return": updateExternalSubscription_returnDescription
+  }
+}) }}

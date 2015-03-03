@@ -3,123 +3,93 @@
     "message": "Source Code"
   },
   "s1": {
-    "message": "Getting the source code"
+    "message": "The Adblock Plus project consists of multiple repositories."
   },
   "s2": {
-    "message": "The Adblock Plus source code can viewed throught the HG <a>web interface</a>. A local copy may be downloaded by running the following from the command line:"
+    "message": "The <a>modules</a> page has a good overview of the most important ones."
   },
   "s3": {
-    "message": "Similar repositories are set up for <a>Element Hiding Helper</a> and <a>Diagnostics for Adblock Plus</a>. The local copy may be reset to the state of a particular release by running the command:"
+    "message": "Getting the source code from the Mercurial repositories"
   },
   "s4": {
-    "message": "(replace"
+    "message": "The Adblock Plus source code is hosted on our <a>Mercurial</a> server."
   },
   "s5": {
-    "message": "with the tag of the required version)."
+    "message": "You can see a list of all repositories through the"
   },
   "s6": {
-    "message": "Alternatively, you can also <a>download the source code of the latest release</a>."
+    "message": "web interface"
   },
   "s7": {
-    "message": "The <a>Adblock Plus source code documentation</a> provides an overview of the add-on internals."
-  },
-  "s8": {
-    "message": "HG client and documentation links"
-  },
-  "s9": {
-    "message": "http://mercurial.selenic.com/"
-  },
-  "s10": {
-    "message": "Mercurial"
-  },
-  "s11": {
-    "message": "("
-  },
-  "s12": {
-    "message": "http://mercurial.selenic.com/wiki/QuickStart"
-  },
-  "s13": {
-    "message": "quickstart"
-  },
-  "s14": {
-    "message": ")"
-  },
-  "s15": {
-    "message": "https://developer.mozilla.org/en/Mercurial_FAQ"
-  },
-  "s16": {
-    "message": "Mozilla's Mercurial FAQ"
-  },
-  "s17": {
-    "message": "http://hgbook.red-bean.com/"
-  },
-  "s18": {
-    "message": "Distributed Revision Control with Mercurial"
-  },
-  "s19": {
-    "message": "(hgbook)"
-  },
-  "s20": {
-    "message": "http://mercurial.selenic.com/wiki/OtherTools"
-  },
-  "s21": {
-    "message": "GUI clients and other tools"
-  },
-  "s22": {
-    "message": "Creating an Adblock Plus build"
-  },
-  "s23": {
-    "message": "A development build may be created by entering the \"adblockplus\" directory (your local copy of the repository) and running the command:"
-  },
-  "s24": {
-    "message": "The script will create a development build with a name in the form"
-  },
-  "s25": {
     "message": "."
   },
+  "s8": {
+    "message": "Here's how you clone the Adblock Plus for Firefox repository:"
+  },
+  "s9": {
+    "message": "Here's how you get the source code for a specific version (e.g."
+  },
+  "s10": {
+    "message": "):"
+  },
+  "s11": {
+    "message": "Mercurial documentation"
+  },
+  "s12": {
+    "message": "Mercurial quickstart"
+  },
+  "s13": {
+    "message": "Mozilla's Mercurial FAQ"
+  },
+  "s14": {
+    "message": "Distributed Revision Control with Mercurial (hgbook)"
+  },
+  "s15": {
+    "message": "GUI client and other tools"
+  },
+  "s16": {
+    "message": "Getting the source code from the GitHub mirrors"
+  },
+  "s17": {
+    "message": "If you prefer to use Git, you can - we have <a>GitHub mirrors</a> for all our public repositories."
+  },
+  "s18": {
+    "message": "Here's how you clone the Adblock Plus for Firefox repository from GitHub:"
+  },
+  "s20": {
+    "message": "):"
+  },
+  "s21": {
+    "message": "<strong>Please note:</strong> We are currently using Mercurial subrepositories heavily, but are unable to mirror these as Git submodules."
+  },
+  "s22": {
+    "message": "That means that you need to check the"
+  },
+  "s23": {
+    "message": "<em>.hgsub</em> file of each repository and clone all dependencies manually."
+  },
+  "s24": {
+    "message": "This won't be necessary anymore once we've"
+  },
+  "s25": {
+    "message": "<a>moved away from subrepositories</a>."
+  },
   "s26": {
-    "message": "This file will contain the source code currently in the repository and all available locales."
+    "message": "Build instructions"
   },
   "s27": {
-    "message": "<em>Note</em>: You need"
+    "message": "Most of our repositories have <em>README.md</em> files with build instructions, please refer to those."
   },
   "s28": {
-    "message": "with"
+    "message": "Source code documentation"
   },
   "s29": {
-    "message": "<a>Jinja2 module</a> to create builds."
+    "message": "We have automatically generated source code documentation for some projects:"
   },
   "s30": {
-    "message": "To\n  install Jinja2 in Python run this command:"
+    "message": "Adblock Plus for Firefox"
   },
   "s31": {
-    "message": "Testing your changes"
-  },
-  "s32": {
-    "message": "To simplify the process of testing your changes you can install\n  <a>Extension Auto-Installer</a>\n  in your browser."
-  },
-  "s33": {
-    "message": "Assuming that Extension Auto-Installer is configured to use\n  port 8888 (the default value), you can push your changes to this browser by running:"
-  },
-  "s34": {
-    "message": "The browser will be restarted automatically if necessary."
-  },
-  "s35": {
-    "message": "Running unit tests"
-  },
-  "s36": {
-    "message": "To verify your changes you can use the existing\n  <a>unit test suite</a>."
-  },
-  "s37": {
-    "message": "The\n  unit tests are a separate extension that is installed in addition to Adblock\n  Plus."
-  },
-  "s38": {
-    "message": "You can either install the\n  <a>existing unit test builds</a>\n  or clone the repository and create your own build."
-  },
-  "s39": {
-    "message": "After installing the unit tests\n  go to"
-  },
-  "s40": {
-    "message": "to run the tests."
+    "message": "libadblockplus"
   }
 }

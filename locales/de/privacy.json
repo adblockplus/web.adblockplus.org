@@ -105,7 +105,7 @@
     "message": "Einige allgemeine Informationen wie die Browserversion, die Version der Erweiterung, das Betriebssystem und Ihre IP-Adresse werden währen der Update-Überprüfung übertragen."
   },
   "s34": {
-    "message": "Die Updates der Adblock Plus Entwicklungsversionen sowie Adblock Plus für Android und Internet Explorer werden über die AdblockPlus.org Webseite bereitgestellt und die übermittelten Daten unterliegen \n  <a>ihrer Datenschutzbestimmungen</a>."
+    "message": "Die Updates der Adblock Plus Entwicklungsversionen sowie Adblock Plus für Android und Internet Explorer werden über die AdblockPlus.org Webseite bereitgestellt und die übermittelten Daten unterliegen  <a>ihrer Datenschutzbestimmungen</a>."
   },
   "s35": {
     "message": "Die Updates der stabilen Versionen von Adblock Plus für Firefox werden von der Addons.Mozilla.Org-Webseite abgewickelt und unterliegen der"
@@ -117,7 +117,7 @@
     "message": "."
   },
   "s38": {
-    "message": "Die Updates der stabilen Versionen von Adblock Plus für Chrome werden von der Google Web Store Webseite abgewickelt und unterliegen der \n  <a>Google Privacy Policy</a>."
+    "message": "Die Updates der stabilen Versionen von Adblock Plus für Chrome werden von der Google Web Store Webseite abgewickelt und unterliegen der  <a>Google Privacy Policy</a>."
   },
   "s39": {
     "message": "Die Updates der stabilen Versionen von Adblock Plus für Opera werden von der Opera Add-ons Webseite abgewickelt und unterliegen der"
@@ -147,7 +147,7 @@
     "message": "Die dabei übertragenen Daten beeinhalten die Adblock Plus-Version, die Adresse des Filterabonnements und Informationen über den vorgefundenen Fehler."
   },
   "s48": {
-    "message": "Diese Daten werden verwendet, um Probleme zu erkennen, die nicht Filterlistenautoren gemeldet wurden und unterliegen den \n  <a>AdblockPlus.org-Datenschutzbestimmungen</a>."
+    "message": "Diese Daten werden verwendet, um Probleme zu erkennen, die nicht Filterlistenautoren gemeldet wurden und unterliegen den  <a>AdblockPlus.org-Datenschutzbestimmungen</a>."
   },
   "s49": {
     "message": "Fehlerberichts-Assistent"
@@ -171,7 +171,7 @@
     "message": "Es ist vor dem Absenden des Berichtes möglich, bestimmte Stellen auf der Webseite zu schwärzen."
   },
   "s56": {
-    "message": "E-Mail-Adressen werden nur verwendet, um mehr Informationen über den Fehler anzufordern."
+    "message": "E-Mail-Adressen werden nur verwendet, um mehr Informationen über den Fehler anzufordern oder den Nutzer über ein Update des Fehlers zu benachrichtigen."
   },
   "s57": {
     "message": "Die Liste der installierten Erweiterungen ist für die Überprüfung bei Konflikten mit anderen Erweiterungen notwendig."
@@ -198,7 +198,7 @@
     "message": "Diese Anfrage lässt Ihre IP Addresse gegenüber der Webseite sichtbar werden und sendet zudem auch einige allgemeine Informationen wie etwa Ihre Adblock Plus Version, Browser und Browserversion."
   },
   "s65": {
-    "message": "Diese Daten ermöglichen die Bereitstellung unterschiedlicher Benachrichtigungen an unterschiedliche Clients und unterliegt den \n  <a>AdblockPlus.org Datenschutzrichtlinien</a>."
+    "message": "Diese Daten ermöglichen die Bereitstellung unterschiedlicher Benachrichtigungen an unterschiedliche Clients und unterliegt den  <a>AdblockPlus.org Datenschutzrichtlinien</a>."
   },
   "s66": {
     "message": "Weitere Anfragen der AdblockPlus.org-Webseite"
@@ -207,69 +207,54 @@
     "message": "Adblock Plus macht weitere Anfragen zur AdblockPlus.org-Webseite, die erforderlich sind, wenn man z. B. einen Link zur Dokumentation anklickt oder wenn die komplette Liste der Filterabonnements heruntergeladen werden muss."
   },
   "s68": {
-    "message": "Deise Anfragen unterliegen den \n  <a>AdblockPlus.org-Dateschutzbestimmungen</a>."
+    "message": "Deise Anfragen unterliegen den  <a>AdblockPlus.org-Dateschutzbestimmungen</a>."
   },
   "s69": {
     "message": "Datenaufbewahrung"
   },
   "s70": {
-    "message": "Adblock Plus speichert einige Daten im"
+    "message": "Adblock Plus speichert einige Daten im  <a>Firefox-Profilordner</a> auf Ihrem Computer."
   },
   "s71": {
-    "message": "http://support.mozilla.com/kb/Profiles"
+    "message": "Adblock Plus überträgt diese Daten nie zu irgendwelchen Server, aber andere Erweiterungen und Dienste wie z. B."
   },
   "s72": {
-    "message": "Firefox-Profilordner"
+    "message": "Firefox Sync"
   },
   "s73": {
-    "message": "auf Ihrem Computer."
+    "message": ", können die tun."
   },
   "s74": {
-    "message": "Adblock Plus überträgt diese Daten nie zu irgendwelchen Server, aber andere Erweiterungen und Dienste wie z. B. \n  <a>Firefox Sync</a>, können die tun."
-  },
-  "s75": {
     "message": "Der Großteil der Daten (Ihre Einstellungen, Filterabonnements und Benutzerfilter) ist unbedenklich was Ihre Privatsfähre angeht."
   },
-  "s76": {
+  "s75": {
     "message": "Jedoch könnten die Filtertreffer und kürzlich abgeschickte Fehlerberichte dazu verwendet werden, um Ihren Verlauf der besuchten Seiten zu rekonstruieren."
   },
-  "s77": {
+  "s76": {
     "message": "Adblock Plus behandelt diese Informationen genauso wie Daten der Chronik im Broser behandelt werden:"
   },
+  "s77": {
+    "message": "die Daten werden nicht gespeichert, wenn der  <a>Private Modus</a> verwendet wird und sie werden gelöscht, wenn Sie die Chronik löschen."
+  },
   "s78": {
-    "message": "die Daten werden nicht gespeichert, wenn der"
-  },
-  "s79": {
-    "message": "http://support.mozilla.com/kb/Private+Browsing"
-  },
-  "s80": {
-    "message": "Private Modus"
-  },
-  "s81": {
-    "message": "verwendet wird und sie werden gelöscht, wenn sie die Chronik löschen."
-  },
-  "s82": {
     "message": "Element Hiding Helper-Erweiterung"
   },
-  "s83": {
-    "message": "Update-Überprüfung der Erweiterung"
-  },
-  "s84": {
+  "s80": {
     "message": "Ihr Browser sucht regelmäßig nach Updates für Ihre Erweiterungen (Element Hiding Helper mitinbegriffen)."
   },
-  "s85": {
+  "s81": {
     "message": "Einige allgemeine Informationen wie die Browserversion, die Version der Erweiterung, das Betriebssystem und Ihre IP-Adresse werden währen der Update-Überprüfung übertragen."
   },
-  "s86": {
+  "s82": {
     "message": "Die Updates der Entwicklungsversion von Element Hiding Helper werden über die AdblockPlus.org-Webseite bereitgestellt und die übertragenen Daten unterliegen <a>ihrer Datenschutzbestimmungen</a>."
   },
-  "s87": {
+  "s83": {
     "message": "Die Updates der stabilen Versionen werden von der Addons.Mozilla.Org-Webseite abgewickelt und unterliegen der"
   },
-  "s88": {
+  "s84": {
     "message": "Firefox Privacy Policy"
   },
-  "s89": {
+  "s85": {
     "message": "."
   }
 }
