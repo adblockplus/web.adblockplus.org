@@ -1,41 +1,131 @@
 {
-  "title": {
+  "title-full": {
     "message": "Autoriser les publicités non-intrusives dans Adblock Plus"
+  },
+  "s1": {
+    "message": "Annonces Acceptables - Adblock Plus"
+  },
+  "s2": {
+    "message": "Adblock Plus introduit l'initiative Annonces Acceptables afin de supporter les sites mettant en place des publicités en ligne non-intrusives."
   },
   "s5": {
     "message": "De quoi ça parle ?"
   },
+  "s6": {
+    "message": "En installant Adblock Plus 2.0 vous pouvez décider de ne voir que certaines publicités, considérées comme acceptables. Ainsi, vous venez en aide aux sites internet qui ont besoin de publicités pour vivre mais qui les publient de manière non intrusive."
+  },
   "s7": {
+    "message": "Avez-vous déjà signé le <a>Manifeste de la Publicité Acceptable?</a>"
+  },
+  "s8": {
     "message": "Pourquoi cette fonctionnalité est-elle activée par défaut ?"
   },
   "s9": {
+    "message": "C’est le seul moyen de réaliser ce que nous souhaitons accomplir. Si la majorité des utilisateurs d’Adblock Plus laisse cette fonction activée, les publicitaires seront plus enclins à éditer de meilleures publicités."
+  },
+  "s10": {
     "message": "Mais je déteste toutes les pubs !"
   },
+  "s11": {
+    "message": "Aucun problème, vous pouvez désactiver ce paramètre à tout moment. Procédez simplement au paramétrage suivant :"
+  },
+  "s12": {
+    "message": "Sur Firefox: cliquez sur l'icône Adblock Plus et choisissez le filtre de préférences dans le menu et désélectionner \"Autoriser la publicité non-intrusive\"."
+  },
+  "s13": {
+    "message": "Sur Chrome : faites un clique droit sur l'icône Adblock Plus dans la barre de navigation et choisissez Options puis désélectionner \"Autoriser la publicité non-intrusive.\""
+  },
   "s14": {
-    "message": "Quelles sont les pubs \"acceptables\" ?"
-  },
-  "s15": {
-    "message": "Nous avons actuellement les exigences suivantes :"
-  },
-  "s16": {
-    "message": "Publicités statiques seulement (ni animation, ni son, ni rien d'analogue)"
-  },
-  "s17": {
-    "message": "De préférence textuelles, sans image accrocheuse"
+    "message": "Sur Opera : cliquez sur le bouton Menu d'Opera dans le coin en haut à gauche (sur OS X : cliquez sur Window au sommet de la page), choisissez Extensions, trouvez Adblock Plus, cliquez sur Options et désélectionnez \"Autoriser la publicité non-intrusive."
   },
   "s18": {
-    "message": "Position des publicités :"
+    "message": "Quelles sont les pubs « acceptables » ?"
+  },
+  "s19": {
+    "message": "Nous avons défini les exigences suivantes"
+  },
+  "s20": {
+    "message": "Publicités statiques seulement (ni animation, ni son, ni rien d'analogue"
+  },
+  "s21": {
+    "message": "De préférence textuelles, sans image accrocheus"
+  },
+  "s22": {
+    "message": "Position des publicités"
+  },
+  "s23": {
+    "message": "Les publicités ne doivent jamais gêner le contenu d'une page Web (par exemple en demandant aux utilisateurs de cliquer sur un bouton pour fermer la publicité avant même de pouvoir visionner correctement la page)."
+  },
+  "s24": {
+    "message": "Pour les pages comportant du texte, les publicités ne doivent pas être placées là où elles interrompent le flux de lecture. Toutefois, elles peuvent être placées au-dessus du contenu  texte, en-dessous ou sur les côtés. La même chose vaut pour les pages de résultats : les résultats de recherche payants ne peuvent pas être mélangés avec les résultats organiques"
+  },
+  "s25": {
+    "message": "Lorsque les publicités sont placées au-dessus du contenu d'une page principale, elles ne doivent pas exiger de l'utilisateur qu’il défile vers le bas. L'espace vertical disponible doit représenter au moins 700 pixels. La publicité ne doit pas occuper plus d'un tiers de cette hauteur. Les résultats de la recherche sponsorisée peuvent occuper plus d’espace sur les pages de recherche, mais ils ne doivent jamais être plus nombreux que les résultats organiques"
+  },
+  "s26": {
+    "message": "Lorsque les publicités sont placées sur le côté, elles doivent laisser suffisamment d'espace au contenu principal. L'espace horizontal disponible doit représenter au moins 1000 pixels. La publicité ne doit pas occuper plus d'un tiers de cette largeur."
+  },
+  "s27": {
+    "message": "La publicité doit être clairement identifiée comme telle par le mot « publicité » ou un équivalent, et elle doit se distinguer du contenu de la page, par exemple par une frontière et/ou une couleur de fond différente."
+  },
+  "s28": {
+    "message": "Les exigences concernant le placement des encarts ne s’appliquent pas aux liens hypertextes insérés sur du contenu texte. Eux, doivent respecter des critères qui leur sont propres"
+  },
+  "s29": {
+    "message": "La redirection contenue dans le lien ne doit présenter aucune autre page Web que la page de destination"
   },
   "s30": {
-    "message": "Toutes les pubs \"acceptables\" seront-elles affichées ?"
+    "message": "Dans les textes, pas plus de 2% des mots peuvent être des liens hypertextes payants"
+  },
+  "s31": {
+    "message": "Les liens ne doivent pas être formatés ou agir différemment des autres liens."
+  },
+  "s32": {
+    "message": "Les liens doivent être du même contexte que la page ; que ce soit dans le contenu ou dans la redirection"
   },
   "s33": {
+    "message": "Ces critères ne sont pas nécessairement définitifs, nous travaillons toujours à les améliorer. Nous voulons que la vie privée de chaque utilisateur soit respectée (\"e.g. mandatory <a>Do Not Track</a> k support\"). Cependant, nous ne sommes pas encore en mesure de faire respecter cette exigence"
+  },
+  "s34": {
+    "message": "Toutes les pubs « acceptables » seront-elles affichées ?"
+  },
+  "s36": {
+    "message": "Aucun candidat n’est favorisé ou traité différemment, et personne ne peut acheter sa place dans la liste blanche. <strong>. Tout le monde doit se conformer</strong> aux critères et tout le monde doit passer par le même processus avant que les publicités soient considérées comme « acceptables »."
+  },
+  "s37": {
     "message": "Que se passe-t-il si une publicité qui ne correspond pas aux critères est autorisée ?"
   },
-  "s35": {
+  "s38": {
+    "message": "Veuillez nous le <a>signaler</a>. Si un annonceur abuse de son inscription sur la liste d'exceptions, nous pouvons toujours l’en retirer"
+  },
+  "s39": {
     "message": "Comment puis-je voir ce que vous autorisez ?"
   },
+  "s40": {
+    "message": "L’option \"Autoriser la publicité non-intrusive\", vous permet d'ajouter un filtre de plus à votre liste. Vous pouvez donc visualiser tous les filtre <a>à cet endroit</a>. Cette fonction d’enregistrement des filtres a été ajoutée pour simplifier les ajouts fréquents. Elle peut être désactivée en allant dans \"ajout : config\" et en changeant les <a>extensions.adblockplus.subscriptions_exceptionscheckbox</a>. Cela vous permettra de visualiser les filtres, comme d'habitude."
+  },
+  "s41": {
+    "message": "Vous avez des questions ou suggestions concernant cette liste ? N'hésitez pas à entrer en contact avec la communauté <a>sur notre forum</a> ou <a>contactez-nous directement par mail</a>."
+  },
+  "s42": {
+    "message": "Comment abonner mon site à la liste blanche ?"
+  },
+  "s43": {
+    "message": "Le processus d'inscription sur liste blanche prend environ 10 jours ouvrables:"
+  },
+  "s44": {
+    "message": "Si votre site a des publicités qui sont conformes aux critères de la <a>Publicités Acceptable</a>, il vous suffit de remplir <a>ce formulaire</a>."
+  },
   "s45": {
+    "message": "Un personne d’<a>Eyeo</a>, l’entreprise détenant \"Adblock Plus\", prendra contact avec vous afin de déterminer ces publicités, et vérifier si elles sont conformes à nos critères."
+  },
+  "s46": {
+    "message": "Après avoir effectué les modifications nécessaires, les deux parties signent un <a>accord</a>."
+  },
+  "s48": {
     "message": "Êtes-vous stupide ? Personne ne veut ça !"
+  },
+  "s49": {
+    "message": "Ce n’est pas ce que nous montrent les <a>résultats de notre enquête auprès de nos utilisateurs</a>. Selon cette enquête, seulement 25% des utilisateurs d’Adblock Plus sont strictement contre toute publicité. Ceux-là peuvent désactiver cette fonction et en sont satisfaits. Les autres utilisateurs ont répondu qu'ils accepteraient certains types de publicités pour assurer un des revenus aux sites Web. Certains utilisateurs se demandent également s'il serait possible de permettre à \"Adblock Plus\" d'être sur quelques sites seulement."
   }
 }

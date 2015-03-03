@@ -1,8 +1,10 @@
+title=title-full
 
-<meta name="title" content="$s1$">
-<meta name="description" content="$s2$">
-<meta property="og:title" content="$s3$">
-<meta property="og:description" content="$s4$">
+
+<meta content="$s1$" name="title">
+<meta content="$s2$" name="description">
+<meta content="$s1$" property="og:title">
+<meta content="$s2$" property="og:description">
 
 <h2 id="info">$s5$</h2>
 
@@ -10,17 +12,17 @@
   $s6$
 </p>
 
-<h2 id="default">$s7$</h2>
-
 <p>
-  $s8$
+ $s7(http://acceptableads.org)$
 </p>
 
-<h2 id="optout">$s9$</h2>
+<h2 id="default">$s8$</h2>
 
 <p>
-  $s10$ 
+  $s9$
 </p>
+
+<h2 id="optout">$s10$</h2>
 
 <p>
   $s11$
@@ -34,110 +36,123 @@
   $s13$
 </p>
 
-<h2 id="criteria">$s14$</h2>
+<p>
+  $s14$
+</p>
 
 <p>
   $s15$
 </p>
 
+<p>
+  $s16$
+</p>
+
+<p>
+  $s17$
+</p>
+
+<h2 id="criteria">$s18$</h2>
+
+<p>
+  $s19$
+</p>
+
 <ul>
-  <li>$s16$</li>
-  <li>$s17$</li>
+  <li>$s20$</li>
+  <li>$s21$</li>
   <li>
-    $s18$
+    $s22$
     <ul>
       <li>
-        $s19$
+        $s23$
       </li>
       <li>
-        $s20$
+        $s24$
       </li>
-      <li>
-        $s21$
-      </li>
-      <li>
-        $s22$
-      </li>
-    </ul>
-  </li>
-  <li>
-    $s23$
-  </li>
-  <li>
-    $s24$
-    <ul>
       <li>
         $s25$
       </li>
       <li>
         $s26$
       </li>
+    </ul>
+  </li>
+  <li>
+    $s27$
+  </li>
+  <li>
+    $s28$
+    <ul>
       <li>
-        $s27$
+        $s29$
       </li>
       <li>
-        $s28$
+        $s30$
+      </li>
+      <li>
+        $s31$
+      </li>
+      <li>
+        $s32$
       </li>
     </ul>
   </li>
 </ul>
 
 <p>
-  $s29(http://donottrack.us)$
+  $s33(http://donottrack.us)$
 </p>
 
-<h2 id="which">$s30$</h2>
+<h2 id="which">$s34$</h2>
 
 <p>
-  $s31(acceptable-ads-agreements)$ 
-</p>
-
-<p>
-  $s32$
-</p>
-
-<h2 id="false-positives">$s33$</h2>
-
-<p>
-  $s34(getting_started#false-negatives)$
-</p>
-
-<h2 id="list">$s35$</h2>
-
-<p>
-  $s36(https://easylist-downloads.adblockplus.org/exceptionrules.txt, preferences#subscriptions_exceptionscheckbox)$
+  $s35(acceptable-ads-agreements)$
 </p>
 
 <p>
-  $s37(/forum/, mailto:acceptableads@adblockplus.org)$
+  $s36$
 </p>
 
-<h2 id="application">$s38$</h2>
+<h2 id="false-positives">$s37$</h2>
 
 <p>
-  $s39$
+  $s38(getting_started#false-negatives)$
+</p>
+
+<h2 id="list">$s39$</h2>
+
+<p>
+  $s40(/forum/viewforum.php?f=12, preferences#subscriptions_exceptionscheckbox)$
+</p>
+
+<p>
+  $s41(/forum/, mailto:acceptableads@adblockplus.org)$
+</p>
+
+<h2 id="application">$s42$</h2>
+
+<p>
+  $s43$
 </p>
 
 <ol>
   <li>
-    $s40(acceptable-ads#criteria, https://eyeo.com/acceptable-ads-application.html)$
+    $s44(acceptable-ads#criteria, https://eyeo.com/acceptable-ads-application.html)$
   </li>
   <li>
-    $s41(https://www.eyeo.com)$
+    $s45(https://www.eyeo.com)$
   </li>
   <li>
-    $s42(acceptable-ads-agreements)$
+    $s46(acceptable-ads-agreements)$
   </li>
   <li>
-    $s43(/forum/viewforum.php?f=12)$
-  </li>
-  <li>
-    $s44$
+    $s47(/forum/viewforum.php?f=12)$
   </li>
 </ol>
 
-<h2 id="who">$s45$</h2>
+<h2 id="who">$s48$</h2>
 
 <p>
-  $s46(/blog/adblock-plus-user-survey-results-part-3)$
+  $s49(/blog/adblock-plus-user-survey-results-part-3)$
 </p>

@@ -6,213 +6,129 @@
     "message": "Où puis-je trouver la signification de toutes les préférences d'Adblock Plus ?"
   },
   "s2": {
-    "message": "Adblock Plus utilise un certain nombre de préférences accessibles via"
+    "message": "Adblock Plus utilise un certain nombre de préférences accessibles via <a>about:config</a>. Elles commencent toutes par"
   },
   "s3": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
-  "s4": {
-    "message": "about:config"
-  },
-  "s5": {
-    "message": ". Elles commencent toutes par"
-  },
-  "s6": {
     "message": "extensions.adblockplus."
   },
-  "s7": {
+  "s4": {
     "message": "(Cela diffère d'Adblock et Adblock Plus 0.5 qui utilisent le préfixe"
   },
-  "s8": {
+  "s5": {
     "message": "adblock."
   },
-  "s9": {
+  "s6": {
     "message": "). Une liste plus complète avec explications détaillées peut être trouvée <a>ici</a>."
   },
-  "s10": {
+  "s7": {
     "message": "Comment puis-je accéder à Adblock Plus à partir de mon extension ?"
   },
-  "s11": {
+  "s8": {
     "message": "Pour permettre l'intégration d'autres extensions avec Adblock Plus, l'interface"
   },
-  "s12": {
+  "s9": {
     "message": "IAdblockPlus"
   },
-  "s13": {
+  "s10": {
     "message": "est exportée. Veuillez vous référer à la <a>documentation sur l'interface IAdblockPlus</a> pour davantage d'informations."
   },
-  "s14": {
+  "s11": {
     "message": "Comment Adblock Plus bloque-t-elle les adresses ?"
   },
-  "s15": {
+  "s12": {
     "message": "Le plus gros du travail est effectué par Gecko, le moteur faisant fonctionner Firefox, Thunderbird et les autres applications de la même famille. Il permet l'utilisation de \"content-policy\". Une règle de contenu est tout simplement un objet JavaScript (ou C++) invoqué lorsque le navigateur doit charger quelque chose. Il peut ainsi vérifier l'adresse qui devrait être chargée et d'autres données et décider d'autoriser le chargement ou pas. Il existe bon nombre de règles de contenu intégrées (lorsque vous indiquez quels sites ne sont pas autorisés à afficher d'images dans Firefox ou Seamonkey, vous êtes en fait en train de configurer une de ces règles de contenu intégrées) et n'importe quelle extension peut en placer une dans le registre. Donc, tout ce qu'Adblock Plus a à faire est d'ajouter sa règle de contenu dans le registre."
   },
-  "s16": {
-    "message": "Pour les développeurs : pour ajouter une règle de contenu au registre vous devez"
+  "s13": {
+    "message": "Pour les développeurs : pour ajouter une règle de contenu au registre vous devez <a>écrire un composant XPCOM</a> qui devrait implémenter <a>l'interface nsIContentPolicy</a>. Faites en sorte, afin de s'accorder avec la méthode du module de self-registration, de placer votre composant dans la catégorie des \"règles de contenu\" du registre (pour cela, utilisez le <a>gestionnaire de catégorie</a> ). C'est tout, à présent la méthode shouldLoad de votre composant sera invoquée et vous pourrez décider si la requête spécifique devra être acceptée on non."
   },
-  "s17": {
-    "message": "http://developer.mozilla.org/fr/docs/XPCOM"
-  },
-  "s18": {
-    "message": "écrire un composant XPCOM"
-  },
-  "s19": {
-    "message": "qui devrait implémenter"
-  },
-  "s20": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
-  },
-  "s21": {
-    "message": "l'interface nsIContentPolicy"
-  },
-  "s22": {
-    "message": ". Faites en sorte, afin de s'accorder avec la méthode du module de self-registration, de placer votre composant dans la catégorie des \"règles de contenu\" du registre (pour cela, utilisez le"
-  },
-  "s23": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
-  },
-  "s24": {
-    "message": "gestionnaire de catégorie"
-  },
-  "s25": {
-    "message": "). C'est tout, à présent la méthode shouldLoad de votre composant sera invoquée et vous pourrez décider si la requête spécifique devra être acceptée on non."
-  },
-  "s26": {
+  "s14": {
     "message": "Comment Adblock Plus fait-elle fonctionner ses filtres et quels filtres sont les plus rapides ?"
   },
-  "s27": {
+  "s15": {
     "message": "Tous les filtres sont convertis en <a>expressions régulières</a> en interne, même ceux qui n'ont pas été spécifiés en tant que tel. Par exemple, le filtre"
   },
-  "s28": {
+  "s16": {
     "message": "ad*banner.gif|"
   },
-  "s29": {
+  "s17": {
     "message": "sera traduit dans l'expression régulière"
   },
-  "s30": {
+  "s18": {
     "message": "/ad.*banner\\.gif$/"
   },
-  "s31": {
-    "message": ". Cependant, lorsqu'Adblock Plus indique une adresse devant être vérifiée à partir de tous les filtres, elle ne teste pas simplement chaque filtre l'un après l'autre -- cela ralentirait inutilement votre surf."
+  "s19": {
+    "message": ". Cependant, lorsqu'Adblock Plus indique une adresse devant être vérifiée à partir de tous les filtres, elle ne teste pas simplement chaque filtre l'un après l'autre — cela ralentirait inutilement votre surf."
   },
-  "s32": {
+  "s20": {
     "message": "En plus de convertir les filtres en expressions régulières, Adblock Plus essaie aussi d'en extraire des informations textuelles. Ce dont elle a besoin est une séquence unique de huit caractères (un \"raccourci\") qui devra se trouver dans toutes les adresses coïncidant au filtre (la longueur est arbitraire, huit semblerait être raisonnable ici). Par exemple, si vous avez un filtre"
   },
-  "s33": {
+  "s21": {
     "message": "|http://ad.*"
   },
-  "s34": {
+  "s22": {
     "message": "alors Adblock Plus aura le choix entre \"http://a\", \"ttp://ad\" et \"tp://ad.\", n'importe laquelle de ces séquences se trouvera toujours dans quoi que ce que le filtre bloquera. Malheureusement, trouver un raccourci pour des filtres qui n'ont pas de chaîne de huit caractères sans comporter de joker ou pour des filtres qui ont été spécifiés en utilisant des expressions régulières est impossible."
   },
-  "s35": {
+  "s23": {
     "message": "Tous les raccourcis sont placés dans une table consultable par Adblock Plus pour trouver les filtres à partir des raccourcis de manière très efficaces. Ensuite, lorsqu'une adresse spécifique doit être testée Adblock Plus vérifiera dans cette table s'il y existe des raccourcis (cela peut se faire très rapidement, le temps pris est presque indépendant du nombre de raccourcis). La chaîne de caractère sera testée à partir de l'expression régulière correspondant au filtre uniquement si un raccourci a été trouvé. Cependant, les filtres sans raccourcis devront être testés les uns après les autres, ce qui se fait lentement."
   },
-  "s36": {
-    "message": "Pour résumer: quels types de filtres devraient être utilisés pour obtenir une liste de filtres rapide ? Vous devriez utiliser le moins d'expressions régulières possibles, elles sont toujours lentes. Vous devriez également vérifier qu'une séquence d'au moins 8 caractères sans joker est présente dans les filtres (cela veut dire que la séquence ne comporte pas de * par exemple), sinon, ils seront aussi lent que des expressions régulières. Mais avec des filtres qualifiant, le nombre de filtres n'a aucune importance, le temps de traitement est toujours le même. Cela signifie que si vous avez besoin de 20 filtres simples pour remplacer une expression régulière, cela lui donne quand même une signification. En parlant de cela -- le <a>deregifier</a> est tout à fait recommandable pour ce genre d'opération."
+  "s24": {
+    "message": "Pour résumer: quels types de filtres devraient être utilisés pour obtenir une liste de filtres rapide ? Vous devriez utiliser le moins d'expressions régulières possibles, elles sont toujours lentes. Vous devriez également vérifier qu'une séquence d'au moins 8 caractères sans joker est présente dans les filtres (cela veut dire que la séquence ne comporte pas de * par exemple), sinon, ils seront aussi lent que des expressions régulières. Mais avec des filtres qualifiant, le nombre de filtres n'a aucune importance, le temps de traitement est toujours le même. Cela signifie que si vous avez besoin de 20 filtres simples pour remplacer une expression régulière, cela lui donne quand même une signification. En parlant de cela — le <a>deregifier</a> est tout à fait recommandable pour ce genre d'opération."
   },
-  "s37": {
+  "s25": {
     "message": "L'algorithme de correspondance de filtres en détail [en anglais]"
   },
-  "s38": {
+  "s26": {
     "message": "Comment fonctionne le masquage d'éléments ?"
   },
-  "s39": {
-    "message": "Les filtres de masquage d'éléments sont convertis en"
+  "s27": {
+    "message": "Les filtres de masquage d'éléments sont convertis en <a>CSS</a> et appliqués à toutes les pages Web que l'utilisateur visite. Un filtre tel que"
   },
-  "s40": {
-    "message": "http://www.yoyodesign.org/doc/w3c/css2/cover.html"
-  },
-  "s41": {
-    "message": "CSS"
-  },
-  "s42": {
-    "message": "et appliqués à toutes les pages Web que l'utilisateur visite. Un filtre tel que"
-  },
-  "s43": {
+  "s28": {
     "message": "exemple.com#div(evil_ad)"
   },
-  "s44": {
+  "s29": {
     "message": "va ressembler à cela :"
   },
-  "s45": {
-    "message": "@-moz-document domain(exemple.com)\n{\n  div#evil_ad, div.evil_ad\n  {\n    display: none !important;\n  }\n}"
+  "s30": {
+    "message": "@-moz-document est une extension proposée pour les CSS standards, vous pouvez apprendre davantage à ce propos dans le MDC (<a>Mozilla Developer Center</a>)"
   },
-  "s46": {
-    "message": "@-moz-document est une extension proposée pour les CSS standards, vous pouvez apprendre davantage à ce propos dans le MDC ("
-  },
-  "s47": {
-    "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
-  },
-  "s48": {
-    "message": "Mozilla Developer Center"
-  },
-  "s49": {
-    "message": ")"
-  },
-  "s50": {
+  "s31": {
     "message": "Les filtres qui ne sont pas restreints à un domaine le seornt aux protocoles http:// et https:// pour éviter le masquage d'éléments apparetnant à l'interface utilisateur du navigateur (il utilise le protocole chrome://). Par exemple, le filtre"
   },
-  "s51": {
+  "s32": {
     "message": "#div(evil_ad)"
   },
-  "s52": {
+  "s33": {
     "message": "sera traduit en :"
   },
-  "s53": {
-    "message": "@-moz-document url-prefix(http://),url-prefix(https://)\n{\n  div#evil_ad, div.evil_ad\n  {\n    display: none !important;\n  }\n}"
+  "s34": {
+    "message": "Pour les développeurs : Adblock Plus utilise ici le <a>service stylesheet</a>. Cette interface est apparu avec le moteur Gecko 1.8 et permet d'ajouter des feuilles de styles utilisateur de manière dynamique (avant cela, vous ne pouviez modifier que le fichier userContent.css qui demandais un redémarrage du navigateur). les feuilles de style utilisateur remplaceront le code CSS de tous les sites Web, ils ont <a>l'importance</a> la plus élevée possible."
   },
-  "s54": {
-    "message": "Pour les développeurs : Adblock Plus utilise ici le"
-  },
-  "s55": {
-    "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
-  },
-  "s56": {
-    "message": "service stylesheet"
-  },
-  "s57": {
-    "message": ". Cette interface est apparu avec le moteur Gecko 1.8 et permet d'ajouter des feuilles de styles utilisateur de manière dynamique (avant cela, vous ne pouviez modifier que le fichier userContent.css qui demandais un redémarrage du navigateur). les feuilles de style utilisateur remplaceront le code CSS de tous les sites Web, ils ont"
-  },
-  "s58": {
-    "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
-  },
-  "s59": {
-    "message": "l'importance"
-  },
-  "s60": {
-    "message": "la plus élevée possible."
-  },
-  "s61": {
+  "s35": {
     "message": "A quoi peut ressembler la première ligne du fichier de filtres ?"
   },
-  "s62": {
+  "s36": {
     "message": "En général, la première ligne d'un fichier de filtres est simplement"
   },
-  "s63": {
+  "s37": {
     "message": "[Adblock]"
   },
-  "s64": {
+  "s38": {
     "message": ". Cependant, vous aurez peut-être constaté que des versions récentes d'Adblock Plus plaçaient un autre texte à la place. Ceci est du au fait que votre liste de filtres contient des filtres utilisant une syntaxe avancée uniquement prise en charge par les versions les plus récentes d'Adblock Plus et pas par la version originale Adblock. Voici un exemple :"
   },
-  "s65": {
-    "message": "(Adblock Plus 0.6.1.2 or higher required) [Adblock]"
-  },
-  "s66": {
+  "s39": {
     "message": "Ceci est simplement un commentaire. Adblock (et Adblock Plus également) ignorera tout ce qui se trouve avant le vrai marqueur. La version d'Adblock Plus requise n'est pas obligatoire car Adblock Plus 0.6.1.2 ne la prend pas en charge. Cependant, si vous utilisez la nouvelle syntaxe de filtres, vous obtiendrez probablement quelque chose comme ceci :"
   },
-  "s67": {
-    "message": "[Adblock Plus 0.7.1]"
-  },
-  "s68": {
+  "s40": {
     "message": "Ce type d'en-tête est pris en charge à partir de la version 0.7.1 d'Adblock Plus. Des versions plus anciennes d'Adblock Plus et Adblock ne peuvent ouvrir des fichiers commençant de cette manière. Comme pour la version actuelle, elles vérifieront et compareront le numéro de version avec leur propre numéro de version. Si le fichier requiert une version plus récente d'Adblock Plus, l'utilisateur sera informé du fait qu'il devra procéder à une mise à jour pour la prise en compte du fichier de filtres. Les abonnements chargeront les fichiers prévus pour les versions les plus récentes d'Adblock Plus mais afficheront un avertissement dans la boîte de dialogue des préférences."
   },
-  "s69": {
+  "s41": {
     "message": "Pour finir, si vous souhaitez qu'Adblock Plus soit nécessaire mais ne voulez pas spécifier de numéro de version vous pouvez faire débuter votre fichier par"
   },
-  "s70": {
+  "s42": {
     "message": "[Adblock Plus]"
   },
-  "s71": {
+  "s43": {
     "message": ". Bien entendu, encore une fois, ce fichier ne sera accepté que par Adblock Plus 0.7.1 ou supérieure."
   }
 }

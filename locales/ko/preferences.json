@@ -1,0 +1,230 @@
+{
+  "title": {
+    "message": "고급 설정"
+  },
+  "prefnamecol": {
+    "message": "설정"
+  },
+  "defaultcol": {
+    "message": "기본값"
+  },
+  "descriptioncol": {
+    "message": "설명"
+  },
+  "visible_optionsTitle": {
+    "message": "보이기 옵션"
+  },
+  "hidden_optionsTitle": {
+    "message": "숨김 옵션"
+  },
+  "remembered_actionsTitle": {
+    "message": "저장된 동작"
+  },
+  "internal_preferencesTitle": {
+    "message": "내부 설정 (설정 내용을 잘 모르면 변경하지 마십시오.)"
+  },
+  "removed_preferencesTitle": {
+    "message": "제거된 설정"
+  },
+  "s1": {
+    "message": "다음의 표는 애드블록 플러스에서 사용되는 모든 설정입니다. 이 설정은"
+  },
+  "s2": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s3": {
+    "message": "를 통해 보거나 변경할 수 있습니다."
+  },
+  "enabled-s1": {
+    "message": "\"Adblock Plus 사용함\" 옵션 값"
+  },
+  "frameobjects-s1": {
+    "message": "\"플래시/자바에 차단 탭 표시\" 옵션 값"
+  },
+  "showinstatusbar-s1": {
+    "message": "\"상태 표시줄에 아이콘 표시\" 옵션 값"
+  },
+  "savestats-s1": {
+    "message": "\"필터 적용 횟수 기록\" 옵션의 값"
+  },
+  "synchronizationinterval-s1": {
+    "message": "애드블록 플러스 2.0 이상에서는 사용되지 않습니다."
+  },
+  "patternsfile-s1": {
+    "message": "파일 이름은 필터 목록을 저장하기 위해 사용됩니다. 이것은 절대 경로이거나 사용자 profile에 관한 파일의 위치일 수 있습니다."
+  },
+  "patternsbackups-s1": {
+    "message": "patterns.ini에 대한 백업 파일의 수. 백업 파일의 수가 0이면 백업이 되지 않습니다."
+  },
+  "patternsbackupinterval-s1": {
+    "message": "구독 필터의 다운로드 최소 주기(단위 : 시간)"
+  },
+  "defaulttoolbaraction-s1": {
+    "message": "툴바 아이콘을 클릭했을 때 실행되는 동작을 정의합니다."
+  },
+  "defaulttoolbaraction-s2": {
+    "message": "0 — 메뉴 보이기"
+  },
+  "defaulttoolbaraction-s3": {
+    "message": "1 — 차단 가능 목록 열기/닫기"
+  },
+  "defaulttoolbaraction-s4": {
+    "message": "2 — 필터 관리 대화상자 보이기"
+  },
+  "defaulttoolbaraction-s5": {
+    "message": "3 — 애드블록 플러스 사용/중지"
+  },
+  "defaulttoolbaraction-s6": {
+    "message": "다른 것 — 작동 없음"
+  },
+  "defaultstatusbaraction-s1": {
+    "message": "상태 표시줄의 아이콘을 클릭했을 때 실행되는 동작을 정의합니다. 설정 가능한 값은 위의"
+  },
+  "defaultstatusbaraction-s2": {
+    "message": "를 참고하십시오."
+  },
+  "sidebar_key-s1": {
+    "message": "차단 가능한 항목을 열 수 있는 단축키를 정의합니다. 이 설정은 empty이거나 <em>modifier1 modifier2 key</em> 형태입니다. 인식되는 변경자(modifiers) : Shift, Accel (default accelerator key, e.g. Ctrl on Windows, Command on Mac OS X), Ctrl/Control, Alt, Meta, Key는 하나의 문자이거나 F7 또는 오른쪽 방향키처럼 특별한 키일 수 있습니다. (특별한 키의 목록의 경우 <a>nsIDOMKeyEvent 인터페이스</a>를 참고하십시오)."
+  },
+  "sidebar_key-s2": {
+    "message": "애드블록 플러스 1.3.5버전부터 콤마로 여러 개의 단축키를 지정할 수 있고, 그 중에서 먼저 지정한 단축키를 이용할 수 있습니다."
+  },
+  "sidebar_key-s3": {
+    "message": "<em>참고 </em>: 이 설정은 브라우저를 다시 시작해야 적용됩니다."
+  },
+  "filters_key-s1": {
+    "message": "필터 설정 대화상자를 열 수 있는 키보드 단축키를 정의합니다. 가능한 값에 대한 설명은"
+  },
+  "filters_key-s2": {
+    "message": "를 참고하십시오."
+  },
+  "enable_key-s1": {
+    "message": "애드블록 플러스 사용/중지에 대한 단축키를 정의합니다. 사용할 수 있는 값은 위에 있는"
+  },
+  "enable_key-s2": {
+    "message": "를 참고하십시오."
+  },
+  "flash_scrolltoitem-s1": {
+    "message": "차단 가능한 항목 목록의 \"항목 테두리 깜빡임\"을 보기의 항목으로 스크롤할 것인지를 정의합니다."
+  },
+  "previewimages-s1": {
+    "message": "차단 가능 목록에서 항목을 표시해주는 이미지 툴팁을 정의합니다."
+  },
+  "clearStatsOnHistoryPurge-s1": {
+    "message": "만약"
+  },
+  "clearStatsOnHistoryPurge-s2": {
+    "message": "true"
+  },
+  "clearStatsOnHistoryPurge-s3": {
+    "message": "로 설정하면 방문 기록 제거는 역시 애드블록 플러스 필터의 적용 횟수에도 적용됩니다. 참고로 필터 적용 횟수는 종종 사용자가 방문가 사이트를 추론할 수 있게 해줍니다."
+  },
+  "composer_default-s1": {
+    "message": "필터 작성 창의 기본 제안 필터를 결정합니다. :"
+  },
+  "composer_default-s2": {
+    "message": "0 — 사용자 지정 패턴"
+  },
+  "composer_default-s3": {
+    "message": "1 — 정확한 주소만"
+  },
+  "composer_default-s4": {
+    "message": "2 — 전체 디렉터리"
+  },
+  "composer_default-s5": {
+    "message": "3 — 전체 사이트"
+  },
+  "sendReport_key-s1": {
+    "message": "문제 보고서를 전송하기 위한 키보드 단축키를 정의합니다."
+  },
+  "sendReport_key-s2": {
+    "message": "설정 값에 대한 설명은"
+  },
+  "sendReport_key-s3": {
+    "message": "를 참고하십시오."
+  },
+  "data_directory-s1": {
+    "message": "애드블록 플러스의 데이터가 그것의 디렉터리에 저장됩니다. 이것은 절대 경로이거나 사용자의 프로필에 대한 디렉터리 상대 위치일 수 있습니다."
+  },
+  "data_directory-s2": {
+    "message": "설정이 되어 있다면 그것은 파일의 위치에 덮어씁니다. 하지만 다른 파일은 이 디렉터리에 있습니다."
+  },
+  "subscriptions_exceptionscheckbox-s1": {
+    "message": "만약"
+  },
+  "subscriptions_exceptionscheckbox-s2": {
+    "message": " <a>비침입형 광고</a>\n의 필터 목록은 특별하게 처리되며 사용자 인터페이스의 체크박스로서 보이게 됩니다."
+  },
+  "subscriptions_autoupdate-s1": {
+    "message": "구독 필터를 자동으로 업데이트할 것인지를 정의합니다."
+  },
+  "subscriptions_autoupdate-s2": {
+    "message": "<em>참고 </em>: 업데이트의 사용 중지는 권장하지 않습니다."
+  },
+  "currentVersion-s1": {
+    "message": "마지막으로 사용된 애드블록 플러스의 버전을 저장하며, 이것은 업그레이드를 완료하거나 처음 설치에 필요한 동작이 일어나게 함"
+  },
+  "detachsidebar-s1": {
+    "message": "차단 가능 목록의 상태 저장 —"
+  },
+  "detachsidebar-s2": {
+    "message": "true"
+  },
+  "detachsidebar-s3": {
+    "message": "는 창의 분리를 의미합니다."
+  },
+  "recentReports-s1": {
+    "message": "최근에 제출된 문제 보고서에 대한 JSON로 인코드된 자료 (보고서의 주소, 보고된 웹 사이트, 전송의 주소, 제출 시간)"
+  },
+  "hideContributeButton-s1": {
+    "message": "사용자가 공헌 버튼을 숨기기 위해 선택했다면"
+  },
+  "hideContributeButton-s2": {
+    "message": "값이 지정됩니다."
+  },
+  "blockableItemsSize-s1": {
+    "message": "차단 가능 목록의 크기를 기억함 (사이드바 형태일 때는 가로 길이만 오직 관련있음)."
+  },
+  "subscriptions_fallbackurl-s1": {
+    "message": "구독 필터의 다운로드가 지정된 시도 횟수 실패하면 찾게 되는 스크립트의 주소 (아래의"
+  },
+  "subscriptions_fallbackurl-s2": {
+    "message": "참고). %는 질문에서 구독 필터의 주소에 의해 교체됩니다. 구독 필터의 새로운 위치가 알려지면 그 스크립트는 \"301 http://example.com/new_list.txt\"와 같은 메시지를 출력합니다."
+  },
+  "subscriptions_fallbackerrors-s1": {
+    "message": "대체 스크립트(위의"
+  },
+  "subscriptions_fallbackerrors-s2": {
+    "message": "참고)가 구독 필터의 새로운 주소를 찾기 전에 구독 필터의 다운로드 시도 실패 횟수 설정"
+  },
+  "subscriptions_listurl-s1": {
+    "message": "구독 필터의 전체 목록을 다운로드할 주소"
+  },
+  "whitelistschemes-s1": {
+    "message": "차단되지 않는 URL 스킴의 목록(모든 문서와 항목 위치에 모두 적용됩니다.)"
+  },
+  "documentation_link-s1": {
+    "message": "문서 링크를 열기 위한 adblockplus.org 주소."
+  },
+  "documentation_link-s2": {
+    "message": "사용하는 언어에 의존해 실제적인 문서 위치로 전환해 이동합니다."
+  },
+  "report_submiturl-s1": {
+    "message": "문제 보고서를 제출하는 adblockplus.org의 주소"
+  },
+  "subscriptions_exceptionsurl-s1": {
+    "message": " <a>비침입형 광고 허용</a>에 대한 필터 목록의 위치"
+  },
+  "blocklocalpages-s1": {
+    "message": "애드블록 플러스 0.7.5 이상에서는 사용되지 않습니다."
+  },
+  "linkcheck-s1": {
+    "message": "애드블록 플러스 0.7.5.4 이상에서는 사용되지 않습니다."
+  },
+  "checkedadblockinstalled-s1": {
+    "message": "애드블록 플러스 1.0 이상에서는 사용되지 않습니다."
+  },
+  "hideimagemanager-s1": {
+    "message": "애드블록 플러스 2.1 이상에서는 사용되지 않습니다."
+  }
+}

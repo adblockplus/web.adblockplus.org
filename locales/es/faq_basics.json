@@ -6,7 +6,7 @@
     "message": "¿Cómo bloqueo un anuncio?"
   },
   "s2": {
-    "message": "Puede pulsar con el botón derecho del ratón en cualquier imagen o frame y seleccionar &quot;ABP - Bloquear imagen&quot; en el menú contextual. Se abrirá un diálogo con el que podrá ajustar el nuevo filtro antes de añadirlo. Puede reemplazar partes de la dirección del anuncio por comodines (usando el carácter *) para que así el filtro bloquee otros anuncios con direcciones similares. Para obtener más información puede leer la sección <a>Cómo escribir filtros para Adblock Plus</a>."
+    "message": "Puede pulsar con el botón derecho del ratón en cualquier imagen o frame y seleccionar \"ABP - Bloquear imagen\" en el menú contextual. Se abrirá un diálogo con el que podrá ajustar el nuevo filtro antes de añadirlo. Puede reemplazar partes de la dirección del anuncio por comodines (usando el carácter *) para que así el filtro bloquee otros anuncios con direcciones similares. Para obtener más información puede leer la sección <a>Cómo escribir filtros para Adblock Plus</a>."
   },
   "s3": {
     "message": "Quiero que me muestren cómo se hace"
@@ -26,91 +26,154 @@
   "s8": {
     "message": "a su lista de filtros. Puede obtener más información sobre las reglas de excepción en <a>Cómo escribir filtros para Adblock Plus</a>."
   },
-  "s9": {
-    "message": "Quiero que me muestren cómo se hace"
+  "s10": {
+    "message": "¿Puedo apoyar a mis páginas favoritas al hacer descargas pero teniendo la publicidad ocultada?"
+  },
+  "s11": {
+    "message": "No. La mayoría de los anunciantes tienen un sistema de pago por clic, entonces si ocultas los anuncios, dejas de apoyar a la página web. Inclusive aunque la posibilidad de pagos por visión es muy remota,  es trivial que los anunciantes utilicen JavaScript para comprobar que los anuncios son visibles. Además, al hacer una descarga pero ocultando los anuncios para engañar a los anunciantes a pagar puede asimilarse como un fraude."
+  },
+  "s12": {
+    "message": "En pocas palabras, si quieres mostrar tu apoyo a tus páginas web favoritas, tienes que ponerlos en la lista blanca para desactivar Adblock Plus en sus sitios respectivos."
+  },
+  "s13": {
+    "message": "¿Cómo puedo actualizar manualmente mi lista de filtros?"
+  },
+  "s14": {
+    "message": "En Firefox:"
+  },
+  "s15": {
+    "message": "Selecciona Firefox >> Extensiones (para Mac OS X / Linux, selecciona \"Herramientas\" en el menu >> \"Extensiones\"), esto abrirá el administrador de extensiones."
+  },
+  "s16": {
+    "message": "Haz click en \"Extensiones\", localiza Adblock Plus,  luego \"Opciones\" presiona  \"Preferencias de filtro...\"."
+  },
+  "s17": {
+    "message": "Presiona la siguiente tecla de acceso directo para actualizar todas las subscripciones de filtro al mismo tiempo: Ctrl+Shift+T o da clic derecho a una de las subscripciones de filtro y elige 'Actualizar filtros\"."
+  },
+  "s18": {
+    "message": "Chrome:"
+  },
+  "s19": {
+    "message": "Haz clic en el botón del menú de Chrome, luego \"Herramientas\" y luego elige \"Extensiones\"."
+  },
+  "s20": {
+    "message": "Busca Adblock Plus y luego da click en \"Opciones\" debajo de su descripción."
+  },
+  "s21": {
+    "message": "Haga clic en el botón de \"Actualizar ahora\"."
+  },
+  "s22": {
+    "message": "Opera:"
+  },
+  "s23": {
+    "message": "Haz clic en el botón \"Menu\" (si utilizas Mac OS X/ Linux, \"Herramientas\"), seleciona \"Extensiones\" >> \"Administrar extensiones\"."
+  },
+  "s24": {
+    "message": "Encuentra Adblock Plus y haz clic en el icon de herramienta, localizado en la parte derecha del menu y seleccione \"Preferencias\"."
+  },
+  "s26": {
+    "message": "¿Cómo puedo quitar una lista de filtros?"
+  },
+  "s27": {
+    "message": "Firefox"
+  },
+  "s28": {
+    "message": "Vaya a Herramientas >> Complementos >> Preferencias (al lado de Adblock Plus) >> Preferencias de filtros. Selecciona la lista de filtros que deseas eliminar, haz clic en el botón de \"Acción\", y selecciona \"Eliminar\". Haz clic en \"OK\" para confirmar."
+  },
+  "s29": {
+    "message": "Chrome"
+  },
+  "s30": {
+    "message": "Ir a Ventana >> Extensiones >> Opciones (de la extensión Adblock Plus). Haz clic en la \"X\" roja junto a la lista de filtro que deseas eliminar y haz clic en \"Ok\" para confirmar."
+  },
+  "s31": {
+    "message": "Opera (para Windows/Ubuntu)"
   },
   "s32": {
-    "message": "El anuncio es un objeto (Flash o Java) y no aparece un menú contextual. ¿Qué hago?"
+    "message": "Haz clic en el botón de menu y ve a Extensiones >> Administrar extensiones >> Haz clic en el de herramienta >> Preferencias. Haz clic en la \"X\" roja junto a la lista de filtro que deseas eliminar y haz clic en \"OK\" para confirmar."
   },
   "s33": {
-    "message": "Adblock Plus tiene una opción denominada \"Mostrar pestañas en Flash y Java\". Cuando está activada (predisposición por defecto) aparecerá un botón en el pondrá \"Bloquear\" en la esquina superior derecha (inferior derecha si no hay suficiente espacio) de cada objeto. Pulsando en ese botón bloqueará el objeto."
+    "message": "Opera (para Mac OSX)"
   },
   "s34": {
-    "message": "Quiero que me muestren cómo se hace"
+    "message": "Ve a Herramientas >> Extensiones >> Administrar extensiones >> Haz clic en el icono de herramienta >> Preferencias. Haz clic en la \"X\" roja al lado de la lista de filtro que deseas eliminar y haz clic en \"OK\" para confirmar."
   },
   "s35": {
-    "message": "También puede abrir la lista de elementos bloqueables (teclee Ctrl+Mayús+V o pulse en la flecha junto al icono de ABP en la barra de Herramientas y seleccione Abrir ventana elementos bloqueables) y busque allí el objeto."
+    "message": "El anuncio es un objeto (Flash o Java) y no aparece un menú contextual. ¿Qué hago?"
   },
   "s36": {
-    "message": "Quiero que me muestren cómo se hace"
-  },
-  "s37": {
-    "message": "Puede pulsar en el encabezado de la columna Tipo -- eso ordenará la lista por tipo, lo que le permitirá encontrar los objetos más fácilmente."
+    "message": "Adblock Plus tiene una opción denominada \"Mostrar pestañas en Flash y Java\". Cuando está activada (predisposición por defecto) aparecerá un botón en el pondrá \"Bloquear\" en la esquina superior derecha (inferior derecha si no hay suficiente espacio) de cada objeto. Pulsando en ese botón bloqueará el objeto."
   },
   "s38": {
-    "message": "La lista de elementos a bloquear muestra muchas direcciones. ¿Cómo sé cuál de ellas es un anuncio?"
-  },
-  "s39": {
-    "message": "Puede buscar direcciones que comiencen de forma diferente a la de la página que está viendo. Además los anuncios suelen tener palabras clave como \"banner\" o \"ad\" en su dirección. Si pulsa una dirección el elemento o elementos correspondientes parpadearán en la página (desgraciadamente esto no funciona con todos los tipos de objetos). Si aún no está seguro, pulse con el botón intermedio del ratón en la dirección para abrir el elemento en una nueva pestaña -- allí podrá comprobar definitivamente si es un anuncio."
+    "message": "También puede abrir la lista de elementos bloqueables (teclee Ctrl+Mayús+V o pulse en la flecha junto al icono de ABP en la barra de Herramientas y seleccione Abrir ventana elementos bloqueables) y busque allí el objeto."
   },
   "s40": {
-    "message": "¿Afecta el orden de los filtros al rendimiento?"
+    "message": "Puede pulsar en el encabezado de la columna Tipo — eso ordenará la lista por tipo, lo que le permitirá encontrar los objetos más fácilmente."
   },
   "s41": {
-    "message": "No. Cuando Adblock Plus compara una dirección con su lista de filtros determina el mejor ordenamiento para comprobar los filtros automáticamente, de hecho la mayoría de ellos no se tendrán siquiera en cuenta. Puede modificar a su gusto el orden de los filtros en la ventana de Preferencias, no tendrá ningún efecto sobre el rendimiento de la extensión."
+    "message": "La lista de elementos a bloquear muestra muchas direcciones. ¿Cómo sé cuál de ellas es un anuncio?"
   },
   "s42": {
-    "message": "¿Son más rápidas las expresiones regulares que los filtros \"normales\"?"
+    "message": "Puede buscar direcciones que comiencen de forma diferente a la de la página que está viendo. Además los anuncios suelen tener palabras clave como \"banner\" o \"ad\" en su dirección. Si pulsa una dirección el elemento o elementos correspondientes parpadearán en la página (desgraciadamente esto no funciona con todos los tipos de objetos). Si aún no está seguro, pulse con el botón intermedio del ratón en la dirección para abrir el elemento en una nueva pestaña — allí podrá comprobar definitivamente si es un anuncio."
   },
   "s43": {
-    "message": "Normalmente no es así. Adblock Plus transformará cualquier filtro \"normal\" en una expresión regular, y trabajará internamente exclusivamente con expresiones regulares -- no hay ninguna diferencia entre los filtros"
+    "message": "¿Afecta el orden de los filtros al rendimiento?"
   },
   "s44": {
-    "message": "banner"
+    "message": "No. Cuando Adblock Plus compara una dirección con su lista de filtros determina el mejor ordenamiento para comprobar los filtros automáticamente, de hecho la mayoría de ellos no se tendrán siquiera en cuenta. Puede modificar a su gusto el orden de los filtros en la ventana de Preferencias, no tendrá ningún efecto sobre el rendimiento de la extensión."
   },
   "s45": {
-    "message": "y"
+    "message": "¿Son más rápidas las expresiones regulares que los filtros \"normales\"?"
   },
   "s46": {
-    "message": "/banner/"
+    "message": "Normalmente no es así. Adblock Plus transformará cualquier filtro \"normal\" en una expresión regular, y trabajará internamente exclusivamente con expresiones regulares — no hay ninguna diferencia entre los filtros"
   },
   "s47": {
-    "message": "."
+    "message": "banner"
   },
   "s48": {
-    "message": "Las expresiones regulares suelen usarse para \"comprimir\" la lista de filtros y sustituir varios filtros individuales por una sola expresión regular. La regla práctica habitual suele ser que \"menos filtros implican más velocidad\" pero eso no es siempre cierto en nuestro caso. Evaluar expresiones regulares complicadas lleva mucho tiempo, de modo que puede ser más rápido utilizar varios filtros simples."
-  },
-  "s49": {
-    "message": "Sin embargo, las expresiones regulares aportan más flexibilidad, y en ese caso su uso está siempre justificado Por ejemplo, la expresión regular"
-  },
-  "s50": {
-    "message": "/adv(?!ice)/"
-  },
-  "s51": {
-    "message": "bloqueará"
-  },
-  "s52": {
-    "message": "adv"
-  },
-  "s53": {
-    "message": ","
-  },
-  "s54": {
-    "message": "advert"
-  },
-  "s55": {
     "message": "y"
   },
+  "s49": {
+    "message": "/banner/"
+  },
+  "s50": {
+    "message": "."
+  },
+  "s51": {
+    "message": "Las expresiones regulares suelen usarse para \"comprimir\" la lista de filtros y sustituir varios filtros individuales por una sola expresión regular. La regla práctica habitual suele ser que \"menos filtros implican más velocidad\" pero eso no es siempre cierto en nuestro caso. Evaluar expresiones regulares complicadas lleva mucho tiempo, de modo que puede ser más rápido utilizar varios filtros simples."
+  },
+  "s52": {
+    "message": "Sin embargo, las expresiones regulares aportan más flexibilidad, y en ese caso su uso está siempre justificado Por ejemplo, la expresión regular"
+  },
+  "s53": {
+    "message": "/adv(?!ice)/"
+  },
+  "s54": {
+    "message": "bloqueará"
+  },
+  "s55": {
+    "message": "adv"
+  },
   "s56": {
-    "message": "advertisement"
+    "message": ","
   },
   "s57": {
-    "message": ", pero no"
+    "message": "advert"
   },
   "s58": {
-    "message": "advice"
+    "message": "y"
   },
   "s59": {
+    "message": "advertisement"
+  },
+  "s60": {
+    "message": ", pero no"
+  },
+  "s61": {
+    "message": "advice"
+  },
+  "s62": {
     "message": "-- algo que no podría conseguir usando solamente comodines."
   }
 }

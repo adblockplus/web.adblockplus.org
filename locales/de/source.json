@@ -2,124 +2,13 @@
   "title": {
     "message": "Quelltexte"
   },
-  "s1": {
-    "message": "Auf Quelltexte zugreifen"
-  },
-  "s2": {
-    "message": "Die Quelltexte von Adblock Plus können über das HG <a>Web-Interface</a> betrachtet werden. Für eine lokale Kopie führt man den folgenden Befehl auf der Befehlszeile aus:"
-  },
-  "s3": {
-    "message": "Ähnliche Repositories wurden für die Erweiterungen <a>Element Hiding Helper</a> und <a>Diagnostics für Adblock Plus</a> aufgesetzt. Um die lokale Kopie auf die Quelltexte einer bestimmten Version von Adblock Plus zurückzusetzen führt man diesen Befehl aus:"
-  },
-  "s4": {
-    "message": "("
-  },
-  "s5": {
-    "message": "muss durch den Tag der benötigten Version ersetzt werden)."
-  },
   "s6": {
-    "message": "Alternativ kann man auch <a>die Quelltexte der letzten Version herunterladen</a>."
+    "message": "Web-Interface"
   },
   "s7": {
-    "message": "Für einen Überblick siehe <a>Quelltext-Dokumentation</a> [en]."
-  },
-  "s8": {
-    "message": "HG-Client und Dokumentation"
-  },
-  "s9": {
-    "message": "http://mercurial.selenic.com/"
-  },
-  "s10": {
-    "message": "Mercurial"
-  },
-  "s11": {
-    "message": "("
-  },
-  "s12": {
-    "message": "http://mercurial.selenic.com/wiki/QuickStartDe"
+    "message": "."
   },
   "s13": {
-    "message": "Schnelleinstieg"
-  },
-  "s14": {
-    "message": ")"
-  },
-  "s15": {
-    "message": "https://developer.mozilla.org/en/Mercurial_FAQ"
-  },
-  "s16": {
     "message": "Mozillas Mercurial FAQ"
-  },
-  "s17": {
-    "message": "http://hgbook.red-bean.com/"
-  },
-  "s18": {
-    "message": "Distributed Revision Control with Mercurial"
-  },
-  "s19": {
-    "message": "(hgbook)"
-  },
-  "s20": {
-    "message": "http://mercurial.selenic.com/wiki/OtherTools"
-  },
-  "s21": {
-    "message": "GUI clients and other tools"
-  },
-  "s22": {
-    "message": "Ein Adblock Plus Installationspaket erstellen"
-  },
-  "s23": {
-    "message": "Um eine Entwicklungsversion zu erstellen, geht man ins Verzeichnis \"adblockplus\" (die lokale Kopie der Quelltexte) und führt das Skript make_devbuild.pl aus:"
-  },
-  "s24": {
-    "message": "Das wird eine Datei mit einem Namen wie"
-  },
-  "s25": {
-    "message": "erstellen."
-  },
-  "s26": {
-    "message": "Diese wird aus den Quelltexten im aktuellen Verzeichnis (einschließlich aller gefundenen Übersetzungen) zusammengesetzt sein."
-  },
-  "s27": {
-    "message": "<em>Bemerkung</em>: Sie brauchen"
-  },
-  "s28": {
-    "message": "mit dem"
-  },
-  "s29": {
-    "message": "<a>Jinja2-Modul</a>, um Installationspakete zu erstellen."
-  },
-  "s30": {
-    "message": "Um Jinja2 in Python zu installieren, kann man den folgenden Befehl ausführen:"
-  },
-  "s31": {
-    "message": "Ihre Änderungen testieren"
-  },
-  "s32": {
-    "message": "Um Änderungen einfacher testen zu können, kann man die Erweiterung \n  <a>Extension Auto-Installer</a>\n  installieren."
-  },
-  "s33": {
-    "message": "Falls im Extension Auto-Installer Port 8888 eingestellt ist (die Standardeinstellung), kann man die Änderungen mit dem folgenden Befehl in diesem Browser installieren:"
-  },
-  "s34": {
-    "message": "Der Browser wird bei Bedarf automatisch neu gestartet."
-  },
-  "s35": {
-    "message": "Unit Tests ausführen"
-  },
-  "s36": {
-    "message": "Um Änderungen zu verifizieren, kann man die \n  <a>Unit Test Suite</a>ausführen."
-  },
-  "s37": {
-    "message": "Unit Tests sind eine separate Erweiterung, die zusätzlich zu Adblock Plus installiert wird."
-  },
-  "s38": {
-    "message": "Man kann entweder die \n  <a>bereits existierenden Unit Test Builds</a>\n  ausführen oder das Respository klonen und einen eigenen Build erstellen."
-  },
-  "s39": {
-    "message": "Nach der Installation der Unit Tests geht man auf"
-  },
-  "s40": {
-    "message": ", um die Tests auszuführen."
   }
 }

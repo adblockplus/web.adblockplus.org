@@ -6,7 +6,7 @@
 </head>
 <p>$s1(abp:subscribe?location=http%3A%2F%2Fsubscription.example.com%2Fadblock.txt&amp;title=Not%20really%20a%20subscription)$</p>
 
-<form action="#" id="linkForm" onsubmit="generateLink(); return false;" nolocationerror="$s2$">
+<form action="#" id="linkForm" nolocationerror="$s2$" onsubmit="generateLink(); return false;">
 <table border="0" cellpadding="4" cellspacing="0" id="comment">
 <tr>
   <td class="labelCell"><label for="title">$s3$</label></td>

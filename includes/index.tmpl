@@ -1,105 +1,145 @@
 noheading=True
+localefile=index
+
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
 
 <head>
 <link class="cssfx" href="/css/index.css" rel="stylesheet">
 <link class="cssfx" href="/css/index-desktop.css" media="(min-width: 40.5em)" rel="stylesheet">
 <link href="/css/index-mobile.css" media="screen and (max-width: 40.5em)" rel="stylesheet">
 
-<link href="http://adblockplus.org/" rel="canonical">
+<link href="https://adblockplus.org/" rel="canonical">
 <link href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" rel="chrome-webstore-item">
 <meta content="product" property="og:type">
-<meta content="http://adblockplus.org/img/adblockplus_128.png" property="og:image">
-<meta content="http://adblockplus.org/" property="og:url">
+<meta content="https://adblockplus.org/img/adblockplus_promo.png" property="og:image">
+<meta content="https://adblockplus.org/" property="og:url">
 </head>
-<meta name="title" content="{{"s1"|translate}}">
-<meta name="description" content="{{"s2"|translate}}">
-<meta property="og:title" content="{{"s3"|translate}}">
-<meta property="og:description" content="{{"s4"|translate}}"> 
+<meta content="{{"title"|translate}}" name="title">
+<meta content="{{"s2"|translate}}" name="description">
+<meta content="{{"title"|translate}}" property="og:title">
+<meta content="{{"s2"|translate}}" property="og:description">
 
 
-<div class="{{page}}" id="install-container" itemscope="itemscope" itemtype="http://schema.org/SoftwareApplication">
+<div itemscope="itemscope" itemtype="http://schema.org/SoftwareApplication">
   <section id="main">
     <div id="summary">
       <h1 itemprop="name">{{"s5"|translate}}</h1>
       <h2 itemprop="description">{{"s6"|translate}}</h2>
 
-      <ul>
+      <ul id="features">
         <li itemprop="featureList">
           <div class="sprite"></div>
 {{"s7"|translate}}
         </li>
         <li itemprop="featureList">
           <div class="sprite"></div>
-{{"s8"|translate}}
+{{"s8"|translate(links=["acceptable-ads"])}}
         </li>
-        <li itemprop="featureList">
+        <li class="emphasized" id="feature-free" itemprop="featureList">
           <div class="sprite"></div>
 {{"s9"|translate}}
+          <span class="license-note lang-fr">(<a href="https://www.gnu.org/licenses/translations.fr.html">Licence GPLv3</a>)</span>
         </li>
-        <li class="emphasized" itemprop="featureList">
+        <li id="feature-maxthon" itemprop="featureList">
           <div class="sprite"></div>
-{{"s10"|translate}}
+{{"s10"|translate}} <a href="http://www.maxthon.com/" target="_blank">{{"s11"|translate}}</a>
         </li>
       </ul>
     </div>
 
     <div id="install">
-      <a class="install-button" href="%EXTENSION(abp,downloadurl)%" id="install-firefox">{{"s11"|translate}}</a>
-      <a class="install-button" href="https://clients2.google.com/service/update2/crx?response=redirect&amp;x=id%3Dcfhdojbkjhnklbpkdaibdccddilifddb%26uc" id="install-chrome" onclick="chrome.webstore.install(); return false;">{{"s12"|translate}}</a>
-      <a class="install-button" href="https://addons.opera.com/extensions/download/opera-adblock/" id="install-opera">{{"s13"|translate}}</a>
-      <a class="install-button" href="/en/android-install" id="install-android">{{"s14"|translate}}</a>
-      <a class="install-button" href="https://downloads.adblockplus.org/adblockplusie-1.1.exe" id="install-internet-explorer">{{"s15"|translate}}</a> 
+      <a class="install-button" href="https://update.adblockplus.org/latest/adblockplusfirefox.xpi" id="install-firefox">{{"s12"|translate}}</a>
+      <a class="install-button" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" id="install-chrome" onclick="chrome.webstore.install(); return false;">{{"s13"|translate}}</a>
+      <a class="install-button" href="https://addons.opera.com/extensions/details/opera-adblock/?display=en-US" id="install-opera">{{"s14"|translate}}</a>
+      <a class="install-button" href="/en/android-install" id="install-android">{{"s15"|translate}}</a>
+      <a class="install-button" href="https://update.adblockplus.org/latest/adblockplusie.exe" id="install-internet-explorer">{{"s16"|translate}}</a>
+      <a class="install-button" href="https://update.adblockplus.org/latest/adblockplussafari.safariextz" id="install-safari">{{"s17"|translate}}</a>
+      <a class="install-button" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" id="install-yandex-browser" onclick="chrome.webstore.install(); return false;">{{"s18"|translate}}</a>
       <ul>
         <li>
-          <a class="sprite" href="firefox" id="platform-firefox" title="{{"s16"|translate}}"></a>
+          <a class="sprite" href="firefox" id="platform-firefox" title="{{"s19"|translate}}"></a>
         </li>
         <li>
-          <a class="sprite" href="chrome" id="platform-chrome" title="{{"s17"|translate}}"></a>
+          <a class="sprite" href="chrome" id="platform-chrome" title="{{"s20"|translate}}"></a>
         </li>
         <li>
-          <a class="sprite" href="android" id="platform-android" title="{{"s18"|translate}}"></a>
+          <a class="sprite" href="android" id="platform-android" title="{{"s21"|translate}}"></a>
         </li>
         <li>
-          <a class="sprite" href="opera" id="platform-opera" title="{{"s19"|translate}}"></a>
-	</li>
+          <a class="sprite" href="opera" id="platform-opera" title="{{"s22"|translate}}"></a>
+        </li>
         <li>
-          <a class="sprite" href="internet-explorer" id="platform-internet-explorer" title="{{"s20"|translate}}"></a>
+          <a class="sprite" href="internet-explorer" id="platform-internet-explorer" title="{{"s23"|translate}}"></a>
+        </li>
+        <li>
+          <a class="sprite" href="safari" id="platform-safari" title="{{"s24"|translate}}"></a>
+        </li>
+        <li>
+          <a class="sprite" href="yandex-browser" id="platform-yandex-browser" title="{{"s25"|translate}}"></a>
+        </li>
+        <li>
+          <a class="sprite" href="maxthon" id="platform-maxthon" title="{{"s26"|translate}}"></a>
         </li>
       </ul>
     </div>
   </section>
 
-  <div class="warning-platform firefox">{{"s21"|translate}} <a href="firefox">{{"s22"|translate}}</a></div>
-  <div class="warning-platform chrome">{{"s23"|translate}} <a href="chrome">{{"s24"|translate}}</a></div>
-  <div class="warning-platform android">{{"s25"|translate}} <a href="android">{{"s26"|translate}}</a></div>
-  <div class="warning-platform opera">{{"s27"|translate}} <a href="opera">{{"s28"|translate}}</a></div>
-  <div class="warning-platform internet-explorer">{{"s29"|translate}} <a href="internet-explorer">{{"s30"|translate}}</a></div>
+  <div class="disclaimer lang-fr">
+    Si vous utilisez ABP pour visiter un site Internet en violation de toute obligation ou droit de quelque nature que ce soit en relation avec ce site Internet, en aucun cas EYEO ne pourra être tenu pour responsable envers vous ou tout autre tiers pour toute perte ou dommage (y compris, sans y être limité, les dommages pour perte de chances et perte de bénéfices) découlant directement ou indirectement de votre utilisation de ce logiciel.
+  </div>
+  <div id="maxthon-notification">
+    使用傲游云浏览器，享受最好的广告过滤体验. (内置Adblock Plus) <a href="http://www.maxthon.cn" target="_blank">下载傲游云浏览器</a>
+  </div>
+  <div class="warning-platform firefox">{{"s27"|translate}} <a href="firefox">{{"s28"|translate}}</a></div>
+  <div class="warning-platform chrome">{{"s29"|translate}} <a href="chrome">{{"s30"|translate}}</a></div>
+  <div class="warning-platform android">{{"s31"|translate}} <a href="android">{{"s32"|translate}}</a></div>
+  <div class="warning-platform opera">{{"s33"|translate}} <a href="opera">{{"s34"|translate}}</a></div>
+  <div class="warning-platform internet-explorer">{{"s35"|translate}} <a href="internet-explorer">{{"s36"|translate}}</a></div>
+  <div class="warning-platform safari">{{"s37"|translate}} <a href="safari">{{"s38"|translate}}</a></div>
+  <div class="warning-platform yandex-browser">{{"s39"|translate}} <a href="yandex-browser">{{"s40"|translate}}</a></div>
+  <div class="warning-platform maxthon">{{"s41"|translate}} <a href="maxthon">{{"s42"|translate}}</a></div>
 
   <iframe frameborder="0" height="285" id="video" itemprop="video" src="//www.youtube-nocookie.com/embed/pVYtzF5SemU?html5=1&amp;autohide=1&amp;enablejsapi=1&amp;controls=2&amp;fs=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;theme=light" width="520"></iframe>
+  <img height="305" id="maxthon-instruction" src="/img/maxthon-instruction.png" width="540">
 </div>
 
 <div id="key-facts">
   <section class="first">
     <div class="sprite" id="facts-open-source"></div>
-    <h1>{{"s31"|translate}}</h1>
+    <h1>{{"s43"|translate}}</h1>
     <p>
-      	{{"s32"|translate(links=["contribute"])}}
+        {{"s44"|translate(links=["contribute"])}}
     </p>
   </section>
 
   <section>
     <div class="sprite" id="facts-downloads"></div>
-    <h1>{{"s33"|translate}} 200 {{"s34"|translate}}</h1>
+    <h1>{{"s45"|translate}} 300 {{"s46"|translate}}</h1>
     <p>
-{{"s35"|translate}}
+{{"s47"|translate}}
     </p>
   </section>
 
   <section>
-    <div class="sprite" id="facts-acceptable-ads"></div>
-    <h1>{{"s36"|translate}}</h1>
+    <div class="sprite" id="facts-privacy"></div>
+    <h1>{{"s48"|translate}}</h1>
     <p>
-      {{"s37"|translate(links=["acceptable-ads"])}}
+      {{"s49"|translate}}
     </p>
 
   </section>
@@ -108,137 +148,189 @@ noheading=True
 <section class="hidden" id="more-container">
   <div class="noscript-hidden">
     <button id="more" onclick="toggleMore();return false;">
-      {{"s38"|translate}}
+      {{"s50"|translate}}
     </button>
     <button id="less" onclick="toggleMore();return false;">
-      {{"s39"|translate}}
+      {{"s51"|translate}}
     </button>
   </div>
-  
+
   <div id="more-tabs">
     <div id="sidebar">
       <button id="more-firefox" onclick="showTab(this);return false;">
-        {{"s40"|translate}}
+        {{"s52"|translate}}
       </button>
       <button id="more-chrome" onclick="showTab(this);return false;">
-        {{"s41"|translate}}
+        {{"s53"|translate}}
       </button>
       <button id="more-opera" onclick="showTab(this);return false;">
-        {{"s42"|translate}}
+        {{"s54"|translate}}
       </button>
       <button id="more-android" onclick="showTab(this);return false;">
-        {{"s43"|translate}}
+        {{"s55"|translate}}
       </button>
       <button id="more-internet-explorer" onclick="showTab(this);return false;">
-        {{"s44"|translate}}
+        {{"s56"|translate}}
+      </button>
+      <button id="more-safari" onclick="showTab(this);return false;">
+        {{"s57"|translate}}
+      </button>
+      <button id="more-yandex-browser" onclick="showTab(this);return false;">
+        {{"s58"|translate}}
+      </button>
+      <button id="more-maxthon" onclick="showTab(this);return false;">
+        {{"s59"|translate}}
       </button>
     </div>
-    
+
     <div class="more-tab" id="tab-firefox">
-      <h2>{{"s45"|translate}}</h2>
-      
-      <p>
-        {{"s46"|translate}}
-      </p>
-      
-      <p>
-        {{"s47"|translate(links=["filters"])}}
-      </p>
-      
-      <p>
-        {{"s48"|translate}}
-      </p>
-    </div>
-    
-    <div class="more-tab" id="tab-chrome">
-      <h2>{{"s49"|translate}}</h2>
-      
-      <p>
-        {{"s50"|translate(links=["features"])}}
-      </p>
-      
-      <p>
-        {{"s51"|translate}}
-      </p>
-      
-      <p>
-        {{"s52"|translate}} 10 {{"s53"|translate}}
-        <ul>
-          <li>
-            <blockquote cite="http://download.cnet.com/Adblock-Plus-for-Chrome/3000-33362_4-75118867.html?tag=mncol;3">
-              {{"s54"|translate}}
-            </blockquote>
-            <a href="http://download.cnet.com/Adblock-Plus-for-Chrome/3000-33362_4-75118867.html?tag=mncol;3">{{"s55"|translate}}</a>
-          </li>
-          <li>
-            <blockquote cite="http://adblock-plus.en.softonic.com/">
-              {{"s56"|translate}}
-            </blockquote>
-            <a href="http://adblock-plus.en.softonic.com/" rel="nofollow">{{"s57"|translate}}</a>
-          </li>
-        </ul>
-      </p>
-    </div>
-    
-    <div class="more-tab" id="tab-opera">
-      <h2>{{"s58"|translate}}</h2>
-      
-      <p>
-        {{"s59"|translate}} 4 {{"s60"|translate}}
-      </p>
-      
+      <h2>{{"s60"|translate}}</h2>
+
       <p>
         {{"s61"|translate}}
       </p>
-      
+
       <p>
-        {{"s62"|translate}}
+        {{"s62"|translate(links=["filters"])}}
       </p>
-      
+
       <p>
         {{"s63"|translate}}
       </p>
     </div>
-    
-    <div class="more-tab" id="tab-android">
+
+    <div class="more-tab" id="tab-chrome">
       <h2>{{"s64"|translate}}</h2>
-      
+
       <p>
-        {{"s65"|translate}} 1 {{"s66"|translate}}
+        {{"s65"|translate(links=["features"])}}
       </p>
-      
+
       <p>
-        {{"s67"|translate}}
+        {{"s66"|translate}}
       </p>
-      
+
       <p>
-        {{"s68"|translate}}
+        {{"s67"|translate}} 10 {{"s68"|translate}}
+        <ul>
+          <li>
+            <blockquote cite="http://download.cnet.com/Adblock-Plus-for-Chrome/3000-33362_4-75118867.html?tag=mncol;3">
+              {{"s69"|translate}}
+            </blockquote>
+            <a href="http://download.cnet.com/Adblock-Plus-for-Chrome/3000-33362_4-75118867.html?tag=mncol;3">{{"s70"|translate}}</a>
+          </li>
+          <li>
+            <blockquote cite="http://adblock-plus.en.softonic.com/">
+              {{"s71"|translate}}
+            </blockquote>
+            <a href="http://adblock-plus.en.softonic.com/" rel="nofollow">{{"s72"|translate}}</a>
+          </li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="more-tab" id="tab-opera">
+      <h2>{{"s73"|translate}}</h2>
+
+      <p>
+        {{"s74"|translate}} 4 {{"s75"|translate}}
+      </p>
+
+      <p>
+        {{"s76"|translate}}
+      </p>
+
+      <p>
+        {{"s77"|translate}}
+      </p>
+
+      <p>
+        {{"s78"|translate}}
+      </p>
+    </div>
+
+    <div class="more-tab" id="tab-android">
+      <h2>{{"s79"|translate}}</h2>
+
+      <p>
+        {{"s80"|translate}} 1 {{"s81"|translate}}
+      </p>
+
+      <p>
+        {{"s82"|translate}}
+      </p>
+
+      <p>
+        {{"s83"|translate}}
       </p>
     </div>
 
     <div class="more-tab" id="tab-internet-explorer">
-      <h2>{{"s69"|translate}}</h2>
+      <h2>{{"s23"|translate}}</h2>
 
       <p>
-        {{"s70"|translate}}  
+        {{"s85"|translate}}
       </p>
 
       <p>
-        {{"s71"|translate}} 
+        {{"s86"|translate}}
       </p>
 
       <p>
-        {{"s72"|translate}} 
+        {{"s87"|translate}}
       </p>
 
       <ul>
-        <li>{{"s73"|translate}}</li>
-        <li>{{"s74"|translate}}</li>
-        <li>{{"s75"|translate}}</li>
+        <li>{{"s88"|translate}}</li>
+        <li>{{"s89"|translate}}</li>
       </ul>
+    </div>
+
+    <div class="more-tab" id="tab-safari">
+      <h2>{{"s24"|translate}}</h2>
 
       <p>
-        {{"s76"|translate}} 
+        {{"s91"|translate}}
+      </p>
+
+      <p>
+        {{"s92"|translate}}
+      </p>
+
+      <p>
+        {{"s93"|translate}}
+      </p>
+
+      <p>
+        {{"s94"|translate}}
+      </p>
+
+      <p>
+        {{"s95"|translate}}
+      </p>
+    </div>
+
+    <div class="more-tab" id="tab-yandex-browser">
+      <h2>{{"s96"|translate}}</h2>
+
+      <p>
+        {{"s97"|translate(links=["features"])}}
+      </p>
+
+      <p>
+        {{"s98"|translate}}
+      </p>
+
+      <p>
+        {{"s67"|translate}} 50 {{"s100"|translate}}
+      </p>
+    </div>
+
+    <div class="more-tab" id="tab-maxthon">
+      <h2>{{"s26"|translate}}</h2>
+
+      <p>
+        {{"s102"|translate}}
       </p>
     </div>
   </div>

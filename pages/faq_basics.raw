@@ -3,7 +3,7 @@
 
 <p>$s2(filters)$</p>
 
-<animation name="blockbanner" xmlns="https://adblockplus.org/animation" label="$s3$"></animation>
+<animation label="$s3$" name="blockbanner" xmlns="https://adblockplus.org/animation"></animation>
 
 <h2 id="disable">$s4$</h2>
 
@@ -11,108 +11,114 @@
 
 <p>$s6$ <code>$s7$</code> $s8(filters#whitelist)$</p>
 
-<animation name="disable" xmlns="https://adblockplus.org/animation" label="$s9$"></animation>
+<animation label="$s3$" name="disable" xmlns="https://adblockplus.org/animation"></animation>
 
-<h2 id="update-filterlists">$s10$</h2>
+<h2 id="hide-support">$s10$</h2>
 
-<h3>$s11$</h3>
+<p>$s11$</p>
 
-<p>
-  <ol>
-    <li>
-      $s12$
-    </li>
-    <li>
-      $s13$
-    </li>
-    <li>
-      $s14$
-    </li>
-  </ol>
-</p>
+<p>$s12$</p>
 
-<h3>$s15$</h3>
+<h2 id="update-filterlists">$s13$</h2>
+
+<h3>$s14$</h3>
 
 <p>
   <ol>
+    <li>
+      $s15$
+    </li>
     <li>
       $s16$
     </li>
     <li>
       $s17$
     </li>
-    <li>
-      $s18$
-    </li>
   </ol>
 </p>
 
-<h3>$s19$</h3>
+<h3>$s18$</h3>
 
 <p>
   <ol>
+    <li>
+      $s19$
+    </li>
     <li>
       $s20$
     </li>
     <li>
       $s21$
     </li>
+  </ol>
+</p>
+
+<h3>$s22$</h3>
+
+<p>
+  <ol>
     <li>
-      $s22$
+      $s23$
+    </li>
+    <li>
+      $s24$
+    </li>
+    <li>
+      $s21$
     </li>
   </ol>
 </p>
 
-<h2 id="remove-subscription">$s23$</h2>
+<h2 id="remove-subscription">$s26$</h2>
 
-<h3>$s24$</h3>
-
-<p>
-  $s25$
-</p>
-
-<h3>$s26$</h3> 
+<h3>$s27$</h3>
 
 <p>
-  $s27$
+  $s28$
 </p>
 
-<h3>$s28$</h3>
+<h3>$s29$</h3>
 
 <p>
-  $s29$
+  $s30$
 </p>
 
-<h3>$s30$</h3>
+<h3>$s31$</h3>
 
 <p>
-  $s31$
+  $s32$
 </p>
 
-<h2 id="objects">$s32$</h2>
+<h3>$s33$</h3>
 
-<p>$s33$</p>
+<p>
+  $s34$
+</p>
 
-<animation name="blockobject" xmlns="https://adblockplus.org/animation" label="$s34$"></animation>
+<h2 id="objects">$s35$</h2>
 
-<p>$s35$</p>
+<p>$s36$</p>
 
-<animation name="blockobject2" xmlns="https://adblockplus.org/animation" label="$s36$"></animation>
+<animation label="$s3$" name="blockobject" xmlns="https://adblockplus.org/animation"></animation>
 
-<p>$s37$</p>
+<p>$s38$</p>
 
-<h2 id="checking">$s38$</h2>
+<animation label="$s3$" name="blockobject2" xmlns="https://adblockplus.org/animation"></animation>
 
-<p>$s39$</p>
+<p>$s40$</p>
 
-<h2 id="ordering">$s40$</h2>
+<h2 id="checking">$s41$</h2>
 
-<p>$s41$</p>
+<p>$s42$</p>
 
-<h2 id="regexps">$s42$</h2>
+<h2 id="ordering">$s43$</h2>
 
-<p>$s43$ <code>$s44$</code> $s45$ <code>$s46$</code>$s47$</p>
+<p>$s44$</p>
 
-<p>$s48$</p>
+<h2 id="regexps">$s45$</h2>
 
-<p>$s49$ <code>$s50$</code> $s51$ <code>$s52$</code> $s53$ <code>$s54$</code> $s55$ <code>$s56$</code> $s57$ <code>$s58$</code> $s59$</p>
+<p>$s46$ <code>$s47$</code> $s48$ <code>$s49$</code>$s50$</p>
+
+<p>$s51$</p>
+
+<p>$s52$ <code>$s53$</code> $s54$ <code>$s55$</code> $s56$ <code>$s57$</code> $s58$ <code>$s59$</code> $s60$ <code>$s61$</code> $s62$</p>

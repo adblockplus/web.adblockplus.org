@@ -6,7 +6,7 @@
   .hidden {display: none;}
 </style>
 </head>
-<div id="strings" reportInvalid="$s1$" reportRedundant="$s2$" reportNothingFound="$s3$" statusParsing="$s4$" statusTesting="$s5$" statusPrinting="$s6$" statusFinished="$s7$"></div>
+<div id="strings" reportInvalid="$s1$" reportNothingFound="$s3$" reportRedundant="$s2$" statusFinished="$s7$" statusParsing="$s4$" statusPrinting="$s6$" statusTesting="$s5$"></div>
 
 <p>$s8$ <code>$s9$</code> $s10$ <code>$s11$</code> $s12$</p>
 
@@ -18,7 +18,7 @@
 
 <p>
   <textarea cols="80" id="filters" rows="20" style="width: 100%; height: 200px;"></textarea><br>
-  <button onclick="doCheck()" style="float: right;">$s16$</button>
+  <button onclick="doCheck()" style="float: right;">$title$</button>
 </p>
 
 <p class="hidden">$s17$ <span id="status"></span></p>

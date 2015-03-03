@@ -1,0 +1,115 @@
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+<h2>{{ "general_notes"|translate }}</h2>
+
+<p>{{"s1"|translate(links=["/en/IAdblockPlus"])}}</p>
+
+        <p>{{"s2"|translate}}</p>
+
+{% macro urlDescription() %}
+<p>{{"urlDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro specialDescription() %}
+<p>{{"specialDescription-s1"|translate}} <tt><sub>{{"specialDescription-s2"|translate}}</sub></tt> {{"specialDescription-s3"|translate}} <tt><sub>{{"specialDescription-s4"|translate}}</sub></tt> {{"specialDescription-s5"|translate}} <tt><sub>{{"specialDescription-s6"|translate}}</sub></tt> {{"specialDescription-s7"|translate}} <tt><sub>{{"specialDescription-s8"|translate}}</sub></tt> {{"specialDescription-s9"|translate}}</p>
+{% endmacro %}
+
+{% macro titleDescription() %}
+<p>{{"titleDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro autoDownloadDescription() %}
+<p>{{"autoDownloadDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro disabledDescription() %}
+<p>{{"disabledDescription-s1"|translate}} <tt>{{"disabledDescription-s2"|translate}}</tt> {{"disabledDescription-s3"|translate}}</p>
+{% endmacro %}
+
+{% macro externalDescription() %}
+<p>{{"externalDescription-s1"|translate}} <tt>{{"externalDescription-s2"|translate}}</tt> {{"externalDescription-s3"|translate(links=["/en/IAdblockPlus#method_updateExternalSubscription"])}}</p>
+{% endmacro %}
+
+{% macro lastDownloadDescription() %}
+<p>{{"lastDownloadDescription-s1"|translate}} <tt>{{"lastDownloadDescription-s2"|translate}}</tt>{{"lastDownloadDescription-s3"|translate}}</p>
+{% endmacro %}
+
+{% macro downloadStatusDescription() %}
+<p>{{"downloadStatusDescription-s1"|translate}}</p>
+
+        <ul>
+               <li><tt>{{"downloadStatusDescription-s2"|translate}}</tt> {{"downloadStatusDescription-s3"|translate}}</li>
+               <li><tt>{{"downloadStatusDescription-s4"|translate}}</tt> {{"downloadStatusDescription-s5"|translate}}</li>
+               <li><tt>{{"downloadStatusDescription-s6"|translate}}</tt> {{"downloadStatusDescription-s7"|translate}}</li>
+               <li><tt>{{"downloadStatusDescription-s8"|translate}}</tt> {{"downloadStatusDescription-s9"|translate}} <tt>{{"downloadStatusDescription-s10"|translate}}</tt></li>
+        </ul>
+{% endmacro %}
+
+{% macro lastModifiedDescription() %}
+<p>{{"lastModifiedDescription-s1"|translate}} <tt>{{"lastModifiedDescription-s2"|translate}}</tt> {{"lastModifiedDescription-s3"|translate}}</p>
+{% endmacro %}
+
+{% macro getPatternsDescription() %}
+<p>{{"getPatternsDescription-s1"|translate}}</p>
+{% endmacro %}
+
+{% macro getPatterns_returnDescription() %}
+{{"getPatterns_returnDescription-s1"|translate}}
+{% endmacro %}
+
+
+{#
+  Property, method and method argument descriptions are defined in the macros
+  above and only referenced here.
+#}
+
+{% from "includes/interface" import display_interface %}
+
+{{ display_interface({
+  "readonly boolean autoDownload": {
+    "description": autoDownloadDescription
+  },
+  "readonly boolean disabled": {
+    "description": disabledDescription
+  },
+  "readonly AString downloadStatus": {
+    "description": downloadStatusDescription
+  },
+  "readonly boolean external": {
+    "description": externalDescription
+  },
+  "arrayof wstring getPatterns()": {
+    "description": getPatternsDescription,
+    "description-return": getPatterns_returnDescription
+  },
+  "readonly long lastDownload": {
+    "description": lastDownloadDescription
+  },
+  "readonly AString lastModified": {
+    "description": lastModifiedDescription
+  },
+  "readonly boolean special": {
+    "description": specialDescription
+  },
+  "readonly AString title": {
+    "description": titleDescription
+  },
+  "readonly AString url": {
+    "description": urlDescription
+  }
+}) }}

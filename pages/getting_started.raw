@@ -1,8 +1,8 @@
 
-<meta name="title" content="$s1$">
-<meta name="description" content="$s2$">
-<meta property="og:title" content="$s3$">
-<meta property="og:description" content="$s4$">
+<meta content="$s1$" name="title">
+<meta content="$s2$" name="description">
+<meta content="$s1$" property="og:title">
+<meta content="$s2$" property="og:description">
 
 <h2 id="general">$s5$</h2>
 
@@ -11,7 +11,7 @@
 </p>
 
 <h2 id="workings">$s7$</h2>
- 
+
 <p>
   $s8$
 </p>
@@ -106,7 +106,7 @@
 </p>
 
 <p>
-  $s31$ 
+  $s31$
 </p>
 
 <h2 id="firststeps">$s32$</h2>
@@ -137,7 +137,7 @@
   $s39(faq_basics#remove-subscription)$
 </p>
 
-<h4>$s40$</h4> 
+<h4>$s40$</h4>
 
 <p>
   $s41$
@@ -145,7 +145,7 @@
 
 <h5>$s42$</h5>
 
-<img src="images/gettingstarted_filters_add_ff_1_win.png"> 
+<img src="images/gettingstarted_filters_add_ff_1_win.png">
 
 <h5>$s43$</h5>
 
@@ -227,7 +227,7 @@
   $s58$
 </p>
 
-<h4>$s59$</h4>
+<h4>$s26$</h4>
 
 <p>
   $s60$
@@ -241,7 +241,7 @@
 
 <h2 id="uninstall">$s63$</h2>
 
-<h3>$s64$</h3>
+<h3>$s40$</h3>
 
 <p>
   $s65(https://support.mozilla.org/kb/disable-or-remove-add-ons)$
@@ -251,19 +251,19 @@
   $s66(https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data#w_how-do-i-find-my-profile, http://kb.mozillazine.org/About:config)$
 </p>
 
-<h3>$s67$</h3>
+<h3>$s48$</h3>
 
 <p>
   $s68$
 </p>
 
-<h3>$s69$</h3>
+<h3>$s54$</h3>
 
 <p>
   $s70$
 </p>
 
-<h3>$s71$</h3>
+<h3>$s26$</h3>
 
 <p>
   $s72$
@@ -289,7 +289,7 @@
 <h3 id="false-positives">$s78$</h3>
 
 <p>
-  $s79$ 
+  $s79$
   $s80$ $s81(faq_basics#disable)$ $s82$
 </p>
 
@@ -299,7 +299,7 @@
 
 <p>
   $s83$
-</p>  
+</p>
 
 <p>
   <img src="images/screenshot_reporter.png">
@@ -321,7 +321,7 @@
 
 <p>
   $s91$
-</p>  
+</p>
 
 <p>
   <img src="images/screenshot_reporter2.png">

@@ -6,7 +6,7 @@
     "message": "How do I block a banner?"
   },
   "s2": {
-    "message": "You can right-click on any image or frame and choose &quot;Adblock&quot; from the context menu. This will open a dialog where you can tweak the new filter before adding. Feel free to replace parts of the banner's address by wildcards (* -- the star symbol) to make the filter block other banners with similar addresses as well. For more information you can read <a>Writing Adblock Plus filters</a>."
+    "message": "You can right-click on any image or frame and choose \"Adblock\" from the context menu. This will open a dialog where you can tweak the new filter before adding. Feel free to replace parts of the banner's address by wildcards (* — the star symbol) to make the filter block other banners with similar addresses as well. For more information you can read <a>Writing Adblock Plus filters</a>."
   },
   "s3": {
     "message": "Show me how this is done"
@@ -26,157 +26,154 @@
   "s8": {
     "message": "to your list of filters. You can find more information on exception rules in <a>Writing Adblock Plus filters</a>."
   },
-  "s9": {
-    "message": "Show me how this is done"
-  },
   "s10": {
-    "message": "How can I update my filterlist manually?"
+    "message": "Can I support my favorite website by downloading but hiding ads?"
   },
   "s11": {
-    "message": "In Firefox:"
+    "message": "No. Most advertisers pay per-click, so if you hide ads, you won't actually support the site in question. Even in the off-chance of payouts per-view, it's trivial for advertisers to use JavaScript to check if the ads are visible. Additionally, downloading but hiding ads to trick advertisers into paying would be akin to fraud."
   },
   "s12": {
-    "message": "Select Firefox >> Add-ons (for Mac OS X / Linux, select \"Tools\" from the menubar >> \"Add-Ons\"), this will open your Firefox Add-ons Manager."
+    "message": "In short, if you want to support your favorite websites, you'll have to whitelist them to disable Adblock Plus on those sites."
   },
   "s13": {
-    "message": "Click on \"Extensions\", find Adblock Plus there, go to \"Options\" and then click on \"Filter preferences...\"."
+    "message": "How can I update my filterlist manually?"
   },
   "s14": {
-    "message": "Press this shortcut key to update all filter susbcription at once: Ctrl+Shift+T or right-click a filter subscription and choose \"Update filters\"."
+    "message": "In Firefox:"
   },
   "s15": {
-    "message": "In Chrome:"
+    "message": "Select Firefox >> Add-ons (for Mac OS X / Linux, select \"Tools\" from the menubar >> \"Add-Ons\"), this will open your Firefox Add-ons Manager."
   },
   "s16": {
-    "message": "Click the Chrome menu button, then go to \"Tools\" and choose \"Extensions\"."
+    "message": "Click on \"Extensions\", find Adblock Plus there, go to \"Options\" and then click on \"Filter preferences...\"."
   },
   "s17": {
-    "message": "Find Adblock Plus there and click on \"Options\" under its description."
+    "message": "Press this shortcut key to update all filter susbcription at once: Ctrl+Shift+T or right-click a filter subscription and choose \"Update filters\"."
   },
   "s18": {
-    "message": "Click the \"Update now\" button."
+    "message": "In Chrome:"
   },
   "s19": {
-    "message": "In Opera:"
+    "message": "Click the Chrome menu button, then go to \"Tools\" and choose \"Extensions\"."
   },
   "s20": {
-    "message": "Click the \"Menu\" button (for Mac OS X / Linux, \"Tools\"), select \"Extensions\" >> \"Manage Extensions\"."
+    "message": "Find Adblock Plus there and click on \"Options\" under its description."
   },
   "s21": {
-    "message": "Find Adblock Plus there and click its small tool-icon on the right side and choose \"Preferences\"."
-  },
-  "s22": {
     "message": "Click the \"Update now\" button."
   },
+  "s22": {
+    "message": "In Opera:"
+  },
   "s23": {
-    "message": "How can I remove a filterlist?"
+    "message": "Click the \"Menu\" button (for Mac OS X / Linux, \"Tools\"), select \"Extensions\" >> \"Manage Extensions\"."
   },
   "s24": {
-    "message": "In Firefox"
-  },
-  "s25": {
-    "message": "Go to Tools >> Add-Ons >> Preferences (next to Adblock Plus) >> Filter Preferences.\n  Select the filterlist you want to delete, click on the \"Action\" button, and select \"Delete\".\n  Click on \"OK\" to confirm."
+    "message": "Find Adblock Plus there and click its small tool-icon on the right side and choose \"Preferences\"."
   },
   "s26": {
-    "message": "In Google Chrome"
+    "message": "How can I remove a filterlist?"
   },
   "s27": {
-    "message": "Go to Window >> Extensions >> Options (of the Adblock Plus extension).\n  Click on the red \"X\" next to the filterlist you want to delete, and click \"OK\" to confirm."
+    "message": "In Firefox"
   },
   "s28": {
-    "message": "In Opera (on Windows/Ubuntu)"
+    "message": "Go to Tools >> Add-Ons >> Preferences (next to Adblock Plus) >> Filter Preferences. Select the filterlist you want to delete, click on the \"Action\" button, and select \"Delete\". Click on \"OK\" to confirm."
   },
   "s29": {
-    "message": "Click on the menu button and go to Extensions >> Manage Extensions >> Click on the tool-icon >> Preferences.\n  Click on the red \"X\" next to the filterlist you want to delete, and click \"OK\" to confirm."
+    "message": "In Google Chrome"
   },
   "s30": {
-    "message": "In Opera (on Mac OSX)"
+    "message": "Go to Window >> Extensions >> Options (of the Adblock Plus extension). Click on the red \"X\" next to the filterlist you want to delete, and click \"OK\" to confirm."
   },
   "s31": {
-    "message": "Go to Tools >> Extensions >> Manage Extensions >> Click on the tool-icon >> Preferences.\n  Click on the red \"X\" next to the filterlist you want to delete, and click \"OK\" to confirm."
+    "message": "In Opera (on Windows/Ubuntu)"
   },
   "s32": {
-    "message": "The banner is an object (Flash or Java) and doesn't have a context menu. What now?"
+    "message": "Click on the menu button and go to Extensions >> Manage Extensions >> Click on the tool-icon >> Preferences. Click on the red \"X\" next to the filterlist you want to delete, and click \"OK\" to confirm."
   },
   "s33": {
-    "message": "Adblock Plus has an option called \"Show tabs on Flash and Java\". When activated (the default) it will display a button saying \"Block\" at the upper right (lower right if there isn't enough space) corner of every object. Clicking this button will block the object."
+    "message": "In Opera (on Mac OSX)"
   },
   "s34": {
-    "message": "Show me how this is done"
+    "message": "Go to Tools >> Extensions >> Manage Extensions >> Click on the tool-icon >> Preferences. Click on the red \"X\" next to the filterlist you want to delete, and click \"OK\" to confirm."
   },
   "s35": {
-    "message": "Alternatively you can open the list of blockable items (press Ctrl+Shift+V or click the dropdown arrow next to the ABP toolbar icon and choose Open blockable items) and look for an object there."
+    "message": "The banner is an object (Flash or Java) and doesn't have a context menu. What now?"
   },
   "s36": {
-    "message": "Show me how this is done"
-  },
-  "s37": {
-    "message": "You can click the Type column header -- this will sort the list by type and make finding objects easier."
+    "message": "Adblock Plus has an option called \"Show tabs on Flash and Java\". When activated (the default) it will display a button saying \"Block\" at the upper right (lower right if there isn't enough space) corner of every object. Clicking this button will block the object."
   },
   "s38": {
-    "message": "The list of blockable items shows many addresses. How do I know which one is the banner?"
-  },
-  "s39": {
-    "message": "You can look for addresses that start differently than the address of the page you are viewing. Banners also typically have keywords like \"banner\" or \"ad\" in their address. Click an address to make the corresponding element(s) blink on the page (unfortunately this doesn't work for all types of objects). If you are still unsure, press the middle mouse button on the address to open it in a new tab -- there you will definitely see whether it is a banner."
+    "message": "Alternatively you can open the list of blockable items (press Ctrl+Shift+V or click the dropdown arrow next to the ABP toolbar icon and choose Open blockable items) and look for an object there."
   },
   "s40": {
-    "message": "Is the order of filters relevant for performance?"
+    "message": "You can click the Type column header — this will sort the list by type and make finding objects easier."
   },
   "s41": {
-    "message": "No. When Adblock Plus tests an address against your list of filters it determines the best order in which filters should be tested automatically, in fact most of the filters won't be considered at all. The order of filters you can change in the Preferences dialog is for your convenience only, it has no impact on the performance."
+    "message": "The list of blockable items shows many addresses. How do I know which one is the banner?"
   },
   "s42": {
-    "message": "Are regular expressions faster than \"normal\" filters?"
+    "message": "You can look for addresses that start differently than the address of the page you are viewing. Banners also typically have keywords like \"banner\" or \"ad\" in their address. Click an address to make the corresponding element(s) blink on the page (unfortunately this doesn't work for all types of objects). If you are still unsure, press the middle mouse button on the address to open it in a new tab — there you will definitely see whether it is a banner."
   },
   "s43": {
-    "message": "Usually this is not the case. Adblock Plus will transform any \"normal\" filter into a regular expression, and internally it will work only with regular expressions -- there is no difference between the filters"
+    "message": "Is the order of filters relevant for performance?"
   },
   "s44": {
-    "message": "banner"
+    "message": "No. When Adblock Plus tests an address against your list of filters it determines the best order in which filters should be tested automatically, in fact most of the filters won't be considered at all. The order of filters you can change in the Preferences dialog is for your convenience only, it has no impact on the performance."
   },
   "s45": {
-    "message": "and"
+    "message": "Are regular expressions faster than \"normal\" filters?"
   },
   "s46": {
-    "message": "/banner/"
+    "message": "Usually this is not the case. Adblock Plus will transform any \"normal\" filter into a regular expression, and internally it will work only with regular expressions — there is no difference between the filters"
   },
   "s47": {
-    "message": "."
+    "message": "banner"
   },
   "s48": {
-    "message": "Regular expressions are often used to \"compress\" the filters list and replace several filters by one regular expression. The rule of thumb says \"fewer filters means faster\" but it isn't always correct in this case. Complicated regular expressions require much time to be evaluated, it might be faster to use several simple ones."
+    "message": "and"
   },
   "s49": {
-    "message": "Regular expression give you more flexibility however, that's where their use is always justified. For example the regular expression"
+    "message": "/banner/"
   },
   "s50": {
-    "message": "/adv(?!ice)/"
+    "message": "."
   },
   "s51": {
-    "message": "will block"
+    "message": "Regular expressions are often used to \"compress\" the filters list and replace several filters by one regular expression. The rule of thumb says \"fewer filters means faster\" but it isn't always correct in this case. Complicated regular expressions require much time to be evaluated, it might be faster to use several simple ones."
   },
   "s52": {
-    "message": "adv"
+    "message": "Regular expression give you more flexibility however, that's where their use is always justified. For example the regular expression"
   },
   "s53": {
-    "message": "and"
+    "message": "/adv(?!ice)/"
   },
   "s54": {
-    "message": "advert"
+    "message": "will block"
   },
   "s55": {
-    "message": "and"
+    "message": "adv"
   },
   "s56": {
-    "message": "advertisement"
+    "message": "and"
   },
   "s57": {
-    "message": "but not"
+    "message": "advert"
   },
   "s58": {
-    "message": "advice"
+    "message": "and"
   },
   "s59": {
+    "message": "advertisement"
+  },
+  "s60": {
+    "message": "but not"
+  },
+  "s61": {
+    "message": "advice"
+  },
+  "s62": {
     "message": "-- something you couldn't have done with simple wildcards."
   }
 }

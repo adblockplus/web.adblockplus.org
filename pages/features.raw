@@ -6,10 +6,10 @@ title=title-full
 <link href="/css/topics-mobile.css" media="screen  and (max-width: 40.5em)" rel="stylesheet">
 <link class="cssfx" href="/css/features.css" rel="stylesheet">
 </head>
-<meta name="title" content="$s1$">
-<meta name="description" content="$s2$">
-<meta property="og:title" content="$s3$">
-<meta property="og:description" content="$s4$">
+<meta content="$s1$" name="title">
+<meta content="$s2$" name="description">
+<meta content="$s1$" property="og:title">
+<meta content="$s2$" property="og:description">
 
 <div id="toc">
   <a class="topic-small" href="#adblocking">
@@ -42,20 +42,20 @@ title=title-full
   <div class="topic first">
     <div class="feature-block sprite"></div>
     <a name="block">
-      <h3>$s11$</h3>
+      <h3>$s5$</h3>
     </a>
     <div class="description">
       $s12$
       <div class="longtext">
-        $s13(firefox, chrome, opera, android)$
+        $s13(firefox, chrome, safari, opera, android)$
       </div>
     </div>
   </div>
-  
+
   <div class="topic">
     <div class="feature-acceptable sprite"></div>
     <a name="acceptable">
-      <h3>$s14$</h3>
+      <h3>$s6$</h3>
     </a>
     <div class="description">
       $s15$
@@ -68,7 +68,7 @@ title=title-full
   <div class="topic">
     <div class="feature-tracking sprite"></div>
     <a name="tracking">
-      <h3>$s19$</h3>
+      <h3>$s7$</h3>
     </a>
     <div class="description">
       $s20$ $s21$
@@ -77,7 +77,7 @@ title=title-full
           $s22(http://cyberlaw.stanford.edu/node/6730)$
         </p>
         <p>
-          $s23(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Feasyprivacy.txt&amp;title=Disable%20Tracking, getting_started#remove-subscription)$
+          $s23(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Feasyprivacy.txt&amp;title=Disable%20Tracking, faq_basics#remove-subscription)$
         </p>
       </div>
     </div>
@@ -86,16 +86,16 @@ title=title-full
   <div class="topic">
     <div class="feature-malware sprite"></div>
     <a name="malware">
-      <h3>$s24$</h3>
+      <h3>$s8$</h3>
     </a>
     <div class="description">
-      $s25$ $s26$ $s27$  
+      $s25$ $s26$ $s27$
       <div class="longtext">
         <p>
           $s28$
         </p>
         <p>
-          $s29(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Fmalwaredomains_full.txt&amp;title=Disable%20Malware, getting_started#remove-subscription)$
+          $s29(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Fmalwaredomains_full.txt&amp;title=Disable%20Malware, faq_basics#remove-subscription)$
         </p>
       </div>
     </div>
@@ -104,7 +104,7 @@ title=title-full
   <div class="topic">
     <div class="feature-socialmedia sprite"></div>
     <a name="socialmedia">
-      <h3>$s30$</h3>
+      <h3>$s9$</h3>
     </a>
     <div class="description">
       $s31$ $s32$
@@ -112,8 +112,8 @@ title=title-full
         <p>
           $s33$
         </p>
-      	  <p>
-          $s34(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Ffanboy-social.txt&amp;title=Fanboy's%20Social%20Blocking%20List, getting_started#remove-subscription)$
+          <p>
+          $s34(abp:subscribe?location=https%3A%2F%2Feasylist-downloads.adblockplus.org%2Ffanboy-social.txt&amp;title=Fanboy's%20Social%20Blocking%20List, faq_basics#remove-subscription)$
         </p>
       </div>
     </div>
@@ -122,7 +122,7 @@ title=title-full
   <div class="topic">
     <div class="feature-typo sprite"></div>
     <a name="typo">
-      <h3>$s35$</h3>
+      <h3>$s10$</h3>
     </a>
     <div class="description">
       $s36(/blog/type-correction-feature-removed, http://urlfixer.org)$

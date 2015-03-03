@@ -6,10 +6,10 @@
     "message": "Was ist der Unterschied zwischen Adblock Plus und Adblock?"
   },
   "s2": {
-    "message": "Die Entwicklung von Adblock kam 2004 ins Stocken. Als mehr und mehr Nutzer Verbesserungen forderten, bot Michael McDonald ihnen Adblock Plus 0.5 an -- im wesentlichen eine Version von Adblock mit Ausnahmeregeln, automatischer Filteraktualisierung und einigen anderen nützlichen Features."
+    "message": "Die Entwicklung von Adblock kam 2004 ins Stocken. Als mehr und mehr Nutzer Verbesserungen forderten, bot Michael McDonald ihnen Adblock Plus 0.5 an — im wesentlichen eine Version von Adblock mit Ausnahmeregeln, automatischer Filteraktualisierung und einigen anderen nützlichen Features."
   },
   "s3": {
-    "message": "Diese Version basierte aber weiterhin auf Adblock, was die Verbesserungsmöglichkeiten stark beschränkte. Da die Qualität von Adblock sehr zu wünschen übrig ließ, war es nötig die Erweiterung von Grund auf neu zu schreiben. Das ist, wo Adblock Plus 0.6 ins Spiel kam -- eine ganz neue Erweiterung mit dem Schwerpunkt auf Ergonomie, Stabilität und Sicherheit. Aus verschiedenen Gründen waren zunächst viele Verbesserungen, die man aus Adblock Plus 0.5 kannte, in Adblock Plus 0.6 nicht enthalten. Mit Adblock Plus 0.6.1 wurde allerdings nachgebessert, und nun ist diese Version ihrem Vorgänger in keinerlei Hinsicht unterlegen."
+    "message": "Diese Version basierte aber weiterhin auf Adblock, was die Verbesserungsmöglichkeiten stark beschränkte. Da die Qualität von Adblock sehr zu wünschen übrig ließ, war es nötig die Erweiterung von Grund auf neu zu schreiben. Das ist, wo Adblock Plus 0.6 ins Spiel kam — eine ganz neue Erweiterung mit dem Schwerpunkt auf Ergonomie, Stabilität und Sicherheit. Aus verschiedenen Gründen waren zunächst viele Verbesserungen, die man aus Adblock Plus 0.5 kannte, in Adblock Plus 0.6 nicht enthalten. Mit Adblock Plus 0.6.1 wurde allerdings nachgebessert, und nun ist diese Version ihrem Vorgänger in keinerlei Hinsicht unterlegen."
   },
   "s4": {
     "message": "Michael McDonald, der Entwickler von Adblock Plus 0.5, wechselte zum Adblock-Team und versucht jetzt, das Original weiterzuentwickeln. Daher bin ich (Wladimir Palant) seit Adblock Plus 0.6 für die Entwicklung von Adblock Plus zuständig."
@@ -18,117 +18,81 @@
     "message": "Warum ist es so schwer eine Option für ... einzuführen?"
   },
   "s6": {
-    "message": "Es ist nicht schwer. Aber dieses Einstellung \"Optionen für alles\" hat ihre Konsequenzen. Ich will einfach mal"
+    "message": "Es ist nicht schwer. Aber dieses Einstellung \"Optionen für alles\" hat ihre Konsequenzen. Ich will einfach mal <a>Joel Spolsky</a> zitieren (wer des Englischen nicht mächtig ist, kann gleich zur Zusammenfassung springen):"
   },
   "s7": {
-    "message": "http://www.joelonsoftware.com/uibook/chapters/fog0000000059.html"
-  },
-  "s8": {
-    "message": "Joel Spolsky"
-  },
-  "s9": {
-    "message": "zitieren (wer des Englischen nicht mächtig ist, kann gleich zur Zusammenfassung springen):"
-  },
-  "s10": {
     "message": "Every time you provide an option, you're asking the user to make a decision."
   },
-  "s11": {
+  "s8": {
     "message": "Asking the user to make a decision isn't <em>in itself</em> a bad thing. Freedom of choice can be wonderful. People <em>love</em> to order espresso-based beverages at Starbucks because they get to make so many <em>choices</em>. Grande-half-caf-skim-mocha-Valencia-with-whip. Extra hot!"
   },
-  "s12": {
+  "s9": {
     "message": "The problem comes when you ask them to make a choice that"
   },
-  "s13": {
+  "s10": {
     "message": "they don't care about"
   },
-  "s14": {
+  "s11": {
     "message": ". [...] it's simply guaranteed to perplex and eventually piss off the user."
   },
-  "s15": {
-    "message": "Jede zusätzliche Option verlangt also vom Benutzer eine Entscheidung. Das ist an sich natürlich noch nicht falsch, wird der Benutzer aber regelmäßig mit Fragen konfrontiert, die ihn nicht interessieren, mündet das schnell in Verwirrung und dann auch in Verärgerung. Das bedeutet nicht, dass jedes einzelne Feature und jede Option entfernt werden müssen -- wenn sie jedoch im Programm enthalten sind, sollten sie es wert sein. Und sie sollten nach Möglichkeit ihren Dienst still im Hintergrund verrichten, ohne den Benutzer zu bemühen."
+  "s12": {
+    "message": "Jede zusätzliche Option verlangt also vom Benutzer eine Entscheidung. Das ist an sich natürlich noch nicht falsch, wird der Benutzer aber regelmäßig mit Fragen konfrontiert, die ihn nicht interessieren, mündet das schnell in Verwirrung und dann auch in Verärgerung. Das bedeutet nicht, dass jedes einzelne Feature und jede Option entfernt werden müssen — wenn sie jedoch im Programm enthalten sind, sollten sie es wert sein. Und sie sollten nach Möglichkeit ihren Dienst still im Hintergrund verrichten, ohne den Benutzer zu bemühen."
   },
-  "s16": {
+  "s13": {
     "message": "Warum ist es so schwer ein Tastenkürzel für ... einzuführen?"
   },
-  "s17": {
+  "s14": {
     "message": "Es ist nicht schwer. Allerdings werden Tastenkürzel in einem Browser zwischen allen Erweiterungen geteilt. Einfache Tastenkombinationen kann man nicht verwenden, weil diese schon vom Browser selbst belegt sind. Und sogar die recht komplizierten Strg+Umschalt+Irgendwas Kombinationen werden von vielen Erweiterungen benutzt. Je mehr Tastenkürzel definiert werden, desto größer ist die Gefahr von Konflikten mit anderen Erweiterungen. Sie können jedoch neuerdings die Tastenkürzel für Adblock Plus <a>selber festlegen</a>."
   },
-  "s18": {
+  "s15": {
     "message": "Wie kann ich helfen?"
   },
-  "s19": {
+  "s16": {
     "message": "Man kann das Projekt Adblock Plus auf verschiedene Weisen unterstützen:"
   },
-  "s20": {
+  "s17": {
     "message": "Fehler melden"
   },
-  "s21": {
-    "message": "Wenn man bemerkt, dass Adblock Plus sich nicht so verhält, wie er eigentlich sollte -- <a>sagt uns</a>. Es gibt immer Situationen, die wir nicht getestet haben, weshalb die Erweiterung in diesen nicht korrekt funktionieren könnte. Wir brauchen Hilfe, um diese zu finden. Dem Fehlerbericht sollten alle Informationen beigelegt werden, die für das Reproduzieren des Problems notwendig sind: unter welchen Umständen taucht der Fehler auf, welcher Browser wurde verwendet, was war die Version von Adblock Plus? Auch sollte man weiter verfügbar bleiben, um eventuelle Fragen zu beantworten, oder um zu testen, ob der Fehler wirklich behoben wurde."
+  "s18": {
+    "message": "Wenn man bemerkt, dass Adblock Plus sich nicht so verhält, wie er eigentlich sollte — <a>sagt uns</a>. Es gibt immer Situationen, die wir nicht getestet haben, weshalb die Erweiterung in diesen nicht korrekt funktionieren könnte. Wir brauchen Hilfe, um diese zu finden. Dem Fehlerbericht sollten alle Informationen beigelegt werden, die für das Reproduzieren des Problems notwendig sind: unter welchen Umständen taucht der Fehler auf, welcher Browser wurde verwendet, was war die Version von Adblock Plus? Auch sollte man weiter verfügbar bleiben, um eventuelle Fragen zu beantworten, oder um zu testen, ob der Fehler wirklich behoben wurde."
   },
-  "s22": {
+  "s19": {
     "message": "Entwicklungsversionen testen"
   },
-  "s23": {
+  "s20": {
     "message": "Bevor eine neue Version von Adblock Plus veröffentlicht wird, gibt es immer einige <a>Testversionen</a>. Zweck dieser Versionen ist es, Fehler zu finden oder einfach schlecht durchdachte Funktionen zu finden, bevor die neue Version der breiten Öffentlichkeit zur Verfügung gestellt wird. Man kann das <a>RSS Feed</a> abonnieren, um zu erfahren, wann eine neue Entwicklungsversion verfügbar ist."
   },
-  "s24": {
+  "s21": {
     "message": "Anderen Nutzern helfen"
   },
-  "s25": {
+  "s22": {
     "message": "Erfahrene Nutzer von Adblock Plus könnten vielleicht etwas Zeit aufwenden, um Fragen der Leute zu beantworten, denen das alles noch neu ist. Schaut Euch einfach im <a>Forum</a> um, es gibt stets viele Nutzer, die nach einer Antwort suchen."
   },
-  "s26": {
+  "s23": {
     "message": "Vorschläge einbringen"
   },
-  "s27": {
+  "s24": {
     "message": "Es gibt immer etwas, was verbessert werden kann; also teilt uns Eure Ideen mit. Am besten wäre es, wenn man uns nicht nur sagt, was verbessert werden sollte (das wissen wir meistens schon), sondern auch wie man es verändern könnte. Man kann einfach im <a>Forum</a> ein neues Thema erstellen oder zu einer bereits laufenden Diskussion beitragen, eine Registrierung ist nicht notwendig. Zu beachten ist aber, dass aus verschiedenen Gründen nicht jeder Vorschlag übernommen werden kann. Man sollte auch bei seiner Kritik konstruktiv bleiben."
   },
-  "s28": {
+  "s25": {
     "message": "Adblock Plus übersetzen"
   },
-  "s29": {
-    "message": "Adblock Plus wurde bereits in über 30 Sprachen übersetzt -- und trotzdem benötigen wir noch mehr Übersetzer. Wenn man Adblock Plus übersetzen will, sollte man sich auf"
+  "s26": {
+    "message": "Adblock Plus wurde bereits in über 30 Sprachen übersetzt — und trotzdem benötigen wir noch mehr Übersetzer. Wenn man Adblock Plus übersetzen will, sollte man sich auf <a>BabelZilla</a> registrieren. Anschließend kann man in die <a>Diskussion über Adblock Plus</a> gehen und den Link \"View on WTS\" im ersten Beitrag anklicken. Reserviert eine Sprache, der noch kein Übersetzer zugewiesen ist, für sich. Bitte tut es aber nur, falls Sie bereit sind, die Übersetzung stets zu aktualisieren, wenn das für eine neue Version von Adblock Plus notwendig wird (BabelZilla wird in diesem Fall eine Benachrichtigung versenden. Im <a>BabelZilla FAQ</a> kann man mehr über WTS (Web Translation System) erfahren."
   },
-  "s30": {
-    "message": "http://www.babelzilla.org/"
-  },
-  "s31": {
-    "message": "BabelZilla"
-  },
-  "s32": {
-    "message": "registrieren. Anschließend kann man in die"
-  },
-  "s33": {
-    "message": "http://www.babelzilla.org/forum/index.php?showtopic=1898"
-  },
-  "s34": {
-    "message": "Diskussion über Adblock Plus"
-  },
-  "s35": {
-    "message": "gehen und den Link \"View on WTS\" im ersten Beitrag anklicken. Reserviert eine Sprache, der noch kein Übersetzer zugewiesen ist, für sich. Bitte tut es aber nur, falls Sie bereit sind, die Übersetzung stets zu aktualisieren, wenn das für eine neue Version von Adblock Plus notwendig wird (BabelZilla wird in diesem Fall eine Benachrichtigung versenden. Im"
-  },
-  "s36": {
-    "message": "http://www.babelzilla.org/index.php?option=com_content&task=category&sectionid=3&id=7&Itemid=25"
-  },
-  "s37": {
-    "message": "BabelZilla FAQ"
-  },
-  "s38": {
-    "message": "kann man mehr über WTS (Web Translation System) erfahren."
-  },
-  "s39": {
+  "s27": {
     "message": "Weitersagen"
   },
-  "s40": {
+  "s28": {
     "message": "Auch das Weiterempfehlen von Adblock Plus ist nützlich. Auch wenn niemand direkt davon profitiert, macht die Verbreitung von Werbeblockern aufdringliche Werbung unwirtschaftlich. Letztendlich wird diese Werbeart genauso aussterben, wie das mit PopUp-Fenstern bereits geschehen ist. Und abgesehen davon, dass man das Internet zu einem besseren Ort macht, ist es einfach gut zu wissen, dass dieses Werk genutzt wird."
   },
-  "s41": {
+  "s29": {
     "message": "Finanzielle Unterstützung"
   },
-  "s42": {
+  "s30": {
     "message": "Mit zusätzlichem Geld werden wir Adblock Plus schneller weiterentwickeln können."
   },
-  "s43": {
+  "s31": {
     "message": "Auch Sie können <a>einen Beitrag leisten</a>."
   }
 }

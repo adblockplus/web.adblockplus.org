@@ -1,0 +1,74 @@
+{
+  "title": {
+    "message": "Module ownership"
+  },
+  "s1": {
+    "message": "We're using a module ownership system similar to <a>what Mozilla has</a>. While most <a>modules</a> are areas of our code base, some have nothing to do with the code, but are governed in a very similar way."
+  },
+  "s2": {
+    "message": "The module owner role"
+  },
+  "s3": {
+    "message": "Module owners have functional authority and responsibility over their area. Only the respective super reviewer can overrule their decisions, but this should not be necessary in practice."
+  },
+  "s4": {
+    "message": "Responsibilities for code module owners"
+  },
+  "s5": {
+    "message": "Review and approve all changes to the module"
+  },
+  "s6": {
+    "message": "Grant or revoke commit access"
+  },
+  "s7": {
+    "message": "Maintain and improve quality"
+  },
+  "s8": {
+    "message": "Set the priority of new issues and reject them if necessary"
+  },
+  "s9": {
+    "message": "Ensure all high priority issues get tackled"
+  },
+  "s10": {
+    "message": "Responsibilities for non-code module owners"
+  },
+  "s11": {
+    "message": "Oversee all activities"
+  },
+  "s12": {
+    "message": "Plan future activities"
+  },
+  "s13": {
+    "message": "Ensure good communication with other modules as well as non-developers"
+  },
+  "s14": {
+    "message": "Super reviews"
+  },
+  "s15": {
+    "message": "Each module has a designated super reviewer, who will oversee things at a higher level."
+  },
+  "s16": {
+    "message": "Super reviews for code modules"
+  },
+  "s17": {
+    "message": "While the module owner will review all changes, certain changes should also be reviewed by the super reviewer, in particular:"
+  },
+  "s18": {
+    "message": "API changes (both public API as well as API between modules)"
+  },
+  "s19": {
+    "message": "Major refactoring"
+  },
+  "s20": {
+    "message": "New subprojects"
+  },
+  "s21": {
+    "message": "For these types of changes, the module owner should review first and make sure that all of their comments are addressed, then request a super review."
+  },
+  "s22": {
+    "message": "Super reviews for non-code modules"
+  },
+  "s23": {
+    "message": "There are no reviews for anything happening in non-code modules, but the super reviewers will oversee major projects and communication with other modules and non-developers in a similar fashion. The owner should report to the respective super reviewer on a regular basis."
+  }
+}

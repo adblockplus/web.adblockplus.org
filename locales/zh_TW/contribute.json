@@ -5,6 +5,12 @@
   "title-full": {
     "message": "贊助 Adblock Plus"
   },
+  "s1": {
+    "message": "助力 Adblock Plus　"
+  },
+  "s2": {
+    "message": "Adblock Plus 是一個由社區推動的開源項目。這個項目有很多方面你都可以協助。"
+  },
   "s5": {
     "message": "Adblock Plus 是一個開放原始碼專案的社群，旨在清除廣告、打造對所有人而言更加美好的網際網路。"
   },
@@ -38,9 +44,6 @@
   "s15": {
     "message": "評估非侵入式廣告"
   },
-  "s16": {
-    "message": "口耳相傳"
-  },
   "s17": {
     "message": "儘管沒有人能直接從中獲益，但廣泛地採用廣告過濾軟體將使大舉侵入的廣告顯得毫無用處，達到像今日一樣少的彈出式視窗。"
   },
@@ -62,11 +65,8 @@
   "s23": {
     "message": "向您當地的媒體告知網路上的隱私與安全問題。"
   },
-  "s24": {
-    "message": "回報 bug"
-  },
   "s25": {
-    "message": "若您注意到 Adblock Plus 的行為模式跟預料中的不太一樣時 -- 請 \n          <a>告訴我們</a>。"
+    "message": "若您注意到 Adblock Plus 的行為模式跟預料中的不太一樣時 — 請  <a>告訴我們</a>。"
   },
   "s26": {
     "message": "有些狀況我們也許無法順利重現，因此需要您的協助來找出問題。"
@@ -81,22 +81,19 @@
     "message": "測試開發中版本"
   },
   "s30": {
-    "message": "在新版的 Adblock Plus 正式發布前，總會先釋出一些 \n          <a>開發中版本</a>。"
+    "message": "在新版的 Adblock Plus 正式發布前，總會先釋出一些  <a>開發中版本</a>。"
   },
   "s31": {
     "message": "其目的是在正式釋出前找出 bug 甚至不良的功能設計 。"
   },
   "s32": {
-    "message": "請訂閱 \n          <a>RSS feed</a> 以知悉開發中版本會在何時釋出。"
-  },
-  "s33": {
-    "message": "貢獻程式碼"
+    "message": "請訂閱  <a>RSS feed</a> 以知悉開發中版本會在何時釋出。"
   },
   "s34": {
     "message": "無論是您想修復 bug 或是新增想要的功能，這裡歡迎上述的程式碼貢獻。"
   },
-  "s36": {
-    "message": "幫助其他使用者"
+  "s35": {
+    "message": "與其他貢​​獻方式相比，貢獻代碼所要參與的內容更多，但對此我們高度讚賞。您能做的事兒有很多！一開始不妨查閱一下<a>貢獻代碼</a>頁面。"
   },
   "s37": {
     "message": "如果您是經驗豐富的 Adblock Plus 使用者，也許願意花點時間解答新手的問題。"
@@ -110,23 +107,17 @@
   "s40": {
     "message": "逛逛，那裡總有不少的使用者正在尋找答案。"
   },
-  "s41": {
-    "message": "翻譯 Adblock Plus"
-  },
   "s42": {
-    "message": "目前 Adblock Plus 已被翻譯成 30 種以上的語言 -- 但仍有部份翻譯被棄置，因此我們還需要更多語言的翻譯者。"
+    "message": "目前 Adblock Plus 已被翻譯成 30 種以上的語言 — 但仍有部份翻譯被棄置，因此我們還需要更多語言的翻譯者。"
   },
   "s43": {
-    "message": "如果您想透過這個方式貢獻，請至 \n          <a>Crowdin</a> 註冊並造訪我們的翻譯專案：\n          <a>Adblock Plus for Firefox</a>，\n          <a>Adblock Plus for Chrome</a>，\n          <a>Element Hiding Helper</a>，\n\t  <a>Customizations for Adblock Plus</a>。"
+    "message": "如果您想透過這個方式貢獻，請至  <a>Crowdin</a> 註冊並造訪我們的翻譯專案： <a>Adblock Plus for Firefox</a>， <a>Adblock Plus for Chrome</a>， <a>Element Hiding Helper</a>， <a>Customizations for Adblock Plus</a>。"
   },
   "s44": {
     "message": "請選擇一種語言並開始提交翻譯。"
   },
   "s45": {
     "message": "若您不想翻譯，也可以為其他人所提供的翻譯投票。"
-  },
-  "s46": {
-    "message": "提供建議"
   },
   "s47": {
     "message": "一定還有些東西可以改進，請告訴我們您的想法。"
@@ -153,72 +144,60 @@
     "message": "有了更多資金，我們就能更快速地改進 Adblock Plus。"
   },
   "s55": {
-    "message": "您可以在"
-  },
-  "s56": {
-    "message": "贊助頁面"
+    "message": "您可以在 <a>贊助頁面</a>。"
   },
   "s57": {
-    "message": "。"
-  },
-  "s58": {
-    "message": "新增或改進過濾條件"
-  },
-  "s59": {
     "message": "Adblock Plus 離不開好的過濾條件。"
   },
-  "s60": {
+  "s58": {
     "message": "Adblock PLus 預設阻擋的元素都是由志願者維護的條件集列表定義。"
   },
-  "s61": {
+  "s59": {
     "message": "社群會頻繁地更新這些條件，來保證所有網站上煩人的廣告都能被過濾掉。"
   },
-  "s62": {
+  "s60": {
     "message": "若您進入某網站時發現未被阻擋的廣告，或由過濾條件所引起的問題，請 <a>回報它</a>。"
   },
-  "s63": {
+  "s61": {
     "message": "另外，您也可以"
   },
-  "s64": {
+  "s62": {
     "message": "學習如何自行建立過濾條件"
   },
-  "s65": {
+  "s63": {
     "message": "。"
   },
-  "s66": {
+  "s64": {
     "message": "若您了解 Adblock PLus 的語法，您可以在"
   },
-  "s67": {
+  "s65": {
     "message": "我們的論壇提供一些新過濾條件的建議"
   },
-  "s68": {
+  "s66": {
     "message": "(不必註冊，但還是建議您這麼做)。"
   },
-  "s69": {
+  "s67": {
     "message": "較活躍的貢獻者也許會被提升成條件集維護者的一員。"
   },
-  "s70": {
-    "message": "評估非侵入式廣告"
-  },
-  "s71": {
+  "s69": {
     "message": "Adblock Plus 是 <a>非侵入式廣告</a> 的發起者，旨在支援那些採取較不顯眼廣告的網站。"
   },
-  "s72": {
+  "s70": {
     "message": "任何人都能根據"
   },
-  "s73": {
+  "s71": {
     "message": "嚴謹的規範"
   },
-  "s74": {
+  "s72": {
     "message": "來參與討論評斷何種廣告屬於 <em>非侵入式廣告</em>。"
   },
-  "s75": {
+  "s73": {
     "message": "若您想協助判斷何種廣告屬於非侵入式廣告，及認為某些形式的廣告也可列入其中，請造訪"
   },
-  "s76": {
+  "s74": {
     "message": "論壇"
   },
-  "s77": {
+  "s75": {
     "message": "來分享您的想法。"
   }
 }

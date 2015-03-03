@@ -45,18 +45,9 @@
     "message": "Ecosia extension in version 1.0.3 removes all Adblock Plus filter subscriptions (<a>bug 533419</a>). Solution: update to Ecosia 1.0.4 and <a>add a filter subscription</a> again."
   },
   "s15": {
-    "message": "Firefox/Thunderbird/SeaMonkey builds from some Linux distributions (not the official builds however) will refuse to install Adblock Plus with the message: \"Signing could not be verified\". Solution: update \"nss\" package to the latest version available for your distribution. If that doesn't help,"
+    "message": "Firefox/Thunderbird/SeaMonkey builds from some Linux distributions (not the official builds however) will refuse to install Adblock Plus with the message: \"Signing could not be verified\". Solution: update \"nss\" package to the latest version available for your distribution. If that doesn't help, <a>view certificates</a> in the encryption/certificates tab of the options, select \"StartCom Certification Authority\" under \"Authorities\" and click \"Edit\". Make sure \"This certificate can identify software makers\" is checked and click OK."
   },
   "s16": {
-    "message": "http://support.mozilla.com/en-US/kb/Options+window+-+Advanced+panel#Encryption_tab"
-  },
-  "s17": {
-    "message": "view certificates"
-  },
-  "s18": {
-    "message": "in the encryption/certificates tab of the options, select \"StartCom Certification Authority\" under \"Authorities\" and click \"Edit\". Make sure \"This certificate can identify software makers\" is checked and click OK."
-  },
-  "s19": {
     "message": "Changelog for the previous release"
   }
 }

@@ -1,3 +1,5 @@
+template=minimal
+
 <head>
 <style>
 body
@@ -33,19 +35,19 @@ body
 
 #facebook
 {
-  background-image: url(&quot;/facebook.png&quot;);
+  background-image: url("/facebook.png");
   background-color: #8e9bb2;
 }
 
 #twitter
 {
-  background-image: url(&quot;/twitter.png&quot;);
+  background-image: url("/twitter.png");
   background-color: #64abcb;
 }
 
 #gplus
 {
-  background-image: url(&quot;/googleplus.png&quot;);
+  background-image: url("/googleplus.png");
   background-color: #cf6d5c;
 }
 
@@ -104,7 +106,7 @@ body
 
   function initGooglePlus()
   {
-    
+
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
