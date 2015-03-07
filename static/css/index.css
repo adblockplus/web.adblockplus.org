@@ -13,12 +13,31 @@
   display: inline-block;
 }
 
-#video
+#video, #maxthon-instruction
 {
   background: white;
   padding: 10px;
   border: 1px solid #c9c9c9;
   box-shadow: 1px 1px 0 0 #dbdbdb;
+}
+
+#maxthon-instruction,
+html[lang^="zh_"] #content.maxthon #video,
+#content.maxthon #feature-free,
+#feature-maxthon
+{
+  display: none;
+}
+
+html[lang^="zh_"] #content.maxthon #maxthon-instruction
+{
+  display: inline-block;
+  padding: 0px;
+}
+
+#content.maxthon #feature-maxthon
+{
+  display: inline-block;
 }
 
 #summary h1, #summary h2
@@ -79,6 +98,17 @@ html[dir="rtl"] #summary ul
   background-position: -166px 0px;
 }
 
+.license-note
+{
+  display: none;
+  font-weight: normal;
+}
+
+html[lang="fr"] .license-note.lang-fr
+{
+  display: inline;
+}
+
 html[dir="rtl"] #summary li .sprite
 {
   margin-right: -17px;
@@ -87,7 +117,7 @@ html[dir="rtl"] #summary li .sprite
 
 /* This cannot be just .install-button because a:link will have a higher
    specificity otherwise (overrides text color) */
-#install-container .install-button
+#install .install-button
 {
   display: none;
   position: relative;
@@ -138,16 +168,20 @@ html[dir="rtl"] #summary li .sprite
   bottom: 4px;
 }
 
-#install-container.android .install-button,
-#install-container.firefox.ua-firefox .install-button,
-#install-container.chrome.ua-chrome .install-button,
-#install-container.opera.ua-opera .install-button,
-#install-container.internet-explorer.ua-internet-explorer .install-button,
+#content.android .install-button,
+#content.firefox.ua-firefox .install-button,
+#content.chrome.ua-chrome .install-button,
+#content.opera.ua-opera .install-button,
+#content.internet-explorer.ua-internet-explorer .install-button,
+#content.safari.ua-safari .install-button,
+#content.yandex-browser.ua-yandex-browser .install-button,
 /* IE6 fixes */
-#install-container.firefox_ua-firefox .install-button,
-#install-container.chrome_ua-chrome .install-button,
-#install-container.opera_ua-opera .install-button,
-#install-container.internet-explorer_ua-internet-explorer .install-button
+#content.firefox_ua-firefox .install-button,
+#content.chrome_ua-chrome .install-button,
+#content.opera_ua-opera .install-button,
+#content.internet-explorer_ua-internet-explorer .install-button,
+#content.safari_ua-safari .install-button,
+#content.yandex-browser_ua-yandex-browser .install-button
 {
   background: #62c52b;
   background: -webkit-linear-gradient(top, #62c52b, #4f9d22);
@@ -159,30 +193,38 @@ html[dir="rtl"] #summary li .sprite
   text-shadow: 2px 2px 2px #327d14;
 }
 
-#install-container.android .install-button:hover,
-#install-container.firefox.ua-firefox .install-button:hover,
-#install-container.chrome.ua-chrome .install-button:hover,
-#install-container.opera.ua-opera .install-button:hover,
-#install-container.internet-explorer.ua-internet-explorer .install-button:hover,
+#content.android .install-button:hover,
+#content.firefox.ua-firefox .install-button:hover,
+#content.chrome.ua-chrome .install-button:hover,
+#content.opera.ua-opera .install-button:hover,
+#content.internet-explorer.ua-internet-explorer .install-button:hover,
+#content.safari.ua-safari .install-button:hover,
+#content.yandex-browser.ua-yandex-browser .install-button:hover,
 /* IE6 fixes */
-#install-container.firefox_ua-firefox .install-button:hover,
-#install-container.chrome_ua-chrome .install-button:hover,
-#install-container.opera_ua-opera .install-button:hover,
-#install-container.internet-explorer_ua-internet-explorer .install-button:hover
+#content.firefox_ua-firefox .install-button:hover,
+#content.chrome_ua-chrome .install-button:hover,
+#content.opera_ua-opera .install-button:hover,
+#content.internet-explorer_ua-internet-explorer .install-button:hover,
+#content.safari_ua-safari .install-button:hover,
+#content.yandex-browser_ua-yandex-browser .install-button:hover
 {
   box-shadow: 0px 2px 7px #486c15, 0 1px 0 0 #486c15;
 }
 
-#install-container.android .install-button:active,
-#install-container.firefox.ua-firefox .install-button:active,
-#install-container.chrome.ua-chrome .install-button:active,
-#install-container.opera.ua-opera .install-button:active,
-#install-container.internet-explorer.ua-internet-explorer .install-button:active,
+#content.android .install-button:active,
+#content.firefox.ua-firefox .install-button:active,
+#content.chrome.ua-chrome .install-button:active,
+#content.opera.ua-opera .install-button:active,
+#content.internet-explorer.ua-internet-explorer .install-button:active,
+#content.safari.ua-safari .install-button:active,
+#content.yandex-browser.ua-yandex-browser .install-button:active,
 /* IE6 fixes */
-#install-container.firefox_ua-firefox .install-button:active,
-#install-container.chrome_ua-chrome .install-button:active,
-#install-container.opera_ua-opera .install-button:active
-#install-container.internet-explorer_ua-internet-explorer .install-button:active
+#content.firefox_ua-firefox .install-button:active,
+#content.chrome_ua-chrome .install-button:active,
+#content.opera_ua-opera .install-button:active,
+#content.internet-explorer_ua-internet-explorer .install-button:active,
+#content.safari_ua-safari .install-button:active,
+#content.yandex-browser_ua-yandex-browser .install-button:active
 {
   background: #4f9d22;
   background: -webkit-linear-gradient(bottom, #62c52b, #4f9d22);
@@ -193,11 +235,11 @@ html[dir="rtl"] #summary li .sprite
   box-shadow: 0px 0px 7px #486c15;
 }
 
-#install-container.firefox #install-firefox,
-#install-container.chrome #install-chrome,
-#install-container.opera #install-opera,
-#install-container.android #install-android,
-#install-container.internet-explorer #install-internet-explorer
+#content.firefox #install-firefox, #content.chrome #install-chrome,
+#content.opera #install-opera, #content.android #install-android,
+#content.internet-explorer #install-internet-explorer,
+#content.safari #install-safari,
+#content.yandex-browser #install-yandex-browser
 {
   display: inline-block;
 }
@@ -239,12 +281,12 @@ html[dir="rtl"] #install ul
   display: none;
 }
 
-#install-container.android #information-android
+#content.android #information-android
 {
   display: block;
 }
 
-#install-container.firefox #platform-firefox
+#content.firefox #platform-firefox
 {
   background-position: -108px -68px;
 }
@@ -254,7 +296,7 @@ html[dir="rtl"] #install ul
   background-position: -88px -89px;
 }
 
-#install-container.chrome #platform-chrome
+#content.chrome #platform-chrome
 {
   background-position: -88px -68px;
 }
@@ -264,7 +306,7 @@ html[dir="rtl"] #install ul
   background-position: -68px -89px;
 }
 
-#install-container.android #platform-android
+#content.android #platform-android
 {
   background-position: -68px -68px;
 }
@@ -274,7 +316,7 @@ html[dir="rtl"] #install ul
   background-position: -68px -131px;
 }
 
-#install-container.opera #platform-opera
+#content.opera #platform-opera
 {
   background-position: -68px -110px;
 }
@@ -284,12 +326,44 @@ html[dir="rtl"] #install ul
   background-position: -108px -131px;
 }
 
-#install-container.internet-explorer #platform-internet-explorer
+#content.internet-explorer #platform-internet-explorer
 {
   background-position: -108px -110px;
 }
 
-.warning-platform
+#platform-safari
+{
+  background-position: -88px -131px;
+}
+
+#content.safari #platform-safari
+{
+  background-position: -88px -110px;
+}
+
+#platform-yandex-browser
+{
+  background-position: -128px -89px;
+}
+
+#content.yandex-browser #platform-yandex-browser
+{
+  background-position: -128px -68px;
+}
+
+#platform-maxthon
+{
+  background-position: -128px -130px;
+}
+
+#content.maxthon #platform-maxthon
+{
+  background-position: -128px -109px;
+}
+
+.warning-platform,
+.disclaimer,
+#maxthon-notification
 {
   display: none;
   color: #D00;
@@ -299,27 +373,51 @@ html[dir="rtl"] #install ul
   border-radius: 5px;
 }
 
-#install-container.ua-firefox .warning-platform.firefox,
-#install-container.ua-chrome .warning-platform.chrome,
-#install-container.ua-android .warning-platform.android,
-#install-container.ua-opera .warning-platform.opera,
-#install-container.ua-internet-explorer .warning-platform.internet-explorer
+.disclaimer
+{
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+}
+
+#content.ua-firefox .warning-platform.firefox,
+#content.ua-chrome .warning-platform.chrome,
+#content.ua-android .warning-platform.android,
+#content.ua-opera .warning-platform.opera,
+#content.ua-internet-explorer .warning-platform.internet-explorer,
+#content.ua-safari .warning-platform.safari,
+#content.ua-yandex-browser .warning-platform.yandex-browser,
+#content.ua-maxthon .warning-platform.maxthon,
+html[lang^="zh_"] #maxthon-notification
 {
   display: block;
 }
 
-#install-container.firefox.ua-firefox .warning-platform.firefox,
-#install-container.chrome.ua-chrome .warning-platform.chrome,
-#install-container.android.ua-android .warning-platform.android,
-#install-container.opera.ua-opera .warning-platform.opera,
-#install-container.internet-explorer.ua-internet-explorer .warning-platform.internet-explorer,
+#content.firefox.ua-firefox .warning-platform.firefox,
+#content.chrome.ua-chrome .warning-platform.chrome,
+#content.android.ua-android .warning-platform.android,
+#content.opera.ua-opera .warning-platform.opera,
+#content.internet-explorer.ua-internet-explorer .warning-platform.internet-explorer,
+#content.safari.ua-safari .warning-platform.safari,
+#content.yandex-browser.ua-yandex-browser .warning-platform.yandex-browser,
+#content.maxthon.ua-maxthon .warning-platform.maxthon,
+#content.ua-maxthon #maxthon-notification,
+#content.maxthon #maxthon-notification,
 /* IE6 fixes */
-#install-container.firefox_ua-firefox .warning-platform.firefox,
-#install-container.chrome_ua-chrome .warning-platform.chrome,
-#install-container.opera_ua-opera .warning-platform.opera,
-#install-container.internet-explorer_ua-internet-explorer .warning-platform.internet-explorer
+#content.firefox_ua-firefox .warning-platform.firefox,
+#content.chrome_ua-chrome .warning-platform.chrome,
+#content.opera_ua-opera .warning-platform.opera,
+#content.internet-explorer_ua-internet-explorer .warning-platform.internet-explorer,
+#content.safari_ua-safari .warning-platform.safari,
+#content.yandex-browser_ua-yandex-browser .warning-platform.yandex-browser,
+#content.maxthon_ua-maxthon .warning-platform.maxthon
 {
   display: none;
+}
+
+html[lang="fr"] .disclaimer.lang-fr
+{
+  display: block;
 }
 
 #key-facts section
@@ -360,7 +458,7 @@ html[dir="rtl"] #key-facts section .sprite
   background-position: 0px 0px;
 }
 
-#facts-acceptable-ads
+#facts-privacy
 {
   background-position: 0px -68px;
 }
@@ -452,7 +550,10 @@ html[dir="rtl"] #key-facts section .sprite
 #more-container.chrome #tab-chrome,
 #more-container.opera #tab-opera,
 #more-container.android #tab-android,
-#more-container.internet-explorer #tab-internet-explorer
+#more-container.internet-explorer #tab-internet-explorer,
+#more-container.safari #tab-safari,
+#more-container.yandex-browser #tab-yandex-browser,
+#more-container.maxthon #tab-maxthon
 {
   display: inline-block;
 }
@@ -461,7 +562,10 @@ html[dir="rtl"] #key-facts section .sprite
 #more-container.chrome #more-chrome,
 #more-container.opera #more-opera,
 #more-container.android #more-android,
-#more-container.internet-explorer #more-internet-explorer
+#more-container.internet-explorer #more-internet-explorer,
+#more-container.safari #more-safari,
+#more-container.yandex-browser #more-yandex-browser,
+#more-container.maxthon #more-maxthon
 {
   background-color: #dbd4c7;
 }

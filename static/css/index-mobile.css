@@ -5,7 +5,7 @@
   margin-right: 0;
 }
 
-#video
+#video, #maxthon-instruction
 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -44,7 +44,9 @@
   margin: 0px 10px;
 }
 
-.warning-platform
+.warning-platform,
+#maxthon-notification,
+.disclaimer
 {
   margin: 10px;
 }
