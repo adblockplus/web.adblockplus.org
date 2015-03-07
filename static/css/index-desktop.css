@@ -8,12 +8,12 @@
 
 #main
 {
-  width: 421px;
+  width: 426px;
   height: 307px;
   position: relative;
   float: right;
   margin-left: 0px;
-  margin-right: 8px;
+  margin-right: 3px;
   margin-bottom: 4px;
 }
 
@@ -44,7 +44,14 @@ html[dir="rtl"] #main
 {
   bottom: -2px;
   right: 0;
-  width: 110px;
+  width: 115px;
+}
+
+#content.maxthon #install ul
+{
+  margin-left: 18px;
+  right: auto;
+  width: auto;
 }
 
 #information-android
@@ -53,12 +60,26 @@ html[dir="rtl"] #main
   bottom: -25px;
 }
 
-.warning-platform
+.warning-platform,
+.disclaimer,
+#maxthon-notification
 {
   width: 100%;
   margin-top: 50px;
   margin-bottom: 50px;
   float: right;
+}
+
+html[lang="fr"] .warning-platform,
+html[lang^="zh_"] .warning-platform
+{
+  margin-top: 0px;
+}
+
+html[lang^="zh_"] #content.maxthon .warning-platform,
+html[lang^="zh_"] #content.ua-maxthon .warning-platform
+{
+  margin-top: 50px;
 }
 
 #key-facts
