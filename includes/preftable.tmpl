@@ -1,0 +1,51 @@
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+{% macro display_preftable(preftable, links) %}
+  <table id="preftable">
+    <tbody>
+      <tr>
+        <th width="30%">{{ "prefnamecol"|translate }}</th>
+        <th width="20%">{{ "defaultcol"|translate }}</th>
+        <th width="50%">{{ "descriptioncol"|translate }}</th>
+      </tr>
+      {% for section in preftable %}
+        <tr id="{{ section.id }}">
+          <td class="section" colspan="3">{{ section.title }}</td>
+        </tr>
+        {% for preference in section.preferences %}
+          <tr id="{{ preference.name }}">
+            <td>
+              <span>extensions.</span>
+              <span>adblockplus.</span>
+              <span class="prefname">{{ preference.name }}</span>
+            </td>
+            {% if preference.default %}
+              <td>{{ preference.default }}</td>
+            {% elif preference.default is none or
+                    preference.default is undefined %}
+              <td><em>empty</em></td>
+            {% else %}
+              <td>&nbsp</td>
+            {% endif %}
+            <td>{{ preference.description() }}</td>
+          </tr>
+        {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+{% endmacro %}
