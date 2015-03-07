@@ -1,3 +1,20 @@
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
 <!DOCTYPE html>
 <html lang="{{locale}}" dir="{{"rtl" if config.has_option("rtl", locale) else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
   <head>
@@ -28,15 +45,17 @@
       <link rel="stylesheet" href="/css/empty.css" class="cssfx"/>
     <![endif]-->
 
+    {% block head %}
     {{head|safe}}
+    {% endblock %}
   </head>
 
   <body>
     {% macro pageitem(name) %}
       {% if name == page %}
-        <li class="selected">{{"title"|translate(name)}}</li>
+        <li class="selected">{{name|translate("menu")}}</li>
       {% else %}
-        <li>{{name|linkify}}{{"title"|translate(name)}}</a></li>
+        <li>{{name|linkify}}{{name|translate("menu")}}</a></li>
       {% endif %}
     {% endmacro %}
 
@@ -82,7 +101,7 @@
       </nav>
     </header>
 
-    <div id="content">
+    <div id="content" {% if localefile == "index" %}class="{{page}}"{% endif %}>
       {% if not noheading %}
       <h1>{{title|translate}}</h1>
       {% endif %}
@@ -107,7 +126,9 @@
         {% endif %}
       {% endif %}
 
+      {% block body %}
       {{body|safe}}
+      {% endblock %}
     </div>
 
     <footer>
@@ -116,7 +137,7 @@
           <section class="first">
             <h1>{{"resources"|translate("menu")}}</h1>
             <ul>
-              {% for name in ["screenshots", "documentation", "privacy", "impressum"] %}
+              {% for name in ["acceptable-ads", "documentation", "deployments", "privacy", "impressum"] %}
                 {{pageitem(name)}}
               {% endfor %}
             </ul>
@@ -136,7 +157,6 @@
             <h1>{{"development"|translate("menu")}}</h1>
             <ul>
               {{pageitem("source")}}
-              <li><a href="/forum/viewforum.php?f=11" hreflang="en">{{"bugs"|translate("menu")}}</a></li>
               <li><a href="/category/roadmap/" hreflang="en">{{"roadmap"|translate("menu")}}</a></li>
               {{pageitem("tools")}}
             </ul>
