@@ -591,11 +591,11 @@ function checkCollapse()
 addListener(window, "scroll", checkCollapse, false);
 addListener(window, "resize", checkCollapse, false);
 --></script>
-</head>
 <meta content="$title$" property="title">
 <meta content="$s2$" name="description">
 <meta content="$title$" property="og:title">
 <meta content="$s2$" name="og:description">
+</head>
 
 <style type="text/css">
 .viewcontent *[hidden],
