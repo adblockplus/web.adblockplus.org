@@ -29,6 +29,13 @@ page as [http://localhost:5000/en/about](http://localhost:5000/en/about).
 Repository configuration is stored in the `settings.ini` file. The following
 sections can be defined:
 
+* `[general]`: following settings should be listed here:
+  * `defaultlocale`: The fallback locale, to be used whenever no localized
+    page/strings can be found for a locale.
+  * `defaultpage`: the default page which is displayed by the server if the URL
+    doesn't contain a page name. Note that while the test server will consider
+    that setting automatically, the real server might need to be configured
+    accordingly.
 * `[langnames]`: defines the language names correspoding to particular language
   codes.
 * `[rtl]`: any language codes listed here are treated as right-to-left languages.
