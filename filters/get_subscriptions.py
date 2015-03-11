@@ -18,9 +18,9 @@ import os
 import tarfile
 import urllib
 
-from sitescripts.subscriptions.subscriptionParser import parse_file, calculate_supplemented
-
 def get_subscriptions(_):
+  from sitescripts.subscriptions.subscriptionParser import parse_file, calculate_supplemented
+
   result = {}
   utf8_reader = codecs.getreader('utf8')
   source = urllib.urlopen("https://hg.adblockplus.org/subscriptionlist/archive/default.tar.gz")
