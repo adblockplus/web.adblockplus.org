@@ -1,0 +1,93 @@
+title=Detailed changelog for Adblock Plus 1.2
+
+
+        <p>{{s1 The following lists the major changes compared to Adblock Plus 1.1.3. If you experience issues with this release please check <a href="known-issues">the list of known issues</a>.}}</p>
+
+        <h2 id="interface">{{s2 User interface}}</h2>
+
+        <ul>
+               <li>{{s3 New translations: Bulgarian, Argentinian Spanish}}</li>
+               <li>{{s4 Removed unmaintained translations: Estonian, Persian, Norwegian (Bokmål), Lithuanian}}</li>
+               <li>{{s5 Blocking HTML5 audio/video is now possible via context menu}}</li>
+               <li>{{s6 Added more information to the ABP icon tooltip (<a href="/forum/viewtopic.php?t=3157">forum topic</a>)}}</li>
+               <li>{{s7 Fixed: Some Adblock Plus messages were appearing with the generic &quot;JavaScript Application&quot; title (<a href="/forum/viewtopic.php?t=5122">forum topic</a>)}}</li>
+               <li>{{s8 Simplified status bar panel by removing the hidden &quot;Adblock&quot; text (<a href="http://userstyles.org/styles/2301">user style</a> updated for those who still want to see it)}}</li>
+        </ul>
+
+        <h3 id="subscriptions">{{s9 "Add filter subscription" dialog (also displayed as post-install page)}}</h3>
+
+        <ul>
+               <li>{{s10 Completely redesigned to make this dialog easier to use (<a href="/forum/viewtopic.php?t=4402">forum topic</a>)}}</li>
+               <li>{{s11 Best available subscription recommendation is preselected}}</li>
+               <li>{{s12 In the post-install case: added warning when leaving without adding a filter subscription}}</li>
+               <li>{{s13 Adding "custom" subscriptions is possible in the same dialog now}}</li>
+               <li>{{s14 The complete list of subscriptions loads into the same dialog, visiting the webpage is no longer necessary}}</li>
+               <li>{{s15 Filter subscriptions matching user's locale are highlighted}}</li>
+               <li>{{s16 For supplemental subscriptions: Adding main subscription is suggested if the user isn't subscribed to it yet. Specifying main subscription is also possible with abp: links in webpages (<a href="/forum/viewtopic.php?t=4998">forum topic</a>)}}</li>
+               <li>{{s17 Fixed: "Add filter subscription" page on first install might be closed by session restore}}</li>
+        </ul>
+
+        <h3 id="objtabs">{{s18 "Tabs on Flash and Java" feature}}</h3>
+
+        <ul>
+               <li>{{s19 Improved positioning of tabs, position now adjusts to dynamic changes in the webpage and scrolling}}</li>
+               <li>{{s20 Fixed most conditions where tabs would become invisible due to page layout (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=12910">bug 12910</a>)}}</li>
+               <li>{{s21 Fixed cases where tabs would cause side-effects when showing up (e.g. <a href="https://www.mozdev.org/bugs/show_bug.cgi?id=22246">bug 22246</a>)}}</li>
+               <li>{{s22 Fixed cases where tabs break assumptions made by webpages, particularly Acid3 test (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=22435">bug 22435</a>)}}</li>
+               <li>{{s23 Tabs now fade out when mouse is moved away instead of disappearing immediately}}</li>
+        </ul>
+
+        <h3 id="blockable">{{s24 List of blockable items}}</h3>
+
+        <ul>
+               <li>{{s25 When new tabs are opened browser preferences are respected (particularly whether the tab should be opened in background)}}</li>
+               <li>{{s26 Fixed: Context menu keyboard key wasn't working on the list}}</li>
+               <li>{{s27 Fixed: Search string wasn't remembered when detaching/reattaching (<a href="/forum/viewtopic.php?t=5144">forum topic</a>)}}</li>
+               <li>{{s28 &quot;Disable filter on ...&quot; was mistakenly hidden for some filters (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=22481">bug 22481</a>)}}</li>
+               <li>{{s29 No longer listing disabled filters if Adblock Plus is disabled (<a href="/forum/viewtopic.php?t=5316">forum topic</a>)}}</li>
+               <li>{{s30 Ensured correct functioning even with browser.frames.enabled preference switched off}}</li>
+        </ul>
+
+        <h3 id="preferences">{{s31 Preferences window}}</h3>
+
+        <ul>
+               <li>{{s32 Filter groups like &quot;My Ad Blocking Rules&quot; are automatically re-enabled when the last filter is removed from them (<a href="/forum/viewtopic.php?t=5151">forum topic</a>)}}</li>
+               <li>{{s33 Fixed: Preferences window broken on operating systems with &quot;exotic&quot; regional settings like Georgian (work-around for <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=508783">Mozilla bug 508783</a>)}}</li>
+               <li>{{s34 Fixed: Context menu keyboard key wasn't working on the list}}</li>
+               <li>{{s35 Fixed: Hotkeys like Ctrl+X sometimes wouldn't work until the context menu is opened}}</li>
+        </ul>
+
+        <h3 id="composer">{{s36 Filter composer}}</h3>
+
+        <ul>
+               <li>{{s37 Added &quot;block entire domain&quot; as filter suggestion in addition to &quot;block this server&quot; (<a href="/forum/viewtopic.php?t=5418">forum topic</a>)}}</li>
+        </ul>
+
+        <h3 id="about">{{s38 "About Adblock Plus" dialog}}</h3>
+
+        <ul>
+               <li>{{s39 Changed presentation of the contributors list to make it more compact, significantly less scrolling necessary now}}</li>
+               <li>{{s40 Most parts of the contributors list are populated dynamically now (filter subscription authors from the list of recommended subscriptions, translators from the info in extension's install manifest)}}</li>
+        </ul>
+
+        <h3 id="applications">{{s41 Application support}}</h3>
+
+        <ul>
+               <li>{{s42 Firefox Mobile/Fennec: Adblock Plus status is displayed in identity panel or as a site action (Fennec 1.0 and Fennec 1.1 respectively) and allows enabling/disabling Adblock Plus on a site}}</li>
+               <li>{{s43 Firefox Mobile/Fennec: Made post-install page show up reliably (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=531071">Mozilla bug 531071</a>)}}</li>
+               <li>{{s44 Thunderbird: Positioned toolbar icon with the message actions, that's the more logical place for it}}</li>
+               <li>{{s45 Thunderbird: Made tabs opened from Adblock Plus dialogs open in Thunderbird rather than external browser}}</li>
+               <li>{{s46 SeaMonkey Mail: Opening tabs while no browser window is open now opens a new browser window (same way links in mail are treated)}}</li>
+               <li>{{s47 Songbird: Fixed toolbar icon in the new Purplerain theme (remaining issue is <a href="http://bugzilla.songbirdnest.com/show_bug.cgi?id=20787">Songbird bug 20787</a>)}}</li>
+        </ul>
+
+        <h2 id="core">{{s48 Core}}</h2>
+
+        <ul>
+               <li>{{s49 Implemented a number of performance improvement measures, especially to reduce application startup delay}}</li>
+               <li>{{s50 Added new $elemhide filter option for exception rules, allows disabling all element hiding rules on a page (<a href="/forum/viewtopic.php?t=5421">forum topic</a>)}}</li>
+               <li>{{s51 Subscription download errors are reported to Error Console}}</li>
+               <li>{{s52 Fixed: loading filter rules with separator placeholder (^) is very slow}}</li>
+        </ul>
+
+        <p><a href="changelog-1.1.3">{{s53 Changelog for the previous release}}</a></p>

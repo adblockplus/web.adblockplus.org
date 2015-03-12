@@ -1,0 +1,43 @@
+title=Using Adblock Plus in K-Meleon
+
+
+<h2 id="installation">{{s1 Installation}}</h2>
+
+<p>{{s2 <em>Note</em>: The following Adblock Plus versions will only work in K-Meleon 1.6. To install you need to download a special ZIP package:}}</p>
+
+<p>
+  <a href="/downloads/adblockpluskmeleon-1.3.10.zip">{{s3 Download Adblock Plus}}</a>
+</p>
+
+<p>{{s4 Unpack this package with any ZIP unpacker into the directory of your K-Meleon browser, all files will be placed into the right directories. Then start K-Meleon, it will ask you whether Adblock Plus plugin should be activated — confirm this. That's all, Adblock Plus should work now.}}</p>
+
+<p>
+  {{s5 For K-Meleon 1.5 you can download}}
+  <a href="/downloads/adblockpluskmeleon-1.0.2.zip">Adblock Plus 1.0.2</a>{{s6 .}}
+</p>
+
+        <h2 id="uninstall">{{s7 Uninstalling Adblock Plus}}</h2>
+
+        <p>{{s8 Note that deactivating Adblock Plus plugin will only remove it from the user interface, usually the extension will continue blocking in the background. To uninstall Adblock Plus you need to remove all the files you installed with the ZIP package.}}</p>
+
+        <h2 id="limitations">{{s9 Known differences to Firefox}}</h2>
+
+        <p>{{s10 Adblock Plus currently has a number of limitations in K-Meleon if compared to the Firefox version. The following ones might be fixed by future Adblock Plus versions with more complete K-Meleon support:}}</p>
+
+<ul>
+  <li>{{s11 ABP icon state and list of blockable items do not update correctly if a blank tab is open}}</li>
+  <li>{{s12 Blockable items must stay detached, K-Meleon’s sidebar implementation isn't yet supported}}</li>
+  <li>{{s13 Blockable items window cannot be closed with hotkeys (Esc or Ctrl+Shift+V)}}</li>
+  <li>{{s14 Preferences dialog: "Show in toolbar" option should be hidden}}</li>
+</ul>
+
+<p>{{s15 There are other limitations that are rooted in K-Meleon's architecture and are unlikely to be fixed unless changes are made to K-Meleon:}}</p>
+
+<ul>
+  <li>{{s16 Blockable items window is always on top and refers to all browser windows}}</li>
+  <li>{{s17 Clicking report link after sending off an issue report causes a crash}}</li>
+  <li>{{s18 Size of the "Add filter subscription" dialog changes incorrectly when switching to "Add a different subscription" and back}}</li>
+  <li>{{s19 Status bar icon doesn't have a tooltip}}</li>
+  <li>{{s20 Toolbar icon cannot be hiden via Adblock Plus options, only via View / Toolbars menu}}</li>
+  <li>{{s21 Shortcut key preferences like <a href="preferences#sidebar_key">extensions.adblockplus.sidebar_key</a> use}} <a href="{{s22 http://msdn.microsoft.com/library/en-us/winui/winui/WindowsUserInterface/UserInput/VirtualKeyCodes.asp}}">{{s23 Win32 virtual key codes}}</a> {{s24 instead of Gecko’s virtual key codes}}</li>
+</ul>

@@ -1,0 +1,24 @@
+title=Translate regular expressions back into simple filters
+
+<head>
+<script src="/deregifier.js" type="text/javascript"></script>
+<style type="text/css">
+.hidden {display: none;}
+</style>
+</head>
+<p>{{s1 Starting with Adblock Plus 0.7 matching of simple filters (not regular expressions) has been optimized in such a way that even huge numbers of filters won't slow down your browsing experience. Unfortunately this optimization doesn't work for regular expressions, every regular expression on your list makes browsing with Adblock Plus a little slower. Regular expressions have been used for a long time to "compress" a list of filters, resulting in long and incomprehensible filter rules — this is no longer necessary.}}</p>
+
+<p>{{s2 This page will evaluate a list of filters and try to convert regular expressions into a set of simple filters to improve performance of the list. For example, it will convert the filter}} <code>{{s3 /ad|banner/}}</code> {{s4 into two filters}} <code>{{s5 ad}}</code> {{s6 and}} <code>{{s7 banner}}</code>{{s8 . It will leave regular expressions like}} <code>{{s9 /ads|ad\d+/}}</code> {{s10 unchanged since the expression}} <code>{{s11 \d}}</code> {{s12 doesn't have a direct equivalent in the simple filter syntax and this tool cannot extract parts of regular expressions yet.}}</p>
+
+<p>{{s13 Please open Adblock Plus preferences and mark all the filters you would like to check. Copy them (select Edit — Copy from the menu or press Ctrl+C) and paste them into the text field below. Alternatively you can export your filters and paste the contents of the file into the text field.}}</p>
+
+<p>{{s14 <em>Privacy statement</em>: No data is transmitted to the server. All the necessary calculations are performed on your computer, and your data never leaves it.}}</p>
+
+<p>
+  <textarea cols="80" id="filters" rows="20" style="width: 100%; height: 200px;"></textarea><br>
+  <button onclick="doCheck()" style="float: right;">{{s15 Convert regular expressions}}</button>
+</p>
+
+<p class="hidden">{{s16 Your filter list with regular expressions replaced whereever possible is quoted below. You can copy it and paste into your Adblock Plus preferences (remove existing filters first). Alternatively you can <a id="resultsLink">click here</a> to get the filters on a separate page. Save them as a file and import it in Adblock Plus preferences. It is recommended that you also <a href="redundancy_check">test your list for useless filters</a>.}}</p>
+
+<pre id="results" style="display:none;"></pre>

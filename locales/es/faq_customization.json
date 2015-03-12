@@ -60,15 +60,36 @@
     "message": "Si prefiere los iconos utilizados antes de Adblock Plus 0.7.2 (la cucaracha), puede usar <a>este estilo de usuario</a> para reponerlo (se recomienda usarlo con <a>Stylish</a>). Pero si tienen un icono mejor, puede crear su propio estilo utilizando esta plantilla:"
   },
   "s20": {
-    "message": "Se asume que las imágenes (una con tres iconos de 16×16 y otra con tres iconos de 24×24 apilados verticalmente) están ubicados en el directorio c:\\icons, si no es así tiene que cambiar la dirección. Para aplicar este estilo puede usar <a>Stylish</a> o editar el archivo chrome/userChrome.css en su directorio de perfil (<a>¿dónde está mi directorio de perfil?</a>) y añadir este código. Si no existe el archivo userChrome.css tendrá que crearlo."
+    "message": "Se asume que las imágenes (una con tres iconos de 16×16 y otra con tres iconos de 24×24 apilados verticalmente) están ubicados en el directorio c:\\icons, si no es así tiene que cambiar la dirección. Para aplicar este estilo puede usar <a>Stylish</a> o editar el archivo chrome/userChrome.css en su directorio de perfil ("
   },
   "s21": {
-    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
   },
   "s22": {
-    "message": "¿Cómo puedo cambiar el atajo de teclado para... / añadir un atajo de teclado para desactivar Adblock Plus?"
+    "message": "¿dónde está mi directorio de perfil?"
   },
   "s23": {
-    "message": "Existen tres preferencias ocultas a las que se puede llegar a través de <a>about:config</a> y que definen los atajos de teclado para Adblock Plus <a>extensions.adblockplus.sidebar_key</a> (abrir/cerrar la ventana de elementos bloqueables), <a>extensions.adblockplus.settings_key</a> (abrir el diálogo de Preferencias), y <a>extensions.adblockplus.enable_key</a> (activar/desactivar Adblock Plus). Puede cambiar los tres como desee."
+    "message": ") y añadir este código. Si no existe el archivo userChrome.css tendrá que crearlo."
+  },
+  "s24": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
+  },
+  "s25": {
+    "message": "¿Cómo puedo cambiar el atajo de teclado para... / añadir un atajo de teclado para desactivar Adblock Plus?"
+  },
+  "s26": {
+    "message": "Existen tres preferencias ocultas a las que se puede llegar a través de"
+  },
+  "s27": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s28": {
+    "message": "about:config"
+  },
+  "s29": {
+    "message": "y que definen los atajos de teclado para Adblock Plus <a>extensions.adblockplus.sidebar_key</a> (abrir/cerrar la ventana de elementos bloqueables), <a>extensions.adblockplus.settings_key</a> (abrir el diálogo de Preferencias), y <a>extensions.adblockplus.enable_key</a> (activar/desactivar Adblock Plus). Puede cambiar los tres como desee."
+  },
+  "s30": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   }
 }

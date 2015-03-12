@@ -84,12 +84,21 @@
     "message": "."
   },
   "sidebar_key-s1": {
-    "message": "Определяет горячую клавишу для открытия списка элементов. Этот параметр может быть пустым или иметь вид <em>модификатор1 модификатор2 ключ</em>. Принятые модификаторы: Shift, Accel ( быстрая клавиша по-умолчанию, напр. Ctrl в Windows, Command в Mac OS X), Ctrl/Control, Alt, Meta. Ключом может быть буква или специальная клавиша, как F7 или ВПРАВО (смотрите <a>nsIDOMKeyEvent interface</a> со списком специальных клавиш)."
+    "message": "Определяет горячую клавишу для открытия списка элементов. Этот параметр может быть пустым или иметь вид <em>модификатор1 модификатор2 ключ</em>. Принятые модификаторы: Shift, Accel ( быстрая клавиша по-умолчанию, напр. Ctrl в Windows, Command в Mac OS X), Ctrl/Control, Alt, Meta. Ключом может быть буква или специальная клавиша, как F7 или ВПРАВО (смотрите"
   },
   "sidebar_key-s2": {
-    "message": "Начиная с Adblock Plus 1.3.5 можно указать через запятую несколько горячих клавиш. Adblock Plus будет использовать первую горячую клавишу из списка, которая еще не занята."
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   },
   "sidebar_key-s3": {
+    "message": "nsIDOMKeyEvent interface"
+  },
+  "sidebar_key-s4": {
+    "message": "со списком специальных клавиш)."
+  },
+  "sidebar_key-s5": {
+    "message": "Начиная с Adblock Plus 1.3.5 можно указать через запятую несколько горячих клавиш. Adblock Plus будет использовать первую горячую клавишу из списка, которая еще не занята."
+  },
+  "sidebar_key-s6": {
     "message": "<em>Примечание</em>: Эта настройка будет применена только после перезапуска браузера."
   },
   "filters_key-s1": {
@@ -98,11 +107,17 @@
   "filters_key-s2": {
     "message": "."
   },
+  "filters_key-s3": {
+    "message": "<em>Примечание</em>: Эта настройка будет применена только после перезапуска браузера."
+  },
   "enable_key-s1": {
     "message": "Определяет горячую клавишу для включения/отключения Adblock Plus. Для описания возможных значений смотрите"
   },
   "enable_key-s2": {
     "message": "."
+  },
+  "enable_key-s3": {
+    "message": "<em>Примечание</em>: Эта настройка будет применена только после перезапуска браузера."
   },
   "flash_scrolltoitem-s1": {
     "message": "Определяет, должны ли \"Границы Flash-объектов\" в списке блокируемых элементов пытаться переместить объект в поле зрения."
@@ -142,6 +157,9 @@
   },
   "sendReport_key-s3": {
     "message": "."
+  },
+  "sendReport_key-s4": {
+    "message": "<em>Примечание</em>: Эта настройка будет применена только после перезапуска браузера."
   },
   "data_directory-s1": {
     "message": "Папка, в которой Adblock Plus будет хранить свои данные. Это может быть абсолютный путь или расположение папки относительно профиля пользователя. Если установлена настройка \nIf"
@@ -218,11 +236,53 @@
   "blocklocalpages-s1": {
     "message": "Не используется в Adblock Plus 0.7.5 и выше"
   },
+  "blocktypes-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
+  "checkedadblockprefs-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
+  "checkedadblocksync-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
+  "grouporder-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
+  "linktypes-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
+  "localschemes-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
+  "noncollapsabletypes-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
+  "patterns-s1": {
+    "message": "Не используется в Adblock Plus 0.7.5 и выше"
+  },
   "linkcheck-s1": {
     "message": "Не используется в Adblock Plus 0.7.5.4 и выше"
   },
   "checkedadblockinstalled-s1": {
     "message": "Не используется в Adblock Plus 1.0 и выше"
+  },
+  "checktoolbar-s1": {
+    "message": "Не используется в Adblock Plus 1.0 и выше"
+  },
+  "protectchrome-s1": {
+    "message": "Не используется в Adblock Plus 1.0 и выше"
+  },
+  "showsubscriptions-s1": {
+    "message": "Не используется в Adblock Plus 1.0 и выше"
+  },
+  "warnregexp-s1": {
+    "message": "Не используется в Adblock Plus 1.0 и выше"
+  },
+  "showintoolbar-s1": {
+    "message": "Не используется в Adblock Plus 2.0 и выше"
+  },
+  "settings_key-s1": {
+    "message": "Не используется в Adblock Plus 2.0 и выше"
   },
   "hideimagemanager-s1": {
     "message": "Не используется в Adblock Plus 2.1 и выше"

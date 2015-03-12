@@ -29,6 +29,9 @@
   "getSubscriptionAtDescription-s1": {
     "message": "필터 목록에서 그것의 위치(포지션)에 의해 구독 필터 검색"
   },
+  "getSubscriptionAt_returnDescription-s1": {
+    "message": "요청된 구독 필터 또는"
+  },
   "getSubscriptionAt_returnDescription-s2": {
     "message": "null"
   },
@@ -73,6 +76,9 @@
   },
   "removeExternalSubscription_returnDescription-s4": {
     "message": "는 그러한 구독 필터가 존재하지 않거나 구독 필터가 외부적으로 관리되지 않을 때입니다."
+  },
+  "removeExternalSubscription_idDescription-s1": {
+    "message": "구독 필터 식별자 (외부 구독 필터의 경우 이것은 어떠한 모든 문자열이 될 수 있음)"
   },
   "addPatternsDescription-s1": {
     "message": "사용자가 정의한 필터 목록으로 패턴 추가"

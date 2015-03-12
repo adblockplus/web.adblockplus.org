@@ -1,3 +1,5 @@
+title=Adblock Plus preferences
+
 {#
  # This file is part of the Adblock Plus website,
  # Copyright (C) 2006-2015 Eyeo GmbH
@@ -53,285 +55,285 @@
 }
 </style>
 
-<p>{{"s1"|translate}} <a href="{{"s2"|translate}}">about:config</a>{{"s3"|translate}}</p>
+<p>{{"The following table lists and explains all preferences that are used by Adblock Plus. These preferences can be viewed and changed via"|translate("s1")}} <a href="{{"http://kb.mozillazine.org/About:config"|translate("s2")}}">about:config</a>{{"."|translate("s3")}}</p>
 
 {% macro enabledDescription() %}
-{{"enabled-s1"|translate}}
+{{"Value of the \"Enable Adblock Plus\" option"|translate("enabled-s1")}}
 {% endmacro %}
 
 {% macro frameobjectsDescription() %}
-{{"frameobjects-s1"|translate}}
+{{"Value of the \"Show tabs on Flash and Java\" option"|translate("frameobjects-s1")}}
 {% endmacro %}
 
 {% macro showinstatusbarDescription() %}
-{{"showinstatusbar-s1"|translate}}
+{{"Value of the \"Show in status bar\" option"|translate("showinstatusbar-s1")}}
 {% endmacro %}
 
 {% macro savestatsDescription() %}
-{{"savestats-s1"|translate}}
+{{"Value of the \"Count filter hits\" option"|translate("savestats-s1")}}
 {% endmacro %}
 
 {% macro synchronizationintervalDescription() %}
-{{"synchronizationinterval-s1"|translate}}
+{{"Unused in Adblock Plus 2.0 and higher"|translate("synchronizationinterval-s1")}}
 {% endmacro %}
 
 {% macro patternsfileDescription() %}
-{{"patternsfile-s1"|translate}}
+{{"Name of the file that should be used to store the list of filters. This can be either an absolute path, or it can be file's location relative to the user's profile."|translate("patternsfile-s1")}}
 {% endmacro %}
 
 {% macro patternsbackupsDescription() %}
-{{"patternsbackups-s1"|translate}}
+{{"Number of backups for patterns.ini that should be kept. If this is 0, backups will be disabled."|translate("patternsbackups-s1")}}
 {% endmacro %}
 
 {% macro patternsbackupintervalDescription() %}
-{{"patternsbackupinterval-s1"|translate}}
+{{"Minimal interval between two backups of patterns.ini (in hours)"|translate("patternsbackupinterval-s1")}}
 {% endmacro %}
 
 {% macro defaulttoolbaractionDescription() %}
-{{"defaulttoolbaraction-s1"|translate}}<br>
+{{"Defines the action that should be executed when the toolbar icon is clicked. Possible values are:"|translate("defaulttoolbaraction-s1")}}<br>
 
  <br>
 
-{{"defaulttoolbaraction-s2"|translate}}<br>
+{{"0 — show menu"|translate("defaulttoolbaraction-s2")}}<br>
 
-{{"defaulttoolbaraction-s3"|translate}}<br>
+{{"1 — open/close blockable items"|translate("defaulttoolbaraction-s3")}}<br>
 
-{{"defaulttoolbaraction-s4"|translate}}<br>
+{{"2 — show Preferences dialog"|translate("defaulttoolbaraction-s4")}}<br>
 
-{{"defaulttoolbaraction-s5"|translate}}<br>
+{{"3 — enable/disable Adblock Plus"|translate("defaulttoolbaraction-s5")}}<br>
 
-{{"defaulttoolbaraction-s6"|translate}}
+{{"anything else — do nothing"|translate("defaulttoolbaraction-s6")}}
 {% endmacro %}
 
 {% macro defaultstatusbaractionDescription() %}
-{{"defaultstatusbaraction-s1"|translate}} <a href="#defaulttoolbaraction">defaulttoolbaraction</a>{{"defaultstatusbaraction-s2"|translate}}
+{{"Defines the action that should be executed when the status bar icon is clicked. For list of possible values\n    see"|translate("defaultstatusbaraction-s1")}} <a href="#defaulttoolbaraction">defaulttoolbaraction</a>{{"."|translate("defaultstatusbaraction-s2")}}
 {% endmacro %}
 
 {% macro sidebar_keyDescription() %}
-{{"sidebar_key-s1"|translate(links=["http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"])}} {{"sidebar_key-s2"|translate}}<br>
+{{"Defines the keyboard shortcut to be used to open blockable items. This preference can be empty or it can be of the form <em>modifier1 modifier2 key</em>. Recognized modifiers are: Shift, Accel (default accelerator key, e.g. Ctrl on Windows, Command on Mac OS X), Ctrl/Control, Alt, Meta. Key can be either a letter or a special key like F7 or RIGHT (see"|translate("sidebar_key-s1")}} <a href="{{"http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"|translate("sidebar_key-s2")}}">{{"nsIDOMKeyEvent interface"|translate("sidebar_key-s3")}}</a> {{"for a list of special keys)."|translate("sidebar_key-s4")}} {{"Starting with Adblock Plus 1.3.5 multiple comma-separated shortcuts can be specified, the first available keyboard shortcut from the list will be used."|translate("sidebar_key-s5")}}<br>
 
  <br>
 
- {{"sidebar_key-s3"|translate}}
+ {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("sidebar_key-s6")}}
 {% endmacro %}
 
 {% macro filters_keyDescription() %}
-{{"filters_key-s1"|translate}} <a href="#sidebar_key">sidebar_key</a>{{"filters_key-s2"|translate}}<br>
+{{"Defines the keyboard shortcut to be used to open Filter Preferences dialog. For description of possible values see"|translate("filters_key-s1")}} <a href="#sidebar_key">sidebar_key</a>{{"."|translate("filters_key-s2")}}<br>
 
  <br>
 
- {{"sidebar_key-s3"|translate}}
+ {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("filters_key-s3")}}
 {% endmacro %}
 
 {% macro enable_keyDescription() %}
-{{"enable_key-s1"|translate}} <a href="#sidebar_key">sidebar_key</a>{{"enable_key-s2"|translate}}<br>
+{{"Defines the keyboard shortcut to be used to enable/disable Adblock Plus. For description of possible values see"|translate("enable_key-s1")}} <a href="#sidebar_key">sidebar_key</a>{{"."|translate("enable_key-s2")}}<br>
 
  <br>
 
- {{"sidebar_key-s3"|translate}}
+ {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("enable_key-s3")}}
 {% endmacro %}
 
 {% macro flash_scrolltoitemDescription() %}
-{{"flash_scrolltoitem-s1"|translate}}
+{{"Defines whether \"Flash item's borders\" in the list of blockable items should try to scroll the item into view."|translate("flash_scrolltoitem-s1")}}
 {% endmacro %}
 
 {% macro previewimagesDescription() %}
-{{"previewimages-s1"|translate}}
+{{"Defines whether the tooltip in the list of blockable items should show the image that the item represents."|translate("previewimages-s1")}}
 {% endmacro %}
 
 {% macro clearStatsOnHistoryPurgeDescription() %}
-{{"clearStatsOnHistoryPurge-s1"|translate}} <code>{{"clearStatsOnHistoryPurge-s2"|translate}}</code>{{"clearStatsOnHistoryPurge-s3"|translate}}
+{{"If"|translate("clearStatsOnHistoryPurge-s1")}} <code>{{"true"|translate("clearStatsOnHistoryPurge-s2")}}</code>{{", clearing browsing history will also clear hit statistics for Adblock Plus filters. Note that the hit statistics often allow deducing which sites the user visited, when and how often."|translate("clearStatsOnHistoryPurge-s3")}}
 {% endmacro %}
 
 {% macro composer_defaultDescription() %}
-{{"composer_default-s1"|translate}}<br>
+{{"Determines which suggestion should be selected in the filter composer by default:"|translate("composer_default-s1")}}<br>
 
  <br>
 
-{{"composer_default-s2"|translate}}<br>
+{{"0 — custom pattern"|translate("composer_default-s2")}}<br>
 
-{{"composer_default-s3"|translate}}<br>
+{{"1 — exact address only"|translate("composer_default-s3")}}<br>
 
-{{"composer_default-s4"|translate}}<br>
+{{"2 — entire directory"|translate("composer_default-s4")}}<br>
 
-{{"composer_default-s5"|translate}}
+{{"3 — entire site"|translate("composer_default-s5")}}
 {% endmacro %}
 
 {% macro sendReport_keyDescription() %}
-{{"sendReport_key-s1"|translate}} {{"sendReport_key-s2"|translate}} <a href="#sidebar_key">sidebar_key</a>{{"sendReport_key-s3"|translate}}
+{{"Defines the keyboard shortcut to be used to send issue reports."|translate("sendReport_key-s1")}} {{"For\ndescription of possible values see"|translate("sendReport_key-s2")}} <a href="#sidebar_key">sidebar_key</a>{{"."|translate("sendReport_key-s3")}}
 <br><br>
 
-{{"sidebar_key-s3"|translate}}
+{{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("sendReport_key-s4")}}
 {% endmacro %}
 
 {% macro data_directoryDescription() %}
-{{"data_directory-s1"|translate}} <a href="#patternsfile">patternsfile</a> {{"data_directory-s2"|translate}}
+{{"The directory where Adblock Plus should store its data.  This can be either an\nabsolute path, or it can a directory location relative to the user's profile.\nIf"|translate("data_directory-s1")}} <a href="#patternsfile">patternsfile</a> {{"preference is set it will override\nthe location for patterns.ini file while other files stay in this directory."|translate("data_directory-s2")}}
 {% endmacro %}
 
 {% macro subscriptions_exceptionscheckboxDescription() %}
-{{"subscriptions_exceptionscheckbox-s1"|translate}} <code>true</code>{{"subscriptions_exceptionscheckbox-s2"|translate(links=["acceptable-ads"])}}
+{{"If"|translate("subscriptions_exceptionscheckbox-s1")}} <code>true</code>{{", the filter list for <a href=\"acceptable-ads\">non-intrusive ads</a>\nwill get special treatment and will be displayed as a checkbox in the user\ninterface."|translate("subscriptions_exceptionscheckbox-s2")}}
 {% endmacro %}
 
 {% macro subscriptions_autoupdateDescription() %}
-{{"subscriptions_autoupdate-s1"|translate}}<br><br>
+{{"Defines whether filters in filter subscriptions will be updated\nautomatically."|translate("subscriptions_autoupdate-s1")}}<br><br>
 
-{{"subscriptions_autoupdate-s2"|translate}}
+{{"<em>Note</em>: Disabling updates is not recommended."|translate("subscriptions_autoupdate-s2")}}
 {% endmacro %}
 
 {% macro please_kill_startup_performanceDescription() %}
-{{"please_kill_startup_performance-s1"|translate}} <code>true</code> {{"please_kill_startup_performance-s2"|translate}} {{"please_kill_startup_performance-s3"|translate}}
+{{"If set to"|translate("please_kill_startup_performance-s1")}} <code>true</code> {{"processing filters on startup will happen synchronously and delay browser startup."|translate("please_kill_startup_performance-s2")}} {{"Changing this setting is not recommended but it makes it less likely that ads will appear on the first page loaded by the browser."|translate("please_kill_startup_performance-s3")}}
 {% endmacro %}
 
 {% macro fastcollapseDescription() %}
-{{"please_kill_startup_performance-s1"|translate}} <code>true</code> {{"fastcollapse-s2"|translate}} {{"fastcollapse-s3"|translate}} {{"fastcollapse-s4"|translate}}
+{{"If set to"|translate("fastcollapse-s1")}} <code>true</code> {{"blocked elements will no longer be hidden."|translate("fastcollapse-s2")}} {{"This might have the effect that\nplaceholders will show up for blocked images for example, unless hidden by other means."|translate("fastcollapse-s3")}} {{"This functionality was available\nas \"Hide placeholders of blocked elements\" before Adblock Plus 2.6.7."|translate("fastcollapse-s4")}}
 {% endmacro %}
 
 {% macro currentVersionDescription() %}
-{{"currentVersion-s1"|translate}}
+{{"Stores the last used Adblock Plus version, this will trigger actions that need to be done on upgrade or first install"|translate("currentVersion-s1")}}
 {% endmacro %}
 
 {% macro detachsidebarDescription() %}
-{{"detachsidebar-s1"|translate}} <tt>{{"detachsidebar-s2"|translate}}</tt> {{"detachsidebar-s3"|translate}}
+{{"Stores state of the list of blockable items —"|translate("detachsidebar-s1")}} <tt>{{"true"|translate("detachsidebar-s2")}}</tt> {{"means detached"|translate("detachsidebar-s3")}}
 {% endmacro %}
 
 {% macro recentReportsDescription() %}
-{{"recentReports-s1"|translate}}
+{{"JSON-encoded data on recently submitted issue reports (address of the report,\nwebsite reported and time of submission)"|translate("recentReports-s1")}}
 {% endmacro %}
 
 {% macro hideContributeButtonDescription() %}
-{{"hideContributeButton-s1"|translate}} <code>true</code> {{"hideContributeButton-s2"|translate}}
+{{"This is set to"|translate("hideContributeButton-s1")}} <code>true</code> {{"if the user chose to hide the\nContribute button."|translate("hideContributeButton-s2")}}
 {% endmacro %}
 
 {% macro blockableItemsSizeDescription() %}
-{{"blockableItemsSize-s1"|translate}}
+{{"Remembered size of the Blockable Items list (width setting is only relevant when\ndisplayed as a sidebar)."|translate("blockableItemsSize-s1")}}
 {% endmacro %}
 
 {% macro subscriptions_fallbackurlDescription() %}
-{{"subscriptions_fallbackurl-s1"|translate}} <a href="#subscriptions_fallbackerrors">subscriptions_fallbackerrors</a>{{"subscriptions_fallbackurl-s2"|translate}}
+{{"Address of the script that should be consulted if a subscription fails to download a certain number of times (see"|translate("subscriptions_fallbackurl-s1")}} <a href="#subscriptions_fallbackerrors">subscriptions_fallbackerrors</a>{{"). %s is replaced by the address of the subscription in question. The script should print something like \"301 http://example.com/new_list.txt\" if the new location of the subscription is known."|translate("subscriptions_fallbackurl-s2")}}
 {% endmacro %}
 
 {% macro subscriptions_fallbackerrorsDescription() %}
-{{"subscriptions_fallbackerrors-s1"|translate}} <a href="#subscriptions_fallbackurl">subscriptions_fallbackurl</a>{{"subscriptions_fallbackerrors-s2"|translate}}
+{{"Sets the required number of failed subscription download attempts before the fallback script (see"|translate("subscriptions_fallbackerrors-s1")}} <a href="#subscriptions_fallbackurl">subscriptions_fallbackurl</a>{{") will be consulted for the new address of the subscription. Note that Adblock Plus will always retry a download one day after a failed download attempt."|translate("subscriptions_fallbackerrors-s2")}}
 {% endmacro %}
 
 {% macro subscriptions_listurlDescription() %}
-{{"subscriptions_listurl-s1"|translate}}
+{{"Address to download the complete list of filter subscriptions from."|translate("subscriptions_listurl-s1")}}
 {% endmacro %}
 
 {% macro whitelistschemesDescription() %}
-{{"whitelistschemes-s1"|translate}}
+{{"List of URL schemes that shouldn't be blocked (applied to both whole documents and to item locations)"|translate("whitelistschemes-s1")}}
 {% endmacro %}
 
 {% macro documentation_linkDescription() %}
-{{"documentation_link-s1"|translate}} {{"documentation_link-s2"|translate}}
+{{"Address on adblockplus.org to be opened for documentation links."|translate("documentation_link-s1")}} {{"It will\nredirect to the actual documentation location depending on the language used."|translate("documentation_link-s2")}}
 {% endmacro %}
 
 {% macro report_submiturlDescription() %}
-{{"report_submiturl-s1"|translate}}
+{{"Address on adblockplus.org to submit issue reports to."|translate("report_submiturl-s1")}}
 {% endmacro %}
 
 {% macro subscriptions_exceptionsurlDescription() %}
-{{"subscriptions_exceptionsurl-s1"|translate(links=["acceptable-ads"])}}
+{{"Location of the filter list used to\n<a href=\"acceptable-ads\">allow non-intrusive ads</a>."|translate("subscriptions_exceptionsurl-s1")}}
 {% endmacro %}
 
 {% macro notificationurlDescription() %}
-{{"notificationurl-s1"|translate}}
+{{"Location of the file containing emergency notifications."|translate("notificationurl-s1")}}
 {% endmacro %}
 
 {% macro notificationdataDescription() %}
-{{"notificationdata-s1"|translate}}
+{{"Current emergency notification data."|translate("notificationdata-s1")}}
 {% endmacro %}
 
 {% macro subscriptions_antiadblockurlDescription() %}
-{{"subscriptions_antiadblockurl-s1"|translate}}
+{{"Location of the subscription that hides anti adblock messages."|translate("subscriptions_antiadblockurl-s1")}}
 {% endmacro %}
 
 {% macro blocklocalpagesDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("blocklocalpages-s1")}}
 {% endmacro %}
 
 {% macro blocktypesDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("blocktypes-s1")}}
 {% endmacro %}
 
 {% macro checkedadblockprefsDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("checkedadblockprefs-s1")}}
 {% endmacro %}
 
 {% macro checkedadblocksyncDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("checkedadblocksync-s1")}}
 {% endmacro %}
 
 {% macro grouporderDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("grouporder-s1")}}
 {% endmacro %}
 
 {% macro linktypesDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("linktypes-s1")}}
 {% endmacro %}
 
 {% macro localschemesDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("localschemes-s1")}}
 {% endmacro %}
 
 {% macro noncollapsabletypesDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("noncollapsabletypes-s1")}}
 {% endmacro %}
 
 {% macro patternsDescription() %}
-{{"blocklocalpages-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5 and higher"|translate("patterns-s1")}}
 {% endmacro %}
 
 {% macro linkcheckDescription() %}
-{{"linkcheck-s1"|translate}}
+{{"Unused in Adblock Plus 0.7.5.4 and higher"|translate("linkcheck-s1")}}
 {% endmacro %}
 
 {% macro checkedadblockinstalledDescription() %}
-{{"checkedadblockinstalled-s1"|translate}}
+{{"Unused in Adblock Plus 1.0 and higher"|translate("checkedadblockinstalled-s1")}}
 {% endmacro %}
 
 {% macro checktoolbarDescription() %}
-{{"checkedadblockinstalled-s1"|translate}}
+{{"Unused in Adblock Plus 1.0 and higher"|translate("checktoolbar-s1")}}
 {% endmacro %}
 
 {% macro protectchromeDescription() %}
-{{"checkedadblockinstalled-s1"|translate}}
+{{"Unused in Adblock Plus 1.0 and higher"|translate("protectchrome-s1")}}
 {% endmacro %}
 
 {% macro showsubscriptionsDescription() %}
-{{"checkedadblockinstalled-s1"|translate}}
+{{"Unused in Adblock Plus 1.0 and higher"|translate("showsubscriptions-s1")}}
 {% endmacro %}
 
 {% macro warnregexpDescription() %}
-{{"checkedadblockinstalled-s1"|translate}}
+{{"Unused in Adblock Plus 1.0 and higher"|translate("warnregexp-s1")}}
 {% endmacro %}
 
 {% macro showintoolbarDescription() %}
-{{"synchronizationinterval-s1"|translate}}
+{{"Unused in Adblock Plus 2.0 and higher"|translate("showintoolbar-s1")}}
 {% endmacro %}
 
 {% macro settings_keyDescription() %}
-{{"synchronizationinterval-s1"|translate}}
+{{"Unused in Adblock Plus 2.0 and higher"|translate("settings_key-s1")}}
 {% endmacro %}
 
 {% macro hideimagemanagerDescription() %}
-{{"hideimagemanager-s1"|translate}}
+{{"Unused in Adblock Plus 2.1 and higher"|translate("hideimagemanager-s1")}}
 {% endmacro %}
 
 {% macro lastRuleUpdateDescription() %}
-{{"lastRuleUpdate-s1"|translate}}
+{{"Unused in Adblock Plus 2.3 and higher"|translate("lastRuleUpdate-s1")}}
 {% endmacro %}
 
 {% macro correctTyposAskedDescription() %}
-{{"lastRuleUpdate-s1"|translate}}
+{{"Unused in Adblock Plus 2.3 and higher"|translate("correctTyposAsked-s1")}}
 {% endmacro %}
 
 {% macro correctTyposDescription() %}
-{{"lastRuleUpdate-s1"|translate}}
+{{"Unused in Adblock Plus 2.3 and higher"|translate("correctTypos-s1")}}
 {% endmacro %}
 
 {% macro whitelistDescription() %}
-{{"lastRuleUpdate-s1"|translate}}
+{{"Unused in Adblock Plus 2.3 and higher"|translate("whitelist-s1")}}
 {% endmacro %}
 
 
@@ -345,7 +347,7 @@
 {{ display_preftable([
   {
     "id": "visible_options",
-    "title": 'visible_optionsTitle'|translate,
+    "title": 'Visible options'|translate('visible_optionsTitle'),
     "preferences": [
       {
         "name": "enabled",
@@ -371,7 +373,7 @@
   },
   {
     "id": "hidden_options",
-    "title": 'hidden_optionsTitle'|translate,
+    "title": 'Hidden options'|translate('hidden_optionsTitle'),
     "preferences": [
       {
         "name": "clearStatsOnHistoryPurge",
@@ -472,7 +474,7 @@
   },
   {
     "id": "remembered_actions",
-    "title": 'remembered_actionsTitle'|translate,
+    "title": 'Remembered actions'|translate('remembered_actionsTitle'),
     "preferences": [
       {
         "name": "blockableItemsSize",
@@ -503,7 +505,7 @@
   },
   {
     "id": "internal_preferences",
-    "title": 'internal_preferencesTitle'|translate,
+    "title": 'Internal preferences (don\'t change unless you really know what you are doing)'|translate('internal_preferencesTitle'),
     "preferences": [
       {
         "name": "documentation_link",
@@ -559,7 +561,7 @@
   },
   {
     "id": "removed_preferences",
-    "title": 'removed_preferencesTitle'|translate,
+    "title": 'Removed preferences'|translate('removed_preferencesTitle'),
     "preferences": [
       {
         "name": "blocklocalpages",

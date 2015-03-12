@@ -84,12 +84,21 @@
     "message": "。"
   },
   "sidebar_key-s1": {
-    "message": "定義用來開啟「本頁可阻擋項目」的快捷鍵。這個值可以設定成 <em>modifier1 modifier2 key</em> 或留白。可用的 modifier 有 Shift，Accel(預設的快捷鍵按鈕，如 Windows 上的 Ctrl ， MAC OS X 上的 Command)，Ctrl/Control，Alt，Meta。也可以設定成其他按鍵像是 F7 或右方向鍵等等 (請參考 <a>nsIDOMKeyEvent interface</a> 取得所有的特殊鍵)。"
+    "message": "定義用來開啟「本頁可阻擋項目」的快捷鍵。這個值可以設定成 <em>modifier1 modifier2 key</em> 或留白。可用的 modifier 有 Shift，Accel(預設的快捷鍵按鈕，如 Windows 上的 Ctrl ， MAC OS X 上的 Command)，Ctrl/Control，Alt，Meta。也可以設定成其他按鍵像是 F7 或右方向鍵等等 (請參考"
   },
   "sidebar_key-s2": {
-    "message": "Adblock Plus 1.3.5 開始支援多個快捷鍵設定，請以逗點隔開。當第一組設定被佔用時將會自動改成下一組設定。"
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   },
   "sidebar_key-s3": {
+    "message": "nsIDOMKeyEvent interface"
+  },
+  "sidebar_key-s4": {
+    "message": "取得所有的特殊鍵)。"
+  },
+  "sidebar_key-s5": {
+    "message": "Adblock Plus 1.3.5 開始支援多個快捷鍵設定，請以逗點隔開。當第一組設定被佔用時將會自動改成下一組設定。"
+  },
+  "sidebar_key-s6": {
     "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
   },
   "filters_key-s1": {
@@ -98,11 +107,17 @@
   "filters_key-s2": {
     "message": "以取得所有可用的值。"
   },
+  "filters_key-s3": {
+    "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
+  },
   "enable_key-s1": {
     "message": "定義啟用/停用 Adblock Plus 的快捷鍵。完整的設定值請參考"
   },
   "enable_key-s2": {
     "message": "。"
+  },
+  "enable_key-s3": {
+    "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
   },
   "flash_scrolltoitem-s1": {
     "message": "是否捲動至由「本頁可阻擋項目」中選中的物件。"
@@ -142,6 +157,9 @@
   },
   "sendReport_key-s3": {
     "message": "。"
+  },
+  "sendReport_key-s4": {
+    "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
   },
   "data_directory-s1": {
     "message": "Adblock Plus 使用這個資料夾來儲存資料。它可以是絕對路徑或者是個人設定檔中的相對路徑。若"
@@ -218,11 +236,53 @@
   "blocklocalpages-s1": {
     "message": "Adblock Plus 0.7.5 以上版本不再使用"
   },
+  "blocktypes-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
+  "checkedadblockprefs-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
+  "checkedadblocksync-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
+  "grouporder-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
+  "linktypes-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
+  "localschemes-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
+  "noncollapsabletypes-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
+  "patterns-s1": {
+    "message": "Adblock Plus 0.7.5 以上版本不再使用"
+  },
   "linkcheck-s1": {
     "message": "Adblock Plus 0.7.5.4 以上版本不再使用"
   },
   "checkedadblockinstalled-s1": {
     "message": "Adblock Plus 1.0 以上版本不再使用"
+  },
+  "checktoolbar-s1": {
+    "message": "Adblock Plus 1.0 以上版本不再使用"
+  },
+  "protectchrome-s1": {
+    "message": "Adblock Plus 1.0 以上版本不再使用"
+  },
+  "showsubscriptions-s1": {
+    "message": "Adblock Plus 1.0 以上版本不再使用"
+  },
+  "warnregexp-s1": {
+    "message": "Adblock Plus 1.0 以上版本不再使用"
+  },
+  "showintoolbar-s1": {
+    "message": "Adblock Plus 2.0 以上版本不再使用"
+  },
+  "settings_key-s1": {
+    "message": "Adblock Plus 2.0 以上版本不再使用"
   },
   "hideimagemanager-s1": {
     "message": "Adblock Plus 2.1 以上版本不再使用"

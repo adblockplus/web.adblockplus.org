@@ -1,0 +1,32 @@
+title=Find useless filters
+
+<head>
+<script src="/redundancyCheck.js" type="text/javascript"></script>
+<script src="/FilterClasses.jsm" type="text/javascript"></script>
+<style type="text/css">
+  #strings {display: none;}
+  .hidden {display: none;}
+</style>
+</head>
+<div id="strings" reportInvalid="{{s1 '{filter}' is invalid}}" reportNothingFound="{{s3 No useless filters have been found}}" reportRedundant="{{s2 '{filter1}' has been made redundant by '{filter2}'}}" statusFinished="{{s7 Finished}}" statusParsing="{{s4 Preparing check...}}" statusPrinting="{{s6 Preparing list of results...}}" statusTesting="{{s5 Testing filter {current} of {count}}}"></div>
+
+<p>{{s8 This page will evaluate a list of filters to find out which filters can be removed. It can detect cases like}} <code>{{s9 http://example.com/ads/*}}</code> {{s10 and}} <code>{{s11 */ads/*}}</code> {{s12 where the first filter is made redundant by the second. In the end it will give you your list with the useless filters removed.}}</p>
+
+<p>{{s13 This tool has some limitations. It cannot evaluate element hiding filters and will always leave those unchanged. It is also unable to determine whether a regular expression can be removed, although it can detect when a simple filter can be removed due to a regular expression.}}</p>
+
+<p>{{s14 Please open Adblock Plus preferences and mark all the filters you would like to check. Copy them (select Edit — Copy from the menu or press Ctrl+C) and paste them into the text field below. Alternatively you can export your filters and paste the contents of the file into the text field.}}</p>
+
+<p>{{s15 <em>Privacy statement</em>: No data is transmitted to the server. All the necessary calculations are performed on your computer, and your data never leaves it.}}</p>
+
+<p>
+  <textarea cols="80" id="filters" rows="20" style="width: 100%; height: 200px;"></textarea><br>
+  <button onclick="doCheck()" style="float: right;">{{s16 Find useless filters}}</button>
+</p>
+
+<p class="hidden">{{s17 Status:}} <span id="status"></span></p>
+
+<ul id="report"></ul>
+
+<p class="hidden">{{s18 Your filter list with useless filters removed is quoted below. You can copy it and paste into your Adblock Plus preferences (remove existing filters first). Alternatively you can <a id="resultsLink">click here</a> to get the filters on a separate page. Save them as a file and import it in Adblock Plus preferences.}}</p>
+
+<pre id="results" style="display:none;"></pre>

@@ -29,6 +29,9 @@
   "getSubscriptionAtDescription-s1": {
     "message": "　　根据所处的列表位置获取一个订阅组"
   },
+  "getSubscriptionAt_returnDescription-s1": {
+    "message": "所请求的订阅组或"
+  },
   "getSubscriptionAt_returnDescription-s2": {
     "message": "null"
   },
@@ -73,6 +76,9 @@
   },
   "removeExternalSubscription_returnDescription-s4": {
     "message": "（不存在该订阅组或不是外部订阅组）"
+  },
+  "removeExternalSubscription_idDescription-s1": {
+    "message": "该订阅组的标识符（对于外部订阅组标识符可以是任意字符串）"
   },
   "addPatternsDescription-s1": {
     "message": "　　给用户自定义过滤规则列表添加 pattern"

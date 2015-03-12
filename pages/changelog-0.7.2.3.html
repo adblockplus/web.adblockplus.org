@@ -1,0 +1,23 @@
+title=Detailed changelog for Adblock Plus 0.7.2.3
+
+
+        <ul>
+               <li>{{s1 Added Persian translation}}</li>
+               <li>{{s2 SeaMonkey: Major security issue fixed — switched on XPCNativeWrappers that aren't used by default for some reason}}</li>
+               <li>{{s3 Improved storage of internal data, old way was less efficient and potentially insecure (<a href="http://bugzilla.mozdev.org/show_bug.cgi?id=15758">bug 15758</a>)}}</li>
+               <li>{{s4 Made sure that web pages constantly reloading images won't increase memory usage (<a href="http://bugzilla.mozdev.org/show_bug.cgi?id=15317">bug 15317</a>)}}</li>
+               <li>{{s5 &quot;Show tabs on Flash and Java&quot; again can be used when JavaScript is disabled (<a href="http://bugzilla.mozdev.org/show_bug.cgi?id=15637">bug 15637</a>)}}</li>
+               <li>{{s6 Made it harder for web sites to tamper with tabs on objects like Flash or Java}}</li>
+               <li>{{s7 Made tab displayed by &quot;Show tabs on Flash and Java&quot; a link (because of the context menu and ability to middle-click, <a href="http://bugzilla.mozdev.org/show_bug.cgi?id=15638">bug 15638</a>)}}</li>
+               <li>{{s8 Improved check for objects opened on its own (tabs shouldn't be shown for these objects)}}</li>
+               <li>{{s9 Toolbar icon now looses its drop marker in vertical toolbars like the one created by All-In-One Sidebar extension to prevent resizing of the toolbar, menu available with a right-click then (<a href="/forum/viewtopic.php?t=967">forum thread</a>)}}</li>
+               <li>{{s10 Firefox: Default placement of the toolbar icon is now the right edge of the navigation toolbar (<a href="/forum/viewtopic.php?t=906">forum thread</a>)}}</li>
+               <li>{{s11 "Disable Adblock Plus on ..." options are no longer disabled when Preferences dialog is open}}</li>
+               <li>{{s12 Added methods addPatterns() and removePatterns() to the public <a href="IAdblockPlus">IAdblockPlus interface</a> (can be used from other extensions)}}</li>
+               <li>{{s13 Using Gecko's built-in feature for scrolling to node when selecting in the sidebar — should be less error-prone}}</li>
+               <li>{{s14 No longer relying on extension version reported by the browser (is unreliable in SeaMonkey, <a href="/forum/viewtopic.php?t=937">forum thread</a>)}}</li>
+               <li>{{s15 Can be installed in Songbird 0.3 now}}</li>
+               <li>{{s16 Removed obsolete}} <code>{{s17 file}}</code> {{s18 property from install manifest (not required for Firefox 1.5 and higher)}}</li>
+        </ul>
+
+        <p><a href="changelog-0.7.2.2">{{s19 Changelog for the previous release}}</a></p>

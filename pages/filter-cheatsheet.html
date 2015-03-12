@@ -1,0 +1,795 @@
+title=Adblock Plus filters explained
+
+<head>
+<style type="text/css">
+  #content
+  {
+    max-width: none;
+  }
+
+  canvas
+  {
+    width: 100%;
+    height: 100px;
+  }
+
+  .filter
+  {
+    font-size: 200%;
+    padding: 0px 5px;
+  }
+  .filter > *
+  {
+    display: inline-block;
+    border-top: 2px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0px 2px;
+    padding: 3px;
+    opacity: 0.6;
+  }
+  .filter > .active
+  {
+    opacity: 1.0;
+  }
+
+  .explanations > *
+  {
+    display: inline-block;
+    text-align: left;
+    border: 4px solid;
+    margin: 0px 1%;
+    width: 20%;
+    border-radius: 10px;
+    padding: 0px 5px;
+    opacity: 0.6;
+  }
+  .explanations > .active
+  {
+    opacity: 1.0;
+  }
+  .explanations h4
+  {
+    margin-top: 0px !important;
+  }
+  .explanations p
+  {
+    margin-bottom: 0px !important;
+  }
+
+  .filter > .verbatim
+  {
+    color: #000000;
+    border-top-color: #000000;
+  }
+  .explanations > .verbatim
+  {
+    border-color: #000000;
+  }
+
+  .filter > .wildcard
+  {
+    color: #FF8000;
+    border-top-color: #FF8000;
+  }
+  .explanations > .wildcard
+  {
+    border-color: #FF8000;
+  }
+
+  .filter > .separator
+  {
+    color: #FF0000;
+    border-top-color: #FF0000;
+  }
+  .explanations > .separator
+  {
+    border-color: #FF0000;
+  }
+
+  .filter > .domainAnchor
+  {
+    color: #00C080;
+    border-top-color: #00C080;
+  }
+  .explanations > .domainAnchor
+  {
+    border-color: #00C080;
+  }
+
+  .filter > .startAnchor,
+  .filter > .endAnchor
+  {
+    color: #00C0C0;
+    border-top-color: #00C0C0;
+  }
+  .explanations > .startAnchor,
+  .explanations > .endAnchor
+  {
+    border-color: #00C0C0;
+  }
+
+  .filter > .optionSeparator
+  {
+    color: #FF0080;
+    border-top-color: #FF0080;
+  }
+  .explanations > .optionSeparator
+  {
+    border-color: #FF0080;
+  }
+
+  .filter > .typeOption,
+  .filter > .domainOption
+  {
+    color: #800040;
+    border-top-color: #800040;
+  }
+  .explanations > .typeOption,
+  .explanations > .domainOption
+  {
+    border-color: #800040;
+  }
+
+  .filter > .exception
+  {
+    color: #00C000;
+    border-top-color: #00C000;
+  }
+  .explanations > .exception
+  {
+    border-color: #00C000;
+  }
+
+  .filter > .comment
+  {
+    color: #C0C0C0;
+    border-top-color: #C0C0C0;
+  }
+  .explanations > .comment
+  {
+    border-color: #C0C0C0;
+  }
+
+  table
+  {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+  }
+  table, th, td
+  {
+    border: 1px solid black;
+  }
+  th, td
+  {
+    vertical-align: top;
+    padding: 5px;
+  }
+  td > p:first-child
+  {
+    margin-top: 0px;
+  }
+  .syntax
+  {
+    width: 10%;
+  }
+  .purpose
+  {
+    width: 45%;
+  }
+  .examples
+  {
+    width: 45%;
+  }
+  .option
+  {
+    width: 30%;
+  }
+  .optionPurpose
+  {
+    width: 70%;
+  }
+  .selector
+  {
+    width: 45%;
+  }
+  .selectorPurpos
+  {
+    width: 55%;
+  }
+</style>
+
+<script type="text/javascript"><!--
+  var activeElement = null;
+  window.onload = initDisplay;
+  window.onresize = updateDisplay;
+  window.onmouseover = onMouseOver;
+  window.onmouseout = onMouseOut;
+
+  function initDisplay()
+  {
+    var examples = document.getElementsByClassName("example");
+    for (var i = 0; i < examples.length; i++)
+      initExample(examples[i]);
+    updateDisplay();
+  }
+
+  function initExample(example)
+  {
+    example._explanations = example.getElementsByClassName("explanations")[0].children;
+    example._canvas = example.getElementsByClassName("canvas")[0];
+
+    var filter = example.getElementsByClassName("filter")[0];
+    for (var i = 0; i < example._explanations.length; i++)
+    {
+      var explanation = example._explanations[i];
+      explanation._targets = filter.getElementsByClassName(explanation.className.replace(/^explanation\s/, ""));
+      for (var j = 0; j < explanation._targets.length; j++)
+        explanation._targets[j]._explanation = explanation;
+    }
+  }
+
+  function updateDisplay()
+  {
+    var examples = document.getElementsByClassName("example");
+    for (var i = 0; i < examples.length; i++)
+      updateExample(examples[i]);
+  }
+
+  function updateExample(example)
+  {
+    example._canvas.width = example._canvas.offsetWidth;
+    example._canvas.height = example._canvas.offsetHeight;
+
+    var context = example._canvas.getContext("2d");
+    context.clearRect(0, 0, example._canvas.width, example._canvas.height);
+
+    for (var i = 0; i < example._explanations.length; i++)
+    {
+      var explanation = example._explanations[i];
+      if (explanation == activeElement)
+        explanation.classList.add("active");
+      else
+        explanation.classList.remove("active");
+
+      var offsetFrom = Math.round(explanation.offsetLeft + explanation.offsetWidth / 2 - example._canvas.offsetLeft);
+      for (var j = 0; j < explanation._targets.length; j++)
+      {
+        var target = explanation._targets[j];
+        if (explanation == activeElement)
+          target.classList.add("active");
+        else
+          target.classList.remove("active");
+
+        var offsetTo = Math.round(target.offsetLeft + target.offsetWidth / 2 - example._canvas.offsetLeft);
+        context.strokeStyle = window.getComputedStyle(explanation, "").borderBottomColor;
+        context.globalAlpha = (explanation == activeElement ? 1.0 : 0.6);
+        context.lineWidth = 2;
+        context.beginPath();
+        context.moveTo(offsetFrom, 0);
+        context.lineTo(offsetFrom, Math.round(example._canvas.height / (example._explanations.length + 1) * (i + 1)));
+        context.lineTo(offsetTo, Math.round(example._canvas.height / (example._explanations.length + 1) * (i + 1)));
+        context.lineTo(offsetTo, example._canvas.height);
+        context.stroke();
+      }
+    }
+  }
+
+
+  function onMouseOver(event)
+  {
+    for (var node = event.target; node; node = node.parentNode)
+    {
+      if ("_targets" in node)
+      {
+        activeElement = node;
+        setTimeout(updateDisplay, 0);
+        break;
+      }
+      else if ("_explanation" in node)
+      {
+        activeElement = node._explanation;
+        setTimeout(updateDisplay, 0);
+        break;
+      }
+    }
+  }
+
+  function onMouseOut(event)
+  {
+    for (var node = event.target; node; node = node.parentNode)
+    {
+      if (node == activeElement || ("_explanation" in node && node._explanation == activeElement))
+      {
+        activeElement = null;
+        setTimeout(updateDisplay, 0);
+        break;
+      }
+    }
+  }
+--></script>
+</head>
+<p style="background-color: red;">{{s1 Unfinished, not for translating}}</p>
+
+<h2 id="blocking">{{s2 Simple blocking rules}}</h2>
+
+<p>
+  {{s3 Blocking rules determine addresses that Adblock Plus should block.}}
+</p>
+
+<h3 id="blocking1">{{s4 Example 1: Blocking by address parts}}</h3>
+
+<div class="example">
+  <div class="explanations">
+    <div class="verbatim">
+      <h4>{{s5 Verbatim text}}</h4>
+      <p>{{s6 This text must be present in the address to be blocked.}}</p>
+    </div>
+    <div class="wildcard">
+      <h4><a href="filters#basic">{{s7 Wildcard character}}</a></h4>
+      <p>{{s8 This stands for any number of characters.}}</p>
+    </div>
+    <div class="separator">
+      <h4><a href="filters#separators">{{s9 Separator}}</a></h4>
+      <p>{{s10 The address must either end here or a separator character like ? or / has to follow.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="verbatim">{{s11 /banner/}}</span><span class="wildcard">{{s12 *}}</span><span class="verbatim">{{s13 /img}}</span><span class="separator">{{s14 ^}}</span>
+  </div>
+</div>
+
+<p>
+  {{s15 This rule blocks:}}
+</p>
+<ul>
+  <li><code>http://example.com/banner/foo/img</code></li>
+  <li><code>http://example.com/banner/foo/bar/img?param</code></li>
+  <li><code>http://example.com/banner//img/foo</code></li>
+</ul>
+<p>
+  {{s16 This rule doesn't block:}}
+</p>
+<ul>
+  <li><code>http://example.com/banner/img</code></li>
+  <li><code>http://example.com/banner/foo/imgraph</code></li>
+  <li><code>http://example.com/banner/foo/img.gif</code></li>
+</ul>
+
+<h3 id="blocking2">{{s17 Example 2: Blocking by domain name}}</h3>
+
+<div class="example">
+  <div class="explanations">
+    <div class="domainAnchor">
+      <h4><a href="filters#anchors">{{s18 Domain name anchor}}</a></h4>
+      <p>{{s19 The following text must be the domain name of the address.}}</p>
+    </div>
+    <div class="verbatim">
+      <h4>{{s20 Verbatim text}}</h4>
+      <p>{{s21 This text must be present in the address to be blocked.}}</p>
+    </div>
+    <div class="separator">
+      <h4><a href="filters#separators">{{s22 Separator}}</a></h4>
+      <p>{{s23 A separator character has to follow that will indicate the end of the domain name, e.g. / or :.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="domainAnchor">{{s24 ||}}</span><span class="verbatim">{{s25 ads.example.com}}</span><span class="separator">{{s26 ^}}</span>
+  </div>
+</div>
+
+<p>
+  {{s27 This rule blocks:}}
+</p>
+<ul>
+  <li><code>http://ads.example.com/foo.gif</code></li>
+  <li><code>http://server1.ads.example.com/foo.gif</code></li>
+  <li><code>https://ads.example.com:8000/</code></li>
+</ul>
+<p>
+  {{s28 This rule doesn't block:}}
+</p>
+<ul>
+  <li><code>http://ads.example.com.ua/foo.gif</code></li>
+  <li><code>http://example.com/redirect/http://ads.example.com/</code></li>
+</ul>
+
+<h3 id="blocking3">{{s29 Example 3: Blocking exact address}}</h3>
+
+<div class="example">
+  <div class="explanations">
+    <div class="startAnchor">
+      <h4><a href="filters#anchors">{{s30 Start anchor}}</a></h4>
+      <p>{{s31 The following text must be the beginning of the address.}}</p>
+    </div>
+    <div class="verbatim">
+      <h4>{{s32 Verbatim text}}</h4>
+      <p>{{s33 This text must be present in the address to be blocked.}}</p>
+    </div>
+    <div class="endAnchor">
+      <h4><a href="filters#anchors">{{s34 End anchor}}</a></h4>
+      <p>{{s35 The preceding text must be the end of the address.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="startAnchor">{{s36 |}}</span><span class="verbatim">{{s37 http://example.com/}}</span><span class="endAnchor">{{s38 |}}</span>
+  </div>
+</div>
+
+<p>
+  {{s39 This rule blocks:}}
+</p>
+<ul>
+  <li><code>http://example.com/</code></li>
+</ul>
+<p>
+  {{s40 This rule doesn't block:}}
+</p>
+<ul>
+  <li><code>http://example.com/foo.gif</code></li>
+  <li><code>http://example.info/redirect/http://example.com/</code></li>
+</ul>
+
+<h2 id="options">{{s41 Options in blocking rules}}</h2>
+
+<p>
+  {{s42 Blocking rules can have a number of options to fine-tune their behavior.}}
+</p>
+
+<div class="example">
+  <div class="explanations">
+    <div class="verbatim">
+      <h4>{{s43 Address to be blocked}}</h4>
+      <p>{{s44 This part of the rule defines which addresses it is applied to.}}</p>
+    </div>
+    <div class="optionSeparator">
+      <h4>{{s45 Option separator}}</h4>
+      <p>{{s46 This character indicates that the following text defines filter option.}}</p>
+    </div>
+    <div class="typeOption">
+      <h4><a href="#options">{{s47 Type option}}</a></h4>
+      <p>
+        {{s48 Type options define request types to be blocked. Common type options are}}
+        <code>{{s49 script}}</code> {{s50 or}} <code>{{s51 image}}</code> {{s52 indicating that only
+        scripts/images should be blocked. The inverse type option}} <code>{{s53 ~script}}</code>
+        {{s54 means that the filter should not be applied to scripts.}}
+      </p>
+    </div>
+    <div class="domainOption">
+      <h4><a href="#options">{{s55 Domain option}}</a></h4>
+      <p>
+        {{s56 Domain option restricts the filter to a set of domains (here}} <code>{{s57 example.com}}</code>{{s58 ).
+        It also allows to disable the rule on dome domains (here on}} <code>{{s59 foo.example.com}}</code>{{s60 ).}}
+      </p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="verbatim">{{s61 ||ads.example.com^}}</span><span class="optionSeparator">{{s62 $}}</span><span class="typeOption">{{s63 script}}</span>{{s64 ,}}<span class="typeOption">{{s65 image}}</span>{{s66 ,}}<span class="domainOption">{{s67 domain=example.com|~foo.example.info}}</span>
+  </div>
+</div>
+
+<p>
+  {{s68 This rule blocks}} <code>http://ads.example.com/foo.gif</code> {{s69 only if the following conditions are met:}}
+</p>
+<ul>
+  <li>{{s70 This address is being loaded as a script or an image.}}</li>
+  <li>
+    {{s71 The page loading it comes from}} <code>example.com</code> {{s72 domain (for example}} <code>example.com</code> {{s73 itself
+    or}} <code>subdomain.example.com</code>{{s74 ) but not from}} <code>foo.example.com</code> {{s75 or its subdomains.}}
+  </li>
+</ul>
+
+<h2 id="exceptions">{{s76 Exception rules}}</h2>
+
+<p>
+  {{s77 Exception rules are built the same as blocking rules, they define which addresses should be allowed even if matching blocking rules exists.}}
+</p>
+
+<h3 id="exceptions1">{{s78 Example 1: Exception for particular requests}}</h3>
+
+<div class="example">
+  <div class="explanations">
+    <div class="exception">
+      <h4>{{s79 Exception rule}}</h4>
+      <p>{{s80 Rules starting like this are exceptions, they will override blocking rules.}}</p>
+    </div>
+    <div class="verbatim">
+      <h4>{{s81 Address to be allowed}}</h4>
+      <p>{{s82 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
+    </div>
+    <div class="typeOption">
+      <h4><a href="#options">{{s83 Type option}}</a></h4>
+      <p>
+        {{s84 This type option prevents the exception from being applied to scripts.}}
+      </p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="exception">{{s85 @@}}</span><span class="verbatim">{{s86 ||ads.example.com/notbanner^}}</span><span class="optionSeparator">{{s87 $}}</span><span class="typeOption">{{s88 ~script}}</span>
+  </div>
+</div>
+
+<h3 id="exceptions2">{{s89 Example 2: Exception for an entire site}}</h3>
+
+<div class="example">
+  <div class="explanations">
+    <div class="exception">
+      <h4>{{s90 Exception rule}}</h4>
+      <p>{{s91 Rules starting like this are exceptions, they will override blocking rules.}}</p>
+    </div>
+    <div class="verbatim">
+      <h4>{{s92 Address to be allowed}}</h4>
+      <p>{{s93 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
+    </div>
+    <div class="typeOption">
+      <h4><a href="#options">{{s94 Type option}}</a></h4>
+      <p>
+        {{s95 This special type option indicates that Adblock Plus should be completely disabled on pages that this rule applies to.}}
+      </p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="exception">{{s96 @@}}</span><span class="verbatim">{{s97 ||example.com^}}</span><span class="optionSeparator">{{s98 $}}</span><span class="typeOption">{{s99 document}}</span>
+  </div>
+</div>
+
+<h2 id="comments">{{s100 Comments}}</h2>
+
+<div class="example">
+  <div class="explanations">
+    <div class="comment">
+      <h4>{{s101 Comment}}</h4>
+      <p>{{s102 An exclamation mark at the beginning of the rule indicates a comment.}}</p>
+    </div>
+    <div class="verbatim">
+      <h4>{{s103 Comment text}}</h4>
+      <p>{{s104 This text will not be used for blocking, you can write anything you want.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="comment">{{s105 !}}</span><span class="verbatim">{{s106 This is a comment}}</span>
+  </div>
+</div>
+
+<h2 id="options">{{s107 Filter options}}</h2>
+
+<table>
+  <col class="option">
+  <col class="optionPurpose">
+  <tr>
+    <th>{{s108 Option}}</th>
+    <th>{{s109 Purpose}}</th>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">{{s110 Types}}</td>
+  </tr>
+  <tr>
+    <td><code>script</code><br><code>~script</code></td>
+    <td>{{s111 Include or exclude JavaScript files}}</td>
+  </tr>
+  <tr>
+    <td><code>image</code><br><code>~image</code></td>
+    <td>{{s112 Include or exclude image files}}</td>
+  </tr>
+  <tr>
+    <td><code>stylesheet</code><br><code>~stylesheet</code></td>
+    <td>{{s113 Include or exclude stylesheets (CSS files)}}</td>
+  </tr>
+  <tr>
+    <td><code>object</code><br><code>~object</code></td>
+    <td>{{s114 Include or exclude content handled by browser plugins like Flash or Java}}</td>
+  </tr>
+  <tr>
+    <td><code>object-subrequest</code><br><code>~object-subrequest</code></td>
+    <td>{{s115 Include or exclude files loaded by browser plugins}}</td>
+  </tr>
+  <tr>
+    <td><code>subdocument</code><br><code>~subdocument</code></td>
+    <td>{{s116 Include or exclude pages loaded within pages (frames)}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">{{s117 Exceptions}}</td>
+  </tr>
+  <tr>
+    <td><code>document</code></td>
+    <td>{{s118 Used to whitelist the page itself (e.g.}} <code>@@||example.com^$document</code>{{s119 )}}</td>
+  </tr>
+  <tr>
+    <td><code>elemhide</code></td>
+    <td>{{s120 Used to prevent element rules from applying on a page (e.g.}} <code>@@||example.com^$elemhide</code>{{s121 )}}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">{{s122 Domains}}</td>
+  </tr>
+  <tr>
+    <td><code>domain=</code></td>
+    <td>{{s123 Specify a list of domains, separated by bar lines (|), on which a filter should be active. A filter may be prevented from being activated on a domain by preceding the domain name with a tilde (~).}}</td>
+  </tr>
+  <tr>
+    <td><code>third-party</code><br><code>~third-party</code></td>
+    <td>{{s124 Specify whether a filter should be active on third-party or first domains}}</td>
+  </tr>
+</table>
+
+<p>{{s125 Less frequently used options, including}} <code>dtd</code>{{s126 ,}} <code>ping</code>{{s127 ,}} <code>xbl</code>{{s128 ,}} <code>xmlhttprequest</code>{{s129 ,}} <code>other</code>{{s130 ,}} <code>collapse</code>{{s131 ,}} <code>donottrack</code> {{s132 and}} <code>match-case</code> {{s133 are explained in the <a href="https://adblockplus.org/en/filters#options">full documentation</a>.}}</p>
+
+<h2 id="elementhiding">{{s134 Element hiding}}</h2>
+
+<p>{{s135 It is generally recommended that users install the <a href="https://addons.mozilla.org/firefox/addon/elemhidehelper/">Element Hiding Helper for Adblock Plus</a> to assist them in the generation of  element hiding rules.}}</p>
+
+<h3 id="elementdomains">{{s136 Domain selection}}</h3>
+
+<p><code>##selector</code> {{s137 is used as a placeholder for <a href="#elementselection">element selectors</a>.}}</p>
+
+<table>
+  <col class="selector">
+  <col class="selectorPurpose">
+  <tr>
+    <th>{{s138 Example rules}}</th>
+    <th>{{s139 Domain selection}}</th>
+  </tr>
+  <tr>
+    <td><code>##selector</code></td>
+    <td>
+      <p>
+        {{s140 Active on:}}
+        <ul class="example-list">
+          <li>{{s141 All domains, including:}}</li>
+          <li><code>http://example.com/</code></li>
+          <li><code>https://example.net/</code></li>
+          <li><code>ftp://example.edu/</code></li>
+        </ul>
+      </p>
+      <p>
+        {{s142 Not active on:}}
+        <ul class="example-list">
+          <li>{{s143 Not applicable}}</li>
+        </ul>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td><code>example.com##selector</code></td>
+    <td>
+      <p>
+        {{s144 Active on, for example:}}
+        <ul class="example-list">
+          <li><code>http://example.com/</code></li>
+          <li><code>ftp://subdomain.example.com/</code></li>
+        </ul>
+      </p>
+      <p>
+        {{s145 Not active on:}}
+        <ul class="example-list">
+          <li>{{s146 All other domains, including}}</li>
+          <li><code>http://example.edu/</code></li>
+          <li><code>ftp://example.net/</code></li>
+        </ul>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td><code>~example.com##selector</code></td>
+    <td>
+      <p>
+        {{s147 Active on:}}
+        <ul class="example-list">
+          <li>{{s148 All other domains, including}}</li>
+          <li><code>http://example.edu/</code></li>
+          <li><code>ftp://example.net/</code></li>
+        </ul>
+      </p>
+      <p>
+        {{s149 Not active on, for example:}}
+        <ul class="example-list">
+          <li><code>http://example.com/</code></li>
+          <li><code>ftp://subdomain.example.com/</code></li>
+        </ul>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td><code>example.com,example.edu##selector</code></td>
+    <td>
+      <p>
+        {{s150 Active on, for example:}}
+        <ul class="example-list">
+          <li><code>http://example.com/</code></li>
+          <li><code>https://subdomain.example.com/</code></li>
+          <li><code>ftp://example.edu/</code></li>
+        </ul>
+      </p>
+      <p>
+        {{s151 Not active on:}}
+        <ul class="example-list">
+          <li>{{s152 All other domains, including:}}</li>
+          <li><code>http://example.net/</code></li>
+        </ul>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td><code>example.com,~mail.example.com#selector</code></td>
+    <td>
+      <p>
+        {{s153 Active on:}}
+        <ul class="example-list">
+          <li><code>http://example.com/</code></li>
+          <li><code>https://adverts.example.com/</code></li>
+          <li><code>ftp://subdomain.example.edu/</code></li>
+        </ul>
+      </p>
+      <p>
+        {{s154 Not active on:}}
+        <ul class="example-list">
+          <li><code>http://mail.example.com/</code></li>
+          <li>{{s155 All other domains}}</li>
+        </ul>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<h3 id="elementselection">{{s156 Element selection}}</h3>
+
+<table>
+  <col class="selector">
+  <col class="selectorPurpose">
+  <tr>
+    <th>{{s157 Selector}}</th>
+    <th>{{s158 Purpose}}</th>
+  </tr>
+  <tr>
+    <td><code>###advert</code></td>
+    <td>{{s159 Matches the element with the unique id "advert"}}</td>
+  </tr>
+  <tr>
+    <td><code>##.advert</code></td>
+    <td>{{s160 Matches elements with the class "advert"}}</td>
+  </tr>
+  <tr>
+    <td><code>##table[height=&quot;100&quot;][width=&quot;100&quot;]</code></td>
+    <td>{{s161 Matches a table with a height of 100 and a width of 100}}</td>
+  </tr>
+  <tr>
+    <td><code>##a[href=&quot;http://example.com/&quot;]</code></td>
+    <td>{{s162 Matches links to http://example.com/}}</td>
+  </tr>
+  <tr>
+    <td><code>##div[style=&quot;width:300px;height:250px;&quot;]</code></td>
+    <td>{{s163 Matches div elements that have exactly the style specified}}</td>
+  </tr>
+  <tr>
+    <td><code>###advert &gt; .link</code></td>
+    <td>{{s164 Matches elements with the class "link" that are enclosed within elements with the id "advert"}}</td>
+  </tr>
+  <tr>
+    <td><code>###advert + .link</code></td>
+    <td>{{s165 Matches elements with the class "link" that are immediately preceded by elements with the id "advert"}}</td>
+  </tr>
+  <tr>
+    <td><code>##a[href^=&quot;http://example.com/&quot;]</code></td>
+    <td>{{s166 Matches links to any pages hosted on http://example.com/}}</td>
+  </tr>
+  <tr>
+    <td><code>##div[style^=&quot;width:300px;height:250px;&quot;]</code></td>
+    <td>{{s167 Matches div elements that start with the style specified}}</td>
+  </tr>
+  <tr>
+    <td><code>##div[style$=&quot;width:300px;height:250px;&quot;]</code></td>
+    <td>{{s168 Matches div elements that end the style specified}}</td>
+  </tr>
+  <tr>
+    <td><code>##div[style*=&quot;width:300px;height:250px;&quot;]</code></td>
+    <td>{{s169 Matches div elements that containing the style specified}}</td>
+  </tr>
+</table>
+<p>{{s170 The above filters are only examples of valid element hiding rules. Any <a href="http://www.w3.org/TR/css3-selectors/">CSS selector</a> supported by Firefox can be used for element hiding.}}</p>

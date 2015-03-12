@@ -1,8 +1,5 @@
 {
   "title": {
-    "message": "Fonctionnalités"
-  },
-  "title-full": {
     "message": "Adblock Plus - Fonctionnalités"
   },
   "s1": {
@@ -11,11 +8,17 @@
   "s2": {
     "message": "Adblock peut faire bien plus que simplement bloquer des annonces publicitaires: désactiver d'intempestives bandes sons, vous protéger contre des systèmes malveillants, faire disparaître les boutons de médias sociaux."
   },
+  "s3": {
+    "message": "Caractéristiques - Adblock Plus"
+  },
+  "s4": {
+    "message": " "
+  },
   "s5": {
     "message": "Bloque les publicités"
   },
   "s6": {
-    "message": "Publicités acceptables"
+    "message": "Autoriser les Publicités Acceptables"
   },
   "s7": {
     "message": "Désactive le pistage"
@@ -29,64 +32,94 @@
   "s10": {
     "message": "Protège contre les fautes de frappe"
   },
+  "s11": {
+    "message": "Vous pouvez créer votre propre liste de filtres. <a>Cliquer ici pour savoir comment</a>."
+  },
   "s12": {
-    "message": "Adblock Plus bloque par défaut toutes les publicités intrusives sur Internet : les publicités vidéos sur Youtube, les publicités sur Facebook, les bannières, les pop-up, et bien plus encore."
+    "message": "<a>EasyList</a> est founie par défaut (en réalité, pas seulement Easylist, mais la liste de filtres qui correspond à la langue de votre navigateur). <a>La liste d’exception Publicités Acceptables</a> est aussi fournie. Ce ne sont que des listes de base pour vous montrer ce qu’Adblock Plus peut réaliser. Après cela, Adblock Plus est à personnaliser comme vous le souhaitez."
+  },
+  "s13": {
+    "message": "Ces listes de filtres noirs n’ont pas été créées par Eyeo GmbH, la société derrière Adblock Plus, mais proviennent de la communauté Easylist (cf. https://easylist.adblockplus.org/fr/). Eyeo vous les mentionne comme des exemples mais n’a pas de droit ou de contrôle sur leur contenu. En aucun cas, Eyeo ne pourra être tenu pour responsable envers vous ou tout autre tiers pour toute perte ou dommage (y compris, sans y être limité, les dommages pour perte de chances et perte de bénéfices) découlant directement ou indirectement de votre utilisation de ces listes."
+  },
+  "s14": {
+    "message": "Bloque les publicités"
   },
   "s15": {
-    "message": "Adblock Plus bloquera toujours les publicités intrusives et dérangeantes."
+    "message": "Par défaut, Adblock Plus bloque les publicités intrusives sur Internet : les publicités vidéos par exemple sur You Tube, Facebook, les bannières tape à l’œil, pop-ups, pop-unders et plus encore. Il fait cela sur la base d’une liste de filtres choisie par l’utilisateur."
   },
   "s16": {
-    "message": "Cela étant dit, de nombreux sites Web dépendent des revenus de la publicité, et nous souhaitons de ce fait les encourager à utiliser uniquement des publicités simples et discrètes au lieu de bannières tape-à-l'œil."
+    "message": "Il suffit d'installer Adblock Plus sur votre navigateur (il est disponible pour <a>Firefox</a>, <a>Chrome</a>, <a>Safari</a> et <a>Opera</a>) ou sur votre smartphone ou tablette <a>Android</a> et de commencer à le personnaliser."
   },
   "s17": {
-    "message": "C'est pourquoi le communauté Adblock Plus a établi des <a>règles strictes</a> permettant d'identifier les publicités acceptables, qui ne seront de fait pas bloquées par Adblock Plus."
+    "message": "Publicités acceptables"
   },
   "s18": {
-    "message": "Vous pouvez à tout moment désactivez cette fonctionnalité si vous le souhaitez."
+    "message": "De nombreux sites Web comptent sur les revenus de la publicité. Dès lors, au lieu de bloquer toutes les publicités, nous avons décidé d' encourager les sites à utiliser des publicités non intrusives au lieu des publicités désagréables que la plupart des gens ignorent et veulent bloquer"
+  },
+  "s19": {
+    "message": "Pour accomplir cela, nous avons établi avec nos utilisateurs et des tiers des <a>directives strictes</a> permettant d'identifier les formats et emplacements acceptables. Ces publicités sont donc autorisées par défaut."
   },
   "s20": {
-    "message": "À chaque fois que vous surfez en ligne, un nombre important d'entreprise piste votre activité sur Internet et votre historique de navigation."
+    "message": "Vous pouvez à tout moment"
   },
   "s21": {
-    "message": "Il existe des centaines de compagnies publicitaires qui piste le moindre de vos clics, mais grâce à Adblock Plus vous pouvez facilement désactiver toute forme de pistage, et enfin surfer sur Internet de façon vraiment anonyme."
+    "message": "désactiver cette fonctionnalité"
   },
   "s22": {
-    "message": "D'après une <a>étude menée par l’Université de Stanford</a>, la protection contre le pistage d'Adblock Plus est la plus efficace de toutes les solutions de protection disponibles dans ce domaine."
+    "message": "si vous le souhaitez."
   },
   "s23": {
-    "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \"Ajouter\" afin de vous protéger contre le tracking. Si vous souhaitez la désactiver, la <a>page suivante</a> vous expliquera comment faire."
+    "message": "Désactive le pistage"
+  },
+  "s24": {
+    "message": "À chaque fois que vous surfez en ligne, un nombre important d'entreprise piste votre activité sur Internet et votre historique de navigation."
   },
   "s25": {
-    "message": "Démarrage lent, popups, et publicitaires détournant votre navigateur : voici des symptômes d'une infection de votre ordinateur par un malware."
+    "message": "Il existe des centaines d'agences publicitaires qui pistent le moindre de vos clics, mais grâce à Adblock Plus vous pouvez facilement désactiver la plupart des formes de pistage, et enfin surfer sur Internet de façon vraiment anonyme."
   },
   "s26": {
-    "message": "Pire encore, les ordinateur infectés par un malware sont la porte ouverte à toute sorte de cybercriminalité."
+    "message": "D'après une <a>étude menée par l’Université de Stanford</a>, les filtres de protection contre le pistage EasyPrivacy sont les plus efficaces de toutes les solutions de protection disponibles dans ce domaine."
   },
   "s27": {
-    "message": "Ces ordinateurs infectés peuvent être utilisés à votre insu pour envoyer des mails de spam, attaquer d'autres ordinateurs ou serveurs, et voler vos mots de passe, numéro de sécurité sociale, documents personnels et numéros de carte de crédit."
+    "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \"Ajouter\" afin de vous protéger contre le tracking. Si vous souhaitez la désactiver, la <a>page suivante</a> vous expliquera comment faire."
   },
   "s28": {
-    "message": "Adblock Plus peut être configuré afin de bloquer tous les domaines connus pour diffuser des malwares, protégeant ainsi votre ordinateur des virus, chevaux de Troie, vers, spywares et adwares."
+    "message": "Désactive les sites de malwares"
   },
   "s29": {
-    "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \"Ajouter\" afin de vous protéger contre les sites Web malveillants. Si vous souhaitez la désactivez, la <a>page suivante</a> vous expliquera comment faire."
+    "message": "Démarrage lent, popups, et publicitaires détournant votre navigateur : voici des symptômes d'une infection de votre ordinateur par un malware."
+  },
+  "s30": {
+    "message": "Pire encore, les ordinateur infectés par un malware sont la porte ouverte à toute sorte de cybercriminalité."
   },
   "s31": {
-    "message": "Les boutons permettant de partager du contenu sur les réseaux sociaux tels que Facebook, Twitter, Google Plus et bien d'autres sont présents sur la quasi-totalité des sites que vous visitez."
+    "message": "Ces ordinateurs infectés peuvent être utilisés à votre insu pour envoyer des mails de spam, attaquer d'autres ordinateurs ou serveurs, et voler vos mots de passe, numéro de sécurité sociale, documents personnels et numéros de carte de crédit."
   },
   "s32": {
-    "message": "Même si vous ne cliquez pas dessus, chaque site contenant ces boutons envoie une requête aux serveurs hébergeant ces réseaux sociaux, qui peuvent de leur côté utiliser ces informations pour créer un profil basé sur vos habitudes de navigation."
+    "message": "Adblock Plus peut être configuré afin de bloquer tous les domaines connus pour diffuser des malwares, protégeant ainsi votre ordinateur des virus, chevaux de Troie, vers, spywares et adwares."
   },
   "s33": {
-    "message": "Vous pouvez utiliser Adblock Plus afin de bloquer tous les boutons de médias sociaux sur tous les sites Web, vous assurant ainsi que les réseaux sociaux ne peuvent pas créer de profil basé sur les sites Web que vous visitez."
+    "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \"Ajouter\" afin de vous protéger contre les sites Web malveillants. Si vous souhaitez la désactivez, la <a>page suivante</a> vous expliquera comment faire."
   },
   "s34": {
-    "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \"Ajouter\" afin de vous protéger contre le pistage des médias sociaux. Si vous souhaitez la désactiver, la <a>page suivante</a> vous expliquera comment faire."
+    "message": "Désactive les boutons des médias sociaux"
+  },
+  "s35": {
+    "message": "Les boutons permettant de partager du contenu sur les réseaux sociaux tels que Facebook, Twitter, Google Plus et bien d'autres sont présents sur la quasi-totalité des sites que vous visitez."
+  },
+  "s36": {
+    "message": "Même si vous ne cliquez pas dessus, chaque site contenant ces boutons envoie une requête aux serveurs hébergeant ces réseaux sociaux, qui peuvent de leur côté utiliser ces informations pour créer un profil basé sur vos habitudes de navigation."
   },
   "s37": {
-    "message": "Les sites Web d'hameçonnage ou ceux proposant des contenus malveillants possèdent souvent des noms de domaine mal orthographiés, et en faisant une légère faute de frappe dans une adresse Internet, vous risquez involontairement de tomber sur ce genre de site."
+    "message": "Vous pouvez utiliser Adblock Plus afin de bloquer tous les boutons de médias sociaux sur la plupart des sites Web, vous assurant ainsi que les réseaux sociaux ne peuvent pas créer de profil basé sur les sites Web que vous visitez."
   },
   "s38": {
-    "message": "\"URL Fixer\" peut automatiquement corriger les typologies dans la barre de navigation pour prévenir des accidentelles visites de sites malicieux lorsque qu'une faute de frappe est intervenue dans l'adresse internet."
+    "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \"Ajouter\" afin de vous protéger contre le pistage des médias sociaux. Si vous souhaitez la désactiver, la <a>page suivante</a> vous expliquera comment faire."
+  },
+  "s39": {
+    "message": "Protège contre les fautes de frappe"
+  },
+  "s40": {
+    "message": "La fonction correction des fautes de frappe était disponible sur Adblock Plus pour Firefox mais a été <a>retirée dans la version 2.3</a>. Si cette caractéristique vous manque, vous pouvez la récupérer en installant notre extension<a> \"URL Fixer\"</a>. Si cette fonction vous manque vous pouvez la retrouver en installant notre extension URL Fixer (Réparateur d’URL)."
   }
 }

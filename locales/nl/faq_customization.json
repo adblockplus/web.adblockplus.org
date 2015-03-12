@@ -60,15 +60,36 @@
     "message": "Als u liever de pictogrammen die gebruikt werden voor Adblock Plus 0.7.2 (de kakkerlak), kunt u <a>deze userstijl</a> gebruiken om dit te herstellen (het beste is om dit in combinatie met <a>Stylish</a>te gebruiken). Maar als u een beter pictigram heeft, kunt u uw eigen stijl maken met deze sjabloon:"
   },
   "s20": {
-    "message": "Hier wordt verondersteld dat de afbeeldingen (een met drie 16x16 pictogrammen en een andere met drie 24x24 pictogrammen verticaal gestapeld) zich in de map c:\\icons bevinden, dus u moet misschien deze locatie aanpassen. Om deze stijl toe te passen kunt u <a>Stylish</a> gebruiken of het bestand chrome/userChrome.css in uw profielmap (<a>Hoe vind ik mijn profiel?</a>) en deze code toevoegen. Als userChrome.css nog niet bestaat, dan moet u het aanmaken."
+    "message": "Hier wordt verondersteld dat de afbeeldingen (een met drie 16x16 pictogrammen en een andere met drie 24x24 pictogrammen verticaal gestapeld) zich in de map c:\\icons bevinden, dus u moet misschien deze locatie aanpassen. Om deze stijl toe te passen kunt u <a>Stylish</a> gebruiken of het bestand chrome/userChrome.css in uw profielmap ("
   },
   "s21": {
-    "message": "<em>N.B.</em>: De wijzigingen hebben pas effect nadat u uw bvrowser heeft herstart."
+    "message": "http://support.mozilla.org/nl/kb/Profielen#w_hoe-vind-ik-mijn-profiel"
   },
   "s22": {
-    "message": "Hoe wijzig ik de sneltoets voor ... / voeg ik een sneltoets om Adblock Plus uit te schakelen toe?"
+    "message": "Hoe vind ik mijn profiel?"
   },
   "s23": {
-    "message": "Er zijn drie verborgen voorkeuren die u kunt benaderen via <a>about:config</a> waarmee de sneltoetsen van Adblock Plus worden gedefinieerd: <a>extensions.adblockplus.sidebar_key</a> (open/sluit blokkeerbare onderdelen), <a>extensions.adblockplus.settings_key</a> (open Voorkeuren dialoogvenster), <a>extensions.adblockplus.enable_key</a> (in-/uitschakelen van Adblock Plus). U kunt deze naar eigen wens aanpassen."
+    "message": ") en deze code toevoegen. Als userChrome.css nog niet bestaat, dan moet u het aanmaken."
+  },
+  "s24": {
+    "message": "<em>N.B.</em>: De wijzigingen hebben pas effect nadat u uw bvrowser heeft herstart."
+  },
+  "s25": {
+    "message": "Hoe wijzig ik de sneltoets voor ... / voeg ik een sneltoets om Adblock Plus uit te schakelen toe?"
+  },
+  "s26": {
+    "message": "Er zijn drie verborgen voorkeuren die u kunt benaderen via"
+  },
+  "s27": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s28": {
+    "message": "about:config"
+  },
+  "s29": {
+    "message": "waarmee de sneltoetsen van Adblock Plus worden gedefinieerd: <a>extensions.adblockplus.sidebar_key</a> (open/sluit blokkeerbare onderdelen), <a>extensions.adblockplus.settings_key</a> (open Voorkeuren dialoogvenster), <a>extensions.adblockplus.enable_key</a> (in-/uitschakelen van Adblock Plus). U kunt deze naar eigen wens aanpassen."
+  },
+  "s30": {
+    "message": "<em>N.B.</em>: De wijzigingen worden pas actief nadat u uw browser heeft herstart."
   }
 }

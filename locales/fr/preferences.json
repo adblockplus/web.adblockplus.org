@@ -84,12 +84,21 @@
     "message": "."
   },
   "sidebar_key-s1": {
-    "message": "Définit la touche de raccourci permettant d'afficher la liste des éléments filtrables. Cette préférence peut être laissée vide ou prendre la forme <em>modifieur1 modifieur2 touche</em>. Les modifieurs reconnus sont : Shift, Accel (Touche d'accélération par défaut, ex. Ctrl sur Windows, Command sur Mac OS X), Ctrl/Control, Alt, Meta. la touche peut peut être une lettre ou une touche spéciale telle que F7 ou DROITE (Consultez <a>l'interface nsIDOMKeyEvent</a> pour trouver une liste de touches spéciales)."
+    "message": "Définit la touche de raccourci permettant d'afficher la liste des éléments filtrables. Cette préférence peut être laissée vide ou prendre la forme <em>modifieur1 modifieur2 touche</em>. Les modifieurs reconnus sont : Shift, Accel (Touche d'accélération par défaut, ex. Ctrl sur Windows, Command sur Mac OS X), Ctrl/Control, Alt, Meta. la touche peut peut être une lettre ou une touche spéciale telle que F7 ou DROITE (Consultez"
   },
   "sidebar_key-s2": {
-    "message": "Depuis la version 1.3.5 d'Adblock Plus plusieurs raccourcis peuvent être spécifiés en les séparant par des virgules, le premier raccourci disponible de la liste étant celui qui sera utilisé."
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   },
   "sidebar_key-s3": {
+    "message": "l'interface nsIDOMKeyEvent"
+  },
+  "sidebar_key-s4": {
+    "message": "pour trouver une liste de touches spéciales)."
+  },
+  "sidebar_key-s5": {
+    "message": "Depuis la version 1.3.5 d'Adblock Plus plusieurs raccourcis peuvent être spécifiés en les séparant par des virgules, le premier raccourci disponible de la liste étant celui qui sera utilisé."
+  },
+  "sidebar_key-s6": {
     "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
   },
   "filters_key-s1": {
@@ -98,11 +107,17 @@
   "filters_key-s2": {
     "message": "ci-dessus."
   },
+  "filters_key-s3": {
+    "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
+  },
   "enable_key-s1": {
     "message": "Définit la touche de raccourci permettant d'activer/désactiver Adblock Plus. Pour connaître les valeurs possibles, veuillez vous référer à l'option"
   },
   "enable_key-s2": {
     "message": "ci-dessus."
+  },
+  "enable_key-s3": {
+    "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
   },
   "flash_scrolltoitem-s1": {
     "message": "Définit si \"Faire clignoter les bordures de l'élément\" dans la liste des éléments filtrables doit essayer de faire défiler la page pour afficher l'élément recherché."
@@ -142,6 +157,9 @@
   },
   "sendReport_key-s3": {
     "message": "."
+  },
+  "sendReport_key-s4": {
+    "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
   },
   "data_directory-s1": {
     "message": "Le dossier dans lequel Adblock plus stocke ses données. Le chemin d'accès peut être soit absolu, soit relatif par rapport au dossier du profil utilisateur."
@@ -218,11 +236,53 @@
   "blocklocalpages-s1": {
     "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
   },
+  "blocktypes-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
+  "checkedadblockprefs-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
+  "checkedadblocksync-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
+  "grouporder-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
+  "linktypes-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
+  "localschemes-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
+  "noncollapsabletypes-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
+  "patterns-s1": {
+    "message": "Non utilisé dans Adblock Plus 0.7.5 et supérieur"
+  },
   "linkcheck-s1": {
     "message": "Non utilisé dans Adblock Plus 0.7.5.4 et supérieur"
   },
   "checkedadblockinstalled-s1": {
     "message": "Non utilisé dans Adblock Plus 1.0 et supérieur"
+  },
+  "checktoolbar-s1": {
+    "message": "Non utilisé dans Adblock Plus 1.0 et supérieur"
+  },
+  "protectchrome-s1": {
+    "message": "Non utilisé dans Adblock Plus 1.0 et supérieur"
+  },
+  "showsubscriptions-s1": {
+    "message": "Non utilisé dans Adblock Plus 1.0 et supérieur"
+  },
+  "warnregexp-s1": {
+    "message": "Non utilisé dans Adblock Plus 1.0 et supérieur"
+  },
+  "showintoolbar-s1": {
+    "message": "Non utilisé dans Adblock Plus 2.0 et supérieur"
+  },
+  "settings_key-s1": {
+    "message": "Non utilisé dans Adblock Plus 2.0 et supérieur"
   },
   "hideimagemanager-s1": {
     "message": "Non utilisé dans Adblock Plus 2.1 et supérieur"
