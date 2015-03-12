@@ -19,9 +19,9 @@
   <table id="preftable">
     <tbody>
       <tr>
-        <th width="30%">{{ "prefnamecol"|translate }}</th>
-        <th width="20%">{{ "defaultcol"|translate }}</th>
-        <th width="50%">{{ "descriptioncol"|translate }}</th>
+        <th width="30%">{{ "Preference"|translate("prefnamecol") }}</th>
+        <th width="20%">{{ "Default value"|translate("defaultcol") }}</th>
+        <th width="50%">{{ "Comments"|translate("descriptioncol") }}</th>
       </tr>
       {% for section in preftable %}
         <tr id="{{ section.id }}">

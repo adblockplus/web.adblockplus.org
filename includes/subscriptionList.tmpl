@@ -26,20 +26,20 @@
       <strong class="subscriptionTitle">{{ subscription["name"] }}</strong><br>
       {{ subscription["specialization"] }}
       {%- if subscription["supplements"] %}
-      <br>{{ "supplements_prefix"|translate }} {{ ' / '.join(subscription["supplements"]) }} {{ "supplements_suffix"|translate }}
+      <br>{{ "supplement for"|translate("supplements_prefix") }} {{ ' / '.join(subscription["supplements"]) }} {{ ""|translate("supplements_suffix") }}
       {%- endif %}
     </td>
     <td>
       {%- if subscription["maintainer"] %}
-      {{ "maintainer_prefix"|translate }} {{ subscription["maintainer"] }} {{ "maintainer_suffix"|translate }}<br>
+      {{ "by"|translate("maintainer_prefix") }} {{ subscription["maintainer"] }} {{ ""|translate("maintainer_suffix") }}<br>
       {%- endif %}
       {%- set is_first = True %}
-      {% for key in ('homepage', 'forum', 'contact', 'faq', 'blog', 'changelog', 'policy') -%}
+      {% for key, default in (('homepage', 'Homepage'), ('forum', 'Forum'), ('contact', 'Contact page'), ('faq', 'FAQ'), ('blog', 'Blog'), ('changelog', 'Changelog'), ('policy', 'Policy')) -%}
         {%- set url = subscription[key] -%}
         {%- if url -%}
           {%- if not is_first %}, {% endif -%}
           {%- set is_first = False -%}
-          <a href="{{ url }}">{{ key|translate }}</a>
+          <a href="{{ url }}">{{ default|translate(key) }}</a>
         {%- endif %}
       {%- endfor %}
     </td>
@@ -47,9 +47,9 @@
   <tr{% if subscription["deprecated"] %} class="deprecated"{% endif %}>
     <td>
       {%- if subscription["deprecated"] %}
-      <strong>{{ "deprecation_warning"|translate }}</strong><br>
+      <strong>{{ "Note: This list is not optimized for Adblock Plus and may slow down your browsing experience."|translate("deprecation_warning") }}</strong><br>
       {%- endif %}
-      {{ "subscribe"|translate }}{{ ' ' }}
+      {{ "Subscribe:"|translate("subscribe") }}{{ ' ' }}
       {%- for title, url, complete in subscription["variants"] -%}
         <a href="abp:subscribe?location={{ url|urlencode }}&amp;title={{ title|urlencode }}
           {%- if parent and not complete -%}
@@ -69,7 +69,7 @@
 
 {% macro display_subscriptions(subscriptions) %}
   {%- set current_type = subscriptions[0]["type"] -%}
-  <h2>{{ ("type_" + current_type)|translate }}</h2>
+  <h2>{{ get_string("type_" + current_type, "subscriptions") }}</h2>
 
   <table class="subscriptions">
   {%- for subscription in subscriptions|subscription_sort -%}
@@ -78,7 +78,7 @@
         {%- set current_type = subscription["type"] %}
   </table>
 
-  <h2>{{ ("type_" + current_type)|translate }}</h2>
+  <h2>{{ get_string("type_" + current_type, "subscriptions") }}</h2>
 
   <table class="subscriptions">
       {%- endif -%}
