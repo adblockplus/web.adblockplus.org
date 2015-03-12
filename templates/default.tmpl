@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html lang="{{locale}}" dir="{{"rtl" if config.has_option("rtl", locale) else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
   <head>
-    <title>{{title|translate}}</title>
+    <title>{{title|translate("title")}}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/main.css" class="cssfx">
@@ -53,9 +53,9 @@
   <body>
     {% macro pageitem(name) %}
       {% if name == page %}
-        <li class="selected">{{name|translate("menu")}}</li>
+        <li class="selected">{{get_string(name, "menu")}}</li>
       {% else %}
-        <li>{{name|linkify}}{{name|translate("menu")}}</a></li>
+        <li>{{name|linkify}}{{get_string(name, "menu")}}</a></li>
       {% endif %}
     {% endmacro %}
 
@@ -64,9 +64,9 @@
       <nav>
         <ul>
           {% if localefile == "index" %}
-            <li class="selected first">{{"installation"|translate("menu")}}</li>
+            <li class="selected first">{{get_string("installation", "menu")}}</li>
           {% else %}
-            <li class="install-link first">{{"index"|linkify}}{{"installation"|translate("menu")}} <span class="sprite install-link-icon"></span></a></li>
+            <li class="install-link first">{{"index"|linkify}}{{get_string("installation", "menu")}} <span class="sprite install-link-icon"></span></a></li>
           {% endif %}
           {% for name in ["about", "features", "bugs", "contribute"] %}
             {{pageitem(name)}}
@@ -75,10 +75,10 @@
             <form action="https://www.google.com/cse" id="search-box">
               <input name="cx" value="001104437084080304350:n8odfuv0gvi" type="hidden">
               <input name="ie" value="UTF-8" type="hidden">
-              <label id="search-field-label-plain" for="search-field">{{"search"|translate("menu")}}</label>
+              <label id="search-field-label-plain" for="search-field">{{get_string("search", "menu")}}</label>
               <input id="search-field" name="q" type="search">
               <label id="search-field-label-button" for="search-field">
-                <button id="search-button" type="submit">{{"search"|translate("menu")}}</button>
+                <button id="search-button" type="submit">{{get_string("search", "menu")}}</button>
               </label>
             </form>
           </li>
@@ -103,7 +103,7 @@
 
     <div id="content" {% if localefile == "index" %}class="{{page}}"{% endif %}>
       {% if not noheading %}
-      <h1>{{title|translate}}</h1>
+      <h1>{{title|translate("title")}}</h1>
       {% endif %}
 
       {% if not notoc %}
@@ -135,7 +135,7 @@
       <div id="footer-content">
         <nav>
           <section class="first">
-            <h1>{{"resources"|translate("menu")}}</h1>
+            <h1>{{get_string("resources", "menu")}}</h1>
             <ul>
               {% for name in ["acceptable-ads", "documentation", "deployments", "privacy", "impressum"] %}
                 {{pageitem(name)}}
@@ -144,27 +144,27 @@
           </section>
 
           <section>
-            <h1>{{"community"|translate("menu")}}</h1>
+            <h1>{{get_string("community", "menu")}}</h1>
             <ul>
-              <li><a href="/releases/" hreflang="en">{{"releases"|translate("menu")}}</a></li>
-              <li><a href="/blog/" hreflang="en">{{"blog"|translate("menu")}}</a></li>
-              <li><a href="/forum/" hreflang="en">{{"forum"|translate("menu")}}</a></li>
+              <li><a href="/releases/" hreflang="en">{{get_string("releases", "menu")}}</a></li>
+              <li><a href="/blog/" hreflang="en">{{get_string("blog", "menu")}}</a></li>
+              <li><a href="/forum/" hreflang="en">{{get_string("forum", "menu")}}</a></li>
               {{pageitem("development-builds")}}
             </ul>
           </section>
 
           <section>
-            <h1>{{"development"|translate("menu")}}</h1>
+            <h1>{{get_string("development", "menu")}}</h1>
             <ul>
               {{pageitem("source")}}
-              <li><a href="/category/roadmap/" hreflang="en">{{"roadmap"|translate("menu")}}</a></li>
+              <li><a href="/category/roadmap/" hreflang="en">{{get_string("roadmap", "menu")}}</a></li>
               {{pageitem("tools")}}
             </ul>
           </section>
         </nav>
 
         <section id="social">
-          <h1>{{"follow-us"|translate("menu")}}</h1>
+          <h1>{{get_string("follow-us", "menu")}}</h1>
           <ul id="social-list">
             <li class="social-entry">
               <a rel="nofollow" id="social-facebook" class="sprite" href="https://www.facebook.com/adblockplus"></a>

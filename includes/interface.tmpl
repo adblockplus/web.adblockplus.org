@@ -28,7 +28,7 @@
 {% macro display_interface(interface, links) %}
   {% set interface=interface|parse_interface %}
 
-  <h2>{{ "toc_header"|translate("interface") }}</h2>
+  <h2>{{ get_string("toc_header", "interface") }}</h2>
   <ul>
     {% for property in interface %}
       {% if property.type == "method" %}
@@ -67,11 +67,11 @@
       {{ property.description() }}
       <dl>
         {% if property.version %}
-          <dt>{{ "minversion_label"|translate("interface") }}</dt>
-          <dd>{{ property.version }} {{ "minversion_addendum"|translate("interface") }}</dd>
+          <dt>{{ get_string("minversion_label", "interface") }}</dt>
+          <dd>{{ property.version }} {{ get_string("minversion_addendum", "interface") }}</dd>
         {% endif %}
         {% if property.arguments|length %}
-          <dt>{{ "arguments_label"|translate("interface") }}</dt>
+          <dt>{{ get_string("arguments_label", "interface") }}</dt>
           {% for argument in property.arguments %}
             <dd>
               <span class="argumentname">{{ argument.name }}</span>:
@@ -80,7 +80,7 @@
           {% endfor %}
         {% endif %}
         {% if "description-return" in property %}
-          <dt>{{ "returnvalue_label"|translate("interface") }}</dt>
+          <dt>{{ get_string("returnvalue_label", "interface") }}</dt>
           <dd>{{ property["description-return"]() }}</dd>
         {% endif %}
       </dl>
