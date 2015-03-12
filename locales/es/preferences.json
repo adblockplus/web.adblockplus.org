@@ -84,12 +84,21 @@
     "message": "."
   },
   "sidebar_key-s1": {
-    "message": "Determina el atajo de teclado a usar para abrir la ventana de elementos bloqueables. Esta preferencia puede estar vacía o tener el siguiente formato <em>modificador1 modificador2 tecla</em>. Los modificadores reconocidos son: Shift, Accel (tecla de aceleración preterminada, como Ctrl en Windows, Comando en Mac OS X), Ctrl/Control, Alt, Meta. La tecla puede ser una letra o una tecla especial como F7 o FLECHA DERECHA (puede buscar en <a>la interfaz de nsIDOMKeyEvent</a> la lista de teclas especiales)."
+    "message": "Determina el atajo de teclado a usar para abrir la ventana de elementos bloqueables. Esta preferencia puede estar vacía o tener el siguiente formato <em>modificador1 modificador2 tecla</em>. Los modificadores reconocidos son: Shift, Accel (tecla de aceleración preterminada, como Ctrl en Windows, Comando en Mac OS X), Ctrl/Control, Alt, Meta. La tecla puede ser una letra o una tecla especial como F7 o FLECHA DERECHA (puede buscar en"
   },
   "sidebar_key-s2": {
-    "message": "A partir de Adblock Plus 1.3.5 se pueden especificar varios atajos de teclado separado por comas, se utilizará el primero de la lista que se halle disponible."
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   },
   "sidebar_key-s3": {
+    "message": "la interfaz de nsIDOMKeyEvent"
+  },
+  "sidebar_key-s4": {
+    "message": "la lista de teclas especiales)."
+  },
+  "sidebar_key-s5": {
+    "message": "A partir de Adblock Plus 1.3.5 se pueden especificar varios atajos de teclado separado por comas, se utilizará el primero de la lista que se halle disponible."
+  },
+  "sidebar_key-s6": {
     "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   },
   "filters_key-s1": {
@@ -98,11 +107,17 @@
   "filters_key-s2": {
     "message": "."
   },
+  "filters_key-s3": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
+  },
   "enable_key-s1": {
     "message": "Determina el atajo de teclado a utilizar para activar/desactivar Adblock Plus. Para una descripción de sus posibles valores puede consultar"
   },
   "enable_key-s2": {
     "message": "."
+  },
+  "enable_key-s3": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   },
   "flash_scrolltoitem-s1": {
     "message": "Determina si los \"bordes de elementos Flash\" en la lista de la ventana de elementos bloqueables deben intentar desplazar la ventana de forma que el elemento sea visible."
@@ -142,6 +157,9 @@
   },
   "sendReport_key-s3": {
     "message": "."
+  },
+  "sendReport_key-s4": {
+    "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   },
   "data_directory-s1": {
     "message": "El directorio donde Adblock Plus debe guardar sus datos. Puede ser o bien un direccionamiento absoluto o un direccionamiento relativo respecto al directorio de perfil de usuario. Si la preferencia"
@@ -224,16 +242,67 @@
   "blocklocalpages-s1": {
     "message": "No usado en Adblock Plus 0.7.5 y posteriores"
   },
+  "blocktypes-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "checkedadblockprefs-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "checkedadblocksync-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "grouporder-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "linktypes-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "localschemes-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "noncollapsabletypes-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
+  "patterns-s1": {
+    "message": "No usado en Adblock Plus 0.7.5 y posteriores"
+  },
   "linkcheck-s1": {
     "message": "No usado en Adblock Plus 0.7.5.4 y posteriores"
   },
   "checkedadblockinstalled-s1": {
     "message": "No usado en Adblock Plus 1.0 y posteriores"
   },
+  "checktoolbar-s1": {
+    "message": "No usado en Adblock Plus 1.0 y posteriores"
+  },
+  "protectchrome-s1": {
+    "message": "No usado en Adblock Plus 1.0 y posteriores"
+  },
+  "showsubscriptions-s1": {
+    "message": "No usado en Adblock Plus 1.0 y posteriores"
+  },
+  "warnregexp-s1": {
+    "message": "No usado en Adblock Plus 1.0 y posteriores"
+  },
+  "showintoolbar-s1": {
+    "message": "No se utiliza en Adblock Plus 2.0 y posteriores"
+  },
+  "settings_key-s1": {
+    "message": "No se utiliza en Adblock Plus 2.0 y posteriores"
+  },
   "hideimagemanager-s1": {
     "message": "No se utiliza en Adblock Plus 2.1 y versiones posteriores"
   },
   "lastRuleUpdate-s1": {
     "message": "No utilizado a partir de las version 2.3 de Adblock Plus"
+  },
+  "correctTyposAsked-s1": {
+    "message": "No utilizado a partir de las version 2.3 de  Adblock Plus"
+  },
+  "correctTypos-s1": {
+    "message": "No utilizado a partir de las version 2.3 de  Adblock Plus"
+  },
+  "whitelist-s1": {
+    "message": "No utilizado a partir de las version 2.3 de  Adblock Plus"
   }
 }

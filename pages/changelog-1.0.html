@@ -1,0 +1,121 @@
+title=Detailed changelog for Adblock Plus 1.0
+
+
+        <p>{{s1 The following lists the major changes compared to Adblock Plus 0.7.5.4:}}</p>
+
+        <h2 id="issues">{{s2 Known issues}}</h2>
+
+        <ul>
+               <li>{{s3 Format of the filter storage changed so going back to a previous version requires exporting the filters and re-importing them after the downgrade}}</li>
+               <li>{{s4 Mac OS X: Flash movies might not be displayed properly if "Show tabs on Flash and Java" option is switched on}}</li>
+               <li>{{s5 Some translations contain untranslated English strings}}</li>
+        </ul>
+
+        <h2 id="features">{{s6 New features}}</h2>
+
+        <ul>
+               <li>{{s7 New filter composer dialog makes adding filters easier}}</li>
+               <li>{{s8 New filter options}} <code>{{s9 $third-party}}</code> {{s10 and}} <code>{{s11 $~third-party}}</code> {{s12 restrict filters to third-party/first-party requests (<a href="/forum/viewtopic.php?t=591">forum topic</a>)}}</li>
+        </ul>
+
+        <h2 id="interface">{{s13 User interface}}</h2>
+
+        <ul>
+               <li>{{s14 Added translations: Armenian, Galician, Indonesian}}</li>
+        </ul>
+
+        <h3 id="blockable">{{s15 List of blockable items}}</h3>
+
+        <ul>
+               <li>{{s16 Tooltip now shows the filter source in addition to the filter itself (<a href="/forum/viewtopic.php?t=1705">forum topic</a>)}}</li>
+               <li>{{s17 Filters can now be disabled and re-enabled from the context menu (<a href="/forum/viewtopic.php?t=2204">forum topic</a>)}}</li>
+               <li>{{s18 Changed default action for blocked items to "Add exception rule" instead of "Edit filter"}}</li>
+               <li>{{s19 Made "State" the default sort order (blocked items first)}}</li>
+               <li>{{s20 Added support for multiple selection and copying of multiple addresses/filters (<a href="/forum/viewtopic.php?t=1705">forum topic</a>)}}</li>
+               <li>{{s21 Added "Select all" to the context menu}}</li>
+               <li>{{s22 Added &quot;Copy filter&quot; item to the context menu (<a href="/forum/viewtopic.php?t=2498">forum topic</a>)}}</li>
+               <li>{{s23 Added "Size" column (hidden by default), same information shown in the tooltip}}</li>
+               <li>{{s24 Changed filter color for element hiding hits (<a href="/forum/viewtopic.php?t=3071">forum topic</a>)}}</li>
+               <li>{{s25 Fixed: Header is hidden in full screen mode}}</li>
+        </ul>
+
+        <h3 id="preferences">{{s26 Preferences window}}</h3>
+
+        <ul>
+               <li>{{s27 Eliminated delay when window is opened and much of the delay when changes are applied}}</li>
+               <li>{{s28 Mac OS X: Preferences menu changed into toolbar to make sure it stays inside the window (<a href="/forum/viewtopic.php?t=2431">forum topic</a>)}}</li>
+               <li>{{s29 Changed names for groups of user-defined filters (<a href="/forum/viewtopic.php?t=1207">forum topic</a>)}}</li>
+               <li>{{s30 Group/subscription titles use bold text now (<a href="/forum/viewtopic.php?t=3061">forum topic</a>)}}</li>
+               <li>{{s31 Added "View" menu to control visible columns and sorting, removed column picker}}</li>
+               <li>{{s32 Made new "View" menu the context menu for list header}}</li>
+               <li>{{s33 Groups containing user-defined filters can now be disabled (<a href="/forum/viewtopic.php?t=2654">forum topic</a>)}}</li>
+               <li>{{s34 Images for &quot;Enabled&quot; column made more obvious (<a href="/forum/viewtopic.php?t=1325">forum topic</a>, <a href="/forum/viewtopic.php?t=3061">forum topic</a>)}}</li>
+               <li>{{s35 Removed &quot;Add filter&quot; dummy from the list (<a href="/forum/viewtopic.php?t=2654">forum topic</a>)}}</li>
+               <li>{{s36 Added support for comments in all filter groups, not only "Advertisement filters"}}</li>
+               <li>{{s37 Comments now always stay before the same filter, regardless of sorting (also, they can be dragged even if the list is sorted)}}</li>
+               <li>{{s38 For invalid filters, tooltip now explains why they are invalid}}</li>
+               <li>{{s39 Removed user interface elements that were made obsolete by the filter composer: regular expression warning and corresponding preference}} <code>{{s40 extensions.adblockplus.warnregexp}}</code>{{s41 , dropdown list in filter editor (<a href="/forum/viewtopic.php?t=2571">forum topic</a>)}}</li>
+               <li>{{s42 Filter export now inserts a checksum comment into the file (<a href="/forum/viewtopic.php?t=2623">forum topic</a>)}}</li>
+               <li>{{s43 Added a tooltip explaining the meaning of the exclamation mark}}</li>
+               <li>{{s44 Added a way to disable/enable filters and subscriptions from context menu}}</li>
+               <li>{{s45 &quot;Reset filter statistics&quot; now resets &quot;Last hit&quot; as well (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=18650">bug 18650</a>)}}</li>
+               <li>{{s46 Fixed: Findbar in preferences dialog has no icons (Firefox 3)}}</li>
+               <li>{{s47 Fixed: Dates would sometimes use wrong character encoding (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=441370">bug 441370</a>)}}</li>
+               <li>{{s48 Fixed: &quot;Edit filter in effect&quot; might select a filter in a disabled subscription even though it exists in enabled subscriptions as well (<a href="http://forum.mozilla-russia.org/viewtopic.php?pid=260916#p260916">forum topic</a>)}}</li>
+               <li>{{s49 Fixed: Clicking twice on the Enabled column starts filter editor}}</li>
+               <li>{{s50 Fixed: Changes to "download automatically" status are not displayed immediately}}</li>
+               <li>{{s51 Pasting filters with spaces (in particular comments) now possible (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=18920">bug 18920</a>)}}</li>
+        </ul>
+
+        <h3 id="subscriptions">{{s52 Filter subscription selection}}</h3>
+
+        <ul>
+               <li>{{s53 First start: Filter subscription selection is opened in a new tab rather than in a separate window (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=15786">bug 15786</a>)}}</li>
+               <li>{{s54 First start: Filter subscription selection will show up even if other extensions already added a filter subscription they maintain.}}</li>
+               <li>{{s55 "Add filter subscription" from Preferences brings up filter subscription selection rather than the dialog for custom filter subscriptions.}}</li>
+               <li>{{s56 Added warning if Filterset.G is installed with option to uninstall automatically}}</li>
+               <li>{{s57 Added Adblock warning with option to uninstall automatically (this was a separate question pop-up before)}}</li>
+        </ul>
+
+        <h3 id="other-ui">{{s58 Other user interface changes}}</h3>
+
+        <ul>
+               <li>{{s59 Regular expression warning was extended to also warn for filters that are too short to be optimized}}</li>
+               <li>{{s60 Warning that Adblock Plus is disabled allows re-enabling with a single click}}</li>
+               <li>{{s61 Removed ancient Drag&Drop handling code (not discoverable and not advertised anywhere)}}</li>
+               <li>{{s62 Fixed: "Disable on this page only" won’t work for pages with query string}}</li>
+               <li>{{s63 About Adblock Plus: Made version number selectable so that it can be copied}}</li>
+               <li>{{s64 About Adblock Plus: Made homepage link localizable (and different for German/French locales, <a href="https://www.mozdev.org/bugs/show_bug.cgi?id=17136">bug 17136</a>)}}</li>
+               <li>{{s65 Added "Adblock Plus: Blockable Items" to the View menu in Firefox (View – Toolbars menu in SeaMonkey)}}</li>
+        </ul>
+
+        <h2 id="core">{{s66 Core}}</h2>
+
+        <ul>
+               <li>{{s67 Core code was redesigned for better maintainability, code documentation and automated tests (based on}} <a href="{{s68 https://developer.mozilla.org/en/Mochitest}}">{{s69 Mochitest}}</a>{{s70 ) were added for large parts of the core}}</li>
+               <li>{{s71 Made sure filter storage file isn't overwritten unless write was successful (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=16488">bug 16488</a>)}}</li>
+               <li>{{s72 Improved performance (esp. reading filter from disk and saving filters for large filter lists), reduced the amount of memory used}}</li>
+               <li>{{s73 Fixed: Exception rules don’t always apply to element hiding in Firefox 3 (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=20034">bug 20034</a>)}}</li>
+               <li>{{s74 Firefox 1.5, Thunderbird 1.5, SeaMonkey 1.0, Songbird 0.5/0.6 are no longer supported (removed some backwards compatibility hacks)}}</li>
+               <li>{{s75 Flock 1.2/2.0 and Songbird 0.7/1.0 are supported now}}</li>
+               <li>{{s76 Added support for Prism 0.9 (<a href="/forum/viewtopic.php?t=2229">forum topic</a>)}}</li>
+               <li>{{s77 Added hidden preference <a href="preferences#savestats">extensions.adblockplus.savestats</a> to allow turning off hit statistics (useful if patterns.ini is put into a version control system) (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=18650">bug 18650</a>)}}</li>
+               <li>{{s78 Added support for private browsing mode in Firefox 3.1, hit statistics are disabled automatically}}</li>
+               <li>{{s79 All first run actions are now controlled by <a href="preferences#currentversion">extensions.adblockplus.currentversion preference</a> (replaces}} <code>{{s80 showsubscriptions}}</code>{{s81 ,}} <code>{{s82 checkedtoolbar}}</code>{{s83 ,}} <code>{{s84 checkedadblockinstalled}}</code> {{s85 preferences)}}</li>
+               <li>{{s86 Changed patterns.ini format to allow user-defined comments (and potentially other filters as well) to be stored in any filter group}}</li>
+               <li>{{s87 Adblock Plus 0.6 preferences are no longer imported on upgrade}}</li>
+               <li>{{s88 Adblock preferences are no longer imported on upgrade (filter list still imported)}}</li>
+               <li>{{s89 Fixed: Object tabs show up on print (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=19405">bug 19405</a>)}}</li>
+               <li>{{s90 Fixed: &quot;getBoxObjectFor() is deprecated&quot; warning in error console (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=19126">bug 19126</a>)}}</li>
+        </ul>
+
+        <h3 id="synchronizer">{{s91 Subscription downloads}}</h3>
+
+        <ul>
+               <li>{{s92 For subscription downloads, a comment &quot;! Checksum: abcd&quot; is now interpreted and files with wrong checksum are rejected to prevent broken downloads (<a href="/forum/viewtopic.php?t=2623">forum topic</a>, <a href="https://hg.adblockplus.org/adblockplus/file/tip/addChecksum.pl">reference implementation to add checksums</a>)}}</li>
+               <li>{{s93 Next attempt after failed download is after one day now rather than after one hour to prevent server overload (adjusted preference <a href="preferences#subscriptions_fallbackerrors">extensions.adblockplus.subscriptions_fallbackerrors</a> accordingly)}}</li>
+               <li>{{s94 Fallback request can now disable automatic downloads for subscriptions that are no longer available}}</li>
+               <li>{{s95 Fixed: Subscription downloads sometimes go to browser cache}}</li>
+        </ul>
+
+        <p><a href="changelog-0.7.5.4">{{s96 Changelog for the previous release}}</a></p>

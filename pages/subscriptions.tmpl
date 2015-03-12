@@ -1,3 +1,4 @@
+title=Known Adblock Plus subscriptions
 {#
  # This file is part of the Adblock Plus website,
  # Copyright (C) 2006-2015 Eyeo GmbH
@@ -47,11 +48,16 @@
 }
 </style>
 
-<p>{{"s1"|translate(links=["getting_started#subscription"])}}</p>
+<p>{{"This is a list of the actively maintained filter subscriptions we're aware of. You can subscribe to any of them by simply clicking its \"Subscribe\" link and confirming your decision. The filters will be added to Adblock Plus and updated automatically. Note that <a href=\"getting_started#subscription\">you shouldn't add too many filter subscriptions</a>."|translate("s1")}}</p>
 
 
 {% from "includes/subscriptionList" import display_subscriptions %}
+
 {{ display_subscriptions(1|get_subscriptions) }}
 
 
-<p>{{"s2"|translate(links=["mailto:subscriptionlist@adblockplus.org"])}}</p>
+<p>{{"Can't see your filter list here? <a href=\"mailto:subscriptionlist@adblockplus.org\">Send</a> the information you would like to be displayed here. Please note that in order to be included in this list your subscription must contain a comment at the beginning describing the origin of the filter list and the preferred way of contacting you if problems with your list occur. You should also be certain that when these issues arise you will be able to fix them in a reasonable amount of time."|translate("s2")}}</p>
+
+<p>
+{{"Please note that all of these filter lists are being maintained by third parties. Eyeo, the company behind Adblock Plus, has no control over them.\nWe are only listing them to help you find lists that could be useful to you.\nIn no case shall Eyeo be held liable towards you or any other third party for any loss or damage (including but not limited to loss of chances and of business) deriving directly or indirectly from your use of these lists."|translate("s3")}}
+</p>

@@ -1,0 +1,473 @@
+title=Modules
+
+<head>
+<style type="text/css">
+  table
+  {
+    background: white;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  table:first-child
+  {
+    margin-top: 0;
+  }
+
+  th, td
+  {
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+  th
+  {
+    text-align: right;
+  }
+</style>
+</head>
+<p>
+  {{s1 Adblock Plus and all related projects are governed by a <a href="/en/module-ownership">module ownership system</a>. Below is a list of all the modules we currently have.}}
+</p>
+
+<h2 id="code-modules">{{s2 Code modules}}</h2>
+
+<table id="core">
+  <tr>
+    <th>{{s3 Name}}</th>
+    <td>Core</td>
+  </tr>
+  <tr>
+    <th>{{s4 Owner}}</th>
+    <td><a href="mailto:trev@adblockplus.org">Wladimir Palant</a></td>
+  </tr>
+  <tr>
+    <th>{{s5 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockplus">adblockplus</a>
+          <ul>
+            <li>/lib/downloader.js</li>
+            <li>/lib/elemHide.js</li>
+            <li>/lib/filterClasses.js</li>
+            <li>/lib/filterListener.js</li>
+            <li>/lib/filterNotifier.js</li>
+            <li>/lib/filterStorage.js</li>
+            <li>/lib/matcher.js</li>
+            <li>/lib/notification.js</li>
+            <li>/lib/subscriptionClasses.js</li>
+            <li>/lib/synchronizer.js</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockpluscore">adblockpluscore</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="user-interface">
+  <tr>
+    <th>{{s6 Name}}</th>
+    <td>User Interface</td>
+  </tr>
+  <tr>
+    <th>{{s7 Description}}</th>
+    <td>{{s8 The shared UI code.}}</td>
+  </tr>
+  <tr>
+    <th>{{s9 Owner}}</th>
+    <td><a href="mailto:thomas@adblockplus.org">Thomas Greiner</a></td>
+  </tr>
+  <tr>
+    <th>{{s10 Super reviewer}}</th>
+    <td><a href="mailto:trev@adblockplus.org">Wladimir Palant</a></td>
+  </tr>
+  <tr>
+    <th>{{s11 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockplusui">adblockplusui</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockpluschrome">adblockpluschrome</a>
+          <ul>
+            <li>options.html</li>
+            <li>popup.html</li>
+            <li>block.html</li>
+            <li>/skin</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="platform">
+  <tr>
+    <th>{{s12 Name}}</th>
+    <td>Platform</td>
+  </tr>
+  <tr>
+    <th>{{s13 Owner}}</th>
+    <td><a href="mailto:sebastian@adblockplus.org">Sebastian Noack</a></td>
+  </tr>
+  <tr>
+    <th>{{s14 Super reviewer}}</th>
+    <td><a href="mailto:trev@adblockplus.org">Wladimir Palant</a></td>
+  </tr>
+  <tr>
+    <th>{{s15 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockpluschrome">adblockpluschrome</a> {{s16 (except}} <a href="#user-interface">User Interface</a>{{s17 )}}
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="build-and-release-tools">
+  <tr>
+    <th>{{s18 Name}}</th>
+    <td>Build and Release Tools</td>
+  </tr>
+  <tr>
+    <th>{{s19 Owner}}</th>
+    <td><a href="mailto:sebastian@adblockplus.org">Sebastian Noack</a></td>
+  </tr>
+  <tr>
+    <th>{{s20 Super reviewer}}</th>
+    <td><a href="mailto:trev@adblockplus.org">Wladimir Palant</a></td>
+  </tr>
+  <tr>
+    <th>{{s21 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/buildtools">buildtools</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/jsdoc-toolkit">jsdoc-toolkit</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/jshydra">jshydra</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/screenshotter">screenshotter</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="adblock-plus-for-firefox">
+  <tr>
+    <th>{{s22 Name}}</th>
+    <td>Adblock Plus for Firefox</td>
+  </tr>
+  <tr>
+    <th>{{s23 Owner}}</th>
+    <td><a href="mailto:trev@adblockplus.org">Wladimir Palant</a></td>
+  </tr>
+  <tr>
+    <th>{{s24 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockplus">adblockplus</a> {{s25 (except}} <a href="#core">Core</a>{{s26 )}}
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockplustests">adblockplustests</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="adblock-plus-for-android">
+  <tr>
+    <th>{{s27 Name}}</th>
+    <td>Adblock Plus for Android</td>
+  </tr>
+  <tr>
+    <th>{{s28 Owner}}</th>
+    <td><a href="mailto:rene@adblockplus.org">René Jeschke</a></td>
+  </tr>
+  <tr>
+    <th>{{s29 Super reviewer}}</th>
+    <td><a href="mailto:felix@adblockplus.org">Felix Dahlke</a></td>
+  </tr>
+  <tr>
+    <th>{{s30 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/actionbarsherlock">actionbarsherlock</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockplusandroid">adblockplusandroid</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/android-switch-backport">android-switch-backport</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="adblock-plus-for-internet-explorer">
+  <tr>
+    <th>{{s31 Name}}</th>
+    <td>Adblock Plus for Internet Explorer</td>
+  </tr>
+  <tr>
+    <th>{{s32 Owner}}</th>
+    <td><a href="mailto:oleksandr@adblockplus.org">Oleksandr Paraska</a></td>
+  </tr>
+  <tr>
+    <th>{{s33 Super reviewer}}</th>
+    <td><a href="mailto:felix@adblockplus.org">Felix Dahlke</a></td>
+  </tr>
+  <tr>
+    <th>{{s34 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockplusie">adblockplusie</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="libadblockplus">
+  <tr>
+    <th>{{s35 Name}}</th>
+    <td>Libadblockplus</td>
+  </tr>
+  <tr>
+    <th>{{s36 Owner}}</th>
+    <td><a href="mailto:felix@adblockplus.org">Felix Dahlke</a></td>
+  </tr>
+  <tr>
+    <th>{{s37 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/googletest">googletest</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/gyp">gyp</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/libadblockplus">libadblockplus</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/libadblockplus-binaries">libadblockplus-binaries</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/v8">v8</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="infrastructure">
+  <tr>
+    <th>{{s38 Name}}</th>
+    <td>Infrastructure</td>
+  </tr>
+  <tr>
+    <th>{{s39 Owner}}</th>
+    <td><a href="mailto:mathias@adblockplus.org">Mathias Hennig</a></td>
+  </tr>
+  <tr>
+    <th>{{s40 Super reviewer}}</th>
+    <td><a href="mailto:felix@adblockplus.org">Felix Dahlke</a></td>
+  </tr>
+  <tr>
+    <th>{{s41 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/discourse">discourse</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/downloads">downloads</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure">infrastructure</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure-puppet-concat">infrastructure-puppet-concat</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure-puppet-postgresql">infrastructure-puppet-postgresql</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure-puppet-spawn-fcgi">infrastructure-puppet-spawn-fcgi</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure-puppetlabs-apt">infrastructure-puppetlabs-apt</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure-puppetlabs-firewall">infrastructure-puppetlabs-firewall</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure-puppetlabs-mysql">infrastructure-puppetlabs-mysql</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/infrastructure-puppetlabs-stdlib">infrastructure-puppetlabs-stdlib</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="sitescripts">
+  <tr>
+    <th>{{s42 Name}}</th>
+    <td>Sitescripts</td>
+  </tr>
+  <tr>
+    <th>{{s43 Owner}}</th>
+    <td><a href="mailto:sebastian@adblockplus.org">Sebastian Noack</a></td>
+  </tr>
+  <tr>
+    <th>{{s44 Super reviewer}}</th>
+    <td><a href="mailto:trev@adblockplus.org">Wladimir Palant</a></td>
+  </tr>
+  <tr>
+    <th>{{s45 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/abpbot">abpbot</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/cms">cms</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/sitescripts">sitescripts</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="extensions-for-adblock-plus">
+  <tr>
+    <th>{{s46 Name}}</th>
+    <td>Extensions for Adblock Plus</td>
+  </tr>
+  <tr>
+    <th>{{s47 Owner}}</th>
+    <td><a href="mailto:trev@adblockplus.org">Wladimir Palant</a></td>
+  </tr>
+  <tr>
+    <th>{{s48 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/abpcrawler">abpcrawler</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/abpwatcher">abpwatcher</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/abpcustomization">abcustomization</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/elemhidehelper">elemhidehelper</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="websites">
+  <tr>
+    <th>{{s49 Name}}</th>
+    <td>Websites</td>
+  </tr>
+  <tr>
+    <th>{{s50 Owner}}</th>
+    <td><a href="mailto:manvel@adblockplus.org">Manvel Saroyan</a></td>
+  </tr>
+  <tr>
+    <th>{{s51 Super reviewer}}</th>
+    <td><a href="mailto:felix@adblockplus.org">Felix Dahlke</a></td>
+  </tr>
+  <tr>
+    <th>{{s52 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/www">www</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/wwwnew">wwwnew</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table id="url-fixer">
+  <tr>
+    <th>{{s53 Name}}</th>
+    <td>URL Fixer</td>
+  </tr>
+  <tr>
+    <th>{{s54 Owner}}</th>
+    <td><a href="mailto:thomas@adblockplus.org">Thomas Greiner</a></td>
+  </tr>
+  <tr>
+    <th>{{s55 Source path(s)}}</th>
+    <td>
+      <ul>
+        <li>
+          <a href="https://hg.adblockplus.org/urlfixer">urlfixer</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h2 id="non-code-modules">{{s56 Non-code modules}}</h2>
+
+<table id="user-experience">
+  <tr>
+    <th>{{s57 Name}}</th>
+    <td>User Experience</td>
+  </tr>
+  <tr>
+    <th>{{s58 Owner}}</th>
+    <td><a href="mailto:sven@adblockplus.org">Sven Hartz</a></td>
+  </tr>
+  <tr>
+    <th>{{s59 Super reviewer}}</th>
+    <td><a href="mailto:felix@adblockplus.org">Felix Dahlke</a></td>
+  </tr>
+</table>
+
+<table id="quality-assurance">
+  <tr>
+    <th>{{s60 Name}}</th>
+    <td>Quality Assurance</td>
+  </tr>
+  <tr>
+    <th>{{s61 Owner}}</th>
+    <td><a href="mailto:philip@adblockplus.org">Philip Hill</a></td>
+  </tr>
+  <tr>
+    <th>{{s62 Super reviewer}}</th>
+    <td><a href="mailto:felix@adblockplus.org">Felix Dahlke</a></td>
+  </tr>
+</table>

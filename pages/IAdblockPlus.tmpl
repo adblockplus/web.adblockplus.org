@@ -1,3 +1,5 @@
+title=IAdblockPlus
+
 {#
  # This file is part of the Adblock Plus website,
  # Copyright (C) 2006-2015 Eyeo GmbH
@@ -15,7 +17,7 @@
  # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  #}
 
-<h2>{{ "general_notes"|translate("interface") }}</h2>
+<h2>{{ get_string("general_notes", "interface") }}</h2>
 
 <style type="text/css">
 .propname, .methodname, .argumentname
@@ -25,7 +27,7 @@
 </style>
 
 <p>
-  {{"s1"|translate}} {{"s2"|translate}}
+  {{"This interface can be used from extensions that wish to integrate with Adblock\n  Plus."|translate("s1")}} {{"It allows among other things getting some information from Adblock\n  Plus or adding \"special\" subscriptions that will be updated by another extension."|translate("s2")}}
 </p>
 
 <pre>
@@ -43,103 +45,103 @@ else
 </pre>
 
 {% macro subscriptionCountDescription() %}
-<p>{{"subscriptionCountDescription-s1"|translate}}</p>
+<p>{{"Number of subscriptions in the list (including special subscriptions)"|translate("subscriptionCountDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro getSubscriptionDescription() %}
-<p>{{"getSubscriptionDescription-s1"|translate}}</p>
+<p>{{"Retrieves a subscription by its identifier"|translate("getSubscriptionDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro getSubscription_returnDescription() %}
-{{"getSubscription_returnDescription-s1"|translate}} <tt>{{"getSubscription_returnDescription-s2"|translate}}</tt> {{"getSubscription_returnDescription-s3"|translate}}
+{{"the requested subscription or"|translate("getSubscription_returnDescription-s1")}} <tt>{{"null"|translate("getSubscription_returnDescription-s2")}}</tt> {{"if no subscription with the given identifier exists"|translate("getSubscription_returnDescription-s3")}}
 {% endmacro %}
 
 {% macro getSubscription_idDescription() %}
-{{"getSubscription_idDescription-s1"|translate}}
+{{"subscription's identifier (this is subscription's URL for regular subscriptions)"|translate("getSubscription_idDescription-s1")}}
 {% endmacro %}
 
 {% macro getSubscriptionAtDescription() %}
-<p>{{"getSubscriptionAtDescription-s1"|translate}}</p>
+<p>{{"Retrieves a subscription by its position in the list"|translate("getSubscriptionAtDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro getSubscriptionAt_returnDescription() %}
-{{"getSubscription_returnDescription-s1"|translate}} <tt>{{"getSubscriptionAt_returnDescription-s2"|translate}}</tt> {{"getSubscriptionAt_returnDescription-s3"|translate}}
+{{"the requested subscription or"|translate("getSubscriptionAt_returnDescription-s1")}} <tt>{{"null"|translate("getSubscriptionAt_returnDescription-s2")}}</tt> {{"if the index provided is invalid"|translate("getSubscriptionAt_returnDescription-s3")}}
 {% endmacro %}
 
 {% macro getSubscriptionAt_indexDescription() %}
-{{"getSubscriptionAt_indexDescription-s1"|translate}}
+{{"subscription's position in the list, zero-based"|translate("getSubscriptionAt_indexDescription-s1")}}
 {% endmacro %}
 
 {% macro updateExternalSubscriptionDescription() %}
 <p>
-{{"updateExternalSubscriptionDescription-s1"|translate}}
+{{"Updates an external subscription (or creates it if no such subscription\ncurrently exists). Such a subscription will not be updated by Adblock Plus, instead\nthe extension calling this method is responsible for updating it and removing once the\nsubscription is no longer required."|translate("updateExternalSubscriptionDescription-s1")}}
 </p>
 
 <p>
-{{"updateExternalSubscriptionDescription-s2"|translate}}
+{{"Adblock Plus 1.3 and higher: External subscriptions will no longer be saved to disk along\nwith other subscription, updateExternalSubscription() method needs to be called each time\nthe browser starts up to restore the subscription. This is to prevent keeping a stale\nexternal subscription in the list if the user uninstalls the extension managing it."|translate("updateExternalSubscriptionDescription-s2")}}
 </p>
 
 <p>
-{{"updateExternalSubscriptionDescription-s3"|translate}}
+{{"Also, before Adblock Plus 1.3 this method returned a boolean indicating whether\nthe subscription could be created. Creating a subscription can no longer fail in\nAdblock Plus 1.3 and higher but its identifier might be rewritten — the new identifier\nwill be returned."|translate("updateExternalSubscriptionDescription-s3")}}
 </p>
 {% endmacro %}
 
 {% macro updateExternalSubscription_returnDescription() %}
-{{"updateExternalSubscription_returnDescription-s1"|translate}}
+{{"effective subscription identifier (might not be identical to the id parameter)"|translate("updateExternalSubscription_returnDescription-s1")}}
 {% endmacro %}
 
 {% macro updateExternalSubscription_idDescription() %}
-{{"updateExternalSubscription_idDescription-s1"|translate}}
+{{"subscription's identifier (for external subscriptions this can be any string)"|translate("updateExternalSubscription_idDescription-s1")}}
 {% endmacro %}
 
 {% macro updateExternalSubscription_titleDescription() %}
-{{"updateExternalSubscription_titleDescription-s1"|translate}}
+{{"subscription title to be used if a new subscription is created. This parameter will be ignored if the subscription already exists."|translate("updateExternalSubscription_titleDescription-s1")}}
 {% endmacro %}
 
 {% macro updateExternalSubscription_patternsDescription() %}
-{{"updateExternalSubscription_patternsDescription-s1"|translate}}
+{{"list of filter patterns that the subscription should contain"|translate("updateExternalSubscription_patternsDescription-s1")}}
 {% endmacro %}
 
 {% macro removeExternalSubscriptionDescription() %}
-<p>{{"removeExternalSubscriptionDescription-s1"|translate}}</p>
+<p>{{"Removes an external subscription"|translate("removeExternalSubscriptionDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro removeExternalSubscription_returnDescription() %}
-<tt>{{"removeExternalSubscription_returnDescription-s1"|translate}}</tt> {{"removeExternalSubscription_returnDescription-s2"|translate}} <tt>{{"removeExternalSubscription_returnDescription-s3"|translate}}</tt> {{"removeExternalSubscription_returnDescription-s4"|translate}}
+<tt>{{"true"|translate("removeExternalSubscription_returnDescription-s1")}}</tt> {{"if the subscription has been successfully removed,"|translate("removeExternalSubscription_returnDescription-s2")}} <tt>{{"false"|translate("removeExternalSubscription_returnDescription-s3")}}</tt> {{"if no such subscription exists or the subscription isn't managed externally"|translate("removeExternalSubscription_returnDescription-s4")}}
 {% endmacro %}
 
 {% macro removeExternalSubscription_idDescription() %}
-{{"updateExternalSubscription_idDescription-s1"|translate}}
+{{"subscription's identifier (for external subscriptions this can be any string)"|translate("removeExternalSubscription_idDescription-s1")}}
 {% endmacro %}
 
 {% macro addPatternsDescription() %}
-<p>{{"addPatternsDescription-s1"|translate}}</p>
+<p>{{"Adds patterns to the list of user-defined filters"|translate("addPatternsDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro addPatterns_returnDescription() %}
 {% endmacro %}
 
 {% macro addPatterns_patternsDescription() %}
-{{"addPatterns_patternsDescription-s1"|translate}}
+{{"list of filter patterns to be added"|translate("addPatterns_patternsDescription-s1")}}
 {% endmacro %}
 
 {% macro removePatternsDescription() %}
-<p>{{"removePatternsDescription-s1"|translate}}</p>
+<p>{{"Removes patterns from the list of user-defined filters"|translate("removePatternsDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro removePatterns_returnDescription() %}
 {% endmacro %}
 
 {% macro removePatterns_patternsDescription() %}
-{{"removePatterns_patternsDescription-s1"|translate}}
+{{"list of filter patterns to be removed"|translate("removePatterns_patternsDescription-s1")}}
 {% endmacro %}
 
 {% macro getInstalledVersionDescription() %}
-<p>{{"getInstalledVersionDescription-s1"|translate}}</p>
+<p>{{"Retrieves the version of the installed Adblock Plus extension. Note that this is the version number as reported by the extension manager or InstallTrigger and it might be incorrect if the latter is used (in Mozilla Suite or SeaMonkey)."|translate("getInstalledVersionDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro getInstalledVersion_returnDescription() %}
-{{"getInstalledVersion_returnDescription-s1"|translate}} <tt>{{"getInstalledVersion_returnDescription-s2"|translate}}</tt>
+{{"Adblock Plus version, for example"|translate("getInstalledVersion_returnDescription-s1")}} <tt>{{"0.7.0.1"|translate("getInstalledVersion_returnDescription-s2")}}</tt>
 {% endmacro %}
 
 

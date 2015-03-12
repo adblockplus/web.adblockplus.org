@@ -29,6 +29,9 @@
   "getSubscriptionAtDescription-s1": {
     "message": "Devuelve una suscripción a partir de su posición en la lista"
   },
+  "getSubscriptionAt_returnDescription-s1": {
+    "message": "la suscripción solicitada o"
+  },
   "getSubscriptionAt_returnDescription-s2": {
     "message": "null"
   },
@@ -73,6 +76,9 @@
   },
   "removeExternalSubscription_returnDescription-s4": {
     "message": "si la suscripción no existe o existe pero no está gestionada externamente"
+  },
+  "removeExternalSubscription_idDescription-s1": {
+    "message": "identificador de la suscripción (para suscripciones externas puede ser cualquier cadena de texto)"
   },
   "addPatternsDescription-s1": {
     "message": "Añade patrones a la lista de filtros definidos por el usuario"

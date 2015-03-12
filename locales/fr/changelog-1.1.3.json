@@ -24,15 +24,33 @@
     "message": "L'extension Ecosia version 1.0.3 supprime tous les abonnements d'Adblock Plus (<a>bogue 533419</a>). Solution : mettre à jour vers Ecosia 1.0.4 et à nouveau <a>ajouter un abonnement</a>."
   },
   "s8": {
-    "message": "L'extension HP Smart Web Printing <a>empêche le bon fonctionnemlent d'Adblock Plus et est responsable d'autres problèmes</a>. Solution : désinstaller l'extension HP Smart Web Printing. Malheureusement, le fait d'avoir contacté HP pour leur demander de résoudre ce (simple) problème n'a servi à rien, il semblerait que cela soit impossible."
+    "message": "L'extension HP Smart Web Printing"
   },
   "s9": {
-    "message": "L'assistant Microsoft .NET Framework 0.0.0.0 empêchera le bon fonctionnement d'Adblock Plus ce qui résultera à des espaces vides dans le menu Outils et aucune icône Adblock Plus dans la barre d'outils. Solution : désactiver l'assistant Microsoft .NET Framework (\"version 0.0.0.0\" n'est pas la vraie extension, son but est de permettre une seule fois l'installation de l'assistant Microsoft .NET Framework)."
+    "message": "http://h30434.www3.hp.com/t5/HP-Print-Apps-Mobile-and-Web/HP-Smart-Web-Printing-breaks-Adblock-Plus-in-Firefox-accessing/m-p/198651"
   },
   "s10": {
-    "message": "Les versions de Firefox/Thunderbird/SeaMonkey de certaines distributions Linux (pas les distributions officielles cependant) refuseront d'installer  Adblock Plus en indiquant le message : « La signature n'a pu être vérifiée ». Solution : mettre à jour le paquetage « nss » en installant la version la plus récente pour votre distribution. Si cela ne résout pas le problème, <a>affichez les certificats</a> dans l'onglet « Avancé » / « chiffrement » des options, sélectionnez « StartCom Certification Authority » dans l'onglet « Autorités » et cliquez sur « Modifier… ». Vérifiez que la case « Ce certificat peut identifier des créateurs de logiciels » est cochée et cliquez sur « OK »."
+    "message": "empêche le bon fonctionnemlent d'Adblock Plus et est responsable d'autres problèmes"
   },
   "s11": {
+    "message": ". Solution : désinstaller l'extension HP Smart Web Printing. Malheureusement, le fait d'avoir contacté HP pour leur demander de résoudre ce (simple) problème n'a servi à rien, il semblerait que cela soit impossible."
+  },
+  "s12": {
+    "message": "L'assistant Microsoft .NET Framework 0.0.0.0 empêchera le bon fonctionnement d'Adblock Plus ce qui résultera à des espaces vides dans le menu Outils et aucune icône Adblock Plus dans la barre d'outils. Solution : désactiver l'assistant Microsoft .NET Framework (\"version 0.0.0.0\" n'est pas la vraie extension, son but est de permettre une seule fois l'installation de l'assistant Microsoft .NET Framework)."
+  },
+  "s13": {
+    "message": "Les versions de Firefox/Thunderbird/SeaMonkey de certaines distributions Linux (pas les distributions officielles cependant) refuseront d'installer  Adblock Plus en indiquant le message : « La signature n'a pu être vérifiée ». Solution : mettre à jour le paquetage « nss » en installant la version la plus récente pour votre distribution. Si cela ne résout pas le problème,"
+  },
+  "s14": {
+    "message": "http://support.mozilla.com/en-US/kb/Options+window+-+Advanced+panel#Encryption_tab"
+  },
+  "s15": {
+    "message": "affichez les certificats"
+  },
+  "s16": {
+    "message": "dans l'onglet « Avancé » / « chiffrement » des options, sélectionnez « StartCom Certification Authority » dans l'onglet « Autorités » et cliquez sur « Modifier… ». Vérifiez que la case « Ce certificat peut identifier des créateurs de logiciels » est cochée et cliquez sur « OK »."
+  },
+  "s17": {
     "message": "Historique des modifications pour la version précédente"
   }
 }

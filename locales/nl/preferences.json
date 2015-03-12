@@ -84,12 +84,21 @@
     "message": "."
   },
   "sidebar_key-s1": {
-    "message": "Definieert de sneltoets die gebruikt wordt om de lijst met blokkeerbare onderdelen te openen. Deze voorkeur kan leeg zijn of het kan in de vorm <em>modifier1 modifier2 key</em> zijn. Herkende modifiers zijn: Shift, Accel (standaard accelarator toets, bijvoorbeeld Ctrl in Windows, Command in Mac OS X), Ctrl/Control, Alt, Meta. Key kan zowel een letter zijn als een speciale toets als F7 of RIGHT (zie <a>nsIDOMKeyEvent interface</a> voor een lijst van bijzondere toetsen)."
+    "message": "Definieert de sneltoets die gebruikt wordt om de lijst met blokkeerbare onderdelen te openen. Deze voorkeur kan leeg zijn of het kan in de vorm <em>modifier1 modifier2 key</em> zijn. Herkende modifiers zijn: Shift, Accel (standaard accelarator toets, bijvoorbeeld Ctrl in Windows, Command in Mac OS X), Ctrl/Control, Alt, Meta. Key kan zowel een letter zijn als een speciale toets als F7 of RIGHT (zie"
   },
   "sidebar_key-s2": {
-    "message": "Vanaf Adblock Plus 1.3.5 kunnen meerdere comma-gescheiden sneltoetsen worden opgegeven, de eerst beschikbare sneltoets uit de lijst zal worden gebruikt."
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   },
   "sidebar_key-s3": {
+    "message": "nsIDOMKeyEvent interface"
+  },
+  "sidebar_key-s4": {
+    "message": "voor een lijst van bijzondere toetsen)."
+  },
+  "sidebar_key-s5": {
+    "message": "Vanaf Adblock Plus 1.3.5 kunnen meerdere comma-gescheiden sneltoetsen worden opgegeven, de eerst beschikbare sneltoets uit de lijst zal worden gebruikt."
+  },
+  "sidebar_key-s6": {
     "message": "<em>N.B.</em>: Deze instelling heeft pas effect als de browser herstart is."
   },
   "filters_key-s1": {
@@ -98,11 +107,17 @@
   "filters_key-s2": {
     "message": "."
   },
+  "filters_key-s3": {
+    "message": "<em>N.B.</em>: Deze instelling treedt pas in werking als de browser herstart is"
+  },
   "enable_key-s1": {
     "message": "Definieert de sneltoets die gebruikt kan worden om Adblock Plus in- en uit te schakelen. Voor een beschrijving van toegestane waarden, zie"
   },
   "enable_key-s2": {
     "message": "."
+  },
+  "enable_key-s3": {
+    "message": "<em>N.B.</em>: Deze instelling treedt pas in werking als de browser herstart is"
   },
   "flash_scrolltoitem-s1": {
     "message": "Definieert of \"Randen laten knipperen\" in de lijst van blokkeerbare onderdelen moet proberen om het onderdeel in beeld te laten scrollen."
@@ -142,6 +157,9 @@
   },
   "sendReport_key-s3": {
     "message": "."
+  },
+  "sendReport_key-s4": {
+    "message": "<em>N.B.</em>: Deze instelling treedt pas in werking als de browser herstart is"
   },
   "data_directory-s1": {
     "message": "De map waar Adb lock Plus zijn gegevens moet opslaan. Dit kan een absoluut pad zijn of een locatie relatief ten opzichte van de gebruiker's profielmap. Als de"
@@ -218,11 +236,53 @@
   "blocklocalpages-s1": {
     "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
   },
+  "blocktypes-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "checkedadblockprefs-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "checkedadblocksync-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "grouporder-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "linktypes-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "localschemes-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "noncollapsabletypes-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
+  "patterns-s1": {
+    "message": "Niet gebruikt in Adblock Plus 0.7.5 en hoger"
+  },
   "linkcheck-s1": {
     "message": "Niet gebruikt in Adblock Plus 0.7.5.4 en hoger"
   },
   "checkedadblockinstalled-s1": {
     "message": "Niet gebruikt in Adblock Plus 1.0 en hoger"
+  },
+  "checktoolbar-s1": {
+    "message": "Niet gebruikt in Adblock Plus 1.0 en hoger"
+  },
+  "protectchrome-s1": {
+    "message": "Niet gebruikt in Adblock Plus 1.0 en hoger"
+  },
+  "showsubscriptions-s1": {
+    "message": "Niet gebruikt in Adblock Plus 1.0 en hoger"
+  },
+  "warnregexp-s1": {
+    "message": "Niet gebruikt in Adblock Plus 1.0 en hoger"
+  },
+  "showintoolbar-s1": {
+    "message": "Niet gebruikt in Adblock Plus 2.0 en hoger"
+  },
+  "settings_key-s1": {
+    "message": "Niet gebruikt in Adblock Plus 2.0 en hoger"
   },
   "hideimagemanager-s1": {
     "message": "Niet gebruikt in Adblock Plus 2.1 en hoger"

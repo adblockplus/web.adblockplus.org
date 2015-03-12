@@ -1,0 +1,16 @@
+title=FAQ - Installation
+
+
+<h2 id="global">{{s1 How do I install Adblock Plus for all users and make everybody use the same filter list?}}</h2>
+
+        <p>{{s2 Are you an administrator making Adblock Plus available to all users? Then you will need to install Adblock Plus into the browser's application directory. For SeaMonkey this is (unfortunately) the only option, in Firefox you create a subdirectory}} <code>{{s3 {d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}}}</code> {{s4 in its}} <code>{{s5 extensions}}</code> {{s6 directory and unpack the contents of adblockplus.xpi there (it is a regular ZIP file).}}</p>
+
+        <p>{{s7 Now you need to change the default Adblock Plus settings. Locate the file adblockplus.js (this is}} <code>{{s8 extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js}}</code> {{s9 in Firefox and}} <code>{{s10 defaults/pref/adblockplus.js}}</code> {{s11 in SeaMonkey) and edit it. You probably don't want that users are bothered with the Adblock Plus icon so you can change <a href="preferences#showintoolbar">extensions.adblockplus.showintoolbar</a> and <a href="preferences#showinstatusbar">extensions.adblockplus.showinstatusbar</a> to}} <code>{{s12 false}}</code>{{s13 . If you don't want that users get the suggestion to install a subscription when they start Firefox for the first time you also change}} <a href="preferences#currentVersion">extensions.adblockplus.currentVersion</a> {{s14 to "2.0".}}</p>
+
+        <p>{{s15 Finally you might want to make everybody use the same filter list. To do so you change the default settings for <a href="preferences#patternsfile">extensions.adblockplus.patternsfile</a>. By default this file is stored in user's profile directory (relative path), use an absolute path to set a fixed location for everybody. Make sure that everybody can read the file but you are the only one having write access to it — now you can start your browser and add some filters/subscriptions that everybody will use. The changes users make to the filter list won't persist since they don't have write access to the file.}}</p>
+
+        <p>{{s16 If you really want to make Adblock Plus invisible in the user interface you can also add a filter to <a href="faq_customization#menu_remove">remove it from the Tools menu</a> and <a href="faq_customization#context_remove">the context menu</a>.}}</p>
+
+        <h2 id="kmeleon">{{s17 How do I install Adblock Plus in K-Meleon?}}</h2>
+
+        <p>{{s18 K-Meleon builds of Adblock Plus and installation instructions can be found <a href="kmeleon">here</a>.}}</p>

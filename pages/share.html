@@ -1,0 +1,189 @@
+title=Share
+template=minimal
+
+<head>
+<style>
+body
+{
+  width: 650px;
+  margin: auto;
+  padding: 0px 30px 20px 30px;
+  border: 5px solid #a42c23;
+  background: white;
+}
+
+#headline
+{
+  padding: 36px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  text-align: center;
+  margin: 0;
+  color: #a42c23;
+}
+
+#facebook, #twitter, #gplus
+{
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 140px;
+  height: 140px;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  background-size: 140px;
+  background-position: 0px 50%;
+}
+
+#facebook
+{
+  background-image: url("/facebook.png");
+  background-color: #8e9bb2;
+}
+
+#twitter
+{
+  background-image: url("/twitter.png");
+  background-color: #64abcb;
+}
+
+#gplus
+{
+  background-image: url("/googleplus.png");
+  background-color: #cf6d5c;
+}
+
+.widget-container
+{
+  position: relative;
+  height: 118px;
+  top: 11px;
+  margin-right: 11px;
+  border-radius: 0px 3px 3px 0px;
+  background-color: white;
+}
+
+.fb-like
+{
+  padding-top: 30px;
+  padding-left: 12px;
+}
+
+#twitter iframe
+{
+  padding-top: 40px;
+  padding-left: 10px;
+}
+</style>
+<script><!--
+(function()
+{
+  function initFacebook(locale)
+  {
+    var map = {
+      "en": "en_US",
+      "he": "he_IL",
+      "ko": "ko_KR",
+    };
+    if (locale in map)
+      locale = map[locale];
+
+    // HACK AHEAD
+    if (locale.length == 2)
+      locale = locale + "_" + locale.toUpperCase();
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/" + locale + "/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }
+
+  function initTwitter()
+  {
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  }
+
+  function initGooglePlus()
+  {
+
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  }
+
+  function sendDimensions()
+  {
+    if (window.parent === window)
+      return;
+
+    var dimensions = {
+      width: document.body.offsetWidth,
+      height: document.body.offsetHeight
+    };
+
+    // IE doesn't support data other than strings yet
+    if (/MSIE/.test(navigator.appVersion))
+      dimensions = JSON.stringify(dimensions);
+
+    window.parent.postMessage(dimensions, "*");
+  }
+
+  window.addEventListener("DOMContentLoaded", function()
+  {
+    var locale = window.location.pathname.replace(/^\/+/, "").replace(/\/.*/, "");
+    if (/^\w\w(_\w\w)?/.test(locale))
+    {
+      // Set language for Twitter
+      var links = document.getElementById("twitter").getElementsByTagName("a");
+      for (var i = 0; i < links.length; i++)
+        links[i].setAttribute("data-lang", locale.toLowerCase());
+
+      // Set language for Google+
+      window.___gcfg = {lang: locale};
+    }
+    else
+      locale = "en";
+
+    try {
+      initFacebook(locale);
+    } catch (e) {
+      console.log("Exception from Facebook", e);
+    }
+    try {
+      initTwitter();
+    } catch (e) {
+      console.log("Exception from Twitter", e);
+    }
+    try {
+      initGooglePlus();
+    } catch (e) {
+      console.log("Exception from Google+", e);
+    }
+    sendDimensions();
+  }, false);
+})();
+--></script>
+</head>
+<div id="headline">{{s1 Think Adblock Plus is worth sharing?}}</div>
+
+<div id="facebook">
+  <div class="widget-container">
+    <div id="fb-root"></div>
+    <div class="fb-like" data-href="https://www.facebook.com/adblockplus" data-send="false" data-show-faces="true" data-width="450"></div>
+  </div>
+</div>
+
+<div id="twitter">
+  <div class="widget-container">
+    {{s2 <a class="twitter-follow-button" data-show-count="false" data-size="large" href="https://twitter.com/AdblockPlus">Follow @AdblockPlus</a>
+    <a class="twitter-share-button" data-size="large" data-text="I browse the web without annoying ads thanks to @AdblockPlus!" data-url="https://adblockplus.org" href="https://twitter.com/share">Tweet</a>}}
+  </div>
+</div>
+
+<div id="gplus">
+  <div class="widget-container">
+    <div class="g-plus" data-href="https://plus.google.com/110020691898167279887" data-rel="publisher" data-width="500"></div>
+  </div>
+</div>

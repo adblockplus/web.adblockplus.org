@@ -29,6 +29,9 @@
   "getSubscriptionAtDescription-s1": {
     "message": "根據列表中的位址取回一個條件集"
   },
+  "getSubscriptionAt_returnDescription-s1": {
+    "message": "要求的條件集，若提供的索引無效則回傳"
+  },
   "getSubscriptionAt_returnDescription-s2": {
     "message": "null"
   },
@@ -73,6 +76,9 @@
   },
   "removeExternalSubscription_returnDescription-s4": {
     "message": "若該條件集不存在或條件集並非由外部管理則回傳 false。"
+  },
+  "removeExternalSubscription_idDescription-s1": {
+    "message": "條件集的識別碼 (外部的條件集可以是任何字串)"
   },
   "addPatternsDescription-s1": {
     "message": "要增加到使用者自訂規則列表的過濾條件"
