@@ -6,108 +6,105 @@
     "message": "A continuación se detallan los cambios respecto a Adblock Plus 2.0.3."
   },
   "s2": {
-    "message": "Si encuentra problemas en esta versión, por favor consulte  <a>la lista de problemas conocidos</a>."
-  },
-  "s3": {
     "message": "Funcionalidades"
   },
-  "s4": {
+  "s3": {
     "message": "Ya se puede instalar Adblock Plus sin reiniciar el navegador."
   },
-  "s5": {
+  "s4": {
     "message": "Añadido soporte para Firefox Mobile 14."
   },
-  "s6": {
+  "s5": {
     "message": "Mayor integración en Thunderbird, especialmente en la interfaz de usuario de Adblock Plus que ahora funciona correctamente con pestañas de páginas web."
   },
-  "s7": {
+  "s6": {
     "message": "Implementadas las <a>excepciones a ocultación de elementos</a> (pensadas principalmente para autores de suscripciones)."
   },
-  "s8": {
+  "s7": {
     "message": "Interfaz de usuario"
   },
-  "s9": {
+  "s8": {
     "message": "Creador de filtros: Eliminado el aviso cuando se añaden filtros a un grupo desactivado, se crea un nuevo grupo si no se encuentra ningún grupo activo para el filtro."
   },
-  "s10": {
+  "s9": {
     "message": "Preferencias de filtros: Diversas mejoras para una mejor vista general (<a>tema del foro</a>, <a>tema del foro</a>, <a>tema del foro</a>)."
   },
-  "s11": {
+  "s10": {
     "message": "Preferencias de filtros: Solucionado el mensaje erróneo de aviso al borrar grupos de filtros."
   },
-  "s12": {
+  "s11": {
     "message": "Informes de fallo: Fuerza una actualización de la suscripción de filtros al informar de un falso positivo (<a>tema del foro</a>)."
   },
-  "s13": {
+  "s12": {
     "message": "Informes de fallo: Ya no se permite enviar informes de fallo si la suscripción de filtros no se ha actualizado en las últimas dos semanas."
   },
-  "s14": {
+  "s13": {
     "message": "Se ha reemplazado el diálogo personalizado de \"Acerca de\" por el diálogo interno del navegador."
   },
-  "s15": {
+  "s14": {
     "message": "Solucionado: Las pestañas de Flash y Java ya no tienen esquinas redondeadas en Firefox 13 (<a>tema del foro</a>)."
   },
-  "s16": {
+  "s15": {
     "message": "Elementos bloqueables"
   },
-  "s17": {
+  "s16": {
     "message": "El atajo de teclado para los elementos bloqueables a partir de Firefox 15 es Ctrl-Mayús-U, el antiguo atajo de teclado ya no está disponible."
   },
-  "s18": {
+  "s17": {
     "message": "Se aceptan también búsquedas de"
   },
-  "s19": {
+  "s18": {
     "message": "ya no es necesario buscar"
   },
-  "s20": {
+  "s19": {
     "message": "(<a>tema del foro</a>)."
   },
-  "s21": {
+  "s20": {
     "message": "Solucionado: La lista a veces se recargaba aunque la página actual siguiera siendo la misma."
   },
-  "s22": {
+  "s21": {
     "message": "Solucionado: El menú contextual podría sugerir desactivar el filtro o dominio equivocados (<a>tema del foro</a>)."
   },
-  "s23": {
+  "s22": {
     "message": "Solucionado: el menú contextual podría impedir que algunos elementos de memoria sean recuperados por el garbage collector (<a>bug 727739</a>)."
   },
-  "s24": {
+  "s23": {
     "message": "Solucionado: El mensaje emergente podía aparecer por encima del menú contextual."
   },
-  "s25": {
+  "s24": {
     "message": "Núcleo"
   },
-  "s26": {
+  "s25": {
     "message": "Se puede instalar Adblock Plus en cualquier aplicación basada en Gecko 8.0 o posterior, como Firefox 8, Thunderbird 8 y SeaMonkey 2.5. Las versiones anteriores ya no están soportadas, al igual que las versiones de Firefox Mobile basadas en XUL."
   },
-  "s27": {
+  "s26": {
     "message": "Las suscripciones de filtros pueden establecer automáticamente su título utilizando el comentario"
   },
-  "s28": {
+  "s27": {
     "message": "(<a>tema del foro</a>)."
   },
-  "s29": {
+  "s28": {
     "message": "Mejoras en uso y rendimiento de memoria, en especial se ha solucionado la regresión en Firefox 15 y versiones posteriores."
   },
-  "s30": {
+  "s29": {
     "message": "Ya no se usa el archivo"
   },
-  "s31": {
+  "s30": {
     "message": ", al ser causa habitual de problemas de estabilidad."
   },
-  "s32": {
+  "s31": {
     "message": "Se ha cambiado a operaciones asíncronas de lectura/escritura de archivos para mejorar la responsividad de la interfaz de usuario."
   },
-  "s33": {
+  "s32": {
     "message": "Solucionado: Las pestañas de objetos estaban provocando la aparición del mensaje \""
   },
-  "s34": {
+  "s33": {
     "message": "\" en la Consola de errores de Firefox 15 y versiones posteriores."
   },
-  "s35": {
+  "s34": {
     "message": "Solucionado: manejo de puntos finales en nombres de dominio (<a>tema del foro</a>)."
   },
-  "s36": {
+  "s35": {
     "message": "Lista de cambios de la versión anterior"
   }
 }
