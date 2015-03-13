@@ -17,26 +17,38 @@ import codecs
 import os
 import tarfile
 import urllib
+from ConfigParser import SafeConfigParser
 
 def get_subscriptions(_):
-  from sitescripts.subscriptions.subscriptionParser import parse_file, calculate_supplemented
+  from sitescripts.subscriptions import subscriptionParser
 
   result = {}
   utf8_reader = codecs.getreader('utf8')
   source = urllib.urlopen("https://hg.adblockplus.org/subscriptionlist/archive/default.tar.gz")
+  orig_get_settings = subscriptionParser.get_settings
   try:
+    # Hack: monkey-patch subscriptionParser.get_settings()
+    settings = SafeConfigParser()
+    settings_handle = urllib.urlopen("https://hg.adblockplus.org/subscriptionlist/rawfile/default/settings")
+    try:
+      settings.readfp(utf8_reader(settings_handle))
+    finally:
+      settings_handle.close()
+    subscriptionParser.get_settings = lambda: settings
+
     with tarfile.open(fileobj=source, mode="r|gz") as archive:
       for fileinfo in archive:
         if os.path.splitext(fileinfo.name)[1] != ".subscription":
           continue
 
-        filedata = parse_file(fileinfo.name, utf8_reader(archive.extractfile(fileinfo)))
+        filedata = subscriptionParser.parse_file(fileinfo.name, utf8_reader(archive.extractfile(fileinfo)))
         if filedata.unavailable:
           continue
 
         result[filedata.name] = filedata
   finally:
     source.close()
+    subscriptionParser.get_settings = orig_get_settings
 
-  calculate_supplemented(result)
+  subscriptionParser.calculate_supplemented(result)
   return result.values()
