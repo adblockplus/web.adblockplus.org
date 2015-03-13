@@ -2,119 +2,117 @@ title=Detailed changelog for Adblock Plus 2.1
 
 
 <p>
-  {{s1 The following lists the major changes compared to Adblock Plus 2.0.3.}} {{s2 If
-  you experience issues with this release please check
-  <a href="known-issues">the list of known issues</a>.}}
+  {{s1 The following lists the major changes compared to Adblock Plus 2.0.3.}}
 </p>
 
-<h2 id="features">{{s3 Features}}</h2>
+<h2 id="features">{{s2 Features}}</h2>
 
 <ul>
-  <li>{{s4 Adblock Plus can be installed without restarting the browser now.}}</li>
-  <li>{{s5 Added support for Firefox Mobile 14.}}</li>
+  <li>{{s3 Adblock Plus can be installed without restarting the browser now.}}</li>
+  <li>{{s4 Added support for Firefox Mobile 14.}}</li>
   <li>
-    {{s6 Better Thunderbird integration, in particular the Adblock Plus user interface is working
+    {{s5 Better Thunderbird integration, in particular the Adblock Plus user interface is working
     with web page tabs correctly now.}}
   </li>
   <li>
-    {{s7 Implemented <a href="/en/filters#elemhide_exceptions">element hiding exceptions</a>
+    {{s6 Implemented <a href="/en/filters#elemhide_exceptions">element hiding exceptions</a>
     (mostly useful for subscription authors).}}
   </li>
 </ul>
 
-<h2 id="interface">{{s8 User interface}}</h2>
+<h2 id="interface">{{s7 User interface}}</h2>
 
 <ul>
   <li>
-    {{s9 Filter composer: Removed warning when adding filters to a disabled group, a new group
+    {{s8 Filter composer: Removed warning when adding filters to a disabled group, a new group
     is created if no enabled group can be found for the filter.}}
   </li>
   <li>
-    {{s10 Filter preferences: Various improvements for a better overview
+    {{s9 Filter preferences: Various improvements for a better overview
     (<a href="/forum/viewtopic.php?t=9070">forum topic</a>,
     <a href="/forum/viewtopic.php?t=9037">forum topic</a>,
     <a href="/forum/viewtopic.php?t=10166">forum topic</a>).}}
   </li>
   <li>
-    {{s11 Filter preferences: Fixed wrong warning message when deleting filter groups.}}
+    {{s10 Filter preferences: Fixed wrong warning message when deleting filter groups.}}
   </li>
   <li>
-    {{s12 Issue reporter: Force a filter subscription update when reporting a false positive
+    {{s11 Issue reporter: Force a filter subscription update when reporting a false positive
     (<a href="/forum/viewtopic.php?t=9308">forum topic</a>).}}
   </li>
   <li>
-    {{s13 Issue reporter: Sending issue reports is no longer allowed if the filter subscription
+    {{s12 Issue reporter: Sending issue reports is no longer allowed if the filter subscription
     hasn't been updated in the past two weeks.}}
   </li>
   <li>
-    {{s14 Custom About dialog has been removed, using the browser's built-in dialog now.}}
+    {{s13 Custom About dialog has been removed, using the browser's built-in dialog now.}}
   </li>
   <li>
-    {{s15 Fixed: Tabs on Flash and Java no longer have rounded corners in Firefox 13
+    {{s14 Fixed: Tabs on Flash and Java no longer have rounded corners in Firefox 13
     (<a href="/forum/viewtopic.php?t=9666">forum topic</a>).}}
   </li>
 </ul>
 
-<h3 id="blockable">{{s16 Blockable items}}</h3>
+<h3 id="blockable">{{s15 Blockable items}}</h3>
 
 <ul>
   <li>
-    {{s17 The shortcut key for Blockable items in Firefox 15 and above is Ctrl-Shift-U now, the
+    {{s16 The shortcut key for Blockable items in Firefox 15 and above is Ctrl-Shift-U now, the
     old shortcut key is no longer available.}}
   </li>
   <li>
-    {{s18 Searches for}} <code>object-subrequest</code> {{s19 are accepted as well, searching
-    for}} <code>object_subrequest</code> {{s20 is no longer required
+    {{s17 Searches for}} <code>object-subrequest</code> {{s18 are accepted as well, searching
+    for}} <code>object_subrequest</code> {{s19 is no longer required
     (<a href="/forum/viewtopic.php?t=9682">forum topic</a>).}}
   </li>
   <li>
-    {{s21 Fixed: The list will sometimes reload even though the current page stays the same.}}
+    {{s20 Fixed: The list will sometimes reload even though the current page stays the same.}}
   </li>
   <li>
-    {{s22 Fixed: Context menu might suggest disabling the filter on wrong domain
+    {{s21 Fixed: Context menu might suggest disabling the filter on wrong domain
     (<a href="/forum/viewtopic.php?t=9208">forum topic</a>).}}
   </li>
   <li>
-    {{s23 Fixed: Context menu might prevent page elements from being garbage collected
+    {{s22 Fixed: Context menu might prevent page elements from being garbage collected
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=727739">bug 727739</a>).}}
   </li>
   <li>
-    {{s24 Fixed: The tooltip might get displayed on top of the context menu.}}
+    {{s23 Fixed: The tooltip might get displayed on top of the context menu.}}
   </li>
 </ul>
 
-<h2 id="core">{{s25 Core}}</h2>
+<h2 id="core">{{s24 Core}}</h2>
 
 <ul>
   <li>
-    {{s26 Adblock Plus can now be installed in any application based on Gecko 8.0 and higher,
+    {{s25 Adblock Plus can now be installed in any application based on Gecko 8.0 and higher,
     in particular Firefox 8, Thunderbird 8, SeaMonkey 2.5. Older versions are no longer
     supported, XUL-based Firefox Mobile releases like Firefox Mobile 10 aren't supported either.}}
   </li>
   <li>
-    {{s27 Filter subscriptions can set their title automatically using}} <code>! Title</code>
-    {{s28 comment (<a href="/forum/viewtopic.php?t=9448">forum topic</a>).}}
+    {{s26 Filter subscriptions can set their title automatically using}} <code>! Title</code>
+    {{s27 comment (<a href="/forum/viewtopic.php?t=9448">forum topic</a>).}}
   </li>
   <li>
-    {{s29 Improved memory use and performance, especially fixed the regression in Firefox 15 and
+    {{s28 Improved memory use and performance, especially fixed the regression in Firefox 15 and
     above.}}
   </li>
   <li>
-    {{s30 Stopped using}} <code>cache.js</code> {{s31 file, it's a frequent source of stability
+    {{s29 Stopped using}} <code>cache.js</code> {{s30 file, it's a frequent source of stability
     issues.}}
   </li>
   <li>
-    {{s32 Switched to asynchronous file read/write operations to improve user interface
+    {{s31 Switched to asynchronous file read/write operations to improve user interface
     responsiveness.}}
   </li>
   <li>
-    {{s33 Fixed: Object tabs are causing "}}can't access dead object{{s34 " message in Error
+    {{s32 Fixed: Object tabs are causing "}}can't access dead object{{s33 " message in Error
     Console of Firefox 15 and above.}}
   </li>
   <li>
-    {{s35 Fixed handling of trailing dots in domain names
+    {{s34 Fixed handling of trailing dots in domain names
     (<a href="/forum/viewtopic.php?t=9548">forum topic</a>).}}
   </li>
 </ul>
 
-<p><a href="changelog-2.0.3">{{s36 Changelog for the previous release}}</a></p>
+<p><a href="changelog-2.0.3">{{s35 Changelog for the previous release}}</a></p>

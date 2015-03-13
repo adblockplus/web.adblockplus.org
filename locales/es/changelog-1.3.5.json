@@ -6,99 +6,96 @@
     "message": "A continuación se detallan los principales cambios respecto a Adblock Plus 1.3.3."
   },
   "s2": {
-    "message": "Si experimenta problemas con esta versión, por favor consulte  <a>la lista de problemas conocidos</a>."
-  },
-  "s3": {
     "message": "Funcionalidades"
   },
-  "s4": {
+  "s3": {
     "message": "Firefox Mobile 4 ya está soportado, se ha discontinuado el soporte para Firefox Mobile 1.0."
   },
-  "s5": {
+  "s4": {
     "message": "K-Meleon 1.6 está soportado en gran parte (hacen falta <a>versiones especiales</a>)."
   },
-  "s6": {
+  "s5": {
     "message": "Se ha añadido soporte para <a>la propuesta de Do-Not-Track header</a> (DNT), un filtro del tipo de"
   },
-  "s7": {
+  "s6": {
     "message": "que hará que se envíe este header a todos los lugares ("
   },
-  "s8": {
+  "s7": {
     "message": "tema del foro"
   },
-  "s9": {
+  "s8": {
     "message": ")."
   },
-  "s10": {
+  "s9": {
     "message": "Se ha añadido un botón experimental: \"Recomendarnos en Facebook\", en el menú para facilitar el recomendar Adblock Plus. Sólo se muestra a los usuarios de Facebook."
   },
-  "s11": {
+  "s10": {
     "message": "Interfaz de usuarios"
   },
-  "s12": {
+  "s11": {
     "message": "Se han vuelto a incluir las traducciones al malayo y estonio."
   },
-  "s13": {
+  "s12": {
     "message": "Los atajos de teclado preferidos pueden tener varios valores, se usará el primer atajo disponible."
   },
-  "s14": {
+  "s13": {
     "message": "Se ha cambiado el atajo de teclado predeterminado para las Preferencias de Ctrl-Shift-E (utilizado en Firefox 3.x) a Ctrl-Shift-F (utilizado en Firefox 4) o Ctrl-Shift-O (para Firefox 4 en Mac OS X)."
   },
-  "s15": {
+  "s14": {
     "message": "Se ha eliminado el icono especial de estado para sitios web de la \"lista blanca\", ahora se muestra el icono de \"Adblock Plus desactivado\" en esas páginas (<a>tema del foro</a>)."
   },
-  "s16": {
+  "s15": {
     "message": "El elemento del menú \"Activar Adblock Plus\" se ha convertido en \"Desactivar en todos\"."
   },
-  "s17": {
+  "s16": {
     "message": "Firefox Mobile: La página de primera instalación está más adaptada a una pantalla pequeño."
   },
-  "s18": {
+  "s17": {
     "message": "Solucionado: El contenido de la página de primera instalación a veces aparecía recortado (<a>tema del foro</a>)."
   },
-  "s19": {
+  "s18": {
     "message": "Solucionado: La opción \"Editar filtro en uso\" en la lista de elementos bloqueable no funcionaba correctamente si la ventana de Preferencias ya estaba abierta."
   },
-  "s20": {
+  "s19": {
     "message": "Informes de errores"
   },
-  "s21": {
+  "s20": {
     "message": "Deshabilitados los informes con demasiadas suscripciones de filtros."
   },
-  "s22": {
+  "s21": {
     "message": "Deshabilitados los informes para ciertos tipos de páginas (sobre todo pestañas en blanco, correos electrónicos, páginas locales, páginas de extensiones)."
   },
-  "s23": {
+  "s22": {
     "message": "Thunderbird: Mejorados los informes para publicaciones den bitácoras, ahora se envía la dirección del post de la bitácora en vez de una dirección de buzón de correo que no sirve para nada."
   },
-  "s24": {
+  "s23": {
     "message": "Solucionado: Las suscripciones de filtros deshabilitadas no deben aparecer en el informe (<a>tema del foro</a>)."
   },
-  "s25": {
+  "s24": {
     "message": "Núcleo"
   },
-  "s26": {
+  "s25": {
     "message": "Se ha implemenado un algoritmo de comprobación de filtros más rápido (<a>tema del foro</a>)."
   },
-  "s27": {
+  "s26": {
     "message": "el archivo patterns.ini sólo se guarda al cerrar si ha habido cambios en el mismo."
   },
-  "s28": {
+  "s27": {
     "message": "Los datos de coincidencia de filtros y reglas de ocultación de elementos se almacenan en caché en la carpeta de datos de Adblock Plus para reducir el tiempo de inicio."
   },
-  "s29": {
+  "s28": {
     "message": "Se ha cambiado la forma en la que se escribe en el archivo patterns.ini para evitar la pérdida de datos si el ordenador se apaga repentinamente. switched off abruptly."
   },
-  "s30": {
+  "s29": {
     "message": "Ahora se reconocen los archivos patterns.ini corruptos y se carga automáticamente un archivo de copia de respaldo si existe uno disponible."
   },
-  "s31": {
+  "s30": {
     "message": "Solucionado: Las reglas de ocultación de elementos podían provocar en ocasiones cierres inesperados del programa (regresión en Adblock Plus 1.3.3)."
   },
-  "s32": {
+  "s31": {
     "message": "Solucionado: Al desactivar filtros en la lista de elementos bloqueables no se desactivaban realmente dichos filtros en Firefox 3.6."
   },
-  "s33": {
+  "s32": {
     "message": "Detalle de cambios de la versión anterior"
   }
 }
