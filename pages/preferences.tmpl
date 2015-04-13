@@ -336,6 +336,10 @@ title=Adblock Plus preferences
 {{"Unused in Adblock Plus 2.3 and higher"|translate("whitelist-s1")}}
 {% endmacro %}
 
+{% macro suppress_first_run_pageDescription() %}
+{{"Suppresses the first run page Adblock Plus opens after the installation."|translate("suppress_first_run_page-s1")}}
+{% endmacro %}
+
 
 {#
   Preference descriptions are defined in the macros above and only referenced
@@ -677,6 +681,17 @@ title=Adblock Plus preferences
         "name": "whitelist",
         "default": "",
         "description": whitelistDescription
+      }
+    ]
+  },
+  {
+    "id": "preferences_for_administrators",
+    "title": 'Preferences for administrators'|translate('preferences_for_administratorsTitle'),
+    "preferences": [
+      {
+        "name": "suppress_first_run_page",
+        "default": "false",
+        "description": suppress_first_run_pageDescription
       }
     ]
   }
