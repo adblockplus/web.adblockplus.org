@@ -1,0 +1,101 @@
+title=Configuring Adblock Plus for Android
+
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-2015 Eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+{% from "includes/toc" import toc %}
+
+
+<h2 id="firststeps">{{"Getting started"|translate("s1")}}</h2>
+
+<p>{{"Adblock Plus will automatically select a suitable filter subscription for you the first time it runs.\nYou can still <a href=\"#subscription\">select any other subscription</a> from the list."|translate("s2")}}</p>
+
+<p style="text-align: center"><img height="240" src="android-images/auto_subscription.png" width="240"></p>
+
+<p>{{"Adblock Plus will run as background service and display its status in notification area."|translate("s3")}}</p>
+
+<h2 id="subscription">{{"Selecting a subscription"|translate("s4")}}</h2>
+
+<p>{{"You can change subscription at any time by selecting it from a list:"|translate("s5")}}</p>
+
+<p style="text-align: center"><img height="240" src="android-images/select_subscription.png" width="240"></p>
+
+<p>{{"Each time you select a different subscription, it is automatically downloaded and activated.\nBy default, subscriptions are being refreshed periodically. There are two other options available in the advanced settings:"|translate("s6")}}</p>
+
+<ul>
+<li>{{"Manually — the subscription is only refreshed when you press the refresh button ("|translate("s7")}}<img alt="()" src="android-images/refresh_icon.png">{{")."|translate("s8")}}</li>
+<li>{{"On start — the subscription is automatically refreshed when you start Adblock Plus."|translate("s9")}}</li>
+</ul>
+
+<h2 id="proxy">{{"Setting up the proxy manually"|translate("s10")}}</h2>
+
+<p>{{"Android versions prior to 3.1 do not have proxy settings built-in, but several manufacturers have added them to their devices.\nIf you have a non-rooted device running an earlier Android version than 3.1, you can still set up the proxy manually."|translate("s11")}}</p>
+
+<p>{{"Depending on the device, the proxy settings are in different places. If your device is in the following list, follow the specific instructions:"|translate("s12")}}</p>
+
+<h3 id="proxyexamples">{{"Instructions for specific devices"|translate("s13")}}</h3>
+
+<ul>
+<li><a href="android-config-alcatel-onetouch">Alcatel onetouch 918D</a></li>
+<li><a href="android-config-samsung-galaxy-i">Samsung Galaxy I</a></li>
+<li><a href="android-config-samsung-galaxy-y">Samsung Galaxy Y</a></li>
+<li><a href="android-config-samsung-galaxy-s3">Samsung Galaxy S III</a></li>
+</ul>
+
+<h3 id="genericexample">{{"Generic instructions"|translate("s14")}}</h3>
+
+<p>{{"If your device isn't in the list, the most common place for the proxy settings is in the advanced WiFi settings."|translate("s15")}}</p>
+
+<h4>{{"Android 4.x (Ice Cream Sandwich, Jelly Bean, KitKat) devices"|translate("s16")}}</h4>
+
+<p>{{"Run <em>Settings</em> application. Select <em>Wi-Fi</em>. The list of available Wi-Fi networks will open:"|translate("s17")}}</p>
+
+<p style="text-align: center"><img height="427" src="android-images/wifi_settings.png" width="240"></p>
+
+<p>{{"Connect to the desired network (access point) if not already. Long press on <em>connected</em> network, context menu will appear. Select <em>Modify network config</em>:"|translate("s18")}}</p>
+
+<p style="text-align: center"><img height="427" src="android-images/modify_wifi.png" width="240"></p>
+
+<p>{{"In opened dialog mark <em>Show advanced options</em> check box:"|translate("s19")}}</p>
+
+<p style="text-align: center"><img height="427" src="android-images/advanced_settings.png" width="240"></p>
+
+<p>{{"Scroll to proxy settings, select <em>Manual</em>, proxy options will appear:"|translate("s20")}}</p>
+
+<p style="text-align: center"><img height="427" src="android-images/proxy_settings.png" width="240"></p>
+
+<p>{{"Set <em>Proxy</em> to"|translate("s21")}} <code style="font-weight: bold">localhost</code> {{"and"|translate("s22")}} <em>{{"Port"|translate("s23")}}</em> {{"to the number specified by Adblock Plus in the notification message:"|translate("s24")}}</p>
+
+<p style="text-align: center"><img height="160" src="android-images/port_notification.png" width="400"></p>
+
+<h4>{{"Android 2.3 (Gingerbread) devices"|translate("s25")}}</h4>
+
+<p>{{"Go to the WiFi settings and select <em>Advanced settings</em> from the menu:"|translate("s26")}}</p>
+
+<p style="text-align: center"><img height="320" src="android-images/config-samsung-galaxy-y/wifi_settings.png" width="240"></p>
+
+<p>{{"Find the proxy host and port settings:"|translate("s27")}}</p>
+
+<p style="text-align: center"><img height="260" src="android-images/config-samsung-galaxy-y/wifi_proxy_settings.png" width="240"></p>
+
+<p>{{"Set the proxy host to"|translate("s28")}} <code style="font-weight: bold">localhost</code> {{"and port to the number displayed by Adblock Plus:"|translate("s29")}}</p>
+
+<p style="text-align: center"><img height="160" src="android-images/port_notification.png" width="400"></p>
+
+<h2 id="faq">{{"Frequently asked questions"|translate("s30")}}</h2>
+
+{{toc("android-faq")}}

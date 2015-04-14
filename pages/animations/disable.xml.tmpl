@@ -1,0 +1,52 @@
+template=raw
+
+<animation height="250" width="550" xmlns="https://adblockplus.org/animation">
+<object anchor="topleft" id="mouse_pointer" src="{{'images/anim_mouse_pointer.png'|inline_file}}"></object>
+<object anchor="center" id="clickmarker" src="{{'images/anim_clickmarker.png'|inline_file}}"></object>
+<object anchor="-20,56" id="mouse_leftclick" src="{{'images/anim_mouse_leftclick.png'|inline_file}}"></object>
+<object anchor="-20,56" id="mouse_middleclick" src="{{'images/anim_mouse_middleclick.png'|inline_file}}"></object>
+<object anchor="topright" id="toolbarmenu" src="{{'images/anim_toolbarmenu.png'|inline_file}}"></object>
+<object anchor="topright" id="button_highlight" src="{{'images/anim_button_highlight.png'|inline_file}}"></object>
+<object anchor="topright" id="button_disabled_highlight" src="{{'images/anim_button_disabled_highlight.png'|inline_file}}"></object>
+<object anchor="topright" id="button_whitelist" src="{{'images/anim_button_whitelist.png'|inline_file}}"></object>
+<object anchor="topleft" id="background1" src="{{'images/anim_background1.png'|inline_file}}"></object>
+
+<action>
+  <show coords="0,0" object="background1"></show>
+  <move duration="120" fromAnchor="topright" fromCoordsOf="background1" fromOffset="-200,115" object="mouse_pointer" toAnchor="topright" toCoordsOf="background1" toOffset="-40,65"></move>
+</action>
+<action delay="120">
+  <show anchor="topright" coordsOf="background1" object="button_highlight" offset="-8,50"></show>
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_middleclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_middleclick"></hide>
+  <replace object="button_highlight" with="button_disabled_highlight"></replace>
+</action>
+<action delay="60">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_middleclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_middleclick"></hide>
+  <replace object="button_disabled_highlight" with="button_highlight"></replace>
+</action>
+<action delay="60">
+  <move duration="20" object="mouse_pointer" toCoordsOf="mouse_pointer" toOffset="27,0"></move>
+</action>
+<action delay="20">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_leftclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_leftclick"></hide>
+  <show anchor="bottomright" coordsOf="button_highlight" object="toolbarmenu"></show>
+  <move duration="60" object="mouse_pointer" toAnchor="topleft" toCoordsOf="toolbarmenu" toOffset="65,55"></move>
+</action>
+<action delay="60">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_leftclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_leftclick"></hide>
+  <hide object="toolbarmenu"></hide>
+  <replace object="button_highlight" with="button_whitelist"></replace>
+</action>
+</animation>
