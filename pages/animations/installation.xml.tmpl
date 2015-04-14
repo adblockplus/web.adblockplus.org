@@ -1,0 +1,41 @@
+template=raw
+
+<animation height="400" width="550" xmlns="https://adblockplus.org/animation">
+<object anchor="topleft" id="mouse_pointer" src="{{'images/anim_mouse_pointer.png'|inline_file}}"></object>
+<object anchor="center" id="clickmarker" src="{{'images/anim_clickmarker.png'|inline_file}}"></object>
+<object anchor="-20,56" id="mouse_leftclick" src="{{'images/anim_mouse_leftclick.png'|inline_file}}"></object>
+<object anchor="topleft" id="installdialog" src="{{'images/anim_installdialog.png'|inline_file}}"></object>
+<object anchor="topleft" id="installcomplete" src="{{'images/anim_installcomplete.png'|inline_file}}"></object>
+<object anchor="topleft" id="background4" src="{{'images/anim_background4.png'|inline_file}}"></object>
+
+<action>
+  <show coords="0,0" object="background4"></show>
+  <move duration="80" fromAnchor="topleft" fromCoordsOf="background4" fromOffset="470,100" object="mouse_pointer" toAnchor="topleft" toCoordsOf="background4" toOffset="310,235"></move>
+</action>
+<action delay="100">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_leftclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_leftclick"></hide>
+  <show anchor="topleft" coordsOf="background4" object="installdialog" offset="60,70"></show>
+</action>
+<action delay="30">
+  <move duration="50" object="mouse_pointer" toAnchor="bottomright" toCoordsOf="installdialog" toOffset="-130,-25"></move>
+</action>
+<action delay="50">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_leftclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_leftclick"></hide>
+</action>
+<action delay="20">
+  <hide object="installdialog"></hide>
+  <show anchor="topleft" coordsOf="background4" object="installcomplete" offset="20,20"></show>
+</action>
+<action delay="30">
+  <move duration="70" object="mouse_pointer" toAnchor="topright" toCoordsOf="installcomplete" toOffset="-80,100"></move>
+</action>
+<action delay="70">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_leftclick"></show>
+</action>
+</animation>

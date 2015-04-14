@@ -1,0 +1,47 @@
+template=raw
+
+<animation height="400" width="550" xmlns="https://adblockplus.org/animation">
+<object anchor="topleft" id="mouse_pointer" src="{{'images/anim_mouse_pointer.png'|inline_file}}"></object>
+<object anchor="6,0" id="mouse_hand2" src="{{'images/anim_mouse_hand2.png'|inline_file}}"></object>
+<object anchor="center" id="clickmarker" src="{{'images/anim_clickmarker.png'|inline_file}}"></object>
+<object anchor="-20,56" id="mouse_leftclick" src="{{'images/anim_mouse_leftclick.png'|inline_file}}"></object>
+<object anchor="-20,56" id="mouse_rightclick" src="{{'images/anim_mouse_rightclick.png'|inline_file}}"></object>
+<object anchor="topleft" id="filtercomposer" src="{{'images/anim_filtercomposer.png'|inline_file}}"></object>
+<object anchor="topleft" id="flashcontext" src="{{'images/anim_flashcontext.png'|inline_file}}"></object>
+<object anchor="bottomright" id="objecttab" src="{{'images/anim_objecttab.png'|inline_file}}"></object>
+<object anchor="bottomright" id="objecttab_highlight" src="{{'images/anim_objecttab_highlight.png'|inline_file}}"></object>
+<object anchor="topleft" id="object" src="{{'images/anim_object.png'|inline_file}}"></object>
+
+<action>
+  <show coords="50,30" object="object"></show>
+  <show anchor="topright" coordsOf="object" object="objecttab"></show>
+  <move duration="100" fromCoordsOf="object" fromOffset="-40,40" object="mouse_pointer" toCoordsOf="object" toOffset="150,100"></move>
+</action>
+<action delay="100">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_rightclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_rightclick"></hide>
+  <show coordsOf="mouse_pointer" object="flashcontext"></show>
+</action>
+<action delay="70">
+  <move duration="100" object="mouse_pointer" toAnchor="bottomright" toCoordsOf="objecttab" toOffset="-20,-5"></move>
+</action>
+<action delay="100">
+  <replace object="objecttab" with="objecttab_highlight"></replace>
+  <replace object="mouse_pointer" with="mouse_hand2"></replace>
+</action>
+<action delay="50">
+  <hide object="flashcontext"></hide>
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_leftclick"></show>
+</action>
+<action delay="80">
+  <hide object="clickmarker,mouse_leftclick"></hide>
+  <replace object="objectag_highlight" with="objecttab"></replace>
+  <show coords="18,84" object="filtercomposer"></show>
+  <move duration="100" object="mouse_pointer" toAnchor="bottomright" toCoordsOf="filtercomposer" toOffset="-255,-28"></move>
+</action>
+<action delay="120">
+  <show coordsOf="mouse_pointer" object="clickmarker,mouse_leftclick"></show>
+</action>
+</animation>
