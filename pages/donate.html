@@ -108,23 +108,6 @@ label
   border-color: #285e8e;
 }
 
-/* Bitcoin */
-
-#form.none button.bitcoin,
-#form.bitcoin button.bitcoin
-{
-  color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
-}
-
-#form.none button.bitcoin:hover,
-#form.bitcoin button.bitcoin:hover
-{
-  background-color: #ed9c28;
-  border-color: #d58512;
-}
-
 /* Secondary Form Elements */
 
 #form-fields
@@ -133,16 +116,13 @@ label
 }
 
 #form.credit-card #form-fields,
-#form.paypal #form-fields,
-#form.bitcoin #form-fields
+#form.paypal #form-fields
 {
   display: block;
 }
 
-#form.credit-card #form-recurrence,
 #form.credit-card #recurrent-cancellation,
-#form.bitcoin #form-currency,
-#form.bitcoin #form-price
+#form.credit-card #form-recurrence
 {
   display: none;
 }
@@ -289,15 +269,6 @@ label
   };
 
   var providers = {
-    "bitcoin": function()
-    {
-      var recurring = recurrenceValue.get({
-        "monthly": "https://coinbase.com/checkouts/d46825e3f22461f6a25b3249f8ce7c2a"
-      });
-      openProviderPage({
-        action: (recurring) ? recurring : "https://coinbase.com/checkouts/ab08a165e21d72b503cff8f30bece652"
-      });
-    },
     "credit-card": function()
     {
       if (verify(priceValue))
@@ -502,12 +473,11 @@ label
 
     <button class="paypal">{{s4 PayPal}}</button>
     <button class="credit-card">{{s5 Credit Card}}</button>
-    <button class="bitcoin">{{s6 Bitcoin}}</button>
   </p>
 
   <div id="form-fields">
     <p id="form-currency">
-      <strong>{{s7 Choose your currency}}</strong>
+      <strong>{{s6 Choose your currency}}</strong>
 
       <label>
         <input checked="checked" name="currency" type="radio" value="USD">
@@ -520,7 +490,7 @@ label
     </p>
 
     <p id="form-price">
-      <strong>{{s8 Name your price}}</strong>
+      <strong>{{s7 Name your price}}</strong>
 
       <label>
         <input name="price" type="radio" value="5">
@@ -540,7 +510,7 @@ label
       </label>
       <label>
         <input name="price" type="radio" value="0">
-        {{s9 Other:}}
+        {{s8 Other:}}
         <span class="custom-input">
           <span class="currency-label"></span><input id="price-other" min="1" type="number" value="1">
         </span>
@@ -550,22 +520,21 @@ label
     <p id="form-recurrence">
       <label>
         <input id="recurrence" type="checkbox">
-        {{s10 Make this payment a monthly contribution}}*
+        {{s9 Make this payment a monthly contribution}}*
       </label>
     </p>
 
-    <button id="donate">{{s11 Donate}}</button>
+    <button id="donate">{{s10 Donate}}</button>
     <span id="error"></span>
 
     <div id="refund-message">
       <div>
-        {{s12 You can get a refund within 120 days of payment. Just send an email to}} <a href="mailto:info@adblockplus.org">info@adblockplus.org</a>{{s13 .}}
+        {{s11 You can get a refund within 120 days of payment. Just send an email to}} <a href="mailto:info@adblockplus.org">info@adblockplus.org</a>{{s12 .}}
       </div>
       <div id="recurrent-cancellation">
-        * {{s14 To cancel your monthly payment just click on how you donated:}}
+        * {{s13 To cancel your monthly payment just click on how you donated:}}
         <ul>
-          <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_manage-paylist" target="_blank">{{s15 I donated with PayPal}}</a></li>
-          <li><a href="https://coinbase.com/recurring_payments" target="_blank">{{s16 I donated with Bitcoin}}</a></li>
+          <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_manage-paylist" target="_blank">{{s14 I donated with PayPal}}</a></li>
         </ul>
       </div>
     </div>
