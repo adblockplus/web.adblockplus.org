@@ -27,10 +27,10 @@
     "message": "已移除的首选项"
   },
   "s1": {
-    "message": "　　下面的表格列出并说明了 Adblock Plus 使用的所有首选项。这些首选项都可以通过"
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "s2": {
-    "message": "http://kb.mozillazine.org/About:config"
+    "message": "　　下面的表格列出并说明了 Adblock Plus 使用的所有首选项。这些首选项都可以通过"
   },
   "s3": {
     "message": "查看和编辑。"
@@ -83,22 +83,13 @@
   "defaultstatusbaraction-s2": {
     "message": "。"
   },
-  "sidebar_key-s1": {
-    "message": "定义键盘快捷键用于打开可过滤项目。此首选项可以为空，或是设定为 <em>modifier1 modifier2 key 的格式。</em>可用的 modifiers 有：Shift，Accel（预设的快捷键，如 Windows 上的 Ctrl，Mac OS X 上的 Command），Ctrl/Control, Alt, Meta。Key 可以是一个字母或是一个特殊键，像是 F7 或右方向键（参考"
-  },
   "sidebar_key-s2": {
-    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
+    "message": "定义键盘快捷键用于打开可过滤项目。此首选项可以为空，或是设定为 <em>modifier1 modifier2 key 的格式。</em>可用的 modifiers 有：Shift，Accel（预设的快捷键，如 Windows 上的 Ctrl，Mac OS X 上的 Command），Ctrl/Control, Alt, Meta。Key 可以是一个字母或是一个特殊键，像是 F7 或右方向键（参考 <a>nsIDOMKeyEvent 接口</a> 了解所有的特殊键）。"
   },
   "sidebar_key-s3": {
-    "message": "nsIDOMKeyEvent 接口"
-  },
-  "sidebar_key-s4": {
-    "message": "了解所有的特殊键）。"
-  },
-  "sidebar_key-s5": {
     "message": "从 Adblock Plus 1.3.5 开始，可以用逗号分隔指定多个快捷键，将使用列表中首个可用的键盘快捷键。"
   },
-  "sidebar_key-s6": {
+  "sidebar_key-s4": {
     "message": "<em>注意：</em>此设置在浏览器重新启动后才会生效。"
   },
   "filters_key-s1": {
@@ -325,5 +316,8 @@
   },
   "whitelist-s1": {
     "message": "Adblock Plus 2.3 及以上版本不再使用"
+  },
+  "sidebar_key-s2-link": {
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   }
 }

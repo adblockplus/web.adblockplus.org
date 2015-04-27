@@ -59,37 +59,25 @@
   "s19": {
     "message": "Falls Sie die Symbole bevorzugen, die vor Adblock Plus 0.7.2 verwendet wurden (die Schabe), können Sie <a>diesen User Style</a> anwenden, um sie wiederherzustellen (am einfachsten geht das mit <a>Stylish</a>). Falls Sie aber bessere Symbole haben, können Sie diese Schablone für ein eigenes Stylesheet verwenden:"
   },
-  "s20": {
-    "message": "Hier wird davon ausgegangen, dass sich die Symbole in dem Verzeichnis c:\\icons befinden, Sie sollten die Adressen also gegebenenfalls anpassen. Um dieses Stylesheet anzuwenden, benutzen Sie entweder <a>Stylish</a> oder bearbeiten die Datei chrome/\"userChrome.css\":http://www.firefox-browser.de/wiki/UserChrome.css in Ihrem"
-  },
   "s21": {
-    "message": "http://www.firefox-browser.de/wiki/Profilordner"
+    "message": "Hier wird davon ausgegangen, dass sich die Symbole in dem Verzeichnis c:\\icons befinden, Sie sollten die Adressen also gegebenenfalls anpassen. Um dieses Stylesheet anzuwenden, benutzen Sie entweder <a>Stylish</a> oder bearbeiten die Datei chrome/\"userChrome.css\":http://www.firefox-browser.de/wiki/UserChrome.css in Ihrem <a>Profilverzeichnis</a> und fügen diesen Code hinzu. Falls userChrome.css noch nicht existiert, müssen Sie diese Datei erstellen."
   },
   "s22": {
-    "message": "Profilverzeichnis"
+    "message": "<em>Anmerkung</em>: Die Änderungen werden erst nach einem Browserneustart übernommen."
   },
   "s23": {
-    "message": "und fügen diesen Code hinzu. Falls userChrome.css noch nicht existiert, müssen Sie diese Datei erstellen."
-  },
-  "s24": {
-    "message": "<em>Anmerkung</em>: Die Änderungen werden erst nach einem Browserneustart übernommen."
-  },
-  "s25": {
     "message": "Wie ändere ich das Tastenkürzel für ... / definiere ein Tastenkürzel zum Deaktivieren von Adblock Plus?"
   },
+  "s25": {
+    "message": "Die Tastaturkürzel in Adblock Plus werden über drei versteckte Einstellungen festgelegt, die über <a>about:config</a> zugängig sind. <a>extensions.adblockplus.sidebar_key</a> steht fürs Öffnen/Schließen der blockierbaren Elemente, <a>extensions.adblockplus.settings_key</a> fürs Öffnen der Einstellungen und <a>extensions.adblockplus.enable_key</a> fürs Aktivieren/Deaktivieren von Adblock Plus. Sie können diese nach belieben ändern."
+  },
   "s26": {
-    "message": "Die Tastaturkürzel in Adblock Plus werden über drei versteckte Einstellungen festgelegt, die über"
-  },
-  "s27": {
-    "message": "http://www.firefox-browser.de/wiki/About:config"
-  },
-  "s28": {
-    "message": "about:config"
-  },
-  "s29": {
-    "message": "zugängig sind. <a>extensions.adblockplus.sidebar_key</a> steht fürs Öffnen/Schließen der blockierbaren Elemente, <a>extensions.adblockplus.settings_key</a> fürs Öffnen der Einstellungen und <a>extensions.adblockplus.enable_key</a> fürs Aktivieren/Deaktivieren von Adblock Plus. Sie können diese nach belieben ändern."
-  },
-  "s30": {
     "message": "<em>Anmerkung</em>: Die Änderungen werden erst nach einem Browserneustart übernommen."
+  },
+  "s21-link": {
+    "message": "http://www.firefox-browser.de/wiki/Profilordner"
+  },
+  "s25-link": {
+    "message": "http://www.firefox-browser.de/wiki/About:config"
   }
 }

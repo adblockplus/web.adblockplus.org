@@ -59,37 +59,25 @@
   "s19": {
     "message": "若您比較喜歡 Adblock Plus 0.7.2 前使用的圖示(蟑螂)，您可以使用 <a>這個使用者樣式</a> 來恢復它 (建議搭配 <a>Stylish</a>) 使用。如果您有更好的圖示，可以用這個範本建立您自己的樣式："
   },
-  "s20": {
-    "message": "這裡的圖片 (一張三個 16x16 垂直堆疊的圖示及另一張三個 24x24 垂直堆疊的圖示) 且這裡假設圖片位於 c:\\icons 目錄底下，所以您可能需要改變路徑。您可以用 <a>Stylish</a> 或編輯您個人設定檔中 ("
-  },
   "s21": {
-    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+    "message": "這裡的圖片 (一張三個 16x16 垂直堆疊的圖示及另一張三個 24x24 垂直堆疊的圖示) 且這裡假設圖片位於 c:\\icons 目錄底下，所以您可能需要改變路徑。您可以用 <a>Stylish</a> 或編輯您個人設定檔中 (<a>我的個人設定檔目錄在哪裡？</a>) 的 chrome/userChrome.css 並加入這段程式來套用本樣式。若 userChrome.css 不存在，您就必須自行建立。"
   },
   "s22": {
-    "message": "我的個人設定檔目錄在哪裡？"
+    "message": "<em>備註</em>：這項修改會在您重新啟動瀏覽器後生效。"
   },
   "s23": {
-    "message": ") 的 chrome/userChrome.css 並加入這段程式來套用本樣式。若 userChrome.css 不存在，您就必須自行建立。"
-  },
-  "s24": {
-    "message": "<em>備註</em>：這項修改會在您重新啟動瀏覽器後生效。"
-  },
-  "s25": {
     "message": "我要怎麼修改某功能的鍵盤快捷鍵，或新增一個停用 Adblock Plus 的快捷鍵？"
   },
+  "s25": {
+    "message": "有三個隱藏的偏好設定可以透過 <a>about:config</a> 存取並定義 Adblock Plus 的鍵盤快速鍵：<a>extensions.adblockplus.sidebar_key</a> (開啟/關閉可阻擋項目)，<a>extensions.adblockplus.settings_key</a> (開啟偏好設定視窗)，<a>extensions.adblockplus.enable_key</a> (啟用/停用 Adblock Plus )。您可以改成任何您喜歡的按鍵。"
+  },
   "s26": {
-    "message": "有三個隱藏的偏好設定可以透過"
-  },
-  "s27": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
-  "s28": {
-    "message": "about:config"
-  },
-  "s29": {
-    "message": "存取並定義 Adblock Plus 的鍵盤快速鍵：<a>extensions.adblockplus.sidebar_key</a> (開啟/關閉可阻擋項目)，<a>extensions.adblockplus.settings_key</a> (開啟偏好設定視窗)，<a>extensions.adblockplus.enable_key</a> (啟用/停用 Adblock Plus )。您可以改成任何您喜歡的按鍵。"
-  },
-  "s30": {
     "message": "<em>備註</em>：這項修改會在您重新啟動瀏覽器後生效。"
+  },
+  "s21-link": {
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+  },
+  "s25-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   }
 }

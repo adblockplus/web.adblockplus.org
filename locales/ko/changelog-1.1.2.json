@@ -44,19 +44,13 @@
   "s14": {
     "message": "Ecosia extension의 버전 1.0.3은 Adblock Plus의 모든 구독 필터를 제거함 (<a>버그 533419</a>). 해결책 : Ecosia 1.0.4로 업데이트하거나 다시 <a>구독 필터를 추가</a>함"
   },
-  "s15": {
-    "message": "일부 리눅스 배포판(공식 버전이 아님)에서 파이어폭스/선더버드/시몽키 빌드는 \"서명을 검증할 수 없음\"이라는 메시지와 함께 애드블록 플러스의 설치를 거부함. 해결책 배포판을 위해 \"nss\" 패키지를 최신 버전으로 업데이트함. 만약 도움을 받을 수 없다면 파이어폭스의 설정 > 고급 탭 > 암호화 탭으로 이동한 후 \""
-  },
   "s16": {
-    "message": "http://support.mozilla.com/en-US/kb/Options+window+-+Advanced+panel#Encryption_tab"
+    "message": "일부 리눅스 배포판(공식 버전이 아님)에서 파이어폭스/선더버드/시몽키 빌드는 \"서명을 검증할 수 없음\"이라는 메시지와 함께 애드블록 플러스의 설치를 거부함. 해결책 배포판을 위해 \"nss\" 패키지를 최신 버전으로 업데이트함. 만약 도움을 받을 수 없다면 파이어폭스의 설정 > 고급 탭 > 암호화 탭으로 이동한 후 \" <a>인증서 보기</a>\"를 클릭함. \"인증 기관\"에서 \"StartCom Certification Authority\"를 클릭하고 \"편집\"을 누름. 모든 항목에 체크가 되어있는지를 확인한 후 \"확인\"을 누름"
   },
   "s17": {
-    "message": "인증서 보기"
-  },
-  "s18": {
-    "message": "\"를 클릭함. \"인증 기관\"에서 \"StartCom Certification Authority\"를 클릭하고 \"편집\"을 누름. 모든 항목에 체크가 되어있는지를 확인한 후 \"확인\"을 누름"
-  },
-  "s19": {
     "message": "이전에 출시된 버전의 변경내역"
+  },
+  "s16-link": {
+    "message": "http://support.mozilla.com/en-US/kb/Options+window+-+Advanced+panel#Encryption_tab"
   }
 }

@@ -27,10 +27,10 @@
     "message": "Не используемые параметры"
   },
   "s1": {
-    "message": "В следующей таблице перечислены и описаны все параметры,которые используются в Adblock Plus. Эти параметры могут быть просмотрены и изменены в"
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "s2": {
-    "message": "http://kb.mozillazine.org/About:config"
+    "message": "В следующей таблице перечислены и описаны все параметры,которые используются в Adblock Plus. Эти параметры могут быть просмотрены и изменены в"
   },
   "s3": {
     "message": "."
@@ -83,22 +83,13 @@
   "defaultstatusbaraction-s2": {
     "message": "."
   },
-  "sidebar_key-s1": {
-    "message": "Определяет горячую клавишу для открытия списка элементов. Этот параметр может быть пустым или иметь вид <em>модификатор1 модификатор2 ключ</em>. Принятые модификаторы: Shift, Accel ( быстрая клавиша по-умолчанию, напр. Ctrl в Windows, Command в Mac OS X), Ctrl/Control, Alt, Meta. Ключом может быть буква или специальная клавиша, как F7 или ВПРАВО (смотрите"
-  },
   "sidebar_key-s2": {
-    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
+    "message": "Определяет горячую клавишу для открытия списка элементов. Этот параметр может быть пустым или иметь вид <em>модификатор1 модификатор2 ключ</em>. Принятые модификаторы: Shift, Accel ( быстрая клавиша по-умолчанию, напр. Ctrl в Windows, Command в Mac OS X), Ctrl/Control, Alt, Meta. Ключом может быть буква или специальная клавиша, как F7 или ВПРАВО (смотрите <a>nsIDOMKeyEvent interface</a> со списком специальных клавиш)."
   },
   "sidebar_key-s3": {
-    "message": "nsIDOMKeyEvent interface"
-  },
-  "sidebar_key-s4": {
-    "message": "со списком специальных клавиш)."
-  },
-  "sidebar_key-s5": {
     "message": "Начиная с Adblock Plus 1.3.5 можно указать через запятую несколько горячих клавиш. Adblock Plus будет использовать первую горячую клавишу из списка, которая еще не занята."
   },
-  "sidebar_key-s6": {
+  "sidebar_key-s4": {
     "message": "<em>Примечание</em>: Эта настройка будет применена только после перезапуска браузера."
   },
   "filters_key-s1": {
@@ -286,5 +277,8 @@
   },
   "hideimagemanager-s1": {
     "message": "Не используется в Adblock Plus 2.1 и выше"
+  },
+  "sidebar_key-s2-link": {
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   }
 }

@@ -27,10 +27,10 @@
     "message": "Nicht mehr benutzte Einstellungen"
   },
   "s1": {
-    "message": "Die folgende Tabelle listet auf und erklärt alle Einstellungen, die Adblock Plus in der Datei prefs.js im Benutzerprofil abspeichert. Diese Einstellungen können mit"
+    "message": "http://www.firefox-browser.de/wiki/About:config"
   },
   "s2": {
-    "message": "http://www.firefox-browser.de/wiki/About:config"
+    "message": "Die folgende Tabelle listet auf und erklärt alle Einstellungen, die Adblock Plus in der Datei prefs.js im Benutzerprofil abspeichert. Diese Einstellungen können mit"
   },
   "s3": {
     "message": "."
@@ -83,22 +83,13 @@
   "defaultstatusbaraction-s2": {
     "message": "."
   },
-  "sidebar_key-s1": {
-    "message": "Legt fest, welche Tastenkombination die Liste blockierbarer Elemente öffnet/schließt. Diese Einstellung kann leer sein, oder sie kann die Form <em>Sondertaste1 Sondertaste2 Taste</em> haben. Erkannte Sondertasten sind: Shift, Accel (das ist die übliche Taste für Tastenkombinationen, z.B. Strg unter Windows, Command unter Mac OS X), Ctrl/Control (Strg auf deutschen Tastaturen), Alt, Meta. Taste kann entwedet ein Buchstabe oder ein Sonderschlüssel wie z.B. F7 oder RIGHT sein (siehe"
-  },
   "sidebar_key-s2": {
-    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
+    "message": "Legt fest, welche Tastenkombination die Liste blockierbarer Elemente öffnet/schließt. Diese Einstellung kann leer sein, oder sie kann die Form <em>Sondertaste1 Sondertaste2 Taste</em> haben. Erkannte Sondertasten sind: Shift, Accel (das ist die übliche Taste für Tastenkombinationen, z.B. Strg unter Windows, Command unter Mac OS X), Ctrl/Control (Strg auf deutschen Tastaturen), Alt, Meta. Taste kann entwedet ein Buchstabe oder ein Sonderschlüssel wie z.B. F7 oder RIGHT sein (siehe <a>nsIDOMKeyEvent interface</a> für eine Liste dieser Sonderschlüssel)."
   },
   "sidebar_key-s3": {
-    "message": "nsIDOMKeyEvent interface"
-  },
-  "sidebar_key-s4": {
-    "message": "für eine Liste dieser Sonderschlüssel)."
-  },
-  "sidebar_key-s5": {
     "message": "Ab Adblock Plus 1.3.5 können hier mehrere mit Kommas getrennte Werte angegeben werden, die erste noch nicht belegte Tastenkombination wird dann benutzt."
   },
-  "sidebar_key-s6": {
+  "sidebar_key-s4": {
     "message": "<em>Bemerkung</em>: Änderungen an dieser Einstellung werden erst nach einem Browser-Neustart angewandt."
   },
   "filters_key-s1": {
@@ -286,5 +277,8 @@
   },
   "hideimagemanager-s1": {
     "message": "Nicht verwendet in Adblock Plus 2.1 und höher"
+  },
+  "sidebar_key-s2-link": {
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   }
 }

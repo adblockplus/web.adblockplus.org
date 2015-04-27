@@ -5,202 +5,154 @@
   "s1": {
     "message": "Waar zijn alle Adblock Plus voorkeuren beschreven?"
   },
-  "s2": {
-    "message": "Adblock Plus gebruikt een aantal voorkeuren die u via"
-  },
   "s3": {
-    "message": "http://kb.mozillazine.org/About:config"
+    "message": "Adblock Plus gebruikt een aantal voorkeuren die u via <a>about:config</a> kunt benaderen. Ze beginnen allemaal met"
   },
   "s4": {
-    "message": "about:config"
-  },
-  "s5": {
-    "message": "kunt benaderen. Ze beginnen allemaal met"
-  },
-  "s6": {
     "message": "extensions.adblockplus."
   },
-  "s7": {
+  "s5": {
     "message": "(dit wijkt af van Adblock en Ablock Plus 0.5 wat het voorvoegsel"
   },
-  "s8": {
+  "s6": {
     "message": "adblock."
   },
-  "s9": {
+  "s7": {
     "message": "gebruikt). Een volledige lijst met uitleg kunt u <a>hier</a> vinden."
   },
-  "s10": {
+  "s8": {
     "message": "Hoe benader ik Adblock Plus vanuit mijn extensie?"
   },
-  "s11": {
+  "s9": {
     "message": "Om het mogelijk te maken voor andere extensies om met de Adblock Plus interface samen te werken, wordt"
   },
-  "s12": {
+  "s10": {
     "message": "IAdblockPlus"
   },
-  "s13": {
+  "s11": {
     "message": "geëxporteerd. Bekijk de <a>interface beschrijving</a> voor nadere details."
   },
-  "s14": {
+  "s12": {
     "message": "Hoe blokkeert Adblock Plus adressen?"
   },
-  "s15": {
+  "s13": {
     "message": "Het moeilijke werk wordt hier eigenlijk door Gecko gedaan, de motor waar bovenop Firefox, Thunderbird en andere applicaties gebouwd zijn. Het staat iets toe genaamd \"inhoudsbeleiden\". Een inhoudsbeleid is simpelweg een JavaScript (of C++) object dat elke keer aangeroepen wordt als de browser iets moet doen. Het kan het adres dat geladen moet worden bekijken en nog wat extra gegevens en beslissen of het moet worden toegestaan of niet. Er is een aantal ingebouwde inhoudsbeleiden (als je definieert welke sites geen afbeeldingen mogen laden in Firefox of SeaMonkey, configureer je eigenlijk een van deze interne inhoudsbeleiden) en iedere extensie kan er een registreren. Dus get enige wat Adblock Plus hoeft te doen is zijn inhoudsbeleid registreren, behalve dat is er alleen de applicatielogica om te beslissen welke adressen geblokkeerd moeten worden en de code voor de gebruikersinterface om het instellen van filters mogelijk te maken."
   },
-  "s16": {
-    "message": "Voor ontwikkelaars: om een inhoudsbeleid te registreren moet u"
-  },
   "s17": {
-    "message": "http://developer.mozilla.org/en/docs/How_to_Build_an_XPCOM_Component_in_Javascript"
+    "message": "Voor ontwikkelaars: om een inhoudsbeleid te registreren moet u <a>XPCOM component schrijven</a> die de <a>nsIContentPolicy interface implementeert.</a>Let er op dat je de module's registerSelf methode aanpast om je component in de \"inhoudsbeleid\" categorie te registreren (gebruik hier de <a>category manager</a> voor). Dat is alles, uw component's shoudLoad methode wordt aangeroepen en u kunt beslissen of dit specifieke verzoek gehonoreerd moet worden of niet."
   },
   "s18": {
-    "message": "XPCOM component schrijven"
-  },
-  "s19": {
-    "message": "die de"
-  },
-  "s20": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
-  },
-  "s21": {
-    "message": "nsIContentPolicy interface implementeert."
-  },
-  "s22": {
-    "message": "Let er op dat je de module's registerSelf methode aanpast om je component in de \"inhoudsbeleid\" categorie te registreren (gebruik hier de"
-  },
-  "s23": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
-  },
-  "s24": {
-    "message": "category manager"
-  },
-  "s25": {
-    "message": "voor). Dat is alles, uw component's shoudLoad methode wordt aangeroepen en u kunt beslissen of dit specifieke verzoek gehonoreerd moet worden of niet."
-  },
-  "s26": {
     "message": "Hoe verwerkt Adblock Plus zijn filters en welke filters zijn sneller?"
   },
-  "s27": {
+  "s19": {
     "message": "Alle filters worden intern in <a>reguliere expressies</a> vertaald, zelfs degenen die niet zo zijn opgegeven. Bijvoorbeeld het filter"
   },
-  "s28": {
+  "s20": {
     "message": "ad*banner.gif|"
   },
-  "s29": {
+  "s21": {
     "message": "wordt vertaald in de reguliere expressie"
   },
-  "s30": {
+  "s22": {
     "message": "/ad.*banner\\.gif$/"
   },
-  "s31": {
+  "s23": {
     "message": ". Als Adblock Plus echter een adres krijgt dat met alle filters vergeleken moet worden, dan test het niet simpelweg alle filters een voor een — dat zou het browsen onnodig vertragen."
   },
-  "s32": {
+  "s24": {
     "message": "Naast het vertalen van filters in reguliere expressies probeert Adblock Plus er ook informatie uit te halen. Het heeft een unieke string van acht karakters nodig (een \"snelkoppeling\") die in elk adres wat met het filter overeenkomt aanwezig moet zijn (de lengte is arbitrair, acht leek hier gewoon redelijk te zijn). Als u bijvoorbeeld een filter"
   },
-  "s33": {
+  "s25": {
     "message": "|http://ad.*"
   },
-  "s34": {
+  "s26": {
     "message": "heeft, dan heeft Adblock Plus de keuze tussen \"http://a\", \"ttp://ad\" en \"tp://ad.\", al deze strings zullen altijd aanwezig zijn, wat er maar overeen mag komen met dit filter. Helaas is het vinden van een snelkoppeling voor filters die minder dan acht karakters ononderbroken door wildcards hebben of voor filters die als reguliere expressies zijn opgegeven onmogelijk."
   },
-  "s35": {
+  "s27": {
     "message": "Alle snelkoppelingen worden in een opzoektabel geplaatst, Adblock Plus kan het filter erg efficiënt vinden aan de hand van zjin snelkoppeling. Dan, als een specifiek adres getest moet worden, zal Adblock Plus eerst bij bekende snelkoppelingen kijken (dit gebeurt erg snel, de tijd die hiervoor nodig is is haast onafhankelijk van het aantal snelkoppelingen). Alleen als er een snelkoppeling wordt gevonden wordt de string vergeleken met de reguliere expressie van het overeenkomende filter. Alleen filters zonder snelkoppeling moeten een voor een getest worden, wat langzaam is."
   },
-  "s36": {
+  "s28": {
     "message": "Samengevat: welke filters moet u gebruiken om een filterlijst snel te maken? U moet zo min mogelijk reguliere expressies als mogelijk gebruiken, deze zijn altijd langzaam. U moet er ook voor zorgen dat de eenvoudige filters op zijn minst acht karakters onafgebroken tekst hebben (dit betekent dat ze geen karakters met een bijzondere betekenins moeten bevatten, zoals *), anders zullen ze net zo langzaam zijn als reguliere expressies. Maar met filters die aan de eisen voldoen maakt het niet uit hoeveel filters je hebt, de verwerkignstijd is altijd gelijk. Dat betekent dat als je 20 eenvoudige filters nodig hebt om een reguliere expressie te vervangen het nog steeds de moeite waard is. Nu we het er toch over hebben — de <a>deregifier</a> is van harte aan te bevelen."
   },
-  "s37": {
+  "s29": {
     "message": "Het filtermatchingalgoritme in detail"
   },
-  "s38": {
+  "s30": {
     "message": "Hoe werkt het verbergen van elementen?"
   },
-  "s39": {
-    "message": "Element verbergende regels worden vertaald in"
+  "s32": {
+    "message": "Element verbergende regels worden vertaald in <a>CSS</a> en toegepast op alle webpagina's die de gebruiker bezoekt. Een regel als"
   },
-  "s40": {
-    "message": "http://www.w3.org/TR/CSS21/"
-  },
-  "s41": {
-    "message": "CSS"
-  },
-  "s42": {
-    "message": "en toegepast op alle webpagina's die de gebruiker bezoekt. Een regel als"
-  },
-  "s43": {
+  "s33": {
     "message": "example.com#div(evil_ad)"
   },
-  "s44": {
+  "s34": {
     "message": "ziet er dan zo uit:"
   },
-  "s45": {
-    "message": "@-moz-document is een voorgestelde uitbreiding op de CSS standaard, u kunt hier meer over lezen in het"
+  "s36": {
+    "message": "@-moz-document is een voorgestelde uitbreiding op de CSS standaard, u kunt hier meer over lezen in het <a>Mozilla Developer Center</a>."
   },
-  "s46": {
-    "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
-  },
-  "s47": {
-    "message": "Mozilla Developer Center"
-  },
-  "s48": {
-    "message": "."
-  },
-  "s49": {
+  "s37": {
     "message": "Regels die niet beperkt zijn to een bepaald domein zullen worden beperkt door de protocollen http:// en https:// om te voorkomen dat ze elementen van de browser's interface verbergen (het gebruikt het chrome:// protocol schema). Bijvoorbeeld de regel"
   },
-  "s50": {
+  "s38": {
     "message": "#div(evil_ad)"
   },
-  "s51": {
+  "s39": {
     "message": "wordt vertaald in:"
   },
-  "s52": {
-    "message": "Voor ontwikkelaars: Adblock Plus gebruikt hier de"
+  "s42": {
+    "message": "Voor ontwikkelaars: Adblock Plus gebruikt hier de <a>stylesheet service</a>. Deze interface is nieuw voor Gecko 1.8 en staat extensies toe om user stylesheets dynamisch toe te voegen (daarvoor kon je alleen userContent.css wijzigen, wat een herstart van de browser vereiste). User stylesheets zullen CSS code van alle websites overschrijven, zij heben het hoogste <a>belang</a>."
   },
-  "s53": {
-    "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
-  },
-  "s54": {
-    "message": "stylesheet service"
-  },
-  "s55": {
-    "message": ". Deze interface is nieuw voor Gecko 1.8 en staat extensies toe om user stylesheets dynamisch toe te voegen (daarvoor kon je alleen userContent.css wijzigen, wat een herstart van de browser vereiste). User stylesheets zullen CSS code van alle websites overschrijven, zij heben het hoogste"
-  },
-  "s56": {
-    "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
-  },
-  "s57": {
-    "message": "belang"
-  },
-  "s58": {
-    "message": "."
-  },
-  "s59": {
+  "s43": {
     "message": "Hoe ziet de eerste regel van een filter bestand er uit?"
   },
-  "s60": {
+  "s44": {
     "message": "Normaal gesproken is de eerste regel van een filter bestand simpelweg"
   },
-  "s61": {
+  "s45": {
     "message": "[Adblock]"
   },
-  "s62": {
+  "s46": {
     "message": ". Misschien heb je echter gezien dat er in recente versies van Adblock Plus soms een andere tekst staat. Dit wordt gedaan als je filters in de lijst hebt die een geavanceerde filtersyntax hebben die alleen door nieuwere versies van Adblock Plus ondersteund worden en niet in de originele Adblock. Een voorbeeld zou kunnen zijn:"
   },
-  "s63": {
+  "s47": {
     "message": "Dit is gewoon een commentaar. Adblock (en Adblock Plus ook om dezelfde reden) negeert alles voor het echte merkteken. De vereiste Adblock Plus versie wordt niet opgelegd, omdat Adblock Plus 0.6.1.2 het nog niet nidersteunt. Als je echter een nog nieuwere syntax gebruikt, krijg je zoiets als:"
   },
-  "s64": {
+  "s48": {
     "message": "Dit soort kopregel wordt ondersteund vanaf Adblock Plus 0.7.1. Oudere versies van Adblock Plus en Adblock kunnen bestanden die met deze kopregel beginnen niet openen. Wat de huidige versies betreft, deze zullen het versienummer in de koprgel vergelijken met hun eigen versie nummer. Als het bestand een nieuwere versie van Adblokck Plus nodig heeft, krijgt de gebruiker bij het importeren een boodschap met de vraag om te upgraden. Abonnementen zullen nog steeds bestanden bedoeld voor nieuwere versies van Adblock Plus laden maar laten een waarschuwinf in het voorkeurvenster zien."
   },
-  "s65": {
+  "s49": {
     "message": "Ten slote, als je Adblock Plus wilt eisen maar geen versienummer wilt opgeven, kan je het bestand laten beginnen met"
   },
-  "s66": {
+  "s50": {
     "message": "[Adblock Plus]"
   },
-  "s67": {
+  "s51": {
     "message": ". Dit bestand wordt natuurlijk alleen geaccepteerd door Adblokc Plus 0.7.1 of hoger."
+  },
+  "s3-link": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s17-link": {
+    "message": "http://developer.mozilla.org/en/docs/How_to_Build_an_XPCOM_Component_in_Javascript"
+  },
+  "s17-link2": {
+    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
+  },
+  "s17-link3": {
+    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
+  },
+  "s32-link": {
+    "message": "http://www.w3.org/TR/CSS21/"
+  },
+  "s36-link": {
+    "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
+  },
+  "s42-link": {
+    "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
+  },
+  "s42-link2": {
+    "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
   }
 }
