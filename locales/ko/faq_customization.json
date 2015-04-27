@@ -59,37 +59,25 @@
   "s19": {
     "message": "애드블록 플러스 0.7.2 이전에 사용하던 아이콘(바퀴벌레)을 선호한다면 변경을 위해 <a>다음 사용자 스타일</a>을 사용하십시오 (<a>스타일리시</a>를 사용하는 것이 최선입니다). 그러나 더 나은 아이콘이 있다면 다음 템플릿을 사용해 자신만의 스타일을 만들 수 있습니다."
   },
-  "s20": {
-    "message": "여기의 이미지(3개의 16×16 아이콘과 또 다른 3개의 24×24 아이콘)는 c:\\icons 디렉터리에 있는 것으로 추정되며, 그 주소를 변경할 필요가 있습니다. 이 스타일을 적용하기 위해 <a>스타일리시</a>를 이용하거나"
-  },
   "s21": {
-    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+    "message": "여기의 이미지(3개의 16×16 아이콘과 또 다른 3개의 24×24 아이콘)는 c:\\icons 디렉터리에 있는 것으로 추정되며, 그 주소를 변경할 필요가 있습니다. 이 스타일을 적용하기 위해 <a>스타일리시</a>를 이용하거나 <a>프로파일 디렉터리(profile directory)</a>에 있는 chrome/userChrome.css 파일을 편집하십시오. 그런 후 다음 코드를 추가하십시오. userChrome.css가 아직 존재하지 않는다면 먼저 생성해야 합니다."
   },
   "s22": {
-    "message": "프로파일 디렉터리(profile directory)"
+    "message": "<em>참고 </em>: 이 변경이 브라우저를 다시 시작한 후에 적용됩니다."
   },
   "s23": {
-    "message": "에 있는 chrome/userChrome.css 파일을 편집하십시오. 그런 후 다음 코드를 추가하십시오. userChrome.css가 아직 존재하지 않는다면 먼저 생성해야 합니다."
-  },
-  "s24": {
-    "message": "<em>참고 </em>: 이 변경이 브라우저를 다시 시작한 후에 적용됩니다."
-  },
-  "s25": {
     "message": "키보드 단축키를 어떻게 변경하고, 애드블록 플러스를 사용하지 않기 위한 단축키를 어떻게 추가합니까?"
   },
+  "s25": {
+    "message": "애드블록 플러스의 키보드 단축키를 정의할 수 있는 <a>about:config</a>를 통해 접근되는 3가지 숨겨진 설정이 있습니다. <a>extensions.adblockplus.sidebar_key</a> (차단 가능 목록 열기/닫기), <a>extensions.adblockplus.settings_key</a> (필터 관리 대화상자 열기), <a>extensions.adblockplus.enable_key</a> (애드블록 플러스 사용/중지). 정의한 단축키로 변경할 수 있습니다."
+  },
   "s26": {
-    "message": "애드블록 플러스의 키보드 단축키를 정의할 수 있는"
-  },
-  "s27": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
-  "s28": {
-    "message": "about:config"
-  },
-  "s29": {
-    "message": "를 통해 접근되는 3가지 숨겨진 설정이 있습니다. <a>extensions.adblockplus.sidebar_key</a> (차단 가능 목록 열기/닫기), <a>extensions.adblockplus.settings_key</a> (필터 관리 대화상자 열기), <a>extensions.adblockplus.enable_key</a> (애드블록 플러스 사용/중지). 정의한 단축키로 변경할 수 있습니다."
-  },
-  "s30": {
     "message": "<em>참고 </em>: 이 변경이 브라우저를 다시 시작한 후에 적용됩니다."
+  },
+  "s21-link": {
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+  },
+  "s25-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   }
 }

@@ -8,28 +8,22 @@
   "s3": {
     "message": "由於 Android 對流量過濾的支援有限，Adblock Plus 實作了數種方式且會為該裝置選擇最佳的一種："
   },
-  "s4": {
-    "message": "若裝置"
-  },
   "s5": {
-    "message": "http://en.wikipedia.org/wiki/Rooting_%28Android_OS%29"
-  },
-  "s6": {
-    "message": "已取得 root 權限"
+    "message": "若裝置 <a>已取得 root 權限</a>，則 Adblock Plus 會自動過濾所有網路流量。"
   },
   "s7": {
-    "message": "，則 Adblock Plus 會自動過濾所有網路流量。"
-  },
-  "s9": {
     "message": "對於未取得 root 權限及執行 Android 3.1 以上版本的裝置，Adblock Plus 僅會過濾透過 WiFi 連線的網路流量。"
   },
-  "s10": {
+  "s8": {
     "message": "對於未取得 root 權限及執行 Android 3.0 以下版本的裝置，則需要手動將Adblock Plus \n<a>設定為一個代理伺服器</a>。部分裝置不支援代理伺服器設定，Adblock Plus 自然也就無法在這些裝置上運作。"
   },
-  "s11": {
+  "s9": {
     "message": "安裝"
   },
-  "s14": {
+  "s12": {
     "message": "常見問題"
+  },
+  "s5-link": {
+    "message": "http://en.wikipedia.org/wiki/Rooting_%28Android_OS%29"
   }
 }

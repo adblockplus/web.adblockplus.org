@@ -59,37 +59,25 @@
   "s19": {
     "message": "Si vous préférez les icônes utilisées avant Adblock Plus 0.7.2 (le cafard), vous pouvez utiliser <a>cette feuille de style personnalisée</a> pour les rétablir (A utiliser avec <a>Stylish</a> de préférence). Mais si vous avez une meilleure icône, vous pouvez créer votre propre style en utilisant ce modèle :"
   },
-  "s20": {
-    "message": "Ici les icônes sont supposées être localisées dans le dossier c:\\icons, vous serez donc peut-être amené à modifier les adresses. Pour appliquer ce style vous pouvez soit utiliser <a>Stylish</a> soit éditer le fichier chrome/userChrome.css dans votre profil ("
-  },
   "s21": {
-    "message": "http://www.geckozone.org/articles/2005/08/31/100-comprendre-le-profil"
+    "message": "Ici les icônes sont supposées être localisées dans le dossier c:\\icons, vous serez donc peut-être amené à modifier les adresses. Pour appliquer ce style vous pouvez soit utiliser <a>Stylish</a> soit éditer le fichier chrome/userChrome.css dans votre profil (<a>Où se trouve mon dossier de profil ?</a> zt ajoutez ce code. Si le fichier userChrome.css n'existe pas vous dvrez le créer."
   },
   "s22": {
-    "message": "Où se trouve mon dossier de profil ?"
-  },
-  "s23": {
-    "message": "zt ajoutez ce code. Si le fichier userChrome.css n'existe pas vous dvrez le créer."
-  },
-  "s24": {
     "message": "<em>Remarque</em>: Les modifications prendront effet après redémarrage du navigateur."
   },
-  "s25": {
+  "s23": {
     "message": "Comment puis-je modifier le raccourci clavier pour ... / ajouter un raccourci clavier pour désactiver Adblock Plus ?"
   },
+  "s25": {
+    "message": "Il existe trois préférences cachées auxquelles on peut accéder via <a>about:config</a> qui définissent les raccourcis claviers pour Adblock Plus : <a>extensions.adblockplus.sidebar_key</a> (afficher/fermer la liste des éléments filtrables), <a>extensions.adblockplus.settings_key</a> (ouvrir la boîte de dialoque des préférences), <a>extensions.adblockplus.enable_key</a> (activer/désactiver Adblock Plus). Vous pouvez les modifier à votre convenance."
+  },
   "s26": {
-    "message": "Il existe trois préférences cachées auxquelles on peut accéder via"
-  },
-  "s27": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
-  "s28": {
-    "message": "about:config"
-  },
-  "s29": {
-    "message": "qui définissent les raccourcis claviers pour Adblock Plus : <a>extensions.adblockplus.sidebar_key</a> (afficher/fermer la liste des éléments filtrables), <a>extensions.adblockplus.settings_key</a> (ouvrir la boîte de dialoque des préférences), <a>extensions.adblockplus.enable_key</a> (activer/désactiver Adblock Plus). Vous pouvez les modifier à votre convenance."
-  },
-  "s30": {
     "message": "<em>Remarque</em>: les modifications prendront effet après redémarrage de votre navigateur."
+  },
+  "s21-link": {
+    "message": "http://www.geckozone.org/articles/2005/08/31/100-comprendre-le-profil"
+  },
+  "s25-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   }
 }

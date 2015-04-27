@@ -263,50 +263,47 @@
   "s109": {
     "message": " — contenido manejado por plugins del navegador, por ejemplo, Flash o Java"
   },
-  "s110": {
-    "message": " — solicitudes iniciadas por el"
-  },
   "s111": {
-    "message": "http://www.w3.org/TR/XMLHttpRequest/"
+    "message": " — solicitudes iniciadas por el <a>objecto XMLHttpRequest</a>"
   },
   "s112": {
-    "message": "objecto XMLHttpRequest"
-  },
-  "s113": {
     "message": " — solicitudes de plugins como Flash"
   },
-  "s114": {
+  "s113": {
     "message": " — páginas integradas, generalmente se incluye a través de marcos HTML (frames)"
   },
-  "s115": {
+  "s114": {
     "message": " — la página en sí misma (sólo <a>reglas de excepción</a> se pueden aplicar a la página)"
   },
-  "s116": {
+  "s115": {
     "message": " — para reglas de excepción únicamente, al igual que"
   },
-  "s117": {
+  "s116": {
     "message": ", pero sólo deshabilita <a>reglas de ocultación de elementos</a> en la página en lugar de todas las reglas de filtrado (requiere Adblock Plus 1.2 y superior)"
   },
-  "s118": {
+  "s117": {
     "message": " — otros tipos de solicitudes no incluidas en la lista anterior"
   },
-  "s119": {
+  "s118": {
     "message": "Las opciones de tipo"
+  },
+  "s119": {
+    "message": ","
   },
   "s120": {
     "message": ","
   },
   "s121": {
-    "message": ","
-  },
-  "s122": {
     "message": "y"
   },
-  "s123": {
+  "s122": {
     "message": "están obsoletas y no deben seguir usándose."
   },
-  "s124": {
+  "s123": {
     "message": "Opciones inversas: especifican que <strong>no</strong> debe ser aplicada a los tipos de elementos del filtro indicados. Posibles opciones de tipo inverso:"
+  },
+  "s124": {
+    "message": ","
   },
   "s125": {
     "message": ","
@@ -333,57 +330,54 @@
     "message": ","
   },
   "s133": {
-    "message": ","
-  },
-  "s134": {
     "message": "Restricción a las solicitudes de terceros/mismo dominio: Si la opción"
   },
-  "s135": {
+  "s134": {
     "message": "se especifica, el filtro sólo se aplica a las solicitudes de un origen diferente de la página actual que se está mirando. Del mismo modo,"
   },
-  "s136": {
+  "s135": {
     "message": "restringe el filtro a las solicitudes del mismo origen que la página que se ve."
   },
-  "s137": {
+  "s136": {
     "message": "Restricciones de dominio: La opción"
   },
-  "s138": {
+  "s137": {
     "message": "significa que el filtro sólo se debe aplicar en las páginas del dominio \"ejemplo.com\". Varios dominios pueden ser especificados usando \"|\" como separador. Por ejemplo, con la opción"
   },
-  "s139": {
+  "s138": {
     "message": "el filtro se aplicará únicamente en las páginas de dominio \"example.com\" o \"example.net\". Si un nombre de dominio es precedido con \"~\", el filtro <strong>no</strong> se debe aplicar en las páginas de este dominio. Por ejemplo,"
   },
-  "s140": {
+  "s139": {
     "message": "significa que el filtro se debe aplicar en las páginas de cualquier dominio, salvo en \"ejemplo.com\" y"
   },
-  "s141": {
+  "s140": {
     "message": "restringe el filtro a el dominio \"example.com\" con la excepción del subdominio \"foo.example.com\"."
   },
-  "s145": {
+  "s144": {
     "message": " — hace que el filtro sólo se aplique a las direcciones donde coincide exactamente mayúsculas y minúsculas, por ejemplo, el filtro"
   },
-  "s146": {
+  "s145": {
     "message": "bloqueará"
   },
-  "s147": {
+  "s146": {
     "message": "pero no"
   },
-  "s148": {
+  "s147": {
     "message": "."
   },
-  "s149": {
+  "s148": {
     "message": " — esta opción tiene prioridad sobre la preferencia global de \"Ocultar posicionadores de elementos bloqueados\" y garantiza que el filtro siempre oculta el elemento. De forma similar, la opción"
   },
-  "s150": {
+  "s149": {
     "message": "garantizará que el filtro nunca oculta el elemento."
   },
-  "s151": {
+  "s150": {
     "message": " — para cualquier dirección que coincida con una regla de bloqueo con esta opción y no coincida con ninguna regla de excepción con esta opción se enviará un  <a>Do-Not-Track header</a> (se necesita Adblock Plus 1.3.5 o posterior)."
   },
-  "s152": {
+  "s151": {
     "message": "Para garantizar la compatibilidad con versiones anteriores se recomienda usar esta opción en combinación con opciones contrapuestas, que eviten que ese filtro bloquee algo en versiones anteriores de Adblock Plus:"
   },
-  "s153": {
+  "s152": {
     "message": "Utilización de expresiones regulares"
   },
   "s154": {
@@ -399,177 +393,168 @@
     "message": "pero no"
   },
   "s158": {
-    "message": ". Puedes consultar"
+    "message": ". Puedes consultar <a>la documentación sobre las expresiones regulares</a> para aprender cómo escribilos."
   },
   "s159": {
-    "message": "https://developer.mozilla.org/es/Gu%C3%ADa_JavaScript_1.5/Escribir_un_patr%C3%B3n_de_expresi%C3%B3n_regular"
-  },
-  "s160": {
-    "message": "la documentación sobre las expresiones regulares"
-  },
-  "s161": {
-    "message": "para aprender cómo escribilos."
-  },
-  "s162": {
     "message": "<em>Nota</em>: Por motivos de rendimiento, se recomienda no utilizar expresiones regulares si se puede evitar."
   },
-  "s163": {
+  "s160": {
     "message": "Ocultar elementos"
   },
-  "s164": {
+  "s161": {
     "message": "Reglas básicas"
   },
-  "s165": {
+  "s162": {
     "message": "A veces se encuentran anuncios de publicidad que no puede ser bloqueada debido a que están incrustadas como texto en la propia página web. Si nos fijamos en el código fuente de la página web, usted puede encontrar algo como esto:"
   },
-  "s166": {
+  "s163": {
     "message": "Usted necesita descargar la página web, por lo que necesariamente va a descargar los anuncios de publicidad. Lo único que es posible en este case es ocultar la publicidad para no tener que verla. Ésta es la función para la cual la ocultación de elementos se ha diseñado."
   },
-  "s167": {
+  "s164": {
     "message": "El primer anuncio (del ejemplo de arriba) se encuentra dentro de un elemento div con clase de atributo \"textad\". Esta regla oculta exactamente esta combinación:"
   },
-  "s168": {
+  "s165": {
     "message": ". Aquí ## marca una regla para ocultar el elemento, mientras que el resto es un selector para la identificación de los elementos que deben ser escondidos. Puede ocultar los elementos por su atributo id del mismo modo,"
   },
-  "s169": {
+  "s166": {
     "message": "oculta el segundo anuncio de publicidad. No es necesario especificar el nombre del elemento, la regla"
   },
-  "s170": {
+  "s167": {
     "message": "funcionará igual de bien. También puedes ocultar los elementos únicamente por su nombre de elemento, por ejemplo,"
   },
-  "s171": {
+  "s168": {
     "message": "para el tercer aviso de publicidad."
   },
-  "s172": {
+  "s169": {
     "message": "La <a>extensión Element Hiding Helper</a> ayuda a seleccionar el elemento correcto y la escritura de la regla correspondiente, sin tener que ver el código fuente de la página. Sin embargo es útil tener conocimientos básicos de HTML."
   },
-  "s173": {
+  "s170": {
     "message": "<em>Nota</em>: La ocultación de elementos funciona de manera muy diferente de los filtros normales. Esto tiene la implicación de que no se admitan los comodines en las reglas para ocultar elementos."
   },
-  "s174": {
+  "s171": {
     "message": "Cómo limitar las reglas a determinados dominios"
   },
-  "s175": {
+  "s172": {
     "message": "Por lo general, se desea ocultar un anuncio específico en un sitio específico, y no se quiere que la regla que se aplique en otros sitios. Por ejemplo, la regla"
   },
-  "s176": {
+  "s173": {
     "message": "puede ocultar correctamente elementos en algunos sitios. Pero si se escribe como"
   },
-  "s177": {
+  "s174": {
     "message": "se va a aplicar en"
   },
-  "s178": {
+  "s175": {
     "message": "y"
   },
-  "s179": {
+  "s176": {
     "message": "pero no en"
   },
-  "s180": {
+  "s177": {
     "message": ". También puede especificar varios dominios - simplemente separarlos con comas:"
   },
-  "s181": {
+  "s178": {
     "message": "."
   },
-  "s182": {
+  "s179": {
     "message": "Si un nombre de dominio es precedido con \"~\", la regla <strong>no</strong> se aplicará en las páginas de este dominio (requiere Adblock Plus 1.1 o superior). Por ejemplo,"
   },
-  "s183": {
+  "s180": {
     "message": "aplicará en las páginas de cualquier dominio, pero \"example.com\" y"
   },
-  "s184": {
+  "s181": {
     "message": "hace que la regla se aplique en \"example.com\", con la excepción de el subdominio \"foo.example.com \"."
   },
-  "s185": {
+  "s182": {
     "message": "<em>Nota</em>: Debido a la forma como se implementa la ocultación de elementos, realmente sólo se puede limitar a los nombres de dominio completo. Usted no puede utilizar ninguna otra parte de la dirección y no se puede utilizar"
   },
-  "s186": {
+  "s183": {
     "message": "como un reemplazo para"
   },
-  "s187": {
+  "s184": {
     "message": "."
   },
-  "s188": {
+  "s185": {
     "message": "<em>Nota</em>: Las reglas para ocultación de elementos con limitación de dominio también pueden ser utilizadas para ocultar los elementos de la interfaz de usuario del navegador. Por ejemplo, la regla de filtrado"
   },
-  "s189": {
+  "s186": {
     "message": "oculta la consola de JavaScript en el menú de Herramientas de Firefox."
   },
-  "s190": {
+  "s187": {
     "message": "Selectores de atributos"
   },
-  "s191": {
+  "s188": {
     "message": "Algunos anunciantes de publicidad no hacen que la tarea sea fácil - sus anuncios de texto no tienen ni un id ni un atributo de clase. Es posible utilizar otros atributos para ocultar los avisos de publicidad, por ejemplo"
   },
-  "s192": {
+  "s189": {
     "message": "oculta tablas con el atributo width (ancho) establecido en 80%. Si no desea especificar el valor total del atributo,"
   },
-  "s193": {
+  "s190": {
     "message": "oculta todos los elementos div con atributo title (título) que contiene la cadena \"adv\". También puede consultar el principio y el final de un atributo, por ejemplo"
   },
-  "s194": {
+  "s191": {
     "message": "oculta elementos div con el título que comienza con \"ADV\" y termina con \"ert \". Como puedes ver, también es posible utilizar varias condiciones —"
   },
-  "s195": {
+  "s192": {
     "message": "coincide con las tablas con ancho del 80% y de atributos bgcolor en blanco."
   },
-  "s196": {
+  "s193": {
     "message": "Selectores avanzados"
   },
-  "s197": {
+  "s195": {
     "message": "En general, cualquier selector CSS compatible con Firefox se puede utilizar para ocultar elementos. Por ejemplo, la siguiente regla oculta cualquier cosa tras un elemento div con clase \"adheader\":"
   },
-  "s198": {
-    "message": ". Para obtener una lista completa de la lista de CSS ver"
+  "s196": {
+    "message": ". Para obtener una lista completa de la lista de CSS ver <a>especificación CSS de W3C</a> (Note que no todos los selectores son compatibles con Firefox todavía)."
   },
-  "s199": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
-  },
-  "s200": {
-    "message": "especificación CSS de W3C"
-  },
-  "s201": {
-    "message": "(Note que no todos los selectores son compatibles con Firefox todavía)."
-  },
-  "s202": {
+  "s197": {
     "message": "<em>Nota</em>Esta función es sólo para usuarios avanzados, usted debe sentirse cómodo con selectores CSS para utilizarlo. Adblock Plus no será capaz de verificar la sintaxis del selector que usted agregue. Si se utiliza una sintaxis inválida CSS, podrían dejar de funcionar otras reglas (válidas) que se hayan creado. Compruebe la consola de JavaScript para detectar los errores de CSS."
   },
-  "s203": {
+  "s198": {
     "message": "Reglas de excepción"
   },
-  "s204": {
+  "s199": {
     "message": "Las reglas de excepción pueden desactivar en ciertos dominios las reglas establecidas."
   },
-  "s205": {
+  "s200": {
     "message": "Están pensadas sobre todo para los autores de suscripciones de filtros que están ampliando otras suscripciones de filtros que no pueden modificar."
   },
-  "s206": {
+  "s201": {
     "message": "Por ejemplo, se puede desactivar la regla"
   },
-  "s207": {
+  "s202": {
     "message": "en"
   },
-  "s208": {
+  "s203": {
     "message": "usando la regla de excepción"
   },
-  "s209": {
+  "s204": {
     "message": "."
   },
-  "s210": {
+  "s205": {
     "message": "La combinación de ambas reglas tiene exactamente el mismo efecto que la regla única"
   },
-  "s211": {
+  "s206": {
     "message": "."
   },
-  "s212": {
+  "s207": {
     "message": "Se recomienda utilizar las reglas de excepción solamente cuando no se pueda modificar una regla general de ocultación de elementos, en todos los demás casos resulta preferible limitar dicha regla a los dominios en los que sea necesaria."
   },
-  "s213": {
+  "s208": {
     "message": "Sintaxis simplificada para ocultar elementos"
   },
-  "s214": {
+  "s209": {
     "message": "Adblock Plus soporta sintaxis simplificada para ocultar elementos (por ejemplo,"
   },
-  "s215": {
+  "s210": {
     "message": ") solamente para la asegurar la compatibilidad hacia atrás. No se recomienda utilizar esta sintaxis, es preferible usar los selectores CSS. El soporte a esta sintaxis puede ser removido en algún momento."
+  },
+  "s111-link": {
+    "message": "http://www.w3.org/TR/XMLHttpRequest/"
+  },
+  "s158-link": {
+    "message": "https://developer.mozilla.org/es/Gu%C3%ADa_JavaScript_1.5/Escribir_un_patr%C3%B3n_de_expresi%C3%B3n_regular"
+  },
+  "s196-link": {
+    "message": "http://www.w3.org/TR/css3-selectors/"
   }
 }

@@ -59,37 +59,25 @@
   "s19": {
     "message": "　　如果想要恢复显示 Adblock Plus 0.7.2 之前版本的\"蟑螂\"图标，您可以使用<a>这个用户样式</a>（最好搭配使用 <a>Stylish</a>）。但如果您有更好的图标，您也可以根据下面的模板建立自己的样式："
   },
-  "s20": {
-    "message": "　　上述代码中图片（两张图片分别垂直放置三个 16×16 大小和 24×24 大小的图标） 假定是位于 c:\\icons 目录下，因此您可能需要修改图片所保存的位置。要让这个样式生效您可以使用 <a>Stylish</a> 或添加上述代码到您配置文件夹 ("
-  },
   "s21": {
-    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+    "message": "　　上述代码中图片（两张图片分别垂直放置三个 16×16 大小和 24×24 大小的图标） 假定是位于 c:\\icons 目录下，因此您可能需要修改图片所保存的位置。要让这个样式生效您可以使用 <a>Stylish</a> 或添加上述代码到您配置文件夹 (<a>where is my profile directory?</a>) 下的 chrome/userChrome.css 文件。如果该文件不存在您可以手动创建它。"
   },
   "s22": {
-    "message": "where is my profile directory?"
+    "message": "<em>注意</em>：以上更改将在浏览器重新启动后生效。"
   },
   "s23": {
-    "message": ") 下的 chrome/userChrome.css 文件。如果该文件不存在您可以手动创建它。"
-  },
-  "s24": {
-    "message": "<em>注意</em>：以上更改将在浏览器重新启动后生效。"
-  },
-  "s25": {
     "message": "我该如何修改某项功能的快捷键或新增一个禁用 Adblock Plus 的快捷键？"
   },
+  "s25": {
+    "message": "　　Adblock Plus 在 <a>about:config</a> 中添加了三个可定义键盘快捷键的隐藏首选项：<a>extensions.adblockplus.sidebar_key</a>（打开/关闭可过滤项目列表），<a>extensions.adblockplus.settings_key</a>（打开首选项对话框）和 <a>extensions.adblockplus.enable_key</a>（启用/禁用 Adblock Plus）。您可以任意修改这些快捷键。"
+  },
   "s26": {
-    "message": "　　Adblock Plus 在"
-  },
-  "s27": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
-  "s28": {
-    "message": "about:config"
-  },
-  "s29": {
-    "message": "中添加了三个可定义键盘快捷键的隐藏首选项：<a>extensions.adblockplus.sidebar_key</a>（打开/关闭可过滤项目列表），<a>extensions.adblockplus.settings_key</a>（打开首选项对话框）和 <a>extensions.adblockplus.enable_key</a>（启用/禁用 Adblock Plus）。您可以任意修改这些快捷键。"
-  },
-  "s30": {
     "message": "<em>注意</em>：以上更改将在浏览器重新启动后生效。"
+  },
+  "s21-link": {
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+  },
+  "s25-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   }
 }

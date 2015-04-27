@@ -218,50 +218,47 @@
   "s109": {
     "message": " — Inhalte, die von Browser-Plugins dargestellt werden, wie z.B. Flash oder Java"
   },
-  "s110": {
-    "message": " — Anfragen, die vom"
-  },
   "s111": {
-    "message": "http://www.w3.org/TR/XMLhttpRequest/"
+    "message": " — Anfragen, die vom <a>XMLHttpRequest-Objekt</a>"
   },
   "s112": {
-    "message": "XMLHttpRequest-Objekt"
-  },
-  "s113": {
     "message": " — Anfragen, die von Plugins wie zum Beispiel Flash gestartet werden"
   },
-  "s114": {
+  "s113": {
     "message": " — eingebettete Seiten, in der Regel per HTML-Frames eingebunden"
   },
-  "s115": {
+  "s114": {
     "message": " — die Seite selber (nur <a>Ausnahmeregeln</a> werden auf die Adresse der Seite angewandt)"
   },
-  "s116": {
+  "s115": {
     "message": " — nur für Ausnahmeregeln; ähnlich wie"
   },
-  "s117": {
+  "s116": {
     "message": ", deaktiviert aber nur <a>Regeln zum Verstecken von Elementen</a> auf der Seite, anstatt alle Filterregeln zu deaktvieren (Adblock Plus 1.2 oder höher notwendig)"
   },
-  "s118": {
+  "s117": {
     "message": " — andere Arten von Anfragen"
   },
-  "s119": {
+  "s118": {
     "message": "Die Typ-Attribute"
+  },
+  "s119": {
+    "message": ","
   },
   "s120": {
     "message": ","
   },
   "s121": {
-    "message": ","
-  },
-  "s122": {
     "message": "und"
   },
-  "s123": {
+  "s122": {
     "message": "sind veraltet und sollten nicht mehr benutzt werden."
   },
-  "s124": {
+  "s123": {
     "message": "Inverse Typ-Attribute: geben Element-Typen an, auf die der Filter <strong>nicht</strong> angewandt werden soll. Mögliche inverse Typ-Attribute:"
+  },
+  "s124": {
+    "message": ","
   },
   "s125": {
     "message": ","
@@ -288,57 +285,54 @@
     "message": ","
   },
   "s133": {
-    "message": ","
-  },
-  "s134": {
     "message": "Einschränkung auf Elemente von Drittseiten/der Ursprungsseite: Wenn das Attribut"
   },
-  "s135": {
+  "s134": {
     "message": "angegeben ist, wird der Filter nur auf solche Anfragen angewandt, die nicht an die Domain der gerade betrachteten Seite gehen. Dementsprechend bedeutet das Attribut"
   },
-  "s136": {
+  "s135": {
     "message": ", dass der Filter nur auf Anfragen angewandt werden sollte, die an die Domain der betrachteten Seite gehen."
   },
-  "s137": {
+  "s136": {
     "message": "Domain-Einschränkungen: Das Attribut"
   },
-  "s138": {
+  "s137": {
     "message": "bedeutet, dass der Filter nur auf Seiten aktiv werden sollte, die zur Domain \"example.com\" gehören. Mehrere Domains können mit dem Zeichen \"|\" getrennt werden: mit dem Attribut"
   },
-  "s139": {
+  "s138": {
     "message": "wird der Filter nur auf Domains \"example.com\" und \"example.net\" angewandt. Wird ein Domainname von \"~\" angeführt, wird der Filter auf Seiten dieser Domain <strong>nicht</strong> angewandt. Zum Beispiel bedeutet"
   },
-  "s140": {
+  "s139": {
     "message": ", dass der Filter auf allen Domains außer \"example.com\" angewandt werden soll. Und"
   },
-  "s141": {
+  "s140": {
     "message": "beschränkt den Filter auf die Domain \"example.com\" mit Ausnahme der \"foo.example.com\" Unterdomain."
   },
-  "s145": {
+  "s144": {
     "message": " — dieses Attribut sorgt dafür, dass Groß- und Kleinschreibung beachtet wird. So blockiert der Filter"
   },
-  "s146": {
+  "s145": {
     "message": "die Adresse"
   },
-  "s147": {
+  "s146": {
     "message": ", aber nicht"
   },
-  "s148": {
+  "s147": {
     "message": "."
   },
-  "s149": {
+  "s148": {
     "message": " — dieses Attribut stellt sicher, dass beim Blockieren der Platzhalter immer versteckt wird, unabhängig von der globalen Einstellung \"Platzhalter blockierter Elemente verstecken\". Auf die gleiche Weise stellt"
   },
-  "s150": {
+  "s149": {
     "message": "sicher, dass die Platzhalter niemals versteckt werden."
   },
-  "s151": {
+  "s150": {
     "message": " — für jede Adresse, zu der eine Blockierregel mit dieser Option passt und die von keinen Ausnahmeregeln mit dieser Option betroffen ist, wird eine  <a>Do-Not-Track-Kopfzeile</a> gesendet (Adblock Plus 1.3.5 oder höher wird benötigt)."
   },
-  "s152": {
+  "s151": {
     "message": "Für Rückwärtskompatibilität wird empfohlen, diese Option zusammen mit widersprüchlichen Typ-Attributen anzugeben, damit sie in älteren Versionen von Adblock Plus nichts blockiert:"
   },
-  "s153": {
+  "s152": {
     "message": "Verwendung von regulären Ausdrücken"
   },
   "s154": {
@@ -354,168 +348,159 @@
     "message": "enthalten, entfernen, die Zeichenfolge"
   },
   "s158": {
-    "message": "aber ignorieren. Der"
+    "message": "aber ignorieren. Der <a>Artikel über reguläre Ausdrücke</a> auf Wikipedia erklärt, wie reguläre Ausdrücke aufgebaut sind."
   },
   "s159": {
-    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern"
-  },
-  "s160": {
-    "message": "Artikel über reguläre Ausdrücke"
-  },
-  "s161": {
-    "message": "auf Wikipedia erklärt, wie reguläre Ausdrücke aufgebaut sind."
-  },
-  "s162": {
     "message": "<em>Bemerkung</em>: Aus Geschwindigkeitsgründen wird von der Verwendung von regulären Ausdrücken abgeraten."
   },
-  "s163": {
+  "s160": {
     "message": "Verstecken von Elementen"
   },
-  "s164": {
+  "s161": {
     "message": "Grundregeln"
   },
-  "s165": {
+  "s162": {
     "message": "Manchmal findet man Werbung, die sich nicht blockieren lässt, weil sie in die Seite als Text eingebunden ist. Wenn man sich den Quelltext der Seite anschaut, findet man beispielsweise folgendes:"
   },
-  "s166": {
+  "s163": {
     "message": "Die Web-Seite kann nur komplett heruntergeladen werden, somit wird diese Werbung auch immer heruntergeladen. Solche Werbung kann man einzig und allein verstecken, damit sie nicht angezeigt wird. Dafür gibt es in Adblock Plus die Funktion \"Verstecken von Elementen\"."
   },
-  "s167": {
+  "s164": {
     "message": "Die erste Anzeige befindet sich innerhalb eines div-Elements mit Attribut class=\"textad\". Die folgende Regel wird diese Kombination verstecken:"
   },
-  "s168": {
+  "s165": {
     "message": ". Hier markiert ## eine Regel zum Verstecken während der Rest der Regel ein Selektor ist, der das Element auswählt. Genauso können Elemente auch anhand ihres id-Attributes versteckt werden,"
   },
-  "s169": {
+  "s166": {
     "message": "wird also auch die zweite Anzeige verstecken. Den Namen des Elements braucht man nicht unbedingt anzugeben, die Regel"
   },
-  "s170": {
+  "s167": {
     "message": "wird also auch funktionieren. Und die dritte Anzeige kann man allein anhand des Element-Namens verschwinden lassen, also z. B. mit der Filterregel"
   },
-  "s171": {
+  "s168": {
     "message": "."
   },
-  "s172": {
+  "s169": {
     "message": "Die Erweiterun <a>Element Hiding Helper</a> hilft dabei, das korrekte Element auszuwählen und die dazugehörige Regel zu schreiben, ohne den Quelltext der Seite begutachten zu müssen. HTML-Grundkenntnisse sind trotzdem empfehlenswert."
   },
-  "s173": {
+  "s170": {
     "message": "<em>Bemerkung</em>: Das Verstecken von Elementen ist völlig anders realisiert als das \"normale\" Blockieren. Daher werden Jokerzeichen nicht unterstützt."
   },
-  "s174": {
+  "s171": {
     "message": "Regeln auf eine Liste von Domains begrenzen"
   },
-  "s175": {
+  "s172": {
     "message": "Normalerweise will man eine konkrete Anzeige nur auf einer Seite verstecken, diese Regel soll nicht auf anderen Seiten angewandt werden. So könnte beispielsweise die Regel"
   },
-  "s176": {
+  "s173": {
     "message": "auf einer Seite etwas verstecken, was man eigentlich sehen möchte. Wird diese Regel aber als"
   },
-  "s177": {
+  "s174": {
     "message": "geschrieben, wird diese nur auf"
   },
-  "s178": {
+  "s175": {
     "message": "oder"
   },
-  "s179": {
+  "s176": {
     "message": "angewandt, jedoch nicht auf"
   },
-  "s180": {
+  "s177": {
     "message": ". Man kann auch mehrere Domains angeben — einfach mit Kommas trennen:"
   },
-  "s181": {
+  "s178": {
     "message": "."
   },
-  "s182": {
+  "s179": {
     "message": "Wird ein Domainname von “~” angeführt, wird die Regel auf Seiten dieser Domain <strong>nicht</strong> angewandt (Adblock Plus 1.1 oder höher erforderlich). So wird zum Beispiel"
   },
-  "s183": {
+  "s180": {
     "message": "auf allen Domains außer \"example.com\" und"
   },
-  "s184": {
+  "s181": {
     "message": "auf der Domain \"example.com\" mit Ausnahme der Unterdomain \"foo.example.com\" angewandt."
   },
-  "s185": {
+  "s182": {
     "message": "<em>Bemerkung</em>: Aufgrund der Implementierung kann man die Regeln zum Verstecken von Elementen nur auf ganze Domainnamen begrenzen. Andere Teile der Adresse kann man nicht verwenden, auch kann man"
   },
-  "s186": {
+  "s183": {
     "message": "nicht anstatt von"
   },
-  "s187": {
+  "s184": {
     "message": "nehmen."
   },
-  "s188": {
+  "s185": {
     "message": "<em>Bemerkung</em>: Regeln, die auf eine Domain beschränkt sind, können auch auf Elemente im Benutzerinterface des Browsers angewandt werden. Beispielsweise wird die Regel"
   },
-  "s189": {
+  "s186": {
     "message": "den Eintrag für die JavaScript Konsole im Extras-Menü von Firefox verschwinden lassen."
   },
-  "s190": {
+  "s187": {
     "message": "Attribut-Selektoren"
   },
-  "s191": {
+  "s188": {
     "message": "Einige Werbefirmen manchen es einem nicht leicht — ihre Textwerbung hat weder ein Attribut id noch class. Eventuell kann man diese aber anhand von anderen Attributen verstecken, die für diese Werbung typisch sind. Beispielsweise wird die Regel"
   },
-  "s192": {
+  "s189": {
     "message": "alle Tabellen verstecken, mit width-Attribut 80% verstecken. Man kann auch einen Teil des Attributs festlegen, so wird"
   },
-  "s193": {
+  "s190": {
     "message": "alle div-Elemente verstecken, deren Attribut title die Zeichenfolge \"adv\" enhält. Man kann auch genauer angeben, dass sich die Zeichenfolge am Anfang bzw. Ende des Attributs befinden soll:"
   },
-  "s194": {
+  "s191": {
     "message": "wird nur div-Elemente verstecken, deren title-Attribut mit \"adv\" anfängt und mit \"ert\" endet. Und wie man hier sieht, kann man mehrere Bedingungen kombinieren, um die Regel spezifischer zu machen —"
   },
-  "s195": {
+  "s192": {
     "message": "wird Tabellen verstecken, die nicht nur Breite 80% haben, sondern bei denen auch die Hintergrunfarbe als weiß angegeben ist."
   },
-  "s196": {
+  "s193": {
     "message": "Fortgeschrittene Selektoren"
   },
-  "s197": {
+  "s195": {
     "message": "Im Prinzip kann man jeden CSS-Selektor für Verstecken von Elementen verwenden, der von Firefox unterstützt wird. Zum Beispiel wird folgende Regel alles verstecken, was einem div-Element der Klasse \"adheader\" folgt:"
   },
-  "s198": {
-    "message": ". Für eine komplette Liste der CSS-Selektoren siehe"
+  "s196": {
+    "message": ". Für eine komplette Liste der CSS-Selektoren siehe <a>CSS-Dokumentation von W3C</a> (es werden noch nicht alle Selektoren von Firefox unterstützt)."
   },
-  "s199": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
-  },
-  "s200": {
-    "message": "CSS-Dokumentation von W3C"
-  },
-  "s201": {
-    "message": "(es werden noch nicht alle Selektoren von Firefox unterstützt)."
-  },
-  "s202": {
+  "s197": {
     "message": "<em>Bemerkung</em>: Diese Funktion setzt etwas Erfahrung voraus. Man sollte sich mit CSS-Selektoren auskenne, da Adblock Plus nicht in der Lage ist, die Syntax zu überprüfen. Wird eine falsche Regel eingegeben, kann das dazu führen, dass auch andere Regeln nicht mehr funktionieren. Man sollte stets die Fehlerkonsole auf CSS-Fehler überprüfen."
   },
-  "s203": {
+  "s198": {
     "message": "Ausnahmeregeln"
   },
-  "s204": {
+  "s199": {
     "message": "Ausnahmeregeln können bestehende Regeln auf bestimmten Seiten deaktivieren."
   },
-  "s205": {
+  "s200": {
     "message": "Sie sind meistens hilfreich für Filter-Autoren, um Filterregeln zu erweitern, die sie nicht ändern können."
   },
-  "s206": {
+  "s201": {
     "message": "Zum Beispiel kann die Regel"
   },
-  "s207": {
+  "s202": {
     "message": "auf"
   },
-  "s208": {
+  "s203": {
     "message": "mit der Ausnahmeregel"
   },
-  "s209": {
+  "s204": {
     "message": "deaktiviert werden."
   },
-  "s210": {
+  "s205": {
     "message": "Die Kombination dieser beiden Regeln hat exakt denselben Effekt wie die Regel"
   },
-  "s211": {
+  "s206": {
     "message": "."
   },
-  "s212": {
+  "s207": {
     "message": "Es ist empfehlenswert, Ausnahmeregeln nur einzusetzten, wenn man eine zu allgemeine Filterregel nicht ändern kann, in allen anderen Fällen ist eine Begrenzung des Filters auf die nötigen Seiten besser."
+  },
+  "s111-link": {
+    "message": "http://www.w3.org/TR/XMLhttpRequest/"
+  },
+  "s158-link": {
+    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern"
+  },
+  "s196-link": {
+    "message": "http://www.w3.org/TR/css3-selectors/"
   }
 }

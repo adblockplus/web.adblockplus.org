@@ -17,118 +17,94 @@
   "s5": {
     "message": "为什么给某项功能添加一个选项这么困难？"
   },
-  "s6": {
-    "message": "　　其实不然，但要考虑到给全部功能提供选项会有什么后果。这里我想简单地引用"
-  },
   "s7": {
-    "message": "http://www.joelonsoftware.com/uibook/chapters/fog0000000059.html"
+    "message": "　　其实不然，但要考虑到给全部功能提供选项会有什么后果。这里我想简单地引用 <a>Joel Spolsky</a> 所说的话："
   },
   "s8": {
-    "message": "Joel Spolsky"
-  },
-  "s9": {
-    "message": "所说的话："
-  },
-  "s10": {
     "message": "你每提供一个选项，都是在要求用户做选择。"
   },
-  "s11": {
+  "s9": {
     "message": "要求用户选择，这<em>本身</em>不是一件坏事。能够自由选择确实很美妙。人们去星巴克都<em>喜欢</em>点一些用浓缩咖啡调配的饮料，因为他们可以在此之上作出更多<em>选择</em>。比如，中杯的，半咖啡因含量，脱脂，打泡摩卡橙味的超热饮料。"
   },
-  "s12": {
+  "s10": {
     "message": "问题就出在你要求他们对"
   },
-  "s13": {
+  "s11": {
     "message": "自己不关心"
   },
-  "s14": {
+  "s12": {
     "message": "的事做出选择的时候。... 这会让用户感到困惑并最终惹怒他们。"
   },
-  "s15": {
+  "s13": {
     "message": "　　这不意味着所有的功能和自定义选项都得要移除。但对于那些多数用户都用不到的，没必要在界面上显著出现的选项最好还是将其移除。"
   },
-  "s16": {
+  "s14": {
     "message": "为什么给某项功能添加快捷键这么困难？"
   },
-  "s17": {
+  "s15": {
     "message": "　　其实不然。但键盘快捷键在浏览器中是相互共享的，单一的快捷键已经被浏览器占用，而甚至 Ctrl+Shift+某个键这样的组合键也已被许多扩展占用，因此我们所使用的快捷键越多，扩展之间键位冲突的可能性也就越大。不过您还是可以按您的要求<a>重新设置键盘快捷键</a>。"
   },
-  "s18": {
+  "s16": {
     "message": "我应该如何帮助你们？"
   },
-  "s19": {
+  "s17": {
     "message": "　　您可以通过多种方式为 Adblock Plus 作出自己的贡献："
   },
-  "s20": {
+  "s18": {
     "message": "报告缺陷"
   },
-  "s21": {
+  "s19": {
     "message": "　　如果您觉得 Adblock Plus 未起到您所认为的作用，不妨<a>告诉我们</a>。许多情况下我们并未测试到那些会导致错误的潜在问题，正因为如此我们才更需要您的帮助。报告时请包含所有需重现此缺陷的信息：在什么条件下出现这个缺陷、您所使用的浏览器或 Adblock Plus 的版本。同时请关注后续的问题并确认缺陷是否真正修复。"
   },
-  "s22": {
+  "s20": {
     "message": "测试开发版本"
   },
-  "s23": {
+  "s21": {
     "message": "　　每个新版本 Adblock Plus 在发布前都会有数个<a>开发版本</a>，这么做是为了在发布前能发现缺陷或设计有问题的功能。订阅 <a>RSS feed</a> 可以让您随时了解到每个开发版本的更新日期。"
   },
-  "s24": {
+  "s22": {
     "message": "帮助其他用户"
   },
-  "s25": {
+  "s23": {
     "message": "　　如果您是一位经验丰富的 Adblock Plus 用户，不妨花一点时间回答<a>论坛</a>里新手提出的问题。"
   },
-  "s26": {
+  "s24": {
     "message": "提出您的建议"
   },
-  "s27": {
+  "s25": {
     "message": "　　目前我们仍有许多需要改进的地方，因此不妨告诉我们您的想法。最好是告诉我们什么需要改进的同时（通常这些问题众所周知），告诉我们如何改进。欢迎随时到<a>论坛</a>发表新话题或加入已有的讨论。请保持有建设性的评论，同时记得由于各种原因我们无法采纳所有的建议。"
   },
-  "s28": {
+  "s29": {
     "message": "翻译 Adblock Plus"
   },
-  "s29": {
-    "message": "　　Adblock Plus 目前已翻译成超过 30 种不同的语言，相比之下我们还需要更多的翻译人员参与。如果您想要帮助我们，请到"
-  },
   "s30": {
-    "message": "http://www.babelzilla.org/"
+    "message": "　　Adblock Plus 目前已翻译成超过 30 种不同的语言，相比之下我们还需要更多的翻译人员参与。如果您想要帮助我们，请到 <a>BabelZilla</a> 注册帐号，并进入 <a>Adblock Plus 主题页</a>点击首帖中的 \"View on WTS\" 链接，接着点击成为翻译人员。但之前请先确认您会及时跟进新版本 Adblock Plus 的翻译（有新翻译时 BabelZilla 会主动提醒您）。要了解更多 WTS (Web Translation System，在线翻译系统)的信息，参见 <a>BabelZilla FAQ</a>。"
   },
   "s31": {
-    "message": "BabelZilla"
-  },
-  "s32": {
-    "message": "注册帐号，并进入"
-  },
-  "s33": {
-    "message": "http://www.babelzilla.org/forum/index.php?showtopic=1898"
-  },
-  "s34": {
-    "message": "Adblock Plus 主题页"
-  },
-  "s35": {
-    "message": "点击首帖中的 \"View on WTS\" 链接，接着点击成为翻译人员。但之前请先确认您会及时跟进新版本 Adblock Plus 的翻译（有新翻译时 BabelZilla 会主动提醒您）。要了解更多 WTS (Web Translation System，在线翻译系统)的信息，参见"
-  },
-  "s36": {
-    "message": "http://www.babelzilla.org/index.php?option=com_content&task;=category&sectionid;=3&id;=7&Itemid;=25"
-  },
-  "s37": {
-    "message": "BabelZilla FAQ"
-  },
-  "s38": {
-    "message": "。"
-  },
-  "s39": {
     "message": "广而告之"
   },
-  "s40": {
+  "s32": {
     "message": "　　请原谅我误用了这个标题，但实际上将 Adblock Plus 告诉给他人也是一种贡献。广泛使用广告过滤软件虽然不会让人直接从中获益，但它能有效抵御广告投放式经济的蔓延，保证弹出窗口的数量不会继续增加。抛开拥有一个更好的互联网环境不谈，仅仅知道有这样的扩展存在也是很棒的。"
   },
-  "s41": {
+  "s33": {
     "message": "捐赠"
   },
-  "s42": {
+  "s34": {
     "message": "　　有了更多的资金，我们就能更快地推进 Adblock Plus 的开发进程。"
   },
-  "s43": {
+  "s35": {
     "message": "您可以到<a>捐赠页面</a>给我们捐款。"
+  },
+  "s7-link": {
+    "message": "http://www.joelonsoftware.com/uibook/chapters/fog0000000059.html"
+  },
+  "s30-link": {
+    "message": "http://www.babelzilla.org/"
+  },
+  "s30-link2": {
+    "message": "http://www.babelzilla.org/forum/index.php?showtopic=1898"
+  },
+  "s30-link3": {
+    "message": "http://www.babelzilla.org/index.php?option=com_content&task=category&sectionid=3&id=7&Itemid=25"
   }
 }

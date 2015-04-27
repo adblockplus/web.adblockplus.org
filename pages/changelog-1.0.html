@@ -92,30 +92,30 @@ title=Detailed changelog for Adblock Plus 1.0
         <h2 id="core">{{s66 Core}}</h2>
 
         <ul>
-               <li>{{s67 Core code was redesigned for better maintainability, code documentation and automated tests (based on}} <a href="{{s68 https://developer.mozilla.org/en/Mochitest}}">{{s69 Mochitest}}</a>{{s70 ) were added for large parts of the core}}</li>
-               <li>{{s71 Made sure filter storage file isn't overwritten unless write was successful (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=16488">bug 16488</a>)}}</li>
-               <li>{{s72 Improved performance (esp. reading filter from disk and saving filters for large filter lists), reduced the amount of memory used}}</li>
-               <li>{{s73 Fixed: Exception rules don’t always apply to element hiding in Firefox 3 (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=20034">bug 20034</a>)}}</li>
-               <li>{{s74 Firefox 1.5, Thunderbird 1.5, SeaMonkey 1.0, Songbird 0.5/0.6 are no longer supported (removed some backwards compatibility hacks)}}</li>
-               <li>{{s75 Flock 1.2/2.0 and Songbird 0.7/1.0 are supported now}}</li>
-               <li>{{s76 Added support for Prism 0.9 (<a href="/forum/viewtopic.php?t=2229">forum topic</a>)}}</li>
-               <li>{{s77 Added hidden preference <a href="preferences#savestats">extensions.adblockplus.savestats</a> to allow turning off hit statistics (useful if patterns.ini is put into a version control system) (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=18650">bug 18650</a>)}}</li>
-               <li>{{s78 Added support for private browsing mode in Firefox 3.1, hit statistics are disabled automatically}}</li>
-               <li>{{s79 All first run actions are now controlled by <a href="preferences#currentversion">extensions.adblockplus.currentversion preference</a> (replaces}} <code>{{s80 showsubscriptions}}</code>{{s81 ,}} <code>{{s82 checkedtoolbar}}</code>{{s83 ,}} <code>{{s84 checkedadblockinstalled}}</code> {{s85 preferences)}}</li>
-               <li>{{s86 Changed patterns.ini format to allow user-defined comments (and potentially other filters as well) to be stored in any filter group}}</li>
-               <li>{{s87 Adblock Plus 0.6 preferences are no longer imported on upgrade}}</li>
-               <li>{{s88 Adblock preferences are no longer imported on upgrade (filter list still imported)}}</li>
-               <li>{{s89 Fixed: Object tabs show up on print (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=19405">bug 19405</a>)}}</li>
-               <li>{{s90 Fixed: &quot;getBoxObjectFor() is deprecated&quot; warning in error console (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=19126">bug 19126</a>)}}</li>
+               <li>{{s68 Core code was redesigned for better maintainability, code documentation and automated tests (based on <a href="{{s68-link https://developer.mozilla.org/en/Mochitest}}">Mochitest</a>) were added for large parts of the core}}</li>
+               <li>{{s69 Made sure filter storage file isn't overwritten unless write was successful (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=16488">bug 16488</a>)}}</li>
+               <li>{{s70 Improved performance (esp. reading filter from disk and saving filters for large filter lists), reduced the amount of memory used}}</li>
+               <li>{{s71 Fixed: Exception rules don’t always apply to element hiding in Firefox 3 (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=20034">bug 20034</a>)}}</li>
+               <li>{{s72 Firefox 1.5, Thunderbird 1.5, SeaMonkey 1.0, Songbird 0.5/0.6 are no longer supported (removed some backwards compatibility hacks)}}</li>
+               <li>{{s73 Flock 1.2/2.0 and Songbird 0.7/1.0 are supported now}}</li>
+               <li>{{s74 Added support for Prism 0.9 (<a href="/forum/viewtopic.php?t=2229">forum topic</a>)}}</li>
+               <li>{{s75 Added hidden preference <a href="preferences#savestats">extensions.adblockplus.savestats</a> to allow turning off hit statistics (useful if patterns.ini is put into a version control system) (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=18650">bug 18650</a>)}}</li>
+               <li>{{s76 Added support for private browsing mode in Firefox 3.1, hit statistics are disabled automatically}}</li>
+               <li>{{s77 All first run actions are now controlled by <a href="preferences#currentversion">extensions.adblockplus.currentversion preference</a> (replaces}} <code>{{s78 showsubscriptions}}</code>{{s79 ,}} <code>{{s80 checkedtoolbar}}</code>{{s81 ,}} <code>{{s82 checkedadblockinstalled}}</code> {{s83 preferences)}}</li>
+               <li>{{s84 Changed patterns.ini format to allow user-defined comments (and potentially other filters as well) to be stored in any filter group}}</li>
+               <li>{{s85 Adblock Plus 0.6 preferences are no longer imported on upgrade}}</li>
+               <li>{{s86 Adblock preferences are no longer imported on upgrade (filter list still imported)}}</li>
+               <li>{{s87 Fixed: Object tabs show up on print (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=19405">bug 19405</a>)}}</li>
+               <li>{{s88 Fixed: &quot;getBoxObjectFor() is deprecated&quot; warning in error console (<a href="https://www.mozdev.org/bugs/show_bug.cgi?id=19126">bug 19126</a>)}}</li>
         </ul>
 
-        <h3 id="synchronizer">{{s91 Subscription downloads}}</h3>
+        <h3 id="synchronizer">{{s89 Subscription downloads}}</h3>
 
         <ul>
-               <li>{{s92 For subscription downloads, a comment &quot;! Checksum: abcd&quot; is now interpreted and files with wrong checksum are rejected to prevent broken downloads (<a href="/forum/viewtopic.php?t=2623">forum topic</a>, <a href="https://hg.adblockplus.org/adblockplus/file/tip/addChecksum.pl">reference implementation to add checksums</a>)}}</li>
-               <li>{{s93 Next attempt after failed download is after one day now rather than after one hour to prevent server overload (adjusted preference <a href="preferences#subscriptions_fallbackerrors">extensions.adblockplus.subscriptions_fallbackerrors</a> accordingly)}}</li>
-               <li>{{s94 Fallback request can now disable automatic downloads for subscriptions that are no longer available}}</li>
-               <li>{{s95 Fixed: Subscription downloads sometimes go to browser cache}}</li>
+               <li>{{s90 For subscription downloads, a comment &quot;! Checksum: abcd&quot; is now interpreted and files with wrong checksum are rejected to prevent broken downloads (<a href="/forum/viewtopic.php?t=2623">forum topic</a>, <a href="https://hg.adblockplus.org/adblockplus/file/tip/addChecksum.pl">reference implementation to add checksums</a>)}}</li>
+               <li>{{s91 Next attempt after failed download is after one day now rather than after one hour to prevent server overload (adjusted preference <a href="preferences#subscriptions_fallbackerrors">extensions.adblockplus.subscriptions_fallbackerrors</a> accordingly)}}</li>
+               <li>{{s92 Fallback request can now disable automatic downloads for subscriptions that are no longer available}}</li>
+               <li>{{s93 Fixed: Subscription downloads sometimes go to browser cache}}</li>
         </ul>
 
-        <p><a href="changelog-0.7.5.4">{{s96 Changelog for the previous release}}</a></p>
+        <p><a href="changelog-0.7.5.4">{{s94 Changelog for the previous release}}</a></p>

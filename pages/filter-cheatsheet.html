@@ -367,11 +367,11 @@ title=Adblock Plus filters explained
       <p>{{s19 The following text must be the domain name of the address.}}</p>
     </div>
     <div class="verbatim">
-      <h4>{{s20 Verbatim text}}</h4>
-      <p>{{s21 This text must be present in the address to be blocked.}}</p>
+      <h4>{{s5 Verbatim text}}</h4>
+      <p>{{s6 This text must be present in the address to be blocked.}}</p>
     </div>
     <div class="separator">
-      <h4><a href="filters#separators">{{s22 Separator}}</a></h4>
+      <h4><a href="filters#separators">{{s9 Separator}}</a></h4>
       <p>{{s23 A separator character has to follow that will indicate the end of the domain name, e.g. / or :.}}</p>
     </div>
   </div>
@@ -382,7 +382,7 @@ title=Adblock Plus filters explained
 </div>
 
 <p>
-  {{s27 This rule blocks:}}
+  {{s15 This rule blocks:}}
 </p>
 <ul>
   <li><code>http://ads.example.com/foo.gif</code></li>
@@ -390,7 +390,7 @@ title=Adblock Plus filters explained
   <li><code>https://ads.example.com:8000/</code></li>
 </ul>
 <p>
-  {{s28 This rule doesn't block:}}
+  {{s16 This rule doesn't block:}}
 </p>
 <ul>
   <li><code>http://ads.example.com.ua/foo.gif</code></li>
@@ -406,8 +406,8 @@ title=Adblock Plus filters explained
       <p>{{s31 The following text must be the beginning of the address.}}</p>
     </div>
     <div class="verbatim">
-      <h4>{{s32 Verbatim text}}</h4>
-      <p>{{s33 This text must be present in the address to be blocked.}}</p>
+      <h4>{{s5 Verbatim text}}</h4>
+      <p>{{s6 This text must be present in the address to be blocked.}}</p>
     </div>
     <div class="endAnchor">
       <h4><a href="filters#anchors">{{s34 End anchor}}</a></h4>
@@ -421,13 +421,13 @@ title=Adblock Plus filters explained
 </div>
 
 <p>
-  {{s39 This rule blocks:}}
+  {{s15 This rule blocks:}}
 </p>
 <ul>
   <li><code>http://example.com/</code></li>
 </ul>
 <p>
-  {{s40 This rule doesn't block:}}
+  {{s16 This rule doesn't block:}}
 </p>
 <ul>
   <li><code>http://example.com/foo.gif</code></li>
@@ -503,7 +503,7 @@ title=Adblock Plus filters explained
       <p>{{s82 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
     </div>
     <div class="typeOption">
-      <h4><a href="#options">{{s83 Type option}}</a></h4>
+      <h4><a href="#options">{{s47 Type option}}</a></h4>
       <p>
         {{s84 This type option prevents the exception from being applied to scripts.}}
       </p>
@@ -520,15 +520,15 @@ title=Adblock Plus filters explained
 <div class="example">
   <div class="explanations">
     <div class="exception">
-      <h4>{{s90 Exception rule}}</h4>
-      <p>{{s91 Rules starting like this are exceptions, they will override blocking rules.}}</p>
+      <h4>{{s79 Exception rule}}</h4>
+      <p>{{s80 Rules starting like this are exceptions, they will override blocking rules.}}</p>
     </div>
     <div class="verbatim">
-      <h4>{{s92 Address to be allowed}}</h4>
-      <p>{{s93 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
+      <h4>{{s81 Address to be allowed}}</h4>
+      <p>{{s82 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
     </div>
     <div class="typeOption">
-      <h4><a href="#options">{{s94 Type option}}</a></h4>
+      <h4><a href="#options">{{s47 Type option}}</a></h4>
       <p>
         {{s95 This special type option indicates that Adblock Plus should be completely disabled on pages that this rule applies to.}}
       </p>
@@ -634,7 +634,7 @@ title=Adblock Plus filters explained
   <col class="selectorPurpose">
   <tr>
     <th>{{s138 Example rules}}</th>
-    <th>{{s139 Domain selection}}</th>
+    <th>{{s136 Domain selection}}</th>
   </tr>
   <tr>
     <td><code>##selector</code></td>
@@ -667,7 +667,7 @@ title=Adblock Plus filters explained
         </ul>
       </p>
       <p>
-        {{s145 Not active on:}}
+        {{s142 Not active on:}}
         <ul class="example-list">
           <li>{{s146 All other domains, including}}</li>
           <li><code>http://example.edu/</code></li>
@@ -680,9 +680,9 @@ title=Adblock Plus filters explained
     <td><code>~example.com##selector</code></td>
     <td>
       <p>
-        {{s147 Active on:}}
+        {{s140 Active on:}}
         <ul class="example-list">
-          <li>{{s148 All other domains, including}}</li>
+          <li>{{s146 All other domains, including}}</li>
           <li><code>http://example.edu/</code></li>
           <li><code>ftp://example.net/</code></li>
         </ul>
@@ -700,7 +700,7 @@ title=Adblock Plus filters explained
     <td><code>example.com,example.edu##selector</code></td>
     <td>
       <p>
-        {{s150 Active on, for example:}}
+        {{s144 Active on, for example:}}
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>https://subdomain.example.com/</code></li>
@@ -708,7 +708,7 @@ title=Adblock Plus filters explained
         </ul>
       </p>
       <p>
-        {{s151 Not active on:}}
+        {{s142 Not active on:}}
         <ul class="example-list">
           <li>{{s152 All other domains, including:}}</li>
           <li><code>http://example.net/</code></li>
@@ -720,7 +720,7 @@ title=Adblock Plus filters explained
     <td><code>example.com,~mail.example.com#selector</code></td>
     <td>
       <p>
-        {{s153 Active on:}}
+        {{s140 Active on:}}
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>https://adverts.example.com/</code></li>
@@ -728,7 +728,7 @@ title=Adblock Plus filters explained
         </ul>
       </p>
       <p>
-        {{s154 Not active on:}}
+        {{s142 Not active on:}}
         <ul class="example-list">
           <li><code>http://mail.example.com/</code></li>
           <li>{{s155 All other domains}}</li>

@@ -27,10 +27,10 @@
     "message": "Verwijderde voorkeuren"
   },
   "s1": {
-    "message": "De volgende tabel legt het gebruik van alle voorkeuren die door Adblock Plus gebruikt worden uit. U kunt deze voorkeuren zien en wijzigen via"
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "s2": {
-    "message": "http://kb.mozillazine.org/About:config"
+    "message": "De volgende tabel legt het gebruik van alle voorkeuren die door Adblock Plus gebruikt worden uit. U kunt deze voorkeuren zien en wijzigen via"
   },
   "s3": {
     "message": "."
@@ -83,22 +83,13 @@
   "defaultstatusbaraction-s2": {
     "message": "."
   },
-  "sidebar_key-s1": {
-    "message": "Definieert de sneltoets die gebruikt wordt om de lijst met blokkeerbare onderdelen te openen. Deze voorkeur kan leeg zijn of het kan in de vorm <em>modifier1 modifier2 key</em> zijn. Herkende modifiers zijn: Shift, Accel (standaard accelarator toets, bijvoorbeeld Ctrl in Windows, Command in Mac OS X), Ctrl/Control, Alt, Meta. Key kan zowel een letter zijn als een speciale toets als F7 of RIGHT (zie"
-  },
   "sidebar_key-s2": {
-    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
+    "message": "Definieert de sneltoets die gebruikt wordt om de lijst met blokkeerbare onderdelen te openen. Deze voorkeur kan leeg zijn of het kan in de vorm <em>modifier1 modifier2 key</em> zijn. Herkende modifiers zijn: Shift, Accel (standaard accelarator toets, bijvoorbeeld Ctrl in Windows, Command in Mac OS X), Ctrl/Control, Alt, Meta. Key kan zowel een letter zijn als een speciale toets als F7 of RIGHT (zie <a>nsIDOMKeyEvent interface</a> voor een lijst van bijzondere toetsen)."
   },
   "sidebar_key-s3": {
-    "message": "nsIDOMKeyEvent interface"
-  },
-  "sidebar_key-s4": {
-    "message": "voor een lijst van bijzondere toetsen)."
-  },
-  "sidebar_key-s5": {
     "message": "Vanaf Adblock Plus 1.3.5 kunnen meerdere comma-gescheiden sneltoetsen worden opgegeven, de eerst beschikbare sneltoets uit de lijst zal worden gebruikt."
   },
-  "sidebar_key-s6": {
+  "sidebar_key-s4": {
     "message": "<em>N.B.</em>: Deze instelling heeft pas effect als de browser herstart is."
   },
   "filters_key-s1": {
@@ -286,5 +277,8 @@
   },
   "hideimagemanager-s1": {
     "message": "Niet gebruikt in Adblock Plus 2.1 en hoger"
+  },
+  "sidebar_key-s2-link": {
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
   }
 }
