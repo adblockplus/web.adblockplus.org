@@ -18,84 +18,78 @@
     "message": "Se ha añadido soporte para <a>la propuesta de Do-Not-Track header</a> (DNT), un filtro del tipo de"
   },
   "s6": {
-    "message": "que hará que se envíe este header a todos los lugares ("
+    "message": "que hará que se envíe este header a todos los lugares (<a>tema del foro</a>)."
   },
   "s7": {
-    "message": "tema del foro"
-  },
-  "s8": {
-    "message": ")."
-  },
-  "s9": {
     "message": "Se ha añadido un botón experimental: \"Recomendarnos en Facebook\", en el menú para facilitar el recomendar Adblock Plus. Sólo se muestra a los usuarios de Facebook."
   },
-  "s10": {
+  "s8": {
     "message": "Interfaz de usuarios"
   },
-  "s11": {
+  "s9": {
     "message": "Se han vuelto a incluir las traducciones al malayo y estonio."
   },
-  "s12": {
+  "s10": {
     "message": "Los atajos de teclado preferidos pueden tener varios valores, se usará el primer atajo disponible."
   },
-  "s13": {
+  "s11": {
     "message": "Se ha cambiado el atajo de teclado predeterminado para las Preferencias de Ctrl-Shift-E (utilizado en Firefox 3.x) a Ctrl-Shift-F (utilizado en Firefox 4) o Ctrl-Shift-O (para Firefox 4 en Mac OS X)."
   },
-  "s14": {
+  "s12": {
     "message": "Se ha eliminado el icono especial de estado para sitios web de la \"lista blanca\", ahora se muestra el icono de \"Adblock Plus desactivado\" en esas páginas (<a>tema del foro</a>)."
   },
-  "s15": {
+  "s13": {
     "message": "El elemento del menú \"Activar Adblock Plus\" se ha convertido en \"Desactivar en todos\"."
   },
-  "s16": {
+  "s14": {
     "message": "Firefox Mobile: La página de primera instalación está más adaptada a una pantalla pequeño."
   },
-  "s17": {
+  "s15": {
     "message": "Solucionado: El contenido de la página de primera instalación a veces aparecía recortado (<a>tema del foro</a>)."
   },
-  "s18": {
+  "s16": {
     "message": "Solucionado: La opción \"Editar filtro en uso\" en la lista de elementos bloqueable no funcionaba correctamente si la ventana de Preferencias ya estaba abierta."
   },
-  "s19": {
+  "s17": {
     "message": "Informes de errores"
   },
-  "s20": {
+  "s18": {
     "message": "Deshabilitados los informes con demasiadas suscripciones de filtros."
   },
-  "s21": {
+  "s19": {
     "message": "Deshabilitados los informes para ciertos tipos de páginas (sobre todo pestañas en blanco, correos electrónicos, páginas locales, páginas de extensiones)."
   },
-  "s22": {
+  "s20": {
     "message": "Thunderbird: Mejorados los informes para publicaciones den bitácoras, ahora se envía la dirección del post de la bitácora en vez de una dirección de buzón de correo que no sirve para nada."
   },
-  "s23": {
+  "s21": {
     "message": "Solucionado: Las suscripciones de filtros deshabilitadas no deben aparecer en el informe (<a>tema del foro</a>)."
   },
-  "s24": {
+  "s22": {
     "message": "Núcleo"
   },
-  "s25": {
+  "s23": {
     "message": "Se ha implemenado un algoritmo de comprobación de filtros más rápido (<a>tema del foro</a>)."
   },
-  "s26": {
+  "s24": {
     "message": "el archivo patterns.ini sólo se guarda al cerrar si ha habido cambios en el mismo."
   },
-  "s27": {
+  "s25": {
     "message": "Los datos de coincidencia de filtros y reglas de ocultación de elementos se almacenan en caché en la carpeta de datos de Adblock Plus para reducir el tiempo de inicio."
   },
-  "s28": {
+  "s26": {
     "message": "Se ha cambiado la forma en la que se escribe en el archivo patterns.ini para evitar la pérdida de datos si el ordenador se apaga repentinamente. switched off abruptly."
   },
-  "s29": {
+  "s27": {
     "message": "Ahora se reconocen los archivos patterns.ini corruptos y se carga automáticamente un archivo de copia de respaldo si existe uno disponible."
   },
-  "s30": {
+  "s28": {
     "message": "Solucionado: Las reglas de ocultación de elementos podían provocar en ocasiones cierres inesperados del programa (regresión en Adblock Plus 1.3.3)."
   },
-  "s31": {
+  "s29": {
     "message": "Solucionado: Al desactivar filtros en la lista de elementos bloqueables no se desactivaban realmente dichos filtros en Firefox 3.6."
   },
-  "s32": {
+  "s30": {
     "message": "Detalle de cambios de la versión anterior"
   }
 }

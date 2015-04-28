@@ -15,81 +15,69 @@
     "message": "Adblock Plus 源代码托管在我们的 <a>Mercurial</a> 服务器。"
   },
   "s5": {
-    "message": "您可以查看完整的版本库列表，就在"
+    "message": "您可以查看完整的版本库列表，就在 <a>网页界面</a>。"
   },
   "s6": {
-    "message": "网页界面"
-  },
-  "s7": {
-    "message": "。"
-  },
-  "s8": {
     "message": "克隆 Adblock Plus for Firefox 版本库的方法是："
   },
-  "s9": {
+  "s7": {
     "message": "获取特定版本源代码（例如"
   },
-  "s10": {
+  "s8": {
     "message": "）的方法："
   },
-  "s11": {
+  "s9": {
     "message": "Mercurial 文档"
   },
-  "s12": {
+  "s10": {
     "message": "Mercurial 快速上手"
   },
-  "s13": {
+  "s11": {
     "message": "Mozilla 的 Mercurial 常见问题"
   },
-  "s14": {
+  "s12": {
     "message": "使用 Mercurial 进行分布式版本控制 (hgbook)"
   },
-  "s15": {
+  "s13": {
     "message": "图形界面客户端和其他工具"
   },
-  "s16": {
+  "s14": {
     "message": "从 GitHub 镜像获取源代码"
   },
-  "s17": {
+  "s15": {
     "message": "如果您更想使用 Git，也可以——我们的所有公开版本库都有 <a>GitHub 镜像</a>。"
   },
-  "s18": {
+  "s16": {
     "message": "从 GitHub 克隆 Adblock Plus for Firefox 版本库的方法："
   },
-  "s20": {
+  "s18": {
     "message": "）的方法："
   },
-  "s21": {
+  "s19": {
     "message": "<strong>请注意：</strong>我们目前多处使用 Mercurial 子版本库，但这无法反映为 Git 子模块。"
   },
+  "s20": {
+    "message": "这意味着您需要检查每个版本库的 <em>.hgsub</em> 文件并手动克隆所有依赖关系。"
+  },
+  "s21": {
+    "message": "这不会再发生，我们目前已经 <a>远离子版本库</a>。"
+  },
   "s22": {
-    "message": "这意味着您需要检查每个版本库的"
-  },
-  "s23": {
-    "message": "<em>.hgsub</em> 文件并手动克隆所有依赖关系。"
-  },
-  "s24": {
-    "message": "这不会再发生，我们目前已经"
-  },
-  "s25": {
-    "message": "<a>远离子版本库</a>。"
-  },
-  "s26": {
     "message": "构建指南"
   },
-  "s27": {
+  "s23": {
     "message": "我们的大多数版本库有内含构建指南的 <em>README.md</em> 文件，请参考它。"
   },
-  "s28": {
+  "s24": {
     "message": "源代码文档"
   },
-  "s29": {
+  "s25": {
     "message": "我们对一些项目有自动生成的源代码文档："
   },
-  "s30": {
+  "s26": {
     "message": "Adblock Plus for Firefox"
   },
-  "s31": {
+  "s27": {
     "message": "libadblockplus"
   }
 }

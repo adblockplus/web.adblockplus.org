@@ -5,52 +5,52 @@ title=Source Code
 
 <h2 id="source">{{s3 Getting the source code from the Mercurial repositories}}</h2>
 
-<p>{{s4 The Adblock Plus source code is hosted on our <a href="http://mercurial.selenic.com/">Mercurial</a> server.}} {{s5 You can see a list of all repositories through the}} <a href="https://hg.adblockplus.org/">{{s6 web interface}}</a>{{s7 .}}</p>
+<p>{{s4 The Adblock Plus source code is hosted on our <a href="http://mercurial.selenic.com/">Mercurial</a> server.}} {{s5 You can see a list of all repositories through the <a href="https://hg.adblockplus.org/">web interface</a>.}}</p>
 
-<p>{{s8 Here's how you clone the Adblock Plus for Firefox repository:}}</p>
+<p>{{s6 Here's how you clone the Adblock Plus for Firefox repository:}}</p>
 
 <pre>hg clone https://hg.adblockplus.org/adblockplus/
 </pre>
 
-<p>{{s9 Here's how you get the source code for a specific version (e.g.}} Adblock Plus 2.3.1{{s10 ):}}</p>
+<p>{{s7 Here's how you get the source code for a specific version (e.g.}} Adblock Plus 2.3.1{{s8 ):}}</p>
 
 <pre>hg update -r 2.3.1
 </pre>
 
-<h3>{{s11 Mercurial documentation}}</h3>
+<h3>{{s9 Mercurial documentation}}</h3>
 
 <ul>
-<li><a href="http://mercurial.selenic.com/wiki/QuickStart">{{s12 Mercurial quickstart}}</a></li>
-<li><a href="https://developer.mozilla.org/en/Mercurial_FAQ">{{s13 Mozilla's Mercurial FAQ}}</a></li>
-<li><a href="http://hgbook.red-bean.com">{{s14 Distributed Revision Control with Mercurial (hgbook)}}</a></li>
-<li><a href="http://mercurial.selenic.com/wiki/OtherTools">{{s15 GUI client and other tools}}</a></li>
+<li><a href="http://mercurial.selenic.com/wiki/QuickStart">{{s10 Mercurial quickstart}}</a></li>
+<li><a href="https://developer.mozilla.org/en/Mercurial_FAQ">{{s11 Mozilla's Mercurial FAQ}}</a></li>
+<li><a href="http://hgbook.red-bean.com">{{s12 Distributed Revision Control with Mercurial (hgbook)}}</a></li>
+<li><a href="http://mercurial.selenic.com/wiki/OtherTools">{{s13 GUI client and other tools}}</a></li>
 </ul>
 
-<h2 id="github">{{s16 Getting the source code from the GitHub mirrors}}</h2>
+<h2 id="github">{{s14 Getting the source code from the GitHub mirrors}}</h2>
 
-<p>{{s17 If you prefer to use Git, you can - we have <a href="https://github.com/adblockplus">GitHub mirrors</a> for all our public repositories.}}</p>
+<p>{{s15 If you prefer to use Git, you can - we have <a href="https://github.com/adblockplus">GitHub mirrors</a> for all our public repositories.}}</p>
 
-<p>{{s18 Here's how you clone the Adblock Plus for Firefox repository from GitHub:}}</p>
+<p>{{s16 Here's how you clone the Adblock Plus for Firefox repository from GitHub:}}</p>
 
 <pre>git clone https://github.com/adblockplus/adblockplus
 </pre>
 
-<p>{{s9 Here's how you get the source code for a specific version (e.g.}}  Adblock Plus 2.3.1{{s20 ):}}</p>
+<p>{{s7 Here's how you get the source code for a specific version (e.g.}}  Adblock Plus 2.3.1{{s18 ):}}</p>
 
 <pre>git checkout 2.3.1
 </pre>
 
-<p>{{s21 <strong>Please note:</strong> We are currently using Mercurial subrepositories heavily, but are unable to mirror these as Git submodules.}} {{s22 That means that you need to check the}} {{s23 <em>.hgsub</em> file of each repository and clone all dependencies manually.}} {{s24 This won't be necessary anymore once we've}} {{s25 <a href="https://issues.adblockplus.org/ticket/170">moved away from subrepositories</a>.}}</p>
+<p>{{s19 <strong>Please note:</strong> We are currently using Mercurial subrepositories heavily, but are unable to mirror these as Git submodules.}} {{s20 That means that you need to check the <em>.hgsub</em> file of each repository and clone all dependencies manually.}} {{s21 This won't be necessary anymore once we've <a href="https://issues.adblockplus.org/ticket/170">moved away from subrepositories</a>.}}</p>
 
-<h2 id="build">{{s26 Build instructions}}</h2>
+<h2 id="build">{{s22 Build instructions}}</h2>
 
-<p>{{s27 Most of our repositories have <em>README.md</em> files with build instructions, please refer to those.}}</p>
+<p>{{s23 Most of our repositories have <em>README.md</em> files with build instructions, please refer to those.}}</p>
 
-<h2 id="documentation">{{s28 Source code documentation}}</h2>
+<h2 id="documentation">{{s24 Source code documentation}}</h2>
 
-<p>{{s29 We have automatically generated source code documentation for some projects:}}</p>
+<p>{{s25 We have automatically generated source code documentation for some projects:}}</p>
 
 <ul>
-<li><a href="https://adblockplus.org/jsdoc/adblockplus">{{s30 Adblock Plus for Firefox}}</a></li>
-<li><a href="https://adblockplus.org/docs/libadblockplus">{{s31 libadblockplus}}</a></li>
+<li><a href="https://adblockplus.org/jsdoc/adblockplus">{{s26 Adblock Plus for Firefox}}</a></li>
+<li><a href="https://adblockplus.org/docs/libadblockplus">{{s27 libadblockplus}}</a></li>
 </ul>

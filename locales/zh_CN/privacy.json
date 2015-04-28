@@ -105,162 +105,138 @@
     "message": "Adblock Plus nightly 构建版连同 Android 和 Internet Explorer 版本是由 AdblockPlus.org 负责更新，所有传输的数据均遵循我们的 <a>隐私策略</a>，"
   },
   "s35": {
-    "message": "而 Adblock Plus for Firefox  的稳定发布版更新则由 Addons.Mozilla.Org 来负责并遵循"
+    "message": "而 Adblock Plus for Firefox  的稳定发布版更新则由 Addons.Mozilla.Org 来负责并遵循 <a>Firefox 隐私策略</a>。"
   },
   "s36": {
-    "message": "Firefox 隐私策略"
-  },
-  "s37": {
-    "message": "。"
-  },
-  "s38": {
     "message": "Adblock Plus for Chrome 的稳定发布版更新是由 Google 网上应用店负责并遵循  <a>Google 隐私策略</a>。"
   },
-  "s39": {
-    "message": "Adblock Plus for Opera 的稳定发布版则由 Opera 插件网站负责更新并遵循"
+  "s37": {
+    "message": "Adblock Plus for Opera 的稳定发布版则由 Opera 插件网站负责更新并遵循 <a>Opera 隐私策略</a>。"
   },
-  "s40": {
-    "message": "Opera 隐私策略"
-  },
-  "s41": {
-    "message": "。"
-  },
-  "s42": {
+  "s38": {
     "message": "订阅组下载"
   },
-  "s43": {
+  "s39": {
     "message": "　　所有您在 Adblock Plus 添加的过滤规则订阅组都会定期更新，"
   },
-  "s44": {
+  "s40": {
     "message": "每次更新都会使订阅组所在网站都会收到您的 IP 地址以及某些常规信息，像是您的 Adblock Plus 版本号、浏览器及浏览器版本号。"
   },
-  "s45": {
+  "s41": {
     "message": "发送的数据则遵循这些网站未知的隐私策略。"
   },
-  "s46": {
+  "s42": {
     "message": "　　此外，如果某个订阅组连续一段时间内更新失败，那么订阅组的更新地址会自动发送到 AdblockPlus.org，"
   },
-  "s47": {
+  "s43": {
     "message": "同时还有 Adblock Plus 版本号、订阅地址以及错误信息。"
   },
-  "s48": {
+  "s44": {
     "message": "这些数据是用来鉴别那些订阅组维护人员还未报告的问题，也一贯遵循  <a>AdblockPlus.org 隐私策略</a>。"
   },
-  "s49": {
+  "s45": {
     "message": "页面问题报告"
   },
-  "s50": {
+  "s46": {
     "message": "　　Adblock Plus for Firefox 允许您发送的页面问题报告临时存储在 AdblockPlus.org 域名下。"
   },
-  "s51": {
+  "s47": {
     "message": "提交的报告包括研究问题所需的有关信息，如 Adblock Plus 版本号、浏览器版本号、产生问题的网页地址，该页面可过滤的项目、生效的过滤规则和订阅组，"
   },
-  "s52": {
+  "s48": {
     "message": "发送网页地址时会自动删除所有参数以防止泄漏私人信息。"
   },
-  "s53": {
+  "s49": {
     "message": "您也可以选择是否向我们提供以下敏感信息："
   },
-  "s54": {
+  "s50": {
     "message": "附加页面截图 — 页面视图区域按比例缩小显示且减少图像颜色，"
   },
-  "s55": {
+  "s51": {
     "message": "您可以在发送报告前移除页面的敏感区域。"
   },
-  "s56": {
+  "s52": {
     "message": "Email 地址仅用于请求用户提供更多信息或向用户提供问题的更新。"
   },
-  "s57": {
+  "s53": {
     "message": "在用扩展的列表 — 必要时用来排查是否与其他扩展发生冲突。"
   },
-  "s58": {
+  "s54": {
     "message": "　　页面问题报告生成的链接地址"
   },
-  "s59": {
+  "s55": {
     "message": "只有报告提及的过滤规则订阅组维护人员和知晓该地址的人才可以访问。"
   },
-  "s60": {
+  "s56": {
     "message": "所有报告和附带的数据都将在 30 天后自动删除。"
   },
-  "s61": {
+  "s57": {
     "message": "异常情况通知"
   },
-  "s62": {
+  "s58": {
     "message": "　　Adblock Plus 近期新增了一项名为异常情况通知的机制，在遇到影响 Adblock Plus 安装的重大问题时会主动通知用户。"
   },
-  "s63": {
+  "s59": {
     "message": "这项特性使得 Adblock Plus 安装时会定期查询 AdblockPlus.org 域名下的某个地址以获取活动通知的列表。"
   },
-  "s64": {
+  "s60": {
     "message": "查询请求会将您的 IP 地址发送给网站，另外还包括某些常规信息，像是您的 Adblock Plus 版本号、浏览器及其版本号。"
   },
-  "s65": {
+  "s61": {
     "message": "所有的数据有助于将不同的通知对应分发到不同客户端并且也一贯遵循  <a>AdblockPlus.org 隐私策略</a>。"
   },
-  "s66": {
+  "s62": {
     "message": "进一步发送请求到 AdblockPlus.org"
   },
-  "s67": {
+  "s63": {
     "message": "　　Adblock Plus 必要时会进一步向 AdblockPlus.org 发送请求，比如说点击了某个文档或需要下载完全的过滤规则订阅组时。"
   },
-  "s68": {
+  "s64": {
     "message": "这些发送的请求也一贯遵循  <a>AdblockPlus.org 隐私策略</a>。"
   },
-  "s69": {
+  "s65": {
     "message": "数据存储"
   },
-  "s72": {
+  "s68": {
     "message": "　　Adblock Plus 会在您计算机的 <a>Firefox 用户配置文件夹</a>\n中存储部分数据。"
   },
-  "s73": {
-    "message": "Adblock Plus 绝不会发送这些数据到任何服务器，但不排除其他扩展和服务会这么做，比如说"
+  "s69": {
+    "message": "Adblock Plus 绝不会发送这些数据到任何服务器，但不排除其他扩展和服务会这么做，比如说  <a>Firefox 同步</a>。"
   },
-  "s74": {
-    "message": "Firefox 同步"
-  },
-  "s75": {
-    "message": "。"
-  },
-  "s76": {
+  "s70": {
     "message": "大多数数据（如您的首选项、过滤规则订阅和自定义规则）毫无疑问属于您的隐私，"
   },
-  "s77": {
+  "s71": {
     "message": "但实际上过滤规则计数和最近的页面问题报告也属于，因为它们会重现您的浏览历史。"
   },
-  "s78": {
+  "s72": {
     "message": "Adblock Plus 处理这些信息的方式与浏览器一致："
   },
-  "s79": {
+  "s73": {
     "message": "在 <a>隐私浏览模式</a>\n下不存储数据或者清空最近历史记录时予以删除。"
   },
-  "s80": {
+  "s74": {
     "message": "元素隐藏辅助工具（Element Hiding Helper）扩展"
   },
-  "s81": {
+  "s75": {
     "message": "扩展更新检查"
   },
-  "s82": {
+  "s76": {
     "message": "　　您的浏览器会定期检查包括 Element Hiding Helper 在内扩展的更新。"
   },
-  "s83": {
+  "s77": {
     "message": "在扩展更新期间浏览器会发送某些常规信息，如浏览器版本号、扩展版本号、操作系统以及您的 IP 地址。"
   },
-  "s84": {
+  "s78": {
     "message": "Element Hiding Helper 每夜版的更新由 AdblockPlus.org 负责推送，所有发送的数据都严格遵循网站的<a>隐私策略</a>，"
   },
-  "s85": {
-    "message": "而 Addons.Mozilla.Org 负责推送稳定发布版的更新，所发送的数据也遵循"
+  "s79": {
+    "message": "而 Addons.Mozilla.Org 负责推送稳定发布版的更新，所发送的数据也遵循 <a>Firefox 隐私策略</a>。"
   },
-  "s86": {
-    "message": "Firefox 隐私策略"
-  },
-  "s87": {
-    "message": "。"
-  },
-  "s72-link": {
+  "s68-link": {
     "message": "http://support.mozilla.com/zh-CN/kb/Profiles"
   },
-  "s79-link": {
+  "s73-link": {
     "message": "http://support.mozilla.com/zh-CN/kb/Private+Browsing"
   }
 }
