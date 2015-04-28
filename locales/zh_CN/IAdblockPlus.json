@@ -18,9 +18,6 @@
     "message": "所请求的订阅组或"
   },
   "getSubscription_returnDescription-s2": {
-    "message": "null"
-  },
-  "getSubscription_returnDescription-s3": {
     "message": "（如果找不到与所给标识符一致的订阅组）"
   },
   "getSubscription_idDescription-s1": {
@@ -33,9 +30,6 @@
     "message": "所请求的订阅组或"
   },
   "getSubscriptionAt_returnDescription-s2": {
-    "message": "null"
-  },
-  "getSubscriptionAt_returnDescription-s3": {
     "message": "（如果所给的 index 无效）"
   },
   "getSubscriptionAt_indexDescription-s1": {
@@ -66,15 +60,9 @@
     "message": "　　移除一个外部的订阅组"
   },
   "removeExternalSubscription_returnDescription-s1": {
-    "message": "true"
-  },
-  "removeExternalSubscription_returnDescription-s2": {
     "message": "（成功移除该订阅组）"
   },
-  "removeExternalSubscription_returnDescription-s3": {
-    "message": "false"
-  },
-  "removeExternalSubscription_returnDescription-s4": {
+  "removeExternalSubscription_returnDescription-s2": {
     "message": "（不存在该订阅组或不是外部订阅组）"
   },
   "removeExternalSubscription_idDescription-s1": {
@@ -97,8 +85,5 @@
   },
   "getInstalledVersion_returnDescription-s1": {
     "message": "Adblock Plus 版本号，例如："
-  },
-  "getInstalledVersion_returnDescription-s2": {
-    "message": "0.7.0.1"
   }
 }

@@ -18,9 +18,6 @@
     "message": "la suscripción solicitada o"
   },
   "getSubscription_returnDescription-s2": {
-    "message": "null"
-  },
-  "getSubscription_returnDescription-s3": {
     "message": "si no existe ninguna suscripción con el identificador elegido"
   },
   "getSubscription_idDescription-s1": {
@@ -33,9 +30,6 @@
     "message": "la suscripción solicitada o"
   },
   "getSubscriptionAt_returnDescription-s2": {
-    "message": "null"
-  },
-  "getSubscriptionAt_returnDescription-s3": {
     "message": "si el índice proporcionado no es válido"
   },
   "getSubscriptionAt_indexDescription-s1": {
@@ -66,15 +60,9 @@
     "message": "Elimina una suscripción externa"
   },
   "removeExternalSubscription_returnDescription-s1": {
-    "message": "true"
-  },
-  "removeExternalSubscription_returnDescription-s2": {
     "message": "si se ha conseguido eliminar la suscripción,"
   },
-  "removeExternalSubscription_returnDescription-s3": {
-    "message": "false"
-  },
-  "removeExternalSubscription_returnDescription-s4": {
+  "removeExternalSubscription_returnDescription-s2": {
     "message": "si la suscripción no existe o existe pero no está gestionada externamente"
   },
   "removeExternalSubscription_idDescription-s1": {
@@ -97,8 +85,5 @@
   },
   "getInstalledVersion_returnDescription-s1": {
     "message": "Versión de Adblock Plus, por ejemplo"
-  },
-  "getInstalledVersion_returnDescription-s2": {
-    "message": "0.7.0.1"
   }
 }
