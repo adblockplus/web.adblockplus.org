@@ -53,7 +53,7 @@ else
 {% endmacro %}
 
 {% macro getSubscription_returnDescription() %}
-{{"the requested subscription or"|translate("getSubscription_returnDescription-s1")}} <tt>{{"null"|translate("getSubscription_returnDescription-s2")}}</tt> {{"if no subscription with the given identifier exists"|translate("getSubscription_returnDescription-s3")}}
+{{"the requested subscription or"|translate("getSubscription_returnDescription-s1")}} <code>null</code> {{"if no subscription with the given identifier exists"|translate("getSubscription_returnDescription-s2")}}
 {% endmacro %}
 
 {% macro getSubscription_idDescription() %}
@@ -65,7 +65,7 @@ else
 {% endmacro %}
 
 {% macro getSubscriptionAt_returnDescription() %}
-{{"the requested subscription or"|translate("getSubscriptionAt_returnDescription-s1")}} <tt>{{"null"|translate("getSubscriptionAt_returnDescription-s2")}}</tt> {{"if the index provided is invalid"|translate("getSubscriptionAt_returnDescription-s3")}}
+{{"the requested subscription or"|translate("getSubscriptionAt_returnDescription-s1")}} <code>null</code> {{"if the index provided is invalid"|translate("getSubscriptionAt_returnDescription-s2")}}
 {% endmacro %}
 
 {% macro getSubscriptionAt_indexDescription() %}
@@ -107,7 +107,7 @@ else
 {% endmacro %}
 
 {% macro removeExternalSubscription_returnDescription() %}
-<tt>{{"true"|translate("removeExternalSubscription_returnDescription-s1")}}</tt> {{"if the subscription has been successfully removed,"|translate("removeExternalSubscription_returnDescription-s2")}} <tt>{{"false"|translate("removeExternalSubscription_returnDescription-s3")}}</tt> {{"if no such subscription exists or the subscription isn't managed externally"|translate("removeExternalSubscription_returnDescription-s4")}}
+<code>true</code> {{"if the subscription has been successfully removed,"|translate("removeExternalSubscription_returnDescription-s1")}} <code>false</code> {{"if no such subscription exists or the subscription isn't managed externally"|translate("removeExternalSubscription_returnDescription-s2")}}
 {% endmacro %}
 
 {% macro removeExternalSubscription_idDescription() %}
@@ -141,7 +141,7 @@ else
 {% endmacro %}
 
 {% macro getInstalledVersion_returnDescription() %}
-{{"Adblock Plus version, for example"|translate("getInstalledVersion_returnDescription-s1")}} <tt>{{"0.7.0.1"|translate("getInstalledVersion_returnDescription-s2")}}</tt>
+{{"Adblock Plus version, for example"|translate("getInstalledVersion_returnDescription-s1")}} <code>0.7.0.1</code>
 {% endmacro %}
 
 

@@ -18,9 +18,6 @@
     "message": "요청된 구독 필터 또는"
   },
   "getSubscription_returnDescription-s2": {
-    "message": "null"
-  },
-  "getSubscription_returnDescription-s3": {
     "message": "은 제공된 인덱스가 올바르지 않을 때"
   },
   "getSubscription_idDescription-s1": {
@@ -33,9 +30,6 @@
     "message": "요청된 구독 필터 또는"
   },
   "getSubscriptionAt_returnDescription-s2": {
-    "message": "null"
-  },
-  "getSubscriptionAt_returnDescription-s3": {
     "message": "은 제공된 인덱스가 올바르지 않을 때"
   },
   "getSubscriptionAt_indexDescription-s1": {
@@ -66,15 +60,9 @@
     "message": "외부 구독 필터의 제거"
   },
   "removeExternalSubscription_returnDescription-s1": {
-    "message": "true"
-  },
-  "removeExternalSubscription_returnDescription-s2": {
     "message": "는 구독 필터가 제거되었을 때이고,"
   },
-  "removeExternalSubscription_returnDescription-s3": {
-    "message": "false"
-  },
-  "removeExternalSubscription_returnDescription-s4": {
+  "removeExternalSubscription_returnDescription-s2": {
     "message": "는 그러한 구독 필터가 존재하지 않거나 구독 필터가 외부적으로 관리되지 않을 때입니다."
   },
   "removeExternalSubscription_idDescription-s1": {
@@ -97,8 +85,5 @@
   },
   "getInstalledVersion_returnDescription-s1": {
     "message": "애드블록 플러스 버전, 예시"
-  },
-  "getInstalledVersion_returnDescription-s2": {
-    "message": "0.7.0.1"
   }
 }
