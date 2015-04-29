@@ -6,48 +6,18 @@
     "message": "Mit Adblock Plus 0.7 wurde die Verarbeitung der einfachen Filterregeln (nicht der regulären Ausdrücke) so optimiert, dass sogar eine sehr große Zahl dieser Filtern das Laden von Web-Seiten in keinster Weise verlangsamt. Leider funktioniert diese Optimierung nicht für reguläre Ausdrücke, jeder regulärer Audruck in Ihrer Liste macht den Browser ein wenig langsamer. Reguläre Ausdrücke wurden lange Zeit verwendet, um die Filterliste zu \"komprimieren\" und zu \"beschleunigen\", wodurch dann Filter entstanden sind, die sehr lang und kaum nachvollziehbar sind — das ist nicht mehr notwendig."
   },
   "s2": {
-    "message": "Diese Seite durchsucht eine Filterliste nach regulären Ausdrücken und versucht, diese wieder in äquivalente einfache Filterregeln zu konvertieren, damit diese Liste schneller von Adblock Plus abgearbeitet werden kann. So wird sie zum Beispiel den Filter"
+    "message": "Diese Seite durchsucht eine Filterliste nach regulären Ausdrücken und versucht, diese wieder in äquivalente einfache Filterregeln zu konvertieren, damit diese Liste schneller von Adblock Plus abgearbeitet werden kann. So wird sie zum Beispiel den Filter <code>/ad|banner/</code> in zwei Filter <code>ad</code> und <code>banner</code> aufspalten. Sie wird allerdings den regulären Ausdruck <code>/ads|ad\\d+/</code> unverändert lassen, da <code>\\d</code> nicht in einfache Filter übersetzt werden kann und dieses Werkzeug Teile von regulären Ausdrücken noch nicht extrahieren kann."
   },
   "s3": {
-    "message": "/ad|banner/"
-  },
-  "s4": {
-    "message": "in zwei Filter"
-  },
-  "s5": {
-    "message": "ad"
-  },
-  "s6": {
-    "message": "und"
-  },
-  "s7": {
-    "message": "banner"
-  },
-  "s8": {
-    "message": "aufspalten. Sie wird allerdings den regulären Ausdruck"
-  },
-  "s9": {
-    "message": "/ads|ad\\d+/"
-  },
-  "s10": {
-    "message": "unverändert lassen, da"
-  },
-  "s11": {
-    "message": "\\d"
-  },
-  "s12": {
-    "message": "nicht in einfache Filter übersetzt werden kann und dieses Werkzeug Teile von regulären Ausdrücken noch nicht extrahieren kann."
-  },
-  "s13": {
     "message": "Bitte öffnen Sie die Einstellungen von Adblock Plus und markieren dort die Filter, die Sie überprüfen möchten. Kopieren Sie diese (Bearbeiten — Kopieren im Menü auswählen oder Strg+C drücken) und fügen Sie diesen in das Textfeld auf dieser Seite ein. Alternativ könnten Sie auch Ihre Filter exportieren und dann den Inhalt der Datei in dieses Textfeld einfügen."
   },
-  "s14": {
+  "s4": {
     "message": "<em>Datenschutz-Hinweis</em>: Es werden keinerlei Daten zum Server übermittelt. Alle notwendigen Berechnungen werden auf Ihrem Computer ausgeführt, Ihre Daten verlassen diesen nicht."
   },
-  "s15": {
+  "s5": {
     "message": "Reguläre Ausdrücke umwandeln"
   },
-  "s16": {
+  "s6": {
     "message": "Ihre Filterliste, in der reguläre Ausdrücke nach Möglichkeit durch reguläre Ausdrücke ersetzt wurden, wird unten angezeigt. Sie können die Filter kopieren und zurück in Ihre Einstellungen einfügen (man sollte die alten Filter natürlich zuerst löschen). Alternativ kann man auch <a>hier klicken</a>, um die Filter auf einer eigenen Seite anzuzeigen. Diese können Sie speichern und in den Einstellungen von Adblock Plus importieren. Es wird auch empfohlen, die neue Liste nach <a>nach überflüssigen Filtern zu untersuchen</a>."
   }
 }

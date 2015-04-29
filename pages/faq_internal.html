@@ -22,19 +22,19 @@ title=FAQ - Adblock Plus internals
 
         <h2 id="filters">{{s18 How does Adblock Plus process its filters and which filters are faster?}}</h2>
 
-        <p>{{s19 All filters a translated into <a href="filters#regexps">regular expressions</a> internally, even the ones that haven't been specified as such. For example, the filter}} <code>{{s20 ad*banner.gif|}}</code> {{s21 will be translated into the regular expression}} <code>{{s22 /ad.*banner\.gif$/}}</code>{{s23 . However, when Adblock Plus is given an address that should be checked against all filters it doesn't simply test all filters one after another — that would slow down the browsing unnecessarily.}}</p>
+        <p>{{s19 All filters a translated into <a href="filters#regexps">regular expressions</a> internally, even the ones that haven't been specified as such. For example, the filter <code>ad*banner.gif|</code> will be translated into the regular expression <code>/ad.*banner\.gif$/</code>. However, when Adblock Plus is given an address that should be checked against all filters it doesn't simply test all filters one after another — that would slow down the browsing unnecessarily.}}</p>
 
-        <p>{{s24 Besides of translating filters into regular expressions Adblock Plus also tries to extract text information from them. What it needs is a unique string of eight characters (a "shortcut") that must be present in every address matched by the filter (the length is arbitrary, eight just seems reasonable here). For example, if you have a filter}} <code>{{s25 |http://ad.*}}</code> {{s26 then Adblock Plus has the choice between "http://a", "ttp://ad" and "tp://ad.", any of these strings will always be present in whatever this filter will match. Unfortunately finding a shortcut for filters that simply don't have eight characters unbroken by wildcards or for filters that have been specified as regular expressions is impossible.}}</p>
+        <p>{{s20 Besides of translating filters into regular expressions Adblock Plus also tries to extract text information from them. What it needs is a unique string of eight characters (a &quot;shortcut&quot;) that must be present in every address matched by the filter (the length is arbitrary, eight just seems reasonable here). For example, if you have a filter <code>|http://ad.*</code> then Adblock Plus has the choice between &quot;http://a&quot;, &quot;ttp://ad&quot; and &quot;tp://ad.&quot;, any of these strings will always be present in whatever this filter will match. Unfortunately finding a shortcut for filters that simply don't have eight characters unbroken by wildcards or for filters that have been specified as regular expressions is impossible.}}</p>
 
-        <p>{{s27 All shortcuts are put into a lookup table, Adblock Plus can find the filter by its shortcut very efficiently. Then, when a specific address has to be tested Adblock Plus will first look for known shortcuts there (this can be done very fast, the time needed is almost independent from the number of shortcuts). Only when a shortcut is found the string will be tested against the regular expression of the corresponding filter. However, filters without a shortcut still have to be tested one after another which is slow.}}</p>
+        <p>{{s21 All shortcuts are put into a lookup table, Adblock Plus can find the filter by its shortcut very efficiently. Then, when a specific address has to be tested Adblock Plus will first look for known shortcuts there (this can be done very fast, the time needed is almost independent from the number of shortcuts). Only when a shortcut is found the string will be tested against the regular expression of the corresponding filter. However, filters without a shortcut still have to be tested one after another which is slow.}}</p>
 
-        <p>{{s28 To sum up: which filters should be used to make a filter list fast? You should use as few regular expressions as possible, those are always slow. You also should make sure that simple filters have at least eight characters of unbroken text (meaning that these don't contain any characters with a special meaning like *), otherwise they will be just as slow as regular expressions. But with filters that qualify it doesn't matter how many filters you have, the processing time is always the same. That means that if you need 20 simple filters to replace one regular expression then it is still worth it. Speaking of which — the <a href="deregifier">deregifier</a> is very recommendable.}}</p>
+        <p>{{s22 To sum up: which filters should be used to make a filter list fast? You should use as few regular expressions as possible, those are always slow. You also should make sure that simple filters have at least eight characters of unbroken text (meaning that these don't contain any characters with a special meaning like *), otherwise they will be just as slow as regular expressions. But with filters that qualify it doesn't matter how many filters you have, the processing time is always the same. That means that if you need 20 simple filters to replace one regular expression then it is still worth it. Speaking of which — the <a href="deregifier">deregifier</a> is very recommendable.}}</p>
 
-        <p><a href="/blog/investigating-filter-matching-algorithms">{{s29 The filter matching algorithm in detail}}</a></p>
+        <p><a href="/blog/investigating-filter-matching-algorithms">{{s23 The filter matching algorithm in detail}}</a></p>
 
-        <h2 id="elemhide">{{s30 How does element hiding work?}}</h2>
+        <h2 id="elemhide">{{s24 How does element hiding work?}}</h2>
 
-        <p>{{s32 Element hiding rules are translated into <a href="{{s32-link http://www.w3.org/TR/CSS21/}}">CSS</a> and applied to all web pages the user is visiting. A rule like}} <code>{{s33 example.com#div(evil_ad)}}</code> {{s34 then looks like:}}</p>
+        <p>{{s26 Element hiding rules are translated into <a href="{{s26-link http://www.w3.org/TR/CSS21/}}">CSS</a> and applied to all web pages the user is visiting. A rule like <code>example.com#div(evil_ad)</code> then looks like:}}</p>
 
         <pre>
 @-moz-document domain(example.com)
@@ -46,9 +46,9 @@ title=FAQ - Adblock Plus internals
 }
 </pre>
 
-        <p>{{s36 @-moz-document is a proposed extension to the CSS standard, you can read more about it in the <a href="{{s36-link http://developer.mozilla.org/en/docs/CSS:%40-moz-document}}">Mozilla Developer Center</a>.}}</p>
+        <p>{{s28 @-moz-document is a proposed extension to the CSS standard, you can read more about it in the <a href="{{s28-link http://developer.mozilla.org/en/docs/CSS:%40-moz-document}}">Mozilla Developer Center</a>.}}</p>
 
-        <p>{{s37 Rules that are not restricted to a certain domain will be restricted to the protocols http:// and https:// to prevent them from hiding elements of the browser's user interface (it is using the chrome:// protocol scheme). For example the rule}} <code>{{s38 #div(evil_ad)}}</code> {{s39 will be translated into:}}</p>
+        <p>{{s29 Rules that are not restricted to a certain domain will be restricted to the protocols http:// and https:// to prevent them from hiding elements of the browser's user interface (it is using the chrome:// protocol scheme). For example the rule <code>#div(evil_ad)</code> will be translated into:}}</p>
 
         <pre>
 @-moz-document url-prefix(http://),url-prefix(https://)
@@ -60,22 +60,22 @@ title=FAQ - Adblock Plus internals
 }
 </pre>
 
-        <p>{{s42 For developers: Adblock Plus is using the <a href="{{s42-link https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService}}">stylesheet service</a> here. This interface came with Gecko 1.8 and allows extensions to add user stylesheets dynamically (before that you could only modify userContent.css which requires you to restart the browser). User stylesheets will overwrite CSS code of all web sites, they have the highest possible <a href="{{s42-link2 http://www.w3.org/TR/CSS21/cascade.html#cascading-order}}">importance</a>.}}</p>
+        <p>{{s32 For developers: Adblock Plus is using the <a href="{{s32-link https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService}}">stylesheet service</a> here. This interface came with Gecko 1.8 and allows extensions to add user stylesheets dynamically (before that you could only modify userContent.css which requires you to restart the browser). User stylesheets will overwrite CSS code of all web sites, they have the highest possible <a href="{{s32-link2 http://www.w3.org/TR/CSS21/cascade.html#cascading-order}}">importance</a>.}}</p>
 
-        <h2 id="filtersfile">{{s43 What can the first line of a filters file look like?}}</h2>
+        <h2 id="filtersfile">{{s33 What can the first line of a filters file look like?}}</h2>
 
-        <p>{{s44 Usually the first line of a filters file is simply}} <code>{{s45 [Adblock]}}</code>{{s46 . However, you might have noticed that recent versions of Adblock Plus sometimes put a different text instead. This is done when you have filters in your list that use advanced filter syntax only supported by newer versions of Adblock Plus but not original Adblock. One example would be:}}</p>
+        <p>{{s34 Usually the first line of a filters file is simply <code>[Adblock]</code>. However, you might have noticed that recent versions of Adblock Plus sometimes put a different text instead. This is done when you have filters in your list that use advanced filter syntax only supported by newer versions of Adblock Plus but not original Adblock. One example would be:}}</p>
 
         <pre>
 (Adblock Plus 0.6.1.2 or higher required) [Adblock]
 </pre>
 
-        <p>{{s47 This is simply a comment. Adblock (and Adblock Plus for that reason) will ignore anything before the actual mark. The required Adblock Plus version is not enforced because Adblock Plus 0.6.1.2 didn't support it. However, if you use even newer filter syntax, you might get something like:}}</p>
+        <p>{{s35 This is simply a comment. Adblock (and Adblock Plus for that reason) will ignore anything before the actual mark. The required Adblock Plus version is not enforced because Adblock Plus 0.6.1.2 didn't support it. However, if you use even newer filter syntax, you might get something like:}}</p>
 
         <pre>
 [Adblock Plus 0.7.1]
 </pre>
 
-        <p>{{s48 This type of header is supported starting with Adblock Plus 0.7.1. Older Adblock Plus versions and Adblock cannot open files starting with this header. As to the current versions, they will check the version number in the header and compare it with their own version number. If the file happens to require a newer Adblock Plus, the user will be given a message on import asking him to upgrade. Subscriptions will still load files meant for newer Adblock Plus versions but display a warning in the preferences dialog.}}</p>
+        <p>{{s36 This type of header is supported starting with Adblock Plus 0.7.1. Older Adblock Plus versions and Adblock cannot open files starting with this header. As to the current versions, they will check the version number in the header and compare it with their own version number. If the file happens to require a newer Adblock Plus, the user will be given a message on import asking him to upgrade. Subscriptions will still load files meant for newer Adblock Plus versions but display a warning in the preferences dialog.}}</p>
 
-        <p>{{s49 Finally, if you want to require Adblock Plus but don't want to specify the version number you can start the file with}} <code>{{s50 [Adblock Plus]}}</code>{{s51 . Of course this file will only be accepted by Adblock Plus 0.7.1 or higher again.}}</p>
+        <p>{{s37 Finally, if you want to require Adblock Plus but don't want to specify the version number you can start the file with <code>[Adblock Plus]</code>. Of course this file will only be accepted by Adblock Plus 0.7.1 or higher again.}}</p>

@@ -45,91 +45,49 @@
     "message": "Hoe verwerkt Adblock Plus zijn filters en welke filters zijn sneller?"
   },
   "s19": {
-    "message": "Alle filters worden intern in <a>reguliere expressies</a> vertaald, zelfs degenen die niet zo zijn opgegeven. Bijvoorbeeld het filter"
+    "message": "Alle filters worden intern in <a>reguliere expressies</a> vertaald, zelfs degenen die niet zo zijn opgegeven. Bijvoorbeeld het filter <code>ad*banner.gif|</code> wordt vertaald in de reguliere expressie <code>/ad.*banner\\.gif$/</code>. Als Adblock Plus echter een adres krijgt dat met alle filters vergeleken moet worden, dan test het niet simpelweg alle filters een voor een — dat zou het browsen onnodig vertragen."
   },
   "s20": {
-    "message": "ad*banner.gif|"
+    "message": "Naast het vertalen van filters in reguliere expressies probeert Adblock Plus er ook informatie uit te halen. Het heeft een unieke string van acht karakters nodig (een \"snelkoppeling\") die in elk adres wat met het filter overeenkomt aanwezig moet zijn (de lengte is arbitrair, acht leek hier gewoon redelijk te zijn). Als u bijvoorbeeld een filter <code>|http://ad.*</code> heeft, dan heeft Adblock Plus de keuze tussen \"http://a\", \"ttp://ad\" en \"tp://ad.\", al deze strings zullen altijd aanwezig zijn, wat er maar overeen mag komen met dit filter. Helaas is het vinden van een snelkoppeling voor filters die minder dan acht karakters ononderbroken door wildcards hebben of voor filters die als reguliere expressies zijn opgegeven onmogelijk."
   },
   "s21": {
-    "message": "wordt vertaald in de reguliere expressie"
-  },
-  "s22": {
-    "message": "/ad.*banner\\.gif$/"
-  },
-  "s23": {
-    "message": ". Als Adblock Plus echter een adres krijgt dat met alle filters vergeleken moet worden, dan test het niet simpelweg alle filters een voor een — dat zou het browsen onnodig vertragen."
-  },
-  "s24": {
-    "message": "Naast het vertalen van filters in reguliere expressies probeert Adblock Plus er ook informatie uit te halen. Het heeft een unieke string van acht karakters nodig (een \"snelkoppeling\") die in elk adres wat met het filter overeenkomt aanwezig moet zijn (de lengte is arbitrair, acht leek hier gewoon redelijk te zijn). Als u bijvoorbeeld een filter"
-  },
-  "s25": {
-    "message": "|http://ad.*"
-  },
-  "s26": {
-    "message": "heeft, dan heeft Adblock Plus de keuze tussen \"http://a\", \"ttp://ad\" en \"tp://ad.\", al deze strings zullen altijd aanwezig zijn, wat er maar overeen mag komen met dit filter. Helaas is het vinden van een snelkoppeling voor filters die minder dan acht karakters ononderbroken door wildcards hebben of voor filters die als reguliere expressies zijn opgegeven onmogelijk."
-  },
-  "s27": {
     "message": "Alle snelkoppelingen worden in een opzoektabel geplaatst, Adblock Plus kan het filter erg efficiënt vinden aan de hand van zjin snelkoppeling. Dan, als een specifiek adres getest moet worden, zal Adblock Plus eerst bij bekende snelkoppelingen kijken (dit gebeurt erg snel, de tijd die hiervoor nodig is is haast onafhankelijk van het aantal snelkoppelingen). Alleen als er een snelkoppeling wordt gevonden wordt de string vergeleken met de reguliere expressie van het overeenkomende filter. Alleen filters zonder snelkoppeling moeten een voor een getest worden, wat langzaam is."
   },
-  "s28": {
+  "s22": {
     "message": "Samengevat: welke filters moet u gebruiken om een filterlijst snel te maken? U moet zo min mogelijk reguliere expressies als mogelijk gebruiken, deze zijn altijd langzaam. U moet er ook voor zorgen dat de eenvoudige filters op zijn minst acht karakters onafgebroken tekst hebben (dit betekent dat ze geen karakters met een bijzondere betekenins moeten bevatten, zoals *), anders zullen ze net zo langzaam zijn als reguliere expressies. Maar met filters die aan de eisen voldoen maakt het niet uit hoeveel filters je hebt, de verwerkignstijd is altijd gelijk. Dat betekent dat als je 20 eenvoudige filters nodig hebt om een reguliere expressie te vervangen het nog steeds de moeite waard is. Nu we het er toch over hebben — de <a>deregifier</a> is van harte aan te bevelen."
   },
-  "s29": {
+  "s23": {
     "message": "Het filtermatchingalgoritme in detail"
   },
-  "s30": {
+  "s24": {
     "message": "Hoe werkt het verbergen van elementen?"
   },
-  "s32": {
-    "message": "Element verbergende regels worden vertaald in <a>CSS</a> en toegepast op alle webpagina's die de gebruiker bezoekt. Een regel als"
+  "s26": {
+    "message": "Element verbergende regels worden vertaald in <a>CSS</a> en toegepast op alle webpagina's die de gebruiker bezoekt. Een regel als <code>example.com#div(evil_ad)</code> ziet er dan zo uit:"
   },
-  "s33": {
-    "message": "example.com#div(evil_ad)"
-  },
-  "s34": {
-    "message": "ziet er dan zo uit:"
-  },
-  "s36": {
+  "s28": {
     "message": "@-moz-document is een voorgestelde uitbreiding op de CSS standaard, u kunt hier meer over lezen in het <a>Mozilla Developer Center</a>."
   },
-  "s37": {
-    "message": "Regels die niet beperkt zijn to een bepaald domein zullen worden beperkt door de protocollen http:// en https:// om te voorkomen dat ze elementen van de browser's interface verbergen (het gebruikt het chrome:// protocol schema). Bijvoorbeeld de regel"
+  "s29": {
+    "message": "Regels die niet beperkt zijn to een bepaald domein zullen worden beperkt door de protocollen http:// en https:// om te voorkomen dat ze elementen van de browser's interface verbergen (het gebruikt het chrome:// protocol schema). Bijvoorbeeld de regel <code>#div(evil_ad)</code> wordt vertaald in:"
   },
-  "s38": {
-    "message": "#div(evil_ad)"
-  },
-  "s39": {
-    "message": "wordt vertaald in:"
-  },
-  "s42": {
+  "s32": {
     "message": "Voor ontwikkelaars: Adblock Plus gebruikt hier de <a>stylesheet service</a>. Deze interface is nieuw voor Gecko 1.8 en staat extensies toe om user stylesheets dynamisch toe te voegen (daarvoor kon je alleen userContent.css wijzigen, wat een herstart van de browser vereiste). User stylesheets zullen CSS code van alle websites overschrijven, zij heben het hoogste <a>belang</a>."
   },
-  "s43": {
+  "s33": {
     "message": "Hoe ziet de eerste regel van een filter bestand er uit?"
   },
-  "s44": {
-    "message": "Normaal gesproken is de eerste regel van een filter bestand simpelweg"
+  "s34": {
+    "message": "Normaal gesproken is de eerste regel van een filter bestand simpelweg <code>[Adblock]</code>. Misschien heb je echter gezien dat er in recente versies van Adblock Plus soms een andere tekst staat. Dit wordt gedaan als je filters in de lijst hebt die een geavanceerde filtersyntax hebben die alleen door nieuwere versies van Adblock Plus ondersteund worden en niet in de originele Adblock. Een voorbeeld zou kunnen zijn:"
   },
-  "s45": {
-    "message": "[Adblock]"
-  },
-  "s46": {
-    "message": ". Misschien heb je echter gezien dat er in recente versies van Adblock Plus soms een andere tekst staat. Dit wordt gedaan als je filters in de lijst hebt die een geavanceerde filtersyntax hebben die alleen door nieuwere versies van Adblock Plus ondersteund worden en niet in de originele Adblock. Een voorbeeld zou kunnen zijn:"
-  },
-  "s47": {
+  "s35": {
     "message": "Dit is gewoon een commentaar. Adblock (en Adblock Plus ook om dezelfde reden) negeert alles voor het echte merkteken. De vereiste Adblock Plus versie wordt niet opgelegd, omdat Adblock Plus 0.6.1.2 het nog niet nidersteunt. Als je echter een nog nieuwere syntax gebruikt, krijg je zoiets als:"
   },
-  "s48": {
+  "s36": {
     "message": "Dit soort kopregel wordt ondersteund vanaf Adblock Plus 0.7.1. Oudere versies van Adblock Plus en Adblock kunnen bestanden die met deze kopregel beginnen niet openen. Wat de huidige versies betreft, deze zullen het versienummer in de koprgel vergelijken met hun eigen versie nummer. Als het bestand een nieuwere versie van Adblokck Plus nodig heeft, krijgt de gebruiker bij het importeren een boodschap met de vraag om te upgraden. Abonnementen zullen nog steeds bestanden bedoeld voor nieuwere versies van Adblock Plus laden maar laten een waarschuwinf in het voorkeurvenster zien."
   },
-  "s49": {
-    "message": "Ten slote, als je Adblock Plus wilt eisen maar geen versienummer wilt opgeven, kan je het bestand laten beginnen met"
-  },
-  "s50": {
-    "message": "[Adblock Plus]"
-  },
-  "s51": {
-    "message": ". Dit bestand wordt natuurlijk alleen geaccepteerd door Adblokc Plus 0.7.1 of hoger."
+  "s37": {
+    "message": "Ten slote, als je Adblock Plus wilt eisen maar geen versienummer wilt opgeven, kan je het bestand laten beginnen met<code>[Adblock Plus]</code>. Dit bestand wordt natuurlijk alleen geaccepteerd door Adblokc Plus 0.7.1 of hoger."
   },
   "s3-link": {
     "message": "http://kb.mozillazine.org/About:config"
@@ -143,16 +101,16 @@
   "s17-link3": {
     "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
   },
-  "s32-link": {
+  "s26-link": {
     "message": "http://www.w3.org/TR/CSS21/"
   },
-  "s36-link": {
+  "s28-link": {
     "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
   },
-  "s42-link": {
+  "s32-link": {
     "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
   },
-  "s42-link2": {
+  "s32-link2": {
     "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
   }
 }

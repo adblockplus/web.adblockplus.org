@@ -6,54 +6,24 @@
     "message": "我要怎麼安裝 Adblock Plus 才能讓每個使用者使用相同的規則？"
   },
   "s2": {
-    "message": "您是一名管理員，並且想讓所有使用者都使用 Adblock Plus 嗎？那麼您需要將 Adblock Plus 安裝在瀏覽器的資料夾底下。對於 SeamMonkey 而言這是唯一的方法，若您使用 Firefox 則可以在"
+    "message": "您是一名管理員，並且想讓所有使用者都使用 Adblock Plus 嗎？那麼您需要將 Adblock Plus 安裝在瀏覽器的資料夾底下。對於 SeamMonkey 而言這是唯一的方法，若您使用 Firefox 則可以在 <code>extensions</code> 建立一個資料夾 <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code>，並將 adblockplus.xpi 中所有內容解壓縮至此 (這是一個普通的 ZIP 檔案)。"
   },
   "s3": {
-    "message": "extensions"
+    "message": "現在需要修改 Adblock Plus 的預設值。找出並編輯 adblockplus.js 檔案 ( <code>Firefox 為 extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js </code> ， SeaMonkey 為 <code>defaults/pref/adblockplus.js</code> ) 。您也許不希望 Adblock Plus 圖示打擾到使用者，可以將 <a>extensions.adblockplus.showintoolbar</a> 及 <a>extensions.adblockplus.showinstatusbar</a> 設為 <code>false</code> 。 若您也不希望使用者在初次啟動 Firefox 時，出現訂閱條件集的建議視窗，則可以將"
   },
   "s4": {
-    "message": "建立一個資料夾"
-  },
-  "s5": {
-    "message": "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}"
-  },
-  "s6": {
-    "message": "，並將 adblockplus.xpi 中所有內容解壓縮至此 (這是一個普通的 ZIP 檔案)。"
-  },
-  "s7": {
-    "message": "現在需要修改 Adblock Plus 的預設值。找出並編輯 adblockplus.js 檔案 ("
-  },
-  "s8": {
-    "message": "Firefox 為 extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js"
-  },
-  "s9": {
-    "message": "， SeaMonkey 為"
-  },
-  "s10": {
-    "message": "defaults/pref/adblockplus.js"
-  },
-  "s11": {
-    "message": ") 。您也許不希望 Adblock Plus 圖示打擾到使用者，可以將 <a>extensions.adblockplus.showintoolbar</a> 及 <a>extensions.adblockplus.showinstatusbar</a> 設為"
-  },
-  "s12": {
-    "message": "false"
-  },
-  "s13": {
-    "message": "。 若您也不希望使用者在初次啟動 Firefox 時，出現訂閱條件集的建議視窗，則可以將"
-  },
-  "s14": {
     "message": "設為 \"2.0\"。"
   },
-  "s15": {
+  "s5": {
     "message": "最後您可能想讓所有使用者使用相同的規則。請修改 <a>extensions.adblockplus.patternsfile</a> 設定。該檔案預設會儲存在使用者設定檔(相對路徑)，改為絕對路徑就能設定一個任何人都能存取的位置。請確定所有人都能讀取這個檔案，但只有您擁有寫入的權限 — 現在您可以啟動瀏覽器增加一些給所有人使用的過濾條件或訂閱條件集。使用者對過濾條件的變更將不會儲存，因為他們沒有寫入該檔案的權限。"
   },
-  "s16": {
+  "s6": {
     "message": "若您真的想要讓 Adblock Plus 從使用者介面上消失，請新增從 <a>工具選單</a> 及 <a>右鍵選單</a> 中移除的規則。"
   },
-  "s17": {
+  "s7": {
     "message": "我要怎麼在 K-Meleon 上安裝 Adblock Plus？"
   },
-  "s18": {
+  "s8": {
     "message": "適用於 K-Meleon 的 Adblock Plus 版本以及安裝介紹可 <a>在此取得</a>。"
   }
 }

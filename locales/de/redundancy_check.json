@@ -24,36 +24,24 @@
     "message": "Fertig"
   },
   "s8": {
-    "message": "Diese Web-Seite überprüft eine Filterliste, um herauszufinden, ob irgendwelche dieser Filter überflüssig sind und entfernt werden können. Es kann automatisch erkennen, dass zum Beispiel bei den Filtern"
+    "message": "Diese Web-Seite überprüft eine Filterliste, um herauszufinden, ob irgendwelche dieser Filter überflüssig sind und entfernt werden können. Es kann automatisch erkennen, dass zum Beispiel bei den Filtern <code>http://example.com/ads/*</code> und <code>*/ads/*</code> die erste Regel durch die zweite unnötig gemacht wird. Am Ende wird Ihnen Ihre wieder Ihre Filterliste ausgegeben, allerdings ohne die überflüssigen Filter."
   },
   "s9": {
-    "message": "http://example.com/ads/*"
-  },
-  "s10": {
-    "message": "und"
-  },
-  "s11": {
-    "message": "*/ads/*"
-  },
-  "s12": {
-    "message": "die erste Regel durch die zweite unnötig gemacht wird. Am Ende wird Ihnen Ihre wieder Ihre Filterliste ausgegeben, allerdings ohne die überflüssigen Filter."
-  },
-  "s13": {
     "message": "Dieses Werkzeug hat allerdings seine Grenzen. Es kann Regeln zum Verstecken von Elementen nicht überprüfen, diese werden immer unverändert gelassen. Auch kann es nicht feststellen, wenn ein regulärer Ausdruck entfernt werden kann (jedoch kann es feststellen, ob ein einfacher Filter durch den regulären Ausdruck unnötig gemacht wird)."
   },
-  "s14": {
+  "s10": {
     "message": "Bitte öffnen Sie die Einstellungen von Adblock Plus und markieren dort die Filter, die Sie überprüfen möchten. Kopieren Sie diese (Bearbeiten — Kopieren im Menü auswählen oder Strg+C drücken) und fügen Sie diesen in das Textfeld auf dieser Seite ein. Alternativ könnten Sie auch Ihre Filter exportieren und dann den Inhalt der Datei in dieses Textfeld einfügen."
   },
-  "s15": {
+  "s11": {
     "message": "<em>Datenschutz-Hinweis</em>: Es werden keinerlei Daten zum Server übermittelt. Alle notwendigen Berechnungen werden auf Ihrem Computer ausgeführt, Ihre Daten verlassen diesen nicht."
   },
-  "s16": {
+  "s12": {
     "message": "Suche überflussige Filter"
   },
-  "s17": {
+  "s13": {
     "message": "Status:"
   },
-  "s18": {
+  "s14": {
     "message": "Ihre Filterliste ohne die überflüssigen Filter wird unten angezeigt. Sie können die Filter kopieren und zurück in Ihre Einstellungen einfügen (man sollte die alten Filter natürlich zuerst löschen). Alternativ kann man auch <a>hier klicken</a>, um die Filter auf einer eigenen Seite anzuzeigen. Diese können Sie speichern und in den Einstellungen von Adblock Plus importieren."
   }
 }

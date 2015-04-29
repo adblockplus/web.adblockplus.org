@@ -90,63 +90,51 @@
     "message": "Implementierung verbessert, mit Schwerpunkt auf mehr Modularität (dabei wurde auch geändert, wie andere Erweiterungen <a>auf Adblock Plus zugreifen</a>)"
   },
   "s31": {
-    "message": "Unterscheidung zwischen Hintergrundgrafiken und \"normalen\" Grafiken entfernt,"
+    "message": "Unterscheidung zwischen Hintergrundgrafiken und \"normalen\" Grafiken entfernt, <code>$background</code> und <code>$image</code>-Attribute sind nun identisch (eine zuverlässige Unterscheidung ist nicht mehr möglich)"
   },
   "s32": {
-    "message": "$background"
-  },
-  "s33": {
-    "message": "und"
-  },
-  "s34": {
-    "message": "$image"
-  },
-  "s35": {
-    "message": "-Attribute sind nun identisch (eine zuverlässige Unterscheidung ist nicht mehr möglich)"
-  },
-  "s36": {
     "message": "Filter, die von anderen Erweiterungen wie Element Hiding Helper hinzugefügt werden, sind jetzt immer aktiviert (<a>Thema im Forum</a>)"
   },
-  "s37": {
+  "s33": {
     "message": "Datei default/patterns.ini zur Erweiterung hinzugefügt. Diese kann geändert werden, um Standardfilter und Standardabonnements für neue Nutzer zu definieren"
   },
-  "s38": {
+  "s34": {
     "message": "(<a>Thema im Forum</a>)"
   },
-  "s39": {
+  "s35": {
     "message": "Filterabonnements, die von anderen Erweiterungen hinzugefügt werden, werden nicht mehr gespeichert und müssen nach jedem Browserstart erneut hinzugefügt werden (verhindert, dass das Abonnements in Adblock Plus bleibt, nachdem die dazugehörige Erweiterung deinstalliert wurde)"
   },
-  "s40": {
+  "s36": {
     "message": "Import der Filter und Einstellungen aus Adblock und Adblock Plus 0.5 entfernt (beide haben mittlerweile eine unbedeutende Verbreitung)"
   },
-  "s41": {
+  "s37": {
     "message": "Geschwindigkeit"
   },
-  "s42": {
+  "s38": {
     "message": "Geändert, wie Adblock Plus seine Daten abspeichert, um Geschwindigkeit und Speicherverbrauch zu optimieren"
   },
-  "s43": {
+  "s39": {
     "message": "Geschwindigkeit der Filterprüfung um 20-35% angehoben"
   },
-  "s44": {
+  "s40": {
     "message": "Zeit für die Initialisierung des Versteckens von Elementen beim Browserstart verkleinert"
   },
-  "s45": {
+  "s41": {
     "message": "Ein effizienterer Ansatz für die Arbeit mit Einstellungen wird jetzt verwendet"
   },
-  "s46": {
+  "s42": {
     "message": "Aktualisierung von Abonnements"
   },
-  "s47": {
+  "s43": {
     "message": "Besserer Algorithmus wird verwendet, um zu bestimmen, wann die Aktualisierung passieren soll (<a>Blog-Artikel</a>)"
   },
-  "s48": {
+  "s44": {
     "message": "Maßnahmen für den Fall ergriffen, dass die Uhr des Computers falsch eingestellt ist"
   },
-  "s49": {
+  "s45": {
     "message": "Zeit der letzten Änderung wird bei einer Umleitung auf die neue Adresse der Filterliste zurückgesetzt"
   },
-  "s50": {
+  "s46": {
     "message": "Versionshinweise der vorherigen Version"
   }
 }

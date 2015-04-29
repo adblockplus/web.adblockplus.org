@@ -90,63 +90,51 @@
     "message": "Mejoras en la implementación, que ahora es más limpia y modular (también ha cambiado la forma en la que otras extensiones pueden  extensions should <a>tener acceso a Adblock Plus</a>)"
   },
   "s31": {
-    "message": "Se ha suprimido la separación entre imágenes de fondo e imágenes \"normales\", así que las opciones"
+    "message": "Se ha suprimido la separación entre imágenes de fondo e imágenes \"normales\", así que las opciones <code>$background</code> e <code>$image</code> ahora son idénticas (ya no se podían distinguir de una forma fiable)"
   },
   "s32": {
-    "message": "$background"
-  },
-  "s33": {
-    "message": "e"
-  },
-  "s34": {
-    "message": "$image"
-  },
-  "s35": {
-    "message": "ahora son idénticas (ya no se podían distinguir de una forma fiable)"
-  },
-  "s36": {
     "message": "Se ha garantizado que los filtros añadidos por otras extensiones como Element Hiding Helper siempre estén activados (<a>tema del foro</a>)"
   },
-  "s37": {
+  "s33": {
     "message": "Se ha añadido a la extensión el archivo default/patterns.ini que puede modificarse para definir los filtros o suscripciones predeterminados para nuevos usuarios  or filter subscriptions for new users"
   },
-  "s38": {
+  "s34": {
     "message": "(<a>tema del foro</a>)"
   },
-  "s39": {
+  "s35": {
     "message": "Las suscripciones de filtros añadidas por otras extensiones ya no serán permanentes, tendrán que ser añadidas cada vez que se inicie el navegdor (así se garantiza que esas suscripciones no siguen presentes si se desinstala la extensión correspondiente)"
   },
-  "s40": {
+  "s36": {
     "message": "Eliminado el código que importaba las preferencias y filtros de Adblock y Adblock Plus 0.5 (apenas quedan ya usuarios activos de ninguna de las dos)"
   },
-  "s41": {
+  "s37": {
     "message": "Rendimiento"
   },
-  "s42": {
+  "s38": {
     "message": "Modificado el modo en que Adblock Plus guarda sus datos para mejorar el rendimiento y el uso de memoria"
   },
-  "s43": {
+  "s39": {
     "message": "Mejorado el rendimiento de la comprobación de filtros en un 20-35%"
   },
-  "s44": {
+  "s40": {
     "message": "Reducido el tiempo necesario para establecer la ocultación de elementos al iniciar el navegador"
   },
-  "s45": {
+  "s41": {
     "message": "Ahora se usa un enfoque más eficiente para la gestión de las preferencias"
   },
-  "s46": {
+  "s42": {
     "message": "Descargas de suscripciones"
   },
-  "s47": {
+  "s43": {
     "message": "Se usa un algoritmo mejorado para determinar cuándo descargar las sucripciones (<a>tema del foro</a>)"
   },
-  "s48": {
+  "s44": {
     "message": "Añadidas precauciones para el caso de que el reloj del ordenador tenga mal la hora"
   },
-  "s49": {
+  "s45": {
     "message": "La hora/fecha de última modificación ahora se resetea cada vez que una suscripción redirige a una ubicación nueva"
   },
-  "s50": {
+  "s46": {
     "message": "Lista de cambios de la versión anterior"
   }
 }
