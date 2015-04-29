@@ -120,49 +120,49 @@ preference)}}
     extensions should <a href="IAdblockPlus">access Adblock Plus</a>)}}
   </li>
   <li>
-{{s31 Removed separation between background images and "regular" images,}}
-    <code>{{s32 $background}}</code> {{s33 and}} <code>{{s34 $image}}</code> {{s35 options are identical now (reliably
+{{s31 Removed separation between background images and &quot;regular&quot; images,
+    <code>$background</code> and <code>$image</code> options are identical now (reliably
     distinguishing the two is no longer possible)}}
   </li>
   <li>
-{{s36 Made sure that filters added by other extensions like Element Hiding Helper are always
+{{s32 Made sure that filters added by other extensions like Element Hiding Helper are always
     enabled (<a href="/forum/viewtopic.php?t=5581">forum topic</a>)}}
   </li>
   <li>
-{{s37 Added file default/patterns.ini to the extension, can be changed to define default filters
-    or filter subscriptions for new users}} {{s38 (<a href="/forum/viewtopic.php?t=5454">forum topic</a>)}}
+{{s33 Added file default/patterns.ini to the extension, can be changed to define default filters
+    or filter subscriptions for new users}} {{s34 (<a href="/forum/viewtopic.php?t=5454">forum topic</a>)}}
   </li>
   <li>
-{{s39 Filter subscriptions added by other extensions will no longer persist, need to be added
+{{s35 Filter subscriptions added by other extensions will no longer persist, need to be added
     again on each browser start (ensures that these subscriptions don't stay around if the
     corresponding extension is uninstalled)}}
   </li>
   <li>
-{{s40 Removed code importing preferences and filters from Adblock and Adblock Plus 0.5 (both have
+{{s36 Removed code importing preferences and filters from Adblock and Adblock Plus 0.5 (both have
     a negligible install base by now)}}
   </li>
 </ul>
 
-<h3 id="performance">{{s41 Performance}}</h3>
+<h3 id="performance">{{s37 Performance}}</h3>
 
 <ul>
   <li>
-{{s42 Changed the way Adblock Plus stores its data to improve performance and memory use}}
+{{s38 Changed the way Adblock Plus stores its data to improve performance and memory use}}
   </li>
-  <li>{{s43 Improved filter matching performance by 20-35%}}</li>
-  <li>{{s44 Reduced time required to set up element hiding on browser startup}}</li>
-  <li>{{s45 Using a more efficient approach to preference management now}}</li>
+  <li>{{s39 Improved filter matching performance by 20-35%}}</li>
+  <li>{{s40 Reduced time required to set up element hiding on browser startup}}</li>
+  <li>{{s41 Using a more efficient approach to preference management now}}</li>
 </ul>
 
-<h3 id="subscription_downloads">{{s46 Subscription downloads}}</h3>
+<h3 id="subscription_downloads">{{s42 Subscription downloads}}</h3>
 
 <ul>
   <li>
-{{s47 Using better algorithm to determine when to download subscriptions
+{{s43 Using better algorithm to determine when to download subscriptions
     (<a href="/blog/downloading-a-file-regularly-how-hard-can-it-be">blog post</a>)}}
   </li>
-  <li>{{s48 Added precautions for the case that computer's clock is skewed}}</li>
-  <li>{{s49 Last modification time is reset now when a subscription redirects to a new location}}</li>
+  <li>{{s44 Added precautions for the case that computer's clock is skewed}}</li>
+  <li>{{s45 Last modification time is reset now when a subscription redirects to a new location}}</li>
 </ul>
 
-<p><a href="changelog-1.2.2">{{s50 Changelog for the previous release}}</a></p>
+<p><a href="changelog-1.2.2">{{s46 Changelog for the previous release}}</a></p>

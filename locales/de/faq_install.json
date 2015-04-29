@@ -6,54 +6,24 @@
     "message": "Wie installiere ich Adblock Plus für alle Benutzer des Systems, so dass alle dieselbe Filterliste nutzen?"
   },
   "s2": {
-    "message": "Sind Sie ein Administrator, der Adblock Plus für alle Benutzer des administrierten Systems verfügbar machen will? Dann müssen Sie Adblock Plus ins Anwendungsverzeichnis des Browsers installieren. Für SeaMonkey is das (leider) sowieso die einzige Installationsmöglichkeit, in Firefox müssen Sie das Unterverzeichnis"
+    "message": "Sind Sie ein Administrator, der Adblock Plus für alle Benutzer des administrierten Systems verfügbar machen will? Dann müssen Sie Adblock Plus ins Anwendungsverzeichnis des Browsers installieren. Für SeaMonkey is das (leider) sowieso die einzige Installationsmöglichkeit, in Firefox müssen Sie das Unterverzeichnis <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code> im Verzeichnis <code>extensions</code> erstellen und adblockplus.xpi dorthin entpacken (das ist eine ganz normale ZIP-Datei)."
   },
   "s3": {
-    "message": "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}"
+    "message": "Jetzt müssen Sie die Standard-Einstellungen ändern. Finden Sie die Datei (das ist <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code> in Firefox und <code>defaults/pref/adblockplus.js</code> in SeaMonkey) und bearbeiten Sie diese. Möglicherweise wünschen Sie nicht, dass Benutzer die Symbole von Adblock Plus im Browser sehen, dazu ändern Sie <a>extensions.adblockplus.showintoolbar</a> und <a>extensions.adblockplus.showinstatusbar</a> in <code>false</code>. Falls Sie nicht wünschen, dass Benutzer beim ersten Starten des Browsers ein Dialog mit der Auswahl der Abonnements bekommen, ändern Sie"
   },
   "s4": {
-    "message": "im Verzeichnis"
-  },
-  "s5": {
-    "message": "extensions"
-  },
-  "s6": {
-    "message": "erstellen und adblockplus.xpi dorthin entpacken (das ist eine ganz normale ZIP-Datei)."
-  },
-  "s7": {
-    "message": "Jetzt müssen Sie die Standard-Einstellungen ändern. Finden Sie die Datei (das ist"
-  },
-  "s8": {
-    "message": "extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js"
-  },
-  "s9": {
-    "message": "in Firefox und"
-  },
-  "s10": {
-    "message": "defaults/pref/adblockplus.js"
-  },
-  "s11": {
-    "message": "in SeaMonkey) und bearbeiten Sie diese. Möglicherweise wünschen Sie nicht, dass Benutzer die Symbole von Adblock Plus im Browser sehen, dazu ändern Sie <a>extensions.adblockplus.showintoolbar</a> und <a>extensions.adblockplus.showinstatusbar</a> in"
-  },
-  "s12": {
-    "message": "false"
-  },
-  "s13": {
-    "message": ". Falls Sie nicht wünschen, dass Benutzer beim ersten Starten des Browsers ein Dialog mit der Auswahl der Abonnements bekommen, ändern Sie"
-  },
-  "s14": {
     "message": "in \"2.0\"."
   },
-  "s15": {
+  "s5": {
     "message": "Schließlich möchten Sie wahrscheinlich, dass alle Benutzer dieselbe Filterlist nutzen. Dazu ändern Sie die Standardeinstellung für <a>extensions.adblockplus.patternsfile</a>. Normalerweise wird diese Datei im Benutzerprofil gespeichert (relativer Dateipfad), benutzen Sie einen absoluten Dateipfad, um eine fixierte Position für patterns.ini festzulegen. Machen Sie sicher, dass alle Benutzer Lesezugriff auf die Datei haben, aber nur Sie die Datei ändern können — jetzt können Sie Ihr Browser starten und einige Filter/Abonnements hinzufügen, die alle verwenden sollen. Alle Änderungen in der Filterliste, die Benutzer machen, werden nach Neustart des Browsers wieder zurückgesetzt, da sie keinen Schreibzugriff auf die Filterlisten-Datei haben."
   },
-  "s16": {
+  "s6": {
     "message": "Falls Sie Adblock Plus wirklich unsichtbar im Benutzerinterface des Browsers machen wollen, können Sie auch die Filter hinzufügen, um Adblock Plus <a>aus dem Extras-Menü</a> und <a>dem Kontextmenü entfernen</a>."
   },
-  "s17": {
+  "s7": {
     "message": "Wie installiere ich Adblock Plus in K-Meleon?"
   },
-  "s18": {
+  "s8": {
     "message": "Installationspakete für K-Meleon und Installationsanleitung befinden sich <a>hier</a>."
   }
 }

@@ -45,91 +45,49 @@
     "message": "Adblock Plus 如何處理它的過濾條件，以及哪種過濾條件更快？"
   },
   "s19": {
-    "message": "所有的過濾條件都會在內部轉換成 <a>正規表示法</a>，即使不屬於這類寫法的條件也是。舉個例子，此條件"
+    "message": "所有的過濾條件都會在內部轉換成 <a>正規表示法</a>，即使不屬於這類寫法的條件也是。舉個例子，此條件 <code>ad*banner.gif|</code> 將被轉換成正規表示法 <code>/ad.*banner\\.gif$/</code>。然而給予 Adblock Plus 一個網址時，它會針對所有的過濾條件進行檢查，一條接一條地檢查可不是簡單的工作 — 這會不必要地拖慢瀏覽速度。"
   },
   "s20": {
-    "message": "ad*banner.gif|"
+    "message": "除了將過濾條件轉換成正規表示法之外，Adblock Plus 也會嘗試從中摘錄出一些文字訊息。它需要一個唯一的，八個字元的字串 (這稱為一個「捷徑」，shortcut)，當某網址符合過濾條件時，該字串會被呈遞出來 (其字串長度是隨意的，只是八個字元最合理)。舉個例子，若您有一條過濾條件 <code>|http://ad.*</code>，則 Adblock Plus 會選擇 \"http://a\"，\"ttp://ad\" 及 \"tp://ad.\" 其中之一，這些字串中的任何一個都將在網址符合過濾條件時被呈遞。可惜的是，目前無法為包含星號的八個字元或正規表示法找出捷徑。"
   },
   "s21": {
-    "message": "將被轉換成正規表示法"
-  },
-  "s22": {
-    "message": "/ad.*banner\\.gif$/"
-  },
-  "s23": {
-    "message": "。然而給予 Adblock Plus 一個網址時，它會針對所有的過濾條件進行檢查，一條接一條地檢查可不是簡單的工作 — 這會不必要地拖慢瀏覽速度。"
-  },
-  "s24": {
-    "message": "除了將過濾條件轉換成正規表示法之外，Adblock Plus 也會嘗試從中摘錄出一些文字訊息。它需要一個唯一的，八個字元的字串 (這稱為一個「捷徑」，shortcut)，當某網址符合過濾條件時，該字串會被呈遞出來 (其字串長度是隨意的，只是八個字元最合理)。舉個例子，若您有一條過濾條件"
-  },
-  "s25": {
-    "message": "|http://ad.*"
-  },
-  "s26": {
-    "message": "，則 Adblock Plus 會選擇 \"http://a\"，\"ttp://ad\" 及 \"tp://ad.\" 其中之一，這些字串中的任何一個都將在網址符合過濾條件時被呈遞。可惜的是，目前無法為包含星號的八個字元或正規表示法找出捷徑。"
-  },
-  "s27": {
     "message": "所有的捷徑都會被推入一個搜尋表中，Adblock Plus 會經由各自的捷徑快速搜尋到相對應的過濾條件。當某個特定的網址需要檢驗時，Adblock Plus 會先在表中搜尋已知的捷徑 (這個動作非常快，所需時間幾乎與捷徑多寡無關)。只有在找到捷徑時，才針對這個字串進行相對應的正規表示法檢驗。然而，沒有捷徑的過濾條件仍需要一條接一條地檢查，這是相當緩慢的。"
   },
-  "s28": {
+  "s22": {
     "message": "結論：使用哪一種過濾條件更快呢？您應該盡可能地少用正規表示法，它們一直都很龜速。然後盡量使用至少八個不間斷字元的簡單條件 (這表示裡頭不能包含像是 * 的特殊字元)，否則它們會和正規表示法一樣慢。不過只要是符合簡單條件的規則，不論多寡，處理的速度都是一樣的。這表示您即使拿 20 條簡單條件來取代一條正規表示法都是值得的。說到這裡 — 推薦使用 <a>將正規表示法轉換成一般規則</a> 這個網頁工具。"
   },
-  "s29": {
+  "s23": {
     "message": "配對過濾條件的演算法細節"
   },
-  "s30": {
+  "s24": {
     "message": "元素隱藏功能是如何實作的？"
   },
-  "s32": {
-    "message": "元素隱藏規則會被翻譯成 <a>CSS</a> 並套用到所有使用者造訪的網頁。一條像是"
+  "s26": {
+    "message": "元素隱藏規則會被翻譯成 <a>CSS</a> 並套用到所有使用者造訪的網頁。一條像是 <code>example.com#div(evil_ad)</code> 的規則看起來就等同："
   },
-  "s33": {
-    "message": "example.com#div(evil_ad)"
-  },
-  "s34": {
-    "message": "的規則看起來就等同："
-  },
-  "s36": {
+  "s28": {
     "message": "@-moz-document 是一個 CSS 標準的延伸，您可以在 <a>Mozilla Developer Center</a> 閱讀更多相關細節。"
   },
-  "s37": {
-    "message": "那些沒有限制特定網域的規則將會被設定在 http:// 及 https:// 協定下以防它們不小心隱藏瀏覽器的界面 (chrome:// 格式)。舉個例子，條件"
+  "s29": {
+    "message": "那些沒有限制特定網域的規則將會被設定在 http:// 及 https:// 協定下以防它們不小心隱藏瀏覽器的界面 (chrome:// 格式)。舉個例子，條件 <code>#div(evil_ad)</code> 將被翻譯為："
   },
-  "s38": {
-    "message": "#div(evil_ad)"
-  },
-  "s39": {
-    "message": "將被翻譯為："
-  },
-  "s42": {
+  "s32": {
     "message": "給開發者：Adblock Plus 使用這裡的 <a>樣式服務</a>。此介面自 Gecko 1.8 起允許擴充套件動態加入使用者樣式表 (以前只能修改 userContent.css 並需要重新啟動瀏覽器)。使用者樣式表將複寫所有網站的 CSS 程式碼，它們擁有最高的 <a>優先權</a>。"
   },
-  "s43": {
+  "s33": {
     "message": "過濾條件集檔案的第一行會是什麼樣子？"
   },
-  "s44": {
-    "message": "通常條件集的第一行都是簡單的"
+  "s34": {
+    "message": "通常條件集的第一行都是簡單的 <code>[Adblock]</code>。然而您也許已經注意到最近版本的 Adblock Plus 有時會替換成不同文字。這是因為您的列表中有些條件需要使用新版 Adblock Plus 才支援的進階語法，而不被原本的 Adblock 支援。像下面這個例子："
   },
-  "s45": {
-    "message": "[Adblock]"
-  },
-  "s46": {
-    "message": "。然而您也許已經注意到最近版本的 Adblock Plus 有時會替換成不同文字。這是因為您的列表中有些條件需要使用新版 Adblock Plus 才支援的進階語法，而不被原本的 Adblock 支援。像下面這個例子："
-  },
-  "s47": {
+  "s35": {
     "message": "這只是一個簡單的註解。Adblock (或 Adblock Plus) 將忽略實際標記前的內容。這裡的需求版本不是強制性的，因為 Adblock Plus 0.6.1.2 也還不支援它。不過，如果您使用更新的過濾條件語法，您也許會需要改成："
   },
-  "s48": {
+  "s36": {
     "message": "這種標頭的類型從 Adblock Plus 0.7.1 開始支援。較舊的 Adblock Plus 及 Adblock 版本無法開啟這種標頭的檔案。至於目前的版本，會先檢查標頭的版本編號並與本身的版本比較。如果檔案需要更新的 Adblock Plus，則使用者會收到一個要求更新的訊息。過濾條件集仍會載入這些新版 Adblock Plus 才能正常使用的檔案，不過會在偏好設定視窗中顯示警告訊息。"
   },
-  "s49": {
-    "message": "最後，如果你只想要求使用 Adblock Plus 而不想指定版本，您可以在檔案開頭寫上"
-  },
-  "s50": {
-    "message": "[Adblock Plus]"
-  },
-  "s51": {
-    "message": "。當然這個檔案只會被 Adblock Plus 0.7.1 及更高版本接受。"
+  "s37": {
+    "message": "最後，如果你只想要求使用 Adblock Plus 而不想指定版本，您可以在檔案開頭寫上 <code>[Adblock Plus]</code>。當然這個檔案只會被 Adblock Plus 0.7.1 及更高版本接受。"
   },
   "s3-link": {
     "message": "http://kb.mozillazine.org/About:config"
@@ -143,16 +101,16 @@
   "s17-link3": {
     "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
   },
-  "s32-link": {
+  "s26-link": {
     "message": "http://www.w3.org/TR/CSS21/"
   },
-  "s36-link": {
+  "s28-link": {
     "message": "https://developer.mozilla.org/en/CSS/@-moz-document"
   },
-  "s42-link": {
+  "s32-link": {
     "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
   },
-  "s42-link2": {
+  "s32-link2": {
     "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
   }
 }

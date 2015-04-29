@@ -24,36 +24,24 @@
     "message": "Klaar"
   },
   "s8": {
-    "message": "Deze pagina zal een filterlijst evalueren om er achter te komen welke filters verwijderd kunnen worden. Het kan gevallen als"
+    "message": "Deze pagina zal een filterlijst evalueren om er achter te komen welke filters verwijderd kunnen worden. Het kan gevallen als <code>http://example.com/ads/*</code> en <code>*/ads/*</code> detecteren, waarbij het eerste filter overbodig wordt gemaakt door het tweede. Op het eind geeft het je je lijst terug met de overbodige filters er uit verwijderd."
   },
   "s9": {
-    "message": "http://example.com/ads/*"
-  },
-  "s10": {
-    "message": "en"
-  },
-  "s11": {
-    "message": "*/ads/*"
-  },
-  "s12": {
-    "message": "detecteren, waarbij het eerste filter overbodig wordt gemaakt door het tweede. Op het eind geeft het je je lijst terug met de overbodige filters er uit verwijderd."
-  },
-  "s13": {
     "message": "Dit hulpmiddel heeft wat beperkingen. Het kan geen element verbergende filters evalueren en zal deze filters altijd ongemoeid laten. Het is ook niet in staat om te bepalen of een reguliere expressie verwijderd kan worden, hoewel het wel kan zien of een eenvoudig filter verwijderd kan worden als gevolg van een reguliere expressie."
   },
-  "s14": {
+  "s10": {
     "message": "Open alstublieft de Adblock Plus voorkeuren en markeer alle filters die je wilt controleren. Kopieer ze (selecteer Bewerken — Kopiëren uit het menu of druk op Ctrl+C) en plak ze in het tekstveld hieronder. U kunt uw filters ook exporteren en de inhoud van het exportbestand in het tekstveld plakken."
   },
-  "s15": {
+  "s11": {
     "message": "<em>Privacy statement</em>: Er worden geen gegevens naar de server gestuurd. Alle benodigde berekeningen worden op uw computer uitgevoerd, en de gegevens zullen uw computer nooit verlaten."
   },
-  "s16": {
+  "s12": {
     "message": "Zoek overbodige filters"
   },
-  "s17": {
+  "s13": {
     "message": "Status:"
   },
-  "s18": {
+  "s14": {
     "message": "Uw filterlijst met overbodige filters er uit verwijderd wordt hieronder getoond. U kunt het kopiëren en in uw Adblock Plus voorkeuren plakken (verwijder de bestaande filters eerst). U kunt ook <a>hier klikken</a> om de filters op een aparte pagina te tonen. Sla ze op als een bestand en importeer deze in Ablock Plus voorkeuren."
   }
 }

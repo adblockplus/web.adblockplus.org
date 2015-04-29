@@ -6,54 +6,24 @@
     "message": "모든 사용자를 위해 애드블록 플러스를 어떻게 설치하고, 모든 사람들이 같은 필터 목록을 사용할 수 있게 만듭니까?"
   },
   "s2": {
-    "message": "관리자는 모든 사용자가 를 이용할 수 있게 마들 수 있습니까? 그런 다음 브라우저의 애플러케이션 디렉터리로 애드블록 플러스를 설치해야 합니다. 시몽키의 경우 불행하게도 애드블록 플러스것이 오직 선택사항이고, 파이어폭스에서는 하위 디렉터리"
+    "message": "관리자는 모든 사용자가 를 이용할 수 있게 마들 수 있습니까? 그런 다음 브라우저의 애플러케이션 디렉터리로 애드블록 플러스를 설치해야 합니다. 시몽키의 경우 불행하게도 애드블록 플러스것이 오직 선택사항이고, 파이어폭스에서는 하위 디렉터리 <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code>를 <code>extensions</code> 디렉터리에 생성해 거기에 adblockplus.xpi의 콘텐츠를 압축 해제하십시오 (그것인 평범한 ZIP 파일입니다)."
   },
   "s3": {
-    "message": "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}"
+    "message": "이제 기본적인 애드블록 플러스 설정을 변경해야 합니다. adblockplus.js 파일(이것은 파이어폭스에서 <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code>와 시몽키에서 <code>defaults/pref/adblockplus.js</code>)을 위치키시고, 편집합니다. 사용자가 Adblock Plus 아이콘을 보고 싶지 않다면 <a>extensions.adblockplus.showintoolbar</a>와 <a>extensions.adblockplus.showinstatusbar</a>를 <code>false</code>로 변경합니다. 그리고 파이어폭스를 처음 시작한 후 구독 필터를 설치할 때 권장 구독 필터를 보고 싶지 않다면"
   },
   "s4": {
-    "message": "를"
-  },
-  "s5": {
-    "message": "extensions"
-  },
-  "s6": {
-    "message": "디렉터리에 생성해 거기에 adblockplus.xpi의 콘텐츠를 압축 해제하십시오 (그것인 평범한 ZIP 파일입니다)."
-  },
-  "s7": {
-    "message": "이제 기본적인 애드블록 플러스 설정을 변경해야 합니다. adblockplus.js 파일(이것은 파이어폭스에서"
-  },
-  "s8": {
-    "message": "extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js"
-  },
-  "s9": {
-    "message": "와 시몽키에서"
-  },
-  "s10": {
-    "message": "defaults/pref/adblockplus.js"
-  },
-  "s11": {
-    "message": ")을 위치키시고, 편집합니다. 사용자가 Adblock Plus 아이콘을 보고 싶지 않다면 <a>extensions.adblockplus.showintoolbar</a>와 <a>extensions.adblockplus.showinstatusbar</a>를"
-  },
-  "s12": {
-    "message": "false"
-  },
-  "s13": {
-    "message": "로 변경합니다. 그리고 파이어폭스를 처음 시작한 후 구독 필터를 설치할 때 권장 구독 필터를 보고 싶지 않다면"
-  },
-  "s14": {
     "message": "을 \"2.0\"으로 변경하십시오."
   },
-  "s15": {
+  "s5": {
     "message": "마지막으로 모든 사용자가 같은 필터 목록을 사용하게 만들려면 <a>extensions.adblockplus.patternsfile</a>에 대한 기본 설정을 변경하십시오. 기본적으로 이 파일은 사용자의 프로파일 디렉터리(profile directory) (상대 경로)에 저장되어 있고, 모든 사용자를 위한 고정된 위치를 설정하기 위해 절대 경로를 사용합니다. 모든 사용자가 그 파일을 읽을 수 있지만 오직 당신만이 그 파일을 작성할 권한을 가지고 있는지 확인하십시오. 현재 브라우저를 시작하여 모든 사용자가 사용할 필터/구독 필터를 추가할 수 있습니다. 왜냐하면 파일에 대한 작성 권한이 없기 때문에 이 변경은 사용자가 그 필터 목록을 유지하지 못 하게 만들 것입니다."
   },
-  "s16": {
+  "s6": {
     "message": "만약 사용자 인터페이스에서 애드블록 플러스를 보이지 않게 하려면 <a>도구 메뉴</a>와 <a>문맥 메뉴</a>에서 그것을 제거하는 필터를 추가하십시오."
   },
-  "s17": {
+  "s7": {
     "message": "K-멜론에서 애드블록 플러스를 어떻게 설치합니까?"
   },
-  "s18": {
+  "s8": {
     "message": "애드블록 플러스의 K-멜론 빌드와 설치 설명은 <a>여기</a>를 참고하십시오."
   }
 }

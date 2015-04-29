@@ -6,48 +6,18 @@
     "message": "So začiatkom Adblocku Plus vo verzii 0.7 boli optimalizované jednoduché filtre (nie regulárne výrazy) až v takej miere, že obrovské množstvo filtrov nespomaľovalo prehliadanie internetu. Táto optimalizácia nefunguje pre regulárne výrazy, každý regulárny výraz robí prehliadanie internetu s Adblockom Plus pomalším. Regulárne výrazy sa používali dlhú dobu pre skomprimovanie celého zoznamu filtrov — toto už nie je viac potrebné."
   },
   "s2": {
-    "message": "Táto stránka spracuje celý zoznam filtrov a skonvertuje regulárne výrazy na jednoduché filtre, čím sa umožní zvýšenie rýchlosti prehliadania internetu. Napríklad, skonvertuje to tento filter"
+    "message": "Táto stránka spracuje celý zoznam filtrov a skonvertuje regulárne výrazy na jednoduché filtre, čím sa umožní zvýšenie rýchlosti prehliadania internetu. Napríklad, skonvertuje to tento filter <code>/ad|banner/</code> na dva filtre <code>ad</code> a <code>banner</code>. Program vynechá regulárne výrazy ako <code>/ads|ad\\d+/</code> pretože výraz <code>\\d</code> nemá priamy ekvivalent v novom syntaxe filtrov a tento nástroj nevie extrahovať časti regulárnych výrazov."
   },
   "s3": {
-    "message": "/ad|banner/"
-  },
-  "s4": {
-    "message": "na dva filtre"
-  },
-  "s5": {
-    "message": "ad"
-  },
-  "s6": {
-    "message": "a"
-  },
-  "s7": {
-    "message": "banner"
-  },
-  "s8": {
-    "message": ". Program vynechá regulárne výrazy ako"
-  },
-  "s9": {
-    "message": "/ads|ad\\d+/"
-  },
-  "s10": {
-    "message": "pretože výraz"
-  },
-  "s11": {
-    "message": "\\d"
-  },
-  "s12": {
-    "message": "nemá priamy ekvivalent v novom syntaxe filtrov a tento nástroj nevie extrahovať časti regulárnych výrazov."
-  },
-  "s13": {
     "message": "Prosím otvorte nastavenia Adblocku Plus a označte všetky filtre ktoré chcete dať skontrolovať. Kopírujte ich (zvoľte Upraviť — Kopírujte z menu alebo stlačte klávesy Ctrl+C)  a prilepte ich do textového poľa nižšie. Alternatívne môžete exportovať vaše filtre a prilepiť obsah súboru do textového poľa."
   },
-  "s14": {
+  "s4": {
     "message": "<em>Prehlásenie o ochrane osobných údajov</em>: Žiadne dáta nebudú preposlané na server. Všetky potrebné kalkulácie sú vykonávané na vašom počítači a dáta počítač nikdy neopustia."
   },
-  "s15": {
+  "s5": {
     "message": "Konvertovať regulárne výrazy"
   },
-  "s16": {
+  "s6": {
     "message": "Váš zoznam filtrov s regulárnymi výrazmi nahradil všetko čo bolo možné. Môžete ho skopírovať a prilepiť ho do nastavení Adblocku Plus. Alternatívne môžete <a>kliknúť sem </a> a tým dostanete filtre na separátnu stranu. Uložte ich ako súbor a importujte do Adblocku Plus. Odporúčame tiež <a>otestovať váš zoznam na nepotrebné filtre</a>."
   }
 }

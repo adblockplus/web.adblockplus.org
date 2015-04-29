@@ -48,126 +48,120 @@
     "message": "Modification de la manière de fonctionner du lien \"Ajouter l'abonnement\", cela ne pourra se faire que lorsqu'un utilisateur clique sur un lien."
   },
   "s16": {
-    "message": "Ajout de la page diagnostic affichant toutes les erreurs concernant Adblock Plus et la version/révision du code source d'Adblock Plus peuvent être affichées en saisissant"
+    "message": "Ajout de la page diagnostic affichant toutes les erreurs concernant Adblock Plus et la version/révision du code source d'Adblock Plus peuvent être affichées en saisissant <code>chrome://adblockplus/content/errors.html</code> dans la barre d'adresse."
   },
   "s17": {
-    "message": "chrome://adblockplus/content/errors.html"
-  },
-  "s18": {
-    "message": "dans la barre d'adresse."
-  },
-  "s19": {
     "message": "Réparé : l'icône ABP mettait à jour son état toutes les 2 secondes, cela gaspillait inutilement les ressources CPU."
   },
-  "s20": {
+  "s18": {
     "message": "Réparé : la détection d'images de fond endommageait le menu contextuel."
   },
-  "s21": {
+  "s19": {
     "message": "Réparé : \"Désactiver pour ...\" ne fonctionnait pas correctement lorsque la règle d'exception existe mais est désactivée."
   },
-  "s22": {
+  "s20": {
     "message": "Réparé : \"Désactiver pour ...\" ne fonctionnait pas correctement avec des règles qui existent déjà dans des abonnements de filtres plutôt que dans les filtres défiis par l'utilisateur."
   },
-  "s23": {
+  "s21": {
     "message": "Réparé : problèmes de focus pour saisie lors de la fermeture de la liste des éléments filtrables dans les version nocturnes de Firefox."
   },
-  "s24": {
+  "s22": {
     "message": "Liste des éléments filtrables"
   },
-  "s25": {
+  "s23": {
     "message": "Ajout de la colonne \"source du document\", masquée par défaut (nom de domaine à utiliser pour l'option de filtre $domain, <a>sujet du forum [anglais]</a>)."
   },
-  "s26": {
+  "s24": {
     "message": "Ajout de l'élément du menu contextuel \"Désactiver ce filtre pour exemple.com\" pour les filtres définis par l'utilisateur (ajoute l'option $domain si nécessaire)."
   },
-  "s27": {
+  "s25": {
     "message": "Réparé : la création d'un filtre pour un élément correspondant à une règle d'exception désactivée n'était plus possible (<a>sujet du forum [anglais]</a>)."
   },
-  "s28": {
+  "s26": {
     "message": "Fenêtre des préférences"
   },
-  "s29": {
+  "s27": {
     "message": "L'avertissement pour \"filtre lent\" est à présent une colonne à part afin de faciliter le tri."
   },
-  "s30": {
+  "s28": {
     "message": "Utilisation de la vraie barre de recherche du navigateur au lieu d'une réplique."
   },
-  "s31": {
+  "s29": {
     "message": "Le bouton \"Fermer\" a été déplacé à droite de l'éditeur de filtre et utilise le style Firefox 3."
   },
-  "s32": {
+  "s30": {
     "message": "Amélioration du calcul de la position de l'éditeur de filtre, la position du texte ne changera plus."
   },
-  "s33": {
+  "s31": {
     "message": "Réparé : l'activation/désactivation de beaucoup de règles de masquage d'éléments en une fois était lente."
   },
-  "s34": {
+  "s32": {
     "message": "Lors du collage ou de l'importation d'une liste de filtres, des commentaires étaient toujours ajoutés avant le filtre précédent (<a>sujet du forum [anglais]</a>, <a>sujet du forum [anglais]</a>)."
   },
-  "s35": {
+  "s33": {
     "message": "Réparé : l'ajout d'un abonnement qui redirige vers une autre adresse entraîne un échec de téléchargement."
   },
-  "s36": {
+  "s34": {
     "message": "Réparé : Le même filtre peut apparaître deux fois dans une liste dans des conditions particulières."
   },
-  "s37": {
+  "s35": {
     "message": "Réparé : la mauvaise ligne est sélectionné lorsque la fenêtre est ouverte (<a>bogue 489881</a> pour contourner le problème)."
   },
-  "s38": {
+  "s36": {
     "message": "Création de filtres"
   },
-  "s39": {
+  "s37": {
     "message": "Ajout d'ancres flexibles comme option — \"au début du nom de domaine\" (<a>sujet du forum [anglais]</a>)."
   },
-  "s40": {
+  "s38": {
     "message": "Ajout de \"exemple.com^\" comme quatrième suggestion, qui bloque tout le domaine (<a>sujet du forum [anglais]</a>)."
   },
-  "s41": {
+  "s39": {
     "message": "Ajout d'un avertissement lors de l'ajout d'un filtre à un groupe de filtres désactivé (<a>sujet du forum [anglais]</a>)."
   },
-  "s42": {
+  "s40": {
     "message": "Prise en charge des applications"
   },
-  "s43": {
+  "s41": {
     "message": "Interruption de la compatibilité avec d'anciennes versions d'applications et nettoyage de code nécessitant au moins : Firefox 3.0.9, SeaMonkey 2.0b1, Thunderbird 3.0b3, Songbird 1.2, Prism 1.0b1."
   },
-  "s44": {
+  "s42": {
     "message": "Déplacement de tout le code spécifique à une application dans le fichier overlay, cela facilitera les modifications futures spécifiques à chaque application."
   },
-  "s45": {
+  "s43": {
     "message": "Réparé : impossible de déplacer à un autre endroit l'icône de la abrre d'outils (SeaMonkey)."
   },
-  "s46": {
+  "s44": {
     "message": "Réparé : l'icône de la barre d'outils devrait être ajouté dans une fenêtre mais dans une autre au démarrage (SeaMonkey and Thunderbird)."
   },
-  "s47": {
+  "s45": {
     "message": "Réparé : le retrait de certains éléments du menu de l'icône de la barre d'outils était trop important (Songbird)."
   },
-  "s48": {
+  "s46": {
     "message": "Réparé : échec de l'initialisation d'Adblock Plus (Prism)."
   },
-  "s49": {
+  "s47": {
     "message": "Noyau"
   },
-  "s50": {
+  "s48": {
     "message": "Ajout de la prise en charge explicite du blocage des polices (directive CSS @font-type dans Firefox 3.5)."
   },
-  "s51": {
+  "s49": {
     "message": "Le nettoyage de l'historique Firefox efface également les statistiques d'utilisation dans Adblock Plus (peut être désactivé avec la préférence <a>extensions.adblockplus.clearStatsOnHistoryPurge</a> , <a>sujet du forum [anglais]</a>)."
   },
-  "s52": {
+  "s50": {
     "message": "Nettoyage du code de gestion des données afin de s'assurer qu'Adblock Plus n'utilise plus de mémoire que nécessaire."
   },
-  "s53": {
+  "s51": {
     "message": "Réparé : les pages Web peuvent facilement détecter l'option \"Masquer les éléments bloqués\"."
   },
-  "s54": {
+  "s52": {
     "message": "Réparé : Une erreur est signalée dans la console au premier lancement (patterns.ini introuvable)."
   },
-  "s55": {
+  "s53": {
     "message": "Réparé : les filtres de restriction de domaine étaient appliqués aux pages ouvertes à partir du disque."
   },
-  "s56": {
+  "s54": {
     "message": "Historique des modifications pour la version précédente"
   }
 }

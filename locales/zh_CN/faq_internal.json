@@ -45,91 +45,49 @@
     "message": "Adblock Plus 是怎么处理过滤规则的，什么样的规则处理得更快？"
   },
   "s19": {
-    "message": "　　所有的过滤规则都会在内部转换为<a>正则表达式</a>，包括那些简单规则。例如，"
+    "message": "　　所有的过滤规则都会在内部转换为<a>正则表达式</a>，包括那些简单规则。例如，<code>ad*banner.gif|</code> 会被转换为 <code>/ad.*banner\\.gif$/</code>。Adblock Plus 在处理给定地址时需要校验所有过滤规则，但此时它并不会简单地一条接着一条校验，因为这无疑会拖慢浏览速度。"
   },
   "s20": {
-    "message": "ad*banner.gif|"
+    "message": "　　除了转换过滤规则为正则表达式之外，Adblock Plus 还会尝试提取其中的文本信息得到唯一一个 8 字符的字符串（称为\"快捷方式，shortcut\"）。该字符串必须包含在每个匹配过滤规则的地址中（其实字符串长度可以是任意的，只是这里 8 字符最合理）。举例来说，对于过滤规则 <code>|http://ad.*</code>，Adblock Plus 可以选择 \"http://a\"、\"ttp://ad\" 或是 \"tp://ad.\"，这些字符串都包含在这条规则匹配的地址中。可惜的是目前我们还无法为不满足连续 8 个字符（不含通配符）的简单规则和正则表达式指定“快捷方式”。"
   },
   "s21": {
-    "message": "会被转换为"
-  },
-  "s22": {
-    "message": "/ad.*banner\\.gif$/"
-  },
-  "s23": {
-    "message": "。Adblock Plus 在处理给定地址时需要校验所有过滤规则，但此时它并不会简单地一条接着一条校验，因为这无疑会拖慢浏览速度。"
-  },
-  "s24": {
-    "message": "　　除了转换过滤规则为正则表达式之外，Adblock Plus 还会尝试提取其中的文本信息得到唯一一个 8 字符的字符串（称为\"快捷方式，shortcut\"）。该字符串必须包含在每个匹配过滤规则的地址中（其实字符串长度可以是任意的，只是这里 8 字符最合理）。举例来说，对于过滤规则"
-  },
-  "s25": {
-    "message": "|http://ad.*"
-  },
-  "s26": {
-    "message": "，Adblock Plus 可以选择 \"http://a\"、\"ttp://ad\" 或是 \"tp://ad.\"，这些字符串都包含在这条规则匹配的地址中。可惜的是目前我们还无法为不满足连续 8 个字符（不含通配符）的简单规则和正则表达式指定“快捷方式”。"
-  },
-  "s27": {
     "message": "　　所有快捷方式都存放在一个可查找的表中，Adblock Plus 可以通过快捷方式非常高效地查找到相应的规则。Adblock Plus 处理指定的地址时首先会查找这个表（查找速度非常快，几乎和快捷方式的数量无关）。只有匹配到快捷方式后才会应用相应的规则。处理没有快捷方式的规则（称为\"慢速规则\"）时，则需要对所有过滤规则一条一条地匹配。"
   },
-  "s28": {
+  "s22": {
     "message": "　　总结： 什么样的过滤规则处理速度更快？尽量少使用处理速度较慢的正则表达式，同时保证简单规则至少包含 8 个连续字符（这里所说的\"连续\"是指不含 * 这样的特殊字符），否则等同于处理速度较慢的正则表达式。但只要简单规则符合要求，其处理时间都是一样的，与规则数量多少无关。这意味着就算您用 20 条简单规则代替一条正则表达式都是值得的。说到这里，建议使用这个<a>小工具</a>转换正则表达式为简单规则。"
   },
-  "s29": {
+  "s23": {
     "message": "点击这里查阅详细的过滤规则匹配算法"
   },
-  "s30": {
+  "s24": {
     "message": "元素隐藏功能是怎么实现的？"
   },
-  "s32": {
-    "message": "　　元素隐藏规则会被转换为 <a>CSS</a> 并应用到所有用户正在访问的网页。像是"
+  "s26": {
+    "message": "　　元素隐藏规则会被转换为 <a>CSS</a> 并应用到所有用户正在访问的网页。像是 <code>example.com#div(evil_ad)</code> 这条规则会被转换为："
   },
-  "s33": {
-    "message": "example.com#div(evil_ad)"
-  },
-  "s34": {
-    "message": "这条规则会被转换为："
-  },
-  "s36": {
+  "s28": {
     "message": "　　@-moz-document 是一个 CSS 标准的推荐扩展规则，您可以查阅 <a>Mozilla 开发者中心</a>。"
   },
-  "s37": {
-    "message": "　　对于那些没有指定域名的规则会按照 http:// 和 https:// 进行处理，防止这些规则应用到浏览器的用户界面（它使用的是 chrome:// 协议模型）。例如，"
+  "s29": {
+    "message": "　　对于那些没有指定域名的规则会按照 http:// 和 https:// 进行处理，防止这些规则应用到浏览器的用户界面（它使用的是 chrome:// 协议模型）。例如，<code>#div(evil_ad)</code> 这条规则会被转换为："
   },
-  "s38": {
-    "message": "#div(evil_ad)"
-  },
-  "s39": {
-    "message": "这条规则会被转换为："
-  },
-  "s42": {
+  "s32": {
     "message": "　　对于开发人员来说， Adblock Plus 使用的是<a>这个</a>样式表服务实现元素隐藏功能。这个接口是在 Gecko 1.8 时引入的，它允许扩展动态加载用户自定义 CSS（在此之前只能通过修改 userContent.css 并重启浏览器才能生效）。用户自定义 CSS 会覆盖所有网站的 CSS 代码，因为它具有最高的<a>优先级</a>。"
   },
-  "s43": {
+  "s33": {
     "message": "过滤规则文件的第一行表示什么？"
   },
-  "s44": {
-    "message": "　　过滤规则文件的第一行通常都是"
+  "s34": {
+    "message": "　　过滤规则文件的第一行通常都是 <code>[Adblock]</code>。但您可能发现在最近版本的 Adblock Plus 中过滤文件第一行有时显示为其他文字，这是由于您列表中部分过滤规则的语法只支持新版本 Adblock Plus 而不支持早期的 Adblock。例如："
   },
-  "s45": {
-    "message": "[Adblock]"
-  },
-  "s46": {
-    "message": "。但您可能发现在最近版本的 Adblock Plus 中过滤文件第一行有时显示为其他文字，这是由于您列表中部分过滤规则的语法只支持新版本 Adblock Plus 而不支持早期的 Adblock。例如："
-  },
-  "s47": {
+  "s35": {
     "message": "　　这里括号中的内容只是一个注释，Adblock 或 Adblock Plus 读取时会忽略实际标记之前的任何内容。由于 Adblock Plus 0.6.1.2 还不支持这种写法，因此这里 Adblock Plus 不会强制要求用户更新到新版本。然而，如果您使用更加新的过滤规则语法，则第一行有可能会变成："
   },
-  "s48": {
+  "s36": {
     "message": "　　上面这种写法是从 Adblock Plus 0.7.1 开始支持的，而之前版本的 Adblock Plus 以及 Adblock 则无法打开这种文件。Adblock Plus 会将文件第一行的版本号和扩展自身版本号进行比较，如果文件要求的版本号高于扩展当前版本号，则 Adblock Plus 会提示用户更新到新版本。对于过滤规则订阅，它仍会加载这个文件，但会在首选项对话框显示扩展更新提示。"
   },
-  "s49": {
-    "message": "　　最后，如果只想兼容 Adblock Plus 但不在乎其版本号，您可以将文件第一行修改为"
-  },
-  "s50": {
-    "message": "[Adblock Plus]"
-  },
-  "s51": {
-    "message": "。当然这样的过滤规则文件只支持 Adblock Plus 0.7.1 及更高版本。"
+  "s37": {
+    "message": "　　最后，如果只想兼容 Adblock Plus 但不在乎其版本号，您可以将文件第一行修改为 <code>[Adblock Plus]</code>。当然这样的过滤规则文件只支持 Adblock Plus 0.7.1 及更高版本。"
   },
   "s3-link": {
     "message": "http://kb.mozillazine.org/About:config"
@@ -143,16 +101,16 @@
   "s17-link3": {
     "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
   },
-  "s32-link": {
+  "s26-link": {
     "message": "http://www.w3.org/TR/CSS21/"
   },
-  "s36-link": {
+  "s28-link": {
     "message": "https://developer.mozilla.org/en/CSS/@-moz-document"
   },
-  "s42-link": {
+  "s32-link": {
     "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
   },
-  "s42-link2": {
+  "s32-link2": {
     "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
   }
 }
