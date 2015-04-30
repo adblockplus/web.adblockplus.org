@@ -126,106 +126,106 @@
     "message": "(is afhankelijk van Adblock Plus 1.1 of hoger)."
   },
   "s42": {
-    "message": "Een scheidingsteken is alles behalve een letter, cijfer of een van de volgende karakters:"
+    "message": "Een scheidingsteken is alles behalve een letter, cijfer of een van de volgende karakters: {1}. Het eind van een adres wordt ook als scheiding geaccepteerd. In het volgende voorbeeld worden alle scheidingstekens in rood getoond:"
   },
   "s43": {
-    "message": ". Het eind van een adres wordt ook als scheiding geaccepteerd. In het volgende voorbeeld worden alle scheidingstekens in rood getoond:"
+    "message": ". Dit adres kan dus geblokkeerd worden met het filter"
   },
   "s44": {
-    "message": ". Dit adres kan dus geblokkeerd worden met het filter"
+    "message": "of"
   },
   "s45": {
     "message": "of"
   },
   "s46": {
-    "message": "of"
-  },
-  "s47": {
     "message": "."
   },
-  "s48": {
+  "s47": {
     "message": "Opmerkingen"
   },
-  "s49": {
+  "s48": {
     "message": "Elke regel die met een uitroepteken begint wordt als commentaar gezien. Het wordt in de filterlijst getoond, maar grijs in plaats van zwart. Adblock Plus zal deze regel negeren bij het blokkeren, dus u kunt hier veilig schrijven wat u maar wilt. U kunt een commentaarregel boven elk filter zetten om te beschrijven wat het filter doet. Of u zet een commentaar bovenaan de filterlijst waarin u uw auteursrecht vermeldt (de meeste makers van filterlijsten doen dit)."
   },
-  "s85": {
+  "s84": {
     "message": "Geavanceerde functies"
   },
-  "s86": {
+  "s85": {
     "message": "De functies die in deze sectie beschreven worden, worden normaal gesproken alleen door gevorderde gebruikers en makers van filterlijsten gebruikt. Sla het gerust over."
   },
-  "s87": {
+  "s86": {
     "message": "Het opgeven van filteropties"
   },
-  "s88": {
+  "s87": {
     "message": "Adblock Plus maakt het mogelijk om een aantal opties op te geven om het gedrag van een filter te wijzigen. Je geeft deze opties gescheiden met comma's aan achter een dollar teken ($) aan het eind van een filter, bijvoorbeeld:"
   },
-  "s89": {
+  "s88": {
     "message": "Hier is"
   },
-  "s90": {
+  "s89": {
     "message": "het feitelijke filter en zijn"
   },
-  "s91": {
+  "s90": {
     "message": "en"
   },
-  "s92": {
+  "s91": {
     "message": "zijn opties. Op dit moment worden de volgende opties ondersteund:"
   },
-  "s93": {
+  "s92": {
     "message": "Type opties: deze bepalen welke types elementen door een filter geblokkeerd moeren worden (of worden doorgelaten in het geval van een uitzonderingsregel). Meerdere type opties kunnen worden opgegeven om aan te geven dat het filter moet worden toegepast op meerdere types elementen. Mogelijke types zijn:"
   },
-  "s94": {
+  "s93": {
     "message": " — externe scripts geladen via een HTML script label"
   },
-  "s95": {
+  "s94": {
     "message": " — standaard afbeeldingen, doorgaans geladen via een HTML img label"
   },
-  "s96": {
+  "s95": {
     "message": " — externe CSS stylesheet bestanden"
   },
-  "s97": {
+  "s96": {
     "message": " — inhoud die door browser plugins, zoals Flash of Java, wordt afgehandeld"
   },
-  "s99": {
+  "s98": {
     "message": " — verzoeken, gestart door het <a>XMLHttpRequest object</a> "
   },
-  "s100": {
+  "s99": {
     "message": " — door verzoeken gestarte plug-ins zoals Flash"
   },
-  "s101": {
+  "s100": {
     "message": " — ingebedde pagina's, meestal opgegeven via HTML frames"
   },
-  "s102": {
+  "s101": {
     "message": " — de pagina zelf (alleen <a>uitzonderingsregels</a> kunnen op de pagina worden toegepast)"
   },
-  "s103": {
+  "s102": {
     "message": " — alleen voor uitzonderingsregels, vergelijkbaar met"
   },
-  "s104": {
+  "s103": {
     "message": "maar dit schakelt alleen <a>element verbergingsregels</a> op de pagina uit, in plaats van alle filterregels (afhankelijk van Adblock Plus 1.2 of hoger)"
   },
-  "s105": {
+  "s104": {
     "message": " — verzoek types die niet door de bovenstaande lijst worden afgevangen"
   },
-  "s106": {
+  "s105": {
     "message": "De type opties"
+  },
+  "s106": {
+    "message": ","
   },
   "s107": {
     "message": ","
   },
   "s108": {
-    "message": ","
-  },
-  "s109": {
     "message": "en"
   },
-  "s110": {
+  "s109": {
     "message": "zijn gedateerd en moeten niet meer gebruikt worden."
   },
-  "s111": {
+  "s110": {
     "message": "Omgekeerde type opties: geef de types elementen op waarop het filter <strong>niet</strong> moet worden toegepast. Mogelijke omgekeerde types:"
+  },
+  "s111": {
+    "message": ","
   },
   "s112": {
     "message": ","
@@ -252,234 +252,231 @@
     "message": ","
   },
   "s120": {
-    "message": ","
-  },
-  "s121": {
     "message": "Beperken tot derde-partij/eerste-partij verzoeken: Als de"
   },
-  "s122": {
+  "s121": {
     "message": "optie is opgegeven, wordt het filter alleen toegepast op verzoeken van een andere bron dan de huidige weergegeven pagina. Op dezelfde manier beperkt"
   },
-  "s123": {
+  "s122": {
     "message": "filters tot verzoeken van dezelfde bron als de huidige weergegeven pagina."
   },
-  "s124": {
+  "s123": {
     "message": "Domein restricties: De optie"
   },
-  "s125": {
+  "s124": {
     "message": "betekent dat het filter allen moet worden toegepast op pagina's van het \"example.com\" domein. Er kunnen meerder domeinen worden opgegeven gescheiden door \"|\" als scheidingsteken: met de optie"
   },
-  "s126": {
+  "s125": {
     "message": "wordt het filter alleen toegepast op pagina's van \"example.com\" en \"example.net\" domeinen. Als een domeinnaam voorafgegaan wordt door \"~\" moet het filter <strong>niet</strong> worden toegepast op pagina's van dit domein. Bijvoorbeeld"
   },
-  "s127": {
+  "s126": {
     "message": "betekent dat het filter op pagina's van alle domeinen op \"example.com\" na en"
   },
-  "s128": {
+  "s127": {
     "message": "beperkt het filter tot het \"example.com\" domein met uitzondering van het \"foo.example.com\" subdomein."
   },
-  "s132": {
+  "s131": {
     "message": " — zorgt ervoor dat het filter alleen van toepassing is bij dezelfde hoofdlettergevoeligheid, bijvoorbeeld"
   },
-  "s133": {
+  "s132": {
     "message": "blokkeert"
   },
-  "s134": {
+  "s133": {
     "message": "maar niet met"
+  },
+  "s134": {
+    "message": "."
   },
   "s135": {
-    "message": "."
-  },
-  "s136": {
     "message": "-- deze optie overschrijft de globale optie \"Plaatshouders of geblokkeerde elementen verbergen\" en zorgt er voor dat het filter een element altijd verbergt. Op dezelfde manier zal de"
   },
-  "s137": {
+  "s136": {
     "message": "optie er voor zorgen dat een filter een element nooit verbergt."
   },
-  "s138": {
+  "s137": {
     "message": " — voor elk adres dat aan een regel met deze optie voldoet en niet aan een uitzonderingsregel wordt een  <a>Volg-mij-niet kopregel</a> verstuurd (is afhankelijk van Adblock Plus 1.3.5 of hoger)."
   },
-  "s139": {
+  "s138": {
     "message": "Voor compatibiliteit met oudere versies wordt het aanbevolen om deze optie te gebruiken met tegengestelde type opties, dit voorkomt dat het filter iets blokkeert in eerdere Adblock Plus versies:"
   },
-  "s140": {
+  "s139": {
     "message": "Het gebruik van reguliere expressies"
   },
-  "s142": {
+  "s141": {
     "message": "Als je nog meer controle wilt hebben over wat er overeenkomt met je filter en wat niet, kan je reguliere expressies gebruiken. Bijvoorbeeld het filter"
   },
-  "s143": {
+  "s142": {
     "message": "zal overeenkomen met"
   },
-  "s144": {
+  "s143": {
     "message": "en"
   },
-  "s145": {
+  "s144": {
     "message": "maar niet met"
   },
-  "s146": {
+  "s145": {
     "message": ". U kunt <a>documentatie over reguliere expressies</a> raadplegen om te leren hoe u deze moet schrijven."
   },
-  "s147": {
+  "s146": {
     "message": "<em>N.B.</em>: Om de prestatie te bevorderen is het aanbevolen om geen reguliere expressies te gebruiken als dit voorkomen kan worden."
   },
-  "s148": {
+  "s147": {
     "message": "Het verbergen van elementen"
   },
-  "s149": {
+  "s148": {
     "message": "Standaard regels"
   },
-  "s150": {
+  "s149": {
     "message": "Soms zal je reclames vinden die niet geblokkeerd kunnen worden omdat ze als tekst in de pagina zelf zijn ingebed. Als je naar de broncode van de webpagina kijkt, kan je iets vinden zoals dit:"
   },
-  "s151": {
+  "s150": {
     "message": "U moet de webpagina downloaden, dus u download de reclame vanzelf ook. Het enige wat u hier kunt doen is de reclame verbergen, zodat u hem niet ziet. Daar is element verbergen voor bedoeld."
   },
-  "s152": {
+  "s151": {
     "message": "De eerste reclame hierboven staat in een div element met class attribuut \"textad\". De volgende regel zal precies deze combinatie verbergen:"
   },
-  "s153": {
+  "s152": {
     "message": ". Hier markeert ## een element verbergende regel terwijl de rest het element wat verborgen moet worden aangeeft. U kunt elementen op dezelfde manier aan de hand van hun id attribuut verbergen,"
   },
-  "s154": {
+  "s153": {
     "message": "zal de tweede reclame verbergen. U hoeft geen elementnaam op te geven, de regel"
   },
-  "s155": {
+  "s154": {
     "message": "werkt net zo goed. En u kunt ook elementen verbergen aan de hand van alleen hun naam, bijvoorbeeld"
   },
-  "s156": {
+  "s155": {
     "message": "voor de derde reclame."
   },
-  "s157": {
+  "s156": {
     "message": "De <a>Element Hiding Helper extensie</a> helpt om het juiste element te selecteren en om een overeenkomstige regel te schrijven zonder dat je de broncode van de pagina hoeft te bekijken. Standaard HTML kennis is echter toch nuttig."
   },
-  "s158": {
+  "s157": {
     "message": "<em>N.B.</em>Het verbergen van elementen werkt heel anders dan gewone filters. Dit heeft tot gevolg dar er geen wildcards worden ondersteund bij element verbergende regels."
   },
-  "s159": {
+  "s158": {
     "message": "Regels beperken tot bepaalde domeinen"
   },
-  "s160": {
+  "s159": {
     "message": "Meestal wil je een bepaalde advertentie op een bepaalde site verbergen, u wilt niet dat de regel op andere sites van toepassing is. Bijvoorbeeld de regel"
   },
-  "s161": {
+  "s160": {
     "message": "zou geldige code op sommige sites kunnen verbergen. Maar als u het schrijft als"
   },
-  "s162": {
+  "s161": {
     "message": "wordt het toegepast op"
   },
-  "s163": {
+  "s162": {
     "message": "en"
   },
-  "s164": {
+  "s163": {
     "message": "maar niet op"
   },
-  "s165": {
+  "s164": {
     "message": ". U kunt ook meerdere domeinen opgeven — scheidt ze simpelweg met comma's:"
   },
-  "s166": {
+  "s165": {
     "message": "."
   },
-  "s167": {
+  "s166": {
     "message": "Als een domein wordt voorafgegaan door \"~\", zal de regel <strong>niet</strong> worden toegepast op pagina's van dit domein (is afhankelijk van Adblock Plus 1.1 of hoger). Bijvoorbeeld"
   },
-  "s168": {
+  "s167": {
     "message": "zal worden toegepast op pagina's van elk domein behalve \"example.com\" en"
   },
-  "s169": {
+  "s168": {
     "message": "zorgt er voor dat de regel van toepassing is op het \"example.com\" domein met uitzondering van het \"foo.example.com\" subdomein."
   },
-  "s170": {
+  "s169": {
     "message": "<em>N.B.</em>: Door de manier waarop element verbergen is geïmplementeerd kunt u het eigenlijk alleen beperken tot volledige domeinnamen. U kunt niet een deel van een adres gebruiken en u kunt niet"
   },
-  "s171": {
+  "s170": {
     "message": "gebruiken voor het vervangen van"
   },
-  "s172": {
+  "s171": {
     "message": "."
   },
-  "s173": {
+  "s172": {
     "message": "<em>N.B.</em>: Element verbergende regels met domein beperking kunnen ook worden gebruikt om elementen van de browser's gebruikersinterface te verbergen. Bijvoorbeeld de filterregel"
   },
-  "s174": {
+  "s173": {
     "message": "zal de Javascript foutconsole regel in Firefox' extra menu verbergen."
   },
-  "s175": {
+  "s174": {
     "message": "Attribuut selectors"
   },
-  "s176": {
+  "s175": {
     "message": "Sommige adverteerders maken het je niet makkelijk p-- hun tekstadvertenties hebben noch een id noch een class attribuut. U kunt andere attributen gebruiken om deze te verbergen, bijvoorbeeld"
   },
-  "s177": {
+  "s176": {
     "message": "zal tabellen verbergen met een width attribuut ingesteld op 80%. Als je geen waarde van het attribuut wilt opgeven, zal"
   },
-  "s178": {
+  "s177": {
     "message": "alle div elementen met een title attribuut dat de string \"adv\" bevat verbergen. U kunt ook het begin en het eind van een attribuut controleren, bijvoorbeeld"
   },
-  "s179": {
+  "s178": {
     "message": "zal div elementen verbergen met title beginend met \"adv\" en eindigend op \"ert\". Zoals je ziet kan je ook meerdere condities gebruiken —"
   },
-  "s180": {
+  "s179": {
     "message": "zal overeenkomen met tabellen met width attribuut ingesteld op 80% eb bgcolor attribuut ingesteld op white."
   },
-  "s181": {
+  "s180": {
     "message": "Geavanceerde selectors"
   },
-  "s183": {
+  "s182": {
     "message": "Normaal gesproken kan elke CSS selector die door Firefox wordt ondersteund gebruikt worden voor het verbergen van elementen. De volgende regel verbergt bijvoorbeeld alles wat op een div element met class \"adheader\" volgt:"
   },
-  "s184": {
+  "s183": {
     "message": ". Kijk voor een volledige lijst van CSS op <a>W3C CSS specificatie</a> (let er op dat nog niet alle selectors door Firefox ondersteund worden)."
   },
-  "s185": {
+  "s184": {
     "message": "<em>N.B.</em>: Deze functionaliteit is alleen voor gevorderde gebruikers, u moet goed met CSS selectors overweg kunnen om het te gebruiken. Adblock Plus is niet in staat om de syntax van een selector die u toevoegt te controleren, als je ongeldige CSS syntax gebruikt, kunt u andere (geldige) regels die u heeft stuk maken. Controleer de JavaScript console op CSS foutmeldingen."
   },
-  "s186": {
+  "s185": {
     "message": "Uitzonderingsregels"
   },
-  "s187": {
+  "s186": {
     "message": "Uitzonderingsregels kunnen bestaande regels uitschakelen op bepaalde domeinen."
   },
-  "s188": {
+  "s187": {
     "message": "Deze zijn voornamelijk handig voor auteurs van filterabonnementen die een ander filterabonnement uitbreiden en die ze niet kunnen wijzigen."
   },
-  "s189": {
+  "s188": {
     "message": "Bijvoorbeeld, de regel"
   },
-  "s190": {
+  "s189": {
     "message": "kan worden uitgeschakeld op"
   },
-  "s191": {
+  "s190": {
     "message": "door middel van de uitzonderingsregel"
   },
-  "s192": {
+  "s191": {
     "message": "."
   },
-  "s193": {
+  "s192": {
     "message": "De combinatie van deze twee regels heeft precies hetzelfde effect als de enkelvoudige regel"
   },
-  "s194": {
+  "s193": {
     "message": "."
   },
-  "s195": {
+  "s194": {
     "message": "Het wordt aanbevolen om alleen uitzonderingsregels te gebruiken als je een te algemene elementverbergende regel \nniet kan aanpassen, in alle andere gevallen heeft het de voorkeur om deze regel te beperken tot de benodigde domeinen."
   },
-  "s196": {
+  "s195": {
     "message": "Vereenvoudigde element verbergende syntax"
   },
-  "s197": {
+  "s196": {
     "message": "Adblock Plus ondersteunt vereenvoudigde element verbergende syntax (bijvoorbeeld"
   },
-  "s198": {
+  "s197": {
     "message": ") alleen om compatbel te zijn met oudere versies. Het gebruik van deze syntax wordt afgeraden, meestal zijn CSS selectors aanbevolen. Ondersteuning voor deze syntax kan op een bepaald moment worden verwijderd."
   },
-  "s99-link": {
+  "s98-link": {
     "message": "http://www.w3.org/TR/XMLHttpRequest/"
   },
-  "s146-link": {
+  "s145-link": {
     "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern"
   },
-  "s184-link": {
+  "s183-link": {
     "message": "http://www.w3.org/TR/css3-selectors/"
   }
 }

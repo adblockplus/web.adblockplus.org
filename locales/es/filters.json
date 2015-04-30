@@ -126,145 +126,145 @@
     "message": "(requiere Adblock Plus 1.1 o superior)."
   },
   "s42": {
-    "message": "Un carácter separador es cualquier cosa menos una letra, un dígito, o uno de los siguientes:"
+    "message": "Un carácter separador es cualquier cosa menos una letra, un dígito, o uno de los siguientes: {1}. El final de la dirección también se acepta como separador. En el siguiente ejemplo todos los caracteres de separación se muestran en rojo:"
   },
   "s43": {
-    "message": ". El final de la dirección también se acepta como separador. En el siguiente ejemplo todos los caracteres de separación se muestran en rojo:"
+    "message": ". Así que esta dirección se puede bloquear con el filtro"
   },
   "s44": {
-    "message": ". Así que esta dirección se puede bloquear con el filtro"
+    "message": "o"
   },
   "s45": {
     "message": "o"
   },
   "s46": {
-    "message": "o"
-  },
-  "s47": {
     "message": "."
   },
-  "s48": {
+  "s47": {
     "message": "Comentarios"
   },
-  "s49": {
+  "s48": {
     "message": "Cualquier regla que comienza con un signo de exclamación se considera un comentario. Se mostrará en la lista de filtros, pero en color gris en lugar de negro. Adblock Plus ignora esta regla de bloqueo por lo que es seguro para escribir allí lo que quieras. Puedes colocar un comentario antes de un verdadero filtro para describir lo que está haciendo. O puedes poner un comentario en la parte superior de tu lista de filtros para indicar su autor (en general los autores de lista de filtros lo hacen)."
   },
-  "s50": {
+  "s49": {
     "message": "Comentarios particulares"
   },
-  "s51": {
+  "s50": {
     "message": "Los comentarios particulares solamente tendrán un efecto en las listas de filtro que han sido descargadas, y no en los filtros personalizados."
   },
-  "s52": {
+  "s51": {
     "message": "Estos pueden crear un cierto número de parámetros en la lista de filtros:"
   },
-  "s53": {
+  "s52": {
     "message": "Este tipo de comentario establece que página debe aparecer vinculada como la pagina de inicio de la lista de filtro."
   },
-  "s54": {
+  "s53": {
     "message": "Este comentario establece un titulo fijo para la lista de filtro."
   },
-  "s55": {
+  "s54": {
     "message": "Si este comentario se encuentra presente, el usuario ya no podrá cambiar el titulo."
   },
-  "s56": {
+  "s55": {
     "message": "Este comentario establece el intervalo de actualización  para la lista de filtro, el valor proporcionado puede ser en días (ej."
   },
-  "s57": {
+  "s56": {
     "message": ") o horas (ej."
   },
-  "s58": {
+  "s57": {
     "message": ")."
   },
-  "s59": {
+  "s58": {
     "message": "Cualquier valor dentro del rango de 1 hora hasta 14 días puede ser empleado."
   },
-  "s60": {
+  "s59": {
     "message": "Hay que tener en cuenta que la actualización no  va a ocurrir necesariamente dentro del intervalo determinado."
   },
-  "s61": {
+  "s60": {
     "message": "El tiempo de actualización real se asigna al azar y depende de algunos factores adicionales para reducir la carga hacía el servidor."
   },
-  "s62": {
+  "s61": {
     "message": "Este comentario se asegura de que la corrupción accidental de los datos no resulte en filtros rotos."
   },
-  "s85": {
+  "s84": {
     "message": "Funciones avanzadas"
   },
-  "s86": {
+  "s85": {
     "message": "Las características descritas en esta sección se utilizan generalmente sólo por los usuarios avanzados y creadores de listas de filtros. Puede saltear esta sección si no está interesado."
   },
-  "s87": {
+  "s86": {
     "message": "Cómo especificar opciones para filtros"
   },
-  "s88": {
+  "s87": {
     "message": "Adblock Plus le permite especificar un número de opciones para modificar el comportamiento de un filtro. La lista de opciones se separada por comas después de un signo de dólar ($) al final del filtro, por ejemplo:"
   },
-  "s89": {
+  "s88": {
     "message": "Aquí"
   },
-  "s90": {
+  "s89": {
     "message": "es el verdadero filtro y"
   },
-  "s91": {
+  "s90": {
     "message": "y"
   },
-  "s92": {
+  "s91": {
     "message": "son las opciones. En la actualidad las siguientes opciones son compatibles:"
   },
-  "s93": {
+  "s92": {
     "message": "Opciones de tipo de elementos: determinan qué tipos de elementos un filtro puede bloquear (o permitir en el caso de una regla de excepción). Múltiples opciones pueden ser especificadas para indicar que el filtro se debe aplicar a varios tipos de elementos. Los tipos posibles son:"
   },
-  "s94": {
+  "s93": {
     "message": " — scripts externos cargados a través de la etiqueta script en HTML"
   },
-  "s95": {
+  "s94": {
     "message": " — imágenes regulares, por lo general cargadas a través de la etiqueta img en HTML"
   },
-  "s96": {
+  "s95": {
     "message": " — archivos de hoja de estilo CSS externos"
   },
-  "s97": {
+  "s96": {
     "message": " — contenido manejado por plugins del navegador, por ejemplo, Flash o Java"
   },
-  "s99": {
+  "s98": {
     "message": " — solicitudes iniciadas por el <a>objecto XMLHttpRequest</a> "
   },
-  "s100": {
+  "s99": {
     "message": " — solicitudes de plugins como Flash"
   },
-  "s101": {
+  "s100": {
     "message": " — páginas integradas, generalmente se incluye a través de marcos HTML (frames)"
   },
-  "s102": {
+  "s101": {
     "message": " — la página en sí misma (sólo <a>reglas de excepción</a> se pueden aplicar a la página)"
   },
-  "s103": {
+  "s102": {
     "message": " — para reglas de excepción únicamente, al igual que"
   },
-  "s104": {
+  "s103": {
     "message": ", pero sólo deshabilita <a>reglas de ocultación de elementos</a> en la página en lugar de todas las reglas de filtrado (requiere Adblock Plus 1.2 y superior)"
   },
-  "s105": {
+  "s104": {
     "message": " — otros tipos de solicitudes no incluidas en la lista anterior"
   },
-  "s106": {
+  "s105": {
     "message": "Las opciones de tipo"
+  },
+  "s106": {
+    "message": ","
   },
   "s107": {
     "message": ","
   },
   "s108": {
-    "message": ","
-  },
-  "s109": {
     "message": "y"
   },
-  "s110": {
+  "s109": {
     "message": "están obsoletas y no deben seguir usándose."
   },
-  "s111": {
+  "s110": {
     "message": "Opciones inversas: especifican que <strong>no</strong> debe ser aplicada a los tipos de elementos del filtro indicados. Posibles opciones de tipo inverso:"
+  },
+  "s111": {
+    "message": ","
   },
   "s112": {
     "message": ","
@@ -291,234 +291,231 @@
     "message": ","
   },
   "s120": {
-    "message": ","
-  },
-  "s121": {
     "message": "Restricción a las solicitudes de terceros/mismo dominio: Si la opción"
   },
-  "s122": {
+  "s121": {
     "message": "se especifica, el filtro sólo se aplica a las solicitudes de un origen diferente de la página actual que se está mirando. Del mismo modo,"
   },
-  "s123": {
+  "s122": {
     "message": "restringe el filtro a las solicitudes del mismo origen que la página que se ve."
   },
-  "s124": {
+  "s123": {
     "message": "Restricciones de dominio: La opción"
   },
-  "s125": {
+  "s124": {
     "message": "significa que el filtro sólo se debe aplicar en las páginas del dominio \"ejemplo.com\". Varios dominios pueden ser especificados usando \"|\" como separador. Por ejemplo, con la opción"
   },
-  "s126": {
+  "s125": {
     "message": "el filtro se aplicará únicamente en las páginas de dominio \"example.com\" o \"example.net\". Si un nombre de dominio es precedido con \"~\", el filtro <strong>no</strong> se debe aplicar en las páginas de este dominio. Por ejemplo,"
   },
-  "s127": {
+  "s126": {
     "message": "significa que el filtro se debe aplicar en las páginas de cualquier dominio, salvo en \"ejemplo.com\" y"
   },
-  "s128": {
+  "s127": {
     "message": "restringe el filtro a el dominio \"example.com\" con la excepción del subdominio \"foo.example.com\"."
   },
-  "s132": {
+  "s131": {
     "message": " — hace que el filtro sólo se aplique a las direcciones donde coincide exactamente mayúsculas y minúsculas, por ejemplo, el filtro"
   },
-  "s133": {
+  "s132": {
     "message": "bloqueará"
   },
-  "s134": {
+  "s133": {
     "message": "pero no"
+  },
+  "s134": {
+    "message": "."
   },
   "s135": {
-    "message": "."
-  },
-  "s136": {
     "message": " — esta opción tiene prioridad sobre la preferencia global de \"Ocultar posicionadores de elementos bloqueados\" y garantiza que el filtro siempre oculta el elemento. De forma similar, la opción"
   },
-  "s137": {
+  "s136": {
     "message": "garantizará que el filtro nunca oculta el elemento."
   },
-  "s138": {
+  "s137": {
     "message": " — para cualquier dirección que coincida con una regla de bloqueo con esta opción y no coincida con ninguna regla de excepción con esta opción se enviará un  <a>Do-Not-Track header</a> (se necesita Adblock Plus 1.3.5 o posterior)."
   },
-  "s139": {
+  "s138": {
     "message": "Para garantizar la compatibilidad con versiones anteriores se recomienda usar esta opción en combinación con opciones contrapuestas, que eviten que ese filtro bloquee algo en versiones anteriores de Adblock Plus:"
   },
-  "s140": {
+  "s139": {
     "message": "Utilización de expresiones regulares"
   },
-  "s142": {
+  "s141": {
     "message": "Puede usar expresiones regulares para un mayor control sobre lo que sus filtros hagan coincidir. Por ejemplo, el filtro"
   },
-  "s143": {
+  "s142": {
     "message": "coincidirá con"
   },
-  "s144": {
+  "s143": {
     "message": "y"
   },
-  "s145": {
+  "s144": {
     "message": "pero no"
   },
-  "s146": {
+  "s145": {
     "message": ". Puedes consultar <a>la documentación sobre las expresiones regulares</a> para aprender cómo escribilos."
   },
-  "s147": {
+  "s146": {
     "message": "<em>Nota</em>: Por motivos de rendimiento, se recomienda no utilizar expresiones regulares si se puede evitar."
   },
-  "s148": {
+  "s147": {
     "message": "Ocultar elementos"
   },
-  "s149": {
+  "s148": {
     "message": "Reglas básicas"
   },
-  "s150": {
+  "s149": {
     "message": "A veces se encuentran anuncios de publicidad que no puede ser bloqueada debido a que están incrustadas como texto en la propia página web. Si nos fijamos en el código fuente de la página web, usted puede encontrar algo como esto:"
   },
-  "s151": {
+  "s150": {
     "message": "Usted necesita descargar la página web, por lo que necesariamente va a descargar los anuncios de publicidad. Lo único que es posible en este case es ocultar la publicidad para no tener que verla. Ésta es la función para la cual la ocultación de elementos se ha diseñado."
   },
-  "s152": {
+  "s151": {
     "message": "El primer anuncio (del ejemplo de arriba) se encuentra dentro de un elemento div con clase de atributo \"textad\". Esta regla oculta exactamente esta combinación:"
   },
-  "s153": {
+  "s152": {
     "message": ". Aquí ## marca una regla para ocultar el elemento, mientras que el resto es un selector para la identificación de los elementos que deben ser escondidos. Puede ocultar los elementos por su atributo id del mismo modo,"
   },
-  "s154": {
+  "s153": {
     "message": "oculta el segundo anuncio de publicidad. No es necesario especificar el nombre del elemento, la regla"
   },
-  "s155": {
+  "s154": {
     "message": "funcionará igual de bien. También puedes ocultar los elementos únicamente por su nombre de elemento, por ejemplo,"
   },
-  "s156": {
+  "s155": {
     "message": "para el tercer aviso de publicidad."
   },
-  "s157": {
+  "s156": {
     "message": "La <a>extensión Element Hiding Helper</a> ayuda a seleccionar el elemento correcto y la escritura de la regla correspondiente, sin tener que ver el código fuente de la página. Sin embargo es útil tener conocimientos básicos de HTML."
   },
-  "s158": {
+  "s157": {
     "message": "<em>Nota</em>: La ocultación de elementos funciona de manera muy diferente de los filtros normales. Esto tiene la implicación de que no se admitan los comodines en las reglas para ocultar elementos."
   },
-  "s159": {
+  "s158": {
     "message": "Cómo limitar las reglas a determinados dominios"
   },
-  "s160": {
+  "s159": {
     "message": "Por lo general, se desea ocultar un anuncio específico en un sitio específico, y no se quiere que la regla que se aplique en otros sitios. Por ejemplo, la regla"
   },
-  "s161": {
+  "s160": {
     "message": "puede ocultar correctamente elementos en algunos sitios. Pero si se escribe como"
   },
-  "s162": {
+  "s161": {
     "message": "se va a aplicar en"
   },
-  "s163": {
+  "s162": {
     "message": "y"
   },
-  "s164": {
+  "s163": {
     "message": "pero no en"
   },
-  "s165": {
+  "s164": {
     "message": ". También puede especificar varios dominios - simplemente separarlos con comas:"
   },
-  "s166": {
+  "s165": {
     "message": "."
   },
-  "s167": {
+  "s166": {
     "message": "Si un nombre de dominio es precedido con \"~\", la regla <strong>no</strong> se aplicará en las páginas de este dominio (requiere Adblock Plus 1.1 o superior). Por ejemplo,"
   },
-  "s168": {
+  "s167": {
     "message": "aplicará en las páginas de cualquier dominio, pero \"example.com\" y"
   },
-  "s169": {
+  "s168": {
     "message": "hace que la regla se aplique en \"example.com\", con la excepción de el subdominio \"foo.example.com \"."
   },
-  "s170": {
+  "s169": {
     "message": "<em>Nota</em>: Debido a la forma como se implementa la ocultación de elementos, realmente sólo se puede limitar a los nombres de dominio completo. Usted no puede utilizar ninguna otra parte de la dirección y no se puede utilizar"
   },
-  "s171": {
+  "s170": {
     "message": "como un reemplazo para"
   },
-  "s172": {
+  "s171": {
     "message": "."
   },
-  "s173": {
+  "s172": {
     "message": "<em>Nota</em>: Las reglas para ocultación de elementos con limitación de dominio también pueden ser utilizadas para ocultar los elementos de la interfaz de usuario del navegador. Por ejemplo, la regla de filtrado"
   },
-  "s174": {
+  "s173": {
     "message": "oculta la consola de JavaScript en el menú de Herramientas de Firefox."
   },
-  "s175": {
+  "s174": {
     "message": "Selectores de atributos"
   },
-  "s176": {
+  "s175": {
     "message": "Algunos anunciantes de publicidad no hacen que la tarea sea fácil - sus anuncios de texto no tienen ni un id ni un atributo de clase. Es posible utilizar otros atributos para ocultar los avisos de publicidad, por ejemplo"
   },
-  "s177": {
+  "s176": {
     "message": "oculta tablas con el atributo width (ancho) establecido en 80%. Si no desea especificar el valor total del atributo,"
   },
-  "s178": {
+  "s177": {
     "message": "oculta todos los elementos div con atributo title (título) que contiene la cadena \"adv\". También puede consultar el principio y el final de un atributo, por ejemplo"
   },
-  "s179": {
+  "s178": {
     "message": "oculta elementos div con el título que comienza con \"ADV\" y termina con \"ert \". Como puedes ver, también es posible utilizar varias condiciones —"
   },
-  "s180": {
+  "s179": {
     "message": "coincide con las tablas con ancho del 80% y de atributos bgcolor en blanco."
   },
-  "s181": {
+  "s180": {
     "message": "Selectores avanzados"
   },
-  "s183": {
+  "s182": {
     "message": "En general, cualquier selector CSS compatible con Firefox se puede utilizar para ocultar elementos. Por ejemplo, la siguiente regla oculta cualquier cosa tras un elemento div con clase \"adheader\":"
   },
-  "s184": {
+  "s183": {
     "message": ". Para obtener una lista completa de la lista de CSS ver <a>especificación CSS de W3C</a> (Note que no todos los selectores son compatibles con Firefox todavía)."
   },
-  "s185": {
+  "s184": {
     "message": "<em>Nota</em>Esta función es sólo para usuarios avanzados, usted debe sentirse cómodo con selectores CSS para utilizarlo. Adblock Plus no será capaz de verificar la sintaxis del selector que usted agregue. Si se utiliza una sintaxis inválida CSS, podrían dejar de funcionar otras reglas (válidas) que se hayan creado. Compruebe la consola de JavaScript para detectar los errores de CSS."
   },
-  "s186": {
+  "s185": {
     "message": "Reglas de excepción"
   },
-  "s187": {
+  "s186": {
     "message": "Las reglas de excepción pueden desactivar en ciertos dominios las reglas establecidas."
   },
-  "s188": {
+  "s187": {
     "message": "Están pensadas sobre todo para los autores de suscripciones de filtros que están ampliando otras suscripciones de filtros que no pueden modificar."
   },
-  "s189": {
+  "s188": {
     "message": "Por ejemplo, se puede desactivar la regla"
   },
-  "s190": {
+  "s189": {
     "message": "en"
   },
-  "s191": {
+  "s190": {
     "message": "usando la regla de excepción"
   },
-  "s192": {
+  "s191": {
     "message": "."
   },
-  "s193": {
+  "s192": {
     "message": "La combinación de ambas reglas tiene exactamente el mismo efecto que la regla única"
   },
-  "s194": {
+  "s193": {
     "message": "."
   },
-  "s195": {
+  "s194": {
     "message": "Se recomienda utilizar las reglas de excepción solamente cuando no se pueda modificar una regla general de ocultación de elementos, en todos los demás casos resulta preferible limitar dicha regla a los dominios en los que sea necesaria."
   },
-  "s196": {
+  "s195": {
     "message": "Sintaxis simplificada para ocultar elementos"
   },
-  "s197": {
+  "s196": {
     "message": "Adblock Plus soporta sintaxis simplificada para ocultar elementos (por ejemplo,"
   },
-  "s198": {
+  "s197": {
     "message": ") solamente para la asegurar la compatibilidad hacia atrás. No se recomienda utilizar esta sintaxis, es preferible usar los selectores CSS. El soporte a esta sintaxis puede ser removido en algún momento."
   },
-  "s99-link": {
+  "s98-link": {
     "message": "http://www.w3.org/TR/XMLHttpRequest/"
   },
-  "s146-link": {
+  "s145-link": {
     "message": "https://developer.mozilla.org/es/Gu%C3%ADa_JavaScript_1.5/Escribir_un_patr%C3%B3n_de_expresi%C3%B3n_regular"
   },
-  "s184-link": {
+  "s183-link": {
     "message": "http://www.w3.org/TR/css3-selectors/"
   }
 }
