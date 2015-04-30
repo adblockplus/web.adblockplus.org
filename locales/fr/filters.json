@@ -126,106 +126,106 @@
     "message": "(Adblock Plus 1.1 ou supérieur est nécessaire)."
   },
   "s42": {
-    "message": "Un caractère séparateur est tout sauf une lettre, un nombre ou un des caractères suivants :"
+    "message": "Un caractère séparateur est tout sauf une lettre, un nombre ou un des caractères suivants : {1}. La fin d'une adresse est également acceptée comme étant un séparateur. Dans l'exemple suivant, tous les caractères séparateurs sont affichés en rouge :"
   },
   "s43": {
-    "message": ". La fin d'une adresse est également acceptée comme étant un séparateur. Dans l'exemple suivant, tous les caractères séparateurs sont affichés en rouge :"
+    "message": ". Cette adresse pourra être bloquée par le filtre"
   },
   "s44": {
-    "message": ". Cette adresse pourra être bloquée par le filtre"
+    "message": "ou"
   },
   "s45": {
     "message": "ou"
   },
   "s46": {
-    "message": "ou"
-  },
-  "s47": {
     "message": "seule."
   },
-  "s48": {
+  "s47": {
     "message": "Commentaires"
   },
-  "s49": {
+  "s48": {
     "message": "Toute règle débutant par un point d'exclamation sera considérée comme étant un commentaire. Elle sera affichée dans la liste de filtres mais grisée au lieu d'être en noir. Adblock Plus ignorera cette règle pour le blocage, elle permet donc d'écrire ce que l'on veut. Vous pouvez ainsi placer un commentaire pour décrire la fonction de tels ou tels filtres. Vous pouvez également indiquer votre nom et la propriété de votre liste en haut de la liste de filtres (beaucoup d'auteurs de listes le font)."
   },
-  "s85": {
+  "s84": {
     "message": "Fonctionnalités avancées"
   },
-  "s86": {
+  "s85": {
     "message": "Les fonctions décrites dans cette rubrique ne sont utilisées habituellement que par les utilisateurs confirmés et les créateurs de listes de filtres. Vous n'êtes donc pas obligé de lire cette rubrique."
   },
-  "s87": {
+  "s86": {
     "message": "Spécification des options de filtrage"
   },
-  "s88": {
+  "s87": {
     "message": "Adblock Plus vous permet de spécifier un certain nombre d'options pour modifier le comportement d'un filtre. Vous devez lister ces options en les séparant par une virgule et en les faisant débuter par un dollar ($) à la fin du filtre. Exemple :"
   },
-  "s89": {
+  "s88": {
     "message": "Ici"
   },
-  "s90": {
+  "s89": {
     "message": "est le filtre et"
   },
-  "s91": {
+  "s90": {
     "message": "et"
   },
-  "s92": {
+  "s91": {
     "message": "sont ses options. Pour le moment, sont disponibles les options suivantes :"
   },
-  "s93": {
+  "s92": {
     "message": "Options de type : détermine quel type d'éléments le filtre peut bloquer (ou autoriser en cas de liste blanche). De nombreux types d'options peuvent être spécifiés pour indiquer que le filtre devra être appliqué à plusieurs types d'éléments. Les types possibles sont :"
   },
-  "s94": {
+  "s93": {
     "message": " — scripts externes chargés via la balise HTML script"
   },
-  "s95": {
+  "s94": {
     "message": " — images normales, chargées typiquement via la balise HTML img"
   },
-  "s96": {
+  "s95": {
     "message": " — fichiers de feuille de style CSS externes"
   },
-  "s97": {
+  "s96": {
     "message": " — contenu traité par des plugins du navigateur comme par exemple Flash ou Java"
   },
-  "s99": {
+  "s98": {
     "message": " — requêtes démarrées par <a>l'objet XMLHttpRequest</a> "
   },
-  "s100": {
+  "s99": {
     "message": " — requêtes démarrées par les plugins comme Flash"
   },
-  "s101": {
+  "s100": {
     "message": " — pages incorporées (embedded), habituellement incluses via la balise HTML frames"
   },
-  "s102": {
+  "s101": {
     "message": " — la page elle-même (uniquement les <a>règles d'exception</a> peuvent être appliquées à la page)"
   },
-  "s103": {
+  "s102": {
     "message": " — uniquement pour les règles d'exception, comme pour"
   },
-  "s104": {
+  "s103": {
     "message": "mais ne désactive que les <a>règles de masquage d'élément</a> sur la page plutôt que toutes les règles de filtre  (Adblock Plus 1.2 et supérieur nécessaire)"
   },
-  "s105": {
+  "s104": {
     "message": " — d'autres types de requêtes telles que liaisons XBL, requêtes http XML ou données demandées par des objets. Cela signifie : les types de requêtes non appréhéndées par la liste ci-dessus"
   },
-  "s106": {
+  "s105": {
     "message": "Les options de type"
+  },
+  "s106": {
+    "message": ","
   },
   "s107": {
     "message": ","
   },
   "s108": {
-    "message": ","
-  },
-  "s109": {
     "message": "et"
   },
-  "s110": {
+  "s109": {
     "message": "sont obsolètes et ne doivent plus être utilisées."
   },
-  "s111": {
+  "s110": {
     "message": "Options de type inverse : spécifie les types d'éléments auxquels le filtre <strong>ne doit pas</strong> être appliqué. Les options de type inverse possibles sont :"
+  },
+  "s111": {
+    "message": ","
   },
   "s112": {
     "message": ","
@@ -252,234 +252,231 @@
     "message": ","
   },
   "s120": {
-    "message": ","
-  },
-  "s121": {
     "message": "Restriction aux requêtes third-party/first-party (provenant d'un autre/du même site) : Si l'option"
   },
-  "s122": {
+  "s121": {
     "message": "est spécifiée, le filtre n'est appliqué qu'aux requêtes provenant d'une autre origine que la page actuellement affichée. De manière similaire,"
   },
-  "s123": {
+  "s122": {
     "message": "restreint l'action du filtre aux requêtes provenant de la même origine que la page couramment affichée."
   },
-  "s124": {
+  "s123": {
     "message": "Restrictions de domaines : l'option"
   },
-  "s125": {
+  "s124": {
     "message": "signifie que le filtre ne devra s'appliquer qu'aux pages provenant du domaine \"example.com\". Plusieurs domaines peuvent être spécifiés en utilisant \"|\" comme séparateur : avec l'option"
   },
-  "s126": {
+  "s125": {
     "message": "le filtre ne s'appliquera qu'aux pages provenant des domaines  \"example.com\" ou \"example.net\". Si un nom de domaine est précédé par \"~\", le filtre <strong>ne s'appliquera pas</strong> aux pages de ce domaine. Par exemple,"
   },
-  "s127": {
+  "s126": {
     "message": "signifie que le filtre devra s'appliquer à toutes les pages sauf celles provenant de \"example.com\" et"
   },
-  "s128": {
+  "s127": {
     "message": "restreint l'action du filtre au domaine \"example.com\" avec comme exception le sous-domaine \"foo.example.com\"."
   },
-  "s132": {
+  "s131": {
     "message": " — fait en sorte que le filtre ne s'applique qu'aux adresses correspondant à la casse (prise en compte des minuscules et des majuscules), par exemple, le filtre"
   },
-  "s133": {
+  "s132": {
     "message": "bloquera"
+  },
+  "s133": {
+    "message": "mais pas"
   },
   "s134": {
-    "message": "mais pas"
+    "message": "seule."
   },
   "s135": {
-    "message": "seule."
-  },
-  "s136": {
     "message": " — cette option va se substituer à l’option globale « Masquer les conteneurs des éléments bloqués » et va faire en sorte que le filtre masque le conteneur à coup sûr. De la même façon, l'option"
   },
-  "s137": {
+  "s136": {
     "message": "permet d’éviter que le conteneur de l’élément ne soit masqué."
   },
-  "s138": {
+  "s137": {
     "message": " — pour toute adresse correspondant à une règle de blocage et ne correspondant à aucune règle d’exception, un en-tête  <a>Do-Not-Track</a> sera envoyé grâce à cette option (requiert Adblock Plus 1.3.5 ou supérieur)."
   },
-  "s139": {
+  "s138": {
     "message": "Pour assurer une rétrocompatibilité, il est recommandé d’utiliser cette option en association avec des options de type contradictoires, ce qui permettra d’éviter que le filtre ne bloque rien avec les versions antérieurs d’Adblock Plus :"
   },
-  "s140": {
+  "s139": {
     "message": "Utilisation d'expressions régulières"
   },
-  "s142": {
+  "s141": {
     "message": "Si vous souhaitez davantage de précision de filtrage vous pouvez utiliser des expressions régulières. Par exemple, le filtre"
   },
-  "s143": {
+  "s142": {
     "message": "bloquera"
   },
-  "s144": {
+  "s143": {
     "message": "et"
   },
-  "s145": {
+  "s144": {
     "message": "mais pas"
   },
-  "s146": {
+  "s145": {
     "message": ". Vous pouvez lire une <a>documentation sur les expressions régulières</a> pour apprendre à en créer."
   },
-  "s147": {
+  "s146": {
     "message": "<em>Remarque</em> : Pour des raisons de performances il est recommandé de ne pas utiliser d'expressions régulières tant que cela peut être évité."
   },
-  "s148": {
+  "s147": {
     "message": "Cacher des éléments"
   },
-  "s149": {
+  "s148": {
     "message": "Règles basiques"
   },
-  "s150": {
+  "s149": {
     "message": "Parfois vous trouverez des publicités impossible à bloquer car elles sont intégrées en tant que texte dans la page Web. Si vous affichez le code source de cette page, vous trouverez probablement quelque chose de ce style :"
   },
-  "s151": {
+  "s150": {
     "message": "Vous devez charger la page Web, vous téléchargerez donc obligatoirement les publicités. Tout ce que vous pouvez encore faire, c'est de cacher la publicité pour ne pas la voir s'afficher. La fonctionnalité \"Cacher les éléments\" vous permettra de faire cela."
   },
-  "s152": {
+  "s151": {
     "message": "La première publicité dans l'exemple ci-dessus est contenue dans un élément div avec un attribut de classe \"textad\". Le filtre suivant cachera exactement cette combinaison :"
   },
-  "s153": {
+  "s152": {
     "message": ". Ici ## marque une règle de masquage d'élément alors que le reste est un sélecteur identifiant les éléments devant être masqués. Vous pouvez de la même manière cacher des éléments par leur attribut d'id,"
   },
-  "s154": {
+  "s153": {
     "message": "cachera la seconde publicité. Vous n'êtes pas obligé de spécifier le nom d'élément, le filtre"
   },
-  "s155": {
+  "s154": {
     "message": "fonctionnera tout aussi bien. Sur le même principe, vous pouvez cacher des éléments par leur nom, par exemple"
   },
-  "s156": {
+  "s155": {
     "message": "pour la troisième publicité."
   },
-  "s157": {
+  "s156": {
     "message": "L'extension <a>Element Hiding Helper extension</a> aide à sélectionner le bon élément et à écrire la règle correspondante sans avoir à afficher le code source de la page. Des connaissances basiques en HTML sont tout de même utiles."
   },
-  "s158": {
+  "s157": {
     "message": "<em>Remarque</em> : cacher les éléments fonctionne totalement différemment par rapport aux filtres normaux. Ce qui implique que les jokers ne peuvent être utilisés dans ce genre de filtres."
   },
-  "s159": {
+  "s158": {
     "message": "Limitation des règles à certains domaines"
   },
-  "s160": {
+  "s159": {
     "message": "En général vous souhaitez cacher une publicité spécifique sur un site spécifique, vous ne souhaitez pas appliquer le filtre à d'autres sites. Par exemple le filtre"
   },
-  "s161": {
+  "s160": {
     "message": "pourrait cacher des codes valides sur certains sites. Mais si vous écrivez"
   },
-  "s162": {
+  "s161": {
     "message": "il sera appliqué aux sites"
   },
-  "s163": {
+  "s162": {
     "message": "et"
   },
-  "s164": {
+  "s163": {
     "message": "mais pas à"
   },
-  "s165": {
+  "s164": {
     "message": ". Vous pouvez également spécifier plusieurs domaines — séparez-les simplement par des virgules :"
   },
-  "s166": {
+  "s165": {
     "message": "seule."
   },
-  "s167": {
+  "s166": {
     "message": "Si un nom de domaine est précédé par un \"~\", la règle <strong>ne sera pas</strong> appliquée pour les pages de ce domaine (Adblock Plus 1.1 ou supérieur est nécessaire). Par exemple,"
   },
-  "s168": {
+  "s167": {
     "message": "sera appliqué à toutes les pages de tout domaine sauf \"example.com\" et"
   },
-  "s169": {
+  "s168": {
     "message": "fera appliquer la règle sur le domaine \"example.com\" avec comme exception le sous-domaine \"foo.example.com\"."
   },
-  "s170": {
+  "s169": {
     "message": "<em>Remarque</em> : A cause de la manière avec laquelle \"cacher les éléments\" est implémentée, vous ne pouvez que vous limiter à des noms de domaines complets. Vous ne pouvez utiliser une autre partie de l'adresse et vous ne pouvez pas utiliser"
   },
-  "s171": {
+  "s170": {
     "message": "afin de remplacer"
   },
-  "s172": {
+  "s171": {
     "message": "seule."
   },
-  "s173": {
+  "s172": {
     "message": "<em>Remarque</em> : Les règles pour cacher des éléments en limitant par domaine peuvent également être utilisées pour cacher des éléments de l'interface utilisateur. Exemple : le filtre"
   },
-  "s174": {
+  "s173": {
     "message": "cachera l'entrée \"Console javascript\" dans le menu \"Outils\" de Firefox."
   },
-  "s175": {
+  "s174": {
     "message": "Sélecteurs d'attribut"
   },
-  "s176": {
+  "s175": {
     "message": "Certains publicitaires ne vous facilitent pas la tâche — leur texte publicitaire ne comporte ni un attribut classe, ni un attribut id. Dans ce cas, vous pouvez utiliser d'autres attributs pour cacher les publicités, par exemple"
   },
-  "s177": {
+  "s176": {
     "message": "cachera les tableaux ayant un attribut width (largeur) de 80%. Si vous ne souhaitez pas spécifier la valeur entière de l'attribut,"
   },
-  "s178": {
+  "s177": {
     "message": "cachera tous les éléments div avec un attribut title (titre) contenant la suite de caractères \"adv\". Vous pouvez également vérifier le début et la fin d'un attribut, par exemple"
   },
-  "s179": {
+  "s178": {
     "message": "cachera les éléments div dont l'attribut title commence par \"adv\" et se termine par \"ert\". Comme vous le constatez, vous pouvez également utiliser plusieurs conditions —"
   },
-  "s180": {
+  "s179": {
     "message": "correspondra aux tableaux dont l'attribut width est fixé à 80% et l'attribut bgcolor défini à white (couleur blanche)."
   },
-  "s181": {
+  "s180": {
     "message": "Sélecteurs avancés"
   },
-  "s183": {
+  "s182": {
     "message": "En général, tout sélecteur CSS pris en charge par Firefox pourra être utilisé pour le masquage d'élément. Par exemple la règle suivante masquera tout ce qui suit un élément div avec pour classe \"adheader\":"
   },
-  "s184": {
+  "s183": {
     "message": ". Pour obtenir une liste complète CSS  rendez-vous sur la page de la <a>spécification W3C CSS</a> (veuillez prendre note que tous les sélecteurs ne sont pas encore pris en charge par Firefox)."
   },
-  "s185": {
+  "s184": {
     "message": "<em>Remarque</em>: Cette fonctionnalité n'est prévue que pour les utilisateurs chevronnés, il faut que vous soyez à l'aise avec les sélecteurs CSS pour l'utiliser. Adblock Plus ne pourra pas vérifier la syntaxe du sélecteur que vous ajoutez, si vous utilisez une syntaxe CSS invalide vous risquez d'endommager d'autres règles (valides) que vous avez. Vérifiez la console Javascript pour détecter d'éventuelles erreurs CSS."
   },
-  "s186": {
+  "s185": {
     "message": "Règles d'exception"
   },
-  "s187": {
+  "s186": {
     "message": "Les règles d'exception permettent de désactiver un filtre existant sur certains domaines."
   },
-  "s188": {
+  "s187": {
     "message": "Cela est surtout utile pour les gestionnaires de listes complémentaires qui viennent étendre l'action de listes de filtres qu'ils ne peuvent modifier."
   },
-  "s189": {
+  "s188": {
     "message": "Par exemple, le filtre"
   },
-  "s190": {
+  "s189": {
     "message": "peut être désactivé sur"
   },
-  "s191": {
+  "s190": {
     "message": "grâce à la règle d'exception"
   },
-  "s192": {
+  "s191": {
     "message": "seule."
   },
-  "s193": {
+  "s192": {
     "message": "La combinaison de ces deux règles a exactement le même effet que la règle"
   },
-  "s194": {
+  "s193": {
     "message": "seule."
   },
-  "s195": {
+  "s194": {
     "message": "L'utilisation des règles d'exception est recommandée uniquement lorsque vous ne pouvez pas modifier une règle de masquage d'élément prédominante ; il est sinon préférable de limiter cette règle aux domaines qui le nécessite."
   },
-  "s196": {
+  "s195": {
     "message": "Syntaxe simplifiée pour masquage d'élément"
   },
-  "s197": {
+  "s196": {
     "message": "Adblock Plus prend en charge une syntaxe simplifiée pour le masquage d'élément (ex."
   },
-  "s198": {
+  "s197": {
     "message": ") pour une compatibilité rétrograde uniquement. L'utilisation de cette syntaxe est déconseillée, les sélecteurs CSS usuels sont préférés. L'aide concernant cette syntaxe sera probablement abandonnée à un moment."
   },
-  "s99-link": {
+  "s98-link": {
     "message": "http://www.w3.org/TR/XMLhttpRequest/"
   },
-  "s146-link": {
+  "s145-link": {
     "message": "https://developer.mozilla.org/fr/Guide_JavaScript_1.5/Expressions_rationnelles"
   },
-  "s184-link": {
+  "s183-link": {
     "message": "http://www.w3.org/TR/css3-selectors/"
   }
 }

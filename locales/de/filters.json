@@ -126,106 +126,106 @@
     "message": "(Adblock Plus 1.1 oder höher wird benötigt)."
   },
   "s42": {
-    "message": "Ein Trennzeichen ist jedes Zeichen außer Buchstaben, Ziffern oder eines der folgenden Zeichen:"
+    "message": "Ein Trennzeichen ist jedes Zeichen außer Buchstaben, Ziffern oder eines der folgenden Zeichen: {1} Das Ende der Adresse wird ebenfalls als \"Trennzeichen\" akzeptiert. Im folgenden Beispiel sind alle Trennzeichen rot hervorgehoben:"
   },
   "s43": {
-    "message": "Das Ende der Adresse wird ebenfalls als \"Trennzeichen\" akzeptiert. Im folgenden Beispiel sind alle Trennzeichen rot hervorgehoben:"
-  },
-  "s44": {
     "message": ". Somit wird diese Adresse von den Filtern"
   },
-  "s45": {
+  "s44": {
     "message": ","
   },
-  "s46": {
+  "s45": {
     "message": "oder"
   },
-  "s47": {
+  "s46": {
     "message": "blockiert."
   },
-  "s48": {
+  "s47": {
     "message": "Kommentare"
   },
-  "s49": {
+  "s48": {
     "message": "Jeder Eintrag, der mit einem Ausrufezeichen beginnt, wird wie ein Kommentar behandelt und kann beliebigen Text beinhalten. In der Filterliste wird er mit grauer Schrift dargestellt und hat keinerlei Einfluss darauf, was Adblock Plus blockiert. Man kann z.B. einen Kommentar vor einem Filter einfügen, um zu beschreiben, was dieser Filter macht. Kommentare am Anfang einer Filterliste beschreiben normalerweise, wer für diese Filterliste verantwortlich ist."
   },
-  "s85": {
+  "s84": {
     "message": "Möglichkeiten für Fortgeschrittene"
   },
-  "s86": {
+  "s85": {
     "message": "In dieser Sektion werden Funktionen von Adblock Plus beschrieben, die in der Regel nur von erfahrenen Nutzern und Autoren von Filterlisten eingesetzt. Sie können diese ohne Probleme überspringen."
   },
-  "s87": {
+  "s86": {
     "message": "Filter-Attribute angeben"
   },
-  "s88": {
+  "s87": {
     "message": "Adblock Plus erlaubt es, mit einigen Attribute das Verhalten des Filters zu ändern. Diese Attribute können mit Kommas getrennt nach einem Dollar-Zeichen ($) am Ende des Filters aufgelistet werden, z.B.:"
   },
-  "s89": {
+  "s88": {
     "message": "Hier ist"
   },
-  "s90": {
+  "s89": {
     "message": "der eigentliche Filter,"
   },
-  "s91": {
+  "s90": {
     "message": "und"
   },
-  "s92": {
+  "s91": {
     "message": "sind dessen Attribute. Folgende Attribute werden derzeit unterstützt:"
   },
-  "s93": {
+  "s92": {
     "message": "Typ-Attribute: bestimmen, welche Element-Typen von dem Filter blockiert (oder im Fall von Ausnahmeregeln von der Blockierung ausgenommen) werden können. Man kann mehrere Typ-Attribute kombinieren, um den Filter auf mehrere Element-Typen anzuwenden. Mögliche Typen:"
   },
-  "s94": {
+  "s93": {
     "message": " — externe Scripte, die mit dem HTML-Tag \"script\" geladen werden"
   },
-  "s95": {
+  "s94": {
     "message": " — normale Bilder, in der Regel mit dem HTML-Tag \"img\" eingebunden"
   },
-  "s96": {
+  "s95": {
     "message": " — externe CSS-Dateien (Cascading Style Sheets)"
   },
-  "s97": {
+  "s96": {
     "message": " — Inhalte, die von Browser-Plugins dargestellt werden, wie z.B. Flash oder Java"
   },
-  "s99": {
+  "s98": {
     "message": " — Anfragen, die vom <a>XMLHttpRequest-Objekt</a> gestartet werden"
   },
-  "s100": {
+  "s99": {
     "message": " — Anfragen, die von Plugins wie zum Beispiel Flash gestartet werden"
   },
-  "s101": {
+  "s100": {
     "message": " — eingebettete Seiten, in der Regel per HTML-Frames eingebunden"
   },
-  "s102": {
+  "s101": {
     "message": " — die Seite selber (nur <a>Ausnahmeregeln</a> werden auf die Adresse der Seite angewandt)"
   },
-  "s103": {
+  "s102": {
     "message": " — nur für Ausnahmeregeln; ähnlich wie"
   },
-  "s104": {
+  "s103": {
     "message": ", deaktiviert aber nur <a>Regeln zum Verstecken von Elementen</a> auf der Seite, anstatt alle Filterregeln zu deaktvieren (Adblock Plus 1.2 oder höher notwendig)"
   },
-  "s105": {
+  "s104": {
     "message": " — andere Arten von Anfragen"
   },
-  "s106": {
+  "s105": {
     "message": "Die Typ-Attribute"
+  },
+  "s106": {
+    "message": ","
   },
   "s107": {
     "message": ","
   },
   "s108": {
-    "message": ","
-  },
-  "s109": {
     "message": "und"
   },
-  "s110": {
+  "s109": {
     "message": "sind veraltet und sollten nicht mehr benutzt werden."
   },
-  "s111": {
+  "s110": {
     "message": "Inverse Typ-Attribute: geben Element-Typen an, auf die der Filter <strong>nicht</strong> angewandt werden soll. Mögliche inverse Typ-Attribute:"
+  },
+  "s111": {
+    "message": ","
   },
   "s112": {
     "message": ","
@@ -252,225 +252,222 @@
     "message": ","
   },
   "s120": {
-    "message": ","
-  },
-  "s121": {
     "message": "Einschränkung auf Elemente von Drittseiten/der Ursprungsseite: Wenn das Attribut"
   },
-  "s122": {
+  "s121": {
     "message": "angegeben ist, wird der Filter nur auf solche Anfragen angewandt, die nicht an die Domain der gerade betrachteten Seite gehen. Dementsprechend bedeutet das Attribut"
   },
-  "s123": {
+  "s122": {
     "message": ", dass der Filter nur auf Anfragen angewandt werden sollte, die an die Domain der betrachteten Seite gehen."
   },
-  "s124": {
+  "s123": {
     "message": "Domain-Einschränkungen: Das Attribut"
   },
-  "s125": {
+  "s124": {
     "message": "bedeutet, dass der Filter nur auf Seiten aktiv werden sollte, die zur Domain \"example.com\" gehören. Mehrere Domains können mit dem Zeichen \"|\" getrennt werden: mit dem Attribut"
   },
-  "s126": {
+  "s125": {
     "message": "wird der Filter nur auf Domains \"example.com\" und \"example.net\" angewandt. Wird ein Domainname von \"~\" angeführt, wird der Filter auf Seiten dieser Domain <strong>nicht</strong> angewandt. Zum Beispiel bedeutet"
   },
-  "s127": {
+  "s126": {
     "message": ", dass der Filter auf allen Domains außer \"example.com\" angewandt werden soll. Und"
   },
-  "s128": {
+  "s127": {
     "message": "beschränkt den Filter auf die Domain \"example.com\" mit Ausnahme der \"foo.example.com\" Unterdomain."
   },
-  "s132": {
+  "s131": {
     "message": " — dieses Attribut sorgt dafür, dass Groß- und Kleinschreibung beachtet wird. So blockiert der Filter"
   },
-  "s133": {
+  "s132": {
     "message": "die Adresse"
   },
-  "s134": {
+  "s133": {
     "message": ", aber nicht"
   },
-  "s135": {
+  "s134": {
     "message": "."
   },
-  "s136": {
+  "s135": {
     "message": " — dieses Attribut stellt sicher, dass beim Blockieren der Platzhalter immer versteckt wird, unabhängig von der globalen Einstellung \"Platzhalter blockierter Elemente verstecken\". Auf die gleiche Weise stellt"
   },
-  "s137": {
+  "s136": {
     "message": "sicher, dass die Platzhalter niemals versteckt werden."
   },
-  "s138": {
+  "s137": {
     "message": " — für jede Adresse, zu der eine Blockierregel mit dieser Option passt und die von keinen Ausnahmeregeln mit dieser Option betroffen ist, wird eine  <a>Do-Not-Track-Kopfzeile</a> gesendet (Adblock Plus 1.3.5 oder höher wird benötigt)."
   },
-  "s139": {
+  "s138": {
     "message": "Für Rückwärtskompatibilität wird empfohlen, diese Option zusammen mit widersprüchlichen Typ-Attributen anzugeben, damit sie in älteren Versionen von Adblock Plus nichts blockiert:"
   },
-  "s140": {
+  "s139": {
     "message": "Verwendung von regulären Ausdrücken"
   },
-  "s142": {
+  "s141": {
     "message": "Wenn man noch mehr Kontrolle darüber haben will, was eine Filterregel blockiert und was nicht, kann man auch reguläre Ausdrücke verwenden. Beispielsweise wird der Filter"
   },
-  "s143": {
+  "s142": {
     "message": "Adressen, die"
   },
-  "s144": {
+  "s143": {
     "message": "oder"
   },
-  "s145": {
+  "s144": {
     "message": "enthalten, entfernen, die Zeichenfolge"
   },
-  "s146": {
+  "s145": {
     "message": "aber ignorieren. Der <a>Artikel über reguläre Ausdrücke</a> auf Wikipedia erklärt, wie reguläre Ausdrücke aufgebaut sind."
   },
-  "s147": {
+  "s146": {
     "message": "<em>Bemerkung</em>: Aus Geschwindigkeitsgründen wird von der Verwendung von regulären Ausdrücken abgeraten."
   },
-  "s148": {
+  "s147": {
     "message": "Verstecken von Elementen"
   },
-  "s149": {
+  "s148": {
     "message": "Grundregeln"
   },
-  "s150": {
+  "s149": {
     "message": "Manchmal findet man Werbung, die sich nicht blockieren lässt, weil sie in die Seite als Text eingebunden ist. Wenn man sich den Quelltext der Seite anschaut, findet man beispielsweise folgendes:"
   },
-  "s151": {
+  "s150": {
     "message": "Die Web-Seite kann nur komplett heruntergeladen werden, somit wird diese Werbung auch immer heruntergeladen. Solche Werbung kann man einzig und allein verstecken, damit sie nicht angezeigt wird. Dafür gibt es in Adblock Plus die Funktion \"Verstecken von Elementen\"."
   },
-  "s152": {
+  "s151": {
     "message": "Die erste Anzeige befindet sich innerhalb eines div-Elements mit Attribut class=\"textad\". Die folgende Regel wird diese Kombination verstecken:"
   },
-  "s153": {
+  "s152": {
     "message": ". Hier markiert ## eine Regel zum Verstecken während der Rest der Regel ein Selektor ist, der das Element auswählt. Genauso können Elemente auch anhand ihres id-Attributes versteckt werden,"
   },
-  "s154": {
+  "s153": {
     "message": "wird also auch die zweite Anzeige verstecken. Den Namen des Elements braucht man nicht unbedingt anzugeben, die Regel"
   },
-  "s155": {
+  "s154": {
     "message": "wird also auch funktionieren. Und die dritte Anzeige kann man allein anhand des Element-Namens verschwinden lassen, also z. B. mit der Filterregel"
   },
-  "s156": {
+  "s155": {
     "message": "."
   },
-  "s157": {
+  "s156": {
     "message": "Die Erweiterun <a>Element Hiding Helper</a> hilft dabei, das korrekte Element auszuwählen und die dazugehörige Regel zu schreiben, ohne den Quelltext der Seite begutachten zu müssen. HTML-Grundkenntnisse sind trotzdem empfehlenswert."
   },
-  "s158": {
+  "s157": {
     "message": "<em>Bemerkung</em>: Das Verstecken von Elementen ist völlig anders realisiert als das \"normale\" Blockieren. Daher werden Jokerzeichen nicht unterstützt."
   },
-  "s159": {
+  "s158": {
     "message": "Regeln auf eine Liste von Domains begrenzen"
   },
-  "s160": {
+  "s159": {
     "message": "Normalerweise will man eine konkrete Anzeige nur auf einer Seite verstecken, diese Regel soll nicht auf anderen Seiten angewandt werden. So könnte beispielsweise die Regel"
   },
-  "s161": {
+  "s160": {
     "message": "auf einer Seite etwas verstecken, was man eigentlich sehen möchte. Wird diese Regel aber als"
   },
-  "s162": {
+  "s161": {
     "message": "geschrieben, wird diese nur auf"
   },
-  "s163": {
+  "s162": {
     "message": "oder"
   },
-  "s164": {
+  "s163": {
     "message": "angewandt, jedoch nicht auf"
   },
-  "s165": {
+  "s164": {
     "message": ". Man kann auch mehrere Domains angeben — einfach mit Kommas trennen:"
   },
-  "s166": {
+  "s165": {
     "message": "."
   },
-  "s167": {
+  "s166": {
     "message": "Wird ein Domainname von “~” angeführt, wird die Regel auf Seiten dieser Domain <strong>nicht</strong> angewandt (Adblock Plus 1.1 oder höher erforderlich). So wird zum Beispiel"
   },
-  "s168": {
+  "s167": {
     "message": "auf allen Domains außer \"example.com\" und"
   },
-  "s169": {
+  "s168": {
     "message": "auf der Domain \"example.com\" mit Ausnahme der Unterdomain \"foo.example.com\" angewandt."
   },
-  "s170": {
+  "s169": {
     "message": "<em>Bemerkung</em>: Aufgrund der Implementierung kann man die Regeln zum Verstecken von Elementen nur auf ganze Domainnamen begrenzen. Andere Teile der Adresse kann man nicht verwenden, auch kann man"
   },
-  "s171": {
+  "s170": {
     "message": "nicht anstatt von"
   },
-  "s172": {
+  "s171": {
     "message": "nehmen."
   },
-  "s173": {
+  "s172": {
     "message": "<em>Bemerkung</em>: Regeln, die auf eine Domain beschränkt sind, können auch auf Elemente im Benutzerinterface des Browsers angewandt werden. Beispielsweise wird die Regel"
   },
-  "s174": {
+  "s173": {
     "message": "den Eintrag für die JavaScript Konsole im Extras-Menü von Firefox verschwinden lassen."
   },
-  "s175": {
+  "s174": {
     "message": "Attribut-Selektoren"
   },
-  "s176": {
+  "s175": {
     "message": "Einige Werbefirmen manchen es einem nicht leicht — ihre Textwerbung hat weder ein Attribut id noch class. Eventuell kann man diese aber anhand von anderen Attributen verstecken, die für diese Werbung typisch sind. Beispielsweise wird die Regel"
   },
-  "s177": {
+  "s176": {
     "message": "alle Tabellen verstecken, mit width-Attribut 80% verstecken. Man kann auch einen Teil des Attributs festlegen, so wird"
   },
-  "s178": {
+  "s177": {
     "message": "alle div-Elemente verstecken, deren Attribut title die Zeichenfolge \"adv\" enhält. Man kann auch genauer angeben, dass sich die Zeichenfolge am Anfang bzw. Ende des Attributs befinden soll:"
   },
-  "s179": {
+  "s178": {
     "message": "wird nur div-Elemente verstecken, deren title-Attribut mit \"adv\" anfängt und mit \"ert\" endet. Und wie man hier sieht, kann man mehrere Bedingungen kombinieren, um die Regel spezifischer zu machen —"
   },
-  "s180": {
+  "s179": {
     "message": "wird Tabellen verstecken, die nicht nur Breite 80% haben, sondern bei denen auch die Hintergrunfarbe als weiß angegeben ist."
   },
-  "s181": {
+  "s180": {
     "message": "Fortgeschrittene Selektoren"
   },
-  "s183": {
+  "s182": {
     "message": "Im Prinzip kann man jeden CSS-Selektor für Verstecken von Elementen verwenden, der von Firefox unterstützt wird. Zum Beispiel wird folgende Regel alles verstecken, was einem div-Element der Klasse \"adheader\" folgt:"
   },
-  "s184": {
+  "s183": {
     "message": ". Für eine komplette Liste der CSS-Selektoren siehe <a>CSS-Dokumentation von W3C</a> (es werden noch nicht alle Selektoren von Firefox unterstützt)."
   },
-  "s185": {
+  "s184": {
     "message": "<em>Bemerkung</em>: Diese Funktion setzt etwas Erfahrung voraus. Man sollte sich mit CSS-Selektoren auskenne, da Adblock Plus nicht in der Lage ist, die Syntax zu überprüfen. Wird eine falsche Regel eingegeben, kann das dazu führen, dass auch andere Regeln nicht mehr funktionieren. Man sollte stets die Fehlerkonsole auf CSS-Fehler überprüfen."
   },
-  "s186": {
+  "s185": {
     "message": "Ausnahmeregeln"
   },
-  "s187": {
+  "s186": {
     "message": "Ausnahmeregeln können bestehende Regeln auf bestimmten Seiten deaktivieren."
   },
-  "s188": {
+  "s187": {
     "message": "Sie sind meistens hilfreich für Filter-Autoren, um Filterregeln zu erweitern, die sie nicht ändern können."
   },
-  "s189": {
+  "s188": {
     "message": "Zum Beispiel kann die Regel"
   },
-  "s190": {
+  "s189": {
     "message": "auf"
   },
-  "s191": {
+  "s190": {
     "message": "mit der Ausnahmeregel"
   },
-  "s192": {
+  "s191": {
     "message": "deaktiviert werden."
   },
-  "s193": {
+  "s192": {
     "message": "Die Kombination dieser beiden Regeln hat exakt denselben Effekt wie die Regel"
   },
-  "s194": {
+  "s193": {
     "message": "."
   },
-  "s195": {
+  "s194": {
     "message": "Es ist empfehlenswert, Ausnahmeregeln nur einzusetzten, wenn man eine zu allgemeine Filterregel nicht ändern kann, in allen anderen Fällen ist eine Begrenzung des Filters auf die nötigen Seiten besser."
   },
-  "s99-link": {
+  "s98-link": {
     "message": "http://www.w3.org/TR/XMLhttpRequest/"
   },
-  "s146-link": {
+  "s145-link": {
     "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern"
   },
-  "s184-link": {
+  "s183-link": {
     "message": "http://www.w3.org/TR/css3-selectors/"
   }
 }
