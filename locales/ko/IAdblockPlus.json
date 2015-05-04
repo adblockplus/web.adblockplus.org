@@ -15,10 +15,7 @@
     "message": "식별자에 의해 구독 필터 검색"
   },
   "getSubscription_returnDescription-s1": {
-    "message": "요청된 구독 필터 또는"
-  },
-  "getSubscription_returnDescription-s2": {
-    "message": "은 제공된 인덱스가 올바르지 않을 때"
+    "message": "요청된 구독 필터 또는 <code>{1}</code>은 제공된 인덱스가 올바르지 않을 때"
   },
   "getSubscription_idDescription-s1": {
     "message": "구독 필터 식별자 (이것은 일반적인 구독 필터를 위한 구독 필터의 URL입니다.)"
@@ -27,10 +24,7 @@
     "message": "필터 목록에서 그것의 위치(포지션)에 의해 구독 필터 검색"
   },
   "getSubscriptionAt_returnDescription-s1": {
-    "message": "요청된 구독 필터 또는"
-  },
-  "getSubscriptionAt_returnDescription-s2": {
-    "message": "은 제공된 인덱스가 올바르지 않을 때"
+    "message": "요청된 구독 필터 또는 <code>{1}</code>은 제공된 인덱스가 올바르지 않을 때"
   },
   "getSubscriptionAt_indexDescription-s1": {
     "message": "필터 목록에서 구독 필터의 위치를 백지 상태로"
@@ -60,10 +54,7 @@
     "message": "외부 구독 필터의 제거"
   },
   "removeExternalSubscription_returnDescription-s1": {
-    "message": "는 구독 필터가 제거되었을 때이고,"
-  },
-  "removeExternalSubscription_returnDescription-s2": {
-    "message": "는 그러한 구독 필터가 존재하지 않거나 구독 필터가 외부적으로 관리되지 않을 때입니다."
+    "message": "<code>{1}</code>는 구독 필터가 제거되었을 때이고, <code>{2}</code>는 그러한 구독 필터가 존재하지 않거나 구독 필터가 외부적으로 관리되지 않을 때입니다."
   },
   "removeExternalSubscription_idDescription-s1": {
     "message": "구독 필터 식별자 (외부 구독 필터의 경우 이것은 어떠한 모든 문자열이 될 수 있음)"
@@ -84,6 +75,6 @@
     "message": "설치된 애드블록 플러스 확장 프로그램의 버전을 검색하십시오. 이것은 확장 프로그램 관리자 또는 InstallTrigger에 의해 보고된 버전 번호이거나 모질라 스위트 또는 시몽키에서 후자가 사용되면 올바르지 않을지도 모릅니다."
   },
   "getInstalledVersion_returnDescription-s1": {
-    "message": "애드블록 플러스 버전, 예시"
+    "message": "애드블록 플러스 버전, 예시 <code>{1}</code>"
   }
 }

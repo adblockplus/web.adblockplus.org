@@ -26,14 +26,8 @@
   "removed_preferencesTitle": {
     "message": "Préférences supprimées"
   },
-  "s1": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
   "s2": {
-    "message": "Le tableau suivant donne des indications sur les différentes préférences utilisées par Adblock Plus. Ces préférences peuvent être affichées et modifiées dans"
-  },
-  "s3": {
-    "message": "(tapez dans la barre d'adresse de votre navigateur \"about:config\" pour y accéder)."
+    "message": "Le tableau suivant donne des indications sur les différentes préférences utilisées par Adblock Plus. Ces préférences peuvent être affichées et modifiées dans <a>{1}</a> (tapez dans la barre d'adresse de votre navigateur \"about:config\" pour y accéder)."
   },
   "enabled-s1": {
     "message": "Valeur de l'option \"Activer Adblock Plus\""
@@ -78,10 +72,7 @@
     "message": "Toute autre valeur — ne fait rien"
   },
   "defaultstatusbaraction-s1": {
-    "message": "Définit l'action exécutée lors du clic sur l'icône de la barre d'état. Pour la liste des valeurs possibles, veuillez voir l'option"
-  },
-  "defaultstatusbaraction-s2": {
-    "message": "."
+    "message": "Définit l'action exécutée lors du clic sur l'icône de la barre d'état. Pour la liste des valeurs possibles, veuillez voir l'option <a>{1}</a>."
   },
   "sidebar_key-s2": {
     "message": "Définit la touche de raccourci permettant d'afficher la liste des éléments filtrables. Cette préférence peut être laissée vide ou prendre la forme <em>modifieur1 modifieur2 touche</em>. Les modifieurs reconnus sont : Shift, Accel (Touche d'accélération par défaut, ex. Ctrl sur Windows, Command sur Mac OS X), Ctrl/Control, Alt, Meta. la touche peut peut être une lettre ou une touche spéciale telle que F7 ou DROITE (Consultez <a>l'interface nsIDOMKeyEvent</a> pour trouver une liste de touches spéciales)."
@@ -93,21 +84,15 @@
     "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
   },
   "filters_key-s1": {
-    "message": "Définit le raccourci clavier permettant d'afficher la fenêtre des préférences de filtre. Pour la description des valeurs possibles voir l'option"
+    "message": "Définit le raccourci clavier permettant d'afficher la fenêtre des préférences de filtre. Pour la description des valeurs possibles voir l'option <a>{1}</a> ci-dessus."
   },
   "filters_key-s2": {
-    "message": "ci-dessus."
-  },
-  "filters_key-s3": {
     "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
   },
   "enable_key-s1": {
-    "message": "Définit la touche de raccourci permettant d'activer/désactiver Adblock Plus. Pour connaître les valeurs possibles, veuillez vous référer à l'option"
+    "message": "Définit la touche de raccourci permettant d'activer/désactiver Adblock Plus. Pour connaître les valeurs possibles, veuillez vous référer à l'option <a>{1}</a> ci-dessus."
   },
   "enable_key-s2": {
-    "message": "ci-dessus."
-  },
-  "enable_key-s3": {
     "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
   },
   "flash_scrolltoitem-s1": {
@@ -138,25 +123,16 @@
     "message": "Définit la touche de raccourci utilisée pour envoyer les signalements de bogues."
   },
   "sendReport_key-s2": {
-    "message": "Pour la description des valeurs possibles référez-vous à l'option"
+    "message": "Pour la description des valeurs possibles référez-vous à l'option <a>{1}</a>."
   },
   "sendReport_key-s3": {
-    "message": "."
-  },
-  "sendReport_key-s4": {
     "message": "<em>Remarque</em> : Ce paramètre ne s'appliquera qu'après le redémarrage du navigateur."
   },
   "data_directory-s1": {
-    "message": "Le dossier dans lequel Adblock plus stocke ses données. Le chemin d'accès peut être soit absolu, soit relatif par rapport au dossier du profil utilisateur."
-  },
-  "data_directory-s2": {
-    "message": "est fixée, alors elle sera utilisée pour déterminer l'emplacement de patterns.ini, bien que les autres fichiers restent dans ce dossier."
+    "message": "Le dossier dans lequel Adblock plus stocke ses données. Le chemin d'accès peut être soit absolu, soit relatif par rapport au dossier du profil utilisateur.<a>{1}</a> est fixée, alors elle sera utilisée pour déterminer l'emplacement de patterns.ini, bien que les autres fichiers restent dans ce dossier."
   },
   "subscriptions_exceptionscheckbox-s1": {
-    "message": "Si la préférence vaut"
-  },
-  "subscriptions_exceptionscheckbox-s2": {
-    "message": ", alors la liste de filtres utilisée pour les <a>publicités non-intrusives</a> sera traitée d'une façon particulière en étant affichée sous la forme d'une case à cocher dans l'interface utilisateur."
+    "message": "Si la préférence vaut <code>{1}</code>, alors la liste de filtres utilisée pour les <a>publicités non-intrusives</a> sera traitée d'une façon particulière en étant affichée sous la forme d'une case à cocher dans l'interface utilisateur."
   },
   "subscriptions_autoupdate-s1": {
     "message": "Définit si les listes de filtres auxquelles l'utilisateur a souscrit doivent être mises à jour automatiquement."
@@ -180,25 +156,16 @@
     "message": "Données encodées au format JSON sur des signalements de problèmes récemment soumis (adresse du signalement, sites Web signalés et date de soumission)"
   },
   "hideContributeButton-s1": {
-    "message": "Vaut"
-  },
-  "hideContributeButton-s2": {
-    "message": "si l'utilisateur a choisi de masquer le bouton \"Contribuer\"."
+    "message": "Vaut <code>{1}</code> si l'utilisateur a choisi de masquer le bouton \"Contribuer\"."
   },
   "blockableItemsSize-s1": {
     "message": "Sauvegarde la taille de la fenêtre des Éléments Filtrables (le paramètre de largeur n'est pertinent que lorsque la fenêtre est affichée comme un encadré)."
   },
   "subscriptions_fallbackurl-s1": {
-    "message": "Adresse du script devant être consulté si un téléchargement de liste de filtre échoue à plusieurs reprises (veuillez vous référer aux"
-  },
-  "subscriptions_fallbackurl-s2": {
-    "message": "ci-dessous). %s est remplacé par l'adresse  de l'abonnement en question. Le script devrait imprimer quelque chose comme \"301 http://example.com/nouvelle_list.txt\" si le nouvel emplacement de l'abonnement est connu."
+    "message": "Adresse du script devant être consulté si un téléchargement de liste de filtre échoue à plusieurs reprises (veuillez vous référer aux <a>{1}</a> ci-dessous). %s est remplacé par l'adresse  de l'abonnement en question. Le script devrait imprimer quelque chose comme \"301 http://example.com/nouvelle_list.txt\" si le nouvel emplacement de l'abonnement est connu."
   },
   "subscriptions_fallbackerrors-s1": {
-    "message": "Définit le nombre nécessaire de téléchargements d'abonnement ayant échoués avant que le script d'erreur (voyez"
-  },
-  "subscriptions_fallbackerrors-s2": {
-    "message": "ci-dessus) soit exécuté afin d'obtenir la nouvelle adresse de l'abonnement. Veuillez prendre note qu'Adblock Plus essaiera toujours de procéder à un nouveau téléchargement un jour après le dernier téléchargement ayant échoué."
+    "message": "Définit le nombre nécessaire de téléchargements d'abonnement ayant échoués avant que le script d'erreur (voyez <a>{1}</a> ci-dessus) soit exécuté afin d'obtenir la nouvelle adresse de l'abonnement. Veuillez prendre note qu'Adblock Plus essaiera toujours de procéder à un nouveau téléchargement un jour après le dernier téléchargement ayant échoué."
   },
   "subscriptions_listurl-s1": {
     "message": "Adresse utilisée pour télécharger la liste complète des abonnements de filtres."
@@ -271,6 +238,9 @@
   },
   "hideimagemanager-s1": {
     "message": "Non utilisé dans Adblock Plus 2.1 et supérieur"
+  },
+  "s2-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "sidebar_key-s2-link": {
     "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"

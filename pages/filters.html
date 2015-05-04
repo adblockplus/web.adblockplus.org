@@ -11,40 +11,40 @@ title=Writing Adblock Plus filters
 
   <h3 id="basic">{{s5 Basic filter rules}}</h3>
 
-  <p>{{s6 The most trivial filter you can define is of course the address of banner you want to block. However, often this address changes every time you open a page. For example it could be}} <code>http://example.com/ads/banner123.gif</code> {{s7 where 123 is a random number. Here blocking the complete address won't help you, you need a more general filter — like}} <code>http://example.com/ads/banner*.gif</code>{{s8 . Or maybe even}} <code>http://example.com/ads/*</code>{{s9 .}}</p>
+  <p>{{s6 The most trivial filter you can define is of course the address of banner you want to block. However, often this address changes every time you open a page. For example it could be <code><fix>http://example.com/ads/banner123.gif</fix></code> where 123 is a random number. Here blocking the complete address won't help you, you need a more general filter — like <code><fix>http://example.com/ads/banner*.gif</fix></code>. Or maybe even <code><fix>http://example.com/ads/*</fix></code>.}}</p>
 
-  <p>{{s10 <em>Note</em>: Make sure that you are not replacing too much by wildcards. The filter}} <code>http://example.com/*</code> {{s11 will definitely block all banners but it will also block everything else from example.com that you still might want to see.}}</p>
+  <p>{{s7 <em>Note</em>: Make sure that you are not replacing too much by wildcards. The filter <code><fix>http://example.com/*</fix></code> will definitely block all banners but it will also block everything else from example.com that you still might want to see.}}</p>
 
-  <h3 id="whitelist">{{s12 Defining exception rules}}</h3>
+  <h3 id="whitelist">{{s8 Defining exception rules}}</h3>
 
-  <p>{{s13 Sometimes you will notice that one of your filters that is usually working quite well blocks in some case blocks something that it shouldn't be blocking. You don't want to remove this filter but you still don't want it to match in this one case.}}</p>
+  <p>{{s9 Sometimes you will notice that one of your filters that is usually working quite well blocks in some case blocks something that it shouldn't be blocking. You don't want to remove this filter but you still don't want it to match in this one case.}}</p>
 
-  <p>{{s14 That's what exception rules are good for — they allow you to define cases where filters shouldn't be applied. For example if you are unhappy with your filter}} <code>adv</code> {{s15 blocking}} <code>http://example.com/advice.html</code>{{s16 , you can define an exception rule}} <code>@@advice</code>{{s17 . Exception rules are no different from filter rules, you can use wildcards or regular expressions. You only have to precede them by}} <code>@@</code> {{s18 to indicate an exception rule.}}</p>
+  <p>{{s10 That's what exception rules are good for — they allow you to define cases where filters shouldn't be applied. For example if you are unhappy with your filter <code><fix>adv</fix></code> blocking <code><fix>http://example.com/advice.html</fix></code>, you can define an exception rule <code><fix>@@advice</fix></code>. Exception rules are no different from filter rules, you can use wildcards or regular expressions. You only have to precede them by <code><fix>@@</fix></code> to indicate an exception rule.}}</p>
 
-  <p>{{s19 Exception rules can do more. If an exception rule starts with http:// or https:// (optionally with a pipe before it) it will make whole pages an exception. For example, if your exception rule is}} <code>@@|http://example.com</code> {{s20 and you open some page from example.com — Adblock Plus will be entirely disabled on this page and nothing will be blocked.}}</p>
+  <p>{{s11 Exception rules can do more. If an exception rule starts with http:// or https:// (optionally with a pipe before it) it will make whole pages an exception. For example, if your exception rule is <code><fix>@@|http://example.com</fix></code> and you open some page from example.com — Adblock Plus will be entirely disabled on this page and nothing will be blocked.}}</p>
 
-  <h3 id="anchors">{{s21 Matching at beginning/end of an address}}</h3>
+  <h3 id="anchors">{{s12 Matching at beginning/end of an address}}</h3>
 
-  <p>{{s22 Usually Adblock Plus treats every filter as if it had a wildcard at its beginning and end, e.g. there is not difference between the filters}} <code>ad</code> {{s23 and}} <code>*ad*</code>{{s24 . While this is usually unproblematic, sometimes you wish that the filter you defined only matches at the beginning or end of an address. For example you might want to block all Flash, but if you add the filter}} <code>swf</code> {{s25 the address}} <code>http://example.com/swf/index.html</code> {{s26 will also be blocked.}}</p>
+  <p>{{s13 Usually Adblock Plus treats every filter as if it had a wildcard at its beginning and end, e.g. there is not difference between the filters <code><fix>ad</fix></code> and <code><fix>*ad*</fix></code>. While this is usually unproblematic, sometimes you wish that the filter you defined only matches at the beginning or end of an address. For example you might want to block all Flash, but if you add the filter <code><fix>swf</fix></code> the address <code><fix>http://example.com/swf/index.html</fix></code> will also be blocked.}}</p>
 
-  <p>{{s27 Solution to this problem: add a pipe symbol to the filter to show that there should be definitely the end of the address at this point. For example the filter}} <code>swf|</code> {{s28 will block}} <code>http://example.com/annoyingflash.swf</code> {{s29 but not}} <code>http://example.com/swf/index.html</code>{{s30 . And the filter <code>|http://baddomain.example/</code> will block <code>http://baddomain.example/banner.gif</code> but not <code>http://gooddomain.example/analyze?http://baddomain.example</code>.}}</p>
+  <p>{{s14 Solution to this problem: add a pipe symbol to the filter to show that there should be definitely the end of the address at this point. For example the filter <code><fix>swf|</fix></code> will block <code><fix>http://example.com/annoyingflash.swf</fix></code> but not <code><fix>http://example.com/swf/index.html</fix></code>. And the filter <code>|http://baddomain.example/</code> will block <code>http://baddomain.example/banner.gif</code> but not <code>http://gooddomain.example/analyze?http://baddomain.example</code>.}}</p>
 
-  <p id="flexible-anchors">{{s31 Sometimes one wants to block}} <code>http://example.com/banner.gif</code> {{s32 as well as}} <code>https://example.com/banner.gif</code> {{s33 and}} <code>http://www.example.com/banner.gif</code>{{s34 . This can be achieved by putting two pipe symbols in front of the filter which makes sure the filter matches at the beginning of the domain name:}} <code>||example.com/banner.gif</code> {{s35 will block all these addresses while not blocking <code>http://badexample.com/banner.gif</code> or <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (requires Adblock Plus 1.1 or higher).}}</p>
+  <p id="flexible-anchors">{{s15 Sometimes one wants to block <code><fix>http://example.com/banner.gif</fix></code> as well as <code><fix>https://example.com/banner.gif</fix></code> and <code><fix>http://www.example.com/banner.gif</fix></code>. This can be achieved by putting two pipe symbols in front of the filter which makes sure the filter matches at the beginning of the domain name: <code><fix>||example.com/banner.gif</fix></code> will block all these addresses while not blocking <code>http://badexample.com/banner.gif</code> or <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (requires Adblock Plus 1.1 or higher).}}</p>
 
-  <h3 id="separators">{{s36 Marking separator characters}}</h3>
+  <h3 id="separators">{{s16 Marking separator characters}}</h3>
 
-  <p>{{s37 Often you need to accept any separator character in a filter. For example, you might write a filter that blocks}} <code>http://example.com/</code> {{s38 and}} <code>http://example.com:8000/</code> {{s39 but not}} <code>http://example.com.ar/</code>{{s40 . Here the symbol ^ can be used as a placeholder for a single separator character:}} <code>http://example.com^</code> {{s41 (requires Adblock Plus 1.1 or higher).}}</p>
+  <p>{{s17 Often you need to accept any separator character in a filter. For example, you might write a filter that blocks <code><fix>http://example.com/</fix></code> and <code><fix>http://example.com:8000/</fix></code> but not <code><fix>http://example.com.ar/</fix></code>. Here the symbol ^ can be used as a placeholder for a single separator character: <code><fix>http://example.com^</fix></code> (requires Adblock Plus 1.1 or higher).}}</p>
 
-  <p>{{s42 Separator character is anything but a letter, a digit, or one of the following: <fix>_ - . %</fix>. The end of the address is also accepted as separator. In the following example all separator characters are shown in red:}} http:<b style="color: red;">//</b>example.com<b style="color: red;">:</b>8000<b style="color: red;">/</b>foo.bar<b style="color: red;">?</b>a<b style="color: red;">=</b>12<b style="color: red;">&amp;</b>b<b style="color: red;">=</b>%D1%82%D0%B5%D1%81%D1%82{{s43 . So this address can be blocked with the filter}} <code>^example.com^</code> {{s44 or}} <code>^%D1%82%D0%B5%D1%81%D1%82^</code> {{s45 or}} <code>^foo.bar^</code>{{s46 .}}</p>
+  <p>{{s18 Separator character is anything but a letter, a digit, or one of the following: <fix>_ - . %</fix>. The end of the address is also accepted as separator. In the following example all separator characters are shown in red:}} http:<b style="color: red;">//</b>example.com<b style="color: red;">:</b>8000<b style="color: red;">/</b>foo.bar<b style="color: red;">?</b>a<b style="color: red;">=</b>12<b style="color: red;">&amp;</b>b<b style="color: red;">=</b>%D1%82%D0%B5%D1%81%D1%82{{s19 . So this address can be blocked with the filter <code><fix>^example.com^</fix></code> or <code><fix>^%D1%82%D0%B5%D1%81%D1%82^</fix></code> or <code><fix>^foo.bar^</fix></code>.}}</p>
 
-  <h3 id="comments">{{s47 Comments}}</h3>
+  <h3 id="comments">{{s20 Comments}}</h3>
 
-  <p>{{s48 Any rule that starts with an exclamation mark is considered a comment. It will still show up in the filter list but in grey instead of black. Adblock Plus will ignore this rule for actual blocking so it is safe to write there whatever you want. You can place a comment rule above a real filter to describe what it is doing. Or you can put a comment on top of your filter list stating your authorship (most filter list authors do that).}}</p>
+  <p>{{s21 Any rule that starts with an exclamation mark is considered a comment. It will still show up in the filter list but in grey instead of black. Adblock Plus will ignore this rule for actual blocking so it is safe to write there whatever you want. You can place a comment rule above a real filter to describe what it is doing. Or you can put a comment on top of your filter list stating your authorship (most filter list authors do that).}}</p>
 
-<h4 id="special-comments">{{s49 Special comments}}</h4>
+<h4 id="special-comments">{{s22 Special comments}}</h4>
 
 <p>
-  {{s50 Special comments will only have an effect in downloaded filter lists, not in custom filters.}} {{s51 They can set a number
+  {{s23 Special comments will only have an effect in downloaded filter lists, not in custom filters.}} {{s24 They can set a number
   of parameters for the filter list:}}
 </p>
 
@@ -54,7 +54,7 @@ title=Writing Adblock Plus filters
       <code>! Homepage: http://example.com/</code>
     </p>
     <p>
-      {{s52 This comment determines which webpage should be linked as filter list homepage.}}
+      {{s25 This comment determines which webpage should be linked as filter list homepage.}}
     </p>
   </li>
   <li>
@@ -62,7 +62,7 @@ title=Writing Adblock Plus filters
       <code>! Title: FooList</code>
     </p>
     <p>
-      {{s53 This comment sets a fixed title for the filter list.}} {{s54 If this comment is present the user will no longer be able to change
+      {{s26 This comment sets a fixed title for the filter list.}} {{s27 If this comment is present the user will no longer be able to change
       the title.}}
     </p>
   </li>
@@ -71,9 +71,9 @@ title=Writing Adblock Plus filters
       <code>! Expires: 5 days</code>
     </p>
     <p>
-      {{s55 This comment sets the update interval for the filter list, the value can be given in days (e.g.}} <code>5 days</code>{{s56 ) or hours
-      (e.g.}} <code>8 hours</code>{{s57 ).}} {{s58 Any value between 1 hour and 14 days is possible.}} {{s59 Note that the update
-      will not necessarily happen after this time interval.}} {{s60 The actual update time is slightly randomized and depends on
+      {{s28 This comment sets the update interval for the filter list, the value can be given in days (e.g. <code><fix>5 days</fix></code>) or hours
+      (e.g. <code><fix>8 hours</fix></code>).}} {{s29 Any value between 1 hour and 14 days is possible.}} {{s30 Note that the update
+      will not necessarily happen after this time interval.}} {{s31 The actual update time is slightly randomized and depends on
       some additional factors to reduce server load.}}
     </p>
   </li>
@@ -82,24 +82,24 @@ title=Writing Adblock Plus filters
       <code>! Checksum: OaopkIiiAl77sSHk/VAWDA</code>
     </p>
     <p>
-      {{s61 This comment makes sure that accidental corruption of the data won't result
-      in broken filters.}} {{s62 For example, some firewall software might modify the filter <code>*/adnetwork/*</code> on download
-      in an attempt to protect the user against ads.}} {{s63 It will remove part of the filter so that Adblock Plus will only see
-      the filter}} <code>**</code>{{s64 .}} {{s65 A checksum comment in the filter list protects against this scenario, any modifications
+      {{s32 This comment makes sure that accidental corruption of the data won't result
+      in broken filters.}} {{s33 For example, some firewall software might modify the filter <code>*/adnetwork/*</code> on download
+      in an attempt to protect the user against ads.}} {{s34 It will remove part of the filter so that Adblock Plus will only see
+      the filter}} <code>**</code>{{s35 .}} {{s36 A checksum comment in the filter list protects against this scenario, any modifications
       will have the result that the checksum no longer matches and Adblock Plus will ignore the data.}}
     </p>
     <p>
-      {{s66 To calculate the checksum the following steps need to be performed:}}
+      {{s37 To calculate the checksum the following steps need to be performed:}}
     </p>
     <ul>
-      <li>{{s67 Remove the existing checksum comment if any.}}</li>
-      <li>{{s68 Encode filter list text using UTF-8 encoding.}}</li>
-      <li>{{s69 Convert all line breaks to Unix style (replace}} <code>\r</code> {{s70 by}} <code>\n</code> {{s71 if present).}}</li>
-      <li>{{s72 Remove empty lines (replace sequences of the}} <code>\n</code> {{s73 character by a single}} <code>\n</code> {{s74 character).}}</li>
-      <li>{{s75 Calculate the base64-encoded MD5 checksum of the text, remove trailing}} <code>=</code> {{s76 characters if any.}}</li>
+      <li>{{s38 Remove the existing checksum comment if any.}}</li>
+      <li>{{s39 Encode filter list text using UTF-8 encoding.}}</li>
+      <li>{{s40 Convert all line breaks to Unix style (replace <code><fix>\r</fix></code> by <code><fix>\n</fix></code> if present).}}</li>
+      <li>{{s41 Remove empty lines (replace sequences of the <code><fix>\n</fix></code> character by a single <code><fix>\n</fix></code> character).}}</li>
+      <li>{{s42 Calculate the base64-encoded MD5 checksum of the text, remove trailing}} <code>=</code> {{s43 characters if any.}}</li>
     </ul>
     <p>
-      {{s77 You can also have a look at the Python-based reference implementations to
+      {{s44 You can also have a look at the Python-based reference implementations to
       <a href="https://hg.adblockplus.org/adblockplus/file/tip/validateChecksum.py">validate a checksum</a> and to
       <a href="https://hg.adblockplus.org/adblockplus/file/tip/addChecksum.py">add a checksum to a file</a>.}}
     </p>
@@ -109,9 +109,9 @@ title=Writing Adblock Plus filters
       <code>! Redirect: http://example.com/list.txt</code>
     </p>
     <p>
-      {{s78 This comment indicates that the filter list has moved to a new download address.}} {{s79 Adblock Plus will ignore any file
-      contents beyond that comment and immediately try downloading from the new address.}} {{s80 In case of success the address
-      of the filter list will be updated in the settings.}} {{s81 This comment is ignored if the new address is the same as the
+      {{s45 This comment indicates that the filter list has moved to a new download address.}} {{s46 Adblock Plus will ignore any file
+      contents beyond that comment and immediately try downloading from the new address.}} {{s47 In case of success the address
+      of the filter list will be updated in the settings.}} {{s48 This comment is ignored if the new address is the same as the
       current address, meaning that it can be used to enforce the "canonical" address of the filter list.}}
     </p>
   </li>
@@ -120,74 +120,74 @@ title=Writing Adblock Plus filters
       <code>! Version: 1234</code>
     </p>
     <p>
-      {{s82 This comment defines a numerical version of the filter list.}} {{s83 This version number will be displayed in issue reports
+      {{s49 This comment defines a numerical version of the filter list.}} {{s50 This version number will be displayed in issue reports
       and can be used to verify that the report refers to the current version of the filter list.}}
     </p>
   </li>
 </ul>
 
-  <h3 id="advanced">{{s84 Advanced features}}</h3>
+  <h3 id="advanced">{{s51 Advanced features}}</h3>
 
-  <p>{{s85 The features described in this section are usually used only by power users and filterlist creators. Feel free to skip it.}}</p>
+  <p>{{s52 The features described in this section are usually used only by power users and filterlist creators. Feel free to skip it.}}</p>
 
-  <h4 id="options">{{s86 Specifying filter options}}</h4>
+  <h4 id="options">{{s53 Specifying filter options}}</h4>
 
-  <p>{{s87 Adblock Plus allows you to specify a number of options to modify the behavior of a filter. You list these options separated with commas after a dollar sign ($) at the end of the filter, for example:}}</p>
+  <p>{{s54 Adblock Plus allows you to specify a number of options to modify the behavior of a filter. You list these options separated with commas after a dollar sign ($) at the end of the filter, for example:}}</p>
 
   <pre>
 */ads/*$script,match-case
 </pre>
 
-  <p>{{s88 Here}} <code>*/ads/*</code> {{s89 is the actual filter and}} <code>script</code> {{s90 and}} <code>match-case</code> {{s91 are its options. Currently the following options are supported:}}</p>
+  <p>{{s55 Here <code><fix>*/ads/*</fix></code> is the actual filter and <code><fix>script</fix></code> and <code><fix>match-case</fix></code> are its options. Currently the following options are supported:}}</p>
 
   <ul>
-    <li>{{s92 Type options: determine which types of elements a filter can block (or whitelist in case of an exception rule). Multiple type options can be specified to indicate that the filter should be applied to several types of elements. Possible types are:}}
+    <li>{{s56 Type options: determine which types of elements a filter can block (or whitelist in case of an exception rule). Multiple type options can be specified to indicate that the filter should be applied to several types of elements. Possible types are:}}
       <ul>
-        <li><code>script</code>{{s93 -- external scripts loaded via HTML script tag}}</li>
-        <li><code>image</code>{{s94 -- regular images, typically loaded via HTML img tag}}</li>
-        <li><code>stylesheet</code>{{s95 -- external CSS stylesheet files}}</li>
-        <li><code>object</code>{{s96 -- content handled by browser plugins, e.g. Flash or Java}}</li>
-        <li><code>xmlhttprequest</code>{{s98 -- requests started by the <a href="{{s98-link http://www.w3.org/TR/XMLHttpRequest/}}">XMLHttpRequest object</a>}}</li>
-        <li><code>object-subrequest</code>{{s99 -- requests started plugins like Flash}}</li>
-        <li><code>subdocument</code>{{s100 -- embedded pages, usually included via HTML frames}}</li>
-        <li><code>document</code>{{s101 -- the page itself (only <a href="#whitelist">exception rules</a> can be applied to the page)}}</li>
-        <li><code>elemhide</code>{{s102 -- for exception rules only, similar to}} <code>document</code> {{s103 but only disables <a href="#elemhide">element hiding rules</a> on the page rather than all filter rules (Adblock Plus 1.2 and higher required)}}</li>
-        <li><code>other</code>{{s104 -- types of requests not covered in the list above}}</li>
+        <li>{{s57 <code><fix>script</fix></code> — external scripts loaded via HTML script tag}}</li>
+        <li>{{s58 <code><fix>image</fix></code> — regular images, typically loaded via HTML img tag}}</li>
+        <li>{{s59 <code><fix>stylesheet</fix></code> — external CSS stylesheet files}}</li>
+        <li>{{s60 <code><fix>object</fix></code> — content handled by browser plugins, e.g. Flash or Java}}</li>
+        <li>{{s62 <code><fix>xmlhttprequest</fix></code> — requests started by the <a href="{{s62-link http://www.w3.org/TR/XMLHttpRequest/}}">XMLHttpRequest object</a>}}</li>
+        <li>{{s63 <code><fix>object-subrequest</fix></code> — requests started plugins like Flash}}</li>
+        <li>{{s64 <code><fix>subdocument</fix></code> — embedded pages, usually included via HTML frames}}</li>
+        <li>{{s65 <code><fix>document</fix></code> — the page itself (only <a href="#whitelist">exception rules</a> can be applied to the page)}}</li>
+        <li>{{s66 <code><fix>elemhide</fix></code> — for exception rules only, similar to <code><fix>document</fix></code> but only disables <a href="#elemhide">element hiding rules</a> on the page rather than all filter rules (Adblock Plus 1.2 and higher required)}}</li>
+        <li>{{s67 <code><fix>other</fix></code> — types of requests not covered in the list above}}</li>
       </ul>
-      {{s105 The type options}} <code>background</code>{{s106 ,}} <code>xbl</code>{{s107 ,}}
-      <code>ping</code> {{s108 and}} <code>dtd</code> {{s109 are outdated and should no
+      {{s68 The type options <code><fix>background</fix></code>, <code><fix>xbl</fix></code>,
+      <code><fix>ping</fix></code> and <code><fix>dtd</fix></code> are outdated and should no
       longer be used.}}
     </li>
-    <li>{{s110 Inverse type options: specify the element types the filter should <strong>not</strong> be applied to. Possible inverse type options:}} <code>~script</code>{{s111 ,}} <code>~image</code>{{s112 ,}} <code>~stylesheet</code>{{s113 ,}} <code>~object</code>{{s114 ,}} <code>~xmlhttprequest</code>{{s115 ,}} <code>~object-subrequest</code>{{s116 ,}} <code>~subdocument</code>{{s117 ,}} <code>~document</code>{{s118 ,}} <code>~elemhide</code>{{s119 ,}} <code>~other</code></li>
-    <li>{{s120 Restriction to third-party/first-party requests: If the}} <code>third-party</code> {{s121 option is specified, the filter is only applied to requests from a different origin than the currently viewed page. Similarly,}} <code>~third-party</code> {{s122 restricts the filter to requests from the same origin as the currently viewed page.}}</li>
-    <li>{{s123 Domain restrictions: The option}} <code>domain=example.com</code> {{s124 means that the filter should only be applied on pages from "example.com" domain. Multiple domains can be specified using "|" as separator: with the option}} <code>domain=example.com|example.net</code> {{s125 the filter will only be applied on pages from "example.com" or "example.net" domains. If a domain name is preceded with "~", the filter should <strong>not</strong> be applied on pages from this domain. For example,}} <code>domain=~example.com</code> {{s126 means that the filter should be applied on pages from any domain but "example.com" and}} <code>domain=example.com|~foo.example.com</code> {{s127 restricts the filter to the "example.com" domain with the exception of "foo.example.com" subdomain.}}</li>
+    <li>{{s69 Inverse type options: specify the element types the filter should <strong>not</strong> be applied to. Possible inverse type options: <code><fix>~script</fix></code>, <code><fix>~image</fix></code>, <code><fix>~stylesheet</fix></code>, <code><fix>~object</fix></code>, <code><fix>~xmlhttprequest</fix></code>, <code><fix>~object-subrequest</fix></code>, <code><fix>~subdocument</fix></code>, <code><fix>~document</fix></code>, <code><fix>~elemhide</fix></code>, <code><fix>~other</fix></code>}}</li>
+    <li>{{s70 Restriction to third-party/first-party requests: If the <code><fix>third-party</fix></code> option is specified, the filter is only applied to requests from a different origin than the currently viewed page. Similarly, <code><fix>~third-party</fix></code> restricts the filter to requests from the same origin as the currently viewed page.}}</li>
+    <li>{{s71 Domain restrictions: The option <code><fix>domain=example.com</fix></code> means that the filter should only be applied on pages from "example.com" domain. Multiple domains can be specified using "|" as separator: with the option <code><fix>domain=example.com|example.net</fix></code> the filter will only be applied on pages from "example.com" or "example.net" domains. If a domain name is preceded with "~", the filter should <strong>not</strong> be applied on pages from this domain. For example, <code><fix>domain=~example.com</fix></code> means that the filter should be applied on pages from any domain but "example.com" and <code><fix>domain=example.com|~foo.example.com</fix></code> restricts the filter to the "example.com" domain with the exception of "foo.example.com" subdomain.}}</li>
     <li>
-      {{s128 Sitekey restrictions: The option}} <code>sitekey=abcdsitekeydcba</code> {{s129 means that the filter should only be applied on pages that provide a public key and a signature which can be verified by that very same public key that is also contained in the filter (but without the trailing =). Multiple sitekeys can be specified using "|" as separator: with the option}} <code>sitekey=abcdsitekeydcba|bcdesitekeyedcb</code> {{s130 the filter will only be applied on pages providing either sitekey "abcdsitekeydcba" or "bcdesitekeyedcb". This is similar to domain restrictions but allows covering scenarios where a single filter should apply to a very large number of domains. Note that sitekey restrictions require <a href="#sitekey_server">modifications on the server-side</a>.}}
+      {{s72 Sitekey restrictions: The option <code><fix>sitekey=abcdsitekeydcba</fix></code> means that the filter should only be applied on pages that provide a public key and a signature which can be verified by that very same public key that is also contained in the filter (but without the trailing =). Multiple sitekeys can be specified using "|" as separator: with the option <code><fix>sitekey=abcdsitekeydcba|bcdesitekeyedcb</fix></code> the filter will only be applied on pages providing either sitekey "abcdsitekeydcba" or "bcdesitekeyedcb". This is similar to domain restrictions but allows covering scenarios where a single filter should apply to a very large number of domains. Note that sitekey restrictions require <a href="#sitekey_server">modifications on the server-side</a>.}}
     </li>
-    <li><code>match-case</code>{{s131 -- makes the filter only apply to addresses with matching letter case, e.g. the filter}} <code>*/BannerAd.gif$match-case</code> {{s132 will block}} <code>http://example.com/BannerAd.gif</code> {{s133 but not}} <code>http://example.com/bannerad.gif</code>{{s134 .}}</li>
-    <li><code>collapse</code>{{s135 -- this option will override the global "Hide placeholders of blocked elements" option and make sure the filter always hides the element. Similarly the}} <code>~collapse</code> {{s136 option will make sure the filter never hides the element.}}</li>
+    <li>{{s73 <code><fix>match-case</fix></code> — makes the filter only apply to addresses with matching letter case, e.g. the filter <code><fix>*/BannerAd.gif$match-case</fix></code> will block <code><fix>http://example.com/BannerAd.gif</fix></code> but not <code><fix>http://example.com/bannerad.gif</fix></code>.}}</li>
+    <li>{{s74 <code><fix>collapse</fix></code> — this option will override the global "Hide placeholders of blocked elements" option and make sure the filter always hides the element. Similarly the <code><fix>~collapse</fix></code> option will make sure the filter never hides the element.}}</li>
     <li>
-      <code>donottrack</code>{{s137 -- for any address matching a blocking rule with
+      {{s75 <code><fix>donottrack</fix></code> — for any address matching a blocking rule with
       this option and not matching any exception rules with this option a
       <a href="http://donottrack.us/">Do-Not-Track header</a> will be sent (requires
-      Adblock Plus 1.3.5 or higher).}} {{s138 For backwards compatibility it is recommended
+      Adblock Plus 1.3.5 or higher).}} {{s76 For backwards compatibility it is recommended
       to use this option in combination with contradicting type options, this will prevent this
-      filter from blocking anything in earlier Adblock Plus versions:}}
-      <code>*$donottrack,image,~image</code>
+      filter from blocking anything in earlier Adblock Plus versions:
+      <code><fix>*$donottrack,image,~image</fix></code>}}
     </li>
   </ul>
 
-  <h4 id="regexps">{{s139 Using regular expressions}}</h4>
+  <h4 id="regexps">{{s77 Using regular expressions}}</h4>
 
-  <p>{{s141 If you want even more control about what your filters match and what they don't match, you can use regular expressions. For example the filter}} <code>/banner\d+/</code> {{s142 will match}} <code>banner123</code> {{s143 and}} <code>banner321</code> {{s144 but not}} <code>banners</code>{{s145 . You can check out <a href="{{s145-link https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern}}">documentation on regular expressions</a> to learn how to write them.}}</p>
+  <p>{{s79 If you want even more control about what your filters match and what they don't match, you can use regular expressions. For example the filter <code><fix>/banner\d+/</fix></code> will match <code><fix>banner123</fix></code> and <code><fix>banner321</fix></code> but not <code><fix>banners</fix></code>. You can check out <a href="{{s79-link https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern}}">documentation on regular expressions</a> to learn how to write them.}}</p>
 
-  <p>{{s146 <em>Note</em>: For performance reasons it is recommended not to use regular expressions if they can be avoided.}}</p>
+  <p>{{s80 <em>Note</em>: For performance reasons it is recommended not to use regular expressions if they can be avoided.}}</p>
 
-  <h2 id="elemhide">{{s147 Element hiding}}</h2>
+  <h2 id="elemhide">{{s81 Element hiding}}</h2>
 
-  <h3 id="elemhide_basic">{{s148 Basic rules}}</h3>
+  <h3 id="elemhide_basic">{{s82 Basic rules}}</h3>
 
-  <p>{{s149 Sometimes you will find advertisements that can't be blocked because they are embedded as text in the web page itself. If you look at the source code of the web page you might find something like this:}}</p>
+  <p>{{s83 Sometimes you will find advertisements that can't be blocked because they are embedded as text in the web page itself. If you look at the source code of the web page you might find something like this:}}</p>
 
   <pre>&lt;div class=&quot;textad&quot;&gt;
 Cheapest tofu, only here and now!
@@ -200,64 +200,64 @@ Only here you get the best tofu!
 &lt;/textad&gt;
 </pre>
 
-  <p>{{s150 You need to download the web page so you will necessarily download the advertisements. All you can do here is to hide the advertisement so you don't need to see it. That's what element hiding is meant for.}}</p>
+  <p>{{s84 You need to download the web page so you will necessarily download the advertisements. All you can do here is to hide the advertisement so you don't need to see it. That's what element hiding is meant for.}}</p>
 
-  <p>{{s151 The first advertisement above is contained inside a div element with class attribute "textad". The following rule will hide exactly this combination:}} <code>##div.textad</code>{{s152 . Here ## marks an element hiding rule while the rest is a selector identifying the elements that need to be hidden. You can hide elements by their id attribute similarly,}} <code>##div#sponsorad</code> {{s153 will hide the second advertisement. You don't need to specify the element name, the rule}} <code>##*#sponsorad</code> {{s154 will work just as well. And you can hide elements by element name only, e.g.}} <code>##textad</code> {{s155 for the third advertisement.}}</p>
+  <p>{{s85 The first advertisement above is contained inside a div element with class attribute "textad". The following rule will hide exactly this combination: <code><fix>##div.textad</fix></code>. Here ## marks an element hiding rule while the rest is a selector identifying the elements that need to be hidden. You can hide elements by their id attribute similarly, <code><fix>##div#sponsorad</fix></code> will hide the second advertisement. You don't need to specify the element name, the rule <code><fix>##*#sponsorad</fix></code> will work just as well. And you can hide elements by element name only, e.g. <code><fix>##textad</fix></code> for the third advertisement.}}</p>
 
-  <p>{{s156 The <a href="elemhidehelper">Element Hiding Helper extension</a> helps selecting the correct element and writing the corresponding rule without having to view the source code of the page. Basic HTML knowledge is useful nevertheless.}}</p>
+  <p>{{s86 The <a href="elemhidehelper">Element Hiding Helper extension</a> helps selecting the correct element and writing the corresponding rule without having to view the source code of the page. Basic HTML knowledge is useful nevertheless.}}</p>
 
-  <p>{{s157 <em>Note</em>: Element hiding works very differently from normal filters. This has the implication that no wildcards are supported in element hiding rules.}}</p>
+  <p>{{s87 <em>Note</em>: Element hiding works very differently from normal filters. This has the implication that no wildcards are supported in element hiding rules.}}</p>
 
-  <h3 id="elemhide_domains">{{s158 Limiting rules to certain domains}}</h3>
+  <h3 id="elemhide_domains">{{s88 Limiting rules to certain domains}}</h3>
 
-  <p>{{s159 Usually you want to hide a specific ad on one specific site, you don't want your rule to be applied on other sites. For example the rule}} <code>##*.sponsor</code> {{s160 might hide valid code on some sites. But if you write it as}} <code>example.com##*.sponsor</code> {{s161 it will be applied on}} <code>http://example.com/</code> {{s162 and}} <code>http://something.example.com/</code> {{s163 but not on}} <code>http://example.org/</code>{{s164 . You can also specify multiple domains — simply separate them with commas:}} <code>domain1.example,domain2.example,domain3.example##*.sponsor</code>{{s165 .}}</p>
+  <p>{{s89 Usually you want to hide a specific ad on one specific site, you don't want your rule to be applied on other sites. For example the rule <code><fix>##*.sponsor</fix></code> might hide valid code on some sites. But if you write it as <code><fix>example.com##*.sponsor</fix></code> it will be applied on <code><fix>http://example.com/</fix></code> and <code><fix>http://something.example.com/</fix></code> but not on <code><fix>http://example.org/</fix></code>. You can also specify multiple domains — simply separate them with commas: <code><fix>domain1.example,domain2.example,domain3.example##*.sponsor</fix></code>.}}</p>
 
-  <p>{{s166 If a domain name is preceded with "~", the rule will <strong>not</strong> be applied on pages from this domain (requires Adblock Plus 1.1 or higher). For example,}} <code>~example.com##*.sponsor</code> {{s167 will be be applied on pages from any domain but "example.com" and}} <code>example.com,~foo.example.com##*.sponsor</code> {{s168 makes the rule apply on "example.com" domain with the exception of "foo.example.com" subdomain.}}</p>
+  <p>{{s90 If a domain name is preceded with "~", the rule will <strong>not</strong> be applied on pages from this domain (requires Adblock Plus 1.1 or higher). For example, <code><fix>~example.com##*.sponsor</fix></code> will be be applied on pages from any domain but "example.com" and <code><fix>example.com,~foo.example.com##*.sponsor</fix></code> makes the rule apply on "example.com" domain with the exception of "foo.example.com" subdomain.}}</p>
 
-  <p>{{s169 <em>Note</em>: Due to the way how element hiding is implemented, you really can only limit it to full domain names. You cannot use any other part of the address and you cannot use}} <code>domain</code> {{s170 as a replacement for}} <code>domain.example,domain.test</code>{{s171 .}}</p>
+  <p>{{s91 <em>Note</em>: Due to the way how element hiding is implemented, you really can only limit it to full domain names. You cannot use any other part of the address and you cannot use <code><fix>domain</fix></code> as a replacement for <code><fix>domain.example,domain.test</fix></code>.}}</p>
 
-  <p>{{s172 <em>Note</em>: Element hiding rules with domain limitation can be used to hide browser's user interface elements as well. For example the filter rule}} <code>browser##menuitem#javascriptConsole</code> {{s173 will hide the JavaScript Console entry in Firefox's Tools menu.}}</p>
+  <p>{{s92 <em>Note</em>: Element hiding rules with domain limitation can be used to hide browser's user interface elements as well. For example the filter rule <code><fix>browser##menuitem#javascriptConsole</fix></code> will hide the JavaScript Console entry in Firefox's Tools menu.}}</p>
 
-  <h3 id="elemhide_attributes">{{s174 Attribute selectors}}</h3>
+  <h3 id="elemhide_attributes">{{s93 Attribute selectors}}</h3>
 
-  <p>{{s175 Some advertisers don't make it easy for you — their text advertisements have neither an id nor a class attribute. You can use other attributes to hide those, for example}} <code>##table[width=&quot;80%&quot;]</code> {{s176 will hide tables with width attribute set to 80%. If you don't want to specify the full value of the attribute,}} <code>##div[title*=&quot;adv&quot;]</code> {{s177 will hide all div elements with title attribute containing the string "adv". You can also check the beginning and the end of an attribute, for example}} <code>##div[title^=&quot;adv&quot;][title$=&quot;ert&quot;]</code> {{s178 will hide div elements with title starting with "adv" and ending with "ert". As you see, you can also use multiple conditions —}} <code>table[width=&quot;80%&quot;][bgcolor=&quot;white&quot;]</code> {{s179 will match tables with width attribute set to 80% and bgcolor attribute set to white.}}</p>
+  <p>{{s94 Some advertisers don't make it easy for you — their text advertisements have neither an id nor a class attribute. You can use other attributes to hide those, for example <code><fix>##table[width="80%"]</fix></code> will hide tables with width attribute set to 80%. If you don't want to specify the full value of the attribute, <code><fix>##div[title*="adv"]</fix></code> will hide all div elements with title attribute containing the string "adv". You can also check the beginning and the end of an attribute, for example <code><fix>##div[title^="adv"][title$="ert"]</fix></code> will hide div elements with title starting with "adv" and ending with "ert". As you see, you can also use multiple conditions — <code><fix>table[width="80%"][bgcolor="white"]</fix></code> will match tables with width attribute set to 80% and bgcolor attribute set to white.}}</p>
 
-  <h3 id="elemhide_css">{{s180 Advanced selectors}}</h3>
+  <h3 id="elemhide_css">{{s95 Advanced selectors}}</h3>
 
-  <p>{{s182 In general, any CSS selector supported by Firefox can be used for element hiding. For example the following rule will hide anything following a div element with class "adheader":}} <code>##div.adheader + *</code>{{s183 . For a full list of CSS list see <a href="{{s183-link http://www.w3.org/TR/css3-selectors/}}">W3C CSS specification</a> (note that not all selectors are supported by Firefox yet).}}</p>
+  <p>{{s97 In general, any CSS selector supported by Firefox can be used for element hiding. For example the following rule will hide anything following a div element with class "adheader": <code><fix>##div.adheader + *</fix></code>. For a full list of CSS list see <a href="{{s97-link http://www.w3.org/TR/css3-selectors/}}">W3C CSS specification</a> (note that not all selectors are supported by Firefox yet).}}</p>
 
-  <p>{{s184 <em>Note</em>: This functionality is for advanced users only, you should be comfortable with CSS selectors to use it. Adblock Plus won't be able to check the syntax of the selector you are adding, if you use invalid CSS syntax you might break other (valid) rules you have. Check JavaScript Console for CSS errors.}}</p>
+  <p>{{s98 <em>Note</em>: This functionality is for advanced users only, you should be comfortable with CSS selectors to use it. Adblock Plus won't be able to check the syntax of the selector you are adding, if you use invalid CSS syntax you might break other (valid) rules you have. Check JavaScript Console for CSS errors.}}</p>
 
-<h3 id="elemhide_exceptions">{{s185 Exception rules}}</h3>
+<h3 id="elemhide_exceptions">{{s99 Exception rules}}</h3>
 
 <p>
-  {{s186 Exception rules can disable existing rules on particular domains.}} {{s187 These are mostly
+  {{s100 Exception rules can disable existing rules on particular domains.}} {{s101 These are mostly
   useful to filter subscription authors who are extending another filter subscription that they
-  cannot change.}} {{s188 For example, the rule}} <code>##div.textad</code> {{s189 can be
-  disabled on}} <code>example.com</code> {{s190 using the exception rule}}
-  <code>example.com#@#div.textad</code>{{s191 .}} {{s192 The combination of these two
-  rules has exactly the same effect as the single rule}}
-  <code>~example.com##div.textad</code>{{s193 .}} {{s194 It is recommended that you use
+  cannot change.}} {{s102 For example, the rule <code><fix>##div.textad</fix></code> can be
+  disabled on <code><fix>example.com</fix></code> using the exception rule
+  <code><fix>example.com#@#div.textad</fix></code>.}} {{s103 The combination of these two
+  rules has exactly the same effect as the single rule
+  <code><fix>~example.com##div.textad</fix></code>.}} {{s104 It is recommended that you use
   exception rules only when you cannot change an overly general element hiding rule, in all the
   other cases limiting this rule to the necessary domains is preferable.}}
 </p>
 
-  <h3 id="elemhide_simplified">{{s195 Simplified element hiding syntax}}</h3>
+  <h3 id="elemhide_simplified">{{s105 Simplified element hiding syntax}}</h3>
 
-  <p>{{s196 Adblock Plus supports simplified element hiding syntax (e.g.}} <code>#div(id=foo)</code>{{s197 ) for backwards compatibility only. Using this syntax is discouraged, usual CSS selectors are preferred. Support for this syntax might be removed at some point.}}</p>
+  <p>{{s106 Adblock Plus supports simplified element hiding syntax (e.g. <code><fix>#div(id=foo)</fix></code>) for backwards compatibility only. Using this syntax is discouraged, usual CSS selectors are preferred. Support for this syntax might be removed at some point.}}</p>
 
-  <h2 id="sitekey_server">{{s198 Implementing a sitekey on the server}}</h2>
+  <h2 id="sitekey_server">{{s107 Implementing a sitekey on the server}}</h2>
 
 <p>
-  {{s199 For a <a href="#options">sitekey-restricted filter</a> to apply, a webpage needs to return base64-encoded versions of the public key and a signature which Adblock Plus can validate. Currently, this means including them in both the HTTP response header (}}<code>X-Adblock-Key: abcdpublickeydcba_abcdsignaturedcba</code>{{s200 ) and the root tag of the document (}}<code>&lt;html data-adblockkey=&quot;abcdpublickeydcba_abcdsignaturedcba&quot;&gt;</code>{{s201 ).}}
+  {{s108 For a <a href="#options">sitekey-restricted filter</a> to apply, a webpage needs to return base64-encoded versions of the public key and a signature which Adblock Plus can validate. Currently, this means including them in both the HTTP response header (<code><fix>X-Adblock-Key: abcdpublickeydcba_abcdsignaturedcba</fix></code>) and the root tag of the document (<code><fix>&lt;html data-adblockkey="abcdpublickeydcba_abcdsignaturedcba"&gt;</fix></code>).}}
 </p>
 
 <p>
-  {{s202 First you need to create a private RSA key (preferably 512 bit to keep the transfer volume low) and then a DER representation of the public key.}}
+  {{s109 First you need to create a private RSA key (preferably 512 bit to keep the transfer volume low) and then a DER representation of the public key.}}
 </p>
 
 <p>
-  {{s203 The data used for creating the signature is a concatenated list of request variables (namely URI, host and user agent) separated by the}} <code>NUL</code> {{s204 character "\0". For example:}}
+  {{s110 The data used for creating the signature is a concatenated list of request variables (namely URI, host and user agent) separated by the <code><fix>NUL</fix></code> character "\0". For example:}}
 </p>
 
 <pre>
@@ -265,5 +265,5 @@ Only here you get the best tofu!
 </pre>
 
 <p>
-  {{s205 Finally, generate the signature for this string by using the signature algorithm SEC_OID_ISO_SHA_WITH_RSA_SIGNATURE (default when using OpenSSL).}}
+  {{s111 Finally, generate the signature for this string by using the signature algorithm SEC_OID_ISO_SHA_WITH_RSA_SIGNATURE (default when using OpenSSL).}}
 </p>

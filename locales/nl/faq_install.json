@@ -9,21 +9,18 @@
     "message": "Bent u een beheerder die Adblock Plus aan alle gebruikers beschikbaar stelt? Dan moet u Adblock Plus in de browser's programmamap installeren. Helaas is dit bij SeaMonkey de enige mogelijkheid, in Firefox kunt u een submap <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code> aanmaken in zijn <code>extensions</code> map en de inhoud van adbloxkplus.xpi daar uitpakken (het is een normaal ZIP bestand)."
   },
   "s3": {
-    "message": "Nu moet u de standaard instellingen voor Adblock Plus doen. Zoek het bestamd adblockplus.js (in Firefox is dit <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code> en in SeaMonkey <code>defaults/pref/adblockplus.js</code>) en bewerkt het. U wilt waarschijnlijk niet dat uw gebruikers last hebben van het Adblock Plus pictogram, dus u kunt <a>extensions.adblockplus.showintoolbar</a> en <a>extensions.adblockplus.showinstatusbar</a> op <code>false</code>zetten. Als u niet wilt dat de gebruikers geadviseerd wordt om een filterabonnement te installeren als ze Firefox voor het eerst opstarten, kunt u ook"
+    "message": "Nu moet u de standaard instellingen voor Adblock Plus doen. Zoek het bestamd adblockplus.js (in Firefox is dit <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code> en in SeaMonkey <code>defaults/pref/adblockplus.js</code>) en bewerkt het. U wilt waarschijnlijk niet dat uw gebruikers last hebben van het Adblock Plus pictogram, dus u kunt <a>extensions.adblockplus.showintoolbar</a> en <a>extensions.adblockplus.showinstatusbar</a> op <code>false</code>zetten. Als u niet wilt dat de gebruikers geadviseerd wordt om een filterabonnement te installeren als ze Firefox voor het eerst opstarten, kunt u ook <a>{1}</a> op \"2.0\" instellen."
   },
   "s4": {
-    "message": "op \"2.0\" instellen."
-  },
-  "s5": {
     "message": "Tenslotte wilt u misschien er voor zorgen dat iedereen dezelfde filterlijst gebruikt. Hiervoor moet u de standaardwaarde voor <a>extensions.adblockplus.patternsfile</a>wijzigen. Dit bestand staat standaard in de gebruiker's profielmap (relatief pad), gebruik een absoluut pad om een vaste locatie voor iedereen in te stellen. Let er op dat iedereen het bestand kan lezen, maar dat u de enige bent die het bestand kan schrijven — nu kunt u de browser starten en enkele filters/abonnementen toevoegen die iedereen moet gebruiken. De wijzigingen die gebruikers maken op de filterlijst zullen niet bewaard worden, omdat ze het bestand niet mogen schrijven."
   },
-  "s6": {
+  "s5": {
     "message": "Als u Adblock Plus echt onzichtbaar wilt maken in de gebruikersinterface, kunt u ook een instelling toevoegen om <a>het uit het Extra menu te verwijderen</a> en <a>uit het contextmenu</a>."
   },
-  "s7": {
+  "s6": {
     "message": "Hoe installeer ik Adblock Plus in K-Meleon?"
   },
-  "s8": {
+  "s7": {
     "message": "K-Meleon builds van Adblock Plus en installatie instructies kunt u <a>hier</a> vinden."
   }
 }

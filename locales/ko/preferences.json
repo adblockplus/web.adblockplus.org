@@ -26,14 +26,8 @@
   "removed_preferencesTitle": {
     "message": "제거된 설정"
   },
-  "s1": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
   "s2": {
-    "message": "다음의 표는 애드블록 플러스에서 사용되는 모든 설정입니다. 이 설정은"
-  },
-  "s3": {
-    "message": "를 통해 보거나 변경할 수 있습니다."
+    "message": "다음의 표는 애드블록 플러스에서 사용되는 모든 설정입니다. 이 설정은 <a>{1}</a>를 통해 보거나 변경할 수 있습니다."
   },
   "enabled-s1": {
     "message": "\"Adblock Plus 사용함\" 옵션 값"
@@ -78,10 +72,7 @@
     "message": "다른 것 — 작동 없음"
   },
   "defaultstatusbaraction-s1": {
-    "message": "상태 표시줄의 아이콘을 클릭했을 때 실행되는 동작을 정의합니다. 설정 가능한 값은 위의"
-  },
-  "defaultstatusbaraction-s2": {
-    "message": "를 참고하십시오."
+    "message": "상태 표시줄의 아이콘을 클릭했을 때 실행되는 동작을 정의합니다. 설정 가능한 값은 위의 <a>{1}</a>를 참고하십시오."
   },
   "sidebar_key-s2": {
     "message": "차단 가능한 항목을 열 수 있는 단축키를 정의합니다. 이 설정은 empty이거나 <em>modifier1 modifier2 key</em> 형태입니다. 인식되는 변경자(modifiers) : Shift, Accel (default accelerator key, e.g. Ctrl on Windows, Command on Mac OS X), Ctrl/Control, Alt, Meta, Key는 하나의 문자이거나 F7 또는 오른쪽 방향키처럼 특별한 키일 수 있습니다. (특별한 키의 목록의 경우 <a>nsIDOMKeyEvent 인터페이스</a>를 참고하십시오)."
@@ -93,21 +84,15 @@
     "message": "<em>참고 </em>: 이 설정은 브라우저를 다시 시작해야 적용됩니다."
   },
   "filters_key-s1": {
-    "message": "필터 설정 대화상자를 열 수 있는 키보드 단축키를 정의합니다. 가능한 값에 대한 설명은"
+    "message": "필터 설정 대화상자를 열 수 있는 키보드 단축키를 정의합니다. 가능한 값에 대한 설명은 <a>{1}</a>를 참고하십시오."
   },
   "filters_key-s2": {
-    "message": "를 참고하십시오."
-  },
-  "filters_key-s3": {
     "message": "<em>참고 </em>: 이 설정은 브라우저를 다시 시작해야 적용이 됩니다."
   },
   "enable_key-s1": {
-    "message": "애드블록 플러스 사용/중지에 대한 단축키를 정의합니다. 사용할 수 있는 값은 위에 있는"
+    "message": "애드블록 플러스 사용/중지에 대한 단축키를 정의합니다. 사용할 수 있는 값은 위에 있는 <a>{1}</a>를 참고하십시오."
   },
   "enable_key-s2": {
-    "message": "를 참고하십시오."
-  },
-  "enable_key-s3": {
     "message": "<em>참고 </em>: 이 설정은 브라우저를 다시 시작해야 적용이 됩니다."
   },
   "flash_scrolltoitem-s1": {
@@ -138,25 +123,16 @@
     "message": "문제 보고서를 전송하기 위한 키보드 단축키를 정의합니다."
   },
   "sendReport_key-s2": {
-    "message": "설정 값에 대한 설명은"
+    "message": "설정 값에 대한 설명은<a>{1}</a>를 참고하십시오."
   },
   "sendReport_key-s3": {
-    "message": "를 참고하십시오."
-  },
-  "sendReport_key-s4": {
     "message": "<em>참고 </em>: 이 설정은 브라우저를 다시 시작해야 적용이 됩니다."
   },
   "data_directory-s1": {
-    "message": "애드블록 플러스의 데이터가 그것의 디렉터리에 저장됩니다. 이것은 절대 경로이거나 사용자의 프로필에 대한 디렉터리 상대 위치일 수 있습니다."
-  },
-  "data_directory-s2": {
-    "message": "설정이 되어 있다면 그것은 파일의 위치에 덮어씁니다. 하지만 다른 파일은 이 디렉터리에 있습니다."
+    "message": "애드블록 플러스의 데이터가 그것의 디렉터리에 저장됩니다. 이것은 절대 경로이거나 사용자의 프로필에 대한 디렉터리 상대 위치일 수 있습니다. <a>{1}</a> 설정이 되어 있다면 그것은 파일의 위치에 덮어씁니다. 하지만 다른 파일은 이 디렉터리에 있습니다."
   },
   "subscriptions_exceptionscheckbox-s1": {
-    "message": "만약"
-  },
-  "subscriptions_exceptionscheckbox-s2": {
-    "message": " <a>비침입형 광고</a>\n의 필터 목록은 특별하게 처리되며 사용자 인터페이스의 체크박스로서 보이게 됩니다."
+    "message": "만약 <code>{1}</code> <a>비침입형 광고</a>\n의 필터 목록은 특별하게 처리되며 사용자 인터페이스의 체크박스로서 보이게 됩니다."
   },
   "subscriptions_autoupdate-s1": {
     "message": "구독 필터를 자동으로 업데이트할 것인지를 정의합니다."
@@ -180,25 +156,16 @@
     "message": "최근에 제출된 문제 보고서에 대한 JSON로 인코드된 자료 (보고서의 주소, 보고된 웹 사이트, 전송의 주소, 제출 시간)"
   },
   "hideContributeButton-s1": {
-    "message": "사용자가 공헌 버튼을 숨기기 위해 선택했다면"
-  },
-  "hideContributeButton-s2": {
-    "message": "값이 지정됩니다."
+    "message": "사용자가 공헌 버튼을 숨기기 위해 선택했다면 <code>{1}</code> 값이 지정됩니다."
   },
   "blockableItemsSize-s1": {
     "message": "차단 가능 목록의 크기를 기억함 (사이드바 형태일 때는 가로 길이만 오직 관련있음)."
   },
   "subscriptions_fallbackurl-s1": {
-    "message": "구독 필터의 다운로드가 지정된 시도 횟수 실패하면 찾게 되는 스크립트의 주소 (아래의"
-  },
-  "subscriptions_fallbackurl-s2": {
-    "message": "참고). %는 질문에서 구독 필터의 주소에 의해 교체됩니다. 구독 필터의 새로운 위치가 알려지면 그 스크립트는 \"301 http://example.com/new_list.txt\"와 같은 메시지를 출력합니다."
+    "message": "구독 필터의 다운로드가 지정된 시도 횟수 실패하면 찾게 되는 스크립트의 주소 (아래의 <a>{1}</a> 참고). %는 질문에서 구독 필터의 주소에 의해 교체됩니다. 구독 필터의 새로운 위치가 알려지면 그 스크립트는 \"301 http://example.com/new_list.txt\"와 같은 메시지를 출력합니다."
   },
   "subscriptions_fallbackerrors-s1": {
-    "message": "대체 스크립트(위의"
-  },
-  "subscriptions_fallbackerrors-s2": {
-    "message": "참고)가 구독 필터의 새로운 주소를 찾기 전에 구독 필터의 다운로드 시도 실패 횟수 설정"
+    "message": "대체 스크립트(위의 <a>{1}</a> 참고)가 구독 필터의 새로운 주소를 찾기 전에 구독 필터의 다운로드 시도 실패 횟수 설정"
   },
   "subscriptions_listurl-s1": {
     "message": "구독 필터의 전체 목록을 다운로드할 주소"
@@ -271,6 +238,9 @@
   },
   "hideimagemanager-s1": {
     "message": "애드블록 플러스 2.1 이상에서는 사용되지 않습니다."
+  },
+  "s2-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "sidebar_key-s2-link": {
     "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"

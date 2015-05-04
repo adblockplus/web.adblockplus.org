@@ -26,14 +26,8 @@
   "removed_preferencesTitle": {
     "message": "已經移除的設定"
   },
-  "s1": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
   "s2": {
-    "message": "下面的表格列出了所有 Adblock Plus 的偏好設定。這些設定都可以經由"
-  },
-  "s3": {
-    "message": "檢視並修改。"
+    "message": "下面的表格列出了所有 Adblock Plus 的偏好設定。這些設定都可以經由 <a>{1}</a> 檢視並修改。"
   },
   "enabled-s1": {
     "message": "「啟用 Adblock Plus」的設定值"
@@ -78,10 +72,7 @@
     "message": "其他值則沒有作用"
   },
   "defaultstatusbaraction-s1": {
-    "message": "定義點擊狀態列圖示時的動作。完整的設定值請參考"
-  },
-  "defaultstatusbaraction-s2": {
-    "message": "。"
+    "message": "定義點擊狀態列圖示時的動作。完整的設定值請參考 <a>{1}</a> 。"
   },
   "sidebar_key-s2": {
     "message": "定義用來開啟「本頁可阻擋項目」的快捷鍵。這個值可以設定成 <em>modifier1 modifier2 key</em> 或留白。可用的 modifier 有 Shift，Accel(預設的快捷鍵按鈕，如 Windows 上的 Ctrl ， MAC OS X 上的 Command)，Ctrl/Control，Alt，Meta。也可以設定成其他按鍵像是 F7 或右方向鍵等等 (請參考 <a>nsIDOMKeyEvent interface</a> 取得所有的特殊鍵)。"
@@ -93,21 +84,15 @@
     "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
   },
   "filters_key-s1": {
-    "message": "定義開啟條件偏好設定視窗的快捷鍵。請參照"
+    "message": "定義開啟條件偏好設定視窗的快捷鍵。請參照 <a>{1}</a> 以取得所有可用的值。"
   },
   "filters_key-s2": {
-    "message": "以取得所有可用的值。"
-  },
-  "filters_key-s3": {
     "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
   },
   "enable_key-s1": {
-    "message": "定義啟用/停用 Adblock Plus 的快捷鍵。完整的設定值請參考"
+    "message": "定義啟用/停用 Adblock Plus 的快捷鍵。完整的設定值請參考 <a>{1}</a> 。"
   },
   "enable_key-s2": {
-    "message": "。"
-  },
-  "enable_key-s3": {
     "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
   },
   "flash_scrolltoitem-s1": {
@@ -138,25 +123,16 @@
     "message": "定義錯誤回報器的快捷鍵。"
   },
   "sendReport_key-s2": {
-    "message": "完整的設定值請參考"
+    "message": "完整的設定值請參考 <a>{1}</a> 。"
   },
   "sendReport_key-s3": {
-    "message": "。"
-  },
-  "sendReport_key-s4": {
     "message": "<em>備註</em>：您需要重新啟動瀏覽器以便設定值生效。"
   },
   "data_directory-s1": {
-    "message": "Adblock Plus 使用這個資料夾來儲存資料。它可以是絕對路徑或者是個人設定檔中的相對路徑。若"
-  },
-  "data_directory-s2": {
-    "message": "設定中的資料夾含有其他檔案，則會強制複寫一個 patterns.ini 。"
+    "message": "Adblock Plus 使用這個資料夾來儲存資料。它可以是絕對路徑或者是個人設定檔中的相對路徑。若 <a>{1}</a> 設定中的資料夾含有其他檔案，則會強制複寫一個 patterns.ini 。"
   },
   "subscriptions_exceptionscheckbox-s1": {
-    "message": "若設為"
-  },
-  "subscriptions_exceptionscheckbox-s2": {
-    "message": "，則 <a>非侵入式廣告</a> 列表將不會在條件集列表中出現，只會界面上顯示一個選取方塊。"
+    "message": "若設為 <code>{1}</code>，則 <a>非侵入式廣告</a> 列表將不會在條件集列表中出現，只會界面上顯示一個選取方塊。"
   },
   "subscriptions_autoupdate-s1": {
     "message": "定義條件集訂閱列表是否將自動更新。"
@@ -180,25 +156,16 @@
     "message": "以 JSON 編碼的最新錯誤回報資料 (包含回報的頁面，網址，以及送交的時間)"
   },
   "hideContributeButton-s1": {
-    "message": "若使用者選擇隱藏贊助按鈕，則該值為"
-  },
-  "hideContributeButton-s2": {
-    "message": "。"
+    "message": "若使用者選擇隱藏贊助按鈕，則該值為 <code>{1}</code>。"
   },
   "blockableItemsSize-s1": {
     "message": "已儲存的可阻擋項目列表大小 (寬度的值只在設定為側邊欄時有效)"
   },
   "subscriptions_fallbackurl-s1": {
-    "message": "當過濾條件集下載失敗至一定次數時，將會查詢含有其他網址的指令 (請參考"
-  },
-  "subscriptions_fallbackurl-s2": {
-    "message": ")。 %s 會被發生問題的條件集網址替換。如果發現該條件集的新網址，則該指令會印出類似 \"301 http://example.com/new_list.txt\" 的訊息。"
+    "message": "當過濾條件集下載失敗至一定次數時，將會查詢含有其他網址的指令 (請參考 <a>{1}</a> )。 %s 會被發生問題的條件集網址替換。如果發現該條件集的新網址，則該指令會印出類似 \"301 http://example.com/new_list.txt\" 的訊息。"
   },
   "subscriptions_fallbackerrors-s1": {
-    "message": "當條件集下載失敗幾次，才要查詢該條件集的新網址 (請參考"
-  },
-  "subscriptions_fallbackerrors-s2": {
-    "message": ")。請注意如果下載失敗， Adblock Plus 會在一天之內重試好幾次。"
+    "message": "當條件集下載失敗幾次，才要查詢該條件集的新網址 (請參考 <a>{1}</a> )。請注意如果下載失敗， Adblock Plus 會在一天之內重試好幾次。"
   },
   "subscriptions_listurl-s1": {
     "message": "完整的條件集訂閱列表。"
@@ -271,6 +238,9 @@
   },
   "hideimagemanager-s1": {
     "message": "Adblock Plus 2.1 以上版本不再使用"
+  },
+  "s2-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "sidebar_key-s2-link": {
     "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"

@@ -26,14 +26,8 @@
   "removed_preferencesTitle": {
     "message": "Preferencias eliminadas"
   },
-  "s1": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
   "s2": {
-    "message": "La siguiente tabla detalla y explica todas las preferencias utilizadas por Adblock Plus, que pueden visualizarse y modificarse a través de"
-  },
-  "s3": {
-    "message": "."
+    "message": "La siguiente tabla detalla y explica todas las preferencias utilizadas por Adblock Plus, que pueden visualizarse y modificarse a través de <a>{1}</a>."
   },
   "enabled-s1": {
     "message": "Valor de la opción \"Activar Adblock Plus\""
@@ -78,10 +72,7 @@
     "message": "cualquier otro — no hacer nada"
   },
   "defaultstatusbaraction-s1": {
-    "message": "Determina la acción a ejecutar cuando se pulsa el icono de la barra de estado. Puede ver una lista de posibles valores en"
-  },
-  "defaultstatusbaraction-s2": {
-    "message": "."
+    "message": "Determina la acción a ejecutar cuando se pulsa el icono de la barra de estado. Puede ver una lista de posibles valores en <a>{1}</a>."
   },
   "sidebar_key-s2": {
     "message": "Determina el atajo de teclado a usar para abrir la ventana de elementos bloqueables. Esta preferencia puede estar vacía o tener el siguiente formato <em>modificador1 modificador2 tecla</em>. Los modificadores reconocidos son: Shift, Accel (tecla de aceleración preterminada, como Ctrl en Windows, Comando en Mac OS X), Ctrl/Control, Alt, Meta. La tecla puede ser una letra o una tecla especial como F7 o FLECHA DERECHA (puede buscar en <a>la interfaz de nsIDOMKeyEvent</a> la lista de teclas especiales)."
@@ -93,21 +84,15 @@
     "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   },
   "filters_key-s1": {
-    "message": "Define el atajo de teclado a usar para abrir la ventana de preferencias de filtros. Para ver una descripción de los posibles valores puede consultar"
+    "message": "Define el atajo de teclado a usar para abrir la ventana de preferencias de filtros. Para ver una descripción de los posibles valores puede consultar <a>{1}</a>."
   },
   "filters_key-s2": {
-    "message": "."
-  },
-  "filters_key-s3": {
     "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   },
   "enable_key-s1": {
-    "message": "Determina el atajo de teclado a utilizar para activar/desactivar Adblock Plus. Para una descripción de sus posibles valores puede consultar"
+    "message": "Determina el atajo de teclado a utilizar para activar/desactivar Adblock Plus. Para una descripción de sus posibles valores puede consultar <a>{1}</a>."
   },
   "enable_key-s2": {
-    "message": "."
-  },
-  "enable_key-s3": {
     "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   },
   "flash_scrolltoitem-s1": {
@@ -138,25 +123,16 @@
     "message": "Determina el atajo de teclado a utilizar para enviar informes de errores."
   },
   "sendReport_key-s2": {
-    "message": "Para ver la descripción de sus posibles valores consulte"
+    "message": "Para ver la descripción de sus posibles valores consulte <a>{1}</a>."
   },
   "sendReport_key-s3": {
-    "message": "."
-  },
-  "sendReport_key-s4": {
     "message": "<em>Nota</em>: Los cambios no surtirán efecto hasta que no reinicie su navegador."
   },
   "data_directory-s1": {
-    "message": "El directorio donde Adblock Plus debe guardar sus datos. Puede ser o bien un direccionamiento absoluto o un direccionamiento relativo respecto al directorio de perfil de usuario. Si la preferencia"
-  },
-  "data_directory-s2": {
-    "message": "está establecida, será ésta la que fije la ubicación para el archivo patterns.ini mientras que los demás archivos seguirán en este directorio."
+    "message": "El directorio donde Adblock Plus debe guardar sus datos. Puede ser o bien un direccionamiento absoluto o un direccionamiento relativo respecto al directorio de perfil de usuario. Si la preferencia <a>{1}</a> está establecida, será ésta la que fije la ubicación para el archivo patterns.ini mientras que los demás archivos seguirán en este directorio."
   },
   "subscriptions_exceptionscheckbox-s1": {
-    "message": "Si tiene el valor"
-  },
-  "subscriptions_exceptionscheckbox-s2": {
-    "message": ", la lista de filtros para <a>publicidad no intrusiva</a> tendrá un tratamiento especial y se mostrará como una opción seleccionable en la interfaz de usuario."
+    "message": "Si tiene el valor <code>{1}</code>, la lista de filtros para <a>publicidad no intrusiva</a> tendrá un tratamiento especial y se mostrará como una opción seleccionable en la interfaz de usuario."
   },
   "subscriptions_autoupdate-s1": {
     "message": "Define si los filtros de las suscripciones se actualizarán automáticamente."
@@ -180,25 +156,16 @@
     "message": "Datos codificados en formato JSON sobre los informes de errores enviados recientemente (dirección del informe, página web implicada y fecha/hora de envío)"
   },
   "hideContributeButton-s1": {
-    "message": "Si tiene el valor"
-  },
-  "hideContributeButton-s2": {
-    "message": "significa que el usuario a elegido ocultar el botón de Contribuir."
+    "message": "Si tiene el valor <code>{1}</code> significa que el usuario a elegido ocultar el botón de Contribuir."
   },
   "blockableItemsSize-s1": {
     "message": "Tamaño guardado de la lista de elementos bloqueables (la predisposición de la anchura sólo es aplicable cuando se muestra como panel lateral)."
   },
   "subscriptions_fallbackurl-s1": {
-    "message": "Dirección del script a consultar si no se consigue descargar una suscripción un determinado número de veces (consulte"
-  },
-  "subscriptions_fallbackurl-s2": {
-    "message": "). Se sustituye %s por la dirección de dicha suscripción. El script debe imprimir algo similar a \"301 http://example.com/new_list.txt\" si se conoce la nueva ubicación de la suscripción."
+    "message": "Dirección del script a consultar si no se consigue descargar una suscripción un determinado número de veces (consulte <a>{1}</a>). Se sustituye %s por la dirección de dicha suscripción. El script debe imprimir algo similar a \"301 http://example.com/new_list.txt\" si se conoce la nueva ubicación de la suscripción."
   },
   "subscriptions_fallbackerrors-s1": {
-    "message": "Establece el número de intentos fallidos de descarga de una suscripción que deben producirse antes de consultar el script de dirección alternativa (consulte"
-  },
-  "subscriptions_fallbackerrors-s2": {
-    "message": ") para obtener la nueva dirección de la suscripción. Tenga en cuenta que Adblock Plus siempre intentará descargar de nuevo cuando haya pasado un día desde un intento fallido de descarga."
+    "message": "Establece el número de intentos fallidos de descarga de una suscripción que deben producirse antes de consultar el script de dirección alternativa (consulte <a>{1}</a>) para obtener la nueva dirección de la suscripción. Tenga en cuenta que Adblock Plus siempre intentará descargar de nuevo cuando haya pasado un día desde un intento fallido de descarga."
   },
   "subscriptions_listurl-s1": {
     "message": "Dirección de la que descargar la lista completa de suscripciones de filtros."
@@ -289,6 +256,9 @@
   },
   "whitelist-s1": {
     "message": "No utilizado a partir de las version 2.3 de  Adblock Plus"
+  },
+  "s2-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "sidebar_key-s2-link": {
     "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"

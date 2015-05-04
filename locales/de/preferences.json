@@ -26,14 +26,8 @@
   "removed_preferencesTitle": {
     "message": "Nicht mehr benutzte Einstellungen"
   },
-  "s1": {
-    "message": "http://www.firefox-browser.de/wiki/About:config"
-  },
   "s2": {
-    "message": "Die folgende Tabelle listet auf und erklärt alle Einstellungen, die Adblock Plus in der Datei prefs.js im Benutzerprofil abspeichert. Diese Einstellungen können mit"
-  },
-  "s3": {
-    "message": "."
+    "message": "Die folgende Tabelle listet auf und erklärt alle Einstellungen, die Adblock Plus in der Datei prefs.js im Benutzerprofil abspeichert. Diese Einstellungen können mit <a>{1}</a>."
   },
   "enabled-s1": {
     "message": "Wert der Einstellung \"Adblock Plus aktivieren\""
@@ -78,10 +72,7 @@
     "message": "etwas anderes — nichts soll passieren"
   },
   "defaultstatusbaraction-s1": {
-    "message": "Legt fest, was passieren soll, wenn das Adblock Plus Icons in der Statusleiste angeklickt wird. Für die Liste möglicher Werte siehe"
-  },
-  "defaultstatusbaraction-s2": {
-    "message": "."
+    "message": "Legt fest, was passieren soll, wenn das Adblock Plus Icons in der Statusleiste angeklickt wird. Für die Liste möglicher Werte siehe <a>{1}</a>."
   },
   "sidebar_key-s2": {
     "message": "Legt fest, welche Tastenkombination die Liste blockierbarer Elemente öffnet/schließt. Diese Einstellung kann leer sein, oder sie kann die Form <em>Sondertaste1 Sondertaste2 Taste</em> haben. Erkannte Sondertasten sind: Shift, Accel (das ist die übliche Taste für Tastenkombinationen, z.B. Strg unter Windows, Command unter Mac OS X), Ctrl/Control (Strg auf deutschen Tastaturen), Alt, Meta. Taste kann entwedet ein Buchstabe oder ein Sonderschlüssel wie z.B. F7 oder RIGHT sein (siehe <a>nsIDOMKeyEvent interface</a> für eine Liste dieser Sonderschlüssel)."
@@ -93,21 +84,15 @@
     "message": "<em>Bemerkung</em>: Änderungen an dieser Einstellung werden erst nach einem Browser-Neustart angewandt."
   },
   "filters_key-s1": {
-    "message": "Legt fest, welche Tastenkombination die Filtereinstellungen öffnet. Für die Liste möglicher Werte siehe"
+    "message": "Legt fest, welche Tastenkombination die Filtereinstellungen öffnet. Für die Liste möglicher Werte siehe <a>{1}</a>."
   },
   "filters_key-s2": {
-    "message": "."
-  },
-  "filters_key-s3": {
     "message": "<em>Bemerkung</em>: Änderungen an dieser Einstellung werden erst nach einem Browser-Neustart angewandt."
   },
   "enable_key-s1": {
-    "message": "Legt fest, welche Tastenkombination zum Aktivieren und Deaktivieren von Adblock Plus verwendet werden kann. Für eine Beschreibung der möglichen Werte siehe"
+    "message": "Legt fest, welche Tastenkombination zum Aktivieren und Deaktivieren von Adblock Plus verwendet werden kann. Für eine Beschreibung der möglichen Werte siehe <a>{1}</a>."
   },
   "enable_key-s2": {
-    "message": "."
-  },
-  "enable_key-s3": {
     "message": "<em>Bemerkung</em>: Änderungen an dieser Einstellung werden erst nach einem Browser-Neustart angewandt."
   },
   "flash_scrolltoitem-s1": {
@@ -138,25 +123,16 @@
     "message": "Legt fest, welche Tastenkombination zum Versenden von Fehlerberichten verwendet werden kann."
   },
   "sendReport_key-s2": {
-    "message": "Für eine Beschreibung der möglichen Werte siehe"
+    "message": "Für eine Beschreibung der möglichen Werte siehe <a>{1}</a>."
   },
   "sendReport_key-s3": {
-    "message": "."
-  },
-  "sendReport_key-s4": {
     "message": "<em>Bemerkung</em>: Änderungen an dieser Einstellung werden erst nach einem Browser-Neustart angewandt."
   },
   "data_directory-s1": {
-    "message": "Das Verzeichnis, in dem Adblock Plus seine Daten speichern soll. Das kann entweder ein absoluter Pfad oder ein Pfad relativ zum Benutzerprofil sein. Falls die Einstellung"
-  },
-  "data_directory-s2": {
-    "message": "existiert, legt sie den Pfad für die Datei patterns.ini fest, während andere Dateien weiterhin in dem hier angegebenen Verzeichnis bleiben."
+    "message": "Das Verzeichnis, in dem Adblock Plus seine Daten speichern soll. Das kann entweder ein absoluter Pfad oder ein Pfad relativ zum Benutzerprofil sein. Falls die Einstellung <a>{1}</a> existiert, legt sie den Pfad für die Datei patterns.ini fest, während andere Dateien weiterhin in dem hier angegebenen Verzeichnis bleiben."
   },
   "subscriptions_exceptionscheckbox-s1": {
-    "message": "Falls"
-  },
-  "subscriptions_exceptionscheckbox-s2": {
-    "message": ", wird die Filterliste für die <a>nicht aufdringliche Werbung</a> gesondert behandelt und als Kontrollkästchen im Benutzerinterface dargestellt."
+    "message": "Falls <code>{1}</code>, wird die Filterliste für die <a>nicht aufdringliche Werbung</a> gesondert behandelt und als Kontrollkästchen im Benutzerinterface dargestellt."
   },
   "subscriptions_autoupdate-s1": {
     "message": "Legt fest, ob die Filter in Filterabonnements automatisch aktualisiert werden."
@@ -180,25 +156,16 @@
     "message": "JSON-kodierte Informationen über zuletzt versendete Fehlerberichte (Adresse und Uhrzeit des Berichts sowie Webseite, auf der das Problem auftrat)"
   },
   "hideContributeButton-s1": {
-    "message": "Ist auf"
-  },
-  "hideContributeButton-s2": {
-    "message": "gesetzt, falls der Nuzter sich entschlossen hat, die \"Zu Adblock Plus beitragen\"-Schaltfläche zu verstecken."
+    "message": "Ist auf <code>{1}</code> gesetzt, falls der Nuzter sich entschlossen hat, die \"Zu Adblock Plus beitragen\"-Schaltfläche zu verstecken."
   },
   "blockableItemsSize-s1": {
     "message": "Speichert die Größe der Liste der blockierbaren Elemente (der \"width\"-Wert ist nur bedeutend, wenn sie als Sidebar verwenden wird)."
   },
   "subscriptions_fallbackurl-s1": {
-    "message": "Adresse des Skripts, das konsultiert werden soll, falls ein Abonnement mehrmals nacheinander nicht heruntergeladen werden kann (siehe"
-  },
-  "subscriptions_fallbackurl-s2": {
-    "message": "weiter unten). %s wird durch die Adresse des Abonnements ersetzt. Das Skript sollte etwas wie \"301 http://example.com/new_list.txt\" ausgeben, falls die neue Adresse des Abonnements bekannt ist."
+    "message": "Adresse des Skripts, das konsultiert werden soll, falls ein Abonnement mehrmals nacheinander nicht heruntergeladen werden kann (siehe <a>{1}</a> weiter unten). %s wird durch die Adresse des Abonnements ersetzt. Das Skript sollte etwas wie \"301 http://example.com/new_list.txt\" ausgeben, falls die neue Adresse des Abonnements bekannt ist."
   },
   "subscriptions_fallbackerrors-s1": {
-    "message": "Legt fest, nach wie vielen Download-Fehlern versucht wird, die neue Adresse des Abonnements zu bestimmen (siehe"
-  },
-  "subscriptions_fallbackerrors-s2": {
-    "message": "). Bemerkung: Nach einem Download-Fehler wird der nächste Download-Versuch eine Stunde später gestartet."
+    "message": "Legt fest, nach wie vielen Download-Fehlern versucht wird, die neue Adresse des Abonnements zu bestimmen (siehe <a>{1}</a>). Bemerkung: Nach einem Download-Fehler wird der nächste Download-Versuch eine Stunde später gestartet."
   },
   "subscriptions_listurl-s1": {
     "message": "Adresse, von der die vollständige Liste der Filterabonnements heruntergeladen werden sollte."
@@ -271,6 +238,9 @@
   },
   "hideimagemanager-s1": {
     "message": "Nicht verwendet in Adblock Plus 2.1 und höher"
+  },
+  "s2-link": {
+    "message": "http://www.firefox-browser.de/wiki/About:config"
   },
   "sidebar_key-s2-link": {
     "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"

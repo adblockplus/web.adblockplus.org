@@ -26,14 +26,8 @@
   "removed_preferencesTitle": {
     "message": "Verwijderde voorkeuren"
   },
-  "s1": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
   "s2": {
-    "message": "De volgende tabel legt het gebruik van alle voorkeuren die door Adblock Plus gebruikt worden uit. U kunt deze voorkeuren zien en wijzigen via"
-  },
-  "s3": {
-    "message": "."
+    "message": "De volgende tabel legt het gebruik van alle voorkeuren die door Adblock Plus gebruikt worden uit. U kunt deze voorkeuren zien en wijzigen via <a>{1}</a>."
   },
   "enabled-s1": {
     "message": "Waarde van de optie \"Adblock Plus inschakelen\""
@@ -78,10 +72,7 @@
     "message": "iets anders — doe niets"
   },
   "defaultstatusbaraction-s1": {
-    "message": "Definieert wat er moet gebeuren als het statusbalk pictogram wordt aangeklikt. Voor een lijst van toegestane waarden zie"
-  },
-  "defaultstatusbaraction-s2": {
-    "message": "."
+    "message": "Definieert wat er moet gebeuren als het statusbalk pictogram wordt aangeklikt. Voor een lijst van toegestane waarden zie <a>{1}</a>."
   },
   "sidebar_key-s2": {
     "message": "Definieert de sneltoets die gebruikt wordt om de lijst met blokkeerbare onderdelen te openen. Deze voorkeur kan leeg zijn of het kan in de vorm <em>modifier1 modifier2 key</em> zijn. Herkende modifiers zijn: Shift, Accel (standaard accelarator toets, bijvoorbeeld Ctrl in Windows, Command in Mac OS X), Ctrl/Control, Alt, Meta. Key kan zowel een letter zijn als een speciale toets als F7 of RIGHT (zie <a>nsIDOMKeyEvent interface</a> voor een lijst van bijzondere toetsen)."
@@ -93,21 +84,15 @@
     "message": "<em>N.B.</em>: Deze instelling heeft pas effect als de browser herstart is."
   },
   "filters_key-s1": {
-    "message": "Definieert de sneltoets die gebruikt wordt om het Filter voorkeuren venster te openen. Voor een beschrijving van toegestane waarden, zie"
+    "message": "Definieert de sneltoets die gebruikt wordt om het Filter voorkeuren venster te openen. Voor een beschrijving van toegestane waarden, zie <a>{1}</a>."
   },
   "filters_key-s2": {
-    "message": "."
-  },
-  "filters_key-s3": {
     "message": "<em>N.B.</em>: Deze instelling treedt pas in werking als de browser herstart is"
   },
   "enable_key-s1": {
-    "message": "Definieert de sneltoets die gebruikt kan worden om Adblock Plus in- en uit te schakelen. Voor een beschrijving van toegestane waarden, zie"
+    "message": "Definieert de sneltoets die gebruikt kan worden om Adblock Plus in- en uit te schakelen. Voor een beschrijving van toegestane waarden, zie <a>{1}</a>."
   },
   "enable_key-s2": {
-    "message": "."
-  },
-  "enable_key-s3": {
     "message": "<em>N.B.</em>: Deze instelling treedt pas in werking als de browser herstart is"
   },
   "flash_scrolltoitem-s1": {
@@ -138,25 +123,16 @@
     "message": "Definieert de sneltoets voor het versturen van probleemrapportages."
   },
   "sendReport_key-s2": {
-    "message": "Voor een beschrijving vantoegestane waarden, zie"
+    "message": "Voor een beschrijving vantoegestane waarden, zie <a>{1}</a>."
   },
   "sendReport_key-s3": {
-    "message": "."
-  },
-  "sendReport_key-s4": {
     "message": "<em>N.B.</em>: Deze instelling treedt pas in werking als de browser herstart is"
   },
   "data_directory-s1": {
-    "message": "De map waar Adb lock Plus zijn gegevens moet opslaan. Dit kan een absoluut pad zijn of een locatie relatief ten opzichte van de gebruiker's profielmap. Als de"
-  },
-  "data_directory-s2": {
-    "message": "voorkeur is ingesteld, overschrijft deze de locatie van patterns.ini terwijl andere bestanden in deze map blijven."
+    "message": "De map waar Adb lock Plus zijn gegevens moet opslaan. Dit kan een absoluut pad zijn of een locatie relatief ten opzichte van de gebruiker's profielmap. Als de <a>{1}</a> voorkeur is ingesteld, overschrijft deze de locatie van patterns.ini terwijl andere bestanden in deze map blijven."
   },
   "subscriptions_exceptionscheckbox-s1": {
-    "message": "Als"
-  },
-  "subscriptions_exceptionscheckbox-s2": {
-    "message": ", dan wordt de filterlijst voor <a>niet-opdringerige reclames</a>\nspeciaal afgehandeld en wordt getoond als een checkbox in de gebruikersinterface."
+    "message": "Als <code>{1}</code>, dan wordt de filterlijst voor <a>niet-opdringerige reclames</a>\nspeciaal afgehandeld en wordt getoond als een checkbox in de gebruikersinterface."
   },
   "subscriptions_autoupdate-s1": {
     "message": "Definieert of filters in een filterabonnement automatisch bijgewerkt worden."
@@ -180,25 +156,16 @@
     "message": "JSON-gecodeerde gegevens van recent ingestuurde probleemrapportages (adres van het verslag, betreffende website en tijd van indienen)"
   },
   "hideContributeButton-s1": {
-    "message": "Dit is ingesteld op"
-  },
-  "hideContributeButton-s2": {
-    "message": "als de gebruiker ervoor koos om de Draag bij knop te verbergen."
+    "message": "Dit is ingesteld op <code>{1}</code> als de gebruiker ervoor koos om de Draag bij knop te verbergen."
   },
   "blockableItemsSize-s1": {
     "message": "De onthouden grootte van de lijst van Blokkeerbare onderdelen (de instelling van de breedte is alleen van toepassing als zijbalk)."
   },
   "subscriptions_fallbackurl-s1": {
-    "message": "Adres van het script dat moet worden geraadpleegd als een abonnement een aantal keer niet  gedwonload kan worden (zie"
-  },
-  "subscriptions_fallbackurl-s2": {
-    "message": "). %s wordt vervangen door het adres van het betreffende abonnement. Het script moet iets als \"301 http://example.com/new_list.txt\" retourneren als de nieuwe locatie van het abonnement bekend is."
+    "message": "Adres van het script dat moet worden geraadpleegd als een abonnement een aantal keer niet  gedwonload kan worden (zie <a>{1}</a>). %s wordt vervangen door het adres van het betreffende abonnement. Het script moet iets als \"301 http://example.com/new_list.txt\" retourneren als de nieuwe locatie van het abonnement bekend is."
   },
   "subscriptions_fallbackerrors-s1": {
-    "message": "Stelt het benodigde aantal mislukte download pogingen voor een abonnement in voordat het fallback script (zie"
-  },
-  "subscriptions_fallbackerrors-s2": {
-    "message": ") wordt geraadpleegd voor het nieuwe adres van het abonnement. Let er op dat Adblock Plus een download altijd opnieuw probeert een dag na de mislukte download poging."
+    "message": "Stelt het benodigde aantal mislukte download pogingen voor een abonnement in voordat het fallback script (zie <a>{1}</a>) wordt geraadpleegd voor het nieuwe adres van het abonnement. Let er op dat Adblock Plus een download altijd opnieuw probeert een dag na de mislukte download poging."
   },
   "subscriptions_listurl-s1": {
     "message": "Adres waarvan de volledige lijst van filterabonnementen kan worden gedownload."
@@ -271,6 +238,9 @@
   },
   "hideimagemanager-s1": {
     "message": "Niet gebruikt in Adblock Plus 2.1 en hoger"
+  },
+  "s2-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "sidebar_key-s2-link": {
     "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"

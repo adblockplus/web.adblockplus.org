@@ -15,10 +15,7 @@
     "message": "　　根据 ID 获取一个订阅组"
   },
   "getSubscription_returnDescription-s1": {
-    "message": "所请求的订阅组或"
-  },
-  "getSubscription_returnDescription-s2": {
-    "message": "（如果找不到与所给标识符一致的订阅组）"
+    "message": "所请求的订阅组或 <code>{1}</code>（如果找不到与所给标识符一致的订阅组）"
   },
   "getSubscription_idDescription-s1": {
     "message": "该订阅组的标识符（对于普通订阅组是指它的 URL）"
@@ -27,10 +24,7 @@
     "message": "　　根据所处的列表位置获取一个订阅组"
   },
   "getSubscriptionAt_returnDescription-s1": {
-    "message": "所请求的订阅组或"
-  },
-  "getSubscriptionAt_returnDescription-s2": {
-    "message": "（如果所给的 index 无效）"
+    "message": "所请求的订阅组或 <code>{1}</code>（如果所给的 index 无效）"
   },
   "getSubscriptionAt_indexDescription-s1": {
     "message": "订阅组在列表中所处的位置，值基于零"
@@ -60,10 +54,7 @@
     "message": "　　移除一个外部的订阅组"
   },
   "removeExternalSubscription_returnDescription-s1": {
-    "message": "（成功移除该订阅组）"
-  },
-  "removeExternalSubscription_returnDescription-s2": {
-    "message": "（不存在该订阅组或不是外部订阅组）"
+    "message": "<code>{1}</code>（成功移除该订阅组） <code>{2}</code>（不存在该订阅组或不是外部订阅组）"
   },
   "removeExternalSubscription_idDescription-s1": {
     "message": "该订阅组的标识符（对于外部订阅组标识符可以是任意字符串）"
@@ -84,6 +75,6 @@
     "message": "　　获取所安装的 Adblock Plus 扩展版本号。请注意这个版本号是扩展管理器或 InstallTrigger 所报告的版本号，且在 Mozilla Suite 或 SeaMonkey 中使用 InstallTrigger 有可能会报告错误的版本号。"
   },
   "getInstalledVersion_returnDescription-s1": {
-    "message": "Adblock Plus 版本号，例如："
+    "message": "Adblock Plus 版本号，例如：<code>{1}</code>"
   }
 }
