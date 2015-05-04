@@ -19,7 +19,7 @@ title=IAdblockPlusSubscription
 
 <h2>{{ get_string("general_notes", "interface") }}</h2>
 
-<p>{{"This interface represents a group in the Adblock Plus preferences dialog, it is returned by <a href=\"/en/IAdblockPlus\">IAdblockPlus</a>. All access is read-only."|translate("s1")}}</p>
+<p>{{"This interface represents a group in the Adblock Plus preferences dialog, it is returned by <a href=\"IAdblockPlus\">IAdblockPlus</a>. All access is read-only."|translate("s1")}}</p>
 
         <p>{{"<em>Note</em>: You should not keep a reference to this object. If you need the state of the same subscription at a later point in time you should request it again from IAdblockPlus to get correct information."|translate("s2")}}</p>
 
@@ -44,7 +44,7 @@ title=IAdblockPlusSubscription
 {% endmacro %}
 
 {% macro externalDescription() %}
-<p>{{"Defines whether the subscription is managed externally. If this attribute is set to"|translate("externalDescription-s1")}} <tt>{{"true"|translate("externalDescription-s2")}}</tt> {{"the filters in the subscription will only be updated if some extension calls <a href=\"/en/IAdblockPlus#method_updateExternalSubscription\">IAdblockPlus.updateExternalSubscription</a>."|translate("externalDescription-s3")}}</p>
+<p>{{"Defines whether the subscription is managed externally. If this attribute is set to"|translate("externalDescription-s1")}} <tt>{{"true"|translate("externalDescription-s2")}}</tt> {{"the filters in the subscription will only be updated if some extension calls <a href=\"IAdblockPlus#method_updateExternalSubscription\">IAdblockPlus.updateExternalSubscription</a>."|translate("externalDescription-s3")}}</p>
 {% endmacro %}
 
 {% macro lastDownloadDescription() %}
