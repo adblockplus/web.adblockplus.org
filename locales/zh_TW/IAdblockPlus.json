@@ -15,10 +15,7 @@
     "message": "根據辨識碼取回一個條件集"
   },
   "getSubscription_returnDescription-s1": {
-    "message": "要求的條件集，若沒有給予辨識碼的條件集則回傳"
-  },
-  "getSubscription_returnDescription-s2": {
-    "message": " "
+    "message": "要求的條件集，若沒有給予辨識碼的條件集則回傳<code>{1}</code> "
   },
   "getSubscription_idDescription-s1": {
     "message": "該條件集的辨識碼 (對一般的條件集而言就是它的 URL )"
@@ -27,10 +24,7 @@
     "message": "根據列表中的位址取回一個條件集"
   },
   "getSubscriptionAt_returnDescription-s1": {
-    "message": "要求的條件集，若提供的索引無效則回傳"
-  },
-  "getSubscriptionAt_returnDescription-s2": {
-    "message": " "
+    "message": "要求的條件集，若提供的索引無效則回傳 <code>{1}</code> "
   },
   "getSubscriptionAt_indexDescription-s1": {
     "message": "條件集在列表中的位址，從零開始。"
@@ -60,10 +54,7 @@
     "message": "移除一個外部條件集"
   },
   "removeExternalSubscription_returnDescription-s1": {
-    "message": "若該條件集被成功移除則回傳 true，"
-  },
-  "removeExternalSubscription_returnDescription-s2": {
-    "message": "若該條件集不存在或條件集並非由外部管理則回傳 false。"
+    "message": "<code>{1}</code>若該條件集被成功移除則回傳 true，<code>{2}</code>若該條件集不存在或條件集並非由外部管理則回傳 false。"
   },
   "removeExternalSubscription_idDescription-s1": {
     "message": "條件集的識別碼 (外部的條件集可以是任何字串)"
@@ -84,6 +75,6 @@
     "message": "取回已安裝的 Adblock Plus 套件版本編號。請注意這是由套件管理員或 InstallTrigger 所回報的版本編號，在 Mozilla Suite 或 SeaMonkey 中使用後者可能導致結果不正確。"
   },
   "getInstalledVersion_returnDescription-s1": {
-    "message": "Adblock Plus 版本編號，如"
+    "message": "Adblock Plus 版本編號，如 <code>{1}</code>"
   }
 }

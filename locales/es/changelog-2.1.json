@@ -51,57 +51,45 @@
     "message": "El atajo de teclado para los elementos bloqueables a partir de Firefox 15 es Ctrl-Mayús-U, el antiguo atajo de teclado ya no está disponible."
   },
   "s17": {
-    "message": "Se aceptan también búsquedas de"
+    "message": "Se aceptan también búsquedas de <code>{1}</code> ya no es necesario buscar <code>{2}</code> (<a>tema del foro</a>)."
   },
   "s18": {
-    "message": "ya no es necesario buscar"
-  },
-  "s19": {
-    "message": "(<a>tema del foro</a>)."
-  },
-  "s20": {
     "message": "Solucionado: La lista a veces se recargaba aunque la página actual siguiera siendo la misma."
   },
-  "s21": {
+  "s19": {
     "message": "Solucionado: El menú contextual podría sugerir desactivar el filtro o dominio equivocados (<a>tema del foro</a>)."
   },
-  "s22": {
+  "s20": {
     "message": "Solucionado: el menú contextual podría impedir que algunos elementos de memoria sean recuperados por el garbage collector (<a>bug 727739</a>)."
   },
-  "s23": {
+  "s21": {
     "message": "Solucionado: El mensaje emergente podía aparecer por encima del menú contextual."
   },
-  "s24": {
+  "s22": {
     "message": "Núcleo"
   },
-  "s25": {
+  "s23": {
     "message": "Se puede instalar Adblock Plus en cualquier aplicación basada en Gecko 8.0 o posterior, como Firefox 8, Thunderbird 8 y SeaMonkey 2.5. Las versiones anteriores ya no están soportadas, al igual que las versiones de Firefox Mobile basadas en XUL."
   },
-  "s26": {
-    "message": "Las suscripciones de filtros pueden establecer automáticamente su título utilizando el comentario"
+  "s24": {
+    "message": "Las suscripciones de filtros pueden establecer automáticamente su título utilizando el comentario <code>{1}</code> (<a>tema del foro</a>)."
   },
-  "s27": {
-    "message": "(<a>tema del foro</a>)."
-  },
-  "s28": {
+  "s25": {
     "message": "Mejoras en uso y rendimiento de memoria, en especial se ha solucionado la regresión en Firefox 15 y versiones posteriores."
   },
-  "s29": {
-    "message": "Ya no se usa el archivo"
+  "s26": {
+    "message": "Ya no se usa el archivo <code>{1}</code> , al ser causa habitual de problemas de estabilidad."
   },
-  "s30": {
-    "message": ", al ser causa habitual de problemas de estabilidad."
-  },
-  "s31": {
+  "s27": {
     "message": "Se ha cambiado a operaciones asíncronas de lectura/escritura de archivos para mejorar la responsividad de la interfaz de usuario."
   },
-  "s32": {
+  "s28": {
     "message": "Solucionado: Las pestañas de objetos estaban provocando la aparición del mensaje \"{1}\" en la Consola de errores de Firefox 15 y versiones posteriores."
   },
-  "s33": {
+  "s29": {
     "message": "Solucionado: manejo de puntos finales en nombres de dominio (<a>tema del foro</a>)."
   },
-  "s34": {
+  "s30": {
     "message": "Lista de cambios de la versión anterior"
   }
 }

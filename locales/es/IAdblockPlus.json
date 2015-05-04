@@ -15,10 +15,7 @@
     "message": "Devuelve una suscripción a partir de su identificador"
   },
   "getSubscription_returnDescription-s1": {
-    "message": "la suscripción solicitada o"
-  },
-  "getSubscription_returnDescription-s2": {
-    "message": "si no existe ninguna suscripción con el identificador elegido"
+    "message": "la suscripción solicitada o <code>{1}</code> si no existe ninguna suscripción con el identificador elegido"
   },
   "getSubscription_idDescription-s1": {
     "message": "identificador de la suscripción (en las suscripciones normales es la URL de la suscripción)"
@@ -27,10 +24,7 @@
     "message": "Devuelve una suscripción a partir de su posición en la lista"
   },
   "getSubscriptionAt_returnDescription-s1": {
-    "message": "la suscripción solicitada o"
-  },
-  "getSubscriptionAt_returnDescription-s2": {
-    "message": "si el índice proporcionado no es válido"
+    "message": "la suscripción solicitada o <code>{1}</code> si el índice proporcionado no es válido"
   },
   "getSubscriptionAt_indexDescription-s1": {
     "message": "posición de la suscripción en la lista, con base cero"
@@ -60,10 +54,7 @@
     "message": "Elimina una suscripción externa"
   },
   "removeExternalSubscription_returnDescription-s1": {
-    "message": "si se ha conseguido eliminar la suscripción,"
-  },
-  "removeExternalSubscription_returnDescription-s2": {
-    "message": "si la suscripción no existe o existe pero no está gestionada externamente"
+    "message": "<code>{1}</code> si se ha conseguido eliminar la suscripción, <code>{2}</code> si la suscripción no existe o existe pero no está gestionada externamente"
   },
   "removeExternalSubscription_idDescription-s1": {
     "message": "identificador de la suscripción (para suscripciones externas puede ser cualquier cadena de texto)"
@@ -84,6 +75,6 @@
     "message": "Devuelve la versión de la extensión Adblock Plus instalada. Tenga en cuenta que se trata del número de versión que le entregan o bien el Administrador de extensiones o bien InstallTrigger, y que podría ser incorrecto si se usa este último (en Mozilla Suite o SeaMonkey)."
   },
   "getInstalledVersion_returnDescription-s1": {
-    "message": "Versión de Adblock Plus, por ejemplo"
+    "message": "Versión de Adblock Plus, por ejemplo <code>{1}</code>"
   }
 }

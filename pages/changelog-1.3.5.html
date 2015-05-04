@@ -16,98 +16,98 @@ title=Detailed changelog for Adblock Plus 1.3.5
   </li>
   <li>
     {{s5 Added support for <a href="http://donottrack.us/">Do-Not-Track header proposal</a> (DNT),
-    a filter like}} <code>*$donottrack</code> {{s6 will cause the header to be sent to all
+    a filter like <code><fix>*$donottrack</fix></code> will cause the header to be sent to all
     locations
     (<a href="/forum/viewtopic.php?t=6492">forum topic</a>).}}
   </li>
   <li>
-    {{s7 Added an experimental "Recommend us on Facebook" button to the menu allowing easily
+    {{s6 Added an experimental "Recommend us on Facebook" button to the menu allowing easily
     recommending Adblock Plus — only displayed to Facebook users.}}
   </li>
 </ul>
 
-<h2 id="interface">{{s8 User interface}}</h2>
+<h2 id="interface">{{s7 User interface}}</h2>
 
 <ul>
   <li>
-    {{s9 Malay and Estonian translations are included again.}}
+    {{s8 Malay and Estonian translations are included again.}}
   </li>
   <li>
-    {{s10 Allowed shortcut key preferences to have multiple values, the first available shortcut key
-    is used.}} {{s11 Changed default Preferences key to Ctrl-Shift-E (used in Firefox 3.x),
+    {{s9 Allowed shortcut key preferences to have multiple values, the first available shortcut key
+    is used.}} {{s10 Changed default Preferences key to Ctrl-Shift-E (used in Firefox 3.x),
     Ctrl-Shift-F (used in Firefox 4) or Ctrl-Shift-O (Firefox 4 on Mac OS X).}}
   </li>
   <li>
-    {{s12 Special icon state for "whitelisted" websites has been removed, the icon is now showing as
+    {{s11 Special icon state for "whitelisted" websites has been removed, the icon is now showing as
     "disabled" on such sites as well
     (<a href="/forum/viewtopic.php?t=6541">forum topic</a>).}}
   </li>
   <li>
-    {{s13 "Enable Adblock Plus" menu item has been renamed into "Disable everywhere".}}
+    {{s12 "Enable Adblock Plus" menu item has been renamed into "Disable everywhere".}}
   </li>
   <li>
-    {{s14 Firefox Mobile: First-run page is now more suitable for a small screen.}}
+    {{s13 Firefox Mobile: First-run page is now more suitable for a small screen.}}
   </li>
   <li>
-    {{s15 Fixed: Contents of first-run page are sometimes cut off
+    {{s14 Fixed: Contents of first-run page are sometimes cut off
     (<a href="/forum/viewtopic.php?t=6553">forum topic</a>).}}
   </li>
   <li>
-    {{s16 Fixed: "Edit filter in effect" in blockable items doesn't work correctly if Preferences
+    {{s15 Fixed: "Edit filter in effect" in blockable items doesn't work correctly if Preferences
     dialog is already open.}}
   </li>
 </ul>
 
-<h3 id="reporter">{{s17 Issue reporter}}</h3>
+<h3 id="reporter">{{s16 Issue reporter}}</h3>
 
 <ul>
   <li>
-    {{s18 Disallowed reports with too many filter subscriptions.}}
+    {{s17 Disallowed reports with too many filter subscriptions.}}
   </li>
   <li>
-    {{s19 Disallowed reports for certain types of pages (in particular blank tabs, e-mails, local
+    {{s18 Disallowed reports for certain types of pages (in particular blank tabs, e-mails, local
     pages, extension pages).}}
   </li>
   <li>
-    {{s20 Thunderbird: Better reporting for blog posts, blog post address is now being sent instead
+    {{s19 Thunderbird: Better reporting for blog posts, blog post address is now being sent instead
     of a meaningless mailbox address.}}
   </li>
   <li>
-    {{s21 Fixed: Disabled filter subscriptions should not be included in the report
+    {{s20 Fixed: Disabled filter subscriptions should not be included in the report
     (<a href="/forum/viewtopic.php?t=6905">forum topic</a>).}}
   </li>
 </ul>
 
-<h2 id="core">{{s22 Core}}</h2>
+<h2 id="core">{{s21 Core}}</h2>
 
 <ul>
   <li>
-    {{s23 Implemented a faster filter matching algorithm
+    {{s22 Implemented a faster filter matching algorithm
     (<a href="/forum/viewtopic.php?t=6118">forum topic</a>).}}
   </li>
   <li>
-    {{s24 patterns.ini file will only be saved on shutdown if some data actually changed.}}
+    {{s23 patterns.ini file will only be saved on shutdown if some data actually changed.}}
   </li>
   <li>
-    {{s25 Matching and element hiding data are now cached in the Adblock Plus data directory to reduce
+    {{s24 Matching and element hiding data are now cached in the Adblock Plus data directory to reduce
     startup time.}}
   </li>
   <li>
-    {{s26 Changed the way patterns.ini file is written to prevent data loss even if computer is
+    {{s25 Changed the way patterns.ini file is written to prevent data loss even if computer is
     switched off abruptly.}}
   </li>
   <li>
-    {{s27 Corrupted patterns.ini files are now recognized, a backup file is loaded automatically if
+    {{s26 Corrupted patterns.ini files are now recognized, a backup file is loaded automatically if
     available.}}
   </li>
   <li>
-    {{s28 Fixed: Element hiding rules might occasionally cause crashes
+    {{s27 Fixed: Element hiding rules might occasionally cause crashes
     (regression in Adblock Plus 1.3.3).}}
   </li>
   <li>
-    {{s29 Fixed: Disabling filters from the list of blockable items doesn't actually disable the
+    {{s28 Fixed: Disabling filters from the list of blockable items doesn't actually disable the
     filter in Firefox 3.6.}}
   </li>
 </ul>
 
-<p><a href="changelog-1.3.3">{{s30 Changelog for the previous release}}</a></p>
+<p><a href="changelog-1.3.3">{{s29 Changelog for the previous release}}</a></p>

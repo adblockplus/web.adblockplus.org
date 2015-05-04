@@ -15,57 +15,54 @@
     "message": "Décompressez cette archive en utilisant votre logiciel d'archivage favori vers le dossier d'installation de votre navigateur K-Meleon, tous les fichiers seront placés dans les bons dossiers. Ensuite démarrez K-Meleon, qui vous demandera si le plugin Adblock Plus doit être activé — validez. C'est tout, Adblock Plus devrait fonctionner à présent."
   },
   "s5": {
-    "message": "Pour K-Meleon vous pouvez télécharger"
+    "message": "Pour K-Meleon vous pouvez télécharger  <a>{1}</a>."
   },
   "s6": {
-    "message": "."
-  },
-  "s7": {
     "message": "Désinstallation d'Adblock Plus"
   },
-  "s8": {
+  "s7": {
     "message": "Veuillez prendre note que le fait de désactiver le plugin Adblock Plus ne fait que le supprimer de l'interface utilisateur, normalement, l'extension continuera à bloquer en tâche de fond. Pour désinstaller Adblock Plus vous devez supprimer tous les fichiers que vous avez installé à partir de l'archive ZIP."
   },
-  "s9": {
+  "s8": {
     "message": "Différences connues avec Firefox"
   },
-  "s10": {
+  "s9": {
     "message": "Par rapport à la version pour Firefox, Adblock Plus comporte certaines limitations dans K-Meleon. Les limitations suivantes seront peut-être levées par les versions à venir d'Adblock Plus avec un support plus correct de K-Meleon :"
   },
-  "s11": {
+  "s10": {
     "message": "L'icône d'ABP et la liste des éléments filtrables ne se mettent pas correctement à jour quand un onglet vierge est ouvert."
   },
-  "s12": {
+  "s11": {
     "message": "Les éléments filtrables doivent rester détachés, l'implantation du panneau latéral sur K-Meleon n'a pas encore été réalisée"
   },
-  "s13": {
+  "s12": {
     "message": "La fenêtre des éléments filtrables ne peut se fermer en utilisant des raccourcis clavier (Echap ou  Ctrl+Shift+V)"
   },
-  "s14": {
+  "s13": {
     "message": "Boite de dialogue des préférences : l'option \"Montrer dans la barre d'outil\" devrait être masquée."
   },
-  "s15": {
+  "s14": {
     "message": "D'autres limitations sont dues à l'architecture de K-Meleon et ne seront pas levées tant que des modifications sur le navigateur n'auront pas été opérées :"
   },
-  "s16": {
+  "s15": {
     "message": "La fenêtre des éléments filtrables est toujours en haut et se trouve dans toutes les fenêtres du navigateur"
   },
-  "s17": {
+  "s16": {
     "message": "Cliquer sur le bouton permettant de copier le lien du rapport après avoir signaler un problème provoque un crash"
   },
-  "s18": {
+  "s17": {
     "message": "La taille de la boîte de dialogue \"S'abonner à la liste de filtres\" varie de façon incorrecte lorsque l'utilisateur clique sur \"Ajouter un autre abonnement\" puis revient en arriêre"
   },
-  "s19": {
+  "s18": {
     "message": "L'icône de la abrre d'état ne comporte pas d'infobulle"
   },
-  "s20": {
+  "s19": {
     "message": "L'icône de la barre d'outils ne peut être masquée via les options d'Adblock Plus, uniquement via le menu Affichage / Barre d'outils"
   },
-  "s22": {
+  "s21": {
     "message": "La touche de raccourci telle que <a>extensions.adblockplus.sidebar_key</a> utilise les <a>codes de touche virtuelles Win32</a> à la place des des codes de touches virtuelles du moteur Gecko"
   },
-  "s22-link": {
+  "s21-link": {
     "message": "http://msdn.microsoft.com/fr-fr/library/dd375731%28v=vs.85%29.aspx"
   }
 }

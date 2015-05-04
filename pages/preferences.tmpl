@@ -55,7 +55,7 @@ title=Adblock Plus preferences
 }
 </style>
 
-<p>{{"The following table lists and explains all preferences that are used by Adblock Plus. These preferences can be viewed and changed via"|translate("s2")}} <a href="{{"http://kb.mozillazine.org/About:config"|translate("s1")}}">about:config</a>{{"."|translate("s3")}}</p>
+<p>{{"The following table lists and explains all preferences that are used by Adblock Plus. These preferences can be viewed and changed via <a href=\"{{s2-link http://kb.mozillazine.org/About:config}}\"><fix>about:config</fix></a>."|translate("s2")}}</p>
 
 {% macro enabledDescription() %}
 {{"Value of the \"Enable Adblock Plus\" option"|translate("enabled-s1")}}
@@ -106,7 +106,7 @@ title=Adblock Plus preferences
 {% endmacro %}
 
 {% macro defaultstatusbaractionDescription() %}
-{{"Defines the action that should be executed when the status bar icon is clicked. For list of possible values\n    see"|translate("defaultstatusbaraction-s1")}} <a href="#defaulttoolbaraction">defaulttoolbaraction</a>{{"."|translate("defaultstatusbaraction-s2")}}
+{{"Defines the action that should be executed when the status bar icon is clicked. For list of possible values\n    see <a href=\"#defaulttoolbaraction\"><fix>defaulttoolbaraction</fix></a>."|translate("defaultstatusbaraction-s1")}}
 {% endmacro %}
 
 {% macro sidebar_keyDescription() %}
@@ -118,19 +118,19 @@ title=Adblock Plus preferences
 {% endmacro %}
 
 {% macro filters_keyDescription() %}
-{{"Defines the keyboard shortcut to be used to open Filter Preferences dialog. For description of possible values see"|translate("filters_key-s1")}} <a href="#sidebar_key">sidebar_key</a>{{"."|translate("filters_key-s2")}}<br>
+{{"Defines the keyboard shortcut to be used to open Filter Preferences dialog. For description of possible values see <a href=\"#sidebar_key\"><fix>sidebar_key</fix></a>."|translate("filters_key-s1")}}<br>
 
  <br>
 
- {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("filters_key-s3")}}
+ {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("filters_key-s2")}}
 {% endmacro %}
 
 {% macro enable_keyDescription() %}
-{{"Defines the keyboard shortcut to be used to enable/disable Adblock Plus. For description of possible values see"|translate("enable_key-s1")}} <a href="#sidebar_key">sidebar_key</a>{{"."|translate("enable_key-s2")}}<br>
+{{"Defines the keyboard shortcut to be used to enable/disable Adblock Plus. For description of possible values see <a href=\"#sidebar_key\"><fix>sidebar_key</fix></a>."|translate("enable_key-s1")}}<br>
 
  <br>
 
- {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("enable_key-s3")}}
+ {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("enable_key-s2")}}
 {% endmacro %}
 
 {% macro flash_scrolltoitemDescription() %}
@@ -160,18 +160,18 @@ title=Adblock Plus preferences
 {% endmacro %}
 
 {% macro sendReport_keyDescription() %}
-{{"Defines the keyboard shortcut to be used to send issue reports."|translate("sendReport_key-s1")}} {{"For\ndescription of possible values see"|translate("sendReport_key-s2")}} <a href="#sidebar_key">sidebar_key</a>{{"."|translate("sendReport_key-s3")}}
+{{"Defines the keyboard shortcut to be used to send issue reports."|translate("sendReport_key-s1")}} {{"For\ndescription of possible values see <a href=\"#sidebar_key\"><fix>sidebar_key</fix></a>."|translate("sendReport_key-s2")}}
 <br><br>
 
-{{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("sendReport_key-s4")}}
+{{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("sendReport_key-s3")}}
 {% endmacro %}
 
 {% macro data_directoryDescription() %}
-{{"The directory where Adblock Plus should store its data.  This can be either an\nabsolute path, or it can a directory location relative to the user's profile.\nIf"|translate("data_directory-s1")}} <a href="#patternsfile">patternsfile</a> {{"preference is set it will override\nthe location for patterns.ini file while other files stay in this directory."|translate("data_directory-s2")}}
+{{"The directory where Adblock Plus should store its data.  This can be either an\nabsolute path, or it can a directory location relative to the user's profile.\nIf <a href=\"#patternsfile\"><fix>patternsfile</fix></a> preference is set it will override\nthe location for patterns.ini file while other files stay in this directory."|translate("data_directory-s1")}}
 {% endmacro %}
 
 {% macro subscriptions_exceptionscheckboxDescription() %}
-{{"If"|translate("subscriptions_exceptionscheckbox-s1")}} <code>true</code>{{", the filter list for <a href=\"acceptable-ads\">non-intrusive ads</a>\nwill get special treatment and will be displayed as a checkbox in the user\ninterface."|translate("subscriptions_exceptionscheckbox-s2")}}
+{{"If <code><fix>true</fix></code>, the filter list for <a href=\"acceptable-ads\">non-intrusive ads</a>\nwill get special treatment and will be displayed as a checkbox in the user\ninterface."|translate("subscriptions_exceptionscheckbox-s1")}}
 {% endmacro %}
 
 {% macro subscriptions_autoupdateDescription() %}
@@ -181,11 +181,11 @@ title=Adblock Plus preferences
 {% endmacro %}
 
 {% macro please_kill_startup_performanceDescription() %}
-{{"If set to"|translate("please_kill_startup_performance-s1")}} <code>true</code> {{"processing filters on startup will happen synchronously and delay browser startup."|translate("please_kill_startup_performance-s2")}} {{"Changing this setting is not recommended but it makes it less likely that ads will appear on the first page loaded by the browser."|translate("please_kill_startup_performance-s3")}}
+{{"If set to <code><fix>true</fix></code> processing filters on startup will happen synchronously and delay browser startup."|translate("please_kill_startup_performance-s1")}} {{"Changing this setting is not recommended but it makes it less likely that ads will appear on the first page loaded by the browser."|translate("please_kill_startup_performance-s2")}}
 {% endmacro %}
 
 {% macro fastcollapseDescription() %}
-{{"If set to"|translate("fastcollapse-s1")}} <code>true</code> {{"blocked elements will no longer be hidden."|translate("fastcollapse-s2")}} {{"This might have the effect that\nplaceholders will show up for blocked images for example, unless hidden by other means."|translate("fastcollapse-s3")}} {{"This functionality was available\nas \"Hide placeholders of blocked elements\" before Adblock Plus 2.6.7."|translate("fastcollapse-s4")}}
+{{"If set to <code><fix>true</fix></code> blocked elements will no longer be hidden."|translate("fastcollapse-s1")}} {{"This might have the effect that\nplaceholders will show up for blocked images for example, unless hidden by other means."|translate("fastcollapse-s2")}} {{"This functionality was available\nas \"Hide placeholders of blocked elements\" before Adblock Plus 2.6.7."|translate("fastcollapse-s3")}}
 {% endmacro %}
 
 {% macro currentVersionDescription() %}
@@ -201,7 +201,7 @@ title=Adblock Plus preferences
 {% endmacro %}
 
 {% macro hideContributeButtonDescription() %}
-{{"This is set to"|translate("hideContributeButton-s1")}} <code>true</code> {{"if the user chose to hide the\nContribute button."|translate("hideContributeButton-s2")}}
+{{"This is set to <code><fix>true</fix></code> if the user chose to hide the\nContribute button."|translate("hideContributeButton-s1")}}
 {% endmacro %}
 
 {% macro blockableItemsSizeDescription() %}
@@ -209,11 +209,11 @@ title=Adblock Plus preferences
 {% endmacro %}
 
 {% macro subscriptions_fallbackurlDescription() %}
-{{"Address of the script that should be consulted if a subscription fails to download a certain number of times (see"|translate("subscriptions_fallbackurl-s1")}} <a href="#subscriptions_fallbackerrors">subscriptions_fallbackerrors</a>{{"). %s is replaced by the address of the subscription in question. The script should print something like \"301 http://example.com/new_list.txt\" if the new location of the subscription is known."|translate("subscriptions_fallbackurl-s2")}}
+{{"Address of the script that should be consulted if a subscription fails to download a certain number of times (see <a href=\"#subscriptions_fallbackerrors\"><fix>subscriptions_fallbackerrors</fix></a>). %s is replaced by the address of the subscription in question. The script should print something like \"301 http://example.com/new_list.txt\" if the new location of the subscription is known."|translate("subscriptions_fallbackurl-s1")}}
 {% endmacro %}
 
 {% macro subscriptions_fallbackerrorsDescription() %}
-{{"Sets the required number of failed subscription download attempts before the fallback script (see"|translate("subscriptions_fallbackerrors-s1")}} <a href="#subscriptions_fallbackurl">subscriptions_fallbackurl</a>{{") will be consulted for the new address of the subscription. Note that Adblock Plus will always retry a download one day after a failed download attempt."|translate("subscriptions_fallbackerrors-s2")}}
+{{"Sets the required number of failed subscription download attempts before the fallback script (see <a href=\"#subscriptions_fallbackurl\"><fix>subscriptions_fallbackurl</fix></a>) will be consulted for the new address of the subscription. Note that Adblock Plus will always retry a download one day after a failed download attempt."|translate("subscriptions_fallbackerrors-s1")}}
 {% endmacro %}
 
 {% macro subscriptions_listurlDescription() %}

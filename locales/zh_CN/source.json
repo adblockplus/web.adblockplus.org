@@ -48,36 +48,33 @@
     "message": "从 GitHub 克隆 Adblock Plus for Firefox 版本库的方法："
   },
   "s16": {
-    "message": "获取特定版本源代码（例如"
+    "message": "获取特定版本源代码（例如 {1}）的方法："
   },
   "s17": {
-    "message": "）的方法："
-  },
-  "s18": {
     "message": "<strong>请注意：</strong>我们目前多处使用 Mercurial 子版本库，但这无法反映为 Git 子模块。"
   },
-  "s19": {
+  "s18": {
     "message": "这意味着您需要检查每个版本库的 <em>.hgsub</em> 文件并手动克隆所有依赖关系。"
   },
-  "s20": {
+  "s19": {
     "message": "这不会再发生，我们目前已经 <a>远离子版本库</a>。"
   },
-  "s21": {
+  "s20": {
     "message": "构建指南"
   },
-  "s22": {
+  "s21": {
     "message": "我们的大多数版本库有内含构建指南的 <em>README.md</em> 文件，请参考它。"
   },
-  "s23": {
+  "s22": {
     "message": "源代码文档"
   },
-  "s24": {
+  "s23": {
     "message": "我们对一些项目有自动生成的源代码文档："
   },
-  "s25": {
+  "s24": {
     "message": "Adblock Plus for Firefox"
   },
-  "s26": {
+  "s25": {
     "message": "libadblockplus"
   }
 }

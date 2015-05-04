@@ -26,14 +26,8 @@
   "removed_preferencesTitle": {
     "message": "已移除的首选项"
   },
-  "s1": {
-    "message": "http://kb.mozillazine.org/About:config"
-  },
   "s2": {
-    "message": "　　下面的表格列出并说明了 Adblock Plus 使用的所有首选项。这些首选项都可以通过"
-  },
-  "s3": {
-    "message": "查看和编辑。"
+    "message": "　　下面的表格列出并说明了 Adblock Plus 使用的所有首选项。这些首选项都可以通过 <a>{1}</a> 查看和编辑。"
   },
   "enabled-s1": {
     "message": "“启用 Adblock Plus”选项的值"
@@ -78,10 +72,7 @@
     "message": "其他值 — 无动作"
   },
   "defaultstatusbaraction-s1": {
-    "message": "定义点击状态栏图标时应执行的动作。可接受值的列表请参考"
-  },
-  "defaultstatusbaraction-s2": {
-    "message": "。"
+    "message": "定义点击状态栏图标时应执行的动作。可接受值的列表请参考 <a>{1}</a>。"
   },
   "sidebar_key-s2": {
     "message": "定义键盘快捷键用于打开可过滤项目。此首选项可以为空，或是设定为 <em>modifier1 modifier2 key 的格式。</em>可用的 modifiers 有：Shift，Accel（预设的快捷键，如 Windows 上的 Ctrl，Mac OS X 上的 Command），Ctrl/Control, Alt, Meta。Key 可以是一个字母或是一个特殊键，像是 F7 或右方向键（参考 <a>nsIDOMKeyEvent 接口</a> 了解所有的特殊键）。"
@@ -93,21 +84,15 @@
     "message": "<em>注意：</em>此设置在浏览器重新启动后才会生效。"
   },
   "filters_key-s1": {
-    "message": "定义键盘快捷键用于打开首选项对话框。 可用值的说明请参考"
+    "message": "定义键盘快捷键用于打开首选项对话框。 可用值的说明请参考 <a>{1}</a>。"
   },
   "filters_key-s2": {
-    "message": "。"
-  },
-  "filters_key-s3": {
     "message": "<em>注意：</em>此设置在浏览器重新启动后才会生效。"
   },
   "enable_key-s1": {
-    "message": "定义键盘快捷键用来启用/禁用 Adblock Plus。可用值的说明请参考"
+    "message": "定义键盘快捷键用来启用/禁用 Adblock Plus。可用值的说明请参考 <a>{1}</a>。"
   },
   "enable_key-s2": {
-    "message": "。"
-  },
-  "enable_key-s3": {
     "message": "<em>注意：</em>此设置在浏览器重新启动后才会生效。"
   },
   "flash_scrolltoitem-s1": {
@@ -138,25 +123,16 @@
     "message": "定义用来发送问题报告的键盘快捷键。"
   },
   "sendReport_key-s2": {
-    "message": "欲了解可接受值的描述，请参考"
+    "message": "欲了解可接受值的描述，请参考 <a>{1}</a>。"
   },
   "sendReport_key-s3": {
-    "message": "。"
-  },
-  "sendReport_key-s4": {
     "message": "<em>注意：</em>此设置在浏览器重新启动后才会生效。"
   },
   "data_directory-s1": {
-    "message": "Adblock Plus 存储数据的目录。这可以是一个绝对路径，也可以是目录的相对位置以存储到用户的配置文件夹。\n如果"
-  },
-  "data_directory-s2": {
-    "message": "首选项设置的文件夹有其他文件，patterns.ini 将强制覆盖。"
+    "message": "Adblock Plus 存储数据的目录。这可以是一个绝对路径，也可以是目录的相对位置以存储到用户的配置文件夹。\n如果 <a>{1}</a> 首选项设置的文件夹有其他文件，patterns.ini 将强制覆盖。"
   },
   "subscriptions_exceptionscheckbox-s1": {
-    "message": "当设置为"
-  },
-  "subscriptions_exceptionscheckbox-s2": {
-    "message": "时，<a>非侵入式广告</a>\n规则列表将受到特殊对待（在首选项界面显示为一个复选框）。"
+    "message": "当设置为 <code>{1}</code> 时，<a>非侵入式广告</a>\n规则列表将受到特殊对待（在首选项界面显示为一个复选框）。"
   },
   "subscriptions_autoupdate-s1": {
     "message": "定义是否自动更新过滤规则订阅。"
@@ -165,21 +141,15 @@
     "message": "<em>注意：</em>不建议禁止更新订阅。"
   },
   "please_kill_startup_performance-s1": {
-    "message": "如果设置为"
+    "message": "如果设置为 <code>{1}</code>，启动时的过滤规则处理将同步完成并迟滞浏览器的启动过程。"
   },
   "please_kill_startup_performance-s2": {
-    "message": "，启动时的过滤规则处理将同步完成并迟滞浏览器的启动过程。"
-  },
-  "please_kill_startup_performance-s3": {
     "message": "不建议更改此设置；不过它也很可能会使得广告出现在浏览器自动加载的第一个页面上。"
   },
   "fastcollapse-s1": {
-    "message": "如果设置为"
+    "message": "如果设置为 <code>{1}</code>，已被屏蔽的元素将不再被隐藏。"
   },
-  "fastcollapse-s2": {
-    "message": "，已被屏蔽的元素将不再被隐藏。"
-  },
-  "fastcollapse-s4": {
+  "fastcollapse-s3": {
     "message": "此功能在 Adblock Plus 2.6.7 之前是“隐藏已屏蔽元素的占位符”选项。"
   },
   "currentVersion-s1": {
@@ -198,25 +168,16 @@
     "message": "最近提交的问题报告的 JSON 编码数据（报告的地址、报告的网站，以及提交时间）"
   },
   "hideContributeButton-s1": {
-    "message": "如果该项的值为"
-  },
-  "hideContributeButton-s2": {
-    "message": "，即表示用户已选择了隐藏“助力”按钮。"
+    "message": "如果该项的值为 <code>{1}</code>，即表示用户已选择了隐藏“助力”按钮。"
   },
   "blockableItemsSize-s1": {
     "message": "记住的可过滤项目列表窗口尺寸（宽度值仅与侧边栏方式显示有关）。"
   },
   "subscriptions_fallbackurl-s1": {
-    "message": "如果订阅下载失败达到一定次数（请参考"
-  },
-  "subscriptions_fallbackurl-s2": {
-    "message": "），将查询的脚本地址。%s 会在询问中被订阅的地址替换。如果订阅的新位置已知，该脚本应输出类似“301 http://example.com/new_list.txt”的信息。"
+    "message": "如果订阅下载失败达到一定次数（请参考 <a>{1}</a>），将查询的脚本地址。%s 会在询问中被订阅的地址替换。如果订阅的新位置已知，该脚本应输出类似“301 http://example.com/new_list.txt”的信息。"
   },
   "subscriptions_fallbackerrors-s1": {
-    "message": "当订阅下载失败几次时才会查询备用脚本（参考"
-  },
-  "subscriptions_fallbackerrors-s2": {
-    "message": "）以获得订阅的新地址。请注意，尝试下载失败后，Adblock Plus 会在一天内重新下载多次。"
+    "message": "当订阅下载失败几次时才会查询备用脚本（参考 <a>{1}</a>）以获得订阅的新地址。请注意，尝试下载失败后，Adblock Plus 会在一天内重新下载多次。"
   },
   "subscriptions_listurl-s1": {
     "message": "下载过滤规则订阅的完整列表的地址。"
@@ -310,6 +271,9 @@
   },
   "whitelist-s1": {
     "message": "Adblock Plus 2.3 及以上版本不再使用"
+  },
+  "s2-link": {
+    "message": "http://kb.mozillazine.org/About:config"
   },
   "sidebar_key-s2-link": {
     "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"

@@ -53,7 +53,7 @@ else
 {% endmacro %}
 
 {% macro getSubscription_returnDescription() %}
-{{"the requested subscription or"|translate("getSubscription_returnDescription-s1")}} <code>null</code> {{"if no subscription with the given identifier exists"|translate("getSubscription_returnDescription-s2")}}
+{{"the requested subscription or <code><fix>null</fix></code> if no subscription with the given identifier exists"|translate("getSubscription_returnDescription-s1")}}
 {% endmacro %}
 
 {% macro getSubscription_idDescription() %}
@@ -65,7 +65,7 @@ else
 {% endmacro %}
 
 {% macro getSubscriptionAt_returnDescription() %}
-{{"the requested subscription or"|translate("getSubscriptionAt_returnDescription-s1")}} <code>null</code> {{"if the index provided is invalid"|translate("getSubscriptionAt_returnDescription-s2")}}
+{{"the requested subscription or <code><fix>null</fix></code> if the index provided is invalid"|translate("getSubscriptionAt_returnDescription-s1")}}
 {% endmacro %}
 
 {% macro getSubscriptionAt_indexDescription() %}
@@ -107,7 +107,7 @@ else
 {% endmacro %}
 
 {% macro removeExternalSubscription_returnDescription() %}
-<code>true</code> {{"if the subscription has been successfully removed,"|translate("removeExternalSubscription_returnDescription-s1")}} <code>false</code> {{"if no such subscription exists or the subscription isn't managed externally"|translate("removeExternalSubscription_returnDescription-s2")}}
+{{"<code><fix>true</fix></code> if the subscription has been successfully removed, <code><fix>false</fix></code> if no such subscription exists or the subscription isn't managed externally"|translate("removeExternalSubscription_returnDescription-s1")}}
 {% endmacro %}
 
 {% macro removeExternalSubscription_idDescription() %}
@@ -141,7 +141,7 @@ else
 {% endmacro %}
 
 {% macro getInstalledVersion_returnDescription() %}
-{{"Adblock Plus version, for example"|translate("getInstalledVersion_returnDescription-s1")}} <code>0.7.0.1</code>
+{{"Adblock Plus version, for example <code><fix>0.7.0.1</fix></code>"|translate("getInstalledVersion_returnDescription-s1")}}
 {% endmacro %}
 
 
