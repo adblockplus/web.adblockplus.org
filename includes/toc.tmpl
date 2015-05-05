@@ -20,7 +20,7 @@
   {% set toclist = page_content["body"]|toclist %}
 
   {% if title_tag %}
-    <{{ title_tag }}>{{ page_content["title"] }}</{{ title_tag }}>
+    <{{ title_tag }}>{{ page_content.localedata.get("title", page_content["title"]) }}</{{ title_tag }}>
   {% endif %}
   <ul>
     {% for item in toclist %}
