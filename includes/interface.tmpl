@@ -18,7 +18,7 @@
 {% macro return_type(return_type) %}
   {% if return_type|truncate(1, True, "") == "I" %}
     {{ return_type|linkify }}
-      {{ return_type -}}
+      {{- return_type -}}
     </a>
   {% else %}
     {{ return_type }}
