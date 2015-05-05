@@ -469,189 +469,189 @@ title=Adblock Plus filters explained
   </div>
   <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
   <div class="filter">
-    <span class="verbatim">{{s51 ||ads.example.com^}}</span><span class="optionSeparator">{{s52 $}}</span><span class="typeOption">{{s53 script}}</span>{{s54 ,}}<span class="typeOption">{{s55 image}}</span>{{s56 ,}}<span class="domainOption">{{s57 domain=example.com|~foo.example.info}}</span>
+    {{s51 <span class="verbatim">||ads.example.com^</span><span class="optionSeparator">$</span><span class="typeOption">script</span>,<span class="typeOption">image</span>,<span class="domainOption">domain=example.com|~foo.example.info</span>}}
   </div>
 </div>
 
 <p>
-  {{s58 This rule blocks <code><fix>http://ads.example.com/foo.gif</fix></code> only if the following conditions are met:}}
+  {{s52 This rule blocks <code><fix>http://ads.example.com/foo.gif</fix></code> only if the following conditions are met:}}
 </p>
 <ul>
-  <li>{{s59 This address is being loaded as a script or an image.}}</li>
+  <li>{{s53 This address is being loaded as a script or an image.}}</li>
   <li>
-    {{s60 The page loading it comes from <code><fix>example.com</fix></code> domain (for example <code><fix>example.com</fix></code> itself
+    {{s54 The page loading it comes from <code><fix>example.com</fix></code> domain (for example <code><fix>example.com</fix></code> itself
     or <code><fix>subdomain.example.com</fix></code>) but not from <code><fix>foo.example.com</fix></code> or its subdomains.}}
   </li>
 </ul>
 
-<h2 id="exceptions">{{s61 Exception rules}}</h2>
+<h2 id="exceptions">{{s55 Exception rules}}</h2>
 
 <p>
-  {{s62 Exception rules are built the same as blocking rules, they define which addresses should be allowed even if matching blocking rules exists.}}
+  {{s56 Exception rules are built the same as blocking rules, they define which addresses should be allowed even if matching blocking rules exists.}}
 </p>
 
-<h3 id="exceptions1">{{s63 Example 1: Exception for particular requests}}</h3>
+<h3 id="exceptions1">{{s57 Example 1: Exception for particular requests}}</h3>
 
 <div class="example">
   <div class="explanations">
     <div class="exception">
-      <h4>{{s64 Exception rule}}</h4>
-      <p>{{s65 Rules starting like this are exceptions, they will override blocking rules.}}</p>
+      <h4>{{s58 Exception rule}}</h4>
+      <p>{{s59 Rules starting like this are exceptions, they will override blocking rules.}}</p>
     </div>
     <div class="verbatim">
-      <h4>{{s66 Address to be allowed}}</h4>
-      <p>{{s67 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
+      <h4>{{s60 Address to be allowed}}</h4>
+      <p>{{s61 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
     </div>
     <div class="typeOption">
       <h4><a href="#options">{{s47 Type option}}</a></h4>
       <p>
-        {{s69 This type option prevents the exception from being applied to scripts.}}
+        {{s63 This type option prevents the exception from being applied to scripts.}}
       </p>
     </div>
   </div>
   <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
   <div class="filter">
-    <span class="exception">{{s70 @@}}</span><span class="verbatim">{{s71 ||ads.example.com/notbanner^}}</span><span class="optionSeparator">{{s72 $}}</span><span class="typeOption">{{s73 ~script}}</span>
+    <span class="exception">{{s64 @@}}</span><span class="verbatim">{{s65 ||ads.example.com/notbanner^}}</span><span class="optionSeparator">{{s66 $}}</span><span class="typeOption">{{s67 ~script}}</span>
   </div>
 </div>
 
-<h3 id="exceptions2">{{s74 Example 2: Exception for an entire site}}</h3>
+<h3 id="exceptions2">{{s68 Example 2: Exception for an entire site}}</h3>
 
 <div class="example">
   <div class="explanations">
     <div class="exception">
-      <h4>{{s64 Exception rule}}</h4>
-      <p>{{s65 Rules starting like this are exceptions, they will override blocking rules.}}</p>
+      <h4>{{s58 Exception rule}}</h4>
+      <p>{{s59 Rules starting like this are exceptions, they will override blocking rules.}}</p>
     </div>
     <div class="verbatim">
-      <h4>{{s66 Address to be allowed}}</h4>
-      <p>{{s67 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
+      <h4>{{s60 Address to be allowed}}</h4>
+      <p>{{s61 This part of the rule defines which addresses it is applied to, it is structured the same as for <a href="#blocking">blocking rules</a>.}}</p>
     </div>
     <div class="typeOption">
       <h4><a href="#options">{{s47 Type option}}</a></h4>
       <p>
-        {{s80 This special type option indicates that Adblock Plus should be completely disabled on pages that this rule applies to.}}
+        {{s74 This special type option indicates that Adblock Plus should be completely disabled on pages that this rule applies to.}}
       </p>
     </div>
   </div>
   <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
   <div class="filter">
-    <span class="exception">{{s81 @@}}</span><span class="verbatim">{{s82 ||example.com^}}</span><span class="optionSeparator">{{s83 $}}</span><span class="typeOption">{{s84 document}}</span>
+    <span class="exception">{{s75 @@}}</span><span class="verbatim">{{s76 ||example.com^}}</span><span class="optionSeparator">{{s77 $}}</span><span class="typeOption">{{s78 document}}</span>
   </div>
 </div>
 
-<h2 id="comments">{{s85 Comments}}</h2>
+<h2 id="comments">{{s79 Comments}}</h2>
 
 <div class="example">
   <div class="explanations">
     <div class="comment">
-      <h4>{{s86 Comment}}</h4>
-      <p>{{s87 An exclamation mark at the beginning of the rule indicates a comment.}}</p>
+      <h4>{{s80 Comment}}</h4>
+      <p>{{s81 An exclamation mark at the beginning of the rule indicates a comment.}}</p>
     </div>
     <div class="verbatim">
-      <h4>{{s88 Comment text}}</h4>
-      <p>{{s89 This text will not be used for blocking, you can write anything you want.}}</p>
+      <h4>{{s82 Comment text}}</h4>
+      <p>{{s83 This text will not be used for blocking, you can write anything you want.}}</p>
     </div>
   </div>
   <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
   <div class="filter">
-    <span class="comment">{{s90 !}}</span><span class="verbatim">{{s91 This is a comment}}</span>
+    <span class="comment">{{s84 !}}</span><span class="verbatim">{{s85 This is a comment}}</span>
   </div>
 </div>
 
-<h2 id="options">{{s92 Filter options}}</h2>
+<h2 id="options">{{s86 Filter options}}</h2>
 
 <table>
   <col class="option">
   <col class="optionPurpose">
   <tr>
-    <th>{{s93 Option}}</th>
-    <th>{{s94 Purpose}}</th>
+    <th>{{s87 Option}}</th>
+    <th>{{s88 Purpose}}</th>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">{{s95 Types}}</td>
+    <td colspan="2" style="text-align: center;">{{s89 Types}}</td>
   </tr>
   <tr>
     <td><code>script</code><br><code>~script</code></td>
-    <td>{{s96 Include or exclude JavaScript files}}</td>
+    <td>{{s90 Include or exclude JavaScript files}}</td>
   </tr>
   <tr>
     <td><code>image</code><br><code>~image</code></td>
-    <td>{{s97 Include or exclude image files}}</td>
+    <td>{{s91 Include or exclude image files}}</td>
   </tr>
   <tr>
     <td><code>stylesheet</code><br><code>~stylesheet</code></td>
-    <td>{{s98 Include or exclude stylesheets (CSS files)}}</td>
+    <td>{{s92 Include or exclude stylesheets (CSS files)}}</td>
   </tr>
   <tr>
     <td><code>object</code><br><code>~object</code></td>
-    <td>{{s99 Include or exclude content handled by browser plugins like Flash or Java}}</td>
+    <td>{{s93 Include or exclude content handled by browser plugins like Flash or Java}}</td>
   </tr>
   <tr>
     <td><code>object-subrequest</code><br><code>~object-subrequest</code></td>
-    <td>{{s100 Include or exclude files loaded by browser plugins}}</td>
+    <td>{{s94 Include or exclude files loaded by browser plugins}}</td>
   </tr>
   <tr>
     <td><code>subdocument</code><br><code>~subdocument</code></td>
-    <td>{{s101 Include or exclude pages loaded within pages (frames)}}</td>
+    <td>{{s95 Include or exclude pages loaded within pages (frames)}}</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">{{s102 Exceptions}}</td>
+    <td colspan="2" style="text-align: center;">{{s96 Exceptions}}</td>
   </tr>
   <tr>
     <td><code>document</code></td>
-    <td>{{s103 Used to whitelist the page itself (e.g. <code><fix>@@||example.com^$document</fix></code>)}}</td>
+    <td>{{s97 Used to whitelist the page itself (e.g. <code><fix>@@||example.com^$document</fix></code>)}}</td>
   </tr>
   <tr>
     <td><code>elemhide</code></td>
-    <td>{{s104 Used to prevent element rules from applying on a page (e.g. <code><fix>@@||example.com^$elemhide</fix></code>)}}</td>
+    <td>{{s98 Used to prevent element rules from applying on a page (e.g. <code><fix>@@||example.com^$elemhide</fix></code>)}}</td>
   </tr>
   <tr>
-    <td colspan="2" style="text-align: center;">{{s105 Domains}}</td>
+    <td colspan="2" style="text-align: center;">{{s99 Domains}}</td>
   </tr>
   <tr>
     <td><code>domain=</code></td>
-    <td>{{s106 Specify a list of domains, separated by bar lines (|), on which a filter should be active. A filter may be prevented from being activated on a domain by preceding the domain name with a tilde (~).}}</td>
+    <td>{{s100 Specify a list of domains, separated by bar lines (|), on which a filter should be active. A filter may be prevented from being activated on a domain by preceding the domain name with a tilde (~).}}</td>
   </tr>
   <tr>
     <td><code>third-party</code><br><code>~third-party</code></td>
-    <td>{{s107 Specify whether a filter should be active on third-party or first domains}}</td>
+    <td>{{s101 Specify whether a filter should be active on third-party or first domains}}</td>
   </tr>
 </table>
 
-<p>{{s108 Less frequently used options, including <code><fix>dtd</fix></code>, <code><fix>ping</fix></code>, <code><fix>xbl</fix></code>, <code><fix>xmlhttprequest</fix></code>, <code><fix>other</fix></code>, <code><fix>collapse</fix></code>, <code><fix>donottrack</fix></code> and <code><fix>match-case</fix></code> are explained in the <a href="https://adblockplus.org/en/filters#options">full documentation</a>.}}</p>
+<p>{{s102 Less frequently used options, including <code><fix>dtd</fix></code>, <code><fix>ping</fix></code>, <code><fix>xbl</fix></code>, <code><fix>xmlhttprequest</fix></code>, <code><fix>other</fix></code>, <code><fix>collapse</fix></code>, <code><fix>donottrack</fix></code> and <code><fix>match-case</fix></code> are explained in the <a href="https://adblockplus.org/en/filters#options">full documentation</a>.}}</p>
 
-<h2 id="elementhiding">{{s109 Element hiding}}</h2>
+<h2 id="elementhiding">{{s103 Element hiding}}</h2>
 
-<p>{{s110 It is generally recommended that users install the <a href="https://addons.mozilla.org/firefox/addon/elemhidehelper/">Element Hiding Helper for Adblock Plus</a> to assist them in the generation of  element hiding rules.}}</p>
+<p>{{s104 It is generally recommended that users install the <a href="https://addons.mozilla.org/firefox/addon/elemhidehelper/">Element Hiding Helper for Adblock Plus</a> to assist them in the generation of  element hiding rules.}}</p>
 
-<h3 id="elementdomains">{{s111 Domain selection}}</h3>
+<h3 id="elementdomains">{{s105 Domain selection}}</h3>
 
-<p>{{s112 <code><fix>##selector</fix></code> is used as a placeholder for <a href="#elementselection">element selectors</a>.}}</p>
+<p>{{s106 <code><fix>##selector</fix></code> is used as a placeholder for <a href="#elementselection">element selectors</a>.}}</p>
 
 <table>
   <col class="selector">
   <col class="selectorPurpose">
   <tr>
-    <th>{{s113 Example rules}}</th>
-    <th>{{s111 Domain selection}}</th>
+    <th>{{s107 Example rules}}</th>
+    <th>{{s105 Domain selection}}</th>
   </tr>
   <tr>
     <td><code>##selector</code></td>
     <td>
       <p>
-        {{s115 Active on:}}
+        {{s109 Active on:}}
         <ul class="example-list">
-          <li>{{s116 All domains, including:}}</li>
+          <li>{{s110 All domains, including:}}</li>
           <li><code>http://example.com/</code></li>
           <li><code>https://example.net/</code></li>
           <li><code>ftp://example.edu/</code></li>
         </ul>
       </p>
       <p>
-        {{s117 Not active on:}}
+        {{s111 Not active on:}}
         <ul class="example-list">
-          <li>{{s118 Not applicable}}</li>
+          <li>{{s112 Not applicable}}</li>
         </ul>
       </p>
     </td>
@@ -660,16 +660,16 @@ title=Adblock Plus filters explained
     <td><code>example.com##selector</code></td>
     <td>
       <p>
-        {{s119 Active on, for example:}}
+        {{s113 Active on, for example:}}
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>ftp://subdomain.example.com/</code></li>
         </ul>
       </p>
       <p>
-        {{s117 Not active on:}}
+        {{s111 Not active on:}}
         <ul class="example-list">
-          <li>{{s121 All other domains, including}}</li>
+          <li>{{s115 All other domains, including}}</li>
           <li><code>http://example.edu/</code></li>
           <li><code>ftp://example.net/</code></li>
         </ul>
@@ -680,15 +680,15 @@ title=Adblock Plus filters explained
     <td><code>~example.com##selector</code></td>
     <td>
       <p>
-        {{s115 Active on:}}
+        {{s109 Active on:}}
         <ul class="example-list">
-          <li>{{s121 All other domains, including}}</li>
+          <li>{{s115 All other domains, including}}</li>
           <li><code>http://example.edu/</code></li>
           <li><code>ftp://example.net/</code></li>
         </ul>
       </p>
       <p>
-        {{s124 Not active on, for example:}}
+        {{s118 Not active on, for example:}}
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>ftp://subdomain.example.com/</code></li>
@@ -700,7 +700,7 @@ title=Adblock Plus filters explained
     <td><code>example.com,example.edu##selector</code></td>
     <td>
       <p>
-        {{s119 Active on, for example:}}
+        {{s113 Active on, for example:}}
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>https://subdomain.example.com/</code></li>
@@ -708,9 +708,9 @@ title=Adblock Plus filters explained
         </ul>
       </p>
       <p>
-        {{s117 Not active on:}}
+        {{s111 Not active on:}}
         <ul class="example-list">
-          <li>{{s127 All other domains, including:}}</li>
+          <li>{{s121 All other domains, including:}}</li>
           <li><code>http://example.net/</code></li>
         </ul>
       </p>
@@ -720,7 +720,7 @@ title=Adblock Plus filters explained
     <td><code>example.com,~mail.example.com#selector</code></td>
     <td>
       <p>
-        {{s115 Active on:}}
+        {{s109 Active on:}}
         <ul class="example-list">
           <li><code>http://example.com/</code></li>
           <li><code>https://adverts.example.com/</code></li>
@@ -728,68 +728,68 @@ title=Adblock Plus filters explained
         </ul>
       </p>
       <p>
-        {{s117 Not active on:}}
+        {{s111 Not active on:}}
         <ul class="example-list">
           <li><code>http://mail.example.com/</code></li>
-          <li>{{s130 All other domains}}</li>
+          <li>{{s124 All other domains}}</li>
         </ul>
       </p>
     </td>
   </tr>
 </table>
 
-<h3 id="elementselection">{{s131 Element selection}}</h3>
+<h3 id="elementselection">{{s125 Element selection}}</h3>
 
 <table>
   <col class="selector">
   <col class="selectorPurpose">
   <tr>
-    <th>{{s132 Selector}}</th>
-    <th>{{s133 Purpose}}</th>
+    <th>{{s126 Selector}}</th>
+    <th>{{s127 Purpose}}</th>
   </tr>
   <tr>
     <td><code>###advert</code></td>
-    <td>{{s134 Matches the element with the unique id "advert"}}</td>
+    <td>{{s128 Matches the element with the unique id "advert"}}</td>
   </tr>
   <tr>
     <td><code>##.advert</code></td>
-    <td>{{s135 Matches elements with the class "advert"}}</td>
+    <td>{{s129 Matches elements with the class "advert"}}</td>
   </tr>
   <tr>
     <td><code>##table[height=&quot;100&quot;][width=&quot;100&quot;]</code></td>
-    <td>{{s136 Matches a table with a height of 100 and a width of 100}}</td>
+    <td>{{s130 Matches a table with a height of 100 and a width of 100}}</td>
   </tr>
   <tr>
     <td><code>##a[href=&quot;http://example.com/&quot;]</code></td>
-    <td>{{s137 Matches links to http://example.com/}}</td>
+    <td>{{s131 Matches links to http://example.com/}}</td>
   </tr>
   <tr>
     <td><code>##div[style=&quot;width:300px;height:250px;&quot;]</code></td>
-    <td>{{s138 Matches div elements that have exactly the style specified}}</td>
+    <td>{{s132 Matches div elements that have exactly the style specified}}</td>
   </tr>
   <tr>
     <td><code>###advert &gt; .link</code></td>
-    <td>{{s139 Matches elements with the class "link" that are enclosed within elements with the id "advert"}}</td>
+    <td>{{s133 Matches elements with the class "link" that are enclosed within elements with the id "advert"}}</td>
   </tr>
   <tr>
     <td><code>###advert + .link</code></td>
-    <td>{{s140 Matches elements with the class "link" that are immediately preceded by elements with the id "advert"}}</td>
+    <td>{{s134 Matches elements with the class "link" that are immediately preceded by elements with the id "advert"}}</td>
   </tr>
   <tr>
     <td><code>##a[href^=&quot;http://example.com/&quot;]</code></td>
-    <td>{{s141 Matches links to any pages hosted on http://example.com/}}</td>
+    <td>{{s135 Matches links to any pages hosted on http://example.com/}}</td>
   </tr>
   <tr>
     <td><code>##div[style^=&quot;width:300px;height:250px;&quot;]</code></td>
-    <td>{{s142 Matches div elements that start with the style specified}}</td>
+    <td>{{s136 Matches div elements that start with the style specified}}</td>
   </tr>
   <tr>
     <td><code>##div[style$=&quot;width:300px;height:250px;&quot;]</code></td>
-    <td>{{s143 Matches div elements that end the style specified}}</td>
+    <td>{{s137 Matches div elements that end the style specified}}</td>
   </tr>
   <tr>
     <td><code>##div[style*=&quot;width:300px;height:250px;&quot;]</code></td>
-    <td>{{s144 Matches div elements that containing the style specified}}</td>
+    <td>{{s138 Matches div elements that containing the style specified}}</td>
   </tr>
 </table>
-<p>{{s145 The above filters are only examples of valid element hiding rules. Any <a href="http://www.w3.org/TR/css3-selectors/">CSS selector</a> supported by Firefox can be used for element hiding.}}</p>
+<p>{{s139 The above filters are only examples of valid element hiding rules. Any <a href="http://www.w3.org/TR/css3-selectors/">CSS selector</a> supported by Firefox can be used for element hiding.}}</p>
