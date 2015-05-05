@@ -73,10 +73,6 @@ title=Adblock Plus preferences
 {{"Value of the \"Count filter hits\" option"|translate("savestats-s1")}}
 {% endmacro %}
 
-{% macro synchronizationintervalDescription() %}
-{{"Unused in Adblock Plus 2.0 and higher"|translate("synchronizationinterval-s1")}}
-{% endmacro %}
-
 {% macro patternsfileDescription() %}
 {{"Name of the file that should be used to store the list of filters. This can be either an absolute path, or it can be file's location relative to the user's profile."|translate("patternsfile-s1")}}
 {% endmacro %}
@@ -312,6 +308,10 @@ title=Adblock Plus preferences
 {{"Unused in Adblock Plus 2.0 and higher"|translate("showintoolbar-s1")}}
 {% endmacro %}
 
+{% macro synchronizationintervalDescription() %}
+{{"Unused in Adblock Plus 2.0 and higher"|translate("synchronizationinterval-s1")}}
+{% endmacro %}
+
 {% macro settings_keyDescription() %}
 {{"Unused in Adblock Plus 2.0 and higher"|translate("settings_key-s1")}}
 {% endmacro %}
@@ -468,11 +468,6 @@ title=Adblock Plus preferences
         "name": "subscriptions_exceptionscheckbox",
         "default": "true",
         "description": subscriptions_exceptionscheckboxDescription
-      },
-      {
-        "name": "synchronizationinterval",
-        "default": "24",
-        "description": synchronizationintervalDescription
       }
     ]
   },
