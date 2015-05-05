@@ -6,111 +6,93 @@
     "message": "¿Dónde puedo encontrar el significado de todas las preferencias de Adblock Plus?"
   },
   "s3": {
-    "message": "Adblock Plus utiliza diferentes preferencias a las que puede acceder mediante <a>about:config</a>. Todas empiezan con"
+    "message": "Adblock Plus utiliza diferentes preferencias a las que puede acceder mediante <a>about:config</a>. Todas empiezan con <code>{1}</code> (a diferencia de Adblock y Adblock Plus 0.5, que utilizan el prefijo <code>{2}</code>). Puede consultar la lista completa con explicaciones <a>aquí</a>."
   },
   "s4": {
-    "message": "extensions.adblockplus."
-  },
-  "s5": {
-    "message": "(a diferencia de Adblock y Adblock Plus 0.5, que utilizan el prefijo"
-  },
-  "s6": {
-    "message": "adblock."
-  },
-  "s7": {
-    "message": "). Puede consultar la lista completa con explicaciones <a>aquí</a>."
-  },
-  "s8": {
     "message": "¿Cómo puedo acceder a Adblock Plus desde mi extensión?"
   },
-  "s9": {
-    "message": "Para posibilitar que otras extensiones se integren con Adblock Plus se ha exportado la interfaz"
+  "s5": {
+    "message": "Para posibilitar que otras extensiones se integren con Adblock Plus se ha exportado la interfaz <code>{1}</code> . Consulte la <a>documentación de la interfaz</a> para más información."
   },
-  "s10": {
-    "message": "IAdblockPlus"
-  },
-  "s11": {
-    "message": ". Consulte la <a>documentación de la interfaz</a> para más información."
-  },
-  "s12": {
+  "s6": {
     "message": "¿Cómo bloquea direcciones Adblock Plus?"
   },
-  "s13": {
+  "s7": {
     "message": "En realidad, Gecko (el motor interno de Firefox, Thunderbird y otras aplicaciones) hace la mayor parte del trabajo, al permitir lo que se denominan \"políticas de contenidos\". Una política de contenidos es un objeto JavaScript (o C++) al que se llama cada vez que el navegador tiene que cargar algo. Entonces puede mirar la dirección a cargar y otros datos más, y decidir si se permite o no. Existen varias políticas de contenidos predeterminadas (cuando usted define a qué sitios no se les permite cargar imágenes en Firefox o Seamonkey, está configurando unas de esas políticas predeterminadas), y cualquier extensión puede registrar la suya. Así que Adblock Plus sólo tiene que registrar su política de contenidos, y entonces sólo falta una lógica aplicada que decida que direcciones bloquear y una interfaz de usuario que permita configurar los filtros."
   },
-  "s17": {
+  "s11": {
     "message": "Para desarrolladores: para registrar una política de contenidos hay que <a>escribir un componente XPCOM</a> que a su vez implemente la <a>interfaz nsIContentPolicy</a>. Asegúrese de ajustar el método registerSelf del módulo para registrar su componente en la categoría \"content-policy\" (utilice el <a>administrador de categorías</a>). De este modo se llamará al método shouldLoad de su componente y usted podrá decidir si esa petición específica debe aceptarse o rechazarse."
   },
-  "s18": {
+  "s12": {
     "message": "¿Cómo procesa sus filtros Adblock Plus, y cuáles son más rápidos?"
   },
-  "s19": {
+  "s13": {
     "message": "Todos los filtros se convierten internamente en <a>expresiones regulares</a>, incluso los que no están especificados como tales. Por ejemplo, el filtro <code>ad*banner.gif|</code> se convertirá en la expresión regular <code>/ad.*banner\\.gif$/</code>. Sin embargo, cuando se le da una dirección a Adblock Plus para que la compare con los filtros no se limita a probarlos todos uno tras otro, pues eso ralentizaría innecesariamente el navegador."
   },
-  "s20": {
+  "s14": {
     "message": "Además de convertir los filtros en expresiones regulares, Adblock Plus intenta extraer de ellos información textual. Lo que necesita una única cadena de 8 caracteres (un \"atajo\") que debe estar presente en cualquier dirección que coincida con el filtro (esa longitud es arbitraria, sencillamente ocho caracteres parecía una cantidad razonable). Por ejemplo, si usted tiene un filtro como <code>|http://ad.*</code>, Adblock Plus tiene que elegir entre \"http://a\", \"ttp://ad\" y \"tp://ad.\"; cualquiera de esas cadenas estará siempre presente en cualquier filtro que coincida con la dirección. Lo malo es que no se puede encontrar una atajo para filtros que no tengan ocho caracteres que no estén separados por comodines, o que ya hayan sido especificados como expresiones regulares."
   },
-  "s21": {
+  "s15": {
     "message": "Todos los atajos se incluyen en una table de consulta, de modo que Adblock Plus puede encontrar de forma muy eficiente el filtro mediante su atajo. Cuando Adblock Plus tiene que probar una dirección concreta primero mira los atajos conocidos (esto se hará muy rápidamente, pues el tiempo necesario es casi independiente del número de atajos). Sólo cuando se encuentra un atajo se procede a comprobar la cadena de texto con la expresión regular del filtro correspondiente. Sin embargo, los filtros que no tienen atajo tienen que probarse uno a uno, lo que resulta lento."
   },
-  "s22": {
+  "s16": {
     "message": "En resumen: ¿qué filtros deben usarse para que la lista de filtros sea más rápida? Debe intentar usar el menor número de expresiones regulares posible, pues siempre serán lentas. También debe asegurarse de que los filtros simples tienen al menos ocho caracteres de texto sin interrupciones (es decir, sin contener caracteres especiales como *), pues en caso contrario el filtro será tan lento como una expresión regular. Pero con filtros que cumplan esa regla no importará cuántos tenga, el tiempo de procesamiento será siempre el mismo. Eso significa que si necesita 20 filtros simples para reemplazar una expresión regular, vale la pena hacerlo. Y ya que mencionamos el tema, es muy recomendable utilizar el <a>deregifier</a> (aplicación que deshace las expresiones regulares)."
   },
-  "s23": {
+  "s17": {
     "message": "Explicación detallada del algoritmo de comprobación de filtros."
   },
-  "s24": {
+  "s18": {
     "message": "¿Cómo funciona la ocultación de elementos?"
   },
-  "s26": {
+  "s20": {
     "message": "Las reglas de ocultación de elementos se convierten en <a>reglas CSS</a> y se aplican a todas las páginas web que visite el usuario. Una regla como <code>example.com#div(evil_ad)</code> se convertiría en:"
   },
-  "s28": {
+  "s22": {
     "message": "@-moz-document es una extensión propuesta para el estándar CSS, puede obtener más información sobre el asunto en el <a>Mozilla Developer Center</a>."
   },
-  "s29": {
+  "s23": {
     "message": "Las reglas que no están limitadas a un dominio determinado se limitarán a los protocolos http:// y https:// para evitar que se oculten elementos de la interfaz de usuario (que usa el esquema de protocolo chrome://). Por ejemplo, la regla <code>#div(evil_ad)</code> se convertirá en:"
   },
-  "s32": {
+  "s26": {
     "message": "Para desarrolladores: Adblock Plus utiliza para ello el <a>servicio de hojas de estilo</a>. Esta interfaz, que se incluyó con Gecko 1.8, permite que las extensiones añadan dinámicamente hojas de estilo de usuario (anteriormente sólo se podía modificar userContent.css, lo que requería reiniciar el navegador). Las hojas de estilo de usuario tienen preferencia sobre el código CSS de cualquier página web, puesto que tienen la máxima <a>prioridad CSS</a>."
   },
-  "s33": {
+  "s27": {
     "message": "¿Qué aspecto debe tener la primera línea del archivo de filtros?"
   },
-  "s34": {
+  "s28": {
     "message": "Normalmente la primera línea de un archivo de filtros es sencillamente <code>[Adblock]</code>. Pero quizás haya notado que en las últimas versiones de Adblock Plus a veces se pone en su lugar un texto diferente. Esto ocurre cuando tiene en su lista filtros que usan la sintaxis avanzada de filtros que soportan las versiones más modernas de Adblock Plus, pero no el Adblock original. Un ejemplo sería:"
   },
-  "s35": {
+  "s29": {
     "message": "Esto es sólo un comentario. Adblock (y Adblock Plus por ese mismo motivo) ignorará todo antes del marcador real. La versión mínima de Adblock Plus exigida no se impone porque Adblock Plus 0.6.1.2 no la soportaba. Sin embargo, si usted usa una sintaxis de filtros más moderna podría tener algo como esto:"
   },
-  "s36": {
+  "s30": {
     "message": "Este tipo de encabezamiento está soportado a partir de Adblock Plus 0.7.1. Las versiones anteriores de Adblock Plus y Adblock no pueden abrir archivos con ese encabezamiento. Las versiones actuales comprobarán el número de versión del cabecero y lo compararán con su número de versión. Si el archivo exige una versión más moderna de Adblock Plus se le mostrará un mensaje al usuario pidiéndole que actualice. Las suscripciones seguirán cargando archivos diseñados para versiones más modernas de Adblock Plus pero mostrarán un aviso en la ventana de preferencias."
   },
-  "s37": {
+  "s31": {
     "message": "Por último, si quiere exigir que se use Adblock Plus pero no quiere especificar el número de versión puede iniciar el archivo con <code>[Adblock Plus]</code>. Por supuesto que este archivo sólo será aceptado por Adblock Plus 0.7.1 y las versiones posteriores."
   },
   "s3-link": {
     "message": "http://kb.mozillazine.org/About:config"
   },
-  "s17-link": {
+  "s11-link": {
     "message": "http://developer.mozilla.org/en/docs/How_to_Build_an_XPCOM_Component_in_Javascript"
   },
-  "s17-link2": {
+  "s11-link2": {
     "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
   },
-  "s17-link3": {
+  "s11-link3": {
     "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
   },
-  "s26-link": {
+  "s20-link": {
     "message": "http://www.w3.org/TR/CSS21/"
   },
-  "s28-link": {
+  "s22-link": {
     "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
   },
-  "s32-link": {
+  "s26-link": {
     "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
   },
-  "s32-link2": {
+  "s26-link2": {
     "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
   }
 }

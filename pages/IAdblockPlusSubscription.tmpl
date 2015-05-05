@@ -28,7 +28,7 @@ title=IAdblockPlusSubscription
 {% endmacro %}
 
 {% macro specialDescription() %}
-<p>{{"Defines whether the subscription is a special group containing user filters. Currently there are four special groups, namely"|translate("specialDescription-s1")}} <tt><sub>{{"fl"|translate("specialDescription-s2")}}</sub></tt> {{"(normal filters),"|translate("specialDescription-s3")}} <tt><sub>{{"wl"|translate("specialDescription-s4")}}</sub></tt> {{"(exception rules),"|translate("specialDescription-s5")}} <tt><sub>{{"eh"|translate("specialDescription-s6")}}</sub></tt> {{"(element hiding rules) and"|translate("specialDescription-s7")}} <tt><sub>{{"il"|translate("specialDescription-s8")}}</sub></tt> {{"(invalid rules)."|translate("specialDescription-s9")}}</p>
+<p>{{"Defines whether the subscription is a special group containing user filters. Currently there are four special groups, namely <code><fix>fl</fix></code> (normal filters), <code><fix>wl</fix></code> (exception rules), <code><fix>eh</fix></code> (element hiding rules) and <code><fix>il</fix></code> (invalid rules)."|translate("specialDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro titleDescription() %}
@@ -40,30 +40,30 @@ title=IAdblockPlusSubscription
 {% endmacro %}
 
 {% macro disabledDescription() %}
-<p>{{"Defines whether the subscription is disabled. If this attribute is set to"|translate("disabledDescription-s1")}} <tt>{{"true"|translate("disabledDescription-s2")}}</tt> {{"the filters in the subscription won't be applied."|translate("disabledDescription-s3")}}</p>
+<p>{{"Defines whether the subscription is disabled. If this attribute is set to <code><fix>true</fix></code> the filters in the subscription won't be applied."|translate("disabledDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro externalDescription() %}
-<p>{{"Defines whether the subscription is managed externally. If this attribute is set to"|translate("externalDescription-s1")}} <tt>{{"true"|translate("externalDescription-s2")}}</tt> {{"the filters in the subscription will only be updated if some extension calls <a href=\"IAdblockPlus#method_updateExternalSubscription\">IAdblockPlus.updateExternalSubscription</a>."|translate("externalDescription-s3")}}</p>
+<p>{{"Defines whether the subscription is managed externally. If this attribute is set to <code><fix>true</fix></code> the filters in the subscription will only be updated if some extension calls <a href=\"IAdblockPlus#method_updateExternalSubscription\">IAdblockPlus.updateExternalSubscription</a>."|translate("externalDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro lastDownloadDescription() %}
-<p>{{"Timestamp (return value of"|translate("lastDownloadDescription-s1")}} <tt>{{"new Date().getTime()"|translate("lastDownloadDescription-s2")}}</tt>{{") of last attempt to download the subscription. The value 0 means that the subscription was never downloaded."|translate("lastDownloadDescription-s3")}}</p>
+<p>{{"Timestamp (return value of <code><fix>new Date().getTime()</fix></code>) of last attempt to download the subscription. The value 0 means that the subscription was never downloaded."|translate("lastDownloadDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro downloadStatusDescription() %}
 <p>{{"Result code for the last download attempt. This can have the following values:"|translate("downloadStatusDescription-s1")}}</p>
 
         <ul>
-               <li><tt>{{"ok"|translate("downloadStatusDescription-s2")}}</tt>{{"-- Success"|translate("downloadStatusDescription-s3")}}</li>
-               <li><tt>{{"invalid_url"|translate("downloadStatusDescription-s4")}}</tt>{{"-- Subscription URL is invalid"|translate("downloadStatusDescription-s5")}}</li>
-               <li><tt>{{"connection_error"|translate("downloadStatusDescription-s6")}}</tt>{{"-- Subscription could not be downloaded"|translate("downloadStatusDescription-s7")}}</li>
-               <li><tt>{{"invalid_data"|translate("downloadStatusDescription-s8")}}</tt>{{"-- Subscription was downloaded but the first line wasn't"|translate("downloadStatusDescription-s9")}} <tt>{{"[Adblock]"|translate("downloadStatusDescription-s10")}}</tt></li>
+               <li>{{"<code><fix>ok</fix></code> — Success"|translate("downloadStatusDescription-s2")}}</li>
+               <li>{{"<code><fix>invalid_url</fix></code> — Subscription URL is invalid"|translate("downloadStatusDescription-s3")}}</li>
+               <li>{{"<code><fix>connection_error</fix></code> — Subscription could not be downloaded"|translate("downloadStatusDescription-s4")}}</li>
+               <li>{{"<code><fix>invalid_data</fix></code> — Subscription was downloaded but the first line wasn't <code><fix>[Adblock]</fix></code>"|translate("downloadStatusDescription-s5")}}</li>
         </ul>
 {% endmacro %}
 
 {% macro lastModifiedDescription() %}
-<p>{{"Value of the"|translate("lastModifiedDescription-s1")}} <tt>{{"Last-Modified"|translate("lastModifiedDescription-s2")}}</tt> {{"HTTP header received with the last successful download. This isn't used yet and will always be empty."|translate("lastModifiedDescription-s3")}}</p>
+<p>{{"Value of the <code><fix>Last-Modified</fix></code> HTTP header received with the last successful download. This isn't used yet and will always be empty."|translate("lastModifiedDescription-s1")}}</p>
 {% endmacro %}
 
 {% macro getPatternsDescription() %}
