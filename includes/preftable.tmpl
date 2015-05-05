@@ -38,7 +38,7 @@
               <td>{{ preference.default }}</td>
             {% elif preference.default is none or
                     preference.default is undefined %}
-              <td><em>empty</em></td>
+              <td><em>{{ "empty"| translate("empty") }}</em></td>
             {% else %}
               <td>&nbsp;</td>
             {% endif %}
