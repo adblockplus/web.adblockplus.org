@@ -1,7 +1,7 @@
 title=Detailed changelog for Adblock Plus 0.7
 
 
-        <p>{{s1 The following lists the major changes compared to Adblock Plus 0.6.1:}}</p>
+<p>{{s1 The following lists the major changes compared to Adblock Plus 0.6.1:}}</p>
 
         <h2 id="features">{{s2 New features}}</h2>
 
@@ -58,26 +58,26 @@ title=Detailed changelog for Adblock Plus 0.7
         <ul>
                <li>{{s45 Only exception rules starting with <code></code>http:// or <code></code>https:// will whitelist entire pages, other rules apply to individual items only}}</li>
                <li>{{s46 Saving daily backups of patterns.ini (max. 5 backups by default)}}</li>
-               <li><tt><span>{{s47 VERSION}}</span></tt> {{s48 in subscription addresses is replaced by current Adblock Plus version when updating, e.g.}} <tt>{{s49 ABP0.7}}</tt></li>
-               <li>{{s50 Added interface IAdblockPlus to be used by other extensions (for example to manage external subscriptions)}}</li>
-               <li>{{s51 Moved several hardcoded lists to preferences}}</li>
-               <li>{{s52 Choosing which schemes can be blocked with a whitelist (<a href="preferences#whitelistschemes">extensions.adblockplus.whitelistschemes</a>), not a blacklist}}</li>
-               <li>{{s53 Fixed: Blockable items list would show all visited pages, not just the current (mainly on Linux)}}</li>
-               <li>{{s54 Fixed: Memory leak happening with Gecko 1.8 (not Gecko 1.9) when "Show tabs on Flash and Java" is activated}}</li>
-               <li>{{s55 Fixed: Performance issues on pages with many occurences of the same address}}</li>
-               <li>{{s56 Fixed: Switching profiles at runtime in Mozilla and SeaMonkey isn't handled properly}}</li>
-               <li>{{s57 Fixed: Error message "}}<tt>{{s58 secureLookup(insecDoc, 'createEvent') is not a function}}</tt>{{s59 "}}</li>
-               <li>{{s60 Filters starting with http:// or https:// no longer match only at the beginning of the address}}</li>
-               <li>{{s61 Starting filters with | makes them match only at the beginning of the address, finishing them with | makes them match only at the end}}</li>
-               <li>{{s62 Fixed file permission problems when installing on Linux in Mozilla Suite/SeaMonkey}}</li>
-               <li>{{s63 Made sure there is no way for web sites to detect Adblock Plus}}</li>
+               <li>{{s47 <code><fix>VERSION</fix></code> in subscription addresses is replaced by current Adblock Plus version when updating, e.g. <code><fix>ABP0.7</fix></code>}}</li>
+               <li>{{s48 Added interface IAdblockPlus to be used by other extensions (for example to manage external subscriptions)}}</li>
+               <li>{{s49 Moved several hardcoded lists to preferences}}</li>
+               <li>{{s50 Choosing which schemes can be blocked with a whitelist (<a href="preferences#whitelistschemes">extensions.adblockplus.whitelistschemes</a>), not a blacklist}}</li>
+               <li>{{s51 Fixed: Blockable items list would show all visited pages, not just the current (mainly on Linux)}}</li>
+               <li>{{s52 Fixed: Memory leak happening with Gecko 1.8 (not Gecko 1.9) when "Show tabs on Flash and Java" is activated}}</li>
+               <li>{{s53 Fixed: Performance issues on pages with many occurences of the same address}}</li>
+               <li>{{s54 Fixed: Switching profiles at runtime in Mozilla and SeaMonkey isn't handled properly}}</li>
+               <li>{{s55 Fixed: Error message "<code><fix>secureLookup(insecDoc, 'createEvent') is not a function</fix></code>"}}</li>
+               <li>{{s56 Filters starting with http:// or https:// no longer match only at the beginning of the address}}</li>
+               <li>{{s57 Starting filters with | makes them match only at the beginning of the address, finishing them with | makes them match only at the end}}</li>
+               <li>{{s58 Fixed file permission problems when installing on Linux in Mozilla Suite/SeaMonkey}}</li>
+               <li>{{s59 Made sure there is no way for web sites to detect Adblock Plus}}</li>
         </ul>
 
-        <h2 id="issues">{{s64 Known issues}}</h2>
+        <h2 id="issues">{{s60 Known issues}}</h2>
 
         <ul>
-               <li>{{s65 Yahoo Application State plugin (npYState.dll, installed by Yahoo Messenger) causes crashes on Yahoo Mail if Adblock Plus is installed. It is suggested to remove this plugin, its only function seems to be to notify Yahoo Mail about your version of Yahoo Messenger.}}</li>
-               <li>{{s66 Flash plugin crashes when Mozilla ActiveX plugin is installed and the option "Show tabs on Flash and Java" in Adblock Plus is activated. It is suggested to deactivate this option.}}</li>
+               <li>{{s61 Yahoo Application State plugin (npYState.dll, installed by Yahoo Messenger) causes crashes on Yahoo Mail if Adblock Plus is installed. It is suggested to remove this plugin, its only function seems to be to notify Yahoo Mail about your version of Yahoo Messenger.}}</li>
+               <li>{{s62 Flash plugin crashes when Mozilla ActiveX plugin is installed and the option "Show tabs on Flash and Java" in Adblock Plus is activated. It is suggested to deactivate this option.}}</li>
         </ul>
 
-        <p><a href="changelog-0.6.1">{{s67 Changelog for the previous release}}</a></p>
+        <p><a href="changelog-0.6.1">{{s63 Changelog for the previous release}}</a></p>

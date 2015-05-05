@@ -12,31 +12,7 @@
     "message": "條件集標示字元。任何由外部管理的條件集及特殊群組都可以是任意的字串，對其他的條件集而言則是它們更新的 URL 。"
   },
   "specialDescription-s1": {
-    "message": "定義條件集是否為包含使用者規則的特殊群組。目前有四種特殊群組，意即"
-  },
-  "specialDescription-s2": {
-    "message": "fl"
-  },
-  "specialDescription-s3": {
-    "message": "(一般規則)，"
-  },
-  "specialDescription-s4": {
-    "message": "wl"
-  },
-  "specialDescription-s5": {
-    "message": "(例外規則)，"
-  },
-  "specialDescription-s6": {
-    "message": "eh"
-  },
-  "specialDescription-s7": {
-    "message": "(元素隱藏規則) 及"
-  },
-  "specialDescription-s8": {
-    "message": "il"
-  },
-  "specialDescription-s9": {
-    "message": "(無效規則)。"
+    "message": "定義條件集是否為包含使用者規則的特殊群組。目前有四種特殊群組，意即 <code>{1}</code> (一般規則)，<code>{2}</code> (例外規則)，<code>{3}</code> (元素隱藏規則) 及 <code>{4}</code> (無效規則)。"
   },
   "titleDescription-s1": {
     "message": "在偏好設定視窗中檢視的條件集標題"
@@ -45,70 +21,31 @@
     "message": "定義該條件集是否會自動更新。請注意這個屬性對於由外部管理的條件集與特殊群組而言是無意義的。"
   },
   "disabledDescription-s1": {
-    "message": "定義該條件集是否停用。若該屬性被設為"
-  },
-  "disabledDescription-s2": {
-    "message": "true"
-  },
-  "disabledDescription-s3": {
-    "message": "則該條件集的規則將不會生效。"
+    "message": "定義該條件集是否停用。若該屬性被設為 <code>{1}</code> 則該條件集的規則將不會生效。"
   },
   "externalDescription-s1": {
-    "message": "定義該條件集是否由外部管理。若該屬性被設為"
-  },
-  "externalDescription-s2": {
-    "message": "true"
-  },
-  "externalDescription-s3": {
-    "message": "則該條件集的規則將只會被某些呼叫 <a>IAdblockPlus.updateExternalSubscription</a> 的套件更新。"
+    "message": "定義該條件集是否由外部管理。若該屬性被設為 <code>{1}</code> 則該條件集的規則將只會被某些呼叫 <a>IAdblockPlus.updateExternalSubscription</a> 的套件更新。"
   },
   "lastDownloadDescription-s1": {
-    "message": "最後一次嘗試下載條件集的時間戳記 (回傳"
-  },
-  "lastDownloadDescription-s2": {
-    "message": "new Date().getTime()"
-  },
-  "lastDownloadDescription-s3": {
-    "message": "的值)。該值為 0 表示此條件集從未下載。"
+    "message": "最後一次嘗試下載條件集的時間戳記 (回傳 <code>{1}</code> 的值)。該值為 0 表示此條件集從未下載。"
   },
   "downloadStatusDescription-s1": {
     "message": "最後一次嘗試下載的結果碼。有下列幾種值："
   },
   "downloadStatusDescription-s2": {
-    "message": "ok"
+    "message": "<code>{1}</code> — 完成"
   },
   "downloadStatusDescription-s3": {
-    "message": " — 完成"
+    "message": "<code>{1}</code> — 條件集網址無效"
   },
   "downloadStatusDescription-s4": {
-    "message": "invalid_url"
+    "message": "<code>{1}</code> — 條件集無法下載"
   },
   "downloadStatusDescription-s5": {
-    "message": " — 條件集網址無效"
-  },
-  "downloadStatusDescription-s6": {
-    "message": "connection_error"
-  },
-  "downloadStatusDescription-s7": {
-    "message": " — 條件集無法下載"
-  },
-  "downloadStatusDescription-s8": {
-    "message": "invalid_data"
-  },
-  "downloadStatusDescription-s9": {
-    "message": " — 條件集已下載但第一行不是"
-  },
-  "downloadStatusDescription-s10": {
-    "message": "[Adblock]"
+    "message": "<code>{1}</code> — 條件集已下載但第一行不是 <code>{2}</code>"
   },
   "lastModifiedDescription-s1": {
-    "message": "最後一次成功下載時接收的"
-  },
-  "lastModifiedDescription-s2": {
-    "message": "Last-Modified"
-  },
-  "lastModifiedDescription-s3": {
-    "message": "HTTP 標頭。這個值尚未使用，所以始終留空。"
+    "message": "最後一次成功下載時接收的 <code>{1}</code> HTTP 標頭。這個值尚未使用，所以始終留空。"
   },
   "getPatternsDescription-s1": {
     "message": "索取條件集的規則列表。請注意這個方法將不會對特殊群組回傳任何有用的東西。"

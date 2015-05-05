@@ -141,66 +141,54 @@
     "message": "Savegarde journalière des patterns.ini (max. 5 sauvegardes par défaut)"
   },
   "s47": {
-    "message": "VERSION"
+    "message": "<code>{1}</code> dans l'adresse d'abonnement est remplacé par le numéro de version corante d'Adblock Plus version lors de la mise à jour, ex. <code>{2}</code>"
   },
   "s48": {
-    "message": "dans l'adresse d'abonnement est remplacé par le numéro de version corante d'Adblock Plus version lors de la mise à jour, ex."
-  },
-  "s49": {
-    "message": "ABP0.7"
-  },
-  "s50": {
     "message": "Ajout de l'interface IAdblockPlus pour être utilisée par d'autres extensions (par exemple pour gérer les abonnements externes)"
   },
-  "s51": {
+  "s49": {
     "message": "Déplacement de plusieurs listes codées en dur vers les préférences about:config"
   },
-  "s52": {
+  "s50": {
     "message": "Choix du type d'URL pouvant être bloqué avec une liste blanche (<a>extensions.adblockplus.whitelistschemes</a>), pas une liste noire"
   },
-  "s53": {
+  "s51": {
     "message": "Réparé : La liste des éléments filtrables afficherait toutes les pages visitées, non pas juste la page courante (principalement dans Linux)"
   },
-  "s54": {
+  "s52": {
     "message": "Réparé : Fuite de mémoires avec Gecko 1.8 (pas Gecko 1.9) lorsque l'option \"Afficher une étiquette pour Flash et Java\" est activée"
   },
-  "s55": {
+  "s53": {
     "message": "Réparé : Problèmes de performance sur les pages contenant beaucoup d'occurences de la même adresse"
   },
-  "s56": {
+  "s54": {
     "message": "Réparé : Le changement de profil dans Mozilla and SeaMonkey ne s'effectuait pas correctement"
   },
-  "s57": {
-    "message": "Réparé : Message d'erreur \""
+  "s55": {
+    "message": "Réparé : Message d'erreur \"<code>{1}</code>\""
   },
-  "s58": {
-    "message": "secureLookup(insecDoc, 'createEvent') is not a function"
-  },
-  "s59": {
-    "message": "\""
-  },
-  "s60": {
+  "s56": {
     "message": "Les filtres commençant par http:// ou https:// ne sont pas seulement pris en compte au début de l'adresse"
   },
-  "s61": {
+  "s57": {
     "message": "En plaçant devant les filtres | ils seront pris en compte uniquement au début de l'adresse, en plaçant | derrière les filtres, ils seront pris en compte uniquement à l'arrière de l'adresse"
   },
-  "s62": {
+  "s58": {
     "message": "Problèmes de permission sur les fichiers lors de l'installation sur Linux dans la suite Mozilla/Seamonkey résolus"
   },
-  "s63": {
+  "s59": {
     "message": "S'assurer qu'il n'y a pas de moyen pour les sites Web de détecter Adblock Plus"
   },
-  "s64": {
+  "s60": {
     "message": "Problèmes connus"
   },
-  "s65": {
+  "s61": {
     "message": "Le plugin permettant de connaître l'état de l'application Yahoo (npYState.dll, installé par Yahoo Messenger) plante Yahoo Mail si Adblock Plus est installée. Il est proposé de supprimer ce plugin, sa seule fonction semblerait être d'indiquer la version de Yahoo Messenger à Yahoo Mail."
   },
-  "s66": {
+  "s62": {
     "message": "Le plugin Flash se plante lorsque le plugin ActiveX de Mozilla est installé et l'option \"Afficher une étiquette pour  Flash et Java\" est activée dans Adblock Plus. Il est suggéré de désactiver cette option."
   },
-  "s67": {
+  "s63": {
     "message": "Historique des modifications pour la version précédente"
   }
 }

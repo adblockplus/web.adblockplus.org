@@ -12,31 +12,7 @@
     "message": "Identificador de suscripción. Puede ser cualquier cadena para suscripciones administradas externamente y grupos especiales, para las demás suscripciones será su URL de actualización."
   },
   "specialDescription-s1": {
-    "message": "Define si la suscripción es un grupo especial que contiene filtros de usuario. Actualmente existen cuatro grupos especiales, que son"
-  },
-  "specialDescription-s2": {
-    "message": "fl"
-  },
-  "specialDescription-s3": {
-    "message": "(filtros normales),"
-  },
-  "specialDescription-s4": {
-    "message": "wl"
-  },
-  "specialDescription-s5": {
-    "message": "(reglas de excepción),"
-  },
-  "specialDescription-s6": {
-    "message": "eh"
-  },
-  "specialDescription-s7": {
-    "message": "(reglas de ocultación de elementos) y"
-  },
-  "specialDescription-s8": {
-    "message": "il"
-  },
-  "specialDescription-s9": {
-    "message": "(reglas no válidas)."
+    "message": "Define si la suscripción es un grupo especial que contiene filtros de usuario. Actualmente existen cuatro grupos especiales, que son <code>{1}</code> (filtros normales), <code>{2}</code> (reglas de excepción), <code>{3}</code> (reglas de ocultación de elementos) y <code>{4}</code> (reglas no válidas)."
   },
   "titleDescription-s1": {
     "message": "El título de la suscripción tal y como se muestra en la ventana del diálogo de Preferencias"
@@ -45,70 +21,31 @@
     "message": "Define si la suscripción se actualizará automáticamente. Tenga en cuenta que este atributo no tiene sentido en suscripciones administradas externamente ni en grupos especiales."
   },
   "disabledDescription-s1": {
-    "message": "Define si la suscripción está desactivada. Si el atributo tiene asignado el valor"
-  },
-  "disabledDescription-s2": {
-    "message": "true"
-  },
-  "disabledDescription-s3": {
-    "message": "los filtros de la suscripción no se aplican."
+    "message": "Define si la suscripción está desactivada. Si el atributo tiene asignado el valor <code>{1}</code> los filtros de la suscripción no se aplican."
   },
   "externalDescription-s1": {
-    "message": "Define si la suscripción se administra externamente. Si el atributo tiene asignado el valor"
-  },
-  "externalDescription-s2": {
-    "message": "true"
-  },
-  "externalDescription-s3": {
-    "message": "los filtros de la suscripción sólo se actualizarán si alguna extensiones llama a <a>IAdblockPlus.updateExternalSubscription</a>."
+    "message": "Define si la suscripción se administra externamente. Si el atributo tiene asignado el valor <code>{1}</code> los filtros de la suscripción sólo se actualizarán si alguna extensiones llama a <a>IAdblockPlus.updateExternalSubscription</a>."
   },
   "lastDownloadDescription-s1": {
-    "message": "Información de fecha/hora (devuelve el valor de"
-  },
-  "lastDownloadDescription-s2": {
-    "message": "new Date().getTime()"
-  },
-  "lastDownloadDescription-s3": {
-    "message": ") del último intento de descargar la suscripción. El valor 0 significa que la suscripción no se ha descargado nunca."
+    "message": "Información de fecha/hora (devuelve el valor de <code>{1}</code>) del último intento de descargar la suscripción. El valor 0 significa que la suscripción no se ha descargado nunca."
   },
   "downloadStatusDescription-s1": {
     "message": "Código de resultado del último intento de descarga. Puede tener los siguientes valores:"
   },
   "downloadStatusDescription-s2": {
-    "message": "ok"
+    "message": "<code>{1}</code> — Corecto"
   },
   "downloadStatusDescription-s3": {
-    "message": " — Corecto"
+    "message": "<code>{1}</code> — La URL de la suscripción no es válida"
   },
   "downloadStatusDescription-s4": {
-    "message": "invalid_url"
+    "message": "<code>{1}</code> — No se pudo descargar la suscripción"
   },
   "downloadStatusDescription-s5": {
-    "message": " — La URL de la suscripción no es válida"
-  },
-  "downloadStatusDescription-s6": {
-    "message": "connection_error"
-  },
-  "downloadStatusDescription-s7": {
-    "message": " — No se pudo descargar la suscripción"
-  },
-  "downloadStatusDescription-s8": {
-    "message": "invalid_data"
-  },
-  "downloadStatusDescription-s9": {
-    "message": " — Se descargó la suscripción pero la primera línea no era"
-  },
-  "downloadStatusDescription-s10": {
-    "message": "[Adblock]"
+    "message": "<code>{1}</code> — Se descargó la suscripción pero la primera línea no era <code>{2}</code>"
   },
   "lastModifiedDescription-s1": {
-    "message": "Valor del encabezado HTTP"
-  },
-  "lastModifiedDescription-s2": {
-    "message": "Last-Modified"
-  },
-  "lastModifiedDescription-s3": {
-    "message": "recibido durante la última descarga correcta. Todavía no se usa, y estará siempre vacío."
+    "message": "Valor del encabezado HTTP <code>{1}</code> recibido durante la última descarga correcta. Todavía no se usa, y estará siempre vacío."
   },
   "getPatternsDescription-s1": {
     "message": "Devuelve la lista de reglas de filtrado de una suscripción. Tenga en cuenta que este método normalmente no devolverá nada de utilidad en lo relativo a los grupos especiales."
