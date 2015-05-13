@@ -31,6 +31,10 @@
 
     <link rel="canonical" href="https://adblockplus.org/{{page}}">
 
+    {% block head %}
+    {{head|safe}}
+    {% endblock %}
+
     <!--[if lt IE 7]>
       <script src="/js/vendor/DD_belatedPNG.js"></script>
       <script>DD_belatedPNG.fix(".sprite");</script>
@@ -44,10 +48,6 @@
     <!--[if IE 8]>
       <link rel="stylesheet" href="/css/empty.css" class="cssfx"/>
     <![endif]-->
-
-    {% block head %}
-    {{head|safe}}
-    {% endblock %}
   </head>
 
   <body>
