@@ -26,6 +26,8 @@ CHROME_UPDATE_XML = '''\
   </app>
 </request>'''
 
+cache = {}
+
 def get_mozilla_version(product, origin_version, channel,
                         minor=False, subdomain='aus4', origin_build='-',
                         attribute='appVersion', platform='WINNT_x86-msvc'):
@@ -157,6 +159,10 @@ def open_cache_file(filename):
 
 @contextfunction
 def get_browser_versions(context, browser):
+  versions = cache.get(browser)
+  if versions:
+    return versions
+
   func = BROWSERS[browser]
   exc_info = None
   try:
@@ -167,13 +173,13 @@ def get_browser_versions(context, browser):
   filename = os.path.join(context['source'].get_cache_dir(), 'browsers.json')
   with open_cache_file(filename) as file:
     try:
-      cache = json.load(file)
+      persistent_cache = json.load(file)
     except ValueError:
       if file.tell() > 0:
         raise
-      cache = {}
+      persistent_cache = {}
 
-    cached_versions = cache.get(browser)
+    cached_versions = persistent_cache.get(browser)
     if exc_info:
       if not cached_versions:
         raise exc_info[0], exc_info[1], exc_info[2]
@@ -203,13 +209,14 @@ def get_browser_versions(context, browser):
         key=lambda ver: map(int, ver.split('.'))
       )
 
-      cache[browser] = versions
+      persistent_cache[browser] = versions
       file.seek(0)
-      json.dump(cache, file)
+      json.dump(persistent_cache, file)
       file.truncate()
 
   if not versions['previous']:
     logging.warning("Couldn't determine previous browser version, "
                     'please set %s.previous in %s', browser, filename)
 
+  cache[browser] = versions
   return versions
