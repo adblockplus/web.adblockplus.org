@@ -68,17 +68,22 @@ def get_seamonkey_version(origin_version, origin_build, channel, **kw):
                              'aus2-community', origin_build, 'version', **kw)
 
 def get_seamonkey_versions():
-  return {
+  versions = {
     'current': get_seamonkey_version('2.32', '20150112201917', 'release'),
-    'unreleased': [
-      get_seamonkey_version('2.32', '20150101215737', 'beta'),
-
-      # Aurora and Nightly builds for Windows are currently broken.
-      # https://bugzilla.mozilla.org/show_bug.cgi?id=1086553
-      get_seamonkey_version('2.32', '-', 'aurora', platform='Linux_x86-gcc3'),
-      get_seamonkey_version('2.32', '-', 'nightly', platform='Linux_x86-gcc3')
-    ]
+    'unreleased': [get_seamonkey_version('2.32', '20150101215737', 'beta')]
   }
+
+  # Aurora and Nightly builds for Windows are permantently broken.
+  # Occasionally, builds for other platforms are broken as well.
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=1086553
+  for channel in ('aurora', 'nightly'):
+    try:
+      version = get_seamonkey_version('2.32', '-', channel, platform='Linux_x86-gcc3')
+    except Exception:
+      continue
+    versions['unreleased'].append(version)
+
+  return versions
 
 BROWSERS['seamonkey'] = get_seamonkey_versions
 
