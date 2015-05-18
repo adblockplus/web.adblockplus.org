@@ -24,10 +24,6 @@
     <link rel="stylesheet" href="/css/main.css" class="cssfx">
     <link rel="stylesheet" href="/css/main-desktop.css" media="(min-width: 40.5em)" class="cssfx">
     <link rel="stylesheet" href="/css/main-mobile.css" media="screen and (max-width: 40.5em)">
-    <noscript>
-      <link rel="stylesheet" href="/css/noscript-desktop.css" media="(min-width: 40.5em)"/>
-      <link rel="stylesheet" href="/css/noscript-mobile.css" media="screen and (max-width: 40.5em)"/>
-    </noscript>
 
     <link rel="canonical" href="https://adblockplus.org/{{page}}">
 
@@ -51,6 +47,11 @@
   </head>
 
   <body>
+    <noscript>
+      <link rel="stylesheet" href="/css/noscript-desktop.css" media="(min-width: 40.5em)"/>
+      <link rel="stylesheet" href="/css/noscript-mobile.css" media="screen and (max-width: 40.5em)"/>
+    </noscript>
+
     {% macro pageitem(name) %}
       {% if name == page %}
         <li class="selected">{{get_string(name, "menu")}}</li>
