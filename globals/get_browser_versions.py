@@ -5,6 +5,7 @@ import json
 import urllib2
 import errno
 import logging
+import time
 from xml.dom import minidom
 
 from jinja2 import contextfunction
@@ -180,13 +181,15 @@ def get_browser_versions(context, browser):
       persistent_cache = {}
 
     cached_versions = persistent_cache.get(browser)
+    now = time.mktime(time.gmtime())
     if exc_info:
       if not cached_versions:
         raise exc_info[0], exc_info[1], exc_info[2]
 
       versions = cached_versions
-      logging.warning('Failed to get %s versions, falling back to '
-                      'cached versions', browser, exc_info=exc_info)
+      if now - versions['timestamp'] > 60*60*2:
+        logging.warning('Failed to get %s versions, falling back to '
+                        'cached versions', browser, exc_info=exc_info)
     else:
       # Determine previous version: If we recorded the version before and it
       # changed since then, the old current version becomes the new previous
@@ -209,6 +212,7 @@ def get_browser_versions(context, browser):
         key=lambda ver: map(int, ver.split('.'))
       )
 
+      versions['timestamp'] = now
       persistent_cache[browser] = versions
       file.seek(0)
       json.dump(persistent_cache, file)
