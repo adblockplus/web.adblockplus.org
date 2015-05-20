@@ -1,0 +1,284 @@
+title=Want Adblock Browser for your smartphone or tablet?
+
+<head>
+<meta name="title" content="{{meta-title Adblock Browser Beta Launch}}" />
+<meta property="og:title" content="{{meta-title Adblock Browser Beta Launch}}" />
+<meta name="description" content="{{meta-description Want Adblock Browser for your smartphone or tablet? Join the Adblock Browser for Android Beta Google+ community.}}" />
+<meta property="og:description" content="{{meta-description Want Adblock Browser for your smartphone or tablet? Join the Adblock Browser for Android Beta Google+ community.}}" />
+<meta property="og:image" content="https://adblockplus.org/img/adblockbrowser_beta_promo.png" />
+
+<style type="text/css">
+#content *
+{
+  box-sizing: content-box;
+}
+
+#content h1
+{
+  margin-bottom: 28px;
+}
+
+ol
+{
+  font-size: 16px;
+  padding-left: 60px;
+}
+
+ol li
+{
+  margin-bottom: 14px;
+}
+
+#content h3.subscribe-header
+{
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.subscribe-description
+{
+  margin: 14px 0px 20px 0px;
+}
+
+.button-community-wrapper
+{
+  display: inline-block !important; /* !important to override cssFx styles on IE 8 */
+  text-align: center;
+  border: solid 1px #4CAE4C;
+  border-radius: 3px;
+  background-color: #5CB85C;
+  margin: 10px 0px 30px 0px;
+}
+
+.button-community-wrapper a
+{
+  display: block;
+  padding: 25px 20px;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none; 
+}
+
+#subscribe-textbox
+{
+  border: solid 1px #B5B4B0;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  width: 276px;
+  line-height: 44px;
+  height: 44px; /* IE 8 */
+}
+
+#subscribe-textbox.placeholder
+{
+  color: #B5B4B0;
+}
+
+#subscribe-button
+{
+  border: solid 1px #357EBD;
+  border-radius: 3px;
+  background-color: #428BCA;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 146px;
+  height: 44px;
+}
+
+#subscribe-button span
+{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.disclaimer
+{
+  display: none;
+  font-size: 14px;
+  color: #D00;
+  border: 1px solid #D00;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 30px;
+}
+
+html[lang="fr"] .disclaimer.lang-fr
+{
+  display: block;
+}
+
+#subscribe-form .sucess-label, #response-error,
+#subscribe-form .invalid-label, #subscribe-form.success input,
+#subscribe-form.success button
+{
+  display: none;
+}
+
+#subscribe-form .invalid-label
+{
+  margin-top: 30px;
+}
+
+#subscribe-form.success .sucess-label,
+#subscribe-form.invalid .invalid-label,
+#subscribe-form.error #response-error
+{
+  display: block;
+}
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+function addListener(obj, type, listener, useCapture)
+{
+  if ("addEventListener" in obj)
+  {
+    obj.addEventListener(type, function(ev)
+    {
+      if (listener(ev) === false)
+        ev.preventDefault();
+    }, useCapture);
+  }
+  else
+  {
+    // IE 8
+    if (type == "DOMContentLoaded")
+      type = "readystatechange";
+
+    type = "on" + type;
+    if ("attachEvent" in obj)
+    {
+      obj.attachEvent(type, function()
+      {
+        if (document.readyState == "complete" && listener(event) === false)
+          event.returnValue = false;
+      });
+    }
+    else
+    {
+      obj[type] = listener;
+    }
+  }
+}
+
+function addPlaceholder(textbox)
+{
+  textbox.setAttribute("class", "placeholder");
+  textbox.value = getPlaceholderText();
+}
+
+function getPlaceholderText()
+{
+  return document.getElementById("subscribe-textbox").getAttribute("placeholder");
+}
+
+function contentLoad()
+{
+  var emailTextbox = document.getElementById("subscribe-textbox");
+
+  // IE9 + Safari iOS
+  if (!("placeholder" in document.createElement("input"))
+      && !emailTextbox.value)
+  {
+    addPlaceholder(emailTextbox);
+    addListener(emailTextbox, "focus", function()
+    {
+      if (emailTextbox.value == getPlaceholderText())
+      {
+        emailTextbox.value = "";
+        emailTextbox.setAttribute("class", "");
+      }
+    }, false);
+
+    addListener(emailTextbox, "blur", function()
+    {
+      if (!emailTextbox.value)
+        addPlaceholder(emailTextbox);
+    }, false);
+  }
+
+  addListener(document.getElementById("subscribe-form"), "submit", function()
+  {
+    var formElement = document.getElementById("subscribe-form");
+    if (!window.XMLHttpRequest)
+    {
+      formElement.submit();
+      return false;
+    }
+
+    var pathArray = window.location.pathname.split("/");
+    var params = emailTextbox.name + "=" + encodeURIComponent(emailTextbox.value);
+    params += "&lang=" + pathArray[1];
+    var request = new XMLHttpRequest();
+    request.open("POST", formElement.action, true);
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    addListener(request, "readystatechange", function()
+    {
+      if (request.readyState == 4)
+      {
+        if (request.status >= 200 && request.status < 300)
+        {
+          formElement.setAttribute("class", "success");
+        }
+        else if (request.status == 400)
+        {
+          formElement.setAttribute("class", "invalid");
+        }
+        else
+        {
+          var errorWrapper = document.getElementById("response-error");
+          if ("textContent" in errorWrapper)
+            errorWrapper.textContent = request.statusText;
+          else // IE8
+            errorWrapper.innerText = request.statusText;
+
+          formElement.setAttribute("class", "error");
+        }
+      }
+    }, false);
+    request.send(params);
+    return false;
+  }, false);
+}
+addListener(document, "DOMContentLoaded", contentLoad, false);
+//]]>
+</script>
+</head>
+<h3>{{beta-install-header Join the beta test!}}</h3>
+
+<ol>
+  <li>{{beta-install-step1 Join the <strong>Adblock Browser for Android Beta</strong> Google+ community.}}</li>
+  <li>{{beta-install-step2 Click the <strong>Become a Tester</strong> link.}}</li>
+  <li>{{beta-install-step3 Download the <strong>beta app</strong>.}}</li>
+</ol>
+
+<div class="button-community-wrapper">
+  <a href="https://adblockplus.org/redirect?link=adblock_browser_android_beta_community">{{beta-install-button-text Beta test Adblock Browser for Android}}</a>
+</div>
+
+<h3 class="subscribe-header">{{ios-subscription-header iOS user? Coming soon!}}</h3>
+
+<p class="subscribe-description">
+  {{ios-subscription-description Get a heads-up prior to the launch!}}
+</p>
+
+<form id="subscribe-form" accept-charset="utf-8" action="/submitEmail" method="post">
+  <input id="subscribe-textbox" type="email" name="email" placeholder="{{ios-subscription-input-placeholder Your email address}}" required />
+  <button id="subscribe-button" type="submit"><span>{{ios-subscription-button Notify me}}</span></button>
+  <span class="sucess-label">
+    {{subscription-message-success A confirmation email has been sent. Please check your email and click the confirmation link.}}
+  </span>
+  <span class="invalid-label">
+    {{subscription-message-invalid-email Please enter a valid email address.}}
+  </span>
+  <span id="response-error">
+  </span>
+</form>
+
+<div class="disclaimer lang-fr">
+  <fix>En téléchargeant le logiciel Adblock Plus vous acceptez que si vous utilisez Adblock Plus pour visiter un site Internet en violation de toute obligation ou droit de quelque nature que ce soit en relation avec ce site Internet, en aucun cas EYEO ne pourra être tenu pour responsable envers vous ou tout autre tiers pour toute perte ou dommage (y compris, sans y être limité, les dommages pour perte de chances et perte de bénéfices) découlant directement ou indirectement de votre utilisation de ce logiciel.</fix>
+</div>
