@@ -60,24 +60,16 @@ html[dir="rtl"] #main
   bottom: -25px;
 }
 
-.warning-platform,
-.disclaimer,
-#maxthon-notification
+.warning-platform, .disclaimer,
+#maxthon-notification, #adblock-browser-notification
 {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 0;
   margin-bottom: 50px;
   float: right;
 }
 
-html[lang="fr"] .warning-platform,
-html[lang^="zh_"] .warning-platform
-{
-  margin-top: 0px;
-}
-
-html[lang^="zh_"] #content.maxthon .warning-platform,
-html[lang^="zh_"] #content.ua-maxthon .warning-platform
+#adblock-browser-notification
 {
   margin-top: 50px;
 }
