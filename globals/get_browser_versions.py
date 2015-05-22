@@ -2,7 +2,7 @@ import re
 import os
 import sys
 import json
-import urllib2
+import urllib
 import errno
 import logging
 import time
@@ -32,7 +32,7 @@ cache = {}
 def get_mozilla_version(product, origin_version, channel,
                         minor=False, subdomain='aus4', origin_build='-',
                         attribute='appVersion', platform='WINNT_x86-msvc'):
-  response = urllib2.urlopen('https://%s.mozilla.org/update/3/%s/%s/%s/%s/en-US/%s/-/default/default/update.xml?force=1' % (
+  response = urllib.urlopen('https://%s.mozilla.org/update/3/%s/%s/%s/%s/en-US/%s/-/default/default/update.xml?force=1' % (
     subdomain,
     product,
     origin_version,
@@ -94,7 +94,7 @@ def get_chrome_version(manifest):
   return manifest.getAttribute('version').split('.')[0]
 
 def get_chrome_versions():
-  response = urllib2.urlopen(urllib2.Request('https://tools.google.com/service/update2', CHROME_UPDATE_XML))
+  response = urllib.urlopen('https://tools.google.com/service/update2', CHROME_UPDATE_XML)
   try:
     doc = minidom.parse(response)
   finally:
@@ -109,7 +109,7 @@ def get_chrome_versions():
 BROWSERS['chrome'] = get_chrome_versions
 
 def get_opera_version(channel):
-  response = urllib2.urlopen('https://autoupdate.geo.opera.com/netinstaller/' + channel)
+  response = urllib.urlopen('https://autoupdate.geo.opera.com/netinstaller/' + channel)
   try:
     spec = json.load(response)
   finally:
@@ -129,7 +129,7 @@ def get_opera_versions():
 BROWSERS['opera'] = get_opera_versions
 
 def get_yandex_version(suffix):
-  response = urllib2.urlopen('https://api.browser.yandex.ru/update-info/browser/yandex%s/win-yandex.xml' % suffix)
+  response = urllib.urlopen('https://api.browser.yandex.ru/update-info/browser/yandex%s/win-yandex.xml' % suffix)
   try:
     doc = minidom.parse(response)
   finally:
