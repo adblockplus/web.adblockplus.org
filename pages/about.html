@@ -44,38 +44,51 @@ function toggleExpand(button, targetId)
 <h2 id="project">{{s3 What is Adblock Plus?}}</h2>
 
 <p>
-  {{s4 Adblock Plus allows you to block annoying ads, tracking, malware and <a href="features">other things</a> you may not want in your browser.
-  Adblock Plus is an open source project created by Wladimir Palant in 2006. <a href="https://eyeo.com">Eyeo</a> was founded in 2011 by Wladimir Palant and Till Faida to make its development sustainable.}}
-</p>
+  {{s4 Adblock Plus is a free extension that allows you to - among <a href="features">other things</a> - block annoying ads, disable tracking and block domains known to spread malware. Available for Android, Chrome, Firefox, Internet Explorer, Maxthon, Opera, Safari and Yandex, Adblock Plus uses filters that you 
+  choose to block all unwanted elements.}}
+  </p>
+
+<p>
+  {{created Created by Wladimir Palant in 2006, Adblock Plus is an open source project. In 2011, Palant, together with Till Faida, founded <a href="https://eyeo.com">Eyeo</a> to make its development sustainable.}}
+  </p>
 
 <h2 id="workings">{{s5 How does Adblock Plus work?}}</h2>
 
 <p>
-  {{s6 Adblock Plus itself has no functionality, in the sense that it does not block anything until you "tell" it what to do by adding filter lists. These filter lists are essentially an extensive set of rules, which tell Adblock Plus which elements of websites to block.
-  You can add any filter list you want, for example to block <a href="features#tracking">tracking</a> or <a href="features#malware">malware</a>. You can also <a href="filters">create your own filter lists</a>.}}
+  {{s6 Adblock Plus itself has no functionality; it doesn't block anything until you "tell" it what to block by adding external filter lists. Filter lists are essentially an extensive set of rules that tell Adblock Plus which elements of a website to block.
+  You can add any filter list you want. For example, block <a href="features#tracking">tracking</a> or <a href="features#malware">malware</a>. You can also <a href="filters">create your own filter lists</a>.
+  Almost all filters are open source, therefore many filter lists have been created by Internet users.}}
 </p>
 
 <p>
-  {{s7 Out of the box, two filter lists are enabled:}}
+  {{s7 Filter lists enabled by default include:}}
   <ul>
-    <li>{{s8 An ad-blocking list selected based on your language}}</li>
-    <li>{{s9 The Acceptable Ads exception list}}</li>
+    <li>{{s8 An ad-blocking list selected based on your language (EasyList)}}</li>
+    <li>{{s9 The Acceptable Ads list}}</li>
   </ul>
 </p>
 
 <p>
-  {{s10 These are enabled to get you started. You can remove them, or add others - it's up to you.}}
+  {{s10 These are enabled to get you started. You can remove them or add others - it's up to you.}}
 </p>
+
+<p>
+  {{EasyListdefined EasyList corresponds to your browser language and is aimed at disabling ads that are considered to be intrusive by our community of users. Eyeo GmbH <strong>did not</strong> draft EasyList and therefore has no right to, or control over, its content. Visit the <a href="https://easylist.adblockplus.org/">EasyList Community</a> for more information.}}
+</p>
+
+ <p>
+  {{AcceptableAdsdefined The Acceptable Ads list displays ads that comply with the acceptable ads criteria agreed upon by our community of users. The list is maintained by Eyeo GmbH.}}
+  </p>
 
 <img src="images/how-adblock-plus-works.png">
 
 <h2 id="acceptableads">{{s11 What are Acceptable Ads?}}</h2>
 
 <p>
-  {{s12 Many people use Adblock Plus to block annoying ads. However, we don't think that all ads are bad, and we are fully aware that they finance many websites.
-  Therefore we have established <a href="acceptable-ads#criteria">strict criteria</a> to identify Acceptable Ads: unobtrusive ones that don't need to be blocked.
-  Websites that are willing to comply with these criteria can <a href="https://eyeo.com/acceptable-ads-application.html">apply</a> to have their ads added to the Acceptable Ads exception list, which will unblock them for all users that decided to keep Acceptable Ads enabled.
-  Note that if you don't want to see any ads, you will always be able to <a href="acceptable-ads#optout">opt out</a> of this.}}
+  {{s12 We don't think all ads are bad and are fully aware that ads finance many websites. So, in 2009 we decided to find some common ground. Our solution involved asking Adblock Plus users,
+  and our community at large, to help identify criteria that makes for better ads. From these discussions, we established <a href="acceptable-ads#criteria">strict criteria</a> to identify nonintrusive ads. In 2011, we began implementing the Acceptable Ads initiative.
+  Participants that wish to comply with the Acceptable Ads initiative can <a href="acceptable-ads#application">apply</a> to be added to the Acceptable Ads list. 
+  Adblock Plus users have the option to display ads that are on the Acceptable Ads list or to disable the Acceptable Ads feature and browse completely <a href="acceptable-ads#optout">ad-free</a>. To view the list of acceptable ads, visit the <a href="https://adblockplus.org/forum/viewforum.php?f=12">Acceptable Ads Proposals forum</a>.}}
 </p>
 
 <p>
@@ -85,21 +98,22 @@ function toggleExpand(button, targetId)
 <h2 id="monetization">{{s14 How are we financed?}}</h2>
 
 <p>
-  {{s15 We receive donations from our users, and we are being paid for support services performed for some larger entities that want to participate in the Acceptable Ads initiative.}}
+  {{s15 We receive donations from our users and are being paid for support services performed for some larger entities that want to participate in the Acceptable Ads initiative.}}
 </p>
 
 <button class="expand-button" onclick="toggleExpand(this, 'expand-monetization')">{{s16 Show more}}</button>
 
 <div class="expandable" id="expand-monetization">
   <p>
-    {{s17 Managing the Acceptable Ads initiative requires significant effort on our side and this task cannot be completely taken over by volunteers as it happens with common filter lists, nor could it be sponsored by donations.}}
+    {{s17 Managing the Acceptable Ads initiative requires significant effort on our side including, but not limited to, ongoing review and monitoring of the individual whitelisted ads, counselling participants and technical support.
+	This service cannot be completely taken over by volunteers nor be sponsored through donations, as it happens with common filter lists.}}
   </p>
   <p>
-    {{s18 Therefore, a few large entities that want to participate in the Acceptable Ads initiative compensate Eyeo for its services. These services are provided free for everybody else (roughly 90% of the participants).}}
+    {{s18 Therefore, a few very large entities who take part in the Acceptable Ads initiative compensate Eyeo for its service. Eyeo's service is provided free of charge to all other participants (roughly 90%).}}
   </p>
   <p>
-    {{s19 Note that, whether or not an entity pays, we will never whitelist any ad that doesn't meet the <a href="acceptable-ads#criteria">criteria</a>. There is no way to buy a spot in the Acceptable Ads list.
-    All whitelisted ads and participanting entities are publicly listed in <a href="https://adblockplus.org/forum/viewforum.php?f=12">our forum</a> so you can discuss and share your opinions.}}
+    {{s19 <strong>Important:</strong> Every entity on the whitelist - paying participant or non-paying participant - MUST maintain the same strict criteria that our users accepted as part of the Acceptable Ads initiative. We will never accept any ad that doesn't meet these <a href="acceptable-ads#criteria">criteria</a>. 
+	There is no way to buy a spot on the Acceptable Ads exception list. All whitelisted ads and participating entities are publicly listed in <a href="https://adblockplus.org/forum/viewforum.php?f=12">our forum</a>. Feel free to discuss and share your opinions.}}
   </p>
 </div>
 
@@ -113,20 +127,28 @@ function toggleExpand(button, targetId)
 
 <div class="expandable" id="expand-whymoney">
   <p>
-    {{s23 We need to grow the user base of Adblock Plus and bring it to new platforms to get publishers interested in Acceptable Ads. Adblock Plus, originally only available for <a href="firefox">Firefox</a>, is now available on <a href="chrome">Chrome</a>, <a href="android">Android</a>, <a href="opera">Opera</a>, <a href="internet-explorer">Internet Explorer</a> and <a href="safari">Safari</a>. We also manage the infrastructure used to deliver <a href="https://easylist.adblockplus.org">EasyList</a>, the most popular ad-blocking list which is also used by other adblockers.}}
+    {{s23 In fact, we have a small but growing team that supports our users and the increasing amount of participants who choose to partake in the Acceptable Ads initiative.}}
   </p>
-
-  <p>
-    {{s24 Furthermore, we need to review many Acceptable Ads applications and create the appropriate whitelisting filters.}}
+  
+   <p>
+    {{s24 Our goals are simple:}}
+	<ul>
+	  <li>{{work Continue to work on Adblock Plus so that it can function on various platforms}}</li>
+	  <li>{{improve Keep improving the functionalities of Adblock Plus to provide users with the best possible tool to protect them from malware and have better control of their browsing experience and collection of their personal data}}</li>
+	</ul>
   </p>
-
+  
+   <p>
+    {{eyeoneeds In regards to the Acceptable Ads initiative, Eyeo needs to review and analyze many applications. This includes reviewing ad format, safety precautions, compliance with the Acceptable Ads criteria and technical feasibility of the requested whitelisting, creating the filters for the whitelist, testing the filters, posting to the forum, etc.}}
+	</p>
+  
   <p>
-    {{s25 But, Eyeo is not only about Adblock Plus and Acceptable Ads. Our mission is to make the web better, and we intend to do so by creating new ways for publishers to earn money from their content without alienating their users.}}
+    {{s25 But, Eyeo is not just about Adblock Plus and Acceptable Ads. Our mission is to make the Internet better. We intend to do so by creating new ways for publishers to earn money from their content without alienating their users.}}
   </p>
 </div>
 
 <h2 id="privacy">{{s26 Does Adblock Plus collect any user data?}}</h2>
 
 <p>
-  {{s27 We do not specifically collect any user data, and most of your data (e.g. what websites you visit) is never sent to our servers to begin with. Please see our <a href="privacy">Privacy Policy</a> for all the details.}}
+  {{s27 We do not specifically collect any user data. Most of your data (e.g. what websites you visit) is never sent to our servers to begin with. Please see our <a href="privacy">Privacy Policy</a> for details.}}
 </p>
