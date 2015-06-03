@@ -128,8 +128,11 @@ def get_opera_versions():
 
 BROWSERS['opera'] = get_opera_versions
 
-def get_yandex_version(suffix):
-  response = urllib.urlopen('https://api.browser.yandex.ru/update-info/browser/yandex%s/win-yandex.xml' % suffix)
+def key_by_version(version):
+  return map(int, version.split('.'))
+
+def get_yandex_version_raw(suffix, params):
+  response = urllib.urlopen('https://api.browser.yandex.ru/update-info/browser/yandex%s/win-yandex.xml%s' % (suffix, params))
   try:
     doc = minidom.parse(response)
   finally:
@@ -139,9 +142,16 @@ def get_yandex_version(suffix):
   description = item.getElementsByTagName('description')[0]
   return re.search(r'\d+\.\d+', description.firstChild.nodeValue).group(0)
 
+def get_yandex_version(suffix=''):
+  return max(
+    get_yandex_version_raw(suffix, ''),
+    get_yandex_version_raw(suffix, '?manual=yes'),
+    key=key_by_version
+  )
+
 def get_yandex_versions():
   return {
-    'current': get_yandex_version(''),
+    'current': get_yandex_version(),
     'unreleased': [get_yandex_version('-beta')]
   }
 
@@ -209,7 +219,7 @@ def get_browser_versions(context, browser):
       # to list each version only once.
       versions['unreleased'] = sorted(
         set(versions['unreleased']) - {current, previous},
-        key=lambda ver: map(int, ver.split('.'))
+        key=key_by_version
       )
 
       versions['timestamp'] = now
