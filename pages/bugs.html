@@ -1,34 +1,33 @@
-title=Report an issue
+title=Report an Issue
 
-<head><meta content="{{s1 Report Issue - Adblock Plus}}" name="title">
+<head><meta content="{{s1 Report an Issue}}" name="title">
 <meta content="{{s2 Having problems with Adblock Plus? Let us know about them so that we can improve your experience. Download Adblock Plus for Chrome and other platforms here.}}" name="description">
-<meta content="{{s1 Report Issue - Adblock Plus}}" property="og:title">
+<meta content="{{s1 Report an Issue}}" property="og:title">
 <meta content="{{s4 Having problems with Adblock Plus? Let us know about them so that we can improve your experience. Download Adblock Plus for Chrome and other platforms here.}}" property="og:description">
 </head>
 
-<p>
-  {{s5 Please consider the following points before filing your bug report.}}
-</p>
+<h2 id="nonbugs">{{s6 Not All Issues are Adblock Plus Bugs}}</h2>
 
-<h2 id="nonbugs">{{s6 Some issues aren't Adblock Plus bugs}}</h2>
+<p>
+  {{consider Please consider the following points before filing a bug report.}}
+</p>
 
 <ul>
   <li>
-    {{s7 An advertisement isn't blocked: this is a filters issue,
-    please <a href="getting_started#false-negatives">report it by other means</a>.}}
+    {{s7 If an advertisement isn't blocked, the issue is more than likely related to the filters.
+    Please <a href="getting_started#false-negatives">report it by other means</a>.}}
   </li>
   <li>
-    {{s8 A website doesn't work correctly and
-    <a href="getting_started#disabling">temporarily disabling Adblock Plus</a> on this
-    site fixes the issue: this is a filters issue,
-    please <a href="getting_started#false-positives">report it by other means</a>.}}
+    {{s8 If a website doesn't work correctly and
+    <a href="getting_started#disabling">temporarily disabling Adblock Plus</a> fixes the issue, the issue is related to the filters.
+    Please <a href="getting_started#false-positives">report it by other means</a>.}}
   </li>
   <li>
-    {{s14 An issue happens before Adblock Plus is installed or persists if it is uninstalled:
-    you have to look elsewhere for an explanation.}} {{s15 In particular, if Adblock
-    Plus fails to install and you are using a <a href="requirements">supported browser</a>
-    then you are facing a browser issue and the
-    <a href="{{s15-link http://support.mozilla.com/en-US/kb/Unable%20to%20install%20add-ons}}">general troubleshooting instructions</a> apply. If not using Firefox, see:
+    {{s14 If an issue occurs prior to the installation of Adblock Plus, or persists after it is uninstalled,
+    the issue is not related to Adblock Plus.}} {{s15 If Adblock
+    Plus fails to install on a <a href="requirements">supported browser</a>,
+    this is a browser issue and
+    <a href="{{s15-link http://support.mozilla.com/en-US/kb/Unable%20to%20install%20add-ons}}">general troubleshooting instructions</a> apply. If you are not using Firefox, see:
     <a href="{{s15-link2 https://support.google.com/chrome_webstore/answer/1698338?hl=en}}">Chrome</a>,
     <a href="{{s15-link3 http://help.opera.com/Windows/11.60/en/extensions.html}}">Opera</a>,
     <a href="{{s15-link4 http://support.apple.com/kb/PH5067}}">Safari</a>,
@@ -36,36 +35,40 @@ title=Report an issue
   </li>
 </ul>
 
-<h2 id="reporting">{{s16 How to report bugs}}</h2>
+<h2 id="reporting">{{s16 How to Report Bugs}}</h2>
 
 <p>
   {{s17 Visit the <a href="/forum/index.php">forum</a> for support or to report an issue.}}
 </p>
 
 <p>
-    {{s18 Your bug report should contain all necessary information to reproduce it:}}
+    {{s18 Bug reports should contain the following information:}}
 </p>
 
 <ul>
   <li>
-    {{s19 Adblock Plus version, which browser you are using (with version number), which
-    operating system is used}}
+    {{s19 The Adblock Plus version number, e.g. 1.8.12}}
   </li>
   <li>
-    {{s20 Any configuration details that might be relevant (filter lists used, own filters if any,
-    unusual browser configuration, other extensions)}}
+    {{browser The browser and browser version number, e.g. Chrome 43.0.2357.124}}
   </li>
   <li>
-    {{s21 Exact description of the steps that need to be followed to see the bug}}
+    {{OS The computer operating system, e.g. Windows 8.1 64-bit}}
   </li>
   <li>
-    {{s22 Exact description of what happens and what you think is wrong}}
+    {{s20 All relevant configuration details, e.g. filter lists used, your own filters,
+    unusual browser configuration, other extensions, etc.}}
+  </li>
+  <li>
+    {{s21 The exact description of the steps that are needed to reproduce the issue}}
+  </li>
+  <li>
+    {{s22 The exact description of what happens and what you think is wrong}}
   </li>
 </ul>
 
-<h2 id="moved">{{s23 My bug report is no longer there, what happened?}}</h2>
+<h2 id="moved">{{s23 My Bug Report is No Longer There. What Happened?}}</h2>
 
 <p>
-  {{s24 You came back and your bug report is no longer there?}} {{s25 Maybe the moderators
-  changed the title to make it more meaningful.}}   {{s26 Look around <a href="/forum/index.php">in the forum.</a>}}
+  {{s24 If you can't find your bug report, it's likely that the moderators renamed it so that the title better reflects the issue.}} {{s26 Have a look around <a href="/forum/index.php">the forum.</a>}}
 </p>
