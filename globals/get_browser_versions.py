@@ -218,7 +218,7 @@ def get_browser_versions(context, browser):
       # different channels are on the same version, but we want
       # to list each version only once.
       versions['unreleased'] = sorted(
-        set(versions['unreleased']) - {current, previous},
+        set(versions['unreleased']) - set(re.sub(r'(\.0*)+$', '', ver) for ver in (current, previous) if ver),
         key=key_by_version
       )
 
