@@ -45,8 +45,10 @@ def get_mozilla_version(product, origin_version, channel,
   finally:
     response.close()
 
-  update = doc.getElementsByTagName('update')[0]
-  full_version = update.getAttribute(attribute)
+  updates = doc.getElementsByTagName('update')
+  if not updates:
+    raise Exception('No updates for %s in %s channel' % (product, channel))
+  full_version = updates[0].getAttribute(attribute)
 
   match = re.search(r'^(\d+)(?:\.\d+)?', full_version)
   if minor:
