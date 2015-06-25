@@ -197,7 +197,8 @@ def get_browser_versions(context, browser):
         raise exc_info[0], exc_info[1], exc_info[2]
 
       versions = cached_versions
-      if now - versions['timestamp'] > 60*60*2:
+      if now > versions['fail_silently_until']:
+        versions['fail_silently_until'] = now + 60*60*24
         logging.warning('Failed to get %s versions, falling back to '
                         'cached versions', browser, exc_info=exc_info)
     else:
@@ -222,11 +223,12 @@ def get_browser_versions(context, browser):
         key=key_by_version
       )
 
-      versions['timestamp'] = now
+      versions['fail_silently_until'] = now + 60*60*2
       persistent_cache[browser] = versions
-      file.seek(0)
-      json.dump(persistent_cache, file)
-      file.truncate()
+
+    file.seek(0)
+    json.dump(persistent_cache, file)
+    file.truncate()
 
   if not versions['previous']:
     logging.warning("Couldn't determine previous browser version, "
