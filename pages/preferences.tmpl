@@ -340,6 +340,13 @@ title=Adblock Plus preferences
 {{"Suppresses the first run page Adblock Plus opens after the installation."|translate("suppress_first_run_page-s1")}}
 {% endmacro %}
 
+{% macro notifications_showuiDescription() %}
+{{"Determines whether notification management UI should be displayed (only if the user opted out of notifications before)."|translate("notifications_showui-description")}}
+{% endmacro %}
+
+{% macro notifications_ignoredcategoriesDescription() %}
+{{"List of notification categories that the user opted out of."|translate("notifications_ignoredcategories-description")}}
+{% endmacro %}
 
 {#
   Preference descriptions are defined in the macros above and only referenced
@@ -494,6 +501,16 @@ title=Adblock Plus preferences
         "name": "hideContributeButton",
         "default": "false",
         "description": hideContributeButtonDescription
+      },
+      {
+        "name": "notifications_ignoredcategories",
+        "default": "[]",
+        "description": notifications_ignoredcategoriesDescription
+      },
+      {
+        "name": "notifications_showui",
+        "default": "false",
+        "description": notifications_showuiDescription
       },
       {
         "name": "recentReports",
