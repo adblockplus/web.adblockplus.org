@@ -21,7 +21,7 @@ title=Writing Adblock Plus filters
 
   <p>{{s10 That's what exception rules are good for — they allow you to define cases where filters shouldn't be applied. For example if you are unhappy with your filter <code><fix>adv</fix></code> blocking <code><fix>http://example.com/advice.html</fix></code>, you can define an exception rule <code><fix>@@advice</fix></code>. Exception rules are no different from filter rules, you can use wildcards or regular expressions. You only have to precede them by <code><fix>@@</fix></code> to indicate an exception rule.}}</p>
 
-  <p>{{s11 Exception rules can do more. If an exception rule starts with http:// or https:// (optionally with a pipe before it) it will make whole pages an exception. For example, if your exception rule is <code><fix>@@||example.com^$document</fix></code> and you open some page from example.com — Adblock Plus will be entirely disabled on this page and nothing will be blocked.}}</p>
+  <p>{{s11 Exception rules can do more. If you specify <code><fix>$document</fix></code> option you will get an exception for the entire page. For example, if your exception rule is <code><fix>@@||example.com^$document</fix></code> and you open some page from example.com — Adblock Plus will be entirely disabled on this page and nothing will be blocked.}}</p>
 
   <h3 id="anchors">{{s12 Matching at beginning/end of an address}}</h3>
 
