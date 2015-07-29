@@ -65,29 +65,31 @@
     };
   }
 
-  function getSelectedItem(menu)
+  function navigationClick(event)
   {
-    var items = menu.getElementsByTagName("li");
-    for (var i = 0; i < items.length; i++)
+    var element = event.target;
+    while (true)
     {
-      var item = items[i];
-      if (hasClass(item, "selected"))
-        return item;
+      if (!element)
+        return false;
+
+      if (hasClass(element, "selected") || element.id == "hamburger")
+      {
+        if ("querySelector" in document)
+        {
+          event.preventDefault();
+          toggleClass(document.querySelector("header nav > ul"), "visible");
+        }
+        return false;
+      }  
+      element = element.parentElement;
     }
   }
 
   function initMenu()
   {
     if ("querySelector" in document)
-    {
-      var menu = document.querySelector("header nav>ul");
-      var selectedItem = getSelectedItem(menu);
-      if (selectedItem)
-        selectedItem.onclick = function()
-        {
-          toggleClass(menu, "visible");
-        };
-    }
+      document.querySelector("header nav").onclick = navigationClick;
   }
 
   function initFooterSection(section)
