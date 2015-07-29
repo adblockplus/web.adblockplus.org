@@ -36,9 +36,10 @@ html[dir="rtl"] header nav li.selected
   padding-right: 0;
 }
 
-header nav li.selected::after
+#hamburger
 {
   content: "";
+  cursor: pointer;
   display: inline-block;
   position: absolute;
   width: 30px;
@@ -51,7 +52,7 @@ header nav li.selected::after
   background-position: 0px -166px;
 }
 
-html[dir="rtl"] header nav li.selected::after
+html[dir="rtl"] #hamburger
 {
   left: 10px;
   right: auto;
