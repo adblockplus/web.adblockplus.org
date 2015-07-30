@@ -71,7 +71,7 @@
     while (true)
     {
       if (!element)
-        return false;
+        return;
 
       if (hasClass(element, "selected") || element.id == "hamburger")
       {
