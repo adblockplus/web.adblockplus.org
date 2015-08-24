@@ -26,12 +26,12 @@
       <strong class="subscriptionTitle">{{ subscription["name"] }}</strong><br>
       {{ subscription["specialization"] }}
       {%- if subscription["supplements"] %}
-      <br>{{ "supplement for"|translate("supplements_prefix") }} {{ ' / '.join(subscription["supplements"]) }} {{ ""|translate("supplements_suffix") }}
+      <br>{{ "supplement for"|translate("supplements_prefix") }} {{ ' / '.join(subscription["supplements"]) }} {{ " "|translate("supplements_suffix") }}
       {%- endif %}
     </td>
     <td>
       {%- if subscription["maintainer"] %}
-      {{ "by"|translate("maintainer_prefix") }} {{ subscription["maintainer"] }} {{ ""|translate("maintainer_suffix") }}<br>
+      {{ "by"|translate("maintainer_prefix") }} {{ subscription["maintainer"] }} {{ " "|translate("maintainer_suffix") }}<br>
       {%- endif %}
       {%- set is_first = True %}
       {% for key, default in (('homepage', 'Homepage'), ('forum', 'Forum'), ('contact', 'Contact page'), ('faq', 'FAQ'), ('blog', 'Blog'), ('changelog', 'Changelog'), ('policy', 'Policy')) -%}
