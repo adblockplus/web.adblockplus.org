@@ -8,6 +8,62 @@
   background-image: url(../img/sprite-index.png);
 }
 
+#abb-banner
+{
+  background-color: #ffffff;
+  display: none;
+  padding: 50px 40px 40px 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#abb-banner h2
+{
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0px;
+}
+
+#abb-banner img
+{
+  margin: 30px 0px 40px 0px;
+  width: 40%;
+  min-width: 200px;
+}
+
+#abb-banner a
+{
+  display: none;
+  padding: 20px;
+  background-color: #2f8ecb;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+#content.ua-android,
+#content.ua-ios
+{
+  margin-top: 0px;
+}
+
+#content.ua-android #abb-banner,
+#content.ua-ios #abb-banner,
+#content.ua-android #abb-android-download,
+#content.ua-ios #abb-ios-download
+{
+  display: block;
+}
+
+#content.ua-android #adblock-browser-notification,
+#content.ua-ios #adblock-browser-notification
+{
+  display: none;
+}
+
 #main, #video
 {
   display: inline-block;
@@ -15,7 +71,7 @@
 
 #video, #maxthon-instruction
 {
-  background: white;
+  background: #ffffff;
   padding: 10px;
   border: 1px solid #c9c9c9;
   box-shadow: 1px 1px 0 0 #dbdbdb;
@@ -377,7 +433,7 @@ html[dir="rtl"] #install ul
 {
   color: #555555;
   font-size: 16px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   text-align: center;
   border: 1px solid #D9D9D9;
   padding: 20px 0px;

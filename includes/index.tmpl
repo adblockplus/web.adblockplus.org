@@ -35,7 +35,12 @@ localefile=index
 <meta content="{{"Adblock Plus is the most popular adblocker available for Firefox, Chrome, Opera, Safari, Android and Internet Explorer. Block all annoying ads all over the web: remove video ads on YouTube, block Facebook ads, get rid of pop-ups and much more. On Google Chrome, Adblock Plus is one of the fastest growing extensions ever. Our adblock for Chrome is being used by 10 million people. Download online for free now!"|translate("s2")}}" property="og:description">
 </head>
 
-
+<div id="abb-banner">
+  <h2>{{"Want to block ads on your smartphone or tablet?"|translate("abb-banner-headline")}}</h2>
+  <img src="/img/abb-promo-image.png" alt="{{"Adblock Browser promotional image"|translate("abb-promotion-alt")}}" />
+  <a id="abb-android-download" href="https://adblockplus.org/redirect?link=adblock_browser_android_store" target="_blank">{{"Download Adblock Browser"|translate("abb-banner-button-text")}}</a>
+  <a id="abb-ios-download" href="https://adblockplus.org/redirect?link=adblock_browser_ios_store" target="_blank">{{"Download Adblock Browser"|translate("abb-banner-button-text")}}</a>
+</div>
 <div itemscope="itemscope" itemtype="http://schema.org/SoftwareApplication">
   <section id="main">
     <div id="summary">
@@ -100,24 +105,25 @@ localefile=index
     </div>
   </section>
 
-  <div id="adblock-browser-notification">
-    {{'Be the first to experience the new Adblock Browser for smartphones and tablets. <a href="adblock-browser">Get it here.</a>'|translate("adblock-browser-notification")}}
+  <div id="messages-wrapper">
+    <div id="adblock-browser-notification">
+      {{'Be the first to experience the new Adblock Browser for smartphones and tablets. <a href="adblock-browser">Get it here.</a>'|translate("adblock-browser-notification")}}
+    </div>
+    <div class="disclaimer lang-fr">
+      En téléchargeant le logiciel Adblock Plus vous acceptez que si vous utilisez Adblock Plus pour visiter un site Internet en violation de toute obligation ou droit de quelque nature que ce soit en relation avec ce site Internet, en aucun cas EYEO ne pourra être tenu pour responsable envers vous ou tout autre tiers pour toute perte ou dommage (y compris, sans y être limité, les dommages pour perte de chances et perte de bénéfices) découlant directement ou indirectement de votre utilisation de ce logiciel.
+    </div>
+    <div id="maxthon-notification">
+      使用傲游云浏览器，享受最好的广告过滤体验. (内置Adblock Plus) <a href="http://www.maxthon.cn" target="_blank">下载傲游云浏览器</a>
+    </div>
+    <div class="warning-platform firefox">{{"It appears that you are using Mozilla Firefox."|translate("s28")}} <a href="firefox">{{"Switch to Adblock Plus for Firefox."|translate("s29")}}</a></div>
+    <div class="warning-platform chrome">{{"It appears that you are using Google Chrome."|translate("s30")}} <a href="chrome">{{"Switch to Adblock Plus for Chrome."|translate("s31")}}</a></div>
+    <div class="warning-platform android">{{"It appears that you are using Android."|translate("s32")}} <a href="android">{{"Switch to Adblock Plus for Android."|translate("s33")}}</a></div>
+    <div class="warning-platform opera">{{"It appears that you are using Opera."|translate("s34")}} <a href="opera">{{"Switch to Adblock Plus for Opera."|translate("s35")}}</a></div>
+    <div class="warning-platform internet-explorer">{{"It appears that you are using Internet Explorer."|translate("s36")}} <a href="internet-explorer">{{"Switch to Adblock Plus for Internet Explorer."|translate("s37")}}</a></div>
+    <div class="warning-platform safari">{{"It appears that you are using Safari."|translate("s38")}} <a href="safari">{{"Switch to Adblock Plus for Safari."|translate("s39")}}</a></div>
+    <div class="warning-platform yandex-browser">{{"It appears that you are using Yandex Browser."|translate("s40")}} <a href="yandex-browser">{{"Switch to Adblock Plus for Yandex Browser."|translate("s41")}}</a></div>
+    <div class="warning-platform maxthon">{{"It appears that you are using Maxthon."|translate("s42")}} <a href="maxthon">{{"Switch to Adblock Plus for Maxthon."|translate("s43")}}</a></div>
   </div>
-  <div class="disclaimer lang-fr">
-    En téléchargeant le logiciel Adblock Plus vous acceptez que si vous utilisez Adblock Plus pour visiter un site Internet en violation de toute obligation ou droit de quelque nature que ce soit en relation avec ce site Internet, en aucun cas EYEO ne pourra être tenu pour responsable envers vous ou tout autre tiers pour toute perte ou dommage (y compris, sans y être limité, les dommages pour perte de chances et perte de bénéfices) découlant directement ou indirectement de votre utilisation de ce logiciel.
-  </div>
-  <div id="maxthon-notification">
-    使用傲游云浏览器，享受最好的广告过滤体验. (内置Adblock Plus) <a href="http://www.maxthon.cn" target="_blank">下载傲游云浏览器</a>
-  </div>
-  <div class="warning-platform firefox">{{"It appears that you are using Mozilla Firefox."|translate("s28")}} <a href="firefox">{{"Switch to Adblock Plus for Firefox."|translate("s29")}}</a></div>
-  <div class="warning-platform chrome">{{"It appears that you are using Google Chrome."|translate("s30")}} <a href="chrome">{{"Switch to Adblock Plus for Chrome."|translate("s31")}}</a></div>
-  <div class="warning-platform android">{{"It appears that you are using Android."|translate("s32")}} <a href="android">{{"Switch to Adblock Plus for Android."|translate("s33")}}</a></div>
-  <div class="warning-platform opera">{{"It appears that you are using Opera."|translate("s34")}} <a href="opera">{{"Switch to Adblock Plus for Opera."|translate("s35")}}</a></div>
-  <div class="warning-platform internet-explorer">{{"It appears that you are using Internet Explorer."|translate("s36")}} <a href="internet-explorer">{{"Switch to Adblock Plus for Internet Explorer."|translate("s37")}}</a></div>
-  <div class="warning-platform safari">{{"It appears that you are using Safari."|translate("s38")}} <a href="safari">{{"Switch to Adblock Plus for Safari."|translate("s39")}}</a></div>
-  <div class="warning-platform yandex-browser">{{"It appears that you are using Yandex Browser."|translate("s40")}} <a href="yandex-browser">{{"Switch to Adblock Plus for Yandex Browser."|translate("s41")}}</a></div>
-  <div class="warning-platform maxthon">{{"It appears that you are using Maxthon."|translate("s42")}} <a href="maxthon">{{"Switch to Adblock Plus for Maxthon."|translate("s43")}}</a></div>
-
   <iframe frameborder="0" height="285" id="video" itemprop="video" src="//www.youtube-nocookie.com/embed/pVYtzF5SemU?html5=1&amp;autohide=1&amp;enablejsapi=1&amp;controls=2&amp;fs=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;theme=light" width="520"></iframe>
   <img height="305" id="maxthon-instruction" src="/img/maxthon-instruction.png" width="540">
 </div>

@@ -6,6 +6,12 @@
   padding-right: 0;
 }
 
+#content.ua-android,
+#content.ua-ios
+{
+  width: 1000px;
+}
+
 #main
 {
   width: 426px;
@@ -60,18 +66,18 @@ html[dir="rtl"] #main
   bottom: -25px;
 }
 
-.warning-platform, .disclaimer,
-#maxthon-notification, #adblock-browser-notification
+#messages-wrapper
 {
+  margin-top: 50px;
+  margin-bottom: 30px;
   width: 100%;
-  margin-top: 0;
-  margin-bottom: 50px;
   float: right;
 }
 
-#adblock-browser-notification
+#messages-wrapper > div
 {
-  margin-top: 50px;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 #key-facts
