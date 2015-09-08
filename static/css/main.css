@@ -269,6 +269,35 @@ a[hreflang="en"]:not(:lang(en)):after
   font-size: 20px;
 }
 
+#adblock-browser-notification
+{
+  box-sizing: border-box;
+  color: #000000;
+  font-size: 16px;
+  background-color: #ffffff;
+  text-align: center;
+  border: 2px solid #a1a1a1;
+  padding: 20px;
+}
+
+#adblock-browser-notification a
+{
+  font-weight: bold;
+}
+
+#adblock-browser-notification img
+{
+  vertical-align: bottom;
+  margin: 0px 4px;
+  width: 25px;
+  height: 25px;
+}
+
+#adblock-browser-notification span
+{
+  white-space: nowrap;
+}
+
 .toc
 {
   display: inline-block;

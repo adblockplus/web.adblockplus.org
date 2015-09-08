@@ -105,6 +105,9 @@
     </header>
 
     <div id="content" {% if localefile == "index" %}class="{{page}}"{% endif %}>
+      {% if abbnotification %}
+      <? include abb-notification ?>
+      {% endif %}
       {% if not noheading %}
       <h1>{{title|translate("title")}}</h1>
       {% endif %}
