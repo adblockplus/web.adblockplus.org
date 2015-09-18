@@ -17,7 +17,7 @@
 
 {%- macro process_subscription(subscription, parent=None) %}
   <tr{% if subscription["deprecated"] %} class="deprecated"{% endif %}>
-    {%- if subscription["supplements"] %}
+    {%- if parent and subscription["supplements"] %}
       <td rowspan="2" class="dummy"></td>
       <td rowspan="2">
     {%- else %}
@@ -68,20 +68,19 @@
 {%- endmacro %}
 
 {% macro display_subscriptions(subscriptions) %}
-  {%- set current_type = subscriptions[0]["type"] -%}
-  <h2>{{ get_string("type_" + current_type, "subscriptions") }}</h2>
-
-  <table class="subscriptions">
   {%- for subscription in subscriptions|subscription_sort -%}
-    {%- if not subscription["supplements"] -%}
+    {%- if not (subscription["supplements"] and current_type == subscription["type"]) -%}
       {%- if current_type != subscription["type"] -%}
-        {%- set current_type = subscription["type"] %}
+        {%- if current_type %}
   </table>
-
-  <h2>{{ get_string("type_" + current_type, "subscriptions") }}</h2>
+        {%- endif -%}
+        {%- set current_type = subscription["type"] %}
+  <h2 id="type_{{ current_type }}">{{ get_string("type_" + current_type, "subscriptions") }}</h2>
 
   <table class="subscriptions">
       {%- endif -%}
+    {%- endif -%}
+    {%- if subscription["type"] not in subscription["supplementsType"] -%}
       {{ process_subscription(subscription) }}
     {%- endif -%}
   {%- endfor %}
