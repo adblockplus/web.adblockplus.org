@@ -23,11 +23,6 @@
   margin-bottom: 4px;
 }
 
-#content.edge #main
-{
-  height: 380px;
-}
-
 html[dir="rtl"] #main
 {
   float: left;
@@ -35,15 +30,16 @@ html[dir="rtl"] #main
   margin-left: 8px;
 }
 
-#install .install-button, #install ul, #information-android
+#install .install-button, #information-android, #edge-subscription
 {
   position: absolute;
 }
 
-#install .install-button
+#install .install-button, #edge-subscription
 {
   bottom: 2px;
   left: 0;
+  width: 100%;
 }
 
 #install .install-button:active
@@ -51,29 +47,15 @@ html[dir="rtl"] #main
   bottom: 0px;
 }
 
-#install ul
+#other-platform
 {
-  right: 0;
-  width: 115px;
+  position: absolute;
+  top: 320px;
 }
 
-#content.maxthon #install ul,
-#content.edge #install ul
+#other-platform > div
 {
-  margin-left: 18px;
-  right: auto;
-  width: auto;
-}
-
-#content.edge #install ul
-{
-  margin: 0px 35px;
-}
-
-#content.edge #other-browsers
-{
-  margin: 0px 40px 10px 40px;
-  display: block;
+  margin-bottom: 10px;
 }
 
 #content.edge #edge-teaser
@@ -105,6 +87,11 @@ html[dir="rtl"] #main
 {
   margin-top: 0px;
   margin-bottom: 20px;
+}
+
+#content.edge #messages-wrapper
+{
+  margin-top: 80px;
 }
 
 #key-facts

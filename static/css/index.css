@@ -300,11 +300,11 @@ html[dir="rtl"] #summary li .sprite
   display: inline-block;
 }
 
-#install ul
+#other-platform ul
 {
   list-style: none;
   display: inline-block;
-  margin: 0 0 0 5px;
+  margin: 0px;
   padding: 0;
   vertical-align: bottom;
 }
@@ -314,14 +314,14 @@ html[dir="rtl"] #install ul
   margin: 0 5px 0 0;
 }
 
-#install li
+#other-platform li
 {
   display: inline-block;
   margin: 0 3px;
   font-size: 0;
 }
 
-#install li a
+#other-platform li a
 {
   width: 19px;
   height: 20px;
@@ -442,16 +442,6 @@ html[dir="rtl"] #install ul
   font-size: 14px;
 }
 
-#edge-subscription
-{
-  margin: 0px 0px 10px 40px;
-}
-
-html[dir="rtl"] #edge-subscription
-{
-  margin: 0px 40px 10px 0px;
-}
-
 #edge-subscription input[type=email]
 {
   border: solid 2px #a5a5a5;
@@ -481,8 +471,8 @@ html[dir="rtl"] #edge-subscription
 
 
 #edge-subscription form > span, #edge-subscription form.success input,
-#edge-subscription form.success button, #other-browsers, #content.edge #video,
-#edge-subscription, #edge-teaser
+#edge-subscription form.success button, #other-platform > div,
+#content.edge #video, #edge-subscription, #edge-teaser
 {
   display: none;
 }
@@ -495,7 +485,8 @@ html[dir="rtl"] #edge-subscription
 #edge-subscription form.success .sucess-label,
 #edge-subscription form.invalid .invalid-label,
 #edge-subscription form.error .response-error,
-#content.edge #edge-subscription
+#content.edge #edge-subscription,
+#content.edge #other-platform > div
 {
   display: block;
 }
