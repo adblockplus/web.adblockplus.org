@@ -20,7 +20,7 @@
   font-size: 20px;
 }
 
-#video, #maxthon-instruction
+#video, #maxthon-instruction, #edge-teaser
 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -60,7 +60,8 @@
 }
 
 .warning-platform, #maxthon-notification,
-.disclaimer, #adblock-browser-notification
+.disclaimer, #adblock-browser-notification,
+#edge-subscription
 {
   margin: 10px;
 }
@@ -82,6 +83,21 @@ html[dir="rtl"] #key-facts section
   padding-right: 80px;
   padding-left: 0px;
   text-align: right;
+}
+
+#edge-subscription button[type=submit], #edge-subscription input[type=email]
+{
+  webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#edge-teaser
+{
+  display: none;
 }
 
 #key-facts section.border-right

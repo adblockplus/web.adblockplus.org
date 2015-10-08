@@ -23,6 +23,11 @@
   margin-bottom: 4px;
 }
 
+#content.edge #main
+{
+  height: 380px;
+}
+
 html[dir="rtl"] #main
 {
   float: left;
@@ -48,16 +53,38 @@ html[dir="rtl"] #main
 
 #install ul
 {
-  bottom: -2px;
   right: 0;
   width: 115px;
 }
 
-#content.maxthon #install ul
+#content.maxthon #install ul,
+#content.edge #install ul
 {
   margin-left: 18px;
   right: auto;
   width: auto;
+}
+
+#content.edge #install ul
+{
+  margin: 0px 35px;
+}
+
+#content.edge #other-browsers
+{
+  margin: 0px 40px 10px 40px;
+  display: block;
+}
+
+#content.edge #edge-teaser
+{
+  display: inline-block;
+  padding: 0px;
+}
+
+#edge-subscription input[type=email]
+{
+  width: 210px;
 }
 
 #information-android

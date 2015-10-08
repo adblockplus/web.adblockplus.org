@@ -68,6 +68,26 @@ localefile=index
       </ul>
     </div>
 
+    <div id="edge-subscription">
+      <h3>
+        {{"Get a heads-up prior to the launch!"|translate("subscription-description")}}
+      </h3>
+      <form accept-charset="utf-8" method="post">
+        <input class="subscribe-textbox" type="email" name="email" placeholder="{{"Your email address"|translate("subscription-input-placeholder")}}" required />
+        <input type="hidden" name="lang" value="{{locale}}" />
+        <input type="hidden" name="product" value="{{page}}" />
+        <button type="submit"><span>{{"Notify me"|translate("subscription-button")}}</span></button>
+        <span class="sucess-label">
+          {{"A confirmation email has been sent. Please check your email and click the confirmation link."|translate("subscription-message-success")}}
+        </span>
+        <span class="invalid-label">
+          {{"Please enter a valid email address."|translate("subscription-message-invalid-email")}}
+        </span>
+        <span class="response-error">
+        </span>
+      </form>
+    </div>
+
     <div id="install">
       <a class="install-button" href="https://update.adblockplus.org/latest/adblockplusfirefox.xpi" id="install-firefox">{{"Install for Firefox"|translate("s13")}}</a>
       <a class="install-button" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" id="install-chrome" onclick="chrome.webstore.install(); return false;">{{"Install for Chrome"|translate("s14")}}</a>
@@ -76,6 +96,7 @@ localefile=index
       <a class="install-button" href="https://update.adblockplus.org/latest/adblockplusie.exe" id="install-internet-explorer">{{"Install for Internet Explorer"|translate("s17")}}</a>
       <a class="install-button" href="https://update.adblockplus.org/latest/adblockplussafari.safariextz" id="install-safari">{{"Install for Safari"|translate("s18")}}</a>
       <a class="install-button" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" id="install-yandex-browser" onclick="chrome.webstore.install(); return false;">{{"Install for Yandex Browser"|translate("s19")}}</a>
+      <div id="other-browsers">{{"Download Adblock Plus for another browser:"|translate("other-browsers")}}</div>
       <ul>
         <li>
           <a class="sprite" href="firefox" id="platform-firefox" title="{{"Adblock Plus for Firefox"|translate("s20")}}"></a>
@@ -101,6 +122,9 @@ localefile=index
         <li>
           <a class="sprite" href="maxthon" id="platform-maxthon" title="{{"Adblock Plus for Maxthon"|translate("s27")}}"></a>
         </li>
+        <li>
+          <a class="sprite" href="edge" id="platform-edge" title="{{"Adblock Plus for Microsoft Edge"|translate("abp-microsoft-edge")}}"></a>
+        </li>
       </ul>
     </div>
   </section>
@@ -124,6 +148,7 @@ localefile=index
   </div>
   <iframe frameborder="0" height="285" id="video" itemprop="video" src="//www.youtube-nocookie.com/embed/pVYtzF5SemU?html5=1&amp;autohide=1&amp;enablejsapi=1&amp;controls=2&amp;fs=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;theme=light" width="520"></iframe>
   <img height="305" id="maxthon-instruction" src="/img/maxthon-instruction.png" width="540">
+  <img id="edge-teaser" src="/img/edge_teaser.png" alt={{"Comming soon image of Adblock Plus for Microsoft Edge"|translate("edge-teaser")}} />
 </div>
 
 <div id="key-facts">
@@ -188,6 +213,9 @@ localefile=index
       </button>
       <button id="more-maxthon" onclick="showTab(this);return false;">
         {{"Maxthon"|translate("s59")}}
+      </button>
+      <button id="more-edge" onclick="showTab(this);return false;">
+        {{"Microsoft Edge"|translate("microsoft-edge")}}
       </button>
     </div>
 
@@ -339,6 +367,13 @@ localefile=index
 
       <p>
         {{"Different from being as an extension on other browsers, Adblock Plus has been integrated by default for Maxthon users, and as an opt-in option for Chinese users. Are you fed up with advertisers infringing on your browsing experience? Simply install Maxthon Cloud Browser and all annoying ads will be automatically blocked from the internet. Blinking banners, popups, video commercials on YouTube and Facebook ads: Maxthon Cloud Browser with Adblock Plus integrated will automatically remove any unwanted ad from every website you visit. Want more? You can easily activate additional privacy and security features such as tracking and malware protection."|translate("s98")}}
+      </p>
+    </div>
+    <div class="more-tab" id="tab-edge">
+      <h2>{{"Be notified when Adblock Plus for Microsoft Edge is available!"|translate("abp-for-edge-be-notified")}}</h2>
+
+      <p>
+        {{"Microsoft Edge <a href='https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6508820-javascript-browser-extensions'>does not yet support extensions</a>. However, you can be sure that a version of Adblock Plus for Microsoft Edge will be released as soon as possible. Enter your email in the field above to receive a notification when Adblock Plus for Microsoft Edge is available. While you're waiting, you may want to try the latest version of Adblock Plus for Internet Explorer."|translate("ms-edge-description")}}
       </p>
     </div>
   </div>

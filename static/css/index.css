@@ -69,7 +69,7 @@
   display: inline-block;
 }
 
-#video, #maxthon-instruction
+#video, #maxthon-instruction, #edge-teaser
 {
   background: #ffffff;
   padding: 10px;
@@ -417,6 +417,89 @@ html[dir="rtl"] #install ul
   background-position: -128px -109px;
 }
 
+#platform-edge
+{
+  background-position: -68px -171px;
+}
+
+#content.edge #platform-edge
+{
+  background-position: -68px -151px;
+}
+
+#content h3.subscribe-header
+{
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+#edge-subscription h3
+{
+  margin: 19px 0px 10px 0px;
+  color: #2d79c0;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 14px;
+}
+
+#edge-subscription
+{
+  margin: 0px 0px 10px 40px;
+}
+
+html[dir="rtl"] #edge-subscription
+{
+  margin: 0px 40px 10px 0px;
+}
+
+#edge-subscription input[type=email]
+{
+  border: solid 2px #a5a5a5;
+  padding: 0px 10px;
+  font-size: 14px;
+  font-family: Arial;
+  line-height: 36px;
+  height: 36px; /* IE 8 */
+}
+
+#edge-subscription input[type=email].placeholder
+{
+  color: #a5a5a5;
+}
+
+#edge-subscription button[type=submit]
+{
+  border: solid 1px #357ebd;
+  border-radius: 3px;
+  background-color: #428bca;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  width: 146px;
+  height: 40px;
+}
+
+
+#edge-subscription form > span, #edge-subscription form.success input,
+#edge-subscription form.success button, #other-browsers, #content.edge #video,
+#edge-subscription, #edge-teaser
+{
+  display: none;
+}
+
+#edge-subscription form .invalid-label
+{
+  margin-top: 15px;
+}
+
+#edge-subscription form.success .sucess-label,
+#edge-subscription form.invalid .invalid-label,
+#edge-subscription form.error .response-error,
+#content.edge #edge-subscription
+{
+  display: block;
+}
+
 .warning-platform,
 .disclaimer,
 #maxthon-notification
@@ -609,7 +692,8 @@ html[dir="rtl"] #key-facts section .sprite
 #more-container.internet-explorer #tab-internet-explorer,
 #more-container.safari #tab-safari,
 #more-container.yandex-browser #tab-yandex-browser,
-#more-container.maxthon #tab-maxthon
+#more-container.maxthon #tab-maxthon,
+#more-container.edge #tab-edge
 {
   display: inline-block;
 }
@@ -622,6 +706,7 @@ html[dir="rtl"] #key-facts section .sprite
 #more-container.safari #more-safari,
 #more-container.yandex-browser #more-yandex-browser,
 #more-container.maxthon #more-maxthon
+#more-container.edge #more-edge
 {
   background-color: #dbd4c7;
 }
