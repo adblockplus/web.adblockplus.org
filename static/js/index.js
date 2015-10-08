@@ -46,6 +46,7 @@
   function initSubscriptionForm(subscriptionElement)
   {
     var emailTextbox = subscriptionElement.querySelectorAll(".subscribe-textbox")[0];
+    var reset = subscriptionElement.querySelectorAll(".reset-form")[0];
 
     // IE9 + Safari iOS
     if (!("placeholder" in document.createElement("input"))
@@ -113,6 +114,12 @@
         }
       }, false);
       request.send(params);
+      return false;
+    }, false);
+
+    addListener(reset, "click", function()
+    {
+      formElement.removeAttribute("class");
       return false;
     }, false);
   }

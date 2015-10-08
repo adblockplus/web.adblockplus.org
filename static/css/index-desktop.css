@@ -64,6 +64,11 @@ html[dir="rtl"] #main
   padding: 0px;
 }
 
+#content.edge #features li:first-child
+{
+  display: none;
+}
+
 #edge-subscription input[type=email]
 {
   width: 210px;

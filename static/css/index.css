@@ -469,10 +469,21 @@ html[dir="rtl"] #install ul
   height: 40px;
 }
 
+.sucess-label
+{
+  color: #699926;
+}
 
-#edge-subscription form > span, #edge-subscription form.success input,
-#edge-subscription form.success button, #other-platform > div,
-#content.edge #video, #edge-subscription, #edge-teaser
+.invalid-label, .response-error
+{
+  color: #d50215;
+}
+
+#edge-subscription .messages > *,
+#edge-subscription form.success > .subscription-fields,
+#edge-subscription form.invalid > .subscription-fields,
+#edge-subscription form.error > .subscription-fields,
+#other-platform > div, #content.edge #video, #edge-subscription, #edge-teaser
 {
   display: none;
 }
@@ -484,7 +495,9 @@ html[dir="rtl"] #install ul
 
 #edge-subscription form.success .sucess-label,
 #edge-subscription form.invalid .invalid-label,
+#edge-subscription form.invalid .reset-form,
 #edge-subscription form.error .response-error,
+#edge-subscription form.error .reset-form,
 #content.edge #edge-subscription,
 #content.edge #other-platform > div
 {

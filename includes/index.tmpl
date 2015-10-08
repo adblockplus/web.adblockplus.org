@@ -73,18 +73,23 @@ localefile=index
         {{"Get a heads-up prior to the launch!"|translate("subscription-description")}}
       </h3>
       <form accept-charset="utf-8" method="post">
-        <input class="subscribe-textbox" type="email" name="email" placeholder="{{"Your email address"|translate("subscription-input-placeholder")}}" required />
-        <input type="hidden" name="lang" value="{{locale}}" />
-        <input type="hidden" name="product" value="{{page}}" />
-        <button type="submit"><span>{{"Notify me"|translate("subscription-button")}}</span></button>
-        <span class="sucess-label">
-          {{"A confirmation email has been sent. Please check your email and click the confirmation link."|translate("subscription-message-success")}}
-        </span>
-        <span class="invalid-label">
-          {{"Please enter a valid email address."|translate("subscription-message-invalid-email")}}
-        </span>
-        <span class="response-error">
-        </span>
+        <div class="subscription-fields">
+          <input class="subscribe-textbox" type="email" name="email" placeholder="{{"Your email address"|translate("subscription-input-placeholder")}}" required />
+          <input type="hidden" name="lang" value="{{locale}}" />
+          <input type="hidden" name="product" value="{{page}}" />
+          <button type="submit"><span>{{"Notify me"|translate("subscription-button")}}</span></button>
+        </div>
+        <div class="messages">
+          <span class="sucess-label">
+            {{"A confirmation email has been sent. Please check your email and click the confirmation link."|translate("subscription-message-success")}}
+          </span>
+          <span class="invalid-label">
+            {{"Please enter a valid email address."|translate("subscription-message-invalid-email")}}
+          </span>
+          <span class="response-error">
+          </span>
+          <a href="#" class="reset-form">{{"Try again."|translate("subscribe-again")}}</a>
+        </div>
       </form>
     </div>
 
@@ -99,7 +104,7 @@ localefile=index
     </div>
 
     <div id="other-platform">
-        <div>{{"Download Adblock Plus for another browser:"|translate("other-platform")}}</div>
+        <div>{{"Download Adblock Plus for another platform"|translate("other-platform")}}</div>
         <ul>
           <li>
             <a class="sprite" href="firefox" id="platform-firefox" title="{{"Adblock Plus for Firefox"|translate("s20")}}"></a>
