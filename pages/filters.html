@@ -152,6 +152,8 @@ title=Writing Adblock Plus filters
         <li>{{s64 <code><fix>subdocument</fix></code> — embedded pages, usually included via HTML frames}}</li>
         <li>{{s65 <code><fix>document</fix></code> — the page itself (only <a href="#whitelist">exception rules</a> can be applied to the page)}}</li>
         <li>{{s66 <code><fix>elemhide</fix></code> — for exception rules only, similar to <code><fix>document</fix></code> but only disables <a href="#elemhide">element hiding rules</a> on the page rather than all filter rules (Adblock Plus 1.2 and higher required)}}</li>
+        <li>{{generichide <code><fix>generichide</fix></code> — for exception rules only, similar to <code><fix>elemhide</fix></code> but only disables <a href="#generic-specific">generic</a> element hiding rules on the page (Adblock Plus 2.6.12 and higher required)}}</li>
+        <li>{{genericblock <code><fix>genericblock</fix></code> — for exception rules only, just like <code><fix>generichide</fix></code> but disables <a href="#generic-specific">generic</a> blocking rules (Adblock Plus 2.6.12 and higher required)}}</li>
         <li>{{s67 <code><fix>other</fix></code> — types of requests not covered in the list above}}</li>
       </ul>
       {{s68 The type options <code><fix>background</fix></code>, <code><fix>xbl</fix></code>,
@@ -245,6 +247,12 @@ Only here you get the best tofu!
   <h3 id="elemhide_simplified">{{s105 Simplified element hiding syntax}}</h3>
 
   <p>{{s106 Adblock Plus supports simplified element hiding syntax (e.g. <code><fix>#div(id=foo)</fix></code>) for backwards compatibility only. Using this syntax is discouraged, usual CSS selectors are preferred. Support for this syntax might be removed at some point.}}</p>
+
+  <h3 id="generic-specific">{{generic-specific-title Generic / Specific filters}}</h3>
+
+  <p>{{generic-specific-explanation-p1 With the <code><fix>$generichide</fix></code> and <code><fix>$genericblock</fix></code> filter options the distinction between generic and specific filters becomes important.}}</p>
+  <p>{{generic-specific-explanation-p2 We classify a filter to be <strong>specific</strong> if it matches one or more domains or matches a sitekey. If a filter has no domains specified (or only domain exceptions) and no sitekey then it counts as <strong>generic</strong>. For example, <code><fix>example.com##div.textad</fix></code> is a specific filter, whereas both <code><fix>##div.textad</fix></code> and <code><fix>~example.com##div.textad</fix></code> are generic.}}</p>
+  <p>{{generic-specific-explanation-p3 Note that with blocking rules the domain must be specified under the $domain option for them to be considered specific. For example, <code><fix>||example.com^</fix></code> is considered generic whereas <code><fix>*/ads/*$domain=example.com</fix></code> is site-specific.}}</p>
 
   <h2 id="sitekey_server">{{s107 Implementing a sitekey on the server}}</h2>
 
