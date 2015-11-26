@@ -171,6 +171,11 @@ html[dir="rtl"] #summary li .sprite
   margin-left: 0px;
 }
 
+h3.edge-message
+{
+  color: #2d79c0;
+}
+
 /* This cannot be just .install-button because a:link will have a higher
    specificity otherwise (overrides text color) */
 #install .install-button
@@ -433,72 +438,11 @@ html[dir="rtl"] #install ul
   margin-bottom: 0px;
 }
 
-#edge-subscription h3
-{
-  margin: 19px 0px 10px 0px;
-  color: #2d79c0;
-  font-weight: bold;
-  font-family: Arial;
-  font-size: 14px;
-}
-
-#edge-subscription input[type=email]
-{
-  border: solid 2px #a5a5a5;
-  padding: 0px 10px;
-  font-size: 14px;
-  font-family: Arial;
-  line-height: 36px;
-  height: 36px; /* IE 8 */
-}
-
-#edge-subscription input[type=email].placeholder
-{
-  color: #a5a5a5;
-}
-
-#edge-subscription button[type=submit]
-{
-  border: solid 1px #357ebd;
-  border-radius: 3px;
-  background-color: #428bca;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-  width: 146px;
-  height: 40px;
-}
-
-.sucess-label
-{
-  color: #699926;
-}
-
-.invalid-label, .response-error
-{
-  color: #d50215;
-}
-
-#edge-subscription .messages > *,
-#edge-subscription form.success > .subscription-fields,
-#edge-subscription form.invalid > .subscription-fields,
-#edge-subscription form.error > .subscription-fields,
-#other-platform > div, #content.edge #video, #edge-subscription, #edge-teaser
+#other-platform > div, #content.edge #video, #edge-teaser
 {
   display: none;
 }
 
-#edge-subscription form .invalid-label
-{
-  margin-top: 15px;
-}
-
-#edge-subscription form.success .sucess-label,
-#edge-subscription form.invalid .invalid-label,
-#edge-subscription form.invalid .reset-form,
-#edge-subscription form.error .response-error,
-#edge-subscription form.error .reset-form,
-#content.edge #edge-subscription,
 #content.edge #other-platform > div
 {
   display: block;
