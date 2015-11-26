@@ -438,12 +438,16 @@ html[dir="rtl"] #install ul
   margin-bottom: 0px;
 }
 
-#other-platform > div, #content.edge #video, #edge-teaser
+#other-platform > div,
+#content.edge #video,
+#edge-teaser,
+h3.edge-message
 {
   display: none;
 }
 
-#content.edge #other-platform > div
+#content.edge #other-platform > div,
+#content.edge h3.edge-message
 {
   display: block;
 }
