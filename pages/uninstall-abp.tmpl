@@ -1,0 +1,103 @@
+title=Adblock Plus has been uninstalled
+template=simple
+
+{% set reasons = [
+  ("1v0", "reason-not-installed", "I didn't install Adblock Plus."),
+  ("2v0", "reason-slowing-down", "Adblock Plus slowed down my browser."),
+  ("3v0", "reason-acceptable-ads", "I don't like the Acceptable Ads program."),
+  ("4v0", "reason-see-ads", "Adblock Plus didn't block all ads."),
+  ("5v0", "reason-better-adblocker", "I found better ad blocking software."),
+  ("6v0", "reason-break-websites", "Adblock Plus breaks websites that I visit.")
+] %}
+
+<head>
+  <meta name="robots" content="noindex" />
+  <script type="text/javascript">
+  (function()
+  {
+    function init()
+    {
+      var form = document.getElementById("reasons-form");
+
+      // Create hidden input for GET parameters
+      window.location.search.substr(1).split("&").forEach(function(param)
+      {
+        if (!/.=./.test(param))
+          return;
+
+        var paramSplit = param.split("=");
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", paramSplit[0]);
+        input.setAttribute("value", paramSplit[1]);
+        form.appendChild(input);
+      });
+
+      // Randomly add reasons
+      var reasonsContainer = document.getElementById("reasons");
+      var reasons = reasonsContainer.getElementsByTagName("li");
+      reasons = Array.prototype.slice.call(reasons);
+      reasonsContainer.innerHTML = "";
+      while (reasons.length)
+      {
+        var randomIndex = Math.floor(Math.random() * (reasons.length -1));
+        var reasonElement = reasons.splice(randomIndex, 1)[0];
+        reasonsContainer.appendChild(reasonElement);
+      }
+
+      var reasonOtherCheckbox = document.getElementById("reason-other");
+      reasonOtherCheckbox.addEventListener("change", function()
+      {
+        var textArea = document.getElementById("reason-other-input");
+        if (textArea.hasAttribute("class"))
+          textArea.removeAttribute("class")
+        else
+          textArea.setAttribute("class", "hidden");
+      }, false);
+
+      var submitButton = document.getElementById("submit-form");
+      submitButton.addEventListener("click", function(event)
+      {
+        if (!document.querySelector("ul input:checked"))
+        {
+          event.preventDefault();
+          form.setAttribute("class", "error");
+        }
+        else
+        {
+          form.submit();
+        }
+      }, false);
+    }
+    document.addEventListener("DOMContentLoaded", init, false);
+  })();
+  </script>
+</head>
+
+<section class="highlighted">
+  <h1>{{"Please select the reason(s) why you uninstalled Adblock Plus:"|translate("reasons-header", "Form heading")}}</h1>
+  <form id="reasons-form" action="uninstall-abp-submit" method="post">
+    <ul id="reasons">
+      {%- for reasonId, stringId, value in reasons %}
+      <li>
+        <label>
+          <input type="checkbox" name="reason" value="{{reasonId}}" />
+          {{value|translate(stringId, "Uninstallation reason")}}
+        </label>
+      </li>
+      {%- endfor %}
+      <li>
+        <label>
+          <input id="reason-other" type="checkbox" name="reason" value="0v0" />
+          {{"Other, namely..."|translate("reason-other", "Last uninstallation reason")}}
+        </label>
+        <textarea id="reason-other-input" class="hidden" name="reasonOther" placeholder="{{"Please explain why you are uninstalling Adblock Plus"|translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option")}}"></textarea>
+      </li>
+    </ul>
+    <button id="submit-form">{{"Submit"|translate("submit", "Submit button text")}}</button>
+    <span class="error-label">{{"Please select at least one of the options above"|translate("error-msg", "Error message, is being shown after submission if no item selected")}}</span>
+  </form>
+  <p class="disclaimer">
+    {{"By clicking Submit, you are sending your response to Adblock Plus. Please see our <a href='/privacy'>privacy policy</a>."|translate("disclaimer", "Disclaimer below form")}}
+  </p>
+</section>

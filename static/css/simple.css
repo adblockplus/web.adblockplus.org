@@ -1,0 +1,215 @@
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Light.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(/fonts/SourceSansPro-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Regular.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(/fonts/SourceSansPro-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(/fonts/SourceSansPro-Semibold.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(/fonts/SourceSansPro-Semibold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body
+{
+  margin: 0px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  background-image: url(/img/background-dark.png);
+}
+
+header
+{
+  width: 100%;
+}
+
+a,
+a:link,
+a:visited
+{
+  color: #5a84b3;
+  text-decoration: underline;
+}
+
+a:hover
+{
+  text-decoration: none;
+}
+
+header h1
+{
+  box-sizing: border-box;
+  border: dashed 1px #898989;
+  border-left: none;
+  border-right: none;
+  padding: 18px;
+  margin: 68px auto 20px auto;
+  max-width: 960px;
+  font-weight: 300;
+  font-size: 24px;
+  color: #7d7d7d;
+  text-align: center;
+}
+
+header::before
+{
+  content: "";
+  display: block;
+  border-bottom: solid 1px #d0d0d0;
+  height: 92px;
+  background-image: url(/img/background.png);
+}
+
+#logo
+{
+  display: block;
+  position: absolute;
+  top: 42px;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+
+#content
+{
+  margin: 0px auto;
+  max-width: 960px;
+}
+
+section
+{
+  padding: 20px 100px;
+  margin-bottom: 30px;
+}
+
+section.highlighted
+{
+  background-image: url(/img/background-blue.png);
+  color: #FFFFFF;
+}
+
+section.highlighted a
+{
+  color: #FFFFFF;
+}
+
+section h1
+{
+  margin: 0px;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+section ul
+{
+  margin: 12px 0px 16px 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+section li
+{
+  margin-bottom: 12px;
+}
+
+section li label
+{
+  -webkit-margin-end: 10px;
+  -moz-margin-end: 10px;
+}
+
+section li input
+{
+  vertical-align: middle;
+  -webkit-margin-end: 10px;
+  -moz-margin-end: 10px;
+}
+
+section li textarea
+{
+  display: block;
+  margin-top: 10px;
+  padding: 5px;
+  width: 250px;
+  height: 50px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+section .subheader
+{
+  margin-top: 0px;
+  text-align: center;
+}
+
+section .error-label
+{
+  display: none;
+  color: #ffafaf;
+  margin: 0px 12px;
+}
+
+form button
+{
+  min-width: 138px;
+  height: 42px;
+  background-color: #37506d;
+  border: 0px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+form.error button
+{
+  border: solid 2px #ffafaf;
+}
+
+form.error .error-label
+{
+  display: inline-block;
+}
+
+form input[type="checkbox"]
+{
+  margin: 0px;
+  -webkit-margin-end: 10px;
+  -moz-margin-end: 10px;
+}
+
+.disclaimer
+{
+  margin: 14px 0px;
+  font-size: 14px;
+  color: #a9bdd5;
+}
+
+.hidden
+{
+  display: none;
+}
+
+footer
+{
+  margin: 0 auto 30px;
+  max-width: 960px;
+  text-align: center;
+}
