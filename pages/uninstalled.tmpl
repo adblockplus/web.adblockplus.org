@@ -28,8 +28,8 @@ template=simple
         var paramSplit = param.split("=");
         var input = document.createElement("input");
         input.setAttribute("type", "hidden");
-        input.setAttribute("name", paramSplit[0]);
-        input.setAttribute("value", paramSplit[1]);
+        input.setAttribute("name", decodeURIComponent(paramSplit[0]));
+        input.setAttribute("value", decodeURIComponent(paramSplit[1]));
         form.appendChild(input);
       });
 
@@ -46,13 +46,19 @@ template=simple
       }
 
       var reasonOtherCheckbox = document.getElementById("reason-other");
+      var reasonOther = document.getElementById("reason-other-container");
       reasonOtherCheckbox.addEventListener("change", function()
       {
-        var textArea = document.getElementById("reason-other-input");
-        if (textArea.hasAttribute("class"))
-          textArea.removeAttribute("class")
-        else
-          textArea.setAttribute("class", "hidden");
+        reasonOther.classList.toggle("hidden");
+      }, false);
+
+      var reasonOtherInput = document.getElementById("reason-other-input");
+      var maxLength = reasonOtherInput.getAttribute("maxlength");
+      var charCounter = document.getElementById("characters-countdown");
+      charCounter.textContent = maxLength;
+      reasonOtherInput.addEventListener("keyup", function()
+      {
+        charCounter.textContent = maxLength - reasonOtherInput.value.length;
       }, false);
 
       var submitButton = document.getElementById("submit-form");
@@ -76,7 +82,7 @@ template=simple
 
 <section class="highlighted">
   <h1>{{"Please select the reason(s) why you uninstalled Adblock Plus:"|translate("reasons-header", "Form heading")}}</h1>
-  <form id="reasons-form" action="uninstall-abp-submit" method="post">
+  <form id="reasons-form" action="uninstalled-submit" method="get">
     <ul id="reasons">
       {%- for reasonId, stringId, value in reasons %}
       <li>
@@ -91,7 +97,13 @@ template=simple
           <input id="reason-other" type="checkbox" name="reason" value="0v0" />
           {{"Other, namely..."|translate("reason-other", "Last uninstallation reason")}}
         </label>
-        <textarea id="reason-other-input" class="hidden" name="reasonOther" placeholder="{{"Please explain why you are uninstalling Adblock Plus"|translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option")}}"></textarea>
+        <div id="reason-other-container" class="hidden">
+          <textarea id="reason-other-input" name="reasonOther" maxlength="300" placeholder="{{"Please explain why you are uninstalling Adblock Plus"|translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option")}}"></textarea>
+          <div>
+             {{"Characters remaining:"|translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option")}}
+             <span id="characters-countdown"></span>
+          </div>
+        </div>
       </li>
     </ul>
     <button id="submit-form">{{"Submit"|translate("submit", "Submit button text")}}</button>
