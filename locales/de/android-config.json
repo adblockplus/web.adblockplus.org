@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Adblock Plus für Android konfigurieren"
-  },
   "s1": {
     "message": "Erste Schritte"
-  },
-  "s2": {
-    "message": "Adblock Plus wählt beim ersten Start automatisch ein passendes Filterabonnment für Sie aus. Sie können dennoch <a>ein anderes Filterabonnement</a> aus der Liste auswählen."
-  },
-  "s3": {
-    "message": "Adblock Plus wird als Hintergrunddienst laufen und seinen Status in der Benachrichtigungsleiste anzeigen."
-  },
-  "s4": {
-    "message": "Ein Filterabonnement auswählen"
-  },
-  "s5": {
-    "message": "Sie können jederzeit ein anderes Filterabonnement aus der Liste auswählen:"
-  },
-  "s6": {
-    "message": "Jedes Mal wenn Sie ein anderes Filterabonnement auswählen, wird es automatisch heruntergeladen und aktiviert. Standardmäßig werden Filterabonnements in regelmäßigen Abständen aktualisiert. Es gibt zwei andere Einstellungsmöglichkeiten in den erweitertn Einstellungen:"
-  },
-  "s7": {
-    "message": "Manuell — das Filterabonnement wird nur aktualisiert, wenn Sie den Aktualisieren-Button drücken ("
-  },
-  "s8": {
-    "message": ")."
-  },
-  "s9": {
-    "message": "Beim Start — das Filterabonnement wird automatisch aktualisiert, wenn Sie Adblock Plus starten."
   },
   "s10": {
     "message": "Proxy manuell konfigurieren"
@@ -56,6 +29,9 @@
   "s19": {
     "message": "Setzen Sie weiter unten bei <em>Erweiterte Optionen einblenden</em> einen Haken:"
   },
+  "s2": {
+    "message": "Adblock Plus wählt beim ersten Start automatisch ein passendes Filterabonnment für Sie aus. Sie können dennoch <a>ein anderes Filterabonnement</a> aus der Liste auswählen."
+  },
   "s20": {
     "message": "Scrollen Sie runter zu den Proxy-Einstellungen und wählen dort <em>Manuell</em>aus:"
   },
@@ -66,9 +42,31 @@
     "message": "Finden Sie die Proxy-Host- und Port-Einstellungen auf:"
   },
   "s25": {
+    "description": "{1}: localhost",
     "message": "Ändern Sie den Proxy-Host zu <code>{1}</code> und geben Sie bei Port die Nummer ein, die Adblock Plus anzeigt:"
   },
   "s26": {
     "message": "Häufig gestellte Fragen"
+  },
+  "s3": {
+    "message": "Adblock Plus wird als Hintergrunddienst laufen und seinen Status in der Benachrichtigungsleiste anzeigen."
+  },
+  "s4": {
+    "message": "Ein Filterabonnement auswählen"
+  },
+  "s5": {
+    "message": "Sie können jederzeit ein anderes Filterabonnement aus der Liste auswählen:"
+  },
+  "s6": {
+    "message": "Jedes Mal wenn Sie ein anderes Filterabonnement auswählen, wird es automatisch heruntergeladen und aktiviert. Standardmäßig werden Filterabonnements in regelmäßigen Abständen aktualisiert. Es gibt zwei andere Einstellungsmöglichkeiten in den erweitertn Einstellungen:"
+  },
+  "s7": {
+    "message": "Manuell — das Filterabonnement wird nur aktualisiert, wenn Sie den Aktualisieren-Button drücken ("
+  },
+  "s9": {
+    "message": "Beim Start — das Filterabonnement wird automatisch aktualisiert, wenn Sie Adblock Plus starten."
+  },
+  "title": {
+    "message": "Adblock Plus für Android konfigurieren"
   }
 }

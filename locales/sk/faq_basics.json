@@ -1,24 +1,6 @@
 {
-  "title": {
-    "message": "FAQ - Funkčnosť"
-  },
   "s1": {
     "message": "Ako blokovať banner?"
-  },
-  "s2": {
-    "message": "Môžete kliknnúť pravý tlačítkom myši na obrázok a zvoliť \"Adblock\" z kontextového menu. Toto otvorí dialóg kde si môžete upraviť filter predtým ako ho pridáte. Taktiež môžete použiť divokú kartu pre nahradenie časti adresy (* — symbol divokej karty). Pre viac informácií si môžete prečítať ako <a>písať filtre pre Adblock Plus</a>."
-  },
-  "s3": {
-    "message": "Ukáž mi ako to môžem spraviť"
-  },
-  "s4": {
-    "message": "Niekedy chcem, aby bol Adblock Plus vypnutý. Ako to môžem spraviť?"
-  },
-  "s5": {
-    "message": "Môžete kliknúť na Adblock Plus ikonu a objaví sa vám menu. Tam budete mať možnosť vypnúť/zapnúť Adblock Plus. Ak chcete rýchlejšiu možnosť ako vypnúť Adblock Plus, stačí ak kliknete stredným tlačidlom myši na Adblock Plus ikonu a Adblock Plus sa vypne. To isté platí pri aktivovaní Adblocku Plus."
-  },
-  "s6": {
-    "message": "V menu máte aj možnosť vypnúť Adblock Plus na niektorých stránkach. Táto možnosť pridá filter ako <code>@@||adblockplus.org^$document</code> do vášho zoznamu filtrov. Viac informácií môžete nájsť v článku <a>ako písať filtre pre Adblock Plus.</a>."
   },
   "s11": {
     "message": "Ako môžem manuálne aktualizovať moje filtre?"
@@ -47,6 +29,9 @@
   "s19": {
     "message": "Kliknite na tlačidlo \"Aktualizovať teraz\"."
   },
+  "s2": {
+    "message": "Môžete kliknnúť pravý tlačítkom myši na obrázok a zvoliť \"Adblock\" z kontextového menu. Toto otvorí dialóg kde si môžete upraviť filter predtým ako ho pridáte. Taktiež môžete použiť divokú kartu pre nahradenie časti adresy (* — symbol divokej karty). Pre viac informácií si môžete prečítať ako <a>písať filtre pre Adblock Plus</a>."
+  },
   "s20": {
     "message": "V Opere:"
   },
@@ -58,6 +43,9 @@
   },
   "s23": {
     "message": "Kliknite na tlačidlo \"Aktualizovať teraz\"."
+  },
+  "s3": {
+    "message": "Ukáž mi ako to môžem spraviť"
   },
   "s33": {
     "message": "Banner je objekt (Flash alebo Java) a nemá kontextové menu. Čo teraz?"
@@ -76,6 +64,9 @@
   },
   "s39": {
     "message": "Zoznam blokovateľných položiek zobrazuje príliš vela adries. Ako viem ktorá adresa reprezentuje banner?"
+  },
+  "s4": {
+    "message": "Niekedy chcem, aby bol Adblock Plus vypnutý. Ako to môžem spraviť?"
   },
   "s40": {
     "message": "Môžete sa pozrieť na adresy, ktoré začínajú inak ako adresa na ktorej práve ste. Bannery maju typicky v adrese slová ako \"banner\" alebo \"ad\" v ich adrese. Ak kliknete na túto adresu, príslušný prvok vám začne blikať (nevzťahuje sa na všetky typy prvkov). Ak ste stále neistý, stlačte stredné tlačidlo myši na adresu a adresa sa vám otvorí na novej karte — tam budete definitívne vidieť, či sa jedná o banner alebo nie."
@@ -97,5 +88,14 @@
   },
   "s46": {
     "message": "Regulárne výrazy sú ale viac flexibilé, preto sa stále používajú. Napríklad regulárny výraz <code>/adv(?!ice)/</code> bude blokovať <code>adv</code> a <code>advert</code> a <code>advertisement</code> ale nie <code>advice</code>."
+  },
+  "s5": {
+    "message": "Môžete kliknúť na Adblock Plus ikonu a objaví sa vám menu. Tam budete mať možnosť vypnúť/zapnúť Adblock Plus. Ak chcete rýchlejšiu možnosť ako vypnúť Adblock Plus, stačí ak kliknete stredným tlačidlom myši na Adblock Plus ikonu a Adblock Plus sa vypne. To isté platí pri aktivovaní Adblocku Plus."
+  },
+  "s6": {
+    "message": "V menu máte aj možnosť vypnúť Adblock Plus na niektorých stránkach. Táto možnosť pridá filter ako <code>@@||adblockplus.org^$document</code> do vášho zoznamu filtrov. Viac informácií môžete nájsť v článku <a>ako písať filtre pre Adblock Plus.</a>."
+  },
+  "title": {
+    "message": "FAQ - Funkčnosť"
   }
 }

@@ -1,30 +1,6 @@
 {
-  "title": {
-    "message": "常见问题 - Adblock Plus 项目"
-  },
   "s1": {
     "message": "Adblock Plus 与 Adblock 有什么关系？"
-  },
-  "s2": {
-    "message": "　　Adblock 在 2004 年差不多就已停止了开发，在要求更新的呼声越来越高的情况下，Michael McDonald 发布了 Adblock Plus 0.5，大致上一个具有白名单、过滤规则订阅组和其他实用功能的 Adblock 版本。"
-  },
-  "s3": {
-    "message": "　　那个版本的 Adblock Plus 仍旧是基于 Adblock，因此在功能改进上存在诸多限制。而 Adblock 的质量...只能说还不如干脆完全重写。随之 Adblock Plus 0.6，一个全新的专注于易用性、稳定性和安全性的扩展诞生了。由于多种原因，Adblock Plus 0.5 中的许多改进并没有带入到 Adblock Plus 0.6，而是在 Adblock Plus 0.6.1 中加入。"
-  },
-  "s4": {
-    "message": "　　Adblock Plus 0.5 的开发者 Michael McDonald 之后又回到了 Adblock 项目，并尝试继续进行它的开发。出于这个原因，我 (Wladimir Palant) 从 Adblock Plus 0.6 开始成为了 Adblock Plus 的主要开发者。"
-  },
-  "s5": {
-    "message": "为什么给某项功能添加一个选项这么困难？"
-  },
-  "s7": {
-    "message": "　　其实不然，但要考虑到给全部功能提供选项会有什么后果。这里我想简单地引用 <a>Joel Spolsky</a> 所说的话："
-  },
-  "s8": {
-    "message": "你每提供一个选项，都是在要求用户做选择。"
-  },
-  "s9": {
-    "message": "要求用户选择，这<em>本身</em>不是一件坏事。能够自由选择确实很美妙。人们去星巴克都<em>喜欢</em>点一些用浓缩咖啡调配的饮料，因为他们可以在此之上作出更多<em>选择</em>。比如，中杯的，半咖啡因含量，脱脂，打泡摩卡橙味的超热饮料。"
   },
   "s10": {
     "message": "问题就出在你要求他们对<em>自己不关心</em>的事做出选择的时候。... 这会让用户感到困惑并最终惹怒他们。"
@@ -56,6 +32,9 @@
   "s19": {
     "message": "　　每个新版本 Adblock Plus 在发布前都会有数个<a>开发版本</a>，这么做是为了能在发布前发现缺陷或设计有问题的功能。订阅 <a>RSS feed</a> 可以让您随时了解到每个开发版本的更新情况。"
   },
+  "s2": {
+    "message": "　　Adblock 在 2004 年差不多就已停止了开发，在要求更新的呼声越来越高的情况下，Michael McDonald 发布了 Adblock Plus 0.5，大致上一个具有白名单、过滤规则订阅组和其他实用功能的 Adblock 版本。"
+  },
   "s20": {
     "message": "帮助其他用户"
   },
@@ -77,6 +56,9 @@
   "s29": {
     "message": "广而告之"
   },
+  "s3": {
+    "message": "　　那个版本的 Adblock Plus 仍旧是基于 Adblock，因此在功能改进上存在诸多限制。而 Adblock 的质量...只能说还不如干脆完全重写。随之 Adblock Plus 0.6，一个全新的专注于易用性、稳定性和安全性的扩展诞生了。由于多种原因，Adblock Plus 0.5 中的许多改进并没有带入到 Adblock Plus 0.6，而是在 Adblock Plus 0.6.1 中加入。"
+  },
   "s30": {
     "message": "　　请原谅我误用了这个标题，但实际上将 Adblock Plus 告诉给他人也是一种贡献。广泛使用广告过滤软件虽然不会让人直接从中获益，但它能有效抵御广告投放式经济的蔓延，保证弹出窗口的数量不会继续增加。抛开拥有一个更好的互联网环境不谈，仅仅知道有这样的扩展存在也是很棒的。"
   },
@@ -89,16 +71,22 @@
   "s33": {
     "message": "您可以到<a>捐赠页面</a>给我们捐款。"
   },
-  "s7-link": {
-    "message": "http://www.joelonsoftware.com/uibook/chapters/fog0000000059.html"
+  "s4": {
+    "message": "　　Adblock Plus 0.5 的开发者 Michael McDonald 之后又回到了 Adblock 项目，并尝试继续进行它的开发。出于这个原因，我 (Wladimir Palant) 从 Adblock Plus 0.6 开始成为了 Adblock Plus 的主要开发者。"
   },
-  "s28-link": {
-    "message": "http://www.babelzilla.org/"
+  "s5": {
+    "message": "为什么给某项功能添加一个选项这么困难？"
   },
-  "s28-link2": {
-    "message": "http://www.babelzilla.org/forum/index.php?showtopic=1898"
+  "s7": {
+    "message": "　　其实不然，但要考虑到给全部功能提供选项会有什么后果。这里我想简单地引用 <a>Joel Spolsky</a> 所说的话："
   },
-  "s28-link3": {
-    "message": "http://www.babelzilla.org/index.php?option=com_content&task=category&sectionid=3&id=7&Itemid=25"
+  "s8": {
+    "message": "你每提供一个选项，都是在要求用户做选择。"
+  },
+  "s9": {
+    "message": "要求用户选择，这<em>本身</em>不是一件坏事。能够自由选择确实很美妙。人们去星巴克都<em>喜欢</em>点一些用浓缩咖啡调配的饮料，因为他们可以在此之上作出更多<em>选择</em>。比如，中杯的，半咖啡因含量，脱脂，打泡摩卡橙味的超热饮料。"
+  },
+  "title": {
+    "message": "常见问题 - Adblock Plus 项目"
   }
 }

@@ -1,24 +1,6 @@
 {
-  "title": {
-    "message": "FAQ - Funktionsweise von Adblock Plus"
-  },
   "s1": {
     "message": "Wo finde ich die Bedeutung aller Adblock Plus Einstellungen?"
-  },
-  "s3": {
-    "message": "Adblock Plus definiert eine Reihe von Einstellungen, die über <a>about:config</a> zugängig sind. Diese fangen alle mit <code>{1}</code> an (das ist für Adblock und Adblock Plus 0.5 anders, dort wird das Prefix <code>{2}</code> benutzt). Eine komplette Liste mit Erklärungen findet sich <a>hier</a>."
-  },
-  "s4": {
-    "message": "Wie verbinde ich meine Erweiterung mit Adblock Plus?"
-  },
-  "s5": {
-    "message": "Um die Integration von Adblock Plus mit anderen Erweiterungen zu erleichtern, wird die Schnittstelle <code>{1}</code> exportiert. Die <a>Interface-Dokumentation</a> enthält alle notwendigen Details."
-  },
-  "s6": {
-    "message": "Wie werden Adressen in Adblock Plus blockiert?"
-  },
-  "s7": {
-    "message": "Die ganze schwere Arbeit wird hier eigentlich von Gecko verrichtet, der Basis, auf der Firefox, Thunderbird und andere Anwendungen aufbauen. Dieser Mechanismus wird \"Content Policies\" genannt. Content Policy ist einfach ein JavaScript-Objekt (oder auch C++), das jedesmal aufgerufen wird, wenn der Browser etwas laden muss. Es kann sich dann die Adresse anschauen, die geladen werden soll, vielleicht auch einige andere Daten berücksichtigen, und entscheiden, ob die Anfrage gestattet werden soll. Es gibt einige eingebaute Content Policies (wenn man in Firefox oder SeaMonkey angibt, von welchen Domains keine Bilder geladen werden sollen, konfiguriert man eine solche eingebaute Content Policy) und jede Erweiterung kann auch eine registrieren. Also braucht Adblock Plus im Grunde nur, eine Content Policy zu registrieren, alles andere ist nur Anwendungslogik für Entscheidungen, was erlaubt und was blockiert werden soll. Und natürlich ist da noch das Benutzerinterface zum Konfigurieren von Filterregeln."
   },
   "s11": {
     "message": "Für Entwickler: um eine Content Policy zu registrieren, muss man <a>eine XPCOM-Komponente erstellen</a> [en], die die <a>nsIContentPolicy-Schnittstelle</a> [en] implementiert. Man sollte sicherstellen, dass die Methode registerSelf des Moduls diese Komponente zu der Kategorie \"content-policy\" hinzufügt (das ist mit dem <a>Kategorienverwalter</a> [en] möglich). Das war's, nun sollte die Methode shouldLoad in der Komponente für alle Anfragen aufgerufen werden und kann entscheiden, ob die Anfrage zugelassen wird."
@@ -65,34 +47,33 @@
   "s29": {
     "message": "Das ist einfach ein Kommentar. Adblock (und deswegen auch Adblock Plus) ignoriert alles, was vor der eigentlichen Markierung kommt. Die benötigte Version von Adblock Plus wird nicht erzwungen, weil es in Adblock Plus 0.6.1.2 den notwendigen Mechanismus noch nicht gab. Allerdings, wenn man Filter mit noch neuerer Syntax verwendet, bekommt man irgendwas wie:"
   },
+  "s3": {
+    "description": "{1}: extensions.adblockplus., {2}: adblock.",
+    "message": "Adblock Plus definiert eine Reihe von Einstellungen, die über <a>about:config</a> zugängig sind. Diese fangen alle mit <code>{1}</code> an (das ist für Adblock und Adblock Plus 0.5 anders, dort wird das Prefix <code>{2}</code> benutzt). Eine komplette Liste mit Erklärungen findet sich <a>hier</a>."
+  },
+  "s3-link": {
+    "message": "http://www.firefox-browser.de/wiki/About:config"
+  },
   "s30": {
     "message": "Dieser Dateikopf wird von Adblock Plus 0.7.1 und höher unterstützt. Ältere Versionen von Adblock Plus und Adblock können Dateien mit einem solchen Dateikopf nicht öffnen. Die aktuellen Versionen werden dagegen die Versionsnummer in der Datei mit ihrer eigenen Versionsnummer vergleichen. Benötigt die Datei eine neuere Version von Adblock Plus, wird der Benutzer beim Import eine entsprechende Fehlermeldung bekommen. Abonnements werden solche Filterlisten trotzdem noch laden, werden aber auch eine Warnung in den Einstellungen von Adblock Plus anzeigen."
   },
   "s31": {
     "message": "Die Versionsnummer kann auch weggelassen werden, womit sich der Dateikopf auf <code>[Adblock Plus]</code> reduziert. Eine solche Datei wird dann natürlich auch nur von Adblock Plus 0.7.1 oder höher akzeptiert."
   },
-  "s3-link": {
-    "message": "http://www.firefox-browser.de/wiki/About:config"
+  "s4": {
+    "message": "Wie verbinde ich meine Erweiterung mit Adblock Plus?"
   },
-  "s11-link": {
-    "message": "http://developer.mozilla.org/en/docs/How_to_Build_an_XPCOM_Component_in_Javascript"
+  "s5": {
+    "description": "{1}: IAdblockPlus",
+    "message": "Um die Integration von Adblock Plus mit anderen Erweiterungen zu erleichtern, wird die Schnittstelle <code>{1}</code> exportiert. Die <a>Interface-Dokumentation</a> enthält alle notwendigen Details."
   },
-  "s11-link2": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
+  "s6": {
+    "message": "Wie werden Adressen in Adblock Plus blockiert?"
   },
-  "s11-link3": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
+  "s7": {
+    "message": "Die ganze schwere Arbeit wird hier eigentlich von Gecko verrichtet, der Basis, auf der Firefox, Thunderbird und andere Anwendungen aufbauen. Dieser Mechanismus wird \"Content Policies\" genannt. Content Policy ist einfach ein JavaScript-Objekt (oder auch C++), das jedesmal aufgerufen wird, wenn der Browser etwas laden muss. Es kann sich dann die Adresse anschauen, die geladen werden soll, vielleicht auch einige andere Daten berücksichtigen, und entscheiden, ob die Anfrage gestattet werden soll. Es gibt einige eingebaute Content Policies (wenn man in Firefox oder SeaMonkey angibt, von welchen Domains keine Bilder geladen werden sollen, konfiguriert man eine solche eingebaute Content Policy) und jede Erweiterung kann auch eine registrieren. Also braucht Adblock Plus im Grunde nur, eine Content Policy zu registrieren, alles andere ist nur Anwendungslogik für Entscheidungen, was erlaubt und was blockiert werden soll. Und natürlich ist da noch das Benutzerinterface zum Konfigurieren von Filterregeln."
   },
-  "s20-link": {
-    "message": "http://www.w3.org/TR/CSS21/"
-  },
-  "s22-link": {
-    "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
-  },
-  "s26-link": {
-    "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
-  },
-  "s26-link2": {
-    "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
+  "title": {
+    "message": "FAQ - Funktionsweise von Adblock Plus"
   }
 }

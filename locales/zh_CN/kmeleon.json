@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "在 K-Meleon 中使用 Adblock Plus"
-  },
   "s1": {
     "message": "安装"
-  },
-  "s2": {
-    "message": "<em>　　注意：</em>以下版本的 Adblock Plus 只支持 K-Meleon 1.6，如要安装请先下载下方的 ZIP 压缩包："
-  },
-  "s3": {
-    "message": "下载 Adblock Plus"
-  },
-  "s4": {
-    "message": "　　使用任意解压缩软件将此压缩包内的文件正确解压至您的 K-Meleon 目录下。当 K-Meleon 打开时会自动提示您是否开启 Adblock Plus 插件，在您确认之后，Adblock Plus 就可以正常运行了。"
-  },
-  "s5": {
-    "message": "使用 K-Meleon 1.5 版本的用户请下载  <a>{1}</a>。"
-  },
-  "s6": {
-    "message": "卸载 Adblock Plus"
-  },
-  "s7": {
-    "message": "　　请注意关闭 Adblock Plus 插件只是将其从用户界面中去除，但通常插件仍会在后台过滤广告，要完全卸载 Adblock Plus，请删除 ZIP 压缩包解压缩出的所有文件。"
-  },
-  "s8": {
-    "message": "与 Firefox 版本的差异"
-  },
-  "s9": {
-    "message": "　　与 Firefox 版相比，K-Meleon 下的 Adblock Plus 目前还存在许多限制，今后版本的 Adblock Plus 将逐步解决以下缺陷，并完善对 K-Meleon 的支持："
   },
   "s10": {
     "message": "ABP 图标状态和可过滤项目列表在打开空白标签页时无法正确更新"
@@ -59,10 +32,35 @@
   "s19": {
     "message": "无法通过 Adblock Plus 选项隐藏工具栏图标，只能通过\"查看\" / \"工具栏\"菜单隐藏"
   },
+  "s2": {
+    "message": "<em>　　注意：</em>以下版本的 Adblock Plus 只支持 K-Meleon 1.6，如要安装请先下载下方的 ZIP 压缩包："
+  },
   "s21": {
     "message": "像 <a>extensions.adblockplus.sidebar_key</a> 这样的快捷键首选项使用的是 <a>Win32 虚拟键码</a>，而不是 Gecko 的虚拟键码"
   },
-  "s21-link": {
-    "message": "http://msdn.microsoft.com/library/en-us/winui/winui/WindowsUserInterface/UserInput/VirtualKeyCodes.asp"
+  "s3": {
+    "message": "下载 Adblock Plus"
+  },
+  "s4": {
+    "message": "　　使用任意解压缩软件将此压缩包内的文件正确解压至您的 K-Meleon 目录下。当 K-Meleon 打开时会自动提示您是否开启 Adblock Plus 插件，在您确认之后，Adblock Plus 就可以正常运行了。"
+  },
+  "s5": {
+    "description": "{1}: Adblock Plus 1.0.2",
+    "message": "使用 K-Meleon 1.5 版本的用户请下载  <a>{1}</a>。"
+  },
+  "s6": {
+    "message": "卸载 Adblock Plus"
+  },
+  "s7": {
+    "message": "　　请注意关闭 Adblock Plus 插件只是将其从用户界面中去除，但通常插件仍会在后台过滤广告，要完全卸载 Adblock Plus，请删除 ZIP 压缩包解压缩出的所有文件。"
+  },
+  "s8": {
+    "message": "与 Firefox 版本的差异"
+  },
+  "s9": {
+    "message": "　　与 Firefox 版相比，K-Meleon 下的 Adblock Plus 目前还存在许多限制，今后版本的 Adblock Plus 将逐步解决以下缺陷，并完善对 K-Meleon 的支持："
+  },
+  "title": {
+    "message": "在 K-Meleon 中使用 Adblock Plus"
   }
 }

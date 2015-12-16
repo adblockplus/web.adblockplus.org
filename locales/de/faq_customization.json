@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "FAQ - Anpassung der Benutzeroberfläche"
-  },
   "s1": {
     "message": "Wie kriege ich das Adblock Plus Symbol in die Symbolleiste?"
-  },
-  "s2": {
-    "message": "Normalerweise wird das Symbol automatisch bei der ersten Installation von Adblock Plus in die Symbolleiste eingefügt, aber vielleicht wurde es später entfernt. In Firefox kann man die Symbolleiste sehr einfach bearbeiten, indem man die Symbolleiste mit der rechten Maustaste anklickt und \"Anpassen\" auswählt. Es öffnet sich ein Fenster mit Symbolen, unter denen auch das Symbol für Adblock Plus zu finden sein sollte. Dieses muß man einfach mit der Maus auf den gewünschten Platz ziehen. Man kann die Symbole auch nach belieben umordnen, solange das Anpassungsfenster geöffnet ist."
-  },
-  "s3": {
-    "message": "Wie kann ich das Adblock Plus Symbol aus der Symbolleiste entfernen?"
-  },
-  "s4": {
-    "message": "Sie mögen das Symbol nicht oder brauchen den Platz für wichtigere Sachen? Man kann ihn entfernen, indem man den kleinen Pfeil neben dem Symbol anklickt und im Menü Optionen / In Symbolleiste anzeigen auswählt. Das Menü Optionen findet man auch im Einstellungsdialog — falls man entscheidet, das Symbol wieder anzeigen zu lassen. Übrigens kann man auch die Symbolleisten-Anpassung benutzen, die in Firefox eingebaut ist."
-  },
-  "s5": {
-    "message": "Wie bekomme ich wieder ein grünes Symbol für ausgenommene Webseiten?"
-  },
-  "s6": {
-    "message": "Falls Sie das Adblock Plus Symbol wieder so haben wollen, wie es vor Adblock Plus 1.3.5 war (grün wenn Adblock Plus auf einer Webseite deaktiviert ist, grau falls es überall deaktiviert ist), können Sie <a>diesen User Style</a> installieren (die Erweiterung <a>Stylish</a> wird benötigt)."
-  },
-  "s7": {
-    "message": "Wie kann ich die Liste blockierbarer Elemente auf der linken/oberen Seite des Browsers anzeigen?"
-  },
-  "s8": {
-    "message": "Wollen Sie die Liste blockierbarer Elemente wieder so haben, wie sie vor Adblock Plus 0.7.5 war? Das kann man mit <a>diesem User Style</a> bewerkstelligen (die Erweiterung <a>Stylish</a> wird benötigt). In dieser Form verschiebt das User Style die Liste an den linken Rand des Browserfesters, wie eine Sidebar. Man kann aber auch eine der markierten Zeilen des User Style entfernen, wenn man es hinzufügt — dann wird die Liste auf der rechten Seite beziehungsweise oben angezeigt."
-  },
-  "s9": {
-    "message": "<em>Bemerkung</em>: Die Liste der blockierbaren Elemente wird dadurch nicht zu einer richtigen Sidebar. So kann es zum Beispiel zusammen mit einer echten Sidebar wie Verlauf geöffnet sein."
   },
   "s10": {
     "message": "Wie kann ich in der Statusleiste Text statt einem Symbol anzeigen lassen?"
@@ -59,8 +32,14 @@
   "s19": {
     "message": "Falls Sie die Symbole bevorzugen, die vor Adblock Plus 0.7.2 verwendet wurden (die Schabe), können Sie <a>diesen User Style</a> anwenden, um sie wiederherzustellen (am einfachsten geht das mit <a>Stylish</a>). Falls Sie aber bessere Symbole haben, können Sie diese Schablone für ein eigenes Stylesheet verwenden:"
   },
+  "s2": {
+    "message": "Normalerweise wird das Symbol automatisch bei der ersten Installation von Adblock Plus in die Symbolleiste eingefügt, aber vielleicht wurde es später entfernt. In Firefox kann man die Symbolleiste sehr einfach bearbeiten, indem man die Symbolleiste mit der rechten Maustaste anklickt und \"Anpassen\" auswählt. Es öffnet sich ein Fenster mit Symbolen, unter denen auch das Symbol für Adblock Plus zu finden sein sollte. Dieses muß man einfach mit der Maus auf den gewünschten Platz ziehen. Man kann die Symbole auch nach belieben umordnen, solange das Anpassungsfenster geöffnet ist."
+  },
   "s21": {
     "message": "Hier wird davon ausgegangen, dass sich die Symbole in dem Verzeichnis c:\\icons befinden, Sie sollten die Adressen also gegebenenfalls anpassen. Um dieses Stylesheet anzuwenden, benutzen Sie entweder <a>Stylish</a> oder bearbeiten die Datei chrome/\"userChrome.css\":http://www.firefox-browser.de/wiki/UserChrome.css in Ihrem <a>Profilverzeichnis</a> und fügen diesen Code hinzu. Falls userChrome.css noch nicht existiert, müssen Sie diese Datei erstellen."
+  },
+  "s21-link": {
+    "message": "http://www.firefox-browser.de/wiki/Profilordner"
   },
   "s22": {
     "message": "<em>Anmerkung</em>: Die Änderungen werden erst nach einem Browserneustart übernommen."
@@ -71,13 +50,34 @@
   "s25": {
     "message": "Die Tastaturkürzel in Adblock Plus werden über drei versteckte Einstellungen festgelegt, die über <a>about:config</a> zugängig sind. <a>extensions.adblockplus.sidebar_key</a> steht fürs Öffnen/Schließen der blockierbaren Elemente, <a>extensions.adblockplus.settings_key</a> fürs Öffnen der Einstellungen und <a>extensions.adblockplus.enable_key</a> fürs Aktivieren/Deaktivieren von Adblock Plus. Sie können diese nach belieben ändern."
   },
+  "s25-link": {
+    "message": "http://www.firefox-browser.de/wiki/About:config"
+  },
   "s26": {
     "message": "<em>Anmerkung</em>: Die Änderungen werden erst nach einem Browserneustart übernommen."
   },
-  "s21-link": {
-    "message": "http://www.firefox-browser.de/wiki/Profilordner"
+  "s3": {
+    "message": "Wie kann ich das Adblock Plus Symbol aus der Symbolleiste entfernen?"
   },
-  "s25-link": {
-    "message": "http://www.firefox-browser.de/wiki/About:config"
+  "s4": {
+    "message": "Sie mögen das Symbol nicht oder brauchen den Platz für wichtigere Sachen? Man kann ihn entfernen, indem man den kleinen Pfeil neben dem Symbol anklickt und im Menü Optionen / In Symbolleiste anzeigen auswählt. Das Menü Optionen findet man auch im Einstellungsdialog — falls man entscheidet, das Symbol wieder anzeigen zu lassen. Übrigens kann man auch die Symbolleisten-Anpassung benutzen, die in Firefox eingebaut ist."
+  },
+  "s5": {
+    "message": "Wie bekomme ich wieder ein grünes Symbol für ausgenommene Webseiten?"
+  },
+  "s6": {
+    "message": "Falls Sie das Adblock Plus Symbol wieder so haben wollen, wie es vor Adblock Plus 1.3.5 war (grün wenn Adblock Plus auf einer Webseite deaktiviert ist, grau falls es überall deaktiviert ist), können Sie <a>diesen User Style</a> installieren (die Erweiterung <a>Stylish</a> wird benötigt)."
+  },
+  "s7": {
+    "message": "Wie kann ich die Liste blockierbarer Elemente auf der linken/oberen Seite des Browsers anzeigen?"
+  },
+  "s8": {
+    "message": "Wollen Sie die Liste blockierbarer Elemente wieder so haben, wie sie vor Adblock Plus 0.7.5 war? Das kann man mit <a>diesem User Style</a> bewerkstelligen (die Erweiterung <a>Stylish</a> wird benötigt). In dieser Form verschiebt das User Style die Liste an den linken Rand des Browserfesters, wie eine Sidebar. Man kann aber auch eine der markierten Zeilen des User Style entfernen, wenn man es hinzufügt — dann wird die Liste auf der rechten Seite beziehungsweise oben angezeigt."
+  },
+  "s9": {
+    "message": "<em>Bemerkung</em>: Die Liste der blockierbaren Elemente wird dadurch nicht zu einer richtigen Sidebar. So kann es zum Beispiel zusammen mit einer echten Sidebar wie Verlauf geöffnet sein."
+  },
+  "title": {
+    "message": "FAQ - Anpassung der Benutzeroberfläche"
   }
 }

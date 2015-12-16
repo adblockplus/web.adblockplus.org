@@ -1,27 +1,12 @@
 {
-  "title": {
-    "message": "FAQ - Options internes d'Adblock Plus"
-  },
   "s1": {
     "message": "Où puis-je trouver la signification de toutes les préférences d'Adblock Plus ?"
   },
-  "s3": {
-    "message": "Adblock Plus utilise un certain nombre de préférences accessibles via <a>about:config</a>. Elles commencent toutes par <code>{1}</code> (Cela diffère d'Adblock et Adblock Plus 0.5 qui utilisent le préfixe <code>{2}</code>). Une liste plus complète avec explications détaillées peut être trouvée <a>ici</a>."
-  },
-  "s4": {
-    "message": "Comment puis-je accéder à Adblock Plus à partir de mon extension ?"
-  },
-  "s5": {
-    "message": "Pour permettre l'intégration d'autres extensions avec Adblock Plus, l'interface <code>{1}</code> est exportée. Veuillez vous référer à la <a>documentation sur l'interface IAdblockPlus</a> pour davantage d'informations."
-  },
-  "s6": {
-    "message": "Comment Adblock Plus bloque-t-elle les adresses ?"
-  },
-  "s7": {
-    "message": "Le plus gros du travail est effectué par Gecko, le moteur faisant fonctionner Firefox, Thunderbird et les autres applications de la même famille. Il permet l'utilisation de \"content-policy\". Une règle de contenu est tout simplement un objet JavaScript (ou C++) invoqué lorsque le navigateur doit charger quelque chose. Il peut ainsi vérifier l'adresse qui devrait être chargée et d'autres données et décider d'autoriser le chargement ou pas. Il existe bon nombre de règles de contenu intégrées (lorsque vous indiquez quels sites ne sont pas autorisés à afficher d'images dans Firefox ou Seamonkey, vous êtes en fait en train de configurer une de ces règles de contenu intégrées) et n'importe quelle extension peut en placer une dans le registre. Donc, tout ce qu'Adblock Plus a à faire est d'ajouter sa règle de contenu dans le registre."
-  },
   "s11": {
     "message": "Pour les développeurs : pour ajouter une règle de contenu au registre vous devez <a>écrire un composant XPCOM</a> qui devrait implémenter <a>l'interface nsIContentPolicy</a>. Faites en sorte, afin de s'accorder avec la méthode du module de self-registration, de placer votre composant dans la catégorie des \"règles de contenu\" du registre (pour cela, utilisez le <a>gestionnaire de catégorie</a> ). C'est tout, à présent la méthode shouldLoad de votre composant sera invoquée et vous pourrez décider si la requête spécifique devra être acceptée on non."
+  },
+  "s11-link": {
+    "message": "http://developer.mozilla.org/fr/docs/XPCOM"
   },
   "s12": {
     "message": "Comment Adblock Plus fait-elle fonctionner ses filtres et quels filtres sont les plus rapides ?"
@@ -47,6 +32,9 @@
   "s20": {
     "message": "Les filtres de masquage d'éléments sont convertis en <a>CSS</a> et appliqués à toutes les pages Web que l'utilisateur visite. Un filtre tel que <code>exemple.com#div(evil_ad)</code> va ressembler à cela :"
   },
+  "s20-link": {
+    "message": "http://www.yoyodesign.org/doc/w3c/css2/cover.html"
+  },
   "s22": {
     "message": "@-moz-document est une extension proposée pour les CSS standards, vous pouvez apprendre davantage à ce propos dans le MDC (<a>Mozilla Developer Center</a>)"
   },
@@ -65,34 +53,30 @@
   "s29": {
     "message": "Ceci est simplement un commentaire. Adblock (et Adblock Plus également) ignorera tout ce qui se trouve avant le vrai marqueur. La version d'Adblock Plus requise n'est pas obligatoire car Adblock Plus 0.6.1.2 ne la prend pas en charge. Cependant, si vous utilisez la nouvelle syntaxe de filtres, vous obtiendrez probablement quelque chose comme ceci :"
   },
+  "s3": {
+    "description": "{1}: extensions.adblockplus., {2}: adblock.",
+    "message": "Adblock Plus utilise un certain nombre de préférences accessibles via <a>about:config</a>. Elles commencent toutes par <code>{1}</code> (Cela diffère d'Adblock et Adblock Plus 0.5 qui utilisent le préfixe <code>{2}</code>). Une liste plus complète avec explications détaillées peut être trouvée <a>ici</a>."
+  },
   "s30": {
     "message": "Ce type d'en-tête est pris en charge à partir de la version 0.7.1 d'Adblock Plus. Des versions plus anciennes d'Adblock Plus et Adblock ne peuvent ouvrir des fichiers commençant de cette manière. Comme pour la version actuelle, elles vérifieront et compareront le numéro de version avec leur propre numéro de version. Si le fichier requiert une version plus récente d'Adblock Plus, l'utilisateur sera informé du fait qu'il devra procéder à une mise à jour pour la prise en compte du fichier de filtres. Les abonnements chargeront les fichiers prévus pour les versions les plus récentes d'Adblock Plus mais afficheront un avertissement dans la boîte de dialogue des préférences."
   },
   "s31": {
     "message": "Pour finir, si vous souhaitez qu'Adblock Plus soit nécessaire mais ne voulez pas spécifier de numéro de version vous pouvez faire débuter votre fichier par <code>[Adblock Plus]</code>. Bien entendu, encore une fois, ce fichier ne sera accepté que par Adblock Plus 0.7.1 ou supérieure."
   },
-  "s3-link": {
-    "message": "http://kb.mozillazine.org/About:config"
+  "s4": {
+    "message": "Comment puis-je accéder à Adblock Plus à partir de mon extension ?"
   },
-  "s11-link": {
-    "message": "http://developer.mozilla.org/fr/docs/XPCOM"
+  "s5": {
+    "description": "{1}: IAdblockPlus",
+    "message": "Pour permettre l'intégration d'autres extensions avec Adblock Plus, l'interface <code>{1}</code> est exportée. Veuillez vous référer à la <a>documentation sur l'interface IAdblockPlus</a> pour davantage d'informations."
   },
-  "s11-link2": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
+  "s6": {
+    "message": "Comment Adblock Plus bloque-t-elle les adresses ?"
   },
-  "s11-link3": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
+  "s7": {
+    "message": "Le plus gros du travail est effectué par Gecko, le moteur faisant fonctionner Firefox, Thunderbird et les autres applications de la même famille. Il permet l'utilisation de \"content-policy\". Une règle de contenu est tout simplement un objet JavaScript (ou C++) invoqué lorsque le navigateur doit charger quelque chose. Il peut ainsi vérifier l'adresse qui devrait être chargée et d'autres données et décider d'autoriser le chargement ou pas. Il existe bon nombre de règles de contenu intégrées (lorsque vous indiquez quels sites ne sont pas autorisés à afficher d'images dans Firefox ou Seamonkey, vous êtes en fait en train de configurer une de ces règles de contenu intégrées) et n'importe quelle extension peut en placer une dans le registre. Donc, tout ce qu'Adblock Plus a à faire est d'ajouter sa règle de contenu dans le registre."
   },
-  "s20-link": {
-    "message": "http://www.yoyodesign.org/doc/w3c/css2/cover.html"
-  },
-  "s22-link": {
-    "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
-  },
-  "s26-link": {
-    "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
-  },
-  "s26-link2": {
-    "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
+  "title": {
+    "message": "FAQ - Options internes d'Adblock Plus"
   }
 }

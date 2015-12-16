@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "FAQ - Installation"
-  },
   "s1": {
     "message": "Wie installiere ich Adblock Plus für alle Benutzer des Systems, so dass alle dieselbe Filterliste nutzen?"
   },
@@ -9,6 +6,7 @@
     "message": "Sind Sie ein Administrator, der Adblock Plus für alle Benutzer des administrierten Systems verfügbar machen will? Dann müssen Sie Adblock Plus ins Anwendungsverzeichnis des Browsers installieren. Für SeaMonkey is das (leider) sowieso die einzige Installationsmöglichkeit, in Firefox müssen Sie das Unterverzeichnis <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code> im Verzeichnis <code>extensions</code> erstellen und adblockplus.xpi dorthin entpacken (das ist eine ganz normale ZIP-Datei)."
   },
   "s3": {
+    "description": "{1}: extensions.adblockplus.currentVersion",
     "message": "Jetzt müssen Sie die Standard-Einstellungen ändern. Finden Sie die Datei (das ist <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code> in Firefox und <code>defaults/pref/adblockplus.js</code> in SeaMonkey) und bearbeiten Sie diese. Möglicherweise wünschen Sie nicht, dass Benutzer die Symbole von Adblock Plus im Browser sehen, dazu ändern Sie <a>extensions.adblockplus.showintoolbar</a> und <a>extensions.adblockplus.showinstatusbar</a> in <code>false</code>. Falls Sie nicht wünschen, dass Benutzer beim ersten Starten des Browsers ein Dialog mit der Auswahl der Abonnements bekommen, ändern Sie <a>{1}</a> in \"2.0\"."
   },
   "s4": {

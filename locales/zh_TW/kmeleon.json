@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "在 K-Meleon 中使用 Adblock Plus"
-  },
   "s1": {
     "message": "安裝"
-  },
-  "s2": {
-    "message": "<em>備註</em>：以下 Adblock Plus 的版本只會在 K-Meleon 1.6 中作用。若要安裝請下載專用的 ZIP 壓縮檔："
-  },
-  "s3": {
-    "message": "下載 Adblock Plus"
-  },
-  "s4": {
-    "message": "以任何可解開 ZIP 壓縮檔的軟體解壓縮到 K-Meleon 資料夾底下，所有檔案將會被放在正確的位置。然後啟動 K-Meleon ，它會詢問您是否要啟用 Adblock Plus plugin，請選擇「是」。大功告成！"
-  },
-  "s5": {
-    "message": "若您需要支援 K-meleon 1.5 的版本請下載 <a>{1}</a>。"
-  },
-  "s6": {
-    "message": "解除安裝 Adblock Plus"
-  },
-  "s7": {
-    "message": "請注意若您選擇停用 Adblock Plus plugin，它只會從介面上消失，仍會在背景中繼續工作。若要解除安裝，您需要刪除從 ZIP 壓縮檔安裝時所解開的所有檔案。"
-  },
-  "s8": {
-    "message": "已知與 Firefox 不同之處"
-  },
-  "s9": {
-    "message": "Adblock Plus 在 K-Meleon 上相較於 Firefox 仍有些許限制。以下是未來當 K-Meleon 提供更多支援時可能會修正的項目。"
   },
   "s10": {
     "message": "ABP 圖示與可阻擋項目在有空白頁開啟時不會更新"
@@ -59,10 +32,35 @@
   "s19": {
     "message": "工具列圖示只能由「檢視/工具列」取消，而無法經由 Adblock Plus 的選項隱藏。"
   },
+  "s2": {
+    "message": "<em>備註</em>：以下 Adblock Plus 的版本只會在 K-Meleon 1.6 中作用。若要安裝請下載專用的 ZIP 壓縮檔："
+  },
   "s21": {
     "message": "快捷鍵設定像 <a>extensions.adblockplus.sidebar_key</a> 使用了 <a>Win32 virtual key codes</a> 來取代 Gecko’s virtual key codes"
   },
-  "s21-link": {
-    "message": "http://msdn.microsoft.com/library/en-us/winui/winui/WindowsUserInterface/UserInput/VirtualKeyCodes.asp"
+  "s3": {
+    "message": "下載 Adblock Plus"
+  },
+  "s4": {
+    "message": "以任何可解開 ZIP 壓縮檔的軟體解壓縮到 K-Meleon 資料夾底下，所有檔案將會被放在正確的位置。然後啟動 K-Meleon ，它會詢問您是否要啟用 Adblock Plus plugin，請選擇「是」。大功告成！"
+  },
+  "s5": {
+    "description": "{1}: Adblock Plus 1.0.2",
+    "message": "若您需要支援 K-meleon 1.5 的版本請下載 <a>{1}</a>。"
+  },
+  "s6": {
+    "message": "解除安裝 Adblock Plus"
+  },
+  "s7": {
+    "message": "請注意若您選擇停用 Adblock Plus plugin，它只會從介面上消失，仍會在背景中繼續工作。若要解除安裝，您需要刪除從 ZIP 壓縮檔安裝時所解開的所有檔案。"
+  },
+  "s8": {
+    "message": "已知與 Firefox 不同之處"
+  },
+  "s9": {
+    "message": "Adblock Plus 在 K-Meleon 上相較於 Firefox 仍有些許限制。以下是未來當 K-Meleon 提供更多支援時可能會修正的項目。"
+  },
+  "title": {
+    "message": "在 K-Meleon 中使用 Adblock Plus"
   }
 }

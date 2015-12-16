@@ -1,9 +1,12 @@
 {
-  "title": {
-    "message": "Element Hiding Helper"
-  },
   "s1": {
     "message": "Allgemeines"
+  },
+  "s10": {
+    "message": "Jetzt können Sie mit der Maus das Element auf der Seite auswählen. Falls Sie mehr als ein Element verstecken wollen, versuchen Sie die Taste W zu drücken. Die Taste K wird die Auswahl wieder verkleinern. Andere Tasten, die in dem Hilfe-Fenster aufgelistet sind, könnten nützlich sein, um zu überprüfen, ob wirklich das richtige Element ausgewählt wurde."
+  },
+  "s11": {
+    "message": "Sobald Sie das Element angeklickt haben, um es endgültig auszuwählen, erscheint der Dialog für die Zusammenstellung der Filterregel. Jetzt können Sie wählen, auf welchem Domainnamen die Regel aktiv sein soll und welche Attribute des Elements sie berücksichtigen soll (falls sie zu oft vorkommende Attribute/Attributwerte wählen, könnte dieselbe Regel auch andere Elemente der Seite verstecken). Vorschau wird die erstellte Regel sofort auf die Webseite anwenden, um zu zeigen, wie diese aussehen wird. Falls Sie spezifischere Regeln erstellen wollen, können Sie zur erweiterten Ansicht umschalten. Und schließlich, mit einem Klick auf \"Filterregel hinzufügen\" wird die Regel in die Filterliste von Adblock Plus aufgenommen und sofort auf die geöffnete Seite angewandt."
   },
   "s3": {
     "message": "Element Hiding Helper ist eine Erweiterung für Adblock Plus, die das Erstellen von Regeln zum Verstecken von Elementen vereinfachen soll. Sie wählen einfach das Element aus, das Sie versteckt haben wollen, und kreuzen die Attribute an, an denen es später wiedererkannt werden soll. Die Regel zum Verstecken des Elements wird dann automatisch generiert und der Filterliste von Adblock Plus hinzugefügt. Diese Erweiterung basiert in Teilen auf der <a>Aardvark-Erweiterung</a>."
@@ -14,9 +17,6 @@
   "s5": {
     "message": "Adblock Plus 1.3 oder höher wird benötigt, sonst wird diese Erweiterung keinerlei Effekt haben."
   },
-  "s6": {
-    "message": "Installation"
-  },
   "s7": {
     "message": "Element Hiding Helper installieren"
   },
@@ -25,14 +25,5 @@
   },
   "s9": {
     "message": "Sie starten Element Hiding Helper, indem Sie das Menü des ABP-Icons in der Symbolleiste öffnen und dort \"Element zum Verstecken auswählen\" anklicken."
-  },
-  "s10": {
-    "message": "Jetzt können Sie mit der Maus das Element auf der Seite auswählen. Falls Sie mehr als ein Element verstecken wollen, versuchen Sie die Taste W zu drücken. Die Taste K wird die Auswahl wieder verkleinern. Andere Tasten, die in dem Hilfe-Fenster aufgelistet sind, könnten nützlich sein, um zu überprüfen, ob wirklich das richtige Element ausgewählt wurde."
-  },
-  "s11": {
-    "message": "Sobald Sie das Element angeklickt haben, um es endgültig auszuwählen, erscheint der Dialog für die Zusammenstellung der Filterregel. Jetzt können Sie wählen, auf welchem Domainnamen die Regel aktiv sein soll und welche Attribute des Elements sie berücksichtigen soll (falls sie zu oft vorkommende Attribute/Attributwerte wählen, könnte dieselbe Regel auch andere Elemente der Seite verstecken). Vorschau wird die erstellte Regel sofort auf die Webseite anwenden, um zu zeigen, wie diese aussehen wird. Falls Sie spezifischere Regeln erstellen wollen, können Sie zur erweiterten Ansicht umschalten. Und schließlich, mit einem Klick auf \"Filterregel hinzufügen\" wird die Regel in die Filterliste von Adblock Plus aufgenommen und sofort auf die geöffnete Seite angewandt."
-  },
-  "s3-link": {
-    "message": "http://karmatics.com/aardvark/"
   }
 }

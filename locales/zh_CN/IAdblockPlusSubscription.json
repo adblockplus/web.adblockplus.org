@@ -1,6 +1,47 @@
 {
-  "title": {
-    "message": "IAdblockPlusSubscription"
+  "autoDownloadDescription-s1": {
+    "message": "用来表示订阅是否会自动更新。请注意对于外部管理的订阅以及特殊分组，这个属性无实际意义。"
+  },
+  "disabledDescription-s1": {
+    "description": "{1}: true",
+    "message": "用来表示订阅是否已禁用。如果将这个属性设为 <code>{1}</code>，则所有订阅的过滤规则都无法生效。"
+  },
+  "downloadStatusDescription-s1": {
+    "message": "最近一次尝试下载的结果代码，主要有以下几个值："
+  },
+  "downloadStatusDescription-s2": {
+    "description": "{1}: ok",
+    "message": "<code>{1}</code> — 下载成功"
+  },
+  "downloadStatusDescription-s3": {
+    "description": "{1}: invalid_url",
+    "message": "<code>{1}</code> — 订阅地址无效"
+  },
+  "downloadStatusDescription-s4": {
+    "description": "{1}: connection_error",
+    "message": "<code>{1}</code> — 无法下载订阅"
+  },
+  "downloadStatusDescription-s5": {
+    "description": "{1}: invalid_data, {2}: [Adblock]",
+    "message": "<code>{1}</code> — 已成功下载订阅，但第一行不是<code>{2}</code>"
+  },
+  "externalDescription-s1": {
+    "description": "{1}: true",
+    "message": "用来表示是否是一个外部管理的订阅。如果将这个属性设为 <code>{1}</code>，则只有某个扩展调用 <a>IAdblockPlus.updateExternalSubscription</a> 后才能更新这个订阅。"
+  },
+  "getPatternsDescription-s1": {
+    "message": "获取一个订阅列表中的过滤规则。请注意这个类函数所返回的内容不适用于特殊分组。"
+  },
+  "getPatterns_returnDescription-s1": {
+    "message": "订阅的过滤规则数组"
+  },
+  "lastDownloadDescription-s1": {
+    "description": "{1}: new Date().getTime()",
+    "message": "表示最近一次尝试下载订阅的时间戳（返回的格式为<code>{1}</code>）。值为 0 表示该订阅从未下载。"
+  },
+  "lastModifiedDescription-s1": {
+    "description": "{1}: Last-Modified",
+    "message": "最近一次成功下载时接收到的 HTTP 标头的 <code>{1}</code> 属性值。这个值目前尚未使用，因此始终留空。"
   },
   "s1": {
     "message": "这个接口代表 Adblock Plus 首选项对话框中一个从 <a>IAdblockPlus</a> 返回的分组。对于这个接口的所有接入都是只读的。"
@@ -8,49 +49,14 @@
   "s2": {
     "message": "<em>注意</em>：请勿保持一个指向该对象的引用。如果您需要在以后的某个时刻获取这个订阅列表的状态，请重新请求 IAdblockPlus 获取正确的信息。"
   },
-  "urlDescription-s1": {
-    "message": "订阅标识符。对于外部管理的订阅以及特殊分组这个标识符可以是任意字符串，而对于其他订阅这个标识符表示其更新的 URL。"
-  },
   "specialDescription-s1": {
+    "description": "{1}: fl, {2}: wl, {3}: eh, {4}: il",
     "message": "用来表示订阅是否属于一个包含用户自定义规则的特殊分组。目前支持四类的特殊分组，它们是 <code>{1}</code>（普通规则）、<code>{2}</code>（例外规则）、<code>{3}</code>（元素隐藏规则）以及 <code>{4}</code>（无效规则）。"
   },
   "titleDescription-s1": {
     "message": "在首选项对话框中显示的订阅列表标题"
   },
-  "autoDownloadDescription-s1": {
-    "message": "用来表示订阅是否会自动更新。请注意对于外部管理的订阅以及特殊分组，这个属性无实际意义。"
-  },
-  "disabledDescription-s1": {
-    "message": "用来表示订阅是否已禁用。如果将这个属性设为 <code>{1}</code>，则所有订阅的过滤规则都无法生效。"
-  },
-  "externalDescription-s1": {
-    "message": "用来表示是否是一个外部管理的订阅。如果将这个属性设为 <code>{1}</code>，则只有某个扩展调用 <a>IAdblockPlus.updateExternalSubscription</a> 后才能更新这个订阅。"
-  },
-  "lastDownloadDescription-s1": {
-    "message": "表示最近一次尝试下载订阅的时间戳（返回的格式为<code>{1}</code>）。值为 0 表示该订阅从未下载。"
-  },
-  "downloadStatusDescription-s1": {
-    "message": "最近一次尝试下载的结果代码，主要有以下几个值："
-  },
-  "downloadStatusDescription-s2": {
-    "message": "<code>{1}</code> — 下载成功"
-  },
-  "downloadStatusDescription-s3": {
-    "message": "<code>{1}</code> — 订阅地址无效"
-  },
-  "downloadStatusDescription-s4": {
-    "message": "<code>{1}</code> — 无法下载订阅"
-  },
-  "downloadStatusDescription-s5": {
-    "message": "<code>{1}</code> — 已成功下载订阅，但第一行不是<code>{2}</code>"
-  },
-  "lastModifiedDescription-s1": {
-    "message": "最近一次成功下载时接收到的 HTTP 标头的 <code>{1}</code> 属性值。这个值目前尚未使用，因此始终留空。"
-  },
-  "getPatternsDescription-s1": {
-    "message": "获取一个订阅列表中的过滤规则。请注意这个类函数所返回的内容不适用于特殊分组。"
-  },
-  "getPatterns_returnDescription-s1": {
-    "message": "订阅的过滤规则数组"
+  "urlDescription-s1": {
+    "message": "订阅标识符。对于外部管理的订阅以及特殊分组这个标识符可以是任意字符串，而对于其他订阅这个标识符表示其更新的 URL。"
   }
 }

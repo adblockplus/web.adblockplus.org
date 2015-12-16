@@ -1,30 +1,6 @@
 {
-  "title": {
-    "message": "FAQ - Adblock Plus Project"
-  },
   "s1": {
     "message": "Wat is het verband tussen Adblock Plus en Adblock?"
-  },
-  "s2": {
-    "message": "De ontwikkeling van Adblock is in 2004 gestopt. Toen steeds meer mensen om verbeteringen vroegen, kwam Michael McDonald met Adblock Plus 0.5 — in principe een versie van Adblock met witte lijsten, filterabonnementen en een paar andere nuttige functies."
-  },
-  "s3": {
-    "message": "Deze versie van Adblock Plus was nog gebaseerd op Adblock, wat verbeteringen moeilijk te implementeren maakte. De kwaliteit van Adblock was... laten we zeggen... beneden alle peil en het moest hoognodig volledig herschreven worden. Dat gebeurde met Adblock Plus 0.6 — een volledig nieuwe extensie met focus op gebruikersgemak, stabiliteit en veiligheid. Door een aantal redenen kwamen veel verbeteringen van Adblock Plus 0.5 niet in de originele release van Adblock Plus 0.6, maar dat veranderde met Adblock Plus 0.6.1."
-  },
-  "s4": {
-    "message": "Michael McDonald, de ontwikkelaar van Adblock Plus 0.5, heeft het Adblock project veranderd en probeert het nu verder te ontwikkelen. Daarom ben ik (Wladimir Palant) vanaf Adblock Plus 0.6 de hoofdontwikkelaar van Adblock Plus."
-  },
-  "s5": {
-    "message": "Waarom is het zo moelijk om een optie toe te voegen voor ...?"
-  },
-  "s7": {
-    "message": "Dat is het niet. Maar de \"opties voor alles\" benadering heeft gevolgen. Ik haal gewoon <a>Joel Spolsky</a> hier over aan:"
-  },
-  "s8": {
-    "message": "Elke keer dat je een optie toevoegt, vraag je de gebruiker om een keuze te maken."
-  },
-  "s9": {
-    "message": "Het vragen om een keuze te maken <em>zelf</em> is niet verkeerd. Keuzevrijheid kan geweldig zijn. Mensen <em>houden er van</em> om op espresso-gebaseerde drankjes bij Starbucks te bestellen, omdat ze zoveel keuzes mogen maken. <em>Keuzes</em>. Grote-half-caf-skim-mokka-Valencia-met-room. Extra heet!"
   },
   "s10": {
     "message": "Het wordt pas een probleem als je ze vraagt een keuze te maken <em>waar ze niets om geven</em>. ...dat verwart ze gegarandeerd en maakt de gebruiker uiteindelijk boos."
@@ -50,11 +26,11 @@
   "s17": {
     "message": "Als je merkt dat Adblock Plus zicht niet zo gedraagt als je denkt dat het zou moeten — <a>vertel het ons</a>. Er zijn altijd situaties die we niet getest hebben die misschien verkeerde resultaten oplevberen, wij hebben jouw hulp nodig om die te ontdekken. Voeg alsjeblieft alle informatie toe die we nodig hebben om de fout te reproduceren: wanneer treedt de fout op, welke browser gebruik je, welke versie van Adblock Plus? Blijf ook in de buurt voor vervolg vragen die we mogelijk hebben en om te bevestigen dat de fout echt opgelost is."
   },
-  "s18": {
-    "message": "Test development builds"
-  },
   "s19": {
     "message": "Voordat een nieuwe versie van Adblock Plus wordt uitgebracht, zijn er altijd verschillende <a>development builds</a>. Het doel hiervan is om fouten op te sporen of zelfs slecht uitgewerkte functies te ontdekken voordat ze worden uitgebracht. Abonneer je op de <a>RSS feed</a> om te weten wanneer een development build wordt uitgebracht."
+  },
+  "s2": {
+    "message": "De ontwikkeling van Adblock is in 2004 gestopt. Toen steeds meer mensen om verbeteringen vroegen, kwam Michael McDonald met Adblock Plus 0.5 — in principe een versie van Adblock met witte lijsten, filterabonnementen en een paar andere nuttige functies."
   },
   "s20": {
     "message": "Help andere gebruikers"
@@ -77,6 +53,9 @@
   "s29": {
     "message": "Doorvertellen"
   },
+  "s3": {
+    "message": "Deze versie van Adblock Plus was nog gebaseerd op Adblock, wat verbeteringen moeilijk te implementeren maakte. De kwaliteit van Adblock was... laten we zeggen... beneden alle peil en het moest hoognodig volledig herschreven worden. Dat gebeurde met Adblock Plus 0.6 — een volledig nieuwe extensie met focus op gebruikersgemak, stabiliteit en veiligheid. Door een aantal redenen kwamen veel verbeteringen van Adblock Plus 0.5 niet in de originele release van Adblock Plus 0.6, maar dat veranderde met Adblock Plus 0.6.1."
+  },
   "s30": {
     "message": "Vergeef ons het misbruik van deze slagzin, maar andere mensen over Adblock Plus vertellen is een gewaardeerde bijdrage. Terwijl er niemand direct profijt bij heeft, zal wijdverspreide goedkeuring van software die advertenties blokkeert opdringerige reclames economisch onrendabel maken, todat ze net zo zelden zijn als pop-up vensters nu al zijn. En behalve het internet een beter plaats te maken is het gewoon goed om te weten dat dit werk gebruikt wordt."
   },
@@ -89,16 +68,19 @@
   "s33": {
     "message": "U kunt een donatie doen op de <a>bijdragen pagina</a>."
   },
-  "s7-link": {
-    "message": "http://www.joelonsoftware.com/uibook/chapters/fog0000000059.html"
+  "s4": {
+    "message": "Michael McDonald, de ontwikkelaar van Adblock Plus 0.5, heeft het Adblock project veranderd en probeert het nu verder te ontwikkelen. Daarom ben ik (Wladimir Palant) vanaf Adblock Plus 0.6 de hoofdontwikkelaar van Adblock Plus."
   },
-  "s28-link": {
-    "message": "http://www.babelzilla.org/"
+  "s5": {
+    "message": "Waarom is het zo moelijk om een optie toe te voegen voor ...?"
   },
-  "s28-link2": {
-    "message": "http://www.babelzilla.org/forum/index.php?showtopic=1898"
+  "s7": {
+    "message": "Dat is het niet. Maar de \"opties voor alles\" benadering heeft gevolgen. Ik haal gewoon <a>Joel Spolsky</a> hier over aan:"
   },
-  "s28-link3": {
-    "message": "http://www.babelzilla.org/index.php?option=com_content&task=category&sectionid=3&id=7&Itemid=25"
+  "s8": {
+    "message": "Elke keer dat je een optie toevoegt, vraag je de gebruiker om een keuze te maken."
+  },
+  "s9": {
+    "message": "Het vragen om een keuze te maken <em>zelf</em> is niet verkeerd. Keuzevrijheid kan geweldig zijn. Mensen <em>houden er van</em> om op espresso-gebaseerde drankjes bij Starbucks te bestellen, omdat ze zoveel keuzes mogen maken. <em>Keuzes</em>. Grote-half-caf-skim-mokka-Valencia-met-room. Extra heet!"
   }
 }

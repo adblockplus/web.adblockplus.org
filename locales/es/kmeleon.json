@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Utilizar Adblock Plus en K-Meleon"
-  },
   "s1": {
     "message": "Instalación"
-  },
-  "s2": {
-    "message": "<em>Nota</em>: Las siguientes versiones de Adblock Plus sólo funcionarán en K-Meleon 1.6. Para instalarlo tiene que descargar un paquete ZIP especial:"
-  },
-  "s3": {
-    "message": "Descargar Adblock Plus"
-  },
-  "s4": {
-    "message": "Descomprima el paquete con cualquier aplicación que descomprima ZIP en el directorio principal de su navegador K-Meleon, los diferentes archivos se colocarán automáticamente en sus correspondientes directorios. Inicie entonces K-Meleon, que le preguntará si debe activar el plugin Adblock Plus — confirme que sí. Eso es todo, Adblock Plus debería funcionar sólo con eso."
-  },
-  "s5": {
-    "message": "Para usar en K-Meleon 1.5 puede descargar  <a>{1}</a>."
-  },
-  "s6": {
-    "message": "Desinstalar Adblock Plus"
-  },
-  "s7": {
-    "message": "Tenga en cuenta que si desactiva el plugin Adblock Plus sólo lo eliminará de la interfaz de usuario, normalmente la extensión seguirá funcionando en segundo plano. Para desinstalar Adblock Plus tiene que eliminar todos los archivos que instaló con el archivo ZIP."
-  },
-  "s8": {
-    "message": "Diferencias conocidas con Firefox"
-  },
-  "s9": {
-    "message": "En este momento Adblock Plus para K-Meleon tiene varias limitaciones en comparado con la versión para Firefox. De ellas, las que se listan a continuación podrían solucionarse en futuras versiones de Adblock Plus con un mayor soporte para K-Meleon:"
   },
   "s10": {
     "message": "El icono de estado de ABP y la lista de elementos bloqueables no se actualizan correctamente si se abre una pestaña en blanco"
@@ -59,10 +32,35 @@
   "s19": {
     "message": "No se puede ocultar el icono de la barra de herramientas mediante las opciones de Adblock Plus, sólo mediante el menú Ver > Barras de herramientas"
   },
+  "s2": {
+    "message": "<em>Nota</em>: Las siguientes versiones de Adblock Plus sólo funcionarán en K-Meleon 1.6. Para instalarlo tiene que descargar un paquete ZIP especial:"
+  },
   "s21": {
     "message": "Las preferencias de atajos de teclado como <a>extensions.adblockplus.sidebar_key</a> utilizan <a>códigos de tecla virtuales de Win32</a> en vez de códigos de tecla virtuales de Gecko"
   },
-  "s21-link": {
-    "message": "http://msdn.microsoft.com/library/en-us/winui/winui/WindowsUserInterface/UserInput/VirtualKeyCodes.asp"
+  "s3": {
+    "message": "Descargar Adblock Plus"
+  },
+  "s4": {
+    "message": "Descomprima el paquete con cualquier aplicación que descomprima ZIP en el directorio principal de su navegador K-Meleon, los diferentes archivos se colocarán automáticamente en sus correspondientes directorios. Inicie entonces K-Meleon, que le preguntará si debe activar el plugin Adblock Plus — confirme que sí. Eso es todo, Adblock Plus debería funcionar sólo con eso."
+  },
+  "s5": {
+    "description": "{1}: Adblock Plus 1.0.2",
+    "message": "Para usar en K-Meleon 1.5 puede descargar  <a>{1}</a>."
+  },
+  "s6": {
+    "message": "Desinstalar Adblock Plus"
+  },
+  "s7": {
+    "message": "Tenga en cuenta que si desactiva el plugin Adblock Plus sólo lo eliminará de la interfaz de usuario, normalmente la extensión seguirá funcionando en segundo plano. Para desinstalar Adblock Plus tiene que eliminar todos los archivos que instaló con el archivo ZIP."
+  },
+  "s8": {
+    "message": "Diferencias conocidas con Firefox"
+  },
+  "s9": {
+    "message": "En este momento Adblock Plus para K-Meleon tiene varias limitaciones en comparado con la versión para Firefox. De ellas, las que se listan a continuación podrían solucionarse en futuras versiones de Adblock Plus con un mayor soporte para K-Meleon:"
+  },
+  "title": {
+    "message": "Utilizar Adblock Plus en K-Meleon"
   }
 }

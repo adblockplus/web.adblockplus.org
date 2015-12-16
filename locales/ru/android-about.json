@@ -1,15 +1,18 @@
 {
-  "title": {
-    "message": "О Adblock Plus для Android"
-  },
   "s1": {
     "message": "Что такое Adblock Plus для Android?"
+  },
+  "s12": {
+    "message": "Часто задаваемые вопросы"
   },
   "s3": {
     "message": "Потому как поддержка фильтрации трафика в Android ограничена, Adblock Plus использует несколько подходов,\nавтоматически выбирая лучшие для устройства:"
   },
   "s5": {
     "message": "Если устройство <a>рутованное</a>,\nAdblock Plus будет сразу фильтровать весь веб-трафик."
+  },
+  "s5-link": {
+    "message": "http://ru.wikipedia.org/wiki/Рутинг"
   },
   "s6": {
     "message": "На нерутованных устройствах с Android 4.1.2, 4.2.1 и выше, Adblock Plus будет фильтровать весь WiFi-трафик, но только после\n<a>настройки прокси-сервера</a> вручную. Подробные инструкции для пользователей содержатся внутри Adblock Plus."
@@ -23,10 +26,7 @@
   "s9": {
     "message": "Установка"
   },
-  "s12": {
-    "message": "Часто задаваемые вопросы"
-  },
-  "s5-link": {
-    "message": "http://ru.wikipedia.org/wiki/Рутинг"
+  "title": {
+    "message": "О Adblock Plus для Android"
   }
 }

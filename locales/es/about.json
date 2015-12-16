@@ -1,19 +1,7 @@
 {
-  "AcceptableAdsdefined": {
-    "message": "The Acceptable Ads list displays ads that comply with the acceptable ads criteria agreed upon by our community of users. The list is maintained by Eyeo GmbH."
-  },
-  "EasyListdefined": {
-    "message": "EasyList corresponds to your browser language and is aimed at disabling ads that are considered to be intrusive by our community of users. Eyeo GmbH <strong>did not</strong> draft EasyList and therefore has no right to, or control over, its content. Visit the <a>EasyList Community</a> for more information."
-  },
   "acceptable-ads-monetization": {
     "description": "Paragraph in \"How we are financed\" section",
     "message": "Recibimos donaciones de nuestros usuarios, pero nuestra fuente principal de ingresos es la iniciativa Anuncios Aceptables. Las grandes entidades pagan una cuota por los servicios solicitados y proporcionados para incluir su sitio web en la \"lista blanca\" (un 90 % de las cuotas son gratuitas para las entidades más pequeñas). Hay que tener en cuenta que <a>los criterios para la iniciativa Anuncios Aceptables</a> deben respetarse independientemente del pago o no de una cuota. Si estos no se cumplen, la inclusión en la \"lista blanca\" no es posible."
-  },
-  "created": {
-    "message": "Created by Wladimir Palant in 2006, Adblock Plus is an open source project. In 2011, Palant, together with Till Faida, founded <a>Eyeo</a> to make its development sustainable."
-  },
-  "eyeoneeds": {
-    "message": "In regards to the Acceptable Ads initiative, Eyeo needs to review and analyze many applications. This includes reviewing ad format, safety precautions, compliance with the Acceptable Ads criteria and technical feasibility of the requested whitelisting, creating the filters for the whitelist, testing the filters, posting to the forum, etc."
   },
   "fee-details": {
     "description": "Text in \"How we are financed\" section",
@@ -22,9 +10,6 @@
   "financed-how": {
     "description": "Section header",
     "message": "Cómo nos financiamos"
-  },
-  "improve": {
-    "message": "Keep improving the functionalities of Adblock Plus to provide users with the best possible tool to protect them from malware and have better control of their browsing experience and collection of their personal data"
   },
   "large-entities-compensate": {
     "description": "Paragraph in \"How we are financed\" section",
@@ -49,14 +34,8 @@
   "s1": {
     "message": "Más"
   },
-  "s10": {
-    "message": "These are enabled to get you started. You can remove them or add others - it's up to you."
-  },
   "s11": {
     "message": "¿Qué son los Anuncios Aceptables?"
-  },
-  "s12": {
-    "message": "We don't think all ads are bad and are fully aware that ads finance many websites. So, in 2009 we decided to find some common ground. Our solution involved asking Adblock Plus users,\n  and our community at large, to help identify criteria that makes for better ads. From these discussions, we established <a>strict criteria</a> to identify nonintrusive ads. In 2011, we began implementing the Acceptable Ads initiative.\n  Participants that wish to comply with the Acceptable Ads initiative can <a>apply</a> to be added to the Acceptable Ads list. \n  Adblock Plus users have the option to display ads that are on the Acceptable Ads list or to disable the Acceptable Ads feature and browse completely <a>ad-free</a>. To view the list of acceptable ads, visit the <a>Acceptable Ads Proposals forum</a>."
   },
   "s13": {
     "message": "Para conocer más, visite la sección de Preguntas Frecuentes de <a>Anuncios Aceptables</a>."
@@ -70,14 +49,8 @@
   "s20": {
     "message": "¿Por qué necesitamos dinero?"
   },
-  "s21": {
-    "message": "<a>Eyeo GmbH</a>, the company behind Adblock Plus, was founded to pursue a different vision of online advertising. This is not something a single person can do as a hobby."
-  },
   "s23": {
     "message": "Necesitamos que el número de usuarios de Adblock Plus crezca y poder trasladar estas cifras a nuevas plataformas, para que los editores web se interesen por los Anuncios Aceptables. Adblock Plus, en un principio sólo disponible en <a>Firefox</a> ya está disponible en <a>Chrome</a>, <a>Android</a>, <a>Opera</a>, <a>Internet Explorer</a> e <a>Safari</a>. También manejamos la infraestructura necesaria para mantener la <a>EasyList</a> la lista de filtros anti publicidad más popular, usada también por otros programas de bloqueo de publicidad."
-  },
-  "s24": {
-    "message": "Our goals are simple:"
   },
   "s25": {
     "message": "Pero Eyeo no es solo Adblock Plus y Anuncios Aceptables. Nuestra misión es hacer de la web un lugar mejor, y queremos conseguirlo creando para los editores web nuevas vías negocio sin tener por ello que alienar a sus usuarios."
@@ -91,14 +64,8 @@
   "s3": {
     "message": "¿Qué es Adblock Plus?"
   },
-  "s4": {
-    "message": "Adblock Plus is a free extension that allows you to - among <a>other things</a> - block annoying ads, disable tracking and block domains known to spread malware. Available for Android, Chrome, Firefox, Internet Explorer, Maxthon, Opera, Safari and Yandex, Adblock Plus uses filters that you \n  choose to block all unwanted elements."
-  },
   "s5": {
     "message": "¿Cómo funciona Adblock Plus?"
-  },
-  "s6": {
-    "message": "Adblock Plus itself has no functionality; it doesn't block anything until you \"tell\" it what to block by adding external filter lists. Filter lists are essentially an extensive set of rules that tell Adblock Plus which elements of a website to block.\n  You can add any filter list you want. For example, block <a>tracking</a> or <a>malware</a>. You can also <a>create your own filter lists</a>.\n  Almost all filters are open source, therefore many filter lists have been created by Internet users."
   },
   "s7": {
     "message": "Dos listas de filtros vienen activadas por defecto:"
@@ -111,8 +78,5 @@
   },
   "title": {
     "message": "Acerca de Adblock Plus"
-  },
-  "work": {
-    "message": "Continue to work on Adblock Plus so that it can function on various platforms"
   }
 }

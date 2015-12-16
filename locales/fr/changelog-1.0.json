@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 1.0"
-  },
   "s1": {
     "message": "Voici les modifications principales par rapport à Adblock Plus 0.7.5.4 :"
-  },
-  "s2": {
-    "message": "Problèmes connus"
-  },
-  "s3": {
-    "message": "Le format de stockage de filtre a été modifié, donc pour retourner à une version précédente il faut exporter les filtres et les réimporter après la remise à niveau"
-  },
-  "s4": {
-    "message": "Mac OS X : les animations Flash ne s'afficheront pas correctement si l'option « Afficher une étiquette pour Flash et Java » est activée"
-  },
-  "s5": {
-    "message": "Certaines traductions comportent des chaînes de caractères en anglais non traduites"
-  },
-  "s6": {
-    "message": "Nouvelles fonctionnalités"
-  },
-  "s7": {
-    "message": "La nouvelle boîte de composition de filtres simplifie l'ajout de filtres"
-  },
-  "s8": {
-    "message": "Les nouvelles options de filtre <code>$third-party</code> et <code>$~third-party</code> restreint l'action des filtres sur le début ou la fin des adresses (<a>sujet du forum</a>)"
-  },
-  "s9": {
-    "message": "Interface utilisateur"
   },
   "s10": {
     "message": "Traductions ajoutées : Arménien, Galicien, Indonésien"
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Ajout de la colonne « Taille » (masquée par défaut), même information affichée dans l'infobulle"
   },
+  "s2": {
+    "message": "Problèmes connus"
+  },
   "s20": {
     "message": "Modification de la couleur du filtre pour le nombre de masquage d'éléments (<a>sujet du forum</a>)"
   },
@@ -88,6 +64,9 @@
   },
   "s29": {
     "message": "Les groupes contenant des filtres définis par l'utilisateur peuvent être à présent désactivés (<a>sujet du forum</a>)"
+  },
+  "s3": {
+    "message": "Le format de stockage de filtre a été modifié, donc pour retourner à une version précédente il faut exporter les filtres et les réimporter après la remise à niveau"
   },
   "s30": {
     "message": "Les images pour la colonne « Activé » ont été améliorées pour rendre leur signification plus intuitive (<a>sujet du forum</a>, <a>sujet du forum</a>)"
@@ -119,6 +98,9 @@
   "s39": {
     "message": "« Réinitialiser les statistiques » remets à zéro à présent également la « dernière utilisation » (<a>bogue 18650</a>)"
   },
+  "s4": {
+    "message": "Mac OS X : les animations Flash ne s'afficheront pas correctement si l'option « Afficher une étiquette pour Flash et Java » est activée"
+  },
   "s40": {
     "message": "Réparé : la barre de recherche dans la boîte de dialogue des préférences ne comporte aucune aucune (Firefox 3)"
   },
@@ -148,6 +130,9 @@
   },
   "s49": {
     "message": "« Ajouter un abonnement » à partir des préférences affichera la sélection d'abonnements plutôt que la boîte de dialogue des abonnements personnalisés."
+  },
+  "s5": {
+    "message": "Certaines traductions comportent des chaînes de caractères en anglais non traduites"
   },
   "s50": {
     "message": "Ajout d'un avertissement si Filterset.G est installée avec une option permettant de la désinstaller automatiquement"
@@ -179,6 +164,9 @@
   "s59": {
     "message": "Ajout de « Adblock Plus : éléments filtrables » dans le menu « Affichage » de Firefox ( menu Affichage » Barres d'outils dans SeaMonkey)"
   },
+  "s6": {
+    "message": "Nouvelles fonctionnalités"
+  },
   "s60": {
     "message": "Noyau"
   },
@@ -205,6 +193,9 @@
   },
   "s69": {
     "message": "Ajout de l'option de préférence cachée <a>extensions.adblockplus.savestats</a> pour désactiver les statistiques d'utilisation (utile si patterns.ini se trouve dans un système de contrôle de version) (<a>bogue 18650</a>)"
+  },
+  "s7": {
+    "message": "La nouvelle boîte de composition de filtres simplifie l'ajout de filtres"
   },
   "s70": {
     "message": "Ajout de la prise en charge de la navigation privée dans Firefox 3.1, les statistiques d'utilisation sont automatiquement désactivées"
@@ -236,6 +227,9 @@
   "s79": {
     "message": "La prochaine tentative après un échec de téléchargement se fait un jour aprsè et plus une heure après pour éviter la surcharge du serveur (ajustement de l'option de préférences <a>extensions.adblockplus.subscriptions_fallbackerrors</a> en conséquence)"
   },
+  "s8": {
+    "message": "Les nouvelles options de filtre <code>$third-party</code> et <code>$~third-party</code> restreint l'action des filtres sur le début ou la fin des adresses (<a>sujet du forum</a>)"
+  },
   "s80": {
     "message": "le « Fallback request » peut à présent désactiver les téléchargements automatiques pour les abonnements qui ne sont plus disponibles"
   },
@@ -245,7 +239,10 @@
   "s82": {
     "message": "Historique des modifications pour la version précédente"
   },
-  "s62-link": {
-    "message": "https://developer.mozilla.org/en/Mochitest"
+  "s9": {
+    "message": "Interface utilisateur"
+  },
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 1.0"
   }
 }

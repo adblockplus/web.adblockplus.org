@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "常见问题 - 安装"
-  },
   "s1": {
     "message": "我该如何让每个用户都安装上 Adblock Plus 并使用相同的过滤规则列表？"
   },
@@ -9,6 +6,7 @@
     "message": "　　您是一名想要批量部署 Adblock Plus 的管理员吗？对于 Seamonky，您只能将 Adblock Plus 安装到每个用户的浏览器程序目录下。而对于 Firefox，您还可以在 extension 目录下建立一个名为 <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code> 的<code>子目录</code>，并将 adblockplus.xpi （普通的 ZIP 文件）中的所有文件解压到这个目录下。"
   },
   "s3": {
+    "description": "{1}: extensions.adblockplus.currentVersion",
     "message": "　　接着需要修改 Adblock Plus 的默认设置。找到并编辑 adblockplus.js 文件（Firefox 中的路径为 <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code>，SeaMonkey 中的路径为 <code>defaults/pref/adblockplus.js</code>），如果不希望用户使用时受到 Adblock Plus 图标的影响，您可以将 <a>extensions.adblockplus.showintoolbar</a> 以及 <a>extensions.adblockplus.showinstatusbar</a> 修改为 <code>false</code>。如果不希望用户初次启动 Firefox 收到订阅规则的提示，可以将 <a>{1}</a> 修改为 \"2.0\"。"
   },
   "s4": {
@@ -22,5 +20,8 @@
   },
   "s7": {
     "message": "　　支持 K-Meleon 的 Adblock Plus 版本及安装指导参见<a>这里</a>。"
+  },
+  "title": {
+    "message": "常见问题 - 安装"
   }
 }

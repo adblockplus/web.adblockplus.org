@@ -1,30 +1,6 @@
 {
-  "title": {
-    "message": "Preguntas frecuentes - Funcionalidad básica"
-  },
   "s1": {
     "message": "¿Cómo bloqueo un anuncio?"
-  },
-  "s2": {
-    "message": "Puede pulsar con el botón derecho del ratón en cualquier imagen o frame y seleccionar \"ABP - Bloquear imagen\" en el menú contextual. Se abrirá un diálogo con el que podrá ajustar el nuevo filtro antes de añadirlo. Puede reemplazar partes de la dirección del anuncio por comodines (usando el carácter *) para que así el filtro bloquee otros anuncios con direcciones similares. Para obtener más información puede leer la sección <a>Cómo escribir filtros para Adblock Plus</a>."
-  },
-  "s3": {
-    "message": "Quiero que me muestren cómo se hace"
-  },
-  "s4": {
-    "message": "A veces quiero que Adblock Plus esté desactivado. ¿Cuál es la forma más fácil de conseguirlo?"
-  },
-  "s5": {
-    "message": "Puede pulsar en la flecha del icono de Adblock Plus en la barra de Herramientas para que aparezca el menú, donde puede encontrar la opción de activar/desactivar Adblock Plus. Si eso no es lo bastante rápido para usted, pulse en el icono con el botón intermedio del ratón, lo que desactivará o activará Adblock Plus."
-  },
-  "s6": {
-    "message": "Dentro del menú existe también la opción de desactivar Adblock Plus en una página concreta. Esto añadirá una regla de excepción como <code>@@||adblockplus.org^$document</code> a su lista de filtros. Puede obtener más información sobre las reglas de excepción en <a>Cómo escribir filtros para Adblock Plus</a>."
-  },
-  "s8": {
-    "message": "¿Puedo apoyar a mis páginas favoritas al hacer descargas pero teniendo la publicidad ocultada?"
-  },
-  "s9": {
-    "message": "No. La mayoría de los anunciantes tienen un sistema de pago por clic, entonces si ocultas los anuncios, dejas de apoyar a la página web. Inclusive aunque la posibilidad de pagos por visión es muy remota,  es trivial que los anunciantes utilicen JavaScript para comprobar que los anuncios son visibles. Además, al hacer una descarga pero ocultando los anuncios para engañar a los anunciantes a pagar puede asimilarse como un fraude."
   },
   "s10": {
     "message": "En pocas palabras, si quieres mostrar tu apoyo a tus páginas web favoritas, tienes que ponerlos en la lista blanca para desactivar Adblock Plus en sus sitios respectivos."
@@ -56,6 +32,9 @@
   "s19": {
     "message": "Haga clic en el botón de \"Actualizar ahora\"."
   },
+  "s2": {
+    "message": "Puede pulsar con el botón derecho del ratón en cualquier imagen o frame y seleccionar \"ABP - Bloquear imagen\" en el menú contextual. Se abrirá un diálogo con el que podrá ajustar el nuevo filtro antes de añadirlo. Puede reemplazar partes de la dirección del anuncio por comodines (usando el carácter *) para que así el filtro bloquee otros anuncios con direcciones similares. Para obtener más información puede leer la sección <a>Cómo escribir filtros para Adblock Plus</a>."
+  },
   "s20": {
     "message": "Opera:"
   },
@@ -86,6 +65,9 @@
   "s29": {
     "message": "Opera (para Windows/Ubuntu)"
   },
+  "s3": {
+    "message": "Quiero que me muestren cómo se hace"
+  },
   "s30": {
     "message": "Haz clic en el botón de menu y ve a Extensiones >> Administrar extensiones >> Haz clic en el de herramienta >> Preferencias. Haz clic en la \"X\" roja junto a la lista de filtro que deseas eliminar y haz clic en \"OK\" para confirmar."
   },
@@ -113,6 +95,9 @@
   "s39": {
     "message": "La lista de elementos a bloquear muestra muchas direcciones. ¿Cómo sé cuál de ellas es un anuncio?"
   },
+  "s4": {
+    "message": "A veces quiero que Adblock Plus esté desactivado. ¿Cuál es la forma más fácil de conseguirlo?"
+  },
   "s40": {
     "message": "Puede buscar direcciones que comiencen de forma diferente a la de la página que está viendo. Además los anuncios suelen tener palabras clave como \"banner\" o \"ad\" en su dirección. Si pulsa una dirección el elemento o elementos correspondientes parpadearán en la página (desgraciadamente esto no funciona con todos los tipos de objetos). Si aún no está seguro, pulse con el botón intermedio del ratón en la dirección para abrir el elemento en una nueva pestaña — allí podrá comprobar definitivamente si es un anuncio."
   },
@@ -133,5 +118,20 @@
   },
   "s46": {
     "message": "Sin embargo, las expresiones regulares aportan más flexibilidad, y en ese caso su uso está siempre justificado Por ejemplo, la expresión regular <code>/adv(?!ice)/</code> bloqueará <code>adv</code>, <code>advert</code> y <code>advertisement</code>, pero no <code>advice</code> — algo que no podría conseguir usando solamente comodines."
+  },
+  "s5": {
+    "message": "Puede pulsar en la flecha del icono de Adblock Plus en la barra de Herramientas para que aparezca el menú, donde puede encontrar la opción de activar/desactivar Adblock Plus. Si eso no es lo bastante rápido para usted, pulse en el icono con el botón intermedio del ratón, lo que desactivará o activará Adblock Plus."
+  },
+  "s6": {
+    "message": "Dentro del menú existe también la opción de desactivar Adblock Plus en una página concreta. Esto añadirá una regla de excepción como <code>@@||adblockplus.org^$document</code> a su lista de filtros. Puede obtener más información sobre las reglas de excepción en <a>Cómo escribir filtros para Adblock Plus</a>."
+  },
+  "s8": {
+    "message": "¿Puedo apoyar a mis páginas favoritas al hacer descargas pero teniendo la publicidad ocultada?"
+  },
+  "s9": {
+    "message": "No. La mayoría de los anunciantes tienen un sistema de pago por clic, entonces si ocultas los anuncios, dejas de apoyar a la página web. Inclusive aunque la posibilidad de pagos por visión es muy remota,  es trivial que los anunciantes utilicen JavaScript para comprobar que los anuncios son visibles. Además, al hacer una descarga pero ocultando los anuncios para engañar a los anunciantes a pagar puede asimilarse como un fraude."
+  },
+  "title": {
+    "message": "Preguntas frecuentes - Funcionalidad básica"
   }
 }

@@ -1,9 +1,12 @@
 {
-  "title": {
-    "message": "Element Hiding Helper"
-  },
   "s1": {
     "message": "Notas generales"
+  },
+  "s10": {
+    "message": "Ahora puede seleccionar el elemento que desee ocultar con el ratón. Si usted necesita ocultar más de un elemento, intente presionar W. Presionando N hará la selección más pequeña de nuevo. Otros comandos ofrecidos en la ayuda pueden ser útiles, así que asegúrese de seleccionar exactamente lo que necesita ocultar."
+  },
+  "s11": {
+    "message": "Una vez que usted hace clic en el elemento que indique que haya terminado de seleccionar, aparecerá el cuadro de diálogo de composición de reglas. Ahora usted puede seleccionar en qué dominio la regla debe estar activa y los atributos del elemento que deben tener en cuenta (si los atributos que selecciona son demasiado comunes, podría terminar ocultando elementos útiles también). La vista previa aplica la regla generada de inmediato y muestra cómo se verá la página. Si desea crear reglas más avanzadas, puede cambiar al modo avanzado. Por último, un clic en \"Añadir regla de filtrado\" agregará la regla a su lista de filtros de Adblock Plus y lo aplicará a la página actual."
   },
   "s3": {
     "message": "Element Hiding Helper es una extensión adjunta para Adblock Plus utilizada para hacer más fácil la creación de reglas para ocultar elementos. Sólo tienes que seleccionar el elemento que se desea ocultar y luego elegir los atributos de este elemento que deben tenerse en cuenta. La regla para ocultar elementos se genera y se añadirá automáticamente. Las partes del código están basadas en la <a>extensión Aardvark</a>."
@@ -25,14 +28,5 @@
   },
   "s9": {
     "message": "Comenzar el uso de Element Hiding Helper entrando en el menú del icono de ABP en la barra de herramientas y seleccionando \"Seleccionar elemento para ocultar\"."
-  },
-  "s10": {
-    "message": "Ahora puede seleccionar el elemento que desee ocultar con el ratón. Si usted necesita ocultar más de un elemento, intente presionar W. Presionando N hará la selección más pequeña de nuevo. Otros comandos ofrecidos en la ayuda pueden ser útiles, así que asegúrese de seleccionar exactamente lo que necesita ocultar."
-  },
-  "s11": {
-    "message": "Una vez que usted hace clic en el elemento que indique que haya terminado de seleccionar, aparecerá el cuadro de diálogo de composición de reglas. Ahora usted puede seleccionar en qué dominio la regla debe estar activa y los atributos del elemento que deben tener en cuenta (si los atributos que selecciona son demasiado comunes, podría terminar ocultando elementos útiles también). La vista previa aplica la regla generada de inmediato y muestra cómo se verá la página. Si desea crear reglas más avanzadas, puede cambiar al modo avanzado. Por último, un clic en \"Añadir regla de filtrado\" agregará la regla a su lista de filtros de Adblock Plus y lo aplicará a la página actual."
-  },
-  "s3-link": {
-    "message": "http://karmatics.com/aardvark/"
   }
 }

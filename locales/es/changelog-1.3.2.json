@@ -1,31 +1,4 @@
 {
-  "title": {
-    "message": "Detalle de cambios para Adblock Plus 1.3.2"
-  },
-  "s2": {
-    "message": "Se añade de nuevo la traducción al persa, otras traducciones se han actualizado."
-  },
-  "s3": {
-    "message": "Generador de informes de fallo: Se envía la referencia de página para que se puedan reconocer/investigar más fácilmente problemas relacionados con los popups. more easily."
-  },
-  "s4": {
-    "message": "Generador de informes de fallo: Ya no se puede enviar un informe de fallo en ciertas situaciones (para evitar informes inútiles)."
-  },
-  "s5": {
-    "message": "Solucionado: Las reglas de ocultación de elementos dejan de funcionar tras haber sido afectadas por una excepción (<a>bug {1}</a>)."
-  },
-  "s6": {
-    "message": "Solucionado: El texto del icono de la barra de herramientas aparece a la derecha en vez de debajo del icono (<a>tema del foro</a>)."
-  },
-  "s7": {
-    "message": "Solucionado: El contador podía no guardarse al cerrar el navegador (sólo en Firefox 4)."
-  },
-  "s8": {
-    "message": "Solucionado: Los enlaces en la ventana de Acerca de se abren en una aplicación externa en  Linux (<a>bug {1}</a>)."
-  },
-  "s9": {
-    "message": "Solucionado: La lista de problemas enviados recientemente presentaba una barra de desplazamiento horizontal con algunos temas (<a>tema del foro</a>)."
-  },
   "s10": {
     "message": "Solucionado: El icono de la barra de herramientas no se muestra correctamente en las versiones de desarrollo de SeaMonkey Mail."
   },
@@ -40,5 +13,34 @@
   },
   "s14": {
     "message": "Detalle de cambios de la versión anterior"
+  },
+  "s2": {
+    "message": "Se añade de nuevo la traducción al persa, otras traducciones se han actualizado."
+  },
+  "s3": {
+    "message": "Generador de informes de fallo: Se envía la referencia de página para que se puedan reconocer/investigar más fácilmente problemas relacionados con los popups. more easily."
+  },
+  "s4": {
+    "message": "Generador de informes de fallo: Ya no se puede enviar un informe de fallo en ciertas situaciones (para evitar informes inútiles)."
+  },
+  "s5": {
+    "description": "{1}: 23257",
+    "message": "Solucionado: Las reglas de ocultación de elementos dejan de funcionar tras haber sido afectadas por una excepción (<a>bug {1}</a>)."
+  },
+  "s6": {
+    "message": "Solucionado: El texto del icono de la barra de herramientas aparece a la derecha en vez de debajo del icono (<a>tema del foro</a>)."
+  },
+  "s7": {
+    "message": "Solucionado: El contador podía no guardarse al cerrar el navegador (sólo en Firefox 4)."
+  },
+  "s8": {
+    "description": "{1}: 23441",
+    "message": "Solucionado: Los enlaces en la ventana de Acerca de se abren en una aplicación externa en  Linux (<a>bug {1}</a>)."
+  },
+  "s9": {
+    "message": "Solucionado: La lista de problemas enviados recientemente presentaba una barra de desplazamiento horizontal con algunos temas (<a>tema del foro</a>)."
+  },
+  "title": {
+    "message": "Detalle de cambios para Adblock Plus 1.3.2"
   }
 }

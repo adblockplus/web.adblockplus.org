@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "FAQ - Personnalisation de l'interface utilisateur"
-  },
   "s1": {
     "message": "Comment puis-je placer l'icône d'Adblock Plus sur ma barre d'outils ?"
-  },
-  "s2": {
-    "message": "Normalement cette icône est automatiquement ajoutée lorsque vous installez Adblock Plus, mais elle a pu être supprimée par la suite. Dans Firefox vous pouvez personnaliser la barre d'outils, simplement cliquez droit sur la barre d'outils et choisissez \"Personnaliser\" . Une fenêtre contenant des icônes apparaîtra, l'icône d'Adblock Plus devrait y figurer. Clic-glissez-la dans la barre d'outils et placez-la là où vous le souhaitez. De la même manière vous pouvez réorganiser votre barre d'outils en déplaçant les autres icônes tant que la fenêtre de personnalisation est ouverte."
-  },
-  "s3": {
-    "message": "Comment puis-je supprimer l'icône d'Adblock Plus de ma barre d'outils ?"
-  },
-  "s4": {
-    "message": "Vous n'aimez pas l'icône ou vous avez besoin de place pour d'autres icônes plus importantes ? Cliquez sur la flèche de l'icône et décochez dans le menu \"Options\" la ligne \"Afficher dans la barre d'outils\". Il existe aussi un menu \"Options\" dans la boîte de dialogue des préférences — juste au cas où vous voudriez restaurer l'icône. Et en passant, vous pouvez également utiliser la personnalisation de la barre d'outils intégrée à Firefox (clic droit sur la barre d'outils et clic sur \"Personnaliser...\")."
-  },
-  "s5": {
-    "message": "Comment puis-je faire en sorte que l'icône devienne verte sur les sites qui sont sur liste blanche ?"
-  },
-  "s6": {
-    "message": "Si vous voulez que le comportement de l'icône d'Adblock Plus soit le même que dans la version 1.3.5 d'Adblock Plus (c'est-à-dire verte lorsqu'Adblock Plus est désactivé sur un site particulier, et grise s'il est désactivé globalement), vous pouvez installer <a>cette feuille de style personnalisée</a> (requiert <a>Stylish</a>)."
-  },
-  "s7": {
-    "message": "Comment puis-je faire apparaître la liste des éléments filtrables sur le côté/en haut de la page?"
-  },
-  "s8": {
-    "message": "Préférez-vous placer la liste des éléments filtrables sur le côté gauche de la fenêtre du navigateur, comme c'était le cas pour Adblock Plus 0.7.5 ? Vous pouvez faire cela avec <a>cette feuille de style personnalisée</a> (requiert <a>Stylish</a>). Sous cette forme, la feuille de style s'assurera que la liste est affichée sur le côté gauche de la fenêtre du navigateur, comme une barre latérale. Vous pouvez aussi supprimer une des lignes marquées lorsque l'on vous demande d'ajouter la feuille de style, afin que la liste des éléments filtrables soit affichée sur le côté droit ou en haut."
-  },
-  "s9": {
-    "message": "<em>Remarque</em> : Cela ne transforme pas réellement la liste des éléments filtrables en barre latérale. Cette liste peut être ouverte en même temps qu'une barre latérale, comme l'Historique."
   },
   "s10": {
     "message": "Comment puis-je afficher du texte à la place de l'icône dans ma barre d'état ?"
@@ -59,8 +32,14 @@
   "s19": {
     "message": "Si vous préférez les icônes utilisées avant Adblock Plus 0.7.2 (le cafard), vous pouvez utiliser <a>cette feuille de style personnalisée</a> pour les rétablir (A utiliser avec <a>Stylish</a> de préférence). Mais si vous avez une meilleure icône, vous pouvez créer votre propre style en utilisant ce modèle :"
   },
+  "s2": {
+    "message": "Normalement cette icône est automatiquement ajoutée lorsque vous installez Adblock Plus, mais elle a pu être supprimée par la suite. Dans Firefox vous pouvez personnaliser la barre d'outils, simplement cliquez droit sur la barre d'outils et choisissez \"Personnaliser\" . Une fenêtre contenant des icônes apparaîtra, l'icône d'Adblock Plus devrait y figurer. Clic-glissez-la dans la barre d'outils et placez-la là où vous le souhaitez. De la même manière vous pouvez réorganiser votre barre d'outils en déplaçant les autres icônes tant que la fenêtre de personnalisation est ouverte."
+  },
   "s21": {
     "message": "Ici les icônes sont supposées être localisées dans le dossier c:\\icons, vous serez donc peut-être amené à modifier les adresses. Pour appliquer ce style vous pouvez soit utiliser <a>Stylish</a> soit éditer le fichier chrome/userChrome.css dans votre profil (<a>Où se trouve mon dossier de profil ?</a> zt ajoutez ce code. Si le fichier userChrome.css n'existe pas vous dvrez le créer."
+  },
+  "s21-link": {
+    "message": "http://www.geckozone.org/articles/2005/08/31/100-comprendre-le-profil"
   },
   "s22": {
     "message": "<em>Remarque</em>: Les modifications prendront effet après redémarrage du navigateur."
@@ -74,10 +53,28 @@
   "s26": {
     "message": "<em>Remarque</em>: les modifications prendront effet après redémarrage de votre navigateur."
   },
-  "s21-link": {
-    "message": "http://www.geckozone.org/articles/2005/08/31/100-comprendre-le-profil"
+  "s3": {
+    "message": "Comment puis-je supprimer l'icône d'Adblock Plus de ma barre d'outils ?"
   },
-  "s25-link": {
-    "message": "http://kb.mozillazine.org/About:config"
+  "s4": {
+    "message": "Vous n'aimez pas l'icône ou vous avez besoin de place pour d'autres icônes plus importantes ? Cliquez sur la flèche de l'icône et décochez dans le menu \"Options\" la ligne \"Afficher dans la barre d'outils\". Il existe aussi un menu \"Options\" dans la boîte de dialogue des préférences — juste au cas où vous voudriez restaurer l'icône. Et en passant, vous pouvez également utiliser la personnalisation de la barre d'outils intégrée à Firefox (clic droit sur la barre d'outils et clic sur \"Personnaliser...\")."
+  },
+  "s5": {
+    "message": "Comment puis-je faire en sorte que l'icône devienne verte sur les sites qui sont sur liste blanche ?"
+  },
+  "s6": {
+    "message": "Si vous voulez que le comportement de l'icône d'Adblock Plus soit le même que dans la version 1.3.5 d'Adblock Plus (c'est-à-dire verte lorsqu'Adblock Plus est désactivé sur un site particulier, et grise s'il est désactivé globalement), vous pouvez installer <a>cette feuille de style personnalisée</a> (requiert <a>Stylish</a>)."
+  },
+  "s7": {
+    "message": "Comment puis-je faire apparaître la liste des éléments filtrables sur le côté/en haut de la page?"
+  },
+  "s8": {
+    "message": "Préférez-vous placer la liste des éléments filtrables sur le côté gauche de la fenêtre du navigateur, comme c'était le cas pour Adblock Plus 0.7.5 ? Vous pouvez faire cela avec <a>cette feuille de style personnalisée</a> (requiert <a>Stylish</a>). Sous cette forme, la feuille de style s'assurera que la liste est affichée sur le côté gauche de la fenêtre du navigateur, comme une barre latérale. Vous pouvez aussi supprimer une des lignes marquées lorsque l'on vous demande d'ajouter la feuille de style, afin que la liste des éléments filtrables soit affichée sur le côté droit ou en haut."
+  },
+  "s9": {
+    "message": "<em>Remarque</em> : Cela ne transforme pas réellement la liste des éléments filtrables en barre latérale. Cette liste peut être ouverte en même temps qu'une barre latérale, comme l'Historique."
+  },
+  "title": {
+    "message": "FAQ - Personnalisation de l'interface utilisateur"
   }
 }

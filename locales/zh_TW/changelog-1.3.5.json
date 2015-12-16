@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Adblock Plus 1.3.5 詳細更新日誌"
-  },
   "s1": {
     "message": "以下是相較於 Adblock Plus 1.3.3 所改進的部份。"
-  },
-  "s2": {
-    "message": "特性"
-  },
-  "s3": {
-    "message": "支援 Firefox Mobile 4，不再支援 Firefox Mobile 1.0。"
-  },
-  "s4": {
-    "message": "支援K-Meleon 1.6 (需要使用 <a>特殊版本</a> )。"
-  },
-  "s5": {
-    "message": "新增對 <a>Do-Not-Track 協定標頭</a> (DNT) 的支援， <code>{1}</code> 將會對所有網域傳送此標頭 (<a>討論區文章</a>)。"
-  },
-  "s6": {
-    "message": "在目錄中新增實驗性的「在 Facebook 上給我們建議」按鈕，可更方便地提供 Adblock Plus 建議 — 該按鈕只有 Facebook 使用者會看見。"
-  },
-  "s7": {
-    "message": "使用者介面"
-  },
-  "s8": {
-    "message": "再度新增馬來語及愛沙尼亞語。"
-  },
-  "s9": {
-    "message": "允許快捷鍵設定成多個值，因為原本的已經被佔用了。"
   },
   "s10": {
     "message": "現在預設的快捷鍵為 Ctrl-Shift-E (Firefox 3.x)，Ctrl-Shift-F (Firefox 4) 或 Ctrl-Shift-O (MAC OS X)"
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Thunderbird：更清楚地回報部落格文章，現在會傳送部落格文章的網址，而非毫無意義的電子信箱。"
   },
+  "s2": {
+    "message": "特性"
+  },
   "s20": {
     "message": "修復：已停用的過濾條件集不該被納入錯誤報告中 (<a>討論區文章</a>) 。"
   },
@@ -88,5 +64,30 @@
   },
   "s29": {
     "message": "先前版本的更新日誌"
+  },
+  "s3": {
+    "message": "支援 Firefox Mobile 4，不再支援 Firefox Mobile 1.0。"
+  },
+  "s4": {
+    "message": "支援K-Meleon 1.6 (需要使用 <a>特殊版本</a> )。"
+  },
+  "s5": {
+    "description": "{1}: *$donottrack",
+    "message": "新增對 <a>Do-Not-Track 協定標頭</a> (DNT) 的支援， <code>{1}</code> 將會對所有網域傳送此標頭 (<a>討論區文章</a>)。"
+  },
+  "s6": {
+    "message": "在目錄中新增實驗性的「在 Facebook 上給我們建議」按鈕，可更方便地提供 Adblock Plus 建議 — 該按鈕只有 Facebook 使用者會看見。"
+  },
+  "s7": {
+    "message": "使用者介面"
+  },
+  "s8": {
+    "message": "再度新增馬來語及愛沙尼亞語。"
+  },
+  "s9": {
+    "message": "允許快捷鍵設定成多個值，因為原本的已經被佔用了。"
+  },
+  "title": {
+    "message": "Adblock Plus 1.3.5 詳細更新日誌"
   }
 }

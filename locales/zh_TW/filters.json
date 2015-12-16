@@ -1,12 +1,73 @@
 {
-  "title": {
-    "message": "撰寫 Adblock Plus 過濾條件"
-  },
   "s1": {
     "message": "目前的 Adblock Plus 版本可讓您用各種方法「調整」自己的過濾條件。本文件將告訴您有哪些選擇以及如何使用它們。"
   },
+  "s10": {
+    "description": "{1}: adv, {2}: http://example.com/advice.html, {3}: @@advice, {4}: @@",
+    "message": "這時例外規則就可以派上用場 — 它允許您定義一些不應該被過濾掉的內容。舉個例子，也許您不希望 <code>{1}</code> 過濾掉 <code>{2}</code>，則您可以定義一條例外規則 <code>{3}</code>。例外規則的寫法與過濾條件相同，您也可以使用萬用字元或正規表示法。只需要在最前面加上 <code>{4}</code> 來表示這是一條例外規則。"
+  },
+  "s100": {
+    "message": "例外規則可以在特定的網域上停用現有的隱藏條件。"
+  },
+  "s101": {
+    "message": "這對附屬於某些列表，而又無法調整主要列表規則的條件集作者十分有用。"
+  },
+  "s102": {
+    "description": "{1}: ##div.textad, {2}: example.com, {3}: example.com#@#div.textad",
+    "message": "舉個例子，若要讓 <code>{1}</code> 在 <code>{2}</code> 網域中停用，可以使用  <code>{3}</code>。"
+  },
+  "s103": {
+    "description": "{1}: ~example.com##div.textad",
+    "message": "這兩條規則加起來就相當於  <code>{1}</code>。"
+  },
+  "s104": {
+    "message": "建議您只有在無法調整全域隱藏條件時才使用例外規則，否則限制規則只在必要的網域生效才是首選。"
+  },
+  "s105": {
+    "message": "簡單的元素隱藏語法"
+  },
+  "s106": {
+    "description": "{1}: #div(id=foo)",
+    "message": "為了向下相容，Adblock Plus 支援簡單的元素隱藏語法 (如 <code>{1}</code> )。十分不建議使用這種語法，一般的 CSS 選擇器才是首選。未來可能會停止支援這類語法。"
+  },
+  "s12": {
+    "message": "配對網址的開頭/結尾"
+  },
+  "s13": {
+    "description": "{1}: ad, {2}: *ad*, {3}: swf, {4}: http://example.com/swf/index.html",
+    "message": "通常 Adblock Plus 處理每一條規則時會假設它前後都有一個萬用字元，舉個例子， <code>{1}</code> 及 <code>{2}</code> 是完全相同的。這毋庸置疑，不過您也許會希望過濾條件只在符合網址的開頭或結尾部份時才配對。例如您想要阻擋所有的 Flash，但若您增加一條規則 <code>{3}</code>，那麼 <code>{4}</code> 這個網址也會被過濾掉。"
+  },
+  "s14": {
+    "description": "{1}: swf|, {2}: http://example.com/annoyingflash.swf, {3}: http://example.com/swf/index.html",
+    "message": "解決方法是：增加一條管線符號 (|) 來表示它只會出現在網址的結尾。像 <code>{1}</code> 將會阻擋 <code>{2}</code> 而不會過濾 <code>{3}</code>。同理， <code>|http://baddomain.example/</code> 將會阻擋 <code>http://baddomain.example/banner.gif</code> 而不會過濾 <code>http://gooddomain.example/analyze?http://baddomain.example</code>。"
+  },
+  "s15": {
+    "description": "{1}: http://example.com/banner.gif, {2}: https://example.com/banner.gif, {3}: http://www.example.com/banner.gif, {4}: ||example.com/banner.gif",
+    "message": "如果您想阻擋 <code>{1}</code> 、 <code>{2}</code> 和 <code>{3}</code>。可以在網域的前面加上兩個管線符號 (||) 來達成：<code>{4}</code> 將會阻擋上面這些網址，而不會過濾 <code>http://badexample.com/banner.gif</code> 和 <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (需要Adblock Plus 1.1以上版本)。"
+  },
+  "s16": {
+    "message": "標記分隔字元"
+  },
+  "s17": {
+    "description": "{1}: http://example.com/, {2}: http://example.com:8000/, {3}: http://example.com.ar/, {4}: http://example.com^",
+    "message": "您經常會需要在過濾條件中使用分隔字元。舉個例子，您也許想過濾 <code>{1}</code> 及 <code>{2}</code> 卻又不想阻擋 <code>{3}</code>。此時 ^ 符號就可以用來當作分隔字元的位置標識符號：<code>{4}</code> (需要Adblock Plus 1.1以上版本)。"
+  },
+  "s18": {
+    "description": "{1}: _ - . %",
+    "message": "分隔字元可以是除了 {1} 以外的任何字元。網址的結尾也可以作為一個分隔字元。底下的例子中用紅色標記的部份都是分隔字元："
+  },
+  "s19": {
+    "description": "{1}: ^example.com^, {2}: ^%D1%82%D0%B5%D1%81%D1%82^, {3}: ^foo.bar^",
+    "message": "。故這條網址可以被 <code>{1}</code> 和 <code>{2}</code> 和 <code>{3}</code> 阻擋。"
+  },
   "s2": {
     "message": "<em>免責聲明</em>：這裡所舉的例子僅供參考，不能直接使用。"
+  },
+  "s20": {
+    "message": "註解"
+  },
+  "s21": {
+    "message": "任何以驚嘆號開頭的規則都會被視為註解。註解一樣會在列表中出現，只是會用灰色取代黑色顯示。Adblock Plus 會忽略所有註解，所以您可以輸入任何想要的文字。您可以在某過濾條件的上方加上註解來描述其用途。或是放在列表的最上面來聲明您的著作權 (大多條件集作者都會這麼做)。"
   },
   "s3": {
     "message": "Adblock Plus 過濾條件介紹"
@@ -16,54 +77,6 @@
   },
   "s5": {
     "message": "基本過濾條件"
-  },
-  "s6": {
-    "message": "一般您最常建立的規則都是拿來阻擋廣告的。然而這些廣告的網址可能在您每次造訪時都不盡相同。舉個例子，它可能是 <code>{1}</code>，這裡的 123 是一個隨機數字。阻擋完整的網址幫助並不大，所以您需要更通用的規則如 <code>{2}</code>，甚至是 <code>{3}</code>。"
-  },
-  "s7": {
-    "message": "<em>備註</em>：請不要使用太多的萬用字元。此規則 <code>{1}</code> 將會完全阻擋底下所有的廣告，但它同時也會誤殺一些您希望從 example.com 看到的內容。"
-  },
-  "s8": {
-    "message": "定義例外規則"
-  },
-  "s9": {
-    "message": "有時您會發現某過濾條件平常表現的不錯，但偶爾還是會不小心擋到不該擋的內容。此時既不想刪除這條規則，又不希望它導致誤殺。"
-  },
-  "s10": {
-    "message": "這時例外規則就可以派上用場 — 它允許您定義一些不應該被過濾掉的內容。舉個例子，也許您不希望 <code>{1}</code> 過濾掉 <code>{2}</code>，則您可以定義一條例外規則 <code>{3}</code>。例外規則的寫法與過濾條件相同，您也可以使用萬用字元或正規表示法。只需要在最前面加上 <code>{4}</code> 來表示這是一條例外規則。"
-  },
-  "s11": {
-    "message": "例外規則還有其他用法。若一條例外規則的開頭為 http:// 或 https:// (最前面加不加管線符號都可以)，會使整個網頁都處於例外規則。舉個例子，如果您的例外規則為 <code>{1}</code> 那麼當開啟 example.com 的網頁時，Adblock Plus 會完全停用而不阻擋任何東西。"
-  },
-  "s12": {
-    "message": "配對網址的開頭/結尾"
-  },
-  "s13": {
-    "message": "通常 Adblock Plus 處理每一條規則時會假設它前後都有一個萬用字元，舉個例子， <code>{1}</code> 及 <code>{2}</code> 是完全相同的。這毋庸置疑，不過您也許會希望過濾條件只在符合網址的開頭或結尾部份時才配對。例如您想要阻擋所有的 Flash，但若您增加一條規則 <code>{3}</code>，那麼 <code>{4}</code> 這個網址也會被過濾掉。"
-  },
-  "s14": {
-    "message": "解決方法是：增加一條管線符號 (|) 來表示它只會出現在網址的結尾。像 <code>{1}</code> 將會阻擋 <code>{2}</code> 而不會過濾 <code>{3}</code>。同理， <code>|http://baddomain.example/</code> 將會阻擋 <code>http://baddomain.example/banner.gif</code> 而不會過濾 <code>http://gooddomain.example/analyze?http://baddomain.example</code>。"
-  },
-  "s15": {
-    "message": "如果您想阻擋 <code>{1}</code> 、 <code>{2}</code> 和 <code>{3}</code>。可以在網域的前面加上兩個管線符號 (||) 來達成：<code>{4}</code> 將會阻擋上面這些網址，而不會過濾 <code>http://badexample.com/banner.gif</code> 和 <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (需要Adblock Plus 1.1以上版本)。"
-  },
-  "s16": {
-    "message": "標記分隔字元"
-  },
-  "s17": {
-    "message": "您經常會需要在過濾條件中使用分隔字元。舉個例子，您也許想過濾 <code>{1}</code> 及 <code>{2}</code> 卻又不想阻擋 <code>{3}</code>。此時 ^ 符號就可以用來當作分隔字元的位置標識符號：<code>{4}</code> (需要Adblock Plus 1.1以上版本)。"
-  },
-  "s18": {
-    "message": "分隔字元可以是除了 {1} 以外的任何字元。網址的結尾也可以作為一個分隔字元。底下的例子中用紅色標記的部份都是分隔字元："
-  },
-  "s19": {
-    "message": "。故這條網址可以被 <code>{1}</code> 和 <code>{2}</code> 和 <code>{3}</code> 阻擋。"
-  },
-  "s20": {
-    "message": "註解"
-  },
-  "s21": {
-    "message": "任何以驚嘆號開頭的規則都會被視為註解。註解一樣會在列表中出現，只是會用灰色取代黑色顯示。Adblock Plus 會忽略所有註解，所以您可以輸入任何想要的文字。您可以在某過濾條件的上方加上註解來描述其用途。或是放在列表的最上面來聲明您的著作權 (大多條件集作者都會這麼做)。"
   },
   "s51": {
     "message": "進階功能"
@@ -78,70 +91,104 @@
     "message": "Adblock Plus 允許您指定一些選項來修改過濾條件的行為。若您要列舉這些阻擋類型，請在規則的最後面加上錢幣符號 ($) 並以逗號隔開。舉個例子："
   },
   "s55": {
+    "description": "{1}: */ads/*, {2}: script, {3}: match-case",
     "message": "這裡的 <code>{1}</code> 規則，強調 <code>{2}</code> 及 <code>{3}</code> 作為它的阻擋類型。以下列出的是目前支援的阻擋類型："
   },
   "s56": {
     "message": "類型選項：判斷規則中可以阻擋的元素類型 (或例外規則)。一條規則可以宣告多種需要套用的過濾類型，例如："
   },
   "s57": {
+    "description": "{1}: script",
     "message": "<code>{1}</code> — 以 HTML 中 script 標籤載入的外部程式碼"
   },
   "s58": {
+    "description": "{1}: image",
     "message": "<code>{1}</code> — 一般的圖片，通常由 HTML 中的 img 標籤載入"
   },
   "s59": {
+    "description": "{1}: stylesheet",
     "message": "<code>{1}</code> — 外部 CSS 樣式表"
   },
+  "s6": {
+    "description": "{1}: http://example.com/ads/banner123.gif, {2}: http://example.com/ads/banner*.gif, {3}: http://example.com/ads/*",
+    "message": "一般您最常建立的規則都是拿來阻擋廣告的。然而這些廣告的網址可能在您每次造訪時都不盡相同。舉個例子，它可能是 <code>{1}</code>，這裡的 123 是一個隨機數字。阻擋完整的網址幫助並不大，所以您需要更通用的規則如 <code>{2}</code>，甚至是 <code>{3}</code>。"
+  },
   "s60": {
+    "description": "{1}: object",
     "message": "<code>{1}</code> — 由瀏覽器外掛(plugins)所處理的內容，如 Flash 或 Java"
   },
   "s62": {
+    "description": "{1}: xmlhttprequest",
     "message": "<code>{1}</code> — 來自<a>XMLHttpRequest 物件所開始的請求</a> "
   },
   "s63": {
+    "description": "{1}: object-subrequest",
     "message": "<code>{1}</code> — 來自 Flash 等外掛的請求"
   },
   "s64": {
+    "description": "{1}: subdocument",
     "message": "<code>{1}</code> — 通常由 HTML 框架內嵌的網頁"
   },
   "s65": {
+    "description": "{1}: document",
     "message": "<code>{1}</code> — 網頁本身 (只適用於 <a>例外規則</a>)"
   },
   "s66": {
+    "description": "{1}: elemhide, {2}: document",
     "message": "<code>{1}</code> — 只適用於例外規則，和 <code>{2}</code> 一樣，但只會停用頁面上的 <a>元素隱藏規則</a> 而非停用所有的過濾條件 (需要Adblock Plus 1.2以上版本)。"
   },
   "s67": {
+    "description": "{1}: other",
     "message": "<code>{1}</code> — 其他沒有列在上面的請求類型"
   },
   "s68": {
+    "description": "{1}: background, {2}: xbl, {3}: ping, {4}: dtd",
     "message": "右列的 <code>{1}</code>, <code>{2}</code>,  <code>{3}</code> 以及 <code>{4}</code> 為已過時且不該再繼續使用的類型選項。"
   },
   "s69": {
+    "description": "{1}: ~script, {2}: ~image, {3}: ~stylesheet, {4}: ~object, {5}: ~xmlhttprequest, {6}: ~object-subrequest, {7}: ~subdocument, {8}: ~document, {9}: ~elemhide, {10}: ~other",
     "message": "反向類型選項：指定那些 <strong>不該</strong> 被阻擋的類型。可使用的反向類型選項有：<code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code>, <code>{6}</code>, <code>{7}</code>, <code>{8}</code>, <code>{9}</code>, <code>{10}</code>"
   },
+  "s7": {
+    "description": "{1}: http://example.com/*",
+    "message": "<em>備註</em>：請不要使用太多的萬用字元。此規則 <code>{1}</code> 將會完全阻擋底下所有的廣告，但它同時也會誤殺一些您希望從 example.com 看到的內容。"
+  },
   "s70": {
+    "description": "{1}: third-party, {2}: ~third-party",
     "message": "限制第一方/第三方請求：如果指定了 <code>{1}</code> 類型，則此規則只會作用在與目前頁面不同網域的請求。同樣地，<code>{2}</code> 則會限制與目前頁面相同網域的請求。"
   },
   "s71": {
+    "description": "{1}: domain=example.com, {2}: domain=example.com|example.net, {3}: domain=~example.com, {4}: domain=example.com|~foo.example.com",
     "message": "網域限制：<code>{1}</code> 表示此過濾條件只會在 \"example.com\" 網域生效。如果要指定多個網域請用 \"|\" 作為分隔字元隔開：<code>{2}</code> 表示此規則將會在 \"example.com\" 或 \"example.net\" 等網域生效。如果網域前面加上一個 \"~\" 符號，那麼此規則將 <strong>不會</strong> 在此網域的頁面生效。舉例，<code>{3}</code> 表示會在 \"example.com\" 以外的所有網域生效，<code>{4}</code> 則限制此規則只在 \"example.com\" 生效，而不包括 \"foo.example.com\" 這個子網域。"
   },
   "s73": {
+    "description": "{1}: match-case, {2}: */BannerAd.gif$match-case, {3}: http://example.com/BannerAd.gif, {4}: http://example.com/bannerad.gif",
     "message": "<code>{1}</code> — 網址完全符合字母大小寫時才過濾，如 <code>{2}</code> 將會阻擋 <code>{3}</code> 而不會過濾 <code>{4}</code>。"
   },
   "s74": {
+    "description": "{1}: collapse, {2}: ~collapse",
     "message": "<code>{1}</code> — 此選項將無視「隱藏已阻擋元素所佔用的空間」的全域設定，確保過濾條件會隱藏該元素。同樣地 <code>{2}</code> 選項會使過濾條件永不隱藏該元素。"
   },
   "s75": {
+    "description": "{1}: donottrack",
     "message": "<code>{1}</code> — 當網址被含有此過濾選項的規則配對，且沒有相等的例外規則生效時，將會傳送一個  <a>Do-Not-Track 標頭</a> (需要Adblock Plus 1.3.5以上版本)。"
   },
   "s76": {
+    "description": "{1}: *$donottrack,image,~image",
     "message": "為了向下相容避免舊版 Adblock Plus 阻擋所有請求，建議結合相互矛盾的阻擋選項來搭配使用： <code>{1}</code>"
   },
   "s77": {
     "message": "使用正規表示法"
   },
   "s79": {
+    "description": "{1}: /banner\\d+/, {2}: banner123, {3}: banner321, {4}: banners",
     "message": "若您想要更準確地控制過濾條件，使其只過濾想阻擋的部份，您可以使用正規表示法。此條件 <code>{1}</code> 將會阻擋 <code>{2}</code> 及 <code>{3}</code> 而不會過濾 <code>{4}</code>。您可以參考 <a>正規表示法文件</a> 來學習如何撰寫它們。"
+  },
+  "s79-link": {
+    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Creating_a_Regular_Expression"
+  },
+  "s8": {
+    "message": "定義例外規則"
   },
   "s80": {
     "message": "<em>備註</em>：基於效能考量，十分不建議您使用正規表示法。請盡量避免。"
@@ -159,6 +206,7 @@
     "message": "由於您必須下載整個網頁，也就一定下載到這些廣告。您所能做的只有將這些廣告隱藏起來，這樣就不會看到它了。這就是隱藏規則存在的原因。"
   },
   "s85": {
+    "description": "{1}: ##div.textad, {2}: ##div#sponsorad, {3}: ##*#sponsorad, {4}: ##textad",
     "message": "第一個廣告是 class 屬性為\"textad\"的 div 元素。以下的規則將可以準確地隱藏它：<code>{1}</code>。這裡的 ## 記號是用來辨識需要隱藏的元素選擇器。同樣地您也可以用它們的 id 等屬性來隱藏，如 <code>{2}</code> 將會隱藏第二個廣告。您不一定要指定元素名稱，像 <code>{3}</code> 也是可以的。當然您也可以只使用元素名稱來隱藏，如 <code>{4}</code> 會隱藏第三個廣告。"
   },
   "s86": {
@@ -171,27 +219,36 @@
     "message": "限制特定網域的條件"
   },
   "s89": {
+    "description": "{1}: ##*.sponsor, {2}: example.com##*.sponsor, {3}: http://example.com/, {4}: http://something.example.com/, {5}: http://example.org/, {6}: domain1.example,domain2.example,domain3.example##*.sponsor",
     "message": "通常您會只想在某個特定的網站上隱藏特定的廣告，而不希望將此規則套用在別的網域。這個例子 <code>{1}</code> 可能會在某些網站上隱藏有用的內容。但您可以將它改寫成 <code>{2}</code> 使它只在 <code>{3}</code> 及 <code>{4}</code> 作用，而不包括 <code>{5}</code>。您也可以指定多個網域 — 只需要用逗點隔開：<code>{6}</code>。"
   },
+  "s9": {
+    "message": "有時您會發現某過濾條件平常表現的不錯，但偶爾還是會不小心擋到不該擋的內容。此時既不想刪除這條規則，又不希望它導致誤殺。"
+  },
   "s90": {
+    "description": "{1}: ~example.com##*.sponsor, {2}: example.com,~foo.example.com##*.sponsor",
     "message": "如果在網域前面加上\"~\"，則此規則將<strong>不會</strong>被套用在該網域 (需要Adblock Plus 1.1以上版本)。舉個例子，<code>{1}</code> 將會套用在除了\"example.com\"以外的所有網域，另外<code>{2}</code> 會使此規則只套用在\"example.com\"而不包括子網域\"foo.example.com\"。"
   },
   "s91": {
+    "description": "{1}: domain, {2}: domain.example,domain.test",
     "message": "<em>備註</em>：由於隱藏規則實作的方式，您只能限制完整的網域。而不能使用網域的一部分，像是用 <code>{1}</code> 來取代 <code>{2}</code>。"
   },
   "s92": {
+    "description": "{1}: browser##menuitem#javascriptConsole",
     "message": "<em>備註</em>：搭配網域限制的隱藏規則同樣也可以用來隱藏瀏覽器的介面。此規則 <code>{1}</code> 將會隱藏工具選單中的Javascript錯誤主控台。"
   },
   "s93": {
     "message": "屬性選擇器"
   },
   "s94": {
+    "description": "{1}: ##table[width=\"80%\"], {2}: ##div[title*=\"adv\"], {3}: ##div[title^=\"adv\"][title$=\"ert\"], {4}: table[width=\"80%\"][bgcolor=\"white\"]",
     "message": "有些廣告沒辦法輕鬆的解決 — 這些廣告既沒有 id 也沒有 class 屬性。您可以使用其他的屬性來隱藏它們，如 <code>{1}</code> 將會隱藏寬度屬性設為 80% 的 table，如果您不明確指定屬性中完整的值，像是 <code>{2}</code> 將會隱藏所有 title 屬性含有\"adv\"字串的 div 元素。您也可以檢查屬性的開頭或結尾，像是 <code>{3}</code>將會隱藏 title 屬性的開頭為\"adv\"及結尾為\"ert\"的 div 元素。如您所見，您也可以使用多個條件 — <code>{4}</code> 將會匹配寬度屬性設為 80% 且背景顏色為白色的 table 元素。"
   },
   "s95": {
     "message": "進階選擇器"
   },
   "s97": {
+    "description": "{1}: ##div.adheader + *",
     "message": "一般而言，Firefox 所支援的 CSS 選擇器都可以為元素隱藏規則所用。舉個例子，此規則將會隱藏跟隨在 class 屬性為 adheader 的 div 後方的元素：<code>{1}</code>。若要取得完整的 CSS 列表請參考 <a>W3C CSS 規格書</a> (請記得 Firefox 尚未支援所有的選擇器)。"
   },
   "s98": {
@@ -200,34 +257,7 @@
   "s99": {
     "message": "例外規則"
   },
-  "s100": {
-    "message": "例外規則可以在特定的網域上停用現有的隱藏條件。"
-  },
-  "s101": {
-    "message": "這對附屬於某些列表，而又無法調整主要列表規則的條件集作者十分有用。"
-  },
-  "s102": {
-    "message": "舉個例子，若要讓 <code>{1}</code> 在 <code>{2}</code> 網域中停用，可以使用  <code>{3}</code>。"
-  },
-  "s103": {
-    "message": "這兩條規則加起來就相當於  <code>{1}</code>。"
-  },
-  "s104": {
-    "message": "建議您只有在無法調整全域隱藏條件時才使用例外規則，否則限制規則只在必要的網域生效才是首選。"
-  },
-  "s105": {
-    "message": "簡單的元素隱藏語法"
-  },
-  "s106": {
-    "message": "為了向下相容，Adblock Plus 支援簡單的元素隱藏語法 (如 <code>{1}</code> )。十分不建議使用這種語法，一般的 CSS 選擇器才是首選。未來可能會停止支援這類語法。"
-  },
-  "s62-link": {
-    "message": "http://www.w3.org/TR/XMLHttpRequest/"
-  },
-  "s79-link": {
-    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Creating_a_Regular_Expression"
-  },
-  "s97-link": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
+  "title": {
+    "message": "撰寫 Adblock Plus 過濾條件"
   }
 }

@@ -1,12 +1,73 @@
 {
-  "title": {
-    "message": "Het schrijven van Adblock Plus filters"
-  },
   "s1": {
     "message": "De huidige Adblock Plus versies laten u filters op veel verschillende manieren verfijnen. Dit document legt de keuzes die u heeft uit en vertelt hoe ze gebruikt kunnen worden."
   },
+  "s10": {
+    "description": "{1}: adv, {2}: http://example.com/advice.html, {3}: @@advice, {4}: @@",
+    "message": "Daarvoor kunt u uitzonderingsregels gebruiken — zij laten u gevallen definieren waarop het filter niet toegepast moet worden. Als u bijvoorbeeld niet wilt dat uw filter <code>{1}</code> de pagina <code>{2}</code> blokkeert, kunt u een uitzonderingsregel <code>{3}</code> definieren. Uitzonderingsregels zijn niet anders dan filterregels, u kunt wildcards of reguliere expressies gebruiken. U moet ze alleen laten voorafgaan door <code>{4}</code> om aan te geven dat het om een uitzonderingsregel gaat."
+  },
+  "s100": {
+    "message": "Uitzonderingsregels kunnen bestaande regels uitschakelen op bepaalde domeinen."
+  },
+  "s101": {
+    "message": "Deze zijn voornamelijk handig voor auteurs van filterabonnementen die een ander filterabonnement uitbreiden en die ze niet kunnen wijzigen."
+  },
+  "s102": {
+    "description": "{1}: ##div.textad, {2}: example.com, {3}: example.com#@#div.textad",
+    "message": "Bijvoorbeeld, de regel <code>{1}</code> kan worden uitgeschakeld op <code>{2}</code> door middel van de uitzonderingsregel  <code>{3}</code>."
+  },
+  "s103": {
+    "description": "{1}: ~example.com##div.textad",
+    "message": "De combinatie van deze twee regels heeft precies hetzelfde effect als de enkelvoudige regel  <code>{1}</code>."
+  },
+  "s104": {
+    "message": "Het wordt aanbevolen om alleen uitzonderingsregels te gebruiken als je een te algemene elementverbergende regel \nniet kan aanpassen, in alle andere gevallen heeft het de voorkeur om deze regel te beperken tot de benodigde domeinen."
+  },
+  "s105": {
+    "message": "Vereenvoudigde element verbergende syntax"
+  },
+  "s106": {
+    "description": "{1}: #div(id=foo)",
+    "message": "Adblock Plus ondersteunt vereenvoudigde element verbergende syntax (bijvoorbeeld <code>{1}</code>) alleen om compatbel te zijn met oudere versies. Het gebruik van deze syntax wordt afgeraden, meestal zijn CSS selectors aanbevolen. Ondersteuning voor deze syntax kan op een bepaald moment worden verwijderd."
+  },
+  "s12": {
+    "message": "Overeenkomen op het begin/aan het eind van een adres"
+  },
+  "s13": {
+    "description": "{1}: ad, {2}: *ad*, {3}: swf, {4}: http://example.com/swf/index.html",
+    "message": "Normaal gesproken behandelt Adblock Plus elk filter alsof er wildcards voor en achter zouden staan, er is bijvoorbeeld geen verschil tussen de filters <code>{1}</code> en <code>{2}</code>Hoewel dit meestal geen probleem oplevert, wilt u soms dat het filter dat u definieert alleen overeenkomt met het begin of het eind van een adres. U wilt bijvoorbeeld alle Flash blokkeren, maar als u het filter <code>{3}</code> toevoegt, dan wordt het adres <code>{4}</code> ook geblokkeerd."
+  },
+  "s14": {
+    "description": "{1}: swf|, {2}: http://example.com/annoyingflash.swf, {3}: http://example.com/swf/index.html",
+    "message": "De oplossing van dit probleem is: voeg een pipe symbool aan het filter toe om te laten zien dat er op deze positie echt een eind aan het adres moet zijn. Bijvoorbeeld het filter <code>{1}</code> blokkeert <code>{2}</code> maar niet met <code>{3}</code>. En het filter <code>|http://baddomain.example/</code> blokkeert <code>http://baddomain.example/banner.gif</code> maar niet met <code>http://gooddomain.example/analyze?http://baddomain.example</code>."
+  },
+  "s15": {
+    "description": "{1}: http://example.com/banner.gif, {2}: https://example.com/banner.gif, {3}: http://www.example.com/banner.gif, {4}: ||example.com/banner.gif",
+    "message": "Soms wilt u zowel <code>{1}</code> als <code>{2}</code> en <code>{3}</code> blokkeren. U kunt dit doen door twee pipe sumbolen voor het filter te zetten, wat er voor zorgt dat het filter het begin van de domeinnaam matcht: <code>{4}</code> zal al deze adressen blokkeren, terwijl het niet <code>http://badexample.com/banner.gif</code> of <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (is afhankelijk van Adblock Plus 1.1 of hoger)."
+  },
+  "s16": {
+    "message": "Het markeren van scheidingstekens"
+  },
+  "s17": {
+    "description": "{1}: http://example.com/, {2}: http://example.com:8000/, {3}: http://example.com.ar/, {4}: http://example.com^",
+    "message": "Vaak moet u elk scheidingsteken in een filter toestaan. U schrijft bijvoorbeeld een filter dat <code>{1}</code> en <code>{2}</code> maar niet met <code>{3}</code>. Hier kan het symbool ^ gebruikt worden als aanduiding voor een enkel scheidingsteken: <code>{4}</code> (is afhankelijk van Adblock Plus 1.1 of hoger)."
+  },
+  "s18": {
+    "description": "{1}: _ - . %",
+    "message": "Een scheidingsteken is alles behalve een letter, cijfer of een van de volgende karakters: {1}. Het eind van een adres wordt ook als scheiding geaccepteerd. In het volgende voorbeeld worden alle scheidingstekens in rood getoond:"
+  },
+  "s19": {
+    "description": "{1}: ^example.com^, {2}: ^%D1%82%D0%B5%D1%81%D1%82^, {3}: ^foo.bar^",
+    "message": ". Dit adres kan dus geblokkeerd worden met het filter <code>{1}</code> of <code>{2}</code> of <code>{3}</code>."
+  },
   "s2": {
     "message": "<em>Disclaimer</em>: Alle filtervoorbeelden die hier gegeven worden zijn alleen maar voorbeelden en zijn niet bedoeld om gebruikt te worden."
+  },
+  "s20": {
+    "message": "Opmerkingen"
+  },
+  "s21": {
+    "message": "Elke regel die met een uitroepteken begint wordt als commentaar gezien. Het wordt in de filterlijst getoond, maar grijs in plaats van zwart. Adblock Plus zal deze regel negeren bij het blokkeren, dus u kunt hier veilig schrijven wat u maar wilt. U kunt een commentaarregel boven elk filter zetten om te beschrijven wat het filter doet. Of u zet een commentaar bovenaan de filterlijst waarin u uw auteursrecht vermeldt (de meeste makers van filterlijsten doen dit)."
   },
   "s3": {
     "message": "Introductie op Adblock Plus filters"
@@ -16,54 +77,6 @@
   },
   "s5": {
     "message": "Standaard filterregels"
-  },
-  "s6": {
-    "message": "De meest triviale filter die u kunt definieren is natuurlijk het adres van een banner die u wilt blokkeren. Dit adres wijzigt echter vaak elke keer als u een pagina opent. Het kan bijvoorbeeld <code>{1}</code> zijn, waarbij 123 een willekeurig getal is. Hier helpt het u niet om het volledige adres te blokkeren, dus u moet een meer generiek filter maken — zoals <code>{2}</code>. Of misschien zelfs <code>{3}</code>."
-  },
-  "s7": {
-    "message": "<em>N.B.</em>: Let er op dat u niet teveel door wildcards vervangt. Het filter <code>{1}</code> zal zeker alle banners blokkeren, maar het blokkeert ook al het andere van example.com wat u misschien toch zou willen zien."
-  },
-  "s8": {
-    "message": "Het definieren van uitzonderingsregels"
-  },
-  "s9": {
-    "message": "Soms merkt u dat een van uw filters die meestal eigenlijk behoorlijk goed blokkeert in sommige gevallen iets blokkeert wat niet geblokkeerd moet worden. U wilt dit filter niet verwijderen, maar u wilt dat het toch niet matcht in dit ene geval."
-  },
-  "s10": {
-    "message": "Daarvoor kunt u uitzonderingsregels gebruiken — zij laten u gevallen definieren waarop het filter niet toegepast moet worden. Als u bijvoorbeeld niet wilt dat uw filter <code>{1}</code> de pagina <code>{2}</code> blokkeert, kunt u een uitzonderingsregel <code>{3}</code> definieren. Uitzonderingsregels zijn niet anders dan filterregels, u kunt wildcards of reguliere expressies gebruiken. U moet ze alleen laten voorafgaan door <code>{4}</code> om aan te geven dat het om een uitzonderingsregel gaat."
-  },
-  "s11": {
-    "message": "Uitzonderingsregels kunnen meer. Als een uitzonderingsregel met http:// of https:// begint (eventueel met een pipe re voor), maakt het van hele pagina's een uitzondering. Bijvoorbeeld, als uw uitzonderingsregel <code>{1}</code> is en u open een pagina van example.com — Adblock Plus wordt helemaal uitgeschakeld op deze pagina en er wordt niets geblokkeerd."
-  },
-  "s12": {
-    "message": "Overeenkomen op het begin/aan het eind van een adres"
-  },
-  "s13": {
-    "message": "Normaal gesproken behandelt Adblock Plus elk filter alsof er wildcards voor en achter zouden staan, er is bijvoorbeeld geen verschil tussen de filters <code>{1}</code> en <code>{2}</code>Hoewel dit meestal geen probleem oplevert, wilt u soms dat het filter dat u definieert alleen overeenkomt met het begin of het eind van een adres. U wilt bijvoorbeeld alle Flash blokkeren, maar als u het filter <code>{3}</code> toevoegt, dan wordt het adres <code>{4}</code> ook geblokkeerd."
-  },
-  "s14": {
-    "message": "De oplossing van dit probleem is: voeg een pipe symbool aan het filter toe om te laten zien dat er op deze positie echt een eind aan het adres moet zijn. Bijvoorbeeld het filter <code>{1}</code> blokkeert <code>{2}</code> maar niet met <code>{3}</code>. En het filter <code>|http://baddomain.example/</code> blokkeert <code>http://baddomain.example/banner.gif</code> maar niet met <code>http://gooddomain.example/analyze?http://baddomain.example</code>."
-  },
-  "s15": {
-    "message": "Soms wilt u zowel <code>{1}</code> als <code>{2}</code> en <code>{3}</code> blokkeren. U kunt dit doen door twee pipe sumbolen voor het filter te zetten, wat er voor zorgt dat het filter het begin van de domeinnaam matcht: <code>{4}</code> zal al deze adressen blokkeren, terwijl het niet <code>http://badexample.com/banner.gif</code> of <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (is afhankelijk van Adblock Plus 1.1 of hoger)."
-  },
-  "s16": {
-    "message": "Het markeren van scheidingstekens"
-  },
-  "s17": {
-    "message": "Vaak moet u elk scheidingsteken in een filter toestaan. U schrijft bijvoorbeeld een filter dat <code>{1}</code> en <code>{2}</code> maar niet met <code>{3}</code>. Hier kan het symbool ^ gebruikt worden als aanduiding voor een enkel scheidingsteken: <code>{4}</code> (is afhankelijk van Adblock Plus 1.1 of hoger)."
-  },
-  "s18": {
-    "message": "Een scheidingsteken is alles behalve een letter, cijfer of een van de volgende karakters: {1}. Het eind van een adres wordt ook als scheiding geaccepteerd. In het volgende voorbeeld worden alle scheidingstekens in rood getoond:"
-  },
-  "s19": {
-    "message": ". Dit adres kan dus geblokkeerd worden met het filter <code>{1}</code> of <code>{2}</code> of <code>{3}</code>."
-  },
-  "s20": {
-    "message": "Opmerkingen"
-  },
-  "s21": {
-    "message": "Elke regel die met een uitroepteken begint wordt als commentaar gezien. Het wordt in de filterlijst getoond, maar grijs in plaats van zwart. Adblock Plus zal deze regel negeren bij het blokkeren, dus u kunt hier veilig schrijven wat u maar wilt. U kunt een commentaarregel boven elk filter zetten om te beschrijven wat het filter doet. Of u zet een commentaar bovenaan de filterlijst waarin u uw auteursrecht vermeldt (de meeste makers van filterlijsten doen dit)."
   },
   "s51": {
     "message": "Geavanceerde functies"
@@ -78,70 +91,101 @@
     "message": "Adblock Plus maakt het mogelijk om een aantal opties op te geven om het gedrag van een filter te wijzigen. Je geeft deze opties gescheiden met comma's aan achter een dollar teken ($) aan het eind van een filter, bijvoorbeeld:"
   },
   "s55": {
+    "description": "{1}: */ads/*, {2}: script, {3}: match-case",
     "message": "Hier is <code>{1}</code> het feitelijke filter en zijn <code>{2}</code> en <code>{3}</code> zijn opties. Op dit moment worden de volgende opties ondersteund:"
   },
   "s56": {
     "message": "Type opties: deze bepalen welke types elementen door een filter geblokkeerd moeren worden (of worden doorgelaten in het geval van een uitzonderingsregel). Meerdere type opties kunnen worden opgegeven om aan te geven dat het filter moet worden toegepast op meerdere types elementen. Mogelijke types zijn:"
   },
   "s57": {
+    "description": "{1}: script",
     "message": "<code>{1}</code> — externe scripts geladen via een HTML script label"
   },
   "s58": {
+    "description": "{1}: image",
     "message": "<code>{1}</code> — standaard afbeeldingen, doorgaans geladen via een HTML img label"
   },
   "s59": {
+    "description": "{1}: stylesheet",
     "message": "<code>{1}</code> — externe CSS stylesheet bestanden"
   },
+  "s6": {
+    "description": "{1}: http://example.com/ads/banner123.gif, {2}: http://example.com/ads/banner*.gif, {3}: http://example.com/ads/*",
+    "message": "De meest triviale filter die u kunt definieren is natuurlijk het adres van een banner die u wilt blokkeren. Dit adres wijzigt echter vaak elke keer als u een pagina opent. Het kan bijvoorbeeld <code>{1}</code> zijn, waarbij 123 een willekeurig getal is. Hier helpt het u niet om het volledige adres te blokkeren, dus u moet een meer generiek filter maken — zoals <code>{2}</code>. Of misschien zelfs <code>{3}</code>."
+  },
   "s60": {
+    "description": "{1}: object",
     "message": "<code>{1}</code> — inhoud die door browser plugins, zoals Flash of Java, wordt afgehandeld"
   },
   "s62": {
+    "description": "{1}: xmlhttprequest",
     "message": "<code>{1}</code> — verzoeken, gestart door het <a>XMLHttpRequest object</a> "
   },
   "s63": {
+    "description": "{1}: object-subrequest",
     "message": "<code>{1}</code> — door verzoeken gestarte plug-ins zoals Flash"
   },
   "s64": {
+    "description": "{1}: subdocument",
     "message": "<code>{1}</code> — ingebedde pagina's, meestal opgegeven via HTML frames"
   },
   "s65": {
+    "description": "{1}: document",
     "message": "<code>{1}</code> — de pagina zelf (alleen <a>uitzonderingsregels</a> kunnen op de pagina worden toegepast)"
   },
   "s66": {
+    "description": "{1}: elemhide, {2}: document",
     "message": "<code>{1}</code> — alleen voor uitzonderingsregels, vergelijkbaar met <code>{2}</code> maar dit schakelt alleen <a>element verbergingsregels</a> op de pagina uit, in plaats van alle filterregels (afhankelijk van Adblock Plus 1.2 of hoger)"
   },
   "s67": {
+    "description": "{1}: other",
     "message": "<code>{1}</code> — verzoek types die niet door de bovenstaande lijst worden afgevangen"
   },
   "s68": {
+    "description": "{1}: background, {2}: xbl, {3}: ping, {4}: dtd",
     "message": "De type opties <code>{1}</code>, <code>{2}</code>,  <code>{3}</code> en <code>{4}</code> zijn gedateerd en moeten niet meer gebruikt worden."
   },
   "s69": {
+    "description": "{1}: ~script, {2}: ~image, {3}: ~stylesheet, {4}: ~object, {5}: ~xmlhttprequest, {6}: ~object-subrequest, {7}: ~subdocument, {8}: ~document, {9}: ~elemhide, {10}: ~other",
     "message": "Omgekeerde type opties: geef de types elementen op waarop het filter <strong>niet</strong> moet worden toegepast. Mogelijke omgekeerde types: <code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code>, <code>{6}</code>, <code>{7}</code>, <code>{8}</code>, <code>{9}</code>, <code>{10}</code>"
   },
+  "s7": {
+    "description": "{1}: http://example.com/*",
+    "message": "<em>N.B.</em>: Let er op dat u niet teveel door wildcards vervangt. Het filter <code>{1}</code> zal zeker alle banners blokkeren, maar het blokkeert ook al het andere van example.com wat u misschien toch zou willen zien."
+  },
   "s70": {
+    "description": "{1}: third-party, {2}: ~third-party",
     "message": "Beperken tot derde-partij/eerste-partij verzoeken: Als de <code>{1}</code> optie is opgegeven, wordt het filter alleen toegepast op verzoeken van een andere bron dan de huidige weergegeven pagina. Op dezelfde manier beperkt <code>{2}</code> filters tot verzoeken van dezelfde bron als de huidige weergegeven pagina."
   },
   "s71": {
+    "description": "{1}: domain=example.com, {2}: domain=example.com|example.net, {3}: domain=~example.com, {4}: domain=example.com|~foo.example.com",
     "message": "Domein restricties: De optie <code>{1}</code> betekent dat het filter allen moet worden toegepast op pagina's van het \"example.com\" domein. Er kunnen meerder domeinen worden opgegeven gescheiden door \"|\" als scheidingsteken: met de optie <code>{2}</code> wordt het filter alleen toegepast op pagina's van \"example.com\" en \"example.net\" domeinen. Als een domeinnaam voorafgegaan wordt door \"~\" moet het filter <strong>niet</strong> worden toegepast op pagina's van dit domein. Bijvoorbeeld <code>{3}</code> betekent dat het filter op pagina's van alle domeinen op \"example.com\" na en <code>{4}</code> beperkt het filter tot het \"example.com\" domein met uitzondering van het \"foo.example.com\" subdomein."
   },
   "s73": {
+    "description": "{1}: match-case, {2}: */BannerAd.gif$match-case, {3}: http://example.com/BannerAd.gif, {4}: http://example.com/bannerad.gif",
     "message": "<code>{1}</code> — zorgt ervoor dat het filter alleen van toepassing is bij dezelfde hoofdlettergevoeligheid, bijvoorbeeld <code>{2}</code> blokkeert <code>{3}</code> maar niet met <code>{4}</code>."
   },
   "s74": {
+    "description": "{1}: collapse, {2}: ~collapse",
     "message": "<code>{1}</code>-- deze optie overschrijft de globale optie \"Plaatshouders of geblokkeerde elementen verbergen\" en zorgt er voor dat het filter een element altijd verbergt. Op dezelfde manier zal de <code>{2}</code> optie er voor zorgen dat een filter een element nooit verbergt."
   },
   "s75": {
+    "description": "{1}: donottrack",
     "message": "<code>{1}</code> — voor elk adres dat aan een regel met deze optie voldoet en niet aan een uitzonderingsregel wordt een  <a>Volg-mij-niet kopregel</a> verstuurd (is afhankelijk van Adblock Plus 1.3.5 of hoger)."
   },
   "s76": {
+    "description": "{1}: *$donottrack,image,~image",
     "message": "Voor compatibiliteit met oudere versies wordt het aanbevolen om deze optie te gebruiken met tegengestelde type opties, dit voorkomt dat het filter iets blokkeert in eerdere Adblock Plus versies: <code>{1}</code>"
   },
   "s77": {
     "message": "Het gebruik van reguliere expressies"
   },
   "s79": {
+    "description": "{1}: /banner\\d+/, {2}: banner123, {3}: banner321, {4}: banners",
     "message": "Als je nog meer controle wilt hebben over wat er overeenkomt met je filter en wat niet, kan je reguliere expressies gebruiken. Bijvoorbeeld het filter <code>{1}</code> zal overeenkomen met <code>{2}</code> en <code>{3}</code> maar niet met <code>{4}</code>. U kunt <a>documentatie over reguliere expressies</a> raadplegen om te leren hoe u deze moet schrijven."
+  },
+  "s8": {
+    "message": "Het definieren van uitzonderingsregels"
   },
   "s80": {
     "message": "<em>N.B.</em>: Om de prestatie te bevorderen is het aanbevolen om geen reguliere expressies te gebruiken als dit voorkomen kan worden."
@@ -159,6 +203,7 @@
     "message": "U moet de webpagina downloaden, dus u download de reclame vanzelf ook. Het enige wat u hier kunt doen is de reclame verbergen, zodat u hem niet ziet. Daar is element verbergen voor bedoeld."
   },
   "s85": {
+    "description": "{1}: ##div.textad, {2}: ##div#sponsorad, {3}: ##*#sponsorad, {4}: ##textad",
     "message": "De eerste reclame hierboven staat in een div element met class attribuut \"textad\". De volgende regel zal precies deze combinatie verbergen: <code>{1}</code>. Hier markeert ## een element verbergende regel terwijl de rest het element wat verborgen moet worden aangeeft. U kunt elementen op dezelfde manier aan de hand van hun id attribuut verbergen, <code>{2}</code> zal de tweede reclame verbergen. U hoeft geen elementnaam op te geven, de regel <code>{3}</code> werkt net zo goed. En u kunt ook elementen verbergen aan de hand van alleen hun naam, bijvoorbeeld <code>{4}</code> voor de derde reclame."
   },
   "s86": {
@@ -171,27 +216,36 @@
     "message": "Regels beperken tot bepaalde domeinen"
   },
   "s89": {
+    "description": "{1}: ##*.sponsor, {2}: example.com##*.sponsor, {3}: http://example.com/, {4}: http://something.example.com/, {5}: http://example.org/, {6}: domain1.example,domain2.example,domain3.example##*.sponsor",
     "message": "Meestal wil je een bepaalde advertentie op een bepaalde site verbergen, u wilt niet dat de regel op andere sites van toepassing is. Bijvoorbeeld de regel <code>{1}</code> zou geldige code op sommige sites kunnen verbergen. Maar als u het schrijft als <code>{2}</code> wordt het toegepast op <code>{3}</code> en <code>{4}</code> maar niet op <code>{5}</code>. U kunt ook meerdere domeinen opgeven — scheidt ze simpelweg met comma's:<code>{6}</code>."
   },
+  "s9": {
+    "message": "Soms merkt u dat een van uw filters die meestal eigenlijk behoorlijk goed blokkeert in sommige gevallen iets blokkeert wat niet geblokkeerd moet worden. U wilt dit filter niet verwijderen, maar u wilt dat het toch niet matcht in dit ene geval."
+  },
   "s90": {
+    "description": "{1}: ~example.com##*.sponsor, {2}: example.com,~foo.example.com##*.sponsor",
     "message": "Als een domein wordt voorafgegaan door \"~\", zal de regel <strong>niet</strong> worden toegepast op pagina's van dit domein (is afhankelijk van Adblock Plus 1.1 of hoger). Bijvoorbeeld <code>{1}</code> zal worden toegepast op pagina's van elk domein behalve \"example.com\" en <code>{2}</code> zorgt er voor dat de regel van toepassing is op het \"example.com\" domein met uitzondering van het \"foo.example.com\" subdomein."
   },
   "s91": {
+    "description": "{1}: domain, {2}: domain.example,domain.test",
     "message": "<em>N.B.</em>: Door de manier waarop element verbergen is geïmplementeerd kunt u het eigenlijk alleen beperken tot volledige domeinnamen. U kunt niet een deel van een adres gebruiken en u kunt niet <code>{1}</code> gebruiken voor het vervangen van <code>{2}</code>."
   },
   "s92": {
+    "description": "{1}: browser##menuitem#javascriptConsole",
     "message": "<em>N.B.</em>: Element verbergende regels met domein beperking kunnen ook worden gebruikt om elementen van de browser's gebruikersinterface te verbergen. Bijvoorbeeld de filterregel<code>{1}</code> zal de Javascript foutconsole regel in Firefox' extra menu verbergen."
   },
   "s93": {
     "message": "Attribuut selectors"
   },
   "s94": {
+    "description": "{1}: ##table[width=\"80%\"], {2}: ##div[title*=\"adv\"], {3}: ##div[title^=\"adv\"][title$=\"ert\"], {4}: table[width=\"80%\"][bgcolor=\"white\"]",
     "message": "Sommige adverteerders maken het je niet makkelijk p-- hun tekstadvertenties hebben noch een id noch een class attribuut. U kunt andere attributen gebruiken om deze te verbergen, bijvoorbeeld <code>{1}</code> zal tabellen verbergen met een width attribuut ingesteld op 80%. Als je geen waarde van het attribuut wilt opgeven, zal <code>{2}</code> alle div elementen met een title attribuut dat de string \"adv\" bevat verbergen. U kunt ook het begin en het eind van een attribuut controleren, bijvoorbeeld <code>{3}</code> zal div elementen verbergen met title beginend met \"adv\" en eindigend op \"ert\". Zoals je ziet kan je ook meerdere condities gebruiken — <code>{4}</code> zal overeenkomen met tabellen met width attribuut ingesteld op 80% eb bgcolor attribuut ingesteld op white."
   },
   "s95": {
     "message": "Geavanceerde selectors"
   },
   "s97": {
+    "description": "{1}: ##div.adheader + *",
     "message": "Normaal gesproken kan elke CSS selector die door Firefox wordt ondersteund gebruikt worden voor het verbergen van elementen. De volgende regel verbergt bijvoorbeeld alles wat op een div element met class \"adheader\" volgt: <code>{1}</code>. Kijk voor een volledige lijst van CSS op <a>W3C CSS specificatie</a> (let er op dat nog niet alle selectors door Firefox ondersteund worden)."
   },
   "s98": {
@@ -200,34 +254,7 @@
   "s99": {
     "message": "Uitzonderingsregels"
   },
-  "s100": {
-    "message": "Uitzonderingsregels kunnen bestaande regels uitschakelen op bepaalde domeinen."
-  },
-  "s101": {
-    "message": "Deze zijn voornamelijk handig voor auteurs van filterabonnementen die een ander filterabonnement uitbreiden en die ze niet kunnen wijzigen."
-  },
-  "s102": {
-    "message": "Bijvoorbeeld, de regel <code>{1}</code> kan worden uitgeschakeld op <code>{2}</code> door middel van de uitzonderingsregel  <code>{3}</code>."
-  },
-  "s103": {
-    "message": "De combinatie van deze twee regels heeft precies hetzelfde effect als de enkelvoudige regel  <code>{1}</code>."
-  },
-  "s104": {
-    "message": "Het wordt aanbevolen om alleen uitzonderingsregels te gebruiken als je een te algemene elementverbergende regel \nniet kan aanpassen, in alle andere gevallen heeft het de voorkeur om deze regel te beperken tot de benodigde domeinen."
-  },
-  "s105": {
-    "message": "Vereenvoudigde element verbergende syntax"
-  },
-  "s106": {
-    "message": "Adblock Plus ondersteunt vereenvoudigde element verbergende syntax (bijvoorbeeld <code>{1}</code>) alleen om compatbel te zijn met oudere versies. Het gebruik van deze syntax wordt afgeraden, meestal zijn CSS selectors aanbevolen. Ondersteuning voor deze syntax kan op een bepaald moment worden verwijderd."
-  },
-  "s62-link": {
-    "message": "http://www.w3.org/TR/XMLHttpRequest/"
-  },
-  "s79-link": {
-    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern"
-  },
-  "s97-link": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
+  "title": {
+    "message": "Het schrijven van Adblock Plus filters"
   }
 }

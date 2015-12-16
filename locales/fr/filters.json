@@ -1,12 +1,73 @@
 {
-  "title": {
-    "message": "Créer des filtres Adblock Plus"
-  },
   "s1": {
     "message": "Les versions actuelles d'Adblock Plus vous permettent de fabriquer vos propres filtres de plusieurs manières différentes. Ce document explique les possibilités qui sont à votre disposition et comment les utiliser."
   },
+  "s10": {
+    "description": "{1}: adv, {2}: http://example.com/advice.html, {3}: @@advice, {4}: @@",
+    "message": "Ce sont les règles d'exception (liste blanche) qui se chargent de cela — Elles vous permettent de définir des situations dans lesquelles les filtres ne devront pas être appliqués. Par exemple, si vous n'êtes pas satisfait de votre filtre <code>{1}</code> qui bloque <code>{2}</code>, vous pouvez créer une règle d'exception <code>{3}</code>. Les règles d'exception ne sont pas très différentes des filtres de publicités, vous pouvez utiliser des jokers (*) et des expressions régulières. Vous n'avez qu'à les faire débuter par <code>{4}</code> pour indiquer que ce sont des règles d'exception."
+  },
+  "s100": {
+    "message": "Les règles d'exception permettent de désactiver un filtre existant sur certains domaines."
+  },
+  "s101": {
+    "message": "Cela est surtout utile pour les gestionnaires de listes complémentaires qui viennent étendre l'action de listes de filtres qu'ils ne peuvent modifier."
+  },
+  "s102": {
+    "description": "{1}: ##div.textad, {2}: example.com, {3}: example.com#@#div.textad",
+    "message": "Par exemple, le filtre <code>{1}</code> peut être désactivé sur <code>{2}</code> grâce à la règle d'exception  <code>{3}</code> seule."
+  },
+  "s103": {
+    "description": "{1}: ~example.com##div.textad",
+    "message": "La combinaison de ces deux règles a exactement le même effet que la règle  <code>{1}</code> seule."
+  },
+  "s104": {
+    "message": "L'utilisation des règles d'exception est recommandée uniquement lorsque vous ne pouvez pas modifier une règle de masquage d'élément prédominante ; il est sinon préférable de limiter cette règle aux domaines qui le nécessite."
+  },
+  "s105": {
+    "message": "Syntaxe simplifiée pour masquage d'élément"
+  },
+  "s106": {
+    "description": "{1}: #div(id=foo)",
+    "message": "Adblock Plus prend en charge une syntaxe simplifiée pour le masquage d'élément (ex. <code>{1}</code>) pour une compatibilité rétrograde uniquement. L'utilisation de cette syntaxe est déconseillée, les sélecteurs CSS usuels sont préférés. L'aide concernant cette syntaxe sera probablement abandonnée à un moment."
+  },
+  "s12": {
+    "message": "Coïncidence avec le début/la fin d'une adresse"
+  },
+  "s13": {
+    "description": "{1}: ad, {2}: *ad*, {3}: swf, {4}: http://example.com/swf/index.html",
+    "message": "Normalement Adblock Plus traite chaque filtre comme s'il possédait un joker (*) au début et à la fin. Exemple : il n'y a aucune différence entre les filtres <code>{1}</code> et <code>{2}</code>. Ceci ne pose aucun problème en général, mais quelquefois vous souhaiteriez peut-être que le filtre que vous avez défini ne corresponde qu'au début ou qu'à la fin d'une adresse. Vous souhaitez, par exemple, bloquer toutes les animations Flash, mais si vous ajoutez le filtre <code>{3}</code> (extension des animations Flash) l'adresse <code>{4}</code> sera également bloquée."
+  },
+  "s14": {
+    "description": "{1}: swf|, {2}: http://example.com/annoyingflash.swf, {3}: http://example.com/swf/index.html",
+    "message": "La solution à ce problème : ajouter le symbole trait vertical (|) au filtre pour indiquer que c'est la fin de l'adresse qui devra correspondre au filtre pour être bloquée. Par exemple le filtre <code>{1}</code> bloquera <code>{2}</code> mais pas <code>{3}</code>. Et le filtre <code>|http://mauvaisdomaine.exemple/</code> bloquera <code>http://mauvaisdomaine.exemple/banner.gif</code> mais pas <code>http://bondomaine.exemple/analyze?http://mauvaisdomaine.exemple</code> seule."
+  },
+  "s15": {
+    "description": "{1}: http://example.com/banner.gif, {2}: https://example.com/banner.gif, {3}: http://www.example.com/banner.gif, {4}: ||example.com/banner.gif",
+    "message": "De temps à autre vous voudriez bloquer <code>{1}</code> ainsi que <code>{2}</code> et que <code>{3}</code>. Cela peut se faire en plaçant deux traits verticaux devant le filtre qui vérifie si le filtre correspond au début du nom de domaine : <code>{4}</code> bloquera toutes ces adresses mais pas celle-là : <code>http://mauvaisexample.com/banniere.gif</code> ou <code>http://bondomain.example/analyze?http://example.com/banniere.gif</code> (Adblock Plus 1.1 ou supérieur est nécessaire)."
+  },
+  "s16": {
+    "message": "Marquage des caractères séparateurs"
+  },
+  "s17": {
+    "description": "{1}: http://example.com/, {2}: http://example.com:8000/, {3}: http://example.com.ar/, {4}: http://example.com^",
+    "message": "Souvent vous devez accepter des caractères séparateurs dans des filtres. Par exemple, vous pouvez créer un filtre qui bloque <code>{1}</code> et <code>{2}</code> mais pas <code>{3}</code>. Dans ce cas, le symbole ^ pourra être utilisé comme un remplaçant d'un caractère séparateur : <code>{4}</code> (Adblock Plus 1.1 ou supérieur est nécessaire)."
+  },
+  "s18": {
+    "description": "{1}: _ - . %",
+    "message": "Un caractère séparateur est tout sauf une lettre, un nombre ou un des caractères suivants : {1}. La fin d'une adresse est également acceptée comme étant un séparateur. Dans l'exemple suivant, tous les caractères séparateurs sont affichés en rouge :"
+  },
+  "s19": {
+    "description": "{1}: ^example.com^, {2}: ^%D1%82%D0%B5%D1%81%D1%82^, {3}: ^foo.bar^",
+    "message": ". Cette adresse pourra être bloquée par le filtre <code>{1}</code> ou <code>{2}</code> ou <code>{3}</code> seule."
+  },
   "s2": {
     "message": "<em>Décharge de responsabilité</em> : tous les exemples de filtres donnés ici ne sont vraiment que des exemples et ne sont pas destinés à être utilisés."
+  },
+  "s20": {
+    "message": "Commentaires"
+  },
+  "s21": {
+    "message": "Toute règle débutant par un point d'exclamation sera considérée comme étant un commentaire. Elle sera affichée dans la liste de filtres mais grisée au lieu d'être en noir. Adblock Plus ignorera cette règle pour le blocage, elle permet donc d'écrire ce que l'on veut. Vous pouvez ainsi placer un commentaire pour décrire la fonction de tels ou tels filtres. Vous pouvez également indiquer votre nom et la propriété de votre liste en haut de la liste de filtres (beaucoup d'auteurs de listes le font)."
   },
   "s3": {
     "message": "Introduction aux filtres Adblock Plus"
@@ -16,54 +77,6 @@
   },
   "s5": {
     "message": "Règles de filtres basiques"
-  },
-  "s6": {
-    "message": "Le filtre le plus trivial que vous puissiez créer est naturellement l'adresse de la publicité que vous souhaitez bloquer. Cependant, souvent cette adresse change lorsque vous affichez votre page. Cela pourrait être par exemple <code>{1}</code> où 123 est un nombre aléatoire. Dans ce cas, bloquer cette adresse ne sera pas d'une grande utilité, vous devriez donc créer un filtre plus général — tel que <code>{2}</code>, ou peut-être <code>{3}</code> seule."
-  },
-  "s7": {
-    "message": "<em>Remarque</em> : assurez-vous que vous ne remplacez pas trop de choses par des jokers (*). Le filtre <code>{1}</code> bloquera toutes les publicités mais bloquera également toutes autres pages provenant de example.com que vous souhaiteriez peut-être tout de même voir."
-  },
-  "s8": {
-    "message": "Définition de règles d'exception"
-  },
-  "s9": {
-    "message": "De temps à autres vous constaterez qu'un de vos filtres qui fonctionne habituellement correctement, bloque quelque chose qu'il ne devrait pas bloquer. Vous ne souhaitez pas supprimer ce filtre mais il ne devrait plus bloquer ce qu'il vient de bloquer."
-  },
-  "s10": {
-    "message": "Ce sont les règles d'exception (liste blanche) qui se chargent de cela — Elles vous permettent de définir des situations dans lesquelles les filtres ne devront pas être appliqués. Par exemple, si vous n'êtes pas satisfait de votre filtre <code>{1}</code> qui bloque <code>{2}</code>, vous pouvez créer une règle d'exception <code>{3}</code>. Les règles d'exception ne sont pas très différentes des filtres de publicités, vous pouvez utiliser des jokers (*) et des expressions régulières. Vous n'avez qu'à les faire débuter par <code>{4}</code> pour indiquer que ce sont des règles d'exception."
-  },
-  "s11": {
-    "message": "Les règles d'exception peuvent faire davantage. Si une règle d'exception commence par http:// ou https:// (avec une barre verticale | optionnellement avant) cela permettra d'ajouter toutes les pages Web dans les exceptions (liste blanche). Par exemple, si votre règle d'exception est <code>{1}</code> et vous ouvrez des pages de example.com — Adblock Plus sera complètement désactivée pour cette page et rien ne sera bloqué."
-  },
-  "s12": {
-    "message": "Coïncidence avec le début/la fin d'une adresse"
-  },
-  "s13": {
-    "message": "Normalement Adblock Plus traite chaque filtre comme s'il possédait un joker (*) au début et à la fin. Exemple : il n'y a aucune différence entre les filtres <code>{1}</code> et <code>{2}</code>. Ceci ne pose aucun problème en général, mais quelquefois vous souhaiteriez peut-être que le filtre que vous avez défini ne corresponde qu'au début ou qu'à la fin d'une adresse. Vous souhaitez, par exemple, bloquer toutes les animations Flash, mais si vous ajoutez le filtre <code>{3}</code> (extension des animations Flash) l'adresse <code>{4}</code> sera également bloquée."
-  },
-  "s14": {
-    "message": "La solution à ce problème : ajouter le symbole trait vertical (|) au filtre pour indiquer que c'est la fin de l'adresse qui devra correspondre au filtre pour être bloquée. Par exemple le filtre <code>{1}</code> bloquera <code>{2}</code> mais pas <code>{3}</code>. Et le filtre <code>|http://mauvaisdomaine.exemple/</code> bloquera <code>http://mauvaisdomaine.exemple/banner.gif</code> mais pas <code>http://bondomaine.exemple/analyze?http://mauvaisdomaine.exemple</code> seule."
-  },
-  "s15": {
-    "message": "De temps à autre vous voudriez bloquer <code>{1}</code> ainsi que <code>{2}</code> et que <code>{3}</code>. Cela peut se faire en plaçant deux traits verticaux devant le filtre qui vérifie si le filtre correspond au début du nom de domaine : <code>{4}</code> bloquera toutes ces adresses mais pas celle-là : <code>http://mauvaisexample.com/banniere.gif</code> ou <code>http://bondomain.example/analyze?http://example.com/banniere.gif</code> (Adblock Plus 1.1 ou supérieur est nécessaire)."
-  },
-  "s16": {
-    "message": "Marquage des caractères séparateurs"
-  },
-  "s17": {
-    "message": "Souvent vous devez accepter des caractères séparateurs dans des filtres. Par exemple, vous pouvez créer un filtre qui bloque <code>{1}</code> et <code>{2}</code> mais pas <code>{3}</code>. Dans ce cas, le symbole ^ pourra être utilisé comme un remplaçant d'un caractère séparateur : <code>{4}</code> (Adblock Plus 1.1 ou supérieur est nécessaire)."
-  },
-  "s18": {
-    "message": "Un caractère séparateur est tout sauf une lettre, un nombre ou un des caractères suivants : {1}. La fin d'une adresse est également acceptée comme étant un séparateur. Dans l'exemple suivant, tous les caractères séparateurs sont affichés en rouge :"
-  },
-  "s19": {
-    "message": ". Cette adresse pourra être bloquée par le filtre <code>{1}</code> ou <code>{2}</code> ou <code>{3}</code> seule."
-  },
-  "s20": {
-    "message": "Commentaires"
-  },
-  "s21": {
-    "message": "Toute règle débutant par un point d'exclamation sera considérée comme étant un commentaire. Elle sera affichée dans la liste de filtres mais grisée au lieu d'être en noir. Adblock Plus ignorera cette règle pour le blocage, elle permet donc d'écrire ce que l'on veut. Vous pouvez ainsi placer un commentaire pour décrire la fonction de tels ou tels filtres. Vous pouvez également indiquer votre nom et la propriété de votre liste en haut de la liste de filtres (beaucoup d'auteurs de listes le font)."
   },
   "s51": {
     "message": "Fonctionnalités avancées"
@@ -78,70 +91,107 @@
     "message": "Adblock Plus vous permet de spécifier un certain nombre d'options pour modifier le comportement d'un filtre. Vous devez lister ces options en les séparant par une virgule et en les faisant débuter par un dollar ($) à la fin du filtre. Exemple :"
   },
   "s55": {
+    "description": "{1}: */ads/*, {2}: script, {3}: match-case",
     "message": "Ici <code>{1}</code> est le filtre et  <code>{2}</code> et <code>{3}</code> sont ses options. Pour le moment, sont disponibles les options suivantes :"
   },
   "s56": {
     "message": "Options de type : détermine quel type d'éléments le filtre peut bloquer (ou autoriser en cas de liste blanche). De nombreux types d'options peuvent être spécifiés pour indiquer que le filtre devra être appliqué à plusieurs types d'éléments. Les types possibles sont :"
   },
   "s57": {
+    "description": "{1}: script",
     "message": "<code>{1}</code> — scripts externes chargés via la balise HTML script"
   },
   "s58": {
+    "description": "{1}: image",
     "message": "<code>{1}</code> — images normales, chargées typiquement via la balise HTML img"
   },
   "s59": {
+    "description": "{1}: stylesheet",
     "message": "<code>{1}</code> — fichiers de feuille de style CSS externes"
   },
+  "s6": {
+    "description": "{1}: http://example.com/ads/banner123.gif, {2}: http://example.com/ads/banner*.gif, {3}: http://example.com/ads/*",
+    "message": "Le filtre le plus trivial que vous puissiez créer est naturellement l'adresse de la publicité que vous souhaitez bloquer. Cependant, souvent cette adresse change lorsque vous affichez votre page. Cela pourrait être par exemple <code>{1}</code> où 123 est un nombre aléatoire. Dans ce cas, bloquer cette adresse ne sera pas d'une grande utilité, vous devriez donc créer un filtre plus général — tel que <code>{2}</code>, ou peut-être <code>{3}</code> seule."
+  },
   "s60": {
+    "description": "{1}: object",
     "message": "<code>{1}</code> — contenu traité par des plugins du navigateur comme par exemple Flash ou Java"
   },
   "s62": {
+    "description": "{1}: xmlhttprequest",
     "message": "<code>{1}</code> — requêtes démarrées par <a>l'objet XMLHttpRequest</a> "
   },
+  "s62-link": {
+    "message": "http://www.w3.org/TR/XMLhttpRequest/"
+  },
   "s63": {
+    "description": "{1}: object-subrequest",
     "message": "<code>{1}</code> — requêtes démarrées par les plugins comme Flash"
   },
   "s64": {
+    "description": "{1}: subdocument",
     "message": "<code>{1}</code> — pages incorporées (embedded), habituellement incluses via la balise HTML frames"
   },
   "s65": {
+    "description": "{1}: document",
     "message": "<code>{1}</code> — la page elle-même (uniquement les <a>règles d'exception</a> peuvent être appliquées à la page)"
   },
   "s66": {
+    "description": "{1}: elemhide, {2}: document",
     "message": "<code>{1}</code> — uniquement pour les règles d'exception, comme pour <code>{2}</code> mais ne désactive que les <a>règles de masquage d'élément</a> sur la page plutôt que toutes les règles de filtre  (Adblock Plus 1.2 et supérieur nécessaire)"
   },
   "s67": {
+    "description": "{1}: other",
     "message": "<code>{1}</code> — d'autres types de requêtes telles que liaisons XBL, requêtes http XML ou données demandées par des objets. Cela signifie : les types de requêtes non appréhéndées par la liste ci-dessus"
   },
   "s68": {
+    "description": "{1}: background, {2}: xbl, {3}: ping, {4}: dtd",
     "message": "Les options de type <code>{1}</code>, <code>{2}</code>,  <code>{3}</code> et <code>{4}</code> sont obsolètes et ne doivent plus être utilisées."
   },
   "s69": {
+    "description": "{1}: ~script, {2}: ~image, {3}: ~stylesheet, {4}: ~object, {5}: ~xmlhttprequest, {6}: ~object-subrequest, {7}: ~subdocument, {8}: ~document, {9}: ~elemhide, {10}: ~other",
     "message": "Options de type inverse : spécifie les types d'éléments auxquels le filtre <strong>ne doit pas</strong> être appliqué. Les options de type inverse possibles sont : <code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code>, <code>{6}</code>, <code>{7}</code>, <code>{8}</code>, <code>{9}</code>, <code>{10}</code>"
   },
+  "s7": {
+    "description": "{1}: http://example.com/*",
+    "message": "<em>Remarque</em> : assurez-vous que vous ne remplacez pas trop de choses par des jokers (*). Le filtre <code>{1}</code> bloquera toutes les publicités mais bloquera également toutes autres pages provenant de example.com que vous souhaiteriez peut-être tout de même voir."
+  },
   "s70": {
+    "description": "{1}: third-party, {2}: ~third-party",
     "message": "Restriction aux requêtes third-party/first-party (provenant d'un autre/du même site) : Si l'option <code>{1}</code> est spécifiée, le filtre n'est appliqué qu'aux requêtes provenant d'une autre origine que la page actuellement affichée. De manière similaire, <code>{2}</code> restreint l'action du filtre aux requêtes provenant de la même origine que la page couramment affichée."
   },
   "s71": {
+    "description": "{1}: domain=example.com, {2}: domain=example.com|example.net, {3}: domain=~example.com, {4}: domain=example.com|~foo.example.com",
     "message": "Restrictions de domaines : l'option <code>{1}</code> signifie que le filtre ne devra s'appliquer qu'aux pages provenant du domaine \"example.com\". Plusieurs domaines peuvent être spécifiés en utilisant \"|\" comme séparateur : avec l'option <code>{2}</code> le filtre ne s'appliquera qu'aux pages provenant des domaines  \"example.com\" ou \"example.net\". Si un nom de domaine est précédé par \"~\", le filtre <strong>ne s'appliquera pas</strong> aux pages de ce domaine. Par exemple, <code>{3}</code> signifie que le filtre devra s'appliquer à toutes les pages sauf celles provenant de \"example.com\" et <code>{4}</code> restreint l'action du filtre au domaine \"example.com\" avec comme exception le sous-domaine \"foo.example.com\"."
   },
   "s73": {
+    "description": "{1}: match-case, {2}: */BannerAd.gif$match-case, {3}: http://example.com/BannerAd.gif, {4}: http://example.com/bannerad.gif",
     "message": "<code>{1}</code> — fait en sorte que le filtre ne s'applique qu'aux adresses correspondant à la casse (prise en compte des minuscules et des majuscules), par exemple, le filtre <code>{2}</code> bloquera <code>{3}</code> mais pas <code>{4}</code> seule."
   },
   "s74": {
+    "description": "{1}: collapse, {2}: ~collapse",
     "message": "<code>{1}</code> — cette option va se substituer à l’option globale « Masquer les conteneurs des éléments bloqués » et va faire en sorte que le filtre masque le conteneur à coup sûr. De la même façon, l'option <code>{2}</code> permet d’éviter que le conteneur de l’élément ne soit masqué."
   },
   "s75": {
+    "description": "{1}: donottrack",
     "message": "<code>{1}</code> — pour toute adresse correspondant à une règle de blocage et ne correspondant à aucune règle d’exception, un en-tête  <a>Do-Not-Track</a> sera envoyé grâce à cette option (requiert Adblock Plus 1.3.5 ou supérieur)."
   },
   "s76": {
+    "description": "{1}: *$donottrack,image,~image",
     "message": "Pour assurer une rétrocompatibilité, il est recommandé d’utiliser cette option en association avec des options de type contradictoires, ce qui permettra d’éviter que le filtre ne bloque rien avec les versions antérieurs d’Adblock Plus :  <code>{1}</code>"
   },
   "s77": {
     "message": "Utilisation d'expressions régulières"
   },
   "s79": {
+    "description": "{1}: /banner\\d+/, {2}: banner123, {3}: banner321, {4}: banners",
     "message": "Si vous souhaitez davantage de précision de filtrage vous pouvez utiliser des expressions régulières. Par exemple, le filtre <code>{1}</code> bloquera <code>{2}</code> et <code>{3}</code> mais pas <code>{4}</code>. Vous pouvez lire une <a>documentation sur les expressions régulières</a> pour apprendre à en créer."
+  },
+  "s79-link": {
+    "message": "https://developer.mozilla.org/fr/Guide_JavaScript_1.5/Expressions_rationnelles"
+  },
+  "s8": {
+    "message": "Définition de règles d'exception"
   },
   "s80": {
     "message": "<em>Remarque</em> : Pour des raisons de performances il est recommandé de ne pas utiliser d'expressions régulières tant que cela peut être évité."
@@ -159,6 +209,7 @@
     "message": "Vous devez charger la page Web, vous téléchargerez donc obligatoirement les publicités. Tout ce que vous pouvez encore faire, c'est de cacher la publicité pour ne pas la voir s'afficher. La fonctionnalité \"Cacher les éléments\" vous permettra de faire cela."
   },
   "s85": {
+    "description": "{1}: ##div.textad, {2}: ##div#sponsorad, {3}: ##*#sponsorad, {4}: ##textad",
     "message": "La première publicité dans l'exemple ci-dessus est contenue dans un élément div avec un attribut de classe \"textad\". Le filtre suivant cachera exactement cette combinaison : <code>{1}</code>. Ici ## marque une règle de masquage d'élément alors que le reste est un sélecteur identifiant les éléments devant être masqués. Vous pouvez de la même manière cacher des éléments par leur attribut d'id, <code>{2}</code> cachera la seconde publicité. Vous n'êtes pas obligé de spécifier le nom d'élément, le filtre <code>{3}</code> fonctionnera tout aussi bien. Sur le même principe, vous pouvez cacher des éléments par leur nom, par exemple <code>{4}</code> pour la troisième publicité."
   },
   "s86": {
@@ -171,27 +222,36 @@
     "message": "Limitation des règles à certains domaines"
   },
   "s89": {
+    "description": "{1}: ##*.sponsor, {2}: example.com##*.sponsor, {3}: http://example.com/, {4}: http://something.example.com/, {5}: http://example.org/, {6}: domain1.example,domain2.example,domain3.example##*.sponsor",
     "message": "En général vous souhaitez cacher une publicité spécifique sur un site spécifique, vous ne souhaitez pas appliquer le filtre à d'autres sites. Par exemple le filtre <code>{1}</code> pourrait cacher des codes valides sur certains sites. Mais si vous écrivez <code>{2}</code> il sera appliqué aux sites <code>{3}</code> et <code>{4}</code> mais pas à <code>{5}</code>. Vous pouvez également spécifier plusieurs domaines — séparez-les simplement par des virgules : <code>{6}</code> seule."
   },
+  "s9": {
+    "message": "De temps à autres vous constaterez qu'un de vos filtres qui fonctionne habituellement correctement, bloque quelque chose qu'il ne devrait pas bloquer. Vous ne souhaitez pas supprimer ce filtre mais il ne devrait plus bloquer ce qu'il vient de bloquer."
+  },
   "s90": {
+    "description": "{1}: ~example.com##*.sponsor, {2}: example.com,~foo.example.com##*.sponsor",
     "message": "Si un nom de domaine est précédé par un \"~\", la règle <strong>ne sera pas</strong> appliquée pour les pages de ce domaine (Adblock Plus 1.1 ou supérieur est nécessaire). Par exemple, <code>{1}</code> sera appliqué à toutes les pages de tout domaine sauf \"example.com\" et <code>{2}</code> fera appliquer la règle sur le domaine \"example.com\" avec comme exception le sous-domaine \"foo.example.com\"."
   },
   "s91": {
+    "description": "{1}: domain, {2}: domain.example,domain.test",
     "message": "<em>Remarque</em> : A cause de la manière avec laquelle \"cacher les éléments\" est implémentée, vous ne pouvez que vous limiter à des noms de domaines complets. Vous ne pouvez utiliser une autre partie de l'adresse et vous ne pouvez pas utiliser <code>{1}</code> afin de remplacer <code>{2}</code> seule."
   },
   "s92": {
+    "description": "{1}: browser##menuitem#javascriptConsole",
     "message": "<em>Remarque</em> : Les règles pour cacher des éléments en limitant par domaine peuvent également être utilisées pour cacher des éléments de l'interface utilisateur. Exemple : le filtre <code>{1}</code> cachera l'entrée \"Console javascript\" dans le menu \"Outils\" de Firefox."
   },
   "s93": {
     "message": "Sélecteurs d'attribut"
   },
   "s94": {
+    "description": "{1}: ##table[width=\"80%\"], {2}: ##div[title*=\"adv\"], {3}: ##div[title^=\"adv\"][title$=\"ert\"], {4}: table[width=\"80%\"][bgcolor=\"white\"]",
     "message": "Certains publicitaires ne vous facilitent pas la tâche — leur texte publicitaire ne comporte ni un attribut classe, ni un attribut id. Dans ce cas, vous pouvez utiliser d'autres attributs pour cacher les publicités, par exemple <code>{1}</code> cachera les tableaux ayant un attribut width (largeur) de 80%. Si vous ne souhaitez pas spécifier la valeur entière de l'attribut, <code>{2}</code> cachera tous les éléments div avec un attribut title (titre) contenant la suite de caractères \"adv\". Vous pouvez également vérifier le début et la fin d'un attribut, par exemple <code>{3}</code> cachera les éléments div dont l'attribut title commence par \"adv\" et se termine par \"ert\". Comme vous le constatez, vous pouvez également utiliser plusieurs conditions — <code>{4}</code> correspondra aux tableaux dont l'attribut width est fixé à 80% et l'attribut bgcolor défini à white (couleur blanche)."
   },
   "s95": {
     "message": "Sélecteurs avancés"
   },
   "s97": {
+    "description": "{1}: ##div.adheader + *",
     "message": "En général, tout sélecteur CSS pris en charge par Firefox pourra être utilisé pour le masquage d'élément. Par exemple la règle suivante masquera tout ce qui suit un élément div avec pour classe \"adheader\": <code>{1}</code>. Pour obtenir une liste complète CSS  rendez-vous sur la page de la <a>spécification W3C CSS</a> (veuillez prendre note que tous les sélecteurs ne sont pas encore pris en charge par Firefox)."
   },
   "s98": {
@@ -200,34 +260,7 @@
   "s99": {
     "message": "Règles d'exception"
   },
-  "s100": {
-    "message": "Les règles d'exception permettent de désactiver un filtre existant sur certains domaines."
-  },
-  "s101": {
-    "message": "Cela est surtout utile pour les gestionnaires de listes complémentaires qui viennent étendre l'action de listes de filtres qu'ils ne peuvent modifier."
-  },
-  "s102": {
-    "message": "Par exemple, le filtre <code>{1}</code> peut être désactivé sur <code>{2}</code> grâce à la règle d'exception  <code>{3}</code> seule."
-  },
-  "s103": {
-    "message": "La combinaison de ces deux règles a exactement le même effet que la règle  <code>{1}</code> seule."
-  },
-  "s104": {
-    "message": "L'utilisation des règles d'exception est recommandée uniquement lorsque vous ne pouvez pas modifier une règle de masquage d'élément prédominante ; il est sinon préférable de limiter cette règle aux domaines qui le nécessite."
-  },
-  "s105": {
-    "message": "Syntaxe simplifiée pour masquage d'élément"
-  },
-  "s106": {
-    "message": "Adblock Plus prend en charge une syntaxe simplifiée pour le masquage d'élément (ex. <code>{1}</code>) pour une compatibilité rétrograde uniquement. L'utilisation de cette syntaxe est déconseillée, les sélecteurs CSS usuels sont préférés. L'aide concernant cette syntaxe sera probablement abandonnée à un moment."
-  },
-  "s62-link": {
-    "message": "http://www.w3.org/TR/XMLhttpRequest/"
-  },
-  "s79-link": {
-    "message": "https://developer.mozilla.org/fr/Guide_JavaScript_1.5/Expressions_rationnelles"
-  },
-  "s97-link": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
+  "title": {
+    "message": "Créer des filtres Adblock Plus"
   }
 }

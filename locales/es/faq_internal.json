@@ -1,24 +1,6 @@
 {
-  "title": {
-    "message": "Preguntas frecuentes - Interioridades de Adblock Plus"
-  },
   "s1": {
     "message": "¿Dónde puedo encontrar el significado de todas las preferencias de Adblock Plus?"
-  },
-  "s3": {
-    "message": "Adblock Plus utiliza diferentes preferencias a las que puede acceder mediante <a>about:config</a>. Todas empiezan con <code>{1}</code> (a diferencia de Adblock y Adblock Plus 0.5, que utilizan el prefijo <code>{2}</code>). Puede consultar la lista completa con explicaciones <a>aquí</a>."
-  },
-  "s4": {
-    "message": "¿Cómo puedo acceder a Adblock Plus desde mi extensión?"
-  },
-  "s5": {
-    "message": "Para posibilitar que otras extensiones se integren con Adblock Plus se ha exportado la interfaz <code>{1}</code> . Consulte la <a>documentación de la interfaz</a> para más información."
-  },
-  "s6": {
-    "message": "¿Cómo bloquea direcciones Adblock Plus?"
-  },
-  "s7": {
-    "message": "En realidad, Gecko (el motor interno de Firefox, Thunderbird y otras aplicaciones) hace la mayor parte del trabajo, al permitir lo que se denominan \"políticas de contenidos\". Una política de contenidos es un objeto JavaScript (o C++) al que se llama cada vez que el navegador tiene que cargar algo. Entonces puede mirar la dirección a cargar y otros datos más, y decidir si se permite o no. Existen varias políticas de contenidos predeterminadas (cuando usted define a qué sitios no se les permite cargar imágenes en Firefox o Seamonkey, está configurando unas de esas políticas predeterminadas), y cualquier extensión puede registrar la suya. Así que Adblock Plus sólo tiene que registrar su política de contenidos, y entonces sólo falta una lógica aplicada que decida que direcciones bloquear y una interfaz de usuario que permita configurar los filtros."
   },
   "s11": {
     "message": "Para desarrolladores: para registrar una política de contenidos hay que <a>escribir un componente XPCOM</a> que a su vez implemente la <a>interfaz nsIContentPolicy</a>. Asegúrese de ajustar el método registerSelf del módulo para registrar su componente en la categoría \"content-policy\" (utilice el <a>administrador de categorías</a>). De este modo se llamará al método shouldLoad de su componente y usted podrá decidir si esa petición específica debe aceptarse o rechazarse."
@@ -65,34 +47,30 @@
   "s29": {
     "message": "Esto es sólo un comentario. Adblock (y Adblock Plus por ese mismo motivo) ignorará todo antes del marcador real. La versión mínima de Adblock Plus exigida no se impone porque Adblock Plus 0.6.1.2 no la soportaba. Sin embargo, si usted usa una sintaxis de filtros más moderna podría tener algo como esto:"
   },
+  "s3": {
+    "description": "{1}: extensions.adblockplus., {2}: adblock.",
+    "message": "Adblock Plus utiliza diferentes preferencias a las que puede acceder mediante <a>about:config</a>. Todas empiezan con <code>{1}</code> (a diferencia de Adblock y Adblock Plus 0.5, que utilizan el prefijo <code>{2}</code>). Puede consultar la lista completa con explicaciones <a>aquí</a>."
+  },
   "s30": {
     "message": "Este tipo de encabezamiento está soportado a partir de Adblock Plus 0.7.1. Las versiones anteriores de Adblock Plus y Adblock no pueden abrir archivos con ese encabezamiento. Las versiones actuales comprobarán el número de versión del cabecero y lo compararán con su número de versión. Si el archivo exige una versión más moderna de Adblock Plus se le mostrará un mensaje al usuario pidiéndole que actualice. Las suscripciones seguirán cargando archivos diseñados para versiones más modernas de Adblock Plus pero mostrarán un aviso en la ventana de preferencias."
   },
   "s31": {
     "message": "Por último, si quiere exigir que se use Adblock Plus pero no quiere especificar el número de versión puede iniciar el archivo con <code>[Adblock Plus]</code>. Por supuesto que este archivo sólo será aceptado por Adblock Plus 0.7.1 y las versiones posteriores."
   },
-  "s3-link": {
-    "message": "http://kb.mozillazine.org/About:config"
+  "s4": {
+    "message": "¿Cómo puedo acceder a Adblock Plus desde mi extensión?"
   },
-  "s11-link": {
-    "message": "http://developer.mozilla.org/en/docs/How_to_Build_an_XPCOM_Component_in_Javascript"
+  "s5": {
+    "description": "{1}: IAdblockPlus",
+    "message": "Para posibilitar que otras extensiones se integren con Adblock Plus se ha exportado la interfaz <code>{1}</code> . Consulte la <a>documentación de la interfaz</a> para más información."
   },
-  "s11-link2": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
+  "s6": {
+    "message": "¿Cómo bloquea direcciones Adblock Plus?"
   },
-  "s11-link3": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
+  "s7": {
+    "message": "En realidad, Gecko (el motor interno de Firefox, Thunderbird y otras aplicaciones) hace la mayor parte del trabajo, al permitir lo que se denominan \"políticas de contenidos\". Una política de contenidos es un objeto JavaScript (o C++) al que se llama cada vez que el navegador tiene que cargar algo. Entonces puede mirar la dirección a cargar y otros datos más, y decidir si se permite o no. Existen varias políticas de contenidos predeterminadas (cuando usted define a qué sitios no se les permite cargar imágenes en Firefox o Seamonkey, está configurando unas de esas políticas predeterminadas), y cualquier extensión puede registrar la suya. Así que Adblock Plus sólo tiene que registrar su política de contenidos, y entonces sólo falta una lógica aplicada que decida que direcciones bloquear y una interfaz de usuario que permita configurar los filtros."
   },
-  "s20-link": {
-    "message": "http://www.w3.org/TR/CSS21/"
-  },
-  "s22-link": {
-    "message": "http://developer.mozilla.org/en/docs/CSS:%40-moz-document"
-  },
-  "s26-link": {
-    "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
-  },
-  "s26-link2": {
-    "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
+  "title": {
+    "message": "Preguntas frecuentes - Interioridades de Adblock Plus"
   }
 }

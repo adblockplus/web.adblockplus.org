@@ -1,9 +1,15 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 0.6.0.4"
-  },
   "s1": {
     "message": "Réparé : \"Non chargée\" dans la barre d'état au démarrage et le menu contextuel réinitialisant à l'état par défaut (Pour cette raison, compatibilité avec le glisser/déposer avec la suite Mozilla avant 1.7 et Firefox avant 0.9)"
+  },
+  "s10": {
+    "message": "Ajout de \"Bloquer le lien avec Adblock...\" dans le menu contextuel (si \"Bloquer en utilisant l'adresse cible des publicités\" est activée)"
+  },
+  "s11": {
+    "message": "Beaucoup de modifications mineures"
+  },
+  "s12": {
+    "message": "Énumération des modifications pour la version précédente"
   },
   "s2": {
     "message": "Ajout d'une icône dans la barre d'outils (uniquement pour Firefox, peut être supprimée/déplacée via la boîte de dialogue standard de personnalisation)"
@@ -29,13 +35,7 @@
   "s9": {
     "message": "Préférences : Rendre les élément de menu désactivables à tout moment"
   },
-  "s10": {
-    "message": "Ajout de \"Bloquer le lien avec Adblock...\" dans le menu contextuel (si \"Bloquer en utilisant l'adresse cible des publicités\" est activée)"
-  },
-  "s11": {
-    "message": "Beaucoup de modifications mineures"
-  },
-  "s12": {
-    "message": "Énumération des modifications pour la version précédente"
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.6.0.4"
   }
 }

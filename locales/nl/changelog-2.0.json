@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Gedetaillleerde wijzigingslijst voor Adblock Plus 2.0"
-  },
   "s1": {
     "message": "De volgende lijst geeft de wijzigingen weer ten opzicht van Adblock Plus 1.3.10."
-  },
-  "s2": {
-    "message": "Functies"
-  },
-  "s3": {
-    "message": "Experimentele ondersteuning voor het blokkeren van pop-ups als de ingebouwde pop-up blokkeerder niet werkt (<a>forum onderwerp</a>)."
-  },
-  "s4": {
-    "message": "Nieuwe Filtervoorkeuren venster vergemakkelijkt het beheren van filters en abonnementen (<a>forum onderwerp</a>)."
-  },
-  "s5": {
-    "message": "Aangepaste filters kunnen worden georganiseerd in elk gewenst aantal filter groepen."
-  },
-  "s6": {
-    "message": "Back-up en herstel functionaliteit maakt het mogelijk om een kopie van alle filtervoorkeuren te maken, niet alleen van aangepaste filters."
-  },
-  "s7": {
-    "message": "\"Sta niet-opdringerige reclames\" instelling toegevoegd (kan gewijzigd worden in Filtervoorkeuren,  <a>documentatie</a>)."
-  },
-  "s8": {
-    "message": "Gebruikersinterface"
-  },
-  "s9": {
-    "message": "Litouwse vertaling is opnieuw opgenomen."
   },
   "s10": {
     "message": "Adblock Plus opties worden direct getoond op zijn pagina in de Add-onbeheerder."
@@ -59,6 +32,9 @@
   "s19": {
     "message": "\"Filtertreffers tellen\" is nu een zichtbare optie."
   },
+  "s2": {
+    "message": "Functies"
+  },
   "s20": {
     "message": "\"Inklappen van geblokkeerde elementen\" optie is hernoemd naar \"Plaatshouders van geblokkeerde elementen verbergen\"."
   },
@@ -78,21 +54,48 @@
     "message": "De minimaal benodigde Firefox versie is nu Firefox 3.6.12, oudere versies worden niet langer ondersteund. Op dezelfde manier zijn Thunderbird 3.1.7 of SeaMonkey 2.1 vereist, Songbird en Prism worden niet meer ondersteund."
   },
   "s26": {
+    "description": "{1}: document, {2}: elemhide",
     "message": "<code>{1}</code> en <code>{2}</code> filteropties voor uitzonderingsregels kunnen nu ook voor frames gelden, niet alleen op het hoogste niveau."
   },
   "s27": {
+    "description": "{1}: sitekey",
     "message": " <code>{1}</code> filteroptie toegevoegd, zodat je uitzonderingen kan maken die op meerdere sites betrekking hebben."
   },
   "s28": {
+    "description": "{1}: xbl, {2}: dtd, {3}: ping, {4}: other",
     "message": "Filteropties <code>{1}</code>, <code>{2}</code> en <code>{3}</code> worden nu als synoniem beschouwd van <code>{4}</code>, de overeenkomstige verzoeken zijn erg zeldzaam (<a>forum onderwerp</a>)."
   },
   "s29": {
     "message": "Vereenvoudigde volgen van redirects, een veelvoorkomende bron van geheugenproblemen en andere problemen verwijderd (<a>bug 672111</a>,  <a>bug 653533</a>)."
+  },
+  "s3": {
+    "message": "Experimentele ondersteuning voor het blokkeren van pop-ups als de ingebouwde pop-up blokkeerder niet werkt (<a>forum onderwerp</a>)."
   },
   "s30": {
     "message": "Commentaar <code>! Homepage: http://example.com/</code> in filterabonnementen wordt nu herkend."
   },
   "s31": {
     "message": "Wijzigingslijst voor de vorige versie"
+  },
+  "s4": {
+    "message": "Nieuwe Filtervoorkeuren venster vergemakkelijkt het beheren van filters en abonnementen (<a>forum onderwerp</a>)."
+  },
+  "s5": {
+    "message": "Aangepaste filters kunnen worden georganiseerd in elk gewenst aantal filter groepen."
+  },
+  "s6": {
+    "message": "Back-up en herstel functionaliteit maakt het mogelijk om een kopie van alle filtervoorkeuren te maken, niet alleen van aangepaste filters."
+  },
+  "s7": {
+    "message": "\"Sta niet-opdringerige reclames\" instelling toegevoegd (kan gewijzigd worden in Filtervoorkeuren,  <a>documentatie</a>)."
+  },
+  "s8": {
+    "message": "Gebruikersinterface"
+  },
+  "s9": {
+    "message": "Litouwse vertaling is opnieuw opgenomen."
+  },
+  "title": {
+    "message": "Gedetaillleerde wijzigingslijst voor Adblock Plus 2.0"
   }
 }

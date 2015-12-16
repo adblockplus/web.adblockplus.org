@@ -1,30 +1,6 @@
 {
-  "title": {
-    "message": "Preguntas frecuentes - Proyecto Adblock Plus"
-  },
   "s1": {
     "message": "¿Qué relación existe entre Adblock Plus y Adblock?"
-  },
-  "s2": {
-    "message": "El desarrollo de Adblock quedó prácticamente paralizado en 2004. Cada vez más y más gente pedía mejoras, y fue entonces cuando Michael McDonald desarrolló Adblock Plus 0.5 — que básicamente consiste en una versión de Adblock con lista blanca, suscripciones de filtros y otras características útiles."
-  },
-  "s3": {
-    "message": "Esa versión de Adblock todavía se basaba en Adblock, lo que limitaba seriamente las mejoras. La calidad de Adblock era, por decirlo de alguna manera, menor de lo necesario, así que era urgente una reescritura completa del código. Y así nació Adblock Plus 0.6, una extensión completamente nueva centrada en la facilidad de uso, la estabilidad y la seguridad. Por motivos diversos algunas mejoras de Adblock Plus 0.5 no estaban incluidas en la primera entrega de Adblock Plus 0.6, pero eso se solucionó con Adblock Plus 0.6.1."
-  },
-  "s4": {
-    "message": "Michael McDonald, el desarrollador de Adblock Plus 0.5, se ha pasado al proyecto Adblock y está intentando impulsar su desarrollo. Por ese motivo a partir de Adblock Plus 0.6 el desarrollador principal de Adblock Plus soy yo (Wladimir Palant)."
-  },
-  "s5": {
-    "message": "¿Por qué es tan difícil añadir una opción para...?"
-  },
-  "s7": {
-    "message": "No lo es. Pero el planteamiento de \"opciones para todo\" tiene sus consecuencias. Sencillamente citaré a <a>Joel Spolsky</a> sobre este tema:"
-  },
-  "s8": {
-    "message": "Cada vez que presentas una opción, le estás pidiendo al usuario que tome una decisión."
-  },
-  "s9": {
-    "message": "Pedirle al usuario que tome una decisión no es algo malo <em>en sí mismo </em>. Elegir libremente puede ser algo maravilloso. A la gente <em>le encanta</em> tomar café en Starbucks porque tienen un montón de<em> elecciones</em>. Grande o pequeño, desnatado o no, café o Moca, con o sin espuma... Y super caliente, si quieres."
   },
   "s10": {
     "message": "El problema aparece cuando les pide que elijan algo que <em>no les importa</em>. [...] con toda seguridad provocará perplejidad y, al final, enfado en el usuario."
@@ -56,6 +32,9 @@
   "s19": {
     "message": "Antes de que se publique una nueva versión de Adblock Plus tienen que existir siempre <a>versiones en desarrollo</a>. Sirven para depurar fallos e incluso características ml diseñadas antes de la versión definitiva. Puede suscribirse al <a>RSS feed</a> para saber cuándo se publica una nueva versión en desarrollo."
   },
+  "s2": {
+    "message": "El desarrollo de Adblock quedó prácticamente paralizado en 2004. Cada vez más y más gente pedía mejoras, y fue entonces cuando Michael McDonald desarrolló Adblock Plus 0.5 — que básicamente consiste en una versión de Adblock con lista blanca, suscripciones de filtros y otras características útiles."
+  },
   "s20": {
     "message": "Ayudando a otros usuarios"
   },
@@ -77,6 +56,9 @@
   "s29": {
     "message": "Difundiendo el mensaje"
   },
+  "s3": {
+    "message": "Esa versión de Adblock todavía se basaba en Adblock, lo que limitaba seriamente las mejoras. La calidad de Adblock era, por decirlo de alguna manera, menor de lo necesario, así que era urgente una reescritura completa del código. Y así nació Adblock Plus 0.6, una extensión completamente nueva centrada en la facilidad de uso, la estabilidad y la seguridad. Por motivos diversos algunas mejoras de Adblock Plus 0.5 no estaban incluidas en la primera entrega de Adblock Plus 0.6, pero eso se solucionó con Adblock Plus 0.6.1."
+  },
   "s30": {
     "message": "Perdónenos por abusar de este eslogan, pero el informar a otras personas sobre Adblock Plus constituye también una aportación valiosa. Aunque nadie se beneficie directamente de esta extensión, el uso generalizado de software para bloquear publicidad puede conseguir que los anuncios intrusivos sean tan ineficientes económicamente que al final se conviertan algo tan raro como han llegado a ser las ventanas emergentes. Y, además de hacer que Internet sea un sitio mejor, sencillamente resulta agradable saber que nuestro esfuerzo sirve para algo."
   },
@@ -89,16 +71,22 @@
   "s33": {
     "message": "Puede aportar una donación en la <a>página de contribuciones</a>."
   },
-  "s7-link": {
-    "message": "http://www.joelonsoftware.com/uibook/chapters/fog0000000059.html"
+  "s4": {
+    "message": "Michael McDonald, el desarrollador de Adblock Plus 0.5, se ha pasado al proyecto Adblock y está intentando impulsar su desarrollo. Por ese motivo a partir de Adblock Plus 0.6 el desarrollador principal de Adblock Plus soy yo (Wladimir Palant)."
   },
-  "s28-link": {
-    "message": "http://www.babelzilla.org/"
+  "s5": {
+    "message": "¿Por qué es tan difícil añadir una opción para...?"
   },
-  "s28-link2": {
-    "message": "http://www.babelzilla.org/forum/index.php?showtopic=1898"
+  "s7": {
+    "message": "No lo es. Pero el planteamiento de \"opciones para todo\" tiene sus consecuencias. Sencillamente citaré a <a>Joel Spolsky</a> sobre este tema:"
   },
-  "s28-link3": {
-    "message": "http://www.babelzilla.org/index.php?option=com_content&task=category&sectionid=3&id=7&Itemid=25"
+  "s8": {
+    "message": "Cada vez que presentas una opción, le estás pidiendo al usuario que tome una decisión."
+  },
+  "s9": {
+    "message": "Pedirle al usuario que tome una decisión no es algo malo <em>en sí mismo </em>. Elegir libremente puede ser algo maravilloso. A la gente <em>le encanta</em> tomar café en Starbucks porque tienen un montón de<em> elecciones</em>. Grande o pequeño, desnatado o no, café o Moca, con o sin espuma... Y super caliente, si quieres."
+  },
+  "title": {
+    "message": "Preguntas frecuentes - Proyecto Adblock Plus"
   }
 }

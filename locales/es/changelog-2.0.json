@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Lista de cambios en Adblock Plus 2.0"
-  },
   "s1": {
     "message": "A continuación se detallan los cambios respecto a Adblock Plus 1.3.10."
-  },
-  "s2": {
-    "message": "Funcionalidades"
-  },
-  "s3": {
-    "message": "Capacidad experimental de bloqueo de pop-ups (ventanas emergentes) para aquellos casos en los que el bloqueador de ventanas emergentes interno no funcione (<a>tema del foro</a>)."
-  },
-  "s4": {
-    "message": "La nueva ventana de Preferencias de filtros hace que sea más sencillo administrar los filtros y suscripciones (<a>tema del foro</a>)."
-  },
-  "s5": {
-    "message": "Los filtros personalizados pueden organizarse en el número de grupos de filtros que se desee."
-  },
-  "s6": {
-    "message": "La funcionalidad de copia de respaldo y restauración permite crear una copia de todas las preferencias de filtros, no sólo de los filtros personalizados."
-  },
-  "s7": {
-    "message": "Se añade una predisposición de \"Permitir publicidad no intrusiva\" (puede cambiarse en las preferencias de filtros, <a> ver documentación</a>)."
-  },
-  "s8": {
-    "message": "Interfaz de usuario"
-  },
-  "s9": {
-    "message": "Se incluye de nuevo la traducción al lituano."
   },
   "s10": {
     "message": "Las opciones de Adblock Plus en muestran directamente en su página en el Administrador de Complementos."
@@ -59,6 +32,9 @@
   "s19": {
     "message": "\"Contar usos de filtros\" es ahora una opción visible."
   },
+  "s2": {
+    "message": "Funcionalidades"
+  },
   "s20": {
     "message": "Se ha renombrado la opción \"Contraer elementos bloqueados\" a \"Ocultar posicionadores de elementos bloqueados\"."
   },
@@ -78,21 +54,48 @@
     "message": "La versión mínima necesaria de Firefox en la 3.6.12, las anteriores ya no están soportadas. Igualmente, se necesita al menos Thunderbird 3.1.7 o SeaMonkey 2.1, mientras que Songbirs y Prism ya no están soportadas."
   },
   "s26": {
+    "description": "{1}: document, {2}: elemhide",
     "message": "<code>{1}</code> y <code>{2}</code> (opciones de filtros para reglas de excepciones) se pueden ya aplicar también a los marcos, y no sólo al primer nivel."
   },
   "s27": {
+    "description": "{1}: sitekey",
     "message": "Se ha añadido la opción de filtros <code>{1}</code> para permitir excepciones que se apliquen a varios sitios web."
   },
   "s28": {
+    "description": "{1}: xbl, {2}: dtd, {3}: ping, {4}: other",
     "message": "Las opciones de filtro <code>{1}</code>, <code>{2}</code> y  <code>{3}</code> se consideran ahora sinónimos de <code>{4}</code>, las peticiones correspondientes son muy poco habituales (<a>ver tema del foro</a>)."
   },
   "s29": {
     "message": "Se ha simplificado el seguimiento de la redirección y eliminado una causa común de varios problemas de memoria y otros problemas diversos(<a>bug 672111</a>, <a>bug 653533</a>)."
+  },
+  "s3": {
+    "message": "Capacidad experimental de bloqueo de pop-ups (ventanas emergentes) para aquellos casos en los que el bloqueador de ventanas emergentes interno no funcione (<a>tema del foro</a>)."
   },
   "s30": {
     "message": "El comentario <code>! Homepage: http://example.com/</code> en suscripciones de filtros ahora ya se reconoce"
   },
   "s31": {
     "message": "Lista de cambios de la versión anterior"
+  },
+  "s4": {
+    "message": "La nueva ventana de Preferencias de filtros hace que sea más sencillo administrar los filtros y suscripciones (<a>tema del foro</a>)."
+  },
+  "s5": {
+    "message": "Los filtros personalizados pueden organizarse en el número de grupos de filtros que se desee."
+  },
+  "s6": {
+    "message": "La funcionalidad de copia de respaldo y restauración permite crear una copia de todas las preferencias de filtros, no sólo de los filtros personalizados."
+  },
+  "s7": {
+    "message": "Se añade una predisposición de \"Permitir publicidad no intrusiva\" (puede cambiarse en las preferencias de filtros, <a> ver documentación</a>)."
+  },
+  "s8": {
+    "message": "Interfaz de usuario"
+  },
+  "s9": {
+    "message": "Se incluye de nuevo la traducción al lituano."
+  },
+  "title": {
+    "message": "Lista de cambios en Adblock Plus 2.0"
   }
 }

@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "FAQ - Fonctionnalités de base"
-  },
   "s1": {
     "message": "Comment bloquer une publicité ?"
   },
@@ -10,15 +7,6 @@
   },
   "s3": {
     "message": "Me montrer comment faire"
-  },
-  "s4": {
-    "message": "Je souhaiterais de temps à autre désactiver Adblock Plus. Quel est le moyen le plus simple pour faire cela ?"
-  },
-  "s5": {
-    "message": "Vous pouvez cliquer sur la flèche de l'icône d'Adblock Plus dans la barre d'outils pour dérouler un menu. Vous y trouverez l'option \"Activer Adblock Plus\", désactivez cette option. Si vous êtes pressé, cliquez milieu sur l'icône, cela désactivera ou réactivera également Adblock Plus."
-  },
-  "s6": {
-    "message": "Dans ce menu, vous trouverez aussi une option permettant de désactiver Adblock pour une page donnée. Cela ajoutera un filtre du type <code>@@||adblockplus.org^$document</code> à la liste — @@ au début signifie que ceci est une règle d'exception, Adblock Plus sera désactivée pour les pages concernées par ce filtre. Vous trouverez davantage d'information sur les règles d'exception dans la rubrique <a>Créer des filtres Adblock Plus</a>."
   },
   "s33": {
     "message": "La publicité est un objet (Flash ou Java) et ne peut être bloquée en utilisant le menu contextuel. Que faire ?"
@@ -37,6 +25,9 @@
   },
   "s39": {
     "message": "La liste des éléments filtrables affiche beaucoup d'adresses. Comment repérer celle de la publicité ?"
+  },
+  "s4": {
+    "message": "Je souhaiterais de temps à autre désactiver Adblock Plus. Quel est le moyen le plus simple pour faire cela ?"
   },
   "s40": {
     "message": "Vous pouvez rechercher les adresses ne commençant pas comme l'adresse de la page que vous êtes en train de visualiser. Les adresses des publicités contiennent souvent des mots tels que \"banner\" ou \"ad\". Cliquez sur une des adresses pour faire clignoter l'élément correspondant sur la page (hélas, cela ne fonctionne pas pour tous types d'éléments !). Si vous n'êtes toujours pas sûr de vous, cliquez milieu sur l'adresse pour ouvrir l'élément dans un nouvel onglet — et vérifier ainsi si c'est effectivement une publicité."
@@ -58,5 +49,14 @@
   },
   "s46": {
     "message": "Les expressions régulières vous donnent davantage de flexibilité, ce qui justifie toujours leur emploi. Par exemple l'expression régulière <code>/adv(?!ice)/</code> bloquera <code>adv</code> et <code>advert</code> et <code>advertisement</code> mais pas <code>advice</code> — ceci ne serait pas faisable avec de simples jokers !"
+  },
+  "s5": {
+    "message": "Vous pouvez cliquer sur la flèche de l'icône d'Adblock Plus dans la barre d'outils pour dérouler un menu. Vous y trouverez l'option \"Activer Adblock Plus\", désactivez cette option. Si vous êtes pressé, cliquez milieu sur l'icône, cela désactivera ou réactivera également Adblock Plus."
+  },
+  "s6": {
+    "message": "Dans ce menu, vous trouverez aussi une option permettant de désactiver Adblock pour une page donnée. Cela ajoutera un filtre du type <code>@@||adblockplus.org^$document</code> à la liste — @@ au début signifie que ceci est une règle d'exception, Adblock Plus sera désactivée pour les pages concernées par ce filtre. Vous trouverez davantage d'information sur les règles d'exception dans la rubrique <a>Créer des filtres Adblock Plus</a>."
+  },
+  "title": {
+    "message": "FAQ - Fonctionnalités de base"
   }
 }

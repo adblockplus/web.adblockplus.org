@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "자주 묻는 질문 - 설치"
-  },
   "s1": {
     "message": "모든 사용자를 위해 애드블록 플러스를 어떻게 설치하고, 모든 사람들이 같은 필터 목록을 사용할 수 있게 만듭니까?"
   },
@@ -9,6 +6,7 @@
     "message": "관리자는 모든 사용자가 를 이용할 수 있게 마들 수 있습니까? 그런 다음 브라우저의 애플러케이션 디렉터리로 애드블록 플러스를 설치해야 합니다. 시몽키의 경우 불행하게도 애드블록 플러스것이 오직 선택사항이고, 파이어폭스에서는 하위 디렉터리 <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code>를 <code>extensions</code> 디렉터리에 생성해 거기에 adblockplus.xpi의 콘텐츠를 압축 해제하십시오 (그것인 평범한 ZIP 파일입니다)."
   },
   "s3": {
+    "description": "{1}: extensions.adblockplus.currentVersion",
     "message": "이제 기본적인 애드블록 플러스 설정을 변경해야 합니다. adblockplus.js 파일(이것은 파이어폭스에서 <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code>와 시몽키에서 <code>defaults/pref/adblockplus.js</code>)을 위치키시고, 편집합니다. 사용자가 Adblock Plus 아이콘을 보고 싶지 않다면 <a>extensions.adblockplus.showintoolbar</a>와 <a>extensions.adblockplus.showinstatusbar</a>를 <code>false</code>로 변경합니다. 그리고 파이어폭스를 처음 시작한 후 구독 필터를 설치할 때 권장 구독 필터를 보고 싶지 않다면 <a>{1}</a>을 \"2.0\"으로 변경하십시오."
   },
   "s4": {
@@ -22,5 +20,8 @@
   },
   "s7": {
     "message": "애드블록 플러스의 K-멜론 빌드와 설치 설명은 <a>여기</a>를 참고하십시오."
+  },
+  "title": {
+    "message": "자주 묻는 질문 - 설치"
   }
 }

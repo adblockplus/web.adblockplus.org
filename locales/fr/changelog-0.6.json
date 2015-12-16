@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 0.6"
-  },
   "s1": {
     "message": "Voici les principales modifications en comparaison avec la version 0.5.2.039 d’Adblock :"
-  },
-  "s2": {
-    "message": "Interface utilisateur"
-  },
-  "s3": {
-    "message": "Cliquer sur \"Bloquer ... avec Adblock...\" dans le menu contextuel, le menu principal et la barre d'état ouvre trois boîtes de dialogue différentes — RÉPARÉ"
-  },
-  "s4": {
-    "message": "La boîte de dialogue des préférences comporte les boutons \"OK\" et \"Annuler\" à la place de \"Valider\" et \"Restaurer maintenant\""
-  },
-  "s5": {
-    "message": "La liste de filtres dans la boîte de dialogue des préférences est un dérivé bogué du widget boîte de liste par défaut — RÉPARÉ"
-  },
-  "s6": {
-    "message": "Le menu dans la boîte de dialogue des préférences est à présent le widget menu standard en remplacement du bouton de la barre d'état et des popups"
-  },
-  "s7": {
-    "message": "La routine de traitement global des touches dans la boîte de dialogue des préférences a été clarifiée en utilisant preventDefault pour s'assurer du bon comportement des touches"
-  },
-  "s8": {
-    "message": "la touche ENTRÉE est à présent interprétée comme un clic sur OK dans la boîte de dialogue des préférences (le traitement de la touche Échap a également été réparé, voyez le point précédent)"
-  },
-  "s9": {
-    "message": "Le clignotement des URL sélectionnées/entrées fonctionne partout à présent"
   },
   "s10": {
     "message": "Si l'option \"Conserver l'ordre alphabétique\" dans le menu de la boîte de dialogue des préférences est sélectionnée, elle est appliquée immédiatement, il n'est plus nécessaire de fermer la boîte et de la réouvrir pour que cette fonctionnalité soit prise en compte"
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Le panneau latéral d'Adblock (uniquement pour Firefox) affiche les URLS filtrables dans l'onglet courant sélectionné de manière dynamique"
   },
+  "s2": {
+    "message": "Interface utilisateur"
+  },
   "s20": {
     "message": "La définition d'une liste blanche est compatible avec Adblock Plus. À faire : Une meilleure intégration liste blanche + interface utilisateur"
   },
@@ -88,6 +64,9 @@
   },
   "s29": {
     "message": "Cacher les objets — cela remplaçait les objets par un DIV cliquable et permettait de les bloquer, très facile de courir à sa perte ainsi. Vraiment la mauvaise manière de faire cela."
+  },
+  "s3": {
+    "message": "Cliquer sur \"Bloquer ... avec Adblock...\" dans le menu contextuel, le menu principal et la barre d'état ouvre trois boîtes de dialogue différentes — RÉPARÉ"
   },
   "s30": {
     "message": "QuickBlock — Je n'arrive pas à me eprésenter ce que cela faisait, même en regardant le code. Michael McDonald m'a renségné à présent (un Ctrl-Shift-DblClic supprimait les images temporairement) mais je ne pense pas que plus de dix personnes connaissaient cette fonctionnalité."
@@ -119,6 +98,9 @@
   "s39": {
     "message": "Beaucoup de corrections d'erreurs ont été ajoutées."
   },
+  "s4": {
+    "message": "La boîte de dialogue des préférences comporte les boutons \"OK\" et \"Annuler\" à la place de \"Valider\" et \"Restaurer maintenant\""
+  },
   "s40": {
     "message": "Amélioration de la communication entre différentes parties (parmi d'autre, suppression de la communication par les préférences)."
   },
@@ -142,5 +124,23 @@
   },
   "s47": {
     "message": "Le panneau latéral pourrait s'agrémenter de nouvelles fonctionnalités efficaces, cela sera fait bientôt."
+  },
+  "s5": {
+    "message": "La liste de filtres dans la boîte de dialogue des préférences est un dérivé bogué du widget boîte de liste par défaut — RÉPARÉ"
+  },
+  "s6": {
+    "message": "Le menu dans la boîte de dialogue des préférences est à présent le widget menu standard en remplacement du bouton de la barre d'état et des popups"
+  },
+  "s7": {
+    "message": "La routine de traitement global des touches dans la boîte de dialogue des préférences a été clarifiée en utilisant preventDefault pour s'assurer du bon comportement des touches"
+  },
+  "s8": {
+    "message": "la touche ENTRÉE est à présent interprétée comme un clic sur OK dans la boîte de dialogue des préférences (le traitement de la touche Échap a également été réparé, voyez le point précédent)"
+  },
+  "s9": {
+    "message": "Le clignotement des URL sélectionnées/entrées fonctionne partout à présent"
+  },
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.6"
   }
 }

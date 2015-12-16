@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 1.0.1"
-  },
   "s1": {
     "message": "Nouvelles traductions : Islandais, Kazakh"
-  },
-  "s2": {
-    "message": "Liste des abonnements recommandés étoffée et possibilité à nouveau de la faire défiler"
-  },
-  "s3": {
-    "message": "Amélioration des performances de démarrage par Nickolay Ponomarev (<a>bogue 20410</a>, <a>bogue 20411</a>, <a>bogue 20412</a>)"
-  },
-  "s4": {
-    "message": "Ajout de la possibilité de limiter l'action des filtres à certains domaines avec l'option $domain=foo.com|bar.com (<a>documentation</a>, <a>forum topic</a>)"
-  },
-  "s5": {
-    "message": "Éléments filtrables : filtres correspondants désactivés à présent affichés — pour réactivation facilitée (<a>Sujet du forum [en]</a>)"
-  },
-  "s6": {
-    "message": "Éléments filtrables : nouvelle icône d'état pour les éléments correspondants aux filtres désactivés"
-  },
-  "s7": {
-    "message": "Éléments filtrables : en cliquant dans la colonne d'état on désactive / ré-active le filtre"
-  },
-  "s8": {
-    "message": "Éléments filtrables : l'ouverture dans un nouvel onglet fonctionne correctement à présent"
-  },
-  "s9": {
-    "message": "Éléments filtrables : possibilité également de rechercher le texte de filtre"
   },
   "s10": {
     "message": "Éditeur de filtre : la préférence <a>extensions.adblockplus.composer_default</a> décide à présent quelle devra être la suggestion choisie par défaut (<a>sujet du forum [en]</a>)"
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Réparé : La liste des filtres des préférences ne s'actualise parfois pas correctement lorsque des filtres sont ajoutés/supprimés (<a>sujet du forum [en]</a>)"
   },
+  "s2": {
+    "message": "Liste des abonnements recommandés étoffée et possibilité à nouveau de la faire défiler"
+  },
   "s20": {
     "message": "Réparé : Suppression de filtres toujours appliquée si deux filtres différents ont été traduits en une même expression régulière"
   },
@@ -88,5 +64,29 @@
   },
   "s29": {
     "message": "Historique des modifications pour la version précédente"
+  },
+  "s3": {
+    "message": "Amélioration des performances de démarrage par Nickolay Ponomarev (<a>bogue 20410</a>, <a>bogue 20411</a>, <a>bogue 20412</a>)"
+  },
+  "s4": {
+    "message": "Ajout de la possibilité de limiter l'action des filtres à certains domaines avec l'option $domain=foo.com|bar.com (<a>documentation</a>, <a>forum topic</a>)"
+  },
+  "s5": {
+    "message": "Éléments filtrables : filtres correspondants désactivés à présent affichés — pour réactivation facilitée (<a>Sujet du forum [en]</a>)"
+  },
+  "s6": {
+    "message": "Éléments filtrables : nouvelle icône d'état pour les éléments correspondants aux filtres désactivés"
+  },
+  "s7": {
+    "message": "Éléments filtrables : en cliquant dans la colonne d'état on désactive / ré-active le filtre"
+  },
+  "s8": {
+    "message": "Éléments filtrables : l'ouverture dans un nouvel onglet fonctionne correctement à présent"
+  },
+  "s9": {
+    "message": "Éléments filtrables : possibilité également de rechercher le texte de filtre"
+  },
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 1.0.1"
   }
 }

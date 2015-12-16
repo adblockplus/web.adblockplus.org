@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "FAQ - 基本功能"
-  },
   "s1": {
     "message": "我要如何阻擋廣告？"
   },
@@ -10,15 +7,6 @@
   },
   "s3": {
     "message": "告訴我該怎麼做！"
-  },
-  "s4": {
-    "message": "我有時希望 Adblock Plus 暫時停用，該怎麼做？"
-  },
-  "s5": {
-    "message": "您可以點擊工具列上 Adblock Plus 圖示旁的箭頭來顯示選單。這裡有停用/重新啟用 Adblock Plsu 的選項。如果還是不夠快，以中鍵點擊圖示即可關閉或重新啟用 Adblock Plus 。"
-  },
-  "s6": {
-    "message": "這個選單也有使 Adblock Plus 在特定網站停用的選項。它會新增一條像是 <code>@@||adblockplus.org^$document</code> 的例外規則至您的列表。您可以在 <a>撰寫 Adblock Plus 過濾條件</a> 中找到更多關於例外規則的資訊。"
   },
   "s33": {
     "message": "該廣告是一個物件 (Flash 或 Java)，所以沒有右鍵選單。我該怎麼辦？"
@@ -37,6 +25,9 @@
   },
   "s39": {
     "message": "可阻擋項目列表會顯示許多網址。我怎麼知道那一個才是廣告？"
+  },
+  "s4": {
+    "message": "我有時希望 Adblock Plus 暫時停用，該怎麼做？"
   },
   "s40": {
     "message": "您可以尋找與目前頁面不同開頭的網址。廣告的網址通常也會有一些 \"banner\" 或者 \"ad\" 之類的關鍵字。點擊網址會在頁面上閃爍相應的元素 (可惜無法在所有類型的物件上作用) 。如果您還是不確定，在網址上按下中鍵會於新分頁打開該網址 — 這樣您就可以確定它到底是不是廣告。"
@@ -58,5 +49,14 @@
   },
   "s46": {
     "message": "正規表示法讓您更能靈活調整，且結果都是你所要的。舉個例子，此正規表示法 <code>/adv(?!ice)/</code> 將會阻擋 <code>adv</code> 和 <code>advert</code> 和 <code>advertisement</code> 而非 <code>advice</code> — 有些東西不能以簡單的萬用字元完成。"
+  },
+  "s5": {
+    "message": "您可以點擊工具列上 Adblock Plus 圖示旁的箭頭來顯示選單。這裡有停用/重新啟用 Adblock Plsu 的選項。如果還是不夠快，以中鍵點擊圖示即可關閉或重新啟用 Adblock Plus 。"
+  },
+  "s6": {
+    "message": "這個選單也有使 Adblock Plus 在特定網站停用的選項。它會新增一條像是 <code>@@||adblockplus.org^$document</code> 的例外規則至您的列表。您可以在 <a>撰寫 Adblock Plus 過濾條件</a> 中找到更多關於例外規則的資訊。"
+  },
+  "title": {
+    "message": "FAQ - 基本功能"
   }
 }

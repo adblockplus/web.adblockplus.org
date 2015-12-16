@@ -1,15 +1,59 @@
 {
-  "title": {
-    "message": "Versiones en desarrollo"
-  },
   "s1": {
     "message": "¿Qué son las versiones en desarrollo?"
+  },
+  "s10": {
+    "description": "{1}: Adblock Plus, {2}: Google Chrome™",
+    "message": "{1} para {2}"
+  },
+  "s11": {
+    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)"
+  },
+  "s12": {
+    "description": "{1}: Adblock Plus, {2}: Opera",
+    "message": "{1} para {2} (Opera 17 o posterior requerido)"
+  },
+  "s13": {
+    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)."
+  },
+  "s15": {
+    "description": "{1}: Adblock Plus, {2}: Safari",
+    "message": "{1} para {2} (Safari 6 o posterior requerido)"
+  },
+  "s16": {
+    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)"
+  },
+  "s18": {
+    "message": "(<a>versiones anteriores</a>)"
+  },
+  "s19": {
+    "description": "{1}: Adblock Plus, {2}: Android",
+    "message": "{1} para {2}"
   },
   "s2": {
     "message": "Las versiones en desarrollo representan el estado más actual de desarrollo de Adblock Plus y otras extensiones provistas en este sitio Web. Mediante la instalación de una versión en desarrollo se pueden probar las características que no se han estrenado todavía en una versión estable."
   },
+  "s20": {
+    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)."
+  },
+  "s23": {
+    "description": "{1}: Adblock Plus",
+    "message": "Personalizar {1}"
+  },
+  "s29": {
+    "message": "Su navegador comprobará automáticamente si hay actualizaciones y le ofrecerá una actualización a la versión en desarrollo más reciente si está disponible."
+  },
   "s3": {
     "message": "¿Hasta qué punto son fiables las versiones en desarrollo?"
+  },
+  "s30": {
+    "message": "Tenga en cuenta que nunca se le actualizará a la versión estable, sino que se actualizará a la versión en desarrollo inmediatamente posterior a la versión estable."
+  },
+  "s32": {
+    "message": "¿Cómo puedo saber qué ha cambiado?"
+  },
+  "s33": {
+    "message": "Cuando el navegador muestra la notificación sobre las actualizaciones disponibles, haga clic en la versión en desarrollo y luego en \"Mostrar Información\". Esto mostrará la lista de todos los cambios en esta versión. Para una descripción más alto nivel de los cambios e información adicional, por favor siga los <a>anuncios relacionados con las versiones en desarrollo</a>. Puedes suscribirte al <a>RSS feed</a> en tu lector de feeds favorito."
   },
   "s4": {
     "message": "Naturalmente, las versiones en desarrollo son menos fiables que las versiones estables y su utilización es a riesgo propio. Sin embargo, los cambios se prueban antes de ser añadido al repositorio de código fuente. Esto significa que las versiones en el desarrollo en general funcionan correctamente la mayoría del tiempo. Sin embargo ocasionalmente puede haber problemas, especialmente cuando se utiliza una configuración poco común - por favor informe de inmediato a fin de que se pueda arreglar. Para otros idiomas aparte del inglés, en general la versión no es traducida hasta poco antes de la versión final. Las versiones en desarrollo también pueden interactuar con otras extensiones de una manera que no se espera de una versión estable."
@@ -29,61 +73,7 @@
   "s9": {
     "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)"
   },
-  "s10": {
-    "message": "{1} para {2}"
-  },
-  "s11": {
-    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)"
-  },
-  "s12": {
-    "message": "{1} para {2} (Opera 17 o posterior requerido)"
-  },
-  "s13": {
-    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)."
-  },
-  "s15": {
-    "message": "{1} para {2} (Safari 6 o posterior requerido)"
-  },
-  "s16": {
-    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)"
-  },
-  "s18": {
-    "message": "(<a>versiones anteriores</a>)"
-  },
-  "s19": {
-    "message": "{1} para {2}"
-  },
-  "s20": {
-    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)."
-  },
-  "s21": {
-    "message": "Element Hiding Helper"
-  },
-  "s23": {
-    "message": "Personalizar {1}"
-  },
-  "s24": {
-    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)"
-  },
-  "s25": {
-    "message": "Diagnostics for {1}"
-  },
-  "s27": {
-    "message": "URL Fixer"
-  },
-  "s28": {
-    "message": "(<a>lista de cambios</a>, <a>versiones anteriores</a>)"
-  },
-  "s29": {
-    "message": "Su navegador comprobará automáticamente si hay actualizaciones y le ofrecerá una actualización a la versión en desarrollo más reciente si está disponible."
-  },
-  "s30": {
-    "message": "Tenga en cuenta que nunca se le actualizará a la versión estable, sino que se actualizará a la versión en desarrollo inmediatamente posterior a la versión estable."
-  },
-  "s32": {
-    "message": "¿Cómo puedo saber qué ha cambiado?"
-  },
-  "s33": {
-    "message": "Cuando el navegador muestra la notificación sobre las actualizaciones disponibles, haga clic en la versión en desarrollo y luego en \"Mostrar Información\". Esto mostrará la lista de todos los cambios en esta versión. Para una descripción más alto nivel de los cambios e información adicional, por favor siga los <a>anuncios relacionados con las versiones en desarrollo</a>. Puedes suscribirte al <a>RSS feed</a> en tu lector de feeds favorito."
+  "title": {
+    "message": "Versiones en desarrollo"
   }
 }

@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Adblock Plus 2.1 詳細更新日誌"
-  },
   "s1": {
     "message": "以下是相較於 Adblock Plus 2.0.3 所改進的部份。"
-  },
-  "s2": {
-    "message": "功能"
-  },
-  "s3": {
-    "message": "現在安裝 Adblock Plus 不需要重新啟動瀏覽器了。"
-  },
-  "s4": {
-    "message": "增加對 Firefox Mobile 14 的支援。"
-  },
-  "s5": {
-    "message": "加強對 Thunderbird 的整合，特別是 Adblock Plus 介面能在瀏覽網頁的分頁中正常運作了。"
-  },
-  "s6": {
-    "message": "實作 <a>隱藏元素例外條件</a> (對於條件集作者特別有幫助)"
-  },
-  "s7": {
-    "message": "使用者介面"
-  },
-  "s8": {
-    "message": "條件產生器：移除將條件新增至已停用群組的警告，若沒有啟用中的條件群組，則會另外建立一個新的。"
-  },
-  "s9": {
-    "message": "條件偏好設定：數個介面上的改進 (<a>討論區文章</a>， <a>討論區文章</a>， <a>討論區文章</a>)。"
   },
   "s10": {
     "message": "條件偏好設定：修正刪除條件群組時錯誤的警告訊息。"
@@ -51,6 +24,7 @@
     "message": "Firefox 15 以上版本的可阻擋項目快捷鍵改為 Ctrl-Shift-U，舊的快捷鍵將無法使用。"
   },
   "s17": {
+    "description": "{1}: object-subrequest, {2}: object_subrequest",
     "message": "現在也能以 <code>{1}</code> 進行搜尋，而非只能用 <code>{2}</code> (<a>討論區文章</a>)。"
   },
   "s18": {
@@ -58,6 +32,9 @@
   },
   "s19": {
     "message": "修復：右鍵選單可能建議過濾條件在錯誤的網域上停用的問題 (<a>討論區文章</a>)。"
+  },
+  "s2": {
+    "message": "功能"
   },
   "s20": {
     "message": "修復：右鍵選單可能阻止瀏覽器對頁面中元素進行垃圾回收的問題 (<a>bug 727739</a>)。"
@@ -72,24 +49,51 @@
     "message": "Adblock Plus 現在可安裝在任何基於 Gecko 8.0 以上的程式，尤其是 Firefox 8，Thunderbird 8，SeaMonkey 2.5 等等。較舊的版本將不再支援，另外基於 XUL 的 Firefox Mobile，像是 Firefox Mobile 10 也將不再支援。"
   },
   "s24": {
+    "description": "{1}: ! Title",
     "message": "過濾條件集現在能利用 <code>{1}</code> 註解自動設定標題 (<a>討論區文章</a>)。"
   },
   "s25": {
     "message": "改進效能及記憶體使用量，特別是 Firefox 15 以上版本的效能問題。"
   },
   "s26": {
+    "description": "{1}: cache.js",
     "message": "不再使用 <code>{1}</code> 檔案，這是諸多穩定性問題的根源。"
   },
   "s27": {
     "message": "改用非同步檔案讀寫，提升使用者介面的反應速度。"
   },
   "s28": {
+    "description": "{1}: can't access dead object",
     "message": "修復：物件上的標籤導致 \"{1}\" 訊息出現在 Firefox 15 以上版本錯誤主控台的問題。"
   },
   "s29": {
     "message": "修正網域結尾有加點的處理方式 (<a>討論區文章</a>)。"
   },
+  "s3": {
+    "message": "現在安裝 Adblock Plus 不需要重新啟動瀏覽器了。"
+  },
   "s30": {
     "message": "先前版本的更新日誌"
+  },
+  "s4": {
+    "message": "增加對 Firefox Mobile 14 的支援。"
+  },
+  "s5": {
+    "message": "加強對 Thunderbird 的整合，特別是 Adblock Plus 介面能在瀏覽網頁的分頁中正常運作了。"
+  },
+  "s6": {
+    "message": "實作 <a>隱藏元素例外條件</a> (對於條件集作者特別有幫助)"
+  },
+  "s7": {
+    "message": "使用者介面"
+  },
+  "s8": {
+    "message": "條件產生器：移除將條件新增至已停用群組的警告，若沒有啟用中的條件群組，則會另外建立一個新的。"
+  },
+  "s9": {
+    "message": "條件偏好設定：數個介面上的改進 (<a>討論區文章</a>， <a>討論區文章</a>， <a>討論區文章</a>)。"
+  },
+  "title": {
+    "message": "Adblock Plus 2.1 詳細更新日誌"
   }
 }

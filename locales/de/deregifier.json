@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "Übersetzung regulärer Ausdrücke zurück in einfache Filter"
-  },
   "s1": {
     "message": "Mit Adblock Plus 0.7 wurde die Verarbeitung der einfachen Filterregeln (nicht der regulären Ausdrücke) so optimiert, dass sogar eine sehr große Zahl dieser Filtern das Laden von Web-Seiten in keinster Weise verlangsamt. Leider funktioniert diese Optimierung nicht für reguläre Ausdrücke, jeder regulärer Audruck in Ihrer Liste macht den Browser ein wenig langsamer. Reguläre Ausdrücke wurden lange Zeit verwendet, um die Filterliste zu \"komprimieren\" und zu \"beschleunigen\", wodurch dann Filter entstanden sind, die sehr lang und kaum nachvollziehbar sind — das ist nicht mehr notwendig."
   },
@@ -19,5 +16,8 @@
   },
   "s6": {
     "message": "Ihre Filterliste, in der reguläre Ausdrücke nach Möglichkeit durch reguläre Ausdrücke ersetzt wurden, wird unten angezeigt. Sie können die Filter kopieren und zurück in Ihre Einstellungen einfügen (man sollte die alten Filter natürlich zuerst löschen). Alternativ kann man auch <a>hier klicken</a>, um die Filter auf einer eigenen Seite anzuzeigen. Diese können Sie speichern und in den Einstellungen von Adblock Plus importieren. Es wird auch empfohlen, die neue Liste nach <a>nach überflüssigen Filtern zu untersuchen</a>."
+  },
+  "title": {
+    "message": "Übersetzung regulärer Ausdrücke zurück in einfache Filter"
   }
 }

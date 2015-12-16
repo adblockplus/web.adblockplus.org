@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "FAQ - Installation"
-  },
   "s1": {
     "message": "Comment installer Adblock Plus pour tous les utilisateurs et faire utiliser par tout le monde la même liste de filtres ?"
   },
@@ -9,6 +6,7 @@
     "message": "Êtes-vous un administrateur souhaitant mettre à disposition Adblock Plus à tous les utilisateurs ? Vous devrez alors installer  Adblock Plus dans le dossier d'installation de votre application. Pour SeaMonkey c'est (malheureusement) la seule solution, dans Firefox vous créez un sous-dossier <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code> dans le dossier <code>extensions</code> et vous y décompressez le contenu de l'archive adblockplus.xpi (c'est un fichier ZIP ordinaire en fait)."
   },
   "s3": {
+    "description": "{1}: extensions.adblockplus.currentVersion",
     "message": "À présent, vous devez modifier les paramètres par défaut d'Adblock Plus. Localisez le fichier adblockplus.js (il est ici <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code> dans Firefox et ici <code>defaults/pref/adblockplus.js</code> dans SeaMonkey) et éditez-le. Vous ne souhaitez probablement pas que les utilisateurs soient embêtés par l'icône Adblock Plus vous pouvez donc passer la valeur de <a>extensions.adblockplus.showintoolbar</a> et <a>extensions.adblockplus.showinstatusbar</a> à <code>false</code>. si vous ne souhaitez pas que les utilisateurs aient la possibilité de s'abonner à une liste de filtre au premier démarrrage de Firefox vous modifiez également <a>{1}</a> à \"2.0\"."
   },
   "s4": {

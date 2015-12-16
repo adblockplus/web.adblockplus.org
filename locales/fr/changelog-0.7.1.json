@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 0.7.1"
-  },
   "s1": {
     "message": "Ci-dessous l'énumération des modifications majeures en comparaison avec Adblock Plus 0.7 :"
-  },
-  "s2": {
-    "message": "Nouvelles fonctionnalités"
-  },
-  "s3": {
-    "message": "L'infobulle de l'icône de la barre d'outils affiche le nombre d'éléments bloqués et les trois filtres les plus utilisés sur la page courante"
-  },
-  "s4": {
-    "message": "La dernière utilisation d'un filtre est désormais mémorisée (affichée dans la colonne \"Dernière utilisation\" dans les préférences, cette colonne est masquée par défaut)"
-  },
-  "s5": {
-    "message": "Interface utilisateur"
-  },
-  "s6": {
-    "message": "Ajout des traductions : Coréenne, Thaïllandaise, Catalane, Croate"
-  },
-  "s7": {
-    "message": "Ajout d'une boîte de dialogue permettant aux nouveaux utilisateurs de s'abonner facilement (apparaît au premier démarrage à moins qu'il ne soit déjà abonné)"
-  },
-  "s8": {
-    "message": "L'icône de la barre des tâches change lorsque la page en cours se trouve dans la liste blanche"
-  },
-  "s9": {
-    "message": "Boîte de dialogue des préférences : ajout des filtres simplifié, le champ de saisi se trouve à présent dans la fenêtre d'édition de filtres et non à part"
   },
   "s10": {
     "message": "Boîte de dialogue des préférences : Ctrl+Entrée ou Alt+Entrée sauvegarde les modifications et ferme la boîte de dialogue à présent (fonctionne également à partir de la fenêtre d'édition de filtres)"
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Panneau latéral : L'élément sélectionné est conservé lors du changement d'onglet et de la femreture/ouverture du panneau latéral"
   },
+  "s2": {
+    "message": "Nouvelles fonctionnalités"
+  },
   "s20": {
     "message": "Panneau latéral : L'infobulle n'affiche à présent plus que les images contenues dans le cache du navigateur, pas de requêtes supplémentaires du serveur"
   },
@@ -89,6 +65,9 @@
   "s29": {
     "message": "Le téléchargement de la liste souscrite envoi à présent l'en-tête HTTP \"If-Modified-Since\" (les utilisateurs peuvent forcer le téléchargement en appuyant sur la touche Shift lors du clic sur \"Mettre à jour l'abonnement\")"
   },
+  "s3": {
+    "message": "L'infobulle de l'icône de la barre d'outils affiche le nombre d'éléments bloqués et les trois filtres les plus utilisés sur la page courante"
+  },
   "s30": {
     "message": "Le téléchargement de la liste souscrite respecte l'en-tête \"Expires\" reçu de l'abonnement à présent, les listes d'abonnement ne seront téléchargées à nouveau qu'après la date d'expiration (pas plus de deux semaines après le téléchargement précédent)"
   },
@@ -106,5 +85,26 @@
   },
   "s35": {
     "message": "Historique des modifications pour la version précédente"
+  },
+  "s4": {
+    "message": "La dernière utilisation d'un filtre est désormais mémorisée (affichée dans la colonne \"Dernière utilisation\" dans les préférences, cette colonne est masquée par défaut)"
+  },
+  "s5": {
+    "message": "Interface utilisateur"
+  },
+  "s6": {
+    "message": "Ajout des traductions : Coréenne, Thaïllandaise, Catalane, Croate"
+  },
+  "s7": {
+    "message": "Ajout d'une boîte de dialogue permettant aux nouveaux utilisateurs de s'abonner facilement (apparaît au premier démarrage à moins qu'il ne soit déjà abonné)"
+  },
+  "s8": {
+    "message": "L'icône de la barre des tâches change lorsque la page en cours se trouve dans la liste blanche"
+  },
+  "s9": {
+    "message": "Boîte de dialogue des préférences : ajout des filtres simplifié, le champ de saisi se trouve à présent dans la fenêtre d'édition de filtres et non à part"
+  },
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.7.1"
   }
 }

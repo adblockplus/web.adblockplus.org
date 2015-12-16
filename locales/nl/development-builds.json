@@ -1,15 +1,34 @@
 {
-  "title": {
-    "message": "Development builds"
-  },
   "s1": {
     "message": "Wat zijn development builds?"
+  },
+  "s10": {
+    "description": "{1}: Adblock Plus, {2}: Google Chrome™",
+    "message": "{1} voor {2}"
+  },
+  "s11": {
+    "message": "(<a>wijzigingslijst</a>,  <a>oudere versies</a>)"
   },
   "s2": {
     "message": "Development builds vertegenwoordigen de meest actuele status van ontwikkeling van Adblock Plus en andere extensies die op deze website gehost worden. Door een development build te installeren kan je functies uitproberen die nog niet in een stabiele versie zijn vrijgegeven."
   },
+  "s20": {
+    "message": "(<a>wijzigingslijst</a>,  <a>oudere versies</a>)."
+  },
+  "s29": {
+    "message": "Uw browser zal automatisch controleren of er updates beschikbaar zijn en de meest recente development build aanbieden als die beschikbaar komt."
+  },
   "s3": {
     "message": "Hoe betrouwbaar zijn development builds?"
+  },
+  "s30": {
+    "message": "Let er op dat je nooit bijgewerkt wordt naar een stabiele versie, in plaats daarvan krijg je de development build die meteen op de stabiele release volgt."
+  },
+  "s32": {
+    "message": "Hoe weet ik wat er veranderd is?"
+  },
+  "s33": {
+    "message": "Als de browser je meldt dat er updates beschikbaar zijn, klik dan op de development build en vervolgens op de \"Toon informatie\" knop. U krijgt dan een lijst met alle wijzigingen in deze versie te zien. Volg om een hoger niveau overzicht van de wijzigingen en extra informatie te krijgen de <a>development build aankondigingen</a>. Je kan je ook abonneren op de <a>RSS feed</a> in je favoriete feed reader."
   },
   "s4": {
     "message": "Natuurlijk zijn development builds minder betrouwbaar dan stabiele versies en je gebruikt ze op je eigen risico. Maar veranderingen worden zorgvuldig getest voordat ze aan de broncode repository worden toegevoegd. Dit betekent dat development builds in de meeste gevallen goed zullen werken. Af en toe kunnen er echter problemen optreden, in het bijzonder als je een afwijkende configuratie hebt — meldt deze problemen alstublieft, zodat ze opgelost kunnen worden. Voor niet-Engelse talen blijven de nieuwe strings meestal onvertaald tot kort voor een release. Development builds kunnen ook met andere extensies samenwerken op een manier die van een stabiele release niet verwacht wordt."
@@ -28,47 +47,5 @@
   },
   "s9": {
     "message": "(<a>wijzigingslijst</a>,  <a>oudere versies</a>)"
-  },
-  "s10": {
-    "message": "{1} voor {2}"
-  },
-  "s11": {
-    "message": "(<a>wijzigingslijst</a>,  <a>oudere versies</a>)"
-  },
-  "s19": {
-    "message": "{1} for {2}"
-  },
-  "s20": {
-    "message": "(<a>wijzigingslijst</a>,  <a>oudere versies</a>)."
-  },
-  "s21": {
-    "message": "Element Hiding Helper"
-  },
-  "s23": {
-    "message": "Customizations for {1}"
-  },
-  "s24": {
-    "message": "(<a>wijzigingslijst</a>,  <a>oudere versies</a>)"
-  },
-  "s25": {
-    "message": "Diagnostics for {1}"
-  },
-  "s27": {
-    "message": "URL Fixer"
-  },
-  "s28": {
-    "message": "(<a>wijzigingslijst</a>,  <a>oudere versies</a>)"
-  },
-  "s29": {
-    "message": "Uw browser zal automatisch controleren of er updates beschikbaar zijn en de meest recente development build aanbieden als die beschikbaar komt."
-  },
-  "s30": {
-    "message": "Let er op dat je nooit bijgewerkt wordt naar een stabiele versie, in plaats daarvan krijg je de development build die meteen op de stabiele release volgt."
-  },
-  "s32": {
-    "message": "Hoe weet ik wat er veranderd is?"
-  },
-  "s33": {
-    "message": "Als de browser je meldt dat er updates beschikbaar zijn, klik dan op de development build en vervolgens op de \"Toon informatie\" knop. U krijgt dan een lijst met alle wijzigingen in deze versie te zien. Volg om een hoger niveau overzicht van de wijzigingen en extra informatie te krijgen de <a>development build aankondigingen</a>. Je kan je ook abonneren op de <a>RSS feed</a> in je favoriete feed reader."
   }
 }

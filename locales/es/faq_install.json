@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "Preguntas frecuentes - Instalación"
-  },
   "s1": {
     "message": "¿Cómo puedo instalar Adblock Plus para todos los usuarios de forma que usen la misma lista de filtros?"
   },
@@ -9,6 +6,7 @@
     "message": "¿Es usted un administrador que quiere que todos los usuarios utilicen Adblock Plus? En ese caso debe instalar Adblock Plus en el directorio de aplicaciones del navegador. Con SeaMonkey esta es (desgraciadamente) la única alternativa, en Firefox puede crear un subdirectorio <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code> en su directorio de <code>extensiones </code>y extraer allí el contenido de adblockplus.xpi (es un archivo ZIP normal)."
   },
   "s3": {
+    "description": "{1}: extensions.adblockplus.currentVersion",
     "message": "Tendrá que cambiar las predisposiciones predeterminadas de Adblock Plus. Localice el archivo adblockplus.js (es decir, <code>extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js</code> en Firefox y <code>defaults/pref/adblockplus.js</code> en SeaMonkey) y edítelo. Probablemente no quiera molestar a los usuarios con el icono de Adblock Plus, así que puede cambiar <a>extensions.adblockplus.showintoolbar</a> y <a>extensions.adblockplus.showinstatusbar</a> al valor <code>false</code>. Si no quiere que a los usuarios les aparezca la sugerencia de instalar una suscripción cuando inicien Firefox por primera vez tendrá que cambiar <a>{1}</a> a \"2.0\"."
   },
   "s4": {
@@ -22,5 +20,8 @@
   },
   "s7": {
     "message": "Puede obtener las versiones de Adblock Plus para K-Meleon y sus correspondientes instrucciones de instalación en <a>esta dirección</a>."
+  },
+  "title": {
+    "message": "Preguntas frecuentes - Instalación"
   }
 }

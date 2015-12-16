@@ -1,6 +1,52 @@
 {
-  "title": {
-    "message": "IAdblockPlus"
+  "addPatternsDescription-s1": {
+    "message": "사용자가 정의한 필터 목록으로 패턴 추가"
+  },
+  "addPatterns_patternsDescription-s1": {
+    "message": "추가될 필터 패턴의 목록"
+  },
+  "getInstalledVersionDescription-s1": {
+    "message": "설치된 애드블록 플러스 확장 프로그램의 버전을 검색하십시오. 이것은 확장 프로그램 관리자 또는 InstallTrigger에 의해 보고된 버전 번호이거나 모질라 스위트 또는 시몽키에서 후자가 사용되면 올바르지 않을지도 모릅니다."
+  },
+  "getInstalledVersion_returnDescription-s1": {
+    "description": "{1}: 0.7.0.1",
+    "message": "애드블록 플러스 버전, 예시 <code>{1}</code>"
+  },
+  "getSubscriptionAtDescription-s1": {
+    "message": "필터 목록에서 그것의 위치(포지션)에 의해 구독 필터 검색"
+  },
+  "getSubscriptionAt_indexDescription-s1": {
+    "message": "필터 목록에서 구독 필터의 위치를 백지 상태로"
+  },
+  "getSubscriptionAt_returnDescription-s1": {
+    "description": "{1}: null",
+    "message": "요청된 구독 필터 또는 <code>{1}</code>은 제공된 인덱스가 올바르지 않을 때"
+  },
+  "getSubscriptionDescription-s1": {
+    "message": "식별자에 의해 구독 필터 검색"
+  },
+  "getSubscription_idDescription-s1": {
+    "message": "구독 필터 식별자 (이것은 일반적인 구독 필터를 위한 구독 필터의 URL입니다.)"
+  },
+  "getSubscription_returnDescription-s1": {
+    "description": "{1}: null",
+    "message": "요청된 구독 필터 또는 <code>{1}</code>은 제공된 인덱스가 올바르지 않을 때"
+  },
+  "removeExternalSubscriptionDescription-s1": {
+    "message": "외부 구독 필터의 제거"
+  },
+  "removeExternalSubscription_idDescription-s1": {
+    "message": "구독 필터 식별자 (외부 구독 필터의 경우 이것은 어떠한 모든 문자열이 될 수 있음)"
+  },
+  "removeExternalSubscription_returnDescription-s1": {
+    "description": "{1}: true, {2}: false",
+    "message": "<code>{1}</code>는 구독 필터가 제거되었을 때이고, <code>{2}</code>는 그러한 구독 필터가 존재하지 않거나 구독 필터가 외부적으로 관리되지 않을 때입니다."
+  },
+  "removePatternsDescription-s1": {
+    "message": "사용자가 정의한 필터 목록에서 패턴 제거"
+  },
+  "removePatterns_patternsDescription-s1": {
+    "message": "제거될 필터 패턴의 목록"
   },
   "s1": {
     "message": "이 인터페이스는 애드블록 플러스와 통합하고 싶은 확장 프로그램에서 사용됩니다."
@@ -11,24 +57,6 @@
   "subscriptionCountDescription-s1": {
     "message": "필터 목록에서 구독 필터의 수 (특별한 구독 필터를 포함함)"
   },
-  "getSubscriptionDescription-s1": {
-    "message": "식별자에 의해 구독 필터 검색"
-  },
-  "getSubscription_returnDescription-s1": {
-    "message": "요청된 구독 필터 또는 <code>{1}</code>은 제공된 인덱스가 올바르지 않을 때"
-  },
-  "getSubscription_idDescription-s1": {
-    "message": "구독 필터 식별자 (이것은 일반적인 구독 필터를 위한 구독 필터의 URL입니다.)"
-  },
-  "getSubscriptionAtDescription-s1": {
-    "message": "필터 목록에서 그것의 위치(포지션)에 의해 구독 필터 검색"
-  },
-  "getSubscriptionAt_returnDescription-s1": {
-    "message": "요청된 구독 필터 또는 <code>{1}</code>은 제공된 인덱스가 올바르지 않을 때"
-  },
-  "getSubscriptionAt_indexDescription-s1": {
-    "message": "필터 목록에서 구독 필터의 위치를 백지 상태로"
-  },
   "updateExternalSubscriptionDescription-s1": {
     "message": "외부 구독 필터를 업데이트하십시오 (또는 현재 그러한 구독 필터가 존재하지 않는다면 그것을 생성하십시오). 그러한 구독 필터는 애드블록 플러스에 의해 업데이트되지 않을 것입니다. 대신에 그것을 업데이트하고, 일단 구독 필터를 제거의 원인이 되는 이 메서드를 호출하는 확장 기능이 더 이상 필요하지 않습니다."
   },
@@ -38,43 +66,16 @@
   "updateExternalSubscriptionDescription-s3": {
     "message": "또한 애드블록 플러스 1.3 이전에는 이 메서드는 구독 필터가 작성되었는지를 가리키는 불 방식으로 리턴됨. 구독 필터의 작성은 더 이상 실패할 수 없음"
   },
-  "updateExternalSubscription_returnDescription-s1": {
-    "message": "효과적인 구독 필터 식별자 (id 파라미터로 식별되지 않음)"
-  },
   "updateExternalSubscription_idDescription-s1": {
     "message": "구독 필터 식별자 (외부 구독 필터의 경우 이것은 모든 문자열이 될 수 있음)"
-  },
-  "updateExternalSubscription_titleDescription-s1": {
-    "message": "새로운 구독 필터가 생성되면 사용될 구독 필터 이름. 구독 필터가 이미 존재한다면 이 파라미터는 무시됩니다."
   },
   "updateExternalSubscription_patternsDescription-s1": {
     "message": "구독 필터가 포함해야 할 필터 패턴의 목록"
   },
-  "removeExternalSubscriptionDescription-s1": {
-    "message": "외부 구독 필터의 제거"
+  "updateExternalSubscription_returnDescription-s1": {
+    "message": "효과적인 구독 필터 식별자 (id 파라미터로 식별되지 않음)"
   },
-  "removeExternalSubscription_returnDescription-s1": {
-    "message": "<code>{1}</code>는 구독 필터가 제거되었을 때이고, <code>{2}</code>는 그러한 구독 필터가 존재하지 않거나 구독 필터가 외부적으로 관리되지 않을 때입니다."
-  },
-  "removeExternalSubscription_idDescription-s1": {
-    "message": "구독 필터 식별자 (외부 구독 필터의 경우 이것은 어떠한 모든 문자열이 될 수 있음)"
-  },
-  "addPatternsDescription-s1": {
-    "message": "사용자가 정의한 필터 목록으로 패턴 추가"
-  },
-  "addPatterns_patternsDescription-s1": {
-    "message": "추가될 필터 패턴의 목록"
-  },
-  "removePatternsDescription-s1": {
-    "message": "사용자가 정의한 필터 목록에서 패턴 제거"
-  },
-  "removePatterns_patternsDescription-s1": {
-    "message": "제거될 필터 패턴의 목록"
-  },
-  "getInstalledVersionDescription-s1": {
-    "message": "설치된 애드블록 플러스 확장 프로그램의 버전을 검색하십시오. 이것은 확장 프로그램 관리자 또는 InstallTrigger에 의해 보고된 버전 번호이거나 모질라 스위트 또는 시몽키에서 후자가 사용되면 올바르지 않을지도 모릅니다."
-  },
-  "getInstalledVersion_returnDescription-s1": {
-    "message": "애드블록 플러스 버전, 예시 <code>{1}</code>"
+  "updateExternalSubscription_titleDescription-s1": {
+    "message": "새로운 구독 필터가 생성되면 사용될 구독 필터 이름. 구독 필터가 이미 존재한다면 이 파라미터는 무시됩니다."
   }
 }

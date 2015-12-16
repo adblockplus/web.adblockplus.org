@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "FAQ - 安裝"
-  },
   "s1": {
     "message": "我要怎麼安裝 Adblock Plus 才能讓每個使用者使用相同的規則？"
   },
@@ -9,6 +6,7 @@
     "message": "您是一名管理員，並且想讓所有使用者都使用 Adblock Plus 嗎？那麼您需要將 Adblock Plus 安裝在瀏覽器的資料夾底下。對於 SeamMonkey 而言這是唯一的方法，若您使用 Firefox 則可以在 <code>extensions</code> 建立一個資料夾 <code>{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}</code>，並將 adblockplus.xpi 中所有內容解壓縮至此 (這是一個普通的 ZIP 檔案)。"
   },
   "s3": {
+    "description": "{1}: extensions.adblockplus.currentVersion",
     "message": "現在需要修改 Adblock Plus 的預設值。找出並編輯 adblockplus.js 檔案 ( <code>Firefox 為 extensions/{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}/defaults/preferences/adblockplus.js </code> ， SeaMonkey 為 <code>defaults/pref/adblockplus.js</code> ) 。您也許不希望 Adblock Plus 圖示打擾到使用者，可以將 <a>extensions.adblockplus.showintoolbar</a> 及 <a>extensions.adblockplus.showinstatusbar</a> 設為 <code>false</code> 。 若您也不希望使用者在初次啟動 Firefox 時，出現訂閱條件集的建議視窗，則可以將 <a>{1}</a> 設為 \"2.0\"。"
   },
   "s4": {
@@ -22,5 +20,8 @@
   },
   "s7": {
     "message": "適用於 K-Meleon 的 Adblock Plus 版本以及安裝介紹可 <a>在此取得</a>。"
+  },
+  "title": {
+    "message": "FAQ - 安裝"
   }
 }

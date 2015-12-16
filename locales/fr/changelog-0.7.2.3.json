@@ -1,9 +1,30 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 0.7.2.3"
-  },
   "s1": {
     "message": "Ajout de la traduction en persan"
+  },
+  "s10": {
+    "message": "Firefox : la position par défaut sur la barre d'outils est à l'extrême droite de la barre de navigation (<a>sujet du forum</a>)"
+  },
+  "s11": {
+    "message": "Les options \"Désactiver Adblock Plus pour ...\" ne sont plus désactivées si la boîte de dialogue des préférences est ouverte"
+  },
+  "s12": {
+    "message": "Ajout des méthodes addPatterns() et removePatterns() à l'interface publique <a>IAdblockPlus</a> (peut être utilisée à partir d'autres extensions)"
+  },
+  "s13": {
+    "message": "Utilisation de la fonctionnalité interne de Gecko pour le défilement jusqu'au noeud lors de la sélection dans le panneau latéral — moins enclin à des erreurs"
+  },
+  "s14": {
+    "message": "Plus de prise en compte de l'indication de version de l'extension fournie par le navigateur (l'information donnée par SeaMonkey est incertaine, <a>sujet du forum</a>)"
+  },
+  "s15": {
+    "message": "Peut être installé dans Songbird 0.3 à présent"
+  },
+  "s16": {
+    "message": "Suppression de la propriété obsolète <code>file</code> du fichier d'installation chrome.manifest (pas requis pour Firefox 1.5 et supérieur)"
+  },
+  "s17": {
+    "message": "Historique des modifications pour la version précédente"
   },
   "s2": {
     "message": "SeaMonkey : faille de sécurité majeur comblée — passé à  XPCNativeWrappers qui ne sont pas utilisés par défaut pour des raisons inconnues"
@@ -29,28 +50,7 @@
   "s9": {
     "message": "L'icône de la barre d'outils ne possède plus de petite flèche pour le menu déroulant pour éviter les problèmes de redimensionnement de la la barre, le menu est disponible par clic droit (<a>sujet du forum</a>)"
   },
-  "s10": {
-    "message": "Firefox : la position par défaut sur la barre d'outils est à l'extrême droite de la barre de navigation (<a>sujet du forum</a>)"
-  },
-  "s11": {
-    "message": "Les options \"Désactiver Adblock Plus pour ...\" ne sont plus désactivées si la boîte de dialogue des préférences est ouverte"
-  },
-  "s12": {
-    "message": "Ajout des méthodes addPatterns() et removePatterns() à l'interface publique <a>IAdblockPlus</a> (peut être utilisée à partir d'autres extensions)"
-  },
-  "s13": {
-    "message": "Utilisation de la fonctionnalité interne de Gecko pour le défilement jusqu'au noeud lors de la sélection dans le panneau latéral — moins enclin à des erreurs"
-  },
-  "s14": {
-    "message": "Plus de prise en compte de l'indication de version de l'extension fournie par le navigateur (l'information donnée par SeaMonkey est incertaine, <a>sujet du forum</a>)"
-  },
-  "s15": {
-    "message": "Peut être installé dans Songbird 0.3 à présent"
-  },
-  "s16": {
-    "message": "Suppression de la propriété obsolète <code>file</code> du fichier d'installation chrome.manifest (pas requis pour Firefox 1.5 et supérieur)"
-  },
-  "s17": {
-    "message": "Historique des modifications pour la version précédente"
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.7.2.3"
   }
 }

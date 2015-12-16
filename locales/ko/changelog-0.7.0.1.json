@@ -1,9 +1,9 @@
 {
-  "title": {
-    "message": "Adblock Plus 0.7.0.1의 세부적인 변경내역"
-  },
   "s1": {
     "message": "번역 추가 : 한국어, 태국어"
+  },
+  "s10": {
+    "message": "이전에 출시된 버전의 변경내역"
   },
   "s2": {
     "message": "Mac OS X에서 설정 가능한 단축키 문제를 고침 (탭 키는 Adblock Plus 동작을 일으킴)"
@@ -17,9 +17,6 @@
   "s5": {
     "message": "혼란을 피하기 위해 문맥 메뉴에서 \"...의 이미지 차단\"을 숨김 — 조건 : 이미지 관리자가 이미 어떤 것을 차단하고 있거나 <a>extensions.adblockplus.hideimagemanager</a>가"
   },
-  "s6": {
-    "message": "false"
-  },
   "s7": {
     "message": "권장 구독 필터에 러시아 지역 추가"
   },
@@ -27,9 +24,10 @@
     "message": "독일 로켈의 링크를 adblockplus.mozdev.org의 독일 버전으로 향하게 만듦"
   },
   "s9": {
+    "description": "{1}: @@|http://www.mozilla.org/",
     "message": "허용 필터의 예시를 <code>{1}</code>로 변경함 (@@https://는 때때로 광고를 포함하는 페이지를 허용함)"
   },
-  "s10": {
-    "message": "이전에 출시된 버전의 변경내역"
+  "title": {
+    "message": "Adblock Plus 0.7.0.1의 세부적인 변경내역"
   }
 }

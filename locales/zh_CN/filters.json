@@ -1,63 +1,84 @@
 {
-  "title": {
-    "message": "撰写 Adblock Plus 过滤规则"
-  },
   "s1": {
     "message": "　　当前的 Adblock Plus 版本允许您通过许多不同的方法来优化过滤规则。本文档就是告诉您如何做。"
   },
-  "s2": {
-    "message": "<em>声明</em>：这里给出的过滤规则只是示例，不一定能直接使用。"
-  },
-  "s3": {
-    "message": "AdBlock Plus 过滤规则介绍"
-  },
-  "s4": {
-    "message": "　　本章节描述的过滤规则属性，对偶尔才写过滤规则的用户来说足矣。"
-  },
-  "s5": {
-    "message": "基本过滤规则"
-  },
-  "s6": {
-    "message": "　　最简单的过滤规则当然就是您想阻挡的横幅广告地址，但是这些地址常常会在您每次打开页面时改变。例如： <code>{1}</code>，其中 123 是一个随机数字。在这里阻挡整个图片地址是没用的，您需要创建一条更通用的过滤规则 —— 如 <code>{2}</code>。或者更为通用一些的，如 <code>{3}</code>。"
-  },
-  "s7": {
-    "message": "<em>注</em>：不要使用通配符来代替过多的字符。过滤规则 <code>{1}</code> 固然可以阻挡所有的横幅广告， 但也会阻挡 example.com 下其它一些您想看的内容。"
-  },
-  "s8": {
-    "message": "定义例外规则"
-  },
-  "s9": {
-    "message": "　　有时您可能会发现某个过滤规则平时挡广告挡得很好，但在某些情况下，会阻挡一些不该挡的内容。您不想移除这条过滤规则，但也不希望它阻挡不该挡的内容。"
-  },
   "s10": {
+    "description": "{1}: adv, {2}: http://example.com/advice.html, {3}: @@advice, {4}: @@",
     "message": "　　这就是例外规则的好处——它们允许您定义过滤规则不被使用的情况。例如，您不满意过滤规则 <code>{1}</code> 阻挡了 <code>{2}</code>，您就可以定义一条例外规则 <code>{3}</code> 。 例外规则和过滤规则没什么两样，您可以使用通配符或正则表达式。您只需在规则前添加 <code>{4}</code> 来声明这是一个例外规则。"
   },
-  "s11": {
-    "message": "　　例外规则不止可以处理这些。如果一条例外规则以 http:// 或 https://（也可以在前面加上管线符号（|））开始，这会使所有的页面都是例外。例如：如果您的规则是 <code>{1}</code> 您浏览 example.com 的页面时，Adblock Plus 就被禁用了，这将不会阻挡任何东西。"
+  "s100": {
+    "message": "　　例外规则的作用是在特定域名中禁用已有的规则。"
+  },
+  "s101": {
+    "message": "这对于那些与其他订阅组配合使用，且无法更改该订阅组的作者来说较为有用。"
+  },
+  "s102": {
+    "description": "{1}: ##div.textad, {2}: example.com, {3}: example.com#@#div.textad",
+    "message": "例如，如要让 <code>{1}</code> 规则禁用于 <code>{2}</code>，可以使用  <code>{3}</code>。"
+  },
+  "s103": {
+    "description": "{1}: ~example.com##div.textad",
+    "message": "这条组合规则就等同于  <code>{1}</code>。"
+  },
+  "s104": {
+    "message": "建议您仅在无法调整全局隐藏规则时才使用例外规则，否则请首选限定在特定域名的规则。"
+  },
+  "s105": {
+    "message": "简单元素隐藏语法"
+  },
+  "s106": {
+    "description": "{1}: #div(id=foo)",
+    "message": "　　Adblock Plus 支持简单元素隐藏语法（例如： <code>{1}</code>）只是为了向后兼容性。使用这个语法是不好的，CSS 选择器才是首选。对这个语法的支持可能在以后的某个时间就不支持了。"
+  },
+  "s107": {
+    "message": "在服务器上实施 sitekey"
+  },
+  "s108": {
+    "description": "{1}: X-Adblock-Key: abcdpublickeydcba_abcdsignaturedcba, {2}: <html data-adblockkey=\"abcdpublickeydcba_abcdsignaturedcba\">",
+    "message": "若想完成一个采用 <a>sitekey 限制的过滤规则</a>，一个网页需要返回 Base64 编码的公钥版本和 Adblock Plus 可以验证的签名。目前来说，这需要在 HTTP 相应头中包含（<code>{1}</code>）及 document 的根标签中（<code>{2}</code>）。"
+  },
+  "s109": {
+    "message": "首先，您需要创建一个专用的 RSA 密钥（最好是 512 位以保证较低传输负担）和一个公钥的 DER 表示。"
+  },
+  "s110": {
+    "description": "{1}: NUL",
+    "message": "创建签名使用的数据是一个请求变量的连续列表（即 URI、Host 和 User Agent），分隔符是 <code>{1}</code> 字符，即“\\0”。举例来说："
+  },
+  "s111": {
+    "message": "最后，使用 SEC_OID_ISO_SHA_WITH_RSA_SIGNATURE 签名算法生成此字符串的签名（是使用 OpenSSL 时的默认值）。"
   },
   "s12": {
     "message": "匹配网址开头/结尾"
   },
   "s13": {
+    "description": "{1}: ad, {2}: *ad*, {3}: swf, {4}: http://example.com/swf/index.html",
     "message": "　　通常 Adblock Plus 处理过滤规则时，会自己假设在过滤规则的开头与结尾都有一个通配符，例如，过滤规则 <code>{1}</code> 和 <code>{2}</code> 是一样。 正常情况下这没什么问题，但有时您可能想要定义可以匹配以网址开头或结尾的过滤规则。例如，您想要阻挡所有的 Flash，但如果您添加过滤规则 <code>{3}</code> 地址 <code>{4}</code> 同样也将被阻挡。"
   },
   "s14": {
+    "description": "{1}: swf|, {2}: http://example.com/annoyingflash.swf, {3}: http://example.com/swf/index.html",
     "message": "　　这个问题的解决方法：使用管线符号（|）来表示地址的最前端或最末端。例如这条过滤规则 <code>{1}</code> 会阻挡 <code>{2}</code> 但不会阻挡 <code>{3}</code>。这条过滤规则 <code>|http://baddomain.example/</code> 会阻挡 <code>http://baddomain.example/banner.gif </code> 但不会阻挡 <code>http://gooddomain.example/analyze?http://baddomain.example</code>。"
   },
   "s15": {
+    "description": "{1}: http://example.com/banner.gif, {2}: https://example.com/banner.gif, {3}: http://www.example.com/banner.gif, {4}: ||example.com/banner.gif",
     "message": "　　有时您想阻挡 <code>{1}</code> 以及 <code>{2}</code> 和 <code>{3}</code>。这时只需在过滤规则的域名前面加上两个管线符号（||）：<code>{4}</code> 将会阻挡上面的地址而不会阻挡 <code>http://badexample.com/banner.gif</code> 或者 <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code>（需要 Adblock Plus 1.1 或更高版本）。"
   },
   "s16": {
     "message": "标记分隔符"
   },
   "s17": {
+    "description": "{1}: http://example.com/, {2}: http://example.com:8000/, {3}: http://example.com.ar/, {4}: http://example.com^",
     "message": "　　通常您需要接受过滤规则的任何分隔符。例如，您可能写这样一个规则阻挡 <code>{1}</code> 和 <code>{2}</code> 但不能阻挡 <code>{3}</code>。在这里，符号(^)用作一个分隔符。 <code>{4}</code>（需要 Adblock Plus 1.1 或更高版本）。"
   },
   "s18": {
+    "description": "{1}: _ - . %",
     "message": "　　分隔符可以是除了字母、数字或者 {1} 之外的任何字符。 这个地址的结尾也是作为一个分隔符，下面的例子中所有的分隔符以红色标记出："
   },
   "s19": {
+    "description": "{1}: ^example.com^, {2}: ^%D1%82%D0%B5%D1%81%D1%82^, {3}: ^foo.bar^",
     "message": "。所以这个地址可以通过这些过滤规则过滤 <code>{1}</code> 或 <code>{2}</code> 或 <code>{3}</code> 。"
+  },
+  "s2": {
+    "message": "<em>声明</em>：这里给出的过滤规则只是示例，不一定能直接使用。"
   },
   "s20": {
     "message": "注释"
@@ -84,10 +105,14 @@
     "message": "如果此注释存在，用户不能再更改该标题。"
   },
   "s28": {
+    "description": "{1}: 5 days, {2}: 8 hours",
     "message": "此注释设置该过滤规则列表的更新间隔，指定的值为天数（例如<code>{1}</code>）或者小时数（例如<code>{2}</code>）。"
   },
   "s29": {
     "message": "可以提供1小时至14天之间的值。"
+  },
+  "s3": {
+    "message": "AdBlock Plus 过滤规则介绍"
   },
   "s30": {
     "message": "注意：更新并不一定会在指定的间隔到达时发生。"
@@ -119,10 +144,15 @@
   "s39": {
     "message": "使用 UTF-8 编码对过滤规则列表的文本进行编码。"
   },
+  "s4": {
+    "message": "　　本章节描述的过滤规则属性，对偶尔才写过滤规则的用户来说足矣。"
+  },
   "s40": {
+    "description": "{1}: \\r, {2}: \\n",
     "message": "转换所有换行符为 Unix 样式（替换掉 <code>{1}</code> 用 <code>{2}</code> ，如果有）。"
   },
   "s41": {
+    "description": "{1}: \\n, {2}: \\n",
     "message": "移除空行（用 <code>{1}</code> 字符替换掉连续的 <code>{2}</code> 字符）。"
   },
   "s42": {
@@ -149,6 +179,9 @@
   "s49": {
     "message": "此注释定义过滤规则列表的数字版本。"
   },
+  "s5": {
+    "message": "基本过滤规则"
+  },
   "s50": {
     "message": "此版本号将显示在问题报告中，并且可以用于验证报告指向的是否是过滤规则列表的当前版本。"
   },
@@ -165,73 +198,108 @@
     "message": "　　Adblock Plus 允许您指定某些选项来改变某条规则的行为。您列举这些选项的时候将它们放在美元符号 ($) 后面并用逗号 (,) 分割这些选项，放在过滤规则的最后面，例如："
   },
   "s55": {
+    "description": "{1}: */ads/*, {2}: script, {3}: match-case",
     "message": "　　这里的 <code>{1}</code> 是真实的过滤规则 <code>{2}</code> 和 <code>{3}</code> 是其指定的选项。下面是目前支持的选项："
   },
   "s56": {
     "message": "类型选项：判定过滤规则（或例外规则）过滤元素的类型。过滤规则可以指定多个类型选项来过滤指定的元素类型。可以指定的类型包括："
   },
   "s57": {
+    "description": "{1}: script",
     "message": "<code>{1}</code> —— 外部脚本，由 HTML script 标签加载"
   },
   "s58": {
+    "description": "{1}: image",
     "message": "<code>{1}</code> —— 正常图片，通常由 HTML 的 img 标签所载入"
   },
   "s59": {
+    "description": "{1}: stylesheet",
     "message": "<code>{1}</code> —— 外部 CSS 样式文件"
   },
+  "s6": {
+    "description": "{1}: http://example.com/ads/banner123.gif, {2}: http://example.com/ads/banner*.gif, {3}: http://example.com/ads/*",
+    "message": "　　最简单的过滤规则当然就是您想阻挡的横幅广告地址，但是这些地址常常会在您每次打开页面时改变。例如： <code>{1}</code>，其中 123 是一个随机数字。在这里阻挡整个图片地址是没用的，您需要创建一条更通用的过滤规则 —— 如 <code>{2}</code>。或者更为通用一些的，如 <code>{3}</code>。"
+  },
   "s60": {
+    "description": "{1}: object",
     "message": "<code>{1}</code> —— 由浏览器插件处理的内容，例如 Flash 或 Java"
   },
   "s62": {
+    "description": "{1}: xmlhttprequest",
     "message": "<code>{1}</code> —— <a>XMLHttpRequest 对象</a> "
   },
   "s63": {
+    "description": "{1}: object-subrequest",
     "message": "<code>{1}</code> —— 插件的请求，比如Flash"
   },
   "s64": {
+    "description": "{1}: subdocument",
     "message": "<code>{1}</code> —— 内嵌的页面，通常通过 HTML 的框架方式内嵌"
   },
   "s65": {
+    "description": "{1}: document",
     "message": "<code>{1}</code> —— 网页本身（只适用于 <a> 例外规则</a> ）"
   },
   "s66": {
+    "description": "{1}: elemhide, {2}: document",
     "message": "<code>{1}</code> —— 只适用于例外规则，类似于<code>{2}</code> 但是只禁用页面上的<a>隐藏规则</a>而不是所有规则（需要Adblock Plus 1.2 或更高版本）"
   },
   "s67": {
+    "description": "{1}: other",
     "message": "<code>{1}</code> —— 其他不在上面的类型的请求"
   },
   "s68": {
+    "description": "{1}: background, {2}: xbl, {3}: ping, {4}: dtd",
     "message": "而过时的 <code>{1}</code>, <code>{2}</code>,  <code>{3}</code> 以及 <code>{4}</code> 类型选项则不再使用。"
   },
   "s69": {
+    "description": "{1}: ~script, {2}: ~image, {3}: ~stylesheet, {4}: ~object, {5}: ~xmlhttprequest, {6}: ~object-subrequest, {7}: ~subdocument, {8}: ~document, {9}: ~elemhide, {10}: ~other",
     "message": "反转类型选项：指定过滤规则<strong>不</strong>应用的元素类型。可以指定的类型选项： <code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code>, <code>{6}</code>, <code>{7}</code>, <code>{8}</code>, <code>{9}</code>, <code>{10}</code>"
   },
+  "s7": {
+    "description": "{1}: http://example.com/*",
+    "message": "<em>注</em>：不要使用通配符来代替过多的字符。过滤规则 <code>{1}</code> 固然可以阻挡所有的横幅广告， 但也会阻挡 example.com 下其它一些您想看的内容。"
+  },
   "s70": {
+    "description": "{1}: third-party, {2}: ~third-party",
     "message": "third-party/first-party 请求限制：如果指定了 <code>{1}</code> 选项， 则过滤规则只适用于来源与当前正在浏览的页面的不同的请求。类似地，<code>{2}</code> 适用于来源与当前浏览页面相同的请求。"
   },
   "s71": {
+    "description": "{1}: domain=example.com, {2}: domain=example.com|example.net, {3}: domain=~example.com, {4}: domain=example.com|~foo.example.com",
     "message": "域名限定：选项 <code>{1}</code> 指过滤规则只适用于 \"example.com\" 下的页面 。多个域名可以用 \"|\" 分隔： 过滤规则 <code>{2}</code> 将只适用于 \"example.com\" 或 \"example.net\" 的页面。如果一个域名是前面有\"~\"，则该过滤规则<strong>不</strong>适用于这个域名的页面。例如： <code>{3}</code> 指过滤规则适用于除了 example.com 之外的任何域名的页面而 <code>{4}</code> 限定了过滤规则适用于 \"example.com\" 但不包括 \"foo.example.com\" 。"
   },
   "s72": {
+    "description": "{1}: sitekey=abcdsitekeydcba, {2}: sitekey=abcdsitekeydcba|bcdesitekeyedcb",
     "message": "Sitekey 限制：选项 <code>{1}</code> 意味着该过滤规则应该只在页面上提供了一个与过滤规则内含有的非常相似的（但没有 = 后缀的）公钥和一个可被验证的签名时应用。可以使用“|”作为分隔指定多个 sitekey：使用 <code>{2}</code> 作为过滤规则的选项时，将只会在页面提供了“abcdsitekeydcba”或者“bcdesitekeyedcb”的 sitekey 时应用。这类似于域名限制，但这允许单条过滤规则应用到相当多的域。注意，sitekey 限制需要<a>服务器侧的修改</a>。"
   },
   "s73": {
+    "description": "{1}: match-case, {2}: */BannerAd.gif$match-case, {3}: http://example.com/BannerAd.gif, {4}: http://example.com/bannerad.gif",
     "message": "<code>{1}</code> —— 使过滤规则只适用于匹配地址，例如：过滤规则 <code>{2}</code> 会阻挡 <code>{3}</code> 但不会阻挡 <code>{4}</code>。"
   },
   "s74": {
+    "description": "{1}: collapse, {2}: ~collapse",
     "message": "<code>{1}</code> — 这个选项将覆盖全局\"隐藏已屏蔽元素的占位符\"选项，并确保过滤规则总是隐藏这些元素。类似地，<code>{2}</code> 选项将确保过滤规则不隐藏这些元素。"
   },
   "s75": {
+    "description": "{1}: donottrack",
     "message": "<code>{1}</code> —— 对有该选项的阻挡规则匹配到且有该选项的例外规则未匹配到的地址会发送一个  <a>Do-Not-Track 头</a> (需要Adblock Plus 1.3.5 或更高版本)。"
   },
   "s76": {
+    "description": "{1}: *$donottrack,image,~image",
     "message": "为了向后兼容，使用此选项时建议使用矛盾的组合类型选项，防止此规则在早期版本的 Adblock Plus 中阻挡任何东西： <code>{1}</code>"
   },
   "s77": {
     "message": "使用正则表达式"
   },
   "s79": {
+    "description": "{1}: /banner\\d+/, {2}: banner123, {3}: banner321, {4}: banners",
     "message": "　　如果您想更好地控制您的过滤规则，什么匹配，什么不匹配，您可以使用正则表达式。例如过滤规则 <code>{1}</code> 会匹配 <code>{2}</code> 和 <code>{3}</code> 而不会匹配 <code>{4}</code>。 您可以查看<a>正则表达式的文档</a>来学习如何写正则表达式。"
+  },
+  "s79-link": {
+    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Creating_a_Regular_Expression"
+  },
+  "s8": {
+    "message": "定义例外规则"
   },
   "s80": {
     "message": "<em>注</em>： 由于性能原因，建议尽可能避免使用正则表达式。"
@@ -249,6 +317,7 @@
     "message": "　　因为您必须下载页面的内容，所以您也必须下载这些广告。对于这种情况，您可以做的就是把这些广告藏起来，这样您就不会看到他们了。这也就是元素隐藏的意义所在。"
   },
   "s85": {
+    "description": "{1}: ##div.textad, {2}: ##div#sponsorad, {3}: ##*#sponsorad, {4}: ##textad",
     "message": "　　上面代码中的第一则广告是在一个 class 属性为“textad”的 div 容器内。过滤规则 <code>{1}</code> 。 这里的 ## 表明这是一条元素隐藏规则，剩下的就是定义需要隐藏元素的选择器，同样的，您可以通过他们的 id 属性来隐藏 <code>{2}</code> 会隐藏第二个广告。您不需要指定元素的名称， 过滤规则 <code>{3}</code> 同样也可以。您也可以仅指定要阻挡的元素名称来隐藏，例如：<code>{4}</code> 可以隐藏第三则广告。"
   },
   "s86": {
@@ -261,27 +330,36 @@
     "message": "限定在特定域名的规则"
   },
   "s89": {
+    "description": "{1}: ##*.sponsor, {2}: example.com##*.sponsor, {3}: http://example.com/, {4}: http://something.example.com/, {5}: http://example.org/, {6}: domain1.example,domain2.example,domain3.example##*.sponsor",
     "message": "　　通常您只想要隐藏特定网站的特定广告，而不希望规则会作用于其他网站。例如，过滤规则 <code>{1}</code> 可能会把某些网站的有效代码也隐藏了。但如果你把它写成 <code>{2}</code> 就只会在 <code>{3}</code> 和 <code>{4}</code> 生效了，而不是 <code>{5}</code>。 你也可以指定多个域名——只要用逗号（,）分隔即可：<code>{6}</code> 。"
   },
+  "s9": {
+    "message": "　　有时您可能会发现某个过滤规则平时挡广告挡得很好，但在某些情况下，会阻挡一些不该挡的内容。您不想移除这条过滤规则，但也不希望它阻挡不该挡的内容。"
+  },
   "s90": {
+    "description": "{1}: ~example.com##*.sponsor, {2}: example.com,~foo.example.com##*.sponsor",
     "message": "　　如果在域名之前有 \"~\"，该过滤规则<strong>不</strong>适用于这个域名的页面（需要 AdBlock Plus 1.1或更高版本）。例如， <code>{1}</code> 将适用于除了 \"example.com\" 之外的域名，<code>{2}</code> 适用于 \"example.com\" 但不适用于 \"foo.example.com\" 子域名。"
   },
   "s91": {
+    "description": "{1}: domain, {2}: domain.example,domain.test",
     "message": "<em>注</em>：由于元素隐藏实现方式的关系，您只可以将隐藏规则限定在完整的域名。您不能使用网址的其他部份，也不可用 <code>{1}</code> 代替 <code>{2}</code> 。"
   },
   "s92": {
+    "description": "{1}: browser##menuitem#javascriptConsole",
     "message": "<em>注</em>： 限定域名的元素隐藏规则也可用来隐藏浏览器的使用界面。例如，过滤规则 <code>{1}</code> 会隐藏 Firefox 工具菜单中的 JavaScript 控制台。"
   },
   "s93": {
     "message": "属性选择符"
   },
   "s94": {
+    "description": "{1}: ##table[width=\"80%\"], {2}: ##div[title*=\"adv\"], {3}: ##div[title^=\"adv\"][title$=\"ert\"], {4}: table[width=\"80%\"][bgcolor=\"white\"]",
     "message": "　　一些广告隐藏起来并不容易——它们广告不仅没有 id 也没有 class 属性。您可以使用其他属性来隐藏，例如 <code>{1}</code> 可以隐藏 width 属性值为 80% 的表格元素。 如果您不想指定属性的完整值，<code>{2}</code> 会隐藏所有 title 属性包含 adv 字符的 div 元素。您还可以检查属性的开始和结束字符，例如 <code>{3}</code> 会隐藏 titile 属性以 adv 开始并且以 ert 结束的 div 元素。正如您所见，你可以使用多个条件 —— <code>{4}</code> 会匹配到 width 属性为 80%、bgcolor 属性为 white 的表格元素。"
   },
   "s95": {
     "message": "高级选择符"
   },
   "s97": {
+    "description": "{1}: ##div.adheader + *",
     "message": "　　通常情况下，Firefox 支持的 CSS 选择器都可用于元素隐藏。例如：下面的过滤规则会隐藏 class 的属性为 adheader 的 div 元素相邻的元素： <code>{1}</code>。完整的 CSS 列表请查看 <a>W3C CSS 规范</a> （Firefox 目前并没有支持所有的选择器）。"
   },
   "s98": {
@@ -290,49 +368,7 @@
   "s99": {
     "message": "例外规则"
   },
-  "s100": {
-    "message": "　　例外规则的作用是在特定域名中禁用已有的规则。"
-  },
-  "s101": {
-    "message": "这对于那些与其他订阅组配合使用，且无法更改该订阅组的作者来说较为有用。"
-  },
-  "s102": {
-    "message": "例如，如要让 <code>{1}</code> 规则禁用于 <code>{2}</code>，可以使用  <code>{3}</code>。"
-  },
-  "s103": {
-    "message": "这条组合规则就等同于  <code>{1}</code>。"
-  },
-  "s104": {
-    "message": "建议您仅在无法调整全局隐藏规则时才使用例外规则，否则请首选限定在特定域名的规则。"
-  },
-  "s105": {
-    "message": "简单元素隐藏语法"
-  },
-  "s106": {
-    "message": "　　Adblock Plus 支持简单元素隐藏语法（例如： <code>{1}</code>）只是为了向后兼容性。使用这个语法是不好的，CSS 选择器才是首选。对这个语法的支持可能在以后的某个时间就不支持了。"
-  },
-  "s107": {
-    "message": "在服务器上实施 sitekey"
-  },
-  "s108": {
-    "message": "若想完成一个采用 <a>sitekey 限制的过滤规则</a>，一个网页需要返回 Base64 编码的公钥版本和 Adblock Plus 可以验证的签名。目前来说，这需要在 HTTP 相应头中包含（<code>{1}</code>）及 document 的根标签中（<code>{2}</code>）。"
-  },
-  "s109": {
-    "message": "首先，您需要创建一个专用的 RSA 密钥（最好是 512 位以保证较低传输负担）和一个公钥的 DER 表示。"
-  },
-  "s110": {
-    "message": "创建签名使用的数据是一个请求变量的连续列表（即 URI、Host 和 User Agent），分隔符是 <code>{1}</code> 字符，即“\\0”。举例来说："
-  },
-  "s111": {
-    "message": "最后，使用 SEC_OID_ISO_SHA_WITH_RSA_SIGNATURE 签名算法生成此字符串的签名（是使用 OpenSSL 时的默认值）。"
-  },
-  "s62-link": {
-    "message": "http://www.w3.org/TR/XMLHttpRequest/"
-  },
-  "s79-link": {
-    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Creating_a_Regular_Expression"
-  },
-  "s97-link": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
+  "title": {
+    "message": "撰写 Adblock Plus 过滤规则"
   }
 }

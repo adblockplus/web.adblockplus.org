@@ -1,9 +1,12 @@
 {
-  "title": {
-    "message": "Element Hiding Helper"
-  },
   "s1": {
     "message": "Remarques générales"
+  },
+  "s10": {
+    "message": "À présent, vous pouvez sélectionner l'élément à masquer avec votre pointeur de souris. Si vous devez masquer davantages d'éléments, appuyez sur la touche T. En appuyant sur R, vous réduisez à nouveau la zone de sélection. D'autres commandes sont à votre disposition dans l'aide vous permettant de préciser ce que vous souhaitez masquer."
+  },
+  "s11": {
+    "message": "Lorsque vous aurez indiqué l'élément à masquer en cliquant dessus, la fenêtre de composition de filtre masquant apparaîtra. Vous pourrez y choisir le domaine dans lequel le filtre sera actif et  l'attribut de l'élément devant être pris en compte (si les attributs que vous avez sélectionnés sont trop communs vous risquez également de masquer des éléments utiles). L'aperçu appliquera le filtre obtenu immédiatement pour que vous puissiez vérifier l'affichage résultant. Si vous souhaitez créer des filtres plus évolués, vous pouvez basculer en mode avancé. Finalement, un clic sur \"Ajouter le filtre\" ajoutera le filtre dans votre liste de filtres Adblock Plus et l'appliquera à la page courante."
   },
   "s3": {
     "message": "Element Hiding Helper est une extension \"partenaire\" d'Adblock Plus facilitant la création de filtres masquant. Vous sélectionnez simplement l'élément que vous souhaitez masquer et choisissez ensuite l'attribut pris en compte lors des masquage futurs. Le filtre masquant est généré et ajouté automatiquement. Une partie du code est basée sur <a>l'extension Aardvark</a>."
@@ -14,9 +17,6 @@
   "s5": {
     "message": "Adblock Plus 1.3 ou supérieur est requis, cette extension ne pouvant pas fonctionner d'elle-même."
   },
-  "s6": {
-    "message": "Installation"
-  },
   "s7": {
     "message": "Installer Element Hiding Helper"
   },
@@ -25,14 +25,5 @@
   },
   "s9": {
     "message": "Vous lancez Element Hiding Helper en allant dans le menu de l'icône AdblockPlus située sur la barre d'outils et en cliquant sur \"Sélectionner un élément à masquer\"."
-  },
-  "s10": {
-    "message": "À présent, vous pouvez sélectionner l'élément à masquer avec votre pointeur de souris. Si vous devez masquer davantages d'éléments, appuyez sur la touche T. En appuyant sur R, vous réduisez à nouveau la zone de sélection. D'autres commandes sont à votre disposition dans l'aide vous permettant de préciser ce que vous souhaitez masquer."
-  },
-  "s11": {
-    "message": "Lorsque vous aurez indiqué l'élément à masquer en cliquant dessus, la fenêtre de composition de filtre masquant apparaîtra. Vous pourrez y choisir le domaine dans lequel le filtre sera actif et  l'attribut de l'élément devant être pris en compte (si les attributs que vous avez sélectionnés sont trop communs vous risquez également de masquer des éléments utiles). L'aperçu appliquera le filtre obtenu immédiatement pour que vous puissiez vérifier l'affichage résultant. Si vous souhaitez créer des filtres plus évolués, vous pouvez basculer en mode avancé. Finalement, un clic sur \"Ajouter le filtre\" ajoutera le filtre dans votre liste de filtres Adblock Plus et l'appliquera à la page courante."
-  },
-  "s3-link": {
-    "message": "http://karmatics.com/aardvark/"
   }
 }

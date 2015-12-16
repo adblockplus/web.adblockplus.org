@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 1.1"
-  },
   "s1": {
     "message": "Voici les principales modifications en comparaison avec la version 1.0.2 d’Adblock Plus :"
-  },
-  "s2": {
-    "message": "Problèmes connus"
-  },
-  "s3": {
-    "message": "Thunderbird : en cliquant sur \"S'abonner\" dans la liste d'abonnement au premier démarrage, la fenêtre Thunderbird est fermée. Cela devrait être bientôt réparé dans Thunderbird (<a>bogue 503299</a>)."
-  },
-  "s4": {
-    "message": "SeaMonkey : l'icône de la barre d'outils a un aspect désastreux avec le thème « Modern ». Ce thème semble ne pas prendre en compte la possibilité d'ajouter des extensions, son utilisation n'est donc pas recommandé avec Adblock Plus."
-  },
-  "s5": {
-    "message": "Certaines traductions contiennent des chaînes anglaises non traduites."
-  },
-  "s6": {
-    "message": "Nouvelles fonctionnalités"
-  },
-  "s7": {
-    "message": "Ajout du traitement des redirections HTTP, l'adresse de redirection s'affiche à présent dans la liste des éléments filtrables ainsi que l'adresse originale, les deux peuvent être bloquées."
-  },
-  "s8": {
-    "message": "Ajout de la prise en charge des <a>ancres flexibles en début de filtre</a> (<a>sujet du forum [anglais]</a>)."
-  },
-  "s9": {
-    "message": "Ajout de la prise en charge du caractère « ^ » qui correspondra à un <a>seul caractère séparateur ou une fin d'adresse</a> (<a>sujet du forum [anglais]</a>)."
   },
   "s10": {
     "message": "Ajout de la prise en charge <a>d'exceptions de domaine dans le masquage d'élément s</a> analogue de l'option $domain de filtres courants, ex. : \"exemple.com,~foo.exemple.com##foo\" ou \"~exemple.com##foo\" (<a>sujet du forum [anglais]</a>)."
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Réparé : \"Désactiver pour ...\" ne fonctionnait pas correctement lorsque la règle d'exception existe mais est désactivée."
   },
+  "s2": {
+    "message": "Problèmes connus"
+  },
   "s20": {
     "message": "Réparé : \"Désactiver pour ...\" ne fonctionnait pas correctement avec des règles qui existent déjà dans des abonnements de filtres plutôt que dans les filtres défiis par l'utilisateur."
   },
@@ -88,6 +64,9 @@
   },
   "s29": {
     "message": "Le bouton \"Fermer\" a été déplacé à droite de l'éditeur de filtre et utilise le style Firefox 3."
+  },
+  "s3": {
+    "message": "Thunderbird : en cliquant sur \"S'abonner\" dans la liste d'abonnement au premier démarrage, la fenêtre Thunderbird est fermée. Cela devrait être bientôt réparé dans Thunderbird (<a>bogue 503299</a>)."
   },
   "s30": {
     "message": "Amélioration du calcul de la position de l'éditeur de filtre, la position du texte ne changera plus."
@@ -119,6 +98,9 @@
   "s39": {
     "message": "Ajout d'un avertissement lors de l'ajout d'un filtre à un groupe de filtres désactivé (<a>sujet du forum [anglais]</a>)."
   },
+  "s4": {
+    "message": "SeaMonkey : l'icône de la barre d'outils a un aspect désastreux avec le thème « Modern ». Ce thème semble ne pas prendre en compte la possibilité d'ajouter des extensions, son utilisation n'est donc pas recommandé avec Adblock Plus."
+  },
   "s40": {
     "message": "Prise en charge des applications"
   },
@@ -149,6 +131,9 @@
   "s49": {
     "message": "Le nettoyage de l'historique Firefox efface également les statistiques d'utilisation dans Adblock Plus (peut être désactivé avec la préférence <a>extensions.adblockplus.clearStatsOnHistoryPurge</a> , <a>sujet du forum [anglais]</a>)."
   },
+  "s5": {
+    "message": "Certaines traductions contiennent des chaînes anglaises non traduites."
+  },
   "s50": {
     "message": "Nettoyage du code de gestion des données afin de s'assurer qu'Adblock Plus n'utilise plus de mémoire que nécessaire."
   },
@@ -163,5 +148,20 @@
   },
   "s54": {
     "message": "Historique des modifications pour la version précédente"
+  },
+  "s6": {
+    "message": "Nouvelles fonctionnalités"
+  },
+  "s7": {
+    "message": "Ajout du traitement des redirections HTTP, l'adresse de redirection s'affiche à présent dans la liste des éléments filtrables ainsi que l'adresse originale, les deux peuvent être bloquées."
+  },
+  "s8": {
+    "message": "Ajout de la prise en charge des <a>ancres flexibles en début de filtre</a> (<a>sujet du forum [anglais]</a>)."
+  },
+  "s9": {
+    "message": "Ajout de la prise en charge du caractère « ^ » qui correspondra à un <a>seul caractère séparateur ou une fin d'adresse</a> (<a>sujet du forum [anglais]</a>)."
+  },
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 1.1"
   }
 }

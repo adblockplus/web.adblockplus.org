@@ -1,27 +1,12 @@
 {
-  "title": {
-    "message": "FAQ - Adblock Plus 內部實作"
-  },
   "s1": {
     "message": "哪裡有全部 Adblock Plus 偏好設定值的用途？"
   },
-  "s3": {
-    "message": "Adblock Plus 有許多可經由 <a>about:config</a> 存取的偏好設定。它們都是以 <code>{1}</code> 開頭的 (與 Adblock 及 Adblock Plus 0.5 以 <code>{2}</code> 開頭不同)。完整的說明列表可以在 <a>這裡</a> 取得。"
-  },
-  "s4": {
-    "message": "我要怎麼從自己的擴充套件存取 Adblock Plus？"
-  },
-  "s5": {
-    "message": "要讓其他擴充套件整合 Adblock Plus，可使用 <code>{1}</code> 介面。詳細情形請參閱 <a>介面文件</a>。"
-  },
-  "s6": {
-    "message": "Adblock Plus 是如何過濾網址的？"
-  },
-  "s7": {
-    "message": "其實最關鍵的部份是由 Gecko，也就是 Firefox，Thunderbird 及其他應用程式的最底層引擎完成的。它包含一種稱之為「內容策略」(content policy) 的機制。內容策略簡單地說就是一個 JavaScript (或 C++) 物件，每當瀏覽器需要載入某些東西時就會呼叫。它會觀察網址及其他資料來決定是否允許載入。有許多內容策略是內建的 (當您在 Firefox 或者 SeaMonkey 中定義哪些網站的圖片不該載入時，您也就設定了其中一個內容策略)，所有套件也都可以註冊一個自己專用的。所以 Adblock Plus 要做的也就是註冊一個自己的內容策略，剩下的就是建立應用程式邏輯來決定哪些網址應該阻擋，並提供使用者界面來設定過濾條件。"
-  },
   "s11": {
     "message": "給開發者： 要註冊一個內容策略，您必須 <a>撰寫一個 XPCOM 元件</a> 並實作 <a>nsIContentPolicy 介面</a>。請確保您有調整模組中的 registerSelf 方法來註冊您在 \"content-policy\" 類別中的元件 (利用 <a>category manager</a> 來實作)。現在您元件裡頭的 shouldLoad 方法將被呼叫，且您可以決定是否該接受指定的請求。"
+  },
+  "s11-link": {
+    "message": "http://developer.mozilla.org/cn/docs/How_to_Build_an_XPCOM_Component_in_Javascript"
   },
   "s12": {
     "message": "Adblock Plus 如何處理它的過濾條件，以及哪種過濾條件更快？"
@@ -50,6 +35,9 @@
   "s22": {
     "message": "@-moz-document 是一個 CSS 標準的延伸，您可以在 <a>Mozilla Developer Center</a> 閱讀更多相關細節。"
   },
+  "s22-link": {
+    "message": "https://developer.mozilla.org/en/CSS/@-moz-document"
+  },
   "s23": {
     "message": "那些沒有限制特定網域的規則將會被設定在 http:// 及 https:// 協定下以防它們不小心隱藏瀏覽器的界面 (chrome:// 格式)。舉個例子，條件 <code>#div(evil_ad)</code> 將被翻譯為："
   },
@@ -65,34 +53,30 @@
   "s29": {
     "message": "這只是一個簡單的註解。Adblock (或 Adblock Plus) 將忽略實際標記前的內容。這裡的需求版本不是強制性的，因為 Adblock Plus 0.6.1.2 也還不支援它。不過，如果您使用更新的過濾條件語法，您也許會需要改成："
   },
+  "s3": {
+    "description": "{1}: extensions.adblockplus., {2}: adblock.",
+    "message": "Adblock Plus 有許多可經由 <a>about:config</a> 存取的偏好設定。它們都是以 <code>{1}</code> 開頭的 (與 Adblock 及 Adblock Plus 0.5 以 <code>{2}</code> 開頭不同)。完整的說明列表可以在 <a>這裡</a> 取得。"
+  },
   "s30": {
     "message": "這種標頭的類型從 Adblock Plus 0.7.1 開始支援。較舊的 Adblock Plus 及 Adblock 版本無法開啟這種標頭的檔案。至於目前的版本，會先檢查標頭的版本編號並與本身的版本比較。如果檔案需要更新的 Adblock Plus，則使用者會收到一個要求更新的訊息。過濾條件集仍會載入這些新版 Adblock Plus 才能正常使用的檔案，不過會在偏好設定視窗中顯示警告訊息。"
   },
   "s31": {
     "message": "最後，如果你只想要求使用 Adblock Plus 而不想指定版本，您可以在檔案開頭寫上 <code>[Adblock Plus]</code>。當然這個檔案只會被 Adblock Plus 0.7.1 及更高版本接受。"
   },
-  "s3-link": {
-    "message": "http://kb.mozillazine.org/About:config"
+  "s4": {
+    "message": "我要怎麼從自己的擴充套件存取 Adblock Plus？"
   },
-  "s11-link": {
-    "message": "http://developer.mozilla.org/cn/docs/How_to_Build_an_XPCOM_Component_in_Javascript"
+  "s5": {
+    "description": "{1}: IAdblockPlus",
+    "message": "要讓其他擴充套件整合 Adblock Plus，可使用 <code>{1}</code> 介面。詳細情形請參閱 <a>介面文件</a>。"
   },
-  "s11-link2": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html"
+  "s6": {
+    "message": "Adblock Plus 是如何過濾網址的？"
   },
-  "s11-link3": {
-    "message": "http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html"
+  "s7": {
+    "message": "其實最關鍵的部份是由 Gecko，也就是 Firefox，Thunderbird 及其他應用程式的最底層引擎完成的。它包含一種稱之為「內容策略」(content policy) 的機制。內容策略簡單地說就是一個 JavaScript (或 C++) 物件，每當瀏覽器需要載入某些東西時就會呼叫。它會觀察網址及其他資料來決定是否允許載入。有許多內容策略是內建的 (當您在 Firefox 或者 SeaMonkey 中定義哪些網站的圖片不該載入時，您也就設定了其中一個內容策略)，所有套件也都可以註冊一個自己專用的。所以 Adblock Plus 要做的也就是註冊一個自己的內容策略，剩下的就是建立應用程式邏輯來決定哪些網址應該阻擋，並提供使用者界面來設定過濾條件。"
   },
-  "s20-link": {
-    "message": "http://www.w3.org/TR/CSS21/"
-  },
-  "s22-link": {
-    "message": "https://developer.mozilla.org/en/CSS/@-moz-document"
-  },
-  "s26-link": {
-    "message": "https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService"
-  },
-  "s26-link2": {
-    "message": "http://www.w3.org/TR/CSS21/cascade.html#cascading-order"
+  "title": {
+    "message": "FAQ - Adblock Plus 內部實作"
   }
 }

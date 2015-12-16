@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Detaillierte Änderungsliste für Adblock Plus 1.3.5"
-  },
   "s1": {
     "message": "Im Folgenden werden die wesentlichen Änderungen im Vergleich zu Adblock Plus 1.3.3 aufgelistet."
-  },
-  "s2": {
-    "message": "Funktionalität"
-  },
-  "s3": {
-    "message": "Firefox Mobile 4 wird jetzt unterstützt, die Unterstützung von Firefox Mobile 1.0 wurde aufgegeben."
-  },
-  "s4": {
-    "message": "K-Meleon 1.6 wird größtenteils unterstützt (<a>spezielle Installationspakete</a> erforderlich)."
-  },
-  "s5": {
-    "message": "Unterstützung für <a>vorgeschlagene Do-Not-Track Kopfzeile</a> (DNT) hinzugefügt, mit einen Filter wie <code>{1}</code> wird diese Kopfzeile stets gesendet (<a>Thema im Forum</a>)."
-  },
-  "s6": {
-    "message": "Experimentelle Taste \"Empfehlen Sie uns auf Facebook\" hinzugefügt, um eine einfache Empfehlungsabgabe zu ermöglichen — wird nur Facebook-Nutzern angezeigt."
-  },
-  "s7": {
-    "message": "Benutzeroberfläche"
-  },
-  "s8": {
-    "message": "Übersetzungen für Malaiisch und Estnisch sind wieder enthalten."
-  },
-  "s9": {
-    "message": "Tastaturkürzel-Einstellungen können jetzt mehrere Werte haben, der erste verfügbare Tastaturkürzel wird benutzt."
   },
   "s10": {
     "message": "Für Einstellungen ist das standardmäßig Ctrl-Shift-E (verwendet in Firefox 3.x), Ctrl-Shift-F (verwendet in Firefox 4) oder Ctrl-Shift-O (Firefox 4 unter Mac OS X)."
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Thunderbird: Bessere Fehlerberichte für Blog-Artikel, statt der nichtssagenden Mailbox-Adresse wird nun die Adresse des Artikels übermittelt."
   },
+  "s2": {
+    "message": "Funktionalität"
+  },
   "s20": {
     "message": "Behoben: Deaktivierte Fehlerlisten sollten nicht im Fehlerbericht erscheinen (<a>Thema im Forum</a>)."
   },
@@ -88,5 +64,30 @@
   },
   "s29": {
     "message": "Änderungsliste der vorherigen Version"
+  },
+  "s3": {
+    "message": "Firefox Mobile 4 wird jetzt unterstützt, die Unterstützung von Firefox Mobile 1.0 wurde aufgegeben."
+  },
+  "s4": {
+    "message": "K-Meleon 1.6 wird größtenteils unterstützt (<a>spezielle Installationspakete</a> erforderlich)."
+  },
+  "s5": {
+    "description": "{1}: *$donottrack",
+    "message": "Unterstützung für <a>vorgeschlagene Do-Not-Track Kopfzeile</a> (DNT) hinzugefügt, mit einen Filter wie <code>{1}</code> wird diese Kopfzeile stets gesendet (<a>Thema im Forum</a>)."
+  },
+  "s6": {
+    "message": "Experimentelle Taste \"Empfehlen Sie uns auf Facebook\" hinzugefügt, um eine einfache Empfehlungsabgabe zu ermöglichen — wird nur Facebook-Nutzern angezeigt."
+  },
+  "s7": {
+    "message": "Benutzeroberfläche"
+  },
+  "s8": {
+    "message": "Übersetzungen für Malaiisch und Estnisch sind wieder enthalten."
+  },
+  "s9": {
+    "message": "Tastaturkürzel-Einstellungen können jetzt mehrere Werte haben, der erste verfügbare Tastaturkürzel wird benutzt."
+  },
+  "title": {
+    "message": "Detaillierte Änderungsliste für Adblock Plus 1.3.5"
   }
 }

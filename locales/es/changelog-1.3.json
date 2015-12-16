@@ -1,31 +1,4 @@
 {
-  "title": {
-    "message": "Detalle de cambios de Adblock Plus 1.3"
-  },
-  "s2": {
-    "message": "Interfaz de usuario"
-  },
-  "s3": {
-    "message": "Nueva traducción: Español de México"
-  },
-  "s4": {
-    "message": "Eliminadas traducciones sin mantenimiento: indonesio, malayo y portugués brasileño"
-  },
-  "s5": {
-    "message": "Se añade un creador de informes de errores que permite enviar informes sobre problemas relacionados con Adblock Plus en páginas web (\"Informar de un problema en esta página..\" en el menú del icono de ABP, <a>tema del foro</a>)"
-  },
-  "s6": {
-    "message": "Ya se pueden bloquear los mapas de imágenes desde el menú contextual de la misma forma que las imágenes normales (<a>bug 16605</a>)"
-  },
-  "s7": {
-    "message": "Los enlaces a la documentación en adblockplus.org abrirán automáticamente la versión en el idioma del usuario si está disponible"
-  },
-  "s8": {
-    "message": "Icono de ABP"
-  },
-  "s9": {
-    "message": "A partir de ahora al pulsar en el icono se abrirá por defecto el menú (puede reponerse el comportamiento anterior cambiando la preferencia <a>extensions.adblockplus.defaulttoolbaraction</a>\n)"
-  },
   "s10": {
     "message": "Ahora el primer elemento del menú es el nuevo creador de informes de errores (<a>tema del foro</a>)"
   },
@@ -55,6 +28,9 @@
   },
   "s19": {
     "message": "Las sugerencias ya no distinguen entre protocolos (<a>tema del foro</a>)"
+  },
+  "s2": {
+    "message": "Interfaz de usuario"
   },
   "s20": {
     "message": "Se muestra un aviso si un filtro personalizado ya no coincide con la dirección que se supone que debería bloquear (<a>tema del foro</a>)"
@@ -86,6 +62,9 @@
   "s29": {
     "message": "Descontinuado el soporte para Firefox 3.0, Songbird 1.8 y Midbrowser"
   },
+  "s3": {
+    "message": "Nueva traducción: Español de México"
+  },
   "s30": {
     "message": "Mejoras en la implementación, que ahora es más limpia y modular (también ha cambiado la forma en la que otras extensiones pueden  extensions should <a>tener acceso a Adblock Plus</a>)"
   },
@@ -116,6 +95,9 @@
   "s39": {
     "message": "Mejorado el rendimiento de la comprobación de filtros en un 20-35%"
   },
+  "s4": {
+    "message": "Eliminadas traducciones sin mantenimiento: indonesio, malayo y portugués brasileño"
+  },
   "s40": {
     "message": "Reducido el tiempo necesario para establecer la ocultación de elementos al iniciar el navegador"
   },
@@ -136,5 +118,23 @@
   },
   "s46": {
     "message": "Lista de cambios de la versión anterior"
+  },
+  "s5": {
+    "message": "Se añade un creador de informes de errores que permite enviar informes sobre problemas relacionados con Adblock Plus en páginas web (\"Informar de un problema en esta página..\" en el menú del icono de ABP, <a>tema del foro</a>)"
+  },
+  "s6": {
+    "message": "Ya se pueden bloquear los mapas de imágenes desde el menú contextual de la misma forma que las imágenes normales (<a>bug 16605</a>)"
+  },
+  "s7": {
+    "message": "Los enlaces a la documentación en adblockplus.org abrirán automáticamente la versión en el idioma del usuario si está disponible"
+  },
+  "s8": {
+    "message": "Icono de ABP"
+  },
+  "s9": {
+    "message": "A partir de ahora al pulsar en el icono se abrirá por defecto el menú (puede reponerse el comportamiento anterior cambiando la preferencia <a>extensions.adblockplus.defaulttoolbaraction</a>\n)"
+  },
+  "title": {
+    "message": "Detalle de cambios de Adblock Plus 1.3"
   }
 }

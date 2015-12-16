@@ -1,12 +1,73 @@
 {
-  "title": {
-    "message": "필터 작성 방법"
-  },
   "s1": {
     "message": "애드블록 플러스의 현재 버전은 다양한 방식으로 필터를 \"조정\"할 수 있습니다. 이 문서는 현재 지원하는 필터의 옵션을 설명하고 있습니다."
   },
+  "s10": {
+    "description": "{1}: adv, {2}: http://example.com/advice.html, {3}: @@advice, {4}: @@",
+    "message": "필터를 적용해서는 안 되는 경우에 허용 필터가 필요합니다. 예를 들어 <code>{1}</code>라는 필터가 <code>{2}</code>를 차단해서 불편할 때 <code>{3}</code>라는 허용 필터를 정의할 수 있습니다. 허용 필터는 차단 필터와 다르지 않으며 와일드 카드 문자 또는 정규 표현식을 사용할 수 있습니다. 허용 필터의 형식은 주소와 일치하는 부분 앞에 <code>{4}</code>를 붙입니다."
+  },
+  "s100": {
+    "message": "허용 필터는 특정 도메인에 적용된 필터를 사용 중지시킵니다."
+  },
+  "s101": {
+    "message": "이 필터는 필터 목록을 변경할 수 없는 구독 필터를 적용할 때 대체로 유용합니다."
+  },
+  "s102": {
+    "description": "{1}: ##div.textad, {2}: example.com, {3}: example.com#@#div.textad",
+    "message": "예를 들어 필터 <code>{1}</code>는 도메인 <code>{2}</code>에서  <code>{3}</code>와 같이 허용 필터를 작성합니다."
+  },
+  "s103": {
+    "description": "{1}: ~example.com##div.textad",
+    "message": "##div.textad와 example.com#@#div.textad는 단일한 필터  <code>{1}</code>와 같은 효과를 냅니다."
+  },
+  "s104": {
+    "message": "일반 요소 숨김 필터를 변경할 수 없을 때만 허용 필터를 사용할 것을 권장하며, 특별히 필요한 도메인에 한정해서 허용 필터를 적용해야 할 경우에도 바람직합니다."
+  },
+  "s105": {
+    "message": "단순한 요소 숨김 구문"
+  },
+  "s106": {
+    "description": "{1}: #div(id=foo)",
+    "message": "애드블록 플러스는 오직 역호환을 위해 단순한 요소 숨김 구문(예 : <code>{1}</code>)을 지원합니다. 이 구문의 사용은 줄고, 보통 CSS 선택자를 선호합니다. 이 구문은 향후 어느 시점에 지원하지 않을 것입니다."
+  },
+  "s12": {
+    "message": "주소 시작/끝 부분에 필터 일치"
+  },
+  "s13": {
+    "description": "{1}: ad, {2}: *ad*, {3}: swf, {4}: http://example.com/swf/index.html",
+    "message": "보통 애드블록 플러스는 모든 필터를 마치 필터의 시작과 끝에 와일드 카드 문자가 있는 것처럼 처리합니다. 필터 <code>{1}</code>와 <code>{2}</code>는 차이가 없고, 문제를 일으키지 않습니다. 그렇지만 주소의 시작 또는 끝에 필터를 일치하게 정의하고 싶을 때가 있습니다. 예를 들어 모든 플래시를 차단하려고 할 때 필터 <code>{3}</code>를 추가하면 되지만 <code>{4}</code>도 역시 차단될 것입니다."
+  },
+  "s14": {
+    "description": "{1}: swf|, {2}: http://example.com/annoyingflash.swf, {3}: http://example.com/swf/index.html",
+    "message": "이 문제에 대한 해결책은 파이프 기호를 필터 끝부분에 추가하여 주소과 일치하게 정의하는 것입니다. 예를 들어 필터 <code>{1}</code>는 <code>{2}</code>와 일치하지만 <code>{3}</code>와는 일치하지 않습니다. 그리고 필터 <code>|http://baddomain.example/</code>는 <code>http://baddomain.example/banner.gif</code>와 일치하지만 <code>http://gooddomain.example/analyze?http://baddomain.example</code> 등의 필터에 의해 차단됩니다."
+  },
+  "s15": {
+    "description": "{1}: http://example.com/banner.gif, {2}: https://example.com/banner.gif, {3}: http://www.example.com/banner.gif, {4}: ||example.com/banner.gif",
+    "message": "때때로 어떤 사용자는 <code>{1}</code>는 물론이고, <code>{2}</code>와 <code>{3}</code>도 차단하고 싶어합니다. 이것은 필터와 도메인 이름의 시작 부분에 일치하는 두 개의 파이프 기호를 필터의 맨앞에 붙임으로써 가능합니다. 필터 <code>{4}</code>는 같은 모든 주소를 차단하는 반면에 <code>http://badexample.com/banner.gif</code> 또는 <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code>는 차단하지 않습니다 (애드블록 플러스 1.1 이상)."
+  },
+  "s16": {
+    "message": "구분자 문자의 사용"
+  },
+  "s17": {
+    "description": "{1}: http://example.com/, {2}: http://example.com:8000/, {3}: http://example.com.ar/, {4}: http://example.com^",
+    "message": "필터에서 어떤 구분자 문자를 종종 허용해야 할 필요가 때가 있습니다. 예를 들어 <code>{1}</code>와 <code>{2}</code>는 차단하지만 <code>{3}</code>는 차단하지 않는 필터를 작성할 수 있습니다. 이 때 ^ 기호는 단일한 구분자 문자를 위한 플레이스 홀더(빠져 있는 다른 것을 대신하는 기호나 텍스트의 일부)로서 사용되며, 필터 <code>{4}</code>를 작성하면 됩니다 (애드블록 플러스 1.1 이상)."
+  },
+  "s18": {
+    "description": "{1}: _ - . %",
+    "message": "구분자 문자는 하나의 문자나 숫자 그리고 {1} 와 같은 일부 특수 문자를 제외한 모든 문자입니다. 주소의 끝은 역시 구분자로서 간주합니다. 다음의 예는 모든 구분자 문자가 빨간 글자로 표시되어 있습니다."
+  },
+  "s19": {
+    "description": "{1}: ^example.com^, {2}: ^%D1%82%D0%B5%D1%81%D1%82^, {3}: ^foo.bar^",
+    "message": ". 그래서 이 주소는 <code>{1}</code> 또는 <code>{2}</code> 또는 <code>{3}</code> 등의 필터에 의해 차단됩니다."
+  },
   "s2": {
     "message": "<em>선언 </em>: 아래의 설명에 사용된 예시는 실제 사용된 사례와 관계없는 단순한 예시일뿐입니다."
+  },
+  "s20": {
+    "message": "주석"
+  },
+  "s21": {
+    "message": "구독 필터의 이름, 필터 유지자, 저작권, 연락처, 구독 필터 정보, 필터에 대한 부가 설명 등 정보를 추가하기 위해 주석을 사용합니다. 느낌표(!)로 시작하는 줄의 모든 문자열은 주석으로 취급되며, 필터 목록에서 회색 글자로 나타납니다. 애드블록 플러스는 필터링 과정에서 일반 필터와 달리 주석은 무시합니다."
   },
   "s3": {
     "message": "애드블록 플러스 필터 소개"
@@ -16,54 +77,6 @@
   },
   "s5": {
     "message": "차단 필터"
-  },
-  "s6": {
-    "message": "정의할 수 있는 대부분의 필터는 차단하려는 배너의 주소일 것입니다. 하지만 종종 이 주소는 페이지를 열 때마다 변경되기도 합니다. 예를 들어 배너의 주소가 <code>{1}</code>일 때 123은 임의의 숫자일 수 있습니다. 그리고 배너의 주소와 완전히 같은 필터는 도움이 되지 못하며, <code>{2}</code>나 <code>{3}</code> 등의 필터에 의해 차단됩니다."
-  },
-  "s7": {
-    "message": "<em>참고</em>: 와일드 카드 문자에 의해 너무 많은 것을 대체할 수 없다는 것을 확인하십시오. 필터 <code>{1}</code>는 확실히 모든 배너를 차단하겠지만 example.com에서 보고자 하는 다른 모든 것들도 차단할 것입니다."
-  },
-  "s8": {
-    "message": "허용 필터"
-  },
-  "s9": {
-    "message": "차단 필터로 인해 차단되지 않아야 할 콘텐츠가 차단되었을 때 사용하는 필터입니다. 문제를 일으키는 필터를 제거하지 않않아도 필터가 특정 주소에 적용되지 않도록 필터를 정의합니다."
-  },
-  "s10": {
-    "message": "필터를 적용해서는 안 되는 경우에 허용 필터가 필요합니다. 예를 들어 <code>{1}</code>라는 필터가 <code>{2}</code>를 차단해서 불편할 때 <code>{3}</code>라는 허용 필터를 정의할 수 있습니다. 허용 필터는 차단 필터와 다르지 않으며 와일드 카드 문자 또는 정규 표현식을 사용할 수 있습니다. 허용 필터의 형식은 주소와 일치하는 부분 앞에 <code>{4}</code>를 붙입니다."
-  },
-  "s11": {
-    "message": "또한 허용 필터는 http:// 또는 https://로 시작한다면(선택적으로 필터 앞에 하나의 파이프 기호가 있기도 함) 페이지 전체를 허용하게 됩니다. 예를 들어 허용 필터가 <code>{1}</code>이고 example.com의 일부 페이지를 열었다면 Adblock Plus는 이 페이지에서는 완전히 작동하지 않을 것이며, 아무것도 차단되지 않을 것입니다."
-  },
-  "s12": {
-    "message": "주소 시작/끝 부분에 필터 일치"
-  },
-  "s13": {
-    "message": "보통 애드블록 플러스는 모든 필터를 마치 필터의 시작과 끝에 와일드 카드 문자가 있는 것처럼 처리합니다. 필터 <code>{1}</code>와 <code>{2}</code>는 차이가 없고, 문제를 일으키지 않습니다. 그렇지만 주소의 시작 또는 끝에 필터를 일치하게 정의하고 싶을 때가 있습니다. 예를 들어 모든 플래시를 차단하려고 할 때 필터 <code>{3}</code>를 추가하면 되지만 <code>{4}</code>도 역시 차단될 것입니다."
-  },
-  "s14": {
-    "message": "이 문제에 대한 해결책은 파이프 기호를 필터 끝부분에 추가하여 주소과 일치하게 정의하는 것입니다. 예를 들어 필터 <code>{1}</code>는 <code>{2}</code>와 일치하지만 <code>{3}</code>와는 일치하지 않습니다. 그리고 필터 <code>|http://baddomain.example/</code>는 <code>http://baddomain.example/banner.gif</code>와 일치하지만 <code>http://gooddomain.example/analyze?http://baddomain.example</code> 등의 필터에 의해 차단됩니다."
-  },
-  "s15": {
-    "message": "때때로 어떤 사용자는 <code>{1}</code>는 물론이고, <code>{2}</code>와 <code>{3}</code>도 차단하고 싶어합니다. 이것은 필터와 도메인 이름의 시작 부분에 일치하는 두 개의 파이프 기호를 필터의 맨앞에 붙임으로써 가능합니다. 필터 <code>{4}</code>는 같은 모든 주소를 차단하는 반면에 <code>http://badexample.com/banner.gif</code> 또는 <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code>는 차단하지 않습니다 (애드블록 플러스 1.1 이상)."
-  },
-  "s16": {
-    "message": "구분자 문자의 사용"
-  },
-  "s17": {
-    "message": "필터에서 어떤 구분자 문자를 종종 허용해야 할 필요가 때가 있습니다. 예를 들어 <code>{1}</code>와 <code>{2}</code>는 차단하지만 <code>{3}</code>는 차단하지 않는 필터를 작성할 수 있습니다. 이 때 ^ 기호는 단일한 구분자 문자를 위한 플레이스 홀더(빠져 있는 다른 것을 대신하는 기호나 텍스트의 일부)로서 사용되며, 필터 <code>{4}</code>를 작성하면 됩니다 (애드블록 플러스 1.1 이상)."
-  },
-  "s18": {
-    "message": "구분자 문자는 하나의 문자나 숫자 그리고 {1} 와 같은 일부 특수 문자를 제외한 모든 문자입니다. 주소의 끝은 역시 구분자로서 간주합니다. 다음의 예는 모든 구분자 문자가 빨간 글자로 표시되어 있습니다."
-  },
-  "s19": {
-    "message": ". 그래서 이 주소는 <code>{1}</code> 또는 <code>{2}</code> 또는 <code>{3}</code> 등의 필터에 의해 차단됩니다."
-  },
-  "s20": {
-    "message": "주석"
-  },
-  "s21": {
-    "message": "구독 필터의 이름, 필터 유지자, 저작권, 연락처, 구독 필터 정보, 필터에 대한 부가 설명 등 정보를 추가하기 위해 주석을 사용합니다. 느낌표(!)로 시작하는 줄의 모든 문자열은 주석으로 취급되며, 필터 목록에서 회색 글자로 나타납니다. 애드블록 플러스는 필터링 과정에서 일반 필터와 달리 주석은 무시합니다."
   },
   "s51": {
     "message": "고급 기능"
@@ -78,70 +91,104 @@
     "message": "필터의 동작을 변경하기 위해 많은 옵션을 선택할 수 있고, 형식은 필터 끝에 달러 기호($)를 붙이고 옵션을 덧붙입니다. 옵션이 여러 개일 때는 옵션을 쉼표(,)로 구분합니다."
   },
   "s55": {
+    "description": "{1}: */ads/*, {2}: script, {3}: match-case",
     "message": "예를 들어 <code>{1}</code>라는 필터가 있고, <code>{2}</code>와 <code>{3}</code>에 관한 옵션을 적용하였습니다."
   },
   "s56": {
     "message": "필터가 차단할 수 있는(또는 허용 필터) 요소의 형식을 결정할 수 있다. 여러 적용 형식의 옵션은 필터가 여러 요소의 몇몇 형식에 적용을 지정하기 위해 특정될 수 있다. 현재 다음 옵션을 지원합니다."
   },
   "s57": {
+    "description": "{1}: script",
     "message": "<code>{1}</code> — HTML 스크립트 태그를 통해 불러오는 외부 스크립트"
   },
   "s58": {
+    "description": "{1}: image",
     "message": "<code>{1}</code> — HTML img 태그를 통해 불러오는 일반적인 이미지"
   },
   "s59": {
+    "description": "{1}: stylesheet",
     "message": "<code>{1}</code> — 외부 CSS 스타일시트 파일"
   },
+  "s6": {
+    "description": "{1}: http://example.com/ads/banner123.gif, {2}: http://example.com/ads/banner*.gif, {3}: http://example.com/ads/*",
+    "message": "정의할 수 있는 대부분의 필터는 차단하려는 배너의 주소일 것입니다. 하지만 종종 이 주소는 페이지를 열 때마다 변경되기도 합니다. 예를 들어 배너의 주소가 <code>{1}</code>일 때 123은 임의의 숫자일 수 있습니다. 그리고 배너의 주소와 완전히 같은 필터는 도움이 되지 못하며, <code>{2}</code>나 <code>{3}</code> 등의 필터에 의해 차단됩니다."
+  },
   "s60": {
+    "description": "{1}: object",
     "message": "<code>{1}</code> — 플래시나 자바와 같은 브라우저 플러그인에 의해 다루어지는 콘텐츠"
   },
   "s62": {
+    "description": "{1}: xmlhttprequest",
     "message": "<code>{1}</code> — <a>XMLHttpRequest 객체</a>에 의해 시작되는 요청"
   },
   "s63": {
+    "description": "{1}: object-subrequest",
     "message": "<code>{1}</code> — 플래시와 같은 플러그인을 시작하게 하는 요청"
   },
   "s64": {
+    "description": "{1}: subdocument",
     "message": "<code>{1}</code> — HTML 프레임을 통해 보통 포함된 페이지(하위 문서)"
   },
   "s65": {
+    "description": "{1}: document",
     "message": "<code>{1}</code> — 문서 그 자체(오직 <a>허용 필터</a>에 의해 페이지에 적용됨)"
   },
   "s66": {
+    "description": "{1}: elemhide, {2}: document",
     "message": "<code>{1}</code> — 허용 필터에만 사용되며, 적용 범위가 <code>{2}</code>와 유사하지만 그 페이지에서 차단 필터만 적용될 뿐 <a>요소 숨김 필터</a>는 적용하지 않음 (애드블록 플러스 1.2 이상)"
   },
   "s67": {
+    "description": "{1}: other",
     "message": "<code>{1}</code> — 위에서 언급한 항목 이외의 요청 유형"
   },
   "s68": {
+    "description": "{1}: background, {2}: xbl, {3}: ping, {4}: dtd",
     "message": "다음의 형식 옵션 <code>{1}</code>, <code>{2}</code>,  <code>{3}</code>, <code>{4}</code>은 필요성이 줄어들어 더 이상 사용되지 않습니다."
   },
   "s69": {
+    "description": "{1}: ~script, {2}: ~image, {3}: ~stylesheet, {4}: ~object, {5}: ~xmlhttprequest, {6}: ~object-subrequest, {7}: ~subdocument, {8}: ~document, {9}: ~elemhide, {10}: ~other",
     "message": "형식 옵션의 반전 : 필터가 적용되지 <strong>않을</strong> 요소 형식을 지정합니다. 형식 옵션의 반전 종류 : <code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code>, <code>{6}</code>, <code>{7}</code>, <code>{8}</code>, <code>{9}</code>, <code>{10}</code>"
   },
+  "s7": {
+    "description": "{1}: http://example.com/*",
+    "message": "<em>참고</em>: 와일드 카드 문자에 의해 너무 많은 것을 대체할 수 없다는 것을 확인하십시오. 필터 <code>{1}</code>는 확실히 모든 배너를 차단하겠지만 example.com에서 보고자 하는 다른 모든 것들도 차단할 것입니다."
+  },
   "s70": {
+    "description": "{1}: third-party, {2}: ~third-party",
     "message": "외부/내부 요청으로 제한 : <code>{1}</code> 옵션이 지정되면 필터는 오직 현재 보고 있는 페이지가 아닌 다른 데서 기원한 요청에만 적용합니다. 유사하게 <code>{2}</code>는 현재 보고 있는 페이지와 같은 데서 기원한 요청에만 적용합니다."
   },
   "s71": {
+    "description": "{1}: domain=example.com, {2}: domain=example.com|example.net, {3}: domain=~example.com, {4}: domain=example.com|~foo.example.com",
     "message": "적용 도메인 한정 : 옵션 <code>{1}</code>는 필터가 도메인 \"example.com\"의 페이지에만 적용된다는 것을 의미합니다. 다중 도메인은 구분자인 \"|\"를 사용해 지정할 수 있습니다. 옵션이 <code>{2}</code>과 같이 지정되어 있을 때 필터는 오직 도메인이 \"example.com\" 또는 \"example.com\"의 페이지에만 적용될 것입니다. 만약 도메인 이름 앞에 \"~\"가 붙어 있으면 이 도메인의 페이지에는 적용되지 <strong>않을</strong> 것입니다. 예를 들어 <code>{3}</code>는 필터가 \"example.com\"를 제외한 모든 도메인의 페이지에 적용된다는 것을 의미합니다. 옵션 <code>{4}</code>은 필터를 하위 도메인 \"foo.example.com\"를 제외한 도메인 \"example.com\"에만 적용됩니다."
   },
   "s73": {
+    "description": "{1}: match-case, {2}: */BannerAd.gif$match-case, {3}: http://example.com/BannerAd.gif, {4}: http://example.com/bannerad.gif",
     "message": "<code>{1}</code> — 대/소문자를 구분하여 일치하는 주소에만 필터를 적용합니다. 필터 <code>{2}</code>는 <code>{3}</code>와 일치하지만 <code>{4}</code> 등의 필터에 의해 차단됩니다."
   },
   "s74": {
+    "description": "{1}: collapse, {2}: ~collapse",
     "message": "<code>{1}</code> — \"차단된 요소의 영역 숨기기\" 옵션보다 우선해서 적용되는 일반 옵션이며, 이 필터는 항상 요소를 숨깁니다. 유사하게 <code>{2}</code> 옵션으로 인해 필터가 요소의 영역을 숨기지 않도록 합니다."
   },
   "s75": {
+    "description": "{1}: donottrack",
     "message": "<code>{1}</code> — 이 옵션으로 인해 차단/허용 필터와 일치하는 주소의 경우  <a>추적 방지 헤더</a>가 전송됩니다 (애드블록 플러스 1.3.5 버전 이상)"
   },
   "s76": {
+    "description": "{1}: *$donottrack,image,~image",
     "message": "하위 호환의 경우 상충하는 옵션 형식의 조합해서 이 옵션을 사용할 것을 권장합니다. 이 옵션은 애드블록 플러스의 이전 버전에서 다음의 필터는 차단을 막습니다.  <code>{1}</code>"
   },
   "s77": {
     "message": "정규 표현식의 사용"
   },
   "s79": {
+    "description": "{1}: /banner\\d+/, {2}: banner123, {3}: banner321, {4}: banners",
     "message": "필터의 주소 일치 여부를 더욱 섬세하게 통제하려면 정규 표현식을 사용할 수 있습니다. 예를 들어 필터 <code>{1}</code>는 <code>{2}</code>와 <code>{3}</code>와 일치하지만 <code>{4}</code>와는 일치하지 않습니다. 정규 표현식의 작성 방법을 배우려면 <a>정규 표현식에 관한 문서</a>를 검토하십시오."
+  },
+  "s79-link": {
+    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Creating_a_Regular_Expression"
+  },
+  "s8": {
+    "message": "허용 필터"
   },
   "s80": {
     "message": "<em>참고</em>: 필터 처리의 이유로 정규 표현식을 가급적 사용하지 않는 것을 권장합니다."
@@ -159,6 +206,7 @@
     "message": "웹 페이지를 다운로드할 필요가 있고 광고는 어쩔 수 없이 다운로드됩니다. 이 때 할 수 있는 일은 광고를 숨겨서 그것을 보지 않을 수 있습니다. 요소 숨김이 의미하는 것은 다음과 같습니다."
   },
   "s85": {
+    "description": "{1}: ##div.textad, {2}: ##div#sponsorad, {3}: ##*#sponsorad, {4}: ##textad",
     "message": "위의 첫번째 광고는 class 속성이\"textad\"인 div 요소 내부에 포함되어 있습니다. 필터 <code>{1}</code>는 정확히 이 조합을 숨길 것입니다. 여기서 ##는 요소 숨김 필터를 표시하며 반면에 나머지는 숨길 요소를 확인하는 선택자입니다. 이와 마찬가지로 id 속성에 의해 요소를 숨길 수 있습니다. <code>{2}</code>는 두번째 광고를 숨길 것입니다. 그리고 요소 이름을 지정할 필요는 없습니다. 마찬가지로 필터 <code>{3}</code>는 작동할 것입니다. 오직 요소 이름에 의해 요소를 숨길 수 있습니다. 예를 들어 <code>{4}</code>는 세번째 광고를 숨기게 됩니다."
   },
   "s86": {
@@ -171,27 +219,36 @@
     "message": "특정 도메인에 필터 한정"
   },
   "s89": {
+    "description": "{1}: ##*.sponsor, {2}: example.com##*.sponsor, {3}: http://example.com/, {4}: http://something.example.com/, {5}: http://example.org/, {6}: domain1.example,domain2.example,domain3.example##*.sponsor",
     "message": "필터가 다른 사이트에는 적용되지 않고 지정한 사이트의 특정 광고를 숨기길 원합니다. 예를 들어 필터 <code>{1}</code>는 몇몇 사이트의 일치하는 요소를 숨깁니다. 그러나 <code>{2}</code>와 같이 필터를 작성하면 <code>{3}</code>과 <code>{4}</code>에는 적용하지만 <code>{5}</code>에는 적용되지 않습니다. 또한 <code>{6}</code> 등의 필터에 의해 차단됩니다."
   },
+  "s9": {
+    "message": "차단 필터로 인해 차단되지 않아야 할 콘텐츠가 차단되었을 때 사용하는 필터입니다. 문제를 일으키는 필터를 제거하지 않않아도 필터가 특정 주소에 적용되지 않도록 필터를 정의합니다."
+  },
   "s90": {
+    "description": "{1}: ~example.com##*.sponsor, {2}: example.com,~foo.example.com##*.sponsor",
     "message": "도메인 이름 앞에 \"~\"가 붙으면 필터는 이 도메인의 페이지에는 적용되지 <strong>않습니다</strong> (애드블록 플러스 1.1 이상). 예를 들어 <code>{1}</code>는 \"example.com\"를 제외한 모든 도메인의 페이지에 적용됩니다. 그리고 <code>{2}</code>는 하위 도메인 \"foo.example.com\"를 제외한 도메인 \"example.com\"에만 적용됩니다."
   },
   "s91": {
+    "description": "{1}: domain, {2}: domain.example,domain.test",
     "message": "<em>참고</em> : 요소 숨김이 실행되는 방식 때문에 모든 도메인 이름에 필터를 한정할 수 있습니다. 주소에서 도메인 이름 이외의 부분을 이용할 수 없으며, 또한 다음 예시처럼 <code>{1}</code> 부분으로 <code>{2}</code>를 대체할 수 없습니다."
   },
   "s92": {
+    "description": "{1}: browser##menuitem#javascriptConsole",
     "message": "<em>참고</em>: 도메인을 한정하는 요소 숨김 필터는 브라우저의 사용자 인터페이스 요소를 숨기기 위해 사용될 수도 있습니다. 예를 들어 필터 필터 <code>{1}</code>는 파이어폭스의 도구 메뉴에서 자바스크립트 콘솔 항목을 숨깁니다."
   },
   "s93": {
     "message": "속성 선택자"
   },
   "s94": {
+    "description": "{1}: ##table[width=\"80%\"], {2}: ##div[title*=\"adv\"], {3}: ##div[title^=\"adv\"][title$=\"ert\"], {4}: table[width=\"80%\"][bgcolor=\"white\"]",
     "message": "일부 광고는 텍스트 광고에 id나 class 속성이 없습니다. 그래서 width가 80%인 표를 숨기기 위한 <code>{1}</code>와 같이 다른 속성들을 이용할 수 있습니다. 만약 문자열 \"adv\"를 포함하는 title 속성의 모든 div 요소를 숨기기 위한 <code>{2}</code>와 같이 속성의 모든 값을 지정하고 싶지 않으면 속성의 시작과 끝 부분을 확인하면 됩니다. 예를 들어 <code>{3}</code>는 \"adb\"로 시작하고, \"ert\"로 끝나는 div 요소를 숨깁니다. 보시다시피 width 속성이 80%이고, bgcolor 속성이 white인 표와 일치하는<code>{4}</code>처럼 다양한 조건을 이용할 수도 있습니다."
   },
   "s95": {
     "message": "고급 선택자"
   },
   "s97": {
+    "description": "{1}: ##div.adheader + *",
     "message": "일반적으로 어떤 파이어폭스에서 지원하는 CSS 선택자는 요소 숨김을 위해 사용됩니다. 예를 들어 <code>{1}</code> 필터는 class가 \"adheader\"인 div 요소 다음에 오는 어떤 요소를 숨깁니다. CSS 목록의 전체 목록은 <a>W3C CSS 규격</a>을 참고하십시오 (파이어폭스에서 아직 모든 선택자를 지원하지 않음)."
   },
   "s98": {
@@ -200,34 +257,7 @@
   "s99": {
     "message": "허용 필터"
   },
-  "s100": {
-    "message": "허용 필터는 특정 도메인에 적용된 필터를 사용 중지시킵니다."
-  },
-  "s101": {
-    "message": "이 필터는 필터 목록을 변경할 수 없는 구독 필터를 적용할 때 대체로 유용합니다."
-  },
-  "s102": {
-    "message": "예를 들어 필터 <code>{1}</code>는 도메인 <code>{2}</code>에서  <code>{3}</code>와 같이 허용 필터를 작성합니다."
-  },
-  "s103": {
-    "message": "##div.textad와 example.com#@#div.textad는 단일한 필터  <code>{1}</code>와 같은 효과를 냅니다."
-  },
-  "s104": {
-    "message": "일반 요소 숨김 필터를 변경할 수 없을 때만 허용 필터를 사용할 것을 권장하며, 특별히 필요한 도메인에 한정해서 허용 필터를 적용해야 할 경우에도 바람직합니다."
-  },
-  "s105": {
-    "message": "단순한 요소 숨김 구문"
-  },
-  "s106": {
-    "message": "애드블록 플러스는 오직 역호환을 위해 단순한 요소 숨김 구문(예 : <code>{1}</code>)을 지원합니다. 이 구문의 사용은 줄고, 보통 CSS 선택자를 선호합니다. 이 구문은 향후 어느 시점에 지원하지 않을 것입니다."
-  },
-  "s62-link": {
-    "message": "http://www.w3.org/TR/XMLHttpRequest/"
-  },
-  "s79-link": {
-    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Creating_a_Regular_Expression"
-  },
-  "s97-link": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
+  "title": {
+    "message": "필터 작성 방법"
   }
 }

@@ -1,63 +1,67 @@
 {
-  "title": {
-    "message": "Cómo escribir filtros para Adblock Plus"
-  },
   "s1": {
     "message": "Las actuales versiones de Adblock Plus le permiten \"ajustar\" los filtros de distintas maneras. Este documento explica las opciones que usted tiene y cómo pueden ser utilizados los filtros."
   },
-  "s2": {
-    "message": "<em>Descargo de responsabilidad</em>: Todos los ejemplos sobre filtros se dan aquí son realmente sólo ejemplos y no están diseñados para ser utilizados."
-  },
-  "s3": {
-    "message": "Introducción a los filtros para Adblock Plus"
-  },
-  "s4": {
-    "message": "Las opciones descritas en esta sección deberían ser suficiente para los usuarios que tienen que crear un filtro de vez en cuando."
-  },
-  "s5": {
-    "message": "Reglas para filtros básicos"
-  },
-  "s6": {
-    "message": "El filtro más trivial que se puede definir, por supuesto, es la dirección del aviso de publicidad que se desea bloquear. Sin embargo, a menudo esta dirección cambia cada vez que se abre una página. Por ejemplo, podría ser <code>{1}</code> 123 es un número al azar. Aquí el bloqueo de la dirección completa, no le ayuda, usted necesita un filtro más general — como ser <code>{2}</code>. O tal vez incluso <code>{3}</code>."
-  },
-  "s7": {
-    "message": "<em>Nota</em>: Asegúrese de que usted no está reemplazando demasiado con comodines. El filtro <code>{1}</code> definitivamente bloqueará todos los banners, pero también se bloqueará todo lo demás de ejemplo.com que todavía puede ser que desee ver."
-  },
-  "s8": {
-    "message": "Definición de reglas de excepción"
-  },
-  "s9": {
-    "message": "A veces, te darás cuenta de que uno de los filtros que por lo general funciona bastante bien, en algunos casos bloquea algo que no debería bloquear. Usted no desea eliminar este filtro, pero que tampoco desea que bloquee en este caso particular."
-  },
   "s10": {
+    "description": "{1}: adv, {2}: http://example.com/advice.html, {3}: @@advice, {4}: @@",
     "message": "Para eso es lo que las reglas de excepción son buenas - permiten definir los casos en que los filtros no se deben aplicar. Por ejemplo, si usted no esta conforme con que su filtro <code>{1}</code> bloquee <code>{2}</code>, puede definir una regla de excepción <code>{3}</code>. Las reglas de excepción no son diferentes de las reglas de filtrado, puede utilizar caracteres comodín o expresiones regulares. Sólo tiene que preceder por<code>{4}</code> para indicar una regla de excepción."
   },
-  "s11": {
-    "message": "Las reglas de excepción pueden hacer más. Si una regla de excepción comienza con http:// o https: / / (opcionalmente con un ¦ antes) va a hacer una excepción para las páginas completa. Por ejemplo, si la regla de excepción es <code>{1}</code> y abre alguna página de ejemplo.com - Adblock Plus será totalmente desactivado en esta página y nada se bloqueará."
+  "s100": {
+    "message": "Las reglas de excepción pueden desactivar en ciertos dominios las reglas establecidas."
+  },
+  "s101": {
+    "message": "Están pensadas sobre todo para los autores de suscripciones de filtros que están ampliando otras suscripciones de filtros que no pueden modificar."
+  },
+  "s102": {
+    "description": "{1}: ##div.textad, {2}: example.com, {3}: example.com#@#div.textad",
+    "message": "Por ejemplo, se puede desactivar la regla <code>{1}</code> en <code>{2}</code> usando la regla de excepción  <code>{3}</code>."
+  },
+  "s103": {
+    "description": "{1}: ~example.com##div.textad",
+    "message": "La combinación de ambas reglas tiene exactamente el mismo efecto que la regla única  <code>{1}</code>."
+  },
+  "s104": {
+    "message": "Se recomienda utilizar las reglas de excepción solamente cuando no se pueda modificar una regla general de ocultación de elementos, en todos los demás casos resulta preferible limitar dicha regla a los dominios en los que sea necesaria."
+  },
+  "s105": {
+    "message": "Sintaxis simplificada para ocultar elementos"
+  },
+  "s106": {
+    "description": "{1}: #div(id=foo)",
+    "message": "Adblock Plus soporta sintaxis simplificada para ocultar elementos (por ejemplo, <code>{1}</code>) solamente para la asegurar la compatibilidad hacia atrás. No se recomienda utilizar esta sintaxis, es preferible usar los selectores CSS. El soporte a esta sintaxis puede ser removido en algún momento."
   },
   "s12": {
     "message": "Cómo coincidir el inicio / final de una dirección"
   },
   "s13": {
+    "description": "{1}: ad, {2}: *ad*, {3}: swf, {4}: http://example.com/swf/index.html",
     "message": "Por lo general, Adblock Plus trata cada filtro como si hubiera un comodín en su principio y fin, por ejemplo, no hay diferencia entre los filtros <code>{1}</code> y <code>{2}</code>. Si bien esto por lo general no trae problemas, a veces es se desea que el filtro sólo coincida al principio o al final de una dirección. Por ejemplo es posible que desee bloquear todos los elementos Flash, pero si se agrega el filtro <code>{3}</code> la dirección <code>{4}</code> también será bloqueada."
   },
   "s14": {
+    "description": "{1}: swf|, {2}: http://example.com/annoyingflash.swf, {3}: http://example.com/swf/index.html",
     "message": "Solución a este problema: añadir un símbolo de barra vertical (|) al filtro para mostrar que definitivamente el final de la dirección es en ese punto. Por ejemplo, el filtro <code>{1}</code> bloqueará <code>{2}</code> pero no <code>{3}</code>. Y el filtro <code>|http://baddomain.example/</code> bloqueará <code>http://baddomain.example/banner.gif</code> pero no <code>http://gooddomain.example/analyze?http://baddomain.example</code>."
   },
   "s15": {
+    "description": "{1}: http://example.com/banner.gif, {2}: https://example.com/banner.gif, {3}: http://www.example.com/banner.gif, {4}: ||example.com/banner.gif",
     "message": "A veces uno quiere bloquear <code>{1}</code> así como <code>{2}</code> y <code>{3}</code> Esto se puede lograr poniendo dos barras verticales en la parte delantera del filtro lo que hace que el filtro coincida al principio del nombre de dominio: <code>{4}</code> bloqueará todas estas direcciones, mientras que no bloqueará <code>http://badexample.com/banner.gif</code> o <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (requiere Adblock Plus 1.1 o superior)."
   },
   "s16": {
     "message": "Marcado de caracteres separadores"
   },
   "s17": {
+    "description": "{1}: http://example.com/, {2}: http://example.com:8000/, {3}: http://example.com.ar/, {4}: http://example.com^",
     "message": "A menudo es necesario utilizar un carácter separador en un filtro. Por ejemplo, puede escribir un filtro que bloquee <code>{1}</code> y <code>{2}</code> pero no <code>{3}</code>.  Aquí el símbolo ^ se puede utilizar como un marcador para un carácter separador individual: <code>{4}</code> (requiere Adblock Plus 1.1 o superior)."
   },
   "s18": {
+    "description": "{1}: _ - . %",
     "message": "Un carácter separador es cualquier cosa menos una letra, un dígito, o uno de los siguientes: {1}. El final de la dirección también se acepta como separador. En el siguiente ejemplo todos los caracteres de separación se muestran en rojo:"
   },
   "s19": {
+    "description": "{1}: ^example.com^, {2}: ^%D1%82%D0%B5%D1%81%D1%82^, {3}: ^foo.bar^",
     "message": ". Así que esta dirección se puede bloquear con el filtro <code>{1}</code> o <code>{2}</code> o <code>{3}</code>."
+  },
+  "s2": {
+    "message": "<em>Descargo de responsabilidad</em>: Todos los ejemplos sobre filtros se dan aquí son realmente sólo ejemplos y no están diseñados para ser utilizados."
   },
   "s20": {
     "message": "Comentarios"
@@ -84,10 +88,14 @@
     "message": "Si este comentario se encuentra presente, el usuario ya no podrá cambiar el titulo."
   },
   "s28": {
+    "description": "{1}: 5 days, {2}: 8 hours",
     "message": "Este comentario establece el intervalo de actualización  para la lista de filtro, el valor proporcionado puede ser en días (ej. <code>{1}</code>) o horas (ej.<code>{2}</code>)."
   },
   "s29": {
     "message": "Cualquier valor dentro del rango de 1 hora hasta 14 días puede ser empleado."
+  },
+  "s3": {
+    "message": "Introducción a los filtros para Adblock Plus"
   },
   "s30": {
     "message": "Hay que tener en cuenta que la actualización no  va a ocurrir necesariamente dentro del intervalo determinado."
@@ -97,6 +105,12 @@
   },
   "s32": {
     "message": "Este comentario se asegura de que la corrupción accidental de los datos no resulte en filtros rotos."
+  },
+  "s4": {
+    "message": "Las opciones descritas en esta sección deberían ser suficiente para los usuarios que tienen que crear un filtro de vez en cuando."
+  },
+  "s5": {
+    "message": "Reglas para filtros básicos"
   },
   "s51": {
     "message": "Funciones avanzadas"
@@ -111,70 +125,104 @@
     "message": "Adblock Plus le permite especificar un número de opciones para modificar el comportamiento de un filtro. La lista de opciones se separada por comas después de un signo de dólar ($) al final del filtro, por ejemplo:"
   },
   "s55": {
+    "description": "{1}: */ads/*, {2}: script, {3}: match-case",
     "message": "Aquí <code>{1}</code> es el verdadero filtro y <code>{2}</code> y <code>{3}</code> son las opciones. En la actualidad las siguientes opciones son compatibles:"
   },
   "s56": {
     "message": "Opciones de tipo de elementos: determinan qué tipos de elementos un filtro puede bloquear (o permitir en el caso de una regla de excepción). Múltiples opciones pueden ser especificadas para indicar que el filtro se debe aplicar a varios tipos de elementos. Los tipos posibles son:"
   },
   "s57": {
+    "description": "{1}: script",
     "message": "<code>{1}</code> — scripts externos cargados a través de la etiqueta script en HTML"
   },
   "s58": {
+    "description": "{1}: image",
     "message": "<code>{1}</code> — imágenes regulares, por lo general cargadas a través de la etiqueta img en HTML"
   },
   "s59": {
+    "description": "{1}: stylesheet",
     "message": "<code>{1}</code> — archivos de hoja de estilo CSS externos"
   },
+  "s6": {
+    "description": "{1}: http://example.com/ads/banner123.gif, {2}: http://example.com/ads/banner*.gif, {3}: http://example.com/ads/*",
+    "message": "El filtro más trivial que se puede definir, por supuesto, es la dirección del aviso de publicidad que se desea bloquear. Sin embargo, a menudo esta dirección cambia cada vez que se abre una página. Por ejemplo, podría ser <code>{1}</code> 123 es un número al azar. Aquí el bloqueo de la dirección completa, no le ayuda, usted necesita un filtro más general — como ser <code>{2}</code>. O tal vez incluso <code>{3}</code>."
+  },
   "s60": {
+    "description": "{1}: object",
     "message": "<code>{1}</code> — contenido manejado por plugins del navegador, por ejemplo, Flash o Java"
   },
   "s62": {
+    "description": "{1}: xmlhttprequest",
     "message": "<code>{1}</code> — solicitudes iniciadas por el <a>objecto XMLHttpRequest</a> "
   },
   "s63": {
+    "description": "{1}: object-subrequest",
     "message": "<code>{1}</code> — solicitudes de plugins como Flash"
   },
   "s64": {
+    "description": "{1}: subdocument",
     "message": "<code>{1}</code> — páginas integradas, generalmente se incluye a través de marcos HTML (frames)"
   },
   "s65": {
+    "description": "{1}: document",
     "message": "<code>{1}</code> — la página en sí misma (sólo <a>reglas de excepción</a> se pueden aplicar a la página)"
   },
   "s66": {
+    "description": "{1}: elemhide, {2}: document",
     "message": "<code>{1}</code> — para reglas de excepción únicamente, al igual que <code>{2}</code>, pero sólo deshabilita <a>reglas de ocultación de elementos</a> en la página en lugar de todas las reglas de filtrado (requiere Adblock Plus 1.2 y superior)"
   },
   "s67": {
+    "description": "{1}: other",
     "message": "<code>{1}</code> — otros tipos de solicitudes no incluidas en la lista anterior"
   },
   "s68": {
+    "description": "{1}: background, {2}: xbl, {3}: ping, {4}: dtd",
     "message": "Las opciones de tipo <code>{1}</code>, <code>{2}</code>,  <code>{3}</code> y <code>{4}</code> están obsoletas y no deben seguir usándose."
   },
   "s69": {
+    "description": "{1}: ~script, {2}: ~image, {3}: ~stylesheet, {4}: ~object, {5}: ~xmlhttprequest, {6}: ~object-subrequest, {7}: ~subdocument, {8}: ~document, {9}: ~elemhide, {10}: ~other",
     "message": "Opciones inversas: especifican que <strong>no</strong> debe ser aplicada a los tipos de elementos del filtro indicados. Posibles opciones de tipo inverso: <code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code>, <code>{6}</code>, <code>{7}</code>, <code>{8}</code>, <code>{9}</code>, <code>{10}</code>"
   },
+  "s7": {
+    "description": "{1}: http://example.com/*",
+    "message": "<em>Nota</em>: Asegúrese de que usted no está reemplazando demasiado con comodines. El filtro <code>{1}</code> definitivamente bloqueará todos los banners, pero también se bloqueará todo lo demás de ejemplo.com que todavía puede ser que desee ver."
+  },
   "s70": {
+    "description": "{1}: third-party, {2}: ~third-party",
     "message": "Restricción a las solicitudes de terceros/mismo dominio: Si la opción <code>{1}</code> se especifica, el filtro sólo se aplica a las solicitudes de un origen diferente de la página actual que se está mirando. Del mismo modo, <code>{2}</code> restringe el filtro a las solicitudes del mismo origen que la página que se ve."
   },
   "s71": {
+    "description": "{1}: domain=example.com, {2}: domain=example.com|example.net, {3}: domain=~example.com, {4}: domain=example.com|~foo.example.com",
     "message": "Restricciones de dominio: La opción <code>{1}</code> significa que el filtro sólo se debe aplicar en las páginas del dominio \"ejemplo.com\". Varios dominios pueden ser especificados usando \"|\" como separador. Por ejemplo, con la opción <code>{2}</code> el filtro se aplicará únicamente en las páginas de dominio \"example.com\" o \"example.net\". Si un nombre de dominio es precedido con \"~\", el filtro <strong>no</strong> se debe aplicar en las páginas de este dominio. Por ejemplo, <code>{3}</code> significa que el filtro se debe aplicar en las páginas de cualquier dominio, salvo en \"ejemplo.com\" y <code>{4}</code> restringe el filtro a el dominio \"example.com\" con la excepción del subdominio \"foo.example.com\"."
   },
   "s73": {
+    "description": "{1}: match-case, {2}: */BannerAd.gif$match-case, {3}: http://example.com/BannerAd.gif, {4}: http://example.com/bannerad.gif",
     "message": "<code>{1}</code> — hace que el filtro sólo se aplique a las direcciones donde coincide exactamente mayúsculas y minúsculas, por ejemplo, el filtro <code>{2}</code> bloqueará <code>{3}</code> pero no <code>{4}</code>."
   },
   "s74": {
+    "description": "{1}: collapse, {2}: ~collapse",
     "message": "<code>{1}</code> — esta opción tiene prioridad sobre la preferencia global de \"Ocultar posicionadores de elementos bloqueados\" y garantiza que el filtro siempre oculta el elemento. De forma similar, la opción <code>{2}</code> garantizará que el filtro nunca oculta el elemento."
   },
   "s75": {
+    "description": "{1}: donottrack",
     "message": "<code>{1}</code> — para cualquier dirección que coincida con una regla de bloqueo con esta opción y no coincida con ninguna regla de excepción con esta opción se enviará un  <a>Do-Not-Track header</a> (se necesita Adblock Plus 1.3.5 o posterior)."
   },
   "s76": {
+    "description": "{1}: *$donottrack,image,~image",
     "message": "Para garantizar la compatibilidad con versiones anteriores se recomienda usar esta opción en combinación con opciones contrapuestas, que eviten que ese filtro bloquee algo en versiones anteriores de Adblock Plus: <code>{1}</code>"
   },
   "s77": {
     "message": "Utilización de expresiones regulares"
   },
   "s79": {
+    "description": "{1}: /banner\\d+/, {2}: banner123, {3}: banner321, {4}: banners",
     "message": "Puede usar expresiones regulares para un mayor control sobre lo que sus filtros hagan coincidir. Por ejemplo, el filtro <code>{1}</code> coincidirá con <code>{2}</code> y <code>{3}</code> pero no <code>{4}</code>. Puedes consultar <a>la documentación sobre las expresiones regulares</a> para aprender cómo escribilos."
+  },
+  "s79-link": {
+    "message": "https://developer.mozilla.org/es/Gu%C3%ADa_JavaScript_1.5/Escribir_un_patr%C3%B3n_de_expresi%C3%B3n_regular"
+  },
+  "s8": {
+    "message": "Definición de reglas de excepción"
   },
   "s80": {
     "message": "<em>Nota</em>: Por motivos de rendimiento, se recomienda no utilizar expresiones regulares si se puede evitar."
@@ -192,6 +240,7 @@
     "message": "Usted necesita descargar la página web, por lo que necesariamente va a descargar los anuncios de publicidad. Lo único que es posible en este case es ocultar la publicidad para no tener que verla. Ésta es la función para la cual la ocultación de elementos se ha diseñado."
   },
   "s85": {
+    "description": "{1}: ##div.textad, {2}: ##div#sponsorad, {3}: ##*#sponsorad, {4}: ##textad",
     "message": "El primer anuncio (del ejemplo de arriba) se encuentra dentro de un elemento div con clase de atributo \"textad\". Esta regla oculta exactamente esta combinación: <code>{1}</code>. Aquí ## marca una regla para ocultar el elemento, mientras que el resto es un selector para la identificación de los elementos que deben ser escondidos. Puede ocultar los elementos por su atributo id del mismo modo, <code>{2}</code> oculta el segundo anuncio de publicidad. No es necesario especificar el nombre del elemento, la regla <code>{3}</code> funcionará igual de bien. También puedes ocultar los elementos únicamente por su nombre de elemento, por ejemplo, <code>{4}</code> para el tercer aviso de publicidad."
   },
   "s86": {
@@ -204,27 +253,36 @@
     "message": "Cómo limitar las reglas a determinados dominios"
   },
   "s89": {
+    "description": "{1}: ##*.sponsor, {2}: example.com##*.sponsor, {3}: http://example.com/, {4}: http://something.example.com/, {5}: http://example.org/, {6}: domain1.example,domain2.example,domain3.example##*.sponsor",
     "message": "Por lo general, se desea ocultar un anuncio específico en un sitio específico, y no se quiere que la regla que se aplique en otros sitios. Por ejemplo, la regla <code>{1}</code> puede ocultar correctamente elementos en algunos sitios. Pero si se escribe como <code>{2}</code> se va a aplicar en <code>{3}</code> y <code>{4}</code> pero no en <code>{5}</code>. También puede especificar varios dominios - simplemente separarlos con comas: <code>{6}</code>."
   },
+  "s9": {
+    "message": "A veces, te darás cuenta de que uno de los filtros que por lo general funciona bastante bien, en algunos casos bloquea algo que no debería bloquear. Usted no desea eliminar este filtro, pero que tampoco desea que bloquee en este caso particular."
+  },
   "s90": {
+    "description": "{1}: ~example.com##*.sponsor, {2}: example.com,~foo.example.com##*.sponsor",
     "message": "Si un nombre de dominio es precedido con \"~\", la regla <strong>no</strong> se aplicará en las páginas de este dominio (requiere Adblock Plus 1.1 o superior). Por ejemplo, <code>{1}</code> aplicará en las páginas de cualquier dominio, pero \"example.com\" y <code>{2}</code> hace que la regla se aplique en \"example.com\", con la excepción de el subdominio \"foo.example.com \"."
   },
   "s91": {
+    "description": "{1}: domain, {2}: domain.example,domain.test",
     "message": "<em>Nota</em>: Debido a la forma como se implementa la ocultación de elementos, realmente sólo se puede limitar a los nombres de dominio completo. Usted no puede utilizar ninguna otra parte de la dirección y no se puede utilizar <code>{1}</code> como un reemplazo para <code>{2}</code>."
   },
   "s92": {
+    "description": "{1}: browser##menuitem#javascriptConsole",
     "message": "<em>Nota</em>: Las reglas para ocultación de elementos con limitación de dominio también pueden ser utilizadas para ocultar los elementos de la interfaz de usuario del navegador. Por ejemplo, la regla de filtrado <code>{1}</code> oculta la consola de JavaScript en el menú de Herramientas de Firefox."
   },
   "s93": {
     "message": "Selectores de atributos"
   },
   "s94": {
+    "description": "{1}: ##table[width=\"80%\"], {2}: ##div[title*=\"adv\"], {3}: ##div[title^=\"adv\"][title$=\"ert\"], {4}: table[width=\"80%\"][bgcolor=\"white\"]",
     "message": "Algunos anunciantes de publicidad no hacen que la tarea sea fácil - sus anuncios de texto no tienen ni un id ni un atributo de clase. Es posible utilizar otros atributos para ocultar los avisos de publicidad, por ejemplo <code>{1}</code> oculta tablas con el atributo width (ancho) establecido en 80%. Si no desea especificar el valor total del atributo, <code>{2}</code> oculta todos los elementos div con atributo title (título) que contiene la cadena \"adv\". También puede consultar el principio y el final de un atributo, por ejemplo <code>{3}</code> oculta elementos div con el título que comienza con \"ADV\" y termina con \"ert \". Como puedes ver, también es posible utilizar varias condiciones — <code>{4}</code> coincide con las tablas con ancho del 80% y de atributos bgcolor en blanco."
   },
   "s95": {
     "message": "Selectores avanzados"
   },
   "s97": {
+    "description": "{1}: ##div.adheader + *",
     "message": "En general, cualquier selector CSS compatible con Firefox se puede utilizar para ocultar elementos. Por ejemplo, la siguiente regla oculta cualquier cosa tras un elemento div con clase \"adheader\": <code>{1}</code>. Para obtener una lista completa de la lista de CSS ver <a>especificación CSS de W3C</a> (Note que no todos los selectores son compatibles con Firefox todavía)."
   },
   "s98": {
@@ -233,34 +291,7 @@
   "s99": {
     "message": "Reglas de excepción"
   },
-  "s100": {
-    "message": "Las reglas de excepción pueden desactivar en ciertos dominios las reglas establecidas."
-  },
-  "s101": {
-    "message": "Están pensadas sobre todo para los autores de suscripciones de filtros que están ampliando otras suscripciones de filtros que no pueden modificar."
-  },
-  "s102": {
-    "message": "Por ejemplo, se puede desactivar la regla <code>{1}</code> en <code>{2}</code> usando la regla de excepción  <code>{3}</code>."
-  },
-  "s103": {
-    "message": "La combinación de ambas reglas tiene exactamente el mismo efecto que la regla única  <code>{1}</code>."
-  },
-  "s104": {
-    "message": "Se recomienda utilizar las reglas de excepción solamente cuando no se pueda modificar una regla general de ocultación de elementos, en todos los demás casos resulta preferible limitar dicha regla a los dominios en los que sea necesaria."
-  },
-  "s105": {
-    "message": "Sintaxis simplificada para ocultar elementos"
-  },
-  "s106": {
-    "message": "Adblock Plus soporta sintaxis simplificada para ocultar elementos (por ejemplo, <code>{1}</code>) solamente para la asegurar la compatibilidad hacia atrás. No se recomienda utilizar esta sintaxis, es preferible usar los selectores CSS. El soporte a esta sintaxis puede ser removido en algún momento."
-  },
-  "s62-link": {
-    "message": "http://www.w3.org/TR/XMLHttpRequest/"
-  },
-  "s79-link": {
-    "message": "https://developer.mozilla.org/es/Gu%C3%ADa_JavaScript_1.5/Escribir_un_patr%C3%B3n_de_expresi%C3%B3n_regular"
-  },
-  "s97-link": {
-    "message": "http://www.w3.org/TR/css3-selectors/"
+  "title": {
+    "message": "Cómo escribir filtros para Adblock Plus"
   }
 }

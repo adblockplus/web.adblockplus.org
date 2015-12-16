@@ -1,9 +1,18 @@
 {
-  "title": {
-    "message": "Nájdenie nepotrebných filtrov"
-  },
   "s1": {
     "message": "'{filter}' nie je platný"
+  },
+  "s10": {
+    "message": "Prosím otvorte Adblock Plus nastavenia a označte všetky filtre ktoré chcete skontrolovať. Skopírujte ich (zvoľte Editovať — Kpírovať z menu alebo stlačte Ctrl+C) a prlepte ich do textového poľa nižšie. Alternatívne môžete vaše filtre vyexportovať a prilepiť obsah súboru do textového poľa."
+  },
+  "s11": {
+    "message": "<em>Vyhlásenie o ochrane súkromia </em>Žiadne dáta nie sú prenášané na server. Všetky potrebné úkony sú vykonávané na vašom počítači a nikdy z neho neodídu."
+  },
+  "s12": {
+    "message": "Nájdi nepotrebné filtre"
+  },
+  "s14": {
+    "message": "Váš zoznam filtrov s nepotrebnými filtrami nájdete nižšie. Môžete to skopírovať a prilepiť do vašich Adblock Plus nastavení (najprv zmažte existujúce filtre). Alternatívne môžete <a>kliknúť sem </a> aby ste dostali filtre na separátnu stranu. Uložte ich ako súbor a importujte do Adblock Plus nastavení."
   },
   "s2": {
     "message": "'{filter1}' je nepotrebný pri použití tohto filtru '{filter2}'"
@@ -29,19 +38,7 @@
   "s9": {
     "message": "Tento nástroj ma aj niektoré nedostatky. Nevie vyhodnotiť skrývajúce filtre a preto ich nechá nezmenené. Taktiež nerozpozná, či môže byť regulárny filter odstránený, hoci nástroj vie zistiť kedy filter môže byť normálny filter zmazaný kvoli regulárnemu výrazu."
   },
-  "s10": {
-    "message": "Prosím otvorte Adblock Plus nastavenia a označte všetky filtre ktoré chcete skontrolovať. Skopírujte ich (zvoľte Editovať — Kpírovať z menu alebo stlačte Ctrl+C) a prlepte ich do textového poľa nižšie. Alternatívne môžete vaše filtre vyexportovať a prilepiť obsah súboru do textového poľa."
-  },
-  "s11": {
-    "message": "<em>Vyhlásenie o ochrane súkromia </em>Žiadne dáta nie sú prenášané na server. Všetky potrebné úkony sú vykonávané na vašom počítači a nikdy z neho neodídu."
-  },
-  "s12": {
-    "message": "Nájdi nepotrebné filtre"
-  },
-  "s13": {
-    "message": "Status: <span></span>"
-  },
-  "s14": {
-    "message": "Váš zoznam filtrov s nepotrebnými filtrami nájdete nižšie. Môžete to skopírovať a prilepiť do vašich Adblock Plus nastavení (najprv zmažte existujúce filtre). Alternatívne môžete <a>kliknúť sem </a> aby ste dostali filtre na separátnu stranu. Uložte ich ako súbor a importujte do Adblock Plus nastavení."
+  "title": {
+    "message": "Nájdenie nepotrebných filtrov"
   }
 }

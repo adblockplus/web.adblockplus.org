@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "Détail des modifications apportées à Adblock Plus 0.7"
-  },
   "s1": {
     "message": "Ci-dessous l'énumération des modifications majeures par comparaison avec Adblock Plus 0.6.1 :"
-  },
-  "s2": {
-    "message": "Nouvelles fonctionnalités"
-  },
-  "s3": {
-    "message": "Comptage du nombre de fois qu'un filtre est appliqué — ce comptage est affiché dans la boîte de dialogue des préférences"
-  },
-  "s4": {
-    "message": "Possibilité de désactiver les filtres individuellement, pas seulement un abonnement entier"
-  },
-  "s5": {
-    "message": "Optimisation du traitement des longues listes de filtres, 5000 filtres fonctionnent sans ralentissement notable (ne fonctionne pas par les expressions régulières)"
-  },
-  "s6": {
-    "message": " <a>Syntaxe pour cacher les éléments</a> considérablement étendue — En limitant par domaine, sélecteur d'attribut, ligne CSS"
-  },
-  "s7": {
-    "message": "La liste de filtres est à présent stockée dans le fichier adblockplus/patterns.ini dans le dossier profile au lieu de prefs.js"
-  },
-  "s8": {
-    "message": "Interface utilisateur"
-  },
-  "s9": {
-    "message": "Ajout des traductions : portugaise brésilienne, hollandaise, chinoise simplifiée, française, danoise, anglaise britannique, portugaise, suédoise, chinoise traditionnelle"
   },
   "s10": {
     "message": "Préférences : La liste de filtres se présente sous forme d'arborescence en colonne"
@@ -59,6 +32,9 @@
   "s19": {
     "message": "Sidebar: Ajout du tri par colonne"
   },
+  "s2": {
+    "message": "Nouvelles fonctionnalités"
+  },
   "s20": {
     "message": "Panneau latéral : Peut être filtré par adresse ou par type de texte"
   },
@@ -88,6 +64,9 @@
   },
   "s29": {
     "message": "Le rajout dans la liste blanche via le menu permet d'indiquer une page spécifique et non plus toutes les pages associées"
+  },
+  "s3": {
+    "message": "Comptage du nombre de fois qu'un filtre est appliqué — ce comptage est affiché dans la boîte de dialogue des préférences"
   },
   "s30": {
     "message": "Ajout d'une option permettant d'afficher/cachser l'icône de la barre d'outils"
@@ -119,6 +98,9 @@
   "s39": {
     "message": "Réparé : Lorsque l'on passe dans une boîte de dialogue des préférences déjà ouverte les suggestions ne sont pas affichées et le filtre n'est pas sélectionné"
   },
+  "s4": {
+    "message": "Possibilité de désactiver les filtres individuellement, pas seulement un abonnement entier"
+  },
   "s40": {
     "message": "Réparé : Les espaces ne devraient pas être isolés dans l'adresse ou le nom de fichier de l'abonnement"
   },
@@ -141,6 +123,7 @@
     "message": "Savegarde journalière des patterns.ini (max. 5 sauvegardes par défaut)"
   },
   "s47": {
+    "description": "{1}: VERSION, {2}: ABP0.7",
     "message": "<code>{1}</code> dans l'adresse d'abonnement est remplacé par le numéro de version corante d'Adblock Plus version lors de la mise à jour, ex. <code>{2}</code>"
   },
   "s48": {
@@ -148,6 +131,9 @@
   },
   "s49": {
     "message": "Déplacement de plusieurs listes codées en dur vers les préférences about:config"
+  },
+  "s5": {
+    "message": "Optimisation du traitement des longues listes de filtres, 5000 filtres fonctionnent sans ralentissement notable (ne fonctionne pas par les expressions régulières)"
   },
   "s50": {
     "message": "Choix du type d'URL pouvant être bloqué avec une liste blanche (<a>extensions.adblockplus.whitelistschemes</a>), pas une liste noire"
@@ -165,6 +151,7 @@
     "message": "Réparé : Le changement de profil dans Mozilla and SeaMonkey ne s'effectuait pas correctement"
   },
   "s55": {
+    "description": "{1}: secureLookup(insecDoc, 'createEvent') is not a function",
     "message": "Réparé : Message d'erreur \"<code>{1}</code>\""
   },
   "s56": {
@@ -179,6 +166,9 @@
   "s59": {
     "message": "S'assurer qu'il n'y a pas de moyen pour les sites Web de détecter Adblock Plus"
   },
+  "s6": {
+    "message": " <a>Syntaxe pour cacher les éléments</a> considérablement étendue — En limitant par domaine, sélecteur d'attribut, ligne CSS"
+  },
   "s60": {
     "message": "Problèmes connus"
   },
@@ -190,5 +180,17 @@
   },
   "s63": {
     "message": "Historique des modifications pour la version précédente"
+  },
+  "s7": {
+    "message": "La liste de filtres est à présent stockée dans le fichier adblockplus/patterns.ini dans le dossier profile au lieu de prefs.js"
+  },
+  "s8": {
+    "message": "Interface utilisateur"
+  },
+  "s9": {
+    "message": "Ajout des traductions : portugaise brésilienne, hollandaise, chinoise simplifiée, française, danoise, anglaise britannique, portugaise, suédoise, chinoise traditionnelle"
+  },
+  "title": {
+    "message": "Détail des modifications apportées à Adblock Plus 0.7"
   }
 }

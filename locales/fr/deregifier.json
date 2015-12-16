@@ -1,7 +1,4 @@
 {
-  "title": {
-    "message": "Retransformer les expressions régulières en filtres simples"
-  },
   "s1": {
     "message": "À partir de la version 0.7 d'Adblock Plus la vérification de correspondance des filtres simples (pas des expressions régulières) a été optimisée de telle manière à ce que même un grand nombre de filtres n'aura pas de conséquence néfaste sur la vitesse de votre surf. Malheureusement, cette optimisation ne concerne pas les expressions régulières, chaque expression régulière de votre liste ralentira notre navigateur. Les expressions régulières ont été utilisées pour \"compresser\" une liste de filtres, ce qui avait pour conséquence de rendre les  filtres relativement longs et incompréhensibles — cela n'est plus nécessaire."
   },
@@ -19,5 +16,8 @@
   },
   "s6": {
     "message": "Votre liste de filtres contenant les expressions régulières qui ont pu être remplacées est affichée ci-dessous. Vous pouvez la copier puis la coller dans la boîte de dialogue des préférences (supprimez auparavant les filtres existants). Vous pouvez également <a>cliquer ici</a> pour afficher les filtres sur une autre page. Enregistrez-lez sous forme de fichier puis importez-les dans la boîte de dialogue des préférences. Il est également recommandé de <a>vérifier si votre liste ne contient pas de filtres inutiles</a>."
+  },
+  "title": {
+    "message": "Retransformer les expressions régulières en filtres simples"
   }
 }
