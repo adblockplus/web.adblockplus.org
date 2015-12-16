@@ -1,36 +1,53 @@
 {
-  "title": {
-    "message": "Über Adblock Plus"
+  "AcceptableAdsdefined": {
+    "message": "The Acceptable Ads list displays ads that comply with the acceptable ads criteria agreed upon by our community of users. The list is maintained by Eyeo GmbH."
   },
-  "s1": {
-    "message": "Mehr anzeigen"
+  "EasyListdefined": {
+    "message": "EasyList corresponds to your browser language and is aimed at disabling ads that are considered to be intrusive by our community of users. Eyeo GmbH <strong>did not</strong> draft EasyList and therefore has no right to, or control over, its content. Visit the <a>EasyList Community</a> for more information."
   },
-  "s2": {
-    "message": "Weniger anzeigen"
-  },
-  "s3": {
-    "message": "Was ist Adblock Plus?"
-  },
-  "s4": {
-    "message": "Mit Adblock Plus können Sie Werbung blockieren und sich gegen Tracking, Malware und viele <a>weitere Dinge</a> schützen, während Sie im Internet surfen."
+  "acceptable-ads-monetization": {
+    "description": "Paragraph in \"How we are financed\" section",
+    "message": "Wir erhalten Spenden von unseren Nutzern aber der Hauptteil der Einnahmen resultiert aus der Acceptable Ads Initiative. Größere Organisationen entrichten eine Lizenzgebühr für die von ihnen angeforderten und durch uns erbrachten Whitelist-Leistungen (90 Prozent der Lizenzen werden kostenlos erteilt, an kleinere Organisationen). Wichtig ist, dass die <a>Acceptable-Ads-Kriterien</a> immer eingehalten werden müssen, unabhängig davon, ob in Einzelfällen zusätzliche Lizenzgebühren zu zahlen sind. Werden die Kriterien nicht erfüllt, ist das Whitelisting nicht möglich."
   },
   "created": {
     "message": "Adblock Plus ist ein Open-Source Gemeinschaftsprojekt, welches 2006 maßgeblich von Wladimir Palant entwickelt wurde. 2011 wurde <a>Eyeo</a> von Wladimir Palant und Till Faida gegründet, um die Entwickung von ABP nachhaltig zu gestalten."
   },
-  "s5": {
-    "message": "Wie funktioniert Adblock Plus?"
+  "eyeoneeds": {
+    "message": "In regards to the Acceptable Ads initiative, Eyeo needs to review and analyze many applications. This includes reviewing ad format, safety precautions, compliance with the Acceptable Ads criteria and technical feasibility of the requested whitelisting, creating the filters for the whitelist, testing the filters, posting to the forum, etc."
   },
-  "s6": {
-    "message": "Adblock Plus selber blockiert gar nichts bis Sie ihm durch die Auswahl von Filterlisten “mitteilen” was es blockieren soll. Diese Filterlisten sind das Ergebnis vieler Freiwilliger weltweit und enthalten Filterregeln, die bestimmen, was der mit Adblock Plus verknüpfte Browser nicht anzeigen soll. Sie können beliebige Filterlisten jederzeit hinzufügen, verändern oder entfernen. Zum Beispiel existieren vorgefertigte externe Filterlisten, mit denen Sie sich auch vor <a>Tracking</a> oder <a>Malware</a> schützen können. Des Weiteren können Sie Ihre <a>eigenen Filterlisten erstellen</a> und benutzen."
+  "fee-details": {
+    "description": "Text in \"How we are financed\" section",
+    "message": "Angaben zu den Gebühren:"
   },
-  "s7": {
-    "message": "Standardmäßig sind zwei Filterlisten aktiviert:"
+  "financed-how": {
+    "description": "Section header",
+    "message": "Wie finanzieren wir uns?"
   },
-  "s8": {
-    "message": "Eine auf Ihrer Sprache basierend ausgewählte Blockierliste"
+  "improve": {
+    "message": "Keep improving the functionalities of Adblock Plus to provide users with the best possible tool to protect them from malware and have better control of their browsing experience and collection of their personal data"
   },
-  "s9": {
-    "message": "Die Liste mit Ausnahmefiltern"
+  "large-entities-compensate": {
+    "description": "Paragraph in \"How we are financed\" section",
+    "message": "Daher zahlen an uns einige wenige große Organisationen, die an der Acceptable Ads Initiative teilnehmen, eine Lizenzgebühr für die geleisteten Dienste. Alle anderen Teilnehmer (ca. 90 %) erhalten unsere Dienstleistungen unentgeltlich."
+  },
+  "large-entities-pay": {
+    "description": "Bullet point in \"How we are financed\" section",
+    "message": "Nur große Organisationen müssen Lizenzgebühren entrichten. Eine Organisation gilt als groß, wenn sie, aufgrund der Teilnahme an der Acceptable Ads Initiative, mehr als 10 Millionen zusätzliche Werbeimpressionen pro Monat verzeichnet."
+  },
+  "licensing-fee": {
+    "description": "Bullet point in \"How we are financed\" section",
+    "message": "Für diese Organisationen liegen unsere Lizenzgebühren dann in der Regel bei 30 Prozent der Einnahmen, die in Folge der Freigabe akzeptabler Werbeanzeigen zusätzlich generiert werden."
+  },
+  "managing-acceptable-ads": {
+    "description": "Paragraph in \"How we are financed\" section",
+    "message": "Die mit dem Whitelisting verbundenen Services sind mit erheblichem Aufwand unsererseits verbunden. Hierzu gehören eine fortlaufende Überprüfung und Kontrolle der einzelnen freigeschalteten Anzeigen sowie der kontinuierlichen Support aller Teilnehmer inklusive deren technischer Unterstützung. Diese Tätigkeiten können nicht vollständig durch Freiwillige erbracht oder durch Spenden gedeckt werden, wie es bei den gebräuchlichen Filterlisten der Fall sein mag."
+  },
+  "must-meet-strict-criteria": {
+    "description": "Paragraph in \"How we are financed\" section",
+    "message": "<strong>Wichtig:</strong> Jede Organisation auf der Whitelist – ob zahlender Teilnehmer oder nicht – MUSS den gleichen strengen Kriterien Folge leisten, wie sie von unseren Nutzern als Teil der Acceptable Ads Initiative akzeptiert wurden. Wir werden niemals Werbeanzeigen, die diese <a>Kriterien</a> nicht erfüllen, akzeptieren. Es gibt keine Möglichkeit, sich einen Platz auf der Acceptable Ads Whitelist zu kaufen. Alle freigeschalteten Anzeigen und teilnehmenden Organisationen sind in <a>unserem Forum</a> öffentlich einsehbar und zur Diskussion gestellt. Sie können gerne mitdiskutieren und uns Ihre Meinung mitteilen."
+  },
+  "s1": {
+    "message": "Mehr anzeigen"
   },
   "s10": {
     "message": "Sie können diese Listen aktiviert lassen, entfernen oder modifizieren. Ganz nach Ihrer Wahl!"
@@ -44,23 +61,11 @@
   "s13": {
     "message": "Weitere Infos findet man in unserem <a>FAQ für akzeptable Werbung</a>."
   },
-  "s14": {
-    "message": "Wie finanzieren wir uns?"
-  },
-  "s15": {
-    "message": "Wir erhalten Spenden von unseren Nutzern und Personen die unsere Vision teilen. Daneben bezahlen uns wenige große Firmen für Leistungen die wir im Rahmen der Freischaltung akzeptabler Werbeformen an diese erbringen. Kleine und mittlere Webseiten erhalten unsere Leistungen kostenlos, da Eyeo diese fördern und somit die Vielfalt im Internet erhalten möchte."
-  },
   "s16": {
     "message": "Mehr anzeigen"
   },
-  "s17": {
-    "message": "Die Acceptable Ads Initiative zu Betreiben erfordert erheblichen Aufwand auf unserer Seite. Dies kann nicht komplett von Freiwilligen übernommen werden, wie es bei den Filterlisten der Fall ist. Auch reichen die Spendengelder hierfür nicht aus."
-  },
-  "s18": {
-    "message": "Deswegen bezahlen einige wenige Firmen, die deutlich von der Freischaltung profitieren, für die im Rahmen der Freischaltung erhaltenen Leistungen. Wichtig ist dabei allerdings, dass Eyeo von kleinen und mittleren Webseiten keinerlei Bezahlung verlangt. Derzeit erhalten fast 90% aller teilnehmenden Webseiten das Whitelisting unentgeltlich."
-  },
-  "s19": {
-    "message": "Niemand kann sich freikaufen – Adblock Plus wird Werbung, die den mit den Nutzern entwickelten <a>Kriterien</a> nicht entspricht, niemals, auch nicht gegen Geld, durchlassen. Zudem kann die Blockierung von dem Nutzer jederzeit beliebig modifiziert werden, Eyeo nimmt auf diese Entscheidungen der Nutzer keinen Einfluss. Alle am Acceptable Ads Programm teilnehmenden Webseiten und Werbemittel sind  öffentlich in unserem <a>Forum</a> gelistet und zur Diskussion gestellt."
+  "s2": {
+    "message": "Weniger anzeigen"
   },
   "s20": {
     "message": "Warum brauchen wir Geld?"
@@ -82,5 +87,32 @@
   },
   "s27": {
     "message": "Wir sammeln keinerlei spezfische Nutzerdaten und der Großteil der Daten (z. B. welche Websites man besucht) wird nie zu unseren Servern geschickt. Details hierzu finden sich in unserer <a>Datenschutzerklärung</a>."
+  },
+  "s3": {
+    "message": "Was ist Adblock Plus?"
+  },
+  "s4": {
+    "message": "Mit Adblock Plus können Sie Werbung blockieren und sich gegen Tracking, Malware und viele <a>weitere Dinge</a> schützen, während Sie im Internet surfen."
+  },
+  "s5": {
+    "message": "Wie funktioniert Adblock Plus?"
+  },
+  "s6": {
+    "message": "Adblock Plus selber blockiert gar nichts bis Sie ihm durch die Auswahl von Filterlisten “mitteilen” was es blockieren soll. Diese Filterlisten sind das Ergebnis vieler Freiwilliger weltweit und enthalten Filterregeln, die bestimmen, was der mit Adblock Plus verknüpfte Browser nicht anzeigen soll. Sie können beliebige Filterlisten jederzeit hinzufügen, verändern oder entfernen. Zum Beispiel existieren vorgefertigte externe Filterlisten, mit denen Sie sich auch vor <a>Tracking</a> oder <a>Malware</a> schützen können. Des Weiteren können Sie Ihre <a>eigenen Filterlisten erstellen</a> und benutzen."
+  },
+  "s7": {
+    "message": "Standardmäßig sind zwei Filterlisten aktiviert:"
+  },
+  "s8": {
+    "message": "Eine auf Ihrer Sprache basierend ausgewählte Blockierliste"
+  },
+  "s9": {
+    "message": "Die Liste mit Ausnahmefiltern"
+  },
+  "title": {
+    "message": "Über Adblock Plus"
+  },
+  "work": {
+    "message": "Continue to work on Adblock Plus so that it can function on various platforms"
   }
 }
