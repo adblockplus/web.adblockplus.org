@@ -150,15 +150,15 @@ title=Writing Adblock Plus filters
         <li>{{s62 <code><fix>xmlhttprequest</fix></code> — requests started by the <a href="{{s62-link http://www.w3.org/TR/XMLHttpRequest/}}">XMLHttpRequest object</a>}}</li>
         <li>{{s63 <code><fix>object-subrequest</fix></code> — requests started plugins like Flash}}</li>
         <li>{{s64 <code><fix>subdocument</fix></code> — embedded pages, usually included via HTML frames}}</li>
+        <li>{{ping <code><fix>ping</fix></code> — requests started by <a href="https://developer.mozilla.org/docs/Web/HTML/Element/a#attr-ping"><code><fix>&lt;a ping&gt;</fix></code></a> or <a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon"><code><fix>navigator.sendBeacon()</fix></code></a> (Adblock Plus development builds required)}}</li>
         <li>{{s65 <code><fix>document</fix></code> — the page itself (only <a href="#whitelist">exception rules</a> can be applied to the page)}}</li>
         <li>{{s66 <code><fix>elemhide</fix></code> — for exception rules only, similar to <code><fix>document</fix></code> but only disables <a href="#elemhide">element hiding rules</a> on the page rather than all filter rules (Adblock Plus 1.2 and higher required)}}</li>
         <li>{{generichide <code><fix>generichide</fix></code> — for exception rules only, similar to <code><fix>elemhide</fix></code> but only disables <a href="#generic-specific">generic</a> element hiding rules on the page (Adblock Plus 2.6.12 and higher required)}}</li>
         <li>{{genericblock <code><fix>genericblock</fix></code> — for exception rules only, just like <code><fix>generichide</fix></code> but disables <a href="#generic-specific">generic</a> blocking rules (Adblock Plus 2.6.12 and higher required)}}</li>
         <li>{{s67 <code><fix>other</fix></code> — types of requests not covered in the list above}}</li>
       </ul>
-      {{s68 The type options <code><fix>background</fix></code>, <code><fix>xbl</fix></code>,
-      <code><fix>ping</fix></code> and <code><fix>dtd</fix></code> are outdated and should no
-      longer be used.}}
+      {{s68 The type options <code><fix>background</fix></code>, <code><fix>xbl</fix></code>
+      and <code><fix>dtd</fix></code> are outdated and should no longer be used.}}
     </li>
     <li>{{s69 Inverse type options: specify the element types the filter should <strong>not</strong> be applied to. Possible inverse type options: <code><fix>~script</fix></code>, <code><fix>~image</fix></code>, <code><fix>~stylesheet</fix></code>, <code><fix>~object</fix></code>, <code><fix>~xmlhttprequest</fix></code>, <code><fix>~object-subrequest</fix></code>, <code><fix>~subdocument</fix></code>, <code><fix>~document</fix></code>, <code><fix>~elemhide</fix></code>, <code><fix>~other</fix></code>}}</li>
     <li>{{s70 Restriction to third-party/first-party requests: If the <code><fix>third-party</fix></code> option is specified, the filter is only applied to requests from a different origin than the currently viewed page. Similarly, <code><fix>~third-party</fix></code> restricts the filter to requests from the same origin as the currently viewed page.}}</li>
