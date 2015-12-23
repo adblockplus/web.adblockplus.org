@@ -157,8 +157,9 @@ title=Writing Adblock Plus filters
         <li>{{genericblock <code><fix>genericblock</fix></code> — for exception rules only, just like <code><fix>generichide</fix></code> but disables <a href="#generic-specific">generic</a> blocking rules (Adblock Plus 2.6.12 and higher required)}}</li>
         <li>{{s67 <code><fix>other</fix></code> — types of requests not covered in the list above}}</li>
       </ul>
-      {{s68 The type options <code><fix>background</fix></code>, <code><fix>xbl</fix></code>
-      and <code><fix>dtd</fix></code> are outdated and should no longer be used.}}
+      {{deprecated-options The type options <code><fix>background</fix></code>,
+      <code><fix>xbl</fix></code> and <code><fix>dtd</fix></code> are outdated
+      and should no longer be used.}}
     </li>
     <li>{{s69 Inverse type options: specify the element types the filter should <strong>not</strong> be applied to. Possible inverse type options: <code><fix>~script</fix></code>, <code><fix>~image</fix></code>, <code><fix>~stylesheet</fix></code>, <code><fix>~object</fix></code>, <code><fix>~xmlhttprequest</fix></code>, <code><fix>~object-subrequest</fix></code>, <code><fix>~subdocument</fix></code>, <code><fix>~document</fix></code>, <code><fix>~elemhide</fix></code>, <code><fix>~other</fix></code>}}</li>
     <li>{{s70 Restriction to third-party/first-party requests: If the <code><fix>third-party</fix></code> option is specified, the filter is only applied to requests from a different origin than the currently viewed page. Similarly, <code><fix>~third-party</fix></code> restricts the filter to requests from the same origin as the currently viewed page.}}</li>
