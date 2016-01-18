@@ -1,4 +1,16 @@
 {
+  "about": {
+    "description": "Section header",
+    "message": "Waar gaat dit over?"
+  },
+  "acceptable-ads-filter": {
+    "description": "Text in \"what you is allowed\" section",
+    "message": "Het selectievakje <strong>Niet-opdringerige advertenties toestaan</strong> voegt eenvoudig een of meerdere filterabonnementen toe aan uw lijst. <a>Hier</a> kunt u de filters bekijken. Ook kan de speciale behandeling van dit filterabonnement - dat vanwege bruikbaarheidsredenen is toegevoegd - worden uitgeschakeld door naar 'about:config' te gaan en de voorkeur <a>extensions.adblockplus.subscriptions_exceptionscheckbox</a> naar false te wijzigen. Hierdoor kunt u de filters voor dit abonnement op de normale manier bekijken."
+  },
+  "meta-description": {
+    "description": "Description meta tag content inside head tag",
+    "message": "Adblock Plus introduceert het Acceptable Ads-initiatief: websites steunen die van advertenties afhankelijk zijn, maar ervoor kiezen deze op een niet-opdringerige manier aan te bieden."
+  },
   "title": {
     "message": "Toestaan van acceptabele advertenties in Adblock Plus"
   }
