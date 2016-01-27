@@ -62,7 +62,7 @@
     {% endmacro %}
 
     <header>
-      <a id="logo" class="sprite" itemprop="image" href="/"></a>
+      {{"index"|linkify(id="logo", class="sprite", itemprop="image")}}</a>
       <nav>
         <ul>
           {% if localefile == "index" %}
