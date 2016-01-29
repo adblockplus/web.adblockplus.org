@@ -28,6 +28,10 @@
     <link rel="canonical" href="https://adblockplus.org/{{page}}">
     <link rel="apple-touch-icon" href="/img/favicon-large.png" />
 
+    <!--[if IE 8]>
+      <script src="/js/vendor/ie8.js"></script>
+    <![endif]-->
+
     {% block head %}
     {{head|safe}}
     {% endblock %}
@@ -40,8 +44,9 @@
       <script src="/js/vendor/html5shiv.js"></script>
       <script src="/js/vendor/respond.min.js"></script>
     <![endif]-->
-    <!--[if lt IE 10]><script src="/js/vendor/cssfx.min.js"></script><![endif]-->
-    <!-- Fixes cssfx issues in IE8. -->
+    <!--[if lt IE 10]>
+      <script src="/js/vendor/cssfx.min.js"></script>
+    <![endif]-->
     <!--[if IE 8]>
       <link rel="stylesheet" href="/css/empty.css" class="cssfx"/>
     <![endif]-->
