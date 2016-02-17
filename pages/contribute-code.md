@@ -33,4 +33,4 @@ If you don't find anything interesting, feel free to pick any unassigned issue, 
 
 ## {{becoming-a-comitter Becoming a committer}}
 
-{{becoming-a-comitter If you intend to contribute to a project on a regular basis, you might want to [become a committer](committer).}}
+{{becoming-a-comitter If you intend to contribute to a project on a regular basis, you might want to become a [committer](committer).}}
