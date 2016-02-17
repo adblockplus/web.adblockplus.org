@@ -15,6 +15,10 @@ title=Source Code
 
     hg update -r 2.3.1
 
+### {{mercurial-bookmarks-title Mercurial bookmarks}}
+
+{{mercurial-bookmarks-text We are using Mercurial bookmarks for branching. All of our repositories have a _master_ bookmark that points to the latest development version. When cloning a repository, you have to activate that bookmark. If you ran `hg clone -u master` as shown above, this has already happened. If you cloned without the `-u` option, you will need to run `hg update master` once.}}
+
 ### {{mercurial-documentation Mercurial documentation}}
 
 * [{{mercurial-quickstart Mercurial quickstart}}](http://mercurial.selenic.com/wiki/QuickStart)
@@ -25,6 +29,8 @@ title=Source Code
 <h2 id="github">{{github-title Getting the source code from the GitHub mirrors}}</h2>
 
 {{github-text If you prefer to use Git, you can - we have [GitHub mirrors](https://github.com/adblockplus/) for most of our public repositories.}}
+
+{{github-notice **Please note:** We are maintaining the GitHub mirrors to make it easier for new contributors to contribute to the Adblock Plus project without having to learn new tools. For regular contributors, using Mercurial is recommended.}}
 
 {{github-clone Here's how you clone the Adblock Plus for Firefox repository from GitHub:}}
 
