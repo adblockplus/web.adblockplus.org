@@ -21,10 +21,12 @@ title=Source Code
 
 ### {{mercurial-documentation Mercurial documentation}}
 
-* [{{mercurial-quickstart Mercurial quickstart}}](http://mercurial.selenic.com/wiki/QuickStart)
-* [{{mercurial-faq Mozilla's Mercurial FAQ}}](https://developer.mozilla.org/en/Mercurial_FAQ)
-* [{{mercurial-book Distributed Revision Control with Mercurial (hgbook)}}](http://hgbook.red-bean.com)
-* [{{mercurial-other-tools GUI client and other tools}}](http://mercurial.selenic.com/wiki/OtherTools)
+* [{{mercurial-quickstart Mercurial quickstart}}](https://www.mercurial-scm.org/wiki/QuickStart)
+* [{{mercurial-bookmarks Working with Mercurial bookmarks}}](https://www.mercurial-scm.org/wiki/Bookmarks)
+* [{{mercurial-mozilla Mercurial for Mozillians}}](http://mozilla-version-control-tools.readthedocs.org/en/latest/hgmozilla/index.html)
+* [{{mercurial-book Mercurial: The definite guide (hgbook)}}](http://hgbook.red-bean.com)
+* [{{mercurial-other-tools GUI client and other tools}}](https://www.mercurial-scm.org/wiki/OtherTools)
+* [{{mercurial-git Mercurial for Git users}}](https://www.mercurial-scm.org/wiki/GitConcepts)
 
 <h2 id="github">{{github-title Getting the source code from the GitHub mirrors}}</h2>
 
