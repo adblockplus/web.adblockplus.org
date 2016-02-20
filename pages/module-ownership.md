@@ -21,7 +21,7 @@ title=Module ownership
 
 ## {{super-reviewer-role-title Super reviewers}}
 
-{{super-reviewer-role-text Each module has a designated super reviewer, who will oversee things at a higher level.}}
+{{super-reviewer-role-text Most modules have a designated super reviewer, who will oversee things at a higher level.}}
 
 ### {{super-reviews-title Super reviews}}
 
