@@ -9,11 +9,11 @@ title=Module ownership
 
 ### {{responsibilities Responsibilities for module owners}}
 
-* {{s5 Review and approve all changes to the module}}
-* {{s6 Grant or revoke commit access}}
-* {{s7 Maintain and improve quality}}
-* {{s8 Set the priority of new issues and reject them if necessary}}
-* {{s9 Ensure all high priority issues get tackled}}
+* {{review Review and approve all changes to the module}}
+* {{commit-access Grant or revoke commit access}}
+* {{quality Maintain and improve quality}}
+* {{set-priotities Set the priority of new issues and reject them if necessary}}
+* {{tackle-priorities Ensure all high priority issues get tackled}}
 
 ## {{super-reviewer-role-title Super reviewers}}
 
