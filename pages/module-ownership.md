@@ -15,6 +15,10 @@ title=Module ownership
 * {{set-priotities Set the priority of new issues and reject them if necessary}}
 * {{tackle-priorities Ensure all high priority issues get tackled}}
 
+## {{peer-role-title Peers}}
+
+{{peer-role-text One person tends to not be enough to take care of a module. Therefore module owners can designate peers that can also review and approve code, and otherwise help with their responsibilities.}}
+
 ## {{super-reviewer-role-title Super reviewers}}
 
 {{super-reviewer-role-text Each module has a designated super reviewer, who will oversee things at a higher level.}}
