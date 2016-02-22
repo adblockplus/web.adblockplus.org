@@ -167,7 +167,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{disable-ios-browser[Text in "hate ads" secion] <strong>Adblock Browser for iOS</strong> - Open Settings, tap <strong>Adblock Plus > Acceptable Ads</strong> and uncheck <strong>Allow some nonintrusive ads</strong>.}}
 
-{{disable-ios[Text in "hate ads" secion] <strong>Adblock Plus for iOS</strong> - Open Adblock Plus for iOS from the Home menu, tap the <strong>Settings</strong> icon > <strong>Acceptable Ads</strong> and uncheck <strong>Allow some nonintrusive ads</strong>.}}
+{{disable-ios[Text in "hate ads" secion] <strong>Adblock Plus for iOS</strong> - Open Adblock Plus for iOS from the Home screen, tap the <strong>Settings</strong> icon > <strong>Acceptable Ads</strong> and uncheck <strong>Allow some nonintrusive ads</strong>.}}
 
 ## {{all-unblocked[Section header] Will all "acceptable" ads be unblocked?}} {: #which }
 {{agreement-ads[Text in "which acceptable ads are unblocked" section] No. Unfortunately, it isn't technically possible to recognize ads that meet our Acceptable Ads criteria automatically. We have <a href="/acceptable-ads-agreements">agreements</a> with some websites and advertisers which stipulate that only advertising matching our criteria will be displayed when Adblock Plus users visit these particular sites. These ads will be unblocked (i.e. added to the Acceptable Ads exception list which is enabled per default).}}
