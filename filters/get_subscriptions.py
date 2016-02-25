@@ -17,10 +17,16 @@ import codecs
 import os
 import tarfile
 import urllib
+import logging
 from ConfigParser import SafeConfigParser
 
 def get_subscriptions(_):
-  from sitescripts.subscriptions import subscriptionParser
+  try:
+    from sitescripts.subscriptions import subscriptionParser
+  except ImportError:
+    logging.warning("Unable to import sitescripts, proceeding with empty "
+                    "subscriptions list.")
+    return []
 
   result = {}
   utf8_reader = codecs.getreader('utf8')
