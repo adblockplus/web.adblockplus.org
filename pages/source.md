@@ -3,7 +3,7 @@ title=Source Code
 
 {{repositories The Adblock Plus project consists of multiple repositories. The [modules](modules) page has a good overview of the most important ones.}}
 
-<h2 id="source">{{mercurial-title Getting the source code from the Mercurial repositories}}</h2>
+## {{mercurial-title Getting the source code from the Mercurial repositories}} {: #source }
 
 {{mercurial-text The Adblock Plus source code is hosted on our [Mercurial](http://mercurial.selenic.com/) server. You can see a list of all repositories through the [web interface](https://hg.adblockplus.org/).}}
 
@@ -28,13 +28,13 @@ title=Source Code
 * [{{mercurial-other-tools GUI client and other tools}}](https://www.mercurial-scm.org/wiki/OtherTools)
 * [{{mercurial-git Mercurial for Git users}}](https://www.mercurial-scm.org/wiki/GitConcepts)
 
-<h2 id="adblockbrowser">{{adblockbrowser-repo-title The adblockbrowser repository}}</h2>
+## {{adblockbrowser-repo-title The adblockbrowser repository}} {: #adblockbrowser }
 
 {{adblockbrowser-repo-text The _adblockbrowser_ repository is a bit different, because it is a fork of Mozilla's [mozilla-release](https://hg.mozilla.org/releases/mozilla-release) repository. All of our changes are not in the _default_ branch, but in the _adblockbrowser_ branch, we prefix all of our tag names with `abb-` to avoid conflicts with upstream, and we do not use Mercurial bookmarks there at this point. Here's how you would clone it:}}
 
     hg clone -u adblockbrowser https://hg.adblockplus.org/adblockbrowser/
 
-<h2 id="github">{{github-title Getting the source code from the GitHub mirrors}}</h2>
+## {{github-title Getting the source code from the GitHub mirrors}} {: #github }
 
 {{github-text If you prefer to use Git, you can - we have [GitHub mirrors](https://github.com/adblockplus/) for most of our public repositories.}}
 
@@ -48,10 +48,10 @@ title=Source Code
 
     git checkout 2.3.1
 
-<h2 id="build">{{build-title Build instructions}}</h2>
+## {{build-title Build instructions}} {: #build }
 
 {{build-text Most of our repositories have _README.md_ files with build instructions, please refer to those.}}
 
-<h2 id="documentation">{{code-documentation-title Source code documentation}}</h2>
+## {{code-documentation-title Source code documentation}} {: #documentation }
 
 {{code-documentation-text We have automatically generated [source code documentation](documentation_advanced#code-documentation) for some projects.}}
