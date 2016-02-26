@@ -3,12 +3,12 @@ title=Contributing code to Adblock Plus
 
 ## {{things-to-work-on Finding something to work on}}
 
-* {{javascript-work If you know **JavaScript**, you can work on [Adblock Plus for Firefox](https://hg.adblockplus.org/adblockplus/) or [Adblock Plus for Chrome, Opera and Safari](https://hg.adblockplus.org/adblockpluschrome/).}}
-* {{python-work If you know **Python**, you can work on the [build system](https://hg.adblockplus.org/buildtools/) or the [backend](https://hg.adblockplus.org/sitescripts/).}}
-* {{cpp-work If you know **C++**, you can work on [libadblockplus](https://hg.adblockplus.org/libadblockplus/) or [Adblock Plus for Internet Explorer](https://hg.adblockplus.org/adblockplusie/).}}
-* {{java-work If you know **Java**, you can work on [Adblock Plus for Android](https://hg.adblockplus.org/adblockplusandroid/) or [Adblock Browser for Android](https://bitbucket.org/adblockplus/adblockbrowser).}}
-* {{puppet-work If you know **Puppet**, you can work on [our infrastructure](https://hg.adblockplus.org/infrastructure/).}}
-</ul>
+* {{javascript-work If you know **JavaScript**, you can work on [the Adblock Plus core code](modules#core), [Adblock Plus for Firefox](modules#adblock-plus-for-firefox), [Adblock Plus for Chrome, Opera and Safari](modules#platform) or [our websites](modules#websites).}}
+* {{python-work If you know **Python**, you can work on our [build and release tools](modules#build-and-release-tools) or our [backend](modules#sitescripts).}}
+* {{cpp-work If you know **C++**, you can work on [libadblockplus](modules#libadblockplus) or [Adblock Plus for Internet Explorer](modules#adblock-plus-for-internet-explorer).}}
+* {{java-work If you know **Java**, you can work on [Adblock Browser for Android](modules#adblock-browser-for-android) or [Adblock Plus for Samsung Browser](modules#adblock-plus-for-samsung-browser).}}
+* {{objective-c-work If you know **Objective-C**, you can work on [Adblock Plus for iOS](modules#adblock-plus-for-ios)}}
+* {{puppet-work If you know **Puppet**, you can work on [our infrastructure](modules#infrastructure).}}
 
 {{github Note that most of our projects are also on [GitHub](https://github.com/adblockplus), if you prefer that.}}
 
@@ -27,7 +27,7 @@ If you don't find anything interesting, feel free to pick any unassigned issue, 
 
 {{coding-style Once you've made and tested your changes, first make sure they're in line with our [coding style](coding-style).}}
 
-{{sending-a-patch Now you can send us your patch. You can either attach it to the issue, or create a pull request on [GitHub](https://github.com/adblockplus).}}
+{{sending-a-patch Now you can send us your patch, ideally by uploading it to [codereview.adblockplus.org](https://codereview.adblockplus.org). But you can also attach a patch file to the issue, or create a pull request on [GitHub](https://github.com/adblockplus).}}
 
 {{contributor-agreement Finally, before we can accept your patch, you need to sign the [contributor agreement](https://adblockplus.org/eyeo-contributor-license-agreement.pdf). Please print it out, sign it, scan that or take a picture of it and send it to one of your reviewers.}}
 
