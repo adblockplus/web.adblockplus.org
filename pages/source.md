@@ -17,7 +17,7 @@ title=Source Code
 
 ### {{mercurial-bookmarks-title Mercurial bookmarks}}
 
-{{mercurial-bookmarks-text We are using Mercurial bookmarks for branching. All of our repositories have a _master_ bookmark that points to the latest development version. When cloning a repository, you have to activate that bookmark. If you ran `hg clone -u master` as shown above, this has already happened. If you cloned without the `-u` option, you will need to run `hg update master` once.}}
+{{mercurial-bookmarks-text We are using Mercurial bookmarks for branching. All of our repositories (except for _adblockbrowser_, see below) have a _master_ bookmark that points to the latest development version. When cloning a repository, you have to activate that bookmark. If you ran `hg clone -u master` as shown above, this has already happened. If you cloned without the `-u` option, you will need to run `hg update master` once.}}
 
 ### {{mercurial-documentation Mercurial documentation}}
 
@@ -27,6 +27,12 @@ title=Source Code
 * [{{mercurial-book Mercurial: The definite guide (hgbook)}}](http://hgbook.red-bean.com)
 * [{{mercurial-other-tools GUI client and other tools}}](https://www.mercurial-scm.org/wiki/OtherTools)
 * [{{mercurial-git Mercurial for Git users}}](https://www.mercurial-scm.org/wiki/GitConcepts)
+
+<h2 id="adblockbrowser">{{adblockbrowser-repo-title The adblockbrowser repository}}</h2>
+
+{{adblockbrowser-repo-text The _adblockbrowser_ repository is a bit different, because it is a fork of Mozilla's [mozilla-release](https://hg.mozilla.org/releases/mozilla-release) repository. All of our changes are not in the _default_ branch, but in the _adblockbrowser_ branch, we prefix all of our tag names with `abb-` to avoid conflicts with upstream, and we do not use Mercurial bookmarks there at this point. Here's how you would clone it:}}
+
+    hg clone -u adblockbrowser https://hg.adblockplus.org/adblockbrowser/
 
 <h2 id="github">{{github-title Getting the source code from the GitHub mirrors}}</h2>
 
