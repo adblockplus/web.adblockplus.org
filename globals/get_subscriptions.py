@@ -20,7 +20,12 @@ import urllib
 import logging
 from ConfigParser import SafeConfigParser
 
-def get_subscriptions(_):
+subscriptions = None
+
+def get_subscriptions():
+  global subscriptions
+  if not subscriptions is None:
+    return subscriptions
   try:
     from sitescripts.subscriptions import subscriptionParser
   except ImportError:
@@ -57,4 +62,5 @@ def get_subscriptions(_):
     subscriptionParser.get_settings = orig_get_settings
 
   subscriptionParser.calculate_supplemented(result)
-  return result.values()
+  subscriptions = result.values()
+  return subscriptions

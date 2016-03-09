@@ -54,7 +54,7 @@ title=Known Adblock Plus subscriptions
 
 {% from "includes/subscriptionList" import display_subscriptions %}
 
-{{ display_subscriptions(1|get_subscriptions) }}
+{{ display_subscriptions(get_subscriptions()) }}
 
 
 <p>{{"Can't see your filter list here? <a href=\"mailto:subscriptionlist@adblockplus.org\">Send</a> the information you would like to be displayed here. Please note that in order to be included in this list your subscription must contain a comment at the beginning describing the origin of the filter list and the preferred way of contacting you if problems with your list occur. You should also be certain that when these issues arise you will be able to fix them in a reasonable amount of time."|translate("s2")}}</p>
