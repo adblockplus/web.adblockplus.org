@@ -2,14 +2,29 @@
   "s1": {
     "message": "Remarques générales"
   },
+  "s10": {
+    "message": "Ces informations servent à générer des statistiques d'utilisation ainsi qu'à analyser des failles de sécurité potentielles et les spams sur le forum ou le blog."
+  },
+  "s11": {
+    "message": "Les journaux détaillés sont gardés pendant une période de 30 jours à l'issue de laquelle seules les données agrégées des statistiques d'utilisation sont conservées."
+  },
   "s12": {
     "message": "Stockage des adresses IP"
   },
   "s13": {
     "message": "Les applications Web installées sur AdblockPlus.org conservent votre adresse IP lorsque vous postez un message sur le forum, commentez un article du blog ou traduisez une page."
   },
+  "s14": {
+    "message": "Cela permet aux administrateurs de gérer plus efficacement les spams et les failles de sécurité."
+  },
   "s15": {
     "message": "Les adresses IP stockées sont supprimés au bout de 30 jours."
+  },
+  "s16": {
+    "message": "Cookies"
+  },
+  "s17": {
+    "message": "Plusieurs parties du site Web d'Adblock Plus utilisent des cookies afin de reconnaitre les utilisateurs enregistrés ou de stocker des paramètres."
   },
   "s18": {
     "message": "Les cookies ne sont en aucun cas utilisés pour d'autres raisons que celles-ci, et en particulier ne servent jamais à pister les visiteurs de ce site."
@@ -20,17 +35,41 @@
   "s2": {
     "message": "La politique générale de confidentialité du projet Adblock Plus est d'éviter de recueillir plus de données que nécessaire au bon fonctionnement des extensions."
   },
+  "s20": {
+    "message": "Les informations entrées lors de l'inscription sur le forum sont utilisées pour créer le profil public de l’utilisateur et sont de fait visibles par tous les autres membres du forum."
+  },
   "s21": {
     "message": "Il existe deux exceptions :"
   },
+  "s22": {
+    "message": "Les mots des passe subissent un procédé de cryptage à sens unique avant d'être stockés sur le serveur."
+  },
+  "s23": {
+    "message": "Cela signifie qu'il est impossible que quelqu'un les récupère, même si cette personne a accès à la base de données."
+  },
   "s24": {
     "message": "Les adresses mail ne sont affichées dans le profil public uniquement si l'utilisateur en fait la demande explicite."
+  },
+  "s25": {
+    "message": "Par défaut, elles sont uniquement utilisées pour vous envoyer les notifications auxquelles vous vous êtes abonnées."
   },
   "s26": {
     "message": "L'inscription n'est pas nécessaire pour pouvoir participer au forum."
   },
   "s27": {
     "message": "Commentaires sur le blog"
+  },
+  "s28": {
+    "message": "Quand un commentaire est ajouté sur le <a>blog d'Adblock Plus</a> une adresse mail peut y être optionnellement spécifiée."
+  },
+  "s29": {
+    "message": "Contrairement aux autres champs celle-ci n'est jamais dévoilée et est seulement utilisée afin de notifier l'auteur quand une réponse est postée."
+  },
+  "s3": {
+    "message": "Les informations collectées sont rendues anonymes quand cela est possible et sont supprimées dès qu'elles ne sont plus utiles."
+  },
+  "s30": {
+    "message": "Extension Adblock Plus"
   },
   "s31": {
     "message": "Vérification de la disponibilité de mises à jour"
@@ -41,11 +80,23 @@
   "s33": {
     "message": "Des informations d'ordre général, telles que la version du navigateur, la version de l'extension, le système d'exploitation et votre adresse IP sont transmises durant cette vérification."
   },
+  "s34": {
+    "message": "Les mises à jour nocturnes d’Adblock Plus ainsi que les mises à jour d’Adblock Plus pour Androïd et Internet Explorer sont gérées par le site internet AdblockPlus.org et les données transmises sont soumises à  <a>sa politique de confidentialité</a>."
+  },
+  "s35": {
+    "message": "Les mises à jour d’Adblock Plus pour Firefox sont gérées par le site Internet Addons.Mozilla.Org et sont soumises à la <a>politique de confidentialité de Firefox</a>."
+  },
+  "s36": {
+    "message": "Les mises à jour d’Adblock Plus pour Chrome sont gérées par le site Internet Google web store et sont soumises à la  <a>politique de confidentialité de Google</a>."
+  },
   "s37": {
     "message": "Les mises à jour d’Adblock Plus pour Opera sont gérées par le site Internet Opara Adds-on et sont soumises à la <a>politique de confidentialité d’Opera. </a>."
   },
   "s38": {
     "message": "Téléchargement des abonnements"
+  },
+  "s39": {
+    "message": "Si vous avez ajouté à Adblock Plus des abonnements à des filtres, alors ceux-ci procéderont à des mises à jour de façon régulière."
   },
   "s4": {
     "message": "Elles ne sont jamais transmises à des tiers."
@@ -59,11 +110,20 @@
   "s42": {
     "message": "En outre, si la mise à jour d'un abonnement échoue plusieurs fois de suite, l'adresse mise à jour de la liste de filtre est demandée au domaine AdblockPlus.org."
   },
+  "s43": {
+    "message": "Les données qui sont transmises comprennent le numéro de version d'Adblock Plus, l'adresse de l'abonnement et des informations relatives aux erreurs rencontrées."
+  },
   "s44": {
     "message": "Ces données sont utilisées afin d'identifier des problèmes qui n'auraient pas été signalés par les gestionnaires de ces abonnements et sont de la même façon soumises à la  <a>politique de confidentialité d'Adblock Plus</a>."
   },
   "s45": {
     "message": "Outil de signalement des problèmes"
+  },
+  "s46": {
+    "message": "Adblock Plus Plus pour Firefox vous permet d’envoyer des rapports d’erreurs qui seront ensuite temporairement hébergés sur le domain AdblockPlus.org."
+  },
+  "s47": {
+    "message": "Ces rapports contiennent les informations nécessaires à l'analyse du problème, à savoir le numéro de version d'Adblock Plus, l'adresse de la page Web sujette au problème rencontré, les éléments de la page qui sont bloquables, les filtres correspondants et les abonnements actifs."
   },
   "s48": {
     "message": "Les valeurs des paramètres sont enlevées de toutes les adresses transmises afin d'éviter de divulguer accidentellement des données privées."
@@ -74,8 +134,20 @@
   "s5": {
     "message": "Cette page liste les données qui sont collectées et les processus qui leur sont appliqués."
   },
+  "s50": {
+    "message": "Les captures d'écran du site fournissent une version réduite et comportant une plage de couleur plus limitée de la page sur laquelle vous rencontrez le problème."
+  },
   "s51": {
     "message": "Il est possible d'en retirer les sections sensibles avant d'envoyer le rapport."
+  },
+  "s52": {
+    "message": "L’adresse email est uniquement utilisée pour requérir plus d’information ou pour mettre à jour l’utilisateur sur le problème."
+  },
+  "s53": {
+    "message": "La liste des extensions installée est nécessaire afin d'analyser les possibles conflits avec les autres extensions."
+  },
+  "s54": {
+    "message": "Seule les personnes connaissant l'adresse unique du rapport ainsi généré peuvent y accéder."
   },
   "s55": {
     "message": "Ces adresses sont uniquement partagées entre les gestionnaires des abonnements qui sont indiqués dans le rapport, et ont peu de chance d'être découvertes par d'autres utilisateurs à moins qu'un lien ne soit mis à disposition."
@@ -97,6 +169,9 @@
   },
   "s61": {
     "message": "Cette donnée permet de délivrer différentes notifications à différents clients et est sujette à la  <a>AdblockPlus Politique de Confidentialité.</a>."
+  },
+  "s63": {
+    "message": "Adblock Plus peut effectuer des requêtes supplémentaires au site AdblockPlus.org quand cela est nécessaire, par exemple si l'utilisateur clique sur un lien vers de la documentation ou si la liste entière des abonnements à des filtres doit être téléchargée."
   },
   "s64": {
     "message": "Ces requêtes sont de la même façon soumises à la  <a>politique de confidentialité d'Adblock Plus</a>."
@@ -137,11 +212,23 @@
   "s75": {
     "message": "Vérification de la disponibilité de mises à jour"
   },
+  "s76": {
+    "message": "Votre navigateur vérifie périodiquement si des mises à jour pour Element Hiding Helper sont disponibles."
+  },
   "s77": {
     "message": "Des informations d'ordre général, telles que la version du navigateur, la version de l'extension, le système d'exploitation et votre adresse IP sont transmises durant cette vérification."
   },
+  "s78": {
+    "message": "Les mises à jour des nightly builds d'Extensions Hiding Helper sont gérées par le site AdblockPlus.org et les données transmises sont en accord avec <a>sa politique de confidentialité</a>."
+  },
+  "s79": {
+    "message": "Les mises à jour vers les versions stables sont gérées par Addons.Mozilla.Org et sont soumises à la <a>politique de confidentialité de Firefox</a>."
+  },
   "s8": {
     "message": "Toutes les requêtes faites au site AdblockPlus.org sont enregistrées dans les journaux du site."
+  },
+  "s9": {
+    "message": "Les données qui sont stockées comprennent votre adresse IP, la date de la requête, l'adresse de la page accédée, l'identifiant du navigateur et l'adresse de la page de départ."
   },
   "title": {
     "message": "Politique de confidentialité"
