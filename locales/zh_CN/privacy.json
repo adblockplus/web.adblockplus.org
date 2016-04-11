@@ -1,33 +1,6 @@
 {
-  "title": {
-    "message": "隐私策略"
-  },
   "s1": {
     "message": "常规注意事项"
-  },
-  "s2": {
-    "message": "　　Adblock Plus 项目的基本隐私策略是避免收集那些扩展所需及保证 Adblock Plus.org 网站正常运行以外的数据。"
-  },
-  "s3": {
-    "message": "所有收集的数据都尽可能保证是匿名的，且在不需要时将予以删除，"
-  },
-  "s4": {
-    "message": "也不会共享给第三方。"
-  },
-  "s5": {
-    "message": "下面列出了这些收集的数据及其处理方式。"
-  },
-  "s6": {
-    "message": "AdblockPlus.org 网站"
-  },
-  "s7": {
-    "message": "网站日志"
-  },
-  "s8": {
-    "message": "　　所有发送到 AdblockPlus.org 网站的请求都记录在网站日志当中，"
-  },
-  "s9": {
-    "message": "包括您的 IP 地址、发送请求的时间、所访问的网址、浏览器标识信息以及参考页。"
   },
   "s10": {
     "message": "这些数据用于统计使用信息，研究潜在的安全问题和论坛/博客的垃圾消息。"
@@ -47,9 +20,6 @@
   "s15": {
     "message": "所有保存的 IP 地址都将在 30 天后自动删除。"
   },
-  "s16": {
-    "message": "Cookies"
-  },
   "s17": {
     "message": "　　Adblock Plus 网站部分版块通过 cookies 识别用户登录信息或存储用户的设置，"
   },
@@ -58,6 +28,9 @@
   },
   "s19": {
     "message": "论坛注册"
+  },
+  "s2": {
+    "message": "　　Adblock Plus 项目的基本隐私策略是避免收集那些扩展所需及保证 Adblock Plus.org 网站正常运行以外的数据。"
   },
   "s20": {
     "message": "　　用户在注册论坛时所输入的数据会形成用户的公开配置并向其他论坛访客开放。"
@@ -89,6 +62,9 @@
   "s29": {
     "message": "不过，email 地址不会显示出来，它只是用来通知作者的文章有回复。"
   },
+  "s3": {
+    "message": "所有收集的数据都尽可能保证是匿名的，且在不需要时将予以删除，"
+  },
   "s30": {
     "message": "Adblock Plus 扩展"
   },
@@ -118,6 +94,9 @@
   },
   "s39": {
     "message": "　　所有您在 Adblock Plus 添加的过滤规则订阅组都会定期更新，"
+  },
+  "s4": {
+    "message": "也不会共享给第三方。"
   },
   "s40": {
     "message": "每次更新都会使订阅组所在网站都会收到您的 IP 地址以及某些常规信息，像是您的 Adblock Plus 版本号、浏览器及浏览器版本号。"
@@ -149,6 +128,9 @@
   "s49": {
     "message": "您也可以选择是否向我们提供以下敏感信息："
   },
+  "s5": {
+    "message": "下面列出了这些收集的数据及其处理方式。"
+  },
   "s50": {
     "message": "附加页面截图 — 页面视图区域按比例缩小显示且减少图像颜色，"
   },
@@ -179,6 +161,9 @@
   "s59": {
     "message": "这项特性使得 Adblock Plus 安装时会定期查询 AdblockPlus.org 域名下的某个地址以获取活动通知的列表。"
   },
+  "s6": {
+    "message": "AdblockPlus.org 网站"
+  },
   "s60": {
     "message": "查询请求会将您的 IP 地址发送给网站，另外还包括某些常规信息，像是您的 Adblock Plus 版本号、浏览器及其版本号。"
   },
@@ -200,8 +185,14 @@
   "s68": {
     "message": "　　Adblock Plus 会在您计算机的 <a>Firefox 用户配置文件夹</a>\n中存储部分数据。"
   },
+  "s68-link": {
+    "message": "http://support.mozilla.com/zh-CN/kb/Profiles"
+  },
   "s69": {
     "message": "Adblock Plus 绝不会发送这些数据到任何服务器，但不排除其他扩展和服务会这么做，比如说  <a>Firefox 同步</a>。"
+  },
+  "s7": {
+    "message": "网站日志"
   },
   "s70": {
     "message": "大多数数据（如您的首选项、过滤规则订阅和自定义规则）毫无疑问属于您的隐私，"
@@ -214,6 +205,9 @@
   },
   "s73": {
     "message": "在 <a>隐私浏览模式</a>\n下不存储数据或者清空最近历史记录时予以删除。"
+  },
+  "s73-link": {
+    "message": "http://support.mozilla.com/zh-CN/kb/Private+Browsing"
   },
   "s74": {
     "message": "元素隐藏辅助工具（Element Hiding Helper）扩展"
@@ -233,10 +227,13 @@
   "s79": {
     "message": "而 Addons.Mozilla.Org 负责推送稳定发布版的更新，所发送的数据也遵循 <a>Firefox 隐私策略</a>。"
   },
-  "s68-link": {
-    "message": "http://support.mozilla.com/zh-CN/kb/Profiles"
+  "s8": {
+    "message": "　　所有发送到 AdblockPlus.org 网站的请求都记录在网站日志当中，"
   },
-  "s73-link": {
-    "message": "http://support.mozilla.com/zh-CN/kb/Private+Browsing"
+  "s9": {
+    "message": "包括您的 IP 地址、发送请求的时间、所访问的网址、浏览器标识信息以及参考页。"
+  },
+  "title": {
+    "message": "隐私策略"
   }
 }
