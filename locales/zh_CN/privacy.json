@@ -1,4 +1,40 @@
 {
+  "abb-ios": {
+    "message": "适用于 iOS 的 Adblock 浏览器"
+  },
+  "abb-ios-data-collection": {
+    "message": "若出现突发崩溃，适用于 iOS 的 Adblock 浏览器将收集相关数据用于分析错误原因，并将其传送到我们的 <a>HockeyApp</a> 帐户。此数据仅用于单个故障排除（以及用于识别造成突发崩溃的一般性缺陷），不会与任何第三方共享。"
+  },
+  "abb-ios-data-retention": {
+    "message": "仅当应用程序崩溃时才会收集该数据。此外，适用于 iOS 的 Adblock 浏览器在发生崩溃之后将明示要求允许发送所收集的数据。存储在我们服务器上的崩溃报告将在 30 日后删除。"
+  },
+  "crash-data": {
+    "message": "崩溃时将发送如下数据："
+  },
+  "crash-reporter": {
+    "message": "崩溃报告器"
+  },
+  "data-bundle-id": {
+    "message": "适用于 iOS 的 Adblock 浏览器的包标识符、包版本和短包版本字符串。"
+  },
+  "data-device-type": {
+    "message": "设备类型、CPU 架构和操作系统版本。"
+  },
+  "data-exception": {
+    "message": "若引发异常，则包括异常的纯文本类名和消息值。"
+  },
+  "data-low-level-data": {
+    "message": "低级别崩溃数据，比如指令指针、方法或功能名、信号数据、指针寄存器和有关所加载二进制图像的信息。"
+  },
+  "data-timestamp": {
+    "message": "发生崩溃时的时间戳。"
+  },
+  "data-uuid": {
+    "message": "为防止复制崩溃报告而生成的 UUID。"
+  },
+  "hockeyapp-privacy": {
+    "message": "若要了解更多有关 HockeyApp 的隐私政策，请咨询其<a>服务条款</a>以及<a>收集数据文档</a>。"
+  },
   "s1": {
     "message": "常规注意事项"
   },

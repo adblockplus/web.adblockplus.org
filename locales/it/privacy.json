@@ -1,0 +1,38 @@
+{
+  "abb-ios": {
+    "message": "Adblock Browser per iOS"
+  },
+  "abb-ios-data-collection": {
+    "message": "In caso di arresto anomalo non previsto, Adblock Browser per iOS acquisisce i relativi dati per analizzare la causa dell’errore trasmettendoli al nostro account <a>HockeyApp</a>. I dati vengono utilizzati solo per la risoluzione del problema (per l’identificazione dei difetti generici che possono determinare gli arresti anomali non previsti) e non saranno condivisi con terze parti."
+  },
+  "abb-ios-data-retention": {
+    "message": "I dati indicati sono acquisiti solo in caso di arresto anomalo dell'applicazione. Inoltre, Adblock Browser per iOS richiede espressamente l’autorizzazione per inviare le informazioni acquisite dopo l’arresto anomalo. Tutti i report degli arresti anomali archiviati nei nostri server sono rimossi dopo 30 giorni."
+  },
+  "crash-data": {
+    "message": "Durante un arresto anomalo, vengono inviati i seguenti dati:"
+  },
+  "crash-reporter": {
+    "message": "Segnalazione arresto anomalo"
+  },
+  "data-bundle-id": {
+    "message": "L’identificatore dell’aggregazione, la versione dell'aggregazione e la stringa breve della versione dell'aggregazione di Adblock Browser per iOS."
+  },
+  "data-device-type": {
+    "message": "Il tipo di dispositivo, l’architettura CPU e la versione del sistema operativo."
+  },
+  "data-exception": {
+    "message": "In caso di eccezione, il valore del messaggio dell’eccezione e il nome della classe in testo normale."
+  },
+  "data-low-level-data": {
+    "message": "I dati degli arresti anomali di livello basso come il puntatore dell'istruzione, i nomi della funzione o del metodo, i dati del segnale, i registratori dei puntatori e le informazioni relative alle immagini binarie caricate."
+  },
+  "data-timestamp": {
+    "message": "La data e l’ora dell’arresto anomalo."
+  },
+  "data-uuid": {
+    "message": "Un UUID (identificativo univoco universale) generato per impedire la duplicazione dei report di arresto anomalo."
+  },
+  "hockeyapp-privacy": {
+    "message": "Per ulteriori informazioni sull’informativa sulla privacy di HockeyApp, leggere i <a>Condizioni per l'utilizzo del servizio</a> e la <a>documentazione dei dati acquisiti</a>."
+  }
+}

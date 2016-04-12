@@ -1,4 +1,40 @@
 {
+  "abb-ios": {
+    "message": "適用於 iOS 的 Adblock 瀏覽器"
+  },
+  "abb-ios-data-collection": {
+    "message": "萬一發生意外損毀，適用於 iOS 的 Adblock 瀏覽器會收集用於分析錯誤原因的相關資料，並將這些資料傳送給我們的 <a>HockeyApp</a> 帳戶。這些資料只是用於個人進行疑難排解（以及識別導致發生意外損毀的一般缺陷），不會與任何第三方共用。"
+  },
+  "abb-ios-data-retention": {
+    "message": "僅當應用程式損毀時才會收集上述資料。此外，適用於 iOS 的 Adblock 瀏覽器會在發生損毀後明確要求傳送所收集資訊的權限。我們伺服器上儲存的所有損毀報告都將於 30 天后移除。"
+  },
+  "crash-data": {
+    "message": "在損毀期間，會傳送以下資料："
+  },
+  "crash-reporter": {
+    "message": "損毀報告程式"
+  },
+  "data-bundle-id": {
+    "message": "套件組合識別碼、套件組合版本以及適用於 iOS 的 Adblock 瀏覽器的簡短套件組合版本字串。"
+  },
+  "data-device-type": {
+    "message": "裝置類型、CPU 架構以及作業系統的版本。"
+  },
+  "data-exception": {
+    "message": "如果擲回了例外狀況，則會包含該例外狀況的純文字的類別名稱和訊息值。"
+  },
+  "data-low-level-data": {
+    "message": "低階損毀資料，例如指令指標、方法或函數名稱、訊號資料、指標暫存器以及有關載入的二進位影像的資訊。"
+  },
+  "data-timestamp": {
+    "message": "發生損毀時的時間戳記。"
+  },
+  "data-uuid": {
+    "message": "所產生的用於防止損毀報告重複的 UUID。"
+  },
+  "hockeyapp-privacy": {
+    "message": "若要了解有關 HockeyApp 隱私權政策的詳細資訊，請參閱他們的<a>服務條款</a>以及他們的<a>所收集資料的文件</a>。"
+  },
   "s1": {
     "message": "注意事項"
   },

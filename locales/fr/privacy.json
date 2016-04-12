@@ -1,4 +1,40 @@
 {
+  "abb-ios": {
+    "message": "Navigateur Adblock Browser pour iOS"
+  },
+  "abb-ios-data-collection": {
+    "message": "En cas de crash inattendu, Adblock Browser pour iOS collecte les données pertinentes à l'analyse de la cause de l'erreur et les transmet à notre compte <a>HockeyApp</a>. Les données sont utilisées uniquement à des fins de dépistage individuel (ainsi que pour identifier des défauts généraux entraînant des crashs inattendus) et ne sont jamais transmises à des tiers."
+  },
+  "abb-ios-data-retention": {
+    "message": "Ces données ne sont recueillies que lorsque l'application subit un crash. En outre Adblock Browser pour iOS demande explicitement la permission d'envoyer les informations recueillies une fois que le crash s'est produit. Tous les rapports de crash stockés sur nos serveurs sont supprimés après 30 jours."
+  },
+  "crash-data": {
+    "message": "Au cours d'un crash, les données suivantes sont envoyées :"
+  },
+  "crash-reporter": {
+    "message": "Rapport de crash"
+  },
+  "data-bundle-id": {
+    "message": "Identifiant du paquet, version du paquet et courte chaîne de version du paquet d'Adblock Browser pour iOS."
+  },
+  "data-device-type": {
+    "message": "Type d'appareil, architecture du processeur et version du système d'exploitation."
+  },
+  "data-exception": {
+    "message": "En cas d'exception, le nom de la catégorie (sous forme de texte) et la valeur du message d'exception."
+  },
+  "data-low-level-data": {
+    "message": "Les données de crash de bas niveau telles que le pointeur d'instruction, les noms de méthodes ou de fonctions, les données de signaux, les registres de pointeurs et informations au sujet des images binaires chargées."
+  },
+  "data-timestamp": {
+    "message": "Horodatage du moment du crash."
+  },
+  "data-uuid": {
+    "message": "Un UUID (Universally Unique IDentifier) généré pour éviter la duplication des rapports de crash."
+  },
+  "hockeyapp-privacy": {
+    "message": "Afin d'en savoir plus sur la politique de confidentialité de HockeyApp, veuillez consulter ses <a>Conditions de service</a> ainsi que sa <a>documentation au sujet des données recueillies</a>."
+  },
   "s1": {
     "message": "Remarques générales"
   },

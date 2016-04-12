@@ -1,4 +1,40 @@
 {
+  "abb-ios": {
+    "message": "Adblock Browser para iOS"
+  },
+  "abb-ios-data-collection": {
+    "message": "En caso de bloqueo inesperado, Adblock Browser para iOS recopila los datos relevantes para analizar la causa del error y los transmite a nuestra cuenta de <a>HockeyApp</a>. Los datos se utilizan únicamente para la solución de problemas individuales (y para identificar defectos generales que conducen a bloqueos inesperados) y nunca se comparten con terceros."
+  },
+  "abb-ios-data-retention": {
+    "message": "Los datos indicados solo se recopilan si se bloquea la aplicación. Además, Adblock Browser para iOS solicita explícitamente la autorización para enviar la información recopilada tras el bloqueo. Todos los informes de bloqueo almacenados en nuestros servidores se eliminan después de 30 días."
+  },
+  "crash-data": {
+    "message": "Durante el bloqueo se envían los siguientes datos:"
+  },
+  "crash-reporter": {
+    "message": "Generador de informes de bloqueo"
+  },
+  "data-bundle-id": {
+    "message": "Identificador de paquetes, versión del paquete e información básica de la versión del paquete de Adblock Browser para iOS."
+  },
+  "data-device-type": {
+    "message": "Tipo de dispositivo, arquitectura de CPU y versión del sistema operativo."
+  },
+  "data-exception": {
+    "message": "En caso de excepción, nombre de clase en texto sin formato y valor del mensaje de la excepción."
+  },
+  "data-low-level-data": {
+    "message": "Los datos del bloqueo de bajo nivel como el puntero de instrucción, nombres de función o método, datos de señal, registro de puntero e información relativa a las imágenes binarias cargadas."
+  },
+  "data-timestamp": {
+    "message": "Marca de tiempo del momento del bloqueo."
+  },
+  "data-uuid": {
+    "message": "Un UUID (identificador único universal) generado para evitar la duplicación de informes de bloqueo."
+  },
+  "hockeyapp-privacy": {
+    "message": "Para obtener más información sobre la política de privacidad de HockeyApp, visite sus <a>Condiciones de servicio</a> y su <a>documentación de datos recopilados</a>."
+  },
   "s1": {
     "message": "Notas generales"
   },
