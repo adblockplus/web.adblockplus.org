@@ -1,1 +1,38 @@
-{}
+{
+  "abb-ios": {
+    "message": "Adblock Browser iOS版"
+  },
+  "abb-ios-data-collection": {
+    "message": "原因不明のクラッシュが生じた場合、Adblock Browser iOS版は不具合の原因分析に関連するデータを収集して、当社の<a>HockeyApp</a>アカウントに送信します。データは個別のトラブルシューティング（並びに原因不明のクラッシュを引き起こす一般的な不具合の特定）目的のみに使用され、いかなるサードパーティーとも共有されることはありません。"
+  },
+  "abb-ios-data-retention": {
+    "message": "上記データはアプリケーションがクラッシュした時のみに収集されます。クラッシュ発生後、Adblock Browser iOS版は収集された情報送信の許可を明示的に聞いてきます。当社のサーバーに保管されるクラッシュレポートは、全て30日後に削除されます。"
+  },
+  "crash-data": {
+    "message": "クラッシュ中に送信されるデータ："
+  },
+  "crash-reporter": {
+    "message": "クラッシュ レポーター"
+  },
+  "data-bundle-id": {
+    "message": "Adblock Browser iOS版のバンドル識別子(Bundle identifier)、バンドルのバージョン(Bundle version)および短いバンドルバージョン（Short bundle version）のストリング（String）"
+  },
+  "data-device-type": {
+    "message": "デバイスの種類、CPUアーキテクチャ、オペレーティングシステムのバージョン"
+  },
+  "data-exception": {
+    "message": "例外がスローされた場合、例外のクラス名（テキスト形式）およびメッセージの値"
+  },
+  "data-low-level-data": {
+    "message": "命令ポインタなどのような低レベルのクラッシュデータ、メソッド名または関数名、信号データ、ポインタレジスタ、読み込まれているバイナリイメージに関する情報"
+  },
+  "data-timestamp": {
+    "message": "クラッシュ発生時のタイムスタンプ"
+  },
+  "data-uuid": {
+    "message": "重複クラッシュレポート防止のための生成されたUUID"
+  },
+  "hockeyapp-privacy": {
+    "message": "HockeyAppのプライバシー ポリシーに関する詳細情報については<a>サービス利用規約</a>並びに<a>収集データドキュメント</a>を参照してください。"
+  }
+}
