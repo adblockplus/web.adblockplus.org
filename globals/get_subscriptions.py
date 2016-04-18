@@ -22,45 +22,46 @@ from ConfigParser import SafeConfigParser
 
 subscriptions = None
 
+
 def get_subscriptions():
-  global subscriptions
-  if not subscriptions is None:
-    return subscriptions
-  try:
-    from sitescripts.subscriptions import subscriptionParser
-  except ImportError:
-    logging.warning("Unable to import sitescripts, proceeding with empty "
-                    "subscriptions list.")
-    return []
-
-  result = {}
-  utf8_reader = codecs.getreader('utf8')
-  source = urllib.urlopen("https://hg.adblockplus.org/subscriptionlist/archive/default.tar.gz")
-  orig_get_settings = subscriptionParser.get_settings
-  try:
-    # Hack: monkey-patch subscriptionParser.get_settings()
-    settings = SafeConfigParser()
-    settings_handle = urllib.urlopen("https://hg.adblockplus.org/subscriptionlist/rawfile/default/settings")
+    global subscriptions
+    if not subscriptions is None:
+        return subscriptions
     try:
-      settings.readfp(utf8_reader(settings_handle))
+        from sitescripts.subscriptions import subscriptionParser
+    except ImportError:
+        logging.warning("Unable to import sitescripts, proceeding with empty "
+                        "subscriptions list.")
+        return []
+
+    result = {}
+    utf8_reader = codecs.getreader('utf8')
+    source = urllib.urlopen("https://hg.adblockplus.org/subscriptionlist/archive/default.tar.gz")
+    orig_get_settings = subscriptionParser.get_settings
+    try:
+        # Hack: monkey-patch subscriptionParser.get_settings()
+        settings = SafeConfigParser()
+        settings_handle = urllib.urlopen("https://hg.adblockplus.org/subscriptionlist/rawfile/default/settings")
+        try:
+            settings.readfp(utf8_reader(settings_handle))
+        finally:
+            settings_handle.close()
+        subscriptionParser.get_settings = lambda: settings
+
+        with tarfile.open(fileobj=source, mode="r|gz") as archive:
+            for fileinfo in archive:
+                if os.path.splitext(fileinfo.name)[1] != ".subscription":
+                    continue
+
+                filedata = subscriptionParser.parse_file(fileinfo.name, utf8_reader(archive.extractfile(fileinfo)))
+                if filedata.unavailable:
+                    continue
+
+                result[filedata.name] = filedata
     finally:
-      settings_handle.close()
-    subscriptionParser.get_settings = lambda: settings
+        source.close()
+        subscriptionParser.get_settings = orig_get_settings
 
-    with tarfile.open(fileobj=source, mode="r|gz") as archive:
-      for fileinfo in archive:
-        if os.path.splitext(fileinfo.name)[1] != ".subscription":
-          continue
-
-        filedata = subscriptionParser.parse_file(fileinfo.name, utf8_reader(archive.extractfile(fileinfo)))
-        if filedata.unavailable:
-          continue
-
-        result[filedata.name] = filedata
-  finally:
-    source.close()
-    subscriptionParser.get_settings = orig_get_settings
-
-  subscriptionParser.calculate_supplemented(result)
-  subscriptions = result.values()
-  return subscriptions
+    subscriptionParser.calculate_supplemented(result)
+    subscriptions = result.values()
+    return subscriptions

@@ -13,18 +13,19 @@
 # You should have received a copy of the GNU General Public License
 # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
 
+
 def subscription_sort(value, prioritize_recommended=True):
-  if prioritize_recommended:
-    return sorted(value, lambda a, b: (
-      cmp(a.type, b.type) or
-      cmp(a.deprecated, b.deprecated) or
-      cmp(b.catchall, a.catchall) or
-      cmp(b.recommendation is not None, a.recommendation is not None) or
-      cmp(a.name.lower(), b.name.lower())
-    ))
-  else:
-    return sorted(value, lambda a, b: (
-      cmp(a.type, b.type) or
-      cmp(a.deprecated, b.deprecated) or
-      cmp(a.name.lower(), b.name.lower())
-    ))
+    if prioritize_recommended:
+        return sorted(value, lambda a, b: (
+            cmp(a.type, b.type) or
+            cmp(a.deprecated, b.deprecated) or
+            cmp(b.catchall, a.catchall) or
+            cmp(b.recommendation is not None, a.recommendation is not None) or
+            cmp(a.name.lower(), b.name.lower())
+        ))
+    else:
+        return sorted(value, lambda a, b: (
+            cmp(a.type, b.type) or
+            cmp(a.deprecated, b.deprecated) or
+            cmp(a.name.lower(), b.name.lower())
+        ))
