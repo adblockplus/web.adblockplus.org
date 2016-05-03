@@ -43,10 +43,16 @@ title=Coding Style
 
 <h2 id="python">{{s19 Python}}</h2>
 <ul>
-  <li>{{python-general Follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a> and the Mozilla Coding Style's <a href="https://developer.mozilla.org/en-US/docs/Developer_Guide/Coding_Style#Python_Practices">Python practices</a>.}}</li>
+  <li>{{python-general Follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a> and the recommendations in the offical Python documentation.}}</li>
+  <li>{{python-strings Write string literals so that they match the behaviour of <a href="https://docs.python.org/2/library/functions.html#func-repr"><code><fix>repr()</fix></code></a> in Python 2, or <a href="https://docs.python.org/3/library/functions.html#ascii"><code><fix>ascii()</fix></code></a> in Python 3, i.e. use single quotes except to avoid escaping of embedded quotes and escape special and non-ascii characters. For docstrings, however, follow <a href="https://www.python.org/dev/peps/pep-0257/">PEP-257</a>.}}</li>
   <li>{{python-prefix In modules, prefix private functions and variables with a single underscore.}}</li>
   <li>{{python-concatenation Use the <code><fix>+</fix></code> operator when concatenating exactly two strings, use the <a href="https://docs.python.org/2/library/stdtypes.html#str.format"><code><fix>format()</fix></code> method</a> for more complex string formatting, use the <a href="https://docs.python.org/2/library/stdtypes.html#str.join"><code><fix>join()</fix></code> method</a> when concatenating pre-existing sequences.}}</li>
   <li>{{python-tuple-vs-list Use tuples for data that have structure, use lists for data that have order.}}</li>
+  <li>{{python-builtins Don't override builtins except for <a href="https://docs.python.org/2/library/functions.html#non-essential-built-in-funcs">non-essential builtins</a> and <code><fix>file</fix></code> which is superfluos in modern code as well.}}</li>
+  <li>{{python-map-filter Use list comprehensions or generator expressions instead of calling <code><fix>map()</fix></code> or <code><fix>filter()</fix></code> with a lambda function.}}</li>
+  <li>{{python-regexp Use <a href="https://docs.python.org/2/library/re.html#re.search"><code><fix>re.search()</fix></code></a> instead of <code><fix>re.match()</fix></code> to avoid <a href="https://docs.python.org/2/library/re.html#search-vs-match">confusion</a> about implied beginning of the string but not the ending.}}</li>
+  <li>{{python-flake8 Run <a href="https://pypi.python.org/pypi/flake8">flake8</a> with the <a href="https://hg.adblockplus.org/codingtools/file/tip/flake8-abp">flake8-abp</a> and <a href="https://pypi.python.org/pypi/pep8-naming">pep8-naming</a> extensions and fix any warning.}}</li>
+  <li>{{python-tests Write tests and have them run along flake8 using <a href="https://pypi.python.org/pypi/tox">tox</a>.}}</li>
 </ul>
 
 <h2 id="java">{{s22 Java}}</h2>
