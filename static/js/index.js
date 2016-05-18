@@ -29,6 +29,19 @@
   function init()
   {
     container = document.getElementById("more-container");
+    checkEdgeSupport();
+  }
+
+  function checkEdgeSupport()
+  {
+    if (!window.navigator.userAgent)
+      return;
+
+    var content = document.getElementById("content");
+    var match = window.navigator.userAgent.match(/Edge\/(\d+.\d+)/);
+    if (match && parseFloat(match[1]) >= 14.14342 &&
+        content.classList.contains("edge"))
+      content.classList.add("edge-supported");
   }
 
   init();

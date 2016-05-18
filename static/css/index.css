@@ -171,9 +171,11 @@ html[dir="rtl"] #summary li .sprite
   margin-left: 0px;
 }
 
-h3.edge-message
+#content h3.edge-message,
+#content h3.edge-message a
 {
   color: #2d79c0;
+  font-size: 20px;
 }
 
 /* This cannot be just .install-button because a:link will have a higher
@@ -236,13 +238,15 @@ h3.edge-message
 #content.internet-explorer.ua-internet-explorer .install-button,
 #content.safari.ua-safari .install-button,
 #content.yandex-browser.ua-yandex-browser .install-button,
+#content.edge.ua-edge .install-button,
 /* IE6 fixes */
 #content.firefox_ua-firefox .install-button,
 #content.chrome_ua-chrome .install-button,
 #content.opera_ua-opera .install-button,
 #content.internet-explorer_ua-internet-explorer .install-button,
 #content.safari_ua-safari .install-button,
-#content.yandex-browser_ua-yandex-browser .install-button
+#content.yandex-browser_ua-yandex-browser .install-button,
+#content.edge_ua-edge .install-button
 {
   background: #62c52b;
   background: -webkit-linear-gradient(top, #62c52b, #4f9d22);
@@ -261,13 +265,15 @@ h3.edge-message
 #content.internet-explorer.ua-internet-explorer .install-button:hover,
 #content.safari.ua-safari .install-button:hover,
 #content.yandex-browser.ua-yandex-browser .install-button:hover,
+#content.edge.ua-edge .install-button:hover,
 /* IE6 fixes */
 #content.firefox_ua-firefox .install-button:hover,
 #content.chrome_ua-chrome .install-button:hover,
 #content.opera_ua-opera .install-button:hover,
 #content.internet-explorer_ua-internet-explorer .install-button:hover,
 #content.safari_ua-safari .install-button:hover,
-#content.yandex-browser_ua-yandex-browser .install-button:hover
+#content.yandex-browser_ua-yandex-browser .install-button:hover,
+#content.edge_ua-edge .install-button:hover
 {
   box-shadow: 0px 2px 7px #486c15, 0 1px 0 0 #486c15;
 }
@@ -279,13 +285,15 @@ h3.edge-message
 #content.internet-explorer.ua-internet-explorer .install-button:active,
 #content.safari.ua-safari .install-button:active,
 #content.yandex-browser.ua-yandex-browser .install-button:active,
+#content.edge.ua-edge .install-button:active,
 /* IE6 fixes */
 #content.firefox_ua-firefox .install-button:active,
 #content.chrome_ua-chrome .install-button:active,
 #content.opera_ua-opera .install-button:active,
 #content.internet-explorer_ua-internet-explorer .install-button:active,
 #content.safari_ua-safari .install-button:active,
-#content.yandex-browser_ua-yandex-browser .install-button:active
+#content.yandex-browser_ua-yandex-browser .install-button:active,
+#content.edge_ua-edge .install-button:active
 {
   background: #4f9d22;
   background: -webkit-linear-gradient(bottom, #62c52b, #4f9d22);
@@ -300,7 +308,8 @@ h3.edge-message
 #content.opera #install-opera, #content.android #install-android,
 #content.internet-explorer #install-internet-explorer,
 #content.safari #install-safari,
-#content.yandex-browser #install-yandex-browser
+#content.yandex-browser #install-yandex-browser,
+#content.edge.edge-supported #install-edge
 {
   display: inline-block;
 }
@@ -441,7 +450,9 @@ html[dir="rtl"] #install ul
 #other-platform > div,
 #content.edge #video,
 #edge-teaser,
-h3.edge-message
+h3.edge-message,
+#content.edge.edge-supported h3.edge-message,
+#content.edge.edge-supported #other-platform > div
 {
   display: none;
 }
