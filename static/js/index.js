@@ -38,9 +38,8 @@
       return;
 
     var content = document.getElementById("content");
-    var match = window.navigator.userAgent.match(/Edge\/(\d+.\d+)/);
-    if (match && parseFloat(match[1]) >= 14.14342 &&
-        content.classList.contains("edge"))
+    var match = window.navigator.userAgent.match(/Edge\/\d+\.(\d+)/);
+    if (match && match[1] >= 14342 && content.classList.contains("edge"))
       content.classList.add("edge-supported");
   }
 
