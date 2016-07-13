@@ -39,7 +39,7 @@
 
     var content = document.getElementById("content");
     var match = window.navigator.userAgent.match(/Edge\/\d+\.(\d+)/);
-    if (match && match[1] >= 14342 && content.classList.contains("edge"))
+    if (match && match[1] >= 14361 && content.classList.contains("edge"))
       content.classList.add("edge-supported");
   }
 
