@@ -21,41 +21,41 @@ title=Adblock Plus - Surf the web without annoying ads!
 {
   function setIframe()
   {
-    if (window.location.search.substring(0,20) === &quot;?chrome-extension://&quot;)
-      document.getElementById(&quot;child-frame&quot;).src = window.location.search.substring(1);
+    if (window.location.search.substring(0,20) === "?chrome-extension://")
+      document.getElementById("child-frame").src = window.location.search.substring(1);
   }
   setIframe();
 
   function receiveMessage(e)
   {
-    if (e.data === &quot;adblockplus-chrome-install&quot;)
+    if (e.data === "adblockplus-chrome-install")
     {
       try
       {
-        chrome.webstore.install(&quot;https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb&quot;, function()
+        chrome.webstore.install("https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb", function()
         {
-          e.source.postMessage(&quot;adblockplus-chrome-installed&quot;, e.origin);
+          e.source.postMessage("adblockplus-chrome-installed", e.origin);
         });
       }
       catch(err)
       {
-        e.source.postMessage(&quot;adblockplus-chrome-install-failed&quot;, e.origin);
+        e.source.postMessage("adblockplus-chrome-install-failed", e.origin);
       }
-    } else if (e.data === &quot;adblockplus-dev-chrome-install&quot;)
+    } else if (e.data === "adblockplus-dev-chrome-install")
     {
       try
       {
-        chrome.webstore.install(&quot;https://chrome.google.com/webstore/detail/ldcecbkkoecffmfljeihcmifjjdoepkn&quot;, function()
+        chrome.webstore.install("https://chrome.google.com/webstore/detail/ldcecbkkoecffmfljeihcmifjjdoepkn", function()
         {
-          e.source.postMessage(&quot;adblockplus-chrome-installed&quot;, e.origin);
+          e.source.postMessage("adblockplus-chrome-installed", e.origin);
         });
       }
       catch(err)
       {
-        e.source.postMessage(&quot;adblockplus-chrome-install-failed&quot;, e.origin);
+        e.source.postMessage("adblockplus-chrome-install-failed", e.origin);
       }
     }
   }
-  window.addEventListener(&quot;message&quot;, receiveMessage, false);
+  window.addEventListener("message", receiveMessage, false);
 }());
 </script>
