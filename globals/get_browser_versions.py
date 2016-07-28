@@ -11,6 +11,10 @@ from xml.dom import minidom
 from jinja2 import contextfunction
 
 BROWSERS = {}
+BASE_URL = 'https://product-details.mozilla.org/1.0'
+FIREFOX_URL = BASE_URL + '/firefox_versions.json'
+THUNDERBIRD_URL = BASE_URL + '/thunderbird_versions.json'
+SEAMONKEY_URL = 'http://www.seamonkey-project.org/seamonkey_versions.json'
 
 CHROME_UPDATE_XML = '''\
 <?xml version="1.0" encoding="UTF-8"?>
@@ -30,67 +34,61 @@ CHROME_UPDATE_XML = '''\
 cache = {}
 
 
-def get_mozilla_version(product, origin_version, channel,
-                        minor=False, subdomain='aus4', origin_build='-',
-                        attribute='appVersion', platform='WINNT_x86-msvc'):
-    response = urllib.urlopen('https://%s.mozilla.org/update/3/%s/%s/%s/%s/en-US/%s/-/default/default/update.xml?force=1' % (
-        subdomain,
-        product,
-        origin_version,
-        origin_build,
-        platform,
-        channel
-    ))
+def get_json_versions(product_url):
+    response = urllib.urlopen(product_url)
     try:
-        doc = minidom.parse(response)
+        doc = json.load(response)
+    except json.ValueError:
+        print 'URL: %s not returning json object'.format(product_url)
     finally:
         response.close()
 
-    updates = doc.getElementsByTagName('update')
-    if not updates:
-        raise Exception('No updates for %s in %s channel' % (product, channel))
-    full_version = updates[0].getAttribute(attribute)
-
-    match = re.search(r'^(\d+)(?:\.\d+)?', full_version)
-    if minor:
-        return match.group(0)
-    return match.group(1)
+    for key, value in doc.iteritems():
+        if value:
+            match = re.search(r'^(\d+)(?:\.\d+)?', value)
+            if match:
+                doc[key] = match.group(0)
+    return doc
 
 
-def get_mozilla_versions(product, origin_version, release_minor=False):
+def get_firefox_versions():
+    versions = get_json_versions(FIREFOX_URL)
     return {
-        'current': get_mozilla_version(product, origin_version, 'release', release_minor),
+            'current': versions['LATEST_FIREFOX_VERSION'],
+            'unreleased': [
+                versions['LATEST_FIREFOX_DEVEL_VERSION'],
+                versions['FIREFOX_AURORA'],
+                versions['FIREFOX_NIGHTLY'],
+            ]
+    }
+
+
+def get_thunderbird_versions():
+    tbird_versions = get_json_versions(THUNDERBIRD_URL)
+    firefox_versions = get_json_versions(FIREFOX_URL)
+    return {
+        'current': tbird_versions['LATEST_THUNDERBIRD_VERSION'],
         'unreleased': [
-            get_mozilla_version(product, origin_version, 'beta'),
-            get_mozilla_version(product, origin_version, 'aurora'),
-            get_mozilla_version(product, origin_version, 'nightly'),
+            tbird_versions['LATEST_THUNDERBIRD_DEVEL_VERSION'],
+            tbird_versions['LATEST_THUNDERBIRD_ALPHA_VERSION'],
+            firefox_versions['FIREFOX_NIGHTLY'],
         ]
     }
 
-BROWSERS['firefox'] = lambda: get_mozilla_versions('Firefox', '37.0')
-BROWSERS['thunderbird'] = lambda: get_mozilla_versions('Thunderbird', '31.0', True)
-
-
-def get_seamonkey_version(origin_version, origin_build, channel, **kw):
-    return get_mozilla_version('SeaMonkey', origin_version, channel, True,
-                               'aus2-community', origin_build, 'version', **kw)
+BROWSERS['firefox'] = lambda: get_firefox_versions()
+BROWSERS['thunderbird'] = lambda: get_thunderbird_versions()
 
 
 def get_seamonkey_versions():
+    seamonkey_versions = get_json_versions(SEAMONKEY_URL)
     versions = {
-        'current': get_seamonkey_version('2.32', '20150112201917', 'release'),
-        'unreleased': [get_seamonkey_version('2.32', '20150101215737', 'beta')]
+        'current': seamonkey_versions['LATEST_SEAMONKEY_VERSION'],
+        'unreleased': [
+            seamonkey_versions['LATEST_SEAMONKEY_MILESTONE_VERSION'],
+            seamonkey_versions['LATEST_SEAMONKEY_TESTING_VERSION'],
+            seamonkey_versions['LATEST_SEAMONKEY_DEVEL_VERSION'],
+        ]
     }
-
-    # Aurora and Nightly builds for Windows are permantently broken.
-    # Occasionally, builds for other platforms are broken as well.
-    # https://bugzilla.mozilla.org/show_bug.cgi?id=1086553
-    for channel in ('aurora', 'nightly'):
-        try:
-            version = get_seamonkey_version('2.32', '-', channel, platform='Linux_x86-gcc3')
-        except Exception:
-            continue
-        versions['unreleased'].append(version)
 
     return versions
 
