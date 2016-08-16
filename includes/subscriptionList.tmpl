@@ -16,55 +16,73 @@
  #}
 
 {%- macro process_subscription(subscription, parent=None) %}
-  <tr{% if subscription["deprecated"] %} class="deprecated"{% endif %}>
-    {%- if parent and subscription["supplements"] %}
-      <td rowspan="2" class="dummy"></td>
-      <td rowspan="2">
-    {%- else %}
-      <td rowspan="2" colspan="2">
-    {%- endif %}
-      <strong class="subscriptionTitle">{{ subscription["name"] }}</strong><br>
-      {{ subscription["specialization"] }}
-      {%- if subscription["supplements"] %}
-      <br>{{ "supplement for"|translate("supplements_prefix") }} {{ ' / '.join(subscription["supplements"]) }} {{ " "|translate("supplements_suffix") }}
-      {%- endif %}
-    </td>
-    <td>
-      {%- if subscription["maintainer"] %}
-      {{ "by"|translate("maintainer_prefix") }} {{ subscription["maintainer"] }} {{ " "|translate("maintainer_suffix") }}<br>
-      {%- endif %}
-      {%- set is_first = True %}
-      {% for key, default in (('homepage', 'Homepage'), ('forum', 'Forum'), ('contact', 'Contact page'), ('faq', 'FAQ'), ('blog', 'Blog'), ('changelog', 'Changelog'), ('policy', 'Policy')) -%}
-        {%- set url = subscription[key] -%}
-        {%- if url -%}
-          {%- if not is_first %}, {% endif -%}
-          {%- set is_first = False -%}
-          <a href="{{ url }}">{{ default|translate(key) }}</a>
-        {%- endif %}
-      {%- endfor %}
-    </td>
-  </tr>
-  <tr{% if subscription["deprecated"] %} class="deprecated"{% endif %}>
-    <td>
-      {%- if subscription["deprecated"] %}
-      <strong>{{ "Note: This list is not optimized for Adblock Plus and may slow down your browsing experience."|translate("deprecation_warning") }}</strong><br>
-      {%- endif %}
-      {{ "Subscribe:"|translate("subscribe") }}{{ ' ' }}
-      {%- for title, url, complete in subscription["variants"] -%}
-        <a href="abp:subscribe?location={{ url|urlencode }}&amp;title={{ title|urlencode }}
-          {%- if parent and not complete -%}
-            {%- set main_title, main_url, main_complete = parent.variants[0] -%}
-            &amp;requiresLocation={{ main_url|urlencode }}&amp;requiresTitle={{ main_title|urlencode }}
-          {%- endif -%}
-        ">{{ title }}</a>{%- if not loop.last %}, {% endif -%}
-      {%- endfor %}
-    </td>
-  </tr>
-  {%- if not parent -%}
+  <li>
+    <article class="subscription {% if subscription["deprecated"] %}deprecated{% endif %}">
+      <div class="subscription-content">
+        <div class="subscription-summary">
+          <h1>{{ subscription["name"] }}</h1>
+          <p>
+            {{ "Specialization"|translate("specialization") }}:
+            {{ subscription["specialization"] }}
+          </p>
+          {%- if subscription["supplements"] %}
+          <p>
+            {{ "supplement for"|translate("supplements_prefix") }}
+            {{ ' / '.join(subscription["supplements"]) }}
+            {{ " "|translate("supplements_suffix") }}.
+          </p>
+          {%- endif %}
+        </div>
+      </div>
+      <footer class="subscription-details">
+        <div class="subscription-authors">
+          {%- if subscription["maintainer"] %}
+          <address>
+            {{ "by"|translate("maintainer_prefix") }}
+            {{ subscription["maintainer"] }}
+            {{ " "|translate("maintainer_suffix") }}
+          </address>
+          {%- endif %}
+          {%- set is_first = True %}
+          <p>
+          {% for key, default in (('homepage', 'Homepage'), ('forum', 'Forum'), ('contact', 'Contact page'), ('faq', 'FAQ'), ('blog', 'Blog'), ('changelog', 'Changelog'), ('policy', 'Policy')) -%}
+          {%- set url = subscription[key] -%}
+            {%- if url -%}
+              {%- if not is_first %}, {% endif -%}
+              {%- set is_first = False -%}
+              <a href="{{ url }}">{{ default|translate(key) }}</a>
+            {%- endif %}
+          {%- endfor %}
+          </p>
+        </div>
+        <div class="subscription-links">
+          {%- if subscription["deprecated"] %}
+          <p>
+            <strong>{{ "Note: This list is not optimized for Adblock Plus and may slow down your browsing experience."|translate("deprecation_warning") }}</strong>
+          </p>
+          {%- endif %}
+          <p>
+            {{ "Subscribe:"|translate("subscribe") }}{{ ' ' }}
+            {%- for title, url, complete in subscription["variants"] -%}
+            <a href="abp:subscribe?location={{ url|urlencode }}&amp;title={{ title|urlencode }}
+              {%- if parent and not complete -%}
+                {%- set main_title, main_url, main_complete = parent.variants[0] -%}
+                &amp;requiresLocation={{ main_url|urlencode }}&amp;requiresTitle={{ main_title|urlencode }}
+              {%- endif -%}
+            ">{{ title }}</a>{%- if not loop.last %}, {% endif -%}
+            {%- endfor %}
+          </p>
+        </div>
+      </footer>
+    </article>
+    {%- if subscription["supplemented"] -%}
+    <ul class="supplemented-subscriptions-list">
     {%- for supplement in subscription["supplemented"]|subscription_sort -%}
       {{ process_subscription(supplement, subscription) }}
     {%- endfor -%}
-  {%- endif -%}
+    </ul>
+    {%- endif -%}
+  </li>
 {%- endmacro %}
 
 {% macro display_subscriptions(subscriptions) %}
@@ -72,17 +90,17 @@
     {%- if not (subscription["supplements"] and current_type == subscription["type"]) -%}
       {%- if current_type != subscription["type"] -%}
         {%- if current_type %}
-  </table>
+  </ul>
         {%- endif -%}
         {%- set current_type = subscription["type"] %}
   <h2 id="type_{{ current_type }}">{{ get_string("type_" + current_type, "subscriptions") }}</h2>
 
-  <table class="subscriptions">
+  <ul class="subscriptions-list">
       {%- endif -%}
     {%- endif -%}
     {%- if subscription["type"] not in subscription["supplementsType"] -%}
       {{ process_subscription(subscription) }}
     {%- endif -%}
   {%- endfor %}
-  </table>
+  </ul>
 {% endmacro %}

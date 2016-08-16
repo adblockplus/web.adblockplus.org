@@ -323,7 +323,7 @@ a[hreflang="en"]:not(:lang(en)):after
   margin: 4px 0;
 }
 
-footer
+#footer-main
 {
   display: block;
   background: white;
@@ -331,19 +331,20 @@ footer
   padding: 0;
 }
 
-footer nav h1, footer nav li
+#footer-main nav h1, #footer-main nav li
 {
   color: #444444;
   border-bottom: 1px solid #dedede;
 }
 
-footer h1
+#footer-main h1
 {
+  font-size: 16px;
   margin-top: 0;
   margin-bottom: 15px;
 }
 
-footer nav li
+#footer-main nav li
 {
   margin-bottom: 5px;
 }

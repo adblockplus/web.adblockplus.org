@@ -70,7 +70,7 @@ header nav>ul
   background-color: white;
 }
 
-header nav>ul>li.selected, footer nav section h1
+header nav>ul>li.selected, #footer-main nav section h1
 {
   cursor: pointer;
 }
@@ -146,24 +146,24 @@ html[dir="rtl"] #logo
   margin: 20px 10px 50px 10px;
 }
 
-footer
+#footer-main
 {
   text-align: center;
   position: static;
 }
 
-footer h1, footer nav li
+#footer-main h1, #footer-main nav li
 {
   padding: 15px;
   margin: 0px;
 }
 
-footer nav li
+#footer-main nav li
 {
   display: none;
 }
 
-footer nav section h1::after
+#footer-main nav section h1::after
 {
   content: "";
   display: inline-block;
@@ -175,18 +175,18 @@ footer nav section h1::after
   background-position: -31px -166px;
 }
 
-html[dir="rtl"] footer nav section h1::after
+html[dir="rtl"] #footer-main nav section h1::after
 {
   margin-right: 5px;
   margin-left: 0;
 }
 
-footer nav section.visible h1::after
+#footer-main nav section.visible h1::after
 {
   background-position: -31px -178px;
 }
 
-footer nav section.visible li
+#footer-main nav section.visible li
 {
   display: block;
 }

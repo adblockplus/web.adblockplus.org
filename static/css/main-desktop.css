@@ -221,7 +221,7 @@ html[dir="rtl"] #logo
   margin-bottom: 280px;
 }
 
-footer
+#footer-main
 {
   position: absolute;
   left: 0;
@@ -235,42 +235,42 @@ footer
   .bottom: 220px;
 }
 
-html[dir="rtl"] footer
+html[dir="rtl"] #footer-main
 {
   right: 0;
   left: auto;
 }
 
-footer nav
+#footer-main nav
 {
   width: 600px;
 }
 
-footer nav h1, footer nav li
+#footer-main nav h1, #footer-main nav li
 {
   width: 160px;
   padding-bottom: 5px;
 }
 
-footer nav, footer nav section, #social
+#footer-main nav, #footer-main nav section, #social
 {
   display: inline-block;
   vertical-align: top;
 }
 
-footer nav section
+#footer-main nav section
 {
   margin-left: 55px;
   margin-right: 0;
 }
 
-html[dir="rtl"] footer nav section
+html[dir="rtl"] #footer-main nav section
 {
   margin-right: 55px;
   margin-left: 0;
 }
 
-html footer nav section.first
+html #footer-main nav section.first
 {
   margin-left: 0;
   margin-right: 0;

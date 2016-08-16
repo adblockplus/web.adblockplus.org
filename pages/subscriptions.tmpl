@@ -18,29 +18,86 @@ title=Known Adblock Plus subscriptions
 
 
 <style type="text/css">
-.subscriptions
+.subscriptions-list,
+.supplemented-subscriptions-list
 {
-  border-collapse: collapse;
-  width: 100%;
+  margin: 0px;
+  list-style: none;
 }
 
-.subscriptions td
+.subscriptions-list
 {
-  width: 50%;
+  padding: 0px;
 }
 
-.subscriptions td, .subscriptions th
+.supplemented-subscriptions-list
 {
-  vertical-align: top;
-  border: 1px dashed black;
+  padding: 0px 0px 0px 30px;
+}
+
+[dir="rtl"] .supplemented-subscriptions-list
+{
+  padding: 0px 30px 0px 0px;
+}
+
+.subscription
+{
+  position: relative;
+  overflow: auto;
+  /* Using outline and margin instead of border to prevent overlapping
+     and missing connections in hierarchy */
+  outline: 1px dashed #000;
+  margin-left: -1px;
+  margin-top: 1px;
+}
+
+#content .subscription h1
+{
+  margin: 0px;
+  font-size: 16px;
+}
+
+.subscription p
+{
+  margin: 0px;
+}
+
+.subscription-summary,
+.subscription-authors,
+.subscription-links
+{
   padding: 5px;
 }
 
-.subscriptions .dummy
+.subscription-content,
+.subscription-details
 {
-  border-style: none;
-  width: 20px;
-  min-width: 20px;
+  float: left;
+  width: 50%;
+}
+
+[dir="rtl"] .subscription-content,
+[dir="rtl"] .subscription-details
+{
+  float: right;
+}
+
+.subscription-authors,
+.subscription-links
+{
+  border-left: 1px dashed #000;
+}
+
+[dir="rtl"] .subscription-authors,
+[dir="rtl"] .subscription-links
+{
+  border-left: none;
+  border-right: 1px dashed #000;
+}
+
+.subscription-links
+{
+  border-top: 1px dashed #000;
 }
 
 .subscriptions .deprecated
