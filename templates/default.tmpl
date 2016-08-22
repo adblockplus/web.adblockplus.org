@@ -18,10 +18,21 @@
 <!DOCTYPE html>
 <html lang="{{locale}}" dir="{{"rtl" if config.has_option("rtl", locale) else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
   <head>
-    <title>{{title|translate("title")}}</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{title|translate("title", "meta")}}</title>
+    {% if description %}
+    <meta name="description" content="{{description|translate("description", "meta")}}">
+    {% endif %}
+
+    {# facebook / Open Graph http://ogp.me/ #}
+    <meta property="og:image" content="{{og_image if og_image else '/img/adblockplus_promo.png'}}" />
+
+    {# twitter https://dev.twitter.com/cards/markup #}
+    <meta name="twitter:site" content="@AdblockPlus" />
+    <meta name="twitter:creator" content="@AdblockPlus" />
+
     <link rel="stylesheet" href="/css/main.css" class="cssfx">
     <link rel="stylesheet" href="/css/main-desktop.css" media="(min-width: 1000px)" class="cssfx">
     <link rel="stylesheet" href="/css/main-mobile.css" media="(max-width: 1000px)">
