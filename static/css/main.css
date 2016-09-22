@@ -174,9 +174,19 @@ html[dir="rtl"] #language .flag
   background-position: 0px -12px;
 }
 
+#flag-el
+{
+  background-position: -85px -12px;
+}
+
 #flag-he
 {
   background-position: -17px -12px;
+}
+
+#flag-it
+{
+  background-position: -85px -24px;
 }
 
 #flag-hu
@@ -189,6 +199,11 @@ html[dir="rtl"] #language .flag
   background-position: -51px -12px;
 }
 
+#flag-ja
+{
+  background-position: -102px 0px;
+}
+
 #flag-lt
 {
   background-position: -68px -12px;
@@ -199,9 +214,19 @@ html[dir="rtl"] #language .flag
   background-position: 0px -24px;
 }
 
+#flag-pl
+{
+  background-position: -102px -12px;
+}
+
 #flag-pt_BR
 {
   background-position: -17px -24px;
+}
+
+#flag-pt_PT
+{
+  background-position: -102px -24px;
 }
 
 #flag-ru
