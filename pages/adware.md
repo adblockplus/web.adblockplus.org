@@ -31,6 +31,7 @@ noheading=true
 
     .warning
     {
+      display: none;
       color: #e11a2c;
     }
 
@@ -40,6 +41,11 @@ noheading=true
       border: 2px solid;
       border-color: #e11a2c;
       background-color: #fff;
+    }
+
+    .show-warning .warning
+    {
+      display: block;
     }
 
     .icon-header
@@ -131,6 +137,19 @@ noheading=true
       color: #e11a2c;
     }
   </style>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function()
+    {
+      if (window.location.search.indexOf("warning=true") == 1)
+      {
+        if ("classList" in document.body)
+          document.body.classList.add("show-warning")
+        else
+          document.body.className += " show-warning";
+      }
+    }, false);
+  </script>
 </head>
 
 # {{page-header I’m using <fix>Adblock Plus</fix> but I still see suspicious ads}}
