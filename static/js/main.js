@@ -48,6 +48,11 @@
   function initLanguageSelection()
   {
     var language = document.getElementById("language");
+
+    // skip if page does not have language selection (EG: blog)
+    if (!language)
+      return;
+
     var languageSelection = language.getElementsByTagName("ul")[0];
 
     document.documentElement.onclick = function()
