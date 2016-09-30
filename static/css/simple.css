@@ -54,6 +54,17 @@ a:hover
   text-decoration: none;
 }
 
+fieldset
+{
+  border: 0px;
+  padding: 0px;
+}
+
+li fieldset
+{
+  padding-top: 10px;
+}
+
 header h1
 {
   box-sizing: border-box;
@@ -61,7 +72,7 @@ header h1
   border-left: none;
   border-right: none;
   padding: 18px;
-  margin: 68px auto 20px auto;
+  margin: 68px auto 0px auto;
   max-width: 960px;
   font-weight: 300;
   font-size: 24px;
@@ -95,10 +106,17 @@ header::before
   max-width: 960px;
 }
 
-section
+section,
+.notification
 {
   padding: 20px 100px;
   margin-bottom: 30px;
+}
+
+.notification
+{
+  margin: 0px;
+  text-align: center;
 }
 
 section.highlighted
@@ -147,12 +165,17 @@ section li input
 section li textarea
 {
   display: block;
-  margin-top: 10px;
   padding: 5px;
   width: 250px;
   height: 50px;
   vertical-align: middle;
   font-size: 14px;
+}
+
+section li ul
+{
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 section .subheader
@@ -168,14 +191,19 @@ section .error-label
   margin: 0px 12px;
 }
 
-form button
+button,
+.notification a
 {
   min-width: 138px;
+  border: 0px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.highlighted form button
+{
   height: 42px;
   background-color: #37506d;
-  border: 0px;
-  cursor: pointer;
-  color: #ffffff;
 }
 
 form.error button
@@ -186,6 +214,22 @@ form.error button
 form.error .error-label
 {
   display: inline-block;
+}
+
+.notification a
+{
+  display: inline-block;
+  padding: 14px 0px;
+  margin: 0px 10px;
+  background-color: #5cb85c;
+  vertical-align: middle;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.notification a:hover
+{
+  background-color: #47a447;
 }
 
 form input[type="checkbox"]
