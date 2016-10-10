@@ -2,6 +2,24 @@ title=Development builds
 
 <head>
 <link href="https://chrome.google.com/webstore/detail/ldcecbkkoecffmfljeihcmifjjdoepkn" rel="chrome-webstore-item">
+<script>
+  document.addEventListener("DOMContentLoaded", function()
+  {
+    var link = document.getElementById("chrome-install-link");
+    if (typeof chrome != "undefined" && chrome.webstore)
+    {
+      link.addEventListener("click", function(event)
+      {
+        chrome.webstore.install();
+        event.preventDefault();
+      });
+    }
+    else if (/\bOPR\//.test(navigator.userAgent))
+    {
+      link.href = "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=100&x=id%3Dldcecbkkoecffmfljeihcmifjjdoepkn%26uc";
+    }
+  });
+</script>
 </head>
 
 <h2 id="general">{{s1 What are development builds?}}</h2>
@@ -27,7 +45,7 @@ title=Development builds
     <a href="https://addons.mozilla.org/addon/adblock-plus/versions/beta">older builds</a>).}}</small>
   </li>
   <li>
-    <a href="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=100&x=id%3Dldcecbkkoecffmfljeihcmifjjdoepkn%26uc" onclick="chrome.webstore.install(); return false;">{{abp-for-chrome <fix>Adblock Plus</fix> for <fix>Chrome</fix> and <fix>Opera</fix>}}</a>
+    <a href="https://chrome.google.com/webstore/detail/adblock-plus-development/ldcecbkkoecffmfljeihcmifjjdoepkn" id="chrome-install-link">{{abp-for-chrome <fix>Adblock Plus</fix> for <fix>Chrome</fix> and <fix>Opera</fix>}}</a>
     <small>{{s11 (<a href="/devbuilds/adblockpluschrome/00latest.changelog.xhtml">changelog</a>,
     <a href="/devbuilds/adblockpluschrome/">older builds</a>)}}</small>
   </li>
