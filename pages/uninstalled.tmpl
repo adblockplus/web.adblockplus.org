@@ -126,11 +126,11 @@ template=simple
           </label>
           {%- if adblockers %}
           <fieldset class="hidden" id="adblockers">
-            <select>
+            <select name="otherAdblockerPredefined">
               {%- for name in adblockers %}
-              <option name="otherAdblockerPredefined" data-hide-element="other-adblocker" value="{{name}}">{{name}}</option>
+              <option data-hide-element="other-adblocker" value="{{name}}">{{name}}</option>
               {%- endfor %}
-              <option name="otherAdblockerPredefined" data-show-element="other-adblocker" value="Other">{{"Other"|translate("other", "Option in list of Adblockers")}}</option>
+              <option data-show-element="other-adblocker" value="Other">{{"Other"|translate("other", "Option in list of Adblockers")}}</option>
             </select>
             <input id="other-adblocker" class="hidden" type="text" name="otherAdblocker" />
           </fieldset>
