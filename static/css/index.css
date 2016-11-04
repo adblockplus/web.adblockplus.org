@@ -160,11 +160,6 @@ html[dir="rtl"] #summary ul
   font-weight: normal;
 }
 
-html[lang="fr"] .license-note.lang-fr
-{
-  display: inline;
-}
-
 html[dir="rtl"] #summary li .sprite
 {
   margin-right: -17px;
@@ -515,11 +510,6 @@ html[lang^="zh_"] #maxthon-notification
 #content.maxthon_ua-maxthon .warning-platform.maxthon
 {
   display: none;
-}
-
-html[lang="fr"] .disclaimer.lang-fr
-{
-  display: block;
 }
 
 #key-facts section
