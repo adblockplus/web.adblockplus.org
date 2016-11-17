@@ -43,10 +43,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{abp-history[Paragraph in "about" section] So starting in 2011, in consultation with [our users](/blog/adblock-plus-user-survey-results-part-0), we decided to propose a compromise. Because we share a vision with the majority of our users that not all ads are equally annoying, the Acceptable Ads initiative was created. It allows advertisers and publishers who have agreed to make ads that abide by user-generated criteria to be whitelisted. Users can support this less extreme version of ad blocking by allowing the Acceptable Ads option to remain enabled. To browse completely ad-free, users can [disable the option](#optout).}}
 
-{{benefit[Text in "about" section] This is beneficial in two ways:}}
-
-* {{encourage-ad-industry[Benefit bullet point in "about" section] We hope that the initiative encourages the ad industry to pursue less intrusive ad formats and thus have a positive impact on the Internet as a whole.}}
-* {{revenue-source[Benefit bullet point in "about" section] It provides us with a [viable source of revenue](/about#monetization), which we need to be able to administer the Acceptable Ads program and continue development of a free product.}}
+{{benefit[Text in "about" section] The Acceptable Ads initiative is beneficial because it encourages the ad industry to pursue less intrusive ad formats, thus having a positive impact on the Internet as a whole. It also provides us with a [viable source of revenue](/about#monetization), paid only by larger participants in the Acceptable Ads initiative, which we need in order to be able to administer and maintain the program and continue development of a free product.}}
 
 {{our-belive[Paragraph in "about" section] We believe that this initiative is a sustainable middle ground between the user's choice to use ad blockers and the continued need to support free online content with advertisements. In general, an Acceptable Ad is a non-animated ad, clearly labeled as such, that does not interrupt reading flow. It is important to note that these criteria try to reflect the ongoing discussions between our users, publishers, advertisers and us. They will evolve as the web changes and as we receive more feedback. We explicitly invite everyone to join the dialog on [our forum](/forum/viewforum.php?f=17) or contact us at [acceptableads@adblockplus.org](mailto:acceptableads@adblockplus.org). Furthermore, in the very near future we intend to hand over complete control of these criteria to [an independent committee](/blog/campdavid-nyc).}}
 
@@ -56,7 +53,7 @@ title=Allowing acceptable ads in Adblock Plus
 * {{transparency[Fairness rule Bullet point in "about" section] For transparency reasons, we add all Acceptable Ads to our forum to provide our community with the opportunity to submit feedback. We greatly value feedback and read all comments.}}
 * {{user-value[Fairness rule Bullet point in "about" section] Adblock Plus users are valuable to us and we listen to them. If, for valid reasons, any Acceptable Ads proposal is rejected by our community, the ad(s) will be removed from our whitelist.}}
 
-{{charging[Paragraph in "about" section] We are able to keep our open source product free [by charging large entities a fee](/about#monetization) for whitelisting services. For the other 90% of our partners, these services are offered free of charge.}}
+{{charging[Paragraph in "about" section] We are able to keep our open source product free [by charging large entities a fee](/about#monetization) for whitelisting services. For the other roughly <fix>90</fix> percent of our partners, these services are offered free of charge.}}
 
 {{manifesto[Paragraph in "about" section] Do you think this is a good idea? Show your support by signing our [Acceptable Ads Manifesto](https://acceptableads.org/).}}
 
@@ -191,3 +188,10 @@ title=Allowing acceptable ads in Adblock Plus
 
 ## {{does-users-need[Section header] Do Adblock Plus users really want this feature?}} {: #who }
 {{survey[Text in "who want acceptable ads" section] The <a href="/blog/adblock-plus-user-survey-results-part-3">results of our user survey</a> say yes. According to the survey, only 25 percent of Adblock Plus users are strictly against all advertising. They can disable the feature and browse completely ad-free. The other 75 percent replied that they would accept some advertising to help support websites.}}
+
+## {{revenue[Section header] Is there payment involved?}} {: #revenue }
+{{main-revenue[Text in "Is there payment involved?" section] We receive some donations from our users, but our main source of revenue comes as part of the Acceptable Ads initiative. Larger entities (as defined below) pay a licensing fee for the whitelisting services requested and provided to them (around 90 percent of the licences are granted for free). It should be noted that the Acceptable Ads criteria must be met independent of the consideration for payments. If the criteria are not met, whitelisting is impossible.}}
+
+{{who-pays[Text in "Is there payment involved?" section] Regarding fees, only large entities (those with more than 10 million additional ad impressions per month due to participation in the Acceptable Ads initiative) have to pay. For these entities, our licensing fee normally represents 30 percent of the additional revenue created by whitelisting its acceptable ads.}}
+
+{{more-details[Text in "Is there payment involved?" section] For more details see <a href="/about#monetization">here</a>.}}
