@@ -555,6 +555,11 @@ html[dir="rtl"] #key-facts section .sprite
   background-position: 0px -68px;
 }
 
+#key-facts
+{
+  margin-bottom: 40px;
+}
+
 #key-facts section p
 {
   margin-bottom: 0px;
@@ -564,6 +569,37 @@ html[dir="rtl"] #key-facts section .sprite
 #key-facts section a
 {
   font-size: 14px;
+}
+
+#footnote
+{
+  margin-top: 20px;
+  text-align: start;
+  color: #7d7d7d;
+}
+
+#footnote,
+#footnote li,
+#footnote a,
+#footnote strong
+{
+  font-size: 11px;
+}
+
+#footnote li
+{
+  padding-bottom: 5px;
+}
+
+#footnote li:first-child
+{
+  padding-top: 5px;
+}
+
+#footnote ul
+{
+  margin: 0px;
+  padding: 0px 30px;
 }
 
 #more-container
