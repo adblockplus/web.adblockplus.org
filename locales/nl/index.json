@@ -14,8 +14,14 @@
   "abp-microsoft-edge": {
     "message": "Adblock Plus voor Microsoft Edge"
   },
+  "blocking-features": {
+    "message": "Kan tracking, malwaredomeinen, banners, pop-ups en videoadvertenties blokkeren - zelfs op Facebook en YouTube"
+  },
   "edge-teaser": {
     "message": "Komt-eraan-afbeelding van Adblock Plus voor Microsoft Edge"
+  },
+  "gplv3-license": {
+    "message": "Het is gratis! (<a>GPLv3</a>)"
   },
   "microsoft-edge": {
     "message": "Microsoft Edge"
@@ -23,14 +29,17 @@
   "ms-edge-description": {
     "message": "Microsoft Edge <a>ondersteunt nog geen extensies</a>. U kunt er echter zeker van zijn dat er zo snel mogelijk een versie van Adblock Plus voor Microsoft Edge wordt vrijgegeven. Terwijl u wacht, wilt u wellicht de nieuwste versie van Adblock Plus voor Internet Explorer proberen."
   },
+  "opt-out-acceptable-ads": {
+    "message": "Om websites te steunen, worden niet-opdringerige advertenties niet geblokkeerd (<a>configureerbaar</a>)"
+  },
   "other-platform": {
     "message": "Adblock Plus downloaden voor een ander platform"
   },
+  "privacy-policy-note": {
+    "message": "Adblock Plus zal nooit persoonlijke gegevens van u verzamelen."
+  },
   "s1": {
     "message": "Adblock Plus - Surfen zonder vervelende advertenties!"
-  },
-  "s10": {
-    "message": "(<a>GPLv3</a>)"
   },
   "s11": {
     "message": "Standaard geïntegreerd in"
@@ -152,9 +161,6 @@
   "s48": {
     "message": "Privacy gegarandeerd"
   },
-  "s49": {
-    "message": "Adblock Plus zal nooit persoonlijke gegevens van u verzamelen."
-  },
   "s5": {
     "message": "Adblock Plus"
   },
@@ -210,9 +216,6 @@
     "description": "{1}: 100, {2}: Adblock Plus, {3}: Google Chrome",
     "message": "De add-on wordt door de opensourcegemeenschap ontwikkeld en is voor iedereen gratis te gebruiken. Met meer dan 100 miljoen actieve apparaten is Adblock Plus een van de meest populaire browserextensies voor Chrome."
   },
-  "s7": {
-    "message": "Kan tracking, malwaredomeinen, banners, pop-ups en videoadvertenties blokkeren - zelfs op Facebook en YouTube"
-  },
   "s72": {
     "message": "Advertenties blokkeren in Opera"
   },
@@ -235,9 +238,6 @@
   },
   "s79": {
     "message": "Door de Adblock Plus-app voor Android te installeren, kunt u de snelheid van het surfen met uw mobiele apparaat significant verbeteren. De app filtert het webverkeer en voorkomt dat advertenties worden gedownload, waardoor bandbreedte wordt verkleind en de snelheid van het surfen toeneemt. Het blokkeren van advertenties op Android is ook nuttig om uw privacy te beschermen en te voorkomen dat kwaadaardige apps worden gedownload, die vaak via misleidende advertenties worden verspreid."
-  },
-  "s8": {
-    "message": "Om websites te steunen, worden niet-opdringerige advertenties niet geblokkeerd (<a>configureerbaar</a>)"
   },
   "s80": {
     "message": "Houd er rekening met dat er een aantal beperkingen in Android zijn die wat handmatige handelingen kunnen vereisen voordat de app advertenties kan blokkeren. Voor zogenaamde 'non-rooted' apparaten die op 4.1.2, 4.2.1 en hoger werken, is een klein beetje configuratie vereist. Voor 'non-rooted' apparaten met Android 3.1 of hoger zal Adblock Plus alle advertenties via uw wifi-verbinding blokkeren. Android-apparaten zonder roottoegang kunnen geen advertenties via 3G-verbindingen blokkeren."
@@ -265,9 +265,6 @@
   },
   "s89": {
     "message": "Adblock Plus voor Safari gebruikt dezelfde codebasis als de Chrome- en Opera-versies. Hoewel dit de ontwikkeling van onze adblocker veel complexer heeft gemaakt, zijn er bepaalde belangrijke voordelen. Zo wordt bijvoorbeeld dezelfde codebasis gedeeld, dus worden alle wijzigingen of verbeteringen in een van deze browsers automatisch in Safari verwerkt, wat voor een ervaring zorgt die altijd up-to-date is."
-  },
-  "s9": {
-    "message": "Het is gratis!"
   },
   "s90": {
     "message": "In tegenstelling tot Chrome en Firefox heeft Safari een aantal beperkingen. Omdat deze in de browser zijn ingebouwd, hebben ze invloed op alle extensies voor Safari - en de onze is natuurlijk geen uitzondering. Deze beperkingen bestaan omdat het voor extensies niet mogelijk is om 'diepe' toegang tot de code van Safari te krijgen, zoals we die wel hebben bij andere browsers. Conclusie: er zijn een aantal onderdelen van Adblock Plus voor Safari die niet optimaal functioneren. Zo is het bijvoorbeeld niet mogelijk om advertenties in 'plug-ins van derden' zoals videospelers te blokkeren, of om de zogenaamde XHR-aanvragen te blokkeren. Normaal gesproken zou dit betekenen dat YouTube-videoadvertenties niet kunnen worden geblokkeerd. Maar vanwege een aantal zeer slimme oplossingen kan Adblock Plus deze vervelende videoadvertenties in uw Safari-browser blokkeren."

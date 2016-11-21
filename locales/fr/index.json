@@ -5,6 +5,33 @@
   "abb-banner-headline": {
     "message": "Vous souhaitez bloquer les publicités sur votre smartphone ou sur votre tablette?"
   },
+  "blocking-features": {
+    "message": "Bloque les bannières, pop-ups, malware, etc."
+  },
+  "footnote-forum": {
+    "message": "Pour des raisons de transparence, nous mettons à disposition toutes les publicités acceptables sur notre <a>forum</a> afin que notre communauté puisse donner son avis."
+  },
+  "footnote-headline": {
+    "message": "Les règles suivantes <strong>s'appliquent</strong> et <strong>s’appliqueront toujours</strong> à tous, sans exceptions :"
+  },
+  "footnote-keep-free": {
+    "message": "Nous assurons la gratuité de nos produits en source libre en facturant aux grandes entités des frais de services de liste blanche. Pour les 90 pour cent restants de nos partenaires, ces services sont offerts gratuitement."
+  },
+  "footnote-must-comply": {
+    "message": "Les participants ne peuvent pas payer pour éviter les <a>critères</a>. Chaque publicité doit être conforme."
+  },
+  "footnote-value-users": {
+    "message": "Nous écoutons nos utilisateurs. Si des propositions de publicités acceptables sont signalées par notre communauté pour une raison légitime, nous la retirerons de la liste blanche."
+  },
+  "gplv3-license": {
+    "message": "Gratuit et en source libre (<a>GPLv3</a>)"
+  },
+  "opt-out-acceptable-ads": {
+    "message": "Par défaut, les publicités non intrusives ne sont pas bloquées <a>(en savoir plus)</a>"
+  },
+  "privacy-policy-note": {
+    "message": "Adblock Plus ne collectera jamais vos <a>données personnelles</a>."
+  },
   "s1": {
     "message": "Adblock Plus - Surfez sans désagrément !"
   },
@@ -119,9 +146,6 @@
   "s48": {
     "message": "Garanties privées"
   },
-  "s49": {
-    "message": "Adblock Plus ne collectera jamais aucune de votre données personnelles."
-  },
   "s50": {
     "message": "En savoir plus"
   },
@@ -150,9 +174,6 @@
     "description": "{1}: 100, {2}: Adblock Plus, {3}: Google Chrome",
     "message": "Ce module \"addon\" est développé par la communauté \"open source\" et est entièrement gratuite pour n'importe qui. Avec plus de 100 millions d'appareils actifs, Adblock Plus est l'une des extensions de navigateur les plus populaires sur Chrome."
   },
-  "s7": {
-    "message": "Bloquer les traqueurs, noms de domaine malveillants, bannières, pops-ups et publicités vidéos – même sur Facebook et YouTube"
-  },
   "s72": {
     "message": "Bloquer les publicités sur Opera"
   },
@@ -178,9 +199,6 @@
   },
   "s79": {
     "message": "En installant l'application Adblock Plus sur Android, vous pouvez significativement augmenter la vitesse de recherche du navigateur. L'application filtre le trafic internet et prévient du téléchargement des pubs non voulues, ce qui diminue la présence des bandes passantes et des \"jacks up the speed\" de vos recherches. Bloquer les pubs sur Android est aussi utile pour protéger votre confidentialité et éliminer l'angoisse de télécharger involontairement des applications malicieuses venants être distribuées par l'intermédiaire des annonces trompeuses."
-  },
-  "s8": {
-    "message": "Les publicités discrètes ne sont pas bloquées dans le but d'aider et de supporter les sites web (<a>configurable</a>)"
   },
   "s80": {
     "message": "Il est à noter qu'il existe quelques limites sur Android qui devront nécessiter quelques efforts manuels pour bloquer les pubs: pour les dispositifs non-ancrés qui fonctionnent sur 4.1.2., 4.2.1. et plus, des configurations mineures sont nécessaires. Pour les dispositifs non-ancrés avec Android 3.1 et plus, Adblock Plus bloquera automatiquement toutes les pubs sur vos connexions Wifi. En revanche, ces dispositifs informatiques sans ancrages ne seront pas capable de bloquer les pubs sur une connexion 3G."
@@ -208,9 +226,6 @@
   },
   "s89": {
     "message": "Adblock Plus pour Safari utilise le même code base que les versions de Chrome et Opera. Quoique cela ait rendu le développement de l’adblocker plus complexe, il y a quelques avantages principaux. Pour le moment, parce qu’ils partagent le même code base, chaque changement ou amélioration fait dans l’un de ces navigateurs sera automatiquement ajouté dans Safari, garantissant le fonctionnement toujours actualisé."
-  },
-  "s9": {
-    "message": "C'est gratuit !"
   },
   "s90": {
     "message": "Différement de Chrome et Firefox, Safari  est caracterisé par quelques limitations. Parce que celles-ci sont installées dans le navigateur, elles affectent chaque extension disponible pour Safari, dont la nôtre n’est aucune exception. Ces limitations existent, car il n’est pas possible de « pénétrer » le code Safari, ce qu’on peut faire avec les autres navigateurs. Bref, il y a certaines facettes de l’Adblock Plus pour Safari qui ne peuvent pas fonctionner optimalement. Par exemple, il n’est pas possible de bloquer les publicités en format de tierce partie module d’extension, comme des lecteurs vidéo ou de bloquer des ainsi nommés XHR requests. En général, cela veut dire que les publicités ajoutées aux vidéos du Youtube ne peuvent pas être bloquées. Heureusement,  grâce à un contournement très rusé, l’Adblock Plus peut bloquer ces publicités dans votre navigateur Safari."
