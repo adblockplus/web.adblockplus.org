@@ -1,5 +1,77 @@
 {
+  "about": {
+    "description": "Section header",
+    "message": "内容"
+  },
+  "about-abp": {
+    "description": "Paragraph in \"about\" section",
+    "message": "Adblock Plus是广告屏蔽工具。但是正是因为广告投放，我们才能享有互联网上的大量免费资源。因此，我们似乎也可以在这一点上折衷处理。Adblock Plus团队曾向用户发放调查，大多数用户也表示同意。"
+  },
+  "abp-history": {
+    "description": "Paragraph in \"about\" section",
+    "message": "因此，在与 <a>用户们</a>进行沟通的情况下，我们决定采用折衷方案。因此，在大家认同不是所有的广告都令人恶心后，Adblock Plus团队基于广大用户共同制定的规则，提出可接受广告方案。该方案将同意遵守相关规则的广告发布商加入广告屏蔽白名单。用户保持可接受广告（Acceptable Ads）选项开启，即可支持这一方案。如果想完全屏蔽，用户也可以选择<a>关闭</a>."
+  },
+  "acceptable-ads": {
+    "description": "Section header",
+    "message": "“可接受广告”标准"
+  },
+  "avoid-criteria": {
+    "description": "Fairness rule Bullet point in \"about\" section",
+    "message": "任何一方不能通过付费免除履行。 <strong>所有的广告都必须遵守这一准则</strong>"
+  },
+  "benefit": {
+    "description": "Text in \"about\" section",
+    "message": "这在两个方面都有利："
+  },
+  "charging": {
+    "description": "Paragraph in \"about\" section\n{1}: 90",
+    "message": "<a>通过向想加入广告白名单的大型平台商收取一定费用</a>，Adblock Plus团队得以让我们的开源软件免费给大家分享。 对于另外90%的平台商，加入白名单是免费的。"
+  },
+  "criteria": {
+    "description": "Text in \"Acceptable Ad\" section",
+    "message": "“可接受广告”必须满足下述标准："
+  },
+  "fairness-rules": {
+    "description": "Text in \"about\" section",
+    "message": "为保证公正透明，各方无一例外将适用于下述规则："
+  },
+  "general-criteria": {
+    "description": "Criteria header in \"Acceptable Ad\" section",
+    "message": "一般性标准"
+  },
+  "manifesto": {
+    "description": "Paragraph in \"about\" section",
+    "message": "那么，您的意见呢？ 如果支持我们，请在<a>可接受广告宣言</a>上留名吧。"
+  },
+  "meta-description": {
+    "description": "Description meta tag content inside head tag",
+    "message": "Adblock Plus 首推可接受广告方案，支持投放非打扰性广告的网站。"
+  },
+  "meta-title": {
+    "description": "Title meta tag content inside head tag",
+    "message": "可接受广告方案 - Adblock Plus"
+  },
+  "our-belive": {
+    "description": "Paragraph in \"about\" section",
+    "message": "我们相信，这一方案能在用户满意和免费资源提供商利益之间保持平衡。一般来说，可接受的广告应该是静态、明确标识，并且不影响网页流畅阅读的。需要注意的是，这些规则也是不断变化以反映用户、网站运营商、广告商以及开发团队的意见的。随着互联网的发展以及用户反馈的增加，规则也会不断迭代。我们公开邀请所以人加入 <a>我们的论坛</a>或者通过<a>acceptableads@adblockplus.org</a>联系我们。另外，在不久的将来我们打算将规则的掌握权交给一个 <a>独立的委员会</a>。"
+  },
+  "placement": {
+    "description": "Text in \"General criteria\"",
+    "message": "广告放置"
+  },
+  "placement-criteria": {
+    "description": "Paragraph in \"General criteria\"",
+    "message": "广告不能影响用户的流畅阅读。这样的广告必须放置在上方、侧边或主要内容以下<a>1</a> 。"
+  },
   "title": {
     "message": "允许 Adblock Plus 显示可接受的广告"
+  },
+  "transparency": {
+    "description": "Fairness rule Bullet point in \"about\" section",
+    "message": "出于透明的考虑，我们将所有符合“可接受”标准的广告贴在论坛上，这样每一个成员都有机会反馈意见。我们非常重视反馈，每一条评论都会注意。"
+  },
+  "user-value": {
+    "description": "Fairness rule Bullet point in \"about\" section",
+    "message": "Adblock Plus用户对我们很重要。只要有合理原因拒绝一项提交“可接受广告”的申请，该广告将会被从我们的白名单中剔除。"
   }
 }

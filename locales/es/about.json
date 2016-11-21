@@ -1,7 +1,20 @@
 {
+  "AcceptableAdsdefined": {
+    "message": "La lista de anuncios aceptable muestra anuncios que cumplen con los criterios de anuncios aceptables acordados por nuestra comunidad de usuarios. La lista es mantenida por Eyeo GmbH."
+  },
+  "EasyListdefined": {
+    "message": "EasyList corresponde a su idioma del navegador y está dirigido a desactivar los anuncios que se consideran intrusivos por nuestra comunidad de usuarios. Eyeo GmbH <strong>no</strong> es proyecto de EasyList y por lo tanto no tiene derecho a, o control sobre su contenido. Visite la <a>Comunidad de EasyList</a> para obtener más información."
+  },
   "acceptable-ads-monetization": {
-    "description": "Paragraph in \"How we are financed\" section",
-    "message": "Recibimos donaciones de nuestros usuarios, pero nuestra fuente principal de ingresos es la iniciativa Anuncios Aceptables. Las grandes entidades pagan una cuota por los servicios solicitados y proporcionados para incluir su sitio web en la \"lista blanca\" (un 90 % de las cuotas son gratuitas para las entidades más pequeñas). Hay que tener en cuenta que <a>los criterios para la iniciativa Anuncios Aceptables</a> deben respetarse independientemente del pago o no de una cuota. Si estos no se cumplen, la inclusión en la \"lista blanca\" no es posible."
+    "description": "Paragraph in \"How we are financed\" section\n{1}: 90",
+    "message": "Recibimos donaciones de nuestros usuarios, pero nuestra fuente principal de ingresos es la iniciativa Anuncios Aceptables. Las grandes entidades pagan una cuota por los servicios solicitados y proporcionados para incluir su sitio web en la \"lista blanca\" (un 90 % de las cuotas son gratuitas para las entidades más pequeñas). Hay que tener en cuenta que <a>los criterios para la iniciativa Anuncios Aceptables</a> deben respetarse independientemente del pago o no de una cuota. Si estos no se cumplen, la inclusión en la \"lista blanca\" no es posible."
+  },
+  "created": {
+    "description": "{1}: 2006, {2}: Adblock Plus, {3}: 2011, {4}: Eyeo",
+    "message": "Creado por Wladimir Palant en 2006, Adblock Plus es un proyecto open source. En 2011, Palant, junto a Till Faida, fundó <a>Eyeo</a> para hacer sostenible su desarrollo."
+  },
+  "eyeoneeds": {
+    "message": "En cuanto a la iniciativa de anuncios aceptable, Eyeo debe revisar y analizar muchas aplicaciones. Esto incluye revisar el formato de anuncio, las precauciones de seguridad, el cumplimiento de los criterios de anuncios aceptable y viabilidad técnica de la Lista Blanca solicitada, creando los filtros de la lista blanca, probando los filtros, publicar en el foro, etc."
   },
   "fee-details": {
     "description": "Text in \"How we are financed\" section",
@@ -10,6 +23,9 @@
   "financed-how": {
     "description": "Section header",
     "message": "Cómo nos financiamos"
+  },
+  "improve": {
+    "message": "Seguir mejorando las funcionalidades de Adblock Plus para ofrecer a los usuarios con la mejor herramienta posible para los protegerse contra malware y tener mejor control de su experiencia de navegación y recogida de sus datos personales"
   },
   "large-entities-compensate": {
     "description": "Paragraph in \"How we are financed\" section",
@@ -34,8 +50,15 @@
   "s1": {
     "message": "Más"
   },
+  "s10": {
+    "message": "Estos están habilitados para empezar. Puede quitar o agregar otros - tú decides."
+  },
   "s11": {
     "message": "¿Qué son los Anuncios Aceptables?"
+  },
+  "s12": {
+    "description": "{1}: 2009, {2}: Adblock Plus, {3}: 2011, {4}: 10, {5}: Adblock Plus",
+    "message": "No creo que todos los anuncios son malos y somos plenamente conscientes de que los anuncios financian muchos sitios Web. Así, en 2009 decidimos encontrar un terreno común. Nuestra solución implicó pidiendo Adblock Plus a los usuarios y la comunidad en general, para ayudar a identificar los criterios de mejores anuncios. De estas discusiones, hemos establecido <a>criterios estrictos</a> para identificar anuncios no intrusivo. En 2011, comenzaron a aplicar la iniciativa anuncios aceptable. Los participantes que deseen cumplir con la iniciativa de anuncios aceptable pueden <a>aplicar</a> para agregar a la lista de anuncios aceptable.    Los usuarios de Adblock Plus tienen la opción para mostrar los anuncios que están en la lista de anuncios aceptable o para deshabilitar la característica de anuncios aceptable y navegar completamente <a>libre de publicidad</a>. Para ver la lista de anuncios aceptables, visita el <a>Foro de propuestas aceptables de anuncios</a>."
   },
   "s13": {
     "message": "Para conocer más, visite la sección de Preguntas Frecuentes de <a>Anuncios Aceptables</a>."
@@ -49,8 +72,14 @@
   "s20": {
     "message": "¿Por qué necesitamos dinero?"
   },
+  "s21": {
+    "message": "<a>Eyeo GmbH</a>, la compañía detrás de Adblock Plus, fue fundada para perseguir una visión diferente de la publicidad online. Esto no es algo que una sola persona puede hacer como un hobby."
+  },
   "s23": {
     "message": "Necesitamos que el número de usuarios de Adblock Plus crezca y poder trasladar estas cifras a nuevas plataformas, para que los editores web se interesen por los Anuncios Aceptables. Adblock Plus, en un principio sólo disponible en <a>Firefox</a> ya está disponible en <a>Chrome</a>, <a>Android</a>, <a>Opera</a>, <a>Internet Explorer</a> e <a>Safari</a>. También manejamos la infraestructura necesaria para mantener la <a>EasyList</a> la lista de filtros anti publicidad más popular, usada también por otros programas de bloqueo de publicidad."
+  },
+  "s24": {
+    "message": "Nuestros objetivos son simples:"
   },
   "s25": {
     "message": "Pero Eyeo no es solo Adblock Plus y Anuncios Aceptables. Nuestra misión es hacer de la web un lugar mejor, y queremos conseguirlo creando para los editores web nuevas vías negocio sin tener por ello que alienar a sus usuarios."
@@ -63,6 +92,9 @@
   },
   "s3": {
     "message": "¿Qué es Adblock Plus?"
+  },
+  "s4": {
+    "message": "Adblock Plus es una extensión gratuita que permite-entre <a>otras cosas</a> - bloquear molestos anuncios, desactivar seguimiento y bloquear dominios conocidos por propagar malware. Disponible para Android, Chrome, Firefox, Internet Explorer, Maxthon, Opera, Safari y Yandex, Adblock Plus utiliza filtros que desee para bloquear todos los elementos no deseados."
   },
   "s5": {
     "message": "¿Cómo funciona Adblock Plus?"
@@ -78,5 +110,8 @@
   },
   "title": {
     "message": "Acerca de Adblock Plus"
+  },
+  "work": {
+    "message": "Continuar trabajando en Adblock Plus para que pueda funcionar en varias plataformas"
   }
 }

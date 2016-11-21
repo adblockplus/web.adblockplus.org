@@ -1,4 +1,20 @@
 {
+  "acceptable-ads-monetization": {
+    "description": "Paragraph in \"How we are financed\" section\n{1}: 90",
+    "message": "我们接受用户捐款，但是主要的收入来源于”可接受广告计划“。大型的广告商付费加入白名单（白名单中90%都是免费加入的小型广告商）。需要注意的是广告必须符合<a>可接受广告标准</a>，不符合标准的广告是不可能加入白名单的。"
+  },
+  "created": {
+    "description": "{1}: 2006, {2}: Adblock Plus, {3}: 2011, {4}: Eyeo",
+    "message": "Adblock Plus是由弗拉基米尔·帕朗（Wladimir Palant）于2006年开发的一个开源项目。2011 年，弗拉基米尔·帕朗和法伊达成立 <a>Eyeo</a>，使其发展稳定。"
+  },
+  "fee-details": {
+    "description": "Text in \"How we are financed\" section",
+    "message": "这里是一些关于收费方面的细节︰"
+  },
+  "financed-how": {
+    "description": "Section header",
+    "message": "我们如何盈利"
+  },
   "s1": {
     "message": "显示更多"
   },
@@ -9,6 +25,7 @@
     "message": "什么是可接受的广告？"
   },
   "s12": {
+    "description": "{1}: 2009, {2}: Adblock Plus, {3}: 2011, {4}: 10, {5}: Adblock Plus",
     "message": "很多人使用 Adblock Plus 来屏蔽烦人的广告。但是，我们不认为所有的广告都是坏的，并且我们充分认识的这资助了很多网站。因此，我们建立了<a>严格的标准</a>来识别可接受的广告：不显眼的广告不需要被屏蔽。愿意遵守这些标准的网站可以<a>申请</a>他们的广告被添加到可接受广告例外名单，这将使他们广告在保持启用“可接受广告”的用户那里不被屏蔽。需要注意的是，如果您不想看到任何广告，您始终能够<a>禁用</a>此功能。"
   },
   "s13": {
@@ -29,6 +46,9 @@
   "s23": {
     "message": "　　我们需要扩大 Adblock Plus 的用户规模并延伸到新的平台，以便让发行商对可接受广告项目感兴趣。所以我们将原先 <a>Firefox</a> 平台独有的 Adblock Plus 带到了 <a>Chrome</a>、 <a>Android</a>、 <a>Opera</a>、 <a>Internet Explorer</a> 及 <a>Safari</a> 平台。同时我们也构建并管理最受欢迎的 <a>EasyList</a> 过滤规则列表，众多其他过滤器可借此实现广告过滤。"
   },
+  "s24": {
+    "message": "我们的目标很简单︰"
+  },
   "s25": {
     "message": "　　然而 Eyeo 不仅仅指的是 Adblock Plus 和可接受广告项目。我们的使命是让互联网变得更美好，实现方式是建立新方法以使互联网发行商在不疏远用户的同时能够通过其内容赚取收入。"
   },
@@ -48,6 +68,7 @@
     "message": "Adblock Plus 是如何工作的？"
   },
   "s6": {
+    "description": "{1}: Adblock Plus, {2}: Adblock Plus, {3}: Adblock Plus",
     "message": "Adblock Plus 本身不具有功能，某种意义上来说，它不会阻止任何东西，直到您“告诉”它要做什么，通过添加过滤列表。这些过滤列表基本上是一套广泛的规则集，它告诉 Adblock Plus 要屏蔽哪些网站元素。您可以添加任何您想用的过滤列表，例如阻止<a>跟踪</a>或者<a>恶意网站</a>。您也可以<a>创建自己的过滤规则列表</a>。"
   },
   "s7": {

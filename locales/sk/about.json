@@ -1,6 +1,19 @@
 {
+  "AcceptableAdsdefined": {
+    "message": "Zoznam reklám, ktoré sú akceptovateľné sú v súlade s kritériami akceptovaných reklám našej komunity používateľov. Zoznam udržiava Eyeo GmbH."
+  },
+  "EasyListdefined": {
+    "message": "EasyList odpovedá na jazyk prehľadávača a je zameraný na zakázanie reklám, ktoré sa považujú za rušivé našej komunite užívateľov. Eyeo GmbH, <strong>nenapísal</strong>EasyList a preto nemá právo, alebo kontrolu nad jeho obsahom. Navštívte <a>komunitu EasyList</a> pre viac informácií."
+  },
+  "created": {
+    "description": "{1}: 2006, {2}: Adblock Plus, {3}: 2011, {4}: Eyeo",
+    "message": "Vytvorený v roku 2006 Wladimirom Palantom, Adblock Plus je open source projekt. V roku 2011 Palant spolu s Tillom Faidom založil <a>Eyeo</a> aby bol projekt udržateľný."
+  },
   "s1": {
     "message": "Ukáž viac"
+  },
+  "s10": {
+    "message": "Tieto sú zatiaľ povolené. Môžeš ich hocikedy odstrániť alebo pridať dalšie - je to na tebe."
   },
   "s11": {
     "message": "Čo sú akceptované reklamy?"
@@ -29,8 +42,15 @@
   "s3": {
     "message": "Čo je Adblock Plus?"
   },
+  "s4": {
+    "message": "Adblock Plus je rozšírenie zadarmo ktoré - okrem <a>iného</a> - blokuje otravné reklamy, zakazuje sledovanie a blokuje domény, ktoré môžu šíriť malwér. Je dostupný pre Android, Chrome, Firefox, Internet Explorer, Maxthon, Opera, Safari a Yandex, Adblock Plus používa prvky, ktoré si vyberiete vy pre blokovanie všetkých nežiadúcich prvkov."
+  },
   "s5": {
     "message": "Ako Adblock Plus pracuje?"
+  },
+  "s6": {
+    "description": "{1}: Adblock Plus, {2}: Adblock Plus, {3}: Adblock Plus",
+    "message": "Adblock Plus, sám o sebe nemá žiadne funkcie; neblokuje nič, kým mu \"nepovieš\" to, čo má blokovať pridaním externých filtrov zoznamov. Zoznamy filtrov sú v podstate rozsiahly súbor pravidiel, ktoré povedia Adblocku Plus, ktoré prvky (reklamy) webovej stránky blokovať. Môžete pridať akýkoľvek požadovaný zoznam filtrov. Napríklad zablokovať <a>sledovanie</a> alebo <a>malware</a>. Môžete tiež <a>vytvoriť svoje vlastné zoznamy filtrov</a>.   Takmer všetky filtre sú open source (otvorený zdroj), preto mnoho zoznamov filtrov boli vytvorené používateľmi internetu."
   },
   "s7": {
     "message": "Štandardne sú zapnuté dva zoznamy filtrov:"

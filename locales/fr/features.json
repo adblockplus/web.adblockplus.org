@@ -2,9 +2,6 @@
   "s1": {
     "message": "Adblock Plus - Fonctionnalités"
   },
-  "s10": {
-    "message": "Protège contre les fautes de frappe"
-  },
   "s11": {
     "message": "Vous pouvez créer votre propre liste de filtres. <a>Cliquer ici pour savoir comment</a>."
   },
@@ -24,7 +21,8 @@
     "message": "Autoriser les Publicités Acceptables"
   },
   "s18": {
-    "message": "De nombreux sites Web comptent sur les revenus de la publicité. Dès lors, au lieu de bloquer toutes les publicités, nous avons décidé d' encourager les sites à utiliser des publicités non intrusives au lieu des publicités désagréables que la plupart des gens ignorent et veulent bloquer."
+    "description": "{1}: Adblock Plus",
+    "message": "Comme de nombreux sites Web ont besoin de leurs revenus publicitaires pour survivre, les paramètres par défaut d’{1} encouragent l'utilisation de publicités non intrusives plutôt que de publicités agaçantes et non-pertinentes."
   },
   "s19": {
     "message": "Pour accomplir cela, nous avons établi avec nos utilisateurs et des tiers des <a>directives strictes</a> permettant d'identifier les formats et emplacements acceptables. Ces publicités sont donc autorisées par défaut."
@@ -42,7 +40,8 @@
     "message": "Il existe des centaines d'agences publicitaires qui pistent le moindre de vos clics, mais grâce à Adblock Plus vous pouvez facilement désactiver la plupart des formes de pistage, et enfin surfer sur Internet de façon vraiment anonyme."
   },
   "s24": {
-    "message": "D'après une <a>étude menée par l’Université de Stanford</a>, les filtres de protection contre le pistage EasyPrivacy sont les plus efficaces de toutes les solutions de protection disponibles dans ce domaine."
+    "description": "{1}: Adblock Plus",
+    "message": "Selon les <a>recherches de l’université de Stanford</a>, les filtres de protection contre les logiciels de suivi EasyPrivacy sont les solutions de protection contre les logiciels de suivi les plus efficaces qui existent. Ils peuvent étendre le niveau de protection d’{1} contre les logiciels de suivi."
   },
   "s25": {
     "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \\\"Ajouter\\\" afin de vous protéger contre le tracking. Si vous souhaitez la désactiver, la <a>page suivante</a> vous expliquera comment faire."
@@ -51,7 +50,8 @@
     "message": "Démarrage lent, popups, et publicitaires détournant votre navigateur : voici des symptômes d'une infection de votre ordinateur par un malware. Pire encore, les ordinateur infectés par un malware sont la porte ouverte à toute sorte de cybercriminalité.\nCes ordinateurs infectés peuvent être utilisés à votre insu pour envoyer des mails de spam, attaquer d'autres ordinateurs ou serveurs, et voler vos mots de passe, numéro de sécurité sociale, documents personnels et numéros de carte de crédit."
   },
   "s30": {
-    "message": "Adblock Plus peut être configuré afin de bloquer tous les domaines connus pour diffuser des malwares, protégeant ainsi votre ordinateur des virus, chevaux de Troie, vers, spywares et adwares."
+    "description": "{1}: Adblock Plus",
+    "message": "Par défaut, {1} fournit une protection contre les logiciels malveillants, mais celle-ci peut être étendue en étant configurée pour bloquer aussi les domaines connus pour abriter des logiciels malveillants. Ceci vous permet de protéger votre ordinateur contre les virus, les chevaux de Troie, les vers informatiques, les publiciels et les logiciels espions."
   },
   "s31": {
     "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \\\"Ajouter\\\" afin de vous protéger contre le tracking. Si vous souhaitez la désactiver, la <a>page suivante</a> vous expliquera comment faire."
@@ -64,9 +64,6 @@
   },
   "s36": {
     "message": "Afin d'activer cette fonctionnalité, il suffit d'<a>ouvrir cette boîte de dialogue</a> et de cliquer sur \\\"Ajouter\\\" afin de vous protéger contre le tracking. Si vous souhaitez la désactiver, la <a>page suivante</a> vous expliquera comment faire."
-  },
-  "s38": {
-    "message": "La fonction correction des fautes de frappe était disponible sur Adblock Plus pour Firefox mais a été <a>retirée dans la version 2.3</a>. Si cette caractéristique vous manque, vous pouvez la récupérer en installant notre extension<a> \\\"URL Fixer\\\"</a>. Si cette fonction vous manque vous pouvez la retrouver en installant notre extension URL Fixer (Réparateur d’URL)."
   },
   "s5": {
     "message": "Bloque les publicités"

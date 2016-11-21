@@ -3,14 +3,15 @@
     "message": "Adblock Plus inclut aussi par défaut une liste blanche de Publicités Acceptables. Contrairement aux listes de filtres comme celles d’Easylist (ou d'ailleurs tout autre liste de filtres que vous pourrez trouver), cette liste est gérée par Eyeo GmbH. Cette liste est destinée à permettre la diffusion de publicités sur des sites Internet qui ont souhaité se conformer aux critères de la Publicité Acceptable. Voici comment désactiver cette liste d’exceptions si vous n'en voulez pas."
   },
   "EasyListdefined": {
-    "message": "La liste EasyList correspondant à votre langue vous permet de bloquer les publicités considérées comme intrusives par notre communauté d’utilisateurs. Cette liste EasyList que vous obtenez par défaut lors de l’installation, ainsi que toutes les autres listes que EasyList maintient, n'ont pas été créées par Eyeo Gmbh, la société derrière Adblock Plus, mais proviennent de la communauté Easylist. Eyeo vous les montre seulement à titre d'exemple, elle n'a aucun droit ni contrôle sur leur contenu."
+    "message": "EasyList correspond à la langue de votre navigateur et a pour but de désactiver les publicités que notre communauté d’utilisateurs considère intrusives. Veuillez noter qu’Eyeo GmbH <strong>n'a pas</strong> élaboré EasyList et n'exerce donc aucun droit ou contrôle sur son contenu. Consultez la <a>communauté EasyList</a> pour plus d'informations."
   },
   "acceptable-ads-monetization": {
-    "description": "Paragraph in \"How we are financed\" section",
-    "message": "Nous recevons des dons de nos utilisateurs, mais l’initiative Publicité Acceptable est notre principale source de revenus. Les entités de grande taille paient une licence d'utilisation pour les services de liste blanche qu'elles demandent et dont elles bénéficient (environ 90 % des licences sont accordées gratuitement, à des entités de plus petite taille). Précisons que les <a>critères de Publicité Acceptable</a> doivent être satisfaits par chaque entité, indépendamment de toute considération de paiement. Si une entité ne satisfait pas à ces critères, elle ne peut pas être inscrite sur la liste blanche."
+    "description": "Paragraph in \"How we are financed\" section\n{1}: 90",
+    "message": "Nous recevons des dons de nos utilisateurs, mais notre principale source de revenus découle de notre initiative de Publicités Acceptables. Comme indiqué ci-dessous, les grandes entités paient des frais de licence pour les services de liste blanche requis par leurs soins et qui leur sont fournis (environ {1} pour cent des licences sont accordées gratuitement aux entités de moindre taille). Il convient de noter que toutes les publicités doivent d'abord se conformer aux <a>critères des Publicités Acceptables</a>, que l’entité les proposant soit tenue de payer ou non. Si les critères ne sont pas remplis, la mise sur liste blanche est impossible."
   },
   "created": {
-    "message": "Adblock Plus est un projet \"open source\", qui a été créé en 2006 par Wladimir Palant. <a>Eyeo</a> a été créé plus tard, en 2011, par Wladimir Plant et Till Faida, dans une optique de développement à long terme."
+    "description": "{1}: 2006, {2}: Adblock Plus, {3}: 2011, {4}: Eyeo",
+    "message": "Créé par Wladimir Palant en {1}, {2} est un projet en source ouverte proposé sous licence <a>GPLv3</a>. En {3}, Palant et Till Faida ont fondé <a>{4}</a> pour garantir son développement durable."
   },
   "eyeoneeds": {
     "message": "En ce qui concerne le programme Publicités Acceptables, Eyeo a notamment besoin de: Revoir et analyser de nombreuses candidatures (revoir les formats publicitaires, la sécurité, les précautions à appliquer, le respect des critères de la Publicité Acceptable, la faisabilité technique du «blanchissement» demandé, la création des filtres d’exception pour la Liste blanche, les tests de ces filtres, le test avec le forum, les analyses etc.)."
@@ -56,7 +57,8 @@
     "message": "Qu’est ce que les Publicités Acceptables ?"
   },
   "s12": {
-    "message": "Les Internautes utilisent Adblock Plus pour différentes raisons – bloquer des publicités indésirables, libérer de la bande passante, faire obstacle aux traqueurs et aux contenus malveillants etc. – mais s’il y a une chose que tous nos utilisateurs ont une chance d’avoir en commun, c’est le souhait de prendre le contrôle sur la manière dont Internet s'affiche sur leur navigateur. Nous ne pensons pas que toutes les publicités soient mauvaises et nous savons qu’elles financent de nombreux sites Internet. Nous avons donc décidé, dès 2009, d’essayer de trouver une solution intermédiaire. Notre solution a été de demander aux utilisateurs d’Adblock Plus et à notre communauté de manière plus large, quels seraient les critères d’une publicité responsable. A partir de ces discussions, nous avons établi en 2011 des critères stricts pour identifier les Publicités Acceptables. Les sites Internet qui sont déterminés à respecter ces critères peuvent postuler afin que leurs publicités soient ajoutées sur la liste d’exception Publicités Acceptables, ce qui débloquera leurs publicités pour les utilisateurs qui auront choisi de conserver l’option Publicité Acceptable offerte par ABP.  Veuillez noter que si vous ne voulez voir aucune publicité, vous pouvez désactiver cette liste facilement à tout moment. <a> </a> <a> </a> <a> </a> "
+    "description": "{1}: 2009, {2}: Adblock Plus, {3}: 2011, {4}: 10, {5}: Adblock Plus",
+    "message": "Nous ne pensons pas que toutes les publicités soient mauvaises et nous sommes conscients que les publicités financent de nombreux sites Web. C’est pourquoi, en {1}, nous avons décidé de trouver une base commune. Notre solution consistait à impliquer les utilisateurs d’{2} et notre communauté dans son ensemble pour qu'ils nous aident à identifier les critères qui créent de meilleures publicités. À partir de ces discussions, nous avons établi des <a>critères stricts</a> pour identifier les publicités non intrusives. En {3}, nous avons commencé à mettre en œuvre l'initiative de Publicités Acceptables. Les participants qui souhaitent se conformer à l’initiative de Publicités Acceptables, peuvent <a>poser leur candidature</a> pour être ajoutés à la liste des Publicités Acceptables. La participation à l'initiative de Publicités Acceptables est généralement gratuite pour les participants. Seules les grandes entités qui gagnent plus de {4} millions d'impressions publicitaires supplémentaires de par leur participation doivent s’acquitter de frais mensuels (pour plus d'informations, veuillez lire le paragraphe sur <a>notre mode de financement</a>). Les utilisateurs d’{5} ont la possibilité d'afficher les publicités qui sont sur la liste des Publicités Acceptables ou de désactiver la fonction des Publicités Acceptables et de naviguer la toile <a>sans aucune publicité</a>. Pour consulter la liste des publicités acceptables, consultez le <a>forum Acceptable Ads Proposals</a> (forum des propositions de publicités acceptables)."
   },
   "s13": {
     "message": "Pour en savoir plus, rejoignez notre forum sur les <a>\"Publicités Acceptables\"</a>."
@@ -98,16 +100,17 @@
     "message": "Comment marche Adblock Plus ?"
   },
   "s6": {
-    "message": "Adblock Plus ne contient pas de fonctionnalités prédéfinies dans le sens où il ne bloque rien avant que vous ne lui « disiez » quoi bloquer, notamment en lui ajoutant des listes externes de filtres. Ces listes de filtres consistent essentiellement en un vaste ensemble de règles, qui indiquent à Adblock Plus les éléments qu’il doit bloquer. <a> </a> <a> </a> <a> </a> "
+    "description": "{1}: Adblock Plus, {2}: Adblock Plus, {3}: Adblock Plus",
+    "message": "En lui-même, {1} n’offre aucune fonctionnalité ; il ne bloque rien tant que vous ne lui « dites » pas ce qu’il doit bloquer en ajoutant des listes de filtres externes. Les listes de filtres sont, pour l’essentiel, des séries de règles très détaillées qui expliquent à {2} quels éléments il doit bloquer sur un site Web. Vous pouvez ajouter toute liste de filtre souhaitée. Par exemple, vous pouvez bloquer les <a>logiciels de suivi</a> et/ou <a>malveillants</a> (techniquement, même avec ses paramètres par défaut, {3} offre déjà une certaine protection contre les logiciels de suivi et malveillants, mais vous pouvez activer d'autres protections). Vous pouvez également <a>créer vos propres listes de filtres</a>. Quasiment tous les filtres sont en source ouverte. Ainsi, de nombreuses listes de filtres ont été créées par des utilisateurs d’Internet."
   },
   "s7": {
     "message": "Entre autres, deux filtres sont activés:"
   },
   "s8": {
-    "message": "Un filtre concernant à la langue."
+    "message": "Une liste de blocage des publicités basée sur votre langue (Liste FR+EasyList)"
   },
   "s9": {
-    "message": "Un filtre pour la liste des Publicités Acceptables."
+    "message": "Une liste de filtre pour la Publicité Acceptable"
   },
   "title": {
     "message": "À propos d'Adblock Plus"

@@ -1,9 +1,41 @@
 {
+  "acceptable-ads-monetization": {
+    "description": "Paragraph in \"How we are financed\" section\n{1}: 90",
+    "message": "We ontvangen wat donaties van onze gebruikers, maar onze grootste inkomstenbron komt voort uit het Acceptable Ads-initiatief. Grotere entiteiten betalen een licentievergoeding voor de aangevraagde en aan hen geleverde whitelisting-diensten (90% van de licenties wordt gratis verstrekt, aan kleinere entiteiten). Er moet worden opgemerkt dat onafhankelijk van de overweging voor vergoedingen aan de <a>Acceptable Ads-criteria</a> moet worden voldaan. Als niet aan de criteria wordt voldaan, is whitelisting niet mogelijk."
+  },
+  "fee-details": {
+    "description": "Text in \"How we are financed\" section",
+    "message": "Enkele details omtrent de vergoedingen:"
+  },
+  "financed-how": {
+    "description": "Section header",
+    "message": "Hoe we worden gefinancierd"
+  },
+  "large-entities-compensate": {
+    "description": "Paragraph in \"How we are financed\" section",
+    "message": "Om deze reden wordt Eyeo door enkele zeer grote entiteiten die deel uitmaken van het Acceptable Ads-initiatief gecompenseerd voor haar diensten. Eyeo's diensten worden aan alle andere deelnemers (grofweg 90%) kosteloos aangeboden."
+  },
+  "large-entities-pay": {
+    "description": "Bullet point in \"How we are financed\" section",
+    "message": "Alleen grote entiteiten moeten betalen. We kwalificeren een entiteit als groot wanneer deze meer dan 10 miljoen aanvullende advertentie-impressies per maand oplevert als gevolg van deelname in het Acceptable Ads-initiatief."
+  },
+  "licensing-fee": {
+    "description": "Bullet point in \"How we are financed\" section",
+    "message": "Voor deze entiteiten vertegenwoordigt onze licentievergoeding normaliter 30 procent van de aanvullende omzet die door whitelisting van acceptabele advertenties ervan wordt gecreëerd."
+  },
+  "managing-acceptable-ads": {
+    "description": "Paragraph in \"How we are financed\" section",
+    "message": "Het beheren van het Acceptable Ads-initiatief vereist significante inspanning van onze kant met inbegrip van, maar niet beperkt tot continue beoordeling en monitoren van de individuele 'gewhiteliste' advertenties, begeleiding van deelnemers en technische ondersteuning. Deze diensten kunnen niet volledig worden overgenomen door vrijwilligers, noch worden gesponsord door donaties, zoals wellicht met veelgebruikte filterlijsten het geval is."
+  },
+  "must-meet-strict-criteria": {
+    "description": "Paragraph in \"How we are financed\" section",
+    "message": "<strong>Belangrijk:</strong> elke entiteit op de witte lijst - betalende deelnemer of niet-betalende deelnemer - MOET dezelfde strenge criteria aanhouden die onze gebruikers hebben geaccepteerd als onderdeel van het Acceptable Ads-initiatief. We zullen nooit advertenties accepteren die niet aan deze <a>criteria</a> voldoen. Er is geen manier om een plek op de Acceptable Ads-uitzonderingenlijst te kopen. Alle advertenties op de witte lijst en deelnemende entiteiten worden publiekelijk vermeld op ons <a>forum</a>. Voel u vrij om uw meningen te bespreken en te delen."
+  },
   "s1": {
     "message": "Meer"
   },
   "s11": {
-    "message": "Wat zijn Acceptabele Advertenties?"
+    "message": "Wat zijn Acceptabele advertenties?"
   },
   "s13": {
     "message": "Zie de <a>Acceptabele Advertentie FAQ</a> om meer te leren."
@@ -21,28 +53,31 @@
     "message": "Wij willen het aantal Adblock Plus gebruikers laten toenemen, en Adblock Plus naar nieuwe platformen brengen om publishers geïnteresseerd te krijgen in Acceptabele Advertenties.  Adblock Plus, wat origineel alleen voor <a>Firefox</a>, is nu beschikbaar voor <a>Chrome</a>, <a>Android</a>, <a>Opera</a>, <a>Internet Explorer</a> en <a>Safari</a>. Wij verzorgen ook de infrastructuur die nodig is om <a>EasyList</a> te bezorgen, de meest populaire advertentie blokkeerlijst die ook wordt gebruikt door andere adblockers."
   },
   "s25": {
-    "message": "Maar, Eyeo gaat niet alleen over Adblock Plus en Acceptabele Advertenties. Onze missie is om het web beter te maken, en we willen dit doen door nieuwe manieren te ontwikkelen zodat publishers geld kunnen verdienen aan hun website-inhoud zonder hun gebruikers te vervreemden met vervelende advertenties."
+    "message": "Maar Eyeo gaat niet alleen over Adblock Plus en Acceptabele advertenties. Onze missie is het verbeteren van het web. We willen dit doen door nieuwe manieren te ontwikkelen, zodat uitgevers geld aan hun inhoud kunnen verdienen zonder hun gebruikers te vervreemden met vervelende advertenties."
   },
   "s26": {
-    "message": "Verzamelt Adblock Plus gebruiker data?"
+    "message": "Verzamelt Adblock Plus gebruikersgegevens?"
   },
   "s27": {
-    "message": "Wij verzamelen geen gebruikers informatie, en de meeste data (bv. de websites die je bezoekt) wordt niet eens naar onze servers verstuurd. Zie onze <a>Privacy Policy</a> voor alle details."
+    "message": "We verzamelen geen specifieke gebruikersgegevens. De meeste gegevens (bv. de websites die u bezoekt) worden niet eens naar onze servers verstuurd. Zie ons <a>Privacybeleid</a> voor details."
   },
   "s3": {
     "message": "Wat is Adblock Plus?"
+  },
+  "s4": {
+    "message": "Adblock Plus is een gratis extensie waarmee u - <a>onder andere</a> - vervelende advertenties kunt blokkeren, tracking kunt uitschakelen en domeinen kunt blokkeren waarvan bekend is dat ze malware verspreiden. Adblock Plus, beschikbaar voor Android, Chrome, Firefox, Internet Explorer, Maxthon, Opera, Safari en Yandex, gebruikt door u gekozen filters om alle ongewenste elementen te blokkeren."
   },
   "s5": {
     "message": "Hoe werkt Adblock Plus?"
   },
   "s7": {
-    "message": "Wanneer je Adblock Plus voor het eerst installeert, zijn twee lijsten automatisch geactiveerd:"
+    "message": "Filterlijsten die standaard zijn ingeschakeld zijn onder andere:"
   },
   "s8": {
-    "message": "Een blokkeer-lijst gebaseerd op je taalinstellingen"
+    "message": "Een blokkeerlijst, gebaseerd op uw taal (EasyList)"
   },
   "s9": {
-    "message": "De Acceptable Advertentie uitzonderingen lijst"
+    "message": "De lijst met Acceptable advertenties"
   },
   "title": {
     "message": "Over Adblock Plus"

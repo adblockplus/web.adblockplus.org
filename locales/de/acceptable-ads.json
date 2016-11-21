@@ -69,15 +69,15 @@
   },
   "benefit": {
     "description": "Text in \"about\" section",
-    "message": "Diese Wahlmöglichkeit hat zwei Vorteile:"
+    "message": "Die Acceptable Ads Initiative ist nützlich, da sie die Werbeindustrie dazu anhält, weniger aufdringliche Werbeformate zu verfolgen, was positive Auswirkungen auf das Internet als Ganzes hat. Daneben bietet sie uns eine <a>tragfähige Einnahmequelle</a>, die nur von größeren Teilnehmern an der Acceptable Ads Initiative bezahlt wird. Wir sind auf diese Einnahmen angewiesen, um das Programm verwalten, warten und die Entwicklung eines frei zugänglichen Produkts vorantreiben zu können."
   },
   "can-disable": {
     "description": "Text in \"hate ads\" secion",
     "message": "Kein Problem. Sie können diese Funktion jederzeit deaktivieren:"
   },
   "charging": {
-    "description": "Paragraph in \"about\" section",
-    "message": "Wir können dieses Open-Source-Projekt <a>durch die Erhebung einer Lizenzgebühr von großen Organisationen</a> für die Whitelisting-Dienstleistungen am Leben erhalten. Den restlichen ca. 90 % unserer Partner bieten wir unsere Dienstleistungen unentgeltlich an."
+    "description": "Paragraph in \"about\" section\n{1}: 90",
+    "message": "Unser Open-Source-Produkt ist weiterhin kostenfrei, <a>da wir großen Unternehmen die Whitelisting-Dienste in Rechnung stellen</a>. Für die restlichen {1} Prozent unserer Partner sind diese Dienstleistungen kostenlos."
   },
   "comply-with-criteria": {
     "description": "Whitelisting step in \"how to be whitelisted\" section",
@@ -126,10 +126,6 @@
   "does-users-need": {
     "description": "Section header",
     "message": "Wollen Adblock-Plus-Nutzer diese Funktion wirklich?"
-  },
-  "encourage-ad-industry": {
-    "description": "Benefit bullet point in \"about\" section",
-    "message": "Wir hoffen, dass die Initiative die Werbeindustrie dazu ermuntert, weniger aufdringliche Werbeformate zu nutzen und dadurch einen positiven Einfluss auf das Internet als Ganzes hat."
   },
   "entries-feeds": {
     "description": "Text below bullet point in \"Specific criteria\"",
@@ -199,6 +195,10 @@
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Werbung, die sichtbar neue Anzeigen lädt, wenn sich der Hauptinhalt nicht ändert"
   },
+  "main-revenue": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "Wir erhalten zwar Spenden von unseren Nutzern, unsere Haupteinnahmequelle ist jedoch die Acceptable Ads Initiative. Größere Unternehmen (s. Definition unten) bezahlen eine Lizenzierungsgebühr für beantragte und bereitgestellte Whitelisting-Dienste (etwa 90 Prozent der Lizenzen werden kostenfrei zur Verfügung gestellt). Wir weisen darauf hin, dass die Kriterien für Acceptable Ads unabhängig von einer evtl. erforderlichen Bezahlung erfüllt werden müssen. Werden die Kriterien nicht erfüllt, so ist Whitelisting unmöglich."
+  },
   "manifesto": {
     "description": "Paragraph in \"about\" section",
     "message": "Halten Sie das für eine gute Idee? Zeigen Sie Ihre Unterstützung durch die Unterzeichnung unseres <a>Acceptable-Ads-Manifestos</a>."
@@ -210,6 +210,10 @@
   "meta-title": {
     "description": "Title meta tag content inside head tag",
     "message": "Akzeptable Werbung - Adblock Plus"
+  },
+  "more-details": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "Weitere Details finden Sie <a>hier</a>."
   },
   "more-space": {
     "description": "Text below bullet point in \"Specific criteria\"",
@@ -291,9 +295,9 @@
     "description": "Text in \"how to be whitelisted\" section",
     "message": "Der Prozess zur Aufnahme von Werbeanzeigen in die Whitelist nimmt, soweit und sobald die jeweilige Werbung den aktuellen Acceptable Ads Kriterien entspricht, ca. 10 Werktage in Anspruch:"
   },
-  "revenue-source": {
-    "description": "Benefit bullet point in \"about\" section",
-    "message": "Sie bietet uns eine <a>tragfähige Einnahmequelle</a>, die wir benötigen um das Acceptable Ads Programm zu verwalten und das kostenlose Angebot weiterzuentwickeln."
+  "revenue": {
+    "description": "Section header",
+    "message": "Sind Zahlungen erforderlich?"
   },
   "rich-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -385,6 +389,10 @@
   "whitelist-proposal-submission": {
     "description": "Whitelisting step in \"how to be whitelisted\" section",
     "message": "Der Vorschlag zur Freischaltung wird von uns <a>ins Forum</a> eingestellt und die Werbeanzeige zeitgleich freigeschaltet. Die Forumsbeitrag bleibt geöffnet, damit die Community jederzeit Bedenken äußern kann, wenn und soweit die Werbung nicht (mehr) den Kriterien entspricht."
+  },
+  "who-pays": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "Was die Gebühren betrifft, so müssen nur große Unternehmen (diejenigen, bei denen die Anzahl zusätzlicher Impressions aufgrund der Teilnahme an der Acceptable Ads Initiative pro Monat 10 Millionen übersteigt) bezahlen. Für diese Unternehmen beträgt unsere Lizenzierungsgebühr normalerweise 30 Prozent der durch das Whitelisting akzeptabler Werbeanzeigen zusätzlich generierten Einnahmen."
   },
   "why-default": {
     "description": "Section header",

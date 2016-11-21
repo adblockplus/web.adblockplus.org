@@ -69,15 +69,15 @@
   },
   "benefit": {
     "description": "Text in \"about\" section",
-    "message": "L'avantage est double :"
+    "message": "L’initiative de Publicités Acceptables est bénéfique car elle encourage le secteur publicitaire à adopter des formats moins intrusifs. Elle a donc un impact positif sur Internet dans son ensemble. Elle représente également une <a>source de revenus viable</a>. Seuls les participants de grande envergure s’acquittent de frais dans le cadre de l'initiative de Publicités Acceptables. Ceci est nécessaire pour nous permettre d'assurer l'administration et la maintenance du programme et de poursuivre le développement d'un produit gratuit."
   },
   "can-disable": {
     "description": "Text in \"hate ads\" secion",
     "message": "Aucun problème, vous pouvez désactiver ce paramètre à tout moment :"
   },
   "charging": {
-    "description": "Paragraph in \"about\" section",
-    "message": "Nous sommes en mesure de pérenniser la gratuité de notre produit open source <a>en facturant nos services de mise en liste blanche aux grandes entités</a>. Pour 90 % des partenaires, ces services sont disponibles gratuitement."
+    "description": "Paragraph in \"about\" section\n{1}: 90",
+    "message": "Pour assurer la gratuité de notre produit en source ouverte, <a>nous facturons des frais aux grandes entités</a> pour nos services de liste blanche. Pour les {1} pour cent restants de nos partenaires, ces services sont offerts gratuitement."
   },
   "comply-with-criteria": {
     "description": "Whitelisting step in \"how to be whitelisted\" section",
@@ -126,10 +126,6 @@
   "does-users-need": {
     "description": "Section header",
     "message": "Les utilisateurs d'Adblock Plus veulent-ils réellement cette fonction ?"
-  },
-  "encourage-ad-industry": {
-    "description": "Benefit bullet point in \"about\" section",
-    "message": "Nous espérons que cette initiative encouragera l'industrie de la publicité à développer des formats d'annonce moins intrusifs et ayant un impact positif sur l'environnement en ligne."
   },
   "entries-feeds": {
     "description": "Text below bullet point in \"Specific criteria\"",
@@ -199,6 +195,10 @@
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Les publicités qui chargent visiblement de nouvelles publicités si le Contenu Principal reste inchangé"
   },
+  "main-revenue": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "Nous recevons des dons de nos utilisateurs, mais notre principale source de revenus découle de notre initiative de Publicités Acceptables. Les grandes entités (telles que définies ci-dessous) paient des frais de licence pour les services de liste blanche requis par leurs soins et qui leur sont fournis (environ 90 pour cent des licences sont accordées gratuitement). Il convient de noter que les critères des Publicités Acceptables doivent être remplis que des paiements soient versés ou non. Si les critères ne sont pas remplis, la mise sur liste blanche est impossible."
+  },
   "manifesto": {
     "description": "Paragraph in \"about\" section",
     "message": "Pensez-vous que c'est une bonne idée ? Exprimez votre soutien en signant notre <a>Manifeste de la Publicité Acceptable</a>."
@@ -210,6 +210,10 @@
   "meta-title": {
     "description": "Title meta tag content inside head tag",
     "message": "Publicité Acceptable - Adblock Plus"
+  },
+  "more-details": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "Pour obtenir de plus amples informations, voir <a>ici</a>."
   },
   "more-space": {
     "description": "Text below bullet point in \"Specific criteria\"",
@@ -291,9 +295,9 @@
     "description": "Text in \"how to be whitelisted\" section",
     "message": "Après avoir confirmé la conformité de vos publicités aux critères de la Publicité Acceptable, leur intégration sur la lite blanche ne devrait durer qu’autour de dix jours :"
   },
-  "revenue-source": {
-    "description": "Benefit bullet point in \"about\" section",
-    "message": "Cette solution est pour nous une <a>source de revenu fiable</a> et nécessaire pour gérer le programme Publicité Acceptable et continuer à développer un produit gratuit."
+  "revenue": {
+    "description": "Section header",
+    "message": "Faut-il effectuer des paiements ?"
   },
   "rich-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -385,6 +389,10 @@
   "whitelist-proposal-submission": {
     "description": "Whitelisting step in \"how to be whitelisted\" section",
     "message": "Nous présentons la demande de mise en liste blanche <a>sur le forum</a> simultanément à l'ajout des annonces dans la liste blanche. La question restera ouverte sur le forum pour que la communauté puisse signaler si ou quand le candidat ne respecte pas les critères."
+  },
+  "who-pays": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "En matière de frais, seules les grandes entités (celles qui ont plus de 10 millions d’impressions publicitaires supplémentaires par mois en raison de leur participation à l'initiative de Publicités Acceptables) sont tenues de payer. Pour ces entités, nos frais de licence représentent normalement 30 pour cent les revenus supplémentaires créés par la mise sur liste blanche de leurs publicités acceptables."
   },
   "why-default": {
     "description": "Section header",

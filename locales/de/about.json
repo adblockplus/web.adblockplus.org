@@ -1,13 +1,14 @@
 {
   "EasyListdefined": {
-    "message": "Die Eyeo GmbH entwickelt die EasyList <strong>nicht</strong> und hat daher auch kein Recht auf, oder Kontrolle über, deren Inhalte. Besuchen Sie die <a>EasyList Gemeinschaft</a> für alle weiteren Informationen rund um das Projekt."
+    "message": "EasyList entspricht der in Ihrem Browser eingestellten Sprache und dient dazu, Werbung zu deaktivieren, die von unserer Nutzercommunity als aufdringlich eingeschätzt wird. Bitte berücksichtigen Sie, dass EasyList <strong>nicht</strong> von der Eyeo GmbH erstellt wurde. Die Eyeo GmbH hat daher weder Rechte an ihrem noch Kontrolle über ihren Inhalt. Besuchen Sie die <a>EasyList-Community</a>, um weitere Informationen zu erhalten."
   },
   "acceptable-ads-monetization": {
-    "description": "Paragraph in \"How we are financed\" section",
-    "message": "Wir erhalten Spenden von unseren Nutzern aber der Hauptteil der Einnahmen resultiert aus der Acceptable Ads Initiative. Größere Organisationen entrichten eine Lizenzgebühr für die von ihnen angeforderten und durch uns erbrachten Whitelist-Leistungen (90 Prozent der Lizenzen werden kostenlos erteilt, an kleinere Organisationen). Wichtig ist, dass die <a>Acceptable-Ads-Kriterien</a> immer eingehalten werden müssen, unabhängig davon, ob in Einzelfällen zusätzliche Lizenzgebühren zu zahlen sind. Werden die Kriterien nicht erfüllt, ist das Whitelisting nicht möglich."
+    "description": "Paragraph in \"How we are financed\" section\n{1}: 90",
+    "message": "Wir erhalten zwar Spenden von unseren Nutzern, unsere Haupteinnahmequelle ist jedoch die Acceptable Ads Initiative. Wie wir weiter unten genauer ausführen, bezahlen größere Unternehmen eine Lizenzierungsgebühr für beantragte und bereitgestellte Whitelisting-Dienste (etwa {1} Prozent der Lizenzen werden kleineren Unternehmen kostenfrei zur Verfügung gestellt). Bitte berücksichtigen Sie, dass alle Werbeanzeigen zunächst die <a>Acceptable Ads Kriterien</a> einhalten müssen. Dies gilt unabhängig davon, ob das für die Anzeigen verantwortliche Unternehmen für diese bezahlen muss oder nicht. Werden die Kriterien nicht erfüllt, so ist ein Whitelisting nicht möglich."
   },
   "created": {
-    "message": "Adblock Plus ist ein Open-Source Gemeinschaftsprojekt, welches 2006 maßgeblich von Wladimir Palant entwickelt wurde. 2011 wurde <a>Eyeo</a> von Wladimir Palant und Till Faida gegründet, um die Entwickung von ABP nachhaltig zu gestalten."
+    "description": "{1}: 2006, {2}: Adblock Plus, {3}: 2011, {4}: Eyeo",
+    "message": "{2} ist ein unter <a>GPLv3</a> lizenziertes Open-Source-Produkt, das {1} von Wladimir Palant entwickelt wurde. {3} gründete Palant gemeinsam mit Till Faida <a>{4}</a>, um für eine tragfähige Entwicklung zu sorgen."
   },
   "fee-details": {
     "description": "Text in \"How we are financed\" section",
@@ -47,7 +48,8 @@
     "message": "Was ist akzeptable Werbung?"
   },
   "s12": {
-    "message": "Viele Nutzer von Adblock Plus blocken damit Werbung. Wir glauben allerdings nicht, dass jede Werbung wirklich so nervig ist, dass sie blockiert werden muss. Webseiten benötigen Einkünfte aus Werbung um sich zu finanzieren. Daher versuchen wir die Webseitenbetreiber davon zu überzeugen und zu motivieren, bessere und unaufdringliche Werbung anzuzeigen statt die Internetnutzer mit nerviger Werbung erst zum Blockieren zu animieren. Wir haben dafür in den letzten Jahren zusammen mit unseren Nutzern und anderen Quellen <a>strikte Kriterien</a> entwickelt um akzeptable Formen und Platzierungen von Werbung zu identifizieren. Webseiten, welche sich dazu bereit erklären unseren Nutzern gegenüber Werbung anzuzeigen, die sich an diese Richtlinien hält, können <a>beantragen</a> auf eine optionale Whitelist aufgenommen zu werden. Dies ist in aller Regel auch kostenlos. Solange der Nutzer diese Option eingeschaltet lässt, wird die betroffene Webseite mit der geprüften Werbung von der Software nicht länger blockiert. Natürlich können Nutzer dies aber auch <a>deaktivieren</a>."
+    "description": "{1}: 2009, {2}: Adblock Plus, {3}: 2011, {4}: 10, {5}: Adblock Plus",
+    "message": "Wir sind nicht der Meinung, dass Werbung grundsätzlich schlecht ist, und sind uns vollkommen darüber im Klaren, dass Werbung der Finanzierung zahlreicher Websites dient. Also haben wir uns {1} dazu entschlossen, eine gemeinsame Basis zu finden. Unsere Lösung beinhaltete die Befragung sowohl der {2} Nutzer als auch unserer Community insgesamt. Dies half uns dabei, <a>Kriterien zu identifizieren</a>, die zu besserer Werbung führen. Anhand dieser Diskussionen legten wir strenge Kriterien fest, die der Identifizierung aufdringlicher Werbung dienen. {3} begannen wir mit der Implementierung der Acceptable Ads Initiative. Potenzielle Teilnehmer, welche die Auflagen der Acceptable Ads Initiative erfüllen möchten, können sich darum <a>bewerben</a>, in die Acceptable Ads Liste aufgenommen zu werden. Die Teilnahme an der Acceptable Ads Initiative ist für die Teilnehmer in der Regel kostenfrei. Nur größere Unternehmen, die aufgrund ihrer Teilnahme über {4} Millionen zusätzliche Impressions von Werbeanzeigen erreichen, müssen eine monatliche Gebühr bezahlen (weitere Informationen können Sie im Abschnitt darüber, <a>wie wir uns finanzieren</a>, nachlesen). {5} Nutzer haben die Option, Werbung anzeigen zu lassen, die auf den Acceptable Ads Listen stehen, oder das Acceptable Ads Feature zu deaktivieren und komplett <a>werbefrei</a> zu surfen. Bitte besuchen Sie das <a>\"Acceptable Ads Proposals Forum\"</a> (Forum mit Vorschlägen zu Acceptable Ads), um die Liste akzeptabler Werbeanzeigen einsehen zu können."
   },
   "s13": {
     "message": "Weitere Infos findet man in unserem <a>FAQ für akzeptable Werbung</a>."
@@ -89,13 +91,14 @@
     "message": "Wie funktioniert Adblock Plus?"
   },
   "s6": {
-    "message": "Adblock Plus selber blockiert gar nichts bis Sie ihm durch die Auswahl von Filterlisten “mitteilen” was es blockieren soll. Diese Filterlisten sind das Ergebnis vieler Freiwilliger weltweit und enthalten Filterregeln, die bestimmen, was der mit Adblock Plus verknüpfte Browser nicht anzeigen soll. Sie können beliebige Filterlisten jederzeit hinzufügen, verändern oder entfernen. Zum Beispiel existieren vorgefertigte externe Filterlisten, mit denen Sie sich auch vor <a>Tracking</a> oder <a>Malware</a> schützen können. Des Weiteren können Sie Ihre <a>eigenen Filterlisten erstellen</a> und benutzen."
+    "description": "{1}: Adblock Plus, {2}: Adblock Plus, {3}: Adblock Plus",
+    "message": "{1} hat selbst keine Funktionalität; es blockiert so lange gar nichts, bis Sie dem Programm durch Hinzufügen externer Filterlisten \"mitteilen\", was es blockieren soll. Filterlisten stellen im Wesentlichen ein Regelwerk dar, das {2} mitteilt, welche Elemente einer Website blockiert werden sollen. Sie können ganz nach Belieben Filterlisten hinzufügen. So können Sie z.B. <a>Tracking</a> und/oder <a>Malware</a> blockieren (technisch gesehen bietet {3} im Rahmen der Standardeinstellungen bereits einen gewissen Schutz vor Tracking und Malware, Sie können jedoch erweiterte Schutzparameter aktivieren). Zudem können Sie <a>Ihre eigenen Filterlisten erstellen</a>. Fast alle Filter stehen als Open-Source-Dateien zur Verfügung, daher wurden zahlreiche Filterlisten von Internetnutzern erstellt."
   },
   "s7": {
     "message": "Standardmäßig sind zwei Filterlisten aktiviert:"
   },
   "s8": {
-    "message": "Eine auf Ihrer Sprache basierend ausgewählte Blockierliste"
+    "message": "Eine anhand Ihrer Spracheinstellung ausgewählte Liste zur Blockierung von Werbeanzeigen (EasyList Germany+EasyList)"
   },
   "s9": {
     "message": "Die Liste mit Ausnahmefiltern"

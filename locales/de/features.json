@@ -2,9 +2,6 @@
   "s1": {
     "message": "Adblock Plus - Funktionen"
   },
-  "s10": {
-    "message": "Schutz vor Vertippern"
-  },
   "s11": {
     "message": "Die folgenden Funktionen werden durch externe Filterlisten ermöglicht – außerdem können auch <a>eigene Filter</a> geschrieben und verwendet werden."
   },
@@ -24,7 +21,8 @@
     "message": "Akzeptable Werbung erlauben"
   },
   "s18": {
-    "message": "Viele Webseiten benötigen Einkünfte aus Werbung. Daher versuchen wir die Webseitenbetreiber davon zu überzeugen, dass sie besser eine weniger aufdringliche Art von Werbung anzeigen, statt solcher, die die Internetnutzer nerven und letztendlich zum Blockieren aller Werbung animiert."
+    "description": "{1}: Adblock Plus",
+    "message": "Da zahlreiche Websites auf Werbeeinkünfte angewiesen sind, halten die Standardeinstellungen von {1} dazu an, unaufdringliche Werbung anstelle nerviger und irrelevanter Werbung zu schalten."
   },
   "s19": {
     "message": "Wir haben dafür in den letzten Jahren zusammen mit unseren Nutzern und anderen Quellen <a>strikte Richtlinien</a> entwickelt um akzeptable Formen und Platzierungen von Werbung zu identifizieren. Werbung, welche sich an diese Richtlinien hält, kann auf die Whitelist aufgenommen werden und wird dann von der Software nicht länger blockiert."
@@ -42,7 +40,8 @@
     "message": "Es gibt hunderte von Firmen die jeden einzelnen Schritt eines Internet-Nutzers im Internet nachverfolgen können. Adblock Plus verhindert diese Verfolgung und hilft dem Nutzer anonymer zu surfen."
   },
   "s24": {
-    "message": "Laut einer <a>Untersuchung der Universität Stanford</a>, sind die dafür genutzten EasyPrivacy Filter die effizientesten aller erhältlichen Anti-Tracking Lösungen."
+    "description": "{1}: Adblock Plus",
+    "message": "<a>Forscher der Stanford University</a> kamen zu dem Schluss, dass die EasyPrivacy-Filter zum Schutz vor Tracking die effizienteste aller verfügbaren Lösungen zum Schutz vor Tracking darstellen und den Trackingschutz von {1} erweitern können."
   },
   "s25": {
     "message": "Um diese Funktion zu aktivieren, <a>öffnen Sie diesen Dialog</a> und klicken Sie auf \\\"Hinzufügen\\\", um sich gegen Verfolgung zu schützen. Um diese Funktion zu deaktivieren, <a>lesen Sie hier</a>, um zu erfahren wie Sie das machen können."
@@ -51,7 +50,8 @@
     "message": "Lange Ladezeiten, Pop-Ups, Werbetreibende, die den Browser kapern: All das sind Zeichen dafür, dass der Computer durch Malware infiziert wurde. Noch schlimmer als das ist, dass Computer, die durch Malware infiziert sind, Tür und Tor für allerlei Bedrohungen durch Cyber Kriminalität öffnen.\nDiese infizierten Computer können dann dazu benutzt werden, um Spam Emails zu senden, andere Computer oder Server zu attackieren oder Passwörter, Socialversicherungsnummern, persönliche Dokumente und Kreditkarteninformationen zu stehlen."
   },
   "s30": {
-    "message": "Adblock Plus kann so eingestellt werden, dass Domains blockiert werden, die bekannt dafür sind, Malware zu verbreiten, um den Computer gegen Viren, Trojaner, Würmer, Spyware und Adware zu schützen."
+    "description": "{1}: Adblock Plus",
+    "message": "Die Standardeinstellung von {1} bietet einen gewissen Schutz vor Malware. Dieser lässt sich ausweiten, indem Adblock Plus so konfiguriert wird, dass auch Websites blockiert werden, die für die Verbreitung von Malware bekannt sind. Dies hilft dabei, Ihren Computer vor Viren, Trojanern, Würmern, Adware und Spyware zu schützen."
   },
   "s31": {
     "message": "Um diese Funktion zu aktivieren, <a>öffnen Sie diesen Dialog</a> und klicken Sie auf \\\"Hinzufügen\\\", um sich gegen Verfolgung zu schützen. Um diese Funktion zu deaktivieren, <a>lesen Sie hier</a>, um zu erfahren wie Sie das machen können."
@@ -64,9 +64,6 @@
   },
   "s36": {
     "message": "Um diese Funktion zu aktivieren, <a>öffnen Sie diesen Dialog</a> und klicken Sie auf \\\"Hinzufügen\\\", um sich gegen Verfolgung zu schützen. Um diese Funktion zu deaktivieren, <a>lesen Sie hier</a>, um zu erfahren wie Sie das machen können."
-  },
-  "s38": {
-    "message": "Die Tippfehlerkorrektur war eine Funktion von Adblock Plus für Firefox, aber <a>wurde in der Version 2.3 entfernt</a>. Falls du dieses Tool dennoch nicht missen möchtest, kannst du es dir ganz einfach über unsere <a>URL Fixer Erweiterung</a> installieren."
   },
   "s5": {
     "message": "Werbung blockieren"
