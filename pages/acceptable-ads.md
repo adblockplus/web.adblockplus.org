@@ -100,11 +100,12 @@ title=Allowing acceptable ads in Adblock Plus
 {{feed-list-ads["In-feed ads" description in "Specific criteria"] For ads in lists and feeds, the general criteria differ depending on:}}
 
 * {{placement-requirement[Bullet point in "Specific criteria"] Placement requirements}}<br/>{{entries-feeds[Text below bullet point in "Specific criteria"] Ads are permitted in between entries and feeds.}}
+* {{size-requirement[Bullet point in "Specific criteria"] Size requirements}}<br/>{{in-feed-ads-size[Text below bullet point in "Specific criteria"] In-feed ads are permitted to take up more space, as long as they are not substantially larger than other elements in the list or feed.}}
 
 #### {{search-ads[Subheadline in "Specific criteria"] Search ads }}
 {{search-ads-info["Search ads" description in "Specific criteria"] For search ads - ads displayed following a user-initiated search query - the criteria differ depending on:}}
 
-* {{size-requirement[Bullet point in "Specific criteria"] Size requirements}}<br/>{{more-space[Text below bullet point in "Specific criteria"] Search ads are permitted to be larger and take up additional screen space.}}
+* {{size-requirement}}<br/>{{more-space[Text below bullet point in "Specific criteria"] Search ads are permitted to be larger and take up additional screen space.}}
 
 #### {{no-primary-content[Subheadline in "Specific criteria"] Ads on pages with no primary content }}
 {{only-text-ads["Ads on pages with no primary content" description in "Specific criteria"] Only text ads are allowed. For webpages without any primary content (e.g. error or parking pages), the criteria differ depending on:}}
