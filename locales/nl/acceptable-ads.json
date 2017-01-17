@@ -21,7 +21,7 @@
   },
   "acceptable-ads-contacts": {
     "description": "Text in \"what you is allowed\" section",
-    "message": "Hebt u vragen of suggesties betreffende deze lijst? Aarzel niet om contact op te nemen met de gemeenschap <a>in ons forum</a>, of neem rechtstreeks contact op met ons <a>via e-mail</a>."
+    "message": "Hebt u vragen of suggesties betreffende deze lijst? Aarzel niet om contact op te nemen met de gemeenschap <a>in ons forum</a>, of neem rechtstreeks contact met ons op <a>via e-mail</a>."
   },
   "acceptable-ads-filter": {
     "description": "Text in \"what you is allowed\" section",
@@ -157,7 +157,7 @@
   },
   "false-positives-report": {
     "description": "Text in \"doesn't meet requirement\" secion",
-    "message": "<a>Meld it</a>. Als een adverteerder misbruik maakt van zijn plaatsing op de uitzonderingenlijst, kunnen we deze altijd van de lijst verwijderen."
+    "message": "<a>Meld dit</a>. Als een adverteerder misbruik maakt van zijn plaatsing op de uitzonderingenlijst, kunnen we deze altijd van de lijst verwijderen."
   },
   "feed-list-ads": {
     "description": "\"In-feed ads\" description in \"Specific criteria\"",
@@ -187,6 +187,10 @@
     "description": "Subheadline in \"Specific criteria\"",
     "message": "In-feed-advertenties"
   },
+  "in-feed-ads-size": {
+    "description": "Text below bullet point in \"Specific criteria\"",
+    "message": "In-feed-advertenties mogen meer ruimte innemen, zolang ze niet significant groter zijn dan andere elementen in de lijst of feed."
+  },
   "interstitial-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Verspreide pagina-advertenties"
@@ -194,6 +198,10 @@
   "load-new-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Advertenties die zichtbaar nieuwe advertenties laden als de primaire inhoud niet verandert"
+  },
+  "main-revenue": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "We ontvangen wat donaties van onze gebruikers, maar onze grootste inkomstenbron komt voort uit het Acceptable Ads-initiatief. Grotere entiteiten (zoals hieronder gedefinieerd) betalen een licentievergoeding voor de aangevraagde en aan hen geleverde whitelisting-diensten (ongeveer 90 procent van de licenties wordt gratis verstrekt). Er moet worden opgemerkt dat aan de Acceptable Ads-criteria moet worden voldaan, onafhankelijk van de overweging voor vergoedingen. Als niet aan de criteria wordt voldaan, is whitelisting niet mogelijk."
   },
   "manifesto": {
     "description": "Paragraph in \"about\" section",
@@ -206,6 +214,10 @@
   "meta-title": {
     "description": "Title meta tag content inside head tag",
     "message": "Acceptabele advertenties - Adblock Plus"
+  },
+  "more-details": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "Kijk <a>hier</a> voor meer details."
   },
   "more-space": {
     "description": "Text below bullet point in \"Specific criteria\"",
@@ -287,6 +299,10 @@
     "description": "Text in \"how to be whitelisted\" section",
     "message": "Het proces om uw advertenties op de whitelist te krijgen neemt ongeveer 10 werkdagen in beslag zodra de advertenties aan de criteria voor Acceptabele advertenties voldoen:"
   },
+  "revenue": {
+    "description": "Section header",
+    "message": "Is er sprake van betalingen?"
+  },
   "rich-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Uitgebreide-media-advertenties (bv. Flash- en Shockwave-advertenties, etc.)"
@@ -352,7 +368,7 @@
   },
   "total-ad-space": {
     "description": "Paragraph in \"General criteria\"",
-    "message": "Alle advertenties die boven de vouw worden geplaatst (het in het browservenster zichtbare gedeelte van de webpagina wanneer de pagina onder de gebruikelijke schermgrootte wordt geladen), mogen niet meer dan 15 procent van het zichtbare gedeelte van de webpagina innemen. Bij plaatsing onder onder de vouw mogen advertenties in het totaal niet meer dan 25 procent van het zichtbare gedeelte van de webpagina innemen."
+    "message": "Alle advertenties die boven de vouw worden geplaatst (het in het browservenster zichtbare gedeelte van de webpagina wanneer de pagina onder de gebruikelijke schermgrootte wordt geladen), mogen niet meer dan 15 procent van het zichtbare gedeelte van de webpagina innemen. Bij plaatsing onder de vouw mogen advertenties in totaal niet meer dan 25 procent van het zichtbare gedeelte van de webpagina innemen."
   },
   "transparency": {
     "description": "Fairness rule Bullet point in \"about\" section",
@@ -377,6 +393,10 @@
   "whitelist-proposal-submission": {
     "description": "Whitelisting step in \"how to be whitelisted\" section",
     "message": "We plaatsen het voorstel voor whitelisting <a>in het forum</a> en tegelijkertijd worden de advertenties gewhitelist. Het onderwerp zal open blijven om de gemeenschap zorgen te kunnen laten uiten als of wanneer de aanvrager niet aan de vereisten voldoet."
+  },
+  "who-pays": {
+    "description": "Text in \"Is there payment involved?\" section",
+    "message": "Wat vergoedingen betreft, moeten alleen grote entiteiten betalen (die met meer dan 10 miljoen aanvullende advertentie-impressies per maand als gevolg van deelname in het Acceptable Ads-initiatief). Voor deze entiteiten vertegenwoordigt onze licentievergoeding normaliter 30 procent van de aanvullende omzet die door whitelisting van acceptabele advertenties ervan wordt gecreëerd."
   },
   "why-default": {
     "description": "Section header",
