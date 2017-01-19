@@ -1,9 +1,21 @@
 {
+  "OS": {
+    "message": "Le système d’exploitation de l’ordinateur, par ex. Windows 8.1 64 bits"
+  },
+  "browser": {
+    "message": "Le navigateur et le numéro de version du navigateur, par ex. Chrome 43.0.2357.124"
+  },
+  "consider": {
+    "message": "Veuillez envisager les points suivants avant de remplir un rapport de bogue :"
+  },
   "s1": {
     "message": "Rapport de problèmes - Adblock Plus"
   },
   "s14": {
     "message": "Un problème existait avant qu'Adblock Plus ne soit installée et persiste si elle est désinstallée : le problème vient d'ailleurs."
+  },
+  "s15": {
+    "message": "Si Adblock Plus ne s'installe pas correctement sur <a>un navigateur pris en charge</a>, il s’agit d'un problème de navigateur et les <a>instructions générales de dépannage</a> s'appliquent. Si vous n’utilisez pas Firefox, veuillez consulter : <a>Chrome</a>, <a>Opera</a>, <a>Safari</a>, <a>Internet Explorer</a>"
   },
   "s15-link": {
     "message": "http://support.mozilla.org/fr/kb/Impossible%20d%E2%80%99installer%20des%20modules%20compl%C3%A9mentaires"
@@ -11,8 +23,14 @@
   "s16": {
     "message": "Comment signaler un bogue"
   },
+  "s17": {
+    "message": "Consultez le <a>forum</a> pour obtenir de l’aide ou signaler un problème."
+  },
   "s18": {
     "message": "Votre signalement de bogue doit contenir toutes les informations nécessaires à sa reproductibilité :"
+  },
+  "s19": {
+    "message": "Le numéro de version d’Adblock Plus, par ex. 1.8.12"
   },
   "s2": {
     "message": "Vous avez des problèmes avec Adblock Plus? Laissez le nous savoir pour que nous puissions avoir davantage d'expérience. Téléchager Adblock Plus pour Chrome et d'autres plateformes, ici."
@@ -31,6 +49,9 @@
   },
   "s24": {
     "message": "Vous êtes revenus et votre signalement de bogue a disparu ?"
+  },
+  "s26": {
+    "message": "Jetez un œil au <a>forum</a>."
   },
   "s4": {
     "message": "Vous avez des problèmes avec Adblock Plus? Laissez le nous savoir pour que nous puissions avoir davantage d'expérience. Téléchager Adblock Plus pour Chrome et d'autres plateformes, ici."
