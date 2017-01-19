@@ -24,9 +24,19 @@ title=Coding Style
 <h2 id="javascript">{{s14 JavaScript}}</h2>
 <ul>
   <li>{{s15 Follow the Mozilla Coding Style's <a href="https://developer.mozilla.org/en-US/docs/Developer_Guide/Coding_Style#JavaScript_practices">JavaScript practices</a>.}}</li>
-  <li>{{s16 Opening braces of object literals in don't go on their own line when that would cause a syntax error.}}</li>
-  <li>{{s17 Use <code>bind()</code> to ensure the desired value of the <code>this</code> variable, don’t use temporary variables as a replacement.}}</li>
+  <li>{{javascript-strict Always use <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a>.}}</li>
+  <li>{{javascript-opening-braces Opening braces of object literals don't go on their own line when that would cause a syntax error.}}</li>
+  <li>{{javascript-if-else-braces When an <code><fix>if</fix></code> statement, an <code><fix>else</fix></code> statement or a loop spans over more than one line always enclose it with braces. When an <code><fix>if</fix></code> or <code><fix>else</fix></code> statement uses braces the opposing block should do too.}}</li>
   <li>{{s18 In classes, prefix private functions with a single underscore to make them pseudo-private.}}</li>
+  <h3 id="javascript-modern">{{javascript-es6 Modern JavaScript (where supported)}}</h3>
+  <ul>
+    <li>{{javascript-block-scoping Always use <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/block#With_let_and_const">block-scoping</a> (<code><fix>let</fix></code> / <code><fix>const</fix></code>), except when sharing global variables between scripts cannot be avoided.}}</li>
+    <li>{{javascript-const Use <code><fix>const</fix></code> for constant expressions that could as well have been inlined (e.g. static parameters, imported modules, etc.).}}</li>
+    <li>{{javascript-arrow Use the <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow function</a> syntax when passing anonymous functions that don't require the binding of their own <code><fix>this</fix></code> or <code><fix>arguments</fix></code> variables.}}</li>
+    <li>{{javascript-method Use the <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Method_definitions">method definition shorthand</a> syntax when defining methods on an object.}}</li>
+    <li>{{javascript-for-of When iterating over arrays in the canonical order use the new <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of"><code><fix>for..of</fix></code></a> syntax if the loop index isn't required. (Rather than using <code><fix>for(;;)</fix></code> or the <code><fix>forEach()</fix></code> method.)}}</li>
+    <li>{{javascript-map-set Use the <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map"><code><fix>Map</fix></code></a> or <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set"><code><fix>Set</fix></code></a> objects, rather than misusing plain objects, when you need a hash table.}}</li>
+  </ul>
 </ul>
 
 <h2 id="html-css">{{html-css HTML and CSS}}</h2>
