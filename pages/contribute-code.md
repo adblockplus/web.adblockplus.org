@@ -20,8 +20,7 @@ If you don't find anything interesting, feel free to pick any unassigned issue, 
 {{starting-work In any case, please write a comment saying that you'd like to work on something before you get started. That way we can assign the issue to you, to ensure no one else starts to work on the same thing.}}
 
 ## {{getting-in-touch Getting in touch}}
-
-{{irc Feel free to join our IRC channel if you need help or want to chat: [#adblockplus on irc.mozilla.org](irc://irc.mozilla.org/#adblockplus). There's also a [web-based client](http://mibbit.com/?server=irc.mozilla.org&amp;channel=%23adblockplus).}}
+{{irc Need help or want to chat? Join our IRC channel: [#adblockplus on irc.mozilla.org](irc://irc.mozilla.org/#adblockplus) (there is also a [web-based client](http://mibbit.com/?server=irc.mozilla.org&amp;channel=%23adblockplus)). While we are a globally distributed team, there are times when most of the team is not online. Please note that we cannot reply to you if you are offline.}}
 
 ## {{submitting-a-patch Submitting a patch}}
 
