@@ -53,8 +53,8 @@ title=Coding Style
 
 <h2 id="python">{{s19 Python}}</h2>
 <ul>
-  <li>{{python-general Follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a> and the recommendations in the offical Python documentation.}}</li>
-  <li>{{python-version Make the code compatible with both Python 2.7 and Python 3.5+ (see <a href="https://docs.python.org/dev/howto/pyporting.html">this guide</a>). Use <a href="https://docs.python.org/2/library/__future__.html">__future__ imports</a> to address syntactic differences but avoid <a href="https://pythonhosted.org/six/">six</a>, <a href="http://python-future.org/compatible_idioms.html">python-future</a>, etc. to not introduce additional dependencies.}}</li>
+  <li>{{python-general Follow <a href="https://www.python.org/dev/peps/pep-0008/"><fix>PEP-8</fix></a> and the recommendations in the offical <fix>Python</fix> documentation.}}</li>
+  <li>{{python-version Make the code compatible with both <fix>Python 2.7</fix> and <fix>Python 3.5+</fix> (see <a href="https://docs.python.org/dev/howto/pyporting.html">this guide</a>). Use <a href="https://docs.python.org/2/library/__future__.html"><fix>__future__</fix> imports</a> to address syntactic differences but avoid <a href="https://pythonhosted.org/six/"><fix>six</fix></a>, <a href="http://python-future.org/compatible_idioms.html"><fix>python-future</fix></a>, etc. to not introduce additional dependencies.}}</li>
   <li>{{python-strings Write string literals so that they match the behaviour of <a href="https://docs.python.org/3/library/functions.html#ascii"><code><fix>ascii()</fix></code></a>, i.e. use single quotes except to avoid escaping of embedded quotes and use <code><fix>\u</fix></code> escapes for non-ascii characters but don't prefix strings with <code><fix>u</fix></code>. For docstrings, however, follow <a href="https://www.python.org/dev/peps/pep-0257/">PEP-257</a>.}}</li>
   <li>{{python-prefix In modules, prefix private functions and variables with a single underscore.}}</li>
   <li>{{python-concatenation Use the <code><fix>+</fix></code> operator when concatenating exactly two strings, use the <a href="https://docs.python.org/2/library/stdtypes.html#str.format"><code><fix>format()</fix></code> method</a> for more complex string formatting, use the <a href="https://docs.python.org/2/library/stdtypes.html#str.join"><code><fix>join()</fix></code> method</a> when concatenating pre-existing sequences.}}</li>
@@ -62,8 +62,8 @@ title=Coding Style
   <li>{{python-builtins Don't override builtins except for <a href="https://docs.python.org/2/library/functions.html#non-essential-built-in-funcs">non-essential builtins</a> and <code><fix>file</fix></code> which is superfluos in modern code as well.}}</li>
   <li>{{python-map-filter Use list comprehensions or generator expressions instead of calling <code><fix>map()</fix></code> or <code><fix>filter()</fix></code> with a lambda function.}}</li>
   <li>{{python-regexp Use <a href="https://docs.python.org/2/library/re.html#re.search"><code><fix>re.search()</fix></code></a> instead of <code><fix>re.match()</fix></code> to avoid <a href="https://docs.python.org/2/library/re.html#search-vs-match">confusion</a> about implied beginning of the string but not the ending.}}</li>
-  <li>{{python-flake8 Run <a href="https://pypi.python.org/pypi/flake8">flake8</a> with the <a href="https://hg.adblockplus.org/codingtools/file/tip/flake8-abp">flake8-abp</a> and <a href="https://pypi.python.org/pypi/pep8-naming">pep8-naming</a> extensions and fix any warning.}}</li>
-  <li>{{python-tests Write tests and have them run along flake8 using <a href="https://pypi.python.org/pypi/tox">tox</a>.}}</li>
+  <li>{{python-flake8 Run <a href="https://pypi.python.org/pypi/flake8"><fix>flake8</fix></a> with the <a href="https://hg.adblockplus.org/codingtools/file/tip/flake8-eyeo"><fix>flake8-eyeo</fix></a> and <a href="https://pypi.python.org/pypi/pep8-naming"><fix>pep8-naming</fix></a> extensions and fix any warning.}}</li>
+  <li>{{python-tests Write tests and have them run along <fix>flake8</fix> using <a href="https://pypi.python.org/pypi/tox"><fix>tox</fix></a>.}}</li>
 </ul>
 
 <h2 id="java">{{s22 Java}}</h2>
