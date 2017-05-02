@@ -57,7 +57,6 @@ def get_firefox_versions():
             'current': versions['LATEST_FIREFOX_VERSION'],
             'unreleased': [
                 versions['LATEST_FIREFOX_DEVEL_VERSION'],
-                versions['FIREFOX_AURORA'],
                 versions['FIREFOX_NIGHTLY'],
             ]
     }
@@ -85,7 +84,6 @@ def get_seamonkey_versions():
         'current': seamonkey_versions['LATEST_SEAMONKEY_VERSION'],
         'unreleased': [
             seamonkey_versions['LATEST_SEAMONKEY_MILESTONE_VERSION'],
-            seamonkey_versions['LATEST_SEAMONKEY_TESTING_VERSION'],
             seamonkey_versions['LATEST_SEAMONKEY_DEVEL_VERSION'],
         ]
     }
