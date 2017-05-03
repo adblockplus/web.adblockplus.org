@@ -174,6 +174,12 @@ html[dir="rtl"] #summary li .sprite
   font-size: 20px;
 }
 
+#terms-message,
+#terms-message a
+{
+  font-size: 12px;
+}
+
 /* This cannot be just .install-button because a:link will have a higher
    specificity otherwise (overrides text color) */
 #install .install-button
