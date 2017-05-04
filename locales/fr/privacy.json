@@ -15,49 +15,73 @@
     "description": "title of section\n{1}: Adblock Browser, {2}: Android",
     "message": "Navigateur Adblock Browser pour Android"
   },
+  "abb-ios-crash-heading": {
+    "description": "heading",
+    "message": "Au cours d'un crash, les données suivantes sont envoyées :"
+  },
+  "abb-ios-crash-item-1": {
+    "description": "list item\n{1}: Adblock Browser, {2}: iOS",
+    "message": "identifiant du paquet, version du paquet et courte chaîne de version du paquet d'Adblock Browser pour iOS"
+  },
+  "abb-ios-crash-item-2": {
+    "description": "list item",
+    "message": "type d'appareil, architecture du processeur et version du système d'exploitation"
+  },
+  "abb-ios-crash-item-3": {
+    "description": "list item",
+    "message": "horodatage du moment du crash"
+  },
+  "abb-ios-crash-item-4": {
+    "description": "list item",
+    "message": "un UUID généré pour éviter la duplication des rapports de crash"
+  },
+  "abb-ios-crash-item-5": {
+    "description": "list item",
+    "message": "en cas d'exception, le nom de la catégorie (sous forme de texte) et la valeur du message d'exception"
+  },
+  "abb-ios-crash-item-6": {
+    "description": "list item",
+    "message": "les données de crash de bas niveau telles que le pointeur d'instruction, les noms de méthodes ou de fonctions, les données de signaux, les registres de pointeurs et informations au sujet des images binaires chargées"
+  },
   "abb-ios-crash-reporter": {
-    "description": "crash reporter first paragraph\n{1}: Adblock Browser, {2}: iOS, {3}: eyeo's, {4}: HockeyApp, {5}: HockeyApp",
-    "message": "En cas de crash inattendu, Adblock Browser pour iOS collecte les données pertinentes à l'analyse de la cause de l'erreur et les transmet au compte <a>HockeyApp</a> d’eyeo. Les données sont utilisées uniquement à des fins de dépistage individuel (ainsi que pour identifier des défauts généraux entraînant des crashs inattendus) et ne sont jamais transmises à des tiers autres que HockeyApp."
+    "description": "crash reporter first paragraph\n{1}: Adblock Browser, {2}: iOS, {3}: eyeo, {4}: HockeyApp, {5}: HockeyApp",
+    "message": "En cas de crash ou d’erreur inattendu, Adblock Browser pour iOS collecte les données pertinentes à l’analyse de la cause de la défaillance et les transmet au compte <a>HockeyApp</a> d’eyeo. Les données sont utilisées uniquement à des fins de dépistage individuel (ainsi que pour identifier des défauts généraux entraînant des crashs ou erreurs inattendus) et ne sont jamais transmises à des tierces parties autres que HockeyApp."
   },
   "abb-ios-crash-reporter-data-collection": {
     "description": "crash reporter data collection paragraph\n{1}: Adblock Browser, {2}: iOS",
-    "message": "Ces données ne sont recueillies que lorsque l'application subit un crash. En outre Adblock Browser pour iOS demande explicitement la permission d'envoyer les informations recueillies une fois que le crash s'est produit. Tous les rapports de crash stockés sur nos serveurs sont supprimés après 30 jours."
+    "message": "Ces données ne sont recueillies que lorsque l'application subit un crash ou qu’une erreur survient. En outre Adblock Browser pour iOS demande explicitement la permission d'envoyer les informations recueillies une fois que le crash ou l’erreur s'est produit. Tous les rapports stockés sur nos serveurs sont supprimés après 30 jours."
   },
   "abb-ios-crash-reporter-hockeyapp": {
-    "description": "hockey app paragraph\n{1}: HockeyApps’s",
-    "message": "Afin d'en savoir plus sur la politique de confidentialité de HockeyApps, veuillez consulter leurs <a>conditions de service</a> ainsi que leur <a>documentation au sujet des données recueillies</a>."
-  },
-  "abb-ios-crash-reporter-list": {
-    "description": "intro sentence",
-    "message": "Au cours d'un crash, les données suivantes sont envoyées :"
-  },
-  "abb-ios-crash-reporter-list-1": {
-    "description": "first bullet point\n{1}: Adblock Browser, {2}: iOS",
-    "message": "Identifiant du paquet, version du paquet et courte chaîne de version du paquet d'Adblock Browser pour iOS."
-  },
-  "abb-ios-crash-reporter-list-2": {
-    "description": "second bullet point",
-    "message": "Type d'appareil, architecture du processeur et version du système d'exploitation."
-  },
-  "abb-ios-crash-reporter-list-3": {
-    "description": "third bullet point",
-    "message": "Horodatage du moment du crash."
-  },
-  "abb-ios-crash-reporter-list-4": {
-    "description": "fourth bullet point",
-    "message": "Un UUID (Universally Unique IDentifier) généré pour éviter la duplication des rapports de crash."
-  },
-  "abb-ios-crash-reporter-list-5": {
-    "description": "fifth bullet point",
-    "message": "En cas d'exception, le nom de la catégorie (sous forme de texte) et la valeur du message d'exception."
-  },
-  "abb-ios-crash-reporter-list-6": {
-    "description": "sixth bullet point",
-    "message": "Les données de crash de bas niveau telles que le pointeur d'instruction, les noms de méthodes ou de fonctions, les données de signaux, les registres de pointeurs et informations au sujet des images binaires chargées."
+    "description": "hockey app paragraph\n{1}: HockeyApps",
+    "message": "Afin d'en savoir plus sur la politique de confidentialité de HockeyApps, veuillez consulter ses <a>Conditions de service</a> ainsi que sa <a>documentation au sujet des rapports de crash</a> et des <a>rapports d'événements</a>."
   },
   "abb-ios-crash-reporter-title": {
     "description": "title of section",
-    "message": "Rapport de crash"
+    "message": "Rapport de crash et d’erreur"
+  },
+  "abb-ios-error-heading": {
+    "description": "heading",
+    "message": "Au cours d'une erreur, les données suivantes sont envoyées :"
+  },
+  "abb-ios-error-item-1": {
+    "description": "list item\n{1}: Adblock Browser, {2}: iOS",
+    "message": "identifiant du paquet, version du paquet et courte chaîne de version du paquet d'Adblock Browser pour iOS"
+  },
+  "abb-ios-error-item-2": {
+    "description": "list item",
+    "message": "type d'appareil, architecture du processeur et version du système d'exploitation"
+  },
+  "abb-ios-error-item-3": {
+    "description": "list item",
+    "message": "horodatage du moment de l’erreur"
+  },
+  "abb-ios-error-item-4": {
+    "description": "list item",
+    "message": "un UUID généré pour séparer les rapports d’erreur"
+  },
+  "abb-ios-error-item-5": {
+    "description": "list item",
+    "message": "un nom de chaîne/fonction identifiant l’erreur"
   },
   "abb-ios-title": {
     "description": "title of section\n{1}: Adblock Browser, {2}: iOS",
