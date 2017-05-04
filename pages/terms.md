@@ -70,6 +70,8 @@ noheading=True
 
 {{abp-error-paragraph-2[paragraph] In the case that you detect any defect or incorrect blocking, including the blocking of content, [inform](https://adblockplus.org/en/bugs) us as soon as possible. }}
 
+<? include de-dispute-resolution ?>
+
 ### {{additional-information-heading[heading] Additional information }}
 
 {{additional-information-paragraph-1[paragraph] This Terms of Use shall be governed by the laws of the Federal Republic of Germany. If you have no place of jurisdiction in Germany or in any other EU member state, if you have transferred your permanent domicile abroad after these Terms of Use take effect or if your domicile or usual place of residence is unknown at the time legal action is taken, the sole place of jurisdiction for all disputes arising from this agreement will be the location of our registered offices. }}
