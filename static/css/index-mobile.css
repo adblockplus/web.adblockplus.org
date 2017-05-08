@@ -48,6 +48,19 @@
   text-align: left;
 }
 
+#install
+{
+  display: block;
+  width: auto;
+  padding: 10px;
+}
+
+#install .install-button
+{
+  width: 100%;
+  font-size: 16px;
+}
+
 h3.edge-message
 {
   margin: 10px;
