@@ -162,10 +162,6 @@ title=Adblock Plus preferences
 {{"<em>Note</em>: This setting will only apply after the browser is restarted."|translate("sendReport_key-s3")}}
 {% endmacro %}
 
-{% macro data_directoryDescription() %}
-{{"The directory where Adblock Plus should store its data.  This can be either an\nabsolute path, or it can a directory location relative to the user's profile.\nIf <a href=\"#patternsfile\"><fix>patternsfile</fix></a> preference is set it will override\nthe location for patterns.ini file while other files stay in this directory."|translate("data_directory-s1")}}
-{% endmacro %}
-
 {% macro subscriptions_exceptionscheckboxDescription() %}
 {{"If <code><fix>true</fix></code>, the filter list for <a href=\"acceptable-ads\">non-intrusive ads</a>\nwill get special treatment and will be displayed as a checkbox in the user\ninterface."|translate("subscriptions_exceptionscheckbox-s1")}}
 {% endmacro %}
@@ -174,10 +170,6 @@ title=Adblock Plus preferences
 {{"Defines whether filters in filter subscriptions will be updated\nautomatically."|translate("subscriptions_autoupdate-s1")}}<br><br>
 
 {{"<em>Note</em>: Disabling updates is not recommended."|translate("subscriptions_autoupdate-s2")}}
-{% endmacro %}
-
-{% macro please_kill_startup_performanceDescription() %}
-{{"If set to <code><fix>true</fix></code> processing filters on startup will happen synchronously and delay browser startup."|translate("please_kill_startup_performance-s1")}} {{"Changing this setting is not recommended but it makes it less likely that ads will appear on the first page loaded by the browser."|translate("please_kill_startup_performance-s2")}}
 {% endmacro %}
 
 {% macro fastcollapseDescription() %}
@@ -348,6 +340,10 @@ title=Adblock Plus preferences
 {{"List of notification categories that the user opted out of."|translate("notifications_ignoredcategories-description")}}
 {% endmacro %}
 
+{% macro removedIn2_9() %}
+{{"Unused in Adblock Plus 2.9 and higher."|translate("removedIn2.9")}}
+{% endmacro %}
+
 {#
   Preference descriptions are defined in the macros above and only referenced
   here.
@@ -399,7 +395,7 @@ title=Adblock Plus preferences
       {
         "name": "data_directory",
         "default": "adblockplus",
-        "description": data_directoryDescription
+        "description": removedIn2_9
       },
       {
         "name": "defaultstatusbaraction",
@@ -449,7 +445,7 @@ title=Adblock Plus preferences
       {
         "name": "please_kill_startup_performance",
         "default": "false",
-        "description": please_kill_startup_performanceDescription
+        "description": removedIn2_9
       },
       {
         "name": "previewimages",
