@@ -170,6 +170,10 @@ title=Adblock Plus filters explained
   {
     margin-top: 0px;
   }
+  td > code
+  {
+    overflow-wrap: break-word;
+  }
   .syntax
   {
     width: 10%;
@@ -792,3 +796,60 @@ title=Adblock Plus filters explained
   </tr>
 </table>
 <p>{{s139 The above filters are only examples of valid element hiding rules. Any <a href="http://www.w3.org/TR/css3-selectors/">CSS selector</a> supported by Firefox can be used for element hiding.}}</p>
+
+<h3 id="elementhideemulation">{{ abp-pseudo-select-heading[heading] Extended CSS selectors (Adblock Plus specific) }}</h3>
+
+<p>{{ abp-pseudo-select-1 In some situations standard CSS selectors are not sufficient, for those cases you can also use the following Adblock Plus specific pseudo-selectors: }}</p>
+
+<table>
+  <col class="selector">
+  <col class="selectorPurpose">
+  <tr>
+    <th>{{ pseudo-class-header[header] Pseudo-class }}</th>
+    <th>{{ s127 Purpose }}</th>
+  </tr>
+  <tr>
+    <td><code>:-abp-properties()</code></td>
+    <td>{{ abp-properties-purpose Select an element if its CSS style properties match what's specified }}</td>
+  </tr>
+  <tr>
+    <td><code>:-abp-has()</code></td>
+    <td>{{ abp-has-purpose Select an element if its content subtree match the selector specified }}</td>
+  </tr>
+</table>
+
+<p>{{ abp-pseudo-select-2 When writing element hiding filters that make use those you must use the <code>#?#</code> syntax (replace <code>##</code> with <code>#?#</code>) and take care to specify one or more domains. Some examples: }}</p>
+
+<table>
+  <col class="selector">
+  <col class="selectorPurpose">
+  <tr>
+    <th>{{ s126 Selector }}</th>
+    <th>{{ s127 Purpose }}</th>
+  </tr>
+  <tr>
+    <td><code>example.com#?#div:-abp-properties(width:300px;height:250px;)</code></td>
+    <td>{{ abp-properties-example Matches <code><fix>div</fix></code> elements whose style contain the specified properties }}</td>
+  </tr>
+  <tr>
+    <td><code>example.com#?#div:-abp-has(&gt; div &gt; img.advert)</code></td>
+    <td>{{ abp-has-example1 Matches <code><fix>div</fix></code> elements that contain as a direct descendant a <code><fix>div</fix></code> element whose direct descendant is an <code><fix>img</fix></code> with the class "advert" }}</td>
+  </tr>
+  <tr>
+    <td><code>example.com#?#div:-abp-has(&gt; div &gt; img:-abp-properties(width:300px;height:250px;))</code></td>
+    <td>{{ abp-has-example2 Matches <code><fix>div</fix></code> elements that contain as a direct descendant a <code><fix>div</fix></code> element whose direct descendant is an <code><fix>img</fix></code> element whose style properties contain the specified properties, a <code><fix>width</fix></code> of 300 pixels and an <code><fix>height</fix></code> of 250 pixels }}</td>
+  </tr>
+  <tr>
+    <td><code>example.com#?#div:-abp-has(&gt; div &gt; img:-abp-properties(WidTh:300px;hEigHt:250px;))</code></td>
+    <td>{{ abp-has-example3 Since the CSS properties are matched case-insensitively, this filter matches the same thing as above }}</td>
+  </tr>
+  <tr>
+    <td><code>example.com#?#div &gt; img:-abp-properties(width:*px;height:250px;)</code></td>
+    <td>{{ abp-properties-example1 By using a wildcard <code>*</code>, this filter matches an <code>img</code> whose CSS style properties have a <code>width</code> specified in pixels and a <code>height</code> of 250 pixels }}</td>
+  </tr>
+  <tr>
+    <td><code>example.com#?#div &gt; img:-abp-properties(/width: 3[2-8]px;/)</code></td>
+    <td>{{ abp-properties-example2 By using a regular expression, this filter matches an <code>img</code> whose CSS style properties have a <code>width</code> between 32 and 38 pixels }}</td>
+  </tr>
+</table>
+

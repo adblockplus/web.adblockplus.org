@@ -233,6 +233,29 @@ Only here you get the best tofu!
 
   <p>{{s98 <em>Note</em>: This functionality is for advanced users only, you should be comfortable with CSS selectors to use it. Adblock Plus won't be able to check the syntax of the selector you are adding, if you use invalid CSS syntax you might break other (valid) rules you have. Check JavaScript Console for CSS errors.}}</p>
 
+<h3 id="elemhide-emulation">{{ elemhide-emulation-heading[heading] Extended CSS selectors (Adblock Plus specific) }}</h3>
+
+<p>
+  {{ elemhide-emulation-1 Sometimes the standard CSS selectors aren't powerful enough to hide an advertisement, for those cases we have added some new ones, namely <code><fix>:-abp-has()</fix></code> and <code><fix>:-abp-properties()</fix></code> (requires Adblock Plus 1.13.3 for Chrome and Opera or higher). }}
+</p>
+<p>
+  {{ elemhide-emulation-2 When writing an element hiding filter that makes use of these extended selectors you must use the <code><fix>#?#</fix></code> syntax, e.g. <code><fix>example.com#?#selector</fix></code>. But it's important to note that doing so carries a performance impact, so do so sparingly and make sure those filters are specific to as few domains and elements as possible. }}
+</p>
+<h4>:-abp-properties()</h4>
+<p>
+  {{ abp-properties-1 <code><fix>:-abp-properties(properties)</fix></code> will select elements based upon stylesheet properties. For example <code><fix>:-abp-properties(width:300px;height:250px;)</fix></code> will select elements that have a corresponding CSS rule in a stylesheet which sets the <code><fix>width</fix></code> and <code><fix>height</fix></code> to the values <code><fix>300px</fix></code> and <code><fix>250px</fix></code> respectively. Property names are matched case-insensitively. Furthermore, wildcards can be used so that <code><fix>:-abp-properties(width:*px;height:250px;)</fix></code> will match any width specified in pixels and a height of 250 pixels. }}
+</p>
+<p>
+  {{ abp-properties-2 You can also use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regular expressions</a> by surrounding the properties expression with "/". For example, <code><fix>:-abp-properties(/width:30[2-8]px;height:250px;/)</fix></code> will match widths between 302 and 308 pixels and a height of 250 pixels. }}
+</p>
+<p>
+  {{ abp-properties-3 <em>Note</em>: The <a href="https://adblockplus.org/development-builds/new-css-property-filter-syntax">older syntax</a> for the CSS property filters is deprecated and will be automatically converted to the new format&nbsp;. The syntax to select the style properties remain the same. For example, <code><fix>[-abp-properties='width:300px;height:250px;']</fix></code> will be converted to <code><fix>:-abp-properties(width:300px;height:250px;)</fix></code>. }}
+</p>
+<h4>:-abp-has()</h4>
+<p>
+  {{ abp-has-1 <code><fix>:-abp-has(selector)</fix></code> will select elements based on their content. For example <code><fix>:-abp-has(> div > a.advertiser)</fix></code> will select elements that contain as a direct descendant a <code><fix>&lt;div&gt;</fix></code> that contains an <code><fix>&lt;a&gt;</fix></code> with the class <code><fix>advertiser</fix></code>. The inner selector can be relative to the element scope, and can use any of the pseudo-selectors, including <code><fix>:-abp-has()</fix></code> and will determine whether the selection will occur. }}
+</p>
+
 <h3 id="elemhide_exceptions">{{s99 Exception rules}}</h3>
 
 <p>
@@ -245,6 +268,7 @@ Only here you get the best tofu!
   <code><fix>~example.com##div.textad</fix></code>.}} {{s104 It is recommended that you use
   exception rules only when you cannot change an overly general element hiding rule, in all the
   other cases limiting this rule to the necessary domains is preferable.}}
+  {{ exception-rules These exceptions will be applied to <a href="#elemhide-emulation">advanced pseudo-selector rules</a> as well. }}
 </p>
 
   <h3 id="elemhide_simplified">{{s105 Simplified element hiding syntax}}</h3>
