@@ -5,6 +5,15 @@ template=simple
   <meta name="robots" content="noindex" />
 </head>
 
+<p class="notification">
+  <strong>
+    {{ reinstall-headline[Text next to the Reinstallation button] Did you uninstall Adblock Plus by accident? }}
+  </strong>
+  <a href="index">
+    {{ reinstall[Reinstall button text] Reinstall Now }}
+  </a>
+</p>
+
 <section markdown="1" class="highlighted">
 #{{heading[Heading text] Data submitted successfully}}
 
