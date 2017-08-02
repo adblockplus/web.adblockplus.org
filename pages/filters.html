@@ -208,7 +208,7 @@ Only here you get the best tofu!
 
   <p>{{s84 You need to download the web page so you will necessarily download the advertisements. All you can do here is to hide the advertisement so you don't need to see it. That's what element hiding is meant for.}}</p>
 
-  <p>{{s85 The first advertisement above is contained inside a div element with class attribute "textad". The following rule will hide exactly this combination: <code><fix>##div.textad</fix></code>. Here ## marks an element hiding rule while the rest is a selector identifying the elements that need to be hidden. You can hide elements by their id attribute similarly, <code><fix>##div#sponsorad</fix></code> will hide the second advertisement. You don't need to specify the element name, the rule <code><fix>##*#sponsorad</fix></code> will work just as well. And you can hide elements by element name only, e.g. <code><fix>##textad</fix></code> for the third advertisement.}}</p>
+  <p>{{s85 The first advertisement above is contained inside an element with class attribute "textad". The following rule will hide exactly any such element: <code><fix>##.textad</fix></code>. Here ## marks an element hiding rule while the rest is a selector identifying the elements that need to be hidden. You can hide elements by their id attribute similarly, <code><fix>###sponsorad</fix></code> will hide the second advertisement. And you can hide elements by element name, e.g. <code><fix>##textad</fix></code> for the third advertisement.}}</p>
 
   <p>{{s86 The <a href="elemhidehelper">Element Hiding Helper extension</a> helps selecting the correct element and writing the corresponding rule without having to view the source code of the page. Basic HTML knowledge is useful nevertheless.}}</p>
 
@@ -216,9 +216,9 @@ Only here you get the best tofu!
 
   <h3 id="elemhide_domains">{{s88 Limiting rules to certain domains}}</h3>
 
-  <p>{{s89 Usually you want to hide a specific ad on one specific site, you don't want your rule to be applied on other sites. For example the rule <code><fix>##*.sponsor</fix></code> might hide valid code on some sites. But if you write it as <code><fix>example.com##*.sponsor</fix></code> it will be applied on <code><fix>http://example.com/</fix></code> and <code><fix>http://something.example.com/</fix></code> but not on <code><fix>http://example.org/</fix></code>. You can also specify multiple domains — simply separate them with commas: <code><fix>domain1.example,domain2.example,domain3.example##*.sponsor</fix></code>.}}</p>
+  <p>{{s89 Usually you want to hide a specific ad on one specific site, you don't want your rule to be applied on other sites. For example the rule <code><fix>##.sponsor</fix></code> might hide valid code on some sites. But if you write it as <code><fix>example.com##.sponsor</fix></code> it will be applied on <code><fix>http://example.com/</fix></code> and <code><fix>http://something.example.com/</fix></code> but not on <code><fix>http://example.org/</fix></code>. You can also specify multiple domains — simply separate them with commas: <code><fix>domain1.example,domain2.example,domain3.example##.sponsor</fix></code>.}}</p>
 
-  <p>{{s90 If a domain name is preceded with "~", the rule will <strong>not</strong> be applied on pages from this domain (requires Adblock Plus 1.1 or higher). For example, <code><fix>~example.com##*.sponsor</fix></code> will be be applied on pages from any domain but "example.com" and <code><fix>example.com,~foo.example.com##*.sponsor</fix></code> makes the rule apply on "example.com" domain with the exception of "foo.example.com" subdomain.}}</p>
+  <p>{{s90 If a domain name is preceded with "~", the rule will <strong>not</strong> be applied on pages from this domain (requires Adblock Plus 1.1 or higher). For example, <code><fix>~example.com##.sponsor</fix></code> will be be applied on pages from any domain but "example.com" and <code><fix>example.com,~foo.example.com##.sponsor</fix></code> makes the rule apply on "example.com" domain with the exception of "foo.example.com" subdomain.}}</p>
 
   <p>{{s91 <em>Note</em>: Due to the way how element hiding is implemented, you really can only limit it to full domain names. You cannot use any other part of the address and you cannot use <code><fix>domain</fix></code> as a replacement for <code><fix>domain.example,domain.test</fix></code>.}}</p>
 
@@ -230,7 +230,7 @@ Only here you get the best tofu!
 
   <h3 id="elemhide_css">{{s95 Advanced selectors}}</h3>
 
-  <p>{{s97 In general, any CSS selector supported by Firefox can be used for element hiding. For example the following rule will hide anything following a div element with class "adheader": <code><fix>##div.adheader + *</fix></code>. For a full list of CSS list see <a href="{{s97-link http://www.w3.org/TR/css3-selectors/}}">W3C CSS specification</a> (note that not all selectors are supported by Firefox yet).}}</p>
+  <p>{{s97 In general, any CSS selector supported by Firefox can be used for element hiding. For example the following rule will hide anything following a div element with class "adheader": <code><fix>##.adheader + *</fix></code>. For a full list of CSS list see <a href="{{s97-link http://www.w3.org/TR/css3-selectors/}}">W3C CSS specification</a> (note that not all selectors are supported by Firefox yet).}} {{advanced-selectors-2 Please keep in mind that browsers are slower to process these selectors than selectors based on <code><fix>class</fix></code> or <code><fix>id</fix></code> attribute only.}}</p>
 
   <p>{{s98 <em>Note</em>: This functionality is for advanced users only, you should be comfortable with CSS selectors to use it. Adblock Plus won't be able to check the syntax of the selector you are adding, if you use invalid CSS syntax you might break other (valid) rules you have. Check JavaScript Console for CSS errors.}}</p>
 
@@ -262,11 +262,11 @@ Only here you get the best tofu!
 <p>
   {{s100 Exception rules can disable existing rules on particular domains.}} {{s101 These are mostly
   useful to filter subscription authors who are extending another filter subscription that they
-  cannot change.}} {{s102 For example, the rule <code><fix>##div.textad</fix></code> can be
+  cannot change.}} {{s102 For example, the rule <code><fix>##.textad</fix></code> can be
   disabled on <code><fix>example.com</fix></code> using the exception rule
-  <code><fix>example.com#@#div.textad</fix></code>.}} {{s103 The combination of these two
+  <code><fix>example.com#@#.textad</fix></code>.}} {{s103 The combination of these two
   rules has exactly the same effect as the single rule
-  <code><fix>~example.com##div.textad</fix></code>.}} {{s104 It is recommended that you use
+  <code><fix>~example.com##.textad</fix></code>.}} {{s104 It is recommended that you use
   exception rules only when you cannot change an overly general element hiding rule, in all the
   other cases limiting this rule to the necessary domains is preferable.}}
   {{ exception-rules These exceptions will be applied to <a href="#elemhide-emulation">advanced pseudo-selector rules</a> as well. }}
@@ -279,7 +279,7 @@ Only here you get the best tofu!
   <h3 id="generic-specific">{{generic-specific-title Generic / Specific filters}}</h3>
 
   <p>{{generic-specific-explanation-p1 With the <code><fix>$generichide</fix></code> and <code><fix>$genericblock</fix></code> filter options the distinction between generic and specific filters becomes important.}}</p>
-  <p>{{generic-specific-explanation-p2 We classify a filter to be <strong>specific</strong> if it matches one or more domains or matches a sitekey. If a filter has no domains specified (or only domain exceptions) and no sitekey then it counts as <strong>generic</strong>. For example, <code><fix>example.com##div.textad</fix></code> is a specific filter, whereas both <code><fix>##div.textad</fix></code> and <code><fix>~example.com##div.textad</fix></code> are generic.}}</p>
+  <p>{{generic-specific-explanation-p2 We classify a filter to be <strong>specific</strong> if it matches one or more domains or matches a sitekey. If a filter has no domains specified (or only domain exceptions) and no sitekey then it counts as <strong>generic</strong>. For example, <code><fix>example.com##.textad</fix></code> is a specific filter, whereas both <code><fix>##.textad</fix></code> and <code><fix>~example.com##.textad</fix></code> are generic.}}</p>
   <p>{{generic-specific-explanation-p3 Note that with blocking rules the domain must be specified under the $domain option for them to be considered specific. For example, <code><fix>||example.com^</fix></code> is considered generic whereas <code><fix>*/ads/*$domain=example.com</fix></code> is site-specific.}}</p>
 
   <h2 id="sitekey_server">{{s107 Implementing a sitekey on the server}}</h2>
