@@ -1,556 +1,333 @@
 {
-  "adblock-browser-android-heading": {
-    "description": "heading",
-    "message": "Adblock Browser für Android"
-  },
-  "adblock-browser-android-paragraph-1": {
-    "message": "Adblock Browser für Android basiert auf dem Firefox-Browser von Mozilla. Manche Datenerhebungen und -verarbeitungen in Verbindung mit Adblock Browser für Android unterliegen der <a>Datenschutzrichtlinie von Mozilla</a>. Beachte bitte Adblock Browser verbindet sich automatisch mit Mozilla und seinen Dienstanbietern, um Sicherheit, Daten und andere Funktionen (<a>Firefox-Datenschutzhinweis</a>) bereitzustellen. Wenn du es anfragst, verbindet sich Adblock Browser ebenfalls mit Mozilla, um dir Funktionen wie Standortdienste (<a>Firefox-Datenschutzhinweis</a>) bereitzustellen."
-  },
-  "adblock-browser-android-paragraph-2": {
-    "message": "Abweichend von der Beschreibung im <a>Mozilla-Datenschutzhinweis</a> werden Firefox-Aktualisierungen unter der Kontrolle von eyeo bereitgestellt. Einige Funktionen, wie der Firefox-Statusbericht, Absturzberichte und Add-ons sind deaktiviert."
-  },
-  "adblock-browser-ios-heading": {
-    "description": "heading",
-    "message": "Adblock Browser für iOS"
-  },
-  "adblock-plus-heading": {
-    "description": "heading",
-    "message": "Adblock Plus-Erweiterungen"
-  },
-  "adblock-plus-paragraph": {
+  "ABP-extensions-intro": {
+    "description": "abp extensions intro\n{1}: Adblock Plus",
     "message": "Wenn du die Adblock Plus-Browser-Erweiterung verwendest, erheben und verarbeiten wir die folgenden Daten:"
   },
-  "auto-collected-info-heading": {
-    "description": "heading",
-    "message": "Automatisch erhobene Informationen"
+  "abb-android-paragraph": {
+    "description": "<fix>Adblock Browser</fix> for <fix>Android</fix> intro paragraph\n{1}: Adblock Browser, {2}: Android, {3}: Mozilla's, {4}: Firefox, {5}: Adblock Browser, {6}: Android, {7}: Mozilla's, {8}: Adblock Browser, {9}: Mozilla, {10}: Firefox, {11}: Adblock Browser, {12}: Mozilla, {13}: Firefox",
+    "message": "Adblock Browser für Android basiert auf dem Firefox-Browser von Mozilla. Manche Datenerhebungen und -verarbeitungen in Verbindung mit Adblock Browser für Android unterliegen der <a>Datenschutzrichtlinie von Mozilla</a>. Beachte bitte Adblock Browser verbindet sich automatisch mit Mozilla und seinen Dienstanbietern, um Sicherheit, Daten und andere Funktionen (<a>Firefox-Datenschutzhinweis</a>) bereitzustellen. Wenn du es anfragst, verbindet sich Adblock Browser ebenfalls mit Mozilla, um dir Funktionen wie Standortdienste (<a>Firefox-Datenschutzhinweis</a>) bereitzustellen."
   },
-  "blog-comments-heading": {
-    "description": "heading",
-    "message": "Blog-Kommentare"
+  "abb-android-paragraph-2": {
+    "description": "<fix>Adblock Browser</fix> for <fix>Android</fix> last paragraph\n{1}: Mozilla’s, {2}: Firefox, {3}: eyeo's, {4}: Firefox",
+    "message": "Abweichend von der Beschreibung im <a>Firefox-Datenschutzhinweis</a> werden Firefox-Aktualisierungen unter der Kontrolle von eyeo bereitgestellt. Einige Funktionen, wie der Firefox-Statusbericht, Absturzberichte und Add-ons sind deaktiviert."
   },
-  "blog-comments-paragraph": {
-    "message": "Wenn du im Adblock Plus-<a>Blog</a> kommentierst, kannst du optional eine E-Mail-Adresse angeben. Im Gegensatz zu anderen Feldern wird die E-Mail-Adresse niemals anderen Besuchern angezeigt. Sie wird nur verwendet, um den Autor des Kommentars über eventuelle Antworten zu informieren."
+  "abb-android-title": {
+    "description": "title of section\n{1}: Adblock Browser, {2}: Android",
+    "message": "Adblock Browser für Android"
   },
-  "changes-to-policy-heading": {
-    "description": "heading",
-    "message": "Änderungen dieser Datenschutzerklärung"
-  },
-  "changes-to-policy-paragraph": {
-    "description": "{1}: https://adblockplus.org/privacy",
-    "message": "Diese Datenschutzerklärung kann von Zeit zu Zeit geändert werden. Die jeweils aktuelle Version findest du unter: <a>https://adblockplus.org/de/privacy</a>."
-  },
-  "collection-and-processing-heading": {
-    "description": "heading",
-    "message": "Erhebung und Verarbeitung in unseren Produkten"
-  },
-  "collection-processing-websites-heading": {
-    "description": "heading",
-    "message": "Erhebung und Verarbeitung auf unseren Webseiten"
-  },
-  "collection-processing-websites-paragraph": {
-    "message": "Bei der Nutzung unserer Webseiten, wie z.B. AdblockPlus.org und AdblockBrowser.org („Webseiten“) erheben wir, um dir unsere Dienste bereitzustellen sowie aus Sicherheitsgründen, automatisch die folgenden Daten:"
-  },
-  "cookies-heading": {
-    "description": "heading",
-    "message": "Cookies"
-  },
-  "cookies-paragraph": {
-    "message": "Mehrere Bereiche unserer Webseiten verwenden Cookies, um angemeldete Nutzer zu erkennen und Einstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Cookies werden nicht anderweitig genutzt, insbesondere nicht dazu Webseiten-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass als Folge die Effizienz und der Umfang der Dienste von eyeo eingeschränkt sein könnten."
-  },
-  "crash-data-sent-heading": {
+  "abb-ios-crash-heading": {
     "description": "heading",
     "message": "Während eines Absturzes werden folgende Daten gesendet:"
   },
-  "crash-data-sent-item-1": {
-    "description": "list item",
-    "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS"
+  "abb-ios-crash-item-1": {
+    "description": "list item\n{1}: Adblock Browser, {2}: iOS",
+    "message": "Paketkennung, Paketversion und Kurzpaket-Versionszeichenfolge von Adblock Browser für iOS"
   },
-  "crash-data-sent-item-2": {
+  "abb-ios-crash-item-2": {
     "description": "list item",
     "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems"
   },
-  "crash-data-sent-item-3": {
+  "abb-ios-crash-item-3": {
     "description": "list item",
     "message": "Zeitstempel vom Zeitpunkt des Absturzes"
   },
-  "crash-data-sent-item-4": {
+  "abb-ios-crash-item-4": {
     "description": "list item",
     "message": "Eine generierte UUID zur Verhinderung von doppelten Absturzberichten"
   },
-  "crash-data-sent-item-5": {
+  "abb-ios-crash-item-5": {
     "description": "list item",
-    "message": "Bei einem Fehler, der Klartext-Klassenname und die Fehlermeldung"
+    "message": "Bei einem Fehler der Klartext-Klassenname und die Fehlermeldung"
   },
-  "crash-data-sent-item-6": {
+  "abb-ios-crash-item-6": {
     "description": "list item",
     "message": "Low-Level-Absturzdaten wie Befehlszeiger, Methoden- oder Funktionsnamen, Signaldaten, Zeigerregister und Informationen über die geladenen Binärdateiabbilder"
   },
-  "crash-error-reporter-heading": {
-    "description": "heading",
-    "message": "Absturz- und Fehlermeldung"
-  },
-  "crash-error-reporter-paragraph": {
+  "abb-ios-crash-reporter": {
+    "description": "crash reporter first paragraph\n{1}: Adblock Browser, {2}: iOS, {3}: eyeo, {4}: HockeyApp, {5}: HockeyApp",
     "message": "Bei einem unerwarteten Absturz oder Fehler sammelt Adblock Browser für iOS alle für eine Analyse relevanten Daten, um die Ursache der Störung zu ermitteln, und überträgt sie an das <a>HockeyApp-Konto</a> von eyeo. Die Daten dienen ausschließlich der individuellen Fehlerbehebung (sowie der Identifizierung von allgemeinen Defekten, die zu unerwarteten Abstürzen oder Fehlern führen) und werden niemals mit Dritten, sondern nur mit HockeyApp geteilt."
   },
-  "data-processed-heading": {
-    "description": "heading",
-    "message": "Welche Arten personenbezogener Daten verarbeiten wir?"
+  "abb-ios-crash-reporter-data-collection": {
+    "description": "crash reporter data collection paragraph\n{1}: Adblock Browser, {2}: iOS",
+    "message": "Diese Daten werden nur erfasst, wenn die Anwendung abstürzt oder einen Fehler generiert. Des Weiteren bittet Adblock Browser für iOS explizit um die Erlaubnis, die gesammelten Informationen nach einem Absturz oder Fehler zu senden. Alle auf unseren Servern gespeicherten Berichte werden nach 30 Tagen gelöscht."
   },
-  "data-processed-item-1": {
-    "description": "list item",
-    "message": "Während du unsere Produkte (Browsererweiterung oder Adblock Browser) nutzt:"
+  "abb-ios-crash-reporter-hockeyapp": {
+    "description": "hockey app paragraph\n{1}: HockeyApps",
+    "message": "Weitere Informationen zur Datenschutzrichtlinie von HockeyApp findest du in den <a>Servicebedingungen</a> sowie der <a>Absturzberichtsdokumentation</a> und der <a>Ereignisberichtsdokumentation</a>."
   },
-  "data-processed-item-10": {
-    "description": "list item",
-    "message": "eyeo erhebt keine Daten. Adblock Browser, der auf Mozilla Firefox basiert, hat Firefox spezifische Funktionalitäten, die Daten an Mozilla senden können."
+  "abb-ios-crash-reporter-title": {
+    "description": "title of section",
+    "message": "Absturz- und Fehlermeldung"
   },
-  "data-processed-item-11": {
-    "description": "list item",
-    "message": "Adblock Browser für iOS:"
-  },
-  "data-processed-item-12": {
-    "description": "list item",
-    "message": "Absturz- und Fehlermeldungsdaten:"
-  },
-  "data-processed-item-13": {
-    "description": "list item",
-    "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS"
-  },
-  "data-processed-item-14": {
-    "description": "list item",
-    "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems"
-  },
-  "data-processed-item-15": {
-    "description": "list item",
-    "message": "Zeitstempel des Absturzes"
-  },
-  "data-processed-item-16": {
-    "description": "list item",
-    "message": "UUID"
-  },
-  "data-processed-item-17": {
-    "description": "list item",
-    "message": "Klartext-Klassenname und die Fehlermeldung"
-  },
-  "data-processed-item-18": {
-    "description": "list item",
-    "message": "Befehlszeiger, Methoden- oder Funktionsnamen, Signaldaten, Zeigerregister und Informationen über die geladenen Binärdateiabbilder"
-  },
-  "data-processed-item-19": {
-    "description": "list item",
-    "message": "Zeichenfolge/Funktionsname, die/der den Fehler identifiziert"
-  },
-  "data-processed-item-2": {
-    "description": "list item",
-    "message": "Erweiterungsupdates, Abonnement-Downloads, Notfallbenachrichtungen:"
-  },
-  "data-processed-item-20": {
-    "description": "list item",
-    "message": "Während du unsere Webseiten nutzt:"
-  },
-  "data-processed-item-21": {
-    "description": "list item",
-    "message": "Automatisch:"
-  },
-  "data-processed-item-22": {
-    "description": "list item",
-    "message": "IP-Adresse (separat gespeichert),"
-  },
-  "data-processed-item-23": {
-    "description": "list item",
-    "message": "die Uhrzeit der Anfragestellung,"
-  },
-  "data-processed-item-24": {
-    "description": "list item",
-    "message": "die aufgerufene Internetadresse,"
-  },
-  "data-processed-item-25": {
-    "description": "list item",
-    "message": "die Browser-Kennung"
-  },
-  "data-processed-item-26": {
-    "description": "list item",
-    "message": "die verweisende Seite"
-  },
-  "data-processed-item-27": {
-    "description": "list item",
-    "message": "Freiwillig:"
-  },
-  "data-processed-item-28": {
-    "description": "list item",
-    "message": "Forum-Registrierungsdaten"
-  },
-  "data-processed-item-29": {
-    "description": "list item",
-    "message": "E-Mail-Adresse"
-  },
-  "data-processed-item-3": {
-    "description": "list item",
-    "message": "Browser-Version"
-  },
-  "data-processed-item-30": {
-    "description": "list item",
-    "message": "Daten, die du in Kommentaren zur Verfügung stellst"
-  },
-  "data-processed-item-31": {
-    "description": "list item",
-    "message": "Feedback und Filterdaten."
-  },
-  "data-processed-item-4": {
-    "description": "list item",
-    "message": "Version der Erweiterung"
-  },
-  "data-processed-item-5": {
-    "description": "list item",
-    "message": "Betriebssystem"
-  },
-  "data-processed-item-6": {
-    "description": "list item",
-    "message": "Datum des letzten Updates"
-  },
-  "data-processed-item-7": {
-    "description": "list item",
-    "message": "IP-Adresse"
-  },
-  "data-processed-item-8": {
-    "description": "list item",
-    "message": "Bei manuell von dir übermittelten Meldungen zu Problemen zusätzlich: Adresse der Webseite mit dem Fehler, blockierbare Elemente auf der Webseite, angewandte Filter, aktive Abonnements"
-  },
-  "data-processed-item-9": {
-    "description": "list item",
-    "message": "Adblock Browser für Android"
-  },
-  "data-retention-heading": {
-    "description": "heading",
-    "message": "Datenaufbewahrung"
-  },
-  "data-retention-paragraph": {
-    "message": "Adblock Plus speichert einige Daten im <a>Browser-Profil</a> auf deinem Computer. Adblock Plus überträgt diese Daten niemals an andere Server, jedoch könnten andere Erweiterungen und Dienste wie <a>Firefox Sync</a> dies tun. Der Großteil der Daten (deine Einstellungen, Filterabonnements und benutzerdefinierte Filter) sind datenschutzrechtlich unproblematisch. Jedoch könnten die Filtertrefferstatistik und aktuelle Problemberichte verwendet werden, um deinen Browserverlauf zu rekonstruieren. Adblock Plus behandelt diese Informationen genauso, wie Verlaufsdaten vom Browser behandelt werden. Diese Daten werden also nicht gespeichert, wenn du den <a>privaten Browsing-Modus</a> verwendest. Auch werden sie entfernt, wenn du deinen Browserverlauf löschst."
-  },
-  "deletion-of-data-heading": {
-    "description": "heading",
-    "message": "Löschung deiner Daten"
-  },
-  "deletion-of-data-paragraph": {
-    "message": "Wenn wir deine personenbezogenen Daten nicht mehr für die zuvor aufgeführten Zwecke benötigen, werden wir sie löschen. Dadurch stehen sie für keine weitere Verwendung mehr zur Verfügung. Beachte bitte, dass wir Daten blockieren, die für rechtliche Zwecke aufbewahrt werden müssen."
-  },
-  "email-collection-heading": {
-    "description": "heading",
-    "message": "Erhebung von E-Mail-Adressen"
-  },
-  "email-collection-paragraph": {
-    "message": "Einige Webseiten von eyeo stellen Produktkampagnen bereit, bei denen die Erhebung der E-Mail-Adresse erforderlich ist. So kannst du z.B. einen Link per E-Mail anfordern, um den Adblock Browser auf deinem Mobilgerät zu installieren. Wir nutzen keine Drittanbieter, um diese Kampagnen zu verwalten. Stattdessen werden die von dir übertragenen Daten intern verarbeitet (d.h. sie werden in eine E-Mail umgewandelt oder zum Senden der E-Mail verwendet). Des Weiteren speichern wir deine E-Mail-Adresse nur, wenn dies explizit für die Durchführung der entsprechenden Kampagne notwendig ist (d.h. E-Mail-Registrierungen für einen Newsletter und die Registrierung zur Benachrichtigung über einen Produktstart). In den Fällen, in denen wir deine E-Mail-Adresse speichern, erfolgt dies nur für die Dauer der Kampagne (d.h. bis du über einen Produktstart informiert wurdest). Wir werden deine E-Mail-Adresse niemals weitergeben oder verkaufen oder irgendwelche anderen erhobenen Informationen an Dritte weitergeben."
-  },
-  "emergency-notification-heading": {
-    "description": "heading",
-    "message": "Notfallbenachrichtigung"
-  },
-  "emergency-notification-paragraph": {
-    "message": "Adblock Plus enthält einen Mechanismus für Notfallbenachrichtigungen, mit dem Nutzer über wichtige Probleme in Bezug auf ihre Adblock Plus-Installation informiert werden können. Diese Funktion erfordert, dass alle Adblock Plus-Installationen regelmäßig eine Adresse in der AdblockPlus.org-Domain abfragen, um die Liste der aktiven Benachrichtigungen abzurufen. Diese Abfrage macht deine IP-Adresse für die Webseite sichtbar und verschickt ebenfalls allgemeine Informationen wie deine Adblock Plus-Version, die Bezeichnung deines Browsers inklusive der Browser-Version sowie die Anzahl der vorherigen Downloads von Adblock Plus, wobei nach dem 4. Download keine weitere Zählung erfolgt und lediglich “4+” angezeigt wird. Mithilfe dieser Daten können verschiedene Benachrichtigungen für unterschiedliche Clients erstellt werden. Sie unterliegen dieser <a>Datenschutzerklärung</a>."
-  },
-  "error-data-sent-heading": {
+  "abb-ios-error-heading": {
     "description": "heading",
     "message": "Während eines Fehlers werden folgende Daten gesendet:"
   },
-  "error-data-sent-item-1": {
-    "description": "list item",
-    "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS"
+  "abb-ios-error-item-1": {
+    "description": "list item\n{1}: Adblock Browser, {2}: iOS",
+    "message": "Paketkennung, Paketversion und Kurzpaket-Versionszeichenfolge von Adblock Browser für iOS"
   },
-  "error-data-sent-item-2": {
+  "abb-ios-error-item-2": {
     "description": "list item",
     "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems"
   },
-  "error-data-sent-item-3": {
+  "abb-ios-error-item-3": {
     "description": "list item",
     "message": "Zeitstempel vom Zeitpunkt des Fehlers"
   },
-  "error-data-sent-item-4": {
+  "abb-ios-error-item-4": {
     "description": "list item",
     "message": "Eine generierte UUID zur Trennung von Fehlerberichten"
   },
-  "error-data-sent-item-5": {
+  "abb-ios-error-item-5": {
     "description": "list item",
     "message": "Eine Zeichenfolge/ein Funktionsname, die/der den Fehler identifiziert"
   },
-  "error-data-sent-paragraph-1": {
-    "message": "Diese Daten werden nur erfasst, wenn die Anwendung abstürzt oder einen Fehler generiert. Des Weiteren bittet Adblock Browser für iOS explizit um die Erlaubnis, die gesammelten Informationen nach einem Absturz oder Fehler zu senden. Alle auf unseren Servern gespeicherten Berichte werden nach 30 Tagen gelöscht."
+  "abb-ios-title": {
+    "description": "title of section\n{1}: Adblock Browser, {2}: iOS",
+    "message": "Adblock Browser für iOS"
   },
-  "error-data-sent-paragraph-2": {
-    "message": "Weitere Informationen zur Datenschutzrichtlinie von HockeyApp findest du in den <a>Servicebedingungen</a> sowie der <a>Absturzberichtsdokumentation</a> und der <a>Ereignisberichtsdokumentation</a>."
+  "abp-data-retention-paragraph": {
+    "description": "data retention paragraph\n{1}: Adblock Plus, {2}: Firefox, {3}: Adblock Plus, {4}: Firefox Sync, {5}: Adblock Plus",
+    "message": "Adblock Plus speichert einige Daten im <a>Browser-Profil</a> auf deinem Computer. Adblock Plus überträgt diese Daten niemals an andere Server, jedoch könnten andere Erweiterungen und Dienste wie <a>Firefox Sync</a> dies tun. Der Großteil der Daten (deine Einstellungen, Filterabonnements und benutzerdefinierte Filter) sind datenschutzrechtlich unproblematisch. Jedoch könnten die Filtertrefferstatistik und aktuelle Problemberichte verwendet werden, um deinen Browserverlauf zu rekonstruieren. Adblock Plus behandelt diese Informationen genauso, wie Verlaufsdaten vom Browser behandelt werden. Diese Daten werden also nicht gespeichert, wenn du den <a>privaten Browsing-Modus</a> verwendest. Auch werden sie entfernt, wenn du deinen Browserverlauf löschst."
   },
-  "forum-registration-heading": {
-    "description": "heading",
-    "message": "Registrierung im Forum"
+  "abp-data-title": {
+    "description": "title of section",
+    "message": "Datenaufbewahrung"
   },
-  "forum-registration-item-1": {
-    "description": "list item",
-    "message": "Passwörter werden mittels Einweg-Verschlüsselung verschlüsselt, bevor sie auf dem Server gespeichert werden."
+  "abp-extensions-title": {
+    "description": "title of section\n{1}: Adblock Plus",
+    "message": "Erhebung und Verarbeitung in Adblock Plus-Erweiterung"
   },
-  "forum-registration-item-2": {
-    "description": "list item",
-    "message": "E-Mail-Adressen werden nur im öffentlichen Profil angezeigt, wenn dies ausdrücklich bestätigt wurde. Standardmäßig werden E-Mail-Adressen nur zum Versenden von Benachrichtigungen verwendet, die du abonniert hast."
+  "abp-issue-reporter-last-paragraph": {
+    "description": "issue reporter last paragraph\n{1}: EasyList, {2}: eyeo",
+    "message": "Der Zugriff auf die verarbeiteten Berichte kann nur durch eine natürliche Person erfolgen, die dessen eindeutige Adresse kennt. Diese Adressen sind nur den Betreibern der Filterabonnements bekannt, die im Bericht aufgeführt sind, sowie EasyList-Autoren, die nicht bei eyeo angestellt sind. Das heißt, dass es sehr unwahrscheinlich ist, dass die Adressen von anderen gefunden werden, sofern diese nicht weitergegeben wird. Alle Berichte und ihre dazugehörigen Daten werden automatisch nach 30 Tagen gelöscht."
   },
-  "forum-registration-paragraph-1": {
-    "message": "Wir verwenden personenbezogene Daten, die du bei der Registrierung im Forum eingegeben hast, um ein Nutzerprofil zu erstellen. Dieses Profil ist für andere Forumsbesucher sichtbar, damit Nutzer die jeweiligen Forumsbeiträge mit einer bestimmten Person in Verbindung bringen können."
-  },
-  "forum-registration-paragraph-2": {
-    "message": "Passwörter und E-Mail-Adressen sind nicht für andere Forumsbesucher sichtbar."
-  },
-  "forum-registration-paragraph-3": {
-    "message": "<strong>Hinweis:</strong> Für die Teilnahme an Foren ist keine Registrierung erforderlich."
-  },
-  "further-requests-heading": {
-    "description": "heading",
-    "message": "Weitere Anfragen"
-  },
-  "further-requests-paragraph": {
-    "message": "Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispiele dafür sind das Klicken auf einen Dokumentationslink oder der Download der vollständigen Liste der Filterabonnements. Solche Anfragen unterliegen dieser <a>Datenschutzerklärung</a>."
-  },
-  "general-info-heading": {
-    "description": "heading",
-    "message": "Allgemeine Informationen zum Datenschutz"
-  },
-  "general-info-paragraph": {
-    "message": "Die folgenden Informationen gelten für die Erhebung, Verarbeitung und Nutzung personenbezogener Daten im Zusammenhang mit unseren Dienstleistungen, wie beispielsweise der Adblock Plus Browsererweiterung, dem Adblock Browser und auf unseren Webseiten."
-  },
-  "general-notes-heading": {
-    "description": "heading",
-    "message": "Allgemeine Hinweise"
-  },
-  "general-notes-item-1": {
-    "description": "list item & link",
-    "message": "Allgemeine Hinweise"
-  },
-  "general-notes-item-2": {
-    "description": "list item & link",
-    "message": "Wer ist für die Datenverarbeitung verantwortlich?"
-  },
-  "general-notes-item-3": {
-    "description": "list item & link",
-    "message": "Was sind personenbezogene Daten?"
-  },
-  "general-notes-item-4": {
-    "description": "list item & link",
-    "message": "Welche Rechte hast du?"
-  },
-  "general-notes-item-5": {
-    "description": "list item & link",
-    "message": "Löschung deiner Daten"
-  },
-  "general-notes-item-6": {
-    "description": "list item & link",
-    "message": "Änderungen dieser Datenschutzerklärung"
-  },
-  "general-notes-item-7": {
-    "description": "list item & link",
-    "message": "Erhebung und Verarbeitung in unseren Produkten"
-  },
-  "general-notes-paragraph": {
-    "description": "{1}: eyeo",
-    "message": "Dein Schutz und die Vertraulichkeit deiner Daten sind das Wichtigste für uns. Deshalb nehmen wir den Schutz deiner persönlichen Daten sehr ernst. Die Erhebung von Daten hilft uns dabei, dass unsere Produkte und Webseiten besser funktionieren und ermöglicht uns, mit dir zu kommunizieren. Unser allgemeiner Grundsatz ist es, nicht mehr Daten als nötig zu erheben. Diese Daten werden - sofern möglich - anonymisiert und gelöscht, wenn sie nicht mehr benötigt werden. Unsere Datenschutzerklärung informiert dich über bestimmte Daten, den Umfang und den Zweck der Erhebung sowie über die Verwendung von persönlichen Daten durch eyeo bei der Nutzung unserer Produkte und dem Besuch unserer Webseiten. Beachte bitte, dass wir personenbezogene Daten im Einklang mit den deutschen Datenschutzgesetzen erheben und verwenden."
-  },
-  "how-we-collect-heading": {
-    "description": "heading",
-    "message": "Wie erheben wir Daten?"
-  },
-  "isse-reporter-item-1": {
-    "description": "list item",
-    "message": "Ein Webseiten-Screenshot ist eine verkleinerte und farbreduzierte Version der angezeigten Seite. Es ist möglich, sensible Bereiche im Screenshot zu entfernen, bevor der Bericht gesendet wird."
-  },
-  "isse-reporter-item-2": {
-    "description": "list item",
-    "message": "Die E-Mail-Adresse wird nur verwendet, um weitere Informationen anzufragen oder den Nutzer über das Problem auf dem Laufenden zu halten."
-  },
-  "isse-reporter-item-3": {
-    "description": "list item",
-    "message": "Eine Liste der installierten Erweiterungen ist notwendig, um Konflikte mit anderen Erweiterungen zu untersuchen."
-  },
-  "issue-reporter-heading": {
-    "description": "heading",
-    "message": "Problem melden"
-  },
-  "issue-reporter-paragraph-1": {
+  "abp-issue-reporter-paragraph1": {
+    "description": "issue reporter first paragraph\n{1}: Adblock Plus, {2}: Firefox, {3}: AdblockPlus.org, {4}: Adblock Plus",
     "message": "Adblock Plus für Firefox ermöglicht es dir, Problemberichte zu senden, die kurzzeitig in der AdblockPlus.org-Domain gespeichert werden. Diese Berichte enthalten erforderliche Informationen für die Untersuchung des Problems einschließlich der Adblock Plus-Version, der Browser-Version, der Adresse der Webseite, auf der das Problem aufgetreten ist, blockierbare Elemente auf der Webseite, angewandte Filter und aktive Abonnements. Parameterwerte werden aus allen übertragenen Adressen entfernt, um eine versehentliche Weitergabe von privaten Informationen zu vermeiden. Es ist auch möglich, zusätzliche Informationen, die eventuell privater Natur sind, freiwillig bereitzustellen:"
   },
-  "issue-reporter-paragraph-2": {
-    "message": "Der Zugriff auf die verarbeiteten Berichte kann nur durch eine natürliche Person erfolgen, die dessen eindeutige Adresse kennt. Diese Adressen sind nur den Betreibern der Filterabonnements bekannt, die im Bericht aufgeführt sind, sowie EasyList-Autoren, die nicht bei eyeo angestellt sind. Das heißt, dass es sehr unwahrscheinlich ist, dass die Adressen von anderen gefunden werden können, sofern diese nicht weitergegeben werden. Alle Berichte und ihre dazugehörigen Daten werden automatisch nach 30 Tagen gelöscht."
+  "abp-issue-reporter-title": {
+    "description": "title of section",
+    "message": "Problem melden"
   },
-  "list-of-tools": {
-    "description": "preface",
-    "message": "Liste unserer Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden:"
+  "abp-notifications-paragraph": {
+    "description": "emergency notification paragraph\n{1}: Adblock Plus, {2}: Adblock Plus, {3}: Adblock Plus, {4}: AdblockPlus.org, {5}: Adblock Plus, {6}: Adblock Plus",
+    "message": "Adblock Plus enthält einen Mechanismus für Notfallbenachrichtigungen, mit dem Nutzer über wichtige Probleme in Bezug auf ihre Adblock Plus-Installation informiert werden können. Diese Funktion erfordert, dass alle Adblock Plus-Installationen regelmäßig eine Adresse in der AdblockPlus.org-Domain abfragen, um die Liste der aktiven Benachrichtigungen abzurufen. Diese Abfrage macht deine IP-Adresse für die Webseite sichtbar und verschickt ebenfalls allgemeine Informationen wie deine Adblock Plus-Version, die Bezeichnung deines Browsers inklusive der Browser-Version sowie die Anzahl der vorherigen Downloads von Adblock Plus, wobei nach dem 4. Download keine weitere Zählung erfolgt und lediglich “4+” angezeigt wird. Mithilfe dieser Daten können verschiedene Benachrichtigungen für unterschiedliche Clients erstellt werden. Sie unterliegen dieser <a>Datenschutzerklärung</a>."
   },
-  "our-values-heading": {
-    "description": "heading",
-    "message": "Unsere Werte"
+  "abp-notifications-title": {
+    "description": "title of section",
+    "message": "Notfallbenachrichtigung"
   },
-  "our-values-paragraph": {
-    "message": "Wir erheben so wenig Daten wie möglich. Sofern eine anonyme oder pseudonyme Nutzung möglich ist, anonymisieren oder pseudonymisieren wir deine Daten."
-  },
-  "privacy-notice-short-link": {
-    "description": "link to heading",
-    "message": "Datenschutzhinweis (Kurzfassung)"
-  },
-  "privacy-policy-long-heading": {
-    "description": "heading",
-    "message": "Datenschutzerklärung (ausführliche Fassung)"
-  },
-  "privacy-policy-long-link": {
-    "description": "link to heading",
-    "message": "Datenschutzerklärung (ausführliche Fassung)"
-  },
-  "privacy-policy-short-heading": {
-    "description": "heading",
-    "message": "Datenschutzhinweis (Kurzfassung)"
-  },
-  "privacy-policy-short-paragraph": {
-    "message": "Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die Erhebung, Verarbeitung und Nutzung (nachfolgend gemeinsam „Verarbeitung“ genannt) deiner personenbezogenen Daten geben. Bitte lies unsere vollständige <a>Datenschutzerklärung</a> für weitere Informationen zu unseren Verarbeitungsaktivitäten."
-  },
-  "publication-date": {
-    "message": "Mai 2017"
-  },
-  "questions-heading": {
-    "description": "heading",
-    "message": "Fragen?"
-  },
-  "questions-paragraph": {
-    "message": "Schreibe eine E-Mail an unsere <a>Datenschutzbeauftragte</a>."
-  },
-  "stored-website-requests-heading": {
-    "description": "heading",
-    "message": "Gespeicherte Webseitenanfragen"
-  },
-  "stored-website-requests-paragraph": {
-    "message": "Unsere Webseiten speichern deine IP-Adresse, wenn du einen Beitrag in das Forum stellst oder einen Blog-Kommentar hinzufügst. Dadurch können unsere Administratoren effektiv gegen Spam-Inhalte und Sicherheitsverstöße vorgehen. Alle gespeicherten IP-Adressen werden nach 30 Tagen gelöscht."
-  },
-  "subscription-downloads-heading": {
-    "description": "heading",
-    "message": "Abonnement-Downloads"
-  },
-  "subscription-downloads-paragraph-1": {
+  "abp-subscriptions-paragraph": {
+    "description": "subscriptions download paragraph\n{1}: Adblock Plus, {2}: Adblock Plus, {3}: eyeo",
     "message": "Wenn du deiner Adblock Plus-Installation Filterabonnements hinzufügst, wird das Abonnement angewiesen, regelmäßig Aktualisierungen abzurufen. Jede Aktualisierung führt dazu, dass die Anbieter-Webseite deine IP-Adresse und einige allgemeine Informationen wie deine Adblock Plus-Version, die Bezeichnung deines Browsers inklusive der Browser-Version empfängt. Die Verarbeitung dieser Daten wird nicht durch eyeo gesteuert und unterliegt den jeweiligen Datenschutzbestimmungen des entsprechenden Webseite-Anbieters."
   },
-  "subscription-downloads-paragraph-2": {
+  "abp-subscriptions-paragraph-2": {
+    "description": "subscriptions download second paragraph\n{1}: AdblockPlus.org, {2}: Adblock Plus",
     "message": "Des Weiteren gilt, dass wenn ein Abonnement-Download mehrmals hintereinander fehlschlägt, die aktualisierte Adresse der Filterliste von der AdblockPlus.org-Domain angefordert wird. Die übertragenen Daten beinhalten die Adblock Plus-Version, die Abonnementadresse und Informationen über den aufgetretenen Fehler. Diese Daten werden zur Identifizierung von Problemen verwendet, die nicht von Abonnementhaltern gemeldet wurden. Sie unterliegen dieser <a>Datenschutzerklärung</a>."
+  },
+  "abp-subscriptions-title": {
+    "description": "title of section",
+    "message": "Abonnement-Downloads"
+  },
+  "abp-updates-paragraph": {
+    "description": "extension updates paragraph\n{1}: Adblock Plus, {2}: Adblock Plus, {3}: Android, {4}: Internet Explorer, {5}: AdblockPlus.org, {6}: Adblock Plus, {7}: Firefox, {8}: Addons.Mozilla.Org, {9}: Firefox, {10}: Adblock Plus, {11}: Chrome, {12}: Google Web Store, {13}: Google, {14}: Adblock Plus, {15}: Opera, {16}: Opera Add-ons, {17}: Opera, {18}: Adblock Plus, {19}: Safari, {20}: Safari Extensions, {21}: Apple",
+    "message": "Dein Browser prüft regelmäßig nach Aktualisierungen der Erweiterungen einschließlich Adblock Plus. Während einer Prüfung auf Aktualisierungen werden einige allgemeine Informationen (Browser-Version, Erweiterungsversion, Betriebssystem, Datum der letzten Aktualisierung und deine IP-Adresse) übertragen. Aktualisierungen für Adblock Plus für Android und Internet Explorer werden durch die Webseite „AdblockPlus.org“ verarbeitet, und die übertragenen Daten unterliegen der entsprechenden <a>Datenschutzerklärung</a>. Aktualisierungen von Adblock Plus für Firefox werden durch die Webseite „addons.mozilla.org“ verarbeitet und unterliegen der <a>Firefox-Datenschutzrichtlinie</a>. Aktualisierungen von Adblock Plus für Chrome werden durch die Google Web Store-Webseite verarbeitet und unterliegen der <a>Google-Datenschutzrichtlinie</a>. Aktualisierungen von Adblock Plus für Opera werden durch die Opera Add-ons-Webseite verarbeitet und unterliegen der <a>Opera-Datenschutzrichtlinie</a>. Aktualisierungen von Adblock Plus für Safari werden durch die Safari Erweiterungen-Webseite verarbeitet und unterliegen der <a>Apple-Datenschutzrichtlinie</a>."
+  },
+  "abp-updates-title": {
+    "description": "title of section",
+    "message": "Prüfungen auf Erweiterungsupdates"
+  },
+  "abp-website-requests-paragraph": {
+    "description": "website requests paragraph\n{1}: Adblock Plus, {2}: AdblockPlus.org",
+    "message": "Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispiele dafür sind das Klicken auf einen Dokumentationslink oder der Download der vollständigen Liste der Filterabonnements. Solche Anfragen unterliegen dieser <a>Datenschutzerklärung</a>."
+  },
+  "abp-website-requests-title": {
+    "description": "title of section",
+    "message": "Weitere Anfragen"
+  },
+  "blog-comments-paragraph": {
+    "description": "blog comments paragraph\n{1}: Adblock Plus",
+    "message": "Wenn du im <a>Adblock Plus-Blog</a> kommentierst, kannst du optional eine E-Mail-Adresse angeben. Im Gegensatz zu anderen Feldern wird die E-Mail-Adresse niemals anderen Besuchern angezeigt. Sie wird nur verwendet, um den Autor des Kommentars über eventuelle Antworten zu informieren."
+  },
+  "blog-comments-title": {
+    "description": "title of section",
+    "message": "Blog-Kommentare"
+  },
+  "cookies-paragraph": {
+    "description": "cookies paragraph\n{1}: AdblockPlus.org, {2}: eyeo's",
+    "message": "Mehrere Bereiche von AdblockPlus.org verwenden Cookies, um angemeldete Nutzer zu erkennen und Einstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Cookies werden nicht anderweitig genutzt, insbesondere nicht dazu Webseiten-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass als Folge die Effizienz und der Umfang der Dienste von eyeo eingeschränkt sein könnten."
+  },
+  "cookies-title": {
+    "description": "title of section",
+    "message": "Cookies"
+  },
+  "data-deletion-paragraph": {
+    "description": "data deletion paragraph",
+    "message": "Wenn wir deine personenbezogenen Daten nicht mehr für die zuvor aufgeführten Zwecke benötigen, werden wir sie löschen. Dadurch stehen sie für keine weitere Verwendung mehr zur Verfügung. Beachte bitte, dass wir Daten blockieren, die für rechtliche Zwecke aufbewahrt werden müssen."
+  },
+  "data-deletion-title": {
+    "description": "title of section",
+    "message": "Löschung deiner Daten"
+  },
+  "data-processing-paragraph": {
+    "description": "data processing paragraph\n{1}: Adblock Plus",
+    "message": "Verantwortliche Stelle für die Erhebung, Verarbeitung und/oder Verwendung von personenbezogenen Daten in Verbindung mit Adblock Plus ist:"
+  },
+  "data-processing-title": {
+    "description": "title of section",
+    "message": "Wer ist für die Datenverarbeitung verantwortlich?"
+  },
+  "data-questions": {
+    "description": "questions about data processing paragraph\n{1}: privacy@eyeo.com",
+    "message": "Bei Fragen zu deinen personenbezogenen Daten kontaktiere uns bitte unter <a>privacy@eyeo.com</a>"
+  },
+  "date": {
+    "description": "month and year",
+    "message": "Januar 2017"
+  },
+  "email-collection-paragraph": {
+    "description": "email collection paragraph\n{1}: eyeo's, {2}: Adblock Browser",
+    "message": "Einige Webseiten von eyeo stellen Produktkampagnen bereit, bei denen die Erhebung der E-Mail-Adresse erforderlich ist. So kannst du z.B. einen Link per E-Mail anfordern, um den Adblock Browser auf deinem Mobilgerät zu installieren. Wir nutzen keine Drittanbieter, um diese Kampagnen zu verwalten. Stattdessen werden die von dir übertragenen Daten intern verarbeitet (d.h. sie werden in eine E-Mail umgewandelt oder zum Senden der E-Mail verwendet). Des Weiteren speichern wir deine E-Mail-Adresse nur, wenn dies explizit für die Durchführung der entsprechenden Kampagne notwendig ist (d.h. E-Mail-Registrierungen für einen Newsletter und die Registrierung zur Benachrichtigung über einen Produktstart). In den Fällen, in denen wir deine E-Mail-Adresse speichern, erfolgt dies nur für die Dauer der Kampagne (d.h. bis du über einen Produktstart informiert wurdest). Wir werden deine E-Mail-Adresse niemals weitergeben oder verkaufen oder irgendwelche anderen erhobenen Informationen an Dritte weitergeben."
+  },
+  "email-collection-title": {
+    "description": "title of section",
+    "message": "Erhebung von E-Mail-Adressen"
+  },
+  "eyeo-address-line-1": {
+    "description": "eyeo address line 1, company name\n{1}: eyeo GmbH",
+    "message": "eyeo GmbH"
+  },
+  "eyeo-address-line-2": {
+    "description": "eyeo address line 2, street address",
+    "message": "Lichtstraße 25"
+  },
+  "eyeo-address-line-3": {
+    "description": "eyeo address line 3, city",
+    "message": "50825 Köln"
+  },
+  "eyeo-address-line-4": {
+    "description": "eyeo address line 4, country",
+    "message": "Deutschland"
+  },
+  "forum-accounts-last-paragraph": {
+    "description": "forum account registration",
+    "message": "<strong>Hinweis:</strong> Für die Teilnahme an Foren ist keine Registrierung erforderlich."
+  },
+  "forum-accounts-list-1": {
+    "description": "first bullet point",
+    "message": "Passwörter werden in eine Richtung verschlüsselt, bevor sie auf dem Server gespeichert werden."
+  },
+  "forum-accounts-list-2": {
+    "description": "second bullet point",
+    "message": "E-Mail-Adressen werden nur im öffentlichen Profil angezeigt, wenn dies ausdrücklich bestätigt wurde."
+  },
+  "forum-accounts-list-3": {
+    "description": "third bullet point",
+    "message": "Standardmäßig werden E-Mail-Adressen nur zum Versenden von Benachrichtigungen verwendet, die du abonniert hast."
+  },
+  "forum-accounts-paragraph": {
+    "description": "forum accounts intro paragraph",
+    "message": "Wir verwenden personenbezogene Daten, die du bei der Registrierung im Forum eingegeben hast, um ein Nutzerprofil zu erstellen. Dieses Profil ist für andere Forumsbesucher sichtbar, damit Nutzer die jeweiligen Forumsbeiträge mit einer bestimmten Person in Verbindung bringen können."
+  },
+  "forum-accounts-paragraph-2": {
+    "description": "passwords and email",
+    "message": "Passwörter und E-Mail-Adressen sind nicht für andere Forumsbesucher sichtbar."
+  },
+  "forum-accounts-title": {
+    "description": "title of section",
+    "message": "Registrierung im Forum"
+  },
+  "general-notes-paragraph": {
+    "description": "general notes paragraph\n{1}: eyeo",
+    "message": "Dein Schutz und die Vertraulichkeit deiner Daten sind das Wichtigste für uns. Deshalb nehmen wir den Schutz deiner persönlichen Daten sehr ernst. Die Erhebung von Daten hilft uns dabei, dass unsere Produkte und Webseiten besser funktionieren und ermöglicht uns, mit dir zu kommunizieren. Unser allgemeiner Grundsatz ist es, nicht mehr Daten als nötig zu erheben. Diese Daten werden - sofern möglich - anonymisiert und gelöscht, wenn sie nicht mehr benötigt werden. Unsere Datenschutzerklärung informiert dich über bestimmte Daten, den Umfang und den Zweck der Erhebung sowie über die Verwendung von persönlichen Daten durch eyeo bei der Nutzung unserer Produkte und dem Besuch unserer Webseiten. Beachte bitte, dass wir personenbezogene Daten im Einklang mit den deutschen Datenschutzgesetzen erheben und verwenden."
+  },
+  "general-notes-title": {
+    "description": "title of section",
+    "message": "Allgemeine Hinweise"
+  },
+  "ips-paragraph": {
+    "description": "stored IP address paragraph\n{1}: AdblockPlus.org",
+    "message": "AdblockPlus.org speichert deine IP-Adresse, wenn du einen Beitrag in das Forum stellst oder einen Blog-Kommentar hinzufügst. Dadurch können unsere Administratoren effektiv gegen Spam-Inhalte und Sicherheitsverstöße vorgehen. Alle gespeicherten IP-Adressen werden nach 30 Tagen gelöscht."
+  },
+  "ips-title": {
+    "description": "title of section",
+    "message": "Gespeicherte IP-Adressen"
+  },
+  "issue-reporter-list-1": {
+    "description": "first bullet point",
+    "message": "Ein Webseiten-Screenshot ist eine verkleinerte und farbreduzierte Version der angezeigten Seite. Es ist möglich, sensible Bereiche im Screenshot zu entfernen, bevor der Bericht gesendet wird."
+  },
+  "issue-reporter-list-2": {
+    "description": "second bullet point",
+    "message": "Die E-Mail-Adresse wird nur verwendet, um weitere Informationen anzufragen oder den Nutzer über das Problem auf dem Laufenden zu halten."
+  },
+  "issue-reporter-list-3": {
+    "description": "third bullet point",
+    "message": "Eine Liste der installierten Erweiterungen ist notwendig, um Konflikte mit anderen Erweiterungen zu untersuchen."
+  },
+  "logs-paragraph": {
+    "description": "logs paragraph\n{1}: AdblockPlus.org, {2}: eyeo",
+    "message": "Alle Anfragen auf AdblockPlus.org werden in Webseiten-Protokollen erfasst. Zu den gespeicherten Daten gehören IP-Adresse (allein zum Zweck der IT-Sicherheit und nur durch das IT-Sicherheitsteam von eyeo einsehbar), die Uhrzeit der Anfragestellung, die aufgerufene Internetadresse, die Browser-Kennung und die verweisende Seite. Diese Daten (die IP-Adresse nur in aggregierter Form durch Hashing mithilfe eines sich täglich änderenden Zufallswerts) werden verwendet, um Nutzungsstatistiken zu erstellen und potenzielle Sicherheitsprobleme sowie Spam im Forum und Blog zu untersuchen. Detaillierte Protokolle werden für einen Zeitraum von 30 Tagen aufbewahrt. Anschließend verbleiben nur aggregierte Nutzungsdaten, die mit keinem Nutzer in Verbindung gebracht werden können. Alles andere wird gelöscht."
+  },
+  "logs-title": {
+    "description": "title of section",
+    "message": "Webseiten-Protokolle"
+  },
+  "personal-data-paragraph": {
+    "description": "personal data paragraph",
+    "message": "Der Zweck des Datenschutzes ist der Schutz von personenbezogenen Daten. Personenbezogene Daten sind Informationen in Bezug auf eine identifizierte oder identifizierbare natürliche Person („betroffene Person“). Eine identifizierbare natürliche Person kann direkt oder indirekt identifiziert werden, insbesondere durch Verweis auf einen Identifikator wie einen Namen, eine Identifikationsnummer, Standortdaten, eine Online-Kennung bzw. eine oder mehrere Aspekte der physikalischen, physiologischen, mentalen, ökonomischen, kulturellen oder sozialen Identität dieser natürlichen Person."
+  },
+  "personal-data-paragraph-2": {
+    "description": "personal data paragraph 2",
+    "message": "Zu diesen Informationen gehören beispielsweise Details wie Name und E-Mail-Adresse, jedoch auch Spitznamen und Informationen in deinen Forumsbeiträgen."
+  },
+  "personal-data-title": {
+    "description": "title of section",
+    "message": "Was sind personenbezogene Daten?"
+  },
+  "privacy-policy-changes-paragraph": {
+    "description": "privacy policy changes paragraph\n{1}: https://adblockplus.org/privacy",
+    "message": "Diese Datenschutzerklärung kann von Zeit zu Zeit geändert werden. Die jeweils aktuelle Version findest du unter: <a>https://adblockplus.org/de/privacy</a>."
+  },
+  "privacy-policy-changes-title": {
+    "description": "title of section",
+    "message": "Änderungen dieser Datenschutzerklärung"
   },
   "title": {
     "message": "Datenschutzerklärung"
   },
-  "tools-item-1": {
-    "description": "list item",
-    "message": "In unseren Produkten:"
+  "uninstallation-content": {
+    "description": "uninstall paragraph\n{1}: Adblock Plus",
+    "message": "Nach der Deinstallation von Adblock Plus wirst du möglicherweise auf eine Webseite geführt, auf der um dein Feedback gebeten wird. Die Webseite speichert anonym einige anwendungs- und plattformbezogene Daten. Wenn du dich entscheidest, Feedback zu geben, wird dieses ebenfalls anonym gespeichert."
   },
-  "tools-item-2": {
-    "description": "list item",
-    "message": "Update Prüfungen"
+  "uninstallation-title": {
+    "description": "title of section",
+    "message": "Feedbackseite zur Deinstallation"
   },
-  "tools-item-3": {
-    "description": "list item",
-    "message": "Abonnement-Downloads"
+  "voluntary-information-paragraph": {
+    "description": "voluntary information intro paragraph\n{1}: AdblockPlus.org",
+    "message": "Das Forum und der Blog von AdblockPlus.org sind öffentlich für alle Besucher zugänglich. Wenn du einen Beitrag oder ein Kommentar schreibst, erheben und verarbeiten wir personenbezogenen Daten wie folgt:"
   },
-  "tools-item-4": {
-    "description": "list item",
-    "message": "Das Senden von Problemmeldungen"
-  },
-  "tools-item-5": {
-    "description": "list item",
-    "message": "Prüfen von Notfallbenachrichtigungen"
-  },
-  "tools-item-6": {
-    "description": "list item",
-    "message": "Auf unseren Webseiten:"
-  },
-  "tools-item-7": {
-    "description": "list item",
-    "message": "Cookies"
-  },
-  "tools-item-8": {
-    "description": "list item",
-    "message": "Webseiten-Protokolle"
-  },
-  "tools-item-9": {
-    "description": "list item",
-    "message": "Daten, wie dein Name und/oder deine E-Mail-Adresse, wenn du diese an uns während der Nutzung des Forums oder Blogs oder beim manuellen Teilen eines hinzugefügten Filters senden solltest"
-  },
-  "update-checks-heading": {
-    "description": "heading",
-    "message": "Prüfungen auf Erweiterungsupdates"
-  },
-  "update-checks-paragraph": {
-    "message": "Dein Browser prüft regelmäßig nach Aktualisierungen der Erweiterungen einschließlich Adblock Plus. Während einer Prüfung auf Aktualisierungen werden einige allgemeine Informationen (Browser-Version, Erweiterungsversion, Betriebssystem, Datum der letzten Aktualisierung und deine IP-Adresse) übertragen. Aktualisierungen für Adblock Plus für Android und Internet Explorer werden durch die Webseite „AdblockPlus.org“ verarbeitet, und die übertragenen Daten unterliegen der entsprechenden <a>Datenschutzerklärung</a>. Aktualisierungen von Adblock Plus für Firefox werden durch die Webseite „addons.mozilla.org“ verarbeitet und unterliegen der <a>Firefox-Datenschutzrichtlinie</a>. Aktualisierungen von Adblock Plus für Chrome werden durch die Google Web Store-Webseite verarbeitet und unterliegen der <a>Google-Datenschutzrichtlinie</a>. Aktualisierungen von Adblock Plus für Opera werden durch die Opera Add-ons-Webseite verarbeitet und unterliegen der <a>Opera-Datenschutzrichtlinie</a>. Aktualisierungen von Adblock Plus für Safari werden durch die Safari Erweiterungen-Webseite verarbeitet und unterliegen der <a>Apple-Datenschutzrichtlinie</a>."
-  },
-  "volentary-info-heading": {
-    "description": "heading",
+  "voluntary-information-title": {
+    "description": "title of section",
     "message": "Freiwillig zur Verfügung gestellte Informationen"
   },
-  "voluntary-info-paragraph": {
-    "message": "Das <a>Forum</a> und der <a>Blog</a> von AdblockPlus.org sind öffentlich für alle Besucher zugänglich. Wenn du einen Beitrag oder ein Kommentar schreibst, erheben und verarbeiten wir personenbezogenen Daten wie folgt:"
+  "website-paragraph": {
+    "description": "website intro\n{1}: AdblockPlus.org",
+    "message": "Bei der Nutzung von AdblockPlus.org erheben wir aus Sicherheitsgründen und um dir unsere Dienste bereitzustellen automatisch die folgenden Daten:"
   },
-  "website-logs-heading": {
-    "description": "heading",
-    "message": "Webseiten-Protokolle"
+  "website-title": {
+    "description": "title of section\n{1}: AdblockPlus.org",
+    "message": "Erhebung und Verarbeitung auf AdblockPlus.org"
   },
-  "website-logs-paragraph": {
-    "message": "Alle Anfragen auf unseren Webseiten werden in Webseiten-Protokollen erfasst. Zu den gespeicherten Daten gehören IP-Adresse (allein zum Zweck der IT-Sicherheit und nur durch das IT-Sicherheitsteam von eyeo einsehbar), die Uhrzeit der Anfragestellung, die aufgerufene Internetadresse, die Browser-Kennung und die verweisende Seite. Diese Daten (die IP-Adresse nur in aggregierter Form durch Hashing mithilfe eines sich täglich änderenden Zufallswerts) werden verwendet, um Nutzungsstatistiken zu erstellen und potenzielle Sicherheitsprobleme sowie Spam im Forum und Blog zu untersuchen. Detaillierte Protokolle werden für einen Zeitraum von 30 Tagen aufbewahrt. Anschließend verbleiben nur aggregierte Nutzungsdaten, die mit keinem Nutzer in Verbindung gebracht werden können. Alles andere wird gelöscht."
-  },
-  "what-is-personal-heading": {
-    "description": "heading",
-    "message": "Was sind personenbezogene Daten?"
-  },
-  "what-is-personal-paragraph-1": {
-    "message": "Der Zweck des Datenschutzes ist der Schutz von personenbezogenen Daten. Personenbezogene Daten sind Informationen in Bezug auf eine identifizierte oder identifizierbare natürliche Person („betroffene Person“). Eine identifizierbare natürliche Person kann direkt oder indirekt identifiziert werden, insbesondere durch Verweis auf einen Identifikator wie einen Namen, eine Identifikationsnummer, Standortdaten, eine Online-Kennung bzw. eine oder mehrere Aspekte der physikalischen, physiologischen, mentalen, ökonomischen, kulturellen oder sozialen Identität dieser natürlichen Person."
-  },
-  "what-is-personal-paragraph-2": {
-    "message": "Zu diesen Informationen gehören beispielsweise Details wie Name und E-Mail-Adresse, jedoch auch Spitznamen und Informationen in deinen Forumsbeiträgen."
-  },
-  "who-is-responsible-heading": {
-    "description": "heading",
-    "message": "Wer ist für die Datenverarbeitung verantwortlich?"
-  },
-  "who-is-responsible-paragraph-1": {
-    "description": "{1}: Adblock Plus",
-    "message": "Verantwortliche Stelle für die Erhebung, Verarbeitung und/oder Verwendung von personenbezogenen Daten in Verbindung mit Adblock Plus ist:"
-  },
-  "who-is-responsible-paragraph-2": {
-    "message": "Bei Fragen zu deinen personenbezogenen Daten schreib eine E-Mail an unsere <a>Datenschutzbeauftragte</a>."
-  },
-  "why-we-collect-heading": {
-    "description": "heading",
-    "message": "Warum müssen wir deine Daten erheben?"
-  },
-  "why-we-collect-item-1": {
-    "description": "list item",
-    "message": "um Dienstleistungen an dich zu erbringen"
-  },
-  "why-we-collect-item-2": {
-    "description": "list item",
-    "message": "um unsere Produkte zu verbessern und zu evaluieren"
-  },
-  "why-we-collect-item-3": {
-    "description": "list item",
-    "message": "um unsere Webseite zu verbessern und Sicherheit auf unserer Webseite zu gewährleisten"
-  },
-  "your-right-item-1": {
-    "description": "list item",
-    "message": "Auskunftsrecht über die bei uns über dich gespeicherten personenbezogenen Daten"
-  },
-  "your-right-item-2": {
-    "description": "list item",
-    "message": "Berichtigung fehlerhafter personenbezogener Daten"
-  },
-  "your-right-item-3": {
-    "description": "list item",
-    "message": "Sperrung und Löschung personenbezogener Daten"
-  },
-  "your-rights-heading": {
-    "description": "heading",
-    "message": "Welche Rechte hast du?"
-  },
-  "your-rights-long-heading": {
-    "description": "heading",
-    "message": "Welche Rechte hast du?"
-  },
-  "your-rights-long-paragraph": {
-    "description": "{1}: privacy@eyeo.com",
+  "your-rights-paragraph": {
+    "description": "your rights paragraph\n{1}: privacy@eyeo.com",
     "message": "Natürlich hast du das Recht, auf Anfrage Informationen über die bei uns über dich gespeicherten personenbezogenen Daten zu erhalten. Du hast außerdem das Recht, falsche, personenbezogene Daten zu korrigieren und bestimmte Details zu blockieren oder zu löschen. Kontaktiere uns dafür per E-Mail unter <a>privacy@eyeo.com</a> oder schreibe an die oben aufgeführte Postanschrift."
+  },
+  "your-rights-title": {
+    "description": "title of section",
+    "message": "Welche Rechte hast du?"
   }
 }

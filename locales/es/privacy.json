@@ -1,4 +1,232 @@
 {
+  "abb-ios": {
+    "message": "Adblock Browser para iOS"
+  },
+  "abb-ios-data-collection": {
+    "message": "En caso de bloqueo inesperado, Adblock Browser para iOS recopila los datos relevantes para analizar la causa del error y los transmite a nuestra cuenta de <a>HockeyApp</a>. Los datos se utilizan únicamente para la solución de problemas individuales (y para identificar defectos generales que conducen a bloqueos inesperados) y nunca se comparten con terceros."
+  },
+  "abb-ios-data-retention": {
+    "message": "Los datos indicados solo se recopilan si se bloquea la aplicación. Además, Adblock Browser para iOS solicita explícitamente la autorización para enviar la información recopilada tras el bloqueo. Todos los informes de bloqueo almacenados en nuestros servidores se eliminan después de 30 días."
+  },
+  "crash-data": {
+    "message": "Durante el bloqueo se envían los siguientes datos:"
+  },
+  "crash-reporter": {
+    "message": "Generador de informes de bloqueo"
+  },
+  "data-bundle-id": {
+    "message": "Identificador de paquetes, versión del paquete e información básica de la versión del paquete de Adblock Browser para iOS."
+  },
+  "data-device-type": {
+    "message": "Tipo de dispositivo, arquitectura de CPU y versión del sistema operativo."
+  },
+  "data-exception": {
+    "message": "En caso de excepción, nombre de clase en texto sin formato y valor del mensaje de la excepción."
+  },
+  "data-low-level-data": {
+    "message": "Los datos del bloqueo de bajo nivel como el puntero de instrucción, nombres de función o método, datos de señal, registro de puntero e información relativa a las imágenes binarias cargadas."
+  },
+  "data-timestamp": {
+    "message": "Marca de tiempo del momento del bloqueo."
+  },
+  "data-uuid": {
+    "message": "Un UUID (identificador único universal) generado para evitar la duplicación de informes de bloqueo."
+  },
+  "hockeyapp-privacy": {
+    "message": "Para obtener más información sobre la política de privacidad de HockeyApp, visite sus <a>Condiciones de servicio</a> y su <a>documentación de datos recopilados</a>."
+  },
+  "s1": {
+    "message": "Notas generales"
+  },
+  "s10": {
+    "message": "Estos datos se guardan para crear estadísticas de uso y también para investigar posibles problemas de seguridad y spam en el foro o el blog."
+  },
+  "s11": {
+    "message": "Los registros detallados se guardan durante un periodo de 30 días; transcurrido ese plazo sólo se mantienen los datos agregados a las estadísticas de uso."
+  },
+  "s12": {
+    "message": "Direcciones IP almacenadas"
+  },
+  "s13": {
+    "message": "Las aplicaciones instaladas en AdblockPlus.org guardan su dirección IP cuando usted crea un mensaje del foro, añade un comentario al blog o traduce una página."
+  },
+  "s14": {
+    "message": "Esto permite que los administradores se ocupen de forma eficaz del spam y de los posibles fallos de seguridad."
+  },
+  "s15": {
+    "message": "Todas las direcciones IP guardadas se eliminan a los 30 días."
+  },
+  "s16": {
+    "message": "Cookies"
+  },
+  "s17": {
+    "message": "Algunas áreas de la página web de Adblock Plus utilizan cookies para reconocer a los usuarios conectados o para guardar predisposiciones."
+  },
+  "s18": {
+    "message": "Estas cookies no se analizan de ninguna otra forma y nunca se utilizan para seguir la pista a los que visitan la página web."
+  },
+  "s19": {
+    "message": "Registro en el foro"
+  },
+  "s2": {
+    "message": "La política de privacidad general del proyecto Adblock Plus consiste en evitar recoger más datos de los necesarios para que la extensión misma y la página web AdblockPlus.org funcionen correctamente."
+  },
+  "s20": {
+    "message": "Los datos introducidos al registrarse en el foro se utilizan para componer el perfil público del usuario, por lo que pueden ser vistos por otros visitantes del foro."
+  },
+  "s21": {
+    "message": "Pero hay dos excepciones:"
+  },
+  "s22": {
+    "message": "Las contraseñas sufren un proceso de cifrado paso único antes de ser guardadas en el servidor."
+  },
+  "s23": {
+    "message": "Esto significa que nadie puede recuperarlas, ni siquiera teniendo acceso a la base de datos."
+  },
+  "s24": {
+    "message": "Las direcciones de correo electrónico sólo se muestran en el perfil público si se acepta expresamente que así sea."
+  },
+  "s25": {
+    "message": "La opción predeterminada es que se utilicen tan sólo para enviar aquellas notificaciones a las que se haya suscrito."
+  },
+  "s26": {
+    "message": "No se exige estar registrado para participar en los foros."
+  },
+  "s27": {
+    "message": "Comentarios en el blog"
+  },
+  "s28": {
+    "message": "Cuando se añade un comentario al <a>blog de Adblock Plus</a> se puede especificar -opcionalmente- una dirección de correo electrónico."
+  },
+  "s29": {
+    "message": "A diferencia de lo que ocurre con los otros campos, nunca se muestra y sólo se utiliza para notificar al autor del comentario en el caso de que haya réplicas al mismo."
+  },
+  "s3": {
+    "message": "Los datos recolectados se convierten en anónimos siempre que sea posible y se eliminan una vez que ya no sean necesarios."
+  },
+  "s30": {
+    "message": "Extensión Adblock Plus"
+  },
+  "s31": {
+    "message": "Comprobaciones de actualización de extensión"
+  },
+  "s33": {
+    "message": "Durante la comprobación de la actualización se envían ciertas informaciones genéricas como la versión del navegador, la versión de la extensión, el sistema operativo y su dirección IP."
+  },
+  "s38": {
+    "message": "Descargas de suscripciones"
+  },
+  "s39": {
+    "message": "Si usted añade suscripciones de filtros a su instalación de Adblock Plus, se le solicitará periódicamente a dichas suscripciones que obtengan actualizaciones."
+  },
+  "s4": {
+    "message": "Nunca se comparten con terceros."
+  },
+  "s41": {
+    "message": "Esos datos están sujetos a la política de privacidad de la página web implicada."
+  },
+  "s42": {
+    "message": "Además, si la descarga de una suscripción falla varias veces consecutivas se solicita al dominio AdblockPlus.org la dirección actualizada de la lista de filtros."
+  },
+  "s43": {
+    "message": "Los datos enviados incluyen la versión de Adblock Plus, la dirección de la suscripción e información sobe el error encontrado."
+  },
+  "s44": {
+    "message": "Estos datos se usan para identificar posibles problemas de los que no hayan informado los mantenedores de las suscripciones y están sujetos a la <a>política habitual de privacidad de AdblockPlus.org</a>."
+  },
+  "s45": {
+    "message": "Informes de errores"
+  },
+  "s47": {
+    "message": "Estos informes contienen información necesaria para investigar el problema, incluyendo la versión de Adblock Plus, la versión del navegador, la dirección de la página web donde aparece el problema, los elementos bloqueables en esa página web, los filtros coincidentes y las suscripciones activas."
+  },
+  "s48": {
+    "message": "Los valores de los parámetros se eliminan de todas las direcciones enviadas para evitar difundir involuntariamente información privada."
+  },
+  "s49": {
+    "message": "También se puede ofrecer información adicional, que puede afectar a la privacidad:"
+  },
+  "s5": {
+    "message": "Esta política detalla los datos recolectados y los procesos que se les aplican."
+  },
+  "s50": {
+    "message": "La captura de pantalla de la página web proporciona una versión de menor tamaño y gama reducida de colores de la página visitada."
+  },
+  "s51": {
+    "message": "Se pueden eliminar las partes de la página especialmente sensibles desde el punto de vista de la privacidad antes de enviar el informe."
+  },
+  "s53": {
+    "message": "La lista de extensiones instaladas es necesaria para investigar posibles conflictos con otras extensiones."
+  },
+  "s54": {
+    "message": "Sólo puede tener acceso a los informes procesados alguien que conozca su dirección individual."
+  },
+  "s55": {
+    "message": "Estas direcciones sólo se comparten con los mantenedores de las suscripciones de filtros mencionadas en el informe y es improbable que las encuentren otras personas a menos que se les de un enlace a ellas."
+  },
+  "s56": {
+    "message": "Todos los informes y sus datos asociados se eliminan automáticamente al cabo de 30 días."
+  },
+  "s6": {
+    "message": "Página web AdblockPlus.org"
+  },
+  "s62": {
+    "message": "Otras peticiones al sitio web AdblockPlus.org"
+  },
+  "s63": {
+    "message": "Adblock Plus puede hacer otras peticiones al sitio web AdblockPlus.org en caso necesario, por ejemplo si se pulsa un enlace a la documentación o si hace falta descargar la lista completa de suscripciones de filtros."
+  },
+  "s64": {
+    "message": "Estas peticiones están sujetas a la <a>política de privacidad de AdblockPlus.org</a> habitual."
+  },
+  "s65": {
+    "message": "Retención de datos"
+  },
+  "s68": {
+    "message": "Adblock Plus guarda algunos datos en <a>el perfil de Firefox</a>\ndentro de su ordenador."
+  },
+  "s69": {
+    "message": "Adblock Plus nunca transmite esos datos a ningún servidor, pero otras extensiones y servicios, como por ejemplo <a>Firefox Sync</a>, sí que es posible que lo hagan."
+  },
+  "s7": {
+    "message": "Registros de la página web"
+  },
+  "s70": {
+    "message": "La mayoría de los datos (sus preferencias, suscripciones de filtros y filtros personalizados) está claro que no afectan a su privacidad."
+  },
+  "s71": {
+    "message": "Sin embargo, las estadísticas de uso de filtros y los informes recientes de error podrían usarse para reconstruir su historial de navegación."
+  },
+  "s72": {
+    "message": "Adblock Plus trata esta información del mismo modo que el navegador trata los datos de su historial:"
+  },
+  "s73": {
+    "message": "esos datos no se guarda si usted está usando el <a>el modo de navegación privada</a>\n, y se eliminan si elige borrar su historial de navegación."
+  },
+  "s74": {
+    "message": "Extensión Element Hiding Helper"
+  },
+  "s75": {
+    "message": "Comprobaciones de actualización de la extensión"
+  },
+  "s76": {
+    "message": "Su navegador comprueba periódicamente si existen actualizaciones de sus extensiones, entre ellas Element Hiding Helper."
+  },
+  "s77": {
+    "message": "Durante la comprobación de la actualización se envían ciertas informaciones genéricas como la versión del navegador, la versión de la extensión, el sistema operativo y su dirección IP."
+  },
+  "s78": {
+    "message": "La actualización de las versiones de desarrollo (nightly builds) de Element Hiding Helper las gestiona la página web AdblockPlus.org, y los datos enviados están sujetos a <a>su política de privacidad</a>."
+  },
+  "s79": {
+    "message": "Las actualizaciones a versiones estables las gestiona la página web Addons.Mozilla.Org y sujetas por tanto a la <a>política de privacidad de Firefox</a>."
+  },
+  "s8": {
+    "message": "Todas las peticiones dirigidas a la página web AdblockPlus.org se guardan en los registros de dicha página."
+  },
+  "s9": {
+    "message": "Los datos almacenados incluyen su dirección IP, la hora/fecha de la petición, la dirección web a la que se accede, el identificador el navegador y la página de referencia."
+  },
   "title": {
     "message": "Política de privacidad"
   }
