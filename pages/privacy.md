@@ -1,5 +1,6 @@
 title=Privacy Policy
 description=This Privacy Policy describes how we use, process and protect information that we collect from you online through our websites and our products.
+notoc=True
 
 <style>
   .inline-list ul
