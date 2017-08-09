@@ -106,16 +106,12 @@ title=Known Adblock Plus subscriptions
 }
 </style>
 
-<p>{{"This is a list of the actively maintained filter subscriptions we're aware of. You can subscribe to any of them by simply clicking its \"Subscribe\" link and confirming your decision. The filters will be added to Adblock Plus and updated automatically. Note that <a href=\"getting_started#subscription\">you shouldn't add too many filter subscriptions</a>."|translate("s1")}}</p>
-
+<p>{{"Below is a list of the actively maintained filter subscriptions that we're aware of. To subscribe to a filter list, click its \"Subscribe\" link. Please note that <a href=\"getting_started#subscription\">you shouldn't add too many filter subscriptions</a>."|translate("s1")}}</p>
 
 {% from "includes/subscriptionList" import display_subscriptions %}
 
 {{ display_subscriptions(get_subscriptions()) }}
 
+<p>{{"Don’t see your filter list here? <a href=\"mailto:subscriptionlist@adblockplus.org\">Send us</a> your list along with any information that you want displayed on this page. Note that in order to be included on this list, your subscription must contain a brief overview describing the origin of the filter list and the preferred way of contacting you should a problem arise. Please keep in mind that you should be able to fix any issue with your list within a reasonable amount of time."|translate("s2")}}</p>
 
-<p>{{"Can't see your filter list here? <a href=\"mailto:subscriptionlist@adblockplus.org\">Send</a> the information you would like to be displayed here. Please note that in order to be included in this list your subscription must contain a comment at the beginning describing the origin of the filter list and the preferred way of contacting you if problems with your list occur. You should also be certain that when these issues arise you will be able to fix them in a reasonable amount of time."|translate("s2")}}</p>
-
-<p>
-{{"Please note that all of these filter lists are being maintained by third parties. Eyeo, the company behind Adblock Plus, has no control over them.\nWe are only listing them to help you find lists that could be useful to you.\nIn no case shall Eyeo be held liable towards you or any other third party for any loss or damage (including but not limited to loss of chances and of business) deriving directly or indirectly from your use of these lists."|translate("s3")}}
-</p>
+<p>{{"All filter lists on this page are maintained by third parties. Eyeo, the company behind Adblock Plus, has no control over them. We only list them to help you find subscriptions that may be useful for you. In no case shall Eyeo be held liable towards you, or any other third party, for any loss or damage (including, but not limited to, loss of chances and of business) deriving directly or indirectly from your use of these lists."|translate("s3")}}</p>
