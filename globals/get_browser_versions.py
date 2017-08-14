@@ -15,21 +15,7 @@ BASE_URL = 'https://product-details.mozilla.org/1.0'
 FIREFOX_URL = BASE_URL + '/firefox_versions.json'
 THUNDERBIRD_URL = BASE_URL + '/thunderbird_versions.json'
 SEAMONKEY_URL = 'http://www.seamonkey-project.org/seamonkey_versions.json'
-
-CHROME_UPDATE_XML = '''\
-<?xml version="1.0" encoding="UTF-8"?>
-<request protocol="3.0" ismachine="0">
-  <os platform="win" version="99" arch="x64"/>
-  <app appid="{4DC8B4CA-1BDA-483E-B5FA-D3C12E15B62D}">
-    <updatecheck/>
-  </app>
-  <app appid="{4DC8B4CA-1BDA-483E-B5FA-D3C12E15B62D}" ap="x64-beta-multi-chrome">
-    <updatecheck/>
-  </app>
-  <app appid="{4DC8B4CA-1BDA-483E-B5FA-D3C12E15B62D}" ap="x64-dev-multi-chrome">
-    <updatecheck/>
-  </app>
-</request>'''
+CHROME_URL = 'https://omahaproxy.appspot.com/all.json?os=win'
 
 cache = {}
 
@@ -93,21 +79,21 @@ def get_seamonkey_versions():
 BROWSERS['seamonkey'] = get_seamonkey_versions
 
 
-def get_chrome_version(manifest):
-    return manifest.getAttribute('version').split('.')[0]
-
-
 def get_chrome_versions():
-    response = urllib.urlopen('https://tools.google.com/service/update2', CHROME_UPDATE_XML)
+    response = urllib.urlopen(CHROME_URL)
     try:
-        doc = minidom.parse(response)
+        data = json.load(response)
     finally:
         response.close()
 
-    manifests = doc.getElementsByTagName('manifest')
+    versions = {
+        x['channel']: x['version'].split('.')[0]
+        for x in data[0]['versions']
+    }
+
     return {
-        'current': get_chrome_version(manifests[0]),
-        'unreleased': map(get_chrome_version, manifests[1:])
+        'current': versions['stable'],
+        'unreleased': [versions['beta'], versions['dev']],
     }
 
 BROWSERS['chrome'] = get_chrome_versions
