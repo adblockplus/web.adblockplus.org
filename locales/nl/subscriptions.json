@@ -1,12 +1,18 @@
 {
+  "blog": {
+    "message": "Blog"
+  },
   "changelog": {
-    "message": "Wijzigingenlijst"
+    "message": "Changelog"
   },
   "contact": {
     "message": "Contactpagina"
   },
   "deprecation_warning": {
-    "message": "Let op: Deze lijst is niet geoptimaliseerd voor Adblock Plus en kan uw browser ervaring vertragen."
+    "message": "Let op: deze lijst is niet voor Adblock Plus geoptimaliseerd en kan uw browserervaring vertragen."
+  },
+  "forum": {
+    "message": "Forum"
   },
   "homepage": {
     "message": "Startpagina"
@@ -17,11 +23,20 @@
   "policy": {
     "message": "Beleid"
   },
+  "s1": {
+    "message": "Hieronder vindt u een lijst met de actief beheerde filterabonnementen die bij ons bekend zijn. Om u op een filterlijst te abonneren, klikt u op de link \"Abonneer\". Houd er rekening mee dat <a>u niet te veel filterabonnementen toevoegt</a>."
+  },
   "s2": {
-    "message": "Ziet u uw filterlijst hier niet? <a>Stuur</a> de informatie die u hier wilt tonen. Denk er om dat om in de lijst opgenomen te worden uw abonnement een commentaarregel aan het begin moet hebben, waarin de oorsprong van hde filterlijst beschreven wordt en de manier waarop u het liefst heeft dat er contact met u wordt gemaakt als zich problemen met uw lijst voordoen. U moet er ook zeker van zijn dat als er problemen optreden u binnen een redelijke termijn in staat bent deze op te lossen."
+    "message": "Ziet u uw filterlijst hier niet? <a>Stuur ons</a> uw lijst met eventuele informatie die u op deze pagina wilt tonen. Let op: om op deze lijst te worden opgenomen, moet uw abonnement een kort overzicht bevatten waarin de oorsprong van de filterlijst wordt beschreven en de wijze waarop er contact met u moet worden opgenomen, mocht zich een probleem voordoen. Onthoud dat u een problemen binnen redelijke tijd moet kunnen verhelpen."
+  },
+  "s3": {
+    "message": "Alle filterlijsten op deze pagina worden door derden onderhouden. eyeo, het bedrijf achter Adblock Plus, heeft over hen geen controle. We laten deze alleen maar zien zodat u abonnementen kunt vinden die u mogelijk van pas komen. In geen enkel geval zal eyeo aansprakelijk worden gehouden jegens u of een andere derde, voor schade of verlies (inclusief maar niet beperkt tot gemiste kansen of zakelijke verliezen) die al dan niet direct of indirect uit het gebruik van deze lijsten voortvloeit."
+  },
+  "specialization": {
+    "message": "Specialisatie"
   },
   "subscribe": {
-    "message": "Abonneer:"
+    "message": "Abonneren:"
   },
   "supplements_prefix": {
     "message": "aanvulling voor"
@@ -30,7 +45,7 @@
     "message": "Bekende filterabonnementen voor Adblock Plus"
   },
   "type_ads": {
-    "message": "Blokkeren van advertenties"
+    "message": "Advertentieblokkering"
   },
   "type_other": {
     "message": "Diversen"
