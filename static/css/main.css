@@ -9,6 +9,7 @@ body
   background-color: #f8f6f2;
   background-image: url(../img/background.png);
   margin: 0;
+  line-height: 1.5;
 }
 
 a img
@@ -348,6 +349,7 @@ a[hreflang="en"]:not(:lang(en)):after
   background: white;
   box-shadow: 0 -1px 0 0 #b5b4b0, 0 -2px 0 0 #e4e1dc;
   padding: 0;
+  line-height: 1;
 }
 
 #footer-main nav h1, #footer-main nav li
