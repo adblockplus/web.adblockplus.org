@@ -37,7 +37,7 @@ title=Allowing acceptable ads in Adblock Plus
   </style>
 </head>
 
-{{ page-under-review[Page under review notice] This page is under review as management of the Acceptable Ads initiative has been transferred to the independent [Acceptable Ads Committee](https://acceptableads.com/). }}
+{{ page-under-review[Page under review notice] This page is under review as management of the Acceptable Ads initiative has been transferred to the independent [Acceptable Ads Committee](https://acceptableads.org/). }}
 {: .alert }
 
 ## {{about[Section header] What is this about?}} {: #info }
@@ -48,7 +48,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{benefit[Text in "about" section] The Acceptable Ads initiative is beneficial because it encourages the ad industry to pursue less intrusive ad formats, thus having a positive impact on the Internet as a whole. It also provides us with a [viable source of revenue](/about#monetization), paid only by larger participants in the Acceptable Ads initiative, which we need in order to be able to administer and maintain the program and continue development of a free product.}}
 
-{{our-belive[Paragraph in "about" section] We believe that this initiative is a sustainable middle ground between the user's choice to use ad blockers and the continued need to support free online content with advertisements. In general, an Acceptable Ad is a non-animated ad, clearly labeled as such, that does not interrupt reading flow. It is important to note that these criteria try to reflect the ongoing discussions between our users, publishers, advertisers and us. As [previously announced](https://adblockplus.org/blog/campdavid-nyc), in 2017 eyeo / Adblock Plus transferred management of the Acceptable Ads initiative to an independent group of people, the [Acceptable Ads Committee](https://acceptableads.com/).}}
+{{our-belive[Paragraph in "about" section] We believe that this initiative is a sustainable middle ground between the user's choice to use ad blockers and the continued need to support free online content with advertisements. In general, an Acceptable Ad is a non-animated ad, clearly labeled as such, that does not interrupt reading flow. It is important to note that these criteria try to reflect the ongoing discussions between our users, publishers, advertisers and us. As [previously announced](https://adblockplus.org/blog/campdavid-nyc), in 2017 eyeo / Adblock Plus transferred management of the Acceptable Ads initiative to an independent group of people, the [Acceptable Ads Committee](https://acceptableads.org/).}}
 
 {{fairness-rules[Text in "about" section] To ensure transparency and fairness, the following rules have and will always apply to everyone without exceptions:}}
 
