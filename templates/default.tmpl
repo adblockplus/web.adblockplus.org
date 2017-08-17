@@ -34,7 +34,7 @@
       <meta property="og:description" content="{{ description | translate("description") }}">
     {% endif %}
     <meta property="og:locale" content="{{ locale | to_og_locale }}">
-    {% for alternate_locale in locales %}
+    {% for alternate_locale in available_locales %}
       {% if alternate_locale != locale %}
         <meta property="og:locale:alternate" content="{{ alternate_locale | to_og_locale }}">
       {% endif %}
