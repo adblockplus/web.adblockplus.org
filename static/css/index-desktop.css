@@ -15,7 +15,7 @@
 #main
 {
   width: 426px;
-  height: 307px;
+  height: auto;
   position: relative;
   float: right;
   margin-left: 0px;
@@ -30,14 +30,12 @@ html[dir="rtl"] #main
   margin-left: 8px;
 }
 
-#install .install-button,
 #information-android,
 h3.edge-message
 {
   position: absolute;
 }
 
-#install .install-button,
 h3.edge-message
 {
   bottom: 2px;
@@ -50,6 +48,11 @@ h3.edge-message
   margin: 0px;
 }
 
+#install .install-button
+{
+  width: 100%;
+}
+
 #install .install-button:active
 {
   bottom: 0px;
@@ -57,8 +60,7 @@ h3.edge-message
 
 #other-platform
 {
-  position: absolute;
-  top: 320px;
+  margin-top: 10px;
 }
 
 #other-platform > div
@@ -80,7 +82,7 @@ h3.edge-message
 
 #messages-wrapper
 {
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 30px;
   width: 100%;
   float: right;
@@ -99,6 +101,7 @@ h3.edge-message
 
 #key-facts
 {
+  clear: both;
   margin-top: 50px;
   margin-left: 80px;
   margin-right: 0px;
