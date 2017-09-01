@@ -21,27 +21,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% if page != "documentation" %}
-      <title>{{title|translate("title", "meta")}}</title>
-      {% if description %}
-        <meta name="description" content="{{description|translate("description", "meta")}}">
-      {% endif %}
-      <link rel="canonical" href="{{ get_canonical_url(page | ignore_browsers) }}">
-
-      {# facebook / Open Graph http://ogp.me/ #}
-      <meta property="og:image" content="{{og_image if og_image else 'https://adblockplus.org/img/adblockplus_promo.png'}}">
-      <meta property="og:title" content="{{ title | translate("title") }}">
-      {% if description %}
-        <meta property="og:description" content="{{ description | translate("description") }}">
-      {% endif %}
-      <meta property="og:locale" content="{{ locale | to_og_locale }}">
-      {% for alternate_locale in available_locales %}
-        {% if alternate_locale != locale %}
-          <meta property="og:locale:alternate" content="{{ alternate_locale | to_og_locale }}">
-        {% endif %}
-      {% endfor %}
-      <meta property="og:url" content="{{ get_canonical_url(page | ignore_browsers) }}">
+    <title>{{title|translate("title", "meta")}}</title>
+    {% if description %}
+    <meta name="description" content="{{description|translate("description", "meta")}}">
     {% endif %}
+    <link rel="canonical" href="{{ get_canonical_url(page | ignore_browsers) }}">
+
+    {# facebook / Open Graph http://ogp.me/ #}
+    <meta property="og:image" content="{{og_image if og_image else 'https://adblockplus.org/img/adblockplus_promo.png'}}">
+    <meta property="og:title" content="{{ title | translate("title") }}">
+    {% if description %}
+      <meta property="og:description" content="{{ description | translate("description") }}">
+    {% endif %}
+    <meta property="og:locale" content="{{ locale | to_og_locale }}">
+    {% for alternate_locale in available_locales %}
+      {% if alternate_locale != locale %}
+        <meta property="og:locale:alternate" content="{{ alternate_locale | to_og_locale }}">
+      {% endif %}
+    {% endfor %}
+    <meta property="og:url" content="{{ get_canonical_url(page | ignore_browsers) }}">
 
     {# twitter https://dev.twitter.com/cards/markup #}
     <meta name="twitter:site" content="@AdblockPlus" />
