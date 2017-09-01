@@ -1,7 +1,9 @@
 title=Allowing acceptable ads in Adblock Plus
 
 <head>
+  <meta content="{{meta-title[Title meta tag content inside head tag] Acceptable Ads - Adblock Plus}}" name="title" />
   <meta content="{{meta-description[Description meta tag content inside head tag] Adblock Plus introduces the Acceptable Ads initiative: Support websites that rely on advertising but choose to do it in a non-intrusive way.}}" name="description" />
+  <meta content="{{meta-title}}" property="og:title" />
   <meta content="{{meta-description}}" property="og:description" />
   <style type="text/css">
     .footnote-reference
