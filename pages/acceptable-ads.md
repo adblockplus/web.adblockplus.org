@@ -185,7 +185,7 @@ title=Allowing acceptable ads in Adblock Plus
 ## {{how-be-whitelisted[Section header] How can I get my website whitelisted?}} {: #application }
 {{process-of-whitelisting[Text in "how to be whitelisted" section] The process of getting your ads whitelisted takes about 10 working days once the ads adhere to the Acceptable Ads criteria:}}
 
-1. {{comply-with-criteria[Whitelisting step in "how to be whitelisted" section] If your website has ads that comply with the <a href="#criteria">Acceptable Ads criteria</a>, simply fill out <a href="https://eyeo.com/acceptable-ads-application.html">this form</a>.}}
+1. {{comply-with-criteria[Whitelisting step in "how to be whitelisted" section] If your website has ads that comply with the <a href="#criteria">Acceptable Ads criteria</a>, simply fill out <a href="https://acceptableads.com/get-whitelisted/">this form</a>.}}
 * {{eyeo-contacts-back[Whitelisting step in "how to be whitelisted" section] Someone from <a href="https://www.eyeo.com/">Eyeo</a>, the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria.}}
 * {{sign-agreement[Whitelisting step in "how to be whitelisted" section] After you have made any necessary changes, both sides sign an <a href="/acceptable-ads-agreements">agreement</a>.}}
 * {{whitelist-proposal-submission[Whitelisting step in "how to be whitelisted" section] We submit the whitelisting proposal <a href="/forum/viewforum.php?f=12">in the forum</a> and the ads are whitelisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements.}}
