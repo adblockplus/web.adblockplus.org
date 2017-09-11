@@ -454,13 +454,15 @@ html[dir="rtl"] #install ul
 #edge-teaser,
 h3.edge-message,
 #content.edge.edge-supported h3.edge-message,
-#content.edge.edge-supported #other-platform > div
+#content.edge.edge-supported #other-platform > div,
+#content.edge #terms-message
 {
   display: none;
 }
 
 #content.edge #other-platform > div,
-#content.edge h3.edge-message
+#content.edge h3.edge-message,
+#content.edge.edge-supported #terms-message
 {
   display: block;
 }
