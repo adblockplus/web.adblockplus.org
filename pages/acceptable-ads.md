@@ -42,7 +42,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 ## {{about[Section header] What is this about?}} {: #info }
 
-{{about-abp[Paragraph in "about" section] Adblock Plus is a tool that lets users block ads. Since ads fuel a lot of the content we enjoy for free online, finding common ground seemed to make sense. We asked our users about this and they overwhelmingly agreed.}}
+{{about-abp[Paragraph in "about" section] Adblock Plus is a tool that lets users block [ads](https://easylist.to/2011/07/11/the-definition-of-advert-and-link-exchange-policy.html). Since ads fuel a lot of the content we enjoy for free online, finding common ground seemed to make sense. We asked our users about this and they overwhelmingly agreed.}}
 
 {{abp-history[Paragraph in "about" section] So starting in 2011, in consultation with [our users](/blog/adblock-plus-user-survey-results-part-0), we decided to propose a compromise. Because we share a vision with the majority of our users that not all ads are equally annoying, the Acceptable Ads initiative was created. It allows advertisers and publishers who have agreed to make ads that abide by user-generated criteria to be whitelisted. Users can support this less extreme version of ad blocking by allowing the Acceptable Ads option to remain enabled. To browse completely ad-free, users can [disable the option](#optout).}}
 
