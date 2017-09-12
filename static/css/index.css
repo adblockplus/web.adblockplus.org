@@ -167,13 +167,6 @@ html[dir="rtl"] #summary li .sprite
   margin-left: 0px;
 }
 
-#content h3.edge-message,
-#content h3.edge-message a
-{
-  color: #2d79c0;
-  font-size: 20px;
-}
-
 #terms-message,
 #terms-message a
 {
@@ -311,7 +304,7 @@ html[dir="rtl"] #summary li .sprite
 #content.internet-explorer #install-internet-explorer,
 #content.safari #install-safari,
 #content.yandex-browser #install-yandex-browser,
-#content.edge.edge-supported #install-edge
+#content.edge #install-edge
 {
   display: inline-block;
 }
@@ -451,20 +444,9 @@ html[dir="rtl"] #install ul
 
 #other-platform > div,
 #content.edge #video,
-#edge-teaser,
-h3.edge-message,
-#content.edge.edge-supported h3.edge-message,
-#content.edge.edge-supported #other-platform > div,
-#content.edge #terms-message
+#edge-teaser
 {
   display: none;
-}
-
-#content.edge #other-platform > div,
-#content.edge h3.edge-message,
-#content.edge.edge-supported #terms-message
-{
-  display: block;
 }
 
 .warning-platform,

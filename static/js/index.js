@@ -1,7 +1,7 @@
 (function()
 {
   var visibleTab;
-  var container;
+  var container = document.getElementById("more-container");
 
   window.toggleMore = function()
   {
@@ -25,23 +25,4 @@
     visibleTab = ua && ua[1] || "firefox";
     return visibleTab;
   }
-
-  function init()
-  {
-    container = document.getElementById("more-container");
-    checkEdgeSupport();
-  }
-
-  function checkEdgeSupport()
-  {
-    if (!window.navigator.userAgent)
-      return;
-
-    var content = document.getElementById("content");
-    var match = window.navigator.userAgent.match(/Edge\/\d+\.(\d+)/);
-    if (match && match[1] >= 14361 && content.classList.contains("edge"))
-      content.classList.add("edge-supported");
-  }
-
-  init();
 })();
