@@ -16,6 +16,8 @@
 {
   width: 426px;
   height: auto;
+  /* Force height to be at least the height of the video/image */
+  min-height: 310px;
   position: relative;
   float: right;
   margin-left: 0px;
