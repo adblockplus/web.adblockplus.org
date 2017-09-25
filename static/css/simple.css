@@ -33,7 +33,6 @@ body
   margin: 0px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
-  background-image: url(/img/background-dark.png);
 }
 
 header
@@ -86,7 +85,6 @@ header::before
   display: block;
   border-bottom: solid 1px #d0d0d0;
   height: 92px;
-  background-image: url(/img/background.png);
 }
 
 #logo
@@ -121,7 +119,7 @@ section,
 
 section.highlighted
 {
-  background-image: url(/img/background-blue.png);
+  background-color: #5982B0;
   color: #FFFFFF;
 }
 
