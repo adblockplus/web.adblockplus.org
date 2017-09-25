@@ -98,14 +98,14 @@
           {% endfor %}
           <li id="language">
             <div id="current-language">
-              <div id="flag-{{locale}}" class="flag sprite"></div>
+              {{ config.get("langnames", locale) }} ({{ locale | upper }})
               <span id="language-arrow" class="sprite"></span>
             </div>
             <ul id="language-selector">
-              {% for lang in available_locales %}
+              {% for available_locale in available_locales %}
                 <li class="language-entry">
-                  {{page|linkify(lang)}}
-                    <div id="flag-{{lang}}" class="flag sprite"></div>{{config.get("langnames", lang)}}
+                  {{ page | linkify(available_locale) }}
+                    {{ config.get("langnames", available_locale) }} ({{ available_locale | upper }})
                   </a>
                 </li>
               {% endfor %}
