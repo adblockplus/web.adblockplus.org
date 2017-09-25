@@ -96,17 +96,6 @@
           {% for name in ["about", "features", "bugs", "contribute"] %}
             {{pageitem(name)}}
           {% endfor %}
-          <li id="search">
-            <form action="https://www.google.com/cse" id="search-box">
-              <input name="cx" value="001123836313771357446:qg27swycb5q" type="hidden">
-              <input name="ie" value="UTF-8" type="hidden">
-              <label id="search-field-label-plain" for="search-field">{{get_string("search", "menu")}}</label>
-              <input id="search-field" name="q" type="search">
-              <label id="search-field-label-button" for="search-field">
-                <button id="search-button" type="submit">{{get_string("search", "menu")}}</button>
-              </label>
-            </form>
-          </li>
           <li id="language">
             <div id="current-language">
               <div id="flag-{{locale}}" class="flag sprite"></div>

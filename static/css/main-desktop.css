@@ -40,7 +40,7 @@ html[dir="rtl"] header nav ul
   text-align: left;
 }
 
-header nav li, #search form, #search-field, #search-field-label-button
+header nav li
 {
   display: inline-block;
   vertical-align: middle;
@@ -84,70 +84,6 @@ header nav li.first, .language-entry
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
-}
-
-#search
-{
-  height: 22px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-#search-box
-{
-  height: 20px;
-}
-
-#search-field-label-plain
-{
-  display: none;
-}
-
-#search-field-label-button
-{
-  border: none;
-}
-
-#search-field
-{
-  width: 160px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-#search-button
-{
-  font-size: 12px;
-  padding: 0 10px;
-  margin-left: 5px;
-  margin-right: 0;
-  background: #ededed;
-  background: -webkit-linear-gradient(top, #fefefe, #ededed);
-  background: -moz-linear-gradient(top, #fefefe, #ededed);
-  background: -ms-linear-gradient(top, #fefefe, #ededed);
-  background: -o-linear-gradient(top, #fefefe, #ededed);
-  background: linear-gradient(top, #fefefe, #ededed);
-}
-
-html[dir="rtl"] #search-button
-{
-  margin-right: 5px;
-  margin-left: 0;
-}
-
-#search-button:active
-{
-  position: relative;
-  top: 1px;
-  background: #ddd;
-  background: -webkit-linear-gradient(bottom, #fefefe, #ededed);
-  background: -moz-linear-gradient(bottom, #fefefe, #ededed);
-  background: -ms-linear-gradient(bottom, #fefefe, #ededed);
-  background: -o-linear-gradient(bottom, #fefefe, #ededed);
-  background: linear-gradient(bottom, #fefefe, #ededed);
 }
 
 #language

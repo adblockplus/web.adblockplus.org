@@ -91,34 +91,6 @@ header nav>ul>li a
   font-size: 24px;
 }
 
-#search
-{
-  position: relative;
-}
-
-#search-field-label-plain, #current-language
-{
-  font-size: 16px;
-  font-weight: bold;
-  color: #848484;
-}
-
-#search-field
-{
-  width: 100%;
-  padding: 10px;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -ms-box-sizing: content-box;
-  -o-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-#search-field-label-button, #current-language
-{
-  display: none;
-}
-
 #language-selector, .language-entry
 {
   display: inline-block;
