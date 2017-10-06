@@ -1,3 +1,95 @@
+/*******************************************************************************
+ * Base styles
+ ******************************************************************************/
+html {
+  color: #212121;
+  background-color: #fff;
+  font-family: sans-serif;
+  line-height: 1.5; }
+
+/**
+ * Stretch content full-width
+ */
+.full-width {
+  display: block;
+  width: 100%;
+  margin: 1em 0px; }
+
+/**
+ * Center content within a (responsive) fixed width
+ */
+.container {
+  width: auto;
+  max-width: 100%;
+  margin: 0px auto;
+  padding: 0px 1em; }
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px; } }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px; } }
+
+/*******************************************************************************
+ * Grid component
+ ******************************************************************************/
+/**
+ * - .row contains one or more .column(s)
+ * - .row clears .column(s)
+ * - .row negates the left & right padding of it's left-most & right-most
+ *   .column(s) while preserving consistent padding between .column(s)
+ */
+.row {
+  margin: 0px -1em; }
+
+.row:after {
+  display: block;
+  clear: both;
+  content: ""; }
+
+/**
+ * - .column is 100% width by default
+ * - Modifier classes are applied to .column to change it's width
+ * - Modifier classes behave differently on different device widths
+ */
+.column {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding: 0px 1em; }
+
+/* - .column(s) within .row .reverse appear in reverse order
+ * - .column(s) within [dir=rtl] appear in reverse order respectively
+ */
+.column,
+[dir="rtl"] .reverse .column {
+  float: left; }
+
+.row,
+.column {
+  box-sizing: border-box; }
+
+.reverse .column,
+[dir="rtl"] .column {
+  float: right; }
+
+@media (min-width: 768px) {
+  .one-half,
+  .one-fourth {
+    width: 50%; } }
+
+@media (min-width: 1200px) {
+  .one-third {
+    width: 33.333333%; }
+  .two-thirds {
+    width: 66.666667%; }
+  .one-fourth {
+    width: 25%; }
+  .three-fourths {
+    width: 75%; } }
+
 *
 {
   font-family: Arial, sans;

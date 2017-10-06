@@ -116,7 +116,7 @@
       </nav>
     </header>
 
-    <div id="content" {% if localefile == "index" %}class="{{page}}"{% endif %}>
+    <div id="content" class="container {{ localefile == "index" and page }}">
       {% if abbnotification %}
       <? include abb-notification ?>
       {% endif %}
