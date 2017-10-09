@@ -224,6 +224,10 @@ title=Adblock Plus preferences
 {{"Location of the filter list used to\n<a href=\"acceptable-ads\">allow non-intrusive ads</a>."|translate("subscriptions_exceptionsurl-s1")}}
 {% endmacro %}
 
+{% macro subscriptions_exceptionsurlPrivacyDescription() %}
+{{"Location of the filter list used to allow only nonintrusive ads that are privacy-friendly."|translate("subscriptions_exceptionsurlPrivacy")}}
+{% endmacro %}
+
 {% macro notificationurlDescription() %}
 {{"Location of the file containing emergency notifications."|translate("notificationurl-s1")}}
 {% endmacro %}
@@ -548,6 +552,11 @@ title=Adblock Plus preferences
         "name": "subscriptions_exceptionsurl",
         "default": "",
         "description": subscriptions_exceptionsurlDescription
+      },
+      {
+        "name": "subscriptions_exceptionsurl_privacy",
+        "default": "",
+        "description": subscriptions_exceptionsurlPrivacyDescription
       },
       {
         "name": "subscriptions_fallbackerrors",
