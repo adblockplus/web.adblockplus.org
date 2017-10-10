@@ -45,6 +45,7 @@
     <meta name="twitter:site" content="@AdblockPlus" />
     <meta name="twitter:creator" content="@AdblockPlus" />
 
+    <link rel="stylesheet" href="/css/defaults.css" class="cssfx">
     <link rel="stylesheet" href="/css/main.css" class="cssfx">
     <link rel="stylesheet" href="/css/main-desktop.css" media="(min-width: 1000px)" class="cssfx">
     <link rel="stylesheet" href="/css/main-mobile.css" media="(max-width: 1000px)">
@@ -116,7 +117,7 @@
       </nav>
     </header>
 
-    <div id="content" class="container {{ localefile == "index" and page }}">
+    <div id="content" class="container content {{ localefile == "index" and page }}">
       {% if abbnotification %}
       <? include abb-notification ?>
       {% endif %}

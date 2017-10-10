@@ -1,4 +1,4 @@
-#content h1, #content h2
+#key-facts h1
 {
   font-size: 16px;
 }
@@ -502,6 +502,11 @@ html[lang^="zh_"] #maxthon-notification
 #content.maxthon_ua-maxthon .warning-platform.maxthon
 {
   display: none;
+}
+
+#key-facts
+{
+  box-sizing: content-box;
 }
 
 #key-facts section
