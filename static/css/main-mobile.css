@@ -4,56 +4,6 @@
   margin-bottom: 50px;
 }
 
-#footer-main
-{
-  text-align: center;
-  position: static;
-}
-
-#footer-main h1, #footer-main nav li
-{
-  padding: 15px;
-  margin: 0px;
-}
-
-#footer-main nav li
-{
-  display: none;
-}
-
-#footer-main nav section h1::after
-{
-  content: "";
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  margin-left: 5px;
-  margin-right: 0;
-  background-image: url(../img/sprite-main.png);
-  background-position: -31px -166px;
-}
-
-html[dir="rtl"] #footer-main nav section h1::after
-{
-  margin-right: 5px;
-  margin-left: 0;
-}
-
-#footer-main nav section.visible h1::after
-{
-  background-position: -31px -178px;
-}
-
-#footer-main nav section.visible li
-{
-  display: block;
-}
-
-#social-list
-{
-  padding: 0px;
-}
-
 #anwiki-admin, #pageactions
 {
   display: none;

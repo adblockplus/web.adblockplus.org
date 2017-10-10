@@ -69,29 +69,6 @@
     document.getElementById("navbar-menu-toggle").onclick = navigationClick;
   }
 
-  function initFooterSection(section)
-  {
-    var header = section.getElementsByTagName("h1")[0];
-    header.onclick = function()
-    {
-      toggleClass(section, "visible");
-    };
-  }
-
-  function initFooter()
-  {
-    var footerContent = document.getElementById("footer-content");
-    var footerNav = footerContent.getElementsByTagName("nav")[0];
-    var footerNavSections = footerNav.getElementsByTagName("section");
-
-    for (var i = 0; i < footerNavSections.length; i++)
-    {
-      var section = footerNavSections[i];
-      initFooterSection(section);
-    }
-  }
-
   initLanguageSelection();
   initMenu();
-  initFooter();
 })();

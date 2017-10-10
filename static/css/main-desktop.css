@@ -4,98 +4,9 @@ html
   min-height: 100%;
 }
 
-#footer-content
-{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#footer-content
-{
-  margin-top: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 #content
 {
   margin-top: 71px;
-  margin-bottom: 280px;
-}
-
-#footer-main
-{
-  position: absolute;
-  left: 0;
-  right: auto;
-  bottom: 0;
-  width: 100%;
-  height: 220px;
-
-  /* Disable the sticky footer in IE6/7 */
-  .position: relative;
-  .bottom: 220px;
-}
-
-html[dir="rtl"] #footer-main
-{
-  right: 0;
-  left: auto;
-}
-
-#footer-main nav
-{
-  width: 600px;
-}
-
-#footer-main nav h1, #footer-main nav li
-{
-  width: 160px;
-  padding-bottom: 5px;
-}
-
-#footer-main nav, #footer-main nav section, #social
-{
-  display: inline-block;
-  vertical-align: top;
-}
-
-#footer-main nav section
-{
-  margin-left: 55px;
-  margin-right: 0;
-}
-
-html[dir="rtl"] #footer-main nav section
-{
-  margin-right: 55px;
-  margin-left: 0;
-}
-
-html #footer-main nav section.first
-{
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#footer-content
-{
-  position: relative;
-  width: 980px;
-}
-
-#social
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: auto;
-}
-
-html[dir="rtl"] #social
-{
-  left: 0;
-  right: auto;
 }
 
 #anwiki-admin
