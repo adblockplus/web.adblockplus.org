@@ -47,54 +47,26 @@
 
   function initLanguageSelection()
   {
-    var language = document.getElementById("language");
+    var locale = document.getElementById("navbar-locale-selected");
 
     // skip if page does not have language selection (EG: blog)
-    if (!language)
+    if (!locale)
       return;
 
-    var languageSelection = language.getElementsByTagName("ul")[0];
-
-    document.documentElement.onclick = function()
+    locale.onclick = function()
     {
-      removeClass(languageSelection, "visible");
-    };
-
-    language.onclick = function(event)
-    {
-      if (hasClass(languageSelection, "visible"))
-        return;
-
-      addClass(languageSelection, "visible");
-      stopPropagation(event);
+      toggleClass(document.getElementById("navbar-locale-menu"), "visible");
     };
   }
 
   function navigationClick(event)
   {
-    var element = event.target;
-    while (true)
-    {
-      if (!element)
-        return;
-
-      if (hasClass(element, "selected") || element.id == "hamburger")
-      {
-        if ("querySelector" in document)
-        {
-          event.preventDefault();
-          toggleClass(document.querySelector("header nav > ul"), "visible");
-        }
-        return false;
-      }  
-      element = element.parentElement;
-    }
+    toggleClass(document.getElementById("navbar-menu"), "visible");
   }
 
   function initMenu()
   {
-    if ("querySelector" in document)
-      document.querySelector("header nav").onclick = navigationClick;
+    document.getElementById("navbar-menu-toggle").onclick = navigationClick;
   }
 
   function initFooterSection(section)
