@@ -47,8 +47,6 @@
 
     <link rel="stylesheet" href="/css/defaults.css" class="cssfx">
     <link rel="stylesheet" href="/css/main.css" class="cssfx">
-    <link rel="stylesheet" href="/css/main-desktop.css" media="(min-width: 1000px)" class="cssfx">
-    <link rel="stylesheet" href="/css/main-mobile.css" media="(max-width: 1000px)">
     <link rel="apple-touch-icon" href="/img/favicon-large.png" />
 
     <!--[if IE 8]>
@@ -72,11 +70,6 @@
   </head>
 
   <body>
-    <noscript>
-      <link rel="stylesheet" href="/css/noscript-desktop.css" media="(min-width: 1000px)"/>
-      <link rel="stylesheet" href="/css/noscript-mobile.css" media="(max-width: 1000px)"/>
-    </noscript>
-
     {% macro pageitem(name) %}
       {% if name == page %}
         <li class="selected">{{get_string(name, "menu")}}</li>
