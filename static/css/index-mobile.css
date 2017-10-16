@@ -20,7 +20,7 @@
   font-size: 20px;
 }
 
-#video, #maxthon-instruction, #edge-teaser
+#maxthon-instruction, #edge-teaser
 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -28,8 +28,28 @@
   -o-box-sizing: border-box;
   box-sizing: border-box;
   margin: 20px 0;
-  width: auto;
   max-width: 515px;
+}
+
+#video-disclaimer
+{
+  margin: 10px;
+}
+
+.no-js #video-disclaimer,
+.show-disclaimer #video-disclaimer
+{
+  position: relative;
+}
+
+#video-play
+{
+  margin-top: -40px;
+}
+
+#maxthon-instruction, #edge-teaser
+{
+  width: auto;
 }
 
 #summary h1
