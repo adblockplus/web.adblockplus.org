@@ -1,11 +1,12 @@
-#content
-{
-  width: 980px;
-}
-
 .topic
 {
-  width: 500px;
+  margin-left: 150px;
+}
+
+[dir="rtl"] .topic
+{
+  margin-left: 0px;
+  margin-right: 150px;
 }
 
 .topic-small
