@@ -129,6 +129,28 @@ title=Allowing acceptable ads in Adblock Plus
 <span class="footnote-reference">4</span> {{screen-tablets[footnote in "Other Acceptable Ads formats"] The 'common screen size' for tablets is 768x1024, based on data from <a href="http://gs.statcounter.com/#tablet-resolution-ww-monthly-201401-201412">StatCounter</a>.}}
 {: #screen-tablets }
 
+### {{privacy-friendly-acceptable-ads[section header] What are privacy-friendly Acceptable Ads?}} {: #privacy-friendly-acceptable-ads}
+
+{{privacy-friendly-acceptable-ads[paragraph] Privacy-friendly ads comply with the Acceptable Ads criteria and are only served by <a href="#first-party">first party</a> domains and / or a domain owned or registered by the same entity or company as the first party domain. In order for the privacy-friendly ads feature to work properly, <a href="#do-not-track">Do Not Track</a> needs to be enabled in your browser preferences.}}
+
+#### {{do-not-track[section header] What is Do Not Track?}} {: #do-not-track}
+
+{{do-not-track[paragraph] Do Not Track (DNT) is a browser feature that, if enabled, tells websites and ad networks you encounter that you do not want to be tracked.}}
+
+##### {{enabling-do-not-track[section header] Enabling DNT}} {: #enabling-do-not-track}
+
+{{enabling-do-not-track[paragraph] Select your browser below to learn how to enable the DNT feature.}}
+
+- [Chrome](https://support.google.com/chrome/answer/2790761?co=GENIE.Platform%3DDesktop&hl)
+- [Edge](https://privacy.microsoft.com/windows-10-microsoft-edge-and-privacy) (scroll to bottom of page)
+- [Firefox](https://support.mozilla.org/kb/how-do-i-turn-do-not-track-feature)
+- [Internet Explorer](https://support.microsoft.com/help/17288/windows-internet-explorer-11-use-do-not-track)
+- [Opera](http://www.opera.com/help/tutorials/security/control/#referrer)
+- [Safari](https://support.apple.com/kb/PH21416)
+
+#### {{first-party[section header] What are first party domains?}} {: #first-party}
+{{first-party[paragraph] A first party domain is a website that you visit directly. Ads from first party domains are hosted on the website themselves. Third party content, on the other hand, are served from a website you aren't visiting, e.g. embedded advertisements or social media buttons.}}
+
 ## {{not-acceptable-ad[Section header] What is not considered an Acceptable Ad?}} {: #not-acceptable-ad }
 
 {{unacceptable-ads[Text in "not Acceptable Ad" section] The following types of ads are currently unacceptable <a class="footnote-reference" href="#exception">*</a>, and cannot be considered for inclusion on the whitelist:}}
