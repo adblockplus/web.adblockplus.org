@@ -1,3 +1,18 @@
+/* Note: This only applies to the deployment page */
+
+#content
+{
+  padding-top: 2.5em;
+}
+
+@media(min-width: 768px)
+{
+  #content
+  {
+    padding-top: 5em;
+  }
+}
+
 #lsd-header-block, #lsd-icon-wrapper
 {
   display: inline-block;
@@ -6,7 +21,6 @@
 #lsd-header-block
 {
   vertical-align: top;
-  max-width: 500px;
 }
 
 #lsd-icon-wrapper
@@ -14,9 +28,9 @@
     padding-left: 40px;
 }
 
-@media (max-width: 650px)
+@media (max-width: 1200px)
 {
-  #lsd-icon-wrapper 
+  #lsd-icon-wrapper
   {
     display: none;
   }
