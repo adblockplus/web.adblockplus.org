@@ -157,11 +157,17 @@ div.animation[started="true"]
   margin: 2rem 0rem;
 }
 
-.content h1 { font-size: 2.4em; }
-.content h2 { font-size: 1.6em; }
+.content h1 { font-size: 1.8em; }
+.content h2 { font-size: 1.4em; }
 .content h3 { font-size: 1.3em; }
 .content h4 { font-size: 1.2em; }
 .content h5 { font-size: 1.1em; }
+
+@media(min-width: 768px)
+{
+  .content h1 { font-size: 2.4em; }
+  .content h2 { font-size: 1.6em; }
+}
 
 .content a,
 .content a:visited
