@@ -181,8 +181,16 @@ div.animation[started="true"]
 
 #navbar
 {
-  height: 4em;
+  min-height: 4em;
   background-color: #c70d2c;
+}
+
+@media(max-width: 991px)
+{
+  #navbar
+  {
+    overflow: auto;
+  }
 }
 
 #navbar li
