@@ -190,20 +190,10 @@ div.animation[started="true"]
   list-style-type: none;
 }
 
-/* padding provided by navbar contents */
-.navbar-container
+#navbar .container
 {
-  width: 1170px;
-  margin: 0 auto;
-}
-
-/* full-width under .container max-width */
-@media(max-width: 1199px)
-{
-  .navbar-container
-  {
-    width: 100%;
-  }
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* #navbar #navbar-logo

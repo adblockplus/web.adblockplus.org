@@ -136,43 +136,47 @@ img {
   display: none; }
 
 /*******************************************************************************
- * Base styles
+ * Utilities
  ******************************************************************************/
-html {
-  color: #212121;
-  background-color: #fff;
-  font-family: sans-serif;
-  line-height: 1.5; }
-
+/* Responsive widths
+ ******************************************************************************/
 /**
- * Stretch content full-width
+ * Stretch content (e.g. images) full-width
  */
 .full-width {
   display: block;
-  width: 100%;
-  margin: 1em 0px; }
+  width: 100%; }
 
 /**
  * Center content within a (responsive) fixed width
  */
 .container {
-  width: auto;
+  width: 1140px;
   max-width: 100%;
-  margin: 0px auto;
-  padding: 0px 1em; }
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1em;
+  padding-left: 1em; }
 
-@media (min-width: 768px) {
-  .container {
-    width: 720px; } }
+/* Device widths
+ ******************************************************************************/
+.phone-width {
+  width: auto; }
 
-@media (min-width: 992px) {
-  .container {
-    width: 960px; } }
+.phablet-width {
+  width: 540px; }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1140px; } }
+.tablet-width {
+  width: 720px; }
 
+.desktop-width {
+  width: 960px; }
+
+.large-desktop-width {
+  width: 1140px; }
+
+/* Clearfix
+ ******************************************************************************/
 .clearfix:after, .content:after,
 .clearfix:before,
 .content:before {
@@ -181,6 +185,15 @@ html {
 
 .clearfix:after, .content:after {
   clear: both; }
+
+/*******************************************************************************
+ * Base styles
+ ******************************************************************************/
+html {
+  color: #212121;
+  background-color: #fff;
+  font-family: sans-serif;
+  line-height: 1.5; }
 
 /*******************************************************************************
  * Content styles
@@ -401,6 +414,8 @@ button {
   font: inherit;
   /* Show the overflow in IE and Edge */
   overflow: visible;
+  /* Remove rounded corners in Chrome 62+ */
+  border-radius: 0;
   /* Remove the inheritance of text transform in Edge, Firefox, and IE. */
   text-transform: none; }
 
