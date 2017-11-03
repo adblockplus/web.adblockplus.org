@@ -41,6 +41,10 @@ title=Allowing Acceptable Ads in Adblock Plus
 
 {{ about-whitelist[paragraph] Ads that abide by the Acceptable Ads criteria are placed on a whitelist. The ads on the whitelist are then shown to ad-blocking users who allow Acceptable Ads. }}
 
+## {{ about-no-third-party-heading[heading] What are Acceptable Ads without third-party tracking? }} {: #privacy-friendly-acceptable-ads }
+
+{{ acceptable-ads-no-third-party-about[paragraph] Acceptable Ads without third-party tracking are ads that comply with the [Acceptable Ads criteria](https://acceptableads.com/en/about/criteria) and that do not allow third-party entities to track any of your browsing behavior. These are ads that comply with [Do Not Track](https://www.eff.org/issues/do-not-track), and/or ads which are served by the domain which is wholly owned by the same company. }}
+
 ## {{ why-default[heading] Why is the Acceptable Ads feature enabled by default? }} {: #default }
 
 {{ default-reason[paragraph] We believe that Acceptable Ads are the sustainable middle ground between a user’s choice to use an ad blocker and the continued need to support free online content with advertisements. If the majority of Adblock Plus users have the Acceptable Ads feature enabled, advertisers will have a bigger incentive to produce better, less intrusive ad formats. }}
