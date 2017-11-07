@@ -1,405 +1,50 @@
 {
-  "about": {
-    "description": "Section header",
-    "message": "De quoi s'agit-il ?"
-  },
-  "about-abp": {
-    "description": "Paragraph in \"about\" section",
-    "message": "Adblock Plus est un outil qui permet notamment aux utilisateurs de bloquer des publicités. Comme la publicité supporte une partie des contenus diffusés gratuitement en ligne, définir un terrain d'entente nous a semblé avoir un sens. Nous avons posé la question à nos utilisateurs et le consensus semble général."
-  },
-  "above-primary-content": {
-    "description": "Bullet point in \"General criteria\"",
-    "message": "Lorsqu'elle est placée au-dessus du Contenu Principal, la hauteur maximale de l'annonce est de 200 pixels."
-  },
-  "abp-history": {
-    "description": "Paragraph in \"about\" section",
-    "message": "Par conséquent à partir de 2011, en consultation avec <a>nos utilisateurs</a>, nous avons décidé de proposer un compromis. Comme nous sommes d'accord avec la majorité de nos utilisateurs pour considérer que toutes les annonces ne sont pas aussi gênantes les unes que les autres, nous avons créé l'initiative Publicité Acceptable. Elle permet d'inscrire sur une liste blanche des publicités d'annonceurs et de publicitaires qui ont accepté de respecter des critères en ligne avec les souhaits des utilisateurs. Nos utilisateurs peuvent choisir cette version moins extrême du blocage des publicités en laissant activée l'option Publicité Acceptable. Pour naviguer sans publicité, les utilisateurs peuvent <a>désactiver l'option</a>."
-  },
-  "acceptable-ads": {
-    "description": "Section header",
-    "message": "Quelle publicités sont Acceptables ?"
-  },
-  "acceptable-ads-contacts": {
-    "description": "Text in \"what you is allowed\" section",
-    "message": "Avez-vous des questions ou suggestions concernant cette liste ? N'hésitez pas à contacter notre communauté par l'intermédiaire de <a>notre forum</a> ou directement par <a>e-mail</a>."
-  },
-  "acceptable-ads-filter": {
-    "description": "Text in \"what you is allowed\" section",
-    "message": "La case à cocher <strong>Autoriser certaines publicités non-intrusives</strong> vous permet d'ajouter un filtre à votre liste. Vous pouvez visualiser tous les filtres <a>ici</a>. Le traitement spécial de cet abonnement à une liste de filtres - ajoutée pour simplifier les ajouts fréquents - peut être désactivée en allant dans « about:config » et désactivant la préférence : <a>extensions.adblockplus.subscriptions_exceptionscheckbox</a> (valeur « false »). Cela vous permettra de visualiser les filtres pour cet abonnement, comme d'habitude."
-  },
-  "acceptable-ads-label-alt": {
-    "description": "Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)",
-    "message": "Critères de disctinction des Publicités Acceptables"
-  },
-  "acceptable-ads-percentage-alt": {
-    "description": "Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)",
-    "message": "Critères de proportion des Publicités Acceptables"
-  },
-  "acceptable-ads-placement-alt": {
-    "description": "Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)",
-    "message": "Critères d'emplacement des Publicités Acceptables"
-  },
-  "agreement-ads": {
-    "description": "Text in \"which acceptable ads are unblocked\" section",
-    "message": "Non, malheureusement, il est techniquement impossible de reconnaître automatiquement les publicités qui répondent aux critères de la Publicité Acceptable. Nous avons conclu des <a>accords</a> avec certains sites internet et annonceurs qui stipulent que seules les annonces conformes à nos critères seront affichées lorsque les utilisateurs d'Adblock Plus visitent les sites concernés. Ces publicités seront affichées (c'est à dire qu'elles sont ajoutées à la liste des exceptions des Publicités Acceptables, aussi appelée liste blanche, qui est activée par défaut)."
-  },
-  "all-unblocked": {
-    "description": "Section header",
-    "message": "Toutes les Publicités Acceptables seront-elles affichées ?"
-  },
-  "animated-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités animées"
-  },
-  "attention-grab": {
-    "description": "\"Text ads\" description in \"Specific criteria\"",
-    "message": "Les publicités textuelles présentant une utilisation excessive de couleurs et/ou d'autres éléments visant à attirer l'attention ne sont pas Acceptables."
-  },
-  "autoplay-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités vidéo ou audio automatiquement déclenchées"
-  },
-  "avoid-criteria": {
-    "description": "Fairness rule Bullet point in \"about\" section",
-    "message": "Les participants ne peuvent pas payer pour contourner les critères de la Publicité Acceptable. <strong>Toutes les publicités doivent respecter ces critères.</strong>"
-  },
-  "below-primary-content": {
-    "description": "Bullet point in \"General criteria\"",
-    "message": "Lorsqu'elle est placée sous le Contenu Principal, la hauteur maximale de l'annonce est de 400 pixels."
-  },
-  "benefit": {
-    "description": "Text in \"about\" section",
-    "message": "L’initiative de Publicités Acceptables est bénéfique car elle encourage le secteur publicitaire à adopter des formats moins intrusifs. Elle a donc un impact positif sur Internet dans son ensemble. Elle représente également une <a>source de revenus viable</a>. Seuls les participants de grande envergure s’acquittent de frais dans le cadre de l'initiative de Publicités Acceptables. Ceci est nécessaire pour nous permettre d'assurer l'administration et la maintenance du programme et de poursuivre le développement d'un produit gratuit."
-  },
-  "can-disable": {
-    "description": "Text in \"hate ads\" secion",
-    "message": "Aucun problème, vous pouvez désactiver ce paramètre à tout moment :"
-  },
-  "charging": {
-    "description": "Paragraph in \"about\" section\n{1}: 90",
-    "message": "Pour assurer la gratuité de notre produit en source ouverte, <a>nous facturons des frais aux grandes entités</a> pour nos services de liste blanche. Pour les {1} pour cent restants de nos partenaires, ces services sont offerts gratuitement."
-  },
-  "comply-with-criteria": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
-    "message": "Si votre site a des publicités conformes aux <a>critères de la Publicité Acceptable</a>, il vous suffit de remplir <a>ce formulaire</a>."
-  },
-  "criteria": {
-    "description": "Text in \"Acceptable Ad\" section",
-    "message": "Les Publicités Acceptables doivent respecter les critères suivants :"
-  },
-  "default-reason": {
-    "description": "Text in \"Why is this feature enabled by default?\" section",
-    "message": "Malheureusement, c'est le seul moyen de réaliser ce que nous souhaitons accomplir. Si la majorité des utilisateurs d'Adblock Plus laisse cette fonction activée, les publicitaires seront plus enclins à produire de meilleures annonces."
-  },
-  "disable-android-browser": {
-    "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Adblock Browser pour Android :</strong> Ouvrez Paramètres, touchez <strong>Blocage de publicités > Configurer les Pubs Acceptable</strong> et désélectionnez <strong>Autoriser des publicités non-intrusives</strong>."
-  },
-  "disable-chrome": {
-    "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Sur Chrome, Maxthon, Opera, Safari :</strong> cliquez sur l'icône Adblock Plus et choisissez <strong>Options</strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives</strong>."
-  },
-  "disable-firefox": {
-    "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Sur Firefox :</strong> cliquez sur l'icône Adblock Plus et choisissez <strong>Préférences de filtre</strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives</strong>."
-  },
-  "disable-ie": {
-    "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Sur Internet Explorer :</strong> Cliquez sur l'icône Adblock Plus et choisissez <strong>Paramètres</strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives</strong>."
-  },
-  "disable-ios": {
-    "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Adblock Plus pour iOS :</strong> Ouvrez Adblock Plus pour iOS sur l'écran d'accueil, touchez <strong>l'icône Paramètres > Publicités Acceptables</strong> et désélectionnez <strong>Autoriser les publicités non-intrusives</strong>."
-  },
-  "disable-ios-browser": {
-    "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Adblock Browser pour iOS :</strong> Ouvrez Paramètres, touchez <strong>Adblock Plus > Pubs Acceptables</strong> et désélectionnez <strong>Autoriser les publicités non-intrusives</strong>."
-  },
-  "distiction": {
-    "description": "Text in \"General criteria\"",
-    "message": "Distinction"
-  },
-  "distiction-criteria": {
-    "description": "Paragraph in \"General criteria\"",
-    "message": "Les publicités doivent toujours pouvoir être identifiées comme telles et pouvoir être distinguées des autres contenus (ex. une publicité ne doit pas cacher le fait d'être une publicité, ne doit pas tromper l'utilisateur en lui laissant penser que la publicité fait partie du Contenu Principal). Les annonces doivent porter clairement la mention « publicité » ou un équivalent."
-  },
-  "does-users-need": {
-    "description": "Section header",
-    "message": "Les utilisateurs d'Adblock Plus veulent-ils réellement cette fonction ?"
-  },
-  "entries-feeds": {
-    "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Les annonces sont autorisées entre les entrées et les flux."
-  },
-  "everyone-must-comply": {
-    "description": "Text in \"which acceptable ads are unblocked\" section",
-    "message": "Aucun candidat n'est favorisé ou traité différemment, et personne ne peut acheter sa place dans la liste blanche. <strong>Tout le monde doit se conformer</strong> aux critères. Tout le monde doit passer par le même processus avant que les publicités soient admises sur la liste blanche."
-  },
-  "exception": {
-    "description": "Footnote in \"not Acceptable Ad\" section",
-    "message": "Sauf lorsque l'utilisateur interagit avec l'annonce de son plein gré (ex. s'il clique sur l'annonce pour afficher la vidéo)"
-  },
-  "expanding-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités qui s'étendent"
-  },
-  "eyeo-contacts-back": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
-    "message": "Un collaborateur d'<a>Eyeo</a>, l'entreprise qui gère Adblock Plus, prendra contact avec vous afin d'identifier ces publicités, et vérifier si elles sont conformes à nos critères."
-  },
-  "fairness-rules": {
-    "description": "Text in \"about\" section",
-    "message": "Pour garantir la transparence et l'équité, les règles suivantes sont applicables et doivent être respectées par tous les participants sans exception :"
-  },
-  "false-positives": {
-    "description": "Section header",
-    "message": "Que se passe-t-il si une publicité qui ne correspond pas aux critères est autorisée ?"
-  },
-  "false-positives-report": {
-    "description": "Text in \"doesn't meet requirement\" secion",
-    "message": "Veuillez nous le <a>signaler</a>. Si un annonceur abuse de son inscription sur la liste d'exceptions, nous pouvons toujours l'en retirer."
-  },
-  "feed-list-ads": {
-    "description": "\"In-feed ads\" description in \"Specific criteria\"",
-    "message": "Pour les annonces contenues dans des listes et flux, les critères généraux sont assouplis comme suit :"
-  },
-  "general-criteria": {
-    "description": "Criteria header in \"Acceptable Ad\" section",
-    "message": "Critères généraux"
-  },
-  "hate-ads": {
-    "description": "Section header",
-    "message": "Mais je déteste toutes les pubs !"
-  },
-  "hover-effect-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités qui évoluent (hover effect) de manière excessive ou non-initiés par l'utilisateur"
-  },
-  "how-be-whitelisted": {
-    "description": "Section header",
-    "message": "Comment abonner mon site à la liste blanche ?"
-  },
-  "image-ads": {
-    "description": "Subheadline in \"Specific criteria\"",
-    "message": "Publicités illustrées"
-  },
-  "in-feed-ads": {
-    "description": "Subheadline in \"Specific criteria\"",
-    "message": "Publicités intégrées aux flux (in Feed)"
-  },
-  "in-feed-ads-size": {
-    "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Les publicités intégrées peuvent prendre plus de place tant qu'elles ne sont pas considérablement plus grandes que d'autres éléments de la liste ou le contenu."
-  },
-  "interstitial-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les pages de publicité interstitielles"
-  },
-  "load-new-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités qui chargent visiblement de nouvelles publicités si le Contenu Principal reste inchangé"
-  },
-  "main-revenue": {
-    "description": "Text in \"Is there payment involved?\" section",
-    "message": "Nous recevons des dons de nos utilisateurs, mais notre principale source de revenus découle de notre initiative de Publicités Acceptables. Les grandes entités (telles que définies ci-dessous) paient des frais de licence pour les services de liste blanche requis par leurs soins et qui leur sont fournis (environ 90 pour cent des licences sont accordées gratuitement). Il convient de noter que les critères des Publicités Acceptables doivent être remplis que des paiements soient versés ou non. Si les critères ne sont pas remplis, la mise sur liste blanche est impossible."
-  },
-  "manifesto": {
-    "description": "Paragraph in \"about\" section",
-    "message": "Pensez-vous que c'est une bonne idée ? Exprimez votre soutien en signant notre <a>Manifeste de la Publicité Acceptable</a>."
-  },
-  "meta-description": {
-    "description": "Description meta tag content inside head tag",
-    "message": "Adblock Plus introduit l'initiative Publicité Acceptable afin de supporter les sites mettant en place des publicités en ligne non-intrusives."
-  },
-  "meta-title": {
-    "description": "Title meta tag content inside head tag",
-    "message": "Publicité Acceptable - Adblock Plus"
-  },
-  "more-details": {
-    "description": "Text in \"Is there payment involved?\" section",
-    "message": "Pour obtenir de plus amples informations, voir <a>ici</a>."
-  },
-  "more-space": {
-    "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Les annonces de recherche peuvent être plus grandes et occuper plus d'espace sur l'écran."
-  },
-  "new-format": {
-    "description": "\"Other Acceptable Ads formats\" text in \"Specific criteria\"",
-    "message": "Vos annonces s'affichent sur d'autres écrans, ou vous êtes convaincu que vous disposez d'un format de Publicité Acceptable différent de ceux mentionnés ci-dessus ? <a>Parlez-nous-en !</a>"
-  },
-  "no-placement-limit": {
-    "description": "Text below point in \"Specific criteria\"",
-    "message": "Aucune exigence d'emplacement."
-  },
-  "no-primary-content": {
-    "description": "Subheadline in \"Specific criteria\"",
-    "message": "Publicités sur les pages sans Contenu Principal"
-  },
-  "no-size-limit": {
-    "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Aucune exigence de taille."
-  },
-  "not-acceptable-ad": {
-    "description": "Section header",
-    "message": "Quelles publicités ne sont pas Acceptables ?"
-  },
-  "only-text-ads": {
-    "description": "\"Ads on pages with no primary content\" description in \"Specific criteria\"",
-    "message": "Seules les publicités textuelles sont permises. Pour les pages Web sans Contenu Principal (p. ex. pages d'erreur/de parking), les critères généraux sont assouplis comme suit :"
-  },
-  "other-acceptable-ads": {
-    "description": "Subheadline in \"Specific criteria\"",
-    "message": "Autres formats de Publicités Acceptables ?"
-  },
-  "our-belive": {
-    "description": "Paragraph in \"about\" section",
-    "message": "Nous sommes convaincus que cette initiative représente un compromis durable entre le choix des utilisateurs d'utiliser des bloqueurs de publicités et le souhait de soutenir les contenus en ligne gratuits, par la publicité. En principe, les Publicités Acceptables ne sont pas animées, sont clairement identifiées comme telles et n'interrompent pas la lecture. Il est important de noter que ces critères reflètent le débat actuel entre nos utilisateurs, les éditeurs, les publicitaires et nous-mêmes. Ils évolueront en fonctions des changements de l'Internet et des retours que nous aurons. Nous invitons expressément chacun à participer à ce débat sur <a>notre forum</a> ou en nous contactant à l'adresse <a>acceptableads@adblockplus.org</a>. En outre, à très court terme, nous envisageons de transmettre le contrôle total de ces critères à un <a>comité indépendant</a>."
-  },
-  "overlay-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités superposées"
-  },
-  "overlay-video-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités superposées dans les vidéos"
-  },
-  "oversized-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités présentant des images générallement démesurées"
-  },
-  "placement": {
-    "description": "Text in \"General criteria\"",
-    "message": "Emplacement"
-  },
-  "placement-criteria": {
-    "description": "Paragraph in \"General criteria\"",
-    "message": "Les publicités ne doivent pas interrompre le courant de lecture normal de l'utilisateur. Ces publicités doivent être placées au-dessus, sur les côtés ou en dessous du Contenu Principal<a>1</a>."
-  },
-  "placement-requirement": {
-    "description": "Bullet point in \"Specific criteria\"",
-    "message": "Exigences relatives à l'emplacement"
-  },
-  "pop-unders": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les fenêtres pop-under"
-  },
-  "pop-ups": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les fenêtres pop-up"
-  },
-  "pre-video-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités préalables aux vidéos"
-  },
-  "primary-content": {
-    "description": "footnote in \"Other Acceptable Ads formats\"",
-    "message": "« Contenu Principal » est définit comme suit (d'après la <a>description de Mozilla de l'élément HTML <main></a>) :\nLe contenu principal est le contenu directement en relation, ou qui développe le sujet principal du document html ou de la fonctionnalité principale d'une application. Ce contenu doit être spécifique au document html, excluant tout contenu qui est répété sur plusieurs documents comme des barres latérales, liens de navigation, informations de copyright, logo du site, et champs de recherche (sauf, bien entendu, si la fonctionnalité principale du document est un champ de recherche.)"
-  },
-  "process-of-whitelisting": {
-    "description": "Text in \"how to be whitelisted\" section",
-    "message": "Après avoir confirmé la conformité de vos publicités aux critères de la Publicité Acceptable, leur intégration sur la lite blanche ne devrait durer qu’autour de dix jours :"
-  },
-  "revenue": {
-    "description": "Section header",
-    "message": "Faut-il effectuer des paiements ?"
-  },
-  "rich-ads": {
-    "description": "Bullet point in \"not Acceptable Ad\" section",
-    "message": "Les publicités Rich Media (ex. Flash, Shockwave, etc.)"
-  },
-  "screen-desktop": {
-    "description": "footnote in \"Other Acceptable Ads formats\"",
-    "message": "La taille standard d'écran pour un ordinateur de bureau est de 1 366 x 768, d'après les données récupérées sur <a>Statcounter</a>."
-  },
-  "screen-mobile": {
-    "description": "footnote in \"Other Acceptable Ads formats\"",
-    "message": "La taille standard d'écran pour un portable est de 360 x 640, d'après les données récupérées sur <a>Statcounter</a>."
-  },
-  "screen-tablets": {
-    "description": "footnote in \"Other Acceptable Ads formats\"",
-    "message": "La taille standard d'écran pour une tablette est de 768 x 1 024, d'après les données récupérées sur <a>Statcounter</a>."
-  },
-  "search-ads": {
-    "description": "Subheadline in \"Specific criteria\"",
-    "message": "Publicités de recherche"
-  },
-  "search-ads-info": {
-    "description": "\"Search ads\" description in \"Specific criteria\"",
-    "message": "Pour les publicités de recherche (publicités diffusées à la suite d'une recherche initiée par l'utilisateur) les critères généraux sont assouplis comme suit :"
-  },
-  "side-primary-content": {
-    "description": "Bullet point in \"General criteria\"",
-    "message": "Lorsqu'elle est placée à côté du Contenu Principal, la largeur maximale de l'annonce est de 350 pixels."
-  },
-  "sign-agreement": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
-    "message": "Après avoir effectué les modifications nécessaires, les deux parties signent <a>un accord</a>."
-  },
-  "size": {
-    "description": "Text in \"General criteria\"",
-    "message": "Taille"
-  },
-  "size-criteria": {
-    "description": "Text in \"General criteria\"",
-    "message": "Les exigences relatives à la taille dépendent de l'emplacement de l'annonce publicitaire :"
-  },
-  "size-requirement": {
-    "description": "Bullet point in \"Specific criteria\"",
-    "message": "Exigences relatives à la taille"
-  },
-  "specific-criteria": {
-    "description": "Criteria header in \"Acceptable Ad\" section",
-    "message": "Critères spécifiques"
-  },
-  "sufficient-space": {
-    "description": "Paragraph in \"General criteria\"",
-    "message": "Les publicités doivent laisser suffisamment d'espace pour le Contenu Principal sur la taille standard d'écran : 1 366 x 768<a>2</a> pour les ordinateurs de bureau, 360 x 640<a>3</a> pour les portables et 768 x 1 024<a>4</a> pour les tablettes."
-  },
-  "survey": {
-    "description": "Text in \"who want acceptable ads\" section",
-    "message": "Les <a>résultats de notre enquête</a> le confirme. D'après cette enquête, seulement 25 % des utilisateurs d'Adblock Plus sont strictement opposés à toutes les annonces publicitaires en ligne. Ils peuvent désactiver la fonction et naviguer totalement sans publicité. Les 75 % restants ont répondu qu'ils accepteraient des publicités pour contribuer à soutenir les sites internet."
-  },
-  "text-ads": {
-    "description": "Text in \"Specific criteria\"",
-    "message": "Publicités textuelles"
-  },
-  "title": {
-    "message": "Autoriser la Publicité Acceptable dans Adblock Plus"
-  },
-  "total-ad-space": {
-    "description": "Paragraph in \"General criteria\"",
-    "message": "Toutes les publicités placées au-dessus de la ligne de flottaison (portion de la page Internet qui apparaît en premier sur la fenêtre du navigateur lorsque l'on ouvre une page, selon les tailles standard d'écran), doivent occuper moins de 15 % de la portion visible de la page Internet. Les publicités placées sous la ligne de flottaison doivent occuper moins de 25 % de la portion visible de la page Internet."
-  },
-  "transparency": {
-    "description": "Fairness rule Bullet point in \"about\" section",
-    "message": "Pour des raisons de transparence, nous mettons à disposition toutes les Publicités Acceptables sur notre forum afin de permettre à notre communauté de donner son avis. Vos opinions comptent beaucoup à nos yeux et nous lisons tous les commentaires."
-  },
-  "unacceptable-ads": {
-    "description": "Text in \"not Acceptable Ad\" section",
-    "message": "Les publicités suivantes sont considérées comme étant inAcceptables <a>*</a>, et ne peuvent pas faire partie de la liste blanche :"
-  },
-  "unobtrusive-image": {
-    "description": "\"Image ads\" description in \"Specific criteria\"",
-    "message": "Les publicités composées d'images statiques peuvent être considérées comme Acceptables mais leur niveau de discrétion doit être évalué en fonction de leur intégration sur la page Internet."
-  },
-  "user-value": {
-    "description": "Fairness rule Bullet point in \"about\" section",
-    "message": "Nous accordons beaucoup d'importance aux utilisateurs d'Adblock Plus et nous sommes toujours à l'écoute. Si notre communauté désapprouve une proposition de Publicité Acceptable pour des raisons valables, la publicité en question sera retirée de la liste blanche."
-  },
-  "what-allowed": {
-    "description": "Section header",
-    "message": "Comment puis-je voir ce que vous autorisez ?"
-  },
-  "whitelist-proposal-submission": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
-    "message": "Nous présentons la demande de mise en liste blanche <a>sur le forum</a> simultanément à l'ajout des annonces dans la liste blanche. La question restera ouverte sur le forum pour que la communauté puisse signaler si ou quand le candidat ne respecte pas les critères."
-  },
-  "who-pays": {
-    "description": "Text in \"Is there payment involved?\" section",
-    "message": "En matière de frais, seules les grandes entités (celles qui ont plus de 10 millions d’impressions publicitaires supplémentaires par mois en raison de leur participation à l'initiative de Publicités Acceptables) sont tenues de payer. Pour ces entités, nos frais de licence représentent normalement 30 pour cent les revenus supplémentaires créés par la mise sur liste blanche de leurs publicités acceptables."
-  },
-  "why-default": {
-    "description": "Section header",
-    "message": "Pourquoi cette fonctionnalité est-elle activée par défaut ?"
-  }
+    "meta-description": {
+        "message": "Adblock Plus introduit l'initiative Publicité Acceptable afin de supporter les sites mettant en place des publicités en ligne non-intrusives.",
+        "description": "Description meta tag content inside head tag"
+    },
+    "about-no-third-party-heading": {
+        "message": "Que sont les publicités acceptables sans traçage tiers ?",
+        "description": "heading"
+    },
+    "acceptable-ads-no-third-party-about": {
+        "message": "Les publicités acceptables sans traçage tiers sont des publicités qui répondent aux <a>critères de la Publicité Acceptable<\/a> et ne permettent pas de traçage de votre navigation par de tierces parties. Il s'agit de pubs conformes à <a>\"Interdire le suivi\"<\/a> (Do Not Track) et\/ou de pubs servies par un domaine appartenant exclusivement à la même société.",
+        "description": "paragraph"
+    },
+    "hate-ads": {
+        "message": "Mais je déteste toutes les pubs !",
+        "description": "section header"
+    },
+    "can-disable": {
+        "message": "Aucun problème, vous pouvez désactiver ce paramètre à tout moment :",
+        "description": "Text in \"hate ads\" secion"
+    },
+    "disable-chrome": {
+        "message": "<strong>Sur Chrome, Maxthon, Opera, Safari :<\/strong> cliquez sur l'icône Adblock Plus et choisissez <strong>Options<\/strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives<\/strong>.",
+        "description": "Text in \"hate ads\" secion"
+    },
+    "disable-firefox": {
+        "message": "<strong>Sur Firefox :<\/strong> cliquez sur l'icône Adblock Plus et choisissez <strong>Préférences de filtre<\/strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives<\/strong>.",
+        "description": "Text in \"hate ads\" secion"
+    },
+    "disable-ie": {
+        "message": "<strong>Sur Internet Explorer :<\/strong> Cliquez sur l'icône Adblock Plus et choisissez <strong>Paramètres<\/strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives<\/strong>.",
+        "description": "Text in \"hate ads\" secion"
+    },
+    "disable-android-browser": {
+        "message": "<strong>Adblock Browser pour Android :<\/strong> Ouvrez Paramètres, touchez <strong>Blocage de publicités > Configurer les Pubs Acceptable<\/strong> et désélectionnez <strong>Autoriser des publicités non-intrusives<\/strong>.",
+        "description": "Text in \"hate ads\" secion"
+    },
+    "disable-ios-browser": {
+        "message": "<strong>Adblock Browser pour iOS :<\/strong> Ouvrez Paramètres, touchez <strong>Adblock Plus > Pubs Acceptables<\/strong> et désélectionnez <strong>Autoriser les publicités non-intrusives<\/strong>.",
+        "description": "Text in \"hate ads\" secion"
+    },
+    "disable-ios": {
+        "message": "<strong>Adblock Plus pour iOS :<\/strong> Ouvrez Adblock Plus pour iOS sur l'écran d'accueil, touchez <strong>l'icône Paramètres > Publicités Acceptables<\/strong> et désélectionnez <strong>Autoriser les publicités non-intrusives<\/strong>.",
+        "description": "Text in \"hate ads\" secion"
+    },
+    "revenue": {
+        "message": "Faut-il effectuer des paiements ?",
+        "description": "heading"
+    }
 }
