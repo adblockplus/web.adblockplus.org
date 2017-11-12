@@ -68,13 +68,13 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{placement-criteria[Paragraph in "General criteria"] Ads must not disrupt the user's natural reading flow. Such ads must be placed on top, side or below the Primary Content <a href="#primary-content" class="footnote-reference">1</a> .}}
 
-![{{acceptable-ads-placement-alt[Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)] Acceptable ads criteria placement}}](/img/acceptable-ads-criteria-placement.png)
+![{{acceptable-ads-placement-alt[Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)] Acceptable ads criteria placement}}](/img/acceptable-ads-criteria-placement.png){: height=368px }
 
 #### {{distiction[Text in "General criteria"] Distinction}}
 
 {{distiction-criteria[Paragraph in "General criteria"] Ads should always be recognizable as ads, and distinguishable from all other content (e.g. are not hiding the label, are not misleading users into thinking an ad is part of the primary content). Ads should be clearly marked with the word "advertisement" or its equivalent.}}
 
-![{{acceptable-ads-label-alt[Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)] Acceptable ads criteria label}}](/img/acceptable-ads-criteria-label.png)
+![{{acceptable-ads-label-alt[Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)] Acceptable ads criteria label}}](/img/acceptable-ads-criteria-label.png){: height=273px }
 
 #### {{size[Text in "General criteria"] Size}}
 
@@ -88,7 +88,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{total-ad-space[Paragraph in "General criteria"] All ads that are placed above the fold (the portion of the web page visible in the browser window when the page first loads under the common screen size), must not occupy in total more than 15 percent of the visible portion of the web page. If placed below the fold, ads must not occupy in total more than 25 percent of the visible portion of the webpage.}}
 
-![{{acceptable-ads-percentage-alt[Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)] Acceptable ads criteria percentage}}](/img/acceptable-ads-criteria-percentages.png)
+![{{acceptable-ads-percentage-alt[Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)] Acceptable ads criteria percentage}}](/img/acceptable-ads-criteria-percentages.png){: height=309px }
 
 ### {{specific-criteria[Criteria header in "Acceptable Ad" section] Specific criteria}} {: #criteria-specific }
 #### {{text-ads[Text in "Specific criteria"] Text ads}}
