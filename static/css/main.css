@@ -58,7 +58,6 @@ pre
 #adblock-browser-notification img
 {
   vertical-align: bottom;
-  margin: 0px 4px;
   width: 25px;
   height: 25px;
 }
@@ -66,6 +65,13 @@ pre
 #adblock-browser-notification span
 {
   white-space: nowrap;
+  margin-left: 1em;
+}
+
+[dir="rtl"] #adblock-browser-notification span
+{
+  margin-left: 0;
+  margin-right: 1em;
 }
 
 .toc
@@ -153,8 +159,8 @@ div.animation[started="true"]
 .content h5
 {
   font-weight: bold;
-  margin: 32px 0px;
-  margin: 2rem 0rem;
+  margin: 32px 0 16px 0;
+  margin: 2rem 0 1rem 0;
 }
 
 .content h1 { font-size: 1.8em; }
