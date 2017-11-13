@@ -1,3 +1,8 @@
+#blog #posts
+{
+  margin-top: 1em;
+}
+
 #blog h1 a
 {
   color: inherit;
@@ -13,20 +18,7 @@
 #blog h3 a
 {
   display: block;
-  font-size: 1.4em;
-}
-
-#blog #post h3 a
-{
-  color: #000;
-}
-
-@media(min-width: 768px)
-{
-  #blog h3 a
-  {
-    font-size: 1.6em;
-  }
+  font-size: 1.3em;
 }
 
 #aside
@@ -38,6 +30,16 @@
 img.divider
 {
   display: none;
+}
+
+.comments li
+{
+  border-bottom: 1px solid #ececec;
+}
+
+.comment_reply
+{
+  border-radius: 0.5em
 }
 
 .comments_error
@@ -67,7 +69,7 @@ div.comments_error
   width: 70%;
 }
 
-#commentsTable .supplCell, 
+#commentsTable .supplCell,
 #commentsTable .buttonCell
 {
   width: 10%;
@@ -110,31 +112,22 @@ div.comments_error
   background-color: #FEE;
 }
 
-.prevLink
-{
-  float: left;
-}
-
-.nextLink
-{
-  float: right;
-}
-
 .note
 {
   font-size: smaller;
 }
 
-#comment_name_imput, 
-#commemt_name_input, 
-#coment_name_input, 
-#comment_mame_input, 
+#comment_name_imput,
+#commemt_name_input,
+#coment_name_input,
+#comment_mame_input,
 #comment_name__input
 {
   display: none;
 }
 
-.comment_answer, .comment_reply
+.comment_answer,
+.comment_reply
 {
   background-color: #fee;
   padding: 0 1em;
@@ -159,4 +152,10 @@ th, td
 .disabled
 {
   color: #888;
+}
+
+input[type="text"],
+textarea
+{
+  border: 1px solid rgb(238, 238, 238);
 }
