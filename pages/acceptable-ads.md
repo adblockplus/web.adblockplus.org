@@ -68,13 +68,13 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{placement-criteria[Paragraph in "General criteria"] Ads must not disrupt the user's natural reading flow. Such ads must be placed on top, side or below the Primary Content <a href="#primary-content" class="footnote-reference">1</a> .}}
 
-![{{acceptable-ads-placement-alt[Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)] Acceptable ads criteria placement}}](/img/acceptable-ads-criteria-placement.png)
+![{{acceptable-ads-placement-alt[Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)] Acceptable ads criteria placement}}](/img/acceptable-ads-criteria-placement.png){: height=368px }
 
 #### {{distiction[Text in "General criteria"] Distinction}}
 
 {{distiction-criteria[Paragraph in "General criteria"] Ads should always be recognizable as ads, and distinguishable from all other content (e.g. are not hiding the label, are not misleading users into thinking an ad is part of the primary content). Ads should be clearly marked with the word "advertisement" or its equivalent.}}
 
-![{{acceptable-ads-label-alt[Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)] Acceptable ads criteria label}}](/img/acceptable-ads-criteria-label.png)
+![{{acceptable-ads-label-alt[Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)] Acceptable ads criteria label}}](/img/acceptable-ads-criteria-label.png){: height=273px }
 
 #### {{size[Text in "General criteria"] Size}}
 
@@ -88,7 +88,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{total-ad-space[Paragraph in "General criteria"] All ads that are placed above the fold (the portion of the web page visible in the browser window when the page first loads under the common screen size), must not occupy in total more than 15 percent of the visible portion of the web page. If placed below the fold, ads must not occupy in total more than 25 percent of the visible portion of the webpage.}}
 
-![{{acceptable-ads-percentage-alt[Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)] Acceptable ads criteria percentage}}](/img/acceptable-ads-criteria-percentages.png)
+![{{acceptable-ads-percentage-alt[Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)] Acceptable ads criteria percentage}}](/img/acceptable-ads-criteria-percentages.png){: height=309px }
 
 ### {{specific-criteria[Criteria header in "Acceptable Ad" section] Specific criteria}} {: #criteria-specific }
 #### {{text-ads[Text in "Specific criteria"] Text ads}}
@@ -128,6 +128,10 @@ title=Allowing acceptable ads in Adblock Plus
 
 <span class="footnote-reference">4</span> {{screen-tablets[footnote in "Other Acceptable Ads formats"] The 'common screen size' for tablets is 768x1024, based on data from <a href="http://gs.statcounter.com/#tablet-resolution-ww-monthly-201401-201412">StatCounter</a>.}}
 {: #screen-tablets }
+
+## {{ about-no-third-party-heading[heading] What are Acceptable Ads without third-party tracking? }} {: #privacy-friendly-acceptable-ads }
+
+{{ acceptable-ads-no-third-party-about[paragraph] Acceptable Ads without third-party tracking are ads that comply with the [Acceptable Ads criteria](https://acceptableads.com/en/about/criteria) and that do not allow third-party entities to track any of your browsing behavior. These are ads that comply with [Do Not Track](https://www.eff.org/issues/do-not-track), and/or ads which are served by the domain which is wholly owned by the same company. }}
 
 ## {{not-acceptable-ad[Section header] What is not considered an Acceptable Ad?}} {: #not-acceptable-ad }
 

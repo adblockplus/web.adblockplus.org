@@ -69,13 +69,13 @@
   display: none;
 }
 
-#main, #video
+#main, #video-container
 {
   display: inline-block;
   vertical-align: top; /* Fix for https://bugzil.la/1320660 */
 }
 
-#video, #maxthon-instruction, #edge-teaser
+#video-container, #maxthon-instruction, #edge-teaser
 {
   background: #ffffff;
   padding: 10px;
@@ -90,6 +90,70 @@ html[lang^="zh_"] #content.maxthon #video,
 #feature-maxthon
 {
   display: none;
+}
+
+#video-container
+{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 520px;
+}
+
+#video
+{
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+#video-thumbnail
+{
+  width: 100%;
+  transition: opacity 0.8s;
+}
+
+.no-js #video-thumbnail,
+.show-disclaimer #video-thumbnail
+{
+  opacity: 0.2;
+}
+
+#video-disclaimer
+{
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+  background-color: #fff;
+  font-size: 0.9em;
+  text-align: center;
+  transition: opacity 0.8s;
+}
+
+.no-js #video-disclaimer,
+.show-disclaimer #video-disclaimer
+{
+  visibility: visible;
+  opacity: 1;
+}
+
+#video-play
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+}
+
+.no-js #video-play,
+.show-disclaimer #video-play
+{
+  margin-top: -60px;
 }
 
 html[lang^="zh_"] #content.maxthon #maxthon-instruction

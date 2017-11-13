@@ -50,8 +50,8 @@ title=Coding Style
   <li>{{html-css-hexadecimal CSS color values should be specified in hexadecimal where possible.}}</li>
   <li>{{html-css-shorthand CSS shorthand properties usage is optional.}}</li>
   <li>{{html-css-order CSS rule declaration order should follow the <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/#property-ordering">WordPress CSS Coding Standards</a>.}}</li>
-  <li>{{html-css-units CSS number values should specify units where possible.}}</li>
   <li>{{html-css-leading-zero Don't omit the optional leading 0 for decimal numbers.}}</li>
+  <li>{{html-css-single-line CSS declaration blocks with a single selector and a single rule can be written in a single line.}}</li>
 </ul>
 
 <h2 id="python">{{s19 Python}}</h2>
@@ -65,7 +65,14 @@ title=Coding Style
   <li>{{python-builtins Don't override builtins except for <a href="https://docs.python.org/2/library/functions.html#non-essential-built-in-funcs">non-essential builtins</a> and <code><fix>file</fix></code> which is superfluos in modern code as well.}}</li>
   <li>{{python-map-filter Use list comprehensions or generator expressions instead of calling <code><fix>map()</fix></code> or <code><fix>filter()</fix></code> with a lambda function.}}</li>
   <li>{{python-regexp Use <a href="https://docs.python.org/2/library/re.html#re.search"><code><fix>re.search()</fix></code></a> instead of <code><fix>re.match()</fix></code> to avoid <a href="https://docs.python.org/2/library/re.html#search-vs-match">confusion</a> about implied beginning of the string but not the ending.}}</li>
-  <li>{{python-flake8 Run <a href="https://pypi.python.org/pypi/flake8"><fix>flake8</fix></a> with the <a href="https://hg.adblockplus.org/codingtools/file/tip/flake8-eyeo"><fix>flake8-eyeo</fix></a> and <a href="https://pypi.python.org/pypi/pep8-naming"><fix>pep8-naming</fix></a> extensions and fix any warning.}}</li>
+  <li>
+    {{python-flake8 Run <a href="https://pypi.python.org/pypi/flake8"><fix>flake8</fix></a> with following extensions and fix all reported errors:}}
+    <ul>
+      <li><a href="https://hg.adblockplus.org/codingtools/file/tip/flake8-eyeo">flake8-eyeo</a></li>
+      <li><a href="https://pypi.python.org/pypi/flake8-docstrings">flake8-docstrings</a> ({{python-flake8-docstring-exception with <code><fix>D1</fix></code> ignored}})</li>
+      <li><a href="https://pypi.python.org/pypi/pep8-naming">pep8-naming</a></li>
+    </ul>
+  </li>
   <li>{{python-tests Write tests and have them run along <fix>flake8</fix> using <a href="https://pypi.python.org/pypi/tox"><fix>tox</fix></a>.}}</li>
 </ul>
 

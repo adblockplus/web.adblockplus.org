@@ -16,7 +16,7 @@
  #}
 
 <!DOCTYPE html>
-<html lang="{{locale}}" dir="{{"rtl" if config.has_option("rtl", locale) else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<html lang="{{locale}}" dir="{{"rtl" if config.has_option("rtl", locale) else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,7 +39,7 @@
         <meta property="og:locale:alternate" content="{{ alternate_locale | to_og_locale }}">
       {% endif %}
     {% endfor %}
-    <meta property="og:url" content="{{ get_canonical_url(page | ignore_browsers) }}">
+    <meta property="og:url" content="{{ config.get("general", "siteurl") }}{{ source.resolve_link(page | ignore_browsers, locale)[1] }}">
 
     {# twitter https://dev.twitter.com/cards/markup #}
     <meta name="twitter:site" content="@AdblockPlus" />
