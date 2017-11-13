@@ -1,0 +1,171 @@
+#main
+{
+  margin-right: 160px;
+}
+
+#sidebar
+{
+  float: right;
+  width: 150px;
+  margin-left: 5px;
+  padding-top: 100px;
+}
+
+#content h1 a
+{
+  color: #000;
+}
+
+
+#content h4, #content h5
+{
+  font-family: Georgia, Times, Serif;
+}
+
+#content hr
+{
+  color: #ccc;
+  width: 66%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+img.divider
+{
+  margin: 2em 0;
+  text-align: center;
+}
+
+.comments_error
+{
+  background-color: #ffa;
+}
+
+div.comments_error
+{
+  border: 1px solid #cc8;
+  padding : 0.3em;
+}
+
+#commentsTable, #name, #email, #web, #message
+{
+  width: 100%;
+}
+
+#commentsTable .labelCell
+{
+  width: 20%;
+  text-align: right;
+}
+
+#commentsTable .fieldCell
+{
+  width: 70%;
+}
+
+#commentsTable .supplCell, 
+#commentsTable .buttonCell
+{
+  width: 10%;
+  white-space: nowrap;
+}
+
+#commentsTable .buttonCell
+{
+  text-align: right;
+}
+
+#message
+{
+  height: 200px;
+}
+
+#txpCommentHelpLink
+{
+  font-size: smaller;
+}
+
+.comments_invite
+{
+  margin-left: 1em;
+}
+
+.tags
+{
+  font-size: 70%;
+}
+
+.tags a
+{
+  font-size: 100%;
+}
+
+.warning
+{
+  border: 1px solid black;
+  background-color: #FEE;
+}
+
+.prevLink
+{
+  float: left;
+}
+
+.nextLink
+{
+  float: right;
+}
+
+.note
+{
+  font-size: smaller;
+}
+
+#comment_name_imput, 
+#commemt_name_input, 
+#coment_name_input, 
+#comment_mame_input, 
+#comment_name__input
+{
+  display: none;
+}
+
+.comment_answer, .comment_reply
+{
+  background-color: #fee;
+  padding: 0 1em;
+  overflow: auto;
+}
+
+.comment_reply
+{
+  margin: 1em;
+}
+
+.comment_reply_header
+{
+  font-weight: bold;
+}
+
+th, td
+{
+  padding: 0.25em;
+}
+
+.disabled
+{
+  color: #888;
+}
+
+@media (max-width: 767px) 
+{
+  #sidebar
+  {
+    display: none;
+  }
+
+  #main
+  {
+    margin-right: 0;
+  }
+}
