@@ -113,6 +113,14 @@ html[lang^="zh_"] #content.maxthon #video,
   transition: opacity 0.8s;
 }
 
+@media(min-width: 768px)
+{
+  #video-thumbnail
+  {
+    height: 275px;
+  }
+}
+
 .no-js #video-thumbnail,
 .show-disclaimer #video-thumbnail
 {
