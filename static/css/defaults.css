@@ -97,10 +97,10 @@ table {
 /* Normalize inline content (opinionated) */
 b,
 strong {
-  font-weight: 600; }
+  font-weight: bolder; }
 
 small {
-  font-size: 0.8em; }
+  font-size: smaller; }
 
 abbr {
   text-decoration: underline;
@@ -175,6 +175,43 @@ img {
 .large-desktop-width {
   width: 1140px; }
 
+/* Text alignment
+ ******************************************************************************/
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-start {
+  text-align: left; }
+
+[dir="rtl"] .text-start {
+  text-align: right; }
+
+.text-end {
+  text-align: right; }
+
+[dir="rtl"] .text-end {
+  text-align: left; }
+
+/* Floats
+ ******************************************************************************/
+.float-start {
+  float: left; }
+
+[dir="rtl"] .float-start {
+  float: right; }
+
+.float-end {
+  float: right; }
+
+[dir="rtl"] .float-end {
+  float: left; }
+
 /* Clearfix
  ******************************************************************************/
 .clearfix:after, .content:after,
@@ -185,6 +222,49 @@ img {
 
 .clearfix:after, .content:after {
   clear: both; }
+
+/* Screen reader only
+ ******************************************************************************/
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
+/* Unstyled elements
+ ******************************************************************************/
+.unstyled,
+.unstyled *,
+.content .unstyled {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none; }
+
+ul.unstyled {
+  list-style: none; }
+
+/* Backgrounds
+ ******************************************************************************/
+.bg-primary {
+  color: #fff;
+  background-color: #000; }
+
+.bg-secondary {
+  color: #eee;
+  background-color: #424242; }
+
+.bg-accent {
+  color: #e3f2fd;
+  background-color: #0d47a1; }
+
+.bg-error {
+  color: #ffebee;
+  background-color: #b71c1c; }
 
 /*******************************************************************************
  * Base styles
