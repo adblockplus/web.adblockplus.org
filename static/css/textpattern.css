@@ -1,25 +1,43 @@
-#content h1 a
+#blog h1 a
+{
+  color: inherit;
+}
+
+#blog h3
+{
+  font-size: 16px;
+  font-size: 1rem;
+  color: #757575;
+}
+
+#blog h3 a
+{
+  display: block;
+  font-size: 1.4em;
+}
+
+#blog #post h3 a
 {
   color: #000;
 }
 
-#content h4, #content h5
+@media(min-width: 768px)
 {
-  font-family: Georgia, Times, Serif;
+  #blog h3 a
+  {
+    font-size: 1.6em;
+  }
 }
 
-#content hr
+#aside
 {
-  color: #ccc;
-  width: 66%;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 img.divider
 {
-  margin: 2em 0;
-  text-align: center;
+  display: none;
 }
 
 .comments_error
