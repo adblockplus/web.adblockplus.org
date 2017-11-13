@@ -1,21 +1,7 @@
-#main
-{
-  margin-right: 160px;
-}
-
-#sidebar
-{
-  float: right;
-  width: 150px;
-  margin-left: 5px;
-  padding-top: 100px;
-}
-
 #content h1 a
 {
   color: #000;
 }
-
 
 #content h4, #content h5
 {
@@ -155,17 +141,4 @@ th, td
 .disabled
 {
   color: #888;
-}
-
-@media (max-width: 767px) 
-{
-  #sidebar
-  {
-    display: none;
-  }
-
-  #main
-  {
-    margin-right: 0;
-  }
 }
