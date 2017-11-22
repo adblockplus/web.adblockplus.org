@@ -237,7 +237,7 @@ Only here you get the best tofu!
 <h3 id="elemhide-emulation">{{ elemhide-emulation-heading[heading] Extended CSS selectors (Adblock Plus specific) }}</h3>
 
 <p>
-  {{ elemhide-emulation-1 Sometimes the standard CSS selectors aren't powerful enough to hide an advertisement, for those cases we have added some new ones, namely <code><fix>:-abp-has()</fix></code> and <code><fix>:-abp-properties()</fix></code> (requires Adblock Plus 1.13.3 for Chrome and Opera or higher). }}
+  {{ elemhide-emulation-1 Sometimes the standard CSS selectors aren't powerful enough to hide an advertisement. For those cases we have added some new selectors, namely <code><fix>:-abp-has()</fix></code>, <code><fix>:-abp-contains()</fix></code> and <code><fix>:-abp-properties()</fix></code> (requires Adblock Plus 1.13.3 or higher for Chrome and Opera). }}
 </p>
 <p>
   {{ elemhide-emulation-2 When writing an element hiding filter that makes use of these extended selectors you must use the <code><fix>#?#</fix></code> syntax, e.g. <code><fix>example.com#?#selector</fix></code>. But it's important to note that doing so carries a performance impact, so do so sparingly and make sure those filters are specific to as few domains and elements as possible. }}
@@ -255,6 +255,10 @@ Only here you get the best tofu!
 <h4>:-abp-has()</h4>
 <p>
   {{ abp-has-1 <code><fix>:-abp-has(selector)</fix></code> will select elements based on their content. For example <code><fix>:-abp-has(> div > a.advertiser)</fix></code> will select elements that contain as a direct descendant a <code><fix>&lt;div&gt;</fix></code> that contains an <code><fix>&lt;a&gt;</fix></code> with the class <code><fix>advertiser</fix></code>. The inner selector can be relative to the element scope, and can use any of the pseudo-selectors, including <code><fix>:-abp-has()</fix></code> and will determine whether the selection will occur. }}
+</p>
+<h4>:-abp-contains()</h4>
+<p>
+  {{ abp-contains-1 <code><fix>:-abp-contains(text)</fix></code> will select elements based on their text content. For example, <code><fix>div.sidebar > span:-abp-contains(Advertisment)</fix></code> will select the  <code><fix>&lt;span&gt;</fix></code> elements within a <code><fix>&lt;div&gt;</fix></code>, with a class of <code><fix>sidebar</fix></code> that contains the word "Advertisment". In practice, you'd want to combine this with a <code><fix>:-abp-has()</fix></code> to select the outer container — something like <code><fix>div.sidebar > div:-abp-has(span:-abp-contains(Advertisment))</fix></code> to select the container that would contain an advertisement label. }}
 </p>
 
 <h3 id="elemhide_exceptions">{{s99 Exception rules}}</h3>

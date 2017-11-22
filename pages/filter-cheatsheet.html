@@ -810,11 +810,15 @@ title=Adblock Plus filters explained
   </tr>
   <tr>
     <td><code>:-abp-properties()</code></td>
-    <td>{{ abp-properties-purpose Select an element if its CSS style properties match what's specified }}</td>
+    <td>{{ abp-properties-purpose Select an element if its CSS style properties match what's specified. You can pass a regular expression by surrounding it with "/". }}</td>
   </tr>
   <tr>
     <td><code>:-abp-has()</code></td>
     <td>{{ abp-has-purpose Select an element if its content subtree match the selector specified }}</td>
+  </tr>
+  <tr>
+    <td><code>:-abp-contains()</code></td>
+    <td>{{ abp-contains-purpose Select an element if its text content contains the specified string }}</td>
   </tr>
 </table>
 
@@ -842,6 +846,10 @@ title=Adblock Plus filters explained
   <tr>
     <td><code>example.com#?#div:-abp-has(&gt; div &gt; img:-abp-properties(WidTh:300px;hEigHt:250px;))</code></td>
     <td>{{ abp-has-example3 Since the CSS properties are matched case-insensitively, this filter matches the same thing as above }}</td>
+  </tr>
+  <tr>
+    <td><code>example.com#?#div:-abp-has(> span:-abp-contains(Advertisment))</code></td>
+    <td>{{ abp-contains-example1 Matches <code><fix>div</fix></code> elements that have a direct descendent <code><fix>span</fix></code> element containing the text "Advertisment" }}</td>
   </tr>
   <tr>
     <td><code>example.com#?#div &gt; img:-abp-properties(width:*px;height:250px;)</code></td>
