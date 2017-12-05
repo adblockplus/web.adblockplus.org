@@ -178,7 +178,7 @@ noheading=true
 
 #### Windows
 
-* <a href="{{malwarebytes-win-affiliate-link http://buy.malwarebytes.com/get-trial/adblock/en/?c=adblock&s=en&k=trial}}">{{malwarebytes-brand[Malware bytes brand name] <fix>Malwarebytes</fix>}}</a>
+* <a href="https://www.malwarebytes.com/">{{malwarebytes-brand[Malware bytes brand name] <fix>Malwarebytes</fix>}}</a>
 * [{{hitmanpro-brand[Hitman Pro brand name] <fix>HitmanPro</fix>}}](http://www.surfright.nl/hitmanpro)
 * [{{adwcleaner-brand[AdwCleaner brand name] <fix>AdwCleaner</fix>}}](https://toolslib.net/downloads/viewdownload/1-adwcleaner/)
 
@@ -187,7 +187,7 @@ noheading=true
 
 #### OS X
 
-* <a href="https://www.malwarebytes.org/antimalware/mac/">{{malwarebytes-brand}}</a>
+* <a href="https://www.malwarebytes.com/">{{malwarebytes-brand}}</a>
 
 </div>
 
