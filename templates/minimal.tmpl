@@ -16,12 +16,29 @@
  #}
 
 <!DOCTYPE html>
-<html>
+<html <? include html-attributes ?>>
+
   <head>
-    {{head|safe}}
+    <? include meta/standard ?>
+    <? include meta/social ?>
+    <? include styles ?>
+    <? include polyfills ?>
+
+    {% block head %}
+      {{ head | safe }}
+    {% endblock %}
   </head>
 
   <body>
-    {{body|safe}}
+    <? include navbar ?>
+
+    <main>
+      {% block body %}
+        {{ body | safe }}
+      {% endblock %}
+    </main>
+
+    <? include footer ?>
+    <? include scripts ?>
   </body>
 </html>

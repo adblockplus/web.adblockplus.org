@@ -16,105 +16,21 @@
  #}
 
 <!DOCTYPE html>
-<html lang="{{locale}}" dir="{{"rtl" if config.has_option("rtl", locale) else "ltr"}}" itemscope="itemscope" itemtype="http://schema.org/WebPage" class="no-js">
+<html <? include html-attributes ?>>
+
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>{{title|translate("title", "meta")}}</title>
-    {% if description %}
-    <meta name="description" content="{{description|translate("description", "meta")}}">
-    {% endif %}
-    <link rel="canonical" href="{{ get_canonical_url(page | ignore_browsers) }}">
-
-    {# facebook / Open Graph http://ogp.me/ #}
-    <meta property="og:image" content="{{og_image if og_image else '/img/adblockplus_promo.png'}}" />
-    <meta property="og:title" content="{{ title | translate("title") }}">
-    {% if description %}
-      <meta property="og:description" content="{{ description | translate("description") }}">
-    {% endif %}
-    <meta property="og:locale" content="{{ locale | to_og_locale }}">
-    {% for alternate_locale in available_locales %}
-      {% if alternate_locale != locale %}
-        <meta property="og:locale:alternate" content="{{ alternate_locale | to_og_locale }}">
-      {% endif %}
-    {% endfor %}
-    <meta property="og:url" content="{{ config.get("general", "siteurl") }}{{ source.resolve_link(page | ignore_browsers, locale)[1] }}">
-
-    {# twitter https://dev.twitter.com/cards/markup #}
-    <meta name="twitter:site" content="@AdblockPlus" />
-    <meta name="twitter:creator" content="@AdblockPlus" />
-
-    <link rel="stylesheet" href="/css/defaults.css" class="cssfx">
-    <link rel="stylesheet" href="/css/main.css" class="cssfx">
-    <link rel="apple-touch-icon" href="/img/favicon-large.png" />
-
-    <!--[if IE 8]>
-      <script src="/js/vendor/ie8.js"></script>
-    <![endif]-->
+    <? include meta/standard ?>
+    <? include meta/social ?>
+    <? include styles ?>
+    <? include polyfills ?>
 
     {% block head %}
-    {{head|safe}}
+      {{head|safe}}
     {% endblock %}
-
-    <!--[if lt IE 9]>
-      <script src="/js/vendor/html5shiv.js"></script>
-      <script src="/js/vendor/respond.min.js"></script>
-      <script src="/js/vendor/classList.js"></script>
-    <![endif]-->
-    <!--[if lt IE 10]>
-      <script src="/js/vendor/cssfx.min.js"></script>
-    <![endif]-->
-    <!--[if IE 8]>
-      <link rel="stylesheet" href="/css/empty.css" class="cssfx"/>
-    <![endif]-->
   </head>
 
   <body>
-    {% macro pageitem(name) %}
-      {% if name == page %}
-        <li class="selected">{{get_string(name, "menu")}}</li>
-      {% else %}
-        <li>{{name|linkify}}{{get_string(name, "menu")}}</a></li>
-      {% endif %}
-    {% endmacro %}
-
-    <nav id="navbar">
-      <div class="container">
-        {{ "index" | linkify(id="navbar-logo") }}
-          <img
-            src="/img/navbar-logo.png"
-            srcset="/img/navbar-logo.svg 2x">
-          <span>{{ "Adblock <strong>Plus</strong>" | translate("navbar-logo-text", "Navbar logo text") }}</span>
-        </a>
-        <a href="#" id="navbar-menu-toggle">
-          <img
-            src="/img/menu-toggle.png"
-            srcset="/img/menu-toggle.svg 2x">
-        </a>
-        <ul id="navbar-menu">
-          {% for pagename in ["about", "features", "bugs", "contribute"] %}
-            <li>
-              {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
-            </li>
-          {% endfor %}
-          <li id="navbar-locale-menubar">
-            <a href="#" id="navbar-locale-selected">
-              {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
-            </a>
-            <ul id="navbar-locale-menu">
-              {% for available_locale in available_locales %}
-                <li>
-                  {{ page | linkify(available_locale) }}
-                    {{ config.get("langnames", available_locale) }} ({{ available_locale | to_og_locale | to_og_location }})
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>{# #navbar-locale-menu #}
-          </li>
-        </ul>{# #navbar-menu #}
-      </div>{# .container #}
-    </nav>{# #navbar #}
+    <? include navbar ?>
 
     <div id="content" class="container content {{ localefile == "index" and page }}">
       {% if abbnotification %}
@@ -145,78 +61,11 @@
       {% endif %}
 
       {% block body %}
-      {{body|safe}}
+        {{body|safe}}
       {% endblock %}
     </div>
 
-    <footer id="footer" class="content">
-      <div class="container">
-        <div class="row">
-          <nav class="column one-fourth">
-            <h5>{{ get_string("resources", "menu") }}</h5>
-            <ul>
-              {% for pagename in ["acceptable-ads", "documentation", "deployments"] %}
-                <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
-              {% endfor %}
-            </ul>
-          </nav>
-          <nav class="column one-fourth">
-            <h5>{{ get_string("community", "menu") }}</h5>
-            <ul>
-              <li><a href="/releases/" hreflang="en">{{get_string("releases", "menu")}}</a></li>
-              <li><a href="/blog/" hreflang="en">{{get_string("blog", "menu")}}</a></li>
-              <li><a href="/forum/" hreflang="en">{{get_string("forum", "menu")}}</a></li>
-              {{ pageitem("development-builds") }}
-            </ul>
-          </nav>
-          <nav class="column one-fourth">
-            <h5>{{get_string("development", "menu")}}</h5>
-            <ul>
-              {{ pageitem("source") }}
-              <li><a href="https://issues.adblockplus.org/report/13" hreflang="en">{{ get_string("roadmap", "menu") }}</a></li>
-              {{ pageitem("tools") }}
-              <li><a href="https://eyeo.com/jobs/" hreflang="en">{{ get_string("jobs", "menu") }}</a></li>
-            </ul>
-          </nav>
-          <nav id="social-list" class="column one-fourth">
-            <h5>{{get_string("follow-us", "menu")}}</h5>
-            <ul>
-              <li>
-                <a href="https://twitter.com/AdblockPlus" target="_blank">
-                  <img
-                    src="/img/footer-twitter-glyphicon.png"
-                    alt="{{ "Twitter" | translate("twitter-alt", "Twitter glyphicon alt text")}}">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/user/AdblockPlusOfficial" target="_blank">
-                  <img src="/img/footer-youtube-glyphicon.png">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/adblockplus" target="_blank">
-                  <img src="/img/footer-facebook-glyphicon.png">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/adblockplus/" target="_blank">
-                  <img src="/img/footer-instagram-glyphicon.png">
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div> {# .row #}
-        <div id="footer-legal">
-          <p id="copyright-notice">{{ "Copyright © 2017 All rights reserved. Adblock Plus<sup>®</sup> is a registered trademark of <a href='https://eyeo.com'>eyeo GmbH</a>." | translate("copyright-notice", "Footer copyright notice") }}</p>
-          <ul id="legal-list">
-            {% for pagename in ["terms", "privacy", "impressum"] %}
-              <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
-            {% endfor %}
-          </ul>
-        </div> {# #footer-legal #}
-      </div> {# .container #}
-    </footer> {# #footer #}
-
-    <script src="/js/main.js"></script>
+    <? include footer ?>
+    <? include scripts ?>
   </body>
 </html>

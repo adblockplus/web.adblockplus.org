@@ -1,5 +1,5 @@
 title=Adblock Plus has been uninstalled
-template=simple
+template=minimal
 
 {% set reasons = [
   ("1v0", "reason-not-installed", "I didn't install Adblock Plus.", ""),
@@ -13,150 +13,68 @@ template=simple
 
 <head>
   <meta name="robots" content="noindex" />
-  <script type="text/javascript">
-  (function()
-  {
-    var adblockersList = null;
-    function toggleView(element)
-    {
-      var targetId = element.getAttribute("data-toggle-view");
-      if (targetId)
-        document.getElementById(targetId).classList.toggle("hidden");
-    }
-
-    function checkSelectedAdblocker()
-    {
-      var selectedOption = adblockersList[adblockersList.selectedIndex];
-      var element = selectedOption.getAttribute("data-show-element");
-      if (element)
-        document.getElementById(element).classList.remove("hidden");
-      else
-      {
-        element = selectedOption.getAttribute("data-hide-element");
-        document.getElementById(element).classList.add("hidden");
-      }
-    }
-
-    function init()
-    {
-      var form = document.getElementById("reasons-form");
-
-      // Create hidden input for GET parameters
-      window.location.search.substr(1).split("&").forEach(function(param)
-      {
-        if (!/.=./.test(param))
-          return;
-
-        var paramSplit = param.split("=");
-        var input = document.createElement("input");
-        input.setAttribute("type", "hidden");
-        input.setAttribute("name", decodeURIComponent(paramSplit[0]));
-        input.setAttribute("value", decodeURIComponent(paramSplit[1]));
-        form.appendChild(input);
-      });
-
-      // Randomly add reasons
-      var reasonsContainer = document.getElementById("reasons");
-      var reasons = document.querySelectorAll("#reasons > li");
-      reasons = Array.prototype.slice.call(reasons);
-      reasonsContainer.innerHTML = "";
-      while (reasons.length)
-      {
-        var randomIndex = Math.floor(Math.random() * (reasons.length -1));
-        var reasonElement = reasons.splice(randomIndex, 1)[0];
-        reasonsContainer.appendChild(reasonElement);
-        var checkbox = reasonElement.querySelector("input[type=checkbox]");
-        if (checkbox.checked)
-          toggleView(checkbox);
-
-        checkbox.addEventListener("change", function(event)
-        {
-          toggleView(event.target);
-        }, false);
-      }
-
-      adblockersList = document.querySelector("#adblockers select");
-      adblockersList.addEventListener("change", function()
-      {
-        checkSelectedAdblocker();
-      }, false);
-      checkSelectedAdblocker();
-
-      var reasonOtherInput = document.getElementById("reason-other-input");
-      var maxLength = reasonOtherInput.getAttribute("maxlength");
-      var charCounter = document.getElementById("characters-countdown");
-      charCounter.textContent = maxLength;
-      reasonOtherInput.addEventListener("keyup", function()
-      {
-        charCounter.textContent = maxLength - reasonOtherInput.value.length;
-      }, false);
-
-      var submitButton = document.getElementById("submit-form");
-      submitButton.addEventListener("click", function(event)
-      {
-        if (!document.querySelector("ul input:checked"))
-        {
-          event.preventDefault();
-          form.setAttribute("class", "error");
-        }
-        else
-        {
-          form.submit();
-        }
-      }, false);
-    }
-    document.addEventListener("DOMContentLoaded", init, false);
-  })();
-  </script>
+  <link href="/css/uninstalled.css" rel="stylesheet">
 </head>
 
-<div class="notification">
-  <strong>{{"Did you uninstall Adblock Plus by accident?"|translate("reinstall-headline", "Text next to the Reinstallation button")}}</strong>
-  {{"index"|linkify}}{{"Reinstall Now"|translate("reinstall", "Reinstall button text")}}</a>
-</div>
-<section class="highlighted">
-  <h1>{{"Please select the reason(s) why you uninstalled Adblock Plus:"|translate("reasons-header", "Form heading")}}</h1>
-  <form id="reasons-form" action="uninstalled-submit" method="get">
-    <fieldset>
-      <ul id="reasons">
-        {%- for reasonId, stringId, value, adblockers in reasons %}
-        <li>
-          <label>
-            <input type="checkbox" name="reason" {% if adblockers %} data-toggle-view="adblockers" {% endif %} value="{{reasonId}}" />
-            {{value|translate(stringId, "Uninstallation reason")}}
-          </label>
-          {%- if adblockers %}
-          <fieldset class="hidden" id="adblockers">
-            <select name="otherAdblockerPredefined">
-              {%- for name in adblockers %}
-              <option data-hide-element="other-adblocker" value="{{name}}">{{name}}</option>
-              {%- endfor %}
-              <option data-show-element="other-adblocker" value="Other">{{"Other"|translate("other", "Option in list of Adblockers")}}</option>
-            </select>
-            <input id="other-adblocker" class="hidden" type="text" name="otherAdblocker" />
-          </fieldset>
-          {%- endif %}
-        </li>
-        {%- endfor %}
-        <li>
-          <label>
-            <input id="reason-other" data-toggle-view="reason-other-container" type="checkbox" name="reason" value="0v0" />
-            {{"Other, namely..."|translate("reason-other", "Last uninstallation reason")}}
-          </label>
-          <fieldset id="reason-other-container" class="hidden">
-            <textarea id="reason-other-input" name="reasonOther" maxlength="300" placeholder="{{"Please explain why you are uninstalling Adblock Plus"|translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option")}}"></textarea>
-            <div>
-               {{"Characters remaining:"|translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option")}}
-               <span id="characters-countdown"></span>
-            </div>
-          </fieldset>
-        </li>
-      </ul>
-    </fieldset>
-    <button id="submit-form">{{"Submit"|translate("submit", "Submit button text")}}</button>
-    <span class="error-label">{{"Please select at least one of the options above"|translate("error-msg", "Error message, is being shown after submission if no item selected")}}</span>
-  </form>
-  <p class="disclaimer">
-    {{"By clicking Submit, you are sending your response to Adblock Plus. Please see our <a href='/privacy'>privacy policy</a>."|translate("disclaimer", "Disclaimer below form")}}
-  </p>
+<section id="uninstall-reasons">
+  <div id="content" class="container content">
+    <h1>{{ title | translate("title") }}</h1>
+    <p class="lead">{{ "Please select the reason(s) why you uninstalled Adblock Plus:" | translate("reasons-header", "Form heading") }}</p>
+    <form id="reasons-form" action="uninstalled-submit" method="get">
+      <fieldset>
+        <ul id="reasons">
+          {%- for reasonId, stringId, value, adblockers in reasons %}
+            <li>
+              <label>
+                <input type="checkbox" name="reason" {% if adblockers %} data-toggle-view="adblockers" {% endif %} value="{{ reasonId }}" />
+                {{ value | translate(stringId, "Uninstallation reason") }}
+              </label>
+              {%- if adblockers %}
+                <fieldset class="hidden" id="adblockers">
+                  <p>
+                    <select name="otherAdblockerPredefined">
+                      {%- for adblocker in adblockers %}
+                        <option data-hide-element="other-adblocker" value="{{ adblocker }}">{{ adblocker }}</option>
+                      {%- endfor %}
+                      <option data-show-element="other-adblocker" value="Other">{{ "Other" | translate("other", "Option in list of Adblockers") }}</option>
+                    </select>
+                    <input id="other-adblocker" class="hidden" type="text" name="otherAdblocker" />
+                  </p>
+                </fieldset>
+              {%- endif %}
+            </li>
+          {%- endfor %}
+          <li>
+            <label>
+              <input id="reason-other" data-toggle-view="reason-other-container" type="checkbox" name="reason" value="0v0" />
+              {{ "Other, namely..." | translate("reason-other", "Last uninstallation reason") }}
+            </label>
+            <fieldset id="reason-other-container" class="hidden">
+              <textarea
+                id="reason-other-input"
+                name="reasonOther"
+                rows="4"
+                maxlength="300"
+                placeholder="{{ "Please explain why you are uninstalling Adblock Plus" | translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
+              <div>
+                {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
+                <span id="characters-countdown"></span>
+              </div>
+            </fieldset>
+          </li>
+        </ul>
+      </fieldset>
+      <p id="reason-error">{{ "Please select at least one of the options above" | translate("error-msg", "Error message, is being shown after submission if no item selected")}}</p>
+      <p>
+        <button class="button primary">{{ "Submit" | translate("submit", "Submit button text") }}</button>
+      </p>
+    </form>
+    <p class="disclaimer">
+      <small>{{ "By clicking Submit, you are sending your response to Adblock Plus. Please see our <a href='/privacy'>privacy policy</a>." | translate("disclaimer", "Disclaimer below form") }}</small>
+    </p>
+  </div>
 </section>
+
+<? include reinstall ?>
+
+<script src="/js/uninstalled.js"></script>

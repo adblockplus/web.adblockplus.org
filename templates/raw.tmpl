@@ -15,4 +15,18 @@
  # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  #}
 
-{{body|safe}}
+<!DOCTYPE html>
+<html <? include html-attributes ?>>
+
+  <head>
+    {% block head %}
+      {{ head | safe }}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block body %}
+      {{ body | safe }}
+    {% endblock %}
+  </body>
+</html>

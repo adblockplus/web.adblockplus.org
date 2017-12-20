@@ -239,13 +239,17 @@ img {
  ******************************************************************************/
 .unstyled,
 .unstyled *,
-.content .unstyled {
+.content .unstyled,
+.content .unstyled * {
   margin: 0;
   padding: 0;
   border: 0;
   background: none; }
 
-ul.unstyled {
+.unstyled ul,
+ul.unstyled,
+.unstyled li,
+li.unstyled {
   list-style: none; }
 
 /* Backgrounds
@@ -265,6 +269,15 @@ ul.unstyled {
 .bg-error {
   color: #ffebee;
   background-color: #b71c1c; }
+
+/* Lead
+ ******************************************************************************/
+.lead {
+  font-size: 1.25em; }
+
+@media (max-width: 767px) {
+  .lead {
+    font-size: 1.125em; } }
 
 /*******************************************************************************
  * Base styles

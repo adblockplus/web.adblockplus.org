@@ -1,0 +1,8 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{title|translate("title", "meta")}}</title>
+{% if description %}
+  <meta name="description" content="{{description|translate("description", "meta")}}">
+{% endif %}
+<link rel="canonical" href="{{ get_canonical_url(page | ignore_browsers) }}">
