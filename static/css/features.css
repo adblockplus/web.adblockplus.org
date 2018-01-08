@@ -52,3 +52,22 @@
 {
   background-position: -228px -114px;
 }
+
+/* Fix overflowing text in NL
+ */
+
+[lang="nl"] .topic-small
+{
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Fix overflowing text in BG 
+ * (auto-hyphenation not applicable)
+ */
+
+[lang="bg"] .topic-small
+{
+  width: 130px;
+}
