@@ -252,6 +252,9 @@ Only here you get the best tofu!
 <p>
   {{ abp-properties-3 <em>Note</em>: The <a href="https://adblockplus.org/development-builds/new-css-property-filter-syntax">older syntax</a> for the CSS property filters is deprecated and will be automatically converted to the new format&nbsp;. The syntax to select the style properties remain the same. For example, <code><fix>[-abp-properties='width:300px;height:250px;']</fix></code> will be converted to <code><fix>:-abp-properties(width:300px;height:250px;)</fix></code>. }}
 </p>
+<p>
+  {{ abp-properties-4 <code><fix>:-abp-properties()</fix></code> will also select elements using the style properties found in their pseudo-elements, like <code><fix>::before</fix></code> and <code><fix>::after</fix></code>. For example, <code><fix>:-abp-properties(content:'Advertisment')</fix></code> will match elements where the string <em>Advertisment</em> is found in either their <code><fix>::before</fix></code> or <code><fix>::after</fix></code> pseudo element. }}
+</p>
 <h4>:-abp-has()</h4>
 <p>
   {{ abp-has-1 <code><fix>:-abp-has(selector)</fix></code> will select elements based on their content. For example <code><fix>:-abp-has(> div > a.advertiser)</fix></code> will select elements that contain as a direct descendant a <code><fix>&lt;div&gt;</fix></code> that contains an <code><fix>&lt;a&gt;</fix></code> with the class <code><fix>advertiser</fix></code>. The inner selector can be relative to the element scope, and can use any of the pseudo-selectors, including <code><fix>:-abp-has()</fix></code> and will determine whether the selection will occur. }}
