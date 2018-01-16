@@ -131,7 +131,13 @@ div.animation[started="false"]
 
 div.animation[started="true"]
 {
+  box-sizing: initial;
   -moz-user-select: none;
+}
+
+.animation img
+{
+  max-width: none;
 }
 
 .alert

@@ -89,7 +89,7 @@ function loadAnimation(event) {
     if (!request.responseXML || !request.responseXML.documentElement)
       return;
 
-    animation._data = request.responseXML.documentElement;
+    animation._data = request.responseXML.documentElement.getElementsByTagName("animation")[0];
     initAnimation(animation);
   }
   request.send(null);
