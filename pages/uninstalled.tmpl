@@ -16,6 +16,8 @@ template=minimal
   <link href="/css/uninstalled.css" rel="stylesheet">
 </head>
 
+<? include reinstall ?>
+
 <section id="uninstall-reasons">
   <div id="content" class="container content">
     <h1>{{ title | translate("title") }}</h1>
@@ -74,7 +76,5 @@ template=minimal
     </p>
   </div>
 </section>
-
-<? include reinstall ?>
 
 <script src="/js/uninstalled.js"></script>
