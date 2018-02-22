@@ -18,45 +18,27 @@
             .classList.toggle("visible");
     }
 
-    // Hide navbar on scroll down, show on scroll up
-    var navBar = document.getElementById("navbar");
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 5;
-    var navbarHeight = navBar.clientHeight;
-
-    window.addEventListener("scroll", (function() {
-        didScroll = true;
-    }));
-
-    setInterval(function() {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-    }, 250);
-
-    function hasScrolled() {
-        var st = window.scrollY;
-        if (Math.abs(lastScrollTop - st) <= delta)
-            return;
-            // Scroll Down
-        if (st > lastScrollTop && st > navbarHeight) {
-            navBar.classList.add("hide-navbar");
-        } else {
-            // Scroll Up
-            if (st + window.innerHeight < document.body.clientHeight) {
-                navBar.classList.remove("hide-navbar");
-            }
-        }
-        lastScrollTop = st;
-    }
-
     function initMenu() {
         document.getElementById("navbar-menu-toggle")
             .addEventListener("click", navigationClick, false);
     }
 
+    function navbarToggle() {
+        window.addEventListener("scroll", function() {
+            var st = window.pageYOffset;
+            var navBar = document.getElementById("navbar");
+            var lastScrollTop = 0;
+            var navbarHeight = navBar.offsetHeight;
+            if (st > lastScrollTop && st > navbarHeight) {
+                navBar.classList.add("hide-navbar");
+            } else {
+                navBar.classList.remove("hide-navbar");
+            }
+            lastScrollTop = st;
+        });
+    }
+
     initLanguageSelection();
     initMenu();
+    navbarToggle();
 })();
