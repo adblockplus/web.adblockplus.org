@@ -291,6 +291,13 @@ a.button.inverse
   position: fixed;
   z-index: 2;
   width: 100%;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+ }
+
+#navbar.hide-navbar
+{
+    top: -4em;
 }
 
 @media(max-width: 991px)
