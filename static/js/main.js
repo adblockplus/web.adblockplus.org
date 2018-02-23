@@ -30,12 +30,12 @@
         var lastScrollTop = 0;
 
         window.addEventListener("scroll", (function() {
-            scrollHandled = false;
+            scrollHandled = true;
         }));
 
         setInterval(function() {
             if(window.innerWidth>991) {
-                if (!scrollHandled) {
+                if (scrollHandled) {
                     scrollHandled = handleScroll();
                 }
             }
@@ -49,7 +49,7 @@
                 navBar.style.top = 0;
             }
             lastScrollTop = currentScroll;
-            return true;
+            return false;
         }
     }
 
