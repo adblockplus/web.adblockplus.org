@@ -285,7 +285,7 @@ a.button.inverse
  * #navbar
  ******************************************************************************/
 
-#navbar
+ #navbar
 {
   min-height: 4em;
   background-color: #c70d2c;
@@ -298,14 +298,8 @@ a.button.inverse
 {
   #navbar
   {
-    overflow: auto;
     top: 0;
     transition: all 0.2s ease-in-out;
-  }
-
-  #navbar.hide-navbar
-  {
-      top: -4em;
   }
 }
 

@@ -24,18 +24,33 @@
     }
 
     function navbarToggle() {
-        window.addEventListener("scroll", function() {
-            var st = window.pageYOffset;
-            var navBar = document.getElementById("navbar");
-            var lastScrollTop = 0;
-            var navbarHeight = navBar.offsetHeight;
-            if (st > lastScrollTop && st > navbarHeight) {
-                navBar.classList.add("hide-navbar");
-            } else {
-                navBar.classList.remove("hide-navbar");
+        var navBar = document.getElementById("navbar");
+        var navbarHeight = navBar.offsetHeight;
+        var scrollHandled = false;
+        var lastScrollTop = 0;
+
+        window.addEventListener("scroll", (function() {
+            scrollHandled = false;
+        }));
+
+        setInterval(function() {
+            if(window.innerWidth>991) {
+                if (!scrollHandled) {
+                    scrollHandled = handleScroll();
+                }
             }
-            lastScrollTop = st;
-        });
+        }, 250);
+
+        function handleScroll() {
+            var currentScroll = window.pageYOffset;
+            if (currentScroll > lastScrollTop && currentScroll > navbarHeight) {
+                navBar.style.top = "-" + navbarHeight + "px";
+            } else {
+                navBar.style.top = 0;
+            }
+            lastScrollTop = currentScroll;
+            return true;
+        }
     }
 
     initLanguageSelection();
