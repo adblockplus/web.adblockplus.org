@@ -20,7 +20,7 @@
         </li>
       {% endfor %}
       <li id="navbar-locale-menubar">
-        <a href="#" id="navbar-locale-selected">
+        <a id="navbar-locale-selected">
           {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
         </a>
         <ul id="navbar-locale-menu">

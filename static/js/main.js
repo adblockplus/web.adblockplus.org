@@ -25,6 +25,7 @@
 
     function initNavbarToggle() {
         var navBar = document.getElementById("navbar");
+        var navBarLocale = document.getElementById("navbar-locale-menu");
         var navbarHeight = navBar.offsetHeight;
         var scrollHandled = false;
         var lastScrollTop = 0;
@@ -40,9 +41,12 @@
 
         setInterval(function() {
             if(window.innerWidth > desktopBreakpoint) {
-                if (!scrollHandled) {
+                if (!scrollHandled && navBarLocale.className != "visible" ) {
                     scrollHandled = handleScroll();
                 }
+            }
+            else {
+                navBar.style.top = 0;
             }
         }, 250);
 
