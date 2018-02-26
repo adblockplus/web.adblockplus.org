@@ -23,19 +23,24 @@
             .addEventListener("click", navigationClick, false);
     }
 
-    function navbarToggle() {
+    function initNavbarToggle() {
         var navBar = document.getElementById("navbar");
         var navbarHeight = navBar.offsetHeight;
         var scrollHandled = false;
         var lastScrollTop = 0;
+        var desktopBreakpoint = 991;
+
+        // IE9 does not support offsetHeight when element is fixed
+        if (!navbarHeight)
+            return;
 
         window.addEventListener("scroll", (function() {
-            scrollHandled = true;
+            scrollHandled = false;
         }));
 
         setInterval(function() {
-            if(window.innerWidth>991) {
-                if (scrollHandled) {
+            if(window.innerWidth > desktopBreakpoint) {
+                if (!scrollHandled) {
                     scrollHandled = handleScroll();
                 }
             }
@@ -49,11 +54,11 @@
                 navBar.style.top = 0;
             }
             lastScrollTop = currentScroll;
-            return false;
+            return true;
         }
     }
 
     initLanguageSelection();
     initMenu();
-    navbarToggle();
+    initNavbarToggle();
 })();
