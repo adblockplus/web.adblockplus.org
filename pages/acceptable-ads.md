@@ -131,7 +131,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 ## {{ about-no-third-party-heading[heading] What are Acceptable Ads without third-party tracking? }} {: #privacy-friendly-acceptable-ads }
 
-{{ acceptable-ads-no-third-party-about[paragraph] Acceptable Ads without third-party tracking are ads that comply with the [Acceptable Ads criteria](https://acceptableads.com/en/about/criteria) and that do not allow third-party entities to track any of your browsing behavior. These are ads that comply with [Do Not Track](https://www.eff.org/issues/do-not-track), and/or ads which are served by the domain which is wholly owned by the same company. }}
+{{ acceptable-ads-no-third-party-about[paragraph] Acceptable Ads without third-party tracking are ads that comply with the [Acceptable Ads criteria](https://acceptableads.com/en/about/criteria) and that do not allow third-party entities to track any of your browsing behavior. These are ads that comply with [Do Not Track](https://www.eff.org/dnt-policy), and/or ads which are served by the domain which is wholly owned by the same company. }}
 
 ## {{not-acceptable-ad[Section header] What is not considered an Acceptable Ad?}} {: #not-acceptable-ad }
 
