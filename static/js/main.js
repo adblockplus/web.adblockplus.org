@@ -24,9 +24,9 @@
     }
 
     function initNavbarToggle() {
-        var navBar = document.getElementById("navbar");
-        var navBarLocale = document.getElementById("navbar-locale-menu");
-        var navbarHeight = navBar.offsetHeight;
+        var navbar = document.getElementById("navbar");
+        var navbarLocale = document.getElementById("navbar-locale-menu");
+        var navbarHeight = navbar.offsetHeight;
         var scrollHandled = false;
         var lastScrollTop = 0;
         var desktopBreakpoint = 991;
@@ -41,21 +41,21 @@
 
         setInterval(function() {
             if(window.innerWidth > desktopBreakpoint) {
-                if (!scrollHandled && navBarLocale.className != "visible" ) {
+                if (!scrollHandled && !navbarLocale.classList.contains("visible")) {
                     scrollHandled = handleScroll();
                 }
             }
             else {
-                navBar.style.top = 0;
+                navbar.style.top = 0;
             }
         }, 250);
 
         function handleScroll() {
             var currentScroll = window.pageYOffset;
             if (currentScroll > lastScrollTop && currentScroll > navbarHeight) {
-                navBar.style.top = "-" + navbarHeight + "px";
+                navbar.style.top = "-" + navbarHeight + "px";
             } else {
-                navBar.style.top = 0;
+                navbar.style.top = 0;
             }
             lastScrollTop = currentScroll;
             return true;
