@@ -535,6 +535,9 @@ a.button.inverse
     clear: both;
     width: 100%;
     background-color: #292929;
+    overflow-y: scroll;
+    max-height: 416px;
+    max-height: 80vh;
   }
 
   #navbar-menu.visible
