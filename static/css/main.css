@@ -13,6 +13,7 @@ body
 #content
 {
   padding-bottom: 2em;
+  padding-top: 4em;
 }
 
 a img
@@ -284,10 +285,15 @@ a.button.inverse
  * #navbar
  ******************************************************************************/
 
-#navbar
+ #navbar
 {
   min-height: 4em;
   background-color: #c70d2c;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  transition: top 0.2s ease-in-out;
 }
 
 @media(max-width: 991px)
@@ -529,6 +535,9 @@ a.button.inverse
     clear: both;
     width: 100%;
     background-color: #292929;
+    overflow-y: scroll;
+    max-height: 416px;
+    max-height: 80vh;
   }
 
   #navbar-menu.visible
