@@ -41,7 +41,13 @@
 
         setInterval(function() {
             if(window.innerWidth > desktopBreakpoint) {
-                if (!scrollHandled && !navbarLocale.classList.contains("visible")) {
+                if (
+                  !scrollHandled &&
+                  ( // locale menu is not visible
+                    !navbarLocale || // our blog doesn't have a locale menu
+                    !navbarLocale.classList.contains("visible")
+                  )
+                ) {
                     scrollHandled = handleScroll();
                 }
             }
