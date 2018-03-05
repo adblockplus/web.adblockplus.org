@@ -246,40 +246,29 @@ div.animation[started="true"]
   background-color: #AD102A;
 }
 
-.button.inverse,
-a.button.inverse
+.button.accent,
+.button.accent:visited
 {
-  background: none;
+  background: #077CA6;
   color: #fff;
   margin-left: 2px;
   margin-right: 2px;
-  border: 1px solid #fff;
 }
 
-.button.inverse:hover,
-.button.inverse:focus
+.button.accent:hover,
+.button.accent:active,
+.button.accent:focus
 {
-  box-shadow: inset 0 0 0 2px #fff;
-}
-
-.button.inverse:active
-{
-  background-color: #fff;
-}
-
-.bg-accent .button.inverse:active
-{
-  color: #077CA6;
+  box-shadow: inset 0 0 0 3px #005D80;
 }
 
 /*******************************************************************************
- * .bg-* utilities
+ * .fg-* utilities
  ******************************************************************************/
 
-.bg-accent
+.fg-accent
 {
-  color: #fff;
-  background-color: #077CA6;
+  color: #077CA6;
 }
 
 /*******************************************************************************
