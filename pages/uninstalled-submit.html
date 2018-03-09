@@ -6,9 +6,10 @@ template=minimal
   <link href="/css/uninstalled.css" rel="stylesheet">
 </head>
 
-<div class="container content">
-  <h1>{{ heading[Heading text] Data submitted successfully }}</h1>
-  <p class="lead">{{ thank-you[Thank you message below heading] Thank you for your participation }}</p>
+<div id="content">
+  <? include reinstall ?>
+  <div class="container content">
+    <h1>{{ heading[Heading text] Data submitted successfully }}</h1>
+    <p class="lead">{{ thank-you[Thank you message below heading] Thank you for your participation }}</p>
+  </div>
 </div>
-
-<? include reinstall ?>

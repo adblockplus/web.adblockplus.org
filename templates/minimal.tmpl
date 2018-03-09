@@ -32,11 +32,9 @@
   <body>
     <? include navbar ?>
 
-    <main id="content">
-      {% block body %}
-        {{ body | safe }}
-      {% endblock %}
-    </main>
+    {% block body %}
+      {{ body | safe }}
+    {% endblock %}
 
     <? include footer ?>
     <? include scripts ?>
