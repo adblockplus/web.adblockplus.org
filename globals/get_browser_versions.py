@@ -13,8 +13,6 @@ from jinja2 import contextfunction
 BROWSERS = {}
 BASE_URL = 'https://product-details.mozilla.org/1.0'
 FIREFOX_URL = BASE_URL + '/firefox_versions.json'
-THUNDERBIRD_URL = BASE_URL + '/thunderbird_versions.json'
-SEAMONKEY_URL = 'http://www.seamonkey-project.org/seamonkey_versions.json'
 CHROME_URL = 'https://omahaproxy.appspot.com/all.json?os=win'
 
 cache = {}
@@ -47,36 +45,7 @@ def get_firefox_versions():
             ]
     }
 
-
-def get_thunderbird_versions():
-    tbird_versions = get_json_versions(THUNDERBIRD_URL)
-    firefox_versions = get_json_versions(FIREFOX_URL)
-    return {
-        'current': tbird_versions['LATEST_THUNDERBIRD_VERSION'],
-        'unreleased': [
-            tbird_versions['LATEST_THUNDERBIRD_DEVEL_VERSION'],
-            tbird_versions['LATEST_THUNDERBIRD_ALPHA_VERSION'],
-            firefox_versions['FIREFOX_NIGHTLY'],
-        ]
-    }
-
 BROWSERS['firefox'] = lambda: get_firefox_versions()
-BROWSERS['thunderbird'] = lambda: get_thunderbird_versions()
-
-
-def get_seamonkey_versions():
-    seamonkey_versions = get_json_versions(SEAMONKEY_URL)
-    versions = {
-        'current': seamonkey_versions['LATEST_SEAMONKEY_VERSION'],
-        'unreleased': [
-            seamonkey_versions['LATEST_SEAMONKEY_MILESTONE_VERSION'],
-            seamonkey_versions['LATEST_SEAMONKEY_DEVEL_VERSION'],
-        ]
-    }
-
-    return versions
-
-BROWSERS['seamonkey'] = get_seamonkey_versions
 
 
 def get_chrome_versions():
