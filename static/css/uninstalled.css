@@ -3,27 +3,16 @@
 
 #reinstall
 {
-  padding: 1em 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-#reinstall .button
+#reinstall-label
 {
-  margin: 1em 0;
+  display: inline-block;
+  margin-bottom: 1em;
+  margin-right: 1em;
 }
-
-@media(min-width: 768px)
-{
-  #reinstall .button
-  {
-    margin-left: 1.5em;
-  }
-
-  [dir="rtl"] #reinstall .button
-  {
-    margin-right: 1.5em;
-  }
-}
-
 
 /* #uninstall-reasons
  ******************************************************************************/
@@ -31,6 +20,7 @@
 #uninstall-reasons ul
 {
   list-style-type: none;
+  margin: 0;
 }
 
 #uninstall-reasons ul,
