@@ -159,3 +159,9 @@ textarea
 {
   border: 1px solid rgb(238, 238, 238);
 }
+
+/* Hide the "Website" field in textpattern comment forms */
+#commentsTable tr:nth-child(4)
+{
+  display: none;
+}
