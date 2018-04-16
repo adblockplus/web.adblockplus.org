@@ -65,6 +65,38 @@ title=Coding Style
   <li>{{python-tuple-vs-list Use tuples for data that have structure, use lists for data that have order.}}</li>
   <li>{{python-builtins Don't override builtins except for <a href="https://docs.python.org/2/library/functions.html#non-essential-built-in-funcs">non-essential builtins</a> and <code><fix>file</fix></code> which is superfluos in modern code as well.}}</li>
   <li>{{python-map-filter Use list comprehensions or generator expressions instead of calling <code><fix>map()</fix></code> or <code><fix>filter()</fix></code> with a lambda function.}}</li>
+  <li>{{python-multiline The preferred way of wrapping long lines is by using Python's implied line continuation inside parentheses, brackets and braces. Long lines can be broken over multiple lines by wrapping expressions in parentheses:}}
+    <ol>
+      <li>{{python-multiline-a1[list item] aligning follow up lines with the opening parentheses and putting the closing parentheses at the end of the last line}}
+          (<a onclick="getElementById('python-multiline-a1-example').classList.toggle('hide');">{{python-multiline-a1-example example}}</a>), or
+        <pre class="hide" id="python-multiline-a1-example">
+    long_object_name.long_method_name(argument1, argument2,
+                                      keyword_argument=value)
+
+    very_long_variable = ['a list of', 'strings that does not',
+                          'fit into', 'one line']
+        </pre>
+      </li>
+      <li>{{python-multiline-a2[list item] breaking the line at the opening parentheses, indenting follow up lines by 4 spaces, and placing the closing parentheses on a separate line that is aligned with the line that contains the opening parentheses}}
+          (<a onclick="getElementById('python-multiline-a2-example').classList.toggle('hide');">{{python-multiline-a2-example example}}</a>).
+        <pre class="hide" id="python-multiline-a2-example">
+    long_object_name.long_method_name(
+        argument1,
+        argument2,
+        keyword_argument=value,
+    )
+
+    very_long_variable = [
+        'a list of',
+        'strings that does not',
+        'fit into',
+        'one line',
+    ]
+        </pre>
+      </li>
+    </ol>
+    {{python-multiline-commas When breaking lists of items separated by commas (e.g. lists, dicts, argument lists) using the second approach add a comma after the last element. This allows adding and rearranging items without touching unrelated lines.}}
+  </li>
   <li>{{python-regexp Use <a href="https://docs.python.org/2/library/re.html#re.search"><code><fix>re.search()</fix></code></a> instead of <code><fix>re.match()</fix></code> to avoid <a href="https://docs.python.org/2/library/re.html#search-vs-match">confusion</a> about implied beginning of the string but not the ending.}}</li>
   <li>
     {{python-flake8 Run <a href="https://pypi.python.org/pypi/flake8"><fix>flake8</fix></a> with following extensions and fix all reported errors:}}
