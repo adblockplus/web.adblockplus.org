@@ -244,6 +244,7 @@ html[dir="rtl"] #summary li .sprite
 #content.opera.ua-opera .install-button,
 #content.internet-explorer.ua-internet-explorer .install-button,
 #content.safari.ua-safari .install-button,
+#content.safari.ua-ios .install-button,
 #content.yandex-browser.ua-yandex-browser .install-button,
 #content.edge.ua-edge .install-button,
 /* IE6 fixes */
@@ -271,6 +272,7 @@ html[dir="rtl"] #summary li .sprite
 #content.opera.ua-opera .install-button:hover,
 #content.internet-explorer.ua-internet-explorer .install-button:hover,
 #content.safari.ua-safari .install-button:hover,
+#content.safari.ua-ios .install-button:hover,
 #content.yandex-browser.ua-yandex-browser .install-button:hover,
 #content.edge.ua-edge .install-button:hover,
 /* IE6 fixes */
@@ -291,6 +293,7 @@ html[dir="rtl"] #summary li .sprite
 #content.opera.ua-opera .install-button:active,
 #content.internet-explorer.ua-internet-explorer .install-button:active,
 #content.safari.ua-safari .install-button:active,
+#content.safari.ua-ios .install-button:active,
 #content.yandex-browser.ua-yandex-browser .install-button:active,
 #content.edge.ua-edge .install-button:active,
 /* IE6 fixes */
@@ -314,7 +317,8 @@ html[dir="rtl"] #summary li .sprite
 #content.firefox #install-firefox, #content.chrome #install-chrome,
 #content.opera #install-opera, #content.android #install-android,
 #content.internet-explorer #install-internet-explorer,
-#content.safari #install-safari,
+#content.safari.ua-safari #install-safari,
+#content.safari.ua-ios #install-ios-safari,
 #content.yandex-browser #install-yandex-browser,
 #content.edge #install-edge
 {
