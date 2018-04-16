@@ -317,8 +317,8 @@ html[dir="rtl"] #summary li .sprite
 #content.firefox #install-firefox, #content.chrome #install-chrome,
 #content.opera #install-opera, #content.android #install-android,
 #content.internet-explorer #install-internet-explorer,
-#content.safari.ua-safari #install-safari,
 #content.safari.ua-ios #install-ios-safari,
+#content.safari:not(.ua-ios) #install-safari,
 #content.yandex-browser #install-yandex-browser,
 #content.edge #install-edge
 {
