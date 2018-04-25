@@ -758,6 +758,7 @@ div.animation[started="true"]
 
 .video-thumbnail
 {
+  display: block;
   width: 100%;
   transition: opacity 0.8s;
   opacity: 0.2;
@@ -780,6 +781,11 @@ div.animation[started="true"]
   font-size: 0.9em;
   text-align: center;
   transition: opacity 0.8s;
+}
+
+.content .video-disclaimer
+{
+  margin: 0;
 }
 
 .hide-disclaimer .video-disclaimer
