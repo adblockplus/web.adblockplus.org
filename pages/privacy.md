@@ -151,7 +151,7 @@ notoc=True
 
 {{ who-is-responsible-paragraph-1 The legal person responsible for the collection, processing and / or use of personal data in connection with our websites and products ("Controller") is: }}
 
-#### {{ controller-heading[heading] Controller } {: #controller }
+#### {{ controller-heading[heading] Controller }} {: #controller }
 
 <address>
 eyeo GmbH<br>
