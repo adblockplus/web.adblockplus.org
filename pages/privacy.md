@@ -301,7 +301,7 @@ Germany<br>
 {{ access-reports-paragraph The processed reports can only be accessed by an individual who knows their unique ID. These IDs are only shared with: }}
 
 1.  {{ access-reports-1[list item] maintainers of the filter subscriptions mentioned in the report, as EasyList authors. }}
-2.  {{ access-reports-2[list item] certain members of eyeo’s filter list team. eyeo will use the reports for troubleshooting and support monitoring purposes only. }}
+1.  {{ access-reports-2[list item] certain members of eyeo’s filter list team. eyeo will use the reports for troubleshooting and support monitoring purposes only. }}
 
 ##### {{ emergency-notification-heading[heading] Emergency notification }} {: #emergency-notification }
 
