@@ -105,7 +105,8 @@ notoc=True
     - {{ how-long-item-4[list item] Website logs }} 
     - {{ how-long-item-5[list item] Data related to subscription downloads, extension update checks, emergency notifications }}
 2. {{ how-long-item-6[list item] Blog and forum data as long as the respective comment / account exists }}
-    {{ how-long-paragraph **Note**: “Aggregated usage statistics” and other data without any connection to single users may be retained beyond these periods. }}
+
+{{ how-long-paragraph **Note**: “Aggregated usage statistics” and other data without any connection to single users may be retained beyond these periods. }}
 
 ### {{ our-values-heading[heading] Our values }} {: #our-values }
 
