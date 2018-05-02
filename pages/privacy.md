@@ -165,10 +165,13 @@ Germany<br>
 {{ who-is-responsible-paragraph-2 If you have any questions regarding your personal data, please do not hesitate to contact our Data Protection Officer: }}
 
 <address>
-Dr. Judith Nink<br>
-**Phone:** +49 (0) 221 / 65028 598<br>
-**Email:** ![privacyemail](pages/privacyemail.PNG)<br>
-**Fax:** +49 (0) 221 / 65028 599<br>
+  Dr. Judith Nink
+  <dl>
+    <dt>**Phone**</dt>
+    <dd>+49 (0) 221 / 65028 598</dd>
+    <dt>**Email**</dt><dd>![privacyemail](pages/privacyemail.PNG)</dd>
+    <dt>**Fax**</dt><dd>+49 (0) 221 / 65028 599</dd>
+  </dl>
 </address>
 
 ### {{ what-is-personal-heading[heading] What is personal data? }} {: #what-is-personal-data }
