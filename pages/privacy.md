@@ -189,6 +189,7 @@ Germany<br>
 {{ purpose-paragraph-2 We collect and process your personal data solely for the following purposes: }}
 
 {{ purpose-paragraph-3 Firstly, we collect and process your personal data, such as website logs and data relating to subscription downloads, extension update checks (such data is collected and processed by Google), emergency notifications and issue reporter data sent by you, for technical purposes. We mainly collect and process such data to prevent security attacks and are thus able to provide our services to you in a secure and data-efficient manner. Secondly, we collect and process your personal data relating to subscription downloads, extension updates, emergency downloads, and issue reporter data sent to us by you to improve and evaluate our products. }}
+
 {{ purpose-paragraph-4 Thirdly, we send emergency notifications in order to inform you about urgent issues in connection with our products. Lastly, we collect and process the data you have provided us with in our blog and forum in order to communicate with you and / or to assist you. }}
 
 #### {{ legal-basis-heading[heading] Legal basis of data collection and processing }} {: #legal-basis }
@@ -210,7 +211,9 @@ Germany<br>
 #### {{ legitimate-interest-permission-heading[heading] Collection and processing is necessary for the purposes of our legitimate interests - Art. 6 (1) f GDPR }} {: #legitimate-interest-permission }
 
 {{ legitimate-interest-permission-paragraph The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. Ensuring the usability of our websites and of our extension is in your and our vital interest and therefore we use such data. }}
+
 ### {{ disclosure-heading[heading] Do we disclose any personal data? GDPR }} {: #disclosure }
+
 {{ disclsoure-paragraph-1 We may only transfer your personal data to third parties without informing you separately beforehand in the following exceptional cases as explained below: }}
 
 - {{ disclosure-item-1[list item] If required for legal proceedings / investigations, personal data will be transferred to the criminal investigation authorities and, if appropriate, to injured third parties. We will only do this if there are concrete indications of illegal and / or abusive behavior. We are also legally obliged to give certain public authorities information. These are criminal investigation authorities, public authorities which prosecute administrative offences entailing fines and the German finance authorities. }}
@@ -228,6 +231,7 @@ Germany<br>
 {{ information-acces-rights-paragraph Naturally you have the right to receive, upon request, information about the personal data stored by us about you and information about how we collect, process and store your personal data. Where that is the case, you have the right to gain access to such personal data stored by us. You have the right to request from us the rectification of your inaccurate personal data. Taking into account the purposes of collecting and processing your data, you have the right to have incomplete personal data completed. You have the right to request restriction of processing. }}
 
 #### {{ data-portability-right-heading[heading] Right to data portability  }} {: #data-portability-right }
+
 {{ data-portability-right-paragraph You also have the right (1) to receive all personal data concerning you and which you have provided to us, in a structured, commonly used and machine-readable format and (2) to transmit that data to another controller. }}
 
 
@@ -310,6 +314,7 @@ Germany<br>
 ##### {{ data-retention-heading[heading] Data retention }} {: #data-retention }
 
 {{ data-retention-paragraph-1 Data related to subscription downloads, extension update checks, emergency notifications as well as the full reports and their associated data are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. }}
+
 {{ data-retention-paragraph-2 Adblock Plus stores some data in [the Firefox profile](http://support.mozilla.com/kb/Profiles) on your computer. Adblock Plus never transmits this data to any servers, but other extensions and services, such as [Firefox Sync](https://mozilla.com/privacy-policy/), may do so. Most of the data (your preferences, filter subscriptions and custom filters) is unobjectionable privacy-wise. However, filter hit statistics and recent issue reports could be used to reconstruct your browsing history. Adblock Plus treats this information identically to how history data is treated by the browser; this data isn't stored if you are using [private browsing mode](http://support.mozilla.com/kb/Private+Browsing) and is removed if you choose to clear your browsing history. }}
 
 #### {{ adblock-browser-android-heading[heading] Adblock Browser for Android }} {: #adblock-browser-android }
