@@ -168,9 +168,9 @@ Germany<br>
   Dr. Judith Nink
   <dl>
     <dt>**Phone**</dt>
-    <dd>+49 (0) 221 / 65028 598</dd>
+    <dd><a href='tel:+49 (0) 221 / 65028 598'>+49 (0) 221 / 65028 598</a></dd>
     <dt>**Email**</dt><dd>![privacyemail](pages/privacyemail.PNG)</dd>
-    <dt>**Fax**</dt><dd>+49 (0) 221 / 65028 599</dd>
+    <dt>**Fax**</dt><dd><a href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
   </dl>
 </address>
 
