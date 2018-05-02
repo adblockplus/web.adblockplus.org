@@ -27,11 +27,6 @@ title=Allowing acceptable ads in Adblock Plus
       display: block;
       margin: 0px auto 30px auto;
     }
-
-    li
-    {
-      margin-bottom: 8px;
-    }
   </style>
 </head>
 
