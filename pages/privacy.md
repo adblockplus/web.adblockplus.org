@@ -160,7 +160,7 @@ Lichtstr. 25<br>
 Germany<br>
 </address>
 
-#### {{ dpo-heading[heading] Controller }} {: #dpo }
+#### {{ dpo-heading[heading] Data Protection Officer }} {: #dpo }
 
 {{ who-is-responsible-paragraph-2 If you have any questions regarding your personal data, please do not hesitate to contact our Data Protection Officer: }}
 
