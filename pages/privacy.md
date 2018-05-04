@@ -401,3 +401,5 @@ Germany<br>
 {{ retention-communications-paragraph-2 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch). }}
 
 <time>{{ publication-date May 2018 }}</time>
+
+*[GDPR]: General Data Protection Regulation
