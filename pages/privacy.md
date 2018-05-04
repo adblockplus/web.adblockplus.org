@@ -125,7 +125,7 @@ notoc=True
 
 ### {{ questions-heading[heading] Questions? }} {: #questions }
 
-{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, at PRIVAVCYEMAIL or phone +49 (0) 221 / 65028 598. }}
+{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, at <a href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a> or phone +49 (0) 221 / 65028 598. }}
 
 ## {{ privacy-policy-long-heading[heading] Privacy Policy (long version) }} {: #privacy-policy-long }
 
