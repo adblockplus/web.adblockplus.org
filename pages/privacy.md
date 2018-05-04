@@ -139,7 +139,7 @@ notoc=True
 - [{{ general-notes-item-4[list item & link] What is the purpose of data processing and what is the legal basis? }}](#what-is-personal-data)
 - [{{ general-notes-item-5[list item & link] Do we disclose personal data? }}](#what-is-personal-data)
 - [{{ general-notes-item-6[list item & link] What rights do you have? }}](#your-rights-long)
-- [{{ general-notes-item-7[list item & link] Deletion of your data }}](#deletion-of-data)
+- [{{ general-notes-item-7[list item & link] Deletion of your data }}](#erasure-of-data)
 - [{{ general-notes-item-8[list item & link] Changes to this Privacy Policy }}](#changes-to-policy)
 - [{{ general-notes-item-9[list item & link] Collection and processing in our products }}](#collection-and-processing)
 
