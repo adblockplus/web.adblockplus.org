@@ -298,6 +298,7 @@ Germany<br>
 - {{ isse-reporter-item-2[list item] The email address is only used to request more information or to update the user on the issue. }}
 
 ##### {{ access-reports-heading[heading] Access to the reports }} {: #access-reports }
+
 {{ access-reports-paragraph The processed reports can only be accessed by an individual who knows their unique ID. These IDs are only shared with: }}
 
 1.  {{ access-reports-1[list item] maintainers of the filter subscriptions mentioned in the report, as EasyList authors. }}
