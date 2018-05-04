@@ -125,7 +125,7 @@ notoc=True
 
 ### {{ questions-heading[heading] Questions? }} {: #questions }
 
-{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, at <a href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a> or phone +49 (0) 221 / 65028 598. }}
+{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via [email](#privacy-email){: title="email address of Data Protection Officer at eyeo GmbH" } or [phone](#privacy-phone){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
 
 ## {{ privacy-policy-long-heading[heading] Privacy Policy (long version) }} {: #privacy-policy-long }
 
@@ -168,9 +168,9 @@ Germany<br>
   Dr. Judith Nink
   <dl>
     <dt>**Phone**</dt>
-    <dd><a href='tel:+49 (0) 221 / 65028 598'>+49 (0) 221 / 65028 598</a></dd>
-    <dt>**Email**</dt><dd><a href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a></dd>
-    <dt>**Fax**</dt><dd><a href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
+    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 65028 598'>+49 (0) 221 / 65028 598</a></dd>
+    <dt>**Email**</dt><dd><a id='privacy-email' href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a></dd>
+    <dt>**Fax**</dt><dd><a id='privacy-fax' href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
   </dl>
 </address>
 
@@ -259,7 +259,7 @@ Germany<br>
 
 ### {{ how-to-exercise-heading[heading] How to exercise your rights }} {: #how-to-exercise }
 
-{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a> or mail to: }}
+{{ how-to-exercise-paragraph To exercise your rights, please contact us via [email](#privacy-email){: title="email address of Data Protection Officer at eyeo GmbH" } or mail to: }}
 
 
 <address>
