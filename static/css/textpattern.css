@@ -170,3 +170,10 @@ textarea
 {
   max-width: 560px;
 }
+
+/* Override image dimensions inserted into HTML via textpattern */
+#blog img
+{
+  max-width: 100% !important;
+  height: auto !important;
+}
