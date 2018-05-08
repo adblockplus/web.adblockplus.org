@@ -35,7 +35,7 @@ notoc=True
 
 ### {{ data-processed-heading[heading] What kind of personal data do we process? }} {: #data-processed }
 
-1. {{ data-processed-item-1[list item] While using our products: extension or Adblock Browser (automatically, except for Issue Reporter) }}
+1. {{ data-processed-item-1[list item] While using our products: Adblock Plus or Adblock Browser (automatically, except for Issue Reporter) }}
     - {{ data-processed-item-2[list item] Extension updates, subscription downloads, emergency notifications: }}
       <div class="inline-list" markdown="1">
         - {{ data-processed-item-3[list item] Browser version }}
@@ -89,7 +89,7 @@ notoc=True
 
 - {{ why-we-process-item-1[list item] In order to inform you about urgent issues in connection with our products. }}
 - {{ why-we-process-item-2[list item] To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads and issue reports you send to us. }}
-- {{ why-we-process-item-3[list item] For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / extension, to ensure website / extension security. }}
+- {{ why-we-process-item-3[list item] For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security. }}
 - {{ why-we-process-item-4[list item] To analyze aggregated website logs, to improve our website. }}
 - {{ why-we-process-item-5[list item] For communication and assistance purposes in our forum and blog. }}
 
@@ -188,7 +188,7 @@ Germany<br>
 
 {{ purpose-paragraph-2 We collect and process your personal data solely for the following purposes: }}
 
-{{ purpose-paragraph-3 Firstly, we collect and process your personal data, such as website logs and data relating to subscription downloads, extension update checks (such data is collected and processed by Google), emergency notifications and issue reporter data sent by you, for technical purposes. We mainly collect and process such data to prevent security attacks and are thus able to provide our services to you in a secure and data-efficient manner. Secondly, we collect and process your personal data relating to subscription downloads, extension updates, emergency downloads, and issue reporter data sent to us by you to improve and evaluate our products. }}
+{{ purpose-paragraph-3 Firstly, we collect and process your personal data, such as website logs and data relating to subscription downloads, extension update checks (such data is collected and processed by Google), emergency notifications and Issue Reporter data sent by you, for technical purposes. We mainly collect and process such data to prevent security attacks and are thus able to provide our services to you in a secure and data-efficient manner. Secondly, we collect and process your personal data relating to subscription downloads, extension updates, emergency downloads, and Issue Reporter data sent to us by you to improve and evaluate our products. }}
 
 {{ purpose-paragraph-4 Thirdly, we send emergency notifications in order to inform you about urgent issues in connection with our products. Lastly, we collect and process the data you have provided us with in our blog and forum in order to communicate with you and / or to assist you. }}
 
@@ -202,7 +202,7 @@ Germany<br>
 
 #### {{ contract-permission-heading[heading] Collection and processing is necessary for taking steps prior to enter into a contract - Art. 6 (1) b GDPR }} {: #contract-permission }
 
-{{ contract-permission-paragraph The collection and processing of your personal data may be necessary for the performance of a contract to which you may be a party. Prior to entering into such contract, the collection and processing of your personal data may also be necessary in order to take steps at your request. This applies for installation (data gathered by the browser and / or app store) and the use of our products. }}
+{{ contract-permission-paragraph The collection and processing of your personal data may be necessary for the performance of a contract to which you may be a party. Prior to entering into such a contract, the collection and processing of your personal data may also be necessary in order to take steps at your request. This applies for installation (data gathered by the browser and / or app store) and the use of our products. }}
 
 #### {{ compliance-permission-heading[heading] Collection and processing is necessary for compliance with a legal obligation to which the Controller is subject – Art. 6 (1) c GDPR }} {: #compliance-permission }
 
@@ -210,7 +210,7 @@ Germany<br>
 
 #### {{ legitimate-interest-permission-heading[heading] Collection and processing is necessary for the purposes of our legitimate interests - Art. 6 (1) f GDPR }} {: #legitimate-interest-permission }
 
-{{ legitimate-interest-permission-paragraph The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. Ensuring the usability of our websites and of our extension is in your and our vital interest and therefore we use such data. }}
+{{ legitimate-interest-permission-paragraph The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. Ensuring the usability of our websites and of our products is in your and our vital interest and therefore we use such data. }}
 
 ### {{ disclosure-heading[heading] Do we disclose any personal data? }} {: #disclosure }
 
@@ -282,7 +282,7 @@ Germany<br>
 
 ##### {{ update-checks-heading[heading] Extension update checks }} {: #update-checks }
 
-{{ update-checks-paragraph Your browser periodically checks for updates of all your extensions including Adblock Plus. Some general information - browser version, extension version, operating system, date of last update and your IP address - are transmitted during an update check. Updates for Adblock Plus for Android and Internet Explorer are handled by the AdblockPlus.org website and the data transmitted is subject to [its privacy policy](https://adblockplus.org/en/privacy#logs). Updates to Adblock Plus for Firefox are handled by the Addons.Mozilla.Org website and are subject to the [Firefox Privacy Policy](https://www.mozilla.org/de/privacy/). Updates to Adblock Plus for Chrome are handled by the Google Web Store website and are subject to the [Google Privacy Policy](https://www.google.com/policies/privacy/). Updates to Adblock Plus for Opera are handled by the Opera Add-ons website and are subject to the [Opera privacy policy](http://www.opera.com/de/privacy#web). Updates to Adblock Plus for Safari are handled by the Safari Extensions website and are subject to the [Apple Privacy Policy](https://www.apple.com/privacy/privacy-policy/). }}
+{{ update-checks-paragraph Your browser periodically checks for updates of all your extensions, including Adblock Plus. Some general information - browser version, extension version, operating system, date of last update and your IP address - are transmitted during an update check. Updates for Adblock Plus for Android and Internet Explorer are handled by the AdblockPlus.org website and the data transmitted is subject to [its Privacy Policy](https://adblockplus.org/en/privacy#logs). Updates to Adblock Plus for Firefox are handled by the Addons.Mozilla.Org website and are subject to the [Firefox Privacy Policy](https://www.mozilla.org/de/privacy/). Updates to Adblock Plus for Chrome are handled by the Google Web Store website and are subject to the [Google Privacy Policy](https://www.google.com/policies/privacy/). Updates to Adblock Plus for Opera are handled by the Opera Add-ons website and are subject to the [Opera Privacy Policy](http://www.opera.com/de/privacy#web). Updates to Adblock Plus for Safari are handled by the Safari Extensions website and are subject to the [Apple Privacy Policy](https://www.apple.com/privacy/privacy-policy/). }}
 
 ##### {{ subscription-downloads-heading[heading] Subscription downloads }} {: #subscription-downloads }
 
@@ -314,13 +314,13 @@ Germany<br>
 
 ##### {{ data-retention-heading[heading] Data retention }} {: #data-retention }
 
-{{ data-retention-paragraph-1 Data related to subscription downloads, extension update checks, emergency notifications as well as the full reports and their associated data are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. }}
+{{ data-retention-paragraph-1 Data related to subscription downloads, extension update checks, emergency notifications (as well as the full reports and their associated data) are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. }}
 
 {{ data-retention-paragraph-2 Adblock Plus stores some data in [the Firefox profile](http://support.mozilla.com/kb/Profiles) on your computer. Adblock Plus never transmits this data to any servers, but other extensions and services, such as [Firefox Sync](https://mozilla.com/privacy-policy/), may do so. Most of the data (your preferences, filter subscriptions and custom filters) is unobjectionable privacy-wise. However, filter hit statistics and recent issue reports could be used to reconstruct your browsing history. Adblock Plus treats this information identically to how history data is treated by the browser; this data isn't stored if you are using [private browsing mode](http://support.mozilla.com/kb/Private+Browsing) and is removed if you choose to clear your browsing history. }}
 
 #### {{ adblock-browser-android-heading[heading] Adblock Browser for Android }} {: #adblock-browser-android }
 
-{{ adblock-browser-android-paragraph-1 Adblock Browser for Android is based on Mozilla's Firefox browser. Some data collection and processing in connection with Adblock Browser for Android are subject to [Mozilla's privacy policy](https://www.mozilla.org/de/privacy/). Please note that Adblock Browser automatically connects to Mozilla and its service providers to provide security, snippets and other features ([Privacy Notice Firefox](https://www.mozilla.org/de/privacy/firefox/)); and when you ask it to, Adblock Browser also connects to Mozilla to provide you with features such as location services ([Privacy Notice Firefox](https://www.mozilla.org/de/privacy/firefox/)). }}
+{{ adblock-browser-android-paragraph-1 Adblock Browser for Android is based on Mozilla's Firefox browser. Some data collection and processing in connection with Adblock Browser for Android are subject to [Mozilla’s Privacy Notice](https://www.mozilla.org/de/privacy/). Please note that Adblock Browser automatically connects to Mozilla and its service providers to provide security, snippets and other features ([Privacy Notice Firefox](https://www.mozilla.org/de/privacy/firefox/)); and when you ask it to, Adblock Browser also connects to Mozilla to provide you with features such as location services ([Privacy Notice Firefox](https://www.mozilla.org/de/privacy/firefox/)). }}
 
 {{ adblock-browser-android-paragraph-2 Deviating from the description in [Mozilla’s Privacy Notice](https://www.mozilla.org/privacy/firefox/), Firefox updates are provided under eyeo's control and some features, such as the Firefox Health Report, crash reporting and add-ons, are disabled. }}
 
@@ -390,7 +390,7 @@ Germany<br>
 
 ###### {{ blog-comments-heading[heading] Blog comments }} {: #blog-comments }
 
-{{ blog-comments-paragraph When you add a comment on the Adblock Plus [blog](https://adblockplus.org/blog/), you can optionally specify an email address. Unlike the other fields, the email address is never displayed to other visitors and is only used to notify the comment author about replies to his / her comments, if any. }}
+{{ blog-comments-paragraph When you add a comment on the Adblock Plus [blog](https://adblockplus.org/blog/), you can optionally specify an email address. Unlike the other fields, the email address is never displayed to other visitors and is only used to notify the comment author about replies to their comments, if any. }}
 
 ###### {{ email-collection-heading[heading] Email collection }} {: #email-collection }
 
@@ -398,7 +398,7 @@ Germany<br>
 
 ###### {{ retention-communications-heading[heading] Email collection }} {: #retention-communications }
 
-{{ retention-communications-paragraph-1 Data provided by you in connection with our blog and our forum will be retained for the same time as the comment and/or your account exists. }}
+{{ retention-communications-paragraph-1 Data provided by you in connection with our blog and our forum will be retained for the same time as the comment and / or your account exists. }}
 
 {{ retention-communications-paragraph-2 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch). }}
 
