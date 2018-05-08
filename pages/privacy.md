@@ -43,7 +43,7 @@ notoc=True
         - {{ data-processed-item-5[list item] Operating system }}
         - {{ data-processed-item-6[list item] Date of last update }}
         - {{ data-processed-item-7[list item] IP address }}
-        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page using the [Issue Reporter](#issue-reporter): URL, blockable items, matching filters, active filter lists (voluntary) }}
+        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with the bug using the [Issue Reporter](#issue-reporter): URL, blockable items, matching filters, active filter lists (voluntary) }}
       </div>
     - {{ data-processed-item-9[list item] Adblock Browser for Android }}
         - {{ data-processed-item-10[list item] eyeo collects no data. Adblock Browser, being based on Mozilla Firefox, provides Firefox specific functionality which, however, may send data to Mozilla. }}
@@ -90,7 +90,7 @@ notoc=True
 - {{ why-we-process-item-1[list item] In order to inform you about urgent issues in connection with our products. }}
 - {{ why-we-process-item-2[list item] To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads and issue reports you send to us. }}
 - {{ why-we-process-item-3[list item] For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / extension, to ensure website / extension security. }}
-- {{ why-we-process-item-4[list item] To analyze aggregated website logs. }}
+- {{ why-we-process-item-4[list item] To analyze aggregated website logs, to improve our website. }}
 - {{ why-we-process-item-5[list item] For communication and assistance purposes in our forum and blog. }}
 
 ### {{ what-is-legal[heading] What is the legal basis of data processing? }} {: #what-is-legal } 
@@ -145,7 +145,7 @@ notoc=True
 
 ### {{ general-notes-heading[heading] General notes }} {: #general-notes }
 
-{{ general-notes-paragraph Your protection and data confidentiality is of utmost importance to us ("eyeo" "w" "our"). We take the protection your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites. }}
+{{ general-notes-paragraph Your protection and data confidentiality is of utmost importance to us ("eyeo" "we" "our"). We take the protection your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites. }}
 
 ### {{ who-is-responsible-heading[heading] Who is responsible for data collection and processing (contacts)? }} {: #who-is-responsible }
 
@@ -196,7 +196,7 @@ Germany<br>
 
 {{ legal-basis-paragraph We collect and process your personal data in compliance with the GDPR and the applicable EU laws and German national data protection laws. }}
 
-#### {{ consent-permission-heading[heading] Collection and processing is based on your consent - Art. 6 (1) a GDPR, Art. 4 (11) GDPR processing }} {: #consent-permission }
+#### {{ consent-permission-heading[heading] Collection and processing is based on your consent - Art. 6 (1) a GDPR, Art. 4 (11) GDPR }} {: #consent-permission }
 
 {{ consent-permission-paragraph We will always ask for your consent to collect and process your personal data for the aforementioned specific purposes, unless the collection and processing of your personal data is permitted by statutory laws. Where you have provided us with your consent to the collection and processing of your personal data for the aforementioned specific purposes, you have the right to withdraw your consent at any time. }}
 
@@ -212,7 +212,7 @@ Germany<br>
 
 {{ legitimate-interest-permission-paragraph The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. Ensuring the usability of our websites and of our extension is in your and our vital interest and therefore we use such data. }}
 
-### {{ disclosure-heading[heading] Do we disclose any personal data? GDPR }} {: #disclosure }
+### {{ disclosure-heading[heading] Do we disclose any personal data? }} {: #disclosure }
 
 {{ disclsoure-paragraph-1 We may only transfer your personal data to third parties without informing you separately beforehand in the following exceptional cases as explained below: }}
 
@@ -265,7 +265,7 @@ Germany<br>
 <address>
 eyeo GmbH<br>
 Lichtstr. 25<br>
-50823 Cologne<br>
+50825 Cologne<br>
 Germany<br>
 </address>
 
@@ -301,7 +301,7 @@ Germany<br>
 
 {{ access-reports-paragraph The processed reports can only be accessed by an individual who knows their unique ID. These IDs are only shared with: }}
 
-1.  {{ access-reports-1[list item] maintainers of the filter subscriptions mentioned in the report, as EasyList authors. }}
+1.  {{ access-reports-1[list item] maintainers of the filter subscriptions mentioned in the report, as EasyList authors, who are not employed at eyeo. }}
 1.  {{ access-reports-2[list item] certain members of eyeo’s filter list team. eyeo will use the reports for troubleshooting and support monitoring purposes only. }}
 
 ##### {{ emergency-notification-heading[heading] Emergency notification }} {: #emergency-notification }
@@ -394,7 +394,7 @@ Germany<br>
 
 ###### {{ email-collection-heading[heading] Email collection }} {: #email-collection }
 
-{{ email-collection-paragraph Some of eyeo's Websites host product campaigns that rely on email collection. For example, you can request a link by email to install Adblock Browser on your mobile device. We do not use third parties to manage these campaigns. Instead, data that you submit is handled in-house (i.e. turned into an email or used to send the email). }}
+{{ email-collection-paragraph Some of eyeo's Websites host product campaigns that rely on email collection. For example, you can request a link by email to install Adblock Browser on your mobile device. We do not use third parties to manage these campaigns. Instead, data that you submit is handled in-house (i.e. turned into an email or used to send the email). We will never share or sell your email address, or any other information collected, to any third parties. }}
 
 ###### {{ retention-communications-heading[heading] Email collection }} {: #retention-communications }
 
