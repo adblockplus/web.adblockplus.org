@@ -43,7 +43,7 @@ notoc=True
         - {{ data-processed-item-5[list item] Operating system }}
         - {{ data-processed-item-6[list item] Date of last update }}
         - {{ data-processed-item-7[list item] IP address }}
-        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with the bug using the [Issue Reporter](#issue-reporter): URL, blockable items, matching filters, active filter lists (voluntary) }}
+        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with a bug using the [Issue Reporter](#issue-reporter): URL, blockable items, matching filters, active filter lists (voluntary) }}
       </div>
     - {{ data-processed-item-9[list item] Adblock Browser for Android }}
         - {{ data-processed-item-10[list item] eyeo collects no data. Adblock Browser, being based on Mozilla Firefox, provides Firefox specific functionality which, however, may send data to Mozilla. }}
