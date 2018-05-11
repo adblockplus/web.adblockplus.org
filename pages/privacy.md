@@ -188,9 +188,10 @@ Germany<br>
 
 {{ purpose-paragraph-2 We collect and process your personal data solely for the following purposes: }}
 
-{{ purpose-paragraph-3 Firstly, we collect and process your personal data, such as website logs and data relating to subscription downloads, extension update checks (such data is collected and processed by Google), emergency notifications and Issue Reporter data sent by you, for technical purposes. We mainly collect and process such data to prevent security attacks and are thus able to provide our services to you in a secure and data-efficient manner. Secondly, we collect and process your personal data relating to subscription downloads, extension updates, emergency downloads, and Issue Reporter data sent to us by you to improve and evaluate our products. }}
-
-{{ purpose-paragraph-4 Thirdly, we send emergency notifications in order to inform you about urgent issues in connection with our products. Lastly, we collect and process the data you have provided us with in our blog and forum in order to communicate with you and / or to assist you. }}
+1. {{ purpose-item-1 We collect and process your personal data, such as website logs and data relating to subscription downloads, extension update checks (such data is collected and processed by Google), emergency notifications and Issue Reporter data sent by you, for technical purposes. We mainly collect and process such data to prevent security attacks and are thus able to provide our services to you in a secure and data-efficient manner. }}
+1. {{ purpose-item-2 We collect and process your personal data relating to subscription downloads, extension updates, emergency downloads, and Issue Reporter data sent to us by you to improve and evaluate our products. }}
+1. {{ purpose-item-3 We send emergency notifications in order to inform you about urgent issues in connection with our products. }}
+1. {{ purpose-item-4 We collect and process the data you have provided us with in our blog and forum in order to communicate with you and / or to assist you. }}
 
 #### {{ legal-basis-heading[heading] Legal basis of data collection and processing }} {: #legal-basis }
 
