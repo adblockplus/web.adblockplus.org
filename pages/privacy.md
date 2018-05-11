@@ -406,3 +406,4 @@ Germany<br>
 <time datetime="2018-05">{{ publication-date May 2018 }}</time>
 
 *[GDPR]: General Data Protection Regulation
+*[EU]: European Union
