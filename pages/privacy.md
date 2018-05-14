@@ -321,7 +321,7 @@ Germany<br>
 
 #### {{ adblock-browser-android-heading[heading] Adblock Browser for Android }} {: #adblock-browser-android }
 
-{{ adblock-browser-android-paragraph-1 Adblock Browser for Android is based on Mozilla's Firefox browser. Some data collection and processing in connection with Adblock Browser for Android are subject to [Mozilla’s Privacy Notice](https://www.mozilla.org/privacy/). Please note that Adblock Browser automatically connects to Mozilla and its service providers to provide security, snippets and other features ([Privacy Notice Firefox](https://www.mozilla.org/privacy/firefox/)); and when you ask it to, Adblock Browser also connects to Mozilla to provide you with features such as location services ([Privacy Notice Firefox](https://www.mozilla.org/privacy/firefox/)). }}
+{{ adblock-browser-android-paragraph-1 Adblock Browser for Android is based on Mozilla's Firefox browser. Some data collection and processing in connection with Adblock Browser for Android are subject to [Mozilla Privacy Policy](https://www.mozilla.org/privacy/). Please note that Adblock Browser automatically connects to Mozilla and its service providers to provide security, snippets and other features ([Firefox Privacy Notice](https://www.mozilla.org/privacy/firefox/)); and when you ask it to, Adblock Browser also connects to Mozilla to provide you with features such as location services ([Firefox Privacy Notice](https://www.mozilla.org/privacy/firefox/)). }}
 
 {{ adblock-browser-android-paragraph-2 Deviating from the description in [Mozilla’s Privacy Notice](https://www.mozilla.org/privacy/firefox/), Firefox updates are provided under eyeo's control and some features, such as the Firefox Health Report, crash reporting and add-ons, are disabled. }}
 
