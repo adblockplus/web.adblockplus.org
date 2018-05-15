@@ -369,7 +369,7 @@ Germany<br>
 
 ###### {{ retention-website-requests-heading[heading] Data retention }} {: #retention-website-requests }
 
-{{ retention-website-requests-paragraph The request to our Websites, including your IP address, is stored when you create a forum post, submit a contact form, or add a blog comment. This allows administrators to effectively address spam content and security breaches. All stored requests are deleted after 30 days. }}
+{{ stored-website-requests-paragraph The request to our Websites, including your IP address, is stored when you create a forum post, submit a contact form, or add a blog comment. This allows administrators to effectively address spam content and security breaches. All stored requests are deleted after 30 days. }}
 
 ###### {{ cookies-heading[heading] Cookies }} {: #cookies }
 
