@@ -4,28 +4,10 @@ title=Allowing acceptable ads in Adblock Plus
   <meta content="{{meta-description[Description meta tag content inside head tag] Adblock Plus introduces the Acceptable Ads initiative: Support websites that rely on advertising but choose to do it in a non-intrusive way.}}" name="description" />
   <meta content="{{meta-description}}" property="og:description" />
   <style type="text/css">
-    .footnote-reference
-    {
-      vertical-align: super;
-      font-size: 0.7em;
-    }
-
-    h3,
-    h4
-    {
-      margin-bottom: 0px;
-    }
-
-    h3 + p,
-    h4 + p
-    {
-      margin-top: 5px;
-    }
-
     img
     {
       display: block;
-      margin: 0px auto 30px auto;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -61,7 +43,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 #### {{placement[Text in "General criteria"] Placement}}
 
-{{placement-criteria[Paragraph in "General criteria"] Ads must not disrupt the user's natural reading flow. Such ads must be placed on top, side or below the Primary Content <a href="#primary-content" class="footnote-reference">1</a> .}}
+{{placement-criteria[Paragraph in "General criteria"] Ads must not disrupt the user's natural reading flow. Such ads must be placed on top, side or below the Primary Content <sup><a href="#primary-content">1</a></sup> .}}
 
 ![{{acceptable-ads-placement-alt[Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)] Acceptable ads criteria placement}}](/img/acceptable-ads-criteria-placement.png){: height=368px }
 
@@ -79,7 +61,7 @@ title=Allowing acceptable ads in Adblock Plus
 * {{side-primary-content[Bullet point in "General criteria"] When placed on the side of the primary content, the maximum width of an ad should be 350px.}}
 * {{below-primary-content[Bullet point in "General criteria"] When placed below the primary content, the maximum height of an ad should be 400px.}}
 
-{{sufficient-space[Paragraph in "General criteria"] Ads must always leave sufficient space for the Primary Content on the common screen size of 1366x768 <a href="#screen-desktop" class="footnote-reference">2</a> for desktop, 360x640 <a href="#screen-mobile" class="footnote-reference">3</a> for mobile devices and 768x1024 <a href="#screen-tablets" class="footnote-reference">4</a> for tablets.}}
+{{sufficient-space[Paragraph in "General criteria"] Ads must always leave sufficient space for the Primary Content on the common screen size of 1366x768 <sup><a href="#screen-desktop">2</a></sup> for desktop, 360x640 <sup><a href="#screen-mobile">3</a></sup> for mobile devices and 768x1024 <sup><a href="#screen-tablets">4</a></sup> for tablets.}}
 
 {{total-ad-space[Paragraph in "General criteria"] All ads that are placed above the fold (the portion of the web page visible in the browser window when the page first loads under the common screen size), must not occupy in total more than 15 percent of the visible portion of the web page. If placed below the fold, ads must not occupy in total more than 25 percent of the visible portion of the webpage.}}
 
@@ -112,16 +94,16 @@ title=Allowing acceptable ads in Adblock Plus
 #### {{other-acceptable-ads[Subheadline in "Specific criteria"] Other Acceptable Ads formats? }}
 {{new-format["Other Acceptable Ads formats" text in "Specific criteria"] Are your ads displayed on alternative screens, or are you convinced that you have an innovative Acceptable Ads format which doesn't fit the ads outlined above? <a href="mailto:acceptableads@adblockplus.org">Let us know!</a>}}
 
-<span class="footnote-reference">1</span> {{primary-content[footnote in "Other Acceptable Ads formats"] The 'Primary Content' is defined as (based on <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">Mozilla's description</a> of the <main\> HTML element): The Primary Content consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application. This content should be unique to the document, excluding any content that is repeated across a set of documents such as sidebars, navigation links, copyright information, site logos, and search forms (unless, of course, the document's main function is a search form).}}
+<sup>1</sup> {{primary-content[footnote in "Other Acceptable Ads formats"] The 'Primary Content' is defined as (based on <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">Mozilla's description</a> of the <main\> HTML element): The Primary Content consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application. This content should be unique to the document, excluding any content that is repeated across a set of documents such as sidebars, navigation links, copyright information, site logos, and search forms (unless, of course, the document's main function is a search form).}}
 {: #primary-content }
 
-<span class="footnote-reference">2</span> {{screen-desktop[footnote in "Other Acceptable Ads formats"] The 'common screen size' for desktop is 1366x768, based on data from <a href="http://gs.statcounter.com/#desktop-resolution-ww-monthly-201401-201412">StatCounter</a>.}}
+<sup>2</sup> {{screen-desktop[footnote in "Other Acceptable Ads formats"] The 'common screen size' for desktop is 1366x768, based on data from <a href="http://gs.statcounter.com/#desktop-resolution-ww-monthly-201401-201412">StatCounter</a>.}}
 {: #screen-desktop }
 
-<span class="footnote-reference">3</span> {{screen-mobile[footnote in "Other Acceptable Ads formats"] The 'common screen size' for mobile is 360x640, based on data from <a href="http://gs.statcounter.com/#mobile_resolution-ww-monthly-201401-201412">StatCounter</a>.}}
+<sup>3</sup> {{screen-mobile[footnote in "Other Acceptable Ads formats"] The 'common screen size' for mobile is 360x640, based on data from <a href="http://gs.statcounter.com/#mobile_resolution-ww-monthly-201401-201412">StatCounter</a>.}}
 {: #screen-mobile }
 
-<span class="footnote-reference">4</span> {{screen-tablets[footnote in "Other Acceptable Ads formats"] The 'common screen size' for tablets is 768x1024, based on data from <a href="http://gs.statcounter.com/#tablet-resolution-ww-monthly-201401-201412">StatCounter</a>.}}
+<sup>4</sup> {{screen-tablets[footnote in "Other Acceptable Ads formats"] The 'common screen size' for tablets is 768x1024, based on data from <a href="http://gs.statcounter.com/#tablet-resolution-ww-monthly-201401-201412">StatCounter</a>.}}
 {: #screen-tablets }
 
 ## {{ about-no-third-party-heading[heading] What are Acceptable Ads without third-party tracking? }} {: #privacy-friendly-acceptable-ads }
@@ -130,7 +112,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 ## {{not-acceptable-ad[Section header] What is not considered an Acceptable Ad?}} {: #not-acceptable-ad }
 
-{{unacceptable-ads[Text in "not Acceptable Ad" section] The following types of ads are currently unacceptable <a class="footnote-reference" href="#exception">*</a>, and cannot be considered for inclusion on the whitelist:}}
+{{unacceptable-ads[Text in "not Acceptable Ad" section] The following types of ads are currently unacceptable <sup><a href="#exception">*</a></sup>, and cannot be considered for inclusion on the whitelist:}}
 
 * {{load-new-ads[Bullet point in "not Acceptable Ad" section] Ads that visibly load new ads if the Primary Content does not change}}
 * {{hover-effect-ads[Bullet point in "not Acceptable Ad" section] Ads with excessive or non user-initiated hover effects}}
@@ -146,7 +128,7 @@ title=Allowing acceptable ads in Adblock Plus
 * {{pre-video-ads[Bullet point in "not Acceptable Ad" section] Pre-roll video ads}}
 * {{rich-ads[Bullet point in "not Acceptable Ad" section] Rich media ads (e.g. Flash ads, Shockwave ads, etc.)}}
 
-<span class="footnote-reference">*</span> {{exception[Footnote in "not Acceptable Ad" section] Except when the user intentionally interacts with the ad (e.g. clicks on the ad to see a video ad playing).}}
+<sup>*</sup> {{exception[Footnote in "not Acceptable Ad" section] Except when the user intentionally interacts with the ad (e.g. clicks on the ad to see a video ad playing).}}
 {: #exception }
 
 ## {{why-default[Section header] Why is this feature enabled by default?}} {: #default }
