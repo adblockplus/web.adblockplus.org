@@ -167,10 +167,12 @@ Germany<br>
 <address>
   Dr. Judith Nink
   <dl>
-    <dt>**Phone**</dt>
+    <dt>{{phone-label[phone number label] Phone }}</dt>
     <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 65028 598'>+49 (0) 221 / 65028 598</a></dd>
-    <dt>**Email**</dt><dd><a id='privacy-email' href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a></dd>
-    <dt>**Fax**</dt><dd><a id='privacy-fax' href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
+    <dt>{{email-label[email address label] Email }}</dt>
+    <dd><a id='privacy-email' href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a></dd>
+    <dt>{{fax-label[fax number label] Fax }}</dt>
+    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
   </dl>
 </address>
 
@@ -406,5 +408,5 @@ Germany<br>
 
 <time datetime="2018-05">{{ publication-date May 2018 }}</time>
 
-*[GDPR]: General Data Protection Regulation
-*[EU]: European Union
+*[GDPR]: {{gdpr-abbr[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
+*[EU]: {{eu-abbr[European Union abbreviation definition] European Union }}
