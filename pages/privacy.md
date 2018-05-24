@@ -160,7 +160,7 @@ Germany<br>
 
 #### {{ purpose-heading[heading] Purpose of data collection and processing }} {: #purpose }
 
-{{ purpose-paragraph-1 In compliance with [Art. 5 (b) GDPR](https://gdpr-info.eu/art-5-gdpr/), we collect and process your personal data for specified, explicit and legitimate purposes and do not further process your data in a manner that is incompatible with those purposes. }}
+{{ purpose-paragraph-1 In compliance with Art. 5 (b) GDPR, we collect and process your personal data for specified, explicit and legitimate purposes and do not further process your data in a manner that is incompatible with those purposes. }}
 
 {{ purpose-paragraph-2 We collect and process your personal data solely for the following purposes: }}
 
@@ -173,19 +173,19 @@ Germany<br>
 
 {{ legal-basis-paragraph We collect and process your personal data in compliance with the GDPR and the applicable EU laws and German national data protection laws. }}
 
-#### {{ consent-permission-heading[heading] Collection and processing is based on your consent - [Art. 6 (1) a GDPR](https://gdpr-info.eu/art-6-gdpr/), [Art. 4 (11) GDPR](https://gdpr-info.eu/art-4-gdpr/) }} {: #consent-permission }
+#### {{ consent-permission-heading[heading] Collection and processing is based on your consent - Art. 6 (1) a GDPR, Art. 4 (11) GDPR }} {: #consent-permission }
 
 {{ consent-permission-paragraph We will always ask for your consent to collect and process your personal data for the aforementioned specific purposes, unless the collection and processing of your personal data is permitted by statutory laws. Where you have provided us with your consent to the collection and processing of your personal data for the aforementioned specific purposes, you have the right to withdraw your consent at any time. }}
 
-#### {{ contract-permission-heading[heading] Collection and processing is necessary for taking steps prior to enter into a contract - [Art. 6 (1) b GDPR](https://gdpr-info.eu/art-6-gdpr/) }} {: #contract-permission }
+#### {{ contract-permission-heading[heading] Collection and processing is necessary for taking steps prior to enter into a contract - Art. 6 (1) b GDPR }} {: #contract-permission }
 
 {{ contract-permission-paragraph The collection and processing of your personal data may be necessary for the performance of a contract to which you may be a party. Prior to entering into such a contract, the collection and processing of your personal data may also be necessary in order to take steps at your request. This applies for installation (data gathered by the browser and / or app store) and the use of our products. }}
 
-#### {{ compliance-permission-heading[heading] Collection and processing is necessary for compliance with a legal obligation to which the Controller is subject – [Art. 6 (1) c GDPR](https://gdpr-info.eu/art-6-gdpr/) }} {: #compliance-permission }
+#### {{ compliance-permission-heading[heading] Collection and processing is necessary for compliance with a legal obligation to which the Controller is subject – Art. 6 (1) c GDPR }} {: #compliance-permission }
 
 {{ compliance-permission-paragraph Collection and processing of your personal data may be necessary for compliance with a legal obligation to which we are subject under EU laws or the laws of a EU Member State. }}
 
-#### {{ legitimate-interest-permission-heading[heading] Collection and processing is necessary for the purposes of our legitimate interests - [Art. 6 (1) f GDPR](https://gdpr-info.eu/art-6-gdpr/) }} {: #legitimate-interest-permission }
+#### {{ legitimate-interest-permission-heading[heading] Collection and processing is necessary for the purposes of our legitimate interests - Art. 6 (1) f GDPR }} {: #legitimate-interest-permission }
 
 {{ legitimate-interest-permission-paragraph The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. Ensuring the usability of our websites and of our products is in your and our vital interest and therefore we use such data. }}
 
@@ -220,7 +220,7 @@ Germany<br>
 - {{ erasure-of-data-item-2[list item] If you withdraw your consent on which the collection and processing is based and where there are no other legal grounds for the collection and processing. }}
 - {{ erasure-of-data-item-3[list item] If you object to the collection and processing and there are no overriding legitimate grounds for the collection and processing. }}
 
-{{ erasure-of-data-paragraph-2 Please note, if data needs to be retained for legal purposes pursuant to [Art. 17 (3) GDPR](https://gdpr-info.eu/art-17-gdpr/), we will restrict the use of the respective data. }}
+{{ erasure-of-data-paragraph-2 Please note, if data needs to be retained for legal purposes pursuant to Art. 17 (3) GDPR, we will restrict the use of the respective data. }}
 
 ### {{ lodge-a-complaint-heading[heading] Right to lodge a complaint with a supervisory authority }} {: #lodge-a-complaint }
 
@@ -228,7 +228,7 @@ Germany<br>
 
 ### {{ right-to-object-heading[heading] Right to object to the processing of your data }} {: #right-to-object }
 
-{{ right-to-object-paragraph You have the right to object at any time to the collection and processing of your personal data on grounds relating to your particular situation, when collection and processing is based on our legitimate interest ([Art. 6 (1) f GDPR](https://gdpr-info.eu/art-6-gdpr/)). }}
+{{ right-to-object-paragraph You have the right to object at any time to the collection and processing of your personal data on grounds relating to your particular situation, when collection and processing is based on our legitimate interest (Art. 6 (1) f GDPR). }}
 
 ### {{ withdraw-consent-heading[heading] Right to withdraw your consent at any time }} {: #withdraw-consent }
 
