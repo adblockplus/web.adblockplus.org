@@ -3,13 +3,6 @@ description=This Privacy Policy describes how we use, process and protect inform
 notoc=True
 
 <style>
-  .inline-list ul
-  {
-    padding: 0;
-  }
-
-  .inline-list,
-  .inline-list ul,
   .inline-list li
   {
     display: inline;
@@ -24,7 +17,14 @@ notoc=True
   {
     content: none;
   }
+
+  .content dd
+  {
+    margin: 0em 0em 0.5em 0em
+  }
 </style>
+
+<div class="two-thirds" markdown="1">
 
 - [{{ privacy-notice-short-link[link to heading] Privacy Notice (short version) }}](#privacy-policy-short)
 - [{{ privacy-policy-long-link[link to heading] Privacy Policy (long version) }}](#privacy-policy-long)
@@ -37,19 +37,18 @@ notoc=True
 
 1. {{ data-processed-item-1[list item] While using our products: Adblock Plus or Adblock Browser (automatically, except for Issue Reporter) }}
     - {{ data-processed-item-2[list item] Extension updates, subscription downloads, emergency notifications: }}
-      <div class="inline-list" markdown="1">
+      {: .inline-list }
         - {{ data-processed-item-3[list item] Browser version }}
         - {{ data-processed-item-4[list item] Extension version }}
         - {{ data-processed-item-5[list item] Operating system }}
         - {{ data-processed-item-6[list item] Date of last update }}
         - {{ data-processed-item-7[list item] IP address }}
         - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with a bug using the [Issue Reporter](#issue-reporter): URL, blockable items, matching filters, active filter lists (voluntary) }}
-      </div>
     - {{ data-processed-item-9[list item] Adblock Browser for Android }}
         - {{ data-processed-item-10[list item] eyeo collects no data. Adblock Browser, being based on Mozilla Firefox, provides Firefox specific functionality which, however, may send data to Mozilla. }}
     - {{ data-processed-item-11[list item] Adblock Browser for iOS (automatically): }}
         - {{ data-processed-item-12[list item] Error and crash report data: }}
-        <div class="inline-list" markdown="1">
+          {: .inline-list }
             - {{ data-processed-item-13[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser for iOS }}
             - {{ data-processed-item-14[list item] Device type, CPU architecture and version of the operating system }}
             - {{ data-processed-item-15[list item] Timestamp of crash }}
@@ -57,15 +56,16 @@ notoc=True
             - {{ data-processed-item-17[list item] Plain-text class name and message value of the exception }}
             - {{ data-processed-item-18[list item] Instruction pointer, method or function names, signal data, pointer registers and information about the loaded binary images }}
             - {{ data-processed-item-19[list item] String / function name identifying the error }}
-        </div>
 1. {{ data-processed-item-20[list item] While using our websites: }}
     - {{ data-processed-item-21[list item] Automatically: }}
+      {: .inline-list }
         - {{ data-processed-item-22[list item] IP address (stored separately) }}
         - {{ data-processed-item-23[list item] The time at which the request was made }}
         - {{ data-processed-item-24[list item] The web address accessed }}
         - {{ data-processed-item-25[list item] The browser identifier }}
         - {{ data-processed-item-26[list item] The referring page }}
     - {{ data-processed-item-27[list item] Voluntary: }}
+      {: .inline-list }
         - {{ data-processed-item-28[list item] Forum registration data }}
         - {{ data-processed-item-29[list item] Email address }}
         - {{ data-processed-item-30[list item] Data you provide in comments }}
@@ -76,11 +76,13 @@ notoc=True
 {{ list-of-tools[preface] List of techniques and tools we use for data collection: }}
 
 1. {{ tools-item-1[list item] In our products: }}
+   {: .inline-list }
     - {{ tools-item-2[list item] Update checks }}
     - {{ tools-item-3[list item] Subscription downloads }}
     - {{ tools-item-4[list item] Sending issue reports }}
     - {{ tools-item-5[list item] Emergency notification checks }}
 2. {{ tools-item-6[list item] On our websites: }}
+   {: .inline-list }
     - {{ tools-item-7[list item] Cookies, only where you can log in }}
     - {{ tools-item-8[list item] Log files }}
     - {{ tools-item-9[list item] Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters }}
@@ -100,6 +102,7 @@ notoc=True
 ### {{ how-long[heading] How long do we keep data? }} {: #how-long } 
 
 1. {{ how-long-item-1[list item] For a period of 30 days: }}
+   {: .inline-list }
     - {{ how-long-item-2[list item] Issue report data }}
     - {{ how-long-item-3[list item] Crash and error reporter data }}
     - {{ how-long-item-4[list item] Website logs }} 
@@ -126,6 +129,8 @@ notoc=True
 ### {{ questions-heading[heading] Questions? }} {: #questions }
 
 {{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via [email](#privacy-email){: title="email address of Data Protection Officer at eyeo GmbH" } or [phone](#privacy-phone){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
+
+---
 
 ## {{ privacy-policy-long-heading[heading] Privacy Policy (long version) }} {: #privacy-policy-long }
 
@@ -410,3 +415,5 @@ Germany<br>
 
 *[GDPR]: {{gdpr-abbr[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[EU]: {{eu-abbr[European Union abbreviation definition] European Union }}
+
+</div>
