@@ -266,7 +266,7 @@ Germany<br>
 
 ##### {{ subscription-downloads-heading[heading] Subscription downloads }} {: #subscription-downloads }
 
-{{ subscription-downloads-paragraph-1 If you add filter subscriptions to your Adblock Plus installation, the subscription will be requested to regularly retrieve updates. Every update results in the hosting website receiving your IP address as well as some general information like your Adblock Plus version, browser and browser version. The processing of such data is not controlled by eyeo and is subject to the respective privacy terms of the provider of the website in question. }}
+{{ subscription-downloads-paragraph-1 If you add filter subscriptions to your Adblock Plus installation, the subscription will be requested to regularly retrieve updates. Every update results in the hosting website receiving your IP address as well as some general information like your Adblock Plus version, browser and browser version. }}
 
 {{ subscription-downloads-paragraph-2 Furthermore, if a subscription download fails on several consecutive occasions, the updated address of the filter list is requested from the AdblockPlus.org domain. The data transmitted includes the Adblock Plus version, subscription address and any information about the error encountered. This data is used to identify issues that have not been reported by subscription maintainers and is subject to this [Privacy Policy](https://adblockplus.org/privacy). }}
 
