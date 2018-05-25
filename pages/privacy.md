@@ -2,6 +2,8 @@ title=Privacy Policy
 description=This Privacy Policy describes how we use, process and protect information that we collect from you online through our websites and our products.
 notoc=True
 
+<script src="/js/address-masking.js"></script>
+
 - [{{ privacy-notice-short-link[link to heading] Privacy Notice (short version) }}](#privacy-policy-short)
 - [{{ privacy-policy-long-link[link to heading] Privacy Policy (long version) }}](#privacy-policy-long)
 
@@ -97,7 +99,7 @@ notoc=True
 
 ### {{ questions-heading[heading] Questions? }} {: #questions }
 
-{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via [email](mailto:privacy@eyeo.com){: title="email address of Data Protection Officer at eyeo GmbH" } or [phone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
+{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
 
 ---
 
@@ -144,7 +146,7 @@ Germany<br>
     <dt>{{phone-label[phone number label] Phone }}</dt>
     <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 65028 598'>+49 (0) 221 / 65028 598</a></dd>
     <dt>{{email-label[email address label] Email }}</dt>
-    <dd><a id='privacy-email' href='mailto:privacy@eyeo.com'>privacy@eyeo.com</a></dd>
+    <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>{{fax-label[fax number label] Fax }}</dt>
     <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
   </dl>
@@ -236,7 +238,7 @@ Germany<br>
 
 ### {{ how-to-exercise-heading[heading] How to exercise your rights }} {: #how-to-exercise }
 
-{{ how-to-exercise-paragraph To exercise your rights, please contact us via [email](mailto:privacy@eyeo.com){: title="email address of Data Protection Officer at eyeo GmbH" } or mail to: }}
+{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or mail to: }}
 
 
 <address>
