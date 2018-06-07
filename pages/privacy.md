@@ -385,4 +385,4 @@ Germany<br>
 <time datetime="2018-05">{{ publication-date May 2018 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
-*[{{ gdpr-abbr[EU abbreviation] EU }}]: {{gdpr-abbr-dfn[European Union abbreviation definition] European Union }}
+*[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
