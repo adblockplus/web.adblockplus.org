@@ -184,6 +184,9 @@ title=Writing Adblock Plus filters
       filter from blocking anything in earlier Adblock Plus versions:
       <code><fix>*$donottrack,image,~image</fix></code>}}
     </li>
+    <li>
+      {{rewriteoption Rewrite the URL with the option <code><fix>rewrite=</fix></code>. You may want to create a regular expression filter to perform the rewrite operation. In that case, you can use <code><fix>$n</fix></code> in the rewrite argument, with <code><fix>n</fix></code> being a number between 1 and 100, to insert the n-th parenthesis submatch of the filter regular expression. Anything not explicitly matched by it will be added in the rewritten string. For example <code><fix>/(server\.com\/assets\/file.php)\?.*$/$rewrite=$1</fix></code> will strip everything that comes after ".php" and redirects the request to the resulting URL. If there is no query string (i.e. no '?'), this filter won't match. The rewrite parameter has the same syntax as JavaScript’s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter"><code><fix>String.prototype.replace()</fix></code></a>. The resulting URL must have the same origin; in case it is rewritten to a relative URL, the origin gets added back. Also, rewrite for scripts, subdocuments, objects, requests from within objects (like Flash) are not possible for security reason; even if explicitly stated by the filter. If both, a filter with/without <code><fix>$rewrite</fix></code> option matches, the behavior is undefined, i.e. the request might either be blocked or redirected. (Adblock Plus 3.2 or higher required.)}}
+    </li>
   </ul>
 
   <h4 id="regexps">{{s77 Using regular expressions}}</h4>
