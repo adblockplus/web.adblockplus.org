@@ -13,10 +13,8 @@
   };
 
   var mobileBrowsers = {
-    // FIXME: After redirect links are updated for ABP Safari and ABP Samsung
-    //"safari": "https://eyeo.to/adblockplus/ios_safari_install/polish-lp",
-    //"samsungBrowser": "https://eyeo.to/adblockplus/android_samsung_install/polish-lp"
-    "safari": "https://eyeo.to/adblockplus/ios_install/polish-lp"
+    "safari": "https://eyeo.to/adblockplus/ios_safari_install/polish-lp",
+    "samsungBrowser": "https://eyeo.to/adblockplus/android_samsung_install/polish-lp"
   };
 
   var mobilePlatforms = {
