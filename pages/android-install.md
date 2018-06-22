@@ -6,7 +6,7 @@ noheading=True
 {
   display: table;
   margin: 46px auto;
-  height: 75px;
+  height: 81px;
   background-color: #1193cb;
   border-radius: 5px;
   border: 3px solid #0d719c;
@@ -32,8 +32,8 @@ noheading=True
 {
   display: table-cell;
   content: "";
-  width: 43px;
-  height: 43px;
+  width: 75px;
+  height: 75px;
   background-color: #ffffff;
   background-image: url("/img/abb-logo.png");
   border: 16px solid #ffffff;
