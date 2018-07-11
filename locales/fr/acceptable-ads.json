@@ -103,9 +103,13 @@
     "description": "Text in \"hate ads\" secion",
     "message": "<strong>Adblock Browser pour Android :</strong> Ouvrez Paramètres, touchez <strong>Blocage de publicités > Configurer les Pubs Acceptable</strong> et désélectionnez <strong>Autoriser des publicités non-intrusives</strong>."
   },
-  "disable-chrome": {
+  "disable-chrome-1": {
     "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Sur Chrome, Firefox (ABP version 3), Maxthon, Opera, Safari :</strong> cliquez sur l'icône Adblock Plus et choisissez <strong>Options</strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives</strong> (Firefox : Autoriser les publicités acceptables)."
+    "message": "<strong>Chrome (ABP versions 3.0.3+), Firefox (ABP versions 3+), Opera (ABP versions 3.0.3+)</strong> : cliquez sur l'icône Adblock Plus et choisissez <strong>Options</strong>. Désélectionnez <strong>Autoriser les publicités acceptables</strong>."
+  },
+  "disable-chrome-2": {
+    "description": "Text in \"hate ads\" secion",
+    "message": "<strong>Chrome (ABP versions <3.0.3), Maxthon, Opera (ABP versions <3.0.3), Safari</strong> : cliquez sur l'icône Adblock Plus et choisissez <strong>Options</strong>. Désélectionnez <strong>Autoriser certaines publicités non-intrusives</strong>."
   },
   "disable-firefox": {
     "description": "Text in \"hate ads\" secion",

@@ -137,7 +137,9 @@ title=Allowing acceptable ads in Adblock Plus
 ## {{hate-ads[Section header] But I hate all ads!}} {: #optout }
 {{can-disable[Text in "hate ads" secion] No problem, you can disable this feature at any time:}}
 
-{{disable-chrome[Text in "hate ads" secion] **Chrome, Firefox (ABP version 3), Maxthon, Opera, Safari** - Click the Adblock Plus icon and select **Options**. Uncheck **Allow some nonintrusive advertising** (Firefox: Allow Acceptable Ads). }}
+{{disable-chrome-1[Text in "hate ads" secion] **Chrome (ABP versions 3.0.3+), Firefox (ABP versions 3+), Opera (ABP versions 3.0.3+)** - Click the Adblock Plus icon and select **Options**. Uncheck **Allow Acceptable Ads**. }}
+
+{{disable-chrome-2[Text in "hate ads" secion] **Chrome (ABP versions <3.0.3), Maxthon, Opera (ABP versions <3.0.3), Safari** - Click the Adblock Plus icon and select **Options**. Uncheck **Allow some nonintrusive advertising**. }}
 
 {{disable-firefox[Text in "hate ads" secion] **Firefox (ABP versions 1 and 2)** - Click the Adblock Plus icon and select **Filter preferences**. Uncheck **Allow some nonintrusive advertising**. }}
 
