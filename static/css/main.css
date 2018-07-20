@@ -760,7 +760,6 @@ div.animation[started="true"]
 {
   display: block;
   width: 100%;
-  transition: opacity 0.8s;
   opacity: 0.2;
 }
 
@@ -771,16 +770,20 @@ div.animation[started="true"]
 
 .video-disclaimer
 {
-  visibility: visible;
-  opacity: 1;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   padding: 1em;
   background-color: #fff;
   font-size: 0.9em;
   text-align: center;
-  transition: opacity 0.8s;
+}
+
+@media (min-width: 576px)
+{
+  .video-disclaimer
+  {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .content .video-disclaimer
@@ -790,8 +793,7 @@ div.animation[started="true"]
 
 .hide-disclaimer .video-disclaimer
 {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 
 .video-play
@@ -800,8 +802,16 @@ div.animation[started="true"]
   top: 50%;
   left: 50%;
   width: 80px;
-  margin-top: -60px;
+  margin-top: -40px;
   margin-left: -40px;
+}
+
+@media (min-width: 576px)
+{
+  .video-play
+  {
+    margin-top: -60px;
+  }
 }
 
 .hide-disclaimer .video-play
