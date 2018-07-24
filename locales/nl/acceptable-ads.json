@@ -101,11 +101,15 @@
   },
   "disable-android-browser": {
     "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Adblock Browser voor Android</strong> - Open Instellingen, tik op <strong>Advertentieblokkering > Acceptabele advertenties configureren</strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>."
+    "message": "<strong>Adblock Browser voor Android</strong> - Open Instellingen, tik op <strong>Advertentieblokkering > Acceptabele advertenties</strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>."
   },
-  "disable-chrome": {
+  "disable-chrome-1": {
     "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Chrome, Firefox (ABP versie 3), Maxthon, Opera, Safari</strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Opties</strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong> (Firefox: Acceptabele advertenties toestaan)."
+    "message": "<strong>Chrome (ABP-versies 3.0.3+), Firefox (ABP-versies 3+), Opera (ABP-versies 3.0.3+)</strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Opties</strong>. Haal het vinkje weg bij <strong>Acceptabele advertenties toestaan</strong>."
+  },
+  "disable-chrome-2": {
+    "description": "Text in \"hate ads\" secion",
+    "message": "<strong>Chrome (ABP-versies <3.0.3), Maxthon, Opera (ABP-versies <3.0.3), Safari</strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Opties</strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>."
   },
   "disable-firefox": {
     "description": "Text in \"hate ads\" secion",
