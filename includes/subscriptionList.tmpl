@@ -86,13 +86,16 @@
 {%- endmacro %}
 
 {% macro display_subscriptions(subscriptions) %}
+  {%- set subscription_types = [] -%}
   {%- for subscription in subscriptions|subscription_sort -%}
     {%- if not (subscription["supplements"] and current_type == subscription["type"]) -%}
+      {%- set current_type = subscription_types[-1] if subscription_types else '' -%}
       {%- if current_type != subscription["type"] -%}
         {%- if current_type %}
   </ul>
         {%- endif -%}
         {%- set current_type = subscription["type"] %}
+	{%- set _ = subscription_types.append(current_type) -%}
   <h2 id="type_{{ current_type }}">{{ get_string("type_" + current_type, "subscriptions") }}</h2>
 
   <ul class="subscriptions-list">
