@@ -79,33 +79,6 @@ title=Writing Adblock Plus filters
   </li>
   <li>
     <p>
-      <code>! Checksum: OaopkIiiAl77sSHk/VAWDA</code>
-    </p>
-    <p>
-      {{s32 This comment makes sure that accidental corruption of the data won't result
-      in broken filters.}} {{s33 For example, some firewall software might modify the filter <code>*/adnetwork/*</code> on download
-      in an attempt to protect the user against ads.}} {{s34 It will remove part of the filter so that Adblock Plus will only see
-      the filter}} <code>**</code>{{s35 .}} {{s36 A checksum comment in the filter list protects against this scenario, any modifications
-      will have the result that the checksum no longer matches and Adblock Plus will ignore the data.}}
-    </p>
-    <p>
-      {{s37 To calculate the checksum the following steps need to be performed:}}
-    </p>
-    <ul>
-      <li>{{s38 Remove the existing checksum comment if any.}}</li>
-      <li>{{s39 Encode filter list text using UTF-8 encoding.}}</li>
-      <li>{{s40 Convert all line breaks to Unix style (replace <code><fix>\r</fix></code> by <code><fix>\n</fix></code> if present).}}</li>
-      <li>{{s41 Remove empty lines (replace sequences of the <code><fix>\n</fix></code> character by a single <code><fix>\n</fix></code> character).}}</li>
-      <li>{{s42 Calculate the base64-encoded MD5 checksum of the text, remove trailing}} <code>=</code> {{s43 characters if any.}}</li>
-    </ul>
-    <p>
-      {{s44 You can also have a look at the Python-based reference implementations to
-      <a href="https://hg.adblockplus.org/adblockplus/file/tip/validateChecksum.py">validate a checksum</a> and to
-      <a href="https://hg.adblockplus.org/adblockplus/file/tip/addChecksum.py">add a checksum to a file</a>.}}
-    </p>
-  </li>
-  <li>
-    <p>
       <code>! Redirect: http://example.com/list.txt</code>
     </p>
     <p>
