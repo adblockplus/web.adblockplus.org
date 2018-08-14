@@ -75,6 +75,9 @@
 
 (function()
 {
+
+  var siteurl = document.documentElement.getAttribute("data-siteurl");
+
   /**
    * Creats a GDPR compatible video
    * @constructor
@@ -123,8 +126,9 @@
     this.parent.classList.add("hide-disclaimer");
 
     //change external link icon into play button icon
-    parent.querySelector(".video-play")
-      .setAttribute("src", "/img/video-play.png");
+    parent
+      .querySelector(".video-play")
+      .setAttribute("src", siteurl + "/img/video-play.png");
 
     //show disclaimer or replace thumbnail with video on click
     videoLink.addEventListener("click", this._onPlayClick.bind(this));

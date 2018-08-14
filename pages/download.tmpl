@@ -1,0 +1,94 @@
+title=Download Adblock Plus
+description=Get Adblock Plus for free on Firefox, Chrome, Opera, Safari, Android and iOS
+template=minimal
+
+<head>
+  <style>
+    header img {
+      width: 4em;
+      height: auto;
+    }
+  </style>
+</head>
+
+{% set supported_devices = [
+  {
+    "id": "desktop",
+    "icons": { "1x": "device-desktop.png", "2x": "device-desktop-2x.png" },
+    "icon_alt": "Computer monitor and mouse icon",
+    "title": "Block ads on any desktop browser",
+    "description": "By clicking any of the links below, you agree to our " +  "terms" | linkify  + "Terms of Use</a>.",
+    "platforms": [
+      { "name": "Chrome", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
+      { "name": "Firefox", "url": "https://update.adblockplus.org/latest/adblockplusfirefox.xpi" },
+      { "name": "Internet Explorer", "url": "https://update.adblockplus.org/latest/adblockplusie.exe" },
+      { "name": "Safari", "url": "https://update.adblockplus.org/latest/adblockplussafari.safariextz" },
+      { "name": "Edge (beta)", "url": "https://www.microsoft.com/store/p/adblock-plus/9nblggh4r9nz" },
+      { "name": "Opera", "url": "https://addons.opera.com/extensions/details/opera-adblock/" },
+      { "name": "Maxthon", "url": "http://www.maxthon.com/mx5/features/ad-blocker/" },
+      { "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
+    ]
+  },
+  {
+    "id": "mobile",
+    "icons": { "1x": "device-mobile.png", "2x": "device-mobile.svg" },
+    "icon_alt": "Mobile icon",
+    "title": "Block ads on your mobile browser",
+    "platforms": [
+      { "name": "Samsung Internet (Android)", "url": "https://play.google.com/store/apps/details?id=org.adblockplus.adblockplussbrowser&hl" },
+      { "name": "Safari (iOS)", "url": "https://itunes.apple.com/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868?mt=8" },
+      { "name": "Firefox", "url": "https://addons.mozilla.org/android/addon/adblock-plus/" }
+    ]
+  },
+  {
+    "id": "abb",
+    "icons": { "1x": "abb-icon.png", "2x": "abb-icon-2x.png" },
+    "icon_alt": "Adblock Browser logo",
+    "title": "Block ads in a dedicated ad-blocking browser",
+    "platforms": [
+      { "name": "Adblock Browser (Android)", "url": "https://play.google.com/store/apps/details?id=org.adblockplus.browser" },
+      { "name": "Adblock Browser (iOS)", "url": "https://itunes.apple.com/my/app/adblock-browser/id1015653330?mt=8&ign-itsct=1015653330-1015653330&ign-itscg=0176&ign-mpt=uo%3D4" }
+    ]
+  }
+] %}
+
+<header class="bg-primary section content text-center">
+  <div class="container">
+    <img height="90px"
+         width="90px"
+         src="/img/download-icon.png" 
+         srcset="/img/download-icon.svg 2x" 
+         alt="{{ "White down arrow" | translate("download-icon", "Alt text") }}">
+    <h1>{{ "Get Adblock Plus products on these devices" | translate("download-heading", "Heading") }}</h1>
+    <p>{{ "Supported platforms" | translate("download-subheading", "Subheading") }}</p>
+  </div>
+</header>
+
+<div id="supported-devices" class="item-group container text-center content">
+  <div class="row">
+    {% for device in supported_devices %}
+    <div class="column one-third">
+      <img
+        height="90px"
+        width="90px"
+        src="/img/{{ device.icons['1x'] }}"
+        srcset="/img/{{ device.icons['2x'] }} 2x"
+        alt="{{ device.icon_alt | translate(device.id + "-icon-alt", "Alt text") }}">
+      <h2>{{ device.title | translate(device.id + "-title", "Heading") }}</h2>
+      <div>
+        {% if device.description %}
+        <p><small>{{ device.description | safe | translate(device.id + "-description", "Paragraph") }}</small></p>
+        {% endif %}
+        <ul class="horizontal-list">
+          {% for platform in device.platforms %}
+            <li>
+              {% set platform_identifier = device.id + "-product-name-" + loop.index | string  %}
+              <a href="{{ platform.url }}">{{ platform.name | translate(platform_identifier, "Product name") }}</a>{{ ", " if loop.index != loop.length }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

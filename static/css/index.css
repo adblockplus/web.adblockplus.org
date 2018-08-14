@@ -1,630 +1,347 @@
-#content,
-#blog
+/******************************************************************************
+ * Text utilities
+ *****************************************************************************/
+
+.avoid-wrap {display: inline-block;}
+.small {font-size: smaller;}
+
+/******************************************************************************
+ * Browser-based styles
+ *****************************************************************************/
+
+.show-on-msie { display: none; }
+.msie .show-on-msie { display: inherit; }
+.msie .hide-on-msie { display: none; }
+
+.show-on-maxthon { display: none; }
+.maxthon .show-on-maxthon { display: inherit; }
+.maxthon .hide-on-maxthon { display: none; }
+
+/******************************************************************************
+ * #hero-download
+ *****************************************************************************/
+
+#hero-download
 {
-  padding-top: 5em;
+  padding: 3em 1em;
 }
 
-#key-facts h1
+@media (min-width: 576px) and (max-width: 1023px)
 {
-  font-size: 16px;
+  /* add spacing left/right on tablets */
+  #hero-download
+  {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
 }
 
-#content .sprite
+@media (max-width: 1023px)
 {
-  background-image: url(../img/sprite-index.png);
+  /* force hero unit columns to break on large tablets */
+  #hero-download .column
+  {
+    width: 100%;
+  }
 }
 
-#abb-banner
+@media (min-width: 1024px)
 {
-  background-color: #ffffff;
-  display: none;
-  padding: 50px 40px 40px 40px;
-  margin-bottom: 30px;
+  #hero-download
+  {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+}
+
+#hero-download h1
+{
+  /* Spacing is provided by the hero-download section */
+  margin-top: 0;
+  overflow: auto;
+}
+
+#hero-download h1 > span
+{
+  float: left;
+}
+
+#hero-download-tos
+{
+  margin-bottom: 0.5em;
+}
+
+#hero-download-alternate
+{
+  font-size: smaller;
+}
+
+#hero-download-button
+{
+  display: inline-block;
+  min-width: 250px;
+  /* 0.2em taller than normal buttons */
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  color: #fff;
+  background-color: #3D9C4F;
+}
+
+#hero-download-button:hover,
+#hero-download-button:focus
+{
+  background-color: #258333;
+}
+
+@media (max-width: 575px)
+{
+  #hero-download-button
+  {
+    /* stretch full-width <= small tablets */
+    width: 100%;
+  }
+}
+
+#hero-download-video
+{
+  /* add space above on phones & tablets */
+  margin-top: 2em;
+  /* prevent default full-width on small tablets */
+  max-width: 550px;
+}
+
+#hero-download-video
+{
+  /* provide a little space between thumbnail and border + shadow */
+  padding: 1em 1em 0 1em;
+}
+
+@media (min-width: 1024px)
+{
+  #hero-download-video
+  {
+    /* keep aligned-top despite padding below */
+    margin-top: -1em;
+  }
+}
+
+#hero-download-video.has-iframe
+{
+  /* remove space around thumbnail when thumbnail is replaced by video */
+  padding: 0;
+}
+
+/** Hide the video border + shadow only when the thumbnail alone is showing */
+#hero-download-video.hide-disclaimer:not(.has-iframe)
+{
+  border-color: transparent;
+  /* there is no box-shadow-color property :( */
+  box-shadow: 1px 1px 0 0 transparent;
+}
+
+/* The thumbnail is taller than the video. But it's hard to see because of the
+ * reflection and whitespace at the bottom. As a result, I am cutting out the
+ * whitespace and reflection when I show the disclaimer so that the section
+ * doesn't visibly resize when the thumbnail is replaced by the a iframe.
+ */
+
+
+/******************************************************************************
+ * #media
+ *****************************************************************************/
+
+#media-section
+{
+  clear: both;
   text-align: center;
 }
 
-#abb-banner h2
+#media-header
 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333333;
-  margin: 0px;
+  margin-bottom: 1em;
 }
 
-#abb-banner img
+#media-header h2
 {
-  margin: 30px 0px 40px 0px;
-  width: 40%;
-  min-width: 200px;
-}
-
-#abb-banner a
-{
-  display: none;
-  padding: 20px;
-  background-color: #2f8ecb;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-  border-radius: 5px;
-}
-
-#content.ua-android,
-#content.ua-ios
-{
-  margin-top: 0px;
-}
-
-#content.ua-android #abb-banner,
-#content.ua-ios #abb-banner,
-#content.ua-android #abb-android-download,
-#content.ua-ios #abb-ios-download
-{
-  display: block;
-}
-
-#content.ua-android #adblock-browser-notification,
-#content.ua-ios #adblock-browser-notification
-{
-  display: none;
-}
-
-#main, #home-video
-{
-  display: inline-block;
-  vertical-align: top; /* Fix for https://bugzil.la/1320660 */
-}
-
-#maxthon-instruction, #edge-teaser
-{
-  max-width: 540px;
-  background: #ffffff;
-  padding: 10px;
-  border: 1px solid #c9c9c9;
-  box-shadow: 1px 1px 0 0 #dbdbdb;
-}
-
-#maxthon-instruction,
-html[lang^="zh_"] #content.maxthon #home-video,
-#content.maxthon #feature-free,
-#content.maxthon #terms-message,
-#feature-maxthon
-{
-  display: none;
-}
-
-#home-video
-{
-  max-width: 520px;
-}
-
-html[lang^="zh_"] #content.maxthon #maxthon-instruction
-{
-  display: inline-block;
-  padding: 0px;
-}
-
-#content.maxthon #feature-maxthon
-{
-  display: inline-block;
-}
-
-#summary h1, #summary h2
-{
+  font-size: 1em;
   font-weight: normal;
+  text-transform: uppercase;
+}
+
+#media-header h2,
+#media-list
+{
   margin: 0;
 }
 
-#summary h1
+#media-list li
 {
-  font-size: 60px;
-  line-height: 50px;
-  margin-bottom: 8px;
+  display: inline-block;
 }
 
-#summary h2
+#media-list img
 {
-  font-size: 22px;
-  color: #d50215;
+  max-width: 10em;
+  max-height: 3em;
+  margin: 0 1em 1em;
 }
 
-#summary ul
+#media-list a
 {
-  list-style-type: none;
-  margin: 10px 0px 16px 0px;
-  padding-left: 40px;
-  padding-right: 0px;
-  color: #333333;
-}
-
-html[dir="rtl"] #summary ul
-{
-  padding-right: 40px;
-  padding-left: 0px;
-}
-
-#summary li
-{
-  margin-bottom: 5px;
-  line-height: 24px;
-}
-
-#summary li.emphasized
-{
-  font-weight: bold;
-}
-
-#summary li .sprite
-{
-  position: absolute;
-  width: 12px;
-  height: 11px;
-  margin-top: 4px;
-  margin-left: -17px;
-  margin-right: 0px;
-  background-image: url(../img/sprite-main.png);
-  background-repeat: no-repeat;
-  background-position: -166px 0px;
-}
-
-.license-note
-{
-  display: none;
-  font-weight: normal;
-}
-
-html[dir="rtl"] #summary li .sprite
-{
-  margin-right: -17px;
-  margin-left: 0px;
-}
-
-#terms-message,
-#terms-message a
-{
-  font-size: 12px;
-}
-
-/* This cannot be just .install-button because a:link will have a higher
-   specificity otherwise (overrides text color) */
-#install .install-button
-{
-  display: none;
   position: relative;
-  width: 305px;
-  height: 50px;
-  color: #fff;
-  font-size: 20px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 50px;
-  background: #c4c4c4;
-  background: -webkit-linear-gradient(top, #c4c4c4, #9e9e9e);
-  background: -moz-linear-gradient(top, #c4c4c4, #9e9e9e);
-  background: -ms-linear-gradient(top, #c4c4c4, #9e9e9e);
-  background: -o-linear-gradient(top, #c4c4c4, #9e9e9e);
-  background: linear-gradient(top, #c4c4c4, #9e9e9e);
-  box-shadow: 0 1px 0 0 #6b6b6b, 0 2px 0 0 #757575;
-  text-shadow: 2px 2px 2px #7a7a7a;
-  border: none;
-  border-radius: 3px;
-  bottom: 6px;
-  -webkit-transition: box-shadow 0.3s ease;
-  -moz-transition: box-shadow 0.3s ease;
-  -ms-transition: box-shadow 0.3s ease;
-  -o-transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-}
-
-.install-button:hover
-{
-  box-shadow: 0px 2px 7px #6f6f6f, 0 1px 0 0 #6f6f6f;
-}
-
-.install-button:active
-{
-  background: #a2a2a2;
-  background: -webkit-linear-gradient(bottom, #cacaca, #a2a2a2);
-  background: -moz-linear-gradient(bottom, #cacaca, #a2a2a2);
-  background: -ms-linear-gradient(bottom, #cacaca, #a2a2a2);
-  background: -o-linear-gradient(bottom, #cacaca, #a2a2a2);
-  background: linear-gradient(bottom, #cacaca, #a2a2a2);
-  box-shadow: 0px 0px 7px #6f6f6f;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
-  -o-transition: none;
-  transition: none;
-  bottom: 4px;
-}
-
-#content.android .install-button,
-#content.firefox.ua-firefox .install-button,
-#content.chrome.ua-chrome .install-button,
-#content.opera.ua-opera .install-button,
-#content.internet-explorer.ua-internet-explorer .install-button,
-#content.safari.ua-safari .install-button,
-#content.safari.ua-ios .install-button,
-#content.yandex-browser.ua-yandex-browser .install-button,
-#content.edge.ua-edge .install-button,
-/* IE6 fixes */
-#content.firefox_ua-firefox .install-button,
-#content.chrome_ua-chrome .install-button,
-#content.opera_ua-opera .install-button,
-#content.internet-explorer_ua-internet-explorer .install-button,
-#content.safari_ua-safari .install-button,
-#content.yandex-browser_ua-yandex-browser .install-button,
-#content.edge_ua-edge .install-button
-{
-  background: #62c52b;
-  background: -webkit-linear-gradient(top, #62c52b, #4f9d22);
-  background: -moz-linear-gradient(top, #62c52b, #4f9d22);
-  background: -ms-linear-gradient(top, #62c52b, #4f9d22);
-  background: -o-linear-gradient(top, #62c52b, #4f9d22);
-  background: linear-gradient(top, #62c52b, #4f9d22);
-  box-shadow: 0 1px 0 0 #486c15, 0 2px 0 0 #517422;
-  text-shadow: 2px 2px 2px #327d14;
-}
-
-#content.android .install-button:hover,
-#content.firefox.ua-firefox .install-button:hover,
-#content.chrome.ua-chrome .install-button:hover,
-#content.opera.ua-opera .install-button:hover,
-#content.internet-explorer.ua-internet-explorer .install-button:hover,
-#content.safari.ua-safari .install-button:hover,
-#content.safari.ua-ios .install-button:hover,
-#content.yandex-browser.ua-yandex-browser .install-button:hover,
-#content.edge.ua-edge .install-button:hover,
-/* IE6 fixes */
-#content.firefox_ua-firefox .install-button:hover,
-#content.chrome_ua-chrome .install-button:hover,
-#content.opera_ua-opera .install-button:hover,
-#content.internet-explorer_ua-internet-explorer .install-button:hover,
-#content.safari_ua-safari .install-button:hover,
-#content.yandex-browser_ua-yandex-browser .install-button:hover,
-#content.edge_ua-edge .install-button:hover
-{
-  box-shadow: 0px 2px 7px #486c15, 0 1px 0 0 #486c15;
-}
-
-#content.android .install-button:active,
-#content.firefox.ua-firefox .install-button:active,
-#content.chrome.ua-chrome .install-button:active,
-#content.opera.ua-opera .install-button:active,
-#content.internet-explorer.ua-internet-explorer .install-button:active,
-#content.safari.ua-safari .install-button:active,
-#content.safari.ua-ios .install-button:active,
-#content.yandex-browser.ua-yandex-browser .install-button:active,
-#content.edge.ua-edge .install-button:active,
-/* IE6 fixes */
-#content.firefox_ua-firefox .install-button:active,
-#content.chrome_ua-chrome .install-button:active,
-#content.opera_ua-opera .install-button:active,
-#content.internet-explorer_ua-internet-explorer .install-button:active,
-#content.safari_ua-safari .install-button:active,
-#content.yandex-browser_ua-yandex-browser .install-button:active,
-#content.edge_ua-edge .install-button:active
-{
-  background: #4f9d22;
-  background: -webkit-linear-gradient(bottom, #62c52b, #4f9d22);
-  background: -moz-linear-gradient(bottom, #62c52b, #4f9d22);
-  background: -ms-linear-gradient(bottom, #62c52b, #4f9d22);
-  background: -o-linear-gradient(bottom, #62c52b, #4f9d22);
-  background: linear-gradient(bottom, #62c52b, #4f9d22);
-  box-shadow: 0px 0px 7px #486c15;
-}
-
-#content.firefox #install-firefox, #content.chrome #install-chrome,
-#content.opera #install-opera, #content.android #install-android,
-#content.internet-explorer #install-internet-explorer,
-#content.safari.ua-ios #install-ios-safari,
-#content.safari:not(.ua-ios) #install-safari,
-#content.yandex-browser #install-yandex-browser,
-#content.edge #install-edge
-{
-  display: inline-block;
-}
-
-#other-platform ul
-{
-  list-style: none;
-  display: inline-block;
-  margin: 0px;
-  padding: 0;
-  vertical-align: bottom;
-}
-
-html[dir="rtl"] #install ul
-{
-  margin: 0 5px 0 0;
-}
-
-#other-platform li
-{
-  display: inline-block;
-  margin: 0 3px;
-  font-size: 0;
-}
-
-#other-platform li a
-{
-  width: 19px;
-  height: 20px;
-}
-
-#platform-firefox
-{
-  background-position: -108px -89px;
-}
-
-#information-android
-{
-  display: none;
-}
-
-#content.android #information-android
-{
   display: block;
 }
 
-#content.firefox #platform-firefox
+#media-list a:hover img
 {
-  background-position: -108px -68px;
+  opacity: 0.3;
 }
 
-#platform-chrome
+#media-list a:hover:after
 {
-  background-position: -88px -89px;
-}
-
-#content.chrome #platform-chrome
-{
-  background-position: -88px -68px;
-}
-
-#platform-android
-{
-  background-position: -68px -89px;
-}
-
-#content.android #platform-android
-{
-  background-position: -68px -68px;
-}
-
-#platform-opera
-{
-  background-position: -68px -131px;
-}
-
-#content.opera #platform-opera
-{
-  background-position: -68px -110px;
-}
-
-#platform-internet-explorer
-{
-  background-position: -108px -131px;
-}
-
-#content.internet-explorer #platform-internet-explorer
-{
-  background-position: -108px -110px;
-}
-
-#platform-safari
-{
-  background-position: -88px -131px;
-}
-
-#content.safari #platform-safari
-{
-  background-position: -88px -110px;
-}
-
-#platform-yandex-browser
-{
-  background-position: -128px -89px;
-}
-
-#content.yandex-browser #platform-yandex-browser
-{
-  background-position: -128px -68px;
-}
-
-#platform-maxthon
-{
-  background-position: -128px -130px;
-}
-
-#content.maxthon #platform-maxthon
-{
-  background-position: -128px -109px;
-}
-
-#platform-edge
-{
-  background-position: -68px -171px;
-}
-
-#content.edge #platform-edge
-{
-  background-position: -68px -151px;
-}
-
-#content h3.subscribe-header
-{
-  font-size: 18px;
-  margin-bottom: 0px;
-}
-
-#other-platform > div,
-#content.edge #home-video,
-#edge-teaser
-{
-  display: none;
-}
-
-.warning-platform,
-.disclaimer,
-#maxthon-notification
-{
-  display: none;
-  color: #D00;
-  text-align: center;
-  border: 1px solid #D00;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.disclaimer
-{
-  font-size: 14px;
-  color: #000;
-  text-align: left;
-}
-
-#content.ua-firefox .warning-platform.firefox,
-#content.ua-chrome .warning-platform.chrome,
-#content.ua-android .warning-platform.android,
-#content.ua-opera .warning-platform.opera,
-#content.ua-internet-explorer .warning-platform.internet-explorer,
-#content.ua-safari .warning-platform.safari,
-#content.ua-yandex-browser .warning-platform.yandex-browser,
-#content.ua-maxthon .warning-platform.maxthon,
-html[lang^="zh_"] #maxthon-notification
-{
-  display: block;
-}
-
-#content.firefox.ua-firefox .warning-platform.firefox,
-#content.chrome.ua-chrome .warning-platform.chrome,
-#content.android.ua-android .warning-platform.android,
-#content.opera.ua-opera .warning-platform.opera,
-#content.internet-explorer.ua-internet-explorer .warning-platform.internet-explorer,
-#content.safari.ua-safari .warning-platform.safari,
-#content.yandex-browser.ua-yandex-browser .warning-platform.yandex-browser,
-#content.maxthon.ua-maxthon .warning-platform.maxthon,
-#content.ua-maxthon #maxthon-notification,
-#content.maxthon #maxthon-notification,
-/* IE6 fixes */
-#content.firefox_ua-firefox .warning-platform.firefox,
-#content.chrome_ua-chrome .warning-platform.chrome,
-#content.opera_ua-opera .warning-platform.opera,
-#content.internet-explorer_ua-internet-explorer .warning-platform.internet-explorer,
-#content.safari_ua-safari .warning-platform.safari,
-#content.yandex-browser_ua-yandex-browser .warning-platform.yandex-browser,
-#content.maxthon_ua-maxthon .warning-platform.maxthon
-{
-  display: none;
-}
-
-#key-facts
-{
-  box-sizing: content-box;
-}
-
-#key-facts section
-{
-  display: inline-block;
-}
-
-#key-facts section h1
-{
-  margin: 0px;
-}
-
-#key-facts section .sprite
-{
+  content: "";
   position: absolute;
-  width: 67px;
-  height: 67px;
-  margin-top: 0px;
-  margin-left: -80px;
-  margin-right: 0px;
-  border: none;
+  top: 50%;
+  left: 50%;
+  height: 1em;
+  width: 1em;
+  padding: 1em;
+  margin-left: -1em;
+  margin-top: -1em;
+  border-radius: 50%;
+  background-color: #000;
+  background-image: url(../img/external-icon.png);
+  background-image: linear-gradient(transparent, transparent),
+                    url(../img/external-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1em;
 }
 
-html[dir="rtl"] #key-facts section .sprite
+@media (min-width: 1024px)
 {
-  margin-right: -80px;
-  margin-left: 0px;
+  #media
+  {
+    display: table;
+    width: 100%;
+  }
+
+  #media-header,
+  #media-list
+  {
+    display: table-cell;
+    vertical-align: middle;
+    width: auto;
+  }
+
+  #media-header
+  {
+    margin-bottom: 0;
+  }
+
+  #media-header small
+  {
+    display: none;
+  }
+
+  #media-list { direction: rtl; }
+  [dir="rtl"] #media-list { direction: ltr; }
+
+  @supports (display: flex)
+  {
+    #media-list
+    {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  #media-list
+  {
+    display: table;
+    width: 100%;
+  }
+
+  #media-list li
+  {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  #media-list img
+  {
+    margin: 0 2em;
+  }
 }
 
+/******************************************************************************
+ * #abb-cross-promotion
+ *****************************************************************************/
 
-#facts-open-source
+#abb-cross-promotion
 {
-  background-position: -68px 0px;
+  padding: 3em 0;
 }
 
-#facts-downloads
+#abb-cross-promotion h2
 {
-  background-position: 0px 0px;
+  margin-top: 0;
+  margin-bottom: 1.5em;
 }
 
-#facts-privacy
+#abb-cross-promotion h2,
+#abb-cross-promotion h3
 {
-  background-position: 0px -68px;
+  text-transform: uppercase;
 }
 
-#key-facts
+#abb-logo
 {
-  margin-bottom: 40px;
+  max-width: 10em;
 }
 
-#key-facts section p
+#abb-app-store-badges
 {
-  margin-bottom: 0px;
-  font-size: 14px;
+  margin-top: 2em;
 }
 
-#key-facts section a
+#abb-app-store-badges img
 {
-  font-size: 14px;
+  width: 200px;
 }
+
+@media (max-width: 575px)
+{
+  #abb-app-store-badges a:first-of-type
+  {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (min-width: 576px)
+{
+  #abb-app-store-badges .one-half
+  {
+    width: 50%;
+  }
+
+  #abb-cross-promotion figure,
+  #abb-app-store-badges
+  {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+/******************************************************************************
+ * #footnote
+ *****************************************************************************/
 
 #footnote
 {
-  margin-top: 20px;
-  text-align: start;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  font-size: 13px;
   color: #7d7d7d;
-}
-
-#footnote,
-#footnote li,
-#footnote a,
-#footnote strong
-{
-  font-size: 11px;
-}
-
-#footnote li
-{
-  padding-bottom: 5px;
-}
-
-#footnote li:first-child
-{
-  padding-top: 5px;
-}
-
-#footnote ul
-{
-  margin: 0px;
-  padding: 0px 30px;
-}
-
-.notice
-{
-  padding: 20px;
-  line-height: 1.4;
-  color: #000;
-  background-color: #fff;
-  border: 2px solid #a1a1a1;
-}
-
-#ready-for-windows-notice
-{
-  margin-bottom: 30px;
 }

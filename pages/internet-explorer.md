@@ -1,1 +1,3 @@
+template=minimal
+
 <? include index ?>
