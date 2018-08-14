@@ -1,0 +1,27 @@
+image: python:2
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -y -qq rpl rename
+  - pip install -q Markdown Jinja2 lxml
+  - git clone https://gitlab.com/eyeo/websites/cms.git $HOME/cms
+  - git clone https://github.com/adblockplus/sitescripts $HOME/sitescripts
+  - git -C $HOME/cms checkout -b vcs_agnostic origin/vcs_agnostic
+  - export PYTHONPATH="$HOME/cms:$PYTHONPATH"
+  - export PYTHONPATH="$HOME/sitescripts:$PYTHONPATH"
+
+pages:
+  stage: deploy
+  script:
+    - python -m cms.bin.generate_static_pages --version public . public
+    - rpl -Rq 'src="/' "src=\"http://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
+    - rpl -Rq 'srcset="/' "srcset=\"http://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
+    - rpl -Rq 'href="/' "href=\"http://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
+    - rpl -Rq 'url(/' "url(http://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
+    - rpl -Rq 'url("/' "url(\"http://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
+    - rename 's/index/index.html/' public/**/index
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
