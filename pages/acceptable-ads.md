@@ -91,6 +91,26 @@ title=Allowing acceptable ads in Adblock Plus
 * {{placement-requirement}}<br/>{{no-placement-limit[Text below point in "Specific criteria"] No placement limitations.}}
 * {{size-requirement}}<br/>{{no-size-limit[Text below bullet point in "Specific criteria"] No size limitations.}}
 
+#### {{ mobile-ads-heading[heading] MOBILE ADS }}
+
+##### {{ mobile-ads-placement-heading[heading] Placement Requirements }}
+
+- {{ mobile-ads-placement-item-1[list item] Static ad types (e.g. 6x1 banner and 1x1 tile ad) are allowed to be placed anywhere on the mobile page }}
+- {{ mobile-ads-placement-item-2[list item] Small ads (6x1 banner or smaller) are allowed to be placed as a sticky ad on the bottom of the screen. Other formats are not allowed to stick. }}
+- {{ mobile-ads-placement-item-3[list item] Large ad types (e.g. native tile ads) are only allowed to be placed under the Primary Content.}} [^1] [^2]
+
+##### {{ mobile-ads-size-heading[heading] Size Requirements }}
+
+{{ mobile-ads-size-lead Ads showing on mobile screens are bound to the following size restrictions: }}
+
+- {{ mobile-ads-size-item-1[list item] Ads implemented on the scrollable portion of the webpage must not occupy in total more than 50 percent of the visible portion of the webpage. }} [^3]
+- {{ mobile-ads-size-item-2[list item] Ads implemented as a ‘sticky ad’ have a maximum height restriction of 75px (or 15%). }}
+- {{ mobile-ads-size-item-3[list item] Below the Primary Content, ads are limited to 100% of the screen space. }} [^4]
+
+##### {{ animations-heading[heading] Animations }}
+
+{{ animations-paragraph-1 Animations are allowed for the 6x1 ad type when placed as a ‘sticky’ ad on the bottom of the screen. Animations have to comply with the LEAN standard for animations, and a close button or some other closing mechanism must be included. }} [^5]
+
 #### {{other-acceptable-ads[Subheadline in "Specific criteria"] Other Acceptable Ads formats? }}
 {{new-format["Other Acceptable Ads formats" text in "Specific criteria"] Are your ads displayed on alternative screens, or are you convinced that you have an innovative Acceptable Ads format which doesn't fit the ads outlined above? <a href="mailto:acceptableads@adblockplus.org">Let us know!</a>}}
 
@@ -180,3 +200,9 @@ title=Allowing acceptable ads in Adblock Plus
 {{who-pays[Text in "Is there payment involved?" section] Regarding fees, only large entities (those with more than 10 million additional ad impressions per month due to participation in the Acceptable Ads initiative) have to pay. For these entities, our licensing fee normally represents 30 percent of the additional revenue created by whitelisting its acceptable ads.}}
 
 {{more-details[Text in "Is there payment involved?" section] For more details see <a href="/about#monetization">here</a>.}}
+
+[^1]: {{ footnote-1[footnote] Large ad: any ad >300px height }}
+[^2]: {{ footnote-2[footnote] The 'Primary Content' is defined as (based on [Mozilla's description](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) of the `<main>` HTML element): The Primary Content consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application. This content should be unique to the document, excluding any content that is repeated across a set of documents such as sidebars, navigation links, copyright information, site logos, and search forms (unless, of course, the document's main function is a search form). }}
+[^3]: {{ footnote-3[footnote] The visible portion of the webpage is defined as a standard CSS pixel size of [360x512px](https://drive.google.com/file/d/1JGn_-qdlAqMthA6OFImCdpMH7j3OxIFQ/view?usp=sharing) (Samsung Galaxy S7 with the SBrowser), which is based on the standard viewport of [360x640px](https://deviceatlas.com/blog/mobile-viewport-size-statistics-2017), but with the OS- and browser UI elements deducted. }}
+[^4]: {{ footnote-4[footnote] This means that users can scroll past the primary content and an ad unit served after it can take up the whole screen; but following this ad unit, additional ads cannot be implemented. }}
+[^5]:  {{ footnote-5[footnote] From: [Iab New Standard Ad Unit Portfolio (2017)](https://www.iab.com/wp-content/uploads/2017/08/IABNewAdPortfolio_FINAL_2017.pdf) }}
