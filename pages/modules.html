@@ -55,7 +55,7 @@ title=Modules
     <td>
       <ul>
         <li>
-          <a href="https://hg.adblockplus.org/adblockpluscore">adblockpluscore</a>
+          {{module-core-source <a href="https://hg.adblockplus.org/adblockpluscore"><fix>adblockpluscore</fix></a> (except <a href="#automation"><fix>Automation</fix></a>)}}
         </li>
       </ul>
     </td>
@@ -129,7 +129,7 @@ title=Modules
     <td>
       <ul>
         <li>
-          {{module-platform-source <a href="https://hg.adblockplus.org/adblockpluschrome"><fix>adblockpluschrome</fix></a> (except <a href="#user-interface"><fix>User Interface</fix></a>)}}
+          {{module-platform-source <a href="https://hg.adblockplus.org/adblockpluschrome"><fix>adblockpluschrome</fix></a> (except <a href="#user-interface"><fix>User Interface</fix></a> and <a href="#automation"><fix>Automation</fix></a>)}}
         </li>
       </ul>
     </td>
@@ -169,6 +169,18 @@ title=Modules
         </li>
         <li>
           <a href="https://hg.adblockplus.org/abpssembly">abpssembly</a>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockpluschrome">adblockpluschrome</a>
+          <ul>
+            <li>test/*</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://hg.adblockplus.org/adblockpluscore">adblockpluscore</a>
+          <ul>
+            <li>test/runners/*</li>
+          </ul>
         </li>
       </ul>
     </td>
