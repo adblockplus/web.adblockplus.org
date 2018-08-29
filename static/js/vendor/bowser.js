@@ -92,11 +92,11 @@
         , version: getFirstMatch(/(?:ucbrowser)[\s\/](\d+(?:\.\d+)+)/i)
       }
     }
-    else if (/mxios/i.test(ua)) {
+    else if (/mxios|Maxthon/i.test(ua)) {
       result = {
         name: 'Maxthon'
         , maxthon: t
-        , version: getFirstMatch(/(?:mxios)[\s\/](\d+(?:\.\d+)+)/i)
+        , version: getFirstMatch(/(?:mxios|Maxthon)[\s\/](\d+(?:\.\d+)+)/i)
       }
     }
     else if (/epiphany/i.test(ua)) {
