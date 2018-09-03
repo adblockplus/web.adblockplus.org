@@ -13,11 +13,13 @@
  #
  # You should have received a copy of the GNU General Public License
  # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
- #}
+#}
 
 <!DOCTYPE html>
 <html <? include html-attributes ?>>
-
+{% if is_old_index %}
+  <? include old/index ?>
+{% else %}
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
@@ -39,4 +41,6 @@
     <? include footer ?>
     <? include scripts ?>
   </body>
+{% endif %}
 </html>
+

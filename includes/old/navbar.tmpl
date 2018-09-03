@@ -1,0 +1,38 @@
+{% from "macros/pageitem" import pageitem %}
+
+<nav id="navbar">
+  <div class="container">
+    {{ "index" | linkify(id="navbar-logo") }}
+      <img
+        src="/img/navbar-logo.png"
+        srcset="/img/navbar-logo.svg 2x">
+      <span>{{ "Adblock <strong>Plus</strong>" | translate("navbar-logo-text", "Navbar logo text") }}</span>
+    </a>
+    <a href="#" id="navbar-menu-toggle">
+      <img
+        src="/img/menu-toggle.png"
+        srcset="/img/menu-toggle.svg 2x">
+    </a>
+    <ul id="navbar-menu">
+      {% for pagename in ["about", "features", "bugs", "contribute"] %}
+        <li>
+          {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
+        </li>
+      {% endfor %}
+      <li id="navbar-locale-menubar">
+        <a id="navbar-locale-selected">
+          {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
+        </a>
+        <ul id="navbar-locale-menu">
+          {% for available_locale in available_locales %}
+            <li>
+              {{ page | linkify(available_locale) }}
+                {{ config.get("langnames", available_locale) }} ({{ available_locale | to_og_locale | to_og_location }})
+              </a>
+            </li>
+          {% endfor %}
+        </ul>{# #navbar-locale-menu #}
+      </li>
+    </ul>{# #navbar-menu #}
+  </div>{# .container #}
+</nav>{# #navbar #}

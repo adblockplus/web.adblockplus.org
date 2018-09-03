@@ -1,0 +1,198 @@
+title=Adblock Plus - Surf the web without annoying ads!
+noheading=True
+localefile=index
+template=old_default
+
+{#
+ # This file is part of the Adblock Plus website,
+ # Copyright (C) 2006-present eyeo GmbH
+ #
+ # Adblock Plus is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License version 3 as
+ # published by the Free Software Foundation.
+ #
+ # Adblock Plus is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ #}
+
+<head>
+<link href="/css/old/index.css" rel="stylesheet">
+<link href="/css/old/index-desktop.css" media="(min-width: 1000px)" rel="stylesheet">
+<link href="/css/old/index-mobile.css" media="(max-width: 1000px)" rel="stylesheet">
+
+<link href="https://adblockplus.org/" rel="canonical">
+<link href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" rel="chrome-webstore-item">
+<meta content="website" property="og:type">
+<meta content="https://adblockplus.org/img/adblockplus_promo.png" property="og:image">
+<meta content="{{"<fix>Adblock Plus</fix> is the most popular ad blocker available for <fix>Firefox</fix>, <fix>Chrome</fix>, <fix>Opera</fix>, <fix>Safari</fix>, <fix>Android</fix> and <fix>Internet Explorer</fix>. Block all annoying ads all over the web: remove video ads on <fix>YouTube</fix>, block <fix>Facebook</fix> ads, get rid of pop-ups and much more. On <fix>Google Chrome</fix>, <fix>Adblock Plus</fix> is one of the fastest growing extensions ever. <fix>Adblock Plus</fix> is used on over <fix>100</fix> million devices. Download online for free now!"|translate("s2")}}" name="description">
+<meta content="{{"<fix>Adblock Plus</fix> is the most popular ad blocker available for <fix>Firefox</fix>, <fix>Chrome</fix>, <fix>Opera</fix>, <fix>Safari</fix>, <fix>Android</fix> and <fix>Internet Explorer</fix>. Block all annoying ads all over the web: remove video ads on <fix>YouTube</fix>, block <fix>Facebook</fix> ads, get rid of pop-ups and much more. On <fix>Google Chrome</fix>, <fix>Adblock Plus</fix> is one of the fastest growing extensions ever. <fix>Adblock Plus</fix> is used on over <fix>100</fix> million devices. Download online for free now!"|translate("s2")}}" property="og:description">
+</head>
+
+<div id="abb-banner" class="notice">
+  <h2>{{"Want to block ads on your smartphone or tablet?"|translate("abb-banner-headline")}}</h2>
+  <img src="/img/old/abb-promo-image.png" alt="{{"Adblock Browser promotional image"|translate("abb-promotion-alt")}}" />
+  <a id="abb-android-download" href="https://adblockplus.org/redirect?link=adblock_browser_android_store">{{"Download Adblock Browser"|translate("abb-banner-button-text")}}</a>
+  <a id="abb-ios-download" href="https://adblockplus.org/redirect?link=adblock_browser_ios_store">{{"Download Adblock Browser"|translate("abb-banner-button-text")}}</a>
+</div>
+<div itemscope="itemscope" itemtype="http://schema.org/SoftwareApplication">
+  <section id="main">
+    <div id="summary">
+      <h1 itemprop="name">{{"Adblock Plus"|translate("s5")}}</h1>
+      <h2 itemprop="description">{{"Surf the web without annoying ads!"|translate("s6")}}</h2>
+
+      <ul id="features">
+        <li itemprop="featureList">
+          <div class="sprite"></div>
+          {{"Blocks banners, pop-ups, tracking, malware and more"|translate("blocking-features")}}
+        </li>
+        <li itemprop="featureList">
+          <div class="sprite"></div>
+          {{"By default, nonintrusive ads aren't blocked in order to support websites <a href=\"acceptable-ads\">(learn more)</a>"|translate("opt-out-acceptable-ads")}} <sup><a href="#footnote">[1]</a></sup>
+        </li>
+        <li class="emphasized" id="feature-free" itemprop="featureList">
+          <div class="sprite"></div>
+          {{"It's free for users and open source (<a href=\"https://www.gnu.org/licenses/gpl.html\">GPLv3</a>)"|translate("gplv3-license")}}
+        </li>
+        <li id="feature-maxthon" itemprop="featureList">
+          <div class="sprite"></div>
+          {{"Integrated by default in"|translate("s11")}} <a href="http://www.maxthon.com/" target="_blank">{{"Maxthon Cloud Browser"|translate("s12")}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <p id="terms-message">
+      {{ "By clicking the Agree and Install button below, you agree to our <a href=\"terms\">Terms of Use</a>." | translate("terms-message", "Terms of use message") }}
+    </p>
+
+    <div id="install">
+      <a class="install-button" href="https://eyeo.to/adblockplus/firefox_install" id="install-firefox">{{"Agree and Install for Firefox"|translate("s13")}}</a>
+      <a class="install-button" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" id="install-chrome" onclick="chrome.webstore.install(); return false;">{{"Agree and Install for Chrome"|translate("s14")}}</a>
+      <a class="install-button" href="https://addons.opera.com/extensions/details/opera-adblock/?display=en-US" id="install-opera">{{"Agree and Install for Opera"|translate("s15")}}</a>
+      <a class="install-button" href="android-install" id="install-android">{{"Agree and Install for Android"|translate("s16")}}</a>
+      <a class="install-button" href="https://update.adblockplus.org/latest/adblockplusie.exe" id="install-internet-explorer">{{"Agree and Install for Internet Explorer"|translate("s17")}}</a>
+      <a class="install-button" href="https://update.adblockplus.org/latest/adblockplussafari.safariextz" id="install-safari">{{"Agree and Install for Safari"|translate("s18")}}</a>
+      <a class="install-button" href="https://itunes.apple.com/us/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868?mt=8" id="install-ios-safari">{{"Agree and Install for Safari"|translate("s18")}}</a>
+      <a class="install-button" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" id="install-yandex-browser" onclick="chrome.webstore.install(); return false;">{{"Agree and Install for Yandex Browser"|translate("s19")}}</a>
+      <a class="install-button" href="https://www.microsoft.com/store/p/adblock-plus/9nblggh4r9nz" id="install-edge">{{"Agree and Install for Microsoft Edge"|translate("install-edge")}}</a>
+    </div>
+
+    <div id="other-platform">
+        <div>{{"Download Adblock Plus for another platform"|translate("other-platform")}}</div>
+        <ul>
+          <li>
+            <a class="sprite" href="firefox" id="platform-firefox" title="{{"Adblock Plus for Firefox"|translate("s20")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="chrome" id="platform-chrome" title="{{"Adblock Plus for Chrome"|translate("s21")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="android" id="platform-android" title="{{"Adblock Plus for Android"|translate("s22")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="opera" id="platform-opera" title="{{"Adblock Plus for Opera"|translate("s23")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="internet-explorer" id="platform-internet-explorer" title="{{"Adblock Plus for Internet Explorer"|translate("s24")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="safari" id="platform-safari" title="{{"Adblock Plus for Safari"|translate("s25")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="yandex-browser" id="platform-yandex-browser" title="{{"Adblock Plus for Yandex Browser"|translate("s26")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="maxthon" id="platform-maxthon" title="{{"Adblock Plus for Maxthon"|translate("s27")}}"></a>
+          </li>
+          <li>
+            <a class="sprite" href="edge" id="platform-edge" title="{{"Adblock Plus for Microsoft Edge"|translate("abp-microsoft-edge")}}"></a>
+          </li>
+        </ul>
+      </div>
+  </section>
+
+  <div id="messages-wrapper">
+    <? include old/abb-notification ?>
+    <? include old/fr-download-disclaimer ?>
+    <div id="maxthon-notification">
+      使用傲游云浏览器，享受最好的广告过滤体验. (内置Adblock Plus) <a href="http://www.maxthon.cn" target="_blank">下载傲游云浏览器</a>
+    </div>
+    <div class="warning-platform firefox">{{"It appears that you are using Mozilla Firefox."|translate("s28")}} <a href="firefox">{{"Switch to Adblock Plus for Firefox."|translate("s29")}}</a></div>
+    <div class="warning-platform chrome">{{"It appears that you are using Google Chrome."|translate("s30")}} <a href="chrome">{{"Switch to Adblock Plus for Chrome."|translate("s31")}}</a></div>
+    <div class="warning-platform android">{{"It appears that you are using Android."|translate("s32")}} <a href="android">{{"Switch to Adblock Plus for Android."|translate("s33")}}</a></div>
+    <div class="warning-platform opera">{{"It appears that you are using Opera."|translate("s34")}} <a href="opera">{{"Switch to Adblock Plus for Opera."|translate("s35")}}</a></div>
+    <div class="warning-platform internet-explorer">{{"It appears that you are using Internet Explorer."|translate("s36")}} <a href="internet-explorer">{{"Switch to Adblock Plus for Internet Explorer."|translate("s37")}}</a></div>
+    <div class="warning-platform safari">{{"It appears that you are using Safari."|translate("s38")}} <a href="safari">{{"Switch to Adblock Plus for Safari."|translate("s39")}}</a></div>
+    <div class="warning-platform yandex-browser">{{"It appears that you are using Yandex Browser."|translate("s40")}} <a href="yandex-browser">{{"Switch to Adblock Plus for Yandex Browser."|translate("s41")}}</a></div>
+    <div class="warning-platform maxthon">{{"It appears that you are using Maxthon."|translate("s42")}} <a href="maxthon">{{"Switch to Adblock Plus for Maxthon."|translate("s43")}}</a></div>
+  </div>
+
+  <div id="home-video" class="video-parent">
+    <a class="video-link" target="_blank" href="https://www.youtube-nocookie.com/embed/PAfHJNv-a7I?html5=1&amp;autohide=1&amp;enablejsapi=1&amp;controls=2&amp;fs=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;theme=light&amp;autoplay=1">
+      <img class="video-thumbnail" src="/img/old/video-thumbnail.jpg" alt="{{ "Introduction to Adblock Plus video thumbnail" | translate("video-alt-text") }}">
+      <img class="video-play" src="/img/old/video-external.png" alt="{{ "Play Video" | translate("video-play-alt-text") }}">
+    </a>
+    <p class="video-disclaimer">
+      {{ "Click to play this video. Please note that this video is hosted by YouTube. When this video is played, some personal data is transferred to YouTube. For more information, please review YouTube's <a href='https://www.google.com/intl/en/policies/privacy/' target='_blank'>privacy policy</a>." | translate("video-disclaimer") }}
+    </p>
+  </div>
+
+  <img id="maxthon-instruction" src="/img/old/maxthon-instruction.png" alt="{{"Activate Adblock Plus in Maxthon"|translate("maxthon-instruction")}}">
+  <img id="edge-teaser" src="/img/old/edge_teaser.png" alt="{{"Coming soon image of Adblock Plus for Microsoft Edge"|translate("edge-teaser")}}" />
+</div>
+
+<div id="key-facts">
+  <section class="first">
+    <div class="sprite" id="facts-open-source"></div>
+    <h1>{{"Open Source"|translate("s44")}}</h1>
+    <p>
+        {{"Adblock Plus is an open source project.\n      <a href=\"contribute\">Join us!</a>"|translate("s45")}}
+    </p>
+  </section>
+
+  <section>
+    <div class="sprite" id="facts-downloads"></div>
+    <h1>{{"Active on <fix>100</fix> million devices"|translate("s46")}}</h1>
+    <p>
+{{"<fix>Adblock Plus</fix> is the world’s most popular browser extension."|translate("s47")}}
+    </p>
+  </section>
+
+  <section>
+    <div class="sprite" id="facts-privacy"></div>
+    <h1>{{"Privacy Guaranteed"|translate("s48")}}</h1>
+    <p>
+      {{"Adblock Plus will never collect your <a href=\"privacy\">personal data</a>."|translate("privacy-policy-note")}}
+    </p>
+
+  </section>
+</div>
+
+{% if page == "internet-explorer" %}
+<p id="ready-for-windows-notice" class="notice">
+  {{"Adblock Plus for Internet Explorer is supported by eyeo GmbH on the following editions of Windows 10 – Windows 10 Pro, Windows 10 Education and Windows 10 Enterprise. Adblock Plus for Internet Explorer is supported on the in-market supported servicing branches of Windows 10 including - Current Branch, Current Branch for Business and the following Long-Term Servicing branch: Windows 10."|translate("ready-for-windows-notice")}}
+</p>
+{% endif %}
+
+<hr>
+<div id="footnote">
+  [1] {{"The following rules <strong>have</strong> and <strong>always will</strong> apply to everyone, without exception:"|translate("footnote-headline")}}
+  <ul>
+    <li>
+      {{"Participants cannot pay to avoid the <a href=\"acceptable-ads#criteria-general\">criteria</a>. Every ad must comply."|translate("footnote-must-comply")}}
+    </li>
+    <li>
+      {{"For transparency, we add all Acceptable Ads to our <a href=\"https://adblockplus.org/forum/viewforum.php?f=12\">forum</a> so that our community of users can provide feedback."|translate("footnote-forum")}}
+    </li>
+    <li>
+      {{"We listen to our users. If an Acceptable Ads proposal is flagged by our community for a legitimate reason, we will remove it from the whitelist."|translate("footnote-value-users")}}
+    </li>
+    <li>
+      {{"We are able to keep our open source product free by charging large entities a fee for whitelisting services. For the other roughly 90 percent of our partners, these services are offered free of charge."|translate("footnote-keep-free")}}
+    </li>
+  </ul>
+</div>

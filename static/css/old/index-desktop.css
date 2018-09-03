@@ -1,0 +1,151 @@
+#content
+{
+  width: 990px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#content.ua-android,
+#content.ua-ios
+{
+  width: 1000px;
+}
+
+#main
+{
+  width: 426px;
+  height: auto;
+  /* Force height to be at least the height of the video/image */
+  min-height: 310px;
+  position: relative;
+  float: right;
+  margin-left: 0px;
+  margin-right: 3px;
+  margin-bottom: 4px;
+}
+
+html[dir="rtl"] #main
+{
+  float: left;
+  margin-right: 0px;
+  margin-left: 8px;
+}
+
+#information-android
+{
+  position: absolute;
+}
+
+h3.edge-message
+{
+  margin: 0px;
+}
+
+#install .install-button
+{
+  width: 100%;
+}
+
+#install .install-button:active
+{
+  bottom: 0px;
+}
+
+#other-platform
+{
+  margin-top: 10px;
+}
+
+#other-platform > div
+{
+  margin-bottom: 10px;
+}
+
+#content.edge #edge-teaser
+{
+  display: inline-block;
+  padding: 0px;
+}
+
+#information-android
+{
+  left: 2px;
+  bottom: -25px;
+}
+
+#messages-wrapper
+{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  float: right;
+}
+
+#messages-wrapper > div
+{
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+#content.edge #messages-wrapper
+{
+  margin-top: 80px;
+}
+
+#key-facts
+{
+  clear: both;
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 0px;
+}
+
+html[dir="rtl"] #key-facts
+{
+  margin-right: 80px;
+  margin-left: 0px;
+}
+
+#key-facts section
+{
+  width: 215px;
+  vertical-align: top;
+  margin-left: 20px;
+  margin-right: 0px;
+  padding-left: 95px;
+  padding-right: 0px;
+  border-left: 1px dotted black;
+  border-right-width: 0px;
+}
+
+html[dir="rtl"] #key-facts section
+{
+  margin-right: 20px;
+  margin-left: 0px;
+  padding-right: 95px;
+  padding-left: 0px;
+  border-right: 1px dotted black;
+  border-left-width: 0px;
+}
+
+html #key-facts section.first
+{
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+#key-facts section p
+{
+  width: 225px;
+}
+
+#pageactions
+{
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}

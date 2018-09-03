@@ -1,17 +1,7 @@
-title=Adblock Plus | The world's # 1 free ad blocker
-description=Adblock Plus, the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
+{% set is_old_index = locale in old_index_locales %}
 
-<head>
-  <link rel="stylesheet" href="/css/index.css">
-  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb">
-</head>
-
-<? include hero-download ?>
-<? include as-mentioned ?>
-<? include features ?>
-<? include abb-cross-promotion ?>
-<? include footnote ?>
-<? include install-button-text ?>
-
-<script src="/js/vendor/bowser.js"></script>
-<script src="/js/index.js"></script>
+{% if is_old_index %}
+  <? include old-index ?>
+{% else %}
+  <? include new-index ?>
+{% endif %}
