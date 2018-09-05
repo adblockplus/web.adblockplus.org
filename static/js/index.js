@@ -1,4 +1,4 @@
-(function()
+(function(root)
 {
   var desktopBrowsers = {
     "chrome": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
@@ -21,6 +21,14 @@
   };
 
   var browser, mobilePlatform;
+
+  function makeBrowserDict(browsers)
+  {
+    return Object.keys(browsers).reduce(function(browserDict, browserName) {
+      browserDict[browserName] = browserName;
+      return browserDict;
+    }, {});
+  }
 
   function getBowserKey(keys)
   {
@@ -90,6 +98,38 @@
     });
   }
 
+  root.desktopBrowsers = makeBrowserDict(desktopBrowsers);
+  root.mobileBrowsers = makeBrowserDict(mobileBrowsers);
+  root.mobilePlatforms = makeBrowserDict(mobilePlatforms);
+
+  root.setBrowser = function(browserName)
+  {
+    if (
+      desktopBrowsers.hasOwnProperty(browserName) ||
+      mobileBrowsers.hasOwnProperty(browserName)
+    ) {
+      document.body.classList.remove(browser);
+      browser = browserName;
+      document.body.classList.add(browserName);
+    } else {
+      throw new Error("Invalid browser name");
+    }
+  };
+
+  root.setMobilePlatform = function(platformName)
+  {
+    var isMobilePlatform = mobilePlatforms.hasOwnProperty(platformName);
+
+    if (isMobilePlatform || !platformName)
+    {
+      document.body.classList.remove(mobilePlatform);
+      mobilePlatform = platformName;
+    }
+
+    if (isMobilePlatform)
+      document.body.classList.add(platformName);
+  };
+
   if (typeof bowser != "undefined") setupHeroDownloadButton();
 
-}());
+}(window));
