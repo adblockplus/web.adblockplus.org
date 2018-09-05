@@ -110,7 +110,7 @@ notoc=True
 - {{ why-we-process-item-1[list item] In order to inform you about urgent issues in connection with our products. }}
 - {{ why-we-process-item-2[list item] To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads and issue reports you send to us. }}
 - {{ why-we-process-item-3[list item] For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security. }}
-- {{ why-we-process-item-4[list item] To analyze aggregated website logs and - at adblock.ai only - analytics data, to improve our website. }}
+- {{ why-we-process-item-4[list item] To analyze aggregated website logs and analytics data, to improve our website. }}
 - {{ why-we-process-item-5[list item] For communication and assistance purposes in our forum and blog. }}
 
 ### {{ what-is-legal[heading] What is the legal basis of data processing? }} {: #what-is-legal }
