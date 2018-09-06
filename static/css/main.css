@@ -1,3 +1,40 @@
+/******************************************************************************
+ * Browser-based styles
+ *****************************************************************************/
+
+.show-on-firefox { display: none; }
+.firefox .show-on-firefox { display: inherit; }
+.firefox .hide-on-firefox { display: none; }
+
+.show-on-chrome { display: none; }
+.chrome .show-on-chrome { display: inherit; }
+.chrome .hide-on-chrome { display: none; }
+
+.show-on-opera { display: none; }
+.opera .show-on-opera { display: inherit; }
+.opera .hide-on-opera { display: none; }
+
+.show-on-ie { display: none; }
+.msie .show-on-ie { display: inherit; }
+.msie .hide-on-ie { display: none; }
+
+.show-on-safari { display: none; }
+.safari .show-on-safari { display: inherit; }
+.safari .hide-on-safari { display: none; }
+
+.show-on-yandex { display: none; }
+.yandexbrowser .show-on-yandex { display: inherit; }
+.yandexbrowser .hide-on-yandex { display: none; }
+
+.show-on-edge { display: none; }
+.msedge .show-on-edge { display: inherit; }
+.msedge .hide-on-edge { display: none; }
+
+.show-on-maxthon { display: none; }
+.maxthon .show-on-maxthon { display: inherit; }
+.maxthon .hide-on-maxthon { display: none; }
+
+
 body
 {
   font-family: "Source Sans Pro", Arial, sans-serif;

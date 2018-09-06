@@ -1,0 +1,678 @@
+title=Download Adblock Plus
+description=Download Adblock Plus to block annoying ads and pop-ups in Firefox, Chrome, Opera, Safari  and Internet Explorer.
+template=minimal
+
+<style>
+
+  /* Global
+   ****************************************************************************/
+
+  h1 span,
+  h2 span,
+  h3 span { display: inline-block; }
+
+  @media (min-width: 992px)
+  {
+    .one-third { width: 33.333333%; }
+    .two-thirds { width: 66.666667%; }
+  }
+
+  .install-button,
+  .install-button:visited
+  {
+    display: inline-block;
+    position: relative;
+    margin-top: 1em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    background-color: #5CA41B;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+    color: #fff !important;
+    font-size: 1.25em;
+    text-transform: uppercase;
+  }
+
+  .install-button:hover,
+  .install-button:focus,
+  .install-button:active
+  {
+    text-decoration: none;
+    background-color: #529318;
+  }
+
+  .install-button > *
+  {
+    line-height: 2em;
+    height: 2em;
+    width: auto;
+    margin: 0.5em;
+  }
+
+  [dir="ltr"] .install-button > * { float: left; }
+
+  [dir="rtl"] .install-button > * { float: right; }
+
+  .install-button img
+  {
+    height: 2em;
+    width: 2em;
+  }
+
+  /* #download-intro
+   ****************************************************************************/
+
+  #download-intro
+  {
+    padding-top: 1em;
+    max-width: 320px;
+  }
+
+  @media (min-width: 576px)
+  {
+    #download-intro { max-width: 544px; }
+  }
+
+  @media (min-width: 992px)
+  {
+    #download-intro
+    {
+      padding-top: 4em;
+      max-width: 736px;
+    }
+  }
+
+  #download-intro h1 { font-weight: 300; }
+
+  #download-intro h2 { margin-top: 1em; }
+
+  @media (min-width: 576px)
+  {
+    #download-intro h1
+    {
+      margin-bottom: 0.25em;
+    }
+
+    #download-intro h2
+    {
+      margin-top: 0;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  #download-intro-illustration
+  {
+    display: block;
+    padding: 3em 1em 0 1em;
+  }
+
+  /* #download-stats
+   ****************************************************************************/
+
+  #download-stats
+  {
+    padding-bottom: 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+
+  #download-stats dl,
+  #download-stats dt
+  {
+    font-weight: 300;
+  }
+
+  #download-stats dt
+  {
+    margin-top: 1.5em;
+    margin-bottom: 0.5rem;
+    font-size: 1.4em;
+  }
+
+  [dir="ltr"] #download-stats dt img { margin-right: 1rem; }
+
+  [dir="rtl"] #download-stats dt img { margin-left: 1rem; }
+
+  #download-stats dt img
+  {
+    display: inline-block;
+    height: 1.5em;
+    width: auto;
+    margin-bottom: -0.25em;
+  }
+
+  #download-stats dd
+  {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+  }
+
+  #download-stats dd strong
+  {
+    font-weight: 700;
+  }
+
+  /* #download-block-ads
+   ****************************************************************************/
+
+  #download-block-ads
+  {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: #5CA41B;
+    color: #fff;
+  }
+
+  @media (min-width: 576px) and (max-width: 991px)
+  {
+    #download-block-ads { text-align: center; }
+
+    #download-block-ads li { list-style-type: none; }
+  }
+
+  @media (min-width: 992px)
+  {
+    #download-block-ads
+    {
+      background: rgb(250,250,250);
+      background: linear-gradient(56deg, rgba(250,250,250,1) 0%, rgba(92,164,27,1) 35%);
+    }
+  }
+
+  #download-block-ads-illustration
+  {
+    max-width: 220px;
+    margin-bottom: 1em;
+  }
+
+  @media (min-width: 992px)
+  {
+    #download-block-ads h2 { margin-top: 0; }
+  }
+
+
+  /* #download-be-safer
+   ****************************************************************************/
+
+  #download-be-safer
+  {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  @media (min-width: 576px) and (max-width: 991px)
+  {
+    #download-be-safer { text-align: center; }
+
+    #download-be-safer li { list-style-type: none; }
+  }
+
+  #download-be-safer-illustration
+  {
+    max-width: 220px;
+    margin-bottom: 1em;
+  }
+
+  @media (min-width: 992px)
+  {
+    [dir="ltr"] #download-be-safer .column { float: right; }
+
+    [dir="rtl"] #download-be-safer .column { float: left; }
+
+    #download-be-safer h2 { margin-top: 0; }
+  }
+
+  /* #download-block-ads
+   ****************************************************************************/
+
+  #download-aa
+  {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: #03729E;
+    color: #fff;
+  }
+
+  @media (min-width: 576px) and (max-width: 991px)
+  {
+    #download-aa { text-align: center; }
+
+    #download-aa li { list-style-type: none; }
+  }
+
+  @media (min-width: 992px)
+  {
+    #download-aa
+    {
+      background: rgb(3,114,158);
+      background: linear-gradient(313deg, rgba(3,114,158,1) 65%, rgba(250,250,250,1) 100%);
+    }
+  }
+
+  #download-aa a,
+  #download-aa a:visited
+  {
+    color: #fff;
+  }
+
+  #download-aa-illustration
+  {
+    max-width: 220px;
+    margin-bottom: 1em;
+  }
+
+  @media (min-width: 992px)
+  {
+    #download-aa h2 { margin-top: 0; }
+  }
+
+ /* #download-footer
+  *****************************************************************************/
+
+  #download-footer
+  {
+    display: none;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (min-width: 1200px)
+  {
+    #download-footer { display: block; }
+  }
+
+  #download-footer h3
+  {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-weight: 300;
+  }
+
+  #download-footer-browsers
+  {
+    margin: 0;
+    padding: 0;
+  }
+
+  #download-footer-browsers li
+  {
+    display: inline-block;
+    text-align: center;
+    width: 130px;
+  }
+
+  #download-footer-browsers img
+  {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1em;
+  }
+
+  #download-footer-browsers a,
+  #download-footer-browsers a:visited
+  {
+    color: #000;
+  }
+</style>
+
+<script src="/js/vendor/bowser.js"></script>
+
+<script>
+  (function()
+    {
+      var desktopBrowsers = {
+        "chrome": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+        "opera": "https://eyeo.to/adblockplus/opera_install/",
+        "yandexbrowser": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+        "msie": "https://eyeo.to/adblockplus/ie_install/",
+        "msedge": "https://eyeo.to/adblockplus/edge_install/",
+        "firefox": "https://eyeo.to/adblockplus/firefox_install/",
+        "safari": "https://eyeo.to/adblockplus/safari_install/"
+      };
+
+      var mobileBrowsers = {
+        "safari": "https://eyeo.to/adblockplus/ios_safari_install/",
+        "samsungBrowser": "https://eyeo.to/adblockplus/android_samsung_install/"
+      };
+
+      var mobilePlatforms = {
+        "ios": "https://eyeo.to/adblockbrowser/ios/",
+        "android": "https://eyeo.to/adblockbrowser/android/"
+      };
+
+      var browser, mobilePlatform;
+
+      function getBowserKey(keys)
+      {
+        for (var key in keys)
+          {
+            if (bowser[key])
+              return key;
+          }
+      }
+
+      function setupInstallButtons()
+      {
+        var bodyClassList = document.body.classList;
+
+        // ABP comes with Maxthon out of the box.
+        if (bowser.maxthon)
+          return bodyClassList.add("maxthon");
+
+        mobilePlatform = getBowserKey(mobilePlatforms);
+
+        browser = !!mobilePlatform ?
+          getBowserKey(mobileBrowsers):
+          getBowserKey(desktopBrowsers);
+
+        var installButtons = document.querySelectorAll(".install-button");
+
+        var installerHref = "download";
+
+        if (!!mobilePlatform)
+          if (!!browser)
+            installerHref = mobileBrowsers[browser];
+        else
+          installerHref = mobilePlatforms[mobilePlatform];
+        else if (!!browser)
+          installerHref = desktopBrowsers[browser];
+
+        if (!!mobilePlatform) bodyClassList.add(mobilePlatform);
+
+        if (!!browser) bodyClassList.add(browser);
+
+        for (var button of installButtons)
+        {
+          button.href = installerHref;
+
+          button.addEventListener("click", function(event)
+          {
+            if (typeof chrome == "undefined") return;
+
+            event.preventDefault();
+
+            try
+            {
+              chrome.webstore.install();
+            }
+            catch(error)
+            {
+              window.location = this.href;
+            }
+          });
+
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function()
+      {
+        if (typeof bowser != "undefined") setupInstallButtons();
+      })
+    }());
+</script>
+
+<header id="download-intro" class="container text-center content">
+  <h1>{{ intro-download-header-1[header] Download <span>Adblock Plus</span> }}</h1>
+  <h2 class="h1">{{ intro-download-header-2[header] Enjoy your favorite websites <span>without annoying ads</span> <span>or pop-ups</span> }}</h2>
+  <p>
+    {{ tos-message By clicking the Agree and Install button below, you agree to our <a href="terms">Terms of Use</a>. }}
+  </p>
+  <p>
+    <? include agree-and-install ?>
+  </p>
+  <p>
+    {{ download-alt <a href="download">Download Adblock Plus for another browser</a> }}
+  </p>
+  <div>
+    <img
+      id="download-intro-illustration"
+      src="/img/block-ads-illustration.png"
+      alt="{{ intro-download-illistration-alt[alt text] FIXME }}">
+  </div>
+</header>
+
+<aside id="download-stats" class="content section">
+  <div class="container">
+    <div class="row">
+
+      <div class="column one-third">
+        <dl>
+          <dt>
+            <img
+              src="/img/devices-icon.svg"
+              alt="{{ device-icon-alt[alt text] Device icon }}">
+            <span>
+              {{ active-devices-dt[description list item title] Active devices }}
+            </span>
+          </dt>
+          <dd>
+            {{ active-devices-dd[description list item description] over <strong>100</strong> million }}
+          </dd>
+        </dl>
+      </div>
+
+      <div class="column one-third">
+        <dl>
+          <dt>
+            <img
+              src="/img/languages-icon.svg"
+              alt="{{ locale-icon-alt[alt text] Language icon }}">
+            <span>
+              {{ available-languages-dt[description list item title] Available languages }}
+            </span>
+          </dt>
+          <dd>
+            <strong>{{ available-languages-dd[description list item description] 24 }}</strong>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="column one-third">
+        <dl>
+          <dt>
+            <img
+              src="/img/platforms-icon.svg"
+              alt="{{ platforms-icon-alt[alt text] Platforms icon }}">
+            <span>
+              {{ supported-platforms-dt[description list item title] Supported platforms }}
+            </span>
+          </dt>
+          <dd>
+            <strong>{{ supported-platforms-dd[description list item description] 8 }}</strong>
+          </dd>
+        </dl>
+      </div>
+
+    </div><!-- .row -->
+  </div><!-- .container -->
+</aside><!-- #download-stats -->
+
+<article id="download-block-ads" class="content section">
+  <div class="container">
+    <div class="row">
+
+      <div class="column one-third">
+        <img
+          id="download-block-ads-illustration"
+          src="/img/acceptable-ads-illustration.svg"
+          alt="{{ block-ads-illustration-alt[alt text] FIXME }}">
+      </div>
+
+      <div class="column two-thirds">
+        <h2 class="h1">{{ block-ads-heading[heading] Browse with no <span>annoying ads</span> }}</h2>
+        <p>
+          <em>{{ block-ads-1 Download Adblock Plus to gain control over  your online experience. }}</em>
+        </p>
+        <ul>
+          <li>{{ block-ads-item-1[list item] Block all annoying ads (pop-ups, autoplay, and more) }}</li>
+          <li>{{ block-ads-item-1[list item] Block ads on video sites - watch without interruption}}</li>
+          <li>{{ block-ads-item-1[list item] Browse faster - fewer ads mean faster load times}}</li>
+          <li>{{ block-ads-item-1[list item] Customize your experience - change settings to see the web your way }}</li>
+        </ul>
+      </div>
+
+    </div><!-- .row -->
+  </div><!-- .container -->
+</article><!-- #download-block-ads -->
+
+<article id="download-be-safer" class="container content">
+  <div class="container">
+    <div class="row">
+
+      <div class="column one-third">
+        <img
+          id="download-be-safer-illustration"
+          src="/img/be-safer-illustration.svg"
+          alt="{{ be-safer-illustration-alt[alt text] FIXME }}">
+      </div>
+
+      <div class="column two-thirds">
+        <h2 class="h1">{{ be-safer-heading[heading] Be safer online }}</h2>
+        <p><em>{{ be-safer-1 An easy-to-use ad blocker, Adblock Plus gives you the power to }}</em</p>
+        <ul>
+          <li>{{ be-safer-item-1[list item] Stop tracking - stop companies following your every move online }}</li>
+          <li>{{ be-safer-item-1[list item] Stop malware sites - automatically block sites known to spread malware }}</li>
+          <li>{{ be-safer-item-1[list item] Stop social media buttons - block social media tracking from “like buttons” }}</li>
+        </ul>
+      </div>
+
+    </div><!-- .row -->
+  </div><!-- .container -->
+</article><!-- #download-be-safer -->
+
+<article id="download-aa" class="content section">
+  <div class="container">
+    <div class="row">
+
+      <div class="column one-third">
+        <img
+          id="download-aa-illustration"
+          src="/img/aa-illustration.svg"
+          alt="{{ aa-illustration-alt[alt text] FIXME }}">
+      </div>
+
+      <div class="column two-thirds">
+        <h2 class="h1">{{ aa-heading[heading] Support fair websites }}</h2>
+        <p>
+          <em>{{ aa-1 Adblock Plus supports Acceptable Ads which: }}</em>
+        </p>
+        <ul>
+          <li>{{ aa-item-1[list-item] Keep great websites free - it’s not cheap to run a website, and creators need your help }}</li>
+          <li>{{ aa-item-1[list-item] Don’t ruin your user experience - they’re designed to be relevant and nonintrusive }}</li>
+          <li>{{ aa-item-1[list-item] Motivate advertisers and creators to make a better internet }}</li>
+          <li>{{ aa-item-1[list-item] Can be turned off - it’s simple to do, and your choice }}</li>
+        </ul>
+        <p>
+          <a href="acceptable-ads">{{ aa-link[link text] Learn more about Acceptable Ads }}</a>
+        </p>
+      </div>
+    </div><!-- .row -->
+  </div><!-- .container -->
+</article><!-- #download-aa -->
+
+<article id="download-footer" class="container text-center content section">
+  <h2 class="h1">
+    {{ download-now-heading[heading] Download Adblock Plus now }}
+  </h2>
+  <p>
+    {{ tos-message }}
+  </p>
+  <p>
+    <? include agree-and-install ?>
+  </p>
+  <p>
+    {{ download-alt }}
+  </p>
+  <h3 class="h1">
+    {{ avaialble-for-browsers-heading[heading] Available for your favorite browsers }}
+  </h3>
+  <ul id="download-footer-browsers">
+    <li>
+      <a
+        href="https://eyeo.to/adblockplus/firefox_install/download-adblock-plus/footer"
+        title="{{ firefox-title[tooltip] Download Adblock Plus for Firefox }}">
+        <img
+          src="/img/firefox-icon-gray.svg"
+          alt="{{ firefox-icon-alt[alt text] Firefox icon }}">
+        <div>{{ firefox-label[link text] Firefox }}</div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb"
+        title="{{ chrome-title[tooltip] Download Adblock Plus for Chrome }}">
+        <img
+          src="/img/chrome-icon-gray.svg"
+          alt="{{ chrome-icon-alt[alt text] Chrome icon }}">
+        <div>{{ chrome-label[link text] Chrome }}</div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://eyeo.to/adblockplus/opera_install/download-adblock-plus/footer"
+        title="{{ opera-title[tooltip] Download Adblock Plus for Opera }}">
+        <img
+          src="/img/opera-icon-gray.svg"
+          alt="{{ opera-icon-alt[alt text] Opera icon }}">
+        <div>{{ opera-label[link text] Opera }}</div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://eyeo.to/adblockplus/ie_install/download-adblock-plus/footer"
+        title="{{ ie-title[tooltip] Download Adblock Plus for Internet Explorer }}">
+        <img
+          src="/img/ie-icon-gray.svg"
+          alt="{{ ie-icon-alt[alt text] Internet Explorer icon }}">
+        <div>{{ ie-label[link text] Internet Explorer }}</div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://eyeo.to/adblockplus/safari_install/download-adblock-plus/footer"
+        title="{{ safari-title[tooltip] Download Adblock Plus for Safari }}">
+        <img
+          src="/img/safari-icon-gray.svg"
+          alt="{{ safari-icon-alt[alt text] Safari icon }}">
+        <div>{{ safari-label[link text] Safari }}</div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb"
+        title="{{ yandex-title[tooltip] Download Adblock Plus for Yandex Browser }}">
+        <img
+          src="/img/yandex-icon-gray.svg"
+          alt="{{ yandex-icon-alt[alt text] Yandex Browser icon }}">
+        <div>{{ yandex-label[link text] Yandex }}</div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="download#FIXME"
+        title="{{ maxthon-title[tooltip] Download Adblock Plus for Maxthon Browser }}">
+        <img
+          src="/img/maxthon-icon-gray.svg"
+          alt="{{ maxthon-icon-alt[alt text] Maxthon Browser icon }}">
+        <div>{{ maxthon-label[link text] Maxthon }}</div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://eyeo.to/adblockplus/edge_install/download-adblock-plus/footer"
+        title="{{ edge-title[tooltip] Download Adblock Plus for Edge Browser }}">
+        <img
+          src="/img/edge-icon-gray.svg"
+          alt="{{ edge-icon-alt[alt text] Edge Browser icon }}">
+        <div>{{ edge-label[link text] Edge }}</div>
+      </a>
+    </li>
+  </ul>
+</article>
