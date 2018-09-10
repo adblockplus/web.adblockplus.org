@@ -6,15 +6,7 @@ title=Development builds
   document.addEventListener("DOMContentLoaded", function()
   {
     var link = document.getElementById("chrome-install-link");
-    if (typeof chrome != "undefined" && chrome.webstore)
-    {
-      link.addEventListener("click", function(event)
-      {
-        chrome.webstore.install();
-        event.preventDefault();
-      });
-    }
-    else if (/\bOPR\//.test(navigator.userAgent))
+    if (/\bOPR\//.test(navigator.userAgent))
     {
       link.href = "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=100&x=id%3Dldcecbkkoecffmfljeihcmifjjdoepkn%26uc";
     }

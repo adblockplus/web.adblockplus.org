@@ -72,22 +72,6 @@
 
       heroDownloadButton.textContent = heroDownloadButtonTemplate.textContent;
     }
-
-    heroDownloadButton.addEventListener("click", function(event)
-    {
-      if (typeof chrome == "undefined") return;
-
-      event.preventDefault();
-
-      try
-      {
-        chrome.webstore.install();
-      }
-      catch(error)
-      {
-        window.location = this.href;
-      }
-    });
   }
 
   if (typeof bowser != "undefined") setupHeroDownloadButton();
