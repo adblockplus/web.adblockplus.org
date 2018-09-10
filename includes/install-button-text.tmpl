@@ -1,17 +1,20 @@
 {% for browser in browsers %}
-  {% if locale in ["en", "de", "fr"] %}
-    <script id="download-label-{{ browser.id }}" type="text/template">
-      {{ get_string("agree-and-install-for-" + browser.id, "install-button") }}
-    </script>
-    <script id="alt-download-label-{{ browser.id }}" type="text/template">
-      {{ get_string("install-for-" + browser.id, "install-button") }}
-    </script>
+
+  {% if browser.id in ("chrome", "yandexbrowser") %}
+    {% set label = "get-for-" %}
+    {% set alt = "get-for-" %}
+  {% elif locale in ("en", "de", "fr") %}
+    {% set label = "agree-and-install-for-" %}
+    {% set alt = "agree-and-install-for-" %}
   {% else %}
-    <script id="download-label-{{ browser.id }}" type="text/template">
-      {{ get_string("install-for-" + browser.id, "install-button") }}
-    </script>
-    <script id="alt-download-label-{{ browser.id }}" type="text/template">
-      {{ get_string("agree-and-install-for-" + browser.id, "install-button") }}
-    </script>
+    {% set label = "install-for-" %}
+    {% set alt = "install-for-" %}
   {% endif %}
+
+  <script id="download-label-{{ browser.id }}" type="text/template">
+    {{ get_string(label + browser.id, "install-button") }}
+  </script>
+  <script id="alt-download-label-{{ browser.id }}" type="text/template">
+    {{ get_string(alt + browser.id, "install-button") }}
+  </script>
 {% endfor %}
