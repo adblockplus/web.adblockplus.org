@@ -1,9 +1,9 @@
 (function()
 {
   var desktopBrowsers = {
-    "chrome": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "chrome": "https://eyeo.to/adblockplus/chrome_install",
     "opera": "https://eyeo.to/adblockplus/opera_install/",
-    "yandexbrowser": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install",
     "msie": "https://eyeo.to/adblockplus/ie_install/",
     "msedge": "https://eyeo.to/adblockplus/edge_install/",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/",
