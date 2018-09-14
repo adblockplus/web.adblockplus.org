@@ -555,6 +555,11 @@ div.animation[started="true"]
   font-size: 0.9em;
 }
 
+@media (min-width: 576px) and ( max-width: 767px)
+{
+  #footer .column { width: 50%; }
+}
+
 /* #footer body
  ******************************************************************************/
 
@@ -626,6 +631,13 @@ div.animation[started="true"]
   }
 }
 
+@media(max-width: 576px)
+{
+  #social-list img { height: 3em; }
+
+  #social-list li { margin: 0 0.375em; }
+}
+
 /* #footer #footer-legal
  ******************************************************************************/
 
@@ -693,21 +705,6 @@ div.animation[started="true"]
   [dir="rtl"] #legal-list
   {
     float: left;
-  }
-}
-
-/* hide all footer links except #social-list on ~mobile */
-@media(max-width: 767px)
-{
-  #footer .column
-  {
-    display: none;
-  }
-
-  /* overriding display:none above */
-  #footer #social-list
-  {
-    display: block;
   }
 }
 
