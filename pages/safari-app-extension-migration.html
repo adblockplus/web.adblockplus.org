@@ -179,36 +179,16 @@ template=minimal
 
   #screenshot
   {
+    display: block;
+    max-width: 100%;
     margin-top: 2em;
-    position: relative;
-    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 768px)
   {
     #screenshot { margin-top: 4em; }
-  }
-
-  #screenshot img
-  {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-  }
-
-  /* force clear */
-  #screenshot::before
-  {
-    display: block;
-    content: "";
-  }
-
-  /* provide proportional height to masked image above */
-  #screenshot::before
-  {
-    padding-top: 42%;
   }
 
   /* Features
@@ -404,12 +384,11 @@ template=minimal
 </div><!-- #intro -->
 
 <div class="container">
-  <div id="screenshot">
-    <img
-      alt="{{ screenshot-alt[image alt text] Screenshot of Adblock Plus for Safari }}"
-      src="/img/adblock-plus-mac-safari.png"
-      srcset="/img/adblock-plus-mac-safari-2x.png 2x">
-  </div>
+  <img
+    id="screenshot"
+    alt="{{ screenshot-alt[image alt text] Screenshot of Adblock Plus for Safari }}"
+    src="/img/adblock-plus-mac-safari.png"
+    srcset="/img/adblock-plus-mac-safari-2x.png 2x">
 </div>
 
 <div id="features" >
