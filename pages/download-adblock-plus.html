@@ -11,6 +11,12 @@ template=minimal
   h2 span,
   h3 span { display: inline-block; }
 
+  .sup
+  {
+    vertical-align: super;
+    font-size: 75%;
+  }
+
   @media (min-width: 992px)
   {
     .one-third { width: 33.333333%; }
@@ -561,7 +567,7 @@ template=minimal
       <div class="column two-thirds">
         <h2 class="h1">{{ aa-heading[heading] Support fair websites }}</h2>
         <p>
-          <em>{{ aa-1 Adblock Plus supports Acceptable Ads which: }}</em>
+          <em>{{ aa-1 Adblock Plus supports Acceptable Ads<a class="sup" href="#footnote">[1]</a> which: }}</em>
         </p>
         <ul>
           <li>{{ aa-item-1[list-item] Keep great websites free - it’s not cheap to run a website, and creators need your help }}</li>
@@ -676,3 +682,7 @@ template=minimal
     </li>
   </ul>
 </article>
+
+<div class="bg-secondary section">
+  <? include footnote ?>
+</div>
