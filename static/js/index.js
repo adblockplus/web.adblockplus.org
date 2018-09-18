@@ -7,7 +7,7 @@
     "msie": "https://eyeo.to/adblockplus/ie_install/",
     "msedge": "https://eyeo.to/adblockplus/edge_install/",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/",
-    "safari": "https://eyeo.to/adblockplus/macos_safari_install_int_build/"
+    "safari": "https://eyeo.to/adblockplus/macos_safari_install/"
   };
 
   var mobileBrowsers = {
