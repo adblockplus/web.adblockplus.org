@@ -246,6 +246,8 @@ template=minimal
     color: #fff;
   }
 
+  #download-aa a { text-decoration: underline; }
+
   @media (min-width: 576px) and (max-width: 991px)
   {
     #download-aa { text-align: center; }
@@ -567,7 +569,7 @@ template=minimal
       <div class="column two-thirds">
         <h2 class="h1">{{ aa-heading[heading] Support fair websites }}</h2>
         <p>
-          <em>{{ aa-1 Adblock Plus supports Acceptable Ads<a class="sup" href="#footnote">[1]</a> which: }}</em>
+          <em>{{ aa-1 Adblock Plus supports <a href="acceptable-ads">Acceptable Ads</a><a class="sup" href="#footnote">[1]</a> which: }}</em>
         </p>
         <ul>
           <li>{{ aa-item-1[list-item] Keep great websites free - it’s not cheap to run a website, and creators need your help }}</li>
@@ -683,6 +685,6 @@ template=minimal
   </ul>
 </article>
 
-<div class="bg-secondary section">
+<div class="bg-secondary">
   <? include footnote ?>
 </div>
