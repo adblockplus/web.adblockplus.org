@@ -922,3 +922,10 @@ div.animation[started="true"]
   display: inline;
   list-style: none;
 }
+
+/******************************************************************************
+ * Text utilities
+ *****************************************************************************/
+
+.avoid-wrap {display: inline-block;}
+.small {font-size: smaller;}

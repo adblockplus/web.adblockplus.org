@@ -1,13 +1,13 @@
 (function()
 {
   var desktopBrowsers = {
-    "chrome": "https://eyeo.to/adblockplus/chrome_install",
+    "chrome": "https://eyeo.to/adblockplus/chrome_install/",
     "opera": "https://eyeo.to/adblockplus/opera_install/",
     "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install",
     "msie": "https://eyeo.to/adblockplus/ie_install/",
     "msedge": "https://eyeo.to/adblockplus/edge_install/",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/",
-    "safari": "https://eyeo.to/adblockplus/safari_install/"
+    "safari": "https://eyeo.to/adblockplus/macos_safari_install_int_build/"
   };
 
   var mobileBrowsers = {
