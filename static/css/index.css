@@ -2,12 +2,6 @@
  * Text utilities
  *****************************************************************************/
 
-h1 span,
-h2 span,
-h3 span,
-h4 span
-{ display: inline-block; }
-
 .avoid-wrap {display: inline-block;}
 .small {font-size: smaller;}
 
@@ -39,6 +33,45 @@ h4 span
  * Mobile intro sections
  *****************************************************************************/
 
+.intro-mobile
+{
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.intro-mobile h1 span,
+.intro-mobile .subheading span
+{
+  display: block;
+}
+
+.intro-mobile h1,
+.intro-mobile .h1
+{
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+.intro-mobile .subheading
+{
+  margin-top: -0.7em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 575px)
+{
+  #intro-ios-safari h1,
+  #intro-ios-not-safari h2
+  {
+    font-size: 1.5em;
+    line-height: inherit;
+  }
+}
+
+#intro-ios-not-safari { padding-top: 3em !important; }
+
+#intro-ios-not-safari h2 { margin-top: 0; }
+
 @media (min-width: 452px)
 {
   #intro-android,
@@ -53,18 +86,8 @@ h4 span
     width: 420px;
   }
 
-  #intro-android h1,
-  #intro-ios-safari h1,
-  #intro-samsung h1
-  {
-    font-size: 1.6em;
-  }
-
-  #intro-ios-not-safari { padding-top: 1em; }
-
   #intro-ios-not-safari h2
   {
-    font-size: 2em;
     margin-bottom: 1em;
   }
 }
