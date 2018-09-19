@@ -9,7 +9,7 @@
     "msie": "https://eyeo.to/adblockplus/ie_install/polish-lp",
     "msedge": "https://eyeo.to/adblockplus/edge_install/polish-lp",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/polish-lp",
-    "safari": "https://eyeo.to/adblockplus/macos_safari_install/polish-lp"
+    "safari": "https://eyeo.to/adblockplus/safari_install/polish-lp"
   };
 
   var mobileBrowsers = {
