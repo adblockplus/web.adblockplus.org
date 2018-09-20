@@ -321,8 +321,12 @@ Germany<br>
 
 ##### {{ issue-reporter-heading[heading] Issue Reporter }} {: #issue-reporter }
 
-{{ issue-reporter-paragraph-1 Adblock Plus allows you to send issue reports that will be temporarily stored on the AdblockPlus.org. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, address of the web page where the problem is visible, blockable items on the web page, matching filters and active subscriptions. Parameter values are removed from all transmitted addresses to avoid unintentionally leaking private information. It is also possible to provide additional information on a voluntary basis, which may be privacy-sensitive: }}
+{{ issue-reporter-paragraph-1 Adblock Plus allows you to send issue reports that will be temporarily stored on the AdblockPlus.org website. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, address of the web page where the problem is visible, blockable items on the web page, matching filters, active subscriptions, type of issue report (i.e. false positive or false negative), and a screenshot of the issue (it is possible to remove particularly sensitive sections of the page before the report is sent). Parameter values are removed from all transmitted addresses to avoid unintentionally leaking private information. }}
 
+{{ issue-reporter-items-intro You can  voluntarily: }}
+
+- {{ issue-reporter-item-3[list item] Provide your email address in order for us to request more information from you or to update you on the issue. }}
+- {{ issue-reporter-item-4[list item] Include an optional comment about the issue. }}
 - {{ isse-reporter-item-1[list item] A website screenshot provides a scaled-down and color-reduced version of the page viewed. It is possible to remove particularly sensitive sections of the page before the report is sent. }}
 - {{ isse-reporter-item-2[list item] The email address is only used to request more information or to update the user on the issue. }}
 
