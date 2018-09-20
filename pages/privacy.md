@@ -325,10 +325,8 @@ Germany<br>
 
 {{ issue-reporter-items-intro You can  voluntarily: }}
 
-- {{ issue-reporter-item-3[list item] Provide your email address in order for us to request more information from you or to update you on the issue. }}
-- {{ issue-reporter-item-4[list item] Include an optional comment about the issue. }}
-- {{ isse-reporter-item-1[list item] A website screenshot provides a scaled-down and color-reduced version of the page viewed. It is possible to remove particularly sensitive sections of the page before the report is sent. }}
-- {{ isse-reporter-item-2[list item] The email address is only used to request more information or to update the user on the issue. }}
+- {{ issue-reporter-item-1[list item] Provide your email address in order for us to request more information from you or to update you on the issue. }}
+- {{ issue-reporter-item-2[list item] Include an optional comment about the issue. }}
 
 ##### {{ access-reports-heading[heading] Access to the reports }} {: #access-reports }
 
