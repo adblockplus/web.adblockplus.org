@@ -1,7 +1,7 @@
 (function()
 {
   var desktopBrowsers = {
-    "chrome": "https://eyeo.to/adblockplus/chrome_install",
+    "chrome": "https://eyeo.to/adblockplus/chrome_install/",
     "opera": "https://eyeo.to/adblockplus/opera_install/",
     "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install",
     "msie": "https://eyeo.to/adblockplus/ie_install/",
