@@ -233,7 +233,7 @@ Germany<br>
 
 #### {{ compliance-permission-heading[heading] Collection and processing is necessary for compliance with a legal obligation to which the Controller is subject – Art. 6 (1) c GDPR }} {: #compliance-permission }
 
-{{ compliance-permission-paragraph Collection and processing of your personal data may be necessary for compliance with a legal obligation to which we are subject under EU laws or the laws of a EU Member State. }}
+{{ compliance-permission-paragraph Collection and processing of your personal data may be necessary for compliance with a legal obligation to which we are subject under EU laws or the laws of an EU Member State. }}
 
 #### {{ legitimate-interest-permission-heading[heading] Collection and processing is necessary for the purposes of our legitimate interests - Art. 6 (1) f GDPR }} {: #legitimate-interest-permission }
 
@@ -431,7 +431,7 @@ Germany<br>
 - {{ forum-registration-item-1[list item] Passwords go through one-way encryption before they are stored on the server. }}
 - {{ forum-registration-item-2[list item] Email addresses are only displayed in the public profile if explicitly agreed to. By default, they are only used for the sending of notifications to which you subscribed. }}
 
-{{ forum-registration-paragraph-3 **Note:** Registration is not required to participate in the forums and you can delete your account at any time. }}
+{{ forum-registration-paragraph-3 **Note:** Registration is not required to read articles in the forum and you can delete your account at any time. }}
 
 ###### {{ blog-comments-heading[heading] Blog comments }} {: #blog-comments }
 
@@ -447,7 +447,7 @@ Germany<br>
 
 {{ retention-communications-paragraph-2 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch). }}
 
-<time datetime="2018-06">{{ publication-date June 2018 }}</time>
+<time datetime="2018-09">{{ publication-date September 2018 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
