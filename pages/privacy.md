@@ -113,9 +113,9 @@ notoc=True
 - {{ why-we-process-item-4[list item] To analyze aggregated website logs and - at adblock.ai only - analytics data, to improve our website. }}
 - {{ why-we-process-item-5[list item] For communication and assistance purposes in our forum and blog. }}
 
-### {{ what-is-legal[heading] What is the legal basis of data processing? }} {: #what-is-legal }
+### {{ what-is-legal-heading[heading] What is the legal basis of data processing? }} {: #what-is-legal }
 
-{{ what-is-legal We process your personal data in compliance with the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU laws and German national data protection laws. }}
+{{ what-is-legal-1 We process your personal data in compliance with the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU laws and German national data protection laws. }}
 
 ### {{ how-long[heading] How long do we keep data? }} {: #how-long }
 
