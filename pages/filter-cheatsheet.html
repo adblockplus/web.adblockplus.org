@@ -598,6 +598,30 @@ title=Adblock Plus filters explained
       <td>{{s95 Include or exclude pages loaded within pages (frames)}}</td>
   </tr>
   <tr>
+    <td><code>xmlhttprequest</code><br><code>~xmlhttprequest</code></td>
+    <td>{{s140 Include or exclude requests started using the <a href="https://xhr.spec.whatwg.org/"><code>XMLHttpRequest</code> object</a> or <a href="https://fetch.spec.whatwg.org/"><code>fetch()</code> API</a>}}</td>
+  </tr>
+  <tr>
+    <td><code>websocket</code><br><code>~websocket</code></td>
+    <td>{{s141 Include or exclude requests initiated via <a href="https://developer.mozilla.org/docs/Web/API/WebSocket"><code>WebSocket</code> object</a>}}</td>
+  </tr>
+  <tr>
+    <td><code>webrtc</code><br><code>~webrtc</code></td>
+    <td>{{s142 Include or exclude connections opened via <a href="https://developer.mozilla.org/docs/Web/API/RTCPeerConnection"><code>RTCPeerConnection</code> instances</a> to ICE servers}}</td>
+  </tr>
+  <tr>
+    <td><code>popup</code></td>
+    <td>{{s143 Include pages opened in a new tab or window}}</td>
+  </tr>
+  <tr>
+    <td><code>generichide</code></td>
+    <td>{{s144 Used to prevent applying global element rules on a page (e.g. <code>@@||example.com^$generichide</code>)}}</td>
+  </tr>
+  <tr>
+    <td><code>genericblock</code></td>
+    <td>{{s145 Used to prevent applying global blocking rules on a page (e.g. <code>@@||example.com^$genericblock</code>)}}</td>
+  </tr>
+  <tr>
     <td colspan="2" style="text-align: center;">{{s96 Exceptions}}</td>
   </tr>
   <tr>
