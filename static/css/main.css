@@ -264,6 +264,18 @@ div.animation[started="true"]
   background-color: #F4F4F4;
 }
 
+.bg-light
+{
+  color: #000;
+  background-color: #F7F7F7;
+}
+
+.bg-dark
+{
+  color: #fff;
+  background-color: #000;
+}
+
 /*******************************************************************************
  * #navbar
  ******************************************************************************/
@@ -273,7 +285,7 @@ div.animation[started="true"]
   min-height: 4em;
   background-color: #c70d2c;
   position: fixed;
-  z-index: 2;
+  z-index: 9002;
   width: 100%;
   top: 0;
   transition: top 0.2s ease-in-out;

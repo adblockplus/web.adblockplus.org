@@ -1,0 +1,49 @@
+<form class="cookie cookieprompt">
+
+  <fieldset class="container">
+
+    <div class="clearfix">
+      <legend class="cookie-heading">
+        {{ get_string('cookie-preferences-heading', 'cookies') }}
+      </legend>
+
+      <button
+        type="button"
+        class="cookies-close"
+        title="{{ get_string('cookies-submit-tooltip', 'cookies') }}">
+        <img
+          alt="{{ get_string('close-icon-alt', 'cookies') }}"
+          src="/img/close-icon.png"
+          srcset="/img/close-icon.svg 2x">
+      </button>
+    </div>
+
+    <p>
+      {{ get_string('cookies-explination-2', 'cookies') }}
+      <a
+        href="privacy#cookies"
+        title="{{ get_string('cookies-read-more-tooltip', 'cookies') }}"
+        target="_blank">{{ get_string('read-more-label', 'cookies') }}</a>
+    </p>
+
+    <p>
+      <button
+        type="button"
+        class="cookies-submit"
+        title="{{ get_string('cookies-submit-tooltip', 'cookies') }}">
+        {{ get_string('cookies-submit-label', 'cookies') }}
+      </button>
+    </p>
+
+    <p>
+      <button
+        type="button"
+        class="cookies-settings"
+        title="{{ get_string('cookies-settings-tooltip', 'cookies') }}">
+        {{ get_string('cookies-settings-label-2', 'cookies') }}
+      </button>
+    </p>
+
+  </fieldset>
+
+</form>
