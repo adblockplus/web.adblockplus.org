@@ -1,0 +1,46 @@
+<form class="cookie cookieprompt">
+
+  <fieldset class="container">
+
+    <div class="clearfix">
+      <legend class="cookie-heading">
+        {{ cookie-preferences-heading[heading] Cookie preferences }}
+      </legend>
+
+      <button
+        type="button"
+        class="cookies-close"
+        title="{{ cookies-submit-tooltip[tooltip] Dismiss cookie notification }}">
+        <img
+          alt="{{ close-icon-alt[alt text] Close icon }}"
+          src="/img/close-icon.png"
+          srcset="/img/close-icon.svg 2x">
+      </button>
+    </div>
+
+    <p>
+      {{ cookies-explination-2 We use some cookies to give you the best experience on our website. }}
+      <a title="{{ cookies-read-more-tooltip[tooltip] More information about cookies }}">{{ read-more-label[button label] Read more }}</a>
+    </p>
+
+    <p>
+      <button
+        type="button"
+        class="cookies-submit"
+        title="{{ cookies-submit-tooltip[tooltip] Dismiss cookie notification }}">
+        {{ cookies-submit-label[button label] Ok, got it }}
+      </button>
+    </p>
+
+    <p>
+      <button
+        type="button"
+        class="cookies-settings"
+        title="{{ cookies-settings-tooltip[tooltip] Edit cookie settings }}">
+        {{ cookies-settings-label[button label] Change settings }}
+      </button>
+    </p>
+
+  </fieldset>
+
+</form>
