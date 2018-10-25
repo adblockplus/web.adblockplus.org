@@ -8,24 +8,15 @@ document.addEventListener("DOMContentLoaded", function()
       settingsDropup = doc.getElementById("cookies-dropup"),
       trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");
 
-  function openNotice(event)
+  function toggleNotice()
   {
-    return body.classList.add("show-cookies-notice");
-  }
-
-  function closeNotice()
-  {
-    body.classList.remove("show-cookies-notice", "show-cookies-settings");
-  }
-
-  function openSettings()
-  {
-    body.classList.add("show-cookies-settings");
-  }
-
-  function closeSettings()
-  {
+    body.classList.toggle("show-cookies-notice");
     body.classList.remove("show-cookies-settings");
+  }
+
+  function toggleSettings()
+  {
+    body.classList.toggle("show-cookies-settings");
   }
 
   function toggleTrackingCookies(event)
@@ -41,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function()
       !event.target.classList.contains("cookies-settings") &&
       !settingsDropup.contains(event.target)
     ) {
-      closeSettings();
+      toggleSettings();
     }
   }
 
@@ -55,11 +46,11 @@ document.addEventListener("DOMContentLoaded", function()
 
   doc.addEventListener("click", handleSettingsDropupBlur, false);
 
-  addListeners("click", closeButtons, closeNotice);
+  addListeners("click", closeButtons, toggleNotice);
 
-  addListeners("click", settingsButtons, openSettings);
+  addListeners("click", settingsButtons, toggleSettings);
 
   addListeners("change", trackingCookiesButtons, toggleTrackingCookies);
 
-  openNotice();
+  toggleNotice();
 }, false);
