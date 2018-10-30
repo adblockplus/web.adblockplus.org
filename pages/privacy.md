@@ -44,7 +44,7 @@ notoc=True
 - [{{ privacy-notice-short-link[link to heading] Privacy Notice (short version) }}](#privacy-policy-short)
 - [{{ privacy-policy-long-link[link to heading] Privacy Policy (long version) }}](#privacy-policy-long)
 
-## {{ privacy-policy-short-heading[heading] Privacy Notice (short version) }} {: #privacy-policy-short }
+## {{ privacy-policy-short-heading[heading] Privacy notice (short version) }} {: #privacy-policy-short }
 
 {{ privacy-policy-short-paragraph The following privacy notice shall provide you with a general overview about the collection, processing and use (hereinafter together referred to as "processing") of your personal data. For more information regarding our processing activities, please view our complete [Privacy Policy](#privacy-policy-long). }}
 
@@ -80,7 +80,7 @@ notoc=True
         - {{ data-processed-item-24[list item] The web address accessed }}
         - {{ data-processed-item-25[list item] The browser identifier }}
         - {{ data-processed-item-26[list item] The referring page }}
-        - {{ data-processed-item-32[list item] For adblock.ai only: analytics data }}
+        - {{ data-processed-item-32[list item] Aggregated analytics data }}
     - {{ data-processed-item-27[list item] Voluntary: }}
     {: .has-horizontal-list .semicolon-separated }
         - {{ data-processed-item-28[list item] Forum registration data }}
@@ -103,14 +103,14 @@ notoc=True
     - {{ tools-item-7[list item] Cookies, only where you can log in }}
     - {{ tools-item-8[list item] Log files }}
     - {{ tools-item-9[list item] Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters }}
-    - {{ tools-item-10[list item] For adblock.ai only: via Google Analytics }}
+    - {{ tools-item-10[list item] Via Google Analytics }}
 
 ### {{ why-we-process-heading[heading] How and why do we process your data? }} {: #why-we-process-data }
 
 - {{ why-we-process-item-1[list item] In order to inform you about urgent issues in connection with our products. }}
 - {{ why-we-process-item-2[list item] To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads and issue reports you send to us. }}
 - {{ why-we-process-item-3[list item] For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security. }}
-- {{ why-we-process-item-4[list item] To analyze aggregated website logs and - at adblock.ai only - analytics data, to improve our website. }}
+- {{ why-we-process-item-4[list item] To analyze aggregated website logs and analytics data, to improve our website. }}
 - {{ why-we-process-item-5[list item] For communication and assistance purposes in our forum and blog. }}
 
 ### {{ what-is-legal-heading[heading] What is the legal basis of data processing? }} {: #what-is-legal }
@@ -125,11 +125,10 @@ notoc=True
     - {{ how-long-item-3[list item] Crash and error reporter data }}
     - {{ how-long-item-4[list item] Website logs }}
     - {{ how-long-item-5[list item] Data related to subscription downloads, extension update checks, emergency notifications }}
-    - {{ how-long-item-7[list item] Google Analytics data }}
 2. {{ how-long-item-6[list item] Blog and forum data as long as the respective comment / account exists }}
 
 
-{{ how-long-paragraph **Note**: “Aggregated usage statistics” and other data without any connection to single users may be retained beyond these periods. }}
+{{ how-long-paragraph **Note**: “Aggregated usage statistics”, such as analytics data and other data without any connection to a single user, may be retained beyond these periods. }}
 
 ### {{ our-values-heading[heading] Our values }} {: #our-values }
 
@@ -234,7 +233,7 @@ Germany<br>
 
 #### {{ compliance-permission-heading[heading] Collection and processing is necessary for compliance with a legal obligation to which the Controller is subject – Art. 6 (1) c GDPR }} {: #compliance-permission }
 
-{{ compliance-permission-paragraph Collection and processing of your personal data may be necessary for compliance with a legal obligation to which we are subject under EU laws or the laws of a EU Member State. }}
+{{ compliance-permission-paragraph Collection and processing of your personal data may be necessary for compliance with a legal obligation to which we are subject under EU laws or the laws of an EU Member State. }}
 
 #### {{ legitimate-interest-permission-heading[heading] Collection and processing is necessary for the purposes of our legitimate interests - Art. 6 (1) f GDPR }} {: #legitimate-interest-permission }
 
@@ -321,10 +320,12 @@ Germany<br>
 
 ##### {{ issue-reporter-heading[heading] Issue Reporter }} {: #issue-reporter }
 
-{{ issue-reporter-paragraph-1 Adblock Plus allows you to send issue reports that will be temporarily stored on the AdblockPlus.org. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, address of the web page where the problem is visible, blockable items on the web page, matching filters and active subscriptions. Parameter values are removed from all transmitted addresses to avoid unintentionally leaking private information. It is also possible to provide additional information on a voluntary basis, which may be privacy-sensitive: }}
+{{ issue-reporter-paragraph-1 Adblock Plus allows you to send issue reports that will be temporarily stored on the AdblockPlus.org website. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, address of the web page where the problem is visible, blockable items on the web page, matching filters, active subscriptions, type of issue report (i.e. false positive or false negative), and a screenshot of the issue (it is possible to remove particularly sensitive sections of the page before the report is sent). Parameter values are removed from all transmitted addresses to avoid unintentionally leaking private information. }}
 
-- {{ isse-reporter-item-1[list item] A website screenshot provides a scaled-down and color-reduced version of the page viewed. It is possible to remove particularly sensitive sections of the page before the report is sent. }}
-- {{ isse-reporter-item-2[list item] The email address is only used to request more information or to update the user on the issue. }}
+{{ issue-reporter-items-intro You can  voluntarily: }}
+
+- {{ issue-reporter-item-1[list item] Provide your email address in order for us to request more information from you or to update you on the issue. }}
+- {{ issue-reporter-item-2[list item] Include an optional comment about the issue. }}
 
 ##### {{ access-reports-heading[heading] Access to the reports }} {: #access-reports }
 
@@ -400,27 +401,24 @@ Germany<br>
 
 ###### {{ cookies-heading[heading] Cookies }} {: #cookies }
 
-{{ cookies-paragraph Several areas of our Websites use cookies to recognize signed in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. Cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
+{{ cookies-paragraph Several areas of our Websites use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. Cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
 
-###### {{ adblock-ai-heading[heading] At adblock.ai }} {: #adblock-ai }
+###### {{ google-analytics-heading[heading] Google Analytics }} {: #google-analytics }
 
-{{ adblock-ai-paragraph-1 At our website adblock.ai we are automatically collecting the following information: }}
+{{ google-analytics-paragraph-1 We use Google Analytics, a web analytics service from Google Inc. ("Google"), on our Websites. Google Analytics uses so-called "cookies" (text files stored on your computer that enable us to analyze your use of our Websites). Information generated by the cookies (including your abbreviated IP address) is transmitted to and stored at a Google server in the United States. Google uses this information to assess your use of our Websites, to compile activity reports, and to provide more services connected with the use of our Websites. It is possible that Google may transmit this information to third parties if required by law, or if third parties process this information on behalf of Google. }}
 
-**{{ facebook-messenger-integration-heading[heading] Facebook messenger integration }}**
-{: #facebook-messenger-integration }
-
-{{ facebook-messenger-integration-1 We have embedded the Facebook Messenger functionality, owned by Facebook, Inc., into the adblock.ai website to enable you to submit screenshots to our bot (“Adblock AI”) via Messenger, without having to access the Facebook website. Please note that Messenger is hosted by Facebook. We have disabled the function that would otherwise send personal data to Facebook when you access our website; however, when you click on the button to help train Adblock AI with your screenshots (“START NOW”) you will activate Messenger. Only then will some personal data, including IP address, be transferred to Facebook. For more information, please review Facebook's [privacy policy](https://facebook.com/privacy/explanation). If you don’t want to transfer the data to Facebook, please do not click on the button to send information to Adblock AI through Facebook’s Messenger. }}
-
-**{{ google-analytics-heading[heading] Google Analytics }}**
-{: #google-analytics }
-
-{{ google-analytics-paragraph-1 We use Google Analytics on our Website, a web analysis service of Google Inc. ("Google"). Google Analytics uses so-called "cookies" (text files which are stored on your computer and which enable you to analyze your use of our Website). The information generated by the cookie on your use of our Website (including your abbreviated IP address) is transmitted to a Google server in the United States and are stored there. Google will use this information to assess your use of our Website, to compile reports on the activities for us and to provide more services connected with use of our Website and the internet. It is also possible that Google may transmit this information to third parties if this is required by law, or if third parties process this information on behalf of Google. }}
-
-{{ google-analytics-paragraph-2 You can deactivate Google Analytics by means of a browser add-on if you do not want to participate in Website analysis. You can download this here: }}
+{{ google-analytics-paragraph-2 You can deactivate Google Analytics by means of a browser add-on if you do not want to participate in website analytics. You can download the add-on from Google: }}
 
 [http://tools.google.com/dlpage/gaoptout](http://tools.google.com/dlpage/gaoptout)
 
-{{ google-analytics-paragraph-3 All Google Analytics data will be deleted after 30 days. }}
+###### {{ adblock-ai-heading[heading] At adblock.ai }} {: #adblock-ai }
+
+{{ adblock-ai-paragraph-1 On our website, adblock.ai, we automatically collect the following information: }}
+
+**{{ facebook-messenger-integration-heading[heading] Facebook Messenger integration }}**
+{: #facebook-messenger-integration }
+
+{{ facebook-messenger-integration-1 We have embedded the Facebook Messenger functionality, owned by Facebook, Inc., into the adblock.ai website to enable you to submit screenshots to our bot (“Adblock AI”) via Messenger, without having to access the Facebook website. Please note that Messenger is hosted by Facebook. We have disabled the function that would otherwise send personal data to Facebook when you access our website; however, when you click on the button to help train Adblock AI with your screenshots (“START NOW”) you will activate Messenger. Only then will some personal data, including IP address, be transferred to Facebook. For more information, please review Facebook's [Privacy Policy](https://facebook.com/privacy/explanation). **If you do not want to transfer data to Facebook, please do not click on the button to send information to Adblock AI through Facebook Messenger.** }}
 
 ##### {{ volentary-info-heading[heading] Information you give to us on a voluntary basis }} {: #voluntary-info }
 
@@ -435,7 +433,7 @@ Germany<br>
 - {{ forum-registration-item-1[list item] Passwords go through one-way encryption before they are stored on the server. }}
 - {{ forum-registration-item-2[list item] Email addresses are only displayed in the public profile if explicitly agreed to. By default, they are only used for the sending of notifications to which you subscribed. }}
 
-{{ forum-registration-paragraph-3 **Note:** Registration is not required to participate in the forums and you can delete your account at any time. }}
+{{ forum-registration-paragraph-3 **Note:** Registration is not required to read articles in the forum and you can delete your account at any time. }}
 
 ###### {{ blog-comments-heading[heading] Blog comments }} {: #blog-comments }
 
@@ -451,7 +449,7 @@ Germany<br>
 
 {{ retention-communications-paragraph-2 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch). }}
 
-<time datetime="2018-06">{{ publication-date June 2018 }}</time>
+<time datetime="2018-09">{{ publication-date September 2018 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
