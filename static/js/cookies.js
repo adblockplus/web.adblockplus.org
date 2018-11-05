@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function()
 
       closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save"),
       settingsButtons = doc.getElementsByClassName("cookies-settings"),
-      settingsDropup = doc.getElementById("cookies-dropup"),
+      settingsDropup = doc.getElementById("cookies-dropup-container"),
       trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");
 
   function toggleNotice()
@@ -27,9 +27,11 @@ document.addEventListener("DOMContentLoaded", function()
   function handleSettingsDropupBlur(event)
   {
     if (
+      // Is the cookie settings dropup open?
       body.classList.contains("show-cookies-settings") &&
       body.clientWidth >= 576 &&
-      !event.target.classList.contains("cookies-settings") &&
+
+      // Is the click outside the cookie settings dropup component?
       !settingsDropup.contains(event.target)
     ) {
       toggleSettings();
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function()
     }
   }
 
-  doc.addEventListener("click", handleSettingsDropupBlur, false);
+  doc.addEventListener("click", handleSettingsDropupBlur, true);
 
   addListeners("click", closeButtons, toggleNotice);
 
