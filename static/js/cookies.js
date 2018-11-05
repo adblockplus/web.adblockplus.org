@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function()
   var doc = window.document,
       body = doc.body,
 
-      closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit"),
+      closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save"),
       settingsButtons = doc.getElementsByClassName("cookies-settings"),
       settingsDropup = doc.getElementById("cookies-dropup"),
       trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");

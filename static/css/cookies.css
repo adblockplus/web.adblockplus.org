@@ -278,6 +278,10 @@
   .show-cookies-settings .cookiebar .dropup-menu { display: block; }
 }
 
+[dir="ltr"] .dropup .cookies-save { float: right; }
+
+[dir="rtl"] .dropup .cookies-save { float: right; }
+
 .cookiebar .arrow
 {
   position: absolute;
