@@ -302,13 +302,13 @@
   margin: 0 -1em;
 }
 
-[dir="ltr"] .cookiebar .arrow { right: 2em; }
+[dir="ltr"] .cookiebar .arrow { right: 3.5em; }
 
-[dir="rtl"] .cookiebar .arrow { left: 2em; }
+[dir="rtl"] .cookiebar .arrow { left: 3.5em; }
 
 @media (min-width: 992px)
 {
-  .cookiebar .arrow { right: 50%; }
+  [dir] .cookiebar .arrow { right: 50%; }
 }
 
 .cookiebar .arrow::before,
