@@ -6,11 +6,11 @@
         <p class="cookiebar-text">
           <img
             height="42px"
-            alt="{{ cookies-large-icon-alt[alt text] Cookie notice }}"
+            alt="{{ get_string('cookies-large-icon-alt', 'cookies') }}"
             src="/img/cookie-icon.png"
             srcset="/img/cookie-icon.svg 2x">
           <span>
-            {{ cookies-explination-1 We use some cookies to give you the best experience on our website. By using our site you are aware that we are using cookies and you can change this any time. <a href="privacy-policy" target="_blank">Learn more</a> }}
+            {{ get_string('cookies-explination-1', 'cookies') }}
           </span>
         </p>
       </div>
@@ -21,18 +21,18 @@
             <button
               type="button"
               class="cookies-submit button"
-              title="{{ cookies-submit-tooltip[tooltip] Dismiss cookie notification }}">
-              {{ cookies-submit-label[button label] Ok, got it }}
+              title="{{ get_string('cookies-submit-tooltip', 'cookies') }}">
+              {{ get_string('cookies-submit-label', 'cookies') }}
             </button>
           </li>
           <li id="cookies-dropup-container" class="dropup">
             <button
               type="button"
               class="cookies-settings button"
-              title="{{ cookies-settings-tooltip[tooltip] Edit cookie settings }}">
-              {{ cookies-settings-label[button label] Settings }} &nbsp;
+              title="{{ get_string('cookies-settings-tooltip', 'cookies') }}">
+              {{ get_string('cookies-settings-label-1', 'cookies') }} &nbsp;
               <img
-                alt="{{ cookies-settings-icon-alt[alt text] Settings icon }}"
+                alt="{{ get_string('cookies-settings-icon-alt', 'cookies') }}"
                 src="/img/settings-icon.png"
                 srcset="/img/settings-icon.svg 2x">
             </button>
