@@ -16,14 +16,14 @@
   var TRACKING_PREFERENCE = 'eyeo-ga-opt-out';
   var TRACKING_CONSENT = 'eyeo-ga-consent';
 
-  function hasCookie(key)
+  function hasTrackingCookie(key)
   {
     return doc.cookie.indexOf(key) !== -1;
   }
 
-  function toggleCookie(key)
+  function toggleTrackingCookie(key)
   {
-    if (hasCookie(key))
+    if (hasTrackingCookie(key))
       doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     else
       doc.cookie = key + "=1; expires=Fri, 31 Dec 9999 23:59:59 GMT";
@@ -51,10 +51,8 @@
 
   // Initialize Tracking ///////////////////////////////////////////////////////
 
-  var trackingConsent = hasCookie(TRACKING_CONSENT);
-  var trackingPreference = hasCookie(TRACKING_PREFERENCE);
-
-  if (trackingPreference !== OPT_OUT)
+  // Only opt out preferences are stored. Opt in is default.
+  if (hasTrackingCookie(TRACKING_PREFERENCE) !== OPT_OUT)
     loadGoogleAnalytics();
 
   // Setup Cookie Notification /////////////////////////////////////////////////
@@ -66,24 +64,18 @@
         settingsDropup = doc.getElementById("cookies-dropup-container"),
         trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");
 
-    function toggleNotice()
+    function toggleCookieNotice()
     {
       body.classList.toggle("show-cookies-notice");
       body.classList.remove("show-cookies-settings");
     }
 
-    function toggleSettings()
+    function toggleCookieSettings()
     {
       body.classList.toggle("show-cookies-settings");
     }
 
-    function toggleTrackingCookies(event)
-    {
-      trackingPreference = !trackingPreference;
-      toggleCookie(TRACKING_PREFERENCE);
-    }
-
-    function handleSettingsDropupBlur(event)
+    function onCookieSettingsBlur(event)
     {
       if (
         // Is the cookie settings dropup open?
@@ -93,22 +85,22 @@
         // Is the click outside the cookie settings dropup component?
         !settingsDropup.contains(event.target)
       ) {
-        toggleSettings();
+        toggleCookieSettings();
       }
     }
 
-    doc.addEventListener("click", handleSettingsDropupBlur, true);
+    doc.addEventListener("click", onCookieSettingsBlur, true);
 
-    addListeners("click", closeButtons, toggleNotice);
+    addListeners("click", closeButtons, toggleCookieNotice);
 
-    addListeners("click", closeButtons, toggleCookie.bind(this, TRACKING_CONSENT));
+    addListeners("click", closeButtons, toggleTrackingCookie.bind(this, TRACKING_CONSENT));
 
-    addListeners("click", settingsButtons, toggleSettings);
+    addListeners("click", settingsButtons, toggleCookieSettings);
 
-    addListeners("change", trackingCookiesButtons, toggleTrackingCookies);
+    addListeners("change", trackingCookiesButtons, toggleTrackingCookie.bind(this, TRACKING_PREFERENCE));
 
-    if (trackingConsent !== true)
-      toggleNotice();
+    if (hasTrackingCookie(TRACKING_CONSENT) !== true)
+      toggleCookieNotice();
 
   }, false);
 }(window, document, document.body));
