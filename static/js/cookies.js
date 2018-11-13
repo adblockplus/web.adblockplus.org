@@ -13,8 +13,8 @@
   // Cookie management /////////////////////////////////////////////////////////
 
   var OPT_OUT = true;
-  var TRACKING_PREFERENCE = 'ga-opt-out';
-  var TRACKING_CONSENT = 'ga-consent';
+  var TRACKING_PREFERENCE = 'eyeo-ga-opt-out';
+  var TRACKING_CONSENT = 'eyeo-ga-consent';
 
   function hasCookie(key)
   {
