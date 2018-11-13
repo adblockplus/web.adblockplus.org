@@ -12,18 +12,17 @@
 
   // Cookie management /////////////////////////////////////////////////////////
 
-  var OPT_OUT = true;
-  var TRACKING_PREFERENCE = 'eyeo-ga-opt-out';
+  var TRACKING_OPT_OUT = 'eyeo-ga-opt-out';
   var TRACKING_CONSENT = 'eyeo-ga-consent';
 
-  function hasTrackingCookie(key)
+  function getTrackingCookie(key)
   {
     return doc.cookie.indexOf(key) !== -1;
   }
 
   function toggleTrackingCookie(key)
   {
-    if (hasTrackingCookie(key))
+    if (getTrackingCookie(key))
       doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     else
       doc.cookie = key + "=1; expires=Fri, 31 Dec 9999 23:59:59 GMT";
@@ -51,16 +50,15 @@
 
   // Initialize Tracking ///////////////////////////////////////////////////////
 
-  // Only opt out preferences are stored. Opt in is default.
-  if (hasTrackingCookie(TRACKING_PREFERENCE) !== OPT_OUT)
+  if (!getTrackingCookie(TRACKING_OPT_OUT))
     loadGoogleAnalytics();
 
   // Setup Cookie Notification /////////////////////////////////////////////////
 
   document.addEventListener("DOMContentLoaded", function()
   {
-    var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save"),
-        settingsButtons = doc.getElementsByClassName("cookies-settings"),
+    var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit"),
+        settingsButtons = doc.querySelectorAll(".cookies-settings, .cookies-save"),
         settingsDropup = doc.getElementById("cookies-dropup-container"),
         trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");
 
@@ -97,10 +95,19 @@
 
     addListeners("click", settingsButtons, toggleCookieSettings);
 
-    addListeners("change", trackingCookiesButtons, toggleTrackingCookie.bind(this, TRACKING_PREFERENCE));
+    addListeners("change", trackingCookiesButtons, toggleTrackingCookie.bind(this, TRACKING_OPT_OUT));
 
-    if (hasTrackingCookie(TRACKING_CONSENT) !== true)
+    if (!getTrackingCookie(TRACKING_CONSENT))
       toggleCookieNotice();
+
+    if (getTrackingCookie(TRACKING_OPT_OUT))
+    {
+      var trackingPreferenceSwitches = document.querySelectorAll("input.tracking-cookies");
+
+      for (var i = 0; i < trackingPreferenceSwitches.length; i++)
+        trackingPreferenceSwitches[i].checked = false;
+    }
+
 
   }, false);
 }(window, document, document.body));
