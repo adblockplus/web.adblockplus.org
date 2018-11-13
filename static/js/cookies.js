@@ -24,7 +24,7 @@
   function toggleCookie(key)
   {
     if (hasCookie(key))
-      doc.cookie = key + "ga-opt-out=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     else
       doc.cookie = key + "=1; expires=Fri, 31 Dec 9999 23:59:59 GMT";
   }
