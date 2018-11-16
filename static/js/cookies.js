@@ -15,18 +15,21 @@
   var TRACKING_OPT_OUT = 'eyeo-ga-opt-out';
   var TRACKING_CONSENT = 'eyeo-ga-consent';
 
-  function getTrackingCookie(key)
+  function hasTrackingCookie(key)
   {
     return doc.cookie.indexOf(key) !== -1;
   }
 
-  function toggleTrackingCookie(key)
+  function setTrackingCookie(key, value)
   {
-    if (getTrackingCookie(key))
-      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    if (value)
+      doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
     else
-      doc.cookie = key + "=1; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   }
+
+  var trackingOptOut = hasTrackingCookie(TRACKING_OPT_OUT);
+  var trackingConsent = hasTrackingCookie(TRACKING_CONSENT);
 
   // Setup Google Analytics ////////////////////////////////////////////////////
 
@@ -45,20 +48,21 @@
     var script = doc.createElement("script");
     script.setAttribute("async", "");
     script.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=UA-18643396-6");
-    doc.body.appendChild(script);
+    doc.head.appendChild(script);
   }
 
   // Initialize Tracking ///////////////////////////////////////////////////////
 
-  if (!getTrackingCookie(TRACKING_OPT_OUT))
+  if (!trackingOptOut)
     loadGoogleAnalytics();
 
   // Setup Cookie Notification /////////////////////////////////////////////////
 
   document.addEventListener("DOMContentLoaded", function()
   {
-    var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit"),
-        settingsButtons = doc.querySelectorAll(".cookies-settings, .cookies-save"),
+    var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save"),
+        saveButtons = doc.querySelectorAll(".cookies-save"),
+        settingsButtons = doc.querySelectorAll(".cookies-settings"),
         settingsDropup = doc.getElementById("cookies-dropup-container"),
         trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");
 
@@ -87,27 +91,58 @@
       }
     }
 
+    function toggleTrackingPreference()
+    {
+      trackingOptOut = !trackingOptOut;
+    }
+
+    function saveCookieSettings()
+    {
+      setTrackingCookie(TRACKING_OPT_OUT, trackingOptOut);
+
+      // Deleting all "not essential" cookies in this document
+      if (trackingOptOut)
+      {
+        var cookies = document.cookie.split(";");
+
+        for (var i = 0; i < cookies.length; i++)
+        {
+          var cookie = cookies[i].split("=")[0].trim();
+
+          if (cookie !== TRACKING_OPT_OUT &&
+            cookie !== TRACKING_CONSENT)
+            setTrackingCookie(cookie, false);
+        }
+      }
+    }
+
+    function saveCookieConsent()
+    {
+      setTrackingCookie(TRACKING_CONSENT, true);
+    }
+
     doc.addEventListener("click", onCookieSettingsBlur, true);
 
     addListeners("click", closeButtons, toggleCookieNotice);
 
-    addListeners("click", closeButtons, toggleTrackingCookie.bind(this, TRACKING_CONSENT));
+    addListeners("click", closeButtons, saveCookieConsent);
 
     addListeners("click", settingsButtons, toggleCookieSettings);
 
-    addListeners("change", trackingCookiesButtons, toggleTrackingCookie.bind(this, TRACKING_OPT_OUT));
+    addListeners("change", trackingCookiesButtons, toggleTrackingPreference);
 
-    if (!getTrackingCookie(TRACKING_CONSENT))
+    addListeners("click", saveButtons, saveCookieSettings);
+
+    if (!trackingConsent)
       toggleCookieNotice();
 
-    if (getTrackingCookie(TRACKING_OPT_OUT))
+    if (trackingOptOut)
     {
-      var trackingPreferenceSwitches = document.querySelectorAll("input.tracking-cookies");
+      var trackingOptOutSwitches = document.querySelectorAll("input.tracking-cookies");
 
-      for (var i = 0; i < trackingPreferenceSwitches.length; i++)
-        trackingPreferenceSwitches[i].checked = false;
+      for (var i = 0; i < trackingOptOutSwitches.length; i++)
+        trackingOptOutSwitches[i].checked = false;
     }
-
 
   }, false);
 }(window, document, document.body));
