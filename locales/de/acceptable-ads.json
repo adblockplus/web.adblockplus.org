@@ -419,28 +419,28 @@
     "message": "Warum ist diese Funktion automatisch aktiviert?"
   },
   "mobile-ads-heading": {
-    "message": "MOBILE ANZEIGEN"
+    "message": "Mobile Werbung"
   },
   "animations-paragraph-1": {
-    "message": "Animationen sind als 6 × 1-Anzeigentyp zulässig, wenn sie als anhaftende Anzeige im unteren Bereich des Bildschirms platziert werden. Animationen müssen dem LEAN-Standard für Animationen entsprechen , und es muss eine Schließschaltfläche oder ein anderer Schließmechanismus vorhanden sein."
+    "message": "Animationen sind als 6 × 1-Werbeanzeigen zulässig, wenn sie als verankerte Werbeanzeige im unteren Bereich des Bildschirms platziert werden. Animationen müssen dem LEAN-Standard für Animationen entsprechen, und es muss eine Schließen-Schaltfläche oder ein anderer Schließmechanismus vorhanden sein."
   },
   "mobile-ads-size-heading": {
     "message": "Anforderungen an die Größe"
   },
   "mobile-ads-size-item-1": {
-    "message": "Anzeigen im scrollbaren Teil der Webseite dürfen insgesamt nicht mehr als 50 Prozent des sichtbaren Teils der Webseite einnehmen.  "
+    "message": "Werbeanzeigen im scrollbaren Teil der Webseite dürfen insgesamt nicht mehr als 50 Prozent des sichtbaren Teils der Webseite einnehmen."
   },
   "mobile-ads-size-item-2": {
-    "message": "Anhaftende Anzeigen haben eine maximale Höhenbeschränkung von 75 px (oder 15 %)."
+    "message": "Verankerte Werbeanzeigen haben eine maximale Höhenbeschränkung von 75 px (oder 15 %)."
   },
   "mobile-ads-placement-item-3": {
-    "message": "Große Anzeigen  (z. B. native Kachelanzeigen) dürfen nur unter dem Hauptinhalt platziert werden."
+    "message": "Große Werbeanzeigen (z. B. native Kachel-Anzeigen) dürfen nur unter dem Hauptinhalt platziert werden."
   },
   "mobile-ads-placement-item-2": {
-    "message": "Kleine Anzeigen (6 × 1-Banner oder kleiner) können als anhaftende Anzeige unten am Bildschirm platziert werden. Andere Formate dürfen nicht anhaften."
+    "message": "Kleine Werbeanzeigen (6 × 1-Banner oder kleiner) können fest verankerte am unteren Bildschirmrand platziert werden. Andere Formate dürfen nicht verankert werden."
   },
   "mobile-ads-placement-item-1": {
-    "message": "Statische Anzeigen (z. B. ein 6 × 1-Banner oder eine 1 × 1-Kachelanzeige) können überall auf der mobilen Seite platziert werden."
+    "message": "Statische Werbung (z. B. ein 6 × 1-Banner oder eine 1 × 1-Kachelanzeige) können überall auf der mobilen Seite platziert werden."
   },
   "mobile-ads-size-lead": {
     "message": "Anzeigen, die auf Mobilbildschirmen angezeigt werden, sind an die folgenden Größeneinschränkungen gebunden:"
@@ -449,24 +449,27 @@
     "message": "Animationen"
   },
   "mobile-ads-size-item-3": {
-    "message": "Unter dem Hauptinhalt sind Anzeigen auf 100 % des Platzes auf dem Bildschirm begrenzt ."
+    "message": "Unter dem Hauptinhalt sind Werbeanzeigen auf 100 % des Platzes auf dem Bildschirm begrenzt."
   },
   "footnote-1": {
-    "message": "[1] Große Werbeanzeige: jede Werbeanzeige > 300 px Höhe"
+    "message": "Große Werbeanzeige: jede Werbeanzeige > 300 px Höhe"
   },
   "footnote-2": {
-    "message": "[2] Der ‘Hauptinhalt’ ist definiert als (basierend auf <a>Mozilla’s Beschreibung des <main> HTML Elements</a>): Der Hauptteil besteht aus dem Inhalt, der sich direkt auf das zentrale Thema eines Dokuments oder der zentralen Funktionalität einer Applikation bezieht oder darauf aufbaut. Der Inhalt sollte zum Dokument einzigartig sein, mit Ausnahme jeglichen Inhalts, welcher auf und in dem gesamten Dokument wiederholt zu finden ist wie zum Beispiel Seitenleisten, Navigationslinks, Information über das Urheberrecht, Seitenlogos, und Sucheingaben (ausgenommen, wenn die Hauptfunktion eine Sucheins'gabe ist)."
+    "message": "Der ‘Hauptinhalt’ ist definiert als (basierend auf <a>Mozilla’s Beschreibung des <main> HTML Elements</a>): Der Hauptteil besteht aus dem Inhalt, der sich direkt auf das zentrale Thema eines Dokuments oder der zentralen Funktionalität einer Applikation bezieht oder darauf aufbaut. Der Inhalt sollte zum Dokument einzigartig sein, mit Ausnahme jeglichen Inhalts, welcher auf und in dem gesamten Dokument wiederholt zu finden ist wie zum Beispiel Seitenleisten, Navigationslinks, Information über das Urheberrecht, Seitenlogos, und Sucheingaben (ausgenommen, wenn die Hauptfunktion eine Sucheingabe ist)."
   },
   "footnote-3": {
-    "message": "[3] Der sichtbare Teil der Webseite ist als eine standardmäßige CSS-Pixelgröße von <a>360 × 512 px</a> (Samsung Galaxy S7 mit SBrowser) definiert. Dies basiert auf einem standardmäßigen Darstellungsfeld von <a>360 × 640 px</a>, wobei die Benutzeroberflächenelemente des Betriebssystems und Browsers abgezogen werden."
+    "message": "Der sichtbare Teil der Webseite ist als eine standardmäßige CSS-Pixelgröße von <a>360 × 512 px</a> (Samsung Galaxy S7 mit SBrowser) definiert. Dies basiert auf einem standardmäßigen Darstellungsfeld von <a>360 × 640 px</a>, wobei die Benutzeroberflächenelemente des Betriebssystems und Browsers abgezogen werden."
   },
   "footnote-4": {
-    "message": "[4] Das bedeutet, dass wenn Benutzer über den Hauptinhalt hinaus scrollen, eine darauffolgende Werbeanzeiget den gesamten Bildschirm einnehmen darf. Im Anschluss an diese dürfen jedoch keine weiteren Werbeanzeigen implementiert werden."
+    "message": "Das bedeutet, dass wenn Benutzer über den Hauptinhalt hinaus scrollen, eine darauffolgende Werbeanzeiget den gesamten Bildschirm einnehmen darf. Im Anschluss an diese dürfen jedoch keine weiteren Werbeanzeigen implementiert werden."
   },
   "footnote-5": {
     "message": "Quelle: <a>Iab New Standard Ad Unit Portfolio (2017)</a>"
   },
   "footnote-6": {
-    "message": "Eine Ausnahme bilden <a>mobile Anzeigen</a>."
+    "message": "Eine Ausnahme bilden <a>mobile Werbeanzeigen</a>."
+  },
+  "mobile-ads-placement-heading": {
+    "message": "Anforderungen an die Platzierung "
   }
 }

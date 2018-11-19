@@ -8,7 +8,7 @@
     "description": "heading"
   },
   "acceptable-ads-no-third-party-about": {
-    "message": "Anúncios Aceitáveis sem rastreamento de terceiros são anúncios que cumprem com os <a>critérios dos Anúncios Aceitáveis<\/a> e que não permitem que entidades terceiras possam rastrear os seus hábitos de navegação. Estes são anúncios que também cumprem com os padrões <a>\"Não rastrear\"<\/a> (Do Not Track), e\/ou são anúncios que são distribuídos pelo domínio que é propriedade da mesma empresa.",
+    "message": "Anúncios Aceitáveis sem rastreamento de terceiros são anúncios que cumprem com os <a>critérios dos Anúncios Aceitáveis</a> e que não permitem que entidades terceiras possam rastrear os seus hábitos de navegação. Estes são anúncios que também cumprem com os padrões <a>\"Não rastrear\"</a> (Do Not Track), e/ou são anúncios que são distribuídos pelo domínio que é propriedade da mesma empresa.",
     "description": "paragraph"
   },
   "about-abp": {
@@ -397,5 +397,59 @@
   "why-default": {
     "description": "Section header",
     "message": "Por que esse recurso já vem ativado por padrão?"
+  },
+  "mobile-ads-heading": {
+    "message": "Anúncios para dispositivo móvel"
+  },
+  "animations-paragraph-1": {
+    "message": "Animações são permitidas para tipos de anúncios de 6x1, quando colocadas como um anúncio fixo na parte inferior da tela. As animações devem cumprircom o padrão LEAN para animações, e um botão para fechar ou algum outro mecanismo de encerramento deve ser incluído."
+  },
+  "mobile-ads-size-heading": {
+    "message": "Requisitos de tamanho"
+  },
+  "mobile-ads-size-item-1": {
+    "message": "Anúncios implementados na parte “rolável” da página da web não devem ocupar no total mais de 50% da parte visível da página da web."
+  },
+  "mobile-ads-size-item-2": {
+    "message": "Anúncios implementados como um anúncio fixo têm uma restrição de altura máxima de 75px (ou 15%)."
+  },
+  "mobile-ads-placement-item-3": {
+    "message": "Os anúncios grandes (ex., anúncios nativos quadrados) são permitidos apenas sob o Conteúdo principal."
+  },
+  "mobile-ads-placement-item-2": {
+    "message": "Os anúncios pequenos (banner de 6x1 ou menor) podem ser colocados como um anúncio fixo na parte inferior da tela. Outros formatos não podem ser fixados."
+  },
+  "mobile-ads-placement-item-1": {
+    "message": "Os tipos de anúncios estáticos (ex. banner de 6x1 e anúncio quadrado de 1x1) podem ser colocados em qualquer lugar na página do dispositivo móvel. \n"
+  },
+  "mobile-ads-size-lead": {
+    "message": "Anúncios mostrados nas telas dos dispositivos móveis estão vinculados às seguintes restrições de tamanho: "
+  },
+  "animations-heading": {
+    "message": "Animações"
+  },
+  "mobile-ads-size-item-3": {
+    "message": "Abaixo do Conteúdo Principal, os anúncios são limitados a 100% do espaço da tela.\n"
+  },
+  "footnote-5": {
+    "message": "De: <a>Iab New Standard Ad Unit Portfolio (2017)</a>"
+  },
+  "footnote-6": {
+    "message": "Em caso de exceção, consulte <a>Anúncios para dispositivos móveis</a>."
+  },
+  "footnote-1": {
+    "message": "Anúncio grande: qualquer anúncio >300px de altura"
+  },
+  "footnote-2": {
+    "message": "O “Conteúdo principal” é definido como (com base na descrição do <main>elemento HTML da Mozilla): O Conteúdo principal consiste no conteúdo ao qual está diretamente relacionado, ou amplia o tema central de um documento ou a funcionalidade central de um aplicativo. Esse conteúdo deve ser exclusivo para o documento, excluindo qualquer conteúdo repetido em um conjunto de documentos, tais como as barras laterais, links de navegação, informações sobre direitos autorais, logotipos de site e formulários de busca (a menos que, é claro, a função principal do documento seja um formulário de busca)."
+  },
+  "footnote-3": {
+    "message": "A parte visível da página da web é definida como um padrão de tamanho CCS de 360x512px pixels (Samsung Galaxy S7 com o SBrowser), que é baseado no padrão de visualização de 360x640px, mas com o OS- e elementos de UI do navegador deduzido."
+  },
+  "footnote-4": {
+    "message": "Isso significa que os usuários podem rolar pelo conteúdo principal e logo após, uma  unidade de anúncio mostrada pode ocupar toda a tela, mas não é possível implementar anúncios adicionais seguidos dessa unidade de anúncio.\n"
+  },
+  "mobile-ads-placement-heading": {
+    "message": "Requisitos de posicionamento"
   }
 }

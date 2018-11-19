@@ -413,5 +413,59 @@
   "why-default": {
     "description": "Section header",
     "message": "Waarom is deze functie standaard ingeschakeld?"
+  },
+  "mobile-ads-heading": {
+    "message": "Mobiele Advertenties"
+  },
+  "animations-paragraph-1": {
+    "message": "Animatie zijn toegestaan voor het 6x1 advertentietype als deze als plakadvertentie onderaan het scherm zijn geplaatst. Animaties moeten voldoen aan de LEAN-norm voor animaties , en er moet een knop Sluiten of een ander sluitmechanisme worden inbegrepen."
+  },
+  "mobile-ads-size-heading": {
+    "message": "Groottevereisten"
+  },
+  "mobile-ads-size-item-1": {
+    "message": "Advertenties die op het scrolbare gedeelte van de webpagina worden geïmplementeerd, mogen in totaal niet meer dan 50 procent van het zichtbare gedeelte van de webpagina in beslag nemen. "
+  },
+  "mobile-ads-size-item-2": {
+    "message": "Als plakadvertenties geïmplementeerde advertenties hebben een maximale hoogtebeperking van 75px (of 15%). "
+  },
+  "mobile-ads-placement-item-3": {
+    "message": "Grote advertentietypes (bv. systeemeigen naast elkaar geplaatste advertenties) mogen uitsluitend onder de primaire inhoud worden geplaatst."
+  },
+  "mobile-ads-placement-item-2": {
+    "message": "Kleine advertenties (6x1 banner of kleiner) mogen als een plakadvertentie onderaan het scherm worden geplaatst. Andere plakformaten zijn niet toegestaan."
+  },
+  "mobile-ads-placement-item-1": {
+    "message": "Statische advertentietypes (bv. 6x1 banner en 1x1 naast elkaar geplaatste advertentie) mogen overal op de mobiele pagina worden geplaatst."
+  },
+  "mobile-ads-size-lead": {
+    "message": "Voor advertenties op mobiele schermen gelden de volgende groottebeperkingen: "
+  },
+  "animations-heading": {
+    "message": "Animaties"
+  },
+  "mobile-ads-size-item-3": {
+    "message": "Onder de primaire inhoud zijn advertenties beperkt tot 100% van de schermruimte."
+  },
+  "footnote-5": {
+    "message": "Van: <a>Iab New Standard Ad Unit Portfolio (2017)</a>"
+  },
+  "footnote-6": {
+    "message": "Zie met één uitzondering <a>Mobiele advertenties</a>."
+  },
+  "footnote-1": {
+    "message": "Grote advertentie: >300px hoogte"
+  },
+  "footnote-2": {
+    "message": "De 'primaire inhoud' wordt gedefinieerd als  (gebaseerd op Mozilla's omschrijving van het <main> HTML-element): De primaire inhoud bestaat uit inhoud die direct verband houdt met, of uitweidt over het centrale onderwerpt van een document of de centrale functionaliteit van een toepassing. Deze inhoud moet uniek zijn voor het document, alle inhoud uitsluiten die in een serie documenten wordt herhaald zoals sidebars, navigatielinks, copyrightinformatie, sitelogo’ en zoekformulieren (tenzij uiteraard de hoofdfunctie van het document een zoekformulier is)."
+  },
+  "footnote-3": {
+    "message": "Het zichtbare gedeelte van de webpagina is gedefinieerd als een standaard CSS-pixelgrootte van 360x512px (Samsung Galaxy S7 met de SBrowser), wat is gebaseerd op de standaard viewport van 360x640px, maar met aftrek van de OS- en browser-UI-elementen."
+  },
+  "footnote-4": {
+    "message": "Dit betekent dat gebruikers de primaire inhoud voorbij kunnen scrollen en een advertentie daarna kan het volledige scherm in beslag nemen; maar na deze advertentie kunnen geen extra advertenties worden geïmplementeerd."
+  },
+  "mobile-ads-placement-heading": {
+    "message": "Plaatsingsvereisten"
   }
 }

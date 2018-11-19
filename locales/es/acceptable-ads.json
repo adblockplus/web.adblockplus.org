@@ -8,7 +8,7 @@
     "description": "heading"
   },
   "acceptable-ads-no-third-party-about": {
-    "message": "La publicidad aceptable sin seguimiento por parte de terceros es publicidad que cumple con los <a>criterios de Anuncios Aceptables<\/a> y que además no permite que terceras entidades sigan tus hábitos de navegación. Estos anuncios cumplen con los requisitos de <a>\"No realizar seguimiento\"<\/a> (Do Not Track), o son anuncios que el dominio, propiedad plena de la misma compañía, sirve a los usuarios.",
+    "message": "La publicidad aceptable sin seguimiento por parte de terceros es publicidad que cumple con los <a>criterios de Anuncios Aceptables</a> y que además no permite que terceras entidades sigan tus hábitos de navegación. Estos anuncios cumplen con los requisitos de <a>\"No realizar seguimiento\"</a> (Do Not Track), o son anuncios que el dominio, propiedad plena de la misma compañía, sirve a los usuarios.",
     "description": "paragraph"
   },
   "about-abp": {
@@ -397,5 +397,59 @@
   "why-default": {
     "description": "Section header",
     "message": "¿Por qué la función está activada por defecto?"
+  },
+  "mobile-ads-heading": {
+    "message": "Anuncios en móviles"
+  },
+  "animations-paragraph-1": {
+    "message": "Las animaciones estarán permitidas en los anuncios de 6 x 1 cuando estén fijados en la parte inferior de la pantalla, deberán cumplir con el estándar LEAN en cuanto a animaciones, y deberá incluirse un botón o función para cerrarse."
+  },
+  "mobile-ads-size-heading": {
+    "message": "Requisitos de tamaño"
+  },
+  "mobile-ads-size-item-1": {
+    "message": "Si están ubicados en la sección de la página web por la que el usuario se puede desplazar, los anuncios no deben ocupar en total más del 50 % de la parte visible."
+  },
+  "mobile-ads-size-item-2": {
+    "message": "Los anuncios fijados tendrán una restricción de altura máxima de 75 píxeles (o un 15 %)."
+  },
+  "mobile-ads-placement-item-3": {
+    "message": "Los anuncios que sean más grandes (por ejemplo, la publicidad nativa) solo pueden colocarse bajo el Contenido Principal."
+  },
+  "mobile-ads-placement-item-2": {
+    "message": "Se permite colocar anuncios pequeños (banner de 6 x 1 o menor) fijados en la parte inferior de la pantalla. Esto no se podrá hacer con anuncios de otros formatos."
+  },
+  "mobile-ads-placement-item-1": {
+    "message": "Se permite colocar anuncios estáticos (por ejemplo, un banner de 6 x 1 o uno cuadrado de 1 x 1) en cualquier parte de la página web móvil."
+  },
+  "mobile-ads-size-lead": {
+    "message": "La publicidad mostrada en pantallas de móviles deberá seguir las siguientes restricciones de tamaño:"
+  },
+  "animations-heading": {
+    "message": "Animaciones"
+  },
+  "mobile-ads-size-item-3": {
+    "message": "Los anuncios se limitarán al 100 % del espacio de pantalla cuando estén bajo el Contenido Principal."
+  },
+  "footnote-5": {
+    "message": "Sacado de: <a>Iab New Standard Ad Unit Portfolio (2017)</a>"
+  },
+  "footnote-6": {
+    "message": "Con una excepción; lee la sección <a>Anuncios en móviles</a>."
+  },
+  "footnote-1": {
+    "message": "Cualquier anuncio se considera grande con más de 300 píxeles"
+  },
+  "footnote-2": {
+    "message": "El “Contenido Principal” se define como (basado en la <a>descripción de Mozilla</a> del elemento HTML <main>): El Contenido Principal consiste en el contenido que está directamente relacionado, o se expande sobre el tema central de un documento o la funcionalidad central de una aplicación. Este contenido debe ser único al documento, excluyendo cualquier contenido que se repita a través de un conjunto de documentos como barras laterales, enlaces de navegación, información de derechos de autor, logos del sitio y formularios de búsqueda (a menos, claro, que la función principal del documento sea un formulario de búsqueda)."
+  },
+  "footnote-3": {
+    "message": "La parte visible de la página web se define con el tamaño de píxeles estándar de CSS de <a>360 x 512 píxeles</a> (en un Samsung Galaxy S7 con SBrowser), el cual se basa en el tamaño estándar de pantalla de <a>360 x 640 píxeles</a> pero restando los elementos de interfaz del sistema operativo y del navegador."
+  },
+  "footnote-4": {
+    "message": "Esto significa que, cuando los usuarios se desplacen hasta el final del Contenido Principal, cualquier anuncio tras este podrá ocupar la pantalla completa; sin embargo, si uno ya ocupa toda la pantalla, no podrá haber más anuncios."
+  },
+  "mobile-ads-placement-heading": {
+    "message": "Requisitos de ubicación"
   }
 }
