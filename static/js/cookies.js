@@ -63,12 +63,18 @@
     var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save"),
         saveButtons = doc.querySelectorAll(".cookies-save"),
         settingsButtons = doc.querySelectorAll(".cookies-settings"),
-        settingsDropup = doc.getElementById("cookies-dropup-container"),
+        settingsDropups = [].slice.call(doc.querySelectorAll(".cookies-dropup")),
         trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");
 
     function toggleCookieNotice()
     {
       body.classList.toggle("show-cookies-notice");
+      body.classList.remove("show-cookies-settings");
+    }
+
+    function closeCookieNotice()
+    {
+      body.classList.remove("show-cookies-notice");
       body.classList.remove("show-cookies-settings");
     }
 
@@ -85,7 +91,10 @@
         body.clientWidth >= 576 &&
 
         // Is the click outside the cookie settings dropup component?
-        !settingsDropup.contains(event.target)
+        !settingsDropups.some(function(settingsDropup)
+        {
+          return settingsDropup.contains(event.target);
+        })
       ) {
         toggleCookieSettings();
       }
@@ -123,7 +132,7 @@
 
     doc.addEventListener("click", onCookieSettingsBlur, true);
 
-    addListeners("click", closeButtons, toggleCookieNotice);
+    addListeners("click", closeButtons, closeCookieNotice);
 
     addListeners("click", closeButtons, saveCookieConsent);
 
