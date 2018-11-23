@@ -108,6 +108,7 @@
     function saveCookieSettings()
     {
       setTrackingCookie(TRACKING_OPT_OUT, trackingOptOut);
+      root["ga-disable-UA-18643396-6"] = !trackingOptOut;
 
       // Deleting all "not essential" cookies in this document
       if (trackingOptOut)
