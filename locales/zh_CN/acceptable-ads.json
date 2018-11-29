@@ -73,5 +73,59 @@
   "user-value": {
     "description": "Fairness rule Bullet point in \"about\" section",
     "message": "Adblock Plus用户对我们很重要。只要有合理原因拒绝一项提交“可接受广告”的申请，该广告将会被从我们的白名单中剔除。"
+  },
+  "mobile-ads-heading": {
+    "message": "移动广告 "
+  },
+  "animations-paragraph-1": {
+    "message": "在屏幕底部作为悬浮广告展示时，6x1 广告类型允许使用动画。动画必须符合动画的 LEAN 标准，并且必须包括关闭按钮或其他一些关闭机制。"
+  },
+  "mobile-ads-size-heading": {
+    "message": "尺寸要求"
+  },
+  "mobile-ads-size-item-1": {
+    "message": "在网页的可滚动部分上实施的广告不得占据网页可见部分的 50% 以上。"
+  },
+  "mobile-ads-size-item-2": {
+    "message": "作为悬浮广告实施的广告的最大高度限制为 75px（或 15%）。"
+  },
+  "mobile-ads-placement-item-3": {
+    "message": "大型广告类型（例如原生图块广告）仅允许放置在主要内容下方。"
+  },
+  "mobile-ads-placement-item-2": {
+    "message": "小广告（6x1 横幅或更小）可以作为悬浮广告放置在屏幕底部。其他格式不允许悬浮。"
+  },
+  "mobile-ads-placement-item-1": {
+    "message": "静态广告类型（如 6x1 横幅和 1x1 图块广告）可以放置在移动页面的任何位置。"
+  },
+  "mobile-ads-size-lead": {
+    "message": "在移动设备屏幕上显示的广告受以下尺寸限制："
+  },
+  "animations-heading": {
+    "message": "动画"
+  },
+  "mobile-ads-size-item-3": {
+    "message": "在主要内容下方，广告限于屏幕空间的 100%。"
+  },
+  "footnote-5": {
+    "message": "源自：<a>Iab New Standard Ad unit Portfolio (2017)</a>"
+  },
+  "footnote-6": {
+    "message": "有一个特例，请参阅<a>移动广告</a>。"
+  },
+  "footnote-1": {
+    "message": "大型广告：任何高度 >300px 的广告"
+  },
+  "footnote-2": {
+    "message": "“主要内容”定义为（基于 <a>Mozilla</a> 对 <main> HTML 元素的描述）：主要内容由与文档的中心主题或应用程序的中心功能直接相关或由此扩展的内容组成。此内容对于文档应该是唯一的，不包括在一组文档中重复的任何内容，例如侧边栏、导航链接、版权信息、站点徽标和搜索表单（当然，除非文档的主要功能是搜索表单）。"
+  },
+  "footnote-3": {
+    "message": "网页的可见部分定义为标准 CSS 像素尺寸 <a>360x512px</a>（安装 SBrowser 的 Samsung Galaxy S7），它基于 <a>360x640px</a> 的标准视区，但扣减了操作系统和浏览器用户界面元素。"
+  },
+  "footnote-4": {
+    "message": "这意味着用户可以滚动浏览主要内容，其后面投放的广告单元可以在占据整个屏幕；但在此广告单元后不能实施其他广告。"
+  },
+  "mobile-ads-placement-heading": {
+    "message": "展示位置要求"
   }
 }
