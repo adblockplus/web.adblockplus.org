@@ -47,7 +47,7 @@
         "description": "list item"
     },
     "data-processed-item-8": {
-        "message": "De plus, vous pouvez soumettre manuellement les informations suivantes sur une page web avec un bug en utilisant le <a>signaleur de problèmes<\/a> : éléments blocables, URL, filtres correspondants, listes de filtres actifs (volontaires)",
+        "message": "De plus, vous pouvez soumettre manuellement les informations suivantes sur une page web avec un bug en utilisant le <a>signaleur de problèmes<\/a> : URL, éléments blocables, filtres correspondants, listes de filtres actifs (volontaires)",
         "description": "list item"
     },
     "data-processed-item-9": {
@@ -123,7 +123,7 @@
         "description": "list item"
     },
     "data-processed-item-32": {
-        "message": "Seulement pour adblock.ai : données analytiques",
+        "message": "Données analytiques agrégées",
         "description": "list item"
     },
     "data-processed-item-27": {
@@ -191,7 +191,7 @@
         "description": "list item"
     },
     "tools-item-10": {
-        "message": "Seulement pour adblock.ai : Google Analytics",
+        "message": "Via Google Analytics",
         "description": "list item"
     },
     "why-we-process-heading": {
@@ -211,7 +211,7 @@
         "description": "list item"
     },
     "why-we-process-item-4": {
-        "message": "Analyser les journaux de sites web agrégés afin d'améliorer notre site web.",
+        "message": "Analyser les données analytiques et registres de visites de sites web agrégés afin d'améliorer notre site web.",
         "description": "list item"
     },
     "why-we-process-item-5": {
@@ -219,7 +219,8 @@
         "description": "list item"
     },
     "what-is-legal-heading": {
-        "message": "Quelle est la base légale du traitement des données ?"
+        "message": "Quelle est la base légale du traitement des données ?",
+        "description": "heading"
     },
     "what-is-legal-1": {
         "message": "Nous traitons vos données personnelles conformément au Règlement Général Européen sur la Protection des Données (Règlement (UE) 2016\/679) (« RGPD »), aux lois européennes applicables et aux lois nationales allemandes sur la protection des données."
@@ -241,15 +242,11 @@
         "description": "list item"
     },
     "how-long-item-4": {
-        "message": "Journaux du site web",
+        "message": "Registres de visites du site web",
         "description": "list item"
     },
     "how-long-item-5": {
         "message": "Données relatives aux téléchargements d'abonnements, aux vérifications de mise à jour d'extensions, aux notifications d'urgence",
-        "description": "list item"
-    },
-    "how-long-item-7": {
-        "message": "Données provenant de Google Analytics",
         "description": "list item"
     },
     "how-long-item-6": {
@@ -257,7 +254,7 @@
         "description": "list item"
     },
     "how-long-paragraph": {
-        "message": "<strong>Remarque :<\/strong> Les « statistiques d'utilisation agrégées » et d'autres données sans lien avec des utilisateurs uniques peuvent être conservées au-delà de ces périodes."
+        "message": "<strong>Remarque :<\/strong> Les « statistiques d'utilisation agrégées », comme les données analytiques et d'autres données sans lien avec un utilisateur unique peuvent être conservées au-delà de ces périodes."
     },
     "our-values-heading": {
         "message": "Nos valeurs",
@@ -409,13 +406,13 @@
         "description": "heading"
     },
     "purpose-paragraph-1": {
-        "message": "Conformément à Article 5 (b) RGPD, nous collectons et traitons vos données personnelles à des fins précises, explicites et légitimes et ne traitons pas vos données de manière incompatible avec ces objectifs."
+        "message": "Conformément à l'Art. 5 (b) du RGPD, nous collectons et traitons vos données personnelles à des fins précises, explicites et légitimes et ne traitons pas vos données de manière incompatible avec ces objectifs."
     },
     "purpose-paragraph-2": {
         "message": "Nous collectons et traitons vos données personnelles uniquement aux fins suivantes :"
     },
     "purpose-item-1": {
-        "message": "Nous collectons et traitons vos données personnelles, telles que les journaux de site web et les données relatives aux téléchargements d'abonnements, aux vérifications des mises à jour des extensions (ces données sont collectées et traitées par Google, voir <a>Politique de confidentialité de Google<\/a>), les notifications d'urgence et les données « signaleur de problèmes » que vous avez envoyées, à des fins techniques. Nous collectons et traitons principalement ces données pour prévenir les attaques de sécurité et pouvons ainsi vous fournir nos services de manière sécurisée et efficace."
+        "message": "Nous collectons et traitons vos données personnelles, telles que les journaux de site web et les données relatives aux téléchargements d'abonnements, aux vérifications des mises à jour des extensions (ces données sont collectées et traitées par Google, voir la <a>Politique de confidentialité de Google<\/a>), les notifications d'urgence et les données « signaleur de problèmes » que vous avez envoyées, à des fins techniques. Nous collectons et traitons principalement ces données pour prévenir les attaques de sécurité et pouvons ainsi vous fournir nos services de manière sécurisée et efficace."
     },
     "purpose-item-2": {
         "message": "Nous collectons et traitons vos données personnelles relatives aux téléchargements d'abonnements, aux mises à jour d'extensions, aux téléchargements d'urgence et aux données « signaleur de problèmes » que vous nous envoyez pour améliorer et évaluer nos produits."
@@ -434,32 +431,32 @@
         "message": "Nous collectons et traitons vos données personnelles en conformité avec le RGPD et les lois de l'UE applicables et les lois nationales allemandes sur la protection des données."
     },
     "consent-permission-heading": {
-        "message": "La collecte et le traitement sont basés sur votre consentement - Article 6 (1) a RGPD, Article 4 (11) RGPD",
+        "message": "La collecte et le traitement sont basés sur votre consentement - Art. 6 (1) a du RGPD, Art. 4 (11) du RGPD",
         "description": "heading"
     },
     "consent-permission-paragraph": {
         "message": "Nous vous demanderons toujours votre consentement pour collecter et traiter vos données personnelles aux fins spécifiques susmentionnées, à moins que la collecte et le traitement de vos données personnelles ne soient autorisés par les lois statutaires. Lorsque vous nous avez donné votre accord pour la collecte et le traitement de vos données personnelles aux fins spécifiques susmentionnées, vous avez le droit de retirer votre consentement à tout moment."
     },
     "contract-permission-heading": {
-        "message": "La collecte et le traitement sont nécessaires pour prendre des mesures avant de conclure un contrat - Article 6 (1) b RGPD",
+        "message": "La collecte et le traitement sont nécessaires pour prendre des mesures avant de conclure un contrat - Arti. 6 (1) b du RGPD",
         "description": "heading"
     },
     "contract-permission-paragraph": {
         "message": "La collecte et le traitement de vos données personnelles peuvent être nécessaires pour l'exécution d'un contrat auquel vous pourriez être partie. Avant de conclure un tel contrat, la collecte et le traitement de vos données personnelles peuvent également être nécessaires afin de prendre des mesures à votre demande. Ceci s'applique à l'installation (données collectées par le navigateur et\/ou l'App Store) et à l'utilisation de nos produits."
     },
     "compliance-permission-heading": {
-        "message": "La collecte et le traitement sont nécessaires au respect d'une obligation légale à laquelle le Contrôleur est soumis - Article 6 (1) c RGPD",
+        "message": "La collecte et le traitement sont nécessaires pour se conformer à une obligation légale à laquelle le contrôleur est soumis - Art. 6 (1) c du RGPD",
         "description": "heading"
     },
     "compliance-permission-paragraph": {
-        "message": "La collecte et le traitement de vos données personnelles peuvent être nécessaires au respect d'une obligation légale à laquelle nous sommes soumis en vertu des lois de l'UE ou des lois d'un État membre de l'UE."
+        "message": "La collecte et le traitement de vos données personnelles peuvent être nécessaires pour se conformer à une obligation légale à laquelle nous sommes soumis en vertu des lois de l'UE ou des lois d'un état membre de l'UE."
     },
     "legitimate-interest-permission-heading": {
-        "message": "La collecte et le traitement sont nécessaires aux fins de nos intérêts légitimes - Article 6 (1) f RGPD",
+        "message": "La collecte et le traitement sont nécessaires aux fins de nos intérêts légitimes - Art. 6 (1) f du RGPD",
         "description": "heading"
     },
     "legitimate-interest-permission-paragraph": {
-        "message": "La collecte et le traitement de vos données personnelles peuvent être nécessaires aux fins de nos intérêts légitimes. Nous collectons et traitons les journaux de sites web pour des raisons techniques, telles que, mais sans s'y limiter, la prévention des attaques par déni de service. Le déni de service est généralement accompli en inondant la machine ou la ressource ciblée avec des requêtes superflues dans le but de surcharger les systèmes et d'empêcher l'exécution de certaines ou de toutes les demandes légitimes. La prévention de telles surcharges de nos systèmes et de tout problème de sécurité par des attaques de déni de service est dans votre et notre intérêt vital et par conséquent nous utilisons les logs du site web. Nous utilisons les informations collectées et traitées via les téléchargements d'abonnements, les vérifications de mises à jour d'extensions, les notifications d'urgence et les données de retour envoyées par vous, pour des raisons techniques telles que la sécurité de la version d'extension utilisée par vous. Assurer la sécurité de notre extension est dans votre et notre intérêt vital et donc nous utilisons de telles données. De plus, nous collectons et traitons ces données pour nous assurer que notre site web et notre extension sont constamment améliorés et adaptés aux exigences changeantes pour une utilisation efficace et l'environnement technique. Assurer la convivialité de nos sites web et de notre extension est dans votre et notre intérêt vital et par conséquent nous utilisons ces données."
+        "message": "La collecte et le traitement de vos données personnelles peuvent être nécessaires aux fins de nos intérêts légitimes. Nous collectons et traitons les journaux de sites web pour des raisons techniques, telles que, mais sans s'y limiter, la prévention des attaques par déni de service. Le déni de service est généralement accompli en inondant la machine ou la ressource ciblée avec des requêtes superflues dans le but de surcharger les systèmes et d'empêcher l'exécution de certaines ou de toutes les demandes légitimes. La prévention de telles surcharges de nos systèmes et de tout problème de sécurité par des attaques de déni de service est dans votre et notre intérêt vital et par conséquent nous utilisons les logs du site web. Nous utilisons les informations collectées et traitées via les téléchargements d'abonnements, les vérifications de mises à jour d'extensions, les notifications d'urgence et les données de retour envoyées par vous, pour des raisons techniques telles que la sécurité de la version d'extension utilisée par vous. Assurer la sécurité de notre extension est dans votre et notre intérêt vital et donc nous utilisons de telles données. De plus, nous collectons et traitons ces données pour nous assurer que notre site web et notre extension sont constamment améliorés et adaptés aux exigences changeantes pour une utilisation efficace et l'environnement technique. Assurer la convivialité de nos sites web et de nos produits est dans votre et notre intérêt vital et par conséquent nous utilisons ces données."
     },
     "disclosure-heading": {
         "message": "Est-ce que nous divulguons des données personnelles ?",
@@ -520,7 +517,7 @@
         "description": "list item"
     },
     "erasure-of-data-paragraph-2": {
-        "message": "Veuillez noter, si les données doivent être conservées à des fins juridiques conformément à Article 17 (3) RGPD, nous restreindrons l'utilisation des données respectives."
+        "message": "Veuillez noter, si les données doivent être conservées à des fins juridiques conformément à l'Art. 17 (3) du RGPD, nous restreindrons l'utilisation des données respectives."
     },
     "lodge-a-complaint-heading": {
         "message": "Droit de déposer une plainte auprès d'une autorité de surveillance",
@@ -534,7 +531,7 @@
         "description": "heading"
     },
     "right-to-object-paragraph": {
-        "message": "Vous avez le droit de vous opposer à tout moment à la collecte et au traitement de vos données personnelles pour des motifs liés à votre situation particulière, lorsque la collecte et le traitement sont basés sur notre intérêt légitime (Article 6 (1) f RGPD)."
+        "message": "Vous avez le droit de vous opposer à tout moment à la collecte et au traitement de vos données personnelles pour des motifs liés à votre situation particulière, lorsque la collecte et le traitement sont basés sur notre intérêt légitime (Art. 6 (1) f du RGPD)."
     },
     "withdraw-consent-heading": {
         "message": "Droit de retirer votre consentement à tout moment",
@@ -591,14 +588,17 @@
         "description": "heading"
     },
     "issue-reporter-paragraph-1": {
-        "message": "Adblock Plus vous permet d’envoyer des rapports sur les problèmes, qui sont temporairement stockés dans le domaine AdblockPlus.org. Ces rapports contiennent les informations requises pour mener une enquête sur le problème, y compris la version d’Adblock Plus, la version du navigateur, l’adresse de la page web où le problème se manifeste, les éléments blocables sur la page web, les filtres de correspondance et les souscriptions actives. Les valeurs des paramètres sont supprimées de toutes les adresses transmises pour éviter la fuite accidentelle d’informations privées. Il est également de fournir des informations supplémentaires de manière volontaire, qui peuvent être de nature sensible :"
+        "message": "Adblock Plus vous permet d’envoyer des rapports sur les problèmes, qui sont temporairement stockés sur le site web AdblockPlus.org. Ces rapports contiennent les informations requises pour mener une enquête sur le problème, y compris la version d’Adblock Plus, la version du navigateur, l’adresse de la page web où le problème se manifeste, les éléments blocables sur la page web, les filtres de correspondance, les souscriptions actives, le type de rapport de problème (par ex. les faux positifs ou faux négatifs) et une capture d'écran du problème (il est possible de supprimer les sections particulièrement sensibles de la page avant d'envoyer le rapport). Les valeurs des paramètres sont supprimées de toutes les adresses transmises pour éviter la fuite accidentelle d’informations privées."
     },
-    "isse-reporter-item-1": {
-        "message": "une capture d’écran du site web fournit une version réduite en dimensions et en couleurs de la page visionnée. Il est possible de supprimer les sections particulièrement sensibles de la page avant l’envoi du rapport.",
+    "issue-reporter-items-intro": {
+        "message": "Vous pouvez volontairement :"
+    },
+    "issue-reporter-item-1": {
+        "message": "Fournir votre adresse e-mail pour que nous puissions vous demander plus d’informations ou vous tenir informé du problème.",
         "description": "list item"
     },
-    "isse-reporter-item-2": {
-        "message": "L’adresse mail est utilisée uniquement pour demander des informations supplémentaires ou pour informer l’utilisateur sur la question.",
+    "issue-reporter-item-2": {
+        "message": "Inclure un commentaire facultatif sur le problème.",
         "description": "list item"
     },
     "access-reports-heading": {
@@ -609,11 +609,11 @@
         "message": "Les rapports traités ne sont accessibles que par un individu qui connaît son identifiant unique. Ces ID sont partagés uniquement avec :"
     },
     "access-reports-1": {
-        "message": "les mainteneurs des abonnements aux filtres mentionnés dans le rapport, en tant qu'auteurs EasyList, qui ne sont pas employés chez eyeo,",
+        "message": "Les mainteneurs des abonnements aux filtres mentionnés dans le rapport, en tant qu'auteurs EasyList, qui ne sont pas employés chez eyeo,",
         "description": "list item"
     },
     "access-reports-2": {
-        "message": "certains membres de l'équipe de liste de filtres d'eyeo. eyeo utilisera les rapports à des fins de dépannage et de surveillance du support uniquement.",
+        "message": "Certains membres de l'équipe de liste de filtres d'eyeo. eyeo utilisera les rapports à des fins de dépannage et de surveillance du support uniquement.",
         "description": "list item"
     },
     "emergency-notification-heading": {
@@ -635,7 +635,7 @@
         "description": "heading"
     },
     "data-retention-paragraph-1": {
-        "message": "Les données relatives aux téléchargements d'abonnements, aux vérifications des mises à jour des extensions, aux notifications d'urgence ainsi qu'aux rapports complets et aux données associées sont automatiquement supprimées au bout de 30 jours. Seul un sous-ensemble des données sera conservé plus longtemps. Cela inclut uniquement le code de pays des utilisateurs qui soumettent un problème (extrait de l'adresse IP) à des fins analytiques, qui est stocké séparément des rapports complets et ne peut pas être connecté à un individu après la suppression des rapports complets."
+        "message": "Les données relatives aux téléchargements d'abonnements, aux vérifications des mises à jour des extensions, aux notifications d'urgence, aux données du signaleur de problèmes (ainsi qu'aux rapports complets et aux données associées sont automatiquement supprimées au bout de 30 jours. Seul un sous-ensemble des données sera conservé plus longtemps. Cela inclut uniquement le code de pays des utilisateurs qui soumettent un problème (extrait de l'adresse IP) à des fins analytiques, qui est stocké séparément des rapports complets et ne peut pas être connecté à un individu après la suppression des rapports complets."
     },
     "data-retention-paragraph-2": {
         "message": "Adblock Plus stocke certaines données dans le <a>profil Firefox<\/a> sur votre ordinateur. Adblock Plus ne transmet jamais ces données aux serveurs, mais d'autres extensions et services tels que <a>Firefox Sync<\/a> peuvent le faire. La plus grande partie des données (vos préférences, souscriptions de filtres et filtres personnalisés) sont acceptables du point de vue de la vie privée. Cependant, les statistiques d’utilisation de filtre et les rapports de problèmes récents pourraient être utilisés pour reconstruire votre historique de navigation. Adblock Plus traite ces informations de la même manière que les données historiques dans le navigateur. Ces données ne sont pas stockées si vous utilisez le <a>mode de navigation privée<\/a> et sont supprimées si vous choisissez d’effacer votre historique de navigation."
@@ -758,6 +758,16 @@
     "cookies-paragraph": {
         "message": "Plusieurs zones de nos sites web utilisent des cookies pour reconnaître les utilisateurs connectés ou pour enregistrer les paramètres. Les cookies sont de petits fichiers stockés sur votre ordinateur avec l’aide de votre navigateur internet. Les cookies ne sont pas évalués d’une autre manière et ne sont jamais utilisés pour suivre les visiteurs du site web. Si vous ne voulez pas activer les cookies, vous pouvez choisir de ne pas les utiliser en sélectionnant les paramètres appropriés dans votre navigateur. Veuillez noter que l’efficacité et la gamme des services eyeo peuvent être limitées en conséquence."
     },
+    "google-analytics-heading": {
+        "message": "Google Analytics",
+        "description": "heading"
+    },
+    "google-analytics-paragraph-1": {
+        "message": "Nous utilisons Google Analytics sur notre site web, un service de Google Inc. (« Google »). Google Analytics se sert de soi-disant cookies, des fichiers textes qui sont enregistrés sur votre ordinateur et qui permettent d’analyser votre usage de notre site web. Les informations générées par le cookie sur votre usage de notre site, contenant votre adresse IP abrégée, sont transmises à un serveur de Google aux États-Unis où elles sont sauvegardées. Google utilise ces informations afin d’évaluer votre utilisation de notre site, de rédiger des rapports d’activité pour nous et de fournir plus de services reliés à l’utilisation de notre site web et de l’Internet. Il est possible que Google transmette ces informations à des tierces parties si la loi l’exige ou si ces tierces parties traitent les informations au nom de Google."
+    },
+    "google-analytics-paragraph-2": {
+        "message": "Vous pouvez désactiver Google Analytics en utilisant un module complémentaire de navigateur si vous ne voulez pas d’analyses de site web. Vous pouvez télécharger le module complémentaire depuis Google :"
+    },
     "adblock-ai-heading": {
         "message": "Sur adblock.ai",
         "description": "heading"
@@ -771,19 +781,6 @@
     },
     "facebook-messenger-integration-1": {
         "message": "Nous avons incorporé la fonctionnalité de Facebook Messenger qui appartient à Facebook dans le site web adblock.ai, afin que vous puissiez soumettre vos captures d’écran à notre bot (« Adblock AI »), sans avoir à accéder au site web de Facebook. Veuillez noter que Messenger est hébergé par Facebook. Nous avons désactivé la fonction qui envoie automatiquement des données personnelles à Facebook quand vous accéder notre site web ; néanmoins, lorsque vous cliquez sur le bouton (« START NOW ») qui aide à former Adblock AI grâce à vos captures d’écran, vous activez Messenger. C’est à ce moment seulement que quelques données personnelles, adresse IP y compris, seront transmises à Facebook. Pour en savoir plus, veuillez consulter la <a>politique de confidentialité<\/a> de Facebook. Si vous ne voulez pas transmettre vos données à Facebook, veuillez ne pas cliquer sur le bouton qui envoie des informations à Adblock AI à travers Facebook Messenger."
-    },
-    "google-analytics-heading": {
-        "message": "Google Analytics",
-        "description": "heading"
-    },
-    "google-analytics-paragraph-1": {
-        "message": "Nous utilisons Google Analytics sur notre site web, un service de Google Inc. (« Google »). Google Analytics se sert de soi-disant cookies, des fichiers textes qui sont enregistrés sur votre ordinateur et qui permettent d’analyser votre usage de notre site web. Les informations générées par le cookie sur votre usage de notre site, contenant votre adresse IP abrégée, sont transmises à un serveur de Google aux États-Unis où elles sont sauvegardées. Google utilise ces informations afin d’évaluer votre utilisation de notre site, de rédiger des rapports d’activité pour nous et de fournir plus de services reliés à l’utilisation de notre site web et de l’Internet. Il est possible que Google transmette ces informations à des tierces parties si la loi l’exige ou si ces tierces parties traitent les informations au nom de Google."
-    },
-    "google-analytics-paragraph-2": {
-        "message": "Vous pouvez désactiver Google Analytics en utilisant un module complémentaire de navigateur si vous ne voulez pas d’analyses de site web. Vous pouvez le télécharger ici :"
-    },
-    "google-analytics-paragraph-3": {
-        "message": "Les données de Google Analytics seront supprimées après 30 jours."
     },
     "volentary-info-heading": {
         "message": "Informations que vous nous fournissez volontairement",
@@ -811,7 +808,7 @@
         "description": "list item"
     },
     "forum-registration-paragraph-3": {
-        "message": "<strong>Remarque :<\/strong> Une inscription n’est pas nécessaire pour participer aux forums et vous pouvez supprimer votre compte à tout moment."
+        "message": "<strong>Remarque :<\/strong> Une inscription n’est pas nécessaire pour lire des articles dans les forums et vous pouvez supprimer votre compte à tout moment."
     },
     "blog-comments-heading": {
         "message": "Commentaires sur les blogs",
@@ -838,7 +835,7 @@
         "message": "En général, nous ne conservons pas votre adresse mail, sauf si elle est spécifiquement requise pour exécuter la campagne liée (en d’autres termes, inscriptions par e-mail à une newsletter ou inscription pour être informé d'un lancement de produit). Dans les situations où nous conservons votre adresse e-mail, nous la conservons uniquement pendant la période nécessaire pour exécuter la campagne (c’est-à-dire après vous avoir informé du lancement)."
     },
     "publication-date": {
-        "message": "Mai 2018"
+        "message": "Septembre 2018"
     },
     "gdpr-abbr": {
         "message": "RGPD",
@@ -862,13 +859,5 @@
     "navbar-logo-text": {
         "message": "Adblock <strong>Plus<\/strong>",
         "description": "Navbar logo text"
-    },
-    "twitter-alt": {
-        "message": "Twitter",
-        "description": "Twitter glyphicon alt text"
-    },
-    "copyright-notice": {
-        "message": "Copyright © 2017 Tous droits réservés. Adblock Plus<sup>®<\/sup> est une marque déposée de <a>eyeo GmbH<\/a>.",
-        "description": "Footer copyright notice"
     }
 }
