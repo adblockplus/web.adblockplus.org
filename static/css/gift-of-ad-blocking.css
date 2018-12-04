@@ -1,0 +1,689 @@
+/* Reset
+ ******************************************************************************/
+
+*,
+*::before,
+*::after
+{
+  box-sizing: border-box;
+}
+
+body
+{
+  padding-top: 0;
+}
+
+h1,
+h2,
+h3
+{
+  font-weight: bold;
+}
+
+p
+{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a:hover,
+a:active,
+a:focus
+{
+  text-decoration: none;
+}
+
+@media (max-width: 575px)
+{
+  .button
+  {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+/* Page wide
+ ******************************************************************************/
+
+#page .lead
+{
+  font-size: 1rem;
+}
+
+@media (min-width: 768px)
+{
+  #page .lead
+  {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1900px)
+{
+  #page .lead
+  {
+    font-size: 2rem;
+  }
+}
+
+#page .button
+{
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+.goab-social-icon img
+{
+  display: inline-block;
+  height: 26px;
+  width: auto;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Page header
+ ******************************************************************************/
+
+#page-header-gradient
+{
+  background-color: rgb(243,241,242);
+  /* Matching the image's gradient as closely as possible */
+  background-image: linear-gradient(to right, #f4f2f3, #f5f4f4, #f7f5f6, #f8f7f7, #faf8f9);
+}
+
+#page-header-image
+{
+  background-image: url(/img/gift-of-ad-blocking/page-header-small.png);
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px)
+{
+  #page-header-image
+  {
+    background-image: url(/img/gift-of-ad-blocking/page-header-large.png);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Page header contents *******************************************************/
+
+/* #page-header-container inherits .container's widths without it's padding */
+#page-header-container
+{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Content box spacing */
+#page-header-contents
+{
+  /* 9.5rem is desired, but it's too large to fit the cta on small phones */
+  padding-top: 8rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  overflow-y: auto;
+}
+
+@media (min-width: 375px)
+{
+  #page-header-contents
+  {
+    padding-top: 9.5rem;
+  }
+}
+
+#page-header-contents
+{
+  text-align: center;
+}
+
+@media (min-width: 768px)
+{
+  #page-header-contents
+  {
+   padding-bottom: 9.5rem;
+  }
+
+  [dir="ltr"] #page-header-contents
+  {
+    padding-left: 45%;
+    padding-right: 5rem;
+    text-align: left;
+  }
+
+  [dir="rtl"] #page-header-contents
+  {
+    padding-right: 45%;
+    padding-left: 5rem;
+    text-align: right;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  #page-header-contents
+  {
+    min-height: 90vh;
+  }
+}
+
+@media (min-width: 1900px)
+{
+  [dir="ltr"] #page-header-contents
+  {
+    padding-top: 12.5rem;
+    padding-left: 50%;
+    padding-right: 0;
+  }
+
+  [dir="rtl"] #page-header-contents
+  {
+    padding-left: 50%;
+    padding-right: 0;
+  }
+}
+
+/* Spacing provided by content box above */
+#page-header-contents h1
+{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px)
+{
+  #page-header-contents h1
+  {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px)
+{
+  #page-header-contents h1
+  {
+    font-size: 3.375rem;
+  }
+}
+
+@media (min-width: 1900px)
+{
+  #page-header-contents h1
+  {
+    font-size: 4.3rem;
+  }
+}
+
+/* .text-block's provide the separated red background */
+#page-header-contents h1 .text-block
+{
+  display: inline-block;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding-top: 0.1em;
+  padding-right: 0.4em;
+  padding-bottom: 0.1em;
+  padding-left: 0.4em;
+  color: #fff;
+  background-color: #ED1E45;
+}
+
+/* .text-break forces a spaced break in the text */
+#page-header-contents h1 .text-break
+{
+  display: block;
+}
+
+[dir="ltr"] #page-header-contents .lead
+{
+  text-align: left;
+}
+
+[dir="rtl"] #page-header-contents .lead
+{
+  text-align: right;
+}
+
+#page-header-cta
+{
+  /* Spacing provided by container above */
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow-y: auto;
+}
+
+/* Button and icons are separated on small screens */
+#page-header-cta span
+{
+  display: block;
+  margin-top: 1em;
+}
+
+@media (min-width: 768px)
+{
+  #page-header-cta span
+  {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+#page-header-cta .button
+{
+  font-size: 1.25rem;
+  color: #fff !important;
+  background-color: #0F7C58 !important;
+}
+
+@media (min-width: 768px)
+{
+  #page-header-cta-social
+  {
+    height: 2.5rem;
+    padding-top: 0.75rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
+/* Campaigns
+ ******************************************************************************/
+
+#campaigns
+{
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  color: #fff;
+  background-color: #0F7C58;
+  background: linear-gradient(180deg, rgba(15,124,88,1) 0%, rgba(3,76,58,1) 35%);
+  text-align: center;
+}
+
+@media (min-width: 768px)
+{
+  #campaigns
+  {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 767px)
+{
+  #campaigns-header-container
+  {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.campaigns-container
+{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px)
+{
+  .campaigns-container
+  {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 992px)
+{
+  .campaigns-container
+  {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+@media (min-width: 1456px)
+{
+  .campaigns-container
+  {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#campaigns-header
+{
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+#campaigns-header h2
+{
+  font-size: 2rem;
+}
+
+@media (min-width: 768px)
+{
+  #campaigns-header h2
+  {
+    font-size: 3rem;
+  }
+}
+
+#campaigns figure img
+{
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+/* Campaign thumbnails ********************************************************/
+
+#campaign-thumbnails
+{
+  overflow-y: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#campaign-thumbnails .one-fourth
+{
+  width: 50%;
+}
+
+@media (min-width: 768px)
+{
+  #campaign-thumbnails .one-fourth
+  {
+    width: 25%;
+  }
+}
+
+#campaign-thumbnails .column
+{
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+/* Apply inset border to image */
+
+.campaign-thumbnail .image-container
+{
+  position: relative;
+}
+
+.campaign-thumbnail.active .inset-border-image
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #fff;
+  border-radius: 5px;
+}
+
+.campaign-thumbnail img
+{
+  border-radius: 5px;
+}
+
+.campaign-thumbnail figcaption
+{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Campaign slides ************************************************************/
+
+.campaign
+{
+  display: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.campaign.active
+{
+  display: block;
+}
+
+.campaign-slide
+{
+  display: none;
+}
+
+.campaign-slide.active
+{
+  display: block;
+}
+
+.campaign-slide figcaption
+{
+  display: block;
+  padding-top: 0.2em;
+  padding-right: 1em;
+  padding-bottom: 0.2em;
+  padding-left: 1em;
+  background-color: #ED1E45;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Campaign slide controls  ***************************************************/
+
+.campaign-slide-controls
+{
+  display: table;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+@media (min-width: 768px)
+{
+  .campaign-slide-controls
+  {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.campaign-slide-controls ul
+{
+  display: table-row;
+}
+
+.campaign-slide-controls li
+{
+  display: table-cell;
+}
+
+.campaign-slide-controls img
+{
+  vertical-align: middle;
+}
+
+/* Campain slides footer ******************************************************/
+
+#campaigns-footer
+{
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px)
+{
+  #campaigns-footer p > span
+  {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px)
+{
+  #campaigns-footer p > span
+  {
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    vertical-align: middle;
+  }
+}
+
+#campaigns-footer .button.primary
+{
+  padding-left: 1em;
+  padding-right: 1em;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+/* Related posts
+ ******************************************************************************/
+
+.related-post-image
+{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.related-post-shadow
+{
+  text-align: center;
+  padding-top: 5rem;
+  padding-right: 2em;
+  padding-bottom: 5rem;
+  padding-left: 2em;
+  color: #fff;
+  background-color: #000;
+}
+
+.related-post-body h2
+{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.related-post-body .button
+{
+  font-size: 1.5rem;
+  box-shadow: none;
+}
+
+@media (min-width: 768px) and (max-width: 1199px)
+{
+  .related-post
+  {
+    position: relative;
+    clear: both;
+    overflow: auto;
+  }
+
+  .related-post-image
+  {
+    width: 50%;
+  }
+
+  .related-post-shadow
+  {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+  }
+
+  [dir="ltr"] .related-post-shadow
+  {
+    left: 50%;
+  }
+
+  [dir="rtl"] .related-post-shadow
+  {
+    left: 50%;
+  }
+
+  [dir="ltr"] .related-post:nth-child(even) .related-post-image
+  {
+    float: right;
+  }
+
+  [dir="rtl"] .related-post:nth-child(even) .related-post-image
+  {
+    float: left;
+  }
+
+  [dir="ltr"] .related-post:nth-child(even) .related-post-shadow
+  {
+    left: 0;
+  }
+
+  [dir="rtl"] .related-post:nth-child(even) .related-post-shadow
+  {
+    right: 0;
+  }
+
+  .related-post-body-container
+  {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+  .related-post-body
+  {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  .related-post
+  {
+    position: relative;
+    float: left;
+    width: 33.33333%;
+  }
+
+  .related-post-shadow
+  {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7)
+  }
+
+  .related-post:hover .related-post-shadow
+  {
+    display: block;
+  }
+
+  .related-post:hover .related-post-body-container
+  {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+  .related-post-body
+  {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

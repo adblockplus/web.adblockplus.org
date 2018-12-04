@@ -79,7 +79,7 @@
     <div id="footer-legal">
       <p id="copyright-notice">{{ get_string("copyright", "footer") }}</p>
       <ul id="legal-list">
-        {% for pagename in ["terms", "privacy", "impressum"] %}
+        {% for pagename in ["terms", "privacy", "privacy-goab", "impressum"] %}
           <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
         {% endfor %}
       </ul>
