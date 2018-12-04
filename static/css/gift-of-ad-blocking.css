@@ -72,15 +72,6 @@ a:focus
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
 
-.goab-social-icon img
-{
-  display: inline-block;
-  height: 26px;
-  width: auto;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
-}
-
 /* Page header
  ******************************************************************************/
 
@@ -254,11 +245,11 @@ a:focus
   /* Spacing provided by container above */
   margin-top: 0;
   margin-bottom: 0;
-  overflow-y: auto;
+  overflow-y: visible;
 }
 
 /* Button and icons are separated on small screens */
-#page-header-cta span
+.page-header-cta-container
 {
   display: block;
   margin-top: 1em;
@@ -266,7 +257,7 @@ a:focus
 
 @media (min-width: 768px)
 {
-  #page-header-cta span
+  .page-header-cta-container
   {
     float: left;
     margin-top: 0;
@@ -515,6 +506,18 @@ a:focus
   vertical-align: middle;
 }
 
+.campaign-slide-control .active-slide-icon,
+.campaign-slide-control.active .inactive-slide-icon
+{
+  display: none;
+}
+
+.campaign-slide-control .inactive-slide-icon,
+.campaign-slide-control.active .active-slide-icon
+{
+  display: inline-block;
+}
+
 /* Campain slides footer ******************************************************/
 
 #campaigns-footer
@@ -552,6 +555,11 @@ a:focus
 
 /* Related posts
  ******************************************************************************/
+
+#related-posts
+{
+  overflow: auto;
+}
 
 .related-post-image
 {
@@ -686,4 +694,121 @@ a:focus
     display: table-cell;
     vertical-align: middle;
   }
+}
+
+/* Social icons */
+
+#page-header-cta .social-dropdown-container
+{
+  display: inline-block;
+}
+
+#page-header-gradient,
+#page-header-image,
+#page-header-container,
+#page-header-contents,
+#campaigns
+{
+  overflow: visible;
+}
+
+.goab-social-icon
+{
+  display: inline-block;
+  height: 1.625rem;;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: auto;
+}
+
+.goab-social-icon img
+{
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.social-dropdown-container
+{
+  position: relative;
+}
+
+.social-dropdown
+{
+  display: none;
+  position: absolute;
+  top: 2.625rem;
+  right: 0;
+  height: auto;
+  width: 16rem;
+  padding: 1rem;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.16);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+  border-radius: 5px;
+  font-size: 1rem;
+  overflow: visible;
+  z-index: 9001;
+}
+
+.social-dropdown.active
+{
+  display: block;
+}
+
+.social-dropdown .arrow
+{
+  top: calc((.5rem + 1px) * -1);
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: .5rem;
+  margin: 0 .3rem;
+}
+
+[dir="ltr"] .social-dropdown .arrow { right: 0.5rem; }
+
+[dir="rtl"] .social-dropdown .arrow { left: 0.5rem; }
+
+.social-dropdown .arrow::before,
+.social-dropdown .arrow::after
+{
+  display: block;
+  position: absolute;
+  content: "";
+  border-width: 0 .5rem .5rem .5rem;
+  border-color: transparent;
+  border-bottom-color: transparent;
+  border-style: solid;
+}
+
+.social-dropdown .arrow::before
+{
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.16) !important;
+}
+
+.social-dropdown .arrow::after
+{
+  top: 1px;
+  border-bottom-color: #fff !important;
+}
+
+#page-header-social-container
+{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.social-icon-container
+{
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.social-dropdown-container
+{
+  display: inline-block;
 }

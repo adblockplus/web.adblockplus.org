@@ -2,7 +2,7 @@
 
 {% for campaign in campaigns %}
   <li class="campaign-thumbnail column one-fourth {{ "active" if loop.index == 1 else "" }}">
-    <a>
+    <a onclick="gotoCampaign({{ (loop.index - 1) | string }})">
       <figure>
         <div class="image-container">
           <img

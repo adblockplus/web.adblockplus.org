@@ -6,7 +6,9 @@
 
     <ul>
       {% for slide in campaign.slides %}
-        <li class="campaign-slide {{ "active" if loop.index == 1 else "" }}">
+        <li
+          data-index="{{ (loop.index - 1) | string }}"
+          class="campaign-slide {{ "active" if loop.index == 1 else "" }}">
           <figure>
             <img
               alt="{{ slide.alt | translate('campaign-' + _loop.index | string + '-' + loop.index | string + '-alt', 'alt text') }}"
@@ -22,6 +24,7 @@
       <ul>
         <li>
           <a
+            onclick="previousSlide()"
             title="{{ "Previous slide" | translate("previous-slide-title", "button title") }}">
             <img
               alt="{{ "Previous slide arrow icon" | translate("previous-slide-alt", "button alt") }}"
@@ -30,24 +33,29 @@
           </a>
         </li>
         {% for slide in campaign.slides %}
-          <li class="{{ "active" if loop.index == 1 else "" }}">
+          <li
+            class="campaign-slide-control {{ "active" if loop.index == 1 else "" }}">
             <a
+              onclick="gotoSlide({{ (loop.index - 1) | string }})"
               title="{{ "Goto slide " + (loop.index | string) | translate("goto-slide-" + (loop.index | string), "button title") }}">
               <img
+                class="active-slide-icon"
                 alt="{{ "Slide " + (loop.index | string) + " icon" | translate("goto-slide-" + (loop.index | string) + "-icon-alt", "button alt") }}"
-                {% if loop.index == 1 %}
                 src="/img/gift-of-ad-blocking/active-slide-icon.png"
                 srcset="/img/gift-of-ad-blocking/active-slide-icon-2x.png 2x"
-                {% else %}
+              />
+              <img
+                class="inactive-slide-icon"
+                alt="{{ "Slide " + (loop.index | string) + " icon" | translate("goto-slide-" + (loop.index | string) + "-icon-alt", "button alt") }}"
                 src="/img/gift-of-ad-blocking/slide-icon.png"
                 srcset="/img/gift-of-ad-blocking/slide-icon-2x.png 2x"
-                {% endif %}
               />
             </a>
           </li>
         {% endfor %}
         <li>
           <a
+            onclick="nextSlide()"
             title="{{ "Next slide" | translate("next-slide-title", "button title") }}">
             <img
               alt="{{ "Next slide arrow icon" | translate("next-slide-alt", "button alt") }}"
