@@ -1,0 +1,38 @@
+ <div class="cookies-settings-form">
+
+  <fieldset class="cookies-setting row">
+    <div class="column three-fourths">
+      <legend>{{ get_string('necessary-cookies-heading', 'cookies') }}</legend>
+      <p>{{ get_string('necessary-cookies-1', 'cookies') }}</p>
+    </div>
+    <div class="column one-fourth text-end">
+      <label class="switch">
+        <input type="checkbox" checked disabled>
+        <span></span>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="cookies-setting row">
+    <div class="column three-fourths">
+      <legend>{{ get_string('tracking-cookies-heading', 'cookies') }}</legend>
+      <p>{{ get_string('tracking-cookies-1', 'cookies') }}</p>
+    </div>
+    <div class="column one-fourth text-end">
+      <label class="switch">
+        <input class="tracking-cookies" type="checkbox" checked>
+        <span></span>
+      </label>
+    </div>
+  </fieldset>
+
+  <button
+    type="button"
+    class="link-button cookies-save"
+    title="{{ get_string('cookies-popup-submit-tooltip', 'cookies') }}">
+    {{ get_string('cookies-popup-submit-label', 'cookies') }}
+  </button>
+
+  <span class="arrow"></span>
+
+</div><!-- .cookies-settings-form -->

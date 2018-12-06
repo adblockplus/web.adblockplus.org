@@ -1,0 +1,33 @@
+<form class="cookie cookiepage">
+
+  <header class="bg-dark">
+    <div class="container">
+
+      <h4 class="cookie-heading">
+        {{ get_string('cookie-preferences-heading', 'cookies') }}
+      </h4>
+
+      <button
+        type="button"
+        class="cookies-close"
+        title="{{ get_string('cookies-submit-tooltip', 'cookies') }}">
+        <img
+          alt="{{ get_string('close-icon-alt', 'cookies') }}"
+          src="/img/close-icon.png"
+          srcset="/img/close-icon.svg 2x">
+      </button>
+
+    </div>
+  </header>
+
+  <div class="bg-light">
+    <div class="container section">
+        {{ get_string('cookies-explination-1', 'cookies') }}
+    </div>
+  </div>
+
+  <div class="container section">
+    <? include cookie/settings ?>
+  </div>
+
+</form>

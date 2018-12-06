@@ -1,0 +1,49 @@
+<div id="cookiebar" class="cookie cookiebar">
+  <div class="container">
+    <div class="row">
+
+      <div class="column two-thirds">
+        <p class="cookiebar-text">
+          <img
+            height="42px"
+            alt="{{ get_string('cookies-large-icon-alt', 'cookies') }}"
+            src="/img/cookie-icon.png"
+            srcset="/img/cookie-icon.svg 2x">
+          <span>
+            {{ get_string('cookies-explination-1', 'cookies') }}
+          </span>
+        </p>
+      </div>
+
+      <div class="column one-third text-end">
+        <ul class="cookiebar-nav">
+          <li>
+            <button
+              type="button"
+              class="cookies-submit button"
+              title="{{ get_string('cookies-submit-tooltip', 'cookies') }}">
+              {{ get_string('cookies-submit-label', 'cookies') }}
+            </button>
+          </li>
+          <li class="dropup cookies-dropup">
+            <button
+              type="button"
+              class="cookies-settings button"
+              title="{{ get_string('cookies-settings-tooltip', 'cookies') }}">
+              {{ get_string('cookies-settings-label-1', 'cookies') }} &nbsp;
+              <img
+                alt="{{ get_string('cookies-settings-icon-alt', 'cookies') }}"
+                src="/img/settings-icon.png"
+                srcset="/img/settings-icon.svg 2x">
+            </button>
+            <div class="cookies-dropup-menu text-start" tabindex="1">
+              <? include cookie/settings ?>
+              <span class="arrow"></span>
+            </div>
+          </li>
+        </ul>
+      </div><!-- .column -->
+    </div><!-- .row -->
+  </div><!-- .container -->
+
+</div><!-- #cookies-large-bar -->
