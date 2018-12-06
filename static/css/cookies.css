@@ -1,5 +1,9 @@
 /* shared cookie styles *******************************************************/
 
+/* overriding old/main.css */
+[dir="ltr"] .content .cookie { text-align: left; }
+[dir="rtl"] .content .cookie { text-align: right; }
+
 .cookie p
 {
   margin-top: 1em;
@@ -13,6 +17,14 @@
   color: inherit;
   font-weight: bolder;
   text-decoration: underline;
+}
+
+/* overidding old/main.css */
+.content .cookie ul
+{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .cookies-settings-form .link-button
@@ -31,8 +43,10 @@
 .cookie-heading,
 .cookies-close
 {
-  font-size: larger;
-  font-weight: bolder
+  /* overidding old/main.css */
+  font-size: larger !important;
+  font-weight: bolder !important;
+  margin: 0 !important;
 }
 
 [dir="ltr"] .cookie-heading { float: left; }
