@@ -290,7 +290,7 @@
   }
 }
 
-@media (min-width: 576px)
+@media (min-width: 576px) and (min-height: 576px)
 {
   .show-cookies-settings .cookies-dropup-menu { display: block; }
 }
@@ -349,7 +349,7 @@
   z-index: 9001;
 }
 
-@media (max-width: 575px)
+@media (max-width: 575px), (max-height: 575px)
 {
   .show-cookies-notice .cookieprompt { display: block; }
 }
@@ -413,7 +413,7 @@
   z-index: 9001;
 }
 
-@media (max-width: 575px)
+@media (max-width: 575px), (max-height: 576px)
 {
   .cookiepage { display: block; }
 
