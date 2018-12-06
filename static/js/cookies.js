@@ -23,9 +23,9 @@
   function setTrackingCookie(key, value)
   {
     if (value)
-      doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+      doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     else
-      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
   }
 
   var trackingOptOut = hasTrackingCookie(TRACKING_OPT_OUT);
