@@ -88,7 +88,8 @@
       if (
         // Is the cookie settings dropup open?
         body.classList.contains("show-cookies-settings") &&
-        body.clientWidth >= 576 &&
+        root.innerWidth >= 576 &&
+        root.innerHeight >= 575 &&
 
         // Is the click outside the cookie settings dropup component?
         !settingsDropups.some(function(settingsDropup)
