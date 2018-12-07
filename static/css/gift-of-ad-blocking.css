@@ -68,6 +68,8 @@ a:focus
 
 #page .button
 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-radius: 5px;
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
@@ -715,7 +717,7 @@ a:focus
 .goab-social-icon
 {
   display: inline-block;
-  height: 1.625rem;;
+  height: 1.625rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   width: auto;
