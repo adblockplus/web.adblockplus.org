@@ -1,3 +1,42 @@
+/* Font faces
+ ******************************************************************************/
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+       url('/fonts/source-sans-pro-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/source-sans-pro-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: bold;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+       url('/fonts/source-sans-pro-v11-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/source-sans-pro-v11-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url('/fonts/open-sans-v15-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/open-sans-v15-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: bold;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+       url('/fonts/open-sans-v15-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/open-sans-v15-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 /* Reset
  ******************************************************************************/
 
@@ -41,6 +80,21 @@ html
   scroll-behavior: smooth;
 }
 
+body
+{
+  font-family: "Open Sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+}
+
 #page .lead
 {
   font-size: 1rem;
@@ -76,6 +130,7 @@ html
   line-height: 2.8125rem;
   padding: 0 1rem;
   border-radius: 5px;
+  font-family: "Source Sans Pro";
   text-decoration: none;
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
@@ -154,21 +209,10 @@ html
 {
   #page-header-contents
   {
-   padding-bottom: 9.5rem;
-  }
-
-  [dir="ltr"] #page-header-contents
-  {
+    padding-bottom: 9.5rem;
     padding-left: 45%;
     padding-right: 5rem;
     text-align: left;
-  }
-
-  [dir="rtl"] #page-header-contents
-  {
-    padding-right: 45%;
-    padding-left: 5rem;
-    text-align: right;
   }
 }
 
@@ -182,15 +226,9 @@ html
 
 @media (min-width: 1900px)
 {
-  [dir="ltr"] #page-header-contents
+  #page-header-contents
   {
     padding-top: 12.5rem;
-    padding-left: 50%;
-    padding-right: 0;
-  }
-
-  [dir="rtl"] #page-header-contents
-  {
     padding-left: 50%;
     padding-right: 0;
   }
@@ -249,14 +287,9 @@ html
   display: block;
 }
 
-[dir="ltr"] #page-header-contents .lead
+#page-header-contents .lead
 {
   text-align: left;
-}
-
-[dir="rtl"] #page-header-contents .lead
-{
-  text-align: right;
 }
 
 /* Social CTA
@@ -564,6 +597,7 @@ html
   padding-bottom: 0.2em;
   padding-left: 1em;
   background-color: #ED1E45;
+  font-family: "Source Sans Pro";
   font-size: 24px;
   font-weight: bold;
 }
@@ -696,38 +730,19 @@ html
   {
     position: absolute;
     top: 0;
+    left: 50%;
     height: 100%;
     width: 50%;
   }
 
-  [dir="ltr"] .related-post-shadow
-  {
-    left: 50%;
-  }
-
-  [dir="rtl"] .related-post-shadow
-  {
-    left: 50%;
-  }
-
-  [dir="ltr"] .related-post:nth-child(even) .related-post-image
+  .related-post:nth-child(even) .related-post-image
   {
     float: right;
   }
 
-  [dir="rtl"] .related-post:nth-child(even) .related-post-image
-  {
-    float: left;
-  }
-
-  [dir="ltr"] .related-post:nth-child(even) .related-post-shadow
+  .related-post:nth-child(even) .related-post-shadow
   {
     left: 0;
-  }
-
-  [dir="rtl"] .related-post:nth-child(even) .related-post-shadow
-  {
-    right: 0;
   }
 
   .related-post-body-container
