@@ -483,8 +483,6 @@ html
 
 .campaign-slide-controls
 {
-  display: table;
-  width: 100%;
   margin-top: 1em;
   margin-bottom: 3em;
 }
@@ -498,14 +496,11 @@ html
   }
 }
 
-.campaign-slide-controls ul
-{
-  display: table-row;
-}
-
 .campaign-slide-controls li
 {
-  display: table-cell;
+  display: inline-block;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .campaign-slide-controls img
