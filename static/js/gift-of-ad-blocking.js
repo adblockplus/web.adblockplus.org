@@ -106,11 +106,11 @@ document.addEventListener("click", function(event)
 {
   var parent = event.target.parentNode;
 
-  if (!event.target.classList.contains("social-dropdown"))
+  if (!event.target.classList.contains("dropdown"))
   {
     var activateParentSibling = false;
 
-    if (parent.classList.contains("goab-social-icon"))
+    if (parent.classList.contains("social-icon"))
     {
       var parentSibling = event.target.parentElement.nextElementSibling;
 
@@ -118,7 +118,7 @@ document.addEventListener("click", function(event)
         activateParentSibling = true;
     }
 
-    var activeSocialDropdowns = document.querySelectorAll(".social-dropdown.active");
+    var activeSocialDropdowns = document.querySelectorAll(".dropdown.active");
 
     for (var i = 0; i < activeSocialDropdowns.length; i++)
     {

@@ -23,45 +23,14 @@
   <div class="container">
 
     <footer id="campaigns-footer">
-      <span>
-        {{ campaigns-footer-paragraph-1 Share this story with someone you care for }}
-      </span>
-      <div class="social-icon-container">
-        <div class="social-dropdown-container">
-          <a
-            target="_blank"
-            href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.adblockplus.org/gift-of-ad-blocking"
-            title="{{ facebook-icon-title[link title] Share on Facebook }}"
-            class="goab-social-icon">
-            <img
-              alt="{{ facebook-icon-alt[alt text] Facebook icon }}"
-              src="/img/gift-of-ad-blocking/facebook-icon-white.png"
-              srcset="/img/gift-of-ad-blocking/facebook-icon-white-2x.png 2x" />
-          </a>
-          <p class="social-dropdown">
-            <span class="arrow"></span>
-            {{ facebook-dropdown-1 Click again to share this. Please note that by sharing this, some personal data is transferred to Facebook. For more information, please review Facebook’s <a href="https://www.facebook.com/privacy/explanation">Data Policy</a>. }}
-          </p>
+      <div class="social-cta">
+        <span class="social-callout">
+          {{ campaigns-footer-paragraph-1 Share this story with someone you care for }}
+        </span>
+        <? include gift-of-ad-blocking/social-icons-white ?>
         </div>
-        <div class="social-dropdown-container">
-          <a
-            target="_blank"
-            href="https://twitter.com/home?status=See%20how%20Adblock%20Plus%20sprinkles%20a%20little%20holiday%20magic%20on%20the%20web%3A%20www.giftofadblocking.com"
-            class="goab-social-icon"
-            title="{{ twitter-icon-title[link title] Share on Twitter }}">
-            <img
-              alt="{{ twitter-icon-alt[alt text] Twitter icon }}"
-              src="/img/gift-of-ad-blocking/twitter-icon-white.png"
-              srcset="/img/gift-of-ad-blocking/twitter-icon-white-2x.png 2x" />
-          </a>
-          <p class="social-dropdown">
-            <span class="arrow"></span>
-            {{ twitter-dropdown-1 Click again to share this. Please note that by sharing this, some personal data is transferred to Twitter. For more information, please review Twitter’s <a href="https://twitter.com/en/privacy">Privacy Policy</a>. }}
-          </p>
-        </div>
-      </div>
       <p>
-        <a href="index" class="button primary">{{ campaigns-footer-button-label[button label] Get the gift of ad blocking }}</a>
+        <a href="index" class="button bg-red">{{ campaigns-footer-button-label[button label] Get the gift of ad blocking }}</a>
       </p>
     </footer>
 
