@@ -45,6 +45,11 @@ a:focus
 /* Page wide
  ******************************************************************************/
 
+html
+{
+  scroll-behavior: smooth;
+}
+
 #page .lead
 {
   font-size: 1rem;
