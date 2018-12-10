@@ -69,7 +69,7 @@ Contact our Data Protection Officer, Dr. Judith Nink, via <a href="#" data-mask=
 
 ### General information about your privacy {: #general-information-about-your-privacy }
 
-The following information applies to the collection, processing and use of personal data in connection on [giftofadblocking.com](www.giftofadblocking.com) and [adblockplus.org/gift-of-ad-blocking](www.adblockplus.org/gift-of-ad-blocking).
+The following information applies to the collection, processing and use of personal data in connection on [giftofadblocking.com](https://giftofadblocking.com) and [adblockplus.org/gift-of-ad-blocking](gift-of-ad-blocking).
 
 1. [General information about your privacy](#general-information-about-your-privacy)
 1. [General notes](#general-notes)
