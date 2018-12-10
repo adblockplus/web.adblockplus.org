@@ -20,19 +20,16 @@
     <? include gift-of-ad-blocking/campaign-slides ?>
   </div>
 
-  <div class="container">
+  <footer id="campaigns-footer" class="campaigns-container">
+    <div class="social-cta">
+      <span class="social-callout">
+        {{ campaigns-footer-paragraph-1 Share this story with someone you care for }}
+      </span>
+      <? include gift-of-ad-blocking/social-icons-white ?>
+    </div>
+    <p>
+      <a href="index" class="button bg-red">{{ campaigns-footer-button-label[button label] Get the gift of ad blocking }}</a>
+    </p>
+  </footer>
 
-    <footer id="campaigns-footer">
-      <div class="social-cta">
-        <span class="social-callout">
-          {{ campaigns-footer-paragraph-1 Share this story with someone you care for }}
-        </span>
-        <? include gift-of-ad-blocking/social-icons-white ?>
-        </div>
-      <p>
-        <a href="index" class="button bg-red">{{ campaigns-footer-button-label[button label] Get the gift of ad blocking }}</a>
-      </p>
-    </footer>
-
-  </div>
 </section>

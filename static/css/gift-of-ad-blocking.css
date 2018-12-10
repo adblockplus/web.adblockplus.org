@@ -72,7 +72,7 @@ a:focus
   text-decoration: none;
 }
 
-/* Page wide
+/* Configure
  ******************************************************************************/
 
 html
@@ -83,6 +83,7 @@ html
 body
 {
   font-family: "Open Sans";
+  background-color: #000;
 }
 
 h1,
@@ -93,6 +94,18 @@ h5
 {
   font-family: "Source Sans Pro";
   font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Override
+ ******************************************************************************/
+
+@media (min-width: 1920px)
+{
+  #page .container
+  {
+    width: 1200px;
+  }
 }
 
 #page .lead
@@ -108,7 +121,7 @@ h5
   }
 }
 
-@media (min-width: 1900px)
+@media (min-width: 1920px)
 {
   #page .lead
   {
@@ -131,6 +144,7 @@ h5
   padding: 0 1rem;
   border-radius: 5px;
   font-family: "Source Sans Pro";
+  font-size: 20px;
   text-decoration: none;
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
@@ -188,7 +202,7 @@ h5
   /* 9.5rem is desired, but it's too large to fit the cta on small phones */
   padding-top: 8rem;
   padding-right: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 0.5rem;
   padding-left: 2rem;
 }
 
@@ -196,7 +210,7 @@ h5
 {
   #page-header-contents
   {
-    padding-top: 9.5rem;
+    padding-top: 9rem;
   }
 }
 
@@ -209,7 +223,7 @@ h5
 {
   #page-header-contents
   {
-    padding-bottom: 9.5rem;
+    padding-bottom: 7rem;
     padding-left: 45%;
     padding-right: 5rem;
     text-align: left;
@@ -224,7 +238,7 @@ h5
   }
 }
 
-@media (min-width: 1900px)
+@media (min-width: 1920px)
 {
   #page-header-contents
   {
@@ -239,7 +253,7 @@ h5
 {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 
@@ -247,11 +261,11 @@ h5
 {
   #page-header-contents h1
   {
-    font-size: 2.5rem;
+    font-size: 2.675rem;
   }
 }
 
-@media (min-width: 992px)
+@media (min-width: 1200px)
 {
   #page-header-contents h1
   {
@@ -259,11 +273,11 @@ h5
   }
 }
 
-@media (min-width: 1900px)
+@media (min-width: 1920px)
 {
   #page-header-contents h1
   {
-    font-size: 4.3rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -273,12 +287,20 @@ h5
   display: inline-block;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-  padding-top: 0.1em;
-  padding-right: 0.4em;
-  padding-bottom: 0.1em;
-  padding-left: 0.4em;
+  padding: 0.5rem;
   color: #fff;
   background-color: #ED1E45;
+}
+
+@media (min-width: 768px)
+{
+  #page-header-contents h1 .text-block
+  {
+    padding-top: 0.15em;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.15em;
+  }
 }
 
 /* .text-break forces a spaced break in the text */
@@ -292,13 +314,29 @@ h5
   text-align: left;
 }
 
+@media (min-width: 1920px)
+{
+  #page-header-contents .lead
+  {
+    margin-top: 1.5rem;
+  }
+}
+
 /* Social CTA
  ******************************************************************************/
 
 .social-cta
 {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 768px)
+{
+  .social-cta
+  {
+    line-height: 2.8125rem;
+  }
 }
 
 .social-cta .social-icons
@@ -327,8 +365,7 @@ h5
 .social-cta .social-icon
 {
   display: inline-block;
-  margin: 0 0.5rem;
-  line-height: 2.8125rem;
+  margin: 0 0.625rem;
   vertical-align: middle;
 }
 
@@ -337,6 +374,7 @@ h5
   display: block;
   height: 1.625rem;
   width: auto;
+  margin-top: -0.5rem;
 }
 
 .social-cta .dropdown
@@ -347,13 +385,14 @@ h5
   right: -7.1875rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   width: 17rem;
   text-align: left;
   line-height: 1.5;
   font-size: 0.75rem;
   color: #000;
   background-color: #fff;
+  border-radius: 5px;
   box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
 }
 
@@ -366,7 +405,7 @@ h5
 {
   .social-cta .dropdown
   {
-    right: 0;
+    right: -1em;
   }
 }
 
@@ -385,7 +424,7 @@ h5
 {
   .social-cta .dropdown > .arrow
   {
-    right: 1.3125rem;
+    right: 2.3125rem;
   }
 }
 
@@ -421,7 +460,7 @@ h5
   padding-bottom: 3rem;
   color: #fff;
   background-color: #0F7C58;
-  background: linear-gradient(180deg, rgba(15,124,88,1) 0%, rgba(3,76,58,1) 35%);
+  background: linear-gradient(180deg, #0F7C58 0%, #034C3A 35%);
   text-align: center;
 }
 
@@ -436,7 +475,8 @@ h5
 
 @media (max-width: 767px)
 {
-  #campaigns-header-container
+  #campaigns-header-container,
+  #campaigns-footer
   {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -470,7 +510,7 @@ h5
   }
 }
 
-@media (min-width: 1456px)
+@media (min-width: 1920px)
 {
   .campaigns-container
   {
@@ -484,7 +524,15 @@ h5
   max-width: 768px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px)
+{
+  #campaigns-header
+  {
+    margin-bottom: 3.5rem;
+  }
 }
 
 #campaigns-header h2
@@ -496,7 +544,15 @@ h5
 {
   #campaigns-header h2
   {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  #campaigns-header .lead
+  {
+    font-size: 2rem;
   }
 }
 
@@ -561,8 +617,17 @@ h5
 
 .campaign-thumbnail figcaption
 {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+}
+
+@media (min-width: 1200px)
+{
+  .campaign-thumbnail figcaption
+  {
+    font-size: 1.5rem;
+  }
 }
 
 /* Campaign slides ************************************************************/
@@ -592,14 +657,39 @@ h5
 .campaign-slide figcaption
 {
   display: block;
-  padding-top: 0.2em;
   padding-right: 1em;
-  padding-bottom: 0.2em;
   padding-left: 1em;
   background-color: #ED1E45;
   font-family: "Source Sans Pro";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+
+@media (min-width: 768px)
+{
+  .campaign-slide figcaption
+  {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  .campaign-slide figcaption
+  {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    font-size: 2.625rem;
+  }
+}
+
+@media (min-width: 1920px)
+{
+  .campaign-slide figcaption
+  {
+    font-size: 3rem;
+  }
 }
 
 /* Campaign slide controls  ***************************************************/
@@ -614,8 +704,16 @@ h5
 {
   .campaign-slide-controls
   {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  .campaign-slide-controls
+  {
+    margin-bottom: 3rem;
   }
 }
 
@@ -645,16 +743,29 @@ h5
 
 /* Campain slides footer ******************************************************/
 
-#campaigns-footer
+#campaigns-footer .social-cta
 {
-  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1200px)
+{
+  #campaigns-footer .social-cta
+  {
+    margin-top: 3.5rem;
+  }
+}
+
+#campaigns-footer .social-callout
+{
+  font-family: "Source Sans Pro";
+  font-size: 1.25rem;
 }
 
 @media (max-width: 767px)
 {
   #campaigns-footer .social-cta .social-icons
   {
-    margin-top: 0.5rem;
     margin-bottom: 2rem;
   }
 }
@@ -672,21 +783,43 @@ h5
   {
     margin-bottom: 0.5rem;
   }
+
+  #campaigns-footer .social-icon img
+  {
+    margin-top: 0;
+  }
 }
 
 /* Related posts
  ******************************************************************************/
 
-#related-posts
+@media (min-width: 1200px)
 {
-  overflow: auto;
+  #related-posts
+  {
+    overflow: auto;
+  }
 }
 
-.related-post-image
+.related-post
 {
   display: block;
-  width: 100%;
+  padding-top: 100%;
   height: auto;
+  width: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+@media (min-width: 1200px)
+{
+  .related-post { height: 340px; }
+}
+
+@media (min-width: 1920px)
+{
+  .related-post { height: 480px; }
 }
 
 .related-post-shadow
@@ -700,10 +833,27 @@ h5
   background-color: #000;
 }
 
+@media (min-width: 1200px)
+{
+  .related-post-shadow
+  {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
 .related-post-body h2
 {
   font-size: 2rem;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px)
+{
+  .related-post-body h2
+  {
+    font-size: 2.5rem;
+  }
 }
 
 .related-post-body .button
@@ -718,31 +868,29 @@ h5
   {
     position: relative;
     clear: both;
+    padding-top: 0;
+    background-position: left center;
+    background-size: 50% auto;
     overflow: auto;
-  }
-
-  .related-post-image
-  {
-    width: 50%;
   }
 
   .related-post-shadow
   {
-    position: absolute;
-    top: 0;
-    left: 50%;
+    float: right;
     height: 100%;
     width: 50%;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
-  .related-post:nth-child(even) .related-post-image
+  .related-post:nth-child(even)
   {
-    float: right;
+    background-position: right center;
   }
 
   .related-post:nth-child(even) .related-post-shadow
   {
-    left: 0;
+    float: left;
   }
 
   .related-post-body-container
@@ -765,7 +913,10 @@ h5
   {
     position: relative;
     float: left;
+    padding-top: 0;
     width: 33.33333%;
+    background-position: center;
+    background-size: 100% auto;
   }
 
   .related-post-shadow
