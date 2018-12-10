@@ -12,8 +12,7 @@
           <figure>
             <img
               alt="{{ slide.alt | translate('campaign-' + _loop.index | string + '-' + loop.index | string + '-alt', 'alt text') }}"
-              src="/img/gift-of-ad-blocking/campaign-slide-{{ _loop.index | string + '-' + loop.index | string }}.jpg"
-              srcset="/img/gift-of-ad-blocking/campaign-slide-{{ _loop.index | string + '-' + loop.index | string }}-2x.jpg 2x" />
+              src="/img/gift-of-ad-blocking/campaign-slide-{{ _loop.index | string + '-' + loop.index | string }}.jpg" />
             <figcaption>{{ slide.caption | translate('campaign-' + _loop.index | string + '-' + loop.index | string + '-caption', 'image caption') }}</figcaption>
           </figure>
         </li>
