@@ -1,2 +1,5 @@
 <script src="/js/cookies.js"></script>
-<script src="/js/main.js"></script>
+
+{% if not nonavbar %}
+  <script src="/js/main.js"></script>
+{% endif %}

@@ -1,0 +1,24 @@
+{% from 'data/gift-of-ad-blocking' import related_posts %}
+
+<aside id="related-posts">
+  <div id="related-posts-container">
+  {% for post in related_posts %}
+
+    <article class="related-post" style="background-image: url(/img/gift-of-ad-blocking/related-post-{{ loop.index }}.jpg)">
+      <div class="related-post-shadow">
+        <div class="related-post-body-container">
+          <div class="related-post-body">
+            <h2><a>{{ post.title | translate('related-post-' + loop.index | string + '-title', 'post title') }}</a></h2>
+            <a
+              class="button bg-red"
+              href="{{ post.href }}">
+              {{ "Read more" | translate('read-more-button-label', 'button-label') }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    {% endfor %}
+  </div>
+</aside>

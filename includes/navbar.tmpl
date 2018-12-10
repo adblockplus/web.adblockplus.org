@@ -1,5 +1,7 @@
 {% from "macros/pageitem" import pageitem %}
 
+{% if not nonavbar %}
+
 <nav id="navbar">
   <div class="container">
     {{ "index" | linkify(id="navbar-logo") }}
@@ -39,3 +41,5 @@
     </ul>{# #navbar-menu #}
   </div>{# .container #}
 </nav>{# #navbar #}
+
+{% endif %}
