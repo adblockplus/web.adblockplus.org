@@ -325,7 +325,7 @@ h5
 /* Social CTA
  ******************************************************************************/
 
-.social-cta
+.story-cta
 {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
@@ -333,13 +333,13 @@ h5
 
 @media (min-width: 768px)
 {
-  .social-cta
+  .story-cta
   {
     line-height: 2.8125rem;
   }
 }
 
-.social-cta .social-icons
+.story-cta .social-icons
 {
   display: block;
   margin-top: 1rem;
@@ -349,27 +349,27 @@ h5
 
 @media (min-width: 768px)
 {
-  .social-cta .social-icons
+  .story-cta .social-icons
   {
     display: inline-block;
     margin-top: 0;
   }
 }
 
-.social-cta .dropdown-container
+.story-cta .dropdown-container
 {
   display: inline-block;
   position: relative;
 }
 
-.social-cta .social-icon
+.story-cta .social-icon
 {
   display: inline-block;
   margin: 0 0.625rem;
   vertical-align: middle;
 }
 
-.social-cta .social-icon img
+.story-cta .social-icon img
 {
   display: block;
   height: 1.625rem;
@@ -377,7 +377,7 @@ h5
   margin-top: -0.5rem;
 }
 
-.social-cta .dropdown
+.story-cta .dropdown
 {
   display: none;
   position: absolute;
@@ -396,20 +396,20 @@ h5
   box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
 }
 
-.social-cta .dropdown.active
+.story-cta .dropdown.active
 {
   display: block;
 }
 
 @media (min-width: 768px)
 {
-  .social-cta .dropdown
+  .story-cta .dropdown
   {
     right: -1em;
   }
 }
 
-.social-cta .dropdown > .arrow
+.story-cta .dropdown > .arrow
 {
   position: absolute;
   right: 50%;
@@ -422,14 +422,14 @@ h5
 
 @media (min-width: 768px)
 {
-  .social-cta .dropdown > .arrow
+  .story-cta .dropdown > .arrow
   {
     right: 2.3125rem;
   }
 }
 
-.social-cta .dropdown > .arrow::after,
-.social-cta .dropdown > .arrow::before
+.story-cta .dropdown > .arrow::after,
+.story-cta .dropdown > .arrow::before
 {
   display: block;
   position: absolute;
@@ -439,13 +439,13 @@ h5
   border-style: solid;
 }
 
-.social-cta .dropdown > .arrow::before
+.story-cta .dropdown > .arrow::before
 {
   top: 0;
   border-bottom-color: rgba(0,0,0,.06);
 }
 
-.social-cta .dropdown > .arrow::after
+.story-cta .dropdown > .arrow::after
 {
   top: 1px;
   border-bottom-color: #fff;
@@ -743,20 +743,20 @@ h5
 
 /* Campain slides footer ******************************************************/
 
-#campaigns-footer .social-cta
+#campaigns-footer .story-cta
 {
   margin-top: 1.5rem;
 }
 
 @media (min-width: 1200px)
 {
-  #campaigns-footer .social-cta
+  #campaigns-footer .story-cta
   {
     margin-top: 3.5rem;
   }
 }
 
-#campaigns-footer .social-callout
+#campaigns-footer .social-cta
 {
   font-family: "Source Sans Pro";
   font-size: 1.25rem;
@@ -764,7 +764,7 @@ h5
 
 @media (max-width: 767px)
 {
-  #campaigns-footer .social-cta .social-icons
+  #campaigns-footer .story-cta .social-icons
   {
     margin-bottom: 2rem;
   }
@@ -772,14 +772,14 @@ h5
 
 @media (min-width: 768px)
 {
-  #campaigns-footer .social-cta,
-  #campaigns-footer .social-callout
+  #campaigns-footer .story-cta,
+  #campaigns-footer .social-cta
   {
     line-height: 2.8125rem;
     vertical-align: middle;
   }
 
-  #campaigns-footer .social-cta
+  #campaigns-footer .story-cta
   {
     margin-bottom: 0.5rem;
   }
