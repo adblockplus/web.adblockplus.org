@@ -140,7 +140,7 @@ We use Google Analytics, a web analytics service from Google Inc. ("Google"), on
 
 You can deactivate Google Analytics if you do not want to help us improve our products.
 
-[Change cookie settings](opens cookie settings panel)
+<? include cookie/settings-link ?>
 
 ##### Third-party functions
 
