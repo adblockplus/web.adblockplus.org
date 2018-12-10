@@ -1,3 +1,7 @@
 <link rel="stylesheet" href="/css/defaults.css">
 <link rel="stylesheet" href="/css/fonts.css">
 <link rel="stylesheet" href="/css/main.css">
+
+{% if style %}
+  <link rel="stylesheet" href="/css/{{ style }}">
+{% endif %}
