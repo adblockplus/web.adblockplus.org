@@ -35,13 +35,13 @@
 
   var dataLayer = root.dataLayer = root.dataLayer || [];
 
-  function gtag()
+  var gtag = root.gtag = function()
   {
     dataLayer.push(arguments);
-  }
+  };
 
   gtag("js", new Date());
-  gtag("config", "UA-18643396-6", { anonymize_ip: true });
+  gtag("config", "UA-18643396-6", { anonymize_ip: true, transport_type: 'beacon' });
 
   function loadGoogleAnalytics()
   {
@@ -68,26 +68,26 @@
 
     function toggleCookieNotice()
     {
-      body.classList.toggle("show-cookies-notice");
-      body.classList.remove("show-cookies-settings");
+      doc.body.classList.toggle("show-cookies-notice");
+      doc.body.classList.remove("show-cookies-settings");
     }
 
     function closeCookieNotice()
     {
-      body.classList.remove("show-cookies-notice");
-      body.classList.remove("show-cookies-settings");
+      doc.body.classList.remove("show-cookies-notice");
+      doc.body.classList.remove("show-cookies-settings");
     }
 
     function toggleCookieSettings()
     {
-      body.classList.toggle("show-cookies-settings");
+      doc.body.classList.toggle("show-cookies-settings");
     }
 
     function onCookieSettingsBlur(event)
     {
       if (
         // Is the cookie settings dropup open?
-        body.classList.contains("show-cookies-settings") &&
+        doc.body.classList.contains("show-cookies-settings") &&
         root.innerWidth >= 576 &&
         root.innerHeight >= 575 &&
 
@@ -156,4 +156,4 @@
     }
 
   }, false);
-}(window, document, document.body));
+}(window, document));

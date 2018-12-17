@@ -28,7 +28,12 @@
       <? include gift-of-ad-blocking/social-icons-white ?>
     </div>
     <p>
-      <a href="index" class="button bg-red">{{ campaigns-footer-button-label[button label] Get the gift of ad blocking }}</a>
+      <a
+        data-ga='{"event_category": "Learn more button", "event_action": "Learn more", "event_label": "GOAB campaign"}'
+        href="index"
+        class="button bg-red">
+        {{ campaigns-footer-button-label[button label] Get the gift of ad blocking }}
+      </a>
     </p>
   </footer>
 
