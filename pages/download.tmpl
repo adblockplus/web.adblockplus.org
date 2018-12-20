@@ -19,14 +19,14 @@ template=minimal
     "title": "Block ads on any desktop browser",
     "description": "By clicking any of the links below, you agree to our " +  "terms" | linkify  + "Terms of Use</a>.",
     "platforms": [
-      { "name": "Chrome", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
-      { "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" },
-      { "name": "Internet Explorer", "url": "https://eyeo.to/adblockplus/ie_install/" },
-      { "name": "Safari", "url": "https://eyeo.to/adblockplus/safari_install/" },
-      { "name": "Edge (beta)", "url": "https://eyeo.to/adblockplus/edge_install/" },
-      { "name": "Opera", "url": "https://eyeo.to/adblockplus/opera_install/" },
-      { "name": "Maxthon", "url": "http://www.maxthon.com/mx5/features/ad-blocker/" },
-      { "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
+      { "id": "chrome", "name": "Chrome", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
+      { "id": "firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" },
+      { "id": "msie", "name": "Internet Explorer", "url": "https://eyeo.to/adblockplus/ie_install/" },
+      { "id": "safari", "name": "Safari", "url": "https://eyeo.to/adblockplus/safari_install/" },
+      { "id": "msedge", "name": "Edge (beta)", "url": "https://eyeo.to/adblockplus/edge_install/" },
+      { "id": "opera", "name": "Opera", "url": "https://eyeo.to/adblockplus/opera_install/" },
+      { "id": "maxthon", "name": "Maxthon", "url": "http://www.maxthon.com/mx5/features/ad-blocker/" },
+      { "id": "yandexbrowser", "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
     ]
   },
   {
@@ -35,9 +35,9 @@ template=minimal
     "icon_alt": "Mobile icon",
     "title": "Block ads on your mobile browser",
     "platforms": [
-      { "name": "Samsung Internet (Android)", "url": "https://eyeo.to/adblockplus/android_samsung_install/" },
-      { "name": "Safari (iOS)", "url": "https://eyeo.to/adblockplus/ios_safari_install/" },
-      { "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" }
+      { "id": "android_samsung", "name": "Samsung Internet (Android)", "url": "https://eyeo.to/adblockplus/android_samsung_install/" },
+      { "id": "safari_ios", "name": "Safari (iOS)", "url": "https://eyeo.to/adblockplus/ios_safari_install/" },
+      { "id": "firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" }
     ]
   },
   {
@@ -46,8 +46,8 @@ template=minimal
     "icon_alt": "Adblock Browser logo",
     "title": "Block ads in a dedicated ad-blocking browser",
     "platforms": [
-      { "name": "Adblock Browser (Android)", "url": "https://eyeo.to/adblockbrowser/android/" },
-      { "name": "Adblock Browser (iOS)", "url": "https://eyeo.to/adblockbrowser/ios/" }
+      { "id": "abb_android", "name": "Adblock Browser (Android)", "url": "https://eyeo.to/adblockbrowser/android/" },
+      { "id": "abb_ios", "name": "Adblock Browser (iOS)", "url": "https://eyeo.to/adblockbrowser/ios/" }
     ]
   }
 ] %}
@@ -83,7 +83,12 @@ template=minimal
           {% for platform in device.platforms %}
             <li>
               {% set platform_identifier = device.id + "-product-name-" + loop.index | string  %}
-              <a href="{{ platform.url }}">{{ platform.name | translate(platform_identifier, "Product name") }}</a>{{ ", " if loop.index != loop.length }}
+              <a
+                href="{{ platform.url }}"
+                data-ga='{"event_category": "Download_button", "event_action": "Download", "event_label": "Downloaded_{{ platform.id }}"}'
+              >
+                {{ platform.name | translate(platform_identifier, "Product name") }}
+              </a>{{ ", " if loop.index != loop.length }}
             </li>
           {% endfor %}
         </ul>

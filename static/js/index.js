@@ -71,6 +71,21 @@
       );
 
       heroDownloadButton.textContent = heroDownloadButtonTemplate.textContent;
+
+      var gaData;
+
+      try {
+        gaData = JSON.parse(heroDownloadButton.getAttribute("data-ga"));
+      } catch (error) {
+        gaData = {
+          "event_category": "Parse Error",
+          "event_action": "Link click"
+        };
+      }
+
+      gaData["event_label"] = "Downloaded_" + browser;
+
+      heroDownloadButton.setAttribute("data-ga", JSON.stringify(gaData));
     }
   }
 

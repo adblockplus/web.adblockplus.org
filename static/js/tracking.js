@@ -43,7 +43,14 @@ document.addEventListener("click", function(event)
   var siteURL = document.documentElement.getAttribute('data-siteurl');
 
   // if is internal link
-  if (event.target.origin === siteURL && event.target.href.indexOf("#") === -1) {
+  if (
+    // current url has parameters
+    window.location.href.indexOf("?") !== -1 &&
+    // link is not external
+    event.target.origin === siteURL &&
+    // link is not deep
+    event.target.href.indexOf("#") === -1
+  ) {
     // pass along url parameters
     event.target.href = event.target.href += "?" + (window.location.href.split("?")[1] || "");
   }
