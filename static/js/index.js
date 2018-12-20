@@ -83,7 +83,20 @@
         };
       }
 
-      gaData["event_label"] = "Downloaded_" + browser;
+      if (mobilePlatform)
+        gaData["event_label"] = "Downloaded_" + (
+          mobilePlatform == "ios" ? (
+            browser == "safari" ?
+              "safari_ios"
+              : "abb_ios"
+          ) : (
+            browser == "samsungBrowser" ?
+              "android_samsung"
+              : "abb_android"
+          )
+        );
+      else
+        gaData["event_label"] = "Downloaded_" + browser;
 
       heroDownloadButton.setAttribute("data-ga", JSON.stringify(gaData));
     }
