@@ -34,8 +34,10 @@
     <? include navbar ?>
 
     <div id="content" class="container content {{ localefile == "index" and page }}">
-      {% if not noheading %}
-      <h1>{{title|translate("title")}}</h1>
+      {% if heading %}
+        <h1>{{ heading | translate("heading", "heading") }}</h1>
+      {% elif title and not noheading %}
+        <h1>{{ title | translate("title") }}</h1>
       {% endif %}
 
       {% if not notoc %}
