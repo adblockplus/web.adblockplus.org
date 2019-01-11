@@ -1,62 +1,141 @@
 {
-  "s1": {
-    "message": "Hoe blokkeer ik een banner?"
-  },
-  "s2": {
-    "message": "U kunt op elke afbeelding of frame rechtsklikken en \"Adblock\" uit het contextmenu kiezen. Dit opent een dialoogvenster waar u het nieuwe filter kunt verbeteren voordat u het toevoegt. Vervang regust delen van het banner's adres door wildcards (* — het ster symbool) op een filter te maken die ook andere banners met vergelijkbare adressen blokkeert. Kijk voor meer informatie op <a>Het schrijven van Adblock Plus filters</a>."
-  },
-  "s3": {
-    "message": "Laat me zien hoe dat werkt"
-  },
-  "s33": {
-    "message": "De banner is een object (Flash of Java) en heeft geen context menu. Wat nu?"
-  },
-  "s34": {
-    "message": "Adblock Plus heeft de mogelijkheid genaamd \"Tabbladen weergeven op Flash en Java\". Als deze optie geactiveerd is (standaard), laat het een knop genaamd \"Blokkeren\" zien in de rechter bovenhoek van elk object (rechts onder als er niet genoeg ruimte is). Als u op deze knop klikt, wordt het object geblokkeerd."
-  },
-  "s36": {
-    "message": "U kunt ook de lijst met blokkeerbare onderdelen openen (druk op Ctrl+Shift+V of klik op het selectie pijltje naast het Adblock Plus pictogram in de werkbalk en kies \"Blokkeerbare onderdelen openen\") en kijk daar voor een object."
-  },
-  "s37": {
-    "message": "Laate me zien hoe dat werkt"
-  },
-  "s38": {
-    "message": "U kunt op de Type kolom kop klikken — dit sorteert de lijst op type en maakt het makkelijker om objecten te vinden."
-  },
-  "s39": {
-    "message": "De lijst met blokkeerbare onderdelen toont veel adressen. Hoe weer ik welke de banner is?"
-  },
-  "s4": {
-    "message": "Soms wil ik dat Adblock Plus uitgeschakeld is. Hoe doe ik dit het eenvoudigst?"
-  },
-  "s40": {
-    "message": "U kunt kijken naar adressen die anders beginnen dan het adres van de pagina die u bekijkt. Banners hebben meestal ook kenmerkende sleutelwoorden zoals \"banner\" of \"ad\" in hun adres. Klik op een adres om het overeenkomende element te laten knipperen op de pagina (helaas werkt dit niet voor alle objecttypen). Als u het nog niet zeker weet, klik dan met de middelste muis knop op het adres om het in een nieuw tabblad te openen — daar ziet u zeker of het een banner is."
-  },
-  "s41": {
-    "message": "Is de volgorde van filters van belang voor de prestatie?"
-  },
-  "s42": {
-    "message": "Nee. Als Adblock Plus een adres vergelijkt met uw filterlijst, bepaalt het zelf automatisch de beste volgorde waarop de filters getest moeten worden, in feite worden de meeste filters helemaal niet meegenomen. De volgorde van filters die u kunt wijzigen in het Voorkeuren scherm is er alleen voor uw gemak, het heeft geen gevolgen voor de prestatie."
-  },
-  "s43": {
-    "message": "Zijn reguliere expressie sneller dan \"gewone\" filters?"
-  },
-  "s44": {
-    "message": "Meestal niet. Adblock Plus zet \"normale\" filters om in reguliere expressies en werkt intern alleen met reguliere expressies — er is geen verschil tussen de filters <code>banner</code> en <code>/banner/</code>."
-  },
-  "s45": {
-    "message": "Reguliere expressies worden vaak gebruikt om de filterlijst kleiner te maken en vervangen een aantal filters door een reguliere expressie. De vuistregel is \"minder filters is sneller\", maar in dit geval gaat dat niet altijd op. Ingewikkelde reguliere expressies hebben veel meer tijd nodig om geëvalueerd te worden, het kan sneller zijn om een aantal eenvoudige filters te gebruiken."
-  },
-  "s46": {
-    "message": "Reguliere expressies geven u meer flexibiliteit, daar is hun gebruik altijd gerechtvaardigd. Bijvoorbeeld de reguliere expressie <code>/adv(?!ies)/</code> zal <code>adv</code> en <code>advert</code> en <code>advertentie</code> blokkeren, maar niet <code>advies</code> — iets wat zonder eenvoudige wildcards niet mogelijk zou zijn."
-  },
-  "s5": {
-    "message": "U kunt op het pijltje van het Adblock Plus pictogram in de werkbalk klikken om het context menu tevoorschijn te laten komen. Daar heeft u de mogelijkheid om Adblock Plus uit te schakelen/weer in te schakelen. Als u dat niet snel genoeg vindt, kunt u ook met de middelste muistoets op dit pictogram klikken, dit schakelt Adblock Plus ook uit of weer in."
-  },
-  "s6": {
-    "message": "In het menu heeft u ook de mogelijkheid om Adblock Plus uit te schakelen op een bepaalde pagina. Dit voegt een uitzonderingsregel toe, zoals <code>@@||adblockplus.org^$document</code> aan uw filterlijst. U kunt meer informatie over uitzonderingsregeks vinden in <a>Het schrijven van Adblock Plus filters</a>."
-  },
-  "title": {
-    "message": "FAQ - Standaard functionaliteit"
-  }
+    "s1": {
+        "message": "Hoe blokkeer ik een banner?"
+    },
+    "s2": {
+        "message": "U kunt met de rechtermuisknop op een afbeelding of frame klikken en 'Adblock' kiezen vanuit het contextmenu. Dit opent een dialoogvenster waarin u het nieuwe filter kunt verbeteren voordat u het toevoegt. Voel u vrij om gedeeltes van het adres van een banner te vervangen door jokertekens (* – het stersymbool) om het filter ook andere banners met vergelijkbare adressen te laten blokkeren. Lees <a>Filters voor Adblock Plus schrijven<\/a> voor meer informatie."
+    },
+    "s3": {
+        "message": "Tonen hoe dit werkt"
+    },
+    "s4": {
+        "message": "Soms wil ik dat Adblock Plus is uitgeschakeld. Hoe doe ik dit het eenvoudigst?"
+    },
+    "s5": {
+        "message": "U kunt op het pijltje van het Adblock Plus-pictogram in de werkbalk klikken om het menu zichtbaar te maken. Daar hebt u de mogelijkheid om Adblock Plus uit te schakelen \/ weer in te schakelen. Als u dat niet snel genoeg vindt, kunt u ook met de middelste muisknop op dit pictogram klikken; dit schakelt Adblock Plus ook uit of weer in."
+    },
+    "s6": {
+        "message": "In het menu hebt u ook de mogelijkheid om Adblock Plus op een bepaalde pagina uit te schakelen. Dit voegt een uitzonderingsregel toe aan uw lijst van filters, zoals <code>@@||adblockplus.org^$document<\/code>. Meer informatie over uitzonderingsregels kunt u vinden in <a>Filters voor Adblock Plus schrijven<\/a>."
+    },
+    "s8": {
+        "message": "Kan ik mijn favoriete website steunen door advertenties te downloaden maar te verbergen?"
+    },
+    "s9": {
+        "message": "Nee. De meeste adverteerders betalen per klik, dus als u advertenties verbergt, steunt u de website in kwestie eigenlijk niet. Zelfs in het onwaarschijnlijke geval dat er sprake is van betalingen per weergave is het gebruik van JavaScript voor controle of advertenties zichtbaar zijn weinigzeggend voor adverteerders. Daarnaast zou het downloaden maar verbergen van advertenties om adverteerders om de tuin te leiden verwant zijn aan bedrog."
+    },
+    "s10": {
+        "message": "Kort gezegd, als u uw favoriete websites wilt steunen, zult u deze op de witte lijst moeten zetten om Adblock Plus op die websites uit te schakelen."
+    },
+    "s11": {
+        "message": "Hoe kan ik mijn filterlijst handmatig bijwerken?"
+    },
+    "s12": {
+        "message": "In Firefox:"
+    },
+    "s13": {
+        "message": "Selecteer Firefox >> Add-ons (voor Mac OS X \/ Linux: selecteer 'Extra' vanuit de menubalk >> 'Add-ons'). Hierdoor wordt de add-onbeheerder van Firefox geopend."
+    },
+    "s14": {
+        "message": "Klik op 'Extensies', zoek daar naar Adblock Plus, ga naar 'Opties' en klik daarna op 'Filtervoorkeuren...'."
+    },
+    "s15": {
+        "message": "Druk op de sneltoets Ctrl+Shift+T om alle filterlijstabonnementen tegelijk bij te werken, of klik met de rechtermuisknop op een filterabonnement en kies 'Filters bijwerken'."
+    },
+    "s16": {
+        "message": "In Chrome:"
+    },
+    "s17": {
+        "message": "Klik op de menuknop van Chrome, ga naar 'Extra' en kies 'Extensies'."
+    },
+    "s18": {
+        "message": "Zoek daar naar Adblock Plus en klik onder de beschrijving ervan op 'Opties'."
+    },
+    "s19": {
+        "message": "Klik op de knop 'Nu bijwerken'."
+    },
+    "s20": {
+        "message": "In Opera:"
+    },
+    "s21": {
+        "message": "Klik op de menuknop (voor Mac OS X \/ Linux: 'Extra'), selecteer 'Extensies' >> 'Extensies beheren'."
+    },
+    "s22": {
+        "message": "Zoek daar naar Adblock Plus, klik aan de rechterkant op het kleine gereedschapspictogram en kies 'Voorkeuren'."
+    },
+    "s23": {
+        "message": "Klik op de knop 'Nu bijwerken'."
+    },
+    "s24": {
+        "message": "Hoe kan ik een filterlijst verwijderen?"
+    },
+    "s25": {
+        "message": "In Firefox"
+    },
+    "s26": {
+        "message": "Ga naar Extra >> Add-ons >> Voorkeuren (naast Adblock Plus) >> Filtervoorkeuren.\n  Selecteer de filterlijst die u wilt verwijderen, klik op de knop 'Acties', en selecteer 'Verwijderen'.\n  Klik op 'OK' voor bevestiging."
+    },
+    "s27": {
+        "message": "In Google Chrome"
+    },
+    "s28": {
+        "message": "Ga naar Venster >> Extensies >> Opties (van de Adblock Plus-extensie).\n  Klik op de rode 'X' naast de filterlijst die u wilt verwijderen, en klik op 'OK' voor bevestiging."
+    },
+    "s29": {
+        "message": "In Opera (in Windows\/Ubuntu)"
+    },
+    "s30": {
+        "message": "Klik op de menuknop en ga naar Extensies >> Extensies beheren >> Klik op het gereedschapspictogram >> Voorkeuren.\n  Klik op de rode 'X' naast de filterlijst die u wilt verwijderen, en klik op 'OK' voor bevestiging."
+    },
+    "s31": {
+        "message": "In Opera (op Mac OS X)"
+    },
+    "s32": {
+        "message": "Ga naar Extra >> Extensies >> Extensies beheren >> Klik op het gereedschapspictogram >> Voorkeuren.\n  Klik op de rode 'X' naast de filterlijst die u wilt verwijderen, en klik op 'OK' voor bevestiging."
+    },
+    "s33": {
+        "message": "De banner is een object (Flash of Java) en heeft geen contextmenu. Wat nu?"
+    },
+    "s34": {
+        "message": "Adblock Plus heeft een optie met de titel 'Tabs tonen bij Flash en Java'. Als deze optie is geactiveerd (standaard), wordt rechts boven elk object een knop 'Blokkeren' weergegeven (rechts onder als er niet genoeg ruimte is). Door op deze knop te klikken, wordt het object geblokkeerd."
+    },
+    "s36": {
+        "message": "U kunt ook de lijst met blokkeerbare items openen (druk op Ctrl+Shift+V of klik op het selectiepijltje naast het Adblock Plus-pictogram in de werkbalk en kies 'Blokkeerbare items openen') en daar naar een object zoeken."
+    },
+    "s37": {
+        "message": "Tonen hoe dit werkt"
+    },
+    "s38": {
+        "message": "U kunt op de kolomkoptekst Type klikken – dit sorteert de lijst op type en maakt het makkelijker om objecten te vinden."
+    },
+    "s39": {
+        "message": "De lijst van blokkeerbare items toont veel adressen. Hoe weet ik welke de banner is?"
+    },
+    "s40": {
+        "message": "U kunt naar adressen zoeken die anders beginnen dan het adres van de pagina die u bekijkt. Banners hebben meestal ook kenmerkende sleutelwoorden zoals 'banner' of 'ad' in hun adres. Klik op een adres om het overeenkomende element op de pagina te laten knipperen (helaas werkt dit niet voor alle objecttypen). Als u het nog niet zeker weet, klik dan met de middelste muisknop op het adres om het in een nieuw tabblad te openen – daar ziet u zeker of het een banner is."
+    },
+    "s41": {
+        "message": "Is de volgorde van filters van belang voor prestaties?"
+    },
+    "s42": {
+        "message": "Nee. Als Adblock Plus een adres vergelijkt met uw filterlijst, bepaalt het zelf automatisch de beste volgorde waarop de filters moeten worden getest; in feite worden de meeste filters helemaal buiten beschouwing gelaten. De volgorde van filters die u in het dialoogvenster Voorkeuren kunt wijzigen, is er alleen voor uw gemak; het heeft geen gevolgen voor de prestaties."
+    },
+    "s43": {
+        "message": "Zijn reguliere expressies sneller dan 'gewone' filters?"
+    },
+    "s44": {
+        "message": "Meestal is dit niet het geval. Adblock Plus zet 'normale' filters om naar reguliere expressies en werkt intern alleen met reguliere expressies – er is geen verschil tussen de filters <code>banner<\/code> en <code>\/banner\/<\/code>."
+    },
+    "s45": {
+        "message": "Reguliere expressies worden vaak gebruikt om de filterlijst kleiner te maken en vervangen een aantal filters door een reguliere expressie. De vuistregel is 'minder filters is sneller', maar in dit geval gaat dat niet altijd op. Ingewikkelde reguliere expressies hebben veel tijd nodig om te worden geëvalueerd; het kan sneller zijn om een aantal eenvoudige filters te gebruiken."
+    },
+    "s46": {
+        "message": "Reguliere expressies geven u echter meer flexibiliteit, daar is hun gebruik altijd gerechtvaardigd. De reguliere expressie <code>\/adv(?!ice)\/<\/code> zal bijvoorbeeld <code>adv<\/code> en <code>advert<\/code> en <code>advertisement<\/code> blokkeren, maar niet <code>advice<\/code> – iets wat met eenvoudige jokertekens niet mogelijk zou zijn."
+    },
+    "title": {
+        "message": "FAQ - Basisfunctionaliteit"
+    },
+    "navbar-logo-text": {
+        "message": "Adblock <strong>Plus<\/strong>",
+        "description": "Navbar logo text"
+    }
 }
