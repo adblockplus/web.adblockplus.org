@@ -11,6 +11,17 @@ template=minimal
     padding: 3em 1em;
   }
 
+  @media (max-width: 1024px)
+  {
+    #hero-download
+    {
+      width: 100%;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   @media (min-width: 576px) and (max-width: 1023px)
   {
     /* add spacing left/right on tablets */
@@ -122,12 +133,16 @@ template=minimal
     margin-top: 2em;
     /* prevent default full-width on small tablets */
     max-width: 550px;
-  }
-
-  #hero-download-video
-  {
     /* provide a little space between thumbnail and border + shadow */
     padding: 1em 1em 0 1em;
+  }
+
+  @media (max-width: 1023px)
+  {
+    #hero-download-video
+    {
+      margin-bottom: -35%;
+    }
   }
 
   @media (min-width: 1024px)
@@ -144,7 +159,7 @@ template=minimal
 
   #features
   {
-    padding-top: 3em;
+    padding-top: 8em;
     padding-bottom: 3em;
     text-align: center;
     background-color: #F2F2F2;
@@ -163,7 +178,7 @@ template=minimal
   {
     #features
     {
-      padding-top: 4em;
+      padding-top: 8em;
       padding-bottom: 4em;
       padding-left: 0;
       padding-right: 0;
@@ -173,7 +188,7 @@ template=minimal
 
   @media (min-width: 768px)
   {
-    #features { padding-top: 6em; }
+    #features { padding-top: 12em; }
   }
 
   /* undo .one-half column on small screens */
