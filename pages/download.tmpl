@@ -86,7 +86,7 @@ template=minimal
             </li>
           {% endfor %}
         </ul>
-        {% if device.id == 'desktop' and locale not in ('de', 'fr') %}
+        {% if device.id == 'desktop' and locale == 'en' %}
           <p class="alert">{{ 'NEW! <a href="ad-blocker-safari">Adblock Plus for Safari on macOS</a>' | translate('new-safari-alert', 'alert text') }}</p>
         {% endif %}
       </div>
