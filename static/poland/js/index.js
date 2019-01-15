@@ -4,8 +4,8 @@
 {
   var desktopBrowsers = {
     "chrome": "https://eyeo.to/adblockplus/chrome_install/polish-lp",
-    "opera": "https://eyeo.to/adblockplus/yandex_install/polish-lp",
-    "yandexbrowser": "https://eyeo.to/adblockplus/chrome_install/polish-lp",
+    "opera": "https://eyeo.to/adblockplus/opera_install/polish-lp",
+    "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install/polish-lp",
     "msie": "https://eyeo.to/adblockplus/ie_install/polish-lp",
     "msedge": "https://eyeo.to/adblockplus/edge_install/polish-lp",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/polish-lp",
