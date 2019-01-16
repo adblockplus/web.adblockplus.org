@@ -26,7 +26,7 @@ template=minimal
       { "name": "Edge (beta)", "url": "https://eyeo.to/adblockplus/edge_install/" },
       { "name": "Opera", "url": "https://eyeo.to/adblockplus/opera_install/" },
       { "name": "Maxthon", "url": "http://www.maxthon.com/mx5/features/ad-blocker/" },
-      { "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
+      { "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
     ]
   },
   {
@@ -87,6 +87,9 @@ template=minimal
             </li>
           {% endfor %}
         </ul>
+        {% if device.id == 'desktop' and locale == 'en' %}
+          <p class="alert">{{ 'NEW! <a href="ad-blocker-safari">Adblock Plus for Safari on macOS</a>' | translate('new-safari-alert', 'alert text') }}</p>
+        {% endif %}
       </div>
     </div>
     {% endfor %}

@@ -1,106 +1,60 @@
-title=Adblock Plus for Safari is changing
-description=Apple’s extension changes mean we have to change Adblock Plus, but don’t worry - we’ve still got your back on Mac!
-noheading=1
+title=Adblock Plus | Free ad blocker for Safari
+description=Download Adblock Plus, a free ad blocker for Safari, and block annoying ads, pop-ups, trackers & more! Fast ad blocker for macOS.
 template=minimal
 
 <style>
-  /* Intro section
+  /* #hero-download
    ****************************************************************************/
 
-  #intro
+  #hero-download
   {
-    width: auto;
-    max-width: 480px;
-    margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    padding: 3em 1em;
   }
 
-  @media (min-width: 576px)
+  @media (max-width: 1024px)
   {
-    #intro { max-width: 480px; }
-  }
-
-  @media (min-width: 768px)
-  {
-    #intro
+    #hero-download
     {
-      max-width: 540px;
-      margin-top: 3em;
+      width: 100%;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
-  /* #intro-alert */
-
-  #intro-alert
+  @media (min-width: 576px) and (max-width: 1023px)
   {
-    display: inline-block;
-    margin-bottom: 1em;
-    margin-top: 1em;
-    font-size: smaller;
-    font-weight: normal;
-  }
-
-  /* highlight effect */
-  #intro-alert::after
-  {
-    display: block;
-    margin-top: -9px;
-    border-bottom: 7px solid #FFD490;
-    content: " ";
-  }
-
-  @media (min-width: 768px)
-  {
-    /* slightly enlarge and bolden text */
-    #intro-alert
+    /* add spacing left/right on tablets */
+    #hero-download
     {
-      font-size: inherit;
-      font-weight: bolder;
-    }
-
-    /* slightly enlarge highlight */
-    #intro-alert::after
-    {
-      border-bottom: 8px solid #FFD490;
+      padding-left: 3em;
+      padding-right: 3em;
     }
   }
 
-  /* alert icon */
-  #intro-alert img
+  @media (max-width: 1023px)
   {
-    height: 1.25em;
-    width: 1.5em;
+    /* force hero unit columns to break on large tablets */
+    #hero-download .column
+    {
+      width: 100%;
+    }
   }
 
-  [dir="ltr"] #intro-alert img { margin-right: 0.2em; }
-
-  [dir="rtl"] #intro-alert img { margin-left: 0.2em; }
-
-  @media (min-width: 768px)
+  @media (min-width: 1024px)
   {
-    /* better center icon to highlight */
-    #intro-alert img { margin-bottom: -2px;}
-
-    /* noticably separate icon from text */
-    [dir="ltr"] #intro-alert img { margin-right: 0.5em; }
-
-    [dir="rtl"] #intro-alert img { margin-left: 0.5em; }
+    #hero-download
+    {
+      padding-top: 6em;
+      padding-bottom: 6em;
+    }
   }
 
-  /* margin provided by alert above */
-  #intro h1 { margin-top: 0; }
-
-  #intro-body
+  #hero-download h1
   {
-    margin-top: 1em;
-    margin-bottom: 2em;
-  }
-
-  @media (min-width: 768px)
-  {
-    #intro-body { margin-bottom: 3em; }
+    /* Spacing is provided by the hero-download section */
+    margin-top: 0;
+    overflow: auto;
   }
 
   /* #intro-button */
@@ -173,35 +127,43 @@ template=minimal
     [dir="rtl"] #intro-button img { float: right; }
   }
 
-  /* Screenshot
-   ****************************************************************************/
-
-  #screenshot
+  #hero-download-video
   {
-    display: block;
-    max-width: 100%;
+    /* add space above on phones & tablets */
     margin-top: 2em;
-    margin-right: auto;
-    margin-left: auto;
+    /* prevent default full-width on small tablets */
+    max-width: 550px;
+    /* provide a little space between thumbnail and border + shadow */
+    padding: 1em 1em 0 1em;
   }
 
-  @media (min-width: 768px)
+  @media (max-width: 1023px)
   {
-    #screenshot { margin-top: 4em; }
+    #hero-download-video
+    {
+      margin-bottom: -35%;
+    }
   }
 
-  /* Features
+  @media (min-width: 1024px)
+  {
+    #hero-download-video
+    {
+      /* keep aligned-top despite padding below */
+      margin-top: -1em;
+    }
+  }
+
+  /* Features section
    ****************************************************************************/
 
   #features
   {
-    padding-top: 3em;
+    padding-top: 8em;
     padding-bottom: 3em;
     text-align: center;
     background-color: #F2F2F2;
   }
-
-  #features h1 { margin: 0; }
 
   @media (min-width: 360px)
   {
@@ -216,7 +178,7 @@ template=minimal
   {
     #features
     {
-      padding-top: 4em;
+      padding-top: 8em;
       padding-bottom: 4em;
       padding-left: 0;
       padding-right: 0;
@@ -226,7 +188,7 @@ template=minimal
 
   @media (min-width: 768px)
   {
-    #features { padding-top: 6em; }
+    #features { padding-top: 12em; }
   }
 
   /* undo .one-half column on small screens */
@@ -248,23 +210,44 @@ template=minimal
     #features .column { width: 50%; }
   }
 
+  #features h2 { position: relative; }
+
+  #features h2 img
+  {
+    display: none;
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    height: 2em;
+    width: auto;
+  }
+
+  @media (min-width: 992px)
+  {
+    #features h2 { padding-left: 3em; }
+
+    #features h2 img { display: block; }
+
+    #features h2 span { display: block; }
+  }
+
   /* override h1 size on small screens */
   @media (min-width: 576px) and (max-width: 991px)
   {
-    #features h1 { margin-bottom: 1.5em; }
+    #features h2 { margin-bottom: 1.5em; }
   }
 
   @media (min-width: 768px) and (max-width: 991px)
   {
-    #features h1 { font-size: 2em; }
+    #features h2 { font-size: 2em; }
   }
 
   /* Avoid wrap on tablets only */
-  #features h1 .avoid-wrap { display: block; }
+  #features h2 span { display: block; }
 
   @media (min-width: 360px) and (max-width: 992px)
   {
-    #features h1 .avoid-wrap { display: inline-block; }
+    #features h2 span { display: inline-block; }
   }
 
   /* .media-group
@@ -342,49 +325,55 @@ template=minimal
       margin: 0;
     }
   }
+
+  /* #footnote
+   ****************************************************************************/
+
+  #footnote
+  {
+    padding-top: 3em;
+    padding-bottom: 2em;
+    font-size: 13px;
+    color: #7d7d7d;
+  }
 </style>
 
-<div id="intro" class="container content">
+<script src="/js/tracking.js"></script>
 
-  <strong id="intro-alert">
-    <img
-      alt="{{ alert-icon-alt[alt text] Alert }}"
-      src="/img/exclamation-triangle-solid.png"
-      srcset="/img/exclamation-triangle-solid-2x.png 2x">
-    {{ safari-changing-alert[alert message] Safari is changing how extensions work }}
-  </strong>
+<div id="hero-download" class="container section">
+  <div class="row">
+    <div class="column one-half content">
+      <header>
+        <h1>
+          {{ hero-heading[heading] Free ad blocker for Safari }}
+        </h1>
+        <p class="subheading">
+          {{ hero-subheading[subheading] Download Adblock Plus for Safari and experience a cleaner and faster web: }}
+        </p>
+      </header>
 
-  <h1>
-    {{ block-ads-safari[heading] <span class="avoid-wrap">Blocking annoying ads on</span> <span class="avoid-wrap">Safari is still possible</span> }}
-  </h1>
+      <ul>
+        <li>{{ hero-item-1[list item] Block annoying ads and pop-ups }}</li>
+        <li>{{ hero-item-2[list item] Stop viruses and malware hidden in ads }}</li>
+        <li>{{ hero-item-3[list item] Acceptable Ads are allowed by default to support websites (<a href="acceptable-ads">learn more</a>)<span class="sup">[<a href="#footnote">1</a>]</span> }} </li>
+      </ul>
 
-  <div id="intro-body">
-    <p>
-      {{ block-ads-safari-1 Due to changes in the way Safari handles extensions, the old version of Adblock Plus for Safari will no longer work. }}
-    </p>
+      <p>
+        {{ hero-tos[legal message] By clicking the button below, you agree to our <a href="terms">Terms of Use</a>. }}
+      </p>
 
-    <p>
-      {{ block-ads-safari-2 The good news is the all-new Adblock Plus for Safari app allows you to continue blocking annoying ads while using Safari. }}
-    </p>
-  </div>
+      <? include safari/install-button ?>
 
-  <p>
-    <? include safari/install-button ?>
-  </p>
-
-  <p>
-    {{ safari-app-features-warning <strong>Note:</strong> This version is missing some features from the old extension. These features will be added with future updates. }}
-  </p>
-
-</div><!-- #intro -->
-
-<div class="container">
-  <img
-    id="screenshot"
-    alt="{{ screenshot-alt[image alt text] Screenshot of Adblock Plus for Safari }}"
-    src="/img/adblock-plus-mac-safari.png"
-    srcset="/img/adblock-plus-mac-safari-2x.png 2x">
-</div>
+    </div>
+    <div id="hero-download-video" class="column one-half">
+      <img
+        class="full-width"
+        src="/img/adblock-plus-macos-safari-laptop.png"
+        srcset="/img/adblock-plus-macos-safari-laptop-2x.png 2x"
+        alt="{{ screenshot-alt[alt text] Adblock Plus for macOS Safari screenshot }}">
+    </div>
+  </div><!-- .row -->
+</div><!-- .container -->
 
 <div id="features" >
 
@@ -392,9 +381,13 @@ template=minimal
     <div class="row">
 
       <div class="column">
-        <h1>
-          {{ features-heading[heading] <span class="avoid-wrap">Get Adblock Plus</span> <span class="avoid-wrap">for Safari</span> }}
-        </h1>
+        <h2 class="h1">
+          <img
+            src="/img/safari-icon.png"
+            srcset="/img/safari-icon.svg 2x"
+            alt="{{ safari-icon-alt[alt text] Safari icon }}">
+          {{ features-heading[heading] <span class="avoid-wrap">Get ad blocker</span> <span class="avoid-wrap">for Safari</span> }}
+        </h2>
       </div>
 
       <div class="column media-group">
@@ -404,14 +397,14 @@ template=minimal
             src="/img/rocket.png"
             srcset="/img/rocket-2x.png 2x"
             alt="{{ feature-faster-alt[alt text] Rocket }}">
-          <h2>
+          <h3>
             {{ feature-faster-heading[heading] Faster, more enjoyable browsing }}
-          </h2>
+          </h3>
           <p>
-            {{ feature-faster-1 We’ve designed Adblock Plus for Safari to be much faster than the current Adblock Plus extension. }}
+            {{ feature-faster-1 We’ve designed the Safari ad blocker to be fast and ultra-light on your Mac’s resources. }}
           </p>
           <p>
-            {{ feature-faster-2 By blocking annoying ads such as pop-ups, video ads and banners, pages load faster. }}
+            {{ feature-faster-2 The app blocks annoying ads such as pop-ups, video ads and banners, enabling pages to load faster. }}
         </div>
 
         <div class="media-item">
@@ -419,14 +412,14 @@ template=minimal
             src="/img/octagon-check.png"
             srcset="/img/octagon-check-2x.png 2x"
             alt="{{ feature-aa-alt[alt text] Checkmark in an octagon }}">
-          <h2>
+          <h3>
             {{ feature-aa-heading[heading] Support fair publishers }}
-          </h2>
+          </h3>
           <p>
             {{ feature-aa-1 Websites need money to stay free. Support them by allowing Acceptable Ads (on by default). }}
           </p>
           <p>
-            {{ feature-aa-2 Want to block all ads? No problem. <a href="acceptable-ads#optout">Learn how</a> }}
+            {{ feature-aa-2 Want to block all ads? No problem. <a href="acceptable-ads#optout" class="block">Learn how</a> }}
           </p>
         </div>
 
@@ -434,3 +427,9 @@ template=minimal
     </div><!-- .row -->
   </div><!-- .container.content -->
 </div><!-- #features -->
+
+<div class="container">
+  <div class="section">
+    <? include footnote ?>
+  </div>
+</div>
