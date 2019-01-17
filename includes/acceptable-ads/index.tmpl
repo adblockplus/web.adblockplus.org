@@ -1,0 +1,7 @@
+{% set is_old = locale != "en" %}
+
+{% if is_old %}
+  <? include acceptable-ads/old ?>
+{% else %}
+  <? include acceptable-ads/new ?>
+{% endif %}
