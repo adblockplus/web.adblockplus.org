@@ -20,6 +20,7 @@ import os
 import tarfile
 import logging
 import re
+import sys
 try:
     from urllib import urlopen
     import urlparse
@@ -82,7 +83,12 @@ def _get_source():
     """
     config_parser = SafeConfigParser()
     with open('settings.ini') as settings_stream:
-        config_parser.read_file(_UTF8_READER(settings_stream))
+        if sys.version.startswith('2.'):
+            config_parser.readfp(_UTF8_READER(settings_stream))
+        else:
+            # In future versions, the `readfp()` would become deprecated
+            # and replaced by `read_file()`.
+            config_parser.read_file(_UTF8_READER(settings_stream))
     return os.environ.get(
         _SOURCE_LOCATIONS['env'],
         config_parser.get(*_SOURCE_LOCATIONS['config']),
