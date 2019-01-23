@@ -148,14 +148,14 @@ title=Allowing acceptable ads in Adblock Plus
 1. {{ disable-ie-step-1[list item] Click the Adblock Plus icon and select **Settings**.  }}
 1. {{ disable-ie-step-2[list item] Uncheck **Allow some nonintrusive advertising**. }}
 
-#### {{ disable-android[heading] Adblock Plus for Android }}
+#### {{ disable-android[heading] Adblock Browser for Android }}
 
 1. {{ disable-android-step-1[list item] Open Adblock Browser for Android. }}
 1. {{ disable-android-step-2[list item] Tap the **menu icon** and select **Settings**. }}
 1. {{ disable-android-step-3[list item] Tap **Ad blocking** > **Acceptable Ads**. }}
 1. {{ disable-android-step-4[list item] Uncheck **Allow some nonintrusive advertising**. }}
 
-#### {{ disable-ios[heading] Adblock Plus for iOS }}
+#### {{ disable-ios[heading] Adblock Browser for iOS }}
 
 1. {{ disable-ios-step-1[list item] Open Adblock Browser for iOS. }}
 1. {{ disable-ios-step-2[list item] Tap the **menu icon** and select **Settings**. }}
@@ -169,7 +169,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 ## {{ do-users-want-aa[heading] Do Adblock Plus users really want Acceptable Ads? }} {: #love }
 
-{{ do-users-want-aa-1 Yes! Eighty three percent [83%](https://blog.hubspot.com/news-trends/why-people-block-ads-and-what-it-means-for-marketers-and-advertisers) of Adblock Plus users don’t mind seeing Acceptable Ads because their browsing experience isn’t ruined by loud, annoying and irrelevant ads. }}
+{{ do-users-want-aa-1 Yes! Eighty three percent ([83%](https://blog.hubspot.com/news-trends/why-people-block-ads-and-what-it-means-for-marketers-and-advertisers)) of Adblock Plus users don’t mind seeing Acceptable Ads because their browsing experience isn’t ruined by loud, annoying and irrelevant ads. }}
 
 ## {{ are-all-aa-blocked[heading] Are all annoying ads blocked? }} {: #annoying }
 
@@ -192,7 +192,7 @@ title=Allowing acceptable ads in Adblock Plus
 {{ get-whitelisted-1 The process of getting your ads whitelisted takes about 10 working days once the ads adhere to the Acceptable Ads standards: }}
 
 1. {{ get-whitelisted-step-1[list item] If your website has ads that comply with the [Acceptable Ads standards](#criteria), simply fill out <a href="https://acceptableads.com/get-whitelisted/" title="{{ get-whitelisted-step-1-1[tooltip] Get Acceptable Ads Whitelisted }}">this form</a>. }}
-2. {{ get-whitelisted-step-2[list item] Someone from [Eyeo](https://www.eyeo.com/), the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria. }}
+2. {{ get-whitelisted-step-2[list item] Someone from [eyeo](https://www.eyeo.com/), the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria. }}
 3. {{ get-whitelisted-step-3[list item] After you have made any necessary changes, both sides sign an <a href="https://adblockplus.org/acceptable-ads-agreements" title="{{ get-whitelisted-step-3-1[tooltip] Link to Acceptable Ads agreements page }}">agreement</a>". }}
 4. We submit the whitelisting proposal [in the forum](https://adblockplus.org/forum/viewforum.php?f=12){: title="Link to Adblock Plus Forum" } and the ads are whitelisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements.
 
