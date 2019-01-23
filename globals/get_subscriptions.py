@@ -108,7 +108,12 @@ def _get_and_configure_settings(source, source_type):
     """
     settings_parser = SafeConfigParser()
     with _SETTINGS_FILE_STREAM[source_type](source) as stream:
-        settings_parser.read_file(_UTF8_READER(stream))
+        if sys.version.startswith('2.'):
+            settings_parser.readfp(_UTF8_READER(stream))
+        else:
+            # In future versions, the `readfp()` would become deprecated
+            # and replaced by `read_file()`.
+            settings_parser.read_file(_UTF8_READER(stream))
     subscriptionParser.get_settings = lambda: settings_parser
 
 
