@@ -107,13 +107,18 @@ def _get_and_configure_settings(source, source_type):
 
     """
     settings_parser = SafeConfigParser()
-    with _SETTINGS_FILE_STREAM[source_type](source) as stream:
+    stream = _SETTINGS_FILE_STREAM[source_type](source)
+    try:
         if sys.version.startswith('2.'):
             settings_parser.readfp(_UTF8_READER(stream))
         else:
             # In future versions, the `readfp()` would become deprecated
             # and replaced by `read_file()`.
             settings_parser.read_file(_UTF8_READER(stream))
+    except Exception:
+        raise
+    finally:
+        stream.close()
     subscriptionParser.get_settings = lambda: settings_parser
 
 
@@ -133,7 +138,8 @@ def get_from_web(source_url):
     """
     result = {}
     tar_download_url = urlparse.urljoin(source_url, 'archive/default.tar.gz')
-    with urlopen(tar_download_url) as source:
+    source = urlopen(tar_download_url)
+    try:
         with tarfile.open(fileobj=source, mode='r|gz') as archive_content:
             for file_info in archive_content:
                 if os.path.splitext(file_info.name)[1] != '.subscription':
@@ -147,6 +153,10 @@ def get_from_web(source_url):
                     continue
 
                 result[file_data.name] = file_data
+    except Exception:
+        raise
+    finally:
+        source.close()
 
     return result
 
