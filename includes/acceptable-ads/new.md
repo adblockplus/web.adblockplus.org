@@ -99,19 +99,19 @@ title=Allowing acceptable ads in Adblock Plus
 
 - {{ mobile-ads-placement-item-1[list item] Static ad types (e.g. 6x1 banner and 1x1 tile ad) are allowed to be placed anywhere on the mobile page }}
 - {{ mobile-ads-placement-item-2[list item] Small ads (6x1 banner or smaller) are allowed to be placed as a sticky ad on the bottom of the screen. Other formats are not allowed to stick. }}
-- {{ mobile-ads-placement-item-3[list item] Large ad types (e.g. native tile ads) are only allowed to be placed under the Primary Content.}} [^5] [^6]
+- {{ mobile-ads-placement-item-3[list item] Large ad types (e.g. native tile ads) are only allowed to be placed under the Primary Content.}} [^5] [^1]
 
 #### {{ mobile-ads-size-heading[heading] Size Requirements }}
 
 {{ mobile-ads-size-lead Ads showing on mobile screens are bound to the following size restrictions: }}
 
-- {{ mobile-ads-size-item-1[list item] Ads implemented on the scrollable portion of the webpage must not occupy in total more than 50 percent of the visible portion of the webpage. }} [^7]
+- {{ mobile-ads-size-item-1[list item] Ads implemented on the scrollable portion of the webpage must not occupy in total more than 50 percent of the visible portion of the webpage. }} [^6]
 - {{ mobile-ads-size-item-2[list item] Ads implemented as a ‘sticky ad’ have a maximum height restriction of 75px (or 15%). }}
-- {{ mobile-ads-size-item-3[list item] Below the Primary Content, ads are limited to 100% of the screen space. }} [^8]
+- {{ mobile-ads-size-item-3[list item] Below the Primary Content, ads are limited to 100% of the screen space. }} [^7]
 
 #### {{ animations-heading[heading] Animations }}
 
-{{ animations-paragraph-1 Animations are allowed for the 6x1 ad type when placed as a ‘sticky’ ad on the bottom of the screen. Animations have to comply with the LEAN standard for animations, and a close button or some other closing mechanism must be included. }} [^9]
+{{ animations-paragraph-1 Animations are allowed for the 6x1 ad type when placed as a ‘sticky’ ad on the bottom of the screen. Animations have to comply with the LEAN standard for animations, and a close button or some other closing mechanism must be included. }} [^8]
 
 ### {{other-acceptable-ads[Subheadline in "Specific criteria"] Other Acceptable Ads formats? }} {: #other-formats }
 
@@ -194,7 +194,7 @@ title=Allowing acceptable ads in Adblock Plus
 1. {{ get-whitelisted-step-1[list item] If your website has ads that comply with the [Acceptable Ads standards](#criteria), simply fill out <a href="https://acceptableads.com/get-whitelisted/" title="{{ get-whitelisted-step-1-1[tooltip] Get Acceptable Ads Whitelisted }}">this form</a>. }}
 2. {{ get-whitelisted-step-2[list item] Someone from [eyeo](https://www.eyeo.com/), the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria. }}
 3. {{ get-whitelisted-step-3[list item] After you have made any necessary changes, both sides sign an <a href="https://adblockplus.org/acceptable-ads-agreements" title="{{ get-whitelisted-step-3-1[tooltip] Link to Acceptable Ads agreements page }}">agreement</a>". }}
-4. We submit the whitelisting proposal [in the forum](https://adblockplus.org/forum/viewforum.php?f=12){: title="Link to Adblock Plus Forum" } and the ads are whitelisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements.
+4. {{ get-whitelisted-step-4[list item] We submit the whitelisting proposal [in the forum](https://adblockplus.org/forum/viewforum.php?f=12){: title="Link to Adblock Plus Forum" } and the ads are whitelisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements. }}
 
 ## {{revenue[Section header] Is there payment involved?}} {: #revenue }
 
@@ -210,12 +210,10 @@ title=Allowing acceptable ads in Adblock Plus
 
 [^5]: {{ footnote-5[footnote] Large ad: any ad >300px height }}
 
-[^6]: {{ footnote-6[footnote] The 'Primary Content' is defined as (based on [Mozilla's description](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) of the `<main>` HTML element): The Primary Content consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application. This content should be unique to the document, excluding any content that is repeated across a set of documents such as sidebars, navigation links, copyright information, site logos, and search forms (unless, of course, the document's main function is a search form). }}
+[^6]: {{ footnote-7[footnote] The visible portion of the webpage is defined as a standard CSS pixel size of [360x512px](/img/360x512.png){: target="_blank" } (Samsung Galaxy S7 with the SBrowser), which is based on the standard viewport of [360x640px](https://deviceatlas.com/blog/mobile-viewport-size-statistics-2017), but with the OS- and browser UI elements deducted. }}
 
-[^7]: {{ footnote-7[footnote] The visible portion of the webpage is defined as a standard CSS pixel size of [360x512px](/img/360x512.png){: target="_blank" } (Samsung Galaxy S7 with the SBrowser), which is based on the standard viewport of [360x640px](https://deviceatlas.com/blog/mobile-viewport-size-statistics-2017), but with the OS- and browser UI elements deducted. }}
+[^7]: {{ footnote-8[footnote] This means that users can scroll past the primary content and an ad unit served after it can take up the whole screen; but following this ad unit, additional ads cannot be implemented. }}
 
-[^8]: {{ footnote-8[footnote] This means that users can scroll past the primary content and an ad unit served after it can take up the whole screen; but following this ad unit, additional ads cannot be implemented. }}
-
-[^9]: {{ footnote-9[footnote] From: [Iab New Standard Ad Unit Portfolio (2017)](https://www.iab.com/wp-content/uploads/2017/08/IABNewAdPortfolio_FINAL_2017.pdf) }}
+[^8]: {{ footnote-9[footnote] From: [Iab New Standard Ad Unit Portfolio (2017)](https://www.iab.com/wp-content/uploads/2017/08/IABNewAdPortfolio_FINAL_2017.pdf) }}
 
 <script src="/js/address-masking.js"></script>
