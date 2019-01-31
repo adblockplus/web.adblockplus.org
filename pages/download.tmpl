@@ -88,8 +88,7 @@ template=minimal
                 href="{{ platform.url }}"
                 data-ga='{"event_category": "Download_button", "event_action": "Download", "event_label": "Downloaded_{{ platform.id }}"}'
               >
-                {{ platform.name | translate(platform_identifier, "Product name") }}
-              </a>{{ ", " if loop.index != loop.length }}
+                {{ platform.name | translate(platform_identifier, "Product name") }}</a>{{ ", " if loop.index != loop.length }}
             </li>
           {% endfor %}
         </ul>
