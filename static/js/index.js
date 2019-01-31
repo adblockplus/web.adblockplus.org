@@ -100,6 +100,14 @@
 
       heroDownloadButton.setAttribute("data-ga", JSON.stringify(gaData));
     }
+    else // browser not detected
+    {
+      heroDownloadButton.setAttribute("data-ga", JSON.stringify({
+        "event_category": "Download_button",
+        "event_action": "Go_to_download",
+        "event_label": "Fallback_button"
+      }));
+    }
   }
 
   if (typeof bowser != "undefined") setupHeroDownloadButton();
