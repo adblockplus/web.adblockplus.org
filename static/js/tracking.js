@@ -1,9 +1,25 @@
+// from https://davidwalsh.name/function-debounce
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
 /**
  * 1. Pass GA data from links on click before transport
  *    e.g. <a href="example" data-ga='{'eventLabel': "GOAL_NAME"}'>Example</a>
  * 2. Pass URL parameters between internal pages
  */
-document.addEventListener("click", function(event)
+var onGAEVent = debounce(function(event)
 {
   // abort if tracking is disabled
   if (!gtag) return;
@@ -55,4 +71,7 @@ document.addEventListener("click", function(event)
     event.target.href = event.target.href += "?" + (window.location.href.split("?")[1] || "");
   }
 
-});
+}, 250);
+
+document.addEventListener("mouseup", onGAEVent);
+document.addEventListener("click", onGAEVent);
