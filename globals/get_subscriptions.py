@@ -42,16 +42,19 @@ except ImportError:
 
 _UTF8_READER = codecs.getreader('utf8')
 
-_SETTINGS_FILE_STREAM = {
-    'web': lambda source: urlopen(
-        '{}/rawfile/default/settings'.format(source)
-    ),
-    'local': lambda source: open(os.path.join(source, 'settings')),
-}
-
 _SOURCE_LOCATIONS = {
     'env': 'CMS_SUBSCRIPTIONS_REPO',
     'config': ['general', 'subscriptions_repo'],
+}
+
+_SETTINGS_LOCATIONS = {
+    'env': 'CMS_SUBSCRIPTIONS_SETTINGS',
+    'config': ['general', 'subscriptions_settings'],
+}
+
+_STREAMS = {
+    'local': open,
+    'web': urlopen,
 }
 
 _REMOTE_REGEX = re.compile(
@@ -66,20 +69,31 @@ _REMOTE_REGEX = re.compile(
 )
 
 
-def _get_source():
-    """Get the subscriptions source.
+def _get_location(locations):
+    """Read a location.
 
-    The function will look for it in the following places (from highest
-    priority to lowest):
-        1. The environment variable `CMS_SUBSCRIPTIONS_REPO`
-        2. In `settings.ini`, under the `general` section and
-        subscriptions_repo`
+    The function will look in the following two places, from highest to lowest
+    priority:
+
+        1. In the environment variables.
+        2. In the website configuration file (i.e. `settings.ini`).
+
+    Parameters
+    ----------
+    locations: dict
+        Containing the information about where to look for the location.
+        It has to have a pre-defined structure, with the following keys:
+            - `env`: str
+                The name of the environment variable that is expected to hold
+                the location we're looking for.
+            - `config`: list of str
+                Where the first element is the section in the config file,
+                while the second is the option for the location.
 
     Returns
     -------
     str
-        The url/ local path to the subscriptions.
-
+        With the appropriate location.
     """
     config_parser = SafeConfigParser()
     with open('settings.ini') as settings_stream:
@@ -90,24 +104,24 @@ def _get_source():
             # and replaced by `read_file()`.
             config_parser.read_file(_UTF8_READER(settings_stream))
     return os.environ.get(
-        _SOURCE_LOCATIONS['env'],
-        config_parser.get(*_SOURCE_LOCATIONS['config']),
+        locations['env'],
+        config_parser.get(*locations['config']),
     )
 
 
-def _get_and_configure_settings(source, source_type):
+def _get_and_configure_settings(location, location_type):
     """Read the settings file and configure them accordingly.
 
     Parameters
     ----------
-    source: str
+    location: str
         The url/ local path for the `subscriptionlist` repository.
-    source_type: str
-        The type of the source. It has to be one of `web` or `local`
+    location_type: str
+        The type of the location. It has to be one of `web` or `local`
 
     """
     settings_parser = SafeConfigParser()
-    stream = _SETTINGS_FILE_STREAM[source_type](source)
+    stream = _STREAMS[location_type](location)
     try:
         if sys.version.startswith('2.'):
             settings_parser.readfp(_UTF8_READER(stream))
@@ -209,10 +223,13 @@ def get_subscriptions():
     orig_get_settings = subscriptionParser.get_settings
 
     try:
-        source = _get_source()
+        source = _get_location(_SOURCE_LOCATIONS)
+        settings = _get_location(_SETTINGS_LOCATIONS)
         source_type = 'local' if re.match(_REMOTE_REGEX, source) is None \
             else 'web'
-        _get_and_configure_settings(source, source_type)
+        setting_type = 'local' if re.match(_REMOTE_REGEX, settings) is None \
+            else 'web'
+        _get_and_configure_settings(settings, setting_type)
         subscriptions_dict = _GET_SUBSCRIPTIONS[source_type](source)
     finally:
         subscriptionParser.get_settings = orig_get_settings
