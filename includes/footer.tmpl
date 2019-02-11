@@ -9,7 +9,7 @@
           {% for pagename in ["acceptable-ads", "documentation", "deployments", "bugs"] %}
             <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
           {% endfor %}
-          {% if locale == "en" %}
+          {% if locale in ("en", "de", "fr", "es") %}
             <li>{{ "faq-privacy" | linkify }}{{ get_string("faq-privacy", "menu") }}</a></li>
           {% endif %}
         </ul>
