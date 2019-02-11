@@ -1,5 +1,9 @@
 {% for browser in browsers %}
-  {% if locale in ["en", "de", "fr"] %}
+  {% if browser.id in ('chrome', 'yandexbrowser', 'opera', 'msedge') %}
+    <script id="download-label-{{ browser.id }}" type="text/template">
+      {{ get_string("get-for-" + browser.id, "install-button") }}
+    </script>
+  {% elif locale in ['en', 'de', 'fr'] %}
     <script id="download-label-{{ browser.id }}" type="text/template">
       {{ get_string("agree-and-install-for-" + browser.id, "install-button") }}
     </script>
