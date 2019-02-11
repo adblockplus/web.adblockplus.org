@@ -63,13 +63,44 @@
 
     heroDownloadButton.href = installerHref;
 
-    var heroDownloadButtonTemplate = document.getElementById(
-      "download-label-" + (browser || mobilePlatform)
-    ) || (
-      document.getElementById("download-label-chrome")
-    );
+    if (browser || mobilePlatform)
+    {
+      var heroDownloadButtonTemplate = document.getElementById(
+        "download-label-" + (browser || mobilePlatform)
+      ) || (
+        document.getElementById("download-label-chrome")
+      );
 
-    heroDownloadButton.textContent = heroDownloadButtonTemplate.textContent;
+      heroDownloadButton.textContent = heroDownloadButtonTemplate.textContent;
+
+      var gaData;
+
+      try {
+        gaData = JSON.parse(heroDownloadButton.getAttribute("data-ga"));
+      } catch (error) {
+        gaData = {
+          "event_category": "Parse Error",
+          "event_action": "Link click"
+        };
+      }
+
+      if (mobilePlatform)
+        gaData["event_label"] = "Downloaded_" + (
+          mobilePlatform == "ios" ? (
+            browser == "safari" ?
+              "safari_ios"
+              : "abb_ios"
+          ) : (
+            browser == "samsungBrowser" ?
+              "android_samsung"
+              : "abb_android"
+          )
+        );
+      else
+        gaData["event_label"] = "Downloaded_" + browser;
+
+      heroDownloadButton.setAttribute("data-ga", JSON.stringify(gaData));
+    }
   }
 
   if (typeof bowser != "undefined") setupHeroDownloadButton();

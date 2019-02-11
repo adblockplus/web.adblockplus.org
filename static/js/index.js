@@ -71,6 +71,42 @@
       );
 
       heroDownloadButton.textContent = heroDownloadButtonTemplate.textContent;
+
+      var gaData;
+
+      try {
+        gaData = JSON.parse(heroDownloadButton.getAttribute("data-ga"));
+      } catch (error) {
+        gaData = {
+          "event_category": "Parse Error",
+          "event_action": "Link click"
+        };
+      }
+
+      if (mobilePlatform)
+        gaData["event_label"] = "Downloaded_" + (
+          mobilePlatform == "ios" ? (
+            browser == "safari" ?
+              "safari_ios"
+              : "abb_ios"
+          ) : (
+            browser == "samsungBrowser" ?
+              "android_samsung"
+              : "abb_android"
+          )
+        );
+      else
+        gaData["event_label"] = "Downloaded_" + browser;
+
+      heroDownloadButton.setAttribute("data-ga", JSON.stringify(gaData));
+    }
+    else // browser not detected
+    {
+      heroDownloadButton.setAttribute("data-ga", JSON.stringify({
+        "event_category": "Download_button",
+        "event_action": "Go_to_download",
+        "event_label": "Fallback_button"
+      }));
     }
   }
 

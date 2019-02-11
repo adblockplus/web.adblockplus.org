@@ -23,6 +23,7 @@
     <script src="/js/vendor/dom4.js"></script>
   <![endif]-->
 
+  <script src="/js/tracking.js"></script>
 </head>
 <body>
 
@@ -65,7 +66,13 @@
           <li>Adblock Plus jest darmowy i znajduje się w domenie open source (GPLv3+ – GNU General Public License)</li>
         </ul>
         <div>
-          <a id="hero-download-button" class="button" href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb">Ściągnij Adblock Plus na Chrome</a>
+          <a
+            id="hero-download-button"
+            class="button"
+            data-ga='{"event_category": "Download_button", "event_action": "Download", "event_label": "Downloaded_chrome"}'
+            href="https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb">
+            Zainstaluj na Chrome
+          </a>
         </div>
       </header>
       <header class="column one-half content show-on-maxthon">
