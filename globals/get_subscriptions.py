@@ -45,11 +45,14 @@ _UTF8_READER = codecs.getreader('utf8')
 _SOURCE_LOCATIONS = {
     'env': 'CMS_SUBSCRIPTIONS_REPO',
     'config': ['general', 'subscriptions_repo'],
+    'default': 'https://hg.adblockplus.org/subscriptionlist/',
 }
 
 _SETTINGS_LOCATIONS = {
     'env': 'CMS_SUBSCRIPTIONS_SETTINGS',
     'config': ['general', 'subscriptions_settings'],
+    'default': 'https://hg.adblockplus.org/subscriptionlist/rawfile/default'
+               '/settings',
 }
 
 _STREAMS = {
@@ -77,6 +80,7 @@ def _get_location(locations):
 
         1. In the environment variables.
         2. In the website configuration file (i.e. `settings.ini`).
+        3. The default value
 
     Parameters
     ----------
@@ -89,13 +93,18 @@ def _get_location(locations):
             - `config`: list of str
                 Where the first element is the section in the config file,
                 while the second is the option for the location.
+            - `default`: str
+                The default value for the location.
 
     Returns
     -------
     str
         With the appropriate location.
+
     """
-    config_parser = SafeConfigParser()
+    config_parser = SafeConfigParser(
+        {locations['config'][-1]: locations['default']},
+    )
     with open('settings.ini') as settings_stream:
         if sys.version.startswith('2.'):
             config_parser.readfp(_UTF8_READER(settings_stream))
@@ -103,6 +112,7 @@ def _get_location(locations):
             # In future versions, the `readfp()` would become deprecated
             # and replaced by `read_file()`.
             config_parser.read_file(_UTF8_READER(settings_stream))
+
     return os.environ.get(
         locations['env'],
         config_parser.get(*locations['config']),
