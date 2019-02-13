@@ -193,7 +193,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 1. {{ get-whitelisted-step-1[list item] If your website has ads that comply with the [Acceptable Ads standards](#criteria), simply fill out <a href="https://acceptableads.com/get-whitelisted/" title="{{ get-whitelisted-step-1-1[tooltip] Get Acceptable Ads Whitelisted }}">this form</a>. }}
 2. {{ get-whitelisted-step-2[list item] Someone from [eyeo](https://www.eyeo.com/), the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria. }}
-3. {{ get-whitelisted-step-3[list item] After you have made any necessary changes, both sides sign an <a href="https://adblockplus.org/acceptable-ads-agreements" title="{{ get-whitelisted-step-3-1[tooltip] Link to Acceptable Ads agreements page }}">agreement</a>". }}
+3. {{ get-whitelisted-step-3[list item] After you have made any necessary changes, both sides sign an <a href="https://adblockplus.org/acceptable-ads-agreements" title="{{ get-whitelisted-step-3-1[tooltip] Link to Acceptable Ads agreements page }}">agreement</a>. }}
 4. {{ get-whitelisted-step-4[list item] We submit the whitelisting proposal [in the forum](https://adblockplus.org/forum/viewforum.php?f=12){: title="Link to Adblock Plus Forum" } and the ads are whitelisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements. }}
 
 ## {{revenue[Section header] Is there payment involved?}} {: #revenue }
