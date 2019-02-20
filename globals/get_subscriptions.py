@@ -19,8 +19,8 @@ import codecs
 import os
 import tarfile
 import logging
-import re
 import sys
+import contextlib
 try:
     from urllib import urlopen
     import urlparse
@@ -55,24 +55,17 @@ _SETTINGS_LOCATIONS = {
                '/settings',
 }
 
-_STREAMS = {
-    'local': open,
-    'web': urlopen,
-}
 
-_REMOTE_REGEX = re.compile(
-    r'^(?:http|ftp)s?://' # http:// or https://
-    r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|'
-    r'[A-Z0-9-]{2,}\.?)|' #domain...
-    r'localhost|' #localhost...
-    r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or iP
-    r'(?::\d+)?' # optional port
-    r'(?:/?|[/?]\S+)$',
-    re.IGNORECASE
-)
+def _get_multi_opener(local_opener, web_opener):
+    def opener(url):
+        if url.strip().startswith('http://') or url.strip().startswith(
+                'https://'):
+            return web_opener(url)
+        return local_opener(url)
+    return opener
 
 
-def _get_location(locations):
+def _get_location(env, config, default):
     """Read a location.
 
     The function will look in the following two places, from highest to lowest
@@ -84,17 +77,14 @@ def _get_location(locations):
 
     Parameters
     ----------
-    locations: dict
-        Containing the information about where to look for the location.
-        It has to have a pre-defined structure, with the following keys:
-            - `env`: str
-                The name of the environment variable that is expected to hold
-                the location we're looking for.
-            - `config`: list of str
-                Where the first element is the section in the config file,
-                while the second is the option for the location.
-            - `default`: str
-                The default value for the location.
+        env: str
+            The name of the environment variable that is expected to hold
+            the location we're looking for.
+        config: list of str
+            Where the first element is the section in the config file,
+            while the second is the option for the location.
+        `default`: str
+            The default value for the location.
 
     Returns
     -------
@@ -102,9 +92,8 @@ def _get_location(locations):
         With the appropriate location.
 
     """
-    config_parser = SafeConfigParser(
-        {locations['config'][-1]: locations['default']},
-    )
+    config_parser = SafeConfigParser({config[-1]: default})
+
     with open('settings.ini') as settings_stream:
         if sys.version.startswith('2.'):
             config_parser.readfp(_UTF8_READER(settings_stream))
@@ -113,41 +102,33 @@ def _get_location(locations):
             # and replaced by `read_file()`.
             config_parser.read_file(_UTF8_READER(settings_stream))
 
-    return os.environ.get(
-        locations['env'],
-        config_parser.get(*locations['config']),
-    )
+    return os.environ.get(env, config_parser.get(*config))
 
 
-def _get_and_configure_settings(location, location_type):
-    """Read the settings file and configure them accordingly.
+def _get_and_configure_settings(location):
+    """Read the settings and configure subscription parser.
 
     Parameters
     ----------
     location: str
         The url/ local path for the `subscriptionlist` repository.
-    location_type: str
-        The type of the location. It has to be one of `web` or `local`
 
     """
     settings_parser = SafeConfigParser()
-    stream = _STREAMS[location_type](location)
-    try:
+    print(location)
+    with _MULTI_OPENER(location) as stream:
         if sys.version.startswith('2.'):
             settings_parser.readfp(_UTF8_READER(stream))
         else:
             # In future versions, the `readfp()` would become deprecated
             # and replaced by `read_file()`.
             settings_parser.read_file(_UTF8_READER(stream))
-    except Exception:
-        raise
-    finally:
-        stream.close()
+
     subscriptionParser.get_settings = lambda: settings_parser
 
 
 def get_from_web(source_url):
-    """Get the subscriptions from a remote repository.
+    """Get the archived subscriptions from a remote repository as a .tgz.
 
     Parameters
     ----------
@@ -162,8 +143,7 @@ def get_from_web(source_url):
     """
     result = {}
     tar_download_url = urlparse.urljoin(source_url, 'archive/default.tar.gz')
-    source = urlopen(tar_download_url)
-    try:
+    with contextlib.closing(urlopen(tar_download_url)) as source:
         with tarfile.open(fileobj=source, mode='r|gz') as archive_content:
             for file_info in archive_content:
                 if os.path.splitext(file_info.name)[1] != '.subscription':
@@ -177,10 +157,6 @@ def get_from_web(source_url):
                     continue
 
                 result[file_data.name] = file_data
-    except Exception:
-        raise
-    finally:
-        source.close()
 
     return result
 
@@ -201,28 +177,28 @@ def get_from_local(source_path):
     """
     result = {}
 
-    for file in walk_dir(source_path):
-        if not os.path.isfile(file):
+    for filename in walk_dir(source_path):
+        if not os.path.isfile(filename):
             continue
-        if os.path.splitext(file)[1] != '.subscription':
+        if os.path.splitext(filename)[1] != '.subscription':
             continue
-        with open(file) as stream:
+        with open(filename) as stream:
             file_data = subscriptionParser.parse_file(
-                file, _UTF8_READER(stream)
+                filename, _UTF8_READER(stream),
             )
 
         if file_data.unavailable:
             continue
 
-        result[file] = file_data
+        result[filename] = file_data
 
     return result
 
 
-_GET_SUBSCRIPTIONS = {
-    'web': get_from_web,
-    'local': get_from_local,
-}
+_GET_SUBSCRIPTIONS = _get_multi_opener(get_from_local, get_from_web)
+_MULTI_OPENER = _get_multi_opener(
+    open, lambda url: contextlib.closing(urlopen(url)),
+)
 
 
 def get_subscriptions():
@@ -233,14 +209,10 @@ def get_subscriptions():
     orig_get_settings = subscriptionParser.get_settings
 
     try:
-        source = _get_location(_SOURCE_LOCATIONS)
-        settings = _get_location(_SETTINGS_LOCATIONS)
-        source_type = 'local' if re.match(_REMOTE_REGEX, source) is None \
-            else 'web'
-        setting_type = 'local' if re.match(_REMOTE_REGEX, settings) is None \
-            else 'web'
-        _get_and_configure_settings(settings, setting_type)
-        subscriptions_dict = _GET_SUBSCRIPTIONS[source_type](source)
+        source = _get_location(**_SOURCE_LOCATIONS)
+        settings = _get_location(**_SETTINGS_LOCATIONS)
+        _get_and_configure_settings(settings)
+        subscriptions_dict = _GET_SUBSCRIPTIONS(source)
     finally:
         subscriptionParser.get_settings = orig_get_settings
 
