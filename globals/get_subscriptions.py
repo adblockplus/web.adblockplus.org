@@ -74,11 +74,13 @@ def _get_location(cnf, env, config, default):
     priority:
 
         1. In the environment variables.
-        2. In the website configuration file (i.e. `settings.ini`).
+        2. In the website configuration file.
         3. The default value
 
     Parameters
     ----------
+        cnf: SafeConfigParser
+            With the contents of the website config file.
         env: str
             The name of the environment variable that is expected to hold
             the location we're looking for.
@@ -94,18 +96,6 @@ def _get_location(cnf, env, config, default):
         With the appropriate location.
 
     """
-    """
-    config_parser = SafeConfigParser({config[-1]: default})
-
-    with open('settings.ini') as settings_stream:
-        if sys.version.startswith('2.'):
-            config_parser.readfp(_UTF8_READER(settings_stream))
-        else:
-            # In future versions, the `readfp()` would become deprecated
-            # and replaced by `read_file()`.
-            config_parser.read_file(_UTF8_READER(settings_stream))
-    """
-
     try:
         return os.environ.get(env, cnf.get(*config))
     except (configparser.NoOptionError, configparser.NoSectionError):
