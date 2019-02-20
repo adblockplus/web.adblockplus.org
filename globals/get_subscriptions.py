@@ -25,12 +25,12 @@ try:
     from urllib import urlopen
     import urlparse
     from ConfigParser import SafeConfigParser
-    from os.path import walk as walk_dir
+    import ConfigParser as configparser
 except ImportError:
     from configparser import ConfigParser as SafeConfigParser
     from urllib.request import urlopen
     import urllib.parse as urlparse
-    from os import walk as walk_dir
+    import configparser
 
 try:
     from sitescripts.subscriptions import subscriptionParser
@@ -39,6 +39,8 @@ except ImportError:
     logging.warning("Unable to import sitescripts, proceeding with empty "
                     "subscriptions list.")
     subscriptions = []
+
+from jinja2 import contextfunction
 
 _UTF8_READER = codecs.getreader('utf8')
 
@@ -65,7 +67,7 @@ def _get_multi_opener(local_opener, web_opener):
     return opener
 
 
-def _get_location(env, config, default):
+def _get_location(cnf, env, config, default):
     """Read a location.
 
     The function will look in the following two places, from highest to lowest
@@ -92,6 +94,7 @@ def _get_location(env, config, default):
         With the appropriate location.
 
     """
+    """
     config_parser = SafeConfigParser({config[-1]: default})
 
     with open('settings.ini') as settings_stream:
@@ -101,8 +104,12 @@ def _get_location(env, config, default):
             # In future versions, the `readfp()` would become deprecated
             # and replaced by `read_file()`.
             config_parser.read_file(_UTF8_READER(settings_stream))
+    """
 
-    return os.environ.get(env, config_parser.get(*config))
+    try:
+        return os.environ.get(env, cnf.get(*config))
+    except (configparser.NoOptionError, configparser.NoSectionError):
+        return os.environ.get(env, default)
 
 
 def _get_and_configure_settings(location):
@@ -115,7 +122,6 @@ def _get_and_configure_settings(location):
 
     """
     settings_parser = SafeConfigParser()
-    print(location)
     with _MULTI_OPENER(location) as stream:
         if sys.version.startswith('2.'):
             settings_parser.readfp(_UTF8_READER(stream))
@@ -153,6 +159,7 @@ def get_from_web(source_url):
                     file_info.name,
                     _UTF8_READER(archive_content.extractfile(file_info)),
                 )
+
                 if file_data.unavailable:
                     continue
 
@@ -177,21 +184,21 @@ def get_from_local(source_path):
     """
     result = {}
 
-    for filename in walk_dir(source_path):
-        if not os.path.isfile(filename):
+    for filename in os.listdir(source_path):
+        file_path = os.path.join(source_path, filename)
+        if not os.path.isfile(file_path):
             continue
-        if os.path.splitext(filename)[1] != '.subscription':
+        if os.path.splitext(filename)[-1] != '.subscription':
             continue
-        with open(filename) as stream:
+        with open(file_path) as stream:
             file_data = subscriptionParser.parse_file(
-                filename, _UTF8_READER(stream),
+                file_path, _UTF8_READER(stream),
             )
 
         if file_data.unavailable:
             continue
 
-        result[filename] = file_data
-
+        result[file_data.name] = file_data
     return result
 
 
@@ -201,7 +208,8 @@ _MULTI_OPENER = _get_multi_opener(
 )
 
 
-def get_subscriptions():
+@contextfunction
+def get_subscriptions(context):
     global subscriptions
     if subscriptions is not None:
         return subscriptions
@@ -209,8 +217,8 @@ def get_subscriptions():
     orig_get_settings = subscriptionParser.get_settings
 
     try:
-        source = _get_location(**_SOURCE_LOCATIONS)
-        settings = _get_location(**_SETTINGS_LOCATIONS)
+        source = _get_location(context['config'], **_SOURCE_LOCATIONS)
+        settings = _get_location(context['config'], **_SETTINGS_LOCATIONS)
         _get_and_configure_settings(settings)
         subscriptions_dict = _GET_SUBSCRIPTIONS(source)
     finally:
