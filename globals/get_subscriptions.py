@@ -52,16 +52,16 @@ _SOURCE_LOCATIONS = {
 
 _SETTINGS_LOCATIONS = {
     'env': 'CMS_SUBSCRIPTIONS_SETTINGS',
-    'config': ['general', 'subscriptions_settings'],
+    'config': ('general', 'subscriptions_settings'),
     'default': 'https://hg.adblockplus.org/subscriptionlist/rawfile/default'
                '/settings',
 }
 
 
-def _get_multi_opener(local_opener, web_opener):
+def _make_multi_opener(local_opener, web_opener):
     def opener(url):
-        if url.strip().startswith('http://') or url.strip().startswith(
-                'https://'):
+        url = url.strip()
+        if url.startswith('http://') or url.startswith('https://'):
             return web_opener(url)
         return local_opener(url)
     return opener
@@ -84,7 +84,7 @@ def _get_location(cnf, env, config, default):
         env: str
             The name of the environment variable that is expected to hold
             the location we're looking for.
-        config: list of str
+        config: tuple of str
             Where the first element is the section in the config file,
             while the second is the option for the location.
         `default`: str
@@ -192,8 +192,8 @@ def get_from_local(source_path):
     return result
 
 
-_GET_SUBSCRIPTIONS = _get_multi_opener(get_from_local, get_from_web)
-_MULTI_OPENER = _get_multi_opener(
+_GET_SUBSCRIPTIONS = _make_multi_opener(get_from_local, get_from_web)
+_MULTI_OPENER = _make_multi_opener(
     open, lambda url: contextlib.closing(urlopen(url)),
 )
 
