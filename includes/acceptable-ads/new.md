@@ -121,7 +121,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{ why-is-aa-enabled-1 We believe that Acceptable Ads are the sustainable middle ground between a user’s choice to use an ad blocker and the continued need to support free online content with advertisements. If the majority of Adblock Plus users have the Acceptable Ads feature enabled, advertisers will have a bigger incentive to produce better, less intrusive ad formats. }}
 
-## {{ hate-ads[heading] But I hate all ads! }} {: #haters-gonna-gate }
+## {{ hate-ads[heading] But I hate all ads! }} {: #optout }
 
 {{ hate-ads-1 No problem, you can disable this feature at any time: }}
 
