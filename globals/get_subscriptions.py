@@ -46,7 +46,7 @@ _UTF8_READER = codecs.getreader('utf8')
 
 _SOURCE_LOCATIONS = {
     'env': 'CMS_SUBSCRIPTIONS_REPO',
-    'config': ['general', 'subscriptions_repo'],
+    'config': ('general', 'subscriptions_repo'),
     'default': 'https://hg.adblockplus.org/subscriptionlist/',
 }
 
