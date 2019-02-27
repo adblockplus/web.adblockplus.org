@@ -468,7 +468,7 @@ Our Website uses Google Tag Manager for the implementation of [Google Analytics]
 
 {{ retention-communications-paragraph-2 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch). }}
 
-<time datetime="2019-01">{{ publication-date January 2019 }}</time>
+<time datetime="2019-02">{{ publication-date February 2019 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
