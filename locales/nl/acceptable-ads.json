@@ -1,491 +1,506 @@
 {
-    "meta-description": {
-        "message": "Adblock Plus introduceert het Acceptable Ads-initiatief: websites steunen die van advertenties afhankelijk zijn, maar ervoor kiezen deze op een niet-opdringerige manier aan te bieden.",
-        "description": "Description meta tag content inside head tag"
-    },
-    "page-under-review": {
-        "message": "Deze pagina wordt herzien, omdat het beheer van het Acceptable Ads-initiatief is overgedragen aan het onafhankelijke <a>Acceptable Ads Committee<\/a>.",
-        "description": "Page under review notice"
-    },
-    "about": {
-        "message": "Waar gaat dit over?",
-        "description": "Section header"
-    },
-    "about-abp": {
-        "message": "Adblock Plus is een hulpmiddel waarmee gebruikers <a>advertenties<\/a> kunnen blokkeren. Aangezien advertenties voor een groot deel voor de financiering zorgen van het materiaal waar we online gratis plezier van hebben, lijkt het vinden van raakvlakken zinvol. We hebben onze gebruikers hiernaar gevraagd, en de meerderheid was het hiermee eens.",
-        "description": "Paragraph in \"about\" section"
-    },
-    "abp-history": {
-        "message": "In 2011 hebben we in overleg met <a>onze gebruikers<\/a> besloten een compromis voor te stellen. Omdat we met de meerderheid van onze gebruikers een visie delen waarbij niet alle advertenties even vervelend zijn, is het Acceptable Ads-initiatief tot stand gebracht. Hiermee kunnen adverteerders en uitgevers die instemmen met het maken van advertenties die aan door gebruikers opgestelde criteria voldoen op een ‘whitelist’ worden gezet. Gebruikers kunnen deze minder extreme versie van advertentieblokkering steunen door de optie voor het toestaan van acceptabele advertenties ingeschakeld te houden. Om volledig advertentievrij te browsen, kunnen gebruikers <a>de optie uitschakelen<\/a>.",
-        "description": "Paragraph in \"about\" section"
-    },
-    "benefit": {
-        "message": "Het Acceptable Ads-initiatief biedt voordelen, omdat het de advertentie-industrie aanmoedigt minder opdringerige advertentieafmetingen na te streven, wat een positieve impact heeft op het internet als geheel. Ook biedt het ons een <a>levensvatbare bron van inkomsten<\/a>, alleen betaald door grotere deelnemers aan het Acceptable Ads-initiatief, die we nodig hebben om het programma te kunnen beheren en onderhouden en de ontwikkeling van een gratis product te kunnen voortzetten.",
-        "description": "Text in \"about\" section"
-    },
-    "our-belive": {
-        "message": "We vinden dat dit initiatief een duurzame middenweg is tussen de keuze van de gebruiker om adblockers te gebruiken en de aanhoudende noodzaak om gratis online-inhoud te steunen met advertenties. Doorgaans is een Acceptabele advertentie een niet-bewegende advertentie, duidelijk als zodanig gelabeld, die het leestempo niet belemmert. Belangrijk om te weten is dat deze criteria de aanhoudende discussies tussen onze gebruikers, uitgevers, adverteerders en ons proberen weer te geven. Zoals <a>eerder aangekondigd<\/a> heeft eyeo \/ Adblock Plus in 2017 het beheer van het Acceptable Ads-initiatief overgedragen aan een onafhankelijke groep mensen, het <a>Acceptable Ads Committee<\/a>.",
-        "description": "Paragraph in \"about\" section"
-    },
-    "fairness-rules": {
-        "message": "Om transparantie en eerlijkheid te garanderen, waren en zullen deze regels altijd voor iedereen zonder uitzonderingen van toepassing zijn:",
-        "description": "Text in \"about\" section"
-    },
-    "avoid-criteria": {
-        "message": "Deelnemers kunnen niet betalen om de criteria te omzeilen. <strong>Iedere advertentie moet aan de criteria voldoen.<\/strong>",
-        "description": "Fairness rule Bullet point in \"about\" section"
-    },
-    "transparency": {
-        "message": "Om redenen van transparantie voegen we alle Acceptabele advertenties aan ons forum toe om onze gemeenschap de gelegenheid te bieden feedback te geven. We waarderen feedback enorm en lezen alle opmerkingen.",
-        "description": "Fairness rule Bullet point in \"about\" section"
-    },
-    "user-value": {
-        "message": "Adblock Plus-gebruikers zijn ons veel waard, en er wordt naar hen geluisterd. Als een voorstel voor Acceptabele advertenties om geldige redenen door onze gemeenschap wordt geweigerd, zal\/zullen de advertentie(s) van onze whitelist worden verwijderd.",
-        "description": "Fairness rule Bullet point in \"about\" section"
-    },
-    "charging": {
-        "message": "We kunnen ons opensourceproduct gratis houden <a>door grote entiteiten een vergoeding te vragen<\/a> voor het whitelisten van diensten. Voor de overige grofweg {1} procent van onze partners worden deze diensten kosteloos aangeboden.",
-        "description": "Paragraph in \"about\" section\n{1}: 90"
-    },
-    "manifesto": {
-        "message": "Vindt u dit een goed idee? Toon uw steun door ons <a>Acceptable Ads-manifest<\/a> te ondertekenen.",
-        "description": "Paragraph in \"about\" section"
-    },
-    "acceptable-ads": {
-        "message": "Wat is een Acceptabele advertentie?",
-        "description": "Section header"
-    },
-    "criteria": {
-        "message": "Criteria voor Acceptabele advertenties",
-        "description": "Text in \"Acceptable Ad\" section"
-    },
-    "general-criteria": {
-        "message": "Algemene criteria",
-        "description": "Criteria header in \"Acceptable Ad\" section"
-    },
-    "placement": {
-        "message": "Plaatsing",
-        "description": "Text in \"General criteria\""
-    },
-    "placement-criteria": {
-        "message": "Advertenties mogen het natuurlijke leestempo van de gebruiker niet verstoren. Dergelijke advertenties moeten boven, naast of onder de Primaire inhoud <sup><a>1<\/a><\/sup> worden geplaatst.",
-        "description": "Paragraph in \"General criteria\""
-    },
-    "acceptable-ads-placement-alt": {
-        "message": "Acceptabele advertenties - criteria voor plaatsing",
-        "description": "Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)"
-    },
-    "distiction": {
-        "message": "Onderscheid",
-        "description": "Text in \"General criteria\""
-    },
-    "distiction-criteria": {
-        "message": "Advertenties moeten altijd herkenbaar zijn als advertenties, en te onderscheiden zijn van alle andere inhoud (bv. ze verbergen het label niet, misleiden gebruikers niet tot het denken dat een advertentie onderdeel is van de primaire inhoud). Advertenties moeten duidelijk met het woord 'advertentie' of het equivalent ervan worden aangeduid.",
-        "description": "Paragraph in \"General criteria\""
-    },
-    "acceptable-ads-label-alt": {
-        "message": "Acceptabele advertenties - criteria voor label",
-        "description": "Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)"
-    },
-    "size": {
-        "message": "Grootte",
-        "description": "Text in \"General criteria\""
-    },
-    "size-criteria": {
-        "message": "Individuele vereisten voor advertentiegroottes zijn afhankelijk van de plaatsing van de advertentie:",
-        "description": "Text in \"General criteria\""
-    },
-    "above-primary-content": {
-        "message": "Bij plaatsing boven de Primaire inhoud dient de maximale hoogte van een advertentie 200px te zijn.",
-        "description": "Bullet point in \"General criteria\""
-    },
-    "side-primary-content": {
-        "message": "Bij plaatsing naast de Primaire inhoud dient de maximale breedte van een advertentie 350px te zijn.",
-        "description": "Bullet point in \"General criteria\""
-    },
-    "below-primary-content": {
-        "message": "Bij plaatsing onder de Primaire inhoud dient de maximale hoogte van een advertentie 400px te zijn.",
-        "description": "Bullet point in \"General criteria\""
-    },
-    "sufficient-space": {
-        "message": "Advertenties moeten altijd genoeg ruimte voor de Primaire inhoud overlaten op de gebruikelijke schermgrootte van 1366x768 <sup><a>2<\/a><\/sup> voor desktops, 360x640 <sup><a>3<\/a><\/sup> voor mobiele apparaten en 768x1024 <sup><a>4<\/a><\/sup> voor tablets.",
-        "description": "Paragraph in \"General criteria\""
-    },
-    "total-ad-space": {
-        "message": "Alle advertenties die boven de vouw worden geplaatst (het in het browservenster zichtbare gedeelte van de webpagina wanneer de pagina onder de gebruikelijke schermgrootte wordt geladen), mogen niet meer dan 15 procent van het zichtbare gedeelte van de webpagina innemen. Bij plaatsing onder de vouw mogen advertenties in totaal niet meer dan 25 procent van het zichtbare gedeelte van de webpagina innemen.",
-        "description": "Paragraph in \"General criteria\""
-    },
-    "acceptable-ads-percentage-alt": {
-        "message": "Acceptabele advertenties - criteria voor percentage",
-        "description": "Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)"
-    },
-    "specific-criteria": {
-        "message": "Specifieke criteria",
-        "description": "Criteria header in \"Acceptable Ad\" section"
-    },
-    "text-ads": {
-        "message": "Tekstadvertenties",
-        "description": "Text in \"Specific criteria\""
-    },
-    "attention-grab": {
-        "message": "Tekstadvertenties die met overmatig gebruik van kleuren en\/of andere om aandacht vragende elementen zijn ontworpen, zijn niet toegestaan.",
-        "description": "\"Text ads\" description in \"Specific criteria\""
-    },
-    "image-ads": {
-        "message": "Afbeeldingsadvertenties",
-        "description": "Subheadline in \"Specific criteria\""
-    },
-    "unobtrusive-image": {
-        "message": "Statische afbeeldingsadvertenties kunnen als acceptabel worden gekwalificeerd, volgens een op hun integratie op de webpagina gebaseerde evaluatie van hun onopvallendheid.",
-        "description": "\"Image ads\" description in \"Specific criteria\""
-    },
-    "in-feed-ads": {
-        "message": "In-feed-advertenties",
-        "description": "Subheadline in \"Specific criteria\""
-    },
-    "feed-list-ads": {
-        "message": "Voor advertenties in lijsten en feeds zijn de algemene criteria verschillend en afhankelijk van:",
-        "description": "\"In-feed ads\" description in \"Specific criteria\""
-    },
-    "placement-requirement": {
-        "message": "Vereisten voor plaatsing",
-        "description": "Bullet point in \"Specific criteria\""
-    },
-    "entries-feeds": {
-        "message": "Advertenties tussen items en feeds zijn toegestaan.",
-        "description": "Text below bullet point in \"Specific criteria\""
-    },
-    "size-requirement": {
-        "message": "Vereisten voor grootte",
-        "description": "Bullet point in \"Specific criteria\""
-    },
-    "in-feed-ads-size": {
-        "message": "In-feed-advertenties mogen meer ruimte innemen, zolang ze niet significant groter zijn dan andere elementen in de lijst of feed.",
-        "description": "Text below bullet point in \"Specific criteria\""
-    },
-    "search-ads": {
-        "message": "Zoekadvertenties",
-        "description": "Subheadline in \"Specific criteria\""
-    },
-    "search-ads-info": {
-        "message": "Voor zoekadvertenties - weergegeven advertenties na een door de gebruiker geïnitieerde zoekopdracht - zijn de criteria anders en afhankelijk van:",
-        "description": "\"Search ads\" description in \"Specific criteria\""
-    },
-    "more-space": {
-        "message": "Zoekadvertenties mogen groter zijn en extra schermruimte innemen.",
-        "description": "Text below bullet point in \"Specific criteria\""
-    },
-    "no-primary-content": {
-        "message": "Advertenties op pagina's zonder primaire inhoud",
-        "description": "Subheadline in \"Specific criteria\""
-    },
-    "only-text-ads": {
-        "message": "Alleen tekstadvertenties zijn toegestaan. Voor webpagina's zonder Primaire inhoud (bv. fout- of parkeerpagina's) zijn de criteria anders en afhankelijk van:",
-        "description": "\"Ads on pages with no primary content\" description in \"Specific criteria\""
-    },
-    "no-placement-limit": {
-        "message": "Geen beperkingen voor plaatsing.",
-        "description": "Text below point in \"Specific criteria\""
-    },
-    "no-size-limit": {
-        "message": "Geen beperkingen voor grootte.",
-        "description": "Text below bullet point in \"Specific criteria\""
-    },
-    "mobile-ads-heading": {
-        "message": "Advertenties voor mobiel",
-        "description": "heading"
-    },
-    "mobile-ads-placement-heading": {
-        "message": "Plaatsingsvereisten",
-        "description": "heading"
-    },
-    "mobile-ads-placement-item-1": {
-        "message": "Statische advertentietypen (bv. 6x1-banner en 1x1-tegeladvertentie) mogen overal op de mobiele pagina worden geplaatst.",
-        "description": "list item"
-    },
-    "mobile-ads-placement-item-2": {
-        "message": "Kleine advertenties (6x1-banner of kleiner) mogen als een plakadvertentie onderaan het scherm worden geplaatst. Andere plakformaten zijn niet toegestaan.",
-        "description": "list item"
-    },
-    "mobile-ads-placement-item-3": {
-        "message": "Grote advertentietypen (bv. systeemeigen tegeladvertenties) mogen uitsluitend onder de primaire inhoud worden geplaatst.",
-        "description": "list item"
-    },
-    "mobile-ads-size-heading": {
-        "message": "Groottevereisten",
-        "description": "heading"
-    },
-    "mobile-ads-size-lead": {
-        "message": "Voor advertenties op mobiele schermen gelden de volgende groottebeperkingen:"
-    },
-    "mobile-ads-size-item-1": {
-        "message": "Advertenties die op het scrolbare gedeelte van de webpagina worden geïmplementeerd, mogen in totaal niet meer dan 50 procent van het zichtbare gedeelte van de webpagina in beslag nemen.",
-        "description": "list item"
-    },
-    "mobile-ads-size-item-2": {
-        "message": "Als plakadvertenties geïmplementeerde advertenties hebben een maximale hoogtebeperking van 75px (of 15%).",
-        "description": "list item"
-    },
-    "mobile-ads-size-item-3": {
-        "message": "Onder de primaire inhoud zijn advertenties beperkt tot 100% van de schermruimte.",
-        "description": "list item"
-    },
-    "animations-heading": {
-        "message": "Animaties",
-        "description": "heading"
-    },
-    "animations-paragraph-1": {
-        "message": "Animaties zijn toegestaan voor het 6x1-advertentietype als deze als plakadvertentie onderaan het scherm zijn geplaatst. Animaties moeten aan de LEAN-norm voor animaties voldoen, en er moet een knop Sluiten of een ander sluitmechanisme worden inbegrepen."
-    },
-    "other-acceptable-ads": {
-        "message": "Andere afmetingen voor Acceptabele advertenties?",
-        "description": "Subheadline in \"Specific criteria\""
-    },
-    "new-format": {
-        "message": "Worden uw advertenties op alternatieve schermen weergegeven, of bent u ervan overtuigd dat u een innovatieve vorm van Acceptabele advertenties hebt die niet in de hierboven beschreven advertenties past? <a>Laat het ons weten!<\/a>",
-        "description": "\"Other Acceptable Ads formats\" text in \"Specific criteria\""
-    },
-    "primary-content": {
-        "message": "De 'Primaire inhoud' wordt (gebaseerd op <a>Mozilla's beschrijving<\/a> van het HTML-element <main>) gedefinieerd als: de primaire inhoud bestaat uit inhoud die rechtstreeks verband houdt met of uitbreiding biedt op het centrale onderwerp van een document of de centrale functionaliteit van een toepassing. Deze inhoud moet uniek zijn voor het document, met uitzondering van alle inhoud die in een groep van documenten wordt herhaald, zoals zijbalken, navigatiekoppelingen, copyrightgegevens, websitelogo's en zoekformulieren (tenzij de hoofdfunctie van het document natuurlijk een zoekformulier is).",
-        "description": "footnote in \"Other Acceptable Ads formats\""
-    },
-    "screen-desktop": {
-        "message": "De 'gebruikelijke schermgrootte' voor desktops is 1366x768, gebaseerd op gegevens van <a>StatCounter<\/a>.",
-        "description": "footnote in \"Other Acceptable Ads formats\""
-    },
-    "screen-mobile": {
-        "message": "De 'gebruikelijke schermgrootte' voor mobiel is 360x640, gebaseerd op gegevens van <a>StatCounter<\/a>.",
-        "description": "footnote in \"Other Acceptable Ads formats\""
-    },
-    "screen-tablets": {
-        "message": "De 'gebruikelijke schermgrootte' voor tablets is 768x1024, gebaseerd op gegevens van <a>StatCounter<\/a>.",
-        "description": "footnote in \"Other Acceptable Ads formats\""
-    },
-    "about-no-third-party-heading": {
-        "message": "Wat zijn Acceptabele advertenties zonder tracking door derden?",
-        "description": "heading"
-    },
-    "acceptable-ads-no-third-party-about": {
-        "message": "Acceptabele advertenties zonder tracking door derden zijn advertenties die aan de <a>criteria voor Acceptabele advertenties<\/a> voldoen en die niet toestaan dat derden uw surfgedrag volgen. Dit zijn advertenties die aan de standaard voor <a>'Niet volgen'<\/a> (Do Not Track) voldoen en\/of advertenties die worden aangeboden door het domein dat eigendom is van hetzelfde bedrijf.",
-        "description": "paragraph"
-    },
-    "not-acceptable-ad": {
-        "message": "Wat wordt niet als een Acceptabele advertentie beschouwd?",
-        "description": "Section header"
-    },
-    "unacceptable-ads": {
-        "message": "De volgende typen advertenties zijn momenteel onacceptabel <sup><a>*<\/a><\/sup>, en komen niet in aanmerking voor opname in de whitelist:",
-        "description": "Text in \"not Acceptable Ad\" section"
-    },
-    "load-new-ads": {
-        "message": "Advertenties die zichtbaar nieuwe advertenties laden als de primaire inhoud niet verandert",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "hover-effect-ads": {
-        "message": "Advertenties met overmatige of niet door de gebruiker geïnitieerde aanwijseffecten",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "animated-ads": {
-        "message": "Bewegende advertenties",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "autoplay-ads": {
-        "message": "Advertenties met automatisch afgespeeld geluid of video",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "expanding-ads": {
-        "message": "Advertenties die zichzelf groter maken",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "oversized-ads": {
-        "message": "Over het algemeen te grote afbeeldingsadvertenties",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "interstitial-ads": {
-        "message": "Verspreide pagina-advertenties",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "overlay-ads": {
-        "message": "Overlay-advertenties",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "overlay-video-ads": {
-        "message": "In-video overlay-advertenties",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "pop-ups": {
-        "message": "Pop-ups",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "pop-unders": {
-        "message": "Pop-unders",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "pre-video-ads": {
-        "message": "Pre-roll-videoadvertenties",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "rich-ads": {
-        "message": "Uitgebreide-media-advertenties (bv. Flash- en Shockwave-advertenties, etc.)",
-        "description": "Bullet point in \"not Acceptable Ad\" section"
-    },
-    "exception": {
-        "message": "Behalve wanneer de gebruiker opzettelijke interactie met de advertentie heeft (bv. op de advertentie klikt om een videoadvertentie te zien afspelen).",
-        "description": "Footnote in \"not Acceptable Ad\" section"
-    },
-    "why-default": {
-        "message": "Waarom is deze functie standaard ingeschakeld?",
-        "description": "Section header"
-    },
-    "default-reason": {
-        "message": "Helaas is dit de enige manier om de hierboven beschreven doelen te bereiken. Als de meerderheid van de Adblock Plus-gebruikers deze functie heeft geactiveerd, worden adverteerders gestimuleerd om betere advertenties te produceren.",
-        "description": "Text in \"Why is this feature enabled by default?\" section"
-    },
-    "hate-ads": {
-        "message": "Maar ik haat alle advertenties!",
-        "description": "Section header"
-    },
-    "can-disable": {
-        "message": "Geen probleem, u kunt deze functie op elk gewenst moment uitschakelen:",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "disable-chrome-1": {
-        "message": "<strong>Chrome (ABP-versies 3.0.3+), Firefox (ABP-versies 3+), Opera (ABP-versies 3.0.3+)<\/strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Opties<\/strong>. Haal het vinkje weg bij <strong>Acceptabele advertenties toestaan<\/strong>.",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "disable-chrome-2": {
-        "message": "<strong>Chrome (ABP-versies <3.0.3), Maxthon, Opera (ABP-versies <3.0.3), Safari<\/strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Opties<\/strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan<\/strong>.",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "disable-firefox": {
-        "message": "<strong>Firefox<\/strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Filtervoorkeuren<\/strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan<\/strong>.",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "disable-ie": {
-        "message": "<strong>Internet Explorer<\/strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Instellingen<\/strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan<\/strong>.",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "disable-android-browser": {
-        "message": "<strong>Adblock Browser voor Android<\/strong> - Open Instellingen, tik op <strong>Advertentieblokkering > Acceptabele advertenties<\/strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan<\/strong>.",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "disable-ios-browser": {
-        "message": "<strong>Adblock Browser voor iOS<\/strong> - Open Instellingen, tik op <strong>Adblock Plus > Acceptabele advertenties<\/strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan<\/strong>.",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "disable-ios": {
-        "message": "<strong>Adblock Plus voor iOS<\/strong> - Open Adblock Plus voor iOS vanaf het startscherm, tik op het pictogram <strong>Instellingen<\/strong> > <strong>Acceptabele advertenties<\/strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan<\/strong>.",
-        "description": "Text in \"hate ads\" secion"
-    },
-    "all-unblocked": {
-        "message": "Worden alle ‘acceptabele’ advertenties gedeblokkeerd?",
-        "description": "Section header"
-    },
-    "agreement-ads": {
-        "message": "Nee. Helaas is het technisch niet mogelijk om automatisch advertenties te herkennen die aan onze criteria voor Acceptabele advertenties voldoen. We hebben <a>overeenkomsten<\/a> met een aantal websites en adverteerders die bepalen dat alleen advertenties worden weergegeven die aan onze criteria voldoen wanneer Adblock Plus-gebruikers deze bepaalde websites bezoeken. Deze advertenties zullen worden gedeblokkeerd (d.w.z. toegevoegd aan de uitzonderingenlijst voor Acceptabele advertenties die standaard is ingeschakeld).",
-        "description": "Text in \"which acceptable ads are unblocked\" section"
-    },
-    "everyone-must-comply": {
-        "message": "Geen enkele aanvrager krijgt een voorkeur of wordt anders behandeld, en niemand kan een plek op de whitelist kopen. <strong>Iedereen moet voldoen<\/strong> aan de criteria en iedereen doorloopt hetzelfde proces voordat de advertenties als ‘Acceptabel’ worden gekwalificeerd.",
-        "description": "Text in \"which acceptable ads are unblocked\" section"
-    },
-    "false-positives": {
-        "message": "Wat als een advertentie is toegestaan, maar niet aan de vereisten voldoet?",
-        "description": "Section header"
-    },
-    "false-positives-report": {
-        "message": "<a>Meld dit<\/a>. Als een adverteerder misbruik maakt van zijn plaatsing op de uitzonderingenlijst, kunnen we deze altijd van de lijst verwijderen.",
-        "description": "Text in \"doesn't meet requirement\" secion"
-    },
-    "what-allowed": {
-        "message": "Hoe kan ik zien wat jullie toestaan?",
-        "description": "Section header"
-    },
-    "acceptable-ads-filter": {
-        "message": "Het selectievakje <strong>Niet-opdringerige advertenties toestaan<\/strong> voegt eenvoudig een of meer filterabonnementen toe aan uw lijst. <a>Hier<\/a> kunt u de filters bekijken. Ook kan de speciale behandeling van dit filterabonnement - dat om redenen van bruikbaarheid is toegevoegd - worden uitgeschakeld door naar ‘about:config’ te gaan en de voorkeur <a>extensions.adblockplus.subscriptions_exceptionscheckbox<\/a> naar false te wijzigen. Hierdoor kunt u de filters voor dit abonnement op de normale manier bekijken.",
-        "description": "Text in \"what you is allowed\" section"
-    },
-    "acceptable-ads-contacts": {
-        "message": "Hebt u vragen of suggesties betreffende deze lijst? Aarzel niet om contact op te nemen met de gemeenschap <a>in ons forum<\/a>, of neem rechtstreeks contact met ons op <a>via e-mail<\/a>.",
-        "description": "Text in \"what you is allowed\" section"
-    },
-    "how-be-whitelisted": {
-        "message": "Hoe kan ik mijn website op de whitelist krijgen?",
-        "description": "Section header"
-    },
-    "process-of-whitelisting": {
-        "message": "Het proces om uw advertenties op de whitelist te krijgen neemt ongeveer 10 werkdagen in beslag zodra de advertenties aan de criteria voor Acceptabele advertenties voldoen:",
-        "description": "Text in \"how to be whitelisted\" section"
-    },
-    "comply-with-criteria": {
-        "message": "Als uw website advertenties bevat die aan de <a>criteria voor Acceptabele advertenties<\/a> voldoen, vul dan <a>dit formulier<\/a> in.",
-        "description": "Whitelisting step in \"how to be whitelisted\" section"
-    },
-    "eyeo-contacts-back": {
-        "message": "Iemand van <a>Eyeo<\/a>, het bedrijf achter Adblock Plus, zal contact met u opnemen om de exacte advertenties te bepalen, en controleren of deze aan onze criteria voldoen.",
-        "description": "Whitelisting step in \"how to be whitelisted\" section"
-    },
-    "sign-agreement": {
-        "message": "Nadat u eventuele noodzakelijke wijzigingen hebt aangebracht, ondertekenen beide partijen een overeenkomst.",
-        "description": "Whitelisting step in \"how to be whitelisted\" section"
-    },
-    "whitelist-proposal-submission": {
-        "message": "We plaatsen het voorstel voor whitelisting <a>in het forum<\/a>, en tegelijkertijd worden de advertenties gewhitelist. Het onderwerp zal open blijven om de gemeenschap zorgen te kunnen laten uiten als of wanneer de aanvrager niet aan de vereisten voldoet.",
-        "description": "Whitelisting step in \"how to be whitelisted\" section"
-    },
-    "does-users-need": {
-        "message": "Willen Adblock Plus-gebruikers deze functie echt?",
-        "description": "Section header"
-    },
-    "survey": {
-        "message": "De <a>resultaten van onze gebruikersenquête<\/a> zeggen van wel. Volgens de enquête is slechts 25 procent van de Adblock Plus-gebruikers sterk gekant tegen alle advertenties. Zij kunnen de functie uitschakelen en volledig advertentievrij surfen. De overige 75 procent antwoordde dat ze bepaalde advertenties zouden accepteren om websites te helpen steunen.",
-        "description": "Text in \"who want acceptable ads\" section"
-    },
-    "revenue": {
-        "message": "Is er sprake van betalingen?",
-        "description": "Section header"
-    },
-    "main-revenue": {
-        "message": "We ontvangen wat donaties van onze gebruikers, maar onze grootste inkomstenbron komt voort uit het Acceptable Ads-initiatief. Grotere entiteiten (zoals hieronder gedefinieerd) betalen een licentievergoeding voor de aangevraagde en aan hen geleverde whitelisting-diensten (ongeveer 90 procent van de licenties wordt gratis verstrekt). Er moet worden opgemerkt dat aan de Acceptable Ads-criteria moet worden voldaan, onafhankelijk van de overweging voor vergoedingen. Als niet aan de criteria wordt voldaan, is whitelisting niet mogelijk.",
-        "description": "Text in \"Is there payment involved?\" section"
-    },
-    "who-pays": {
-        "message": "Wat vergoedingen betreft, moeten alleen grote entiteiten betalen (die met meer dan 10 miljoen aanvullende advertentie-impressies per maand als gevolg van deelname in het Acceptable Ads-initiatief). Voor deze entiteiten vertegenwoordigt onze licentievergoeding normaliter 30 procent van de aanvullende omzet die door whitelisting van acceptabele advertenties ervan wordt gecreëerd.",
-        "description": "Text in \"Is there payment involved?\" section"
-    },
-    "more-details": {
-        "message": "Kijk <a>hier<\/a> voor meer details.",
-        "description": "Text in \"Is there payment involved?\" section"
-    },
-    "footnote-1": {
-        "message": "Grote advertentie: >300px hoogte",
-        "description": "footnote"
-    },
-    "footnote-2": {
-        "message": "De 'Primaire inhoud' wordt gedefinieerd als (gebaseerd op <a>Mozilla's beschrijving<\/a> van het HTML-element <code><main><\/code>): de primaire inhoud bestaat uit inhoud die rechtstreeks verband houdt met of uitbreiding biedt op het centrale onderwerp van een document of de centrale functionaliteit van een toepassing. Deze inhoud moet uniek zijn voor het document, met uitzondering van alle inhoud die in een groep van documenten wordt herhaald, zoals zijbalken, navigatiekoppelingen, copyrightgegevens, websitelogo's en zoekformulieren (tenzij de hoofdfunctie van het document natuurlijk een zoekformulier is).",
-        "description": "footnote"
-    },
-    "footnote-3": {
-        "message": "Het zichtbare gedeelte van de webpagina is gedefinieerd als een standaard CSS-pixelgrootte van <a>360x512px<\/a> (Samsung Galaxy S7 met de SBrowser), wat is gebaseerd op de standaard viewport van <a>360x640px<\/a>, maar met aftrek van de OS- en browser-UI-elementen.",
-        "description": "footnote"
-    },
-    "footnote-4": {
-        "message": "Dit betekent dat gebruikers de primaire inhoud voorbij kunnen scrollen en een advertentie daarna het volledige scherm in beslag kan nemen; maar na deze advertentie kunnen geen extra advertenties worden geïmplementeerd.",
-        "description": "footnote"
-    },
-    "footnote-5": {
-        "message": "Van: <a>Iab New Standard Ad Unit Portfolio (2017)<\/a>",
-        "description": "footnote"
-    },
-    "footnote-6": {
-        "message": "Met één uitzondering, zie hiervoor <a>Advertenties voor mobiel<\/a>.",
-        "description": "footnote"
-    },
-    "title": {
-        "message": "Acceptabele advertenties toestaan in Adblock Plus"
-    },
-    "navbar-logo-text": {
-        "message": "Adblock <strong>Plus<\/strong>",
-        "description": "Navbar logo text"
-    }
+  "meta-description": {
+    "message": "Adblock Plus introduceert het Acceptable Ads-initiatief: websites steunen die van advertenties afhankelijk zijn, maar ervoor kiezen deze op een niet-opdringerige manier aan te bieden.",
+    "description": "Description meta tag content inside head tag"
+  },
+  "page-under-review": {
+    "message": "Deze pagina wordt herzien, omdat het beheer van het Acceptable Ads-initiatief is overgedragen aan het onafhankelijke <a>Acceptable Ads Committee</a>.",
+    "description": "Page under review notice"
+  },
+  "about": {
+    "message": "Waar gaat dit over?",
+    "description": "Section header"
+  },
+  "about-abp": {
+    "message": "Adblock Plus is een hulpmiddel waarmee gebruikers <a>advertenties</a> kunnen blokkeren. Aangezien advertenties voor een groot deel voor de financiering zorgen van het materiaal waar we online gratis plezier van hebben, lijkt het vinden van raakvlakken zinvol. We hebben onze gebruikers hiernaar gevraagd, en de meerderheid was het hiermee eens.",
+    "description": "Paragraph in \"about\" section"
+  },
+  "abp-history": {
+    "message": "In 2011 hebben we in overleg met <a>onze gebruikers</a> besloten een compromis voor te stellen. Omdat we met de meerderheid van onze gebruikers een visie delen waarbij niet alle advertenties even vervelend zijn, is het Acceptable Ads-initiatief tot stand gebracht. Hiermee kunnen adverteerders en uitgevers die instemmen met het maken van advertenties die aan door gebruikers opgestelde criteria voldoen op een ‘whitelist’ worden gezet. Gebruikers kunnen deze minder extreme versie van advertentieblokkering steunen door de optie voor het toestaan van acceptabele advertenties ingeschakeld te houden. Om volledig advertentievrij te browsen, kunnen gebruikers <a>de optie uitschakelen</a>.",
+    "description": "Paragraph in \"about\" section"
+  },
+  "benefit": {
+    "message": "Het Acceptable Ads-initiatief biedt voordelen, omdat het de advertentie-industrie aanmoedigt minder opdringerige advertentieafmetingen na te streven, wat een positieve impact heeft op het internet als geheel. Ook biedt het ons een <a>levensvatbare bron van inkomsten</a>, alleen betaald door grotere deelnemers aan het Acceptable Ads-initiatief, die we nodig hebben om het programma te kunnen beheren en onderhouden en de ontwikkeling van een gratis product te kunnen voortzetten.",
+    "description": "Text in \"about\" section"
+  },
+  "our-belive": {
+    "message": "We vinden dat dit initiatief een duurzame middenweg is tussen de keuze van de gebruiker om adblockers te gebruiken en de aanhoudende noodzaak om gratis online-inhoud te steunen met advertenties. Doorgaans is een Acceptabele advertentie een niet-bewegende advertentie, duidelijk als zodanig gelabeld, die het leestempo niet belemmert. Belangrijk om te weten is dat deze criteria de aanhoudende discussies tussen onze gebruikers, uitgevers, adverteerders en ons proberen weer te geven. Zoals <a>eerder aangekondigd</a> heeft eyeo / Adblock Plus in 2017 het beheer van het Acceptable Ads-initiatief overgedragen aan een onafhankelijke groep mensen, het <a>Acceptable Ads Committee</a>.",
+    "description": "Paragraph in \"about\" section"
+  },
+  "fairness-rules": {
+    "message": "Om transparantie en eerlijkheid te garanderen, waren en zullen deze regels altijd voor iedereen zonder uitzonderingen van toepassing zijn:",
+    "description": "Text in \"about\" section"
+  },
+  "avoid-criteria": {
+    "message": "Deelnemers kunnen niet betalen om de criteria te omzeilen. <strong>Iedere advertentie moet aan de criteria voldoen.</strong>",
+    "description": "Fairness rule Bullet point in \"about\" section"
+  },
+  "transparency": {
+    "message": "Om redenen van transparantie voegen we alle Acceptabele advertenties aan ons forum toe om onze gemeenschap de gelegenheid te bieden feedback te geven. We waarderen feedback enorm en lezen alle opmerkingen.",
+    "description": "Fairness rule Bullet point in \"about\" section"
+  },
+  "user-value": {
+    "message": "Adblock Plus-gebruikers zijn ons veel waard, en er wordt naar hen geluisterd. Als een voorstel voor Acceptabele advertenties om geldige redenen door onze gemeenschap wordt geweigerd, zal/zullen de advertentie(s) van onze whitelist worden verwijderd.",
+    "description": "Fairness rule Bullet point in \"about\" section"
+  },
+  "charging": {
+    "message": "We kunnen ons opensourceproduct gratis houden <a>door grote entiteiten een vergoeding te vragen</a> voor het whitelisten van diensten. Voor de overige grofweg {1} procent van onze partners worden deze diensten kosteloos aangeboden.",
+    "description": "Paragraph in \"about\" section\n{1}: 90"
+  },
+  "manifesto": {
+    "message": "Vindt u dit een goed idee? Toon uw steun door ons <a>Acceptable Ads-manifest</a> te ondertekenen.",
+    "description": "Paragraph in \"about\" section"
+  },
+  "acceptable-ads": {
+    "message": "Wat is een Acceptabele advertentie?",
+    "description": "Section header"
+  },
+  "criteria": {
+    "message": "Criteria voor Acceptabele advertenties",
+    "description": "Text in \"Acceptable Ad\" section"
+  },
+  "general-criteria": {
+    "message": "Algemene criteria",
+    "description": "Criteria header in \"Acceptable Ad\" section"
+  },
+  "placement": {
+    "message": "Plaatsing",
+    "description": "Text in \"General criteria\""
+  },
+  "placement-criteria": {
+    "message": "Advertenties mogen het natuurlijke leestempo van de gebruiker niet verstoren. Dergelijke advertenties moeten boven, naast of onder de Primaire inhoud <sup><a>1</a></sup> worden geplaatst.",
+    "description": "Paragraph in \"General criteria\""
+  },
+  "acceptable-ads-placement-alt": {
+    "message": "Acceptabele advertenties - criteria voor plaatsing",
+    "description": "Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)"
+  },
+  "distiction": {
+    "message": "Onderscheid",
+    "description": "Text in \"General criteria\""
+  },
+  "distiction-criteria": {
+    "message": "Advertenties moeten altijd herkenbaar zijn als advertenties, en te onderscheiden zijn van alle andere inhoud (bv. ze verbergen het label niet, misleiden gebruikers niet tot het denken dat een advertentie onderdeel is van de primaire inhoud). Advertenties moeten duidelijk met het woord 'advertentie' of het equivalent ervan worden aangeduid.",
+    "description": "Paragraph in \"General criteria\""
+  },
+  "acceptable-ads-label-alt": {
+    "message": "Acceptabele advertenties - criteria voor label",
+    "description": "Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)"
+  },
+  "size": {
+    "message": "Grootte",
+    "description": "Text in \"General criteria\""
+  },
+  "size-criteria": {
+    "message": "Individuele vereisten voor advertentiegroottes zijn afhankelijk van de plaatsing van de advertentie:",
+    "description": "Text in \"General criteria\""
+  },
+  "above-primary-content": {
+    "message": "Bij plaatsing boven de Primaire inhoud dient de maximale hoogte van een advertentie 200px te zijn.",
+    "description": "Bullet point in \"General criteria\""
+  },
+  "side-primary-content": {
+    "message": "Bij plaatsing naast de Primaire inhoud dient de maximale breedte van een advertentie 350px te zijn.",
+    "description": "Bullet point in \"General criteria\""
+  },
+  "below-primary-content": {
+    "message": "Bij plaatsing onder de Primaire inhoud dient de maximale hoogte van een advertentie 400px te zijn.",
+    "description": "Bullet point in \"General criteria\""
+  },
+  "sufficient-space": {
+    "message": "Advertenties moeten altijd genoeg ruimte voor de Primaire inhoud overlaten op de gebruikelijke schermgrootte van 1366x768 <sup><a>2</a></sup> voor desktops, 360x640 <sup><a>3</a></sup> voor mobiele apparaten en 768x1024 <sup><a>4</a></sup> voor tablets.",
+    "description": "Paragraph in \"General criteria\""
+  },
+  "total-ad-space": {
+    "message": "Alle advertenties die boven de vouw worden geplaatst (het in het browservenster zichtbare gedeelte van de webpagina wanneer de pagina onder de gebruikelijke schermgrootte wordt geladen), mogen niet meer dan 15 procent van het zichtbare gedeelte van de webpagina innemen. Bij plaatsing onder de vouw mogen advertenties in totaal niet meer dan 25 procent van het zichtbare gedeelte van de webpagina innemen.",
+    "description": "Paragraph in \"General criteria\""
+  },
+  "acceptable-ads-percentage-alt": {
+    "message": "Acceptabele advertenties - criteria voor percentage",
+    "description": "Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)"
+  },
+  "specific-criteria": {
+    "message": "Specifieke criteria",
+    "description": "Criteria header in \"Acceptable Ad\" section"
+  },
+  "text-ads": {
+    "message": "Tekstadvertenties",
+    "description": "Text in \"Specific criteria\""
+  },
+  "attention-grab": {
+    "message": "Tekstadvertenties die met overmatig gebruik van kleuren en/of andere om aandacht vragende elementen zijn ontworpen, zijn niet toegestaan.",
+    "description": "\"Text ads\" description in \"Specific criteria\""
+  },
+  "image-ads": {
+    "message": "Afbeeldingsadvertenties",
+    "description": "Subheadline in \"Specific criteria\""
+  },
+  "unobtrusive-image": {
+    "message": "Statische afbeeldingsadvertenties kunnen als acceptabel worden gekwalificeerd, volgens een op hun integratie op de webpagina gebaseerde evaluatie van hun onopvallendheid.",
+    "description": "\"Image ads\" description in \"Specific criteria\""
+  },
+  "in-feed-ads": {
+    "message": "In-feed-advertenties",
+    "description": "Subheadline in \"Specific criteria\""
+  },
+  "feed-list-ads": {
+    "message": "Voor advertenties in lijsten en feeds zijn de algemene criteria verschillend en afhankelijk van:",
+    "description": "\"In-feed ads\" description in \"Specific criteria\""
+  },
+  "placement-requirement": {
+    "message": "Vereisten voor plaatsing",
+    "description": "Bullet point in \"Specific criteria\""
+  },
+  "entries-feeds": {
+    "message": "Advertenties tussen items en feeds zijn toegestaan.",
+    "description": "Text below bullet point in \"Specific criteria\""
+  },
+  "size-requirement": {
+    "message": "Vereisten voor grootte",
+    "description": "Bullet point in \"Specific criteria\""
+  },
+  "in-feed-ads-size": {
+    "message": "In-feed-advertenties mogen meer ruimte innemen, zolang ze niet significant groter zijn dan andere elementen in de lijst of feed.",
+    "description": "Text below bullet point in \"Specific criteria\""
+  },
+  "search-ads": {
+    "message": "Zoekadvertenties",
+    "description": "Subheadline in \"Specific criteria\""
+  },
+  "search-ads-info": {
+    "message": "Voor zoekadvertenties - weergegeven advertenties na een door de gebruiker geïnitieerde zoekopdracht - zijn de criteria anders en afhankelijk van:",
+    "description": "\"Search ads\" description in \"Specific criteria\""
+  },
+  "more-space": {
+    "message": "Zoekadvertenties mogen groter zijn en extra schermruimte innemen.",
+    "description": "Text below bullet point in \"Specific criteria\""
+  },
+  "no-primary-content": {
+    "message": "Advertenties op pagina's zonder primaire inhoud",
+    "description": "Subheadline in \"Specific criteria\""
+  },
+  "only-text-ads": {
+    "message": "Alleen tekstadvertenties zijn toegestaan. Voor webpagina's zonder Primaire inhoud (bv. fout- of parkeerpagina's) zijn de criteria anders en afhankelijk van:",
+    "description": "\"Ads on pages with no primary content\" description in \"Specific criteria\""
+  },
+  "no-placement-limit": {
+    "message": "Geen beperkingen voor plaatsing.",
+    "description": "Text below point in \"Specific criteria\""
+  },
+  "no-size-limit": {
+    "message": "Geen beperkingen voor grootte.",
+    "description": "Text below bullet point in \"Specific criteria\""
+  },
+  "mobile-ads-heading": {
+    "message": "Advertenties voor mobiel",
+    "description": "heading"
+  },
+  "mobile-ads-placement-heading": {
+    "message": "Plaatsingsvereisten",
+    "description": "heading"
+  },
+  "mobile-ads-placement-item-1": {
+    "message": "Statische advertentietypen (bv. 6x1-banner en 1x1-tegeladvertentie) mogen overal op de mobiele pagina worden geplaatst.",
+    "description": "list item"
+  },
+  "mobile-ads-placement-item-2": {
+    "message": "Kleine advertenties (6x1-banner of kleiner) mogen als een plakadvertentie onderaan het scherm worden geplaatst. Andere plakformaten zijn niet toegestaan.",
+    "description": "list item"
+  },
+  "mobile-ads-placement-item-3": {
+    "message": "Grote advertentietypen (bv. systeemeigen tegeladvertenties) mogen uitsluitend onder de primaire inhoud worden geplaatst.",
+    "description": "list item"
+  },
+  "mobile-ads-size-heading": {
+    "message": "Groottevereisten",
+    "description": "heading"
+  },
+  "mobile-ads-size-lead": {
+    "message": "Voor advertenties op mobiele schermen gelden de volgende groottebeperkingen:"
+  },
+  "mobile-ads-size-item-1": {
+    "message": "Advertenties die op het scrolbare gedeelte van de webpagina worden geïmplementeerd, mogen in totaal niet meer dan 50 procent van het zichtbare gedeelte van de webpagina in beslag nemen.",
+    "description": "list item"
+  },
+  "mobile-ads-size-item-2": {
+    "message": "Als plakadvertenties geïmplementeerde advertenties hebben een maximale hoogtebeperking van 75px (of 15%).",
+    "description": "list item"
+  },
+  "mobile-ads-size-item-3": {
+    "message": "Onder de primaire inhoud zijn advertenties beperkt tot 100% van de schermruimte.",
+    "description": "list item"
+  },
+  "animations-heading": {
+    "message": "Animaties",
+    "description": "heading"
+  },
+  "animations-paragraph-1": {
+    "message": "Animaties zijn toegestaan voor het 6x1-advertentietype als deze als plakadvertentie onderaan het scherm zijn geplaatst. Animaties moeten aan de LEAN-norm voor animaties voldoen, en er moet een knop Sluiten of een ander sluitmechanisme worden inbegrepen."
+  },
+  "other-acceptable-ads": {
+    "message": "Andere afmetingen voor Acceptabele advertenties?",
+    "description": "Subheadline in \"Specific criteria\""
+  },
+  "new-format": {
+    "message": "Worden uw advertenties op alternatieve schermen weergegeven, of bent u ervan overtuigd dat u een innovatieve vorm van Acceptabele advertenties hebt die niet in de hierboven beschreven advertenties past? <a>Laat het ons weten!</a>",
+    "description": "\"Other Acceptable Ads formats\" text in \"Specific criteria\""
+  },
+  "primary-content": {
+    "message": "De 'Primaire inhoud' wordt (gebaseerd op <a>Mozilla's beschrijving</a> van het HTML-element <main>) gedefinieerd als: de primaire inhoud bestaat uit inhoud die rechtstreeks verband houdt met of uitbreiding biedt op het centrale onderwerp van een document of de centrale functionaliteit van een toepassing. Deze inhoud moet uniek zijn voor het document, met uitzondering van alle inhoud die in een groep van documenten wordt herhaald, zoals zijbalken, navigatiekoppelingen, copyrightgegevens, websitelogo's en zoekformulieren (tenzij de hoofdfunctie van het document natuurlijk een zoekformulier is).",
+    "description": "footnote in \"Other Acceptable Ads formats\""
+  },
+  "screen-desktop": {
+    "message": "De 'gebruikelijke schermgrootte' voor desktops is 1366x768, gebaseerd op gegevens van <a>StatCounter</a>.",
+    "description": "footnote in \"Other Acceptable Ads formats\""
+  },
+  "screen-mobile": {
+    "message": "De 'gebruikelijke schermgrootte' voor mobiel is 360x640, gebaseerd op gegevens van <a>StatCounter</a>.",
+    "description": "footnote in \"Other Acceptable Ads formats\""
+  },
+  "screen-tablets": {
+    "message": "De 'gebruikelijke schermgrootte' voor tablets is 768x1024, gebaseerd op gegevens van <a>StatCounter</a>.",
+    "description": "footnote in \"Other Acceptable Ads formats\""
+  },
+  "about-no-third-party-heading": {
+    "message": "Wat zijn Acceptabele advertenties zonder tracking door derden?",
+    "description": "heading"
+  },
+  "acceptable-ads-no-third-party-about": {
+    "message": "Acceptabele advertenties zonder tracking door derden zijn advertenties die aan de <a>criteria voor Acceptabele advertenties</a> voldoen en die niet toestaan dat derden uw surfgedrag volgen. Dit zijn advertenties die aan de standaard voor <a>'Niet volgen'</a> (Do Not Track) voldoen en/of advertenties die worden aangeboden door het domein dat eigendom is van hetzelfde bedrijf.",
+    "description": "paragraph"
+  },
+  "not-acceptable-ad": {
+    "message": "Wat wordt niet als een Acceptabele advertentie beschouwd?",
+    "description": "Section header"
+  },
+  "unacceptable-ads": {
+    "message": "De volgende typen advertenties zijn momenteel onacceptabel <sup><a>*</a></sup>, en komen niet in aanmerking voor opname in de whitelist:",
+    "description": "Text in \"not Acceptable Ad\" section"
+  },
+  "load-new-ads": {
+    "message": "Advertenties die zichtbaar nieuwe advertenties laden als de primaire inhoud niet verandert",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "hover-effect-ads": {
+    "message": "Advertenties met overmatige of niet door de gebruiker geïnitieerde aanwijseffecten",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "animated-ads": {
+    "message": "Bewegende advertenties",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "autoplay-ads": {
+    "message": "Advertenties met automatisch afgespeeld geluid of video",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "expanding-ads": {
+    "message": "Advertenties die zichzelf groter maken",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "oversized-ads": {
+    "message": "Over het algemeen te grote afbeeldingsadvertenties",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "interstitial-ads": {
+    "message": "Verspreide pagina-advertenties",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "overlay-ads": {
+    "message": "Overlay-advertenties",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "overlay-video-ads": {
+    "message": "In-video overlay-advertenties",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "pop-ups": {
+    "message": "Pop-ups",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "pop-unders": {
+    "message": "Pop-unders",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "pre-video-ads": {
+    "message": "Pre-roll-videoadvertenties",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "rich-ads": {
+    "message": "Uitgebreide-media-advertenties (bv. Flash- en Shockwave-advertenties, etc.)",
+    "description": "Bullet point in \"not Acceptable Ad\" section"
+  },
+  "exception": {
+    "message": "Behalve wanneer de gebruiker opzettelijke interactie met de advertentie heeft (bv. op de advertentie klikt om een videoadvertentie te zien afspelen).",
+    "description": "Footnote in \"not Acceptable Ad\" section"
+  },
+  "why-default": {
+    "message": "Waarom is deze functie standaard ingeschakeld?",
+    "description": "Section header"
+  },
+  "default-reason": {
+    "message": "Helaas is dit de enige manier om de hierboven beschreven doelen te bereiken. Als de meerderheid van de Adblock Plus-gebruikers deze functie heeft geactiveerd, worden adverteerders gestimuleerd om betere advertenties te produceren.",
+    "description": "Text in \"Why is this feature enabled by default?\" section"
+  },
+  "hate-ads": {
+    "message": "Maar ik haat alle advertenties!",
+    "description": "Section header"
+  },
+  "can-disable": {
+    "message": "Geen probleem, u kunt deze functie op elk gewenst moment uitschakelen:",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "disable-chrome-1": {
+    "message": "<strong>Chrome (ABP-versies 3.0.3+), Firefox (ABP-versies 3+), Opera (ABP-versies 3.0.3+)</strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Opties</strong>. Haal het vinkje weg bij <strong>Acceptabele advertenties toestaan</strong>.",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "disable-chrome-2": {
+    "message": "<strong>Chrome (ABP-versies <3.0.3), Maxthon, Opera (ABP-versies <3.0.3), Safari</strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Opties</strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>.",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "disable-firefox": {
+    "message": "<strong>Firefox</strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Filtervoorkeuren</strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>.",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "disable-ie": {
+    "message": "<strong>Internet Explorer</strong> - Klik op het Adblock Plus-pictogram en selecteer <strong>Instellingen</strong>. Haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>.",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "disable-android-browser": {
+    "message": "<strong>Adblock Browser voor Android</strong> - Open Instellingen, tik op <strong>Advertentieblokkering > Acceptabele advertenties</strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>.",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "disable-ios-browser": {
+    "message": "<strong>Adblock Browser voor iOS</strong> - Open Instellingen, tik op <strong>Adblock Plus > Acceptabele advertenties</strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>.",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "disable-ios": {
+    "message": "<strong>Adblock Plus voor iOS</strong> - Open Adblock Plus voor iOS vanaf het startscherm, tik op het pictogram <strong>Instellingen</strong> > <strong>Acceptabele advertenties</strong> en haal het vinkje weg bij <strong>Enkele niet-opdringerige advertenties toestaan</strong>.",
+    "description": "Text in \"hate ads\" secion"
+  },
+  "all-unblocked": {
+    "message": "Worden alle ‘acceptabele’ advertenties gedeblokkeerd?",
+    "description": "Section header"
+  },
+  "agreement-ads": {
+    "message": "Nee. Helaas is het technisch niet mogelijk om automatisch advertenties te herkennen die aan onze criteria voor Acceptabele advertenties voldoen. We hebben <a>overeenkomsten</a> met een aantal websites en adverteerders die bepalen dat alleen advertenties worden weergegeven die aan onze criteria voldoen wanneer Adblock Plus-gebruikers deze bepaalde websites bezoeken. Deze advertenties zullen worden gedeblokkeerd (d.w.z. toegevoegd aan de uitzonderingenlijst voor Acceptabele advertenties die standaard is ingeschakeld).",
+    "description": "Text in \"which acceptable ads are unblocked\" section"
+  },
+  "everyone-must-comply": {
+    "message": "Geen enkele aanvrager krijgt een voorkeur of wordt anders behandeld, en niemand kan een plek op de whitelist kopen. <strong>Iedereen moet voldoen</strong> aan de criteria en iedereen doorloopt hetzelfde proces voordat de advertenties als ‘Acceptabel’ worden gekwalificeerd.",
+    "description": "Text in \"which acceptable ads are unblocked\" section"
+  },
+  "false-positives": {
+    "message": "Wat als een advertentie is toegestaan, maar niet aan de vereisten voldoet?",
+    "description": "Section header"
+  },
+  "false-positives-report": {
+    "message": "<a>Meld dit</a>. Als een adverteerder misbruik maakt van zijn plaatsing op de uitzonderingenlijst, kunnen we deze altijd van de lijst verwijderen.",
+    "description": "Text in \"doesn't meet requirement\" secion"
+  },
+  "what-allowed": {
+    "message": "Hoe kan ik zien wat jullie toestaan?",
+    "description": "Section header"
+  },
+  "acceptable-ads-filter": {
+    "message": "Het selectievakje <strong>Niet-opdringerige advertenties toestaan</strong> voegt eenvoudig een of meer filterabonnementen toe aan uw lijst. <a>Hier</a> kunt u de filters bekijken. Ook kan de speciale behandeling van dit filterabonnement - dat om redenen van bruikbaarheid is toegevoegd - worden uitgeschakeld door naar ‘about:config’ te gaan en de voorkeur <a>extensions.adblockplus.subscriptions_exceptionscheckbox</a> naar false te wijzigen. Hierdoor kunt u de filters voor dit abonnement op de normale manier bekijken.",
+    "description": "Text in \"what you is allowed\" section"
+  },
+  "acceptable-ads-contacts": {
+    "message": "Hebt u vragen of suggesties betreffende deze lijst? Aarzel niet om contact op te nemen met de gemeenschap <a>in ons forum</a>, of neem rechtstreeks contact met ons op <a>via e-mail</a>.",
+    "description": "Text in \"what you is allowed\" section"
+  },
+  "how-be-whitelisted": {
+    "message": "Hoe kan ik mijn website op de whitelist krijgen?",
+    "description": "Section header"
+  },
+  "process-of-whitelisting": {
+    "message": "Het proces om uw advertenties op de whitelist te krijgen neemt ongeveer 10 werkdagen in beslag zodra de advertenties aan de criteria voor Acceptabele advertenties voldoen:",
+    "description": "Text in \"how to be whitelisted\" section"
+  },
+  "comply-with-criteria": {
+    "message": "Als uw website advertenties bevat die aan de <a>criteria voor Acceptabele advertenties</a> voldoen, vul dan <a>dit formulier</a> in.",
+    "description": "Whitelisting step in \"how to be whitelisted\" section"
+  },
+  "eyeo-contacts-back": {
+    "message": "Iemand van <a>Eyeo</a>, het bedrijf achter Adblock Plus, zal contact met u opnemen om de exacte advertenties te bepalen, en controleren of deze aan onze criteria voldoen.",
+    "description": "Whitelisting step in \"how to be whitelisted\" section"
+  },
+  "sign-agreement": {
+    "message": "Nadat u eventuele noodzakelijke wijzigingen hebt aangebracht, ondertekenen beide partijen een overeenkomst.",
+    "description": "Whitelisting step in \"how to be whitelisted\" section"
+  },
+  "whitelist-proposal-submission": {
+    "message": "We plaatsen het voorstel voor whitelisting <a>in het forum</a>, en tegelijkertijd worden de advertenties gewhitelist. Het onderwerp zal open blijven om de gemeenschap zorgen te kunnen laten uiten als of wanneer de aanvrager niet aan de vereisten voldoet.",
+    "description": "Whitelisting step in \"how to be whitelisted\" section"
+  },
+  "does-users-need": {
+    "message": "Willen Adblock Plus-gebruikers deze functie echt?",
+    "description": "Section header"
+  },
+  "survey": {
+    "message": "De <a>resultaten van onze gebruikersenquête</a> zeggen van wel. Volgens de enquête is slechts 25 procent van de Adblock Plus-gebruikers sterk gekant tegen alle advertenties. Zij kunnen de functie uitschakelen en volledig advertentievrij surfen. De overige 75 procent antwoordde dat ze bepaalde advertenties zouden accepteren om websites te helpen steunen.",
+    "description": "Text in \"who want acceptable ads\" section"
+  },
+  "revenue": {
+    "message": "Is er sprake van betalingen?",
+    "description": "Section header"
+  },
+  "main-revenue": {
+    "message": "We ontvangen wat donaties van onze gebruikers, maar onze grootste inkomstenbron komt voort uit het Acceptable Ads-initiatief. Grotere entiteiten (zoals hieronder gedefinieerd) betalen een licentievergoeding voor de aangevraagde en aan hen geleverde whitelisting-diensten (ongeveer 90 procent van de licenties wordt gratis verstrekt). Er moet worden opgemerkt dat aan de Acceptable Ads-criteria moet worden voldaan, onafhankelijk van de overweging voor vergoedingen. Als niet aan de criteria wordt voldaan, is whitelisting niet mogelijk.",
+    "description": "Text in \"Is there payment involved?\" section"
+  },
+  "who-pays": {
+    "message": "Wat vergoedingen betreft, moeten alleen grote entiteiten betalen (die met meer dan 10 miljoen aanvullende advertentie-impressies per maand als gevolg van deelname in het Acceptable Ads-initiatief). Voor deze entiteiten vertegenwoordigt onze licentievergoeding normaliter 30 procent van de aanvullende omzet die door whitelisting van acceptabele advertenties ervan wordt gecreëerd.",
+    "description": "Text in \"Is there payment involved?\" section"
+  },
+  "more-details": {
+    "message": "Kijk <a>hier</a> voor meer details.",
+    "description": "Text in \"Is there payment involved?\" section"
+  },
+  "footnote-1": {
+    "message": "Grote advertentie: >300px hoogte",
+    "description": "footnote"
+  },
+  "footnote-2": {
+    "message": "De 'Primaire inhoud' wordt gedefinieerd als (gebaseerd op <a>Mozilla's beschrijving</a> van het HTML-element <code><main></code>): de primaire inhoud bestaat uit inhoud die rechtstreeks verband houdt met of uitbreiding biedt op het centrale onderwerp van een document of de centrale functionaliteit van een toepassing. Deze inhoud moet uniek zijn voor het document, met uitzondering van alle inhoud die in een groep van documenten wordt herhaald, zoals zijbalken, navigatiekoppelingen, copyrightgegevens, websitelogo's en zoekformulieren (tenzij de hoofdfunctie van het document natuurlijk een zoekformulier is).",
+    "description": "footnote"
+  },
+  "footnote-3": {
+    "message": "Het zichtbare gedeelte van de webpagina is gedefinieerd als een standaard CSS-pixelgrootte van <a>360x512px</a> (Samsung Galaxy S7 met de SBrowser), wat is gebaseerd op de standaard viewport van <a>360x640px</a>, maar met aftrek van de OS- en browser-UI-elementen.",
+    "description": "footnote"
+  },
+  "footnote-4": {
+    "message": "Dit betekent dat gebruikers de primaire inhoud voorbij kunnen scrollen en een advertentie daarna het volledige scherm in beslag kan nemen; maar na deze advertentie kunnen geen extra advertenties worden geïmplementeerd.",
+    "description": "footnote"
+  },
+  "footnote-5": {
+    "message": "Van: <a>Iab New Standard Ad Unit Portfolio (2017)</a>",
+    "description": "footnote"
+  },
+  "footnote-6": {
+    "message": "Met één uitzondering, zie hiervoor <a>Advertenties voor mobiel</a>.",
+    "description": "footnote"
+  },
+  "title": {
+    "message": "Acceptabele advertenties toestaan in Adblock Plus"
+  },
+  "navbar-logo-text": {
+    "message": "Adblock <strong>Plus</strong>",
+    "description": "Navbar logo text"
+  },
+  "disable-ios-safari": {
+    "message": "Adblock Plus voor iOS"
+  },
+  "disable-ios-safari-step-2": {
+    "message": "Tik op het <strong>Instellingen-pictogram</strong> onderaan de pagina."
+  },
+  "disable-ios-safari-step-3": {
+    "message": "Tik op de Instellingen-pagina op <strong>Acceptabele advertenties</strong>."
+  },
+  "disable-ios-safari-step-1": {
+    "message": "Open Adblock Plus voor iOS"
+  },
+  "disable-ios-safari-step-4": {
+    "message": "Schakel <strong>Sta sommige niet-opdringerige advertenties toe</strong> uit."
+  }
 }
