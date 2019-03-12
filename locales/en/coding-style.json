@@ -1,0 +1,224 @@
+{
+  "python-tests": {
+    "message": "Write tests and have them run along {1} using <a>{2}</a>."
+  },
+  "html-css-order": {
+    "message": "CSS rule declaration order should follow the <a>WordPress CSS Coding Standards</a>."
+  },
+  "python-concatenation": {
+    "message": "Use the <code>{1}</code> operator when concatenating exactly two strings, use the <a><code>{2}</code> method</a> for more complex string formatting, use the <a><code>{3}</code> method</a> when concatenating pre-existing sequences."
+  },
+  "python-general": {
+    "message": "Follow <a>{1}</a> and the recommendations in the offical {2} documentation."
+  },
+  "javascript-strict": {
+    "message": "Always use <a>strict mode</a>."
+  },
+  "html-css-font-unit": {
+    "message": "CSS font weight values should be specified in relative or numerical notation"
+  },
+  "html-css-quotation": {
+    "message": "Use double over single quotation marks."
+  },
+  "javascript-arrow": {
+    "message": "Use the <a>arrow function</a> syntax when passing anonymous functions that don't require the binding of their own <code>{1}</code> or <code>{2}</code> variables."
+  },
+  "python-multiline-a1": {
+    "message": "aligning follow up lines with the opening parentheses and putting the closing parentheses at the end of the last line"
+  },
+  "zopflipng": {
+    "message": "Always optimize PNG images using <a>ZopfliPNG</a>."
+  },
+  "python-multiline-a2": {
+    "message": "breaking the line at the opening parentheses, indenting follow up lines by 4 spaces, and placing the closing parentheses on a separate line that is aligned with the line that contains the opening parentheses"
+  },
+  "s5": {
+    "message": "General"
+  },
+  "html-css-optional-tag": {
+    "message": "Don't omit optional HTML tags."
+  },
+  "objc-conventions": {
+    "message": "Follow Apple's <a>conventions</a>"
+  },
+  "javascript-eslint": {
+    "message": "Run <a>{1}</a> with the <a>{2}</a> configuration and fix any warning."
+  },
+  "s4": {
+    "message": "Consistency is most important: Be consistent within functions, files, modules and projects. Making existing code conform with this style guide is fine, but it should happen in dedicated commits, preferably for a whole module or project at once."
+  },
+  "python-builtins": {
+    "message": "Don't override builtins except for <a>non-essential builtins</a> and <code>{1}</code> which is superfluos in modern code as well."
+  },
+  "python-multiline-a1-example": {
+    "message": "example"
+  },
+  "s9": {
+    "message": "Newline at end of file, otherwise no trailing whitespace."
+  },
+  "s8": {
+    "message": "All files should have a <a>license header</a>, but no mode line comments."
+  },
+  "html-css-single-line": {
+    "message": "CSS declaration blocks with a single selector and a single rule can be written in a single line."
+  },
+  "title": {
+    "message": "Coding Style"
+  },
+  "s3": {
+    "message": "Consistency"
+  },
+  "s2": {
+    "message": "The Adblock Plus coding style is based on others. Our rules (both general and language specific) always overrule referenced style guides. The language specific sections overrule the general section."
+  },
+  "html-css-general": {
+    "message": "Follow the <a>Google HTML/CSS Style Guide</a>."
+  },
+  "javascript-const": {
+    "message": "Use <code>{1}</code> for constant expressions that could as well have been inlined (e.g. static parameters, imported modules, etc.)."
+  },
+  "javascript-spacing-literals": {
+    "message": "Don't add any spaces immediately after opening, or before closing, an object or array literal."
+  },
+  "javascript-for-of": {
+    "message": "When iterating over arrays in the canonical order use the new <a><code>{1}</code></a> syntax if the loop index isn't required. (Rather than using <code>{2}</code> or the <code>{3}</code> method.)"
+  },
+  "javascript-block-scoping": {
+    "message": "Always use <a>block-scoping</a> (<code>{1}</code> / <code>{2}</code>), except when sharing global variables between scripts cannot be avoided."
+  },
+  "javascript-map-set": {
+    "message": "Use the <a><code>{1}</code></a> or <a><code>{2}</code></a> objects, rather than misusing plain objects, when you need a hash table."
+  },
+  "python-regexp": {
+    "message": "Use <a><code>{1}</code></a> instead of <code>{2}</code> to avoid <a>confusion</a> about implied beginning of the string but not the ending."
+  },
+  "s12": {
+    "message": "No hungarian notation, no special variable name prefixes or suffixes denoting type or scope. All variable names start with a lower case letter."
+  },
+  "html-css-shorthand": {
+    "message": "CSS shorthand properties usage is optional."
+  },
+  "javascript-method": {
+    "message": "Use the <a>method definition shorthand</a> syntax when defining methods on an object."
+  },
+  "python-flake8-docstring-exception": {
+    "message": "with <code>{1}</code> ignored"
+  },
+  "s6": {
+    "message": "Follow the Mozilla Coding Style's <a>general practices</a> and its <a>naming and formatting rules</a>."
+  },
+  "python-multiline-commas": {
+    "message": "When breaking lists of items separated by commas (e.g. lists, dicts, argument lists) using the second approach add a comma after the last element. This allows adding and rearranging items without touching unrelated lines."
+  },
+  "s18": {
+    "message": "In classes, prefix private functions with a single underscore to make them pseudo-private."
+  },
+  "s13": {
+    "message": "Don't comment code out, delete it."
+  },
+  "s34": {
+    "message": "Arrows should not be aligned."
+  },
+  "s11": {
+    "message": "Opening braces always go on their own line."
+  },
+  "s10": {
+    "message": "Lines can be longer than the limit, if limiting line length would hurt readability in a particular case."
+  },
+  "s31": {
+    "message": "Puppet"
+  },
+  "s30": {
+    "message": "We tend to use anonymous namespaces instead of static."
+  },
+  "s15": {
+    "message": "Follow the Mozilla Coding Style's <a>JavaScript practices</a>."
+  },
+  "s14": {
+    "message": "JavaScript"
+  },
+  "python-multiline": {
+    "message": "The preferred way of wrapping long lines is by using Python's implied line continuation inside parentheses, brackets and braces. Long lines can be broken over multiple lines by wrapping expressions in parentheses:"
+  },
+  "python-version": {
+    "message": "Make the code compatible with both {1} and {2} (see <a>this guide</a>). Use <a>{3} imports</a> to address syntactic differences but avoid <a>{4}</a>, <a>{5}</a>, etc. to not introduce additional dependencies."
+  },
+  "python-strings": {
+    "message": "Write string literals so that they match the behaviour of <a><code>{1}</code></a>, i.e. use single quotes except to avoid escaping of embedded quotes and use <code>{2}</code> escapes for non-ascii characters but don't prefix strings with <code>{3}</code>. For docstrings, however, follow <a>PEP-257</a>."
+  },
+  "html-css-leading-zero": {
+    "message": "Don't omit the optional leading 0 for decimal numbers."
+  },
+  "s32": {
+    "message": "Follow the <a>Puppet Style Guide</a>."
+  },
+  "javascript-es6": {
+    "message": "Modern JavaScript (where supported)"
+  },
+  "python-flake8": {
+    "message": "Run <a>{1}</a> with following extensions and fix all reported errors:"
+  },
+  "python-prefix": {
+    "message": "In modules, prefix private functions and variables with a single underscore."
+  },
+  "html-css-hexadecimal": {
+    "message": "CSS color values should be specified in hexadecimal where possible."
+  },
+  "python-tuple-vs-list": {
+    "message": "Use tuples for data that have structure, use lists for data that have order."
+  },
+  "python-map-filter": {
+    "message": "Use list comprehensions or generator expressions instead of calling <code>{1}</code> or <code>{2}</code> with a lambda function."
+  },
+  "javascript-if-else-braces": {
+    "message": "When an <code>{1}</code> statement, an <code>{2}</code> statement or a loop spans over more than one line always enclose it with braces."
+  },
+  "todo-comments": {
+    "message": "Don't add TODO comments, create an <a>issue</a> and reference it in a comment instead."
+  },
+  "s33": {
+    "message": "Opening braces don't go on their own line."
+  },
+  "objective-c": {
+    "message": "Objective-C"
+  },
+  "html-css": {
+    "message": "HTML and CSS"
+  },
+  "s22": {
+    "message": "Java"
+  },
+  "s23": {
+    "message": "Follow the Mozilla Coding Style's <a>Java practices</a>."
+  },
+  "javascript-operator-linebreak": {
+    "message": "When splitting overlong expressions into multiple lines the joining binary operators should be left at the end of the line, before the linebreak. This does not apply to member access operators, such as <code>{1}</code> which should be placed on the following line."
+  },
+  "s26": {
+    "message": "Follow the Mozilla Coding Style's <a>C++ practices</a>."
+  },
+  "s27": {
+    "message": "Indent namespace bodies."
+  },
+  "s24": {
+    "message": "Imports should be organised consistently per file, we don't use global rules."
+  },
+  "s25": {
+    "message": "C++"
+  },
+  "s19": {
+    "message": "Python"
+  },
+  "s28": {
+    "message": "Avoid manual memory management: Use references and values when possible, smart pointers when necessary, raw pointers only for weak references."
+  },
+  "s29": {
+    "message": "Don't use C-style casts unless its exact semantics are required."
+  },
+  "s1": {
+    "message": "Precedence"
+  },
+  "python-multiline-a2-example": {
+    "message": "example"
+  }
+}

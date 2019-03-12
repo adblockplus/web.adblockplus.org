@@ -1,0 +1,89 @@
+{
+  "s8": {
+    "message": "Added support for eMusic Remote 1.0"
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.7.5.4"
+  },
+  "s3": {
+    "message": "Whitelisting rules now apply to element hiding rules as well (<a>bug 14814</a>) (won't work properly in Firefox 3, see known issues)"
+  },
+  "s2": {
+    "message": "\"Check banner links\" option has been removed (<a>forum thread</a>), element hiding rules should be used as a replacement"
+  },
+  "s1": {
+    "message": "Default keyboard shortcuts have been changed to Ctrl+Shift+E (preferences) and Ctrl+Shift+V (blockable items) due to conflicts in Firefox 3 and Thunderbird (<a>blog post</a>)"
+  },
+  "s7": {
+    "message": "Songbird 0.2/0.3 support dropped"
+  },
+  "s6": {
+    "message": "Support for Songbird 0.4 and 0.5 added, now almost everything should work like in Firefox"
+  },
+  "s5": {
+    "message": "Added support for new request types in Firefox 3 like XBL or XMLHttpRequest (<a>documentation</a>)"
+  },
+  "s4": {
+    "message": "Hebrew (he-IL) and Malay (ms-MY) translations added"
+  },
+  "s19": {
+    "message": "Fixed: Keyboard shortcut to close detached list of blockable items is not configurable"
+  },
+  "s18": {
+    "message": "\"Flash borders\" in list of blockable elements will blink longer (<a>forum thread</a>)"
+  },
+  "s13": {
+    "message": "Fixed: Input focus not put back to the filter list after editing a filter (Firefox 3 only)"
+  },
+  "s12": {
+    "message": "Fixed: Links in Adblock Plus dialogs don't open (Thunderbird only)"
+  },
+  "s11": {
+    "message": "Fixed filter editing issues caused by <a>bug 372769</a> (Firefox 3 only)"
+  },
+  "s10": {
+    "message": "Support for <a>Moblin browser</a> added — untested"
+  },
+  "s17": {
+    "message": "Content policy now returns \"blocked based on server\" to trigger special handling in Firefox 3"
+  },
+  "s16": {
+    "message": "Fixed: Account for new XUL iframe behavior in Firefox 3"
+  },
+  "s15": {
+    "message": "Fixed: Error messages when inserting filters in Preferences"
+  },
+  "s14": {
+    "message": "Fixed: The entry \"No blockable items on current page\" in the list of filter suggestions should not be selectable"
+  },
+  "s10-link": {
+    "message": "http://www.moblin.org/projects/projects_browser.php"
+  },
+  "s22": {
+    "message": "K-Meleon: Dropped support for K-Meleon 1.0"
+  },
+  "s23": {
+    "message": "K-Meleon: Status bar icon now reacts to middle-clicks and has a context menu (K-Meleon 1.5 only)"
+  },
+  "s20": {
+    "message": "K-Meleon: Done some major code refactoring"
+  },
+  "s21": {
+    "message": "K-Meleon: Added support for K-Meleon 1.5 (currently alpha)"
+  },
+  "s26": {
+    "message": "Songbird: Context menu doesn't always show up in Songbird, consequently not all items can be blocked via context menu"
+  },
+  "s27": {
+    "message": "eMusic Remote: Links in Adblock Plus dialogs load in current tab instead of opening a new one"
+  },
+  "s24": {
+    "message": "Known issues"
+  },
+  "s25": {
+    "message": "Element hiding hits are not always registered in Firefox 3, this also prevents whitelisting rules to apply to element hiding (<a>bug 425057</a>)"
+  },
+  "s28": {
+    "message": "Changelog for the previous release"
+  }
+}

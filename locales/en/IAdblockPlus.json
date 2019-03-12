@@ -1,0 +1,80 @@
+{
+  "addPatternsDescription-s1": {
+    "message": "Adds patterns to the list of user-defined filters"
+  },
+  "updateExternalSubscription_titleDescription-s1": {
+    "message": "subscription title to be used if a new subscription is created. This parameter will be ignored if the subscription already exists."
+  },
+  "addPatterns_patternsDescription-s1": {
+    "message": "list of filter patterns to be added"
+  },
+  "getSubscriptionAtDescription-s1": {
+    "message": "Retrieves a subscription by its position in the list"
+  },
+  "getSubscriptionAt_indexDescription-s1": {
+    "message": "subscription's position in the list, zero-based"
+  },
+  "removePatterns_patternsDescription-s1": {
+    "message": "list of filter patterns to be removed"
+  },
+  "title": {
+    "message": "IAdblockPlus"
+  },
+  "s2": {
+    "message": "It allows among other things getting some information from Adblock\n  Plus or adding \"special\" subscriptions that will be updated by another extension."
+  },
+  "s1": {
+    "message": "This interface can be used from extensions that wish to integrate with Adblock\n  Plus."
+  },
+  "updateExternalSubscription_patternsDescription-s1": {
+    "message": "list of filter patterns that the subscription should contain"
+  },
+  "getSubscriptionAt_returnDescription-s1": {
+    "message": "the requested subscription or <code>{1}</code> if the index provided is invalid"
+  },
+  "removeExternalSubscriptionDescription-s1": {
+    "message": "Removes an external subscription"
+  },
+  "getSubscription_idDescription-s1": {
+    "message": "subscription's identifier (this is subscription's URL for regular subscriptions)"
+  },
+  "removeExternalSubscription_idDescription-s1": {
+    "message": "subscription's identifier (for external subscriptions this can be any string)"
+  },
+  "getInstalledVersion_returnDescription-s1": {
+    "message": "Adblock Plus version, for example <code>{1}</code>"
+  },
+  "getSubscription_returnDescription-s1": {
+    "message": "the requested subscription or <code>{1}</code> if no subscription with the given identifier exists"
+  },
+  "getInstalledVersionDescription-s1": {
+    "message": "Retrieves the version of the installed Adblock Plus extension. Note that this is the version number as reported by the extension manager or InstallTrigger and it might be incorrect if the latter is used (in Mozilla Suite or SeaMonkey)."
+  },
+  "updateExternalSubscription_idDescription-s1": {
+    "message": "subscription's identifier (for external subscriptions this can be any string)"
+  },
+  "removePatternsDescription-s1": {
+    "message": "Removes patterns from the list of user-defined filters"
+  },
+  "updateExternalSubscriptionDescription-s3": {
+    "message": "Also, before Adblock Plus 1.3 this method returned a boolean indicating whether\nthe subscription could be created. Creating a subscription can no longer fail in\nAdblock Plus 1.3 and higher but its identifier might be rewritten — the new identifier\nwill be returned."
+  },
+  "updateExternalSubscriptionDescription-s2": {
+    "message": "Adblock Plus 1.3 and higher: External subscriptions will no longer be saved to disk along\nwith other subscription, updateExternalSubscription() method needs to be called each time\nthe browser starts up to restore the subscription. This is to prevent keeping a stale\nexternal subscription in the list if the user uninstalls the extension managing it."
+  },
+  "updateExternalSubscriptionDescription-s1": {
+    "message": "Updates an external subscription (or creates it if no such subscription\ncurrently exists). Such a subscription will not be updated by Adblock Plus, instead\nthe extension calling this method is responsible for updating it and removing once the\nsubscription is no longer required."
+  },
+  "getSubscriptionDescription-s1": {
+    "message": "Retrieves a subscription by its identifier"
+  },
+  "removeExternalSubscription_returnDescription-s1": {
+    "message": "<code>{1}</code> if the subscription has been successfully removed, <code>{2}</code> if no such subscription exists or the subscription isn't managed externally"
+  },
+  "subscriptionCountDescription-s1": {
+    "message": "Number of subscriptions in the list (including special subscriptions)"
+  },
+  "updateExternalSubscription_returnDescription-s1": {
+    "message": "effective subscription identifier (might not be identical to the id parameter)"
+  }
+}

@@ -12,13 +12,13 @@
     "message": "我该如何将 Adblock Plus 图标挪到状态栏的其他位置？"
   },
   "s13": {
-    "message": "　　Adblock Plus 0.5 允许用户拖动状态栏的图标，但考虑到这项功能很少用到，在接下来的版本中就取消了这项功能。像是 <a>Organize Status Bar</a> 这样的扩展可以很好地替代这项功能。"
+    "message": "Adblock Plus 0.5 允许用户拖动状态栏的图标，但考虑到这项功能很少用到，在接下来的版本中就取消了这项功能。像是 <a>Organize Status Bar</a> 这样的扩展可以很好地替代这项功能。"
   },
   "s14": {
     "message": "我该如何删除 Adblock Plus 的所有浏览器菜单项？"
   },
   "s15": {
-    "message": "　　要隐藏工具菜单项以及 Adblock Plus 右键菜单项，您可以安装 <a>Customizations for Adblock Plus</a> 扩展。"
+    "message": "要隐藏工具菜单项以及 Adblock Plus 右键菜单项，您可以安装 <a>Customizations for Adblock Plus</a> 扩展。"
   },
   "s16": {
     "message": "安装以后，请在附加组件管理器中找到 Customizations 扩展并点击选项按钮，"
@@ -36,7 +36,7 @@
     "message": "　　通常工具栏图标会在您初次安装 Adblock Plus 时就自动添加，有可能事后由于什么原因导致它被移除。在 Firefox 中要定制工具栏，只要在工具栏点击右键，选择\"定制\"，在打开的窗口中您应该可以看到其中包含 Adblock Plus 图标。接着用鼠标将其拖动到工具栏任意位置，您也可以在保持定制窗口打开的情况下拖动工具栏图标重新排列它们。"
   },
   "s21": {
-    "message": "　　上述代码中图片（两张图片分别垂直放置三个 16×16 大小和 24×24 大小的图标） 假定是位于 c:\\icons 目录下，因此您可能需要修改图片所保存的位置。要让这个样式生效您可以使用 <a>Stylish</a> 或添加上述代码到您配置文件夹 (<a>where is my profile directory?</a>) 下的 chrome/userChrome.css 文件。如果该文件不存在您可以手动创建它。"
+    "message": "上述代码中图片（两张图片分别垂直放置三个 16×16 大小和 24×24 大小的图标） 假定是位于 c:\\icons 目录下，因此您可能需要修改图片所保存的位置。要让这个样式生效您可以使用 <a>Stylish</a> 或添加上述代码到您配置文件夹 (<a>where is my profile directory?</a>) 下的 chrome/userChrome.css 文件。如果该文件不存在您可以手动创建它。"
   },
   "s22": {
     "message": "<em>注意</em>：以上更改将在浏览器重新启动后生效。"
@@ -45,7 +45,7 @@
     "message": "我该如何修改某项功能的快捷键或新增一个禁用 Adblock Plus 的快捷键？"
   },
   "s25": {
-    "message": "　　Adblock Plus 在 <a>about:config</a> 中添加了三个可定义键盘快捷键的隐藏首选项：<a>extensions.adblockplus.sidebar_key</a>（打开/关闭可过滤项目列表），<a>extensions.adblockplus.settings_key</a>（打开首选项对话框）和 <a>extensions.adblockplus.enable_key</a>（启用/禁用 Adblock Plus）。您可以任意修改这些快捷键。"
+    "message": "Adblock Plus 在 <a>about:config</a> 中添加了三个可定义键盘快捷键的隐藏首选项：<a>extensions.adblockplus.sidebar_key</a>（打开/关闭可过滤项目列表），<a>extensions.adblockplus.settings_key</a>（打开首选项对话框）和 <a>extensions.adblockplus.enable_key</a>（启用/禁用 Adblock Plus）。您可以任意修改这些快捷键。"
   },
   "s26": {
     "message": "<em>注意</em>：以上更改将在浏览器重新启动后生效。"
@@ -66,7 +66,7 @@
     "message": "我该如何让可过滤项目列表在两侧或顶部显示？"
   },
   "s8": {
-    "message": "　　您想要让可过滤项目列表像 Adblock Plus 0.7.5 之前版本一样显示在浏览器窗口左侧吗？不妨使用<a>这个用户样式</a>（需要安装 <a>Stylish</a>）。安装这个样式之后可过滤项目列表就会像侧边栏一样显示在浏览器窗口左侧。您也可以在提示添加样式时删除某一标记行来让可过滤项目列表显示在右侧或顶部。"
+    "message": "您想要让可过滤项目列表像 Adblock Plus 0.7.5 之前版本一样显示在浏览器窗口左侧吗？不妨使用<a>这个用户样式</a>（需要安装 <a>Stylish</a>）。安装这个样式之后可过滤项目列表就会像侧边栏一样显示在浏览器窗口左侧。您也可以在提示添加样式时删除某一标记行来让可过滤项目列表显示在右侧或顶部。"
   },
   "s9": {
     "message": "<em>注意</em>：这么做并不会让可过滤项目列表变成真正的侧边栏，它还是可以与历史侧边栏等一起打开。"

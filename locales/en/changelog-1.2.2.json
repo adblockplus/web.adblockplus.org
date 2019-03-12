@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 1.2.2"
+  },
+  "s3": {
+    "message": "Stopped using <popup> tag for context menus which is transparent in Firefox 4 Beta 3 (<a>bug 578322</a>) — <em>not entirely fixed, still and issue for the toolbar icon context menu</em>"
+  },
+  "s2": {
+    "message": "Updated for asynchronous redirect API in Firefox 4 Beta 4 (<a>bug 546606</a>)"
+  },
+  "s1": {
+    "message": "The focus of Adblock Plus 1.2.2 is improving compatibility with Firefox 4, the following lists the changes compared to Adblock Plus 1.2.1."
+  },
+  "s7": {
+    "message": "Changelog for the previous release"
+  },
+  "s6": {
+    "message": "Subscription dialog: Fixed bad Chinese translation for the \"Add a different subscription\" button"
+  },
+  "s5": {
+    "message": "Subscription dialog: Made \"Add a different subscription\" button less prominent by turning it into a link"
+  },
+  "s4": {
+    "message": "Stopped using nsIDOMNSHTMLAnchorElement interface which no longer exists in Firefox 4 Beta 4 (<a>bug 582303</a>)"
+  }
+}

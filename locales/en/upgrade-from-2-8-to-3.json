@@ -1,0 +1,53 @@
+{
+  "compatibility-lead": {
+    "message": "There are two common Firefox releases:"
+  },
+  "compatibility-heading": {
+    "message": "Compatibility"
+  },
+  "description": {
+    "message": "If you are a Firefox user and update directly from Adblock Plus 2.8.2 (or below) to 3.0.0, you will lose all of your Adblock Plus settings (i.e. custom filters, enabled or disabled preferences, etc.)."
+  },
+  "title": {
+    "message": "Upgrading Adblock Plus from version 2.8.2 (or below) for Firefox"
+  },
+  "compatibility-1": {
+    "message": "Firefox Quantum (currently 58.0.2)"
+  },
+  "compatibility-2": {
+    "message": "Firefox ESR (currently 52.6.0)"
+  },
+  "howto-upgrade-2": {
+    "message": "After the upgrade is complete, wait at least 60 seconds."
+  },
+  "howto-upgrade-heading": {
+    "message": "How to upgrade successfully from Adblock Plus 2.8.2 (or below)..."
+  },
+  "background-3": {
+    "message": "To avoid losing all of your Adblock Plus settings, follow the steps below."
+  },
+  "background-2": {
+    "message": "If you update directly from Adblock Plus 2.8.2 (or below) to 3.0.0 (or above), you will lose all of your Adblock Plus settings (i.e. custom filters, enabled or disabled preferences, etc.)."
+  },
+  "background-1": {
+    "message": "Beginning with Firefox 57, Mozilla changed the way that settings are stored in extensions (check out this <a>blog article</a> for more information). Because of this, Adblock Plus had to migrate its settings from one format to another between versions 2.8.2 and 3.0.0."
+  },
+  "background-note": {
+    "message": "<strong>Note</strong>: If you have already upgraded from Adblock Plus 2.8.2 (or below) to 3.0.0 and lost your settings, please note that we are still looking into this issue. At this time, we have not found a solution to restore lost settings."
+  },
+  "howto-upgrade-3": {
+    "message": "Upgrade to the latest version of Adblock Plus (3.x.x)."
+  },
+  "howto-upgrade-1": {
+    "message": "Without uninstalling your current version of Adblock Plus, manually upgrade to Adblock Plus version 2.9.1 from the <a>Mozilla Add-ons page</a>."
+  },
+  "compatibility-footnote-2": {
+    "message": "Adblock Plus 2.9.1 is compatible with Firefox 51.0.x to 56.x (Firefox ESR only)."
+  },
+  "background-warning": {
+    "message": "<strong>Important</strong>: If you are using Adblock Plus 2.9.1, keep in mind that some features available in 2.9.1 are not yet available in 3.0.0."
+  },
+  "compatibility-footnote-1": {
+    "message": "Adblock Plus 3.0.0 is compatible with Firefox 51.x and above (Firefox ESR and Firefox Quantum)."
+  }
+}

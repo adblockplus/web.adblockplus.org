@@ -1,0 +1,65 @@
+{
+  "s9": {
+    "message": "Adblock Plus currently has a number of limitations in K-Meleon if compared to the Firefox version. The following ones might be fixed by future Adblock Plus versions with more complete K-Meleon support:"
+  },
+  "s8": {
+    "message": "Known differences to Firefox"
+  },
+  "title": {
+    "message": "Using Adblock Plus in K-Meleon"
+  },
+  "s3": {
+    "message": "Download Adblock Plus"
+  },
+  "s2": {
+    "message": "<em>Note</em>: The following Adblock Plus versions will only work in K-Meleon 1.6. To install you need to download a special ZIP package:"
+  },
+  "s1": {
+    "message": "Installation"
+  },
+  "s7": {
+    "message": "Note that deactivating Adblock Plus plugin will only remove it from the user interface, usually the extension will continue blocking in the background. To uninstall Adblock Plus you need to remove all the files you installed with the ZIP package."
+  },
+  "s6": {
+    "message": "Uninstalling Adblock Plus"
+  },
+  "s5": {
+    "message": "For K-Meleon 1.5 you can download\n  <a>{1}</a>."
+  },
+  "s4": {
+    "message": "Unpack this package with any ZIP unpacker into the directory of your K-Meleon browser, all files will be placed into the right directories. Then start K-Meleon, it will ask you whether Adblock Plus plugin should be activated — confirm this. That's all, Adblock Plus should work now."
+  },
+  "s19": {
+    "message": "Toolbar icon cannot be hiden via Adblock Plus options, only via View / Toolbars menu"
+  },
+  "s18": {
+    "message": "Status bar icon doesn't have a tooltip"
+  },
+  "s13": {
+    "message": "Preferences dialog: \"Show in toolbar\" option should be hidden"
+  },
+  "s12": {
+    "message": "Blockable items window cannot be closed with hotkeys (Esc or Ctrl+Shift+V)"
+  },
+  "s11": {
+    "message": "Blockable items must stay detached, K-Meleon’s sidebar implementation isn't yet supported"
+  },
+  "s10": {
+    "message": "ABP icon state and list of blockable items do not update correctly if a blank tab is open"
+  },
+  "s17": {
+    "message": "Size of the \"Add filter subscription\" dialog changes incorrectly when switching to \"Add a different subscription\" and back"
+  },
+  "s16": {
+    "message": "Clicking report link after sending off an issue report causes a crash"
+  },
+  "s15": {
+    "message": "Blockable items window is always on top and refers to all browser windows"
+  },
+  "s14": {
+    "message": "There are other limitations that are rooted in K-Meleon's architecture and are unlikely to be fixed unless changes are made to K-Meleon:"
+  },
+  "s21": {
+    "message": "Shortcut key preferences like <a>extensions.adblockplus.sidebar_key</a> use <a>Win32 virtual key codes</a> instead of Gecko’s virtual key codes"
+  }
+}

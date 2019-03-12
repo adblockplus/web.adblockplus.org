@@ -1,0 +1,80 @@
+{
+  "mercurial-git": {
+    "message": "Mercurial for Git users"
+  },
+  "code-documentation-title": {
+    "message": "Source code documentation"
+  },
+  "adblockbrowser-repo-title": {
+    "message": "The adblockbrowser repository"
+  },
+  "mercurial-book": {
+    "message": "Mercurial: The definite guide (hgbook)"
+  },
+  "mercurial-title": {
+    "message": "Getting the source code from the Mercurial repositories"
+  },
+  "mercurial-quickstart": {
+    "message": "Mercurial quickstart"
+  },
+  "github-notice": {
+    "message": "<strong>Please note:</strong> We are maintaining the GitHub mirrors to make it easier for new contributors to contribute to the Adblock Plus project without having to learn new tools. For regular contributors, using Mercurial is recommended."
+  },
+  "mercurial-documentation": {
+    "message": "Mercurial documentation"
+  },
+  "github-text": {
+    "message": "If you prefer to use Git, you can - we have <a>GitHub mirrors</a> for most of our public repositories."
+  },
+  "build-title": {
+    "message": "Build instructions"
+  },
+  "mercurial-bookmarks-text": {
+    "message": "We are using Mercurial bookmarks for branching. All of our repositories (except for <em>adblockbrowser</em>, see below) have a <em>master</em> bookmark that points to the latest development version. When cloning a repository, you have to activate that bookmark. If you ran <code>hg clone -u master</code> as shown above, this has already happened. If you cloned without the <code>-u</code> option, you will need to run <code>hg update master</code> once."
+  },
+  "mercurial-tag": {
+    "message": "Here's how you get the source code for a specific version (e.g. {1}):"
+  },
+  "title": {
+    "message": "Source Code"
+  },
+  "mercurial-bookmarks": {
+    "message": "Working with Mercurial bookmarks"
+  },
+  "build-text": {
+    "message": "Most of our repositories have <em>README.md</em> files with build instructions, please refer to those."
+  },
+  "github-tag": {
+    "message": "Here's how you get the source code for a specific version (e.g. {1}):"
+  },
+  "github-title": {
+    "message": "Getting the source code from the GitHub mirrors"
+  },
+  "adblockbrowser-repo-text": {
+    "message": "The <em>adblockbrowser</em> repository is a bit different, because it is a fork of Mozilla's <a>mozilla-release</a> repository. All of our changes are not in the <em>default</em> branch, but in the <em>adblockbrowser</em> branch, we prefix all of our tag names with <code>abb-</code> to avoid conflicts with upstream, and we do not use Mercurial bookmarks there at this point. Here's how you would clone it:"
+  },
+  "mercurial-mozilla": {
+    "message": "Mercurial for Mozillians"
+  },
+  "mercurial-other-tools": {
+    "message": "GUI client and other tools"
+  },
+  "mercurial-clone": {
+    "message": "Here's how you clone the Adblock Plus for Firefox repository:"
+  },
+  "repositories": {
+    "message": "The Adblock Plus project consists of multiple repositories. The <a>modules</a> page has a good overview of the most important ones."
+  },
+  "github-clone": {
+    "message": "Here's how you clone the Adblock Plus for Firefox repository from GitHub:"
+  },
+  "mercurial-bookmarks-title": {
+    "message": "Mercurial bookmarks"
+  },
+  "code-documentation-text": {
+    "message": "We have automatically generated <a>source code documentation</a> for some projects."
+  },
+  "mercurial-text": {
+    "message": "The Adblock Plus source code is hosted on our <a>Mercurial</a> server. You can see a list of all repositories through the <a>web interface</a>."
+  }
+}

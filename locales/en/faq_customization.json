@@ -1,0 +1,83 @@
+{
+  "s9": {
+    "message": "<em>Note</em>: This doesn't make the list of blockable items a real sidebar. It can be open at the same time as a sidebar like History."
+  },
+  "s8": {
+    "message": "Do you prefer the list of blockable items on the left side of the browser window as it was before Adblock Plus 0.7.5? You can do this with <a>this user style</a> (requires <a>Stylish</a>). In this form the style will make sure the list displays on the left side of the browser window, like a sidebar. You can also remove one of the marked lines when prompted to add the style — then the list of blockable items will display on the right side or on the top."
+  },
+  "title": {
+    "message": "FAQ - User interface customization"
+  },
+  "s3": {
+    "message": "How can I remove the Adblock Plus icon from my toolbar?"
+  },
+  "s2": {
+    "message": "Usually this icon is added automatically the first time you install Adblock Plus, but maybe it was removed somehow afterwards. In Firefox you can customize the toolbar, simply right-click on the toolbar and choose \"Customize\". A window with icons will open, Adblock Plus icon should be one of them. Drag it with the mouse into the toolbar and place it where you want it to be. You can also reorder the toolbar icons by dragging them while the customization window is open."
+  },
+  "s1": {
+    "message": "How can I put the Adblock Plus icon on my toolbar?"
+  },
+  "s7": {
+    "message": "How do I make the list of blockable items display at the side/at the top?"
+  },
+  "s6": {
+    "message": "If you want to restore Adblock Plus icon to the way it was before Adblock Plus 1.3.5\n  (green when Adblock Plus is disabled on a website, gray if it is disabled everywhere)\n  you can install <a>this user style</a>\n  (requires <a>Stylish</a>)."
+  },
+  "s5": {
+    "message": "How do I make the icon for whitelisted websites green?"
+  },
+  "s4": {
+    "message": "You don't like the icon or need the space for more important things? Click the arrow at the icon, then choose \"Options\" and \"Show in tool bar\" from the menu. There is also an Options menu in the Preferences dialog — just in case you decide to restore the icon. And by the way, you can also use the toolbar customization that is built into Firefox."
+  },
+  "s21-link": {
+    "message": "http://kb.mozillazine.org/Profile_folder#Where_is_my_profile_folder.3F"
+  },
+  "s19": {
+    "message": "If you prefer the icons used before Adblock Plus 0.7.2 (the cockroach), you can use <a>this user style</a> to restore it (best to be used with <a>Stylish</a>). But if you have a better icon, you can make your own style using this template:"
+  },
+  "s18": {
+    "message": "How do I change the icons displayed by Adblock Plus?"
+  },
+  "s13": {
+    "message": "Adblock Plus 0.5 used to allow dragging the icon in the status bar. For the following versions it was decided that this feature is rarely useful and shouldn't be built in. An extension like <a>Organize Status Bar</a> can do a much better job here."
+  },
+  "s12": {
+    "message": "How can I move the Adblock Plus icon in the status bar to a different location?"
+  },
+  "s11": {
+    "message": "Previous versions of Adblock Plus used to display the word \"Adblock\" in the status bar. This behavior can be restored with <a>this user style</a> (requires <a>Stylish</a>)."
+  },
+  "s10": {
+    "message": "How do I get text displayed in the status bar instead of an icon?"
+  },
+  "s17": {
+    "message": "Check the\n  \"Remove Adblock Plus from browser menus\" option."
+  },
+  "s16": {
+    "message": "After installing, find Customizations in the\n  Add-ons Manager and click the Options button for the extension."
+  },
+  "s15": {
+    "message": "To hide the Tools menu as well as the Adblock Plus entries in context menu you should\n  install <a>Customizations for\n  Adblock Plus</a> extension."
+  },
+  "s14": {
+    "message": "How do I remove Adblock Plus from all browser menus?"
+  },
+  "s25-link": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "s22": {
+    "message": "<em>Note</em>: The changes will take effect after you restart your browser."
+  },
+  "s23": {
+    "message": "How do I change the keyboard shortcut for ... / add a keyboard shortcut for disabling Adblock Plus?"
+  },
+  "s21": {
+    "message": "Here the images (one with three 16×16 icons and another with three 24×24 icons stacked vertically) are assumed to be located in the directory c:\\icons, so you might need to change the addresses. To apply this style you can either use <a>Stylish</a> or edit the file chrome/userChrome.css in your profile directory (<a>where is my profile directory?</a>) and add this code. If userChrome.css doesn't exist yet you have to create it."
+  },
+  "s26": {
+    "message": "<em>Note</em>: The changes will take effect after you restart your browser."
+  },
+  "s25": {
+    "message": "There are three hidden preferences that can be accessed via <a>about:config</a> that define the keyboard shortcuts for Adblock Plus: <a>extensions.adblockplus.sidebar_key</a> (open/close blockable elements), <a>extensions.adblockplus.settings_key</a> (open Preferences dialog), <a>extensions.adblockplus.enable_key</a> (enable/disable Adblock Plus). You can change those to your liking."
+  }
+}

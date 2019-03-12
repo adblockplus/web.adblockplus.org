@@ -36,16 +36,16 @@
             class="campaign-slide-control {{ "active" if loop.index == 1 else "" }}">
             <a
               onclick="gotoSlide({{ (loop.index - 1) | string }})"
-              title="{{ "Goto slide " + (loop.index | string) | translate("goto-slide-" + (loop.index | string), "button title") }}">
+              title="{{ ("Goto slide " + (loop.index | string)) | translate("goto-slide-" + (loop.index | string), "button title") }}">
               <img
                 class="active-slide-icon"
-                alt="{{ "Slide " + (loop.index | string) + " icon" | translate("goto-slide-" + (loop.index | string) + "-icon-alt", "button alt") }}"
+                alt="{{ ("Slide " + (loop.index | string) + " icon") | translate("goto-slide-" + (loop.index | string) + "-icon-alt", "button alt") }}"
                 src="/img/gift-of-ad-blocking/active-slide-icon.png"
                 srcset="/img/gift-of-ad-blocking/active-slide-icon-2x.png 2x"
               />
               <img
                 class="inactive-slide-icon"
-                alt="{{ "Slide " + (loop.index | string) + " icon" | translate("goto-slide-" + (loop.index | string) + "-icon-alt", "button alt") }}"
+                alt="{{ ("Slide " + (loop.index | string) + " icon") | translate("goto-slide-" + (loop.index | string) + "-icon-alt", "button alt") }}"
                 src="/img/gift-of-ad-blocking/slide-icon.png"
                 srcset="/img/gift-of-ad-blocking/slide-icon-2x.png 2x"
               />

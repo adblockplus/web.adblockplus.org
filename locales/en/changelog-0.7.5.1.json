@@ -1,0 +1,47 @@
+{
+  "s9": {
+    "message": "Made sure that width of the blockable items list is remembered (in case it was <a>turned into a sidebar using CSS</a>)"
+  },
+  "s8": {
+    "message": "Blockable items will now be shown even for whitelisted sites if Adblock Plus is globally disabled"
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.7.5.1"
+  },
+  "s3": {
+    "message": "Fixed \"filters disappear\" bug (<a>bug 16488</a>)"
+  },
+  "s2": {
+    "message": "Regression fixed: list of blockable elements empty when going back to a page"
+  },
+  "s1": {
+    "message": "Translations added: Estonian and Frisian"
+  },
+  "s10": {
+    "message": "Increased default value for <a>extensions. adblockplus. subscriptions_fallbackerrors</a> to 50"
+  },
+  "s7": {
+    "message": "Made Filter and State columns in the list of blockable items visible by default and increased width of the Type column"
+  },
+  "s6": {
+    "message": "Added moz-icon: protocol scheme to the whitelist to fix issues with FireFTP (<a>forum thread</a>)"
+  },
+  "s5": {
+    "message": "Fixed: object tab text displayed vertically in Japanese due to wrapping"
+  },
+  "s4": {
+    "message": "Fixed up abp: protocol implementation (caused Firefox windows to hang when opening if menu bar was hidden by Adblock Plus)"
+  },
+  "s13": {
+    "message": "K-Meleon: Fixed abp: URLs for adding subscriptions with two clicks"
+  },
+  "s12": {
+    "message": "K-Meleon: Size and position of Adblock Plus windows are now saved and restored when the window is reopened"
+  },
+  "s14": {
+    "message": "Changelog for the previous release"
+  },
+  "s11": {
+    "message": "Adblock Plus should now work with Pocket K-Meleon"
+  }
+}

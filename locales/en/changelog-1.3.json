@@ -1,0 +1,143 @@
+{
+  "s24": {
+    "message": "Preferences window"
+  },
+  "s22": {
+    "message": "Removed warning displayed when Adblock or Filterset.G are installed (both have a negligible\n    install base by now)"
+  },
+  "s9": {
+    "message": "Clicking the icon will now open menu by default (old behavior can be restored by\n    changing <a>extensions.adblockplus.defaulttoolbaraction</a>\npreference)"
+  },
+  "s8": {
+    "message": "ABP icon"
+  },
+  "s17": {
+    "message": "Fixed \"timed textboxes are deprecated\" warning"
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 1.3"
+  },
+  "s3": {
+    "message": "New translation: Mexican Spanish"
+  },
+  "s2": {
+    "message": "User interface"
+  },
+  "s1": {
+    "message": "The following lists the major changes compared to Adblock Plus 1.2.2."
+  },
+  "s7": {
+    "message": "Links to documentation on adblockplus.org will automatically open in user's language\n    if available"
+  },
+  "s6": {
+    "message": "Image maps can now be blocked from context menu like regular images\n    (<a>bug 16605</a>)"
+  },
+  "s5": {
+    "message": "Added an issue reporter allowing to send reports about Adblock Plus issues on web pages\n    (\"Report issue on this page\" in ABP icon's menu,\n    <a>forum topic</a>)"
+  },
+  "s4": {
+    "message": "Removed unmaintained translations: Indonesian, Malay, Brasilian Portuguese"
+  },
+  "s13": {
+    "message": "Selecting \"Open in New Tab\" from context menu will open multiple tabs if multiple\n    items are selected (<a>forum topic</a>)"
+  },
+  "s23": {
+    "message": "Made sure that the buttons aren't too far below subscription selection when opened in\n    browser after first installation"
+  },
+  "s12": {
+    "message": "List of blockable items"
+  },
+  "s26": {
+    "message": "Triggering a filter subscription update manually always downloads the file, even if\n    server claims that it didn't change"
+  },
+  "s11": {
+    "message": "Disabled filters and filter subscriptions are no longer counted in the tooltip"
+  },
+  "s27": {
+    "message": "No longer storing user's choice to collapse a subscription for subscriptions that have been\n    removed"
+  },
+  "s19": {
+    "message": "Suggestions no longer distinguish between protocols\n    (<a>forum topic</a>)"
+  },
+  "s18": {
+    "message": "Filter composer"
+  },
+  "s39": {
+    "message": "Improved filter matching performance by 20-35%"
+  },
+  "s38": {
+    "message": "Changed the way Adblock Plus stores its data to improve performance and memory use"
+  },
+  "s35": {
+    "message": "Filter subscriptions added by other extensions will no longer persist, need to be added\n    again on each browser start (ensures that these subscriptions don't stay around if the\n    corresponding extension is uninstalled)"
+  },
+  "s34": {
+    "message": "(<a>forum topic</a>)"
+  },
+  "s37": {
+    "message": "Performance"
+  },
+  "s10": {
+    "message": "First item in menu is the new issue reporter\n    (<a>forum topic</a>)"
+  },
+  "s31": {
+    "message": "Removed separation between background images and \"regular\" images,\n    <code>$background</code> and <code>$image</code> options are identical now (reliably\n    distinguishing the two is no longer possible)"
+  },
+  "s16": {
+    "message": "Fixed: Scrolling to selected item broken in Firefox 4"
+  },
+  "s15": {
+    "message": "Tooltip now shows info on disabled filters as well\n    (<a>forum topic</a>)"
+  },
+  "s14": {
+    "message": "Document source column shows whether the request was made to a first-party or third-party\n    location, filtering and sorting by this information is possible\n    (<a>forum topic</a>)"
+  },
+  "s20": {
+    "message": "A warning is displayed if a custom pattern no longer matches the address it is supposed to\n    block (<a>forum topic</a>)"
+  },
+  "s33": {
+    "message": "Added file default/patterns.ini to the extension, can be changed to define default filters\n    or filter subscriptions for new users"
+  },
+  "s32": {
+    "message": "Made sure that filters added by other extensions like Element Hiding Helper are always\n    enabled (<a>forum topic</a>)"
+  },
+  "s30": {
+    "message": "Improved implementation, made it cleaner and more modular (also changed the way how other\n    extensions should <a>access Adblock Plus</a>)"
+  },
+  "s25": {
+    "message": "A snail icon is displayed for slow filters (was previously an exclamation mark,\n    <a>forum topic</a>)"
+  },
+  "s44": {
+    "message": "Added precautions for the case that computer's clock is skewed"
+  },
+  "s45": {
+    "message": "Last modification time is reset now when a subscription redirects to a new location"
+  },
+  "s46": {
+    "message": "Changelog for the previous release"
+  },
+  "s21": {
+    "message": "\"Add filter subscription\" dialog"
+  },
+  "s40": {
+    "message": "Reduced time required to set up element hiding on browser startup"
+  },
+  "s41": {
+    "message": "Using a more efficient approach to preference management now"
+  },
+  "s42": {
+    "message": "Subscription downloads"
+  },
+  "s43": {
+    "message": "Using better algorithm to determine when to download subscriptions\n    (<a>blog post</a>)"
+  },
+  "s28": {
+    "message": "Core"
+  },
+  "s29": {
+    "message": "Dropped support for Firefox 3.0, Songbird 1.8 and Midbrowser"
+  },
+  "s36": {
+    "message": "Removed code importing preferences and filters from Adblock and Adblock Plus 0.5 (both have\n    a negligible install base by now)"
+  }
+}

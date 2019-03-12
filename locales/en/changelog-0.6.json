@@ -1,0 +1,146 @@
+{
+  "s24": {
+    "message": "Enabling/disabling Adblock with a drag gesture on the status bar (another guess what this drag&drop code was meant to do)"
+  },
+  "s22": {
+    "message": "Added three default filters as examples (not referring to any specific sites)"
+  },
+  "s9": {
+    "message": "Flashing the selected/entered URLs works everywhere now"
+  },
+  "s8": {
+    "message": "ENTER key is now interpreted like an OK click in the Preferences dialog (ESC key handling also fixed, see previous point)"
+  },
+  "s17": {
+    "message": "Secure DOM access without XPCNativeWrappers"
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.6"
+  },
+  "s3": {
+    "message": "Clicking \"Adblock\" in context menu, main menu and status bar opens three different dialogs — FIXED"
+  },
+  "s2": {
+    "message": "User interface"
+  },
+  "s1": {
+    "message": "The following roughly lists the changes compared to Adblock 0.5.2.039:"
+  },
+  "s7": {
+    "message": "Global key handling routine in the Preferences dialog untangled, making use of preventDefault to ensure correct key handling"
+  },
+  "s6": {
+    "message": "Menu in the Preferences dialog is the standard menu widget now instead of toolbarbuttons+popups"
+  },
+  "s5": {
+    "message": "Filter list in the Preferences dialog is a buggy fork of the default listbox widget — FIXED"
+  },
+  "s4": {
+    "message": "Preferences dialog has buttons OK and Cancel instead of Done and Revert now"
+  },
+  "s13": {
+    "message": "Not overriding CSS of the current theme any more"
+  },
+  "s23": {
+    "message": "Dragging URLs to be blocked to the status bar (no idea what this is good for but maybe that's what the removed drag&drop code was meant for)"
+  },
+  "s12": {
+    "message": "Adding two shortcut keys to the browser window instead of five"
+  },
+  "s26": {
+    "message": "Removed features"
+  },
+  "s11": {
+    "message": "Adding one menu item to the Tools menu instead of a submenu with three menu items"
+  },
+  "s27": {
+    "message": "Decide what filters can't possibly apply based on host name — my original implementation was meant as a speedup, it has been severely broken since and turned into a slowdown. The way Adblock works now this speedup can't be used any more."
+  },
+  "s19": {
+    "message": "Adblock sidebar (Firefox only) shows blockable URLs in the currently selected tab dynamically"
+  },
+  "s18": {
+    "message": "New features"
+  },
+  "s39": {
+    "message": "Many error checks added."
+  },
+  "s38": {
+    "message": "Lots of bloated and buggy code rewritten."
+  },
+  "s35": {
+    "message": "Installation of a component into the profile in browser versions that don't support this — my big ugly hack to do this was only meant as a temporary measure until proper support for installing components into the profile was added which happened long ago."
+  },
+  "s34": {
+    "message": "Extension manager window overlay to display Adblock version number in a different format — besides the fact that an extension simply shouldn't do this, the standard version number format is still visible in quite a few places."
+  },
+  "s37": {
+    "message": "Cleanup"
+  },
+  "s10": {
+    "message": "Selecting \"Keep list sorted\" in the Preferences dialog menu applies immediately now instead of displaying a message asking to close and reopen the dialog"
+  },
+  "s31": {
+    "message": "Site blocking — very buggy and an absolute non-feature. Blocking a page that was explicitly requested — what does this have to do with ad blocking?"
+  },
+  "s16": {
+    "message": "Limit interaction with DOM to a minimum"
+  },
+  "s15": {
+    "message": "No data stored in DOM or otherwise accessible from content scripts"
+  },
+  "s14": {
+    "message": "Security"
+  },
+  "s20": {
+    "message": "Whitelisting, compatible with Adblock Plus. TODO: Better whitelisting + UI"
+  },
+  "s33": {
+    "message": "Removing conflicting shortcut keys from the menu — that's really not a nice thing to do, extensions shouldn't do this."
+  },
+  "s32": {
+    "message": "Map area disabling — no idea how this is supposed to help block ads. If there is a reason behind this, there is no way for users to figure it out."
+  },
+  "s30": {
+    "message": "QuickBlock — I couldn't figure out what this did, not even by looking at the code. Michael McDonald told me now (it removes images temporarily on Ctrl-Shift-DblClick) but I don't think more than 10 people know."
+  },
+  "s25": {
+    "message": "Localizations are possible now"
+  },
+  "s21": {
+    "message": "About dialog, displaying the installed version number as reported by the extension manager (no need to change it manually with every release)"
+  },
+  "s44": {
+    "message": "New known issues"
+  },
+  "s45": {
+    "message": "New preferences UI probably concentrates too much information/features on too little space. This needs to be worked on but is still much better then the current Adblock UI."
+  },
+  "s46": {
+    "message": "Sidebar only removes entries when new entries are added, need to be more dynamic here."
+  },
+  "s47": {
+    "message": "Sidebar could use some efficiency tweaks, to be done soon."
+  },
+  "s40": {
+    "message": "Made different parts communicate properly (removed communication over preferences amongst other)."
+  },
+  "s41": {
+    "message": "In-line editing of filters in the filter list rewritten to produce less side effects."
+  },
+  "s42": {
+    "message": "Removed nonsensical use of !important CSS flag."
+  },
+  "s43": {
+    "message": "60% reduction in XPI size"
+  },
+  "s28": {
+    "message": "Some weird non functional drag&drop code — can only guess what this was supposed to do, see \"new features\" above"
+  },
+  "s29": {
+    "message": "ObjectOverride — was replacing objects with clickable DIVs to allow blocking them, very easy to run into big trouble here. Definitely the wrong way to do this."
+  },
+  "s36": {
+    "message": "Very dangerous uninstall code for Mozilla Suite"
+  }
+}

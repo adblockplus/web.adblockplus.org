@@ -1,0 +1,416 @@
+{
+  "title": {
+    "message": "Adblock Plus filters explained"
+  },
+  "s57": {
+    "message": "Example 1: Exception for particular requests"
+  },
+  "s56": {
+    "message": "Exception rules are built the same as blocking rules, they define which addresses should be allowed even if matching blocking rules exists."
+  },
+  "s55": {
+    "message": "Exception rules"
+  },
+  "s54": {
+    "message": "The page loading it comes from <code>{1}</code> domain (for example <code>{2}</code> itself\n    or <code>{3}</code>) but not from <code>{4}</code> or its subdomains."
+  },
+  "s53": {
+    "message": "This address is being loaded as a script or an image."
+  },
+  "s52": {
+    "message": "This rule blocks <code>{1}</code> only if the following conditions are met:"
+  },
+  "s51": {
+    "message": "<span>||ads.example.com^</span><span>$</span><span>script</span>,<span>image</span>,<span>domain=example.com|~foo.example.info</span>"
+  },
+  "s50": {
+    "message": "Domain option restricts the filter to a set of domains (here <code>example.com</code>).\n        It also allows to disable the rule on some domains (here on <code>foo.example.com</code>)."
+  },
+  "s59": {
+    "message": "Rules starting like this are exceptions, they will override blocking rules."
+  },
+  "s58": {
+    "message": "Exception rule"
+  },
+  "s82": {
+    "message": "Comment text"
+  },
+  "abp-properties-purpose": {
+    "message": "Select an element if its CSS style properties match what's specified. You can pass a regular expression by surrounding it with \"/\"."
+  },
+  "s80": {
+    "message": "Comment"
+  },
+  "s109": {
+    "message": "Active on:"
+  },
+  "s81": {
+    "message": "An exclamation mark at the beginning of the rule indicates a comment."
+  },
+  "s105": {
+    "message": "Domain selection"
+  },
+  "s106": {
+    "message": "<code>{1}</code> is used as a placeholder for <a>element selectors</a>."
+  },
+  "s107": {
+    "message": "Example rules"
+  },
+  "abp-properties-example1": {
+    "message": "By using a wildcard <code>*</code>, this filter matches an <code>img</code> whose CSS style properties have a <code>width</code> specified in pixels and a <code>height</code> of 250 pixels"
+  },
+  "s101": {
+    "message": "Specify whether a filter should be active on third-party or first domains"
+  },
+  "s102": {
+    "message": "Less frequently used options, including <code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code> and <code>{6}</code> are explained in the <a>Writing Adblock Plus Filters</a> documentation."
+  },
+  "abp-properties-example2": {
+    "message": "By using a regular expression, this filter matches an <code>img</code> whose CSS style properties have a <code>width</code> between 32 and 38 pixels"
+  },
+  "s44": {
+    "message": "This part of the rule defines which addresses it is applied to."
+  },
+  "s45": {
+    "message": "Option separator"
+  },
+  "s46": {
+    "message": "This character indicates that the following text defines filter option."
+  },
+  "s47": {
+    "message": "Type option"
+  },
+  "s41": {
+    "message": "Options in blocking rules"
+  },
+  "s42": {
+    "message": "Blocking rules can have a number of options to fine-tune their behavior."
+  },
+  "s43": {
+    "message": "Address to be blocked"
+  },
+  "s83": {
+    "message": "This text will not be used for blocking, you can write anything you want."
+  },
+  "s84": {
+    "message": "!"
+  },
+  "s48": {
+    "message": "Type options define request types to be blocked. Common type options are\n        <code>script</code> or <code>image</code> indicating that only\n        scripts/images should be blocked. The inverse type option <code>~script</code>\n        means that the filter should not be applied to scripts."
+  },
+  "s49": {
+    "message": "Domain option"
+  },
+  "s85": {
+    "message": "This is a comment"
+  },
+  "s86": {
+    "message": "Filter options"
+  },
+  "s100": {
+    "message": "Specify a list of domains, separated by bar lines (|), on which a filter should be active. A filter may be prevented from being activated on a domain by preceding the domain name with a tilde (~)."
+  },
+  "s87": {
+    "message": "Option"
+  },
+  "abp-contains-example1": {
+    "message": "Matches <code>{1}</code> elements that have a direct descendent <code>{2}</code> element containing the text \"Advertisment\""
+  },
+  "s103": {
+    "message": "Element hiding"
+  },
+  "s118": {
+    "message": "Not active on, for example:"
+  },
+  "s115": {
+    "message": "All other domains, including"
+  },
+  "s113": {
+    "message": "Active on, for example:"
+  },
+  "s112": {
+    "message": "Not applicable"
+  },
+  "s111": {
+    "message": "Not active on:"
+  },
+  "s110": {
+    "message": "All domains, including:"
+  },
+  "s79": {
+    "message": "Comments"
+  },
+  "s78": {
+    "message": "document"
+  },
+  "pseudo-class-header": {
+    "message": "Pseudo-class"
+  },
+  "s75": {
+    "message": "@@"
+  },
+  "s74": {
+    "message": "This special type option indicates that Adblock Plus should be completely disabled on pages that this rule applies to."
+  },
+  "s77": {
+    "message": "$"
+  },
+  "s76": {
+    "message": "||example.com^"
+  },
+  "s19": {
+    "message": "The following text must be the domain name of the address."
+  },
+  "s18": {
+    "message": "Domain name anchor"
+  },
+  "s13": {
+    "message": "/img"
+  },
+  "s12": {
+    "message": "*"
+  },
+  "s11": {
+    "message": "/banner/"
+  },
+  "s10": {
+    "message": "The address must either end here or a separator character like ? or / has to follow."
+  },
+  "s17": {
+    "message": "Example 2: Blocking by domain name"
+  },
+  "s16": {
+    "message": "This rule doesn't block:"
+  },
+  "s15": {
+    "message": "This rule blocks:"
+  },
+  "s14": {
+    "message": "^"
+  },
+  "s93": {
+    "message": "Include or exclude content handled by browser plug-ins like Flash or Java"
+  },
+  "s92": {
+    "message": "Include or exclude stylesheets (CSS files)"
+  },
+  "s91": {
+    "message": "Include or exclude image files"
+  },
+  "s90": {
+    "message": "Include or exclude JavaScript files"
+  },
+  "s97": {
+    "message": "Used to whitelist the page itself (e.g. <code>{1}</code>)"
+  },
+  "s96": {
+    "message": "Exceptions"
+  },
+  "s95": {
+    "message": "Include or exclude pages loaded within pages (frames)"
+  },
+  "s94": {
+    "message": "Include or exclude files loaded by browser plug-ins"
+  },
+  "s99": {
+    "message": "Domains"
+  },
+  "s98": {
+    "message": "Used to prevent element rules from applying on a page (e.g. <code>{1}</code>)"
+  },
+  "s128": {
+    "message": "Matches the element with the unique id \"advert\""
+  },
+  "s129": {
+    "message": "Matches elements with the class \"advert\""
+  },
+  "s121": {
+    "message": "All other domains, including:"
+  },
+  "s126": {
+    "message": "Selector"
+  },
+  "s127": {
+    "message": "Purpose"
+  },
+  "s124": {
+    "message": "All other domains"
+  },
+  "s125": {
+    "message": "Element selection"
+  },
+  "s68": {
+    "message": "Example 2: Exception for an entire site"
+  },
+  "s66": {
+    "message": "$"
+  },
+  "s67": {
+    "message": "~script"
+  },
+  "s64": {
+    "message": "@@"
+  },
+  "s65": {
+    "message": "||ads.example.com/notbanner^"
+  },
+  "s63": {
+    "message": "This type option prevents the exception from being applied to scripts."
+  },
+  "s60": {
+    "message": "Address to be allowed"
+  },
+  "s61": {
+    "message": "This part of the rule defines which addresses it is applied to, it is structured the same as for <a>blocking rules</a>."
+  },
+  "s135": {
+    "message": "Matches links to any pages hosted on http://example.com/"
+  },
+  "s134": {
+    "message": "Matches elements with the class \"link\" that are immediately preceded by elements with the id \"advert\""
+  },
+  "s137": {
+    "message": "Matches div elements that end the style specified"
+  },
+  "s136": {
+    "message": "Matches div elements that start with the style specified"
+  },
+  "s131": {
+    "message": "Matches links to http://example.com/"
+  },
+  "s130": {
+    "message": "Matches a table with a height of 100 and a width of 100"
+  },
+  "s133": {
+    "message": "Matches elements with the class \"link\" that are enclosed within elements with the id \"advert\""
+  },
+  "s132": {
+    "message": "Matches div elements that have exactly the style specified"
+  },
+  "s88": {
+    "message": "Purpose"
+  },
+  "s89": {
+    "message": "Types"
+  },
+  "s139": {
+    "message": "The above filters are examples of valid element hiding rules. Any <a>CSS selector</a> supported by your browser can be used for element hiding."
+  },
+  "s138": {
+    "message": "Matches div elements that containing the style specified"
+  },
+  "abp-has-purpose": {
+    "message": "Select an element if its content subtree match the selector specified"
+  },
+  "abp-contains-purpose": {
+    "message": "Select an element if its text content contains the specified string"
+  },
+  "s38": {
+    "message": "|"
+  },
+  "s35": {
+    "message": "The preceding text must be the end of the address."
+  },
+  "s34": {
+    "message": "End anchor"
+  },
+  "s37": {
+    "message": "http://example.com/"
+  },
+  "s36": {
+    "message": "|"
+  },
+  "s31": {
+    "message": "The following text must be the beginning of the address."
+  },
+  "s30": {
+    "message": "Start anchor"
+  },
+  "s140": {
+    "message": "Include or exclude requests started using the <a><code>XMLHttpRequest</code></a> object or <a><code>fetch</code></a> API"
+  },
+  "s141": {
+    "message": "Include or exclude requests initiated via <a><code>WebSocket</code></a> object"
+  },
+  "s142": {
+    "message": "Include or exclude connections opened via <a><code>RTCPeerConnection</code></a> instances to ICE servers"
+  },
+  "s143": {
+    "message": "Include pages opened in a new tab or window"
+  },
+  "s144": {
+    "message": "Used to prevent applying global element rules on a page (e.g. <code>@@||example.com^$generichide</code>)"
+  },
+  "s145": {
+    "message": "Used to prevent applying global blocking rules on a page (e.g. <code>@@||example.com^$genericblock</code>)"
+  },
+  "mischeader": {
+    "message": "Misc"
+  },
+  "abp-pseudo-select-2": {
+    "message": "When writing element hiding filters that make use those you must use the <code>#?#</code> syntax (replace <code>##</code> with <code>#?#</code>) and take care to specify one or more domains. Some examples:"
+  },
+  "s9": {
+    "message": "Separator"
+  },
+  "s8": {
+    "message": "This stands for any number of characters."
+  },
+  "s3": {
+    "message": "Blocking rules determine addresses that Adblock Plus should block."
+  },
+  "s2": {
+    "message": "Simple blocking rules"
+  },
+  "s1": {
+    "message": "Unfinished, not for translating"
+  },
+  "s7": {
+    "message": "Wildcard character"
+  },
+  "s6": {
+    "message": "This text must be present in the address to be blocked."
+  },
+  "s5": {
+    "message": "Verbatim text"
+  },
+  "s4": {
+    "message": "Example 1: Blocking by address parts"
+  },
+  "abp-pseudo-select-1": {
+    "message": "In some situations standard CSS selectors are not sufficient, for those cases you can also use the following Adblock Plus specific pseudo-selectors:"
+  },
+  "rewritedesc": {
+    "message": "Specify a rewrite rule for the URL to be performed before downloading. If the filter is a regular expression, use <code>{1}</code> to insert submatches into the rewritten URL. See JavaScript own <code>{2}</code>."
+  },
+  "abp-properties-example": {
+    "message": "Matches <code>{1}</code> elements whose style contain the specified properties"
+  },
+  "abp-has-example3": {
+    "message": "Since the CSS properties are matched case-insensitively, this filter matches the same thing as above"
+  },
+  "abp-has-example2": {
+    "message": "Matches <code>{1}</code> elements that contain as a direct descendant a <code>{2}</code> element whose direct descendant is an <code>{3}</code> element whose style properties contain the specified properties, a <code>{4}</code> of 300 pixels and an <code>{5}</code> of 250 pixels"
+  },
+  "abp-has-example1": {
+    "message": "Matches <code>{1}</code> elements that contain as a direct descendant a <code>{2}</code> element whose direct descendant is an <code>{3}</code> with the class \"advert\""
+  },
+  "abp-pseudo-select-heading": {
+    "message": "Extended CSS selectors (Adblock Plus specific)"
+  },
+  "s23": {
+    "message": "A separator character has to follow that will indicate the end of the domain name, e.g. / or :."
+  },
+  "s26": {
+    "message": "^"
+  },
+  "s24": {
+    "message": "||"
+  },
+  "s25": {
+    "message": "ads.example.com"
+  },
+  "s29": {
+    "message": "Example 3: Blocking exact address"
+  }
+}

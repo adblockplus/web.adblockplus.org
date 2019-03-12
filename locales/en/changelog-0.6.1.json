@@ -1,0 +1,137 @@
+{
+  "s24": {
+    "message": "Preferences dialog: Reordering of filters via context menu or Ctrl-Up/Down (not when sorting is enabled)"
+  },
+  "s22": {
+    "message": "Preferences dialog: Sorting ignores non-alphabetical characters"
+  },
+  "s9": {
+    "message": "Middle-click on the icon in the toolbar or status bar disables/re-enables Adblock Plus"
+  },
+  "s8": {
+    "message": "Status bar icon has a context menu (same as the toolbar icon's menu)"
+  },
+  "s17": {
+    "message": "Sidebar always updating properly now even when going to a page without blockable items"
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.6.1"
+  },
+  "s3": {
+    "message": "Filter subscriptions (formerly \"synchronization\")"
+  },
+  "s2": {
+    "message": "New features"
+  },
+  "s1": {
+    "message": "The following lists the major changes compared to Adblock Plus 0.6:"
+  },
+  "s7": {
+    "message": "Toolbar icon in Firefox (customizable — can be moved around or removed)"
+  },
+  "s6": {
+    "message": "Double-click on a blocked/whitelisted item in the sidebar selects the filter in the Preferences dialog automatically"
+  },
+  "s5": {
+    "message": "Showing the filter that has been applied in the sidebar's tooltip"
+  },
+  "s4": {
+    "message": "Sidebar can be detached (button in the upper-right corner)"
+  },
+  "s13": {
+    "message": "Made Adblock Plus show up as an icon in the status bar (optional now, can be removed via Options)"
+  },
+  "s12": {
+    "message": "Added translations: German, Spanish, Italian, Russian, Polish, Slovak, Lithuanian, Romanian, Finnish, Turkish, Japanese"
+  },
+  "s26": {
+    "message": "Preferences dialog: Using platform's line breaks for exported filters"
+  },
+  "s11": {
+    "message": "User interface"
+  },
+  "s27": {
+    "message": "Preferences dialog: Added option to cancel the warning when importing filters"
+  },
+  "s19": {
+    "message": "Preferences dialog: Filters are grouped by type"
+  },
+  "s18": {
+    "message": "Whitelisting a site or a single page possible via toolbar icon's menu"
+  },
+  "s39": {
+    "message": "Improved performance"
+  },
+  "s38": {
+    "message": "Uninstalling Adblock/Adblock Plus 0.5 automatically now (advising manual uninstall in Mozilla Suite and Seamonkey)"
+  },
+  "s35": {
+    "message": "Improved handling of frames (fixed: blocked frames wouldn't show up in the sidebar)"
+  },
+  "s34": {
+    "message": "Made whitelisting apply to individual items as well, not only complete web pages"
+  },
+  "s37": {
+    "message": "Optionally blocking ads in local pages now (enabled by default, some RSS readers need this)"
+  },
+  "s10": {
+    "message": "Added minimal support for \"DIV blocking\" (see <a>FAQ</a> for details)"
+  },
+  "s31": {
+    "message": "Preferences dialog: Options apply immediately now"
+  },
+  "s16": {
+    "message": "Sidebar now tells that a page is whitelisted instead of \"no blockable items\""
+  },
+  "s15": {
+    "message": "Removed limit for tooltip size in the sidebar"
+  },
+  "s14": {
+    "message": "Mozilla Suite/Seamonkey: Added the sidebar and made it behave in the same way as in Firefox (opening via menu or Ctrl+Shift+B works)"
+  },
+  "s33": {
+    "message": "Core"
+  },
+  "s32": {
+    "message": "Preferences dialog: Line height decreased for the filters list and suggestions dropdown"
+  },
+  "s30": {
+    "message": "Preferences dialog: Made menu items and OK button disable when necessary"
+  },
+  "s25": {
+    "message": "Preferences dialog: Blocked items in the suggestions list can also be selected now"
+  },
+  "s44": {
+    "message": "Changelog for the previous release"
+  },
+  "s23": {
+    "message": "Preferences dialog: Multiple selection possible"
+  },
+  "s20": {
+    "message": "Preferences dialog: Added a warning when Adblock Plus is disabled"
+  },
+  "s21": {
+    "message": "Preferences dialog: \"Sort alphabetically\" only sorts visually and any sorting applies immediately"
+  },
+  "s40": {
+    "message": "Known issues"
+  },
+  "s41": {
+    "message": "Flash/Java tabs aren't always visible and break the page's design in some rare cases"
+  },
+  "s42": {
+    "message": "Frames without blockable elements (including blocked frames) don't show up in the sidebar when going back to a page via history"
+  },
+  "s43": {
+    "message": "Tooltip for the toolbar icon is the same as for the status bar, isn't quite correct there"
+  },
+  "s28": {
+    "message": "Preferences dialog: OK doesn't perform \"Add filter\" automatically any more"
+  },
+  "s29": {
+    "message": "Preferences dialog: Moved parts of the \"Options\" menu into the new \"Filters\" menu"
+  },
+  "s36": {
+    "message": "When the option \"block banner links\" is used those links are treated as a separate element and can be blocked via context menu"
+  }
+}

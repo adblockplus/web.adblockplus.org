@@ -1,0 +1,290 @@
+{
+  "subscriptions_exceptionscheckbox-s1": {
+    "message": "If <code>{1}</code>, the filter list for <a>non-intrusive ads</a>\nwill get special treatment and will be displayed as a checkbox in the user\ninterface."
+  },
+  "preferences_for_administratorsTitle": {
+    "message": "Preferences for administrators"
+  },
+  "title": {
+    "message": "Adblock Plus preferences"
+  },
+  "subscriptions_fallbackerrors-s1": {
+    "message": "Sets the required number of failed subscription download attempts before the fallback script (see <a>{1}</a>) will be consulted for the new address of the subscription. Note that Adblock Plus will always retry a download one day after a failed download attempt."
+  },
+  "documentation_link-s2": {
+    "message": "It will\nredirect to the actual documentation location depending on the language used."
+  },
+  "documentation_link-s1": {
+    "message": "Address on adblockplus.org to be opened for documentation links."
+  },
+  "hidden_optionsTitle": {
+    "message": "Hidden options"
+  },
+  "grouporder-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "checkedadblocksync-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "defaulttoolbaraction-s5": {
+    "message": "3 — enable/disable Adblock Plus"
+  },
+  "defaulttoolbaraction-s4": {
+    "message": "2 — show Preferences dialog"
+  },
+  "defaulttoolbaraction-s6": {
+    "message": "anything else — do nothing"
+  },
+  "defaulttoolbaraction-s1": {
+    "message": "Defines the action that should be executed when the toolbar icon is clicked. Possible values are:"
+  },
+  "defaulttoolbaraction-s3": {
+    "message": "1 — open/close blockable items"
+  },
+  "defaulttoolbaraction-s2": {
+    "message": "0 — show menu"
+  },
+  "synchronizationinterval-s1": {
+    "message": "Unused in Adblock Plus 2.0 and higher"
+  },
+  "notificationdata-s1": {
+    "message": "Current emergency notification data."
+  },
+  "subscriptions_exceptionsurlPrivacy": {
+    "message": "Location of the filter list used to allow only nonintrusive ads that are privacy-friendly."
+  },
+  "notifications_ignoredcategories-description": {
+    "message": "List of notification categories that the user opted out of."
+  },
+  "showsubscriptions-s1": {
+    "message": "Unused in Adblock Plus 1.0 and higher"
+  },
+  "localschemes-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "linktypes-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "linkcheck-s1": {
+    "message": "Unused in Adblock Plus 0.7.5.4 and higher"
+  },
+  "patternsfile-s1": {
+    "message": "Name of the file that should be used to store the list of filters. This can be either an absolute path, or it can be file's location relative to the user's profile."
+  },
+  "descriptioncol": {
+    "message": "Comments"
+  },
+  "frameobjects-s1": {
+    "message": "Value of the \"Show tabs on Flash and Java\" option"
+  },
+  "settings_key-s1": {
+    "message": "Unused in Adblock Plus 2.0 and higher"
+  },
+  "recentReports-s1": {
+    "message": "JSON-encoded data on recently submitted issue reports (address of the report,\nwebsite reported and time of submission)"
+  },
+  "savestats-s1": {
+    "message": "Value of the \"Count filter hits\" option"
+  },
+  "currentVersion-s1": {
+    "message": "Stores the last used Adblock Plus version, this will trigger actions that need to be done on upgrade or first install"
+  },
+  "enabled-s1": {
+    "message": "Value of the \"Enable Adblock Plus\" option"
+  },
+  "report_submiturl-s1": {
+    "message": "Address on adblockplus.org to submit issue reports to."
+  },
+  "subscriptions_fallbackurl-s1": {
+    "message": "Address of the script that should be consulted if a subscription fails to download a certain number of times (see <a>{1}</a>). %s is replaced by the address of the subscription in question. The script should print something like \"301 http://example.com/new_list.txt\" if the new location of the subscription is known."
+  },
+  "checkedadblockprefs-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "showintoolbar-s1": {
+    "message": "Unused in Adblock Plus 2.0 and higher"
+  },
+  "prefnamecol": {
+    "message": "Preference"
+  },
+  "patternsbackups-s1": {
+    "message": "Number of backups for patterns.ini that should be kept. If this is 0, backups will be disabled."
+  },
+  "sidebar_key-s3": {
+    "message": "Starting with Adblock Plus 1.3.5 multiple comma-separated shortcuts can be specified, the first available keyboard shortcut from the list will be used."
+  },
+  "warnregexp-s1": {
+    "message": "Unused in Adblock Plus 1.0 and higher"
+  },
+  "removedIn2.9": {
+    "message": "Unused in Adblock Plus 2.9 and higher."
+  },
+  "sendReport_key-s1": {
+    "message": "Defines the keyboard shortcut to be used to send issue reports."
+  },
+  "sendReport_key-s3": {
+    "message": "<em>Note</em>: This setting will only apply after the browser is restarted."
+  },
+  "sendReport_key-s2": {
+    "message": "For\ndescription of possible values see <a>{1}</a>."
+  },
+  "checkedadblockinstalled-s1": {
+    "message": "Unused in Adblock Plus 1.0 and higher"
+  },
+  "suppress_first_run_page-s1": {
+    "message": "Suppresses the first run page Adblock Plus opens after the installation."
+  },
+  "subscriptions_antiadblockurl-s1": {
+    "message": "Location of the subscription that hides anti adblock messages."
+  },
+  "internal_preferencesTitle": {
+    "message": "Internal preferences (don't change unless you really know what you are doing)"
+  },
+  "removed_preferencesTitle": {
+    "message": "Removed preferences"
+  },
+  "composer_default-s5": {
+    "message": "3 — entire site"
+  },
+  "composer_default-s4": {
+    "message": "2 — entire directory"
+  },
+  "composer_default-s3": {
+    "message": "1 — exact address only"
+  },
+  "composer_default-s2": {
+    "message": "0 — custom pattern"
+  },
+  "composer_default-s1": {
+    "message": "Determines which suggestion should be selected in the filter composer by default:"
+  },
+  "sidebar_key-s2-link": {
+    "message": "http://mxr.mozilla.org/mozilla/source/dom/public/idl/events/nsIDOMKeyEvent.idl"
+  },
+  "detachsidebar-s1": {
+    "message": "Stores state of the list of blockable items — <code>{1}</code> means detached"
+  },
+  "defaultstatusbaraction-s1": {
+    "message": "Defines the action that should be executed when the status bar icon is clicked. For list of possible values\n    see <a>{1}</a>."
+  },
+  "filters_key-s1": {
+    "message": "Defines the keyboard shortcut to be used to open Filter Preferences dialog. For description of possible values see <a>{1}</a>."
+  },
+  "hideContributeButton-s1": {
+    "message": "This is set to <code>{1}</code> if the user chose to hide the\nContribute button."
+  },
+  "filters_key-s2": {
+    "message": "<em>Note</em>: This setting will only apply after the browser is restarted."
+  },
+  "flash_scrolltoitem-s1": {
+    "message": "Defines whether \"Flash item's borders\" in the list of blockable items should try to scroll the item into view."
+  },
+  "enable_key-s2": {
+    "message": "<em>Note</em>: This setting will only apply after the browser is restarted."
+  },
+  "enable_key-s1": {
+    "message": "Defines the keyboard shortcut to be used to enable/disable Adblock Plus. For description of possible values see <a>{1}</a>."
+  },
+  "lastRuleUpdate-s1": {
+    "message": "Unused in Adblock Plus 2.3 and higher"
+  },
+  "whitelistschemes-s1": {
+    "message": "List of URL schemes that shouldn't be blocked (applied to both whole documents and to item locations)"
+  },
+  "empty": {
+    "message": "empty"
+  },
+  "patternsbackupinterval-s1": {
+    "message": "Minimal interval between two backups of patterns.ini (in hours)"
+  },
+  "subscriptions_autoupdate-s2": {
+    "message": "<em>Note</em>: Disabling updates is not recommended."
+  },
+  "subscriptions_autoupdate-s1": {
+    "message": "Defines whether filters in filter subscriptions will be updated\nautomatically."
+  },
+  "defaultcol": {
+    "message": "Default value"
+  },
+  "hideimagemanager-s1": {
+    "message": "Unused in Adblock Plus 2.1 and higher"
+  },
+  "noncollapsabletypes-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "clearStatsOnHistoryPurge-s1": {
+    "message": "If <code>true</code>, clearing browsing history will also clear hit statistics for Adblock Plus filters. Note that the hit statistics often allow deducing which sites the user visited, when and how often."
+  },
+  "whitelist-s1": {
+    "message": "Unused in Adblock Plus 2.3 and higher"
+  },
+  "visible_optionsTitle": {
+    "message": "Visible options"
+  },
+  "correctTyposAsked-s1": {
+    "message": "Unused in Adblock Plus 2.3 and higher"
+  },
+  "blockableItemsSize-s1": {
+    "message": "Remembered size of the Blockable Items list (width setting is only relevant when\ndisplayed as a sidebar)."
+  },
+  "sidebar_key-s2": {
+    "message": "Defines the keyboard shortcut to be used to open blockable items. This preference can be empty or it can be of the form <em>modifier1 modifier2 key</em>. Recognized modifiers are: Shift, Accel (default accelerator key, e.g. Ctrl on Windows, Command on Mac OS X), Ctrl/Control, Alt, Meta. Key can be either a letter or a special key like F7 or RIGHT (see <a>nsIDOMKeyEvent interface</a> for a list of special keys)."
+  },
+  "subscriptions_exceptionsurl-s1": {
+    "message": "Location of the filter list used to\n<a>allow non-intrusive ads</a>."
+  },
+  "s2-link": {
+    "message": "http://kb.mozillazine.org/About:config"
+  },
+  "sidebar_key-s4": {
+    "message": "<em>Note</em>: This setting will only apply after the browser is restarted."
+  },
+  "blocktypes-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "correctTypos-s1": {
+    "message": "Unused in Adblock Plus 2.3 and higher"
+  },
+  "blocklocalpages-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "showinstatusbar-s1": {
+    "message": "Value of the \"Show in status bar\" option"
+  },
+  "s2": {
+    "message": "The following table lists and explains all preferences that are used by Adblock Plus. These preferences can be viewed and changed via <a>{1}</a>."
+  },
+  "protectchrome-s1": {
+    "message": "Unused in Adblock Plus 1.0 and higher"
+  },
+  "previewimages-s1": {
+    "message": "Defines whether the tooltip in the list of blockable items should show the image that the item represents."
+  },
+  "subscriptions_listurl-s1": {
+    "message": "Address to download the complete list of filter subscriptions from."
+  },
+  "remembered_actionsTitle": {
+    "message": "Remembered actions"
+  },
+  "patterns-s1": {
+    "message": "Unused in Adblock Plus 0.7.5 and higher"
+  },
+  "checktoolbar-s1": {
+    "message": "Unused in Adblock Plus 1.0 and higher"
+  },
+  "notifications_showui-description": {
+    "message": "Determines whether notification management UI should be displayed (only if the user opted out of notifications before)."
+  },
+  "fastcollapse-s2": {
+    "message": "This might have the effect that\nplaceholders will show up for blocked images for example, unless hidden by other means."
+  },
+  "fastcollapse-s3": {
+    "message": "This functionality was available\nas \"Hide placeholders of blocked elements\" before Adblock Plus 2.6.7."
+  },
+  "fastcollapse-s1": {
+    "message": "If set to <code>{1}</code> blocked elements will no longer be hidden."
+  },
+  "notificationurl-s1": {
+    "message": "Location of the file containing emergency notifications."
+  }
+}

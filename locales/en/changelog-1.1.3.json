@@ -1,0 +1,44 @@
+{
+  "s9": {
+    "message": "HP Smart Web Printing extension <a>breaks Adblock Plus and causes various other issues</a>. Solution: uninstall HP Smart Web Printing extension. Unfortunately, contacting HP to make them fix this (simple) issue appears impossible."
+  },
+  "s12-link": {
+    "message": "http://support.mozilla.com/en-US/kb/Options+window+-+Advanced+panel#Encryption_tab"
+  },
+  "s3": {
+    "message": "Updated compatibility range for Songbird, 1.4.0 to 1.7.0a supported now"
+  },
+  "s2": {
+    "message": "Fixed: Subscription dialog comes up on each update in Fennec, regardless of existing subscriptions"
+  },
+  "s1": {
+    "message": "Adblock Plus 1.1.2 regression fixed: Filter hits are counted in private browsing mode"
+  },
+  "s10": {
+    "message": "Microsoft .NET Framework Assistant 0.0.0.0 will sometimes break Adblock Plus resulting in empty spaces in Tools menu and no Adblock Plus icon in toolbar. Solution: disable Microsoft .NET Framework Assistant (\"version 0.0.0.0\" isn't the real add-on, its purpose is a one-time installation of Microsoft .NET Framework Assistant)."
+  },
+  "s7": {
+    "message": "Ecosia extension in version 1.0.3 removes all Adblock Plus filter subscriptions (<a>bug 533419</a>). Solution: update to Ecosia 1.0.4 and <a>add a filter subscription</a> again."
+  },
+  "s6": {
+    "message": "Skype Extension 2.2.0.102 causes Adblock Plus to malfunction, browser functionality is affected as well. Solution: uninstall Skype Extension."
+  },
+  "s5": {
+    "message": "The extension Ask Toolbar 2.1.0.5 (usually installed under names Zone Alarm Toolbar, Foxit Toolbar, Vuze Toolbar) causes Adblock Plus and other extensions/the browser to malfunction (<a>bug 530747</a>). Solution: uninstall Ask Toolbar."
+  },
+  "s4": {
+    "message": "Known issues"
+  },
+  "s13": {
+    "message": "Changelog for the previous release"
+  },
+  "s9-link": {
+    "message": "http://h30434.www3.hp.com/t5/HP-Print-Apps-Mobile-and-Web/HP-Smart-Web-Printing-breaks-Adblock-Plus-in-Firefox-accessing/m-p/198651"
+  },
+  "s12": {
+    "message": "Firefox/Thunderbird/SeaMonkey builds from some Linux distributions (not the official builds however) will refuse to install Adblock Plus with the message: \"Signing could not be verified\". Solution: update \"nss\" package to the latest version available for your distribution. If that doesn't help, <a>view certificates</a> in the encryption/certificates tab of the options, select \"StartCom Certification Authority\" under \"Authorities\" and click \"Edit\". Make sure \"This certificate can identify software makers\" is checked and click OK."
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 1.1.3"
+  }
+}

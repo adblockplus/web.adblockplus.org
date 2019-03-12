@@ -1,0 +1,32 @@
+{
+  "past-contributions": {
+    "message": "A list of your past contributions - the module owner will decide whether to grant you access based on those."
+  },
+  "no-branches": {
+    "message": "Don't push any new bookmarks or branches without first getting approval from the repository's module owner. If you would like to work with temporary feature branches, please keep them locally, or on a personal fork of the repository (e.g. on <a>BitBucket</a>). Please ensure to use <code>hg push -r master</code> either way, to only push your changes to the master branch."
+  },
+  "ask-module-owner": {
+    "message": "To become a committer for a project, ask the <a>module owner</a> responsible for it. Make sure to include the following:"
+  },
+  "mandatory-reviews": {
+    "message": "Don't push any change that hasn't been reviewed by the respective module owner."
+  },
+  "title": {
+    "message": "Committers"
+  },
+  "rules-for-comitters": {
+    "message": "Rules for comitters"
+  },
+  "dont-push-to-github": {
+    "message": "If you have also been given write access to our GitHub mirrors, please never push any changes there, always push to <em>hg.adblockplus.org</em> using Mercurial, the mirrors are being updated automatically."
+  },
+  "ssh-key": {
+    "message": "Your public SSH key."
+  },
+  "intro": {
+    "message": "Anyone can <a>contribute code</a> to any of our projects. But if you're contributing to a project on a regular basis, it makes sense to request commit access."
+  },
+  "becoming-a-comitter": {
+    "message": "Becoming a comitter"
+  }
+}

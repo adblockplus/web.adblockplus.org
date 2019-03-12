@@ -1,0 +1,95 @@
+{
+  "s9": {
+    "message": "Filter preferences: Various improvements for a better overview\n    (<a>forum topic</a>,\n    <a>forum topic</a>,\n    <a>forum topic</a>)."
+  },
+  "s8": {
+    "message": "Filter composer: Removed warning when adding filters to a disabled group, a new group\n    is created if no enabled group can be found for the filter."
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 2.1"
+  },
+  "s3": {
+    "message": "Adblock Plus can be installed without restarting the browser now."
+  },
+  "s2": {
+    "message": "Features"
+  },
+  "s1": {
+    "message": "The following lists the major changes compared to Adblock Plus 2.0.3."
+  },
+  "s7": {
+    "message": "User interface"
+  },
+  "s6": {
+    "message": "Implemented <a>element hiding exceptions</a>\n    (mostly useful for subscription authors)."
+  },
+  "s5": {
+    "message": "Better Thunderbird integration, in particular the Adblock Plus user interface is working\n    with web page tabs correctly now."
+  },
+  "s4": {
+    "message": "Added support for Firefox Mobile 14."
+  },
+  "s19": {
+    "message": "Fixed: Context menu might suggest disabling the filter on wrong domain\n    (<a>forum topic</a>)."
+  },
+  "s18": {
+    "message": "Fixed: The list will sometimes reload even though the current page stays the same."
+  },
+  "s13": {
+    "message": "Custom About dialog has been removed, using the browser's built-in dialog now."
+  },
+  "s12": {
+    "message": "Issue reporter: Sending issue reports is no longer allowed if the filter subscription\n    hasn't been updated in the past two weeks."
+  },
+  "s11": {
+    "message": "Issue reporter: Force a filter subscription update when reporting a false positive\n    (<a>forum topic</a>)."
+  },
+  "s10": {
+    "message": "Filter preferences: Fixed wrong warning message when deleting filter groups."
+  },
+  "s17": {
+    "message": "Searches for <code>{1}</code> are accepted as well, searching\n    for <code>{2}</code> is no longer required\n    (<a>forum topic</a>)."
+  },
+  "s16": {
+    "message": "The shortcut key for Blockable items in Firefox 15 and above is Ctrl-Shift-U now, the\n    old shortcut key is no longer available."
+  },
+  "s15": {
+    "message": "Blockable items"
+  },
+  "s30": {
+    "message": "Changelog for the previous release"
+  },
+  "s14": {
+    "message": "Fixed: Tabs on Flash and Java no longer have rounded corners in Firefox 13\n    (<a>forum topic</a>)."
+  },
+  "s22": {
+    "message": "Core"
+  },
+  "s23": {
+    "message": "Adblock Plus can now be installed in any application based on Gecko 8.0 and higher,\n    in particular Firefox 8, Thunderbird 8, SeaMonkey 2.5. Older versions are no longer\n    supported, XUL-based Firefox Mobile releases like Firefox Mobile 10 aren't supported either."
+  },
+  "s20": {
+    "message": "Fixed: Context menu might prevent page elements from being garbage collected\n    (<a>bug 727739</a>)."
+  },
+  "s21": {
+    "message": "Fixed: The tooltip might get displayed on top of the context menu."
+  },
+  "s26": {
+    "message": "Stopped using <code>{1}</code> file, it's a frequent source of stability\n    issues."
+  },
+  "s27": {
+    "message": "Switched to asynchronous file read/write operations to improve user interface\n    responsiveness."
+  },
+  "s24": {
+    "message": "Filter subscriptions can set their title automatically using <code>{1}</code>\n    comment (<a>forum topic</a>)."
+  },
+  "s25": {
+    "message": "Improved memory use and performance, especially fixed the regression in Firefox 15 and\n    above."
+  },
+  "s28": {
+    "message": "Fixed: Object tabs are causing \"{1}\" message in Error\n    Console of Firefox 15 and above."
+  },
+  "s29": {
+    "message": "Fixed handling of trailing dots in domain names\n    (<a>forum topic</a>)."
+  }
+}

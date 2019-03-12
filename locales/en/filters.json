@@ -1,0 +1,362 @@
+{
+  "ping": {
+    "message": "<code>{1}</code> — requests started by <a><code>{2}</code></a> or <a><code>{3}</code></a> (Adblock Plus 2.7.1 or higher required)"
+  },
+  "generic-specific-title": {
+    "message": "Generic / Specific filters"
+  },
+  "xmlhttprequest": {
+    "message": "<code>{1}</code> — requests started using the <a><code>{2}</code> object</a> or <a><code>{3}</code> API</a>"
+  },
+  "title": {
+    "message": "Writing Adblock Plus filters"
+  },
+  "s57": {
+    "message": "<code>{1}</code> — external scripts loaded via HTML script tag"
+  },
+  "s56": {
+    "message": "Type options: determine which types of elements a filter can block (or whitelist in case of an exception rule). Multiple type options can be specified to indicate that the filter should be applied to several types of elements. Possible types are:"
+  },
+  "s55": {
+    "message": "Here <code>{1}</code> is the actual filter and <code>{2}</code> and <code>{3}</code> are its options. Currently the following options are supported:"
+  },
+  "s54": {
+    "message": "Adblock Plus allows you to specify a number of options to modify the behavior of a filter. You list these options separated with commas after a dollar sign ($) at the end of the filter, for example:"
+  },
+  "s53": {
+    "message": "Specifying filter options"
+  },
+  "s52": {
+    "message": "The features described in this section are usually used only by power users and filterlist creators. Feel free to skip it."
+  },
+  "s51": {
+    "message": "Advanced features"
+  },
+  "s50": {
+    "message": "This version number will be displayed in issue reports\n      and can be used to verify that the report refers to the current version of the filter list."
+  },
+  "webrtc": {
+    "message": "<code>{1}</code> — connections opened via <a><code>{2}</code> instances</a> to ICE servers (Adblock Plus 1.13.3 for Chrome and Opera, 3.0 for Firefox, or higher required)"
+  },
+  "s59": {
+    "message": "<code>{1}</code> — external CSS stylesheet files"
+  },
+  "s58": {
+    "message": "<code>{1}</code> — regular images, typically loaded via HTML img tag"
+  },
+  "special-comments-position": {
+    "message": "Special comments must be given at the top of the filter list right below the header."
+  },
+  "abp-has-1": {
+    "message": "<code>{1}</code> will select elements based on their content. For example <code>{2}</code> will select elements that contain as a direct descendant a <code>{3}</code> that contains an <code>{4}</code> with the class <code>{5}</code>. The inner selector can be relative to the element scope, and can use any of the pseudo-selectors, including <code>{6}</code> and will determine whether the selection will occur."
+  },
+  "s108": {
+    "message": "For a <a>sitekey-restricted filter</a> to apply, a webpage needs to return base64-encoded versions of the public key and a signature which Adblock Plus can validate. Currently, this means including them in both the HTTP response header (<code>{1}</code>) and the root tag of the document (<code>{2}</code>)."
+  },
+  "s109": {
+    "message": "First you need to create a private RSA key (preferably 512 bit to keep the transfer volume low) and then a DER representation of the public key."
+  },
+  "s104": {
+    "message": "It is recommended that you use\n  exception rules only when you cannot change an overly general element hiding rule, in all the\n  other cases limiting this rule to the necessary domains is preferable."
+  },
+  "s107": {
+    "message": "Implementing a sitekey on the server"
+  },
+  "s100": {
+    "message": "Exception rules can disable existing rules on particular domains."
+  },
+  "s101": {
+    "message": "These are mostly\n  useful to filter subscription authors who are extending another filter subscription that they\n  cannot change."
+  },
+  "s102": {
+    "message": "For example, the rule <code>{1}</code> can be\n  disabled on <code>{2}</code> using the exception rule\n  <code>{3}</code>."
+  },
+  "s103": {
+    "message": "The combination of these two\n  rules has exactly the same effect as the single rule\n  <code>{1}</code>."
+  },
+  "s45": {
+    "message": "This comment indicates that the filter list has moved to a new download address."
+  },
+  "s46": {
+    "message": "Adblock Plus will ignore any file\n      contents beyond that comment and immediately try downloading from the new address."
+  },
+  "s47": {
+    "message": "In case of success the address\n      of the filter list will be updated in the settings."
+  },
+  "s48": {
+    "message": "This comment is ignored if the new address is the same as the\n      current address, meaning that it can be used to enforce the \"canonical\" address of the filter list."
+  },
+  "elemhide-emulation-heading": {
+    "message": "Extended CSS selectors (Adblock Plus specific)"
+  },
+  "abp-properties-4": {
+    "message": "<code>{1}</code> will also select elements using the style properties found in their pseudo-elements, like <code>{2}</code> and <code>{3}</code>. For example, <code>{4}</code> will match elements where the string <em>Advertisment</em> is found in either their <code>{5}</code> or <code>{6}</code> pseudo element."
+  },
+  "abp-properties-1": {
+    "message": "<code>{1}</code> will select elements based upon stylesheet properties. For example <code>{2}</code> will select elements that have a corresponding CSS rule in a stylesheet which sets the <code>{3}</code> and <code>{4}</code> to the values <code>{5}</code> and <code>{6}</code> respectively. Property names are matched case-insensitively. Furthermore, wildcards can be used so that <code>{7}</code> will match any width specified in pixels and a height of 250 pixels."
+  },
+  "abp-properties-2": {
+    "message": "You can also use <a>regular expressions</a> by surrounding the properties expression with \"/\". For example, <code>{1}</code> will match widths between 302 and 308 pixels and a height of 250 pixels."
+  },
+  "abp-properties-3": {
+    "message": "<em>Note</em>: The <a>older syntax</a> for the CSS property filters is deprecated and will be automatically converted to the new format . The syntax to select the style properties remain the same. For example, <code>{1}</code> will be converted to <code>{2}</code>."
+  },
+  "s18": {
+    "message": "Separator character is anything but a letter, a digit, or one of the following: {1}. The end of the address is also accepted as separator. In the following example all separator characters are shown in red:"
+  },
+  "deprecated-options": {
+    "message": "The type options <code>{1}</code>,\n      <code>{2}</code> and <code>{3}</code> are outdated\n      and should no longer be used."
+  },
+  "exception-rules": {
+    "message": "These exceptions will be applied to <a>advanced pseudo-selector rules</a> as well."
+  },
+  "s111": {
+    "message": "Finally, generate the signature for this string by using the signature algorithm SEC_OID_ISO_SHA_WITH_RSA_SIGNATURE (default when using OpenSSL)."
+  },
+  "s110": {
+    "message": "The data used for creating the signature is a concatenated list of request variables (namely URI, host and user agent) separated by the <code>{1}</code> character \"\\0\". For example:"
+  },
+  "s79": {
+    "message": "If you want even more control about what your filters match and what they don't match, you can use regular expressions. For example the filter <code>{1}</code> will match <code>{2}</code> and <code>{3}</code> but not <code>{4}</code>. You can check out <a>documentation on regular expressions</a> to learn how to write them."
+  },
+  "s71": {
+    "message": "Domain restrictions: The option <code>{1}</code> means that the filter should only be applied on pages from \"example.com\" domain. Multiple domains can be specified using \"|\" as separator: with the option <code>{2}</code> the filter will only be applied on pages from \"example.com\" or \"example.net\" domains. If a domain name is preceded with \"~\", the filter should <strong>not</strong> be applied on pages from this domain. For example, <code>{3}</code> means that the filter should be applied on pages from any domain but \"example.com\" and <code>{4}</code> restricts the filter to the \"example.com\" domain with the exception of \"foo.example.com\" subdomain."
+  },
+  "s70": {
+    "message": "Restriction to third-party/first-party requests: If the <code>{1}</code> option is specified, the filter is only applied to requests from a different origin than the currently viewed page. Similarly, <code>{2}</code> restricts the filter to requests from the same origin as the currently viewed page."
+  },
+  "s73": {
+    "message": "<code>{1}</code> — makes the filter only apply to addresses with matching letter case, e.g. the filter <code>{2}</code> will block <code>{3}</code> but not <code>{4}</code>."
+  },
+  "s72": {
+    "message": "Sitekey restrictions: The option <code>{1}</code> means that the filter should only be applied on pages that provide a public key and a signature which can be verified by that very same public key that is also contained in the filter (but without the trailing =). Multiple sitekeys can be specified using \"|\" as separator: with the option <code>{2}</code> the filter will only be applied on pages providing either sitekey \"abcdsitekeydcba\" or \"bcdesitekeyedcb\". This is similar to domain restrictions but allows covering scenarios where a single filter should apply to a very large number of domains. Note that sitekey restrictions require <a>modifications on the server-side</a>."
+  },
+  "s75": {
+    "message": "<code>{1}</code> — for any address matching a blocking rule with\n      this option and not matching any exception rules with this option a\n      <a>Do-Not-Track header</a> will be sent (requires\n      Adblock Plus 1.3.5 or higher)."
+  },
+  "s74": {
+    "message": "<code>{1}</code> — this option will override the global \"Hide placeholders of blocked elements\" option and make sure the filter always hides the element. Similarly the <code>{2}</code> option will make sure the filter never hides the element."
+  },
+  "s77": {
+    "message": "Using regular expressions"
+  },
+  "s76": {
+    "message": "For backwards compatibility it is recommended\n      to use this option in combination with contradicting type options, this will prevent this\n      filter from blocking anything in earlier Adblock Plus versions:\n      <code>{1}</code>"
+  },
+  "s19": {
+    "message": ". So this address can be blocked with the filter <code>{1}</code> or <code>{2}</code> or <code>{3}</code>."
+  },
+  "popup": {
+    "message": "<code>{1}</code> — pages opened in a new tab or window"
+  },
+  "s13": {
+    "message": "Usually Adblock Plus treats every filter as if it had a wildcard at its beginning and end, e.g. there is not difference between the filters <code>{1}</code> and <code>{2}</code>. While this is usually unproblematic, sometimes you wish that the filter you defined only matches at the beginning or end of an address. For example you might want to block all Flash, but if you add the filter <code>{3}</code> the address <code>{4}</code> will also be blocked."
+  },
+  "s12": {
+    "message": "Matching at beginning/end of an address"
+  },
+  "s11": {
+    "message": "Exception rules can do more. If you specify <code>{1}</code> option you will get an exception for the entire page. For example, if your exception rule is <code>{2}</code> and you open some page from example.com — Adblock Plus will be entirely disabled on this page and nothing will be blocked."
+  },
+  "s10": {
+    "message": "That's what exception rules are good for — they allow you to define cases where filters shouldn't be applied. For example if you are unhappy with your filter <code>{1}</code> blocking <code>{2}</code>, you can define an exception rule <code>{3}</code>. Exception rules are no different from filter rules, you can use wildcards or regular expressions. You only have to precede them by <code>{4}</code> to indicate an exception rule."
+  },
+  "s17": {
+    "message": "Often you need to accept any separator character in a filter. For example, you might write a filter that blocks <code>{1}</code> and <code>{2}</code> but not <code>{3}</code>. Here the symbol ^ can be used as a placeholder for a single separator character: <code>{4}</code> (requires Adblock Plus 1.1 or higher)."
+  },
+  "s16": {
+    "message": "Marking separator characters"
+  },
+  "s15": {
+    "message": "Sometimes one wants to block <code>{1}</code> as well as <code>{2}</code> and <code>{3}</code>. This can be achieved by putting two pipe symbols in front of the filter which makes sure the filter matches at the beginning of the domain name: <code>{4}</code> will block all these addresses while not blocking <code>http://badexample.com/banner.gif</code> or <code>http://gooddomain.example/analyze?http://example.com/banner.gif</code> (requires Adblock Plus 1.1 or higher)."
+  },
+  "s14": {
+    "message": "Solution to this problem: add a pipe symbol to the filter to show that there should be definitely the end of the address at this point. For example the filter <code>{1}</code> will block <code>{2}</code> but not <code>{3}</code>. And the filter <code>|http://baddomain.example/</code> will block <code>http://baddomain.example/banner.gif</code> but not <code>http://gooddomain.example/analyze?http://baddomain.example</code>."
+  },
+  "s93": {
+    "message": "Attribute selectors"
+  },
+  "s92": {
+    "message": "<em>Note</em>: Element hiding rules with domain limitation can be used to hide browser's user interface elements as well. For example the filter rule <code>{1}</code> will hide the JavaScript Console entry in Firefox's Tools menu."
+  },
+  "s91": {
+    "message": "<em>Note</em>: Due to the way how element hiding is implemented, you really can only limit it to full domain names. You cannot use any other part of the address and you cannot use <code>{1}</code> as a replacement for <code>{2}</code>."
+  },
+  "s90": {
+    "message": "If a domain name is preceded with \"~\", the rule will <strong>not</strong> be applied on pages from this domain (requires Adblock Plus 1.1 or higher). For example, <code>{1}</code> will be be applied on pages from any domain but \"example.com\" and <code>{2}</code> makes the rule apply on \"example.com\" domain with the exception of \"foo.example.com\" subdomain."
+  },
+  "s97": {
+    "message": "In general, any CSS selector supported by Firefox can be used for element hiding. For example the following rule will hide anything following a div element with class \"adheader\": <code>{1}</code>. For a full list of CSS list see <a>W3C CSS specification</a> (note that not all selectors are supported by Firefox yet)."
+  },
+  "s95": {
+    "message": "Advanced selectors"
+  },
+  "s94": {
+    "message": "Some advertisers don't make it easy for you — their text advertisements have neither an id nor a class attribute. You can use other attributes to hide those, for example <code>{1}</code> will hide tables with width attribute set to 80%. If you don't want to specify the full value of the attribute, <code>{2}</code> will hide all div elements with title attribute containing the string \"adv\". You can also check the beginning and the end of an attribute, for example <code>{3}</code> will hide div elements with title starting with \"adv\" and ending with \"ert\". As you see, you can also use multiple conditions — <code>{4}</code> will match tables with width attribute set to 80% and bgcolor attribute set to white."
+  },
+  "s99": {
+    "message": "Exception rules"
+  },
+  "s98": {
+    "message": "<em>Note</em>: This functionality is for advanced users only, you should be comfortable with CSS selectors to use it. Adblock Plus won't be able to check the syntax of the selector you are adding, if you use invalid CSS syntax you might break other (valid) rules you have. Check JavaScript Console for CSS errors."
+  },
+  "s49": {
+    "message": "This comment defines a numerical version of the filter list."
+  },
+  "s69": {
+    "message": "Inverse type options: specify the element types the filter should <strong>not</strong> be applied to. Possible inverse type options: <code>{1}</code>, <code>{2}</code>, <code>{3}</code>, <code>{4}</code>, <code>{5}</code>, <code>{6}</code>, <code>{7}</code>, <code>{8}</code>, <code>{9}</code>, <code>{10}</code>"
+  },
+  "s66": {
+    "message": "<code>{1}</code> — for exception rules only, similar to <code>{2}</code> but only disables <a>element hiding rules</a> on the page rather than all filter rules (Adblock Plus 1.2 or higher required)"
+  },
+  "s67": {
+    "message": "<code>{1}</code> — types of requests not covered in the list above"
+  },
+  "s64": {
+    "message": "<code>{1}</code> — embedded pages, usually included via HTML frames"
+  },
+  "s65": {
+    "message": "<code>{1}</code> — the page itself (only <a>exception rules</a> can be applied to the page)"
+  },
+  "s63": {
+    "message": "<code>{1}</code> — requests started by plugins like Flash"
+  },
+  "s60": {
+    "message": "<code>{1}</code> — content handled by browser plugins, e.g. Flash or Java"
+  },
+  "s80": {
+    "message": "<em>Note</em>: For performance reasons it is recommended not to use regular expressions if they can be avoided."
+  },
+  "s81": {
+    "message": "Element hiding"
+  },
+  "s82": {
+    "message": "Basic rules"
+  },
+  "s83": {
+    "message": "Sometimes you will find advertisements that can't be blocked because they are embedded as text in the web page itself. If you look at the source code of the web page you might find something like this:"
+  },
+  "s84": {
+    "message": "You need to download the web page so you will necessarily download the advertisements. All you can do here is to hide the advertisement so you don't need to see it. That's what element hiding is meant for."
+  },
+  "s85": {
+    "message": "The first advertisement above is contained inside an element with class attribute \"textad\". The following rule will hide exactly any such element: <code>{1}</code>. Here ## marks an element hiding rule while the rest is a selector identifying the elements that need to be hidden. You can hide elements by their id attribute similarly, <code>{2}</code> will hide the second advertisement. And you can hide elements by element name, e.g. <code>{3}</code> for the third advertisement."
+  },
+  "s86": {
+    "message": "The <a>Element Hiding Helper extension</a> helps selecting the correct element and writing the corresponding rule without having to view the source code of the page. Basic HTML knowledge is useful nevertheless."
+  },
+  "s87": {
+    "message": "<em>Note</em>: Element hiding works very differently from normal filters. This has the implication that no wildcards are supported in element hiding rules."
+  },
+  "s88": {
+    "message": "Limiting rules to certain domains"
+  },
+  "s89": {
+    "message": "Usually you want to hide a specific ad on one specific site, you don't want your rule to be applied on other sites. For example the rule <code>{1}</code> might hide valid code on some sites. But if you write it as <code>{2}</code> it will be applied on <code>{3}</code> and <code>{4}</code> but not on <code>{5}</code>. You can also specify multiple domains — simply separate them with commas: <code>{6}</code>."
+  },
+  "abp-contains-1": {
+    "message": "<code>{1}</code> will select elements based on their text content. For example, <code>{2}</code> will select the  <code>{3}</code> elements within a <code>{4}</code>, with a class of <code>{5}</code> that contains the word \"Advertisment\". In practice, you'd want to combine this with a <code>{6}</code> to select the outer container — something like <code>{7}</code> to select the container that would contain an advertisement label."
+  },
+  "generic-specific-explanation-p1": {
+    "message": "With the <code>{1}</code> and <code>{2}</code> filter options the distinction between generic and specific filters becomes important."
+  },
+  "generic-specific-explanation-p2": {
+    "message": "We classify a filter to be <strong>specific</strong> if it matches one or more domains or matches a sitekey. If a filter has no domains specified (or only domain exceptions) and no sitekey then it counts as <strong>generic</strong>. For example, <code>{1}</code> is a specific filter, whereas both <code>{2}</code> and <code>{3}</code> are generic."
+  },
+  "generic-specific-explanation-p3": {
+    "message": "Note that with blocking rules the domain must be specified under the $domain option for them to be considered specific. For example, <code>{1}</code> is considered generic whereas <code>{2}</code> is site-specific."
+  },
+  "genericblock": {
+    "message": "<code>{1}</code> — for exception rules only, just like <code>{2}</code> but disables <a>generic</a> blocking rules (Adblock Plus 2.6.12 or higher required)"
+  },
+  "advanced-selectors-2": {
+    "message": "Please keep in mind that browsers are slower to process these selectors than selectors based on <code>{1}</code> or <code>{2}</code> attribute only."
+  },
+  "s31": {
+    "message": "The actual update time is slightly randomized and depends on\n      some additional factors to reduce server load."
+  },
+  "s30": {
+    "message": "Note that the update\n      will not necessarily happen after this time interval."
+  },
+  "rewriteoption": {
+    "message": "Rewrite the URL with the option <code>{1}</code>. You may want to create a regular expression filter to perform the rewrite operation. In that case, you can use <code>{2}</code> in the rewrite argument, with <code>{3}</code> being a number between 1 and 100, to insert the n-th parenthesis submatch of the filter regular expression. Anything not explicitly matched by it will be added in the rewritten string. For example <code>{4}</code> will strip everything that comes after \".php\" and redirects the request to the resulting URL. If there is no query string (i.e. no '?'), this filter won't match. The rewrite parameter has the same syntax as JavaScript’s <a><code>{5}</code></a>. The resulting URL must have the same origin; in case it is rewritten to a relative URL, the origin gets added back. Also, rewrite for scripts, subdocuments, objects, requests from within objects (like Flash) are not possible for security reason; even if explicitly stated by the filter. If both, a filter with/without <code>{6}</code> option matches, the behavior is undefined, i.e. the request might either be blocked or redirected. (Adblock Plus 3.2 or higher required.)"
+  },
+  "websocket": {
+    "message": "<code>{1}</code> — requests initiated via <a><code>{2}</code> object</a> (Adblock Plus 2.8 or higher required)"
+  },
+  "s97-link": {
+    "message": "http://www.w3.org/TR/css3-selectors/"
+  },
+  "elemhide-emulation-1": {
+    "message": "Sometimes the standard CSS selectors aren't powerful enough to hide an advertisement. For those cases we have added some new selectors, namely <code>{1}</code>, <code>{2}</code> and <code>{3}</code> (requires Adblock Plus 1.13.3 or higher for Chrome and Opera)."
+  },
+  "s9": {
+    "message": "Once in a while you may notice that one of your filters, that normally works well, is blocking something that it shouldn't block. You don't want to remove this filter but you still don't want it to match in this one case."
+  },
+  "s8": {
+    "message": "Defining exception rules"
+  },
+  "s3": {
+    "message": "Introduction to Adblock Plus filters"
+  },
+  "s2": {
+    "message": "<em>Disclaimer</em>: All filter examples given here are really only examples and are not meant to be used."
+  },
+  "s1": {
+    "message": "Current Adblock Plus versions allow you to \"tweak\" your filters in many different ways. This document explains the choices that you have and how they can be used."
+  },
+  "s7": {
+    "message": "<em>Note</em>: Make sure that you are not replacing too much by wildcards. The filter <code>{1}</code> will definitely block all banners but it will also block everything else from example.com that you still might want to see."
+  },
+  "s6": {
+    "message": "The most trivial filter you can define is of course the address of banner you want to block. However, often this address changes every time you open a page. For example it could be <code>{1}</code> where 123 is a random number. Here blocking the complete address won't help you, you need a more general filter — like <code>{2}</code>. Or maybe even <code>{3}</code>."
+  },
+  "s5": {
+    "message": "Basic filter rules"
+  },
+  "s4": {
+    "message": "The options described in this section should be enough for users who have to create a filter occasionally."
+  },
+  "csp": {
+    "message": "Content Security Policies: The option <code>{1}</code> causes a Content Security Policy header of <code>{2}</code> to be injected into HTTP responses for requested documents matching the filter — assuming that exception rules with the same option don't also match and that the document isn’t whitelisted. The Content Security Policy <code>{3}</code> would in turn block all scripts — including inline — for the document. This filter option should generally be avoided, except as a last resort to counter advanced circumvention. (Adblock Plus 3.1 or higher required.)"
+  },
+  "generichide": {
+    "message": "<code>{1}</code> — for exception rules only, similar to <code>{2}</code> but only disables <a>generic</a> element hiding rules on the page (Adblock Plus 2.6.12 or higher required)"
+  },
+  "elemhide-emulation-2": {
+    "message": "When writing an element hiding filter that makes use of these extended selectors you must use the <code>{1}</code> syntax, e.g. <code>{2}</code>. But it's important to note that doing so carries a performance impact, so do so sparingly and make sure those filters are specific to as few domains and elements as possible."
+  },
+  "s79-link": {
+    "message": "https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern"
+  },
+  "s22": {
+    "message": "Special comments"
+  },
+  "s23": {
+    "message": "Special comments will only have an effect in downloaded filter lists, not in custom filters."
+  },
+  "s20": {
+    "message": "Comments"
+  },
+  "s21": {
+    "message": "Any rule that starts with an exclamation mark is considered a comment. It will still show up in the filter list but in grey instead of black. Adblock Plus will ignore this rule for actual blocking so it is safe to write there whatever you want. You can place a comment rule above a real filter to describe what it is doing. Or you can put a comment on top of your filter list stating your authorship (most filter list authors do that)."
+  },
+  "s26": {
+    "message": "This comment sets a fixed title for the filter list."
+  },
+  "s27": {
+    "message": "If this comment is present the user will no longer be able to change\n      the title."
+  },
+  "s24": {
+    "message": "They can set a number of parameters for the filter list:"
+  },
+  "s25": {
+    "message": "This comment determines which webpage should be linked as filter list homepage."
+  },
+  "s28": {
+    "message": "This comment sets the update interval for the filter list, the value can be given in days (e.g. <code>{1}</code>) or hours\n      (e.g. <code>{2}</code>)."
+  },
+  "s29": {
+    "message": "Any value between 1 hour and 14 days is possible."
+  }
+}

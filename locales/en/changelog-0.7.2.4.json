@@ -1,0 +1,50 @@
+{
+  "s9": {
+    "message": "Made handling of frames and images embedded as objects consistent (<a>bug 16144</a>)"
+  },
+  "s8": {
+    "message": "Fixed: Frames created by object tags don't appear in blockable items list (<a>bug 16021</a>)"
+  },
+  "title": {
+    "message": "Detailed changelog for Adblock Plus 0.7.2.4"
+  },
+  "s3": {
+    "message": "Fixed: object tab size does not adapt to text size (e.g. when increasing text size)"
+  },
+  "s2": {
+    "message": "Fixed: object tabs break page layout on some pages (<a>bug 12911</a>)"
+  },
+  "s1": {
+    "message": "Fixed: context menu items do not appear when \"Check banner links\" option is switched on (<a>forum thread</a>)"
+  },
+  "s10": {
+    "message": "Releasing memory sooner on dynamic pages where nodes are removed from the document (<a>bug 16125</a>)"
+  },
+  "s7": {
+    "message": "Remote images in data: and javascript: frames are blocked now"
+  },
+  "s6": {
+    "message": "Added public <a>IAdblockPlus.allowOnce()</a> method to be used by other extensions"
+  },
+  "s5": {
+    "message": "Now preventing web pages from probing for Adblock Plus by abusing <a>bug 292789</a> in Gecko (<a>bug 16027</a>). Other extensions can use this protection as well via <a>extensions.adblockplus.protectchrome.*</a> preferences."
+  },
+  "s4": {
+    "message": "Made sure that dynamic properties of object tabs cannot be overridden by web page's styles"
+  },
+  "s13": {
+    "message": "K-Meleon: Fixed bug that was severely breaking functionality"
+  },
+  "s15": {
+    "message": "Changelog for the previous release"
+  },
+  "s12": {
+    "message": "SeaMonkey 1.1: default action (going to the address from the clipboard) shouldn't be invoked when middle-clicking in the sidebar"
+  },
+  "s14": {
+    "message": "K-Meleon: Fixed background image attachment in toolbar"
+  },
+  "s11": {
+    "message": "SeaMonkey 1.1: middle-clicking an item in the sidebar wouldn't open it in a new tab"
+  }
+}
