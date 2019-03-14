@@ -252,7 +252,7 @@ Germany<br>
 
 {{ international-data-transfers-1 For the following services, we use non-EU/EEA service providers. We have carefully selected these external service providers and review them regularly to ensure that your privacy is preserved. The service providers provide sufficient guarantees to ensure an adequate level of data protection and may only use personal data for the purposes stipulated by us and in accordance with our instructions. We also contractually require the service providers to treat your personal data solely in accordance with this Privacy Policy and the European data protection laws: }}
 
-{{ international-data-transfers-2 We use external service provider tools for email (GSuite); to analyze your use of our Websites ([Google Analytics](#google-analytics)); and for A/B testing based on the analytics data ([Google Optimize](#google-optimize)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485). }}
+{{ international-data-transfers-2 We use external service provider tools for email (GSuite); to analyze your use of our Websites ([Google Analytics](#google-analytics)); and for A/B testing based on the analytics data (Google Optimize). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).}}
 
 ### {{ your-rights-long-heading[heading] What rights do you have? }} {: #your-rights-long }
 
@@ -291,7 +291,7 @@ Germany<br>
 
 ### {{ how-to-exercise-heading[heading] How to exercise your rights }} {: #how-to-exercise }
 
-{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or mail to: }}
+{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=" "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or mail to: }}
 
 
 <address>
@@ -418,7 +418,7 @@ Germany<br>
 
 ###### {{ google-tag-manager-heading[heading] Google Tag Manager }} {: #google-tag-manager }
 
-Our Website uses Google Tag Manager for the implementation of [Google Analytics](#google-analytics). Google Tag Manager, provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google”), is a solution that allows marketed website tags to be managed using an interface. The Tag Manager tool itself (which implements the tags) is a cookie-less domain and does not register personal data. The tool causes other tags to be activated. These tags then may register data under certain deactivated domains or on a cookie level. This setting will remain in place for all tracking tags implemented with Google Tag Manager.
+{{ google-tag-manager-1 Our Website uses Google Tag Manager for the implementation of [Google Analytics](#google-analytics). Google Tag Manager, provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google”), is a solution that allows marketed website tags to be managed using an interface. The Tag Manager tool itself (which implements the tags) is a cookie-less domain and does not register personal data. The tool causes other tags to be activated. These tags then may register data under certain deactivated domains or on a cookie level. This setting will remain in place for all tracking tags implemented with Google Tag Manager. }}
 
 ###### {{ google-optimize-heading[heading] Google Optimize }} {: #google-optimize }
 
