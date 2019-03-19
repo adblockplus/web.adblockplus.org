@@ -1,0 +1,7 @@
+{% set is_old = locale != "en" %}
+
+{% if is_old %}
+  <? include about/old ?>
+{% else %}
+  <? include about/new ?>
+{% endif %}
