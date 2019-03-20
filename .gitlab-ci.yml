@@ -10,7 +10,8 @@ pages:
     - git clone -b master --single-branch https://github.com/adblockplus/sitescripts $HOME/sitescripts
     - export PYTHONPATH="$HOME/sitescripts:$PYTHONPATH"
     - python -m cms.bin.generate_static_pages . public
-    - python -m cms.bin.export_csv . > public/latest.csv
+    - python -m cms.bin.export_csv . > public/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}-${CI_COMMIT_SHORT_SHA}.csv
+    - rpl -Rq "CSV" "${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}-${CI_COMMIT_SHORT_SHA}.csv" public/csv
     - SITEURL=$(crudini --get settings.ini general siteurl)
     - rpl -Rq "$SITEURL" "$CI_PAGES_URL" public/
     - rpl -Rq 'src="/' "src=\"$CI_PAGES_URL/" public/
