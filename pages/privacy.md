@@ -267,7 +267,7 @@ Germany<br>
 {{ data-portability-right-paragraph You also have the right (1) to receive all personal data concerning you and which you have provided to us, in a structured, commonly used and machine-readable format and (2) to transmit that data to another controller. }}
 
 
-### {{ erasure-of-data-heading[heading] Right to erasure your data }} {: #erasure-of-data }
+### {{ erasure-of-data-heading[heading] Right to erasure of your data }} {: #erasure-of-data }
 
 {{ erasure-of-data-paragraph-1 You have the right to demand from us the erasure of your personal data, where – inter alia – one of the following grounds applies: }}
 
@@ -404,9 +404,9 @@ Germany<br>
 
 {{ stored-website-requests-paragraph The request to our Websites, including your IP address, is stored when you create a forum post, submit a contact form, or add a blog comment. This allows administrators to effectively address spam content and security breaches. All stored requests are deleted after 30 days. }}
 
-###### {{ cookies-heading[heading] Cookies }} {: #cookies }
+###### {{ cookies-heading[heading] Settings cookies }} {: #cookies }
 
-{{ cookies-paragraph Several areas of our Websites use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. Cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
+{{ cookies-paragraph We use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. Cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
 
 ###### {{ google-analytics-heading[heading] Google Analytics }} {: #google-analytics }
 
