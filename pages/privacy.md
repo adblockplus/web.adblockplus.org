@@ -169,7 +169,7 @@ notoc=True
 
 ### {{ general-notes-heading[heading] General notes }} {: #general-notes }
 
-{{ general-notes-paragraph Your protection and data confidentiality is of utmost importance to us ("eyeo" "we" "our"). We take the protection your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites. }}
+{{ general-notes-paragraph Your protection and data confidentiality is of utmost importance to us ("eyeo" "we" "our"). We take the protection of your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites. }}
 
 ### {{ who-is-responsible-heading[heading] Who is responsible for data collection and processing (contacts)? }} {: #who-is-responsible }
 
@@ -406,7 +406,7 @@ Germany<br>
 
 ###### {{ cookies-heading[heading] Settings cookies }} {: #cookies }
 
-{{ cookies-paragraph We use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. Cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
+{{ cookies-paragraph We use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. The settings cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
 
 ###### {{ google-analytics-heading[heading] Google Analytics }} {: #google-analytics }
 
