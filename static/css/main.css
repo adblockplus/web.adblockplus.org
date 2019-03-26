@@ -13,6 +13,17 @@ body
   padding-bottom: 2em;
 }
 
+.overlay
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 4em rgb(0, 0, 0, .5) inset;
+  background-color: rgb(0, 0, 0, .3);
+}
+
 a img
 {
   border: none;
@@ -277,10 +288,10 @@ div.animation[started="true"]
 }
 
 /*******************************************************************************
- * #navbar
+ * .navbar
  ******************************************************************************/
 
- #navbar
+ .navbar
 {
   min-height: 4em;
   background-color: #c70d2c;
@@ -291,29 +302,36 @@ div.animation[started="true"]
   transition: top 0.2s ease-in-out;
 }
 
+.navbar .skip-content
+{
+  display: none;
+}
+
 @media(max-width: 991px)
 {
-  #navbar
+  .navbar
   {
     overflow: auto;
   }
 }
 
-#navbar li
+.navbar li
 {
   list-style-type: none;
 }
 
-#navbar .container
+.navbar .container
 {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* #navbar #navbar-logo
+/* .navbar .navbar-logo
  ******************************************************************************/
 
-#navbar-logo
+.navbar-logo,
+.navbar-logo:link,
+.navbar-logo:visited
 {
   /* padding is visible in hover background-color change */
   min-width: 14em;
@@ -321,27 +339,27 @@ div.animation[started="true"]
   color: #fff;
 }
 
-#navbar-logo:hover,
-#navbar-logo:active,
-#navbar-logo:focus
+.navbar-logo:hover,
+.navbar-logo:active,
+.navbar-logo:focus
 {
   background-color: #AE0013;
   text-decoration: none;
 }
 
-#navbar-logo,
-#navbar-logo > *
+.navbar-logo,
+.navbar-logo > *
 {
   float: left;
 }
 
-[dir="rtl"] #navbar-logo,
-[dir="rtl"] #navbar-logo > *
+[dir="rtl"] .navbar-logo,
+[dir="rtl"] .navbar-logo > *
 {
   float: right;
 }
 
-#navbar-logo img
+.navbar-logo img
 {
   height: 4em;
   width: 3em;
@@ -349,35 +367,37 @@ div.animation[started="true"]
   margin: 0em 1em 0em 0em;
 }
 
-[dir="rtl"] #navbar-logo > img
+[dir="rtl"] .navbar-logo > img
 {
   margin: 0em  0em 0em 1em;
 }
 
-#navbar-logo > span
+.navbar-logo > span
 {
   /* full-height: 2.91 * 1.375 = ~4em */
   line-height: 2.91em;
   font-size: 1.375em;
 }
 
-/* #navbar #navbar-menu-toggle
+/* .navbar .navbar-menu-toggle
  ******************************************************************************/
 
-#navbar-menu-toggle
+.navbar-menu-toggle
 {
   float: right;
   padding: 1em;
+  background-color: #c70d2c;
+  border: 0px solid #c70d2c;
 }
 
-[dir="rtl"] #navbar-menu-toggle
+[dir="rtl"] .navbar-menu-toggle
 {
   float: left;
 }
 
 /* show on mobile */
-#navbar-menu-toggle,
-#navbar-menu-toggle > img
+.navbar-menu-toggle,
+.navbar-menu-toggle > img
 {
   display: block;
 }
@@ -385,40 +405,40 @@ div.animation[started="true"]
 /* hide on desktop */
 @media(min-width: 992px)
 {
-  #navbar-menu-toggle
+  .navbar-menu-toggle
   {
     display: none;
   }
 }
 
-#navbar-menu-toggle > img
+.navbar-menu-toggle > img
 {
   /* plus 2em padding = 4em */
   height: 2em;
 }
 
-#navbar-menu-toggle:hover,
-#navbar-menu-toggle:active,
-#navbar-menu-toggle:focus
+.navbar-menu-toggle:hover,
+.navbar-menu-toggle:active,
+.navbar-menu-toggle:focus
 {
   background-color: #AE0013;
 }
 
-/* #navbar #navbar-menu
+/* .navbar .navbar-menu
  ******************************************************************************/
 
-#navbar-menu a
+.navbar-menu a
 {
   display: block;
   color: #fff;
   text-decoration: none;
 }
 
-/* #navbar #navbar-menu #navbar-locale-menu
+/* .navbar .navbar-menu .navbar-locale-menu
  ******************************************************************************/
 
 /* caret */
-#navbar-locale-selected:after
+.navbar-locale-selected:after
 {
   display: inline-block;
   width: 0;
@@ -431,76 +451,76 @@ div.animation[started="true"]
   border-left: .3em solid transparent;
 }
 
-[dir="rtl"] #navbar-locale-selected:after
+[dir="rtl"] .navbar-locale-selected:after
 {
   margin: 0em 0.255em 0em 0em;
 }
 
-#navbar-locale-menu
+.navbar-locale-menu
 {
   display: none;
 }
 
-#navbar-locale-menu.visible
+.locale-open .navbar-locale-menu
 {
   display: block;
 }
 
-#navbar-locale-menu > li > a
+.navbar-locale-menu > li > a
 {
   padding: 0.75em 1em;
 }
 
-#navbar-locale-menu > li > a:hover,
-#navbar-locale-menu > li > a:active,
-#navbar-locale-menu > li > a:focus
+.navbar-locale-menu > li > a:hover,
+.navbar-locale-menu > li > a:active,
+.navbar-locale-menu > li > a:focus
 {
   background-color: #434343;
 }
 
-/* #navbar #navbar-menu (desktop)
+/* .navbar .navbar-menu (desktop)
  ******************************************************************************/
 
 @media(min-width: 992px)
 {
-  #navbar-menu
+  .navbar-menu
   {
     float: right;
   }
 
-  [dir="rtl"] #navbar-menu
+  [dir="rtl"] .navbar-menu
   {
     float: left;
   }
 
-  #navbar-menu > li,
-  #navbar-menu > li > a
+  .navbar-menu > li,
+  .navbar-menu > li > a
   {
     display: inline-block;
   }
 
-  #navbar-menu > li > a
+  .navbar-menu > li > a
   {
     padding: 0em 1em;
     line-height: 4em;
   }
 
-  #navbar-menu > li > a:hover,
-  #navbar-menu > li > a:active,
-  #navbar-menu > li > a:focus
+  .navbar-menu > li > a:hover,
+  .navbar-menu > li > a:active,
+  .navbar-menu > li > a:focus
   {
     background-color: #AE0013;
   }
 
-  /* #navbar #navbar-menu #navbar-locale-menu
+  /* .navbar .navbar-menu .navbar-locale-menu
    ****************************************************************************/
 
-  #navbar-locale-menubar
+  .navbar-locale-menubar
   {
     position: relative;
   }
 
-  #navbar-locale-menu
+  .navbar-locale-menu
   {
     position: absolute;
     min-width: 16em;
@@ -513,19 +533,19 @@ div.animation[started="true"]
     background-color: #292929;
   }
 
-  [dir="rtl"] #navbar-locale-menu
+  [dir="rtl"] .navbar-locale-menu
   {
     right: auto;
     left: 0px;
   }
 }
 
-/* #navbar #navbar-menu (mobile)
+/* .navbar .navbar-menu (mobile)
  ******************************************************************************/
 
 @media(max-width: 991px)
 {
-  #navbar-menu
+  .navbar-menu
   {
     display: none;
     float: left;
@@ -534,24 +554,128 @@ div.animation[started="true"]
     background-color: #292929;
     overflow-y: scroll;
     max-height: 416px;
-    max-height: 80vh;
+    max-height: calc(100vh - 64px);
   }
 
-  #navbar-menu.visible
+  .navbar-menu.visible
   {
     display: block;
   }
 
-  #navbar-menu li a
+  .navbar-menu li a
   {
     padding: 0.75em 1em;
   }
 
-  #navbar-menu li a:hover,
-  #navbar-menu li a:active,
-  #navbar-menu li a:focus
+  .navbar-menu li a:hover,
+  .navbar-menu li a:active,
+  .navbar-menu li a:focus
   {
     background-color: #434343;
+  }
+}
+
+.navbar-mobile
+{
+  display: none;
+  background-color: #c70d2c;
+}
+
+.navbar-open
+{
+  overflow: hidden;
+}
+
+@media(max-width: 991px)
+{
+  .navbar-open .navbar .navbar-logo
+  {
+    display: none;
+  }
+
+  .navbar-open #content,
+  .navbar-open #blog,
+  .navbar-open .navbar,
+  .navbar-open #footer
+  {
+    width: 100%;
+    left: -270px;
+  }
+
+  [dir="rtl"] .navbar-open #content,
+  [dir="rtl"] .navbar-open #blog,
+  [dir="rtl"] .navbar-open .navbar,
+  [dir="rtl"] .navbar-open #footer
+  {
+    left: 270px;
+  }
+
+  .navbar-open #content,
+  .navbar-open #blog,
+  .navbar-open .navbar-mobile,
+  .navbar-open #footer
+  {
+    position: relative;
+    float: left;
+  }
+
+  .navbar-open .navbar-mobile
+  {
+    position: fixed;
+    z-index: 2;
+    width: 270px;
+    display: block;
+    right: 0;
+    top: 0;
+  }
+
+  .navbar-mobile .navbar-menu
+  {
+    overflow: auto;
+  }
+
+  .navbar-mobile.locale-open .navbar-menu
+  {
+    overflow-y: auto;
+  }
+
+  [dir="rtl"] .navbar-open .navbar-mobile
+  {
+    left: 0;
+    right: auto;
+  }
+
+  .navbar-open #content,
+  .navbar-open #blog
+  {
+    top: 0;
+  }
+
+  .navbar-open .navbar-mobile .navbar-menu
+  {
+    display: block;
+  }
+
+  .navbar-open .navbar-mobile .navbar-locale-menu
+  {
+    background-color: #FAFAFA;
+  }
+
+  .navbar-open .navbar-mobile .navbar-locale-menu > li > a
+  {
+    color: #212121;
+  }
+
+  .navbar-open .navbar-mobile .navbar-locale-menu > li > a:active,
+  .navbar-open .navbar-mobile .navbar-locale-menu > li > a:hover
+  {
+    color: #ffffff;
+  }
+
+  .navbar-open #footer
+  {
+    float: left;
+    width: 100%;
   }
 }
 

@@ -2,20 +2,23 @@
 
 {% if not nonavbar %}
 
-<nav id="navbar">
+<nav class="navbar">
   <div class="container">
-    {{ "index" | linkify(id="navbar-logo") }}
+    {{ "index" | linkify(class="navbar-logo") }}
       <img
         src="/img/navbar-logo.png"
         srcset="/img/navbar-logo.svg 2x">
       <span>{{ "Adblock <strong>Plus</strong>" | translate("navbar-logo-text", "Navbar logo text") }}</span>
     </a>
-    <a href="#" id="navbar-menu-toggle">
+    <p class="skip-content">
+      <a href="#content">Skip to Content</a>
+    </p>
+    <button href="#" class="navbar-menu-toggle">
       <img
         src="/img/menu-toggle.png"
         srcset="/img/menu-toggle.svg 2x">
-    </a>
-    <ul id="navbar-menu">
+    </button>
+    <ul class="navbar-menu">
       {% for pagename in ["about", "contribute"] %}
         <li>
           {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
@@ -24,11 +27,11 @@
       <li>
         <a href="https://help.eyeo.com" target="_blank">{{ get_string("help", "menu") }}</a>
       </li>
-      <li id="navbar-locale-menubar">
-        <a id="navbar-locale-selected">
+      <li class="navbar-locale-menubar">
+        <a class="navbar-locale-selected">
           {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
         </a>
-        <ul id="navbar-locale-menu">
+        <ul class="navbar-locale-menu">
           {% for available_locale in available_locales %}
             <li>
               {{ page | linkify(available_locale) }}
@@ -36,10 +39,10 @@
               </a>
             </li>
           {% endfor %}
-        </ul>{# #navbar-locale-menu #}
+        </ul>{# .navbar-locale-menu #}
       </li>
-    </ul>{# #navbar-menu #}
+    </ul>{# .navbar-menu #}
   </div>{# .container #}
-</nav>{# #navbar #}
+</nav>{# .navbar #}
 
 {% endif %}

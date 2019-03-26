@@ -1,0 +1,38 @@
+{% from "macros/pageitem" import pageitem %}
+
+{% if not nonavbar %}
+
+<nav class="navbar-mobile">
+  {{ "index" | linkify(class="navbar-logo") }}
+    <img
+      src="/img/navbar-logo.png"
+      srcset="/img/navbar-logo.svg 2x">
+    <span>{{ "Adblock <strong>Plus</strong>" | translate("navbar-logo-text", "Navbar logo text") }}</span>
+  </a>
+  <ul class="navbar-menu">
+    {% for pagename in ["about", "contribute"] %}
+      <li>
+        {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
+      </li>
+    {% endfor %}
+    <li>
+      <a href="https://help.eyeo.com" target="_blank">{{ get_string("help", "menu") }}</a>
+    </li>
+    <li class="navbar-locale-menubar">
+      <a class="navbar-locale-selected">
+        {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
+      </a>
+      <ul class="navbar-locale-menu">
+        {% for available_locale in available_locales %}
+          <li>
+            {{ page | linkify(available_locale) }}
+              {{ config.get("langnames", available_locale) }} ({{ available_locale | to_og_locale | to_og_location }})
+            </a>
+          </li>
+        {% endfor %}
+      </ul>{# .navbar-locale-menu #}
+    </li>
+  </ul>{# .navbar-menu #}
+</nav>{# .navbar #}
+
+{% endif %}

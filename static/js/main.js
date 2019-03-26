@@ -1,31 +1,59 @@
 "use strict";
 
 (function() {
-    function initLanguageSelection() {
-        var locale = document.getElementById("navbar-locale-selected");
+    function initLanguageSelection(navbarTypeClass) {
+        var locale = document.querySelector(navbarTypeClass + " .navbar-locale-selected");
 
         // skip if page does not have language selection (EG: blog)
         if (!locale) return;
 
         locale.addEventListener("click", function() {
-            document.getElementById("navbar-locale-menu")
-                .classList.toggle("visible");
+            document.querySelector(navbarTypeClass)
+                .classList.toggle("locale-open");
         }, false);
     }
 
     function navigationClick(event) {
-        document.getElementById("navbar-menu")
-            .classList.toggle("visible");
+        document.body.classList.toggle("navbar-open");
+        mobileOverlay();
     }
 
     function initMenu() {
-        document.getElementById("navbar-menu-toggle")
+        document.querySelector(".navbar-menu-toggle")
             .addEventListener("click", navigationClick, false);
     }
 
+    function closeMobileNavOnClickOut() {
+      // if it is open, click everywhere to close the Mobile Navbar
+      if(!document.body.classList.contains("navbar-open")) {
+        document.body.addEventListener("click", function() {
+          document.body.classList.remove("navbar-open");
+          mobileOverlay();
+        }, false);
+      }
+      // prevent closing Mobile Navbar for certain elements (Navbar or Navbar Mobile menu toggles) click
+      var except = document.querySelectorAll(".navbar-menu-toggle, .navbar-mobile");
+      except.forEach(function(item){
+        item.addEventListener("click", function(event) {
+          event.stopPropagation();
+        }, false);
+      })
+    }
+
+    // add mobile overlay
+    function mobileOverlay() {
+      if(document.body.classList.contains("navbar-open")) {
+        var overlay = "<div class='overlay'></div>";
+        var content = document.getElementById("content");
+        content.innerHTML += overlay;
+      } else {
+        document.querySelector(".overlay").remove();
+      }
+    }
+
     function initNavbarToggle() {
-        var navbar = document.getElementById("navbar");
-        var navbarLocale = document.getElementById("navbar-locale-menu");
+        var navbar = document.querySelector(".navbar");
+        var navbarLocale = document.querySelector(".navbar-locale-selected");
         var navbarHeight = navbar.offsetHeight;
         var scrollHandled = false;
         var lastScrollTop = 0;
@@ -68,7 +96,10 @@
         }
     }
 
-    initLanguageSelection();
+    closeMobileNavOnClickOut();
+
+    initLanguageSelection(".navbar");
+    initLanguageSelection(".navbar-mobile");
     initMenu();
     initNavbarToggle();
 })();

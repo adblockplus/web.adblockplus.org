@@ -6,12 +6,16 @@ description=Adblock Plus, the most popular ad blocker on Firefox, Chrome, Safari
   <script src="/js/tracking.js"></script>
 </head>
 
-<? include hero-download ?>
-<? include as-mentioned ?>
-<? include features ?>
-<? include abb-cross-promotion ?>
-<? include footnote ?>
-<? include install-button-text ?>
+<div id="content" class="content {{ localefile == "index" and page }}">
+  <? include hero-download ?>
+  <? include as-mentioned ?>
+  <? include features ?>
+  <? include abb-cross-promotion ?>
+  <? include footnote ?>
+  <? include install-button-text ?>
+</div>
+
+<? include navbar-mobile ?>
 
 <script src="/js/vendor/bowser.js"></script>
 <script src="/js/index.js"></script>
