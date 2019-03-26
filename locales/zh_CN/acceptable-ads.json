@@ -45,7 +45,7 @@
   },
   "meta-description": {
     "description": "Description meta tag content inside head tag",
-    "message": "Adblock Plus 首推可接受广告方案，支持投放非打扰性广告的网站。"
+    "message": "Adblock Plus 引入“可接受广告”计划：支持依赖广告的网站，但选择只允许非侵入式广告。"
   },
   "meta-title": {
     "description": "Title meta tag content inside head tag",
@@ -64,7 +64,7 @@
     "message": "广告不能影响用户的流畅阅读。这样的广告必须放置在上方、侧边或主要内容以下<a>1</a> 。"
   },
   "title": {
-    "message": "允许 Adblock Plus 显示可接受的广告"
+    "message": "在 Adblock Plus 中允许“可接受广告”"
   },
   "transparency": {
     "description": "Fairness rule Bullet point in \"about\" section",
@@ -75,28 +75,28 @@
     "message": "Adblock Plus用户对我们很重要。只要有合理原因拒绝一项提交“可接受广告”的申请，该广告将会被从我们的白名单中剔除。"
   },
   "mobile-ads-heading": {
-    "message": "移动广告 "
+    "message": "移动标准"
   },
   "animations-paragraph-1": {
-    "message": "在屏幕底部作为悬浮广告展示时，6x1 广告类型允许使用动画。动画必须符合动画的 LEAN 标准，并且必须包括关闭按钮或其他一些关闭机制。"
+    "message": "在屏幕底部作为悬浮广告展示时，6x1 广告类型允许使用动画。动画必须符合动画的 LEAN 标准，并且必须包括关闭按钮或其他一些关闭机制。"
   },
   "mobile-ads-size-heading": {
     "message": "尺寸要求"
   },
   "mobile-ads-size-item-1": {
-    "message": "在网页的可滚动部分上实施的广告不得占据网页可见部分的 50% 以上。"
+    "message": "在网页的可滚动部分上实施的广告不得占据网页可见部分的 50% 以上。"
   },
   "mobile-ads-size-item-2": {
-    "message": "作为悬浮广告实施的广告的最大高度限制为 75px（或 15%）。"
+    "message": "作为悬浮广告实施的广告的最大高度限制为 75px（或 15%）。"
   },
   "mobile-ads-placement-item-3": {
     "message": "大型广告类型（例如原生图块广告）仅允许放置在主要内容下方。"
   },
   "mobile-ads-placement-item-2": {
-    "message": "小广告（6x1 横幅或更小）可以作为悬浮广告放置在屏幕底部。其他格式不允许悬浮。"
+    "message": "小广告（6x1 横幅或更小）可以作为悬浮广告放置在屏幕底部。其他格式不允许悬浮。"
   },
   "mobile-ads-placement-item-1": {
-    "message": "静态广告类型（如 6x1 横幅和 1x1 图块广告）可以放置在移动页面的任何位置。"
+    "message": "静态广告类型（如 6x1 横幅和 1x1 图块广告）可以放置在移动页面的任何位置"
   },
   "mobile-ads-size-lead": {
     "message": "在移动设备屏幕上显示的广告受以下尺寸限制："
@@ -105,27 +105,348 @@
     "message": "动画"
   },
   "mobile-ads-size-item-3": {
-    "message": "在主要内容下方，广告限于屏幕空间的 100%。"
+    "message": "在主要内容下方，广告限于屏幕空间的 100%。"
   },
   "footnote-5": {
-    "message": "源自：<a>Iab New Standard Ad unit Portfolio (2017)</a>"
+    "message": "大型广告：任何高度 >300px 的广告"
   },
   "footnote-6": {
-    "message": "有一个特例，请参阅<a>移动广告</a>。"
+    "message": "“主要内容”定义为（基于 Mozilla 对<code><main></code> HTML 元素的<a>描述</a>）：主要内容由与文档的中心主题或应用程序的中心功能直接相关或由此扩展的内容组成。此内容对于文档应该是唯一的，不包括在一组文档中重复的任何内容，例如侧边栏、导航链接、版权信息、站点徽标和搜索表单（当然，除非文档的主要功能是搜索表单）。"
   },
   "footnote-1": {
-    "message": "大型广告：任何高度 >300px 的广告"
+    "message": "“主要内容”定义为（基于 Mozilla 对<code><main></code> HTML 元素的<a>描述</a>）：主要内容由与文档的中心主题或应用程序的中心功能直接相关或由此扩展的内容组成。此内容对于文档应该是唯一的，不包括在一组文档中重复的任何内容，例如侧边栏、导航链接、版权信息、站点徽标和搜索表单（当然，除非文档的主要功能是搜索表单）。"
   },
   "footnote-2": {
-    "message": "“主要内容”定义为（基于 <a>Mozilla</a> 对 <main> HTML 元素的描述）：主要内容由与文档的中心主题或应用程序的中心功能直接相关或由此扩展的内容组成。此内容对于文档应该是唯一的，不包括在一组文档中重复的任何内容，例如侧边栏、导航链接、版权信息、站点徽标和搜索表单（当然，除非文档的主要功能是搜索表单）。"
+    "message": "基于来自 <a>StatCounter</a> 的数据，台式机的“常用屏幕尺寸”为 1366x768。"
   },
   "footnote-3": {
-    "message": "网页的可见部分定义为标准 CSS 像素尺寸 <a>360x512px</a>（安装 SBrowser 的 Samsung Galaxy S7），它基于 <a>360x640px</a> 的标准视区，但扣减了操作系统和浏览器用户界面元素。"
+    "message": "基于来自 <a>StatCounter</a> 的数据，移动设备的“常用屏幕尺寸”为 360x640。"
   },
   "footnote-4": {
-    "message": "这意味着用户可以滚动浏览主要内容，其后面投放的广告单元可以在占据整个屏幕；但在此广告单元后不能实施其他广告。"
+    "message": "基于来自 <a>StatCounter</a> 的数据，平板电脑的“常用屏幕尺寸”为 768x1024。"
   },
   "mobile-ads-placement-heading": {
     "message": "展示位置要求"
+  },
+  "what-are-aa": {
+    "message": "什么是“可接受广告”？"
+  },
+  "disable-safari-step-2": {
+    "message": "取消选中<strong>允许“可接受广告”</strong>。"
+  },
+  "disable-safari-step-3": {
+    "message": "关闭选项卡。"
+  },
+  "disable-safari-step-1": {
+    "message": "在 Safari 工具栏中，点击 <strong>Adblock Plus</strong> 图标，然后选择<strong>打开 Adblock Plus</strong>。"
+  },
+  "no-size-limit": {
+    "message": "没有尺寸限制。"
+  },
+  "acceptable-ads-label-alt": {
+    "message": "“可接受广告”标准 标签"
+  },
+  "what-is-aac-1": {
+    "message": "正如<a>之前宣布的那样</a>，2017 年 eyeo / Adblock Plus 将“可接受广告”计划的管理转移给了一个独立的团体，即<a>“可接受广告”委员会</a>。“可接受广告”委员会由来自营利性企业、行业专家和像您这样的互联网用户的相关方组成。"
+  },
+  "distiction-criteria": {
+    "message": "广告应始终可识别为广告，并且可与所有其他内容区分开（例如，不隐藏标签、不会误导用户认为广告是主要内容的一部分）。广告应清楚地标注“广告”或等同文字。"
+  },
+  "report-aa-step-3": {
+    "message": "如果已知，请说明是否需要登录或 VPN 来重现问题"
+  },
+  "report-aa-step-2": {
+    "message": "整个页面的屏幕截图，包括广告或广告在页面上的位置的详细说明"
+  },
+  "report-aa-step-1": {
+    "message": "广告所在网页的网址"
+  },
+  "above-primary-content": {
+    "message": "放置在主要内容的上方时，广告的最大高度应为 200px。"
+  },
+  "get-whitelisted": {
+    "message": "如何让我的网站的广告进入白名单？"
+  },
+  "placement-requirement": {
+    "message": "展示位置要求"
+  },
+  "why-is-aa-enabled-1": {
+    "message": "我们认为，“可接受广告”是用户选择使用广告拦截程序与支持免费在线内容的持续需求之间的可持续中间立场。如果大多数 Adblock Plus 用户启用了“可接受广告”功能，广告客户将有更大的动力来制作更好、侵入性更低的广告格式。"
+  },
+  "below-primary-content": {
+    "message": "放置在主要内容的下方时，广告的最大高度应为 400px。"
+  },
+  "feed-list-ads": {
+    "message": "对于列表和信息流中的广告，一般标准因以下因素而异："
+  },
+  "disable-samsung": {
+    "message": "三星浏览器版本 Adblock Plus"
+  },
+  "no-placement-limit": {
+    "message": "没有展示位置限制。"
+  },
+  "other-acceptable-ads": {
+    "message": "其他“可接受广告”格式？"
+  },
+  "get-whitelisted-1": {
+    "message": "广告符合“可接受广告”标准后，将广告列入白名单的流程大约需要 10 个工作日："
+  },
+  "entries-feeds": {
+    "message": "条目和信息流之间允许展示广告。"
+  },
+  "image-ads": {
+    "message": "图片广告"
+  },
+  "total-ad-space": {
+    "message": "放置在首屏以上的所有广告（在常用屏幕尺寸下，页面首次加载时浏览器窗口中可见的网页部分）不得占据网页可见部分的 15% 以上。如果放置在首屏以下，则广告不得占据网页可见部分的 25% 以上。"
+  },
+  "do-users-want-aa-1": {
+    "message": "是! 百分之八十三 (<a>83%</a>) 的 Adblock Plus 用户不介意看到“可接受广告”，因为他们的浏览体验不会被大声、烦人和无关的广告所破坏。"
+  },
+  "view-aa-list-1": {
+    "message": "完全可以。您可以通过<a>点击此处</a>查看列表。"
+  },
+  "why-is-aa-enabled": {
+    "message": "为什么默认启用“可接受广告”功能？"
+  },
+  "new-format": {
+    "message": "您的广告是否在替代屏幕上展示，或者您确信您创新的“可接受广告”格式不属于上面列出的广告类型？<a>告诉我们！</a>"
+  },
+  "desktop-placement": {
+    "message": "展示位置"
+  },
+  "disable-ios": {
+    "message": "适用于 iOS 的 Adblock 浏览器"
+  },
+  "acceptable-ads-percentage-alt": {
+    "message": "“可接受广告”标准 百分比"
+  },
+  "in-feed-ads-size": {
+    "message": "允许信息流广告占用更多空间，只要它们不比列表或信息流中其他元素大得多。"
+  },
+  "disable-ios-step-2": {
+    "message": "点击<strong>菜单图标</strong>，然后选择<strong>设置</strong>。"
+  },
+  "disable-ios-step-3": {
+    "message": "点击<strong>广告拦截</strong> > <strong>例外</strong>。"
+  },
+  "disable-ios-step-1": {
+    "message": "打开适用于 iOS 的 Adblock 浏览器。"
+  },
+  "disable-ios-step-4": {
+    "message": "选中<strong>隐藏所有广告</strong>。"
+  },
+  "disable-latest-step-4": {
+    "message": "关闭选项卡。"
+  },
+  "view-aa-list": {
+    "message": "我可以查看“可接受广告”白名单吗？"
+  },
+  "disable-latest-step-1": {
+    "message": "在浏览器工具栏中，点击 <strong>Adblock Plus</strong> 图标，然后选择右上角的<strong>齿轮</strong>图标。"
+  },
+  "disable-latest-step-3": {
+    "message": "取消选中<strong>允许“可接受广告”</strong>。"
+  },
+  "disable-latest-step-2": {
+    "message": "在<em>常规</em>选项卡中，滚动至<em>“可接受广告”</em>部分。"
+  },
+  "disable-android-step-1": {
+    "message": "打开适用于 Android 的 Adblock 浏览器。"
+  },
+  "disable-android-step-2": {
+    "message": "点击<strong>菜单图标</strong>，然后选择<strong>设置</strong>。"
+  },
+  "disable-android-step-3": {
+    "message": "点击<strong>广告拦截</strong> > <strong>“可接受广告”</strong>。"
+  },
+  "disable-android-step-4": {
+    "message": "取消选中<strong>允许一些非侵入式广告</strong>。"
+  },
+  "size-requirement": {
+    "message": "尺寸要求"
+  },
+  "disable-ie": {
+    "message": "Internet Explorer 版本 Adblock Plus"
+  },
+  "what-are-aa-1": {
+    "message": "“可接受广告”是非侵入式广告或不烦人的广告。它们尊重用户，不干涉内容，并且清楚地标注了“广告”或等同文字。为了让广告成为“可接受广告”，必须符合<a>“可接受广告”委员会</a>设立的<a>标准</a>。"
+  },
+  "what-are-aa-2": {
+    "message": "符合“可接受广告”标准的广告会列入白名单。白名单中的广告会向允许“可接受广告”的广告拦截用户展示。"
+  },
+  "what-are-aa-wo-1": {
+    "message": "没有第三方跟踪的“可接受广告”是符合“可接受广告”标准且不允许第三方实体跟踪任何浏览行为的广告。这些是符合<a>“不跟踪”</a>的广告，和/或由同一家公司全资拥有的域名投放的广告。"
+  },
+  "get-whitelisted-step-1-1": {
+    "message": "获取“可接受广告”白名单"
+  },
+  "only-text-ads": {
+    "message": "只允许使用文字广告。对于没有任何主要内容的网页（例如出错页面或停放页面），标准因以下因素而异："
+  },
+  "text-ads": {
+    "message": "文字广告"
+  },
+  "get-whitelisted-step-2": {
+    "message": "Adblock Plus 所属公司 <a>eyeo</a> 的工作人员会联系您确定确切的广告，并核实它们是否符合我们的标准。"
+  },
+  "get-whitelisted-step-1": {
+    "message": "如果您的网站的广告符合<a>“可接受广告”标准</a>，填写<a>此表单</a>即可。"
+  },
+  "disable-firefox": {
+    "message": "Firefox（版本 1 和 2）版本 Adblock Plus"
+  },
+  "in-feed-ads": {
+    "message": "信息流 (In-feed) 广告"
+  },
+  "search-ads": {
+    "message": "搜索广告"
+  },
+  "side-primary-content": {
+    "message": "放置在主要内容的侧面时，广告的最大宽度应为 350px。"
+  },
+  "revenue": {
+    "message": "是否涉及付款？"
+  },
+  "disable-ie-step-1": {
+    "message": "点击 Adblock Plus 图标，然后选择<strong>设置</strong>。"
+  },
+  "disable-ie-step-2": {
+    "message": "取消选中<strong>允许一些非侵入式广告</strong>。"
+  },
+  "size": {
+    "message": "尺寸"
+  },
+  "page-under-review": {
+    "message": "本页面正在审核中，“可接受广告”计划的管理已转移给独立的<a>“可接受广告”委员会</a>。"
+  },
+  "get-whitelisted-step-3-1": {
+    "message": "链接到“可接受广告”协议页面"
+  },
+  "search-ads-info": {
+    "message": "对于搜索广告 - 在用户发起搜索查询后显示的广告 - 标准因以下因素而异："
+  },
+  "desktop-criteria-1": {
+    "message": "广告不得妨碍用户的自然阅读流程。此类广告必须放置在主要内容的上方、侧面或下方。"
+  },
+  "are-all-aa-blocked-1": {
+    "message": "没有。技术上无法自动识别不符合“可接受广告”标准的广告。我们与某些网站和广告客户签订了<a>协议</a>，规定 Adblock Plus 用户访问这些特定网站时只会显示符合“可接受广告”标准的广告。"
+  },
+  "size-criteria": {
+    "message": "单个广告尺寸的要求取决于广告的展示位置："
+  },
+  "distiction": {
+    "message": "与主要内容相区别"
+  },
+  "disable-safari": {
+    "message": "Safari 版本 Adblock Plus"
+  },
+  "aa-criteria": {
+    "message": "“可接受广告”标准"
+  },
+  "navbar-logo-text": {
+    "message": "Adblock <strong>Plus</strong>"
+  },
+  "hate-ads": {
+    "message": "但我讨厌所有广告！"
+  },
+  "what-are-aa-3": {
+    "message": "大多数网站通过广告赚钱，这意味着您可以免费浏览这些网站。但是，许多网站使用过多烦人或侵入式广告引起您的注意。Adblock Plus 让您可以选择拦截广告，但我们认为网站不应受到惩罚。"
+  },
+  "disable-firefox-step-2": {
+    "message": "取消选中<strong>允许一些非侵入式广告</strong>。"
+  },
+  "are-all-aa-blocked": {
+    "message": "所有烦人的广告都被拦截了吗？"
+  },
+  "disable-firefox-step-1": {
+    "message": "点击 Adblock Plus 图标，然后选择<strong>过滤首选项</strong>。"
+  },
+  "footnote-9": {
+    "message": "源自：<a>Iab New Standard Ad Unit Portfolio (2017)</a>"
+  },
+  "footnote-8": {
+    "message": "这意味着用户可以滚动浏览主要内容，其后面投放的广告单元可以在占据整个屏幕；但在此广告单元后不能实施其他广告。"
+  },
+  "footnote-7": {
+    "message": "网页的可见部分定义为标准 CSS 像素尺寸 <a>360x512px</a>（安装三星浏览器的 Samsung Galaxy S7），它基于 <a>360x640px</a> 的标准视区，但扣减了操作系统和浏览器用户界面元素。"
+  },
+  "size-2": {
+    "message": "广告必须始终在屏幕上为主要内容留出足够的空间，常用屏幕尺寸：台式机 1366x768，移动设备 360x640，平板电脑 768x1024。"
+  },
+  "disable-samsung-step-2": {
+    "message": "取消选中<strong>允许一些非侵入式广告</strong>。"
+  },
+  "disable-samsung-step-1": {
+    "message": "打开三星浏览器版本 Adblock Plus。"
+  },
+  "what-is-aac": {
+    "message": "什么是“可接受广告”委员会？"
+  },
+  "aa-criteria-1": {
+    "message": "“可接受广告”委员会定义的“可接受广告”必须符合以下标准："
+  },
+  "more-space": {
+    "message": "允许搜索广告更大，占用额外的屏幕空间。"
+  },
+  "do-users-want-aa": {
+    "message": "Adblock Plus 用户是否真的想要“可接受广告”？"
+  },
+  "get-whitelisted-step-3": {
+    "message": "在您做出任何必要的更改后，双方签署<a>协议</a>。"
+  },
+  "disable-android": {
+    "message": "适用于 Android 的 Adblock 浏览器"
+  },
+  "report-aa-1": {
+    "message": "发消息给 <a>电子邮件地址</a>，请包含以下信息："
+  },
+  "unobtrusive-image": {
+    "message": "静态图片广告可以基于网页集成进行非侵入性评估，从而归为可接受类型。"
+  },
+  "hate-ads-1": {
+    "message": "没问题，您可以随时禁用此功能："
+  },
+  "no-primary-content": {
+    "message": "没有主要内容的网页上的广告"
+  },
+  "attention-grab": {
+    "message": "不允许在设计过程中过度使用颜色和/或其他元素来吸引注意力的文字广告。"
+  },
+  "report-aa": {
+    "message": "如何举报不符合标准的广告？"
+  },
+  "specific-criteria": {
+    "message": "具体标准"
+  },
+  "what-are-aa-wo": {
+    "message": "什么是没有第三方跟踪的“可接受广告”？"
+  },
+  "acceptable-ads-placement-alt": {
+    "message": "“可接受广告”标准 展示位置"
+  },
+  "desktop-criteria": {
+    "message": "桌面标准"
+  },
+  "revenue-1": {
+    "message": "点击<a>此处</a>详细了解我们的财务情况。"
+  },
+  "disable-latest": {
+    "message": "Chrome、Firefox（版本 3 及更高版本）、Maxthon、Opera、Yandex Browser 版本 Adblock Plus"
+  },
+  "disable-ios-safari": {
+    "message": "iOS 版本 Adblock Plus"
+  },
+  "disable-ios-safari-step-2": {
+    "message": "点击页面底部的<strong>“设置”图标</strong>。"
+  },
+  "disable-ios-safari-step-3": {
+    "message": "在“设置”页面，点击<strong>“可接受广告”</strong>。"
+  },
+  "disable-ios-safari-step-1": {
+    "message": "打开 iOS 版本 Adblock Plus。"
+  },
+  "disable-ios-safari-step-4": {
+    "message": "关闭<strong>“允许某些非侵入式广告”</strong>。"
   }
 }

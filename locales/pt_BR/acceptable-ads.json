@@ -17,7 +17,7 @@
   },
   "above-primary-content": {
     "description": "Bullet point in \"General criteria\"",
-    "message": "Quando colocado acima o conteúdo primário, a altura máxima de um anúncio deve ser 200px."
+    "message": "Quando colocado acima do conteúdo principal, a altura máxima de um anúncio deve ser 200px."
   },
   "abp-history": {
     "description": "Paragraph in \"about\" section",
@@ -37,15 +37,15 @@
   },
   "acceptable-ads-label-alt": {
     "description": "Alternative text for acceptable ads criteria label image (is being shown when the image is not accessible)",
-    "message": "Rótulo de critérios aceitáveis de anúncios"
+    "message": "Rótulo de critérios dos anúncios aceitáveis"
   },
   "acceptable-ads-percentage-alt": {
     "description": "Alternative text for acceptable ads criteria percentage image (is being shown when the image is not accessible)",
-    "message": "Percentagem de critérios aceitáveis de anúncios"
+    "message": "Percentagem de critérios dos anúncios aceitáveis"
   },
   "acceptable-ads-placement-alt": {
     "description": "Alternative text for acceptable ads criteria placement image (is being shown when the image is not accessible)",
-    "message": "Colocação de critérios aceitáveis de anúncios"
+    "message": "Posicionamento de critérios dos anúncios aceitáveis"
   },
   "agreement-ads": {
     "description": "Text in \"which acceptable ads are unblocked\" section",
@@ -61,7 +61,7 @@
   },
   "attention-grab": {
     "description": "\"Text ads\" description in \"Specific criteria\"",
-    "message": "Não são permitidos anúncios de texto projetados com uso excessivo de cores e/ou outros elementos de agarrar a atenção."
+    "message": "Não são permitidos anúncios de texto projetados com uso excessivo de cores e/ou outros elementos para chamar a atenção de usuários."
   },
   "autoplay-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -73,7 +73,7 @@
   },
   "below-primary-content": {
     "description": "Bullet point in \"General criteria\"",
-    "message": "Quando colocada abaixo do conteúdo principal, a altura máxima de um anúncio deve ser 400px."
+    "message": "Quando posicionado abaixo do conteúdo principal, a altura máxima de um anúncio deve ser 400px."
   },
   "benefit": {
     "description": "Text in \"about\" section",
@@ -113,15 +113,15 @@
   },
   "disable-firefox": {
     "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Firefox (ABP versões 1 e 2)</strong> - Clique no ícone do Adblock Plus e selecione <strong>Preferências de filtros</strong>. Desmarque a opção <strong>Permitir alguns anúncios não incómodos</strong>."
+    "message": "Adblock Plus para Firefox (versões 1 e 2)"
   },
   "disable-ie": {
     "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Internet Explorer</strong> - clique no ícone do Adblock Plus e selecione <strong>configurações</strong>. Desmarque a opção <strong>permitir alguma publicidade não intrusivo</strong>."
+    "message": "Adblock Plus para Internet Explorer"
   },
   "disable-ios": {
     "description": "Text in \"hate ads\" secion",
-    "message": "<strong>Adblock Plus para iOS</strong> - aberto Adblock Plus para iOS da tela inicial, toque no ícone <strong>configurações</strong> > <strong>Anúncios aceitável</strong> e desmarque a opção <strong>permitir que alguns anúncios não intrusivo</strong>."
+    "message": "Adblock Browser para iOS"
   },
   "disable-ios-browser": {
     "description": "Text in \"hate ads\" secion",
@@ -133,7 +133,7 @@
   },
   "distiction-criteria": {
     "description": "Paragraph in \"General criteria\"",
-    "message": "Anúncios devem sempre ser reconhecível como anúncios e distinguível de todos os outros tipos de conteúdo (por exemplo, não escondem o rótulo, não são enganosas usuários para pensar que um anúncio é parte do conteúdo principal). Anúncios devem ser claramente marcados com a palavra \"propaganda\" ou seu equivalente."
+    "message": "Os anúncios devem sempre ser reconhecíveis como tal e diferenciáveis de todos os outros conteúdos (por exemplo, não esconder o rótulo, não induzir os usuários a pensarem que um anúncio é parte do conteúdo principal). Os anúncios devem ser claramente marcados com a palavra \"anúncio\" ou o seu equivalente."
   },
   "does-users-need": {
     "description": "Section header",
@@ -141,7 +141,7 @@
   },
   "entries-feeds": {
     "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Anúncios são permitidos entre as entradas e feeds."
+    "message": "Anúncios são permitidos entre entradas e feeds."
   },
   "everyone-must-comply": {
     "description": "Text in \"which acceptable ads are unblocked\" section",
@@ -173,7 +173,7 @@
   },
   "feed-list-ads": {
     "description": "\"In-feed ads\" description in \"Specific criteria\"",
-    "message": "Para anúncios em listas e feeds, os critérios gerais diferem dependendo do:"
+    "message": "Para anúncios em listas e feeds, os critérios gerais diferem dependendo de:"
   },
   "general-criteria": {
     "description": "Criteria header in \"Acceptable Ad\" section",
@@ -181,7 +181,7 @@
   },
   "hate-ads": {
     "description": "Section header",
-    "message": "Mas eu odeio propagada de todo jeito!"
+    "message": "Mas eu detesto todos os anúncios!"
   },
   "hover-effect-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -197,11 +197,11 @@
   },
   "in-feed-ads": {
     "description": "Subheadline in \"Specific criteria\"",
-    "message": "Anúncios de alimentação"
+    "message": "Anúncios de feed"
   },
   "in-feed-ads-size": {
     "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Anúncios em feed são permitidos a ocupar mais espaço, desde que eles não sejam substancialmente maiores que outros elementos na lista ou no feed."
+    "message": "Anúncios de feed podem ocupar mais espaço, desde que não sejam substancialmente maiores do que a de outros elementos na lista ou no feed."
   },
   "interstitial-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -217,7 +217,7 @@
   },
   "meta-description": {
     "description": "Description meta tag content inside head tag",
-    "message": "Adblock Plus apresenta a iniciativa anúncios aceitável: apoio sites que dependem de publicidade, mas optar por fazê-lo de uma forma não-intrusiva."
+    "message": "Adblock Plus apresenta a iniciativa de Anúncios Aceitáveis: Apoie sites que dependem de publicidade, mas opte pela maneira não intrusiva."
   },
   "meta-title": {
     "description": "Title meta tag content inside head tag",
@@ -225,23 +225,23 @@
   },
   "more-space": {
     "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Pesquisar anúncios são permitidos para ser maior e ocupam espaço de tela adicionais."
+    "message": "Anúncios de busca podem ser maiores e ocupar espaço adicional."
   },
   "new-format": {
     "description": "\"Other Acceptable Ads formats\" text in \"Specific criteria\"",
-    "message": "São seus anúncios exibidos em telas de alternativas, ou você está convencido de que você tem um formato inovador de anúncios aceitável que não se encaixa os anúncios acima descritos? <a>Deixe-nos saber!</a>"
+    "message": "Seus anúncios são exibidos em telas alternativas, ou você está convencido de que tem um formato inovador de Anúncios Aceitáveis que não se encaixa nos anúncios descritos acima? <a>Nos informe!</a>"
   },
   "no-placement-limit": {
     "description": "Text below point in \"Specific criteria\"",
-    "message": "Sem limitações de colocação."
+    "message": "Não há limitações para o posicionamento."
   },
   "no-primary-content": {
     "description": "Subheadline in \"Specific criteria\"",
-    "message": "Anúncios em páginas com nenhum conteúdo principal"
+    "message": "Anúncios em páginas sem conteúdo principal"
   },
   "no-size-limit": {
     "description": "Text below bullet point in \"Specific criteria\"",
-    "message": "Sem limitações de tamanho."
+    "message": "Não há limitações para o tamanho."
   },
   "not-acceptable-ad": {
     "description": "Section header",
@@ -249,11 +249,11 @@
   },
   "only-text-ads": {
     "description": "\"Ads on pages with no primary content\" description in \"Specific criteria\"",
-    "message": "São permitidos apenas anúncios de texto. Para páginas da Web sem qualquer conteúdo principal (por exemplo, páginas de erro ou estacionamento), os critérios diferem dependendo do:"
+    "message": "Apenas anúncios de texto são permitidos. Para páginas sem nenhum conteúdo principal (por exemplo, páginas de erro ou temporárias), os critérios variam de acordo com:"
   },
   "other-acceptable-ads": {
     "description": "Subheadline in \"Specific criteria\"",
-    "message": "Outros formatos de anúncios aceitável?"
+    "message": "Outros formatos de Anúncios Aceitáveis?"
   },
   "our-belive": {
     "description": "Paragraph in \"about\" section",
@@ -321,15 +321,15 @@
   },
   "search-ads": {
     "description": "Subheadline in \"Specific criteria\"",
-    "message": "Pesquisar anúncios"
+    "message": "Anúncios de busca"
   },
   "search-ads-info": {
     "description": "\"Search ads\" description in \"Specific criteria\"",
-    "message": "Para anúncios de busca - anúncios exibidos após uma consulta de pesquisa iniciada pelo usuário - os critérios diferem dependendo do:"
+    "message": "Para anúncios de busca - anúncios exibidos após uma pesquisa iniciada pelo usuário - os critérios variam de acordo com:"
   },
   "side-primary-content": {
     "description": "Bullet point in \"General criteria\"",
-    "message": "Quando colocado no lado do conteúdo principal, a largura máxima de um anúncio deve ser 350px."
+    "message": "Quando colocado ao lado do conteúdo principal, a largura máxima de um anúncio deve ser 350px."
   },
   "sign-agreement": {
     "description": "Whitelisting step in \"how to be whitelisted\" section",
@@ -341,7 +341,7 @@
   },
   "size-criteria": {
     "description": "Text in \"General criteria\"",
-    "message": "Necessidades individuais do anúncio-tamanho dependem a colocação do anúncio:"
+    "message": "Os requisitos de tamanho de anúncio individual dependem do posicionamento do anúncio:"
   },
   "size-requirement": {
     "description": "Bullet point in \"Specific criteria\"",
@@ -364,11 +364,11 @@
     "message": "Anúncios de texto"
   },
   "title": {
-    "message": "Permitindo anúncios aceitáveis no Adblock Plus"
+    "message": "Como permitir anúncios aceitáveis no Adblock Plus"
   },
   "total-ad-space": {
     "description": "Paragraph in \"General criteria\"",
-    "message": "Todos os anúncios que são colocados acima da dobra (a parte da página da web visíveis na janela do navegador quando a página é carregado pela primeira vez sob o tamanho de tela comum), não deve ocupar no total mais de 15 por cento da parte visível da página da web. Se colocados abaixo da dobra, anúncios não devem ocupar no total mais de 25% a parte visível da página da Web."
+    "message": "Todos os anúncios colocados acima da dobra (a parte da página visível na janela do navegador quando a página carrega no tamanho comum da tela), não deve ocupar no total mais de 15% da porção visível da página da web. Se colocado abaixo da dobra, os anúncios não devem ocupar mais de 25% da porção visível da página da web."
   },
   "transparency": {
     "description": "Fairness rule Bullet point in \"about\" section",
@@ -380,7 +380,7 @@
   },
   "unobtrusive-image": {
     "description": "\"Image ads\" description in \"Specific criteria\"",
-    "message": "Anúncios de imagem estática podem ser qualificada como aceitável, de acordo com uma avaliação da sua comida com base na sua integração na página da Web."
+    "message": "Anúncios de imagem estática podem qualificar-se como aceitáveis de acordo com uma avaliação de sua discrição com base na sua integração na página."
   },
   "user-value": {
     "description": "Fairness rule Bullet point in \"about\" section",
@@ -399,57 +399,273 @@
     "message": "Por que esse recurso já vem ativado por padrão?"
   },
   "mobile-ads-heading": {
-    "message": "Anúncios para dispositivo móvel"
+    "message": "Critérios para dispositivos móveis"
   },
   "animations-paragraph-1": {
-    "message": "Animações são permitidas para tipos de anúncios de 6x1, quando colocadas como um anúncio fixo na parte inferior da tela. As animações devem cumprir com o padrão LEAN para animações, e um botão para fechar ou algum outro mecanismo de encerramento deve ser incluído."
+    "message": "Animações são permitidas para anúncios de 6x1, quando colocadas como um “anúncio fixo” na parte inferior da tela. As animações devem respeitar o padrão LEAN para animações e deve ser incluído um botão de fechar ou qualquer outro mecanismo de encerramento."
   },
   "mobile-ads-size-heading": {
     "message": "Requisitos de tamanho"
   },
   "mobile-ads-size-item-1": {
-    "message": "Anúncios implementados na parte “rolável” da página da web não devem ocupar no total mais de 50% da parte visível da página da web."
+    "message": "Anúncios colocados na parte rolável da página da web não devem ocupar no total mais de 50 por cento da parte visível da página da web."
   },
   "mobile-ads-size-item-2": {
-    "message": "Anúncios implementados como um anúncio fixo têm uma restrição de altura máxima de 75px (ou 15%)."
+    "message": "Anúncios implementados como um “anúncio fixo” têm uma restrição de altura máxima de 75px (ou 15%)."
   },
   "mobile-ads-placement-item-3": {
-    "message": "Os anúncios grandes (ex., anúncios nativos quadrados) são permitidos apenas sob o Conteúdo principal."
+    "message": "Anúncios grandes (por ex., anúncios nativos) são permitidos apenas abaixo do Conteúdo Principal."
   },
   "mobile-ads-placement-item-2": {
-    "message": "Os anúncios pequenos (banner de 6x1 ou menor) podem ser colocados como um anúncio fixo na parte inferior da tela. Outros formatos não podem ser fixados."
+    "message": "Pequenos anúncios (banner de 6x1 ou menor) podem ser colocados como um anúncio na parte inferior da tela. Outros formatos não podem ser utilizados."
   },
   "mobile-ads-placement-item-1": {
-    "message": "Os tipos de anúncios estáticos (ex. banner de 6x1 e anúncio quadrado de 1x1) podem ser colocados em qualquer lugar na página do dispositivo móvel. \n"
+    "message": "Anúncios estáticos (por ex., banner de 6x1 e anúncio lado a lado de 1x1) podem ser colocados em qualquer lugar na página móvel"
   },
   "mobile-ads-size-lead": {
-    "message": "Anúncios mostrados nas telas dos dispositivos móveis estão vinculados às seguintes restrições de tamanho: "
+    "message": "Anúncios mostrados nas telas de celulares estão vinculados às seguintes restrições de tamanho:"
   },
   "animations-heading": {
     "message": "Animações"
   },
   "mobile-ads-size-item-3": {
-    "message": "Abaixo do Conteúdo Principal, os anúncios são limitados a 100% do espaço da tela.\n"
+    "message": "Abaixo do Conteúdo principal, os anúncios são limitados a 100% do espaço da tela."
   },
   "footnote-5": {
-    "message": "De: <a>Iab New Standard Ad Unit Portfolio (2017)</a>"
-  },
-  "footnote-6": {
-    "message": "Em caso de exceção, consulte <a>Anúncios para dispositivos móveis</a>."
-  },
-  "footnote-1": {
     "message": "Anúncio grande: qualquer anúncio >300px de altura"
   },
+  "footnote-6": {
+    "message": "O “Conteúdo Principal” é definido da seguinte forma (conforme o elemento HTML <code><main></code> é <a>descrito pelo Mozilla</a>): O Conteúdo Principal consiste do conteúdo ao qual está diretamente relacionado, ou amplia o tema central de um documento ou a funcionalidade central de um aplicativo. Este conteúdo deve ser exclusivo para o documento, excluindo qualquer conteúdo repetido em um conjunto de documentos, tais como as barras laterais, links de navegação, informações sobre direitos autorais, logotipos de site e formulários de busca (a menos que, é claro, a função principal do documento seja um formulário de busca)."
+  },
+  "footnote-1": {
+    "message": "O “Conteúdo Principal” é definido da seguinte forma (conforme o elemento HTML <code><main></code> é <a>descrito pelo Mozilla</a>): O Conteúdo Principal consiste do conteúdo ao qual está diretamente relacionado, ou amplia o tema central de um documento ou a funcionalidade central de um aplicativo. Este conteúdo deve ser exclusivo para o documento, excluindo qualquer conteúdo repetido em um conjunto de documentos, tais como as barras laterais, links de navegação, informações sobre direitos autorais, logotipos de site e formulários de busca (a menos que, é claro, a função principal do documento seja um formulário de busca)."
+  },
   "footnote-2": {
-    "message": "O “Conteúdo principal” é definido como (com base na descrição do <main> elemento HTML da <a>Mozilla</a>): O Conteúdo principal consiste no conteúdo ao qual está diretamente relacionado, ou amplia o tema central de um documento ou a funcionalidade central de um aplicativo. Esse conteúdo deve ser exclusivo para o documento, excluindo qualquer conteúdo repetido em um conjunto de documentos, tais como as barras laterais, links de navegação, informações sobre direitos autorais, logotipos de site e formulários de busca (a menos que, é claro, a função principal do documento seja um formulário de busca)."
+    "message": "O “tamanho comum de tela” para desktop é 1366x768, segundo dados do <a>StatCounter</a>."
   },
   "footnote-3": {
-    "message": "A parte visível da página da web é definida como um padrão de tamanho CCS de 360x512px pixels (Samsung Galaxy S7 com o SBrowser), que é baseado no padrão de visualização de 360x640px, mas com o OS- e elementos de UI do navegador deduzido."
+    "message": "O “tamanho comum de tela” para dispositivos móveis é 360x640, segundo dados do <a>StatCounter</a>."
   },
   "footnote-4": {
-    "message": "Isso significa que os usuários podem rolar pelo conteúdo principal e logo após, uma unidade de anúncio mostrada pode ocupar toda a tela, mas não é possível implementar anúncios adicionais seguidos dessa unidade de anúncio.\n"
+    "message": "O “tamanho comum de tela” para tablets é 768x1024, segundo dados do <a>StatCounter</a>."
   },
   "mobile-ads-placement-heading": {
     "message": "Requisitos de posicionamento"
+  },
+  "what-are-aa": {
+    "message": "O que são Anúncios Aceitáveis?"
+  },
+  "disable-safari-step-2": {
+    "message": "Desmarque a opção <strong>Permitir Anúncios Aceitáveis</strong>."
+  },
+  "disable-safari-step-3": {
+    "message": "Feche a guia."
+  },
+  "disable-safari-step-1": {
+    "message": "Na barra de ferramentas do Safari, clique no ícone <strong>Adblock Plus</strong> e selecione <strong>Abrir Adblock Plus</strong>."
+  },
+  "what-is-aac-1": {
+    "message": "Como <a>anteriormente anunciado</a> em 2017, a eyeo/Adblock Plus transferiu a administração da iniciativa de Anúncios Aceitáveis para um grupo independente, o <a>Comitê de Anúncios Aceitáveis </a>. O Comitê de Anúncios Aceitáveis é composto por partes interessadas de empresas com fins lucrativos, especialistas do setor e usuários da Internet como você."
+  },
+  "report-aa-step-3": {
+    "message": "Se for de seu conhecimento, indique se é necessário um login ou VPN para reproduzir o problema"
+  },
+  "report-aa-step-2": {
+    "message": "Captura de tela da página inteira, incluindo o anúncio OU uma descrição detalhada de onde o anúncio está localizado na página"
+  },
+  "report-aa-step-1": {
+    "message": "URL da página onde o anúncio é exibido"
+  },
+  "get-whitelisted": {
+    "message": "Como posso incluir anúncios aceitáveis em meu site?"
+  },
+  "why-is-aa-enabled-1": {
+    "message": "Acreditamos que Anúncios Aceitáveis sejam o meio termo sustentável entre a escolha do usuário de usar um bloqueador de anúncios e a contínua necessidade de apoiar o conteúdo on-line gratuito com anúncios. Se a maioria dos usuários do Adblock Plus tiverem ativado o recurso “Anúncios Aceitáveis”, os anunciantes terão um maior incentivo para produzir formatos de anúncio melhores e menos intrusivos."
+  },
+  "disable-samsung": {
+    "message": "Adblock Plus para Samsung Internet"
+  },
+  "get-whitelisted-1": {
+    "message": "O processo de incluir seus anúncios na lista branca leva cerca de 10 dias úteis depois que os anúncios passam a cumprir com os padrões de Anúncios Aceitáveis:"
+  },
+  "do-users-want-aa-1": {
+    "message": "Sim! Oitenta e três por cento (<a>83%</a>) dos usuários do Adblock Plus não se incomodam em ver Anúncios Aceitáveis, porque sua experiência de navegação não é comprometida por anúncios barulhentos, irritantes e irrelevantes."
+  },
+  "view-aa-list-1": {
+    "message": "Com certeza. Você pode visualizar a lista <a>clicando aqui</a>."
+  },
+  "why-is-aa-enabled": {
+    "message": "Porque o recurso “Anúncios Aceitáveis” é ativado por padrão?"
+  },
+  "desktop-placement": {
+    "message": "Posicionamento"
+  },
+  "disable-ios-step-2": {
+    "message": "Toque no <strong>ícone de menu</strong> e selecione <strong>Configurações</strong>."
+  },
+  "disable-ios-step-3": {
+    "message": "Toque em <strong>Bloqueio de anúncios</strong> > <strong>Exceções</strong>."
+  },
+  "disable-ios-step-1": {
+    "message": "Abra o Adblock Browser para iOS"
+  },
+  "disable-ios-step-4": {
+    "message": "Marque <strong>Ocultar todos os anúncios</strong>."
+  },
+  "disable-latest-step-4": {
+    "message": "Feche a guia."
+  },
+  "view-aa-list": {
+    "message": "Posso ver a lista branca de Anúncios Aceitáveis?"
+  },
+  "disable-latest-step-1": {
+    "message": "Na barra de ferramentas de seu navegador, clique no ícone <strong>Adblock Plus</strong> e selecione o ícone de <strong>engrenagem</strong> no canto superior direito."
+  },
+  "disable-latest-step-3": {
+    "message": "Desmarque a opção <strong>Permitir Anúncios Aceitáveis</strong>."
+  },
+  "disable-latest-step-2": {
+    "message": "Na guia <em>Geral</em>, role até a seção <em>Anúncios Aceitáveis</em>."
+  },
+  "disable-android-step-1": {
+    "message": "Abra o Adblock Browser para Android."
+  },
+  "disable-android-step-2": {
+    "message": "Toque no <strong>ícone de menu</strong> e selecione <strong>Configurações</strong>."
+  },
+  "disable-android-step-3": {
+    "message": "Toque em <strong>Bloqueio de anúncios</strong> > <strong>Anúncios aceitáveis</strong>."
+  },
+  "disable-android-step-4": {
+    "message": "Desmarque a opção <strong>Permitir anúncios não intrusivos</strong>."
+  },
+  "what-are-aa-1": {
+    "message": "Anúncios Aceitáveis são anúncios que não são intrusivos ou irritantes. Eles são respeitosos, não interferem com o conteúdo e são claramente identificados com a palavra \"anúncio\" ou um equivalente. Para que seja considerado um “Anúncio Aceitável”, um anúncio deve obedecer aos <a>padrões</a> estabelecidos pelo <a>Comitê de Anúncios Aceitáveis</a>."
+  },
+  "what-are-aa-2": {
+    "message": "Anúncios que respeitam os padrões de Anúncios Aceitáveis são colocados em uma lista branca. Os anúncios na lista branca são então, mostrados aos usuários que bloqueiam anúncios, mas permitem Anúncios Aceitáveis."
+  },
+  "what-are-aa-wo-1": {
+    "message": "Anúncios Aceitáveis sem localização por terceiros são anúncios que estão em conformidade com os critérios de Anúncios Aceitáveis e que não permitem que entidades de terceiros localizem nada do seu comportamento de navegação. São anúncios que respeitam a regra de <a>Não Rastrear</a> e/ou anúncios operados pelo domínio integralmente detido pela mesma empresa."
+  },
+  "get-whitelisted-step-1-1": {
+    "message": "Seja Listado na Lista Branca de Anúncios Aceitáveis"
+  },
+  "get-whitelisted-step-2": {
+    "message": "Um representante da <a>eyeo</a>, a empresa por trás do Adblock Plus, entrará em contato com você para determinar os anúncios exatos e verificar sua conformidade segundo nossos critérios."
+  },
+  "get-whitelisted-step-1": {
+    "message": "Se seu site tem anúncios que cumprem com os <a>padrões de Anúncios Aceitáveis</a>, basta preencher <a>este formulário</a>."
+  },
+  "revenue": {
+    "message": "Há pagamento envolvido?"
+  },
+  "disable-ie-step-1": {
+    "message": "Clique no ícone do Adblock Plus e selecione <strong>Configurações </strong>."
+  },
+  "disable-ie-step-2": {
+    "message": "Desmarque a opção <strong>Permitir anúncios não intrusivos</strong>."
+  },
+  "page-under-review": {
+    "message": "Esta página está em revisão, pois o gerenciamento da iniciativa de Anúncios Aceitáveis foi transferido para o <a>Comitê de Anúncios Aceitáveis</a> independente."
+  },
+  "get-whitelisted-step-3-1": {
+    "message": "Link para a página de acordos dos Anúncios Aceitáveis"
+  },
+  "desktop-criteria-1": {
+    "message": "Os anúncios não devem perturbar o fluxo de leitura natural do usuário. Esses anúncios devem estar posicionados na parte superior, lateral ou abaixo do Conteúdo Principal."
+  },
+  "are-all-aa-blocked-1": {
+    "message": "Não. É tecnicamente impossível reconhecer de forma automática anúncios que não atendem aos critérios de Anúncios Aceitáveis. Temos <a>acordos</a> com alguns sites e anunciantes que estipulam que somente anúncios que atendem aos critérios de Anúncios Aceitáveis serão exibidos quando os usuários do Adblock Plus visitarem esses sites."
+  },
+  "disable-safari": {
+    "message": "Adblock Plus para Safari"
+  },
+  "aa-criteria": {
+    "message": "Critérios de Anúncios Aceitáveis"
+  },
+  "navbar-logo-text": {
+    "message": "Adblock <strong>Plus</strong>"
+  },
+  "what-are-aa-3": {
+    "message": "A maioria dos sites usam publicidade para monetizar suas páginas, ou seja, para ganhar dinheiro e para que você possa acessar seus conteúdos gratuitamente. No entanto, para chamar sua atenção, muitos sites usam anúncios irritantes ou intrusivos. O Adblock Plus permite que você bloqueie anúncios desse tipo, mas não acreditamos que os sites devam ser punidos."
+  },
+  "disable-firefox-step-2": {
+    "message": "Desmarque a opção <strong>Permitir anúncios não intrusivos</strong>."
+  },
+  "are-all-aa-blocked": {
+    "message": "Todos os anúncios irritantes são bloqueados?"
+  },
+  "disable-firefox-step-1": {
+    "message": "Clique no ícone do Adblock Plus e selecione <strong>Preferências de filtro</strong>."
+  },
+  "footnote-9": {
+    "message": "De: <a>Iab New Standard Ad Unit Portfolio (2017)</a>"
+  },
+  "footnote-8": {
+    "message": "Isso significa que os usuários podem rolar pelo conteúdo principal e um bloco de anúncios pode ocupar toda a tela, mas não é possível implementar anúncios adicionais após esse bloco."
+  },
+  "footnote-7": {
+    "message": "A parte visível da página web é definida como um padrão de tamanho CCS de <a>360x512px</a> (Samsung Galaxy S7 com o SBrowser), baseado no padrão de visualização de <a>360x640px</a>, deduzindo-se os elementos do OS- e do UI do navegador."
+  },
+  "size-2": {
+    "message": "Os anúncios devem sempre deixar espaço suficiente para o Conteúdo Principal no tamanho da tela comum de 1366x768 para desktop, 360x640 para dispositivos móveis e 768x1024 para tablets."
+  },
+  "disable-samsung-step-2": {
+    "message": "Desmarque a opção <strong>Permitir anúncios não intrusivos</strong>."
+  },
+  "disable-samsung-step-1": {
+    "message": "Abra o Adblock Plus para Samsung Internet."
+  },
+  "what-is-aac": {
+    "message": "O que é o Comitê de Anúncios Aceitáveis?"
+  },
+  "aa-criteria-1": {
+    "message": "Anúncios aceitáveis, conforme definido pelo Comitê de Anúncios Aceitáveis, devem atender aos seguintes critérios:"
+  },
+  "do-users-want-aa": {
+    "message": "Os usuários do Adblock Plus realmente querem Anúncios Aceitáveis?"
+  },
+  "get-whitelisted-step-3": {
+    "message": "Após fazer as alterações necessárias, ambos os lados assinam um <a>acordo</a>."
+  },
+  "disable-android": {
+    "message": "Adblock Browser para Android"
+  },
+  "report-aa-1": {
+    "message": "Envie uma mensagem para <a>endereço de e-mail</a> com as seguintes informações:"
+  },
+  "hate-ads-1": {
+    "message": "Sem problemas, você pode desativar esse recurso a qualquer momento:"
+  },
+  "report-aa": {
+    "message": "Como posso relatar um anúncio que não atende aos critérios?"
+  },
+  "what-are-aa-wo": {
+    "message": "O que são Anúncios Aceitáveis sem localização por terceiros?"
+  },
+  "desktop-criteria": {
+    "message": "Critérios para desktop"
+  },
+  "revenue-1": {
+    "message": "Clique <a>aqui</a> para uma visão geral detalhada de nossas finanças."
+  },
+  "disable-latest": {
+    "message": "Adblock Plus para os navegadores Chrome, Firefox (versões 3 e superiores), Maxthon, Opera e Yandex"
+  },
+  "disable-ios-safari": {
+    "message": "Adblock Plus para iOS"
+  },
+  "disable-ios-safari-step-2": {
+    "message": "Toque no <strong>Ícone de configurações</strong> na parte inferior da página."
+  },
+  "disable-ios-safari-step-3": {
+    "message": "Na página de configurações, toque em <strong>Anúncios Aceitáveis</strong>."
+  },
+  "disable-ios-safari-step-1": {
+    "message": "Abra o Adblock Plus para iOS."
+  },
+  "disable-ios-safari-step-4": {
+    "message": "Desative <strong>Permitir alguns anúncios não intrusivos</strong>."
   }
 }
