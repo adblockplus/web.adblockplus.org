@@ -23,7 +23,7 @@ title=Allowing acceptable ads in Adblock Plus
 
 {{ what-are-aa-3 Most websites use advertising to make money, meaning that you can see these websites for free. However, many websites use too many annoying or intrusive ads to get your attention. Adblock Plus lets you choose to block ads, but we don’t believe websites should be punished. }}
 
-### {{ what-are-aa-wo[heading] What are Acceptable Ads without third-party tracking? }} {: #without-third-party-tracking }
+### {{ what-are-aa-wo[heading] What are Acceptable Ads without third-party tracking? }} {: #privacy-friendly-acceptable-ads }
 
 {{ what-are-aa-wo-1 Acceptable Ads without third-party tracking are ads that comply with the Acceptable Ads criteria and that do not allow third-party entities to track any of your browsing behavior. These are ads that comply with [Do Not Track](https://www.eff.org/dnt-policy){: title="Link to the Do Not Track Policy by EFF" }, and / or ads which are served by the domain which is wholly owned by the same company. }}
 
