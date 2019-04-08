@@ -147,7 +147,7 @@ notoc=True
 
 ### {{ questions-heading[heading] Questions? }} {: #questions }
 
-{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
+{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
 
 ---
 
@@ -169,7 +169,7 @@ notoc=True
 
 ### {{ general-notes-heading[heading] General notes }} {: #general-notes }
 
-{{ general-notes-paragraph Your protection and data confidentiality is of utmost importance to us ("eyeo" "we" "our"). We take the protection your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites. }}
+{{ general-notes-paragraph Your protection and data confidentiality is of utmost importance to us ("eyeo", "we", "our"). We take the protection of your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites. }}
 
 ### {{ who-is-responsible-heading[heading] Who is responsible for data collection and processing (contacts)? }} {: #who-is-responsible }
 
@@ -248,6 +248,11 @@ Germany<br>
 
 {{ disclosure-paragraph-2 We will not transfer your personal data to third parties as a matter of course without letting you know in advance. We will ask for your prior permission unless the transfer of such data is permitted by GDPR or any other applicable EU laws and German national data protection laws. }}
 
+### {{ international-data-transfers-heading[heading] International data transfers }}
+
+{{ international-data-transfers-1 For the following services, we use non-EU/EEA service providers. We have carefully selected these external service providers and review them regularly to ensure that your privacy is preserved. The service providers provide sufficient guarantees to ensure an adequate level of data protection and may only use personal data for the purposes stipulated by us and in accordance with our instructions. We also contractually require the service providers to treat your personal data solely in accordance with this Privacy Policy and the European data protection laws: }}
+
+{{ international-data-transfers-2 We use external service provider tools for email (GSuite); to analyze your use of our Websites ([Google Analytics](#google-analytics)); and for A/B testing based on the analytics data ([Google Optimize](#google-optimize)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).}}
 
 ### {{ your-rights-long-heading[heading] What rights do you have? }} {: #your-rights-long }
 
@@ -262,7 +267,7 @@ Germany<br>
 {{ data-portability-right-paragraph You also have the right (1) to receive all personal data concerning you and which you have provided to us, in a structured, commonly used and machine-readable format and (2) to transmit that data to another controller. }}
 
 
-### {{ erasure-of-data-heading[heading] Right to erasure your data }} {: #erasure-of-data }
+### {{ erasure-of-data-heading[heading] Right to erasure of your data }} {: #erasure-of-data }
 
 {{ erasure-of-data-paragraph-1 You have the right to demand from us the erasure of your personal data, where – inter alia – one of the following grounds applies: }}
 
@@ -286,7 +291,7 @@ Germany<br>
 
 ### {{ how-to-exercise-heading[heading] How to exercise your rights }} {: #how-to-exercise }
 
-{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or mail to: }}
+{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or mail to: }}
 
 
 <address>
@@ -399,15 +404,29 @@ Germany<br>
 
 {{ stored-website-requests-paragraph The request to our Websites, including your IP address, is stored when you create a forum post, submit a contact form, or add a blog comment. This allows administrators to effectively address spam content and security breaches. All stored requests are deleted after 30 days. }}
 
-###### {{ cookies-heading[heading] Cookies }} {: #cookies }
+###### {{ cookies-heading[heading] Settings cookies }} {: #cookies }
 
-{{ cookies-paragraph Several areas of our Websites use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. Cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
+{{ cookies-paragraph We use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. The settings cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result. }}
 
 ###### {{ google-analytics-heading[heading] Google Analytics }} {: #google-analytics }
 
 {{ google-analytics-paragraph-1 We use Google Analytics, a web analytics service from Google Inc. ("Google"), on our Websites. Google Analytics uses so-called "cookies" (text files stored on your computer that enable us to analyze your use of our Websites). Information generated by the cookies (including your abbreviated IP address) is transmitted to and stored at a Google server in the United States. Google uses this information to assess your use of our Websites, to compile activity reports, and to provide more services connected with the use of our Websites. It is possible that Google may transmit this information to third parties if required by law, or if third parties process this information on behalf of Google. }}
 
-{{ google-analytics-paragraph-2 You can deactivate Google Analytics if you do not want to help us improve our products. }}
+{{ google-analytics-paragraph-2 **You can deactivate Google Analytics if you do not want to help us improve our products.** But please note that in this case, a cookie will be set that stores your deactivation choice. This cookie is considered a “necessary cookie” and can’t be deactivated. }}
+
+<? include cookie/settings-link ?>
+
+###### {{ google-tag-manager-heading[heading] Google Tag Manager }} {: #google-tag-manager }
+
+{{ google-tag-manager-1 Our Website uses Google Tag Manager for the implementation of [Google Analytics](#google-analytics). Google Tag Manager, provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google”), is a solution that allows marketed website tags to be managed using an interface. The Tag Manager tool itself (which implements the tags) is a cookie-less domain and does not register personal data. The tool causes other tags to be activated. These tags then may register data under certain deactivated domains or on a cookie level. This setting will remain in place for all tracking tags implemented with Google Tag Manager. }}
+
+###### {{ google-optimize-heading[heading] Google Optimize }} {: #google-optimize }
+
+{{ google-optimize-1 Our Website uses the web analysis and optimization service Google Optimize provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google”). We use the Google Optimize service to increase the attractiveness, content and functionality of our Website by playing new features and content to a percentage of our users and statistically evaluating the usage change (A/B testing). Google Optimize is a sub-service of [Google Analytics](#google-analytics). }}
+
+{{ google-optimize-2 Google Optimize uses cookies, which enable us to optimize and analyze your use of our Website. The information generated by these cookies about your use of our Website is usually transferred to a Google server in the USA and stored there. We use Google Optimize with activated IP anonymization so that your IP address is shortened by Google within member states of the European Union, or within the European Economic Area. Only in exceptional cases will the full IP address be transmitted to a Google server in the USA and shortened there. Google will use this information for the purpose of evaluating your use of our Website, compiling reports on optimization tests and related website activity and providing other services relating to website activity and internet usage. }}
+
+{{ google-optimize-3 **You can deactivate Google Optimize if you do not want to help us improve our products.** But please note that in this case, a cookie will be set that stores your deactivation choice. This cookie is considered a “necessary cookie” and can’t be deactivated. }}
 
 <? include cookie/settings-link ?>
 
@@ -449,7 +468,7 @@ Germany<br>
 
 {{ retention-communications-paragraph-2 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch). }}
 
-<time datetime="2018-09">{{ publication-date September 2018 }}</time>
+<time datetime="2019-03">{{ publication-date March 2019 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

@@ -1,863 +1,890 @@
 {
-    "privacy-notice-short-link": {
-        "message": "Datenschutzhinweis (Kurzfassung)",
-        "description": "link to heading"
-    },
-    "privacy-policy-long-link": {
-        "message": "Datenschutzerklärung (ausführliche Fassung)",
-        "description": "link to heading"
-    },
-    "privacy-policy-short-heading": {
-        "message": "Datenschutzhinweis (Kurzfassung)",
-        "description": "heading"
-    },
-    "privacy-policy-short-paragraph": {
-        "message": "Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die Erhebung, Verarbeitung und Nutzung (nachfolgend gemeinsam „Verarbeitung“ genannt) deiner personenbezogenen Daten geben. Bitte lies unsere vollständige <a>Datenschutzerklärung<\/a> für weitere Informationen zu unseren Verarbeitungsaktivitäten."
-    },
-    "data-processed-heading": {
-        "message": "Welche Arten personenbezogener Daten verarbeiten wir?",
-        "description": "heading"
-    },
-    "data-processed-item-1": {
-        "message": "Während du unsere Produkte verwendest: Adblock Plus oder Adblock Browser (automatisch, außer für Absturz- und Fehlermeldungen (Issue Reporter))",
-        "description": "list item"
-    },
-    "data-processed-item-2": {
-        "message": "Erweiterungsupdates, Abonnement-Downloads, Notfallbenachrichtungen:",
-        "description": "list item"
-    },
-    "data-processed-item-3": {
-        "message": "Browser-Version",
-        "description": "list item"
-    },
-    "data-processed-item-4": {
-        "message": "Version der Erweiterung",
-        "description": "list item"
-    },
-    "data-processed-item-5": {
-        "message": "Betriebssystem",
-        "description": "list item"
-    },
-    "data-processed-item-6": {
-        "message": "Datum des letzten Updates",
-        "description": "list item"
-    },
-    "data-processed-item-7": {
-        "message": "IP-Adresse",
-        "description": "list item"
-    },
-    "data-processed-item-8": {
-        "message": "Zusätzlich kannst du manuell die folgenden Informationen über eine Webseite mit einem Fehler übermitteln, indem du den Absturz- und Fehlermelder <a>(Issue Reporter)<\/a> verwendest: URL, blockierbare Elemente, übereinstimmende Filter, aktive Filterlisten (freiwillig)",
-        "description": "list item"
-    },
-    "data-processed-item-9": {
-        "message": "Adblock Browser für Android",
-        "description": "list item"
-    },
-    "data-processed-item-10": {
-        "message": "eyeo erhebt keine Daten. Adblock Browser, der auf Mozilla Firefox basiert, hat Firefox spezifische Funktionalitäten, die jedoch Daten an Mozilla senden können.",
-        "description": "list item"
-    },
-    "data-processed-item-11": {
-        "message": "Adblock Browser für iOS (automatisch):",
-        "description": "list item"
-    },
-    "data-processed-item-12": {
-        "message": "Absturz- und Fehlermeldungsdaten:",
-        "description": "list item"
-    },
-    "data-processed-item-13": {
-        "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS",
-        "description": "list item"
-    },
-    "data-processed-item-14": {
-        "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems",
-        "description": "list item"
-    },
-    "data-processed-item-15": {
-        "message": "Zeitstempel des Absturzes",
-        "description": "list item"
-    },
-    "data-processed-item-16": {
-        "message": "UUID",
-        "description": "list item"
-    },
-    "data-processed-item-17": {
-        "message": "Klartext-Klassenname und der Wert der Meldung der Ausnahme",
-        "description": "list item"
-    },
-    "data-processed-item-18": {
-        "message": "Befehlszeiger, Methoden- oder Funktionsnamen, Signaldaten, Zeigerregister und Informationen über die geladenen Binärdateiabbilder",
-        "description": "list item"
-    },
-    "data-processed-item-19": {
-        "message": "Zeichenfolge\/Funktionsname, die\/der den Fehler identifiziert",
-        "description": "list item"
-    },
-    "data-processed-item-20": {
-        "message": "Während du unsere Webseiten nutzt:",
-        "description": "list item"
-    },
-    "data-processed-item-21": {
-        "message": "Automatisch:",
-        "description": "list item"
-    },
-    "data-processed-item-22": {
-        "message": "IP-Adresse (separat gespeichert)",
-        "description": "list item"
-    },
-    "data-processed-item-23": {
-        "message": "die Uhrzeit der Anfragestellung",
-        "description": "list item"
-    },
-    "data-processed-item-24": {
-        "message": "die aufgerufene Internetadresse",
-        "description": "list item"
-    },
-    "data-processed-item-25": {
-        "message": "die Browser-Kennung",
-        "description": "list item"
-    },
-    "data-processed-item-26": {
-        "message": "die verweisende Seite",
-        "description": "list item"
-    },
-    "data-processed-item-32": {
-        "message": "Aggregierte Analysedaten",
-        "description": "list item"
-    },
-    "data-processed-item-27": {
-        "message": "Freiwillig:",
-        "description": "list item"
-    },
-    "data-processed-item-28": {
-        "message": "Forum-Registrierungsdaten",
-        "description": "list item"
-    },
-    "data-processed-item-29": {
-        "message": "E-Mail-Adresse",
-        "description": "list item"
-    },
-    "data-processed-item-30": {
-        "message": "Daten, die du in Kommentaren zur Verfügung stellst",
-        "description": "list item"
-    },
-    "data-processed-item-31": {
-        "message": "Feedback und Filterdaten.",
-        "description": "list item"
-    },
-    "how-we-collect-heading": {
-        "message": "Wie erheben wir Daten?",
-        "description": "heading"
-    },
-    "list-of-tools": {
-        "message": "Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden:",
-        "description": "preface"
-    },
-    "tools-item-1": {
-        "message": "In unseren Produkten:",
-        "description": "list item"
-    },
-    "tools-item-2": {
-        "message": "Update-Prüfungen",
-        "description": "list item"
-    },
-    "tools-item-3": {
-        "message": "Abonnement-Downloads",
-        "description": "list item"
-    },
-    "tools-item-4": {
-        "message": "Senden von Problemmeldungen",
-        "description": "list item"
-    },
-    "tools-item-5": {
-        "message": "Prüfen von Notfallbenachrichtigungen",
-        "description": "list item"
-    },
-    "tools-item-6": {
-        "message": "Auf unseren Webseiten:",
-        "description": "list item"
-    },
-    "tools-item-7": {
-        "message": "Cookies",
-        "description": "list item"
-    },
-    "tools-item-8": {
-        "message": "Webseiten-Protokolle",
-        "description": "list item"
-    },
-    "tools-item-9": {
-        "message": "Daten, wie dein Name und\/oder deine E-Mail-Adresse, wenn du diese an uns während der Nutzung des Forums oder Blogs oder beim manuellen Teilen eines hinzugefügten Filters senden solltest",
-        "description": "list item"
-    },
-    "tools-item-10": {
-        "message": "Über Google Analytics",
-        "description": "list item"
-    },
-    "why-we-process-heading": {
-        "message": "Wie und warum verarbeiten wir deine Daten?",
-        "description": "heading"
-    },
-    "why-we-process-item-1": {
-        "message": "Um dich über dringende Probleme im Zusammenhang mit unseren Produkten zu informieren.",
-        "description": "list item"
-    },
-    "why-we-process-item-2": {
-        "message": "Um unsere Produkte zu verbessern und zu evaluieren, indem wir Abonnement-Downloads, Erweiterungsupdates, Notfall-Downloads und von dir an uns übermittelte Fehlerberichte verarbeiten und analysieren.",
-        "description": "list item"
-    },
-    "why-we-process-item-3": {
-        "message": "Für technische Zwecke, u. a. zur Verhinderung von Sicherheitsangriffen, zur Verbesserung unserer Webseite\/Produkte, zur Sicherstellung der Webseiten-\/Produktsicherheit.",
-        "description": "list item"
-    },
-    "why-we-process-item-4": {
-        "message": "Um aggregierte Webseiten-Protokolle und Analysedaten auszuwerten und dadurch unsere Webseite zu verbessern.",
-        "description": "list item"
-    },
-    "why-we-process-item-5": {
-        "message": "Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.",
-        "description": "list item"
-    },
-    "what-is-legal-heading": {
-        "message": "Auf welcher Rechtsgrundlage erfolgt die Datenverarbeitung?",
-        "description": "heading"
-    },
-    "what-is-legal-1": {
-        "message": "Wir verarbeiten deine personenbezogenen Daten im Einklang mit der Europäischen Datenschutz-Grundverordnung (EU-Verordnung 2016\/679 („DSGVO“)), der anwendbaren EU-Gesetzgebung und den nationalen deutschen Datenschutzgesetzen."
-    },
-    "how-long": {
-        "message": "Wie lange bewahren wir die Daten auf?",
-        "description": "heading"
-    },
-    "how-long-item-1": {
-        "message": "Für einen Zeitraum von 30 Tagen:",
-        "description": "list item"
-    },
-    "how-long-item-2": {
-        "message": "Fehlerberichtsdaten",
-        "description": "list item"
-    },
-    "how-long-item-3": {
-        "message": "Absturz- und Fehlermeldungsdaten",
-        "description": "list item"
-    },
-    "how-long-item-4": {
-        "message": "Webseiten-Protokolle",
-        "description": "list item"
-    },
-    "how-long-item-5": {
-        "message": "Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen",
-        "description": "list item"
-    },
-    "how-long-item-6": {
-        "message": "Blog- und Forumdaten, so lange wie der jeweilige Kommentar\/das jeweilige Konto existiert",
-        "description": "list item"
-    },
-    "how-long-paragraph": {
-        "message": "<strong>Hinweis:<\/strong> „Aggregierte Nutzungsstatistiken”, z. B. Analysedaten und andere Daten ohne irgendeine Verbindung zu einem einzelnen Nutzer, können auch über diese Zeiträume hinaus aufbewahrt werden."
-    },
-    "our-values-heading": {
-        "message": "Unsere Werte",
-        "description": "heading"
-    },
-    "our-values-paragraph": {
-        "message": "Wir erheben so wenig Daten wie möglich. Sofern eine anonyme oder pseudonyme Nutzung möglich ist, anonymisieren oder pseudonymisieren wir deine Daten."
-    },
-    "your-rights-heading": {
-        "message": "Welche Rechte hast du?",
-        "description": "heading"
-    },
-    "your-right-item-1": {
-        "message": "Auskunft darüber zu erhalten, welche deiner personenbezogenen Daten wir verarbeiten, wie wir diese Daten verarbeiten sowie Zugang zu den Daten zu erhalten.",
-        "description": "list item"
-    },
-    "your-right-item-2": {
-        "message": "Fehlerhafte personenbezogene Daten zu berichtigen und Einschränkungen bei den Angaben vorzunehmen.",
-        "description": "list item"
-    },
-    "your-right-item-3": {
-        "message": "Alle deine personenbezogenen Daten in einem strukturierten, allgemein gebräuchlichen und maschinenlesbaren Format zu erhalten sowie die Übertragung dieser Daten an einen anderen Verantwortlichen zu verlangen.",
-        "description": "list item"
-    },
-    "your-right-item-4": {
-        "message": "Die Löschung deiner Daten zu verlangen, außer diese Daten müssen aus rechtlichen Gründen aufbewahrt werden.",
-        "description": "list item"
-    },
-    "your-right-item-5": {
-        "message": "Der Verarbeitung deiner Daten zu widersprechen.",
-        "description": "list item"
-    },
-    "your-right-item-6": {
-        "message": "Deine Einwilligung jederzeit zu widerrufen, wenn du uns deine Einwilligung zur Verarbeitung deiner personenbezogenen Daten erteilt hast.",
-        "description": "list item"
-    },
-    "your-right-item-7": {
-        "message": "Eine Beschwerde bei der jeweiligen Aufsichtsbehörde einzulegen.",
-        "description": "list item"
-    },
-    "questions-heading": {
-        "message": "Fragen?",
-        "description": "heading"
-    },
-    "questions-paragraph": {
-        "message": "Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a>E-Mail<\/a> oder <a>Telefon<\/a>."
-    },
-    "privacy-policy-long-heading": {
-        "message": "Datenschutzerklärung (ausführliche Fassung)",
-        "description": "heading"
-    },
-    "general-info-heading": {
-        "message": "Allgemeine Informationen zum Datenschutz",
-        "description": "heading"
-    },
-    "general-info-paragraph": {
-        "message": "Die folgenden Informationen gelten für die Erhebung, Verarbeitung und Nutzung personenbezogener Daten im Zusammenhang mit unseren Dienstleistungen, wie beispielsweise der Adblock Plus-Browsererweiterung, dem Adblock Browser und auf unseren Webseiten."
-    },
-    "general-notes-item-1": {
-        "message": "Allgemeine Hinweise",
-        "description": "list item & link"
-    },
-    "general-notes-item-2": {
-        "message": "Wer ist für die Datenverarbeitung verantwortlich?",
-        "description": "list item & link"
-    },
-    "general-notes-item-3": {
-        "message": "Was sind personenbezogene Daten?",
-        "description": "list item & link"
-    },
-    "general-notes-item-4": {
-        "message": "Welchem Zweck dient die Datenverarbeitung und auf welcher rechtlichen Grundlage erfolgt sie?",
-        "description": "list item & link"
-    },
-    "general-notes-item-5": {
-        "message": "Geben wir personenbezogene Daten weiter?",
-        "description": "list item & link"
-    },
-    "general-notes-item-6": {
-        "message": "Welche Rechte hast du?",
-        "description": "list item & link"
-    },
-    "general-notes-item-7": {
-        "message": "Löschung deiner Daten",
-        "description": "list item & link"
-    },
-    "general-notes-item-8": {
-        "message": "Änderungen dieser Datenschutzerklärung",
-        "description": "list item & link"
-    },
-    "general-notes-item-9": {
-        "message": "Erhebung und Verarbeitung in unseren Produkten",
-        "description": "list item & link"
-    },
-    "general-notes-heading": {
-        "message": "Allgemeine Hinweise",
-        "description": "heading"
-    },
-    "general-notes-paragraph": {
-        "message": "Dein Schutz und die Vertraulichkeit deiner Daten sind das Wichtigste für uns („eyeo“, „wir“, „uns“, „unser“). Wir nehmen den Schutz deiner personenbezogenen Daten sehr ernst und erheben so wenige Daten wie möglich. Die Erhebung von Daten hilft uns jedoch dabei, dass unsere Produkte und Webseiten besser funktionieren und ermöglicht uns, mit dir zu kommunizieren. Unser allgemeiner Grundsatz ist es, nicht mehr Daten als nötig zu erheben. Erhobene Daten werden - sofern möglich - anonymisiert und gelöscht, wenn sie nicht mehr benötigt werden. Diese Datenschutzerklärung dient dazu, dich über die Erhebung, Verarbeitung und Verwendung deiner personenbezogenen Daten zu informieren. Wir erheben und verwenden personenbezogene Daten unter strikter Beachtung der Bestimmungen der Europäischen Datenschutz-Grundverordnung (EU-Vorschrift 2016\/679, „DSGVO“), den anwendbaren EU-Gesetzen und nationalen deutschen Datenschutzgesetzen. Im nachfolgenden Text informieren wir dich über die konkreten Daten, den Umfang und den Zweck der Erhebung sowie über die Verwendung von personenbezogenen Daten durch eyeo bei Nutzung unserer Produkte und Besuch unserer Webseiten.",
-        "description": "{1}: eyeo"
-    },
-    "who-is-responsible-heading": {
-        "message": "Wer ist für die Datenerhebung und -verarbeitung verantwortlich (Kontakte)?",
-        "description": "heading"
-    },
-    "who-is-responsible-paragraph-1": {
-        "message": "Verantwortliche Stelle für die Erhebung, Verarbeitung und\/oder Verwendung von personenbezogenen Daten in Verbindung mit unseren Webseiten und Produkten („Verantwortlicher“) ist:"
-    },
-    "controller-heading": {
-        "message": "Verantwortlicher",
-        "description": "heading"
-    },
-    "dpo-heading": {
-        "message": "Datenschutzbeauftragte",
-        "description": "heading"
-    },
-    "who-is-responsible-paragraph-2": {
-        "message": "Bei Fragen zu deinen personenbezogenen Daten, zögere nicht, unsere Datenschutzbeauftragte zu kontaktieren."
-    },
-    "phone-label": {
-        "message": "Telefon",
-        "description": "phone number label"
-    },
-    "email-label": {
-        "message": "E-Mail",
-        "description": "email address label"
-    },
-    "fax-label": {
-        "message": "Fax",
-        "description": "fax number label"
-    },
-    "what-is-personal-heading": {
-        "message": "Was sind personenbezogene Daten?",
-        "description": "heading"
-    },
-    "what-is-personal-paragraph-1": {
-        "message": "Der Zweck des Datenschutzes ist der Schutz von personenbezogenen Daten. Personenbezogene Daten sind Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person („betroffene Person“) beziehen. Eine identifizierbare natürliche Person kann direkt oder indirekt identifiziert werden, insbesondere durch Verweis auf einen Identifikator wie einen Namen, eine Identifikationsnummer, Standortdaten, eine Online-Kennung bzw. eine oder mehrere Aspekte der physikalischen, physiologischen, mentalen, ökonomischen, kulturellen oder sozialen Identität dieser natürlichen Person."
-    },
-    "what-is-personal-paragraph-2": {
-        "message": "Zu diesen Informationen gehören beispielsweise Details wie Name und E-Mail-Adresse, jedoch auch Spitznamen und Informationen in deinen Forumsbeiträgen."
-    },
-    "what-is-purpose-heading": {
-        "message": "Welchem Zweck dient die Datenverarbeitung und auf welcher rechtlichen Grundlage erfolgt sie?",
-        "description": "heading"
-    },
-    "purpose-heading": {
-        "message": "Zweck der Datenerhebung und -verarbeitung",
-        "description": "heading"
-    },
-    "purpose-paragraph-1": {
-        "message": "Gemäß Art. 5 (b) DSGVO erheben und verarbeiten wir deine personenbezogenen Daten für festgelegte, eindeutige und legitime Zwecke und verarbeiten deine Daten nicht in einer Weise weiter, die nicht mit diesen Zwecken vereinbar ist."
-    },
-    "purpose-paragraph-2": {
-        "message": "Wir erheben und verarbeiten deine personenbezogenen Daten ausschließlich zu den folgenden Zwecken:"
-    },
-    "purpose-item-1": {
-        "message": "Wir erheben und verarbeiten deine personenbezogenen Daten, wie z. B. Webseitenprotokolle und Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates (diese Daten werden von Google erhoben und verarbeitet, siehe <a>Google-Datenschutzerklärung<\/a>), Notfallbenachrichtigungen und Absturz- und Fehlermeldungs-Daten, die du uns übermittelst, für technische Zwecke. Wir erheben und verarbeiten diese Daten hauptsächlich, um Sicherheitsangriffe zu verhindern und dir dadurch unsere Dienstleistungen auf sichere und dateneffiziente Art zur Verfügung zu stellen."
-    },
-    "purpose-item-2": {
-        "message": "Wir erheben und verarbeiten deine personenbezogenen Daten im Zusammenhang mit Abonnement-Downloads, Erweiterungsupdates, Notfalldownloads und Absturz- und Fehlermeldungs-Daten, die du uns zugeschickt hast, um unsere Produkte zu verbessern und auszuwerten."
-    },
-    "purpose-item-3": {
-        "message": "Wir verschicken Notfallbenachrichtigungen, um dich über dringende Probleme im Zusammenhang mit unseren Produkten zu informieren."
-    },
-    "purpose-item-4": {
-        "message": "Wir erheben und verarbeiten die Daten, die du uns in unserem Blog und Forum zu Verfügung gestellt hast, um mit dir zu kommunizieren und\/oder dir Hilfestellung zu leisten."
-    },
-    "legal-basis-heading": {
-        "message": "Rechtliche Grundlage für die Datenerhebung und -verarbeitung",
-        "description": "heading"
-    },
-    "legal-basis-paragraph": {
-        "message": "Wir erheben und verarbeiten deine personenbezogenen Daten in Übereinstimmung mit der DSGVO und den anwendbaren EU-Gesetzen sowie den nationalen deutschen Datenschutzgesetzen."
-    },
-    "consent-permission-heading": {
-        "message": "Die Erhebung und Verarbeitung erfolgt auf Grundlage deiner Einwilligung - Art. 6 (1) der DSGVO, Art. 4 (11) DSGVO",
-        "description": "heading"
-    },
-    "consent-permission-paragraph": {
-        "message": "Wir werden dich stets um deine Einwilligung zur Erhebung und Verarbeitung deiner personenbezogenen Daten für die vorgenannten Zwecke bitten, es sei denn, die Erhebung und Verarbeitung deiner personenbezogenen Daten ist gesetzlich zulässig. Wenn du uns deine Einwilligung zur Erhebung und Verarbeitung deiner personenbezogenen Daten für die vorgenannten Zwecke erteilt hast, hast du jederzeit das Recht, deine Einwilligung zu widerrufen."
-    },
-    "contract-permission-heading": {
-        "message": "Die Erhebung und Verarbeitung ist zum Abschluss eines Vertrages notwendig - Art. 6 (1) b DSGVO",
-        "description": "heading"
-    },
-    "contract-permission-paragraph": {
-        "message": "Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann für die Erfüllung eines Vertrages, an dem du beteiligt bist, notwendig sein. Bereits vor Abschluss eines solchen Vertrages kann die Erhebung und Verarbeitung deiner personenbezogenen Daten erforderlich sein, um auf deinen Wunsch hin tätig zu werden. Dies gilt für die Installation (d. h. für vom Browser und\/oder vom App Store gesammelte Daten) und die Nutzung unserer Produkte."
-    },
-    "compliance-permission-heading": {
-        "message": "Die Erhebung und Verarbeitung ist zur Einhaltung gesetzlicher Pflichten denen der Verantwortliche unterliegt, erforderlich – Art. 6 (1) c DSGVO",
-        "description": "heading"
-    },
-    "compliance-permission-paragraph": {
-        "message": "Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erforderlich sein, um einer rechtlichen Verpflichtung nachzukommen, der wir nach EU-Recht oder dem Recht eines EU-Mitgliedsstaates unterliegen."
-    },
-    "legitimate-interest-permission-heading": {
-        "message": "Wir haben ein berechtigtes Interesse an der Erhebung und Verarbeitung- Art. 6 (1) f DSGVO",
-        "description": "heading"
-    },
-    "legitimate-interest-permission-paragraph": {
-        "message": "Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erfolgen, weil wir ein berechtigtes Interesse daran haben. Wir erheben und verarbeiten Webseitenprotokolle aus technischen Gründen, wie z. B. zur Verhinderung von Denial-of-Service-Angriffen. Denial-of-Service-Angriffe erfolgen in der Regel dadurch, dass das betreffende Gerät oder die betreffende Ressource mit überflüssigen Anfragen überschwemmt wird, um Systeme zu überlasten und zu verhindern, dass einige oder alle legitimen Anfragen erfüllt werden. Es liegt in deinem und unseren vitalen Interesse, solche Überlastungen unserer Systeme und Sicherheitsprobleme durch Denial-of-Service-Angriffe zu verhindern, und deshalb verwenden wir die Webseitenprotokolle. Wir verwenden die über Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen und Feedback-Daten erhobenen und verarbeiteten Informationen aus technischen Gründen, z. B. um die Sicherheit der von dir verwendeten Erweiterungsversion gewährleisten zu können. Es liegt in deinem und unserem vitalen Interesse, die Sicherheit unserer Erweiterung zu gewährleisten und daher verwenden wir diese Daten. Darüber hinaus erheben und verarbeiten wir solche Daten, um unsere Webseite und deren Erweiterung ständig zu verbessern und an die sich ändernden Anforderungen für eine effiziente Nutzbarkeit und das technische Umfeld anzupassen. Die Nutzbarkeit unserer Webseiten und unserer Produkte sicherzustellen, liegt in deinem und unserem vitalen Interesse und daher verwenden wir diese Daten."
-    },
-    "disclosure-heading": {
-        "message": "Geben wir personenbezogene Daten weiter?",
-        "description": "heading"
-    },
-    "disclsoure-paragraph-1": {
-        "message": "Ohne dich vorher gesondert zu informieren, dürfen wir deine personenbezogenen Daten nur in folgenden Ausnahmefällen an Dritte weitergeben:"
-    },
-    "disclosure-item-1": {
-        "message": "Soweit dies für Gerichtsverfahren\/Ermittlungen erforderlich ist, werden personenbezogene Daten an die Strafverfolgungsbehörden und gegebenenfalls an geschädigte Dritte weitergegeben. Dies tun wir nur, wenn konkrete Anhaltspunkte für illegales und\/oder missbräuchliches Verhalten vorliegen. Wir sind auch gesetzlich verpflichtet, bestimmten Behörden Informationen zukommen zu lassen. Dies sind Strafverfolgungsbehörden, Behörden, die Ordnungswidrigkeiten mit Bußgeldern verfolgen sowie die deutschen Finanzbehörden.",
-        "description": "list item"
-    },
-    "disclosure-item-2": {
-        "message": "Im Zuge der Weiterentwicklung unseres Geschäfts kann es vorkommen, dass sich die Struktur der eyeo GmbH ändert. Die rechtliche Struktur kann geändert, Tochtergesellschaften, Geschäftseinheiten oder Bestandteile können gegründet, gekauft oder verkauft werden. Bei solchen Transaktionen können die Informationen der Nutzer mit dem übertragenen Teil des Unternehmens weitergegeben werden. Die eyeo GmbH wird im Falle einer Übertragung personenbezogener Daten sicherstellen, dass diese in Übereinstimmung mit dieser Datenschutzerklärung und der DSGVO sowie den anwendbaren EU-Gesetzen und deutschen Datenschutzgesetzen erfolgt.",
-        "description": "list item"
-    },
-    "disclosure-paragraph-2": {
-        "message": "Wir übermitteln deine personenbezogenen Daten nicht routinemäßig an Dritte, ohne dich vorher darüber zu informieren. Wir werden dich vorab um deine Einwilligung bitten, es sei denn, die Übermittlung dieser Daten ist durch die DSGVO oder andere anwendbare EU-Gesetze und nationale deutsche Datenschutzgesetze gestattet."
-    },
-    "your-rights-long-heading": {
-        "message": "Welche Rechte hast du?",
-        "description": "heading"
-    },
-    "your-rights-long-paragraph": {
-        "message": "In Übereinstimmung mit der DSGVO, den anwendbaren EU-Gesetzen und den nationalen deutschen Datenschutzgesetzen hast du im gesetzlich zulässigen Umfang, folgende Rechte zum Schutz deiner von uns erhobenen und verarbeiteten personenbezogenen Daten:"
-    },
-    "information-acces-rights-heading": {
-        "message": "Recht auf Informationen, Zugang, Korrektur und Einschränkung",
-        "description": "heading"
-    },
-    "information-acces-rights-paragraph": {
-        "message": "Natürlich hast du das Recht, auf Anfrage Informationen über die bei uns über dich gespeicherten personenbezogenen Daten zu erhalten, ebenso wie Informationen darüber, wie wir deine personenbezogenen Daten erheben, verarbeiten und speichern. Wo dies der Fall ist, bist du berechtigt, Zugang zu den von uns gespeicherten personenbezogenen Daten zu erhalten. Du bist berechtigt, von uns die Korrektur unrichtiger personenbezogener Daten zu verlangen. Unter Berücksichtigung der Zwecke, für die wir deine personenbezogenen Daten erheben und verarbeiten, hast du das Recht zu verlangen, dass unvollständige Daten vervollständigt werden. Du hast weiter das Recht, die Einschränkung der Verarbeitung zu verlangen."
-    },
-    "data-portability-right-heading": {
-        "message": "Recht auf Übertragbarkeit der Daten",
-        "description": "heading"
-    },
-    "data-portability-right-paragraph": {
-        "message": "Du hast auch das Recht, (1) alle dich betreffenden personenbezogenen Daten, die du uns zur Verfügung gestellt hast, in einem strukturierten, allgemein gebräuchlichen und maschinenlesbaren Format zu erhalten und (2) diese Daten an einen anderen Verantwortlichen zu übertragen."
-    },
-    "erasure-of-data-heading": {
-        "message": "Recht auf Löschung deiner Daten",
-        "description": "heading"
-    },
-    "erasure-of-data-paragraph-1": {
-        "message": "Du hast das Recht, von uns die Löschung deiner personenbezogenen Daten zu verlangen, wenn u. a. einer der nachfolgenden Gründe zutrifft:"
-    },
-    "erasure-of-data-item-1": {
-        "message": "Wenn wir deine personenbezogenen Daten nicht länger für die vorstehend genannten Zwecke benötigen.",
-        "description": "list item"
-    },
-    "erasure-of-data-item-2": {
-        "message": "Wenn du deine der Erhebung und Verarbeitung zugrunde liegende Einwilligung widerrufst und wenn keine anderen Rechtsgrundlagen für die Erhebung und Verarbeitung vorliegen.",
-        "description": "list item"
-    },
-    "erasure-of-data-item-3": {
-        "message": "Wenn du der Erhebung und Verarbeitung widersprichst und keine übergeordneten legitimen Gründe für die Erhebung und Verarbeitung vorliegen.",
-        "description": "list item"
-    },
-    "erasure-of-data-paragraph-2": {
-        "message": "Bitte berücksichtige, wenn Daten aus rechtlichen Gründen gemäß Art. 17 (3) DSGVO weiter gespeichert werden müssen, werden wir die Nutzung der jeweiligen Daten einschränken."
-    },
-    "lodge-a-complaint-heading": {
-        "message": "Recht, eine Beschwerde bei einer Aufsichtsbehörde einzulegen",
-        "description": "heading"
-    },
-    "lodge-a-complaint-paragraph": {
-        "message": "Du hast das Recht, eine Beschwerde bei einer Aufsichtsbehörde einzulegen, insbesondere in dem Mitgliedsstaat, in dem du deinen gewöhnlichen Aufenthaltsort oder deinen Arbeitsplatz hast oder in dem sich der Ort des behaupteten Verstoßes befindet, wenn du der Ansicht bist, dass die Erhebung und Verarbeitung personenbezogener Daten, die dich betreffen, ein Verstoß gegen die DSGVO darstellen."
-    },
-    "right-to-object-heading": {
-        "message": "Recht, der Verarbeitung deiner Daten zu widersprechen",
-        "description": "heading"
-    },
-    "right-to-object-paragraph": {
-        "message": "Du hast jederzeit das Recht, der Erhebung und Verarbeitung deiner personenbezogenen Daten aus Gründen, die mit deiner persönlichen Situation zusammenhängen, zu widersprechen, wenn die Erhebung und Verarbeitung auf Basis unseres berechtigten Interesses erfolgt (Art. 6 (1) f DSGVO)."
-    },
-    "withdraw-consent-heading": {
-        "message": "Recht, die Einwilligung jederzeit zu widerrufen",
-        "description": "heading"
-    },
-    "withdraw-consent-paragraph": {
-        "message": "Du hast das Recht, deine Einwilligung jederzeit zu widerrufen, wenn du uns deine Einwilligung zur Erhebung und Verarbeitung deiner personenbezogenen Daten für einen oder mehrere spezifische Zwecke erteilt hast."
-    },
-    "how-to-exercise-heading": {
-        "message": "So kannst du deine Rechte wahrnehmen",
-        "description": "heading"
-    },
-    "how-to-exercise-paragraph": {
-        "message": "Um deine Rechte wahrzunehmen, kontaktiere uns bitte per <a>E-Mail<\/a> oder Post unter:"
-    },
-    "changes-to-policy-heading": {
-        "message": "Änderungen dieser Datenschutzerklärung",
-        "description": "heading"
-    },
-    "changes-to-policy-paragraph": {
-        "message": "Diese Datenschutzerklärung kann von Zeit zu Zeit geändert werden. Die jeweils aktuelle Version findest du unter: <a>https:\/\/adblockplus.org\/privacy<\/a>",
-        "description": "{1}: https:\/\/adblockplus.org\/privacy"
-    },
-    "collection-and-processing-heading": {
-        "message": "Erhebung und Verarbeitung in unseren Produkten",
-        "description": "heading"
-    },
-    "adblock-plus-heading": {
-        "message": "Adblock Plus-Erweiterungen",
-        "description": "heading"
-    },
-    "adblock-plus-paragraph": {
-        "message": "Wenn du die Adblock Plus-Browsererweiterung verwendest, erheben und verarbeiten wir die folgenden Daten:"
-    },
-    "update-checks-heading": {
-        "message": "Prüfungen auf Erweiterungsaktualisierungen",
-        "description": "heading"
-    },
-    "update-checks-paragraph": {
-        "message": "Dein Browser prüft regelmäßig nach Aktualisierungen der Erweiterungen einschließlich Adblock Plus. Während einer Prüfung auf Aktualisierungen werden einige allgemeine Informationen (Browser-Version, Erweiterungsversion, Betriebssystem, Datum der letzten Aktualisierung und deine IP-Adresse) übertragen. Aktualisierungen für Adblock Plus für Android und Internet Explorer werden durch die Adblock Plus-Webseite verarbeitet, und die übertragenen Daten unterliegen der <a>Adblock Plus-Datenschutzerklärung<\/a>. Aktualisierungen von Adblock Plus für Firefox werden durch die Mozilla-Webseite verarbeitet und unterliegen der <a>Mozilla-Datenschutzerklärung<\/a>. Aktualisierungen von Adblock Plus für Chrome werden durch die Google Web Store-Webseite verarbeitet und unterliegen der <a>Google-Datenschutzerklärung<\/a>. Aktualisierungen von Adblock Plus für Opera werden durch die Opera Add-ons-Webseite verarbeitet und unterliegen der <a>Opera-Datenschutzerklärung<\/a>. Aktualisierungen von Adblock Plus für Safari werden durch die Safari Erweiterungswebseite verarbeitet und unterliegen der <a>Apple-Datenschutzerklärung<\/a>."
-    },
-    "subscription-downloads-heading": {
-        "message": "Abonnement-Downloads",
-        "description": "heading"
-    },
-    "subscription-downloads-paragraph-1": {
-        "message": "Wenn du deiner Adblock Plus-Installation Filterabonnements hinzufügst, wird das Abonnement angewiesen, regelmäßig Aktualisierungen abzurufen. Jede Aktualisierung führt dazu, dass die Anbieter-Webseite deine IP-Adresse und einige allgemeine Informationen wie deine Adblock Plus-Version, deinen Browser und deine Browser-Version empfängt."
-    },
-    "subscription-downloads-paragraph-2": {
-        "message": "Des Weiteren gilt, dass wenn ein Abonnement-Download mehrmals hintereinander fehlschlägt, die aktualisierte Adresse der Filterliste von der AdblockPlus.org-Domain angefordert wird. Die übertragenen Daten beinhalten die Adblock Plus-Version, die Abonnementadresse und Informationen über den aufgetretenen Fehler. Diese Daten werden zur Identifizierung von Problemen verwendet, die nicht von Abonnementhaltern gemeldet wurden. Sie unterliegen dieser <a>Datenschutzerklärung<\/a>."
-    },
-    "issue-reporter-heading": {
-        "message": "Issue Reporter (Problemberichte)",
-        "description": "heading"
-    },
-    "issue-reporter-paragraph-1": {
-        "message": "Adblock Plus für Firefox ermöglicht es dir, Problemberichte zu senden, die kurzzeitig auf der AdblockPlus.org-Webseite gespeichert werden. Diese Berichte enthalten erforderliche Informationen für die Untersuchung des Problems, einschließlich der Adblock Plus-Version, Browser-Version, Adresse der Webseite, auf der das Problem aufgetreten ist, blockierbare Elemente auf der Webseite, übereinstimmende Filter und aktive Abonnements, Art des Problemberichts (d. h. falsche Positiv- oder falsche Negativmeldungen) und ein Screenshot des Problems (es ist möglich, vor Senden des Berichts besonders sensible Bereiche von der Seite zu entfernen). Parameterwerte werden aus allen übertragenen Adressen entfernt, um eine versehentliche Weitergabe von privaten Informationen zu vermeiden."
-    },
-    "issue-reporter-items-intro": {
-        "message": "Du kannst freiwillig:"
-    },
-    "issue-reporter-item-1": {
-        "message": "deine E-Mail-Adresse an uns bereitstellen, sodass wir weitere Informationen bei dir anfragen oder dich über das Problem auf dem Laufenden halten können.",
-        "description": "list item"
-    },
-    "issue-reporter-item-2": {
-        "message": "einen optionalen Kommentar über das Problem beifügen.",
-        "description": "list item"
-    },
-    "access-reports-heading": {
-        "message": "Zugriff auf die Berichte",
-        "description": "heading"
-    },
-    "access-reports-paragraph": {
-        "message": "Auf die verarbeiteten Berichte kann nur durch eine natürliche Person, die die eindeutige ID kennt, zugegriffen werden. Diese IDs werden nur wie folgt weitergegeben:"
-    },
-    "access-reports-1": {
-        "message": "An die Betreiber der in dem Bericht aufgeführten Filterabonnements, wie EasyList-Autoren, die nicht bei eyeo angestellt sind.",
-        "description": "list item"
-    },
-    "access-reports-2": {
-        "message": "Bestimmte Mitglieder des Filterlistenteams von eyeo. eyeo verwendet die Berichte ausschließlich zu Zwecken der Problembehebung und Kontrolle.",
-        "description": "list item"
-    },
-    "emergency-notification-heading": {
-        "message": "Notfallbenachrichtigung",
-        "description": "heading"
-    },
-    "emergency-notification-paragraph": {
-        "message": "Adblock Plus enthält einen Mechanismus für Notfallbenachrichtigungen, mit dem Nutzer über wichtige Probleme in Bezug auf ihre Adblock Plus-Installation informiert werden können. Diese Funktion erfordert, dass alle Adblock Plus-Installationen regelmäßig eine Adresse in der AdblockPlus.org-Domain abfragen, um die Liste der aktiven Benachrichtigungen abzurufen. Diese Abfrage macht deine IP-Adresse für die Webseite sichtbar und verschickt ebenfalls allgemeine Informationen wie deine Adblock Plus-Version, die Bezeichnung deines Browsers inklusive der Browser-Version sowie die Anzahl der vorherigen Downloads von Adblock Plus, wobei nach dem 4. Download keine weitere Zählung erfolgt und lediglich “4+” angezeigt wird. Mithilfe dieser Daten können verschiedene Benachrichtigungen an verschiedene Kunden erstellt werden und sie unterliegen dieser <a>Datenschutzerklärung<\/a>."
-    },
-    "further-requests-heading": {
-        "message": "Weitere Anfragen",
-        "description": "heading"
-    },
-    "further-requests-paragraph": {
-        "message": "Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispiele dafür sind das Klicken auf einen Dokumentationslink oder der Download der vollständigen Liste der Filterabonnements. Solche Anfragen unterliegen dieser <a>Datenschutzerklärung<\/a>."
-    },
-    "data-retention-heading": {
-        "message": "Datenaufbewahrung",
-        "description": "heading"
-    },
-    "data-retention-paragraph-1": {
-        "message": "Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen, Fehlermeldungsdaten (sowie die vollständigen Berichte und die damit verbundenen Daten) werden automatisch nach 30 Tagen gelöscht. Nur ein Teil der Daten wird länger aufbewahrt. Dies beinhaltet nur den Ländercode von Nutzern, die ein Problem gemeldet haben (wird aus der IP-Adresse extrahiert), zu Analysezwecken. Dieser wird getrennt von den vollständigen Berichten gespeichert und kann nach der Löschung der vollständigen Berichte nicht mit einer einzelnen Person verknüpft werden."
-    },
-    "data-retention-paragraph-2": {
-        "message": "Adblock Plus speichert einige Daten im <a>Firefox-Profil<\/a> auf deinem Computer. Adblock Plus überträgt diese Daten niemals an andere Server, jedoch können andere Erweiterungen und Dienste wie <a>Firefox Sync<\/a>, dies tun. Der Großteil der Daten (deine Einstellungen, Filterabonnements und benutzerdefinierte Filter) sind datenschutzrechtlich unproblematisch. Jedoch könnten Filtertrefferstatistiken und aktuelle Problemberichte verwendet werden, um deinen Browserverlauf zu rekonstruieren. Adblock Plus behandelt diese Informationen genauso, wie Verlaufsdaten vom Browser behandelt werden. Diese Daten werden nicht gespeichert, wenn du den <a>privaten Browsing-Modus<\/a> verwendest und werden entfernt, wenn du deinen Browserverlauf löschst."
-    },
-    "adblock-browser-android-heading": {
-        "message": "Adblock Browser für Android",
-        "description": "heading"
-    },
-    "adblock-browser-android-paragraph-1": {
-        "message": "Adblock Browser für Android basiert auf dem Firefox-Browser von Mozilla. Manche Datenerhebungen und -verarbeitungen in Verbindung mit Adblock Browser für Android unterliegen der <a>Mozilla-Datenschutzerklärung<\/a>. Beachte bitte, dass Adblock Browser sich automatisch mit Mozilla und seinen Dienstanbietern verbindet, um Sicherheit, Daten und andere Funktionen (<a>Firefox-Datenschutzerklärung<\/a>) bereitzustellen. Und wenn du es anfragst, verbindet sich Adblock Browser ebenfalls mit Mozilla, um dir Funktionen wie Standortdienste (<a>Firefox-Datenschutzerklärung<\/a>) bereitzustellen."
-    },
-    "adblock-browser-android-paragraph-2": {
-        "message": "Abweichend von der Beschreibung in der <a>Firefox-Datenschutzerklärung<\/a> werden Firefox-Aktualisierungen unter der Kontrolle von eyeo bereitgestellt. Einige Funktionen, wie der Firefox-Statusbericht, Absturzberichte und Add-ons sind deaktiviert."
-    },
-    "adblock-browser-ios-heading": {
-        "message": "Adblock Browser für iOS",
-        "description": "heading"
-    },
-    "crash-error-reporter-heading": {
-        "message": "Absturz- und Fehlermeldung",
-        "description": "heading"
-    },
-    "crash-error-reporter-paragraph": {
-        "message": "Bei einem unerwarteten Absturz oder Fehler sammelt Adblock Browser für iOS alle für eine Analyse relevanten Daten, um die Ursache der Störung zu ermitteln, und überträgt sie an das <a>HockeyApp-Konto<\/a> von eyeo. Die Daten dienen ausschließlich der individuellen Fehlerbehebung (sowie der Identifizierung von allgemeinen Defekten, die zu unerwarteten Abstürzen oder Fehlern führen) und werden niemals mit Dritten, sondern nur mit HockeyApp geteilt."
-    },
-    "crash-data-sent-heading": {
-        "message": "Während eines Absturzes werden folgende Daten gesendet:",
-        "description": "heading"
-    },
-    "crash-data-sent-item-1": {
-        "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS",
-        "description": "list item"
-    },
-    "crash-data-sent-item-2": {
-        "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems",
-        "description": "list item"
-    },
-    "crash-data-sent-item-3": {
-        "message": "Zeitstempel vom Zeitpunkt des Absturzes",
-        "description": "list item"
-    },
-    "crash-data-sent-item-4": {
-        "message": "Eine generierte UUID zur Verhinderung von doppelten Absturzberichten",
-        "description": "list item"
-    },
-    "crash-data-sent-item-5": {
-        "message": "Wenn eine Ausnahme ausgelöst wurde, der Klartext-Klassenname und der Wert der Meldung der Ausnahme",
-        "description": "list item"
-    },
-    "crash-data-sent-item-6": {
-        "message": "Low-Level-Absturzdaten wie Befehlszeiger, Methoden- oder Funktionsnamen, Signaldaten, Zeigerregister und Informationen über die geladenen Binärdateiabbilder",
-        "description": "list item"
-    },
-    "error-data-sent-heading": {
-        "message": "Während eines Fehlers werden folgende Daten gesendet:",
-        "description": "heading"
-    },
-    "error-data-sent-item-1": {
-        "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS",
-        "description": "list item"
-    },
-    "error-data-sent-item-2": {
-        "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems",
-        "description": "list item"
-    },
-    "error-data-sent-item-3": {
-        "message": "Zeitstempel vom Zeitpunkt des Fehlers",
-        "description": "list item"
-    },
-    "error-data-sent-item-4": {
-        "message": "Eine generierte UUID zur Trennung von Fehlerberichten",
-        "description": "list item"
-    },
-    "error-data-sent-item-5": {
-        "message": "Eine Zeichenfolge\/ein Funktionsname, die\/der den Fehler identifiziert",
-        "description": "list item"
-    },
-    "error-data-sent-paragraph-1": {
-        "message": "Diese Daten werden nur erfasst, wenn die Anwendung abstürzt oder einen Fehler generiert. Des Weiteren bittet Adblock Browser für iOS explizit um die Erlaubnis, die erhobenen Informationen nach einem Absturz oder Fehler zu senden."
-    },
-    "error-data-sent-paragraph-2": {
-        "message": "Weitere Informationen zur Datenschutzerklärung von HockeyApp findest du in den <a>Service-Bedingungen<\/a> sowie der <a>Absturzberichtsdokumentation<\/a> und <a>Ereignisberichtsdokumentation<\/a>."
-    },
-    "retention-crash-reports-heading": {
-        "message": "Datenaufbewahrung:",
-        "description": "heading"
-    },
-    "retention-crash-reports-paragraph": {
-        "message": "Alle auf unseren Servern gespeicherten Berichte werden nach 30 Tagen gelöscht."
-    },
-    "collection-processing-websites-heading": {
-        "message": "Erhebung und Verarbeitung auf unseren Webseiten",
-        "description": "heading"
-    },
-    "collection-processing-websites-paragraph": {
-        "message": "Bei der Nutzung unserer Webseiten, wie z. B. AdblockPlus.org und AdblockBrowser.org („Webseiten“) erheben wir, um dir unsere Dienste bereitzustellen sowie aus Sicherheitsgründen, automatisch die folgenden Daten:"
-    },
-    "auto-collected-info-heading": {
-        "message": "Automatisch erhobene Daten",
-        "description": "heading"
-    },
-    "website-logs-heading": {
-        "message": "Webseiten-Protokolle",
-        "description": "heading"
-    },
-    "website-logs-paragraph": {
-        "message": "Alle Anfragen an unsere Webseiten werden in Webseiten-Protokollen erfasst. Zu den gespeicherten Daten gehören IP-Adresse (nur zum Zweck der IT-Sicherheit und nur durch das IT-Sicherheitsteam von eyeo einsehbar), die Uhrzeit der Anfragestellung, die aufgerufene Internetadresse, die Browser-Kennung und die verweisende Seite. Diese Daten (die IP-Adresse nur in aggregierter Form durch Hashing mithilfe eines sich täglich ändernden Zufallswerts) werden verwendet, um Nutzungsstatistiken zu erstellen und potenzielle Sicherheitsprobleme sowie Spam im Forum und Blog zu untersuchen. Detaillierte Protokolle werden für einen Zeitraum von 30 Tagen aufbewahrt. Anschließend verbleiben nur die aggregierten Nutzungsstatistiken, die mit keinem Nutzer in Verbindung gebracht werden können. Alles andere wird gelöscht."
-    },
-    "retention-website-requests-heading": {
-        "message": "Datenaufbewahrung",
-        "description": "heading"
-    },
-    "stored-website-requests-paragraph": {
-        "message": "Die Anfrage an unsere Webseiten wird, einschließlich deiner IP-Adresse, gespeichert, wenn du einen Beitrag in das Forum stellst, eine Nachricht über das Kontaktformular abschickst oder einen Blog-Kommentar hinzufügst. Dadurch können unsere Administratoren effektiv gegen Spam-Inhalte und Sicherheitsverstöße vorgehen. Alle gespeicherten Anfragen werden nach 30 Tagen gelöscht."
-    },
-    "cookies-heading": {
-        "message": "Cookies",
-        "description": "heading"
-    },
-    "cookies-paragraph": {
-        "message": "Mehrere Bereiche unserer Webseiten verwenden Cookies, um angemeldete Nutzer zu erkennen oder Einstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Cookies werden nicht anderweitig genutzt und insbesondere nicht dazu Webseiten-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass als Folge die Effizienz und der Umfang der Dienste von eyeo eingeschränkt sein könnten."
-    },
-    "google-analytics-heading": {
-        "message": "Google Analytics",
-        "description": "heading"
-    },
-    "google-analytics-paragraph-1": {
-        "message": "Wir benutzen Google Analytics, einen Webanalysedienst der Google Inc. („Google“) auf unseren Webseiten. Google Analytics verwendet sog. „Cookies“ (Textdateien, die auf deinem Computer gespeichert werden und die uns ermöglichen, deine Nutzung unserer Webseiten zu analysieren). Die durch die Cookies erzeugten Daten (einschließlich deiner verkürzten IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google verwendet diese Daten, um deine Nutzung der Webseiten auszuwerten, um Berichte zu den Webseitenaktivitäten zusammenzustellen und um weitere mit der Nutzung unserer Webseiten verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben ist oder soweit Dritte diese Daten im Auftrag von Google verarbeiten."
-    },
-    "google-analytics-paragraph-2": {
-        "message": "Falls du uns nicht bei der Verbesserung unserer Produkte helfen willst, kannst du Google Analytics deaktivieren."
-    },
-    "adblock-ai-heading": {
-        "message": "Auf adblock.ai",
-        "description": "heading"
-    },
-    "adblock-ai-paragraph-1": {
-        "message": "Auf unserer Webseite adblock.ai erheben wir automatisch folgende Daten:"
-    },
-    "facebook-messenger-integration-heading": {
-        "message": "Facebook Messenger-Integration",
-        "description": "heading"
-    },
-    "facebook-messenger-integration-1": {
-        "message": "Wir haben die Facebook Messenger Funktion von der Facebook, Inc. auf der adblock.ai Webseite eingebunden, um dir zu ermöglichen, Screenshots an unseren Bot („Adblock AI“) über den Messenger außerhalb der Facebook Webseite zu übermitteln. Bitte beachte, dass der Messenger durch Facebook betrieben wird. Wir haben die Funktion ausgeschaltet, die sonst personenbezogene Daten an Facebook übermittelt, sobald du auf unsere Webseite zugreifst. Wenn du jedoch auf den Button („STARTE JETZT“) klickst, um Adblock AI mit deinen Screenshots zu trainieren, aktivierst du den Messenger. Nur in diesem Fall werden einige personenbezogene Daten, inklusive der IP-Adresse, an Facebook übermittelt. Für weitere Informationen, lies bitte die <a>Datenschutzerklärung von Facebook<\/a>. <strong>Wenn du nicht möchtest, dass Daten an Facebook übermittelt werden, klicke bitte nicht auf den Button, um Informationen an Adblock AI durch den Facebook Messenger zu senden.<\/strong>"
-    },
-    "volentary-info-heading": {
-        "message": "Freiwillig zur Verfügung gestellte Daten",
-        "description": "heading"
-    },
-    "voluntary-info-paragraph": {
-        "message": "Das <a>Forum<\/a> und der <a>Blog<\/a> von Adblock Plus sind beide öffentlich für alle Besucher zugänglich. Wenn du einen Beitrag oder Kommentar schreibst, erheben und verarbeiten wir personenbezogene Daten wie folgt:"
-    },
-    "forum-registration-heading": {
-        "message": "Registrierung im Forum",
-        "description": "heading"
-    },
-    "forum-registration-paragraph-1": {
-        "message": "Wir verwenden personenbezogene Daten, die du bei der Registrierung im Forum eingegeben hast, um ein öffentliches Nutzerprofil zu erstellen. Dieses Profil ist für andere Forumsbesucher sichtbar, damit Nutzer die jeweiligen Forumsbeiträge mit einer bestimmten Person in Verbindung bringen können."
-    },
-    "forum-registration-paragraph-2": {
-        "message": "Passwörter und E-Mail-Adressen sind nicht für andere Forumsbesucher sichtbar."
-    },
-    "forum-registration-item-1": {
-        "message": "Passwörter werden einfach verschlüsselt, bevor sie auf dem Server gespeichert werden.",
-        "description": "list item"
-    },
-    "forum-registration-item-2": {
-        "message": "E-Mail-Adressen werden nur im öffentlichen Profil angezeigt, wenn dies ausdrücklich bestätigt wurde. Standardmäßig werden E-Mail-Adressen nur zum Versenden von Benachrichtigungen verwendet, die du abonniert hast.",
-        "description": "list item"
-    },
-    "forum-registration-paragraph-3": {
-        "message": "<strong>Hinweis:<\/strong> Um Artikel im Forum lesen zu können, ist keine Registrierung erforderlich und du kannst dein Konto jederzeit löschen."
-    },
-    "blog-comments-heading": {
-        "message": "Blog-Kommentare",
-        "description": "heading"
-    },
-    "blog-comments-paragraph": {
-        "message": "Wenn du im Adblock Plus <a>Blog<\/a> ein Kommentar einstellst, kannst du optional eine E-Mail-Adresse angeben. Im Gegensatz zu anderen Feldern wird die E-Mail-Adresse niemals anderen Besuchern angezeigt. Sie wird nur verwendet, um den Autor des Kommentars über eventuelle Antworten zu informieren."
-    },
-    "email-collection-heading": {
-        "message": "Erhebung von E-Mail-Adressen",
-        "description": "heading"
-    },
-    "email-collection-paragraph": {
-        "message": "Einige Webseiten von eyeo stellen Produktkampagnen bereit, welche die Erhebung der E-Mail-Adresse erfordern. So kannst du z. B. einen Link per E-Mail anfordern, um den Adblock Browser auf deinem Mobilgerät zu installieren. Wir nutzen keine Drittanbieter, um diese Kampagnen zu verwalten. Stattdessen werden die von dir übertragenen Daten intern verarbeitet (d. h. sie werden in eine E-Mail umgewandelt oder zum Senden der E-Mail verwendet). Wir werden deine E-Mail-Adresse niemals weitergeben oder verkaufen oder irgendwelche anderen erhobenen Daten an Dritte weitergeben."
-    },
-    "retention-communications-heading": {
-        "message": "Erhebung von E-Mail-Adressen",
-        "description": "heading"
-    },
-    "retention-communications-paragraph-1": {
-        "message": "Die von dir im Zusammenhang mit unserem Blog und unserem Forum angegebenen Daten werden für die gleiche Zeit wie der jeweilige Kommentar und\/oder dein Konto gespeichert."
-    },
-    "retention-communications-paragraph-2": {
-        "message": "Im Allgemeinen speichern wir deine E-Mail-Adresse nicht, es sei denn, sie ist speziell für die Durchführung der entsprechenden Kampagne erforderlich (z. B. bei der E-Mail-Anmeldung zum Erhalt von Newslettern oder Benachrichtigungen über Produkteinführungen). In den Fällen, in denen wir deine E-Mail-Adresse erheben, speichern wir sie nur für die Zeit, die zur Durchführung der Kampagne benötigt wird (d. h. bis du über den Start informiert wurdest)."
-    },
-    "publication-date": {
-        "message": "November 2018"
-    },
-    "gdpr-abbr": {
-        "message": "DSGVO",
-        "description": "GDPR abbreviation"
-    },
-    "gdpr-abbr-dfn": {
-        "message": "Datenschutz-Grundverordnung",
-        "description": "General Data Protection Regulation abbreviation definition"
-    },
-    "eu-abbr": {
-        "message": "EU",
-        "description": "EU abbreviation"
-    },
-    "eu-abbr-dfn": {
-        "message": "Europäische Union",
-        "description": "European Union abbreviation definition"
-    },
-    "title": {
-        "message": "Datenschutzerklärung"
-    },
-    "navbar-logo-text": {
-        "message": "Adblock <strong>Plus<\/strong>",
-        "description": "Navbar logo text"
-    }
+  "privacy-notice-short-link": {
+    "message": "Datenschutzhinweis (Kurzfassung)",
+    "description": "link to heading"
+  },
+  "privacy-policy-long-link": {
+    "message": "Datenschutzerklärung (ausführliche Fassung)",
+    "description": "link to heading"
+  },
+  "privacy-policy-short-heading": {
+    "message": "Datenschutzhinweis (Kurzfassung)",
+    "description": "heading"
+  },
+  "privacy-policy-short-paragraph": {
+    "message": "Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die Erhebung, Verarbeitung und Nutzung (nachfolgend gemeinsam „Verarbeitung“ genannt) deiner personenbezogenen Daten geben. Bitte lies unsere vollständige <a>Datenschutzerklärung</a> für weitere Informationen zu unseren Verarbeitungsaktivitäten."
+  },
+  "data-processed-heading": {
+    "message": "Welche Arten personenbezogener Daten verarbeiten wir?",
+    "description": "heading"
+  },
+  "data-processed-item-1": {
+    "message": "Während du unsere Produkte verwendest: Adblock Plus oder Adblock Browser (automatisch, außer für Absturz- und Fehlermeldungen (Issue Reporter))",
+    "description": "list item"
+  },
+  "data-processed-item-2": {
+    "message": "Erweiterungsupdates, Abonnement-Downloads, Notfallbenachrichtungen:",
+    "description": "list item"
+  },
+  "data-processed-item-3": {
+    "message": "Browser-Version",
+    "description": "list item"
+  },
+  "data-processed-item-4": {
+    "message": "Version der Erweiterung",
+    "description": "list item"
+  },
+  "data-processed-item-5": {
+    "message": "Betriebssystem",
+    "description": "list item"
+  },
+  "data-processed-item-6": {
+    "message": "Datum des letzten Updates",
+    "description": "list item"
+  },
+  "data-processed-item-7": {
+    "message": "IP-Adresse",
+    "description": "list item"
+  },
+  "data-processed-item-8": {
+    "message": "Zusätzlich kannst du manuell die folgenden Informationen über eine Webseite mit einem Fehler übermitteln, indem du den Absturz- und Fehlermelder <a>(Issue Reporter)</a> verwendest: URL, blockierbare Elemente, übereinstimmende Filter, aktive Filterlisten (freiwillig)",
+    "description": "list item"
+  },
+  "data-processed-item-9": {
+    "message": "Adblock Browser für Android",
+    "description": "list item"
+  },
+  "data-processed-item-10": {
+    "message": "eyeo erhebt keine Daten. Adblock Browser, der auf Mozilla Firefox basiert, hat Firefox spezifische Funktionalitäten, die jedoch Daten an Mozilla senden können.",
+    "description": "list item"
+  },
+  "data-processed-item-11": {
+    "message": "Adblock Browser für iOS (automatisch):",
+    "description": "list item"
+  },
+  "data-processed-item-12": {
+    "message": "Absturz- und Fehlermeldungsdaten:",
+    "description": "list item"
+  },
+  "data-processed-item-13": {
+    "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS",
+    "description": "list item"
+  },
+  "data-processed-item-14": {
+    "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems",
+    "description": "list item"
+  },
+  "data-processed-item-15": {
+    "message": "Zeitstempel des Absturzes",
+    "description": "list item"
+  },
+  "data-processed-item-16": {
+    "message": "UUID",
+    "description": "list item"
+  },
+  "data-processed-item-17": {
+    "message": "Klartext-Klassenname und der Wert der Meldung der Ausnahme",
+    "description": "list item"
+  },
+  "data-processed-item-18": {
+    "message": "Befehlszeiger, Methoden- oder Funktionsnamen, Signaldaten, Zeigerregister und Informationen über die geladenen Binärdateiabbilder",
+    "description": "list item"
+  },
+  "data-processed-item-19": {
+    "message": "Zeichenfolge/Funktionsname, die/der den Fehler identifiziert",
+    "description": "list item"
+  },
+  "data-processed-item-20": {
+    "message": "Während du unsere Webseiten nutzt:",
+    "description": "list item"
+  },
+  "data-processed-item-21": {
+    "message": "Automatisch:",
+    "description": "list item"
+  },
+  "data-processed-item-22": {
+    "message": "IP-Adresse (separat gespeichert)",
+    "description": "list item"
+  },
+  "data-processed-item-23": {
+    "message": "die Uhrzeit der Anfragestellung",
+    "description": "list item"
+  },
+  "data-processed-item-24": {
+    "message": "die aufgerufene Internetadresse",
+    "description": "list item"
+  },
+  "data-processed-item-25": {
+    "message": "die Browser-Kennung",
+    "description": "list item"
+  },
+  "data-processed-item-26": {
+    "message": "die verweisende Seite",
+    "description": "list item"
+  },
+  "data-processed-item-32": {
+    "message": "Aggregierte Analysedaten",
+    "description": "list item"
+  },
+  "data-processed-item-27": {
+    "message": "Freiwillig:",
+    "description": "list item"
+  },
+  "data-processed-item-28": {
+    "message": "Forum-Registrierungsdaten",
+    "description": "list item"
+  },
+  "data-processed-item-29": {
+    "message": "E-Mail-Adresse",
+    "description": "list item"
+  },
+  "data-processed-item-30": {
+    "message": "Daten, die du in Kommentaren zur Verfügung stellst",
+    "description": "list item"
+  },
+  "data-processed-item-31": {
+    "message": "Feedback und Filterdaten.",
+    "description": "list item"
+  },
+  "how-we-collect-heading": {
+    "message": "Wie erheben wir Daten?",
+    "description": "heading"
+  },
+  "list-of-tools": {
+    "message": "Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden:",
+    "description": "preface"
+  },
+  "tools-item-1": {
+    "message": "In unseren Produkten:",
+    "description": "list item"
+  },
+  "tools-item-2": {
+    "message": "Update-Prüfungen",
+    "description": "list item"
+  },
+  "tools-item-3": {
+    "message": "Abonnement-Downloads",
+    "description": "list item"
+  },
+  "tools-item-4": {
+    "message": "Senden von Problemmeldungen",
+    "description": "list item"
+  },
+  "tools-item-5": {
+    "message": "Prüfen von Notfallbenachrichtigungen",
+    "description": "list item"
+  },
+  "tools-item-6": {
+    "message": "Auf unseren Webseiten:",
+    "description": "list item"
+  },
+  "tools-item-7": {
+    "message": "Cookies",
+    "description": "list item"
+  },
+  "tools-item-8": {
+    "message": "Webseiten-Protokolle",
+    "description": "list item"
+  },
+  "tools-item-9": {
+    "message": "Daten, wie dein Name und/oder deine E-Mail-Adresse, wenn du diese an uns während der Nutzung des Forums oder Blogs oder beim manuellen Teilen eines hinzugefügten Filters senden solltest",
+    "description": "list item"
+  },
+  "tools-item-10": {
+    "message": "Über Google Analytics",
+    "description": "list item"
+  },
+  "why-we-process-heading": {
+    "message": "Wie und warum verarbeiten wir deine Daten?",
+    "description": "heading"
+  },
+  "why-we-process-item-1": {
+    "message": "Um dich über dringende Probleme im Zusammenhang mit unseren Produkten zu informieren.",
+    "description": "list item"
+  },
+  "why-we-process-item-2": {
+    "message": "Um unsere Produkte zu verbessern und zu evaluieren, indem wir Abonnement-Downloads, Erweiterungsupdates, Notfall-Downloads und von dir an uns übermittelte Fehlerberichte verarbeiten und analysieren.",
+    "description": "list item"
+  },
+  "why-we-process-item-3": {
+    "message": "Für technische Zwecke, u. a. zur Verhinderung von Sicherheitsangriffen, zur Verbesserung unserer Webseite/Produkte, zur Sicherstellung der Webseiten-/Produktsicherheit.",
+    "description": "list item"
+  },
+  "why-we-process-item-4": {
+    "message": "Um aggregierte Webseiten-Protokolle und Analysedaten auszuwerten und dadurch unsere Webseite zu verbessern.",
+    "description": "list item"
+  },
+  "why-we-process-item-5": {
+    "message": "Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.",
+    "description": "list item"
+  },
+  "what-is-legal-heading": {
+    "message": "Auf welcher Rechtsgrundlage erfolgt die Datenverarbeitung?",
+    "description": "heading"
+  },
+  "what-is-legal-1": {
+    "message": "Wir verarbeiten deine personenbezogenen Daten im Einklang mit der Europäischen Datenschutz-Grundverordnung (EU-Verordnung 2016/679 („DSGVO“)), der anwendbaren EU-Gesetzgebung und den nationalen deutschen Datenschutzgesetzen."
+  },
+  "how-long": {
+    "message": "Wie lange bewahren wir die Daten auf?",
+    "description": "heading"
+  },
+  "how-long-item-1": {
+    "message": "Für einen Zeitraum von 30 Tagen:",
+    "description": "list item"
+  },
+  "how-long-item-2": {
+    "message": "Fehlerberichtsdaten",
+    "description": "list item"
+  },
+  "how-long-item-3": {
+    "message": "Absturz- und Fehlermeldungsdaten",
+    "description": "list item"
+  },
+  "how-long-item-4": {
+    "message": "Webseiten-Protokolle",
+    "description": "list item"
+  },
+  "how-long-item-5": {
+    "message": "Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen",
+    "description": "list item"
+  },
+  "how-long-item-6": {
+    "message": "Blog- und Forumdaten, so lange wie der jeweilige Kommentar/das jeweilige Konto existiert",
+    "description": "list item"
+  },
+  "how-long-paragraph": {
+    "message": "<strong>Hinweis:</strong> „Aggregierte Nutzungsstatistiken”, z. B. Analysedaten und andere Daten ohne irgendeine Verbindung zu einem einzelnen Nutzer, können auch über diese Zeiträume hinaus aufbewahrt werden."
+  },
+  "our-values-heading": {
+    "message": "Unsere Werte",
+    "description": "heading"
+  },
+  "our-values-paragraph": {
+    "message": "Wir erheben so wenig Daten wie möglich. Sofern eine anonyme oder pseudonyme Nutzung möglich ist, anonymisieren oder pseudonymisieren wir deine Daten."
+  },
+  "your-rights-heading": {
+    "message": "Welche Rechte hast du?",
+    "description": "heading"
+  },
+  "your-right-item-1": {
+    "message": "Auskunft darüber zu erhalten, welche deiner personenbezogenen Daten wir verarbeiten, wie wir diese Daten verarbeiten sowie Zugang zu den Daten zu erhalten.",
+    "description": "list item"
+  },
+  "your-right-item-2": {
+    "message": "Fehlerhafte personenbezogene Daten zu berichtigen und Einschränkungen bei den Angaben vorzunehmen.",
+    "description": "list item"
+  },
+  "your-right-item-3": {
+    "message": "Alle deine personenbezogenen Daten in einem strukturierten, allgemein gebräuchlichen und maschinenlesbaren Format zu erhalten sowie die Übertragung dieser Daten an einen anderen Verantwortlichen zu verlangen.",
+    "description": "list item"
+  },
+  "your-right-item-4": {
+    "message": "Die Löschung deiner Daten zu verlangen, außer diese Daten müssen aus rechtlichen Gründen aufbewahrt werden.",
+    "description": "list item"
+  },
+  "your-right-item-5": {
+    "message": "Der Verarbeitung deiner Daten zu widersprechen.",
+    "description": "list item"
+  },
+  "your-right-item-6": {
+    "message": "Deine Einwilligung jederzeit zu widerrufen, wenn du uns deine Einwilligung zur Verarbeitung deiner personenbezogenen Daten erteilt hast.",
+    "description": "list item"
+  },
+  "your-right-item-7": {
+    "message": "Eine Beschwerde bei der jeweiligen Aufsichtsbehörde einzulegen.",
+    "description": "list item"
+  },
+  "questions-heading": {
+    "message": "Fragen?",
+    "description": "heading"
+  },
+  "questions-paragraph": {
+    "message": "Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a>E-Mail</a> oder <a>Telefon</a>."
+  },
+  "privacy-policy-long-heading": {
+    "message": "Datenschutzerklärung (ausführliche Fassung)",
+    "description": "heading"
+  },
+  "general-info-heading": {
+    "message": "Allgemeine Informationen zum Datenschutz",
+    "description": "heading"
+  },
+  "general-info-paragraph": {
+    "message": "Die folgenden Informationen gelten für die Erhebung, Verarbeitung und Nutzung personenbezogener Daten im Zusammenhang mit unseren Dienstleistungen, wie beispielsweise der Adblock Plus-Browsererweiterung, dem Adblock Browser und auf unseren Webseiten."
+  },
+  "general-notes-item-1": {
+    "message": "Allgemeine Hinweise",
+    "description": "list item & link"
+  },
+  "general-notes-item-2": {
+    "message": "Wer ist für die Datenverarbeitung verantwortlich?",
+    "description": "list item & link"
+  },
+  "general-notes-item-3": {
+    "message": "Was sind personenbezogene Daten?",
+    "description": "list item & link"
+  },
+  "general-notes-item-4": {
+    "message": "Welchem Zweck dient die Datenverarbeitung und auf welcher rechtlichen Grundlage erfolgt sie?",
+    "description": "list item & link"
+  },
+  "general-notes-item-5": {
+    "message": "Geben wir personenbezogene Daten weiter?",
+    "description": "list item & link"
+  },
+  "general-notes-item-6": {
+    "message": "Welche Rechte hast du?",
+    "description": "list item & link"
+  },
+  "general-notes-item-7": {
+    "message": "Löschung deiner Daten",
+    "description": "list item & link"
+  },
+  "general-notes-item-8": {
+    "message": "Änderungen dieser Datenschutzerklärung",
+    "description": "list item & link"
+  },
+  "general-notes-item-9": {
+    "message": "Erhebung und Verarbeitung in unseren Produkten",
+    "description": "list item & link"
+  },
+  "general-notes-heading": {
+    "message": "Allgemeine Hinweise",
+    "description": "heading"
+  },
+  "general-notes-paragraph": {
+    "message": "Dein Schutz und die Vertraulichkeit deiner Daten sind das Wichtigste für uns („eyeo“, „wir“, „uns“, „unser“). Wir nehmen den Schutz deiner personenbezogenen Daten sehr ernst und erheben so wenige Daten wie möglich. Die Erhebung von Daten hilft uns jedoch dabei, dass unsere Produkte und Webseiten besser funktionieren und ermöglicht uns, mit dir zu kommunizieren. Unser allgemeiner Grundsatz ist es, nicht mehr Daten als nötig zu erheben. Erhobene Daten werden - sofern möglich - anonymisiert und gelöscht, wenn sie nicht mehr benötigt werden. Diese Datenschutzerklärung dient dazu, dich über die Erhebung, Verarbeitung und Verwendung deiner personenbezogenen Daten zu informieren. Wir erheben und verwenden personenbezogene Daten unter strikter Beachtung der Bestimmungen der Europäischen Datenschutz-Grundverordnung (EU-Vorschrift 2016/679, „DSGVO“), den anwendbaren EU-Gesetzen und nationalen deutschen Datenschutzgesetzen. Im nachfolgenden Text informieren wir dich über die konkreten Daten, den Umfang und den Zweck der Erhebung sowie über die Verwendung von personenbezogenen Daten durch eyeo bei Nutzung unserer Produkte und Besuch unserer Webseiten.",
+    "description": "{1}: eyeo"
+  },
+  "who-is-responsible-heading": {
+    "message": "Wer ist für die Datenerhebung und -verarbeitung verantwortlich (Kontakte)?",
+    "description": "heading"
+  },
+  "who-is-responsible-paragraph-1": {
+    "message": "Verantwortliche Stelle für die Erhebung, Verarbeitung und/oder Verwendung von personenbezogenen Daten in Verbindung mit unseren Webseiten und Produkten („Verantwortlicher“) ist:"
+  },
+  "controller-heading": {
+    "message": "Verantwortlicher",
+    "description": "heading"
+  },
+  "dpo-heading": {
+    "message": "Datenschutzbeauftragte",
+    "description": "heading"
+  },
+  "who-is-responsible-paragraph-2": {
+    "message": "Bei Fragen zu deinen personenbezogenen Daten, zögere nicht, unsere Datenschutzbeauftragte zu kontaktieren."
+  },
+  "phone-label": {
+    "message": "Telefon",
+    "description": "phone number label"
+  },
+  "email-label": {
+    "message": "E-Mail",
+    "description": "email address label"
+  },
+  "fax-label": {
+    "message": "Fax",
+    "description": "fax number label"
+  },
+  "what-is-personal-heading": {
+    "message": "Was sind personenbezogene Daten?",
+    "description": "heading"
+  },
+  "what-is-personal-paragraph-1": {
+    "message": "Der Zweck des Datenschutzes ist der Schutz von personenbezogenen Daten. Personenbezogene Daten sind Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person („betroffene Person“) beziehen. Eine identifizierbare natürliche Person kann direkt oder indirekt identifiziert werden, insbesondere durch Verweis auf einen Identifikator wie einen Namen, eine Identifikationsnummer, Standortdaten, eine Online-Kennung bzw. eine oder mehrere Aspekte der physikalischen, physiologischen, mentalen, ökonomischen, kulturellen oder sozialen Identität dieser natürlichen Person."
+  },
+  "what-is-personal-paragraph-2": {
+    "message": "Zu diesen Informationen gehören beispielsweise Details wie Name und E-Mail-Adresse, jedoch auch Spitznamen und Informationen in deinen Forumsbeiträgen."
+  },
+  "what-is-purpose-heading": {
+    "message": "Welchem Zweck dient die Datenverarbeitung und auf welcher rechtlichen Grundlage erfolgt sie?",
+    "description": "heading"
+  },
+  "purpose-heading": {
+    "message": "Zweck der Datenerhebung und -verarbeitung",
+    "description": "heading"
+  },
+  "purpose-paragraph-1": {
+    "message": "Gemäß Art. 5 (b) DSGVO erheben und verarbeiten wir deine personenbezogenen Daten für festgelegte, eindeutige und legitime Zwecke und verarbeiten deine Daten nicht in einer Weise weiter, die nicht mit diesen Zwecken vereinbar ist."
+  },
+  "purpose-paragraph-2": {
+    "message": "Wir erheben und verarbeiten deine personenbezogenen Daten ausschließlich zu den folgenden Zwecken:"
+  },
+  "purpose-item-1": {
+    "message": "Wir erheben und verarbeiten deine personenbezogenen Daten, wie z. B. Webseitenprotokolle und Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates (diese Daten werden von Google erhoben und verarbeitet, siehe <a>Google-Datenschutzerklärung</a>), Notfallbenachrichtigungen und Absturz- und Fehlermeldungs-Daten, die du uns übermittelst, für technische Zwecke. Wir erheben und verarbeiten diese Daten hauptsächlich, um Sicherheitsangriffe zu verhindern und dir dadurch unsere Dienstleistungen auf sichere und dateneffiziente Art zur Verfügung zu stellen."
+  },
+  "purpose-item-2": {
+    "message": "Wir erheben und verarbeiten deine personenbezogenen Daten im Zusammenhang mit Abonnement-Downloads, Erweiterungsupdates, Notfalldownloads und Absturz- und Fehlermeldungs-Daten, die du uns zugeschickt hast, um unsere Produkte zu verbessern und auszuwerten."
+  },
+  "purpose-item-3": {
+    "message": "Wir verschicken Notfallbenachrichtigungen, um dich über dringende Probleme im Zusammenhang mit unseren Produkten zu informieren."
+  },
+  "purpose-item-4": {
+    "message": "Wir erheben und verarbeiten die Daten, die du uns in unserem Blog und Forum zu Verfügung gestellt hast, um mit dir zu kommunizieren und/oder dir Hilfestellung zu leisten."
+  },
+  "legal-basis-heading": {
+    "message": "Rechtliche Grundlage für die Datenerhebung und -verarbeitung",
+    "description": "heading"
+  },
+  "legal-basis-paragraph": {
+    "message": "Wir erheben und verarbeiten deine personenbezogenen Daten in Übereinstimmung mit der DSGVO und den anwendbaren EU-Gesetzen sowie den nationalen deutschen Datenschutzgesetzen."
+  },
+  "consent-permission-heading": {
+    "message": "Die Erhebung und Verarbeitung erfolgt auf Grundlage deiner Einwilligung - Art. 6 (1) der DSGVO, Art. 4 (11) DSGVO",
+    "description": "heading"
+  },
+  "consent-permission-paragraph": {
+    "message": "Wir werden dich stets um deine Einwilligung zur Erhebung und Verarbeitung deiner personenbezogenen Daten für die vorgenannten Zwecke bitten, es sei denn, die Erhebung und Verarbeitung deiner personenbezogenen Daten ist gesetzlich zulässig. Wenn du uns deine Einwilligung zur Erhebung und Verarbeitung deiner personenbezogenen Daten für die vorgenannten Zwecke erteilt hast, hast du jederzeit das Recht, deine Einwilligung zu widerrufen."
+  },
+  "contract-permission-heading": {
+    "message": "Die Erhebung und Verarbeitung ist zum Abschluss eines Vertrages notwendig - Art. 6 (1) b DSGVO",
+    "description": "heading"
+  },
+  "contract-permission-paragraph": {
+    "message": "Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann für die Erfüllung eines Vertrages, an dem du beteiligt bist, notwendig sein. Bereits vor Abschluss eines solchen Vertrages kann die Erhebung und Verarbeitung deiner personenbezogenen Daten erforderlich sein, um auf deinen Wunsch hin tätig zu werden. Dies gilt für die Installation (d. h. für vom Browser und/oder vom App Store gesammelte Daten) und die Nutzung unserer Produkte."
+  },
+  "compliance-permission-heading": {
+    "message": "Die Erhebung und Verarbeitung ist zur Einhaltung gesetzlicher Pflichten denen der Verantwortliche unterliegt, erforderlich – Art. 6 (1) c DSGVO",
+    "description": "heading"
+  },
+  "compliance-permission-paragraph": {
+    "message": "Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erforderlich sein, um einer rechtlichen Verpflichtung nachzukommen, der wir nach EU-Recht oder dem Recht eines EU-Mitgliedsstaates unterliegen."
+  },
+  "legitimate-interest-permission-heading": {
+    "message": "Wir haben ein berechtigtes Interesse an der Erhebung und Verarbeitung- Art. 6 (1) f DSGVO",
+    "description": "heading"
+  },
+  "legitimate-interest-permission-paragraph": {
+    "message": "Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erfolgen, weil wir ein berechtigtes Interesse daran haben. Wir erheben und verarbeiten Webseitenprotokolle aus technischen Gründen, wie z. B. zur Verhinderung von Denial-of-Service-Angriffen. Denial-of-Service-Angriffe erfolgen in der Regel dadurch, dass das betreffende Gerät oder die betreffende Ressource mit überflüssigen Anfragen überschwemmt wird, um Systeme zu überlasten und zu verhindern, dass einige oder alle legitimen Anfragen erfüllt werden. Es liegt in deinem und unseren vitalen Interesse, solche Überlastungen unserer Systeme und Sicherheitsprobleme durch Denial-of-Service-Angriffe zu verhindern, und deshalb verwenden wir die Webseitenprotokolle. Wir verwenden die über Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen und Feedback-Daten erhobenen und verarbeiteten Informationen aus technischen Gründen, z. B. um die Sicherheit der von dir verwendeten Erweiterungsversion gewährleisten zu können. Es liegt in deinem und unserem vitalen Interesse, die Sicherheit unserer Erweiterung zu gewährleisten und daher verwenden wir diese Daten. Darüber hinaus erheben und verarbeiten wir solche Daten, um unsere Webseite und deren Erweiterung ständig zu verbessern und an die sich ändernden Anforderungen für eine effiziente Nutzbarkeit und das technische Umfeld anzupassen. Die Nutzbarkeit unserer Webseiten und unserer Produkte sicherzustellen, liegt in deinem und unserem vitalen Interesse und daher verwenden wir diese Daten."
+  },
+  "disclosure-heading": {
+    "message": "Geben wir personenbezogene Daten weiter?",
+    "description": "heading"
+  },
+  "disclsoure-paragraph-1": {
+    "message": "Ohne dich vorher gesondert zu informieren, dürfen wir deine personenbezogenen Daten nur in folgenden Ausnahmefällen an Dritte weitergeben:"
+  },
+  "disclosure-item-1": {
+    "message": "Soweit dies für Gerichtsverfahren/Ermittlungen erforderlich ist, werden personenbezogene Daten an die Strafverfolgungsbehörden und gegebenenfalls an geschädigte Dritte weitergegeben. Dies tun wir nur, wenn konkrete Anhaltspunkte für illegales und/oder missbräuchliches Verhalten vorliegen. Wir sind auch gesetzlich verpflichtet, bestimmten Behörden Informationen zukommen zu lassen. Dies sind Strafverfolgungsbehörden, Behörden, die Ordnungswidrigkeiten mit Bußgeldern verfolgen sowie die deutschen Finanzbehörden.",
+    "description": "list item"
+  },
+  "disclosure-item-2": {
+    "message": "Im Zuge der Weiterentwicklung unseres Geschäfts kann es vorkommen, dass sich die Struktur der eyeo GmbH ändert. Die rechtliche Struktur kann geändert, Tochtergesellschaften, Geschäftseinheiten oder Bestandteile können gegründet, gekauft oder verkauft werden. Bei solchen Transaktionen können die Informationen der Nutzer mit dem übertragenen Teil des Unternehmens weitergegeben werden. Die eyeo GmbH wird im Falle einer Übertragung personenbezogener Daten sicherstellen, dass diese in Übereinstimmung mit dieser Datenschutzerklärung und der DSGVO sowie den anwendbaren EU-Gesetzen und deutschen Datenschutzgesetzen erfolgt.",
+    "description": "list item"
+  },
+  "disclosure-paragraph-2": {
+    "message": "Wir übermitteln deine personenbezogenen Daten nicht routinemäßig an Dritte, ohne dich vorher darüber zu informieren. Wir werden dich vorab um deine Einwilligung bitten, es sei denn, die Übermittlung dieser Daten ist durch die DSGVO oder andere anwendbare EU-Gesetze und nationale deutsche Datenschutzgesetze gestattet."
+  },
+  "your-rights-long-heading": {
+    "message": "Welche Rechte hast du?",
+    "description": "heading"
+  },
+  "your-rights-long-paragraph": {
+    "message": "In Übereinstimmung mit der DSGVO, den anwendbaren EU-Gesetzen und den nationalen deutschen Datenschutzgesetzen hast du im gesetzlich zulässigen Umfang, folgende Rechte zum Schutz deiner von uns erhobenen und verarbeiteten personenbezogenen Daten:"
+  },
+  "information-acces-rights-heading": {
+    "message": "Recht auf Informationen, Zugang, Korrektur und Einschränkung",
+    "description": "heading"
+  },
+  "information-acces-rights-paragraph": {
+    "message": "Natürlich hast du das Recht, auf Anfrage Informationen über die bei uns über dich gespeicherten personenbezogenen Daten zu erhalten, ebenso wie Informationen darüber, wie wir deine personenbezogenen Daten erheben, verarbeiten und speichern. Wo dies der Fall ist, bist du berechtigt, Zugang zu den von uns gespeicherten personenbezogenen Daten zu erhalten. Du bist berechtigt, von uns die Korrektur unrichtiger personenbezogener Daten zu verlangen. Unter Berücksichtigung der Zwecke, für die wir deine personenbezogenen Daten erheben und verarbeiten, hast du das Recht zu verlangen, dass unvollständige Daten vervollständigt werden. Du hast weiter das Recht, die Einschränkung der Verarbeitung zu verlangen."
+  },
+  "data-portability-right-heading": {
+    "message": "Recht auf Übertragbarkeit der Daten",
+    "description": "heading"
+  },
+  "data-portability-right-paragraph": {
+    "message": "Du hast auch das Recht, (1) alle dich betreffenden personenbezogenen Daten, die du uns zur Verfügung gestellt hast, in einem strukturierten, allgemein gebräuchlichen und maschinenlesbaren Format zu erhalten und (2) diese Daten an einen anderen Verantwortlichen zu übertragen."
+  },
+  "erasure-of-data-heading": {
+    "message": "Recht auf Löschung deiner Daten",
+    "description": "heading"
+  },
+  "erasure-of-data-paragraph-1": {
+    "message": "Du hast das Recht, von uns die Löschung deiner personenbezogenen Daten zu verlangen, wenn u. a. einer der nachfolgenden Gründe zutrifft:"
+  },
+  "erasure-of-data-item-1": {
+    "message": "Wenn wir deine personenbezogenen Daten nicht länger für die vorstehend genannten Zwecke benötigen.",
+    "description": "list item"
+  },
+  "erasure-of-data-item-2": {
+    "message": "Wenn du deine der Erhebung und Verarbeitung zugrunde liegende Einwilligung widerrufst und wenn keine anderen Rechtsgrundlagen für die Erhebung und Verarbeitung vorliegen.",
+    "description": "list item"
+  },
+  "erasure-of-data-item-3": {
+    "message": "Wenn du der Erhebung und Verarbeitung widersprichst und keine übergeordneten legitimen Gründe für die Erhebung und Verarbeitung vorliegen.",
+    "description": "list item"
+  },
+  "erasure-of-data-paragraph-2": {
+    "message": "Bitte berücksichtige, wenn Daten aus rechtlichen Gründen gemäß Art. 17 (3) DSGVO weiter gespeichert werden müssen, werden wir die Nutzung der jeweiligen Daten einschränken."
+  },
+  "lodge-a-complaint-heading": {
+    "message": "Recht, eine Beschwerde bei einer Aufsichtsbehörde einzulegen",
+    "description": "heading"
+  },
+  "lodge-a-complaint-paragraph": {
+    "message": "Du hast das Recht, eine Beschwerde bei einer Aufsichtsbehörde einzulegen, insbesondere in dem Mitgliedsstaat, in dem du deinen gewöhnlichen Aufenthaltsort oder deinen Arbeitsplatz hast oder in dem sich der Ort des behaupteten Verstoßes befindet, wenn du der Ansicht bist, dass die Erhebung und Verarbeitung personenbezogener Daten, die dich betreffen, ein Verstoß gegen die DSGVO darstellen."
+  },
+  "right-to-object-heading": {
+    "message": "Recht, der Verarbeitung deiner Daten zu widersprechen",
+    "description": "heading"
+  },
+  "right-to-object-paragraph": {
+    "message": "Du hast jederzeit das Recht, der Erhebung und Verarbeitung deiner personenbezogenen Daten aus Gründen, die mit deiner persönlichen Situation zusammenhängen, zu widersprechen, wenn die Erhebung und Verarbeitung auf Basis unseres berechtigten Interesses erfolgt (Art. 6 (1) f DSGVO)."
+  },
+  "withdraw-consent-heading": {
+    "message": "Recht, die Einwilligung jederzeit zu widerrufen",
+    "description": "heading"
+  },
+  "withdraw-consent-paragraph": {
+    "message": "Du hast das Recht, deine Einwilligung jederzeit zu widerrufen, wenn du uns deine Einwilligung zur Erhebung und Verarbeitung deiner personenbezogenen Daten für einen oder mehrere spezifische Zwecke erteilt hast."
+  },
+  "how-to-exercise-heading": {
+    "message": "So kannst du deine Rechte wahrnehmen",
+    "description": "heading"
+  },
+  "how-to-exercise-paragraph": {
+    "message": "Um deine Rechte wahrzunehmen, kontaktiere uns bitte per <a>E-Mail</a> oder Post unter:"
+  },
+  "changes-to-policy-heading": {
+    "message": "Änderungen dieser Datenschutzerklärung",
+    "description": "heading"
+  },
+  "changes-to-policy-paragraph": {
+    "message": "Diese Datenschutzerklärung kann von Zeit zu Zeit geändert werden. Die jeweils aktuelle Version findest du unter: <a>https://adblockplus.org/privacy</a>",
+    "description": "{1}: https://adblockplus.org/privacy"
+  },
+  "collection-and-processing-heading": {
+    "message": "Erhebung und Verarbeitung in unseren Produkten",
+    "description": "heading"
+  },
+  "adblock-plus-heading": {
+    "message": "Adblock Plus-Erweiterungen",
+    "description": "heading"
+  },
+  "adblock-plus-paragraph": {
+    "message": "Wenn du die Adblock Plus-Browsererweiterung verwendest, erheben und verarbeiten wir die folgenden Daten:"
+  },
+  "update-checks-heading": {
+    "message": "Prüfungen auf Erweiterungsaktualisierungen",
+    "description": "heading"
+  },
+  "update-checks-paragraph": {
+    "message": "Dein Browser prüft regelmäßig nach Aktualisierungen der Erweiterungen einschließlich Adblock Plus. Während einer Prüfung auf Aktualisierungen werden einige allgemeine Informationen (Browser-Version, Erweiterungsversion, Betriebssystem, Datum der letzten Aktualisierung und deine IP-Adresse) übertragen. Aktualisierungen für Adblock Plus für Android und Internet Explorer werden durch die Adblock Plus-Webseite verarbeitet, und die übertragenen Daten unterliegen der <a>Adblock Plus-Datenschutzerklärung</a>. Aktualisierungen von Adblock Plus für Firefox werden durch die Mozilla-Webseite verarbeitet und unterliegen der <a>Mozilla-Datenschutzerklärung</a>. Aktualisierungen von Adblock Plus für Chrome werden durch die Google Web Store-Webseite verarbeitet und unterliegen der <a>Google-Datenschutzerklärung</a>. Aktualisierungen von Adblock Plus für Opera werden durch die Opera Add-ons-Webseite verarbeitet und unterliegen der <a>Opera-Datenschutzerklärung</a>. Aktualisierungen von Adblock Plus für Safari werden durch die Safari Erweiterungswebseite verarbeitet und unterliegen der <a>Apple-Datenschutzerklärung</a>."
+  },
+  "subscription-downloads-heading": {
+    "message": "Abonnement-Downloads",
+    "description": "heading"
+  },
+  "subscription-downloads-paragraph-1": {
+    "message": "Wenn du deiner Adblock Plus-Installation Filterabonnements hinzufügst, wird das Abonnement angewiesen, regelmäßig Aktualisierungen abzurufen. Jede Aktualisierung führt dazu, dass die Anbieter-Webseite deine IP-Adresse und einige allgemeine Informationen wie deine Adblock Plus-Version, deinen Browser und deine Browser-Version empfängt."
+  },
+  "subscription-downloads-paragraph-2": {
+    "message": "Des Weiteren gilt, dass wenn ein Abonnement-Download mehrmals hintereinander fehlschlägt, die aktualisierte Adresse der Filterliste von der AdblockPlus.org-Domain angefordert wird. Die übertragenen Daten beinhalten die Adblock Plus-Version, die Abonnementadresse und Informationen über den aufgetretenen Fehler. Diese Daten werden zur Identifizierung von Problemen verwendet, die nicht von Abonnementhaltern gemeldet wurden. Sie unterliegen dieser <a>Datenschutzerklärung</a>."
+  },
+  "issue-reporter-heading": {
+    "message": "Issue Reporter (Problemberichte)",
+    "description": "heading"
+  },
+  "issue-reporter-paragraph-1": {
+    "message": "Adblock Plus für Firefox ermöglicht es dir, Problemberichte zu senden, die kurzzeitig auf der AdblockPlus.org-Webseite gespeichert werden. Diese Berichte enthalten erforderliche Informationen für die Untersuchung des Problems, einschließlich der Adblock Plus-Version, Browser-Version, Adresse der Webseite, auf der das Problem aufgetreten ist, blockierbare Elemente auf der Webseite, übereinstimmende Filter und aktive Abonnements, Art des Problemberichts (d. h. falsche Positiv- oder falsche Negativmeldungen) und ein Screenshot des Problems (es ist möglich, vor Senden des Berichts besonders sensible Bereiche von der Seite zu entfernen). Parameterwerte werden aus allen übertragenen Adressen entfernt, um eine versehentliche Weitergabe von privaten Informationen zu vermeiden."
+  },
+  "issue-reporter-items-intro": {
+    "message": "Du kannst freiwillig:"
+  },
+  "issue-reporter-item-1": {
+    "message": "deine E-Mail-Adresse an uns bereitstellen, sodass wir weitere Informationen bei dir anfragen oder dich über das Problem auf dem Laufenden halten können.",
+    "description": "list item"
+  },
+  "issue-reporter-item-2": {
+    "message": "einen optionalen Kommentar über das Problem beifügen.",
+    "description": "list item"
+  },
+  "access-reports-heading": {
+    "message": "Zugriff auf die Berichte",
+    "description": "heading"
+  },
+  "access-reports-paragraph": {
+    "message": "Auf die verarbeiteten Berichte kann nur durch eine natürliche Person, die die eindeutige ID kennt, zugegriffen werden. Diese IDs werden nur wie folgt weitergegeben:"
+  },
+  "access-reports-1": {
+    "message": "An die Betreiber der in dem Bericht aufgeführten Filterabonnements, wie EasyList-Autoren, die nicht bei eyeo angestellt sind.",
+    "description": "list item"
+  },
+  "access-reports-2": {
+    "message": "Bestimmte Mitglieder des Filterlistenteams von eyeo. eyeo verwendet die Berichte ausschließlich zu Zwecken der Problembehebung und Kontrolle.",
+    "description": "list item"
+  },
+  "emergency-notification-heading": {
+    "message": "Notfallbenachrichtigung",
+    "description": "heading"
+  },
+  "emergency-notification-paragraph": {
+    "message": "Adblock Plus enthält einen Mechanismus für Notfallbenachrichtigungen, mit dem Nutzer über wichtige Probleme in Bezug auf ihre Adblock Plus-Installation informiert werden können. Diese Funktion erfordert, dass alle Adblock Plus-Installationen regelmäßig eine Adresse in der AdblockPlus.org-Domain abfragen, um die Liste der aktiven Benachrichtigungen abzurufen. Diese Abfrage macht deine IP-Adresse für die Webseite sichtbar und verschickt ebenfalls allgemeine Informationen wie deine Adblock Plus-Version, die Bezeichnung deines Browsers inklusive der Browser-Version sowie die Anzahl der vorherigen Downloads von Adblock Plus, wobei nach dem 4. Download keine weitere Zählung erfolgt und lediglich “4+” angezeigt wird. Mithilfe dieser Daten können verschiedene Benachrichtigungen an verschiedene Kunden erstellt werden und sie unterliegen dieser <a>Datenschutzerklärung</a>."
+  },
+  "further-requests-heading": {
+    "message": "Weitere Anfragen",
+    "description": "heading"
+  },
+  "further-requests-paragraph": {
+    "message": "Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispiele dafür sind das Klicken auf einen Dokumentationslink oder der Download der vollständigen Liste der Filterabonnements. Solche Anfragen unterliegen dieser <a>Datenschutzerklärung</a>."
+  },
+  "data-retention-heading": {
+    "message": "Datenaufbewahrung",
+    "description": "heading"
+  },
+  "data-retention-paragraph-1": {
+    "message": "Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen, Fehlermeldungsdaten (sowie die vollständigen Berichte und die damit verbundenen Daten) werden automatisch nach 30 Tagen gelöscht. Nur ein Teil der Daten wird länger aufbewahrt. Dies beinhaltet nur den Ländercode von Nutzern, die ein Problem gemeldet haben (wird aus der IP-Adresse extrahiert), zu Analysezwecken. Dieser wird getrennt von den vollständigen Berichten gespeichert und kann nach der Löschung der vollständigen Berichte nicht mit einer einzelnen Person verknüpft werden."
+  },
+  "data-retention-paragraph-2": {
+    "message": "Adblock Plus speichert einige Daten im <a>Firefox-Profil</a> auf deinem Computer. Adblock Plus überträgt diese Daten niemals an andere Server, jedoch können andere Erweiterungen und Dienste wie <a>Firefox Sync</a>, dies tun. Der Großteil der Daten (deine Einstellungen, Filterabonnements und benutzerdefinierte Filter) sind datenschutzrechtlich unproblematisch. Jedoch könnten Filtertrefferstatistiken und aktuelle Problemberichte verwendet werden, um deinen Browserverlauf zu rekonstruieren. Adblock Plus behandelt diese Informationen genauso, wie Verlaufsdaten vom Browser behandelt werden. Diese Daten werden nicht gespeichert, wenn du den <a>privaten Browsing-Modus</a> verwendest und werden entfernt, wenn du deinen Browserverlauf löschst."
+  },
+  "adblock-browser-android-heading": {
+    "message": "Adblock Browser für Android",
+    "description": "heading"
+  },
+  "adblock-browser-android-paragraph-1": {
+    "message": "Adblock Browser für Android basiert auf dem Firefox-Browser von Mozilla. Manche Datenerhebungen und -verarbeitungen in Verbindung mit Adblock Browser für Android unterliegen der <a>Mozilla-Datenschutzerklärung</a>. Beachte bitte, dass Adblock Browser sich automatisch mit Mozilla und seinen Dienstanbietern verbindet, um Sicherheit, Daten und andere Funktionen (<a>Firefox-Datenschutzerklärung</a>) bereitzustellen. Und wenn du es anfragst, verbindet sich Adblock Browser ebenfalls mit Mozilla, um dir Funktionen wie Standortdienste (<a>Firefox-Datenschutzerklärung</a>) bereitzustellen."
+  },
+  "adblock-browser-android-paragraph-2": {
+    "message": "Abweichend von der Beschreibung in der <a>Firefox-Datenschutzerklärung</a> werden Firefox-Aktualisierungen unter der Kontrolle von eyeo bereitgestellt. Einige Funktionen, wie der Firefox-Statusbericht, Absturzberichte und Add-ons sind deaktiviert."
+  },
+  "adblock-browser-ios-heading": {
+    "message": "Adblock Browser für iOS",
+    "description": "heading"
+  },
+  "crash-error-reporter-heading": {
+    "message": "Absturz- und Fehlermeldung",
+    "description": "heading"
+  },
+  "crash-error-reporter-paragraph": {
+    "message": "Bei einem unerwarteten Absturz oder Fehler sammelt Adblock Browser für iOS alle für eine Analyse relevanten Daten, um die Ursache der Störung zu ermitteln, und überträgt sie an das <a>HockeyApp-Konto</a> von eyeo. Die Daten dienen ausschließlich der individuellen Fehlerbehebung (sowie der Identifizierung von allgemeinen Defekten, die zu unerwarteten Abstürzen oder Fehlern führen) und werden niemals mit Dritten, sondern nur mit HockeyApp geteilt."
+  },
+  "crash-data-sent-heading": {
+    "message": "Während eines Absturzes werden folgende Daten gesendet:",
+    "description": "heading"
+  },
+  "crash-data-sent-item-1": {
+    "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS",
+    "description": "list item"
+  },
+  "crash-data-sent-item-2": {
+    "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems",
+    "description": "list item"
+  },
+  "crash-data-sent-item-3": {
+    "message": "Zeitstempel vom Zeitpunkt des Absturzes",
+    "description": "list item"
+  },
+  "crash-data-sent-item-4": {
+    "message": "Eine generierte UUID zur Verhinderung von doppelten Absturzberichten",
+    "description": "list item"
+  },
+  "crash-data-sent-item-5": {
+    "message": "Wenn eine Ausnahme ausgelöst wurde, der Klartext-Klassenname und der Wert der Meldung der Ausnahme",
+    "description": "list item"
+  },
+  "crash-data-sent-item-6": {
+    "message": "Low-Level-Absturzdaten wie Befehlszeiger, Methoden- oder Funktionsnamen, Signaldaten, Zeigerregister und Informationen über die geladenen Binärdateiabbilder",
+    "description": "list item"
+  },
+  "error-data-sent-heading": {
+    "message": "Während eines Fehlers werden folgende Daten gesendet:",
+    "description": "heading"
+  },
+  "error-data-sent-item-1": {
+    "message": "Paketkennung, Paketversion und Paket-Kurzversionszeichenfolge von Adblock Browser für iOS",
+    "description": "list item"
+  },
+  "error-data-sent-item-2": {
+    "message": "Gerätetyp, CPU-Architektur und Version des Betriebssystems",
+    "description": "list item"
+  },
+  "error-data-sent-item-3": {
+    "message": "Zeitstempel vom Zeitpunkt des Fehlers",
+    "description": "list item"
+  },
+  "error-data-sent-item-4": {
+    "message": "Eine generierte UUID zur Trennung von Fehlerberichten",
+    "description": "list item"
+  },
+  "error-data-sent-item-5": {
+    "message": "Eine Zeichenfolge/ein Funktionsname, die/der den Fehler identifiziert",
+    "description": "list item"
+  },
+  "error-data-sent-paragraph-1": {
+    "message": "Diese Daten werden nur erfasst, wenn die Anwendung abstürzt oder einen Fehler generiert. Des Weiteren bittet Adblock Browser für iOS explizit um die Erlaubnis, die erhobenen Informationen nach einem Absturz oder Fehler zu senden."
+  },
+  "error-data-sent-paragraph-2": {
+    "message": "Weitere Informationen zur Datenschutzerklärung von HockeyApp findest du in den <a>Service-Bedingungen</a> sowie der <a>Absturzberichtsdokumentation</a> und <a>Ereignisberichtsdokumentation</a>."
+  },
+  "retention-crash-reports-heading": {
+    "message": "Datenaufbewahrung:",
+    "description": "heading"
+  },
+  "retention-crash-reports-paragraph": {
+    "message": "Alle auf unseren Servern gespeicherten Berichte werden nach 30 Tagen gelöscht."
+  },
+  "collection-processing-websites-heading": {
+    "message": "Erhebung und Verarbeitung auf unseren Webseiten",
+    "description": "heading"
+  },
+  "collection-processing-websites-paragraph": {
+    "message": "Bei der Nutzung unserer Webseiten, wie z. B. AdblockPlus.org und AdblockBrowser.org („Webseiten“) erheben wir, um dir unsere Dienste bereitzustellen sowie aus Sicherheitsgründen, automatisch die folgenden Daten:"
+  },
+  "auto-collected-info-heading": {
+    "message": "Automatisch erhobene Daten",
+    "description": "heading"
+  },
+  "website-logs-heading": {
+    "message": "Webseiten-Protokolle",
+    "description": "heading"
+  },
+  "website-logs-paragraph": {
+    "message": "Alle Anfragen an unsere Webseiten werden in Webseiten-Protokollen erfasst. Zu den gespeicherten Daten gehören IP-Adresse (nur zum Zweck der IT-Sicherheit und nur durch das IT-Sicherheitsteam von eyeo einsehbar), die Uhrzeit der Anfragestellung, die aufgerufene Internetadresse, die Browser-Kennung und die verweisende Seite. Diese Daten (die IP-Adresse nur in aggregierter Form durch Hashing mithilfe eines sich täglich ändernden Zufallswerts) werden verwendet, um Nutzungsstatistiken zu erstellen und potenzielle Sicherheitsprobleme sowie Spam im Forum und Blog zu untersuchen. Detaillierte Protokolle werden für einen Zeitraum von 30 Tagen aufbewahrt. Anschließend verbleiben nur die aggregierten Nutzungsstatistiken, die mit keinem Nutzer in Verbindung gebracht werden können. Alles andere wird gelöscht."
+  },
+  "retention-website-requests-heading": {
+    "message": "Datenaufbewahrung",
+    "description": "heading"
+  },
+  "stored-website-requests-paragraph": {
+    "message": "Die Anfrage an unsere Webseiten wird, einschließlich deiner IP-Adresse, gespeichert, wenn du einen Beitrag in das Forum stellst, eine Nachricht über das Kontaktformular abschickst oder einen Blog-Kommentar hinzufügst. Dadurch können unsere Administratoren effektiv gegen Spam-Inhalte und Sicherheitsverstöße vorgehen. Alle gespeicherten Anfragen werden nach 30 Tagen gelöscht."
+  },
+  "cookies-heading": {
+    "message": "Einstellungs-Cookies",
+    "description": "heading"
+  },
+  "cookies-paragraph": {
+    "message": "Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und Einstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Einstellungs-Cookies werden nicht anderweitig genutzt und insbesondere nicht dazu, um Website-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass als Folge die Effizienz und der Umfang der Dienste von eyeo eingeschränkt sein könnten."
+  },
+  "google-analytics-heading": {
+    "message": "Google Analytics",
+    "description": "heading"
+  },
+  "google-analytics-paragraph-1": {
+    "message": "Wir benutzen Google Analytics, einen Webanalysedienst der Google Inc. („Google“) auf unseren Webseiten. Google Analytics verwendet sog. „Cookies“ (Textdateien, die auf deinem Computer gespeichert werden und die uns ermöglichen, deine Nutzung unserer Webseiten zu analysieren). Die durch die Cookies erzeugten Daten (einschließlich deiner verkürzten IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google verwendet diese Daten, um deine Nutzung der Webseiten auszuwerten, um Berichte zu den Webseitenaktivitäten zusammenzustellen und um weitere mit der Nutzung unserer Webseiten verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben ist oder soweit Dritte diese Daten im Auftrag von Google verarbeiten."
+  },
+  "google-analytics-paragraph-2": {
+    "message": "<strong>Falls du uns nicht bei der Verbesserung unserer Produkte helfen willst, kannst du Google Analytics deaktivieren.</strong> Bitte beachte jedoch, dass in diesem Fall ein Cookie gesetzt wird, das deine getroffene Wahl speichert. Dieses Cookie ist ein „notwendiges Cookie“ und kann nicht deaktiviert werden."
+  },
+  "adblock-ai-heading": {
+    "message": "Auf adblock.ai",
+    "description": "heading"
+  },
+  "adblock-ai-paragraph-1": {
+    "message": "Auf unserer Webseite adblock.ai erheben wir automatisch folgende Daten:"
+  },
+  "facebook-messenger-integration-heading": {
+    "message": "Facebook Messenger-Integration",
+    "description": "heading"
+  },
+  "facebook-messenger-integration-1": {
+    "message": "Wir haben die Facebook Messenger Funktion von der Facebook, Inc. auf der adblock.ai Webseite eingebunden, um dir zu ermöglichen, Screenshots an unseren Bot („Adblock AI“) über den Messenger außerhalb der Facebook Webseite zu übermitteln. Bitte beachte, dass der Messenger durch Facebook betrieben wird. Wir haben die Funktion ausgeschaltet, die sonst personenbezogene Daten an Facebook übermittelt, sobald du auf unsere Webseite zugreifst. Wenn du jedoch auf den Button („STARTE JETZT“) klickst, um Adblock AI mit deinen Screenshots zu trainieren, aktivierst du den Messenger. Nur in diesem Fall werden einige personenbezogene Daten, inklusive der IP-Adresse, an Facebook übermittelt. Für weitere Informationen, lies bitte die <a>Datenschutzerklärung von Facebook</a>. <strong>Wenn du nicht möchtest, dass Daten an Facebook übermittelt werden, klicke bitte nicht auf den Button, um Informationen an Adblock AI durch den Facebook Messenger zu senden.</strong>"
+  },
+  "volentary-info-heading": {
+    "message": "Freiwillig zur Verfügung gestellte Daten",
+    "description": "heading"
+  },
+  "voluntary-info-paragraph": {
+    "message": "Das <a>Forum</a> und der <a>Blog</a> von Adblock Plus sind beide öffentlich für alle Besucher zugänglich. Wenn du einen Beitrag oder Kommentar schreibst, erheben und verarbeiten wir personenbezogene Daten wie folgt:"
+  },
+  "forum-registration-heading": {
+    "message": "Registrierung im Forum",
+    "description": "heading"
+  },
+  "forum-registration-paragraph-1": {
+    "message": "Wir verwenden personenbezogene Daten, die du bei der Registrierung im Forum eingegeben hast, um ein öffentliches Nutzerprofil zu erstellen. Dieses Profil ist für andere Forumsbesucher sichtbar, damit Nutzer die jeweiligen Forumsbeiträge mit einer bestimmten Person in Verbindung bringen können."
+  },
+  "forum-registration-paragraph-2": {
+    "message": "Passwörter und E-Mail-Adressen sind nicht für andere Forumsbesucher sichtbar."
+  },
+  "forum-registration-item-1": {
+    "message": "Passwörter werden einfach verschlüsselt, bevor sie auf dem Server gespeichert werden.",
+    "description": "list item"
+  },
+  "forum-registration-item-2": {
+    "message": "E-Mail-Adressen werden nur im öffentlichen Profil angezeigt, wenn dies ausdrücklich bestätigt wurde. Standardmäßig werden E-Mail-Adressen nur zum Versenden von Benachrichtigungen verwendet, die du abonniert hast.",
+    "description": "list item"
+  },
+  "forum-registration-paragraph-3": {
+    "message": "<strong>Hinweis:</strong> Um Artikel im Forum lesen zu können, ist keine Registrierung erforderlich und du kannst dein Konto jederzeit löschen."
+  },
+  "blog-comments-heading": {
+    "message": "Blog-Kommentare",
+    "description": "heading"
+  },
+  "blog-comments-paragraph": {
+    "message": "Wenn du im Adblock Plus <a>Blog</a> ein Kommentar einstellst, kannst du optional eine E-Mail-Adresse angeben. Im Gegensatz zu anderen Feldern wird die E-Mail-Adresse niemals anderen Besuchern angezeigt. Sie wird nur verwendet, um den Autor des Kommentars über eventuelle Antworten zu informieren."
+  },
+  "email-collection-heading": {
+    "message": "Erhebung von E-Mail-Adressen",
+    "description": "heading"
+  },
+  "email-collection-paragraph": {
+    "message": "Einige Webseiten von eyeo stellen Produktkampagnen bereit, welche die Erhebung der E-Mail-Adresse erfordern. So kannst du z. B. einen Link per E-Mail anfordern, um den Adblock Browser auf deinem Mobilgerät zu installieren. Wir nutzen keine Drittanbieter, um diese Kampagnen zu verwalten. Stattdessen werden die von dir übertragenen Daten intern verarbeitet (d. h. sie werden in eine E-Mail umgewandelt oder zum Senden der E-Mail verwendet). Wir werden deine E-Mail-Adresse niemals weitergeben oder verkaufen oder irgendwelche anderen erhobenen Daten an Dritte weitergeben."
+  },
+  "retention-communications-heading": {
+    "message": "Erhebung von E-Mail-Adressen",
+    "description": "heading"
+  },
+  "retention-communications-paragraph-1": {
+    "message": "Die von dir im Zusammenhang mit unserem Blog und unserem Forum angegebenen Daten werden für die gleiche Zeit wie der jeweilige Kommentar und/oder dein Konto gespeichert."
+  },
+  "retention-communications-paragraph-2": {
+    "message": "Im Allgemeinen speichern wir deine E-Mail-Adresse nicht, es sei denn, sie ist speziell für die Durchführung der entsprechenden Kampagne erforderlich (z. B. bei der E-Mail-Anmeldung zum Erhalt von Newslettern oder Benachrichtigungen über Produkteinführungen). In den Fällen, in denen wir deine E-Mail-Adresse erheben, speichern wir sie nur für die Zeit, die zur Durchführung der Kampagne benötigt wird (d. h. bis du über den Start informiert wurdest)."
+  },
+  "publication-date": {
+    "message": "März 2019"
+  },
+  "gdpr-abbr": {
+    "message": "DSGVO",
+    "description": "GDPR abbreviation"
+  },
+  "gdpr-abbr-dfn": {
+    "message": "Datenschutz-Grundverordnung",
+    "description": "General Data Protection Regulation abbreviation definition"
+  },
+  "eu-abbr": {
+    "message": "EU",
+    "description": "EU abbreviation"
+  },
+  "eu-abbr-dfn": {
+    "message": "Europäische Union",
+    "description": "European Union abbreviation definition"
+  },
+  "title": {
+    "message": "Datenschutzerklärung"
+  },
+  "navbar-logo-text": {
+    "message": "Adblock <strong>Plus</strong>",
+    "description": "Navbar logo text"
+  },
+  "google-tag-manager-1": {
+    "message": "Unsere Website nutzt den Google Tag-Manager für die Implementierung von <a>Google Analytics</a>. Der Google Tag Manager, bereitgestellt von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA (\"Google”), ist eine Lösung, mit deren Hilfe vermarktete Website-Tags mittels einer Schnittstelle verwaltet werden können. Das Tag Manager-Tool selbst, das die Tags implementiert, ist eine Domain ohne Cookies und erfasst keine personenbezogenen Daten. Das Tool führt zur Aktivierung anderer Tags. Diese Tags können dann Daten auf bestimmten, deaktivierten Domains oder auf Cookie-Ebene erfassen. Diese Einstellung bleibt für alle Tracking-Tags erhalten, die durch den Google Tag-Manager implementiert wurden."
+  },
+  "google-optimize-heading": {
+    "message": "Google Optimize"
+  },
+  "international-data-transfers-1": {
+    "message": "Die folgenden Dienste werden von Nicht-EU/EWR-Dienstleistern erbracht. Diese externen Dienstleister wurden von uns mit größter Sorgfalt ausgewählt und unterliegen stetiger Kontrolle, um sicherzustellen, dass Privatsphäre und Datenschutz gewahrt bleiben. Die Service-Provider bieten ausreichende Garantien für ein angemessenes Datenschutzniveau und sind gehalten, deine persönlichen Daten nur in Übereinstimmung mit unseren Vorgaben und für die vorgesehenen Verwendungszwecke zu nutzen. Ebenso sind die Dienstleister vertraglich verpflichtet, deine personenbezogenen Daten ausschließlich in Übereinstimmung mit dieser Datenschutzrichtlinie und den europäischen Datenschutzbestimmungen zu verarbeiten:"
+  },
+  "google-optimize-3": {
+    "message": "<strong>Falls du bei der Verbesserung unserer Produkte nicht mitwirken möchtest, kannst du Google Optimize deaktivieren.</strong> Bitte beachte jedoch, dass in diesem Fall ein Cookie gesetzt wird, das deine getroffene Wahl speichert. Dieses Cookie gilt als „notwendiges Cookie“ und kann nicht deaktiviert werden."
+  },
+  "google-optimize-1": {
+    "message": "Unsere Webseite verwendet den Webanalyse- und Optimierungsdienst „Google Optimize“ von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA (\"Google”). Wir verwenden Google Optimize, um die Attraktivität und Funktionalität sowie den Inhalt unserer Website zu erhöhen, indem wir einem Anteil unserer Nutzer neue Funktionen und Inhalte einspielen und das veränderte Nutzerverhalten statistisch auswerten (A/B-Tests). Google Optimize ist eine Unterservice von <a>Google Analytics</a>."
+  },
+  "international-data-transfers-2": {
+    "message": "Wir nutzen Tools von externen Dienstleistern für E-Mails (GSuite); für die Analyse deiner Nutzung unserer Websites (<a>Google Analytics</a>) sowie für A/B-Tests auf der Basis der Analysedaten (<a>Google Optimize</a>). Diese Dienste werden durch den die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du <a>hier</a>."
+  },
+  "google-optimize-2": {
+    "message": "Google Optimize verwendet Cookies, die es uns ermöglichen, die Nutzung unserer Website zu optimieren und zu analysieren. Die durch die Cookies erzeugten Informationen über deine Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir verwenden Google Optimize mit aktivierter IP-Anonymisierung, so dass deine IP-Adresse von Google, wenn du innerhalb der Mitgliedstaaten der Europäischen Union oder im Europäischen Wirtschaftsraum bist, gekürzt wird. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Google-Server in den USA übertragen und dort gekürzt. Google verwendet diese Informationen zum Zwecke der Auswertung deines Nutzungsverhaltens der Website, um Berichte über Optimierungstests und Websiteaktivitäten in diesem Kontext zusammenzustellen, sowie um weitere mit der Websitenutzung und der Internetnutzung verbundene Leistungen zu erbringen."
+  },
+  "international-data-transfers-heading": {
+    "message": "Internationale Datenübertragungen"
+  },
+  "google-tag-manager-heading": {
+    "message": "Google Tag-Manager"
+  }
 }
