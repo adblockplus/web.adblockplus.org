@@ -147,7 +147,7 @@ notoc=True
 
 ### {{ questions-heading[heading] Questions? }} {: #questions }
 
-{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
+{{ questions-paragraph Contact our Data Protection Officer, Dr. Judith Nink, via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }. }}
 
 ---
 
@@ -291,7 +291,7 @@ Germany<br>
 
 ### {{ how-to-exercise-heading[heading] How to exercise your rights }} {: #how-to-exercise }
 
-{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=" "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or mail to: }}
+{{ how-to-exercise-paragraph To exercise your rights, please contact us via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or mail to: }}
 
 
 <address>
