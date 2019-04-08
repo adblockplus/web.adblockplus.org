@@ -6,14 +6,12 @@
   <div class="container">
     {{ "index" | linkify(id="navbar-logo") }}
       <img
-        src="/img/navbar-logo.png"
-        srcset="/img/navbar-logo.svg 2x">
+        src="/img/navbar-logo.svg">
       <span>{{ "Adblock <strong>Plus</strong>" | translate("navbar-logo-text", "Navbar logo text") }}</span>
     </a>
     <a href="#" id="navbar-menu-toggle">
       <img
-        src="/img/menu-toggle.png"
-        srcset="/img/menu-toggle.svg 2x">
+        src="/img/menu-toggle.svg">
     </a>
     <ul id="navbar-menu">
       {% for pagename in ["about", "contribute"] %}
