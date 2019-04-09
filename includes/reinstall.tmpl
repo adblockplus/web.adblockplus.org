@@ -1,4 +1,6 @@
+{% from "macros/install_button" import install_button %}
+
 <aside id="reinstall" class="fg-accent lead">
   <span id="reinstall-label">{{ "Did you uninstall Adblock Plus by accident?" | translate("reinstall-headline", "Text next to the Reinstallation button") }}</span>
-  {{ "index" | linkify(class="button accent") }}{{ "Reinstall Now" | translate("reinstall", "Reinstall button text") }}</a>
+  {{ install_button(pageid) }}
 </aside>

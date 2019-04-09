@@ -1,0 +1,24 @@
+{% macro button(page, labelText, class) %}
+  <a
+    id="install-button"
+    data-pageid={{page}}
+    class="{{class}}"
+    href="download"
+    data-ga='{"event_category": "Download_button", "event_action": "Download"}'>
+    {{ labelText }}
+  </a>
+{% endmacro %}
+
+{% macro install_button(page) %}
+  {% if page == "homepage" %}
+    {{ button(
+      page,
+      get_string("install", "install-button"),
+      class='button hero-download-button' ) }}
+  {% else %}
+    {{ button(
+      page,
+      "Reinstall Now" | translate("reinstall", "Reinstall button text"),
+      class='button accent' ) }}
+  {% endif %}
+{% endmacro %}
