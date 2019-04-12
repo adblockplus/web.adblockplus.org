@@ -13,7 +13,7 @@ pages:
   script:
     - SITEURL="https://${CI_PROJECT_NAMESPACE}.gitlab.io/${CI_PROJECT_NAME}"
     - crudini --set settings.ini general siteurl "${SITEURL}"
-    - python -m cms.bin.generate_static_pages --version public . public
+    - python -m cms.bin.generate_static_pages . public
     - python -m cms.bin.export_csv . > public/latest.csv
     - SITEURL=$(crudini --get settings.ini general siteurl)
     - rpl -Rq 'src="/' "src=\"${SITEURL}" public/
