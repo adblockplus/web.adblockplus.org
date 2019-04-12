@@ -5,21 +5,21 @@ pages:
   script:
     - apt-get install -y rpl rename
     - pip install -q crudini
-    - git -C $HOME/cms fetch origin
-    - git -C $HOME/cms checkout -b import_export_csv origin/import_export_csv
-    - git clone -b master --single-branch https://github.com/adblockplus/sitescripts $HOME/sitescripts
+    - git -C "$HOME/cms" fetch origin
+    - git -C "$HOME/cms" checkout -b import_export_csv origin/import_export_csv
+    - git clone -b master --single-branch "https://github.com/adblockplus/sitescripts" "$HOME/sitescripts"
     - export PYTHONPATH="$HOME/sitescripts:$PYTHONPATH"
-    - python -m cms.bin.generate_static_pages . public
-    - python -m cms.bin.export_csv . > public/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}-${CI_COMMIT_SHORT_SHA}.csv
-    - rpl -Rq "CSV" "${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}-${CI_COMMIT_SHORT_SHA}.csv" public/csv
+    - python -m cms.bin.generate_static_pages . "public"
+    - python -m cms.bin.export_csv . > "public/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}-${CI_COMMIT_SHORT_SHA}.csv"
+    - rpl -Rq "CSV" "${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}-${CI_COMMIT_SHORT_SHA}.csv" "public/csv"
     - SITEURL=$(crudini --get settings.ini general siteurl)
-    - rpl -Rq "$SITEURL" "$CI_PAGES_URL" public/
-    - rpl -Rq 'src="/' "src=\"$CI_PAGES_URL/" public/
-    - rpl -Rq 'srcset="/' "srcset=\"$CI_PAGES_URL/" public/
-    - rpl -Rq 'href="/' "href=\"$CI_PAGES_URL/" public/
-    - rpl -Rq 'url(/' "url($CI_PAGES_URL/" public/
-    - rpl -Rq 'url("/' "url(\"$CI_PAGES_URL/" public/
-    - rename 's/index/index.html/' public/**/index
+    - rpl -Rq "$SITEURL" "$CI_PAGES_URL" "public/"
+    - rpl -Rq "src=\"/" "src=\"$CI_PAGES_URL/" "public/"
+    - rpl -Rq "srcset=\"/" "srcset=\"$CI_PAGES_URL/" "public/"
+    - rpl -Rq "href=\"/" "href=\"$CI_PAGES_URL/" "public/"
+    - rpl -Rq "url(/" "url($CI_PAGES_URL/" "public/"
+    - rpl -Rq "url(\"/" "url(\"$CI_PAGES_URL/" "public/"
+    - rename "s/index/index.html/" "public/**/index"
   artifacts:
     paths:
       - public
