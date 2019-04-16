@@ -1,0 +1,20 @@
+<script>
+
+  var gaOptedOut = document.cookie.indexOf("eyeo-ga-opt-out");
+
+  var gtmData = window.gtmData = [
+    {
+      'gtm.start': new Date().getTime(),
+      event:"gtm.js"
+    }
+  ];
+
+  var gtmScript = document.createElement("script");
+
+  // gtmData is passed to separate Google Tag Manager's dataLayer from gtag's
+  gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TFZZB3Q&l=gtmData";
+
+  if (!gaOptedOut)
+    document.head.appendChild(gtmScript);
+
+</script>
