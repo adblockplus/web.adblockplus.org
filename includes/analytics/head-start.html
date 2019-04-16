@@ -1,6 +1,10 @@
 <script>
 
-  var gaOptedOut = document.cookie.indexOf("eyeo-ga-opt-out");
+  var eyeo = window.eyeo || {};
+
+  var trackingOptOut = document.cookie.indexOf("eyeo-ga-opt-out") !== -1;
+  var trackingConsent = document.cookie.indexOf("eyeo-ga-consent") !== -1;
+
 
   var gtmData = window.gtmData = [
     {
@@ -14,7 +18,13 @@
   // gtmData is passed to separate Google Tag Manager's dataLayer from gtag's
   gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TFZZB3Q&l=gtmData";
 
-  if (!gaOptedOut)
+  if (
+    // page has opt in tracking and consent is given
+    (eyeo.optInOnlyTracking && trackingConsent) ||
+    // page has opt out tracking and user has not opted out
+    (!eyeo.optInOnlyTracking && !trackingOptOut)
+  ) {
     document.head.appendChild(gtmScript);
+  }
 
 </script>
