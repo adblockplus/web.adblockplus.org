@@ -2,5 +2,8 @@
 
 <aside id="reinstall" class="fg-accent lead">
   <span id="reinstall-label">{{ "Did you uninstall Adblock Plus by accident?" | translate("reinstall-headline", "Text next to the Reinstallation button") }}</span>
-  {{ install_button(pageid) }}
+  {{ install_button(
+    page,
+    "Reinstall Now" | translate("reinstall", "Reinstall button text"),
+    "button accent" ) }}
 </aside>

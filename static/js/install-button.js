@@ -58,7 +58,8 @@
     mobilePlatform,
     mobileBrowsers,
     desktopBrowsers,
-  ){
+  )
+  {
     browser = !!mobilePlatform ?
       getBowserKey(mobileBrowsers):
       getBowserKey(desktopBrowsers);
@@ -75,8 +76,7 @@
   {
     var bodyClassList = document.body.classList,
         installButton = document.getElementById("install-button"),
-        pageId = installButton.getAttribute("data-pageid"),
-        homepage = pageId == "homepage",
+        pageId = installButton.getAttribute("data-install-suffix"),
         installerHref = "download";
 
     // ABP comes with Maxthon out of the box.
