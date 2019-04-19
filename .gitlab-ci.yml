@@ -24,3 +24,12 @@ pages:
   artifacts:
     paths:
       - public
+
+  stage: test
+  image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
+  stage: test
+  script:
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox
+  when: manual
