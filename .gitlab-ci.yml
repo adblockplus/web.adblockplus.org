@@ -27,7 +27,6 @@ pages:
 
   stage: test
   image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
-  stage: test
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
