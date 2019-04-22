@@ -7,27 +7,12 @@
     "msie": "https://eyeo.to/adblockplus/ie_install/",
     "opera": "https://eyeo.to/adblockplus/opera_install/",
     "safari": "https://eyeo.to/adblockplus/safari_install/",
-    "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install"
+    "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install/"
   };
-
-  var reinstallDesktopBrowsers = {
-    "chrome": "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb?utm_source=website&utm_medium=landing&utm_campaign=uninstalled_page",
-    "firefox": "https://eyeo.to/adblockplus/firefox_install/uninstalled_page/",
-    "msedge": "https://eyeo.to/adblockplus/edge_install/uninstalled_page/",
-    "msie": "https://eyeo.to/adblockplus/ie_install/uninstalled_page/",
-    "opera": "https://eyeo.to/adblockplus/opera_install/uninstalled_page/",
-    "safari": "https://eyeo.to/adblockplus/safari_install/uninstalled_page/",
-    "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install/uninstalled_page/"
-  }
 
   var mobileBrowsers = {
     "safari": "https://eyeo.to/adblockplus/ios_safari_install/",
     "samsungBrowser": "https://eyeo.to/adblockplus/android_samsung_install/"
-  };
-
-  var reinstallMobileBrowsers = {
-    "safari": "https://eyeo.to/adblockplus/ios_safari_install/uninstalled_page/",
-    "samsungBrowser": "https://eyeo.to/adblockplus/android_samsung_install/uninstalled_page/"
   };
 
   var mobilePlatforms = {
@@ -35,86 +20,63 @@
     "ios": "https://eyeo.to/adblockbrowser/ios/"
   };
 
-  var reinstallMobilePlatforms = {
-    "android": "https://eyeo.to/adblockbrowser/android/uninstalled_page/",
-    "ios": "https://eyeo.to/adblockbrowser/ios/uninstalled_page/"
-  };
-
-
   var browser, mobilePlatform;
 
-  function getBowserKey(keys)
+  function getDetectedBrowserLabel(keys)
   {
     for (var key in keys)
     {
       if (bowser[key])
         return key;
     }
-  }
 
-  function setupInstallHref(
-    mobilePlatform,
-    mobileBrowsers,
-    desktopBrowsers,
-  )
-  {
-    browser = !!mobilePlatform ?
-      getBowserKey(mobileBrowsers):
-      getBowserKey(desktopBrowsers);
-    if (!!mobilePlatform)
-      if (!!browser)
-        return installerHref = mobileBrowsers[browser];
-      else
-        return installerHref = mobilePlatforms[mobilePlatform];
-    else if (!!browser)
-      return installerHref = desktopBrowsers[browser];
+    return false;
   }
 
   function setupInstallButton()
   {
     var bodyClassList = document.body.classList,
         installButton = document.getElementById("install-button"),
-        pageId = installButton.getAttribute("data-install-suffix"),
-        installerHref = "download";
+        installSuffix = installButton.getAttribute("data-install-suffix"),
+        installerHref = "download",
+        installTextTemplate, gaData;
 
     // ABP comes with Maxthon out of the box.
     if (bowser.maxthon)
       return bodyClassList.add("maxthon");
 
-    mobilePlatform = getBowserKey(mobilePlatforms);
+    mobilePlatform = getDetectedBrowserLabel(mobilePlatforms);
 
-    if (!!homepage)
-      installerHref = setupInstallHref(
-        mobilePlatform,
-        mobileBrowsers,
-        desktopBrowsers,
-      );
+    if (mobilePlatform)
+      browser = getDetectedBrowserLabel(mobileBrowsers);
     else
-      installerHref = setupInstallHref(
-        mobilePlatform,
-        reinstallMobileBrowsers,
-        reinstallDesktopBrowsers
-      );
+      browser = getDetectedBrowserLabel(desktopBrowsers);
 
-    if (!!mobilePlatform) bodyClassList.add(mobilePlatform);
+    if (mobilePlatform)
+      if (browser)
+        installerHref = mobileBrowsers[browser];
+      else
+        installerHref = mobilePlatforms[mobilePlatform];
+    else if (browser)
+      installerHref = desktopBrowsers[browser];
 
-    if (!!browser) bodyClassList.add(browser);
+    if (mobilePlatform || browser)
+      installerHref += installSuffix;
+
+    if (mobilePlatform) bodyClassList.add(mobilePlatform);
+    if (browser) bodyClassList.add(browser);
 
     installButton.href = installerHref;
 
-    // The default label changes when a browser or platform is detected
+    installTextTemplate = document.getElementById(
+      "download-label-" + (browser || mobilePlatform)
+    );
+
+    if (installTextTemplate)
+      installButton.textContent = installTextTemplate.textContent;
+
     if (browser || mobilePlatform)
     {
-      if (!!homepage) {
-        var installButtonTemplate = document.getElementById(
-          "download-label-" + (browser || mobilePlatform)
-        );
-
-        installButton.textContent = installButtonTemplate.textContent;
-      }
-
-      var gaData;
-
       try {
         gaData = JSON.parse(installButton.getAttribute("data-ga"));
       } catch (error) {
@@ -123,6 +85,8 @@
           "event_action": "Link click"
         };
       }
+
+      gaData["event_action"] = "Download";
 
       if (mobilePlatform)
         gaData["event_label"] = "Downloaded_" + (
@@ -140,14 +104,6 @@
         gaData["event_label"] = "Downloaded_" + browser;
 
       installButton.setAttribute("data-ga", JSON.stringify(gaData));
-    }
-    else // browser not detected
-    {
-      installButton.setAttribute("data-ga", JSON.stringify({
-        "event_category": "Download_button",
-        "event_action": "Go_to_download",
-        "event_label": "Fallback_button"
-      }));
     }
   }
 
