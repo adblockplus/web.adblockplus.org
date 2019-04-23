@@ -25,6 +25,7 @@ pages:
     paths:
       - public
 
+tests:
   stage: test
   image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
   script:
