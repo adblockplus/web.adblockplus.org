@@ -6,7 +6,7 @@
   var TESTING_OPT_OUT = "eyeo-ab-opt-out";
   var TRACKING_CONSENT = "eyeo-ga-consent";
   var TRACKING_UID = "UA-18643396-6";
-  var TESTING_UID = "FIXME";
+  var TESTING_UID = "GTM-NW8L5JT";
   var TRACKING_SCRIPT_URL = "https://www.googletagmanager.com/gtag/js?id=" + TRACKING_UID;
 
   // Ponyfill //////////////////////////////////////////////////////////////////
