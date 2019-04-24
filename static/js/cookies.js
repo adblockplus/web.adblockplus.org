@@ -1,5 +1,9 @@
 (function(root, doc, body)
 {
+  // Config ////////////////////////////////////////////////////////////////////
+
+  var eyeo = window.eyeo || {};
+
   // Ponyfill //////////////////////////////////////////////////////////////////
 
   function addListeners(event, targets, callback)
@@ -53,8 +57,14 @@
 
   // Initialize Tracking ///////////////////////////////////////////////////////
 
-  if (!trackingOptOut)
+  if (
+    // page has opt in tracking and consent is given
+    (eyeo.optInOnlyTracking && trackingConsent) ||
+    // page has opt out tracking and user has not opted out
+    (!eyeo.optInOnlyTracking && !trackingOptOut)
+  ) {
     loadGoogleAnalytics();
+  }
 
   // Setup Cookie Notification /////////////////////////////////////////////////
 
