@@ -154,7 +154,8 @@
 
     addListeners("click", saveButtons, saveCookieSettings);
 
-    if (!trackingConsent)
+
+    if (!eyeo.optInOnlyTracking && !trackingConsent)
       toggleCookieNotice();
 
     if (trackingOptOut)
