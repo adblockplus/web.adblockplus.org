@@ -23,6 +23,7 @@
     <? include meta/social ?>
     <? include styles ?>
     <? include head/config ?>
+    <? include analytics/head-start ?>
     <? include polyfills ?>
     <? include head/scripts ?>
 
@@ -32,6 +33,7 @@
   </head>
 
   <body>
+    <? include analytics/body-start ?>
     <? include navbar ?>
 
     <div id="content" class="container content {{ localefile == "index" and page }}">
