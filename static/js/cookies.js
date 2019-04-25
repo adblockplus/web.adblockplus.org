@@ -4,6 +4,13 @@
 
   var eyeo = window.eyeo || {};
 
+  var TRACKING_OPT_OUT = "eyeo-ga-opt-out";
+  var TESTING_OPT_OUT = "eyeo-ab-opt-out";
+  var TRACKING_CONSENT = "eyeo-ga-consent";
+  var TRACKING_UID = "UA-18643396-6";
+  var TESTING_UID = "GTM-NW8L5JT";
+  var TRACKING_SCRIPT_URL = "https://www.googletagmanager.com/gtag/js?id=" + TRACKING_UID;
+
   // Ponyfill //////////////////////////////////////////////////////////////////
 
   function addListeners(event, targets, callback)
@@ -14,17 +21,12 @@
     }
   }
 
-  // Cookie management /////////////////////////////////////////////////////////
-
-  var TRACKING_OPT_OUT = 'eyeo-ga-opt-out';
-  var TRACKING_CONSENT = 'eyeo-ga-consent';
-
-  function hasTrackingCookie(key)
+  function hasCookie(key)
   {
     return doc.cookie.indexOf(key) !== -1;
   }
 
-  function setTrackingCookie(key, value)
+  function setCookie(key, value)
   {
     if (value)
       doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
@@ -32,30 +34,36 @@
       doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
   }
 
-  var trackingOptOut = hasTrackingCookie(TRACKING_OPT_OUT);
-  var trackingConsent = hasTrackingCookie(TRACKING_CONSENT);
-
   // Setup Google Analytics ////////////////////////////////////////////////////
 
-  var dataLayer = root.dataLayer = root.dataLayer || [];
+  var dataLayer = root.dataLayer = [["js", new Date()]];
 
   var gtag = root.gtag = function()
   {
     dataLayer.push(arguments);
   };
 
-  gtag("js", new Date());
-  gtag("config", "UA-18643396-6", { anonymize_ip: true, transport_type: 'beacon' });
+  var gtagOptions = root.gtagOptions = {
+    anonymize_ip: true,
+    transport_type: 'beacon'
+  };
 
   function loadGoogleAnalytics()
   {
     var script = doc.createElement("script");
     script.setAttribute("async", "");
-    script.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=UA-18643396-6");
+    script.setAttribute("src", TRACKING_SCRIPT_URL);
     doc.head.appendChild(script);
   }
 
-  // Initialize Tracking ///////////////////////////////////////////////////////
+  // Initialize Google Analytics  //////////////////////////////////////////////
+
+  var trackingOptOut = hasCookie(TRACKING_OPT_OUT);
+  var testingOptOut = hasCookie(TESTING_OPT_OUT);
+  var trackingConsent = hasCookie(TRACKING_CONSENT);
+
+  if (!testingOptOut)
+    gtagOptions.optimize_id = TESTING_UID;
 
   if (
     // page has opt in tracking and consent is given
@@ -63,6 +71,7 @@
     // page has opt out tracking and user has not opted out
     (!eyeo.optInOnlyTracking && !trackingOptOut)
   ) {
+    gtag("config", TRACKING_UID, gtagOptions);
     loadGoogleAnalytics();
   }
 
@@ -70,11 +79,12 @@
 
   document.addEventListener("DOMContentLoaded", function()
   {
-    var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save"),
-        saveButtons = doc.querySelectorAll(".cookies-save"),
-        settingsButtons = doc.querySelectorAll(".cookies-settings"),
-        settingsDropups = [].slice.call(doc.querySelectorAll(".cookies-dropup")),
-        trackingCookiesButtons = doc.getElementsByClassName("tracking-cookies");
+    var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save");
+    var saveButtons = doc.querySelectorAll(".cookies-save");
+    var settingsButtons = doc.querySelectorAll(".cookies-settings");
+    var settingsDropups = doc.querySelectorAll(".cookies-dropup");
+    var trackingCookiesButtons = doc.querySelectorAll(".tracking-cookies");
+    var testingCookiesButtons = doc.querySelectorAll(".testing-cookies");
 
     function toggleCookieNotice()
     {
@@ -95,33 +105,49 @@
 
     function onCookieSettingsBlur(event)
     {
+      var isInDropup = false;
+
+      for (var i = 0; i < settingsDropups.length; i++)
+        if (settingsDropups[i].contains(event.target))
+          isInDropup = true;
+
       if (
         // Is the cookie settings dropup open?
         doc.body.classList.contains("show-cookies-settings") &&
         root.innerWidth >= 576 &&
         root.innerHeight >= 575 &&
-
-        // Is the click outside the cookie settings dropup component?
-        !settingsDropups.some(function(settingsDropup)
-        {
-          return settingsDropup.contains(event.target);
-        })
+        // Is the click outside the cookie settings dropup?
+        isInDropup == false
       ) {
-        toggleCookieSettings();
+          toggleCookieSettings();
       }
     }
 
     function toggleTrackingPreference()
     {
       trackingOptOut = !trackingOptOut;
+
+      if (trackingOptOut)
+        flipTestingSwitches(false);
+      else if (!testingOptOut)
+        flipTestingSwitches(true);
+    }
+
+    function toggleTestingPreference()
+    {
+      testingOptOut = !testingOptOut;
     }
 
     function saveCookieSettings()
     {
-      setTrackingCookie(TRACKING_OPT_OUT, trackingOptOut);
-      root["ga-disable-UA-18643396-6"] = !trackingOptOut;
+      setCookie(TRACKING_OPT_OUT, trackingOptOut);
+      setCookie(TESTING_OPT_OUT, testingOptOut);
+      // consent cookie is saved separately by triggering any notice closing event
 
-      // Deleting all "not essential" cookies in this document
+      // This immediately disables or undisables tracking
+      root["ga-disable-" + TRACKING_UID] = !trackingOptOut;
+
+      // Delete all non-essential cookies when tracking is disabled
       if (trackingOptOut)
       {
         var cookies = document.cookie.split(";");
@@ -131,26 +157,45 @@
           var cookie = cookies[i].split("=")[0].trim();
 
           if (cookie !== TRACKING_OPT_OUT &&
+            cookie !== TESTING_OPT_OUT &&
             cookie !== TRACKING_CONSENT)
-            setTrackingCookie(cookie, false);
+            setCookie(cookie, false);
         }
       }
     }
 
     function saveCookieConsent()
     {
-      setTrackingCookie(TRACKING_CONSENT, true);
+      setCookie(TRACKING_CONSENT, true);
+    }
+
+    function flipTrackingSwitches(checked)
+    {
+      var trackingOptOutSwitches = document.querySelectorAll("input.tracking-cookies");
+
+      for (var i = 0; i < trackingOptOutSwitches.length; i++)
+        trackingOptOutSwitches[i].checked = checked;
+    }
+
+    function flipTestingSwitches(checked)
+    {
+      var testingOptOutSwitches = document.querySelectorAll("input.testing-cookies");
+
+      for (var i = 0; i < testingOptOutSwitches.length; i++)
+        testingOptOutSwitches[i].checked = checked;
     }
 
     doc.addEventListener("click", onCookieSettingsBlur, true);
 
-    addListeners("click", closeButtons, closeCookieNotice);
-
     addListeners("click", closeButtons, saveCookieConsent);
+
+    addListeners("click", closeButtons, closeCookieNotice);
 
     addListeners("click", settingsButtons, toggleCookieSettings);
 
     addListeners("change", trackingCookiesButtons, toggleTrackingPreference);
+
+    addListeners("change", testingCookiesButtons, toggleTestingPreference);
 
     addListeners("click", saveButtons, saveCookieSettings);
 
@@ -159,12 +204,10 @@
       toggleCookieNotice();
 
     if (trackingOptOut)
-    {
-      var trackingOptOutSwitches = document.querySelectorAll("input.tracking-cookies");
+      flipTrackingSwitches(false);
 
-      for (var i = 0; i < trackingOptOutSwitches.length; i++)
-        trackingOptOutSwitches[i].checked = false;
-    }
+    if (testingOptOut)
+      flipTestingSwitches(false);
 
   }, false);
 }(window, document));
