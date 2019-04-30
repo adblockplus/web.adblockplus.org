@@ -1,0 +1,20 @@
+title=Data submitted successfully
+opt_in_only_tracking=1
+template=minimal
+
+<head>
+  <meta name="robots" content="noindex" />
+  <link href="/css/uninstalled.css" rel="stylesheet">
+  <script src="/js/tracking.js"></script>
+</head>
+
+<div id="content">
+  <div class="container content">
+    <h1>{{ heading[Heading text] Data submitted successfully }}</h1>
+    <p class="lead">{{ thank-you[Thank you message below heading] Thank you for your participation }}</p>
+    <? include reinstall ?>
+  </div>
+</div>
+
+<script src="/js/vendor/bowser.js"></script>
+<script src="/js/install-button.js"></script>
