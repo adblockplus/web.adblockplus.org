@@ -62,10 +62,10 @@
 
     inputChararcterCounter(
       "reason-other-input",
-      "#reason-other-container #characters-countdown");
+      "#reason-other-container .characters-countdown");
     inputChararcterCounter(
       "reason-stillads-input",
-      "#reason-stillads-container #characters-countdown");
+      "#reason-stillads-container .characters-countdown");
 
     var submitButton = document.getElementById("reason-submit");
     submitButton.addEventListener("click", function(event)
