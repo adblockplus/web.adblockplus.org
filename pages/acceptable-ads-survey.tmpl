@@ -19,8 +19,8 @@ template=minimal
 <section id="uninstall-reasons">
   <div class="container content">
     <h1>{{ title | translate("title") }}</h1>
-    <p>{{ "Please select the reason(s) why you uninstalled Adblock Plus:" | translate("reasons-header", "Form heading") }}</p>
-    <form id="reasons-form" action="uninstalled-submit" method="get">
+    <p>{{ "We want to make Adblock Plus even better. Please tell us why you turned off Acceptable Ads:" | translate("reasons-header", "Form heading") }}</p>
+    <form id="reasons-form" action="acceptable-ads-survey-submit" method="get">
       <fieldset>
         <ul id="reasons">
           {%- for reasonId, stringId, value, stillads in reasons %}
@@ -36,10 +36,10 @@ template=minimal
                     name="reasonOther"
                     rows="4"
                     maxlength="300"
-                    placeholder="{{ "Please tell us where" | translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
+                    placeholder="{{ "Please tell us where" | translate("reason-stillads-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
                   <div>
                     {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
-                    <span id="characters-countdown"></span>
+                    <span class="characters-countdown"></span>
                   </div>
                 </fieldset>
               {%- endif %}
@@ -59,7 +59,7 @@ template=minimal
                 placeholder="{{ "Please explain why you are uninstalling Adblock Plus" | translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
               <div>
                 {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
-                <span id="characters-countdown"></span>
+                <span class="characters-countdown"></span>
               </div>
             </fieldset>
           </li>
