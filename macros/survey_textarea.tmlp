@@ -1,0 +1,12 @@
+{% macro survey_textarea(placeholder, classes) %}
+  <textarea
+    class="{{ classes }}"
+    name="reasonOther"
+    rows="4"
+    maxlength="300"
+    placeholder="{{ placeholder }}"></textarea>
+  <div>
+    {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
+    <span id="characters-countdown"></span>
+  </div>
+{% endmacro %}

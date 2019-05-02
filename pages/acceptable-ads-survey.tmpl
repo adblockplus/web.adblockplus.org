@@ -3,13 +3,10 @@ opt_in_only_tracking=1
 template=minimal
 
 {% set reasons = [
-  ("1v0", "reason-not-installed", "I didn't install Adblock Plus.", ""),
-  ("2v0", "reason-slowing-down", "Adblock Plus slowed down my browser.", ""),
-  ("3v0", "reason-acceptable-ads", "I don't like the Acceptable Ads program.", ""),
-  ("4v0", "reason-see-ads", "Adblock Plus didn't block all ads.", ""),
-  ("5v0", "reason-better-adblocker", "I found better ad blocking software.", ["AdBlock", "uBlock", "uBlock Origin", "Ghostery"]),
-  ("6v0", "reason-break-websites", "Adblock Plus breaks websites that I visit.", ""),
-  ("7v0", "reason-difficult", "I find it difficult to use Adblock Plus.", ""),
+  ("1v0", "reason-no-acceptable-ads", "No ads are acceptable to me.", ""),
+  ("2v0", "reason-privacy", "I'm concerned about my privacy when I allow some ads.", ""),
+  ("3v0", "reason-still-ads", "I still see ads that annoy me.", [""]),
+  ("4v0", "reason-unknown", "I don't know what Acceptable Ads are.", ""),
 ] %}
 
 <head>
@@ -22,28 +19,28 @@ template=minimal
 <section id="uninstall-reasons">
   <div class="container content">
     <h1>{{ title | translate("title") }}</h1>
-    <? include reinstall ?>
     <p>{{ "Please select the reason(s) why you uninstalled Adblock Plus:" | translate("reasons-header", "Form heading") }}</p>
     <form id="reasons-form" action="uninstalled-submit" method="get">
       <fieldset>
         <ul id="reasons">
-          {%- for reasonId, stringId, value, adblockers in reasons %}
+          {%- for reasonId, stringId, value, stillads in reasons %}
             <li>
               <label>
-                <input type="checkbox" name="reason" {% if adblockers %} data-toggle-view="adblockers" {% endif %} value="{{ reasonId }}" />
+                <input type="checkbox" name="reason" {% if stillads %} data-toggle-view="reason-stillads-container" {% endif %} value="{{ reasonId }}" />
                 {{ value | translate(stringId, "Uninstallation reason") }}
               </label>
-              {%- if adblockers %}
-                <fieldset class="hidden" id="adblockers">
-                  <p>
-                    <select name="otherAdblockerPredefined">
-                      {%- for adblocker in adblockers %}
-                        <option data-hide-element="other-adblocker" value="{{ adblocker }}">{{ adblocker }}</option>
-                      {%- endfor %}
-                      <option data-show-element="other-adblocker" value="Other">{{ "Other" | translate("other", "Option in list of Adblockers") }}</option>
-                    </select>
-                    <input id="other-adblocker" class="hidden" type="text" name="otherAdblocker" />
-                  </p>
+              {%- if stillads %}
+                <fieldset id="reason-stillads-container" class="hidden">
+                  <textarea
+                    id="reason-stillads-input"
+                    name="reasonOther"
+                    rows="4"
+                    maxlength="300"
+                    placeholder="{{ "Please tell us where" | translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
+                  <div>
+                    {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
+                    <span id="characters-countdown"></span>
+                  </div>
                 </fieldset>
               {%- endif %}
             </li>
@@ -51,7 +48,7 @@ template=minimal
           <li>
             <label>
               <input id="reason-other" data-toggle-view="reason-other-container" type="checkbox" name="reason" value="0v0" />
-              {{ "Other, namely..." | translate("reason-other", "Last uninstallation reason") }}
+              {{ "Other (please specify)" | translate("reason-other", "Last uninstallation reason") }}
             </label>
             <fieldset id="reason-other-container" class="hidden">
               <textarea
@@ -80,6 +77,4 @@ template=minimal
 </section>
 </div>
 
-<script src="/js/vendor/bowser.js"></script>
-<script src="/js/install-button.js"></script>
-<script src="/js/uninstalled-form.js"></script>
+<script src="/js/aa-survey-form.js"></script>
