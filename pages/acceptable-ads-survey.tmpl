@@ -16,65 +16,65 @@ template=minimal
 </head>
 
 <div id="content">
-<section id="uninstall-reasons">
-  <div class="container content">
-    <h1>{{ title | translate("title") }}</h1>
-    <p>{{ "We want to make Adblock Plus even better. Please tell us why you turned off Acceptable Ads:" | translate("reasons-header", "Form heading") }}</p>
-    <form id="reasons-form" action="acceptable-ads-survey-submit" method="get">
-      <fieldset>
-        <ul id="reasons">
-          {%- for reasonId, stringId, value, stillads in reasons %}
+  <section id="uninstall-reasons">
+    <div class="container content">
+      <h1>{{ title | translate("title") }}</h1>
+      <p>{{ "We want to make Adblock Plus even better. Please tell us why you turned off Acceptable Ads:" | translate("reasons-header", "Form heading") }}</p>
+      <form id="reasons-form" action="acceptable-ads-survey-submit" method="get">
+        <fieldset>
+          <ul id="reasons">
+            {%- for reasonId, stringId, value, stillads in reasons %}
+              <li>
+                <label>
+                  <input type="checkbox" name="reason" {% if stillads %} data-toggle-view="reason-stillads-container" {% endif %} value="{{ reasonId }}" />
+                  {{ value | translate(stringId, "Uninstallation reason") }}
+                </label>
+                {%- if stillads %}
+                  <fieldset id="reason-stillads-container" class="hidden">
+                    <textarea
+                      id="reason-stillads-input"
+                      name="reasonStillAds"
+                      rows="4"
+                      maxlength="300"
+                      placeholder="{{ "Please tell us where" | translate("reason-stillads-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
+                    <div>
+                      {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
+                      <span class="characters-countdown"></span>
+                    </div>
+                  </fieldset>
+                {%- endif %}
+              </li>
+            {%- endfor %}
             <li>
               <label>
-                <input type="checkbox" name="reason" {% if stillads %} data-toggle-view="reason-stillads-container" {% endif %} value="{{ reasonId }}" />
-                {{ value | translate(stringId, "Uninstallation reason") }}
+                <input id="reason-other" data-toggle-view="reason-other-container" type="checkbox" name="reason" value="0v0" />
+                {{ "Other (please specify)" | translate("reason-other", "Last uninstallation reason") }}
               </label>
-              {%- if stillads %}
-                <fieldset id="reason-stillads-container" class="hidden">
-                  <textarea
-                    id="reason-stillads-input"
-                    name="reasonStillAds"
-                    rows="4"
-                    maxlength="300"
-                    placeholder="{{ "Please tell us where" | translate("reason-stillads-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
-                  <div>
-                    {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
-                    <span class="characters-countdown"></span>
-                  </div>
-                </fieldset>
-              {%- endif %}
+              <fieldset id="reason-other-container" class="hidden">
+                <textarea
+                  id="reason-other-input"
+                  name="reasonOther"
+                  rows="4"
+                  maxlength="300"
+                  placeholder="{{ "Please share with us your reason for turning off Acceptable Ads" | translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
+                <div>
+                  {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
+                  <span class="characters-countdown"></span>
+                </div>
+              </fieldset>
             </li>
-          {%- endfor %}
-          <li>
-            <label>
-              <input id="reason-other" data-toggle-view="reason-other-container" type="checkbox" name="reason" value="0v0" />
-              {{ "Other (please specify)" | translate("reason-other", "Last uninstallation reason") }}
-            </label>
-            <fieldset id="reason-other-container" class="hidden">
-              <textarea
-                id="reason-other-input"
-                name="reasonOther"
-                rows="4"
-                maxlength="300"
-                placeholder="{{ "Please share with us your reason for turning off Acceptable Ads" | translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
-              <div>
-                {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
-                <span class="characters-countdown"></span>
-              </div>
-            </fieldset>
-          </li>
-        </ul>
-      </fieldset>
-      <p id="reason-error">{{ "Please select at least one of the options above" | translate("error-msg", "Error message, is being shown after submission if no item selected")}}</p>
-      <p>
-        <button id="reason-submit" class="button primary">{{ "Submit" | translate("submit", "Submit button text") }}</button>
+          </ul>
+        </fieldset>
+        <p id="reason-error">{{ "Please select at least one of the options above" | translate("error-msg", "Error message, is being shown after submission if no item selected")}}</p>
+        <p>
+          <button id="reason-submit" class="button primary">{{ "Submit" | translate("submit", "Submit button text") }}</button>
+        </p>
+      </form>
+      <p class="disclaimer">
+        <small>{{ "Please share with us your reason for turning off Acceptable Ads. Please see our <a href='/privacy'>privacy policy</a>." | translate("disclaimer", "Disclaimer below form") }}</small>
       </p>
-    </form>
-    <p class="disclaimer">
-      <small>{{ "Please share with us your reason for turning off Acceptable Ads. Please see our <a href='/privacy'>privacy policy</a>." | translate("disclaimer", "Disclaimer below form") }}</small>
-    </p>
-  </div>
-</section>
+    </div>
+  </section>
 </div>
 
 <script src="/js/aa-survey-form.js"></script>
