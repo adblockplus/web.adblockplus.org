@@ -12,6 +12,25 @@ template=minimal
     background-size: auto 100%;
   }
 
+  [dir="ltr"] .alert
+  {
+    border-left: none;
+    border-radius: 0.4em;
+  }
+
+  .card-header img
+  {
+    vertical-align: middle;
+  }
+
+  @media (min-width: 1366px)
+  {
+    [dir="ltr"] .alert
+    {
+      display: none;
+    }
+  }
+
 </style>
 
 <div class="bg-grey-abstract">
