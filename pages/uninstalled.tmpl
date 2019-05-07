@@ -31,7 +31,13 @@ template=minimal
             {%- for reasonId, stringId, value, adblockers in reasons %}
               <li>
                 <label>
-                  <input type="checkbox" name="reason" {% if adblockers %} data-toggle-view="adblockers" {% endif %} value="{{ reasonId }}" />
+                  <input
+                    type="checkbox"
+                    name="reason"
+                    {% if adblockers %}
+                      data-toggle-view="adblockers"
+                    {% endif %}
+                    value="{{ reasonId }}" />
                   {{ value | translate(stringId, "Uninstallation reason") }}
                 </label>
                 {%- if adblockers %}
