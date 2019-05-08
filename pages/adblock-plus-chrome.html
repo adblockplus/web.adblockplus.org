@@ -6,19 +6,32 @@ template=minimal
 
   a img
   {
-    vertical-align:middle;
+    vertical-align: middle;
+  }
+
+  a.download,
+  a.download:visited
+  {
+    color: #fff;
+  }
+
+  .button.download
+  {
+    padding: 0.4em;
+    text-transform: uppercase;
+    background-color: #3D9C4F;
   }
 
   .section
   {
-      padding: 2em;
+    padding: 2em;
   }
 
   .bg-grey-abstract
   {
     background-image: url("/img/grey-bg-abstract-shape.svg");
     background-repeat: no-repeat;
-    background-position: top 70% right 75%;
+    background-position: top -475px right -1080px;
   }
 
   .info-box
@@ -39,6 +52,12 @@ template=minimal
     cursor: pointer;
   }
 
+  .info-box .button
+  {
+    border-radius: 0.4em;
+    color: #fff;
+  }
+
   .card-header img
   {
     vertical-align: middle;
@@ -50,11 +69,12 @@ template=minimal
     display: none;
   }
 
-  @media (min-width: 1366px)
+  /* iPhone 5/SE */
+  @media (max-width: 320px)
   {
-    [dir="ltr"] .alert
+    .button.download
     {
-      display: none;
+      font-size: 88%;
     }
   }
 
