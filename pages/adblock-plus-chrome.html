@@ -4,18 +4,35 @@ template=minimal
 
 <style>
 
+  .section
+  {
+      padding: 2em;
+  }
+
   .bg-grey-abstract
   {
     background-image: url("/img/grey-bg-abstract-shape.svg");
     background-repeat: no-repeat;
     background-position: top right;
-    background-size: auto 100%;
+    background-size: 100%;
   }
 
-  [dir="ltr"] .alert
+  .info-box
   {
+    padding: 15px;
+    margin: 15px 0;
     border-left: none;
     border-radius: 0.4em;
+  }
+
+  .info-box a img
+  {
+    vertical-align:middle;
+  }
+
+  .info-box p
+  {
+    padding-top: 5px;
   }
 
   .card-header img
