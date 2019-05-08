@@ -4,6 +4,7 @@
     "chrome": "https://eyeo.to/adblockplus/chrome_install/",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/",
     "msedge": "https://eyeo.to/adblockplus/edge_install/",
+    "msedge_chromium": "https://eyeo.to/adblockplus/edge_chromium_install/",
     "msie": "https://eyeo.to/adblockplus/ie_install/",
     "opera": "https://eyeo.to/adblockplus/opera_install/",
     "safari": "https://eyeo.to/adblockplus/safari_install/",
@@ -50,7 +51,10 @@
     if (mobilePlatform)
       browser = getDetectedBrowserLabel(mobileBrowsers);
     else
-      browser = getDetectedBrowserLabel(desktopBrowsers);
+      if (navigator.userAgent.indexOf("Edg/") != -1)
+        browser = "msedge_chromium"
+      else
+        browser = getDetectedBrowserLabel(desktopBrowsers);
 
     if (mobilePlatform)
       if (browser)
@@ -69,7 +73,9 @@
     installButton.href = installerHref;
 
     installTextTemplate = document.getElementById(
-      "download-label-" + (browser || mobilePlatform)
+      browser == "msedge_chromium" ?
+        "download-label-msedge" :
+        "download-label-" + (browser || mobilePlatform)
     );
 
     if (installTextTemplate)

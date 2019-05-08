@@ -122,7 +122,6 @@ title=Writing Adblock Plus filters
         <li>{{s59 <code><fix>stylesheet</fix></code> — external CSS stylesheet files}}</li>
         <li>{{s60 <code><fix>object</fix></code> — content handled by browser plugins, e.g. Flash or Java}}</li>
         <li>{{xmlhttprequest <code><fix>xmlhttprequest</fix></code> — requests started using the <a href="https://xhr.spec.whatwg.org/"><code><fix>XMLHttpRequest</fix></code> object</a> or <a href="https://fetch.spec.whatwg.org/"><code><fix>fetch()</fix></code> API</a>}}</li>
-        <li>{{s63 <code><fix>object-subrequest</fix></code> — requests started by plugins like Flash}}</li>
         <li>{{s64 <code><fix>subdocument</fix></code> — embedded pages, usually included via HTML frames}}</li>
         <li>{{ping <code><fix>ping</fix></code> — requests started by <a href="https://developer.mozilla.org/docs/Web/HTML/Element/a#attr-ping"><code><fix>&lt;a ping&gt;</fix></code></a> or <a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon"><code><fix>navigator.sendBeacon()</fix></code></a> (Adblock Plus 2.7.1 or higher required)}}</li>
         <li>{{websocket <code><fix>websocket</fix></code> — requests initiated via <a href="https://developer.mozilla.org/docs/Web/API/WebSocket"><code><fix>WebSocket</fix></code> object</a> (Adblock Plus 2.8 or higher required)}}</li>
@@ -138,7 +137,7 @@ title=Writing Adblock Plus filters
       <code><fix>xbl</fix></code> and <code><fix>dtd</fix></code> are outdated
       and should no longer be used.}}
     </li>
-    <li>{{s69 Inverse type options: specify the element types the filter should <strong>not</strong> be applied to. Possible inverse type options: <code><fix>~script</fix></code>, <code><fix>~image</fix></code>, <code><fix>~stylesheet</fix></code>, <code><fix>~object</fix></code>, <code><fix>~xmlhttprequest</fix></code>, <code><fix>~object-subrequest</fix></code>, <code><fix>~subdocument</fix></code>, <code><fix>~document</fix></code>, <code><fix>~elemhide</fix></code>, <code><fix>~other</fix></code>}}</li>
+    <li>{{s69 Inverse type options: specify the element types the filter should <strong>not</strong> be applied to. Possible inverse type options: <code><fix>~script</fix></code>, <code><fix>~image</fix></code>, <code><fix>~stylesheet</fix></code>, <code><fix>~object</fix></code>, <code><fix>~xmlhttprequest</fix></code>, <code><fix>~subdocument</fix></code>, <code><fix>~document</fix></code>, <code><fix>~elemhide</fix></code>, <code><fix>~other</fix></code>}}</li>
     <li>{{s70 Restriction to third-party/first-party requests: If the <code><fix>third-party</fix></code> option is specified, the filter is only applied to requests from a different origin than the currently viewed page. Similarly, <code><fix>~third-party</fix></code> restricts the filter to requests from the same origin as the currently viewed page.}}</li>
     <li>{{s71 Domain restrictions: The option <code><fix>domain=example.com</fix></code> means that the filter should only be applied on pages from "example.com" domain. Multiple domains can be specified using "|" as separator: with the option <code><fix>domain=example.com|example.net</fix></code> the filter will only be applied on pages from "example.com" or "example.net" domains. If a domain name is preceded with "~", the filter should <strong>not</strong> be applied on pages from this domain. For example, <code><fix>domain=~example.com</fix></code> means that the filter should be applied on pages from any domain but "example.com" and <code><fix>domain=example.com|~foo.example.com</fix></code> restricts the filter to the "example.com" domain with the exception of "foo.example.com" subdomain.}}</li>
     <li>
@@ -148,19 +147,6 @@ title=Writing Adblock Plus filters
       {{csp Content Security Policies: The option <code><fix>csp=script-src: 'none'</fix></code> causes a Content Security Policy header of <code><fix>script-src: 'none'</fix></code> to be injected into HTTP responses for requested documents matching the filter — assuming that exception rules with the same option don't also match and that the document isn’t whitelisted. The Content Security Policy <code><fix>script-src: 'none'</fix></code> would in turn block all scripts — including inline — for the document. This filter option should generally be avoided, except as a last resort to counter advanced circumvention. (Adblock Plus 3.1 or higher required.)}}
     </li>
     <li>{{s73 <code><fix>match-case</fix></code> — makes the filter only apply to addresses with matching letter case, e.g. the filter <code><fix>*/BannerAd.gif$match-case</fix></code> will block <code><fix>http://example.com/BannerAd.gif</fix></code> but not <code><fix>http://example.com/bannerad.gif</fix></code>.}}</li>
-    <li>{{s74 <code><fix>collapse</fix></code> — this option will override the global "Hide placeholders of blocked elements" option and make sure the filter always hides the element. Similarly the <code><fix>~collapse</fix></code> option will make sure the filter never hides the element.}}</li>
-    <li>
-      {{s75 <code><fix>donottrack</fix></code> — for any address matching a blocking rule with
-      this option and not matching any exception rules with this option a
-      <a href="http://donottrack.us/">Do-Not-Track header</a> will be sent (requires
-      Adblock Plus 1.3.5 or higher).}} {{s76 For backwards compatibility it is recommended
-      to use this option in combination with contradicting type options, this will prevent this
-      filter from blocking anything in earlier Adblock Plus versions:
-      <code><fix>*$donottrack,image,~image</fix></code>}}
-    </li>
-    <li>
-      {{rewriteoption Rewrite the URL with the option <code><fix>rewrite=</fix></code>. You may want to create a regular expression filter to perform the rewrite operation. In that case, you can use <code><fix>$n</fix></code> in the rewrite argument, with <code><fix>n</fix></code> being a number between 1 and 100, to insert the n-th parenthesis submatch of the filter regular expression. Anything not explicitly matched by it will be added in the rewritten string. For example <code><fix>/(server\.com\/assets\/file.php)\?.*$/$rewrite=$1</fix></code> will strip everything that comes after ".php" and redirects the request to the resulting URL. If there is no query string (i.e. no '?'), this filter won't match. The rewrite parameter has the same syntax as JavaScript’s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter"><code><fix>String.prototype.replace()</fix></code></a>. The resulting URL must have the same origin; in case it is rewritten to a relative URL, the origin gets added back. Also, rewrite for scripts, subdocuments, objects, requests from within objects (like Flash) are not possible for security reason; even if explicitly stated by the filter. If both, a filter with/without <code><fix>$rewrite</fix></code> option matches, the behavior is undefined, i.e. the request might either be blocked or redirected. (Adblock Plus 3.2 or higher required.)}}
-    </li>
   </ul>
 
   <h4 id="regexps">{{s77 Using regular expressions}}</h4>
