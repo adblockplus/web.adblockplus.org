@@ -4,6 +4,11 @@ template=minimal
 
 <style>
 
+  a img
+  {
+    vertical-align:middle;
+  }
+
   .section
   {
       padding: 2em;
@@ -24,20 +29,25 @@ template=minimal
     border-radius: 0.4em;
   }
 
-  a img
-  {
-    vertical-align:middle;
-  }
-
   .info-box p
   {
     padding-top: 5px;
+  }
+
+  .info-box .close-button
+  {
+    cursor: pointer;
   }
 
   .card-header img
   {
     vertical-align: middle;
     float: right;
+  }
+
+  .hidden
+  {
+    display: none;
   }
 
   @media (min-width: 1366px)
@@ -59,3 +69,10 @@ template=minimal
 <? include landing/chrome/how-it-works ?>
 <? include landing/chrome/supporting-websites ?>
 <? include landing/chrome/footer-download ?>
+
+<script>
+  document.querySelector('.info-box .close-button')
+    .addEventListener('click', () =>
+      document.querySelector('.info-box')
+        .classList.add('hidden'));
+</script>
