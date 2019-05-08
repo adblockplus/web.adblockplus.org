@@ -72,7 +72,9 @@ template=minimal
 
 <script>
   document.querySelector('.info-box .close-button')
-    .addEventListener('click', () =>
+    .addEventListener('click', function()
+    {
       document.querySelector('.info-box')
-        .classList.add('hidden'));
+        .classList.add('hidden');
+    })
 </script>
