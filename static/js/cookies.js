@@ -4,6 +4,7 @@
 
   var eyeo = window.eyeo || {};
 
+  var TRACKING_VISIT = "eyeo-tracking-visit";
   var TRACKING_OPT_OUT = "eyeo-ga-opt-out";
   var TESTING_OPT_OUT = "eyeo-ab-opt-out";
   var TRACKING_CONSENT = "eyeo-ga-consent";
@@ -58,19 +59,21 @@
 
   // Initialize Google Analytics  //////////////////////////////////////////////
 
+  var trackingVisit = hasCookie(TRACKING_VISIT);
   var trackingOptOut = hasCookie(TRACKING_OPT_OUT);
   var testingOptOut = hasCookie(TESTING_OPT_OUT);
   var trackingConsent = hasCookie(TRACKING_CONSENT);
+  var preventNotice = eyeo.preventCookieNotice;
 
   if (!testingOptOut)
     gtagOptions.optimize_id = TESTING_UID;
 
-  if (
-    // page has opt in tracking and consent is given
-    (eyeo.optInOnlyTracking && trackingConsent) ||
-    // page has opt out tracking and user has not opted out
-    (!eyeo.optInOnlyTracking && !trackingOptOut)
-  ) {
+  // Record first visit to page with cookie notice
+  if (!preventNotice && !trackingVisit)
+    setCookie(TRACKING_VISIT, 1);
+
+  // Track users who have seen cookie notice and not opted out
+  if (!(preventNotice && !trackingVisit) && !trackingOptOut) {
     gtag("config", TRACKING_UID, gtagOptions);
     loadGoogleAnalytics();
   }
@@ -200,7 +203,7 @@
     addListeners("click", saveButtons, saveCookieSettings);
 
 
-    if (!eyeo.optInOnlyTracking && !trackingConsent)
+    if (!eyeo.preventCookieNotice && !trackingConsent)
       toggleCookieNotice();
 
     if (trackingOptOut)
