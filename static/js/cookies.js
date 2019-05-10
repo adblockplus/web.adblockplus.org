@@ -4,7 +4,7 @@
 
   var eyeo = window.eyeo || {};
 
-  var TRACKING_VISIT = "eyeo-tracking-visit";
+  var HAS_SEEN_COOKIE_PROMPT = "eyeo-seen-cookie-prompt";
   var TRACKING_OPT_OUT = "eyeo-ga-opt-out";
   var TESTING_OPT_OUT = "eyeo-ab-opt-out";
   var TRACKING_CONSENT = "eyeo-ga-consent";
@@ -59,21 +59,21 @@
 
   // Initialize Google Analytics  //////////////////////////////////////////////
 
-  var trackingVisit = hasCookie(TRACKING_VISIT);
+  var hasSeenCookiePrompt = hasCookie(HAS_SEEN_COOKIE_PROMPT);
   var trackingOptOut = hasCookie(TRACKING_OPT_OUT);
   var testingOptOut = hasCookie(TESTING_OPT_OUT);
   var trackingConsent = hasCookie(TRACKING_CONSENT);
-  var preventNotice = eyeo.preventCookieNotice;
+  var preventCookiePrompt = eyeo.preventCookiePrompt;
 
   if (!testingOptOut)
     gtagOptions.optimize_id = TESTING_UID;
 
-  // Record first visit to page with cookie notice
-  if (!preventNotice && !trackingVisit)
-    setCookie(TRACKING_VISIT, 1);
+  // Record first visit to page with cookie prompt
+  if (!preventCookiePrompt && !hasSeenCookiePrompt)
+    setCookie(HAS_SEEN_COOKIE_PROMPT, 1);
 
-  // Track users who have seen cookie notice and not opted out
-  if (!(preventNotice && !trackingVisit) && !trackingOptOut) {
+  // Track users who have seen cookie prompt and not opted out
+  if (!(preventCookiePrompt && !hasSeenCookiePrompt) && !trackingOptOut) {
     gtag("config", TRACKING_UID, gtagOptions);
     loadGoogleAnalytics();
   }
@@ -203,7 +203,7 @@
     addListeners("click", saveButtons, saveCookieSettings);
 
 
-    if (!eyeo.preventCookieNotice && !trackingConsent)
+    if (!eyeo.preventCookiePrompt && !trackingConsent)
       toggleCookieNotice();
 
     if (trackingOptOut)
