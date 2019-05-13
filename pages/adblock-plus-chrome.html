@@ -83,11 +83,6 @@ template=minimal
     vertical-align: middle;
   }
 
-  .hidden
-  {
-    display: none;
-  }
-
   /* iPhone 5/SE */
   @media (max-width: 320px)
   {
@@ -114,6 +109,6 @@ template=minimal
     .addEventListener('click', function()
     {
       document.querySelector('.info-box')
-        .classList.add('hidden');
+        .setAttribute('hidden', 'hidden');
     });
 </script>
