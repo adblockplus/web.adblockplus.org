@@ -4,6 +4,19 @@ template=minimal
 
 <style>
 
+  .content h1
+  {
+    font-size: 1.4em;
+    font-weight: lighter;
+  }
+
+  .content .tagline
+  {
+    font-size: 2.4em;
+    line-height: 1em;
+    font-weight: bold;
+  }
+
   .content a,
   .content a:visited
   {
@@ -113,6 +126,20 @@ template=minimal
   footer.content a
   {
     font-weight: lighter;
+  }
+
+  /* iPad */
+  @media (min-width: 768px)
+  {
+    .bg-grey-abstract
+    {
+    }
+
+    .info-box.bg-dark
+    {
+      float: left;
+      width: 50%;
+    }
   }
 
   /* iPhone 678 */
