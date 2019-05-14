@@ -181,6 +181,8 @@ template=minimal
 
 <script>
 
+  var agent = bowser._detect(navigator.userAgent);
+
   var infoBox = document.querySelector('.info-box');
 
   function hideInfoBox()
@@ -188,22 +190,19 @@ template=minimal
     infoBox.setAttribute('hidden', 'hidden');
   }
 
-  (function(agent)
+  if (agent.mobile || agent.tablet)
   {
-    if (agent.mobile || agent.tablet)
-    {
-      document.querySelector('.hero img').src = '/img/bubble-ui-desktop.svg';
+    document.querySelector('.hero img').src = '/img/bubble-ui-desktop.svg';
 
-      document.querySelector('.footer-download')
-        .setAttribute('hidden', 'hidden');
+    document.querySelector('.footer-download')
+      .setAttribute('hidden', 'hidden');
 
-      document.querySelector('.info-box .close-button')
-        .addEventListener('click', hideInfoBox);
-    }
-    else
-    {
-      hideInfoBox();
-    }
-  })(bowser._detect(navigator.userAgent));
+    document.querySelector('.info-box .close-button')
+      .addEventListener('click', hideInfoBox);
+  }
+  else
+  {
+    hideInfoBox();
+  }
 
 </script>
