@@ -184,9 +184,9 @@ template=minimal
   (function(agent)
   {
     (agent.mobile || agent.tablet) &&
-      ((document.querySelector('.hero img').src = '/img/bubble-ui-desktop.svg'),
+      (document.querySelector('.hero img').src = '/img/bubble-ui-desktop.svg'),
       document.querySelector('.footer-download')
-        .setAttribute('hidden', 'hidden'));
+        .setAttribute('hidden', 'hidden');
   })(bowser._detect(navigator.userAgent));
 
   document.querySelector('.info-box .close-button')
