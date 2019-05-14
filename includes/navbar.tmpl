@@ -14,7 +14,7 @@
         src="/img/menu-toggle.svg">
     </a>
     <ul id="navbar-menu">
-      {% for pagename in ["about", "contribute"] %}
+      {% for pagename in ["download", "about"] %}
         <li>
           {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
         </li>
