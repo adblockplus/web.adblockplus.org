@@ -38,7 +38,8 @@ template=minimal
     top: 0.1em;
   }
 
-  .button.download img {
+  .button.download img
+  {
     vertical-align: middle;
   }
 
@@ -51,7 +52,6 @@ template=minimal
   {
     background-image: url("/img/grey-bg-abstract-shape.svg");
     background-repeat: no-repeat;
-    background-position: top -475px right -1080px;
   }
 
   .info-box
@@ -115,12 +115,25 @@ template=minimal
     font-weight: lighter;
   }
 
+  /* iPhone 678 */
+  @media (min-width: 375px)
+  {
+    .bg-grey-abstract
+    {
+    }
+  }
+
   /* iPhone 5/SE */
   @media (max-width: 320px)
   {
     .button.download .button-text
     {
       font-size: 0.8em;
+    }
+
+    .bg-grey-abstract
+    {
+      background-position: top -475px right -1080px;
     }
   }
 
