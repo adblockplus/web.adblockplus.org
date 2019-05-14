@@ -198,10 +198,7 @@ template=minimal
         .setAttribute('hidden', 'hidden');
 
       document.querySelector('.info-box .close-button')
-        .addEventListener('click', function()
-        {
-          hideInfoBox();
-        });
+        .addEventListener('click', hideInfoBox);
     }
     else
     {
