@@ -140,10 +140,12 @@ template=minimal
 
 <script>
 
-  bowser._detect(navigator.userAgent).mobile &&
-    document.querySelector('.footer-download')
-      .setAttribute('hidden', 'hidden');
-
+  (function(agent)
+  {
+    (agent.mobile || agent.tablet) &&
+      document.querySelector('.footer-download')
+        .setAttribute('hidden', 'hidden');
+  })(bowser._detect(navigator.userAgent));
 
   document.querySelector('.info-box .close-button')
     .addEventListener('click', function()
