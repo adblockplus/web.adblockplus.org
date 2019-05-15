@@ -4,6 +4,11 @@ template=minimal
 
 <style>
 
+  .section
+  {
+    padding: 0 2em;
+  }
+
   .content h1
   {
     font-size: 1.4em;
@@ -54,11 +59,6 @@ template=minimal
   .button.download img
   {
     vertical-align: middle;
-  }
-
-  .section
-  {
-    padding: 2em;
   }
 
   .bg-grey-abstract
@@ -185,20 +185,29 @@ template=minimal
 
   var infoBox = document.querySelector('.info-box');
 
+  var downloads = document.querySelectorAll('.download');
+
+  function hide(element)
+  {
+    element.setAttribute('hidden', 'hidden');
+  }
+
   function hideInfoBox()
   {
-    infoBox.setAttribute('hidden', 'hidden');
+    hide(infoBox);
   }
 
   if (agent.mobile || agent.tablet)
   {
     document.querySelector('.hero img').src = '/img/bubble-ui-desktop.svg';
 
-    document.querySelector('.footer-download')
-      .setAttribute('hidden', 'hidden');
-
     document.querySelector('.info-box .close-button')
       .addEventListener('click', hideInfoBox);
+
+    for (var i = 0; i < downloads.length; i++)
+    {
+      hide(downloads[i]);
+    }
   }
   else
   {
