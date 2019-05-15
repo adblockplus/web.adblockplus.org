@@ -106,29 +106,29 @@ template=minimal
     vertical-align: middle;
   }
 
-  .facts .column
+  #facts .column
   {
     padding-top: 1em;
     padding-bottom: 1em;
   }
 
-  .facts img
+  #facts img
   {
     display: block;
     margin: 1em auto;
   }
 
-  .facts strong
+  #facts strong
   {
     font-size: 2em;
   }
 
-  .facts .count
+  #facts .count
   {
     font-weight: lighter;
   }
 
-  .facts em
+  #facts em
   {
     font-weight: bold;
   }
@@ -176,17 +176,17 @@ template=minimal
       width: 50%;
     }
 
-    .hero,
-    .facts,
-    .special-features,
-    .how-it-works,
-    .supporting-websites,
-    .footer-download
+    #hero,
+    #facts,
+    #special-features,
+    #how-it-works,
+    #supporting-websites,
+    #footer-download
     {
       margin-bottom: 7em;
     }
 
-    .facts .column.one-third
+    #facts .column.one-third
     {
       width: 33.333333%;
     }
@@ -204,7 +204,7 @@ template=minimal
       background-position: top -550px right -740px;
     }
 
-    .hero .row div:last-child
+    #hero .row div:last-child
     {
       padding-top: 4em;
     }
@@ -252,7 +252,7 @@ template=minimal
 
   if (agent.mobile || agent.tablet)
   {
-    document.querySelector('.hero img').src = '/img/bubble-ui-desktop.svg';
+    document.querySelector('#hero img').src = '/img/bubble-ui-desktop.svg';
 
     document.querySelector('.info-box .close-button')
       .addEventListener('click', hideInfoBox);
