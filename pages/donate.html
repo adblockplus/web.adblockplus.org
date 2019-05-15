@@ -74,23 +74,6 @@ label
   font-size: 18px;
 }
 
-/* Credit Card */
-
-#form.none button.credit-card,
-#form.credit-card button.credit-card
-{
-  color: #fff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
-}
-
-#form.none button.credit-card:hover,
-#form.credit-card button.credit-card:hover
-{
-  background-color: #d2322d;
-  border-color: #ac2925;
-}
-
 /* Paypal */
 
 #form.none button.paypal,
@@ -115,16 +98,9 @@ label
   display: none;
 }
 
-#form.credit-card #form-fields,
 #form.paypal #form-fields
 {
   display: block;
-}
-
-#form.credit-card #recurrent-cancellation,
-#form.credit-card #form-recurrence
-{
-  display: none;
 }
 
 /* This cannot be #donate because specificity is too low */
@@ -269,43 +245,6 @@ label
   };
 
   var providers = {
-    "credit-card": function()
-    {
-      if (verify(priceValue))
-        return;
-
-      openProviderPage({
-        action: "https://billing.micropayment.de/creditcard/file/",
-        fields: {
-          project: "dblock",
-          paytext: formValues.name,
-          currency: currencyValue.get(),
-          theme: "x1",
-          gfx: "29497-0BEA1C8A61",
-          lang: langValue.get({
-            "de": "de",
-            "en": "en",
-            "es": "es",
-            "fr": "fr",
-            "hr": "hr",
-            "it": "it",
-            "hu": "hu",
-            "nl": "nl",
-            "nb_no": "no",
-            "pt_pt": "pt",
-            "pt_br": "bt",
-            "sl": "sl",
-            "fi": "fi",
-            "sv": "sv",
-            "tr": "tr",
-            "ru": "ru",
-            "ar": "ae"
-          }),
-          amount: priceValue.get() * 100
-        }
-      });
-    },
-    // see https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/#id08A6HI00JQU
     "paypal": function()
     {
       if (verify(priceValue))
@@ -406,9 +345,8 @@ label
 
   function ensureMinPrice()
   {
-    // Credit card payments have to be above 1 EUR, meaning at least 2 USD.
     var provider = document.getElementById("form").className;
-    var minPrice = (provider == "credit-card" && currencyValue.get() == "USD" ? 2 : 1);
+    var minPrice = 1;
     var priceOther = document.getElementById("price-other");
     priceOther.setAttribute("min", minPrice);
     if (priceOther.value >> 0 < minPrice)
@@ -485,7 +423,6 @@ label
     <strong>{{s3 Select your payment method}}</strong>
 
     <button class="paypal" value="paypal" name="payment">{{s4 PayPal}}</button>
-    <button class="credit-card" value="credit-card" name="payment">{{s5 Credit Card}}</button>
   </p>
 
   <div id="form-fields">

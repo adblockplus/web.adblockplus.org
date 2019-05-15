@@ -11,9 +11,9 @@
           class="campaign-slide {{ "active" if loop.index == 1 else "" }}">
           <figure>
             <img
-              alt="{{ slide.alt | translate('campaign-' + _loop.index | string + '-' + loop.index | string + '-alt', 'alt text') }}"
-              src="/img/gift-of-ad-blocking/campaign-slide-{{ _loop.index | string + '-' + loop.index | string }}.jpg" />
-            <figcaption>{{ slide.caption | translate('campaign-' + _loop.index | string + '-' + loop.index | string + '-caption', 'image caption') }}</figcaption>
+              alt="{{ slide.alt | translate('campaign-' + (_loop.index | string) + '-' + (loop.index | string) + '-alt', 'alt text') }}"
+              src="/img/gift-of-ad-blocking/campaign-slide-{{ (_loop.index | string) + '-' + (loop.index | string) }}.jpg" />
+            <figcaption>{{ slide.caption | translate('campaign-' + (_loop.index | string) + '-' + (loop.index | string) + '-caption', 'image caption') }}</figcaption>
           </figure>
         </li>
       {% endfor %}

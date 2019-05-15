@@ -1,0 +1,14 @@
+{% macro install_button(install_suffix, label_text, classes) %}
+  <a
+    id="install-button"
+    data-install-suffix="{{ install_suffix }}"
+    class="{{ classes }}"
+    href="download"
+    data-ga='{
+      "event_category": "Download_button",
+      "event_action": "Go_to_download",
+      "event_label": "Fallback_button"
+    }'>
+    {{ label_text }}
+  </a>
+{% endmacro %}

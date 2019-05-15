@@ -1,0 +1,12 @@
+{% from "macros/install_button" import install_button %}
+
+{{ install_button(
+  page,
+  get_string("install", "install-button"),
+  "button hero-download-button"
+) }}
+<p id="hero-download-alternate">
+  <a href="download">
+    {{ get_string("download-alt", "install-button") }}
+  </a>
+</p>

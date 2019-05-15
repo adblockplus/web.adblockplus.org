@@ -12,4 +12,12 @@ noheading=1
 
 {{ use-of-cookies-4 You can disable cookies at any time if you do not want to help us improve our products. }}
 
-<? include cookie/settings-link ?>
+<div class="dropup cookies-dropup">
+  <a class="cookies-settings">
+    {{ change-cookie-settings-label[button label] Change cookie settings }}
+  </a>
+  <div class="cookies-dropup-menu text-start" tabindex="1">
+    <? include cookie/settings ?>
+    <span class="arrow"></span>
+  </div>
+</div>
