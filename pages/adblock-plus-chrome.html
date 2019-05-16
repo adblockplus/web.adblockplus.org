@@ -245,7 +245,7 @@ template=minimal
 
   var infoBox = document.getElementById('info-box');
 
-  var downloads = document.getElementsByClassName('download');
+  var downloadSections = document.getElementsByClassName('download');
 
   function hide(element)
   {
@@ -264,9 +264,9 @@ template=minimal
     document.querySelector('#info-box .close-button')
       .addEventListener('click', hideInfoBox);
 
-    for (var i = 0; i < downloads.length; i++)
+    for (var i = 0; i < downloadSections.length; i++)
     {
-      hide(downloads[i]);
+      hide(downloadSections[i]);
     }
   }
   else
