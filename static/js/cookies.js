@@ -4,6 +4,7 @@
 
   var eyeo = window.eyeo || {};
 
+  var HAS_SEEN_COOKIE_PROMPT = "eyeo-seen-cookie-prompt";
   var TRACKING_OPT_OUT = "eyeo-ga-opt-out";
   var TESTING_OPT_OUT = "eyeo-ab-opt-out";
   var TRACKING_CONSENT = "eyeo-ga-consent";
@@ -58,19 +59,21 @@
 
   // Initialize Google Analytics  //////////////////////////////////////////////
 
+  var hasSeenCookiePrompt = hasCookie(HAS_SEEN_COOKIE_PROMPT);
   var trackingOptOut = hasCookie(TRACKING_OPT_OUT);
   var testingOptOut = hasCookie(TESTING_OPT_OUT);
   var trackingConsent = hasCookie(TRACKING_CONSENT);
+  var preventCookiePrompt = eyeo.preventCookiePrompt;
 
   if (!testingOptOut)
     gtagOptions.optimize_id = TESTING_UID;
 
-  if (
-    // page has opt in tracking and consent is given
-    (eyeo.optInOnlyTracking && trackingConsent) ||
-    // page has opt out tracking and user has not opted out
-    (!eyeo.optInOnlyTracking && !trackingOptOut)
-  ) {
+  // Record first visit to page with cookie prompt
+  if (!preventCookiePrompt && !hasSeenCookiePrompt)
+    setCookie(HAS_SEEN_COOKIE_PROMPT, 1);
+
+  // Track users who have seen cookie prompt and not opted out
+  if (!(preventCookiePrompt && !hasSeenCookiePrompt) && !trackingOptOut) {
     gtag("config", TRACKING_UID, gtagOptions);
     loadGoogleAnalytics();
   }
@@ -200,7 +203,7 @@
     addListeners("click", saveButtons, saveCookieSettings);
 
 
-    if (!eyeo.optInOnlyTracking && !trackingConsent)
+    if (!eyeo.preventCookiePrompt && !trackingConsent)
       toggleCookieNotice();
 
     if (trackingOptOut)
