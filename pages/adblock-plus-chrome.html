@@ -241,17 +241,13 @@ template=minimal
 
 <script>
 
-  (function(detectBrowser)
-  {
-    var agent = detectBrowser(navigator.userAgent);
+    var infoBox = document.getElementById("info-box");
 
-    var infoBox = document.getElementById('info-box');
-
-    var downloadSections = document.getElementsByClassName('download');
+    var downloadSections = document.querySelectorAll(".download");
 
     function hide(element)
     {
-      element.setAttribute('hidden', 'hidden');
+      element.setAttribute("hidden", "");
     }
 
     function hideInfoBox()
@@ -259,12 +255,12 @@ template=minimal
       hide(infoBox);
     }
 
-    if (agent.mobile || agent.tablet)
+    if (bowser.mobile || bowser.tablet)
     {
-      document.querySelector('#hero img').src = '/img/bubble-ui-desktop.svg';
+      document.querySelector("#hero img").src = "/img/bubble-ui-desktop.svg";
 
-      document.querySelector('#info-box .close-button')
-        .addEventListener('click', hideInfoBox);
+      document.querySelector("#info-box .close-button")
+        .addEventListener("click", hideInfoBox);
 
       for (var i = 0; i < downloadSections.length; i++)
       {
@@ -275,7 +271,5 @@ template=minimal
     {
       hideInfoBox();
     }
-
-  })(bowser._detect);
 
 </script>
