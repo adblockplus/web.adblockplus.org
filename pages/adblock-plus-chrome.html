@@ -241,37 +241,41 @@ template=minimal
 
 <script>
 
-  var agent = bowser._detect(navigator.userAgent);
-
-  var infoBox = document.getElementById('info-box');
-
-  var downloadSections = document.getElementsByClassName('download');
-
-  function hide(element)
+  (function(detectBrowser)
   {
-    element.setAttribute('hidden', 'hidden');
-  }
+    var agent = detectBrowser(navigator.userAgent);
 
-  function hideInfoBox()
-  {
-    hide(infoBox);
-  }
+    var infoBox = document.getElementById('info-box');
 
-  if (agent.mobile || agent.tablet)
-  {
-    document.querySelector('#hero img').src = '/img/bubble-ui-desktop.svg';
+    var downloadSections = document.getElementsByClassName('download');
 
-    document.querySelector('#info-box .close-button')
-      .addEventListener('click', hideInfoBox);
-
-    for (var i = 0; i < downloadSections.length; i++)
+    function hide(element)
     {
-      hide(downloadSections[i]);
+      element.setAttribute('hidden', 'hidden');
     }
-  }
-  else
-  {
-    hideInfoBox();
-  }
+
+    function hideInfoBox()
+    {
+      hide(infoBox);
+    }
+
+    if (agent.mobile || agent.tablet)
+    {
+      document.querySelector('#hero img').src = '/img/bubble-ui-desktop.svg';
+
+      document.querySelector('#info-box .close-button')
+        .addEventListener('click', hideInfoBox);
+
+      for (var i = 0; i < downloadSections.length; i++)
+      {
+        hide(downloadSections[i]);
+      }
+    }
+    else
+    {
+      hideInfoBox();
+    }
+
+  })(bowser._detect);
 
 </script>
