@@ -126,30 +126,30 @@ template=minimal
     }
   }
 
-  #info-box
+  .info-box
   {
     padding: 1em;
     border-left: none;
     border-radius: 0.4em;
   }
 
-  #info-box p
+  .info-box p
   {
     padding-top: 0.3em;
   }
 
-  #info-box p:first-child
+  .info-box p:first-child
   {
     padding-bottom: 0.3em;
   }
 
-  #info-box .button
+  .info-box .button
   {
     border-radius: 0.4em;
     color: #fff;
   }
 
-  #info-box .close-button
+  .info-box .close-button
   {
     float: right;
     vertical-align: middle;
@@ -159,7 +159,7 @@ template=minimal
   /* iPad */
   @media (min-width: 768px)
   {
-    #info-box.bg-dark
+    .info-box.bg-dark
     {
       margin-top: 1.5em;
       float: left;
@@ -252,7 +252,7 @@ template=minimal
 
 <script>
 
-    var infoBox = document.getElementById("info-box");
+    var infoBox = document.querySelector(".info-box");
 
     var downloadSections = document.querySelectorAll(".download");
 
@@ -270,7 +270,7 @@ template=minimal
     {
       document.querySelector("#hero img").src = "/img/bubble-ui-desktop.svg";
 
-      document.querySelector("#info-box .close-button")
+      document.querySelector(".info-box .close-button")
         .addEventListener("click", hideInfoBox);
 
       for (var i = 0; i < downloadSections.length; i++)
