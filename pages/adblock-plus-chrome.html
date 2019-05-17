@@ -73,6 +73,50 @@ template=minimal
     padding-bottom: 0;
   }
 
+  /* iPhone 5/SE */
+  @media (max-width: 320px)
+  {
+    .bg-grey-abstract
+    {
+      background-position: top -475px right -1080px;
+    }
+  }
+
+  /* iPhone 678 */
+  @media (min-width: 375px)
+  {
+    .bg-grey-abstract
+    {
+      background-position: top -570px right -1040px;
+    }
+  }
+
+  /* iPad */
+  @media (min-width: 768px)
+  {
+    .bg-grey-abstract
+    {
+      padding-top: 6em;
+      background-position: top -500px right -945px;
+    }
+  }
+
+  @media (min-width: 1366px)
+  {
+    .bg-grey-abstract
+    {
+      background-position: top -550px right -740px;
+    }
+  }
+
+  @media (min-width: 1920px)
+  {
+    .bg-grey-abstract
+    {
+      background-position: top -550px right -460px;
+    }
+  }
+
   #info-box
   {
     padding: 1em;
@@ -147,31 +191,11 @@ template=minimal
     {
       font-size: 0.8em;
     }
-
-    .bg-grey-abstract
-    {
-      background-position: top -475px right -1080px;
-    }
-  }
-
-  /* iPhone 678 */
-  @media (min-width: 375px)
-  {
-    .bg-grey-abstract
-    {
-      background-position: top -570px right -1040px;
-    }
   }
 
   /* iPad */
   @media (min-width: 768px)
   {
-    .bg-grey-abstract
-    {
-      padding-top: 6em;
-      background-position: top -500px right -945px;
-    }
-
     #info-box.bg-dark
     {
       margin-top: 1.5em;
@@ -202,22 +226,9 @@ template=minimal
 
   @media (min-width: 1366px)
   {
-    .bg-grey-abstract
-    {
-      background-position: top -550px right -740px;
-    }
-
     #hero header
     {
       padding-top: 4em;
-    }
-  }
-
-  @media (min-width: 1920px)
-  {
-    .bg-grey-abstract
-    {
-      background-position: top -550px right -460px;
     }
   }
 
