@@ -6,7 +6,7 @@ class LandingPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
 
-        self.download_button_id = 'hero-download-button'
+        self.download_button_id = 'install-button'
 
     @property
     def get_download_button_link(self):

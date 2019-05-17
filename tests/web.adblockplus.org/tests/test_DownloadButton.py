@@ -6,14 +6,13 @@ from selenium.webdriver.chrome.options import Options
 from pages.landingPage import LandingPage
 from data.dataDownloadButton import TEST_DATA
 
+import utils.global_functions
+
 
 @pytest.fixture
 def driver(request):
     options = Options()
-    options.add_argument('--no-sandbox')
-    options.add_argument('--window-size=1420,1080')
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
+    utils.global_functions.setup(options)
 
     if hasattr(request, 'param'):
         options.add_argument('--user-agent=' + request.param)
