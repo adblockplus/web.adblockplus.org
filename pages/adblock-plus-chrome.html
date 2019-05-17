@@ -62,6 +62,15 @@ template=minimal
     vertical-align: middle;
   }
 
+  /* iPhone 5/SE */
+  @media (max-width: 320px)
+  {
+    .button.download .button-text
+    {
+      font-size: 0.8em;
+    }
+  }
+
   .bg-grey-abstract
   {
     background-image: url("/img/grey-bg-abstract-shape.svg");
@@ -193,15 +202,6 @@ template=minimal
   footer.content a
   {
     font-weight: lighter;
-  }
-
-  /* iPhone 5/SE */
-  @media (max-width: 320px)
-  {
-    .button.download .button-text
-    {
-      font-size: 0.8em;
-    }
   }
 
   /* iPad */
