@@ -22,8 +22,8 @@ template=minimal
     font-weight: bold;
   }
 
-  .content a,
-  .content a:visited
+  .content a.green,
+  .content a.green:visited
   {
     color: #3d9c4f;
     font-weight: bolder;
@@ -33,6 +33,7 @@ template=minimal
   .content a.legal:visited
   {
     color: #c70d2c;
+    font-weight: bolder;
   }
 
   .content a.download,
@@ -202,6 +203,17 @@ template=minimal
   footer.content a
   {
     font-weight: lighter;
+  }
+
+  .settings-option
+  {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    background-image: url("/img/settings-icon.svg");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   /* iPad */
