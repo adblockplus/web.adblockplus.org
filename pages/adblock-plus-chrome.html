@@ -140,6 +140,14 @@ template=minimal
     border-radius: 0.4em;
   }
 
+  @media (min-width: 1366px)
+  {
+  .info-box
+    {
+      display: none;
+    }
+  }
+
   .info-box p
   {
     padding-top: 0.3em;
@@ -249,6 +257,11 @@ template=minimal
     }
   }
 
+  .non-desktop .download
+  {
+    display: none;
+  }
+
 </style>
 
 <div class="bg-grey-abstract">
@@ -265,35 +278,18 @@ template=minimal
 
 <script>
 
-    var infoBox = document.querySelector(".info-box");
-
-    var downloadSections = document.querySelectorAll(".download");
-
-    function hide(element)
-    {
-      element.setAttribute("hidden", "");
-    }
-
-    function hideInfoBox()
-    {
-      hide(infoBox);
-    }
-
     if (bowser.mobile || bowser.tablet)
     {
+      document.body.classList.add('non-desktop');
+
       document.querySelector("#hero img").src = "/img/bubble-ui-desktop.svg";
 
       document.querySelector(".info-box .close-button")
-        .addEventListener("click", hideInfoBox);
-
-      for (var i = 0; i < downloadSections.length; i++)
-      {
-        hide(downloadSections[i]);
-      }
-    }
-    else
-    {
-      hideInfoBox();
+        .addEventListener("click", function()
+          {
+            document.querySelector(".info-box")
+              .setAttribute("hidden", "");
+          });
     }
 
 </script>
