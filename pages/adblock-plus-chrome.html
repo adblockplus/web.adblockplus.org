@@ -140,6 +140,11 @@ template=minimal
     border-radius: 0.4em;
   }
 
+  .chrome-browser .info-box
+  {
+    display: none;
+  }
+
   @media (min-width: 1366px)
   {
   .info-box
@@ -279,6 +284,11 @@ template=minimal
 <script src="/js/vendor/bowser.js"></script>
 
 <script>
+
+    if (bowser.chrome)
+    {
+      document.body.classList.add('chrome-browser');
+    }
 
     if (bowser.mobile || bowser.tablet)
     {
