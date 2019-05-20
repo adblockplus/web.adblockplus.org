@@ -1,0 +1,54 @@
+/* #uninstall-reasons
+ ******************************************************************************/
+
+#uninstall-reasons ul
+{
+  list-style-type: none;
+  margin: 0;
+}
+
+#uninstall-reasons ul,
+#uninstall-reasons li
+{
+  padding-left: 0;
+  margin-bottom: 0.5em;
+}
+
+[dir="rtl"] #uninstall-reasons ul,
+[dir="rtl"] #uninstall-reasons li
+{
+  padding-right: 0;
+}
+
+#uninstall-reasons input[type="checkbox"]
+{
+  margin-right: 0.5em;
+}
+
+[dir="rtl"] #uninstall-reasons input[type="checkbox"]
+{
+  margin-left: 0.5em;
+}
+
+#uninstall-reasons textarea
+{
+  margin-top: 0.5em;
+  width: 100%;
+  max-width: 554px;
+}
+
+#reason-error
+{
+  display: none;
+  color: #c70d2c;
+}
+
+.error #reason-error
+{
+  display: block;
+}
+
+.hidden
+{
+  display: none;
+}

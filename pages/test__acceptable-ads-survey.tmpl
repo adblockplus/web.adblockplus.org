@@ -1,0 +1,90 @@
+title=Acceptable Ads have been turned off
+opt_in_only_tracking=1
+template=minimal
+
+{% set reasons = [
+  ("1v0", "reason-no-acceptable-ads", "No ads are acceptable to me"),
+  ("2v0", "reason-privacy", "I'm concerned about my privacy when I allow some ads"),
+  ("3v0", "reason-still-ads", "I still see ads that annoy me"),
+  ("4v0", "reason-unknown", "I don't know what Acceptable Ads are"),
+] %}
+
+<head>
+  <meta name="robots" content="noindex" />
+  <link href="/css/survey-form.css" rel="stylesheet">
+</head>
+
+<div id="content">
+  <section id="uninstall-reasons">
+    <div class="container content">
+      <h1>{{ title | translate("title") }}</h1>
+      <p>{{ "We want to make Adblock Plus even better. Please tell us why you turned off Acceptable Ads:" | translate("reasons-header", "Form heading") }}</p>
+      <form id="reasons-form" action="test__acceptable-ads-survey-submit" method="get">
+        <fieldset>
+          <ul id="reasons">
+            {%- for input_id, string_id, string_contents in reasons %}
+              <li>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="reason"
+                    {% if input_id == "3v0" %}
+                      data-toggle-view="reason-stillads-container"
+                    {% endif %}
+                    value="{{ input_id }}" />
+                  {{ string_contents | translate(string_id, "Uninstallation reason") }}
+                </label>
+                {%- if input_id == "3v0" %}
+                  <fieldset id="reason-stillads-container" class="hidden">
+                    <textarea
+                      id="reason-stillads-input"
+                      name="reasonStillAds"
+                      rows="4"
+                      maxlength="300"
+                      placeholder="{{ "Please tell us where" | translate("reason-stillads-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
+                    <div>
+                      {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
+                      <span class="characters-countdown"></span>
+                    </div>
+                  </fieldset>
+                {%- endif %}
+              </li>
+            {%- endfor %}
+            <li>
+              <label>
+                <input
+                  id="reason-other"
+                  data-toggle-view="reason-other-container"
+                  type="checkbox"
+                  name="reason"
+                  value="0v0" />
+                {{ "Other (please specify)" | translate("reason-other", "Last uninstallation reason") }}
+              </label>
+              <fieldset id="reason-other-container" class="hidden">
+                <textarea
+                  id="reason-other-input"
+                  name="reasonOther"
+                  rows="4"
+                  maxlength="300"
+                  placeholder="{{ "Please share with us your reason for turning off Acceptable Ads" | translate("reason-other-placeholder", "Textarea placeholder text, appears after selecting 'Other, namely...' option") }}"></textarea>
+                <div>
+                  {{ "Characters remaining:" | translate("countdown-text", "Text of character limit counter appears after selecting 'Other, namely...' option") }}
+                  <span class="characters-countdown"></span>
+                </div>
+              </fieldset>
+            </li>
+          </ul>
+        </fieldset>
+        <p id="reason-error">{{ "Please select at least one of the options above" | translate("error-msg", "Error message, is being shown after submission if no item selected")}}</p>
+        <p>
+          <button id="reason-submit" class="button primary">{{ "Submit" | translate("submit", "Submit button text") }}</button>
+        </p>
+      </form>
+      <p class="disclaimer">
+        <small>{{ "By clicking Submit, you are sending your response to Adblock Plus. Please see our <a href='/privacy'>privacy policy</a>." | translate("disclaimer", "Disclaimer below form") }}</small>
+      </p>
+    </div>
+  </section>
+</div>
+
+<script src="/js/aa-survey-form.js"></script>
