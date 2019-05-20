@@ -285,10 +285,7 @@ template=minimal
 
 <script>
 
-    if (bowser.chrome)
-    {
-      document.body.classList.add('chrome-browser');
-    }
+    bowser.chrome && document.body.classList.add('chrome-browser');
 
     if (bowser.mobile || bowser.tablet)
     {
