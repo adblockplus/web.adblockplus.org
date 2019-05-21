@@ -111,6 +111,13 @@ notoc=True
     - {{ tools-item-8[list item] Log files }}
     - {{ tools-item-9[list item] Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters }}
     - {{ tools-item-10[list item] Via Google Analytics }}
+3. {{ tools-item-11[list item] For user support }}
+{: .has-horizontal-list .semicolon-separated }
+    - {{ tools-item-12[list item] Via email sent by you }}
+    - {{ tools-item-13[list item] From user reviews in App Stores }}
+    - {{ tools-item-14[list item] From forum posts }}
+    - {{ tools-item-15[list item] From Browser Web Store reviews }}
+    - {{ tools-item-16[list item] From social platforms like Facebook and Twitter }}
 
 ### {{ why-we-process-heading[heading] How and why do we process your data? }} {: #why-we-process-data }
 
@@ -119,6 +126,7 @@ notoc=True
 - {{ why-we-process-item-3[list item] For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security. }}
 - {{ why-we-process-item-4[list item] To analyze aggregated website logs and analytics data, to improve our website. }}
 - {{ why-we-process-item-5[list item] For communication and assistance purposes in our forum and blog. }}
+- {{ why-we-process-item-6[list item] For assisting you with any issues you may have with our products. }}
 
 ### {{ what-is-legal-heading[heading] What is the legal basis of data processing? }} {: #what-is-legal }
 
