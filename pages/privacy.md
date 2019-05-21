@@ -18,8 +18,7 @@ notoc=True
 
 .has-horizontal-list li
 {
-  display: inline;
-  list-style: none;
+  margin: 0em 1.5em 0em;
 }
 
 .has-horizontal-list li:after
