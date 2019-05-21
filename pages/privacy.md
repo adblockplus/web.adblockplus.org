@@ -141,6 +141,7 @@ notoc=True
     - {{ how-long-item-4[list item] Website logs }}
     - {{ how-long-item-5[list item] Data related to subscription downloads, extension update checks, emergency notifications }}
 2. {{ how-long-item-6[list item] Blog and forum data as long as the respective comment / account exists }}
+3. {{ how-long-item-7[list item] All user support data is deleted one (1) year after closing the respective support case. }}
 
 
 {{ how-long-paragraph **Note**: “Aggregated usage statistics”, such as analytics data and other data without any connection to a single user, may be retained beyond these periods. }}
