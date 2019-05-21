@@ -97,7 +97,7 @@ notoc=True
 
 ### {{ how-we-collect-heading[heading] How do we collect data? }} {: #how-we-collect-data }
 
-{{ list-of-tools[preface] List of techniques and tools we use for data collection: }}
+{{ list-of-tools[preface] List of techniques and tools we use for data collection. }}
 
 1. {{ tools-item-1[list item] In our products: }}
 {: .has-horizontal-list .semicolon-separated }
