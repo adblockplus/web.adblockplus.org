@@ -72,7 +72,7 @@ notoc=True
             - {{ data-processed-item-17[list item] Plain-text class name and message value of the exception }}
             - {{ data-processed-item-18[list item] Instruction pointer, method or function names, signal data, pointer registers and information about the loaded binary images }}
             - {{ data-processed-item-19[list item] String / function name identifying the error }}
-1. {{ data-processed-item-20[list item] While using our websites: }}
+1. {{ data-processed-item-20[list item] While using our websites }}
     - {{ data-processed-item-21[list item] Automatically: }}
     {: .has-horizontal-list .semicolon-separated }
         - {{ data-processed-item-22[list item] IP address (stored separately) }}
