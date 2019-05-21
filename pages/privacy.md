@@ -87,6 +87,13 @@ notoc=True
         - {{ data-processed-item-29[list item] Email address }}
         - {{ data-processed-item-30[list item] Data you provide in comments }}
         - {{ data-processed-item-31[list item] Feedback and filter data }}
+1. {{ data-processed-item-33[list item] For user support }}
+    - {{ data-processed-item-34[list item] User name (contact via social media) and/or email }} 
+    - {{ data-processed-item-35[list item] Device information }}
+    - {{ data-processed-item-36[list item] Version of Adblock Plus and other applicable tech specifications }}
+    - {{ data-processed-item-37[list item] URLs the user is having issues with }}
+    - {{ data-processed-item-38[list item] Adblock Plus issues }}
+    - {{ data-processed-item-39[list item] Address and transaction ID numbers for donation refunds (voluntary) }}
 
 ### {{ how-we-collect-heading[heading] How do we collect data? }} {: #how-we-collect-data }
 
