@@ -285,20 +285,23 @@ template=minimal
 
 <script>
 
-    bowser.chrome && document.body.classList.add('chrome-browser');
+  var heroImage = document.querySelector("#hero img");
 
-    if (bowser.mobile || bowser.tablet)
-    {
-      document.body.classList.add('non-desktop');
+  bowser.chrome && document.body.classList.add('chrome-browser');
 
-      document.querySelector("#hero img").src = "img/bubble-ui-desktop.svg";
+  if (bowser.mobile || bowser.tablet)
+  {
+    document.body.classList.add('non-desktop');
 
-      document.querySelector(".info-box .close-button")
-        .addEventListener("click", function()
-          {
-            document.querySelector(".info-box")
-              .setAttribute("hidden", "");
-          });
-    }
+    heroImage.src =
+      (heroImage.src.split("/img")[0] + "/img/bubble-ui-desktop.svg");
+
+    document.querySelector(".info-box .close-button")
+      .addEventListener("click", function()
+        {
+          document.querySelector(".info-box")
+            .setAttribute("hidden", "");
+        });
+  }
 
 </script>
