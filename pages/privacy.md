@@ -525,7 +525,7 @@ Germany<br>
 
 {{ email-collection-paragraph Some of eyeo's Websites host product campaigns that rely on email collection. For example, you can request a link by email to install Adblock Browser on your mobile device. We do not use third parties to manage these campaigns. Instead, data that you submit is handled in-house (i.e. turned into an email or used to send the email). We will never share or sell your email address, or any other information collected, to any third parties. }}
 
-###### {{ retention-communications-heading[heading] Email collection }} {: #retention-communications }
+###### {{ retention-communications-heading[heading] Data retention }} {: #retention-communications }
 
 {{ retention-communications-paragraph-1 Data provided by you in connection with our blog and our forum will be retained for the same time as the comment and / or your account exists. }}
 
