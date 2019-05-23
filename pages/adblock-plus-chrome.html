@@ -272,7 +272,10 @@ template=minimal
 
   var heroImage = document.querySelector("#hero img");
 
-  bowser.chrome && document.body.classList.add('chrome');
+  if (bowser.chrome)
+  {
+    document.body.classList.add("chrome");
+  }
 
   if (bowser.mobile || bowser.tablet)
   {
