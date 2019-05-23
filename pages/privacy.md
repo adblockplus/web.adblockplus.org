@@ -270,6 +270,8 @@ Germany<br>
 
 {{ international-data-transfers-2 We use external service provider tools for email (GSuite); to analyze your use of our Websites ([Google Analytics](#google-analytics)); and for A/B testing based on the analytics data ([Google Optimize](#google-optimize)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).}}
 
+{{ international-data-transfers-3 We  also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) and Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Both Zendesk ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) and Sprout ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) are certified under the EU-U.S. Privacy Shield Framework.) }}
+
 ### {{ your-rights-long-heading[heading] What rights do you have? }} {: #your-rights-long }
 
 {{ your-rights-long-paragraph In compliance with the GDPR and the applicable EU laws and German national data protection laws and to the extent legally permitted, you have the following rights to protect your personal data collected and processed by us: }}
