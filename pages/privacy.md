@@ -426,7 +426,7 @@ Germany<br>
 
 ##### {{ crash-error-reporter-heading[heading] Crash and error reporter }} {: #crash-error-reporter }
 
-{{ crash-error-reporter-paragraph In the event of an unexpected crash or error, Adblock Browser for iOS collects data relevant for analyzing the cause of the malfunction and transmits it to eyeo's [HockeyApp](https://www.hockeyapp.net/) account. The data is solely used for individual troubleshooting (as well as for identifying general defects which lead to unexpected crashes or errors) and is never shared with any third parties other than HockeyApp. }}
+{{ crash-error-reporter-paragraph In the event of an unexpected crash or error, Adblock Browser collects data relevant for analyzing the cause of the malfunction and transmits it to eyeo's [HockeyApp](https://www.hockeyapp.net/) account. The data is solely used for individual troubleshooting (as well as for identifying general defects which lead to unexpected crashes or errors) and is never shared with any third parties other than HockeyApp. }}
 
 ###### {{ crash-data-sent-heading[heading] During a crash, the following data is sent: }} {: #crash-data-sent }
 
