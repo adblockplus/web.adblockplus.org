@@ -137,12 +137,17 @@ notoc=True
 1. {{ how-long-item-1[list item] For a period of 30 days: }}
 {: .has-horizontal-list .semicolon-separated }
     - {{ how-long-item-2[list item] Issue report data }}
-    - {{ how-long-item-3[list item] Crash and error reporter data }}
+    - {{ how-long-item-3[list item] iOS crash and error reporter data }}
     - {{ how-long-item-4[list item] Website logs }}
     - {{ how-long-item-5[list item] Data related to subscription downloads, extension update checks, emergency notifications }}
-2. {{ how-long-item-6[list item] Blog and forum data as long as the respective comment / account exists }}
-3. {{ how-long-item-7[list item] All user support data is deleted one (1) year after closing the respective support case. }}
-
+2. {{ how-long-item-6[list item] For a period of 180 days: }}
+{: .has-horizontal-list .semicolon-separated }
+    - {{ how-long-item-7[list item] Adblock Browser crash reporting }}   
+3. {{ how-long-item-8[list item] For a period of 60 days: }}
+{: .has-horizontal-list .semicolon-separated }
+    - {{ how-long-item-9[list item] event tracking }}      
+4. {{ how-long-item-10[list item] Blog and forum data as long as the respective comment / account exists }}
+5. {{ how-long-item-11[list item] All user support data is deleted one (1) year after closing the respective support case. }}
 
 {{ how-long-paragraph **Note**: “Aggregated usage statistics”, such as analytics data and other data without any connection to a single user, may be retained beyond these periods. }}
 
