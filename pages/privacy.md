@@ -448,7 +448,7 @@ Germany<br>
 
 ###### {{ crash-data-sent-heading[heading] During a crash, the following data is sent: }} {: #crash-data-sent }
 
-- {{ crash-data-sent-item-1[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser for iOS. }}
+- {{ crash-data-sent-item-1[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser. }}
 - {{ crash-data-sent-item-2[list item] Device type, CPU architecture and version of the operating system. }}
 - {{ crash-data-sent-item-3[list item] Timestamp of when the crash happened. }}
 - {{ crash-data-sent-item-4[list item] A generated UUID to prevent duplicate crash reports. }}
@@ -457,7 +457,7 @@ Germany<br>
 
 ###### {{ error-data-sent-heading[heading] During an error, the following data is sent: }} {: #error-data-sent }
 
-- {{ error-data-sent-item-1[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser for iOS. }}
+- {{ error-data-sent-item-1[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser. }}
 - {{ error-data-sent-item-2[list item] Device type, CPU architecture and version of the operating system. }}
 - {{ error-data-sent-item-3[list item] Timestamp of when the error happened. }}
 - {{ error-data-sent-item-4[list item] A generated UUID to separate error reports. }}
