@@ -60,40 +60,56 @@ notoc=True
         - {{ data-processed-item-7[list item] IP address }}
         - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with a bug using the [Issue Reporter](#issue-reporter): URL, blockable items, matching filters, active filter lists (voluntary) }}
     - {{ data-processed-item-9[list item] Adblock Browser for Android: }}
+        - {{ data-processed-item-10[list item] Adblock Browser, based on Chromium, provides Chromium-specific functionality which, however, may send data to Google. }}
+        - {{ data-processed-item-11[list item] Crash reports: }} 
+        {: .has-horizontal-list .semicolon-separated }
+            - {{ data-processed-item-12[list item] UUID and crash traces in order to help a user associate crash data with specific instances of Adblock Browser }}
+            - {{ data-processed-item-13[list item] Instance IDS }}
+            - {{ data-processed-item-14[list item] Device type }}
+            - {{ data-processed-item-15[list item] application ID }}
+            - {{ data-processed-item-16[list item] Adblock Browser app version }}
+            - {{ data-processed-item-17[list item] Free space }}
+            - {{ data-processed-item-18[list item] Free ram }}
+            - {{ data-processed-item-19[list item] A timestamp of when a crash happened }}
+        - {{ data-processed-item-20[list item] Event tracking: }}
+        {: .has-horizontal-list .semicolon-separated }
+            - {{ data-processed-item-21[list item] Adblock Browser app version }}
+            - {{ data-processed-item-22[list item] Demographic data (gender, age) }}
+            - {{ data-processed-item-23[list item] Device type }}
+            - {{ data-processed-item-24[list item] Which platforms you are using (Android and its respective version) }}
+            - {{ data-processed-item-25[list item] Location data based on your IP address (country) }}
+    - {{ data-processed-item-26[list item] Adblock Browser for iOS (automatically): }}
     {: .has-horizontal-list .semicolon-separated }
-        - {{ data-processed-item-10[list item] eyeo collects no data. Adblock Browser, being based on Mozilla Firefox, provides Firefox specific functionality which, however, may send data to Mozilla. }}
-    - {{ data-processed-item-11[list item] Adblock Browser for iOS (automatically): }}
+        - {{ data-processed-item-27[list item] Error and crash report data: }}
+            - {{ data-processed-item-28[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser for iOS }}
+            - {{ data-processed-item-29[list item] Device type, CPU architecture and version of the operating system }}
+            - {{ data-processed-item-30[list item] Timestamp of crash }}
+            - {{ data-processed-item-31[list item] UUID }}
+            - {{ data-processed-item-32[list item] Plain-text class name and message value of the exception }}
+            - {{ data-processed-item-33[list item] Instruction pointer, method or function names, signal data, pointer registers and information about the loaded binary images }}
+            - {{ data-processed-item-34[list item] String / function name identifying the error }}
+1. {{ data-processed-item-35[list item] While using our websites }}
+    - {{ data-processed-item-36[list item] Automatically: }}
     {: .has-horizontal-list .semicolon-separated }
-        - {{ data-processed-item-12[list item] Error and crash report data: }}
-            - {{ data-processed-item-13[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser for iOS }}
-            - {{ data-processed-item-14[list item] Device type, CPU architecture and version of the operating system }}
-            - {{ data-processed-item-15[list item] Timestamp of crash }}
-            - {{ data-processed-item-16[list item] UUID }}
-            - {{ data-processed-item-17[list item] Plain-text class name and message value of the exception }}
-            - {{ data-processed-item-18[list item] Instruction pointer, method or function names, signal data, pointer registers and information about the loaded binary images }}
-            - {{ data-processed-item-19[list item] String / function name identifying the error }}
-1. {{ data-processed-item-20[list item] While using our websites }}
-    - {{ data-processed-item-21[list item] Automatically: }}
+        - {{ data-processed-item-37[list item] IP address (stored separately) }}
+        - {{ data-processed-item-38[list item] The time at which the request was made }}
+        - {{ data-processed-item-39[list item] The web address accessed }}
+        - {{ data-processed-item-40[list item] The browser identifier }}
+        - {{ data-processed-item-41[list item] The referring page }}
+        - {{ data-processed-item-42[list item] Aggregated analytics data }}
+    - {{ data-processed-item-43[list item] Voluntary: }}
     {: .has-horizontal-list .semicolon-separated }
-        - {{ data-processed-item-22[list item] IP address (stored separately) }}
-        - {{ data-processed-item-23[list item] The time at which the request was made }}
-        - {{ data-processed-item-24[list item] The web address accessed }}
-        - {{ data-processed-item-25[list item] The browser identifier }}
-        - {{ data-processed-item-26[list item] The referring page }}
-        - {{ data-processed-item-32[list item] Aggregated analytics data }}
-    - {{ data-processed-item-27[list item] Voluntary: }}
-    {: .has-horizontal-list .semicolon-separated }
-        - {{ data-processed-item-28[list item] Forum registration data }}
-        - {{ data-processed-item-29[list item] Email address }}
-        - {{ data-processed-item-30[list item] Data you provide in comments }}
-        - {{ data-processed-item-31[list item] Feedback and filter data }}
-1. {{ data-processed-item-33[list item] For user support }}
-    - {{ data-processed-item-34[list item] User name (contact via social media) and/or email }} 
-    - {{ data-processed-item-35[list item] Device information }}
-    - {{ data-processed-item-36[list item] Version of Adblock Plus and other applicable tech specifications }}
-    - {{ data-processed-item-37[list item] URLs the user is having issues with }}
-    - {{ data-processed-item-38[list item] Adblock Plus issues }}
-    - {{ data-processed-item-39[list item] Address and transaction ID numbers for donation refunds (voluntary) }}
+        - {{ data-processed-item-44[list item] Forum registration data }}
+        - {{ data-processed-item-45[list item] Email address }}
+        - {{ data-processed-item-46[list item] Data you provide in comments }}
+        - {{ data-processed-item-47[list item] Feedback and filter data }}
+1. {{ data-processed-item-48[list item] For user support }}
+    - {{ data-processed-item-49[list item] User name (contact via social media) and/or email }} 
+    - {{ data-processed-item-50[list item] Device information }}
+    - {{ data-processed-item-51[list item] Version of Adblock Plus and other applicable tech specifications }}
+    - {{ data-processed-item-52[list item] URLs the user is having issues with }}
+    - {{ data-processed-item-53[list item] Adblock Plus issues }}
+    - {{ data-processed-item-54[list item] Address and transaction ID numbers for donation refunds (voluntary) }}
 
 ### {{ how-we-collect-heading[heading] How do we collect data? }} {: #how-we-collect-data }
 
