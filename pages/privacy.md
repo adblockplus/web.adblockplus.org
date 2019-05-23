@@ -120,20 +120,22 @@ notoc=True
     - {{ tools-item-2[list item] Update checks }}
     - {{ tools-item-3[list item] Subscription downloads }}
     - {{ tools-item-4[list item] Sending issue reports }}
-    - {{ tools-item-5[list item] Emergency notification checks }}
-2. {{ tools-item-6[list item] On our websites: }}
+    - {{ tools-item-5[list item] Sending crash reports }}
+    - {{ tools-item-7[list item] In Adblock Browser for Android: via Firebase Analytics }}
+    - {{ tools-item-8[list item] Emergency notification checks }}
+2. {{ tools-item-9[list item] On our websites: }}
 {: .has-horizontal-list .semicolon-separated }
-    - {{ tools-item-7[list item] Cookies }}
-    - {{ tools-item-8[list item] Log files }}
-    - {{ tools-item-9[list item] Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters }}
-    - {{ tools-item-10[list item] Via Google Analytics }}
-3. {{ tools-item-11[list item] For user support }}
+    - {{ tools-item-10[list item] Cookies }}
+    - {{ tools-item-11[list item] Log files }}
+    - {{ tools-item-12[list item] Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters }}
+    - {{ tools-item-13[list item] Via Google Analytics }}
+3. {{ tools-item-14[list item] For user support }}
 {: .has-horizontal-list .semicolon-separated }
-    - {{ tools-item-12[list item] Via email sent by you }}
-    - {{ tools-item-13[list item] From user reviews in App Stores }}
-    - {{ tools-item-14[list item] From forum posts }}
-    - {{ tools-item-15[list item] From Browser Web Store reviews }}
-    - {{ tools-item-16[list item] From social platforms like Facebook and Twitter }}
+    - {{ tools-item-15[list item] Via email sent by you }}
+    - {{ tools-item-16[list item] From user reviews in App Stores }}
+    - {{ tools-item-17[list item] From forum posts }}
+    - {{ tools-item-18[list item] From Browser Web Store reviews }}
+    - {{ tools-item-19[list item] From social platforms like Facebook and Twitter }}
 
 ### {{ why-we-process-heading[heading] How and why do we process your data? }} {: #why-we-process-data }
 
