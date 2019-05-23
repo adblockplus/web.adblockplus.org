@@ -284,12 +284,13 @@ template=minimal
     heroImage.src =
       (heroImage.src.split("/img")[0] + "/img/bubble-ui-desktop.svg");
 
-    document.querySelector(".info-box .close-button")
+    document
+      .querySelector(".info-box .close-button")
       .addEventListener("click", function()
-        {
-          document.querySelector(".info-box")
-            .setAttribute("hidden", "");
-        });
+      {
+        document.querySelector(".info-box")
+          .setAttribute("hidden", "");
+      });
   }
 
 </script>
