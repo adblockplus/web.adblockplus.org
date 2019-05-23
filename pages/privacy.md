@@ -184,9 +184,10 @@ notoc=True
 1. [{{ general-notes-item-4[list item & link] What is the purpose of data processing and what is the legal basis? }}](#what-is-personal-data)
 1. [{{ general-notes-item-5[list item & link] Do we disclose any personal data? }}](#what-is-personal-data)
 1. [{{ general-notes-item-6[list item & link] What rights do you have? }}](#your-rights-long)
-1. [{{ general-notes-item-7[list item & link] How to exercise your rights }}](#how-to-exercise-your-rights)
-1. [{{ general-notes-item-8[list item & link] Changes to this Privacy Policy }}](#changes-to-policy)
-1. [{{ general-notes-item-9[list item & link] Collection and processing in our products }}](#collection-and-processing)
+1. [{{ general-notes-item-7[list item & link] Changes to this Privacy Policy }}](#changes-to-policy)
+1. [{{ general-notes-item-8[list item & link] Collection and processing in our products }}](#collection-processing-of-products)
+1. [{{ general-notes-item-9[list item & link] Collection and processing in our websites }}](#collection-processing-of-websites)
+1. [{{ general-notes-item-10[list item & link] Collection and processing for user support }}](#collection-and-processing-for-user-support)
 
 ### {{ general-notes-heading[heading] General notes }} {: #general-notes }
 
@@ -329,7 +330,7 @@ Germany<br>
 
 {{ changes-to-policy-paragraph This Privacy Policy may be changed from time to time. The respective current version is available at: [<fix>https://adblockplus.org/privacy</fix>](https://adblockplus.org/privacy). }}
 
-### {{ collection-and-processing-heading[heading] Collection and processing in our products }} {: #collection-and-processing }
+### {{ collection-and-processing-heading[heading] Collection and processing in our products }} {: #collection-processing-of-products }
 
 #### {{ adblock-plus-heading[heading] Adblock Plus extensions }} {: #adblock-plus }
 
