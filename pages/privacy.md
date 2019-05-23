@@ -177,9 +177,9 @@ notoc=True
 1. [{{ general-notes-item-2[list item & link] Who is responsible for data processing? }}](#who-is-responsible)
 1. [{{ general-notes-item-3[list item & link] What is personal data? }}](#what-is-personal-data)
 1. [{{ general-notes-item-4[list item & link] What is the purpose of data processing and what is the legal basis? }}](#what-is-personal-data)
-1. [{{ general-notes-item-5[list item & link] Do we disclose personal data? }}](#what-is-personal-data)
+1. [{{ general-notes-item-5[list item & link] Do we disclose any personal data? }}](#what-is-personal-data)
 1. [{{ general-notes-item-6[list item & link] What rights do you have? }}](#your-rights-long)
-1. [{{ general-notes-item-7[list item & link] Deletion of your data }}](#erasure-of-data)
+1. [{{ general-notes-item-7[list item & link] How to exercise your rights }}](#how-to-exercise-your-rights)
 1. [{{ general-notes-item-8[list item & link] Changes to this Privacy Policy }}](#changes-to-policy)
 1. [{{ general-notes-item-9[list item & link] Collection and processing in our products }}](#collection-and-processing)
 
