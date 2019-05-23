@@ -139,7 +139,7 @@ template=minimal
     border-radius: 0.4em;
   }
 
-  .chrome-browser .info-box
+  .chrome .info-box
   {
     display: none;
   }
@@ -284,7 +284,7 @@ template=minimal
 
   var heroImage = document.querySelector("#hero img");
 
-  bowser.chrome && document.body.classList.add('chrome-browser');
+  bowser.chrome && document.body.classList.add('chrome');
 
   if (bowser.mobile || bowser.tablet)
   {
