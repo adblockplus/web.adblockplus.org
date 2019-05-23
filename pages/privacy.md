@@ -379,9 +379,48 @@ Germany<br>
 
 #### {{ adblock-browser-android-heading[heading] Adblock Browser for Android }} {: #adblock-browser-android }
 
-{{ adblock-browser-android-paragraph-1 Adblock Browser for Android is based on Mozilla's Firefox browser. Some data collection and processing in connection with Adblock Browser for Android are subject to [Mozilla's Privacy Policy](https://www.mozilla.org/privacy/). Please note that Adblock Browser automatically connects to Mozilla and its service providers to provide security, snippets and other features ([Firefox's Privacy Notice](https://www.mozilla.org/privacy/firefox/)); and when you ask it to, Adblock Browser also connects to Mozilla to provide you with features such as location services ([Firefox's Privacy Notice](https://www.mozilla.org/privacy/firefox/)). }}
+##### {{ android-browser-software-heading[heading] Browser software }} {: #adblock-browser-software }
 
-{{ adblock-browser-android-paragraph-2 Deviating from the description in [Firefox's Privacy Notice](https://www.mozilla.org/privacy/firefox/), Firefox updates are provided under eyeo's control and some features, such as the Firefox Health Report, crash reporting and add-ons, are disabled. }}
+{{ android-browser-software-paragraph-1 Adblock Browser for Android is based on Chromium. Some data collection and processing in connection with Adblock Browser for Android are subject to [Google’s Privacy Policy](https://policies.google.com/privacy) and the additional [Google Chrome Privacy Notice](https://www.google.com/intl/en/chrome/privacy/). Please note that Adblock Browser automatically connects to Chromium and its service providers to provide security, snippets and other features ([Google Chrome Privacy Notice](https://www.google.com/intl/en/chrome/privacy/)); and when you ask it to, Adblock Browser also connects to Google to provide you with features such as location services ([Google Chrome Privacy Notice](https://www.google.com/intl/en/chrome/privacy/)). }}
+
+{{ android-browser-software-paragraph-2 Deviating from the description in [Google Chrome's Privacy Notice](https://www.google.com/intl/en/chrome/privacy/), Chromium updates are provided under eyeo's control and some features, such as Chrome’s usage statistics and crash reports, are disabled. }}
+
+##### {{ android-browser-crash-reporter-heading[heading] Crash reporter }} {: #adblock-browser-crash-reporter }
+
+{{ android-browser-crash-reporter-paragraph-1 In the event of an unexpected crash or error, Adblock Browser collects data relevant for analyzing the cause of the malfunction. The data is used solely for individual troubleshooting (as well as for identifying general defects which lead to unexpected crashes or errors) and is never shared with any third parties other than Fabric from Google, Inc., which we use for analyzing crash reports (crashlytics). }}
+
+###### {{ android-browser-crash-data-heading[heading] During a crash, the following data is sent: }}
+
+- {{ android-browser-crash-data-item-1[list item] UUID and crash traces in order to help a user associate crash data with specific instances of Adblock Browser }}
+- {{ android-browser-crash-data-item-2[list item] Instance IDS }}
+- {{ android-browser-crash-data-item-3[list item] Device type }}
+- {{ android-browser-crash-data-item-4[list item] application ID }}
+- {{ android-browser-crash-data-item-5[list item] Adblock Browser app version }}
+- {{ android-browser-crash-data-item-6[list item] Free space }}
+- {{ android-browser-crash-data-item-7[list item] Free ram }}
+- {{ android-browser-crash-data-item-7[list item] A timestamp of when a crash happened }}
+
+{{ android-browser-crash-data-paragraph-1 Said data is only collected when the application crashes or throws an error. You can opt-out from sending such reports via Settings > Privacy > "Help us make Adblock Browser better". }}
+
+###### {{ android-browser-data-retention-heading[heading] Data retention }}
+
+{{ android-browser-data-retention-paragraph-1 Crash reporting is retained for 180 days. Firebase retains Instance IDs until the Firebase customer makes an API call to delete the ID. After the call, data is removed from live and backup systems within 180 days. }}
+
+##### {{ android-browser-event-tracking-heading[heading] Event tracking }}
+
+{{ android-browser-event-tracking-paragraph-1 We also track when you create an event, e.g. when you access the settings. In such a case, this event will be sent to our service provider, Firebase from Google, Inc. Firebase then makes the following data accessible to us: }}
+
+- {{ android-browser-event-tracking-item-1[list item] Adblock Browser for Android app version }}
+- {{ android-browser-event-tracking-item-2[list item] Demographic data (gender, age) }}
+- {{ android-browser-event-tracking-item-3[list item] Device type }}
+- {{ android-browser-event-tracking-item-4[list item] Which platforms you are using (Android and its respective version) }}
+- {{ android-browser-event-tracking-item-5[list item] Location data based on your IP address (country) }}
+
+{{ android-browser-event-tracking-paragraph-2 This data is solely used to improve Adblock Browser for Android and your user experience. You can opt-out from sending such reports via Settings > Privacy > "Help us make Adblock Browser better". }}
+
+###### {{ android-browser-data-retention-heading[heading] Data retention }}
+
+{{ android-browser-data-retention-paragraph-1 Event tracking is with IDs is retained for 60 days. Aggregated reports may be retained for a longer period. }}
 
 #### {{ adblock-browser-ios-heading[heading] Adblock Browser for iOS }} {: #adblock-browser-ios }
 
