@@ -493,7 +493,7 @@ Germany<br>
 
 <? include cookie/settings-link ?>
 
-###### {{ adblock-ai-heading[heading] At adblock.ai }} {: #adblock-ai }
+###### {{ adblock-ai-heading[heading] On adblock.ai }} {: #adblock-ai }
 
 {{ adblock-ai-paragraph-1 On our website, adblock.ai, we automatically collect the following information: }}
 
