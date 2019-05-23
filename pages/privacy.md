@@ -486,6 +486,19 @@ Germany<br>
 
 {{ retention-communications-paragraph-2 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch). }}
 
+### {{ collection-user-support-heading[heading] Collection and processing for user support }} {: #collection-and-processing-for-user-support }
+
+{{ collection-user-support-paragraph-1 For user support, we use a customer relation management software from Zendesk, Inc. (find more information here) that allows for the integration of user support channels, like social media and email responses. In the event that you contact us for support via email and / or our social media channels, we collect the following data in order to help you to solve your issue sufficiently: }}
+
+- {{ collection-user-support-item-1[list item] User name (contact via social media) and / or email }}
+- {{ collection-user-support-item-2[list item] Device information }}
+- {{ collection-user-support-item-3[list item] Version of Adblock Plus and other applicable tech specifications }}
+- {{ collection-user-support-item-4[list item] URLs the user is having issues with }}
+- {{ collection-user-support-item-5[list item] Adblock Plus issues }}
+- {{ collection-user-support-item-6[list item] Address and transaction ID numbers for donation refunds (voluntary) }}
+
+{{ collection-user-support-paragraph-2 All user support data is deleted one (1) year after closing the respective support case. }}
+
 <time datetime="2019-03">{{ publication-date March 2019 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
