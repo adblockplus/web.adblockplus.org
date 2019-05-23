@@ -463,7 +463,7 @@ Germany<br>
 - {{ error-data-sent-item-4[list item] A generated UUID to separate error reports. }}
 - {{ error-data-sent-item-5[list item] A string / function name identifying the error. }}
 
-{{ error-data-sent-paragraph-1 Said data is only collected when the application crashes or throws an error. Furthermore, Adblock Browser for iOS explicitly asks for permission to send the collected information after the crash or error happened. }}
+{{ error-data-sent-paragraph-1 Said data is only collected when the application crashes or throws an error. Furthermore, Adblock Browser explicitly asks for permission to send the collected information after the crash or error happened. }}
 
 {{ error-data-sent-paragraph-2 In order to learn more about HockeyApps's privacy policy, please consult their [Terms of Service](https://hockeyapp.net/terms) as well as their [crash report documentation](https://support.hockeyapp.net/kb/app-management-2/what-data-is-collected-with-the-hockeysdks-2) and [event report documentation](https://support.hockeyapp.net/kb/app-management-2/what-data-is-collected-with-the-hockeysdks-2#data-collected-for-the-user-metrics-features). }}
 
