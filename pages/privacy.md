@@ -129,7 +129,7 @@ notoc=True
     - {{ tools-item-11[list item] Log files }}
     - {{ tools-item-12[list item] Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters }}
     - {{ tools-item-13[list item] Via Google Analytics }}
-3. {{ tools-item-14[list item] For user support }}
+3. {{ tools-item-14[list item] For user support: }}
 {: .has-horizontal-list .semicolon-separated }
     - {{ tools-item-15[list item] Via email sent by you }}
     - {{ tools-item-16[list item] From user reviews in App Stores }}
