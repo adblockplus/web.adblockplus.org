@@ -438,7 +438,7 @@ Germany<br>
 
 ###### {{ android-browser-data-retention-heading[heading] Data retention }}
 
-{{ android-browser-data-retention-paragraph-1 Event tracking is with IDs is retained for 60 days. Aggregated reports may be retained for a longer period. }}
+{{ android-browser-data-retention-paragraph-1 Event tracking with IDs is retained for 60 days. Aggregated reports may be retained for a longer period. }}
 
 #### {{ adblock-browser-ios-heading[heading] Adblock Browser for iOS }} {: #adblock-browser-ios }
 
