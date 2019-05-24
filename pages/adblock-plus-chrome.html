@@ -43,12 +43,49 @@ template=minimal
     font-weight: bolder;
   }
 
-  .content a.download.button,
-  .content a.download.button:visited
+  a.icon-button
   {
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    text-transform: uppercase;
     font-weight: normal;
     background-color: #3d9c4f;
     color: #fff;
+  }
+
+  a.icon-button:visited
+  {
+    background-color: #3d9c4f;
+    color: #fff;
+  }
+
+  .content a.icon-button
+  {
+    background-color: #3d9c4f;
+    color: #fff;
+    font-weight: normal;
+  }
+
+  .content a.icon-button:visited
+  {
+    background-color: #3d9c4f;
+    color: #fff;
+  }
+
+  .button
+  {
+    cursor: pointer;
+  }
+
+  .button .button-image
+  {
+    vertical-align: middle;
+  }
+
+  .icon-button .button-text
+  {
+    position: relative;
+    top: 0.1em;
   }
 
   .content .download-spacing
@@ -59,17 +96,6 @@ template=minimal
   .content .footer-download-spacing
   {
     margin-top: 3em;
-  }
-
-  .icon-button
-  {
-    padding: 0.5em 1em;
-  }
-
-  .icon-button .button-text
-  {
-    position: relative;
-    top: 0.1em;
   }
 
   .bg-grey-abstract
@@ -141,23 +167,6 @@ template=minimal
   .info-box p
   {
     margin: 0.5em;
-  }
-
-  .button
-  {
-    border-radius: 0.5em;
-    text-transform: uppercase;
-  }
-
-  .info-box .button
-  {
-    background-color: #3d9c4f;
-    color: #fff;
-  }
-
-  .button .button-image
-  {
-    vertical-align: middle;
   }
 
   .info-box .close-button
