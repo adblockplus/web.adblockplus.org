@@ -513,7 +513,7 @@ Germany<br>
 
 ###### {{ adblock-ai-heading[heading] On adblock.ai }} {: #adblock-ai }
 
-{{ adblock-ai-paragraph-1 On our website, adblock.ai, we automatically collect the following information: }}
+{{ adblock-ai-paragraph-1 On our website adblock.ai, we automatically collect the following information. }}
 
 **{{ facebook-messenger-integration-heading[heading] Facebook Messenger integration }}**
 {: #facebook-messenger-integration }
