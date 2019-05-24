@@ -350,7 +350,7 @@ Germany<br>
 
 ### {{ collection-and-processing-heading[heading] Collection and processing in our products }} {: #collection-processing-of-products }
 
-#### {{ adblock-plus-heading[heading] Adblock Plus extensions }} {: #adblock-plus }
+#### {{ adblock-plus-heading[heading] Adblock Plus extension }} {: #adblock-plus }
 
 {{ adblock-plus-paragraph When you use the Adblock Plus browser extension, we collect and process the following data: }}
 
