@@ -144,7 +144,8 @@ div.animation[started="true"]
 
 .section
 {
-  padding: 2em 0;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 /******************************************************************************
@@ -956,3 +957,13 @@ div.animation[started="true"]
 }
 
 .block { display: block; }
+
+/* App store buttons
+ ******************************************************************************/
+
+.app-store-button
+{
+  display: inline-block;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}

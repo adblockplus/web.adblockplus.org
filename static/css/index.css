@@ -2,27 +2,112 @@
  * Browser-based styles
  *****************************************************************************/
 
-.show-on-msie { display: none; }
-.msie .show-on-msie { display: inherit; }
-.msie .hide-on-msie { display: none; }
+.show-on-msie,
+.msie .hide-on-msie,
+.show-on-maxthon,
+.maxthon .hide-on-maxthon,
+.show-on-ios,
+.ios .hide-on-ios,
+.show-on-android,
+.android .hide-on-android,
+.show-on-samsung,
+.samsungBrowser .hide-on-samsung,
+.samsungBrowser.android .hide-on-samsung
+{ display: none; }
 
-.show-on-maxthon { display: none; }
-.maxthon .show-on-maxthon { display: inherit; }
-.maxthon .hide-on-maxthon { display: none; }
+.msie .show-on-msie,
+.maxthon .show-on-maxthon,
+.ios .show-on-ios,
+.android .show-on-android,
+.samsungBrowser .show-on-samsung
+{ display: inherit; }
 
 /******************************************************************************
- * #hero-download
+ * Mobile intro sections
  *****************************************************************************/
 
-#hero-download
+.intro-mobile
 {
-  padding: 3em 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.intro-mobile h1 span,
+.intro-mobile .subheading span
+{
+  display: block;
+}
+
+.intro-mobile h1,
+.intro-mobile .h1
+{
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+.intro-mobile .subheading
+{
+  margin-top: -0.7em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 575px)
+{
+  #intro-ios-safari h1,
+  #intro-ios-not-safari h2
+  {
+    font-size: 1.5em;
+    line-height: inherit;
+  }
+}
+
+#intro-ios-not-safari { padding-top: 3em !important; }
+
+#intro-ios-not-safari h2 { margin-top: 0; }
+
+@media (min-width: 452px)
+{
+  #intro-android,
+  #intro-ios-safari,
+  #intro-ios-not-safari,
+  #intro-samsung
+  {
+    float: none;
+    padding-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 420px;
+  }
+
+  #intro-ios-not-safari h2
+  {
+    margin-bottom: 1em;
+  }
+}
+
+#intro-ios-not-safari strong { display: inline-block; }
+
+/******************************************************************************
+ * #intro-standard
+ *****************************************************************************/
+
+#intro-standard,
+#intro-maxthon
+{
+  padding-top: 3em;
+}
+
+#intro-video
+{
+  padding-bottom: 3em;
 }
 
 @media (min-width: 576px) and (max-width: 1023px)
 {
   /* add spacing left/right on tablets */
-  #hero-download
+  #intro-standard,
+  #intro-video,
+  #intro-maxthon
   {
     padding-left: 3em;
     padding-right: 3em;
@@ -32,7 +117,9 @@
 @media (max-width: 1023px)
 {
   /* force hero unit columns to break on large tablets */
-  #hero-download .column
+  #intro-standard,
+  #intro-video,
+  #intro-maxthon
   {
     width: 100%;
   }
@@ -40,23 +127,20 @@
 
 @media (min-width: 1024px)
 {
-  #hero-download
+  #intro-standard,
+  #intro-video
   {
     padding-top: 6em;
     padding-bottom: 6em;
   }
 }
 
-#hero-download h1
+#intro-standard h1,
+#intro-maxthon h1
 {
-  /* Spacing is provided by the hero-download section */
+  /* Spacing is provided by the #intro-standard section */
   margin-top: 0;
   overflow: auto;
-}
-
-#hero-download h1 > span
-{
-  display: inline-block;
 }
 
 #hero-download-tos
@@ -320,6 +404,50 @@
     padding-left: 2em;
     padding-right: 2em;
   }
+}
+
+/******************************************************************************
+ * #about-abp
+ *****************************************************************************/
+
+#about-abp-logo img
+{
+  height: auto;
+  width: 100%;
+  max-width: 160px;
+  margin-top: 2em;
+}
+
+@media (max-width: 575px)
+{
+  #about-abp-body
+  {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1023px)
+{
+  #about-abp-logo { width: 25%; }
+
+  [dir="ltr"] #about-abp-logo { padding-left: 2em; }
+
+  [dir="rtl"] #about-abp-logo { padding-right: 2em; }
+
+  #about-abp-body { width: 75%; }
+
+  [dir="ltr"] #about-abp-body { padding-right: 2em; }
+
+  [dir="rtl"] #about-abp-body { padding-left: 2em; }
+
+}
+
+@media (min-width: 1024px)
+{
+  #about-abp-logo { width: 33.333333%; }
+
+  #about-abp-body { width: 66.666667%; }
 }
 
 /******************************************************************************

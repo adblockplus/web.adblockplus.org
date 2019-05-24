@@ -1,4 +1,4 @@
-<section id="abb-cross-promotion" class="bg-secondary">
+<section id="abb-cross-promotion" class="bg-secondary hide-on-ios hide-on-android">
   <div class="container phablet-width content text-center">
     <h2 class="h1">
       {{ abb-cross-promotion-heading[Heading] Want to block ads and disable tracking on <span class='avoid-wrap'>mobile devices?</span> }}
@@ -18,22 +18,9 @@
       </figcaption>
     </figure>
 
-    <div id="abb-app-store-badges" class="row">
-      <a href="https://eyeo.to/adblockbrowser/ios/abp-website" 
-         title="{{ abb-ios-link-title[Link title] Get Adblock Browser on iOS }}" 
-         class="column one-half">
-        <img src="img/apple-app-store-badge.png"
-             srcset="img/apple-app-store-badge.svg 2x"
-             height="60px"
-             alt="{{ abb-ios-badge-alt[Alt text] Download Adblock Browser on the App Store }}">
-      </a>
-      <a href="https://eyeo.to/adblockbrowser/android/abp-website" 
-         title="{{ abb-android-link-title[Link title] Get Adblock Browser on Android }}" 
-         class="column one-half">
-        <img src="img/google-play-badge.png"
-             height="60px"
-             alt="{{ abb-android-badge-alt[Alt text] Download Adblock Browser on Google Play }}">
-      </a>
+    <div id="abb-app-store-badges">
+      <? include install-button-ios ?>
+      <? include install-button-android ?>
     </div>
   </div>
 </section>
