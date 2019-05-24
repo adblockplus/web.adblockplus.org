@@ -418,7 +418,7 @@ Germany<br>
 - {{ android-browser-crash-data-item-7[list item] Free ram }}
 - {{ android-browser-crash-data-item-7[list item] A timestamp of when a crash happened }}
 
-{{ android-browser-crash-data-paragraph-1 Said data is only collected when the application crashes or throws an error. You can opt-out from sending such reports via Settings > Privacy > "Help us make Adblock Browser better". }}
+{{ android-browser-crash-data-paragraph-1 Said data is only collected when the application crashes or throws an error. You can opt-out from sending such reports via Settings > Privacy > Help us make Adblock Browser better. }}
 
 ###### {{ android-browser-data-retention-heading[heading] Data retention }}
 
@@ -434,7 +434,7 @@ Germany<br>
 - {{ android-browser-event-tracking-item-4[list item] Which platforms you are using (Android and its respective version) }}
 - {{ android-browser-event-tracking-item-5[list item] Location data based on your IP address (country) }}
 
-{{ android-browser-event-tracking-paragraph-2 This data is solely used to improve Adblock Browser for Android and your user experience. You can opt-out from sending such reports via Settings > Privacy > "Help us make Adblock Browser better". }}
+{{ android-browser-event-tracking-paragraph-2 This data is solely used to improve Adblock Browser for Android and your user experience. You can opt-out from sending such reports via Settings > Privacy > Help us make Adblock Browser better. }}
 
 ###### {{ android-browser-data-retention-heading[heading] Data retention }}
 
