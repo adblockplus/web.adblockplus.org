@@ -81,7 +81,7 @@ notoc=True
     - {{ data-processed-item-26[list item] Adblock Browser for iOS (automatically): }}
     {: .has-horizontal-list .semicolon-separated }
         - {{ data-processed-item-27[list item] Error and crash report data: }}
-            - {{ data-processed-item-28[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser for iOS }}
+            - {{ data-processed-item-28[list item] Bundle identifier, bundle version and short bundle version string of Adblock Browser }}
             - {{ data-processed-item-29[list item] Device type, CPU architecture and version of the operating system }}
             - {{ data-processed-item-30[list item] Timestamp of crash }}
             - {{ data-processed-item-31[list item] UUID }}
