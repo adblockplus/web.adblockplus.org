@@ -151,7 +151,7 @@ title=Writing Adblock Plus filters
 
   <h4 id="regexps">{{s77 Using regular expressions}}</h4>
 
-  <p>{{s79 If you want even more control about what your filters match and what they don't match, you can use regular expressions. For example the filter <code><fix>/banner\d+/</fix></code> will match <code><fix>banner123</fix></code> and <code><fix>banner321</fix></code> but not <code><fix>banners</fix></code>. You can check out <a href="{{s79-link https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern}}">documentation on regular expressions</a> to learn how to write them.}}</p>
+  <p>{{s79 If you want even more control about what your filters match and what they don't match, you can use regular expressions. For example the filter <code><fix>/banner\d+/</fix></code> will match <code><fix>banner123</fix></code> and <code><fix>banner321</fix></code> but not <code><fix>banners</fix></code>. You can check out <a href="{{s79-link https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions#Writing_a_Regular_Expression_Pattern}}">documentation on regular expressions</a> to learn how to write them.}}</p>
 
   <p>{{s80 <em>Note</em>: For performance reasons it is recommended not to use regular expressions if they can be avoided.}}</p>
 
@@ -196,7 +196,7 @@ Only here you get the best tofu!
 
   <h3 id="elemhide_css">{{s95 Advanced selectors}}</h3>
 
-  <p>{{s97 In general, any CSS selector supported by Firefox can be used for element hiding. For example the following rule will hide anything following a div element with class "adheader": <code><fix>##.adheader + *</fix></code>. For a full list of CSS list see <a href="{{s97-link http://www.w3.org/TR/css3-selectors/}}">W3C CSS specification</a> (note that not all selectors are supported by Firefox yet).}} {{advanced-selectors-2 Please keep in mind that browsers are slower to process these selectors than selectors based on <code><fix>class</fix></code> or <code><fix>id</fix></code> attribute only.}}</p>
+  <p>{{s97 In general, any CSS selector supported by Firefox can be used for element hiding. For example the following rule will hide anything following a div element with class "adheader": <code><fix>##.adheader + *</fix></code>. For a full list of CSS list see <a href="{{s97-link https://www.w3.org/TR/selectors-3/}}">W3C CSS specification</a> (note that not all selectors are supported by Firefox yet).}} {{advanced-selectors-2 Please keep in mind that browsers are slower to process these selectors than selectors based on <code><fix>class</fix></code> or <code><fix>id</fix></code> attribute only.}}</p>
 
   <p>{{s98 <em>Note</em>: This functionality is for advanced users only, you should be comfortable with CSS selectors to use it. Adblock Plus won't be able to check the syntax of the selector you are adding, if you use invalid CSS syntax you might break other (valid) rules you have. Check JavaScript Console for CSS errors.}}</p>
 
@@ -213,7 +213,7 @@ Only here you get the best tofu!
   {{ abp-properties-1 <code><fix>:-abp-properties(properties)</fix></code> will select elements based upon stylesheet properties. For example <code><fix>:-abp-properties(width:300px;height:250px;)</fix></code> will select elements that have a corresponding CSS rule in a stylesheet which sets the <code><fix>width</fix></code> and <code><fix>height</fix></code> to the values <code><fix>300px</fix></code> and <code><fix>250px</fix></code> respectively. Property names are matched case-insensitively. Furthermore, wildcards can be used so that <code><fix>:-abp-properties(width:*px;height:250px;)</fix></code> will match any width specified in pixels and a height of 250 pixels. }}
 </p>
 <p>
-  {{ abp-properties-2 You can also use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regular expressions</a> by surrounding the properties expression with "/". For example, <code><fix>:-abp-properties(/width:30[2-8]px;height:250px;/)</fix></code> will match widths between 302 and 308 pixels and a height of 250 pixels. }}
+  {{ abp-properties-2 You can also use <a href="https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions">regular expressions</a> by surrounding the properties expression with "/". For example, <code><fix>:-abp-properties(/width:30[2-8]px;height:250px;/)</fix></code> will match widths between 302 and 308 pixels and a height of 250 pixels. }}
 </p>
 <p>
   {{ abp-properties-3 <em>Note</em>: The <a href="https://adblockplus.org/development-builds/new-css-property-filter-syntax">older syntax</a> for the CSS property filters is deprecated and will be automatically converted to the new format&nbsp;. The syntax to select the style properties remain the same. For example, <code><fix>[-abp-properties='width:300px;height:250px;']</fix></code> will be converted to <code><fix>:-abp-properties(width:300px;height:250px;)</fix></code>. }}
