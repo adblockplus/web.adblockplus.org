@@ -93,19 +93,19 @@ template=minimal
     margin-top: 3em;
   }
 
-  #bubble-ui-desktop
+  #bubble-ui-desktop-and-aa
   {
     display: none;
   }
 
-  .non-desktop #bubble-ui-desktop
+  .desktop #bubble-ui-desktop
+  {
+    display: none;
+  }
+
+  .desktop #bubble-ui-desktop-and-aa
   {
     display: block;
-  }
-
-  .non-desktop #bubble-ui-desktop-and-aa
-  {
-    display: none;
   }
 
   .bg-grey-abstract
@@ -272,9 +272,14 @@ template=minimal
     }
   }
 
-  .non-desktop .download
+  .download
   {
     display: none;
+  }
+
+  .desktop .download
+  {
+    display: block;
   }
 
 </style>
@@ -298,9 +303,9 @@ template=minimal
     document.body.classList.add("chrome");
   }
 
-  if (bowser.mobile || bowser.tablet)
+  if (!(bowser.mobile || bowser.tablet))
   {
-    document.body.classList.add('non-desktop');
+    document.body.classList.add('desktop');
 
     document
       .querySelector(".info-box .close-button")
