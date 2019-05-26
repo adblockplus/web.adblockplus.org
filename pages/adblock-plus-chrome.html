@@ -303,10 +303,8 @@ template=minimal
     document.body.classList.add("chrome");
   }
 
-  if (!(bowser.mobile || bowser.tablet))
+  if (bowser.mobile || bowser.tablet)
   {
-    document.body.classList.add('desktop');
-
     document
       .querySelector(".info-box .close-button")
       .addEventListener("click", function()
@@ -314,6 +312,10 @@ template=minimal
         document.querySelector(".info-box")
           .setAttribute("hidden", "");
       });
+  }
+  else
+  {
+    document.body.classList.add('desktop');
   }
 
 </script>
