@@ -93,6 +93,21 @@ template=minimal
     margin-top: 3em;
   }
 
+  #bubble-ui-desktop
+  {
+    display: none;
+  }
+
+  .non-desktop #bubble-ui-desktop
+  {
+    display: block;
+  }
+
+  .non-desktop #bubble-ui-desktop-and-aa
+  {
+    display: none;
+  }
+
   .bg-grey-abstract
   {
     background-image: url("/img/grey-bg-abstract-shape.svg");
@@ -278,8 +293,6 @@ template=minimal
 
 <script>
 
-  var heroImage = document.querySelector("#hero img");
-
   if (bowser.chrome)
   {
     document.body.classList.add("chrome");
@@ -288,9 +301,6 @@ template=minimal
   if (bowser.mobile || bowser.tablet)
   {
     document.body.classList.add('non-desktop');
-
-    heroImage.src =
-      (heroImage.src.split("/img")[0] + "/img/bubble-ui-desktop.svg");
 
     document
       .querySelector(".info-box .close-button")
