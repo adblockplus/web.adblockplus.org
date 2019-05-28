@@ -14,6 +14,7 @@
   ];
 
   var gtmScript = document.createElement("script");
+  gtmScript.async = true;
 
   // gtmData is passed to separate Google Tag Manager's dataLayer from gtag's
   gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TFZZB3Q&l=gtmData";
@@ -84,6 +85,8 @@
   function loadGoogleAnalytics()
   {
     var script = doc.createElement("script");
+    if (testingOptOut)
+      script.async = true;
     script.setAttribute("src", TRACKING_SCRIPT_URL);
     doc.head.appendChild(script);
   }
