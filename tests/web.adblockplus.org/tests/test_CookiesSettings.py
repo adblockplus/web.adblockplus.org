@@ -7,13 +7,13 @@ from pages.landingPage import LandingPage
 from chunks.topMenu import TopMenu
 from chunks.cookiesPrompt import CookiesPrompt
 
-import utils.global_functions
+import utils.global_functions as gf
 
 
 @pytest.fixture(scope="function")
 def driver(request):
     options = Options()
-    utils.global_functions.setup(options)
+    gf.setup(options)
 
     driver = webdriver.Chrome(options=options)
     request.cls.driver = driver

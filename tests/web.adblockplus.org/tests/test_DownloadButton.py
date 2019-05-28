@@ -6,13 +6,13 @@ from selenium.webdriver.chrome.options import Options
 from pages.landingPage import LandingPage
 from data.dataDownloadButton import TEST_DATA
 
-import utils.global_functions
+import utils.global_functions as gf
 
 
 @pytest.fixture
 def driver(request):
     options = Options()
-    utils.global_functions.setup(options)
+    gf.setup(options)
 
     if hasattr(request, 'param'):
         options.add_argument('--user-agent=' + request.param)
