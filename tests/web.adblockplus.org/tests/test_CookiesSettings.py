@@ -20,7 +20,6 @@ def driver():
     driver.close()
 
 
-@pytest.mark.usefixtures('driver')
 def test_verify_prompt_displayed_when_not_agreeing(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
@@ -31,7 +30,6 @@ def test_verify_prompt_displayed_when_not_agreeing(driver):
     assert cookies_prompt.is_prompt_visible()
 
 
-@pytest.mark.usefixtures('driver')
 def test_verify_prompt_not_displayed_when_agreeing(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
@@ -43,7 +41,6 @@ def test_verify_prompt_not_displayed_when_agreeing(driver):
     assert not cookies_prompt.is_prompt_visible()
 
 
-@pytest.mark.usefixtures('driver')
 def test_verify_all_options_selected_by_default(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
@@ -55,7 +52,6 @@ def test_verify_all_options_selected_by_default(driver):
     assert cookie_settings_form.is_ab_testing_cookies_toggle_enabled()
 
 
-@pytest.mark.usefixtures('driver')
 def test_disable_tracking_verify_saved(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
@@ -72,7 +68,6 @@ def test_disable_tracking_verify_saved(driver):
     assert not cookie_settings_form.is_tracking_cookies_toggle_enabled()
 
 
-@pytest.mark.usefixtures('driver')
 def test_disable_ab_testing_verify_saved(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
@@ -89,7 +84,6 @@ def test_disable_ab_testing_verify_saved(driver):
     assert not cookie_settings_form.is_ab_testing_cookies_toggle_enabled()
 
 
-@pytest.mark.usefixtures('driver')
 def test_verify_tracking_toggle_affects_ab_when_ab_enabled(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
@@ -102,7 +96,6 @@ def test_verify_tracking_toggle_affects_ab_when_ab_enabled(driver):
     assert cookie_settings_form.is_ab_testing_cookies_toggle_enabled()
 
 
-@pytest.mark.usefixtures('driver')
 def test_verify_tracking_toggle_does_not_affect_ab_when_ab_disabled(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
