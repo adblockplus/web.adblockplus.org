@@ -4,7 +4,8 @@
 
   var trackingOptOut = document.cookie.indexOf("eyeo-ga-opt-out") !== -1;
   var trackingConsent = document.cookie.indexOf("eyeo-ga-consent") !== -1;
-
+  var hasSeenCookiePrompt = document.cookie.indexOf("eyeo-seen-cookie-prompt") !== -1;
+  var preventCookiePrompt = eyeo.preventCookiePrompt;
 
   var gtmData = window.gtmData = [
     {
@@ -20,10 +21,10 @@
   gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TFZZB3Q&l=gtmData";
 
   if (
-    // page has opt in tracking and consent is given
-    (eyeo.optInOnlyTracking && trackingConsent) ||
-    // page has opt out tracking and user has not opted out
-    (!eyeo.optInOnlyTracking && !trackingOptOut)
+    // Do not track users who haven't seen the cookie prompt
+    !(preventCookiePrompt && !hasSeenCookiePrompt)
+    // Do not track users who have opted out of tracking
+    && !trackingOptOut
   ) {
     document.head.appendChild(gtmScript);
   }
