@@ -1,0 +1,102 @@
+<style>
+  .async-hide { opacity: 0 !important }
+</style>
+
+<script>
+
+  function hasCookie(key)
+  {
+    return document.cookie.indexOf(key) !== -1;
+  }
+
+  // Initialize Analytics and Tag Manager data /////////////////////////////////
+
+  var hasSeenCookiePrompt = hasCookie("eyeo-seen-cookie-prompt");
+  var trackingOptOut = hasCookie("eyeo-ga-opt-out");
+  var testingOptOut = hasCookie("eyeo-ab-opt-out");
+  var trackingConsent = hasCookie("eyeo-ga-consent");
+
+  var analyticsData = window.dataLayer = [
+    ["js", new Date()]
+  ];
+
+  var queueAnalyticsEvent = window.gtag = function()
+  {
+    window.dataLayer.push(arguments);
+  };
+
+  var tagManagerData = window.tagManagerData = [{
+    "gtm.start": new Date().getTime(),
+    "event":"gtm.js"
+  }];
+
+  var tagManagerOptions = {
+    anonymize_ip: true,
+    transport_type: 'beacon'
+  };
+
+  if (!testingOptOut)
+    tagManagerOptions.optimize_id = "GTM-NW8L5JT";
+
+  // Record first visit to page with cookie prompt
+  if (!eyeo.preventCookiePrompt && !hasSeenCookiePrompt)
+    document.cookie = "eyeo-seen-cookie-prompt=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+
+  // Apply Optimize Anti-flicker snippet ///////////////////////////////////////
+
+  document.documentElement.className += " async-hide";
+
+  function onTimeout()
+  {
+    document.documentElement.className = document.documentElement.className.replace(
+      RegExp(" ?" + "async-hide"), "");
+  }
+
+  var asyncHideData = {
+    "GTM-NW8L5JT": true,
+    start: 1 * new Date,
+    end: onTimeout
+  };
+
+  analyticsData.hide = asyncHideData;
+
+  setTimeout(function()
+  {
+    onTimeout();
+    asyncHideData.end = null;
+  }, 4000);
+
+  asyncHideData.timeout = 4000;
+
+  // Initialize Analytics, Optimize, and Tag manager ///////////////////////////
+
+  if (
+    // Do not track users who haven't seen cookie prompt
+    !(eyeo.preventCookiePrompt && !hasSeenCookiePrompt)
+
+    // Do not track users who have opted out of tracking
+    && !trackingOptOut
+  ) {
+
+    // Initialize Tag Manager //////////////////////////////////////////////////
+
+    var tagManagerScript = document.createElement("script");
+    tagManagerScript.async = true;
+
+    // tagManagerData is provided by global and URL parameter below
+    tagManagerScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TFZZB3Q&l=tagManagerData";
+    document.head.appendChild(tagManagerScript);
+
+    // Initialize Analytics and Optimize ///////////////////////////////////////
+
+    var analyticsScript = document.createElement("script");
+    analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=UA-18643396-6";
+
+    // Optimize tests will be invalid if applied async
+    if (testingOptOut)
+      analyticsScript.async = true;
+
+    queueAnalyticsEvent("config", "UA-18643396-6", analyticsData);
+    document.head.appendChild(analyticsScript);
+  }
+</script>
