@@ -2,18 +2,30 @@ template=raw
 
 <head>
   <title>Optimize test</title>
-  <? include styles ?>
-  <? include head/config ?>
-  <? include head/analytics ?>
   <meta name="robots" content="noindex, nofollow">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18643396-6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-18643396-6', { 'optimize_id': 'GTM-NW8L5JT'});
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TFZZB3Q');</script>
+  <!-- End Google Tag Manager -->
+
 </head>
 
-<div class="container">
+<div style="margin: 1em;">
   <p id="1">Woo!</p>
   <p id="2">Yeah!</p>
   <p id="3">Woo!</p>
   <p id="4">Yeah!</p>
 </div>
-
-<? include cookie/index ?>
-<script src="/js/cookie-prompt.js"></script>
