@@ -8,3 +8,4 @@ class BasePage:
 
     def go_home(self):
         self.driver.get('http://adblockplus.org/')
+

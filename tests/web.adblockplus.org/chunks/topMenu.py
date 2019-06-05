@@ -1,22 +1,24 @@
 from pages.basePage import BasePage
+from pages.aboutPage import AboutPage
+import utils.global_functions as gf
+
+LOCALE_BUTTON_ID = 'navbar-locale-menubar'
+LOCALE_LIST_ID = 'navbar-locale-menu'
+MENU_ITEMS_BAR_ID = 'navbar-menu'
 
 
 class TopMenu(BasePage):
 
-    def __init__ (self, driver):
+    def __init__(self, driver):
         self.driver = driver
 
-        self.locale_button_id = 'navbar-locale-menubar'
-        self.locale_list_id = 'navbar-locale-menu'
-
     def click_locale_button(self):
-        self.driver.find_element_by_id(self.locale_button_id).click()
+        self.driver.find_element_by_id(LOCALE_BUTTON_ID).click()
 
     def set_language(self, lang_abbreviation):
-        locale_list = self.driver.find_element_by_id(self.locale_list_id)
-        items = locale_list.find_elements_by_tag_name('li')
-        for item in items:
-            text = item.text
-            if '(' + lang_abbreviation + ')' in text:
-                item.click()
-                break
+        gf.click_menu_item(self.driver, LOCALE_LIST_ID, lang_abbreviation)
+
+    def click_about_menu_item(self):
+        gf.click_menu_item(self.driver, MENU_ITEMS_BAR_ID, 'About')
+        return AboutPage(self.driver)
+
