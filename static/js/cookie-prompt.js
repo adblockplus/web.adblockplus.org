@@ -1,6 +1,6 @@
 (function(root, doc, body)
 {
-  var EYEO = window.eyeo || {};
+  var eyeo = root.eyeo || {};
   var HAS_SEEN_COOKIE_PROMPT = "eyeo-seen-cookie-prompt";
   var TRACKING_OPT_OUT = "eyeo-ga-opt-out";
   var TESTING_OPT_OUT = "eyeo-ab-opt-out";
@@ -32,9 +32,8 @@
   var trackingOptOut = hasCookie(TRACKING_OPT_OUT);
   var testingOptOut = hasCookie(TESTING_OPT_OUT);
   var trackingConsent = hasCookie(TRACKING_CONSENT);
-  var preventCookiePrompt = EYEO.preventCookiePrompt;
 
-  document.addEventListener("DOMContentLoaded", function()
+  doc.addEventListener("DOMContentLoaded", function()
   {
     var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save");
     var saveButtons = doc.querySelectorAll(".cookies-save");
@@ -107,7 +106,7 @@
       // Delete all non-essential cookies when tracking is disabled
       if (trackingOptOut)
       {
-        var cookies = document.cookie.split(";");
+        var cookies = doc.cookie.split(";");
 
         for (var i = 0; i < cookies.length; i++)
         {
@@ -128,7 +127,7 @@
 
     function flipTrackingSwitches(checked)
     {
-      var trackingOptOutSwitches = document.querySelectorAll("input.tracking-cookies");
+      var trackingOptOutSwitches = doc.querySelectorAll("input.tracking-cookies");
 
       for (var i = 0; i < trackingOptOutSwitches.length; i++)
         trackingOptOutSwitches[i].checked = checked;
@@ -136,7 +135,7 @@
 
     function flipTestingSwitches(checked)
     {
-      var testingOptOutSwitches = document.querySelectorAll("input.testing-cookies");
+      var testingOptOutSwitches = doc.querySelectorAll("input.testing-cookies");
 
       for (var i = 0; i < testingOptOutSwitches.length; i++)
         testingOptOutSwitches[i].checked = checked;
@@ -157,7 +156,7 @@
     addListeners("click", saveButtons, saveCookieSettings);
 
 
-    if (!EYEO.preventCookiePrompt && !trackingConsent)
+    if (!eyeo.preventCookiePrompt && !trackingConsent)
       toggleCookieNotice();
 
     if (trackingOptOut)
