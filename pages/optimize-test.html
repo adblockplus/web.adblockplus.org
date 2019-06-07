@@ -1,8 +1,14 @@
+title=Adblock Plus | The world's # 1 free ad blocker
+description=Adblock Plus, the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
 template=raw
 
 <head>
   <title>Optimize test</title>
   <meta name="robots" content="noindex, nofollow">
+
+  <? include meta/standard ?>
+  <? include meta/social ?>
+  <? include styles ?>
 
   <style>
     .async-hide { opacity: 0 !important; }
@@ -71,7 +77,14 @@ template=raw
     }());
   </script>
 
+  <? include polyfills ?>
+
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="/js/tracking.js"></script>
 </head>
+
+<? include analytics/body-start ?>
+<? include navbar ?>
 
 <div style="margin: 1em;">
   <p id="1">Woo!</p>
@@ -79,3 +92,18 @@ template=raw
   <p id="3">Woo!</p>
   <p id="4">Yeah!</p>
 </div>
+
+<? include intro/sections ?>
+<? include as-mentioned ?>
+<? include features ?>
+<? include abb-cross-promotion ?>
+<? include about-abp ?>
+<? include footnote ?>
+<? include install-button-text ?>
+
+<? include footer ?>
+<? include cookie/index ?>
+<? include scripts ?>
+
+<script src="/js/vendor/bowser.js"></script>
+<script src="/js/install-button.js"></script>
