@@ -51,7 +51,8 @@
         scriptElement.src = "https://www.googletagmanager.com/gtag/js?id=UA-18643396-6";
         document.head.appendChild(scriptElement);
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        // Explicitly attached gtag to window because script is not run in global scope
+        var gtag = window.gtag = function(){dataLayer.push(arguments);}
         gtag('js', new Date());
         // Passing analyticsData constructed above
         gtag('config', 'UA-18643396-6', analyticsData);
