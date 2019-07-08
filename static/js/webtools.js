@@ -32,7 +32,8 @@ function generateLink()
     return;
   }
 
-  var url = "abp:subscribe?location=" + encodeURIComponent(location.value);
+  var url = "https://subscribe.adblockplus.org?location=" +
+    encodeURIComponent(location.value);
   if (/\S/.test(title.value))
     url += "&title=" + encodeURIComponent(title.value);
 
