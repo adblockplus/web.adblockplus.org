@@ -1,4 +1,7 @@
 {
+  "description": {
+    "message": "Cette Politique de confidentialité explique la manière dont nous utilisons, traitons et protégeons les informations recueillies auprès des utilisateurs via nos sites web et nos produits."
+  },
   "privacy-notice-short-link": {
     "message": "Avis de confidentialité (version courte)",
     "description": "link to heading"
@@ -55,7 +58,67 @@
     "description": "list item"
   },
   "data-processed-item-10": {
-    "message": "Adblock Browser, based on Chromium, provides Chromium-specific functionality which, however, may send data to Google.",
+    "message": "Adblock Browser basé sur Chromium fournit des fonctionnalités spécifiques à Chromium qui peuvent cependant envoyer des données à Google.",
+    "description": "list item"
+  },
+  "data-processed-item-11": {
+    "message": "Rapports de crash :",
+    "description": "list item"
+  },
+  "data-processed-item-12": {
+    "message": "UUID et traces de crash afin d’aider l’utilisateur à associer les données crash avec des occurrences spécifiques d’Adblock Browser",
+    "description": "list item"
+  },
+  "data-processed-item-13": {
+    "message": "Valeur ID instance",
+    "description": "list item"
+  },
+  "data-processed-item-14": {
+    "message": "Type d’appareil",
+    "description": "list item"
+  },
+  "data-processed-item-15": {
+    "message": "Application ID",
+    "description": "list item"
+  },
+  "data-processed-item-16": {
+    "message": "Version appli Adblock Browser",
+    "description": "list item"
+  },
+  "data-processed-item-17": {
+    "message": "Espace libre",
+    "description": "list item"
+  },
+  "data-processed-item-18": {
+    "message": "Ram disponible",
+    "description": "list item"
+  },
+  "data-processed-item-19": {
+    "message": "Horodatage du moment du crash",
+    "description": "list item"
+  },
+  "data-processed-item-20": {
+    "message": "Traceur d’événements :",
+    "description": "list item"
+  },
+  "data-processed-item-21": {
+    "message": "Version appli Adblock Browser",
+    "description": "list item"
+  },
+  "data-processed-item-22": {
+    "message": "Données démographiques (genre, âge)",
+    "description": "list item"
+  },
+  "data-processed-item-23": {
+    "message": "Type d’appareil",
+    "description": "list item"
+  },
+  "data-processed-item-24": {
+    "message": "Quelles plates-formes utilisez-vous (Android et sa version respective)",
+    "description": "list item"
+  },
+  "data-processed-item-25": {
+    "message": "Données de localisation basées sur votre adresse IP (pays)",
     "description": "list item"
   },
   "data-processed-item-26": {
@@ -146,6 +209,34 @@
     "message": "Données de retour et de filtre",
     "description": "list item"
   },
+  "data-processed-item-48": {
+    "message": "Pour assistance aux utilisateurs",
+    "description": "list item"
+  },
+  "data-processed-item-49": {
+    "message": "Nom de l’utilisateur (contact via les réseaux sociaux) et/ou e-mail",
+    "description": "list item"
+  },
+  "data-processed-item-50": {
+    "message": "Information d’appareil",
+    "description": "list item"
+  },
+  "data-processed-item-51": {
+    "message": "Version d’Adblock Plus et autres spécifications techniques applicables",
+    "description": "list item"
+  },
+  "data-processed-item-52": {
+    "message": "URL pour lesquels l’utilisateur est confronté à des problèmes",
+    "description": "list item"
+  },
+  "data-processed-item-53": {
+    "message": "Problèmes Adblock Plus",
+    "description": "list item"
+  },
+  "data-processed-item-54": {
+    "message": "Adresse et numéros de transaction ID pour remboursements de dons (volontairement)",
+    "description": "list item"
+  },
   "how-we-collect-heading": {
     "message": "Comment recueillons-nous les données ?",
     "description": "heading"
@@ -168,6 +259,14 @@
   },
   "tools-item-4": {
     "message": "Envoi de rapports de problèmes",
+    "description": "list item"
+  },
+  "tools-item-5": {
+    "message": "Envoi de rapports de crash",
+    "description": "list item"
+  },
+  "tools-item-7": {
+    "message": "Dans Adblock Browser pour Android : via Firebase Analytics",
     "description": "list item"
   },
   "tools-item-8": {
@@ -194,6 +293,30 @@
     "message": "Via Google Analytics",
     "description": "list item"
   },
+  "tools-item-14": {
+    "message": "Pour assistance aux utilisateurs :",
+    "description": "list item"
+  },
+  "tools-item-15": {
+    "message": "Via un e-mail qui vous est adressé",
+    "description": "list item"
+  },
+  "tools-item-16": {
+    "message": "Depuis des avis utilisateurs dans App Stores",
+    "description": "list item"
+  },
+  "tools-item-17": {
+    "message": "Depuis des billets sur forums",
+    "description": "list item"
+  },
+  "tools-item-18": {
+    "message": "Depuis des avis sur le Web Store d'un navigateur",
+    "description": "list item"
+  },
+  "tools-item-19": {
+    "message": "Depuis les réseaux sociaux tels que Facebook et Twitter",
+    "description": "list item"
+  },
   "why-we-process-heading": {
     "message": "Comment et pourquoi traitons-nous vos données ?",
     "description": "heading"
@@ -218,6 +341,10 @@
     "message": "À des fins de communication et d'assistance sur notre forum et notre blog.",
     "description": "list item"
   },
+  "why-we-process-item-6": {
+    "message": "Pour vous aider si vous rencontrez des problèmes avec nos produits.",
+    "description": "list item"
+  },
   "what-is-legal-heading": {
     "message": "Quelle est la base légale du traitement des données ?",
     "description": "heading"
@@ -238,7 +365,7 @@
     "description": "list item"
   },
   "how-long-item-3": {
-    "message": "iOS crash and error reporter data",
+    "message": "Crash iOS et données sur les rapports d'erreur",
     "description": "list item"
   },
   "how-long-item-4": {
@@ -249,8 +376,28 @@
     "message": "Données relatives aux téléchargements d'abonnements, aux vérifications de mise à jour d'extensions, aux notifications d'urgence",
     "description": "list item"
   },
+  "how-long-item-6": {
+    "message": "Pour une période de 180 jours :",
+    "description": "list item"
+  },
+  "how-long-item-7": {
+    "message": "rapport de crash sur Adblock Browser",
+    "description": "list item"
+  },
+  "how-long-item-8": {
+    "message": "Pour une période de 60 jours :",
+    "description": "list item"
+  },
+  "how-long-item-9": {
+    "message": "traceur d’événements",
+    "description": "list item"
+  },
   "how-long-item-10": {
     "message": "Données de blog et de forum tant que le commentaire/compte respectif existe",
+    "description": "list item"
+  },
+  "how-long-item-11": {
+    "message": "Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant",
     "description": "list item"
   },
   "how-long-paragraph": {
@@ -343,6 +490,14 @@
   },
   "general-notes-item-8": {
     "message": "Collecte et traitement dans nos produits",
+    "description": "list item & link"
+  },
+  "general-notes-item-9": {
+    "message": "Collecte et traitement sur nos sites web",
+    "description": "list item & link"
+  },
+  "general-notes-item-10": {
+    "message": "Collecte et traitement pour assistance aux utilisateurs",
     "description": "list item & link"
   },
   "general-notes-heading": {
@@ -556,7 +711,7 @@
     "description": "heading"
   },
   "adblock-plus-heading": {
-    "message": "Extensions Adblock Plus",
+    "message": "Extension Adblock Plus",
     "description": "heading"
   },
   "adblock-plus-paragraph": {
@@ -639,6 +794,106 @@
   "adblock-browser-android-heading": {
     "message": "Adblock Browser pour Android",
     "description": "heading"
+  },
+  "android-browser-software-heading": {
+    "message": "Logiciel de navigation",
+    "description": "heading"
+  },
+  "android-browser-software-paragraph-1": {
+    "message": "Adblock Browser pour Android est basé sur Chromium. Certaines collectes et certains traitements de données associés à Adblock Browser pour Android tombent sous le coup de la <a>Politique de confidentialité de Google</a> ainsi que de l’<a>Avis de confidentialité de Google Chrome</a>. Veuillez noter qu’Adblock Browser se connecte automatiquement à Chromium et ses prestataires de service pour fournir la sécurité, des extraits et autres éléments (<a>Avis de confidentialité Google Chrome</a>) ; et quand vous le lui demandez, Adblock Browser se connecte aussi à Google pour vous fournir des fonctionnalités telles que les services de localisation (<a>Avis de confidentialité de Google Chrome</a>)."
+  },
+  "android-browser-software-paragraph-2": {
+    "message": "Contrairement à la description dans l’<a>Avis de confidentialité de Google Chrome</a>, les mises à jour de Chromium sont fournies sous le contrôle de eyeo et certaines fonctionnalités comme par exemple les statistiques d’utilisation et les rapports de crash sont désactivées."
+  },
+  "android-browser-crash-reporter-heading": {
+    "message": "Rapport de crash",
+    "description": "heading"
+  },
+  "android-browser-crash-reporter-paragraph-1": {
+    "message": "En cas de crash ou d’erreur inattendu, Adblock Browser collecte les données pertinentes pour analyser la cause de la défaillance. Les données sont utilisées uniquement à des fins de dépistage individuel (ainsi que pour identifier des défauts généraux entraînant des crashs ou erreurs inattendus) et ne sont jamais transmises à des tierces parties autres que Fabric de Google, Inc. auquel nous avons recours pour l’analyse des rapports de crash (crashlytics)."
+  },
+  "android-browser-crash-data-heading": {
+    "message": "Au cours d'un crash, les données suivantes sont envoyées :",
+    "description": "heading"
+  },
+  "android-browser-crash-data-item-1": {
+    "message": "UUID et traces de crash afin d’aider l’utilisateur à associer les données crash avec des occurrences spécifiques d’Adblock Browser",
+    "description": "list item"
+  },
+  "android-browser-crash-data-item-2": {
+    "message": "Valeur ID instance",
+    "description": "list item"
+  },
+  "android-browser-crash-data-item-3": {
+    "message": "Type d’appareil",
+    "description": "list item"
+  },
+  "android-browser-crash-data-item-4": {
+    "message": "Application ID",
+    "description": "list item"
+  },
+  "android-browser-crash-data-item-5": {
+    "message": "Version appli Adblock Browser",
+    "description": "list item"
+  },
+  "android-browser-crash-data-item-6": {
+    "message": "Espace libre",
+    "description": "list item"
+  },
+  "android-browser-crash-data-item-7": {
+    "message": "Ram disponible",
+    "description": "list item"
+  },
+  "android-browser-crash-data-item-8": {
+    "message": "Horodatage du moment du crash",
+    "description": "list item"
+  },
+  "android-browser-crash-data-paragraph-1": {
+    "message": "Ces données ne sont recueillies que lorsque l'application subit un crash ou qu’une erreur survient. Vous pouvez vous désinscrire de l’envoi de ce type de rapport via Paramètres > Confidentialité > Aidez-vous à améliorer Adblock Browser."
+  },
+  "android-browser-crash-data-retention-heading": {
+    "message": "Rétention des données",
+    "description": "heading"
+  },
+  "android-browser-crash-data-retention-paragraph-1": {
+    "message": "Les rapports de crash sont conservés 180 jours. Firebase conserve les instances ID jusqu’à ce que le client Firebase fasse un appel API pour supprimer l’ID. Une fois l’appel réalisé, les données sont supprimées des systèmes live et secours au bout de 180 jours."
+  },
+  "android-browser-event-tracking-heading": {
+    "message": "Traceur d’événements",
+    "description": "heading"
+  },
+  "android-browser-event-tracking-paragraph-1": {
+    "message": "Nous réalisons un traçage lorsque vous créez un événement, c'est-à-dire lorsque vous allez sur les réglages. Dans un tel cas, l’événement sera transmis à notre fournisseur de services Firebase de Google Inc. Firebase nous permettra alors d'avoir accès aux données suivantes :"
+  },
+  "android-browser-event-tracking-item-1": {
+    "message": "Version appli Adblock Browser pour Android",
+    "description": "list items"
+  },
+  "android-browser-event-tracking-item-2": {
+    "message": "Données démographiques (genre, âge)",
+    "description": "list items"
+  },
+  "android-browser-event-tracking-item-3": {
+    "message": "Type d’appareil",
+    "description": "list items"
+  },
+  "android-browser-event-tracking-item-4": {
+    "message": "Quelles plates-formes utilisez-vous (Android et sa version respective)",
+    "description": "list items"
+  },
+  "android-browser-event-tracking-item-5": {
+    "message": "Données de localisation basées sur votre adresse IP (pays)",
+    "description": "list items"
+  },
+  "android-browser-event-tracking-paragraph-2": {
+    "message": "Ces données sont utilisées uniquement pour améliorer Adblock Browser pour Android et votre expérience d’utilisateur. Vous pouvez vous désinscrire de l’envoi de ce type de rapport via Paramètres > Confidentialité > Aidez-vous à améliorer Adblock Browser."
+  },
+  "android-browser-data-retention-heading": {
+    "message": "Rétention des données",
+    "description": "heading"
+  },
+  "android-browser-data-retention-paragraph-1": {
+    "message": "Le traceur d’événements avec ID est conservé pendant 60 jours. Les rapports agrégés peuvent être conservés plus longtemps."
   },
   "adblock-browser-ios-heading": {
     "message": "Adblock Browser pour iOS",
@@ -824,8 +1079,42 @@
   "retention-communications-paragraph-2": {
     "message": "En général, nous ne conservons pas votre adresse mail, sauf si elle est spécifiquement requise pour exécuter la campagne liée (en d’autres termes, inscriptions par e-mail à une newsletter ou inscription pour être informé d'un lancement de produit). Dans les situations où nous conservons votre adresse e-mail, nous la conservons uniquement pendant la période nécessaire pour exécuter la campagne (c’est-à-dire après vous avoir informé du lancement)."
   },
+  "collection-user-support-heading": {
+    "message": "Collecte et traitement pour assistance aux utilisateurs",
+    "description": "heading"
+  },
+  "collection-user-support-paragraph-1": {
+    "message": "Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la relation client de Zendesk, Inc. (en savoir plus ici) qui permet l’intégration des canaux de support utilisateur comme par exemple les réseaux sociaux et les réponses par e-mail. Dans le cas où vous nous contactez pour une aide par e-mail et/ou par nos canaux de réseaux sociaux, nous recueillons les données suivantes afin de vous aider à résoudre votre problème :"
+  },
+  "collection-user-support-item-1": {
+    "message": "Nom de l’utilisateur (contact via les réseaux sociaux) et/ou e-mail",
+    "description": "list item"
+  },
+  "collection-user-support-item-2": {
+    "message": "Information d’appareil",
+    "description": "list item"
+  },
+  "collection-user-support-item-3": {
+    "message": "Version d’Adblock Plus et autres spécifications techniques applicables",
+    "description": "list item"
+  },
+  "collection-user-support-item-4": {
+    "message": "URL pour lesquels l’utilisateur est confronté à des problèmes",
+    "description": "list item"
+  },
+  "collection-user-support-item-5": {
+    "message": "Problèmes Adblock Plus",
+    "description": "list item"
+  },
+  "collection-user-support-item-6": {
+    "message": "Adresse et numéros de transaction ID pour remboursements de dons (volontairement)",
+    "description": "list item"
+  },
+  "collection-user-support-paragraph-2": {
+    "message": "Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant."
+  },
   "publication-date": {
-    "message": "Juin 2019"
+    "message": "Juillet 2019"
   },
   "gdpr-abbr": {
     "message": "RGPD",
@@ -866,7 +1155,10 @@
     "message": "Notre site web utilise l’analyse web et le service d’optimisation Google Optimize fourni par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA (« Google »). Nous avons recours au service Google Optimize en vue d’améliorer l’attractivité, le contenu et la fonctionnalité de notre site par l’introduction de nouvelles fonctionnalités et de nouveaux contenus à un pourcentage donné d’utilisateurs et en évaluant de manière statistique les changements d’utilisation induits (test A/B). Google Optimize est un sous-service de <a>Google Analytics</a>."
   },
   "international-data-transfers-2": {
-    "message": "We use external service provider tools for email (GSuite); to analyze your use of our Websites (<a>Google Analytics</a>); for A/B testing based on the analytics data (<a>Google Optimize</a>) and for crash reports and event tracking in our mobile Android browser (<a>Fabric<\/a> and <a>Firebase<\/a>). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord <a>ici</a>."
+    "message": "Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web (<a>Google Analytics</a>) ; pour les essais A/B basés sur les données d’analyse (<a>Google Optimize</a>) ; et pour les rapports de crash et les traceurs d’événements dans notre navigateur pour appareil mobile Android (<a>Fabric<\/a> et <a>Firebase<\/a>). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord <a>ici</a>."
+  },
+  "international-data-transfers-3": {
+    "message": "Nous utilisons également des outils de fournisseurs de services externes pour l’assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) et Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Zendesk (<a>certificat</a>) et Sprout (<a>certificat</a>) sont conformes au bouclier de protection des données UE-États Unis."
   },
   "google-optimize-2": {
     "message": "Google Optimize utilise des cookies qui nous permettent d’optimiser et d’analyser l’utilisation que vous faites de notre site web. Les informations générées par ces cookies relativement à l’utilisation que vous faites de notre site sont normalement transférées à un serveur Google situé aux États-Unis et stockées là-bas. Nous utilisons Google Optimize avec anonymisation de l’adresse IP de sorte que Google réduit votre adresse IP dans les états membres de l’Union Européenne ou dans l’Espace Économique Européen. Ce n'est que dans certains cas exceptionnels que l’adresse IP est transmise dans son intégralité à un serveur Google aux États-Unis et réduite là-bas. Google utilisera ces informations afin d’analyser l’usage que vous faites de notre site web, établira des rapports sur les tests d'optimisation et sur l'activité connexe du site et fournira d'autres services relatifs à l'activité du site web et à l'utilisation d'Internet."

@@ -412,17 +412,17 @@ Germany<br>
 - {{ android-browser-crash-data-item-1[list item] UUID and crash traces in order to help a user associate crash data with specific instances of Adblock Browser }}
 - {{ android-browser-crash-data-item-2[list item] Instance IDS }}
 - {{ android-browser-crash-data-item-3[list item] Device type }}
-- {{ android-browser-crash-data-item-4[list item] application ID }}
+- {{ android-browser-crash-data-item-4[list item] Application ID }}
 - {{ android-browser-crash-data-item-5[list item] Adblock Browser app version }}
 - {{ android-browser-crash-data-item-6[list item] Free space }}
 - {{ android-browser-crash-data-item-7[list item] Free ram }}
-- {{ android-browser-crash-data-item-7[list item] A timestamp of when a crash happened }}
+- {{ android-browser-crash-data-item-8[list item] A timestamp of when a crash happened }}
 
 {{ android-browser-crash-data-paragraph-1 Said data is only collected when the application crashes or throws an error. You can opt-out from sending such reports via Settings > Privacy > Help us make Adblock Browser better. }}
 
-###### {{ android-browser-data-retention-heading[heading] Data retention }}
+###### {{ android-browser-crash-data-retention-heading[heading] Data retention }}
 
-{{ android-browser-data-retention-paragraph-1 Crash reporting is retained for 180 days. Firebase retains Instance IDs until the Firebase customer makes an API call to delete the ID. After the call, data is removed from live and backup systems within 180 days. }}
+{{ android-browser-crash-data-retention-paragraph-1 Crash reporting is retained for 180 days. Firebase retains Instance IDs until the Firebase customer makes an API call to delete the ID. After the call, data is removed from live and backup systems within 180 days. }}
 
 ##### {{ android-browser-event-tracking-heading[heading] Event tracking }}
 
