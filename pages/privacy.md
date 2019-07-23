@@ -562,7 +562,7 @@ Germany<br>
 
 {{ collection-user-support-paragraph-2 All user support data is deleted one (1) year after closing the respective support case. }}
 
-<time datetime="2019-06">{{ publication-date June 2019 }}</time>
+<time datetime="2019-06">{{ publication-date August 2019 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
