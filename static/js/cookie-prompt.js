@@ -83,6 +83,8 @@
     {
       trackingOptOut = !trackingOptOut;
 
+      testingOptOut = trackingOptOut;
+
       if (trackingOptOut)
         flipTestingSwitches(false);
       else if (!testingOptOut)
