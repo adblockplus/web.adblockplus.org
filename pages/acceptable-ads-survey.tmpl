@@ -19,7 +19,7 @@ template=minimal
     <div class="container content">
       <h1>{{ title | translate("title") }}</h1>
       <p>{{ "We want to make Adblock Plus even better. Please tell us why you turned off Acceptable Ads:" | translate("reasons-header", "Form heading") }}</p>
-      <form id="reasons-form" action="test__acceptable-ads-survey-submit" method="get">
+      <form id="reasons-form" action="acceptable-ads-survey-submit" method="get">
         <fieldset>
           <ul id="reasons">
             {%- for input_id, string_id, string_contents in reasons %}
@@ -81,7 +81,7 @@ template=minimal
         </p>
       </form>
       <p class="disclaimer">
-        <small>{{ "By clicking Submit, you are sending your response to Adblock Plus. Please see our <a href='/privacy'>privacy policy</a>." | translate("disclaimer", "Disclaimer below form") }}</small>
+        <small>{{ "By clicking Submit, you are sending your response to Adblock Plus. Please see our <a href='/privacy'>Privacy Policy</a>." | translate("disclaimer", "Disclaimer below form") }}</small>
       </p>
     </div>
   </section>
