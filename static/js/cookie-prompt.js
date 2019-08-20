@@ -56,7 +56,7 @@
 
     function toggleCookieSettings()
     {
-      body.classList.toggle("show-cookies-settings");
+      this.parentElement.classList.toggle("show-cookies-settings");
     }
 
     function onCookieSettingsBlur(event)
@@ -82,7 +82,7 @@
     function toggleTrackingPreference()
     {
       trackingOptOut = !trackingOptOut;
-
+      flipTrackingSwitches(!trackingOptOut);
       if (trackingOptOut)
         flipTestingSwitches(false);
       else if (!testingOptOut)
@@ -92,6 +92,7 @@
     function toggleTestingPreference()
     {
       testingOptOut = !testingOptOut;
+      flipTestingSwitches(!testingOptOut);
     }
 
     function saveCookieSettings()
@@ -160,7 +161,10 @@
       toggleCookieNotice();
 
     if (trackingOptOut)
+    {
       flipTrackingSwitches(false);
+      flipTestingSwitches(false);
+    }
 
     if (testingOptOut)
       flipTestingSwitches(false);
