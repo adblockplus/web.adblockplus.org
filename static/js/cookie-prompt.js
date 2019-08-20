@@ -56,7 +56,10 @@
 
     function toggleCookieSettings()
     {
-      this.parentElement.classList.toggle("show-cookies-settings");
+      if (window.innerWidth >= 576)
+        this.parentElement.classList.toggle("show-cookies-settings");
+      else
+        body.classList.toggle("show-cookies-settings");
     }
 
     function onCookieSettingsBlur(event)
