@@ -4,7 +4,6 @@ browsers = [
     "yandex-browser",
     "android",
     "safari",
-    "maxthon",
     "edge",
     "chrome",
     "internet-explorer",

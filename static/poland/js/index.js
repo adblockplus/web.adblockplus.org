@@ -31,10 +31,6 @@
   {
     var bodyClassList = document.body.classList;
 
-    // ABP comes with Maxthon out of the box.
-    if (bowser.maxthon)
-      return bodyClassList.add("maxthon");
-
     var mobilePlatform = getBowserKey(mobilePlatforms);
 
     var browser = !!mobilePlatform ?
