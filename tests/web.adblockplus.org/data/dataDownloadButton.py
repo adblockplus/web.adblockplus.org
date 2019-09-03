@@ -32,11 +32,6 @@ TEST_DATA = [(
       'https://eyeo.to/adblockplus/opera_install/opera',
       'Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.18'
 ), (
-      'desktop_maxthon',
-      '',
-      'https://adblockplus.org/en/download',
-      'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Maxthon)'
-), (
       'desktop_yandex',
       'Get Adblock Plus for Yandex Browser',
       'https://eyeo.to/adblockplus/yandex_install/yandex-browser',

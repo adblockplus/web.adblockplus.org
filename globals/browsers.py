@@ -39,10 +39,6 @@ browsers = [
     'name': 'Opera'
   },
   {
-    'id': 'maxthon',
-    'name': 'Maxthon'
-  },
-  {
     'id': 'yandexbrowser',
     'name': 'Yandex.Browser'
   },

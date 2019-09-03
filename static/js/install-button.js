@@ -39,12 +39,7 @@
     var bodyClassList = document.body.classList,
         installButton = document.getElementById("install-button"),
         installSuffix = installButton.getAttribute("data-install-suffix"),
-        installerHref = "download",
-        installTextTemplate, gaData;
-
-    // ABP comes with Maxthon out of the box.
-    if (bowser.maxthon)
-      return bodyClassList.add("maxthon");
+        installerHref, installTextTemplate, gaData;
 
     mobilePlatform = getDetectedBrowserLabel(mobilePlatforms);
 
@@ -70,7 +65,9 @@
     if (mobilePlatform) bodyClassList.add(mobilePlatform);
     if (browser) bodyClassList.add(browser);
 
-    installButton.href = installerHref;
+    // Prevent overwriting localized href when browser is not detected
+    if (installerHref)
+      installButton.href = installerHref;
 
     installTextTemplate = document.getElementById(
       browser == "msedge_chromium" ?

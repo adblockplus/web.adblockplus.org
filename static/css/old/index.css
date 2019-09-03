@@ -76,7 +76,7 @@
   vertical-align: top; /* Fix for https://bugzil.la/1320660 */
 }
 
-#maxthon-instruction, #edge-teaser
+#edge-teaser
 {
   max-width: 540px;
   background: #ffffff;
@@ -85,29 +85,9 @@
   box-shadow: 1px 1px 0 0 #dbdbdb;
 }
 
-#maxthon-instruction,
-html[lang^="zh_"] #content.maxthon #home-video,
-#content.maxthon #feature-free,
-#content.maxthon #terms-message,
-#feature-maxthon
-{
-  display: none;
-}
-
 #home-video
 {
   max-width: 520px;
-}
-
-html[lang^="zh_"] #content.maxthon #maxthon-instruction
-{
-  display: inline-block;
-  padding: 0px;
-}
-
-#content.maxthon #feature-maxthon
-{
-  display: inline-block;
 }
 
 #summary h1, #summary h2
@@ -433,16 +413,6 @@ html[dir="rtl"] #install ul
   background-position: -128px -68px;
 }
 
-#platform-maxthon
-{
-  background-position: -128px -130px;
-}
-
-#content.maxthon #platform-maxthon
-{
-  background-position: -128px -109px;
-}
-
 #platform-edge
 {
   background-position: -68px -171px;
@@ -467,8 +437,7 @@ html[dir="rtl"] #install ul
 }
 
 .warning-platform,
-.disclaimer,
-#maxthon-notification
+.disclaimer
 {
   display: none;
   color: #D00;
@@ -491,9 +460,7 @@ html[dir="rtl"] #install ul
 #content.ua-opera .warning-platform.opera,
 #content.ua-internet-explorer .warning-platform.internet-explorer,
 #content.ua-safari .warning-platform.safari,
-#content.ua-yandex-browser .warning-platform.yandex-browser,
-#content.ua-maxthon .warning-platform.maxthon,
-html[lang^="zh_"] #maxthon-notification
+#content.ua-yandex-browser .warning-platform.yandex-browser
 {
   display: block;
 }
@@ -505,17 +472,13 @@ html[lang^="zh_"] #maxthon-notification
 #content.internet-explorer.ua-internet-explorer .warning-platform.internet-explorer,
 #content.safari.ua-safari .warning-platform.safari,
 #content.yandex-browser.ua-yandex-browser .warning-platform.yandex-browser,
-#content.maxthon.ua-maxthon .warning-platform.maxthon,
-#content.ua-maxthon #maxthon-notification,
-#content.maxthon #maxthon-notification,
 /* IE6 fixes */
 #content.firefox_ua-firefox .warning-platform.firefox,
 #content.chrome_ua-chrome .warning-platform.chrome,
 #content.opera_ua-opera .warning-platform.opera,
 #content.internet-explorer_ua-internet-explorer .warning-platform.internet-explorer,
 #content.safari_ua-safari .warning-platform.safari,
-#content.yandex-browser_ua-yandex-browser .warning-platform.yandex-browser,
-#content.maxthon_ua-maxthon .warning-platform.maxthon
+#content.yandex-browser_ua-yandex-browser .warning-platform.yandex-browser
 {
   display: none;
 }

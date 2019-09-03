@@ -4,8 +4,6 @@
 
 .show-on-msie,
 .msie .hide-on-msie,
-.show-on-maxthon,
-.maxthon .hide-on-maxthon,
 .show-on-ios,
 .ios .hide-on-ios,
 .show-on-android,
@@ -16,7 +14,6 @@
 { display: none; }
 
 .msie .show-on-msie,
-.maxthon .show-on-maxthon,
 .ios .show-on-ios,
 .android .show-on-android,
 .samsungBrowser .show-on-samsung
@@ -91,8 +88,7 @@
  * #intro-standard
  *****************************************************************************/
 
-#intro-standard,
-#intro-maxthon
+#intro-standard
 {
   padding-top: 3em;
 }
@@ -106,8 +102,7 @@
 {
   /* add spacing left/right on tablets */
   #intro-standard,
-  #intro-video,
-  #intro-maxthon
+  #intro-video
   {
     padding-left: 3em;
     padding-right: 3em;
@@ -118,8 +113,7 @@
 {
   /* force hero unit columns to break on large tablets */
   #intro-standard,
-  #intro-video,
-  #intro-maxthon
+  #intro-video
   {
     width: 100%;
   }
@@ -135,8 +129,7 @@
   }
 }
 
-#intro-standard h1,
-#intro-maxthon h1
+#intro-standard h1
 {
   /* Spacing is provided by the #intro-standard section */
   margin-top: 0;
