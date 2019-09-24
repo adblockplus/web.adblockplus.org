@@ -58,7 +58,16 @@ notoc=True
         - {{ data-processed-item-5[list item] Operating system }}
         - {{ data-processed-item-6[list item] Date of last update }}
         - {{ data-processed-item-7[list item] IP address }}
-        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with a bug using the [Issue Reporter](#issue-reporter): URL, blockable items, matching filters, active filter lists (voluntary) }}
+        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with a bug using the [Issue Reporter](#issue-reporter): }}
+        {: .has-horizontal-list .semicolon-separated }
+            - {{ data-processed-item-57[list item] Browser build, if any }}
+            - {{ data-processed-item-58[list item] URL }}
+            - {{ data-processed-item-59[list item] URL of referred webpage, if any, and webpage that opened the given page }}
+            - {{ data-processed-item-60[list item] Blockable items }}
+            - {{ data-processed-item-61[list item] Matching filters }}
+            - {{ data-processed-item-62[list item] Active filter lists }}
+            - {{ data-processed-item-63[list item] Access to browser settings and installed plug-ins }}
+            - {{ data-processed-item-64[list item] Enabled extensions (voluntary) }}
     - {{ data-processed-item-9[list item] For all mobile products and Adblock Plus for Safari on macOS }}
         - {{ data-processed-item-11[list item] Crash reports: }} 
         {: .has-horizontal-list .semicolon-separated }
@@ -90,6 +99,19 @@ notoc=True
             - {{ data-processed-item-34[list item] Plain-text class name and message value of the exception }}
             - {{ data-processed-item-35[list item] Instruction pointer, method or function names, signal data, pointer registers and information about the loaded binary images }}
             - {{ data-processed-item-36[list item] String / function name identifying the error }}
+    - {{ data-processed-item-65[list item] For Adblock Plus on desktop, when uninstalling Adblock Plus }}
+        - {{ data-processed-item-66[list item] Automatically: }}
+        {: .has-horizontal-list .semicolon-separated }
+            - {{ data-processed-item-67[list item] Browser language }}
+            - {{ data-processed-item-68[list item] Extension name and version }}
+            - {{ data-processed-item-69[list item] Browser type and version }}
+            - {{ data-processed-item-70[list item] Operating system and version }}
+            - {{ data-processed-item-71[list item] Number of notification downloads }}
+            - {{ data-processed-item-72[list item] Information whether the local storage of the extension configuration is corrupted }}
+            - {{ data-processed-item-73[list item] Filter subscriptions enabled / disabled }}
+        - {{ data-processed-item-74[list item] Voluntary: }}
+        {: .has-horizontal-list .semicolon-separated }
+            - {{ data-processed-item-75[list item] Reason for uninstallation }}
 1. {{ data-processed-item-37[list item] While using our websites }}
     - {{ data-processed-item-38[list item] Automatically: }}
     {: .has-horizontal-list .semicolon-separated }
@@ -125,6 +147,7 @@ notoc=True
     - {{ tools-item-5[list item] Sending crash reports }}
     - {{ tools-item-7[list item] In our mobile products and Adblock Plus for Safari on macOS: via Firebase Analytics }}
     - {{ tools-item-8[list item] Emergency notification checks }}
+    - {{ tools-item-20[list item] Referring to an uninstall webpage }}
 2. {{ tools-item-9[list item] On our websites: }}
 {: .has-horizontal-list .semicolon-separated }
     - {{ tools-item-10[list item] Cookies }}
@@ -142,7 +165,7 @@ notoc=True
 ### {{ why-we-process-heading[heading] How and why do we process your data? }} {: #why-we-process-data }
 
 - {{ why-we-process-item-1[list item] In order to inform you about urgent issues in connection with our products. }}
-- {{ why-we-process-item-2[list item] To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads and issue reports you send to us. }}
+- {{ why-we-process-item-2[list item] To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads, uninstallation information, and issue reports you send to us. }}
 - {{ why-we-process-item-3[list item] For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security. }}
 - {{ why-we-process-item-4[list item] To analyze aggregated website logs and analytics data, to improve our website. }}
 - {{ why-we-process-item-5[list item] For communication and assistance purposes in our forum and blog. }}
@@ -160,6 +183,7 @@ notoc=True
     - {{ how-long-item-3[list item] iOS crash and error reporter data }}
     - {{ how-long-item-4[list item] Website logs }}
     - {{ how-long-item-5[list item] Data related to subscription downloads, extension update checks, emergency notifications }}
+    - {{ how-long-item-12[list item] Data related to uninstalling the extension }}
 2. {{ how-long-item-6[list item] For a period of 180 days: }}
 {: .has-horizontal-list .semicolon-separated }
     - {{ how-long-item-7[list item] In our mobile products and Adblock Plus for Safari on macOS crash reporting }}   
@@ -369,13 +393,23 @@ Germany<br>
 
 ##### {{ issue-reporter-heading[heading] Issue Reporter }} {: #issue-reporter }
 
-{{ issue-reporter-paragraph-1 Adblock Plus allows you to send issue reports that will be temporarily stored on the AdblockPlus.org website. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, address of the web page where the problem is visible, blockable items on the web page, matching filters, active subscriptions, type of issue report (i.e. false positive or false negative), and a screenshot of the issue (it is possible to remove particularly sensitive sections of the page before the report is sent). Parameter values are removed from all transmitted addresses to avoid unintentionally leaking private information. }}
+{{ issue-reporter-paragraph-1 Adblock Plus allows you to send issue reports that will be temporarily stored on the AdblockPlus.org website. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, browser build number, if any, URL of referred page, if any, URL of page that opened the given webpage, address of the webpage where the problem is visible, blockable items on the webpage, matching filters, active subscriptions, type of issue report (i.e. false positive or false negative), and a screenshot of the issue (it is possible to remove particularly sensitive sections of the page before the report is sent). Parameter values are removed from all transmitted addresses to avoid unintentionally leaking private information. }}
 
 {{ issue-reporter-items-intro You can  voluntarily: }}
 
 - {{ issue-reporter-item-1[list item] Provide your email address in order for us to request more information from you or to update you on the issue. }}
 - {{ issue-reporter-item-2[list item] Include an optional comment about the issue. }}
-
+- {{ issue-reporter-item-3[list item] Allow us to access the following browser settings: }}
+    - {{ issue-reporter-item-4[list item] Whether cookies are allowed for the given webpage }}
+    - {{ issue-reporter-item-5[list item] Whether JavaScript is enabled on the given webpage }}
+    - {{ issue-reporter-item-6[list item] Whether private mode is used for the given webpage }}
+- {{ issue-reporter-item-7[list item] Allow us to access a list of your installed plug-ins, including: }}
+    - {{ issue-reporter-item-8[list item] File name }}
+    - {{ issue-reporter-item-9[list item] Name of plug-in }}
+- {{ issue-reporter-item-10[list item] Allow us to access a list of your enabled extensions, including: }}
+    - {{ issue-reporter-item-11[list item] ID }}
+    - {{ issue-reporter-item-12[list item] Name }}
+    
 ##### {{ access-reports-heading[heading] Access to the reports }} {: #access-reports }
 
 {{ access-reports-paragraph The processed reports can only be accessed by an individual who knows their unique ID. These IDs are only shared with: }}
@@ -391,9 +425,13 @@ Germany<br>
 
 {{ further-requests-paragraph Adblock Plus may make further requests to AdblockPlus.org as required. For example, a documentation link is clicked or the full list of filter subscriptions needs to be downloaded. These requests are subject to this [Privacy Policy](https://adblockplus.org/privacy). }}
 
+##### {{ uninstallation-information-heading[heading] Uninstallation information }}
+
+{{ uninstallation-information-paragraph When uninstalling Adblock Plus for desktop, you will be referred to an uninstallation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products. }}
+
 ##### {{ data-retention-heading[heading] Data retention }} {: #data-retention }
 
-{{ data-retention-paragraph-1 Data related to subscription downloads, extension update checks, emergency notifications, Issue Reporter data (as well as the full reports and their associated data) are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. }}
+{{ data-retention-paragraph-1 Data related to subscription downloads, extension update checks, emergency notifications, Issue Reporter data (as well as the full reports and their associated data), and data in connection with uninstallations are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. }}
 
 {{ data-retention-paragraph-2 Adblock Plus stores some data in [the Firefox profile](http://support.mozilla.com/kb/Profiles) on your computer. Adblock Plus never transmits this data to any servers, but other extensions and services, such as [Firefox Sync](https://mozilla.com/privacy-policy/), may do so. Most of the data (your preferences, filter subscriptions and custom filters) is unobjectionable privacy-wise. However, filter hit statistics and recent issue reports could be used to reconstruct your browsing history. Adblock Plus treats this information identically to how history data is treated by the browser; this data isn't stored if you are using [private browsing mode](http://support.mozilla.com/kb/Private+Browsing) and is removed if you choose to clear your browsing history. }}
 
@@ -568,7 +606,7 @@ Germany<br>
 
 {{ collection-user-support-paragraph-2 All user support data is deleted one (1) year after closing the respective support case. }}
 
-<time datetime="2019-06">{{ publication-date August 2019 }}</time>
+<time datetime="2019-06">{{ publication-date September 2019 }}</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
