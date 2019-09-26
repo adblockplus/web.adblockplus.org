@@ -409,6 +409,7 @@ Germany<br>
 - {{ issue-reporter-item-10[list item] Allow us to access a list of your enabled extensions, including: }}
     - {{ issue-reporter-item-11[list item] ID }}
     - {{ issue-reporter-item-12[list item] Name }}
+    - {{ issue-reporter-item-13[list item] Version }}
     
 ##### {{ access-reports-heading[heading] Access to the reports }} {: #access-reports }
 
