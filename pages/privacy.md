@@ -58,7 +58,7 @@ notoc=True
         - {{ data-processed-item-5[list item] Operating system }}
         - {{ data-processed-item-6[list item] Date of last update }}
         - {{ data-processed-item-7[list item] IP address }}
-        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a web page with a bug using the [Issue Reporter](#issue-reporter): }}
+        - {{ data-processed-item-8[list item] Additionally, you may manually submit the following information about a webpage using the [Issue Reporter](#issue-reporter): }}
         {: .has-horizontal-list .semicolon-separated }
             - {{ data-processed-item-57[list item] Browser build, if any }}
             - {{ data-processed-item-58[list item] URL }}

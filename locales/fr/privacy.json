@@ -50,7 +50,7 @@
     "description": "list item"
   },
   "data-processed-item-8": {
-    "message": "De plus, vous pouvez soumettre manuellement les informations suivantes sur une page web avec un bug en utilisant le <a>signaleur de problèmes</a> :",
+    "message": "De plus vous pouvez soumettre manuellement les informations suivantes sur une page web en utilisant le <a>signaleur de problèmes</a> :",
     "description": "list item"
   },
   "data-processed-item-9": {
@@ -246,7 +246,7 @@
     "description": "list item"
   },
   "data-processed-item-57": {
-    "message": "Browser build, if any",
+    "message": "Construction du navigateur, le cas échéant",
     "description": "list item"
   },
   "data-processed-item-58": {
@@ -254,11 +254,11 @@
     "description": "list item"
   },
   "data-processed-item-59": {
-    "message": "URL of referred webpage, if any, and webpage that opened the given page",
+    "message": "URL de la page web référencée, le cas échéant et page web qui a ouvert la page concernée",
     "description": "list item"
   },
   "data-processed-item-60": {
-    "message": "Éléments blocables",
+    "message": "Articles bloquables",
     "description": "list item"
   },
   "data-processed-item-61": {
@@ -270,55 +270,55 @@
     "description": "list item"
   },
   "data-processed-item-63": {
-    "message": "Access to browser settings and installed plug-ins",
+    "message": "Accès aux paramètres du navigateur et aux plug-ins installés",
     "description": "list item"
   },
   "data-processed-item-64": {
-    "message": "Enabled extensions (voluntary)",
+    "message": "Extensions activées (volontairement)",
     "description": "list item"
   },
   "data-processed-item-65": {
-    "message": "For Adblock Plus on desktop, when uninstalling Adblock Plus",
+    "message": "Pour Adblock Plus sur le Bureau lors de la désinstallation d’Adblock Plus",
     "description": "list item"
   },
   "data-processed-item-66": {
-    "message": "Automatically:",
+    "message": "Automatiquement :",
     "description": "list item"
   },
   "data-processed-item-67": {
-    "message": "Browser language",
+    "message": "Langue du navigateur",
     "description": "list item"
   },
   "data-processed-item-68": {
-    "message": "Extension name and version",
+    "message": "Nom de l’extension et version",
     "description": "list item"
   },
   "data-processed-item-69": {
-    "message": "Browser type and version",
+    "message": "Type de navigateur et version",
     "description": "list item"
   },
   "data-processed-item-70": {
-    "message": "Operating system and version",
+    "message": "Système d'exploitation et version",
     "description": "list item"
   },
   "data-processed-item-71": {
-    "message": "Number of notification downloads",
+    "message": "Nombre de téléchargements de notifications",
     "description": "list item"
   },
   "data-processed-item-72": {
-    "message": "Information whether the local storage of the extension configuration is corrupted",
+    "message": "Information mentionnant si le stockage local de la configuration de l'extension est corrompu",
     "description": "list item"
   },
   "data-processed-item-73": {
-    "message": "Filter subscriptions enabled / disabled",
+    "message": "Activation/désactivation aux abonnements à une liste de filtres",
     "description": "list item"
   },
   "data-processed-item-74": {
-    "message": "Voluntary:",
+    "message": "Volontairement :",
     "description": "list item"
   },
   "data-processed-item-75": {
-    "message": "Reason for uninstallation",
+    "message": "Raison de la désinstallation",
     "description": "list item"
   },
   "how-we-collect-heading": {
@@ -402,7 +402,7 @@
     "description": "list item"
   },
   "tools-item-20": {
-    "message": "Referring to an uninstall webpage",
+    "message": "Référencement à une page web désinstallée",
     "description": "list item"
   },
   "why-we-process-heading": {
@@ -414,7 +414,7 @@
     "description": "list item"
   },
   "why-we-process-item-2": {
-    "message": "To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads, uninstallation information, and issue reports you send to us.",
+    "message": "Améliorer et évaluer nos produits en traitant et en analysant les téléchargements d'abonnements, les mises à jour d'extensions, les téléchargements d'urgence, les informations de désinstallation et les rapports d'émission que vous nous envoyez.",
     "description": "list item"
   },
   "why-we-process-item-3": {
@@ -489,7 +489,7 @@
     "description": "list item"
   },
   "how-long-item-12": {
-    "message": "Data related to uninstalling the extension",
+    "message": "Données associées à la désinstallation de l’extension",
     "description": "list item"
   },
   "how-long-paragraph": {
@@ -831,7 +831,7 @@
     "description": "heading"
   },
   "issue-reporter-paragraph-1": {
-    "message": "Adblock Plus vous permet d’envoyer des rapports sur les problèmes, qui sont temporairement stockés sur le site web AdblockPlus.org. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, browser build number, if any, URL of referred page, if any, URL of page that opened the given webpage, address of the webpage where the problem is visible, blockable items on the webpage, matching filters, active subscriptions, type of issue report (par ex. les faux positifs ou faux négatifs) et une capture d'écran du problème (il est possible de supprimer les sections particulièrement sensibles de la page avant d'envoyer le rapport). Les valeurs des paramètres sont supprimées de toutes les adresses transmises pour éviter la fuite accidentelle d’informations privées."
+    "message": "Adblock Plus vous permet d’envoyer des rapports sur les problèmes, qui sont temporairement stockés sur le site web AdblockPlus.org. Ces rapports contiennent les informations requises pour mener une enquête sur le problème, y compris la version d’Adblock Plus, la version du navigateur, le cas échéant, le numéro de construction du navigateur, l’URL de la page référée, le cas échéant, URL de la page qui a ouvert la page Web donnée, l’adresse de la page web où le problème se manifeste, les éléments pouvant être bloqués sur la page web, les filtres de correspondance, les souscriptions actives, le type de rapport de problème (par ex. les faux positifs ou faux négatifs) et une capture d’écran du problème (il est possible de supprimer les sections particulièrement sensibles de la page avant d’envoyer le rapport). Les valeurs des paramètres sont supprimées de toutes les adresses transmises pour éviter la fuite accidentelle d’informations privées."
   },
   "issue-reporter-items-intro": {
     "message": "Vous pouvez volontairement :"
@@ -845,35 +845,35 @@
     "description": "list item"
   },
   "issue-reporter-item-3": {
-    "message": "Allow us to access the following browser settings:",
+    "message": "Permettez-nous d’avoir accès aux paramètres suivants du navigateur :",
     "description": "list item"
   },
   "issue-reporter-item-4": {
-    "message": "Whether cookies are allowed for the given webpage",
+    "message": "Si les cookies sont autorisés pour la page web donnée",
     "description": "list item"
   },
   "issue-reporter-item-5": {
-    "message": "Whether JavaScript is enabled on the given webpage",
+    "message": "Si JavaScript est activé sur la page web donnée",
     "description": "list item"
   },
   "issue-reporter-item-6": {
-    "message": "Whether private mode is used for the given webpage",
+    "message": "Si le mode privé est utilisé pour la page web donnée",
     "description": "list item"
   },
   "issue-reporter-item-7": {
-    "message": "Allow us to access a list of your installed plug-ins, including:",
+    "message": "Permettez-nous d’avoir accès à la liste de vos plug-ins installés notamment :",
     "description": "list item"
   },
   "issue-reporter-item-8": {
-    "message": "File name",
+    "message": "Le nom du fichier",
     "description": "list item"
   },
   "issue-reporter-item-9": {
-    "message": "Name of plug-in",
+    "message": "Le nom du plug-in",
     "description": "list item"
   },
   "issue-reporter-item-10": {
-    "message": "Allow us to access a list of your enabled extensions, including:",
+    "message": "Permettez-nous d’avoir accès à la liste de vos extensions activées notamment :",
     "description": "list item"
   },
   "issue-reporter-item-11": {
@@ -881,7 +881,7 @@
     "description": "list item"
   },
   "issue-reporter-item-12": {
-    "message": "Name",
+    "message": "Nom",
     "description": "list item"
   },
   "issue-reporter-item-13": {
@@ -918,11 +918,11 @@
     "message": "Adblock Plus peut faire d’autres demandes à AdblockPlus.org selon les besoins. Par exemple, quand un lien de documentation est cliqué ou quand la liste complète des souscriptions de filtres doit être téléchargée. Ces demandes tombent sous le coup de la présente <a>politique de confidentialité</a>."
   },
   "uninstallation-information-heading": {
-    "message": "Uninstallation information",
+    "message": "Informations de désinstallation",
     "description": "heading"
   },
   "uninstallation-information-paragraph": {
-    "message": "When uninstalling Adblock Plus for desktop, you will be referred to an uninstallation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.",
+    "message": "En désinstallant Adblock Plus pour le bureau vous serez dirigé vers une page Web de désinstallation où les informations suivantes sont automatiquement collectées : Langue de votre navigateur, nom et version de l’extension, type et version du navigateur, système d’exploitation et version, nombre de téléchargements de notifications, indication si le stockage local de la configuration de l'extension est corrompu et si des abonnements à des listes de filtres ont été activés ou désactivés au moment de la désinstallation. Vous pouvez si vous le souhaitez nous indiquer les raisons pour lesquelles vous avez désinstallé Adblock Plus. Nous avons besoin de cette information pour améliorer nos produits.",
     "description": "heading"
   },
   "data-retention-heading": {
@@ -930,7 +930,7 @@
     "description": "heading"
   },
   "data-retention-paragraph-1": {
-    "message": "Data related to subscription downloads, extension update checks, emergency notifications, Issue Reporter data (as well as the full reports and their associated data), and data in connection with uninstallations are automatically removed after 30 days. Seul un sous-ensemble des données sera conservé plus longtemps. Cela inclut uniquement le code de pays des utilisateurs qui soumettent un problème (extrait de l'adresse IP) à des fins analytiques, qui est stocké séparément des rapports complets et ne peut pas être connecté à un individu après la suppression des rapports complets."
+    "message": "Les données relatives aux téléchargements d'abonnements, aux vérifications de mise à jour des extensions, aux notifications d'urgence, aux données du signaleur de problèmes (ainsi qu'aux rapports complets et aux données associées) et les données en relation avec les désinstallations sont automatiquement supprimées au bout de 30 jours. Seul un sous-ensemble des données sera conservé plus longtemps. Cela inclut uniquement le code de pays des utilisateurs qui soumettent un problème (extrait de l'adresse IP) à des fins analytiques, qui est stocké séparément des rapports complets et ne peut pas être connecté à un individu après la suppression des rapports complets."
   },
   "data-retention-paragraph-2": {
     "message": "Adblock Plus stocke certaines données dans le <a>profil Firefox</a> sur votre ordinateur. Adblock Plus ne transmet jamais ces données aux serveurs, mais d'autres extensions et services tels que <a>Firefox Sync</a> peuvent le faire. La plus grande partie des données (vos préférences, souscriptions de filtres et filtres personnalisés) sont acceptables du point de vue de la vie privée. Cependant, les statistiques d’utilisation de filtre et les rapports de problèmes récents pourraient être utilisés pour reconstruire votre historique de navigation. Adblock Plus traite ces informations de la même manière que les données historiques dans le navigateur. Ces données ne sont pas stockées si vous utilisez le <a>mode de navigation privée</a> et sont supprimées si vous choisissez d’effacer votre historique de navigation."
