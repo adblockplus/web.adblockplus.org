@@ -2,6 +2,7 @@
 {
   var desktopBrowsers = {
     "chrome": "https://eyeo.to/adblockplus/chrome_install/",
+    "chromium": "https://eyeo.to/adblockplus/chrome_install/",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/",
     "msedge": "https://eyeo.to/adblockplus/edge_install/",
     "msedge_chromium": "https://eyeo.to/adblockplus/edge_chromium_install/",
@@ -75,8 +76,19 @@
         "download-label-" + (browser || mobilePlatform)
     );
 
+    var installTextContainer = false;
+
+    try {
+      installTextContainer = installButton.querySelector(".install-text");
+    } catch (error) {
+      // silence is golden
+    }
+
     if (installTextTemplate)
-      installButton.textContent = installTextTemplate.textContent;
+      if (installTextContainer)
+        installTextContainer.textContent = installTextTemplate.textContent;
+      else
+        installButton.textContent = installTextTemplate.textContent;
 
     if (browser || mobilePlatform)
     {
