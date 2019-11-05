@@ -1,5 +1,5 @@
 {% for browser in browsers %}
-  {% if browser.id in ('chrome', 'yandexbrowser', 'opera', 'msedge') %}
+  {% if browser.id in ('chrome', 'chromium', 'yandexbrowser', 'opera', 'msedge') %}
     <script id="download-label-{{ browser.id }}" type="text/template">
       {{ get_string("get-for-" + browser.id, "install-button") }}
     </script>
