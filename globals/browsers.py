@@ -5,6 +5,10 @@ browsers = [
     'name': 'Chrome'
   },
   {
+    'id': 'chromium',
+    'name': 'Chromium'
+  },
+  {
     'id': 'firefox',
     'name': 'Firefox'
   },
