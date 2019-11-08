@@ -76,8 +76,6 @@
         "download-label-" + (browser || mobilePlatform)
     );
 
-    var installTextContainer = false;
-
     try {
       installTextContainer = installButton.querySelector(".install-text");
     } catch (error) {
