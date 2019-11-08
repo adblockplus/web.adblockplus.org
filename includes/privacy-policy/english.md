@@ -114,7 +114,7 @@ List of techniques and tools we use for data collection.
     - Cookies
     - Log files
     - Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters
-    - Via Google Analytics
+    - For non-EU/EEA users only: Via Google Analytics
 3. For user support:
 {: .has-horizontal-list .semicolon-separated }
     - Via email sent by you
@@ -128,7 +128,7 @@ List of techniques and tools we use for data collection.
 - In order to inform you about urgent issues in connection with our products.
 - To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads, uninstallation information, and issue reports you send to us.
 - For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security.
-- To analyze aggregated website logs and analytics data, to improve our website.
+- To analyze aggregated website logs, and for non-EU/EEA users analytics data, to improve our website.
 - For communication and assistance purposes in our forum and blog.
 - For assisting you with any issues you may have with our products.
 
@@ -264,7 +264,7 @@ Collection and processing of your personal data may be necessary for compliance 
 
 #### Collection and processing is necessary for the purposes of our legitimate interests - Art. 6 (1) f GDPR {: #legitimate-interest-permission }
 
-The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. Ensuring the usability of our websites and of our products is in your and our vital interest and therefore we use such data.
+The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. In addition, we collect personal data to remember your privacy settings and/or to keep you logged in. Ensuring the usability of our websites and of our products is in your and our vital interest and therefore we use such data.
 
 ### Do we disclose any personal data? {: #disclosure }
 
@@ -279,7 +279,7 @@ We will not transfer your personal data to third parties as a matter of course w
 
 For the following services, we use non-EU/EEA service providers. We have carefully selected these external service providers and review them regularly to ensure that your privacy is preserved. The service providers provide sufficient guarantees to ensure an adequate level of data protection and may only use personal data for the purposes stipulated by us and in accordance with our instructions. We also contractually require the service providers to treat your personal data solely in accordance with this Privacy Policy and the European data protection laws:
 
-We use external service provider tools for email (GSuite); to analyze your use of our Websites ([Google Analytics](#google-analytics)); for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Fabric](https://get.fabric.io/) and [Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
+We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Fabric](https://get.fabric.io/) and [Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
 
 We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) and Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Both Zendesk ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) and Sprout ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) are certified under the EU-U.S. Privacy Shield Framework.
 
@@ -490,11 +490,11 @@ All requests to our Websites are recorded in the website logs. Data stored inclu
 
 The request to our Websites, including your IP address, is stored when you create a forum post, submit a contact form, or add a blog comment. This allows administrators to effectively address spam content and security breaches. All stored requests are deleted after 30 days.
 
-###### Settings cookies {: #cookies }
+###### Necessary cookies {: #cookies }
 
-We use cookies to recognize signed-in users or to store settings. Cookies are small files that are stored on your computer with the help of your internet browser. The settings cookies are not evaluated in any other manner and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result.
+We use cookies to recognize signed-in users or to store your privacy preferences. Cookies are small files that are stored on your computer with the help of your internet browser. The cookies are are necessary to provide you with our services, are not evaluated in any other manner, and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result.
 
-###### Google Analytics {: #google-analytics }
+###### For non-EU/EEA users only: Google Analytics {: #google-analytics }
 
 We use Google Analytics, a web analytics service from Google Inc. ("Google"), on our Websites. Google Analytics uses so-called "cookies" (text files stored on your computer that enable us to analyze your use of our Websites). Information generated by the cookies (including your abbreviated IP address) is transmitted to and stored at a Google server in the United States. Google uses this information to assess your use of our Websites, to compile activity reports, and to provide more services connected with the use of our Websites. It is possible that Google may transmit this information to third parties if required by law, or if third parties process this information on behalf of Google.
 
@@ -502,11 +502,11 @@ We use Google Analytics, a web analytics service from Google Inc. ("Google"), on
 
 <? include cookie/settings-link ?>
 
-###### Google Tag Manager {: #google-tag-manager }
+###### For non-EU/EEA users only: Google Tag Manager {: #google-tag-manager }
 
 Our Website uses Google Tag Manager for the implementation of [Google Analytics](#google-analytics). Google Tag Manager, provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google”), is a solution that allows marketed website tags to be managed using an interface. The Tag Manager tool itself (which implements the tags) is a cookie-less domain and does not register personal data. The tool causes other tags to be activated. These tags then may register data under certain deactivated domains or on a cookie level. This setting will remain in place for all tracking tags implemented with Google Tag Manager.
 
-###### Google Optimize {: #google-optimize }
+###### For non-EU/EEA users only: Google Optimize {: #google-optimize }
 
 Our Website uses the web analysis and optimization service Google Optimize provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google”). We use the Google Optimize service to increase the attractiveness, content and functionality of our Website by playing new features and content to a percentage of our users and statistically evaluating the usage change (A/B testing). Google Optimize is a sub-service of [Google Analytics](#google-analytics).
 
@@ -567,7 +567,7 @@ For user support, we use a customer relation management software from Zendesk, I
 
 All user support data is deleted one (1) year after closing the respective support case.
 
-<time datetime="2019-10">October 2019</time>
+<time datetime="2019-11">November 2019</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
