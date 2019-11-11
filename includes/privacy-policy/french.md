@@ -189,7 +189,7 @@ Les informations suivantes concernent la collecte, le traitement et l’utilisat
 1. [Quel est le but du traitement de données et quelle est la base légale ?](#what-is-personal-data)
 1. [Est-ce que nous divulguons des données personnelles ?](#what-is-personal-data)
 1. [Quels sont vos droits ?](#your-rights-long)
-1. [Änderungen dieser Datenschutzerklärung](#changes-to-policy)
+1. [Modifications de cette politique de confidentialité](#changes-to-policy)
 1. [Collecte et traitement dans nos produits](#collection-processing-of-products)
 1. [Collecte et traitement sur nos sites web](#collection-processing-of-websites)
 1. [Collecte et traitement pour assistance aux utilisateurs](#collection-and-processing-for-user-support)

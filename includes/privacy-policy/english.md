@@ -439,7 +439,7 @@ We also track when you create an event, e.g. when you access the settings. In su
 - Button clicks and/or navigation patterns
 - Screens shown
 
-This data is solely used to improve our mobile products and Adblock Plus for Safari on macOS and your user experience. You can opt-out from sending such reports via Settings > Privacy > Help us make Adblock Browser better.
+This data is solely used to improve our mobile products and Adblock Plus for Safari on macOS and your user experience. You can opt-out from sending such reports via Settings > Privacy.
 
 ###### Data retention
 
