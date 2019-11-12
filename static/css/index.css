@@ -141,6 +141,36 @@
   margin-bottom: 0.5em;
 }
 
+/* The ToS message will be small size for browsers where we have the button label as "agree and install" */
+#hero-download-tos span
+{
+  display: none;
+}
+
+#hero-download-tos small,
+{
+  display: inline;
+}
+
+/* Chrome, Chromium, Opera, Yandex and Microsoft Edge, the ToC message should use a normal font size */
+.chrome #hero-download-tos small,
+.chromium #hero-download-tos small,
+.opera #hero-download-tos small,
+.yandexbrowser #hero-download-tos small,
+.msedge #hero-download-tos small
+{
+  display: none;
+}
+
+.chrome #hero-download-tos span,
+.chromium #hero-download-tos span,
+.opera #hero-download-tos span,
+.yandexbrowser #hero-download-tos span,
+.msedge #hero-download-tos span
+{
+  display: inline;
+}
+
 .content a.hero-download-button
 {
   display: inline-block;
