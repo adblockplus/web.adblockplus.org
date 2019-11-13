@@ -76,17 +76,8 @@
         "download-label-" + (browser || mobilePlatform)
     );
 
-    try {
-      installTextContainer = installButton.querySelector(".install-text");
-    } catch (error) {
-      // silence is golden
-    }
-
     if (installTextTemplate)
-      if (installTextContainer)
-        installTextContainer.textContent = installTextTemplate.textContent;
-      else
-        installButton.textContent = installTextTemplate.textContent;
+      installButton.textContent = installTextTemplate.textContent;
 
     if (browser || mobilePlatform)
     {
