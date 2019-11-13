@@ -14,4 +14,3 @@ def click_menu_item(driver, list_item_id, item_name):
         if item_name in text:
             item.click()
             break
-

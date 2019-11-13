@@ -1,6 +1,6 @@
 from pages.basePage import BasePage
 
-DOWNLOAD_BUTTON_ID = 'install-button'
+DOWNLOAD_BUTTON_HREF = 'a[href*="chrome_install"]'
 
 
 class LandingPage(BasePage):
@@ -10,11 +10,11 @@ class LandingPage(BasePage):
 
     @property
     def get_download_button_link(self):
-        return self.driver.find_element_by_id(DOWNLOAD_BUTTON_ID).get_attribute('href')
+        return self.driver.find_element_by_css_selector(DOWNLOAD_BUTTON_HREF).get_attribute('href')
 
     @property
     def get_download_button_text(self):
-        return self.driver.find_element_by_id(DOWNLOAD_BUTTON_ID).text
+        return self.driver.find_element_by_css_selector(DOWNLOAD_BUTTON_HREF).get_attribute('innerText')
 
     def click_download_button(self):
-        self.driver.find_element_by_id(DOWNLOAD_BUTTON_ID).click()
+        self.driver.find_element_by_css_selector(DOWNLOAD_BUTTON_HREF).click()
