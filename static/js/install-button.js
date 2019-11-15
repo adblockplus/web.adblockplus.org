@@ -2,6 +2,7 @@
 {
   var desktopBrowsers = {
     "chrome": "https://eyeo.to/adblockplus/chrome_install/",
+    "chromium": "https://eyeo.to/adblockplus/chrome_install/",
     "firefox": "https://eyeo.to/adblockplus/firefox_install/",
     "msedge": "https://eyeo.to/adblockplus/edge_install/",
     "msedge_chromium": "https://eyeo.to/adblockplus/edge_chromium_install/",
