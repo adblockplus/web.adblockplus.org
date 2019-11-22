@@ -19,6 +19,17 @@
 .samsungBrowser .show-on-samsung
 { display: inherit; }
 
+
+/******************************************************************************
+ * Introduction sections
+ *****************************************************************************/
+
+#hero-download
+{
+  position: relative; /* reference for #intro-graphic-background */
+  min-height: 1px; /* Fixes flexbox bug in IE11 */
+}
+
 /******************************************************************************
  * Mobile intro sections
  *****************************************************************************/
@@ -88,45 +99,112 @@
  * #intro-standard
  *****************************************************************************/
 
-#intro-standard
-{
-  padding-top: 3em;
-}
-
-#intro-video
-{
-  padding-bottom: 3em;
-}
+#intro-standard { padding-top: 3em; }
 
 @media (min-width: 576px) and (max-width: 1023px)
 {
   /* add spacing left/right on tablets */
-  #intro-standard,
-  #intro-video
+  #intro-standard
   {
     padding-left: 3em;
     padding-right: 3em;
   }
 }
 
-@media (max-width: 1023px)
+@media(min-width: 768px)
 {
-  /* force hero unit columns to break on large tablets */
-  #intro-standard,
-  #intro-video
+  #intro-standard { padding-top: 7em; }
+}
+
+@media(min-width: 1024px)
+{
+  #intro-standard { padding-top: 11em; }
+}
+
+/* Applied ::after to enable use of opacity */
+#intro-graphic-background::after
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background-image: url("/img/hero-background.svg");
+  background-repeat: no-repeat;
+  background-position: top -520px right -1120px;
+  z-index: -1;
+}
+
+@media(min-width: 768px)
+{
+  #intro-graphic-background::after
   {
-    width: 100%;
+    width: 50%;
+    opacity: 1;
+    background-position: top -540px left -400px;
   }
+}
+
+@media(min-width: 1024px)
+{
+  #intro-graphic-background::after { background-position: top -590px left -330px; }
+}
+
+#intro-graphic
+{
+  padding-top: 3em;
+  padding-bottom: 3em;
+  overflow: hidden;
+}
+
+@media (min-width: 576px) and (max-width: 1023px)
+{
+  #intro-graphic
+  {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+
+@media(min-width: 768px)
+{
+  #intro-graphic
+  {
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+}
+
+/* Fixes img max-width bug in IE */
+#intro-graphic img { width: 100%; }
+
+@media (max-width: 767px)
+{
+  [dir="ltr"] #intro-graphic { direction: rtl; }
+
+  [dir="rtl"] #intro-graphic { direction: ltr; }
+
+  #intro-graphic-small { margin-right: -60px; }
+}
+
+#intro-graphic-small
+{
+  min-width: 80%;
+  max-width: none;
 }
 
 @media (min-width: 1024px)
 {
-  #intro-standard,
-  #intro-video
-  {
-    padding-top: 6em;
-    padding-bottom: 6em;
-  }
+  #intro-graphic-small { display: none; }
+}
+
+#intro-graphic-large { display: none; }
+
+@media (min-width: 1024px)
+{
+  #intro-graphic-large { display: block; }
 }
 
 #intro-standard h1
