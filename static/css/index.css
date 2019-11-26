@@ -141,6 +141,16 @@
   margin-bottom: 0.5em;
 }
 
+/* Chrome, Chromium, Opera, Yandex and Microsoft Edge, the ToC message should use a normal font size */
+.chrome #hero-download-tos small,
+.chromium #hero-download-tos small,
+.opera #hero-download-tos small,
+.yandexbrowser #hero-download-tos small,
+.msedge #hero-download-tos small
+{
+  font-size: inherit;
+}
+
 .content a.hero-download-button
 {
   display: inline-block;
