@@ -115,7 +115,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
     - Cookies
     - Historiques
     - Données telles que nom et/ou adresse e-mail que vous envoyez quand vous utilisez notre forum ou blog ou quand vous partagez des filtres ajoutés manuellement
-    - Via Google Analytics
+    - Pour les utilisateurs non membres de l’UE/EEE uniquement : Via Google Analytics
 1.  Pour assistance aux utilisateurs :
 {: .has-horizontal-list .semicolon-separated }
     - Via un e-mail qui vous est adressé
@@ -129,7 +129,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 - Afin de vous informer sur les problèmes urgents liés à nos produits.
 - Améliorer et évaluer nos produits en traitant et en analysant les téléchargements d’abonnements, les mises à jour d’extensions, les téléchargements d’urgence, les informations de désinstallation et les rapports d’émission que vous nous envoyez.
 - Pour des raisons techniques, telles que, mais sans s’y limiter, la prévention des attaques de sécurité, pour améliorer notre site web/produits, pour assurer la sécurité du site web/du produit.
-- Analyser les données analytiques et journaux de sites web agrégés afin d’améliorer notre site web.
+- Pour analyser les journaux de sites web agrégés et pour les données analytiques portant sur les utilisateurs non membres de l’UE/EEE, afin d’améliorer notre site web.
 - À des fins de communication et d’assistance sur notre forum et notre blog.
 - Pour vous aider si vous rencontrez des problèmes avec nos produits.
 
@@ -207,7 +207,7 @@ La personne morale responsable de la collecte, du traitement et/ou de l’utilis
 <address>
 eyeo GmbH<br>
 Lichtstr. 25<br>
-50823 Cologne<br>
+50825 Cologne<br>
 Germany<br>
 </address>
 
@@ -264,7 +264,7 @@ La collecte et le traitement de vos données personnelles peuvent être nécessa
 
 #### La collecte et le traitement sont nécessaires aux fins de nos intérêts légitimes - Art. 6 (1) f du RGPD {: #legitimate-interest-permission }
 
-La collecte et le traitement de vos données personnelles peuvent être nécessaires aux fins de nos intérêts légitimes. Nous collectons et traitons les journaux de sites web pour des raisons techniques, telles que, mais sans s’y limiter, la prévention des attaques par déni de service. Le déni de service est généralement accompli en inondant la machine ou la ressource ciblée avec des requêtes superflues dans le but de surcharger les systèmes et d’empêcher l’exécution de certaines ou de toutes les demandes légitimes. La prévention de telles surcharges de nos systèmes et de tout problème de sécurité par des attaques de déni de service est dans votre et notre intérêt vital et par conséquent nous utilisons les logs du site web. Nous utilisons les informations collectées et traitées via les téléchargements d’abonnements, les vérifications de mises à jour d’extensions, les notifications d’urgence et les données de retour envoyées par vous, pour des raisons techniques telles que la sécurité de la version d’extension utilisée par vous. Assurer la sécurité de notre extension est dans votre et notre intérêt vital et donc nous utilisons de telles données. De plus, nous collectons et traitons ces données pour nous assurer que notre site web et notre extension sont constamment améliorés et adaptés aux exigences changeantes pour une utilisation efficace et l’environnement technique. Assurer la convivialité de nos sites web et de nos produits est dans votre et notre intérêt vital et par conséquent nous utilisons ces données.
+La collecte et le traitement de vos données personnelles peuvent être nécessaires aux fins de nos intérêts légitimes. Nous collectons et traitons les journaux de sites web pour des raisons techniques, telles que, mais sans s’y limiter, la prévention des attaques par déni de service. Le déni de service est généralement accompli en inondant la machine ou la ressource ciblée avec des requêtes superflues dans le but de surcharger les systèmes et d’empêcher l’exécution de certaines ou de toutes les demandes légitimes. La prévention de telles surcharges de nos systèmes et de tout problème de sécurité par des attaques de déni de service est dans votre et notre intérêt vital et par conséquent nous utilisons les logs du site web. Nous utilisons les informations collectées et traitées via les téléchargements d’abonnements, les vérifications de mises à jour d’extensions, les notifications d’urgence et les données de retour envoyées par vous, pour des raisons techniques telles que la sécurité de la version d’extension utilisée par vous. Assurer la sécurité de notre extension est dans votre et notre intérêt vital et donc nous utilisons de telles données. De plus, nous collectons et traitons ces données pour nous assurer que notre site web et notre extension sont constamment améliorés et adaptés aux exigences changeantes pour une utilisation efficace et l’environnement technique. En outre, nous collectons des données personnelles pour sauvegarder vos paramètres de confidentialité et/ou faire en sorte que vous restiez connectés. Assurer la convivialité de nos sites web et de nos produits est dans votre et notre intérêt vital et par conséquent nous utilisons ces données.
 
 ### Est-ce que nous divulguons des données personnelles ? {: #disclosure }
 
@@ -279,7 +279,7 @@ Nous ne transmettrons pas vos données personnelles à des tiers sans que vous n
 
 Pour les services suivants, nous avons recours à des fournisseurs de service non membres de l’UE/EEE. Nous avons choisi avec soin ces fournisseurs de services extérieurs et nous les contrôlons régulièrement afin de nous assurer que la protection de vos données est conservée. Ces fournisseurs de services apportent des garanties suffisantes pour assurer un niveau de protection des données suffisant et ils ne sont autorisés à utiliser vos données personnelles que pour les objectifs que nous avons stipulés et conformément à nos instructions. Nous demandons également à ces fournisseurs de services de traiter vos données personnelles conformément à la présente Politique de confidentialité et à la législation européenne sur la protection des données :
 
-Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web ([Google Analytics](#google-analytics)) ; pour les essais A/B basés sur les données d’analyse ([Google Optimize](#google-optimize)) ; et pour les rapports de crash et les traceurs d’événements dans nos produits mobiles et Adblock Plus pour Safari sur macOS ([Fabric](https://get.fabric.io/) et [Firebase](https://firebase.google.com/)). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord [ici](https://support.google.com/a/answer/2888485).
+Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web ([Google Analytics](#google-analytics))  des non membres de l'UE/EEE ; pour les essais A/B basés sur les données d’analyse ([Google Optimize](#google-optimize)) des non membres de l'UE/EEE ; et pour les rapports de crash et les traceurs d’événements dans nos produits mobiles et Adblock Plus pour Safari sur macOS ([Fabric](https://get.fabric.io/) et [Firebase](https://firebase.google.com/)). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord [ici](https://support.google.com/a/answer/2888485).
 
 Nous utilisons également des outils de fournisseurs de services externes pour l’assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) et Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Zendesk ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) et Sprout ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) sont conformes au bouclier de protection des données UE-États Unis.
 
@@ -487,11 +487,11 @@ Toutes les demandes à nos sites web sont enregistrées dans les registres de vi
 
 La demande faite à l’un de nos sites web, y compris votre adresse IP, est enregistrée quand vous créez un billet sur le forum, envoyez un formulaire de contact ou ajoutez un commentaire sur les blogs. Ceci permet aux administrateurs d’identifier de manière efficace le contenu spam et les violations de sécurité. Toutes les demandes enregistrées sont supprimées au bout de 30 jours.
 
-###### Cookies de configuration {: #cookies }
+###### Cookies nécessaires {: #cookies }
 
-Nous utilisons des cookies pour reconnaître les utilisateurs connectés ou pour enregistrer les paramètres. Les cookies sont de petits fichiers stockés sur votre ordinateur avec l’aide de votre navigateur internet. Les cookies de configuration ne sont pas évalués d’une autre manière et ne sont jamais utilisés pour suivre les visiteurs du site web. Si vous ne voulez pas activer les cookies, vous pouvez choisir de ne pas les utiliser en sélectionnant les paramètres appropriés dans votre navigateur. Veuillez noter que l’efficacité et la gamme des services eyeo peuvent être limitées en conséquence.
+Nous utilisons des cookies pour reconnaître les utilisateurs connectés ou pour enregistrer vos préférences de confidentialité. Les cookies sont de petits fichiers stockés sur votre ordinateur avec l’aide de votre navigateur internet. Les cookies, nécessaires pour vous fournir nos services, ne sont pas évalués d’une autre manière et ne sont jamais utilisés pour suivre les visiteurs du site web. Si vous ne voulez pas activer les cookies, vous pouvez choisir de ne pas les utiliser en sélectionnant les paramètres appropriés dans votre navigateur. Veuillez noter que l’efficacité et la gamme des services eyeo peuvent être limitées en conséquence.
 
-###### Google Analytics {: #google-analytics }
+###### Pour les utilisateurs non membres de l’UE/EEE uniquement : Google Analytics {: #google-analytics }
 
 Nous utilisons Google Analytics sur notre site web, un service de Google Inc. (« Google »). Google Analytics se sert de soi-disant cookies, des fichiers textes qui sont enregistrés sur votre ordinateur et qui permettent d’analyser votre usage de notre site web. Les informations générées par le cookie sur votre usage de notre site, contenant votre adresse IP abrégée, sont transmises à un serveur de Google aux États-Unis où elles sont sauvegardées. Google utilise ces informations afin d’évaluer votre utilisation de notre site, de rédiger des rapports d’activité pour nous et de fournir plus de services reliés à l’utilisation de notre site web et de l’Internet. Il est possible que Google transmette ces informations à des tierces parties si la loi l’exige ou si ces tierces parties traitent les informations au nom de Google.
 
@@ -499,11 +499,11 @@ Nous utilisons Google Analytics sur notre site web, un service de Google Inc. (�
 
 <? include cookie/settings-link ?>
 
-###### Google Tag Manager {: #google-tag-manager }
+###### Pour les utilisateurs non membres de l’UE/EEE uniquement : Google Tag Manager {: #google-tag-manager }
 
 Notre site utilise Google Tag Manager (système de gestion de balises) pour la mise en œuvre de [Google Analytics](#google-analytics). Google Tag Manager fourni par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA (« Google »), est une solution qui permet de gérer des balises de sites web commercialisés au moyen d’une interface. L’outil de gestion des balises (qui met en œuvre les balises) est un domaine sans cookies qui n’enregistre pas vos données personnelles. C’est cet outil qui entraîne l’activation d’autres balises. Ces balises peuvent alors enregistrer des données sous certains domaines désactivés ou bien au niveau des cookies. Ce réglage restera en place pour toutes les balises de repérage mises en œuvre au moyen de Google Tag Manager.
 
-###### Google Optimize {: #google-optimize }
+###### Pour les utilisateurs non membres de l’UE/EEE uniquement : Google Optimize {: #google-optimize }
 
 Notre site web utilise l’analyse web et le service d’optimisation Google Optimize fourni par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA (« Google »). Nous avons recours au service Google Optimize en vue d’améliorer l’attractivité, le contenu et la fonctionnalité de notre site par l’introduction de nouvelles fonctionnalités et de nouveaux contenus à un pourcentage donné d’utilisateurs et en évaluant de manière statistique les changements d’utilisation induits (test A/B). Google Optimize est un sous-service de [Google Analytics](#google-analytics).
 
@@ -564,7 +564,7 @@ Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la re
 
 Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant.
 
-<time datetime="2019-10">Octobre 2019</time>
+<time datetime="2019-10">Novembre 2019</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

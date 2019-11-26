@@ -207,7 +207,7 @@ The legal person responsible for the collection, processing and / or use of pers
 <address>
 eyeo GmbH<br>
 Lichtstr. 25<br>
-50823 Cologne<br>
+50825 Cologne<br>
 Germany<br>
 </address>
 

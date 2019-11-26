@@ -115,7 +115,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
     - Cookies
     - Webseiten-Protokolle
     - Daten, wie dein Name und/oder deine E-Mail-Adresse, wenn du diese an uns während der Nutzung des Forums oder Blogs oder beim manuellen Teilen eines hinzugefügten Filters senden solltest
-    - Über Google Analytics
+    - Lediglich für Benutzer mit Wohnsitz außerhalb der EU/des EWR: über Google Analytics
 3.  Für den Nutzersupport:
 {: .has-horizontal-list .semicolon-separated }
     - Über von dir gesandte E-Mails
@@ -129,7 +129,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 - Um dich über dringende Probleme im Zusammenhang mit unseren Produkten zu informieren.
 - Um unsere Produkte zu verbessern und zu evaluieren, indem wir Abonnement-Downloads, Erweiterungsupdates, Notfall-Downloads, Deinstallationsinformationen und von dir an uns übermittelte Fehlerberichte verarbeiten und analysieren.
 - Für technische Zwecke, u. a. zur Verhinderung von Sicherheitsangriffen, zur Verbesserung unserer Webseite/Produkte, zur Sicherstellung der Webseiten-/Produktsicherheit.
-- Um aggregierte Webseiten-Protokolle und Analysedaten auszuwerten und dadurch unsere Webseite zu verbessern.
+- Um aggregierte Webseiten-Protokolle und Analysedaten auszuwerten und bei Nutzern mit Wohnsitz außerhalb der EU/des EWR, um dadurch unsere Webseite zu verbessern.
 - Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.
 - Um dich bei Problemen mit unseren Produkten zu unterstützen.
 
@@ -207,7 +207,7 @@ Verantwortliche Stelle für die Erhebung, Verarbeitung und/oder Verwendung von p
 <address>
 eyeo GmbH<br>
 Lichtstr. 25<br>
-50823 Cologne<br>
+50825 Cologne<br>
 Germany<br>
 </address>
 
@@ -264,7 +264,7 @@ Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erforderlich s
 
 #### Wir haben ein berechtigtes Interesse an der Erhebung und Verarbeitung- Art. 6 (1) f DSGVO {: #legitimate-interest-permission }
 
-Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erfolgen, weil wir ein berechtigtes Interesse daran haben. Wir erheben und verarbeiten Webseitenprotokolle aus technischen Gründen, wie z. B. zur Verhinderung von Denial-of-Service-Angriffen. Denial-of-Service-Angriffe erfolgen in der Regel dadurch, dass das betreffende Gerät oder die betreffende Ressource mit überflüssigen Anfragen überschwemmt wird, um Systeme zu überlasten und zu verhindern, dass einige oder alle legitimen Anfragen erfüllt werden. Es liegt in deinem und unseren vitalen Interesse, solche Überlastungen unserer Systeme und Sicherheitsprobleme durch Denial-of-Service-Angriffe zu verhindern, und deshalb verwenden wir die Webseitenprotokolle. Wir verwenden die über Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen und Feedback-Daten erhobenen und verarbeiteten Informationen aus technischen Gründen, z. B. um die Sicherheit der von dir verwendeten Erweiterungsversion gewährleisten zu können. Es liegt in deinem und unserem vitalen Interesse, die Sicherheit unserer Erweiterung zu gewährleisten und daher verwenden wir diese Daten. Darüber hinaus erheben und verarbeiten wir solche Daten, um unsere Webseite und deren Erweiterung ständig zu verbessern und an die sich ändernden Anforderungen für eine effiziente Nutzbarkeit und das technische Umfeld anzupassen. Die Nutzbarkeit unserer Webseiten und unserer Produkte sicherzustellen, liegt in deinem und unserem vitalen Interesse und daher verwenden wir diese Daten.
+Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erfolgen, weil wir ein berechtigtes Interesse daran haben. Wir erheben und verarbeiten Webseitenprotokolle aus technischen Gründen, wie z. B. zur Verhinderung von Denial-of-Service-Angriffen. Denial-of-Service-Angriffe erfolgen in der Regel dadurch, dass das betreffende Gerät oder die betreffende Ressource mit überflüssigen Anfragen überschwemmt wird, um Systeme zu überlasten und zu verhindern, dass einige oder alle legitimen Anfragen erfüllt werden. Es liegt in deinem und unseren vitalen Interesse, solche Überlastungen unserer Systeme und Sicherheitsprobleme durch Denial-of-Service-Angriffe zu verhindern, und deshalb verwenden wir die Webseitenprotokolle. Wir verwenden die über Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen und Feedback-Daten erhobenen und verarbeiteten Informationen aus technischen Gründen, z. B. um die Sicherheit der von dir verwendeten Erweiterungsversion gewährleisten zu können. Es liegt in deinem und unserem vitalen Interesse, die Sicherheit unserer Erweiterung zu gewährleisten und daher verwenden wir diese Daten. Darüber hinaus erheben und verarbeiten wir solche Daten, um unsere Webseite und deren Erweiterung ständig zu verbessern und an die sich ändernden Anforderungen für eine effiziente Nutzbarkeit und das technische Umfeld anzupassen. Darüber hinaus erheben wir personenbezogene Daten, um deine Datenschutzeinstellungen zu erinnern bzw. damit du eingeloggt bleiben kannst. Die Nutzbarkeit unserer Webseiten und unserer Produkte sicherzustellen, liegt in deinem und unserem vitalen Interesse und daher verwenden wir diese Daten.
 
 ### Geben wir personenbezogene Daten weiter? {: #disclosure }
 
@@ -279,7 +279,7 @@ Wir übermitteln deine personenbezogenen Daten nicht routinemäßig an Dritte, o
 
 Die folgenden Dienste werden von Nicht-EU/EWR-Dienstleistern erbracht. Diese externen Dienstleister wurden von uns mit größter Sorgfalt ausgewählt und unterliegen stetiger Kontrolle, um sicherzustellen, dass Privatsphäre und Datenschutz gewahrt bleiben. Die Service-Provider bieten ausreichende Garantien für ein angemessenes Datenschutzniveau und sind gehalten, deine persönlichen Daten nur in Übereinstimmung mit unseren Vorgaben und für die vorgesehenen Verwendungszwecke zu nutzen. Ebenso sind die Dienstleister vertraglich verpflichtet, deine personenbezogenen Daten ausschließlich in Übereinstimmung mit dieser Datenschutzrichtlinie und den europäischen Datenschutzbestimmungen zu verarbeiten:
 
-Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten ([Google Analytics](#google-analytics)), für A/B-Tests, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([Fabric](https://get.fabric.io/) und [Firebase](https://firebase.google.com/)). Diese Dienste werden durch den die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
+Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([Fabric](https://get.fabric.io/) und [Firebase](https://firebase.google.com/)). Diese Dienste werden durch den die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
 
 Zudem nutzen wir auch Tools von Drittanbietern für den Nutzersupport. Diese Dienste werden von Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) und Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout) bereitgestellt. Sowohl Zendesk ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) als auch Sprout ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) sind unter dem EU-US-Privacy Shield Framework zertifiziert.
 
@@ -490,11 +490,11 @@ Alle Anfragen an unsere Webseiten werden in Webseiten-Protokollen erfasst. Zu de
 
 Die Anfrage an unsere Webseiten wird, einschließlich deiner IP-Adresse, gespeichert, wenn du einen Beitrag in das Forum stellst, eine Nachricht über das Kontaktformular abschickst oder einen Blog-Kommentar hinzufügst. Dadurch können unsere Administratoren effektiv gegen Spam-Inhalte und Sicherheitsverstöße vorgehen. Alle gespeicherten Anfragen werden nach 30 Tagen gelöscht.
 
-###### Einstellungs-Cookies {: #cookies }
+###### Notwendige Cookies {: #cookies }
 
-Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und Einstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Einstellungs-Cookies werden nicht anderweitig genutzt und insbesondere nicht dazu, um Website-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass als Folge die Effizienz und der Umfang der Dienste von eyeo eingeschränkt sein könnten.
+Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und Einstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Diese Cookies sind notwendig, damit wir dir unsere Dienste zur Verfügung stellen könne. Sie werdenzu keinen anderen Zwecken genutzt, insbesondere nicht dazu, um Website-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass als Folge die Effizienz und der Umfang der Dienste von eyeo eingeschränkt sein könnten.
 
-###### Google Analytics {: #google-analytics }
+###### Lediglich bei Nutzern mit Wohnsitz außerhalb der EU/des EWR: Google Analytics {: #google-analytics }
 
 Wir benutzen Google Analytics, einen Webanalysedienst der Google Inc. („Google“) auf unseren Webseiten. Google Analytics verwendet sog. „Cookies“ (Textdateien, die auf deinem Computer gespeichert werden und die uns ermöglichen, deine Nutzung unserer Webseiten zu analysieren). Die durch die Cookies erzeugten Daten (einschließlich deiner verkürzten IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google verwendet diese Daten, um deine Nutzung der Webseiten auszuwerten, um Berichte zu den Webseitenaktivitäten zusammenzustellen und um weitere mit der Nutzung unserer Webseiten verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben ist oder soweit Dritte diese Daten im Auftrag von Google verarbeiten.
 
@@ -502,11 +502,11 @@ Wir benutzen Google Analytics, einen Webanalysedienst der Google Inc. („Google
 
 <? include cookie/settings-link ?>
 
-###### Google Tag Manager {: #google-tag-manager }
+###### Lediglich bei Nutzern mit Wohnsitz außerhalb der EU/des EWR: Google Tag Manager {: #google-tag-manager }
 
 Unsere Website nutzt den Google Tag-Manager für die Implementierung von [Google Analytics](https://adblockplus.org/de/privacy#google-analytics). Der Google Tag Manager, bereitgestellt von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"), ist eine Lösung, mit deren Hilfe vermarktete Website-Tags mittels einer Schnittstelle verwaltet werden können. Das Tag Manager-Tool selbst, das die Tags implementiert, ist eine Domain ohne Cookies und erfasst keine personenbezogenen Daten. Das Tool führt zur Aktivierung anderer Tags. Diese Tags können dann Daten auf bestimmten, deaktivierten Domains oder auf Cookie-Ebene erfassen. Diese Einstellung bleibt für alle Tracking-Tags erhalten, die durch den Google Tag-Manager implementiert wurden.
 
-###### Google Optimize {: #google-optimize }
+###### Lediglich bei Nutzern mit Wohnsitz außerhalb der EU/des EWR: Google Optimize {: #google-optimize }
 
 Unsere Webseite verwendet den Webanalyse- und Optimierungsdienst „Google Optimize" von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"). Wir verwenden Google Optimize, um die Attraktivität und Funktionalität sowie den Inhalt unserer Website zu erhöhen, indem wir einem Anteil unserer Nutzer neue Funktionen und Inhalte einspielen und das veränderte Nutzerverhalten statistisch auswerten (A/B-Tests). Google Optimize ist eine Unterservice von [Google Analytics](#google-analytics).
 
@@ -567,7 +567,7 @@ Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software vo
 
 Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
 
-<time datetime="2019-10">Oktober 2019</time>
+<time datetime="2019-10">November 2019</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
