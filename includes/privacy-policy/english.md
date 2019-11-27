@@ -492,7 +492,7 @@ The request to our Websites, including your IP address, is stored when you creat
 
 ###### Necessary cookies {: #cookies }
 
-We use cookies to recognize signed-in users or to store your privacy preferences. Cookies are small files that are stored on your computer with the help of your internet browser. The cookies are are necessary to provide you with our services, are not evaluated in any other manner, and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result.
+We use cookies to recognize signed-in users or to store your privacy preferences. Cookies are small files that are stored on your computer with the help of your internet browser. The cookies are necessary to provide you with our services, are not evaluated in any other manner, and are never used to track Website visitors. If you do not want to enable cookies, you can opt against using them by selecting the appropriate settings on your browser. Please note that the efficiency and range of eyeo's services may be restricted as a result.
 
 ###### For non-EU/EEA users only: Google Analytics {: #google-analytics }
 
