@@ -1,0 +1,10 @@
+<? include privacy-policy/styles ?>
+
+{% if locale == "fr" %}
+    <? include privacy-policy/french ?>
+{% elif locale == "de" %}
+    <? include privacy-policy/german ?>
+{% else %}
+    <? include privacy-policy/english ?>
+{% endif %}
+
