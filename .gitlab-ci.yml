@@ -13,7 +13,7 @@ before_script:
 pages:
   stage: deploy
   script:
-    - crudini --set settings.ini general siteurl "https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME"
+    - crudini --set settings.ini general siteurl "$CI_PAGES_URL"
     - python -m cms.bin.generate_static_pages --version public . public
     - rpl -Rq 'src="/' "src=\"https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
     - rpl -Rq 'srcset="/' "srcset=\"https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
