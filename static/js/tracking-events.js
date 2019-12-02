@@ -22,7 +22,7 @@ function debounce(func, wait, immediate) {
 var onGAEVent = debounce(function(event)
 {
   // abort if tracking is disabled
-  if (!gtag) return;
+  if (typeof gtag != "function") return;
 
   // abort if not link
   if (event.target.tagName.toLowerCase() !== "a") return;
