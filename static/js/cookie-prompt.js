@@ -173,8 +173,9 @@
       flipTestingSwitches(false);
   }
 
-  if (document.readyState === "complete" ||
-      document.readyState === "loaded")
+  if (document.readyState == "complete" ||
+      document.readyState == "loaded" ||
+      document.readyState == "interactive")
     initializeCookiePrompt();
   else
     doc.addEventListener("DOMContentLoaded", initializeCookiePrompt, false);
