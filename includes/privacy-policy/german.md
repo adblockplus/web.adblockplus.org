@@ -567,7 +567,7 @@ Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software vo
 
 Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
 
-<time datetime="2019-10">Novembre 2019</time>
+<time datetime="2019-10">Dezember 2019</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
