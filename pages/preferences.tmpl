@@ -195,6 +195,10 @@ title=Adblock Plus preferences
 {{"List of URL schemes that shouldn't be blocked (applied to both whole documents and to item locations)"|translate("whitelistschemes-s1")}}
 {% endmacro %}
 
+{% macro documentation_analyticsDescription() %}
+{{"Contains analytics data, for example the version of the first fetched resource, and a list of trusted hosts which that data can be shared with."|translate("analytics-s1")}}
+{% endmacro %}
+
 {% macro documentation_linkDescription() %}
 {{"Address on adblockplus.org to be opened for documentation links."|translate("documentation_link-s1")}} {{"It will\nredirect to the actual documentation location depending on the language used."|translate("documentation_link-s2")}}
 {% endmacro %}
@@ -506,6 +510,14 @@ title=Adblock Plus preferences
     "id": "internal_preferences",
     "title": 'Internal preferences (don\'t change unless you really know what you are doing)'|translate('internal_preferencesTitle'),
     "preferences": [
+      {
+        "name": "analytics",
+        "default": "{
+          trustedHosts: [\"notification.adblockplus.org\",
+                         \"easylist-downloads.adblockplus.org\"]
+        }",
+        "description": documentation_analyticsDescription
+      },
       {
         "name": "documentation_link",
         "default": "",
