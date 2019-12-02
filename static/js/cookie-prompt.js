@@ -33,7 +33,7 @@
   var testingOptOut = hasCookie(TESTING_OPT_OUT);
   var trackingConsent = hasCookie(TRACKING_CONSENT);
 
-  doc.addEventListener("DOMContentLoaded", function()
+  function initializeCookiePrompt()
   {
     var closeButtons = doc.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save");
     var saveButtons = doc.querySelectorAll(".cookies-save");
@@ -171,6 +171,12 @@
 
     if (testingOptOut)
       flipTestingSwitches(false);
+  }
 
-  }, false);
+  if (document.readyState === "complete" ||
+      document.readyState === "loaded")
+    initializeCookiePrompt();
+  else
+    doc.addEventListener("DOMContentLoaded", initializeCookiePrompt, false);
+
 }(window, document, document.body));
