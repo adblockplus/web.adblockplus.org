@@ -142,7 +142,7 @@ Nous traitons vos données personnelles conformément au Règlement Général Eu
 1.  Pour une période de 30 jours :
 {: .has-horizontal-list .semicolon-separated }
     - Émettre des rapports de données
-    - Crash iOS et données sur les rapports d’erreur
+    - Données sur les rapports de crash et d'erreur iOS
     - Registres de visites du site web
     - Données relatives aux téléchargements d’abonnements, aux vérifications de mise à jour d’extensions, aux notifications d’urgence
     - Données associées à la désinstallation de l’extension
@@ -173,7 +173,7 @@ Nous recueillons aussi peu de données que possible. Dans la mesure où une util
 
 ### Des questions ? {: #questions }
 
-Contactez notre responsable de la protection des données, Dr. Judith Nink, par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="email address of Data Protection Officer at eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
+Contactez notre responsable de la protection des données, Dr. Judith Nink, par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 65028 598){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
 
 ---
 
@@ -211,7 +211,7 @@ Lichtstr. 25<br>
 Germany<br>
 </address>
 
-#### Responsable de la protection des données {: #data-protection-officer }
+#### Le responsable de la protection des données {: #data-protection-officer }
 
 Si vous avez des questions concernant vos données personnelles, n’hésitez pas à contacter notre responsable de la protection des données :
 
@@ -319,7 +319,7 @@ Vous avez le droit de retirer votre consentement à tout moment, lorsque vous no
 
 ### Comment exercer vos droits {: #how-to-exercise }
 
-Pour exercer vos droits, veuillez nous contacter par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="email address of Data Protection Officer at eyeo GmbH">e-mail</a> ou par courrier à :
+Pour exercer vos droits, veuillez nous contacter par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par courrier à :
 
 <address>
 eyeo GmbH<br>
@@ -450,20 +450,20 @@ En cas de crash ou d’erreur inattendu, Adblock Browser collecte les données p
 
 ###### Au cours d’un crash, les données suivantes sont envoyées : {: #crash-data-sent }
 
-- identifiant du paquet, version du paquet et courte chaîne de version du paquet d’Adblock Browser
-- type d’appareil, architecture du processeur et version du système d’exploitation
-- horodatage du moment du crash
-- un UUID généré pour éviter la duplication des rapports de crash
-- en cas d’exception, le nom de la catégorie (sous forme de texte) et la valeur du message d’exception
-- les données de crash de bas niveau telles que le pointeur d’instruction, les noms de méthodes ou de fonctions, les données de signaux, les registres de pointeurs et informations au sujet des images binaires chargées.
+- L'identifiant du paquet, version du paquet et courte chaîne de version du paquet d’Adblock Browser
+- Le type d'appareil, l'architecture du processeur et la version du système d'exploitation
+- Horodatage du moment du crash
+- Un UUID généré pour éviter la duplication des rapports de crash
+- En cas d’exception, le nom de la catégorie (sous forme de texte) et la valeur du message d’exception
+- Les données de crash de bas niveau telles que le pointeur d’instruction, les noms de méthodes ou de fonctions, les données de signaux, les registres de pointeurs et informations au sujet des images binaires chargées.
 
 ###### Au cours d’une erreur, les données suivantes sont envoyées : {: #error-data-sent }
 
-- identifiant du paquet, version du paquet et courte chaîne de version du paquet d’Adblock Browser
-- type d’appareil, architecture du processeur et version du système d’exploitation
-- horodatage du moment de l’erreur
-- un UUID généré pour séparer les rapports d’erreur
-- un nom de chaîne/fonction identifiant l’erreur.
+- L'identifiant du paquet, version du paquet et courte chaîne de version du paquet d’Adblock Browser
+- Le type d'appareil, l'architecture du processeur et la version du système d'exploitation
+- Horodatage du moment de l’erreur
+- Un UUID généré pour séparer les rapports d’erreur
+- Un nom de chaîne/fonction identifiant l’erreur.
 
 Ces données ne sont recueillies que lorsque l’application subit un crash ou qu’une erreur survient. En outre Adblock Browser demande explicitement la permission d’envoyer les informations recueillies une fois que le crash ou l’erreur s’est produit.
 
@@ -564,7 +564,7 @@ Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la re
 
 Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant.
 
-<time datetime="2019-10">Novembre 2019</time>
+<time datetime="2019-10">Décembre 2019</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

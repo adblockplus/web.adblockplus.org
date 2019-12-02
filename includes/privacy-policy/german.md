@@ -24,7 +24,7 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
             - Gegebenenfalls Browser Build
             - URL
             - URL der aufgerufenen Webseite und gegebenenfalls der verweisenden Webseite
-            - Blockierbare Element
+            - Blockierbare Elemente
             - Übereinstimmende Filter
             - Aktive Filterlisten
             - Zugriff auf Browser-Einstellungen und installierte Plug-ins
@@ -69,7 +69,7 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
             - Browser-Typ und Version
             - Betriebssystem und Version
             - Zahl der Benachrichtigungs-Downloads
-            - Information, ob der lokale Speicher der der Konfiguration der Erweiterung beschädigt ist
+            - Information, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist
             - Filterabonnements aktiviert/deaktiviert
         - Freiwillig:
         {: .has-horizontal-list .semicolon-separated }
@@ -129,7 +129,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 - Um dich über dringende Probleme im Zusammenhang mit unseren Produkten zu informieren.
 - Um unsere Produkte zu verbessern und zu evaluieren, indem wir Abonnement-Downloads, Erweiterungsupdates, Notfall-Downloads, Deinstallationsinformationen und von dir an uns übermittelte Fehlerberichte verarbeiten und analysieren.
 - Für technische Zwecke, u. a. zur Verhinderung von Sicherheitsangriffen, zur Verbesserung unserer Webseite/Produkte, zur Sicherstellung der Webseiten-/Produktsicherheit.
-- Um aggregierte Webseiten-Protokolle und Analysedaten auszuwerten und bei Nutzern mit Wohnsitz außerhalb der EU/des EWR, um dadurch unsere Webseite zu verbessern.
+- Um aggregierte Webseite-Protokolle und Analysedaten auszuwerten und bei Nutzern mit Wohnsitz außerhalb der EU/des EWR, um dadurch unsere Webseite zu verbessern.
 - Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.
 - Um dich bei Problemen mit unseren Produkten zu unterstützen.
 
@@ -173,7 +173,7 @@ Wir erheben so wenig Daten wie möglich. Sofern eine anonyme oder pseudonyme Nut
 
 ### Fragen? {: #questions }
 
-Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">E-Mail</a> oder [Telefon](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
+Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a> oder [Telefon](tel:+49 (0) 221 / 65028 598){: title="Telefonnummer der Datenschutzbeauftragten bei eyeo GmbH" }.
 
 ---
 
@@ -196,7 +196,7 @@ Die folgenden Informationen gelten für die Erhebung, Verarbeitung und Nutzung p
 
 ### Allgemeine Hinweise {: #general-notes }
 
-Dein Schutz und die Vertraulichkeit deiner Daten sind das Wichtigste für uns („eyeo", „wir", „uns", „unser"). Wir nehmen den Schutz deiner personenbezogenen Daten sehr ernst und erheben so wenige Daten wie möglich. Die Erhebung von Daten hilft uns jedoch dabei, dass unsere Produkte und Webseiten besser funktionieren und ermöglicht uns, mit dir zu kommunizieren. Unser allgemeiner Grundsatz ist es, nicht mehr Daten als nötig zu erheben. Erhobene Daten werden - sofern möglich - anonymisiert und gelöscht, wenn sie nicht mehr benötigt werden. Diese Datenschutzerklärung dient dazu, dich über die Erhebung, Verarbeitung und Verwendung deiner personenbezogenen Daten zu informieren. Wir erheben und verwenden personenbezogene Daten unter strikter Beachtung der Bestimmungen der Europäischen Datenschutz-Grundverordnung (EU-Vorschrift 2016/679, „DSGVO"), den anwendbaren EU-Gesetzen und nationalen deutschen Datenschutzgesetzen. Im nachfolgenden Text informieren wir dich über die konkreten Daten, den Umfang und den Zweck der Erhebung sowie über die Verwendung von personenbezogenen Daten durch eyeo bei Nutzung unserer Produkte und Besuch unserer Webseiten.
+Dein Schutz und die Vertraulichkeit deiner Daten sind das Wichtigste für uns („eyeo", „wir", „uns", „unser"). Wir nehmen den Schutz deiner personenbezogenen Daten sehr ernst und erheben so wenige Daten wie möglich. Die Erhebung von Daten hilft uns jedoch dabei, dass unsere Produkte und Webseiten besser funktionieren und ermöglicht uns, mit dir zu kommunizieren. Wir handeln nach dem allgemeinen Grundsatz, nicht mehr Daten als nötig zu erheben. Erhobene Daten werden - sofern möglich - anonymisiert und gelöscht, wenn sie nicht mehr benötigt werden. Diese Datenschutzerklärung dient dazu, dich über die Erhebung, Verarbeitung und Verwendung deiner personenbezogenen Daten zu informieren. Wir erheben und verwenden personenbezogene Daten unter strikter Beachtung der Bestimmungen der Europäischen Datenschutz-Grundverordnung (EU-Vorschrift 2016/679, „DSGVO"), den anwendbaren EU-Gesetzen und nationalen deutschen Datenschutzgesetzen. Im nachfolgenden Text informieren wir dich über die konkreten Daten, den Umfang und den Zweck der Erhebung sowie über die Verwendung von personenbezogenen Daten durch eyeo bei Nutzung unserer Produkte und Besuch unserer Webseiten.
 
 ### Wer ist für die Datenerhebung und -verarbeitung verantwortlich (Kontakte)? {: #who-is-responsible }
 
@@ -264,7 +264,7 @@ Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erforderlich s
 
 #### Wir haben ein berechtigtes Interesse an der Erhebung und Verarbeitung- Art. 6 (1) f DSGVO {: #legitimate-interest-permission }
 
-Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erfolgen, weil wir ein berechtigtes Interesse daran haben. Wir erheben und verarbeiten Webseitenprotokolle aus technischen Gründen, wie z. B. zur Verhinderung von Denial-of-Service-Angriffen. Denial-of-Service-Angriffe erfolgen in der Regel dadurch, dass das betreffende Gerät oder die betreffende Ressource mit überflüssigen Anfragen überschwemmt wird, um Systeme zu überlasten und zu verhindern, dass einige oder alle legitimen Anfragen erfüllt werden. Es liegt in deinem und unseren vitalen Interesse, solche Überlastungen unserer Systeme und Sicherheitsprobleme durch Denial-of-Service-Angriffe zu verhindern, und deshalb verwenden wir die Webseitenprotokolle. Wir verwenden die über Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen und Feedback-Daten erhobenen und verarbeiteten Informationen aus technischen Gründen, z. B. um die Sicherheit der von dir verwendeten Erweiterungsversion gewährleisten zu können. Es liegt in deinem und unserem vitalen Interesse, die Sicherheit unserer Erweiterung zu gewährleisten und daher verwenden wir diese Daten. Darüber hinaus erheben und verarbeiten wir solche Daten, um unsere Webseite und deren Erweiterung ständig zu verbessern und an die sich ändernden Anforderungen für eine effiziente Nutzbarkeit und das technische Umfeld anzupassen. Darüber hinaus erheben wir personenbezogene Daten, um deine Datenschutzeinstellungen zu erinnern bzw. damit du eingeloggt bleiben kannst. Die Nutzbarkeit unserer Webseiten und unserer Produkte sicherzustellen, liegt in deinem und unserem vitalen Interesse und daher verwenden wir diese Daten.
+Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erfolgen, weil wir ein berechtigtes Interesse daran haben. Wir erheben und verarbeiten Webseitenprotokolle aus technischen Gründen, wie z. B. zur Verhinderung von Denial-of-Service-Angriffen. Denial-of-Service-Angriffe erfolgen in der Regel dadurch, dass das betreffende Gerät oder die betreffende Ressource mit überflüssigen Anfragen überschwemmt wird, um Systeme zu überlasten und zu verhindern, dass einige oder alle legitimen Anfragen erfüllt werden. Es liegt in deinem und unserem wesentlichen Interesse, solche Überlastungen unserer Systeme und Sicherheitsprobleme durch Denial-of-Service-Angriffe zu verhindern, und deshalb verwenden wir die Webseitenprotokolle. Wir verwenden die über Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen und Feedback-Daten erhobenen und verarbeiteten Informationen aus technischen Gründen, z. B. um die Sicherheit der von dir verwendeten Erweiterungsversion gewährleisten zu können. Es liegt in deinem und unserem wesentlichen Interesse, die Sicherheit unserer Erweiterung zu gewährleisten und daher verwenden wir diese Daten. Darüber hinaus erheben und verarbeiten wir solche Daten, um unsere Webseite und deren Erweiterung ständig zu verbessern und an die sich ändernden Anforderungen für eine effiziente Nutzbarkeit und das technische Umfeld anzupassen. Darüber hinaus erheben wir personenbezogene Daten, um deine Datenschutzeinstellungen zu erinnern bzw. damit du eingeloggt bleiben kannst. Die Nutzbarkeit unserer Webseiten und unserer Produkte sicherzustellen, liegt in deinem sowie unserem wesentlichen Interesse und daher verwenden wir diese Daten.
 
 ### Geben wir personenbezogene Daten weiter? {: #disclosure }
 
@@ -279,7 +279,7 @@ Wir übermitteln deine personenbezogenen Daten nicht routinemäßig an Dritte, o
 
 Die folgenden Dienste werden von Nicht-EU/EWR-Dienstleistern erbracht. Diese externen Dienstleister wurden von uns mit größter Sorgfalt ausgewählt und unterliegen stetiger Kontrolle, um sicherzustellen, dass Privatsphäre und Datenschutz gewahrt bleiben. Die Service-Provider bieten ausreichende Garantien für ein angemessenes Datenschutzniveau und sind gehalten, deine persönlichen Daten nur in Übereinstimmung mit unseren Vorgaben und für die vorgesehenen Verwendungszwecke zu nutzen. Ebenso sind die Dienstleister vertraglich verpflichtet, deine personenbezogenen Daten ausschließlich in Übereinstimmung mit dieser Datenschutzrichtlinie und den europäischen Datenschutzbestimmungen zu verarbeiten:
 
-Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([Fabric](https://get.fabric.io/) und [Firebase](https://firebase.google.com/)). Diese Dienste werden durch den die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
+Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([Fabric](https://get.fabric.io/) und [Firebase](https://firebase.google.com/)). Diese Dienste werden durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
 
 Zudem nutzen wir auch Tools von Drittanbietern für den Nutzersupport. Diese Dienste werden von Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) und Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout) bereitgestellt. Sowohl Zendesk ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) als auch Sprout ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) sind unter dem EU-US-Privacy Shield Framework zertifiziert.
 
@@ -319,7 +319,7 @@ Du hast das Recht, deine Einwilligung jederzeit zu widerrufen, wenn du uns deine
 
 ### So kannst du deine Rechte wahrnehmen {: #how-to-exercise }
 
-Um deine Rechte wahrzunehmen, kontaktiere uns bitte per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">E-Mail</a> oder Post unter:
+Um deine Rechte wahrzunehmen, kontaktiere uns bitte per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a> oder Post unter:
 
 
 <address>
@@ -373,7 +373,7 @@ Du kannst freiwillig:
     
 ##### Zugriff auf die Berichte {: #access-reports }
 
-Auf die verarbeiteten Berichte kann nur durch eine natürliche Person, die die eindeutige ID kennt, zugegriffen werden. Diese IDs werden nur wie folgt weitergegeben:
+Auf die verarbeiteten Berichte kann nur durch eine natürliche Person, die eindeutige ID kennt, zugegriffen werden. Diese IDs werden nur wie folgt weitergegeben:
 
 1. An die Betreiber der in dem Bericht aufgeführten Filterabonnements, wie EasyList-Autoren, die nicht bei eyeo angestellt sind.
 1. Bestimmte Mitglieder des Filterlistenteams von eyeo. eyeo verwendet die Berichte ausschließlich zu Zwecken der Problembehebung und Kontrolle.
@@ -388,7 +388,7 @@ Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispi
 
 ##### Deinstallationsinformationen
 
-Bei der Deinstallation von Adblock Plus wirst du auf eine Deinstallationswebseite verwiesen, wo folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Zahl der Benachrichtigungs-Downloads, Information, ob der lokale Speicher der Konfiguration der Erweiterungs beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, warum du Adblock Plus deinstalliert hast. Wir brauchen diese Informationen, um unsere Produkte zu verbessern.
+Bei der Deinstallation von Adblock Plus wirst du auf eine Deinstallationswebseite verwiesen, wo folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Zahl der Benachrichtigungs-Downloads, Information, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, warum du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern.
 
 ##### Datenaufbewahrung {: #data-retention }
 
@@ -398,7 +398,7 @@ Adblock Plus speichert einige Daten im [Firefox-Profil](http://support.mozilla.
 
 #### Adblock Browser für Android {: #adblock-browser-android }
 
-##### Browser software {: #adblock-browser-software }
+##### Browsersoftware {: #adblock-browser-software }
 
 Der Adblock Browser für Android basiert auf Chromium. Einige Datenerhebungen und -verarbeitungen in Verbindung mit dem Adblock Browser für Android unterliegen der [Google Datenschutzerklärung](https://policies.google.com/privacy) und der weiterführenden [Google Chrome-Datenschutzrichtlinie](https://www.google.com/intl/en/chrome/privacy/). Beachte bitte, dass sich der Adblock Browser automatisch mit Chromium und seinen Dienstanbietern verbindet, um Sicherheit, Snippets und andere Funktionen ([Google Chrome-Datenschutzrichtlinie](https://www.google.com/intl/en/chrome/privacy/)) bereitzustellen. Bei einer entsprechenden Anfrage durch dich, verbindet sich der Adblock Browser ebenfalls mit Google, um Funktionen wie Standortdienste ([Google Chrome-Datenschutzrichtlinie](https://www.google.com/intl/en/chrome/privacy/)) bereitzustellen.
 
@@ -492,7 +492,7 @@ Die Anfrage an unsere Webseiten wird, einschließlich deiner IP-Adresse, gespeic
 
 ###### Notwendige Cookies {: #cookies }
 
-Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und Einstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Diese Cookies sind notwendig, damit wir dir unsere Dienste zur Verfügung stellen könne. Sie werdenzu keinen anderen Zwecken genutzt, insbesondere nicht dazu, um Website-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass als Folge die Effizienz und der Umfang der Dienste von eyeo eingeschränkt sein könnten.
+Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und deine Datenschtzeinstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Diese Cookies sind notwendig, damit wir dir unsere Dienste zur Verfügung stellen könne. Sie werdenzu keinen anderen Zwecken genutzt, insbesondere nicht dazu, um Webseite-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass dadurch Effizienz und Umfang der Dienste von eyeo eingeschränkt sein können.
 
 ###### Lediglich bei Nutzern mit Wohnsitz außerhalb der EU/des EWR: Google Analytics {: #google-analytics }
 
@@ -504,13 +504,13 @@ Wir benutzen Google Analytics, einen Webanalysedienst der Google Inc. („Google
 
 ###### Lediglich bei Nutzern mit Wohnsitz außerhalb der EU/des EWR: Google Tag Manager {: #google-tag-manager }
 
-Unsere Website nutzt den Google Tag-Manager für die Implementierung von [Google Analytics](https://adblockplus.org/de/privacy#google-analytics). Der Google Tag Manager, bereitgestellt von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"), ist eine Lösung, mit deren Hilfe vermarktete Website-Tags mittels einer Schnittstelle verwaltet werden können. Das Tag Manager-Tool selbst, das die Tags implementiert, ist eine Domain ohne Cookies und erfasst keine personenbezogenen Daten. Das Tool führt zur Aktivierung anderer Tags. Diese Tags können dann Daten auf bestimmten, deaktivierten Domains oder auf Cookie-Ebene erfassen. Diese Einstellung bleibt für alle Tracking-Tags erhalten, die durch den Google Tag-Manager implementiert wurden.
+Unsere Webseite nutzt den Google Tag-Manager für die Implementierung von [Google Analytics](https://adblockplus.org/de/privacy#google-analytics). Der Google Tag Manager, bereitgestellt von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"), ist eine Lösung, mit deren Hilfe vermarktete Webseite-Tags mittels einer Schnittstelle verwaltet werden können. Das Tag Manager-Tool selbst, das die Tags implementiert, ist eine Domain ohne Cookies und erfasst keine personenbezogenen Daten. Das Tool führt zur Aktivierung anderer Tags. Diese Tags können dann Daten auf bestimmten, deaktivierten Domains oder auf Cookie-Ebene erfassen. Diese Einstellung bleibt für alle Tracking-Tags erhalten, die durch den Google Tag-Manager implementiert wurden.
 
 ###### Lediglich bei Nutzern mit Wohnsitz außerhalb der EU/des EWR: Google Optimize {: #google-optimize }
 
-Unsere Webseite verwendet den Webanalyse- und Optimierungsdienst „Google Optimize" von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"). Wir verwenden Google Optimize, um die Attraktivität und Funktionalität sowie den Inhalt unserer Website zu erhöhen, indem wir einem Anteil unserer Nutzer neue Funktionen und Inhalte einspielen und das veränderte Nutzerverhalten statistisch auswerten (A/B-Tests). Google Optimize ist eine Unterservice von [Google Analytics](#google-analytics).
+Unsere Webseite verwendet den Webanalyse- und Optimierungsdienst „Google Optimize" von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"). Wir verwenden Google Optimize, um die Attraktivität und Funktionalität sowie den Inhalt unserer Webseite zu erhöhen, indem wir einem Anteil unserer Nutzer neue Funktionen und Inhalte einspielen und das veränderte Nutzerverhalten statistisch auswerten (A/B-Tests). Google Optimize ist eine Unterservice von [Google Analytics](#google-analytics).
 
-Google Optimize verwendet Cookies, die es uns ermöglichen, die Nutzung unserer Website zu optimieren und zu analysieren. Die durch die Cookies erzeugten Informationen über deine Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir verwenden Google Optimize mit aktivierter IP-Anonymisierung, so dass deine IP-Adresse von Google, wenn du innerhalb der Mitgliedstaaten der Europäischen Union oder im Europäischen Wirtschaftsraum bist, gekürzt wird. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Google-Server in den USA übertragen und dort gekürzt. Google verwendet diese Informationen zum Zwecke der Auswertung deines Nutzungsverhaltens der Website, um Berichte über Optimierungstests und Websiteaktivitäten in diesem Kontext zusammenzustellen, sowie um weitere mit der Websitenutzung und der Internetnutzung verbundene Leistungen zu erbringen.
+Google Optimize verwendet Cookies, die es uns ermöglichen, die Nutzung unserer Webseite zu optimieren und zu analysieren. Die durch die Cookies erzeugten Informationen über deine Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir verwenden Google Optimize mit aktivierter IP-Anonymisierung, so dass deine IP-Adresse von Google, wenn du innerhalb der Mitgliedstaaten der Europäischen Union oder im Europäischen Wirtschaftsraum bist, gekürzt wird. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Google-Server in den USA übertragen und dort gekürzt. Google verwendet diese Informationen zum Zwecke der Auswertung deines Nutzungsverhaltens der Webseite, um Berichte über Optimierungstests und Webseiteaktivitäten in diesem Kontext zusammenzustellen, sowie um weitere mit der Webseitenutzung und der Internetnutzung verbundene Leistungen zu erbringen.
 
 **Falls du bei der Verbesserung unserer Produkte nicht mitwirken möchtest, kannst du Google Optimize deaktivieren**. Bitte beachte jedoch, dass in diesem Fall ein Cookie gesetzt wird, das deine getroffene Wahl speichert. Dieses Cookie gilt als „notwendiges Cookie" und kann nicht deaktiviert werden.
 
@@ -523,7 +523,7 @@ Auf unserer Webseite adblock.ai erheben wir automatisch folgende Daten:
 **Facebook Messenger-Integration**
 {: #facebook-messenger-integration }
 
-Wir haben die Facebook Messenger Funktion von der Facebook, Inc. auf der adblock.ai Webseite eingebunden, um dir zu ermöglichen, Screenshots an unseren Bot („Adblock AI") über den Messenger außerhalb der Facebook Webseite zu übermitteln. Bitte beachte, dass der Messenger durch Facebook betrieben wird. Wir haben die Funktion ausgeschaltet, die sonst personenbezogene Daten an Facebook übermittelt, sobald du auf unsere Webseite zugreifst. Wenn du jedoch auf den Button („STARTE JETZT") klickst, um Adblock AI mit deinen Screenshots zu trainieren, aktivierst du den Messenger. Nur in diesem Fall werden einige personenbezogene Daten, inklusive der IP-Adresse, an Facebook übermittelt. Für weitere Informationen, lies bitte die [Datenschutzerklärung von Facebook](https://facebook.com/privacy/explanation). **Wenn du nicht möchtest, dass Daten an Facebook übermittelt werden, klicke bitte nicht auf den Button, um Informationen an Adblock AI durch den Facebook Messenger zu senden.**
+Wir haben die Facebook Messenger Funktion von der Facebook, Inc. in die adblock.ai Webseite eingebunden, um dir zu ermöglichen, Screenshots an unseren Bot („Adblock AI") über den Messenger außerhalb der Facebook-Webseite zu übermitteln. Bitte beachte, dass der Messenger durch Facebook betrieben wird. Wir haben die Funktion ausgeschaltet, die sonst personenbezogene Daten an Facebook übermittelt, sobald du auf unsere Webseite zugreifst. Wenn du jedoch auf den Button („STARTE JETZT") klickst, um Adblock AI mit deinen Screenshots zu trainieren, aktivierst du den Messenger. Nur in diesem Fall werden einige personenbezogene Daten, inklusive der IP-Adresse, an Facebook übermittelt. Für weitere Informationen, lies bitte die [Datenschutzerklärung von Facebook](https://facebook.com/privacy/explanation). **Wenn du nicht möchtest, dass Daten an Facebook übermittelt werden, klicke bitte nicht auf den Button, um Informationen an Adblock AI über den Facebook Messenger zu senden.**
 
 ##### Freiwillig zur Verfügung gestellte Daten {: #voluntary-info }
 
@@ -567,7 +567,7 @@ Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software vo
 
 Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
 
-<time datetime="2019-10">November 2019</time>
+<time datetime="2019-10">Novembre 2019</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
