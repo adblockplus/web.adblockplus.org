@@ -1,10 +1,15 @@
-{% from "macros/install_button" import install_button %}
-
-{{ install_button(
-  page,
-  get_string("install", "install-button"),
-  "button hero-download-button"
-) }}
+<a
+  id="install-button"
+  data-install-suffix="index"
+  class="button hero-download-button"
+  href="download"
+  data-ga='{
+    "event_category": "Download_button",
+    "event_action": "Go_to_download",
+    "event_label": "Fallback_button"
+  }'>
+  {{ get_string("install", "install-button") }}
+</a>
 <p id="hero-download-alternate">
   <a href="download">
     {{ get_string("download-alt", "install-button") }}
