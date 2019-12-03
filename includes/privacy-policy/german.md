@@ -173,7 +173,7 @@ Wir erheben so wenig Daten wie möglich. Sofern eine anonyme oder pseudonyme Nut
 
 ### Fragen? {: #questions }
 
-Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a> oder [Telefon](tel:+49 (0) 221 / 65028 598){: title="Telefonnummer der Datenschutzbeauftragten bei eyeo GmbH" }.
+Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a> oder [Telefon](tel:+49 (0) 221 / 6430630){: title="Telefonnummer der Datenschutzbeauftragten bei eyeo GmbH" }.
 
 ---
 
@@ -219,11 +219,11 @@ Bei Fragen zu deinen personenbezogenen Daten, zögere nicht, unsere Datenschutzb
   Dr. Judith Nink
   <dl>
     <dt>Telefon</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 65028 598'>+49 (0) 221 / 65028 598</a></dd>
+    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 6430630'>+49 (0) 221 / 6430630</a></dd>
     <dt>E-Mail</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>Fax</dt>
-    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
+    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306399'>+49 (0) 221 / 64306399</a></dd>
   </dl>
 </address>
 
