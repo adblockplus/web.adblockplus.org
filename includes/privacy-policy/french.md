@@ -173,7 +173,7 @@ Nous recueillons aussi peu de données que possible. Dans la mesure où une util
 
 ### Des questions ? {: #questions }
 
-Contactez notre responsable de la protection des données, Dr. Judith Nink, par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 65028 598){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
+Contactez notre responsable de la protection des données, Dr. Judith Nink, par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 6430630){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
 
 ---
 
@@ -219,11 +219,11 @@ Si vous avez des questions concernant vos données personnelles, n’hésitez pa
   Dr. Judith Nink
   <dl>
     <dt>Téléphone</dt>
-    <dd><a id=’privacy-phone’ href=’tel:+49 (0) 221 / 65028 598’>+49 (0) 221 / 65028 598</a></dd>
+    <dd><a id=’privacy-phone’ href=’tel:+49 (0) 221 / 6430630’>+49 (0) 221 / 6430630</a></dd>
     <dt>E-mail</dt>
     <dd><a id=’privacy-email’ data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}’>email address</a></dd>
     <dt>Fax</dt>
-    <dd><a id=’privacy-fax’ href=’fax:+49 (0) 221 / 65028 599’>+49 (0) 221 / 65028 599</a></dd>
+    <dd><a id=’privacy-fax’ href=’fax:+49 (0) 221 / 64306399’>+49 (0) 221 / 64306399</a></dd>
   </dl>
 </address>
 

@@ -63,7 +63,7 @@ We collect as little data as possible. As far as anonymous or pseudonymous use i
 
 ### Questions?
 
-Contact our Data Protection Officer, Dr. Judith Nink, via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 65028 598){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
+Contact our Data Protection Officer, Dr. Judith Nink, via <a href="#" data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 6430630){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
 
 ## Privacy Policy (long version) {: #long-version }
 
@@ -106,11 +106,11 @@ If you have any questions regarding your personal data, please do not hesitate t
   Dr. Judith Nink
   <dl>
     <dt>{{phone-label[phone number label] Phone }}</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 65028 598'>+49 (0) 221 / 65028 598</a></dd>
+    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 6430630'>+49 (0) 221 / 6430630</a></dd>
     <dt>{{email-label[email address label] Email }}</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>{{fax-label[fax number label] Fax }}</dt>
-    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 65028 599'>+49 (0) 221 / 65028 599</a></dd>
+    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306399'>+49 (0) 221 / 64306399</a></dd>
   </dl>
 </address>
 
