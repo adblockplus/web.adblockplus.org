@@ -559,11 +559,6 @@
   box-shadow: 0px 3px 3px rgba(0,0,0,0.16);
 }
 
-@media (min-width: 412px)
-{
-  .cta-var-1 #install-button { padding-left: 72px; }
-}
-
 .cta-var-1 #install-button::before
 {
   position: absolute;
@@ -584,7 +579,10 @@
   .cta-var-1 #install-button::before { display: block; }
 }
 
+/* WARNING: Selectors below must be added to the padding-left rule after too */
+
 .cta-var-1.chrome #install-button::before { background-image: url("/img/chrome.svg"); }
+.cta-var-1.chromium #install-button::before { background-image: url("/img/chrome.svg"); }
 .cta-var-1.firefox #install-button::before { background-image: url("/img/firefox.svg"); }
 .cta-var-1.safari #install-button::before { background-image: url("/img/safari.svg"); }
 .cta-var-1.msie #install-button::before { background-image: url("/img/msie.svg"); }
@@ -592,3 +590,17 @@
 .cta-var-1.msedge_chromium #install-button::before{ background-image: url("/img/msedge.svg"); }
 .cta-var-1.opera #install-button::before { background-image: url("/img/opera.svg"); }
 .cta-var-1.yandexbrowser #install-button::before { background-image: url("/img/yandex.svg"); }
+
+@media (min-width: 412px)
+{
+  .cta-var-1.chrome #install-button,
+  .cta-var-1.chromium #install-button,
+  .cta-var-1.firefox #install-button,
+  .cta-var-1.safari #install-button,
+  .cta-var-1.msie #install-button,
+  .cta-var-1.msedge #install-button,
+  .cta-var-1.msedge_chromium #install-button,
+  .cta-var-1.opera #install-button,
+  .cta-var-1.yandexbrowser #install-button
+  { padding-left: 72px; }
+}
