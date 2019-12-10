@@ -1,0 +1,439 @@
+title=Block cookie notifications | Adblock Plus
+description=Add the ‘I don’t care about cookies’ feature to Adblock Plus and block cookie notifications. Surf faster, less interruptions, more control.
+template=minimal
+noheading=true
+og_image=/img/abp-cookies-page-facebook.png
+
+<head>
+  <style>
+    main .one-half {
+      width: 100%;
+    }
+
+    @media (min-width: 1366px) {
+      main .one-half {
+        width: 50%;
+      }
+    }
+
+    .hero.container {
+      margin-top: 1em;
+    }
+
+    @media (min-width: 768px) {
+      .hero.container {
+        width: 75%;
+        mrgin-top: 0;
+        margin-bottom: 6em;
+      }
+    }
+
+    @media (min-width: 1366px) {
+      main .container {
+        width: auto;
+      }
+
+      .hero.container {
+        width: 80%;
+        margin-top: 6em;
+        margin-bottom: 12em;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .hero.container {
+        width: 100%;
+      }
+    }
+
+    /* overrride - prevent full-width buttons */
+    .button {
+      display: inline-block;
+      width: auto;
+    }
+
+    .content a,
+    .content a:visited {
+      color: inherit;
+    }
+
+    a.button,
+    a.button:visited {
+      color: #fff;
+    }
+
+    .hero-image {
+      padding: 2em;
+      padding-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      .hero-image {
+        height: 24em;
+        margin-top: 4em;
+      }
+    }
+
+    @media (min-width: 1366px) {
+      .hero-image {
+        height: 26em;
+        margin-top: 0.5em;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .hero-image {
+        margin-left: 24em;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      [dir="rtl"] .hero-image {
+        margin-left: -22em;
+      }
+    }
+
+    .hero-text .note {
+      margin-top: 2em;
+    }
+
+    .hero-text .button {
+      padding: 0.6em 1em;
+      border-radius: 0.4em;
+      box-shadow: 0 3px 3px #ccc;
+
+    }
+
+    .hero-text .button-container {
+      margin-top: 2em;
+    }
+
+    .hero-text .download-abp {
+      margin-top: 3em;
+    }
+
+    @media (min-width: 768px) {
+      .hero-text .button-container {
+        display: inline-block;
+        margin-top: 2em;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .hero-text {
+        padding-right: 20em;
+      }
+
+      [dir="rtl"] .hero-text {
+        padding-right: 0;
+        padding-left: 20em;
+      }
+    }
+
+    .button-text,
+    .button-image {
+      vertical-align: middle;
+    }
+
+    .button-text {
+      padding-left: 0.5em;
+    }
+
+    [dir="rtl"] .button-text {
+      padding-left: 0;
+      padding-right: 0.5em;
+    }
+
+    .button.add {
+      background-color: #503018;
+      margin-right: 2em;
+    }
+
+    [dir="rtl"] .button.add {
+      margin-right: 0;
+      margin-left: 2em;
+    }
+
+    .button.download {
+      background-color: #0aad03;
+    }
+
+    .button.add .button-image,
+    .button.download .button-image {
+      width: 2em;
+      height: 2em;
+    }
+
+    .download-abp {
+      position: relative;
+    }
+
+    .download-abp .prompt {
+      position: absolute;
+      top: -2em;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .download-abp .prompt {
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      [dir="rtl"] .download-abp .prompt {
+        text-align: right;
+      }
+    }
+
+    .abp-installed .download-abp {
+      display: none;
+    }
+
+    .bg-curve {
+      position: absolute;
+      left: 0;
+      top: -2em;
+      width: 100%;
+      height: 2em;
+      background-image: url(/img/bg-curve.svg);
+      background-size: 100% 100%;
+    }
+
+    @media (min-width: 768px) {
+      .bg-curve {
+        height: 4em;
+        top: -4em;
+      }
+    }
+
+    @media (min-width: 1366px) {
+      .bg-curve {
+        top: -7em;
+        height: 7em;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .bg-curve {
+        top: -6em;
+        height: 6em;
+      }
+    }
+
+    .how-to .content h2 {
+      margin-bottom: 1em;
+    }
+
+    @media (min-width: 1920px) {
+      .how-to .content h2 {
+        margin-bottom: 0.75em;
+      }
+    }
+
+    .how-to-container {
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .how-to-container {
+        width: 42.5em;
+      }
+    }
+
+    @media (min-width: 1366px) {
+      .how-to-container {
+        width: 50em;
+      }
+    }
+
+    .how-to {
+      margin-top: 4em;
+    }
+
+    .bg-grey {
+      position: relative;
+      background-color: #ececec;
+    }
+
+    @media (min-width: 768px) {
+      .how-to-add img,
+      .how-to-remove img{
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    @media (min-width: 1366px) {
+      .how-to {
+        padding-bottom: 2em;
+      }
+
+      .how-to h2 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .how-to-add {
+        margin-right: 1em;
+        margin-left: -1em;
+      }
+
+      [dir="rtl"] .how-to-add {
+        margin-left: 1em;
+        margin-right: -1em;
+      }
+
+      .how-to-add img {
+        display: inline;
+      }
+    }
+
+    @media (min-width: 768px) {
+      h2 {
+        padding: 0 4em;
+      }
+
+      .download-abp {
+        margin-top: 1em;
+      }
+    }
+
+    .more-filters {
+      padding: 1em 0;
+    }
+
+    @media (min-width: 768px) {
+      .more-filters {
+        width: 23.5em;
+        margin: 1em auto 4em auto;
+      }
+    }
+
+    @media (min-width: 1366px) {
+      .more-filters {
+        width: auto;
+        margin-left: -1em;
+        margin-bottom: 2em;
+      }
+
+      [dir="rtl"] .more-filters {
+        margin-left: 0;
+        margin-right: -1em;
+      }
+    }
+
+  </style>
+</head>
+
+<main>
+  <section class="container hero">
+    <div class="row">
+      <div class="column one-half content text-center">
+        <img alt="{{ cookie-illustration[alt text] Cookie notification illustration }}"
+          src="img/cookie-notice.svg" class="hero-image">
+      </div>
+      <div class="column one-half content hero-text">
+        <h1 class="hero-heading">{{ tired-of-cookies[heading] Tired of cookie notifications on every page? }}</h1>
+        <p>{{ add-feature Add the popular <a href="https://i-dont-care-about-cookies.eu/" target="_blank">‘I don’t care about cookies’</a> feature to Adblock Plus and have even more control of your internet experience. }}</p>
+        <p>{{ you-can-block You can block those cookie notifications and have quicker, smoother surfing. If you don’t have Adblock Plus yet, first add it, then enjoy this awesome feature. }}</p>
+        <div class="button-container">
+          <a href="https://subscribe.adblockplus.org/?location=https%3A//www.i-dont-care-about-cookies.eu/abp/&title=I%20don%27t%20care%20about%20cookies" target="_blank" class="button icon-button add" title="{{ add-the-feature Add the 'I don't care about cookies' feature to Adblock Plus }}">
+            <img src="/img/cookie.svg" alt="" class="button-image">
+            <span class="button-text">{{ add-feature-link[button text] Add feature to ABP }}</span>
+          </a>
+        </div>
+
+        <div class="download-abp button-container">
+          <small class="prompt"><strong>{{ not-using-yet Not using Adblock Plus yet? }}</strong></small>
+            <a href="index" class="button icon-button download" title="{{ go-to-download[tooltip text] Go to download }}">
+              <img class="button-image" src="/img/dl-button-chrome-color.svg" alt="" hidden>
+              <span class="button-text">{{ get-it-now[button text] GET IT NOW }}</span>
+            </a>
+        </div>
+        <p class="note"><small>{{ feature-note <strong>Note:</strong> by adding this feature and blocking these prompts, you are waiving your right to be notified about cookie usage and to edit cookie settings on individual websites }}</small></p>
+      </div>
+    </div>
+  </section>
+  <div class="bg-grey">
+    <div class="bg-curve"></div>
+    <div class="container how-to">
+      <div class="how-to-container">
+        <div class="row">
+          <section class="column one-half content how-to-add">
+            <h2 class="h1">{{ how-to-add[heading] How to add the feature }}</h2>
+            <img alt="{{ screenshot-showing-confirm[alt text] Screenshot showing confirmation box for adding the feature to Adblock Plus }}" src="img/how-to-add-feature.png" srcset="/img/how-to-add-feature-2x.png 2x">
+          </section>
+
+          <section class="column one-half content how-to-remove">
+            <h2 class="h1">{{ how-to-remove[heading] How to remove it }}</h2>
+            <img alt="{{ screenshot-showing-install[alt text] Screenshot showing where the feature was installed }}" src="img/how-to-remove-feature.png" srcset="/img/how-to-remove-feature-2x.png 2x">
+          </section>
+        </div>
+        <div class="row">
+          <div class="column content">
+            <div class="more-filters">
+              {{ more-filters-section Feature is automatically saved to the MORE FILTERS section. You can find it there if you want to remove it. }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/js/vendor/bowser.js"></script>
+
+<script>
+
+addEventListener('load', function() {
+  var imgEl;
+
+  var browserNames = {
+    'Chrome': 'chrome',
+    'Firefox': 'firefox',
+    'Internet Explorer': 'ie',
+    'Microsoft Edge': 'edge',
+    'Opera': 'opera',
+    'Safari': 'safari',
+    'Yandex Browser': 'yandex'
+  };
+
+  var browserName = browserNames[bowser.name];
+
+  if ((window.location.href.indexOf('utm_source=abp') !== -1) || !browserName) {
+    document.body.classList.add('abp-installed');
+
+  } else {
+    imgEl = document.querySelector('.download-abp .button-image');
+
+    imgEl.src = imgEl.src.split('/img/')[0] +
+      '/img/dl-button-' + browserName + '-color.svg';
+
+    imgEl.removeAttribute('hidden');
+  }
+
+  function alignHeadings() {
+    var howToAdd = document.querySelector('.how-to-add h2');
+    var howToRemove = document.querySelector('.how-to-remove h2');
+
+    if (window.innerWidth < 1366) {
+      howToAdd.style.height = 'auto';
+      howToRemove.style.height = 'auto';
+
+    } else {
+
+      if (howToAdd.clientHeight > howToRemove.clientHeight) {
+        howToRemove.style.height = howToAdd.clientHeight + 'px';
+
+      } else if (howToAdd.clientHeight < howToRemove.clientHeight) {
+        howToAdd.style.height = howToRemove.clientHeight + 'px';
+      }
+    }
+  }
+
+  alignHeadings();
+
+  addEventListener('resize', alignHeadings);
+});
+
+</script>
