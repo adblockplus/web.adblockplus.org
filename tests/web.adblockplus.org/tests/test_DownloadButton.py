@@ -26,5 +26,5 @@ def driver(request):
 def test_check_download_button(id, driver, button_text, link):
     landing_page = LandingPage(driver)
     landing_page.go_home()
-    assert landing_page.get_download_button_text == button_text
+    assert landing_page.get_download_button_text.strip() == button_text
     assert landing_page.get_download_button_link == link

@@ -1,12 +1,15 @@
 from pages.basePage import BasePage
 
-DOWNLOAD_BUTTON_HREF = 'a[href*="chrome_install"]'
+DOWNLOAD_BUTTON_HREF = 'a[href*="install"]'
 
 
 class LandingPage(BasePage):
 
-    def __init__(self, driver):
+    def __init__(self, driver, is_language_test=False):
         self.driver = driver
+        if is_language_test:
+            global DOWNLOAD_BUTTON_HREF
+            DOWNLOAD_BUTTON_HREF = 'a[href*="chrome_install"]'
 
     @property
     def get_download_button_link(self):
