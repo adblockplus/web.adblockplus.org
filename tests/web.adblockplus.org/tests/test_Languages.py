@@ -23,7 +23,7 @@ def driver():
 
 @pytest.mark.parametrize('language,button_text', TEST_DATA)
 def test_change_languages(driver, language, button_text):
-    landing_page = LandingPage(driver)
+    landing_page = LandingPage(driver, True)
     landing_page.go_home()
 
     top_menu = TopMenu(driver)
