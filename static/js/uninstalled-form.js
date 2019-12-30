@@ -78,7 +78,7 @@
     var submitButton = document.getElementById("reason-submit");
     submitButton.addEventListener("click", function(event)
     {
-      if (!document.querySelector("ul input:checked"))
+      if (!document.querySelector("#reasons [type=checkbox]:checked"))
       {
         event.preventDefault();
         form.setAttribute("class", "error");
