@@ -577,6 +577,12 @@ div.animation[started="true"]
   font-size: 0.9em;
 }
 
+#footer .row
+{
+  display: flex;
+  flex-flow: row wrap;
+}
+
 @media (min-width: 576px) and ( max-width: 767px)
 {
   #footer .column { width: 50%; }
