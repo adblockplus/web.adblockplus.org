@@ -710,6 +710,8 @@ div.animation[started="true"]
   content: none;
 }
 
+#copyright-notice a { font-weight: 600; }
+
 /* float copyright and legal links left and right on ~desktop */
 @media(min-width: 1200px)
 {
