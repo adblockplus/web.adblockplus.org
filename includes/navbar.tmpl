@@ -15,7 +15,7 @@
     </a>
     <ul id="navbar-menu">
       {% for pagename in ["download", "about"] %}
-        <li class="uppercase">
+        <li class="uppercase {{ "active" if page == pagename else "" }}">
           {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
         </li>
       {% endfor %}
