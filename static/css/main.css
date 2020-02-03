@@ -317,6 +317,12 @@ div.animation[started="true"]
   list-style-type: none;
 }
 
+#navbar .active a
+{
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
 #navbar .container
 {
   padding-left: 0;
