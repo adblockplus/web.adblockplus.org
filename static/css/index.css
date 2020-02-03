@@ -121,6 +121,25 @@
   #intro-standard { padding-top: 11em; }
 }
 
+#intro-standard ul
+{
+  list-style: none;
+  padding-left: 0.6em;
+}
+
+#intro-standard ul li
+{
+  position: relative;
+  margin: 0;
+}
+
+#intro-standard ul li::before
+{
+  position: absolute;
+  left: -0.6em;
+  content: "•";
+}
+
 /* Applied ::after to enable use of opacity */
 #intro-graphic-background::after
 {
