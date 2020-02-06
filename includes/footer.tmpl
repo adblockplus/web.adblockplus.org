@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <nav class="column one-fourth">
-        <h5>{{ get_string("resources", "menu") }}</h5>
+        <h5 class="footer-heading">{{ get_string("resources", "menu") }}</h5>
         <ul>
           {% for pagename in ["acceptable-ads", "documentation", "deployments", "bugs"] %}
             <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
@@ -16,7 +16,7 @@
         </ul>
       </nav>
       <nav class="column one-fourth">
-        <h5>{{ get_string("community", "menu") }}</h5>
+        <h5 class="footer-heading">{{ get_string("community", "menu") }}</h5>
         <ul>
           <li><a href="contribute" hreflang="en">{{get_string("contribute", "menu")}}</a></li>
           <li><a href="/releases/" hreflang="en">{{get_string("releases", "menu")}}</a></li>
@@ -26,7 +26,7 @@
         </ul>
       </nav>
       <nav class="column one-fourth">
-        <h5>{{get_string("development", "menu")}}</h5>
+        <h5 class="footer-heading">{{get_string("development", "menu")}}</h5>
         <ul>
           <li><a href="https://gitlab.com/eyeo/adblockplus">{{ get_string("source", "menu") }}</a></li>
           {{ pageitem("tools") }}
@@ -35,7 +35,7 @@
       </nav>
 
       <nav id="social-list" class="column one-fourth">
-        <h5>{{get_string("follow-us-header", "footer")}}</h5>
+        <h5 class="footer-heading">{{get_string("follow-us-header", "footer")}}</h5>
         <ul>
           <li>
             <a
