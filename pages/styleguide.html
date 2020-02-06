@@ -1,0 +1,35 @@
+title=Styleguide
+
+<style media="screen">
+  .info
+  {
+    color: #666;
+    font-size: 14px;
+    font-family: monospace;
+    font-weight: normal;
+  }
+</style>
+
+<h2 id="typography">Typography</h2>
+
+<h3 id="headings">Headings</h3>
+
+<h1>Heading 1 <small class="info"></small></h1>
+<h2>Heading 2 <small class="info"></small></h2>
+<h5>Heading 5 <small class="info"></small></h5>
+
+<h3 id="body-content">Body content</h3>
+
+<p>This is normal text</p>
+<p>This is <small>small</small> text</p>
+<p>This is a <a href="https://example.com/">link</a></p>
+
+<script type="text/javascript">
+  // Show computed font-size values across breakpoints
+  var info = [].slice.call(document.querySelectorAll('.info'))
+
+  info.forEach(function(item, index) {
+    var css_prop = window.getComputedStyle(item.parentElement);
+    info[index].innerHTML = " ("+css_prop.fontSize+")";
+  })
+</script>
