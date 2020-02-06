@@ -679,17 +679,8 @@ div.animation[started="true"]
 /* #footer #footer-legal
  ******************************************************************************/
 
-#footer-legal
-{
-  margin-top: 1em;
-}
-
-@media(min-width: 1200px)
-{
-  #footer-legal
-  {
-    margin-top: 2em;
-  }
+@media (max-width: 767px) {
+  #footer-legal { margin-top: 3em; }
 }
 
 /* #footer #footer-legal #legal-list
@@ -700,6 +691,7 @@ div.animation[started="true"]
 #legal-list li
 {
   float: left;
+  margin: 0;
 }
 
 [dir="rtl"] #legal-list li
