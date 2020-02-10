@@ -350,7 +350,7 @@ og_image=/img/abp-cookies-page-facebook.png
         <div class="error-msg">
             <p><strong>{{ not-supported-error This feature isn't available for this browser just yet. You can still block annoying ads with Adblock Plus. }}</strong></p>
             <a href="index" class="button icon-button download" title="{{ go-to-download[tooltip text] Go to download }}">
-              <img class="button-image" src="/img/dl-button-safari-color.svg" alt="">
+              <img class="button-image" src="/img/dl-button-safari.svg" alt="">
               <span class="button-text">{{ get-it-now[button text] GET IT NOW }}</span>
             </a>
         </div>
@@ -364,7 +364,7 @@ og_image=/img/abp-cookies-page-facebook.png
         <div class="download-abp button-container">
           <small class="prompt"><strong>{{ not-using-yet Not using Adblock Plus yet? }}</strong></small>
             <a href="index" class="button icon-button download" title="{{ go-to-download[tooltip text] Go to download }}">
-              <img class="button-image" src="/img/dl-button-chrome-color.svg" alt="" hidden>
+              <img class="button-image" src="/img/dl-button-chrome.svg" alt="" hidden>
               <span class="button-text">{{ get-it-now[button text] GET IT NOW }}</span>
             </a>
         </div>
@@ -412,7 +412,7 @@ addEventListener('load', function() {
     'Internet Explorer': 'ie',
     'Microsoft Edge': 'edge',
     'Opera': 'opera',
-    'Yandex Browser': 'yandex'
+    'Yandex Browser': 'yandex',
   };
 
   var browserName = browserNames[bowser.name];
@@ -423,8 +423,11 @@ addEventListener('load', function() {
   } else {
     imgEl = document.querySelector('.download-abp .button-image');
 
+    if (navigator.userAgent.indexOf("Edg/") !== -1) {
+        browserName = 'edge';
+    }
     imgEl.src = imgEl.src.split('/img/')[0] +
-      '/img/dl-button-' + browserName + '-color.svg';
+    '/img/dl-button-' + browserName + '.svg';
 
     imgEl.removeAttribute('hidden');
   }
