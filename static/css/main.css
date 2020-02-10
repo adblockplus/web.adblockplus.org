@@ -6,6 +6,7 @@ html
 body
 {
   font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 300;
   margin: 0;
   /* Start below fixed navbar */
   padding-top: 4em;
@@ -15,6 +16,16 @@ body
   display: flex;
   flex-direction: column;
 }
+
+h1,
+.h1,
+h2,
+h3,
+h4,
+h5 { font-weight: 700;}
+
+nav,
+.button { font-weight: normal; }
 
 #content,
 #blog
@@ -159,7 +170,6 @@ div.animation[started="true"]
 .content h4,
 .content h5
 {
-  font-weight: bold;
   margin: 32px 0 16px 0;
   margin: 2rem 0 1rem 0;
   line-height: 1.4;
