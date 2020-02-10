@@ -137,7 +137,7 @@ og_image=/img/abp-cookies-page-facebook.png
       }
     }
 
-    .safari-error-msg:not(.visible) {
+    .error-msg:not(.visible) {
       display: none;
     }
 
@@ -347,7 +347,7 @@ og_image=/img/abp-cookies-page-facebook.png
         <h1 class="hero-heading">{{ tired-of-cookies[heading] Tired of cookie notifications on every page? }}</h1>
         <p>{{ add-feature Add the popular <a href="https://i-dont-care-about-cookies.eu/" target="_blank">‘I don’t care about cookies’</a> feature to Adblock Plus and have even more control of your internet experience. }}</p>
         <p>{{ you-can-block You can block those cookie notifications and have quicker, smoother surfing. If you don’t have Adblock Plus yet, first add it, then enjoy this awesome feature. }}</p>
-        <div class="safari-error-msg">
+        <div class="error-msg">
             <p><strong>{{ not-supported-error This feature isn't available for this browser just yet. You can still block annoying ads with Adblock Plus. }}</strong></p>
             <a href="index" class="button icon-button download" title="{{ go-to-download[tooltip text] Go to download }}">
               <img class="button-image" src="/img/dl-button-safari-color.svg" alt="">
@@ -429,8 +429,8 @@ addEventListener('load', function() {
     imgEl.removeAttribute('hidden');
   }
 
-  if (!Object.values(browserNames).includes(browserName)) {
-      document.getElementsByClassName('safari-error-msg')[0].classList.add('visible');
+  if (!(Object.values(browserNames).includes(browserName) && (bowser.mac || bowser.windows || bowser.linux))) {
+      document.getElementsByClassName('error-msg')[0].classList.add('visible');
       document.getElementsByClassName('subscribe-idcac')[0].classList.add('hide');
       document.getElementsByClassName('download-abp')[0].classList.add('hide');
       document.getElementsByClassName('note')[0].classList.add('hide');
