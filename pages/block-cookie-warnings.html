@@ -96,6 +96,9 @@ og_image=/img/abp-cookies-page-facebook.png
     .hero-text .note {
       margin-top: 2em;
     }
+    .hero-text .note.hide {
+      display: none;
+    }
 
     .hero-text .button {
       padding: 0.6em 1em;
@@ -110,6 +113,10 @@ og_image=/img/abp-cookies-page-facebook.png
 
     .hero-text .download-abp {
       margin-top: 3em;
+    }
+    
+    .hero-text .button-container.hide {
+      display: none;
     }
 
     @media (min-width: 768px) {
@@ -128,6 +135,10 @@ og_image=/img/abp-cookies-page-facebook.png
         padding-right: 0;
         padding-left: 20em;
       }
+    }
+
+    .safari-error-msg:not(.visible) {
+      display: none;
     }
 
     .button-text,
@@ -336,7 +347,14 @@ og_image=/img/abp-cookies-page-facebook.png
         <h1 class="hero-heading">{{ tired-of-cookies[heading] Tired of cookie notifications on every page? }}</h1>
         <p>{{ add-feature Add the popular <a href="https://i-dont-care-about-cookies.eu/" target="_blank">‘I don’t care about cookies’</a> feature to Adblock Plus and have even more control of your internet experience. }}</p>
         <p>{{ you-can-block You can block those cookie notifications and have quicker, smoother surfing. If you don’t have Adblock Plus yet, first add it, then enjoy this awesome feature. }}</p>
-        <div class="button-container">
+        <div class="safari-error-msg">
+            <p><strong>This feature isn't available for this browser just yet. You can still block annoying ads with Adblock Plus.</strong></p>
+            <a href="index" class="button icon-button download" title="{{ go-to-download[tooltip text] Go to download }}">
+              <img class="button-image" src="/img/dl-button-safari-color.svg" alt="">
+              <span class="button-text">{{ get-it-now[button text] GET IT NOW }}</span>
+            </a>
+        </div>
+        <div class="subscribe-idcac button-container">
           <a href="https://subscribe.adblockplus.org/?location=https%3A//www.i-dont-care-about-cookies.eu/abp/&title=I%20don%27t%20care%20about%20cookies" target="_blank" class="button icon-button add" title="{{ add-the-feature Add the 'I don't care about cookies' feature to Adblock Plus }}">
             <img src="/img/cookie.svg" alt="" class="button-image">
             <span class="button-text">{{ add-feature-link[button text] Add feature to ABP }}</span>
@@ -394,7 +412,6 @@ addEventListener('load', function() {
     'Internet Explorer': 'ie',
     'Microsoft Edge': 'edge',
     'Opera': 'opera',
-    'Safari': 'safari',
     'Yandex Browser': 'yandex'
   };
 
@@ -410,6 +427,13 @@ addEventListener('load', function() {
       '/img/dl-button-' + browserName + '-color.svg';
 
     imgEl.removeAttribute('hidden');
+  }
+
+  if (!Object.values(browserNames).includes(browserName)) {
+      document.getElementsByClassName('safari-error-msg')[0].classList.add('visible');
+      document.getElementsByClassName('subscribe-idcac')[0].classList.add('hide');
+      document.getElementsByClassName('download-abp')[0].classList.add('hide');
+      document.getElementsByClassName('note')[0].classList.add('hide');
   }
 
   function alignHeadings() {
