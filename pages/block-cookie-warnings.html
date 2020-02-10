@@ -429,7 +429,7 @@ addEventListener('load', function() {
     imgEl.removeAttribute('hidden');
   }
 
-  if (!(Object.values(browserNames).includes(browserName) && (bowser.mac || bowser.windows || bowser.linux))) {
+  if (!(Object.values(browserNames).includes(browserName) && !bowser.mobile)) {
       document.getElementsByClassName('error-msg')[0].classList.add('visible');
       document.getElementsByClassName('subscribe-idcac')[0].classList.add('hide');
       document.getElementsByClassName('download-abp')[0].classList.add('hide');
