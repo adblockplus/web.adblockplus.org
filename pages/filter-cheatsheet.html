@@ -650,6 +650,52 @@ title=Adblock Plus filters explained
 
 <h2 id="elementhiding">{{s103 Element hiding}}</h2>
 
+<h3 id="elementhiding-ex1">{{ehex1-0 Example 1: Hiding elements}}</h3>
+<p>{{ehex1-1 We want to hide elements with class the <code>advert</code> on <code>example.net</code>, <code>example.com</code> and subdomains.}}</p>
+<div class="example">
+  <div class="explanations">
+    <div class="domains">
+      <h4>{{ehex1-2 Domains}}</h4>
+      <p>{{ehex1-3 An optional comma separated list of domains this filter applies to. If ommitted, it applies everywhere.}}</p>
+    </div>
+    <div class="separator">
+      <h4>{{ehex1-4 Separator}}</h4>
+      <p>{{ehex1-5 For an element hiding filter using standard CSS selectors, the separator is <code>##</code>.}}</p>
+    </div>
+    <div class="selector">
+      <h4>{{ehex1-5 Selector}}</h4>
+      <p>{{ehex1-6 The CSS selector for the elements to hide.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="domains">example.com,example.net</span><span class="separator">##</span><span class="selector">.advert</span>
+  </div>
+</div>
+
+<h3 id="elementhiding-ex2">{{ehex2-0 Example 2: Exception in element hiding}}</h3>
+<p>{{ehex2-1 We want to exclude the above hiding rule on <code>exception.example.com</code>.}}</p>
+<div class="example">
+  <div class="explanations">
+    <div class="domains">
+      <h4>{{ehex2-2 Domains}}</h4>
+      <p>{{ehex2-3 Comma separated list of domains this exception applies to. This can be ommitted.}}</p>
+    </div>
+    <div class="exception">
+      <h4>{{ehex2-4 Exception separator}}</h4>
+      <p>{{ehex2-5 For an element hiding filter exception using CSS selectors, the separator is <code>#@#</code>.}}</p>
+    </div>
+    <div class="selector">
+      <h4>{{ehex2-5 Selector}}</h4>
+      <p>{{ehex2-6 The CSS selector matching the rule we want to create an exception for.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="domains">exception.example.com</span><span class="exception">#@#</span><span class="selector">.advert</span>
+  </div>
+</div>
+
 <h3 id="elementdomains">{{s105 Domain selection}}</h3>
 
 <p>{{s106 <code><fix>##selector</fix></code> is used as a placeholder for <a href="#elementselection">element selectors</a>.}}</p>
@@ -818,9 +864,61 @@ title=Adblock Plus filters explained
 </table>
 <p>{{s139 The above filters are examples of valid element hiding rules. Any <a href="http://www.w3.org/TR/css3-selectors/">CSS selector</a> supported by your browser can be used for element hiding.}}</p>
 
-<h3 id="elementhideemulation">{{ abp-pseudo-select-heading[heading] Extended CSS selectors (Adblock Plus specific) }}</h3>
+<h2 id="elementhideemulation">{{ abp-pseudo-select-heading[heading] Extended CSS selectors (Adblock Plus specific) }}</h2>
 
-<p>{{ abp-pseudo-select-1 In some situations standard CSS selectors are not sufficient, for those cases you can also use the following Adblock Plus specific pseudo-selectors: }}</p>
+<p>{{ abp-pseudo-select-1 In some situations standard CSS selectors are not sufficient. For those cases there are extended CSS pseudo-selectors, and the filter syntax differs from <a href="#elementhiding">the element hiding</a> by using an alternate separator.}}</p>
+
+<h3 id="elementhidingemulation-ex1">{{ehemex1-0 Example 1: Hiding element based on their content}}</h3>
+
+<p>{{ehemex1-1 Hide <code>div</code> elements that contain a <code>div</code> that contain an image with CSS class <code>advert</code>.}}</p>
+
+<div class="example">
+  <div class="explanations">
+    <div class="domains">
+      <h4>{{ehemex1-2 Domains}}</h4>
+      <p>{{ehemex1-3 Comma separated list of domains this filter applies to. This is mandatory.}}</p>
+    </div>
+    <div class="separator">
+      <h4>{{ehemex1-4 Separator}}</h4>
+      <p>{{ehemex1-5 For an element hiding filter using extended CSS pseudo-selectors, the separator is <code>#?#</code>.}}</p>
+    </div>
+    <div class="selector">
+      <h4>{{ehemex1-6 Selector}}</h4>
+      <p>{{ehemex1-7 The CSS selector to select the elements to hide. It can use <a href="#elementhidingemulation-selectors">the extended selectors</a> syntax.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="domains">example.com,example.net</span><span class="separator">#?#</span><span class="selector">div:-abp-has(> div > img.advert)</span>
+  </div>
+</div>
+
+<h3 id="elementhidingemulation-ex2">{{ehemex2-0 Example 2: Exception for the element hiding}}</h3>
+
+<div class="example">
+  <div class="explanations">
+    <div class="domains">
+      <h4>{{ehemex2-1 Domains}}</h4>
+      <p>{{ehemex2-2 Comma separated list of domains this exception applies to.}}</p>
+    </div>
+    <div class="exception">
+      <h4>{{ehemex2-3 Exception Separator}}</h4>
+      <p>{{ehemex2-4 Like for an <a href="#elementhiding-ex2">element hiding filter</a>, the separator for an exception is <code>#@#</code>.}}</p>
+    </div>
+    <div class="selector">
+      <h4>{{ehemex2-5 Selector}}</h4>
+      <p>{{ehemex2-6 The CSS selector matching the rule we want to create an exception for.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="domains">exception.example.com</span><span class="exception">#@#</span><span class="selector">div:-abp-has(> div > img.advert)</span>
+  </div>
+</div>
+
+<h3 id="elementhidingemulation-selectors">Adblock Plus specific pseudo-selectors</h3>
+
+<p>{{ abp-pseudo-select-1a You can use the following Adblock Plus specific pseudo-selectors: }}</p>
 
 <table>
   <col class="selector">
@@ -882,3 +980,27 @@ title=Adblock Plus filters explained
   </tr>
 </table>
 
+<h2 id="snippets">{{snippet0 Snippet filters}}</h2>
+<p>
+  {{snippet1 Snippet filters allow executing snippet scripts.}}
+</p>
+<div class="example">
+  <div class="explanations">
+    <div class="domains">
+      <h4>{{snippet2 Domains}}</h4>
+      <p>{{snippet3 Comma separated list of domains this filter applies to.}}</p>
+    </div>
+    <div class="separator">
+      <h4>{{snippet4 Separator}}</h4>
+      <p>{{snippet5 For a snipet filter, the separator is <code>#$#</code>.}}</p>
+    </div>
+    <div class="script">
+      <h4>{{snippet6 Script}}</h4>
+      <p>{{snippet7 The snippet script.}}</p>
+    </div>
+  </div>
+  <div style="line-height: 0;"><canvas class="canvas"></canvas></div>
+  <div class="filter">
+    <span class="domains">example.com,example.net</span><span class="separator">#$#</span><span class="script">log Hello world!</span>
+  </div>
+</div>
