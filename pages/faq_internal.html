@@ -10,10 +10,6 @@ title=FAQ - Adblock Plus internals
 
         <p>{{s3 Adblock Plus uses a number of preferences that are accessible via <a href="{{s3-link http://kb.mozillazine.org/About:config}}">about:config</a>. All of them start with <code><fix>extensions.adblockplus.</fix></code> (this is different from Adblock and Adblock Plus 0.5 that use the prefix <code><fix>adblock.</fix></code>). A full list with explanations can be found <a href="preferences">here</a>.}}</p>
 
-        <h2 id="interface">{{s4 How do I access Adblock Plus from my extension?}}</h2>
-
-        <p>{{s5 To allow other extensions to integrate with Adblock Plus the interface <code><fix>IAdblockPlus</fix></code> is exported. Check out <a href="IAdblockPlus">interface documentation</a> for details.}}</p>
-
         <h2 id="policies">{{s6 How does Adblock Plus block addresses?}}</h2>
 
         <p>{{s7 The hard work here is actually done by Gecko, the engine on top of which Firefox, Thunderbird and other applications are built. It allows something called "content policies". A content policy is simply a JavaScript (or C++) object that gets called whenever the browser needs to load something. It can then look at the address that should be loaded and some other data and decide whether it should be allowed. There is a number of built-in content policies (when you define which sites shouldn't be allowed to load images in Firefox or SeaMonkey, you are actually configuring one of these built-in content policies) and any extension can register one. So all that Adblock Plus has to do is to register its content policy, other than that there is only application logic to decide which addresses to block and user interface code to allow configuration of filters.}}</p>
