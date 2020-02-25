@@ -13,7 +13,7 @@ title=Contributing code to Adblock Plus
 {{issues We're keeping track of all the things we want to fix and improve in the issue tracker of our [projects on GitLab](https://gitlab.com/eyeo/adblockplus).}}
 
 ## {{getting-in-touch Getting in touch}}
-{{irc Need help or want to chat? Join our IRC channel: [#adblockplus on irc.mozilla.org](irc://irc.mozilla.org/#adblockplus) (there is also a [web-based client](http://mibbit.com/?server=irc.mozilla.org&amp;channel=%23adblockplus)). While we are a globally distributed team, there are times when most of the team is not online. Please note that we cannot reply to you if you are offline.}}
+{{matrix-chat Need help or want to chat? Join our Matrix channel: [#adblockplus on chat.mozilla.org](https://chat.mozilla.org/#/room/#adblockplus:mozilla.org). For more ways to connect, see the [Mozilla Wiki on Matrix](https://wiki.mozilla.org/Matrix). While we are a globally distributed team, there are times when most of the team is not online. Please note that we cannot reply to you if you are offline.}}
 
 ## {{submitting-a-patch Submitting a patch}}
 
