@@ -1,18 +1,5 @@
 title=Development builds
 
-<head>
-<script>
-  document.addEventListener("DOMContentLoaded", function()
-  {
-    var link = document.getElementById("chrome-install-link");
-    if (/\bOPR\//.test(navigator.userAgent))
-    {
-      link.href = "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=100&x=id%3Dldcecbkkoecffmfljeihcmifjjdoepkn%26uc";
-    }
-  });
-</script>
-</head>
-
 <h2 id="general">{{s1 What are development builds?}}</h2>
 
 <p>{{s2 Development builds represent the most current state of development for Adblock Plus and other extensions hosted on this website. By installing a development build you can try features that haven't been released in a stable version yet.}}</p>
@@ -38,7 +25,7 @@ title=Development builds
     <a href="/devbuilds/adblockplusfirefox/">older builds</a>)}}</small>
   </li>
   <li>
-    <a href="https://chrome.google.com/webstore/detail/adblock-plus-development/ldcecbkkoecffmfljeihcmifjjdoepkn" id="chrome-install-link">{{abp-for-chrome <fix>Adblock Plus</fix> for <fix>Chrome</fix>, <fix>Microsoft Edge</fix> and <fix>Opera</fix>}}</a>
+    <a href="https://chrome.google.com/webstore/detail/adblock-plus-development/ldcecbkkoecffmfljeihcmifjjdoepkn">{{abp-for-chrome <fix>Adblock Plus</fix> for <fix>Chrome</fix>, <fix>Microsoft Edge</fix> and <fix>Opera</fix>}}</a>
     <small>{{s11 (<a href="/devbuilds/adblockpluschrome/00latest.changelog.xhtml">changelog</a>,
     <a href="/devbuilds/adblockpluschrome/">older builds</a>)}}</small>
   </li>
@@ -53,10 +40,6 @@ title=Development builds
   recent development build once it is available.}} {{s30 Note that you will never be updated to
   the stable release, instead you will get the development build immediately following the
   stable release.}}
-</p>
-
-<p id="opera-install">
-  {{s31 <strong>Important Opera installation notice</strong>: Opera adds extensions not downloaded via the webstore but deactivates them by default. After adding the ABP development build, go to the extensions menu and enable it.}}
 </p>
 
 <h2 id="changes">{{s32 How do I know what has changed?}}</h2>
