@@ -1,6 +1,12 @@
 html
 {
   display: flex;
+  font-size: 18px;
+}
+
+@media (max-width: 768px)
+{
+  html { font-size: 16px }
 }
 
 body
@@ -948,7 +954,11 @@ div.animation[started="true"]
  *****************************************************************************/
 
 .avoid-wrap {display: inline-block;}
-.small {font-size: smaller;}
+
+small,
+.small { font-size: 12px;}
+
+.extra-small { font-size: 10px; }
 
 .sup
 {
