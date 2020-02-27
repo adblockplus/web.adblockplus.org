@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html <? include html-attributes ?>>
+  <head>
+    <? include meta/standard ?>
+    <? include meta/social ?>
+    <? include styles ?>
+    <? include head/config ?>
+    <? include head/analytics ?>
+
+    {% block head %}
+      {{ head | safe }}
+    {% endblock %}
+  </head>
+
+  <body>
+    <? include analytics/body-start ?>
+
+    {% block body %}
+      {{ body | safe }}
+    {% endblock %}
+
+    <? include cookie/index ?>
+  </body>
+</html>
