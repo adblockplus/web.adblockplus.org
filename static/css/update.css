@@ -1,0 +1,62 @@
+/* Global changes for page
+ ******************************************************************************/
+
+body
+{
+  padding-top: 0;
+  background-color: #000;
+}
+
+main
+{
+  background-color: #FFF;
+  border-radius: 6px;
+}
+
+.content h1,
+.content h2 { margin-top: 0; }
+
+.content h1 { font-size: 27px; }
+
+.content h2 { font-size: 24px; }
+
+[dir="ltr"] .content ul { padding-left: 40px; }
+[dir="rtl"] .content ul { padding-right: 40px; }
+
+.content ul li { margin-bottom: 1rem; }
+
+/* Page components
+ ******************************************************************************/
+
+.update-container
+{
+  max-width: 830px;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.update-header
+{
+  position: relative;
+  /* Must be at-least as tall is image within to space properly */
+  min-height: 130px;
+}
+
+.update-header-image { position: absolute; }
+
+[dir="ltr"] .update-header-image { left: 0; }
+
+[dir="rtl"] .update-header-image { right: 0; }
+
+.content .update-header-heading { margin-top: 0; }
+
+.content .update-header-heading small { font-weight: normal; }
+
+.content .update-header-lead { margin-bottom: 0; }
+
+[dir="ltr"] .update-header-heading,
+[dir="ltr"] .update-header-lead { margin-left: 148px; }
+
+[dir="rtl"] .update-header-heading,
+[dir="rtl"] .update-header-lead { margin-right: 148px; }
