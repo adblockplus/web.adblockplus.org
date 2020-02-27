@@ -1,0 +1,53 @@
+/* Global changes for page
+ ******************************************************************************/
+
+body
+{
+  padding-top: 0;
+  background-color: #000;
+}
+
+main
+{
+  background-color: #FFF;
+  border-radius: 6px;
+}
+
+.content a { text-decoration: underline; }
+
+/* Page components
+ ******************************************************************************/
+
+.update-container
+{
+  max-width: 830px;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.update-header { position: relative; }
+
+.update-header-image
+{
+  position: absolute;
+  top: 0;
+  height: 130px;
+  width: 130px;
+}
+
+[dir="ltr"] .update-header-image { left: 0; }
+
+[dir="rtl"] .update-header-image { right: 0; }
+
+.content .update-header-heading { margin-top: 0; }
+
+.content .update-header-heading small { font-weight: normal; }
+
+.content .update-header-lead { margin-bottom: 0; }
+
+[dir="ltr"] .update-header-heading,
+[dir="ltr"] .update-header-lead { margin-left: 148px; }
+
+[dir="rtl"] .update-header-heading,
+[dir="rtl"] .update-header-lead { margin-right: 148px; }
