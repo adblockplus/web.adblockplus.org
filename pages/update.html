@@ -28,7 +28,41 @@ template=bare
     {{ update-lead-2 We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. We devote a lot of time and resources into developing and securing the best online experience for our users. Please donate what you think is a fair contribution to the Adblock Plus project and our attempts to keep the ad-blocking community alive. <strong>Every donation is appreciated!</strong> }}
   </p>
 
-  <p>PLACEHOLDER</p>
+  <form id="donation">
+
+    <header>
+      <h2 class="donation-header">{{ fair-amount-header-1[heading] Name a fair amount: }}</h2>
+      <select id="donation-currencies" class="donation-currencies" name="currency"></select>
+    </header>
+
+    <div class="donation-types row">
+
+      <fieldset class="donation-type column one-third">
+        <legend>
+          {{ one-time-legened-1[heading] Make a <strong>one-time</strong> donation: }}
+        </legend>
+        <div id="donation-amounts" class="row"></div>
+      </fieldset>
+
+      <hr class="donation-divide column one-third">
+
+      <fieldset class="donation-type column one-third">
+        <legend>
+          {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
+        </legend>
+        <div id="subscription-amounts" class="row"></div>
+      </fieldset>
+
+    </div>
+
+    <fieldset>
+      <legend class="donation-payment-lead">
+        {{ pay-with-lead-1[heading] Pay with: }}
+      </legend>
+      <div id="donation-providers"></div>
+    </fieldset>
+
+  </form>
 
   <h2>
     {{ whats-new-header-1 What’s new? }}
@@ -55,3 +89,6 @@ template=bare
   </ul>
 
 </main>
+
+<script src="/js/donate-config.js"></script>
+<script src="/js/donate-form.js"></script>

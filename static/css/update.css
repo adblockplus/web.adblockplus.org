@@ -14,7 +14,8 @@ main
 }
 
 .content h1,
-.content h2 { margin-top: 0; }
+.content h2,
+.content h3 { margin-top: 0; }
 
 .content h1 { font-size: 27px; }
 
@@ -60,3 +61,30 @@ main
 
 [dir="rtl"] .update-header-heading,
 [dir="rtl"] .update-header-lead { margin-right: 148px; }
+
+.donation-header
+{
+  display: inline;
+  font-size: 20px;
+}
+
+.donation-divide
+{
+  height: 57px;
+  width: 2px;
+  margin-top: 1.5rem;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 0;
+  background-color: rgba(232, 232, 232, 0.667);
+}
+
+.donation-type legend { margin-top: 1.5rem; }
+
+.donation-type input[type=radio] { margin-top: 3px; }
+
+.donation-type .column { margin: 2px 0; }
+
+[dir="ltr"] .donation-type input[type=radio] { margin-right: 3px; }
+
+[dir="rtl"] .donation-type input[type=radio] { margin-left: 3px; }
