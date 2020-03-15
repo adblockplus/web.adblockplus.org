@@ -28,7 +28,151 @@ template=bare
     {{ update-lead-2 We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. We devote a lot of time and resources into developing and securing the best online experience for our users. Please donate what you think is a fair contribution to the Adblock Plus project and our attempts to keep the ad-blocking community alive. <strong>Every donation is appreciated!</strong> }}
   </p>
 
-  <p>PLACEHOLDER</p>
+  <form>
+
+    <header class="donation-header">
+      <h2 class="donation-heading">
+        {{ fair-amount-header-1[heading] Name a fair amount: }}
+      </h2>
+      <select name="payment-currency" class="payment-currencies">
+        <option value="usd">usd</option>
+        <option value="gbp">gbp</option>
+      </select>
+    </header>
+
+    <div class="payment-types">
+
+      <fieldset class="payment-type">
+        <legend>
+          {{ one-time-legened-1[heading] Make a <strong>one-time</strong> donation: }}
+        </legend>
+        <div class="payment-amounts">
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+        </div>
+        <div class="payment-amounts">
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <div class="custom-payment-amount payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="custom">
+            $
+            <input
+              type="text"
+              size="4"
+              name="custom-donation-amount"
+              placeholder="10">
+          </div>
+        </div>
+      </fieldset>
+
+      <hr class="payment-divide">
+
+      <fieldset class="payment-type">
+        <legend>
+          {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
+        </legend>
+        <div class="payment-amounts">
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+        </div>
+        <div class="payment-amounts">
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <label class="payment-amount">
+            <input
+              type="radio"
+              name="preset-donation-amount"
+              value="10">
+            $10
+          </label>
+          <div class="custom-payment-amount payment-amount">
+            <input
+              type="radio"
+              name="preset-subscirption-amount"
+              value="custom">
+            $
+            <input
+              type="text"
+              size="4"
+              name="custom-subscription-amount"
+              placeholder="10">
+          </div>
+        </div>
+      </fieldset>
+
+    </div>
+
+    <div class="payment-providers">
+      <span class="payment-providers-lead">
+        {{ pay-with-lead-1[heading] Pay with: }}
+      </span>
+      <button type="submit" name="stripe-provider" class="stripe-button">
+        {{ stripe-label[button label] Credit card }}
+      </button>
+      <button type="submit" name="paypal-provider" class="paypal-button">
+        {{ paypal-label[button label] PayPal }}
+      </button>
+    </div>
+
+  </form>
 
   <h2>
     {{ whats-new-header-1 What’s new? }}
