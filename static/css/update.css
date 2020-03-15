@@ -1,26 +1,39 @@
-body
+@media (min-width: 830px)
 {
-  padding-top: 0;
-  background-color: #000;
+  html { background-color: #000; }
 }
 
-.content h1 { font-size: 27px; }
+body { padding-top: 0; }
 
-.content h2 { font-size: 24px; }
+@media (min-width: 576px)
+{
+  .content h1 { font-size: 27px; }
 
-[dir="ltr"] .content ul { padding-left: 40px; }
-[dir="rtl"] .content ul { padding-right: 40px; }
-
-.content ul li { margin-bottom: 1rem; }
+  .content h2
+  {
+    margin-top: 1.5rem;
+    font-size: 24px;
+  }
+}
 
 .update-container
 {
-  max-width: 830px;
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
-  padding: 1.5rem 2.5rem;
-  border-radius: 6px;
+  width: 830px;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
   background-color: #FFF;
+}
+
+@media (min-width: 830px)
+{
+  .update-container
+  {
+    border-radius: 6px;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 .update-header
@@ -30,20 +43,151 @@ body
   min-height: 130px;
 }
 
-.update-header-image { position: absolute; }
+.update-header-image
+{
+  display: block;
+  margin: 0 auto;
+}
 
-[dir="ltr"] .update-header-image { left: 0; }
+@media (min-width: 576px)
+{
+  .update-header-image { position: absolute; }
 
-[dir="rtl"] .update-header-image { right: 0; }
+  [dir="ltr"] .update-header-image { left: 0; }
 
-.content .update-header-heading { margin-top: 0; }
+  [dir="rtl"] .update-header-image { right: 0; }
+}
+
+@media (min-width: 576px)
+{
+  [dir="ltr"] .update-header-heading,
+  [dir="ltr"] .update-header-lead { margin-left: 150px; }
+
+  [dir="rtl"] .update-header-heading,
+  [dir="rtl"] .update-header-lead { margin-right: 150px; }
+
+  .content .update-header-heading { margin-top: 0; }
+}
 
 .content .update-header-heading small { font-weight: normal; }
 
 .content .update-header-lead { margin-bottom: 0; }
 
-[dir="ltr"] .update-header-heading,
-[dir="ltr"] .update-header-lead { margin-left: 148px; }
+.donation-header { margin: 1.5rem 0 0.5rem; }
 
-[dir="rtl"] .update-header-heading,
-[dir="rtl"] .update-header-lead { margin-right: 148px; }
+.donation-heading
+{
+  display: inline;
+  font-size: 20px;
+}
+
+.payment-currencies
+{
+  padding: 0;
+  line-height: 1;
+}
+
+@media (min-width: 576px)
+{
+  .payment-types { display: flex; }
+}
+
+.payment-type legend { margin: 1rem 0 0.5rem 0; }
+
+.payment-type input[type=radio] { margin-top: 3px; }
+
+[dir="ltr"] .payment-type input[type=radio] { margin-right: 0.1rem; }
+
+[dir="rtl"] .payment-type input[type=radio] { margin-left: 0.1rem; }
+
+/* Negating first and last padding below */
+.payment-amounts { margin: 0 -0.5rem; }
+
+.payment-amount,
+.custom-payment-amount
+{
+  display: inline-block;
+  margin: 0.1rem 0.5rem;
+}
+
+.custom-payment-amount { position: relative; }
+
+.payment-divide
+{
+  border-color: rgba(232, 232, 232, 0.667);
+  margin: 1rem 0;
+}
+
+@media (min-width: 576px)
+{
+  .payment-divide
+  {
+    height: 60px;
+    width: 2px;
+    margin: 1.5rem 3rem 0 3rem;
+    padding: 0;
+  }
+}
+
+.custom-payment-amount input[type="text"]
+{
+  padding: 0;
+  line-height: 1;
+}
+
+.payment-providers { margin-top: 1.5rem; }
+
+.payment-providers-lead
+{
+  display: block;
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (min-width: 576px)
+{
+  .payment-providers { display: flex; }
+
+  [dir="ltr"] .payment-providers-lead { margin-right: 1rem; }
+
+  [dir="rtl"] .payment-providers-lead { margin-left: 1rem; }
+}
+
+.payment-providers button
+{
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  line-height: 32px;
+  text-align: center;
+  border: 0;
+  border-radius: 3.5px;
+  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.2);
+}
+
+@media (min-width: 576px)
+{
+  .payment-providers button
+  {
+    display: inline-block;
+    width: 150px;
+    margin-top: 0;
+  }
+
+  [dir="ltr"] .payment-providers button { margin-right: 1rem; }
+
+  [dir="rtl"] .payment-providers button { margin-left: 1rem; }
+}
+
+.stripe-button
+{
+  color: #fff;
+  background-color: #2888F9;
+}
+
+.paypal-button
+{
+  color: #000;
+  background-color: rgb(255, 187, 3);
+}
