@@ -100,6 +100,10 @@ body { padding-top: 0; }
 
 [dir="rtl"] .payment-type input[type=radio] { margin-left: 0.1rem; }
 
+.subscription-payment-type { display: none; }
+
+.has-subscriptions .subscription-payment-type { display: block; }
+
 /* Negating first and last padding below */
 .payment-amounts { margin: 0 -0.5rem; }
 
@@ -114,6 +118,7 @@ body { padding-top: 0; }
 
 .payment-divide
 {
+  display: none;
   border-color: rgba(232, 232, 232, 0.667);
   margin: 1rem 0;
 }
@@ -128,6 +133,8 @@ body { padding-top: 0; }
     padding: 0;
   }
 }
+
+.has-subscriptions .payment-divide { display: block; }
 
 .custom-payment-amount input[type="text"]
 {
