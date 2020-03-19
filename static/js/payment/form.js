@@ -10,7 +10,7 @@
 function PaymentForm()
 {
   // required ordered collection
-  var currencies = updatePaymentConfig;
+  var currencies = window.paymentConfig;
 
   // get first currency in ordered collection
   var currency = currencies[(function() {
