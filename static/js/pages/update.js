@@ -1,18 +1,19 @@
-/*global PaymentForm, paypalProvider*/
-(function()
+/*global PaymentForm, paypalProvider, paymentConfig*/
+(function(){
+
+function setupPaymentForm()
 {
-  function setupPaymentForm()
+  var form = new PaymentForm(paymentConfig);
+
+  form.addProviderListener("paypal", function()
   {
-    var form = new PaymentForm();
+    paypalProvider.submit(form.toJSON());
+  });
+}
 
-    form.addProviderListener("paypal", function()
-    {
-      paypalProvider.submit(form.toJSON());
-    });
-  }
+if (document.readyState === 'loading')
+  document.addEventListener('DOMContentLoaded', setupPaymentForm);
+else
+  setupPaymentForm();
 
-  if (document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', setupPaymentForm);
-  else
-    setupPaymentForm();
 }());
