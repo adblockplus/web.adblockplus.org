@@ -17,6 +17,31 @@
  */
 function PaymentForm(currencies)
 {
+  var defaultCurrency, hasMultiCurrency;
+
+  for (var currencyName in currencies)
+  {
+    if (!defaultCurrency)
+    {
+      defaultCurrency = currencyName;
+    }
+    else
+    {
+      hasMultiCurrency = true;
+      break;
+    }
+  }
+
+  if (hasMultiCurrency)
+  {
+    doc.body.classList.add("has-multi-currency");
+  }
+  else
+  {
+    doc.body.classList.add("has-single-currency");
+    doc.querySelector(".donation-heading .currency").textContent = defaultCurrency.toUpperCase();
+  }
+
   var paymentCurrency = doc.getElementById("payment-currencies");
 
   var theCurrencyOptions = _.template(
