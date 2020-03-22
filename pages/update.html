@@ -33,7 +33,8 @@ template=bare
 
     <header class="donation-header">
       <h2 class="donation-heading">
-        {{ fair-amount-header-1[heading] Name a fair amount: }}
+        <span class="single-currency">{{ fair-amount-header-2[heading] Name a fair amount (in <span class="currency">USD</span>) }}</span>
+        <span class="multi-currency">{{ fair-amount-header-2[heading] Name a fair amount: }}</span>
       </h2>
       <select
         id="payment-currencies"

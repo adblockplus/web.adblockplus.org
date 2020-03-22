@@ -81,6 +81,16 @@ body { padding-top: 0; }
   font-size: 20px;
 }
 
+/* Show/hide donation heading text based on currencies loaded */
+.payment-currencies,
+.donation-heading .single-currency,
+.donation-heading .multi-currency { display: none; }
+
+.has-single-currency .donation-heading .single-currency { display: block; }
+
+payment-currencies
+.has-multi-currency .donation-heading .multi-currency { display: block; }
+
 .payment-currencies
 {
   padding: 0;
