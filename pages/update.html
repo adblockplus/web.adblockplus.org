@@ -101,11 +101,21 @@ template=bare
           <input
             type="text"
             size="4"
+            inputmode="numeric"
+            spellcheck="false"
             name="custom-<%- type %>-amount"
             placeholder="<%- placeholder %>">
         </div>
       </div>
     </script>
+
+    <p class="alert minimum-amount-warning minimum-donation-warning">
+      {{ min-donation-warning[notice] Oops! To help cover fees, the minimum one-time donation amount is <span class="minimum-amount">$5</span>. }}
+    </p>
+
+    <p class="alert minimum-amount-warning minimum-subscription-warning">
+      {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum monthly donation amount is <span class="minimum-amount">$1.99</span>. }}
+    </p>
 
     <div id="payment-providers" class="payment-providers">
       <span class="payment-providers-lead">

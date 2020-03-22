@@ -135,6 +135,75 @@ function PaymentForm(currencies)
 
   subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
 
+  function clearCustomAmountErrors()
+  {
+    doc.body.classList.remove(
+      "minimum-donation-error",
+      "minimum-subscription-error"
+    );
+
+    enableForm(true);
+  }
+
+  function enableForm(enabled)
+  {
+    _.each(
+      _.toArray(doc.querySelectorAll("#payment-providers button")),
+      function(button)
+      {
+        button.disabled = !enabled;
+      }
+    );
+  }
+
+  function validateCustomAmount(event)
+  {
+    var checkedRadio = doc.querySelector(".payment-amount input:checked");
+
+    if (checkedRadio.value != "custom")
+    {
+      clearCustomAmountErrors();
+      return;
+    }
+
+    var amount = checkedRadio.parentElement.querySelector(
+      'input[type="text"]'
+    ).value;
+
+    if (amount.trim() == "")
+    {
+      clearCustomAmountErrors();
+      return;
+    }
+
+    amount = parseFloat(amount);
+
+    var currency = currencies[paymentCurrency.value];
+    var selectedType = event.currentTarget.id.split("-")[0];
+    var otherType = selectedType == "donation" ? "subscription" : "donation";
+    var typeError = "minimum-" + selectedType + "-error";
+    var otherTypeError = "minimum-" + otherType + "=error";
+    var minimumAmount = currency[selectedType].minimum;
+
+    if (_.isFinite(amount) && amount >= minimumAmount)
+    {
+      clearCustomAmountErrors();
+      return;
+    }
+
+    doc.body.classList.add(typeError);
+    doc.body.classList.remove(otherTypeError);
+    enableForm(false);
+    doc.querySelector(
+      ".minimum-" + selectedType + "-warning .minimum-amount"
+    ).textContent = currency.sign + minimumAmount;
+  }
+
+  donationAmounts.addEventListener("change", validateCustomAmount, true);
+  subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
+  donationAmounts.addEventListener("input", validateCustomAmount, true);
+  subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
+
   /**
    * Export form data to JSON compatible object
    * @function

@@ -1,7 +1,7 @@
 /**
  * @license
  * Lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash include="template,each,extend" exports="global"`
+ * Build: `lodash include="each,template,isNumber,isArray,toNumber,isFinite,toArray,extend" exports="global"`
  * Copyright JS Foundation and other contributors <https://js.foundation/>
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
@@ -42,7 +42,8 @@
 
   /** Used as references for various `Number` constants. */
   var INFINITY = 1 / 0,
-      MAX_SAFE_INTEGER = 9007199254740991;
+      MAX_SAFE_INTEGER = 9007199254740991,
+      NAN = 0 / 0;
 
   /** `Object#toString` result references. */
   var argsTag = '[object Arguments]',
@@ -104,6 +105,9 @@
    */
   var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
 
+  /** Used to match leading and trailing whitespace. */
+  var reTrim = /^\s+|\s+$/g;
+
   /** Used to match backslashes in property paths. */
   var reEscapeChar = /\\(\\)?/g;
 
@@ -116,8 +120,17 @@
   /** Used to match `RegExp` flags from their coerced string values. */
   var reFlags = /\w*$/;
 
+  /** Used to detect bad signed hexadecimal string values. */
+  var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+  /** Used to detect binary string values. */
+  var reIsBinary = /^0b[01]+$/i;
+
   /** Used to detect host constructors (Safari). */
   var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+  /** Used to detect octal string values. */
+  var reIsOctal = /^0o[0-7]+$/i;
 
   /** Used to detect unsigned integer values. */
   var reIsUint = /^(?:0|[1-9]\d*)$/;
@@ -127,6 +140,37 @@
 
   /** Used to match unescaped characters in compiled string literals. */
   var reUnescapedString = /['\n\r\u2028\u2029\\]/g;
+
+  /** Used to compose unicode character classes. */
+  var rsAstralRange = '\\ud800-\\udfff',
+      rsComboMarksRange = '\\u0300-\\u036f',
+      reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+      rsComboSymbolsRange = '\\u20d0-\\u20ff',
+      rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
+      rsVarRange = '\\ufe0e\\ufe0f';
+
+  /** Used to compose unicode capture groups. */
+  var rsAstral = '[' + rsAstralRange + ']',
+      rsCombo = '[' + rsComboRange + ']',
+      rsFitz = '\\ud83c[\\udffb-\\udfff]',
+      rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
+      rsNonAstral = '[^' + rsAstralRange + ']',
+      rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}',
+      rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
+      rsZWJ = '\\u200d';
+
+  /** Used to compose unicode regexes. */
+  var reOptMod = rsModifier + '?',
+      rsOptVar = '[' + rsVarRange + ']?',
+      rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
+      rsSeq = rsOptVar + reOptMod + rsOptJoin,
+      rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
+
+  /** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
+  var reUnicode = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
+
+  /** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
+  var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
 
   /** Used to make template sourceURLs easier to identify. */
   var templateCounter = -1;
@@ -181,6 +225,9 @@
     '\u2028': 'u2028',
     '\u2029': 'u2029'
   };
+
+  /** Built-in method references without a dependency on `root`. */
+  var freeParseInt = parseInt;
 
   /** Detect free variable `global` from Node.js. */
   var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -344,6 +391,17 @@
   }
 
   /**
+   * Converts an ASCII `string` to an array.
+   *
+   * @private
+   * @param {string} string The string to convert.
+   * @returns {Array} Returns the converted array.
+   */
+  function asciiToArray(string) {
+    return string.split('');
+  }
+
+  /**
    * The base implementation of `_.property` without support for deep paths.
    *
    * @private
@@ -462,6 +520,34 @@
   }
 
   /**
+   * Checks if `string` contains Unicode symbols.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {boolean} Returns `true` if a symbol is found, else `false`.
+   */
+  function hasUnicode(string) {
+    return reHasUnicode.test(string);
+  }
+
+  /**
+   * Converts `iterator` to an array.
+   *
+   * @private
+   * @param {Object} iterator The iterator to convert.
+   * @returns {Array} Returns the converted array.
+   */
+  function iteratorToArray(iterator) {
+    var data,
+        result = [];
+
+    while (!(data = iterator.next()).done) {
+      result.push(data.value);
+    }
+    return result;
+  }
+
+  /**
    * Converts `map` to its key-value pairs.
    *
    * @private
@@ -507,6 +593,30 @@
       result[++index] = value;
     });
     return result;
+  }
+
+  /**
+   * Converts `string` to an array.
+   *
+   * @private
+   * @param {string} string The string to convert.
+   * @returns {Array} Returns the converted array.
+   */
+  function stringToArray(string) {
+    return hasUnicode(string)
+      ? unicodeToArray(string)
+      : asciiToArray(string);
+  }
+
+  /**
+   * Converts a Unicode `string` to an array.
+   *
+   * @private
+   * @param {string} string The string to convert.
+   * @returns {Array} Returns the converted array.
+   */
+  function unicodeToArray(string) {
+    return string.match(reUnicode) || [];
   }
 
   /*--------------------------------------------------------------------------*/
@@ -556,6 +666,7 @@
       objectCreate = Object.create,
       propertyIsEnumerable = objectProto.propertyIsEnumerable,
       splice = arrayProto.splice,
+      symIterator = Symbol ? Symbol.iterator : undefined,
       symToStringTag = Symbol ? Symbol.toStringTag : undefined;
 
   var defineProperty = (function() {
@@ -569,6 +680,7 @@
   /* Built-in method references for those with the same name as other `lodash` methods. */
   var nativeGetSymbols = Object.getOwnPropertySymbols,
       nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined,
+      nativeIsFinite = root.isFinite,
       nativeKeys = overArg(Object.keys, Object),
       nativeMax = Math.max,
       nativeNow = Date.now;
@@ -3346,6 +3458,36 @@
   }
 
   /**
+   * Checks if `value` is a finite primitive number.
+   *
+   * **Note:** This method is based on
+   * [`Number.isFinite`](https://mdn.io/Number/isFinite).
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
+   * @example
+   *
+   * _.isFinite(3);
+   * // => true
+   *
+   * _.isFinite(Number.MIN_VALUE);
+   * // => true
+   *
+   * _.isFinite(Infinity);
+   * // => false
+   *
+   * _.isFinite('3');
+   * // => false
+   */
+  function isFinite(value) {
+    return typeof value == 'number' && nativeIsFinite(value);
+  }
+
+  /**
    * Checks if `value` is classified as a `Function` object.
    *
    * @static
@@ -3481,6 +3623,37 @@
   var isMap = nodeIsMap ? baseUnary(nodeIsMap) : baseIsMap;
 
   /**
+   * Checks if `value` is classified as a `Number` primitive or object.
+   *
+   * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
+   * classified as numbers, use the `_.isFinite` method.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a number, else `false`.
+   * @example
+   *
+   * _.isNumber(3);
+   * // => true
+   *
+   * _.isNumber(Number.MIN_VALUE);
+   * // => true
+   *
+   * _.isNumber(Infinity);
+   * // => true
+   *
+   * _.isNumber('3');
+   * // => false
+   */
+  function isNumber(value) {
+    return typeof value == 'number' ||
+      (isObjectLike(value) && baseGetTag(value) == numberTag);
+  }
+
+  /**
    * Checks if `value` is a plain object, that is, an object created by the
    * `Object` constructor or one with a `[[Prototype]]` of `null`.
    *
@@ -3541,6 +3714,28 @@
   var isSet = nodeIsSet ? baseUnary(nodeIsSet) : baseIsSet;
 
   /**
+   * Checks if `value` is classified as a `String` primitive or object.
+   *
+   * @static
+   * @since 0.1.0
+   * @memberOf _
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a string, else `false`.
+   * @example
+   *
+   * _.isString('abc');
+   * // => true
+   *
+   * _.isString(1);
+   * // => false
+   */
+  function isString(value) {
+    return typeof value == 'string' ||
+      (!isArray(value) && isObjectLike(value) && baseGetTag(value) == stringTag);
+  }
+
+  /**
    * Checks if `value` is classified as a `Symbol` primitive or object.
    *
    * @static
@@ -3580,6 +3775,89 @@
    * // => false
    */
   var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+
+  /**
+   * Converts `value` to an array.
+   *
+   * @static
+   * @since 0.1.0
+   * @memberOf _
+   * @category Lang
+   * @param {*} value The value to convert.
+   * @returns {Array} Returns the converted array.
+   * @example
+   *
+   * _.toArray({ 'a': 1, 'b': 2 });
+   * // => [1, 2]
+   *
+   * _.toArray('abc');
+   * // => ['a', 'b', 'c']
+   *
+   * _.toArray(1);
+   * // => []
+   *
+   * _.toArray(null);
+   * // => []
+   */
+  function toArray(value) {
+    if (!value) {
+      return [];
+    }
+    if (isArrayLike(value)) {
+      return isString(value) ? stringToArray(value) : copyArray(value);
+    }
+    if (symIterator && value[symIterator]) {
+      return iteratorToArray(value[symIterator]());
+    }
+    var tag = getTag(value),
+        func = tag == mapTag ? mapToArray : (tag == setTag ? setToArray : values);
+
+    return func(value);
+  }
+
+  /**
+   * Converts `value` to a number.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to process.
+   * @returns {number} Returns the number.
+   * @example
+   *
+   * _.toNumber(3.2);
+   * // => 3.2
+   *
+   * _.toNumber(Number.MIN_VALUE);
+   * // => 5e-324
+   *
+   * _.toNumber(Infinity);
+   * // => Infinity
+   *
+   * _.toNumber('3.2');
+   * // => 3.2
+   */
+  function toNumber(value) {
+    if (typeof value == 'number') {
+      return value;
+    }
+    if (isSymbol(value)) {
+      return NAN;
+    }
+    if (isObject(value)) {
+      var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+      value = isObject(other) ? (other + '') : other;
+    }
+    if (typeof value != 'string') {
+      return value === 0 ? value : +value;
+    }
+    value = value.replace(reTrim, '');
+    var isBinary = reIsBinary.test(value);
+    return (isBinary || reIsOctal.test(value))
+      ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+      : (reIsBadHex.test(value) ? NAN : +value);
+  }
 
   /**
    * Converts `value` to a string. An empty string is returned for `null`
@@ -3793,6 +4071,36 @@
    */
   function keysIn(object) {
     return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
+  }
+
+  /**
+   * Creates an array of the own enumerable string keyed property values of `object`.
+   *
+   * **Note:** Non-object values are coerced to objects.
+   *
+   * @static
+   * @since 0.1.0
+   * @memberOf _
+   * @category Object
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property values.
+   * @example
+   *
+   * function Foo() {
+   *   this.a = 1;
+   *   this.b = 2;
+   * }
+   *
+   * Foo.prototype.c = 3;
+   *
+   * _.values(new Foo);
+   * // => [1, 2] (iteration order is not guaranteed)
+   *
+   * _.values('hi');
+   * // => ['h', 'i']
+   */
+  function values(object) {
+    return object == null ? [] : baseValues(object, keys(object));
   }
 
   /*------------------------------------------------------------------------*/
@@ -4243,6 +4551,8 @@
   lodash.keysIn = keysIn;
   lodash.memoize = memoize;
   lodash.property = property;
+  lodash.toArray = toArray;
+  lodash.values = values;
 
   // Add aliases.
   lodash.extend = assignIn;
@@ -4263,18 +4573,22 @@
   lodash.isArrayLike = isArrayLike;
   lodash.isBuffer = isBuffer;
   lodash.isError = isError;
+  lodash.isFinite = isFinite;
   lodash.isFunction = isFunction;
   lodash.isLength = isLength;
   lodash.isMap = isMap;
+  lodash.isNumber = isNumber;
   lodash.isObject = isObject;
   lodash.isObjectLike = isObjectLike;
   lodash.isPlainObject = isPlainObject;
   lodash.isSet = isSet;
+  lodash.isString = isString;
   lodash.isSymbol = isSymbol;
   lodash.isTypedArray = isTypedArray;
   lodash.stubArray = stubArray;
   lodash.stubFalse = stubFalse;
   lodash.template = template;
+  lodash.toNumber = toNumber;
   lodash.toString = toString;
 
   // Add aliases.
