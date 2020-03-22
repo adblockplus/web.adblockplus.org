@@ -4,6 +4,7 @@ window.paymentConfig = {
     donation: {
       amounts: [10, 15, 20, 35, 50],
       placeholder: 35,
+      minimum: 5
     }
   },
   USD: {
@@ -11,6 +12,7 @@ window.paymentConfig = {
     donation: {
       amounts: [10, 15, 20, 35, 50],
       placeholder: 35,
+      minimum: 5
     }
   }
 };

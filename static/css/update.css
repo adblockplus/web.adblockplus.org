@@ -88,8 +88,8 @@ body { padding-top: 0; }
 
 .has-single-currency .donation-heading .single-currency { display: block; }
 
-payment-currencies
-.has-multi-currency .donation-heading .multi-currency { display: block; }
+.has-multi-currency .payment-currencies,
+.has-multi-currency .donation-heading .multi-currency { display: inline; }
 
 .payment-currencies
 {
@@ -152,6 +152,12 @@ payment-currencies
   line-height: 1;
 }
 
+.minimum-amount-warning { display: none; }
+
+.minimum-donation-error .minimum-donation-warning { display: block; }
+
+.minimum-subscription-error .minimum-subscription-warning { display: block; }
+
 .payment-providers { margin-top: 1.5rem; }
 
 .payment-providers-lead
@@ -182,6 +188,8 @@ payment-currencies
   border-radius: 3.5px;
   box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.2);
 }
+
+.payment-providers button[disabled] { filter: grayscale(100); }
 
 @media (min-width: 576px)
 {
