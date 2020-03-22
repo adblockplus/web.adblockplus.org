@@ -1,48 +1,47 @@
 /*global PaymentForm, updatePaymentConfig, _*/
+(function(root, doc, _){
 
 /**
- * Update page payment form
+ * Construct payment form
  * @constructor
- * @requires updatePaymentConfig
  * @requires _.template
  * @requires _.each
+ * @param {Object[]} currencies - Ordered collection of currencies indexed by name
+ * @param {String} currencies[].sign - Sign before currency amount
+ * @param {Object} currencies[].donation - One time payment options for currency
+ * @param {Number[]} currencies[].donation.amounts - Amounts offered for one time payment
+ * @param {Number} currencies[].donation.placeholder - Custom amount placeholder for one time payment
+ * @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
+ * @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
+ * @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
  */
-function PaymentForm()
+function PaymentForm(currencies)
 {
-  // required ordered collection
-  var currencies = window.paymentConfig;
-
-  // get first currency in ordered collection
-  var currency = currencies[(function() {
-    for (var currencyName in currencies)
-      return currencyName;
-  }())];
-
-  var paymentCurrency = document.getElementById("payment-currencies");
+  var paymentCurrency = doc.getElementById("payment-currencies");
 
   var theCurrencyOptions = _.template(
-    document.getElementById("payment-currency-options").innerHTML
+    doc.getElementById("payment-currency-options").innerHTML
   );
 
   paymentCurrency.innerHTML = theCurrencyOptions({
     currencies: currencies
   });
 
-  var donationAmounts = document.getElementById("donation-amounts");
+  var donationAmounts = doc.getElementById("donation-amounts");
 
-  var subscriptionAmounts = document.getElementById("subscription-amounts");
+  var subscriptionAmounts = doc.getElementById("subscription-amounts");
 
   var thePresetAmounts = _.template(
-    document.getElementById("preset-payment-amounts").innerHTML
+    doc.getElementById("preset-payment-amounts").innerHTML
   );
 
   var theCustomAmount = _.template(
-    document.getElementById("custom-payment-amount").innerHTML
+    doc.getElementById("custom-payment-amount").innerHTML
   );
 
   function updateAmounts()
   {
-    currency = currencies[paymentCurrency.value];
+    var currency = currencies[paymentCurrency.value];
 
     var donationOptions = {
       type: "donation",
@@ -57,7 +56,7 @@ function PaymentForm()
 
     if (currency.subscription)
     {
-      document.body.classList.add("has-subscriptions");
+      doc.body.classList.add("has-subscriptions");
 
       var subscriptionOptions = {
         type: "subscription",
@@ -72,7 +71,7 @@ function PaymentForm()
     }
     else
     {
-      document.body.classList.remove("has-subscriptions");
+      doc.body.classList.remove("has-subscriptions");
       subscriptionAmounts.innerHTML = "";
     }
   }
@@ -103,12 +102,8 @@ function PaymentForm()
   // Select custom amount radio when textbox is focused
   function onCustomFieldSelect(event)
   {
-    if (
-      event.target.type
-      && event.target.type == "text"
-    ) {
+    if (event.target.type == "text")
       event.target.parentElement.querySelector('input[type="radio"]').click();
-    }
   }
 
   donationAmounts.addEventListener("focus", onCustomFieldSelect, true);
@@ -121,7 +116,7 @@ function PaymentForm()
    */
   this.toJSON = function()
   {
-    var checked = document.querySelector(".payment-amount input[type=radio]:checked");
+    var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
 
     var type = checked.name.indexOf("donation") != -1 ?
       "donation" : "subscription";
@@ -132,14 +127,12 @@ function PaymentForm()
       amount = checked.parentElement.querySelector('input[type="text"]').value;
 
     return {
-      lang: document.documentElement.lang,
+      lang: doc.documentElement.lang,
       type: type,
       currency: paymentCurrency.value,
       amount: amount,
     };
   };
-
-  function noop () {}
 
   var providerHandlers = {};
 
@@ -155,7 +148,7 @@ function PaymentForm()
     providerHandlers[provider].push(handler);
   };
 
-  var paymentProviders = document.getElementById("payment-providers");
+  var paymentProviders = doc.getElementById("payment-providers");
 
   function onPaymentProviderSubmit(event)
   {
@@ -174,3 +167,7 @@ function PaymentForm()
 
   paymentProviders.addEventListener("click", onPaymentProviderSubmit);
 }
+
+root.PaymentForm = PaymentForm;
+
+}(window, document, _));
