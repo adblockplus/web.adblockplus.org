@@ -156,6 +156,13 @@ function PaymentForm(currencies)
     );
   }
 
+  function isValidAmount(amount, type, currency)
+  {
+    amount = parseFloat(amount);
+
+    return _.isFinite(amount) && amount >= currency[type].minimum;
+  }
+
   function validateCustomAmount(event)
   {
     var checkedRadio = doc.querySelector(".payment-amount input:checked");
@@ -185,7 +192,7 @@ function PaymentForm(currencies)
     var otherTypeError = "minimum-" + otherType + "=error";
     var minimumAmount = currency[selectedType].minimum;
 
-    if (_.isFinite(amount) && amount >= minimumAmount)
+    if (isValidAmount(amount, selectedType, currency))
     {
       clearCustomAmountErrors();
       return;
@@ -210,6 +217,8 @@ function PaymentForm(currencies)
    */
   this.toJSON = function()
   {
+    var currency = currencies[paymentCurrency.value];
+
     var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
 
     var type = checked.name.indexOf("donation") != -1 ?
@@ -218,7 +227,14 @@ function PaymentForm(currencies)
     var amount = checked.value;
 
     if (amount == "custom")
-      amount = checked.parentElement.querySelector('input[type="text"]').value;
+    {
+      checked = checked.parentElement.querySelector('input[type="text"]');
+      amount = isValidAmount(
+        checked.value,
+        type,
+        currencies[paymentCurrency.value][type].minimum
+      ) ? checked.value : checked.placeholder;
+    }
 
     return {
       lang: doc.documentElement.lang,
