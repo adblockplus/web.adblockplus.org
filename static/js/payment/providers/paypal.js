@@ -44,11 +44,13 @@ root.paypalProvider = {
       return LOCALES[lang] || lang.toUpperCase();
     }
 
+    var siteURL = doc.documentElement.getAttribute("data-siteurl");
+
     var submission = {
       charset: "utf-8",
       business: "till@adblockplus.org",
       item_name: payment.item,
-      image_url: payment.image || "https://adblockplus.org/img/paypal-logo.png",
+      image_url: payment.image || siteURL + "/img/adblock-plus-logo-paypal.png",
       return: payment.successURL || "https://adblockplus.org/payment-thank-you",
       cancel_return: payment.cancelURL || root.location.href,
       no_note: 1,
