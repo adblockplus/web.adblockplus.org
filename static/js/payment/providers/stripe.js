@@ -36,6 +36,13 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       hideModal();
   });
 
+  function queryString(obj) {
+    return Object.keys(obj)
+      .map(function(key) {
+        return key + '=' + obj[key];
+      }).join('&');
+  }
+
   function hideModal() {
     modal.classList.remove('show-modal');
   }
@@ -109,13 +116,6 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       applyButtonText();
 
       email && email.focus();
-    }
-
-    function queryString(obj) {
-      return Object.keys(obj)
-        .map(function(key) {
-          return key + '=' + obj[key];
-        }).join('&');
     }
 
     function payButtonText(amount, currency) {
