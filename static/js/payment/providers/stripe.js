@@ -48,9 +48,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   }
 
   function paymentModalPopup(data) {
-    var request, token;
-
-    var box, email, cardStripeElement, error, button;
+    var request, token, box, email, cardStripeElement, error, button;
 
     function createModalForm() {
       modal.innerHTML = '' +
