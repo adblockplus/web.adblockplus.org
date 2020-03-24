@@ -4,7 +4,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   var donation = 'donation';
   var subscription = 'subscription';
 
-  var currencySymbols = {
+  var currencySigns = {
     'AUD': 'AU$',
     'CAD': 'CA$',
     'CHF': 'CHF ',
@@ -132,14 +132,14 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function payButtonText() {
-      var currencySymbol = currencySymbols[data.currency.toUpperCase()];
+      var currencySign = currencySigns[data.currency.toUpperCase()];
 
-      // TODO: symbol should come after amount for some currencies
+      // TODO: sign should come after amount for some currencies
       // abbr element?
       button.textContent = (data.type == subscription)
-        ? (dictionary.subscribe + ' ' + currencySymbol + data.amount
+        ? (dictionary.subscribe + ' ' + currencySign + data.amount
           + ' / ' + dictionary.month)
-        : (dictionary.pay + ' ' + currencySymbol + data.amount);
+        : (dictionary.pay + ' ' + currencySign + data.amount);
     }
 
     function enableButton() {
