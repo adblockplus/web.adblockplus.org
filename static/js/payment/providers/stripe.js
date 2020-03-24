@@ -137,8 +137,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         : currencySign + data.amount;
 
       button.textContent = (data.type == subscription)
-        ? (dictionary.subscribe + ' ' + price
-          + ' / ' + dictionary.month)
+        ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
         : (dictionary.pay + ' ' + price);
     }
 
