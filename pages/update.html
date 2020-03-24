@@ -4,7 +4,9 @@ template=bare
 
 <head>
   <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://js.stripe.com">
   <link rel="stylesheet" href="/css/update.css">
+  <link rel="stylesheet" href="/css/stripe-modal.css">
 </head>
 
 <main class="update-container container content">
@@ -157,15 +159,43 @@ template=bare
 
 </main>
 
+<!--
+  pay: "{{ stripe-pay Pay }}",
+  subscribe: "{{ stripe-subscribe Subscribe }}",
+  month: "{{ stripe-month month }}",
+  declined: "{{ stripe-declined Your payment was declined. }}",
+  sorry: "{{ stripe-sorry Sorry, your payment could not be processed. }}"
+-->
+
 <script id="payment-translations">
   window.paymentTranslations = {
-    item: "{{ purchase-item-name[item being paid for] Adblock Plus contribution }}"
+    item: "{{ purchase-item-name[item being paid for] Adblock Plus contribution }}",
+    pay: "Pay",
+    subscribe: "Subscribe",
+    month: "month",
+    declined: "Your payment was declined.",
+    sorry: "Sorry, your payment could not be processed."
   };
 </script>
 
 <script src="/js/address-masking.js"></script>
 <script src="/js/lodash.custom.js"></script>
+<!--<script src="/js/payment/config/default.js"></script>-->
 <script src="/js/payment/config/de.js"></script>
 <script src="/js/payment/form.js"></script>
 <script src="/js/payment/providers/paypal.js"></script>
+<script src="/js/payment/providers/stripe.js"></script>
 <script src="/js/pages/update.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  /* initStripe('__STRIPE_PUBLIC_KEY__',
+    '__STRIPE_FORM_PROCESSOR__',
+    paymentTranslations); */
+
+  window.stripeProvider =
+    initStripeProvider('pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN',
+      'http://localhost:5555',
+      // 'https://staging-donate-adblockplus-org-1.uplink.eyeo.it/',
+      paymentTranslations);
+</script>
