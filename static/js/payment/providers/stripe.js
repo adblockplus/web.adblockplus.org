@@ -41,11 +41,9 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   document.body.insertBefore(modal, document.body.firstChild);
 
   document.addEventListener('keyup', function(keyupEvent) {
-    var key;
-
     if (keyupEvent.defaultPrevented) return;
 
-    key = event.key || event.keyCode;
+    var key = event.key || event.keyCode;
 
     ((key == 'Escape') || (key == 'Esc') || (key == 27)) &&
       hideModal();
