@@ -1,4 +1,6 @@
-/*global PaymentForm, paypalProvider, paymentConfig, paymentTranslations*/
+/* global PaymentForm, paypalProvider, paymentConfig, paymentTranslations,
+   stripeProvider */
+
 (function(){
 
 function setupPaymentForm()
@@ -12,6 +14,11 @@ function setupPaymentForm()
     payment.successURL = "https://adblockplus.org/update-payment-complete";
     paypalProvider.submit(payment);
   });
+
+  form.addProviderListener("stripe", function()
+  {
+    stripeProvider.submit(form.toJSON());
+  });
 }
 
 if (document.readyState === 'loading')
@@ -19,4 +26,5 @@ if (document.readyState === 'loading')
 else
   setupPaymentForm();
 
-}());
+// I prefer the smooth appearance of "}());" too, but the correct way is:
+})();
