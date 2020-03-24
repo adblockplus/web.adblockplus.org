@@ -8,7 +8,7 @@ function setupPaymentForm()
   form.addProviderListener("paypal", function()
   {
     var payment = form.toJSON();
-    payment.item_name = paymentTranslations.item_name;
+    payment.item = paymentTranslations.item;
     payment.successURL = "https://adblockplus.org/update-payment-complete";
     paypalProvider.submit(payment);
   });
