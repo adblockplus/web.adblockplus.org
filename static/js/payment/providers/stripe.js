@@ -61,7 +61,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   }
 
   function paymentModalPopup(data) {
-    var request, token, box, email, cardStripeElement, error, button;
+    var box, button, cardStripeElement, email, error, token;
 
     function createModalForm() {
       modal.innerHTML = '' +
@@ -114,12 +114,9 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         '</div><img width="123" height="30" class="pbs"' +
           ' src="/img/powered-by-stripe.png"></button>';
 
-      modal.querySelector('.close')
-        .addEventListener('click', hideModal);
-
       box = document.querySelector('.modal-content');
-      email = document.getElementById('email');
       button = document.getElementById('pay-button');
+      email = document.getElementById('email');
       error = document.getElementById('card-errors');
 
       createElements();
@@ -127,21 +124,19 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       payButtonText();
 
       email && email.focus();
+
+      modal.querySelector('.close')
+        .addEventListener('click', hideModal);
     }
 
     function payButtonText() {
-      var currency = data.currency;
-
-      var currencySign = currencySigns[currency];
-
-      currency = '<abbr title="' + currency.toUpperCase() + '">' +
-        currencySign + '</abbr>';
+      var currencySign = currencySigns[ data.currency];
 
       var price = (currencySign == '€')
-        ? data.amount + currency
-        : currency + data.amount;
+        ? data.amount + currencySign
+        : currencySign + data.amount;
 
-      button.innerHTML = (data.type == subscription)
+      button.textContent = (data.type == subscription)
         ? (dictionary.subscribe + ' ' + price
           + ' / ' + dictionary.month)
         : (dictionary.pay + ' ' + price);
@@ -175,7 +170,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function createDonation(data) {
-      request = new XMLHttpRequest();
+      var request = new XMLHttpRequest();
 
       request.open('POST', formProcessor, true);
 
@@ -199,10 +194,10 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         },
       }).then(function(response) {
         if (response && response.paymentMethod && response.paymentMethod.id) {
+          var request = new XMLHttpRequest();
+
           data.method = response.paymentMethod.id;
           data.email = email.value;
-
-          request = new XMLHttpRequest();
 
           request.open('POST', formProcessor, true);
 
