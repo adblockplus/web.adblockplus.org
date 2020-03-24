@@ -133,13 +133,15 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
 
     function payButtonText() {
       var currencySign = currencySigns[data.currency.toUpperCase()];
+      var price = (currencySign == '€')
+        ? data.amount + currencySign
+        : currencySign + data.amount;
 
-      // TODO: sign should come after amount for some currencies
       // abbr element?
       button.textContent = (data.type == subscription)
-        ? (dictionary.subscribe + ' ' + currencySign + data.amount
+        ? (dictionary.subscribe + ' ' + price
           + ' / ' + dictionary.month)
-        : (dictionary.pay + ' ' + currencySign + data.amount);
+        : (dictionary.pay + ' ' + price);
     }
 
     function enableButton() {
