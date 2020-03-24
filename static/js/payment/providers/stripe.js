@@ -15,6 +15,21 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     'USD': '$',
   };
 
+  var style = {
+    base: {
+      color: '#32325d',
+      fontFamily:
+        '-apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': { color: '#aab7c4' }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+
   var stripe = Stripe(publishableKey, {
     locale: (document.documentElement.lang || 'en')
   });
@@ -235,21 +250,6 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function createElements() {
-      var style = {
-        base: {
-          color: '#32325d',
-          fontFamily:
-            '-apple-system, BlinkMacSystemFont, system-ui, sans-serif',
-          fontSmoothing: 'antialiased',
-          fontSize: '16px',
-          '::placeholder': { color: '#aab7c4' }
-        },
-        invalid: {
-          color: '#fa755a',
-          iconColor: '#fa755a'
-        }
-      };
-
       cardStripeElement = stripe.elements()
         .create('card', {
           style: style
