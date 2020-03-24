@@ -85,7 +85,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
               '<div class="form-row">' +
                 '<div class="forms">' +
                   '<div>' +
-                    '<label for="email">' +
+                    '<label for="email" class="email-label">' +
                       '<span class="form-label spacer"></span>' +
                       '<div class="StripeElement">' +
                         '<input type="email" id="email" class="email" ' +
