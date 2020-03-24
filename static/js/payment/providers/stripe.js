@@ -126,25 +126,24 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
 
       createElements();
 
-      applyButtonText();
+      payButtonText();
 
       email && email.focus();
     }
 
-    function payButtonText(amount, currency) {
-      return (data.type == subscription)
-        ? (dictionary.subscribe + ' ' + currencySymbols[currency] + amount
+    function payButtonText() {
+      var currencySymbol = currencySymbols[data.currency.toUpperCase()];
+
+      // TODO: symbol should come after amount for some currencies
+      // abbr element?
+      button.textContent = (data.type == subscription)
+        ? (dictionary.subscribe + ' ' + currencySymbol + data.amount
           + ' / ' + dictionary.month)
-        : (dictionary.pay + ' ' + currencySymbols[currency] + amount);
+        : (dictionary.pay + ' ' + currencySymbol + data.amount);
     }
 
     function enableButton() {
       button.disabled = false;
-    }
-
-    function applyButtonText() {
-      button.textContent =
-        payButtonText(data.amount, data.currency.toUpperCase());
     }
 
     function confirmDonation() {
