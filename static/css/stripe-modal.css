@@ -214,8 +214,11 @@
 
 .email {
   margin-bottom: 2em;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  font-smoothing: antialiased;
+  color: #32325d;
   border: none;
 }
 
