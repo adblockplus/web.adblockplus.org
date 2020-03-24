@@ -30,6 +30,12 @@
   border-radius: 0.5rem;
 }
 
+.modal-content abbr {
+  border-bottom: none;
+  cursor: inherit;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 600px) {
   .modal-content {
     height: 100vh;
