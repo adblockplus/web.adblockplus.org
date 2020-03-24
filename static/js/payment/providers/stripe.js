@@ -130,7 +130,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function payButtonText() {
-      var currencySign = currencySigns[ data.currency];
+      var currencySign = currencySigns[data.currency];
 
       var price = (currencySign == '€')
         ? data.amount + currencySign
