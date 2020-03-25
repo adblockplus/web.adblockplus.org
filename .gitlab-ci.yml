@@ -6,7 +6,7 @@
 
 .staging:
   variables: &staging
-    DOMAIN: "staging-donate-adblockplus-org-1.uplink.eyeo.it"
+    DOMAIN: "staging-donate-adblockplus-org-2.uplink.eyeo.it"
 
 .production:
   variables: &production
@@ -16,7 +16,7 @@
   tags:
     - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/eyeo-python2.7-cms:latest"
     - &BUILD_RUNNER "docker"
-    - &STAGING_RUNNER "eyeo_cms_web_server_staging-donate-adblockplus-org-1.uplink.eyeo.it"
+    - &STAGING_RUNNER "eyeo_cms_web_server_staging-donate-adblockplus-org-2.uplink.eyeo.it"
     - &PRODUCTION_RUNNER "eyeo_cms_web_server_donate.adblockplus.org"
 
 # https://docs.gitlab.com/ee/ci/yaml/#stages
