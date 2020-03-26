@@ -232,7 +232,7 @@ function PaymentForm(currencies)
       amount = isValidAmount(
         checked.value,
         type,
-        currencies[paymentCurrency.value][type].minimum
+        currencies[paymentCurrency.value]
       ) ? checked.value : checked.placeholder;
     }
 
