@@ -1,5 +1,5 @@
 RewriteEngine on
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^DE$
-RewriteRule ^js/payment/config/default.js js/payment/conf/de.js [L]
+RewriteRule ^js/payment/config/default.js js/payment/conf/de.js
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(UK|US)$
-RewriteRule ^js/payment/config/default.js js/payment/conf/uk.js [L]
+RewriteRule ^js/payment/config/default.js js/payment/conf/uk.js
