@@ -1,6 +1,9 @@
 /* global _*/
 (function(root, doc, _){
 
+var siteURL = document.documentElement
+  .getAttribute("data-siteurl") || "https://adblockplus.org";
+
 /**
  * PayPal payment provider
  * @global
@@ -44,14 +47,12 @@ root.paypalProvider = {
       return LOCALES[lang] || lang.toUpperCase();
     }
 
-    var siteURL = doc.documentElement.getAttribute("data-siteurl");
-
     var submission = {
       charset: "utf-8",
       business: "till@adblockplus.org",
       item_name: payment.item,
       image_url: payment.image || siteURL + "/img/adblock-plus-paypal.png",
-      return: payment.successURL || "https://adblockplus.org/payment-thank-you",
+      return: payment.successURL || siteURL + "/payment-thank-you",
       cancel_return: payment.cancelURL || root.location.href,
       no_note: 1,
       currency_code: payment.currency,
