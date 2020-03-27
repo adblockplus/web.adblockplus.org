@@ -26,7 +26,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       fontFamily:
         '-apple-system, BlinkMacSystemFont, system-ui, sans-serif',
       fontSmoothing: 'antialiased',
-      fontSize: '16px',
+      fontSize: '15px',
       '::placeholder': { color: '#aab7c4' }
     },
     invalid: {
