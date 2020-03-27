@@ -35,7 +35,7 @@ template=bare
 
     <header class="donation-header">
       <h2 class="donation-heading">
-        <span class="single-currency">{{ fair-amount-header-2[heading] Name a fair amount (in <span class="currency">USD</span>) }}</span>
+        <span class="single-currency">{{ fair-amount-header-1[heading] Name a fair amount (in <span class="currency">USD</span>) }}</span>
         <span class="multi-currency">{{ fair-amount-header-2[heading] Name a fair amount: }}</span>
       </h2>
       <select
@@ -170,11 +170,11 @@ template=bare
 <script id="payment-translations">
   window.paymentTranslations = {
     item: "{{ purchase-item-name[item being paid for] Adblock Plus contribution }}",
-    donate: "Donate",
+    donate: "{{ checkout-overlay-cta[button label] Donate }}",
     subscribe: "Subscribe",
     month: "month",
-    declined: "Your payment was declined.",
-    sorry: "Sorry, your payment could not be processed."
+    declined: "{{ stripe-declined Your payment was declined. }}",
+    sorry: "{{ stripe-sorry Sorry, your payment could not be processed. }}"
   };
 </script>
 
