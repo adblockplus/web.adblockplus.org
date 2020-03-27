@@ -15,6 +15,11 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     'USD': '$',
   };
 
+  var siteURL = document.documentElement
+    .getAttribute("data-siteurl") || "https://adblockplus.org";
+
+  var successURL = siteURL + "/payment-thank-you";
+
   var style = {
     base: {
       color: '#32325d',
@@ -62,6 +67,9 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
 
   function paymentModalPopup(data) {
     var box, button, cardStripeElement, email, error, token;
+
+    if (data.successURL)
+      successURL = data.successURL;
 
     function createModalForm() {
       modal.innerHTML = '' +
@@ -267,7 +275,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function stripePaymentConfirmed() {
-      window.location.href = 'https://adblockplus.org/thank-you';
+      window.location.href = successURL;
     }
 
     createModalForm();
