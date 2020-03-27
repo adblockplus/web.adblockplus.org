@@ -128,7 +128,10 @@ function PaymentForm(currencies)
   function onCustomFieldSelect(event)
   {
     if (event.target.type == "text")
+    {
       event.target.parentElement.querySelector('input[type="radio"]').click();
+      validateCustomAmount(event);
+    }
   }
 
   donationAmounts.addEventListener("focus", onCustomFieldSelect, true);
