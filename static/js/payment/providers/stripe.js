@@ -146,7 +146,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
 
       button.textContent = (data.type == subscription)
         ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
-        : (dictionary.pay + ' ' + price);
+        : (dictionary.donate + ' ' + price);
     }
 
     function enableButton() {
