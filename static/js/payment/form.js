@@ -240,7 +240,7 @@ function PaymentForm(currencies)
       lang: doc.documentElement.lang,
       type: type,
       currency: paymentCurrency.value,
-      amount: amount,
+      amount: parseFloat(amount),
     };
   };
 
