@@ -12,7 +12,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     'GBP': '£',
     'JPY': '¥',
     'NZD': 'NZ$',
-    'USD': '$',
+    'USD': '$'
   };
 
   var siteURL = document.documentElement
