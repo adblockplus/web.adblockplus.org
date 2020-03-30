@@ -137,17 +137,24 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         .addEventListener('click', hideModal);
     }
 
-    function payButtonText() {
-      var currencySign = currencySigns[data.currency];
+      function payButtonText() {
+        var currencySign = currencySigns[data.currency];
+        var pageLocale = document.documentElement.lang;
 
-      var price = (currencySign == '€')
-        ? data.amount + currencySign
-        : currencySign + data.amount;
+        var price = (currencySign == '€')
+            ? data.amount + currencySign
+            : currencySign + data.amount;
 
-      button.textContent = (data.type == subscription)
-        ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
-        : (dictionary.donate + ' ' + price);
-    }
+        if (pageLocale == 'ko' || pageLocale == 'tr') {
+          button.textContent = (data.type == subscription)
+            ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
+            : (price + ' ' + dictionary.donate);
+        } else {
+          button.textContent = (data.type == subscription)
+            ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
+            : (dictionary.donate + ' ' + price);
+        }
+      }
 
     function enableButton() {
       button.disabled = false;
