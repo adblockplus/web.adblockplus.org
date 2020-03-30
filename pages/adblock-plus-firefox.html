@@ -1,33 +1,8 @@
 title=Download Adblock Plus Firefox
 description=Download Adblock Plus for Firefox to block intrusive ads, including annoying pop-ups and video ads on Youtube. The Firefox ad blocker also speeds up page-loading times and fights off malvertising infections.
 template=minimal
-style=pages/adblock-plus-firefox.css
+style=pages/adblock-plus-landing.css
+browser_id=firefox
+install_link=https://eyeo.to/adblockplus/firefox_install/adblock-plus-firefox
 
-<main>
-  <div class="bg-grey-abstract">
-    <? include landing/firefox/other-browser ?>
-    <? include landing/firefox/hero ?>
-  </div>
-  <? include landing/firefox/facts ?>
-  <? include landing/firefox/special-features ?>
-  <? include landing/firefox/how-it-works ?>
-  <? include landing/firefox/supporting-websites ?>
-  <? include landing/firefox/download ?>
-</main>
-
-<script src="/js/vendor/bowser.js"></script>
-
-<script>
-  if (bowser.mobile || bowser.tablet)
-  {
-    document.body.classList.add("unsupported-device");
-
-    document
-      .querySelector(".info-box .close-button")
-      .addEventListener("click", function()
-      {
-        document.querySelector(".info-box")
-          .setAttribute("hidden", "");
-      });
-  }
-</script>
+<? include landing/index ?>

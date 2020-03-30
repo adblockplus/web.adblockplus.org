@@ -1,0 +1,52 @@
+<div id="hero" class="container">
+  <div class="section">
+    <div class="row reverse">
+      <div class="column one-half content text-center">
+        <img
+          id="hero-image-wide"
+          height="546"
+          width="547"
+          src="/img/adblock-plus-desktop-interface-acceptable-ads.svg"
+          alt="{{ "" | translate("hero-banner-alt", "message ") }}">
+        <img
+          id="hero-image-tall"
+          height="524"
+          width="304"
+          src="/img/adblock-plus-desktop-interface.svg"
+          alt="{{ "" | translate("hero-banner-alt", "message ") }}">
+      </div>
+      <div class="column one-half content">
+        <header>
+          <h1 class="hero-heading">
+            {{ "" | translate("hero-heading", "message") }}
+          </h1>
+          <p class="hero-subheading">
+            {{ "" | translate("hero-subheading", "message") }}
+          </p>
+        </header>
+        <div class="download">
+          <p>
+            {{ "" | translate("hero-paragraph-1", "message") }}
+          </p>
+          <p>
+            <small class="inherit">{{ "" | translate("hero-download-tos", "message") }}</small>
+          </p>
+          <p>
+            <a
+              class="button icon-button"
+              href={{install_link}}>
+              <img
+                src="/img/{{browser_id}}-logo.svg"
+                alt="{{ "" | translate("hero-browser-alt", "message") }}"
+                class="button-image">
+              <span class="button-text">{{ "" | translate("hero-download-label", "message") }}</span>
+            </a>
+          </p>
+          <p>
+            <a href="download" class="green">{{ "" | translate("hero-download-other-label", "message") }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
