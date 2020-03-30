@@ -196,7 +196,8 @@ body { padding-top: 0; }
   .payment-providers button
   {
     display: inline-block;
-    width: 150px;
+    min-width: 150px;
+    width: auto;
     margin-top: 0;
   }
 
