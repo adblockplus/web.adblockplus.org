@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^DE$
+RewriteRule default.js de.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(UK)$
+RewriteRule default.js uk.js
