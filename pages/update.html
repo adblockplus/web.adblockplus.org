@@ -159,22 +159,15 @@ template=bare
 
 </main>
 
-<!--
-  pay: "{{ stripe-pay Pay }}",
-  subscribe: "{{ stripe-subscribe Subscribe }}",
-  month: "{{ stripe-month month }}",
-  declined: "{{ stripe-declined Your payment was declined. }}",
-  sorry: "{{ stripe-sorry Sorry, your payment could not be processed. }}"
--->
-
 <script id="payment-translations">
   window.paymentTranslations = {
     item: "{{ purchase-item-name[item being paid for] Adblock Plus contribution }}",
     donate: "{{ checkout-overlay-cta[button label] Donate }}",
-    subscribe: "Subscribe",
-    month: "month",
+    subscribe: "{{ checkout-overlay-cta-2[button label] Subscribe }}",
+    month: "{{ checkout-overlay-monthly[button label] month }}",
     declined: "{{ stripe-declined Your payment was declined. }}",
-    sorry: "{{ stripe-sorry Sorry, your payment could not be processed. }}"
+    sorry: "{{ stripe-sorry Sorry, your payment could not be processed. }}",
+    securelyProcessed: "{{ securely-processed Securely processed by Stripe.com }}"
   };
 </script>
 

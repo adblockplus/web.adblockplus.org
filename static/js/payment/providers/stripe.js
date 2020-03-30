@@ -85,7 +85,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                 'class="product details">Adblock Plus</div>' +
             '</div>' +
             '<div class="subtitle details">' +
-            'Securely processed by Stripe.com</div>' +
+          dictionary.securelyProcessed + '</div>' +
           '</div>' +
           '<hr style="margin: 0;">' +
           '<div class="payment-details">' +
