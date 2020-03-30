@@ -1,17 +1,45 @@
-image: python:2
+---
 
-before_script:
-  - apt-get update -qq
-  - apt-get install -y -qq rpl rename
-  - pip install -q Markdown Jinja2 lxml crudini
-  - git clone https://gitlab.com/eyeo/websites/cms.git $HOME/cms
-  - git clone https://github.com/adblockplus/sitescripts $HOME/sitescripts
-  - git -C $HOME/cms checkout -b vcs_agnostic origin/vcs_agnostic
-  - export PYTHONPATH="$HOME/cms:$PYTHONPATH"
-  - export PYTHONPATH="$HOME/sitescripts:$PYTHONPATH"
+.pages:
+  variables: &pages
+    PAGES_IMAGE: "python:2"
+
+.staging:
+  variables: &staging
+    DOMAIN: "staging-donate-adblockplus-org-2.uplink.eyeo.it"
+
+.production:
+  variables: &production
+    DOMAIN: "donate.adblockplus.org"
+
+.common:
+  tags:
+    - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/eyeo-python2.7-cms:latest"
+    - &BUILD_RUNNER "docker"
+    - &STAGING_RUNNER "eyeo_cms_web_server_staging-donate-adblockplus-org-2.uplink.eyeo.it"
+    - &PRODUCTION_RUNNER "eyeo_cms_web_server_donate.adblockplus.org"
+
+# https://docs.gitlab.com/ee/ci/yaml/#stages
+stages:
+  - "build"
+  - "pages"
+  - "deploy_staging"
+  - "test"
 
 pages:
-  stage: deploy
+  stage: build
+  variables:
+    <<: *pages
+  image: $PAGES_IMAGE
+  before_script:
+    - apt-get update -qq
+    - apt-get install -y -qq rpl rename
+    - pip install -q Markdown Jinja2 lxml crudini
+    - git clone https://gitlab.com/eyeo/websites/cms.git $HOME/cms
+    - git clone https://github.com/adblockplus/sitescripts $HOME/sitescripts
+    - git -C $HOME/cms checkout -b vcs_agnostic origin/vcs_agnostic
+    - export PYTHONPATH="$HOME/cms:$PYTHONPATH"
+    - export PYTHONPATH="$HOME/sitescripts:$PYTHONPATH"
   script:
     - crudini --set settings.ini general siteurl "$CI_PAGES_URL"
     - python -m cms.bin.generate_static_pages --version public . public
@@ -33,3 +61,33 @@ tests:
     - cd tests/web.adblockplus.org
     - xvfb-run --server-args="-screen 0 1024x768x24" tox
   when: manual
+
+staging_build:
+  stage:
+    "build"
+  image:
+    *BUILD_IMAGE
+  tags:
+    - *BUILD_RUNNER
+  script:
+    - "python -m cms.bin.generate_static_pages $PWD build"
+  artifacts:
+    name:
+      "$CI_COMMIT_REF_SLUG"
+    paths:
+      - "build"
+
+deploy_staging:
+  stage:
+    "deploy_staging"
+  variables:
+    <<: *staging
+  tags:
+    - *STAGING_RUNNER
+  dependencies:
+    - "staging_build"
+  script:
+    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build/"
+  environment:
+    name: staging/$CI_COMMIT_REF_SLUG
+    url: http://$CI_COMMIT_REF_SLUG.$DOMAIN
