@@ -67,12 +67,17 @@ tests:
 staging_build:
   stage:
     "build"
+  variables:
+    <<: *staging
   image:
     *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
+  before_script:
+    - pip install -q crudini
   script:
-    - "python -m cms.bin.generate_static_pages $PWD build"
+    - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
+    - python -m cms.bin.generate_static_pages $PWD build
   artifacts:
     name:
       "$CI_COMMIT_REF_SLUG"

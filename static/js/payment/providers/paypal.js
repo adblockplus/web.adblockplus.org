@@ -20,7 +20,7 @@ root.paypalProvider = {
    * @param {Number} payment.amount - Amount to be paid for item
    * @param {String} payment.currency - 3 letter currency code supported by PayPal
    * @param {String} [payment.type=] - "subscirption" if recurring
-   * @param {String} [payment.image=https://adblockplus.org/img/paypal-logo.png] - Human readadble translated 150x150 company logo
+   * @param {String} [payment.image=https://adblockplus.org/img/adblock-plus-paypal.png] - Human readadble translated 150x150 company logo
    * @param {String} [payment.lang=doc.documentElement.lang] - 2 letter language code
    * @param {String} [payment.successURL=https://adblockplus.org/payment-thank-you] - URL to direct to after checkout success
    * @param {String} [payment.cancelURL=location.hrf] - URL to direct to after checkout cancelled
