@@ -106,12 +106,15 @@ function PaymentForm(currencies)
   paymentCurrency.addEventListener("change", updateAmounts);
 
   // uncheck donation amount when subscription amount is selected and vise versa
-  function onFieldsetChange (otherFieldset)
+  function onFieldsetChange (otherFieldset, event)
   {
     var otherFieldsetSelected = otherFieldset.querySelector("input:checked");
 
     if (otherFieldsetSelected)
+    {
       otherFieldsetSelected.checked = false;
+      validateCustomAmount(event);
+    }
   }
 
   donationAmounts.addEventListener(
