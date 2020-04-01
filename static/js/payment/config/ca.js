@@ -1,4 +1,4 @@
-window.updatePaymentConfig = {
+window.paymentConfig  = {
   CAD: {
     sign: "$",
     donation: {
