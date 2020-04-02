@@ -195,7 +195,7 @@ function PaymentForm(currencies)
     var selectedType = event.currentTarget.id.split("-")[0];
     var otherType = selectedType == "donation" ? "subscription" : "donation";
     var typeError = "minimum-" + selectedType + "-error";
-    var otherTypeError = "minimum-" + otherType + "=error";
+    var otherTypeError = "minimum-" + otherType + "-error";
     var minimumAmount = currency[selectedType].minimum;
 
     if (isValidAmount(amount, selectedType, currency))
