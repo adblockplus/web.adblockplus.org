@@ -1,3 +1,5 @@
+body { display: block; }
+
 @media (min-width: 830px)
 {
   html { background-color: #000; }
@@ -30,7 +32,7 @@ body { padding-top: 0; }
   {
     border-radius: 6px;
     margin-top: 1rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
@@ -216,4 +218,17 @@ body { padding-top: 0; }
 {
   color: #000;
   background-color: rgb(255, 187, 3);
+}
+
+.privacy-footer
+{
+  text-align: center;
+  margin: 1em 0;
+}
+
+.privacy-footer a { color: #000; }
+
+@media (min-width: 830px)
+{
+  .privacy-footer a { color: #fff; }
 }
