@@ -5,20 +5,25 @@
 function setupPaymentForm()
 {
   var form = new PaymentForm(paymentConfig);
+
   var siteURL = document.documentElement
     .getAttribute("data-siteurl") || "https://adblockplus.org";
+
+  var successURL = siteURL + "/update-payment-complete";
 
   form.addProviderListener("paypal", function()
   {
     var payment = form.toJSON();
     payment.item = paymentTranslations.item;
-    payment.successURL = siteURL + "/update-payment-complete";
+    payment.successURL = successURL;
     paypalProvider.submit(payment);
   });
 
   form.addProviderListener("stripe", function()
   {
-    stripeProvider.submit(form.toJSON());
+    var payment = form.toJSON();
+    payment.successURL = successURL;
+    stripeProvider.submit(payment);
   });
 }
 
