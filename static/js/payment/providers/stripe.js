@@ -69,8 +69,12 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   function paymentModalPopup(data) {
     var box, button, cardStripeElement, email, error, token;
 
-    if (data.successURL)
+    if (data.successURL) {
       successURL = data.successURL;
+
+      // don't submit successURL - not needed by server (client-side redirect)
+      delete data.successURL;
+    }
 
     function createModalForm() {
       modal.innerHTML = '' +
