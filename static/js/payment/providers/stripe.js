@@ -49,7 +49,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   document.addEventListener('keyup', function(keyupEvent) {
     if (keyupEvent.defaultPrevented) return;
 
-    var key = event.key || event.keyCode;
+    var key = keyupEvent.key || keyupEvent.keyCode;
 
     ((key == 'Escape') || (key == 'Esc') || (key == 27)) &&
       hideModal();
