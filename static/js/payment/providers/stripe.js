@@ -72,7 +72,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     if (data.successURL) {
       successURL = data.successURL;
 
-      // don't submit successURL - not needed by server (client-side redirect)
+      // don't submit successURL - client-side redirect
       delete data.successURL;
     }
 
