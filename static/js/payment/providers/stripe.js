@@ -24,9 +24,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
   };
 
-  var stripe = Stripe(publishableKey, {
-    locale: (document.documentElement.lang || 'en')
-  });
+  var stripe;
 
   var modal = document.createElement('div');
 
@@ -63,6 +61,10 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       // don't submit successURL - client-side redirect
       delete data.successURL;
     }
+
+    stripe = Stripe(publishableKey, {
+      locale: (document.documentElement.lang || 'en')
+    });
 
     function createModalForm() {
       modal.innerHTML = '' +
