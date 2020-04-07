@@ -11,6 +11,8 @@ function setupPaymentForm()
 
   var successURL = siteURL + "/update-payment-complete";
 
+  var stripeLoaded = false;
+
   form.addProviderListener("paypal", function()
   {
     var payment = form.toJSON();
@@ -19,12 +21,36 @@ function setupPaymentForm()
     paypalProvider.submit(payment);
   });
 
-  form.addProviderListener("stripe", function()
+  function onStripeSubmit()
   {
     var payment = form.toJSON();
     payment.currencySign = paymentConfig[payment.currency.toUpperCase()].sign;
     payment.successURL = successURL;
     stripeProvider.submit(payment);
+  }
+
+  form.addProviderListener("stripe", function()
+  {
+    if (!stripeLoaded)
+    {
+      var button = document.querySelector(".stripe-button");
+      var buttonText = button.textContent;
+      button.disabled = true;
+      button.innerHTML = "<div class='loader'>Loading...</div>";
+      var script = document.createElement("script");
+      script.onload = function() {
+        stripeLoaded = true;
+        onStripeSubmit();
+        button.disabled = false;
+        button.textContent = buttonText;
+      };
+      script.src = "https://js.stripe.com/v3/";
+      document.head.appendChild(script);
+    }
+    else
+    {
+      onStripeSubmit();
+    }
   });
 }
 
