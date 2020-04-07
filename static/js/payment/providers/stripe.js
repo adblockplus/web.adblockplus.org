@@ -4,18 +4,6 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   var donation = 'donation';
   var subscription = 'subscription';
 
-  var currencySigns = {
-    'AUD': 'AU$',
-    'CAD': 'CA$',
-    'CHF': 'CHF ',
-    'EUR': '€',
-    'GBP': '£',
-    'JPY': '¥',
-    'NZD': 'NZ$',
-    'USD': '$',
-    'RUB': '₽'
-  };
-
   var siteURL = document.documentElement
     .getAttribute("data-siteurl") || "https://adblockplus.org";
 
@@ -143,8 +131,10 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
       function payButtonText() {
-        var currencySign = currencySigns[data.currency];
         var pageLocale = document.documentElement.lang;
+
+        var currencySign =
+          data.paymentConfig[data.currency.toUpperCase()].sign;
 
         var price = (currencySign == '€')
             ? data.amount + currencySign
@@ -154,6 +144,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
           button.textContent = (data.type == subscription)
             ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
             : (price + ' ' + dictionary.donate);
+
         } else {
           button.textContent = (data.type == subscription)
             ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)

@@ -22,6 +22,7 @@ function setupPaymentForm()
   form.addProviderListener("stripe", function()
   {
     var payment = form.toJSON();
+    payment.paymentConfig = paymentConfig;
     payment.successURL = successURL;
     stripeProvider.submit(payment);
   });
