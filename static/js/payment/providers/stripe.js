@@ -134,7 +134,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         var pageLocale = document.documentElement.lang;
 
         var currencySign =
-          data.paymentConfig[data.currency.toUpperCase()].sign;
+          data.config[data.currency.toUpperCase()].sign;
 
         var price = (currencySign == '€')
             ? data.amount + currencySign
