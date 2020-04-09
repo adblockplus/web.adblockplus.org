@@ -34,7 +34,7 @@ function setupPaymentForm()
     if (!stripeLoaded)
     {
       var button = document.querySelector(".stripe-button");
-      var buttonText = button.textContent;
+      var buttonContent = button.innerHTML;
       button.disabled = true;
       button.innerHTML = "<div class='loader'>Loading...</div>";
       var script = document.createElement("script");
@@ -42,7 +42,7 @@ function setupPaymentForm()
         stripeLoaded = true;
         onStripeSubmit();
         button.disabled = false;
-        button.textContent = buttonText;
+        button.innerHTML = buttonContent;
       };
       script.src = "https://js.stripe.com/v3/";
       document.head.appendChild(script);

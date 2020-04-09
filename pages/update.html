@@ -123,7 +123,10 @@ template=bare
         {{ pay-with-lead-1[heading] Pay with: }}
       </span>
       <button name="stripe-provider" class="stripe-button">
-        {{ stripe-label[button label] Credit card }}
+        <img class="stripe-button-lock" src="/img/lock.png">
+        <span class="stripe-button-text">
+          {{ stripe-label[button label] Credit card }}
+        </span>
       </button>
       <button name="paypal-provider" class="paypal-button">
         {{ paypal-label[button label] PayPal }}
@@ -183,10 +186,6 @@ template=bare
 <script src="/js/pages/update.js"></script>
 
 <script>
-  /* initStripe('__STRIPE_PUBLIC_KEY__',
-    '__STRIPE_FORM_PROCESSOR__',
-    paymentTranslations); */
-
   window.stripeProvider =
     initStripeProvider('pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN',
       'https://staging-donate-adblockplus-org-1.uplink.eyeo.it/',
