@@ -236,6 +236,12 @@
   bottom: 1em;
 }
 
+@media screen and (max-width: 544px) {
+  .pbs {
+    display: none;
+  }
+}
+
 @keyframes Shake {
 	0% {
 		transform: translateX(0);
