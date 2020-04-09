@@ -131,10 +131,10 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
       function payButtonText() {
-        var pageLocale = document.documentElement.lang;
-
         var currencySign =
           data.config[data.currency.toUpperCase()].sign;
+
+        var pageLocale = document.documentElement.lang;
 
         var price = (currencySign == '€')
             ? data.amount + currencySign
