@@ -130,27 +130,27 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         .addEventListener('click', hideModal);
     }
 
-      function payButtonText() {
-        var currencySign =
-          data.config[data.currency.toUpperCase()].sign;
+    function payButtonText() {
+      var currencySign =
+        data.config[data.currency.toUpperCase()].sign;
 
-        var pageLocale = document.documentElement.lang;
+      var pageLocale = document.documentElement.lang;
 
-        var price = (currencySign == '€')
-            ? data.amount + currencySign
-            : currencySign + data.amount;
+      var price = (currencySign == '€')
+          ? data.amount + currencySign
+          : currencySign + data.amount;
 
-        if (pageLocale == 'ko' || pageLocale == 'tr') {
-          button.textContent = (data.type == subscription)
-            ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
-            : (price + ' ' + dictionary.donate);
+      if (pageLocale == 'ko' || pageLocale == 'tr') {
+        button.textContent = (data.type == subscription)
+          ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
+          : (price + ' ' + dictionary.donate);
 
-        } else {
-          button.textContent = (data.type == subscription)
-            ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
-            : (dictionary.donate + ' ' + price);
-        }
+      } else {
+        button.textContent = (data.type == subscription)
+          ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
+          : (dictionary.donate + ' ' + price);
       }
+    }
 
     function enableButton() {
       button.disabled = false;
