@@ -210,9 +210,22 @@ body { padding-top: 0; }
 
 .stripe-button
 {
+  display: inline-block;
   color: #fff;
   background-color: #2888F9;
   overflow: hidden;
+}
+
+.stripe-button-lock,
+.stripe-button-text
+{
+  vertical-align: middle;
+}
+
+.stripe-button-lock
+{
+  height: 16px;
+  padding-right: 0.2em;
 }
 
 .paypal-button

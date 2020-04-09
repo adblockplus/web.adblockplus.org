@@ -270,9 +270,11 @@ function PaymentForm(currencies)
   {
     event.preventDefault();
 
-    if (!event.target.name) return;
+    var buttonName = event.target.name || event.target.parentNode.name;
 
-    var provider = event.target.name.replace("-provider", "");
+    if (!buttonName) return;
+
+    var provider = buttonName.replace("-provider", "");
 
     var handlers = providerHandlers[provider];
 
