@@ -131,8 +131,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function payButtonText() {
-      var currencySign =
-        data.config[data.currency.toUpperCase()].sign;
+      var currencySign = data.currencySign;
 
       var pageLocale = document.documentElement.lang;
 

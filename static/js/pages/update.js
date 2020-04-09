@@ -22,7 +22,7 @@ function setupPaymentForm()
   form.addProviderListener("stripe", function()
   {
     var payment = form.toJSON();
-    payment.config = paymentConfig;
+    payment.currencySign = paymentConfig[payment.currency.toUpperCase()].sign;
     payment.successURL = successURL;
     stripeProvider.submit(payment);
   });
