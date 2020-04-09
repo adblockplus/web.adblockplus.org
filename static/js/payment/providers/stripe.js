@@ -131,13 +131,11 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function payButtonText() {
-      var currencySign = data.currencySign;
-
       var pageLocale = document.documentElement.lang;
 
-      var price = (currencySign == '€')
-          ? data.amount + currencySign
-          : currencySign + data.amount;
+      var price = (data.currencySign == '€')
+          ? data.amount + data.currencySign
+          : data.currencySign + data.amount;
 
       if (pageLocale == 'ko' || pageLocale == 'tr') {
         button.textContent = (data.type == subscription)
