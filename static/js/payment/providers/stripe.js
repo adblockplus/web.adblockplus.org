@@ -151,6 +151,10 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       }
     }
 
+    function errorText(message) {
+      error.textContent = message || '';
+    }
+
     function enableButton() {
       button.disabled = false;
     }
@@ -167,7 +171,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       .then(function(result) {
         if (result.error) {
           result.error.message &&
-            (error.textContent = result.error.message);
+            errorText(result.error.message);
 
           enableButton();
 
@@ -219,12 +223,12 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                  stripePaymentConfirmed();
 
                } else if (this.status == 402) {
-                 error.textContent = dictionary.declined;
+                 errorText(dictionary.declined);
 
                  enableButton();
 
                } else {
-                 error.textContent = dictionary.sorry;
+                 errorText(dictionary.sorry);
                }
             }
           }
@@ -257,6 +261,15 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       }
     }
 
+    function cardBrand(brand) {
+      if (brand == 'alipay' ||
+        brand == 'diners' ||
+        brand == 'discover' ||
+        brand == 'jcb') {
+          errorText(dictionary.notSupported);
+      }
+    }
+
     function createElements() {
       cardStripeElement = stripe.elements()
         .create('card', {
@@ -266,10 +279,11 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       cardStripeElement.mount('#card-element');
 
       cardStripeElement.addEventListener('change', function(changeEvent) {
-        error.textContent =
-          (changeEvent.error && changeEvent.error.message)
-            ? changeEvent.error.message
-            : (enableButton(), '');
+        errorText((changeEvent.error && changeEvent.error.message)
+          ? changeEvent.error.message
+          : enableButton());
+
+        cardBrand(changeEvent.brand);
       });
 
       document.getElementById('payment-form')
