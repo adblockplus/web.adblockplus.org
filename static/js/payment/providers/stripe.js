@@ -262,10 +262,10 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function cardBrand(brand) {
-      if (brand == 'alipay' ||
-        brand == 'diners' ||
+      if (brand == 'diners' ||
         brand == 'discover' ||
-        brand == 'jcb') {
+        brand == 'jcb' ||
+        brand == 'unionpay') {
           errorText(dictionary.notSupported);
       }
     }
