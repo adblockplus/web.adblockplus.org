@@ -40,6 +40,8 @@ tests:
 staging_build:
   stage:
     "build"
+  except:
+    - "master"
   variables:
     <<: *staging
   image:
@@ -60,6 +62,8 @@ staging_build:
 deploy_staging:
   stage:
     "deploy_staging"
+  except:
+    - "master"
   variables:
     <<: *staging
   tags:
