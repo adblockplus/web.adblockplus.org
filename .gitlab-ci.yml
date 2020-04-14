@@ -7,10 +7,14 @@
 .staging:
   variables: &staging
     DOMAIN: "staging-new-adblockplus-org-1.uplink.eyeo.it"
+    STRIPE_PUBLISHABLE_KEY: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN"
+    DONATION_SERVER_BASE_URL: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
 
 .production:
   variables: &production
     DOMAIN: "new.adblockplus.org"
+    STRIPE_PUBLISHABLE_KEY: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs"
+    DONATION_SERVER_BASE_URL: "https://new-integration.adblockplus.org/"
 
 .common:
   tags:
@@ -25,6 +29,7 @@ stages:
   - "build"
   - "pages"
   - "deploy_staging"
+  - "build_production"
   - "deploy_production"
   - "test"
 
@@ -98,6 +103,28 @@ deploy_staging:
   environment:
     name: staging/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$DOMAIN
+
+production_build:
+  stage:
+    "build_production"
+  variables:
+    <<: *production
+  image:
+    *BUILD_IMAGE
+  tags:
+    - *BUILD_RUNNER
+  before_script:
+    - pip install -q crudini
+  script:
+    - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
+    - python -m cms.bin.generate_static_pages $PWD build
+  artifacts:
+    name:
+      "$CI_COMMIT_REF_SLUG"
+    paths:
+      - "build"
+  only:
+    - "master"
 
 deploy_production1:
   stage:
