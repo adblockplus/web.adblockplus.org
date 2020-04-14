@@ -160,26 +160,31 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function confirmDonation() {
-      stripe.confirmCardPayment(token, {
-        payment_method: {
-          card: cardStripeElement,
-          billing_details: {
-            email: email.value
+      if (token) {
+        stripe.confirmCardPayment(token, {
+          payment_method: {
+            card: cardStripeElement,
+            billing_details: {
+              email: email.value
+            }
           }
-        }
-      })
-      .then(function(result) {
-        if (result.error) {
-          result.error.message &&
-            errorText(result.error.message);
+        }).then(onDonationComplete);
+      } else {
+        onDonationComplete({error: {message: dictionary.sorry}});
+      }
+    }
 
-          enableButton();
+    function onDonationComplete(result) {
+      if (result.error) {
+        result.error.message &&
+          errorText(result.error.message);
 
-        } else if (result.paymentIntent &&
-          (result.paymentIntent.status == 'succeeded')) {
+        enableButton();
+
+      } else if (result.paymentIntent &&
+        (result.paymentIntent.status == 'succeeded')) {
           stripePaymentConfirmed();
-        }
-      });
+      }
     }
 
     function createDonation(data) {
@@ -253,7 +258,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
 
       button.disabled = true;
 
-      if (token) {
+      if (data.type == donation) {
         confirmDonation();
 
       } else if (data.type == subscription) {
