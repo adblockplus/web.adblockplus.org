@@ -1,9 +1,5 @@
 ---
 
-.pages:
-  variables: &pages
-    PAGES_IMAGE: "python:2"
-
 .staging:
   variables: &staging
     DOMAIN: "staging-new-adblockplus-org-1.uplink.eyeo.it"
@@ -27,38 +23,10 @@
 # https://docs.gitlab.com/ee/ci/yaml/#stages
 stages:
   - "build"
-  - "pages"
   - "deploy_staging"
   - "build_production"
   - "deploy_production"
   - "test"
-
-pages:
-  stage: build
-  variables:
-    <<: *pages
-  image: $PAGES_IMAGE
-  before_script:
-    - apt-get update -qq
-    - apt-get install -y -qq rpl rename
-    - pip install -q Markdown Jinja2 lxml crudini
-    - git clone https://gitlab.com/eyeo/websites/cms.git $HOME/cms
-    - git clone https://github.com/adblockplus/sitescripts $HOME/sitescripts
-    - git -C $HOME/cms checkout -b vcs_agnostic origin/vcs_agnostic
-    - export PYTHONPATH="$HOME/cms:$PYTHONPATH"
-    - export PYTHONPATH="$HOME/sitescripts:$PYTHONPATH"
-  script:
-    - crudini --set settings.ini general siteurl "$CI_PAGES_URL"
-    - python -m cms.bin.generate_static_pages --version public . public
-    - rpl -Rq 'src="/' "src=\"https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
-    - rpl -Rq 'srcset="/' "srcset=\"https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
-    - rpl -Rq 'href="/' "href=\"https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
-    - rpl -Rq 'url(/' "url(https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
-    - rpl -Rq 'url("/' "url(\"https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/" public/
-    - rename 's/index/index.html/' public/**/index
-  artifacts:
-    paths:
-      - public
 
 tests:
   stage: test
