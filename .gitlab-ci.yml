@@ -116,7 +116,7 @@ production_build:
   before_script:
     - pip install -q crudini
   script:
-    - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
+    - crudini --set settings.ini general siteurl "https://$DOMAIN"
     - python -m cms.bin.generate_static_pages $PWD build
   artifacts:
     name:
