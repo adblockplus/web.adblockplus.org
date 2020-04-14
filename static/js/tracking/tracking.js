@@ -1,6 +1,3 @@
-/**
- * Caution: This file exists for backwards compatibility during infrastructure change. It's successor is/will be /js/tracking/eea.js
- */
 (function(){
 
   var eyeo = window.eyeo = window.eyeo || {};

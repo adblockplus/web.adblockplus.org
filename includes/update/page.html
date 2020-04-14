@@ -1,0 +1,188 @@
+<head>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/css/update.css">
+  <link rel="stylesheet" href="/css/stripe-modal.css">
+</head>
+
+<main class="update-container container content">
+
+  <div class="update-header clearfix">
+    <img
+      alt=""
+      height="130"
+      width="130"
+      class="update-header-image"
+      src="/img/adblock-plus-shield-logo.png"
+      srcset="/img/adblock-plus-shield-logo-2x.png 2x">
+    <h1 class="update-header-heading">
+      {{ update-heading-1[heading] Adblock Plus has been updated! <span class="small">(version 3.8.4) </span> }}
+    </h1>
+    <p class="update-header-lead">
+      {{ update-lead-1 Recent Adblock Plus releases include many new features and improvements. Adblock Plus is free, community-supported software, and that <strong>wouldn't be possible without your continued support</strong>. }}
+    </p>
+  </div>
+
+  <p>
+    {{ update-lead-2 We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. We devote a lot of time and resources into developing and securing the best online experience for our users. Please donate what you think is a fair contribution to the Adblock Plus project and our attempts to keep the ad-blocking community alive. <strong>Every donation is appreciated!</strong> }}
+  </p>
+
+  <form>
+
+    <header class="donation-header">
+      <h2 class="donation-heading">
+        <span class="single-currency">{{ fair-amount-header-1[heading] Name a fair amount (in <span class="currency">USD</span>) }}</span>
+        <span class="multi-currency">{{ fair-amount-header-2[heading] Name a fair amount: }}</span>
+      </h2>
+      <select
+        id="payment-currencies"
+        class="payment-currencies"
+        name="payment-currency">
+      </select>
+    </header>
+
+    <script id="payment-currency-options" type="text/html">
+      <% _.each (currencies, function (currency, name) {  %>
+        <option value="<%- name %>"><%- name %></option>
+      <% }) %>
+    </script>
+
+    <div class="payment-types">
+
+      <fieldset class="payment-type">
+        <legend>
+          {{ one-time-legened-1[heading] Make a <strong>one-time</strong> donation: }}
+        </legend>
+        <div id="donation-amounts"></div>
+      </fieldset>
+
+      <hr class="payment-divide">
+
+      <fieldset class="subscription-payment-type payment-type">
+        <legend>
+          {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
+        </legend>
+        <div id="subscription-amounts"></div>
+      </fieldset>
+
+    </div>
+
+    <script id="preset-payment-amounts" type="text/html">
+      <% _.each (amounts, function(amount, index) { %>
+        <% if (index == 0) { %>
+          <div class="payment-amounts">
+        <% } %>
+        <% if (index % 3 == 0) { %>
+          </div>
+          <div class="payment-amounts">
+        <% } %>
+            <label class="payment-amount">
+              <input
+                type="radio"
+                name="preset-<%- type %>-amount"
+                value="<%- amount %>"
+                <% if (type == "donation" && index == 3) { %>
+                checked
+                <% } %>>
+              <%- sign %><%- amount %>
+            </label>
+      <% }) %>
+    </script>
+
+    <script id="custom-payment-amount" type="text/html">
+        <div class="custom-payment-amount payment-amount">
+          <input
+            type="radio"
+            name="preset-<%- type %>-amount"
+            value="custom">
+          <%- sign %>
+          <input
+            type="text"
+            size="4"
+            inputmode="numeric"
+            spellcheck="false"
+            name="custom-<%- type %>-amount"
+            placeholder="<%- placeholder %>">
+        </div>
+      </div>
+    </script>
+
+    <p class="alert minimum-amount-warning minimum-donation-warning">
+      {{ min-donation-warning[notice] Oops! To help cover fees, the minimum one-time donation amount is <span class="minimum-amount">$5</span>. }}
+    </p>
+
+    <p class="alert minimum-amount-warning minimum-subscription-warning">
+      {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum monthly donation amount is <span class="minimum-amount">$1.99</span>. }}
+    </p>
+
+    <div id="payment-providers" class="payment-providers">
+      <span class="payment-providers-lead">
+        {{ pay-with-lead-1[heading] Pay with: }}
+      </span>
+      <button name="stripe-provider" class="stripe-button">
+        <img class="stripe-button-lock" src="/img/lock.png" alt="">
+        <span class="stripe-button-text">
+          {{ stripe-label[button label] Credit card }}
+        </span>
+      </button>
+      <button name="paypal-provider" class="paypal-button">
+        {{ paypal-label[button label] PayPal }}
+      </button>
+    </div>
+
+  </form>
+
+  <h2>
+    {{ whats-new-header-1 What’s new? }}
+  </h2>
+  <p>
+    {{ whats-new-lead-1 Here is an overview of some improvements and new features. More changes coming soon! }}
+  </p>
+  <ul>
+    <li>
+      {{ whats-new-list-1 <strong>Increased Central Processing Unit (CPU) performance.</strong> Laptop users will notice better CPU efficiency/longer battery life when browsing the web with ABP. }}
+    </li>
+    <li>
+      {{ whats-new-list-2 <strong>Whitelisting on individual pages.</strong> You can now support even more of your favorite creators by whitelisting individual webpages in addition to entire domains. }}
+    </li>
+    <li>
+      {{ whats-new-list-3 <strong>Developer tools panel available in 24 languages.</strong> We added 23 additional supported languages, making the developer tools panel accessible to more users than ever. }}
+    </li>
+    <li>
+      {{ whats-new-list-4 <strong>Custom filters table.</strong> By popular demand, we brought back the Firefox-based filters table so you can easily manage all of your custom filters in one place. }}
+    </li>
+    <li>
+      {{ whats-new-list-5 <strong>Expanded our support channels.</strong> Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOnN1cHBvcnRAYWRibG9ja3BsdXMub3Jn"}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
+    </li>
+  </ul>
+
+</main>
+
+<footer class="privacy-footer">
+  <a href="https://adblockplus.org/privacy">{{ privacy-policy[footer link] Privacy Policy }}</a>
+</footer>
+
+<script id="payment-translations">
+  window.paymentTranslations = {
+    item: "{{ purchase-item-name[item being paid for] Adblock Plus contribution }}",
+    donate: "{{ checkout-overlay-cta[button label] Donate }}",
+    subscribe: "{{ checkout-overlay-cta-2[button label] Subscribe }}",
+    month: "{{ checkout-overlay-monthly[button label] month }}",
+    declined: "{{ stripe-declined Your payment was declined. }}",
+    sorry: "{{ stripe-sorry Sorry, your payment could not be processed. }}",
+    securelyProcessed: "{{ securely-processed Securely processed by Stripe.com }}",
+    notSupported: "{{ not-supported Sorry, this card type is not accepted currently. }}",
+    emailAddress: "{{ email-input Email }}"
+  };
+</script>
+
+<script src="/js/address-masking.js"></script>
+<script src="/js/lodash.custom.js"></script>
+<script src="/js/payment/config/default.js"></script>
+<script src="/js/payment/form.js"></script>
+<script src="/js/payment/providers/paypal.js"></script>
+<script src="/js/payment/providers/stripe.js"></script>
+<script src="/js/pages/update.js"></script>
+
+<script>
+<? include init-stripe-provider ?>
+</script>

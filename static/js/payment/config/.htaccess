@@ -1,0 +1,21 @@
+RewriteEngine on
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+RewriteRule ^default.js gb.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteRule ^default.js us.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^DE$
+RewriteRule ^default.js de.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$
+RewriteRule ^default.js ch.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$
+RewriteRule ^default.js au.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$
+RewriteRule ^default.js ca.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^NZ$
+RewriteRule ^default.js nz.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^RU$
+RewriteRule ^default.js ru.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$
+RewriteRule ^default.js jp.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
+RewriteRule ^default.js eu.js

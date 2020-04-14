@@ -1,0 +1,331 @@
+@media (min-width: 830px)
+{
+  html { background-color: #000; }
+}
+
+body
+{
+  display: block;
+  padding-top: 0;
+}
+
+@media (min-width: 576px)
+{
+  .content h1 { font-size: 27px; }
+
+  .content h2
+  {
+    margin-top: 1.5rem;
+    font-size: 24px;
+  }
+}
+
+.update-container
+{
+  width: 830px;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  background-color: #FFF;
+}
+
+@media (min-width: 830px)
+{
+  .update-container
+  {
+    border-radius: 6px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.update-header
+{
+  position: relative;
+  /* Must be at-least as tall as the image within to space properly */
+  min-height: 130px;
+}
+
+.update-header-image
+{
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px)
+{
+  .update-header-image { position: absolute; }
+
+  [dir="ltr"] .update-header-image { left: 0; }
+
+  [dir="rtl"] .update-header-image { right: 0; }
+}
+
+@media (min-width: 576px)
+{
+  [dir="ltr"] .update-header-heading,
+  [dir="ltr"] .update-header-lead { margin-left: 150px; }
+
+  [dir="rtl"] .update-header-heading,
+  [dir="rtl"] .update-header-lead { margin-right: 150px; }
+
+  .content .update-header-heading { margin-top: 0; }
+}
+
+.content .update-header-heading small { font-weight: normal; }
+
+.content .update-header-lead { margin-bottom: 0; }
+
+.donation-header { margin: 1.5rem 0 0.5rem; }
+
+.donation-heading
+{
+  display: inline;
+  font-size: 20px;
+}
+
+/* Show/hide donation heading text based on currencies loaded */
+.payment-currencies,
+.donation-heading .single-currency,
+.donation-heading .multi-currency { display: none; }
+
+.has-single-currency .donation-heading .single-currency { display: block; }
+
+.has-multi-currency .payment-currencies,
+.has-multi-currency .donation-heading .multi-currency { display: inline; }
+
+.payment-currencies
+{
+  padding: 0;
+  line-height: 1;
+}
+
+@media (min-width: 576px)
+{
+  .payment-types { display: flex; }
+}
+
+.payment-type legend { margin: 1rem 0 0.5rem 0; }
+
+.payment-type input[type=radio] { margin-top: 3px; }
+
+[dir="ltr"] .payment-type input[type=radio] { margin-right: 0.1rem; }
+
+[dir="rtl"] .payment-type input[type=radio] { margin-left: 0.1rem; }
+
+.subscription-payment-type { display: none; }
+
+.has-subscriptions .subscription-payment-type { display: block; }
+
+/* Negating first and last padding below */
+.payment-amounts { margin: 0 -0.5rem; }
+
+.payment-amount,
+.custom-payment-amount
+{
+  display: inline-block;
+  margin: 0.1rem 0.5rem;
+}
+
+.custom-payment-amount { position: relative; }
+
+.payment-divide
+{
+  display: none;
+  border-color: rgba(232, 232, 232, 0.667);
+  margin: 1rem 0;
+}
+
+@media (min-width: 576px)
+{
+  .payment-divide
+  {
+    height: 60px;
+    width: 2px;
+    margin: 1.5rem 3rem 0 3rem;
+    padding: 0;
+  }
+}
+
+.has-subscriptions .payment-divide { display: block; }
+
+.custom-payment-amount input[type="text"]
+{
+  padding: 0;
+  line-height: 1;
+}
+
+.minimum-amount-warning { display: none; }
+
+.minimum-donation-error .minimum-donation-warning { display: block; }
+
+.minimum-subscription-error .minimum-subscription-warning { display: block; }
+
+.payment-providers { margin-top: 1.5rem; }
+
+.payment-providers-lead
+{
+  display: block;
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (min-width: 576px)
+{
+  .payment-providers { display: flex; }
+
+  [dir="ltr"] .payment-providers-lead { margin-right: 1rem; }
+
+  [dir="rtl"] .payment-providers-lead { margin-left: 1rem; }
+}
+
+.payment-providers button
+{
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  line-height: 32px;
+  text-align: center;
+  border: 0;
+  border-radius: 3.5px;
+  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.2);
+}
+
+.payment-providers button[disabled] { filter: grayscale(100); }
+
+@media (min-width: 576px)
+{
+  .payment-providers button
+  {
+    display: inline-block;
+    min-width: 150px;
+    width: auto;
+    margin-top: 0;
+  }
+
+  [dir="ltr"] .payment-providers button { margin-right: 1rem; }
+
+  [dir="rtl"] .payment-providers button { margin-left: 1rem; }
+}
+
+.stripe-button
+{
+  display: inline-block;
+  color: #fff;
+  background-color: #2888F9;
+  overflow: hidden;
+}
+
+.stripe-button-lock,
+.stripe-button-text
+{
+  vertical-align: middle;
+}
+
+.stripe-button-lock
+{
+  height: 16px;
+  padding-right: 0.2em;
+}
+
+[dir="rtl"] .stripe-button-lock
+{
+  padding-right: 0;
+  padding-left: 0.2em;
+}
+
+.paypal-button
+{
+  color: #000;
+  background-color: rgb(255, 187, 3);
+}
+
+.privacy-footer
+{
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* css-loaders
+ * @link https://github.com/lukehaas/css-loaders
+ * @copyright Copyright (c) 2014 Luke Haas
+ * @license MIT
+ */
+.loader {
+  font-size: 10px;
+  margin: 0 auto;
+  text-indent: -9999em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.loader::before {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+
+.loader::after {
+  background: #2888F9;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* end of css-loaders */
+
+.privacy-footer a { color: #000; }
+
+@media (min-width: 830px)
+{
+  .privacy-footer a { color: #fff; }
+}
