@@ -9,8 +9,10 @@
 .production:
   variables: &production
     DOMAIN: "new.adblockplus.org"
-    STRIPE_PUBLISHABLE_KEY: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs"
-    DONATION_SERVER_BASE_URL: "https://new-integration.adblockplus.org/"
+    STRIPE_PUBLISHABLE_KEY: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN"
+    DONATION_SERVER_BASE_URL: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
+#    STRIPE_PUBLISHABLE_KEY: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs"
+#    DONATION_SERVER_BASE_URL: "https://new-integration.adblockplus.org/"
 
 .common:
   tags:
