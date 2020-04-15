@@ -198,7 +198,8 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
             billing_details: {
               email: email.value
             }
-          }
+          },
+          receipt_email: email.value
         }).then(onDonationComplete);
       } else {
         createDonation(confirmDonation);
