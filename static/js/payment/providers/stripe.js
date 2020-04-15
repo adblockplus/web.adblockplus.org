@@ -96,7 +96,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                       '<span class="form-label spacer"></span>' +
                       '<div class="StripeElement">' +
                         '<input type="email" id="email" class="email" ' +
-                          'size="26" spellcheck="false" placeholder="Email" ' +
+                          'size="26" spellcheck="false" placeholder="' + dictionary.emailAddress +'" ' +
                           'autocomplete="email" autocorrect="no" ' +
                           'autocapitalize="no">' +
                       '</div>' +
