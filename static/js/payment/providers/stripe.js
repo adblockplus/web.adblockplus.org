@@ -52,8 +52,12 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     modal.classList.remove('show-modal');
   }
 
+  var paymentData;
+
   function paymentModalPopup(data) {
     var box, button, cardStripeElement, email, error, token;
+
+    paymentData = data;
 
     if (data.successURL) {
       successURL = data.successURL;
@@ -159,6 +163,33 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       button.disabled = false;
     }
 
+    var donationRequest;
+    var donationTimeout = 4000;
+
+    function createDonation(onSuccess) {
+      if (donationRequest) {
+        donationRequest.abort();
+      }
+
+      donationRequest = new XMLHttpRequest();
+
+      donationRequest.open('POST', formProcessor, true);
+
+      donationRequest.setRequestHeader('Content-Type',
+        'application/x-www-form-urlencoded');
+
+      donationRequest.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          token = this.responseText;
+          if (onSuccess) {
+            onSuccess();
+          }
+        }
+      };
+
+      donationRequest.send(queryString(paymentData));
+    }
+
     function confirmDonation() {
       if (token) {
         stripe.confirmCardPayment(token, {
@@ -170,7 +201,13 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
           }
         }).then(onDonationComplete);
       } else {
-        onDonationComplete({error: {message: dictionary.sorry}});
+        createDonation(confirmDonation);
+        setTimeout(function() {
+          if (!token) {
+            donationRequest.abort();
+            onDonationComplete({error: {message: dictionary.sorry}});
+          }
+        }, donationTimeout);
       }
     }
 
@@ -185,22 +222,6 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         (result.paymentIntent.status == 'succeeded')) {
           stripePaymentConfirmed();
       }
-    }
-
-    function createDonation(data) {
-      var request = new XMLHttpRequest();
-
-      request.open('POST', formProcessor, true);
-
-      request.setRequestHeader('Content-Type',
-        'application/x-www-form-urlencoded');
-
-      request.onreadystatechange = function() {
-        ((this.readyState == 4) && (this.status == 200)) &&
-          (token = this.responseText);
-      };
-
-      request.send(queryString(data));
     }
 
     function createSubscription() {
@@ -304,7 +325,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     modal.classList.add('show-modal');
 
     (data.type == donation) &&
-      createDonation(data);
+      createDonation();
   }
 
   return {
