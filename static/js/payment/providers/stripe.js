@@ -52,8 +52,12 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     modal.classList.remove('show-modal');
   }
 
+  var paymentData;
+
   function paymentModalPopup(data) {
     var box, button, cardStripeElement, email, error, token;
+
+    paymentData = data;
 
     if (data.successURL) {
       successURL = data.successURL;
@@ -159,43 +163,65 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       button.disabled = false;
     }
 
-    function confirmDonation() {
-      stripe.confirmCardPayment(token, {
-        payment_method: {
-          card: cardStripeElement,
-          billing_details: {
-            email: email.value
-          }
-        }
-      })
-      .then(function(result) {
-        if (result.error) {
-          result.error.message &&
-            errorText(result.error.message);
+    var donationRequest;
+    var donationTimeout = 4000;
 
-          enableButton();
+    function createDonation(onSuccess) {
+      if (donationRequest) {
+        donationRequest.abort();
+      }
 
-        } else if (result.paymentIntent &&
-          (result.paymentIntent.status == 'succeeded')) {
-          stripePaymentConfirmed();
-        }
-      });
-    }
+      donationRequest = new XMLHttpRequest();
 
-    function createDonation(data) {
-      var request = new XMLHttpRequest();
+      donationRequest.open('POST', formProcessor, true);
 
-      request.open('POST', formProcessor, true);
-
-      request.setRequestHeader('Content-Type',
+      donationRequest.setRequestHeader('Content-Type',
         'application/x-www-form-urlencoded');
 
-      request.onreadystatechange = function() {
-        ((this.readyState == 4) && (this.status == 200)) &&
-          (token = this.responseText);
+      donationRequest.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          token = this.responseText;
+          if (onSuccess) {
+            onSuccess();
+          }
+        }
       };
 
-      request.send(queryString(data));
+      donationRequest.send(queryString(paymentData));
+    }
+
+    function confirmDonation() {
+      if (token) {
+        stripe.confirmCardPayment(token, {
+          payment_method: {
+            card: cardStripeElement,
+            billing_details: {
+              email: email.value
+            }
+          }
+        }).then(onDonationComplete);
+      } else {
+        createDonation(confirmDonation);
+        setTimeout(function() {
+          if (!token) {
+            donationRequest.abort();
+            onDonationComplete({error: {message: dictionary.sorry}});
+          }
+        }, donationTimeout);
+      }
+    }
+
+    function onDonationComplete(result) {
+      if (result.error) {
+        result.error.message &&
+          errorText(result.error.message);
+
+        enableButton();
+
+      } else if (result.paymentIntent &&
+        (result.paymentIntent.status == 'succeeded')) {
+          stripePaymentConfirmed();
+      }
     }
 
     function createSubscription() {
@@ -253,7 +279,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
 
       button.disabled = true;
 
-      if (token) {
+      if (data.type == donation) {
         confirmDonation();
 
       } else if (data.type == subscription) {
@@ -299,7 +325,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     modal.classList.add('show-modal');
 
     (data.type == donation) &&
-      createDonation(data);
+      createDonation();
   }
 
   return {
