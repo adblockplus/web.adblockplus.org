@@ -29,6 +29,16 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
             - Aktive Filterlisten
             - Zugriff auf Browser-Einstellungen und installierte Plug-ins
             - Aktivierte Erweiterungen (freiwillig)
+    - Spenden:
+        {: .has-horizontal-list .semicolon-separated }
+        - Spendenbetrag
+        - Browser-Sprache
+        - Name und Version der Erweiterung
+        - Browser-Typ und Version
+        - Betriebssystem und Version
+        - Zahl der Benachrichtigungs-Downloads
+        - Information, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist
+        - Filterabonnement aktiviert/deaktiviert
     - Für alle mobilen Produkte und Adblock Plus für Safari auf macOS
         - Absturzmelder:
         {: .has-horizontal-list .semicolon-separated }
@@ -109,7 +119,8 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
     - Senden von Absturzmeldungen
     - In unseren mobilen Produkten und bei Adblock Plus für Safari auf macOS: über Firebase Analytics
     - Prüfen von Notfallbenachrichtigungen
-    - Verweis auf eine Deinstallationswebseite
+    - Verweis auf eine Deinstallations- oder Spendenwebseite
+    - Daten im Zusammenhang mit dem Erhalt von Spenden
 2.  Auf unseren Webseiten:
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
@@ -132,6 +143,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 - Um aggregierte Webseite-Protokolle und Analysedaten auszuwerten und bei Nutzern mit Wohnsitz außerhalb der EU/des EWR, um dadurch unsere Webseite zu verbessern.
 - Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.
 - Um dich bei Problemen mit unseren Produkten zu unterstützen.
+- Zum Erhalt von Spenden, die du uns schickst.
 
 ### Auf welcher Rechtsgrundlage erfolgt die Datenverarbeitung? {: #what-is-legal }
 
@@ -154,6 +166,7 @@ Wir verarbeiten deine personenbezogenen Daten im Einklang mit der Europäischen 
     - Ereignis-Tracking
 4.  Blog- und Forumdaten, so lange wie der jeweilige Kommentar/das jeweilige Konto existiert
 5.  Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
+6. Für einen Zeitraum von 10 Jahren: Spendenberichte
 
  **Hinweis**: „Aggregierte Nutzungsstatistiken”, z. B. Analysedaten und andere Daten ohne irgendeine Verbindung zu einem einzelnen Nutzer, können auch über diese Zeiträume hinaus aufbewahrt werden.
 
@@ -184,7 +197,7 @@ Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a data-mask='{"hr
 Die folgenden Informationen gelten für die Erhebung, Verarbeitung und Nutzung personenbezogener Daten im Zusammenhang mit unseren Dienstleistungen, wie beispielsweise der Adblock Plus-Browsererweiterung, dem Adblock Browser und auf unseren Webseiten.
 
 1. [Allgemeine Hinweise](#general-notes)
-1. [Wer ist für die Datenverarbeitung verantwortlich?](#who-is-responsible)
+1. [Wer ist für die Datenerhebung und -verarbeitung verantwortlich (Kontakte)?](#who-is-responsible)
 1. [Was sind personenbezogene Daten?](#what-is-personal-data)
 1. [Welchem Zweck dient die Datenverarbeitung und auf welcher rechtlichen Grundlage erfolgt sie?](#what-is-personal-data)
 1. [Geben wir personenbezogene Daten weiter?](#what-is-personal-data)
@@ -245,6 +258,7 @@ Wir erheben und verarbeiten deine personenbezogenen Daten ausschließlich zu den
 1.  Wir erheben und verarbeiten deine personenbezogenen Daten im Zusammenhang mit Abonnement-Downloads, Erweiterungsupdates, Notfalldownloads und Absturz- und Fehlermeldungs-Daten, die du uns zugeschickt hast, um unsere Produkte zu verbessern und auszuwerten.
 1.  Wir verschicken Notfallbenachrichtigungen, um dich über dringende Probleme im Zusammenhang mit unseren Produkten zu informieren.
 1.  Wir erheben und verarbeiten die Daten, die du uns in unserem Blog und Forum zu Verfügung gestellt hast, um mit dir zu kommunizieren und/oder dir Hilfestellung zu leisten.
+1. Wir erheben Daten im Zusammenhang mit Spenden, die du getätigt hast, um uns zu Bilanzierungszwecken zu unterstützten.
 
 #### Rechtliche Grundlage für die Datenerhebung und -verarbeitung {: #legal-basis }
 
@@ -275,11 +289,13 @@ Ohne dich vorher gesondert zu informieren, dürfen wir deine personenbezogenen D
 
 Wir übermitteln deine personenbezogenen Daten nicht routinemäßig an Dritte, ohne dich vorher darüber zu informieren. Wir werden dich vorab um deine Einwilligung bitten, es sei denn, die Übermittlung dieser Daten ist durch die DSGVO oder andere anwendbare EU-Gesetze und nationale deutsche Datenschutzgesetze gestattet.
 
-### Internationale Datenübertragungen
+### Internationale Datenübertragungen {: #international-data-transfers }
 
 Die folgenden Dienste werden von Nicht-EU/EWR-Dienstleistern erbracht. Diese externen Dienstleister wurden von uns mit größter Sorgfalt ausgewählt und unterliegen stetiger Kontrolle, um sicherzustellen, dass Privatsphäre und Datenschutz gewahrt bleiben. Die Service-Provider bieten ausreichende Garantien für ein angemessenes Datenschutzniveau und sind gehalten, deine persönlichen Daten nur in Übereinstimmung mit unseren Vorgaben und für die vorgesehenen Verwendungszwecke zu nutzen. Ebenso sind die Dienstleister vertraglich verpflichtet, deine personenbezogenen Daten ausschließlich in Übereinstimmung mit dieser Datenschutzrichtlinie und den europäischen Datenschutzbestimmungen zu verarbeiten:
 
-Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([Fabric](https://get.fabric.io/) und [Firebase](https://firebase.google.com/)). Diese Dienste werden durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
+Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([[Firebase](https://firebase.google.com/)). Diese Dienste werden durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
+
+Wir benutzen Tools von externen Dienstleistern, um Spenden zu erhalten. Dieser Service wird von der Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA, angeboten. Stripe ist nach dem EU-US-Datenschutzschild zertifiziert ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Vor der Ausführung von Zahlungstransaktionen werden einige Cookies in deinem Browser gespeichert, um eine betrügerische Nutzung ihrer Dienste zu verhindern. Für weitere Informationen lies bitte [die Cookie-Richtlinie von Stripe](https://stripe.com/cookies-policy/legal).
 
 Zudem nutzen wir auch Tools von Drittanbietern für den Nutzersupport. Diese Dienste werden von Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) und Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout) bereitgestellt. Sowohl Zendesk ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) als auch Sprout ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) sind unter dem EU-US-Privacy Shield Framework zertifiziert.
 
@@ -386,13 +402,15 @@ Adblock Plus enthält einen Mechanismus für Notfallbenachrichtigungen, mit dem 
 
 Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispiele dafür sind das Klicken auf einen Dokumentationslink oder der Download der vollständigen Liste der Filterabonnements. Solche Anfragen unterliegen dieser [Datenschutzerklärung](https://adblockplus.org/privacy).
 
-##### Deinstallationsinformationen
+##### Deinstallations- und Spendeninformationen
 
-Bei der Deinstallation von Adblock Plus wirst du auf eine Deinstallationswebseite verwiesen, wo folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Zahl der Benachrichtigungs-Downloads, Information, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, warum du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern.
+Bei der Deinstallation von Adblock Plus und/oder bei einer Spende an uns wirst du auf eine Deinstallations- und/oder Spendenwebseite verwiesen, auf der folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Anzahl der Benachrichtigungsdownloads, Informationen, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, aus dem du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern. 
+
+Für Spenden arbeiten wir mit Zahlungsanbietern zusammen (Stripe, Inc. und PayPal S.à r.l. et Cie, S.C.A.). Diese Anbieter sind für die Bearbeitung der Daten verantwortlich, die du bezüglich der von dir getätigten Spenden eingegeben hast. Zur Datenverarbeitung gehören u. a. alle Daten, die du in das entsprechende Formular eingegeben hast, einschließlich Kartenart, Name des Karteninhabers, Kreditkarteninformationen (mit Ausnahme der vollständigen Kartennummer), Adresse, Land, Postleitzahl und E-Mail-Adresse. Weitere Informationen zum Bearbeitungsprozess von personenbezogenen Daten dieser Anbieter findest du in der [Datenschutzrichtlinie](https://stripe.com/privacy) von Stripe sowie der [Datenschutzrichtlinie](https://www.paypal.com/webapps/mpp/ua/privacy-full) von PayPal. Wir speichern die von den Zahlungsdienstleistern geschickten Berichte zu Bilanzierungszwecken.
 
 ##### Datenaufbewahrung {: #data-retention }
 
-Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen, Fehlermeldungsdaten (sowie die vollständigen Berichte und die damit verbundenen Daten) und Daten in Verbindung mit Deinstallationen werden automatisch nach 30 Tagen gelöscht. Nur ein Teil der Daten wird länger aufbewahrt. Dies beinhaltet nur den Ländercode von Nutzern, die ein Problem gemeldet haben (wird aus der IP-Adresse extrahiert), zu Analysezwecken. Dieser wird getrennt von den vollständigen Berichten gespeichert und kann nach der Löschung der vollständigen Berichte nicht mit einer einzelnen Person verknüpft werden.
+Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen, Fehlermeldungsdaten (einschließlich der vollständigen Berichte und der damit verbundenen Daten) sowie Daten in Verbindung mit Deinstallationen und Spenden werden automatisch nach 30 Tagen gelöscht. Nur ein Teil der Daten wird länger aufbewahrt. Dazu gehört der Ländercode von Nutzern, die ein Problem gemeldet haben (aus der IP-Adresse extrahiert), was Analysezwecken dient. Dieser wird getrennt von den vollständigen Berichten gespeichert und kann nach der Löschung der vollständigen Berichte nicht mit einer einzelnen Person verknüpft werden. Die Spendenberichte werden gemäß den Anforderungen des deutschen Steuerrechts 10 Jahre lang aufbewahrt.
 
 Adblock Plus speichert einige Daten im [Firefox-Profil](http://support.mozilla.com/kb/Profiles) auf deinem Computer. Adblock Plus überträgt diese Daten niemals an andere Server, jedoch können andere Erweiterungen und Dienste wie [Firefox Sync](https://mozilla.com/privacy-policy/), dies tun. Der Großteil der Daten (deine Einstellungen, Filterabonnements und benutzerdefinierte Filter) sind datenschutzrechtlich unproblematisch. Jedoch könnten Filtertrefferstatistiken und aktuelle Problemberichte verwendet werden, um deinen Browserverlauf zu rekonstruieren. Adblock Plus behandelt diese Informationen genauso, wie Verlaufsdaten vom Browser behandelt werden. Diese Daten werden nicht gespeichert, wenn du den [privaten Browsing-Modus](http://support.mozilla.com/kb/Private+Browsing) verwendest und werden entfernt, wenn du deinen Browserverlauf löschst.
 
@@ -408,7 +426,7 @@ Abweichend von der Beschreibung in der [Google Chrome-Datenschutzrichtlinie](ht
 
 ##### Absturzmelder {: #adblock-browser-crash-reporter }
 
-Bei einem unerwarteten Absturz oder Fehler sammeln unsere mobilen Produkte und der Adblock Plus für Safari auf macOS alle für eine Analyse relevanten Daten, um die Ursache der Störung zu ermitteln. Die Daten dienen ausschließlich der individuellen Fehlerbehebung (sowie der Identifizierung von allgemeinen Defekten, die zu unerwarteten Abstürzen oder Fehlern führen) und werden keinesfalls mit Dritten geteilt, außer mir Fabric von der Google, Inc. zum Zwecke der Absturzbericht-Analyse (crashlytics).
+Bei einem unerwarteten Absturz oder Fehler sammeln unsere mobilen Produkte und der Adblock Plus für Safari auf macOS alle für eine Analyse relevanten Daten, um die Ursache der Störung zu ermitteln. Die Daten dienen ausschließlich der individuellen Fehlerbehebung (sowie der Identifizierung von allgemeinen Defekten, die zu unerwarteten Abstürzen oder Fehlern führen) und werden keinesfalls mit Dritten geteilt, außer mir Firebase von der Google, Inc. zum Zwecke der Absturzbericht-Analyse (crashlytics).
 
 ###### Während eines Absturzes werden folgende Daten gesendet:
 
@@ -492,7 +510,7 @@ Die Anfrage an unsere Webseiten wird, einschließlich deiner IP-Adresse, gespeic
 
 ###### Notwendige Cookies {: #cookies }
 
-Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und deine Datenschtzeinstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Diese Cookies sind notwendig, damit wir dir unsere Dienste zur Verfügung stellen könne. Sie werdenzu keinen anderen Zwecken genutzt, insbesondere nicht dazu, um Webseite-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass dadurch Effizienz und Umfang der Dienste von eyeo eingeschränkt sein können.
+Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und deine Datenschutzeinstellungen zu speichern. Cookies sind kleine Dateien, die mithilfe deines Internet-Browsers auf deinem Computer gespeichert werden. Diese Cookies sind notwendig, damit wir dir unsere Dienste zur Verfügung stellen könne. Sie werden zu keinen anderen Zwecken genutzt, insbesondere nicht dazu, um Webseite-Besucher nachzuverfolgen. Wenn du nicht möchtest, dass Cookies gesetzt werden, kannst du die entsprechenden Einstellungen in deinem Browser konfigurieren. Beachte bitte, dass dadurch Effizienz und Umfang der Dienste von eyeo eingeschränkt sein können.
 
 ###### Lediglich bei Nutzern mit Wohnsitz außerhalb der EU/des EWR: Google Analytics {: #google-analytics }
 
@@ -556,7 +574,7 @@ Im Allgemeinen speichern wir deine E-Mail-Adresse nicht, es sei denn, sie ist sp
 
 ### Erhebung und Verarbeitung für den Nutzersupport {: #collection-and-processing-for-user-support }
 
-Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software von Zendesk, Inc. (weitere Informationen dazu findest du hier), die eine Integration von Nutzersupportkanälen (wie soziale Netzwerke- und E-Mail-Antwort) ermöglicht. Für den Fall, dass du uns zu Supportzwecken per E-Mail und/oder über unsere Social-Media-Kanäle kontaktierst, sammeln wir die folgenden Daten, um dir bei der Problemlösung zu helfen:
+Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software von Zendesk, Inc. (weitere Informationen dazu findest du [hier](#international-data-transfers)), die eine Integration von Nutzersupportkanälen (wie soziale Netzwerke- und E-Mail-Antwort) ermöglicht. Für den Fall, dass du uns zu Supportzwecken per E-Mail und/oder über unsere Social-Media-Kanäle kontaktierst, sammeln wir die folgenden Daten, um dir bei der Problemlösung zu helfen:
 
 - Nutzername (Kontakt über soziale Netzwerke) und / oder E-Mail
 - Geräteinformationen
@@ -567,7 +585,7 @@ Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software vo
 
 Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
 
-<time datetime="2019-10">Dezember 2019</time>
+<time datetime="2020-03">April 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
