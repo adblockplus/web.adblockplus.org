@@ -23,9 +23,9 @@
   function setCookie(key, value)
   {
     if (value)
-      doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+      doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=adblockplus.org; path=/";
     else
-      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=adblockplus.org; path=/";
   }
 
   var hasSeenCookiePrompt = hasCookie(HAS_SEEN_COOKIE_PROMPT);
