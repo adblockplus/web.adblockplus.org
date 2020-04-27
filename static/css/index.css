@@ -214,6 +214,11 @@
   overflow: auto;
 }
 
+@media(min-width: 992px)
+{
+  #intro-standard h1 { font-size: 42px; }
+}
+
 #hero-download-tos
 {
   margin-bottom: 0.5em;
