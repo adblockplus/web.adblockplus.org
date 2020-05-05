@@ -210,7 +210,7 @@ body { padding-top: 0; }
 
 .stripe-button
 {
-  display: inline-block;
+  display: none !important;
   color: #fff;
   background-color: #2888F9;
   overflow: hidden;
