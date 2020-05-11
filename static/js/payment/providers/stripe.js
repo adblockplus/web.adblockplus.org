@@ -66,6 +66,8 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       delete data.successURL;
     }
 
+    if (data.currencySign) delete data.currencySign;
+
     stripe = Stripe(publishableKey, {
       locale: (document.documentElement.lang || 'en')
     });
