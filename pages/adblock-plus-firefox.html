@@ -18,15 +18,10 @@ style=pages/adblock-plus-firefox.css
 <script src="/js/vendor/bowser.js"></script>
 
 <script>
-
-  if (bowser.android)
-    document.body.classList.add("android");
-
-  if (bowser.firefox)
-    document.body.classList.add("firefox");
-
   if (bowser.mobile || bowser.tablet)
   {
+    document.body.classList.add("unsupported-device");
+
     document
       .querySelector(".info-box .close-button")
       .addEventListener("click", function()
@@ -35,9 +30,4 @@ style=pages/adblock-plus-firefox.css
           .setAttribute("hidden", "");
       });
   }
-  else
-  {
-    document.body.classList.add('desktop');
-  }
-
 </script>

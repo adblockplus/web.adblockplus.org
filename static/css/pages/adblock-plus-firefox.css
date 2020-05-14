@@ -1,17 +1,22 @@
-.block
-{
-  display: block;
-}
-
 @media(max-width: 767px)
 {
   .text-center-mobile { text-align: center; }
 }
 
-.container
+.margin-top-3 { margin-top: 3em; }
+
+@media (min-width: 768px)
 {
-  padding-left: 2em;
-  padding-right: 2em;
+  .one-third
+  {
+    /* override */
+    width: 33.333333%;
+  }
+
+  .one-fourth
+  {
+    width: 25%;
+  }
 }
 
 .content a,
@@ -28,6 +33,55 @@
   font-weight: bolder;
 }
 
+@media (min-width: 768px)
+{
+  .section
+  {
+    margin-bottom: 6em;
+  }
+
+  #hero
+  {
+    padding-bottom: 6em;
+  }
+
+  #hero .section
+  {
+    margin-bottom: 0;
+  }
+}
+
+.bg-grey-abstract
+{
+  background-image: url("/img/grey-bg-abstract-shape.svg");
+  background-repeat: no-repeat;
+  background-size: 1152px 1250px;
+}
+
+#hero-image-tall,
+#hero-image-wide { margin: 0 auto; }
+
+#hero-image-tall { display: block; }
+#hero-image-wide { display: none; }
+
+@media (min-width: 576px)
+{
+  #hero-image-tall { display: none; }
+  #hero-image-wide { display: block; }
+}
+
+@media (min-width: 768px)
+{
+  #hero-image-tall { display: block; }
+  #hero-image-wide { display: none; }
+}
+
+@media (min-width: 992px)
+{
+  #hero-image-tall { display: none; }
+  #hero-image-wide { display: block; }
+}
+
 .content .hero-heading
 {
   font-size: 1.4em;
@@ -41,26 +95,39 @@
   font-weight: bold;
 }
 
-a.icon-button
+@media (min-width: 576px)
+{
+  .unsupported-device .download
+  {
+    display: none;
+  }
+}
+
+.content .icon-button,
+.content .icon-button:visited
 {
   padding: 0.5em 1em;
   border-radius: 0.5em;
+  vertical-align: middle;
   text-transform: uppercase;
   font-weight: normal;
   background-color: #3d9c4f;
   color: #fff;
 }
 
-a.icon-button:visited
-{
-  background-color: #3d9c4f;
-  color: #fff;
-}
-
-.button .button-image
+.icon-button .button-image
 {
   vertical-align: middle;
+}
+
+[dir="ltr"] .icon-button .button-image
+{
   margin-right: 10px;
+}
+
+[dir="rtl"] .icon-button .button-image
+{
+  margin-left: 10px;
 }
 
 .icon-button .button-text
@@ -69,68 +136,36 @@ a.icon-button:visited
   top: 0.1em;
 }
 
-.content a.icon-button
-{
-  vertical-align: middle;
-  background-color: #3d9c4f;
-  color: #fff;
-  font-weight: normal;
-}
-
-.icon-button img { vertical-align: middle; }
-
-.content a.icon-button:visited
-{
-  background-color: #3d9c4f;
-  color: #fff;
-}
-
-.content .download-spacing
-{
-  margin-top: 3em;
-}
-
-#bubble-ui-desktop,
-#bubble-ui-desktop-and-acceptable-ads { margin: 0 auto; }
-
-#bubble-ui-desktop { display: block; }
-#bubble-ui-desktop-and-acceptable-ads { display: none; }
-
-@media (min-width: 576px)
-{
-  #bubble-ui-desktop { display: none; }
-  #bubble-ui-desktop-and-acceptable-ads { display: block; }
-}
-
-@media (min-width: 768px)
-{
-  #bubble-ui-desktop { display: block; }
-  #bubble-ui-desktop-and-acceptable-ads { display: none; }
-}
-
-@media (min-width: 992px)
-{
-  #bubble-ui-desktop { display: none; }
-  #bubble-ui-desktop-and-acceptable-ads { display: block; }
-}
-
-.bg-grey-abstract
-{
-  background-image: url("/img/grey-bg-abstract-shape.svg");
-  background-repeat: no-repeat;
-  background-size: 1152px 1250px;
-}
-
 .info-box
 {
+  display: none;
   margin-top: 2em;
   padding: 1em;
   border-radius: 0.4em;
 }
 
-.desktop .info-box
+.unsupported-device .info-box
+{
+  display: block;
+}
+
+.info-box
 {
   display: none;
+}
+
+.unsupported-device .info-box
+{
+  display: block;
+}
+
+@media (min-width: 768px)
+{
+  .info-box
+  {
+    float: left;
+    width: 50%;
+  }
 }
 
 .info-box p
@@ -140,9 +175,15 @@ a.icon-button:visited
 
 .info-box .close-button
 {
-  float: right;
   width: 18px;
   padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+[dir="ltr"] .info-box .close-button
+{
+  float: right;
 }
 
 [dir="rtl"] .info-box .close-button
@@ -205,21 +246,15 @@ a.icon-button:visited
 
 @media (min-width: 768px)
 {
-  #hero .section
+  #facts
   {
-    margin: 0;
+    margin-bottom: 6em;
   }
 
-  .info-box
+  #facts .section
   {
-    float: left;
-    width: 50%;
+    margin-bottom: 0;
   }
-}
-
-#facts .section
-{
-  margin-bottom: 0;
 }
 
 .fact
@@ -247,60 +282,4 @@ a.icon-button:visited
 .fact em
 {
   font-weight: bold;
-}
-
-#special-features
-{
-  padding-top: 2em;
-}
-
-@media (min-width: 768px)
-{
-  .section
-  {
-    margin-bottom: 6em;
-  }
-
-  .one-third
-  {
-    /* override */
-    width: 33.333333%;
-  }
-
-  .one-fourth
-  {
-    width: 25%;
-  }
-
-  #facts
-  {
-    margin-bottom: 6em;
-  }
-
-  #hero
-  {
-    padding-bottom: 6em;
-  }
-}
-
-.download
-{
-  display: none;
-}
-
-.desktop .download,
-.android.firefox .download
-{
-  display: block;
-}
-
-.android.firefox .info-box
-{
-  display: none;
-}
-
-.close-button
-{
-  border: none;
-  background-color: transparent;
 }
