@@ -33,10 +33,13 @@
 
 .content a.icon-button
 {
+  vertical-align: middle;
   background-color: #3d9c4f;
   color: #fff;
   font-weight: normal;
 }
+
+.icon-button img { vertical-align: middle; }
 
 .content a.icon-button:visited
 {
