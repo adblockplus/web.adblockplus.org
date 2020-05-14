@@ -52,15 +52,28 @@
   margin-top: 3em;
 }
 
-#bubble-ui-desktop-and-aa,
-.desktop #bubble-ui-desktop
+#bubble-ui-desktop,
+#bubble-ui-desktop-and-acceptable-ads { margin: 0 auto; }
+
+#bubble-ui-desktop { display: block; }
+#bubble-ui-desktop-and-acceptable-ads { display: none; }
+
+@media (min-width: 576px)
 {
-  display: none;
+  #bubble-ui-desktop { display: none; }
+  #bubble-ui-desktop-and-acceptable-ads { display: block; }
 }
 
-.desktop #bubble-ui-desktop-and-aa
+@media (min-width: 768px)
 {
-  display: block;
+  #bubble-ui-desktop { display: block; }
+  #bubble-ui-desktop-and-acceptable-ads { display: none; }
+}
+
+@media (min-width: 992px)
+{
+  #bubble-ui-desktop { display: none; }
+  #bubble-ui-desktop-and-acceptable-ads { display: block; }
 }
 
 .bg-grey-abstract
