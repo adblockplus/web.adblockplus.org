@@ -27,6 +27,31 @@
   margin-top: 2rem;
 }
 
+#download h3
+{
+  margin: 0;
+}
+
+#download-button
+{
+  position: relative;
+  padding: 14px 18px;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.16);
+  color: #fff;
+  background-color: #0AAD03;
+}
+
+#download-button:hover,
+#download-button:focus
+{
+  background-color: #258333;
+}
+
 img.divider
 {
   display: none;
