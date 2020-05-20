@@ -29,6 +29,16 @@ The following privacy notice shall provide you with a general overview about the
             - Active filter lists
             - Access to browser settings and installed plug-ins
             - Enabled extensions (voluntary)
+    - Donations:
+    {: .has-horizontal-list .semicolon-separated }
+        - Amount of donation
+        - Browser language
+        - Extension name and version
+        - Browser type and version
+        - Operating system and version
+        - Number of notification downloads
+        - Information whether the local storage of the extension configuration is corrupted
+        - Filter subscriptions enabled/disabled
     - For all mobile products and Adblock Plus for Safari on macOS
         - Crash reports:
         {: .has-horizontal-list .semicolon-separated }
@@ -108,7 +118,8 @@ List of techniques and tools we use for data collection.
     - Sending crash reports
     - In our mobile products and Adblock Plus for Safari on macOS: via Firebase Analytics
     - Emergency notification checks
-    - Referring to an uninstall webpage
+    - Referring to an uninstall or donation webpage
+    - Data in connection with receiving donations
 2. On our websites:
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
@@ -131,6 +142,7 @@ List of techniques and tools we use for data collection.
 - To analyze aggregated website logs, and for non-EU/EEA users analytics data, to improve our website.
 - For communication and assistance purposes in our forum and blog.
 - For assisting you with any issues you may have with our products.
+- For receiving donations that you send to us.
 
 ### What is the legal basis of data processing? {: #what-is-legal }
 
@@ -153,6 +165,7 @@ We process your personal data in compliance with the European General Data Prote
     - event tracking
 4. Blog and forum data as long as the respective comment / account exists
 5. All user support data is deleted one (1) year after closing the respective support case.
+6. For a period of 10 years: donation report data.
 
  **Note**: “Aggregated usage statistics”, such as analytics data and other data without any connection to a single user, may be retained beyond these periods.
 
@@ -184,7 +197,7 @@ Contact our Data Protection Officer, Dr. Judith Nink, via <a data-mask='{"href":
 The following information applies to the collection, processing and use of personal data in connection with our services, as but not limited to, the Adblock Plus extension, Adblock Browser and on our websites.
 
 1. [General notes](#general-notes)
-1. [Who is responsible for data processing?](#who-is-responsible)
+1. [Who is responsible for data collection and processing (contacts)?](#who-is-responsible)
 1. [What is personal data?](#what-is-personal-data)
 1. [What is the purpose of data processing and what is the legal basis?](#what-is-personal-data)
 1. [Do we disclose any personal data?](#what-is-personal-data)
@@ -245,6 +258,7 @@ We collect and process your personal data solely for the following purposes:
 1. We collect and process your personal data relating to subscription downloads, extension updates, emergency downloads, and Issue Reporter data sent to us by you to improve and evaluate our products.
 1. We send emergency notifications in order to inform you about urgent issues in connection with our products.
 1. We collect and process the data you have provided us with in our blog and forum in order to communicate with you and / or to assist you.
+1. We collect data in connection with donations you have made to support us for accounting purposes.
 
 #### Legal basis of data collection and processing {: #legal-basis }
 
@@ -275,11 +289,13 @@ We may only transfer your personal data to third parties without informing you s
 
 We will not transfer your personal data to third parties as a matter of course without letting you know in advance. We will ask for your prior permission unless the transfer of such data is permitted by GDPR or any other applicable EU laws and German national data protection laws.
 
-### International data transfers
+### International data transfers {: #international-data-transfers }
 
 For the following services, we use non-EU/EEA service providers. We have carefully selected these external service providers and review them regularly to ensure that your privacy is preserved. The service providers provide sufficient guarantees to ensure an adequate level of data protection and may only use personal data for the purposes stipulated by us and in accordance with our instructions. We also contractually require the service providers to treat your personal data solely in accordance with this Privacy Policy and the European data protection laws:
 
-We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Fabric](https://get.fabric.io/) and [Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
+We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
+
+We use external service provider tools to receive donations. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Stripe is certified under the EU-US Privacy Shield Framework ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
 
 We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) and Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Both Zendesk ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) and Sprout ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) are certified under the EU-U.S. Privacy Shield Framework.
 
@@ -386,13 +402,15 @@ Adblock Plus contains an emergency notification mechanism that allows it to noti
 
 Adblock Plus may make further requests to AdblockPlus.org as required. For example, a documentation link is clicked or the full list of filter subscriptions needs to be downloaded. These requests are subject to this [Privacy Policy](https://adblockplus.org/privacy).
 
-##### Uninstallation information
+##### Uninstallation and donation information
 
-When uninstalling Adblock Plus for desktop, you will be referred to an uninstallation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
+When uninstalling Adblock Plus for desktop and/or donating to us, you will be referred to an uninstallation and/or donation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
+
+For donations, we work with payment providers (Stripe, Inc. and PayPalPaypal S.à r.l. et Cie, S.C.A.). These providers are responsible for processing the data you enter in regards to the  donations you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. For further information as to how these providers handle the processing of personal data, please refer to Stripe’s [Privacy Policy](https://stripe.com/privacy) and PayPal’s [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full). We store the reports the payment providers present us with for accounting purposes.
 
 ##### Data retention {: #data-retention }
 
-Data related to subscription downloads, extension update checks, emergency notifications, Issue Reporter data (as well as the full reports and their associated data), and data in connection with uninstallations are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports.
+Data related to subscription downloads, extension update checks, emergency notifications, Issue Reporter data (as well as the full reports and their associated data), and data in connection with uninstallations and donations are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. Donation report data is stored for a period of 10 years in accordance with the German tax law requirements.
 
 Adblock Plus stores some data in [the Firefox profile](http://support.mozilla.com/kb/Profiles) on your computer. Adblock Plus never transmits this data to any servers, but other extensions and services, such as [Firefox Sync](https://mozilla.com/privacy-policy/), may do so. Most of the data (your preferences, filter subscriptions and custom filters) is unobjectionable privacy-wise. However, filter hit statistics and recent issue reports could be used to reconstruct your browsing history. Adblock Plus treats this information identically to how history data is treated by the browser; this data isn't stored if you are using [private browsing mode](http://support.mozilla.com/kb/Private+Browsing) and is removed if you choose to clear your browsing history.
 
@@ -408,7 +426,7 @@ Deviating from the description in [Google Chrome's Privacy Notice](https://www.g
 
 ##### Crash reporter {: #adblock-browser-crash-reporter }
 
-In the event of an unexpected crash or error, our mobile products and Adblock Plus for Safari on macOS collect data relevant for analyzing the cause of the malfunction. The data is used solely for individual troubleshooting (as well as for identifying general defects which lead to unexpected crashes or errors) and is never shared with any third parties other than Fabric from Google, Inc., which we use for analyzing crash reports (crashlytics).
+In the event of an unexpected crash or error, our mobile products and Adblock Plus for Safari on macOS collect data relevant for analyzing the cause of the malfunction. The data is used solely for individual troubleshooting (as well as for identifying general defects which lead to unexpected crashes or errors) and is never shared with any third parties other than Firebase from Google, Inc., which we use for analyzing crash reports (crashlytics).
 
 ###### During a crash, the following data is sent:
 
@@ -556,7 +574,7 @@ In general, we do not store your email address unless it’s specifically requir
 
 ### Collection and processing for user support {: #collection-and-processing-for-user-support }
 
-For user support, we use a customer relation management software from Zendesk, Inc. (find more information here) that allows for the integration of user support channels, like social media and email responses. In the event that you contact us for support via email and / or our social media channels, we collect the following data in order to help you to solve your issue sufficiently:
+For user support, we use a customer relation management software from Zendesk, Inc. (find more information [here](#international-data-transfers)) that allows for the integration of user support channels, like social media and email responses. In the event that you contact us for support via email and / or our social media channels, we collect the following data in order to help you to solve your issue sufficiently:
 
 - User name (contact via social media) and / or email
 - Device information
@@ -567,7 +585,7 @@ For user support, we use a customer relation management software from Zendesk, I
 
 All user support data is deleted one (1) year after closing the respective support case.
 
-<time datetime="2019-11">December 2019</time>
+<time datetime="2019-11">April 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

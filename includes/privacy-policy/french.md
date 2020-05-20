@@ -29,6 +29,16 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
             - Listes de filtres actifs
             - Accès aux paramètres du navigateur et aux plug-ins installés
             - Extensions activées (volontairement)
+    - Dons :
+    {: .has-horizontal-list .semicolon-separated }
+        - Montant du don
+        - Langue du navigateur
+        - Nom de l’extension et version
+        - Type de navigateur et version
+        - Système d'exploitation et version
+        - Nombre de téléchargements de notifications
+        - Information mentionnant si le stockage local de la configuration de l'extension est corrompu
+        - Activation/désactivation aux abonnements à une liste de filtres
     - Pour tous les produits mobile et Adblock Plus pour Safari sur macOS
         - Rapports de crash :
         {: .has-horizontal-list .semicolon-separated }
@@ -55,7 +65,7 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
         - Données du rapport d’erreur et de crash :
         {: .has-horizontal-list .semicolon-separated }
             - Identifiant du paquet, version du paquet et courte chaîne de version du paquet d’Adblock Browser
-            - Type d’appareil, architecture du processeur et version du système d’exploitation
+            - Le type d’appareil, l'architecture du processeur et la version du système d’exploitation
             - Horodatage du crash
             - UUID
             - Nom de la catégorie sous forme de texte et valeur du message d’exception
@@ -109,7 +119,8 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
     - Envoi de rapports de crash
     - Dans nos produits mobiles et Adblock Plus pour Safari sur macOS : via Firebase Analytics
     - Vérifications des notifications d’urgence
-    - Référencement à une page web désinstallée
+    - Référencement à une page web de désinstallation ou à une page de collecte de dons
+    - Données relatives à la perception de dons
 1.  Sur nos sites web :
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
@@ -132,6 +143,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 - Pour analyser les journaux de sites web agrégés et pour les données analytiques portant sur les utilisateurs non membres de l’UE/EEE, afin d’améliorer notre site web.
 - À des fins de communication et d’assistance sur notre forum et notre blog.
 - Pour vous aider si vous rencontrez des problèmes avec nos produits.
+- Pour recevoir les dons que vous nous envoyez.
 
 ### Quelle est la base légale du traitement des données ? {: #what-is-legal }
 
@@ -154,6 +166,7 @@ Nous traitons vos données personnelles conformément au Règlement Général Eu
     - traceur d’événements
 1.  Données de blog et de forum tant que le commentaire/compte respectif existe
 1.  Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant
+1. Pour une période de 10 ans : données du rapport sur la collecte de dons
 
  **Remarque** : Les « statistiques d’utilisation agrégées », comme les données analytiques et d’autres données sans lien avec un utilisateur unique peuvent être conservées au-delà de ces périodes.
 
@@ -173,7 +186,7 @@ Nous recueillons aussi peu de données que possible. Dans la mesure où une util
 
 ### Des questions ? {: #questions }
 
-Contactez notre responsable de la protection des données, Dr. Judith Nink, par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 6430630){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
+Contactez notre responsable de la protection des données, Dr. Judith Nink, par <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 6430630){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
 
 ---
 
@@ -184,7 +197,7 @@ Contactez notre responsable de la protection des données, Dr. Judith Nink, par 
 Les informations suivantes concernent la collecte, le traitement et l’utilisation des données personnelles en rapport avec nos services, tels que l’extension Adblock Plus, le navigateur Adblock Browser et sur nos sites web, cette liste n’étant pas exhaustive.
 
 1. [Notes générales](#general-notes)
-1. [Qui est responsable du traitement des données ?](#who-is-responsible)
+1. [Qui est responsable du traitement des données (contacts) ?](#who-is-responsible)
 1. [Qu’est-ce que les données personnelles ?](#what-is-personal-data)
 1. [Quel est le but du traitement de données et quelle est la base légale ?](#what-is-personal-data)
 1. [Est-ce que nous divulguons des données personnelles ?](#what-is-personal-data)
@@ -219,11 +232,11 @@ Si vous avez des questions concernant vos données personnelles, n’hésitez pa
   Dr. Judith Nink
   <dl>
     <dt>Téléphone</dt>
-    <dd><a id=’privacy-phone’ href=’tel:+49 (0) 221 / 6430630’>+49 (0) 221 / 6430630</a></dd>
+    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 6430630'>+49 (0) 221 / 6430630</a></dd>
     <dt>E-mail</dt>
-    <dd><a id=’privacy-email’ data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}’>email address</a></dd>
+    <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>Fax</dt>
-    <dd><a id=’privacy-fax’ href=’fax:+49 (0) 221 / 64306399’>+49 (0) 221 / 64306399</a></dd>
+    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306399'>+49 (0) 221 / 64306399</a></dd>
   </dl>
 </address>
 
@@ -245,6 +258,7 @@ Nous collectons et traitons vos données personnelles uniquement aux fins suivan
 1.  Nous collectons et traitons vos données personnelles relatives aux téléchargements d’abonnements, aux mises à jour d’extensions, aux téléchargements d’urgence et aux données « signaleur de problèmes » que vous nous envoyez pour améliorer et évaluer nos produits.
 1.  Nous envoyons des notifications d’urgence afin de vous informer des problèmes urgents liés à nos produits.
 1.  Nous collectons et traitons les données que vous nous avez fournies dans notre blog et forum afin de communiquer avec vous et/ou de vous aider.
+1. Nous collectons des données relatives aux dons que vous avez effectués pour nous soutenir à des fins comptables.
 
 #### Base juridique de la collecte et du traitement des données {: #legal-basis }
 
@@ -275,11 +289,13 @@ Nous ne pouvons que transférer vos données personnelles à des tiers sans vous
 
 Nous ne transmettrons pas vos données personnelles à des tiers sans que vous ne le sachiez à l’avance. Nous vous demanderons votre autorisation préalable, sauf si le transfert de ces données est autorisé par le RGPD ou toute autre législation applicable de l’UE et les lois nationales allemandes sur la protection des données.
 
-### Transferts de données internationales
+### Transferts de données internationales {: #international-data-transfers }
 
 Pour les services suivants, nous avons recours à des fournisseurs de service non membres de l’UE/EEE. Nous avons choisi avec soin ces fournisseurs de services extérieurs et nous les contrôlons régulièrement afin de nous assurer que la protection de vos données est conservée. Ces fournisseurs de services apportent des garanties suffisantes pour assurer un niveau de protection des données suffisant et ils ne sont autorisés à utiliser vos données personnelles que pour les objectifs que nous avons stipulés et conformément à nos instructions. Nous demandons également à ces fournisseurs de services de traiter vos données personnelles conformément à la présente Politique de confidentialité et à la législation européenne sur la protection des données :
 
-Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web ([Google Analytics](#google-analytics))  des non membres de l'UE/EEE ; pour les essais A/B basés sur les données d’analyse ([Google Optimize](#google-optimize)) des non membres de l'UE/EEE ; et pour les rapports de crash et les traceurs d’événements dans nos produits mobiles et Adblock Plus pour Safari sur macOS ([Fabric](https://get.fabric.io/) et [Firebase](https://firebase.google.com/)). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord [ici](https://support.google.com/a/answer/2888485).
+Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web ([Google Analytics](#google-analytics))  des non membres de l'UE/EEE ; pour les essais A/B basés sur les données d’analyse ([Google Optimize](#google-optimize)) des non membres de l'UE/EEE ; et pour les rapports de crash et les traceurs d’événements dans nos produits mobiles et Adblock Plus pour Safari sur macOS ([Firebase](https://firebase.google.com/)). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord [ici](https://support.google.com/a/answer/2888485).
+
+Nous utilisons les outils de prestataires de services externes pour la collecte de dons. Ce service est assuré par Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, États-Unis. Stripe est certifiée conforme au bouclier de protection des données UE-Etats-Unis ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Certains cookies sont enregistrés sur votre navigateur avant de procéder aux opérations de paiement afin d'empêcher une utilisation frauduleuse de leurs services. Pour plus d'informations, veuillez [consulter la politique de Stripe en matière de cookies](https://stripe.com/cookies-policy/legal).
 
 Nous utilisons également des outils de fournisseurs de services externes pour l’assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) et Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Zendesk ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) et Sprout ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) sont conformes au bouclier de protection des données UE-États Unis.
 
@@ -319,7 +335,7 @@ Vous avez le droit de retirer votre consentement à tout moment, lorsque vous no
 
 ### Comment exercer vos droits {: #how-to-exercise }
 
-Pour exercer vos droits, veuillez nous contacter par <a data-mask=’{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}’ title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par courrier à :
+Pour exercer vos droits, veuillez nous contacter par <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par courrier à :
 
 <address>
 eyeo GmbH<br>
@@ -383,13 +399,15 @@ Adblock Plus contient un mécanisme de notification d’urgence qui lui permet d
 
 Adblock Plus peut faire d’autres demandes à AdblockPlus.org selon les besoins. Par exemple, quand un lien de documentation est cliqué ou quand la liste complète des souscriptions de filtres doit être téléchargée. Ces demandes tombent sous le coup de la présente [politique de confidentialité](https://adblockplus.org/privacy).
 
-##### Informations de désinstallation
+##### Informations sur la désinstallation et la collecte de dons
 
-En désinstallant Adblock Plus pour le bureau vous serez dirigé vers une page Web de désinstallation où les informations suivantes sont automatiquement collectées : Langue de votre navigateur, nom et version de l’extension, type et version du navigateur, système d’exploitation et version, nombre de téléchargements de notifications, indication si le stockage local de la configuration de l’extension est corrompu et si des abonnements à des listes de filtres ont été activés ou désactivés au moment de la désinstallation. Vous pouvez si vous le souhaitez nous indiquer les raisons pour lesquelles vous avez désinstallé Adblock Plus. Nous avons besoin de cette information pour améliorer nos produits.
+En désinstallant Adblock Plus sur le Bureau et/ou en nous faisant un don, vous serez dirigé vers une page web de désinstallation et/ou de collecte de dons où les informations suivantes seront automatiquement collectées : langue de votre navigateur, nom et version de l’extension, type et version du navigateur, système d’exploitation et version, nombre de téléchargements de notifications, indication si le stockage local de la configuration de l’extension est corrompu et si des abonnements à des listes de filtres ont été activés ou désactivés au moment de la désinstallation. Vous pouvez si vous le souhaitez nous indiquer les raisons pour lesquelles vous avez désinstallé Adblock Plus. Nous avons besoin de cette information pour améliorer nos produits.
+
+Pour les dons, nous travaillons avec des prestataires de paiement (Stripe, Inc. et PayPal S.à r.l. et Cie, S.C.A.). Ces prestataires sont responsables du traitement des données que vous saisissez concernant les dons que vous nous envoyez. Le traitement comprend toutes les données que vous saisissez dans le formulaire, notamment, le type de carte, le nom du titulaire de la carte, les coordonnées bancaires (à l'exception du numéro de carte dans son intégralité), l'adresse, le pays, le code postal et l'adresse courriel. Pour obtenir des informations complémentaires sur la façon dont ces prestataires gèrent le traitement des données personnelles, veuillez consulter la [Politique de confidentialité de Stripe](https://stripe.com/privacy) et la [Politique de confidentialité de PayPal](https://www.paypal.com/webapps/mpp/ua/privacy-full). Nous stockons les rapports que nous présentent ces prestataires de paiement pour les besoins de la comptabilité.
 
 ##### Rétention des données {: #data-retention }
 
-Les données relatives aux téléchargements d’abonnements, aux vérifications de mise à jour des extensions, aux notifications d’urgence, aux données du signaleur de problèmes (ainsi qu’aux rapports complets et aux données associées) et les données en relation avec les désinstallations sont automatiquement supprimées au bout de 30 jours. Seul un sous-ensemble des données sera conservé plus longtemps. Cela inclut uniquement le code de pays des utilisateurs qui soumettent un problème (extrait de l’adresse IP) à des fins analytiques, qui est stocké séparément des rapports complets et ne peut pas être connecté à un individu après la suppression des rapports complets.
+Les données relatives aux téléchargements d'abonnements, aux vérifications de mise à jour des extensions, aux notifications d'urgence, aux données du signaleur de problèmes (ainsi qu'aux rapports complets et aux données connexes) et les données en liaison avec les désinstallations et les collectes de dons sont automatiquement supprimées au bout de 30 jours. Seul un sous-ensemble des données sera conservé plus longtemps. Cela inclut uniquement le code de pays des utilisateurs qui soumettent un problème (extrait de l'adresse IP) à des fins analytiques, qui est stocké séparément des rapports complets et ne peut pas être connecté individuellement après la suppression des rapports complets. Les données du rapport sur la collecte de dons sont stockées pendant une période de 10 ans conformément aux exigences de la législation fiscale allemande.
 
 Adblock Plus stocke certaines données dans le [profil Firefox](http://support.mozilla.com/kb/Profiles) sur votre ordinateur. Adblock Plus ne transmet jamais ces données aux serveurs, mais d’autres extensions et services tels que [Firefox Sync](https://mozilla.com/privacy-policy/) peuvent le faire. La plus grande partie des données (vos préférences, souscriptions de filtres et filtres personnalisés) sont acceptables du point de vue de la vie privée. Cependant, les statistiques d’utilisation de filtre et les rapports de problèmes récents pourraient être utilisés pour reconstruire votre historique de navigation. Adblock Plus traite ces informations de la même manière que les données historiques dans le navigateur. Ces données ne sont pas stockées si vous utilisez le [mode de navigation privée](http://support.mozilla.com/kb/Private+Browsing) et sont supprimées si vous choisissez d’effacer votre historique de navigation.
 
@@ -405,7 +423,7 @@ Contrairement à la description dans l’[Avis de confidentialité de Google Chr
 
 ##### Rapport de crash {: #adblock-browser-crash-reporter }
 
-En cas de crash ou d’erreur inattendu, nos produits mobile et Adblock Plus pour Safari sur macOS collecte les données pertinentes pour analyser la cause de la défaillance. Les données sont utilisées uniquement à des fins de dépistage individuel (ainsi que pour identifier des défauts généraux entraînant des crashs ou erreurs inattendus) et ne sont jamais transmises à des tierces parties autres que Fabric de Google, Inc. auquel nous avons recours pour l’analyse des rapports de crash (crashlytics).
+En cas de crash ou d’erreur inattendu, nos produits mobile et Adblock Plus pour Safari sur macOS collecte les données pertinentes pour analyser la cause de la défaillance. Les données sont utilisées uniquement à des fins de dépistage individuel (ainsi que pour identifier des défauts généraux entraînant des crashs ou erreurs inattendus) et ne sont jamais transmises à des tierces parties autres que Firebase de Google, Inc. auquel nous avons recours pour l’analyse des rapports de crash (crashlytics).
 
 ###### Au cours d’un crash, les données suivantes sont envoyées :
 
@@ -553,7 +571,7 @@ En général, nous ne conservons pas votre adresse mail, sauf si elle est spéci
 
 ### Collecte et traitement pour assistance aux utilisateurs {: #collection-and-processing-for-user-support }
 
-Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la relation client de Zendesk, Inc. (en savoir plus ici) qui permet l’intégration des canaux de support utilisateur comme par exemple les réseaux sociaux et les réponses par e-mail. Dans le cas où vous nous contactez pour une aide par e-mail et/ou par nos canaux de réseaux sociaux, nous recueillons les données suivantes afin de vous aider à résoudre votre problème :
+Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la relation client de Zendesk, Inc. (en savoir plus [ici](#international-data-transfers)) qui permet l’intégration des canaux de support utilisateur comme par exemple les réseaux sociaux et les réponses par e-mail. Dans le cas où vous nous contactez pour une aide par e-mail et/ou par nos canaux de réseaux sociaux, nous recueillons les données suivantes afin de vous aider à résoudre votre problème :
 
 - Nom de l’utilisateur (contact via les réseaux sociaux) et/ou e-mail
 - Information d’appareil
@@ -564,7 +582,7 @@ Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la re
 
 Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant.
 
-<time datetime="2019-10">Décembre 2019</time>
+<time datetime="2020-03">Avril 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
