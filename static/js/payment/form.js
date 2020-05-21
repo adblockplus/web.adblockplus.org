@@ -272,7 +272,9 @@ function PaymentForm(currencies)
 
     var buttonName = event.target.name || event.target.parentNode.name;
 
-    if (!buttonName) return;
+    var disabled = event.target.disabled || event.target.parentNode.disabled;
+
+    if (!buttonName || disabled) return;
 
     var provider = buttonName.replace("-provider", "");
 
