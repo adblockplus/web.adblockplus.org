@@ -386,7 +386,10 @@ div.animation[started="true"]
   /* full-height: 2.91 * 1.375 = ~4em */
   line-height: 2.91em;
   font-size: 1.375em;
+  word-spacing: -2px;
 }
+
+#navbar-logo strong { font-weight: 700; }
 
 /* #navbar #navbar-menu-toggle
  ******************************************************************************/
