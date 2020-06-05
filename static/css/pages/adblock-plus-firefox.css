@@ -103,37 +103,38 @@
   }
 }
 
+/* Like #install-button in index.css */
+
 .content .icon-button,
 .content .icon-button:visited
 {
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  vertical-align: middle;
+  position: relative;
+  padding: 14px 18px 14px 72px;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: left;
   text-transform: uppercase;
   font-weight: normal;
-  background-color: #3d9c4f;
+  background-color: #0AAD03;
   color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.16);
+}
+
+.content .icon-button:hover,
+.content .icon-button:focus
+{
+  background-color: #258333;
 }
 
 .icon-button .button-image
 {
-  vertical-align: middle;
-}
-
-[dir="ltr"] .icon-button .button-image
-{
-  margin-right: 10px;
-}
-
-[dir="rtl"] .icon-button .button-image
-{
-  margin-left: 10px;
-}
-
-.icon-button .button-text
-{
-  position: relative;
-  top: 0.1em;
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  margin-top: -20px;
+  height: 40px;
+  width: 40px;
 }
 
 .info-box
