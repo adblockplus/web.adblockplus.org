@@ -106,6 +106,8 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
     - URLs, die Probleme verursachen
     - Adblock Plus Probleme
     - Adresse und Transaktions-ID-Nummern für Spendenerstattungen (freiwillig)
+4. Auf unseren Social Media-Webseiten
+    - Nutzungsprofile
 
 ### Wie erheben wir Daten? {: #how-we-collect-data }
 
@@ -134,6 +136,10 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
     - Von Forenbeiträgen
     - Von Browser Web-Store-Bewertungen
     - Von sozialen Plattformen wie Facebook und Twitter
+4. Daten, die du uns über Social Media zur Verfügung stellst
+5. Im Zusammenhang mit unseren Social Media-Webseiten:
+{: .has-horizontal-list .semicolon-separated }
+    - Cookies
 
 ### Wie und warum verarbeiten wir deine Daten? {: #why-we-process-data }
 
@@ -144,6 +150,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 - Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.
 - Um dich bei Problemen mit unseren Produkten zu unterstützen.
 - Zum Erhalt von Spenden, die du uns schickst.
+- Im Zusammenhang mit unseren Social Media-Webseiten nutzen soziale Netzwerke die Daten zu Marktforschungs- und Werbezwecken.
 
 ### Auf welcher Rechtsgrundlage erfolgt die Datenverarbeitung? {: #what-is-legal }
 
@@ -585,7 +592,24 @@ Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software vo
 
 Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
 
-<time datetime="2020-03">April 2020</time>
+### Erhebung und Verarbeitung auf unserer Social Media-Präsenz {: #collection-and-processing-on-our-social-media-presence }
+
+Wir sind auf Facebook, Instagram, Pinterest, VK, Twitter und LinkedIn aktiv, um mit dir kommunizieren zu können. Facebook sowie eyeo sind gemeinsam für die Verarbeitung von personenbezogenen Daten verantwortlich („gemeinsame Verantwortliche”, DSGVO Art. 26), selbst wenn diese exklusiv vom jeweiligen sozialen Netzwerk gespeichert werden. Deshalb werden wir dich immer über die Datenverarbeitungsprozesse im Zusammenhang mit unserer Präsenz auf den jeweiligen sozialen Netzwerken wie folgt informieren.
+
+Wenn du unserer jeweiligen Online-Präsenz auf einem oder mehreren von uns verwendeten sozialen Netzwerken folgst, beachte bitte, dass es möglich ist, dass deine Daten außerhalb der Europäischen Union / des Europäischen Wirtschaftsraums verarbeitet werden können. Alle Netzwerke, die wir verwenden, haben jedoch zugestimmt, die EU-Datenschutzstandards im Rahmen des EU-US-Datenschutzschilds einzuhalten.
+
+Die von uns verwendeten Netzwerke verarbeiten regelmäßig deine Daten zu Marktforschungs- und Werbezwecken. Auf Grundlage deines Nutzungsverhaltens und deiner Interessen erstellen die Netzwerke ggf. Nutzungsprofile, die beispielsweise Werbungen platzieren, die deinen potenziellen Interessen innerhalb und außerhalb deines Netzwerks entsprechen. Zu diesen Zwecken werden regelmäßig Cookies auf deinem Computer gespeichert, die dein Nutzungsverhalten und Informationen über deine Interessen speichern sowie möglicherweise auch die Geräte, die du benutzt.
+
+Bitte besuche die Webseite jedes sozialen Netzwerks, dass nachfolgend aufgeführt wird, um eine detaillierte Übersicht der jeweiligen Verarbeitungsprozesse und Ausstiegsoptionen (Opt-out) zu erhalten. Zur Geltendmachung deiner Rechte und Informationsanfragen leiten wir dich an die jeweiligen sozialen Netzwerke weiter, wo du deine Rechte am effektivsten ausüben kannst. Der Grund hierfür ist, dass die sozialen Netzwerke Zugriff auf deine Daten haben und daher direkt angemessene Maßnahmen ergreifen und dir die jeweiligen Informationen zur Verfügung stellen können:
+
+- **Facebook** (Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland), Facebook-Fanseite – Datenschutzerklärung: [https://www.facebook.com/about/privacy/](https://www.facebook.com/about/privacy/), Opt-Out: [https://www.facebook.com](https://www.facebook.com) und [http://www.youronlinechoices.com](http://www.youronlinechoices.com), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **Instagram** (Instagram Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA) – Datenschutzerklärung / Opt-Out: [http://instagram.com](http://instagram.com)
+- **Pinterest** (Pinterest Europe Ltd., Palmerston House, 2nd Floor, Fenian Street, Dublin 2, Irland) – Datenschutzerklärung: [https://policy.pinterest.com/de/privacy-policy](https://policy.pinterest.com/de/privacy-policy), / Opt-Out: [https://policy.pinterest.com/de/privacy-policy#section-your-options](https://policy.pinterest.com/de/privacy-policy#section-your-options), Privacy Shield für Datenübertragungen an Pinterests Niederlassung in den USA, Pinterest, Inc.: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **VK** (VK LLC, 1-N, Geb. 12-14, Büro A, Chersonskaja-Str., St. Petersburg, Russland, 191024) – Datenschutzerklärung: [https://vk.com/privacy/eu](https://vk.com/privacy/eu)
+- **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA) – Datenschutzerklärung: [https://twitter.com](https://twitter.com), Opt-Out: [https://twitter.com/personalization](https://twitter.com/personalization), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Irland) – Datenschutzerklärung: [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Opt-out: [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+
+<time datetime="2020-05">Mai 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

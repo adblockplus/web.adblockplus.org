@@ -106,6 +106,8 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
     - URL pour lesquels l’utilisateur est confronté à des problèmes
     - Problèmes Adblock Plus
     - Adresse et numéros de transaction ID pour remboursements de dons (volontairement)
+4. Sur les pages de nos réseaux sociaux
+    - Profils utilisateurs
 
 ### Comment recueillons-nous les données ? {: #how-we-collect-data }
 
@@ -134,6 +136,10 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
     - Depuis des billets sur forums
     - Depuis des avis sur le Web Store d’un navigateur
     - Depuis les réseaux sociaux tels que Facebook et Twitter
+1. Données que vous nous fournissez via les réseaux sociaux
+1. En lien avec nos pages sur les réseaux sociaux :
+{: .has-horizontal-list .semicolon-separated }
+    - Cookies
 
 ### Comment et pourquoi traitons-nous vos données ? {: #why-we-process-data }
 
@@ -144,6 +150,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 - À des fins de communication et d’assistance sur notre forum et notre blog.
 - Pour vous aider si vous rencontrez des problèmes avec nos produits.
 - Pour recevoir les dons que vous nous envoyez.
+- Dans le cadre de nos pages sur les réseaux sociaux, les réseaux sociaux utilisent les données à des fins d'études de marché et de publicité.
 
 ### Quelle est la base légale du traitement des données ? {: #what-is-legal }
 
@@ -582,7 +589,24 @@ Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la re
 
 Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant.
 
-<time datetime="2020-03">Avril 2020</time>
+### Collecte et traitement des données relatifs à notre présence sur les réseaux sociaux {: #collection-and-processing-on-our-social-media-presence }
+
+Afin de communiquer avec vous, et de vous informer sur nos activités et offres sur les réseaux sociaux, nous sommes actifs sur Facebook, Instagram, Pinterest, VK, Twitter et LinkedIn. En ce qui concerne Facebook, sachez que Facebook et eyeo sont conjointement responsables du traitement de vos données personnelles (« responsabilité commune », Art. 26 du RGPD), même si ces dernières sont enregistrées exclusivement par les réseaux sociaux concernés. Par conséquent, nous vous informons quand même des processus de traitement de données en raison de notre présence sur les réseaux sociaux concernés, comme suit.
+
+Si vous suivez notre présence en ligne sur un ou plusieurs des réseaux sociaux que nous utilisons, veuillez noter que vos données peuvent être traitées en dehors de l'Union européenne/Espace économique européen. Cependant, tous les réseaux que nous utilisons ont accepté de se conformer aux normes de protection des données de l'UE, dans le cadre du Bouclier de protection des données UE-États-Unis.
+
+Les réseaux sociaux que nous utilisons traitent aussi vos données régulièrement à des fins d'études de marché et de publicité. En fonction de votre comportement utilisateur et de vos centres d'intérêt, les réseaux peuvent créer des profils utilisateurs qui sont utilisés, par exemple, pour diffuser des publicités correspondant à vos intérêts éventuels au sein même des réseaux et en dehors de ces derniers. À ces fins, les cookies, qui enregistrent votre comportement utilisateur ainsi que vos centres d'intérêt, et potentiellement les appareils que vous utilisez, sont régulièrement enregistrés sur votre ordinateur.
+
+Pour obtenir un aperçu détaillé des traitements respectifs et options de désabonnement correspondantes, veuillez visiter le site Internet de chaque réseau social, répertorié ci-dessous. Pour faire valoir vos droits et demandes d'informations, nous vous invitons également à contacter les réseaux sociaux concernés, au sein desquels vous pourrez exercer vos droits avec une plus grande efficacité. En effet, les réseaux sociaux ont accès à vos données et peuvent donc directement prendre les mesures appropriées et vous fournir les informations correspondantes :
+
+- **Facebook** (Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlande), Page des fans de Facebook basée sur un accord de responsabilité commune – Politique de confidentialité : [https://www.facebook.com/about/privacy/](https://www.facebook.com/about/privacy/), Désabonnement : [https://www.facebook.com](https://www.facebook.com) et [http://www.youronlinechoices.com](http://www.youronlinechoices.com), Bouclier de protection des données : [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **Instagram** (Instagram Inc., 1601 Willow Road, Menlo Park, CA, 94025, États-Unis) – Politique de confidentialité/Option de désabonnement :  [http://instagram.com](http://instagram.com)
+- **Pinterest** (Pinterest Europe Ltd., Palmerston House, 2nd Floor, Fenian Street, Dublin 2, Irlande) – Politique de confidentialité : [https://policy.pinterest.com/fr/privacy-policy](https://policy.pinterest.com/fr/privacy-policy), Option de désabonnement : [https://policy.pinterest.com/fr/privacy-policy#section-your-options](https://policy.pinterest.com/fr/privacy-policy#section-your-options), Bouclier de protection des données pour tout transfert de données vers l'entité américaine de Pinterest, Pinterest, Inc. : [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **VK** (VK LLC, 1-N, bld. 12-14, Lit. A, Khersonskaya st., St. Petersbourg, Russie, 191024) – Politique de confidentialité : [https://vk.com/privacy/eu](https://vk.com/privacy/eu)
+- **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, Etats-Unis) – Politique de confidentialité : [https://twitter.com](https://twitter.com), Option de désabonnement : [https://twitter.com/personalization](https://twitter.com/personalization), Bouclier de protection des données : [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Irlande) – Politique de confidentialité : [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Option de désabonnement : [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out), Bouclier de protection des données : [https://www.privacyshield.gov](https://www.privacyshield.gov)
+
+<time datetime="2020-05">Mai 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

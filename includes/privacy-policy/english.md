@@ -105,6 +105,8 @@ The following privacy notice shall provide you with a general overview about the
     - URLs the user is having issues with
     - Adblock Plus issues
     - Address and transaction ID numbers for donation refunds (voluntary)
+1. On our social media pages
+    - Usage profiles
 
 ### How do we collect data? {: #how-we-collect-data }
 
@@ -133,6 +135,10 @@ List of techniques and tools we use for data collection.
     - From forum posts
     - From Browser Web Store reviews
     - From social platforms like Facebook and Twitter
+4. Data you provide to us via social media
+5. In connection with our social media pages:
+{: .has-horizontal-list .semicolon-separated }
+    - Cookies
 
 ### How and why do we process your data? {: #why-we-process-data }
 
@@ -143,6 +149,7 @@ List of techniques and tools we use for data collection.
 - For communication and assistance purposes in our forum and blog.
 - For assisting you with any issues you may have with our products.
 - For receiving donations that you send to us.
+- In connection with our social media pages, social networks use the data for market research and advertising purposes.
 
 ### What is the legal basis of data processing? {: #what-is-legal }
 
@@ -295,7 +302,7 @@ For the following services, we use non-EU/EEA service providers. We have careful
 
 We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
 
-We use external service provider tools to receive donations. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Stripe is certified under the EU-US Privacy Shield Framework ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
+We use external service provider tools to receive donations. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Stripe is certified under the EU-U.S. Privacy Shield Framework ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
 
 We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) and Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Both Zendesk ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) and Sprout ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) are certified under the EU-U.S. Privacy Shield Framework.
 
@@ -585,7 +592,24 @@ For user support, we use a customer relation management software from Zendesk, I
 
 All user support data is deleted one (1) year after closing the respective support case.
 
-<time datetime="2019-11">April 2020</time>
+### Collection and processing on our social media presence {: #collection-and-processing-on-our-social-media-presence }
+
+In order to communicate with you, and to inform you about our activities and offers on social networks, we are active on Facebook, Instagram, Pinterest, VK, Twitter and LinkedIn. In terms of Facebook, both Facebook and eyeo are jointly responsible for the processing of your personal data (“joint controller”, GDPR Art. 26), even if it is stored exclusively by the respective social network. Therefore, we still inform you about the data processing processes in connection with our presence on the respective social network as follows.
+
+If you follow our respective online presence on one or more of the social networks used by us, please note that your data may be processed outside the European Union / the European Economic Area. However, all the networks we use have agreed to comply with EU data protection standards within the framework of the EU-U.S. Privacy Shield.
+
+The social networks we use also process your data regularly for market research and advertising purposes. Based on your usage behavior and interests, the networks may create usage profiles which are used, for example, to place advertisements corresponding to your potential interests within and outside of the networks. For these purposes, cookies, which store your usage behavior and interests, as well as possibly also the devices you use, are regularly stored on your computer.
+
+For a detailed overview of the respective processing operations and opt-out options, please visit the website of each social network, listed below. For the assertion of your rights and requests for information, we also refer you to the respective social networks, where you can exercise your rights most effectively. This is because the social networks have access to your data and can therefore directly take appropriate measures and provide you with the respective information:
+
+- **Facebook**  (Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland), Facebook Fan Page based on a joint controller agreement – Privacy Policy: [https://www.facebook.com/about/privacy/](https://www.facebook.com/about/privacy/), Opt-Out: [https://www.facebook.com](https://www.facebook.com) and [http://www.youronlinechoices.com](http://www.youronlinechoices.com), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **Instagram** (Instagram Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA) – Privacy Policy / Opt-Out: [http://instagram.com](http://instagram.com)
+- **Pinterest** (Pinterest Europe Ltd., Palmerston House, 2nd Floor, Fenian Street, Dublin 2, Ireland) – Privacy Policy: [https://policy.pinterest.com/en/privacy-policy](https://policy.pinterest.com/en/privacy-policy), / Opt-Out: [https://policy.pinterest.com/en/privacy-policy#section-your-options](https://policy.pinterest.com/en/privacy-policy#section-your-options), Privacy-Shield for any data transfers to Pinterest’s US entity Pinterest, Inc.: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **VK** (VK LLC, 1-N, bld. 12-14, Lit. A, Khersonskaya st., St. Petersburg, Russia, 191024) – Privacy Policy: [https://vk.com/privacy/eu](https://vk.com/privacy/eu)
+- **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA) – Privacy Policy: [https://twitter.com](https://twitter.com), Opt-Out: [https://twitter.com/personalization](https://twitter.com/personalization), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+- **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Ireland) – Privacy Policy: [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Opt-Out: [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
+
+<time datetime="2020-05">May 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
