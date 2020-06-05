@@ -6,12 +6,14 @@
   <div class="container">
     {{ "index" | linkify(id="navbar-logo") }}
       <img
-        src="/img/navbar-logo.svg">
+        src="/img/navbar-logo.svg"
+        alt="">
       <span>Adblock <strong>Plus</strong></span>
     </a>
     <a href="#" id="navbar-menu-toggle">
       <img
-        src="/img/menu-toggle.svg">
+        src="/img/menu-toggle.svg"
+        alt="">
     </a>
     <ul id="navbar-menu">
       {% for pagename in ["download", "about"] %}
