@@ -1,0 +1,128 @@
+<form>
+
+  <header class="donation-header">
+    <h2 class="donation-heading">
+      <span class="single-currency">{{ fair-amount-header-1[heading] Name a fair amount (in <span class="currency">USD</span>) }}</span>
+      <span class="multi-currency">{{ fair-amount-header-2[heading] Name a fair amount: }}</span>
+    </h2>
+    <select
+      id="payment-currencies"
+      class="payment-currencies"
+      name="payment-currency">
+    </select>
+  </header>
+
+  <script id="payment-currency-options" type="text/html">
+    <% _.each (currencies, function (currency, name) {  %>
+    <option value="<%- name %>"><%- name %></option>
+    <% }) %>
+  </script>
+
+  <div class="payment-types">
+
+    <fieldset class="payment-type">
+      <legend>
+        {{ one-time-legened-1[heading] Make a <strong>one-time</strong> donation: }}
+      </legend>
+      <div id="donation-amounts"></div>
+    </fieldset>
+
+    <hr class="payment-divide">
+
+    <fieldset class="subscription-payment-type payment-type">
+      <legend>
+        {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
+      </legend>
+      <div id="subscription-amounts"></div>
+    </fieldset>
+
+  </div>
+
+  <script id="preset-payment-amounts" type="text/html">
+    <% _.each (amounts, function(amount, index) { %>
+    <% if (index == 0) { %>
+    <div class="payment-amounts">
+      <% } %>
+      <% if (index % 3 == 0) { %>
+    </div>
+    <div class="payment-amounts">
+      <% } %>
+      <label class="payment-amount">
+        <input
+          type="radio"
+          name="preset-<%- type %>-amount"
+          value="<%- amount %>"
+        <% if (type == "donation" && index == 3) { %>
+        checked
+        <% } %>>
+        <%- sign %><%- amount %>
+      </label>
+      <% }) %>
+  </script>
+
+  <script id="custom-payment-amount" type="text/html">
+    <div class="custom-payment-amount payment-amount">
+      <input
+        type="radio"
+        name="preset-<%- type %>-amount"
+        value="custom">
+      <%- sign %>
+      <input
+        type="text"
+        size="4"
+        inputmode="numeric"
+        spellcheck="false"
+        name="custom-<%- type %>-amount"
+        placeholder="<%- placeholder %>">
+    </div>
+    </div>
+  </script>
+
+  <p class="alert minimum-amount-warning minimum-donation-warning">
+    {{ min-donation-warning[notice] Oops! To help cover fees, the minimum one-time donation amount is <span class="minimum-amount">$5</span>. }}
+  </p>
+
+  <p class="alert minimum-amount-warning minimum-subscription-warning">
+    {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum monthly donation amount is <span class="minimum-amount">$1.99</span>. }}
+  </p>
+
+  <div id="payment-providers" class="payment-providers">
+    <span class="payment-providers-lead">
+      {{ pay-with-lead-1[heading] Pay with: }}
+    </span>
+    <button name="stripe-provider" class="stripe-button">
+      <img class="stripe-button-lock" src="/img/lock.png" alt="">
+      <span class="stripe-button-text">
+        {{ stripe-label[button label] Credit card }}
+      </span>
+    </button>
+    <button name="paypal-provider" class="paypal-button">
+      {{ paypal-label[button label] PayPal }}
+    </button>
+  </div>
+
+</form>
+
+<script id="payment-translations">
+  window.paymentTranslations = {
+    item: "{{ purchase-item-name[item being paid for] Adblock Plus contribution }}",
+    donate: "{{ checkout-overlay-cta[button label] Donate }}",
+    subscribe: "{{ checkout-overlay-cta-2[button label] Subscribe }}",
+    month: "{{ checkout-overlay-monthly[button label] month }}",
+    declined: "{{ stripe-declined Your payment was declined. }}",
+    sorry: "{{ stripe-sorry Sorry, your payment could not be processed. }}",
+    securelyProcessed: "{{ securely-processed Securely processed by Stripe.com }}",
+    notSupported: "{{ not-supported Sorry, this card type is not accepted currently. }}",
+    emailAddress: "{{ email-input Email }}"
+  };
+</script>
+
+<script src="/js/lodash.custom.js"></script>
+<script src="/js/payment/config/donations.js"></script>
+<script src="/js/payment/form.js"></script>
+<script src="/js/payment/providers/paypal.js"></script>
+<script src="/js/payment/providers/stripe.js"></script>
+
+<script>
+<? include init-stripe-provider ?>
+</script>
