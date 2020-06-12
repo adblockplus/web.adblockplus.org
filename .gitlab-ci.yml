@@ -39,6 +39,18 @@ tests:
     - xvfb-run --server-args="-screen 0 1024x768x24" tox
   when: manual
 
+measure:
+  stage: test
+  image: cypress/browsers:node12.18.0-chrome83-ff77
+  script:
+    - git clone https://gitlab.com/eyeo/websites/cms.git
+    - npm install @lhci/cli@0.4.1 -g > /dev/null 2>&1
+    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py > /dev/null 2>&1
+    - python get-pip.py > /dev/null 2>&1
+    - cd cms; pip install -r requirements.txt > /dev/null 2>&1; cd ..
+    - python cms/runserver.py > /dev/null 2>&1 &
+    - lhci collect; lhci assert
+
 staging_build:
   stage:
     "build"
