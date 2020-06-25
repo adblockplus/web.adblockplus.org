@@ -1,0 +1,30 @@
+<footer id="download" class="container">
+  <div class="section download">
+    <div class="content text-center">
+      <h2>
+        {{ "" | translate("download-heading", "message") }}
+      </h2>
+      <p>
+        {{ "" | translate("download-paragraph-1", "message") }}
+      </p>
+      <p class="margin-top-3">
+        <a
+          class="button icon-button"
+          href="{{install_link}}">
+          <img
+            src="/img/{{browser_id}}-logo.svg"
+            alt="{{ "" | translate("download-image-alt", "message") }}"
+            class="button-image">
+          <span class="button-text">
+            {{ "" | translate("download-button-label", "message") }}
+          </span>
+        </a>
+      </p>
+      <p>
+        <a href="download">
+          {{ "" | translate("download-other-label", "message") }}
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

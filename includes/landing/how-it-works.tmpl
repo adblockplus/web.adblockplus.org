@@ -1,0 +1,24 @@
+<section id="how-it-works" class="container">
+  <div class="section">
+    <div class="row section reverse">
+      <div class="column one-half text-center-mobile">
+        <img
+          src="/img/browse-with-abp-{{browser_id}}.svg"
+          alt="{{ "" | translate("how-it-works-image-alt", "message") }}">
+      </div>
+      <div class="column one-half content">
+        <h2>
+          {{ "" | translate("how-it-works-heading", "message") }}
+        </h2>
+        <p>
+          {{ "" | translate("how-it-works-paragraph-1", "message") }}
+        </p>
+        {%if browser_id == "chrome"%}
+          <p>
+            {{ "" | translate("how-it-works-paragraph-2", "message") }}
+          </p>
+        {%endif%}
+      </div>
+    </div>
+  </div>
+</section>
