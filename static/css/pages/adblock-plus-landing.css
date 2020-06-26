@@ -149,14 +149,10 @@
   display: block;
 }
 
-.info-box
+.info-box,
+.info-box[hidden]
 {
   display: none;
-}
-
-.unsupported-device .info-box
-{
-  display: block;
 }
 
 @media (min-width: 768px)
