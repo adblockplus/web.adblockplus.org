@@ -1,32 +1,74 @@
 {
-  "s1": {
-    "message": "Пожертвование для Adblock Plus"
+  "title": {
+    "message": "Пожертвовать для Adblock Plus"
   },
-  "s10": {
-    "message": "Пожертвовать"
+  "donate-lead": {
+    "message": "Adblock Plus – это бесплатная программа, которая всегда будет бесплатной. Наша миссия – предоставить пользователям инструменты, позволяющие им контролировать работу в Интернете и защищать их от нежелательных и вредоносных элементов. Ваше пожертвование напрямую помогает развитию Adblock Plus."
   },
-  "s13": {
-    "message": "Я пожертвовал через PayPal"
+  "donate-support": {
+    "message": "Вы можете запросить возврат денег в течение 120 дней с момента оплаты. Вы также можете отменить свою подписку в любое время. Пожалуйста, отправьте электронное письмо по адресу <a>email</a> и укажите свой адрес электронной почты, дату, сумму пожертвования и идентификатор/код операции PayPal Узнайте больше о возвратах в <a>статье в Справочном центре</a> (только на английском языке)."
   },
-  "s3": {
-    "message": "Выберите способ оплаты"
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "Укажите справедливую сумму (в долларах <span>США</span>)"
   },
-  "s5": {
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "Укажите справедливую сумму:"
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "Сделать <strong>однократное</strong> пожертвование:"
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "Или <strong>ежемесячное</strong> пожертвование:"
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "Ой! С учетом накладных расходов, минимальная сумма однократного пожертвования составляет <span>$5</span>."
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "Ой! С учетом накладных расходов, минимальная сумма ежемесячного пожертвования составляет <span>$1.99</span>."
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "Средство оплаты:"
+  },
+  "stripe-label": {
+    "description": "button label",
     "message": "Кредитная карта"
   },
-  "s6": {
-    "message": "Выберите валюту"
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
   },
-  "s7": {
-    "message": "Назовите сумму"
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "Пожертвование для Adblock Plus"
   },
-  "s8": {
-    "message": "Другая:"
+  "checkout-overlay-cta": {
+    "description": "button label",
+    "message": "Пожертвовать"
   },
-  "s9": {
-    "message": "Переводить эту сумму ежемесячно"
+  "stripe-declined": {
+    "message": "Ваш платеж был отклонен."
   },
-  "title": {
-    "message": "Пожертвуйте Adblock Plus"
+  "stripe-sorry": {
+    "message": "К сожалению, ваш платеж не удалось обработать."
+  },
+  "securely-processed": {
+    "message": "Защищенная обработка платежей осуществляется Stripe.com"
+  },
+  "privacy-policy": {
+    "description": "footer link",
+    "message": "Политика конфиденциальности"
+  },
+  "email-input": {
+    "message": "Email"
+  },
+  "notSupported": {
+    "message": "Извините, данный тип карт в настоящее время не принимается."
   }
 }

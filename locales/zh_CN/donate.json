@@ -1,32 +1,74 @@
 {
-  "s1": {
-    "message": "助力 Adblock Plus"
+  "title": {
+    "message": "向 Adblock Plus 捐赠"
   },
-  "s10": {
-    "message": "捐赠"
+  "donate-lead": {
+    "message": "Adblock Plus 软件至今，甚至未来都会保持免费的。我们的使命是为用户提供工具，让他们可以控制自己的在线浏览体验，保护他们不受恼人和恶意的内容影响。您的捐赠将直接帮助 Adblock Plus 发展。"
   },
-  "s13": {
-    "message": "我使用 PayPal 来支付"
+  "donate-support": {
+    "message": "您可以在付款后 120 天内申请退款。您也可以随时取消订阅。请发送电子邮件至 <a>email</a>，并提供您的电子邮件地址、日期、捐赠的金额和 PayPal 交易 ID/代码。了解更多有关退款信息，请点击我们的<a>帮助中心文章</a>（仅提供英文版）。"
   },
-  "s3": {
-    "message": "选择支付方式"
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "选择适当金额 (<span>美元</span>)"
   },
-  "s5": {
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "选择适当金额："
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "进行<strong>一次性</strong>捐赠："
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "或<strong>每月</strong>捐赠："
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "抱歉！为了支付相关费用，一次性捐款额最低为 <span>$5</span>。"
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "抱歉！为了支付相关费用，每月捐款额最低为 <span>$1.99</span>。"
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "支付方式："
+  },
+  "stripe-label": {
+    "description": "button label",
     "message": "信用卡"
   },
-  "s6": {
-    "message": "选择您的货币种类"
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
   },
-  "s7": {
-    "message": "选择支付金额"
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "助力 Adblock Plus"
   },
-  "s8": {
-    "message": "其他："
+  "checkout-overlay-cta": {
+    "description": "button label",
+    "message": "捐赠"
   },
-  "s9": {
-    "message": "将上述金额设置每月支付"
+  "stripe-declined": {
+    "message": "您的支付已被拒绝。"
   },
-  "title": {
-    "message": "捐助 Adblock Plus"
+  "stripe-sorry": {
+    "message": "抱歉，无法处理您的支付。"
+  },
+  "securely-processed": {
+    "message": "由 Stripe.com 安全处理"
+  },
+  "privacy-policy": {
+    "description": "footer link",
+    "message": "隐私策略"
+  },
+  "email-input": {
+    "message": "电子邮箱"
+  },
+  "notSupported": {
+    "message": "抱歉，目前不接受这种卡片类型。"
   }
 }
