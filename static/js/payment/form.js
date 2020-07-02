@@ -103,7 +103,10 @@ function PaymentForm(currencies)
 
   updateAmounts();
 
-  paymentCurrency.addEventListener("change", updateAmounts);
+  paymentCurrency.addEventListener("change", function(e) {
+    updateAmounts();
+    validateCustomAmount(e);
+  });
 
   // uncheck donation amount when subscription amount is selected and vise versa
   function onFieldsetChange (otherFieldset, event)
