@@ -24,6 +24,9 @@
       <li class="uppercase">
         <a href="https://help.eyeo.com" target="_blank">{{ get_string("help", "menu") }}</a>
       </li>
+      <li class="uppercase {{ "active" if page == "donate" else "" }}">
+        {{ "donate" | linkify }}{{ get_string("donate", "menu") }}</a>
+      </li>
       <li id="navbar-locale-menubar">
         <a id="navbar-locale-selected">
           {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
