@@ -679,10 +679,23 @@ a.icon-button:visited
 /* #footer #social-list
  ******************************************************************************/
 
+#social-list {
+  margin: 2rem 0 0.5rem;
+}
+
+#social-list .footer-social-heading
+{
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
 #social-list ul
 {
-  /* negative margin canceled out by li margin below */
-  margin: 0em -0.375em;
+  display: inline-block;
+  margin-left: 1rem;
 }
 
 #social-list li
@@ -701,8 +714,25 @@ a.icon-button:visited
   height: 2em;
 }
 
-@media(min-width: 1200px)
+@media(min-width: 767px)
 {
+  #social-list li
+  {
+    margin: 0 0.375em;
+  }
+  #social-list ul
+  {
+    margin-left: 0.35em;
+  }
+}
+
+@media(max-width: 767px)
+{
+  #social-list ul
+  {
+    display: block;
+    margin-left: 0;
+  }
   #social-list img
   {
     height: 3em;
@@ -711,8 +741,6 @@ a.icon-button:visited
 
 @media(max-width: 576px)
 {
-  #social-list img { height: 3em; }
-
   #social-list li { margin: 0 0.375em; }
 }
 
