@@ -48,7 +48,7 @@
       browser = getDetectedBrowserLabel(mobileBrowsers);
     else
       if (navigator.userAgent.indexOf("Edg/") != -1)
-        browser = "msedge_chromium"
+        browser = "msedge_chromium";
       else
         browser = getDetectedBrowserLabel(desktopBrowsers);
 
