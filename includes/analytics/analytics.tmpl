@@ -1,0 +1,8 @@
+{# new.abp.o tracking redirection works differently than abp.o tracking
+   redirection for now. It's necessary to support both until we finish
+   migrating to the new.abp.o infrastructure #}
+{% if config.get("general", "siteurl") == "https://adblockplus.org" %}
+  <script src="/js/tracking.js"></script>
+{% else %}
+  <script src="/js/tracking/tracking.js"></script>
+{% endif %}

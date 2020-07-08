@@ -8,7 +8,6 @@
     <? include meta/social ?>
     <? include styles ?>
     <? include head/config ?>
-    <? include head/analytics ?>
     <? include polyfills ?>
 
     {% block head %}
@@ -17,7 +16,6 @@
   </head>
 
   <body>
-    <? include analytics/body-start ?>
     <? include navbar ?>
 
     {% block body %}
@@ -27,6 +25,8 @@
     <? include footer ?>
     <? include cookie/index ?>
     <? include scripts ?>
+    <? include analytics/analytics ?>
+    <? include analytics/body-start ?>
   </body>
 {% endif %}
 </html>
