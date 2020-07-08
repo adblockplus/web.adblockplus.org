@@ -9,7 +9,6 @@ template=minimal
       height: auto;
     }
   </style>
-  <script src="/js/tracking-events.js"></script>
 </head>
 
 {% set supported_devices = [
@@ -85,9 +84,7 @@ template=minimal
               {% set platform_identifier = device.id + "-product-name-" + loop.index | string  %}
               <a
                 class="download-link {{ platform.class }}"
-                href="{{ platform.url }}"
-                data-ga='{"event_category": "Download_button", "event_action": "Download", "event_label": "Downloaded_{{ platform.id }}"}'
-              >
+                href="{{ platform.url }}">
                 {{ platform.name | translate(platform_identifier, "Product name") }}</a>{{ ", " if loop.index != loop.length }}
             </li>
           {% endfor %}

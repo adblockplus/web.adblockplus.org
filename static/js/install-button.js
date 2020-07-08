@@ -100,37 +100,6 @@
 
     if (installTextTemplate)
       installButton.textContent = installTextTemplate.textContent;
-
-    if (browser || mobilePlatform)
-    {
-      try {
-        gaData = JSON.parse(installButton.getAttribute("data-ga"));
-      } catch (error) {
-        gaData = {
-          "event_category": "Parse Error",
-          "event_action": "Link click"
-        };
-      }
-
-      gaData["event_action"] = "Download";
-
-      if (mobilePlatform)
-        gaData["event_label"] = "Downloaded_" + (
-          mobilePlatform == "ios" ? (
-            browser == "safari" ?
-              "safari_ios"
-              : "abb_ios"
-          ) : (
-            browser == "samsungBrowser" ?
-              "android_samsung"
-              : "abb_android"
-          )
-        );
-      else
-        gaData["event_label"] = "Downloaded_" + browser;
-
-      installButton.setAttribute("data-ga", JSON.stringify(gaData));
-    }
   }
 
   if (typeof bowser != "undefined") setupInstallButton();
