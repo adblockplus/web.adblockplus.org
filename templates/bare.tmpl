@@ -3,9 +3,12 @@
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
+
+    {% if user_testing %}
+      <? include ab-test/anti-flicker ?>
+    {% endif %}
+
     <? include styles ?>
-    <? include head/config ?>
-    <? include head/analytics ?>
 
     {% block head %}
       {{ head | safe }}
@@ -13,10 +16,18 @@
   </head>
 
   <body>
+    <? include head/config ?>
+
     {% block body %}
       {{ body | safe }}
     {% endblock %}
 
     <? include cookie/index ?>
+
+    {% if user_testing %}
+      <? include analytics/ab-test/tracking ?>
+    {% else %}
+      <? include head/analytics ?>
+    {% endif %}
   </body>
 </html>

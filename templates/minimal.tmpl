@@ -6,10 +6,12 @@
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
+
+    {% if user_testing %}
+      <? include ab-test/anti-flicker ?>
+    {% endif %}
+
     <? include styles ?>
-    <? include head/config ?>
-    <? include head/analytics ?>
-    <? include polyfills ?>
 
     {% block head %}
       {{ head | safe }}
@@ -17,7 +19,7 @@
   </head>
 
   <body>
-    <? include analytics/body-start ?>
+    <? include head/config ?>
     <? include navbar ?>
 
     {% block body %}
@@ -25,8 +27,17 @@
     {% endblock %}
 
     <? include footer ?>
+    <? include polyfills ?>
+    <? include analytics/body-start ?>
     <? include cookie/index ?>
     <? include scripts ?>
+
+    {% if user_testing %}
+      <? include analytics/ab-test/tracking ?>
+    {% else %}
+      <? include head/analytics ?>
+    {% endif %}
+
   </body>
 {% endif %}
 </html>
