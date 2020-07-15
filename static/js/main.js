@@ -21,6 +21,18 @@
     function initMenu() {
         document.getElementById("navbar-menu-toggle")
             .addEventListener("click", navigationClick, false);
+
+        var targetBlankLinks = [].slice.call(
+            document.querySelectorAll('#navbar-menu [target="_blank"]'));
+
+        // close navbarMenu when target _blank links are clicked
+        for (var i = 0; i < targetBlankLinks.length; i++) {
+            targetBlankLinks[i].addEventListener("click", function() {
+                document.getElementById("navbar-menu")
+                     .classList.remove("visible");
+            }
+            , false)
+        }
     }
 
     function initNavbarToggle() {
