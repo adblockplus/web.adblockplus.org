@@ -17,6 +17,11 @@
   {
     width: 25%;
   }
+
+  .bg-grey-abstract
+  {
+    padding-top: 4em;
+  }
 }
 
 @media (min-width: 768px)
@@ -24,11 +29,6 @@
   .section
   {
     margin-bottom: 6em;
-  }
-
-  #hero
-  {
-    padding-bottom: 6em;
   }
 
   #hero .section
@@ -42,6 +42,7 @@
   background-image: url("/img/grey-bg-abstract-shape.svg");
   background-repeat: no-repeat;
   background-size: 1152px 1250px;
+  padding-top: 4em;
 }
 
 #hero-image-tall,
@@ -79,6 +80,7 @@
   font-size: 2.4em;
   line-height: 1.3;
   font-weight: bold;
+  margin: 0 0 1rem 0;
 }
 
 @media (min-width: 576px)
@@ -208,7 +210,6 @@
 {
   .bg-grey-abstract
   {
-    padding-top: 6em;
     background-position: top -280px right -500px;
   }
 }
