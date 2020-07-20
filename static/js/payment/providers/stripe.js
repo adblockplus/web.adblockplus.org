@@ -143,11 +143,18 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
           ? data.amount + data.currencySign
           : data.currencySign + data.amount;
 
-      if (pageLocale == 'ko' || pageLocale == 'tr') {
+      if (pageLocale == 'ko') {
         button.textContent = (data.type == subscription)
           ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
           : (price + ' ' + dictionary.donate);
-
+      } else if (pageLocale == 'hu') {
+        button.textContent = (data.type == subscription)
+          ? (price + ' ' + dictionary.subscribe + ' ' + dictionary.month)
+          : (dictionary.donate + ' ' + price);
+      } else if (pageLocale == 'tr') {
+        button.textContent = (data.type == subscription)
+          ? (dictionary.month + ' ' + price + ' ' + dictionary.subscribe)
+          : (price + ' ' + dictionary.donate);
       } else {
         button.textContent = (data.type == subscription)
           ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
