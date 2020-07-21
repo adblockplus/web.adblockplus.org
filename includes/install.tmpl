@@ -1,17 +1,12 @@
 <a
   id="install-button"
   data-install-suffix="index"
-  class="button hero-download-button"
-  href="download"
-  data-ga='{
-    "event_category": "Download_button",
-    "event_action": "Go_to_download",
-    "event_label": "Fallback_button"
-  }'>
+  class="button hero-download-button download-button go-to-download"
+  href="download">
   {{ get_string("install", "install-button") }}
 </a>
 <p id="hero-download-alternate">
-  <a href="download">
+  <a href="download" class="download-more">
     {{ get_string("download-alt", "install-button") }}
   </a>
 </p>

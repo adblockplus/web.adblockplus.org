@@ -39,6 +39,7 @@
   {
     var bodyClassList = document.body.classList,
         installButton = document.getElementById("install-button"),
+        installClassList = installButton.classList,
         installSuffix = installButton.getAttribute("data-install-suffix"),
         installerHref, installTextTemplate, gaData;
 
@@ -48,7 +49,7 @@
       browser = getDetectedBrowserLabel(mobileBrowsers);
     else
       if (navigator.userAgent.indexOf("Edg/") != -1)
-        browser = "msedge_chromium"
+        browser = "msedge_chromium";
       else
         browser = getDetectedBrowserLabel(desktopBrowsers);
 
@@ -60,11 +61,32 @@
     else if (browser)
       installerHref = desktopBrowsers[browser];
 
-    if (mobilePlatform || browser)
-      installerHref += installSuffix;
-
     if (mobilePlatform) bodyClassList.add(mobilePlatform);
+
     if (browser) bodyClassList.add(browser);
+
+    if (mobilePlatform || browser)
+    {
+      installerHref += installSuffix;
+      installClassList.remove("go-to-download");
+    }
+
+    if (mobilePlatform && browser)
+    {
+      installClassList.add(
+        "abp-" + mobilePlatform + "-" + browser
+      );
+    }
+    else if (mobilePlatform)
+    {
+      installClassList.add(
+        "abb-" + mobilePlatform
+      );
+    }
+    else if (browser)
+    {
+      installClassList.add("abp-" + browser);
+    }
 
     // Prevent overwriting localized href when browser is not detected
     if (installerHref)
@@ -78,37 +100,6 @@
 
     if (installTextTemplate)
       installButton.textContent = installTextTemplate.textContent;
-
-    if (browser || mobilePlatform)
-    {
-      try {
-        gaData = JSON.parse(installButton.getAttribute("data-ga"));
-      } catch (error) {
-        gaData = {
-          "event_category": "Parse Error",
-          "event_action": "Link click"
-        };
-      }
-
-      gaData["event_action"] = "Download";
-
-      if (mobilePlatform)
-        gaData["event_label"] = "Downloaded_" + (
-          mobilePlatform == "ios" ? (
-            browser == "safari" ?
-              "safari_ios"
-              : "abb_ios"
-          ) : (
-            browser == "samsungBrowser" ?
-              "android_samsung"
-              : "abb_android"
-          )
-        );
-      else
-        gaData["event_label"] = "Downloaded_" + browser;
-
-      installButton.setAttribute("data-ga", JSON.stringify(gaData));
-    }
   }
 
   if (typeof bowser != "undefined") setupInstallButton();

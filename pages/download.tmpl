@@ -9,7 +9,6 @@ template=minimal
       height: auto;
     }
   </style>
-  <script src="/js/tracking-events.js"></script>
 </head>
 
 {% set supported_devices = [
@@ -20,13 +19,13 @@ template=minimal
     "title": "Block ads on any desktop browser",
     "description": "By clicking any of the links below, you agree to our " +  "terms" | linkify  + "Terms of Use</a>.",
     "platforms": [
-      { "id": "chrome", "name": "Chrome", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
-      { "id": "firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" },
-      { "id": "msie", "name": "Internet Explorer", "url": "https://eyeo.to/adblockplus/ie_install/" },
-      { "id": "safari", "name": "Safari", "url": "https://eyeo.to/adblockplus/macos_safari_install/" },
-      { "id": "msedge", "name": "Microsoft Edge", "url": "https://eyeo.to/adblockplus/edge_install/" },
-      { "id": "opera", "name": "Opera", "url": "https://eyeo.to/adblockplus/opera_install/" },
-      { "id": "yandexbrowser", "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
+      { "id": "chrome", "class": "abp-chrome", "name": "Chrome", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
+      { "id": "firefox", "class": "abp-firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" },
+      { "id": "msie", "class": "abp-msie", "name": "Internet Explorer", "url": "https://eyeo.to/adblockplus/ie_install/" },
+      { "id": "safari", "class": "abp-safari", "name": "Safari", "url": "https://eyeo.to/adblockplus/macos_safari_install/" },
+      { "id": "msedge", "class": "abp-msedge", "name": "Microsoft Edge", "url": "https://eyeo.to/adblockplus/edge_install/" },
+      { "id": "opera", "class": "abp-opera", "name": "Opera", "url": "https://eyeo.to/adblockplus/opera_install/" },
+      { "id": "yandexbrowser", "class": "abp-yandexbrowser", "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
     ]
   },
   {
@@ -35,9 +34,9 @@ template=minimal
     "icon_alt": "Mobile icon",
     "title": "Block ads on your mobile browser",
     "platforms": [
-      { "id": "android_samsung", "name": "Samsung Internet (Android)", "url": "https://eyeo.to/adblockplus/android_samsung_install/" },
-      { "id": "safari_ios", "name": "Safari (iOS)", "url": "https://eyeo.to/adblockplus/ios_safari_install/" },
-      { "id": "firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" }
+      { "id": "android_samsung", "class": "abp-android-samsungBrowser", "name": "Samsung Internet (Android)", "url": "https://eyeo.to/adblockplus/android_samsung_install/" },
+      { "id": "safari_ios", "class": "abp-ios-safari", "name": "Safari (iOS)", "url": "https://eyeo.to/adblockplus/ios_safari_install/" },
+      { "id": "firefox", "class": "abp-android-firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" }
     ]
   },
   {
@@ -46,8 +45,8 @@ template=minimal
     "icon_alt": "Adblock Browser logo",
     "title": "Block ads in a dedicated ad-blocking browser",
     "platforms": [
-      { "id": "abb_android", "name": "Adblock Browser (Android)", "url": "https://eyeo.to/adblockbrowser/android/" },
-      { "id": "abb_ios", "name": "Adblock Browser (iOS)", "url": "https://eyeo.to/adblockbrowser/ios/" }
+      { "id": "abb_android", "class": "abb-android", "name": "Adblock Browser (Android)", "url": "https://eyeo.to/adblockbrowser/android/" },
+      { "id": "abb_ios", "class": "abb-ios", "name": "Adblock Browser (iOS)", "url": "https://eyeo.to/adblockbrowser/ios/" }
     ]
   }
 ] %}
@@ -84,9 +83,8 @@ template=minimal
             <li>
               {% set platform_identifier = device.id + "-product-name-" + loop.index | string  %}
               <a
-                href="{{ platform.url }}"
-                data-ga='{"event_category": "Download_button", "event_action": "Download", "event_label": "Downloaded_{{ platform.id }}"}'
-              >
+                class="download-link {{ platform.class }}"
+                href="{{ platform.url }}">
                 {{ platform.name | translate(platform_identifier, "Product name") }}</a>{{ ", " if loop.index != loop.length }}
             </li>
           {% endfor %}
