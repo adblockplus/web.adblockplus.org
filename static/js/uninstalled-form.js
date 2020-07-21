@@ -43,7 +43,6 @@
     var reasonsContainer = document.getElementById("reasons");
     var reasons = document.querySelectorAll("#reasons > li");
     reasons = Array.prototype.slice.call(reasons);
-    reasonsContainer.innerHTML = "";
     while (reasons.length)
     {
       var randomIndex = Math.floor(Math.random() * (reasons.length -1));
