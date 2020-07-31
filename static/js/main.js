@@ -1,6 +1,11 @@
 "use strict";
 
 (function() {
+
+    // Show "Change cookie settings" links and info text to EEA users
+    if (eyeo && eyeo.cookieEnabled) // created in "js/tracking-world.js"
+        document.documentElement.classList.add("has-cookies")
+
     function initLanguageSelection() {
         var locale = document.getElementById("navbar-locale-selected");
 
