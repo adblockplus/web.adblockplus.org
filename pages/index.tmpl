@@ -1,3 +1,10 @@
 template=minimal
 
-<? include index ?>
+{% set is_old_index = locale in old_index_locales %}
+
+{% if is_old_index %}
+  <? include old-index ?>
+{% else %}
+  <? include new-index ?>
+{% endif %}
+
