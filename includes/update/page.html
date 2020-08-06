@@ -1,7 +1,6 @@
 <head>
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="/css/update.css">
-  <link rel="stylesheet" href="/css/stripe-modal.css">
 </head>
 
 <main class="update-container container content">
@@ -118,12 +117,6 @@
       <span class="payment-providers-lead">
         {{ pay-with-lead-1[heading] Pay with: }}
       </span>
-      <button name="stripe-provider" class="stripe-button">
-        <img class="stripe-button-lock" src="/img/lock.png" alt="">
-        <span class="stripe-button-text">
-          {{ stripe-label[button label] Credit card }}
-        </span>
-      </button>
       <button name="paypal-provider" class="paypal-button">
         {{ paypal-label[button label] PayPal }}
       </button>
@@ -180,9 +173,4 @@
 <script src="/js/payment/config/default.js"></script>
 <script src="/js/payment/form.js"></script>
 <script src="/js/payment/providers/paypal.js"></script>
-<script src="/js/payment/providers/stripe.js"></script>
 <script src="/js/pages/update.js"></script>
-
-<script>
-<? include init-stripe-provider ?>
-</script>
