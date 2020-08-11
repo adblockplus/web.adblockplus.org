@@ -42,6 +42,7 @@
         var scrollHandled = false;
         var lastScrollTop = 0;
         var desktopBreakpoint = 991;
+        var newScrollAction = false;
 
         // IE9 does not support offsetHeight when element is fixed
         if (!navbarHeight)
@@ -49,6 +50,10 @@
 
         window.addEventListener("scroll", (function() {
             scrollHandled = false;
+        }));
+
+        document.addEventListener("click", (function(target) {
+            newScrollAction = false;
         }));
 
         setInterval(function() {
@@ -70,11 +75,24 @@
 
         function handleScroll() {
             var currentScroll = window.pageYOffset;
+            var hash = document.location.hash;
+
+            setTimeout(function() {
+                if (hash !== "" && currentScroll > navbarHeight) {
+                    navbar.style.top = "-" + navbarHeight + "px";
+                    newScrollAction = true;
+                }
+            }, 20)
+
+            if (newScrollAction)
+                hash = "";
+
             if (currentScroll > lastScrollTop && currentScroll > navbarHeight) {
                 navbar.style.top = "-" + navbarHeight + "px";
             } else {
                 navbar.style.top = 0;
             }
+
             lastScrollTop = currentScroll;
             return true;
         }
