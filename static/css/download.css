@@ -1,0 +1,479 @@
+/* Download page
+ ******************************************************************************/
+
+.dark-grey
+{
+  color: #4A4A4A;
+}
+
+.download-header h1,
+.download-header p,
+.download-options .download-desktop .rating p
+{
+  margin: 0;
+}
+
+.sub-heading
+{
+  display: block;
+  margin: .6em 0 1em;
+  color: #C1C1C1;
+  font-size: 14px;
+}
+
+.download-header,
+.download-options
+{
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.download-options
+{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.download-options section
+{
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 2em;
+}
+
+/* iOS device (any browser) or an
+Android device using Samsung Internet or Firefox */
+@media(max-width: 1025px)
+{
+  .android.firefox .download-options .download-mobile,
+  .android.samsungBrowser .download-options .download-mobile,
+  .ios .download-options .download-mobile
+  {
+    order: -1;
+  }
+}
+
+.download-options .tabs-menu
+{
+  display: block;
+  margin-top: 0;
+}
+
+.tabs-menu li
+{
+  display: block;
+}
+
+.tabs-menu a,
+.tabs-menu a:visited
+{
+  padding: .2em .8em;
+  color: #C1C1C1;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.tabs-menu a:hover,
+.tabs-menu a:focus,
+.tabs-menu a:active,
+.tabs-menu .current-tab a
+{
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+}
+
+.download-options .tab-text-contents p a,
+.download-options .tab-text-contents p a:hover,
+.download-options .tab-text-contents p a:active,
+.download-options .tab-text-contents p a:visited
+{
+  color: #212121;
+  font-weight: 700;
+}
+
+.download-options .description
+{
+  text-align: left;
+}
+
+.download-options .tab-text-contents h2,
+.download-options .tab-text-contents .tou-note
+{
+  margin: 0;
+}
+
+.download-options .tab-text-contents .tou-note a,
+.download-options .tab-text-contents .tou-note a:hover,
+.download-options .tab-text-contents .tou-note a:active,
+.download-options .tab-text-contents .tou-note a:visited
+{
+  color: #ED1E45;
+  font-weight: 300;
+}
+
+.show-mobile
+{
+  display: inline;
+}
+
+.tab-content
+{
+  display: none;
+}
+
+.tab-content.current-tab
+{
+  display: block;
+}
+
+.download-options .download-desktop .tab-media-contents
+{
+  width: 100%;
+}
+
+.download-options .tab-media-contents img
+{
+  padding-bottom: 2em;
+}
+
+.download-options .download-abb .tab-media-contents img
+{
+  max-width: 55%;
+}
+
+.download-options .download-mobile .tab-media-contents img
+{
+  max-width: 40%;
+}
+
+.download-options .download-desktop .tab-media-contents img
+{
+  max-width: 95%;
+}
+
+.download-options .download-desktop .tab-text-contents
+{
+  margin: auto;
+  max-width: 100%;
+  width: 410px;
+  padding-right: 0;
+}
+
+.download-options .download-desktop .rating .stars
+{
+  max-height: 40px;
+  max-width: 160px;
+}
+
+.download-options .download-desktop .rating p
+{
+  font-size: 12px;
+}
+
+.download-options .download-desktop .tabs
+{
+  display: none;
+}
+
+.tab-column
+{
+  display: table-cell;
+  width: 80%;
+  vertical-align: top;
+}
+
+.tab-column:nth-child(2n)
+{
+  width: 20%;
+  text-align: center;
+}
+
+.download-abb .install-button,
+.download-mobile .install-button
+{
+  height: 57px;
+  width: 185px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#abp_android_samsungBrowser.install-button,
+#abp_android_firefox.install-button,
+#abb_android.install-button
+{
+  background-image: url("../img/google-play-badge.svg");
+}
+
+#abp_ios_safari.install-button,
+#abb_ios.install-button
+{
+  background-image: url("../img/apple-app-store-badge.svg");
+}
+
+@media(min-width: 768px)
+{
+  .download-header
+  {
+    padding: 4em 0;
+  }
+
+  .download-options
+  {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .download-options section
+  {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0 7em;
+  }
+
+  .download-options .tab-text-contents
+  {
+    text-align: left;
+  }
+
+  .tabs-menu li
+  {
+    display: inline;
+  }
+
+  .download-options .tab-text-contents
+  {
+    width: 68%;
+    padding-right: 3em;
+  }
+
+  .download-options .tab-media-contents
+  {
+    width: 36%;
+    padding-right: 1em;
+  }
+
+  .download-options .tab-media-contents img
+  {
+    padding: 3em;
+  }
+
+  .download-options .download-desktop
+  {
+    flex-direction: column;
+  }
+
+  .download-options .download-desktop .tab-text-contents,
+  .download-options .download-desktop .tab-media-contents
+  {
+    flex-direction: column;
+  }
+
+  .download-options .download-abb .tab-media-contents img,
+  .download-options .download-desktop .tab-media-contents img
+  {
+    max-width: 100%;
+  }
+
+  .download-options .download-mobile .tab-media-contents img
+  {
+    max-width: 86%;
+  }
+
+  .download-abb .install-button,
+  .download-mobile .install-button
+  {
+    margin: 0 1em 0 0;
+  }
+}
+
+@media(min-width: 1025px)
+{
+  .download-options
+  {
+    flex-direction: column-reverse;
+  }
+
+  .download-options section
+  {
+    flex-direction: row-reverse;
+  }
+
+  .show-mobile
+  {
+    display: none;
+  }
+
+  .download-options .tab-media-contents
+  {
+    padding-right: 0;
+    padding-left: 1em;
+  }
+
+  .download-options .tab-media-contents img
+  {
+    padding: 0;
+  }
+
+  .download-options .download-desktop
+  {
+    flex-direction: row-reverse;
+  }
+
+  .download-options .download-desktop .tabs
+  {
+    display: block;
+  }
+
+  .download-options .tab-text-contents
+  {
+    width: 54%;
+    padding-right: 0;
+  }
+
+  .download-options .download-desktop .tab-text-contents
+  {
+    width: 54%;
+    min-width: 600px;
+    margin: 0;
+  }
+
+  .download-options .download-desktop .tab-media-contents
+  {
+    width: 36%;
+  }
+
+  .download-abb .install-button,
+  .download-mobile .install-button
+  {
+    height: 80px;
+    width: 270px;
+    max-width: 100%;
+    margin: 1em 1em 0 0;
+  }
+
+  .download-options .description
+  {
+    margin-top: 3em;
+  }
+}
+
+@media(min-width: 1920px)
+{
+  .download-header
+  {
+    padding: 6em 0;
+  }
+
+  .download-options .tab-media-contents
+  {
+    width: 42%;
+  }
+
+  .download-options .download-desktop .tab-media-contents
+  {
+    width: 42%;
+  }
+
+  .download-options .download-mobile .tab-media-contents img,
+  .download-options .download-abb .tab-media-contents img
+  {
+    max-width: 40%
+  }
+
+  .download-options .tab-media-contents img
+  {
+    width: 100%;
+  }
+}
+
+.download-options .download-button,
+.download-options .download-button:hover,
+.download-options .download-button:active,
+.download-options .download-button:visited
+{
+  color: #fff;
+}
+
+.download-options .download-button
+{
+  position: relative;
+  padding: 14px 18px 14px 72px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: left;
+  background-color: #0AAD03;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.16);
+}
+
+.download-options .download-button:hover,
+.download-options .download-button:focus
+{
+  background-color: #258333;
+}
+
+.download-options .download-button::before
+{
+  display: block;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 18px;
+  margin-top: -20px;
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+#abp_chrome.download-button::before
+{
+  background-image: url("/img/chrome.svg");
+}
+
+#abp_chromium.download-button::before
+{
+  background-image: url("/img/chrome.svg");
+}
+
+#abp_firefox.download-button::before
+{
+  background-image: url("/img/firefox.svg");
+}
+
+#abp_safari.download-button::before
+{
+  background-image: url("/img/safari.svg");
+}
+
+#abp_msie.download-button::before
+{
+  background-image: url("/img/msie.svg");
+}
+
+#abp_msedge.download-button::before,
+#abp_msedge_chromium.download-button::before
+{
+  background-image: url("/img/msedge.svg");
+}
+
+#abp_opera.download-button::before
+{
+  background-image: url("/img/opera.svg");
+}
+
+#abp_yandexbrowser.download-button::before
+{
+  background-image: url("/img/yandex.svg");
+}
+
+.download-options .download-button span
+{
+  display: inline-block;
+}

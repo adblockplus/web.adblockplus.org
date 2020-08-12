@@ -1,98 +1,23 @@
 title=Download Adblock Plus
-description=Get Adblock Plus for free on Firefox, Chrome, Opera, Safari, Android and iOS
+description=Download Adblock Plus for FREE and enjoy a faster web experience, without annoying ads. Available for Chrome, Firefox, Safari, Opera, Internet Explorer and for your Android and iOS devices.
+heading=Download Adblock Plus for any device
+subheading=Surf the web with no annoying ads in any browser and supported platforms.
 template=minimal
 
 <head>
-  <style>
-    header img {
-      width: 4em;
-      height: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/download.css">
 </head>
 
-{% set supported_devices = [
-  {
-    "id": "desktop",
-    "icons": { "1x": "device-desktop.png", "2x": "device-desktop-2x.png" },
-    "icon_alt": "Computer monitor and mouse icon",
-    "title": "Block ads on any desktop browser",
-    "description": "By clicking any of the links below, you agree to our " +  "terms" | linkify  + "Terms of Use</a>.",
-    "platforms": [
-      { "id": "chrome", "class": "abp-chrome", "name": "Chrome", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
-      { "id": "firefox", "class": "abp-firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" },
-      { "id": "msie", "class": "abp-msie", "name": "Internet Explorer", "url": "https://eyeo.to/adblockplus/ie_install/" },
-      { "id": "safari", "class": "abp-safari", "name": "Safari", "url": "https://eyeo.to/adblockplus/macos_safari_install/" },
-      { "id": "msedge", "class": "abp-msedge", "name": "Microsoft Edge", "url": "https://eyeo.to/adblockplus/edge_install/" },
-      { "id": "opera", "class": "abp-opera", "name": "Opera", "url": "https://eyeo.to/adblockplus/opera_install/" },
-      { "id": "yandexbrowser", "class": "abp-yandexbrowser", "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
-    ]
-  },
-  {
-    "id": "mobile",
-    "icons": { "1x": "device-mobile.png", "2x": "device-mobile.svg" },
-    "icon_alt": "Mobile icon",
-    "title": "Block ads on your mobile browser",
-    "platforms": [
-      { "id": "android_samsung", "class": "abp-android-samsungBrowser", "name": "Samsung Internet (Android)", "url": "https://eyeo.to/adblockplus/android_samsung_install/" },
-      { "id": "safari_ios", "class": "abp-ios-safari", "name": "Safari (iOS)", "url": "https://eyeo.to/adblockplus/ios_safari_install/" },
-      { "id": "firefox", "class": "abp-android-firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" }
-    ]
-  },
-  {
-    "id": "abb",
-    "icons": { "1x": "abb-icon.png", "2x": "abb-icon-2x.png" },
-    "icon_alt": "Adblock Browser logo",
-    "title": "Block ads in a dedicated ad-blocking browser",
-    "platforms": [
-      { "id": "abb_android", "class": "abb-android", "name": "Adblock Browser (Android)", "url": "https://eyeo.to/adblockbrowser/android/" }
-    ]
-  }
-] %}
-
-<header class="bg-primary section content text-center">
-  <div class="container">
-    <img height="90"
-         width="90"
-         src="/img/download-icon.png"
-         srcset="/img/download-icon.svg 2x"
-         alt="{{ "White down arrow" | translate("download-icon", "Alt text") }}">
-    <h1>{{ "Get Adblock Plus products on these devices" | translate("download-heading", "Heading") }}</h1>
-    <p>{{ "Supported platforms" | translate("download-subheading", "Subheading") }}</p>
-  </div>
+<header class="download-header section content container text-center">
+    <h1>{{ heading | translate("download-heading", "Heading") }}</h1>
+    <p class="dark-grey">{{ subheading | translate("download-subheading", "Subheading") }}</p>
 </header>
 
-<div id="supported-devices" class="item-group container text-center content">
-  <div class="row">
-    {% for device in supported_devices %}
-    <div class="column one-third">
-      <img
-        height="90"
-        width="90"
-        src="/img/{{ device.icons['1x'] }}"
-        srcset="/img/{{ device.icons['2x'] }} 2x"
-        alt="{{ device.icon_alt | translate(device.id + "-icon-alt", "Alt text") }}">
-      <h2>{{ device.title | translate(device.id + "-title", "Heading") }}</h2>
-      <div>
-        {% if device.description %}
-        <p><small>{{ device.description | safe | translate(device.id + "-description", "Paragraph") }}</small></p>
-        {% endif %}
-        <ul class="horizontal-list">
-          {% for platform in device.platforms %}
-            <li>
-              {% set platform_identifier = device.id + "-product-name-" + loop.index | string  %}
-              <a
-                class="download-link {{ platform.class }}"
-                href="{{ platform.url }}">
-                {{ platform.name | translate(platform_identifier, "Product name") }}</a>{{ ", " if loop.index != loop.length }}
-            </li>
-          {% endfor %}
-        </ul>
-        {% if device.id == 'desktop' and locale == 'en' %}
-          <p class="alert">{{ 'NEW! <a href="ad-blocker-safari">Adblock Plus for Safari on macOS</a>' | translate('new-safari-alert', 'alert text') }}</p>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+<div id="supported-devices" class="download-options container text-center content">
+  <? include download/abb ?>
+  <? include download/mobile ?>
+  <? include download/desktop ?>
 </div>
+
+<script src="/js/vendor/bowser.js"></script>
+<script src="/js/download.js"></script>
