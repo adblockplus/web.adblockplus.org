@@ -1089,3 +1089,276 @@ small,
 {
   float: left;
 }
+
+/* Download page
+ ******************************************************************************/
+/* div, header, section {box-shadow: 0 0 1px;} */
+
+.download-header h1,
+.download-header p
+{
+  margin: 0;
+}
+
+.download-header,
+.download-options
+{
+  /* padding here needs to be managed globally (using ".container" instead) */
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.download-options
+{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+  /* this should be globally set instead */
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.download-options section
+{
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 2em;
+}
+
+.download-options .desktop-tabs-menu
+{
+  float: left;
+  width: 100%;
+  margin-top: 0;
+}
+
+.desktop-tabs-menu li
+{
+  display: block;
+  width: 100%;
+}
+
+.desktop-tabs-menu a
+{
+  padding: 0 1em;
+  color: #C1C1C1;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.desktop-tabs-menu a:hover,
+.desktop-tabs-menu a:active,
+.desktop-tabs-menu .active a
+{
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+}
+
+.download-options section .text-contents p a,
+.download-options section .text-contents p a:hover,
+.download-options section .text-contents p a:active
+{
+  color: #212121;
+  font-weight: 700;
+}
+
+.download-options section .description { text-align: left; }
+
+.download-options section .text-contents h2,
+.download-options section .text-contents .tou-note { margin: 0; }
+
+.mobile-show { display: inline; }
+
+.desktop-tab-content { display: none; }
+
+.desktop-tab-content.active { display: block; }
+
+.download-options section.download-desktop .media-contents {  width: 100%; }
+
+.download-options section .media-contents img { padding-bottom: 2em; }
+
+.download-options section.download-abb .media-contents img {  max-width: 55%; }
+.download-options section.download-mobile .media-contents img {  max-width: 40%; }
+.download-options section.download-desktop .media-contents img {  max-width: 95%; }
+
+.download-options section.download-desktop .text-contents
+{
+  margin: auto;
+  max-width: 100%;
+  width: 410px;
+  padding-right: 0;
+}
+
+.download-options section.download-desktop .desktop-tabs { display: none; }
+
+.tab-column
+{
+  display: table-cell;
+  width: 70%;
+}
+
+.tab-column:nth-child(2n)
+{
+  width: 30%;
+  text-align: center;
+}
+
+.download-abb .install-button,
+.download-mobile .install-button
+{
+  height: 57px;
+  width: 185px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#abp-android-samsungBrowser.install-button,
+#abp-android-firefox.install-button,
+#abb-android.install-button { background-image: url("../img/google-play-badge.svg"); }
+
+#abp-ios-safari.install-button,
+#abb-ios.install-button { background-image: url("../img/apple-app-store-badge.svg"); }
+
+@media(min-width: 768px)
+{
+  .download-header { padding: 4em 0; }
+
+  .download-options
+  {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .download-options section
+  {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0 7em;
+  }
+
+  .download-options section .text-contents { text-align: left; }
+
+  .desktop-tabs-menu li
+  {
+    display: inline;
+    width: auto;
+  }
+
+  .download-options section .text-contents
+  {
+    width: 68%;
+    padding-right: 3em;
+  }
+
+  .download-options section .media-contents
+  {
+    width: 36%;
+    padding-right: 1em;
+  }
+
+  .download-options section .media-contents img { padding: 3em; }
+
+  .download-options section.download-desktop { flex-direction: column; }
+
+  .download-options section.download-desktop .text-contents,
+  .download-options section.download-desktop .media-contents { flex-direction: column; }
+
+  .download-options section.download-abb .media-contents img,
+  .download-options section.download-desktop .media-contents img {  max-width: 100%; }
+  .download-options section.download-mobile .media-contents img {  max-width: 86%; }
+
+  .download-abb .install-button,
+  .download-mobile .install-button { margin: 0 1em 0 0; }
+}
+
+@media(min-width: 992px)
+{
+  .download-options
+  {
+    flex-direction: column-reverse;
+  }
+
+  .download-options section { flex-direction: row-reverse; }
+
+  .mobile-show { display: none; }
+
+  .download-options section .media-contents
+  {
+    padding-right: 0;
+    padding-left: 1em;
+  }
+
+  .download-options section .media-contents img { padding: 0; }
+
+  .download-options section.download-desktop { flex-direction: row-reverse; }
+
+  .download-options section.download-desktop .desktop-tabs { display: block; }
+
+  .download-options section .text-contents
+  {
+    width: 54%;
+    padding-right: 0;
+  }
+
+  .download-options section.download-desktop .text-contents
+  {
+    width: 54%;
+    margin: 0;
+  }
+
+  .download-options section.download-desktop .media-contents { width: 36%; }
+
+  .download-abb .install-button,
+  .download-mobile .install-button
+  {
+    height: 80px;
+    width: 270px;
+    max-width: 100%;
+    margin: 1em 1em 1.6em 0;
+  }
+}
+
+.download-options .download-button
+{
+  color: #fff;
+  position: relative;
+  padding: 16px 18px 16px 62px;
+  line-height: 1.4;
+  text-align: left;
+  background-color: #0AAD03;
+  border-radius: 5px;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.16);
+}
+
+.download-options .download-button:hover,
+.download-options .download-button:focus
+{
+  background-color: #258333;
+}
+
+.download-options .download-button::before
+{
+  display: block;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 11px;
+  margin-top: -20px;
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+#abp-chrome.download-button::before { background-image: url("/img/chrome.svg"); }
+#abp-chromium.download-button::before { background-image: url("/img/chrome.svg"); }
+#abp-firefox.download-button::before { background-image: url("/img/firefox.svg"); }
+#abp-safari.download-button::before { background-image: url("/img/safari.svg"); }
+#abp-msie.download-button::before { background-image: url("/img/msie.svg"); }
+#abp-msedge.download-button::before,
+#abp-msedge_chromium.download-button::before{ background-image: url("/img/msedge.svg"); }
+#abp-opera.download-button::before { background-image: url("/img/opera.svg"); }
+#abp-yandexbrowser.download-button::before { background-image: url("/img/yandex.svg"); }

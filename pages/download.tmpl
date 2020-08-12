@@ -1,99 +1,242 @@
 title=Download Adblock Plus
-description=Get Adblock Plus for free on Firefox, Chrome, Opera, Safari, Android and iOS
+description=Download Adblock Plus for FREE and enjoy a faster web experience, without annoying ads. Available for Chrome, Firefox, Safari, Opera, Internet Explorer and for your Android and iOS devices.
 template=minimal
-
-<head>
-  <style>
-    header img {
-      width: 4em;
-      height: auto;
-    }
-  </style>
-</head>
 
 {% set supported_devices = [
   {
-    "id": "desktop",
-    "icons": { "1x": "device-desktop.png", "2x": "device-desktop-2x.png" },
-    "icon_alt": "Computer monitor and mouse icon",
-    "title": "Block ads on any desktop browser",
-    "description": "By clicking any of the links below, you agree to our " +  "terms" | linkify  + "Terms of Use</a>.",
-    "platforms": [
-      { "id": "chrome", "class": "abp-chrome", "name": "Chrome", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" },
-      { "id": "firefox", "class": "abp-firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" },
-      { "id": "msie", "class": "abp-msie", "name": "Internet Explorer", "url": "https://eyeo.to/adblockplus/ie_install/" },
-      { "id": "safari", "class": "abp-safari", "name": "Safari", "url": "https://eyeo.to/adblockplus/macos_safari_install/" },
-      { "id": "msedge", "class": "abp-msedge", "name": "Microsoft Edge", "url": "https://eyeo.to/adblockplus/edge_install/" },
-      { "id": "opera", "class": "abp-opera", "name": "Opera", "url": "https://eyeo.to/adblockplus/opera_install/" },
-      { "id": "yandexbrowser", "class": "abp-yandexbrowser", "name": "Yandex Browser", "url": "https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb" }
+    "class":"download-abb",
+    "icons":"tablet_abp.svg",
+    "icon_alt":"Illustration of Adblock Browser for mobile devices",
+    "title":"Get Adblock Browser",
+    "subtitle":"Block ads in a dedicated ad-blocking browser",
+    "platforms":[
+      {
+        "id":"abb_ios",
+        "class":"abb-ios",
+        "name":"Adblock Browser (iOS)",
+        "url":"https://eyeo.to/adblockbrowser/ios/"
+      },
+      {
+        "id":"abb_android",
+        "class":"abb-android",
+        "name":"Adblock Browser (Android)",
+        "url":"https://eyeo.to/adblockbrowser/android/"
+      }
+    ],
+    "description":"Adblock Browser blocks intrusive and malicious advertisements, while supporting website creators by allowing <a href=\"https://adblockplus.org/en/acceptable-ads\"><strong>Acceptable Ads</strong></a> by default (this, however, is configurable)."
+  },
+  {
+    "class":"download-mobile",
+    "icons":"mobile_abp.svg",
+    "icon_alt":"Illustration of Adblock Plus ad blocking app",
+    "title":"Block ads on your mobile browser",
+    "platforms":[
+      {
+        "id":"android_samsung",
+        "class":"abp-android-samsungBrowser",
+        "name":"Samsung Internet (Android)",
+        "url":"https://eyeo.to/adblockplus/android_samsung_install/",
+        "description":"Adblock Plus for Samsung Internet (Android) brings you a cleaner, smoother online experience on your Samsung browser without intrusive ads."
+      },
+      {
+        "id":"safari_ios",
+        "class":"abp-ios-safari",
+        "name":"Safari (iOS)",
+        "url":"https://eyeo.to/adblockplus/ios_safari_install/",
+        "description":"Adblock Plus for Safari (iOS) has all the ad blocking power of the desktop version, but fine tuned for use with the Safari mobile browser. Also saves battery life and optimizes surfing speed."
+      },
+      {
+        "id":"firefox",
+        "class":"abp-android-firefox",
+        "name":"Firefox",
+        "url":"https://eyeo.to/adblockplus/firefox_install/",
+        "description":"Adblock Plus for Firefox (Android) allows you to block ads on your Mozilla Firefox mobile browser and experience cleaner web browsing and optimized surfing speed."
+      }
     ]
   },
   {
-    "id": "mobile",
-    "icons": { "1x": "device-mobile.png", "2x": "device-mobile.svg" },
-    "icon_alt": "Mobile icon",
-    "title": "Block ads on your mobile browser",
-    "platforms": [
-      { "id": "android_samsung", "class": "abp-android-samsungBrowser", "name": "Samsung Internet (Android)", "url": "https://eyeo.to/adblockplus/android_samsung_install/" },
-      { "id": "safari_ios", "class": "abp-ios-safari", "name": "Safari (iOS)", "url": "https://eyeo.to/adblockplus/ios_safari_install/" },
-      { "id": "firefox", "class": "abp-android-firefox", "name": "Firefox", "url": "https://eyeo.to/adblockplus/firefox_install/" }
-    ]
-  },
-  {
-    "id": "abb",
-    "icons": { "1x": "abb-icon.png", "2x": "abb-icon-2x.png" },
-    "icon_alt": "Adblock Browser logo",
-    "title": "Block ads in a dedicated ad-blocking browser",
-    "platforms": [
-      { "id": "abb_android", "class": "abb-android", "name": "Adblock Browser (Android)", "url": "https://eyeo.to/adblockbrowser/android/" },
-      { "id": "abb_ios", "class": "abb-ios", "name": "Adblock Browser (iOS)", "url": "https://eyeo.to/adblockbrowser/ios/" }
-    ]
+    "class":"download-desktop",
+    "icons":"desktop_abp.svg",
+    "icon_alt":"Illustration of Adblock Plus on desktop",
+    "title":"Block ads on any desktop browser",
+    "subtitle":"Add-on available ONLY on desktop computers",
+    "platforms":[
+      {
+        "id":"chrome",
+        "class":"abp-chrome",
+        "name":"Chrome",
+        "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+        "webstore_install":"true",
+        "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>"
+      },
+      {
+        "id":"firefox",
+        "class":"abp-firefox",
+        "name":"Firefox",
+        "url":"https://eyeo.to/adblockplus/firefox_install/",
+        "direct_install":"true",
+        "rating":"<span>4.6</span> stars on <strong>Mozilla Add-ons</strong>"
+      },
+      {
+        "id":"msie",
+        "class":"abp-msie",
+        "name":"Internet Explorer",
+        "url":"https://eyeo.to/adblockplus/ie_install/",
+        "direct_install":"true"
+      },
+      {
+        "id":"safari",
+        "class":"abp-safari",
+        "name":"Safari",
+        "url":"https://eyeo.to/adblockplus/macos_safari_install/",
+        "direct_install":"true"
+      },
+      {
+        "id":"msedge",
+        "class":"abp-msedge",
+        "name":"Microsoft Edge",
+        "url":"https://eyeo.to/adblockplus/edge_install/",
+        "direct_install":"true",
+        "rating":"<span>4.6</span> stars on <strong>Microsoft Edge Add-ons</strong>"
+      },
+      {
+        "id":"opera",
+        "class":"abp-opera",
+        "name":"Opera",
+        "url":"https://eyeo.to/adblockplus/opera_install/",
+        "direct_install":"true",
+        "rating":"<span>4.3</span> stars on <strong>Opera Add-ons</strong>"
+      },
+      {
+        "id":"yandexbrowser",
+        "class":"abp-yandexbrowser",
+        "name":"Yandex Browser",
+        "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+        "webstore_install":"true",
+        "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>"
+      }
+    ],
+    "button":"true",
+    "direct_install_prefix":"Agree and install for ",
+    "webstore_install_prefix":"Download Adblock Plus for ",
+    "tou_note":"By clicking any of the links below, you agree to our <a href=\"terms\">Terms of Use</a>.",
+    "description":"Download Adblock Plus to block annoying ads and pop-ups and to improve loading times. Support fair publishers by allowing <a href=\"https://adblockplus.org/en/acceptable-ads\"><strong>Acceptable Ads</strong></a> (can be turned off at any time) or by whitelisting websites."
   }
 ] %}
 
-<header class="bg-primary section content text-center">
+<header class="download-header section content text-center">
   <div class="container">
-    <img height="90"
-         width="90"
-         src="/img/download-icon.png"
-         srcset="/img/download-icon.svg 2x"
-         alt="{{ "White down arrow" | translate("download-icon", "Alt text") }}">
-    <h1>{{ "Get Adblock Plus products on these devices" | translate("download-heading", "Heading") }}</h1>
-    <p>{{ "Supported platforms" | translate("download-subheading", "Subheading") }}</p>
+    <h1>{{ "Download Adblock Plus for any device" | translate("download-heading", "Heading") }}</h1>
+    <p>{{ "Surf the web with no annoying ads in any browser and supported platforms." | translate("download-subheading", "Subheading") }}</p>
   </div>
 </header>
 
-<div id="supported-devices" class="item-group container text-center content">
-  <div class="row">
-    {% for device in supported_devices %}
-    <div class="column one-third">
+<div id="supported-devices" class="download-options container text-center content">
+  {% for device in supported_devices %}
+  <section class="{{ device.class }}">
+    <div class="media-contents">
       <img
-        height="90"
-        width="90"
-        src="/img/{{ device.icons['1x'] }}"
-        srcset="/img/{{ device.icons['2x'] }} 2x"
-        alt="{{ device.icon_alt | translate(device.id + "-icon-alt", "Alt text") }}">
-      <h2>{{ device.title | translate(device.id + "-title", "Heading") }}</h2>
-      <div>
-        {% if device.description %}
-        <p><small>{{ device.description | safe | translate(device.id + "-description", "Paragraph") }}</small></p>
-        {% endif %}
-        <ul class="horizontal-list">
+        src="/img/{{ device.icons }}"
+        alt="{{ device.icon_alt | translate(device.class + "-icon-alt", "Alt text") }}">
+    </div>
+    <div class="text-contents">
+      <h2>{{ device.title | translate(device.class + "-title", "Heading") }}</h2>
+      {% if device.subtitle %}
+      <p
+        {% if device.class == 'download-desktop' %} class="mobile-show"{% endif %}>
+        <small>{{ device.subtitle | safe | translate(device.class + "-note", "Paragraph") }}</small></p>
+      {% endif %}
+      {% if device.class in ('download-desktop', 'download-mobile') %}
+      <div class="desktop-tabs">
+        <ul class="horizontal-list desktop-tabs-menu">
           {% for platform in device.platforms %}
-            <li>
-              {% set platform_identifier = device.id + "-product-name-" + loop.index | string  %}
-              <a
-                class="download-link {{ platform.class }}"
-                href="{{ platform.url }}">
-                {{ platform.name | translate(platform_identifier, "Product name") }}</a>{{ ", " if loop.index != loop.length }}
-            </li>
+          <li
+            {% if platform.id in ('chrome', 'android_samsung') %} class="active"{% endif %}>
+            {% set platform_identifier = device.class + "-product-name-" + loop.index | string  %}
+            <a
+              class="{{ platform.class }}"
+              href="#{{ platform.class }}-tab">
+              <strong>{{ platform.name | translate(platform_identifier, "Product name") }}</strong>
+            </a>
+          </li>
           {% endfor %}
         </ul>
-        {% if device.id == 'desktop' and locale == 'en' %}
-          <p class="alert">{{ 'NEW! <a href="ad-blocker-safari">Adblock Plus for Safari on macOS</a>' | translate('new-safari-alert', 'alert text') }}</p>
+        {% for platform in device.platforms %}
+        <div
+          id="{{ platform.class }}-tab"
+          class="desktop-tab-content {% if platform.id in ('chrome', 'android_samsung') %} active{% endif %}">
+          {% if device.class == 'download-desktop' %}
+          <div class="tab-column">
+          {% endif %}
+            <a
+              id="{{ platform.class }}"
+              data-install-suffix="index"
+              class="install-button {% if device.button %}button download-button{% endif %}"
+              href="{{ platform.url }}">
+              {% if platform.direct_install %}
+              {% if device.direct_install_prefix %}
+              {{ device.direct_install_prefix | translate(device.class + "-direct-install-prefix", "Paragraph") }}
+              {% endif %}
+              <strong>{{ platform.name }}</strong>
+              {% endif %}
+              {% if platform.webstore_install %}
+              {% if device.webstore_install_prefix %}
+              {{ device.webstore_install_prefix | translate(device.class + "-webstore-install-prefix", "Paragraph") }}
+              {% endif %}
+              <strong>{{ platform.name }}</strong>
+              {% endif %}
+            </a>
+            {% if device.tou_note %}
+              <p class="tou-note"><small>{{ device.tou_note | safe | translate(device.class + "-tou-note", "Paragraph") }}</small></p>
+            {% endif %}
+          {% if device.class == 'download-desktop' %}
+          </div>
+          <div class="tab-column">
+          {% endif %}
+            {% if platform.rating %}
+            <div class="rating">
+              <img src="/img/rating-stars.png" alt="">
+              <p><small>{{ platform.rating | safe | translate(platform.class + "-rating", "Paragraph")}}</small></p>
+            </div>
+            {% endif %}
+          {% if device.class == 'download-desktop' %}
+          </div>
+          {% endif %}
+          {% if platform.description %}
+          <p class="description">{{ platform.description | safe | translate(platform.class + "-description", "Paragraph") }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% if device.description %}
+      <p class="description">{{ device.description | safe | translate(device.class + "-description", "Paragraph") }}</p>
+      {% endif %}
+      {% endif %}
+
+      {% if device.class == 'download-abb'%}
+      <div class="abb">
+        {% for platform in device.platforms %}
+        <a
+          id="{{ platform.class }}"
+          data-install-suffix="index"
+          class="install-button"
+          href="{{ platform.url }}">
+        </a>
+        {% endfor %}
+        {% if device.description %}
+        <p class="description">{{ device.description | safe | translate(device.class + "-description", "Paragraph") }}</p>
         {% endif %}
       </div>
+      {% endif %}
+
     </div>
-    {% endfor %}
-  </div>
+  </section>
+  {% endfor %}
 </div>
+
+
+<script src="/js/vendor/bowser.js"></script>
+
+<script>
+  document.body.classList.add(bowser.name);
+</script>
