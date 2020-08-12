@@ -1,0 +1,54 @@
+{% set browsers = [
+  {
+    "id":"android_samsungBrowser",
+    "class":"abp-android-samsungBrowser",
+    "name":"Samsung Internet (Android)",
+    "url":"https://eyeo.to/adblockplus/android_samsung_install/",
+    "description":"Adblock Plus for Samsung Internet (Android) brings you a cleaner, smoother online experience on your Samsung browser without intrusive ads."
+  },
+  {
+    "id":"ios_safari",
+    "class":"abp-ios-safari",
+    "name":"Safari (iOS)",
+    "url":"https://eyeo.to/adblockplus/ios_safari_install/",
+    "description":"Adblock Plus for Safari (iOS) has all the ad blocking power of the desktop version, but fine tuned for use with the Safari mobile browser. Also saves battery life and optimizes surfing speed."
+  }
+] %}
+
+<section class="download-mobile">
+  <div class="tab-media-contents">
+    <img
+      src="/img/mobile-abp.svg"
+      alt="{{ "Illustration of Adblock Plus ad blocking app" | translate("download-mobile-icon-alt", "Alt text") }}">
+  </div>
+  <div class="tab-text-contents">
+    <h2>{{ "Block ads on your mobile browser" | translate("download-mobile-title", "Heading") }}</h2>
+    <div class="tabs">
+      <ul class="horizontal-list tabs-menu">
+        {% for brws in browsers %}
+        <li
+          {% if brws.id == 'android_samsungBrowser' %} class="current-tab"{% endif %}>
+          <a
+            class="{{ brws.class }}"
+            href="#{{ brws.id }}_tab">
+            <strong>{{ brws.name | translate(brws_identifier, "Product name") }}</strong>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% for brws in browsers %}
+      <div
+        id="{{ brws.id }}_tab"
+        class="tab-content {% if brws.id in ('chrome', 'android_samsungBrowser') %} current-tab{% endif %}">
+        <a
+          id="abp_{{ brws.id }}"
+          data-install-suffix="index"
+          class="install-button"
+          href="{{ brws.url }}">
+        </a>
+        <p class="description">{{ brws.description | translate(brws.id + "-description", "Paragraph") }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
