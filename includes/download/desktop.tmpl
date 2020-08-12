@@ -1,0 +1,115 @@
+{% set browsers = [
+  {
+    "id":"chrome",
+    "class":"abp-chrome",
+    "name":"Chrome",
+    "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>",
+    "cta":"Get Adblock Plus for Chrome"
+  },
+  {
+    "id":"firefox",
+    "class":"abp-firefox",
+    "name":"Firefox",
+    "url":"https://eyeo.to/adblockplus/firefox_install/",
+    "rating":"<span>4.6</span> stars on <strong>Mozilla Add-ons</strong>",
+    "cta":"Get Adblock Plus for Firefox"
+  },
+  {
+    "id":"msie",
+    "class":"abp-msie",
+    "name":"Internet Explorer",
+    "url":"https://eyeo.to/adblockplus/ie_install/",
+    "cta":"Agree and install for Internet Explorer"
+  },
+  {
+    "id":"safari",
+    "class":"abp-safari",
+    "name":"Safari",
+    "url":"https://eyeo.to/adblockplus/macos_safari_install/",
+    "cta":"Agree and install for Safari"
+  },
+  {
+    "id":"msedge",
+    "class":"abp-msedge",
+    "name":"Microsoft Edge",
+    "url":"https://eyeo.to/adblockplus/edge_install/",
+    "rating":"<span>4.6</span> stars on <strong>Microsoft Edge Add-ons</strong>",
+    "cta":"Get Adblock Plus for Microsoft Edge"
+  },
+  {
+    "id":"opera",
+    "class":"abp-opera",
+    "name":"Opera",
+    "url":"https://eyeo.to/adblockplus/opera_install/",
+    "rating":"<span>4.3</span> stars on <strong>Opera Add-ons</strong>",
+    "cta":"Get Adblock Plus for Opera"
+  },
+  {
+    "id":"yandexbrowser",
+    "class":"abp-yandexbrowser",
+    "name":"Yandex Browser",
+    "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>",
+    "cta":"Get Adblock Plus for Yandex Browser"
+  }
+] %}
+
+<section class="download-desktop">
+  <div class="tab-media-contents">
+    <img
+      src="/img/desktop-abp.svg"
+      alt="{{ "Illustration of Adblock Plus on desktop" | translate("download-desktop-icon-alt", "Alt text") }}">
+  </div>
+  <div class="tab-text-contents">
+    <h2>{{ "Block ads on any desktop browser" | translate("download-desktop-title", "Heading") }} <br>
+      <span
+        class="sub-heading show-mobile">
+        {{ "Add-on available ONLY on desktop computers" | translate("download-desktop-note", "Paragraph") }}</span>
+    </h2>
+    <div class="tabs">
+      <ul class="horizontal-list tabs-menu">
+        {% for brws in browsers %}
+        <li
+          {% if brws.id == 'chrome' %} class="current-tab"{% endif %}>
+          <a
+            class="{{ brws.class }}"
+            href="#{{ brws.id }}_tab">
+            {{ brws.name | translate(brws_identifier, "Product name") }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% for brws in browsers %}
+      <div
+        id="{{ brws.id }}_tab"
+        class="tab-content {% if brws.id == 'chrome' %} current-tab{% endif %}">
+        <div class="tab-column">
+          <a
+            id="abp_{{ brws.id }}"
+            data-install-suffix="index"
+            class="install-button button download-button"
+            href="{{ brws.url }}">
+            {{ brws.cta | translate(brws.id + "-cta", "Paragraph")}}
+          </a>
+          <p class="tou-note">
+            <small>{{ "By clicking the link above, you agree to our <a href=\"terms\">Terms of Use</a>." | translate("download-desktop-tou-note", "Paragraph") }}</small></p>
+        </div>
+        <div class="tab-column">
+          {% if brws.rating %}
+          <div class="rating">
+            <svg width="70.701mm" class="stars" version="1.1" viewBox="0 0 70.701 14.775" xmlns="http://www.w3.org/2000/svg">
+              <rect x=".28814" y=".50425" width="70.125" height="13.766" fill="#C1C1C1"/>
+              <rect x=".28814" y=".50425" width="70.125" height="13.766" stroke-width=".97372" class="rating-bar"/>
+              <path d="m0 3.359e-7v14.775h70.701v-14.775zm8.7984 2.713 1.4955 3.0308 3.344 0.48576-2.4205 2.359 0.56999 3.3316-2.989-1.5725-2.9921 1.573 0.57-3.3316-2.419-2.359 3.344-0.48627zm13.418 0.14159 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.57-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.57 3.3311-2.989-1.5725-2.9916 1.573 0.56999-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.56999-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.57-3.3316-2.419-2.359 3.344-0.48628z" fill="#fff"/>
+            </svg>
+            <p>{{ brws.rating | translate(brws.id + "-rating", "Paragraph")}}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      <p class="description">{{ "Download Adblock Plus to block annoying ads and pop-ups and to improve loading times. Support fair publishers by allowing <a href=\"acceptable-ads\"><strong>Acceptable Ads</strong></a> (can be turned off at any time) or by allowlisting websites." | translate("download-desktop-description", "Paragraph") }}</p>
+    </div>
+  </div>
+</section>
