@@ -253,7 +253,7 @@ Der Zweck des Datenschutzes ist der Schutz von personenbezogenen Daten. Personen
 
 Zu diesen Informationen gehören beispielsweise Details wie Name und E-Mail-Adresse, jedoch auch Spitznamen und Informationen in deinen Forumsbeiträgen.
 
-### Welchem Zweck dient die Datenverarbeitung und auf welcher rechtlichen Grundlage erfolgt sie? {: #what-is-purpose } 
+### Welchem Zweck dient die Datenverarbeitung und auf welcher rechtlichen Grundlage erfolgt sie? {: #what-is-purpose }
 
 #### Zweck der Datenerhebung und -verarbeitung {: #purpose }
 
@@ -393,7 +393,7 @@ Du kannst freiwillig:
     - ID
     - Name
     - Version
-    
+
 ##### Zugriff auf die Berichte {: #access-reports }
 
 Auf die verarbeiteten Berichte kann nur durch eine natürliche Person, die eindeutige ID kennt, zugegriffen werden. Diese IDs werden nur wie folgt weitergegeben:
@@ -411,7 +411,7 @@ Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispi
 
 ##### Deinstallations- und Spendeninformationen
 
-Bei der Deinstallation von Adblock Plus und/oder bei einer Spende an uns wirst du auf eine Deinstallations- und/oder Spendenwebseite verwiesen, auf der folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Anzahl der Benachrichtigungsdownloads, Informationen, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, aus dem du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern. 
+Bei der Deinstallation von Adblock Plus und/oder bei einer Spende an uns wirst du auf eine Deinstallations- und/oder Spendenwebseite verwiesen, auf der folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Anzahl der Benachrichtigungsdownloads, Informationen, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, aus dem du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern.
 
 Für Spenden arbeiten wir mit Zahlungsanbietern zusammen (Stripe, Inc. und PayPal S.à r.l. et Cie, S.C.A.). Diese Anbieter sind für die Bearbeitung der Daten verantwortlich, die du bezüglich der von dir getätigten Spenden eingegeben hast. Zur Datenverarbeitung gehören u. a. alle Daten, die du in das entsprechende Formular eingegeben hast, einschließlich Kartenart, Name des Karteninhabers, Kreditkarteninformationen (mit Ausnahme der vollständigen Kartennummer), Adresse, Land, Postleitzahl und E-Mail-Adresse. Weitere Informationen zum Bearbeitungsprozess von personenbezogenen Daten dieser Anbieter findest du in der [Datenschutzrichtlinie](https://stripe.com/privacy) von Stripe sowie der [Datenschutzrichtlinie](https://www.paypal.com/webapps/mpp/ua/privacy-full) von PayPal. Wir speichern die von den Zahlungsdienstleistern geschickten Berichte zu Bilanzierungszwecken.
 
@@ -524,6 +524,7 @@ Wir verwenden Cookies, um angemeldete Nutzer zu erkennen und deine Datenschutzei
 Wir benutzen Google Analytics, einen Webanalysedienst der Google Inc. („Google“) auf unseren Webseiten. Google Analytics verwendet sog. „Cookies“ (Textdateien, die auf deinem Computer gespeichert werden und die uns ermöglichen, deine Nutzung unserer Webseiten zu analysieren). Die durch die Cookies erzeugten Daten (einschließlich deiner verkürzten IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google verwendet diese Daten, um deine Nutzung der Webseiten auszuwerten, um Berichte zu den Webseitenaktivitäten zusammenzustellen und um weitere mit der Nutzung unserer Webseiten verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben ist oder soweit Dritte diese Daten im Auftrag von Google verarbeiten.
 
 **Falls du uns nicht bei der Verbesserung unserer Produkte helfen willst, kannst du Google Analytics deaktivieren.** Bitte beachte jedoch, dass in diesem Fall ein Cookie gesetzt wird, das deine getroffene Wahl speichert. Dieses Cookie ist ein „notwendiges Cookie“ und kann nicht deaktiviert werden.
+{: .eea-element }
 
 <? include cookie/settings-link ?>
 
@@ -537,7 +538,8 @@ Unsere Webseite verwendet den Webanalyse- und Optimierungsdienst „Google Optim
 
 Google Optimize verwendet Cookies, die es uns ermöglichen, die Nutzung unserer Webseite zu optimieren und zu analysieren. Die durch die Cookies erzeugten Informationen über deine Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir verwenden Google Optimize mit aktivierter IP-Anonymisierung, so dass deine IP-Adresse von Google, wenn du innerhalb der Mitgliedstaaten der Europäischen Union oder im Europäischen Wirtschaftsraum bist, gekürzt wird. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Google-Server in den USA übertragen und dort gekürzt. Google verwendet diese Informationen zum Zwecke der Auswertung deines Nutzungsverhaltens der Webseite, um Berichte über Optimierungstests und Webseiteaktivitäten in diesem Kontext zusammenzustellen, sowie um weitere mit der Webseitenutzung und der Internetnutzung verbundene Leistungen zu erbringen.
 
-**Falls du bei der Verbesserung unserer Produkte nicht mitwirken möchtest, kannst du Google Optimize deaktivieren**. Bitte beachte jedoch, dass in diesem Fall ein Cookie gesetzt wird, das deine getroffene Wahl speichert. Dieses Cookie gilt als „notwendiges Cookie" und kann nicht deaktiviert werden.
+**Falls du bei der Verbesserung unserer Produkte nicht mitwirken möchtest, kannst du Google Optimize deaktivieren.** Bitte beachte jedoch, dass in diesem Fall ein Cookie gesetzt wird, das deine getroffene Wahl speichert. Dieses Cookie gilt als „notwendiges Cookie" und kann nicht deaktiviert werden.
+{: .eea-element }
 
 <? include cookie/settings-link ?>
 

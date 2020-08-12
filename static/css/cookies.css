@@ -449,3 +449,9 @@
   background-color: #000;
   overflow: auto;
 }
+
+/* EEA elements ***************************************************************/
+
+.eea-element { display: none; }
+
+.has-cookies .eea-element { display: inline; }

@@ -253,7 +253,7 @@ Le but de la protection des données est de protéger les données personnelles.
 
 Ces informations incluent par exemple des détails tels que le nom et l’adresse mail, mais aussi les surnoms et informations dans vos billets de forum.
 
-### Quel est le but du traitement de données et quelle est la base légale ? {: #what-is-purpose } 
+### Quel est le but du traitement de données et quelle est la base légale ? {: #what-is-purpose }
 
 #### But de la collecte et du traitement des données {: #purpose }
 
@@ -390,7 +390,7 @@ Vous pouvez volontairement :
     - ID
     - Nom
     - Version
-    
+
 ##### Accès aux rapports {: #access-reports }
 
 Les rapports traités ne sont accessibles que par un individu qui connaît son identifiant unique. Ces ID sont partagés uniquement avec :
@@ -521,6 +521,7 @@ Nous utilisons des cookies pour reconnaître les utilisateurs connectés ou pour
 Nous utilisons Google Analytics sur notre site web, un service de Google Inc. (« Google »). Google Analytics se sert de soi-disant cookies, des fichiers textes qui sont enregistrés sur votre ordinateur et qui permettent d’analyser votre usage de notre site web. Les informations générées par le cookie sur votre usage de notre site, contenant votre adresse IP abrégée, sont transmises à un serveur de Google aux États-Unis où elles sont sauvegardées. Google utilise ces informations afin d’évaluer votre utilisation de notre site, de rédiger des rapports d’activité pour nous et de fournir plus de services reliés à l’utilisation de notre site web et de l’Internet. Il est possible que Google transmette ces informations à des tierces parties si la loi l’exige ou si ces tierces parties traitent les informations au nom de Google.
 
 **Vous pouvez désactiver Google Analytics si vous ne souhaitez pas nous aider à améliorer nos produits.** Veuillez cependant noter que dans ce cas, un cookie sera créé afin de sauvegarder votre choix de désactivation. Ce cookie est considéré comme un « cookie nécessaire » et il ne peut pas être désactivé.
+{: .eea-element }
 
 <? include cookie/settings-link ?>
 
@@ -535,6 +536,7 @@ Notre site web utilise l’analyse web et le service d’optimisation Google Opt
 Google Optimize utilise des cookies qui nous permettent d’optimiser et d’analyser l’utilisation que vous faites de notre site web. Les informations générées par ces cookies relativement à l’utilisation que vous faites de notre site sont normalement transférées à un serveur Google situé aux États-Unis et stockées là-bas. Nous utilisons Google Optimize avec anonymisation de l’adresse IP de sorte que Google réduit votre adresse IP dans les états membres de l’Union Européenne ou dans l’Espace Économique Européen. Ce n’est que dans certains cas exceptionnels que l’adresse IP est transmise dans son intégralité à un serveur Google aux États-Unis et réduite là-bas. Google utilisera ces informations afin d’analyser l’usage que vous faites de notre site web, établira des rapports sur les tests d’optimisation et sur l’activité connexe du site et fournira d’autres services relatifs à l’activité du site web et à l’utilisation d’Internet.
 
 **Vous pouvez désactiver Google Optimize si vous ne souhaitez pas nous aider à améliorer nos produits.** Veuillez cependant noter que dans ce cas, un cookie sera créé afin de sauvegarder votre choix de désactivation. Ce cookie est considéré comme un « cookie nécessaire » et il ne peut pas être désactivé.
+{: .eea-element }
 
 <? include cookie/settings-link ?>
 
