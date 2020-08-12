@@ -19,6 +19,7 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
         - Betriebssystem
         - Datum des letzten Updates
         - IP-Adresse
+        - Protokolldaten auf der Aktualisierungsseite
         - Zusätzlich kannst du über den Fehlermelder ([Issue Reporter](#issue-reporter)) manuell die folgenden Informationen über eine Webseite übermitteln:
         {: .has-horizontal-list .semicolon-separated }
             - Gegebenenfalls Browser Build
@@ -106,8 +107,9 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
     - URLs, die Probleme verursachen
     - Adblock Plus Probleme
     - Adresse und Transaktions-ID-Nummern für Spendenerstattungen (freiwillig)
-4. Auf unseren Social Media-Webseiten
-    - Nutzungsprofile
+4. Im Zusammenhang mit sozialen Medien
+    - Auf unseren sozialen Medien-Seiten: Nutzungsprofile
+    - Link/Schaltfläche zu sozialen Medien in Adblock Plus: Anzahl geblockter Elemente
 
 ### Wie erheben wir Daten? {: #how-we-collect-data }
 
@@ -123,6 +125,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
     - Prüfen von Notfallbenachrichtigungen
     - Verweis auf eine Deinstallations- oder Spendenwebseite
     - Daten im Zusammenhang mit dem Erhalt von Spenden
+    - Protokolldateien im Zusammenhang mit der Aktualisierungsseite
 2.  Auf unseren Webseiten:
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
@@ -137,9 +140,10 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
     - Von Browser Web-Store-Bewertungen
     - Von sozialen Plattformen wie Facebook und Twitter
 4. Daten, die du uns über Social Media zur Verfügung stellst
-5. Im Zusammenhang mit unseren Social Media-Webseiten:
+5. Im Zusammenhang mit sozialen Medien:
 {: .has-horizontal-list .semicolon-separated }
-    - Cookies
+    - Auf unseren sozialen Medien-Seiten: Cookies
+    - Teilen-Funktion in Adblock Plus: Links
 
 ### Wie und warum verarbeiten wir deine Daten? {: #why-we-process-data }
 
@@ -150,6 +154,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 - Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.
 - Um dich bei Problemen mit unseren Produkten zu unterstützen.
 - Zum Erhalt von Spenden, die du uns schickst.
+- Zur Vermarktung unserer Produkte.
 - Im Zusammenhang mit unseren Social Media-Webseiten nutzen soziale Netzwerke die Daten zu Marktforschungs- und Werbezwecken.
 
 ### Auf welcher Rechtsgrundlage erfolgt die Datenverarbeitung? {: #what-is-legal }
@@ -213,6 +218,8 @@ Die folgenden Informationen gelten für die Erhebung, Verarbeitung und Nutzung p
 1. [Erhebung und Verarbeitung in unseren Produkten](#collection-processing-of-products)
 1. [Erhebung und Verarbeitung auf unseren Webseiten](#collection-processing-of-websites)
 1. [Erhebung und Verarbeitung für den Nutzersupport](#collection-and-processing-for-user-support)
+1. [Erhebung und Verarbeitung im Zusammenhang mit sozialen Medien](#collection-and-processing-social-media)
+1. [Datenschutzerklärung für Einwohner Kaliforniens](#privacy-notice-california-residents)
 
 ### Allgemeine Hinweise {: #general-notes }
 
@@ -365,7 +372,9 @@ Wenn du die Adblock Plus-Browsererweiterung verwendest, erheben und verarbeiten 
 
 ##### Prüfungen auf Erweiterungsaktualisierungen {: #update-checks }
 
-Dein Browser prüft regelmäßig nach Aktualisierungen der Erweiterungen einschließlich Adblock Plus. Während einer Prüfung auf Aktualisierungen werden einige allgemeine Informationen (Browser-Version, Erweiterungsversion, Betriebssystem, Datum der letzten Aktualisierung und deine IP-Adresse) übertragen. Aktualisierungen für Adblock Plus für Android und Internet Explorer werden durch die Adblock Plus-Webseite verarbeitet, und die übertragenen Daten unterliegen der [Adblock Plus-Datenschutzerklärung](#website-logs). Aktualisierungen von Adblock Plus für Firefox werden durch die Mozilla-Webseite verarbeitet und unterliegen der [Mozilla-Datenschutzerklärung](https://www.mozilla.org/privacy/). Aktualisierungen von Adblock Plus für Chrome werden durch die Google Web Store-Webseite verarbeitet und unterliegen der [Google-Datenschutzerklärung](https://www.google.com/policies/privacy/). Aktualisierungen von Adblock Plus für Opera werden durch die Opera Add-ons-Webseite verarbeitet und unterliegen der [Opera-Datenschutzerklärung](http://www.opera.com/privacy#web). Aktualisierungen von Adblock Plus für Safari werden durch die Safari Erweiterungswebseite verarbeitet und unterliegen der [Apple-Datenschutzerklärung](https://www.apple.com/privacy/privacy-policy/).
+Dein Browser prüft regelmäßig nach Aktualisierungen der Erweiterungen einschließlich Adblock Plus. Während einer Prüfung auf Aktualisierungen werden einige allgemeine Informationen (Browser-Version, Erweiterungsversion, Betriebssystem, Datum der letzten Aktualisierung und deine IP-Adresse) übertragen. Nach einem erfolgreichen Update öffnet sich unter Umständen automatisch ein Webseiten-Protokoll. Zu den gespeicherten Daten gehören IP-Adresse (nur zum Zweck der IT-Sicherheit und nur durch das IT-Sicherheitsteam von Eyeo einsehbar), die Uhrzeit der Anfragestellung, die aufgerufene Internetadresse, die Browser-Kennung und die verweisende Seite. Diese Daten (die IP-Adresse nur in aggregierter Form durch Hashing mithilfe eines sich täglich ändernden Zufallswerts) werden verwendet, um Nutzungsstatistiken zu erstellen und potenzielle Sicherheitsprobleme sowie Spam im Forum und Blog zu untersuchen. Detaillierte Protokolle werden für einen Zeitraum von 30 Tagen aufbewahrt. Anschließend verbleiben nur die aggregierten Nutzungsstatistiken, die mit keinem Nutzer in Verbindung gebracht werden können. Alles andere wird gelöscht.
+
+Aktualisierungen für Adblock Plus für Android und Internet Explorer werden durch die Adblock Plus-Webseite verarbeitet, und die übertragenen Daten unterliegen der [Adblock Plus-Datenschutzerklärung](#website-logs). Aktualisierungen von Adblock Plus für Firefox werden durch die Mozilla-Webseite verarbeitet und unterliegen der [Mozilla-Datenschutzerklärung](https://www.mozilla.org/privacy/). Aktualisierungen von Adblock Plus für Chrome werden durch die Google Web Store-Webseite verarbeitet und unterliegen der [Google-Datenschutzerklärung](https://www.google.com/policies/privacy/). Aktualisierungen von Adblock Plus für Opera werden durch die Opera Add-ons-Webseite verarbeitet und unterliegen der [Opera-Datenschutzerklärung](http://www.opera.com/privacy#web). Aktualisierungen von Adblock Plus für Safari werden durch die Safari Erweiterungswebseite verarbeitet und unterliegen der [Apple-Datenschutzerklärung](https://www.apple.com/privacy/privacy-policy/).
 
 
 ##### Abonnement-Downloads {: #subscription-downloads }
@@ -594,7 +603,9 @@ Für den Nutzersupport verwenden wir eine Kundenbeziehungsmanagement-Software vo
 
 Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
 
-### Erhebung und Verarbeitung auf unserer Social Media-Präsenz {: #collection-and-processing-on-our-social-media-presence }
+### Erhebung und Verarbeitung im Zusammenhang mit sozialen Medien {: #collection-and-processing-social-media }
+
+#### Unsere Präsenz in sozialen Medien
 
 Wir sind auf Facebook, Instagram, Pinterest, VK, Twitter und LinkedIn aktiv, um mit dir kommunizieren zu können. Facebook sowie eyeo sind gemeinsam für die Verarbeitung von personenbezogenen Daten verantwortlich („gemeinsame Verantwortliche”, DSGVO Art. 26), selbst wenn diese exklusiv vom jeweiligen sozialen Netzwerk gespeichert werden. Deshalb werden wir dich immer über die Datenverarbeitungsprozesse im Zusammenhang mit unserer Präsenz auf den jeweiligen sozialen Netzwerken wie folgt informieren.
 
@@ -611,7 +622,73 @@ Bitte besuche die Webseite jedes sozialen Netzwerks, dass nachfolgend aufgeführ
 - **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA) – Datenschutzerklärung: [https://twitter.com](https://twitter.com), Opt-Out: [https://twitter.com/personalization](https://twitter.com/personalization), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
 - **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Irland) – Datenschutzerklärung: [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Opt-out: [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
 
-<time datetime="2020-05">Mai 2020</time>
+#### Links/Schaltflächen zu sozialen Medien
+
+Die Links/Schaltflächen zu sozialen Medien und Plattformen (Facebook und Twitter), die innerhalb von Adblock Plus verwendet werden, um dich in die Lage zu versetzen, die Anzahl der Elemente weiterzugeben, die du mit Adblock Plus blockiert hast, stellen nur dann den Kontakt zwischen den sozialen Medien oder Plattformen und dir her, wenn du auf die Links/Schaltflächen klickst. Diese Funktion entspricht der Art und Weise, wie ein Online-Link normalerweise funktioniert. Wenn du auf einen solchen Link oder eine solche Schaltfläche klickst, öffnet sich eine neue Seite über die Server des jeweiligen sozialen Mediums oder der Plattform. Dadurch wird der Betreiber des sozialen Mediums darüber informiert, dass auf unsere Website über deine IP-Adresse zugegriffen wurde. Gleichzeitig kann das soziale Medium Cookies auf deinem Endgerät platzieren oder Cookies lesen, sofern du nicht die Nutzung von Cookies in deinem Browser deaktiviert hast. Weitere Informationen zur Verarbeitung deiner personenbezogenen Daten durch die Betreiber sozialer Medien und Plattformen findest du in den Datenschutzerklärungen von Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) und Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)).
+
+### Datenschutzerklärung für Einwohner Kaliforniens {: #privacy-notice-california-residents }
+
+Dieser Abschnitt gilt ausschließlich für Einwohner Kaliforniens. Er erläutert, wie wir personenbezogene Daten erheben und nutzen und welche Rechte die Einwohner Kaliforniens unter dem [California Consumer Protection Act](http://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=) („CCPA“) ausüben können. Die Begriffe in diesem Abschnitt haben dieselbe Bedeutug wie im CCPA. Bitte beachten Sie, dass die im CCPA beschriebenen Begriffe in ihrer allgemeinen Bedeutung weiter ausgelegt werden können.
+
+Der Begriff „**personenbezogene Daten**“ bezieht sich z. B. auf Informationen, die dich oder deinen Haushalt benennen oder beschreiben, sich auf dich oder deinen Haushalt beziehen, im Zusammenhang mit dir oder deinem Haushalt stehen oder sich direkt oder indirekt mit dir oder deinem Haushalt verbinden lassen. Personenbezogene Daten umfassen nicht aggregierte Informationen oder Informationen, die sich nicht mit dir verbinden lassen.
+
+#### Welche personenbezogenen Informationen wir erheben und wie wir sie nutzen
+
+Um dir unsere Produkte und Dienstleistungen („Produkte“) zur Verfügung stellen zu können, müssen wir bestimmte personenbezogene Daten über dich verarbeiten. Wir verkaufen deine personenbezogenen Daten nicht und werden das auch nie tun. Eine detaillierte Erläuterung zu den Arten von Informationen die wir erheben und zu unserer Nutzung solcher Informationen findest du in den [vorhergehenden](#data-processed) Absätzen. Hier ist eine Zusammenfassung der CCPA-Kategorien personenbezogener Daten, die wir im Verlauf der letzten 12 Monate unter Umständen über dich erhoben haben:
+
+* Kennungen;
+* Aktivtätsdaten aus dem Internet oder anderen elektronischen Netzwerken, einschließlich Informationen über deinen Browser, die Erweiterung und das Betriebssystem,
+* Standortdaten,
+* Schlussfolgerungen, die wir aus den genannten Informationen über deine Vorlieben und Einstellungen ziehen.
+
+Unter Umständen haben wir diese Kategorien personenbezogener Daten zu den folgenden Geschäftszwecken erhoben:
+
+* um die Produkte, die wir dir zur Verfügung stellen, zu personalisieren.
+* um unsere Produkte auszuwerten und zu verbessern.
+* um Analysedienste in eingeschränkter Form anzubieten.
+* um mit dir zu kommunizieren. 
+* um die Sicherheit und Funktionalität unserer Produkte sicherzustellen.
+* um weitere Geschäftszwecke zu erfüllen.
+
+#### Wie wir personenbezogene Daten weitergeben
+
+Vorbehaltlich der Einschränkungen in dieser [Datenschutzerklärung](#privacy-policy-long) geben wir deine personenbezogenen Daten an externe Anbieter („Dienstleister“) weiter, denen es vertraglich untersagt ist, personenbezogene Daten für andere als die in dem Vertrag konkret beschriebenen Geschäftszwecke aufzubewahren, zu nutzen oder offenzulegen. Zu solchen Dienstleistern zählen:
+
+* Dienstleister, die deine Nutzung unserer Website analysieren und die damit zusammenhängenden Daten testen.
+* Dienstleiter, die unsere mobilen Produkte unterstützen.
+* Dienstleister die unseren Kundendienst unterstützen. 
+
+Darüber hinaus können wir deine personenbezogenen Daten auch an Strafverfolgungsbehörden oder andere Dritte weitergeben, wenn dies erforderlich ist, um die rechtlichen Anforderungen zu erfüllen.
+
+#### Quellen aus denen wir personenbezogene Daten erhalten
+
+Wir erhalten personenbezogene Daten von dir, unseren Websites, deinem/deinen Gerät(en) sowie von unseren externen Dienstleistern. Zu den Kategorien der Quellen, aus denen wir personenbezogene Daten erhoben oder empfangen haben, zählen:
+
+* **Du**: Wir erheben Informationen, die du freiwillig bereitstellst, z. B. Registrierungsdaten aus unserem öffentlichen Forum oder Informationen, die du uns im Zusammenhang mit Berichten über Probleme, Supportanfragen und Benutzerbewertungen vorlegst.
+* **Dein(e) Gerät(e)**: Wir empfangen Informationen von und über die Computer, Telefone und Browser, die du im Zusammenhang mit unseren Produkten verwendest.
+* **Unsere Websites**: Wir erheben Informationen darüber, wie du mit unseren Websites interagierst und diese nutzt.
+* **Deine Profile in sozialen Medien**: Wir erheben Informationen über deine Profile in sozialen Medien, wenn du dich dafür entscheidest, auf diese Weise zu Inhalten beizutragen.
+* **Dienstleister**: Wir beauftragen Anbieter mit der Erfüllung von Geschäftszwecken in unserem Namen und geben Informationen an diese weiter, damit sie ihre entsprechenden Aufgaben erledigen können, darunter Analysen, mobiler Produktsupport, Produkt-Hosting und Benutzersupport.
+
+#### Welche Rechte hast du unter dem CCPA?
+
+Das CCPA gewährt dir die folgenden Rechte:
+
+* **Recht auf Information**: Du hast das Recht zu verlangen, dass wir dir gegenüber die Kategorien personenbezogener Daten, die wir erheben, die Kategorien von Quellen, aus denen wir personenbezogene Daten erheben, die Geschäftszwecke für die Erhebung personenbezogener Daten die Kategorien von Dritten, an die wir personenbezogene Daten weitergeben und die konkreten personenbezogenen Daten, die wir über dich erhoben haben, offenlegen.
+* **Recht auf Löschung**: Du hast das Recht zu verlangen, dass wir alle personenbezogenen Daten, die wir über dich erhoben haben, löschen.
+* **Recht auf Nichtdiskriminierung**: Wir diskriminieren dich nicht aufgrund der Ausübung dieser Rechte.
+
+Bitte beachte, dass wir verpflichtet sind, deine Identität zu überprüfen, wenn du dein **Recht auf Information** und/oder dein **Recht auf Löschung** ausübst. Dazu fordern wir personenbezogene Daten von dir an, die wir mit den personenbezogenen Daten in unseren Aufzeichnungen abgleichen. In manchen Fällen fordern wir auch weitere Unterlagen an, um deine Identität zu überprüfen.
+
+Bitte beachte außerdem, dass das CCPA es dir gestattet, diese Rechte selbst auszuüben oder einen autorisierten Vertreter zu bestimmen, der diese Rechte in deinem Namen ausübt. Falls ein autorisierter Vertreter Rechte in deinem Namen ausübt, können wir eine schriftliche Bestätigung von dir anfordern, die es der Person erlaubt, als dein autorisierter Vertreter zu handeln und weitere Informationen anfordern, die erforderlich sind, um die Identität des autorisierten Vertreters zu überprüfen.
+
+Um diese Rechte auszuüben, sende bitte eine E-Mail an <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a>.
+
+#### Ansprechpartner für weitere Informationen
+
+Bei Fragen zu diesem Abschnitt oder zur Ausübung deiner Rechte unter dem CCPA, <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>kontaktiere uns</a> bitte.
+
+<time datetime="2020-08">August 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

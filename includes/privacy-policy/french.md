@@ -19,6 +19,7 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
         - Système d’exploitation
         - Date de la dernière mise à jour
         - Adresse IP
+        - Données du fichier journal sur la page des Mises à jour
         - De plus vous pouvez soumettre manuellement les informations suivantes sur une page web en utilisant le [signaleur de problèmes](#issue-reporter) :
         {: .has-horizontal-list .semicolon-separated }
             - Construction du navigateur, le cas échéant
@@ -106,8 +107,9 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
     - URL pour lesquels l’utilisateur est confronté à des problèmes
     - Problèmes Adblock Plus
     - Adresse et numéros de transaction ID pour remboursements de dons (volontairement)
-4. Sur les pages de nos réseaux sociaux
-    - Profils utilisateurs
+4. En lien avec les réseaux sociaux
+    - Sur les pages de nos réseaux sociaux : profils d'utilisation
+    - Lien/bouton vers les médias sociaux dans Adblock Plus : nombre d'éléments bloqués
 
 ### Comment recueillons-nous les données ? {: #how-we-collect-data }
 
@@ -123,6 +125,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
     - Vérifications des notifications d’urgence
     - Référencement à une page web de désinstallation ou à une page de collecte de dons
     - Données relatives à la perception de dons
+    - Fichiers journaux liés à la page des Mises à jour
 1.  Sur nos sites web :
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
@@ -137,9 +140,10 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
     - Depuis des avis sur le Web Store d’un navigateur
     - Depuis les réseaux sociaux tels que Facebook et Twitter
 1. Données que vous nous fournissez via les réseaux sociaux
-1. En lien avec nos pages sur les réseaux sociaux :
+1. En lien avec les réseaux sociaux : 
 {: .has-horizontal-list .semicolon-separated }
-    - Cookies
+    - Sur les pages de nos réseaux sociaux : cookies
+    - Fonction de partage dans Adblock Plus : liens
 
 ### Comment et pourquoi traitons-nous vos données ? {: #why-we-process-data }
 
@@ -150,6 +154,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 - À des fins de communication et d’assistance sur notre forum et notre blog.
 - Pour vous aider si vous rencontrez des problèmes avec nos produits.
 - Pour recevoir les dons que vous nous envoyez.
+- Pour promouvoir nos produits.
 - Dans le cadre de nos pages sur les réseaux sociaux, les réseaux sociaux utilisent les données à des fins d'études de marché et de publicité.
 
 ### Quelle est la base légale du traitement des données ? {: #what-is-legal }
@@ -213,6 +218,8 @@ Les informations suivantes concernent la collecte, le traitement et l’utilisat
 1. [Collecte et traitement dans nos produits](#collection-processing-of-products)
 1. [Collecte et traitement sur nos sites web](#collection-processing-of-websites)
 1. [Collecte et traitement pour assistance aux utilisateurs](#collection-and-processing-for-user-support)
+1. [Collecte et traitement en lien avec les réseaux sociaux](#collection-and-processing-social-media)
+1. [Avis de confidentialité pour les résidents de Californie](#privacy-notice-california-residents)
 
 ### Notes générales {: #general-notes }
 
@@ -363,7 +370,9 @@ Quand vous utilisez l’extension de navigateur Adblock Plus, nous recueillons e
 
 ##### Contrôles des mises à jour d’extensions {: #update-checks }
 
-Votre navigateur vérifie de temps à autre les mises à jour de toutes vos extensions, y compris Adblock Plus. Certaines informations générales - version du navigateur, version de l’extension, système d’exploitation, date de la dernière mise à jour et votre adresse IP - sont transmises durant une vérification des mises à jour. Les mises à jour d’Adblock Plus pour Android et Internet Explorer sont gérées par le site web Adblock Plus et les données transmises tombent sous le coup de la [politique de confidentialité d’Adblock Plus](#website-logs). Les mises à jour d’Adblock Plus pour Firefox sont gérées par le site web Mozilla et tombent sous le coup de la [politique de confidentialité de Mozilla](https://www.mozilla.org/privacy/). Les mises à jour d’Adblock Plus pour Chrome sont gérées par le site web Google Web Store et tombent sous le coup de la [politique de confidentialité de Google](https://www.google.com/policies/privacy/). Les mises à jour d’Adblock Plus pour Opera sont gérées par le site web Opera Add-ons et tombent sous le coup de la [politique de confidentialité d’Opera](http://www.opera.com/privacy#web). Les mises à jour d’Adblock Plus pour Safari sont gérées par le site web Safari Extensions et tombent sous le coup de la [politique de confidentialité d’Apple](https://www.apple.com/privacy/privacy-policy/).
+Votre navigateur vérifie de temps à autre les mises à jour de toutes vos extensions, y compris Adblock Plus. Certaines informations générales - version du navigateur, version de l’extension, système d’exploitation, date de la dernière mise à jour et votre adresse IP - sont transmises durant une vérification des mises à jour. Après une mise à jour réussie, un site Web peut être automatiquement ouvert. Les données enregistrées sur ce site web sont notamment votre adresse IP (uniquement aux fins de la sécurité informatique et seulement accessible par l'équipe de sécurité informatique eyeo), l'heure à laquelle la demande a été faite, l'adresse web accédée, l'identificateur de navigateur et la page de référence. Ces données (adresse IP uniquement agrégée par hachage avec un salage modifié chaque jour) sont utilisées pour générer des statistiques d'utilisation et pour enquêter sur les problèmes potentiels de sécurité, ainsi que le spam des forums ou blogs. Les registres détaillés sont conservés pendant 30 jours, après quoi seules les statistiques d'utilisation agrégées ne pouvant pas être reliées à un utilisateur unique sont conservées. Tout le reste est supprimé.
+
+Les mises à jour d’Adblock Plus pour Android et Internet Explorer sont gérées par le site web Adblock Plus et les données transmises tombent sous le coup de la [politique de confidentialité d’Adblock Plus](#website-logs). Les mises à jour d’Adblock Plus pour Firefox sont gérées par le site web Mozilla et tombent sous le coup de la [politique de confidentialité de Mozilla](https://www.mozilla.org/privacy/). Les mises à jour d’Adblock Plus pour Chrome sont gérées par le site web Google Web Store et tombent sous le coup de la [politique de confidentialité de Google](https://www.google.com/policies/privacy/). Les mises à jour d’Adblock Plus pour Opera sont gérées par le site web Opera Add-ons et tombent sous le coup de la [politique de confidentialité d’Opera](http://www.opera.com/privacy#web). Les mises à jour d’Adblock Plus pour Safari sont gérées par le site web Safari Extensions et tombent sous le coup de la [politique de confidentialité d’Apple](https://www.apple.com/privacy/privacy-policy/).
 
 ##### Téléchargements d’abonnements {: #subscription-downloads }
 
@@ -591,7 +600,9 @@ Pour l’assistance aux utilisateurs nous utilisons logiciel de gestion de la re
 
 Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant.
 
-### Collecte et traitement des données relatifs à notre présence sur les réseaux sociaux {: #collection-and-processing-on-our-social-media-presence }
+### Collecte et traitement en lien avec les réseaux sociaux {: #collection-and-processing-social-media }
+
+#### Notre présence sur les réseaux sociaux
 
 Afin de communiquer avec vous, et de vous informer sur nos activités et offres sur les réseaux sociaux, nous sommes actifs sur Facebook, Instagram, Pinterest, VK, Twitter et LinkedIn. En ce qui concerne Facebook, sachez que Facebook et eyeo sont conjointement responsables du traitement de vos données personnelles (« responsabilité commune », Art. 26 du RGPD), même si ces dernières sont enregistrées exclusivement par les réseaux sociaux concernés. Par conséquent, nous vous informons quand même des processus de traitement de données en raison de notre présence sur les réseaux sociaux concernés, comme suit.
 
@@ -608,7 +619,73 @@ Pour obtenir un aperçu détaillé des traitements respectifs et options de dés
 - **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, Etats-Unis) – Politique de confidentialité : [https://twitter.com](https://twitter.com), Option de désabonnement : [https://twitter.com/personalization](https://twitter.com/personalization), Bouclier de protection des données : [https://www.privacyshield.gov](https://www.privacyshield.gov)
 - **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Irlande) – Politique de confidentialité : [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Option de désabonnement : [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out), Bouclier de protection des données : [https://www.privacyshield.gov](https://www.privacyshield.gov)
 
-<time datetime="2020-05">Mai 2020</time>
+#### Liens/boutons vers les réseaux sociaux
+
+Les liens/boutons vers les réseaux sociaux et les plateformes (Facebook et Twitter) utilisés dans Adblock Plus dans le but de vous permettre de partager la quantité d'éléments que vous avez bloqués avec Adblock Plus n'établissent généralement un contact entre les réseaux sociaux/plateformes et vous que lorsque vous cliquez sur ces liens/boutons. Cette fonction correspond au fonctionnement d'un lien en ligne. Si vous cliquez sur un lien/bouton correspondant, cela ouvre une nouvelle page via les serveurs du réseau social ou de la plateforme respective. Par ce biais, l'opérateur du réseau social est informé que notre site Web a été consulté via votre adresse IP. Dans le même temps, le réseau social peut placer des cookies sur votre terminal ou lire des cookies sauf si vous avez interdit l'utilisation de cookies dans votre navigateur. Pour plus d'informations sur tout traitement de vos données personnelles par les opérateurs des réseaux sociaux ou des plateformes, veuillez vous référer aux politiques de confidentialité de Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) et Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)). 
+
+### Avis de confidentialité pour la Californie {: #privacy-notice-california-residents}
+
+Cette section ne s'applique qu'aux résidents de Californie. Elle explique comment nous collectons et utilisons les informations personnelles ainsi que les droits accordés aux résidents de la Californie en vertu du [California Consumer Protection Act](http://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=) (« CCPA »). Les mots utilisés ici ont le même sens que celui qui leur est donné dans le CCPA. Veuillez noter que les mots tels que décrits dans le CCPA peuvent avoir un sens plus large que leur sens courant.
+
+« **Informations personnelles** », par exemple, fait référence à des informations qui identifient, se rapportent à, décrivent, peuvent être associées à, ou pourraient raisonnablement être liées, directement ou indirectement, à vous ou à votre foyer. Les informations personnelles n'incluent pas les informations agrégées ou les informations qui ne peuvent pas être raisonnablement liées à vous.
+
+#### Quelles informations personnelles nous collectons et comment nous les utilisons
+
+Afin de vous fournir nos produits et services (« Produits »), nous devons traiter certaines Informations personnelles vous concernant. Nous ne vendons aucune de vos informations personnelles et nous ne le ferons jamais. Pour une explication détaillée sur les types d'informations que nous recueillons et comment nous les utilisons, veuillez consulter les informations fournies [ci-dessus](#data-processed). Voici un résumé des catégories de renseignements personnels du CCPA que nous avons pu recueillir à votre sujet au cours des 12 derniers mois :
+
+* Identifiants ;
+* Internet ou d'autres informations sur l'activité du réseau électronique, y compris des informations sur votre navigateur, votre extension et votre système d'exploitation ;
+* Données de géolocalisation ; et
+* Inférences extraites de l'une des informations identifiées qui reflètent vos préférences et attitudes.
+
+Nous pouvons avoir collecté ces catégories de renseignements personnels aux fins commerciales suivantes :
+
+* Pour personnaliser les produits que nous vous fournissons ;
+* Pour évaluer et améliorer nos produits ;
+* Pour fournir des services analytiques limités ;
+* Pour communiquer avec vous ; 
+* Pour assurer la sécurité et la fonctionnalité de nos produits ; et
+* Pour d'autres fins commerciales.
+
+#### Comment nous partageons les informations personnelles
+
+Sous réserve des limitations de cette [Politique de confidentialité](#privacy-policy-long), nous partageons vos informations personnelles avec des fournisseurs externes (« Prestataires de services ») auxquels il est contractuellement interdit de conserver, d'utiliser ou de divulguer des informations personnelles à des fins autres que les fins commerciales spécifiques décrites dans le contrat. Ces Prestataires de services comprennent :
+
+* Les Prestataires de services qui analysent votre utilisation de notre site Web et testent les données associées ; et
+* Les Prestataires de services qui prennent en charge nos produits mobiles ; et
+* Les Prestataires de services qui facilitent l'assistance aux utilisateurs.
+
+En outre, nous pouvons également partager vos informations personnelles avec les forces de l'ordre ou d'autres tiers si nécessaire pour nous conformer aux exigences légales.
+
+#### Sources à partir desquelles nous recueillons des informations personnelles
+
+Nous recevons des Informations personnelles de votre part, de nos sites Web, de vos appareils et de nos prestataires de services externes. Les catégories de sources à partir desquelles nous avons collecté ou reçu des informations personnelles comprennent :
+
+* **Vous** : nous collectons les informations que vous fournissez volontairement, telles que les données d'inscription sur notre forum public ou les informations que vous nous envoyez dans le cadre de rapports de problèmes, de demandes d'assistance utilisateur et d'avis d'utilisateurs.
+* **Votre(vos) appareil(s)** : nous recevons des informations relatives aux/provenant des ordinateurs, téléphones et navigateurs que vous utilisez en relation avec nos Produits.
+* **Nos sites Web** : nous recueillons des informations sur la manière dont vous interagissez avec nos sites Web et la façon dont vous les utilisez.
+* **Vos profils de médias sociaux** : nous recueillons des informations sur vos abonnements aux médias sociaux, si vous choisissez de contribuer au contenu de cette manière.
+* **Prestataires de services** : nous engageons des prestataires afin qu'ils mènent des activités commerciales en notre nom et partageons des informations avec eux pour mener à bien ces activités commerciales, notamment l'analyse, le support produit mobile, l'hébergement de produits et le support utilisateur.
+
+#### Quels sont vos droits en vertu du CCPA ?
+
+Le CCPA vous octroie les droits suivants :
+
+* **Droit de savoir** : vous avez le droit de nous demander de vous divulguer les catégories d'informations personnelles que nous avons collectées, les catégories de sources à partir desquelles nous avons collecté les informations personnelles, l'objectif commercial de la collecte d'informations personnelles, les catégories de tiers avec lesquelles nous avons partagé des informations personnelles et les éléments spécifiques d'informations personnelles vous concernant que nous avons collectés ;
+* **Droit de demander une suppression** : vous avez le droit de demander que nous supprimions toutes les informations personnelles vous concernant que nous avons collectées ; et
+* **Droit à la non-discrimination** : vous ne serez pas discriminé(e) pour avoir exercé l'un de ces droits.
+
+Veuillez noter que nous avons le devoir de vérifier votre identité chaque fois que vous exercez votre **droit de savoir** et/ou votre **droit de demander une suppression**. Pour ce faire, nous vous demanderons des informations personnelles afin qu'elles correspondent aux informations personnelles contenues dans nos archives. Dans certains cas, nous pouvons également demander des documents supplémentaires pour vérifier votre identité.
+
+Veuillez également noter que le CCPA vous permet d'exercer vous-même ces droits ou de désigner un agent autorisé qui exercera ces droits en votre nom. Dans le cas où un agent autorisé exerce des droits en votre nom, nous pouvons vous demander une autorisation écrite désignant la personne comme votre agent autorisé ainsi que d'autres informations nécessaires pour vérifier l'identité de l'agent autorisé.
+
+Pour exercer l'un de ces droits, veuillez soumettre une demande à <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a>.
+
+#### Contactez-nous pour plus d'informations
+
+Pour toute question concernant cette section ou sur comment exercer vos droits en vertu du CCPA, veuillez <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>nous contacter</a>.
+
+<time datetime="2020-08">Août 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
