@@ -19,6 +19,7 @@ The following privacy notice shall provide you with a general overview about the
         - Operating system
         - Date of last update
         - IP address
+        - Log file data on Updates page
         - Additionally, you may manually submit the following information about a webpage using the [Issue Reporter](#issue-reporter):
         {: .has-horizontal-list .semicolon-separated }
             - Browser build, if any
@@ -105,8 +106,9 @@ The following privacy notice shall provide you with a general overview about the
     - URLs the user is having issues with
     - Adblock Plus issues
     - Address and transaction ID numbers for donation refunds (voluntary)
-1. On our social media pages
-    - Usage profiles
+1. In connection with social media
+    - On our social media pages: Usage profiles
+    - Link / button to social media in Adblock Plus: Amount of blocked elements
 
 ### How do we collect data? {: #how-we-collect-data }
 
@@ -122,6 +124,7 @@ List of techniques and tools we use for data collection.
     - Emergency notification checks
     - Referring to an uninstall or donation webpage
     - Data in connection with receiving donations
+    - Log files in connection with Updates page
 2. On our websites:
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
@@ -136,9 +139,10 @@ List of techniques and tools we use for data collection.
     - From Browser Web Store reviews
     - From social platforms like Facebook and Twitter
 4. Data you provide to us via social media
-5. In connection with our social media pages:
+5. In connection with social media:
 {: .has-horizontal-list .semicolon-separated }
-    - Cookies
+    - On our social media pages: Cookies
+    - Sharing function in Adblock Plus: Links
 
 ### How and why do we process your data? {: #why-we-process-data }
 
@@ -149,6 +153,7 @@ List of techniques and tools we use for data collection.
 - For communication and assistance purposes in our forum and blog.
 - For assisting you with any issues you may have with our products.
 - For receiving donations that you send to us.
+- To promote our products.
 - In connection with our social media pages, social networks use the data for market research and advertising purposes.
 
 ### What is the legal basis of data processing? {: #what-is-legal }
@@ -213,6 +218,8 @@ The following information applies to the collection, processing and use of perso
 1. [Collection and processing in our products](#collection-processing-of-products)
 1. [Collection and processing in our websites](#collection-processing-of-websites)
 1. [Collection and processing for user support](#collection-and-processing-for-user-support)
+1. [Collection and processing in connection with social media](#collection-and-processing-social-media)
+1. [Privacy notice for California Residents](#privacy-notice-california-residents)
 
 ### General notes {: #general-notes }
 
@@ -365,7 +372,9 @@ When you use the Adblock Plus browser extension, we collect and process the foll
 
 ##### Extension update checks {: #update-checks }
 
-Your browser periodically checks for updates of all your extensions, including Adblock Plus. Some general information - browser version, extension version, operating system, date of last update and your IP address - are transmitted during an update check. Updates for Adblock Plus for Android and Internet Explorer are handled by the Adblock Plus website and the data transmitted is subject to [the Adblock Plus Privacy Policy](#website-logs). Updates to Adblock Plus for Firefox are handled by the Mozilla website and are subject to the [Mozilla's Privacy Policy](https://www.mozilla.org/privacy/). Updates to Adblock Plus for Chrome are handled by the Google Web Store website and are subject to the [Google Privacy Policy](https://www.google.com/policies/privacy/). Updates to Adblock Plus for Opera are handled by the Opera Add-ons website and are subject to the [Opera Privacy Policy](http://www.opera.com/privacy#web). Updates to Adblock Plus for Safari are handled by the Safari Extensions website and are subject to the [Apple Privacy Policy](https://www.apple.com/privacy/privacy-policy/).
+Your browser periodically checks for updates of all your extensions, including Adblock Plus. Some general information - browser version, extension version, operating system, date of last update and your IP address - are transmitted during an update check. After a successful update, a website may be automatically opened. Data stored on this website includes your IP address (solely for the purpose of IT security and only accessible by eyeo's IT Security team), the time at which the request was made, the web address accessed, the browser identifier and the referring page. This data (IP address only aggregated via hashing with a daily changing salt) is used to generate usage statistics as well as to investigate potential security issues and forum or blog spam. Detailed logs are retained for a period of 30 days, after which only the aggregated usage statistics that cannot be connected to a single user remain. Everything else is deleted.
+
+Updates for Adblock Plus for Android and Internet Explorer are handled by the Adblock Plus website and the data transmitted is subject to [the Adblock Plus Privacy Policy](#website-logs). Updates to Adblock Plus for Firefox are handled by the Mozilla website and are subject to the [Mozilla's Privacy Policy](https://www.mozilla.org/privacy/). Updates to Adblock Plus for Chrome are handled by the Google Web Store website and are subject to the [Google Privacy Policy](https://www.google.com/policies/privacy/). Updates to Adblock Plus for Opera are handled by the Opera Add-ons website and are subject to the [Opera Privacy Policy](http://www.opera.com/privacy#web). Updates to Adblock Plus for Safari are handled by the Safari Extensions website and are subject to the [Apple Privacy Policy](https://www.apple.com/privacy/privacy-policy/).
 
 
 ##### Subscription downloads {: #subscription-downloads }
@@ -594,7 +603,9 @@ For user support, we use a customer relation management software from Zendesk, I
 
 All user support data is deleted one (1) year after closing the respective support case.
 
-### Collection and processing on our social media presence {: #collection-and-processing-on-our-social-media-presence }
+### Collection and processing in connection with social media {: #collection-and-processing-social-media }
+
+#### Our social media presence
 
 In order to communicate with you, and to inform you about our activities and offers on social networks, we are active on Facebook, Instagram, Pinterest, VK, Twitter and LinkedIn. In terms of Facebook, both Facebook and eyeo are jointly responsible for the processing of your personal data (“joint controller”, GDPR Art. 26), even if it is stored exclusively by the respective social network. Therefore, we still inform you about the data processing processes in connection with our presence on the respective social network as follows.
 
@@ -611,7 +622,73 @@ For a detailed overview of the respective processing operations and opt-out opti
 - **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA) – Privacy Policy: [https://twitter.com](https://twitter.com), Opt-Out: [https://twitter.com/personalization](https://twitter.com/personalization), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
 - **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Ireland) – Privacy Policy: [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Opt-Out: [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out), Privacy Shield: [https://www.privacyshield.gov](https://www.privacyshield.gov)
 
-<time datetime="2020-05">May 2020</time>
+#### Links / buttons to social media
+
+The links / buttons to social networks and platforms (Facebook and Twitter) used within Adblock Plus for the purpose to enable you to share the amount of elements you have blocked with Adblock Plus generally only establish contact between social networks or platforms and you when you click on the links / buttons. This function corresponds to the way a regular online link works. If you click on a corresponding link / button, this opens a new page via the servers of the respective social network or platform. Through this, the operator of the social network is informed that our website has been accessed via your IP address. At the same time, the social network can place cookies on your terminal device or read cookies unless you have prohibited the use of cookies in your browser. For further information on any processing of your personal data by the operators of the social networks or platforms, please refer to the privacy policies of Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) and Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)).
+
+### California Privacy Notice {: #privacy-notice-california-residents }
+
+This section only applies to California residents. It explains how we collect and use Personal Information as well as the rights available to California residents under the [California Consumer Protection Act](http://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=) (“CCPA”). The words in this section have the same meaning given to them in the CCPA. Please note that the words as described under the CCPA may be broader than their common meaning.
+
+“**Personal Information**,” for example, refers to information that identifies, relates to, describes, is capable of being associated with, or could reasonably be linked, directly or indirectly, to you or your household. Personal Information does not include information that is aggregated or information that cannot be reasonably linked to you.
+
+#### What Personal Information we collect and how we use it
+
+In order to provide you with our products and services (“Products”), we must process certain Personal Information about you. We do not sell any of your Personal Information, and we never will. For a detailed explanation about the kinds of information that we collect and how we use it, please review the information provided [above](#data-processed). Here is a summary of the CCPA categories of Personal Information that we may have collected about you over the past 12 months:
+
+* Identifiers;
+* Internet or other electronic network activity information, including information about your browser, extension, and operating system;
+* Geolocation data; and
+* Inferences drawn from any of the information identified that reflect your preferences and attitudes.
+
+We may have collected these categories of Personal Information for the following business purposes:
+
+* To personalize the Products we provide to you;
+* To evaluate and improve our Products;
+* To provide limited analytic services;
+* To communicate with you; 
+* To ensure security and functionality of our Products; and
+* To perform other business purposes.
+
+#### How we share Personal Information
+
+Subject to the limitations in this [Privacy Policy](#privacy-policy-long), we share your Personal Information with external vendors (“Service Providers”) that are contractually prohibited from retaining, using, or disclosing Personal Information for any purpose other than the specific business purposes described in the contract. These Service Providers include:
+
+* Service providers that analyze your use of our website and test the accompanying data; and
+* Service providers that support our mobile products; and
+* Service providers that facilitate user support.
+
+Additionally, we may also share your Personal Information with law enforcement or other third parties as necessary to comply with legal requirements.
+
+#### Sources from which we collect Personal Information
+
+We receive Personal Information from you, our websites, your device(s), and our external service providers. The categories of sources from which we have collected or received Personal Information include:
+
+* **You**: We collect information that you voluntarily provide, such as registration data on our public forum or information that you send to us as part of issue reports, user support queries, and user reviews.
+* **Your device(s)**: We receive information from and about the computers, phones, and browsers that you use in connection with our Products.
+* **Our Websites**: We collect information about how you interact with and use our websites.
+* **Your Social Media Profiles**: We collect information about your social media subscriptions, if you choose to contribute to content in that manner.
+* **Service Providers**: We engage vendors to perform business purposes on our behalf and share information with them to provide us with such business purposes including, analytics, mobile product support, hosting of products, and user support.
+
+#### What are your rights under the CCPA?
+
+The CCPA provides you with the following rights:
+
+* **Right to Know**: you have the right to request that we disclose to you the categories of Personal Information that we have collected, the categories of sources from which we have collected the Personal Information, the business purpose for collecting Personal Information, the categories of third parties with whom we have shared Personal Information, and the specific pieces of Personal Information about you that we have collected;
+* **Right to Request Deletion**: you have the right to request that we delete any Personal Information about you that we have collected; and
+* **Right to Non-Discrimination**: we will not discriminate against you for exercising any of these rights.
+
+Please note that we have a duty to verify your identity whenever you exercise your **Right to Know** and/or your **Right to Request Deletion**. In order to do so, we will request Personal Information from you to match against the Personal Information in our records. In some cases, we may also request additional documentation to verify your identity.
+
+Please also note that the CCPA allows you to exercise these rights yourself or to designate an authorized agent who will exercise these rights on your behalf. In the event that an authorized agent exercises rights on your behalf, we may request a written permission from you that establishes the individual as your authorized agent as well as other information necessary to verify the identity of the authorized agent.
+
+To exercise any of these rights, please submit a request to <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a>.
+
+#### Contact for more information
+
+If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
+
+<time datetime="2020-08">August 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
