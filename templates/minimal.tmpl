@@ -5,8 +5,8 @@
     <? include meta/social ?>
     <? include styles ?>
     <? include anti-flicker ?>
-    <? include head/config ?>
-    <? include head/analytics ?>
+    <? include config ?>
+
     <? include polyfills ?>
 
     {% block head %}
@@ -15,7 +15,6 @@
   </head>
 
   <body>
-    <? include analytics/body-start ?>
     <? include navbar ?>
 
     {% block body %}
@@ -24,6 +23,7 @@
 
     <? include footer ?>
     <? include cookie/index ?>
+    <? include analytics ?>
     <? include scripts ?>
   </body>
 </html>
