@@ -42,12 +42,6 @@
     && !trackingOptOut
   )
   {
-    // Anti-flicker snippet
-    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-    })(window,document.documentElement,'async-hide','dataLayer',4000,{'GTM-NW8L5JT':true});
-
     // Analytics snippet (Modifications explained in comments below)
     (function(){
       // Adding script by JavaScript instead of HTML
@@ -77,4 +71,12 @@
     }
 
   }
+
+  if(
+    testingOptOut ||
+    trackingOptOut ||
+    // Hasn't consented to tracking before
+    (!hasSeenCookiePrompt && eyeo.preventCookiePrompt)
+  )
+    document.documentElement.classList.remove('async-hide');
 }());
