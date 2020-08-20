@@ -2,9 +2,49 @@
 
 (function() {
 
+    function getComputedStyle(el) {
+        var style = window.getComputedStyle(el);
+        return (style);
+    }
+
+    function isBlockShown(el) {
+        return getComputedStyle(el).display === 'block';
+    }
+
+    function setBottomPadding(element, value) {
+        element.style.paddingBottom = value;
+    }
+
     // Show "Change cookie settings" links and info text to EEA users
     if (eyeo && eyeo.cookieEnabled) // created in "js/tracking-world.js"
-        document.documentElement.classList.add("has-cookies")
+        document.documentElement.classList.add("has-cookies");
+
+    // Prevent Cookies bar (desktop/mobile) from hiding footer contents
+    function initPreventFooterOverlap() {
+        var pageFooter = document.getElementById("footer");
+        var pageFooterBp = getComputedStyle(pageFooter).paddingBottom;
+        var cookieBar = document.querySelector(".cookiebar");
+        var cookiePrompt = document.querySelector(".cookieprompt");
+        var cookieBarCloseButton = document.querySelector(".cookies-close");
+        var cookiePromptCloseButton = document.querySelector(".cookies-submit");
+
+        setInterval(function() {
+            if (isBlockShown(cookiePrompt))
+                setBottomPadding(pageFooter, cookiePrompt.offsetHeight + "px");
+
+            if (isBlockShown(cookieBar))
+                setBottomPadding(pageFooter, cookieBar.offsetHeight + "px");
+        }, 250)
+
+        // close cookies prompt and reset padding
+        cookieBarCloseButton.addEventListener('click', function() {
+            setBottomPadding(pageFooter, pageFooterBp);
+        });
+
+        cookiePromptCloseButton.addEventListener('click', function() {
+            setBottomPadding(pageFooter, pageFooterBp);
+        });
+    }
 
     function initLanguageSelection() {
         var locale = document.getElementById("navbar-locale-selected");
@@ -53,13 +93,13 @@
         if (!navbarHeight)
             return;
 
-        window.addEventListener("scroll", (function() {
+        window.addEventListener("scroll", function() {
             scrollHandled = false;
-        }));
+        });
 
-        document.addEventListener("click", (function(target) {
+        document.addEventListener("click", function(target) {
             newScrollAction = false;
-        }));
+        });
 
         setInterval(function() {
             if(window.innerWidth > desktopBreakpoint) {
@@ -106,6 +146,7 @@
     initLanguageSelection();
     initMenu();
     initNavbarToggle();
+    initPreventFooterOverlap();
 })();
 
 (function()
