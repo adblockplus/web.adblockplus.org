@@ -5,8 +5,7 @@
     <? include meta/social ?>
     <? include styles ?>
     <? include anti-flicker ?>
-    <? include head/config ?>
-    <? include head/analytics ?>
+    <? include config ?>
 
     {% block head %}
       {{ head | safe }}
@@ -19,5 +18,6 @@
     {% endblock %}
 
     <? include cookie/index ?>
+    <? include analytics ?>
   </body>
 </html>
