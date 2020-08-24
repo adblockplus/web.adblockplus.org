@@ -26,7 +26,7 @@
     "transport_type": "beacon"
   };
 
-  if (!testingOptOut)
+  if (!testingOptOut && eyeo.userTesting)
     analyticsData.optimize_id = "GTM-NW8L5JT";
 
   // Record first visit to page with cookie prompt
