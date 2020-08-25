@@ -2,8 +2,13 @@ title=Download Adblock Plus
 description=Download Adblock Plus for FREE and enjoy a faster web experience, without annoying ads. Available for Chrome, Firefox, Safari, Opera, Internet Explorer and for your Android and iOS devices.
 template=minimal
 
+<head>
+  <link rel="stylesheet" href="/css/download.css">
+</head>
+
 {% set supported_devices = [
   {
+    "id":"download_abb",
     "class":"download-abb",
     "icons":"tablet_abp.svg",
     "icon_alt":"Illustration of Adblock Browser for mobile devices",
@@ -11,50 +16,39 @@ template=minimal
     "subtitle":"Block ads in a dedicated ad-blocking browser",
     "platforms":[
       {
-        "id":"abb_ios",
-        "class":"abb-ios",
-        "name":"Adblock Browser (iOS)",
-        "url":"https://eyeo.to/adblockbrowser/ios/"
-      },
-      {
         "id":"abb_android",
         "class":"abb-android",
         "name":"Adblock Browser (Android)",
         "url":"https://eyeo.to/adblockbrowser/android/"
       }
     ],
-    "description":"Adblock Browser blocks intrusive and malicious advertisements, while supporting website creators by allowing <a href=\"https://adblockplus.org/en/acceptable-ads\"><strong>Acceptable Ads</strong></a> by default (this, however, is configurable)."
+    "description":"Adblock Browser blocks intrusive and malicious advertisements, while supporting website creators by allowing <a href=\"/acceptable-ads\"><strong>Acceptable Ads</strong></a> by default (this, however, is configurable)."
   },
   {
+    "id":"download_mobile",
     "class":"download-mobile",
     "icons":"mobile_abp.svg",
     "icon_alt":"Illustration of Adblock Plus ad blocking app",
     "title":"Block ads on your mobile browser",
     "platforms":[
       {
-        "id":"android_samsung",
+        "id":"android_samsungBrowser",
         "class":"abp-android-samsungBrowser",
         "name":"Samsung Internet (Android)",
         "url":"https://eyeo.to/adblockplus/android_samsung_install/",
         "description":"Adblock Plus for Samsung Internet (Android) brings you a cleaner, smoother online experience on your Samsung browser without intrusive ads."
       },
       {
-        "id":"safari_ios",
+        "id":"ios_safari",
         "class":"abp-ios-safari",
         "name":"Safari (iOS)",
         "url":"https://eyeo.to/adblockplus/ios_safari_install/",
         "description":"Adblock Plus for Safari (iOS) has all the ad blocking power of the desktop version, but fine tuned for use with the Safari mobile browser. Also saves battery life and optimizes surfing speed."
-      },
-      {
-        "id":"firefox",
-        "class":"abp-android-firefox",
-        "name":"Firefox",
-        "url":"https://eyeo.to/adblockplus/firefox_install/",
-        "description":"Adblock Plus for Firefox (Android) allows you to block ads on your Mozilla Firefox mobile browser and experience cleaner web browsing and optimized surfing speed."
       }
     ]
   },
   {
+    "id":"download_desktop",
     "class":"download-desktop",
     "icons":"desktop_abp.svg",
     "icon_alt":"Illustration of Adblock Plus on desktop",
@@ -127,7 +121,7 @@ template=minimal
 <header class="download-header section content text-center">
   <div class="container">
     <h1>{{ "Download Adblock Plus for any device" | translate("download-heading", "Heading") }}</h1>
-    <p>{{ "Surf the web with no annoying ads in any browser and supported platforms." | translate("download-subheading", "Subheading") }}</p>
+    <p class="dark-grey">{{ "Surf the web with no annoying ads in any browser and supported platforms." | translate("download-subheading", "Subheading") }}</p>
   </div>
 </header>
 
@@ -137,25 +131,25 @@ template=minimal
     <div class="media-contents">
       <img
         src="/img/{{ device.icons }}"
-        alt="{{ device.icon_alt | translate(device.class + "-icon-alt", "Alt text") }}">
+        alt="{{ device.icon_alt | translate(device.id + "-icon-alt", "Alt text") }}">
     </div>
     <div class="text-contents">
-      <h2>{{ device.title | translate(device.class + "-title", "Heading") }}</h2>
+      <h2>{{ device.title | translate(device.id + "-title", "Heading") }}</h2>
       {% if device.subtitle %}
-      <p
-        {% if device.class == 'download-desktop' %} class="mobile-show"{% endif %}>
-        <small>{{ device.subtitle | safe | translate(device.class + "-note", "Paragraph") }}</small></p>
+      <h6
+        {% if device.id == 'download_desktop' %} class="mobile-show"{% endif %}>
+        {{ device.subtitle | safe | translate(device.id + "-note", "Paragraph") }}</h6>
       {% endif %}
-      {% if device.class in ('download-desktop', 'download-mobile') %}
+      {% if device.id in ('download_desktop', 'download_mobile') %}
       <div class="desktop-tabs">
-        <ul class="horizontal-list desktop-tabs-menu">
+        <ul class="horizontal-list tabs-menu">
           {% for platform in device.platforms %}
           <li
-            {% if platform.id in ('chrome', 'android_samsung') %} class="active"{% endif %}>
+            {% if platform.id in ('chrome', 'android_samsungBrowser') %} class="current-tab"{% endif %}>
             {% set platform_identifier = device.class + "-product-name-" + loop.index | string  %}
             <a
               class="{{ platform.class }}"
-              href="#{{ platform.class }}-tab">
+              href="#{{ platform.id }}_tab">
               <strong>{{ platform.name | translate(platform_identifier, "Product name") }}</strong>
             </a>
           </li>
@@ -163,68 +157,72 @@ template=minimal
         </ul>
         {% for platform in device.platforms %}
         <div
-          id="{{ platform.class }}-tab"
-          class="desktop-tab-content {% if platform.id in ('chrome', 'android_samsung') %} active{% endif %}">
-          {% if device.class == 'download-desktop' %}
+          id="{{ platform.id }}_tab"
+          class="tab-content {% if platform.id in ('chrome', 'android_samsungBrowser') %} current-tab{% endif %}">
+          {% if device.id == 'download_desktop' %}
           <div class="tab-column">
           {% endif %}
             <a
-              id="{{ platform.class }}"
+              id="abp_{{ platform.id }}"
               data-install-suffix="index"
               class="install-button {% if device.button %}button download-button{% endif %}"
               href="{{ platform.url }}">
               {% if platform.direct_install %}
               {% if device.direct_install_prefix %}
-              {{ device.direct_install_prefix | translate(device.class + "-direct-install-prefix", "Paragraph") }}
+              {{ device.direct_install_prefix | translate(device.id + "-direct-install-prefix", "Paragraph") }}
               {% endif %}
-              <strong>{{ platform.name }}</strong>
+              <span>{{ platform.name }}</span>
               {% endif %}
               {% if platform.webstore_install %}
               {% if device.webstore_install_prefix %}
-              {{ device.webstore_install_prefix | translate(device.class + "-webstore-install-prefix", "Paragraph") }}
+              {{ device.webstore_install_prefix | translate(device.id + "-webstore-install-prefix", "Paragraph") }}
               {% endif %}
-              <strong>{{ platform.name }}</strong>
+              <span>{{ platform.name }}</span>
               {% endif %}
             </a>
             {% if device.tou_note %}
-              <p class="tou-note"><small>{{ device.tou_note | safe | translate(device.class + "-tou-note", "Paragraph") }}</small></p>
+              <p class="tou-note"><small>{{ device.tou_note | safe | translate(device.id + "-tou-note", "Paragraph") }}</small></p>
             {% endif %}
-          {% if device.class == 'download-desktop' %}
+          {% if device.id == 'download_desktop' %}
           </div>
           <div class="tab-column">
           {% endif %}
             {% if platform.rating %}
             <div class="rating">
-              <img src="/img/rating-stars.png" alt="">
-              <p><small>{{ platform.rating | safe | translate(platform.class + "-rating", "Paragraph")}}</small></p>
+              <svg width="70.701mm" class="stars" version="1.1" viewBox="0 0 70.701 14.775" xmlns="http://www.w3.org/2000/svg">
+                <rect x=".28814" y=".50425" width="70.125" height="13.766" fill="#C1C1C1"/>
+                <rect x=".28814" y=".50425" width="70.125" height="13.766" class="rating-bar"/>
+                <path d="m0 3.641e-7v14.775h70.701v-14.775zm8.7984 2.713 1.4955 3.0308 3.344 0.48576-2.4205 2.359 0.56999 3.3316-2.989-1.5725-2.9921 1.573 0.57-3.3316-2.419-2.359 3.344-0.48627zm13.418 0.14159 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.57-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.57 3.3311-2.989-1.5725-2.9916 1.573 0.56999-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.56999-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.57-3.3316-2.419-2.359 3.344-0.48628z" fill="#fff"/>
+              </svg>
+              <p><small>{{ platform.rating | safe | translate(platform.id + "-rating", "Paragraph")}}</small></p>
             </div>
             {% endif %}
-          {% if device.class == 'download-desktop' %}
+          {% if device.id == 'download_desktop' %}
           </div>
           {% endif %}
           {% if platform.description %}
-          <p class="description">{{ platform.description | safe | translate(platform.class + "-description", "Paragraph") }}</p>
+          <p class="description">{{ platform.description | safe | translate(platform.id + "-description", "Paragraph") }}</p>
           {% endif %}
         </div>
         {% endfor %}
       </div>
       {% if device.description %}
-      <p class="description">{{ device.description | safe | translate(device.class + "-description", "Paragraph") }}</p>
+      <p class="description">{{ device.description | safe | translate(device.id + "-description", "Paragraph") }}</p>
       {% endif %}
       {% endif %}
 
-      {% if device.class == 'download-abb'%}
+      {% if device.id == 'download_abb'%}
       <div class="abb">
         {% for platform in device.platforms %}
         <a
-          id="{{ platform.class }}"
+          id="{{ platform.id }}"
           data-install-suffix="index"
           class="install-button"
           href="{{ platform.url }}">
         </a>
         {% endfor %}
         {% if device.description %}
-        <p class="description">{{ device.description | safe | translate(device.class + "-description", "Paragraph") }}</p>
+        <p class="description">{{ device.description | safe | translate(device.id + "-description", "Paragraph") }}</p>
         {% endif %}
       </div>
       {% endif %}
@@ -236,7 +234,4 @@ template=minimal
 
 
 <script src="/js/vendor/bowser.js"></script>
-
-<script>
-  document.body.classList.add(bowser.name);
-</script>
+<script src="/js/download.js"></script>
