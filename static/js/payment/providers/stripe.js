@@ -84,7 +84,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                 'class="product details">Adblock Plus</div>' +
             '</div>' +
             '<div class="subtitle details">' +
-          dictionary.securelyProcessed + '</div>' +
+              dictionary.securelyProcessed + '</div>' +
           '</div>' +
           '<hr style="margin: 0;">' +
           '<div class="payment-details">' +
@@ -96,7 +96,8 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                       '<span class="form-label spacer"></span>' +
                       '<div class="StripeElement">' +
                         '<input type="email" id="email" class="email" ' +
-                          'size="26" spellcheck="false" placeholder="' + dictionary.emailAddress +'" ' +
+                          'size="26" spellcheck="false" ' +
+                          'placeholder="' + dictionary.emailAddress + '" ' +
                           'autocomplete="email" autocorrect="no" ' +
                           'autocapitalize="no">' +
                       '</div>' +
@@ -118,8 +119,8 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
               '</div>' +
             '</form>' +
           '</div>' +
-        '</div><img width="123" height="30" class="pbs"' +
-          ' src="/img/powered-by-stripe.png"></button>';
+        '</div><img width="123" height="30" class="pbs" ' +
+          'src="/img/powered-by-stripe.png"></button>';
 
       box = document.querySelector('.modal-content');
       button = document.getElementById('pay-button');
