@@ -98,14 +98,17 @@
   "s45": {
     "message": "Reguläre Ausdrücke werden häufig zum \"Komprimieren\" von Filterlisten verwendet; dabei werden mehrere Filter durch einen regulären Audruck ersetzt. Die Faustregel besagt, daß weniger Filter schneller sind, in diesem Fall trifft sie in der Regel nicht zu. Die Verarbeitung von komplizierten regulären Ausdrücken benötigt viel Zeit. Daher sollte es besser sein, bei mehreren Filtern zu bleiben."
   },
+  "s47": {
+    "message": "Sie können Adblock Plus auch auf allen Domains grundsätzlich deaktivieren oder reaktivieren. Die Anleitung dazu finden Sie hier: <a>Adblock Plus auf allen Webseiten aus und wieder einschalten</a>"
+  },
   "s46": {
     "message": "Reguläre Ausdrücke geben allerdings mehr Flexibilität, wodurch ihr Einsatz gerechtfertigt sein könnte. Beispiel: Der reguläre Ausdruck <code>/adv(?!ice)/</code> blockiert <code>adv</code>, <code>advert</code> und <code>advertisement</code>, aber nicht <code>advice</code>. Mit \"normalen\" Filtern ließe sich das nicht machen."
   },
   "s5": {
-    "message": "Man kann auf den kleinen Pfeil neben dem Adblock Plus Icon in der Symbolleiste klicken, um ein Menü hervorzubringen. Dort kann man dann Adblock Plus deaktivieren und wieder aktivieren. Wem das nicht schnell genug ist, der kann das Icon auch mit der mittleren Maustaste anklicken, auch dadurch wird Adblock Plus aktiviert und deaktiviert."
+    "message": "Man kann auf das Adblock Plus Icon in der Symbolleiste klicken, um ein Menü hervorzubringen. Dort kann man dann Adblock Plus für die gesamte besuchte Domain, oder auch nur einzelne Unterwebseiten derselben, deaktivieren und wieder aktivieren. Klicken Sie dazu einfach auf den entsprechenden An/Aus Schalter im Menü und dann auf „Aktualisieren“."
   },
   "s6": {
-    "message": "Im selben Menü hat man die Option, Adblock Plus auf einer bestimmten Seite grundsätzlich zu deaktivieren. Wählt man diesen Menüpunkt aus, wird ein Filter wie zum Beispiel <code>@@||adblockplus.org^$document</code> in die Filterliste aufgenommen. Mehr Informationen über solche Ausnahmeregeln findet man in <a>Filter für Adblock Plus erstellen</a>."
+    "message": "Wählt man diesen Menüpunkt aus, wird ein Filter wie zum Beispiel <code>@@||adblockplus.org^$document</code> in die Filterliste aufgenommen. Mehr Informationen über solche Ausnahmeregeln findet man in <a>Filter für Adblock Plus erstellen</a>."
   },
   "title": {
     "message": "FAQ - Grundfunktionen"
