@@ -72,3 +72,10 @@ Our tracking scripts override the anti-flicker effect in the following circumsta
 - The user is in the EU
 
 Our EU tracking script always overrides the anti-flicker effect.
+
+## Testing via Apache 2
+
+1. Copy or link the virtual host file in this repository (`adblockplus.org.conf`) to Apache's sites available and enable it
+1. Add `adblockplus.org` to your local hosts file
+1. Build the website and place it's output in the virtual host's document root
+1. Load the index page (`http://adblockplus.org/en/index:80`) in the browser and confirm that it's coming from your local server (`127.0.0.1:80`) in the Network panel of your developer tools
