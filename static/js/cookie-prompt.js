@@ -80,15 +80,15 @@
         if (settingsDropups[i].contains(event.target))
           isInDropup = true;
 
-      if (
-        // Is the cookie settings dropup open?
-        body.classList.contains("show-cookies-settings") &&
-        root.innerWidth >= 576 &&
+      if (event.target.classList.contains('cookies-save') ||
+        (root.innerWidth >= 576 &&
         root.innerHeight >= 575 &&
         // Is the click outside the cookie settings dropup?
-        isInDropup == false
+        isInDropup == false)
       ) {
-          toggleCookieSettings();
+        [].slice.call(settingsDropups).forEach(function(node) {
+          node.classList.remove("show-cookies-settings");
+        });
       }
     }
 
