@@ -52,10 +52,23 @@
         // skip if page does not have language selection (EG: blog)
         if (!locale) return;
 
+        var localeOpen = false;
+
         locale.addEventListener("click", function() {
             document.getElementById("navbar-locale-menu")
                 .classList.toggle("visible");
+            localeOpen = !localeOpen;
         }, false);
+
+        var localeParent = document.getElementById("navbar-locale-menubar");
+
+        window.addEventListener("click", function(event) {
+            if (localeOpen && !localeParent.contains(event.target)) {
+              document.getElementById("navbar-locale-menu")
+                  .classList.remove("visible");
+              localeOpen = false;
+            }
+        }, true);
     }
 
     function navigationClick(event) {
