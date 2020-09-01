@@ -40,6 +40,7 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
         - Zahl der Benachrichtigungs-Downloads
         - Information, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist
         - Filterabonnement aktiviert/deaktiviert
+        - Identifizierung von Informationen zu Geräten, über die eine Verbindung zum Zahlungsanbieter hergestellt wird
     - Für alle mobilen Produkte und Adblock Plus für Safari auf macOS
         - Absturzmelder:
         {: .has-horizontal-list .semicolon-separated }
@@ -130,7 +131,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
     - Webseiten-Protokolle
-    - Daten, wie dein Name und/oder deine E-Mail-Adresse, wenn du diese an uns während der Nutzung des Forums oder Blogs oder beim manuellen Teilen eines hinzugefügten Filters senden solltest
+    - Daten, wie dein Name und/oder deine E-Mail-Adresse und/oder Kommunikationsdaten,die du während der Nutzung des Forums oder Blogs, über die „PARTNER WERDEN‶-Schaltfläche oder beim manuellen Teilen eines hinzugefügten Filters an uns sendest
     - Lediglich für Benutzer mit Wohnsitz außerhalb der EU/des EWR: über Google Analytics
 3.  Für den Nutzersupport:
 {: .has-horizontal-list .semicolon-separated }
@@ -152,8 +153,9 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 - Für technische Zwecke, u. a. zur Verhinderung von Sicherheitsangriffen, zur Verbesserung unserer Webseite/Produkte, zur Sicherstellung der Webseiten-/Produktsicherheit.
 - Um aggregierte Webseite-Protokolle und Analysedaten auszuwerten und bei Nutzern mit Wohnsitz außerhalb der EU/des EWR, um dadurch unsere Webseite zu verbessern.
 - Zum Zwecke der Kommunikation und Hilfestellung in unserem Forum und Blog.
+- Zur Besprechung und Verhandlung einer Partnerschaft mit dir.
 - Um dich bei Problemen mit unseren Produkten zu unterstützen.
-- Zum Erhalt von Spenden, die du uns schickst.
+- Zum Erhalt von Spenden, die du uns schickst, sowie zur Betrugsaufdeckung.
 - Zur Vermarktung unserer Produkte.
 - Im Zusammenhang mit unseren Social Media-Webseiten nutzen soziale Netzwerke die Daten zu Marktforschungs- und Werbezwecken.
 
@@ -178,7 +180,10 @@ Wir verarbeiten deine personenbezogenen Daten im Einklang mit der Europäischen 
     - Ereignis-Tracking
 4.  Blog- und Forumdaten, so lange wie der jeweilige Kommentar/das jeweilige Konto existiert
 5.  Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
-6. Für einen Zeitraum von 10 Jahren: Spendenberichte
+6. Für einen Zeitraum von 10 Jahren: 
+{: .has-horizontal-list .semicolon-separated }
+    - Daten zu Spendenberichten
+    - Partnerdaten
 
  **Hinweis**: „Aggregierte Nutzungsstatistiken”, z. B. Analysedaten und andere Daten ohne irgendeine Verbindung zu einem einzelnen Nutzer, können auch über diese Zeiträume hinaus aufbewahrt werden.
 
@@ -309,7 +314,7 @@ Die folgenden Dienste werden von Nicht-EU/EWR-Dienstleistern erbracht. Diese ext
 
 Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([[Firebase](https://firebase.google.com/)). Diese Dienste werden durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
 
-Wir benutzen Tools von externen Dienstleistern, um Spenden zu erhalten. Dieser Service wird von der Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA, angeboten. Stripe ist nach dem EU-US-Datenschutzschild zertifiziert ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Vor der Ausführung von Zahlungstransaktionen werden einige Cookies in deinem Browser gespeichert, um eine betrügerische Nutzung ihrer Dienste zu verhindern. Für weitere Informationen lies bitte [die Cookie-Richtlinie von Stripe](https://stripe.com/cookies-policy/legal).
+Wir benutzen Tools von externen Dienstleistern, um Spenden zu erhalten und damit in Verbindung stehendes betrügerisches Verhalten zu analysieren. Dieser Service wird von der Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA, angeboten. Stripe ist nach dem EU-US-Datenschutzschild zertifiziert ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Vor der Ausführung von Zahlungstransaktionen werden einige Cookies in deinem Browser gespeichert, um eine betrügerische Nutzung ihrer Dienste zu verhindern. Stripe sammelt identifizierende Informationen zu den Geräten, die auf seine Dienste zugreifen und verwendet diese Daten zur Betrugsaufdeckung. Für weitere Informationen lies bitte [die Cookie-Richtlinie von Stripe](https://stripe.com/cookies-policy/legal).
 
 Zudem nutzen wir auch Tools von Drittanbietern für den Nutzersupport. Diese Dienste werden von Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) und Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout) bereitgestellt. Sowohl Zendesk ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) als auch Sprout ([Zertifikat](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) sind unter dem EU-US-Privacy Shield Framework zertifiziert.
 
@@ -422,7 +427,7 @@ Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispi
 
 Bei der Deinstallation von Adblock Plus und/oder bei einer Spende an uns wirst du auf eine Deinstallations- und/oder Spendenwebseite verwiesen, auf der folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Anzahl der Benachrichtigungsdownloads, Informationen, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, aus dem du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern.
 
-Für Spenden arbeiten wir mit Zahlungsanbietern zusammen (Stripe, Inc. und PayPal S.à r.l. et Cie, S.C.A.). Diese Anbieter sind für die Bearbeitung der Daten verantwortlich, die du bezüglich der von dir getätigten Spenden eingegeben hast. Zur Datenverarbeitung gehören u. a. alle Daten, die du in das entsprechende Formular eingegeben hast, einschließlich Kartenart, Name des Karteninhabers, Kreditkarteninformationen (mit Ausnahme der vollständigen Kartennummer), Adresse, Land, Postleitzahl und E-Mail-Adresse. Weitere Informationen zum Bearbeitungsprozess von personenbezogenen Daten dieser Anbieter findest du in der [Datenschutzrichtlinie](https://stripe.com/privacy) von Stripe sowie der [Datenschutzrichtlinie](https://www.paypal.com/webapps/mpp/ua/privacy-full) von PayPal. Wir speichern die von den Zahlungsdienstleistern geschickten Berichte zu Bilanzierungszwecken.
+Für Spenden arbeiten wir mit Zahlungsanbietern zusammen (Stripe, Inc. und PayPal S.à r.l. et Cie, S.C.A.). Diese Anbieter sind für die Bearbeitung der Daten verantwortlich, die du bezüglich der von dir getätigten Spenden eingegeben hast. Zur Datenverarbeitung gehören u. a. alle Daten, die du in das entsprechende Formular eingegeben hast, einschließlich Kartenart, Name des Karteninhabers, Kreditkarteninformationen (mit Ausnahme der vollständigen Kartennummer), Adresse, Land, Postleitzahl und E-Mail-Adresse. Darüber hinaus sammelt Stripe identifizierende Informationen zu den Geräten, die auf seine Dienste zugreifen und verwendet diese Daten zur Betrugsaufdeckung. Weitere Informationen zum Bearbeitungsprozess von personenbezogenen Daten dieser Anbieter findest du in der [Datenschutzrichtlinie](https://stripe.com/privacy) von Stripe sowie der [Datenschutzrichtlinie](https://www.paypal.com/webapps/mpp/ua/privacy-full) von PayPal. Wir speichern die von den Zahlungsdienstleistern geschickten Berichte zu Bilanzierungszwecken.
 
 ##### Datenaufbewahrung {: #data-retention }
 
@@ -582,13 +587,21 @@ Wenn du im Adblock Plus [Blog](https://adblockplus.org/blog/) ein Kommentar ei
 
 ###### Erhebung von E-Mail-Adressen {: #email-collection }
 
+**Kampagnen**
+
 Einige Webseiten von eyeo stellen Produktkampagnen bereit, welche die Erhebung der E-Mail-Adresse erfordern. So kannst du z. B. einen Link per E-Mail anfordern, um den Adblock Browser auf deinem Mobilgerät zu installieren. Wir nutzen keine Drittanbieter, um diese Kampagnen zu verwalten. Stattdessen werden die von dir übertragenen Daten intern verarbeitet (d. h. sie werden in eine E-Mail umgewandelt oder zum Senden der E-Mail verwendet). Wir werden deine E-Mail-Adresse niemals weitergeben oder verkaufen oder irgendwelche anderen erhobenen Daten an Dritte weitergeben.
+
+**Integrierung von Adblocking-Partnern**
+
+Wenn du auf unsere „PARTNER WERDEN‶-Schaltfläche klickst, öffnet sich dein E-Mail-Client und du hast die Möglichkeit, uns eine E-Mail zu senden. Deine E-Mail-Adresse sowie sämtliche in dieser E-Mail enthaltenen Informationen dienen ausschließlich dem Zweck, potenzielle Kooperationen mit dir zu besprechen und zu verhandeln. Deine Kontaktdaten werden in unserem Kundenverwaltungsmanagement-System gespeichert: Weitere Informationen zur Verarbeitung von Daten unserer Geschäftspartner findest du unter: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
 ###### Datenaufbewahrung {: #retention-communications }
 
 Die von dir im Zusammenhang mit unserem Blog und unserem Forum angegebenen Daten werden für die gleiche Zeit wie der jeweilige Kommentar und/oder dein Konto gespeichert.
 
 Im Allgemeinen speichern wir deine E-Mail-Adresse nicht, es sei denn, sie ist speziell für die Durchführung der entsprechenden Kampagne erforderlich (z. B. bei der E-Mail-Anmeldung zum Erhalt von Newslettern oder Benachrichtigungen über Produkteinführungen). In den Fällen, in denen wir deine E-Mail-Adresse erheben, speichern wir sie nur für die Zeit, die zur Durchführung der Kampagne benötigt wird (d. h. bis du über den Start informiert wurdest).
+
+Für den Fall, dass du einen Partnervertrag eingehst, erhältst du hier weitere Informationen zu unseren Aufbewahrungsfristen: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
 ### Erhebung und Verarbeitung für den Nutzersupport {: #collection-and-processing-for-user-support }
 
@@ -688,7 +701,7 @@ Um diese Rechte auszuüben, sende bitte eine E-Mail an <a id='privacy-email' dat
 
 Bei Fragen zu diesem Abschnitt oder zur Ausübung deiner Rechte unter dem CCPA, <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>kontaktiere uns</a> bitte.
 
-<time datetime="2020-08">August 2020</time>
+<time datetime="2020-09">September 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

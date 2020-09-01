@@ -40,6 +40,7 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
         - Nombre de téléchargements de notifications
         - Information mentionnant si le stockage local de la configuration de l'extension est corrompu
         - Activation/désactivation aux abonnements à une liste de filtres
+        - Identification des informations à propos des appareils qui se connectent au fournisseur de service de paiement
     - Pour tous les produits mobile et Adblock Plus pour Safari sur macOS
         - Rapports de crash :
         {: .has-horizontal-list .semicolon-separated }
@@ -130,7 +131,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
     - Historiques
-    - Données telles que nom et/ou adresse e-mail que vous envoyez quand vous utilisez notre forum ou blog ou quand vous partagez des filtres ajoutés manuellement
+    - Données, comme le nom et/ou l’adresse e-mail et/ou les données de communication, que vous avez envoyées lorsque vous utilisez notre forum ou blog, en utilisant le bouton « DEVENEZ UN PARTENAIRE » ou,  lorsque vous partagez des filtres ajoutés manuellement
     - Pour les utilisateurs non membres de l’UE/EEE uniquement : Via Google Analytics
 1.  Pour assistance aux utilisateurs :
 {: .has-horizontal-list .semicolon-separated }
@@ -152,8 +153,9 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 - Pour des raisons techniques, telles que, mais sans s’y limiter, la prévention des attaques de sécurité, pour améliorer notre site web/produits, pour assurer la sécurité du site web/du produit.
 - Pour analyser les journaux de sites web agrégés et pour les données analytiques portant sur les utilisateurs non membres de l’UE/EEE, afin d’améliorer notre site web.
 - À des fins de communication et d’assistance sur notre forum et notre blog.
+- Pour discuter et négocier un partenariat avec vous.
 - Pour vous aider si vous rencontrez des problèmes avec nos produits.
-- Pour recevoir les dons que vous nous envoyez.
+- Pour recevoir les dons que vous nous envoyez et pour la détection des fraudes.
 - Pour promouvoir nos produits.
 - Dans le cadre de nos pages sur les réseaux sociaux, les réseaux sociaux utilisent les données à des fins d'études de marché et de publicité.
 
@@ -178,7 +180,10 @@ Nous traitons vos données personnelles conformément au Règlement Général Eu
     - traceur d’événements
 1.  Données de blog et de forum tant que le commentaire/compte respectif existe
 1.  Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant
-1. Pour une période de 10 ans : données du rapport sur la collecte de dons
+1. Pour une période de 10 ans : 
+{: .has-horizontal-list .semicolon-separated }
+    - Données du rapport sur les dons
+    - Données partenaires
 
  **Remarque** : Les « statistiques d’utilisation agrégées », comme les données analytiques et d’autres données sans lien avec un utilisateur unique peuvent être conservées au-delà de ces périodes.
 
@@ -309,7 +314,7 @@ Pour les services suivants, nous avons recours à des fournisseurs de service no
 
 Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web ([Google Analytics](#google-analytics))  des non membres de l'UE/EEE ; pour les essais A/B basés sur les données d’analyse ([Google Optimize](#google-optimize)) des non membres de l'UE/EEE ; et pour les rapports de crash et les traceurs d’événements dans nos produits mobiles et Adblock Plus pour Safari sur macOS ([Firebase](https://firebase.google.com/)). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord [ici](https://support.google.com/a/answer/2888485).
 
-Nous utilisons les outils de prestataires de services externes pour la collecte de dons. Ce service est assuré par Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, États-Unis. Stripe est certifiée conforme au bouclier de protection des données UE-Etats-Unis ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Certains cookies sont enregistrés sur votre navigateur avant de procéder aux opérations de paiement afin d'empêcher une utilisation frauduleuse de leurs services. Pour plus d'informations, veuillez [consulter la politique de Stripe en matière de cookies](https://stripe.com/cookies-policy/legal).
+Nous utilisons des outils de prestataires de services externes pour recevoir des dons et analyser les comportements frauduleux liés aux dons. Ce service est assuré par Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, États-Unis. Stripe est certifiée conforme au bouclier de protection des données UE-Etats-Unis ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Certains cookies sont enregistrés sur votre navigateur avant de procéder aux opérations de paiement afin d'empêcher une utilisation frauduleuse de leurs services. Stripe recueille des informations d’identification sur les appareils qui se connectent à ses services et utilise ces informations pour détecter des fraudes. Pour plus d'informations, veuillez [consulter la politique de Stripe en matière de cookies](https://stripe.com/cookies-policy/legal).
 
 Nous utilisons également des outils de fournisseurs de services externes pour l’assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) et Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Zendesk ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) et Sprout ([certificat](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) sont conformes au bouclier de protection des données UE-États Unis.
 
@@ -419,7 +424,7 @@ Adblock Plus peut faire d’autres demandes à AdblockPlus.org selon les besoins
 
 En désinstallant Adblock Plus sur le Bureau et/ou en nous faisant un don, vous serez dirigé vers une page web de désinstallation et/ou de collecte de dons où les informations suivantes seront automatiquement collectées : langue de votre navigateur, nom et version de l’extension, type et version du navigateur, système d’exploitation et version, nombre de téléchargements de notifications, indication si le stockage local de la configuration de l’extension est corrompu et si des abonnements à des listes de filtres ont été activés ou désactivés au moment de la désinstallation. Vous pouvez si vous le souhaitez nous indiquer les raisons pour lesquelles vous avez désinstallé Adblock Plus. Nous avons besoin de cette information pour améliorer nos produits.
 
-Pour les dons, nous travaillons avec des prestataires de paiement (Stripe, Inc. et PayPal S.à r.l. et Cie, S.C.A.). Ces prestataires sont responsables du traitement des données que vous saisissez concernant les dons que vous nous envoyez. Le traitement comprend toutes les données que vous saisissez dans le formulaire, notamment, le type de carte, le nom du titulaire de la carte, les coordonnées bancaires (à l'exception du numéro de carte dans son intégralité), l'adresse, le pays, le code postal et l'adresse courriel. Pour obtenir des informations complémentaires sur la façon dont ces prestataires gèrent le traitement des données personnelles, veuillez consulter la [Politique de confidentialité de Stripe](https://stripe.com/privacy) et la [Politique de confidentialité de PayPal](https://www.paypal.com/webapps/mpp/ua/privacy-full). Nous stockons les rapports que nous présentent ces prestataires de paiement pour les besoins de la comptabilité.
+Pour les dons, nous travaillons avec des prestataires de paiement (Stripe, Inc. et PayPal S.à r.l. et Cie, S.C.A.). Ces prestataires sont responsables du traitement des données que vous saisissez concernant les dons que vous nous envoyez. Le traitement comprend toutes les données que vous saisissez dans le formulaire, notamment, le type de carte, le nom du titulaire de la carte, les coordonnées bancaires (à l'exception du numéro de carte dans son intégralité), l'adresse, le pays, le code postal et l’adresse e-mail. De plus, Stripe recueille des informations d’identification sur les appareils qui se connectent à ses services et utilise ces informations pour détecter des fraudes. Pour obtenir des informations complémentaires sur la façon dont ces prestataires gèrent le traitement des données personnelles, veuillez consulter la [Politique de confidentialité de Stripe](https://stripe.com/privacy) et la [Politique de confidentialité de PayPal](https://www.paypal.com/webapps/mpp/ua/privacy-full). Nous stockons les rapports que nous présentent ces prestataires de paiement pour les besoins de la comptabilité.
 
 ##### Rétention des données {: #data-retention }
 
@@ -579,13 +584,21 @@ Quand vous ajoutez un commentaire sur [le blog](https://adblockplus.org/blog/)�
 
 ###### Collecte d’e-mails {: #email-collection }
 
+**Campagnes**
+
 Certains sites web d’eyeo hébergent des campagnes liées à des produits qui s’appuient sur la collecte d’adresses mail. Par exemple, vous pouvez demander un lien par mail pour installer Adblock Browser sur votre appareil mobile. Nous ne faisons pas appel à des tiers pour gérer ces campagnes. Les données que vous envoyez sont gérées en interne (transformées en e-mail ou utilisées pour envoyer l’e-mail). Nous ne partagerons ni ne vendrons jamais votre adresse e-mail ou toute autre information collectée à des tiers.
+
+**Intégrations de partenaires de blocage des publicités**
+
+Si vous cliquez sur notre bouton « DEVENEZ PARTENAIRE », votre messagerie s’ouvrira avec la possibilité de nous envoyer un email. Votre adresse e-mail et toutes les informations que vous envoyez dans cet e-mail seront uniquement utilisées pour discuter et négocier un partenariat potentiel avec vous. Vos coordonnées seront stockées dans notre système de gestion de la relation client. Pour plus d’informations sur la manière dont nous traitons les données de nos partenaires commerciaux, veuillez consulter : [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
 ###### Rétention des données {: #retention-communications }
 
 Les données fournies par vous en lien avec notre blog et notre forum seront conservées en même temps que le commentaire et/ou votre compte existe.
 
 En général, nous ne conservons pas votre adresse mail, sauf si elle est spécifiquement requise pour exécuter la campagne liée (en d’autres termes, inscriptions par e-mail à une newsletter ou inscription pour être informé d’un lancement de produit). Dans les situations où nous conservons votre adresse e-mail, nous la conservons uniquement pendant la période nécessaire pour exécuter la campagne (c’est-à-dire après vous avoir informé du lancement).
+
+Dans le cas d’un accord de partenariat, veuillez trouver plus d’informations sur nos périodes de conservation ici: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
 ### Collecte et traitement pour assistance aux utilisateurs {: #collection-and-processing-for-user-support }
 
@@ -685,7 +698,7 @@ Pour exercer l'un de ces droits, veuillez soumettre une demande à <a id='privac
 
 Pour toute question concernant cette section ou sur comment exercer vos droits en vertu du CCPA, veuillez <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>nous contacter</a>.
 
-<time datetime="2020-08">Août 2020</time>
+<time datetime="2020-09">Septembre 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

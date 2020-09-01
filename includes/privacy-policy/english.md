@@ -40,6 +40,7 @@ The following privacy notice shall provide you with a general overview about the
         - Number of notification downloads
         - Information whether the local storage of the extension configuration is corrupted
         - Filter subscriptions enabled/disabled
+        - Identifying information about the devices that connect to the payment service provider
     - For all mobile products and Adblock Plus for Safari on macOS
         - Crash reports:
         {: .has-horizontal-list .semicolon-separated }
@@ -129,7 +130,7 @@ List of techniques and tools we use for data collection.
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
     - Log files
-    - Data, like name and / or email address, sent by you when using our forum or blog, or when sharing manually added filters
+    - Data, like name and / or email address and / or communication data, sent by you when using our forum or blog, using the “BECOME A PARTNER” button, or when sharing manually added filters
     - For non-EU/EEA users only: Via Google Analytics
 3. For user support:
 {: .has-horizontal-list .semicolon-separated }
@@ -151,8 +152,9 @@ List of techniques and tools we use for data collection.
 - For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security.
 - To analyze aggregated website logs, and for non-EU/EEA users analytics data, to improve our website.
 - For communication and assistance purposes in our forum and blog.
+- For discussing and negotiating a partnership with you.
 - For assisting you with any issues you may have with our products.
-- For receiving donations that you send to us.
+- For receiving donations that you send to us and for fraud detection.
 - To promote our products.
 - In connection with our social media pages, social networks use the data for market research and advertising purposes.
 
@@ -177,7 +179,10 @@ We process your personal data in compliance with the European General Data Prote
     - event tracking
 4. Blog and forum data as long as the respective comment / account exists
 5. All user support data is deleted one (1) year after closing the respective support case.
-6. For a period of 10 years: donation report data.
+6. For a period of 10 years: 
+{: .has-horizontal-list .semicolon-separated }
+    - Donation report data
+    - Partner data
 
  **Note**: “Aggregated usage statistics”, such as analytics data and other data without any connection to a single user, may be retained beyond these periods.
 
@@ -309,7 +314,7 @@ For the following services, we use non-EU/EEA service providers. We have careful
 
 We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
 
-We use external service provider tools to receive donations. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Stripe is certified under the EU-U.S. Privacy Shield Framework ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
+We use external service provider tools to receive donations and analyze fraudulent behavior in connection with donations.. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Stripe is certified under the EU-U.S. Privacy Shield Framework ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TQOUAA4)). Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
 
 We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) and Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Both Zendesk ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOjeAAG&status=Active)) and Sprout ([certificate](https://www.privacyshield.gov/participant?id=a2zt0000000TOR6AAO&status=Active)) are certified under the EU-U.S. Privacy Shield Framework.
 
@@ -422,7 +427,7 @@ Adblock Plus may make further requests to AdblockPlus.org as required. For examp
 
 When uninstalling Adblock Plus for desktop and/or donating to us, you will be referred to an uninstallation and/or donation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
 
-For donations, we work with payment providers (Stripe, Inc. and PayPalPaypal S.à r.l. et Cie, S.C.A.). These providers are responsible for processing the data you enter in regards to the  donations you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. For further information as to how these providers handle the processing of personal data, please refer to Stripe’s [Privacy Policy](https://stripe.com/privacy) and PayPal’s [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full). We store the reports the payment providers present us with for accounting purposes.
+For donations, we work with payment providers (Stripe, Inc. and PayPalPaypal S.à r.l. et Cie, S.C.A.). These providers are responsible for processing the data you enter in regards to the  donations you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. In addition, Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For further information as to how these providers handle the processing of personal data, please refer to Stripe’s [Privacy Policy](https://stripe.com/privacy) and PayPal’s [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full). We store the reports the payment service providers present us with for accounting purposes.
 
 ##### Data retention {: #data-retention }
 
@@ -582,13 +587,21 @@ When you add a comment on the Adblock Plus [blog](https://adblockplus.org/blog/)
 
 ###### Email collection {: #email-collection }
 
+**Campaigns**
+
 Some of eyeo's Websites host product campaigns that rely on email collection. For example, you can request a link by email to install Adblock Browser on your mobile device. We do not use third parties to manage these campaigns. Instead, data that you submit is handled in-house (i.e. turned into an email or used to send the email). We will never share or sell your email address, or any other information collected, to any third parties.
+
+**Ad blocking partner integrations**
+
+If you click on our “BECOME A PARTNER” button, your email client will open with the option to send an email to us. Your email address and all information you send in this email will solely be used to discuss and negotiate a potential partnership with you. Your contact data will be stored in our Customer Relationship Management System. For more more information on how we process our business partner’s data please check: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
 ###### Data retention {: #retention-communications }
 
 Data provided by you in connection with our blog and our forum will be retained for the same time as the comment and / or your account exists.
 
 In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch).
+
+In case you are entering into a partner agreement, please find more information on our retention periods here: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
 ### Collection and processing for user support {: #collection-and-processing-for-user-support }
 
@@ -688,7 +701,7 @@ To exercise any of these rights, please submit a request to <a id='privacy-email
 
 If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
 
-<time datetime="2020-08">August 2020</time>
+<time datetime="2020-09">September 2020</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
