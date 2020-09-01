@@ -16,7 +16,7 @@
     }
 
     // Show "Change cookie settings" links and info text to EEA users
-    if (eyeo && eyeo.cookieEnabled) // created in "js/tracking-world.js"
+    if (eyeo && eyeo.cookieEnabled) // created in "js/testing/setup.js"
         document.documentElement.classList.add("has-cookies");
 
     // Prevent Cookies bar (desktop/mobile) from hiding footer contents
