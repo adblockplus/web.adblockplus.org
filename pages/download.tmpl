@@ -53,10 +53,10 @@ template=minimal
 
 <header class="bg-primary section content text-center">
   <div class="container">
-    <img height="90px"
-         width="90px"
-         src="/img/download-icon.png" 
-         srcset="/img/download-icon.svg 2x" 
+    <img height="90"
+         width="90"
+         src="/img/download-icon.png"
+         srcset="/img/download-icon.svg 2x"
          alt="{{ "White down arrow" | translate("download-icon", "Alt text") }}">
     <h1>{{ "Get Adblock Plus products on these devices" | translate("download-heading", "Heading") }}</h1>
     <p>{{ "Supported platforms" | translate("download-subheading", "Subheading") }}</p>
@@ -68,8 +68,8 @@ template=minimal
     {% for device in supported_devices %}
     <div class="column one-third">
       <img
-        height="90px"
-        width="90px"
+        height="90"
+        width="90"
         src="/img/{{ device.icons['1x'] }}"
         srcset="/img/{{ device.icons['2x'] }} 2x"
         alt="{{ device.icon_alt | translate(device.id + "-icon-alt", "Alt text") }}">
