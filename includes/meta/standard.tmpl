@@ -9,4 +9,7 @@
 
 {% if config.get("general", "siteurl") != "https://adblockplus.org" %}
   <meta name="robots" content="none">
+{% elif robots  %}
+  <meta name="robots" content="{{ robots }}">
 {% endif %}
+

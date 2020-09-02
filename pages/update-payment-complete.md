@@ -1,9 +1,7 @@
 title=Thank you for contributing to Adblock Plus!
 prevent_cookie_prompt=1
+robots=none
 
-<head>
-  <meta name="robots" content="noindex">
-<head>
 
 {{ p1 <strong>Thank you for your contribution! Your transaction has been processed, and a receipt will be emailed to you. If you used PayPal, you can log into your account to view transaction details.</strong> }}
 
