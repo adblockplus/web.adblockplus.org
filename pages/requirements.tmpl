@@ -9,7 +9,7 @@ title=Adblock Plus system requirements
   {%- endif %}
   <li>{{ browser_name }} {{ versions.current }}</li>
   {%- for version in versions.unreleased %}
-  <li>{{ browser_name }} {{ version }}{{ ': Using <a href="development-builds">Adblock Plus development builds</a> is recommended.'|translate("s3") }}</li>
+  <li>{{ browser_name }} {{ version }}</li>
   {%- endfor %}
 </ul>
 {%- endmacro %}
