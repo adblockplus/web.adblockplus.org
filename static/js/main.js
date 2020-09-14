@@ -26,7 +26,8 @@
         var cookieBar = document.querySelector(".cookiebar");
         var cookiePrompt = document.querySelector(".cookieprompt");
         var cookieBarCloseButton = document.querySelector(".cookies-close");
-        var cookiePromptCloseButton = document.querySelector(".cookies-submit");
+        var cookiePromptCloseButton = [].slice.call(document
+                                          .querySelectorAll(".cookies-submit"));
 
         setInterval(function() {
             if (isBlockShown(cookiePrompt))
@@ -37,11 +38,13 @@
         }, 250)
 
         // close cookies prompt and reset padding
-        cookieBarCloseButton.addEventListener('click', function() {
-            setBottomPadding(pageFooter, pageFooterBp);
-        });
+        cookiePromptCloseButton.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                setBottomPadding(pageFooter, pageFooterBp);
+            });
+        })
 
-        cookiePromptCloseButton.addEventListener('click', function() {
+        cookieBarCloseButton.addEventListener('click', function() {
             setBottomPadding(pageFooter, pageFooterBp);
         });
     }
