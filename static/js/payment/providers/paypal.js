@@ -9,11 +9,12 @@ var siteURL = document.documentElement
  * @global
  * @requires _.each
  * @requires _.extend
+ * @see https://developer.paypal.com/docs/integration/web/
  */
 root.paypalProvider = {
 
   /**
-   * Submit one-time or recurring payment PayPal
+   * Submit one-time or recurring payment
    * @function
    * @param {Object} payment - Payment options submitted to PayPal
    * @param {String} payment.item - Human readable translated item name
