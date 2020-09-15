@@ -1,0 +1,98 @@
+title=Installation Successful!
+robots=none
+prevent_cookie_prompt=1
+template=bare
+
+<head>
+  <link rel="stylesheet" href="/css/pages/installed.css">
+  <link rel="stylesheet" href="/css/payment/form.css">
+  <link rel="stylesheet" href="/css/payment/stripe-modal.css">
+</head>
+
+<nav>
+  <div class="container">
+    <? include navbar-logo ?>
+
+    <button class="scroll-to-donate uppercase">{{ donate-button Donate }}</button>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="row">
+    <header class="content column one-third success">
+      <img src="/img/success.png" alt="" class="icon">
+      <h1>{{ installation-successful-heading Installation Successful! }}</h1>
+      <p class="took-control">{{ took-control-heading You just took control of your browser. }}</p>
+    </header>
+
+    <section class="content column one-third in-control">
+      <img src="/img/in-control.svg" alt="" class="icon">
+      <h2 class="bg-black uppercase">{{ in-control-heading You’re in control }}</h2>
+      <p>{{ acceptable-ads By default, you may see some nonintrustive ads that adhere to <a href="acceptable-ads#criteria" target="_blank">strict criteria</a>. We identify these ads as Acceptable Ads. Prefer to block all ads? Turn off Acceptable Ads in your <a href="acceptable-ads#optout" target="_blank">settings</a>. }}</p>
+    </section>
+
+    <section class="content column one-third fair-use">
+      <img src="/img/fair-use.svg" alt="" class="icon">
+      <h2 class="bg-black uppercase">{{ fair-use-heading Fair use }}</h2>
+      <p>{{ fair-use We encourage you to make fair use of Adblock Plus and the option to whitelist websites. Depending on the filters you use, you understand and accept that unintentional results migh occur (e.g. blocked content on a website). Refer to the <a href="terms" target="_blank">Terms of Use</a> for more information about fair use of Adblock Plus. }}</p>
+    </section>
+  </div>
+
+  <div class="row donate">
+    <section class="content column donate-to-abp">
+      <img src="/img/donation.svg" alt="" class="icon">
+      <h2 class="bg-black uppercase">{{ donate-to-heading Donate to <span class="break">Adblock Plus</span> }}</h2>
+      <p>{{ donate-to-abp We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. We devote a lot of time and resources into developing and securing the best online experience for our users. Please donate what you think is a fair contribution to the Adblock Plus project and our attempts to keep the ad-blocking community alive. <em class="bold">Every donation is appreciated!</em> }}</p>
+      <div class="donate-divide"></div>
+    </section>
+
+    <section class="content column donation-form">
+
+      <? include payment/form ?>
+
+      <footer class="mt3">
+        <p>
+          <small class="refund">{{ donate-support You can request a refund within 120 days of payment. You can also cancel your recurring donation at any time. Please send an email to <a data-mask='{"href": "bWFpbHRvOnN1cHBvcnRAYWRibG9ja3BsdXMub3Jn", "textContent": "c3VwcG9ydEBhZGJsb2NrcGx1cy5vcmc="}'>this address</a> and include your email address, date, the amount donated, and the transaction code. Learn more about refunds in our
+          <a href="https://help.eyeo.com/en/adblockplus/donations">Help Center article</a>.}}</small>
+        </p>
+      </footer>
+    </section>
+  </div>
+</main>
+
+<aside class="abb">
+  <div class="container">
+    <div class="row">
+      <section class="content column one-half abb-app">
+        <h2 class="uppercase">{{ abb-heading Adblock browser app }}</h2>
+        <p>{{ abb-available From the team behind Adblock Plus, the most popular ad blocker for desktop browsers, Adblock Browser is now available for your Android device. }}</p>
+        <p><a href="https://eyeo.to/adblockbrowser/android/abp-website">
+          <img src="/img/google-play-badge.svg" alt="" class="play-store">
+        </a></p>
+      </section>
+    </div>
+  </div>
+</aside>
+
+<footer class="footer">
+  <svg viewBox="0 0 1 1" preserveAspectRatio="none" class="wedge hidden">
+    <path d="M1 1 L0 1 L1 0z"></path>
+  </svg>
+
+  <div class="container">
+    <div class="row reverse">
+      <p class="content column one-third">
+        <a href="https://twitter.com/eyeo"><img src="/img/footer-twitter-glyphicon.svg" alt="" width="48" height="48" aria-label="Twitter" class="share-icon"></a>
+        <a href="https://www.facebook.com/EyeoGmbH"><img src="/img/footer-facebook-glyphicon.svg" alt="" width="48" height="48" aria-label="Facebook" class="share-icon"></a>
+      </p>
+
+      <p class="content column two-thirds">
+        <small class="copyright-notice">{{ copyright-notice Copyright © 2020 All rights reserved. Adblock Plus<sup>®</sup> is a registered trademark of <a href="https://eyeo.com">eyeo GmbH</a>. }}</small>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/pages/installed.js"></script>
+<script src="/js/pages/donate.js"></script>
+<script src="/js/address-masking.js"></script>
