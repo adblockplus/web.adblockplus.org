@@ -69,25 +69,10 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
 
 #intro-standard ul li .avoid-wrap { text-indent: 0em; }
 
-@media (max-width: 575px)
-{
-  #intro-ios-safari h1,
-  #intro-ios-not-safari h2
-  {
-    font-size: 1.5em;
-    line-height: inherit;
-  }
-}
-
-#intro-ios-not-safari { padding-top: 3em !important; }
-
-#intro-ios-not-safari h2 { margin-top: 0; }
-
 @media (min-width: 452px)
 {
   #intro-android,
   #intro-ios-safari,
-  #intro-ios-not-safari,
   #intro-samsung
   {
     float: none;
@@ -96,14 +81,7 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
     margin-right: auto;
     width: 420px;
   }
-
-  #intro-ios-not-safari h2
-  {
-    margin-bottom: 1em;
-  }
 }
-
-#intro-ios-not-safari strong { display: inline-block; }
 
 /******************************************************************************
  * #intro-standard

@@ -18,8 +18,7 @@
   };
 
   var mobilePlatforms = {
-    "android": "https://eyeo.to/adblockbrowser/android/",
-    "ios": "https://eyeo.to/adblockbrowser/ios/"
+    "android": "https://eyeo.to/adblockbrowser/android/"
   };
 
   var browser, mobilePlatform;

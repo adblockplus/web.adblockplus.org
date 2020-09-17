@@ -148,13 +148,6 @@ title=Allowing acceptable ads in Adblock Plus
 1. {{ disable-ie-step-1[list item] Click the Adblock Plus icon and select **Settings**.  }}
 1. {{ disable-ie-step-2[list item] Uncheck **Allow some nonintrusive advertising**. }}
 
-#### {{ disable-ios[heading] Adblock Browser for iOS }}
-
-1. {{ disable-ios-step-1[list item] Open Adblock Browser for iOS. }}
-1. {{ disable-ios-step-2[list item] Tap the **menu icon** and select **Settings**. }}
-1. {{ disable-ios-step-3[list item] Tap **Ad blocking** > **Exceptions**. }}
-1. {{ disable-ios-step-4[list item] Check **Hide all ads**. }}
-
 #### {{ disable-ios-safari[heading] Adblock Plus for iOS }}
 
 1. {{ disable-ios-safari-step-1 Open Adblock Plus for iOS. }}

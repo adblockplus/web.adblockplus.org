@@ -62,16 +62,6 @@ The following privacy notice shall provide you with a general overview about the
             - Button clicks and/or navigation patterns
             - Screens shown
     - Adblock Browser, based on Chromium, provides Chromium-specific functionality which, however, may send data to Google.
-    - Adblock Browser for iOS (automatically):
-    {: .has-horizontal-list .semicolon-separated }
-        - Error and crash report data:
-            - Bundle identifier, bundle version and short bundle version string of Adblock Browser
-            - Device type, CPU architecture and version of the operating system
-            - Timestamp of crash
-            - UUID
-            - Plain-text class name and message value of the exception
-            - Instruction pointer, method or function names, signal data, pointer registers and information about the loaded binary images
-            - String / function name identifying the error
     - For Adblock Plus on desktop, when uninstalling Adblock Plus
         - Automatically:
         {: .has-horizontal-list .semicolon-separated }
@@ -483,8 +473,6 @@ This data is solely used to improve our mobile products and Adblock Plus for Saf
 ###### Data retention
 
 Event tracking with IDs is retained for 60 days. Aggregated reports may be retained for a longer period.
-
-#### Adblock Browser for iOS {: #adblock-browser-ios }
 
 ##### Crash and error reporter {: #crash-error-reporter }
 

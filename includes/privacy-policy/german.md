@@ -484,8 +484,6 @@ Diese Daten werden ausschließlich zur Verbesserung unserer mobilen Produkte, Ad
 
 Ereignis-Tracking mit IDs wird für 60 Tage gespeichert. Aggregierte Berichte können für einen längeren Zeitraum gespeichert werden.
 
-#### Adblock Browser für iOS {: #adblock-browser-ios }
-
 ##### Absturz- und Fehlermeldung {: #crash-error-reporter }
 
 Bei einem unerwarteten Absturz oder Fehler sammelt Adblock Browser alle für eine Analyse relevanten Daten, um die Ursache der Störung zu ermitteln, und überträgt sie an das [HockeyApp-Konto](https://www.hockeyapp.net/) von eyeo. Die Daten dienen ausschließlich der individuellen Fehlerbehebung (sowie der Identifizierung von allgemeinen Defekten, die zu unerwarteten Abstürzen oder Fehlern führen) und werden niemals mit Dritten, sondern nur mit HockeyApp geteilt.

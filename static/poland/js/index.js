@@ -18,7 +18,6 @@
   };
 
   var mobilePlatforms = {
-    "ios": "https://eyeo.to/adblockbrowser/ios/polish-lp",
     "android": "https://eyeo.to/adblockbrowser/android/polish-lp"
   };
 
@@ -83,9 +82,8 @@
       if (mobilePlatform)
         gaData["event_label"] = "Downloaded_" + (
           mobilePlatform == "ios" ? (
-            browser == "safari" ?
+            browser == "safari" &&
               "safari_ios"
-              : "abb_ios"
           ) : (
             browser == "samsungBrowser" ?
               "android_samsung"

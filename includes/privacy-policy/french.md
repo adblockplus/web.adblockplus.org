@@ -481,8 +481,6 @@ Ces données sont utilisées uniquement pour améliorer nos produits mobile, Adb
 
 Le traceur d’événements avec ID est conservé pendant 60 jours. Les rapports agrégés peuvent être conservés plus longtemps.
 
-#### Adblock Browser pour iOS {: #adblock-browser-ios }
-
 ##### Rapport de crash et d’erreur {: #crash-error-reporter }
 
 En cas de crash ou d’erreur inattendu, Adblock Browser collecte les données pertinentes à l’analyse de la cause de la défaillance et les transmet au compte [HockeyApp](https://www.hockeyapp.net/) d’eyeo. Les données sont utilisées uniquement à des fins de dépistage individuel (ainsi que pour identifier des défauts généraux entraînant des crashs ou erreurs inattendus) et ne sont jamais transmises à des tierces parties autres que HockeyApp.
