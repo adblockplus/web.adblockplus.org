@@ -17,3 +17,12 @@ RewriteRule "^safari$" "/" [NC,R=301]
 RewriteRule "^(.*)/safari$" "/" [NC,R=301]
 RewriteRule "^yandex-browser$" "/" [NC,R=301]
 RewriteRule "^(.*)/yandex-browser$" "/" [NC,R=301]
+
+
+# Refs #556 Locale should redirect to /en/ if language is not available
+RewriteCond %{REQUEST_URI} !^/js/.+
+RewriteCond %{REQUEST_URI} ^/([a-z][a-z])(/.+)
+RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_URI} !-f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}/%{ENV:index_page} !-f
+RewriteRule ^/([a-z][a-z])(/.+) /%{ENV:preferredLang}/$2 [R]
