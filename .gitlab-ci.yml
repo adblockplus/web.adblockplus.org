@@ -39,6 +39,14 @@ tests:
     - xvfb-run --server-args="-screen 0 1024x768x24" tox
   when: manual
 
+lint:
+  stage: test
+  image: node:latest
+  script:
+    - npm init -y
+    - npm install eslint eslint-config-eyeo --save-dev
+    - ./node_modules/.bin/eslint static/js || true
+
 staging_build:
   stage:
     "build"
