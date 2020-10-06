@@ -80,8 +80,8 @@ root.paypalProvider = {
 
     var form = doc.createElement("form");
     form.target = "_blank";
-    form.method = "post";
-    form.action = "https://www.paypal.com/cgi-bin/webscr";
+    form.method = "get";
+    form.action = "/paypal";
 
     var field;
     _.each(submission, function(value, key)

@@ -17,3 +17,5 @@ RewriteRule "^safari$" "/" [NC,R=301]
 RewriteRule "^(.*)/safari$" "/" [NC,R=301]
 RewriteRule "^yandex-browser$" "/" [NC,R=301]
 RewriteRule "^(.*)/yandex-browser$" "/" [NC,R=301]
+
+Redirect /paypal https://www.paypal.com/cgi-bin/webscr
