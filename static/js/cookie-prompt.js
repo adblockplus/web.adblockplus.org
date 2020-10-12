@@ -190,4 +190,10 @@
   else
     doc.addEventListener("DOMContentLoaded", initializeCookiePrompt, false);
 
+  console.log(root);
+  console.log(doc);
+  console.log(body);
+
 }(window, document, document.body));
+
+alert("HEEY")
