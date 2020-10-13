@@ -1,5 +1,8 @@
 (function(){
+  console.log(window.eyeo);
 
+
+  
   var eyeo = window.eyeo = window.eyeo || {};
 
   var siteDomain = (function(subdomains)
