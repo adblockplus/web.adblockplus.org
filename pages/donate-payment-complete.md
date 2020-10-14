@@ -8,7 +8,7 @@ robots=none
 
 {{ p3 You can see what we’re up to anytime by checking out [our blog](https://adblockplus.org/blog). }}
 
-{{ p4 Questions about Adblock Plus? Reach out to us via email at <a data-mask='{"href": "bWFpbHRvOnN1cHBvcnRAYWRibG9ja3BsdXMub3Jn", "textContent": "c3VwcG9ydEBhZGJsb2NrcGx1cy5vcmc"}'>this address</a> or [send us a bug report](https://adblockplus.org/bugs#reporting). You can also check out our [Help Center](https://help.eyeo.com/). }}
+{{ p4 Questions about Adblock Plus? Reach out to us via email at <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc=", "textContent": "ZG9uYXRpb25zQGFkYmxvY2twbHVzLm9yZw=="}'>this address</a> or [send us a bug report](https://adblockplus.org/bugs#reporting). You can also check out our [Help Center](https://help.eyeo.com/). }}
 
 <footer markdown=1>
   {{ p5 With love, <span class="block">Your friends at Adblock Plus</span> }}
