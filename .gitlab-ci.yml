@@ -29,8 +29,11 @@ stages:
   - "build_production"
   - "deploy_production"
   - "test"
+  - "test_download_links"
 
 tests:
+  except:
+    - schedules
   stage: test
   image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
   script:
@@ -39,7 +42,19 @@ tests:
     - xvfb-run --server-args="-screen 0 1024x768x24" tox
   when: manual
 
+download_links_tests:
+  only:
+    - schedules
+  stage: test_download_links
+  image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
+  script:
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- tests/test_DownloadLinks.py
+
 lint:
+  except:
+    - schedules
   stage: test
   image: node:latest
   script:
@@ -52,6 +67,7 @@ staging_build:
     "build"
   except:
     - "master"
+    - schedules
   variables:
     <<: *staging
   image:
@@ -74,6 +90,7 @@ deploy_staging:
     "deploy_staging"
   except:
     - "master"
+    - schedules
   variables:
     <<: *staging
   tags:
@@ -89,6 +106,8 @@ deploy_staging:
 production_build:
   stage:
     "build_production"
+  except:
+    - schedules
   variables:
     <<: *production
   image:
@@ -111,6 +130,8 @@ production_build:
 deploy_production1:
   stage:
     "deploy_production"
+  except:
+    - schedules
   variables:
     <<: *production
   tags:
@@ -126,6 +147,8 @@ deploy_production1:
 deploy_production2:
   stage:
     "deploy_production"
+  except:
+    - schedules
   variables:
     <<: *production
   tags:
@@ -141,6 +164,8 @@ deploy_production2:
 deploy_production3:
   stage:
     "deploy_production"
+  except:
+    - schedules
   variables:
     <<: *production
   tags:
@@ -156,6 +181,8 @@ deploy_production3:
 deploy_production4:
   stage:
     "deploy_production"
+  except:
+    - schedules
   variables:
     <<: *production
   tags:
@@ -167,3 +194,4 @@ deploy_production4:
     url: http://$DOMAIN
   only:
     - "master"
+
