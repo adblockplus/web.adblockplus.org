@@ -1,3 +1,7 @@
+import os
+import time
+
+
 def setup(options):
     options.add_argument('--no-sandbox')
     options.add_argument('--window-size=1420,1080')
@@ -14,3 +18,19 @@ def click_menu_item(driver, list_item_id, item_name):
         if item_name in text:
             item.click()
             break
+
+
+def wait_for_file_in_downloads(text_in_file_name, timeout=20):
+    current_dir = os.getcwd()
+    elapsed_time = 0
+    while True:
+        file_list = os.listdir(current_dir)
+        for file_name in file_list:
+            if text_in_file_name in file_name:
+                os.remove(file_name)
+                return True
+        time.sleep(0.5)
+        elapsed_time += 0.5
+        if elapsed_time >= timeout:
+            return False
+
