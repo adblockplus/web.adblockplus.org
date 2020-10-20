@@ -6,7 +6,7 @@ var URLSubDirs = location.pathname.split("/");
 
 var SID = URLParams.get("sid") || uuidv4();
 
-var paymentConfig = window.paymentConfig || {
+var paymentConfig = {
   USD: {
     sign: "$",
     donation: {
@@ -37,6 +37,9 @@ var paymentConfig = window.paymentConfig || {
 
 function setupPaymentForm()
 {
+  if (window.paymentConfig)
+    paymentConfig = window.paymentConfig;
+
   var form = new PaymentForm(paymentConfig);
 
   function getPayment()
