@@ -1,5 +1,7 @@
 (function(){
 
+var eyeo = window.eyeo || {};
+
 var URLParams = new URLSearchParams(location.search);
 
 var URLSubDirs = location.pathname.split("/");
@@ -55,7 +57,7 @@ function setupPaymentForm()
     return _.extend(form.toJSON(), fromController);
   }
 
-  form.addProviderListener("paypal", function()
+  function onPayPalProvider()
   {
     var payment = getPayment();
 
@@ -73,7 +75,10 @@ function setupPaymentForm()
     payment.item = paymentTranslations.item;
 
     paypalProvider.submit(payment);
-  });
+  }
+
+  if (!eyeo.disablePayPal)
+    form.addProviderListener("paypal", onPayPalSubmit);
 
   function onStripeSubmit()
   {
@@ -86,7 +91,7 @@ function setupPaymentForm()
 
   var stripeLoaded = false;
 
-  form.addProviderListener("stripe", function()
+  function onStripeProvider()
   {
     if (!stripeLoaded)
     {
@@ -108,7 +113,10 @@ function setupPaymentForm()
     {
       onStripeSubmit();
     }
-  });
+  }
+
+  if (!eyeo.disableStripe)
+    form.addProviderListener("stripe", onStripeProvider);
 }
 
 var fromABP = {

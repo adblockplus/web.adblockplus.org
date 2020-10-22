@@ -90,15 +90,8 @@
     <span class="payment-providers-lead">
       {{ pay-with-lead-1[heading] Pay with: }}
     </span>
-    <button name="stripe-provider" class="stripe-button">
-      <img class="stripe-button-lock" src="/img/lock.png" alt="">
-      <span class="stripe-button-text">
-        {{ stripe-label[button label] Credit card }}
-      </span>
-    </button>
-    <button name="paypal-provider" class="paypal-button">
-      {{ paypal-label[button label] PayPal }}
-    </button>
+    <? include payment/buttons/stripe ?>
+    <? include payment/buttons/paypal ?>
   </div>
 
 </form>
@@ -124,7 +117,5 @@
 <script src="/js/payment/form.js"></script>
 <script src="/js/payment/providers/paypal.js"></script>
 <script src="/js/payment/providers/stripe.js"></script>
-<script>
-<? include init-stripe-provider ?>
-</script>
+<? include payment/config/stripe ?>
 <script src="/js/payment/controller.js"></script>

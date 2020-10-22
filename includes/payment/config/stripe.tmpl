@@ -1,0 +1,9 @@
+{% if not disable_stripe %}
+  <script>
+    window.stripeProvider = initStripeProvider(
+      "{{ stripe_publishable_key or "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs" if config.get("general", "siteurl") == "https://adblockplus.org" else "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN" }}",
+      "{{ donation_server_base_url or "https://new-integration.adblockplus.org/" if config.get("general", "siteurl") == "https://adblockplus.org" else "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/" }}",
+      paymentTranslations
+    );
+  </script>
+{% endif %}

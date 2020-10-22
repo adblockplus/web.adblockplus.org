@@ -1,5 +1,11 @@
 <script>
   window.eyeo = {
+    {% if disable_stripe %}
+    disableStripe: true,
+    {% endif %}
+    {% if disable_paypal %}
+    disablePayPal: true,
+    {% endif %}
     preventCookiePrompt: {{ "true" if prevent_cookie_prompt else "false" }},
     userTesting: {{ "true" if user_testing else "false" }}
   }
