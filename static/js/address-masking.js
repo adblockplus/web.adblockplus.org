@@ -35,5 +35,9 @@ document.addEventListener("DOMContentLoaded", function()
     ADDRESS_MASKING_DELAY
   );
 
-  document.querySelectorAll("[data-mask]").forEach(unmaskAddress);
+  var linksToBeMasked = [].slice.call(
+    document.querySelectorAll("[data-mask]")
+  );
+
+  linksToBeMasked.forEach(unmaskAddress);
 });
