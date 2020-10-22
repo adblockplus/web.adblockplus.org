@@ -1,0 +1,8 @@
+{% if not disable_stripe %}
+  <button name="stripe-provider" class="stripe-button">
+    <img class="stripe-button-lock" src="/img/lock.png" alt="">
+    <span class="stripe-button-text">
+      {{ "Credit card" | translate("stripe-label", "button label") }}
+    </span>
+  </button>
+{% endif %}
