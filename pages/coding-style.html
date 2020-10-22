@@ -11,30 +11,26 @@ title=Coding Style
 
 <h2 id="general">{{s5 General}}</h2>
 <ul>
-  <li>{{s6 Follow the Mozilla Coding Style's <a href="https://wiki.developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style$revision/1562743#General_C.2FC.2B.2B_Practices">general practices</a> and its <a href="https://wiki.developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style$revision/1562743#Naming_and_Formatting_code">naming and formatting rules</a>.}}</li>
-  <ul>
-    <h4>MDN GENERAL PRACTICES</h4>
-    <li>Don't put an <code>else</code> right after a <code>return</code> (or a <code>break</code>). Delete the <code>else</code>, it's unnecessary and increases indentation level.</li>
-    <li>Don't leave debug <code>printf</code>s or <code>dump</code>s lying around.</li>
-    <li>Use <a class="external external-icon" href="https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">JavaDoc-style comments</a>.</li>
-    <li>When fixing a problem, check to see if the problem occurs elsewhere in the same file, and fix it everywhere if possible.</li>
-    <li>End the file with a newline. Make sure your patches don't contain files with the text "no newline at end of file" in them.</li>
-    <li>Declare local variables as near to their use as possible.</li>
-    <li>For new files, be sure to use the right <a class="external external-icon" href="https://www.mozilla.org/MPL/headers/" title="https://www.mozilla.org/MPL/headers/">license boilerplate</a>, per our <a class="external external-icon" href="https://www.mozilla.org/MPL/license-policy.html" title="https://www.mozilla.org/MPL/license-policy.html">license policy</a>.</li>
-  </ul>
-  <ul> <h4>MDN NAMING AND FORMATTING</h4>
-    <li>[WHITESPACE] No tabs. No whitespace at the end of a line (use Unix-style linebreaks ('\n')) </li>
-    <li>[LINE LENGTH] 80 characters or less </li>
-    <li>[INDENTATION] Two spaces per logic level </li>
-    <li>[CONTROL STRUCTURES] Use K&R bracing style (left brace at end of first line, 'cuddled' `else` on both sides) </li>
-    <li>[CONTROL STRUCTURES] `Class` and `function` definitions are not control structures; left brace goes by itself on the second line and without extra indentation </li>
-    <li>[LITERALS] Double-quoted strings (e.g. "foo") (except embedded double quotes or event handlers) </li>
-    <li>[METHODS FUNCTIONS] Methods and Functions should be camelCase named </li>
-    <li>[METHODS FUNCTIONS] In-line functions should have spaces around braces </li>
-    <li>[OBJECTS] Constructors for objects should be PascalCase </li>
-    <li>[OPERATORS] expressions not joined by `&&` and `||` should break (same for `?:`, binary arithmetic operators including `+`, and member-of operators) </li>
-    <li>[OPERATORS] `==` is preferred to `===` </li>
-  </ul>
+  <li>XXXXX{{s6 Follow the Mozilla Coding Style's <a href="https://wiki.developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style$revision/1562743#General_C.2FC.2B.2B_Practices">general practices</a> and its <a href="https://wiki.developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style$revision/1562743#Naming_and_Formatting_code">naming and formatting rules</a>.}}</li>
+  <li>Don't put an <code>else</code> right after a <code>return</code> (or a <code>break</code>). Delete the <code>else</code>, it's unnecessary and increases indentation level.</li>
+  <li>Don't leave debug <code>printf</code>s or <code>dump</code>s lying around.</li>
+  <li>Use <a class="external external-icon" href="https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">JavaDoc-style comments</a>.</li>
+  <li>When fixing a problem, check to see if the problem occurs elsewhere in the same file, and fix it everywhere if possible.</li>
+  <li>End the file with a newline. Make sure your patches don't contain files with the text "no newline at end of file" in them.</li>
+  <li>Declare local variables as near to their use as possible.</li>
+  <li>For new files, be sure to use the right <a class="external external-icon" href="https://www.mozilla.org/MPL/headers/" title="https://www.mozilla.org/MPL/headers/">license boilerplate</a>, per our <a class="external external-icon" href="https://www.mozilla.org/MPL/license-policy.html" title="https://www.mozilla.org/MPL/license-policy.html">license policy</a>.</li>
+
+  <li>[WHITESPACE] No tabs. No whitespace at the end of a line (use Unix-style linebreaks ('\n')) </li>
+  <li>[LINE LENGTH] 80 characters or less </li>
+  <li>[INDENTATION] Two spaces per logic level </li>
+  <li>[CONTROL STRUCTURES] Use K&R bracing style (left brace at end of first line, 'cuddled' `else` on both sides) </li>
+  <li>[CONTROL STRUCTURES] `Class` and `function` definitions are not control structures; left brace goes by itself on the second line and without extra indentation </li>
+  <li>[LITERALS] Double-quoted strings (e.g. "foo") (except embedded double quotes or event handlers) </li>
+  <li>[METHODS FUNCTIONS] Methods and Functions should be camelCase named </li>
+  <li>[METHODS FUNCTIONS] In-line functions should have spaces around braces </li>
+  <li>[OBJECTS] Constructors for objects should be PascalCase </li>
+  <li>[OPERATORS] expressions not joined by `&&` and `||` should break (same for `?:`, binary arithmetic operators including `+`, and member-of operators) </li>
+  <li>[OPERATORS] `==` is preferred to `===` </li>
   <li>{{s8 All files should have a <a href="license-headers">license header</a>, but no mode line comments.}}</li>
   <li>{{s9 Newline at end of file, otherwise no trailing whitespace.}}</li>
   <li>{{s10 Lines can be longer than the limit, if limiting line length would hurt readability in a particular case.}}</li>
