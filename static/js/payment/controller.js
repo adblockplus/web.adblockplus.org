@@ -78,7 +78,7 @@ function setupPaymentForm()
   }
 
   if (!eyeo.disablePayPal)
-    form.addProviderListener("paypal", onPayPalSubmit);
+    form.addProviderListener("paypal", onPayPalProvider);
 
   function onStripeSubmit()
   {
