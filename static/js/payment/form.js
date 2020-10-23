@@ -146,10 +146,8 @@ function PaymentForm(currencies)
 
   function clearCustomAmountErrors()
   {
-    doc.body.classList.remove(
-      "minimum-donation-error",
-      "minimum-subscription-error"
-    );
+    doc.body.classList.remove("minimum-donation-error");
+    doc.body.classList.remove("minimum-subscription-error");
 
     enableForm(true);
   }
