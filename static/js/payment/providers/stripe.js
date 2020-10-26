@@ -7,7 +7,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   var siteURL = document.documentElement
     .getAttribute("data-siteurl") || "https://adblockplus.org";
 
-  var successURL = siteURL + "/payment-thank-you";
+  var successURL = siteURL + "/payment-complete";
 
   var style = {
     base: {
@@ -326,7 +326,14 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
     }
 
     function stripePaymentConfirmed() {
-      window.location.href = successURL;
+      var params = new URLSearchParams({
+        pp: "stripe",
+        sid: data.custom
+      });
+
+      window.location.href = successURL
+        + "?"
+        + params.toString();
     }
 
     createModalForm();

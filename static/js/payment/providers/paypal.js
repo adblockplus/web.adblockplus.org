@@ -54,7 +54,7 @@ root.paypalProvider = {
       item_name: payment.item,
       custom: payment.custom,
       image_url: payment.image || siteURL + "/img/adblock-plus-paypal.png",
-      return: payment.successURL || siteURL + "/payment-thank-you",
+      return: payment.successURL || siteURL + "/payment-complete",
       cancel_return: payment.cancelURL || root.location.href,
       no_note: 1,
       currency_code: payment.currency,
