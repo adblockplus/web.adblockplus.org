@@ -112,7 +112,7 @@
   box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.2);
 }
 
-.payment-providers button[disabled] { filter: grayscale(100); }
+.payment-providers button[disabled] { background-color: #bcbcbc; }
 
 @media (min-width: 576px)
 {
