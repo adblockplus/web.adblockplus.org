@@ -23,7 +23,7 @@ root.paypalProvider = {
    * @param {String} [payment.type=] - "subscirption" if recurring
    * @param {String} [payment.image=https://adblockplus.org/img/adblock-plus-paypal.png] - 90px tall logo image
    * @param {String} [payment.lang=doc.documentElement.lang] - 2 letter language code supported by PayPal
-   * @param {String} [payment.successURL=https://adblockplus.org/payment-thank-you] - URL to direct to after checkout success
+   * @param {String} [payment.successURL=https://adblockplus.org/payment-complete] - URL to direct to after checkout success
    * @param {String} [payment.cancelURL=location.hrf] - URL to direct to after checkout cancelled
    * @see https://developer.paypal.com/docs/archive/nvp-soap-api/currency-codes/#paypal
    * @see https://developer.paypal.com/docs/api/reference/locale-codes/
@@ -54,7 +54,7 @@ root.paypalProvider = {
       item_name: payment.item,
       custom: payment.custom,
       image_url: payment.image || siteURL + "/img/adblock-plus-paypal.png",
-      return: payment.successURL || siteURL + "/payment-thank-you",
+      return: payment.successURL || siteURL + "/payment-complete",
       cancel_return: payment.cancelURL || root.location.href,
       no_note: 1,
       currency_code: payment.currency,
