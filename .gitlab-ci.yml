@@ -75,8 +75,7 @@ staging_build:
   variables:
     <<: *staging
   image:
-    - *BUILD_IMAGE
-    - node:latest
+    *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
   before_script:
