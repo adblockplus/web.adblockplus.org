@@ -235,6 +235,7 @@
   color: #fff;
   background-color: #000;
   border: 0;
+  border-radius: 4px;
 }
 
 @media (min-width: 992px)
@@ -262,6 +263,7 @@
   overflow: visible;
   outline: none;
   z-index: 9001;
+  border-radius: 4px;
 }
 
 .cookiebar .cookies-dropup-menu { bottom: 4em; }
@@ -385,6 +387,7 @@
   color: #000;
   background-color: #fff;
   border: 0;
+  border-radius: 4px;
 }
 
 .cookieprompt .cookies-settings

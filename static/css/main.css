@@ -80,6 +80,7 @@ pre
   border: 1px solid #aaa;
   background: #fff;
   padding: 16px 20px;
+  border-radius: 4px;
 }
 
 .toc ul
@@ -142,6 +143,7 @@ div.animation[started="true"]
   margin: 15px 0;
   background-color: #fff;
   border: 1px solid #a1a1a1;
+  border-radius: 4px;
 }
 
 [dir="ltr"] .alert
@@ -498,6 +500,11 @@ a.icon-button:visited
 [dir="rtl"] #navbar-locale-selected:after
 {
   margin: 0em 0.255em 0em 0em;
+}
+
+#navbar-locale-menu
+{
+  border-radius: 0 0 4px 4px;
 }
 
 #navbar-locale-menu
