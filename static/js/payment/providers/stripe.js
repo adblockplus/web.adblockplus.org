@@ -1,4 +1,5 @@
-function initStripeProvider(publishableKey, formProcessor, dictionary) {
+function initStripeProvider(stripePublishableKey, recaptchaPublishableKey,
+  formProcessor, dictionary) {
   'use strict';
 
   var donation = 'donation';
@@ -54,6 +55,26 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
 
   var paymentData;
 
+  function runCheck(data) {
+    grecaptcha.ready(function() {
+      grecaptcha
+        .execute(recaptchaPublishableKey, {action: 'stripe'})
+        .then(function(token) {
+          var request = new XMLHttpRequest();
+
+          request.open('POST', (formProcessor + 'check'), true);
+          request.send(token);
+
+          request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              (+request.response > 0.5) &&
+                paymentModalPopup(data);
+            }
+          };
+        });
+    });
+  }
+
   function paymentModalPopup(data) {
     var box, button, cardStripeElement, email, error, token;
 
@@ -66,7 +87,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
       delete data.successURL;
     }
 
-    stripe = Stripe(publishableKey, {
+    stripe = Stripe(stripePublishableKey, {
       locale: (document.documentElement.lang || 'en')
     });
 
@@ -345,6 +366,6 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   }
 
   return {
-    submit: paymentModalPopup
+    submit: runCheck
   };
 }

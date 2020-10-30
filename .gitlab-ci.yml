@@ -4,6 +4,7 @@
   variables: &staging
     DOMAIN: "staging-new-adblockplus-org-1.uplink.eyeo.it"
     STRIPE_PUBLISHABLE_KEY: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN"
+    RECAPTCHA_PUBLISHABLE_KEY: "6Ld9k9sZAAAAABAG_LX6jPtnYbz4TDrBGR1X7m9F"
     DONATION_SERVER_BASE_URL: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
 
 .production:
@@ -194,4 +195,3 @@ deploy_production4:
     url: http://$DOMAIN
   only:
     - "master"
-
