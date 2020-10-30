@@ -22,7 +22,7 @@ var minify = require('gulp-minify');
 
 //script paths
 var jsFiles = 'static/js/*/*.js',
-  jsDest = 'static/js/gulp-test';
+  jsDest = 'static/js/';
 
 gulp.task('scripts', function() {
   return gulp.src(jsFiles)
