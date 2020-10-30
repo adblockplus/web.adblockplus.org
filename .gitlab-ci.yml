@@ -62,6 +62,10 @@ lint:
     - npm install eslint eslint-config-eyeo --save-dev
     - ./node_modules/.bin/eslint static/js || true
 
+cache:
+  paths:
+   - node_modules/
+
 staging_build:
   stage:
     "build"
@@ -71,14 +75,17 @@ staging_build:
   variables:
     <<: *staging
   image:
-    *BUILD_IMAGE
+    - *BUILD_IMAGE
+    - node:latest
   tags:
     - *BUILD_RUNNER
   before_script:
     - pip install -q crudini
+    - npm install
   script:
     - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
     - python -m cms.bin.generate_static_pages $PWD build
+    - node_modules/gulp/bin/gulp.js --gulpfile ./gulpfile.js scripts
   artifacts:
     name:
       "$CI_COMMIT_REF_SLUG"
@@ -194,4 +201,3 @@ deploy_production4:
     url: http://$DOMAIN
   only:
     - "master"
-
