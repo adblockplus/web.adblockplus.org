@@ -81,7 +81,7 @@ staging_build:
     - python -m cms.bin.generate_static_pages $PWD build
     - npm init -y
     - npm install gulp-cli gulp-concat gulp-minify --save-dev
-    - ./node_modules/gulp-cli/bin/gulp.js --gulpfile ./gulpfile.js scripts
+    - ./node_modules/.bin/gulp --gulpfile ./gulpfile.js scripts
   artifacts:
     name:
       "$CI_COMMIT_REF_SLUG"
