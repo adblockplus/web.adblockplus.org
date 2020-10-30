@@ -82,6 +82,7 @@ staging_build:
     - npm init -y
     - npm install gulp gulp-cli gulp-concat gulp-minify --save-dev
     - node_modules/.bin/gulp --gulpfile ./gulpfile.js scripts
+    - ls /js
   artifacts:
     name:
       "$CI_COMMIT_REF_SLUG"
