@@ -77,10 +77,10 @@ staging_build:
   before_script:
     - pip install -q crudini
   script:
-    - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
-    - python -m cms.bin.generate_static_pages $PWD build
     - npm install gulp gulp-cli gulp-concat gulp-minify --save-dev
     - node_modules/.bin/gulp --gulpfile ./gulpfile.js scripts
+    - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
+    - python -m cms.bin.generate_static_pages $PWD build
   artifacts:
     name:
       "$CI_COMMIT_REF_SLUG"
