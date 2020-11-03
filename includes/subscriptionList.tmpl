@@ -71,7 +71,7 @@
 
 {% macro display_subscriptions(subscriptions) %}
   {%- set subscription_types = [] -%}
-  {%- for subscription in subscriptions|subscription_sort -%}
+  {%- for subscription in subscriptions|subscription_sort if not subscription["type"] == "cookies" -%}
     {%- if not (subscription["supplements"] and current_type == subscription["type"]) -%}
       {%- set current_type = subscription_types[-1] if subscription_types else '' -%}
       {%- if current_type != subscription["type"] -%}
