@@ -1,0 +1,27 @@
+{
+  "name": "web.adblockplus.org",
+  "version": "1.0.0",
+  "description": "The web content of the adblockplus.org domain is generated automatically from the files in this repository. For more information and usage instructions see [CMS documentation](https://github.com/adblockplus/cms/blob/master/README.md#content-structure).",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "node-minify": "^3.6.0"
+  },
+  "devDependencies": {
+    "csso": "^4.1.1",
+    "csso-cli": "^3.0.0",
+    "uglify-js": "^3.12.0"
+  },
+  "scripts": {
+    "build": "node static/js/tools/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:eyeo/websites/web.adblockplus.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
