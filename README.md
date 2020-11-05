@@ -73,6 +73,13 @@ Our tracking scripts override the anti-flicker effect in the following circumsta
 
 Our EU tracking script always overrides the anti-flicker effect.
 
+## Optimizing CSS and JavaScript
+
+1. Run `npm install` from the root folder
+1. Add CSS/JS files to process in `static/tools/build.js`
+1. Run `npm run build` to generate optimized files
+1. Adapt CSS/JS includes in templates
+
 ## Testing via Apache 2
 
 1. Copy or link the virtual host file in this repository (`adblockplus.org.conf`) to Apache's sites available and enable it
