@@ -78,6 +78,9 @@ staging_build:
   before_script:
     - pip install -q crudini
   script:
+    - npm init -y
+    - npm install uglify-js csso --save-dev
+    - npm run build
     - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
     - python -m cms.bin.generate_static_pages $PWD build
   artifacts:
