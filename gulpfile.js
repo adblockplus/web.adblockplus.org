@@ -20,9 +20,22 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var minify = require('gulp-minify');
 
+
+
 //script paths
 var jsFiles = 'static/js/*/*.js',
   jsDest = 'static/js/';
+
+// Donation form
+// "/js/vendor/url-search-params.min.js"
+// "/js/vendor/bowser.js"
+// "/js/vendor/uuidv4.min.js"
+// "/js/vendor/lodash.custom.min.js"
+// "/js/payment/form.js"
+// "/js/payment/providers/paypal.js"
+// "/js/payment/providers/stripe.js"
+
+// SEO pages combo install-button/bowser
 
 gulp.task('scripts', function() {
   return gulp.src(jsFiles)
@@ -30,3 +43,30 @@ gulp.task('scripts', function() {
     .pipe(minify())
     .pipe(gulp.dest(jsDest));
 });
+
+
+// // ===================================
+// // styles.tmpl
+// "/css/defaults.css"
+// "/css/fonts.css"
+// "/css/main.css"
+// "/css/cookies.css"
+//
+// // update/page
+// "/css/update.css"
+// "/css/payment/stripe-modal.css"
+//
+// // contribute/features
+// "/css/topics.css"
+// "/css/topics-desktop.css"
+// "/css/topics-mobile.css"
+// "/css/contribute.css"
+//
+// // installed
+// "/css/pages/installed.css"
+// "/css/payment/form.css"
+// "/css/payment/stripe-modal.css"
+//
+// // uninstalled
+// "/css/uninstalled.css"
+// "/css/survey-form.css"
