@@ -19,9 +19,10 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    csso = require('gulp-csso');
 
-var baseUrl = "static/js/";
+var jsBaseUrl = "static/js/";
 
 var jsFiles = [
   ["*.js", "", "abp"]//,
@@ -31,19 +32,39 @@ var jsFiles = [
 
 gulp.task('js', function(done){
   jsFiles.map(function(file, index){
-    return gulp.src(baseUrl + file[0])
+    return gulp.src(jsBaseUrl + file[0])
       .pipe(sourcemaps.init())
       .pipe(concat(file[2] + '.js'))
-      .pipe(gulp.dest(baseUrl + file[1]))
+      .pipe(gulp.dest(jsBaseUrl + file[1]))
       .pipe(uglify())
       .pipe(concat(file[2] + '.min.js'))
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(baseUrl + file[1]));
+      .pipe(gulp.dest(jsBaseUrl + file[1]));
   })
   done();
 });
 
+var cssBaseUrl = "static/css/";
 
+var cssFiles = [
+  // ["*.css", "", "abp"],
+  ["pages/*.css", "pages/", "pages"],
+  ["payment/*.css", "payment/", "payment"]
+]
+
+gulp.task('css', function(done){
+  cssFiles.map(function(file, index){
+    console.log(cssBaseUrl + file[0]);
+    return gulp.src(cssBaseUrl + file[0])
+      .pipe(sourcemaps.init())
+      .pipe(concat(file[2] + '.css'))
+      .pipe(gulp.dest(cssBaseUrl + file[1]))
+      .pipe(csso())
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest(cssBaseUrl + file[1]));
+  })
+  done();
+});
 
 
 
