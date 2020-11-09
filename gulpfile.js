@@ -16,33 +16,35 @@
  * along with acceptableads.org.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var minify = require('gulp-minify');
+var gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps');
 
+var baseUrl = "static/js/";
 
+var jsFiles = [
+  ["*.js", "", "abp"]//,
+  //["payment/*/*.js", "payment/", "payment"],
+  //["vendor/*.js", "vendor/", "vendor"]
+]
 
-//script paths
-var jsFiles = 'static/js/*/*.js',
-  jsDest = 'static/js/';
-
-// Donation form
-// "/js/vendor/url-search-params.min.js"
-// "/js/vendor/bowser.js"
-// "/js/vendor/uuidv4.min.js"
-// "/js/vendor/lodash.custom.min.js"
-// "/js/payment/form.js"
-// "/js/payment/providers/paypal.js"
-// "/js/payment/providers/stripe.js"
-
-// SEO pages combo install-button/bowser
-
-gulp.task('scripts', function() {
-  return gulp.src(jsFiles)
-    .pipe(concat('abp.min.js'))
-    .pipe(minify())
-    .pipe(gulp.dest(jsDest));
+gulp.task('js', function(done){
+  jsFiles.map(function(file, index){
+    return gulp.src(baseUrl + file[0])
+      .pipe(sourcemaps.init())
+      .pipe(concat(file[2] + '.js'))
+      .pipe(gulp.dest(baseUrl + file[1]))
+      .pipe(uglify())
+      .pipe(concat(file[2] + '.min.js'))
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest(baseUrl + file[1]));
+  })
+  done();
 });
+
+
+
 
 
 // // ===================================
