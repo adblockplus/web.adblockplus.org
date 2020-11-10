@@ -78,8 +78,7 @@ staging_build:
     - pip install -q crudini
   script:
     - npm install gulp gulp-cli gulp-concat gulp-uglify gulp-sourcemaps gulp-csso --save-dev
-    - node_modules/.bin/gulp --gulpfile ./gulpfile.js js
-    - node_modules/.bin/gulp --gulpfile ./gulpfile.js css
+    - node_modules/.bin/gulp --gulpfile ./gulpfile.js build
     - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
     - python -m cms.bin.generate_static_pages $PWD build
   artifacts:

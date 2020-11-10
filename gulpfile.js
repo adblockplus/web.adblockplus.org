@@ -16,19 +16,38 @@
  * along with acceptableads.org.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var gulp = require('gulp'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    sourcemaps = require('gulp-sourcemaps'),
-    csso = require('gulp-csso');
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+var csso = require('gulp-csso');
+
+var cssBaseUrl = "static/css/";
+var cssFiles = [
+  // ["*.css", "", "abp"],
+  ["pages/*.css", "pages/", "pages"],
+  ["payment/*.css", "payment/", "payment"]
+];
 
 var jsBaseUrl = "static/js/";
-
 var jsFiles = [
   ["*.js", "", "abp"]//,
   //["payment/*/*.js", "payment/", "payment"],
   //["vendor/*.js", "vendor/", "vendor"]
-]
+];
+
+gulp.task('css', function(done){
+  cssFiles.map(function(file, index){
+    return gulp.src(cssBaseUrl + file[0])
+      .pipe(sourcemaps.init())
+      .pipe(concat(file[2] + '.css'))
+      .pipe(gulp.dest(cssBaseUrl + file[1]))
+      .pipe(csso())
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest(cssBaseUrl + file[1]));
+  })
+  done();
+});
 
 gulp.task('js', function(done){
   jsFiles.map(function(file, index){
@@ -44,29 +63,7 @@ gulp.task('js', function(done){
   done();
 });
 
-var cssBaseUrl = "static/css/";
-
-var cssFiles = [
-  // ["*.css", "", "abp"],
-  ["pages/*.css", "pages/", "pages"],
-  ["payment/*.css", "payment/", "payment"]
-]
-
-gulp.task('css', function(done){
-  cssFiles.map(function(file, index){
-    console.log(cssBaseUrl + file[0]);
-    return gulp.src(cssBaseUrl + file[0])
-      .pipe(sourcemaps.init())
-      .pipe(concat(file[2] + '.css'))
-      .pipe(gulp.dest(cssBaseUrl + file[1]))
-      .pipe(csso())
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(cssBaseUrl + file[1]));
-  })
-  done();
-});
-
-
+gulp.task('build', gulp.series('css', 'js'), function(){});
 
 // // ===================================
 // // styles.tmpl
