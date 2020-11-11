@@ -1,0 +1,58 @@
+---
+
+.staging:
+  variables: &staging
+    DOMAIN: "staging-new-adblockplus-org-1.uplink.eyeo.it"
+    STRIPE_PUBLISHABLE_KEY: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN"
+    DONATION_SERVER_BASE_URL: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
+
+.common:
+  tags:
+    - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/eyeo-python2.7-cms:latest"
+    - &BUILD_RUNNER "docker"
+    - &STAGING_RUNNER "eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it"
+
+stages:
+  - "build"
+  - "deploy_staging"
+
+staging_build:
+  stage:
+    "build"
+  except:
+    - "master"
+    - schedules
+  variables:
+    <<: *staging
+  image:
+    *BUILD_IMAGE
+  tags:
+    - *BUILD_RUNNER
+  before_script:
+    - pip install -q crudini
+  script:
+    - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
+    - python -m cms.bin.generate_static_pages $PWD build
+  artifacts:
+    name:
+      "$CI_COMMIT_REF_SLUG"
+    paths:
+      - "build"
+
+deploy_staging:
+  stage:
+    "deploy_staging"
+  except:
+    - "master"
+    - schedules
+  variables:
+    <<: *staging
+  tags:
+    - *STAGING_RUNNER
+  dependencies:
+    - "staging_build"
+  script:
+    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build/"
+  environment:
+    name: staging/$CI_COMMIT_REF_SLUG
+    url: http://$CI_COMMIT_REF_SLUG.$DOMAIN
