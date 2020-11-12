@@ -23,21 +23,16 @@ var sourcemaps = require('gulp-sourcemaps');
 var csso = require('gulp-csso');
 
 var cssBaseUrl = "static/css/";
-var cssFiles = [
-  // ["*.css", "", "abp"],
+var jsBaseUrl = "static/js/";
+
+var cssFolders = [
+  // file(s), destination, file name
   ["pages/*.css", "pages/", "pages"],
   ["payment/*.css", "payment/", "payment"]
 ];
 
-var jsBaseUrl = "static/js/";
-var jsFiles = [
-  ["*.js", "", "abp"]//,
-  //["payment/*/*.js", "payment/", "payment"],
-  //["vendor/*.js", "vendor/", "vendor"]
-];
-
-gulp.task('css', function(done){
-  cssFiles.map(function(file, index){
+gulp.task('css-folders', function(done){
+  cssFolders.map(function(file, index){
     return gulp.src(cssBaseUrl + file[0])
       .pipe(sourcemaps.init())
       .pipe(concat(file[2] + '.css'))
@@ -49,8 +44,29 @@ gulp.task('css', function(done){
   done();
 });
 
-gulp.task('js', function(done){
-  jsFiles.map(function(file, index){
+// Used in styles.tmpl
+gulp.task('base-styles', function(done){
+  return gulp.src([
+    'static/css/defaults.css',
+    'static/css/fonts.css',
+    'static/css/main.css',
+    'static/css/cookies.css'
+  ])
+    .pipe(sourcemaps.init())
+    .pipe(concat(cssBaseUrl + 'conc-styles.css'))
+    .pipe(csso())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('.'));
+  done();
+});
+
+var jsFolders = [
+  // ["payment/*/*.js", "payment/", "payment"],
+  // ["vendor/*.js", "vendor/", "vendor"]
+];
+
+gulp.task('js-folders', function(done){
+  jsFolders.map(function(file, index){
     return gulp.src(jsBaseUrl + file[0])
       .pipe(sourcemaps.init())
       .pipe(concat(file[2] + '.js'))
@@ -63,14 +79,14 @@ gulp.task('js', function(done){
   done();
 });
 
-gulp.task('build', gulp.series('css', 'js'), function(){});
+gulp.task('build', gulp.series(
+  'css-folders',
+  'js-folders',
+  'base-styles'
+), function(){});
 
 // // ===================================
-// // styles.tmpl
-// "/css/defaults.css"
-// "/css/fonts.css"
-// "/css/main.css"
-// "/css/cookies.css"
+
 //
 // // update/page
 // "/css/update.css"
