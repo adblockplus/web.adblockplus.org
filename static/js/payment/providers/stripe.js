@@ -1,4 +1,4 @@
-function initStripeProvider(publishableKey, formProcessor, dictionary) {
+function initStripeProvider(publishableKey, formProcessor, text) {
   'use strict';
 
   var donation = 'donation';
@@ -55,7 +55,13 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
   var paymentData;
 
   function paymentModalPopup(data) {
-    var box, button, cardStripeElement, email, error, token;
+    var box, button, cardStripeElement, email, error, token, priceText;
+
+    var localeOrderMap = {
+      'ko': orderKO,
+      'hr': orderHU,
+      'tr': orderTR
+    };
 
     paymentData = data;
 
@@ -84,7 +90,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                 'class="product details">Adblock Plus</div>' +
             '</div>' +
             '<div class="subtitle details">' +
-              dictionary.securelyProcessed + '</div>' +
+              text.securelyProcessed + '</div>' +
           '</div>' +
           '<hr style="margin: 0;">' +
           '<div class="payment-details">' +
@@ -97,7 +103,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                       '<div class="StripeElement">' +
                         '<input type="email" id="email" class="email" ' +
                           'size="26" spellcheck="false" ' +
-                          'placeholder="' + dictionary.emailAddress + '" ' +
+                          'placeholder="' + text.emailAddress + '" ' +
                           'autocomplete="email" autocorrect="no" ' +
                           'autocapitalize="no">' +
                       '</div>' +
@@ -137,30 +143,42 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         .addEventListener('click', hideModal);
     }
 
+    function defaultTextOrder() {
+      return (data.type == subscription)
+        ? text.subscribe + ' ' + priceText + ' / ' + text.month
+        : text.donate + ' ' + priceText;
+    }
+
+    function orderKO() {
+      return (data.type == subscription)
+        ? text.subscribe + ' ' + priceText + ' / ' + text.month
+        : priceText + ' ' + text.donate;
+    }
+
+    function orderHU() {
+      return (data.type == subscription)
+        ? priceText + ' ' + text.subscribe + ' ' + text.month
+        : text.donate + ' ' + priceText;
+    }
+
+    function orderTR() {
+      return (data.type == subscription)
+        ? text.month + ' ' + priceText + ' ' + text.subscribe
+        : priceText + ' ' + text.donate;
+    }
+
+    function localeTextOrder(locale) {
+      return localeOrderMap[locale]
+        ? localeOrderMap[locale]()
+        : defaultTextOrder();
+    }
+
     function payButtonText() {
-      var pageLocale = document.documentElement.lang;
+      priceText = (data.currencySign == '€')
+        ? data.amount + data.currencySign
+        : data.currencySign + data.amount;
 
-      var price = (data.currencySign == '€')
-          ? data.amount + data.currencySign
-          : data.currencySign + data.amount;
-
-      if (pageLocale == 'ko') {
-        button.textContent = (data.type == subscription)
-          ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
-          : (price + ' ' + dictionary.donate);
-      } else if (pageLocale == 'hu') {
-        button.textContent = (data.type == subscription)
-          ? (price + ' ' + dictionary.subscribe + ' ' + dictionary.month)
-          : (dictionary.donate + ' ' + price);
-      } else if (pageLocale == 'tr') {
-        button.textContent = (data.type == subscription)
-          ? (dictionary.month + ' ' + price + ' ' + dictionary.subscribe)
-          : (price + ' ' + dictionary.donate);
-      } else {
-        button.textContent = (data.type == subscription)
-          ? (dictionary.subscribe + ' ' + price + ' / ' + dictionary.month)
-          : (dictionary.donate + ' ' + price);
-      }
+      button.textContent = localeTextOrder(document.documentElement.lang);
     }
 
     function errorText(message) {
@@ -214,7 +232,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         setTimeout(function() {
           if (!token) {
             donationRequest.abort();
-            onDonationComplete({error: {message: dictionary.sorry}});
+            onDonationComplete({error: {message: text.sorry}});
           }
         }, donationTimeout);
       }
@@ -258,12 +276,12 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
                  stripePaymentConfirmed();
 
                } else if (this.status == 402) {
-                 errorText(dictionary.declined);
+                 errorText(text.declined);
 
                  enableButton();
 
                } else {
-                 errorText(dictionary.sorry);
+                 errorText(text.sorry);
                }
             }
           }
@@ -301,7 +319,7 @@ function initStripeProvider(publishableKey, formProcessor, dictionary) {
         brand == 'discover' ||
         brand == 'jcb' ||
         brand == 'unionpay') {
-          errorText(dictionary.notSupported);
+          errorText(text.notSupported);
       }
     }
 
