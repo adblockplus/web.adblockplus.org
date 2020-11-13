@@ -1,16 +1,18 @@
-(function(){
+(function() {
 
 var eyeo = window.eyeo || {};
 
+var docEl = document.documentElement;
+
 var URLParams = new URLSearchParams(location.search);
 
-var URLSubDirs = location.pathname.split("/");
+var URLSubDirs = location.pathname.split('/');
 
-var SID = URLParams.get("sid") || uuidv4();
+var SID = URLParams.get('sid') || uuidv4();
 
 var paymentConfig = {
   USD: {
-    sign: "$",
+    sign: '$',
     donation: {
       amounts: [10, 15, 20, 35, 50],
       placeholder: 35,
@@ -23,7 +25,7 @@ var paymentConfig = {
     }
   },
   EUR: {
-    sign: "€",
+    sign: '€',
     donation: {
       amounts: [10, 15, 20, 35, 50],
       placeholder: 35,
@@ -37,51 +39,45 @@ var paymentConfig = {
   }
 };
 
-function setupPaymentForm()
-{
+function setupPaymentForm() {
   if (window.paymentConfig)
     paymentConfig = window.paymentConfig;
 
   var form = new PaymentForm(paymentConfig);
 
-  function getPayment()
-  {
+  function getPayment() {
     var fromController = {
       custom: SID,
-      successURL: ""
-        + (document.documentElement
-            .getAttribute("data-siteurl") || "https://adblockplus.org")
-        + "/payment-complete"
+      successURL: (docEl.getAttribute('data-siteurl') ||
+        'https://adblockplus.org') + '/payment-complete'
     };
 
     return _.extend(form.toJSON(), fromController);
   }
 
-  function onPayPalProvider()
-  {
+  function onPayPalProvider() {
     var payment = getPayment();
 
     var cancelParams = new URLSearchParams({
-      pp: "paypal",
+      pp: 'paypal',
       sid: SID
     });
 
-    payment.cancelURL = ""
-      + location.origin 
-      + location.pathname 
-      + "?"
-      + cancelParams.toString();
+    payment.cancelURL = [
+      location.origin,
+      location.pathname,
+      '?',
+      cancelParams.toString()
+    ].join('');
 
     payment.item = paymentTranslations.item;
 
     paypalProvider.submit(payment);
   }
 
-  if (!eyeo.disablePayPal)
-    form.addProviderListener("paypal", onPayPalProvider);
+  eyeo.disablePayPal || form.addProviderListener('paypal', onPayPalProvider);
 
-  function onStripeSubmit()
-  {
+  function onStripeSubmit() {
     var payment = getPayment();
 
     payment.currencySign = paymentConfig[payment.currency.toUpperCase()].sign;
@@ -91,48 +87,50 @@ function setupPaymentForm()
 
   var stripeLoaded = false;
 
-  function onStripeProvider()
-  {
-    if (!stripeLoaded)
-    {
-      var button = document.querySelector(".stripe-button");
+  function onStripeProvider() {
+    if (!stripeLoaded) {
+      var script = document.createElement('script');
+      var button = document.querySelector('.stripe-button');
       var buttonContent = button.innerHTML;
+
       button.disabled = true;
-      button.innerHTML = "<div class='loader'>Loading...</div>";
-      var script = document.createElement("script");
+      button.innerHTML = '<div class="loader">Loading...</div>';
+
       script.onload = function() {
         stripeLoaded = true;
+
         onStripeSubmit();
+
         button.disabled = false;
         button.innerHTML = buttonContent;
       };
-      script.src = "https://js.stripe.com/v3/";
+
+      script.src = 'https://js.stripe.com/v3/';
+
       document.head.appendChild(script);
-    }
-    else
-    {
+
+    } else {
       onStripeSubmit();
     }
   }
 
-  if (!eyeo.disableStripe)
-    form.addProviderListener("stripe", onStripeProvider);
+  eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
 }
 
 var fromABP = {
-  an: URLParams.get("an"),
-  av: URLParams.get("av"),
-  ap: URLParams.get("ap"),
-  apv: URLParams.get("apv"),
-  p: URLParams.get("p"),
-  pv: URLParams.get("pv")
+  an: URLParams.get('an'),
+  av: URLParams.get('av'),
+  ap: URLParams.get('ap'),
+  apv: URLParams.get('apv'),
+  p: URLParams.get('p'),
+  pv: URLParams.get('pv')
 };
 
 var loadReport = {
   bn: bowser.name,
   bv: bowser.version,
   bp: URLSubDirs[URLSubDirs.length - 1],
-  bl: document.documentElement.lang,
+  bl: docEl.lang,
   cid: window.campaignID || 0,
   sid: SID
 };
@@ -140,19 +138,20 @@ var loadReport = {
 if (fromABP.an)
   loadReport = _.extend(loadReport, fromABP);
 
-function onLoadReportSuccess()
-{
-  if (document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', setupPaymentForm);
-  else
-    setupPaymentForm();
+function onLoadReportSuccess() {
+  (document.readyState == 'loading')
+    ? document.addEventListener('DOMContentLoaded', setupPaymentForm)
+    : setupPaymentForm();
 }
 
 var script = document.createElement('script');
+
 var params = new URLSearchParams(loadReport);
+
 script.onload = onLoadReportSuccess;
 script.onerror = onLoadReportSuccess;
-script.src = "/js/payment/config/load.js?" + params.toString();
+script.src = '/js/payment/config/load.js?' + params.toString();
+
 document.head.appendChild(script);
 
 }());
