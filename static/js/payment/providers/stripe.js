@@ -60,8 +60,8 @@ function initStripeProvider(publishableKey, formProcessor, text) {
     var donationTimeout = 4000;
 
     var localeOrderMap = {
-      ko: orderKO,
       hu: orderHU,
+      ko: orderKO,
       tr: orderTR
     };
 
@@ -144,26 +144,30 @@ function initStripeProvider(publishableKey, formProcessor, text) {
         .addEventListener('click', hideModal);
     }
 
+    function isSubscription() {
+      return (data.type == subscription);
+    }
+
     function defaultTextOrder() {
-      return (data.type == subscription)
+      return isSubscription()
         ? text.subscribe + ' ' + priceText + ' / ' + text.month
         : text.donate + ' ' + priceText;
     }
 
-    function orderKO() {
-      return (data.type == subscription)
-        ? text.subscribe + ' ' + priceText + ' / ' + text.month
-        : priceText + ' ' + text.donate;
-    }
-
     function orderHU() {
-      return (data.type == subscription)
+      return isSubscription()
         ? priceText + ' ' + text.subscribe + ' ' + text.month
         : text.donate + ' ' + priceText;
     }
 
+    function orderKO() {
+      return isSubscription()
+        ? text.subscribe + ' ' + priceText + ' / ' + text.month
+        : priceText + ' ' + text.donate;
+    }
+
     function orderTR() {
-      return (data.type == subscription)
+      return isSubscription()
         ? text.month + ' ' + priceText + ' ' + text.subscribe
         : priceText + ' ' + text.donate;
     }
