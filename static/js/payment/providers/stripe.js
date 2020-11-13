@@ -41,10 +41,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
   });
 
   function queryString(obj) {
-    return Object.keys(obj)
-      .map(function(key) {
-        return key + '=' + obj[key];
-      }).join('&');
+    return new URLSearchParams(obj);
   }
 
   function hideModal() {
@@ -320,12 +317,8 @@ function initStripeProvider(publishableKey, formProcessor, text) {
     }
 
     function cardBrand(brand) {
-      if (brand == 'diners' ||
-        brand == 'discover' ||
-        brand == 'jcb' ||
-        brand == 'unionpay') {
-          errorText(text.notSupported);
-      }
+      if (['diners', 'discover', 'jcb', 'unionpay'].indexOf(brand) != -1)
+        errorText(text.notSupported);
     }
 
     function createElements() {
@@ -349,7 +342,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
     }
 
     function stripePaymentConfirmed() {
-      var params = new URLSearchParams({
+      var params = queryString({
         pp: 'stripe',
         sid: data.custom
       });
