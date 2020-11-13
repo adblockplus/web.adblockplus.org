@@ -5,9 +5,9 @@ function initStripeProvider(publishableKey, formProcessor, text) {
   var subscription = 'subscription';
 
   var siteURL = document.documentElement
-    .getAttribute("data-siteurl") || "https://adblockplus.org";
+    .getAttribute('data-siteurl') || 'https://adblockplus.org';
 
-  var successURL = siteURL + "/payment-complete";
+  var successURL = siteURL + '/payment-complete';
 
   var style = {
     base: {
@@ -37,8 +37,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
 
     var key = keyupEvent.key || keyupEvent.keyCode;
 
-    ((key == 'Escape') || (key == 'Esc') || (key == 27)) &&
-      hideModal();
+    if (key == 'Escape' || key == 'Esc' || key == 27) hideModal();
   });
 
   function queryString(obj) {
@@ -55,12 +54,15 @@ function initStripeProvider(publishableKey, formProcessor, text) {
   var paymentData;
 
   function paymentModalPopup(data) {
-    var box, button, cardStripeElement, email, error, token, priceText;
+    var box, button, cardStripeElement, donationRequest, email, error,
+      priceText, token;
+
+    var donationTimeout = 4000;
 
     var localeOrderMap = {
-      'ko': orderKO,
-      'hr': orderHU,
-      'tr': orderTR
+      ko: orderKO,
+      hu: orderHU,
+      tr: orderTR
     };
 
     paymentData = data;
@@ -68,7 +70,6 @@ function initStripeProvider(publishableKey, formProcessor, text) {
     if (data.successURL) {
       successURL = data.successURL;
 
-      // don't submit successURL - client-side redirect
       delete data.successURL;
     }
 
@@ -137,7 +138,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
 
       payButtonText();
 
-      email && email.focus();
+      if (email) email.focus();
 
       modal.querySelector('.close')
         .addEventListener('click', hideModal);
@@ -189,9 +190,6 @@ function initStripeProvider(publishableKey, formProcessor, text) {
       button.disabled = false;
     }
 
-    var donationRequest;
-    var donationTimeout = 4000;
-
     function createDonation(onSuccess) {
       if (donationRequest) {
         donationRequest.abort();
@@ -207,9 +205,8 @@ function initStripeProvider(publishableKey, formProcessor, text) {
       donationRequest.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           token = this.responseText;
-          if (onSuccess) {
-            onSuccess();
-          }
+
+          if (onSuccess) onSuccess();
         }
       };
 
@@ -227,12 +224,15 @@ function initStripeProvider(publishableKey, formProcessor, text) {
           },
           receipt_email: email.value
         }).then(onDonationComplete);
+
       } else {
         createDonation(confirmDonation);
+
         setTimeout(function() {
           if (!token) {
             donationRequest.abort();
-            onDonationComplete({error: {message: text.sorry}});
+
+            onDonationComplete({ error: { message: text.sorry } });
           }
         }, donationTimeout);
       }
@@ -240,8 +240,8 @@ function initStripeProvider(publishableKey, formProcessor, text) {
 
     function onDonationComplete(result) {
       if (result.error) {
-        result.error.message &&
-          errorText(result.error.message);
+
+        if (result.error.message) errorText(result.error.message);
 
         enableButton();
 
@@ -272,6 +272,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
 
           request.onreadystatechange = function() {
             if (this.readyState == 4) {
+
                if (this.status == 200) {
                  stripePaymentConfirmed();
 
@@ -345,21 +346,18 @@ function initStripeProvider(publishableKey, formProcessor, text) {
 
     function stripePaymentConfirmed() {
       var params = new URLSearchParams({
-        pp: "stripe",
+        pp: 'stripe',
         sid: data.custom
       });
 
-      window.location.href = successURL
-        + "?"
-        + params.toString();
+      window.location.href = successURL + '?' + params.toString();
     }
 
     createModalForm();
 
     modal.classList.add('show-modal');
 
-    (data.type == donation) &&
-      createDonation();
+    if (data.type == donation) createDonation();
   }
 
   return {
