@@ -58,6 +58,7 @@ a.navbar-logo {
   background-repeat: no-repeat;
   user-select: none;
 }
+
 .icon.contribute-icon {
   margin-top: 0;
 }
@@ -79,7 +80,7 @@ a.navbar-logo {
   .column.in-control,
   .column.fair-use { width: 50%; }
 
-  h1:lang(fr) {font-size: 36px;}
+  [lang="fr"] h1 { font-size: 34px; }
 }
 
 @media (min-width: 992px) {
@@ -106,6 +107,13 @@ a.navbar-logo {
   .donate-to-abp {
     margin-top: 2em;
     width: 27%;
+  }
+}
+
+@media(max-width: 991px) {
+  .donate-to-abp,
+  .donation-form {
+    padding: 0;
   }
 }
 
@@ -202,6 +210,7 @@ h2.donation-heading { font-size: 1.2em; }
 .content a:visited { color: #0797e1; }
 
 .abb {
+  display: none;
   position: relative;
   height: 36em;
   background-image: url(/img/adblock-browser-phone.png);
@@ -209,8 +218,8 @@ h2.donation-heading { font-size: 1.2em; }
   background-position: right -13em top 19em;
   background-size: 512px;
 }
-.abb.hide-on-ms {display: none;}
-.footer.footer-ms {margin-top: 5em;}
+
+.footer { margin-top: 5em; }
 
 @media(min-width: 375px) {
   .abb {
