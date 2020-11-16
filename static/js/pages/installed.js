@@ -27,11 +27,3 @@ function smoothScrollTo(destination, duration) {
       smoothScrollTo(destination, (duration - SCROLL_TICK_LENGTH));
   }, SCROLL_TICK_LENGTH);
 }
-
-var abbSections = document.getElementsByClassName("abb");
-var footerFRP = document.getElementsByClassName("footer");
-
-if (abbSections.length > 0 && (bowser.msedge || bowser.msedge_chromium || bowser.msie)) {
-    abbSections[0].classList.add("hide-on-ms");
-    footerFRP[0].classList.add("footer-ms");
-}
