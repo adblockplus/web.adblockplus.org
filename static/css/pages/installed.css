@@ -209,6 +209,8 @@ h2.donation-heading { font-size: 1.2em; }
   background-position: right -13em top 19em;
   background-size: 512px;
 }
+.abb.hide-on-ms {display: none;}
+.footer.footer-ms {margin-top: 5em;}
 
 @media(min-width: 375px) {
   .abb {
