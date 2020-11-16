@@ -1,5 +1,5 @@
 body {
-  padding-top: 2em;
+  padding-top: 1em;
   background-color: #eee;
 }
 
@@ -58,6 +58,9 @@ a.navbar-logo {
   background-repeat: no-repeat;
   user-select: none;
 }
+.icon.contribute-icon {
+  margin-top: 0;
+}
 
 @media(min-width: 992px) {
   .icon {
@@ -75,6 +78,8 @@ a.navbar-logo {
 @media (min-width: 768px) {
   .column.in-control,
   .column.fair-use { width: 50%; }
+
+  h1:lang(fr) {font-size: 36px;}
 }
 
 @media (min-width: 992px) {
@@ -151,7 +156,8 @@ a.navbar-logo {
     right: 0;
     top: 1.5em;
     width: 2px;
-    height: 12em;
+    min-height: 12em;
+    height: 80%;
     background-color: #eee;
   }
 
@@ -175,7 +181,7 @@ h2.donation-heading { font-size: 1.2em; }
 
 .content h2.bg-black {
   display: inline;
-  font-size: 1em;
+  font-size: 1.25em;
   color: #fff;
   background-color: #000;
 }
