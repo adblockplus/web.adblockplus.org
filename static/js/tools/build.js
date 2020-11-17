@@ -10,10 +10,7 @@ const createBuildFolder = (dir) => {
 }
 
 const concatenateFiles = (code, file) => {
-  var out = code.map(function(code){
-		return fs.readFile(code, 'utf8');
-	});
-  fs.writeFile(file, out.join('\n'), 'utf8');
+
 }
 
 const buildCSS = {
@@ -55,8 +52,16 @@ const buildJs = (data) => {
   createBuildFolder('static/js/build/');
   console.log("_1_created build folder__");
 
-  concatenateFiles(jsFiles, concatenatedFile);
+  //concatenateFiles(jsFiles, concatenatedFile);
+  var out = jsFiles.map(function(jsFiles){
+    return fs.readFileSync(jsFiles, 'utf8');
+  });
+  fs.writeFileSync(concatenatedFile, out.join('\n'), 'utf8');
   console.log("_2_concatenated files__");
+
+
+
+
 
   const code = jsFiles.map(jsFiles => {
     return fs.readFileSync(jsFiles, 'utf8');
