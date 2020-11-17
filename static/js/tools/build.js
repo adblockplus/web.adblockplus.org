@@ -64,11 +64,11 @@ const buildJs = (data) => {
     }
   });
 
-  fs.writeFile(minifiedFile, result.code, () => {});
+  fs.writeFileSync(minifiedFile, result.code);
 
   console.log("_3_minified files__");
 
-  fs.writeFile(sourcemapFile, result.map, () => {});
+  fs.writeFileSync(sourcemapFile, result.map);
 
   console.log("_4_sourcemap files__");
 }
