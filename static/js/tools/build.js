@@ -52,7 +52,7 @@ const buildJs = (data) => {
   const sourcemapName = data.source_map.srcmap_name;
   const sourcemapFile = data.source_map.srcmap_file;
 
-  createBuildFolder('static/js/build');
+  createBuildFolder('static/js/build/');
 
   concatenateFiles(jsFiles, 'static/js/build/payment.js');
 
