@@ -54,7 +54,10 @@ const buildJs = (data) => {
 
   createBuildFolder('static/js/build/');
 
+  console.log("__dirname ---------------------");
   concatenateFiles(jsFiles, concatenatedFile);
+  console.log(__dirname);
+  console.log("__dirname ---------------------");
 
   const code = jsFiles.map(jsFiles => {
     return fs.readFileSync(jsFiles, 'utf8');
