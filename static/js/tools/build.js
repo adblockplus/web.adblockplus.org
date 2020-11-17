@@ -39,7 +39,7 @@ const buildJS = {
     'concatenated_file': 'static/js/build/payment.js',
     'minified_file': 'static/js/build/payment.min.js',
     'source_map': {
-      'srcmap_name': 'payment.min.js.map',
+      'srcmap_name': 'payment.js',
       'srcmap_file': 'static/js/build/payment.min.js.map'
     }
   }
@@ -54,10 +54,7 @@ const buildJs = (data) => {
 
   createBuildFolder('static/js/build/');
 
-  console.log("__dirname ---------------------");
   concatenateFiles(jsFiles, concatenatedFile);
-  console.log(__dirname);
-  console.log("__dirname ---------------------");
 
   const code = jsFiles.map(jsFiles => {
     return fs.readFileSync(jsFiles, 'utf8');
@@ -65,7 +62,7 @@ const buildJs = (data) => {
 
   const result = ujs.minify(code, {
     sourceMap: {
-      filename: sourcemapName,
+      filename: jsFiles,
       url: sourcemapName
     }
   });
