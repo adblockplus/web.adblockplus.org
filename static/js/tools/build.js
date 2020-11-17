@@ -53,8 +53,10 @@ const buildJs = (data) => {
   const sourcemapFile = data.source_map.srcmap_file;
 
   createBuildFolder('static/js/build/');
+  console.log("__created build folder__");
 
   concatenateFiles(jsFiles, concatenatedFile);
+  console.log("__concatenated files__");
 
   const code = jsFiles.map(jsFiles => {
     return fs.readFileSync(jsFiles, 'utf8');
@@ -68,8 +70,10 @@ const buildJs = (data) => {
   });
 
   fs.writeFile(minifiedFile, result.code, () => {});
+  console.log("__minified files__");
 
   fs.writeFile(sourcemapFile, result.map, () => {});
+  console.log("__sourcemap files__");
 }
 
 Object.keys(buildJS).forEach((key, index) => {
