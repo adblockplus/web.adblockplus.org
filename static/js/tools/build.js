@@ -11,9 +11,9 @@ const createBuildFolder = (dir) => {
 
 const concatenateFiles = (code, file) => {
   var out = code.map(function(code){
-		return fs.readFileSync(code, 'utf8');
+		return fs.readFile(code, 'utf8');
 	});
-  fs.writeFileSync(file, out.join('\n'), 'utf8');
+  fs.writeFile(file, out.join('\n'), 'utf8');
 }
 
 const buildCSS = {
