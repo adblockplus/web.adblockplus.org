@@ -1,16 +1,62 @@
 const fs = require('fs');
 const ujs = require("uglify-js");
+const csso = require("csso");
 
-const buildCSS = {
+const css_data = {
   'payment': {
     'css_files': [
       'static/css/payment/form.css',
       'static/css/payment/stripe-modal.css'
-    ]
+    ],
+    'concatenated_file': 'static/css/build/payment.css',
+    'minified_file': 'static/css/build/payment.min.css',
+    'source_map': {
+      'srcmap_name': 'payment.min.css.map',
+      'srcmap_file': 'static/css/build/payment.min.css.map'
+    }
   }
 }
 
-const buildJS = {
+const buildCSS = (data) => {
+  const cssFiles = data.css_files;
+  const concatenatedFile = data.concatenated_file;
+  const minifiedFile = data.minified_file;
+  const sourcemapName = data.source_map.srcmap_name;
+  const sourcemapFile = data.source_map.srcmap_file;
+
+  const allFilesData = cssFiles.map(cssFiles => {
+    return fs.readFileSync(cssFiles, 'utf8');
+  });
+
+  fs.mkdir('static/css/build/', { recursive: true }, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+
+  fs.writeFileSync(concatenatedFile, allFilesData.join('\n'), 'utf8');
+
+  var result = csso.minify(allFilesData.join('\n'), {
+    filename: cssFiles,
+    sourceMap: true
+  });
+
+  fs.writeFileSync(minifiedFile, result.css);
+
+  fs.writeFileSync(sourcemapFile, result.map);
+
+}
+
+Object.keys(css_data).forEach((key, index) => {
+  buildCSS(css_data[key]);
+});
+
+
+
+
+
+
+const js_data = {
   'payment': {
     'js_files': [
       'static/js/vendor/url-search-params.min.js',
@@ -37,7 +83,7 @@ const buildJs = (data) => {
   const sourcemapName = data.source_map.srcmap_name;
   const sourcemapFile = data.source_map.srcmap_file;
 
-  var allFilesData = jsFiles.map(jsFiles => {
+  const allFilesData = jsFiles.map(jsFiles => {
     return fs.readFileSync(jsFiles, 'utf8');
   });
 
@@ -47,11 +93,7 @@ const buildJs = (data) => {
     }
   });
 
-  console.log("_1_created build folder__");
-
   fs.writeFileSync(concatenatedFile, allFilesData.join('\n'), 'utf8');
-
-  console.log("_2_concatenated files__");
 
   const result = ujs.minify(allFilesData, {
     sourceMap: {
@@ -62,15 +104,12 @@ const buildJs = (data) => {
 
   fs.writeFileSync(minifiedFile, result.code);
 
-  console.log("_3_minified files__");
-
   fs.writeFileSync(sourcemapFile, result.map);
 
-  console.log("_4_sourcemap files__");
 }
 
-Object.keys(buildJS).forEach((key, index) => {
-  buildJs(buildJS[key]);
+Object.keys(js_data).forEach((key, index) => {
+  buildJs(js_data[key]);
 });
 
 
