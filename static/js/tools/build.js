@@ -9,10 +9,6 @@ const createBuildFolder = (dir) => {
   });
 }
 
-const concatenateFiles = (code, file) => {
-
-}
-
 const buildCSS = {
   'payment': {
     'css_files': [
@@ -49,25 +45,19 @@ const buildJs = (data) => {
   const sourcemapName = data.source_map.srcmap_name;
   const sourcemapFile = data.source_map.srcmap_file;
 
+  var allFilesData = jsFiles.map(jsFiles => {
+    return fs.readFileSync(jsFiles, 'utf8');
+  });
+
   createBuildFolder('static/js/build/');
+
   console.log("_1_created build folder__");
 
-  //concatenateFiles(jsFiles, concatenatedFile);
-  var out = jsFiles.map(function(jsFiles){
-    return fs.readFileSync(jsFiles, 'utf8');
-  });
-  fs.writeFileSync(concatenatedFile, out.join('\n'), 'utf8');
+  fs.writeFileSync(concatenatedFile, allFilesData.join('\n'), 'utf8');
+
   console.log("_2_concatenated files__");
 
-
-
-
-
-  const code = jsFiles.map(jsFiles => {
-    return fs.readFileSync(jsFiles, 'utf8');
-  });
-
-  const result = ujs.minify(code, {
+  const result = ujs.minify(allFilesData, {
     sourceMap: {
       filename: jsFiles,
       url: sourcemapName
@@ -75,9 +65,11 @@ const buildJs = (data) => {
   });
 
   fs.writeFile(minifiedFile, result.code, () => {});
+
   console.log("_3_minified files__");
 
   fs.writeFile(sourcemapFile, result.map, () => {});
+
   console.log("_4_sourcemap files__");
 }
 
