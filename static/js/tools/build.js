@@ -1,14 +1,6 @@
 const fs = require('fs');
 const ujs = require("uglify-js");
 
-const createBuildFolder = (dir) => {
-  fs.mkdir(dir, { recursive: true }, (err) => {
-    if (err) {
-      throw err;
-    }
-  });
-}
-
 const buildCSS = {
   'payment': {
     'css_files': [
@@ -49,7 +41,11 @@ const buildJs = (data) => {
     return fs.readFileSync(jsFiles, 'utf8');
   });
 
-  createBuildFolder('static/js/build/');
+  fs.mkdir('static/js/build/', { recursive: true }, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
 
   console.log("_1_created build folder__");
 
