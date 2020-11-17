@@ -10,6 +10,7 @@ const createBuildFolder = (dir) => {
 }
 
 const concatenateFiles = (code, file) => {
+  console.log(__dirname);
   var out = code.map(function(code){
 		return fs.readFileSync(code, 'utf8');
 	});
@@ -53,7 +54,7 @@ const buildJs = (data) => {
   const sourcemapFile = data.source_map.srcmap_file;
 
   createBuildFolder('static/js/build/');
-
+  console.log("((((((((((((((((((((((()))))))))))))))))))))))");
   concatenateFiles(jsFiles, concatenatedFile);
   // NODE IN STAGING COMPLAINS HERE ^
 
