@@ -54,7 +54,8 @@ const buildJs = (data) => {
 
   createBuildFolder('static/js/build/');
 
-  //concatenateFiles(jsFiles, 'static/js/build/payment.js');
+  concatenateFiles(jsFiles, concatenatedFile);
+  // NODE IN STAGING COMPLAINS HERE ^
 
   const code = jsFiles.map(jsFiles => {
     return fs.readFileSync(jsFiles, 'utf8');
