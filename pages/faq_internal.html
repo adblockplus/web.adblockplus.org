@@ -1,23 +1,36 @@
 title=FAQ - Adblock Plus internals
 
 <head>
-<script type="text/javascript">
-  if (location.hash == "#checksum" || location.hash == "#subscription_redirect" || location.hash == "#subscription_update")
-    window.location.href = "/en/filters#special-comments";
-</script>
+  <link rel="index" href="faq">
 </head>
-<h2 id="preferences">{{s1 Where do I find the meaning of all Adblock Plus preferences?}}</h2>
 
-        <p>{{s3 Adblock Plus uses a number of preferences that are accessible via <a href="{{s3-link http://kb.mozillazine.org/About:config}}">about:config</a>. All of them start with <code><fix>extensions.adblockplus.</fix></code> (this is different from Adblock and Adblock Plus 0.5 that use the prefix <code><fix>adblock.</fix></code>). A full list with explanations can be found <a href="preferences">here</a>.}}</p>
+<main itemscope itemtype="https://schema.org/FAQPage">
 
-        <h2 id="policies">{{s6 How does Adblock Plus block addresses?}}</h2>
+  <article itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h2 id="preferences" itemprop="name">{{s1 Where do I find the meaning of all Adblock Plus preferences?}}</h2>
 
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">{{s3 Adblock Plus uses a number of preferences that are accessible via <a href="{{s3-link http://kb.mozillazine.org/About:config}}">about:config</a>. All of them start with <code><fix>extensions.adblockplus.</fix></code> (this is different from Adblock and Adblock Plus 0.5 that use the prefix <code><fix>adblock.</fix></code>). A full list with explanations can be found <a href="preferences">here</a>.}}</p>
+    </div>
+  </article>
+
+  <article itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h2 id="policies" itemprop="name">{{s6 How does Adblock Plus block addresses?}}</h2>
+
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
         <p>{{s7 The hard work here is actually done by Gecko, the engine on top of which Firefox, Thunderbird and other applications are built. It allows something called "content policies". A content policy is simply a JavaScript (or C++) object that gets called whenever the browser needs to load something. It can then look at the address that should be loaded and some other data and decide whether it should be allowed. There is a number of built-in content policies (when you define which sites shouldn't be allowed to load images in Firefox or SeaMonkey, you are actually configuring one of these built-in content policies) and any extension can register one. So all that Adblock Plus has to do is to register its content policy, other than that there is only application logic to decide which addresses to block and user interface code to allow configuration of filters.}}</p>
 
         <p>{{s11 For developers: to register a content policy you have to <a href="{{s11-link http://developer.mozilla.org/en/docs/How_to_Build_an_XPCOM_Component_in_Javascript}}">write an XPCOM component</a> that should implement the <a href="{{s11-link2 http://www.xulplanet.com/references/xpcomref/ifaces/nsIContentPolicy.html}}">nsIContentPolicy interface</a>. Make sure to adjust the module's registerSelf method to register your component in the "content-policy" category (use the <a href="{{s11-link3 http://www.xulplanet.com/references/xpcomref/ifaces/nsICategoryManager.html}}">category manager</a> for this). That's it, now your component's shouldLoad method will be called and you can decide whether the specific request should be accepted or not.}}</p>
+      </div>
+    </div>
+  </article>
 
-        <h2 id="filters">{{s12 How does Adblock Plus process its filters and which filters are faster?}}</h2>
+  <article itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h2 id="filters" itemprop="name">{{s12 How does Adblock Plus process its filters and which filters are faster?}}</h2>
 
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
         <p>{{s13 All filters a translated into <a href="filters#regexps">regular expressions</a> internally, even the ones that haven't been specified as such. For example, the filter <code>ad*banner.gif|</code> will be translated into the regular expression <code>/ad.*banner\.gif$/</code>. However, when Adblock Plus is given an address that should be checked against all filters it doesn't simply test all filters one after another — that would slow down the browsing unnecessarily.}}</p>
 
         <p>{{s14 Besides of translating filters into regular expressions Adblock Plus also tries to extract text information from them. What it needs is a unique string of eight characters (a "shortcut") that must be present in every address matched by the filter (the length is arbitrary, eight just seems reasonable here). For example, if you have a filter <code>|http://ad.*</code> then Adblock Plus has the choice between "http://a", "ttp://ad" and "tp://ad.", any of these strings will always be present in whatever this filter will match. Unfortunately finding a shortcut for filters that simply don't have eight characters unbroken by wildcards or for filters that have been specified as regular expressions is impossible.}}</p>
@@ -27,9 +40,15 @@ title=FAQ - Adblock Plus internals
         <p>{{s16 To sum up: which filters should be used to make a filter list fast? You should use as few regular expressions as possible, those are always slow. You also should make sure that simple filters have at least eight characters of unbroken text (meaning that these don't contain any characters with a special meaning like *), otherwise they will be just as slow as regular expressions. But with filters that qualify it doesn't matter how many filters you have, the processing time is always the same. That means that if you need 20 simple filters to replace one regular expression then it is still worth it. Speaking of which — the <a href="deregifier">deregifier</a> is very recommendable.}}</p>
 
         <p><a href="/blog/investigating-filter-matching-algorithms">{{s17 The filter matching algorithm in detail}}</a></p>
+      </div>
+    </div>
+  </article>
 
-        <h2 id="elemhide">{{s18 How does element hiding work?}}</h2>
+  <article itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h2 id="elemhide" itemprop="name">{{s18 How does element hiding work?}}</h2>
 
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
         <p>{{s20 Element hiding rules are translated into <a href="{{s20-link http://www.w3.org/TR/CSS21/}}">CSS</a> and applied to all web pages the user is visiting. A rule like <code>example.com#div(evil_ad)</code> then looks like:}}</p>
 
         <pre>
@@ -58,8 +77,15 @@ title=FAQ - Adblock Plus internals
 
         <p>{{s26 For developers: Adblock Plus is using the <a href="{{s26-link https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIStyleSheetService}}">stylesheet service</a> here. This interface came with Gecko 1.8 and allows extensions to add user stylesheets dynamically (before that you could only modify userContent.css which requires you to restart the browser). User stylesheets will overwrite CSS code of all web sites, they have the highest possible <a href="{{s26-link2 http://www.w3.org/TR/CSS21/cascade.html#cascading-order}}">importance</a>.}}</p>
 
-        <h2 id="filtersfile">{{s27 What can the first line of a filters file look like?}}</h2>
+      </div>
+    </div>
+  </article>
 
+  <article itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h2 id="filtersfile" itemprop="name">{{s27 What can the first line of a filters file look like?}}</h2>
+
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
         <p>{{s28 Usually the first line of a filters file is simply <code>[Adblock]</code>. However, you might have noticed that recent versions of Adblock Plus sometimes put a different text instead. This is done when you have filters in your list that use advanced filter syntax only supported by newer versions of Adblock Plus but not original Adblock. One example would be:}}</p>
 
         <pre>
@@ -75,3 +101,13 @@ title=FAQ - Adblock Plus internals
         <p>{{s30 This type of header is supported starting with Adblock Plus 0.7.1. Older Adblock Plus versions and Adblock cannot open files starting with this header. As to the current versions, they will check the version number in the header and compare it with their own version number. If the file happens to require a newer Adblock Plus, the user will be given a message on import asking him to upgrade. Subscriptions will still load files meant for newer Adblock Plus versions but display a warning in the preferences dialog.}}</p>
 
         <p>{{s31 Finally, if you want to require Adblock Plus but don't want to specify the version number you can start the file with <code>[Adblock Plus]</code>. Of course this file will only be accepted by Adblock Plus 0.7.1 or higher again.}}</p>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<script>
+  if (location.hash == "#checksum" || location.hash == "#subscription_redirect" || location.hash == "#subscription_update")
+    window.location.href = "/en/filters#special-comments";
+</script>
