@@ -210,7 +210,6 @@ h2.donation-heading { font-size: 1.2em; }
 .content a:visited { color: #0797e1; }
 
 .abb {
-  display: none;
   position: relative;
   height: 36em;
   background-image: url(/img/adblock-browser-phone.png);
@@ -219,7 +218,10 @@ h2.donation-heading { font-size: 1.2em; }
   background-size: 512px;
 }
 
-.footer { margin-top: 5em; }
+/* used for IE/Edge/Edge-chromium UAs */
+.hide-abb-section .abb { display: none; }
+
+.hide-abb-section .footer { margin-top: 5em; }
 
 @media(min-width: 375px) {
   .abb {
@@ -433,12 +435,15 @@ h2.donation-heading { font-size: 1.2em; }
 {
   display: block;
   width: 100%;
+  min-height: 34px;
   margin-top: 1rem;
   line-height: 32px;
   text-align: center;
   border: 0;
   border-radius: 3.5px;
   box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.2);
+  outline: none;
+  user-select: none;
 }
 
 .payment-providers button[disabled] { background-color: #bcbcbc; }
