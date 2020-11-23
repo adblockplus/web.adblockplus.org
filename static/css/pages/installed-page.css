@@ -53,28 +53,13 @@ a.navbar-logo {
   display: block;
   margin-top: 2em;
   margin-bottom: 1em;
-  width: 2em;
-  height: 2em;
   background-repeat: no-repeat;
   user-select: none;
 }
 
-.icon.contribute-icon {
-  margin-top: 0;
-}
+.icon.contribute-icon { margin-top: 0; }
 
-@media(min-width: 992px) {
-  .icon {
-    width: 1.5em;
-    height: 1.5em;
-  }
-}
-
-.success .icon {
-  margin-bottom: -1em;
-  width: 40px;
-  height: 40px;
-}
+.success .icon { margin-bottom: -1em; }
 
 @media (min-width: 768px) {
   .column.in-control,

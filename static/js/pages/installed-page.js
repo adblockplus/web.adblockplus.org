@@ -1,3 +1,5 @@
+'use strict';
+
 /*!
  * Bowser - a browser detector
  * https://github.com/ded/bowser
@@ -599,8 +601,6 @@
 
   return bowser
 });
-
-'use strict';
 
 var SCROLL_TICK_LENGTH = 10;
 var SCROLL_TIME = 500;
