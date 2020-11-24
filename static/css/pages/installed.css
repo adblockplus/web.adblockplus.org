@@ -11,15 +11,12 @@ a.navbar-logo {
 
 [dir="rtl"] .navbar-logo { float: right; }
 
-.navbar-logo img {
-  height: 4em;
-  width: 3em;
-  padding: 0.5em 0;
+.navbar-logo > svg {
   margin: 0 0.5em 0 0;
   vertical-align: middle;
 }
 
-[dir="rtl"] .navbar-logo > img { margin: 0 0 0 1em; }
+[dir="rtl"] .navbar-logo > svg { margin: 0 0 0 1em; }
 
 .navbar-logo > span {
   vertical-align: middle;
