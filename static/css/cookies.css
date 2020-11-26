@@ -46,7 +46,7 @@
   border: 0;
 }
 
-.cookies-close img { height: 0.7em; }
+.cookies-close svg { height: 0.7em; }
 
 [dir="ltr"] .cookies-close { float: right; }
 
@@ -172,9 +172,9 @@
   align-items: flex-start;
 }
 
-[dir="ltr"] .cookiebar-text img { margin-right: 1.5em; }
+[dir="ltr"] .cookiebar-text svg { margin-right: 1.5em; }
 
-[dir="rtl"] .cookiebar-text img { margin-left: 1.5em; }
+[dir="rtl"] .cookiebar-text svg { margin-left: 1.5em; }
 
 .cookiebar-text span { flex: 1; }
 
@@ -219,7 +219,7 @@
   }
 }
 
-.cookiebar .cookies-settings img
+.cookiebar .cookies-settings svg
 {
   display: inline-block;
   height: 1em;
