@@ -60,7 +60,8 @@ lint:
   script:
     - npm init -y
     - npm install eslint eslint-config-eyeo --save-dev
-    - ./node_modules/.bin/eslint static/js || true
+    - ./node_modules/.bin/eslint static/js
+  when: manual
 
 staging_build:
   stage:
