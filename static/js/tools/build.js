@@ -133,8 +133,53 @@ const buildJs = (data) => {
 
 }
 
-Object.keys(css_data).forEach((key, index) =>
-  buildCSS(css_data[key]));
+// Object.keys(css_data).forEach((key, index) =>
+//   buildCSS(css_data[key]));
+//
+// Object.keys(js_data).forEach((key, index) =>
+//   buildJs(js_data[key]));
 
-Object.keys(js_data).forEach((key, index) =>
-  buildJs(js_data[key]));
+
+
+
+const htmlFiles = {
+  'donation_form': {
+    'files': [
+      'includes/payment/form.html'
+    ],
+    'strings': [
+      '<script src="/js/payment/FAKE_payment-form.min.js"></script>',
+      '<script src="/js/payment/payment-form.min.js"></script>'
+    ],
+    'new_strings': [
+      'HELLO',
+    ],
+    'new_file': 'includes/payment/__NEW__form.html'
+  }
+}
+
+const substituteResourceLink = (d) => {
+  const files = d.files;
+  const strings = d.strings;
+  const newStrings = d.new_strings;
+  const newFile = d.new_file;
+  const htmlEscaper = /[&<>\.="'\/]/g;
+
+  const escapeHTML = (string) =>
+    ('' + string).replace(htmlEscaper, (match) => "\\" + match );
+
+  fs.readFile(files[0], 'utf8' , (err, data) => {
+    if (err) {
+      console.error(err)
+      return
+    }
+    if(data.includes(strings[1])) {
+      const dt = new RegExp(escapeHTML(strings[1]), "g");
+      fs.writeFileSync(newFile, data.replace(dt, newStrings[0]));
+    } else {
+      console.error('string not found')
+    }
+  })
+}
+
+substituteResourceLink(htmlFiles.donation_form);
