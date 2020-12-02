@@ -5,7 +5,7 @@
     "name":"Chrome",
     "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
     "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>",
-    "CTA":"Get Adblock Plus for Chrome"
+    "cta":"Get Adblock Plus for Chrome"
   },
   {
     "id":"firefox",
@@ -13,21 +13,21 @@
     "name":"Firefox",
     "url":"https://eyeo.to/adblockplus/firefox_install/",
     "rating":"<span>4.6</span> stars on <strong>Mozilla Add-ons</strong>",
-    "CTA":"Get Adblock Plus for Firefox"
+    "cta":"Get Adblock Plus for Firefox"
   },
   {
     "id":"msie",
     "class":"abp-msie",
     "name":"Internet Explorer",
     "url":"https://eyeo.to/adblockplus/ie_install/",
-    "CTA":"Agree and install for Internet Explorer"
+    "cta":"Agree and install for Internet Explorer"
   },
   {
     "id":"safari",
     "class":"abp-safari",
     "name":"Safari",
     "url":"https://eyeo.to/adblockplus/macos_safari_install/",
-    "CTA":"Agree and install for Safari"
+    "cta":"Agree and install for Safari"
   },
   {
     "id":"msedge",
@@ -35,7 +35,7 @@
     "name":"Microsoft Edge",
     "url":"https://eyeo.to/adblockplus/edge_install/",
     "rating":"<span>4.6</span> stars on <strong>Microsoft Edge Add-ons</strong>",
-    "CTA":"Get Adblock Plus for Microsoft Edge"
+    "cta":"Get Adblock Plus for Microsoft Edge"
   },
   {
     "id":"opera",
@@ -43,7 +43,7 @@
     "name":"Opera",
     "url":"https://eyeo.to/adblockplus/opera_install/",
     "rating":"<span>4.3</span> stars on <strong>Opera Add-ons</strong>",
-    "CTA":"Get Adblock Plus for Opera"
+    "cta":"Get Adblock Plus for Opera"
   },
   {
     "id":"yandexbrowser",
@@ -51,7 +51,7 @@
     "name":"Yandex Browser",
     "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
     "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>",
-    "CTA":"Get Adblock Plus for Yandex Browser"
+    "cta":"Get Adblock Plus for Yandex Browser"
   }
 ] %}
 
@@ -90,7 +90,7 @@
             data-install-suffix="index"
             class="install-button button download-button"
             href="{{ brws.url }}">
-            {{ brws.CTA | translate(brws.id + "-CTA", "Paragraph")}}
+            {{ brws.cta | translate(brws.id + "-cta", "Paragraph")}}
           </a>
           <p class="tou-note">
             <small>{{ "By clicking the link above, you agree to our <a href=\"terms\">Terms of Use</a>." | translate("download-desktop-tou-note", "Paragraph") }}</small></p>
