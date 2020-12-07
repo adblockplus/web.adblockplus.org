@@ -1,10 +1,10 @@
 
-{%- macro process_subscription(subscription, parent=None) %}
+{%- macro process_subscription(subscriptionName, subscription, parent=None) %}
   <li>
     <article class="subscription {% if subscription["deprecated"] %}deprecated{% endif %}">
       <div class="subscription-content">
         <div class="subscription-summary">
-          <h1>{{ subscription["name"] }}</h1>
+          <h1>{{ subscriptionName }}</h1>
           <p>
             {{ "Specialization"|translate("specialization") }}:
             {{ subscription["specialization"] }}
@@ -61,17 +61,18 @@
     </article>
     {%- if subscription["supplemented"] -%}
     <ul class="supplemented-subscriptions-list">
-    {%- for supplement in subscription["supplemented"]|subscription_sort -%}
-      {{ process_subscription(supplement, subscription) }}
+    {%- for supplement in subscription["supplemented"] -%}
+      {{ process_subscription(supplement, subscriptions[supplement],subscription) }}
     {%- endfor -%}
     </ul>
     {%- endif -%}
   </li>
 {%- endmacro %}
 
-{% macro display_subscriptions(subscriptions) %}
+{% macro display_subscriptions() %}
   {%- set subscription_types = [] -%}
-  {%- for subscription in subscriptions|subscription_sort if not subscription["type"] in ("cookies", "anti-adblock") -%}
+  {%- for subscriptionName in subscriptions.order if not subscriptions[subscriptionName]["type"] in ("cookies", "anti-adblock") -%}
+    {%- set subscription = subscriptions[subscriptionName] -%}
     {%- if not (subscription["supplements"] and current_type == subscription["type"]) -%}
       {%- set current_type = subscription_types[-1] if subscription_types else '' -%}
       {%- if current_type != subscription["type"] -%}
@@ -86,7 +87,7 @@
       {%- endif -%}
     {%- endif -%}
     {%- if subscription["type"] not in subscription["supplementsType"] -%}
-      {{ process_subscription(subscription) }}
+      {{ process_subscription(subscriptionName, subscription) }}
     {%- endif -%}
   {%- endfor %}
   </ul>
