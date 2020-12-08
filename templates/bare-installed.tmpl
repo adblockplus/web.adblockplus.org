@@ -2,10 +2,8 @@
 <html <? include html-attributes ?>>
   <head>
     <? include meta/standard ?>
-    <? include meta/social ?>
     <? include fonts/inline ?>
     <? include styles-without-fonts ?>
-    <? include anti-flicker ?>
     <? include config ?>
 
     {% block head %}
@@ -17,7 +15,5 @@
     {% block body %}
       {{ body | safe }}
     {% endblock %}
-
-    <? include cookie/index ?>
   </body>
 </html>
