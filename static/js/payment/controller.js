@@ -152,6 +152,9 @@ script.onload = onLoadReportSuccess;
 script.onerror = onLoadReportSuccess;
 script.src = '/js/payment/config/load.js?' + params.toString();
 
-document.head.appendChild(script);
+window.addEventListener("load", function()
+{
+  document.head.appendChild(script);
+});
 
 }());
