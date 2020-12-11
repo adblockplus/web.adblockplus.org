@@ -49,9 +49,11 @@ const html_data = {
     ],
     'strings': [
       '<link href="/css/topics.css" rel="stylesheet">',
+      '<link href="/css/topics-desktop.css" media="(min-width: 1000px)" rel="stylesheet">',
+      '<link href="/css/topics-mobile.css" media="(max-width: 1000px)" rel="stylesheet">',
       '<link href="/css/contribute.css" rel="stylesheet">'
     ],
-    'new_string': '<link href="/css/XXXXXXXXXXXXXXXXXXXcontribute.min.css" rel="stylesheet">',
+    'new_string': '<link href="/css/contribute.min.css" rel="stylesheet">',
     'new_file': 'static/build/__NEW__contribute.tmpl'
   }
 }
@@ -198,7 +200,7 @@ const buildHTML = (d) => {
   const newFile = d.new_file;
 
   const escapeHTML = (string) =>
-    ('' + string).replace(/\(\)[&<>\.="'\/]/g, (match) =>
+    ('' + string).replace(/[&<>\.\(\)="'\/]/g, (match) =>
       "\\" + match );
 
   console.log("HTML__ : " + d.files);
@@ -209,31 +211,62 @@ const buildHTML = (d) => {
       return
     }
 
+    function removeStr(string, from, to) {
+      return string.substring(0, from) + string.substring(to);
+    }
+
     strings.forEach((item, i) => {
-
       if(data.includes(item)) {
-        console.log("______ : " + new RegExp(escapeHTML(item), "g"));
-
-        data = data.replace(
-          new RegExp(escapeHTML(item), "g"), newString);
-
+        if (i < strings.length - 1)
+          data = data.replace(strings[i] + '\n', '');
+        else
+          data = data.replace(strings[i], newString);
       } else {
-        console.error('______ : ERR string not found in ' + files)
-      }
-
-    });
-
-    let newData = data.split('\n');
-
-    newData.forEach((item, i) => {
-      if (item.trim() === newString) {
-        console.log(i, item.trim());
-        console.log('REMOVE =========================  '+newString);
-        newData.splice(i, 1);
+        console.error('______ : ERR string not found in ' + strings)
       }
     });
 
 
+    // strings.forEach((item, i) => {
+    //   console.log(data.indexOf(item));
+    //
+    //   if(data.includes(item)) {
+    //     // console.log('data ' + data.length +
+    //     //             ' start ' + data.indexOf(item) +
+    //     //             ' string end ' + (data.length - item.length) );
+    //     //
+    //     data = data.substring(0, data.indexOf(item)) + newString + '\n' +
+    //            data.substring((data.indexOf(item) + item.length), data.length)
+    //            .trim();
+    //
+    //     // console.log(
+    //     //   'removal:   '+
+    //     //   data.substring(, data.search(item)) + 30
+    //     // );
+    //
+    //     // data = data.replace(
+    //     //   new RegExp(escapeHTML(item), "g"), newString);
+    //
+    //
+    //   } else {
+    //     console.error('______ : ERR string not found in ' + files)
+    //   }
+    //
+    // });
+
+
+    //
+    // let newData = data.split('\n');
+    //
+    // newData.forEach((item, i) => {
+    //   if (item.trim() === newString) {
+    //     newData.splice(i, 1);
+    //     console.log(i, item.trim());
+    //     console.log('   ' + newString + ' =========================  REMOVE');
+    //   }
+    // });
+    //
+    // fs.writeFileSync(newFile, newData.join('\n'));
     fs.writeFileSync(newFile, data);
     console.log("______ : " + newFile);
 
