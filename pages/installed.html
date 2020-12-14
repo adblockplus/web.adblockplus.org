@@ -84,32 +84,15 @@ template=bare-installed
   </div>
 </main>
 
-<aside class="abb">
-  <div class="container">
-    <div class="row">
-      <section class="content column one-half abb-app">
-        <h2 class="uppercase">{{ abb-heading Adblock browser app }}</h2>
-        <p>{{ abb-available From the team behind Adblock Plus, the most popular ad blocker for desktop browsers, Adblock Browser is now available for your Android devices. }}</p>
-        <p>
-          <? include install-button-android ?>
-        </p>
-      </section>
-    </div>
-  </div>
-</aside>
-
 <footer class="footer">
-  <svg viewBox="0 0 1 1" preserveAspectRatio="none" class="wedge hidden" role="img">
-    <path d="M1 1 L0 1 L1 0z"></path>
-  </svg>
 
-  <div class="container">
-    <div class="row reverse">
-      <p class="content column one-third">
-        <small class="footer-content"><a href="privacy">{{ privacy-policy Privacy Policy }}</a></small>
+  <div class="container mt2">
+    <div class="content">
+      <p class="privacy-policy">
+        <a href="privacy">{{ privacy-policy Privacy Policy }}</a>
       </p>
-      <p class="content column two-thirds">
-        <small class="footer-content">{{ copyright-notice Copyright © 2020 All rights reserved. Adblock Plus<sup>®</sup> is a registered trademark of <a href="https://eyeo.com">eyeo GmbH</a>. }}</small>
+      <p class="copyright">
+        {{ copyright-notice Copyright © 2020 All rights reserved. Adblock Plus<sup>®</sup> is a registered trademark of <a href="https://eyeo.com">eyeo GmbH</a>. }}
       </p>
     </div>
   </div>
