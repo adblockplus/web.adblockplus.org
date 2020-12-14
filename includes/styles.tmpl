@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="/css/base-styles.min.css">
+{% if page != "download" %}
+  <link rel="stylesheet" href="/css/base-styles.min.css">
+{% endif %}
 
 {% if style %}
   <link rel="stylesheet" href="/css/{{ style }}">

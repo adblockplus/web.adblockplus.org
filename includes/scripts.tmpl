@@ -1,3 +1,7 @@
-{% if not nonavbar %}
+{% if not nonavbar and page != "download" %}
   <script src="/js/main.js"></script>
+{% endif %}
+
+{% if page == "download" %}
+  <script src="/build/js/download-page.min.js"></script>
 {% endif %}

@@ -29,32 +29,6 @@ const html_data = {
     ],
     'new_string': '<script src="/build/js/download-page.min.js"></script>',
     'new_file': 'static/build/__NEW__download.tmpl'
-  },
-  // pages/uninstalled.html
-  'uninstalled': {
-    'files': [
-      'pages/uninstalled.tmpl'
-    ],
-    'strings': [
-      '<link href="/css/uninstalled.css" rel="stylesheet">',
-      '<link href="/css/survey-form.css" rel="stylesheet">'
-    ],
-    'new_string': '<link href="/css/uninstalled.min.css" rel="stylesheet">',
-    'new_file': 'static/build/__NEW__uninstalled.tmpl'
-  },
-  // pages/pages/contribute.html
-  'contribute': {
-    'files': [
-      'pages/contribute.html'
-    ],
-    'strings': [
-      '<link href="/css/topics.css" rel="stylesheet">',
-      '<link href="/css/topics-desktop.css" media="(min-width: 1000px)" rel="stylesheet">',
-      '<link href="/css/topics-mobile.css" media="(max-width: 1000px)" rel="stylesheet">',
-      '<link href="/css/contribute.css" rel="stylesheet">'
-    ],
-    'new_string': '<link href="/css/contribute.min.css" rel="stylesheet">',
-    'new_file': 'static/build/__NEW__contribute.tmpl'
   }
 }
 
@@ -62,6 +36,7 @@ const css_data = {
   // pages/download.html
   'download_page': {
     'css_files': [
+      'static/css/base-styles.css',
       'static/css/download.css'
     ],
     'output_name': 'download-page'
@@ -72,8 +47,10 @@ const js_data = {
   // pages/download.html
   'download_page': {
     'js_files': [
+      'static/js/main.js',
       'static/js/vendor/bowser.js',
-      'static/js/download.js'
+      'static/js/download.js',
+      'static/js/testing/setup.js'
     ],
     'output_name': 'download-page'
   }
@@ -152,22 +129,22 @@ const buildJs = (data) => {
     });
 
     if(newUrlPathsData.includes("\'/img/")) {
-      newUrlPathsData = newUrlPathsData.replace(/\'\/img\//g, "url(../../img/");
+      newUrlPathsData = newUrlPathsData.replace(/\'\/img\//g, "\'../../img/");
       console.log('______ : found \'/img/ replaced with \'../../img/');
     }
 
-    if(newUrlPathsData.includes("\"/img/")) {
-      newUrlPathsData = newUrlPathsData.replace(/\"\/img\//g, "url(../../img/");
+    if(newUrlPathsData.includes('\"/img/')) {
+      newUrlPathsData = newUrlPathsData.replace(/\"\/img\//g, '\"../../img/');
       console.log('______ : found \"/img/ replaced with \'../../img/');
     }
 
     if(newUrlPathsData.includes("\'/js/")) {
-      newUrlPathsData = newUrlPathsData.replace(/\'\/js\//g, "url(../../js/");
+      newUrlPathsData = newUrlPathsData.replace(/\'\/js\//g, "\'../../js/");
       console.log('______ : found \'/js/ replaced with \'../../js/');
     }
 
-    if(newUrlPathsData.includes("\'/js/")) {
-      newUrlPathsData = newUrlPathsData.replace(/\'\/js\//g, "url(../../js/");
+    if(newUrlPathsData.includes('\"/js/')) {
+      newUrlPathsData = newUrlPathsData.replace(/\'\/js\//g, "\"../../js/");
       console.log('______ : found \'/js/ replaced with \'../../js/');
     }
 
@@ -218,7 +195,7 @@ const buildHTML = (d) => {
     strings.forEach((item, i) => {
       if(data.includes(item)) {
         if (i < strings.length - 1)
-          data = data.replace(strings[i] + '\n', '');
+          data = data.replace(strings[i], '');
         else
           data = data.replace(strings[i], newString);
       } else {
@@ -226,47 +203,6 @@ const buildHTML = (d) => {
       }
     });
 
-
-    // strings.forEach((item, i) => {
-    //   console.log(data.indexOf(item));
-    //
-    //   if(data.includes(item)) {
-    //     // console.log('data ' + data.length +
-    //     //             ' start ' + data.indexOf(item) +
-    //     //             ' string end ' + (data.length - item.length) );
-    //     //
-    //     data = data.substring(0, data.indexOf(item)) + newString + '\n' +
-    //            data.substring((data.indexOf(item) + item.length), data.length)
-    //            .trim();
-    //
-    //     // console.log(
-    //     //   'removal:   '+
-    //     //   data.substring(, data.search(item)) + 30
-    //     // );
-    //
-    //     // data = data.replace(
-    //     //   new RegExp(escapeHTML(item), "g"), newString);
-    //
-    //
-    //   } else {
-    //     console.error('______ : ERR string not found in ' + files)
-    //   }
-    //
-    // });
-
-
-    //
-    // let newData = data.split('\n');
-    //
-    // newData.forEach((item, i) => {
-    //   if (item.trim() === newString) {
-    //     newData.splice(i, 1);
-    //     console.log(i, item.trim());
-    //     console.log('   ' + newString + ' =========================  REMOVE');
-    //   }
-    // });
-    //
-    // fs.writeFileSync(newFile, newData.join('\n'));
     fs.writeFileSync(newFile, data);
     console.log("______ : " + newFile);
 
@@ -285,5 +221,5 @@ Object.keys(css_data).forEach((key, index) =>
 Object.keys(js_data).forEach((key, index) =>
   buildJs(js_data[key]));
 
-Object.keys(html_data).forEach((key, index) =>
-  buildHTML(html_data[key]));
+// Object.keys(html_data).forEach((key, index) =>
+//   buildHTML(html_data[key]));
