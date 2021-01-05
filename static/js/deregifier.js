@@ -1,6 +1,6 @@
 
 var optionsRegExp = /$(~?[\w\-]+(?:,~?[\w\-]+)*)$/;
-var whitelistRegExp = /^@@/;
+var allowlistRegExp = /^@@/;
 var regexpRegExp = /^\/(.*)\/$/;
 
 function mergeStrings(strings1, strings2) {
@@ -153,7 +153,7 @@ function checkFilter(filter) {
   var regexp = filter;
 
   var prefix = "";
-  regexp = regexp.replace(whitelistRegExp, function(match) {prefix = match; return ""});
+  regexp = regexp.replace(allowlistRegExp, function(match) {prefix = match; return ""});
   var suffix = "";
   regexp = regexp.replace(optionsRegExp, function(match) {suffix = match; return ""});
 
