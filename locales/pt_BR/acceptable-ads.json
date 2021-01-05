@@ -21,7 +21,7 @@
   },
   "abp-history": {
     "description": "Paragraph in \"about\" section",
-    "message": "Então começando em 2011, em consulta com <a>nossos usuários</a>, decidimos propor um compromisso. Porque nós compartilhamos uma visão com a maioria dos nossos usuários que nem todos os anúncios são igualmente irritantes, a iniciativa de anúncios aceitável foi criada. Ele permite que os anunciantes e editores que concordaram em fazer anúncios que cumprem critérios gerados pelo usuário ser whitelisted. Os usuários podem suportar isto menos versão extrema de anúncio bloqueio permitindo a opção de anúncios aceitável permanecer habilitada. Para navegar completamente livre de anúncios, os usuários podem <a>desabilitar a opção</a>."
+    "message": "Então começando em 2011, em consulta com <a>nossos usuários</a>, decidimos propor um compromisso. Porque nós compartilhamos uma visão com a maioria dos nossos usuários que nem todos os anúncios são igualmente irritantes, a iniciativa de anúncios aceitável foi criada. Ele permite que os anunciantes e editores que concordaram em fazer anúncios que cumprem critérios gerados pelo usuário ser allowlisted. Os usuários podem suportar isto menos versão extrema de anúncio bloqueio permitindo a opção de anúncios aceitável permanecer habilitada. Para navegar completamente livre de anúncios, os usuários podem <a>desabilitar a opção</a>."
   },
   "acceptable-ads": {
     "description": "Section header",
@@ -85,10 +85,10 @@
   },
   "charging": {
     "description": "Paragraph in \"about\" section\n{1}: 90",
-    "message": "Somos capazes de manter nosso código-fonte aberto produto grátis <a>por grandes entidades de cobrança de uma taxa</a> para serviços de whitelisting. Para os outros 90% de nossos parceiros, estes serviços são oferecidos gratuitamente."
+    "message": "Somos capazes de manter nosso código-fonte aberto produto grátis <a>por grandes entidades de cobrança de uma taxa</a> para serviços de allowlisting. Para os outros 90% de nossos parceiros, estes serviços são oferecidos gratuitamente."
   },
   "comply-with-criteria": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
+    "description": "Whitelisting step in \"how to be allowlisted\" section",
     "message": "Se seu site tem anúncios que estão em conformidade com os <a>critérios aceitáveis de anúncios</a>, basta preencha <a>este formulário</a>."
   },
   "criteria": {
@@ -137,7 +137,7 @@
   },
   "everyone-must-comply": {
     "description": "Text in \"which acceptable ads are unblocked\" section",
-    "message": "Nenhum candidato será favorecido ou Tratado de forma diferente, e ninguém pode comprar o seu caminho para o whitelist. <strong>Todo mundo deve estar em conformidade</strong> com os critérios e todo mundo passa pelo processo mesmo antes que os anúncios se qualificar como \"aceitável\"."
+    "message": "Nenhum candidato será favorecido ou Tratado de forma diferente, e ninguém pode comprar o seu caminho para o allowlist. <strong>Todo mundo deve estar em conformidade</strong> com os critérios e todo mundo passa pelo processo mesmo antes que os anúncios se qualificar como \"aceitável\"."
   },
   "exception": {
     "description": "Footnote in \"not Acceptable Ad\" section",
@@ -148,7 +148,7 @@
     "message": "Anúncios em expansão"
   },
   "eyeo-contacts-back": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
+    "description": "Whitelisting step in \"how to be allowlisted\" section",
     "message": "Alguém do <a>Aeio</a>, a empresa por trás do Adblock Plus, entrará em contato para determinar os exatos anúncios e verificar se eles cumprem os nossos critérios."
   },
   "fairness-rules": {
@@ -179,9 +179,9 @@
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Anúncios com efeitos de focalização excessiva ou iniciada pelo usuário não"
   },
-  "how-be-whitelisted": {
+  "how-be-allowlisted": {
     "description": "Section header",
-    "message": "Como posso obter meu site whitelisted?"
+    "message": "Como posso obter meu site allowlisted?"
   },
   "image-ads": {
     "description": "Subheadline in \"Specific criteria\"",
@@ -291,9 +291,9 @@
     "description": "footnote in \"Other Acceptable Ads formats\"",
     "message": "O conteúdo' principal' é definido como (com base na <a>Descrição do Mozilla</a> do elemento HTML <main>): O conteúdo principal consiste de conteúdo que está directamente relacionado com, ou expande-se sobre o tema central de um documento ou a funcionalidade central de um aplicativo. Este conteúdo deve ser exclusivo para o documento, excluindo qualquer conteúdo que se repete em todo um conjunto de documentos, tais como barras laterais, links de navegação, informações sobre direitos autorais, logotipos local e busca formas (a menos que, claro, a função principal do documento é um formulário de pesquisa)."
   },
-  "process-of-whitelisting": {
-    "description": "Text in \"how to be whitelisted\" section",
-    "message": "O processo de obtenção de seu anúncios whitelisted leva cerca de 10 dias úteis uma vez que os anúncios aderem aos critérios aceitáveis anúncios:"
+  "process-of-allowlisting": {
+    "description": "Text in \"how to be allowlisted\" section",
+    "message": "O processo de obtenção de seu anúncios allowlisted leva cerca de 10 dias úteis uma vez que os anúncios aderem aos critérios aceitáveis anúncios:"
   },
   "rich-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -324,7 +324,7 @@
     "message": "Quando colocado ao lado do conteúdo principal, a largura máxima de um anúncio deve ser 350px."
   },
   "sign-agreement": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
+    "description": "Whitelisting step in \"how to be allowlisted\" section",
     "message": "Depois de ter feito as alterações necessárias, ambas as partes assinam um <a>acordo</a>."
   },
   "size": {
@@ -382,9 +382,9 @@
     "description": "Section header",
     "message": "Como posso ver o que vocês estão permitindo?"
   },
-  "whitelist-proposal-submission": {
-    "description": "Whitelisting step in \"how to be whitelisted\" section",
-    "message": "Apresentamos que o whitelisting proposta <a>no fórum</a> e os anúncios são fiáveis ao mesmo tempo. O tópico vai ficar aberto para que a Comunidade declarar as preocupações se ou quando o candidato não satisfizer as exigências."
+  "allowlist-proposal-submission": {
+    "description": "Whitelisting step in \"how to be allowlisted\" section",
+    "message": "Apresentamos que o allowlisting proposta <a>no fórum</a> e os anúncios são fiáveis ao mesmo tempo. O tópico vai ficar aberto para que a Comunidade declarar as preocupações se ou quando o candidato não satisfizer as exigências."
   },
   "why-default": {
     "description": "Section header",
@@ -468,7 +468,7 @@
   "report-aa-step-1": {
     "message": "URL da página onde o anúncio é exibido"
   },
-  "get-whitelisted": {
+  "get-allowlisted": {
     "message": "Como posso incluir anúncios aceitáveis em meu site?"
   },
   "why-is-aa-enabled-1": {
@@ -477,7 +477,7 @@
   "disable-samsung": {
     "message": "Adblock Plus para Samsung Internet"
   },
-  "get-whitelisted-1": {
+  "get-allowlisted-1": {
     "message": "O processo de incluir seus anúncios na lista branca leva cerca de 10 dias úteis depois que os anúncios passam a cumprir com os padrões de Anúncios Aceitáveis:"
   },
   "do-users-want-aa-1": {
@@ -528,13 +528,13 @@
   "what-are-aa-wo-1": {
     "message": "Anúncios Aceitáveis sem localização por terceiros são anúncios que estão em conformidade com os critérios de Anúncios Aceitáveis e que não permitem que entidades de terceiros localizem nada do seu comportamento de navegação. São anúncios que respeitam a regra de <a>Não Rastrear</a> e/ou anúncios operados pelo domínio integralmente detido pela mesma empresa."
   },
-  "get-whitelisted-step-1-1": {
+  "get-allowlisted-step-1-1": {
     "message": "Seja Listado na Lista Branca de Anúncios Aceitáveis"
   },
-  "get-whitelisted-step-2": {
+  "get-allowlisted-step-2": {
     "message": "Um representante da <a>eyeo</a>, a empresa por trás do Adblock Plus, entrará em contato com você para determinar os anúncios exatos e verificar sua conformidade segundo nossos critérios."
   },
-  "get-whitelisted-step-1": {
+  "get-allowlisted-step-1": {
     "message": "Se seu site tem anúncios que cumprem com os <a>padrões de Anúncios Aceitáveis</a>, basta preencher <a>este formulário</a>."
   },
   "revenue": {
@@ -549,7 +549,7 @@
   "page-under-review": {
     "message": "Esta página está em revisão, pois o gerenciamento da iniciativa de Anúncios Aceitáveis foi transferido para o <a>Comitê de Anúncios Aceitáveis</a> independente."
   },
-  "get-whitelisted-step-3-1": {
+  "get-allowlisted-step-3-1": {
     "message": "Link para a página de acordos dos Anúncios Aceitáveis"
   },
   "desktop-criteria-1": {
@@ -606,7 +606,7 @@
   "do-users-want-aa": {
     "message": "Os usuários do Adblock Plus realmente querem Anúncios Aceitáveis?"
   },
-  "get-whitelisted-step-3": {
+  "get-allowlisted-step-3": {
     "message": "Após fazer as alterações necessárias, ambos os lados assinam um <a>acordo</a>."
   },
   "disable-android": {

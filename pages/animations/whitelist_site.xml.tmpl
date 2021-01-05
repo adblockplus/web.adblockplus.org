@@ -7,7 +7,7 @@ template=raw
 <object anchor="-20,56" id="mouse_middleclick" src="{{'img/anim_mouse_middleclick.png'|inline_file}}"></object>
 <object anchor="topright" id="toolbarmenu" src="{{'img/anim_toolbarmenu.png'|inline_file}}"></object>
 <object anchor="topright" id="button_highlight" src="{{'img/anim_button_highlight.png'|inline_file}}"></object>
-<object anchor="topright" id="button_whitelist" src="{{'img/anim_button_whitelist.png'|inline_file}}"></object>
+<object anchor="topright" id="button_allowlist" src="{{'img/anim_button_allowlist.png'|inline_file}}"></object>
 <object anchor="topleft" id="background1" src="{{'img/anim_background1.png'|inline_file}}"></object>
 
 <action>
@@ -31,6 +31,6 @@ template=raw
 <action delay="80">
   <hide object="clickmarker,mouse_leftclick"></hide>
   <hide object="toolbarmenu"></hide>
-  <replace object="button_highlight" with="button_whitelist"></replace>
+  <replace object="button_highlight" with="button_allowlist"></replace>
 </action>
 </animation>

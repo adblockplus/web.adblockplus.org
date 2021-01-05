@@ -15,7 +15,7 @@ title=Writing Adblock Plus filters
 
   <p>{{s7 <em>Note</em>: Make sure that you are not replacing too much by wildcards. The filter <code><fix>http://example.com/*</fix></code> will definitely block all banners but it will also block everything else from example.com that you still might want to see.}}</p>
 
-  <h3 id="whitelist">{{s8 Defining exception rules}}</h3>
+  <h3 id="allowlist">{{s8 Defining exception rules}}</h3>
 
   <p>{{s9 Once in a while you may notice that one of your filters, that normally works well, is blocking something that it shouldn't block. You don't want to remove this filter but you still don't want it to match in this one case.}}</p>
 
@@ -115,7 +115,7 @@ title=Writing Adblock Plus filters
   <p>{{s55 Here <code><fix>*/ads/*</fix></code> is the actual filter and <code><fix>script</fix></code> and <code><fix>match-case</fix></code> are its options. Currently the following options are supported:}}</p>
 
   <ul>
-    <li>{{s56 Type options: determine which types of elements a filter can block (or whitelist in case of an exception rule). Multiple type options can be specified to indicate that the filter should be applied to several types of elements. Possible types are:}}
+    <li>{{s56 Type options: determine which types of elements a filter can block (or allowlist in case of an exception rule). Multiple type options can be specified to indicate that the filter should be applied to several types of elements. Possible types are:}}
       <ul>
         <li>{{s57 <code><fix>script</fix></code> — external scripts loaded via HTML script tag}}</li>
         <li>{{s58 <code><fix>image</fix></code> — regular images, typically loaded via HTML img tag}}</li>
@@ -126,7 +126,7 @@ title=Writing Adblock Plus filters
         <li>{{ping <code><fix>ping</fix></code> — requests started by <a href="https://developer.mozilla.org/docs/Web/HTML/Element/a#attr-ping"><code><fix>&lt;a ping&gt;</fix></code></a> or <a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon"><code><fix>navigator.sendBeacon()</fix></code></a> (Adblock Plus 2.7.1 or higher required)}}</li>
         <li>{{websocket <code><fix>websocket</fix></code> — requests initiated via <a href="https://developer.mozilla.org/docs/Web/API/WebSocket"><code><fix>WebSocket</fix></code> object</a> (Adblock Plus 2.8 or higher required)}}</li>
         <li>{{webrtc <code><fix>webrtc</fix></code> — connections opened via <a href="https://developer.mozilla.org/docs/Web/API/RTCPeerConnection"><code><fix>RTCPeerConnection</fix></code> instances</a> to ICE servers (Adblock Plus 1.13.3 for Chrome and Opera, 3.0 for Firefox, or higher required)}}</li>
-        <li>{{s65 <code><fix>document</fix></code> — the page itself (only <a href="#whitelist">exception rules</a> can be applied to the page)}}</li>
+        <li>{{s65 <code><fix>document</fix></code> — the page itself (only <a href="#allowlist">exception rules</a> can be applied to the page)}}</li>
         <li>{{s66 <code><fix>elemhide</fix></code> — for exception rules only, similar to <code><fix>document</fix></code> but only disables <a href="#elemhide">element hiding rules</a> on the page rather than all filter rules (Adblock Plus 1.2 or higher required)}}</li>
         <li>{{generichide <code><fix>generichide</fix></code> — for exception rules only, similar to <code><fix>elemhide</fix></code> but only disables <a href="#generic-specific">generic</a> element hiding rules on the page (Adblock Plus 2.6.12 or higher required)}}</li>
         <li>{{genericblock <code><fix>genericblock</fix></code> — for exception rules only, just like <code><fix>generichide</fix></code> but disables <a href="#generic-specific">generic</a> blocking rules (Adblock Plus 2.6.12 or higher required)}}</li>
@@ -144,7 +144,7 @@ title=Writing Adblock Plus filters
       {{s72 Sitekey restrictions: The option <code><fix>sitekey=abcdsitekeydcba</fix></code> means that the filter should only be applied on pages that provide a public key and a signature which can be verified by that very same public key that is also contained in the filter (but without the trailing =). Multiple sitekeys can be specified using "|" as separator: with the option <code><fix>sitekey=abcdsitekeydcba|bcdesitekeyedcb</fix></code> the filter will only be applied on pages providing either sitekey "abcdsitekeydcba" or "bcdesitekeyedcb". This is similar to domain restrictions but allows covering scenarios where a single filter should apply to a very large number of domains. Note that sitekey restrictions require <a href="#sitekey_server">modifications on the server-side</a>.}}
     </li>
     <li>
-      {{csp Content Security Policies: The option <code><fix>csp=script-src: 'none'</fix></code> causes a Content Security Policy header of <code><fix>script-src: 'none'</fix></code> to be injected into HTTP responses for requested documents matching the filter — assuming that exception rules with the same option don't also match and that the document isn’t whitelisted. The Content Security Policy <code><fix>script-src: 'none'</fix></code> would in turn block all scripts — including inline — for the document. This filter option should generally be avoided, except as a last resort to counter advanced circumvention. (Adblock Plus 3.1 or higher required.)}}
+      {{csp Content Security Policies: The option <code><fix>csp=script-src: 'none'</fix></code> causes a Content Security Policy header of <code><fix>script-src: 'none'</fix></code> to be injected into HTTP responses for requested documents matching the filter — assuming that exception rules with the same option don't also match and that the document isn’t allowlisted. The Content Security Policy <code><fix>script-src: 'none'</fix></code> would in turn block all scripts — including inline — for the document. This filter option should generally be avoided, except as a last resort to counter advanced circumvention. (Adblock Plus 3.1 or higher required.)}}
     </li>
     <li>{{s73 <code><fix>match-case</fix></code> — makes the filter only apply to addresses with matching letter case, e.g. the filter <code><fix>*/BannerAd.gif$match-case</fix></code> will block <code><fix>http://example.com/BannerAd.gif</fix></code> but not <code><fix>http://example.com/bannerad.gif</fix></code>.}}</li>
   </ul>

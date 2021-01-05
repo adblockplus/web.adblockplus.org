@@ -191,8 +191,8 @@ title=Adblock Plus preferences
 {{"Address to download the complete list of filter subscriptions from."|translate("subscriptions_listurl-s1")}}
 {% endmacro %}
 
-{% macro whitelistschemesDescription() %}
-{{"List of URL schemes that shouldn't be blocked (applied to both whole documents and to item locations)"|translate("whitelistschemes-s1")}}
+{% macro allowlistschemesDescription() %}
+{{"List of URL schemes that shouldn't be blocked (applied to both whole documents and to item locations)"|translate("allowlistschemes-s1")}}
 {% endmacro %}
 
 {% macro documentation_analyticsDescription() %}
@@ -315,8 +315,8 @@ title=Adblock Plus preferences
 {{"Unused in Adblock Plus 2.3 and higher"|translate("correctTypos-s1")}}
 {% endmacro %}
 
-{% macro whitelistDescription() %}
-{{"Unused in Adblock Plus 2.3 and higher"|translate("whitelist-s1")}}
+{% macro allowlistDescription() %}
+{{"Unused in Adblock Plus 2.3 and higher"|translate("allowlist-s1")}}
 {% endmacro %}
 
 {% macro suppress_first_run_pageDescription() %}
@@ -569,9 +569,9 @@ title=Adblock Plus preferences
         "description": subscriptions_listurlDescription
       },
       {
-        "name": "whitelistschemes",
+        "name": "allowlistschemes",
         "default": "about chrome file irc moz-extension moz-safe-about news resource snews x-jsd addbook cid imap mailbox nntp pop data javascript moz-icon",
-        "description": whitelistschemesDescription
+        "description": allowlistschemesDescription
       }
     ]
   },
@@ -690,9 +690,9 @@ title=Adblock Plus preferences
         "description": warnregexpDescription
       },
       {
-        "name": "whitelist",
+        "name": "allowlist",
         "default": "",
-        "description": whitelistDescription
+        "description": allowlistDescription
       }
     ]
   },

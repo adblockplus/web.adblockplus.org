@@ -16,7 +16,7 @@
     "description": "Paragraph in \"about\" section"
   },
   "abp-history": {
-    "message": "In 2011 hebben we in overleg met <a>onze gebruikers</a> besloten een compromis voor te stellen. Omdat we met de meerderheid van onze gebruikers een visie delen waarbij niet alle advertenties even vervelend zijn, is het Acceptable Ads-initiatief tot stand gebracht. Hiermee kunnen adverteerders en uitgevers die instemmen met het maken van advertenties die aan door gebruikers opgestelde criteria voldoen op een ‘whitelist’ worden gezet. Gebruikers kunnen deze minder extreme versie van advertentieblokkering steunen door de optie voor het toestaan van acceptabele advertenties ingeschakeld te houden. Om volledig advertentievrij te browsen, kunnen gebruikers <a>de optie uitschakelen</a>.",
+    "message": "In 2011 hebben we in overleg met <a>onze gebruikers</a> besloten een compromis voor te stellen. Omdat we met de meerderheid van onze gebruikers een visie delen waarbij niet alle advertenties even vervelend zijn, is het Acceptable Ads-initiatief tot stand gebracht. Hiermee kunnen adverteerders en uitgevers die instemmen met het maken van advertenties die aan door gebruikers opgestelde criteria voldoen op een ‘allowlist’ worden gezet. Gebruikers kunnen deze minder extreme versie van advertentieblokkering steunen door de optie voor het toestaan van acceptabele advertenties ingeschakeld te houden. Om volledig advertentievrij te browsen, kunnen gebruikers <a>de optie uitschakelen</a>.",
     "description": "Paragraph in \"about\" section"
   },
   "benefit": {
@@ -40,11 +40,11 @@
     "description": "Fairness rule Bullet point in \"about\" section"
   },
   "user-value": {
-    "message": "Adblock Plus-gebruikers zijn ons veel waard, en er wordt naar hen geluisterd. Als een voorstel voor Acceptabele advertenties om geldige redenen door onze gemeenschap wordt geweigerd, zal/zullen de advertentie(s) van onze whitelist worden verwijderd.",
+    "message": "Adblock Plus-gebruikers zijn ons veel waard, en er wordt naar hen geluisterd. Als een voorstel voor Acceptabele advertenties om geldige redenen door onze gemeenschap wordt geweigerd, zal/zullen de advertentie(s) van onze allowlist worden verwijderd.",
     "description": "Fairness rule Bullet point in \"about\" section"
   },
   "charging": {
-    "message": "We kunnen ons opensourceproduct gratis houden <a>door grote entiteiten een vergoeding te vragen</a> voor het whitelisten van diensten. Voor de overige grofweg {1} procent van onze partners worden deze diensten kosteloos aangeboden.",
+    "message": "We kunnen ons opensourceproduct gratis houden <a>door grote entiteiten een vergoeding te vragen</a> voor het allowlisten van diensten. Voor de overige grofweg {1} procent van onze partners worden deze diensten kosteloos aangeboden.",
     "description": "Paragraph in \"about\" section\n{1}: 90"
   },
   "manifesto": {
@@ -274,7 +274,7 @@
     "description": "Section header"
   },
   "unacceptable-ads": {
-    "message": "De volgende typen advertenties zijn momenteel onacceptabel <sup><a>*</a></sup>, en komen niet in aanmerking voor opname in de whitelist:",
+    "message": "De volgende typen advertenties zijn momenteel onacceptabel <sup><a>*</a></sup>, en komen niet in aanmerking voor opname in de allowlist:",
     "description": "Text in \"not Acceptable Ad\" section"
   },
   "load-new-ads": {
@@ -378,7 +378,7 @@
     "description": "Text in \"which acceptable ads are unblocked\" section"
   },
   "everyone-must-comply": {
-    "message": "Geen enkele aanvrager krijgt een voorkeur of wordt anders behandeld, en niemand kan een plek op de whitelist kopen. <strong>Iedereen moet voldoen</strong> aan de criteria en iedereen doorloopt hetzelfde proces voordat de advertenties als ‘Acceptabel’ worden gekwalificeerd.",
+    "message": "Geen enkele aanvrager krijgt een voorkeur of wordt anders behandeld, en niemand kan een plek op de allowlist kopen. <strong>Iedereen moet voldoen</strong> aan de criteria en iedereen doorloopt hetzelfde proces voordat de advertenties als ‘Acceptabel’ worden gekwalificeerd.",
     "description": "Text in \"which acceptable ads are unblocked\" section"
   },
   "false-positives": {
@@ -401,29 +401,29 @@
     "message": "Hebt u vragen of suggesties betreffende deze lijst? Aarzel niet om contact op te nemen met de gemeenschap <a>in ons forum</a>, of neem rechtstreeks contact met ons op <a>via e-mail</a>.",
     "description": "Text in \"what you is allowed\" section"
   },
-  "how-be-whitelisted": {
-    "message": "Hoe kan ik mijn website op de whitelist krijgen?",
+  "how-be-allowlisted": {
+    "message": "Hoe kan ik mijn website op de allowlist krijgen?",
     "description": "Section header"
   },
-  "process-of-whitelisting": {
-    "message": "Het proces om uw advertenties op de whitelist te krijgen neemt ongeveer 10 werkdagen in beslag zodra de advertenties aan de criteria voor Acceptabele advertenties voldoen:",
-    "description": "Text in \"how to be whitelisted\" section"
+  "process-of-allowlisting": {
+    "message": "Het proces om uw advertenties op de allowlist te krijgen neemt ongeveer 10 werkdagen in beslag zodra de advertenties aan de criteria voor Acceptabele advertenties voldoen:",
+    "description": "Text in \"how to be allowlisted\" section"
   },
   "comply-with-criteria": {
     "message": "Als uw website advertenties bevat die aan de <a>criteria voor Acceptabele advertenties</a> voldoen, vul dan <a>dit formulier</a> in.",
-    "description": "Whitelisting step in \"how to be whitelisted\" section"
+    "description": "Whitelisting step in \"how to be allowlisted\" section"
   },
   "eyeo-contacts-back": {
     "message": "Iemand van <a>Eyeo</a>, het bedrijf achter Adblock Plus, zal contact met u opnemen om de exacte advertenties te bepalen, en controleren of deze aan onze criteria voldoen.",
-    "description": "Whitelisting step in \"how to be whitelisted\" section"
+    "description": "Whitelisting step in \"how to be allowlisted\" section"
   },
   "sign-agreement": {
     "message": "Nadat u eventuele noodzakelijke wijzigingen hebt aangebracht, ondertekenen beide partijen een overeenkomst.",
-    "description": "Whitelisting step in \"how to be whitelisted\" section"
+    "description": "Whitelisting step in \"how to be allowlisted\" section"
   },
-  "whitelist-proposal-submission": {
-    "message": "We plaatsen het voorstel voor whitelisting <a>in het forum</a>, en tegelijkertijd worden de advertenties gewhitelist. Het onderwerp zal open blijven om de gemeenschap zorgen te kunnen laten uiten als of wanneer de aanvrager niet aan de vereisten voldoet.",
-    "description": "Whitelisting step in \"how to be whitelisted\" section"
+  "allowlist-proposal-submission": {
+    "message": "We plaatsen het voorstel voor allowlisting <a>in het forum</a>, en tegelijkertijd worden de advertenties geallowlist. Het onderwerp zal open blijven om de gemeenschap zorgen te kunnen laten uiten als of wanneer de aanvrager niet aan de vereisten voldoet.",
+    "description": "Whitelisting step in \"how to be allowlisted\" section"
   },
   "does-users-need": {
     "message": "Willen Adblock Plus-gebruikers deze functie echt?",
@@ -438,11 +438,11 @@
     "description": "Section header"
   },
   "main-revenue": {
-    "message": "We ontvangen wat donaties van onze gebruikers, maar onze grootste inkomstenbron komt voort uit het Acceptable Ads-initiatief. Grotere entiteiten (zoals hieronder gedefinieerd) betalen een licentievergoeding voor de aangevraagde en aan hen geleverde whitelisting-diensten (ongeveer 90 procent van de licenties wordt gratis verstrekt). Er moet worden opgemerkt dat aan de Acceptable Ads-criteria moet worden voldaan, onafhankelijk van de overweging voor vergoedingen. Als niet aan de criteria wordt voldaan, is whitelisting niet mogelijk.",
+    "message": "We ontvangen wat donaties van onze gebruikers, maar onze grootste inkomstenbron komt voort uit het Acceptable Ads-initiatief. Grotere entiteiten (zoals hieronder gedefinieerd) betalen een licentievergoeding voor de aangevraagde en aan hen geleverde allowlisting-diensten (ongeveer 90 procent van de licenties wordt gratis verstrekt). Er moet worden opgemerkt dat aan de Acceptable Ads-criteria moet worden voldaan, onafhankelijk van de overweging voor vergoedingen. Als niet aan de criteria wordt voldaan, is allowlisting niet mogelijk.",
     "description": "Text in \"Is there payment involved?\" section"
   },
   "who-pays": {
-    "message": "Wat vergoedingen betreft, moeten alleen grote entiteiten betalen (die met meer dan 10 miljoen aanvullende advertentie-impressies per maand als gevolg van deelname in het Acceptable Ads-initiatief). Voor deze entiteiten vertegenwoordigt onze licentievergoeding normaliter 30 procent van de aanvullende omzet die door whitelisting van acceptabele advertenties ervan wordt gecreëerd.",
+    "message": "Wat vergoedingen betreft, moeten alleen grote entiteiten betalen (die met meer dan 10 miljoen aanvullende advertentie-impressies per maand als gevolg van deelname in het Acceptable Ads-initiatief). Voor deze entiteiten vertegenwoordigt onze licentievergoeding normaliter 30 procent van de aanvullende omzet die door allowlisting van acceptabele advertenties ervan wordt gecreëerd.",
     "description": "Text in \"Is there payment involved?\" section"
   },
   "more-details": {
@@ -504,7 +504,7 @@
   "report-aa-step-1": {
     "message": "URL van de pagina waar de advertentie verschijnt"
   },
-  "get-whitelisted": {
+  "get-allowlisted": {
     "message": "Hoe kan ik advertenties op mijn website op de lijst met uitzonderingen krijgen?"
   },
   "why-is-aa-enabled-1": {
@@ -513,7 +513,7 @@
   "disable-samsung": {
     "message": "Adblock Plus voor Samsung Internet"
   },
-  "get-whitelisted-1": {
+  "get-allowlisted-1": {
     "message": "Het proces om uw advertenties op de uitzonderingslijst te laten plaatsen duurt ongeveer 10 werkdagen zodra de advertenties voldoen aan de Acceptabele advertenties-normen:"
   },
   "do-users-want-aa-1": {
@@ -564,13 +564,13 @@
   "what-are-aa-wo-1": {
     "message": "Acceptabele advertenties zonder tracking door derden zijn advertenties die voldoen aan de criteria voor acceptabele advertenties en die derden niet toestaan om uw surfgedrag te volgen. Dit zijn advertenties die voldoen aan <a>Do Not Track</a> en/of advertenties die worden aangeboden door het domein dat volledig eigendom is van hetzelfde bedrijf."
   },
-  "get-whitelisted-step-1-1": {
+  "get-allowlisted-step-1-1": {
     "message": "Acceptabele advertenties op de witte lijst laten plaatsen"
   },
-  "get-whitelisted-step-2": {
+  "get-allowlisted-step-2": {
     "message": "Iemand van <a>eyeo</a>, het bedrijf achter Adblock Plus, neemt contact met u op om de exacte advertenties te bepalen en om te controleren of deze voldoen aan onze criteria."
   },
-  "get-whitelisted-step-1": {
+  "get-allowlisted-step-1": {
     "message": "Als uw website advertenties heeft die voldoen aan de <a>Acceptabele advertenties-standaard</a>, vul dan gewoon <a>dit formulier</a> in."
   },
   "disable-ie-step-1": {
@@ -579,7 +579,7 @@
   "disable-ie-step-2": {
     "message": "Vink <strong>acceptabele advertenties toestaan</strong> aan."
   },
-  "get-whitelisted-step-3-1": {
+  "get-allowlisted-step-3-1": {
     "message": "Link naar de pagina Acceptabele advertenties-overeenkomsten"
   },
   "desktop-criteria-1": {
@@ -633,7 +633,7 @@
   "do-users-want-aa": {
     "message": "Willen Adblock Plus-gebruikers echt acceptabele advertenties zien?"
   },
-  "get-whitelisted-step-3": {
+  "get-allowlisted-step-3": {
     "message": "Nadat u de noodzakelijke wijzigingen hebt doorgevoerd, ondertekenen beide partijen een <a>overeenkomst</a>\"."
   },
   "disable-android": {

@@ -36,7 +36,7 @@ title=Detailed changelog for Adblock Plus 0.7
                <li>{{s26 Sidebar: Making sure to scroll to the item when flashing its borders (can be disabled via preference <a href="preferences#flash_scrolltoitem">extensions.adblockplus.flash_scrolltoitem</a>)}}</li>
                <li>{{s27 Add subscription dialog: Made subscription title first input field}}</li>
                <li>{{s28 Add subscription dialog: Added a dropdown list with a few suggestions for subscriptions}}</li>
-               <li>{{s29 Whitelisting via menu now allows to whitelist a specific page, not all its subpages as well}}</li>
+               <li>{{s29 Whitelisting via menu now allows to allowlist a specific page, not all its subpages as well}}</li>
                <li>{{s30 Added an option to show/hide toolbar icon}}</li>
                <li>{{s31 "Show in status bar" switched off by default}}</li>
                <li>{{s32 Toolbar icon now visible in Mozilla and SeaMonkey in the personal toolbar}}</li>
@@ -56,12 +56,12 @@ title=Detailed changelog for Adblock Plus 0.7
         <h2 id="core">{{s44 Core}}</h2>
 
         <ul>
-               <li>{{s45 Only exception rules starting with <code></code>http:// or <code></code>https:// will whitelist entire pages, other rules apply to individual items only}}</li>
+               <li>{{s45 Only exception rules starting with <code></code>http:// or <code></code>https:// will allowlist entire pages, other rules apply to individual items only}}</li>
                <li>{{s46 Saving daily backups of patterns.ini (max. 5 backups by default)}}</li>
                <li>{{s47 <code><fix>VERSION</fix></code> in subscription addresses is replaced by current Adblock Plus version when updating, e.g. <code><fix>ABP0.7</fix></code>}}</li>
                <li>{{s48 Added interface IAdblockPlus to be used by other extensions (for example to manage external subscriptions)}}</li>
                <li>{{s49 Moved several hardcoded lists to preferences}}</li>
-               <li>{{s50 Choosing which schemes can be blocked with a whitelist (<a href="preferences#whitelistschemes">extensions.adblockplus.whitelistschemes</a>), not a blacklist}}</li>
+               <li>{{s50 Choosing which schemes can be blocked with a allowlist (<a href="preferences#allowlistschemes">extensions.adblockplus.allowlistschemes</a>), not a blacklist}}</li>
                <li>{{s51 Fixed: Blockable items list would show all visited pages, not just the current (mainly on Linux)}}</li>
                <li>{{s52 Fixed: Memory leak happening with Gecko 1.8 (not Gecko 1.9) when "Show tabs on Flash and Java" is activated}}</li>
                <li>{{s53 Fixed: Performance issues on pages with many occurences of the same address}}</li>
