@@ -4,10 +4,6 @@ heading=Download Adblock Plus for any device
 subheading=Surf the web with no annoying ads in any browser and supported platforms.
 template=minimal
 
-<head>
-  <link rel="stylesheet" href="/css/download.css">
-</head>
-
 <header class="download-header section content container text-center">
     <h1>{{ heading | translate("download-heading", "Heading") }}</h1>
     <p class="dark-grey">{{ subheading | translate("download-subheading", "Subheading") }}</p>
@@ -18,6 +14,3 @@ template=minimal
   <? include download/mobile ?>
   <? include download/desktop ?>
 </div>
-
-<script src="/js/vendor/bowser.js"></script>
-<script src="/js/download.js"></script>
