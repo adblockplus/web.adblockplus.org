@@ -26,8 +26,7 @@ const js_data = {
     'js_files': [
       'static/js/main.js',
       'static/js/vendor/bowser.js',
-      'static/js/download.js',
-      'static/js/testing/setup.js'
+      'static/js/download.js'
     ],
     'output_name': 'download-page'
   }
