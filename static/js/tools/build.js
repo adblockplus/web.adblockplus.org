@@ -104,7 +104,7 @@ const buildCSS = (data) => {
 
   console.log('______ : WRITE   : ' + minifiedFile);
 
-  writeFileSync(sourcemapFile, result.map);
+  writeFileSync(sourcemapFile, result.map.toString());
 
   console.log('______ : WRITE   : ' + sourcemapFile);
 }
