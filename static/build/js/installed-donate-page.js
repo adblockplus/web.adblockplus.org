@@ -1,8 +1,6 @@
-/** from vendor/url-search-params */
 /*! (c) Andrea Giammarchi - ISC */
 var self=this||{};try{!function(t,e){if(new t("q=%2B").get("q")!==e||new t({q:e}).get("q")!==e||new t([["q",e]]).get("q")!==e||"q=%0A"!==new t("q=\n").toString()||"q=+%26"!==new t({q:" &"}).toString()||"q=%25zx"!==new t({q:"%zx"}).toString())throw t;self.URLSearchParams=t}(URLSearchParams,"+")}catch(t){!function(t,a,o){"use strict";var u=t.create,h=t.defineProperty,e=/[!'\(\)~]|%20|%00/g,n=/%(?![0-9a-fA-F]{2})/g,r=/\+/g,i={"!":"%21","'":"%27","(":"%28",")":"%29","~":"%7E","%20":"+","%00":"\0"},s={append:function(t,e){p(this._ungap,t,e)},delete:function(t){delete this._ungap[t]},get:function(t){return this.has(t)?this._ungap[t][0]:null},getAll:function(t){return this.has(t)?this._ungap[t].slice(0):[]},has:function(t){return t in this._ungap},set:function(t,e){this._ungap[t]=[a(e)]},forEach:function(e,n){var r=this;for(var i in r._ungap)r._ungap[i].forEach(t,i);function t(t){e.call(n,t,a(i),r)}},toJSON:function(){return{}},toString:function(){var t=[];for(var e in this._ungap)for(var n=v(e),r=0,i=this._ungap[e];r<i.length;r++)t.push(n+"="+v(i[r]));return t.join("&")}};for(var c in s)h(f.prototype,c,{configurable:!0,writable:!0,value:s[c]});function f(t){var e=u(null);switch(h(this,"_ungap",{value:e}),!0){case!t:break;case"string"==typeof t:"?"===t.charAt(0)&&(t=t.slice(1));for(var n=t.split("&"),r=0,i=n.length;r<i;r++){var a=(s=n[r]).indexOf("=");-1<a?p(e,g(s.slice(0,a)),g(s.slice(a+1))):s.length&&p(e,g(s),"")}break;case o(t):for(var s,r=0,i=t.length;r<i;r++){p(e,(s=t[r])[0],s[1])}break;case"forEach"in t:t.forEach(l,e);break;default:for(var c in t)p(e,c,t[c])}}function l(t,e){p(this,e,t)}function p(t,e,n){var r=o(n)?n.join(","):n;e in t?t[e].push(r):t[e]=[r]}function g(t){return decodeURIComponent(t.replace(n,"%25").replace(r," "))}function v(t){return encodeURIComponent(t).replace(e,d)}function d(t){return i[t]}self.URLSearchParams=f}(Object,String,Array.isArray)}!function(d){var r=!1;try{r=!!Symbol.iterator}catch(t){}function t(t,e){var n=[];return t.forEach(e,n),r?n[Symbol.iterator]():{next:function(){var t=n.shift();return{done:void 0===t,value:t}}}}"forEach"in d||(d.forEach=function(n,r){var i=this,t=Object.create(null);this.toString().replace(/=[\s\S]*?(?:&|$)/g,"=").split("=").forEach(function(e){!e.length||e in t||(t[e]=i.getAll(e)).forEach(function(t){n.call(r,t,e,i)})})}),"keys"in d||(d.keys=function(){return t(this,function(t,e){this.push(e)})}),"values"in d||(d.values=function(){return t(this,function(t,e){this.push(t)})}),"entries"in d||(d.entries=function(){return t(this,function(t,e){this.push([e,t])})}),!r||Symbol.iterator in d||(d[Symbol.iterator]=d.entries),"sort"in d||(d.sort=function(){for(var t,e,n,r=this.entries(),i=r.next(),a=i.done,s=[],c=Object.create(null);!a;)e=(n=i.value)[0],s.push(e),e in c||(c[e]=[]),c[e].push(n[1]),a=(i=r.next()).done;for(s.sort(),t=0;t<s.length;t++)this.delete(s[t]);for(t=0;t<s.length;t++)e=s[t],this.append(e,c[e].shift())}),function(f){function l(t){var e=t.append;t.append=d.append,URLSearchParams.call(t,t._usp.search.slice(1)),t.append=e}function p(t,e){if(!(t instanceof e))throw new TypeError("'searchParams' accessed on an object that does not implement interface "+e.name)}function t(e){var n,r,i,t=e.prototype,a=v(t,"searchParams"),s=v(t,"href"),c=v(t,"search");function o(t,e){d.append.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function u(t){d.delete.call(this,t),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function h(t,e){d.set.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}!a&&c&&c.set&&(i=c,r=function(t,e){return t.append=o,t.delete=u,t.set=h,g(t,"_usp",{configurable:!0,writable:!0,value:e})},n=function(t,e){return g(t,"_searchParams",{configurable:!0,writable:!0,value:r(e,t)}),e},f.defineProperties(t,{href:{get:function(){return s.get.call(this)},set:function(t){var e=this._searchParams;s.set.call(this,t),e&&l(e)}},search:{get:function(){return c.get.call(this)},set:function(t){var e=this._searchParams;c.set.call(this,t),e&&l(e)}},searchParams:{get:function(){return p(this,e),this._searchParams||n(this,new URLSearchParams(this.search.slice(1)))},set:function(t){p(this,e),n(this,t)}}}))}var g=f.defineProperty,v=f.getOwnPropertyDescriptor;try{t(HTMLAnchorElement),/^function|object$/.test(typeof URL)&&URL.prototype&&t(URL)}catch(t){}}(Object)}(self.URLSearchParams.prototype,Object);
-
-/** from vendor/bowser */
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).uuidv4=e()}(this,(function(){"use strict";var t="undefined"!=typeof crypto&&crypto.getRandomValues&&crypto.getRandomValues.bind(crypto)||"undefined"!=typeof msCrypto&&"function"==typeof msCrypto.getRandomValues&&msCrypto.getRandomValues.bind(msCrypto),e=new Uint8Array(16);function o(){if(!t)throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");return t(e)}var n=/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;function r(t){return"string"==typeof t&&n.test(t)}for(var i=[],u=0;u<256;++u)i.push((u+256).toString(16).substr(1));return function(t,e,n){var u=(t=t||{}).random||(t.rng||o)();if(u[6]=15&u[6]|64,u[8]=63&u[8]|128,e){n=n||0;for(var f=0;f<16;++f)e[n+f]=u[f];return e}return function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,o=(i[t[e+0]]+i[t[e+1]]+i[t[e+2]]+i[t[e+3]]+"-"+i[t[e+4]]+i[t[e+5]]+"-"+i[t[e+6]]+i[t[e+7]]+"-"+i[t[e+8]]+i[t[e+9]]+"-"+i[t[e+10]]+i[t[e+11]]+i[t[e+12]]+i[t[e+13]]+i[t[e+14]]+i[t[e+15]]).toLowerCase();if(!r(o))throw TypeError("Stringified UUID is invalid");return o}(u)}}));
 /*!
  * Bowser - a browser detector
  * https://github.com/ded/bowser
@@ -605,10 +603,6 @@ var self=this||{};try{!function(t,e){if(new t("q=%2B").get("q")!==e||new t({q:e}
   return bowser
 });
 
-/** FROM vendor/uuidv4 */
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).uuidv4=e()}(this,(function(){"use strict";var t="undefined"!=typeof crypto&&crypto.getRandomValues&&crypto.getRandomValues.bind(crypto)||"undefined"!=typeof msCrypto&&"function"==typeof msCrypto.getRandomValues&&msCrypto.getRandomValues.bind(msCrypto),e=new Uint8Array(16);function o(){if(!t)throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");return t(e)}var n=/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;function r(t){return"string"==typeof t&&n.test(t)}for(var i=[],u=0;u<256;++u)i.push((u+256).toString(16).substr(1));return function(t,e,n){var u=(t=t||{}).random||(t.rng||o)();if(u[6]=15&u[6]|64,u[8]=63&u[8]|128,e){n=n||0;for(var f=0;f<16;++f)e[n+f]=u[f];return e}return function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,o=(i[t[e+0]]+i[t[e+1]]+i[t[e+2]]+i[t[e+3]]+"-"+i[t[e+4]]+i[t[e+5]]+"-"+i[t[e+6]]+i[t[e+7]]+"-"+i[t[e+8]]+i[t[e+9]]+"-"+i[t[e+10]]+i[t[e+11]]+i[t[e+12]]+i[t[e+13]]+i[t[e+14]]+i[t[e+15]]).toLowerCase();if(!r(o))throw TypeError("Stringified UUID is invalid");return o}(u)}}));
-
-/** FROM vendor/lodash.custom.min */
 /**
  * @license
  * Lodash (Custom Build) lodash.com/license | Underscore.js 1.8.3 underscorejs.org/LICENSE
@@ -654,8 +648,6 @@ V.prototype.set=K;var Ru=Ut(et),Pu=Mt(),Uu=pu?function(t,r){return pu(t,"toStrin
 if(e)switch(e){case xu:return $n;case zu:return yn;case Su:return jn;case Eu:return On;case $u:return Sn}return r});var Bu=lr(Uu),Cu=cr(function(t){var r=[];return 46===t.charCodeAt(0)&&r.push(""),t.replace(Kn,function(t,n,e,u){r.push(e?u.replace(Yn,"$1"):n||t)}),r});vr.Cache=P;var Du=at(function(){return arguments}())?at:function(t){return Or(t)&&Xe.call(t,"callee")&&!au.call(t,"callee")},Wu=Array.isArray,Vu=_u||Wr,qu=De?s(De):lt,Gu=We?s(We):_t,Hu=Ve?s(Ve):vt,Ju=Pt(function(t,r){Lt(r,Rr(r),t)}),Ku=Pt(function(t,r,n,e){
 Lt(r,Rr(r),t,e)}),Qu=mt(function(r,n){try{return t(r,Vr,n)}catch(t){return gr(t)?t:Error(t)}});m.assignIn=Ju,m.assignInWith=Ku,m.constant=Nr,m.iteratee=Br,m.keys=Fr,m.keysIn=Rr,m.memoize=vr,m.property=Cr,m.toArray=Er,m.values=Pr,m.extend=Ju,m.extendWith=Ku,m.attempt=Qu,m.eq=yr,m.escape=Ur,m.forEach=_r,m.get=Ir,m.hasIn=Lr,m.identity=Tr,m.isArguments=Du,m.isArray=Wu,m.isArrayLike=br,m.isBuffer=Vu,m.isError=gr,m.isFinite=dr,m.isFunction=jr,m.isLength=wr,m.isMap=qu,m.isNumber=Ar,m.isObject=mr,m.isObjectLike=Or,
 m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.stubArray=Dr,m.stubFalse=Wr,m.template=Mr,m.toNumber=$r,m.toString=kr,m.each=_r,m.VERSION=qr,Ue._=m}).call(this);
-
-/** FROM payment/form */
 /*global PaymentForm, updatePaymentConfig, _*/
 (function(root, doc, _){
 
@@ -951,7 +943,6 @@ root.PaymentForm = PaymentForm;
 
 }(window, document, _));
 
-/** FROM payment/providers/paypal */
 /* global _*/
 (function(root, doc, _){
 
@@ -1007,7 +998,7 @@ root.paypalProvider = {
       business: "till@adblockplus.org",
       item_name: payment.item,
       custom: payment.custom,
-      image_url: payment.image || siteURL + "/img/adblock-plus-paypal.png",
+      image_url: payment.image || siteURL + "../../img/adblock-plus-paypal.png",
       return: payment.successURL || siteURL + "/payment-complete",
       cancel_return: payment.cancelURL || root.location.href,
       no_note: 1,
@@ -1057,7 +1048,6 @@ root.paypalProvider = {
 
 })(window, document, _);
 
-/** FROM payment/providers/stripe */
 function initStripeProvider(publishableKey, formProcessor, text) {
   'use strict';
 
@@ -1142,7 +1132,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
               '<div class="top">' +
                 '<div id="co-name" class="company"></div>' +
                 '<button class="close">' +
-                  '<img width="17" height="17" src="/img/close.png"></button>' +
+                  '<img width="17" height="17" src="../../img/close.png"></button>' +
               '</div>' +
               '<div id="product-name" ' +
                 'class="product details">Adblock Plus</div>' +
@@ -1184,7 +1174,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
             '</form>' +
           '</div>' +
         '</div><img width="123" height="30" class="pbs" ' +
-          'src="/img/powered-by-stripe.png"></button>';
+          'src="../../img/powered-by-stripe.png"></button>';
 
       box = document.querySelector('.modal-content');
       button = document.getElementById('pay-button');
@@ -1422,7 +1412,6 @@ function initStripeProvider(publishableKey, formProcessor, text) {
   };
 }
 
-/** FROM payment/controller */
 (function() {
 
 var eyeo = window.eyeo || {};
@@ -1575,13 +1564,13 @@ var params = new URLSearchParams(loadReport);
 
 script.onload = onLoadReportSuccess;
 script.onerror = onLoadReportSuccess;
-script.src = '/js/payment/config/load.js?' + params.toString();
+script.src = '../../js/payment/config/load.js?' + params.toString();
 
 document.head.appendChild(script);
 
 }());
 
-/** FROM pages/installed */
+'use strict';
 
 var SCROLL_TICK_LENGTH = 10;
 var SCROLL_TIME = 500;
@@ -1619,7 +1608,6 @@ if (navigator.userAgent.indexOf("Edg/") != -1)
 if (abbSection && (bowser.msedge || bowser.msie || bowser.msedge_chromium))
   body.classList.add('hide-abb-section');
 
-/** FROM address-masking.js */
 /*!
  * This file is part of website-defaults
  * Copyright (C) 2016-present eyeo GmbH

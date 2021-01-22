@@ -2,35 +2,12 @@ const { existsSync, mkdirSync, readFileSync, writeFileSync } = require('fs');
 const ujs = require('uglify-js');
 const csso = require('csso');
 
+const cssData = require('../../data/css.json');
+const jsData = require('../../data/js.json');
+
 const BUILD_FOLDER = 'static/build/';
 const CSS_BUILD_FOLDER = 'static/build/css/';
 const JS_BUILD_FOLDER = 'static/build/js/';
-
-const css_data = {
-  // pages/download.html
-  'download_page': {
-    'css_files': [
-      'static/css/defaults.css',
-      'static/css/fonts.css',
-      'static/css/main.css',
-      'static/css/cookies.css',
-      'static/css/download.css'
-    ],
-    'output_name': 'download-page'
-  }
-}
-
-const js_data = {
-  // pages/download.html
-  'download_page': {
-    'js_files': [
-      'static/js/main.js',
-      'static/js/vendor/bowser.js',
-      'static/js/download.js'
-    ],
-    'output_name': 'download-page'
-  }
-}
 
 const setUpFolders = (dir) => {
   mkdirSync(dir, { recursive: true }, (err) => {
@@ -187,15 +164,15 @@ const init = () => {
 
     console.log('Process CSS files :\n');
 
-    Object.keys(css_data).forEach((key, index) =>
-      buildCSS(css_data[key]));
+    Object.keys(cssData).forEach((key, index) =>
+      buildCSS(cssData[key]));
 
     console.log('\n');
 
     console.log('Process JavaScript files :\n');
 
-    Object.keys(js_data).forEach((key, index) =>
-      buildJs(js_data[key]));
+    Object.keys(jsData).forEach((key, index) =>
+      buildJs(jsData[key]));
 
     console.log('\n');
 

@@ -200,3 +200,26 @@ h2.donation-heading { font-size: 1.2em; }
   [dir="rtl"] .footer .privacy-policy { float: left; text-align: left; }
   [dir="rtl"] .footer .copyright { float: right; }
 }
+
+@keyframes pulse {
+  0% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+}
+
+.loading {
+  display: block;
+  margin: 1em auto;
+  animation: pulse 1s infinite;
+}
