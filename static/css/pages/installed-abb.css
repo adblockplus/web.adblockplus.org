@@ -1,0 +1,50 @@
+.abb {
+  position: relative;
+  height: 38em;
+  background-image: url(/img/adblock-browser-phone-small.png);
+  background-repeat: no-repeat;
+  background-position: right 0 top 22em;
+}
+
+@media (min-width: 768px) {
+  .abb {
+    height: 24em;
+    background-image: url(/img/adblock-browser-phone-medium.png);
+    background-position: right 0 top 8em;
+  }
+
+  [dir="rtl"] .abb { background-image: none; }
+}
+
+@media(min-width: 992px) {
+  .abb {
+    height: 26em;
+    margin-top: 2em;
+    background-color: #fff;
+    background-image: url(/img/adblock-browser-phone-large.png);
+    background-position: right -8em top 4em;
+  }
+}
+
+@media(min-width: 992px) {
+  .abb-app { margin-top: 4em; }
+}
+
+.footer {
+  position: relative;
+  padding: 1.5em 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.footer a,
+.footer a:active,
+.footer a:hover,
+.footer a:visited {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* used for IE/Edge/Edge-chromium UAs */
+.footer.space { margin-top: 5em; }

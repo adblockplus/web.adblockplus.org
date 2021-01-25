@@ -1,5 +1,6 @@
 title=Adblock Plus has been installed!
 robots=none
+prevent_cookie_prompt=1
 template=installed/main
 
 <head>
@@ -17,7 +18,8 @@ template=installed/main
 <main class="container">
   <div class="row">
     <header class="content column one-third success">
-      <img src="/img/success.png" alt="" class="icon" width="40" height="40">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+        alt="" class="icon" width="40" height="40">
       <h1>{{ installation-successful-heading Installation Successful! }}</h1>
       <p class="took-control">{{ took-control-heading You just took control of your browser. }}</p>
     </header>
@@ -71,38 +73,78 @@ template=installed/main
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function(req) {
-    req.onreadystatechange = function() {
-      if (req.readyState == 4 && req.status == 200)
-        donateSection(req.response);
-    }
+  document.addEventListener('DOMContentLoaded',
+    function() { get('installed-donate', donateSection); });
 
-    req.open('GET', 'installed-donate', true);
+  function parse(data) {
+    return (new DOMParser()).parseFromString(data, 'text/html');
+  }
+
+  function script(src) {
+    var scr = document.createElement('script');
+    if (src) scr.src = src;
+    return scr;
+  }
+
+  function get(page, action) {
+    var req = new XMLHttpRequest();
+
+    req.addEventListener('readystatechange', function() {
+      if (req.readyState == 4 && req.status == 200)
+        action(req.response);
+    });
+
+    req.open('GET', page, true);
     req.send();
-  }(new XMLHttpRequest()));
+  }
 
   function donateSection(data) {
-    var dom = (new DOMParser()).parseFromString(data, 'text/html');
+    var dom = parse(data);
+    var scr = script();
     var scripts = [].slice.call(dom.getElementsByTagName('script'));
-    var script = document.createElement('script');
-    var scr = script.cloneNode();
 
     (function(el) {
       el.parentNode.replaceChild(dom.querySelector('.donate'), el);
     })(document.querySelector('.donate-section'));
-    
+
     scr.src = '/build/js/installed-donate-page.min.js';
     document.body.appendChild(scr);
-    
+
     scr.addEventListener('load', function() {
       scripts.forEach(function(el) {
-        if (!(el.src || el.type)) {
-          scr = script.cloneNode();
-          scr.textContent = el.textContent;
-          document.body.appendChild(scr);
-        }
+        if (!(el.src || el.type))
+          (function(scr) {
+            scr.textContent = el.textContent;
+            document.body.appendChild(scr);
+          })(script());
       });
+
+      get('installed-abb', promotionSection);
     });
+
+    document.querySelector('.success .icon').src = '/img/success.png';
+
+    (function(el) {
+      el.rel = 'stylesheet';
+      el.href = '/build/css/installed-page-abb.min.css';
+      document.body.appendChild(el);
+    })(document.createElement('link'));
+  }
+
+  function promotionSection(data) {
+    var dom = parse(data);
+    var footer = document.querySelector('.footer');
+
+    [].slice.call(dom.getElementsByTagName('script')).forEach(function(scr) {
+      document.body.appendChild(script(scr.src));
+    });
+
+    if (navigator.userAgent.indexOf('Edg/') != -1)
+      bowser.msedge_chromium = true;
+
+    (bowser.msedge || bowser.msie || bowser.msedge_chromium)
+      ? footer.classList.add('space')
+      : footer.parentNode.insertBefore(dom.querySelector('.abb'), footer);
   }
 
 </script>

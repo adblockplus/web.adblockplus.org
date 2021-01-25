@@ -2134,11 +2134,19 @@ h2.donation-heading { font-size: 1.2em; }
   }
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+
+  100% { opacity: 1; }
+}
+
 .loading {
   display: block;
   margin: 1em auto;
   animation: pulse 1s infinite;
 }
+
+.donate { animation: fadeIn 1s; }
 
 .donation-heading
 {

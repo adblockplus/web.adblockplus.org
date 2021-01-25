@@ -29,9 +29,3 @@ function smoothScrollTo(destination, duration) {
       smoothScrollTo(destination, (duration - SCROLL_TICK_LENGTH));
   }, SCROLL_TICK_LENGTH);
 }
-
-if (navigator.userAgent.indexOf("Edg/") != -1)
-  bowser.msedge_chromium = true;
-
-if (abbSection && (bowser.msedge || bowser.msie || bowser.msedge_chromium))
-  body.classList.add('hide-abb-section');
