@@ -42,7 +42,6 @@ subscriptions = {
         'ABP filters',
         "I don't care about cookies",
         'EasyList Cookie List',
-        'Malware Domains',
         'Spam404',
         "Fanboy's Notifications Blocking List",
         'CPBL Filters for Adblock Plus',
@@ -831,25 +830,6 @@ subscriptions = {
                      u'https://easylist-downloads.adblockplus.org/liste_fr+easylist.txt'
                      , True], ['Liste FR',
                      u'https://easylist-downloads.adblockplus.org/liste_fr.txt'
-                     , False]],
-        },
-    'Malware Domains': {
-        'blog': None,
-        'changelog': None,
-        'contact': u'http://malwaredomains.com/?page_id=13',
-        'deprecated': False,
-        'faq': None,
-        'forum': None,
-        'homepage': u'http://malwaredomains.com/',
-        'maintainer': None,
-        'policy': None,
-        'specialization': u'malware protection',
-        'supplemented': [],
-        'supplements': [],
-        'supplementsType': [],
-        'type': u'malware',
-        'variants': [['Malware Domains',
-                     u'https://easylist-downloads.adblockplus.org/malwaredomains_full.txt'
                      , False]],
         },
     'NoCoin': {
