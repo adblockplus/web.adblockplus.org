@@ -1,14 +1,13 @@
+/* global eyeo */
 (function() {
 
-var eyeo = window.eyeo || {};
+var gtag = gtag || function(){};
 
 var docEl = document.documentElement;
 
 var URLParams = new URLSearchParams(location.search);
 
 var URLSubDirs = location.pathname.split('/');
-
-var SID = URLParams.get('sid') || uuidv4();
 
 var paymentConfig = {
   USD: {
@@ -115,43 +114,80 @@ function setupPaymentForm() {
   }
 
   eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
+
+  var gtagEventData = {
+    "event_label": "Payment form setup",
+    "event_category": "payment_flow",
+    "non_interaction": true
+  };
+
+  if (typeof performance == "object" && typeof performance.now == "function")
+    gtagEventData.performance_time = performance.now();
+
+  gtag("event", "payment_form_setup", gtagEventData);
 }
 
-var fromABP = {
-  an: URLParams.get('an'),
-  av: URLParams.get('av'),
-  ap: URLParams.get('ap'),
-  apv: URLParams.get('apv'),
-  p: URLParams.get('p'),
-  pv: URLParams.get('pv')
-};
+var SID;
 
-var loadReport = {
-  bn: bowser.name,
-  bv: bowser.version,
-  bp: URLSubDirs[URLSubDirs.length - 1],
-  bl: docEl.lang,
-  cid: window.campaignID || 0,
-  sid: SID
-};
+/**
+ * report session and load amounts
+ * @param {string} variant optimize variant (or lackthereof) applied
+ *   a: Not user testing
+ *   b: GDPR exception
+ *   c: Testing disabled analytics
+ *   d: Testing disabled optimize
+ *   e: Anti-flicker timed out
+ *   0: Original variant
+ *   1-9: Challenger variants
+ */
+function reportSession(variant)
+{
+  variant = variant || 0;
 
-if (fromABP.an)
-  loadReport = _.extend(loadReport, fromABP);
+  SID = URLParams.get('sid') || variant + "-" + uuidv4();
 
-function onLoadReportSuccess() {
-  (document.readyState == 'loading')
-    ? document.addEventListener('DOMContentLoaded', setupPaymentForm)
-    : setupPaymentForm();
+  var fromABP = {
+    an: URLParams.get('an'),
+    av: URLParams.get('av'),
+    ap: URLParams.get('ap'),
+    apv: URLParams.get('apv'),
+    p: URLParams.get('p'),
+    pv: URLParams.get('pv')
+  };
+
+  var loadReport = {
+    bn: bowser.name,
+    bv: bowser.version,
+    bp: URLSubDirs[URLSubDirs.length - 1],
+    bl: docEl.lang,
+    vid: variant,
+    cid: window.campaignID || 0,
+    sid: SID
+  };
+
+  if (fromABP.an)
+    loadReport = _.extend(loadReport, fromABP);
+
+  var script = document.createElement('script');
+
+  var params = new URLSearchParams(loadReport);
+
+  function onLoadReportSuccess() {
+    (document.readyState == 'loading')
+      ? document.addEventListener('DOMContentLoaded', setupPaymentForm)
+      : setupPaymentForm();
+  }
+
+  script.onload = onLoadReportSuccess;
+  script.onerror = onLoadReportSuccess;
+  script.src = '/js/payment/config/load.js?' + params.toString();
+
+  document.head.appendChild(script);
 }
 
-var script = document.createElement('script');
-
-var params = new URLSearchParams(loadReport);
-
-script.onload = onLoadReportSuccess;
-script.onerror = onLoadReportSuccess;
-script.src = '/js/payment/config/load.js?' + params.toString();
-
-document.head.appendChild(script);
+if (typeof eyeo.onOptimizeComplete == "function")
+  eyeo.onOptimizeComplete(reportSession);
+else
+  reportSession("a");
 
 }());
