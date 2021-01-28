@@ -7,15 +7,11 @@
   var TRACKING_CONSENT = "eyeo-ga-consent";
   var TRACKING_UID = "UA-18643396-6";
 
-  var siteDomain = (function(subdomains)
-  {
-    if (subdomains.length >= 2)
-      return subdomains[subdomains.length - 2]
-        + "."
-        + subdomains[subdomains.length - 1];
-    else
-      return subdomains[0];
-  })(window.location.host.split("."));
+  var domain = window.location.hostname
+    // get top level domain
+    .split(".").slice(-2).join(".")
+    // strip port
+    .split(":")[0];
 
   function addListeners(event, targets, callback)
   {
@@ -33,9 +29,9 @@
   function setCookie(key, value)
   {
     if (value)
-      doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=" + siteDomain + "; path=/";
+      doc.cookie = key + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=" + domain + "; path=/";
     else
-      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=" + siteDomain + "; path=/";
+      doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=" + domain + "; path=/";
   }
 
   var hasSeenCookiePrompt = hasCookie(HAS_SEEN_COOKIE_PROMPT);
