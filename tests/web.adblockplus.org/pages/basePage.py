@@ -1,3 +1,5 @@
+import os
+
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -11,7 +13,7 @@ class BasePage:
         self.timeout = 30
 
     def go_home(self):
-        self.driver.get('http://adblockplus.org/')
+        self.driver.get(str(os.getenv('landing_page_url')))
 
     def is_redirect_to_url(self, url):
         wait = WebDriverWait(self.driver, 10)
