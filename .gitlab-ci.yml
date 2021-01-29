@@ -28,6 +28,7 @@ stages:
   - "deploy_staging"
   - "build_production"
   - "deploy_production"
+  - "smoke_tests"
   - "test"
   - "test_download_links"
 
@@ -51,6 +52,20 @@ download_links_tests:
     - pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --server-args="-screen 0 1024x768x24" tox -- tests/test_DownloadLinks.py
+
+smoke_tests:
+  except:
+    - schedules
+  stage: smoke_tests
+  variables:
+    <<: *staging
+  image: joyzoursky/python-chromedriver:latest
+  script:
+    - apt update
+    - apt install xvfb -yqq
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
 
 lint:
   except:
