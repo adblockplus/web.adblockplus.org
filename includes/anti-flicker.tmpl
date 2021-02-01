@@ -10,7 +10,7 @@
     eyeo.onOptimizeComplete = function(callback)
     {
       if (eyeo.isOptimizeComplete)
-        callback();
+        callback(eyeo.variant.applied);
       else
         eyeo.optimizeCompleteCallbacks.push(callback);
     };

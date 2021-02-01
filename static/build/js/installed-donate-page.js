@@ -1557,6 +1557,8 @@ var SID;
  */
 function reportSession(variant)
 {
+  variant = variant || 0;
+
   var SID = URLParams.get('sid') || variant + "-" + uuidv4();
 
   var fromABP = {
@@ -1605,7 +1607,7 @@ function reportSession(variant)
 }
 
 if (typeof eyeo.onOptimizeComplete == "function")
-  eyeo.onOptimizeComplete(reportSession.bind(this, 0));
+  eyeo.onOptimizeComplete(reportSession);
 else
   reportSession("a");
 
