@@ -1,0 +1,27 @@
+.info-cont {
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-graphic-col,
+.info-text-col {
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  .info-cont {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .info-graphic-col,
+  .info-text-col {
+    width: 50%;
+  }
+}
+
+.info-graphic-col svg {
+  margin: 2em;
+}

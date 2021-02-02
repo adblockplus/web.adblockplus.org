@@ -34,3 +34,7 @@ RewriteRule ^de/ad-blocker-safari/?$ https://adblockplus.org/de/ [NC,R=301]
 RewriteRule ^fr/ad-blocker-safari/?$ https://adblockplus.org/fr/ [NC,R=301]
 RewriteRule ^(\w\w(_\w\w)?/)?filters$ https://help.eyeo.com/en/adblockplus/how-to-write-filters [NC,R=301]
 RewriteRule ^(\w\w(_\w\w)?/)?android-about/?$ https://adblockplus.org/ [NC,R=301]
+
+# Error page redirects
+ErrorDocument 404 /en/404
+ErrorDocument 500 /en/500
