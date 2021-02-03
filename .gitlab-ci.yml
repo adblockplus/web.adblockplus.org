@@ -21,6 +21,8 @@
     - &PRODUCTION_RUNNER2 "eyeo_cms_web_server_new-adblockplus-org-2.uplink.eyeo.it"
     - &PRODUCTION_RUNNER3 "eyeo_cms_web_server_new-adblockplus-org-3.uplink.eyeo.it"
     - &PRODUCTION_RUNNER4 "eyeo_cms_web_server_new-adblockplus-org-4.uplink.eyeo.it"
+    - &PRODUCTION_RUNNER5 "eyeo_cms_web_server_new-adblockplus-org-5.uplink.eyeo.it"
+    - &PRODUCTION_RUNNER6 "eyeo_cms_web_server_new-adblockplus-org-6.uplink.eyeo.it"
 
 # https://docs.gitlab.com/ee/ci/yaml/#stages
 stages:
@@ -188,6 +190,40 @@ deploy_production4:
     <<: *production
   tags:
     - *PRODUCTION_RUNNER4
+  script:
+    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - "master"
+
+deploy_production5:
+  stage:
+    "deploy_production"
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER5
+  script:
+    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - "master"
+
+deploy_production6:
+  stage:
+    "deploy_production"
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER6
   script:
     - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
   environment:
