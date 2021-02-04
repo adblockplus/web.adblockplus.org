@@ -36,7 +36,7 @@ We configure Google Analytics to load Google Optimize in a page if the user hasn
 
 ##### Google Analytics and Tag Manager conditions
 
-The following conditions also apply to Google Optimize beacuse Google Optimize depends on Google Analytics.
+The following conditions also apply to Google Optimize because Google Optimize depends on Google Analytics.
 
 Google analytics is not loaded if the user opts out of testing via the cookie settings UI or if the user is visiting a page with the cookie settings UI disabled and they have not seen the cookie settings UI before.
 
