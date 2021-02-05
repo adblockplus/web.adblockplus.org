@@ -1529,16 +1529,11 @@ function setupPaymentForm() {
 
   eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
 
-  var gtagEventData = {
+  gtag("event", "payment_form_setup", {
     "event_label": "Payment form setup",
     "event_category": "payment_flow",
     "non_interaction": true
-  };
-
-  if (typeof performance == "object" && typeof performance.now == "function")
-    gtagEventData.performance_time = performance.now();
-
-  gtag("event", "payment_form_setup", gtagEventData);
+  });
 }
 
 var SID;
