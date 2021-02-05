@@ -1,8 +1,46 @@
 {% if user_testing and not disable_analytics -%}
   <style>.async-hide { opacity: 0 !important} </style>
-  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-    })(window,document.documentElement,'async-hide','dataLayer',4000,
-      {'GTM-NW8L5JT':true});</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    eyeo.isOptimizeComplete = false;
+
+    eyeo.optimizeCompleteCallbacks = [];
+
+    eyeo.onOptimizeComplete = function(callback)
+    {
+      if (eyeo.isOptimizeComplete)
+        callback(eyeo.variant.applied);
+      else
+        eyeo.optimizeCompleteCallbacks.push(callback);
+    };
+
+    eyeo.triggerOptimizeComplete = function(variant)
+    {
+      // Don't complete twice e.g. after timeout
+      if (eyeo.isOptimizeComplete) return;      
+      eyeo.isOptimizeComplete = true;
+
+      eyeo.variant = eyeo.variant || {};
+      eyeo.variant.applied = variant;
+
+      console.warn("optimize variant", variant);
+      
+      for (
+        var i = 0, callbacks = eyeo.optimizeCompleteCallbacks;
+        i < callbacks.length;
+        i++
+      ) {
+        callbacks[i](variant);
+      }
+    };
+  </script>
+
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;h.end=i=function(){
+    // (WARNING: Optimize snippet edit) triggering optimize complete with original variant
+    eyeo.triggerOptimizeComplete(0);
+    s.className=s.className.replace(RegExp(' ?'+y),'');};(a[n]=a[n]||[]).hide=h;setTimeout(function(){
+    // (WARNING: Optimize snippet edit) triggering optimize complete with timeout
+    eyeo.triggerOptimizeComplete("e");
+    i();h.end=null;},c);h.timeout=c;})(window,document.documentElement,'async-hide','dataLayer',4000,{'GTM-NW8L5JT':true});</script>
 {%- endif %}
