@@ -13,7 +13,16 @@
   }
 ] %}
 
-<section class="download-mobile">
+<section class="download-mobile"
+  itemscope itemtype="https://schema.org/SoftwareApplication">
+  <meta itemprop="applicationCategory" content="BrowserApplication">
+  <meta itemprop="applicationCategory" content="UtilitiesApplication">
+  <meta itemprop="operatingSystem" content="Android, Ios">
+  <meta itemprop="name" content="Adblock Plus Mobile">
+  <meta itemprop="description" content="{{description}}">
+  <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <meta itemprop="price" content="0">
+  </div>
   <div class="tab-media-contents">
     <img
       src="/img/mobile-abp.svg"

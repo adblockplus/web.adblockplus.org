@@ -1,61 +1,70 @@
 {% set browsers = [
   {
-    "id":"chrome",
-    "class":"abp-chrome",
-    "name":"Chrome",
-    "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
-    "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>",
-    "cta":"Get Adblock Plus for Chrome"
+    'id':'chrome',
+    'class':'abp-chrome',
+    'name':'Chrome',
+    'url':'https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb',
+    'rating':'<span itemprop="ratingValue">4.4</span> stars on <strong itemprop="author">Chrome Web Store</strong>',
+    'cta':'Get Adblock Plus for Chrome'
   },
   {
-    "id":"firefox",
-    "class":"abp-firefox",
-    "name":"Firefox",
-    "url":"https://eyeo.to/adblockplus/firefox_install/",
-    "rating":"<span>4.6</span> stars on <strong>Mozilla Add-ons</strong>",
-    "cta":"Get Adblock Plus for Firefox"
+    'id':'firefox',
+    'class':'abp-firefox',
+    'name':'Firefox',
+    'url':'https://eyeo.to/adblockplus/firefox_install/',
+    'rating':'<span itemprop="ratingValue">4.6</span> stars on <strong itemprop="author">Mozilla Add-ons</strong>',
+    'cta':'Get Adblock Plus for Firefox'
   },
   {
-    "id":"msie",
-    "class":"abp-msie",
-    "name":"Internet Explorer",
-    "url":"https://eyeo.to/adblockplus/ie_install/",
-    "cta":"Agree and install for Internet Explorer"
+    'id':'msie',
+    'class':'abp-msie',
+    'name':'Internet Explorer',
+    'url':'https://eyeo.to/adblockplus/ie_install/',
+    'cta':'Agree and install for Internet Explorer'
   },
   {
-    "id":"safari",
-    "class":"abp-safari",
-    "name":"Safari",
-    "url":"https://eyeo.to/adblockplus/macos_safari_install/",
-    "cta":"Agree and install for Safari"
+    'id':'safari',
+    'class':'abp-safari',
+    'name':'Safari',
+    'url':'https://eyeo.to/adblockplus/macos_safari_install/',
+    'cta':'Agree and install for Safari'
   },
   {
-    "id":"msedge",
-    "class":"abp-msedge",
-    "name":"Microsoft Edge",
-    "url":"https://eyeo.to/adblockplus/edge_install/",
-    "rating":"<span>4.6</span> stars on <strong>Microsoft Edge Add-ons</strong>",
-    "cta":"Get Adblock Plus for Microsoft Edge"
+    'id':'msedge',
+    'class':'abp-msedge',
+    'name':'Microsoft Edge',
+    'url':'https://eyeo.to/adblockplus/edge_install/',
+    'rating':'<span itemprop="ratingValue">4.6</span> stars on <strong itemprop="author">Microsoft Edge Add-ons</strong>',
+    'cta':'Get Adblock Plus for Microsoft Edge'
   },
   {
-    "id":"opera",
-    "class":"abp-opera",
-    "name":"Opera",
-    "url":"https://eyeo.to/adblockplus/opera_install/",
-    "rating":"<span>4.3</span> stars on <strong>Opera Add-ons</strong>",
-    "cta":"Get Adblock Plus for Opera"
+    'id':'opera',
+    'class':'abp-opera',
+    'name':'Opera',
+    'url':'https://eyeo.to/adblockplus/opera_install/',
+    'rating':'<span itemprop="ratingValue">4.3</span> stars on <strong itemprop="author">Opera Add-ons</strong>',
+    'cta':'Get Adblock Plus for Opera'
   },
   {
-    "id":"yandexbrowser",
-    "class":"abp-yandexbrowser",
-    "name":"Yandex Browser",
-    "url":"https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb",
-    "rating":"<span>4.4</span> stars on <strong>Chrome Web Store</strong>",
-    "cta":"Get Adblock Plus for Yandex Browser"
+    'id':'yandexbrowser',
+    'class':'abp-yandexbrowser',
+    'name':'Yandex Browser',
+    'url':'https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb',
+    'rating':'<span itemprop="ratingValue">4.4</span> stars on <strong itemprop="author">Chrome Web Store</strong>',
+    'cta':'Get Adblock Plus for Yandex Browser'
   }
 ] %}
 
-<section class="download-desktop">
+<section class="download-desktop"
+  itemscope itemtype="https://schema.org/SoftwareApplication">
+  <meta itemprop="applicationCategory" content="BrowserApplication">
+  <meta itemprop="applicationCategory" content="UtilitiesApplication">
+  <meta itemprop="operatingSystem" content="All">
+  <meta itemprop="name" content="Adblock Plus Desktop">
+  <meta itemprop="description" content="{{description}}">
+  <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <meta itemprop="price" content="0">
+  </div>
   <div class="tab-media-contents">
     <img
       src="/img/desktop-abp.svg"
@@ -103,7 +112,12 @@
               <rect x=".28814" y=".50425" width="70.125" height="13.766" stroke-width=".97372" class="rating-bar"/>
               <path d="m0 3.359e-7v14.775h70.701v-14.775zm8.7984 2.713 1.4955 3.0308 3.344 0.48576-2.4205 2.359 0.56999 3.3316-2.989-1.5725-2.9921 1.573 0.57-3.3316-2.419-2.359 3.344-0.48627zm13.418 0.14159 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.57-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.57 3.3311-2.989-1.5725-2.9916 1.573 0.56999-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.56999-3.3316-2.419-2.359 3.344-0.48628zm13.229 0 1.4955 3.0308 3.344 0.48628-2.4205 2.359 0.56999 3.3311-2.989-1.5725-2.9916 1.573 0.57-3.3316-2.419-2.359 3.344-0.48628z" fill="#fff"/>
             </svg>
-            <p>{{ brws.rating | translate(brws.id + "-rating", "Paragraph")}}</p>
+            <p itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="name" content="Adblock Plus for Desktop">
+              <meta itemprop="worstRating" content="0">{{ brws.rating | translate(brws.id + "-rating", "Paragraph")}}
+              <meta itemprop="bestRating" content="5">
+              <meta itemprop="url" content="{{ brws.url }}">
+            </p>
           </div>
           {% endif %}
         </div>
