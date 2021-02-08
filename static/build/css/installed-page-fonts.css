@@ -1991,6 +1991,33 @@ a.navbar-logo {
   background-color: #fff;
 }
 
+@media(min-width: 992px) {
+  .ab-test .donate {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    bottom: -2000px;
+    border-radius: 0;
+    margin: 0;
+    transition: bottom ease 2s;
+  }
+
+  .ab-test .donate #close-form-button {
+    padding: 2em;
+    background: url(../../img/frp-close-icon.svg) no-repeat center center transparent;
+    position: absolute;
+    right: 0;
+  }
+  
+  .ab-test .fake-container {
+    width: 1140px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .no-js .donate { display: none; }
 
 @media(min-width: 992px) {
@@ -2140,6 +2167,12 @@ h2.donation-heading { font-size: 1.2em; }
   100% { opacity: 1; }
 }
 
+@keyframes slideIn {
+  0% { bottom: -2000px; }
+
+  100% { bottom: 0; }
+}
+
 .loading {
   display: block;
   margin: 1em auto;
@@ -2148,6 +2181,10 @@ h2.donation-heading { font-size: 1.2em; }
 
 .donate { animation: fadeIn 1s; }
 
+.ab-test.show-form .donate {
+  animation: fadeIn 0s, slideIn 1s;
+  bottom: 0px;
+}
 .donation-heading
 {
   display: inline;
