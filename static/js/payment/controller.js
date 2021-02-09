@@ -153,7 +153,7 @@ function reportSession(variant)
   };
 
   if (typeof performance == "object" && typeof performance.now == "function")
-    loadReport.pn = performance.now();
+    loadReport.pn = (performance.now() + '').split('.')[0];
 
   if (fromABP.an)
     loadReport = _.extend(loadReport, fromABP);
