@@ -1,8 +1,6 @@
 /* global eyeo */
 (function() {
 
-var gtag = gtag || function(){};
-
 var docEl = document.documentElement;
 
 var URLParams = new URLSearchParams(location.search);
@@ -114,12 +112,6 @@ function setupPaymentForm() {
   }
 
   eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
-
-  gtag("event", "payment_form_setup", {
-    "event_label": "Payment form setup",
-    "event_category": "payment_flow",
-    "non_interaction": true
-  });
 }
 
 var SID;
@@ -159,6 +151,9 @@ function reportSession(variant)
     cid: window.campaignID || 0,
     sid: SID
   };
+
+  if (typeof performance == "object" && typeof performance.now == "function")
+    loadReport.pn = performance.now();
 
   if (fromABP.an)
     loadReport = _.extend(loadReport, fromABP);
