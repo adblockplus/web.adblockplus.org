@@ -1,0 +1,43 @@
+title=Without Optimize
+noheading=1
+notoc=1
+
+<h1 id="variant">Original</h1>
+
+<script>
+  // Define total variants starting from 1
+  var TOTAL_VARIANTS = 2;
+
+  // Randomly choose variant
+  // Starting from 0 e.g. if TOTAL_VARIANTS is 2 then chosenVariant will be 0/1
+  var chosenVariant = Math.floor(Math.random() * TOTAL_VARIANTS);
+
+  // Apply variant
+  if (chosenVariant == 1) {
+    document.getElementById("variant").textContent = "Variant 1";
+  }
+
+  // Collect data
+  var data = {
+    // Somewhat unique ID for visit (or session if passed along)
+    uid: Math.random().toString(16).slice(2),
+    // Test ID (to distinguish between split tests)
+    tid: 1,
+    // Variant ID (variant that was applied)
+    vid: chosenVariant
+  }
+
+  // Performance timestamp
+  // To determine how long it took to load the page and see the variant
+  if (performance && performance.now)
+    data.performance = performance.now();
+
+  // IE doesn't support URLSearchParams
+  URLSearchParams = URLSearchParams
+    || function(){this.toString = function(){}};
+
+  // Send report
+  var report = document.createElement("img");
+  report.src = "/img/pixel.gif?" + new URLSearchParams(data).toString();
+  document.body.appendChild(report);
+</script>
