@@ -928,19 +928,31 @@
       element.addEventListener("click", function(event) {
         event.preventDefault();
 
-        if (element.getAttribute("href") ==
-          "#" + tabsContents[index].getAttribute("id")) {
-
+        tabsMenuLinks.forEach(function(item) {
           document.querySelector(currentLink)
             .classList.remove("current-tab");
 
           document.querySelector(currentTab)
             .classList.remove("current-tab");
+          
+          item.setAttribute("aria-selected", "false");
+          
+          item.setAttribute("tabindex", "-1");
+          
+          if (element.getAttribute("href") ==
+          "#" + tabsContents[index].getAttribute("id")) {
 
-          tabsMenuLinks[index].parentNode.classList.add("current-tab");
+            tabsContents[index].classList.add("current-tab");
 
-          tabsContents[index].classList.add("current-tab");
-        }
+            tabsMenuLinks[index].parentNode.classList.add("current-tab");
+
+            tabsMenuLinks[index].setAttribute("aria-selected", "true");
+
+            tabsMenuLinks[index].removeAttribute("tabindex");
+
+          }
+        });
+
       });
     }
 
@@ -973,12 +985,26 @@
       if (getKey(data)) {
         if (document.querySelector(linkSelector)) {
           [].slice.call(document.querySelectorAll(currentSelector))
-          .forEach(function(item) {
-            item.classList.remove("current-tab")
+            .forEach(function(item) {
+              item.classList.remove("current-tab");
+
+          });
+
+          [].slice.call(document.querySelectorAll(".tabs li a"))
+            .forEach(function(item) {
+              item.setAttribute("aria-selected", "false");
+              item.setAttribute("tabindex", "-1");
+
           });
 
           document.querySelector(linkSelector).parentNode.classList
             .add("current-tab");
+            
+          document.querySelector(linkSelector)
+            .setAttribute("aria-selected", "true");
+          
+          document.querySelector(linkSelector)
+            .removeAttribute("tabindex");
         }
 
         if (document.querySelector(tabSelector))
@@ -993,7 +1019,7 @@
         desktopBrowsers,
         ".download-desktop .current-tab",
         ".abp-" + getKey(desktopBrowsers),
-        "#" + getKey(desktopBrowsers) + "_tab"
+        "#" + getKey(desktopBrowsers) + "_panel"
       );
 
     if (getKey(mobilePlatforms) == "ios")
@@ -1001,7 +1027,7 @@
         desktopBrowsers,
         ".download-mobile .current-tab",
         ".abp-ios-safari",
-        "#ios_safari_tab"
+        "#ios_safari_panel"
       );
 
     else
@@ -1009,7 +1035,7 @@
         mobileBrowsers,
         ".download-mobile .current-tab",
         ".abp-" + getKey(mobilePlatforms) + "-" + getKey(mobileBrowsers),
-        "#" + getKey(mobilePlatforms) + "_" + getKey(mobileBrowsers) + "_tab"
+        "#" + getKey(mobilePlatforms) + "_" + getKey(mobileBrowsers) + "_panel"
       );
 
   }

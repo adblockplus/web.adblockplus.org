@@ -31,13 +31,17 @@
   <div class="tab-text-contents">
     <h2>{{ "Block ads on your mobile browser" | translate("download-mobile-title", "Heading") }}</h2>
     <div class="tabs">
-      <ul class="horizontal-list tabs-menu">
+      <ul role="tablist" class="horizontal-list tabs-menu">
         {% for brws in browsers %}
         <li
           {% if brws.id == 'android_samsungBrowser' %} class="current-tab"{% endif %}>
           <a
+            role="tab"
+            aria-controls="{{ brws.id }}-tab"
+            {% if brws.id != 'chrome' %} tabindex="-1"{% endif %}
             class="{{ brws.class }}"
-            href="#{{ brws.id }}_tab">
+            id="{{ brws.id }}_tab"
+            href="#{{ brws.id }}_panel">
             <strong>{{ brws.name | translate(brws_identifier, "Product name") }}</strong>
           </a>
         </li>
@@ -45,7 +49,10 @@
       </ul>
       {% for brws in browsers %}
       <div
-        id="{{ brws.id }}_tab"
+        tabindex="0"
+        role="tabpanel"
+        aria-labelledby="{{ brws.id }}_tab"
+        id="{{ brws.id }}_panel"
         class="tab-content {% if brws.id in ('chrome', 'android_samsungBrowser') %} current-tab{% endif %}">
         {% if brws.id == 'android_samsungBrowser' %}
         <? include install-button-android ?>

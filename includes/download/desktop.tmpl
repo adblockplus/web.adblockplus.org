@@ -77,13 +77,17 @@
         {{ "Add-on available ONLY on desktop computers" | translate("download-desktop-note", "Paragraph") }}</span>
     </h2>
     <div class="tabs">
-      <ul class="horizontal-list tabs-menu">
+      <ul role="tablist" class="horizontal-list tabs-menu">
         {% for brws in browsers %}
         <li
           {% if brws.id == 'chrome' %} class="current-tab"{% endif %}>
           <a
+            role="tab"
+            aria-controls="{{ brws.id }}-tab"
+            {% if brws.id != 'chrome' %} tabindex="-1"{% endif %}
             class="{{ brws.class }}"
-            href="#{{ brws.id }}_tab">
+            id="{{ brws.id }}_tab"
+            href="#{{ brws.id }}_panel">
             {{ brws.name | translate(brws_identifier, "Product name") }}
           </a>
         </li>
@@ -91,7 +95,10 @@
       </ul>
       {% for brws in browsers %}
       <div
-        id="{{ brws.id }}_tab"
+        tabindex="0"
+        role="tabpanel"
+        aria-labelledby="{{ brws.id }}_tab"
+        id="{{ brws.id }}_panel"
         class="tab-content {% if brws.id == 'chrome' %} current-tab{% endif %}">
         <div class="tab-column">
           <a
