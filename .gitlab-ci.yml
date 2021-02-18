@@ -32,29 +32,96 @@ stages:
   - "build_production"
   - "deploy_production"
   - "smoke_tests"
-  - "test"
-  - "test_download_links"
+  - "manually_triggered_tests"
+  - "scheduled_test_download_links"
 
-tests:
+cookies_settings_tests:
   except:
     - schedules
-  stage: test
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
   image: *TEST_IMAGE
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
-    - xvfb-run --server-args="-screen 0 1024x768x24" tox
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_CookiesSettings.py
   when: manual
 
 download_links_tests:
-  only:
+  except:
     - schedules
-  stage: test_download_links
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
   image: *TEST_IMAGE
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
-    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- tests/test_DownloadLinks.py
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
+  when: manual
+
+language_tests:
+  except:
+    - schedules
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
+  image: *TEST_IMAGE
+  script:
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Languages.py
+  when: manual
+
+stripe_donate_tests:
+  except:
+    - schedules
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
+  image: *TEST_IMAGE
+  script:
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=donate tests/test_StripeDonations.py
+  when: manual
+
+stripe_installed_tests:
+  except:
+    - schedules
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
+  image: *TEST_IMAGE
+  script:
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=installed tests/test_StripeDonations.py
+  when: manual
+
+stripe_update_tests:
+  except:
+    - schedules
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
+  image: *TEST_IMAGE
+  script:
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=update tests/test_StripeDonations.py
+  when: manual
+
+download_links_scheduled_tests:
+  only:
+    - schedules
+  stage: scheduled_test_download_links
+  image: *TEST_IMAGE
+  script:
+    - pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py
 
 smoke_tests:
   except:
@@ -71,7 +138,7 @@ smoke_tests:
 lint:
   except:
     - schedules
-  stage: test
+  stage: manually_triggered_tests
   image: node:latest
   script:
     - npm init -y

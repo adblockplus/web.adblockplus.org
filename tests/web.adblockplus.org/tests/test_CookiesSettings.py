@@ -52,7 +52,7 @@ def test_verify_all_options_selected_by_default(driver):
     assert cookie_settings_form.is_ab_testing_cookies_toggle_enabled()
 
 
-def test_disable_tracking_verify_saved(driver):
+def test_disable_tracking_save(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
 
@@ -61,14 +61,10 @@ def test_disable_tracking_verify_saved(driver):
     cookie_settings_form.click_tracking_cookies_toggle()
     cookie_settings_form.click_save_preferences_button()
 
-    top_menu = TopMenu(driver)
-    about_page = top_menu.click_about_menu_item()
-    privacy_policy_page = about_page.click_privacy_policy_link()
-    privacy_policy_page.click_change_cookie_settings_link()
-    assert not cookie_settings_form.is_tracking_cookies_toggle_enabled()
+    assert not cookies_prompt.is_prompt_visible()
 
 
-def test_disable_ab_testing_verify_saved(driver):
+def test_disable_ab_testing_save(driver):
     landing_page = LandingPage(driver)
     landing_page.go_home()
 
@@ -77,11 +73,7 @@ def test_disable_ab_testing_verify_saved(driver):
     cookie_settings_form.click_ab_testing_cookies_toggle()
     cookie_settings_form.click_save_preferences_button()
 
-    top_menu = TopMenu(driver)
-    about_page = top_menu.click_about_menu_item()
-    privacy_policy_page = about_page.click_privacy_policy_link()
-    privacy_policy_page.click_change_cookie_settings_link()
-    assert not cookie_settings_form.is_ab_testing_cookies_toggle_enabled()
+    assert not cookies_prompt.is_prompt_visible()
 
 
 def test_verify_tracking_toggle_affects_ab_when_ab_enabled(driver):

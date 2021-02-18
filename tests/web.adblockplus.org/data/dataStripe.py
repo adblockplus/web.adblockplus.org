@@ -8,66 +8,66 @@ TEST_ZIP = '70205'
 MONTHLY_AMOUNT_UNDER_MINIMUM = '0.99'
 ONE_TIME_AMOUNT_UNDER_MINIMUM = '4.99'
 MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR = \
-      'Oops! To help cover fees, the minimum monthly donation amount is 1€.'
+      'Oops! To help cover fees, the minimum monthly donation amount is $1.'
 ONE_TIME_AMOUNT_UNDER_MINIMUM_ERROR = \
-      'Oops! To help cover fees, the minimum one-time donation amount is 5€.'
+      'Oops! To help cover fees, the minimum one-time donation amount is $5.'
 
 
 ONE_TIME_CUSTOM_DONATION = [(
       'Lowest accepted value - 5',
       '5',
-      'Donate 5€',
+      'Donate $5',
 ), (
       'High value - 10000',
       '10000',
-      'Donate 10000€',
+      'Donate $10000',
 )]
 
 
 MONTHLY_CUSTOM_DONATION = [(
       'Lowest accepted value - 1',
       '1',
-      'Subscribe 1€ / month',
+      'Donate $1 / month',
 ), (
       'High value - 5000',
       '5000',
-      'Subscribe 5000€ / month',
+      'Donate $5000 / month',
 )]
 
 
 ONE_TIME_PAYMENT_OPTIONS = [(
       'One time 10',
-      'Donate 10€',
+      'Donate $10',
 ), (
       'One time 15',
-      'Donate 15€',
+      'Donate $15',
 ), (
       'One time 20',
-      'Donate 20€',
+      'Donate $20',
 ), (
       'One time 35',
-      'Donate 35€',
+      'Donate $35',
 ), (
       'One time 50',
-      'Donate 50€',
+      'Donate $50',
 )]
 
 
 MONTHLY_PAYMENT_OPTIONS = [(
       'Monthly 1.99',
-      'Subscribe 1.99€ / month',
+      'Donate $1.99 / month',
 ), (
       'Monthly 2.99',
-      'Subscribe 2.99€ / month',
+      'Donate $2.99 / month',
 ), (
       'Monthly 3.99',
-      'Subscribe 3.99€ / month',
+      'Donate $3.99 / month',
 ), (
       'Monthly 4.99',
-      'Subscribe 4.99€ / month',
+      'Donate $4.99 / month',
 ), (
       'Monthly 9.99',
-      'Subscribe 9.99€ / month',
+      'Donate $9.99 / month',
 )]
 
 
@@ -92,21 +92,6 @@ US_CARD_TYPES = [(
 ), (
       'American Express',
       '378282246310005',
-), (
-      'Discover',
-      '6011111111111117',
-), (
-      'Diners Club',
-      '3056930009020004',
-), (
-      'Diners Club 14 digits',
-      '36227206271667',
-), (
-      'JCB',
-      '3566002020360505',
-), (
-      'UnionPay',
-      '6200000000000005',
 )]
 
 
@@ -197,12 +182,6 @@ INTERNATIONAL_CARDS = [(
 ), (
       'Hong_Kong',
       '4000003440000004',
-), (
-      'India',
-      '4000003560000008',
-), (
-      'Japan',
-      '3530111333300000',
 ), (
       'Malaysia',
       '4000004580000002',

@@ -1,50 +1,29 @@
 TEST_DATA = [(
-      'AR',
-      u'تثبيت لجوجل كروم'
-), (
-      'BG',
-      u'Инсталирай на Chrome'
-), (
       'DE',
-      'Hol dir Adblock Plus für Chrome'
+      'HOL DIR ADBLOCK PLUS FÜR CHROME'
 ), (
       'US',
-      'Get Adblock Plus for Chrome'
+      'GET ADBLOCK PLUS FOR CHROME'
 ), (
       'ES',
-      'Obtén Adblock Plus para Chrome'
+      'OBTÉN ADBLOCK PLUS PARA CHROME'
 ), (
       'FR',
-      'Obtenez Adblock Plus pour Chrome'
+      'OBTENEZ ADBLOCK PLUS POUR CHROME'
 ), (
-      'HE',
-      'התקנה עבור Chrome'
-), (
-      'HU',
-      'Installálás Chrome alá'
-), (
-      'KR',
-      '크롬용 설치'
-), (
-      'LT',
-      'Įdiegti į Chrome'
+      'IT',
+      'OTTIENI ADBLOCK PLUS PER CHROME'
 ), (
       'NL',
-      'Installeren voor Chrome'
+      'DOWNLOAD ADBLOCK PLUS VOOR CHROME'
 ), (
       'BR',
-      'Obtenha Adblock Plus para Chrome'
+      'OBTENHA ADBLOCK PLUS PARA CHROME'
 ), (
       'RU',
-      'Загрузите Adblock Plus для Chrome'
-), (
-      'SK',
-      'Inštalovať pre Chrome'
+      'ЗАГРУЗИТЕ ADBLOCK PLUS ДЛЯ CHROME'
 ), (
       'CN',
-      '获取 Chrome 版本的 Adblock Plus'
-), (
-      'TW',
-      '安裝到 Chrome'
+      '获取 CHROME 版本的 ADBLOCK PLUS'
 )]
 
