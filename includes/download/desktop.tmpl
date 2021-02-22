@@ -84,7 +84,6 @@
           <a
             role="tab"
             aria-controls="{{ brws.id }}-tab"
-            {% if brws.id != 'chrome' %} tabindex="-1"{% endif %}
             class="{{ brws.class }}"
             id="{{ brws.id }}_tab"
             href="#{{ brws.id }}_panel">
@@ -95,7 +94,6 @@
       </ul>
       {% for brws in browsers %}
       <div
-        tabindex="0"
         role="tabpanel"
         aria-labelledby="{{ brws.id }}_tab"
         id="{{ brws.id }}_panel"

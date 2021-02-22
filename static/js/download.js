@@ -67,8 +67,6 @@
           
           item.setAttribute("aria-selected", "false");
           
-          item.setAttribute("tabindex", "-1");
-          
           if (element.getAttribute("href") ==
           "#" + tabsContents[index].getAttribute("id")) {
 
@@ -77,8 +75,6 @@
             tabsMenuLinks[index].parentNode.classList.add("current-tab");
 
             tabsMenuLinks[index].setAttribute("aria-selected", "true");
-
-            tabsMenuLinks[index].removeAttribute("tabindex");
 
           }
         });
@@ -123,7 +119,6 @@
           [].slice.call(document.querySelectorAll(".tabs li a"))
             .forEach(function(item) {
               item.setAttribute("aria-selected", "false");
-              item.setAttribute("tabindex", "-1");
 
           });
 
@@ -132,9 +127,7 @@
             
           document.querySelector(linkSelector)
             .setAttribute("aria-selected", "true");
-          
-          document.querySelector(linkSelector)
-            .removeAttribute("tabindex");
+
         }
 
         if (document.querySelector(tabSelector))
