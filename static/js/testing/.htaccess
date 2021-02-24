@@ -1,3 +1,7 @@
 RewriteEngine on
+
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|CY|CZ|DE|DK|EE|ES|FI|FR|GB|GR|HR|HU|IE|IS|IT|LI|LT|LU|LV|MT|NL|NO|PL|PT|RO|SE|SI)$
 RewriteRule ^setup.js teardown.js
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteRule ^setup.js pre-approved.js
