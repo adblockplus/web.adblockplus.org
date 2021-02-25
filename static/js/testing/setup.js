@@ -5,7 +5,7 @@
 
   var variant = eyeo.variant = eyeo.variant || {};
 
-  var variantApplied = 0;
+  var variantApplied = "f";
 
   var domain = window.location.hostname
     // get top level domain

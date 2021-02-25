@@ -124,6 +124,7 @@ var SID;
  *   c: Testing disabled analytics
  *   d: Testing disabled optimize
  *   e: Anti-flicker timed out
+ *   f: Cookie bar exception
  *   0: Original variant
  *   1-9: Challenger variants
  */
