@@ -1,10 +1,6 @@
 /* global eyeo */
 (function(){
 
-  var user = eyeo.user = eyeo.user || {};
-
-  var variant = eyeo.variant = eyeo.variant || {};
-
   var variantApplied = "f";
 
   var domain = window.location.hostname
@@ -24,9 +20,9 @@
     return document.cookie.indexOf(key) !== -1;
   }
 
-  user.consent = hasCookie("eyeo-seen-cookie-prompt");
-  user.analytics = !hasCookie("eyeo-ga-opt-out");
-  user.optimize = !hasCookie("eyeo-ab-opt-out");
+  var seenCookiePrompt = hasCookie("eyeo-seen-cookie-prompt");
+  var allowTracking = !hasCookie("eyeo-ga-opt-out");
+  var allowSplitTesting = allowTracking && !hasCookie("eyeo-ab-opt-out");
 
   var additionalUserTestingVariants = 0;
 
@@ -48,30 +44,26 @@
     );
   }
 
-  variant.analytics = user.analytics;
-
   // disable analytics for variant 0
   if (
-    variant.analytics
+    allowTracking
     && eyeo.testAnalytics
     && randomlyChosenUserTestingVariant < 1
   ) {
     variantApplied = "c";
-    variant.analytics = false;
+    allowTracking = false;
     console.warn("testing analytics");
   }
-
-  variant.optimize = variant.analytics && user.optimize;
 
   // disable optimize for variant 0
   // disable optimize for variant 1 if testing both analytics and optimize
   if (
-    variant.optimize
+    allowSplitTesting
     && eyeo.testOptimize
     && randomlyChosenUserTestingVariant < additionalUserTestingVariants
   ) {
     variantApplied = "d";
-    variant.optimize = false;
+    allowSplitTesting = false;
     console.warn("testing optimize");
   }
 
@@ -80,19 +72,19 @@
     "transport_type": "beacon"
   };
 
-  if (variant.optimize)
+  if (allowSplitTesting)
     analyticsData.optimize_id = "GTM-NW8L5JT";
 
   // Record first visit to page with cookie prompt
-  if (!eyeo.preventCookiePrompt && !user.consent)
+  if (!eyeo.preventCookiePrompt && !seenCookiePrompt)
     document.cookie = "eyeo-seen-cookie-prompt=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; samesite=lax; domain=" + domain + "; path=/";
 
   if (
     // Track users who not have opted out of tracking
-    variant.analytics
+    allowTracking
 
     // Track users who have seen cookie prompt on pages without cookie prompt
-    && !(eyeo.preventCookiePrompt && !user.consent)
+    && !(eyeo.preventCookiePrompt && !seenCookiePrompt)
   ) {
 
     // Analytics snippet (Modifications explained in comments below)
@@ -126,9 +118,9 @@
   }
 
   if (
-    !variant.analytics
-    || !variant.optimize
-    || (eyeo.preventCookiePrompt && !user.consent)
+    !allowTracking
+    || !allowSplitTesting
+    || (eyeo.preventCookiePrompt && !seenCookiePrompt)
   ) {
     if (typeof eyeo.triggerOptimizeComplete == "function")
       eyeo.triggerOptimizeComplete(variantApplied);
