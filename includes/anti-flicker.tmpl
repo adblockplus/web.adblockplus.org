@@ -1,4 +1,4 @@
-{% if user_testing and not disable_analytics -%}
+{% if enable_split_testing and not disable_analytics -%}
   <style>.async-hide { opacity: 0 !important} </style>
   <script>
     window.dataLayer = window.dataLayer || [];

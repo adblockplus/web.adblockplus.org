@@ -1,6 +1,14 @@
 /* global eyeo */
 (function(){
 
+  var SEEN_COOKIE_PROMPT_COOKIE = "eyeo-seen-cookie-prompt";
+  var TRACKING_OPT_OUT_COOKIE = "eyeo-ga-opt-out";
+  var SPLIT_TESTING_OPT_OUT_COOKIE = "eyeo-ab-opt-out";
+  var DISMISS_COOKIE_PROMPT_COOKIE = "eyeo-ga-consent";
+  var GOOGLE_TAG_MANAGER_UID = "GTM-TFZZB3Q";
+  var GOOGLE_ANALYTICS_UID = "UA-18643396-6";
+  var GOOGLE_OPTIMIZE_UID = "GTM-NW8L5JT";
+
   var variantApplied = "f";
 
   var domain = window.location.hostname
@@ -20,9 +28,19 @@
     return document.cookie.indexOf(key) !== -1;
   }
 
-  var seenCookiePrompt = hasCookie("eyeo-seen-cookie-prompt");
-  var allowTracking = !hasCookie("eyeo-ga-opt-out");
-  var allowSplitTesting = allowTracking && !hasCookie("eyeo-ab-opt-out");
+  var seenCookiePrompt = hasCookie(SEEN_COOKIE_PROMPT_COOKIE);
+
+  var showCookiePrompt = !eyeo.excludeCookiePrompt 
+    && !hasCookie(DISMISS_COOKIE_PROMPT_COOKIE);
+
+  var enableTracking = !hasCookie(TRACKING_OPT_OUT_COOKIE);
+
+  if (eyeo.excludeCookiePrompt && !seenCookiePrompt)
+    enableTracking = false;
+
+  var enableSplitTesting = eyeo.enableSplitTesting 
+    && enableTracking 
+    && !hasCookie(SPLIT_TESTING_OPT_OUT_COOKIE);
 
   var additionalUserTestingVariants = 0;
 
@@ -35,57 +53,48 @@
   // not the actual variant applied by optimize
   var randomlyChosenUserTestingVariant = 0;
 
-  if (eyeo.userTestingVariants)
+  if (eyeo.splitTestingVariants)
   {
     randomlyChosenUserTestingVariant = Math.floor(
       Math.random() * Math.floor(
-        eyeo.userTestingVariants + additionalUserTestingVariants
+        eyeo.splitTestingVariants + additionalUserTestingVariants
       )
     );
   }
 
   // disable analytics for variant 0
   if (
-    allowTracking
+    enableTracking
     && eyeo.testAnalytics
     && randomlyChosenUserTestingVariant < 1
   ) {
     variantApplied = "c";
-    allowTracking = false;
+    enableTracking = false;
+    enableSplitTesting = false;
     console.warn("testing analytics");
   }
 
   // disable optimize for variant 0
   // disable optimize for variant 1 if testing both analytics and optimize
   if (
-    allowSplitTesting
+    enableSplitTesting
     && eyeo.testOptimize
     && randomlyChosenUserTestingVariant < additionalUserTestingVariants
   ) {
     variantApplied = "d";
-    allowSplitTesting = false;
+    enableSplitTesting = false;
     console.warn("testing optimize");
   }
 
-  var analyticsData = {
-    "anonymize_ip": true,
-    "transport_type": "beacon"
-  };
+  if (enableTracking)
+  {
+    var analyticsData = {
+      "anonymize_ip": true,
+      "transport_type": "beacon"
+    };
 
-  if (allowSplitTesting)
-    analyticsData.optimize_id = "GTM-NW8L5JT";
-
-  // Record first visit to page with cookie prompt
-  if (!eyeo.preventCookiePrompt && !seenCookiePrompt)
-    document.cookie = "eyeo-seen-cookie-prompt=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; samesite=lax; domain=" + domain + "; path=/";
-
-  if (
-    // Track users who not have opted out of tracking
-    allowTracking
-
-    // Track users who have seen cookie prompt on pages without cookie prompt
-    && !(eyeo.preventCookiePrompt && !seenCookiePrompt)
-  ) {
+    if (enableSplitTesting)
+      analyticsData.optimize_id = GOOGLE_OPTIMIZE_UID;
 
     // Analytics snippet (Modifications explained in comments below)
     (function(){
@@ -99,16 +108,16 @@
       var gtag = window.gtag = function(){dataLayer.push(arguments);}
       gtag('js', new Date());
       // Passing analyticsData constructed above
-      gtag('config', 'UA-18643396-6', analyticsData);
+      gtag('config', GOOGLE_ANALYTICS_UID, analyticsData);
     }());
 
     // Tag Manager snippet
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
       j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TFZZB3Q');
+    })(window,document,'script','dataLayer',GOOGLE_TAG_MANAGER_UID);
 
-    if (!eyeo.preventCookiePrompt)
+    if (showCookiePrompt)
     {
       var cookiePromptScript = document.createElement("script");
       cookiePromptScript.async = true;
@@ -117,11 +126,8 @@
     }
   }
 
-  if (
-    !allowTracking
-    || !allowSplitTesting
-    || (eyeo.preventCookiePrompt && !seenCookiePrompt)
-  ) {
+  if (!enableSplitTesting)
+  {
     if (typeof eyeo.triggerOptimizeComplete == "function")
       eyeo.triggerOptimizeComplete(variantApplied);
     document.documentElement.classList.remove('async-hide');

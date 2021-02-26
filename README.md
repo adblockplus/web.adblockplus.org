@@ -8,7 +8,7 @@ see [CMS documentation](https://github.com/adblockplus/cms/blob/master/README.md
 
 abp.o uses Google Analytics, Tag manager, and Optimize to track and test users.
 
-- `includes/anti-flicker` applies [Google Optimize's anti-flicker snippet](https://developers.google.com/optimize) when `user_testing` is truthy
+- `includes/anti-flicker` applies [Google Optimize's anti-flicker snippet](https://developers.google.com/optimize) when `enable_split_testing` is truthy
 - `includes/config` sets global variables used in tracking scripts
 - `includes/analytics` loads tracking scripts
 
@@ -32,7 +32,7 @@ We use cookies and a cookie settings UI to configure conditional tracking outsid
 
 ##### Google Optimize conditions
 
-We configure Google Analytics to load Google Optimize in a page if the user hasn't opted out of user testing and the page has enabled user testing (via `user_testing` global or page property).
+We configure Google Analytics to load Google Optimize in a page if the user hasn't opted out of user testing and the page has enabled user testing (via `enable_split_testing` global or page property).
 
 ##### Google Analytics and Tag Manager conditions
 
@@ -52,7 +52,7 @@ Google Tag Manager is loaded under the same conditions as Google Analytics.
 
 Google Optimize is used to perform user testing.
 
-User testing is disabled by default and manually enabled temporarily in code by setting the `user_testing` property truthy globally or per page.
+Split testing is disabled by default and manually enabled temporarily in code by setting the `enable_split_testing` property truthy globally or per page.
 
 #### Anti-flicker
 

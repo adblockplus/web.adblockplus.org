@@ -1,5 +1,5 @@
 title=Thank you for contributing to Adblock Plus!
-prevent_cookie_prompt=1
+exclude_cookie_prompt=1
 robots=none
 
 

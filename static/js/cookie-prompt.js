@@ -1,11 +1,11 @@
+/* global eyeo */
 (function(root, doc, body)
 {
-  var eyeo = root.eyeo || {};
-  var HAS_SEEN_COOKIE_PROMPT = "eyeo-seen-cookie-prompt";
-  var TRACKING_OPT_OUT = "eyeo-ga-opt-out";
-  var TESTING_OPT_OUT = "eyeo-ab-opt-out";
-  var TRACKING_CONSENT = "eyeo-ga-consent";
-  var TRACKING_UID = "UA-18643396-6";
+  var SEEN_COOKIE_PROMPT_COOKIE = "eyeo-seen-cookie-prompt";
+  var TRACKING_OPT_OUT_COOKIE = "eyeo-ga-opt-out";
+  var SPLIT_TESTING_OPT_OUT_COOKIE = "eyeo-ab-opt-out";
+  var DISMISS_COOKIE_PROMPT_COOKIE = "eyeo-ga-consent";
+  var GOOGLE_ANALYTICS_UID = "UA-18643396-6";
 
   var domain = window.location.hostname
     // get top level domain
@@ -34,10 +34,10 @@
       doc.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=" + domain + "; path=/";
   }
 
-  var hasSeenCookiePrompt = hasCookie(HAS_SEEN_COOKIE_PROMPT);
-  var trackingOptOut = hasCookie(TRACKING_OPT_OUT);
-  var testingOptOut = hasCookie(TESTING_OPT_OUT);
-  var trackingConsent = hasCookie(TRACKING_CONSENT);
+  var hasSeenCookiePrompt = hasCookie(SEEN_COOKIE_PROMPT_COOKIE);
+  var trackingOptOut = hasCookie(TRACKING_OPT_OUT_COOKIE);
+  var testingOptOut = hasCookie(SPLIT_TESTING_OPT_OUT_COOKIE);
+  var trackingConsent = hasCookie(DISMISS_COOKIE_PROMPT_COOKIE);
 
   function initializeCookiePrompt()
   {
@@ -106,12 +106,12 @@
 
     function saveCookieSettings()
     {
-      setCookie(TRACKING_OPT_OUT, trackingOptOut);
-      setCookie(TESTING_OPT_OUT, testingOptOut);
+      setCookie(TRACKING_OPT_OUT_COOKIE, trackingOptOut);
+      setCookie(SPLIT_TESTING_OPT_OUT_COOKIE, testingOptOut);
       // consent cookie is saved separately by triggering any notice closing event
 
       // This immediately disables or undisables tracking
-      root["ga-disable-" + TRACKING_UID] = !trackingOptOut;
+      root["ga-disable-" + GOOGLE_ANALYTICS_UID] = !trackingOptOut;
 
       // Delete all non-essential cookies when tracking is disabled
       if (trackingOptOut)
@@ -122,9 +122,9 @@
         {
           var cookie = cookies[i].split("=")[0].trim();
 
-          if (cookie !== TRACKING_OPT_OUT &&
-            cookie !== TESTING_OPT_OUT &&
-            cookie !== TRACKING_CONSENT)
+          if (cookie !== TRACKING_OPT_OUT_COOKIE &&
+            cookie !== SPLIT_TESTING_OPT_OUT_COOKIE &&
+            cookie !== DISMISS_COOKIE_PROMPT_COOKIE)
             setCookie(cookie, false);
         }
       }
@@ -132,7 +132,7 @@
 
     function saveCookieConsent()
     {
-      setCookie(TRACKING_CONSENT, true);
+      setCookie(DISMISS_COOKIE_PROMPT_COOKIE, true);
     }
 
     function flipTrackingSwitches(checked)
@@ -166,7 +166,7 @@
     addListeners("click", saveButtons, saveCookieSettings);
 
 
-    if (!eyeo.preventCookiePrompt && !trackingConsent)
+    if (!eyeo.excludeCookiePrompt && !trackingConsent)
       toggleCookieNotice();
 
     if (trackingOptOut)
@@ -177,6 +177,10 @@
 
     if (testingOptOut)
       flipTestingSwitches(false);
+
+    // Record first visit to page with cookie prompt (if applicable)
+    if (!eyeo.excludeCookiePrompt && !hasSeenCookiePrompt)
+      document.cookie = "eyeo-seen-cookie-prompt=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; samesite=lax; domain=" + domain + "; path=/";
   }
 
   if (document.readyState == "complete" ||
