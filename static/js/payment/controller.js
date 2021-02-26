@@ -125,12 +125,14 @@ var SID;
  *   d: Testing disabled optimize
  *   e: Anti-flicker timed out
  *   f: Cookie bar exception
+ *   z: Undefined variant
  *   0: Original variant
  *   1-9: Challenger variants
  */
 function reportSession(variant)
 {
-  variant = variant || 0;
+  if (typeof variant == "undefined")
+    variant = "z";
 
   SID = URLParams.get('sid') || variant + "-" + uuidv4();
 
