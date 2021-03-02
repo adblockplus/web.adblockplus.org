@@ -9,14 +9,6 @@
   var GOOGLE_ANALYTICS_UID = "UA-18643396-6";
   var GOOGLE_OPTIMIZE_UID = "GTM-NW8L5JT";
 
-  var variantApplied = "f";
-
-  var domain = window.location.hostname
-    // get top level domain
-    .split(".").slice(-2).join(".")
-    // strip port
-    .split(":")[0];
-
   var origin = window.location.origin
     // location.origin is not supported by IE
     || window.location.protocol + "//" 
@@ -41,50 +33,6 @@
   var enableSplitTesting = eyeo.enableSplitTesting 
     && enableTracking 
     && !hasCookie(SPLIT_TESTING_OPT_OUT_COOKIE);
-
-  var additionalUserTestingVariants = 0;
-
-  if (eyeo.testAnalytics && eyeo.testOptimize)
-    additionalUserTestingVariants = 2;
-  else if(eyeo.testAnalytics || eyeo.testOptimize)
-    additionalUserTestingVariants = 1;
-
-  // randomly chosen to evenly distribute analytics and optimize testing
-  // not the actual variant applied by optimize
-  var randomlyChosenUserTestingVariant = 0;
-
-  if (eyeo.splitTestingVariants)
-  {
-    randomlyChosenUserTestingVariant = Math.floor(
-      Math.random() * Math.floor(
-        eyeo.splitTestingVariants + additionalUserTestingVariants
-      )
-    );
-  }
-
-  // disable analytics for variant 0
-  if (
-    enableTracking
-    && eyeo.testAnalytics
-    && randomlyChosenUserTestingVariant < 1
-  ) {
-    variantApplied = "c";
-    enableTracking = false;
-    enableSplitTesting = false;
-    console.warn("testing analytics");
-  }
-
-  // disable optimize for variant 0
-  // disable optimize for variant 1 if testing both analytics and optimize
-  if (
-    enableSplitTesting
-    && eyeo.testOptimize
-    && randomlyChosenUserTestingVariant < additionalUserTestingVariants
-  ) {
-    variantApplied = "d";
-    enableSplitTesting = false;
-    console.warn("testing optimize");
-  }
 
   if (enableTracking)
   {
@@ -129,8 +77,8 @@
   if (!enableSplitTesting)
   {
     if (typeof eyeo.triggerOptimizeComplete == "function")
-      eyeo.triggerOptimizeComplete(variantApplied);
-    document.documentElement.classList.remove('async-hide');
+      eyeo.triggerOptimizeComplete("f");
+    document.documentElement.classList.remove("async-hide");
   }
 
 }());
