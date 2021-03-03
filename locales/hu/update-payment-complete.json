@@ -1,20 +1,83 @@
 {
   "title": {
-    "message": "Köszönjük, hogy támogatja az Adblock Plus-t!"
+    "message": "Köszönjük, hogy támogatja az Adblock Plus böngészőbővítményt!"
+  },
+  "subheading": {
+    "message": "Támogatását nagyra értékeljük. Az ehhez hasonló támogatások teszik lehetővé, hogy olyan eszközöket hozzunk létre, amelyektől az internet mindenki számára kellemesebb élményt nyújt."
   },
   "p1": {
-    "message": "<strong>Köszönjük támogatását! A tranzakciót feldolgoztuk, és a számlát e-mailben elküldtük. Ha PayPal-t használt, a fiókjába bejelentkezve megtekintheti a tranzakció részleteit.</strong>"
+    "message": "A tranzakciót feldolgoztuk, és a számlát e-mailben elküldjük. Ha a befizetés PayPal fiókkal történt, akkor a fiókjába belépve megtekintheti a tranzakció részleteit."
   },
-  "p2": {
-    "message": "Csapatunk nevében szeretnénk megköszönni, hogy támogatja ezt a terméket, amelyet több millió felhasználó használ naponta. Tegyük a böngészést mindenki számára kellemesebbé együtt!"
+  "faq-heading": {
+    "message": "Gyakran ismétlődő kérdések"
   },
-  "p3": {
-    "message": "Újdonságainkat bármikor megtekintheti a <a>blog oldalunkon</a>."
+  "faq-receipt": {
+    "message": "Kapok számlát a befizetésről?"
   },
-  "p4": {
-    "message": "Kérdése van az Adblock Plus-ra vonatkozóan? Lépjen velünk kapcsolatba a <a>support@adblockplus.org</a> címen, vagy <a>küldjön nekünk hibajelentést</a>. Meglátogathatja <a>Ügyféltámogatási központunkat</a> is."
+  "faq-receipt-1": {
+    "message": "A támogatások biztonságos feldolgozásához a PayPal és Stripe szolgáltatást használjuk, és automatizált e-mail rendszerükben az Adblock Plus támogatásról egy megerősítést és számlát küldünk."
   },
-  "p5": {
-    "message": "Baráti üdvözlettel, <span>Az Adblock Plus csapata</span>"
+  "faq-receipt-2": {
+    "message": "Azt javasoljuk, hogy a számlát tartalmazó e-mailt őrizze meg, mivel a későbbiekben szükségünk lehet néhány alapvető információra, ha például visszafizetést kérne, vagy lemondaná a rendszeres befizetést."
+  },
+  "faq-receipt-3": {
+    "message": "<strong>Figyelem:</strong> a tranzakció a számlán „eyeo GmbH (Adblock Plus)” néven, és a számlakivonaton „Adblock Plus” vagy „ABP” néven jelenik meg"
+  },
+  "faq-refund": {
+    "message": "Azt hiszem tévedtem! Hogyan oldhatom meg ezt?"
+  },
+  "faq-refund-1": {
+    "message": "Egyszerűen <strong>írjon nekünk e-mailt a <a>donations@adblockplus.org</a> címre, hogy visszaküldhessük a befizetést</strong>. A visszatérítéseket munkanapokon, hétfőtől péntekig dolgozzuk fel. A hétvégén igényelt visszafizetések feldolgozására hétfő reggel kerül sor."
+  },
+  "faq-info-transactions": {
+    "message": "A tranzakció azonosításához adja meg a következő adatokat:"
+  },
+  "faq-info-transactions-1": {
+    "message": "A tranzakció dátuma"
+  },
+  "faq-info-transactions-2": {
+    "message": "Összeg (a PayPal vagy Stripe visszaigazoló e-mailben található)"
+  },
+  "faq-info-transactions-3": {
+    "message": "A tranzakcióhoz használt e-mail cím"
+  },
+  "faq-info-transactions-4": {
+    "message": "A tranzakció kódja"
+  },
+  "faq-info-transactions-5": {
+    "message": "<strong>Megjegyzés:</strong> Sohase kérünk a tranzakcióra vonatkozó bizalmas adatokat (pl. a teljes kártyaszámot), így ezeket sohase adja meg."
+  },
+  "faq-refund-policy": {
+    "message": "Hogyan kérhetek visszatérítést?"
+  },
+  "faq-refund-policy-1": {
+    "message": "Kérelem esetén, a befizetést követő 120 napon belül indoklás nélkül visszafizetjük a befizetett összeget. Kérjük, írjon nekünk a <a>donations@adblockplus.org</a> címre, és elindítjuk a visszafizetést. És ne aggódjon, az Adblock Plus böngészőbővítményt, az összes funkciójával együtt továbbra is ingyenesen használhatja!"
+  },
+  "faq-refund-policy-2": {
+    "message": "Függetlenül attól, hogy PayPal fiókból vagy bankkártyával fizetett, kérjük, adja meg a következő adatokat az e-mail üzenetében:"
+  },
+  "faq-cancellations": {
+    "message": "Hogyan mondhatom le a havi előfizetésem?"
+  },
+  "faq-cancellations-paypal": {
+    "message": "PayPal adományok"
+  },
+  "faq-cancellations-paypal-1": {
+    "message": "A PayPal előfizetést közvetlenül a PayPal fiókjában vonhatja vissza. A rendszeres Adblock Plus befizetés lemondásához kövesse a <a>PayPal Súgó központban</a> található lépésenkénti utasításokat."
+  },
+  "faq-cancellations-card": {
+    "message": "Kártyás befizetések"
+  },
+  "faq-cancellations-card-1": {
+    "message": "Ha rendszeres befizetést állított be az Adblock Plus javára, amit le szeretne mondani, akkor írjon nekünk e-mailt a <a>donations@adblockplus.org</a> címre."
+  },
+  "further-questions": {
+    "message": "További kérdése van?"
+  },
+  "further-questions-1": {
+    "message": "Az Adblock Plus böngészőbővítményre vonatkozó kérdése van? Küldjön nekünk e-mailt a <a>donations@adblockplus.org</a> címre, vagy küldjön <a>hibajelentést</a>. Meglátogathatja a <a>Súgóközpontunkat</a> is."
+  },
+  "further-questions-2": {
+    "message": "Az aktuális újdonságokat a <a>blog</a> oldalunkon követheti."
   }
 }
