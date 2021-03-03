@@ -1,0 +1,34 @@
+.payment-confirmation-header {
+    margin-top: 2em;
+    padding-bottom: 0;
+}
+.payment-confirmation-header h1 {
+    margin-bottom: 0;
+}
+.payment-confirmation-header h2 {
+    font-size: 20px;
+    color: #5a5a5a;
+    margin-top: 0.9375em;
+    margin-bottom: 0;
+}
+@media(min-width: 768px) {
+    .payment-confirmation-header h2 {
+        font-size: 24px;
+    }
+}
+@media(max-width: 922px) {
+    .block {
+        display: inline;
+    }
+}
+@media(min-width: 1366px) {
+    .small-content-container {
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.grey-bg {
+    background: #F5F5F5;
+    padding: 2.5em 0;
+}
