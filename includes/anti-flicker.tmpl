@@ -1,8 +1,18 @@
 {% if user_testing and not disable_analytics -%}
+
+  <!-- anti-flicker snippet (recommended)  -->
   <style>.async-hide { opacity: 0 !important} </style>
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+  {'GTM-NW8L5JT':true});</script>
+  
   <script>
     window.dataLayer = window.dataLayer || [];
 
+    function gtag() {dataLayer.push(arguments)}
+    
     eyeo.isOptimizeComplete = false;
 
     eyeo.optimizeCompleteCallbacks = [];
@@ -34,13 +44,13 @@
         callbacks[i](variant);
       }
     };
-  </script>
 
-  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;h.end=i=function(){
-    // (WARNING: Optimize snippet edit) triggering optimize complete with original variant
-    eyeo.triggerOptimizeComplete(0);
-    s.className=s.className.replace(RegExp(' ?'+y),'');};(a[n]=a[n]||[]).hide=h;setTimeout(function(){
-    // (WARNING: Optimize snippet edit) triggering optimize complete with timeout
-    eyeo.triggerOptimizeComplete("e");
-    i();h.end=null;},c);h.timeout=c;})(window,document.documentElement,'async-hide','dataLayer',4000,{'GTM-NW8L5JT':true});</script>
+    // optimize.callback will pass variant 0-N
+    gtag('event', 'optimize.callback', {
+      callback: eyeo.triggerOptimizeComplete
+    });
+
+    // trigger optimize complete after anti-flicker timeout
+    setTimeout(eyeo.triggerOptimizeComplete.bind(this, "e"), 4000);
+  </script>
 {%- endif %}
