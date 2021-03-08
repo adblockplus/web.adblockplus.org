@@ -61,7 +61,7 @@
     console.warn("testing analytics");
   }
 
-  variant.optimize = variant.analytics && user.optimize;
+  variant.optimize = variant.analytics && user.optimize && eyeo.userTesting;
 
   // disable optimize for variant 0
   // disable optimize for variant 1 if testing both analytics and optimize
