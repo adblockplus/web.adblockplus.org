@@ -27,9 +27,9 @@ TEST_DATA = [(
 ), (
       'desktop_edge',
       'GET ADBLOCK PLUS FOR MICROSOFT EDGE',
-      'https://eyeo.to/adblockplus/edge_install/index',
+      'https://eyeo.to/adblockplus/edge_chromium_install/index',
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-      'Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393',
+      'Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.50',
       'https://microsoftedge.microsoft.com/addons/detail/adblock-plus-free-ad-bl/gmgoamodcdcjnbaobigkjelfplakmdhh'
 ), (
       'desktop_opera',
