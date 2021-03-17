@@ -125,6 +125,7 @@ var SID;
  *   d: Testing disabled optimize
  *   e: Anti-flicker timed out
  *   f: Cookie bar exception
+ *   x: Variant target exception
  *   z: Undefined variant
  *   0: Original variant
  *   1-9: Challenger variants
