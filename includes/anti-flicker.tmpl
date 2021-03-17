@@ -9,7 +9,13 @@
   {'GTM-NW8L5JT':true});</script>
   
   <script>
-    window.dataLayer = window.dataLayer || [];
+    // WARNING: dataLayer.hide.end depends on the anti-flicker snippet above
+    var optimizeEnd = dataLayer.hide.end;
+
+    dataLayer.hide.end = function() {
+      eyeo.triggerOptimizeComplete("x");
+      return optimizeEnd();
+    };
 
     function gtag() {dataLayer.push(arguments)}
     
