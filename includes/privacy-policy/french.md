@@ -203,7 +203,7 @@ Nous recueillons aussi peu de données que possible. Dans la mesure où une util
 
 ### Des questions ? {: #questions }
 
-Contactez notre responsable de la protection des données, Dr. Judith Nink, par <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 6430630){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
+Contactez notre responsable de la protection des données, Cornelius Witt, par <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 64306371){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
 
 ---
 
@@ -248,14 +248,14 @@ Germany<br>
 Si vous avez des questions concernant vos données personnelles, n’hésitez pas à contacter notre responsable de la protection des données :
 
 <address>
-  Dr. Judith Nink
+  Cornelius Witt
   <dl>
     <dt>Téléphone</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 6430630'>+49 (0) 221 / 6430630</a></dd>
+    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 64306371'>+49 (0) 221 / 64306371</a></dd>
     <dt>E-mail</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>Fax</dt>
-    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306399'>+49 (0) 221 / 64306399</a></dd>
+    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306372'>+49 (0) 221 / 64306372</a></dd>
   </dl>
 </address>
 
@@ -316,7 +316,9 @@ Nous utilisons des outils de fournisseurs de services externes pour les e-mails 
 
 Nous utilisons des outils de prestataires de services externes pour recevoir des dons et analyser les comportements frauduleux liés aux dons. Ce service est assuré par Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, États-Unis. Certains cookies sont enregistrés sur votre navigateur avant de procéder aux opérations de paiement afin d'empêcher une utilisation frauduleuse de leurs services. Stripe recueille des informations d’identification sur les appareils qui se connectent à ses services et utilise ces informations pour détecter des fraudes. Pour plus d'informations, veuillez [consulter la politique de Stripe en matière de cookies](https://stripe.com/cookies-policy/legal).
 
-Nous utilisons également des outils de fournisseurs de services externes pour l’assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) et Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout).
+Nous utilisons également des outils de fournisseurs de services externes pour l’assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) et Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010).
+
+Nous pouvons stocker des données sur des serveurs situés dans des pays hors de l'Union européenne, mais uniquement à condition qu'un niveau de protection adéquat soit garanti et reconnu par une décision d'adéquation spécifique de la Commission européenne (conformément à l'article 45 du RGPD). Vous pouvez accéder à la liste des pays que la Commission européenne a reconnus comme offrant une protection adéquate [ici](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
 
 ### Quels sont vos droits ? {: #your-rights-long }
 
@@ -696,7 +698,7 @@ Pour exercer l'un de ces droits, veuillez soumettre une demande à <a id='privac
 
 Pour toute question concernant cette section ou sur comment exercer vos droits en vertu du CCPA, veuillez <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>nous contacter</a>.
 
-<time datetime="2020-10">Octobre 2020</time>
+<time datetime="2021-03">Mars 2021</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

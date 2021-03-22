@@ -203,7 +203,7 @@ We collect as little data as possible. As far as anonymous or pseudonymous use i
 
 ### Questions? {: #questions }
 
-Contact our Data Protection Officer, Dr. Judith Nink, via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 6430630){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
+Contact our Data Protection Officer, Cornelius Witt, via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 64306371){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
 
 ---
 
@@ -248,14 +248,14 @@ Germany<br>
 If you have any questions regarding your personal data, please do not hesitate to contact our Data Protection Officer:
 
 <address>
-  Dr. Judith Nink
+  Cornelius Witt
   <dl>
     <dt>Phone</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 6430630'>+49 (0) 221 / 6430630</a></dd>
+    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 64306371'>+49 (0) 221 / 64306371</a></dd>
     <dt>Email</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>Fax</dt>
-    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306399'>+49 (0) 221 / 64306399</a></dd>
+    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306372'>+49 (0) 221 / 64306372</a></dd>
   </dl>
 </address>
 
@@ -316,7 +316,9 @@ We use external service provider tools for email (GSuite); for non-EU/EEA users 
 
 We use external service provider tools to receive donations and analyze fraudulent behavior in connection with donations.. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
 
-We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) and Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout).
+We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) and Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout). We have entered into data processing agreements with both Zendesk and Sprout including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593.
+
+We may store data on servers in countries outside the European Union, but only provided that an adequate level of protection is guaranteed and recognized by a specific adequacy decision of the European Commission (pursuant to Art. 45 GDPR). You can access the list of countries that the European Commission has recognized as providing adequate protection [here](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
 
 ### What rights do you have? {: #your-rights-long }
 
@@ -593,7 +595,7 @@ Some of eyeo's Websites host product campaigns that rely on email collection. Fo
 
 **Ad blocking partner integrations**
 
-If you click on our “BECOME A PARTNER” button, your email client will open with the option to send an email to us. Your email address and all information you send in this email will solely be used to discuss and negotiate a potential partnership with you. Your contact data will be stored in our Customer Relationship Management System. For more more information on how we process our business partner’s data please check: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
+If you click on our “BECOME A PARTNER” button, your email client will open with the option to send an email to us. Your email address and all information you send in this email will solely be used to discuss and negotiate a potential partnership with you. Your contact data will be stored in our Customer Relationship Management System. For more information on how we process our business partner’s data please check: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
 ###### Data retention {: #retention-communications }
 
@@ -701,7 +703,7 @@ To exercise any of these rights, please submit a request to <a id='privacy-email
 
 If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
 
-<time datetime="2020-10">October 2020</time>
+<time datetime="2021-03">March 2021</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

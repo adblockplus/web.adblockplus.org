@@ -203,7 +203,7 @@ Wir erheben so wenig Daten wie möglich. Sofern eine anonyme oder pseudonyme Nut
 
 ### Fragen? {: #questions }
 
-Kontaktiere unsere Datenschutzbeauftragte Dr. Judith Nink per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a> oder [Telefon](tel:+49 (0) 221 / 6430630){: title="Telefonnummer der Datenschutzbeauftragten bei eyeo GmbH" }.
+Kontaktiere unsere Datenschutzbeauftragte Cornelius Witt per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a> oder [Telefon](tel:+49 (0) 221 / 64306371){: title="Telefonnummer der Datenschutzbeauftragten bei eyeo GmbH" }.
 
 ---
 
@@ -248,14 +248,14 @@ Germany<br>
 Bei Fragen zu deinen personenbezogenen Daten, zögere nicht, unsere Datenschutzbeauftragte zu kontaktieren.
 
 <address>
-  Dr. Judith Nink
+  Cornelius Witt
   <dl>
     <dt>Telefon</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 6430630'>+49 (0) 221 / 6430630</a></dd>
+    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 64306371'>+49 (0) 221 / 64306371</a></dd>
     <dt>E-Mail</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>Fax</dt>
-    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306399'>+49 (0) 221 / 64306399</a></dd>
+    <dd><a id='privacy-fax' href='fax:+49 (0) 221 / 64306372'>+49 (0) 221 / 64306372</a></dd>
   </dl>
 </address>
 
@@ -316,7 +316,9 @@ Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für
 
 Wir benutzen Tools von externen Dienstleistern, um Spenden zu erhalten und damit in Verbindung stehendes betrügerisches Verhalten zu analysieren. Dieser Service wird von der Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA, angeboten. Vor der Ausführung von Zahlungstransaktionen werden einige Cookies in deinem Browser gespeichert, um eine betrügerische Nutzung ihrer Dienste zu verhindern. Stripe sammelt identifizierende Informationen zu den Geräten, die auf seine Dienste zugreifen und verwendet diese Daten zur Betrugsaufdeckung. Für weitere Informationen lies bitte [die Cookie-Richtlinie von Stripe](https://stripe.com/cookies-policy/legal).
 
-Zudem nutzen wir auch Tools von Drittanbietern für den Nutzersupport. Diese Dienste werden von Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) und Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout) bereitgestellt.
+Zudem nutzen wir auch Tools von Drittanbietern für den Nutzersupport. Diese Dienste werden von Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) und Sprout Social, Inc., 131 S Dearborn Street, 7th floor Chicago, IL 60603 (Sprout) bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593.
+
+Wir speichern möglicherweise Daten auf Servern in Ländern außerhalb der Europäischen Union, jedoch nur, wenn ein angemessenes Schutzniveau gewährleistet und durch einen spezifischen Angemessenheitsbeschluss der Europäischen Kommission (gemäß Art. 45 DSGVO) anerkannt ist. Die Liste der Länder, die von der Europäischen Kommission als hinreichend schützend anerkannt wurden, können Sie [hier](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) einsehen.
 
 ### Welche Rechte hast du? {: #your-rights-long }
 
@@ -699,7 +701,7 @@ Um diese Rechte auszuüben, sende bitte eine E-Mail an <a id='privacy-email' dat
 
 Bei Fragen zu diesem Abschnitt oder zur Ausübung deiner Rechte unter dem CCPA, <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>kontaktiere uns</a> bitte.
 
-<time datetime="2020-10">Oktober 2020</time>
+<time datetime="2021-03">März 2021</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
