@@ -33,7 +33,6 @@ stages:
   - "smoke_tests"
   - "test"
   - "test_download_links"
-  - "deploy_production_leftover"
 
 tests:
   except:
@@ -146,7 +145,7 @@ production_build:
 
 deploy_production1:
   stage:
-    "deploy_production_leftover"
+    "deploy_production"
   except:
     - schedules
   variables:
