@@ -1586,29 +1586,7 @@ var SCROLL_TIME = 500;
 var page = document.scrollingElement || document.documentElement; // IE
 var body = document.body;
 var navbarDonateButton = document.querySelector('.scroll-to-donate');
-var donateSection = document.querySelector('.donate');
-var abbSection = page.querySelector('.abb');
-
-// sticky footer (here only cause the A/B test #628)
-document.querySelector('main.container').setAttribute('id', 'content');
-
-// Detatched Donation form (here only cause the A/B test #628)
-var donateSectionHtml = donateSection.innerHTML;
-
-var newDonateSectionHtml = '<div class="fake-container">' + donateSectionHtml + '</div>';
-
-donateSection.innerHTML = newDonateSectionHtml;
-
-var closeFormButton = document.createElement('a');
-
-closeFormButton.setAttribute('id', 'close-form-button');
-
-closeFormButton.addEventListener('click', function() {
-  page.classList.remove('show-form');
-  page.classList.add('hide-form');
-})
-
-donateSection.appendChild(closeFormButton);
+var donationHeading = document.querySelector('.donation-heading');
 
 window.addEventListener('resize', function() {
   if (window.innerWidth > 991)
@@ -1620,9 +1598,12 @@ window.addEventListener('resize', function() {
 
 document.documentElement.classList.remove('no-js');
 
+// sticky footer
+document.querySelector('main.container').setAttribute('id', 'content');
+
 navbarDonateButton
   .addEventListener('click', function() {
-    smoothScrollTo(donateSection.getBoundingClientRect().top, SCROLL_TIME);
+    smoothScrollTo(donationHeading.getBoundingClientRect().top, SCROLL_TIME);
 });
 
 function smoothScrollTo(destination, duration) {
