@@ -145,6 +145,13 @@ template=installed/main
     (bowser.msedge || bowser.msie || bowser.msedge_chromium)
       ? footer.classList.add('space')
       : footer.parentNode.insertBefore(dom.querySelector('.abb'), footer);
+
+    activateOptimize();
+  }
+
+  function activateOptimize() {
+    if (dataLayer)
+      dataLayer.push({'event': 'optimize.activate'});
   }
 
 </script>
