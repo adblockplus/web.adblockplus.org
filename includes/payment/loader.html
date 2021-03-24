@@ -1,0 +1,64 @@
+<div id="loading-wrapper" style="display: block;">
+    <div class="card" id="loading">
+        <div id="loading-text-container">
+            <span id="gab_installing_adblock" i18n="installing_adblock">progress...</span>
+            <strong><span id="done" i18n="done" style="display: block;"></span></strong>
+        </div>
+        <br />
+        <div id="loading-progress-container">
+            <progress id="chrome-loading-progress" value="0" max="1">
+                <div id="safari-loading-progress"></div>
+            </progress>
+        </div>
+    </div>
+    <div class="cleaner-warning">
+        <a href="#" i18n="seeing_this_every_time_you_start_your_browser">
+            Seeing this every time you start your browser?
+        </a>
+    </div>
+</div>
+
+<script>
+  
+  showLoadingBar()
+
+  function showLoadingBar() {
+      var doc = document;
+      var start = Date.now();
+      var bar = doc.getElementById("chrome-loading-progress");
+      var loadingOriginal = (function() {
+          doc.body.classList.add("loading");
+          
+          var runLength = 2500; // Should take this many ms
+          var pctTime = (Date.now() - start) / runLength; // Goes from 0 to 1
+
+          // Start slow, then speed up.
+          var pctDone = Math.pow(pctTime, 4);
+
+          bar.value = pctDone;
+
+          if (pctDone < 1) {
+              window.setTimeout(arguments.callee, 20);
+              return;
+          }
+
+          // window.setTimeout(function() {
+          //     // Loaded
+          //     var delay = 1800;
+          //     if (testmode === true) {
+          //         delay = 0;
+          //     }
+          //     $("#loading-wrapper").
+          //       find("#done").fadeIn().end().
+          //       delay(delay).
+          //       fadeOut(function() {
+          //           showCard("last-step");
+          //           $("#privacy_footer").fadeIn();
+          //       });
+          // }, 200);
+      });
+
+      loadingOriginal();
+  }
+  
+</script>
