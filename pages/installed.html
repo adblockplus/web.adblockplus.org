@@ -150,7 +150,7 @@ template=installed/main
   }
 
   function activateOptimize() {
-    if (dataLayer)
+    if (window.dataLayer)
       dataLayer.push({'event': 'optimize.activate'});
   }
 
