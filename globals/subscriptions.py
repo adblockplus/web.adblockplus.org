@@ -38,6 +38,7 @@ subscriptions = {
         'void.gr',
         'Xfiles',
         'YousList',
+        'Tiswagos Liri AdBlockList',
         'Adblock Warning Removal List',
         'ABP filters',
         "I don't care about cookies",
@@ -164,7 +165,7 @@ subscriptions = {
         'supplementsType': [],
         'type': u'ads',
         'variants': [['AdBlockFarsi',
-                     u'https://cdn.rawgit.com/SlashArash/adblockfa/master/adblockfa.txt'
+                     u'https://raw.githubusercontent.com/SlashArash/adblockfa/master/adblockfa.txt'
                      , False]],
         },
     'Adblock Warning Removal List': {
@@ -1003,6 +1004,25 @@ subscriptions = {
         'type': u'ads',
         'variants': [['YousList',
                      u'https://raw.githubusercontent.com/yous/YousList/master/youslist.txt'
+                     , False]],
+        },
+    'Tiswagos Liri AdBlockList': {
+        'blog': None,
+        'changelog': u'https://github.com/Xaival/AdBlockList/commits/main/Adblock_list.txt',
+        'contact': None,
+        'deprecated': False,
+        'faq': None,
+        'forum': u'https://github.com/Xaival/AdBlockList/issues',
+        'homepage': u'https://github.com/Xaival/AdBlockList',
+        'maintainer': u'Xaival',
+        'policy': None,
+        'specialization': u'espa\xf1ol',
+        'supplemented': [],
+        'supplements': [],
+        'supplementsType': [],
+        'type': u'ads',
+        'variants': [['Tiswagos Liri AdBlockList',
+                     u'https://raw.githubusercontent.com/Xaival/AdBlockList/main/Adblock_list.txt'
                      , False]],
         },
     'hufilter': {
