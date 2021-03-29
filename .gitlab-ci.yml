@@ -15,6 +15,7 @@
 .common:
   tags:
     - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/eyeo-python2.7-cms:latest"
+    - &TEST_IMAGE "registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium"
     - &BUILD_RUNNER "docker"
     - &STAGING_RUNNER "eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it"
     - &PRODUCTION_RUNNER1 "eyeo_cms_web_server_new-adblockplus-org-1.uplink.eyeo.it"
@@ -38,7 +39,7 @@ tests:
   except:
     - schedules
   stage: test
-  image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
+  image: *TEST_IMAGE
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
@@ -49,7 +50,7 @@ download_links_tests:
   only:
     - schedules
   stage: test_download_links
-  image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
+  image: *TEST_IMAGE
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
@@ -61,7 +62,7 @@ smoke_tests:
   stage: smoke_tests
   variables:
     <<: *staging
-  image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
+  image: *TEST_IMAGE
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
