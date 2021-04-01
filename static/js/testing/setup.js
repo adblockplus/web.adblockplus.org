@@ -5,8 +5,6 @@
 
   var variant = eyeo.variant = eyeo.variant || {};
 
-  var variantApplied = "f";
-
   var domain = window.location.hostname
     // get top level domain
     .split(".").slice(-2).join(".")
@@ -28,52 +26,9 @@
   user.analytics = !hasCookie("eyeo-ga-opt-out");
   user.optimize = !hasCookie("eyeo-ab-opt-out");
 
-  var additionalUserTestingVariants = 0;
-
-  if (eyeo.testAnalytics && eyeo.testOptimize)
-    additionalUserTestingVariants = 2;
-  else if(eyeo.testAnalytics || eyeo.testOptimize)
-    additionalUserTestingVariants = 1;
-
-  // randomly chosen to evenly distribute analytics and optimize testing
-  // not the actual variant applied by optimize
-  var randomlyChosenUserTestingVariant = 0;
-
-  if (eyeo.userTestingVariants)
-  {
-    randomlyChosenUserTestingVariant = Math.floor(
-      Math.random() * Math.floor(
-        eyeo.userTestingVariants + additionalUserTestingVariants
-      )
-    );
-  }
-
   variant.analytics = user.analytics;
 
-  // disable analytics for variant 0
-  if (
-    variant.analytics
-    && eyeo.testAnalytics
-    && randomlyChosenUserTestingVariant < 1
-  ) {
-    variantApplied = "c";
-    variant.analytics = false;
-    console.warn("testing analytics");
-  }
-
   variant.optimize = variant.analytics && user.optimize && eyeo.userTesting;
-
-  // disable optimize for variant 0
-  // disable optimize for variant 1 if testing both analytics and optimize
-  if (
-    variant.optimize
-    && eyeo.testOptimize
-    && randomlyChosenUserTestingVariant < additionalUserTestingVariants
-  ) {
-    variantApplied = "d";
-    variant.optimize = false;
-    console.warn("testing optimize");
-  }
 
   var analyticsData = {
     "anonymize_ip": true,
@@ -130,8 +85,6 @@
     || !variant.optimize
     || (eyeo.preventCookiePrompt && !user.consent)
   ) {
-    if (typeof eyeo.triggerOptimizeComplete == "function")
-      eyeo.triggerOptimizeComplete(variantApplied);
     document.documentElement.classList.remove('async-hide');
   }
 
