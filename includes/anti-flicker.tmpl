@@ -9,54 +9,13 @@
   {'GTM-NW8L5JT':true});</script>
   
   <script>
-    // WARNING: dataLayer.hide.end depends on the anti-flicker snippet above
-    var optimizeEnd = dataLayer.hide.end;
-
-    dataLayer.hide.end = function() {
-      eyeo.triggerOptimizeComplete("x");
-      return optimizeEnd();
-    };
-
     function gtag() {dataLayer.push(arguments)}
-    
-    eyeo.isOptimizeComplete = false;
 
-    eyeo.optimizeCompleteCallbacks = [];
-
-    eyeo.onOptimizeComplete = function(callback)
-    {
-      if (eyeo.isOptimizeComplete)
-        callback(eyeo.variant.applied);
-      else
-        eyeo.optimizeCompleteCallbacks.push(callback);
-    };
-
-    eyeo.triggerOptimizeComplete = function(variant)
-    {
-      // Don't complete twice e.g. after timeout
-      if (eyeo.isOptimizeComplete) return;      
-      eyeo.isOptimizeComplete = true;
-
-      eyeo.variant = eyeo.variant || {};
-      eyeo.variant.applied = variant;
-
-      console.warn("optimize variant", variant);
-      
-      for (
-        var i = 0, callbacks = eyeo.optimizeCompleteCallbacks;
-        i < callbacks.length;
-        i++
-      ) {
-        callbacks[i](variant);
-      }
-    };
-
-    // optimize.callback will pass variant 0-N
     gtag('event', 'optimize.callback', {
-      callback: eyeo.triggerOptimizeComplete
+      callback: function(vid, sid, eid) {
+        eyeo.vid = vid;
+        console.warn("optimize callback", vid, eid);
+      }
     });
-
-    // trigger optimize complete after anti-flicker timeout
-    setTimeout(eyeo.triggerOptimizeComplete.bind(this, "e"), 4000);
   </script>
 {%- endif %}
