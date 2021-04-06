@@ -12,9 +12,9 @@
     function gtag() {dataLayer.push(arguments)}
 
     gtag('event', 'optimize.callback', {
-      callback: function(vid, sid, eid) {
+      callback: function(vid) {
         eyeo.vid = vid;
-        console.warn("optimize callback", vid, eid);
+        console.warn("optimize callback", vid);
       }
     });
   </script>
