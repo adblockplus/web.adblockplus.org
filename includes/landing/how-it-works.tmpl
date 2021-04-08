@@ -1,7 +1,8 @@
 <section id="how-it-works" class="container">
   <div class="section">
     <div class="row reverse">
-      <div class="column one-half text-center-mobile">
+      <div class="column one-half text-center-mobile 
+             {% if browser_id == 'edge' %} text-right{% endif %}">
         <img
           src="/img/browse-with-abp-{{browser_id}}.svg"
           alt="{{ "" | translate("how-it-works-image-alt", "message") }}">
@@ -13,11 +14,11 @@
         <p>
           {{ "" | translate("how-it-works-paragraph-1", "message") }}
         </p>
-        {%if browser_id == "chrome"%}
+        {% if browser_id in ["chrome", "edge"] %}
           <p>
             {{ "" | translate("how-it-works-paragraph-2", "message") }}
           </p>
-        {%endif%}
+        {% endif %}
       </div>
     </div>
   </div>
