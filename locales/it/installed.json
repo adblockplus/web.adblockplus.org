@@ -1,33 +1,118 @@
 {
-  "title": {
-    "message": "Adblock Plus è stato installato!"
+  "delay-heading": {
+    "message": "Installazione di Adblock Plus in corso…"
   },
-  "donate-button": {
-    "message": "Fai una donazione"
+  "main-heading-1": {
+    "message": "Un sistema basato sulla fiducia"
   },
-  "installation-successful-heading": {
-    "message": "Installazione avvenuta con successo!"
+  "main-lead-1": {
+    "message": "Ciao dal team di Adblock Plus. Grazie per aver installato Adblock Plus!"
   },
-  "took-control-heading": {
-    "message": "Hai appena preso il controllo del tuo browser"
+  "main-lead-2": {
+    "message": "Adblock Plus è un honorware, il che significa <strong>che si basa su un rapporto di fiducia reciproca<strong>:"
   },
-  "in-control-heading": {
-    "message": "Sei tu a decidere"
+  "main-lead-3": {
+    "message": "Tu <strong>paghi quello che ti puoi permettere</strong> per Adblock Plus. Lasciamo decidere il prezzo a <strong>te</strong>."
   },
-  "acceptable-ads": {
-    "message": "Per impostazione predefinita potresti visualizzare alcune pubblicità non invadenti che rispettano <a>rigorosi criteri</a>. Definiamo queste pubblicità come Annunci Accettabili. Preferisci bloccare tutte le pubblicità? Disabilita gli Annunci Accettabili nelle tue <a>impostazioni</a>."
+  "main-lead-4": {
+    "message": "Sviluppiamo funzionalità che ti consentono di assumere il controllo della tua esperienza di esplorazione online."
   },
-  "fair-use-heading": {
-    "message": "Utilizzo equo"
+  "main-lead-5": {
+    "message": "Se Adblock Plus non dovesse piacerti, ti offriamo il rimborso e la possibilità di tenerlo comunque."
   },
-  "fair-use": {
-    "message": "Ti invitiamo a fare un utilizzo equo di Adblock Plus e dell'opzione siti accettati. A seconda dei filtri utilizzati, comprendi e accetti la possibilità di produrre risultati indesiderati (es. blocco del contenuto di una pagina web). Fai riferimento ai <a>termini e alle condizioni d'uso</a> per ulteriori informazioni circa l'utilizzo equo di Adblock Plus."
+  "main-heading-2": {
+    "message": "Una breve nota prima che te ne vada"
   },
-  "copyright-notice": {
-    "message": "Copyright © 2020 Tutti i diritti riservati. Adblock Plus<sup>®<\/sup> è un marchio registrato di <a>eyeo GmbH<\/a>."
+  "main-heading-3": {
+    "message": "Se ti serve aiuto, inviaci un'e-mail"
+  },
+  "main-body-1": {
+    "message": "Ti chiediamo di pagare quanto puoi e se cambi idea hai 120 giorni per ottenere il rimborso."
+  },
+  "main-body-2": {
+    "message": "Adblock Plus ha iniziato a bloccare gli annunci invadenti non appena l'hai installato. Anche se blocchiamo la maggior parte degli annunci, sappiamo che molti siti contano sulla pubblicità; per questo consentiamo alcuni annunci per default, purché soddisfino i nostri <a>rigorosi criteri</a>. Se desideri disattivare questa opzione, puoi accedere alle tue <a>impostazioni</a> e disattivare Annunci Accettabili in qualunque momento."
+  },
+  "main-body-3": {
+    "message": "Se hai bisogno di noi, ti mettiamo a disposizione il supporto autonomo 24x7 e il supporto via e-mail 8x5 sul nostro portale di assistenza, <a>help.eyeo.com</a>."
+  },
+  "main-body-4": {
+    "message": "Grazie per aver scelto Adblock Plus! Buona esplorazione!"
+  },
+  "main-body-5": {
+    "message": "Saluti <span></span>dal team di Adblock Plus."
+  },
+  "main-body-6": {
+    "message": "Adblock Plus blocca anche gli annunci online sui <strong>dispositivi mobili!</strong> Scarica <a>Adblock Plus per iOS</a> dall'App Store per bloccare gli annunci nel tuo browser Safari, oppure <a>Adblock Plus per Samsung Internet</a> da Google Play. Puoi bloccare gli annunci fastidiosi anche con il nostro browser di ad blocking dedicato per Android, <a>Adblock Browser</a>."
+  },
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "Decidi tu quale è il prezzo giusto (in <span>USD</span>)"
+  },
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "Decidi tu quale è il prezzo giusto:"
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "Fai una donazione <strong>unica</strong>:"
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "O una donazione <strong>mensile</strong>:"
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "Ops! Per contribuire a coprire le spese, l'importo minimo della donazione unica è di <span>$5</span>."
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "Ops! Per contribuire a coprire le spese, l'importo minimo della donazione mensile è di <span>$1.99</span>."
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "Paga con:"
+  },
+  "stripe-label": {
+    "description": "button label",
+    "message": "Carta di credito"
+  },
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
+  },
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "Contributo ad Adblock Plus"
+  },
+  "checkout-overlay-cta": {
+    "description": "button label",
+    "message": "Dona"
+  },
+  "stripe-declined": {
+    "message": "Il tuo pagamento è stato rifiutato."
+  },
+  "stripe-sorry": {
+    "message": "Purtroppo non è stato possibile elaborare il tuo pagamento."
+  },
+  "securely-processed": {
+    "message": "Elaborazione sicura tramite Stripe.com"
   },
   "privacy-policy": {
     "description": "footer link",
     "message": "Politica sulla riservatezza"
+  },
+  "email-input": {
+    "message": "E-mail"
+  },
+  "notSupported": {
+    "message": "Purtroppo questo tipo di carta al momento non è accettata."
+  },
+  "checkout-overlay-cta-2": {
+    "description": "button label",
+    "message": "Dona"
+  },
+  "checkout-overlay-monthly": {
+    "description": "button label",
+    "message": "al mese"
   }
 }

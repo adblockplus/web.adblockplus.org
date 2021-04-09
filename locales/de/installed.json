@@ -1,32 +1,114 @@
 {
-  "title": {
-    "message": "Adblock Plus wurde installiert"
+  "delay-heading": {
+    "message": "Adblock Plus wird installiert …"
   },
-  "donate-button": {
+  "main-heading-1": {
+    "message": "Das Ehrensystem"
+  },
+  "main-lead-1": {
+    "message": "Grüße vom Adblock Plus-Team. Danke, dass du Adblock Plus installiert hast!"
+  },
+  "main-lead-2": {
+    "message": "AdBlock ist eine Ehren-Software. Und das bedeutet, dass <strong>wir einander vertrauen</strong>, gut zueinander zu sein:"
+  },
+  "main-lead-3": {
+    "message": "Du zahlst, was du dir für Adblock Plus <strong>leisten kannst</strong>. <strong>Du</strong> kannst selbst den Preis bestimmen."
+  },
+  "main-lead-4": {
+    "message": "Wir entwickeln Funktionen, mit denen du bei deinem Browser-Erlebnis die Kontrolle übernimmst."
+  },
+  "main-lead-5": {
+    "message": "Wenn dir unsere Software <strong>nicht gefallen</strong> sollte, erhältst du eine <strong>Rückerstattung</strong> und kannst Adblock Plus trotzdem weiter nutzen."
+  },
+  "main-heading-2": {
+    "message": "Noch eine kurze Anmerkung, bevor du gehst"
+  },
+  "main-heading-3": {
+    "message": "Hilfe ist nur eine E-Mail entfernt"
+  },
+  "main-body-1": {
+    "message": "Bitte zahle so viel wie du kannst. Wenn du deine Meinung änderst, hast du 120 Tage Zeit, um eine Rückerstattung zu erhalten!"
+  },
+  "main-body-2": {
+    "message": "Adblock Plus beginnt mit der Blockierung aufdringlicher Werbung direkt nach der Installation. Obwohl wir die meisten Werbeanzeigen blockieren, verstehen wir auch, dass viele Websites auf Werbeanzeigen angewiesen sind. Darum erlauben wir gewisse Werbeanzeigen, solange sie unsere <a>strengen Kriterien</a> erfüllen. Wenn du diese Option deaktivieren möchtest, besuche bitte deine <a>Einstellungen</a> und schalte die Acceptable Ads jederzeit aus."
+  },
+  "main-body-3": {
+    "message": "Wenn du uns jemals brauchst, kannst du auf unserem Support-Portal, <a>help.eyeo.com</a>, rund um die Uhr die Selbsthilfe nutzen oder 8 Stunden am Tag, 5 Tage die Woche Unterstützung per E-Mail erhalten."
+  },
+  "main-body-4": {
+    "message": "Danke, dass du dich für Adblock Plus entschieden hast! Viel Spaß beim Browsen!"
+  },
+  "main-body-5": {
+    "message": "Mit freundlichen Grüßen <span></span>Dein Adblock Plus-Team"
+  },
+  "main-body-6": {
+    "message": "Adblock Plus blockiert auch Internet-Werbeanzeigen auf <strong>Mobilgeräten!</strong> Hole dir <a>Adblock Plus für iOS</a> im App Store, um Werbeanzeigen in deinem Safari-Browser zu blockieren, oder <a>Adblock Plus für Samsung Internet</a> über Google Play. Du kannst auch lästige Werbeanzeigen mit unserem zugewiesenen Werbeblockierung-Browser für Android, <a>dem Adblock Browser</a>, blockieren."
+  },
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "Nenne einen fairen Preis (in <span>USD</span>)"
+  },
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "Nenne einen fairen Preis:"
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "Spende <strong>nur</strong> einmal:"
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "Oder <strong>monatlich</strong>:"
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "Hoppla! Weil wir  Gebühren zahlen müssen beträgt der Mindestbetrag <span>$5</span>."
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "Hoppla! Weil wir  Gebühren zahlen müssen beträgt der Mindestbetrag <span>$1.99</span>."
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "Bezahle mit:"
+  },
+  "stripe-label": {
+    "description": "button label",
+    "message": "Kreditkarte"
+  },
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
+  },
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "Beitrag zu Adblock Plus"
+  },
+  "checkout-overlay-cta": {
+    "description": "button label",
     "message": "Spende"
   },
-  "installation-successful-heading": {
-    "message": "Installation erfolgreich!"
+  "stripe-declined": {
+    "message": "Deine Zahlung wurde abgelehnt."
   },
-  "took-control-heading": {
-    "message": "Du hast gerade die Kontrolle über deinen Browser übernommen."
+  "stripe-sorry": {
+    "message": "Deine Zahlung konnte leider nicht verarbeitet werden."
   },
-  "in-control-heading": {
-    "message": "Du hast die Kontrolle"
+  "notSupported": {
+    "message": "Es tut uns leid, dieser Kartentyp wird derzeit nicht akzeptiert."
   },
-  "acceptable-ads": {
-    "message": "Standardmäßig siehst du unaufdringliche Anzeigen, die <a>strenge Kriterien</a> erfüllen. Wir nennen diese Anzeigen Acceptable Ads. Du möchtest sämtliche Anzeigen ausblenden? Deaktiviere Acceptable Ads in deinen <a>Einstellungen</a>."
+  "securely-processed": {
+    "message": "Sicher bearbeitet von Stripe.com"
   },
-  "fair-use-heading": {
-    "message": "Angemessene Nutzung"
+  "checkout-overlay-cta-2": {
+    "description": "button label",
+    "message": "Spende"
   },
-  "fair-use": {
-    "message": "Wir ermutigen dich, Adblock Plus sowie die Whitelist-Option für Webseiten angemessen zu nutzen. Abhängig von den Filtern, die du verwendest, akzeptierst du, dass unbeabsichtigte Ergebnisse auftreten können (z. B. blockierte Inhalte einer Webseite). Lies die <a>Nutzungsbedingungen</a> für weitere Informationen zur angemessenen Nutzung von Adblock Plus."
+  "checkout-overlay-monthly": {
+    "description": "button label",
+    "message": "Monat"
   },
-  "copyright-notice": {
-    "message": "Copyright © 2020 Alle Rechte vorbehalten. Adblock Plus<sup>®</sup> ist eine eingetragene Marke der <a>eyeo GmbH</a>."
-  },
-  "privacy-policy": {
-    "message": "Datenschutzerklärung"
+  "email-input": {
+    "message": "E-mail"
   }
 }

@@ -1,33 +1,114 @@
 {
-  "title": {
-    "message": "Adblock Plus a été installé !"
+  "delay-heading": {
+    "message": "Installation d’Adblock Plus…"
   },
-  "donate-button": {
-    "message": "Faire un don"
+  "main-heading-1": {
+    "message": "Un système fondé sur l’honneur"
   },
-  "installation-successful-heading": {
-    "message": "Installation réussie !"
+  "main-lead-1": {
+    "message": "Bonjour de la part de l’équipe Adblock Plus. Merci d’avoir installé Adblock Plus !"
   },
-  "took-control-heading": {
-    "message": "Vous venez de prendre le contrôle de votre navigateur."
+  "main-lead-2": {
+    "message": "Adblock Plus est fondé sur l’honneur, ce qui signifie que <strong>nous faisons confiance à chacun</strong> pour être honnête :"
   },
-  "in-control-heading": {
-    "message": "Prenez le contrôle"
+  "main-lead-3": {
+    "message": "vous <strong>payez selon vos moyens</strong> pour Adblock Plus. Nous <strong>vous</strong> laissons choisir le prix."
   },
-  "acceptable-ads": {
-    "message": "Par défaut, vous pourrez voir des publicités non intrusives qui respectent des <a>critères stricts</a>. Nous avons un nom pour ces publicités : les publicités acceptables. Vous préférez masquer toutes les pubs ? Désactivez les publicités acceptables dans vos <a>Paramètres</a>."
+  "main-lead-4": {
+    "message": "Nous développons des fonctionnalités qui vous permettent de contrôler votre expérience de navigation"
   },
-  "fair-use-heading": {
-    "message": "Usage loyal"
+  "main-lead-5": {
+    "message": "Vous obtenez un <strong>remboursement</strong> - et vous pouvez <strong>conserver Adblock Plus</strong> - si vous ne l’appréciez pas."
   },
-  "fair-use": {
-    "message": "Nous vous encourageons à faire un usage loyal d’Adblock Plus et de l’option permettant de mettre les sites web autorisés sur une liste. En fonction des filtres que vous utilisez, vous comprenez et acceptez que des résultats involontaires peuvent se produire (par ex. contenu bloqué sur un site web). Consultez les <a>Conditions d’utilisation</a> pour obtenir des informations supplémentaires à propos de l’usage loyal d’Adblock Plus."
+  "main-heading-2": {
+    "message": "Un petit rappel avant que vous partiez."
   },
-  "copyright-notice": {
-    "message": "Copyright © 2020 Tous droits réservés. Adblock Plus<sup>®<\/sup> est une marque déposée d’<a>eyeo GmbH<\/a>."
+  "main-heading-3": {
+    "message": "Pour obtenir de l’aide, il vous suffit de nous envoyer un e-mail."
   },
-  "privacy-policy": {
-    "description": "footer link",
-    "message": "Politique de protection de la vie privée"
+  "main-body-1": {
+    "message": "Payez le maximum que vous pouvez, et si vous changez d’avis, vous bénéficiez de 120 jours pour obtenir un remboursement !"
+  },
+  "main-body-2": {
+    "message": "Adblock Plus a commencé à bloquer les publicités intrusives dès qu’il a été installé. Bien que nous bloquions la plupart des publicités, nous comprenons que de nombreux sites reposent sur la publicité, raison pour laquelle nous autorisons certaines publicités, par défaut, tant qu’elles répondent à nos <a>critères stricts</a>. Si vous souhaitez désactiver cette option, rendez-vous sur la page des <a>paramètres</a> et désactivez « Publicité acceptable » à tout moment."
+  },
+  "main-body-3": {
+    "message": "Si vous avez besoin d’aide, une auto-assistance 24h/24 et 7j/7 et une aide par e-mail en semaine pendant les heures ouvrables sont disponibles sur notre portail d’assistance, help.eyeo.com."
+  },
+  "main-body-4": {
+    "message": "Merci d’avoir choisi Adblock Plus ! Joyeuse navigation !"
+  },
+  "main-body-5": {
+    "message": "Amicalement, <span></span>l’équipe Adblock Plus"
+  },
+  "main-body-6": {
+    "message": "Adblock Plus bloque aussi les publicités sur les <strong>appareils mobiles</strong> ! Obtenez <a>Adblock Plus pour iOS</a> dans l’App Store pour bloquer les publicités dans votre navigateur Safari, ou <a>Adblock Plus pour Samsung Internet</a> dans Google Play. Vous pouvez également bloquer les publicités intempestives avec notre navigateur dédié au blocage des publicités pour Android, <a>Adblock Browser</a>."
+  },
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "Choisissez un prix qui vous semble juste : (en <span>USD</span>)"
+  },
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "Choisissez un prix qui vous semble juste :"
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "Faites un don <strong>unique</strong> :"
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "Ou un don <strong>mensuel</strong> :"
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "Oups ! Pour aider à couvrir les frais, le montant minimum d'un don unique est de <span>$5</span>."
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "Oups ! Pour aider à couvrir les frais, le montant minimum d'un don mensuel est de <span>$1.99</span>."
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "Payez par :"
+  },
+  "stripe-label": {
+    "description": "button label",
+    "message": "Carte bancaire"
+  },
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
+  },
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "Contribution à Adblock Plus"
+  },
+  "checkout-overlay-cta": {
+    "description": "button label",
+    "message": "Faites un don de"
+  },
+  "stripe-declined": {
+    "message": "Votre paiement a été refusé."
+  },
+  "stripe-sorry": {
+    "message": "Désolé, votre paiement n'a pas pu être traité."
+  },
+  "securely-processed": {
+    "message": "Traitement sécurisé des informations par Stripe.com"
+  },
+  "checkout-overlay-cta-2": {
+    "description": "button label",
+    "message": "Faites un don de"
+  },
+  "checkout-overlay-monthly": {
+    "description": "button label",
+    "message": "mois"
+  },
+  "email-input": {
+    "message": "E-mail"
+  },
+  "notSupported": {
+    "message": "Désolé, cette carte n'est pas acceptée."
   }
 }

@@ -1,33 +1,114 @@
 {
-  "title": {
-    "message": "Adblock Plus 已安装！"
+  "delay-heading": {
+    "message": "正在安装 Adblock Plus… "
   },
-  "donate-button": {
+  "main-heading-1": {
+    "message": "诚信制度"
+  },
+  "main-lead-1": {
+    "message": "Adblock Plus 团队向您问好。感谢您安装 Adblock Plus！"
+  },
+  "main-lead-2": {
+    "message": "Adblock Plus 是一款诚信软件，这表示我们<strong>相信彼此的</strong>善意："
+  },
+  "main-lead-3": {
+    "message": "您向 Adblock Plus 支付可以承担的价格。<strong>您</strong>可以选择价格。"
+  },
+  "main-lead-4": {
+    "message": "我们开发各种功能，以让您掌控自己的浏览体验。"
+  },
+  "main-lead-5": {
+    "message": "如果不喜欢我们的产品，您可以获得<strong>退款</strong> - 并且可以<strong>保留 Adblock Plus</strong>。"
+  },
+  "main-heading-2": {
+    "message": "在您离开之前，有几句话想对您说"
+  },
+  "main-heading-3": {
+    "message": "只需要发送一封电子邮件即可获得帮助"
+  },
+  "main-body-1": {
+    "message": "请尽您所能支付，因为您有 120 天的时间可以改变主意并获得退款！"
+  },
+  "main-body-2": {
+    "message": "Adblock Plus 一经安装就开始拦截侵入性广告。我们拦截绝大部分广告，但我们知道，许多网站需要依靠广告，因此我们默认允许特定广告，前提是其满足我们的<a>严格标准</a>。如果您想关闭此选项，请随时访问您的<a>设置</a>并关闭“可接受的广告”。"
+  },
+  "main-body-3": {
+    "message": "无论任何时候您需要帮助，我们的支持门户 <a>help.eyeo.com</a> 上均可提供全天候 (24x7) 自助服务及工作日 (8x5) 电子邮件帮助服务。"
+  },
+  "main-body-4": {
+    "message": "感谢您选择 Adblock Plus！祝您享受愉悦的浏览体验！"
+  },
+  "main-body-5": {
+    "message": "此致，<span></span>Adblock Plus 团队"
+  },
+  "main-body-6": {
+    "message": "Adblock Plus 还可拦截<strong>移动设备</strong>上的网络广告！在 App Store 获取<a>适用于iOS的Adblock Plus</a>，以在 Safari 浏览器中拦截广告，或在 Google Play 中获取<a>适用于三星网络的Adblock Plus</a>。您也可以使用我们的 Android 专用广告拦截浏览器 <a>Adblock 浏览器</a> 来拦截讨厌的内容。"
+  },
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "选择合适的价格 (<span>美元</span>)"
+  },
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "选择合适的价格："
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "进行<strong>一次性</strong>捐赠："
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "或<strong>每月</strong>捐赠："
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "抱歉！为了支付相关费用，一次性捐款额最低为 <span>$5</span>。"
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "抱歉！为了支付相关费用，每月捐款额最低为 <span>$1.99</span>。"
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "支付方式："
+  },
+  "stripe-label": {
+    "description": "button label",
+    "message": "信用卡"
+  },
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
+  },
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "助力 Adblock Plus"
+  },
+  "checkout-overlay-cta": {
+    "description": "button label",
     "message": "捐赠"
   },
-  "installation-successful-heading": {
-    "message": "安装成功！"
+  "stripe-declined": {
+    "message": "您的支付已被拒绝。"
   },
-  "took-control-heading": {
-    "message": "您已经成功控制您的浏览器"
+  "stripe-sorry": {
+    "message": "抱歉，无法处理您的支付。"
   },
-  "in-control-heading": {
-    "message": "一切尽在掌控"
+  "securely-processed": {
+    "message": "由 Stripe.com 安全处理"
   },
-  "acceptable-ads": {
-    "message": "默认情况下，您可能会看到一些符合<a>严格标准</a>的非侵入式广告。我们将这些广告确定为可接受广告。想拦截所有广告？在<a>设置</a>中关闭\"可接受广告\""
+  "email-input": {
+    "message": "电子邮箱"
   },
-  "fair-use-heading": {
-    "message": "合理使用"
+  "notSupported": {
+    "message": "抱歉，目前不接受这种卡片类型。"
   },
-  "fair-use": {
-    "message": "我们建议您合理使用 Adblock Plus，并选择将网站列入白名单。根据您使用的过滤，您了解并接受可能会发生无意的结果（例如：拦截网站上的内容）。有关使用 Adblock Plus 的更多信息，请参阅<a>使用条款</a>。"
+  "checkout-overlay-cta-2": {
+    "description": "button label",
+    "message": "捐赠"
   },
-  "copyright-notice": {
-    "message": "版权所有© 2020 保留所有权利。 Adblock Plus<sup>®<\/sup> 是 <a>eyeo GmbH<\/a> 的注册商标。"
-  },
-  "privacy-policy": {
-    "description": "footer link",
-    "message": "隐私策略"
+  "checkout-overlay-monthly": {
+    "description": "button label",
+    "message": "月"
   }
 }

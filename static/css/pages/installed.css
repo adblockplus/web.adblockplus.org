@@ -1,271 +1,145 @@
-body {
-  padding-top: 1em;
-  background-color: #eee;
+*,
+*:before,
+*:after { box-sizing: inherit; }
+
+html 
+{ 
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
 }
 
-a.navbar-logo {
-  float: left;
-  color: #000;
-  text-decoration: none;
+body { margin: 0; }
+
+@media (min-width: 930px) 
+{
+  body 
+  { 
+    margin-top: 20px;
+    background-color: #000; 
+    color: #fff;
+  }
 }
 
-[dir="rtl"] .navbar-logo { float: right; }
+main { display: block; }
 
-.navbar-logo > svg {
-  margin: 0 0.5em 0 0;
-  vertical-align: middle;
+h1, h2, h3
+{
+  padding: 0;
+  margin: 0;
 }
 
-[dir="rtl"] .navbar-logo > svg { margin: 0 0 0 1em; }
-
-.navbar-logo > span {
-  vertical-align: middle;
-  line-height: 2.91em;
-  font-size: 1.375em;
-  word-spacing: -2px;
-}
-
-.navbar-logo strong { font-weight: 700; }
-
-.scroll-to-donate {
-  float: right;
-  margin-top: 0.5em;
-  padding: 0.6em 1.1em;
-  background-color: #edf9ff;
-  color: #0797e1;
+h1
+{
+  margin-bottom: 15px;
+  font-size: 170%;
   font-weight: 700;
-  border: 1px solid #0797e1;
-  border-radius: 4px;
 }
 
-.no-js .scroll-to-donate { display: none; }
-
-[dir="rtl"] .scroll-to-donate { float: left; }
-
-@media(min-width: 992px) {
-  .scroll-to-donate { display: none; }
+h2
+{
+  margin-bottom: 10px;
+  font-size: 150%;
 }
 
-.icon {
+h3 { font-size: 100%; }
+
+em
+{ 
+  font-weight: 700;
+  font-style: normal;
+}
+
+a,
+button { cursor: pointer; }
+
+ul { padding-left: 25px; }
+
+fieldset
+{
   display: block;
-  margin-top: 2em;
-  margin-bottom: 1em;
-  background-repeat: no-repeat;
-  user-select: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
 }
 
-.icon.contribute-icon { margin-top: 0; }
+.mt0 { margin-top: 0; }
 
-.success .icon { margin-bottom: -1em; }
+.mt15 { margin-top: 1.5rem; }
 
-@media (min-width: 768px) {
-  .column.in-control,
-  .column.fair-use { width: 50%; }
-
-  [lang="fr"] h1 { font-size: 34px; }
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
-@media (min-width: 992px) {
-  .column.in-control,
-  .column.fair-use { width: 33.333333%; }
-}
-
-.donate {
-  padding: 1em;
+.card
+{
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  color: #000;
   background-color: #fff;
 }
 
-@media(min-width: 992px) {
-  .ab-test .donate {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    left: 0;
-    bottom: -2000px;
-    border-radius: 0;
-    margin: 0;
-    transition: bottom ease 2s;
-  }
-
-  .ab-test .donate #close-form-button {
-    padding: 2em;
-    background: url(../img/frp-close-icon.svg) no-repeat center center transparent;
-    position: absolute;
-    right: 0;
-  }
-  
-  .ab-test .fake-container {
-    width: 1140px;
-    max-width: 100%;
-    margin-right: auto;
-    margin-left: auto;
+@media (min-width: 930px)
+{
+  .card
+  {
+    border: 1px solid #ebebeb;
+    border-radius: 16px;
+    padding: 20px 40px;
   }
 }
 
-.no-js .donate { display: none; }
-
-@media(min-width: 992px) {
-  .donate {
-    margin: 1em 0;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  }
-}
-
-@media(min-width: 992px) {
-  .donate-to-abp {
-    margin-top: 2em;
-    width: 27%;
-  }
-}
-
-@media(max-width: 991px) {
-  .donate-to-abp,
-  .donation-form {
-    padding: 0;
-  }
-}
-
-@media(min-width: 576px) {
-  .column.donation-form { padding-right: 0; }
-
-  [dir="rtl"] .column.donation-form {
-    padding-right: inherit;
-    padding-left: 0;
-  }
-}
-
-@media(min-width: 992px) {
-  .column.donation-form { width: 73%; }
-}
-
-@media(min-width: 576px) {
-  .content .payment-divide {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-  }
-}
-
-@media(min-width: 585px) {
-  .content .payment-divide {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-
-@media(min-width: 615px) {
-  .content .payment-divide {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-}
-
-@media(min-width: 650px) {
-  .content .payment-divide {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-}
-
-@media(min-width: 992px) {
-  .donate-divide {
-    position: absolute;
-    right: 0;
-    top: 1.5em;
-    width: 2px;
-    min-height: 12em;
-    height: 80%;
-    background-color: #eee;
-  }
-
-  [dir="rtl"] .donate-divide {
-    right: auto;
-    left: 0;
-  }
-}
-
-.donation-form { margin-top: 2em; }
-
-.refund { font-size: 0.85em; }
-
-.bold { font-weight: 700; }
-
-.hidden { display: none; }
-
-h2.donation-heading { font-size: 1.2em; }
-
-.mt2 { margin-top: 2rem; }
-
-.mt3 { margin-top: 3rem; }
-
-.content h2.bg-black {
-  display: inline;
-  font-size: 1.25em;
-  color: #fff;
+#delay-overlay
+{
   background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
-@media(min-width: 992px) {
-  .content .bg-black { line-height: 0.75em; }
+.delay-modal { width: 280px; }
+
+.delay-modal h2
+{
+  font-size: 1rem;
+  font-weight: normal;
 }
 
-.break::before {
-  content: "\a";
-  white-space: pre;
+.delay-modal progress { width: 100%; }
+
+.container
+{
+  width: 930px;
+  max-width: 100%;
+  margin-bottom: 15px;
 }
 
-.content a { color: #1565c0; }
+.logo { margin-bottom: 1rem; }
 
-.content a:active,
-.content a:hover,
-.content a:visited { color: #0797e1; }
+[dir="ltr"] .logo { margin-right: 1rem; }
+[dir="rtl"] .logo { margin-left: 1rem; }
 
-@media (min-width: 992px) {
-  .footer p { margin-top: 0; }
-  .footer .privacy-policy { float: right; text-align: right; }
-  .footer .copyright { float: left; }
-  [dir="rtl"] .footer .privacy-policy { float: left; text-align: left; }
-  [dir="rtl"] .footer .copyright { float: right; }
+.lead-image { display: block; }
+
+@media (min-width: 930px)
+{
+  .lead { display: flex; }
+
+  .lead-image { width: 146px; }
+
+  .load-text { flex: 1; }
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.1;
-    transform: scale(0.9);
-  }
+.break { display: block; height: 1px; width: 1px; }
 
-  50% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
+.privacy-footer { text-align: center; }
 
-  100% {
-    opacity: 0.1;
-    transform: scale(0.9);
-  }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-
-  100% { opacity: 1; }
-}
-
-@keyframes slideIn {
-  0% { bottom: -2000px; }
-
-  100% { bottom: 0; }
-}
-
-.loading {
-  display: block;
-  margin: 1em auto;
-  animation: pulse 1s infinite;
-}
-
-.donate { animation: fadeIn 1s; }
-
-.ab-test.show-form .donate {
-  animation: fadeIn 0s, slideIn 1s;
-  bottom: 0px;
-}
+.privacy-footer a,
+.privacy-footer a:visited { color: #fff; }
