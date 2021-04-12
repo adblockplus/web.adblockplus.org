@@ -15,6 +15,9 @@ class BasePage:
     def go_home(self):
         self.driver.get(str(os.getenv('landing_page_url')))
 
+    def go_to_url(self, url):
+        self.driver.get(url)
+
     def is_redirect_to_url(self, url):
         wait = WebDriverWait(self.driver, 10)
         return wait.until(ec.url_to_be(url))

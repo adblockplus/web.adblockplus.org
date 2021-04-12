@@ -55,9 +55,13 @@ class DonatePage(BasePage):
         self.driver.find_element_by_xpath(button_xpath).send_keys(Keys.SPACE)
 
     def click_stripe_button(self):
-        self.driver.find_element_by_class_name(STRIPE_BUTTON_CLASS).click()
         self.wait.until(ec.text_to_be_present_in_element((By.CLASS_NAME, STRIPE_BUTTON_CLASS), STRIPE_BUTTON_TEXT))
+        self.driver.find_element_by_class_name(STRIPE_BUTTON_CLASS).click()
         return StripePaymentsForm(self.driver)
+
+    def is_stripe_button_visible(self):
+        return self.wait.until(ec.text_to_be_present_in_element(
+            (By.CLASS_NAME, STRIPE_BUTTON_CLASS), STRIPE_BUTTON_TEXT))
 
     def enter_monthly_custom_value(self, custom_value):
         card_cvc_textbox = self.driver.find_element_by_xpath(MONTHLY_CUSTOM_TEXT_BOX_XPATH)

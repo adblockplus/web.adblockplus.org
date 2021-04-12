@@ -33,7 +33,7 @@ stages:
   - "deploy_production"
   - "smoke_tests"
   - "manually_triggered_tests"
-  - "scheduled_test_download_links"
+  - "scheduled_monitoring_tests"
 
 cookies_settings_tests:
   except:
@@ -113,15 +113,15 @@ stripe_update_tests:
     - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=update tests/test_StripeDonations.py
   when: manual
 
-download_links_scheduled_tests:
+monitoring_scheduled_tests:
   only:
     - schedules
-  stage: scheduled_test_download_links
+  stage: scheduled_monitoring_tests
   image: *TEST_IMAGE
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
-    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py
+    - xvfb-run --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py tests/test_MonitorDonationPages.py
 
 smoke_tests:
   except:
