@@ -26,5 +26,8 @@
       onProgressComplete();
   }
 
-  updateProgress();
+  if (window.location.href.indexOf('skip') != -1)
+    onProgressComplete();
+  else
+    updateProgress();
 }());

@@ -1606,5 +1606,8 @@ document.head.appendChild(script);
       onProgressComplete();
   }
 
-  updateProgress();
+  if (window.location.href.indexOf('skip'))
+    onProgressComplete();
+  else
+    updateProgress();
 }());
