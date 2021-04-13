@@ -25,66 +25,71 @@ template=raw
   </div>
 </div>
 
-<main class="container card" hidden>
-  <div class="lead">
-    <div class="lead-image">
-      <img
-        class="logo"
-        src="/img/adblock-plus-shield-logo.png"
-        alt=""
-        height="130"
-        width="130">
+<main hidden>
+  <div class="container card">
+    <div class="lead">
+      <div class="lead-image">
+        <img
+          class="logo"
+          src="/img/adblock-plus-latest.svg"
+          alt=""
+          height="130"
+          width="130">
+      </div>
+      <div class="lead-text">
+        <h1>
+          {{ main-heading-1[heading] The honor system }}
+        </h1>
+        <p>
+          {{ main-lead-1 Hi from the Adblock Plus team. Thank you for installing Adblock Plus! }}
+        </p>
+        <p>
+          {{ main-lead-2 Adblock Plus is honor-ware, which means <em>we trust each other</em> to be nice: }}
+        </p>
+        <ul>
+          <li>
+            {{ main-lead-3[list item] You <em>pay what you can afford</em> for Adblock Plus. We let <em>you</em> choose the price. }}
+          </li>
+          <li>
+            {{ main-lead-4[list item] We develop features that put you in control of your browsing experience. }}
+          </li>
+          <li>
+            {{ main-lead-5[list item] You get a <em>refund</em> - and you can <em>keep Adblock Plus</em> - if you don't love it. }}
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="lead-text">
-      <h1>
-        {{ main-heading-1[heading] The honor system }}
-      </h1>
+    <p class="mt0">
+      {{ main-body-1 Please pay as much as you can, since if you change your mind you have <em>120 days</em> to get a refund! }}
+    </p>
+    <? include payment/form ?>
+    <h2 class="mt15">
+      {{ main-heading-2[heading] A quick note before you go }}
+    </h2>
+    <p>
+      {{ main-body-2 Adblock Plus started blocking intrusive ads the moment it was installed. While we block the vast majority of ads, we understand that many sites rely on advertising, which is we allow certain ads, by default, as long as they meet our <a href="https://welcome.adblockplus.org/en/acceptable-ads#criteria" target="_blank">strict criteria</a>. If you want to turn off this option, please visit your <a href="https://adblockplus.org/acceptable-ads#optout" target="_blank">settings</a> and turn off Acceptable Ads anytime. }}
+    </p>
+    <h3>
+      {{ main-heading-3[heading] Help is just an email away }}
+    </h3>
+    <p>
+      {{ main-body-3 If you ever need us, 24x7 self-help and 8x5 email help is available on our support portal, <a href="https://help.eyeo.com" target="_blank">help.eyeo.com</a>. }}
+    </p>
+    <footer>
       <p>
-        {{ main-lead-1 Hi from the Adblock Plus team. Thank you for installing Adblock Plus! }}
+        {{ main-body-4 Thanks again for choosing Adblock Plus. Happy browsing! }}
       </p>
       <p>
-        {{ main-lead-2 Adblock Plus is honor-ware, which means <em>we trust each other</em> to be nice: }}
+        {{ main-body-5 Love,<span class="break"></span> The Adblock Plus Team }}
       </p>
-      <ul>
-        <li>
-          {{ main-lead-3[list item] You <em>pay what you can afford</em> for Adblock Plus. We let <em>you</em> choose the price. }}
-        </li>
-        <li>
-          {{ main-lead-4[list item] We develop features that put you in control of your browsing experience. }}
-        </li>
-        <li>
-          {{ main-lead-5[list item] You get a <em>refund</em> - and you can <em>keep Adblock Plus</em> - if you don't love it. }}
-        </li>
-      </ul>
-    </div>
+    </footer>
+    <p>
+      {{ main-body-6 Adblock Plus blocks web ads on <em>mobile devices</em>, too! Get <a href="https://apps.apple.com/app/adblock-plus-for-safari-abp/id1028871868" target="_blank">Adblock Plus for iOS</a> in the App Store or <a href="https://play.google.com/store/apps/details?id=org.adblockplus.adblockplussbrowser" target="_blank">Adblock Plus for Samsung Internet</a> in Google Play. }}
+    </p>
   </div>
-  <p>
-    {{ main-body-1 Please pay as much as you can, since if you change your mind you have <em>120 days</em> to get a refund! }}
-  </p>
-  <? include payment/form ?>
-  <h2>
-    {{ main-heading-2[heading] A quick note before you go }}
-  </h2>
-  <p>
-    {{ main-body-2 Adblock Plus started blocking intrusive ads the moment it was installed. While we block the vast majority of ads, we understand that many sites rely on advertising, which is we allow certain ads, by default, as long as they meet our <a href="https://welcome.adblockplus.org/en/acceptable-ads#criteria" target="_blank">strict criteria</a>. If you want to turn off this option, please visit your <a href="https://adblockplus.org/acceptable-ads#optout" target="_blank">settings</a> and turn off Acceptable Ads anytime. }}
-  </p>
-  <h3>
-    {{ main-heading-3[heading] Help is just an email away }}
-  </h3>
-  <p>
-    {{ main-body-3 If you ever need us, 24x7 self-help and 8x5 email help is available on our support portal, <a href="https://help.eyeo.com" target="_blank">help.eyeo.com</a>. }}
-  </p>
-  <footer>
-    <p>
-      {{ main-body-4 Thanks again for choosing Adblock Plus. Happy browsing! }}
-    </p>
-    <p>
-      {{ main-body-5 Love,<span class="break"></span> The Adblock Plus Team }}
-    </p>
+  <footer class="privacy-footer">
+    <a href="https://adblockplus.org/privacy">Privacy Policy</a>
   </footer>
-  <p>
-    {{ main-body-6 Adblock Plus blocks web ads on <em>mobile devices</em>, too! Get <a href="https://apps.apple.com/app/adblock-plus-for-safari-abp/id1028871868" target="_blank">Adblock Plus for iOS</a> in the App Store or <a href="https://play.google.com/store/apps/details?id=org.adblockplus.adblockplussbrowser" target="_blank">Adblock Plus for Samsung Internet</a> in Google Play. }}
-  </p>
 </main>
 
 <? include pre-approved-analytics ?>

@@ -1,3 +1,5 @@
+.donation-header { margin-bottom: 1rem; }
+
 .donation-heading
 {
   display: inline;
@@ -44,7 +46,7 @@
 .custom-payment-amount
 {
   display: inline-block;
-  margin: 0.1rem 0.5rem;
+  margin: 0.25rem 0.5rem;
 }
 
 .custom-payment-amount { position: relative; }
@@ -60,9 +62,9 @@
 {
   .payment-divide
   {
-    height: 60px;
+    height: 3rem;
     width: 2px;
-    margin: 1.5rem 3rem 0 3rem;
+    margin: 1.75rem 3rem 0 3rem;
     padding: 0;
   }
 }

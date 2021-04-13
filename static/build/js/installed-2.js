@@ -1606,7 +1606,7 @@ document.head.appendChild(script);
       onProgressComplete();
   }
 
-  if (window.location.href.indexOf('skip'))
+  if (window.location.href.indexOf('skip') != -1)
     onProgressComplete();
   else
     updateProgress();
