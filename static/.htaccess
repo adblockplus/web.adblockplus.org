@@ -36,24 +36,65 @@ RewriteRule ^(\w\w(_\w\w)?/)?filters$ https://help.eyeo.com/en/adblockplus/how-t
 RewriteRule ^(\w\w(_\w\w)?/)?android-about/?$ https://adblockplus.org/ [NC,R=301]
 
 # Refd #474 - Migrate XSS and clickjacking prevention headers to .htaccess
-SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|internet-explorer|safari|yandex-browser|maxthon)?$|^/blog/|^/poland/? YOUTUBE_NOCOOKIES
+# SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|internet-explorer|safari|yandex-browser|maxthon)?$|^/blog/|^/poland/? YOUTUBE_NOCOOKIES
 
-Header set Content-Security-Policy "default-src 'self'; \
-img-src https://optimize.google.com * data:; \
-style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com https://optimize.google.com; \
-script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com; \
-connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/; \
-font-src 'self' https://fonts.gstatic.com data:; \
-frame-src https://optimize.google.com https://js.stripe.com;" \
-ENV=!YOUTUBE_NOCOOKIES
+# Header set Content-Security-Policy "default-src 'self'; \
+# img-src https://optimize.google.com * data:; \
+# style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com https://optimize.google.com; \
+# script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com; \
+# connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/; \
+# font-src 'self' https://fonts.gstatic.com data:; \
+# frame-src https://optimize.google.com https://js.stripe.com;" \
+# ENV=!YOUTUBE_NOCOOKIES
 
-Header set Content-Security-Policy "default-src 'self'; \
-img-src https://optimize.google.com * data:; \
-style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com https://optimize.google.com; \
-script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com; \
-connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/; \
-font-src 'self' https://fonts.gstatic.com data:; \
-frame-src https://optimize.google.com www.youtube-nocookie.com;" \
-ENV=YOUTUBE_NOCOOKIES
+# Header set Content-Security-Policy "default-src 'self'; \
+# img-src https://optimize.google.com * data:; \
+# style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com https://optimize.google.com; \
+# script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com; \
+# connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/; \
+# font-src 'self' https://fonts.gstatic.com data:; \
+# frame-src https://optimize.google.com www.youtube-nocookie.com;" \
+# ENV=YOUTUBE_NOCOOKIES
 
-Header set X-Frame-Options "sameorigin"
+# Header set X-Frame-Options "sameorigin"
+
+# Split by time
+
+RewriteCond %{REQUEST_URI} ^/(.{0,4})/split$
+RewriteCond %{TIME_SEC} [02468]$
+RewriteRule ^(.{0,4})/split$ /$1/a [NC,L]
+
+RewriteCond %{REQUEST_URI} ^/(.{0,4})/split$
+RewriteCond %{TIME_SEC} [13579]$
+RewriteRule ^(.{0,4})/split$ /$1/b [NC,L]
+
+RewriteCond %{REQUEST_URI} ^/(.{0,4})/split$
+RewriteRule ^(.{0,4})/split$ /en/c [NC,L]
+
+# Split by locale and time
+
+RewriteCond %{REQUEST_URI} ^/(en|en[-_]us|de|de[-_]de)/split-locale$
+RewriteCond %{TIME_SEC} [02468]$
+RewriteRule ^(en|en[-_]us|de|de[-_]de)/split-locale$ /$1/a [NC,L]
+
+RewriteCond %{REQUEST_URI} ^/(en|en[-_]us|de|de[-_]de)/split-locale$
+RewriteCond %{TIME_SEC} [13579]$
+RewriteRule ^(en|en[-_]us|de|de[-_]de)/split-locale$ /$1/b [NC,L]
+
+RewriteCond %{REQUEST_URI} ^/(.{0,4})/split-locale$
+RewriteRule ^(.{0,4})/split-locale$ /en/c [NC,L]
+
+# Split by location and time
+
+# RewriteCond %{REQUEST_URI} ^/(.{0,4})/split-location$
+# RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(US|DE)$
+# RewriteCond %{TIME_SEC} [02468]$
+# RewriteRule ^(.{0,4})/split-localion$ /$1/a [NC,L]
+
+# RewriteCond %{REQUEST_URI} ^/(.{0,4})/split-location$
+# RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(US|DE)$
+# RewriteCond %{TIME_SEC} [13579]$
+# RewriteRule ^(.{0,4})/split-locale$ /$1/b [NC,L]
+
+# RewriteCond %{REQUEST_URI} ^/(.{0,4})/split-location$
+# RewriteRule ^(.{0,4})/split-localion$ /en/c [NC,L]
