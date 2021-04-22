@@ -1,13 +1,15 @@
 
-import re
-import warnings
 
-TYPE_REGEXP = r"(?:arrayof\s+)?\w+"
 
 
 def parse_interface(interface_items):
+    import re
+    import warnings
+
+    TYPE_REGEXP = r"(?:arrayof\s+)?\w+"
+
     parsed = []
-    for key, value in interface_items.iteritems():
+    for key, value in interface_items.items():
         if "(" in key:
             # Item is a method
             match = re.match(r"^\s*(%s)\s+(\S+)\s*\(\s*([^\)]*)\s*\)\s*$" % TYPE_REGEXP, key)

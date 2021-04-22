@@ -1,8 +1,6 @@
-# adblockplus.org web content #
+## DISCLAIMER
 
-The web content of the adblockplus.org domain is generated automatically from
-the files in this repository. For more information and usage instructions
-see [CMS documentation](https://github.com/adblockplus/cms/blob/master/README.md#content-structure).
+The contents of this repo are modified for compatibility with an experimental build tool and do not adhere to the standards of the [main branch](https://gitlab.com/eyeo/websites/web.adblockplus.org/-/tree/master) nor do they follow best practices.
 
 ## Tracking
 

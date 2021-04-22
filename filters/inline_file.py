@@ -1,6 +1,6 @@
 
 import base64
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from mimetypes import MimeTypes
 
 from jinja2 import contextfilter
@@ -11,6 +11,13 @@ mime = MimeTypes()
 
 @contextfilter
 def inline_file(context, path, mime_type=None):
+    # monkey patch
+    import base64
+    import urllib.request, urllib.parse, urllib.error
+    from mimetypes import MimeTypes
+    mime = MimeTypes()
+    # end monkey patch
+
     if mime_type is None:
         mime_type = mime.guess_type(path)[0]
         if mime_type is None:
@@ -26,5 +33,5 @@ def inline_file(context, path, mime_type=None):
 
     return "data:%s;base64,%s" % (
         mime_type,
-        urllib.quote(base64.b64encode(file_contents))
+        urllib.parse.quote(base64.b64encode(file_contents))
     )

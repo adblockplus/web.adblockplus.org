@@ -48,12 +48,12 @@
           <p>
             {{ "Subscribe:"|translate("subscribe") }}{{ ' ' }}
             {%- for title, url, complete in subscription["variants"] -%}
-            <a href="https://subscribe.adblockplus.org?location={{ url|urlencode }}&amp;title={{ title|urlencode }}
+            <a href="https://subscribe.adblockplus.org?location={{ url|urlencode }}&amp;title={{ "Replaced title due to include bug"|urlencode }}
               {%- if parent and not complete -%}
                 {%- set main_title, main_url, main_complete = parent.variants[0] -%}
                 &amp;requiresLocation={{ main_url|urlencode }}&amp;requiresTitle={{ main_title|urlencode }}
               {%- endif -%}
-            ">{{ title }}</a>{%- if not loop.last %}, {% endif -%}
+            ">{{ "Replaced title due to include bug" }}</a>{%- if not loop.last %}, {% endif -%}
             {%- endfor %}
           </p>
         </div>

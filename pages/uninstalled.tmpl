@@ -22,7 +22,7 @@ template=minimal
 <div id="content">
   <section id="uninstall-reasons">
     <div class="container content">
-      <h1>{{ title | translate("title") }}</h1>
+      <h1>{{ "Replaced title due to include bug" | translate("title") }}</h1>
       <? include reinstall ?>
       <p>{{ "Please select the reason(s) why you uninstalled Adblock Plus:" | translate("reasons-header", "Form heading") }}</p>
       <form id="reasons-form" action="uninstalled-submit" method="get">
