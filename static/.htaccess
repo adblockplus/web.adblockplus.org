@@ -57,3 +57,19 @@ frame-src https://optimize.google.com www.youtube-nocookie.com;" \
 ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
+
+ErrorDocument 404 "\
+[HTTP_ACCEPT: %{HTTP:Accept-Language} \
+[HTTP_COOKIE: %{HTTP_COOKIE}] \
+[HTTP_USER_AGENT: %{HTTP_USER_AGENT}] \
+[HTTP_REFERER: %{HTTP_REFERER}] \
+[HTTP_HOST: %{HTTP_HOST}] \
+[REQUEST_URI: %{REQUEST_URI}] \
+[QUERY_STRING: %{QUERY_STRING}] \
+[TIME_YEAR: %{TIME_DAY}] \
+[TIME_MON: %{TIME_DAY}] \
+[TIME_DAY: %{TIME_DAY}] \
+[TIME_HOUR: %{TIME_DAY}] \
+[TIME_MIN: %{TIME_DAY}] \
+[TIME_SEC: %{TIME_SEC}]"
+RewriteRule ^ - [L,R=404]
