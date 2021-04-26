@@ -1,4 +1,32 @@
 RewriteEngine on
+
+# QUERY_STRING conditions added for convinience of testing
+
+# REQUEST_URI ends with /a
+# QUERY_STRING contains 20-split
+# SECOND IS 0 or 2 of [0-9]
+# REWRITE /a to /b%{QUERY_STRING}
+RewriteCond %{REQUEST_URI} .*/a$
+RewriteCond %{QUERY_STRING} (^|&)20-split($|&)
+RewriteCond %{TIME_SEC} [02]$
+RewriteRule ^([\w-]{0,5}\/)?a$ /js/payment/config/$1b$2 [NC,L]
+
+# REQUEST_URI ends with /en/a, /en-US/a, or /en_US/a
+# QUERY_STRING contains en-only
+# REWRITE /a to /b%{QUERY_STRING}
+RewriteCond %{REQUEST_URI} .*(en/|en[-_]US/)a$
+RewriteCond %{QUERY_STRING} (^|&)en-only($|&)
+RewriteRule ^([\w-]{0,5}\/)?a$ /js/payment/config/$1b$2 [NC,L]
+
+# REQUEST_URI ends with /a
+# QUERY_STRING contains gb-only
+# GEOIP COUNTRY IS GB
+# REWRITE /a to /b%{QUERY_STRING}
+RewriteCond %{REQUEST_URI} .*(\/)?a$
+RewriteCond %{QUERY_STRING} (^|&)gb-only($|&)
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+RewriteRule ^([\w-]{0,5}\/)?a$ /js/payment/config/$1b$2 [NC,L]
+
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
 RewriteRule ^load.js gb.js
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
