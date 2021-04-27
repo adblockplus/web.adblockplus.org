@@ -53,7 +53,7 @@
         id="{{ brws.id }}_panel"
         class="tab-content {% if brws.id in ('chrome', 'android_samsungBrowser') %} current-tab{% endif %}">
         {% if brws.id == 'android_samsungBrowser' %}
-        <? include install-button-android ?>
+        <? include install-button-samsung ?>
         {% endif %}
         {% if brws.id == 'ios_safari' %}
         <? include install-button-ios-safari ?>
