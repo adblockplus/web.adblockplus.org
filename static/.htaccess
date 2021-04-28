@@ -57,3 +57,13 @@ frame-src https://optimize.google.com www.youtube-nocookie.com;" \
 ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
+
+<FilesMatch ^match-test$>
+RewriteRule ".*/match-test$" "/match-success" [NC,L,R=301]
+</FilesMatch>
+
+<FilesMatch ^geo-test$>
+GeoIPEnable On
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+RewriteRule .*/geo-test$ /geo-success [NC,L,R=301]
+</FilesMatch>
