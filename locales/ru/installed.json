@@ -1,33 +1,114 @@
 {
-  "title": {
-    "message": "Adblock Plus установлен!"
+  "delay-heading": {
+    "message": "Установка Adblock Plus… "
   },
-  "donate-button": {
+  "main-heading-1": {
+    "message": "Честная система"
+  },
+  "main-lead-1": {
+    "message": "Команда Adblock Plus приветствует вас. Спасибо за установку Adblock Plus!"
+  },
+  "main-lead-2": {
+    "message": "Adblock Plus – программа, распространяемая по честной цене. <strong>Это означает, что мы верим во взаимную</strong> добросовестность:"
+  },
+  "main-lead-3": {
+    "message": "Вы заплатите за <strong>Adblock Plus ровно столько</strong>, сколько можете себе позволить. Мы позволяем <strong>вам самостоятельно</strong> выбрать цену."
+  },
+  "main-lead-4": {
+    "message": "Мы разрабатываем функции, позволяющие вам контролировать вашу работу в браузере."
+  },
+  "main-lead-5": {
+    "message": "Вы можете получить <strong>возврат средств</strong> – и даже оставить себе <strong>Adblock Plus</strong> – если он вам не понравится."
+  },
+  "main-heading-2": {
+    "message": "Кстати, пока вы еще здесь"
+  },
+  "main-heading-3": {
+    "message": "Для получения поддержки просто отправьте электронное письмо"
+  },
+  "main-body-1": {
+    "message": "Платите, сколько сможете, а если вы передумаете, у вас будет 120 дней на возврат средств!"
+  },
+  "main-body-2": {
+    "message": "Adblock Plus начал блокировать навязчивую рекламу с момента установки. Хотя мы блокируем подавляющее большинство рекламы, мы понимаем, что многие сайты зависят от нее, и поэтому мы допускаем некоторую рекламу по умолчанию, если она отвечает нашим <strong>строгим критериям</strong>. Если вы желаете отключить эту опцию, зайдите в свои <strong>настройки</strong> и отключите Допустимую рекламу в любой момент."
+  },
+  "main-body-3": {
+    "message": "Если мы вам понадобимся, на нашем портале поддержки <a>help.eyeo.com</a> вы сможете самостоятельно найти ответы на свои вопросы круглосуточно или получить поддержку по электронной почте на протяжении восьми часов в день по будням."
+  },
+  "main-body-4": {
+    "message": "Спасибо за выбор Adblock Plus! Приятной работы в Интернете!"
+  },
+  "main-body-5": {
+    "message": "С любовью, <span></span>Команда Adblock Plus"
+  },
+  "main-body-6": {
+    "message": "Adblock Plus блокирует веб-рекламу и на <strong>мобильных устройствах</strong>! Скачайте <a>Adblock Plus для iOS</a> в App Store, чтобы блокировать рекламу в браузере Safari, или <a>Adblock Plus для Samsung Internet</a> в Google Play. Также вы можете блокировать все, что вам мешает, с помощью нашего специального браузера с блокировкой рекламы для Android, <a>Adblock Browser</a>."
+  },
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "Назовите честную цену (в <span>США</span>)"
+  },
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "Назовите честную цену:"
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "Сделать <strong>однократное</strong> пожертвование:"
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "Или <strong>ежемесячное</strong> пожертвование:"
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "Ой! С учетом накладных расходов, минимальная сумма однократного пожертвования составляет <span>$5</span>."
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "Ой! С учетом накладных расходов, минимальная сумма ежемесячного пожертвования составляет <span>$1.99</span>."
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "Средство оплаты:"
+  },
+  "stripe-label": {
+    "description": "button label",
+    "message": "Кредитная карта"
+  },
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
+  },
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "Пожертвование для Adblock Plus"
+  },
+  "checkout-overlay-cta": {
+    "description": "button label",
     "message": "Пожертвовать"
   },
-  "installation-successful-heading": {
-    "message": "Установка выполнена успешно!"
+  "stripe-declined": {
+    "message": "Ваш платеж был отклонен."
   },
-  "took-control-heading": {
-    "message": "Вы получили возможность управлять своим браузером."
+  "stripe-sorry": {
+    "message": "К сожалению, ваш платеж не удалось обработать."
   },
-  "in-control-heading": {
-    "message": "Теперь контролируете вы"
+  "securely-processed": {
+    "message": "Защищенная обработка платежей осуществляется Stripe.com"
   },
-  "acceptable-ads": {
-    "message": "По умолчанию вы можете видеть неназойливую рекламу, которая регламентируется <a>жесткими критериями</a>. Мы определяем такую рекламу как допустимую. Хотите блокировать всю рекламу? Отключите допустимую рекламу в <a>Настройках</a>."
+  "email-input": {
+    "message": "Email"
   },
-  "fair-use-heading": {
-    "message": "Добросовестное использование"
+  "notSupported": {
+    "message": "Извините, данный тип карт в настоящее время не принимается."
   },
-  "fair-use": {
-    "message": "Мы рекомендуем добросовестно пользоваться приложением Adblock Plus и опцией добавления вебсайтов в разрешённый список. Учитывая применяемые вами фильтры, вы понимаете и принимаете возможность получения неожиданных результатов (например, блокировка контента на вебсайте). Для получения дополнительной информации о добросовестном использовании приложения Adblock Plus см. <a>Условия использования</a>."
+  "checkout-overlay-cta-2": {
+    "description": "button label",
+    "message": "Жертвовать"
   },
-  "copyright-notice": {
-    "message": "Авторское право © 2020 Все права защищены. Adblock Plus<sup>®<\/sup> является зарегистрированной торговой маркой компании <a>eyeo GmbH<\/a>."
-  },  
-  "privacy-policy": {
-    "description": "footer link",
-    "message": "Политика конфиденциальности"
+  "checkout-overlay-monthly": {
+    "description": "button label",
+    "message": "месяц"
   }
 }

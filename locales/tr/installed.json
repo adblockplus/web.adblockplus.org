@@ -1,33 +1,114 @@
 {
-  "title": {
-    "message": "Adblock Plus yüklendi!"
+  "delay-heading": {
+    "message": "Adblock Plus yükleniyor… "
   },
-  "donate-button": {
-    "message": "Bağış yap"
+  "main-heading-1": {
+    "message": "Onur sistemi"
   },
-  "installation-successful-heading": {
-    "message": "Kurulum Başarılı!"
+  "main-lead-1": {
+    "message": "Adblock Plus ekibinden selamlar. Adblock Plus'ı yüklediğiniz için teşekkür ederiz!"
   },
-  "took-control-heading": {
-    "message": "Tarayıcınızın kontrolü artık sizde."
+  "main-lead-2": {
+    "message": "Adblock Plus onur temelli bir yazılımdır; yani, dürüst ve adaletli davranacağımız konusunda <strong>birbirimize güveniriz</strong>:"
   },
-  "in-control-heading": {
-    "message": "Kontrol sizde"
+  "main-lead-3": {
+    "message": "Adblock Plus için <strong>durumunuzun elverdiği kadar ödeme yaparsınız</strong>. Fiyatı <strong>sizin</strong> seçiminize bırakıyoruz."
   },
-  "acceptable-ads": {
-    "message": "Varsayılan olarak, <a>sıkı kriterlere</a> uyan bazı kullanıcı deneyimi odaklı (non-intrusive) reklamları görebilirsiniz. Biz bu reklamları Kabul Edilebilir Reklamlar olarak tanımlıyoruz. Bütün reklamları engellemeyi mi tercih edersiniz? <a>Ayarlar</a> dan Kabul Edilebilir Reklamları kapat seçeneğine tıklayın."
+  "main-lead-4": {
+    "message": "Gezinme deneyiminizin kontrolünü size veren özellikler geliştiriyoruz."
   },
-  "fair-use-heading": {
-    "message": "Adil kullanim"
+  "main-lead-5": {
+    "message": "Hoşunuza gitmediği takdirde, paranızı <strong>geri alarak Adblock Plus'ı kullanmaya</strong> devam edebilirsiniz."
   },
-  "fair-use": {
-    "message": "Adblock Plus'ın ve izin verilenler listesine web siteleri ekleme seçeneğinin adil kullanımı konusunda sizi teşvik ediyoruz. Kullandığınız filtrelere bağlı olarak, istem dışı meydana gelebilecek sonuçları (ör. bir web sitesinde engellenen içerik) anlamış ve kabul etmiş olursunuz. Adblock Plus adil kullanımı hakkında daha fazla bilgi için, <a>Kullanım Şartları</a> bölümüne bakınız."
+  "main-heading-2": {
+    "message": "Bitirmeden önce kısa bir not"
   },
-  "copyright-notice": {
-    "message": "Copyright © 2020 All rights reserved. Adblock Plus<sup>®</sup> is a registered trademark of <a>eyeo GmbH</a>."
-  },  
-  "privacy-policy": {
-    "description": "footer link",
-    "message": "Gizlilik Politikası"
+  "main-heading-3": {
+    "message": "Yardım sadece bir e-posta uzakta"
+  },
+  "main-body-1": {
+    "message": "Lütfen durumunuzun elverdiği en yüksek tutarda ödeme yapın; zira, fikrinizi değiştirmeniz halinde 120 gün içinde paranızı geri alabilirsiniz!"
+  },
+  "main-body-2": {
+    "message": "Adblock Plus, yüklendiği andan itibaren izinsiz reklamları engellemeye başladı. Reklamların büyük çoğunluğunu engellemekle birlikte, birçok sitenin gelir kaynağının reklamlar olduğunun da farkındayız; bu yüzden, <a>katı kriterlerimizi</a> karşıladıkları sürece, varsayılan olarak, bazı reklamlara izin veriyoruz. Bu seçeneği devredışı bırakmak isterseniz, Kabul Edilebilir Reklamları istediğiniz zaman <a>ayarlarınıza</a> giderek kapatabilirsiniz."
+  },
+  "main-body-3": {
+    "message": "Bize ihtiyacınız olduğu takdirde, 7x24 kendi kendine yardım ve 5x8 e-posta yardımına destek portalımız olan <a>help.eyeo.com</a>'dan ulaşabilirsiniz."
+  },
+  "main-body-4": {
+    "message": "Adblock Plus'ı seçtiğiniz için teşekkür ederiz! Mutlu Gezinmeler!"
+  },
+  "main-body-5": {
+    "message": "Sevgiler, <span></span>Adblock Plus ekibi"
+  },
+  "main-body-6": {
+    "message": "Adblock  Plus, web reklamlarını <strong>mobil cihazlarda</strong> da engeller! Safari tarayıcınızda reklamları engellemek için App Store'dan <a>iOS için Adblock Plus</a> veya Google Play'den <a>Samsung İnternet için Adblock Plus</a> edinebilirsiniz. Ayrıca Android'e özel reklam engellemeli tarayıcımız olan <a>Adblock Browser</a> ile de sizi rahatsız eden ögeleri engelleyebilirsiniz."
+  },
+  "fair-amount-header-1": {
+    "description": "heading",
+    "message": "Adil bir fiyat belirleyin (<span>ABD</span> doları)"
+  },
+  "fair-amount-header-2": {
+    "description": "heading",
+    "message": "Adil bir fiyat belirleyin:"
+  },
+  "one-time-legened-1": {
+    "description": "heading",
+    "message": "<strong>Tek seferlik</strong> bir bağışta bulunun:"
+  },
+  "subscription-legend-1": {
+    "description": "heading",
+    "message": "<strong>Aylık</strong> bağışlar da yapabilirsiniz:"
+  },
+  "min-donation-warning": {
+    "description": "notice",
+    "message": "Hay aksi! Ücretleri karşılamak için tek seferlik minimum bağış miktarı <span>$5</span>'dur."
+  },
+  "min-subscription-warning": {
+    "description": "notice",
+    "message": "Hay aksi! Ücretleri karşılamak için tek seferlik minimum bağış miktarı <span>$1.99</span>'dır."
+  },
+  "pay-with-lead-1": {
+    "description": "heading",
+    "message": "Ödeme yöntemi:"
+  },
+  "stripe-label": {
+    "description": "button label",
+    "message": "Kredi kartı"
+  },
+  "paypal-label": {
+    "description": "button label",
+    "message": "PayPal"
+  },
+  "purchase-item-name": {
+    "description": "item being paid for",
+    "message": "Adblock Plus'a Katkı"
+  },
+  "checkout-overlay-cta": {
+    "description": "button label",
+    "message": "bağışta bulunun"
+  },
+  "stripe-declined": {
+    "message": "Ödemeniz kabul edilmedi."
+  },
+  "stripe-sorry": {
+    "message": "Üzgünüz, ödemeniz gerçekleştirilemedi."
+  },
+  "securely-processed": {
+    "message": "Stripe.com tarafından güvenle işleme konur"
+  },
+  "email-input": {
+    "message": "Email"
+  },
+  "notSupported": {
+    "message": "Üzgünüz, şu anda bu kart türü kabul edilmemektedir."
+  },
+  "checkout-overlay-cta-2": {
+    "description": "button label",
+    "message": "bağışta bulunun"
+  },
+  "checkout-overlay-monthly": {
+    "description": "button label",
+    "message": "Aylık"
   }
 }

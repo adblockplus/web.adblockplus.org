@@ -1,157 +1,97 @@
-title=Adblock Plus has been installed!
+title=Adblock Plus is now installed!
 robots=none
 prevent_cookie_prompt=1
-template=installed/main
+template=raw
 
 <head>
-  <script>window.campaignID = 3;</script>
+  <? include meta/standard ?>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap">
+  <link rel="stylesheet" href="/build/css/installed.min.css">
+  <? include config ?>
+  <? include anti-flicker ?>
 </head>
 
-<nav>
-  <div class="container">
-    <? include navbar-logo ?>
-
-    <button class="scroll-to-donate uppercase">{{ donate-button Donate }}</button>
+<div id="delay-overlay">
+  <div class="delay-modal card">
+    <h2 id="delay-heading">
+      {{ delay-heading Installing Adblock Plus... }}
+    </h2>
+    <progress 
+      id="delay-progress"
+      value="0"
+      max="100">
+    </progress>
   </div>
-</nav>
+</div>
 
-<main class="container">
-  <div class="row">
-    <header class="content column one-third success">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-        alt="" class="icon" width="40" height="40">
-      <h1>{{ installation-successful-heading Installation Successful! }}</h1>
-      <p class="took-control">{{ took-control-heading You just took control of your browser. }}</p>
-    </header>
-
-    <section class="content column one-third in-control">
-      <svg viewBox="0 0 24 25" class="icon" width="27" height="27" role="img">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g fill="#000" fill-rule="nonzero">
-            <g transform="translate(0.52, 0)">
-              <path d="M3.68,20.1588271 L3.68,25 L1.84,25 L1.84,20.1588271 L3.68,20.1588271 Z M12.4775,16.0354307 L12.4775,25 L10.6375,25 L10.6375,16.0354307 L12.4775,16.0354307 Z M21.16,20.1588271 L21.16,25 L19.32,25 L19.32,20.1588271 L21.16,20.1588271 Z M2.76,13.546121 C4.28430591,13.546121 5.52,14.7768593 5.52,16.2950519 C5.52,17.8132446 4.28430591,19.0439829 2.76,19.0439829 C1.23569409,19.0439829 0,17.8132446 0,16.2950519 C0,14.7768593 1.23569409,13.546121 2.76,13.546121 Z M20.24,13.546121 C21.7643059,13.546121 23,14.7768593 23,16.2950519 C23,17.8132446 21.7643059,19.0439829 20.24,19.0439829 C18.7156941,19.0439829 17.48,17.8132446 17.48,16.2950519 C17.48,14.7768593 18.7156941,13.546121 20.24,13.546121 Z M2.76,14.9314156 C1.99784705,14.9314156 1.38,15.5419364 1.38,16.2950519 C1.38,17.0481675 1.99784705,17.6586883 2.76,17.6586883 C3.52215295,17.6586883 4.14,17.0481675 4.14,16.2950519 C4.14,15.5419364 3.52215295,14.9314156 2.76,14.9314156 Z M20.24,14.9314156 C19.477847,14.9314156 18.86,15.5419364 18.86,16.2950519 C18.86,17.0481675 19.477847,17.6586883 20.24,17.6586883 C21.002153,17.6586883 21.62,17.0481675 21.62,16.2950519 C21.62,15.5419364 21.002153,14.9314156 20.24,14.9314156 Z M11.5,9.4227245 C13.0243059,9.4227245 14.26,10.6534628 14.26,12.1716555 C14.26,13.6898481 13.0243059,14.9205864 11.5,14.9205864 C9.97569409,14.9205864 8.74,13.6898481 8.74,12.1716555 C8.74,10.6534628 9.97569409,9.4227245 11.5,9.4227245 Z M11.5,10.8080191 C10.737847,10.8080191 10.12,11.4185399 10.12,12.1716555 C10.12,12.924771 10.737847,13.5352918 11.5,13.5352918 C12.262153,13.5352918 12.88,12.924771 12.88,12.1716555 C12.88,11.4185399 12.262153,10.8080191 11.5,10.8080191 Z M3.68,0 L3.68,12.6298106 L1.84,12.6298106 L1.84,0 L3.68,0 Z M21.16,0 L21.16,12.6298106 L19.32,12.6298106 L19.32,0 L21.16,0 Z M12.4775,-8.8817842e-16 L12.4775,8.50641417 L10.6375,8.50641417 L10.6375,-8.8817842e-16 L12.4775,-8.8817842e-16 Z"></path>
-            </g>
-          </g>
-        </g>
-      </svg>
-      <h2 class="bg-black uppercase">{{ in-control-heading You’re in control }}</h2>
-      <p>{{ acceptable-ads By default, you may see some nonintrustive ads that adhere to <a href="acceptable-ads#criteria" target="_blank">strict criteria</a>. We identify these ads as Acceptable Ads. Prefer to block all ads? Turn off Acceptable Ads in your <a href="acceptable-ads#optout" target="_blank">settings</a>. }}</p>
-    </section>
-
-    <section class="content column one-third fair-use">
-      <svg viewBox="0 0 34 22" class="icon" width="27" height="27" role="img">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g fill="#000" fill-rule="nonzero">
-            <path d="M28.0668859,3.42413574 L27.6283225,4.19463423 L17.7665088,4.19463423 L17.7665088,0.781948404 C17.7665088,0.350090225 17.4164186,2.21675616e-14 16.9845604,0 C16.5527022,7.93310605e-17 16.202612,0.350090225 16.202612,0.781948404 L16.202612,4.19463423 L16.202612,4.19463423 L6.1348064,4.19463423 L5.67709004,3.42334629 L0,13.4204853 C0.570679665,14.7451743 3.37873632,15.6467207 5.79044422,15.6467207 C8.20215212,15.6467207 11.0406971,14.745569 11.6117677,13.4204853 L7.07212821,5.7739193 L16.202612,5.7739193 L16.202612,22 L17.7665088,22 L17.7665088,5.7739193 L26.7316518,5.7739193 L22.3882323,13.4204853 C22.958912,14.7451743 25.7669686,15.6467207 28.1786765,15.6467207 C30.5903844,15.6467207 33.4293203,14.745569 34,13.4204853 L28.0668859,3.42413574 Z M8.85100708,11.8415949 L2.69861124,11.8415949 L5.70679665,6.54481251 L8.85100708,11.8415949 Z M25.0876253,11.8415949 L28.0958107,6.54481251 L31.2392394,11.8415949 L25.0876253,11.8415949 Z"></path>
-          </g>
-        </g>
-      </svg>
-      <h2 class="bg-black uppercase">{{ fair-use-heading Fair use }}</h2>
-      <p>{{ fair-use We encourage you to make fair use of Adblock Plus and the option to whitelist websites. Depending on the filters you use, you understand and accept that unintentional results might occur (e.g. blocked content on a website). Refer to the <a href="terms" target="_blank">Terms of Use</a> for more information about fair use of Adblock Plus. }}</p>
-    </section>
+<main hidden>
+  <div class="container card">
+    <div class="lead">
+      <div class="lead-image">
+        <img
+          class="logo"
+          src="/img/adblock-plus-latest.svg"
+          alt=""
+          height="130"
+          width="130">
+      </div>
+      <div class="lead-text">
+        <h1>
+          {{ main-heading-1[heading] The honor system }}
+        </h1>
+        <p>
+          {{ main-lead-1 Hi from the Adblock Plus team. Thank you for installing Adblock Plus! }}
+        </p>
+        <p>
+          {{ main-lead-2 Adblock Plus is honor-ware, which means <em>we trust each other</em> to be nice: }}
+        </p>
+        <ul>
+          <li>
+            {{ main-lead-3[list item] You <em>pay what you can afford</em> for Adblock Plus. We let <em>you</em> choose the price. }}
+          </li>
+          <li>
+            {{ main-lead-4[list item] We develop features that put you in control of your browsing experience. }}
+          </li>
+          <li>
+            {{ main-lead-5[list item] You get a <em>refund</em> - and you can <em>keep Adblock Plus</em> - if you don't love it. }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt0">
+      {{ main-body-1 Please pay as much as you can, since if you change your mind you have <em>120 days</em> to get a refund! }}
+    </p>
+    <? include payment/form ?>
+    <h2 class="mt15">
+      {{ main-heading-2[heading] A quick note before you go }}
+    </h2>
+    <p>
+      {{ main-body-2 Adblock Plus started blocking intrusive ads the moment it was installed. While we block the vast majority of ads, we understand that many sites rely on advertising, which is we allow certain ads, by default, as long as they meet our <a href="https://welcome.adblockplus.org/en/acceptable-ads#criteria" target="_blank">strict criteria</a>. If you want to turn off this option, please visit your <a href="https://adblockplus.org/acceptable-ads#optout" target="_blank">settings</a> and turn off Acceptable Ads anytime. }}
+    </p>
+    <h3>
+      {{ main-heading-3[heading] Help is just an email away }}
+    </h3>
+    <p>
+      {{ main-body-3 If you ever need us, 24x7 self-help and 8x5 email help is available on our support portal, <a href="https://help.eyeo.com" target="_blank">help.eyeo.com</a>. }}
+    </p>
+    <footer>
+      <p>
+        {{ main-body-4 Thanks again for choosing Adblock Plus. Happy browsing! }}
+      </p>
+      <p>
+        {{ main-body-5 Love,<span class="break"></span> The Adblock Plus Team }}
+      </p>
+    </footer>
+    <p>
+      {{ main-body-6 Adblock Plus blocks web ads on <em>mobile devices</em>, too! Get <a href="https://apps.apple.com/app/adblock-plus-for-safari-abp/id1028871868" target="_blank">Adblock Plus for iOS</a> in the App Store or <a href="https://play.google.com/store/apps/details?id=org.adblockplus.adblockplussbrowser" target="_blank">Adblock Plus for Samsung Internet</a> in Google Play. }}
+    </p>
   </div>
-  <div class="donate-section">
-    <svg viewBox="0 0 500 500" width="54" height="54" class="loading">
-      <path d="M337.8,38L462,162.2v175.6L337.8,462H162.2L38,337.8V162.2L162.2,
-        38H337.8 M353.5,0H146.4L0,146.4v207.1 L146.4,500h207.1L500,353.5V146.4L353.5,0z"></path>
-    </svg>
-  </div>
+  <footer class="privacy-footer">
+    <a href="https://adblockplus.org/privacy">Privacy Policy</a>
+  </footer>
 </main>
 
-<footer class="footer">
-
-  <div class="container mt2">
-    <div class="content">
-      <p class="privacy-policy">
-        <a href="privacy">{{ privacy-policy Privacy Policy }}</a>
-      </p>
-      <p class="copyright">
-        {{ copyright-notice Copyright © 2020 All rights reserved. Adblock Plus<sup>®</sup> is a registered trademark of <a href="https://eyeo.com">eyeo GmbH</a>. }}
-      </p>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded',
-    function() { get('installed-donate', donateSection); });
-
-  function parse(data) {
-    return (new DOMParser()).parseFromString(data, 'text/html');
-  }
-
-  function script(src) {
-    var scr = document.createElement('script');
-    if (src) scr.src = src;
-    return scr;
-  }
-
-  function get(page, action) {
-    var req = new XMLHttpRequest();
-
-    req.addEventListener('readystatechange', function() {
-      if (req.readyState == 4 && req.status == 200)
-        action(req.response);
-    });
-
-    req.open('GET', page, true);
-    req.send();
-  }
-
-  function donateSection(data) {
-    var dom = parse(data);
-    var scr = script();
-    var scripts = [].slice.call(dom.getElementsByTagName('script'));
-
-    (function(el) {
-      el.parentNode.replaceChild(dom.querySelector('.donate'), el);
-    })(document.querySelector('.donate-section'));
-
-    scr.src = '/build/js/installed-donate-page.min.js';
-    document.body.appendChild(scr);
-
-    scr.addEventListener('load', function() {
-      scripts.forEach(function(el) {
-        if (!(el.src || el.type))
-          (function(scr) {
-            scr.textContent = el.textContent;
-            document.body.appendChild(scr);
-          })(script());
-      });
-
-      get('installed-abb', promotionSection);
-    });
-
-    document.querySelector('.success .icon').src = '/img/success.png';
-
-    (function(el) {
-      el.rel = 'stylesheet';
-      el.href = '/build/css/installed-page-abb.min.css';
-      document.body.appendChild(el);
-    })(document.createElement('link'));
-  }
-
-  function promotionSection(data) {
-    var dom = parse(data);
-    var footer = document.querySelector('.footer');
-
-    [].slice.call(dom.getElementsByTagName('script')).forEach(function(scr) {
-      document.body.appendChild(script(scr.src));
-    });
-
-    if (navigator.userAgent.indexOf('Edg/') != -1)
-      bowser.msedge_chromium = true;
-
-    (bowser.msedge || bowser.msie || bowser.msedge_chromium)
-      ? footer.classList.add('space')
-      : footer.parentNode.insertBefore(dom.querySelector('.abb'), footer);
-
-    activateOptimize();
-  }
-
-  function activateOptimize() {
-    if (window.dataLayer)
-      dataLayer.push({'event': 'optimize.activate'});
-  }
-
-</script>
+<? include pre-approved-analytics ?>
+<script src="/build/js/installed.min.js"></script>
+<? include payment/config/stripe ?>
