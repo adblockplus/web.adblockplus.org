@@ -17,6 +17,7 @@
     - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/eyeo-python2.7-cms:latest"
     - &TEST_IMAGE "registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium"
     - &BUILD_RUNNER "docker"
+    - &US_RUNNER "web-qa-us-proxy-1.uplink.eyeo.it"
     - &STAGING_RUNNER "eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it"
     - &PRODUCTION_RUNNER1 "eyeo_cms_web_server_new-adblockplus-org-1.uplink.eyeo.it"
     - &PRODUCTION_RUNNER2 "eyeo_cms_web_server_new-adblockplus-org-2.uplink.eyeo.it"
@@ -42,6 +43,8 @@ cookies_settings_tests:
   variables:
     <<: *staging
   image: *TEST_IMAGE
+  tags:
+    - *US_RUNNER
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
@@ -81,6 +84,8 @@ stripe_donate_tests:
   variables:
     <<: *staging
   image: *TEST_IMAGE
+  tags:
+    - *US_RUNNER
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
@@ -94,6 +99,8 @@ stripe_installed_tests:
   variables:
     <<: *staging
   image: *TEST_IMAGE
+  tags:
+    - *US_RUNNER
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
@@ -107,6 +114,8 @@ stripe_update_tests:
   variables:
     <<: *staging
   image: *TEST_IMAGE
+  tags:
+    - *US_RUNNER
   script:
     - pip install tox
     - cd tests/web.adblockplus.org
