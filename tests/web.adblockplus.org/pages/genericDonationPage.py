@@ -8,6 +8,7 @@ from selenium.webdriver.common.keys import Keys
 from pages.basePage import BasePage
 from chunks.stripePaymentForm import StripePaymentsForm
 
+INSTALLING_MODAL_ID = 'delay-heading'
 MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS = 'minimum-subscription-warning'
 MONTHLY_1_99_RADIO_BUTTON_XPATH = '//input[@name="preset-subscription-amount" and @value="1.99"]'
 MONTHLY_2_99_RADIO_BUTTON_XPATH = '//input[@name="preset-subscription-amount" and @value="2.99"]'
@@ -28,7 +29,7 @@ STRIPE_BUTTON_CLASS = 'stripe-button'
 STRIPE_BUTTON_TEXT = 'Credit card'
 
 
-class DonatePage(BasePage):
+class GenericDonationPage(BasePage):
 
     def __init__(self, driver):
         self.driver = driver
@@ -43,7 +44,7 @@ class DonatePage(BasePage):
     def _set_page_urls(self):
         self._generic_donation_page_url = str(os.getenv('landing_page_url'))\
                                     + str(os.getenv('generic_donation_page'))
-        self._thank_you_page_url = str(os.getenv('landing_page_url')) + 'payment-complete'
+        self._thank_you_page_url = str(os.getenv('landing_page_url')) + '/payment-complete'
 
     def click_monthly_custom_button(self):
         self.driver.find_element_by_xpath(MONTHLY_CUSTOM_RADIO_BUTTON_XPATH).send_keys(Keys.SPACE)
@@ -55,7 +56,9 @@ class DonatePage(BasePage):
         self.driver.find_element_by_xpath(button_xpath).send_keys(Keys.SPACE)
 
     def click_stripe_button(self):
+        self.wait.until(ec.invisibility_of_element((By.ID, INSTALLING_MODAL_ID)))
         self.wait.until(ec.text_to_be_present_in_element((By.CLASS_NAME, STRIPE_BUTTON_CLASS), STRIPE_BUTTON_TEXT))
+        self.wait.until(ec.element_to_be_clickable((By.CLASS_NAME, STRIPE_BUTTON_CLASS)))
         self.driver.find_element_by_class_name(STRIPE_BUTTON_CLASS).click()
         return StripePaymentsForm(self.driver)
 

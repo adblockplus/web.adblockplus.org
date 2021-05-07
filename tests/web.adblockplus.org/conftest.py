@@ -11,5 +11,5 @@ def pytest_addoption(parser):
 
 def pytest_configure(config):
     os.environ["landing_page_url"] = config.getoption('landing_page_url')
-    os.environ["generic_donation_page"] = config.getoption('generic_donation_page')
+    os.environ["generic_donation_page"] = '/' + config.getoption('generic_donation_page')
 
