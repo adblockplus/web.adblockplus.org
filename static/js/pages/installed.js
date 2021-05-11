@@ -1,9 +1,17 @@
+/* global eyeo */
 (function(){
   var $overlay = document.getElementById("delay-overlay");
   var $progress = document.getElementById("delay-progress");
   var $main = document.getElementsByTagName("main")[0];
   var progress = 6;
   var totalProgress = 100;
+
+  function report(data)
+  {
+    var e = document.createElement("img");
+    e.src = "/img/test.gif?" + new URLSearchParams(data).toString();
+    document.body.appendChild(e);
+  }
 
   function onProgressComplete()
   {
@@ -13,6 +21,8 @@
       $overlay.hidden = true;
       if (window.dataLayer)
         dataLayer.push({'event': 'optimize.activate'});
+      if (typeof eyeo.vid != "undefined")
+        report({variant: eyeo.vid, session: eyeo.sid});
     }, 300);
   }
 
