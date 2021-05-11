@@ -3,7 +3,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from pages.genericDonationPage import DonatePage
+from pages.genericDonationPage import GenericDonationPage
 
 from data.dataDonationPages import TEST_DATA
 
@@ -22,8 +22,8 @@ def driver():
 
 @pytest.mark.parametrize('page,url', TEST_DATA)
 def test_monitor_donation_page(driver, page, url):
-    donate_page = DonatePage(driver)
-    donate_page.go_to_url(url)
+    generic_donation_page = GenericDonationPage(driver)
+    generic_donation_page.go_to_url(url)
 
-    assert donate_page.is_stripe_button_visible()
+    assert generic_donation_page.is_stripe_button_visible()
 
