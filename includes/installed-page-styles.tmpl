@@ -1,0 +1,6 @@
+{% if locale in ['de', 'en', 'es', 'fr', 'it', 'nl', 'pt'] %}
+<link rel="stylesheet" href="/build/css/installed-page-v2.min.css">
+<? include fonts/inline ?>
+{% else %}
+<link rel="stylesheet" href="/build/css/installed-page-fonts.min.css">
+{% endif %}
