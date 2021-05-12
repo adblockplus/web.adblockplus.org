@@ -19,3 +19,8 @@ RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$
 RewriteRule ^load.js jp.js
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
 RewriteRule ^load.js eu.js
+
+
+# REQUEST_URI ends with /en/installed, /en-US/installed, or /en_US/installed
+RewriteCond %{REQUEST_URI} .*(en/|en[-_]US/)installed$
+RewriteRule ^([\w-]{0,5}\/)?installed$ /installed-v2 [NC,L,R=301]
