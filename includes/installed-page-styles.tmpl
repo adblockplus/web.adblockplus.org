@@ -1,6 +1,5 @@
-{% if locale in ['de', 'en', 'es', 'fr', 'it', 'nl', 'pt'] %}
 <link rel="stylesheet" href="/build/css/installed-page-v2.min.css">
-<? include fonts/inline ?>
-{% else %}
-<link rel="stylesheet" href="/build/css/installed-page-fonts.min.css">
+{% if locale in ['de', 'en', 'es', 'fr', 'it', 'nl', 'pt'] %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 {% endif %}

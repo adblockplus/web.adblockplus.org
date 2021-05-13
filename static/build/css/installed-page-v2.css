@@ -1656,6 +1656,11 @@ body {
 
 svg { max-width: 100%; }
 
+@media (max-width: 991px)
+{
+  #content { padding-bottom: 0; }
+}
+
 .content { font-size: 22px; }
 
 .content h1,
