@@ -61,13 +61,20 @@ root.paypalProvider = {
       lc: getLocale(payment.lang || doc.documentElement.lang)
     };
 
-    if (payment.type == "subscription")
+    var subscriptionType = {
+      'subscription': 'M',
+      'monthly-subscription': 'M',
+      'yearly-subscription': 'Y'
+    };
+
+    if (Object.keys(subscriptionType)
+      .includes(payment.type))
     {
       _.extend(submission, {
         cmd: "_xclick-subscriptions",
         a3: payment.amount, // Subscription price
         p3: 1, // Subscription duration (N*p3)
-        t3: "M", // Regular subscription units of duration. (D/W/M/Y)
+        t3: subscriptionType[payment.type], // Regular subscription units of duration. (D/W/M/Y)
         src: 1 // Subscription payments recur 1 or not 0
       });
     }

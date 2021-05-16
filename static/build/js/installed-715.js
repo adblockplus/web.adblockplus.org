@@ -650,7 +650,6 @@ Lt(r,Rr(r),t,e)}),Qu=mt(function(r,n){try{return t(r,Vr,n)}catch(t){return gr(t)
 m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.stubArray=Dr,m.stubFalse=Wr,m.template=Mr,m.toNumber=$r,m.toString=kr,m.each=_r,m.VERSION=qr,Ue._=m}).call(this);
 /*global PaymentForm, updatePaymentConfig, _*/
 (function(root, doc, _){
-
 /**
  * Construct payment form
  * @constructor
@@ -664,6 +663,9 @@ m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.st
  * @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
  * @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
  * @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
+ * @param {Object=} currencies[].yearlySubscription - (optional) monthly payment options for currency
+ * @param {Number[]} currencies[].yearlySubscription.amounts - Amounts offered for monthly payment
+ * @param {Number} currencies[].yearlySubscription.placeholder - Custom amount placeholder for monthly payment
  */
 function PaymentForm(currencies)
 {
@@ -705,6 +707,9 @@ function PaymentForm(currencies)
   var donationAmounts = doc.getElementById("donation-amounts");
 
   var subscriptionAmounts = doc.getElementById("subscription-amounts");
+  
+  var yearlySubscriptionAmounts =
+    doc.getElementById("yearly-subscription-amounts");
 
   var thePresetAmounts = _.template(
     doc.getElementById("preset-payment-amounts").innerHTML
@@ -734,7 +739,7 @@ function PaymentForm(currencies)
       doc.body.classList.add("has-subscriptions");
 
       var subscriptionOptions = {
-        type: "subscription",
+        type: "monthly-subscription",
         sign: currency.sign,
         amounts: currency.subscription.amounts,
         placeholder: currency.subscription.placeholder
@@ -743,6 +748,17 @@ function PaymentForm(currencies)
       subscriptionAmounts.innerHTML = ""
         + thePresetAmounts(subscriptionOptions)
         + theCustomAmount(subscriptionOptions);
+
+      var yearlySubscriptionOptions = {
+        type: "yearly-subscription",
+        sign: currency.sign,
+        amounts: currency.yearly.amounts,
+        placeholder: currency.yearly.placeholder
+      };
+
+      yearlySubscriptionAmounts.innerHTML = ""
+        + thePresetAmounts(yearlySubscriptionOptions)
+        + theCustomAmount(yearlySubscriptionOptions);
     }
     else
     {
@@ -772,12 +788,30 @@ function PaymentForm(currencies)
 
   donationAmounts.addEventListener(
     "change",
-    onFieldsetChange.bind(this, subscriptionAmounts)
-  );
+    onFieldsetChange.bind(this, subscriptionAmounts));
+
+  donationAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, yearlySubscriptionAmounts));
 
   subscriptionAmounts.addEventListener(
     "change",
     onFieldsetChange.bind(this, donationAmounts)
+  );
+
+  subscriptionAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, yearlySubscriptionAmounts)
+  );
+
+  yearlySubscriptionAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, donationAmounts)
+  );
+
+  yearlySubscriptionAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, subscriptionAmounts)
   );
 
   // Select custom amount radio when textbox is focused
@@ -793,6 +827,8 @@ function PaymentForm(currencies)
   donationAmounts.addEventListener("focus", onCustomFieldSelect, true);
 
   subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
+
+  yearlySubscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
 
   function clearCustomAmountErrors()
   {
@@ -813,11 +849,23 @@ function PaymentForm(currencies)
     );
   }
 
+  function coerceType(type) {
+    return isSubscription(type) ? "subscription" : "donation";
+  }
+
   function isValidAmount(amount, type, currency)
   {
     amount = parseFloat(amount);
 
+    type = (type == 'yearly-subscription') ? 'yearly' : type;
+
+    type = (type == 'monthly-subscription') ? 'subscription' : type;
+
     return _.isFinite(amount) && amount >= currency[type].minimum;
+  }
+
+  function isSubscription(type) {
+    return type == "subscription" || type == "yearly";
   }
 
   function validateCustomAmount(event)
@@ -844,7 +892,7 @@ function PaymentForm(currencies)
 
     var currency = currencies[paymentCurrency.value];
     var selectedType = event.currentTarget.id.split("-")[0];
-    var otherType = selectedType == "donation" ? "subscription" : "donation";
+    var otherType = isSubscription(selectedType) ? "donation" : "subscription";
     var typeError = "minimum-" + selectedType + "-error";
     var otherTypeError = "minimum-" + otherType + "-error";
     var minimumAmount = currency[selectedType].minimum;
@@ -859,14 +907,33 @@ function PaymentForm(currencies)
     doc.body.classList.remove(otherTypeError);
     enableForm(false);
     doc.querySelector(
-      ".minimum-" + selectedType + "-warning .minimum-amount"
+      ".minimum-" + coerceType(selectedType) + "-warning .minimum-amount"
     ).textContent = currency.sign + minimumAmount;
+  }
+
+  function actionType(text) {
+    var type;
+
+    if (/donation/.test(text)) {
+      type = 'donation';
+
+    } else if (/monthly/.test(text)) {
+      type = 'monthly-subscription';
+
+    } else if (/yearly/.test(text)) {
+      type = 'yearly-subscription';
+    }
+
+    return type;
   }
 
   donationAmounts.addEventListener("change", validateCustomAmount, true);
   subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
+  yearlySubscriptionAmounts.addEventListener("change", validateCustomAmount, true);
+  
   donationAmounts.addEventListener("input", validateCustomAmount, true);
   subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
+  yearlySubscriptionAmounts.addEventListener("input", validateCustomAmount, true);
 
   /**
    * Export form data to JSON compatible object
@@ -878,8 +945,7 @@ function PaymentForm(currencies)
 
     var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
 
-    var type = checked.name.indexOf("donation") != -1 ?
-      "donation" : "subscription";
+    var type = actionType(checked.name);
 
     var amount = checked.value;
 
@@ -1594,88 +1660,36 @@ document.head.appendChild(script);
 
 }());
 
-'use strict';
+(function(){
+  var $overlay = document.getElementById("delay-overlay");
+  var $progress = document.getElementById("delay-progress");
+  var $main = document.getElementsByTagName("main")[0];
+  var progress = 6;
+  var totalProgress = 100;
 
-var SCROLL_TICK_LENGTH = 10;
-var SCROLL_TIME = 500;
+  function onProgressComplete()
+  {
+    $main.hidden = false;
+    $overlay.classList.add("fade-out");
+    setTimeout(function() {
+      $overlay.hidden = true;
+      if (window.dataLayer)
+        dataLayer.push({'event': 'optimize.activate'});
+    }, 300);
+  }
 
-var page = document.scrollingElement || document.documentElement; // IE
-var body = document.body;
-var navbarDonateButton = document.querySelector('.scroll-to-donate');
-var donationHeading = document.querySelector('.donation-heading');
+  function updateProgress()
+  {
+    $progress.value = progress;
+    progress = progress * 1.2;
+    if (progress < totalProgress)
+      setTimeout(updateProgress, 60);
+    else
+      onProgressComplete();
+  }
 
-window.addEventListener('resize', function() {
-  if (window.innerWidth > 991)
-    if (!page.classList.contains('hide-form'))
-      page.classList.add('show-form');
+  if (window.location.href.indexOf('skip') != -1)
+    onProgressComplete();
   else
-    page.classList.remove('show-form');
-});
-
-document.documentElement.classList.remove('no-js');
-
-// sticky footer
-document.querySelector('main.container').setAttribute('id', 'content');
-
-navbarDonateButton
-  .addEventListener('click', function() {
-    smoothScrollTo(donationHeading.getBoundingClientRect().top, SCROLL_TIME);
-});
-
-function smoothScrollTo(destination, duration) {
-  if (duration <= 0) return;
-
-  var distance = destination - page.scrollTop;
-  var perTick = (distance / duration) * SCROLL_TICK_LENGTH;
-
-  setTimeout(function() {
-    page.scrollTop = page.scrollTop + perTick;
-
-    if (page.scrollTop != destination)
-      smoothScrollTo(destination, (duration - SCROLL_TICK_LENGTH));
-  }, SCROLL_TICK_LENGTH);
-}
-
-/*!
- * This file is part of website-defaults
- * Copyright (C) 2016-present eyeo GmbH
- *
- * website-defaults is free software: you can redistribute it and/or
- * modify it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * website-defaults is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with website-defaults.  If not, see <http://www.gnu.org/licenses/>.
- */
-var ADDRESS_MASKING_DELAY = 250;
-
-function unmaskAddress(target)
-{
-  var attributes = JSON.parse(target.getAttribute("data-mask"));
-
-  for (var attr in attributes)
-    target[attr] = atob(attributes[attr]);
-
-  target.removeAttribute("data-mask");
-}
-
-document.addEventListener("DOMContentLoaded", function()
-{
-  var unmaskAfterTimeout = setTimeout.bind(
-    this,
-    unmaskAddress,
-    ADDRESS_MASKING_DELAY
-  );
-
-  var linksToBeMasked = [].slice.call(
-    document.querySelectorAll("[data-mask]")
-  );
-
-  linksToBeMasked.forEach(unmaskAddress);
-});
+    updateProgress();
+}());

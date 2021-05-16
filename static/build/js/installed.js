@@ -1006,13 +1006,20 @@ root.paypalProvider = {
       lc: getLocale(payment.lang || doc.documentElement.lang)
     };
 
-    if (payment.type == "subscription")
+    var subscriptionType = {
+      'subscription': 'M',
+      'monthly-subscription': 'M',
+      'yearly-subscription': 'Y'
+    };
+
+    if (Object.keys(subscriptionType)
+      .includes(payment.type))
     {
       _.extend(submission, {
         cmd: "_xclick-subscriptions",
         a3: payment.amount, // Subscription price
         p3: 1, // Subscription duration (N*p3)
-        t3: "M", // Regular subscription units of duration. (D/W/M/Y)
+        t3: subscriptionType[payment.type], // Regular subscription units of duration. (D/W/M/Y)
         src: 1 // Subscription payments recur 1 or not 0
       });
     }
@@ -1191,31 +1198,38 @@ function initStripeProvider(publishableKey, formProcessor, text) {
         .addEventListener('click', hideModal);
     }
 
-    function isSubscription() {
-      return (data.type == subscription);
+    function isSubscription(type) {
+      return [subscription, 'monthly-subscription', 'yearly-subscription']
+        .includes(type || data.type);
+    }
+
+    function durtionText() {
+      return /^yearly/.test(data.type)
+        ? text.year
+        : text.month;
     }
 
     function defaultTextOrder() {
       return isSubscription()
-        ? text.subscribe + ' ' + priceText + ' / ' + text.month
+        ? text.subscribe + ' ' + priceText + ' / ' + durtionText()
         : text.donate + ' ' + priceText;
     }
 
     function orderHU() {
       return isSubscription()
-        ? priceText + ' ' + text.subscribe + ' ' + text.month
+        ? priceText + ' ' + text.subscribe + ' ' + durtionText()
         : text.donate + ' ' + priceText;
     }
 
     function orderKO() {
       return isSubscription()
-        ? text.subscribe + ' ' + priceText + ' / ' + text.month
+        ? text.subscribe + ' ' + priceText + ' / ' + durtionText()
         : priceText + ' ' + text.donate;
     }
 
     function orderTR() {
       return isSubscription()
-        ? text.month + ' ' + priceText + ' ' + text.subscribe
+        ? durtionText() + ' ' + priceText + ' ' + text.subscribe
         : priceText + ' ' + text.donate;
     }
 
@@ -1361,7 +1375,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
       if (data.type == donation) {
         confirmDonation();
 
-      } else if (data.type == subscription) {
+      } else if (isSubscription(data.type)) {
         createSubscription();
       }
     }
