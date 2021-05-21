@@ -116,11 +116,13 @@ function setupPaymentForm() {
   eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
 }
 
+eyeo.vid = typeof eyeo.vid == "undefined" ? "x" : eyeo.vid;
+
 /* Prefex "x" applies by default when optimize does not apply a variant.
    Since we share SID on load below without waiting for optimize to apply a
    variant SIDs will not match 1to1 with payment.custom when experiments
    are running. Instead, we must match SID.slice(1) to coorilate payments. */
-eyeo.sid = URLParams.get('sid') || "x-" + uuidv4();
+eyeo.sid = URLParams.get('sid') || eyeo.vid + "-" + uuidv4();
 
 var fromABP = {
   an: URLParams.get('an'),

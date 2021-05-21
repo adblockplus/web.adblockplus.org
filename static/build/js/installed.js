@@ -1530,11 +1530,13 @@ function setupPaymentForm() {
   eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
 }
 
+eyeo.vid = typeof eyeo.vid == "undefined" ? "x" : eyeo.vid;
+
 /* Prefex "x" applies by default when optimize does not apply a variant.
    Since we share SID on load below without waiting for optimize to apply a
    variant SIDs will not match 1to1 with payment.custom when experiments
    are running. Instead, we must match SID.slice(1) to coorilate payments. */
-eyeo.sid = URLParams.get('sid') || "x-" + uuidv4();
+eyeo.sid = URLParams.get('sid') || eyeo.vid + "-" + uuidv4();
 
 var fromABP = {
   an: URLParams.get('an'),
@@ -1578,36 +1580,68 @@ document.head.appendChild(script);
 
 }());
 
-(function(){
-  var $overlay = document.getElementById("delay-overlay");
-  var $progress = document.getElementById("delay-progress");
-  var $main = document.getElementsByTagName("main")[0];
-  var progress = 6;
-  var totalProgress = 100;
+'use strict';
 
-  function onProgressComplete()
-  {
-    $main.hidden = false;
-    $overlay.classList.add("fade-out");
-    setTimeout(function() {
-      $overlay.hidden = true;
-      if (window.dataLayer)
-        dataLayer.push({'event': 'optimize.activate'});
-    }, 300);
-  }
+var SCROLL_TICK_LENGTH = 10;
+var SCROLL_TIME = 500;
 
-  function updateProgress()
-  {
-    $progress.value = progress;
-    progress = progress * 1.2;
-    if (progress < totalProgress)
-      setTimeout(updateProgress, 60);
-    else
-      onProgressComplete();
-  }
+var page = document.scrollingElement || document.documentElement; // IE
+var body = document.body;
+var donationHeading = document.querySelector('.donation-heading');
 
-  if (window.location.href.indexOf('skip') != -1)
-    onProgressComplete();
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 991)
+    if (!page.classList.contains('hide-form'))
+      page.classList.add('show-form');
   else
-    updateProgress();
-}());
+    page.classList.remove('show-form');
+});
+
+document.documentElement.classList.remove('no-js');
+
+// sticky footer
+document.querySelector('main.container').setAttribute('id', 'content');
+
+/*!
+ * This file is part of website-defaults
+ * Copyright (C) 2016-present eyeo GmbH
+ *
+ * website-defaults is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * website-defaults is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with website-defaults.  If not, see <http://www.gnu.org/licenses/>.
+ */
+var ADDRESS_MASKING_DELAY = 250;
+
+function unmaskAddress(target)
+{
+  var attributes = JSON.parse(target.getAttribute("data-mask"));
+
+  for (var attr in attributes)
+    target[attr] = atob(attributes[attr]);
+
+  target.removeAttribute("data-mask");
+}
+
+document.addEventListener("DOMContentLoaded", function()
+{
+  var unmaskAfterTimeout = setTimeout.bind(
+    this,
+    unmaskAddress,
+    ADDRESS_MASKING_DELAY
+  );
+
+  var linksToBeMasked = [].slice.call(
+    document.querySelectorAll("[data-mask]")
+  );
+
+  linksToBeMasked.forEach(unmaskAddress);
+});
