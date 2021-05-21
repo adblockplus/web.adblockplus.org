@@ -26,12 +26,21 @@ def driver(request):
 def test_check_download_links(id, driver, button_text, link, download_url):
     landing_page = LandingPage(driver)
     landing_page.go_home()
-    assert landing_page.get_download_button_text.strip() == button_text
-    assert landing_page.get_download_button_link == link
-    landing_page.click_download_button()
 
-    if 'internet_explorer' in id or 'safari' in id:
-        assert gf.wait_for_file_in_downloads(download_url)
-    else:
+    if 'android' in id:
+        assert landing_page.get_download_button_text_android.strip() == button_text
+        assert landing_page.get_download_button_link_android == link
+        landing_page.click_download_button_android()
         assert landing_page.is_redirect_to_url(download_url)
+    elif 'ios' in id:
+        assert landing_page.get_download_button_text_ios.strip() == button_text
+        assert landing_page.get_download_button_link_ios == link
+    else:
+        assert landing_page.get_download_button_text.strip() == button_text
+        assert landing_page.get_download_button_link == link
+        landing_page.click_download_button()
+        if 'internet_explorer' in id or 'safari' in id:
+            assert gf.wait_for_file_in_downloads(download_url)
+        else:
+            assert landing_page.is_redirect_to_url(download_url)
 

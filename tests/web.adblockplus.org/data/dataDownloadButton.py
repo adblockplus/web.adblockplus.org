@@ -44,4 +44,17 @@ TEST_DATA = [(
       'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 '
       'YaBrowser/17.6.1.749 Yowser/2.5 Safari/537.36',
       'https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb'
+), (
+      'mobile_android',
+      'Get Adblock Browser on Android',
+      'https://eyeo.to/adblockbrowser/android/abp-website',
+      'Mozilla/5.0 (Android 9; Mobile; rv:68.0) Gecko/68.0 Firefox/68.0',
+      'https://play.google.com/store/apps/details?id=org.adblockplus.browser'
+), (
+      'mobile_ios',
+      'Get Adblock Plus for Safari on iOS',
+      'https://eyeo.to/adblockplus/ios_safari_install/abp-website',
+      'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 '
+      '(KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1',
+      'https://apps.apple.com/us/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868'
 )]
