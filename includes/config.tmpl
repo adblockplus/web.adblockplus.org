@@ -6,9 +6,6 @@
     {% if disable_paypal %}
     disablePayPal: true,
     {% endif %}
-    {% if variant is defined %}
-    vid: {{ variant }},
-    {% endif %}
     preventCookiePrompt: {{ "true" if prevent_cookie_prompt else "false" }},
     userTesting: {{ "true" if user_testing else "false" }},
     userTestingVariants: {{ "true" if user_testing_variants else "false" }},
