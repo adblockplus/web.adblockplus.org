@@ -58,8 +58,9 @@ ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
 
+#715 - Introduced yearly FRP contribution options in split test
 <FilesMatch ^installed$>
-GeoIPEnable On
+  GeoIPEnable On
 </FilesMatch>
 
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
@@ -68,4 +69,4 @@ RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-0" [NC,L]
 
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
 RewriteCond %{TIME_SEC} [02468]$
-RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-718" [NC,L]
+RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-1" [NC,L]
