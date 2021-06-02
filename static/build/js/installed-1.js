@@ -663,9 +663,6 @@ m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.st
  * @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
  * @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
  * @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
- * @param {Object=} currencies[].yearlySubscription - (optional) yearly payment options for currency
- * @param {Number[]} currencies[].yearlySubscription.amounts - Amounts offered for yearly payment
- * @param {Number} currencies[].yearlySubscription.placeholder - Custom amount placeholder for yearly payment
  */
 function PaymentForm(currencies)
 {
@@ -708,9 +705,6 @@ function PaymentForm(currencies)
 
   var subscriptionAmounts = doc.getElementById("subscription-amounts");
 
-  var yearlySubscriptionAmounts =
-    doc.getElementById("yearly-subscription-amounts");
-
   var thePresetAmounts = _.template(
     doc.getElementById("preset-payment-amounts").innerHTML
   );
@@ -737,7 +731,6 @@ function PaymentForm(currencies)
     if (currency.subscription)
     {
       doc.body.classList.add("has-subscriptions");
-      doc.body.classList.add("has-yearly");
 
       var subscriptionOptions = {
         type: "monthly-subscription",
@@ -749,22 +742,6 @@ function PaymentForm(currencies)
       subscriptionAmounts.innerHTML = ""
         + thePresetAmounts(subscriptionOptions)
         + theCustomAmount(subscriptionOptions);
-      
-      if (currency.yearly) {
-        var yearlySubscriptionOptions = {
-          type: "yearly-subscription",
-          sign: currency.sign,
-          amounts: currency.yearly.amounts,
-          placeholder: currency.yearly.placeholder
-        };
-
-        yearlySubscriptionAmounts.innerHTML = ""
-          + thePresetAmounts(yearlySubscriptionOptions)
-          + theCustomAmount(yearlySubscriptionOptions);
-
-      } else {
-        doc.body.classList.remove("has-yearly");
-      } 
     }
     else
     {
@@ -779,6 +756,23 @@ function PaymentForm(currencies)
     updateAmounts();
     validateCustomAmount(e);
   });
+  
+  function paymentMethod(e) {
+    if (e.target.value == "card") {
+      doc.body.classList.add("paypal-button-hidden");
+      doc.body.classList.remove("card-button-hidden");
+      
+    } else {
+      doc.body.classList.add("card-button-hidden");
+      doc.body.classList.remove("paypal-button-hidden");
+    }
+  }
+  
+  document.getElementById("card")
+    .addEventListener("change", paymentMethod);
+    
+  document.getElementById("paypal")
+    .addEventListener("change", paymentMethod);
 
   // uncheck donation amount when subscription amount is selected and vice versa
   function onFieldsetChange(otherFieldset, event)
@@ -796,28 +790,9 @@ function PaymentForm(currencies)
     "change",
     onFieldsetChange.bind(this, subscriptionAmounts));
 
-  donationAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, yearlySubscriptionAmounts));
-
   subscriptionAmounts.addEventListener(
     "change",
     onFieldsetChange.bind(this, donationAmounts)
-  );
-
-  subscriptionAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, yearlySubscriptionAmounts)
-  );
-
-  yearlySubscriptionAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, donationAmounts)
-  );
-
-  yearlySubscriptionAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, subscriptionAmounts)
   );
 
   // Select custom amount radio when textbox is focused
@@ -834,13 +809,10 @@ function PaymentForm(currencies)
 
   subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
 
-  yearlySubscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
   function clearCustomAmountErrors()
   {
     doc.body.classList.remove("minimum-donation-error");
     doc.body.classList.remove("minimum-subscription-error");
-    doc.body.classList.remove("minimum-yearly-error");
 
     enableForm(true);
   }
@@ -860,19 +832,13 @@ function PaymentForm(currencies)
   {
     amount = parseFloat(amount);
 
-    type = (type == 'yearly-subscription') ? 'yearly' : type;
-
     type = (type == 'monthly-subscription') ? 'subscription' : type;
 
     return _.isFinite(amount) && amount >= currency[type].minimum;
   }
 
-  /*function isSubscription(type) {
-    return type == "subscription" || type == "yearly";
-  }*/
-
   function otherTypes(type) {
-    return ["donation", "subscription", "yearly"].filter(function(item) {
+    return ["donation", "subscription"].filter(function(item) {
       return item != type;
     });
   }
@@ -929,9 +895,6 @@ function PaymentForm(currencies)
 
     } else if (/monthly/.test(text)) {
       type = 'monthly-subscription';
-
-    } else if (/yearly/.test(text)) {
-      type = 'yearly-subscription';
     }
 
     return type;
@@ -939,11 +902,9 @@ function PaymentForm(currencies)
 
   donationAmounts.addEventListener("change", validateCustomAmount, true);
   subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
-  yearlySubscriptionAmounts.addEventListener("change", validateCustomAmount, true);
   
   donationAmounts.addEventListener("input", validateCustomAmount, true);
   subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
-  yearlySubscriptionAmounts.addEventListener("input", validateCustomAmount, true);
 
   /**
    * Export form data to JSON compatible object

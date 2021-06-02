@@ -1,13 +1,5 @@
-@media(min-width: 615px) {
-  .content .payment-divide {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-}
+.payment-providers button.paypal-button { display: none; }
 
-@media(min-width: 650px) {
-  .content .payment-divide {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-}
+.card-button-hidden button.paypal-button { display: inline-block; }
+
+.payment-providers button.stripe-button { vertical-align: inherit; }
