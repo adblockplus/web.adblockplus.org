@@ -36,7 +36,6 @@ RewriteRule ^poland/?$ /poland.html [NC,L,R=301]
 RewriteRule ^de/ad-blocker-safari/?$ https://adblockplus.org/de/ [NC,R=301]
 RewriteRule ^fr/ad-blocker-safari/?$ https://adblockplus.org/fr/ [NC,R=301]
 RewriteRule ^(\w\w(_\w\w)?/)?filters$ https://help.eyeo.com/en/adblockplus/how-to-write-filters [NC,R=301]
-RewriteRule ^(\w\w(_\w\w)?/)?android-about/?$ https://adblockplus.org/ [NC,R=301]
 
 # Refd #474 - Migrate XSS and clickjacking prevention headers to .htaccess
 SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|internet-explorer|safari|yandex-browser|maxthon)?$|^/blog/|^/poland/? YOUTUBE_NOCOOKIES
