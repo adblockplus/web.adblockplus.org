@@ -18,6 +18,9 @@ RewriteRule "^(.*)/safari$" "/" [NC,R=301]
 RewriteRule "^yandex-browser$" "/" [NC,R=301]
 RewriteRule "^(.*)/yandex-browser$" "/" [NC,R=301]
 
+RewriteRule "^adware$" "https://help.eyeo.com/adblockplus/adware" [NC,R=301,P]
+RewriteRule "^(.*)/adware$" "https://help.eyeo.com/$1/adblockplus/adware" [NC,R=301,P]
+
 # Refd #617 migrate simple file-to-file rules to .htaccess
 RewriteRule ^(.*/)?(android|chrome|edge|firefox|internet-explorer|opera|safari|yandex-browser)/?$ / [NC,R=301]
 RewriteRule ^(\w\w(_\w\w)?/)?changelog-1.3.1$ /$1\changelog-1.3 [NC,R=301]
