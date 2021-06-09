@@ -159,10 +159,82 @@
         }
     }
 
+    // logic for floating TOC a.k.a. table of contents
+    function initTOCScroll() {
+        var floatingTOC = document.getElementById("toc-float");
+
+        // check if element exists due to using different templates
+        if (!floatingTOC) return;
+
+        var pageContainer = document.querySelector(".toc-page-container");
+
+        function updateActiveTOCLink() {
+            var headingLinks = document.querySelectorAll("#toc-float a");
+
+            for (var i = 0; i < headingLinks.length; i++) {
+                headingLinks[i].classList.remove("active");
+            }
+
+            var contentHeadings = document.querySelectorAll(".toc-page-container > h2, .toc-page-container > h3");
+
+            // convert NodeList to an Array so we can sort
+            contentHeadings = Array.prototype.slice.call(contentHeadings);
+
+            contentHeadings.sort(function(a,b) {
+                // sort by distance to 0 (page top)
+                return Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top);
+            });
+
+            var headingLink = document.querySelector("#toc-float [href='#"+ contentHeadings[0].id +"']");
+
+            headingLink.classList.add("active");
+
+            //console.log(floatingTOC.getBoundingClientRect().top, headingLink.getBoundingClientRect().bottom);
+        }
+
+        // call the function before scroll event to ensure the active headline is always highlighted
+        updateActiveTOCLink();
+
+        function updateFloatingTOCPosition() {
+            var containerBounds = pageContainer.getBoundingClientRect();
+            var topPosition = containerBounds.top > 70;
+            // accounted am additional 18px for floatingTOC CSS margin-top
+            var maxTOCheight = window.innerHeight - 88 - 20;
+            var expectedTOCHeight = Math.min(floatingTOC.getBoundingClientRect().height, maxTOCheight);
+            var bottomPosition = !topPosition && containerBounds.bottom < 70 + 20 + expectedTOCHeight;
+
+            floatingTOC.style.marginTop = "";
+
+            if (topPosition || bottomPosition) {
+                floatingTOC.classList.remove("fixed");
+                floatingTOC.style.maxHeight = "";
+                floatingTOC.style.top = "";
+
+                if (bottomPosition) {
+                    floatingTOC.style.marginTop = containerBounds.height - floatingTOC.getBoundingClientRect().height + "px";
+                }
+            } else {
+                floatingTOC.classList.add("fixed");
+                floatingTOC.style.top = 70 + "px";
+
+                floatingTOC.style.maxHeight = maxTOCheight + "px";
+            }
+        }
+        // ensure TOC is correctly position on reload
+        updateFloatingTOCPosition();
+
+        document.addEventListener('scroll', function(e) {
+            updateActiveTOCLink();
+            updateFloatingTOCPosition();
+        });
+        window.addEventListener('resize', updateFloatingTOCPosition);
+    }
+
     initLanguageSelection();
     initMenu();
     initNavbarToggle();
     initPreventFooterOverlap();
+    initTOCScroll();
 })();
 
 (function()

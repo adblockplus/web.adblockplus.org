@@ -1,25 +1,37 @@
 <section id="abb-cross-promotion" class="bg-secondary hide-on-ios hide-on-android">
-  <div class="container phablet-width content text-center">
-    <h2 class="h1">
-      {{ abb-cross-promotion-heading[Heading] Want to block ads and disable tracking on <span class='avoid-wrap'>mobile devices?</span> }}
-    </h2>
+  <div class="container content">
+    <div class="phablet-width">
+      <h2 class="h1">
+        {{ abb-cross-promotion-heading[Heading] Want to block ads and disable tracking on <span class='avoid-wrap'>mobile devices?</span> }}
+      </h2>
+    </div>
 
-    <figure>
-      <img src="/img/abb-logo.png" 
-           alt="{{ abb-full-logo-alt[Alt text] Adblock Browser icon against a shield }}"
-           id="abb-logo">
-      <figcaption>
-        <h3>
-          {{ abb-cross-promotion-subheading[Heading] Adblock Browser App }}
-        </h3>
-        <p>
-          {{ abb-cross-promotion-description[Paragraph] From the team behind Adblock Plus, the most popular ad blocker for desktop browsers, Adblock Browser is now available for your Android devices. }}
-        </p>
-      </figcaption>
-    </figure>
+    <div class="abb-cross-promo-content">
+      <figure>
+        <img src="/img/abb-browser-icon.svg"
+          alt="{{ abb-full-logo-alt[Alt text] Adblock Browser icon against a shield }}"
+          id="abb-logo">
+        <figcaption>
+          <h3>
+            {{ abb-cross-promotion-subheading[Heading] Adblock Browser App }}
+          </h3>
+          <p>
+            {{ abb-cross-promotion-description[Paragraph] From the team behind Adblock Plus, the most popular ad blocker for desktop browsers, Adblock Browser is now available for your Android devices. }}
+          </p>
+        </figcaption>
+      </figure>
+      <div id="abb-app-store-badges">
+        <? include install-button-android ?>
+      </div>
+    </div>
 
-    <div id="abb-app-store-badges">
-      <? include install-button-android ?>
+    <div class="abb-cross-promo-graphic">
+      <div class="abb-arrow-container">
+        <img class="abb-message" src="/img/abb-cross-promo-message.svg">
+        <img class="abb-arrow" src="/img/pointing-arrow.svg">
+      </div>
+      <img class="" src="/img/android-video-illustration.svg"
+        alt="{{ abb-android-illustration[Alt text] Illustration of an Android phone playing a video }}">
     </div>
   </div>
 </section>
