@@ -31,7 +31,7 @@ title=FAQ - Adblock Plus internals
 
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
-        <p>{{s13 All filters a translated into <a href="filters#regexps">regular expressions</a> internally, even the ones that haven't been specified as such. For example, the filter <code>ad*banner.gif|</code> will be translated into the regular expression <code>/ad.*banner\.gif$/</code>. However, when Adblock Plus is given an address that should be checked against all filters it doesn't simply test all filters one after another — that would slow down the browsing unnecessarily.}}</p>
+        <p>{{s13 All filters a translated into <a href="https://help.eyeo.com/adblockplus/how-to-write-filters#regexps">regular expressions</a> internally, even the ones that haven't been specified as such. For example, the filter <code>ad*banner.gif|</code> will be translated into the regular expression <code>/ad.*banner\.gif$/</code>. However, when Adblock Plus is given an address that should be checked against all filters it doesn't simply test all filters one after another — that would slow down the browsing unnecessarily.}}</p>
 
         <p>{{s14 Besides of translating filters into regular expressions Adblock Plus also tries to extract text information from them. What it needs is a unique string of eight characters (a "shortcut") that must be present in every address matched by the filter (the length is arbitrary, eight just seems reasonable here). For example, if you have a filter <code>|http://ad.*</code> then Adblock Plus has the choice between "http://a", "ttp://ad" and "tp://ad.", any of these strings will always be present in whatever this filter will match. Unfortunately finding a shortcut for filters that simply don't have eight characters unbroken by wildcards or for filters that have been specified as regular expressions is impossible.}}</p>
 
@@ -109,5 +109,5 @@ title=FAQ - Adblock Plus internals
 
 <script>
   if (location.hash == "#checksum" || location.hash == "#subscription_redirect" || location.hash == "#subscription_update")
-    window.location.href = "/en/filters#special-comments";
+    window.location.href = "https://help.eyeo.com/adblockplus/how-to-write-filters#special-comments";
 </script>
