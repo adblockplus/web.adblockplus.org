@@ -341,7 +341,7 @@ a.icon-button:visited
  * #navbar
  ******************************************************************************/
 
- #navbar
+#navbar
 {
   min-height: 4em;
   background-color: #FFFFFF;
@@ -349,15 +349,23 @@ a.icon-button:visited
   z-index: 9002;
   width: 100%;
   top: 0;
-  transition: top 0.2s ease-in-out;
-  box-shadow: 0px 1px 0px #f4f4f4;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
+
+#navbar.nav-scroll
+ {
+   box-shadow: 0px 1px 5px #f4f4f4;
+ }
 
 @media(max-width: 991px)
 {
   #navbar
   {
     overflow: auto;
+    box-shadow: 0px 1px 5px #f4f4f4;
   }
 }
 
