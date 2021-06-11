@@ -148,18 +148,10 @@
             if (newScrollAction)
                 hash = "";
 
-            if (currentScroll < 1 || lastScrollTop < navbarHeight) {
-                navbar.style.top = 0;
-                navbar.classList.remove("nav-scroll");
-                console.log("sss");
-            } else if (lastScrollTop > currentScroll) {
-                navbar.classList.add("nav-scroll");
-                navbar.style.top = 0;
-                console.log("vvv");
-            } else {
-                navbar.classList.remove("nav-scroll");
+            if (currentScroll > lastScrollTop && currentScroll > navbarHeight) {
                 navbar.style.top = "-" + navbarHeight + "px";
-                console.log("zzz");
+            } else {
+                navbar.style.top = 0;
             }
 
             lastScrollTop = currentScroll;
