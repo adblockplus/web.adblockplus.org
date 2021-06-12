@@ -198,7 +198,10 @@
         function updateFloatingTOCPosition() {
             var containerBounds = pageContainer.getBoundingClientRect();
             var topPosition = containerBounds.top > 70;
-            var bottomPosition = !topPosition && window.innerHeight - containerBounds.bottom > 20;
+            // accounted am additional 18px for floatingTOC CSS margin-top
+            var maxTOCheight = window.innerHeight - 88 - 20;
+            var expectedTOCHeight = Math.min(floatingTOC.getBoundingClientRect().height, maxTOCheight);
+            var bottomPosition = !topPosition && containerBounds.bottom < 70 + 20 + expectedTOCHeight;
 
             floatingTOC.style.marginTop = "";
 
@@ -211,11 +214,10 @@
                     floatingTOC.style.marginTop = containerBounds.height - floatingTOC.getBoundingClientRect().height + "px";
                 }
             } else {
-                floatingTOC.style.top = 70 + "px";
                 floatingTOC.classList.add("fixed");
+                floatingTOC.style.top = 70 + "px";
 
-                // added floatingTOC.getBoundingClientRect().top to account for floatingTOC CSS margin
-                floatingTOC.style.maxHeight = window.innerHeight - floatingTOC.getBoundingClientRect().top - 20 + "px";
+                floatingTOC.style.maxHeight = maxTOCheight + "px";
             }
         }
         // ensure TOC is correctly position on reload
