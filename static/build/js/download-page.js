@@ -188,6 +188,8 @@
             var headingLink = document.querySelector("#toc-float [href='#"+ contentHeadings[0].id +"']");
 
             headingLink.classList.add("active");
+
+            //console.log(floatingTOC.getBoundingClientRect().top, headingLink.getBoundingClientRect().bottom);
         }
 
         // call the function before scroll event to ensure the active headline is always highlighted
@@ -198,13 +200,17 @@
             var topPosition = containerBounds.top > 70;
             var bottomPosition = !topPosition && window.innerHeight - containerBounds.bottom > 20;
 
-            floatingTOC.classList.remove("fixed");
             floatingTOC.style.marginTop = "";
-            floatingTOC.style.maxHeight = "";
 
-            if (bottomPosition) {
-                floatingTOC.style.marginTop = containerBounds.height - floatingTOC.getBoundingClientRect().height + "px";
-            } else if (!topPosition){
+            if (topPosition || bottomPosition) {
+                floatingTOC.classList.remove("fixed");
+                floatingTOC.style.maxHeight = "";
+                floatingTOC.style.top = "";
+
+                if (bottomPosition) {
+                    floatingTOC.style.marginTop = containerBounds.height - floatingTOC.getBoundingClientRect().height + "px";
+                }
+            } else {
                 floatingTOC.style.top = 70 + "px";
                 floatingTOC.classList.add("fixed");
 
