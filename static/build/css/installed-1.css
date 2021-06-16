@@ -2400,7 +2400,6 @@ h2.donation-heading { font-size: 1.2em; }
   display: block;
   width: 100%;
   min-height: 34px;
-  margin-top: 1rem;
   line-height: 32px;
   text-align: center;
   border: 0;
@@ -2510,9 +2509,9 @@ h2.donation-heading { font-size: 1.2em; }
   right: 0;
 }
 
-.payment { display: flex; }
-
 .payment-method-divide { margin: 1.5em 0; }
+
+.payment-method { margin-top: 1rem; }
 
 .payment-method svg,
 .payment-method input {
@@ -2527,8 +2526,14 @@ h2.donation-heading { font-size: 1.2em; }
 
 .payment-method label {
   display: inline-block;
-  margin-right: 50px;
+  margin-bottom: 1rem;
   user-select: none;
+}
+
+@media (min-width: 376px) {
+  .payment-method label {
+    margin-right: 50px;
+  }
 }
 
 .payment-cards,
@@ -2541,7 +2546,7 @@ h2.donation-heading { font-size: 1.2em; }
   vertical-align: middle;
 }
 
-.payment-cards svg { width: 32px; }
+.payment-cards svg { width: 28px; }
 
 .payment-paypal svg { width: 80px; }
 
