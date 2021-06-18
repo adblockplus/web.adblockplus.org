@@ -1,5 +1,6 @@
 /*! (c) Andrea Giammarchi - ISC */
 var self=this||{};try{!function(t,e){if(new t("q=%2B").get("q")!==e||new t({q:e}).get("q")!==e||new t([["q",e]]).get("q")!==e||"q=%0A"!==new t("q=\n").toString()||"q=+%26"!==new t({q:" &"}).toString()||"q=%25zx"!==new t({q:"%zx"}).toString())throw t;self.URLSearchParams=t}(URLSearchParams,"+")}catch(t){!function(t,a,o){"use strict";var u=t.create,h=t.defineProperty,e=/[!'\(\)~]|%20|%00/g,n=/%(?![0-9a-fA-F]{2})/g,r=/\+/g,i={"!":"%21","'":"%27","(":"%28",")":"%29","~":"%7E","%20":"+","%00":"\0"},s={append:function(t,e){p(this._ungap,t,e)},delete:function(t){delete this._ungap[t]},get:function(t){return this.has(t)?this._ungap[t][0]:null},getAll:function(t){return this.has(t)?this._ungap[t].slice(0):[]},has:function(t){return t in this._ungap},set:function(t,e){this._ungap[t]=[a(e)]},forEach:function(e,n){var r=this;for(var i in r._ungap)r._ungap[i].forEach(t,i);function t(t){e.call(n,t,a(i),r)}},toJSON:function(){return{}},toString:function(){var t=[];for(var e in this._ungap)for(var n=v(e),r=0,i=this._ungap[e];r<i.length;r++)t.push(n+"="+v(i[r]));return t.join("&")}};for(var c in s)h(f.prototype,c,{configurable:!0,writable:!0,value:s[c]});function f(t){var e=u(null);switch(h(this,"_ungap",{value:e}),!0){case!t:break;case"string"==typeof t:"?"===t.charAt(0)&&(t=t.slice(1));for(var n=t.split("&"),r=0,i=n.length;r<i;r++){var a=(s=n[r]).indexOf("=");-1<a?p(e,g(s.slice(0,a)),g(s.slice(a+1))):s.length&&p(e,g(s),"")}break;case o(t):for(var s,r=0,i=t.length;r<i;r++){p(e,(s=t[r])[0],s[1])}break;case"forEach"in t:t.forEach(l,e);break;default:for(var c in t)p(e,c,t[c])}}function l(t,e){p(this,e,t)}function p(t,e,n){var r=o(n)?n.join(","):n;e in t?t[e].push(r):t[e]=[r]}function g(t){return decodeURIComponent(t.replace(n,"%25").replace(r," "))}function v(t){return encodeURIComponent(t).replace(e,d)}function d(t){return i[t]}self.URLSearchParams=f}(Object,String,Array.isArray)}!function(d){var r=!1;try{r=!!Symbol.iterator}catch(t){}function t(t,e){var n=[];return t.forEach(e,n),r?n[Symbol.iterator]():{next:function(){var t=n.shift();return{done:void 0===t,value:t}}}}"forEach"in d||(d.forEach=function(n,r){var i=this,t=Object.create(null);this.toString().replace(/=[\s\S]*?(?:&|$)/g,"=").split("=").forEach(function(e){!e.length||e in t||(t[e]=i.getAll(e)).forEach(function(t){n.call(r,t,e,i)})})}),"keys"in d||(d.keys=function(){return t(this,function(t,e){this.push(e)})}),"values"in d||(d.values=function(){return t(this,function(t,e){this.push(t)})}),"entries"in d||(d.entries=function(){return t(this,function(t,e){this.push([e,t])})}),!r||Symbol.iterator in d||(d[Symbol.iterator]=d.entries),"sort"in d||(d.sort=function(){for(var t,e,n,r=this.entries(),i=r.next(),a=i.done,s=[],c=Object.create(null);!a;)e=(n=i.value)[0],s.push(e),e in c||(c[e]=[]),c[e].push(n[1]),a=(i=r.next()).done;for(s.sort(),t=0;t<s.length;t++)this.delete(s[t]);for(t=0;t<s.length;t++)e=s[t],this.append(e,c[e].shift())}),function(f){function l(t){var e=t.append;t.append=d.append,URLSearchParams.call(t,t._usp.search.slice(1)),t.append=e}function p(t,e){if(!(t instanceof e))throw new TypeError("'searchParams' accessed on an object that does not implement interface "+e.name)}function t(e){var n,r,i,t=e.prototype,a=v(t,"searchParams"),s=v(t,"href"),c=v(t,"search");function o(t,e){d.append.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function u(t){d.delete.call(this,t),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function h(t,e){d.set.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}!a&&c&&c.set&&(i=c,r=function(t,e){return t.append=o,t.delete=u,t.set=h,g(t,"_usp",{configurable:!0,writable:!0,value:e})},n=function(t,e){return g(t,"_searchParams",{configurable:!0,writable:!0,value:r(e,t)}),e},f.defineProperties(t,{href:{get:function(){return s.get.call(this)},set:function(t){var e=this._searchParams;s.set.call(this,t),e&&l(e)}},search:{get:function(){return c.get.call(this)},set:function(t){var e=this._searchParams;c.set.call(this,t),e&&l(e)}},searchParams:{get:function(){return p(this,e),this._searchParams||n(this,new URLSearchParams(this.search.slice(1)))},set:function(t){p(this,e),n(this,t)}}}))}var g=f.defineProperty,v=f.getOwnPropertyDescriptor;try{t(HTMLAnchorElement),/^function|object$/.test(typeof URL)&&URL.prototype&&t(URL)}catch(t){}}(Object)}(self.URLSearchParams.prototype,Object);
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).uuidv4=e()}(this,(function(){"use strict";var t="undefined"!=typeof crypto&&crypto.getRandomValues&&crypto.getRandomValues.bind(crypto)||"undefined"!=typeof msCrypto&&"function"==typeof msCrypto.getRandomValues&&msCrypto.getRandomValues.bind(msCrypto),e=new Uint8Array(16);function o(){if(!t)throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");return t(e)}var n=/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;function r(t){return"string"==typeof t&&n.test(t)}for(var i=[],u=0;u<256;++u)i.push((u+256).toString(16).substr(1));return function(t,e,n){var u=(t=t||{}).random||(t.rng||o)();if(u[6]=15&u[6]|64,u[8]=63&u[8]|128,e){n=n||0;for(var f=0;f<16;++f)e[n+f]=u[f];return e}return function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,o=(i[t[e+0]]+i[t[e+1]]+i[t[e+2]]+i[t[e+3]]+"-"+i[t[e+4]]+i[t[e+5]]+"-"+i[t[e+6]]+i[t[e+7]]+"-"+i[t[e+8]]+i[t[e+9]]+"-"+i[t[e+10]]+i[t[e+11]]+i[t[e+12]]+i[t[e+13]]+i[t[e+14]]+i[t[e+15]]).toLowerCase();if(!r(o))throw TypeError("Stringified UUID is invalid");return o}(u)}}));
 /*!
  * Bowser - a browser detector
  * https://github.com/ded/bowser
@@ -602,7 +603,6 @@ var self=this||{};try{!function(t,e){if(new t("q=%2B").get("q")!==e||new t({q:e}
   return bowser
 });
 
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).uuidv4=e()}(this,(function(){"use strict";var t="undefined"!=typeof crypto&&crypto.getRandomValues&&crypto.getRandomValues.bind(crypto)||"undefined"!=typeof msCrypto&&"function"==typeof msCrypto.getRandomValues&&msCrypto.getRandomValues.bind(msCrypto),e=new Uint8Array(16);function o(){if(!t)throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");return t(e)}var n=/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;function r(t){return"string"==typeof t&&n.test(t)}for(var i=[],u=0;u<256;++u)i.push((u+256).toString(16).substr(1));return function(t,e,n){var u=(t=t||{}).random||(t.rng||o)();if(u[6]=15&u[6]|64,u[8]=63&u[8]|128,e){n=n||0;for(var f=0;f<16;++f)e[n+f]=u[f];return e}return function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,o=(i[t[e+0]]+i[t[e+1]]+i[t[e+2]]+i[t[e+3]]+"-"+i[t[e+4]]+i[t[e+5]]+"-"+i[t[e+6]]+i[t[e+7]]+"-"+i[t[e+8]]+i[t[e+9]]+"-"+i[t[e+10]]+i[t[e+11]]+i[t[e+12]]+i[t[e+13]]+i[t[e+14]]+i[t[e+15]]).toLowerCase();if(!r(o))throw TypeError("Stringified UUID is invalid");return o}(u)}}));
 /**
  * @license
  * Lodash (Custom Build) lodash.com/license | Underscore.js 1.8.3 underscorejs.org/LICENSE
@@ -650,7 +650,6 @@ Lt(r,Rr(r),t,e)}),Qu=mt(function(r,n){try{return t(r,Vr,n)}catch(t){return gr(t)
 m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.stubArray=Dr,m.stubFalse=Wr,m.template=Mr,m.toNumber=$r,m.toString=kr,m.each=_r,m.VERSION=qr,Ue._=m}).call(this);
 /*global PaymentForm, updatePaymentConfig, _*/
 (function(root, doc, _){
-
 /**
  * Construct payment form
  * @constructor
@@ -664,6 +663,9 @@ m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.st
  * @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
  * @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
  * @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
+ * @param {Object=} currencies[].yearlySubscription - (optional) yearly payment options for currency
+ * @param {Number[]} currencies[].yearlySubscription.amounts - Amounts offered for yearly payment
+ * @param {Number} currencies[].yearlySubscription.placeholder - Custom amount placeholder for yearly payment
  */
 function PaymentForm(currencies)
 {
@@ -706,6 +708,9 @@ function PaymentForm(currencies)
 
   var subscriptionAmounts = doc.getElementById("subscription-amounts");
 
+  var yearlySubscriptionAmounts =
+    doc.getElementById("yearly-subscription-amounts");
+
   var thePresetAmounts = _.template(
     doc.getElementById("preset-payment-amounts").innerHTML
   );
@@ -732,9 +737,10 @@ function PaymentForm(currencies)
     if (currency.subscription)
     {
       doc.body.classList.add("has-subscriptions");
+      doc.body.classList.add("has-yearly");
 
       var subscriptionOptions = {
-        type: "subscription",
+        type: "monthly-subscription",
         sign: currency.sign,
         amounts: currency.subscription.amounts,
         placeholder: currency.subscription.placeholder
@@ -743,6 +749,22 @@ function PaymentForm(currencies)
       subscriptionAmounts.innerHTML = ""
         + thePresetAmounts(subscriptionOptions)
         + theCustomAmount(subscriptionOptions);
+      
+      if (currency.yearly) {
+        var yearlySubscriptionOptions = {
+          type: "yearly-subscription",
+          sign: currency.sign,
+          amounts: currency.yearly.amounts,
+          placeholder: currency.yearly.placeholder
+        };
+
+        yearlySubscriptionAmounts.innerHTML = ""
+          + thePresetAmounts(yearlySubscriptionOptions)
+          + theCustomAmount(yearlySubscriptionOptions);
+
+      } else {
+        doc.body.classList.remove("has-yearly");
+      } 
     }
     else
     {
@@ -758,8 +780,8 @@ function PaymentForm(currencies)
     validateCustomAmount(e);
   });
 
-  // uncheck donation amount when subscription amount is selected and vise versa
-  function onFieldsetChange (otherFieldset, event)
+  // uncheck donation amount when subscription amount is selected and vice versa
+  function onFieldsetChange(otherFieldset, event)
   {
     var otherFieldsetSelected = otherFieldset.querySelector("input:checked");
 
@@ -772,12 +794,30 @@ function PaymentForm(currencies)
 
   donationAmounts.addEventListener(
     "change",
-    onFieldsetChange.bind(this, subscriptionAmounts)
-  );
+    onFieldsetChange.bind(this, subscriptionAmounts));
+
+  donationAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, yearlySubscriptionAmounts));
 
   subscriptionAmounts.addEventListener(
     "change",
     onFieldsetChange.bind(this, donationAmounts)
+  );
+
+  subscriptionAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, yearlySubscriptionAmounts)
+  );
+
+  yearlySubscriptionAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, donationAmounts)
+  );
+
+  yearlySubscriptionAmounts.addEventListener(
+    "change",
+    onFieldsetChange.bind(this, subscriptionAmounts)
   );
 
   // Select custom amount radio when textbox is focused
@@ -794,10 +834,13 @@ function PaymentForm(currencies)
 
   subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
 
+  yearlySubscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
+
   function clearCustomAmountErrors()
   {
     doc.body.classList.remove("minimum-donation-error");
     doc.body.classList.remove("minimum-subscription-error");
+    doc.body.classList.remove("minimum-yearly-error");
 
     enableForm(true);
   }
@@ -817,7 +860,21 @@ function PaymentForm(currencies)
   {
     amount = parseFloat(amount);
 
+    type = (type == 'yearly-subscription') ? 'yearly' : type;
+
+    type = (type == 'monthly-subscription') ? 'subscription' : type;
+
     return _.isFinite(amount) && amount >= currency[type].minimum;
+  }
+
+  /*function isSubscription(type) {
+    return type == "subscription" || type == "yearly";
+  }*/
+
+  function otherTypes(type) {
+    return ["donation", "subscription", "yearly"].filter(function(item) {
+      return item != type;
+    });
   }
 
   function validateCustomAmount(event)
@@ -826,8 +883,7 @@ function PaymentForm(currencies)
 
     if (checkedRadio.value != "custom")
     {
-      clearCustomAmountErrors();
-      return;
+      return clearCustomAmountErrors();
     }
 
     var amount = checkedRadio.parentElement.querySelector(
@@ -836,17 +892,14 @@ function PaymentForm(currencies)
 
     if (amount.trim() == "")
     {
-      clearCustomAmountErrors();
-      return;
+      return clearCustomAmountErrors();
     }
 
     amount = parseFloat(amount);
 
     var currency = currencies[paymentCurrency.value];
     var selectedType = event.currentTarget.id.split("-")[0];
-    var otherType = selectedType == "donation" ? "subscription" : "donation";
     var typeError = "minimum-" + selectedType + "-error";
-    var otherTypeError = "minimum-" + otherType + "-error";
     var minimumAmount = currency[selectedType].minimum;
 
     if (isValidAmount(amount, selectedType, currency))
@@ -855,18 +908,42 @@ function PaymentForm(currencies)
       return;
     }
 
+    otherTypes(selectedType).forEach(function(otherType) {
+      doc.body.classList.remove("minimum-" + otherType + "-error");
+    });
+    
     doc.body.classList.add(typeError);
-    doc.body.classList.remove(otherTypeError);
+    
     enableForm(false);
+
     doc.querySelector(
       ".minimum-" + selectedType + "-warning .minimum-amount"
     ).textContent = currency.sign + minimumAmount;
   }
 
+  function actionType(text) {
+    var type;
+
+    if (/donation/.test(text)) {
+      type = 'donation';
+
+    } else if (/monthly/.test(text)) {
+      type = 'monthly-subscription';
+
+    } else if (/yearly/.test(text)) {
+      type = 'yearly-subscription';
+    }
+
+    return type;
+  }
+
   donationAmounts.addEventListener("change", validateCustomAmount, true);
   subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
+  yearlySubscriptionAmounts.addEventListener("change", validateCustomAmount, true);
+  
   donationAmounts.addEventListener("input", validateCustomAmount, true);
   subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
+  yearlySubscriptionAmounts.addEventListener("input", validateCustomAmount, true);
 
   /**
    * Export form data to JSON compatible object
@@ -878,8 +955,7 @@ function PaymentForm(currencies)
 
     var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
 
-    var type = checked.name.indexOf("donation") != -1 ?
-      "donation" : "subscription";
+    var type = actionType(checked.name);
 
     var amount = checked.value;
 
@@ -1006,13 +1082,20 @@ root.paypalProvider = {
       lc: getLocale(payment.lang || doc.documentElement.lang)
     };
 
-    if (payment.type == "subscription")
+    var subscriptionType = {
+      'subscription': 'M',
+      'monthly-subscription': 'M',
+      'yearly-subscription': 'Y'
+    };
+
+    if (Object.keys(subscriptionType)
+      .includes(payment.type))
     {
       _.extend(submission, {
         cmd: "_xclick-subscriptions",
         a3: payment.amount, // Subscription price
         p3: 1, // Subscription duration (N*p3)
-        t3: "M", // Regular subscription units of duration. (D/W/M/Y)
+        t3: subscriptionType[payment.type], // Regular subscription units of duration. (D/W/M/Y)
         src: 1 // Subscription payments recur 1 or not 0
       });
     }
@@ -1132,7 +1215,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
               '<div class="top">' +
                 '<div id="co-name" class="company"></div>' +
                 '<button class="close">' +
-                  '<img width="17" height="17" src="/img/close.png"></button>' +
+                  '<img width="17" height="17" src="../../img/close.png"></button>' +
               '</div>' +
               '<div id="product-name" ' +
                 'class="product details">Adblock Plus</div>' +
@@ -1174,7 +1257,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
             '</form>' +
           '</div>' +
         '</div><img width="123" height="30" class="pbs" ' +
-          'src="/img/powered-by-stripe.png"></button>';
+          'src="../../img/powered-by-stripe.png"></button>';
 
       box = document.querySelector('.modal-content');
       button = document.getElementById('pay-button');
@@ -1191,31 +1274,38 @@ function initStripeProvider(publishableKey, formProcessor, text) {
         .addEventListener('click', hideModal);
     }
 
-    function isSubscription() {
-      return (data.type == subscription);
+    function isSubscription(type) {
+      return [subscription, 'monthly-subscription', 'yearly-subscription']
+        .includes(type || data.type);
+    }
+
+    function durtionText() {
+      return /^yearly/.test(data.type)
+        ? text.year
+        : text.month;
     }
 
     function defaultTextOrder() {
       return isSubscription()
-        ? text.subscribe + ' ' + priceText + ' / ' + text.month
+        ? text.subscribe + ' ' + priceText + ' / ' + durtionText()
         : text.donate + ' ' + priceText;
     }
 
     function orderHU() {
       return isSubscription()
-        ? priceText + ' ' + text.subscribe + ' ' + text.month
+        ? priceText + ' ' + text.subscribe + ' ' + durtionText()
         : text.donate + ' ' + priceText;
     }
 
     function orderKO() {
       return isSubscription()
-        ? text.subscribe + ' ' + priceText + ' / ' + text.month
+        ? text.subscribe + ' ' + priceText + ' / ' + durtionText()
         : priceText + ' ' + text.donate;
     }
 
     function orderTR() {
       return isSubscription()
-        ? text.month + ' ' + priceText + ' ' + text.subscribe
+        ? durtionText() + ' ' + priceText + ' ' + text.subscribe
         : priceText + ' ' + text.donate;
     }
 
@@ -1361,7 +1451,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
       if (data.type == donation) {
         confirmDonation();
 
-      } else if (data.type == subscription) {
+      } else if (isSubscription(data.type)) {
         createSubscription();
       }
     }
@@ -1411,3 +1501,193 @@ function initStripeProvider(publishableKey, formProcessor, text) {
     submit: paymentModalPopup
   };
 }
+
+/* global eyeo */
+(function() {
+
+var docEl = document.documentElement;
+
+var URLParams = new URLSearchParams(location.search);
+
+var URLSubDirs = location.pathname.split('/');
+
+var paymentConfig = {
+  USD: {
+    sign: '$',
+    donation: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5
+    },
+    subscription: {
+      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+      placeholder: 4.99,
+      minimum: 1
+    }
+  },
+  EUR: {
+    sign: '€',
+    donation: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5
+    },
+    subscription: {
+      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+      placeholder: 4.99,
+      minimum: 1
+    }
+  }
+};
+
+function setupPaymentForm() {
+  if (window.paymentConfig)
+    paymentConfig = window.paymentConfig;
+
+  var form = new PaymentForm(paymentConfig);
+
+  function getPayment() {
+    var fromController = {
+      /* eyeo.vid will be set to 0-N where 0 is the original variant and N is
+         a challenger variant whenever an optimize variant is applied */
+      custom: typeof eyeo.vid != "undefined" ? eyeo.vid + eyeo.sid.slice(1) : eyeo.sid,
+      successURL: (docEl.getAttribute('data-siteurl') ||
+        'https://adblockplus.org') + '/payment-complete'
+    };
+
+    return _.extend(form.toJSON(), fromController);
+  }
+
+  function onPayPalProvider() {
+    var payment = getPayment();
+
+    var cancelParams = new URLSearchParams({
+      pp: 'paypal',
+      sid: payment.custom
+    });
+
+    payment.cancelURL = [
+      location.origin,
+      location.pathname,
+      '?',
+      cancelParams.toString()
+    ].join('');
+
+    payment.item = paymentTranslations.item;
+
+    paypalProvider.submit(payment);
+  }
+
+  eyeo.disablePayPal || form.addProviderListener('paypal', onPayPalProvider);
+
+  function onStripeSubmit() {
+    var payment = getPayment();
+
+    payment.currencySign = paymentConfig[payment.currency.toUpperCase()].sign;
+
+    stripeProvider.submit(payment);
+  }
+
+  var stripeLoaded = false;
+
+  function onStripeProvider() {
+    if (!stripeLoaded) {
+      var script = document.createElement('script');
+      var button = document.querySelector('.stripe-button');
+      var buttonContent = button.innerHTML;
+
+      button.disabled = true;
+      button.innerHTML = '<div class="loader">Loading...</div>';
+
+      script.onload = function() {
+        stripeLoaded = true;
+
+        onStripeSubmit();
+
+        button.disabled = false;
+        button.innerHTML = buttonContent;
+      };
+
+      script.src = 'https://js.stripe.com/v3/';
+
+      document.head.appendChild(script);
+
+    } else {
+      onStripeSubmit();
+    }
+  }
+
+  eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
+}
+
+eyeo.vid = typeof eyeo.vid == "undefined" ? "x" : eyeo.vid;
+
+/* Prefex "x" applies by default when optimize does not apply a variant.
+   Since we share SID on load below without waiting for optimize to apply a
+   variant SIDs will not match 1to1 with payment.custom when experiments
+   are running. Instead, we must match SID.slice(1) to coorilate payments. */
+eyeo.sid = URLParams.get('sid') || eyeo.vid + "-" + uuidv4();
+
+var fromABP = {
+  an: URLParams.get('an'),
+  av: URLParams.get('av'),
+  ap: URLParams.get('ap'),
+  apv: URLParams.get('apv'),
+  p: URLParams.get('p'),
+  pv: URLParams.get('pv')
+};
+
+var loadReport = {
+  bn: bowser.name,
+  bv: bowser.version,
+  bp: URLSubDirs[URLSubDirs.length - 1],
+  bl: docEl.lang,
+  cid: window.campaignID || 0,
+  sid: eyeo.sid
+};
+
+if (typeof performance == "object" && typeof performance.now == "function")
+  loadReport.pn = (performance.now() + '').split('.')[0];
+
+if (fromABP.an)
+  loadReport = _.extend(loadReport, fromABP);
+
+var script = document.createElement('script');
+
+var params = new URLSearchParams(loadReport);
+
+function onLoadReportSuccess() {
+  (document.readyState == 'loading')
+    ? document.addEventListener('DOMContentLoaded', setupPaymentForm)
+    : setupPaymentForm();
+}
+
+script.onload = onLoadReportSuccess;
+script.onerror = onLoadReportSuccess;
+script.src = '../../js/payment/config/load.js?' + params.toString();
+
+document.head.appendChild(script);
+
+}());
+
+'use strict';
+
+var SCROLL_TICK_LENGTH = 10;
+var SCROLL_TIME = 500;
+
+var page = document.scrollingElement || document.documentElement; // IE
+var body = document.body;
+var donationHeading = document.querySelector('.donation-heading');
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 991)
+    if (!page.classList.contains('hide-form'))
+      page.classList.add('show-form');
+  else
+    page.classList.remove('show-form');
+});
+
+document.documentElement.classList.remove('no-js');
+
+// sticky footer
+document.querySelector('main.container').setAttribute('id', 'content');
