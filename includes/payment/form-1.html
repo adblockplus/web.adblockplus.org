@@ -17,23 +17,50 @@
     <% }) %>
   </script>
 
-  <div class="payment-types">
+  <div class="payment-types tabs">
 
-    <fieldset class="payment-type">
-      <legend>
-        {{ one-time-legened-1[heading] Make a <strong>one-time</strong> donation: }}
-      </legend>
-      <div id="donation-amounts"></div>
-    </fieldset>
+    <ul class="tabs-menu">
+      <li class="active"><a href="#one-time">One-time <span>Motivator</span></a></li>
+      <li><a href="#monthly">Monthly <span>Supporter!</span></a></li>
+      <li><a href="#yearly">Yearly <span>Big Fan!</span></a></li>
+    </ul>
+    
+    <div class="tabs-box">
+      <div id="one-time" class="tab active">
+        <fieldset class="payment-type">
+          <legend>
+            {{ one-time-legened-1[heading] Make a <strong>one-time</strong> donation: }}
+          </legend>
+          <div id="donation-amounts"></div>
+        </fieldset>
+      </div>
 
-    <hr class="payment-divide">
+      <div id="monthly" class="tab">
+        <fieldset class="subscription-payment-type payment-type">
+          <legend>
+            {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
+          </legend>
+          <div id="subscription-amounts"></div>
+        </fieldset>
+      </div>
 
-    <fieldset class="subscription-payment-type payment-type">
-      <legend>
-        {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
-      </legend>
-      <div id="subscription-amounts"></div>
-    </fieldset>
+      <div id="yearly" class="tab">
+        <fieldset class="payment-type yearly">
+          <legend>
+            {{ yearly-subscription-legend-1[heading] Or a <strong>yearly</strong> donation: }}
+          </legend>
+          <div id="yearly-subscription-amounts"></div>
+        </fieldset>
+      </div>
+      
+      <div id="payment-providers" class="payment-providers">
+        <span class="payment-providers-lead">
+          {{ pay-with-lead-1[heading] Pay with: }}
+        </span>
+        <? include payment/buttons/stripe ?>
+        <? include payment/buttons/paypal ?>
+      </div>
+    </div>
 
   </div>
 
@@ -84,32 +111,10 @@
   <p class="alert minimum-amount-warning minimum-subscription-warning">
     {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum monthly donation amount is <span class="minimum-amount">$1.99</span>. }}
   </p>
-
+  
   <p class="alert minimum-amount-warning minimum-yearly-warning">
     {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum yearly donation amount is <span class="minimum-amount">$5</span>. }}
   </p>
-  
-  <div class="payment">
-
-    <fieldset class="payment-method">
-      <label for="card">
-        <input type="radio" name="payment-method" id="card" value="card" checked>
-        <strong class="credit-card">{{ credit-card Credit card }}</strong>
-        <? include payment/logo/cards ?>
-      </label>
-
-      <label for="paypal">
-        <input type="radio" name="payment-method" id="paypal" value="paypal">
-        <? include payment/logo/paypal ?>
-      </label>
-    </fieldset>
-
-    <div id="payment-providers" class="payment-providers">
-      <? include payment/buttons/stripe-1 ?>
-      <? include payment/buttons/paypal-1 ?>
-    </div>
-    
-  </div>
 
 </form>
 
