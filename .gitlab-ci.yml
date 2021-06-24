@@ -4,7 +4,7 @@
   variables: &staging
     DOMAIN: "staging-new-adblockplus-org-1.uplink.eyeo.it"
     STRIPE_PUBLISHABLE_KEY: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN"
-    DONATION_SERVER_BASE_URL: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
+    DONATION_SERVER_BASE_URL: "https://adblockplus.dev/donation"
 
 .production:
   variables: &production
