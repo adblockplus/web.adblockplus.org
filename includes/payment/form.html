@@ -36,6 +36,15 @@
       <div id="subscription-amounts"></div>
     </fieldset>
 
+    <hr class="payment-divide yearly">
+
+    <fieldset class="payment-type yearly">
+      <legend>
+        {{ yearly-subscription-legend-1[heading] Or a <strong>yearly</strong> donation: }}
+      </legend>
+      <div id="yearly-subscription-amounts"></div>
+    </fieldset>
+
   </div>
 
   <script id="preset-payment-amounts" type="text/html">
@@ -84,6 +93,10 @@
 
   <p class="alert minimum-amount-warning minimum-subscription-warning">
     {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum monthly donation amount is <span class="minimum-amount">$1.99</span>. }}
+  </p>
+  
+  <p class="alert minimum-amount-warning minimum-yearly-warning">
+    {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum yearly donation amount is <span class="minimum-amount">$5</span>. }}
   </p>
 
   <div id="payment-providers" class="payment-providers">

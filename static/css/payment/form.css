@@ -39,6 +39,32 @@
 
 .has-subscriptions .subscription-payment-type { display: block; }
 
+.has-subscriptions .payment-divide { display: block; }
+
+.yearly,
+.payment-divide.yearly {
+  display: none;
+}
+
+.has-yearly .yearly,
+.has-yearly .payment-divide.yearly {
+  display: block;
+}
+
+.custom-payment-amount input[type="text"]
+{
+  padding: 0;
+  line-height: 1;
+}
+
+.minimum-amount-warning { display: none; }
+
+.minimum-donation-error .minimum-donation-warning,
+.minimum-subscription-error .minimum-subscription-warning,
+.minimum-yearly-error .minimum-yearly-warning {
+  display: block;
+}
+
 /* Negating first and last padding below */
 .payment-amounts { margin: 0 -0.5rem; }
 
@@ -68,8 +94,6 @@
     padding: 0;
   }
 }
-
-.has-subscriptions .payment-divide { display: block; }
 
 .custom-payment-amount input[type="text"]
 {
