@@ -867,10 +867,6 @@ function PaymentForm(currencies)
     return _.isFinite(amount) && amount >= currency[type].minimum;
   }
 
-  /*function isSubscription(type) {
-    return type == "subscription" || type == "yearly";
-  }*/
-
   function otherTypes(type) {
     return ["donation", "subscription", "yearly"].filter(function(item) {
       return item != type;

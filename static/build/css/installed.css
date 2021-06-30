@@ -2143,15 +2143,15 @@ a.navbar-logo {
 
 @media(min-width: 615px) {
   .content .payment-divide {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 
 @media(min-width: 650px) {
   .content .payment-divide {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 
@@ -2272,6 +2272,7 @@ h2.donation-heading { font-size: 1.2em; }
 
   .page-loaded .donation-form { animation: fadeIn 2.6s; }
 }
+
 .donation-header { margin-bottom: 1rem; }
 
 .donation-heading
@@ -2313,6 +2314,32 @@ h2.donation-heading { font-size: 1.2em; }
 
 .has-subscriptions .subscription-payment-type { display: block; }
 
+.has-subscriptions .payment-divide { display: block; }
+
+.yearly,
+.payment-divide.yearly {
+  display: none;
+}
+
+.has-yearly .yearly,
+.has-yearly .payment-divide.yearly {
+  display: block;
+}
+
+.custom-payment-amount input[type="text"]
+{
+  padding: 0;
+  line-height: 1;
+}
+
+.minimum-amount-warning { display: none; }
+
+.minimum-donation-error .minimum-donation-warning,
+.minimum-subscription-error .minimum-subscription-warning,
+.minimum-yearly-error .minimum-yearly-warning {
+  display: block;
+}
+
 /* Negating first and last padding below */
 .payment-amounts { margin: 0 -0.5rem; }
 
@@ -2342,8 +2369,6 @@ h2.donation-heading { font-size: 1.2em; }
     padding: 0;
   }
 }
-
-.has-subscriptions .payment-divide { display: block; }
 
 .custom-payment-amount input[type="text"]
 {
