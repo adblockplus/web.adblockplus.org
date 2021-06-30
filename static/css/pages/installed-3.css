@@ -1,0 +1,5 @@
+.payment-providers button.paypal-button { display: none; }
+
+.card-button-hidden button.paypal-button { display: inline-block; }
+
+.payment-providers button.stripe-button { vertical-align: inherit; }
