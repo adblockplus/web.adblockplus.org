@@ -5,3 +5,24 @@ RewriteRule ^setup.js teardown.js
 
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^(AU|CA|NZ)$
 RewriteRule ^pre-approved.js setup.js
+
+
+# state test
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{ENV:GEOIP_REGION} ^CA$
+RewriteRule ^test.js state.js [NC,L]
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{ENV:GEOIP_REGION} ^FL$
+RewriteRule ^test.js state.js [NC,L]
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{ENV:GEOIP_REGION} ^NY$
+RewriteRule ^test.js state.js [NC,L]
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{ENV:GEOIP_REGION} ^WA$
+RewriteRule ^test.js state.js [NC,L]
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteRule ^test.js teardown.js [NC,L]
