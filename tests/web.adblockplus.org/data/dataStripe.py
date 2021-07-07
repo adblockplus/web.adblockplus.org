@@ -7,10 +7,13 @@ TEST_ZIP = '70205'
 
 MONTHLY_AMOUNT_UNDER_MINIMUM = '0.99'
 ONE_TIME_AMOUNT_UNDER_MINIMUM = '4.99'
+YEARLY_AMOUNT_UNDER_MINIMUM = '4.99'
 MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR = \
       'Oops! To help cover fees, the minimum monthly donation amount is $1.'
 ONE_TIME_AMOUNT_UNDER_MINIMUM_ERROR = \
       'Oops! To help cover fees, the minimum one-time donation amount is $5.'
+YEARLY_AMOUNT_UNDER_MINIMUM_ERROR = \
+      'Oops! To help cover fees, the minimum yearly donation amount is $5.'
 
 
 ONE_TIME_CUSTOM_DONATION = [(
@@ -32,6 +35,17 @@ MONTHLY_CUSTOM_DONATION = [(
       'High value - 5000',
       '5000',
       'Donate $5000 / month',
+)]
+
+
+YEARLY_CUSTOM_DONATION = [(
+      'Lowest accepted value - 5',
+      '5',
+      'Donate $5 / year',
+), (
+      'High value - 10000',
+      '10000',
+      'Donate $10000 / year',
 )]
 
 
@@ -68,6 +82,24 @@ MONTHLY_PAYMENT_OPTIONS = [(
 ), (
       'Monthly 9.99',
       'Donate $9.99 / month',
+)]
+
+
+YEARLY_PAYMENT_OPTIONS = [(
+      'Yearly 10',
+      'Donate $10 / year',
+), (
+      'Yearly 15',
+      'Donate $15 / year',
+), (
+      'Yearly 20',
+      'Donate $20 / year',
+), (
+      'Yearly 35',
+      'Donate $35 / year',
+), (
+      'Yearly 50',
+      'Donate $50 / year',
 )]
 
 

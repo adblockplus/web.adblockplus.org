@@ -40,6 +40,15 @@ def test_one_time_donation_amount_under_minimum(driver):
            td.ONE_TIME_AMOUNT_UNDER_MINIMUM_ERROR
 
 
+def test_yearly_donation_amount_under_minimum(driver):
+    generic_donation_page = GenericDonationPage(driver)
+    generic_donation_page.click_yearly_custom_button()
+    generic_donation_page.enter_yearly_custom_value(td.YEARLY_AMOUNT_UNDER_MINIMUM)
+
+    assert generic_donation_page.get_yearly_amount_under_minimum_error_text ==\
+           td.YEARLY_AMOUNT_UNDER_MINIMUM_ERROR
+
+
 @pytest.mark.parametrize('test_id,payment_value,submit_button_text', td.MONTHLY_CUSTOM_DONATION,
                          ids=[seq[0] for seq in td.MONTHLY_CUSTOM_DONATION])
 def test_custom_monthly_donation_amount(driver, test_id, payment_value, submit_button_text):
@@ -76,6 +85,24 @@ def test_custom_one_time_donation_amount(driver, test_id, payment_value, submit_
     assert generic_donation_page.is_redirect_to_thank_you()
 
 
+@pytest.mark.parametrize('test_id,payment_value,submit_button_text', td.YEARLY_CUSTOM_DONATION,
+                         ids=[seq[0] for seq in td.YEARLY_CUSTOM_DONATION])
+def test_custom_yearly_donation_amount(driver, test_id, payment_value, submit_button_text):
+    generic_donation_page = GenericDonationPage(driver)
+    generic_donation_page.click_yearly_custom_button()
+    generic_donation_page.enter_yearly_custom_value(payment_value)
+    stripe_payments_form = generic_donation_page.click_stripe_button()
+    stripe_payments_form.enter_email(td.TEST_EMAIL)
+    stripe_payments_form.enter_card_number(td.TEST_CARD_NUMBER)
+    stripe_payments_form.enter_card_exp(td.TEST_CARD_EXPIRY)
+    stripe_payments_form.enter_card_cvc(td.TEST_CVC)
+    stripe_payments_form.enter_zip(td.TEST_ZIP)
+
+    assert stripe_payments_form.get_submit_button_text() == submit_button_text
+    stripe_payments_form.click_submit_button()
+    assert generic_donation_page.is_redirect_to_thank_you()
+
+
 @pytest.mark.parametrize('payment_option,submit_button_text', td.ONE_TIME_PAYMENT_OPTIONS,
                          ids=[seq[0] for seq in td.ONE_TIME_PAYMENT_OPTIONS])
 def test_fixed_one_time_donation_amounts(driver, payment_option, submit_button_text):
@@ -98,6 +125,23 @@ def test_fixed_one_time_donation_amounts(driver, payment_option, submit_button_t
 def test_fixed_monthly_donation_amounts(driver, payment_option, submit_button_text):
     generic_donation_page = GenericDonationPage(driver)
     generic_donation_page.click_radio_button(generic_donation_page.get_all_monthly_buttons[payment_option])
+    stripe_payments_form = generic_donation_page.click_stripe_button()
+    stripe_payments_form.enter_email(td.TEST_EMAIL)
+    stripe_payments_form.enter_card_number(td.TEST_CARD_NUMBER)
+    stripe_payments_form.enter_card_exp(td.TEST_CARD_EXPIRY)
+    stripe_payments_form.enter_card_cvc(td.TEST_CVC)
+    stripe_payments_form.enter_zip(td.TEST_ZIP)
+
+    assert stripe_payments_form.get_submit_button_text() == submit_button_text
+    stripe_payments_form.click_submit_button()
+    assert generic_donation_page.is_redirect_to_thank_you()
+
+
+@pytest.mark.parametrize('payment_option,submit_button_text', td.YEARLY_PAYMENT_OPTIONS,
+                         ids=[seq[0] for seq in td.YEARLY_PAYMENT_OPTIONS])
+def test_fixed_yearly_donation_amounts(driver, payment_option, submit_button_text):
+    generic_donation_page = GenericDonationPage(driver)
+    generic_donation_page.click_radio_button(generic_donation_page.get_all_yearly_buttons[payment_option])
     stripe_payments_form = generic_donation_page.click_stripe_button()
     stripe_payments_form.enter_email(td.TEST_EMAIL)
     stripe_payments_form.enter_card_number(td.TEST_CARD_NUMBER)
