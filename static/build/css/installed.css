@@ -1158,7 +1158,7 @@ a.icon-button:visited
  * #navbar
  ******************************************************************************/
 
- #navbar
+#navbar
 {
   min-height: 4em;
   background-color: #FFFFFF;
@@ -1166,15 +1166,23 @@ a.icon-button:visited
   z-index: 9002;
   width: 100%;
   top: 0;
-  transition: top 0.2s ease-in-out;
-  box-shadow: 0px 1px 0px #f4f4f4;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
+
+#navbar.nav-scroll
+ {
+   box-shadow: 0px 1px 5px rgba(0, 0, 0,  0.1);
+ }
 
 @media(max-width: 991px)
 {
   #navbar
   {
     overflow: auto;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0,  0.1);
   }
 }
 
@@ -1183,9 +1191,25 @@ a.icon-button:visited
   list-style-type: none;
 }
 
-#navbar .active a
+@media(min-width: 991px)
 {
-  color: #0797E1;
+  #navbar .active a
+  {
+    font-weight: bolder;
+    position: relative;
+  }
+
+  #navbar .active a::before
+  {
+    content: "";
+    position: absolute;
+    background: #0797E1;
+    height: 2px;
+    width: 40%;
+    left: 30%;
+    right: 30%;
+    top: 70px;
+  }
 }
 
 #navbar .container

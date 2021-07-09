@@ -357,7 +357,7 @@ a.icon-button:visited
 
 #navbar.nav-scroll
  {
-   box-shadow: 0px 1px 5px #f4f4f4;
+   box-shadow: 0px 1px 5px rgba(0, 0, 0,  0.1);
  }
 
 @media(max-width: 991px)
@@ -365,7 +365,7 @@ a.icon-button:visited
   #navbar
   {
     overflow: auto;
-    box-shadow: 0px 1px 5px #f4f4f4;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0,  0.1);
   }
 }
 
@@ -374,9 +374,25 @@ a.icon-button:visited
   list-style-type: none;
 }
 
-#navbar .active a
+@media(min-width: 991px)
 {
-  color: #0797E1;
+  #navbar .active a
+  {
+    font-weight: bolder;
+    position: relative;
+  }
+
+  #navbar .active a::before
+  {
+    content: "";
+    position: absolute;
+    background: #0797E1;
+    height: 2px;
+    width: 40%;
+    left: 30%;
+    right: 30%;
+    top: 70px;
+  }
 }
 
 #navbar .container
