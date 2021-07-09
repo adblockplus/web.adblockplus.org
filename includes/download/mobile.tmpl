@@ -44,7 +44,7 @@
             class="{{ brws.class }}"
             id="{{ brws.id }}_tab"
             href="#{{ brws.id }}_panel">
-            <strong>{{ brws.name | translate(brws_identifier, "Product name") }}</strong>
+            {{ brws.name | translate(brws_identifier, "Product name") }}
           </a>
         </li>
         {% endfor %}

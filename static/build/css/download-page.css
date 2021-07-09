@@ -2578,10 +2578,13 @@ Android device using Samsung Internet or Firefox */
 .tabs-menu a,
 .tabs-menu a:visited
 {
-  padding: .2em .8em;
-  color: #C1C1C1;
-  font-weight: 700;
-  font-size: 12px;
+  padding: .2em .8em .25em;
+  color: #000;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #CDCDCD;
+  border-radius: 15px;
+  margin-right: .2em;
 }
 
 .tabs-menu a:hover,
@@ -2590,7 +2593,7 @@ Android device using Samsung Internet or Firefox */
 .tabs-menu .current-tab a
 {
   color: #fff;
-  background-color: #000;
+  background-color: #585858;
   text-decoration: none;
 }
 
@@ -2691,14 +2694,15 @@ Android device using Samsung Internet or Firefox */
 .tab-column
 {
   display: table-cell;
-  width: 80%;
+  max-width: 80%;
   vertical-align: top;
 }
 
 .tab-column:nth-child(2n)
 {
-  width: 20%;
+  max-width: 20%;
   text-align: center;
+  padding-left: 2em;
 }
 
 .app-store-button.abb-android img,
@@ -2709,6 +2713,14 @@ Android device using Samsung Internet or Firefox */
   margin: 1em 1em 0 0;
 }
 
+@media(max-width: 768px)
+{
+  .tabs-menu li
+  {
+    margin-top: 1em;
+  }
+}
+
 @media(min-width: 768px)
 {
   .download-header
@@ -2717,7 +2729,7 @@ Android device using Samsung Internet or Firefox */
   }
   .tabs-menu li
   {
-    display: inline;
+    display: inline-block;
   }
 
   .download-options .download-desktop
@@ -2793,7 +2805,7 @@ Android device using Samsung Internet or Firefox */
 
   .download-options .download-desktop .tab-text-contents
   {
-    width: 54%;
+    width: 60%;
     min-width: 600px;
     margin: 0;
   }
