@@ -166,7 +166,7 @@
         // check if element exists due to using different templates
         if (!floatingTOC) return;
 
-        var pageContainer = document.querySelector(".toc-page-container");
+        var wrapTOC = document.getElementById("toc-wrap");
 
         function updateActiveTOCLink() {
             var headingLinks = document.querySelectorAll("#toc-float a");
@@ -188,36 +188,19 @@
             var headingLink = document.querySelector("#toc-float [href='#"+ contentHeadings[0].id +"']");
 
             headingLink.classList.add("active");
-
-            //console.log(floatingTOC.getBoundingClientRect().top, headingLink.getBoundingClientRect().bottom);
         }
 
         // call the function before scroll event to ensure the active headline is always highlighted
         updateActiveTOCLink();
 
         function updateFloatingTOCPosition() {
-            var containerBounds = pageContainer.getBoundingClientRect();
-            var topPosition = containerBounds.top > 70;
-            // accounted am additional 18px for floatingTOC CSS margin-top
-            var maxTOCheight = window.innerHeight - 88 - 20;
-            var expectedTOCHeight = Math.min(floatingTOC.getBoundingClientRect().height, maxTOCheight);
-            var bottomPosition = !topPosition && containerBounds.bottom < 70 + 20 + expectedTOCHeight;
+            var wrapTOCBounds = wrapTOC.getBoundingClientRect();
 
-            floatingTOC.style.marginTop = "";
-
-            if (topPosition || bottomPosition) {
+            if (wrapTOCBounds.top > 70) {
                 floatingTOC.classList.remove("fixed");
-                floatingTOC.style.maxHeight = "";
-                floatingTOC.style.top = "";
-
-                if (bottomPosition) {
-                    floatingTOC.style.marginTop = containerBounds.height - floatingTOC.getBoundingClientRect().height + "px";
-                }
             } else {
-                floatingTOC.classList.add("fixed");
                 floatingTOC.style.top = 70 + "px";
-
-                floatingTOC.style.maxHeight = maxTOCheight + "px";
+                floatingTOC.classList.add("fixed");
             }
         }
         // ensure TOC is correctly position on reload
@@ -227,7 +210,6 @@
             updateActiveTOCLink();
             updateFloatingTOCPosition();
         });
-        window.addEventListener('resize', updateFloatingTOCPosition);
     }
 
     initLanguageSelection();

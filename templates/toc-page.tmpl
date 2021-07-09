@@ -38,9 +38,11 @@
 
         {% set toclist = body|toclist %}
         {% if toclist %}
-          <div id="toc-float" class="toc toc-list">
-            <p>Index</p>
-            {{toc(toclist)}}
+          <div id="toc-wrap">
+            <div id="toc-float" class="toc toc-list">
+              <p>Index</p>
+              {{toc(toclist)}}
+            </div>
           </div>
         {% endif %}
       {% endif %}
