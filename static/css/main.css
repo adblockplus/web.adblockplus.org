@@ -260,6 +260,14 @@ div.animation[started="true"]
 
 @media(min-width: 768px)
 {
+  h1 span
+  {
+    display: block;
+  }
+}
+
+@media(min-width: 768px)
+{
   .content h1 { line-height: 1.3; }
 
   /* Root font size is 18px */
