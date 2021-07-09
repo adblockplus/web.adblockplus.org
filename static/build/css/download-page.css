@@ -1336,11 +1336,12 @@ a.icon-button:visited
   width: 0;
   height: 0;
   margin: 0em 0em 0em 0.255em;
-  vertical-align: .255em;
+  vertical-align: .155em;
   content: "";
   border-top: .3em solid;
   border-right: .3em solid transparent;
   border-left: .3em solid transparent;
+  color: #0797E1;
 }
 
 [dir="rtl"] #navbar-locale-selected:after
