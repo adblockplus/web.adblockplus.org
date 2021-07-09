@@ -1237,15 +1237,6 @@ a.download-button:visited
 .yandexbrowser #install-button
 { padding-left: 72px; }
 
-@media(max-width: 575px)
-{
-  .button
-  {
-    display: block;
-    width: 100%;
-  }
-}
-
 .button.primary
 {
   color: #fff !important;

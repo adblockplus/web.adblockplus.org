@@ -85,6 +85,14 @@ html[dir="rtl"] #intro-standard ul li
 
 #intro-standard ul li .avoid-wrap { text-indent: 0em; }
 
+@media (max-width: 1024px)
+{
+  #intro-standard ul li
+  {
+    background-image: none;
+  }
+}
+
 @media (min-width: 452px)
 {
   #intro-android,
@@ -113,11 +121,6 @@ html[dir="rtl"] #intro-standard ul li
     padding-left: 3em;
     padding-right: 3em;
   }
-}
-
-@media(min-width: 768px)
-{
-  #intro-standard { padding-top: 7em; }
 }
 
 @media(min-width: 1024px)
@@ -163,7 +166,15 @@ html[dir="rtl"] #intro-standard ul li
   overflow: hidden;
 }
 
-@media(min-width: 768px)
+@media(max-width: 1024px)
+{
+  #intro-graphic
+  {
+    width: 100%;
+  }
+}
+
+@media(min-width: 1024px)
 {
   #intro-graphic
   {
@@ -173,7 +184,18 @@ html[dir="rtl"] #intro-standard ul li
 }
 
 /* Fixes img max-width bug in IE */
-#intro-graphic img { width: 100%; }
+#intro-graphic img
+{
+  width: 100%;
+}
+
+@media (max-width: 1024px)
+{
+  #intro-graphic img
+  {
+    max-width: 350px;
+  }
+}
 
 @media (max-width: 767px)
 {
@@ -184,7 +206,7 @@ html[dir="rtl"] #intro-standard ul li
 
 #intro-graphic-small
 {
-  min-width: 70%;
+  min-width: 50%;
   max-width: 300px;
   margin: 0 auto;
   display: block;
@@ -215,6 +237,15 @@ html[dir="rtl"] #intro-standard ul li
   /* Spacing is provided by the #intro-standard section */
   margin-top: 0;
   overflow: auto;
+}
+
+@media(max-width: 1024px)
+{
+  #intro-standard
+  {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media(min-width: 992px)
@@ -521,6 +552,16 @@ html[dir="rtl"] #intro-standard ul li
 {
   max-width: 540px;
   width: 100%;
+}
+
+@media (max-width: 889px)
+{
+  #abb-cross-promotion .phablet-width
+  {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 768px)
