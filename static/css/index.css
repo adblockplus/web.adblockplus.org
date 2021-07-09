@@ -251,68 +251,6 @@ html[dir="rtl"] #intro-standard ul li
   margin: 1.5em 0;
 }
 
-
-/* Install button
- ******************************************************************************/
-
-#install-button
-{
-  color: #fff;
-  position: relative;
-  padding: 14px 18px 14px 72px;
-  font-size: 20px;
-  line-height: 1.4;
-  text-align: left;
-  text-transform: uppercase;
-  background-color: #0AAD03;
-  border-radius: 5px;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.16);
-}
-
-#install-button:hover,
-#install-button:focus
-{
-  background-color: #258333;
-}
-
-#install-button::before
-{
-  display: block;
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 18px;
-  margin-top: -20px;
-  height: 40px;
-  width: 40px;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-}
-
-/* WARNING: Selectors below must be added to the padding-left rule after too */
-
-.chrome .hero-download-button::before { background-image: url("/img/chrome.svg"); }
-.chromium .hero-download-button::before { background-image: url("/img/chrome.svg"); }
-.firefox .hero-download-button::before { background-image: url("/img/firefox.svg"); }
-.safari .hero-download-button::before { background-image: url("/img/safari.svg"); }
-.msie .hero-download-button::before { background-image: url("/img/msie.svg"); }
-.msedge .hero-download-button::before,
-.msedge_chromium .hero-download-button::before{ background-image: url("/img/msedge.svg"); }
-.opera .hero-download-button::before { background-image: url("/img/opera.svg"); }
-.yandexbrowser .hero-download-button::before { background-image: url("/img/yandex.svg"); }
-
-.chrome #install-button,
-.chromium #install-button,
-.firefox #install-button,
-.safari #install-button,
-.msie #install-button,
-.msedge #install-button,
-.msedge_chromium #install-button,
-.opera #install-button,
-.yandexbrowser #install-button
-{ padding-left: 72px; }
-
 #hero-download-video
 {
   /* add space above on phones & tablets */

@@ -306,6 +306,120 @@ div.animation[started="true"]
   text-decoration: none;
 }
 
+a.download-button,
+a.download-button:hover,
+a.download-button:active,
+a.download-button:visited
+{
+  color: #fff;
+}
+
+.download-button
+{
+  position: relative;
+  padding: 14px 18px 14px 72px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: left;
+  background-color: #0AAD03;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.16);
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+.download-button:hover,
+.download-button:focus
+{
+  background-color: #258333;
+}
+
+.download-button::before
+{
+  display: block;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 18px;
+  margin-top: -20px;
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+#abp_chrome.download-button::before
+{
+  background-image: url("/img/chrome.svg");
+}
+
+#abp_chromium.download-button::before
+{
+  background-image: url("/img/chrome.svg");
+}
+
+#abp_firefox.download-button::before
+{
+  background-image: url("/img/firefox.svg");
+}
+
+#abp_safari.download-button::before
+{
+  background-image: url("/img/safari.svg");
+}
+
+#abp_msie.download-button::before
+{
+  background-image: url("/img/msie.svg");
+}
+
+#abp_msedge.download-button::before,
+#abp_msedge_chromium.download-button::before
+{
+  background-image: url("/img/msedge.svg");
+}
+
+#abp_opera.download-button::before
+{
+  background-image: url("/img/opera.svg");
+}
+
+#abp_yandexbrowser.download-button::before
+{
+  background-image: url("/img/yandex.svg");
+}
+
+.download-options .download-button span
+{
+  display: inline-block;
+}
+
+/* WARNING: Selectors below must be added to the padding-left rule after too */
+
+.chrome .hero-download-button::before { background-image: url("/img/chrome.svg"); }
+.chromium .hero-download-button::before { background-image: url("/img/chrome.svg"); }
+.firefox .hero-download-button::before { background-image: url("/img/firefox.svg"); }
+.safari .hero-download-button::before { background-image: url("/img/safari.svg"); }
+.msie .hero-download-button::before { background-image: url("/img/msie.svg"); }
+.msedge .hero-download-button::before,
+.msedge_chromium .hero-download-button::before{ background-image: url("/img/msedge.svg"); }
+.opera .hero-download-button::before { background-image: url("/img/opera.svg"); }
+.yandexbrowser .hero-download-button::before { background-image: url("/img/yandex.svg"); }
+
+.chrome #install-button,
+.chromium #install-button,
+.firefox #install-button,
+.safari #install-button,
+.msie #install-button,
+.msedge #install-button,
+.msedge_chromium #install-button,
+.opera #install-button,
+.yandexbrowser #install-button
+{ padding-left: 72px; }
+
 @media(max-width: 575px)
 {
   .button
@@ -350,17 +464,18 @@ div.animation[started="true"]
 
 a.icon-button
 {
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
+  padding: 14px 18px 14px 72px;
+  border-radius: 5px;
   text-transform: uppercase;
-  font-weight: normal;
-  background-color: #3d9c4f;
+  font-weight: bold;
+  background-color: #0AAD03;
   color: #fff;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.16);
 }
 
 a.icon-button:visited
 {
-  background-color: #3d9c4f;
+  background-color: #258333;
   color: #fff;
 }
 
