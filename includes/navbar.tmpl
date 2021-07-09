@@ -6,25 +6,24 @@
   <div class="container">
     {{ "index" | linkify(id="navbar-logo") }}
       <img
-        src="/img/navbar-logo.svg"
-        alt="">
-      <span>Adblock <strong>Plus</strong></span>
+        src="/img/adblockplus-logo-color.svg"
+        alt="Adblock Plus logo in navigation menu">
     </a>
     <a href="#" id="navbar-menu-toggle">
       <img
-        src="/img/menu-toggle.svg"
-        alt="">
+        src="/img/menu-toggle-black.svg"
+        alt="Top menu toggle">
     </a>
     <ul id="navbar-menu">
       {% for pagename in ["download", "about"] %}
-        <li class="uppercase {{ "active" if page == pagename else "" }}">
+        <li class="{{ "active" if page == pagename else "" }}">
           {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
         </li>
       {% endfor %}
-      <li class="uppercase">
+      <li>
         <a href="https://help.eyeo.com" target="_blank">{{ get_string("help", "menu") }}</a>
       </li>
-      <li class="uppercase {{ "active" if page == "donate" else "" }}">
+      <li class="{{ "active" if page == "donate" else "" }}">
         {{ "donate" | linkify }}{{ get_string("donate", "menu") }}</a>
       </li>
       <li id="navbar-locale-menubar">

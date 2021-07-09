@@ -1,4 +1,5 @@
 title=Allowing acceptable ads in Adblock Plus
+template=toc-page
 
 <head>
   <meta content="{{meta-description[Description meta tag content inside head tag] Adblock Plus introduces the Acceptable Ads initiative: Support websites that rely on advertising but choose to do it in a nonintrusive way.}}" name="description" />
