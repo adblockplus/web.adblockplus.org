@@ -166,7 +166,7 @@
         // check if element exists due to using different templates
         if (!floatingTOC) return;
 
-        var wrapTOC = document.getElementById("toc-wrap");
+        var pageContainer = document.querySelector(".toc-page-container");
 
         function updateActiveTOCLink() {
             var headingLinks = document.querySelectorAll("#toc-float a");
@@ -194,13 +194,22 @@
         updateActiveTOCLink();
 
         function updateFloatingTOCPosition() {
-            var wrapTOCBounds = wrapTOC.getBoundingClientRect();
+            var containerBounds = pageContainer.getBoundingClientRect();
+            var topPosition = containerBounds.top > 70;
+            var bottomPosition = !topPosition && window.innerHeight - containerBounds.bottom > 20;
 
-            if (wrapTOCBounds.top > 70) {
-                floatingTOC.classList.remove("fixed");
-            } else {
+            floatingTOC.classList.remove("fixed");
+            floatingTOC.style.marginTop = "";
+            floatingTOC.style.maxHeight = "";
+
+            if (bottomPosition) {
+                floatingTOC.style.marginTop = containerBounds.height - floatingTOC.getBoundingClientRect().height + "px";
+            } else if (!topPosition){
                 floatingTOC.style.top = 70 + "px";
                 floatingTOC.classList.add("fixed");
+
+                // added floatingTOC.getBoundingClientRect().top to account for floatingTOC CSS margin
+                floatingTOC.style.maxHeight = window.innerHeight - floatingTOC.getBoundingClientRect().top - 20 + "px";
             }
         }
         // ensure TOC is correctly position on reload
@@ -210,6 +219,7 @@
             updateActiveTOCLink();
             updateFloatingTOCPosition();
         });
+        window.addEventListener('resize', updateFloatingTOCPosition);
     }
 
     initLanguageSelection();
