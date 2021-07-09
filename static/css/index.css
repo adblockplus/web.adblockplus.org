@@ -212,14 +212,14 @@ html[dir="rtl"] #intro-standard ul li
   display: block;
 }
 
-@media (min-width: 1024px)
+@media (min-width: 1025px)
 {
   #intro-graphic-small { display: none; }
 }
 
 #intro-graphic-large { display: none; }
 
-@media (min-width: 1024px)
+@media (min-width: 1025px)
 {
   #intro-graphic-large { display: block; }
 }
