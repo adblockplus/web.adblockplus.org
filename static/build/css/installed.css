@@ -1487,8 +1487,18 @@ a.icon-button:visited
 #footer
 {
   color: #ececec;
-  background-color: #292929;
+  background-color: #000;
   font-size: 0.9em;
+}
+
+#footer .footer-links
+{
+  background: #585858;
+}
+
+#footer .footer-links .container
+{
+  padding: 3em 1em;
 }
 
 #footer .row
@@ -1507,20 +1517,11 @@ a.icon-button:visited
 
 #footer .footer-heading
 {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
+  color: #CDCDCD;
   margin-top: 2rem;
-}
-
-#footer .footer-heading:after
-{
-  content: "";
-  display: block;
-  width: 24px;
-  height: 4px;
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  background-color: #ececec;
+  text-transform: uppercase;
 }
 
 #footer ul
@@ -1551,11 +1552,13 @@ a.icon-button:visited
 
 #social-list .footer-social-heading
 {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
   margin-top: 0;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: bottom;
+  text-transform: uppercase;
+  color: #CDCDCD;
 }
 
 #social-list ul
@@ -1613,6 +1616,12 @@ a.icon-button:visited
 /* #footer #footer-legal
  ******************************************************************************/
 
+#footer #footer-legal #copyright-notice,
+#footer #footer-legal #legal-list
+{
+  margin: 2em 0;
+}
+
 @media (max-width: 767px) {
   #footer-legal { margin-top: 3em; }
 }
@@ -1633,24 +1642,19 @@ a.icon-button:visited
   float: right;
 }
 
-#legal-list li:after
-{
-  margin: 0em 0.375em;
-  content: " ";
+@media(min-width: 1200px) {
+  #legal-list li
+  {
+    padding-left: 1.5em;
+  }
 }
 
-/* IE9+ only */
-#legal-list li::after
-{
-  content: "|"
+@media(max-width: 1200px) {
+  #legal-list li
+  {
+    padding-right: 1.5em;
+  }
 }
-
-#legal-list li:last-of-type::after
-{
-  content: none;
-}
-
-#copyright-notice a { font-weight: 600; }
 
 /* float copyright and legal links left and right on ~desktop */
 @media(min-width: 1200px)
