@@ -2477,6 +2477,11 @@ small,
   color: #4A4A4A;
 }
 
+.download-icon
+{
+  padding: 1em 0;
+}
+
 .download-header h1,
 .download-header p,
 .download-options .download-desktop .rating p
@@ -2492,13 +2497,6 @@ small,
   font-size: 14px;
 }
 
-.download-header,
-.download-options
-{
-  padding-left: 2em;
-  padding-right: 2em;
-}
-
 .download-options
 {
   display: flex;
@@ -2512,7 +2510,46 @@ small,
 {
   display: flex;
   flex-direction: column;
-  padding: 0 0 2em;
+  justify-content: space-between;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+}
+
+.mobile-products .download-abb,
+.mobile-products .download-mobile
+{
+  width: 40%;
+}
+
+.mobile-products .download-mobile {
+  margin-right: auto;
+  margin-top: 2em;
+}
+
+@media(max-width: 1024px)
+{
+  .mobile-products .container
+  {
+    flex-wrap: wrap;
+  }
+  .mobile-products .download-abb,
+  .mobile-products .download-mobile
+  {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 0 2em;
+  }
+  .download-options section
+  {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.5em;
+  }
+  .download-desktop
+  {
+    margin: 2.5em 0;
+  }
 }
 
 /* iOS device (any browser) or an
@@ -2566,9 +2603,10 @@ Android device using Samsung Internet or Firefox */
   font-weight: 700;
 }
 
+
 .download-options .description
 {
-  text-align: left;
+  text-align: center;
 }
 
 .download-options .tab-text-contents h2,
@@ -2666,51 +2704,20 @@ Android device using Samsung Internet or Firefox */
 .app-store-button.abb-android img,
 .app-store-button.abp-ios-safari img {  display: inline-block; }
 
+.app-store-button img
+{
+  margin: 1em 1em 0 0;
+}
+
 @media(min-width: 768px)
 {
   .download-header
   {
-    padding: 4em 0;
+    padding: 3em 0 0;
   }
-
-  .download-options
-  {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  .download-options section
-  {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 0 7em;
-  }
-
-  .download-options .tab-text-contents
-  {
-    text-align: left;
-  }
-
   .tabs-menu li
   {
     display: inline;
-  }
-
-  .download-options .tab-text-contents
-  {
-    width: 68%;
-    padding-right: 3em;
-  }
-
-  .download-options .tab-media-contents
-  {
-    width: 36%;
-    padding-right: 1em;
-  }
-
-  .download-options .tab-media-contents img
-  {
-    padding: 3em;
   }
 
   .download-options .download-desktop
@@ -2744,6 +2751,10 @@ Android device using Samsung Internet or Firefox */
 
 @media(min-width: 1025px)
 {
+  .download-options .tab-text-contents
+  {
+    text-align: left;
+  }
   .download-options
   {
     flex-direction: column-reverse;
@@ -2780,12 +2791,6 @@ Android device using Samsung Internet or Firefox */
     display: block;
   }
 
-  .download-options .tab-text-contents
-  {
-    width: 54%;
-    padding-right: 0;
-  }
-
   .download-options .download-desktop .tab-text-contents
   {
     width: 54%;
@@ -2807,7 +2812,8 @@ Android device using Samsung Internet or Firefox */
 
   .download-options .description
   {
-    margin-top: 3em;
+    margin-top: 1.5em;
+    text-align: left;
   }
 }
 
@@ -2815,7 +2821,7 @@ Android device using Samsung Internet or Firefox */
 {
   .download-header
   {
-    padding: 6em 0;
+    padding: 4em 0 2em;
   }
 
   .download-options .tab-media-contents
@@ -2925,4 +2931,22 @@ Android device using Samsung Internet or Firefox */
 .download-options .download-button span
 {
   display: inline-block;
+}
+
+.app-icons img
+{
+	padding-right: 0.8em;
+}
+
+@media(max-width: 1024px) {
+  .download-mobile .app-icons img
+  {
+    height: 65px;
+    width: auto;
+  }
+  .download-abb .app-icons img
+  {
+    height: 100px;
+    width: auto;
+  }
 }

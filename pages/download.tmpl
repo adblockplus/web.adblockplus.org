@@ -5,13 +5,23 @@ subheading=Surf the web with no annoying ads in any browser and supported platfo
 template=minimal
 
 <header class="download-header section content container text-center">
+    <img
+        class="download-icon"
+        src="/img/download-icon-illustration.svg"
+        alt="{{ "Illustration of download icon" | translate("download-icon-alt", "Alt text") }}">
     <h1>{{ heading | translate("download-heading", "Heading") }}</h1>
     <p class="dark-grey">{{ subheading | translate("download-subheading", "Subheading") }}</p>
 </header>
 
-<div id="supported-devices" 
-  class="download-options container text-center content">
-  <? include download/abb ?>
-  <? include download/mobile ?>
-  <? include download/desktop ?>
+<div id="supported-devices"
+  class="download-options text-center">
+  <div class="mobile-products bg-secondary">
+    <section class="container content">
+      <? include download/abb ?>
+      <? include download/mobile ?>
+    </section>
+  </div>
+  <div class="container content">
+    <? include download/desktop ?>
+  </div>
 </div>

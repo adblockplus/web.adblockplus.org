@@ -6,6 +6,11 @@
   color: #4A4A4A;
 }
 
+.download-icon
+{
+  padding: 1em 0;
+}
+
 .download-header h1,
 .download-header p,
 .download-options .download-desktop .rating p
@@ -21,13 +26,6 @@
   font-size: 14px;
 }
 
-.download-header,
-.download-options
-{
-  padding-left: 2em;
-  padding-right: 2em;
-}
-
 .download-options
 {
   display: flex;
@@ -41,7 +39,46 @@
 {
   display: flex;
   flex-direction: column;
-  padding: 0 0 2em;
+  justify-content: space-between;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+}
+
+.mobile-products .download-abb,
+.mobile-products .download-mobile
+{
+  width: 40%;
+}
+
+.mobile-products .download-mobile {
+  margin-right: auto;
+  margin-top: 2em;
+}
+
+@media(max-width: 1024px)
+{
+  .mobile-products .container
+  {
+    flex-wrap: wrap;
+  }
+  .mobile-products .download-abb,
+  .mobile-products .download-mobile
+  {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 0 2em;
+  }
+  .download-options section
+  {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.5em;
+  }
+  .download-desktop
+  {
+    margin: 2.5em 0;
+  }
 }
 
 /* iOS device (any browser) or an
@@ -225,23 +262,6 @@ Android device using Samsung Internet or Firefox */
     display: inline;
   }
 
-  .download-options .tab-text-contents
-  {
-    width: 68%;
-    padding-right: 3em;
-  }
-
-  .download-options .tab-media-contents
-  {
-    width: 36%;
-    padding-right: 1em;
-  }
-
-  .download-options .tab-media-contents img
-  {
-    padding: 3em;
-  }
-
   .download-options .download-desktop
   {
     flex-direction: column;
@@ -309,12 +329,6 @@ Android device using Samsung Internet or Firefox */
     display: block;
   }
 
-  .download-options .tab-text-contents
-  {
-    width: 54%;
-    padding-right: 0;
-  }
-
   .download-options .download-desktop .tab-text-contents
   {
     width: 54%;
@@ -344,7 +358,7 @@ Android device using Samsung Internet or Firefox */
 {
   .download-header
   {
-    padding: 6em 0;
+    padding: 4em 0 2em;
   }
 
   .download-options .tab-media-contents

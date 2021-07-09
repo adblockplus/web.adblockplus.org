@@ -13,7 +13,7 @@
   }
 ] %}
 
-<section class="download-mobile"
+<div class="download-mobile"
   itemscope itemtype="https://schema.org/SoftwareApplication">
   <meta itemprop="applicationCategory" content="BrowserApplication">
   <meta itemprop="applicationCategory" content="UtilitiesApplication">
@@ -22,11 +22,6 @@
   <meta itemprop="description" content="{{description}}">
   <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     <meta itemprop="price" content="0">
-  </div>
-  <div class="tab-media-contents">
-    <img
-      src="/img/mobile-abp.svg"
-      alt="{{ "Illustration of Adblock Plus ad blocking app" | translate("download-mobile-icon-alt", "Alt text") }}">
   </div>
   <div class="tab-text-contents">
     <h2>{{ "Block ads on your mobile browser" | translate("download-mobile-title", "Heading") }}</h2>
@@ -63,4 +58,4 @@
       {% endfor %}
     </div>
   </div>
-</section>
+</div>
