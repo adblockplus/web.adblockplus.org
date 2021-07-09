@@ -966,7 +966,8 @@ pre
     width: 30%;
     max-width: 330px;
     float: left;
-    margin-top: 2em;
+    margin-top: 1em;
+    overflow: auto;
   }
 
   .toc.toc-list.fixed
