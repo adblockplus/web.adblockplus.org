@@ -532,6 +532,15 @@ html[dir="rtl"] #intro-standard ul li
   }
 }
 
+.abb-arrow-container
+{
+  display: none;
+}
+[lang="en"] .abb-arrow-container
+{
+  display: block;
+}
+
 @media (min-width: 890px)
 {
   .abb-arrow-container { position: relative; }
