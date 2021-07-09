@@ -251,11 +251,11 @@ div.animation[started="true"]
 
 /* Root font size is 16px */
 .content h1,
-.content .h1 { font-size: 32px; }
-.content h2 { font-size: 24px; }
-.content h3 { font-size: 1.2em; }
-.content h4 { font-size: 1.1em; }
-.content h5 { font-size: 1em; }
+.content .h1 { font-size: 42px; }
+.content h2 { font-size: 34px; }
+.content h3 { font-size: 1.8em; }
+.content h4 { font-size: 1.4em; }
+.content h5 { font-size: 1.2em; }
 .content h6 { font-size: 16px; }
 
 @media(min-width: 768px)
@@ -264,9 +264,10 @@ div.animation[started="true"]
 
   /* Root font size is 18px */
   .content h1,
-  .content .h1 { font-size: 42px; }
-  .content h2 { font-size: 32px; }
-  .content h3 { font-size: 24px; }
+  .content .h1 { font-size: 52px; }
+  .content h2 { font-size: 42px; }
+  .content h3,
+  .content .h3 { font-size: 32px; }
   .content h4 { font-size: 1.2em; }
   .content h5 { font-size: 1.1em; }
   .content h6 { font-size: 18px; }
