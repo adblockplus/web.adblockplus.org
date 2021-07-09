@@ -126,19 +126,14 @@ Android device using Samsung Internet or Firefox */
   text-decoration: none;
 }
 
-.download-options .tab-text-contents p a,
-.download-options .tab-text-contents p a:hover,
-.download-options .tab-text-contents p a:active,
-.download-options .tab-text-contents p a:visited
-{
-  color: #212121;
-  font-weight: 700;
-}
-
-
 .download-options .description
 {
   text-align: center;
+}
+
+.download-options .description a
+{
+  color: #212121;
 }
 
 .download-options .tab-text-contents h2,
@@ -147,13 +142,10 @@ Android device using Samsung Internet or Firefox */
   margin: 0;
 }
 
-.download-options .tab-text-contents .tou-note a,
-.download-options .tab-text-contents .tou-note a:hover,
-.download-options .tab-text-contents .tou-note a:active,
-.download-options .tab-text-contents .tou-note a:visited
+.download-options .tab-text-contents .tou-note
 {
-  color: #ED1E45;
-  font-weight: 300;
+  font-size: 14px;
+  margin-top: 1em;
 }
 
 .show-mobile
