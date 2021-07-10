@@ -2423,6 +2423,12 @@ h2.donation-heading { font-size: 1.2em; }
   overflow: hidden;
 }
 
+.stripe-button-lock,
+.stripe-button-text
+{
+  vertical-align: middle;
+}
+
 .stripe-button-lock
 {
   height: 16px;
