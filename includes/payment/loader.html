@@ -24,17 +24,17 @@
 </div>
 
 <script>
-  showPageLoader()
+  'use strict';
+
+  showPageLoader();
 
   function showPageLoader() {
-
     var doc = document;
     var start = Date.now();
     var bar = doc.querySelector(".loader-progress");
     var doneText = doc.querySelector(".loader-progress-done");
 
-    function loadingOriginal() {
-
+    (function loadingOriginal() {
       var runLength = 2500;
       var pctTime = (Date.now() - start) / runLength;
       var pctDone = Math.pow(pctTime, 4);
@@ -42,9 +42,9 @@
       bar.value = pctDone;
 
       if (pctDone < 1) {
-        window.setTimeout(arguments.callee, 20);
-        doc.body.classList.add("page-loading");
-        return;
+        window.setTimeout(loadingOriginal, 20);
+
+        return doc.body.classList.add("page-loading");
       }
 
       window.setTimeout(function() {
@@ -56,8 +56,6 @@
         doc.body.classList.add("page-loaded");
       }, 1000);
 
-    }
-
-    loadingOriginal();
+    })();
   }
 </script>
