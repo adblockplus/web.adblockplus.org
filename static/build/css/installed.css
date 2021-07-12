@@ -1216,15 +1216,15 @@ a.download-button:visited
 
 /* WARNING: Selectors below must be added to the padding-left rule after too */
 
-.chrome .hero-download-button::before { background-image: url("../../img/chrome.svg"); }
-.chromium .hero-download-button::before { background-image: url("../../img/chrome.svg"); }
-.firefox .hero-download-button::before { background-image: url("../../img/firefox.svg"); }
-.safari .hero-download-button::before { background-image: url("../../img/safari.svg"); }
-.msie .hero-download-button::before { background-image: url("../../img/msie.svg"); }
-.msedge .hero-download-button::before,
-.msedge_chromium .hero-download-button::before{ background-image: url("../../img/msedge.svg"); }
-.opera .hero-download-button::before { background-image: url("../../img/opera.svg"); }
-.yandexbrowser .hero-download-button::before { background-image: url("../../img/yandex.svg"); }
+.chrome .download-button::before { background-image: url("../../img/chrome.svg"); }
+.chromium .download-button::before { background-image: url("../../img/chrome.svg"); }
+.firefox .download-button::before { background-image: url("../../img/firefox.svg"); }
+.safari .download-button::before { background-image: url("../../img/safari.svg"); }
+.msie .download-button::before { background-image: url("../../img/msie.svg"); }
+.msedge .download-button::before,
+.msedge_chromium .download-button::before{ background-image: url("../../img/msedge.svg"); }
+.opera .download-button::before { background-image: url("../../img/opera.svg"); }
+.yandexbrowser .download-button::before { background-image: url("../../img/yandex.svg"); }
 
 .chrome #install-button,
 .chromium #install-button,
@@ -1240,18 +1240,18 @@ a.download-button:visited
 .button.primary
 {
   color: #fff !important;
-  background-color: #c70d2c !important;
+  background-color: #0797E1 !important;
   box-shadow: 0px 2px 5px #95989A;
 }
 
 .button.primary:hover
 {
-  background-color: #E00F32 !important;
+  background-color: #0390d8 !important;
 }
 
 .button.primary:active
 {
-  background-color: #AD102A !important;
+  background-color: #0390d8 !important;
 }
 
 .button.accent,
@@ -1314,7 +1314,7 @@ a.icon-button:visited
 
 .fg-accent
 {
-  color: #077CA6;
+  color: #0797E1;
 }
 
 .bg-secondary
