@@ -1470,7 +1470,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
     }
 
     function cardBrand(brand) {
-      if (['diners', 'discover', 'jcb', 'unionpay'].indexOf(brand) != -1)
+      if (['visa', 'mastercard', 'amex'].indexOf(brand) == -1)
         errorText(text.notSupported);
     }
 
