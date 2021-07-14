@@ -1090,7 +1090,7 @@ root.paypalProvider = {
       image_url: payment.image || siteURL + "../../img/adblock-plus-paypal.png",
       return: payment.successURL || siteURL + "/payment-complete",
       cancel_return: payment.cancelURL || root.location.href,
-      no_note: 1,
+      no_note: "trom test Note metadata",
       currency_code: payment.currency,
       lc: getLocale(payment.lang || doc.documentElement.lang)
     };
