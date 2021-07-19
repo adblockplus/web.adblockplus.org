@@ -58,7 +58,7 @@ ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
 
-# 760 + 758
+# 760
 <FilesMatch ^installed$>
   GeoIPEnable On
 </FilesMatch>
@@ -70,11 +70,3 @@ RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-0" [NC,L]
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
 RewriteCond %{TIME_SEC} [02468]$
 RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-1" [NC,L]
-
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^US$
-RewriteCond %{TIME_SEC} [13579]$
-RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-2" [NC,L]
-
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^US$
-RewriteCond %{TIME_SEC} [02468]$
-RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-3" [NC,L]
