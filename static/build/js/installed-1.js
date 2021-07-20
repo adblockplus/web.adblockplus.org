@@ -1120,6 +1120,24 @@ root.paypalProvider = {
       });
     }
 
+    if (subscriptionType[payment.type] === 'M')
+    {
+      payment.custom = payment.custom + "-m";
+
+      _.extend(submission, {
+        custom: payment.custom,
+      });
+    }
+
+    if (subscriptionType[payment.type] === 'Y')
+    {
+      payment.custom = payment.custom + "-y";
+
+      _.extend(submission, {
+        custom: payment.custom,
+      });
+    }
+
     var form = doc.createElement("form");
     form.target = "_blank";
     form.method = "post";
