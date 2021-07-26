@@ -1,6 +1,5 @@
 <head>
-  <link rel="stylesheet" href="/css/update.css">
-  <link rel="stylesheet" href="/css/payment/stripe-modal.css">
+  <link rel="stylesheet" href="build/css/update.css">
   <script>window.campaignID = 2;</script>
 </head>
 
@@ -58,4 +57,6 @@
   <a href="https://adblockplus.org/privacy">{{ privacy-policy[footer link] Privacy Policy }}</a>
 </footer>
 
-<script src="/js/address-masking.js"></script>
+<script src="/build/js/update.min.js"></script>
+
+<? include payment/config/stripe ?>

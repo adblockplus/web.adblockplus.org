@@ -102,7 +102,6 @@
         var navbarHeight = navbar.offsetHeight;
         var scrollHandled = false;
         var lastScrollTop = 0;
-        var desktopBreakpoint = 991;
         var newScrollAction = false;
 
         // IE9 does not support offsetHeight when element is fixed
@@ -118,20 +117,15 @@
         });
 
         setInterval(function() {
-            if(window.innerWidth > desktopBreakpoint) {
-                if (
-                  !scrollHandled &&
-                  ( // locale menu is not visible
-                    !navbarLocale || // our blog doesn't have a locale menu
-                    !navbarLocale.classList.contains("visible")
-                  )
-                ) {
-                    scrollHandled = handleScroll();
-                }
-            }
-            else {
-                navbar.style.top = 0;
-            }
+          if (
+            !scrollHandled &&
+            ( // locale menu is not visible
+              !navbarLocale || // our blog doesn't have a locale menu
+              !navbarLocale.classList.contains("visible")
+            )
+          ) {
+              scrollHandled = handleScroll();
+          }
         }, 250);
 
         function handleScroll() {
