@@ -651,364 +651,381 @@ m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.st
 /*global PaymentForm, updatePaymentConfig, _*/
 (function(root, doc, _) {
 /**
- * Construct payment form
- * @constructor
- * @requires _.template
- * @requires _.each
- * @param {Object[]} currencies - Ordered collection of currencies indexed by name
- * @param {String} currencies[].sign - Sign before currency amount
- * @param {Object} currencies[].donation - One time payment options for currency
- * @param {Number[]} currencies[].donation.amounts - Amounts offered for one time payment
- * @param {Number} currencies[].donation.placeholder - Custom amount placeholder for one time payment
- * @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
- * @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
- * @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
- * @param {Object=} currencies[].yearlySubscription - (optional) yearly payment options for currency
- * @param {Number[]} currencies[].yearlySubscription.amounts - Amounts offered for yearly payment
- * @param {Number} currencies[].yearlySubscription.placeholder - Custom amount placeholder for yearly
- */
+* Construct payment form
+* @constructor
+* @requires _.template
+* @requires _.each
+* @param {Object[]} currencies - Ordered collection of currencies indexed by name
+* @param {String} currencies[].sign - Sign before currency amount
+* @param {Object} currencies[].donation - One time payment options for currency
+* @param {Number[]} currencies[].donation.amounts - Amounts offered for one time payment
+* @param {Number} currencies[].donation.placeholder - Custom amount placeholder for one time payment
+* @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
+* @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
+* @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
+* @param {Object=} currencies[].yearlySubscription - (optional) yearly payment options for currency
+* @param {Number[]} currencies[].yearlySubscription.amounts - Amounts offered for yearly payment
+* @param {Number} currencies[].yearlySubscription.placeholder - Custom amount placeholder for yearly
+*/
 function PaymentForm(currencies)
 {
-  var defaultCurrency, hasMultiCurrency;
+var defaultCurrency, hasMultiCurrency;
 
-  for (var currencyName in currencies)
+for (var currencyName in currencies)
+{
+  if (!defaultCurrency)
   {
-    if (!defaultCurrency)
-    {
-      defaultCurrency = currencyName;
-    }
-    else
-    {
-      hasMultiCurrency = true;
-      break;
-    }
-  }
-
-  if (hasMultiCurrency)
-  {
-    doc.body.classList.add("has-multi-currency");
+    defaultCurrency = currencyName;
   }
   else
   {
-    doc.body.classList.add("has-single-currency");
-    doc.querySelector(".donation-heading .currency").textContent = defaultCurrency.toUpperCase();
+    hasMultiCurrency = true;
+    break;
   }
+}
 
-  var paymentCurrency = doc.getElementById("payment-currencies");
+if (hasMultiCurrency)
+{
+  doc.body.classList.add("has-multi-currency");
+}
+else
+{
+  doc.body.classList.add("has-single-currency");
+  doc.querySelector(".donation-heading .currency").textContent = defaultCurrency.toUpperCase();
+}
 
-  var theCurrencyOptions = _.template(
-    doc.getElementById("payment-currency-options").innerHTML
-  );
+var paymentCurrency = doc.getElementById("payment-currencies");
 
-  paymentCurrency.innerHTML = theCurrencyOptions({
-    currencies: currencies
-  });
+var theCurrencyOptions = _.template(
+  doc.getElementById("payment-currency-options").innerHTML
+);
 
-  var donationAmounts = doc.getElementById("donation-amounts");
+paymentCurrency.innerHTML = theCurrencyOptions({
+  currencies: currencies
+});
 
-  var subscriptionAmounts = doc.getElementById("subscription-amounts");
-  
-  var yearlySubscriptionAmounts =
-  doc.getElementById("yearly-subscription-amounts");
+var donationAmounts = doc.getElementById("donation-amounts");
 
-  var thePresetAmounts = _.template(
-    doc.getElementById("preset-payment-amounts").innerHTML
-  );
+var subscriptionAmounts = doc.getElementById("subscription-amounts");
 
-  var theCustomAmount = _.template(
-    doc.getElementById("custom-payment-amount").innerHTML
-  );
+var yearlySubscriptionAmounts =
+doc.getElementById("yearly-subscription-amounts");
 
-  function updateAmounts()
+var thePresetAmounts = _.template(
+  doc.getElementById("preset-payment-amounts").innerHTML
+);
+
+var theCustomAmount = _.template(
+  doc.getElementById("custom-payment-amount").innerHTML
+);
+
+function updateAmounts()
+{
+  var currency = currencies[paymentCurrency.value];
+
+  var donationOptions = {
+    type: "donation",
+    sign: currency.sign,
+    amounts: currency.donation.amounts,
+    placeholder: currency.donation.placeholder
+  };
+
+  donationAmounts.innerHTML = ""
+    + thePresetAmounts(donationOptions)
+    + theCustomAmount(donationOptions);
+
+  if (currency.subscription)
   {
-    var currency = currencies[paymentCurrency.value];
+    doc.body.classList.add("has-subscriptions");
+    doc.body.classList.add("has-yearly");
 
-    var donationOptions = {
-      type: "donation",
+    var subscriptionOptions = {
+      type: "monthly-subscription",
       sign: currency.sign,
-      amounts: currency.donation.amounts,
-      placeholder: currency.donation.placeholder
+      amounts: currency.subscription.amounts,
+      placeholder: currency.subscription.placeholder
     };
 
-    donationAmounts.innerHTML = ""
-      + thePresetAmounts(donationOptions)
-      + theCustomAmount(donationOptions);
-
-    if (currency.subscription)
-    {
-      doc.body.classList.add("has-subscriptions");
-      doc.body.classList.add("has-yearly");
-
-      var subscriptionOptions = {
-        type: "monthly-subscription",
+    subscriptionAmounts.innerHTML = ""
+      + thePresetAmounts(subscriptionOptions)
+      + theCustomAmount(subscriptionOptions);
+    
+    if (currency.yearly) {
+      var yearlySubscriptionOptions = {
+        type: "yearly-subscription",
         sign: currency.sign,
-        amounts: currency.subscription.amounts,
-        placeholder: currency.subscription.placeholder
+        amounts: currency.yearly.amounts,
+        placeholder: currency.yearly.placeholder
       };
 
-      subscriptionAmounts.innerHTML = ""
-        + thePresetAmounts(subscriptionOptions)
-        + theCustomAmount(subscriptionOptions);
-      
-      if (currency.yearly) {
-        var yearlySubscriptionOptions = {
-          type: "yearly-subscription",
-          sign: currency.sign,
-          amounts: currency.yearly.amounts,
-          placeholder: currency.yearly.placeholder
-        };
+      yearlySubscriptionAmounts.innerHTML = ""
+        + thePresetAmounts(yearlySubscriptionOptions)
+        + theCustomAmount(yearlySubscriptionOptions);
 
-        yearlySubscriptionAmounts.innerHTML = ""
-          + thePresetAmounts(yearlySubscriptionOptions)
-          + theCustomAmount(yearlySubscriptionOptions);
-
-      } else {
-        doc.body.classList.remove("has-yearly");
-      } 
-    }
-    else
-    {
-      doc.body.classList.remove("has-subscriptions");
-      subscriptionAmounts.innerHTML = "";
-    }
+    } else {
+      doc.body.classList.remove("has-yearly");
+    } 
   }
+  else
+  {
+    doc.body.classList.remove("has-subscriptions");
+    subscriptionAmounts.innerHTML = "";
+  }
+}
 
+updateAmounts();
+
+paymentCurrency.addEventListener("change", function(e) {
   updateAmounts();
+  validateCustomAmount(e);
+});
 
-  paymentCurrency.addEventListener("change", function(e) {
-    updateAmounts();
-    validateCustomAmount(e);
+function paymentMethod(e) {
+  if (e.target.value == "card") {
+    doc.body.classList.add("paypal-button-hidden");
+    doc.body.classList.remove("card-button-hidden");
+    
+  } else {
+    doc.body.classList.add("card-button-hidden");
+    doc.body.classList.remove("paypal-button-hidden");
+  }
+}
+
+document.getElementById("card")
+  .addEventListener("change", paymentMethod);
+  
+document.getElementById("paypal")
+  .addEventListener("change", paymentMethod);
+
+// uncheck donation amount when subscription amount is selected and vise versa
+function onFieldsetChange (otherFieldset, event)
+{
+  var otherFieldsetSelected = otherFieldset.querySelector("input:checked");
+
+  if (otherFieldsetSelected)
+  {
+    otherFieldsetSelected.checked = false;
+    validateCustomAmount(event);
+  }
+}
+
+donationAmounts.addEventListener(
+  "change",
+  onFieldsetChange.bind(this, subscriptionAmounts));
+
+donationAmounts.addEventListener(
+  "change",
+  onFieldsetChange.bind(this, yearlySubscriptionAmounts));
+
+subscriptionAmounts.addEventListener(
+  "change",
+  onFieldsetChange.bind(this, donationAmounts)
+);
+
+subscriptionAmounts.addEventListener(
+  "change",
+  onFieldsetChange.bind(this, yearlySubscriptionAmounts)
+);
+
+yearlySubscriptionAmounts.addEventListener(
+  "change",
+  onFieldsetChange.bind(this, donationAmounts)
+);
+
+yearlySubscriptionAmounts.addEventListener(
+  "change",
+  onFieldsetChange.bind(this, subscriptionAmounts)
+);
+
+// Select custom amount radio when textbox is focused
+function onCustomFieldSelect(event)
+{
+  if (event.target.type == "text")
+  {
+    event.target.parentElement.querySelector('input[type="radio"]').click();
+    validateCustomAmount(event);
+  }
+}
+
+donationAmounts.addEventListener("focus", onCustomFieldSelect, true);
+
+subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
+
+yearlySubscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
+
+function clearCustomAmountErrors()
+{
+  doc.body.classList.remove("minimum-donation-error");
+  doc.body.classList.remove("minimum-subscription-error");
+  doc.body.classList.remove("minimum-yearly-error");
+
+  enableForm(true);
+}
+
+function enableForm(enabled)
+{
+  _.each(
+    _.toArray(doc.querySelectorAll("#payment-providers button")),
+    function(button)
+    {
+      button.disabled = !enabled;
+    }
+  );
+}
+
+function isValidAmount(amount, type, currency)
+{
+  amount = parseFloat(amount);
+
+  type = (type == 'yearly-subscription') ? 'yearly' : type;
+
+  type = (type == 'monthly-subscription') ? 'subscription' : type;
+
+  return _.isFinite(amount) && amount >= currency[type].minimum;
+}
+
+function otherTypes(type) {
+  return ["donation", "subscription", "yearly"].filter(function(item) {
+    return item != type;
   });
+}
 
-  // uncheck donation amount when subscription amount is selected and vise versa
-  function onFieldsetChange (otherFieldset, event)
+function validateCustomAmount(event)
+{
+  var checkedRadio = doc.querySelector(".payment-amount input:checked");
+
+  if (checkedRadio.value != "custom")
   {
-    var otherFieldsetSelected = otherFieldset.querySelector("input:checked");
-
-    if (otherFieldsetSelected)
-    {
-      otherFieldsetSelected.checked = false;
-      validateCustomAmount(event);
-    }
+    return clearCustomAmountErrors();
   }
 
-  donationAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, subscriptionAmounts));
+  var amount = checkedRadio.parentElement.querySelector(
+    'input[type="text"]'
+  ).value;
 
-  donationAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, yearlySubscriptionAmounts));
-
-  subscriptionAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, donationAmounts)
-  );
-
-  subscriptionAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, yearlySubscriptionAmounts)
-  );
-
-  yearlySubscriptionAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, donationAmounts)
-  );
-
-  yearlySubscriptionAmounts.addEventListener(
-    "change",
-    onFieldsetChange.bind(this, subscriptionAmounts)
-  );
-
-  // Select custom amount radio when textbox is focused
-  function onCustomFieldSelect(event)
+  if (amount.trim() == "")
   {
-    if (event.target.type == "text")
-    {
-      event.target.parentElement.querySelector('input[type="radio"]').click();
-      validateCustomAmount(event);
-    }
+    return clearCustomAmountErrors();
   }
 
-  donationAmounts.addEventListener("focus", onCustomFieldSelect, true);
+  amount = parseFloat(amount);
 
-  subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
+  var currency = currencies[paymentCurrency.value];
+  var selectedType = event.currentTarget.id.split("-")[0];
+  var typeError = "minimum-" + selectedType + "-error";
+  var minimumAmount = currency[selectedType].minimum;
+
+  if (isValidAmount(amount, selectedType, currency))
+  {
+    clearCustomAmountErrors();
+    return;
+  }
+
+  otherTypes(selectedType).forEach(function(otherType) {
+    doc.body.classList.remove("minimum-" + otherType + "-error");
+  });
   
-  yearlySubscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
-  function clearCustomAmountErrors()
-  {
-    doc.body.classList.remove("minimum-donation-error");
-    doc.body.classList.remove("minimum-subscription-error");
-    doc.body.classList.remove("minimum-yearly-error");
-
-    enableForm(true);
-  }
-
-  function enableForm(enabled)
-  {
-    _.each(
-      _.toArray(doc.querySelectorAll("#payment-providers button")),
-      function(button)
-      {
-        button.disabled = !enabled;
-      }
-    );
-  }
-
-  function isValidAmount(amount, type, currency)
-  {
-    amount = parseFloat(amount);
-
-    type = (type == 'yearly-subscription') ? 'yearly' : type;
-
-    type = (type == 'monthly-subscription') ? 'subscription' : type;
-
-    return _.isFinite(amount) && amount >= currency[type].minimum;
-  }
-
-  function otherTypes(type) {
-    return ["donation", "subscription", "yearly"].filter(function(item) {
-      return item != type;
-    });
-  }
-
-  function validateCustomAmount(event)
-  {
-    var checkedRadio = doc.querySelector(".payment-amount input:checked");
-
-    if (checkedRadio.value != "custom")
-    {
-      return clearCustomAmountErrors();
-    }
-
-    var amount = checkedRadio.parentElement.querySelector(
-      'input[type="text"]'
-    ).value;
-
-    if (amount.trim() == "")
-    {
-      return clearCustomAmountErrors();
-    }
-
-    amount = parseFloat(amount);
-
-    var currency = currencies[paymentCurrency.value];
-    var selectedType = event.currentTarget.id.split("-")[0];
-    var typeError = "minimum-" + selectedType + "-error";
-    var minimumAmount = currency[selectedType].minimum;
-
-    if (isValidAmount(amount, selectedType, currency))
-    {
-      clearCustomAmountErrors();
-      return;
-    }
-
-    otherTypes(selectedType).forEach(function(otherType) {
-      doc.body.classList.remove("minimum-" + otherType + "-error");
-    });
-    
-    doc.body.classList.add(typeError);
-    
-    enableForm(false);
-
-    doc.querySelector(
-      ".minimum-" + selectedType + "-warning .minimum-amount"
-    ).textContent = currency.sign + minimumAmount;
-  }
+  doc.body.classList.add(typeError);
   
-  function actionType(text) {
-    var type;
+  enableForm(false);
 
-    if (/donation/.test(text)) {
-      type = 'donation';
+  doc.querySelector(
+    ".minimum-" + selectedType + "-warning .minimum-amount"
+  ).textContent = currency.sign + minimumAmount;
+}
 
-    } else if (/monthly/.test(text)) {
-      type = 'monthly-subscription';
+function actionType(text) {
+  var type;
 
-    } else if (/yearly/.test(text)) {
-      type = 'yearly-subscription';
-    }
+  if (/donation/.test(text)) {
+    type = 'donation';
 
-    return type;
+  } else if (/monthly/.test(text)) {
+    type = 'monthly-subscription';
+
+  } else if (/yearly/.test(text)) {
+    type = 'yearly-subscription';
   }
 
-  donationAmounts.addEventListener("change", validateCustomAmount, true);
-  subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
-  yearlySubscriptionAmounts.addEventListener("change", validateCustomAmount, true);
-  
-  donationAmounts.addEventListener("input", validateCustomAmount, true);
-  subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
-  yearlySubscriptionAmounts.addEventListener("input", validateCustomAmount, true);
+  return type;
+}
 
-  /**
-   * Export form data to JSON compatible object
-   * @function
-   */
-  this.toJSON = function()
+donationAmounts.addEventListener("change", validateCustomAmount, true);
+subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
+yearlySubscriptionAmounts.addEventListener("change", validateCustomAmount, true);
+
+donationAmounts.addEventListener("input", validateCustomAmount, true);
+subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
+yearlySubscriptionAmounts.addEventListener("input", validateCustomAmount, true);
+
+/**
+ * Export form data to JSON compatible object
+ * @function
+ */
+this.toJSON = function()
+{
+  var currency = currencies[paymentCurrency.value];
+
+  var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
+
+  var type = actionType(checked.name);
+
+  var amount = checked.value;
+
+  if (amount == "custom")
   {
-    var currency = currencies[paymentCurrency.value];
+    checked = checked.parentElement.querySelector('input[type="text"]');
+    amount = isValidAmount(
+      checked.value,
+      type,
+      currencies[paymentCurrency.value]
+    ) ? checked.value : checked.placeholder;
+  }
 
-    var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
-
-    var type = actionType(checked.name);
-
-    var amount = checked.value;
-
-    if (amount == "custom")
-    {
-      checked = checked.parentElement.querySelector('input[type="text"]');
-      amount = isValidAmount(
-        checked.value,
-        type,
-        currencies[paymentCurrency.value]
-      ) ? checked.value : checked.placeholder;
-    }
-
-    return {
-      lang: doc.documentElement.lang,
-      type: type,
-      currency: paymentCurrency.value,
-      amount: parseFloat(amount),
-    };
+  return {
+    lang: doc.documentElement.lang,
+    type: type,
+    currency: paymentCurrency.value,
+    amount: parseFloat(amount),
   };
+};
 
-  var providerHandlers = {};
+var providerHandlers = {};
 
-  /**
-   * Add a payment provider submission handler
-   * @function
-   */
-  this.addProviderListener = function(provider, handler)
-  {
-    if (!providerHandlers[provider])
-      providerHandlers[provider] = [];
+/**
+ * Add a payment provider submission handler
+ * @function
+ */
+this.addProviderListener = function(provider, handler)
+{
+  if (!providerHandlers[provider])
+    providerHandlers[provider] = [];
 
-    providerHandlers[provider].push(handler);
-  };
+  providerHandlers[provider].push(handler);
+};
 
-  var paymentProviders = doc.getElementById("payment-providers");
+var paymentProviders = doc.getElementById("payment-providers");
 
-  function onPaymentProviderSubmit(event)
-  {
-    event.preventDefault();
+function onPaymentProviderSubmit(event)
+{
+  event.preventDefault();
 
-    var buttonName = event.target.name || event.target.parentNode.name;
+  var buttonName = event.target.name || event.target.parentNode.name;
 
-    var disabled = event.target.disabled || event.target.parentNode.disabled;
+  var disabled = event.target.disabled || event.target.parentNode.disabled;
 
-    if (!buttonName || disabled) return;
+  if (!buttonName || disabled) return;
 
-    var provider = buttonName.replace("-provider", "");
+  var provider = buttonName.replace("-provider", "");
 
-    var handlers = providerHandlers[provider];
+  var handlers = providerHandlers[provider];
 
-    if (!handlers) return;
+  if (!handlers) return;
 
-    _.each(handlers, function(handler) {return handler();});
-  }
+  _.each(handlers, function(handler) {return handler();});
+}
 
-  paymentProviders.addEventListener("click", onPaymentProviderSubmit);
+paymentProviders.addEventListener("click", onPaymentProviderSubmit);
 }
 
 root.PaymentForm = PaymentForm;
