@@ -20,29 +20,30 @@
 
   <div class="payment-types">
 
-    <fieldset class="payment-type subscription yearly">
-      <legend>
-        {{ yearly-subscription-legend-1[heading] Make a <strong>yearly</strong> donation: }}
-      </legend>
-      <div id="yearly-subscription-amounts"></div>
-    </fieldset>
-
-    <hr class="payment-divide yearly">
-
-    <fieldset class="subscription-payment-type payment-type subscription">
-      <legend>
-        {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
-      </legend>
-      <div id="subscription-amounts"></div>
-    </fieldset>
-
-    <fieldset class="payment-type one-time">
+    <fieldset class="payment-type">
       <legend>
         {{ one-time-legened-1[heading] Make a <strong>one-time</strong> donation: }}
       </legend>
       <div id="donation-amounts"></div>
     </fieldset>
 
+    <hr class="payment-divide">
+
+    <fieldset class="subscription-payment-type payment-type">
+      <legend>
+        {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
+      </legend>
+      <div id="subscription-amounts"></div>
+    </fieldset>
+
+    <hr class="payment-divide yearly">
+
+    <fieldset class="payment-type yearly">
+      <legend>
+        {{ yearly-subscription-legend-1[heading] Or a <strong>yearly</strong> donation: }}
+      </legend>
+      <div id="yearly-subscription-amounts"></div>
+    </fieldset>
 
   </div>
 
@@ -60,7 +61,7 @@
           type="radio"
           name="preset-<%- type %>-amount"
           value="<%- amount %>"
-        <% if (type == "yearly-subscription" && index == 3) { %>
+        <% if (type == "donation" && index == 3) { %>
         checked
         <% } %>>
         <%- sign %><%- amount %>
@@ -97,13 +98,6 @@
   <p class="alert minimum-amount-warning minimum-yearly-warning">
     {{ min-subscription-yearly-warning[notice] Oops! To help cover fees, the minimum yearly donation amount is <span class="minimum-amount">$5</span>. }}
   </p>
-
-  <p class="one-time-check">
-    <label for="one-time">
-      <input type="checkbox" id="one-time" name="one-time"> {{ make-one-time Make this a one-time contribution }}
-    </label>
-  </p>
-
 
   <div id="payment-providers" class="payment-providers">
     <span class="payment-providers-lead">

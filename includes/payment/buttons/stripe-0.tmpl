@@ -1,0 +1,9 @@
+{% if not disable_stripe %}
+  <button name="stripe-provider" class="stripe-button">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAgCAMAAAA2a+hwAAAAkFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+WABnwAAAAL3RSTlMAzZyBdvq8GATRpxT28+7nlpR0aGBXQzYkEODa1cewiWQ6LiYhs6KQhm1PSiwKB+gORwEAAADhSURBVCjPjdDXcoMwFIThNUGI3sHgFsd2etn3f7vInsRICSeT/0o73wVnwL8L9TAK0gaK5Ko6/bZhw6+U/9OOOam2cRkUhm9dCyMy1pdnl5MvDrbGvt9LxY2DC6b6Okqyt2wkd9O6c7/ak751gGJgYUe21iwYXQ948rZk4E1lzLyqTowNivMVGthTag/U9s7scQP406pGLNcCXu5/E7DBudUsmmH6SOcxejfYSQfFwCGX8P780yV8BLSIzwBSCV8NRhIeDe4k1EmSlA42lGqAXsQDEK4Fe4Dp5C1mCuoQf/YJ53pWFjMAQFMAAAAASUVORK5CYII="
+      width="18" height="16" class="stripe-button-lock" alt="">
+    <span class="stripe-button-text">
+      {{ "Credit card" | translate("stripe-label", "button label") }}
+    </span>
+  </button>
+{% endif %}
