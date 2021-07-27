@@ -372,32 +372,6 @@ body
 
 .has-subscriptions .subscription-payment-type { display: block; }
 
-.has-subscriptions .payment-divide { display: block; }
-
-.yearly,
-.payment-divide.yearly {
-  display: none;
-}
-
-.has-yearly .yearly,
-.has-yearly .payment-divide.yearly {
-  display: block;
-}
-
-.custom-payment-amount input[type="text"]
-{
-  padding: 0;
-  line-height: 1;
-}
-
-.minimum-amount-warning { display: none; }
-
-.minimum-donation-error .minimum-donation-warning,
-.minimum-subscription-error .minimum-subscription-warning,
-.minimum-yearly-error .minimum-yearly-warning {
-  display: block;
-}
-
 /* Negating first and last padding below */
 .payment-amounts { margin: 0 -0.5rem; }
 
@@ -428,6 +402,18 @@ body
   }
 }
 
+.has-subscriptions .payment-divide { display: block; }
+
+.yearly,
+.payment-divide.yearly {
+  display: none;
+}
+
+.has-yearly .yearly,
+.has-yearly .payment-divide.yearly {
+  display: block;
+}
+
 .custom-payment-amount input[type="text"]
 {
   padding: 0;
@@ -441,8 +427,6 @@ body
 .minimum-yearly-error .minimum-yearly-warning {
   display: block;
 }
-
-.payment-providers { margin-top: 1.5rem; }
 
 .payment-providers-lead
 {
@@ -466,6 +450,7 @@ body
 {
   display: block;
   width: 100%;
+  padding: 0 1.8rem;
   min-height: 34px;
   margin-top: 1rem;
   line-height: 32px;
@@ -498,7 +483,7 @@ body
 {
   display: inline-block;
   color: #fff;
-  background-color: #2888F9;
+  background-color: #0AAD03;
   overflow: hidden;
 }
 
@@ -583,6 +568,55 @@ body
   right: 0;
 }
 
+.payment-method-divide { margin: 1.5em 0; }
+
+.payment-method { margin-top: 1rem; }
+
+.payment-method svg,
+.payment-method input {
+  vertical-align: middle;
+  height: 32px;
+}
+
+.payment-method input {
+  margin-left: 0;
+  margin-right: 0.4em;
+}
+
+.payment-method label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+@media (min-width: 376px) {
+  [dir="ltr"] .payment-method label {
+    margin-right: 50px;
+  }
+
+  [dir="rtl"] .payment-method label {
+    margin-left: 50px;
+  }
+}
+
+.payment-cards,
+.payment-paypal {
+  display: inline-block;
+}
+
+.credit-card {
+  padding-right: 0.5em;
+  vertical-align: middle;
+}
+
+.payment-cards svg { width: 20px; }
+
+.payment-paypal svg { width: 80px; }
+
+.card-button-hidden .stripe-button { display: none; }
+
+.paypal-button-hidden .paypal-button { display: none; }
+
 @-webkit-keyframes load3 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -604,7 +638,6 @@ body
     transform: rotate(360deg);
   }
 }
-
 /****** adapted from https://github.com/stripe-samples/payment-form-modal *****/
 
 .modal {
@@ -740,9 +773,9 @@ body
     width: 100%;
     position: relative;
     border-radius: 4px;
-    background-color: #3ea8e5;
-    background-image: linear-gradient(-180deg,#44b1e8,#3098de);
-    box-shadow: 0 1px 0 0 rgba(46,86,153,.15), inset 0 1px 0 0 rgba(46,86,153,.1), inset 0 -1px 0 0 rgba(46,86,153,.4);
+    background-color: #0AAD03;
+    /* background-image: linear-gradient(-180deg,#44b1e8,#3098de); */
+    /* box-shadow: 0 1px 0 0 rgba(46,86,153,.15), inset 0 1px 0 0 rgba(46,86,153,.1), inset 0 -1px 0 0 rgba(46,86,153,.4); */
     font-size: 17px;
     line-height: 21px;
     height: 37px;
