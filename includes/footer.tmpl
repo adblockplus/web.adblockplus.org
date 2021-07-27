@@ -1,120 +1,126 @@
 {% from "macros/pageitem" import pageitem %}
 
 <footer id="footer" class="content">
-  <div class="container">
-    <div class="row">
-      <nav class="column one-fourth">
-        <h5 class="footer-heading">{{ get_string("download", "menu") }}</h5>
-        <ul>
-          <li><a href="adblock-plus-chrome">{{get_string("abp-chrome", "menu")}}</a></li>
-          <li><a href="adblock-plus-firefox">{{get_string("abp-firefox", "menu")}}</a></li>
-          <li><a href="ad-blocker-safari">{{get_string("abp-safari", "menu")}}</a></li>
-          <li><a href="adblock-plus-opera">{{get_string("abp-opera", "menu")}}</a></li>
-          <li><a href="adblock-plus-edge">{{get_string("abp-edge", "menu")}}</a></li>
-          <li><a href="android-install">{{get_string("abp-android", "menu")}}</a></li>
-        </ul>
-      </nav>
-      <nav class="column one-fourth">
-        <h5 class="footer-heading">{{ get_string("resources", "menu") }}</h5>
-        <ul>
-          {% for pagename in ["acceptable-ads", "documentation", "deployments", "bugs"] %}
-            <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
-          {% endfor %}
-          {% if locale in ("en", "de", "fr", "es") %}
-            <li>{{ "faq-privacy" | linkify }}{{ get_string("faq-privacy", "menu") }}</a></li>
+  <div class="footer-wrap footer-links">
+    <div class="container">
+      <div class="row">
+        <nav class="column one-fourth">
+          <h5 class="footer-heading">{{ get_string("download", "menu") }}</h5>
+          <ul>
+            <li><a href="adblock-plus-chrome">{{get_string("abp-chrome", "menu")}}</a></li>
+            <li><a href="adblock-plus-firefox">{{get_string("abp-firefox", "menu")}}</a></li>
+            <li><a href="ad-blocker-safari">{{get_string("abp-safari", "menu")}}</a></li>
+            <li><a href="adblock-plus-opera">{{get_string("abp-opera", "menu")}}</a></li>
+            <li><a href="adblock-plus-edge">{{get_string("abp-edge", "menu")}}</a></li>
+            <li><a href="android-install">{{get_string("abp-android", "menu")}}</a></li>
+          </ul>
+        </nav>
+        <nav class="column one-fourth">
+          <h5 class="footer-heading">{{ get_string("resources", "menu") }}</h5>
+          <ul>
+            {% for pagename in ["acceptable-ads", "documentation", "deployments", "bugs"] %}
+              <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
+            {% endfor %}
+            {% if locale in ("en", "de", "fr", "es") %}
+              <li>{{ "faq-privacy" | linkify }}{{ get_string("faq-privacy", "menu") }}</a></li>
+            {% endif %}
+            <li><a href="https://help.eyeo.com/en/adblockplus/how-to-write-filters" target="_blank" hreflang="en">{{ get_string("writing-abp-filters", "menu") }}</a></li>
+          </ul>
+        </nav>
+        <nav class="column one-fourth">
+          <h5 class="footer-heading">{{ get_string("community", "menu") }}</h5>
+          <ul>
+            <li><a href="contribute">{{get_string("contribute", "menu")}}</a></li>
+            <li><a href="https://adblockplus.org/releases/" hreflang="en">{{get_string("releases", "menu")}}</a></li>
+            <li><a href="https://adblockplus.org/blog/" hreflang="en">{{get_string("blog", "menu")}}</a></li>
+            <li><a href="https://adblockplus.org/forum/" hreflang="en">{{get_string("forum", "menu")}}</a></li>
+          </ul>
+        </nav>
+        <nav class="column one-fourth">
+          <h5 class="footer-heading">{{get_string("development", "menu")}}</h5>
+          <ul>
+            <li><a href="https://gitlab.com/eyeo/adblockplus">{{ get_string("source", "menu") }}</a></li>
+            {{ pageitem("tools") }}
+            <li><a href="https://eyeo.com/jobs/" hreflang="en">{{ get_string("jobs", "menu") }}</a></li>
+            <li><a href="partner-integrations">{{ get_string("partner-integrations", "menu") }}</a></li>
+          </ul>
+        </nav>
+
+        <nav id="social-list" class="column">
+          <h5 class="footer-social-heading">{{get_string("follow-us-header", "footer")}}</h5>
+          <ul>
+            <li>
+              <a
+                href="https://twitter.com/AdblockPlus"
+                title="{{ get_string("twitter-title", "footer") }}"
+                target="_blank" rel="nofollow noopener">
+                <img
+                  src="/img/footer-twitter-glyphicon.png"
+                  alt="{{ get_string("twitter-alt", "footer") }}">
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/user/AdblockPlusOfficial"
+                title="{{ get_string("youtube-title", "footer") }}"
+                target="_blank" rel="nofollow noopener">
+                <img
+                  src="/img/footer-youtube-glyphicon.png"
+                  alt="{{ get_string("youtube-alt", "footer") }}">
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/adblockplus"
+                title="{{ get_string("facebook-title", "footer") }}"
+                target="_blank" rel="nofollow noopener">
+                <img
+                  src="/img/footer-facebook-glyphicon.png"
+                  alt="{{ get_string("facebook-alt", "footer") }}">
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/adblockplus/"
+                title="{{ get_string("instagram-title", "footer") }}"
+                target="_blank" rel="nofollow noopener">
+                <img
+                  src="/img/footer-instagram-glyphicon.png"
+                  alt="{{ get_string("instagram-alt", "footer") }}">
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://vk.com/adblockplusofficial"
+                title="{{ get_string("vk-title", "footer") }}"
+                target="_blank" rel="nofollow noopener">
+                <img
+                  src="/img/footer-vk-glyphicon.png"
+                  alt="{{ get_string("vk-alt", "footer") }}">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div> {# .row #}
+    </div> {# .container #}
+  </div> {# .footer-wrap.footer-links #}
+
+  <div class="footer-wrap footer-legal-links">
+    <div class="container">
+      <div id="footer-legal">
+        <p id="copyright-notice">{{ get_string("copyright", "footer") }}</p>
+        <ul id="legal-list">
+          {% if page == "gift-of-ad-blocking" %}
+            {% for pagename in ["terms", "privacy", "privacy-goab", "imprint"] %}
+              <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
+            {% endfor %}
+          {% else %}
+            {% for pagename in ["terms", "privacy", "imprint"] %}
+              <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
+            {% endfor %}
           {% endif %}
-          <li><a href="https://help.eyeo.com/en/adblockplus/how-to-write-filters" target="_blank" hreflang="en">{{ get_string("writing-abp-filters", "menu") }}</a></li>
         </ul>
-      </nav>
-      <nav class="column one-fourth">
-        <h5 class="footer-heading">{{ get_string("community", "menu") }}</h5>
-        <ul>
-          <li><a href="contribute">{{get_string("contribute", "menu")}}</a></li>
-          <li><a href="https://adblockplus.org/releases/" hreflang="en">{{get_string("releases", "menu")}}</a></li>
-          <li><a href="https://adblockplus.org/blog/" hreflang="en">{{get_string("blog", "menu")}}</a></li>
-          <li><a href="https://adblockplus.org/forum/" hreflang="en">{{get_string("forum", "menu")}}</a></li>
-        </ul>
-      </nav>
-      <nav class="column one-fourth">
-        <h5 class="footer-heading">{{get_string("development", "menu")}}</h5>
-        <ul>
-          <li><a href="https://gitlab.com/eyeo/adblockplus">{{ get_string("source", "menu") }}</a></li>
-          {{ pageitem("tools") }}
-          <li><a href="https://eyeo.com/jobs/" hreflang="en">{{ get_string("jobs", "menu") }}</a></li>
-          <li><a href="partner-integrations">{{ get_string("partner-integrations", "menu") }}</a></li>
-        </ul>
-      </nav>
-
-      <nav id="social-list" class="column">
-        <h5 class="footer-social-heading">{{get_string("follow-us-header", "footer")}}</h5>
-        <ul>
-          <li>
-            <a
-              href="https://twitter.com/AdblockPlus"
-              title="{{ get_string("twitter-title", "footer") }}"
-              target="_blank" rel="nofollow noopener">
-              <img
-                src="/img/footer-twitter-glyphicon.png"
-                alt="{{ get_string("twitter-alt", "footer") }}">
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com/user/AdblockPlusOfficial"
-              title="{{ get_string("youtube-title", "footer") }}"
-              target="_blank" rel="nofollow noopener">
-              <img
-                src="/img/footer-youtube-glyphicon.png"
-                alt="{{ get_string("youtube-alt", "footer") }}">
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/adblockplus"
-              title="{{ get_string("facebook-title", "footer") }}"
-              target="_blank" rel="nofollow noopener">
-              <img
-                src="/img/footer-facebook-glyphicon.png"
-                alt="{{ get_string("facebook-alt", "footer") }}">
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/adblockplus/"
-              title="{{ get_string("instagram-title", "footer") }}"
-              target="_blank" rel="nofollow noopener">
-              <img
-                src="/img/footer-instagram-glyphicon.png"
-                alt="{{ get_string("instagram-alt", "footer") }}">
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://vk.com/adblockplusofficial"
-              title="{{ get_string("vk-title", "footer") }}"
-              target="_blank" rel="nofollow noopener">
-              <img
-                src="/img/footer-vk-glyphicon.png"
-                alt="{{ get_string("vk-alt", "footer") }}">
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div> {# .row #}
-
-    <div id="footer-legal">
-      <p id="copyright-notice">{{ get_string("copyright", "footer") }}</p>
-      <ul id="legal-list">
-        {% if page == "gift-of-ad-blocking" %}
-          {% for pagename in ["terms", "privacy", "privacy-goab", "imprint"] %}
-            <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
-          {% endfor %}
-        {% else %}
-          {% for pagename in ["terms", "privacy", "imprint"] %}
-            <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-    </div> {# #footer-legal #}
-  </div> {# .container #}
+      </div> {# #footer-legal #}
+    </div> {# .container #}
+  </div> {# .footer-wrap.footer-legal-links #}
 </footer> {# #footer #}

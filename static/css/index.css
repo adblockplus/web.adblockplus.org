@@ -19,7 +19,6 @@
 .samsungBrowser .show-on-samsung
 { display: inherit; }
 
-
 /******************************************************************************
  * Introduction sections
  *****************************************************************************/
@@ -59,15 +58,40 @@
   margin-bottom: 2em;
 }
 
-#intro-standard ul { list-style: none; }
+#intro-standard ul
+{
+  list-style: none;
+  padding-left: 0;
+}
 
-html[dir="ltr"] #intro-standard ul { padding-left: 0.6em; }
+#intro-standard ul li
+{
+  background-image: url("/img/icon-checkmark.svg");
+  background-repeat: no-repeat;
+  background-position: 0 .3em;
+}
 
-html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
+html[dir="ltr"] #intro-standard ul li
+{
+  padding-left: 30px;
 
-#intro-standard ul li { text-indent: -0.5em; }
+}
+
+html[dir="rtl"] #intro-standard ul li
+{
+  background-position: right 0em bottom 0em;
+  padding-right: 30px;
+}
 
 #intro-standard ul li .avoid-wrap { text-indent: 0em; }
+
+@media (max-width: 1024px)
+{
+  #intro-standard ul li
+  {
+    background-image: none;
+  }
+}
 
 @media (min-width: 452px)
 {
@@ -99,14 +123,9 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
   }
 }
 
-@media(min-width: 768px)
-{
-  #intro-standard { padding-top: 7em; }
-}
-
 @media(min-width: 1024px)
 {
-  #intro-standard { padding-top: 11em; }
+  #intro-standard { padding-top: 8em; }
 }
 
 /* Applied ::after to enable use of opacity */
@@ -147,16 +166,15 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
   overflow: hidden;
 }
 
-@media (min-width: 576px) and (max-width: 1023px)
+@media(max-width: 1024px)
 {
   #intro-graphic
   {
-    padding-left: 3em;
-    padding-right: 3em;
+    width: 100%;
   }
 }
 
-@media(min-width: 768px)
+@media(min-width: 1024px)
 {
   #intro-graphic
   {
@@ -166,33 +184,52 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
 }
 
 /* Fixes img max-width bug in IE */
-#intro-graphic img { width: 100%; }
+#intro-graphic img
+{
+  width: 100%;
+}
+
+@media (max-width: 1024px)
+{
+  #intro-graphic img
+  {
+    max-width: 350px;
+  }
+}
 
 @media (max-width: 767px)
 {
   [dir="ltr"] #intro-graphic { direction: rtl; }
 
   [dir="rtl"] #intro-graphic { direction: ltr; }
-
-  #intro-graphic-small { margin-right: -60px; }
 }
 
 #intro-graphic-small
 {
-  min-width: 80%;
-  max-width: none;
+  min-width: 50%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
 }
 
-@media (min-width: 1024px)
+@media (min-width: 1025px)
 {
   #intro-graphic-small { display: none; }
 }
 
 #intro-graphic-large { display: none; }
 
-@media (min-width: 1024px)
+@media (min-width: 1025px)
 {
   #intro-graphic-large { display: block; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px)
+{
+  #intro-graphic-small
+  {
+    max-width: unset;
+  }
 }
 
 #intro-standard h1
@@ -202,14 +239,26 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
   overflow: auto;
 }
 
+@media(max-width: 1024px)
+{
+  #intro-standard
+  {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 @media(min-width: 992px)
 {
-  #intro-standard h1 { font-size: 42px; }
+  #intro-standard h1 { font-size: 50px; }
+
+  [lang="ru"] #intro-standard h1 { font-size: 42px; }
 }
 
 #hero-download-tos
 {
   margin-bottom: 0.5em;
+  font-size: 14px;
 }
 
 /* Chrome, Chromium, Opera, Yandex and Microsoft Edge, the ToC message should use a normal font size */
@@ -222,66 +271,16 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
   font-size: inherit;
 }
 
-/* Install button
- ******************************************************************************/
-
-#install-button
+.hero-content .centered-list
 {
-  color: #fff;
-  position: relative;
-  padding: 14px 18px 14px 72px;
-  font-size: 20px;
-  line-height: 1.4;
-  text-align: left;
-  text-transform: uppercase;
-  background-color: #0AAD03;
-  border-radius: 5px;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.16);
+  list-style-position: inside;
+  text-indent: -2em;
 }
 
-#install-button:hover,
-#install-button:focus
+.app-store-button
 {
-  background-color: #258333;
+  margin: 1.5em 0;
 }
-
-#install-button::before
-{
-  display: block;
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 18px;
-  margin-top: -20px;
-  height: 40px;
-  width: 40px;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-}
-
-/* WARNING: Selectors below must be added to the padding-left rule after too */
-
-.chrome .hero-download-button::before { background-image: url("/img/chrome.svg"); }
-.chromium .hero-download-button::before { background-image: url("/img/chrome.svg"); }
-.firefox .hero-download-button::before { background-image: url("/img/firefox.svg"); }
-.safari .hero-download-button::before { background-image: url("/img/safari.svg"); }
-.msie .hero-download-button::before { background-image: url("/img/msie.svg"); }
-.msedge .hero-download-button::before,
-.msedge_chromium .hero-download-button::before{ background-image: url("/img/msedge.svg"); }
-.opera .hero-download-button::before { background-image: url("/img/opera.svg"); }
-.yandexbrowser .hero-download-button::before { background-image: url("/img/yandex.svg"); }
-
-.chrome #install-button,
-.chromium #install-button,
-.firefox #install-button,
-.safari #install-button,
-.msie #install-button,
-.msedge #install-button,
-.msedge_chromium #install-button,
-.opera #install-button,
-.yandexbrowser #install-button
-{ padding-left: 72px; }
 
 #hero-download-video
 {
@@ -390,7 +389,7 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
   margin-left: -1em;
   margin-top: -1em;
   border-radius: 50%;
-  background-color: #000;
+  background-color: #0797E1;
   background-image: url(../img/external-icon.png);
   background-image: linear-gradient(transparent, transparent),
                     url(../img/external-icon.svg);
@@ -471,6 +470,11 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
   margin-bottom: 1.5em;
 }
 
+@media (max-width: 768px)
+{
+  #abb-cross-promotion h2 { text-align: center; }
+}
+
 #abb-logo
 {
   max-width: 10em;
@@ -478,7 +482,7 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
 
 #abb-app-store-badges
 {
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 
 #abb-app-store-badges img
@@ -501,12 +505,146 @@ html[dir="rtl"] #intro-standard ul { padding-right: 0.6em; }
     width: 50%;
   }
 
-  #abb-cross-promotion figure,
-  #abb-app-store-badges
+  .abb-cross-promo-content { padding-left: 2em; }
+}
+
+.abb-cross-promo-graphic { float: left; }
+
+.abb-cross-promo-content { float: right; }
+
+@media (min-width: 1024px)
+{
+  .abb-cross-promo-graphic { width: 70%; }
+
+  .abb-cross-promo-content { width: 30%; }
+}
+
+@media (max-width: 1024px)
+{
+  .abb-cross-promo-graphic { width: 60%; }
+
+  .abb-cross-promo-content { width: 40%; }
+}
+
+@media (max-width: 768px)
+{
+  .abb-cross-promo-graphic,
+  .abb-cross-promo-content
+  {
+    width: 100%;
+    text-align: center;
+  }
+
+  .abb-cross-promo-graphic
+  {
+    padding-top: 5em;
+  }
+
+  .abb-cross-promo-graphic img
+  {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+#abb-cross-promotion .phablet-width
+{
+  max-width: 540px;
+  width: 100%;
+}
+
+@media (max-width: 889px)
+{
+  #abb-cross-promotion .phablet-width
+  {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px)
+{
+  #abb-cross-promotion .phablet-width
+  {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.abb-arrow-container
+{
+  display: none;
+}
+[lang="en"] .abb-arrow-container
+{
+  display: block;
+}
+
+@media (min-width: 890px)
+{
+  .abb-arrow-container { position: relative; }
+
+  .abb-arrow-container img { position: absolute; }
+
+  .abb-arrow-container .abb-arrow
+  {
+    right: -1em;
+    top: -5em;
+  }
+
+  .abb-arrow-container .abb-message
+  {
+    top: -8em;
+    right: -16em;
+  }
+}
+
+@media (max-width: 890px)
+{
+  .abb-arrow-container
   {
     padding-left: 2em;
-    padding-right: 2em;
+    padding-bottom: 2em;
+    text-align: left;
   }
+
+  .abb-arrow-container .abb-arrow
+  {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    width: 70px;
+    height: auto;
+    float: left;
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 768px)
+{
+  .abb-arrow-container .abb-message
+  {
+    max-width: 350px;
+    width: 60%;
+  }
+
+  .abb-arrow-container .abb-arrow
+  {
+    float: none;
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+  }
+
+  .abb-arrow-container img
+  {
+    display: block;
+  }
+}
+
+@media (max-width: 480px)
+{
+
 }
 
 /******************************************************************************

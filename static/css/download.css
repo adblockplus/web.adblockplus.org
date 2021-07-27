@@ -6,6 +6,11 @@
   color: #4A4A4A;
 }
 
+.download-icon
+{
+  padding: 1em 0;
+}
+
 .download-header h1,
 .download-header p,
 .download-options .download-desktop .rating p
@@ -21,18 +26,10 @@
   font-size: 14px;
 }
 
-.download-header,
-.download-options
-{
-  padding-left: 2em;
-  padding-right: 2em;
-}
-
 .download-options
 {
   display: flex;
   flex-direction: column;
-  padding-top: 1em;
   font-size: 18px;
   line-height: 1.3;
 }
@@ -41,7 +38,46 @@
 {
   display: flex;
   flex-direction: column;
-  padding: 0 0 2em;
+  justify-content: space-between;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+}
+
+.mobile-products .download-abb,
+.mobile-products .download-mobile
+{
+  width: 40%;
+}
+
+.mobile-products .download-mobile {
+  margin-right: auto;
+  margin-top: 2em;
+}
+
+@media(max-width: 1024px)
+{
+  .mobile-products .container
+  {
+    flex-wrap: wrap;
+  }
+  .mobile-products .download-abb,
+  .mobile-products .download-mobile
+  {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 0 2em;
+  }
+  .download-options section
+  {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.5em;
+  }
+  .download-desktop
+  {
+    margin: 2.5em 0;
+  }
 }
 
 /* iOS device (any browser) or an
@@ -70,10 +106,13 @@ Android device using Samsung Internet or Firefox */
 .tabs-menu a,
 .tabs-menu a:visited
 {
-  padding: .2em .8em;
-  color: #C1C1C1;
-  font-weight: 700;
-  font-size: 12px;
+  padding: .2em .8em .25em;
+  color: #000;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #CDCDCD;
+  border-radius: 15px;
+  margin-right: .2em;
 }
 
 .tabs-menu a:hover,
@@ -82,47 +121,41 @@ Android device using Samsung Internet or Firefox */
 .tabs-menu .current-tab a
 {
   color: #fff;
-  background-color: #000;
+  background-color: #585858;
   text-decoration: none;
-}
-
-.download-options .tab-text-contents p a,
-.download-options .tab-text-contents p a:hover,
-.download-options .tab-text-contents p a:active,
-.download-options .tab-text-contents p a:visited
-{
-  color: #212121;
-  font-weight: 700;
 }
 
 .download-options .description
 {
-  text-align: left;
+  text-align: center;
+}
+
+.download-options .description a
+{
+  color: #212121;
 }
 
 .download-options .tab-text-contents h2,
 .download-options .tab-text-contents .tou-note
 {
-  margin: 0;
+  margin: 0 0 0.5em;
 }
 
-.download-options .tab-text-contents .tou-note a,
-.download-options .tab-text-contents .tou-note a:hover,
-.download-options .tab-text-contents .tou-note a:active,
-.download-options .tab-text-contents .tou-note a:visited
+.download-options .tab-text-contents .tou-note
 {
-  color: #ED1E45;
-  font-weight: 300;
+  font-size: 14px;
+  margin-top: 1em;
 }
 
 .show-mobile
 {
-  display: inline;
+  display: block;
 }
 
 .tab-content
 {
   display: none;
+  margin-tpp: 1.5em;
 }
 
 .tab-content.current-tab
@@ -182,64 +215,42 @@ Android device using Samsung Internet or Firefox */
 .tab-column
 {
   display: table-cell;
-  width: 80%;
+  max-width: 80%;
   vertical-align: top;
 }
 
 .tab-column:nth-child(2n)
 {
-  width: 20%;
+  max-width: 20%;
   text-align: center;
+  padding-left: 2em;
 }
 
 .app-store-button.abb-android img,
 .app-store-button.abp-ios-safari img {  display: inline-block; }
 
+.app-store-button img
+{
+  margin: 1em 1em 0 0;
+}
+
+@media(max-width: 768px)
+{
+  .tabs-menu li
+  {
+    margin-top: 1em;
+  }
+}
+
 @media(min-width: 768px)
 {
   .download-header
   {
-    padding: 4em 0;
+    padding: 3em 0 2em;
   }
-
-  .download-options
-  {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  .download-options section
-  {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 0 7em;
-  }
-
-  .download-options .tab-text-contents
-  {
-    text-align: left;
-  }
-
   .tabs-menu li
   {
-    display: inline;
-  }
-
-  .download-options .tab-text-contents
-  {
-    width: 68%;
-    padding-right: 3em;
-  }
-
-  .download-options .tab-media-contents
-  {
-    width: 36%;
-    padding-right: 1em;
-  }
-
-  .download-options .tab-media-contents img
-  {
-    padding: 3em;
+    display: inline-block;
   }
 
   .download-options .download-desktop
@@ -273,6 +284,10 @@ Android device using Samsung Internet or Firefox */
 
 @media(min-width: 1025px)
 {
+  .download-options .tab-text-contents
+  {
+    text-align: left;
+  }
   .download-options
   {
     flex-direction: column-reverse;
@@ -309,15 +324,9 @@ Android device using Samsung Internet or Firefox */
     display: block;
   }
 
-  .download-options .tab-text-contents
-  {
-    width: 54%;
-    padding-right: 0;
-  }
-
   .download-options .download-desktop .tab-text-contents
   {
-    width: 54%;
+    width: 60%;
     min-width: 600px;
     margin: 0;
   }
@@ -336,7 +345,8 @@ Android device using Samsung Internet or Firefox */
 
   .download-options .description
   {
-    margin-top: 3em;
+    margin-top: 1.5em;
+    text-align: left;
   }
 }
 
@@ -344,7 +354,7 @@ Android device using Samsung Internet or Firefox */
 {
   .download-header
   {
-    padding: 6em 0;
+    padding: 4em 0 2em;
   }
 
   .download-options .tab-media-contents
@@ -369,89 +379,20 @@ Android device using Samsung Internet or Firefox */
   }
 }
 
-.download-options .download-button,
-.download-options .download-button:hover,
-.download-options .download-button:active,
-.download-options .download-button:visited
+.app-icons img
 {
-  color: #fff;
+	padding-right: 0.8em;
 }
 
-.download-options .download-button
-{
-  position: relative;
-  padding: 14px 18px 14px 72px;
-  line-height: 1.4;
-  text-transform: uppercase;
-  text-align: left;
-  background-color: #0AAD03;
-  border-radius: 5px;
-  box-shadow: 0 3px 3px rgba(0,0,0,0.16);
-}
-
-.download-options .download-button:hover,
-.download-options .download-button:focus
-{
-  background-color: #258333;
-}
-
-.download-options .download-button::before
-{
-  display: block;
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 18px;
-  margin-top: -20px;
-  height: 40px;
-  width: 40px;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-}
-
-#abp_chrome.download-button::before
-{
-  background-image: url("/img/chrome.svg");
-}
-
-#abp_chromium.download-button::before
-{
-  background-image: url("/img/chrome.svg");
-}
-
-#abp_firefox.download-button::before
-{
-  background-image: url("/img/firefox.svg");
-}
-
-#abp_safari.download-button::before
-{
-  background-image: url("/img/safari.svg");
-}
-
-#abp_msie.download-button::before
-{
-  background-image: url("/img/msie.svg");
-}
-
-#abp_msedge.download-button::before,
-#abp_msedge_chromium.download-button::before
-{
-  background-image: url("/img/msedge.svg");
-}
-
-#abp_opera.download-button::before
-{
-  background-image: url("/img/opera.svg");
-}
-
-#abp_yandexbrowser.download-button::before
-{
-  background-image: url("/img/yandex.svg");
-}
-
-.download-options .download-button span
-{
-  display: inline-block;
+@media(max-width: 1024px) {
+  .download-mobile .app-icons img
+  {
+    height: 65px;
+    width: auto;
+  }
+  .download-abb .app-icons img
+  {
+    height: 100px;
+    width: auto;
+  }
 }

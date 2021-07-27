@@ -12,13 +12,14 @@
 {
   font-size: 16px;
   font-size: 1rem;
-  color: #757575;
+  color: #585858;
 }
 
 #blog h3 a
 {
   display: block;
   font-size: 1.3em;
+  color: #212121;
 }
 
 #aside
@@ -69,12 +70,12 @@ img.divider
 
 .comments_error
 {
-  background-color: #ffa;
+  background-color: #fff1ed;
 }
 
 div.comments_error
 {
-  border: 1px solid #cc8;
+  border: 1px solid #D2D2D2;
   padding : 0.3em;
 }
 
@@ -154,7 +155,7 @@ div.comments_error
 .comment_answer,
 .comment_reply
 {
-  background-color: #fee;
+  background-color: #EDF9FF;
   padding: 0 1em;
   overflow: auto;
 }

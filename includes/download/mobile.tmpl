@@ -13,7 +13,7 @@
   }
 ] %}
 
-<section class="download-mobile"
+<div class="download-mobile"
   itemscope itemtype="https://schema.org/SoftwareApplication">
   <meta itemprop="applicationCategory" content="BrowserApplication">
   <meta itemprop="applicationCategory" content="UtilitiesApplication">
@@ -23,12 +23,15 @@
   <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     <meta itemprop="price" content="0">
   </div>
-  <div class="tab-media-contents">
-    <img
-      src="/img/mobile-abp.svg"
-      alt="{{ "Illustration of Adblock Plus ad blocking app" | translate("download-mobile-icon-alt", "Alt text") }}">
-  </div>
   <div class="tab-text-contents">
+    <div class="app-icons">
+      <img
+        src="/img/icon-android.svg"
+        alt="{{ "Android device icon" | translate("android-icon-alt", "Alt text") }}">
+      <img
+        src="/img/icon-apple.svg"
+        alt="{{ "Apple device icon" | translate("apple-icon-alt", "Alt text") }}">
+    </div>
     <h2>{{ "Block ads on your mobile browser" | translate("download-mobile-title", "Heading") }}</h2>
     <div class="tabs">
       <ul role="tablist" class="horizontal-list tabs-menu">
@@ -41,7 +44,7 @@
             class="{{ brws.class }}"
             id="{{ brws.id }}_tab"
             href="#{{ brws.id }}_panel">
-            <strong>{{ brws.name | translate(brws_identifier, "Product name") }}</strong>
+            {{ brws.name | translate(brws_identifier, "Product name") }}
           </a>
         </li>
         {% endfor %}
@@ -63,4 +66,4 @@
       {% endfor %}
     </div>
   </div>
-</section>
+</div>
