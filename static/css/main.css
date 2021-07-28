@@ -313,6 +313,8 @@ a.download-button:active,
 a.download-button:visited
 {
   color: #fff;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .download-button
@@ -882,7 +884,7 @@ a.icon-button:visited
 {
   font-size: 16px;
   font-weight: 600;
-  color: #CDCDCD;
+  color: #fff;
   margin-top: 2rem;
   text-transform: uppercase;
 }
@@ -895,7 +897,8 @@ a.icon-button:visited
 
 #footer a
 {
-  color: #ececec;
+  color: #fff;
+  font-weight: 300;
 }
 
 #footer a:hover,
@@ -921,7 +924,7 @@ a.icon-button:visited
   display: inline-block;
   vertical-align: bottom;
   text-transform: uppercase;
-  color: #CDCDCD;
+  color: #fff;
 }
 
 #social-list ul
@@ -1267,9 +1270,9 @@ a.icon-button:visited
 .avoid-wrap {display: inline-block;}
 
 small,
-.small { font-size: 0.66666em;}
+.small { font-size: 0.8em;}
 
-.extra-small { font-size: 0.555555em; }
+.extra-small { font-size: 0.666666em; }
 
 .uppercase { text-transform: uppercase; }
 
