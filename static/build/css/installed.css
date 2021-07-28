@@ -1103,6 +1103,7 @@ div.animation[started="true"]
 .content a:visited
 {
   color: #0797E1;
+  font-weight: 400;
 }
 
 /* Buttons
@@ -1439,6 +1440,7 @@ a.icon-button:visited
 #navbar-logo > span
 {
   /* full-height: 2.91 * 1.375 = ~4em */
+  display: none;
   line-height: 2.91em;
   font-size: 1.375em;
   word-spacing: -2px;
