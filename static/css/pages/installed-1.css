@@ -1,0 +1,13 @@
+.paypal-cta-hidden .paypal-cta { display: none; }
+
+.card-button-hidden .paypal-cta { display: inline-block; }
+
+.card-cta-hidden .stripe-cta { display: none; }
+
+.payment-providers button.stripe-button .stripe-button-text { vertical-align: inherit; }
+
+input,
+input::placeholder { color: #757575; }
+
+input::placeholder { opacity: 0.7; }
+

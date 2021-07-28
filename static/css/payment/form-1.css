@@ -113,7 +113,7 @@
   [dir="rtl"] .payment-providers-lead { margin-left: 1rem; }
 }
 
-.payment-providers button
+.payment-providers button.paypal-button
 {
   display: block;
   width: 100%;
@@ -133,7 +133,7 @@
 
 @media (min-width: 576px)
 {
-  .payment-providers button
+  .payment-providers button.paypal-button
   {
     display: inline-block;
     min-width: 150px;
@@ -148,7 +148,7 @@
 
 .stripe-button
 {
-  display: inline-block;
+  display: none;
   color: #fff;
   background-color: #0AAD03;
   overflow: hidden;
@@ -275,10 +275,6 @@
 .payment-cards svg { width: 20px; }
 
 .payment-paypal svg { width: 80px; }
-
-.card-button-hidden .stripe-button { display: none; }
-
-.paypal-button-hidden .paypal-button { display: none; }
 
 @-webkit-keyframes load3 {
   0% {

@@ -1,0 +1,245 @@
+/****** adapted from https://github.com/stripe-samples/payment-form-modal *****/
+
+#stripe-inline {
+  position: relative;
+}
+
+.minimum-donation-error #stripe-inline:before,
+.minimum-subscription-error #stripe-inline:before,
+.minimum-yearly-error #stripe-inline:before {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+} 
+
+.modal {
+  max-width: 320px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.modal-content {
+  margin: 5em auto;
+  border-radius: 10px;
+  background-color: transparent;
+  overflow: hidden;
+  width: 340px;
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .modal-content {
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .top {
+    padding-top: 4em;
+  }
+
+  .close {
+    padding-top: 1em
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.close {
+  background: none;
+  border: none;
+  padding: 0;
+  padding-top: 1em;
+  font: inherit;
+  outline: inherit;
+  color:  #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.details {
+  margin-bottom: 2px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.top-banner {
+  background-color: black;
+  text-align: center;
+  background-color: #e8e9eb;
+  padding: 1em;
+  padding-top: 0;
+}
+
+.product {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.company {
+  color:  #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 32px;
+}
+
+.footer-text {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 16px;
+}
+
+.error-message {
+  margin-top: 5px;
+  color: rgb(220, 39, 39);
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.pay-button-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  margin: 25px;
+  width: 350px;
+  height: 40px;
+}
+
+.pay-button {
+  margin-top: .5em;
+  margin-bottom: 1em;
+  width: 100%;
+  position: relative;
+  border-radius: 3px;
+  background-color: #0aad03;
+  box-shadow: 0 3px 3px rgba(0,0,0,.16);
+  font-size: 20px;
+  line-height: 38px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
+.pay-button:focus,
+.pay-button:hover {
+  background-color: #258333;
+}
+
+.pay-button[disabled] {
+  background-color: #bcbcbc;
+}
+
+/* Form */
+
+.custom-payment-amount input[type="text"],
+.StripeElement {
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+}
+
+.custom-payment-amount input[type="text"],
+.email-label .StripeElement {
+  padding: 4px;
+}
+
+.StripeElement {
+  padding: 6px;
+}
+
+.custom-payment-amount input[type="text"]:focus,
+.StripeElement--focus {
+  border: 1px solid #757575;
+  outline: none;
+}
+
+.StripeElement--invalid {
+  border-color: rgb(239, 152, 150);
+}
+
+.StripeElement--webkit-autofill {
+  background-color: rgb(254, 253, 229)!important;
+}
+
+.subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5b5b65;
+  text-shadow: 0 1px 0 #fff;
+  padding-bottom: 6px;
+}
+
+.email-label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.email {
+  border-width: 0px;
+  width: 100%;
+  line-height: 0;
+}
+
+.email:focus { outline: none; }
+
+.pbs {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+}
+
+@media screen and (max-width: 544px) {
+  .pbs {
+    display: none;
+  }
+}
+
+@keyframes Shake {
+	0% {
+		transform: translateX(0);
+	}
+	12.5% {
+		transform: translateX(-6px) rotateY(-5deg);
+	}
+	37.5% {
+		transform: translateX(5px) rotateY(4deg);
+	}
+	62.5% {
+		transform: translateX(-3px) rotateY(-2deg);
+	}
+	87.5% {
+		transform: translateX(2px) rotateY(1deg);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.shake {
+	animation-duration: .4s;
+	animation-timing-function: ease-in-out;
+	animation-name: Shake;
+}
