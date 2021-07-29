@@ -1439,6 +1439,7 @@ a.icon-button:visited
 #navbar-logo > span
 {
   /* full-height: 2.91 * 1.375 = ~4em */
+  display: none;
   line-height: 2.91em;
   font-size: 1.375em;
   word-spacing: -2px;
@@ -2735,7 +2736,7 @@ Android device using Samsung Internet or Firefox */
   margin-top: 1em;
 }
 
-.show-mobile
+h2 span.show-mobile
 {
   display: block;
 }
@@ -2886,7 +2887,7 @@ Android device using Samsung Internet or Firefox */
     flex-direction: row-reverse;
   }
 
-  .show-mobile
+  h2 span.show-mobile
   {
     display: none;
   }
