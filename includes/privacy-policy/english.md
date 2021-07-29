@@ -82,6 +82,7 @@ The following privacy notice shall provide you with a general overview about the
             - Number of notification downloads
             - Information whether the local storage of the extension configuration is corrupted
             - Filter subscriptions enabled / disabled
+            - Version parameter of filter lists
         - Voluntary:
         {: .has-horizontal-list .semicolon-separated }
             - Reason for uninstallation
@@ -299,9 +300,7 @@ Collection and processing of your personal data may be necessary for compliance 
 
 The collection and processing of your personal data may be necessary for the purposes of our legitimate interests. We collect and process website logs for technical reasons, such as, but not limited to, preventing denial of service attacks. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. Preventing such overloads of our systems and any security issues by denial of service attacks is in your and our vital interest and therefore we use the website logs. We use information collected and processed via subscription downloads, extension update checks, emergency notifications and feedback data sent by you, for technical reasons, such as, but not limited to, ensuring the security of the extension version used by you. Ensuring the security of our extension is in your and our vital interest and therefore we use such data. Furthermore, we collect and process such data to ensure that our website and extension are constantly improved and adjusted to the changing requirements for an efficient usability and the technical environment. In addition, we collect personal data to remember your privacy settings and/or to keep you logged in. Ensuring the usability of our websites and of our products is in your and our vital interest and therefore we use such data.
 
-#### Jointly determining purposes and means of data processing: Art. 26 (1) GDPR {: #joint-controllership }
-
-To build and improve upon products and features more efficiently, we may share personal data, in compliance with GDPR, within the context of a joint controllership. This does not in any way affect how we process personal data as outlined in this privacy policy or how you can exercise your data subject’s rights. You can always contact us with questions or feedback about our privacy policy <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">here</a>.
+To build and improve upon products and features more efficiently, we share personal data, in compliance with GDPR, within the context of a joint controllership with partners. This does not affect how we process personal data as outlined in this privacy policy or how you can exercise your data subject’s rights towards us. You can always contact us with questions or feedback about our privacy policy [here](#data-protection-officer) and can receive the essence of the arrangement between us and our partners via e-mail to <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">privacy@eyeo.com</a>.
 
 ### Do we disclose any personal data? {: #disclosure }
 
@@ -431,7 +430,7 @@ Adblock Plus may make further requests to AdblockPlus.org as required. For examp
 
 ##### Uninstallation and donation information
 
-When uninstalling Adblock Plus for desktop and/or donating to us, you will be referred to an uninstallation and/or donation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
+When uninstalling Adblock Plus for desktop and/or donating to us, you will be referred to an uninstallation and/or donation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, version parameter of filter lists, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
 
 For donations, we work with payment providers (Stripe, Inc. and PayPalPaypal S.à r.l. et Cie, S.C.A.). These providers are responsible for processing the data you enter in regards to the  donations you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. In addition, Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For further information as to how these providers handle the processing of personal data, please refer to Stripe’s [Privacy Policy](https://stripe.com/privacy) and PayPal’s [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full). We store the reports the payment service providers present us with for accounting purposes.
 
@@ -707,7 +706,7 @@ To exercise any of these rights, please submit a request to <a id='privacy-email
 
 If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
 
-<time datetime="2021-03">March 2021</time>
+<time datetime="2021-07">July 2021</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

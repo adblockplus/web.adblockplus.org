@@ -83,6 +83,7 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
             - Zahl der Benachrichtigungs-Downloads
             - Information, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist
             - Filterabonnements aktiviert/deaktiviert
+            - Versionsparameter von Filterlisten
         - Freiwillig:
         {: .has-horizontal-list .semicolon-separated }
             - Grund für die Deinstallation
@@ -299,6 +300,8 @@ Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erforderlich s
 
 Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erfolgen, weil wir ein berechtigtes Interesse daran haben. Wir erheben und verarbeiten Webseitenprotokolle aus technischen Gründen, wie z. B. zur Verhinderung von Denial-of-Service-Angriffen. Denial-of-Service-Angriffe erfolgen in der Regel dadurch, dass das betreffende Gerät oder die betreffende Ressource mit überflüssigen Anfragen überschwemmt wird, um Systeme zu überlasten und zu verhindern, dass einige oder alle legitimen Anfragen erfüllt werden. Es liegt in deinem und unserem wesentlichen Interesse, solche Überlastungen unserer Systeme und Sicherheitsprobleme durch Denial-of-Service-Angriffe zu verhindern, und deshalb verwenden wir die Webseitenprotokolle. Wir verwenden die über Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen und Feedback-Daten erhobenen und verarbeiteten Informationen aus technischen Gründen, z. B. um die Sicherheit der von dir verwendeten Erweiterungsversion gewährleisten zu können. Es liegt in deinem und unserem wesentlichen Interesse, die Sicherheit unserer Erweiterung zu gewährleisten und daher verwenden wir diese Daten. Darüber hinaus erheben und verarbeiten wir solche Daten, um unsere Webseite und deren Erweiterung ständig zu verbessern und an die sich ändernden Anforderungen für eine effiziente Nutzbarkeit und das technische Umfeld anzupassen. Darüber hinaus erheben wir personenbezogene Daten, um deine Datenschutzeinstellungen zu erinnern bzw. damit du eingeloggt bleiben kannst. Die Nutzbarkeit unserer Webseiten und unserer Produkte sicherzustellen, liegt in deinem sowie unserem wesentlichen Interesse und daher verwenden wir diese Daten.
 
+Wir teilen personenbezogene Daten unter Einhaltung der DSGVO im Rahmen eines gemeinsamen Aufsicht mit Partnern, um Produkte und Funktionen effizienter zu gestalten und zu verbessern. Dies hat keinen Einfluss darauf, wie wir personenbezogene Daten wie in dieser Datenschutzrichtlinie beschrieben verarbeiten oder wie Sie Ihre Rechte als betroffene Person uns gegenüber ausüben können. Sie können sich jederzeit mit Fragen oder Feedback zu unseren Datenschutzrichtlinien an uns wenden und erhalten die wichtigsten Informationen über die Vereinbarung zwischen uns und unseren Partnern per E-Mail an <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">privacy@eyeo.com</a>.
+
 ### Geben wir personenbezogene Daten weiter? {: #disclosure }
 
 Ohne dich vorher gesondert zu informieren, dürfen wir deine personenbezogenen Daten nur in folgenden Ausnahmefällen an Dritte weitergeben:
@@ -427,7 +430,7 @@ Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispi
 
 ##### Deinstallations- und Spendeninformationen
 
-Bei der Deinstallation von Adblock Plus und/oder bei einer Spende an uns wirst du auf eine Deinstallations- und/oder Spendenwebseite verwiesen, auf der folgende Informationen automatisch erfasst werden: Sprache deines Browsers, Name und Version der Erweiterung, Browser-Typ und Version, Betriebssystem und Version, Anzahl der Benachrichtigungsdownloads, Informationen, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist und ob Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert waren. Auf freiwilliger Basis kannst du uns den Grund angeben, aus dem du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern.
+Bei der Deinstallation von Adblock Plus und/oder bei einer Spende an uns wirst du auf eine Deinstallations- und/oder Spendenwebseite verwiesen, auf der folgende Informationen automatisch erfasst werden: Sprache Ihres Browsers, Name und Version der Erweiterung, Browsertyp und -version, Betriebssystem und -version, Anzahl der Downloads von Benachrichtigungen, Informationen darüber, ob die lokale Speicherung der Erweiterungskonfiguration korrumpiert wurde, Versionsparameter von Filterlisten und ob etwaige Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert wurden. Auf freiwilliger Basis kannst du uns den Grund angeben, aus dem du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern.
 
 Für Spenden arbeiten wir mit Zahlungsanbietern zusammen (Stripe, Inc. und PayPal S.à r.l. et Cie, S.C.A.). Diese Anbieter sind für die Bearbeitung der Daten verantwortlich, die du bezüglich der von dir getätigten Spenden eingegeben hast. Zur Datenverarbeitung gehören u. a. alle Daten, die du in das entsprechende Formular eingegeben hast, einschließlich Kartenart, Name des Karteninhabers, Kreditkarteninformationen (mit Ausnahme der vollständigen Kartennummer), Adresse, Land, Postleitzahl und E-Mail-Adresse. Darüber hinaus sammelt Stripe identifizierende Informationen zu den Geräten, die auf seine Dienste zugreifen und verwendet diese Daten zur Betrugsaufdeckung. Weitere Informationen zum Bearbeitungsprozess von personenbezogenen Daten dieser Anbieter findest du in der [Datenschutzrichtlinie](https://stripe.com/privacy) von Stripe sowie der [Datenschutzrichtlinie](https://www.paypal.com/webapps/mpp/ua/privacy-full) von PayPal. Wir speichern die von den Zahlungsdienstleistern geschickten Berichte zu Bilanzierungszwecken.
 
@@ -701,7 +704,7 @@ Um diese Rechte auszuüben, sende bitte eine E-Mail an <a id='privacy-email' dat
 
 Bei Fragen zu diesem Abschnitt oder zur Ausübung deiner Rechte unter dem CCPA, <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>kontaktiere uns</a> bitte.
 
-<time datetime="2021-03">März 2021</time>
+<time datetime="2021-07">Juli 2021</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

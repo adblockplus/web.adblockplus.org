@@ -83,6 +83,7 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
             - Nombre de téléchargements de notifications
             - Information mentionnant si le stockage local de la configuration de l’extension est corrompu
             - Activation/désactivation aux abonnements à une liste de filtres
+            - Paramètre de version des listes de filtres
         - Volontairement :
         {: .has-horizontal-list .semicolon-separated }
             - Raison de la désinstallation
@@ -299,6 +300,8 @@ La collecte et le traitement de vos données personnelles peuvent être nécessa
 
 La collecte et le traitement de vos données personnelles peuvent être nécessaires aux fins de nos intérêts légitimes. Nous collectons et traitons les journaux de sites web pour des raisons techniques, telles que, mais sans s’y limiter, la prévention des attaques par déni de service. Le déni de service est généralement accompli en inondant la machine ou la ressource ciblée avec des requêtes superflues dans le but de surcharger les systèmes et d’empêcher l’exécution de certaines ou de toutes les demandes légitimes. La prévention de telles surcharges de nos systèmes et de tout problème de sécurité par des attaques de déni de service est dans votre et notre intérêt vital et par conséquent nous utilisons les logs du site web. Nous utilisons les informations collectées et traitées via les téléchargements d’abonnements, les vérifications de mises à jour d’extensions, les notifications d’urgence et les données de retour envoyées par vous, pour des raisons techniques telles que la sécurité de la version d’extension utilisée par vous. Assurer la sécurité de notre extension est dans votre et notre intérêt vital et donc nous utilisons de telles données. De plus, nous collectons et traitons ces données pour nous assurer que notre site web et notre extension sont constamment améliorés et adaptés aux exigences changeantes pour une utilisation efficace et l’environnement technique. En outre, nous collectons des données personnelles pour sauvegarder vos paramètres de confidentialité et/ou faire en sorte que vous restiez connectés. Assurer la convivialité de nos sites web et de nos produits est dans votre et notre intérêt vital et par conséquent nous utilisons ces données.
 
+Afin de développer et améliorer les produits et les fonctionnalités de manière plus efficace, nous partageons des données personnelles, conformément au RGPD, dans le cadre d'un contrôle conjoint avec des partenaires. Cela n'affecte en rien notre traitement des données personnelles comme le décrit cette politique de confidentialité ni la façon dont vous pouvez exercer vos droits à notre égard. Vous pouvez toujours nous contacter si vous avez des questions ou des commentaires concernant notre politique de confidentialité [ici](#data-protection-officer) et pouvez recevoir l’essentiel de l'accord entre nous et nos partenaires par e-mail à <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a>.
+
 ### Est-ce que nous divulguons des données personnelles ? {: #disclosure }
 
 Nous ne pouvons que transférer vos données personnelles à des tiers sans vous en informer préalablement dans les cas exceptionnels suivants, comme expliqué ci-dessous :
@@ -424,7 +427,7 @@ Adblock Plus peut faire d’autres demandes à AdblockPlus.org selon les besoins
 
 ##### Informations sur la désinstallation et la collecte de dons
 
-En désinstallant Adblock Plus sur le Bureau et/ou en nous faisant un don, vous serez dirigé vers une page web de désinstallation et/ou de collecte de dons où les informations suivantes seront automatiquement collectées : langue de votre navigateur, nom et version de l’extension, type et version du navigateur, système d’exploitation et version, nombre de téléchargements de notifications, indication si le stockage local de la configuration de l’extension est corrompu et si des abonnements à des listes de filtres ont été activés ou désactivés au moment de la désinstallation. Vous pouvez si vous le souhaitez nous indiquer les raisons pour lesquelles vous avez désinstallé Adblock Plus. Nous avons besoin de cette information pour améliorer nos produits.
+En désinstallant Adblock Plus sur le Bureau et/ou en nous faisant un don, vous serez dirigé vers une page web de désinstallation et/ou de collecte de dons où les informations suivantes seront automatiquement collectées : Langue de votre navigateur, nom et version de l'extension, type et version du navigateur, système d'exploitation et version, nombre de téléchargements de notifications, informations indiquant si le stockage local de la configuration de l'extension est corrompu, paramètre de version des listes de filtres et si des abonnements aux filtres ont été activés ou désactivés au moment de la désinstallation. Vous pouvez si vous le souhaitez nous indiquer les raisons pour lesquelles vous avez désinstallé Adblock Plus. Nous avons besoin de cette information pour améliorer nos produits.
 
 Pour les dons, nous travaillons avec des prestataires de paiement (Stripe, Inc. et PayPal S.à r.l. et Cie, S.C.A.). Ces prestataires sont responsables du traitement des données que vous saisissez concernant les dons que vous nous envoyez. Le traitement comprend toutes les données que vous saisissez dans le formulaire, notamment, le type de carte, le nom du titulaire de la carte, les coordonnées bancaires (à l'exception du numéro de carte dans son intégralité), l'adresse, le pays, le code postal et l’adresse e-mail. De plus, Stripe recueille des informations d’identification sur les appareils qui se connectent à ses services et utilise ces informations pour détecter des fraudes. Pour obtenir des informations complémentaires sur la façon dont ces prestataires gèrent le traitement des données personnelles, veuillez consulter la [Politique de confidentialité de Stripe](https://stripe.com/privacy) et la [Politique de confidentialité de PayPal](https://www.paypal.com/webapps/mpp/ua/privacy-full). Nous stockons les rapports que nous présentent ces prestataires de paiement pour les besoins de la comptabilité.
 
@@ -698,7 +701,7 @@ Pour exercer l'un de ces droits, veuillez soumettre une demande à <a id='privac
 
 Pour toute question concernant cette section ou sur comment exercer vos droits en vertu du CCPA, veuillez <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>nous contacter</a>.
 
-<time datetime="2021-03">Mars 2021</time>
+<time datetime="2021-07">Juillet 2021</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
