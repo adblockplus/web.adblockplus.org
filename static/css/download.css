@@ -300,7 +300,7 @@ Android device using Samsung Internet or Firefox */
 
   .show-mobile
   {
-    display: none;
+    display: none !important;
   }
 
   .download-options .tab-media-contents
