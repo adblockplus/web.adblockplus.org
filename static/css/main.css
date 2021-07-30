@@ -285,6 +285,7 @@ div.animation[started="true"]
 .content a,
 .content a:visited
 {
+  font-weight: 400;
   color: #0779d0;
 }
 
@@ -311,7 +312,9 @@ a.download-button:hover,
 a.download-button:active,
 a.download-button:visited
 {
+  font-weight: bold;
   color: #fff;
+  text-decoration: none;
 }
 
 .download-button
@@ -881,7 +884,7 @@ a.icon-button:visited
 {
   font-size: 16px;
   font-weight: 600;
-  color: #CDCDCD;
+  color: #fff;
   margin-top: 2rem;
   text-transform: uppercase;
 }
@@ -894,7 +897,8 @@ a.icon-button:visited
 
 #footer a
 {
-  color: #ececec;
+  font-weight: 300;
+  color: #fff;
 }
 
 #footer a:hover,
@@ -1266,9 +1270,9 @@ a.icon-button:visited
 .avoid-wrap {display: inline-block;}
 
 small,
-.small { font-size: 0.66666em;}
+.small { font-size: 0.8em;}
 
-.extra-small { font-size: 0.555555em; }
+.extra-small { font-size: 0.666666em; }
 
 .uppercase { text-transform: uppercase; }
 
