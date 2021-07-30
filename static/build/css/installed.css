@@ -940,7 +940,7 @@ pre
 .toc.toc-list ul li .active:before
 {
   content: "";
-  border-left: 2px solid #0797E1;
+  border-left: 2px solid #0779d0;
   height: 25px;
   left: -1em;
   top: 0px;
@@ -1102,7 +1102,7 @@ div.animation[started="true"]
 .content a,
 .content a:visited
 {
-  color: #0797E1;
+  color: #0779d0;
 }
 
 /* Buttons
@@ -1240,7 +1240,7 @@ a.download-button:visited
 .button.primary
 {
   color: #fff !important;
-  background-color: #0797E1 !important;
+  background-color: #0779d0 !important;
   box-shadow: 0px 2px 5px #95989A;
 }
 
@@ -1314,7 +1314,7 @@ a.icon-button:visited
 
 .fg-accent
 {
-  color: #0797E1;
+  color: #0779d0;
 }
 
 .bg-secondary
@@ -1378,7 +1378,7 @@ a.icon-button:visited
   {
     content: "";
     position: absolute;
-    background: #0797E1;
+    background: #0779d0;
     height: 2px;
     width: 40%;
     left: 30%;
@@ -1524,7 +1524,7 @@ a.icon-button:visited
   border-top: .3em solid;
   border-right: .3em solid transparent;
   border-left: .3em solid transparent;
-  color: #0797E1;
+  color: #0779d0;
 }
 
 [dir="rtl"] #navbar-locale-selected:after
@@ -1557,7 +1557,7 @@ a.icon-button:visited
 #navbar-locale-menu > li > a:active,
 #navbar-locale-menu > li > a:focus
 {
-  color: #0797E1;
+  color: #0779d0;
   background: #EDF9FF;
 }
 
@@ -1592,7 +1592,7 @@ a.icon-button:visited
   #navbar-menu > li > a:active,
   #navbar-menu > li > a:focus
   {
-    color: #0797E1;
+    color: #0779d0;
     background: #EDF9FF;
   }
 
@@ -1655,7 +1655,7 @@ a.icon-button:visited
   #navbar-menu li a:active,
   #navbar-menu li a:focus
   {
-    color: #0797E1;
+    color: #0779d0;
   }
 }
 
@@ -2436,11 +2436,11 @@ h2.donation-heading { font-size: 1.2em; }
   white-space: pre;
 }
 
-.content a { color: #0797E1; }
+.content a { color: #0779d0; }
 
 .content a:active,
 .content a:hover,
-.content a:visited { color: #0797e1; }
+.content a:visited { color: #0779d0; }
 
 .footer {
   position: relative;
