@@ -1101,6 +1101,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
   var paymentData;
 
   function paymentModalPopup(data) {
+    console.log(data);
     var box, button, cardStripeElement, donationRequest, email, error,
       priceText, token;
 
