@@ -2791,12 +2791,8 @@ h2.donation-heading { font-size: 1.2em; }
 }
 
 @media (min-width: 376px) {
-  [dir="ltr"] .payment-method label {
+  .payment-method label {
     margin-right: 50px;
-  }
-
-  [dir="rtl"] .payment-method label {
-    margin-left: 50px;
   }
 }
 
