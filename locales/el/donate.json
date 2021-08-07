@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "Ή μια <strong>μηνιαία</strong> δωρεά:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Ή <strong>ετήσια</strong> δωρεά:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "Συμβάλετε με <strong>ετήσια</strong> δωρεά:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό εφάπαξ δωρεάς είναι <span>$5</span>."
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό μηνιαίας δωρεάς είναι <span>$1.99</span>."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Ωχ! Για την στήριξη κάλυψης των εξόδων η ελάχιστη ετήσια δωρεά είναι <span>$5</span>."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "μήνα"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "έτος"
   }
 }

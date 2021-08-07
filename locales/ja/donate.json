@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "または、寄付を<strong>毎月</strong>送る："
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "または、<strong>1年分</strong>の寄付："
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "<strong>1年分</strong>寄付する："
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "おやまあ！手数料の関係から、一回の寄付は最低<span>$5</span>でお願いしております。"
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "おやまあ！手数料の関係から、一回の寄付は最低<span>$1.99</span>でお願いしております。"
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "おや！経費を賄うため1年分の寄付の最低額は、<span>$5</span>となっております。"
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "月"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "年"
   }
 }

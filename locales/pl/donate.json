@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "Lub ustaw <strong>comiesięczny</strong> przelew:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Lub <strong>roczną</strong> darowizną:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "Przekaż <strong>roczną</strong> darowiznę:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Ups! W związku z opłatami dodatkowymi, minimalna kwota darowizny wynosi <span>$5</span>."
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "Ups! W związku z opłatami dodatkowymi, minimalna kwota comiesięcznej darowizny wynosi <span>$1.99</span>."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna roczna kwota darowizny wynos <span>$5</span>."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -74,5 +86,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "miesiąc"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "rok"
   }
 }

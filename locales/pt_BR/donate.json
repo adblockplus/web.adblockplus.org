@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "Ou defina uma doação <strong>mensal</strong> :"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Ou uma doação <strong>anual</strong> :"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "Faça uma doação <strong>anual</strong> :"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Oops! Para ajudar a cobrir o pagamento das taxas, o valor mínimo para doação única é <span>$5</span>."
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "Oops! Para ajudar a cobrir o pagamento das taxas, o valor mínimo para doação mensal é <span>$1.99</span>."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Ops! Para ajudar a cobrir as despesas, o valor da doação anual mínimo <span>$5</span>."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "mês"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "ano"
   }
 }

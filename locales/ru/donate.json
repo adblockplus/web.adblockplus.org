@@ -27,13 +27,25 @@
     "description": "heading",
     "message": "Или <strong>ежемесячное</strong> пожертвование:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Или <strong>ежегодное</strong> пожертвование:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "Сделать <strong>ежегодное</strong> пожертвование:"
+  },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Ой! С учетом накладных расходов, минимальная сумма однократного пожертвования составляет <span>$5</span>."
+    "message": "Упс! Ввиду применимых комиссий минимальная сумма однократного пожертвования составляет <span>$5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Ой! С учетом накладных расходов, минимальная сумма ежемесячного пожертвования составляет <span>$1.99</span>."
+    "message": "Упс! Ввиду применимых комиссий минимальная сумма ежемесячного пожертвования составляет <span>$1.99</span>."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Упс! Ввиду применимых комиссий минимальная сумма ежегодного пожертвования составляет <span>$5</span>."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "месяц"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "год"
   }
 }

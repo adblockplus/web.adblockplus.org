@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "Vagy <strong>havi rendszeres</strong> adományt:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Vagy <strong>évenkénti</strong> adományt:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "Küldj <strong>évenkénti</strong> adományt:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Hoppá! A kezelési költségek fedezésére az egyszeri adomány minimum összege <span>$5</span>."
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "Hoppá! A kezelési költségek fedezésére a havi rendszeres adomány minimum összege <span>$1.99</span>."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Hoppá! A díjak fedezete érdekében a minimális éves adomány értéke <span>$5</span>."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -80,6 +92,10 @@
   },
   "checkout-overlay-monthly": {
     "description": "button label",
-    "message": "havonta"
+    "message": "hó"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "év"
   }
 }

@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "<strong>매달</strong> 기부하기:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "또는<strong>월간</strong>기부:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "<strong>연간</strong>기부:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "죄송합니다! 수수료를 포함한 1회 기부 최소 금액은 <span>$5</span>입니다."
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "죄송합니다! 수수료를 포함한 매달 기부 최소 금액은 <span>$1.99</span>입니다."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "이런!수수료를고려하면,최소연간기부금은<span>$5</span>입니다."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "월"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "년"
   }
 }

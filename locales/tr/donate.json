@@ -27,13 +27,25 @@
     "description": "heading",
     "message": "<strong>Aylık</strong> bağışlar da yapabilirsiniz:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Veya <strong>yıllık</strong> bağış:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "<strong>Yıllık</strong> bağış yap:"
+  },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Hay aksi! Ücretleri karşılamak için tek seferlik minimum bağış miktarı <span>$5</span>'dur."
+    "message": "Tüh! Masrafları karşılamamıza yardım etmek için tek seferlik minimum bağış miktarı <span>$5</span>'dur."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Hay aksi! Ücretleri karşılamak için tek seferlik minimum bağış miktarı <span>$1.99</span>'dır."
+    "message": "Tüh! Masrafları karşılamamıza yardım etmek için aylık en az bağış miktar <span>$1.99</span>'dır."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Tüh! Masrafları karşılamamıza yardım etmek için yıllık en az bağış miktar <span>$5</span>'dır."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "Aylık"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "Yıllık"
   }
 }

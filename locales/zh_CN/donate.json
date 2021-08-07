@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "或<strong>每月</strong>捐赠："
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "或<strong>年度</strong>捐赠："
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "进行<strong>年度</strong>捐赠："
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "抱歉！为了支付相关费用，一次性捐款额最低为 <span>$5</span>。"
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "抱歉！为了支付相关费用，每月捐款额最低为 <span>$1.99</span>。"
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "糟糕！为了足以支付费用，年度捐赠最低金额为<span>$5</span>。"
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "月"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "年"
   }
 }

@@ -27,13 +27,25 @@
     "description": "heading",
     "message": "O una donazione <strong>mensile</strong>:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "O una donazione <strong>annuale</strong>:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "Fai una donazione <strong>annuale</strong>:"
+  },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Ops! Per contribuire a coprire le spese, l'importo minimo della donazione unica è di <span>$5</span>."
+    "message": "Accidenti! Al fine di aiutare a coprire le spese, l'importo minimo della donazione unica è di <span>$5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Ops! Per contribuire a coprire le spese, l'importo minimo della donazione mensile è di <span>$1.99</span>."
+    "message": "Accidenti! Al fine di aiutare a coprire le spese, l'importo minimo della donazione mensile è di <span>$1.99</span>."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Accidenti! Al fine di aiutare a coprire le spese, l'importo minimo della donazione annuale è di <span>$5</span>."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "al mese"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "anno"
   }
 }

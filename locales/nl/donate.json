@@ -27,6 +27,14 @@
     "description": "heading",
     "message": "Of een <strong>maandelijkse</strong> donatie:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Of een <strong>jaarlijkse</strong> donatie:"
+  },
+  "yearly-subscription-legend-alt": {
+    "description": "heading",
+    "message": "Doe een <strong>jaarlijkse</strong> donatie:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Oeps! De minimale eenmalige donatiebijdrage om kosten te dekken is <span>$5</span>."
@@ -34,6 +42,10 @@
   "min-subscription-warning": {
     "description": "notice",
     "message": "Oeps! De minimale maandelijkse donatiebijdrage om kosten te dekken is <span>$1.99</span>."
+  },
+  "min-subscription-yearly-warning": {
+    "description": "notice",
+    "message": "Oeps! Om de kosten te helpen dekken is het minimale jaarlijkse donatiebedra <span>$5</span>."
   },
   "pay-with-lead-1": {
     "description": "heading",
@@ -81,5 +93,9 @@
   "checkout-overlay-monthly": {
     "description": "button label",
     "message": "per maand"
+  },
+  "checkout-overlay-yearly": {
+    "description": "button label",
+    "message": "per jaar"
   }
 }
