@@ -19,7 +19,7 @@
       "static/js/vendor/uuidv4.min.js",
       "static/js/vendor/bowser.js",
       "static/js/vendor/lodash.custom.min.js",
-      "static/js/payment/form-0.js",
+      "static/js/payment/form-donate.js",
       "static/js/payment/providers/paypal.js",
       "static/js/payment/providers/stripe.js",
       "static/js/payment/controller.js",
@@ -33,7 +33,7 @@
       "static/js/vendor/uuidv4.min.js",
       "static/js/vendor/bowser.js",
       "static/js/vendor/lodash.custom.min.js",
-      "static/js/payment/form-0.js",
+      "static/js/payment/form-donate.js",
       "static/js/payment/providers/paypal.js",
       "static/js/payment/providers/stripe.js",
       "static/js/payment/controller.js",
@@ -55,35 +55,5 @@
       "static/js/address-masking.js"
     ],
     "output_name": "installed"
-  },
-  "installed_page_0": {
-    "js_files": [
-      "static/js/vendor/url-search-params.min.js",
-      "static/js/vendor/uuidv4.min.js",
-      "static/js/vendor/bowser.js",
-      "static/js/vendor/lodash.custom.min.js",
-      "static/js/payment/form-0.js",
-      "static/js/payment/providers/paypal.js",
-      "static/js/payment/providers/stripe.js",
-      "static/js/payment/controller.js",
-      "static/js/pages/installed.js",
-      "static/js/address-masking.js"
-    ],
-    "output_name": "installed-0"
-  },
-  "installed_page_1": {
-    "js_files": [
-      "static/js/vendor/url-search-params.min.js",
-      "static/js/vendor/uuidv4.min.js",
-      "static/js/vendor/bowser.js",
-      "static/js/vendor/lodash.custom.min.js",
-      "static/js/payment/form-1.js",
-      "static/js/payment/providers/paypal.js",
-      "static/js/payment/providers/stripe.js",
-      "static/js/payment/controller.js",
-      "static/js/pages/installed.js",
-      "static/js/address-masking.js"
-    ],
-    "output_name": "installed-1"
   }
 }
