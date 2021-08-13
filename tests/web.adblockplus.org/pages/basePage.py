@@ -12,6 +12,13 @@ class BasePage:
         self.driver.implicitly_wait(5)
         self.timeout = 30
 
+    def get_current_url(self):
+        return self.driver.current_url
+
+    @staticmethod
+    def get_landing_page_url():
+        return str(os.getenv('landing_page_url'))
+
     def go_home(self):
         self.driver.get(str(os.getenv('landing_page_url')))
 
