@@ -47,7 +47,7 @@ class GenericDonationPage(BasePage):
         self._set_page_urls()
         self.driver.get(self._generic_donation_page_url)
 
-        self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME, STRIPE_BUTTON_CLASS)))
+        # self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME, STRIPE_BUTTON_CLASS)))
 
     def _set_page_urls(self):
         self._generic_donation_page_url = str(os.getenv('landing_page_url'))\
