@@ -15,7 +15,7 @@ a.arrow {
   padding-right: 15px;
   font-weight: 700;
   background-position: right;
-  background-image: url(../../img/red-right-arrow-icon.svg);
+  background-image: url(/img/red-right-arrow-icon.svg);
   background-repeat: no-repeat;
 }
 
@@ -183,7 +183,7 @@ a.arrow {
 
 .faq h3 {
   padding: 1em 2em 1em 0;
-  background-image: url(../../img/accordion-arrow-closed.svg);
+  background-image: url(/img/accordion-arrow-closed.svg);
   background-repeat: no-repeat;
   background-position: top 50% right;
   cursor: pointer;
@@ -195,7 +195,7 @@ a.arrow {
   background-position: top 50% left;
 }
 
-.faq h3.open { background-image: url(../../img/accordion-arrow-open.svg); }
+.faq h3.open { background-image: url(/img/accordion-arrow-open.svg); }
 
 .faq p { width: 90%; }
 

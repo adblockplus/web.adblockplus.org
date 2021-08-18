@@ -39,30 +39,6 @@ const buildCSS = (data) => {
       }
     });
 
-    if (newUrlPathsData.includes('url(../')) {
-      newUrlPathsData = newUrlPathsData.replace(/url\(\.\.\//g, 'url(../../');
-
-      console.log('______ : REPLACE : url(../ url(../../');
-    }
-
-    if (newUrlPathsData.includes('url(/')) {
-      newUrlPathsData = newUrlPathsData.replace(/url\(\//g, 'url(../../');
-
-      console.log('______ : REPLACE : url(/ url(../../');
-    }
-
-    if (newUrlPathsData.includes('url("../')) {
-      newUrlPathsData = newUrlPathsData.replace(/url\(\"\.\.\//g, 'url("../../');
-
-      console.log('______ : REPLACE : url("../ url("../../');
-    }
-
-    if (newUrlPathsData.includes('url("/')) {
-      newUrlPathsData = newUrlPathsData.replace(/url\(\"\//g, 'url("../../');
-
-      console.log('______ : REPLACE : url("/ url("../../');
-    }
-
     return newUrlPathsData;
   });
 
@@ -104,30 +80,6 @@ const buildJs = (data) => {
         return console.log(err);
       }
     });
-
-    if (newUrlPathsData.includes('\'/img/')) {
-      newUrlPathsData = newUrlPathsData.replace(/\'\/img\//g, '\'../../img/');
-
-      console.log('______ : REPLACE : \'/img/  \'../../img/');
-    }
-
-    if (newUrlPathsData.includes('"/img/')) {
-      newUrlPathsData = newUrlPathsData.replace(/\"\/img\//g, '"../../img/');
-
-      console.log('______ : REPLACE : "/img/  "../../img/');
-    }
-
-    if (newUrlPathsData.includes('\'/js/')) {
-      newUrlPathsData = newUrlPathsData.replace(/\'\/js\//g, '\'../../js/');
-
-      console.log('______ : REPLACE : \'/js/  \'../../js/');
-    }
-
-    if (newUrlPathsData.includes('"/js/')) {
-      newUrlPathsData = newUrlPathsData.replace(/\"\/js\//g, '"/../js/');
-
-      console.log('______ : REPLACE : "/js/  "/../js/');
-    }
 
     return newUrlPathsData;
   });

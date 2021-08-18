@@ -249,11 +249,11 @@
    *     <img
    *       class="video-thumbnail"
    *       alt="Short description of video"
-   *       src="../../img/video-thumbnail.png" />
+   *       src="/img/video-thumbnail.png" />
    *     <img
    *       class="video-play"
    *       alt="Open video in separate window""
-   *       src="../../img/video-link.png" />
+   *       src="/img/video-link.png" />
    *   </a>
    *   <p class="video-disclaimer">Disclaimer text</p>
    * </div>
@@ -286,7 +286,7 @@
     //change external link icon into play button icon
     parent
       .querySelector(".video-play")
-      .setAttribute("src", siteurl + "../../img/video-play.png");
+      .setAttribute("src", siteurl + "/img/video-play.png");
 
     //show disclaimer or replace thumbnail with video on click
     videoLink.addEventListener("click", this._onPlayClick.bind(this));

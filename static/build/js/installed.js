@@ -1087,7 +1087,7 @@ root.paypalProvider = {
       business: "till@adblockplus.org",
       item_name: payment.item,
       custom: payment.custom,
-      image_url: payment.image || siteURL + "../../img/adblock-plus-paypal.png",
+      image_url: payment.image || siteURL + "/img/adblock-plus-paypal.png",
       return: payment.successURL || siteURL + "/payment-complete",
       cancel_return: payment.cancelURL || root.location.href,
       no_note: 1,
@@ -1246,7 +1246,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
               '<div class="top">' +
                 '<div id="co-name" class="company"></div>' +
                 '<button class="close">' +
-                  '<img width="17" height="17" src="../../img/close.png"></button>' +
+                  '<img width="17" height="17" src="/img/close.png"></button>' +
               '</div>' +
               '<div id="product-name" ' +
                 'class="product details">Adblock Plus</div>' +
@@ -1288,7 +1288,7 @@ function initStripeProvider(publishableKey, formProcessor, text) {
             '</form>' +
           '</div>' +
         '</div><img width="123" height="30" class="pbs" ' +
-          'src="../../img/powered-by-stripe.png"></button>';
+          'src="/img/powered-by-stripe.png"></button>';
 
       box = document.querySelector('.modal-content');
       button = document.getElementById('pay-button');
@@ -1697,7 +1697,7 @@ function onLoadReportSuccess() {
 
 script.onload = onLoadReportSuccess;
 script.onerror = onLoadReportSuccess;
-script.src = '../../js/payment/config/load.js?' + params.toString();
+script.src = '/js/payment/config/load.js?' + params.toString();
 
 document.head.appendChild(script);
 

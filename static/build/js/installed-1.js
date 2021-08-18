@@ -1130,7 +1130,7 @@ root.paypalProvider = {
       business: "till@adblockplus.org",
       item_name: payment.item,
       custom: payment.custom,
-      image_url: payment.image || siteURL + "../../img/adblock-plus-paypal.png",
+      image_url: payment.image || siteURL + "/img/adblock-plus-paypal.png",
       return: payment.successURL || siteURL + "/payment-complete",
       cancel_return: payment.cancelURL || root.location.href,
       no_note: 1,
@@ -1734,7 +1734,7 @@ function onLoadReportSuccess() {
 
 script.onload = onLoadReportSuccess;
 script.onerror = onLoadReportSuccess;
-script.src = '../../js/payment/config/load.js?' + params.toString();
+script.src = '/js/payment/config/load.js?' + params.toString();
 
 document.head.appendChild(script);
 
