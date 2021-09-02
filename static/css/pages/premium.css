@@ -1,0 +1,331 @@
+body {
+  background-color: #E5E5E5;
+  font-weight: 400;
+}
+
+.button,
+.yellow-highlight { font-weight: 700; }
+
+.reason,
+.subscribe,
+.faq { background-color: #FFFFFF; }
+
+.button,
+.yellow-highlight { background-color: #EDA51E; }
+
+.features-hero,
+[data-interval="yearly"] .yearly,
+[data-interval="monthly"] .monthly,
+.button,
+.yellow-highlight { color: #FFFFFF; }
+
+[data-interval="yearly"] .yearly,
+[data-interval="monthly"] .monthly { background-color: #0797E1; }
+
+[type="email"],
+[type="date"],
+[type="text"],
+[data-interval="yearly"] .monthly,
+[data-interval="monthly"] .yearly { background-color: #F7F7F7; }
+
+.button { box-shadow: 0 16px 48px rgba(88,88,88,.2); }
+
+.button:hover {
+  background-color: #ec9d08;
+  box-shadow: 0 16px 48px rgba(88,88,88,.12);
+}
+
+.interval,
+.reason,
+.subscribe,
+.faq,
+.button,
+input,
+.checkbox, 
+.radio,
+.features-hero,
+.yellow-highlight { border-radius: 4px; }
+
+[type="radio"] { border-radius: 50%; } 
+
+.reason,
+.subscribe,
+.faq,
+.features-hero,
+.subscribe-form { padding: 3em 2em; }
+
+.why h2,
+.subscribe,
+.reason h3,
+.faq { margin-top: 3em; }
+
+.subscribe h2,
+.intro h1 { margin-top: 0; }
+
+.intro h1 { font-size: 80px; }
+
+.intro svg {
+  display: block;
+  margin: 7em 0 0;
+}
+
+.intro .button {
+  margin-left: 0;
+  margin-right: 2em;
+}
+
+[dir="rtl"] .intro .button {
+  margin-left: 2em;
+  margin-right: 0;
+}
+
+.why .reasons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.why .reason {
+  width: 100%;
+  max-width: 32%;
+  margin-top: 1em;
+}
+
+.features-hero {
+  background: url(/img/premium-hero-bg.svg) center center no-repeat;
+  background-size: cover;
+  padding: 5em 2em;
+}
+
+.subscribe-form {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subscribe-form fieldset {
+  margin: 2em 4em;
+  text-align: left;
+}
+
+[dir="rtl"] .subscribe-form fieldset { text-align: right; }
+
+.subscribe-form .button { margin-top: 1em; }
+
+.subscribe .interval {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  margin: 2em 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.interval div {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  padding: 2em 1em;
+} 
+
+.interval .monthly { border-right: 5px solid #FFFFFF; }
+
+[dir="rtl"] .interval .monthly {
+  border-right-width: 0;
+  border-left: 5px solid #FFFFFF;
+}
+
+.switch {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.yellow-highlight { padding: .2em .4em; }
+
+.interval-title { font-size: 16px; }
+
+.interval-note { font-size: 14px; }
+
+[data-interval="yearly"] .monthly .blue-highlight { color: #0797E1; }
+
+.disc { transition: all .3s; }
+
+[data-interval="monthly"] .yearly { color: inherit; }
+
+[data-interval="monthly"] .disc { transform: translateX(-40%) }
+
+[data-interval="yearly"] .monthly { color: inherit; }
+
+[data-interval="yearly"] .disc { transform: translateX(0%) }
+
+[for="paypal"] { float: right; }
+
+[dir="rtl"] [for="paypal"] { float: left; }
+
+[dir="rtl"] [for="card"] { float: right; }
+
+[data-interval="monthly"] .disc:hover { transform: translateX(-35%); }
+
+[data-interval="yearly"] .disc:hover { transform: translateX(-5%); }
+
+.payment-paypal { display: inline; }
+
+.payment-paypal svg {
+  width: 60px;
+  margin-bottom: -3px;
+}
+
+[type="checkbox"],
+[type="radio"] { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #0797e1;
+  height: 20px;
+  width: 20px;
+  margin-bottom: -4px;
+  margin-right: 1em;
+}
+
+[dir="rtl"] [type="checkbox"],
+[dir="rtl"] [type="radio"] {
+  margin-left: 1em;
+  margin-right: 0;
+}
+
+[type="checkbox"]:checked {
+  border-width: 0px;
+  background: url(/img/check.svg) center center no-repeat #0797e1;
+}
+
+[type="radio"]:checked { border-width: 7px; }
+
+.multiline-label { display: table; }
+
+.multiline-label span { display: table-cell; }
+
+[type="email"],
+[type="date"],
+[type="text"],
+.subscribe .button { width: 100%; }
+
+[type="email"],
+[type="date"],
+[type="text"] {
+  padding: .5em 1em;
+  margin: .5em auto;
+  border: 1px solid #CDCDCD;
+  background-color: #F7F7F7;
+  color: #585858;
+}
+
+.content .expandable-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expandable-item {
+  border-bottom: 1px solid #CDCDCD; 
+  padding: 1em 0;
+}
+
+.expandable-item a {
+  display: block;
+  padding: 1em 0;
+  text-decoration: none;
+  color: #212121;
+  font-size: 18px;
+}
+
+.expandable-item p { display: none; }
+
+.expandable-item.expanded p { display: block; }
+
+.expandable-item svg {
+  float: right; 
+  transition: all .3s;
+}
+
+.expandable-item.expanded svg { transform: rotateX(180deg); }
+
+.expandable-item a:hover svg { margin-top: 5px; }
+
+.expandable-item.expanded a:hover svg { margin-top: 0; }
+
+[dir="rtl"] .expandable-item svg { float: left; }
+
+@media(min-width: 769px) {
+  .expiration-cvc label {
+    float: left;
+    width: 47.8%;
+  }
+
+  .expiration-cvc label:first-child { margin-right: 1em; }
+}
+
+@media(max-width: 768px) {
+  .intro h1 { font-size: 50px; }
+  
+  header, 
+  section { text-align: center; }
+  
+  .intro.one-half,
+  .features-hero .one-half {
+    margin: 0 auto;
+    float: none;
+  }
+  
+  .intro svg { margin: 7em auto 0; }
+  
+  .intro .button {
+    display: block;
+    margin: 1em auto;
+  }
+
+  [dir="rtl"] .intro .button { margin: 1em auto; }
+  
+  .why .reasons {
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .why .reason {
+    max-width: none;
+  }
+  
+  .reason,
+  .subscribe,
+  .faq,
+  .features-hero,
+  .subscribe-form fieldset { padding: 2em 1em; }
+  
+  .subscribe-form { padding: 0; }
+  
+  .subscribe-form fieldset {
+    padding: 1em 0;
+    margin: 0;
+  }
+  
+  .faq .container { padding: 0; }
+}
+
+@media(max-width: 572px) {
+  .subscribe .interval,
+  .interval div { display: block; }
+
+  .subscribe .interval div,
+  [dir="rtl"] .subscribe .interval div {
+    width: auto;
+    border-width: 0;
+  }
+
+  .switch { display: none; }
+}

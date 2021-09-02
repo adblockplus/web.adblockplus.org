@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html <? include html-attributes ?>>
+
+  <head>
+    <? include meta/standard ?>
+    <? include styles ?>
+    <? include config ?>
+    <? include anti-flicker ?>
+    <? include polyfills ?>
+
+    {% block head %}
+      {{head|safe}}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block body %}
+      {{body|safe}}
+    {% endblock %}
+
+    <? include footer ?>
+  </body>
+</html>
