@@ -1,0 +1,125 @@
+<form autocomplete="off">
+
+  <header class="donation-header">
+    <h2 class="donation-heading">
+      <span class="single-currency">{{ fair-amount-header-1[heading] Name a fair amount (in <span class="currency">USD</span>) }}</span>
+      <span class="multi-currency">{{ fair-amount-header-2[heading] Name a fair amount: }}</span>
+    </h2>
+    <select
+      id="payment-currencies"
+      class="payment-currencies"
+      name="payment-currency">
+    </select>
+  </header>
+
+  <script id="payment-currency-options" type="text/html">
+    <% _.each (currencies, function (currency, name) {  %>
+    <option value="<%- name %>"><%- name %></option>
+    <% }) %>
+  </script>
+
+  <div class="payment-types">
+
+    <fieldset class="payment-type yearly">
+      <div class="highlight-label">{{ yearly-highlight-label[heading] Biggest supporter }}</div>
+      <div class="legend-label">{{ yearly-subscription-legend-1[heading] Make a <strong>yearly</strong> donation: }}</div>
+      <div id="yearly-subscription-amounts"></div>
+    </fieldset>
+    
+    <hr class="payment-divide yearly">
+
+    <fieldset class="subscription-payment-type payment-type">
+      <legend>
+        {{ subscription-legend-1[heading] Or a <strong>monthly</strong> donation: }}
+      </legend>
+      <div id="subscription-amounts"></div>
+    </fieldset>
+
+    <hr class="payment-divide yearly">
+
+    <fieldset class="payment-type">
+      <legend>
+        {{ one-time-legened-1[heading] Or a <strong>one-time</strong> donation: }}
+      </legend>
+      <div id="donation-amounts"></div>
+    </fieldset>
+
+  </div>
+
+  <script id="preset-payment-amounts" type="text/html">
+    <% _.each (amounts, function(amount, index) { %>
+    <% if (index == 0) { %>
+    <div class="payment-amounts">
+      <% } %>
+      <% if (index % 3 == 0) { %>
+    </div>
+    <div class="payment-amounts">
+      <% } %>
+      <label class="payment-amount">
+        <input
+          type="radio"
+          name="preset-<%- type %>-amount"
+          value="<%- amount %>"
+        <% if (type == "yearly-subscription" && index == 3) { %>
+        checked
+        <% } %>>
+        <%- sign %><%- amount %>
+      </label>
+      <% }) %>
+  </script>
+
+  <script id="custom-payment-amount" type="text/html">
+    <div class="custom-payment-amount payment-amount">
+      <input
+        type="radio"
+        name="preset-<%- type %>-amount"
+        value="custom">
+      <%- sign %>
+      <input
+        type="text"
+        size="4"
+        inputmode="numeric"
+        spellcheck="false"
+        name="custom-<%- type %>-amount"
+        placeholder="<%- placeholder %>">
+    </div>
+    </div>
+  </script>
+
+  <p class="alert minimum-amount-warning minimum-donation-warning">
+    {{ min-donation-warning[notice] Oops! To help cover fees, the minimum one-time donation amount is <span class="minimum-amount">$5</span>. }}
+  </p>
+
+  <p class="alert minimum-amount-warning minimum-subscription-warning">
+    {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum monthly donation amount is <span class="minimum-amount">$1.99</span>. }}
+  </p>
+
+  <p class="alert minimum-amount-warning minimum-yearly-warning">
+    {{ min-subscription-warning[notice] Oops! To help cover fees, the minimum yearly donation amount is <span class="minimum-amount">$5</span>. }}
+  </p>
+  
+  <div class="payment">
+
+    <fieldset class="payment-method">
+      <label for="card">
+        <input type="radio" name="payment-method" id="card" value="card" checked>
+        <strong class="credit-card">{{ credit-card Credit card }}</strong>
+        <? include payment/logo/cards ?>
+      </label>
+
+      <label for="paypal">
+        <input type="radio" name="payment-method" id="paypal" value="paypal">
+        <? include payment/logo/paypal ?>
+      </label>
+    </fieldset>
+
+    <div id="payment-providers" class="payment-providers">
+      <? include payment/buttons/stripe ?>
+      <? include payment/buttons/paypal ?>
+    </div>
+    
+  </div>
+
+</form>
+
+<? include payment/translations ?>
