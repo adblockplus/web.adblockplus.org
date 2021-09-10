@@ -6,6 +6,14 @@ template=bare
 <head>
   <link rel="stylesheet" href="/build/css/installed.min.css">
   <style>
+    @media (min-width: 992px)
+    {
+      .footer-wrap .container
+      {
+        width: 1140px;
+      }
+    }
+    
     .content .update-header-heading 
     {
       font-size: 27px;
@@ -104,48 +112,8 @@ template=bare
   </div>
 </main>
 
-<footer class="footer">
-  <svg viewBox="0 0 1 1" preserveAspectRatio="none" class="wedge">
-    <path d="M1 1 L0 1 L1 0z"></path>
-  </svg>
-  <div class="container mt2">
-    <div class="content column">
-      <p class="social-links">
-        <a href="https://twitter.com/adblockplus" class="social-links-tw">
-          <svg width="68" height="68" viewBox="0 0 48 48">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g transform="translate(-1067, -1623)">
-                <g transform="translate(0, 1561)">
-                  <g transform="translate(1067, 62)">
-                    <circle fill="#1F1F1F" cx="24" cy="24" r="24"></circle>
-                    <path d="M31.97,16.6 C31.2917041,17.0473458 30.5237493,17.3408752 29.72,17.46 L29.72,17.46 C29.0664837,16.7043751 28.1190007,16.2670753 27.12,16.26 C25.0562902,16.3413149 23.4468012,18.0759864 23.52,20.14 C23.519677,20.4290338 23.5498439,20.7172954 23.61,21 L23.61,21 C20.5981694,20.8684411 17.8014249,19.4022578 15.98,17 C15.0477171,18.7443394 15.5080546,20.9066585 17.07,22.12 C16.5095409,22.1808771 15.9471932,22.0232765 15.5,21.68 C15.4061468,23.4440812 16.5691838,25.0296604 18.28,25.47 C17.8023593,25.6552404 17.2810158,25.6969478 16.78,25.59 C17.1512193,27.0838083 18.4621503,28.1545376 20,28.22 C18.6992838,29.5458916 16.8299866,30.1478053 15,29.83 C16.6678583,30.9420413 18.625433,31.5400925 20.63,31.55 C26.44,31.55 30.95,26.48 30.71,20.23 L30.71,20.23 C30.71,20.23 30.71,20.23 30.71,20.23 C30.71,20.23 30.71,20.23 30.71,20.17 C31.4250437,19.6311809 32.0208665,18.9502405 32.46,18.17 C31.8341751,18.4888257 31.1572312,18.6952936 30.46,18.78 C31.1914813,18.2412062 31.7227534,17.4742041 31.97,16.6 L31.97,16.6 Z" fill="#FFF" fill-rule="nonzero"></path>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </a>
-        <a href="http://facebook.com/adblockplus">
-          <svg width="68" height="68" viewBox="0 0 48 48">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g transform="translate(-1142, -1623)">
-                <g transform="translate(0, 1561)">
-                  <g transform="translate(1142, 62)">
-                    <circle fill="#1F1F1F" cx="24" cy="24" r="24"></circle>
-                    <path d="M21,18.55 L21,20.55 L19,20.55 L19,23.79 L21,23.79 L21,33.53 L24.21,33.53 L24.21,23.75 L27.44,23.75 L27.95,20.51 L24.21,20.51 L24.21,18.89 C24.21,18.04 24.49,17.24 25.7,17.24 L28.13,17.24 L28.13,14 L24.69,14 C21.79,14 21,15.91 21,18.55 Z" fill="#FFF" fill-rule="nonzero"></path>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </a>
-      </p>
-      <p class="copyright">
-        {{ copyright-info Copyright © 2021 All rights reserved. Adblock Plus<sup>®</sup> is a registered trademark of <a href="https://eyeo.com">eyeo GmbH</a> - <a href="https://adblockplus.org/privacy">Privacy Policy</a>}}
-      </p>
-    </div>
-  </div>
+<footer id="footer" class="content">
+  <? include footer-legal ?>
 </footer>
-
 <script src="/build/js/installed.min.js"></script>
 <? include payment/config/stripe ?>
