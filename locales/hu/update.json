@@ -4,13 +4,13 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Frissítettük az Adblock Plus-t! <span>(3.10.2 verzió)</span>"
+    "message": "Frissítettük az Adblock Plus-t! <span>(3.11 verzió)</span>"
   },
   "update-lead-1": {
-    "message": "Az utóbbi néhány hónapban azon dolgoztunk, hogy új funkciókkal egészítsük ki és javítsuk az Adblock Plus szoftver teljesítményét. Az Adblock Plus ingyenes, közösségi támogatással működő szoftver, és ez <strong>csak a felhasználóink támogatásával lehetséges</strong>."
+    "message": "Az utóbbi néhány hónapban új funkciókkal egészítettük ki, és javítottuk az Adblock Plus teljesítményét. Szenvedélyesen törekszünk arra, hogy a legjobb reklámblokkolási technológiát nyújtsuk, és biztosítsuk a szabad böngészés örömét. Az Adblock Plus egy ingyenes, közösségi támogatással működő szoftver, ami <strong>nem lenne lehetséges a folyamatos támogatások nélkül.</strong>"
   },
   "update-lead-2": {
-    "message": "Elkötelezettek vagyunk a legjobb reklámblokkoló technológiák iránt, amelyek lehetővé teszik a zavartalan böngészést. Sok időt és erőforrást áldozunk arra, hogy a felhasználók számára a legjobb online élményt nyújthassuk. Kérjük, támogassa az Adblock Plus projektet belátása szerint, hogy a reklámblokkoló közösség tovább működhessen. <strong>Minden adományt nagyra értékelünk!</strong>"
+    "message": "Rendkívül sok időt és erőforrást szánunk arra, hogy a legjobb online élményt nyújthassuk és biztosíthassuk felhasználóink számára. Kérjük, adományozzon annyit, amennyi véleménye szerint megfelelő az Adblock Plus projekt támogatásához és a reklámblokkoló közösség fenntartásához. <strong>Minden adományt nagyra értékelünk!</strong>"
   },
   "fair-amount-header-1": {
     "description": "heading",
@@ -28,6 +28,10 @@
     "description": "heading",
     "message": "Vagy <strong>havi rendszeres</strong> adományt:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Vagy <strong>évenkénti</strong> adományt:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Hoppá! A kezelési költségek fedezésére az egyszeri adomány minimum összege <span>$5</span>."
@@ -42,11 +46,11 @@
   },
   "stripe-label": {
     "description": "button label",
-    "message": "Bankkártya"
+    "message": "Fizetés bankkártyával"
   },
   "paypal-label": {
     "description": "button label",
-    "message": "PayPal"
+    "message": "Fizetés PayPal-al"
   },
   "whats-new-header-1": {
     "message": "Újdonságok"
@@ -55,16 +59,19 @@
     "message": "Tekintse meg a legújabb fejlesztések és funkciók összefoglalóját. Hamarosan újabb változások várhatók!"
   },
   "whats-new-list-1": {
-    "message": "<strong>Javított és továbbfejlesztett Elemblokkolás funkció.</strong> Egyszerűbbé tettük az elrejtendő elemek kiválasztását az oldalon, illetve az oldal előnézetét az elrejtett elemekkel. Próbálja ki!"
+    "message": "<strong>Új ajánlott szűrők.</strong> Egyszerűbbé tettük a további zavaró elemek, mint süti értesítések és sok más blokkolását. Látogasson el a <em>Beállítások > Általános > Ajánlott szűrők</em> oldalra és próbálja ki!"
   },
   "whats-new-list-2": {
-    "message": "<strong>Javított reklámblokkolás funkció.</strong> Számos weboldal használ olyan technológiát, amely megakadályozza, hogy az Adblock Plus blokkolja az ott megjelenő reklámokat. Javítottuk a reklámok blokkolásának hatékonyságát ezeken a weboldalakon. Kérjük, használja a Probléma jelentése funkciót, ha probléma merül fel a blokkolási hatékonysággal kapcsolatban."
+    "message": "<strong>Jobb reklámblokkolás.</strong> Számos weboldal megnehezíti, hogy az Adblock Plus blokkolhassa a megjelenő reklámokat. Javítottunk az ilyen oldalakon használt reklámblokkolásunkon, és ezt a funkciót rendszeresen frissítjük. Kérjük, használja a <em>Probléma jelentése</em> funkciót, ha problémát tapasztal a reklámblokkolási funkció működésében."
   },
   "whats-new-list-3": {
-    "message": "<strong>Kiegészítő támogatás a reklámok blokkolásához további nyelveken.</strong> Számos skandináv és indiai felhasználónk számára tettük lehetővé a reklámok blokkolását a saját nyelvükön."
+    "message": "<strong>Jobb teljesítmény.</strong> Javítottuk a kikapcsolt szűrőlisták ellenőrzését, hogy az Adblock Plus kisebb sávszélességet használjon."
   },
   "whats-new-list-4": {
-    "message": "<strong>Design fejlesztések.</strong> Frissítettük néhány legnépszerűbb funkciónk megjelenését, hogy az Adblock Plus használata még egyszerűbb legyen."
+    "message": "<strong>Jobb adatvédelem.</strong> A privát lapokon böngésző felhasználóknál nem vettük számításba a blokkolt kérelmek számát az összes blokkolás számláló esetében."
+  },
+  "whats-new-list-5": {
+    "message": "<strong>Jobb hibakeresés.</strong> Műszaki felhasználóink számára bevezettünk egy hibakeresés módot az elem elrejtő szűrőkhöz, ami bekapcsolható az Adblock Plus <em>Speciális</em> beállítások oldalon. Itt egyszerűen kiemelheti az elem elrejtő szűrők által érintett elemeket."
   },
   "whats-new-support": {
     "message": "Problémát szeretne jelenteni? Lépjen velünk kapcsolatba a közösségi oldalakon, <a>e-mailben</a> vagy a <a>felhasználói fórumon</a>."
@@ -92,5 +99,8 @@
   },
   "email-input": {
     "message": "Email"
+  },
+  "credit-card": {
+    "message": "Bankkártya"
   }
 }

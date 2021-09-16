@@ -4,13 +4,13 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus 已更新！ <span>(版本 3.10.2)</span>"
+    "message": "Adblock Plus 已更新！ <span>(版本 3.11)</span>"
   },
   "update-lead-1": {
-    "message": "几个月来，我们一直在为 Adblock Plus 添加新功能，改进其性能。Adblock Plus 是一款免费的由社区支持的软件，<strong>没有您的持续支持就无法取得成功</strong>。"
+    "message": "我们在过去几个月添加了新功能，并且改进了 Adblock Plus 的性能。我们热切地希望为您带来最好的广告拦截技术，让您能够享受纯净的网络空间。Adblock Plus 是社区支持的免费软件，<strong>没有您的持续支持，就无法成为可能。</strong>"
   },
   "update-lead-2": {
-    "message": "我们愿意为您提供最好的广告拦截技术，让您享受纯净的网络空间。这是我们热爱的事业，我们投入了大量时间和资源进行开发，为我们的用户提供最好的在线体验。请捐赠您认为适当的金额，以支持 Adblock Plus 项目以及我们，为使广告拦截社区所付出的努力继续运转。<strong>我们对所有捐赠表示诚挚的感谢！</strong>"
+    "message": "我们投入了大量的时间和资源来为我们的用户开发和提供最好的在线体验。请为 Adblock Plus 项目捐赠您认为适当的金额，让我们努力使广告拦截社区继续生存下去。<strong>对于每一份捐赠，我们都心怀感激！</strong>"
   },
   "fair-amount-header-1": {
     "description": "heading",
@@ -28,6 +28,10 @@
     "description": "heading",
     "message": "或<strong>每月</strong>捐赠："
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "或<strong>年度</strong>捐赠："
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "抱歉！为了支付相关费用，一次性捐款额最低为 <span>$5</span>。"
@@ -42,11 +46,11 @@
   },
   "stripe-label": {
     "description": "button label",
-    "message": "信用卡"
+    "message": "使用信用卡支付"
   },
   "paypal-label": {
     "description": "button label",
-    "message": "PayPal"
+    "message": "使用 PayPal 支付"
   },
   "whats-new-header-1": {
     "message": "新功能？"
@@ -55,16 +59,19 @@
     "message": "以下概述了部分改进和新功能。更多改进即将推出！"
   },
   "whats-new-list-1": {
-    "message": "<strong>更改和改进了拦截元素功能。</strong>我们让用户可以更直观地选择页面上要隐藏的特定元素，以及预览页面在没有这些元素时的样子。试试吧！"
+    "message": "<strong>新的推荐筛选。</strong>我们让您可以更轻松地拦截 Cookie 通知及其他干扰。请访问设置 > 一般 > 推荐筛选试用一下！"
   },
   "whats-new-list-2": {
-    "message": "<strong>改进的广告拦截功能。</strong>许多网站使用的技术让 Adblock Plus 无法拦截其网站上的广告。我们进行了改进，以能够在这些网站上拦截广告。如果您使用我们的广告拦截功能时遇到任何问题，请通过“报告问题”功能告诉我们。"
+    "message": "<strong>改进的广告拦截。</strong>许多网站让 Adblock Plus 难以在其网站上拦截广告。我们改进了在这些网站上拦截广告的功能，并且将定期更新这一功能。请使用我们的报告问题功能告诉我们，您在使用我们的广告拦截功能时是否遇到任何问题。"
   },
   "whats-new-list-3": {
-    "message": "<strong>对拦截广告功能添加了更多语言支持。</strong>我们添加了对多种北欧和印度语言用户的语言支持，让他们可以用自己的语言在网站上拦截广告。"
+    "message": "<strong>更好的性能。</strong>我们改进了检查关闭的筛选清单时使用的逻辑，这样 Adblock Plus 就可以使用更少的带宽。"
   },
   "whats-new-list-4": {
-    "message": "<strong>进行了设计改进。</strong>我们更新了最受欢迎的一些功能的外观，让 Adblock Plus 使用起来更直观。"
+    "message": "<strong>改进的隐私。</strong>对于使用隐私选项卡进行浏览的用户，我们在总拦截计数中排除了被拦截请求的数目。"
+  },
+  "whats-new-list-5": {
+    "message": "<strong>更好的 Bug 调试。</strong>对于我们的技术用户，我们推出了隐藏要素筛选的 Bug 调试模式，在 Adblock Plus 高级设置页面可以将其启用。您可轻松地突出显示受到隐藏要素筛选影响的要素。"
   },
   "whats-new-support": {
     "message": "需求报告问题？请通过社交媒体、<a>电子邮件</a>或<a>用户论坛</a>联系我们。"
@@ -92,5 +99,8 @@
   },
   "email-input": {
     "message": "电子邮箱"
+  },
+  "credit-card": {
+    "message": "信用卡"
   }
 }

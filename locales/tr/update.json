@@ -4,13 +4,13 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus güncellendi! <span>(versiyon 3.10.2)</span>"
+    "message": "Adblock Plus güncellendi! <span>(versiyon 3.11)</span>"
   },
   "update-lead-1": {
-    "message": "Son birkaç ayımızı, yeni özellikler ekleyerek ve Adblock Plus'ın performansını iyileştirerek geçirdik.Adblock Plus ücretsiz ve topluluk tarafından desteklenen bir yazılımdır ve bu, <strong>sizin sürekli desteğiniz olmadan bu mümkün olmazdı</strong>."
+    "message": "Son birkaç ayımızı, yeni özellikler ekleyerek ve Adblock Plus'ın performansını iyileştirerek geçirdik. Temiz bir web deneyimi yaşayabilmeniz için size en iyi reklam engelleme teknolojisini sunma konusunda tutkuluyuz. Adblock Plus topluluk destekli ücretsiz bir yazılımdır ve bu, <strong>sizin sürekli desteğiniz olmadan mümkün olamazdı.</strong>"
   },
   "update-lead-2": {
-    "message": "Temiz bir Internet deneyimi yaşayabilmeniz için en iyi reklam engelleme teknolojisini size sunmaya kararlıyız. Kullanıcılarımıza en iyi çevrimiçi deneyimi geliştirmek ve sunmaya devam edebilmek için çok ciddi bir zaman ve kaynak ayırıyoruz. Lütfen Adblock Plus projesi ve reklam engelleme topluluğunu canlı tutma çalışmalarımız için, adil olduğunu düşündüğünüz miktarda bağışta bulunun. <strong>Bizim için her bağış değerlidir!</strong>"
+    "message": "Geliştirme çalışmalarımıza ve kullanıcılarımız için en iyi çevrimiçi deneyimi sağlamaya oldukça fazla mesai ve kaynak ayırıyoruz. Lütfen Adblock Plus projesine ve reklam engelleme topluluğunun varlığını sürdürmeye yönelik çalışmalarımıza adil bir katkı olduğunu düşündüğünüz miktarda bağışta bulunun. <strong>Her bir bağış bizim için çok kıymetli!</strong>"
   },
   "fair-amount-header-1": {
     "description": "heading",
@@ -26,7 +26,11 @@
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "<strong>Aylık</strong> bağışlar da yapabilirsiniz:"
+    "message": "Veya <strong>aylık</strong> bağış:"
+  },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Veya <strong>yıllık</strong> bağış:"
   },
   "min-donation-warning": {
     "description": "notice",
@@ -42,11 +46,11 @@
   },
   "stripe-label": {
     "description": "button label",
-    "message": "Kredi kartı"
+    "message": "Kredi kartıyla öde"
   },
   "paypal-label": {
     "description": "button label",
-    "message": "PayPal"
+    "message": "PayPal ile öde"
   },
   "whats-new-header-1": {
     "message": "Ne gibi yenilikler var?"
@@ -55,16 +59,19 @@
     "message": "Bazı iyileştirmelere ve yeni özelliklere dair genel bilgileri burada bulabilirsiniz. Yeni değişiklikler çok yakında!"
   },
   "whats-new-list-1": {
-    "message": "<strong>Öge Engelleme özelliği güncellenip iyileştirildi.</strong> Kullanıcılar açısından, bir sayfada gizlenecek belirli ögelerin seçilmesini ve sayfanın bunlar olmadan nasıl görüneceğine ilişkin önizleme yapılmasını daha sezgisel hale getirdik. Deneyin ve görün!"
+    "message": "<strong>Yeni Önerilen Filtreler.</strong> Çerez bildirimleri ve daha fazlası gibi ek dikkat dağıtıcıları engellemeyi kolaylaştırdık. Bunları denemek için <em>Ayarlar > Genel > Önerilen filtreler'<em>i ziyaret edin!"
   },
   "whats-new-list-2": {
-    "message": "<strong>Reklam engelleme işlevselliği iyileştirildi.</strong> Birçok web sitesi, Adblock Plus'ın sitelerindeki reklamları engellemesini önlemeye yönelik teknolojiler kullanır.Bu web sitelerindeki reklamları engelleme kabiliyetimize ilişkin geliştirme ve iyileştirmeler yaptık.Reklam engelleme kabiliyetimizle ilgili olarak karşılaşacağınız herhangi bir sorunu, lütfen Sorun Bildir özelliğimizi kullanarak bize bildirin."
+    "message": "<strong>İyileştirilmiş Reklam Engelleme.</strong> Birçok web sitesi, Adblock Plus'ın sitelerindeki reklamları engellemesini zorlaştırmaktadır. Bu web sitelerindeki reklamları engelleme kabiliyetimizi geliştirdik ve bu kabiliyeti düzenli olarak güncellemeye devam ediyoruz. Reklam engelleme kabiliyetimizle ilgili olarak karşılaşacağınız herhangi bir sorunu, lütfen <em>Sorun Bildir</em> özelliğimizi kullanarak bize bildirin."
   },
   "whats-new-list-3": {
-    "message": "<strong>Daha fazla dilde reklam engelleme desteği eklendi.</strong> Ana dili olarak bazı İskandinav ve Hint dillerini konuşan kişilere yönelik olarak, kendi dillerinin kullanıldığı web sitelerindeki reklamları engelleme kabiliyeti ekledik."
+    "message": "<strong>Daha İyi Performans.</strong> Kapatılmış filtre listelerinin kontrolüne yönelik mantığımızı geliştirdik; böylece Adblock Plus daha az bant genişliği kullanıyor olacak."
   },
   "whats-new-list-4": {
-    "message": "<strong>Tasarım iyileştirmeleri yapıldı.</strong> Adblock Plus'ın kullanımını daha sezgisel hale getirmek için en popüler özelliklerimizden bazılarının görünümünü ve hissini güncelledik."
+    "message": "<strong>İyileştirilmiş Gizlilik.</strong> Gizli sekmelerde gezinen kullanıcılarımız için, engellenen isteklerin sayısını toplam engellenenler sayacının dışında tuttuk."
+  },
+  "whats-new-list-5": {
+    "message": "<strong>Daha İyi Hata Ayıklama.</strong> Teknik kullanıcılarımız için, Adblock Plus <em>Gelişmiş</em> ayarlar sayfasından açılabilen öge gizleme filtrelerine yönelik bir hata ayıklama modunu kullanıma soktuk. Öge gizleme filtrelerinden etkilenen ögeleri kolayca öne çıkarabilisiniz."
   },
   "whats-new-support": {
     "message": "Bir sorun mu bildirmek istiyorsunuz? Bizimle sosyal medya, <a>e-posta</a> veya <a>kullanıcı forumu</a> yoluyla iletişime geçin."
@@ -92,5 +99,8 @@
   },
   "email-input": {
     "message": "Email"
+  },
+  "credit-card": {
+    "message": "Kredi kartı"
   }
 }

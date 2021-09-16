@@ -4,13 +4,13 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus è stato aggiornato! <span>(versione 3.10.2)</span>"
+    "message": "Adblock Plus è stato aggiornato! <span>(versione 3.11)</span>"
   },
   "update-lead-1": {
-    "message": "Negli ultimi mesi abbiamo aggiunto nuove funzionalità ad Adblock Plus e ne abbiamo migliorato le prestazioni. Adblock Plus è un software gratuito e supportato dalla comunità, e questo <strong>non sarebbe possibile senza il tuo sostegno continuo</strong>."
+    "message": "Negli ultimi mesi abbiamo aggiunto nuove funzionalità ad Adblock Plus e ne abbiamo migliorato le prestazioni. Ci impegniamo a offrirti la migliore tecnologia di ad blocking per consentirti di goderti un web pulito. Adblock Plus è un software gratuito e supportato dalla comunità, e questo <strong>non sarebbe possibile senza il tuo sostegno continuo.</strong>"
   },
   "update-lead-2": {
-    "message": "Ci impegniamo a offrirti la migliore tecnologia di ad blocking per consentirti di goderti la rete in modo fluido. Dedichiamo molto tempo e molte risorse per mettere a punto e fornire esperienze online ottimali ai nostri utenti. Ti invitiamo a donare quello che ritieni un contributo equo al progetto Adblock Plus e al nostro impegno per mantenere viva la community di ad blocking. <strong>Ogni donazione è gradita!</strong>"
+    "message": "Investiamo molto tempo e molte risorse per sviluppare e offrire ai nostri utenti un'esperienza online ottimale. Ti chiediamo di donare quello che ritieni sia un giusto contributo al progetto Adblock Plus e ai nostri sforzi per tenere in vita la comunità di ad blocking. <strong>Ogni donazione è gradita!</strong>"
   },
   "fair-amount-header-1": {
     "description": "heading",
@@ -28,6 +28,10 @@
     "description": "heading",
     "message": "O una donazione <strong>mensile</strong>:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "O una donazione <strong>annuale</strong>:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Ops! Per contribuire a coprire le spese, l'importo minimo della donazione unica è di <span>$5</span>."
@@ -42,11 +46,11 @@
   },
   "stripe-label": {
     "description": "button label",
-    "message": "Carta di credito"
+    "message": "Paga con carta di credito"
   },
   "paypal-label": {
     "description": "button label",
-    "message": "PayPal"
+    "message": "Paga con PayPal"
   },
   "whats-new-header-1": {
     "message": "Quali sono le novità?"
@@ -55,16 +59,19 @@
     "message": "Ecco una panoramica di alcuni miglioramenti e nuove funzioni. Prossimamente ci saranno altri cambiamenti!"
   },
   "whats-new-list-1": {
-    "message": "<strong>Funzionalità Blocca elemento aggiornata e migliorata.</strong> Ora per gli utenti è più intuitivo scegliere gli elementi da nascondere ed eseguire l'anteprima della pagina senza questi elementi. Provala!"
+    "message": "<strong>Nuovi filtri raccomandati.</strong> Abbiamo reso più facile bloccare altre distrazioni come le notifiche dei cookie ecc. Accedi a <em>Impostazioni > Generale > Filtri raccomandati</em> per provarli!"
   },
   "whats-new-list-2": {
-    "message": "<strong>Funzionalità di ad blocking migliorata.</strong> Molti siti web utilizzano delle tecnologie per impedire ad Adblock Plus di bloccare le pubblicità. Abbiamo apportato dei miglioramenti alla nostra capacità di bloccare gli annunci su questi siti web. Utilizza la nostra funzionalità Segnala un problema per informarci di eventuali problemi con la nostra capacità di ad blocking."
+    "message": "<strong>Ad blocking migliorato.</strong> Molti siti rendono difficile per Adblock Plus bloccare gli annunci. Abbiamo migliorato la nostra capacità di bloccare gli annunci e aggiorniamo regolarmente questa capacità. Puoi usare la nostra funzionalità <em>Segnala problema</em> per informarci di eventuali problemi con la nostra capacità di ad blocking."
   },
   "whats-new-list-3": {
-    "message": "<strong>Sostegno aggiuntivo per bloccare gli annunci in più lingue.</strong> Abbiamo aggiunto la possibilità per le persone che parlano diverse lingue nordiche e indiane di bloccare gli annunci usando la loro lingua."
+    "message": "<strong>Migliori prestazioni.</strong> Abbiamo migliorato la nostra logica nel verificare la presenza di elenchi filtri disattivati, così Adblock Plus utilizza meno larghezza di banda."
   },
   "whats-new-list-4": {
-    "message": "<strong>Apportati miglioramenti nel design.</strong> Abbiamo aggiornato il look and feel di alcune delle nostre funzionalità più popolari per rendere l'utilizzo di Adblock Plus ancor più intuitivo."
+    "message": "<strong>Privacy migliorata.</strong> Per i nostri utenti che navigano in schede private, abbiamo escluso il numero di richieste bloccate dal contatore del totale dei blocchi."
+  },
+  "whats-new-list-5": {
+    "message": "<strong>Miglior debugging.</strong> Per gli utenti tecnici abbiamo introdotto una modalità di debug per filtri nascondi elementi attivabile nella pagina delle impostazioni <em>avanzate</em> di Adblock Plus. Puoi facilmente evidenziare gli elementi che sono interessati dai filtri nascondi elementi."
   },
   "whats-new-support": {
     "message": "Devi segnalare un problema? Puoi contattarci tramite social media, <a>email</a> o il <a>forum utenti</a>."
@@ -92,5 +99,8 @@
   },
   "email-input": {
     "message": "E-mail"
+  },
+  "credit-card": {
+    "message": "Carta di credito"
   }
 }
