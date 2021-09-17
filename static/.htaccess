@@ -59,7 +59,7 @@ ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
 
-<FilesMatch ^installed$>
+<FilesMatch ^update$>
   GeoIPEnable On
 </FilesMatch>
 
