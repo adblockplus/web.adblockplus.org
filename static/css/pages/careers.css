@@ -47,3 +47,15 @@
 .bottom-60 {
 	padding-bottom: 60px;
 }
+.info {
+	display: inline-block;
+	padding: 13px 35px;
+	padding-right: 15px;
+	background-image: url(/img/info-icon.svg);
+	background-repeat: no-repeat;
+	background-position: top 16px left 10px;
+}
+.privacy-disclaimer {
+	font-size: 16px;
+	font-style: italic;
+}
