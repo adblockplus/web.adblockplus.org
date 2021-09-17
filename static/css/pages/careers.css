@@ -1,0 +1,49 @@
+.bg-blue {
+	background: #EDF9FF;
+}
+.job-ad {
+	padding: 1em 0;
+}
+.job-ad.odd {
+	border-top: 1px solid #CDCDCD;
+}
+.job-ad .timeline {
+	font-size: 16px;
+	margin: 0;
+}
+.job-labels span {
+	padding: 0px 15px;
+	border-radius: 20px;
+	font-size: 16px;
+	margin-right: 10px;
+	font-weight: normal;
+	color: #ffffff;
+}
+.job-labels span.tag-1 {
+	background: #ec3390;
+}
+.job-labels span.tag-2 {
+	background: #ec9000;
+}
+.job-labels span.tag-3 {
+	background: #8E44AD;
+}
+.job-labels span.tag-3 {
+	background: #0fba37;
+}
+.job-labels span.tag-4 {
+	background: #428BCA;
+}
+.job-labels span.tag-5 {
+	background: #004E00;
+}
+.arrow {
+	padding-right: 15px;
+	font-weight: 700;
+	background-position: right;
+	background-image: url(/img/red-right-arrow-icon.svg);
+	background-repeat: no-repeat;
+}
+.bottom-60 {
+	padding-bottom: 60px;
+}
