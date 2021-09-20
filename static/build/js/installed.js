@@ -1655,11 +1655,40 @@ eyeo.vid = typeof eyeo.vid == "undefined" ? "x" : eyeo.vid;
 
 var campaignID = window.campaignID || "0";
 
+function padZero(str, endLength)
+{
+  if (typeof str != "string")
+    str = "a";
+
+  var startLength = str.length;
+
+  if (str.length < endLength)
+    for(var i = startLength; i<endLength; i++)
+      str = "0" + str;
+
+  return str;
+}
+
+var performanceNow;
+
+try {
+  performanceNow = Math.round(performance.now()) + "";
+} catch (error) {
+  performanceNow = "b";
+}
+
+if (performanceNow.length > 8)
+  performanceNow = "c";
+
+performanceNow = padZero(performanceNow, 8);
+
+var uuid = uuidv4().split("-").slice(1).join("-");
+
 /* Prefex "x" applies by default when optimize does not apply a variant.
    Since we share SID on load below without waiting for optimize to apply a
    variant SIDs will not match 1to1 with payment.custom when experiments
    are running. Instead, we must match SID.slice(1) to coorilate payments. */
-eyeo.sid = URLParams.get("sid") || [eyeo.vid, campaignID, uuidv4()].join("-");
+eyeo.sid = URLParams.get("sid") || [eyeo.vid, campaignID, performanceNow, uuid].join("-");
 
 var fromABP = {
   an: URLParams.get('an'),
