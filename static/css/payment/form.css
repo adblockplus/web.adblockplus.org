@@ -245,9 +245,14 @@
   height: 32px;
 }
 
-.payment-method input {
+[dir="ltr"] .payment-method input {
   margin-left: 0;
   margin-right: 0.4em;
+}
+
+[dir="rtl"] .payment-method input {
+  margin-left: 0.4em;
+  margin-right: 0;
 }
 
 .payment-method label {
@@ -257,9 +262,8 @@
 }
 
 @media (min-width: 376px) {
-  .payment-method label {
-    margin-right: 50px;
-  }
+  [dir="ltr"] .payment-method label { margin-right: 50px; }
+  [dir="rtl"] .payment-method label { margin-left: 50px; }
 }
 
 .payment-cards,

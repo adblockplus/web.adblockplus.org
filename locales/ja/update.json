@@ -4,13 +4,13 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus がアップデートされました！ <span>(バージョン 3.10.2)</span>"
+    "message": "Adblock Plus がアップデートされました！ <span>(バージョン 3.11)</span>"
   },
   "update-lead-1": {
-    "message": "過去数ヶ月間、Adblock Plus の新機能追加と性能向上に努めていました。Adblock Plus は、無料のコミュニティー支援型ソフトウェアで、<strong>引き続き皆様のご支援により実現しました</strong>。"
+    "message": "過去数ヶ月間、Adblock Plus の新機能追加と性能向上に努めていました。当社では、皆様にクリーンなウェブをお楽しみいただけるよう最高の広告ブロックテクノロジーを提供することに情熱を抱いています。Adblock Plus は、無料のコミュニティー支援型ソフトウェアで、<strong>皆様の継続的なご支援により実現しました。</strong>"
   },
   "update-lead-2": {
-    "message": "不要な広告の表示されないウェブ体験を楽しんでいただけるよう、当社では最高の広告ブロッキングテクノロジーを提供しております。ユーザーの皆様のための最高のオンライン体験を開発し確保するため、多くの時間と資源を注いでおります。Adblock Plus プロジェクトと広告ブロッキングコミュニティーの活気ある状態を維持するための取り組みにふさわしいとお思いになる寄付をお願いできるのであれば大変光栄です。<strong>皆様の寄付に心から感謝しております。</strong>"
+    "message": "当社は、ユーザーの皆様のために最高のオンライン体験を開発するとともに、その安全を確保するために膨大な時間と資源を投入しています。Adblock Plus プロジェクトと、広告ブロックのコミュニティーの維持に向けた当社の取り組みにふさわしいと思える寄付をお送りくださるようお願いします。<strong>皆様のご寄付に心からお礼申し上げます。</strong>"
   },
   "fair-amount-header-1": {
     "description": "heading",
@@ -28,6 +28,10 @@
     "description": "heading",
     "message": "または、寄付を<strong>毎月</strong>送る："
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "または、<strong>毎年</strong>の寄付："
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "おやまあ！手数料の関係から、一回の寄付は最低<span>$5</span>でお願いしております。"
@@ -42,11 +46,11 @@
   },
   "stripe-label": {
     "description": "button label",
-    "message": "クレジットカード"
+    "message": "クレジットカードで支払う"
   },
   "paypal-label": {
     "description": "button label",
-    "message": "PayPal（ペイパル）"
+    "message": "PayPal で支払う"
   },
   "whats-new-header-1": {
     "message": "更新情報"
@@ -55,16 +59,19 @@
     "message": "改善された機能や新しい機能の一部をご紹介しましょう。近日中にさらなる変更が予定されています！"
   },
   "whats-new-list-1": {
-    "message": "<strong>「要素をブロック」機能を更新・強化。</strong>より直感的に、ページ上で非表示にする要素を選択し、それらが非表示となったページをプレビューできるようになりました。お試しください！"
+    "message": "<strong>新しいお勧めのフィルター。</strong>クッキー通知など、ウェブ体験の妨げとなる要素のブロックが簡単になりました。設定 > 全般 > お勧めのフィルター  にアクセスしてお試しください。"
   },
   "whats-new-list-2": {
-    "message": "<strong>広告ブロック機能を強化。</strong>多くのウェブサイトでは、Adblock Plus の広告をブロックできないテクノロジーを利用しています。そのようなウェブサイトでも広告をブロックできるよう、機能強化を図りました。広告ブロック機能で問題が発生した場合は、「問題を報告」機能でお知らせください。"
+    "message": "<strong>広告ブロック機能を強化。</strong>多くのウェブサイトでは、Adblock Plus による広告ブロックを困難にする措置をとっています。それらのウェブサイトにおける広告ブロック性能を向上し、今後も定期的に更新されます。広告ブロック性能に問題がある場合は、不具合報告機能でお知らせください。"
   },
   "whats-new-list-3": {
-    "message": "<strong>広告ブロック機能サポート言語を追加。</strong>いくつかの北欧やインドの言語使用者のために、それらの言語のウェブサイトにおける広告ブロック機能を追加しました。"
+    "message": "<strong>パフォーマンスの改善。</strong> Adblock Plus が使用する帯域幅を軽減するため、無効になっているフィルターリストの確認ロジックを改良しました。"
   },
   "whats-new-list-4": {
-    "message": "<strong>デザインを改善。</strong>Adblock Plus をより直感的に利用できるよう、最も頻繁に用いられる機能のルック＆フィールを更新しました。"
+    "message": "<strong>プライバシーの向上。</strong> プライベートタブでウェブを表示する場合にブロックされたリクエスト数は、ブロックした数の総数に加えられなくなります。"
+  },
+  "whats-new-list-5": {
+    "message": "<strong>デバッグ機能の改善。</strong>技術系ユーザーの皆様のために、要素を非表示にするフィルターのデバッグモードを導入しました。Adblock Plus の詳細設定ページから有効にできます。要素を非表示にするフィルターが作用している要素を簡単にハイライト表示できます。"
   },
   "whats-new-support": {
     "message": "問題をお知らせください。ソーシャルメディア、<a>Eメール</a>、または<a>ユーザーフォーラム</a>でお問い合わせください。"
@@ -92,5 +99,8 @@
   },
   "email-input": {
     "message": "メールアドレス"
+  },
+  "credit-card": {
+    "message": "クレジットカード"
   }
 }

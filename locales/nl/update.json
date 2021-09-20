@@ -4,13 +4,13 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus is vernieuwd! <span>(versie 3.10.2)</span>"
+    "message": "Adblock Plus is vernieuwd! <span>(versie 3.11)</span>"
   },
   "update-lead-1": {
-    "message": "We hebben de afgelopen maanden besteed aan het toevoegen van nieuwe functies en het verbeteren van de prestaties van Adblock Plus. Adblock Plus is gratis, door de gemeenschap ondersteunde software, en dat <strong>zou niet mogelijk zijn zonder uw voortdurende steun</strong>."
+    "message": "Wij zijn de laatste maanden bezig geweest met het toevoegen van nieuwe functies en prestatieverbetering van Adblock Plus. Het is onze passie om u de beste advertentieblokkerende technologie te bieden, zodat u van een schoon internet kunt genieten. Adblock Plus is een gratis, gemeenschap ondersteunde software, en dat zou niet <strong>mogelijk zijn zonder uw voortdurende steun.</strong>"
   },
   "update-lead-2": {
-    "message": "We willen u de beste technologie brengen om reclames te blokkeren, zodat u van een opgeruimd web kunt genieten. We steken veel tijd en middelen in het ontwikkelen van de beste online ervaring voor onze gebruikers. Bepaal zelf wat u een passende bijdrage vindt en doneer aan het Adblock Plus-project en onze werkzaamheden om de gemeenschap te ondersteunen die zich inzet voor het blokkeren van reclames. <strong>Elke donatie wordt gewaardeerd!</strong>"
+    "message": "Wij besteden veel tijd en middelen aan het ontwikkelen en waarborgen van de beste online ervaring voor onze gebruikers. Doneer wat volgens u een redelijke bijdrage is aan het Adblock Plus project en onze pogingen om de advertentieblokkerende gemeenschap staande te houden. <strong>Elke donatie wordt gewaardeerd!</strong>"
   },
   "fair-amount-header-1": {
     "description": "heading",
@@ -28,6 +28,10 @@
     "description": "heading",
     "message": "Of een <strong>maandelijkse</strong> donatie:"
   },
+  "yearly-subscription-legend-1": {
+    "description": "heading",
+    "message": "Of een <strong>jaarlijkse</strong> donatie:"
+  },
   "min-donation-warning": {
     "description": "notice",
     "message": "Oeps! De minimale eenmalige donatiebijdrage om kosten te dekken is <span>$5</span>."
@@ -42,11 +46,11 @@
   },
   "stripe-label": {
     "description": "button label",
-    "message": "Creditcard"
+    "message": "Betaal met creditcard"
   },
   "paypal-label": {
     "description": "button label",
-    "message": "PayPal"
+    "message": "Betaal met PayPal"
   },
   "whats-new-header-1": {
     "message": "Wat is er veranderd?"
@@ -55,16 +59,19 @@
     "message": "Hier vindt u een overzicht van een aantal verbeteringen en nieuwe functies. Er komen binnenkort me er wijzigingen!"
   },
   "whats-new-list-1": {
-    "message": "<strong>Bijgewerkte en verbeterde functie Block Element.</strong> We hebben het meer intuïtief gemaakt voor gebruikers om specifieke elementen op een pagina te kiezen om te verbergen, evenals een voorproefje van hoe de pagina er zonder die elementen uitziet. Probeer het eens uit!"
+    "message": "<strong>Nieuwe aanbevolen filters.</strong> Wij hebben het makkelijker gemaakt om extra afleidingen zoals cookiemeldingen en dergelijke te blokkeren. Ga naar <em>Instellingen > Algemeen > Aanbevolen filters</em> om ze uit te proberen!"
   },
   "whats-new-list-2": {
-    "message": "<strong>Verbeterde functionaliteit voor het blokkeren van advertenties.</strong> Veel websites gebruiken technologieën om het Adblock Plus onmogelijk te maken om advertenties op hun website te blokkeren. We hebben verbeteringen aangebracht in onze mogelijkheden om advertenties te blokkeren op deze websites. Gebruik onze functie 'Report Issue' om het ons te laten weten als u problemen heeft met ons vermogen om advertenties te blokkeren."
+    "message": "<strong>Verbeterde Ad Blocking.</strong> Veel websites maken het moeilijk voor Adblock Plus om advertenties op hun site te blokkeren. Wij hebben onze mogelijkheid om advertenties op deze websites te blokkeren verbeterd, en werken die regelmatig bij. Gebruik onze functie <em>Meld een probleem</em> om ons te laten weten of u problemen heeft met onze advertentieblokkerende mogelijkheid."
   },
   "whats-new-list-3": {
-    "message": "<strong>Toegevoegde ondersteuning voor het blokkeren van advertenties in meer talen.</strong> We hebben de mogelijkheid toegevoegd voor mensen die verschillende Scandinavische en Indiase talen spreken om advertenties te blokkeren op websites in hun taal."
+    "message": "<strong>Betere prestatie.</strong> Wij hebben onze opzet verbeterd voor het controleren op uitgeschakelde filterlijsten, zodat Adblock Plus minder bandbreedte gebruikt."
   },
   "whats-new-list-4": {
-    "message": "<strong>Hebben verbeteringen in het ontwerp aangebracht.</strong> We hebben de 'look and feel' van een paar van onze meest populaire functies bijgewerkt om Adblock Plus meer intuïtief in het gebruik te maken."
+    "message": "<strong>Verbeterde privacy.</strong> Voor onze gebruikers die via privétabbladen browsen, hebben we het aantal geblokkeerde verzoeken uitgesloten van het totale aantal blokkeringen."
+  },
+  "whats-new-list-5": {
+    "message": "<strong>Beter debuggen.</strong> Voor onze technische gebruikers hebben we een debugmodus ingevoerd voor element verbergende filters, die geactiveerd kan worden op de instellingen pagina Adblock Plus <em>Advanced</em>. U kunt de elementen die worden beïnvloed door de element verbergende filters makkelijk markeren."
   },
   "whats-new-support": {
     "message": "Wilt u een probleem melden? Neem contact met ons op via sociale media, <a>e-mail</a> of het <a>gebruikersforum</a>."
@@ -92,5 +99,8 @@
   },
   "email-input": {
     "message": "E-mailadres"
+  },
+  "credit-card": {
+    "message": "Creditcard"
   }
 }
