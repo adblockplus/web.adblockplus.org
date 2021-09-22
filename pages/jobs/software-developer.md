@@ -29,7 +29,7 @@ We operate as a globally distributed team that spans many time zones. In this ro
 * You’re a team player who can explain complex concepts to technical and non-technical team members and end users
 * Excellent written, verbal, and interpersonal communication skills; you enjoy collaborating with cross-functional teams
 
-### Bonus points For:
+### Bonus points for
 
 * A good understanding of open-source software and communities; we believe in open source and love working in the open source community
 * Prior extension development experience
@@ -37,7 +37,7 @@ We operate as a globally distributed team that spans many time zones. In this ro
 * Experience with localization; we do business all over the world and our products are localized in dozens of languages
 * Experience with web content accessibility
 
-### What you’ll Do
+### What you’ll do
 
 * Develop new features and enhancements for Adblock Plus, closely collaborate with other product teams, and create other extensions to help users blocks ads and other distractions in the future
 * Collaborate closely with other engineers, product managers and designers,  QA engineers, our user support agents and our localization experts to deliver high-quality software to our users
@@ -64,8 +64,8 @@ We’re a knit-tight team and our strength comes from our diversity. We strive t
 
 Does this role sound like a good fit? Email us at [careers@adblockplus.org](mailto:careers@adblockplus.org).
 
-* Include the role's title in your subject line.
+* Use `Software Engineer for Adblock Plus application` in your subject line.
 * Include your resume and, optionally, a cover letter.
 * Send along links that best showcase the relevant things you've built and done.
 
-<p class="info privacy-disclaimer">Data policy: Your information will be stored in order to process your email and respond to your request. <a href="privacy">Learn more in our Privacy Policy page</a>.</p>
+<p class="info privacy-disclaimer">Data policy: Your information will be stored in order to process your application and to communicate with you during the hiring process. <a href="privacy">Learn more in our Privacy Policy page</a>.</p>
