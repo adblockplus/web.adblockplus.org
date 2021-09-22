@@ -101,6 +101,7 @@ The following privacy notice shall provide you with a general overview about the
         - Email address
         - Data you provide in comments
         - Feedback and filter data
+        - When applying for a job: Name, email address, your resume and all other data voluntarily uploaded / shared by you
 1. For user support
     - User name (contact via social media) and/or email
     - Device information
@@ -131,7 +132,7 @@ List of techniques and tools we use for data collection.
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
     - Log files
-    - Data, like name and / or email address and / or communication data, sent by you when using our forum or blog, using the “BECOME A PARTNER” button, or when sharing manually added filters
+    - Data, like name and / or email address and / or communication data, sent by you when using our forum or blog, using the “BECOME A PARTNER” button, when sharing manually added filters or when applying for a job
     - For non-EU/EEA users only: Via Google Analytics
 3. For user support:
 {: .has-horizontal-list .semicolon-separated }
@@ -158,6 +159,7 @@ List of techniques and tools we use for data collection.
 - For receiving donations that you send to us and for fraud detection.
 - To promote our products.
 - In connection with our social media pages, social networks use the data for market research and advertising purposes.
+- For evaluating your application for recruitment purposes and offering you jobs.
 
 ### What is the legal basis of data processing? {: #what-is-legal }
 
@@ -180,7 +182,10 @@ We process your personal data in compliance with the European General Data Prote
     - event tracking
 4. Blog and forum data as long as the respective comment / account exists
 5. All user support data is deleted one (1) year after closing the respective support case.
-6. For a period of 10 years: 
+6. For a period of three (3) months: 
+{: .has-horizontal-list .semicolon-separated }
+    - Application data after rejection of a candidate
+7. For a period of 10 years: 
 {: .has-horizontal-list .semicolon-separated }
     - Donation report data
     - Partner data
@@ -291,6 +296,8 @@ We will always ask for your consent to collect and process your personal data fo
 #### Collection and processing is necessary for taking steps prior to enter into a contract - Art. 6 (1) b GDPR {: #contract-permission }
 
 The collection and processing of your personal data may be necessary for the performance of a contract to which you may be a party. Prior to entering into such a contract, the collection and processing of your personal data may also be necessary in order to take steps at your request. This applies for installation (data gathered by the browser and / or app store) and the use of our products.
+
+Also, all data you provide us with in connection with your application is necessary for the sole purpose of hiring new employees and therefore evaluating and selecting applicants including for example setting up and conducting interviews and tests, evaluating and assessing the results thereto and as is otherwise needed in the recruitment processes including the final recruitment (meaning taking steps prior to enter into an employment contract). If you don’t send us your application data, your application cannot be taken into account.
 
 #### Collection and processing is necessary for compliance with a legal obligation to which the Controller is subject – Art. 6 (1) c GDPR {: #compliance-permission }
 
@@ -644,6 +651,12 @@ For a detailed overview of the respective processing operations and opt-out opti
 
 The links / buttons to social networks and platforms (Facebook and Twitter) used within Adblock Plus for the purpose to enable you to share the amount of elements you have blocked with Adblock Plus generally only establish contact between social networks or platforms and you when you click on the links / buttons. This function corresponds to the way a regular online link works. If you click on a corresponding link / button, this opens a new page via the servers of the respective social network or platform. Through this, the operator of the social network is informed that our website has been accessed via your IP address. At the same time, the social network can place cookies on your terminal device or read cookies unless you have prohibited the use of cookies in your browser. For further information on any processing of your personal data by the operators of the social networks or platforms, please refer to the privacy policies of Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) and Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)).
 
+### Application Data {: #application-data}
+
+If you are applying online for a job on our website, we ask for specific information in order to evaluate your application properly. For this, we need at least your name, email address and a resume. On a voluntary basis you may further add a telephone number, a cover letter, additional documents, such as, but not limited to certificates, a website and additional information about you.
+
+We collect and process those data for the sole purpose of managing our recruitment related activities as well as for organizational planning purposes. Consequently, we may use your personal data in relation to the evaluation and selection of applicants including for example setting up and conducting interviews and tests, evaluating and assessing the results thereto and as is otherwise needed in the recruitment processes including the final recruitment.
+
 ### California Privacy Notice {: #privacy-notice-california-residents }
 
 This section only applies to California residents. It explains how we collect and use Personal Information as well as the rights available to California residents under the [California Consumer Protection Act](http://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=) (“CCPA”). The words in this section have the same meaning given to them in the CCPA. Please note that the words as described under the CCPA may be broader than their common meaning.
@@ -706,7 +719,7 @@ To exercise any of these rights, please submit a request to <a id='privacy-email
 
 If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
 
-<time datetime="2021-07">July 2021</time>
+<time datetime="2021-09">September 2021</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
