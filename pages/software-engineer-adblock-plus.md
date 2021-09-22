@@ -62,7 +62,7 @@ We’re a knit-tight team and our strength comes from our diversity. We strive t
 
 ## How to apply
 
-Does this role sound like a good fit? Email us at [careers@adblockplus.org](mailto:careers@adblockplus.org).
+Does this role sound like a good fit? Email us at [careers@adblockplus.org](mailto:careers@adblockplus.org):
 
 * Use `Software Engineer for Adblock Plus application` in your subject line.
 * Include your resume and, optionally, a cover letter.
