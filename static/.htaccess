@@ -57,12 +57,3 @@ frame-src https://optimize.google.com www.youtube-nocookie.com;" \
 ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
-
-RewriteCond %{TIME_SEC} [147]$
-RewriteRule "([\w-_]*)\/installed$" "$1/installed-0" [NC,L]
-
-RewriteCond %{TIME_SEC} [258]$
-RewriteRule "([\w-_]*)\/installed$" "$1/installed-1" [NC,L]
-
-RewriteCond %{TIME_SEC} [369]$
-RewriteRule "([\w-_]*)\/installed$" "$1/installed-2" [NC,L]

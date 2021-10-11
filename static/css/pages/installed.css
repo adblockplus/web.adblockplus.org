@@ -23,7 +23,7 @@
 
 body {
   padding-top: 0;
-  background-color: #eee;
+  background-color: #000;
   font-weight: 400;
   color: #757575;
 }
@@ -39,6 +39,8 @@ body {
 }
 
 svg { max-width: 100%; }
+
+#content { flex-grow: 0; }
 
 @media (max-width: 991px)
 {
@@ -310,7 +312,7 @@ h2.donation-heading { font-size: 1.2em; }
 
 .footer {
   position: relative;
-  padding: 1.5em 0;
+  padding: 0;
   background-color: #000;
   color: #fff;
 }
