@@ -2363,8 +2363,11 @@ a.navbar-logo {
   }
 }
 
-.payment-providers button.paypal-button { display: none; }
-
+.payment-providers button.paypal-button { display: inline-block; }
+.payment-providers button.stripe-button { display: none; }
+.paypal-button-hidden button.paypal-button { display: none; }
+.card-button-hidden button.stripe-button { display: none; }
+.paypal-button-hidden button.stripe-button { display: inline-block; }
 .card-button-hidden button.paypal-button { display: inline-block; }
 
 .payment-providers button.stripe-button .stripe-button-text { vertical-align: inherit; }
@@ -2687,7 +2690,6 @@ h2.donation-heading { font-size: 1.2em; }
 
 .stripe-button
 {
-  display: inline-block;
   color: #fff;
   background-color: #0AAD03;
   overflow: hidden;
