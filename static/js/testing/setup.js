@@ -77,6 +77,7 @@
       cookiePromptScript.async = true;
       cookiePromptScript.src = origin + "/js/cookie-prompt.js";
       document.head.appendChild(cookiePromptScript);
+      eyeo.cookieEnabled = true;
     }
   }
 
