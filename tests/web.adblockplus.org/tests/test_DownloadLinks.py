@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from pages.landingPage import LandingPage
+from chunks.chromeCookiesNotification import ChromeCookiesNotification
 from data.dataDownloadButton import TEST_DATA
 
 import utils.global_functions as gf
@@ -41,6 +42,14 @@ def test_check_download_links(id, driver, button_text, link, download_url):
         landing_page.click_download_button()
         if 'internet_explorer' in id or 'safari' in id:
             assert gf.wait_for_file_in_downloads(download_url)
+        elif 'chrome' in id:
+            chrome_cookie_notification = ChromeCookiesNotification(driver)
+            chrome_cookie_notification.click_i_agree_button_chrome()
+            assert landing_page.is_redirect_to_url(download_url)
+        elif 'yandex' in id:
+            chrome_cookie_notification = ChromeCookiesNotification(driver)
+            chrome_cookie_notification.click_i_agree_button_yandex()
+            assert landing_page.is_redirect_to_url(download_url)
         else:
             assert landing_page.is_redirect_to_url(download_url)
 
