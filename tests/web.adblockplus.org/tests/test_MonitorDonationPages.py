@@ -25,5 +25,5 @@ def test_monitor_donation_page(driver, page, url):
     generic_donation_page = GenericDonationPage(driver)
     generic_donation_page.go_to_url(url)
 
-    assert generic_donation_page.is_stripe_button_visible()
+    assert generic_donation_page.is_paypal_button_visible()
 

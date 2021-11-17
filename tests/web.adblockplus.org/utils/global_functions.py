@@ -7,6 +7,7 @@ def setup(options):
     options.add_argument('--window-size=1420,1080')
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
+    options.add_argument("--disable-dev-shm-usage");
 
 
 def click_menu_item(driver, list_item_id, item_name):
