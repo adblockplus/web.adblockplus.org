@@ -8,7 +8,6 @@ from selenium.webdriver.common.keys import Keys
 from pages.basePage import BasePage
 from chunks.stripePaymentForm import StripePaymentsForm
 
-CREDIT_CARD_RADIO_BUTTON_ID = 'card'
 INSTALLING_MODAL_ID = 'delay-heading'
 MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS = 'minimum-subscription-warning'
 MONTHLY_1_99_RADIO_BUTTON_XPATH = '//input[@name="preset-monthly-subscription-amount" and @value="1.99"]'
@@ -34,8 +33,6 @@ YEARLY_35_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount
 YEARLY_50_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="50"]'
 YEARLY_CUSTOM_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="custom"]'
 YEARLY_CUSTOM_TEXT_BOX_XPATH = '//input[@name="custom-yearly-subscription-amount"]'
-PAYPAL_BUTTON_CLASS = 'paypal-button'
-PAYPAL_BUTTON_TEXT = 'Pay with PayPal'
 STRIPE_BUTTON_CLASS = 'stripe-button'
 STRIPE_BUTTON_TEXT = 'Credit card'
 
@@ -49,17 +46,13 @@ class GenericDonationPage(BasePage):
         self.wait = WebDriverWait(driver, 15)
         self._set_page_urls()
         self.driver.get(self._generic_donation_page_url)
-        if not 'donate' in self._generic_donation_page_url:
-            self.click_credit_card_radio_button()
+
         self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME, STRIPE_BUTTON_CLASS)))
 
     def _set_page_urls(self):
         self._generic_donation_page_url = str(os.getenv('landing_page_url'))\
                                     + str(os.getenv('generic_donation_page'))
         self._thank_you_page_url = str(os.getenv('landing_page_url')) + '/payment-complete'
-
-    def click_credit_card_radio_button(self):
-        self.driver.find_element_by_id(CREDIT_CARD_RADIO_BUTTON_ID).send_keys(Keys.SPACE)
 
     def click_monthly_custom_button(self):
         self.driver.find_element_by_xpath(MONTHLY_CUSTOM_RADIO_BUTTON_XPATH).send_keys(Keys.SPACE)
@@ -79,10 +72,6 @@ class GenericDonationPage(BasePage):
         self.wait.until(ec.element_to_be_clickable((By.CLASS_NAME, STRIPE_BUTTON_CLASS)))
         self.driver.find_element_by_class_name(STRIPE_BUTTON_CLASS).click()
         return StripePaymentsForm(self.driver)
-
-    def is_paypal_button_visible(self):
-        return self.wait.until(ec.text_to_be_present_in_element(
-            (By.CLASS_NAME, PAYPAL_BUTTON_CLASS), PAYPAL_BUTTON_TEXT))
 
     def is_stripe_button_visible(self):
         return self.wait.until(ec.text_to_be_present_in_element(
