@@ -158,7 +158,7 @@ function onStripeError(error)
   }
 
   form.setSubmitting(false);
-  form.showError(message);
+  stripeCard.setError(message);
 }
 
 if (
