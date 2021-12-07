@@ -25,7 +25,7 @@
     var parts = path.split(".");
     var point = eyeo;
 
-    for (var i = 1; i < parts.length; i++)
+    for (var i = 0; i < parts.length; i++)
     {
       if (!point.hasOwnProperty(parts[i]))
         point[parts[i]] = {};
