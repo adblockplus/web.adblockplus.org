@@ -997,7 +997,7 @@ if (
   doc.addEventListener("DOMContentLoaded", onDOMReady);
 }
 
-})(document, _, path("payment"), path("i18n.payment.stripeModal"));
+})(document, _, path("payment"), path("i18n.payment.stripe.cardModal"));
 /*!
  * This file is part of website-defaults
  * Copyright (C) 2016-present eyeo GmbH
