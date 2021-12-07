@@ -192,7 +192,7 @@
 { 
   display: none; 
   width: 320px; 
-  padding: 0 0.5rem;
+  padding: 0;
 }
 
 [data-provider="stripe"] .stripe-card-body { display: block; }
@@ -207,7 +207,6 @@
   border: 1px solid #cdcdcd;
   border-radius: 5px 5px 5px 5px;
   background-color: #fff;
-  box-shadow: 0 1px 3px 0 rgb(207, 215, 223);
   font-family: inherit;
   font-weight: 400;
   font-size: 16px;
