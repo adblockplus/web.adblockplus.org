@@ -215,16 +215,6 @@ a.navbar-logo {
   }
 }
 
-.payment-providers button.paypal-button { display: inline-block; }
-.payment-providers button.stripe-button { display: none; }
-.paypal-button-hidden button.paypal-button { display: none; }
-.card-button-hidden button.stripe-button { display: none; }
-.paypal-button-hidden button.stripe-button { display: inline-block; }
-.card-button-hidden button.paypal-button { display: inline-block; }
-
-.payment-providers button.stripe-button .stripe-button-text { vertical-align: inherit; }
-
-
 .donate { background-color: #fff; }
 
 .donate { padding: 1em; }
@@ -246,34 +236,6 @@ a.navbar-logo {
   }
 }
 
-@media(min-width: 576px) {
-  .content .payment-divide {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-  }
-}
-
-@media(min-width: 585px) {
-  .content .payment-divide {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-
-@media(min-width: 615px) {
-  .content .payment-divide {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-}
-
-@media(min-width: 650px) {
-  .content .payment-divide {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-}
-
 @media(max-width: 767px) {
   .text-center { text-align: left; }
   
@@ -291,8 +253,6 @@ h2 svg { display: block; }
 .bold { font-weight: 700; }
 
 .hidden { display: none; }
-
-h2.donation-heading { font-size: 1.2em; }
 
 .mt2 { margin-top: 2rem; }
 

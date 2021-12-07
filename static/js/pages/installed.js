@@ -5,7 +5,7 @@ var SCROLL_TIME = 500;
 
 var page = document.scrollingElement || document.documentElement; // IE
 var body = document.body;
-var donationHeading = document.querySelector('.donation-heading');
+var donationHeading = document.querySelector('.payment-heading');
 
 window.addEventListener('resize', function() {
   if (window.innerWidth > 991)

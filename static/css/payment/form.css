@@ -1,149 +1,178 @@
-.donation-header { margin-bottom: 1rem; }
+.payment-form-skeleton { display: block; }
+.payment-form-loaded .payment-form-skeleton { display: none; }
 
-.donation-heading
+@media (min-width: 850px)
 {
-  display: inline;
-  font-size: 20px;
+  .payment-form-skeleton { max-height: 256px; overflow: visible; }
 }
 
-/* Show/hide donation heading text based on currencies loaded */
-.payment-currencies,
-.donation-heading .single-currency,
-.donation-heading .multi-currency { display: none; }
+.payment-form { display: none; }
+.payment-form-loaded .payment-form { display: block; }
 
-.has-single-currency .donation-heading .single-currency { display: block; }
+.payment-form input[type="radio"] { margin: 2px 0 0 0; }
 
-.has-multi-currency .payment-currencies,
-.has-multi-currency .donation-heading .multi-currency { display: inline; }
+[dir="ltr"] .payment-form input[type="radio"] { margin-right: 0.3rem; }
+[dir="rtl"] .payment-form input[type="radio"] { margin-left: 0.3rem; }
 
-.payment-currencies
+.payment-form ::placeholder { color: #aab7c4; }
+
+.payment-form select,
+.payment-form input[type="text"] 
+{ 
+  padding: 0 0.2rem; 
+  line-height: 1rem;
+  border: 1px solid #cdcdcd;
+  border-radius: 2px;
+}
+
+[dir="ltr"] .payment-form input[type="text"] { margin-left: 0.2rem; }
+[dir="rtl"] .payment-form input[type="text"] { margin-right: 0.2rem; }
+
+.payment-header { margin-bottom: 1rem; }
+
+.payment-heading { font-size: 24px !important; }
+
+.payment-heading.single-currency { display: block; }
+
+.payment-heading.multi-currency { display: inline; }
+
+.payment-currency
 {
   padding: 0;
   line-height: 1;
 }
 
-@media (min-width: 576px)
+@media (min-width: 850px)
 {
-  .payment-types { display: flex; }
+  .payment-frequencies { display: flex; }
 }
 
-.payment-type legend { margin: 1rem 0 0.5rem 0; }
+.payment-frequency legend { margin: 1rem 0 0.5rem 0; }
 
-.payment-type input[type=radio] { margin-top: 3px; }
+.payment-amounts-row { display: flex; }
 
-[dir="ltr"] .payment-type input[type=radio] { margin-right: 0.1rem; }
+.payment-amounts-row { margin-bottom: 0.25rem; }
 
-[dir="rtl"] .payment-type input[type=radio] { margin-left: 0.1rem; }
-
-.subscription-payment-type { display: none; }
-
-.has-subscriptions .subscription-payment-type { display: block; }
-
-/* Negating first and last padding below */
-.payment-amounts { margin: 0 -0.5rem; }
+.payment-frequency { display: block; }
 
 .payment-amount,
-.custom-payment-amount
-{
-  display: inline-block;
-  margin: 0.25rem 0.3rem;
+.custom-payment-amount 
+{ 
+  display: flex;
+  align-items: center;
 }
+
+[dir="ltr"] .payment-amount { margin-right: 1rem; }
+[dir="rtl"] .payment-amount { margin-left: 1rem; }
+
+.payment-amount.custom-payment-amount { margin: 0; }
 
 .custom-payment-amount { position: relative; }
 
+.custom-payment-amount input[type="text"] { width: 3.6rem; }
+
 .payment-divide
 {
-  display: none;
-  border-color: rgba(232, 232, 232, 0.667);
+  display: block;
+  height: 2px;
+  background-color: rgba(232, 232, 232, 0.667);
+  border: 0;
   margin: 1rem 0;
 }
 
-@media (min-width: 576px)
+@media (min-width: 850px)
 {
   .payment-divide
   {
     height: 3rem;
     width: 2px;
-    margin: 1.75rem 3rem 0 3rem;
+    margin: 2rem 1.5rem 0 1.5rem;
     padding: 0;
   }
 }
 
-.has-subscriptions .payment-divide { display: block; }
+.has-monthly .payment-divide:first-of-frequency { display: block; }
 
-.yearly,
-.payment-divide.yearly {
-  display: none;
-}
+.has-yearly .payment-divide { display: block; }
 
-.has-yearly .yearly,
-.has-yearly .payment-divide.yearly {
-  display: block;
-}
-
-.custom-payment-amount input[type="text"]
+.payment-providers
 {
+  display: flex;
+  margin: 1rem 0;
   padding: 0;
-  line-height: 1;
+  font-weight: bolder;
 }
 
-.minimum-amount-warning { display: none; }
-
-.minimum-donation-error .minimum-donation-warning,
-.minimum-subscription-error .minimum-subscription-warning,
-.minimum-yearly-error .minimum-yearly-warning {
-  display: block;
+.payment-provider,
+.payment-provider span
+{ 
+  display: flex;
+  align-items: center; 
 }
 
-.payment-providers-lead
+[dir="ltr"] .stripe-payment-icons { margin-left: 0.3rem; }
+[dir="rtl"] .stripe-payment-icons { margin-right: 0.3rem; }
+
+[dir="ltr"] .payment-provider { margin-right: 1rem; }
+[dir="rtl"] .payment-provider { margin-left: 1rem; }
+
+@media(min-width: 360px)
 {
-  display: block;
-  color: green;
-  font-family: sans-serif;
-  font-size: 24px;
-  font-weight: 500;
+  [dir="ltr"] .payment-provider input[type="radio"] { margin-right: 0.5rem; }
+  [dir="rtl"] .payment-provider input[type="radio"] { margin-left: 0.5rem; }
+
+  [dir="ltr"] .stripe-payment-icons { margin-left: 0.5rem; }
+  [dir="rtl"] .stripe-payment-icons { margin-right: 0.5rem; }
+  
+  [dir="ltr"] .payment-provider { margin-right: 2.5rem; }
+  [dir="rtl"] .payment-provider { margin-left: 2.5rem; }  
 }
 
-@media (min-width: 576px)
+.payment-error { display: none; }
+.has-error .payment-error { display: block; }
+
+.payment-buttons { margin-top: 1.5rem; }
+
+.payment-buttons button { display: none; }
+
+[data-provider="stripe"] .stripe-button,
+[data-provider="paypal"] .paypal-button { display: block; }
+
+@media (min-width: 850px)
 {
-  .payment-providers { display: flex; }
-
-  [dir="ltr"] .payment-providers-lead { margin-right: 1rem; }
-
-  [dir="rtl"] .payment-providers-lead { margin-left: 1rem; }
+  .payment-buttons { display: flex; }
 }
 
-.payment-providers button
+.payment-buttons button
 {
-  display: block;
   width: 100%;
   padding: 0 1.8rem;
   min-height: 34px;
   margin-top: 1rem;
   line-height: 32px;
   text-align: center;
+  font-weight: bolder;
   border: 0;
   border-radius: 3.5px;
-  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.2);
-  outline: none;
-  user-select: none;
 }
 
-.payment-providers button[disabled] { background-color: #bcbcbc; }
+.payment-buttons button[disabled] { background-color: #bcbcbc; }
 
-@media (min-width: 576px)
+@media (min-width: 850px)
 {
-  .payment-providers button
+  [data-provider="stripe"] .stripe-button,
+  [data-provider="paypal"] .paypal-button { display: inline-block; }
+  
+  .payment-buttons button
   {
-    display: inline-block;
     min-width: 150px;
     width: auto;
     margin-top: 0;
   }
 
-  [dir="ltr"] .payment-providers button { margin-right: 1rem; }
+  [dir="ltr"] .payment-buttons button { margin-right: 1rem; }
 
-  [dir="rtl"] .payment-providers button { margin-left: 1rem; }
+  [dir="rtl"] .payment-buttons button { margin-left: 1rem; }
 }
 
 .stripe-button
@@ -153,154 +182,8 @@
   overflow: hidden;
 }
 
-.stripe-button-lock,
-.stripe-button-text
-{
-  vertical-align: middle;
-}
-
-.stripe-button-lock
-{
-  height: 16px;
-  padding-right: 0.2em;
-}
-
-[dir="rtl"] .stripe-button-lock
-{
-  padding-right: 0;
-  padding-left: 0.2em;
-}
-
 .paypal-button
 {
   color: #000;
   background-color: rgb(255, 187, 3);
-}
-
-.privacy-footer
-{
-  text-align: center;
-  margin: 1em 0;
-}
-
-/* css-loaders
- * @link https://github.com/lukehaas/css-loaders
- * @copyright Copyright (c) 2014 Luke Haas
- * @license MIT
- */
-.loader {
-  font-size: 10px;
-  margin: 0 auto;
-  text-indent: -9999em;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-  background: #ffffff;
-  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  position: relative;
-  -webkit-animation: load3 1.4s infinite linear;
-  animation: load3 1.4s infinite linear;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.loader::before {
-  width: 50%;
-  height: 50%;
-  background: #ffffff;
-  border-radius: 100% 0 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-}
-
-.loader::after {
-  background: #2888F9;
-  width: 75%;
-  height: 75%;
-  border-radius: 50%;
-  content: '';
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.payment-method-divide { margin: 1.5em 0; }
-
-.payment-method { margin-top: 1rem; }
-
-.payment-method svg,
-.payment-method input {
-  vertical-align: middle;
-  height: 32px;
-}
-
-[dir="ltr"] .payment-method input {
-  margin-left: 0;
-  margin-right: 0.4em;
-}
-
-[dir="rtl"] .payment-method input {
-  margin-left: 0.4em;
-  margin-right: 0;
-}
-
-.payment-method label {
-  display: inline-block;
-  margin-bottom: 1rem;
-  user-select: none;
-}
-
-@media (min-width: 376px) {
-  [dir="ltr"] .payment-method label { margin-right: 50px; }
-  [dir="rtl"] .payment-method label { margin-left: 50px; }
-}
-
-.payment-cards,
-.payment-paypal {
-  display: inline-block;
-}
-
-.credit-card {
-  padding-right: 0.5em;
-  vertical-align: middle;
-}
-
-.payment-cards svg { width: 20px; }
-
-.payment-paypal svg { width: 80px; }
-
-.card-button-hidden .stripe-button { display: none; }
-
-.paypal-button-hidden .paypal-button { display: none; }
-
-@-webkit-keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
 }

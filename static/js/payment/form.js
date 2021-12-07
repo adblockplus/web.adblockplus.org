@@ -1,383 +1,199 @@
-/*global PaymentForm, updatePaymentConfig, _*/
-(function(root, doc, _) {
-/**
-* Construct payment form
-* @constructor
-* @requires _.template
-* @requires _.each
-* @param {Object[]} currencies - Ordered collection of currencies indexed by name
-* @param {String} currencies[].sign - Sign before currency amount
-* @param {Object} currencies[].donation - One time payment options for currency
-* @param {Number[]} currencies[].donation.amounts - Amounts offered for one time payment
-* @param {Number} currencies[].donation.placeholder - Custom amount placeholder for one time payment
-* @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
-* @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
-* @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
-* @param {Object=} currencies[].yearlySubscription - (optional) yearly payment options for currency
-* @param {Number[]} currencies[].yearlySubscription.amounts - Amounts offered for yearly payment
-* @param {Number} currencies[].yearlySubscription.placeholder - Custom amount placeholder for yearly
-*/
-function PaymentForm(currencies)
-{
-var defaultCurrency, hasMultiCurrency;
+/* global _, eyeo */
+(function(doc, _, ns, i18n){
 
-for (var currencyName in currencies)
-{
-  if (!defaultCurrency)
-  {
-    defaultCurrency = currencyName;
-  }
-  else
-  {
-    hasMultiCurrency = true;
-    break;
-  }
-}
-
-if (hasMultiCurrency)
-{
-  doc.body.classList.add("has-multi-currency");
-}
-else
-{
-  doc.body.classList.add("has-single-currency");
-  doc.querySelector(".donation-heading .currency").textContent = defaultCurrency.toUpperCase();
-}
-
-var paymentCurrency = doc.getElementById("payment-currencies");
-
-var theCurrencyOptions = _.template(
-  doc.getElementById("payment-currency-options").innerHTML
-);
-
-paymentCurrency.innerHTML = theCurrencyOptions({
-  currencies: currencies
-});
-
-var donationAmounts = doc.getElementById("donation-amounts");
-
-var subscriptionAmounts = doc.getElementById("subscription-amounts");
-
-var yearlySubscriptionAmounts =
-doc.getElementById("yearly-subscription-amounts");
-
-var thePresetAmounts = _.template(
-  doc.getElementById("preset-payment-amounts").innerHTML
-);
-
-var theCustomAmount = _.template(
-  doc.getElementById("custom-payment-amount").innerHTML
-);
-
-function updateAmounts()
-{
-  var currency = currencies[paymentCurrency.value];
-
-  var donationOptions = {
-    type: "donation",
-    sign: currency.sign,
-    amounts: currency.donation.amounts,
-    placeholder: currency.donation.placeholder
-  };
-
-  donationAmounts.innerHTML = ""
-    + thePresetAmounts(donationOptions)
-    + theCustomAmount(donationOptions);
-
-  if (currency.subscription)
-  {
-    doc.body.classList.add("has-subscriptions");
-    doc.body.classList.add("has-yearly");
-
-    var subscriptionOptions = {
-      type: "monthly-subscription",
-      sign: currency.sign,
-      amounts: currency.subscription.amounts,
-      placeholder: currency.subscription.placeholder
-    };
-
-    subscriptionAmounts.innerHTML = ""
-      + thePresetAmounts(subscriptionOptions)
-      + theCustomAmount(subscriptionOptions);
-    
-    if (currency.yearly) {
-      var yearlySubscriptionOptions = {
-        type: "yearly-subscription",
-        sign: currency.sign,
-        amounts: currency.yearly.amounts,
-        placeholder: currency.yearly.placeholder
-      };
-
-      yearlySubscriptionAmounts.innerHTML = ""
-        + thePresetAmounts(yearlySubscriptionOptions)
-        + theCustomAmount(yearlySubscriptionOptions);
-
-    } else {
-      doc.body.classList.remove("has-yearly");
-    } 
-  }
-  else
-  {
-    doc.body.classList.remove("has-subscriptions");
-    subscriptionAmounts.innerHTML = "";
-  }
-}
-
-updateAmounts();
-
-paymentCurrency.addEventListener("change", function(e) {
-  updateAmounts();
-  validateCustomAmount(e);
-});
-
-function paymentMethod(e) {
-  if (e.target.value == "card") {
-    doc.body.classList.add("paypal-button-hidden");
-    doc.body.classList.remove("card-button-hidden");
-    
-  } else {
-    doc.body.classList.add("card-button-hidden");
-    doc.body.classList.remove("paypal-button-hidden");
-  }
-}
-
-document.getElementById("card")
-  .addEventListener("change", paymentMethod);
-  
-document.getElementById("paypal")
-  .addEventListener("change", paymentMethod);
-
-// uncheck donation amount when subscription amount is selected and vise versa
-function onFieldsetChange (otherFieldset, event)
-{
-  var otherFieldsetSelected = otherFieldset.querySelector("input:checked");
-
-  if (otherFieldsetSelected)
-  {
-    otherFieldsetSelected.checked = false;
-    validateCustomAmount(event);
-  }
-}
-
-donationAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, subscriptionAmounts));
-
-donationAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, yearlySubscriptionAmounts));
-
-subscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, donationAmounts)
-);
-
-subscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, yearlySubscriptionAmounts)
-);
-
-yearlySubscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, donationAmounts)
-);
-
-yearlySubscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, subscriptionAmounts)
-);
-
-// Select custom amount radio when textbox is focused
-function onCustomFieldSelect(event)
-{
-  if (event.target.type == "text")
-  {
-    event.target.parentElement.querySelector('input[type="radio"]').click();
-    validateCustomAmount(event);
-  }
-}
-
-donationAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
-subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
-yearlySubscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
-function clearCustomAmountErrors()
-{
-  doc.body.classList.remove("minimum-donation-error");
-  doc.body.classList.remove("minimum-subscription-error");
-  doc.body.classList.remove("minimum-yearly-error");
-
-  enableForm(true);
-}
-
-function enableForm(enabled)
-{
-  _.each(
-    _.toArray(doc.querySelectorAll("#payment-providers button")),
-    function(button)
-    {
-      button.disabled = !enabled;
+var DEFAULTS = {
+  USD: {
+    sign: '$',
+    once: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
+    },
+    monthly: {
+      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+      placeholder: 4.99,
+      minimum: 1
+    },
+    yearly: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
     }
-  );
-}
-
-function isValidAmount(amount, type, currency)
-{
-  amount = parseFloat(amount);
-
-  type = (type == 'yearly-subscription') ? 'yearly' : type;
-
-  type = (type == 'monthly-subscription') ? 'subscription' : type;
-
-  return _.isFinite(amount) && amount >= currency[type].minimum;
-}
-
-function otherTypes(type) {
-  return ["donation", "subscription", "yearly"].filter(function(item) {
-    return item != type;
-  });
-}
-
-function validateCustomAmount(event)
-{
-  var checkedRadio = doc.querySelector(".payment-amount input:checked");
-
-  if (checkedRadio.value != "custom")
-  {
-    return clearCustomAmountErrors();
+  },
+  EUR: {
+    sign: '€',
+    once: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5
+    },
+    monthly: {
+      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+      placeholder: 4.99,
+      minimum: 1
+    },
+    yearly: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
+    }
   }
-
-  var amount = checkedRadio.parentElement.querySelector(
-    'input[type="text"]'
-  ).value;
-
-  if (amount.trim() == "")
-  {
-    return clearCustomAmountErrors();
-  }
-
-  amount = parseFloat(amount);
-
-  var currency = currencies[paymentCurrency.value];
-  var selectedType = event.currentTarget.id.split("-")[0];
-  var typeError = "minimum-" + selectedType + "-error";
-  var minimumAmount = currency[selectedType].minimum;
-
-  if (isValidAmount(amount, selectedType, currency))
-  {
-    clearCustomAmountErrors();
-    return;
-  }
-
-  otherTypes(selectedType).forEach(function(otherType) {
-    doc.body.classList.remove("minimum-" + otherType + "-error");
-  });
-  
-  doc.body.classList.add(typeError);
-  
-  enableForm(false);
-
-  doc.querySelector(
-    ".minimum-" + selectedType + "-warning .minimum-amount"
-  ).textContent = currency.sign + minimumAmount;
-}
-
-function actionType(text) {
-  var type;
-
-  if (/donation/.test(text)) {
-    type = 'donation';
-
-  } else if (/monthly/.test(text)) {
-    type = 'monthly-subscription';
-
-  } else if (/yearly/.test(text)) {
-    type = 'yearly-subscription';
-  }
-
-  return type;
-}
-
-donationAmounts.addEventListener("change", validateCustomAmount, true);
-subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
-yearlySubscriptionAmounts.addEventListener("change", validateCustomAmount, true);
-
-donationAmounts.addEventListener("input", validateCustomAmount, true);
-subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
-yearlySubscriptionAmounts.addEventListener("input", validateCustomAmount, true);
-
-/**
- * Export form data to JSON compatible object
- * @function
- */
-this.toJSON = function()
-{
-  var currency = currencies[paymentCurrency.value];
-
-  var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
-
-  var type = actionType(checked.name);
-
-  var amount = checked.value;
-
-  if (amount == "custom")
-  {
-    checked = checked.parentElement.querySelector('input[type="text"]');
-    amount = isValidAmount(
-      checked.value,
-      type,
-      currencies[paymentCurrency.value]
-    ) ? checked.value : checked.placeholder;
-  }
-
-  return {
-    lang: doc.documentElement.lang,
-    type: type,
-    currency: paymentCurrency.value,
-    amount: parseFloat(amount),
-  };
 };
 
-var providerHandlers = {};
-
-/**
- * Add a payment provider submission handler
- * @function
- */
-this.addProviderListener = function(provider, handler)
+ns.setupForm = function(config)
 {
-  if (!providerHandlers[provider])
-    providerHandlers[provider] = [];
+  config = config || DEFAULTS;
 
-  providerHandlers[provider].push(handler);
-};
+  var defaultCurrency = Object.keys(config)[0];
 
-var paymentProviders = doc.getElementById("payment-providers");
+  // ejs templates
+  var _header = _.template(doc.getElementById("payment-header-template").innerHTML)
+  var _frequencies = _.template(doc.getElementById("payment-frequencies-template").innerHTML);
+  var _amounts = _.template(doc.getElementById("payment-amounts-template").innerHTML);
 
-function onPaymentProviderSubmit(event)
-{
-  event.preventDefault();
+  var $form = doc.getElementById("payment-form");
+  // if config has multiple currencies then _header will create $currency
+  var $header = doc.getElementById("payment-header");
+  $header.innerHTML = _header({
+    currencies: Object.keys(config)
+  });
+  var $currency = doc.getElementById("payment-currency");
+  var $frequencies = doc.getElementById("payment-frequencies");
+  var $frequency = doc.getElementById("payment-frequency"); 
+  var $providers = doc.getElementById("payment-providers");
+  var $buttons = doc.getElementById("payment-buttons");
+  var $error = doc.getElementById("payment-error");
 
-  var buttonName = event.target.name || event.target.parentNode.name;
+  function error(error)
+  {
+    if (error)
+    {
+      $error.innerHTML = error;
+      $form.classList.add("has-error");
+      _.each($buttons.children, function($button) { $button.disabled = true; });
+    }
+    else
+    {
+      $form.classList.remove("has-error");
+      _.each($buttons.children, function($button) { $button.disabled = false; });
+    }
+  }
 
-  var disabled = event.target.disabled || event.target.parentNode.disabled;
+  function updateFrequencies()
+  {
+    $frequencies.innerHTML = _frequencies({
+      config: config[$currency ? $currency.value : defaultCurrency],
+      _amounts: _amounts
+    });
+  }
 
-  if (!buttonName || disabled) return;
+  // Set frequencies and amounts for the first time
+  updateFrequencies();
 
-  var provider = buttonName.replace("-provider", "");
+  // Update frequencies and amounts when currency changes
+  if ($currency) // $currency only exists if config has multiple currencies
+    $currency.addEventListener("change", updateFrequencies);
+  
+  $frequencies.addEventListener("change", function(event)
+  {
+    // Track amount frequency in hidden input
+    // Each amount radio has a data-frequency
+    if ("frequency" in event.target.dataset)
+      $frequency.value = event.target.dataset.frequency;
 
-  var handlers = providerHandlers[provider];
+    // Focus custom amount input on custom radio check
+    if ("input" in event.target.dataset)
+      doc.getElementById(event.target.dataset.input).focus();
 
-  if (!handlers) return;
+    // Clear minimum amount error when a custom amount is unselected
+    if (!event.target.parentElement.classList.contains("custom-payment-amount"))
+      if ($form.classList.contains("has-error"))
+        error(false);
+  });
 
-  _.each(handlers, function(handler) {return handler();});
+  function validateCustomAmount(input)
+  {
+    if (!input.min || !("frequency" in input.dataset)) return;
+    
+    var value = parseFloat(input.value);
+    if (isNaN(value)) value = 0;
+    
+    if (value < parseFloat(input.min))
+      error(i18n["min_" + input.dataset.frequency]);
+    else
+      error(false);
+  }
+  
+  $frequencies.addEventListener("input", function(event)
+  {
+    // Show an error when a custom amount is below it's minimum
+    validateCustomAmount(event.target);
+  });
+
+  $frequencies.addEventListener("focusin", function(event)
+  {
+    // Custom amount input data-radio points at it's sibling radio
+    if ("radio" in event.target.dataset)
+    {
+      // Check custom amount radio button on custom amount text input focus
+      doc.getElementById(event.target.dataset.radio).checked = true;
+
+      // Re-show min custom amount error if custom amount is below min
+      validateCustomAmount(event.target);
+    }      
+  });
+
+  // Toggle submit button according to provider radio
+  $providers.addEventListener("change", function(event)
+  {
+    // Provider button display is set by parent [data-provider] in css
+    $buttons.dataset.provider = event.target.value;
+  });
+
+  $form.addEventListener("submit", function(event)
+  {
+    event.preventDefault();
+    
+    var data = api.data();
+
+    _.each(submitCallbacks, function(callback)
+    {
+      callback(data);
+    });
+  });
+  
+  // PUBLIC API ////////////////////////////////////////////////////////////////
+
+  var api = {};
+
+  var submitCallbacks = [];
+
+  api.onSubmit = function(callback)
+  {
+    submitCallbacks.push(callback);
+  }
+
+  api.data = function()
+  {
+    var formData = new FormData($form);
+
+    var amount = formData.get("amount");
+
+    if (amount.startsWith("custom"))
+      amount = formData.get(formData.get("amount"));
+
+    var currency = formData.get("currency");
+
+    return {
+      currency: currency,
+      frequency: formData.get("frequency"),
+      amount: amount,
+      provider: formData.get("provider"),
+      sign: config[currency].sign
+    }
+  }
+
+  return api;
 }
 
-paymentProviders.addEventListener("click", onPaymentProviderSubmit);
-}
-
-root.PaymentForm = PaymentForm;
-
-}(window, document, _));
+})(document, _, path("payment"), path("i18n.payment.form"));

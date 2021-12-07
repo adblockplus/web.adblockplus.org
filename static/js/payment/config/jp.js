@@ -1,7 +1,7 @@
-window.paymentConfig = {
+path("payment.config", {
   JPY: {
     sign: "¥",
-    donation: {
+    once: {
       amounts: [500, 1000, 1500, 3000, 5000, 10000],
       placeholder: 3000,
       minimum: 500
@@ -9,10 +9,10 @@ window.paymentConfig = {
   },
   USD: {
     sign: "$",
-    donation: {
+    once: {
       amounts: [10, 15, 20, 35, 50],
       placeholder: 35,
       minimum: 5
     }
   }
-};
+});

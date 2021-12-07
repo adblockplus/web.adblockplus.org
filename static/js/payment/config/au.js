@@ -1,7 +1,7 @@
-window.paymentConfig = {
+path("payment.config", {
   AUD: {
     sign: "$",
-    donation: {
+    once: {
       amounts: [10, 15, 20, 35, 50],
       placeholder: 35,
       minimum: 5
@@ -9,10 +9,10 @@ window.paymentConfig = {
   },
   USD: {
     sign: "$",
-    donation: {
+    once: {
       amounts: [10, 15, 20, 35, 50],
       placeholder: 35,
       minimum: 5
     }
   }
-};
+});

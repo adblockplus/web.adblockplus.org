@@ -6,13 +6,27 @@ description=Adblock Plus is free, community-supported software, and that wouldnâ
     .mt3 { margin-top: 3rem; }
   </style>
   <link rel="stylesheet" href="build/css/donate.css">
+  <script>
+    path("payment", {
+      stripeAPIConfig: {
+        test: {
+          key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
+          endpoint: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
+        },
+        live: {
+          key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+          endpoint: "https://new-integration.adblockplus.org/"
+        }
+      }
+    });
+  </script>
 </head>
 
 <p>
   {{ donate-lead Adblock Plus isâ€”and always will beâ€”free. Our mission is to provide users with tools that allow them to take control of their online browsing experience and protect them from unwanted and malicious elements. Your donation directly helps the development of Adblock Plus. }}
 </p>
 
-<? include payment/form-donate ?>
+<? include payment/form ?>
 
 <footer class="mt3">
   <p>
@@ -20,7 +34,5 @@ description=Adblock Plus is free, community-supported software, and that wouldnâ
   </p>
 </footer>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script src="/build/js/donate.min.js"></script>
-
-<? include payment/config/stripe ?>
-

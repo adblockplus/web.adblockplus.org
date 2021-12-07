@@ -4,7 +4,7 @@ robots=none
 template=bare
 
 <head>
-  <link rel="stylesheet" href="build/css/update.css">
+  <link rel="stylesheet" href="build/css/update.min.css">
   <script>window.campaignID = 2;</script>
 </head>
 
@@ -64,6 +64,5 @@ template=bare
   <a href="https://adblockplus.org/privacy">{{ privacy-policy[footer link] Privacy Policy }}</a>
 </footer>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script src="/build/js/update.min.js"></script>
-
-<? include payment/config/stripe ?>

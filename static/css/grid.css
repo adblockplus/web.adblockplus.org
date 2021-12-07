@@ -1,0 +1,14 @@
+.grid { display: flex; flex-wrap: wrap; margin: -1rem 0 0 -1rem; }
+
+.grid .cell { flex: 1; padding: 1rem 0 0 1rem; }
+
+.grid.small-fit > .cell { flex: 1; }
+
+.grid.small-full > .cell { flex: 0 0 100%; }
+
+@media (min-width: 48em) 
+{
+  .grid.large-fit > .cell { flex: 1; }
+
+  .grid.large-full > .cell { flex: 0 0 100%; }
+}

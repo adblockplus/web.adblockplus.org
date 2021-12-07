@@ -12,7 +12,7 @@ template=installed/main
   </script>
 </head>
 
-<? include payment/loader ?>
+<? include install/loader ?>
 
 <main class="container">
   <div class="row donate">
@@ -102,5 +102,5 @@ template=installed/main
   </div>
 </footer>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script src="/build/js/installed.min.js"></script>
-<? include payment/config/stripe ?>

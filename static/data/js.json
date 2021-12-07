@@ -16,13 +16,15 @@
   "update_page": {
     "js_files": [
       "static/js/vendor/url-search-params.min.js",
-      "static/js/vendor/uuidv4.min.js",
-      "static/js/vendor/bowser.js",
       "static/js/vendor/lodash.custom.min.js",
       "static/js/payment/form.js",
-      "static/js/payment/providers/paypal.js",
-      "static/js/payment/providers/stripe.js",
-      "static/js/payment/controller.js",
+      "static//js/payment/stripe/card-modal.js",
+      "static//js/payment/stripe/card-payment.js",
+      "static//js/payment/stripe/card-subscription.js",
+      "static//js/payment/paypal/button-payment.js",
+      "static//js/payment/paypal/button-subscription.js",
+      "static//js/payment/session.js",
+      "static//js/payment/controller.js",
       "static/js/address-masking.js"
     ],
     "output_name": "update"
@@ -30,13 +32,15 @@
   "donate_page": {
     "js_files": [
       "static/js/vendor/url-search-params.min.js",
-      "static/js/vendor/uuidv4.min.js",
-      "static/js/vendor/bowser.js",
       "static/js/vendor/lodash.custom.min.js",
-      "static/js/payment/form-donate.js",
-      "static/js/payment/providers/paypal.js",
-      "static/js/payment/providers/stripe.js",
-      "static/js/payment/controller.js",
+      "static/js/payment/form.js",
+      "static//js/payment/stripe/card-modal.js",
+      "static//js/payment/stripe/card-payment.js",
+      "static//js/payment/stripe/card-subscription.js",
+      "static//js/payment/paypal/button-payment.js",
+      "static//js/payment/paypal/button-subscription.js",
+      "static//js/payment/session.js",
+      "static//js/payment/controller.js",
       "static/js/address-masking.js"
     ],
     "output_name": "donate"
@@ -44,15 +48,18 @@
   "installed_page": {
     "js_files": [
       "static/js/vendor/url-search-params.min.js",
-      "static/js/vendor/uuidv4.min.js",
-      "static/js/vendor/bowser.js",
       "static/js/vendor/lodash.custom.min.js",
       "static/js/payment/form.js",
-      "static/js/payment/providers/paypal.js",
-      "static/js/payment/providers/stripe.js",
-      "static/js/payment/controller.js",
-      "static/js/pages/installed.js",
-      "static/js/address-masking.js"
+      "static//js/payment/stripe/card-modal.js",
+      "static//js/payment/stripe/card-payment.js",
+      "static//js/payment/stripe/card-subscription.js",
+      "static//js/payment/paypal/button-payment.js",
+      "static//js/payment/paypal/button-subscription.js",
+      "static//js/payment/session.js",
+      "static//js/payment/controller.js",
+      "static/js/address-masking.js",
+      "static/js/pages/installed.js"
+
     ],
     "output_name": "installed"
   }
