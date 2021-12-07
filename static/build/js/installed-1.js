@@ -316,7 +316,7 @@ ns.setupStripeCardModal = function(config)
   $body.addEventListener("input", function(event)
   {
     if (hasError)
-      triggerError(false);
+      api.setError(false);
   });
 
   stripeCard.addEventListener("change", function(event)
@@ -326,11 +326,11 @@ ns.setupStripeCardModal = function(config)
       cardBrand = event.brand;
 
       if (config.supportedCardBrands.indexOf(event.brand) == -1)
-        return triggerError(i18n.error_card_brand);
+        return api.setError(i18n.error_card_brand);
     }      
 
     if (typeof event.error != "object") 
-      return triggerError(false);
+      return api.setError(false);
     
     var message;
 
@@ -341,7 +341,7 @@ ns.setupStripeCardModal = function(config)
     else
       message = i18n.error_unexpected
 
-    triggerError(message);
+    api.setError(message);
   });
   
   // PUBLIC API ////////////////////////////////////////////////////////////////
@@ -365,7 +365,7 @@ ns.setupStripeCardModal = function(config)
     errorCallbacks.push(callback);
   };
 
-  function triggerError(message)
+  api.setError = function(message)
   {
     hasError = !!message;
 
@@ -948,7 +948,7 @@ function onStripeError(error)
   }
 
   form.setSubmitting(false);
-  form.showError(message);
+  stripeCard.setError(message);
 }
 
 if (
