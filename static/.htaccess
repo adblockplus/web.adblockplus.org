@@ -57,3 +57,19 @@ frame-src https://optimize.google.com www.youtube-nocookie.com;" \
 ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
+
+<FilesMatch ^installed$>
+  GeoIPEnable On
+</FilesMatch>
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{TIME_SEC} [147]$
+RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-0" [NC,L]
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{TIME_SEC} [258]$
+RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-1" [NC,L]
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{TIME_SEC} [369]$
+RewriteRule ".*(en|en[-_]US)/installed$" "/en/installed-2" [NC,L]
