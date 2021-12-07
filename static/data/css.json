@@ -8,15 +8,19 @@
   "update_page": {
     "css_files": [
       "static/css/update.css",
+      "static/css/grid.css",
+      "static/css/skeleton.css",
       "static/css/payment/form.css",
-      "static/css/payment/stripe-modal.css"
+      "static/css/payment/stripe/card-modal.css"
     ],
     "output_name": "update"
   },
   "donate_page": {
     "css_files": [
-      "static/css/payment/form-donate.css",
-      "static/css/payment/stripe-modal-donate.css"
+      "static/css/grid.css",
+      "static/css/skeleton.css",
+      "static/css/payment/form.css",
+      "static/css/payment/stripe/card-modal.css"
     ],
     "output_name": "donate"
   },
@@ -35,9 +39,11 @@
       "static/css/defaults.css",
       "static/css/fonts.css",
       "static/css/main.css",
+      "static/css/grid.css",
+      "static/css/skeleton.css",
       "static/css/pages/installed.css",
       "static/css/payment/form.css",
-      "static/css/payment/stripe-modal.css"
+      "static/css/payment/stripe/card-modal.css"
     ],
     "output_name": "installed"
   }

@@ -1,608 +1,5 @@
 /*! (c) Andrea Giammarchi - ISC */
 var self=this||{};try{!function(t,e){if(new t("q=%2B").get("q")!==e||new t({q:e}).get("q")!==e||new t([["q",e]]).get("q")!==e||"q=%0A"!==new t("q=\n").toString()||"q=+%26"!==new t({q:" &"}).toString()||"q=%25zx"!==new t({q:"%zx"}).toString())throw t;self.URLSearchParams=t}(URLSearchParams,"+")}catch(t){!function(t,a,o){"use strict";var u=t.create,h=t.defineProperty,e=/[!'\(\)~]|%20|%00/g,n=/%(?![0-9a-fA-F]{2})/g,r=/\+/g,i={"!":"%21","'":"%27","(":"%28",")":"%29","~":"%7E","%20":"+","%00":"\0"},s={append:function(t,e){p(this._ungap,t,e)},delete:function(t){delete this._ungap[t]},get:function(t){return this.has(t)?this._ungap[t][0]:null},getAll:function(t){return this.has(t)?this._ungap[t].slice(0):[]},has:function(t){return t in this._ungap},set:function(t,e){this._ungap[t]=[a(e)]},forEach:function(e,n){var r=this;for(var i in r._ungap)r._ungap[i].forEach(t,i);function t(t){e.call(n,t,a(i),r)}},toJSON:function(){return{}},toString:function(){var t=[];for(var e in this._ungap)for(var n=v(e),r=0,i=this._ungap[e];r<i.length;r++)t.push(n+"="+v(i[r]));return t.join("&")}};for(var c in s)h(f.prototype,c,{configurable:!0,writable:!0,value:s[c]});function f(t){var e=u(null);switch(h(this,"_ungap",{value:e}),!0){case!t:break;case"string"==typeof t:"?"===t.charAt(0)&&(t=t.slice(1));for(var n=t.split("&"),r=0,i=n.length;r<i;r++){var a=(s=n[r]).indexOf("=");-1<a?p(e,g(s.slice(0,a)),g(s.slice(a+1))):s.length&&p(e,g(s),"")}break;case o(t):for(var s,r=0,i=t.length;r<i;r++){p(e,(s=t[r])[0],s[1])}break;case"forEach"in t:t.forEach(l,e);break;default:for(var c in t)p(e,c,t[c])}}function l(t,e){p(this,e,t)}function p(t,e,n){var r=o(n)?n.join(","):n;e in t?t[e].push(r):t[e]=[r]}function g(t){return decodeURIComponent(t.replace(n,"%25").replace(r," "))}function v(t){return encodeURIComponent(t).replace(e,d)}function d(t){return i[t]}self.URLSearchParams=f}(Object,String,Array.isArray)}!function(d){var r=!1;try{r=!!Symbol.iterator}catch(t){}function t(t,e){var n=[];return t.forEach(e,n),r?n[Symbol.iterator]():{next:function(){var t=n.shift();return{done:void 0===t,value:t}}}}"forEach"in d||(d.forEach=function(n,r){var i=this,t=Object.create(null);this.toString().replace(/=[\s\S]*?(?:&|$)/g,"=").split("=").forEach(function(e){!e.length||e in t||(t[e]=i.getAll(e)).forEach(function(t){n.call(r,t,e,i)})})}),"keys"in d||(d.keys=function(){return t(this,function(t,e){this.push(e)})}),"values"in d||(d.values=function(){return t(this,function(t,e){this.push(t)})}),"entries"in d||(d.entries=function(){return t(this,function(t,e){this.push([e,t])})}),!r||Symbol.iterator in d||(d[Symbol.iterator]=d.entries),"sort"in d||(d.sort=function(){for(var t,e,n,r=this.entries(),i=r.next(),a=i.done,s=[],c=Object.create(null);!a;)e=(n=i.value)[0],s.push(e),e in c||(c[e]=[]),c[e].push(n[1]),a=(i=r.next()).done;for(s.sort(),t=0;t<s.length;t++)this.delete(s[t]);for(t=0;t<s.length;t++)e=s[t],this.append(e,c[e].shift())}),function(f){function l(t){var e=t.append;t.append=d.append,URLSearchParams.call(t,t._usp.search.slice(1)),t.append=e}function p(t,e){if(!(t instanceof e))throw new TypeError("'searchParams' accessed on an object that does not implement interface "+e.name)}function t(e){var n,r,i,t=e.prototype,a=v(t,"searchParams"),s=v(t,"href"),c=v(t,"search");function o(t,e){d.append.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function u(t){d.delete.call(this,t),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function h(t,e){d.set.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}!a&&c&&c.set&&(i=c,r=function(t,e){return t.append=o,t.delete=u,t.set=h,g(t,"_usp",{configurable:!0,writable:!0,value:e})},n=function(t,e){return g(t,"_searchParams",{configurable:!0,writable:!0,value:r(e,t)}),e},f.defineProperties(t,{href:{get:function(){return s.get.call(this)},set:function(t){var e=this._searchParams;s.set.call(this,t),e&&l(e)}},search:{get:function(){return c.get.call(this)},set:function(t){var e=this._searchParams;c.set.call(this,t),e&&l(e)}},searchParams:{get:function(){return p(this,e),this._searchParams||n(this,new URLSearchParams(this.search.slice(1)))},set:function(t){p(this,e),n(this,t)}}}))}var g=f.defineProperty,v=f.getOwnPropertyDescriptor;try{t(HTMLAnchorElement),/^function|object$/.test(typeof URL)&&URL.prototype&&t(URL)}catch(t){}}(Object)}(self.URLSearchParams.prototype,Object);
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).uuidv4=e()}(this,(function(){"use strict";var t="undefined"!=typeof crypto&&crypto.getRandomValues&&crypto.getRandomValues.bind(crypto)||"undefined"!=typeof msCrypto&&"function"==typeof msCrypto.getRandomValues&&msCrypto.getRandomValues.bind(msCrypto),e=new Uint8Array(16);function o(){if(!t)throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");return t(e)}var n=/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;function r(t){return"string"==typeof t&&n.test(t)}for(var i=[],u=0;u<256;++u)i.push((u+256).toString(16).substr(1));return function(t,e,n){var u=(t=t||{}).random||(t.rng||o)();if(u[6]=15&u[6]|64,u[8]=63&u[8]|128,e){n=n||0;for(var f=0;f<16;++f)e[n+f]=u[f];return e}return function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,o=(i[t[e+0]]+i[t[e+1]]+i[t[e+2]]+i[t[e+3]]+"-"+i[t[e+4]]+i[t[e+5]]+"-"+i[t[e+6]]+i[t[e+7]]+"-"+i[t[e+8]]+i[t[e+9]]+"-"+i[t[e+10]]+i[t[e+11]]+i[t[e+12]]+i[t[e+13]]+i[t[e+14]]+i[t[e+15]]).toLowerCase();if(!r(o))throw TypeError("Stringified UUID is invalid");return o}(u)}}));
-/*!
- * Bowser - a browser detector
- * https://github.com/ded/bowser
- * MIT License | (c) Dustin Diaz 2015
- */
-
-!function (root, name, definition) {
-  if (typeof module != 'undefined' && module.exports) module.exports = definition()
-  else if (typeof define == 'function' && define.amd) define(name, definition)
-  else root[name] = definition()
-}(this, 'bowser', function () {
-  /**
-    * See useragents.js for examples of navigator.userAgent
-    */
-
-  var t = true
-
-  function detect(ua) {
-
-    function getFirstMatch(regex) {
-      var match = ua.match(regex);
-      return (match && match.length > 1 && match[1]) || '';
-    }
-
-    function getSecondMatch(regex) {
-      var match = ua.match(regex);
-      return (match && match.length > 1 && match[2]) || '';
-    }
-
-    var iosdevice = getFirstMatch(/(ipod|iphone|ipad)/i).toLowerCase()
-      , likeAndroid = /like android/i.test(ua)
-      , android = !likeAndroid && /android/i.test(ua)
-      , nexusMobile = /nexus\s*[0-6]\s*/i.test(ua)
-      , nexusTablet = !nexusMobile && /nexus\s*[0-9]+/i.test(ua)
-      , chromeos = /CrOS/.test(ua)
-      , silk = /silk/i.test(ua)
-      , sailfish = /sailfish/i.test(ua)
-      , tizen = /tizen/i.test(ua)
-      , webos = /(web|hpw)os/i.test(ua)
-      , windowsphone = /windows phone/i.test(ua)
-      , samsungBrowser = /SamsungBrowser/i.test(ua)
-      , windows = !windowsphone && /windows/i.test(ua)
-      , mac = !iosdevice && !silk && /macintosh/i.test(ua)
-      , linux = !android && !sailfish && !tizen && !webos && /linux/i.test(ua)
-      , edgeVersion = getFirstMatch(/edge\/(\d+(\.\d+)?)/i)
-      , versionIdentifier = getFirstMatch(/version\/(\d+(\.\d+)?)/i)
-      , tablet = /tablet/i.test(ua) && !/tablet pc/i.test(ua)
-      , mobile = !tablet && /[^-]mobi/i.test(ua)
-      , xbox = /xbox/i.test(ua)
-      , result
-
-    if (/opera/i.test(ua)) {
-      //  an old Opera
-      result = {
-        name: 'Opera'
-      , opera: t
-      , version: versionIdentifier || getFirstMatch(/(?:opera|opr|opios)[\s\/](\d+(\.\d+)?)/i)
-      }
-    } else if (/opr\/|opios/i.test(ua)) {
-      // a new Opera
-      result = {
-        name: 'Opera'
-        , opera: t
-        , version: getFirstMatch(/(?:opr|opios)[\s\/](\d+(\.\d+)?)/i) || versionIdentifier
-      }
-    }
-    else if (/SamsungBrowser/i.test(ua)) {
-      result = {
-        name: 'Samsung Internet for Android'
-        , samsungBrowser: t
-        , version: versionIdentifier || getFirstMatch(/(?:SamsungBrowser)[\s\/](\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/coast/i.test(ua)) {
-      result = {
-        name: 'Opera Coast'
-        , coast: t
-        , version: versionIdentifier || getFirstMatch(/(?:coast)[\s\/](\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/yabrowser/i.test(ua)) {
-      result = {
-        name: 'Yandex Browser'
-      , yandexbrowser: t
-      , version: versionIdentifier || getFirstMatch(/(?:yabrowser)[\s\/](\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/ucbrowser/i.test(ua)) {
-      result = {
-          name: 'UC Browser'
-        , ucbrowser: t
-        , version: getFirstMatch(/(?:ucbrowser)[\s\/](\d+(?:\.\d+)+)/i)
-      }
-    }
-    else if (/mxios|Maxthon/i.test(ua)) {
-      result = {
-        name: 'Maxthon'
-        , maxthon: t
-        , version: getFirstMatch(/(?:mxios|Maxthon)[\s\/](\d+(?:\.\d+)+)/i)
-      }
-    }
-    else if (/epiphany/i.test(ua)) {
-      result = {
-        name: 'Epiphany'
-        , epiphany: t
-        , version: getFirstMatch(/(?:epiphany)[\s\/](\d+(?:\.\d+)+)/i)
-      }
-    }
-    else if (/puffin/i.test(ua)) {
-      result = {
-        name: 'Puffin'
-        , puffin: t
-        , version: getFirstMatch(/(?:puffin)[\s\/](\d+(?:\.\d+)?)/i)
-      }
-    }
-    else if (/sleipnir/i.test(ua)) {
-      result = {
-        name: 'Sleipnir'
-        , sleipnir: t
-        , version: getFirstMatch(/(?:sleipnir)[\s\/](\d+(?:\.\d+)+)/i)
-      }
-    }
-    else if (/k-meleon/i.test(ua)) {
-      result = {
-        name: 'K-Meleon'
-        , kMeleon: t
-        , version: getFirstMatch(/(?:k-meleon)[\s\/](\d+(?:\.\d+)+)/i)
-      }
-    }
-    else if (windowsphone) {
-      result = {
-        name: 'Windows Phone'
-      , windowsphone: t
-      }
-      if (edgeVersion) {
-        result.msedge = t
-        result.version = edgeVersion
-      }
-      else {
-        result.msie = t
-        result.version = getFirstMatch(/iemobile\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/msie|trident/i.test(ua)) {
-      result = {
-        name: 'Internet Explorer'
-      , msie: t
-      , version: getFirstMatch(/(?:msie |rv:)(\d+(\.\d+)?)/i)
-      }
-    } else if (chromeos) {
-      result = {
-        name: 'Chrome'
-      , chromeos: t
-      , chromeBook: t
-      , chrome: t
-      , version: getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
-      }
-    } else if (/chrome.+? edge/i.test(ua)) {
-      result = {
-        name: 'Microsoft Edge'
-      , msedge: t
-      , version: edgeVersion
-      }
-    }
-    else if (/vivaldi/i.test(ua)) {
-      result = {
-        name: 'Vivaldi'
-        , vivaldi: t
-        , version: getFirstMatch(/vivaldi\/(\d+(\.\d+)?)/i) || versionIdentifier
-      }
-    }
-    else if (sailfish) {
-      result = {
-        name: 'Sailfish'
-      , sailfish: t
-      , version: getFirstMatch(/sailfish\s?browser\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/seamonkey\//i.test(ua)) {
-      result = {
-        name: 'SeaMonkey'
-      , seamonkey: t
-      , version: getFirstMatch(/seamonkey\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/firefox|iceweasel|fxios/i.test(ua)) {
-      result = {
-        name: 'Firefox'
-      , firefox: t
-      , version: getFirstMatch(/(?:firefox|iceweasel|fxios)[ \/](\d+(\.\d+)?)/i)
-      }
-      if (/\((mobile|tablet);[^\)]*rv:[\d\.]+\)/i.test(ua)) {
-        result.firefoxos = t
-      }
-    }
-    else if (silk) {
-      result =  {
-        name: 'Amazon Silk'
-      , silk: t
-      , version : getFirstMatch(/silk\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/phantom/i.test(ua)) {
-      result = {
-        name: 'PhantomJS'
-      , phantom: t
-      , version: getFirstMatch(/phantomjs\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/slimerjs/i.test(ua)) {
-      result = {
-        name: 'SlimerJS'
-        , slimer: t
-        , version: getFirstMatch(/slimerjs\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (/blackberry|\bbb\d+/i.test(ua) || /rim\stablet/i.test(ua)) {
-      result = {
-        name: 'BlackBerry'
-      , blackberry: t
-      , version: versionIdentifier || getFirstMatch(/blackberry[\d]+\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (webos) {
-      result = {
-        name: 'WebOS'
-      , webos: t
-      , version: versionIdentifier || getFirstMatch(/w(?:eb)?osbrowser\/(\d+(\.\d+)?)/i)
-      };
-      /touchpad\//i.test(ua) && (result.touchpad = t)
-    }
-    else if (/bada/i.test(ua)) {
-      result = {
-        name: 'Bada'
-      , bada: t
-      , version: getFirstMatch(/dolfin\/(\d+(\.\d+)?)/i)
-      };
-    }
-    else if (tizen) {
-      result = {
-        name: 'Tizen'
-      , tizen: t
-      , version: getFirstMatch(/(?:tizen\s?)?browser\/(\d+(\.\d+)?)/i) || versionIdentifier
-      };
-    }
-    else if (/qupzilla/i.test(ua)) {
-      result = {
-        name: 'QupZilla'
-        , qupzilla: t
-        , version: getFirstMatch(/(?:qupzilla)[\s\/](\d+(?:\.\d+)+)/i) || versionIdentifier
-      }
-    }
-    else if (/chromium/i.test(ua)) {
-      result = {
-        name: 'Chromium'
-        , chromium: t
-        , version: getFirstMatch(/(?:chromium)[\s\/](\d+(?:\.\d+)?)/i) || versionIdentifier
-      }
-    }
-    else if (/chrome|crios|crmo/i.test(ua)) {
-      result = {
-        name: 'Chrome'
-        , chrome: t
-        , version: getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
-      }
-    }
-    else if (android) {
-      result = {
-        name: 'Android'
-        , version: versionIdentifier
-      }
-    }
-    else if (/safari|applewebkit/i.test(ua)) {
-      result = {
-        name: 'Safari'
-      , safari: t
-      }
-      if (versionIdentifier) {
-        result.version = versionIdentifier
-      }
-    }
-    else if (iosdevice) {
-      result = {
-        name : iosdevice == 'iphone' ? 'iPhone' : iosdevice == 'ipad' ? 'iPad' : 'iPod'
-      }
-      // WTF: version is not part of user agent in web apps
-      if (versionIdentifier) {
-        result.version = versionIdentifier
-      }
-    }
-    else if(/googlebot/i.test(ua)) {
-      result = {
-        name: 'Googlebot'
-      , googlebot: t
-      , version: getFirstMatch(/googlebot\/(\d+(\.\d+))/i) || versionIdentifier
-      }
-    }
-    else {
-      result = {
-        name: getFirstMatch(/^(.*)\/(.*) /),
-        version: getSecondMatch(/^(.*)\/(.*) /)
-     };
-   }
-
-    // set webkit or gecko flag for browsers based on these engines
-    if (!result.msedge && /(apple)?webkit/i.test(ua)) {
-      if (/(apple)?webkit\/537\.36/i.test(ua)) {
-        result.name = result.name || "Blink"
-        result.blink = t
-      } else {
-        result.name = result.name || "Webkit"
-        result.webkit = t
-      }
-      if (!result.version && versionIdentifier) {
-        result.version = versionIdentifier
-      }
-    } else if (!result.opera && /gecko\//i.test(ua)) {
-      result.name = result.name || "Gecko"
-      result.gecko = t
-      result.version = result.version || getFirstMatch(/gecko\/(\d+(\.\d+)?)/i)
-    }
-
-    // set OS flags for platforms that have multiple browsers
-    if (!result.windowsphone && !result.msedge && (android || result.silk)) {
-      result.android = t
-    } else if (!result.windowsphone && !result.msedge && iosdevice) {
-      result[iosdevice] = t
-      result.ios = t
-    } else if (mac) {
-      result.mac = t
-    } else if (xbox) {
-      result.xbox = t
-    } else if (windows) {
-      result.windows = t
-    } else if (linux) {
-      result.linux = t
-    }
-
-    function getWindowsVersion (s) {
-      switch (s) {
-        case 'NT': return 'NT'
-        case 'XP': return 'XP'
-        case 'NT 5.0': return '2000'
-        case 'NT 5.1': return 'XP'
-        case 'NT 5.2': return '2003'
-        case 'NT 6.0': return 'Vista'
-        case 'NT 6.1': return '7'
-        case 'NT 6.2': return '8'
-        case 'NT 6.3': return '8.1'
-        case 'NT 10.0': return '10'
-        default: return undefined
-      }
-    }
-
-    // OS version extraction
-    var osVersion = '';
-    if (result.windows) {
-      osVersion = getWindowsVersion(getFirstMatch(/Windows ((NT|XP)( \d\d?.\d)?)/i))
-    } else if (result.windowsphone) {
-      osVersion = getFirstMatch(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i);
-    } else if (result.mac) {
-      osVersion = getFirstMatch(/Mac OS X (\d+([_\.\s]\d+)*)/i);
-      osVersion = osVersion.replace(/[_\s]/g, '.');
-    } else if (iosdevice) {
-      osVersion = getFirstMatch(/os (\d+([_\s]\d+)*) like mac os x/i);
-      osVersion = osVersion.replace(/[_\s]/g, '.');
-    } else if (android) {
-      osVersion = getFirstMatch(/android[ \/-](\d+(\.\d+)*)/i);
-    } else if (result.webos) {
-      osVersion = getFirstMatch(/(?:web|hpw)os\/(\d+(\.\d+)*)/i);
-    } else if (result.blackberry) {
-      osVersion = getFirstMatch(/rim\stablet\sos\s(\d+(\.\d+)*)/i);
-    } else if (result.bada) {
-      osVersion = getFirstMatch(/bada\/(\d+(\.\d+)*)/i);
-    } else if (result.tizen) {
-      osVersion = getFirstMatch(/tizen[\/\s](\d+(\.\d+)*)/i);
-    }
-    if (osVersion) {
-      result.osversion = osVersion;
-    }
-
-    // device type extraction
-    var osMajorVersion = !result.windows && osVersion.split('.')[0];
-    if (
-         tablet
-      || nexusTablet
-      || iosdevice == 'ipad'
-      || (android && (osMajorVersion == 3 || (osMajorVersion >= 4 && !mobile)))
-      || result.silk
-    ) {
-      result.tablet = t
-    } else if (
-         mobile
-      || iosdevice == 'iphone'
-      || iosdevice == 'ipod'
-      || android
-      || nexusMobile
-      || result.blackberry
-      || result.webos
-      || result.bada
-    ) {
-      result.mobile = t
-    }
-
-    // Graded Browser Support
-    // http://developer.yahoo.com/yui/articles/gbs
-    if (result.msedge ||
-        (result.msie && result.version >= 10) ||
-        (result.yandexbrowser && result.version >= 15) ||
-		    (result.vivaldi && result.version >= 1.0) ||
-        (result.chrome && result.version >= 20) ||
-        (result.samsungBrowser && result.version >= 4) ||
-        (result.firefox && result.version >= 20.0) ||
-        (result.safari && result.version >= 6) ||
-        (result.opera && result.version >= 10.0) ||
-        (result.ios && result.osversion && result.osversion.split(".")[0] >= 6) ||
-        (result.blackberry && result.version >= 10.1)
-        || (result.chromium && result.version >= 20)
-        ) {
-      result.a = t;
-    }
-    else if ((result.msie && result.version < 10) ||
-        (result.chrome && result.version < 20) ||
-        (result.firefox && result.version < 20.0) ||
-        (result.safari && result.version < 6) ||
-        (result.opera && result.version < 10.0) ||
-        (result.ios && result.osversion && result.osversion.split(".")[0] < 6)
-        || (result.chromium && result.version < 20)
-        ) {
-      result.c = t
-    } else result.x = t
-
-    return result
-  }
-
-  var bowser = detect(typeof navigator !== 'undefined' ? navigator.userAgent || '' : '')
-
-  bowser.test = function (browserList) {
-    for (var i = 0; i < browserList.length; ++i) {
-      var browserItem = browserList[i];
-      if (typeof browserItem=== 'string') {
-        if (browserItem in bowser) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-
-  /**
-   * Get version precisions count
-   *
-   * @example
-   *   getVersionPrecision("1.10.3") // 3
-   *
-   * @param  {string} version
-   * @return {number}
-   */
-  function getVersionPrecision(version) {
-    return version.split(".").length;
-  }
-
-  /**
-   * Array::map polyfill
-   *
-   * @param  {Array} arr
-   * @param  {Function} iterator
-   * @return {Array}
-   */
-  function map(arr, iterator) {
-    var result = [], i;
-    if (Array.prototype.map) {
-      return Array.prototype.map.call(arr, iterator);
-    }
-    for (i = 0; i < arr.length; i++) {
-      result.push(iterator(arr[i]));
-    }
-    return result;
-  }
-
-  /**
-   * Calculate browser version weight
-   *
-   * @example
-   *   compareVersions(['1.10.2.1',  '1.8.2.1.90'])    // 1
-   *   compareVersions(['1.010.2.1', '1.09.2.1.90']);  // 1
-   *   compareVersions(['1.10.2.1',  '1.10.2.1']);     // 0
-   *   compareVersions(['1.10.2.1',  '1.0800.2']);     // -1
-   *
-   * @param  {Array<String>} versions versions to compare
-   * @return {Number} comparison result
-   */
-  function compareVersions(versions) {
-    // 1) get common precision for both versions, for example for "10.0" and "9" it should be 2
-    var precision = Math.max(getVersionPrecision(versions[0]), getVersionPrecision(versions[1]));
-    var chunks = map(versions, function (version) {
-      var delta = precision - getVersionPrecision(version);
-
-      // 2) "9" -> "9.0" (for precision = 2)
-      version = version + new Array(delta + 1).join(".0");
-
-      // 3) "9.0" -> ["000000000"", "000000009"]
-      return map(version.split("."), function (chunk) {
-        return new Array(20 - chunk.length).join("0") + chunk;
-      }).reverse();
-    });
-
-    // iterate in reverse order by reversed chunks array
-    while (--precision >= 0) {
-      // 4) compare: "000000009" > "000000010" = false (but "9" > "10" = true)
-      if (chunks[0][precision] > chunks[1][precision]) {
-        return 1;
-      }
-      else if (chunks[0][precision] === chunks[1][precision]) {
-        if (precision === 0) {
-          // all version chunks are same
-          return 0;
-        }
-      }
-      else {
-        return -1;
-      }
-    }
-  }
-
-  /**
-   * Check if browser is unsupported
-   *
-   * @example
-   *   bowser.isUnsupportedBrowser({
-   *     msie: "10",
-   *     firefox: "23",
-   *     chrome: "29",
-   *     safari: "5.1",
-   *     opera: "16",
-   *     phantom: "534"
-   *   });
-   *
-   * @param  {Object}  minVersions map of minimal version to browser
-   * @param  {Boolean} [strictMode = false] flag to return false if browser wasn't found in map
-   * @param  {String}  [ua] user agent string
-   * @return {Boolean}
-   */
-  function isUnsupportedBrowser(minVersions, strictMode, ua) {
-    var _bowser = bowser;
-
-    // make strictMode param optional with ua param usage
-    if (typeof strictMode === 'string') {
-      ua = strictMode;
-      strictMode = void(0);
-    }
-
-    if (strictMode === void(0)) {
-      strictMode = false;
-    }
-    if (ua) {
-      _bowser = detect(ua);
-    }
-
-    var version = "" + _bowser.version;
-    for (var browser in minVersions) {
-      if (minVersions.hasOwnProperty(browser)) {
-        if (_bowser[browser]) {
-          if (typeof minVersions[browser] !== 'string') {
-            throw new Error('Browser version in the minVersion map should be a string: ' + browser + ': ' + String(minVersions));
-          }
-
-          // browser version and min supported version.
-          return compareVersions([version, minVersions[browser]]) < 0;
-        }
-      }
-    }
-
-    return strictMode; // not found
-  }
-
-  /**
-   * Check if browser is supported
-   *
-   * @param  {Object} minVersions map of minimal version to browser
-   * @param  {Boolean} [strictMode = false] flag to return false if browser wasn't found in map
-   * @param  {String}  [ua] user agent string
-   * @return {Boolean}
-   */
-  function check(minVersions, strictMode, ua) {
-    return !isUnsupportedBrowser(minVersions, strictMode, ua);
-  }
-
-  bowser.isUnsupportedBrowser = isUnsupportedBrowser;
-  bowser.compareVersions = compareVersions;
-  bowser.check = check;
-
-  /*
-   * Set our detect method to the main bowser object so we can
-   * reuse it to test other user agents.
-   * This is needed to implement future tests.
-   */
-  bowser._detect = detect;
-
-  return bowser
-});
-
 /**
  * @license
  * Lodash (Custom Build) lodash.com/license | Underscore.js 1.8.3 underscorejs.org/LICENSE
@@ -648,532 +45,236 @@ V.prototype.set=K;var Ru=Ut(et),Pu=Mt(),Uu=pu?function(t,r){return pu(t,"toStrin
 if(e)switch(e){case xu:return $n;case zu:return yn;case Su:return jn;case Eu:return On;case $u:return Sn}return r});var Bu=lr(Uu),Cu=cr(function(t){var r=[];return 46===t.charCodeAt(0)&&r.push(""),t.replace(Kn,function(t,n,e,u){r.push(e?u.replace(Yn,"$1"):n||t)}),r});vr.Cache=P;var Du=at(function(){return arguments}())?at:function(t){return Or(t)&&Xe.call(t,"callee")&&!au.call(t,"callee")},Wu=Array.isArray,Vu=_u||Wr,qu=De?s(De):lt,Gu=We?s(We):_t,Hu=Ve?s(Ve):vt,Ju=Pt(function(t,r){Lt(r,Rr(r),t)}),Ku=Pt(function(t,r,n,e){
 Lt(r,Rr(r),t,e)}),Qu=mt(function(r,n){try{return t(r,Vr,n)}catch(t){return gr(t)?t:Error(t)}});m.assignIn=Ju,m.assignInWith=Ku,m.constant=Nr,m.iteratee=Br,m.keys=Fr,m.keysIn=Rr,m.memoize=vr,m.property=Cr,m.toArray=Er,m.values=Pr,m.extend=Ju,m.extendWith=Ku,m.attempt=Qu,m.eq=yr,m.escape=Ur,m.forEach=_r,m.get=Ir,m.hasIn=Lr,m.identity=Tr,m.isArguments=Du,m.isArray=Wu,m.isArrayLike=br,m.isBuffer=Vu,m.isError=gr,m.isFinite=dr,m.isFunction=jr,m.isLength=wr,m.isMap=qu,m.isNumber=Ar,m.isObject=mr,m.isObjectLike=Or,
 m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.stubArray=Dr,m.stubFalse=Wr,m.template=Mr,m.toNumber=$r,m.toString=kr,m.each=_r,m.VERSION=qr,Ue._=m}).call(this);
-/*global PaymentForm, updatePaymentConfig, _*/
-(function(root, doc, _) {
-/**
-* Construct payment form
-* @constructor
-* @requires _.template
-* @requires _.each
-* @param {Object[]} currencies - Ordered collection of currencies indexed by name
-* @param {String} currencies[].sign - Sign before currency amount
-* @param {Object} currencies[].donation - One time payment options for currency
-* @param {Number[]} currencies[].donation.amounts - Amounts offered for one time payment
-* @param {Number} currencies[].donation.placeholder - Custom amount placeholder for one time payment
-* @param {Object=} currencies[].subscription - (optional) monthly payment options for currency
-* @param {Number[]} currencies[].subscription.amounts - Amounts offered for monthly payment
-* @param {Number} currencies[].subscription.placeholder - Custom amount placeholder for monthly payment
-* @param {Object=} currencies[].yearlySubscription - (optional) yearly payment options for currency
-* @param {Number[]} currencies[].yearlySubscription.amounts - Amounts offered for yearly payment
-* @param {Number} currencies[].yearlySubscription.placeholder - Custom amount placeholder for yearly
-*/
-function PaymentForm(currencies)
-{
-var defaultCurrency, hasMultiCurrency;
+/* global _, eyeo */
+(function(doc, _, ns, i18n){
 
-for (var currencyName in currencies)
-{
-  if (!defaultCurrency)
-  {
-    defaultCurrency = currencyName;
-  }
-  else
-  {
-    hasMultiCurrency = true;
-    break;
-  }
-}
-
-if (hasMultiCurrency)
-{
-  doc.body.classList.add("has-multi-currency");
-}
-else
-{
-  doc.body.classList.add("has-single-currency");
-  doc.querySelector(".donation-heading .currency").textContent = defaultCurrency.toUpperCase();
-}
-
-var paymentCurrency = doc.getElementById("payment-currencies");
-
-var theCurrencyOptions = _.template(
-  doc.getElementById("payment-currency-options").innerHTML
-);
-
-paymentCurrency.innerHTML = theCurrencyOptions({
-  currencies: currencies
-});
-
-var donationAmounts = doc.getElementById("donation-amounts");
-
-var subscriptionAmounts = doc.getElementById("subscription-amounts");
-
-var yearlySubscriptionAmounts =
-doc.getElementById("yearly-subscription-amounts");
-
-var thePresetAmounts = _.template(
-  doc.getElementById("preset-payment-amounts").innerHTML
-);
-
-var theCustomAmount = _.template(
-  doc.getElementById("custom-payment-amount").innerHTML
-);
-
-function updateAmounts()
-{
-  var currency = currencies[paymentCurrency.value];
-
-  var donationOptions = {
-    type: "donation",
-    sign: currency.sign,
-    amounts: currency.donation.amounts,
-    placeholder: currency.donation.placeholder
-  };
-
-  donationAmounts.innerHTML = ""
-    + thePresetAmounts(donationOptions)
-    + theCustomAmount(donationOptions);
-
-  if (currency.subscription)
-  {
-    doc.body.classList.add("has-subscriptions");
-    doc.body.classList.add("has-yearly");
-
-    var subscriptionOptions = {
-      type: "monthly-subscription",
-      sign: currency.sign,
-      amounts: currency.subscription.amounts,
-      placeholder: currency.subscription.placeholder
-    };
-
-    subscriptionAmounts.innerHTML = ""
-      + thePresetAmounts(subscriptionOptions)
-      + theCustomAmount(subscriptionOptions);
-    
-    if (currency.yearly) {
-      var yearlySubscriptionOptions = {
-        type: "yearly-subscription",
-        sign: currency.sign,
-        amounts: currency.yearly.amounts,
-        placeholder: currency.yearly.placeholder
-      };
-
-      yearlySubscriptionAmounts.innerHTML = ""
-        + thePresetAmounts(yearlySubscriptionOptions)
-        + theCustomAmount(yearlySubscriptionOptions);
-
-    } else {
-      doc.body.classList.remove("has-yearly");
-    } 
-  }
-  else
-  {
-    doc.body.classList.remove("has-subscriptions");
-    subscriptionAmounts.innerHTML = "";
-  }
-}
-
-updateAmounts();
-
-paymentCurrency.addEventListener("change", function(e) {
-  updateAmounts();
-  validateCustomAmount(e);
-});
-
-function paymentMethod(e) {
-  if (e.target.value == "card") {
-    doc.body.classList.add("paypal-button-hidden");
-    doc.body.classList.remove("card-button-hidden");
-    
-  } else {
-    doc.body.classList.add("card-button-hidden");
-    doc.body.classList.remove("paypal-button-hidden");
-  }
-}
-
-document.getElementById("card")
-  .addEventListener("change", paymentMethod);
-  
-document.getElementById("paypal")
-  .addEventListener("change", paymentMethod);
-
-// uncheck donation amount when subscription amount is selected and vise versa
-function onFieldsetChange (otherFieldset, event)
-{
-  var otherFieldsetSelected = otherFieldset.querySelector("input:checked");
-
-  if (otherFieldsetSelected)
-  {
-    otherFieldsetSelected.checked = false;
-    validateCustomAmount(event);
-  }
-}
-
-donationAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, subscriptionAmounts));
-
-donationAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, yearlySubscriptionAmounts));
-
-subscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, donationAmounts)
-);
-
-subscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, yearlySubscriptionAmounts)
-);
-
-yearlySubscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, donationAmounts)
-);
-
-yearlySubscriptionAmounts.addEventListener(
-  "change",
-  onFieldsetChange.bind(this, subscriptionAmounts)
-);
-
-// Select custom amount radio when textbox is focused
-function onCustomFieldSelect(event)
-{
-  if (event.target.type == "text")
-  {
-    event.target.parentElement.querySelector('input[type="radio"]').click();
-    validateCustomAmount(event);
-  }
-}
-
-donationAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
-subscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
-yearlySubscriptionAmounts.addEventListener("focus", onCustomFieldSelect, true);
-
-function clearCustomAmountErrors()
-{
-  doc.body.classList.remove("minimum-donation-error");
-  doc.body.classList.remove("minimum-subscription-error");
-  doc.body.classList.remove("minimum-yearly-error");
-
-  enableForm(true);
-}
-
-function enableForm(enabled)
-{
-  _.each(
-    _.toArray(doc.querySelectorAll("#payment-providers button")),
-    function(button)
-    {
-      button.disabled = !enabled;
+var DEFAULTS = {
+  USD: {
+    sign: '$',
+    once: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
+    },
+    monthly: {
+      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+      placeholder: 4.99,
+      minimum: 1
+    },
+    yearly: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
     }
-  );
-}
-
-function isValidAmount(amount, type, currency)
-{
-  amount = parseFloat(amount);
-
-  type = (type == 'yearly-subscription') ? 'yearly' : type;
-
-  type = (type == 'monthly-subscription') ? 'subscription' : type;
-
-  return _.isFinite(amount) && amount >= currency[type].minimum;
-}
-
-function otherTypes(type) {
-  return ["donation", "subscription", "yearly"].filter(function(item) {
-    return item != type;
-  });
-}
-
-function validateCustomAmount(event)
-{
-  var checkedRadio = doc.querySelector(".payment-amount input:checked");
-
-  if (checkedRadio.value != "custom")
-  {
-    return clearCustomAmountErrors();
+  },
+  EUR: {
+    sign: '€',
+    once: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5
+    },
+    monthly: {
+      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+      placeholder: 4.99,
+      minimum: 1
+    },
+    yearly: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
+    }
   }
-
-  var amount = checkedRadio.parentElement.querySelector(
-    'input[type="text"]'
-  ).value;
-
-  if (amount.trim() == "")
-  {
-    return clearCustomAmountErrors();
-  }
-
-  amount = parseFloat(amount);
-
-  var currency = currencies[paymentCurrency.value];
-  var selectedType = event.currentTarget.id.split("-")[0];
-  var typeError = "minimum-" + selectedType + "-error";
-  var minimumAmount = currency[selectedType].minimum;
-
-  if (isValidAmount(amount, selectedType, currency))
-  {
-    clearCustomAmountErrors();
-    return;
-  }
-
-  otherTypes(selectedType).forEach(function(otherType) {
-    doc.body.classList.remove("minimum-" + otherType + "-error");
-  });
-  
-  doc.body.classList.add(typeError);
-  
-  enableForm(false);
-
-  doc.querySelector(
-    ".minimum-" + selectedType + "-warning .minimum-amount"
-  ).textContent = currency.sign + minimumAmount;
-}
-
-function actionType(text) {
-  var type;
-
-  if (/donation/.test(text)) {
-    type = 'donation';
-
-  } else if (/monthly/.test(text)) {
-    type = 'monthly-subscription';
-
-  } else if (/yearly/.test(text)) {
-    type = 'yearly-subscription';
-  }
-
-  return type;
-}
-
-donationAmounts.addEventListener("change", validateCustomAmount, true);
-subscriptionAmounts.addEventListener("change", validateCustomAmount, true);
-yearlySubscriptionAmounts.addEventListener("change", validateCustomAmount, true);
-
-donationAmounts.addEventListener("input", validateCustomAmount, true);
-subscriptionAmounts.addEventListener("input", validateCustomAmount, true);
-yearlySubscriptionAmounts.addEventListener("input", validateCustomAmount, true);
-
-/**
- * Export form data to JSON compatible object
- * @function
- */
-this.toJSON = function()
-{
-  var currency = currencies[paymentCurrency.value];
-
-  var checked = doc.querySelector(".payment-amount input[type=radio]:checked");
-
-  var type = actionType(checked.name);
-
-  var amount = checked.value;
-
-  if (amount == "custom")
-  {
-    checked = checked.parentElement.querySelector('input[type="text"]');
-    amount = isValidAmount(
-      checked.value,
-      type,
-      currencies[paymentCurrency.value]
-    ) ? checked.value : checked.placeholder;
-  }
-
-  return {
-    lang: doc.documentElement.lang,
-    type: type,
-    currency: paymentCurrency.value,
-    amount: parseFloat(amount),
-  };
 };
 
-var providerHandlers = {};
-
-/**
- * Add a payment provider submission handler
- * @function
- */
-this.addProviderListener = function(provider, handler)
+ns.setupForm = function(config)
 {
-  if (!providerHandlers[provider])
-    providerHandlers[provider] = [];
+  config = config || DEFAULTS;
 
-  providerHandlers[provider].push(handler);
-};
+  var defaultCurrency = Object.keys(config)[0];
 
-var paymentProviders = doc.getElementById("payment-providers");
+  // ejs templates
+  var _header = _.template(doc.getElementById("payment-header-template").innerHTML)
+  var _frequencies = _.template(doc.getElementById("payment-frequencies-template").innerHTML);
+  var _amounts = _.template(doc.getElementById("payment-amounts-template").innerHTML);
 
-function onPaymentProviderSubmit(event)
-{
-  event.preventDefault();
+  var $form = doc.getElementById("payment-form");
+  // if config has multiple currencies then _header will create $currency
+  var $header = doc.getElementById("payment-header");
+  $header.innerHTML = _header({
+    currencies: Object.keys(config)
+  });
+  var $currency = doc.getElementById("payment-currency");
+  var $frequencies = doc.getElementById("payment-frequencies");
+  var $frequency = doc.getElementById("payment-frequency"); 
+  var $providers = doc.getElementById("payment-providers");
+  var $buttons = doc.getElementById("payment-buttons");
+  var $error = doc.getElementById("payment-error");
 
-  var buttonName = event.target.name || event.target.parentNode.name;
-
-  var disabled = event.target.disabled || event.target.parentNode.disabled;
-
-  if (!buttonName || disabled) return;
-
-  var provider = buttonName.replace("-provider", "");
-
-  var handlers = providerHandlers[provider];
-
-  if (!handlers) return;
-
-  _.each(handlers, function(handler) {return handler();});
-}
-
-paymentProviders.addEventListener("click", onPaymentProviderSubmit);
-}
-
-root.PaymentForm = PaymentForm;
-
-}(window, document, _));
-
-/* global _*/
-(function(root, doc, _){
-
-var siteURL = document.documentElement
-  .getAttribute("data-siteurl") || "https://adblockplus.org";
-
-/**
- * PayPal payment provider
- * @global
- * @requires _.each
- * @requires _.extend
- * @see https://developer.paypal.com/docs/integration/web/
- */
-root.paypalProvider = {
-
-  /**
-   * Submit one-time or recurring payment
-   * @function
-   * @param {Object} payment - Payment options submitted to PayPal
-   * @param {String} payment.item - Human readable translated item name
-   * @param {Number} payment.amount - Amount to be paid for item
-   * @param {String} payment.currency - 3 letter currency code supported by PayPal
-   * @param {String} [payment.type=] - "subscirption" if recurring
-   * @param {String} [payment.image=https://adblockplus.org/img/adblock-plus-paypal.png] - 90px tall logo image
-   * @param {String} [payment.lang=doc.documentElement.lang] - 2 letter language code supported by PayPal
-   * @param {String} [payment.successURL=https://adblockplus.org/payment-complete] - URL to direct to after checkout success
-   * @param {String} [payment.cancelURL=location.hrf] - URL to direct to after checkout cancelled
-   * @see https://developer.paypal.com/docs/archive/nvp-soap-api/currency-codes/#paypal
-   * @see https://developer.paypal.com/docs/api/reference/locale-codes/
-   */
-  submit: function (payment)
+  function error(error)
   {
-    // Locales supported by our website that have different PayPal codes
-    var LOCALES = {
-      "en": "US",
-      "zh_cn": "C2",
-      "pt_br": "BR",
-      "tr": "TM",
-      "el_gr": "GR",
-      "jp": "JP",
-      "kr": "KO",
-      "ar": "DZ"
-    };
-
-    // Get unique PayPal locale code or fall back to lang in PayPal format
-    function getLocale(lang)
+    if (error)
     {
-      return LOCALES[lang] || lang.toUpperCase();
-    }
-
-    var submission = {
-      charset: "utf-8",
-      business: "till@adblockplus.org",
-      item_name: payment.item,
-      custom: payment.custom,
-      image_url: payment.image || "https://adblockplus.org/img/adblock-plus-paypal.png",
-      return: payment.successURL || siteURL + "/payment-complete",
-      cancel_return: payment.cancelURL || root.location.href,
-      no_note: 1,
-      currency_code: payment.currency,
-      lc: getLocale(payment.lang || doc.documentElement.lang)
-    };
-
-    var subscriptionType = {
-      'subscription': 'M',
-      'monthly-subscription': 'M',
-      'yearly-subscription': 'Y'
-    };
-
-    if (Object.keys(subscriptionType)
-      .includes(payment.type))
-    {
-      _.extend(submission, {
-        cmd: "_xclick-subscriptions",
-        a3: payment.amount, // Subscription price
-        p3: 1, // Subscription duration (N*p3)
-        t3: subscriptionType[payment.type], // Regular subscription units of duration. (D/W/M/Y)
-        src: 1 // Subscription payments recur 1 or not 0
-      });
+      $error.innerHTML = error;
+      $form.classList.add("has-error");
+      _.each($buttons.children, function($button) { $button.disabled = true; });
     }
     else
     {
-      _.extend(submission, {
-        cmd: "_xclick",
-        amount: payment.amount
-      });
+      $form.classList.remove("has-error");
+      _.each($buttons.children, function($button) { $button.disabled = false; });
     }
-
-    if (subscriptionType[payment.type] === 'M')
-    {
-      payment.custom = payment.custom + "-m";
-
-      _.extend(submission, {
-        custom: payment.custom,
-      });
-    }
-
-    if (subscriptionType[payment.type] === 'Y')
-    {
-      payment.custom = payment.custom + "-y";
-
-      _.extend(submission, {
-        custom: payment.custom,
-      });
-    }
-
-    var form = doc.createElement("form");
-    form.target = "_blank";
-    form.method = "post";
-    form.action = "https://www.paypal.com/cgi-bin/webscr";
-
-    var field;
-    _.each(submission, function(value, key)
-    {
-      field = doc.createElement("input");
-      field.type = "hidden";
-      field.name = key;
-      field.value = value;
-      form.appendChild(field);
-    });
-
-    var documentHead = doc.getElementsByTagName("head")[0];
-    documentHead.appendChild(form);
-    form.submit();
-    documentHead.removeChild(form);
   }
+
+  function updateFrequencies()
+  {
+    $frequencies.innerHTML = _frequencies({
+      config: config[$currency ? $currency.value : defaultCurrency],
+      _amounts: _amounts
+    });
+  }
+
+  // Set frequencies and amounts for the first time
+  updateFrequencies();
+
+  // Update frequencies and amounts when currency changes
+  if ($currency) // $currency only exists if config has multiple currencies
+    $currency.addEventListener("change", updateFrequencies);
+  
+  $frequencies.addEventListener("change", function(event)
+  {
+    // Track amount frequency in hidden input
+    // Each amount radio has a data-frequency
+    if ("frequency" in event.target.dataset)
+      $frequency.value = event.target.dataset.frequency;
+
+    // Focus custom amount input on custom radio check
+    if ("input" in event.target.dataset)
+      doc.getElementById(event.target.dataset.input).focus();
+
+    // Clear minimum amount error when a custom amount is unselected
+    if (!event.target.parentElement.classList.contains("custom-payment-amount"))
+      if ($form.classList.contains("has-error"))
+        error(false);
+  });
+
+  function validateCustomAmount(input)
+  {
+    if (!input.min || !("frequency" in input.dataset)) return;
+    
+    var value = parseFloat(input.value);
+    if (isNaN(value)) value = 0;
+    
+    if (value < parseFloat(input.min))
+      error(i18n["min_" + input.dataset.frequency]);
+    else
+      error(false);
+  }
+  
+  $frequencies.addEventListener("input", function(event)
+  {
+    // Show an error when a custom amount is below it's minimum
+    validateCustomAmount(event.target);
+  });
+
+  $frequencies.addEventListener("focusin", function(event)
+  {
+    // Custom amount input data-radio points at it's sibling radio
+    if ("radio" in event.target.dataset)
+    {
+      // Check custom amount radio button on custom amount text input focus
+      doc.getElementById(event.target.dataset.radio).checked = true;
+
+      // Re-show min custom amount error if custom amount is below min
+      validateCustomAmount(event.target);
+    }      
+  });
+
+  // Toggle submit button according to provider radio
+  $providers.addEventListener("change", function(event)
+  {
+    // Provider button display is set by parent [data-provider] in css
+    $buttons.dataset.provider = event.target.value;
+  });
+
+  $form.addEventListener("submit", function(event)
+  {
+    event.preventDefault();
+    
+    var data = api.data();
+
+    _.each(submitCallbacks, function(callback)
+    {
+      callback(data);
+    });
+  });
+  
+  // PUBLIC API ////////////////////////////////////////////////////////////////
+
+  var api = {};
+
+  var submitCallbacks = [];
+
+  api.onSubmit = function(callback)
+  {
+    submitCallbacks.push(callback);
+  }
+
+  api.data = function()
+  {
+    var formData = new FormData($form);
+
+    var amount = formData.get("amount");
+
+    if (amount.startsWith("custom"))
+      amount = formData.get(formData.get("amount"));
+
+    var currency = formData.get("currency");
+
+    return {
+      currency: currency,
+      frequency: formData.get("frequency"),
+      amount: amount,
+      provider: formData.get("provider"),
+      sign: config[currency].sign
+    }
+  }
+
+  return api;
+}
+
+})(document, _, path("payment"), path("i18n.payment.form"));
+/* global _, eyeo */
+(function(doc, ns, i18n){
+
+var DEFAULT_LOCALE = "auto";
+
+// Updated 21/11/19
+var LOCALE_ALTERNATIVE = {
+  "es_MX": "es-419",
+  "pt_BR": "pt-BR",
+  "zh_CN": "zh",
+  "zh_TW": "zh-TW"
 };
 
-})(window, document, _);
+var docLang = doc.documentElement.lang;
 
-function initStripeProvider(publishableKey, formProcessor, text) {
-  'use strict';
+var stripeLocale = docLang || DEFAULT_LOCALE;
 
-  var donation = 'donation';
-  var subscription = 'subscription';
+if (LOCALE_ALTERNATIVE.hasOwnProperty(docLang))
+  stripeLocale = LOCALE_ALTERNATIVE[docLang];
 
-  var siteURL = document.documentElement
-    .getAttribute('data-siteurl') || 'https://adblockplus.org';
+ns.setupStripeCardModal = function(config)
+{
+  var $modal = doc.getElementById("stripe-card-modal");
+  var $form = doc.getElementById("stripe-card-form");
+  var $close = doc.getElementById("stripe-card-modal-close");
+  var $email = doc.getElementById("stripe-card-email");
+  var $submit = doc.getElementById("stripe-card-submit");
+  var $submitLabel = doc.getElementById("stripe-card-submit-label");
+  var $error = doc.getElementById("stripe-card-error");
 
-  var successURL = siteURL + '/payment-complete';
-
-  var style = {
+  var stripeStyles = {
     base: {
       color: '#32325d',
       fontFamily:
@@ -1188,572 +289,715 @@ function initStripeProvider(publishableKey, formProcessor, text) {
     }
   };
 
-  var stripe;
+  var stripe = Stripe(config.key, {locale: stripeLocale});
+  var stripeElements = stripe.elements();
+  var stripeCard = stripeElements.create("card", {style: stripeStyles});
 
-  var modal = document.createElement('div');
+  stripeCard.mount("#stripe-card");
 
-  modal.className = 'modal';
+  $close.addEventListener("click", function(event)
+  {
+    event.preventDefault();
 
-  document.body.insertBefore(modal, document.body.firstChild);
-
-  document.addEventListener('keyup', function(keyupEvent) {
-    if (keyupEvent.defaultPrevented) return;
-
-    var key = keyupEvent.key || keyupEvent.keyCode;
-
-    if (key == 'Escape' || key == 'Esc' || key == 27) hideModal();
+    api.hide();
   });
 
-  function queryString(obj) {
-    return new URLSearchParams(obj);
-  }
+  $form.addEventListener("submit", function(event)
+  {
+    event.preventDefault();
 
-  function hideModal() {
-    modal.classList.remove('show-modal');
-  }
-
-  var paymentData;
-
-  function paymentModalPopup(data) {
-    var box, button, cardStripeElement, donationRequest, email, error,
-      priceText, token;
-
-    var donationTimeout = 4000;
-
-    var localeOrderMap = {
-      hu: orderHU,
-      ko: orderKO,
-      tr: orderTR
-    };
-
-    paymentData = data;
-
-    if (data.successURL) {
-      successURL = data.successURL;
-
-      delete data.successURL;
+    if (
+      cardBrand != "unknown" 
+      && config.supportedCardBrands.indexOf(cardBrand) == -1
+    ) {
+      return api.showError(i18n.error_card_brand);
     }
 
-    stripe = Stripe(publishableKey, {
-      locale: (document.documentElement.lang || 'en')
+    var data = api.data();
+
+    $form.classList.add("is-submitting");
+    $submit.disabled = true;
+
+    var submissionProgress = [];
+
+    _.each(submitCallbacks, function(callback)
+    {
+      submissionProgress.push(Promise.resolve(callback(data)));
     });
 
-    function createModalForm() {
-      modal.innerHTML = '' +
-        '<div class="modal-content">' +
-          '<div class="top-banner">' +
-            '<div class="sales-info">' +
-              '<div class="top">' +
-                '<div id="co-name" class="company"></div>' +
-                '<button class="close">' +
-                  '<img width="17" height="17" src="../../img/close.png"></button>' +
-              '</div>' +
-              '<div id="product-name" ' +
-                'class="product details">Adblock Plus</div>' +
-            '</div>' +
-            '<div class="subtitle details">' +
-              text.securelyProcessed + '</div>' +
-          '</div>' +
-          '<hr style="margin: 0;">' +
-          '<div class="payment-details">' +
-            '<form class="payment-form" id="payment-form">' +
-              '<div class="form-row">' +
-                '<div class="forms">' +
-                  '<div>' +
-                    '<label for="email" class="email-label">' +
-                      '<span class="form-label spacer"></span>' +
-                      '<div class="StripeElement">' +
-                        '<input type="email" id="email" class="email" ' +
-                          'size="26" spellcheck="false" ' +
-                          'placeholder="' + text.emailAddress + '" ' +
-                          'autocomplete="email" autocorrect="no" ' +
-                          'autocapitalize="no">' +
-                      '</div>' +
-                    '</label>' +
-                    '</div>' +
-                    '<div>' +
-                    '<label for="card-element">' +
-                      '<span class="form-label spacer"></span>' +
-                      '<div class="StripeElement" id="card-element"></div>' +
-                    '</label>' +
-                    '<div id="card-errors" ' +
-                      'class="error-message" role="alert"></div>' +
-                  '</div>' +
-                  '<div>' +
-                    '<button id="pay-button" ' +
-                      'class="pay-button"></button>' +
-                  '</div>' +
-                '</div>' +
-              '</div>' +
-            '</form>' +
-          '</div>' +
-        '</div><img width="123" height="30" class="pbs" ' +
-          'src="../../img/powered-by-stripe.png"></button>';
-
-      box = document.querySelector('.modal-content');
-      button = document.getElementById('pay-button');
-      email = document.getElementById('email');
-      error = document.getElementById('card-errors');
-
-      createElements();
-
-      payButtonText();
-
-      if (email) email.focus();
-
-      modal.querySelector('.close')
-        .addEventListener('click', hideModal);
-    }
-
-    function isSubscription(type) {
-      return [subscription, 'monthly-subscription', 'yearly-subscription']
-        .includes(type || data.type);
-    }
-
-    function durtionText() {
-      return /^yearly/.test(data.type)
-        ? text.year
-        : text.month;
-    }
-
-    function defaultTextOrder() {
-      return isSubscription()
-        ? text.subscribe + ' ' + priceText + ' / ' + durtionText()
-        : text.donate + ' ' + priceText;
-    }
-
-    function orderHU() {
-      return isSubscription()
-        ? priceText + ' ' + text.subscribe + ' ' + durtionText()
-        : text.donate + ' ' + priceText;
-    }
-
-    function orderKO() {
-      return isSubscription()
-        ? text.subscribe + ' ' + priceText + ' / ' + durtionText()
-        : priceText + ' ' + text.donate;
-    }
-
-    function orderTR() {
-      return isSubscription()
-        ? durtionText() + ' ' + priceText + ' ' + text.subscribe
-        : priceText + ' ' + text.donate;
-    }
-
-    function localeTextOrder(locale) {
-      return localeOrderMap[locale]
-        ? localeOrderMap[locale]()
-        : defaultTextOrder();
-    }
-
-    function payButtonText() {
-      priceText = (data.currencySign == '€')
-        ? data.amount + data.currencySign
-        : data.currencySign + data.amount;
-
-      button.textContent = localeTextOrder(document.documentElement.lang);
-    }
-
-    function errorText(message) {
-      error.textContent = message || '';
-    }
-
-    function enableButton() {
-      button.disabled = false;
-    }
-
-    function createDonation(onSuccess) {
-      if (donationRequest) {
-        donationRequest.abort();
-      }
-
-      donationRequest = new XMLHttpRequest();
-
-      donationRequest.open('POST', formProcessor, true);
-
-      donationRequest.setRequestHeader('Content-Type',
-        'application/x-www-form-urlencoded');
-
-      donationRequest.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          token = this.responseText;
-
-          if (onSuccess) onSuccess();
-        }
-      };
-
-      donationRequest.send(queryString(paymentData));
-    }
-
-    function confirmDonation() {
-      if (token) {
-        stripe.confirmCardPayment(token, {
-          payment_method: {
-            card: cardStripeElement,
-            billing_details: {
-              email: email.value
-            }
-          },
-          receipt_email: email.value
-        }).then(onDonationComplete);
-
-      } else {
-        createDonation(confirmDonation);
-
-        setTimeout(function() {
-          if (!token) {
-            donationRequest.abort();
-
-            onDonationComplete({ error: { message: text.sorry } });
-          }
-        }, donationTimeout);
-      }
-    }
-
-    function onDonationComplete(result) {
-      if (result.error) {
-
-        if (result.error.message) errorText(result.error.message);
-
-        enableButton();
-
-      } else if (result.paymentIntent &&
-        (result.paymentIntent.status == 'succeeded')) {
-          stripePaymentConfirmed();
-      }
-    }
-
-    function createSubscription() {
-      stripe.createPaymentMethod({
-        type: 'card',
-        card: cardStripeElement,
-        billing_details: {
-         email: email.value,
-        },
-      }).then(function(response) {
-        if (response && response.paymentMethod && response.paymentMethod.id) {
-          var request = new XMLHttpRequest();
-
-          data.method = response.paymentMethod.id;
-          data.email = email.value;
-
-          request.open('POST', formProcessor, true);
-
-          request.setRequestHeader('Content-Type',
-            'application/x-www-form-urlencoded');
-
-          request.onreadystatechange = function() {
-            if (this.readyState == 4) {
-
-               if (this.status == 200) {
-                 stripePaymentConfirmed();
-
-               } else if (this.status == 402) {
-                 errorText(text.declined);
-
-                 enableButton();
-
-               } else {
-                 errorText(text.sorry);
-               }
-            }
-          }
-
-          request.send(queryString(data));
-        }
-      });
-    }
-
-    function processForm(submitEvent) {
-      submitEvent.preventDefault();
-
-      if (error.textContent) {
-        box.classList.add('shake');
-
-        setTimeout(function removeShake() {
-          box.classList.remove('shake');
-        }, 1000);
-      }
-
-      if (button.disabled) return;
-
-      button.disabled = true;
-
-      if (data.type == donation) {
-        confirmDonation();
-
-      } else if (isSubscription(data.type)) {
-        createSubscription();
-      }
-    }
-
-    function cardBrand(brand) {
-      if (['visa', 'mastercard', 'amex'].indexOf(brand) == -1)
-        errorText(text.notSupported);
-    }
-
-    function createElements() {
-      cardStripeElement = stripe.elements()
-        .create('card', {
-          style: style
-        });
-
-      cardStripeElement.mount('#card-element');
-
-      cardStripeElement.addEventListener('change', function(changeEvent) {
-        errorText((changeEvent.error && changeEvent.error.message)
-          ? changeEvent.error.message
-          : enableButton());
-
-        cardBrand(changeEvent.brand);
-      });
-
-      document.getElementById('payment-form')
-        .addEventListener('submit', processForm);
-    }
-
-    function stripePaymentConfirmed() {
-      var params = queryString({
-        pp: 'stripe',
-        sid: data.custom
-      });
-
-      window.location.href = successURL + '?' + params.toString();
-    }
-
-    createModalForm();
-
-    modal.classList.add('show-modal');
-
-    if (data.type == donation) createDonation();
-  }
-
-  return {
-    submit: paymentModalPopup
-  };
-}
-
-/* global eyeo */
-(function() {
-
-var docEl = document.documentElement;
-
-var URLParams = new URLSearchParams(location.search);
-
-var URLSubDirs = location.pathname.split('/');
-
-var paymentConfig = {
-  USD: {
-    sign: '$',
-    donation: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5
-    },
-    subscription: {
-      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
-      placeholder: 4.99,
-      minimum: 1
-    }
-  },
-  EUR: {
-    sign: '€',
-    donation: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5
-    },
-    subscription: {
-      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
-      placeholder: 4.99,
-      minimum: 1
-    }
-  }
-};
-
-function setupPaymentForm() {
-  if (window.paymentConfig)
-    paymentConfig = window.paymentConfig;
-
-  var form = new PaymentForm(paymentConfig);
-
-  function getPayment() {
-    var fromController = {
-      /* eyeo.vid will be set to 0-N where 0 is the original variant and N is
-         a challenger variant whenever an optimize variant is applied */
-      custom: typeof eyeo.vid != "undefined" ? eyeo.vid + eyeo.sid.slice(1) : eyeo.sid,
-      successURL: (docEl.getAttribute('data-siteurl') ||
-        'https://adblockplus.org') + '/payment-complete'
-    };
-
-    return _.extend(form.toJSON(), fromController);
-  }
-
-  function onPayPalProvider() {
-    var payment = getPayment();
-
-    var cancelParams = new URLSearchParams({
-      pp: 'paypal',
-      sid: payment.custom
+    Promise.all(submissionProgress).finally(function()
+    {
+      if (hasError)
+        $form.classList.remove("is-submitting");
     });
+  });
 
-    payment.cancelURL = [
-      location.origin,
-      location.pathname,
-      '?',
-      cancelParams.toString()
-    ].join('');
+  $form.addEventListener("input", function(event)
+  {
+    if (hasError)
+      api.showError(false);
+  });
 
-    payment.item = paymentTranslations.item;
+  var cardBrand = "unknown";
 
-    paypalProvider.submit(payment);
+  stripeCard.addEventListener("change", function(event)
+  {
+    if (typeof event.brand == "string" && event.brand != "unknown")
+    {
+      cardBrand = event.brand;
+
+      if (config.supportedCardBrands.indexOf(event.brand) == -1)
+        return api.showError(i18n.error_card_brand);
+    }      
+
+    if (typeof event.error != "object") 
+      return api.showError(false);
+    
+    var message;
+
+    if (event.error.code && i18n["error_" + event.error.code])
+      message = i18n["error_" + event.error.code];
+    else if (event.error.message)
+      message = event.error.message;
+    else
+      message = i18n.error_unexpected
+
+    api.showError(message);
+  });
+  
+  // PUBLIC API ////////////////////////////////////////////////////////////////
+
+  var api = {};
+
+  var submitCallbacks = [];
+
+  api.onSubmit = function(callback)
+  {
+    submitCallbacks.push(callback);
   }
 
-  eyeo.disablePayPal || form.addProviderListener('paypal', onPayPalProvider);
-
-  function onStripeSubmit() {
-    var payment = getPayment();
-
-    payment.currencySign = paymentConfig[payment.currency.toUpperCase()].sign;
-
-    stripeProvider.submit(payment);
+  api.data = function()
+  {
+    return {
+      email: $email.value,
+      stripe: stripe,
+      card: stripeCard,
+      endpoint: config.endpoint
+    };
   }
 
-  var stripeLoaded = false;
+  api.show = function(config)
+  {
+    $submitLabel.textContent = i18n[config.frequency]
+      .replace(
+        "{amount}",  
+        config.sign == "€" 
+          ? config.amount + config.sign 
+          : config.sign + config.amount
+      );
 
-  function onStripeProvider() {
-    if (!stripeLoaded) {
-      var script = document.createElement('script');
-      var button = document.querySelector('.stripe-button');
-      var buttonContent = button.innerHTML;
+    $modal.classList.add("is-active");
 
-      button.disabled = true;
-      button.innerHTML = '<div class="loader">Loading...</div>';
+    $email.focus();
+  }
 
-      script.onload = function() {
-        stripeLoaded = true;
+  api.hide = function()
+  {
+    $modal.classList.remove("is-active");
+  }
 
-        onStripeSubmit();
+  var hasError = false;
 
-        button.disabled = false;
-        button.innerHTML = buttonContent;
-      };
-
-      script.src = 'https://js.stripe.com/v3/';
-
-      document.head.appendChild(script);
-
-    } else {
-      onStripeSubmit();
+  api.showError = function(error)
+  {
+    if (error)
+    {
+      hasError = true;
+      $modal.classList.add("has-error");
+      $error.textContent = error;
+      $submit.disabled = true;
+    }
+    else
+    {
+      hasError = false;
+      $modal.classList.remove("has-error");
+      $submit.disabled = false;
     }
   }
 
-  eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
+  return api;
 }
 
-eyeo.vid = typeof eyeo.vid == "undefined" ? "x" : eyeo.vid;
+})(document, path("payment"), path("i18n.payment.stripe.cardModal"));
 
-var campaignID = window.campaignID || "0";
 
-function padZero(str, endLength)
+/* global eyeo, URLSearchParams */
+(function(doc, _, ns){
+
+var lang = doc.documentElement.lang;
+
+ns.stripeCardPayment = function stripeCardPayment(data)
 {
-  if (typeof str != "string")
-    str = "a";
+  function requestIntent()
+  {
+    return new Promise(function(resolve, reject)
+    {
+      var request = new XMLHttpRequest();
+      
+      request.open("POST", data.endpoint);
 
-  var startLength = str.length;
+      request.setRequestHeader(
+        "Content-Type", 
+        "application/x-www-form-urlencoded"
+      );
 
-  if (str.length < endLength)
-    for(var i = startLength; i<endLength; i++)
-      str = "0" + str;
+      request.onreadystatechange = function()
+      {
+        if (request.readyState == XMLHttpRequest.DONE)
+          if (request.status == 200)
+            resolve(request.responseText);
+          else
+            reject(request);
+      }
 
-  return str;
-}
+      var requestData = {
+        lang: lang
+      };
 
-var performanceNow;
+      var dataAllowlist = [
+        "amount",
+        "type",
+        "email",
+        "custom",
+        "currency"
+      ];
 
-try {
-  performanceNow = Math.round(performance.now()) + "";
-} catch (error) {
-  performanceNow = "b";
-}
+      _.each(dataAllowlist, function (prop) { 
+        if (data[prop])
+          requestData[prop] = data[prop];
+      });
 
-if (performanceNow.length > 8)
-  performanceNow = "c";
+      request.send(new URLSearchParams(requestData));
+    });
+  }
 
-performanceNow = padZero(performanceNow, 8);
+  function confirmIntent(intent)
+  {
+    return new Promise(function(resolve, reject)
+    {
+      data.stripe.confirmCardPayment(intent, {
+        payment_method: {
+          card: data.card,
+          billing_details: {
+            email: data.email
+          }
+        },
+        receipt_email: data.email
+      })
+      .then(function(result)
+      {
+        if (result.hasOwnProperty("error"))
+          reject(result.error);
+        else
+          resolve();
+      })
+      .catch(reject);  
+    });
+  }
 
-var uuid = uuidv4().split("-").slice(1).join("-");
-
-/* Prefex "x" applies by default when optimize does not apply a variant.
-   Since we share SID on load below without waiting for optimize to apply a
-   variant SIDs will not match 1to1 with payment.custom when experiments
-   are running. Instead, we must match SID.slice(1) to coorilate payments. */
-eyeo.sid = URLParams.get("sid") || [eyeo.vid, campaignID, performanceNow, uuid].join("-");
-
-var fromABP = {
-  an: URLParams.get('an'),
-  av: URLParams.get('av'),
-  ap: URLParams.get('ap'),
-  apv: URLParams.get('apv'),
-  p: URLParams.get('p'),
-  pv: URLParams.get('pv')
+  return requestIntent()
+  .then(confirmIntent)
 };
 
-var loadReport = {
-  bn: bowser.name,
-  bv: bowser.version,
-  bp: URLSubDirs[URLSubDirs.length - 1],
-  bl: docEl.lang,
-  cid: campaignID,
-  sid: eyeo.sid
+})(document, _, path("payment"));
+/* global eyeo, URLSearchParams */
+(function(doc, _, ns){
+
+var lang = doc.documentElement.lang;
+
+ns.stripeCardSubscription = function stripeCardSubscription(data)
+{
+  function confirmPayment(result)
+  {
+    return new Promise(function(resolve, reject)
+    {
+      var request = new XMLHttpRequest();
+
+      data.method = result.paymentMethod.id;
+
+      request.open("POST", data.endpoint);
+
+      request.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
+
+      request.onreadystatechange = function()
+      {
+        if (request.readyState == XMLHttpRequest.DONE)
+          if (request.status == 200)
+            resolve();
+          else
+            reject(request);
+      }
+
+      var requestData = {
+        lang: lang
+      };
+
+      var dataAllowlist = [
+        "amount",
+        "type",
+        "email",
+        "custom",
+        "currency"
+      ];
+
+      _.each(dataAllowlist, function (prop) { 
+        if (data[prop])
+          requestData[prop] = data[prop];
+      });
+
+      request.send(new URLSearchParams(data));
+    });
+  }
+
+  return new Promise(function(resolve, reject)
+  {
+    data.stripe.createPaymentMethod({
+      type: "card",
+      card: data.card,
+      billing_details: {
+        email: data.email
+      }
+    })
+    .then(function(result)
+    {
+      if (result.hasOwnProperty("error"))
+        reject(result.error);
+      else
+        confirmPayment(result)
+        .then(resolve)
+        .catch(reject);
+    })
+    .catch(reject);
+  });
+
 };
 
-if (typeof performance == "object" && typeof performance.now == "function")
-  loadReport.pn = (performance.now() + '').split('.')[0];
+})(document, _, path("payment"));
+/* global eyeo, URLSearchParams, paymentTranslations */
+(function(doc, ns, i18n){
 
-if (fromABP.an)
-  loadReport = _.extend(loadReport, fromABP);
+var siteURL = document.documentElement
+  .getAttribute("data-siteurl") || "https://adblockplus.org";
 
-var script = document.createElement('script');
+// Locales supported by our website that have different PayPal codes
+var LOCALES = {
+  "en": "US",
+  "zh_cn": "C2",
+  "pt_br": "BR",
+  "tr": "TM",
+  "el_gr": "GR",
+  "jp": "JP",
+  "kr": "KO",
+  "ar": "DZ"
+};
 
-var params = new URLSearchParams(loadReport);
+var lang = doc.documentElement.lang;
 
-function onLoadReportSuccess() {
-  (document.readyState == 'loading')
-    ? document.addEventListener('DOMContentLoaded', setupPaymentForm)
-    : setupPaymentForm();
+var DEFAULTS = {
+  charset: "utf-8",
+  lc: LOCALES[lang] || lang.toUpperCase(),
+  cmd: "_xclick",
+  business: "till@adblockplus.org",
+  item_name: i18n.item,
+  image_url: siteURL + "../../img/adblock-plus-paypal.png",
+  return: siteURL + "/payment-complete",
+  cancel_return: location.href,
+  no_note: 1
+};
+
+/**
+ * Submit a PayPal button payment
+ * @param {Object} data - A compatible card payment data object
+ */
+ns.paypalButtonPayment = function(data)
+{
+  var form = doc.createElement("form");
+  form.target = "_blank";
+  form.method = "post";
+  form.action = "https://www.paypal.com/cgi-bin/webscr";
+
+  var inputs = Object.assign({}, DEFAULTS, {
+    amount: data.amount,
+    custom: data.custom,
+    currency_code: data.currency
+  });
+
+  var input;
+  for (var name in inputs)
+  {
+    input = doc.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = inputs[name];
+    form.appendChild(input);
+  }
+
+  doc.body.appendChild(form);
+  form.submit();
+  doc.body.removeChild(form);  
+};
+
+})(document, path("payment"), path("i18n.payment.form"));
+
+/* global eyeo, URLSearchParams, paymentTranslations */
+(function(doc, ns, i18n){
+
+var siteURL = document.documentElement
+  .getAttribute("data-siteurl") || "https://adblockplus.org";
+
+// Locales supported by our website that have different PayPal codes
+var LOCALES = {
+  "en": "US",
+  "zh_cn": "C2",
+  "pt_br": "BR",
+  "tr": "TM",
+  "el_gr": "GR",
+  "jp": "JP",
+  "kr": "KO",
+  "ar": "DZ"
+};
+
+var SUBSCRIPTION_TYPE = {
+  'monthly': 'M',
+  'yearly': 'Y'
+};
+
+var lang = doc.documentElement.lang;
+
+var DEFAULTS = {
+  charset: "utf-8",
+  lc: LOCALES[lang] || lang.toUpperCase(),
+  cmd: "_xclick-subscriptions",
+  business: "till@adblockplus.org",
+  item_name: i18n.item,
+  image_url: siteURL + "../../img/adblock-plus-paypal.png",
+  return: siteURL + "/payment-complete",
+  cancel_return: location.href,
+  no_note: 1,
+  p3: 1, // Subscription duration (N*p3)
+  src: 1 // Subscription payments recur 1 or not 0
+};
+
+/**
+ * Submit a PayPal button subscription
+ * @param {Object} data - A compatible card payment data object
+ */
+ns.paypalButtonSubscription = function (data)
+{
+  var form = doc.createElement("form");
+  form.target = "_blank";
+  form.method = "post";
+  form.action = "https://www.paypal.com/cgi-bin/webscr";
+
+  var frequency = SUBSCRIPTION_TYPE[data.frequency];
+
+  var inputs = Object.assign({}, DEFAULTS, {
+    custom: data.custom + "-" + frequency.toLowerCase(),
+    currency_code: data.currency,
+    a3: data.amount, // Subscription price
+    t3: frequency, // Regular subscription units of duration. (D/W/M/Y)
+  });
+
+  var input;
+  for (var name in inputs)
+  {
+    input = doc.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = inputs[name];
+    form.appendChild(input);
+  }
+
+  doc.body.appendChild(form);
+  form.submit();
+  doc.body.removeChild(form);  
+};
+
+})(document, path("payment"), path("i18n.payment.form"));
+  
+/* global eyeo */
+(function(ns){
+
+/* A payment session is a unique payment flow identifier that has user
+ * testing, support troubleshooting, and application performance information
+ * encoded into it for convinience. e.g. to better understand the context of a 
+ * report when investigating an incident or incidents in aggregate.
+ */
+
+function zeroPad(string, length)
+{
+  if (string.length < length)
+    for (var i = string.length; i < length; i++)
+      string = "0" + string;
+  return string;
 }
 
-script.onload = onLoadReportSuccess;
-script.onerror = onLoadReportSuccess;
-script.src = '../../js/payment/config/load.js?' + params.toString();
+var CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
-document.head.appendChild(script);
+function getRandomChars(length)
+{
+  var string = "";
+  for (var i = 0; i < length; i++)
+    string += CHARS.charAt(Math.floor(Math.random() * CHARS.length));  
+  return string;
+}
 
-}());
+// Payment page ID, set manually in page, limited to 1 char
+function getPageId()
+{
+  return String(ns.pageId || "x").charAt(0);
+}
 
-'use strict';
+// Payment campaign ID, set manually in page, limited to 3 char
+function getCampaignId()
+{
+  return zeroPad(String(ns.campaignId || "x"), 3);
+}
 
-var SCROLL_TICK_LENGTH = 10;
-var SCROLL_TIME = 500;
+// Split test ID, set manually in page, limited to 4 chars
+function getTestId()
+{
+  return zeroPad(String(ns.testId || "x") , 4).substr(0, 4);
+}
 
-var page = document.scrollingElement || document.documentElement; // IE
-var body = document.body;
-var donationHeading = document.querySelector('.donation-heading');
+// Split test variant ID, set manually in page, limited to 1 char
+function getVariantId()
+{
+  return String(ns.variantId || "x").charAt(0);
+}
 
-window.addEventListener('resize', function() {
-  if (window.innerWidth > 991)
-    if (!page.classList.contains('hide-form'))
-      page.classList.add('show-form');
+/* Zero padded performance timestamp in milliseconds, limited to 8 chars
+ * "0000000a" if performance.now is not available
+ * "0000000b" if runtime has exceeded 99999999 milliseconds already
+ */
+function createPerformanceTimestamp()
+{
+  var now;
+
+  try {
+    now = String(parseInt(String(performance.now()), 10));
+  } catch {
+    now = "a";
+  }
+
+  if (now.length > 8)
+    now = "b";
+
+  return zeroPad(now, 8);
+}
+
+// YYYYMMDDHHSS format date timestamp
+function createDatetimestamp()
+{
+  var date = new Date();
+
+  return String(date.getUTCFullYear()) 
+  + zeroPad(String(date.getUTCMonth() + 1), 2) 
+  + zeroPad(String(date.getUTCDate()), 2)
+  + zeroPad(String(date.getUTCHours()), 2)
+  + zeroPad(String(date.getUTCMinutes()), 2)
+  + zeroPad(String(date.getUTCSeconds()), 2);
+}
+
+var session;
+
+/** Get or create and get payment session */
+ns.getSession = function()
+{
+  if (!session)
+  {
+    session = ""
+    + getVariantId() + "-"
+    + getPageId() + "-"
+    + createPerformanceTimestamp() + "-"
+    + getTestId() + "-"
+    + "4" + getCampaignId() + "-"
+    + getRandomChars(4) + "-"
+    + createDatetimestamp();
+  }
+
+  return session;
+};
+
+})(path("payment"));
+/* global eyeo */
+(function(doc, _, ns, i18n){
+
+var siteURL = doc.documentElement.getAttribute("data-siteurl") 
+  || "https://adblockplus.org"; 
+
+// May be overriden by setting ns.stripeAPIConfig
+var stripeConfig = {
+  supportedCardBrands: ["visa", "mastercard", "amex"],
+  apiConfig: ns.stripeAPIConfig || {
+    test: {
+      key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
+      endpoint: "https://donation-staging.adblock-org.workers.dev"
+    },
+    live: {
+      key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+      endpoint: "https://donation.adblock-org.workers.dev/"
+    }
+  }
+}
+
+var stripeAPIConfig = stripeConfig.apiConfig;
+
+var stripeEnv = (
+  window.location.hostname == "adblockplus.org" 
+  || window.location.hostname.endsWith(".adblockplus.org")
+) ? "live" : "test";
+
+var session;
+
+function onDOMReady()
+{
+  session = ns.getSession();
+
+  var script = doc.createElement("script");
+  script.onload = onConfigLoad;
+  script.onerror = onConfigLoad;
+  
+  var URLParams = new URLSearchParams(location.search);
+  
+  var report = new URLSearchParams({
+    an: URLParams.get('an'), // addon name
+    av: URLParams.get('av'), // addon version
+    ap: URLParams.get('ap'), // browser name
+    apv: URLParams.get('apv'), // browser version
+    p: URLParams.get('p'), // engine name
+    pv: URLParams.get('pv'), // engine version
+    bl: doc.documentElement.lang, // browser language
+    cid: session.slice(2,3), // payment page id
+    sid: session // payment session id
+  }).toString();
+  
+  script.src = "/../js/payment/config/load.js?" + report;
+  doc.body.appendChild(script);
+}
+
+var form;
+
+var stripeCardModal;
+
+function onConfigLoad()
+{
+  document.documentElement.classList.add("payment-form-loaded");
+  
+  form = ns.setupForm(ns.config);
+  form.onSubmit(onFormSubmit);
+  stripeCardModal = ns.setupStripeCardModal({
+    key: stripeAPIConfig[stripeEnv].key,
+    endpoint: stripeAPIConfig[stripeEnv].endpoint,
+    supportedCardBrands: stripeConfig.supportedCardBrands
+  });
+  stripeCardModal.onSubmit(onStripeConfirm);
+}
+
+function onFormSubmit(data)
+{
+  data.custom = session;
+
+  if (data.provider == "paypal")
+    onPayPalIntent(data);
   else
-    page.classList.remove('show-form');
-});
+    onStripeIntent(data);
+}
 
-document.documentElement.classList.remove('no-js');
+function onPayPalIntent(data)
+{
+  if (data.frequency == "once")
+    ns.paypalButtonPayment(data);
+  else
+    ns.paypalButtonSubscription(data);
+}
 
-// sticky footer
-document.querySelector('main.container').setAttribute('id', 'content');
+function onStripeIntent(data)
+{
+  stripeCardModal.show(data);
+}
 
+function onStripeConfirm()
+{
+  var data = _.extend(
+    {custom: session},
+    form.data(),
+    stripeCardModal.data()    
+  );
+
+  switch (data.frequency) {
+    case "once":
+      data.type = "donation";
+      break;
+    case "monthly":
+      data.type = "monthly-subscription";
+      break;
+    case "yearly":
+      data.type = "yearly-subscription";
+      break;
+  }
+
+  var payment;
+
+  if (data.frequency == "once")
+    payment = ns.stripeCardPayment(data);
+  else
+    payment = ns.stripeCardSubscription(data);
+  
+  return payment
+  .then(onStripeComplete)
+  .catch(onStripeError)
+}
+
+function onStripeComplete()
+{
+  var params = new URLSearchParams({
+    pp: "stripe", // payment processor
+    sid: session // session id
+  });
+
+  window.location.href = siteURL + "/payment-complete?" + params.toString();
+}
+
+function onStripeError(error)
+{
+  var message = i18n["error_unexpected"];
+
+  if (typeof error == "object")
+    if (error.code && i18n["error_" + error.code])
+      message = i18n["error_" + error.code];
+    else if (error.status == 402)
+      message = i18n["error_declined"];
+    else if (typeof error.message == "string" && error.message.length)
+      message = error.message;
+  
+  stripeCardModal.showError(message);
+}
+
+if (
+  doc.readyState === "complete" 
+  || doc.readyState === "loaded" 
+  || doc.readyState === "interactive"
+) {
+  onDOMReady();
+} else {
+  doc.addEventListener("DOMContentLoaded", onDOMReady);
+}
+
+})(document, _, path("payment"), path("i18n.payment.stripeModal"));
 /*!
  * This file is part of website-defaults
  * Copyright (C) 2016-present eyeo GmbH
@@ -1797,3 +1041,25 @@ document.addEventListener("DOMContentLoaded", function()
 
   linksToBeMasked.forEach(unmaskAddress);
 });
+
+'use strict';
+
+var SCROLL_TICK_LENGTH = 10;
+var SCROLL_TIME = 500;
+
+var page = document.scrollingElement || document.documentElement; // IE
+var body = document.body;
+var donationHeading = document.querySelector('.payment-heading');
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 991)
+    if (!page.classList.contains('hide-form'))
+      page.classList.add('show-form');
+  else
+    page.classList.remove('show-form');
+});
+
+document.documentElement.classList.remove('no-js');
+
+// sticky footer
+document.querySelector('main.container').setAttribute('id', 'content');

@@ -1,198 +1,165 @@
 /* global eyeo */
-(function() {
+(function(doc, _, ns, i18n){
 
-var docEl = document.documentElement;
+var siteURL = doc.documentElement.getAttribute("data-siteurl") 
+  || "https://adblockplus.org"; 
 
-var URLParams = new URLSearchParams(location.search);
-
-var URLSubDirs = location.pathname.split('/');
-
-var paymentConfig = {
-  USD: {
-    sign: '$',
-    donation: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5
+// May be overriden by setting ns.stripeAPIConfig
+var stripeConfig = {
+  supportedCardBrands: ["visa", "mastercard", "amex"],
+  apiConfig: ns.stripeAPIConfig || {
+    test: {
+      key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
+      endpoint: "https://donation-staging.adblock-org.workers.dev"
     },
-    subscription: {
-      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
-      placeholder: 4.99,
-      minimum: 1
-    }
-  },
-  EUR: {
-    sign: '€',
-    donation: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5
-    },
-    subscription: {
-      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
-      placeholder: 4.99,
-      minimum: 1
+    live: {
+      key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+      endpoint: "https://donation.adblock-org.workers.dev/"
     }
   }
-};
-
-function setupPaymentForm() {
-  if (window.paymentConfig)
-    paymentConfig = window.paymentConfig;
-
-  var form = new PaymentForm(paymentConfig);
-
-  function getPayment() {
-    var fromController = {
-      /* eyeo.vid will be set to 0-N where 0 is the original variant and N is
-         a challenger variant whenever an optimize variant is applied */
-      custom: typeof eyeo.vid != "undefined" ? eyeo.vid + eyeo.sid.slice(1) : eyeo.sid,
-      successURL: (docEl.getAttribute('data-siteurl') ||
-        'https://adblockplus.org') + '/payment-complete'
-    };
-
-    return _.extend(form.toJSON(), fromController);
-  }
-
-  function onPayPalProvider() {
-    var payment = getPayment();
-
-    var cancelParams = new URLSearchParams({
-      pp: 'paypal',
-      sid: payment.custom
-    });
-
-    payment.cancelURL = [
-      location.origin,
-      location.pathname,
-      '?',
-      cancelParams.toString()
-    ].join('');
-
-    payment.item = paymentTranslations.item;
-
-    paypalProvider.submit(payment);
-  }
-
-  eyeo.disablePayPal || form.addProviderListener('paypal', onPayPalProvider);
-
-  function onStripeSubmit() {
-    var payment = getPayment();
-
-    payment.currencySign = paymentConfig[payment.currency.toUpperCase()].sign;
-
-    stripeProvider.submit(payment);
-  }
-
-  var stripeLoaded = false;
-
-  function onStripeProvider() {
-    if (!stripeLoaded) {
-      var script = document.createElement('script');
-      var button = document.querySelector('.stripe-button');
-      var buttonContent = button.innerHTML;
-
-      button.disabled = true;
-      button.innerHTML = '<div class="loader">Loading...</div>';
-
-      script.onload = function() {
-        stripeLoaded = true;
-
-        onStripeSubmit();
-
-        button.disabled = false;
-        button.innerHTML = buttonContent;
-      };
-
-      script.src = 'https://js.stripe.com/v3/';
-
-      document.head.appendChild(script);
-
-    } else {
-      onStripeSubmit();
-    }
-  }
-
-  eyeo.disableStripe || form.addProviderListener('stripe', onStripeProvider);
 }
 
-eyeo.vid = typeof eyeo.vid == "undefined" ? "x" : eyeo.vid;
+var stripeAPIConfig = stripeConfig.apiConfig;
 
-var campaignID = window.campaignID || "0";
+var stripeEnv = (
+  window.location.hostname == "adblockplus.org" 
+  || window.location.hostname.endsWith(".adblockplus.org")
+) ? "live" : "test";
 
-function padZero(str, endLength)
+var session;
+
+function onDOMReady()
 {
-  if (typeof str != "string")
-    str = "a";
+  session = ns.getSession();
 
-  var startLength = str.length;
-
-  if (str.length < endLength)
-    for(var i = startLength; i<endLength; i++)
-      str = "0" + str;
-
-  return str;
+  var script = doc.createElement("script");
+  script.onload = onConfigLoad;
+  script.onerror = onConfigLoad;
+  
+  var URLParams = new URLSearchParams(location.search);
+  
+  var report = new URLSearchParams({
+    an: URLParams.get('an'), // addon name
+    av: URLParams.get('av'), // addon version
+    ap: URLParams.get('ap'), // browser name
+    apv: URLParams.get('apv'), // browser version
+    p: URLParams.get('p'), // engine name
+    pv: URLParams.get('pv'), // engine version
+    bl: doc.documentElement.lang, // browser language
+    cid: session.slice(2,3), // payment page id
+    sid: session // payment session id
+  }).toString();
+  
+  script.src = "/js/payment/config/load.js?" + report;
+  doc.body.appendChild(script);
 }
 
-var performanceNow;
+var form;
 
-try {
-  performanceNow = Math.round(performance.now()) + "";
-} catch (error) {
-  performanceNow = "b";
+var stripeCardModal;
+
+function onConfigLoad()
+{
+  document.documentElement.classList.add("payment-form-loaded");
+  
+  form = ns.setupForm(ns.config);
+  form.onSubmit(onFormSubmit);
+  stripeCardModal = ns.setupStripeCardModal({
+    key: stripeAPIConfig[stripeEnv].key,
+    endpoint: stripeAPIConfig[stripeEnv].endpoint,
+    supportedCardBrands: stripeConfig.supportedCardBrands
+  });
+  stripeCardModal.onSubmit(onStripeConfirm);
 }
 
-if (performanceNow.length > 8)
-  performanceNow = "c";
+function onFormSubmit(data)
+{
+  data.custom = session;
 
-performanceNow = padZero(performanceNow, 8);
-
-var uuid = uuidv4().split("-").slice(1).join("-");
-
-/* Prefex "x" applies by default when optimize does not apply a variant.
-   Since we share SID on load below without waiting for optimize to apply a
-   variant SIDs will not match 1to1 with payment.custom when experiments
-   are running. Instead, we must match SID.slice(1) to coorilate payments. */
-eyeo.sid = URLParams.get("sid") || [eyeo.vid, campaignID, performanceNow, uuid].join("-");
-
-var fromABP = {
-  an: URLParams.get('an'),
-  av: URLParams.get('av'),
-  ap: URLParams.get('ap'),
-  apv: URLParams.get('apv'),
-  p: URLParams.get('p'),
-  pv: URLParams.get('pv')
-};
-
-var loadReport = {
-  bn: bowser.name,
-  bv: bowser.version,
-  bp: URLSubDirs[URLSubDirs.length - 1],
-  bl: docEl.lang,
-  cid: campaignID,
-  sid: eyeo.sid
-};
-
-if (typeof performance == "object" && typeof performance.now == "function")
-  loadReport.pn = (performance.now() + '').split('.')[0];
-
-if (fromABP.an)
-  loadReport = _.extend(loadReport, fromABP);
-
-var script = document.createElement('script');
-
-var params = new URLSearchParams(loadReport);
-
-function onLoadReportSuccess() {
-  (document.readyState == 'loading')
-    ? document.addEventListener('DOMContentLoaded', setupPaymentForm)
-    : setupPaymentForm();
+  if (data.provider == "paypal")
+    onPayPalIntent(data);
+  else
+    onStripeIntent(data);
 }
 
-script.onload = onLoadReportSuccess;
-script.onerror = onLoadReportSuccess;
-script.src = '/js/payment/config/load.js?' + params.toString();
+function onPayPalIntent(data)
+{
+  if (data.frequency == "once")
+    ns.paypalButtonPayment(data);
+  else
+    ns.paypalButtonSubscription(data);
+}
 
-document.head.appendChild(script);
+function onStripeIntent(data)
+{
+  stripeCardModal.show(data);
+}
 
-}());
+function onStripeConfirm()
+{
+  var data = _.extend(
+    {custom: session},
+    form.data(),
+    stripeCardModal.data()    
+  );
+
+  switch (data.frequency) {
+    case "once":
+      data.type = "donation";
+      break;
+    case "monthly":
+      data.type = "monthly-subscription";
+      break;
+    case "yearly":
+      data.type = "yearly-subscription";
+      break;
+  }
+
+  var payment;
+
+  if (data.frequency == "once")
+    payment = ns.stripeCardPayment(data);
+  else
+    payment = ns.stripeCardSubscription(data);
+  
+  return payment
+  .then(onStripeComplete)
+  .catch(onStripeError)
+}
+
+function onStripeComplete()
+{
+  var params = new URLSearchParams({
+    pp: "stripe", // payment processor
+    sid: session // session id
+  });
+
+  window.location.href = siteURL + "/payment-complete?" + params.toString();
+}
+
+function onStripeError(error)
+{
+  var message = i18n["error_unexpected"];
+
+  if (typeof error == "object")
+    if (error.code && i18n["error_" + error.code])
+      message = i18n["error_" + error.code];
+    else if (error.status == 402)
+      message = i18n["error_declined"];
+    else if (typeof error.message == "string" && error.message.length)
+      message = error.message;
+  
+  stripeCardModal.showError(message);
+}
+
+if (
+  doc.readyState === "complete" 
+  || doc.readyState === "loaded" 
+  || doc.readyState === "interactive"
+) {
+  onDOMReady();
+} else {
+  doc.addEventListener("DOMContentLoaded", onDOMReady);
+}
+
+})(document, _, path("payment"), path("i18n.payment.stripeModal"));
