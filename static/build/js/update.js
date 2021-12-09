@@ -737,14 +737,6 @@ ns.paypalButtonSubscription = function (data)
  * report when investigating an incident or incidents in aggregate.
  */
 
-function zeroPad(string, length)
-{
-  if (string.length < length)
-    for (var i = string.length; i < length; i++)
-      string = "0" + string;
-  return string;
-}
-
 var CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
 function getRandomChars(length)
@@ -755,36 +747,55 @@ function getRandomChars(length)
   return string;
 }
 
-// Get ID from config namespace
-// Returns "x" if ID is non-zero falsy
-function getId(key)
+function zeroPad(input, length)
 {
-  if (ns[key] == 0) return "0";
-  else return String(ns[key] || "x");
+  var string = String(input);
+
+  if (string.length < length)
+    for (var i = string.length; i < length; i++)
+      string = "0" + string;
+
+  return string;
+}
+
+function getConfig(key, pad, test)
+{
+  var result = zeroPad("x", pad);
+
+  if (typeof ns[key] != "undefined")
+  {
+    result = String(ns[key]);
+
+    if (result.length < pad) result = zeroPad(result, pad);
+
+    if (!test.test(result)) result = zeroPad("f", pad);
+  }
+  
+  return result;
 }
 
 // Payment page ID, set manually in page, limited to 1 char
 function getPageId()
 {
-  return getId("pageId");
+  return getConfig("pageId", 1, /^[0-3]{1}$/)
 }
 
 // Payment campaign ID, set manually in page, limited to 3 char
 function getCampaignId()
 {
-  return zeroPad(getId("campaignId"), 3);
+  return getConfig("campaignId", 3, /^[a-z0-9]{3}$/);
 }
 
 // Split test ID, set manually in page, limited to 4 chars
 function getTestId()
 {
-  return zeroPad(getId("testId"), 4);
+  return getConfig("testId", 4, /^[a-z0-9]{4}$/);
 }
 
 // Split test variant ID, set manually in page, limited to 1 char
 function getVariantId()
 {
-  return getId("variantId");
+  return getConfig("variantId", 1, /^[a-z0-9]{1}$/);
 }
 
 /* Zero padded performance timestamp in milliseconds, limited to 8 chars
@@ -812,7 +823,7 @@ function createDatetimestamp()
 {
   var date = new Date();
 
-  return String(date.getUTCFullYear()) 
+  return String(date.getUTCFullYear()).slice(-2) 
   + zeroPad(String(date.getUTCMonth() + 1), 2) 
   + zeroPad(String(date.getUTCDate()), 2)
   + zeroPad(String(date.getUTCHours()), 2)
