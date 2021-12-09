@@ -710,28 +710,36 @@ function getRandomChars(length)
   return string;
 }
 
+// Get ID from config namespace
+// Returns "x" if ID is non-zero falsy
+function getId(key)
+{
+  if (ns[key] == 0) return "0";
+  else return String(ns[key] || "x");
+}
+
 // Payment page ID, set manually in page, limited to 1 char
 function getPageId()
 {
-  return String(ns.pageId || "x").charAt(0);
+  return getId("pageId");
 }
 
 // Payment campaign ID, set manually in page, limited to 3 char
 function getCampaignId()
 {
-  return zeroPad(String(ns.campaignId || "x"), 3);
+  return zeroPad(getId("campaignId"), 3);
 }
 
 // Split test ID, set manually in page, limited to 4 chars
 function getTestId()
 {
-  return zeroPad(String(ns.testId || "x") , 4).substr(0, 4);
+  return zeroPad(getId("testId"), 4);
 }
 
 // Split test variant ID, set manually in page, limited to 1 char
 function getVariantId()
 {
-  return String(ns.variantId || "x").charAt(0);
+  return getId("variantId");
 }
 
 /* Zero padded performance timestamp in milliseconds, limited to 8 chars
