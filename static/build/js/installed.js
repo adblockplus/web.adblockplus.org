@@ -229,7 +229,9 @@ ns.setupForm = function(config)
     if (amount.startsWith("custom"))
       amount = formData.get(formData.get("amount"));
 
-    var currency = formData.get("currency");
+    var currency = Object.keys(config).length > 1
+      ? formData.get("currency")
+      : defaultCurrency;
 
     return {
       currency: currency,
