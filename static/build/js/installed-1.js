@@ -765,7 +765,7 @@ function createPerformanceTimestamp()
 
   try {
     now = String(parseInt(String(performance.now()), 10));
-  } catch {
+  } catch (err) {
     now = "a";
   }
 
