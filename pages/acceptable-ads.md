@@ -20,7 +20,7 @@ template=toc-page
 
 {{ what-are-aa-1 Acceptable Ads are ads that aren’t intrusive or annoying. They are respectful, don’t interfere with content, and are clearly labeled with the word “advertisement” or its equivalent. In order for an ad to be an “Acceptable Ad”, it must adhere to [standards](#criteria) that have been set forth by the [Acceptable Ads Committee](https://acceptableads.com/en/committee/). }}
 
-{{ what-are-aa-2 Ads that abide by Acceptable Ads standards are placed on a whitelist. The ads on the whitelist are then shown to ad-blocking users who allow Acceptable Ads. }}
+{{ what-are-aa-2 Ads that abide by Acceptable Ads standards are placed on a allowlist. The ads on the allowlist are then shown to ad-blocking users who allow Acceptable Ads. }}
 
 {{ what-are-aa-3 Most websites use advertising to make money, meaning that you can see these websites for free. However, many websites use too many annoying or intrusive ads to get your attention. Adblock Plus lets you choose to block ads, but we don’t believe websites should be punished. }}
 
@@ -176,9 +176,9 @@ template=toc-page
 
 {{ are-all-aa-blocked-1 No. It isn't technically possible to automatically recognize ads that don’t meet the Acceptable Ads criteria. We have [agreements](https://adblockplus.org/acceptable-ads-agreements) with some websites and advertisers which stipulate that only advertisements matching the Acceptable Ads criteria will be displayed when Adblock Plus users visit these particular sites. }}
 
-## {{ view-aa-list[heading] Can I view the Acceptable Ads whitelist? }} {: #view-whitelist }
+## {{ view-aa-list[heading] Can I view the Acceptable Ads allowlist? }} {: #view-allowlist }
 
-{{ view-aa-list-1 Absolutely. You can view the list by <a href="https://easylist-downloads.adblockplus.org/exceptionrules.txt" title="{{ view-aa-list-1-1[tooltip] Link to filter list with whitelisted websites }}">clicking here</a>. }}
+{{ view-aa-list-1 Absolutely. You can view the list by <a href="https://easylist-downloads.adblockplus.org/exceptionrules.txt" title="{{ view-aa-list-1-1[tooltip] Link to filter list with allowlisted websites }}">clicking here</a>. }}
 
 ## {{ report-aa[heading] How do I report an ad that doesn’t meet the criteria? }} {: #report }
 
@@ -188,14 +188,14 @@ template=toc-page
 - {{ report-aa-step-2[list item] Screenshot of the entire page, including the ad OR a detailed description of where the ad is located on the page }}
 - {{ report-aa-step-3[list item] If known, indicate whether a login or VPN is necessary to reproduce issue }}
 
-## {{ get-whitelisted[heading] How can I get ads on my website whitelisted? }} {: #get-whitelisted }
+## {{ get-allowlisted[heading] How can I get ads on my website allowlisted? }} {: #get-allowlisted }
 
-{{ get-whitelisted-1 The process of getting your ads whitelisted takes about 10 working days once the ads adhere to the Acceptable Ads standards: }}
+{{ get-allowlisted-1 The process of getting your ads allowlisted takes about 10 working days once the ads adhere to the Acceptable Ads standards: }}
 
-1. {{ get-whitelisted-step-1[list item] If your website has ads that comply with the [Acceptable Ads standards](#criteria), simply fill out <a href="https://acceptableads.com/get-whitelisted/" title="{{ get-whitelisted-step-1-1[tooltip] Get Acceptable Ads Whitelisted }}">this form</a>. }}
-2. {{ get-whitelisted-step-2[list item] Someone from [eyeo](https://www.eyeo.com/), the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria. }}
-3. {{ get-whitelisted-step-3[list item] After you have made any necessary changes, both sides sign an <a href="https://adblockplus.org/acceptable-ads-agreements" title="{{ get-whitelisted-step-3-1[tooltip] Link to Acceptable Ads agreements page }}">agreement</a>. }}
-4. {{ get-whitelisted-step-4[list item] We submit the whitelisting proposal [in the forum](https://adblockplus.org/forum/viewforum.php?f=12){: title="Link to Adblock Plus Forum" } and the ads are whitelisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements. }}
+1. {{ get-allowlisted-step-1[list item] If your website has ads that comply with the [Acceptable Ads standards](#criteria), simply fill out <a href="https://acceptableads.com/join/" title="{{ get-allowlisted-step-1-1[tooltip] Get Acceptable Ads Allowlisted }}">this form</a>. }}
+2. {{ get-allowlisted-step-2[list item] Someone from [eyeo](https://www.eyeo.com/), the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria. }}
+3. {{ get-allowlisted-step-3[list item] After you have made any necessary changes, both sides sign an <a href="https://adblockplus.org/acceptable-ads-agreements" title="{{ get-allowlisted-step-3-1[tooltip] Link to Acceptable Ads agreements page }}">agreement</a>. }}
+4. {{ get-allowlisted-step-4[list item] We submit the allowlisting proposal [in the forum](https://adblockplus.org/forum/viewforum.php?f=12){: title="Link to Adblock Plus Forum" } and the ads are allowlisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements. }}
 
 ## {{revenue[Section header] Is there payment involved?}} {: #revenue }
 

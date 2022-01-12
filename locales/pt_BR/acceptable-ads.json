@@ -179,7 +179,7 @@
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Anúncios com efeitos de focalização excessiva ou iniciada pelo usuário não"
   },
-  "how-be-whitelisted": {
+  "how-be-allowlisted": {
     "description": "Section header",
     "message": "Como posso obter meu site whitelisted?"
   },
@@ -468,8 +468,8 @@
   "report-aa-step-1": {
     "message": "URL da página onde o anúncio é exibido"
   },
-  "get-whitelisted": {
-    "message": "Como posso incluir anúncios aceitáveis em meu site?"
+  "get-allowlisted": {
+    "message": "Como posso incluir anúncios do meu site na lista de permitidos?"
   },
   "why-is-aa-enabled-1": {
     "message": "Acreditamos que Anúncios Aceitáveis sejam o meio termo sustentável entre a escolha do usuário de usar um bloqueador de anúncios e a contínua necessidade de apoiar o conteúdo on-line gratuito com anúncios. Se a maioria dos usuários do Adblock Plus tiverem ativado o recurso “Anúncios Aceitáveis”, os anunciantes terão um maior incentivo para produzir formatos de anúncio melhores e menos intrusivos."
@@ -477,8 +477,8 @@
   "disable-samsung": {
     "message": "Adblock Plus para Samsung Internet"
   },
-  "get-whitelisted-1": {
-    "message": "O processo de incluir seus anúncios na lista branca leva cerca de 10 dias úteis depois que os anúncios passam a cumprir com os padrões de Anúncios Aceitáveis:"
+  "get-allowlisted-1": {
+    "message": "O processo de incluir seus anúncios na lista de permitidos leva cerca de 10 dias úteis depois que os anúncios passam a cumprir com os padrões de Anúncios Aceitáveis:"
   },
   "do-users-want-aa-1": {
     "message": "Sim! Oitenta e três por cento (<a>83%</a>) dos usuários do Adblock Plus não se incomodam em ver Anúncios Aceitáveis, porque sua experiência de navegação não é comprometida por anúncios barulhentos, irritantes e irrelevantes."
@@ -496,7 +496,7 @@
     "message": "Feche a guia."
   },
   "view-aa-list": {
-    "message": "Posso ver a lista branca de Anúncios Aceitáveis?"
+    "message": "Posso ver a lista de permitidos de Anúncios Aceitáveis?"
   },
   "disable-latest-step-1": {
     "message": "Na barra de ferramentas de seu navegador, clique no ícone <strong>Adblock Plus</strong> e selecione o ícone de <strong>engrenagem</strong> no canto superior direito."
@@ -523,18 +523,18 @@
     "message": "Anúncios Aceitáveis são anúncios que não são intrusivos ou irritantes. Eles são respeitosos, não interferem com o conteúdo e são claramente identificados com a palavra \"anúncio\" ou um equivalente. Para que seja considerado um “Anúncio Aceitável”, um anúncio deve obedecer aos <a>padrões</a> estabelecidos pelo <a>Comitê de Anúncios Aceitáveis</a>."
   },
   "what-are-aa-2": {
-    "message": "Anúncios que respeitam os padrões de Anúncios Aceitáveis são colocados em uma lista branca. Os anúncios na lista branca são então, mostrados aos usuários que bloqueiam anúncios, mas permitem Anúncios Aceitáveis."
+    "message": "Anúncios que respeitam os padrões de Anúncios Aceitáveis são incluídos na lista de permitidos. Os anúncios na lista de permitidos são então, mostrados aos usuários que bloqueiam anúncios, mas permitem Anúncios Aceitáveis."
   },
   "what-are-aa-wo-1": {
     "message": "Anúncios Aceitáveis sem localização por terceiros são anúncios que estão em conformidade com os critérios de Anúncios Aceitáveis e que não permitem que entidades de terceiros localizem nada do seu comportamento de navegação. São anúncios que respeitam a regra de <a>Não Rastrear</a> e/ou anúncios operados pelo domínio integralmente detido pela mesma empresa."
   },
-  "get-whitelisted-step-1-1": {
+  "get-allowlisted-step-1-1": {
     "message": "Seja Listado na Lista Branca de Anúncios Aceitáveis"
   },
-  "get-whitelisted-step-2": {
+  "get-allowlisted-step-2": {
     "message": "Um representante da <a>eyeo</a>, a empresa por trás do Adblock Plus, entrará em contato com você para determinar os anúncios exatos e verificar sua conformidade segundo nossos critérios."
   },
-  "get-whitelisted-step-1": {
+  "get-allowlisted-step-1": {
     "message": "Se seu site tem anúncios que cumprem com os <a>padrões de Anúncios Aceitáveis</a>, basta preencher <a>este formulário</a>."
   },
   "revenue": {
@@ -549,8 +549,11 @@
   "page-under-review": {
     "message": "Esta página está em revisão, pois o gerenciamento da iniciativa de Anúncios Aceitáveis foi transferido para o <a>Comitê de Anúncios Aceitáveis</a> independente."
   },
-  "get-whitelisted-step-3-1": {
+  "get-allowlisted-step-3-1": {
     "message": "Link para a página de acordos dos Anúncios Aceitáveis"
+  },
+  "get-allowlisted-step-4": {
+    "message": "Enviamos a proposta da lista de permitidos <a>ao fórum</a> e os anúncios são incluídos na lista de permitidos ao mesmo tempo."
   },
   "desktop-criteria-1": {
     "message": "Os anúncios não devem perturbar o fluxo de leitura natural do usuário. Esses anúncios devem estar posicionados na parte superior, lateral ou abaixo do Conteúdo Principal."
@@ -606,7 +609,7 @@
   "do-users-want-aa": {
     "message": "Os usuários do Adblock Plus realmente querem Anúncios Aceitáveis?"
   },
-  "get-whitelisted-step-3": {
+  "get-allowlisted-step-3": {
     "message": "Após fazer as alterações necessárias, ambos os lados assinam um <a>acordo</a>."
   },
   "disable-android": {

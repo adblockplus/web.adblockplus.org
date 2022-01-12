@@ -83,10 +83,6 @@
     "description": "Text in \"hate ads\" secion",
     "message": "Kein Problem. Sie können diese Funktion jederzeit deaktivieren:"
   },
-  "charging": {
-    "description": "Paragraph in \"about\" section\n{1}: 90",
-    "message": "Unser Open-Source-Produkt ist weiterhin kostenfrei, <a>da wir großen Unternehmen die Whitelisting-Dienste in Rechnung stellen</a>. Für die restlichen {1} Prozent unserer Partner sind diese Dienstleistungen kostenlos."
-  },
   "comply-with-criteria": {
     "description": "Whitelisting step in \"how to be whitelisted\" section",
     "message": "Verfügt Ihre Webseite über Werbeanzeigen, die den <a>Acceptable-Ads-Kriterien</a> entsprechen, oder planen sie solche einzusetzen, so füllen Sie bitte <a>dieses Formular</a> aus."
@@ -179,7 +175,7 @@
     "description": "Bullet point in \"not Acceptable Ad\" section",
     "message": "Werbung mit übermäßigen, oder nicht vom Nutzer initiierten, Hovereffekten"
   },
-  "how-be-whitelisted": {
+  "how-be-allowlisted": {
     "description": "Section header",
     "message": "Wie kann ich meine Webseite freischalten lassen?"
   },
@@ -488,8 +484,8 @@
   "report-aa-step-1": {
     "message": "URL der Seite, auf der die Anzeige erscheint"
   },
-  "get-whitelisted": {
-    "message": "Wie kann ich Anzeigen auf meiner Website auf die Whitelist setzen?"
+  "get-allowlisted": {
+    "message": "Wie kann ich Werbungen auf meiner Website auf die Allowlist setzen?"
   },
   "why-is-aa-enabled-1": {
     "message": "Wir glauben, dass Acceptable Ads der nachhaltige Mittelweg zwischen einer Nutzerentscheidung gegen jegliche Werbung und der fortgesetzten Notwendigkeit der Unterstützung freier Online-Inhalte durch Werbung ist. Wenn die Mehrheit der Adblock-Plus-Nutzer die Funktion „Acceptable Ads“ aktiviert hat, gibt das auch Werbetreibenden einen größeren Anreiz, bessere und weniger aufdringliche Werbeformate zu erstellen."
@@ -497,8 +493,8 @@
   "disable-samsung": {
     "message": "Adblock Plus für Samsung Internet"
   },
-  "get-whitelisted-1": {
-    "message": "Der Vorgang, Ihre Anzeigen auf die Whitelist zu setzen, dauert ca. 10 Arbeitstage, sobald die Anzeigen den Richtlinien für Acceptable Ads entsprechen:"
+  "get-allowlisted-1": {
+    "message": "Der Prozess zur Aufnahme von Werbungen in die Allowlist nimmt etwa 10 Werktage in Anspruch, sofern die Werbungen den Standards für Acceptable Ads entsprechen:"
   },
   "do-users-want-aa-1": {
     "message": "Ja! Dreiundachtzig Prozent (<a>83 %</a>) der Adblock-Plus-Nutzer macht es nichts aus, Acceptable Ads zu sehen, weil ihr Surferlebnis dabei nicht durch laute, lästige und irrelevante Anzeigen beeinträchtigt wird."
@@ -516,7 +512,7 @@
     "message": "Schließe die Registerkarte."
   },
   "view-aa-list": {
-    "message": "Kann ich die Whitelist für Acceptable Ads einsehen?"
+    "message": "Kann ich die Allowlist der Acceptable Ads ansehen?"
   },
   "disable-latest-step-1": {
     "message": "Klicke in der Symbolleiste deines Browsers auf das Symbol <strong>Adblock Plus</strong> und wähle das Symbol <strong>Getriebe</strong> in der oberen rechten Ecke."
@@ -543,18 +539,18 @@
     "message": "Acceptable Ads sind Anzeigen, die nicht aufdringlich oder störend sind. Sie sind respektvoll, beeinträchtigen nicht den redaktionellen Inhalt einer Webseite und sind klar mit dem Wort „Werbung“ oder einer gleichwertigen Bezeichnung gekennzeichnet. Damit eine Anzeige eine „Acceptable Ad“ ist, muss sie <a>Richtlinien</a> einhalten, die vom <a>Acceptable Ads Committee</a> festgelegt wurden."
   },
   "what-are-aa-2": {
-    "message": "Anzeigen, die sich an die Richtlinien für akzeptable Werbung halten, werden auf eine Whitelist gesetzt. Die Anzeigen auf der Whitelist werden dann den Benutzern angezeigt, die Acceptable Ads auch mit Werbeblockierung weiterhin zulassen wollen."
+    "message": "Anzeigen, die sich an die Richtlinien für akzeptable Werbung halten, werden auf eine Allowlist gesetzt. Die Anzeigen auf der Allowlist werden dann den Benutzern angezeigt, die Acceptable Ads auch mit Werbeblockierung weiterhin zulassen wollen."
   },
   "what-are-aa-wo-1": {
     "message": "Acceptable Ads ohne Tracking durch Drittanbieter sind Anzeigen, die den Kriterien für Acceptable Ads entsprechen und es Drittanbietern nicht erlauben, Ihr Browserverhalten zu verfolgen. Diese Art von Anzeigen halten sich an <a>Do Not Track</a>-Vereinbarungen und/oder werden von der Domain verwaltet, die sich vollständig im Besitz desselben Unternehmens befindet."
   },
-  "get-whitelisted-step-1-1": {
-    "message": "Erscheine auf der Whitelist für Acceptable Ads"
+  "get-allowlisted-step-1-1": {
+    "message": "Erscheine auf der Allowlist für Acceptable Ads"
   },
-  "get-whitelisted-step-2": {
+  "get-allowlisted-step-2": {
     "message": "Einer unserer Mitarbeiter von <a>eyeo</a> – dem Unternehmen hinter Adblock Plus – wird sich mit dir in Verbindung setzen, um die konkreten Anzeigen anzusehen und zu prüfen, ob sie den Kriterien entsprechen."
   },
-  "get-whitelisted-step-1": {
+  "get-allowlisted-step-1": {
     "message": "Wenn deine Website deiner Meinung nach über Anzeigen verfügt, die den <a>Richtlinien für Acceptable Ads</a> entsprechen, oder du dies einrichten möchtet, kannst du einfach <a>dieses Formular</a> ausfüllen."
   },
   "disable-ie-step-1": {
@@ -563,8 +559,11 @@
   "disable-ie-step-2": {
     "message": "Deaktiviere den Menüpunkt <strong>Einige nicht aufdringliche Werbung zulassen</strong>."
   },
-  "get-whitelisted-step-3-1": {
+  "get-allowlisted-step-3-1": {
     "message": "Link zur Seite mit den Vereinbarungen über Acceptable Ads"
+  },
+  "get-allowlisted-step-4": {
+    "message": "Wir stellen den Antrag auf Aufnahme in die Allowlist <a>in unser Forum</a>, während die Werbungen gleichzeitig in die Allowlist aufgenommen werden."
   },
   "desktop-criteria-1": {
     "message": "Werbung darf den natürlichen Lesefluss des Nutzers nicht stören. Solche Werbung muss oberhalb, seitlich oder unter dem Hauptinhalt platziert sein."
@@ -623,7 +622,7 @@
   "do-users-want-aa": {
     "message": "Wollen Adblock-Plus-Nutzer wirklich Acceptable Ads?"
   },
-  "get-whitelisted-step-3": {
+  "get-allowlisted-step-3": {
     "message": "Nachdem du etwaige Änderungen vorgenommen hast, unterzeichnen beide Seiten eine <a>Vereinbarung</a>."
   },
   "disable-android": {

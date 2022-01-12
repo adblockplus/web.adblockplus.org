@@ -56,9 +56,9 @@ noheading=True
 
 - {{acceptable-ads-item-1[list item] Participants cannot pay to avoid the [criteria](https://adblockplus.org/en/acceptable-ads#criteria-general). Every enabled ad must comply. }}
 - {{acceptable-ads-item-2[list item] For transparency, we add all <fix>Acceptable Ads</fix> to our [forum](https://adblockplus.org/forum/viewforum.php?f=12) so that our community of users can provide feedback. }}
-- {{acceptable-ads-item-3[list item] We listen to our users. If an <fix>Acceptable Ads</fix> proposal is flagged by our community for a legitimate reason, we will remove it from the whitelist. }}
+- {{acceptable-ads-item-3[list item] We listen to our users. If an <fix>Acceptable Ads</fix> proposal is flagged by our community for a legitimate reason, we will remove it from the allowlist. }}
 
-{{acceptable-ads-paragraph-3[paragraph] We are able to keep our open source product free by charging large entities a fee for whitelisting services. For the other roughly 90 percent of our partners, these services are offered free of charge. }}
+{{acceptable-ads-paragraph-3[paragraph] We are able to keep our open source product free by charging large entities a fee for allowlisting services. For the other roughly 90 percent of our partners, these services are offered free of charge. }}
 
 ### {{abp-error-heading[heading] What if <fix>ABP</fix> does not work properly? }}
 

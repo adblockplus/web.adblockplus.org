@@ -130,8 +130,8 @@
   "default-filter-lists": {
     "message": "Standard-Filterlisten"
   },
-  "blacklisted-ads": {
-    "message": "Blacklist-Anzeigen"
+  "blocklisted-ads": {
+    "message": "Auf die Blocklist gesetzte Werbungen"
   },
   "acceptable-ads": {
     "message": "Acceptable Ads"
@@ -163,10 +163,10 @@
   "default-filter-lists-1": {
     "message": "Die folgenden Filterlisten sind standardmäßig aktiviert, wenn du Adblock Plus installierst:"
   },
-  "blacklisted-ads-1": {
+  "blocklisted-ads-1": {
     "message": "Eine Filterliste (z. B. EasyList), die Anzeigen basierend auf den Spracheinstellungen deines Browsers blockiert."
   },
-  "blacklisted-ads-2": {
+  "blocklisted-ads-2": {
     "message": "eyeo GmbH ist nicht mit dem EasyList-Projekt verbunden und hat keine Kontrolle über den Inhalt der Filterlisten oder dem Projekt selber. Besuche <a>die EasyList-Community</a>, um weitere Informationen zu erhalten."
   },
   "acceptable-ads-1": {
@@ -185,10 +185,10 @@
     "message": "Unsere wichtigste Einnahmequelle ist die Ausführung der Acceptable Ads-Initiative, welche aktuell vom <a>Acceptable Ads Committee</a> inhaltlich verantwortet wird."
   },
   "how-is-abp-financed-2": {
-    "message": "Die praktische Unterstützung der Acceptable Ads-Initiative ist Teil des Versuchs von eyeo (dem Unternehmen hinter Adblock Plus), Online-Werbung mit anderen Augen zu sehen. Wir betreiben einen sehr großen Aufwand, der unter anderem die anhaltende Überprüfung und Überwachung einzelner Whitelist-Anzeigen, die Beratung von Teilnehmern und die Bereitstellung von technischem Support umfasst. Diese Services können nicht als Hobby ausgeübt oder vollständig von Freiwilligen übernommen werden sondern müssen mit Einkünften finanziert werden."
+    "message": "Die praktische Unterstützung der Acceptable Ads-Initiative ist Teil des Versuchs von eyeo (dem Unternehmen hinter Adblock Plus), Online-Werbung mit anderen Augen zu sehen. Vonseiten eyeo werden umfangreiche Leistungen erbracht, u. a. die laufende Überprüfung und Überwachung der einzelnen auf die Allowlist gesetzten Werbungen, Werbepartner sowie technische Unterstützung. Diese Services können nicht als Hobby ausgeübt oder vollständig von Freiwilligen übernommen werden sondern müssen mit Einkünften finanziert werden."
   },
   "how-is-abp-financed-3": {
-    "message": "Deshalb berechnen wir Großunternehmen eine Lizenzgebühr, sodass wir allen die gleichen Whitelist-Dienste anbieten und unsere Ressourcen beibehalten können, um die beste Software für Benutzer zu entwickeln."
+    "message": "Deshalb berechnen wir Großunternehmen eine Lizenzgebühr, sodass wir allen die gleichen Allowlist-Dienste anbieten und unsere Ressourcen beibehalten können, um die beste Software für Benutzer zu entwickeln."
   },
   "how-is-abp-financed-4": {
     "message": "<strong>HINWEIS</strong>: Etwa 90 Prozent der Lizenzen werden kleineren Unternehmen kostenlos zur Verfügung gestellt."
@@ -197,7 +197,7 @@
     "message": "Wir sehen ein Unternehmen als groß an, wenn es aufgrund der Teilnahme an der Acceptable Ads-Initiative pro Monat mehr als 10 Millionen zusätzliche Werbeimpressionen generiert. Für diese Organisationen liegen unsere Lizenzgebühren dann in der Regel bei 30 Prozent der Einnahmen, die in Folge der Freigabe akzeptabler Werbeanzeigen zusätzlich generiert werden."
   },
   "how-is-abp-financed-6": {
-    "message": "<strong>Jedes Unternehmen auf der Whitelist (egal ob zahlender oder nicht-zahlender Teilnehmer) MUSS die gleichen strengen Kriterien erfüllen, die unsere Benutzer als Teil der Acceptable Ads-Initiative akzeptiert haben. Wir werden nie eine Anzeige akzeptieren, <a>die diese Kriterien</a> nicht erfüllt, und es gibt keine Möglichkeit, einen Platz in der Liste der Acceptable Ads zu kaufen. Alle Whitelist-Anzeigen und teilnehmenden Unternehmen sind öffentlich in unserem Forum gelistet. Du kannst uns jederzeit deine Meinung mitteilen und diskutieren.</strong>"
+    "message": "<strong>Jedes Unternehmen auf der Allowlist (egal ob zahlender oder nicht-zahlender Teilnehmer) MUSS die gleichen strengen Kriterien erfüllen, die unsere Benutzer als Teil der Acceptable Ads-Initiative akzeptiert haben. Wir werden nie eine Anzeige akzeptieren, <a>die diese Kriterien</a> nicht erfüllt, und es gibt keine Möglichkeit, einen Platz in der Liste der Acceptable Ads zu kaufen. Alle Allowlist-Anzeigen und teilnehmenden Unternehmen sind öffentlich in unserem Forum gelistet. Du kannst uns jederzeit deine Meinung mitteilen und diskutieren.</strong>"
   },
   "about-aa-1": {
     "message": "<strong>HINWEIS</strong>: Wir sind der Meinung, dass Werbung nicht grundsätzlich schlecht ist, und sind uns darüber im Klaren, dass Werbung der Finanzierung zahlreicher Websites dient. Deshalb glauben wir, dass ein teilweises Blockieren von Werbung besser ist als eine vollständige Werbeblockierung."
@@ -209,13 +209,13 @@
     "message": "Seit 2017 wird die Acceptable Ads-Initiative von einem unabhängigen Komitee verwaltet, dass Werbung verbessern möchte. Weitere Informationen erhältst du unter <a>AcceptableAds.com</a>. Eine Aufstellung der aktuell freigeschalteten Acceptable Ads findest du auch im <a>Acceptable Ads Vorschlag Forum</a>."
   },
   "about-aa-4": {
-    "message": "Webseitenbetreiber, welche mit ihrer Werbung die Auflagen der Acceptable Ads-Kriterien erfüllen möchten, können sich darum bewerben, in die Acceptable Ads-Whitelist aufgenommen zu werden. Nur große Unternehmen, welche aufgrund der Teilnahme an der Acceptable Ads-Initiative pro Monat mehr als 10 Millionen zusätzliche Werbeimpressionen generieren, müssen eine monatliche Gebühr bezahlen (weitere Informationen findest du im Abschnitt darüber, <a>wie wir uns finanzieren</a>)."
+    "message": "Werbetreibende und Herausgebende, die die Acceptable Ads-Kriterien einhalten möchten, können sich um die Aufnahme in die Allowlist für Acceptable Ads <a>bewerben</a>. Nur große Unternehmen, welche aufgrund der Teilnahme an der Acceptable Ads-Initiative pro Monat mehr als 10 Millionen zusätzliche Werbeimpressionen generieren, müssen eine monatliche Gebühr bezahlen (weitere Informationen findest du im Abschnitt darüber, <a>wie wir uns finanzieren</a>)."
   },
   "aa-proposals-forum-label": {
     "message": "Acceptable Ads Vorschlag Forum"
   },
-  "get-whitelisted-label": {
-    "message": "Für Whitelisting anwenden"
+  "get-allowlisted-label": {
+    "message": "Für Allowlisting anwenden"
   },
   "aa-website-label": {
     "message": "Acceptable Ads-Website"
