@@ -273,7 +273,7 @@ subscriptions = {
         'homepage': u'https://github.com/DandelionSprout/adfilt',
         'maintainer': u'Imre Kristoffer Eilertsen',
         'policy': None,
-        'specialization': u'norsk, norsk, norsk, dansk, \xedslenska, f\xf8royskt, kalaallisut',
+        'specialization': u'norsk, norsk, norsk, dansk, \xedslenska, f\xf8royskt, kalaallisut, suomi',
         'supplemented': [],
         'supplements': [u'EasyList'],
         'supplementsType': [u'ads'],
