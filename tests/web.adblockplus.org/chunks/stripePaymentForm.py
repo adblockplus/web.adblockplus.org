@@ -4,14 +4,14 @@ from selenium.webdriver.support import expected_conditions as ec
 
 from pages.basePage import BasePage
 
-EMAIL_TEXTBOX_ID = 'email'
+EMAIL_TEXTBOX_ID = 'stripe-card-email'
 CARD_NUMBER_TEXTBOX_NAME = "cardnumber"
 CARD_EXP_TEXTBOX_NAME = 'exp-date'
 CARD_CVC_TEXTBOX_NAME = 'cvc'
 ZIP_TEXTBOX_NAME = 'postal'
-SUBMIT_BUTTON_ID = 'pay-button'
+SUBMIT_BUTTON_ID = 'stripe-card-submit-label'
 STRIPE_IFRAME_ID = 0
-CARD_ERRORS_LABEL_ID = 'card-errors'
+CARD_ERRORS_LABEL_ID = 'stripe-card-error'
 
 
 class StripePaymentsForm(BasePage):

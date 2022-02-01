@@ -8,32 +8,30 @@ from selenium.webdriver.common.keys import Keys
 from pages.basePage import BasePage
 from chunks.stripePaymentForm import StripePaymentsForm
 
-CREDIT_CARD_RADIO_BUTTON_ID = 'card'
+CREDIT_CARD_RADIO_BUTTON_XPATH = '//input[@name="provider" and @value="stripe"]'
 INSTALLING_MODAL_ID = 'delay-heading'
-MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS = 'minimum-subscription-warning'
-MONTHLY_1_99_RADIO_BUTTON_XPATH = '//input[@name="preset-monthly-subscription-amount" and @value="1.99"]'
-MONTHLY_2_99_RADIO_BUTTON_XPATH = '//input[@name="preset-monthly-subscription-amount" and @value="2.99"]'
-MONTHLY_3_99_RADIO_BUTTON_XPATH = '//input[@name="preset-monthly-subscription-amount" and @value="3.99"]'
-MONTHLY_4_99_RADIO_BUTTON_XPATH = '//input[@name="preset-monthly-subscription-amount" and @value="4.99"]'
-MONTHLY_9_99_RADIO_BUTTON_XPATH = '//input[@name="preset-monthly-subscription-amount" and @value="9.99"]'
-MONTHLY_CUSTOM_RADIO_BUTTON_XPATH = '//input[@name="preset-monthly-subscription-amount" and @value="custom"]'
-MONTHLY_CUSTOM_TEXT_BOX_XPATH = '//input[@name="custom-monthly-subscription-amount"]'
-ONE_TIME_AMOUNT_UNDER_MINIMUM_ERROR_CLASS = 'minimum-donation-warning'
-ONE_TIME_10_RADIO_BUTTON_XPATH = '//input[@name="preset-donation-amount" and @value="10"]'
-ONE_TIME_15_RADIO_BUTTON_XPATH = '//input[@name="preset-donation-amount" and @value="15"]'
-ONE_TIME_20_RADIO_BUTTON_XPATH = '//input[@name="preset-donation-amount" and @value="20"]'
-ONE_TIME_35_RADIO_BUTTON_XPATH = '//input[@name="preset-donation-amount" and @value="35"]'
-ONE_TIME_50_RADIO_BUTTON_XPATH = '//input[@name="preset-donation-amount" and @value="50"]'
-ONE_TIME_CUSTOM_RADIO_BUTTON_XPATH = '//input[@name="preset-donation-amount" and @value="custom"]'
-ONE_TIME_CUSTOM_TEXT_BOX_XPATH = '//input[@name="custom-donation-amount"]'
-YEARLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS = 'minimum-yearly-warning'
-YEARLY_10_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="10"]'
-YEARLY_15_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="15"]'
-YEARLY_20_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="20"]'
-YEARLY_35_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="35"]'
-YEARLY_50_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="50"]'
-YEARLY_CUSTOM_RADIO_BUTTON_XPATH = '//input[@name="preset-yearly-subscription-amount" and @value="custom"]'
-YEARLY_CUSTOM_TEXT_BOX_XPATH = '//input[@name="custom-yearly-subscription-amount"]'
+AMOUNT_UNDER_MINIMUM_ERROR_ID = 'payment-error'
+MONTHLY_1_99_RADIO_BUTTON_XPATH = '//input[@data-frequency="monthly" and @value="1.99"]'
+MONTHLY_2_99_RADIO_BUTTON_XPATH = '//input[@data-frequency="monthly" and @value="2.99"]'
+MONTHLY_3_99_RADIO_BUTTON_XPATH = '//input[@data-frequency="monthly" and @value="3.99"]'
+MONTHLY_4_99_RADIO_BUTTON_XPATH = '//input[@data-frequency="monthly" and @value="4.99"]'
+MONTHLY_9_99_RADIO_BUTTON_XPATH = '//input[@data-frequency="monthly" and @value="9.99"]'
+MONTHLY_CUSTOM_RADIO_BUTTON_XPATH = '//input[@data-frequency="monthly" and @data-input="custom-monthly-amount"]'
+MONTHLY_CUSTOM_TEXT_BOX_XPATH = '//input[@data-frequency="monthly" and @name="custom-monthly-amount"]'
+ONE_TIME_10_RADIO_BUTTON_XPATH = '//input[@data-frequency="once" and @value="10"]'
+ONE_TIME_15_RADIO_BUTTON_XPATH = '//input[@data-frequency="once" and @value="15"]'
+ONE_TIME_20_RADIO_BUTTON_XPATH = '//input[@data-frequency="once" and @value="20"]'
+ONE_TIME_35_RADIO_BUTTON_XPATH = '//input[@data-frequency="once" and @value="35"]'
+ONE_TIME_50_RADIO_BUTTON_XPATH = '//input[@data-frequency="once" and @value="50"]'
+ONE_TIME_CUSTOM_RADIO_BUTTON_XPATH = '//input[@data-frequency="once" and @data-input="custom-once-amount"]'
+ONE_TIME_CUSTOM_TEXT_BOX_XPATH = '//input[@data-frequency="once" and @name="custom-once-amount"]'
+YEARLY_10_RADIO_BUTTON_XPATH = '//input[@data-frequency="yearly" and @value="10"]'
+YEARLY_15_RADIO_BUTTON_XPATH = '//input[@data-frequency="yearly" and @value="15"]'
+YEARLY_20_RADIO_BUTTON_XPATH = '//input[@data-frequency="yearly" and @value="20"]'
+YEARLY_35_RADIO_BUTTON_XPATH = '//input[@data-frequency="yearly" and @value="35"]'
+YEARLY_50_RADIO_BUTTON_XPATH = '//input[@data-frequency="yearly" and @value="50"]'
+YEARLY_CUSTOM_RADIO_BUTTON_XPATH = '//input[@data-frequency="yearly" and @data-input="custom-yearly-amount"]'
+YEARLY_CUSTOM_TEXT_BOX_XPATH = '//input[@data-frequency="yearly" and @name="custom-yearly-amount"]'
 PAYPAL_BUTTON_CLASS = 'paypal-button'
 PAYPAL_BUTTON_TEXT = 'Pay with PayPal'
 STRIPE_BUTTON_CLASS = 'stripe-button'
@@ -49,9 +47,7 @@ class GenericDonationPage(BasePage):
         self.wait = WebDriverWait(driver, 15)
         self._set_page_urls()
         self.driver.get(self._generic_donation_page_url)
-        if not 'donate' in self._generic_donation_page_url:
-            self.click_credit_card_radio_button()
-        self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME, STRIPE_BUTTON_CLASS)))
+        self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME, PAYPAL_BUTTON_CLASS)))
 
     def _set_page_urls(self):
         self._generic_donation_page_url = str(os.getenv('landing_page_url'))\
@@ -59,7 +55,7 @@ class GenericDonationPage(BasePage):
         self._thank_you_page_url = str(os.getenv('landing_page_url')) + '/payment-complete'
 
     def click_credit_card_radio_button(self):
-        self.driver.find_element_by_id(CREDIT_CARD_RADIO_BUTTON_ID).send_keys(Keys.SPACE)
+        self.driver.find_element_by_xpath(CREDIT_CARD_RADIO_BUTTON_XPATH).send_keys(Keys.SPACE)
 
     def click_monthly_custom_button(self):
         self.driver.find_element_by_xpath(MONTHLY_CUSTOM_RADIO_BUTTON_XPATH).send_keys(Keys.SPACE)
@@ -75,6 +71,8 @@ class GenericDonationPage(BasePage):
 
     def click_stripe_button(self):
         self.wait.until(ec.invisibility_of_element((By.ID, INSTALLING_MODAL_ID)))
+        self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME, PAYPAL_BUTTON_CLASS)))
+        self.click_credit_card_radio_button()
         self.wait.until(ec.text_to_be_present_in_element((By.CLASS_NAME, STRIPE_BUTTON_CLASS), STRIPE_BUTTON_TEXT))
         self.wait.until(ec.element_to_be_clickable((By.CLASS_NAME, STRIPE_BUTTON_CLASS)))
         self.driver.find_element_by_class_name(STRIPE_BUTTON_CLASS).click()
@@ -132,21 +130,21 @@ class GenericDonationPage(BasePage):
 
     @property
     def get_monthly_amount_under_minimum_error_text(self):
-        self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME,
-                                                          MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS)))
-        return self.driver.find_element_by_class_name(MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS).text
+        self.wait.until(ec.visibility_of_element_located((By.ID,
+                                                          AMOUNT_UNDER_MINIMUM_ERROR_ID)))
+        return self.driver.find_element_by_id(AMOUNT_UNDER_MINIMUM_ERROR_ID).text
 
     @property
     def get_one_time_amount_under_minimum_error_text(self):
-        self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME,
-                                                          ONE_TIME_AMOUNT_UNDER_MINIMUM_ERROR_CLASS)))
-        return self.driver.find_element_by_class_name(ONE_TIME_AMOUNT_UNDER_MINIMUM_ERROR_CLASS).text
+        self.wait.until(ec.visibility_of_element_located((By.ID,
+                                                          AMOUNT_UNDER_MINIMUM_ERROR_ID)))
+        return self.driver.find_element_by_id(AMOUNT_UNDER_MINIMUM_ERROR_ID).text
 
     @property
     def get_yearly_amount_under_minimum_error_text(self):
-        self.wait.until(ec.visibility_of_element_located((By.CLASS_NAME,
-                                                          YEARLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS)))
-        return self.driver.find_element_by_class_name(YEARLY_AMOUNT_UNDER_MINIMUM_ERROR_CLASS).text
+        self.wait.until(ec.visibility_of_element_located((By.ID,
+                                                          AMOUNT_UNDER_MINIMUM_ERROR_ID)))
+        return self.driver.find_element_by_id(AMOUNT_UNDER_MINIMUM_ERROR_ID).text
 
     def is_redirect_to_thank_you(self):
         return self.wait.until(ec.url_matches(self._thank_you_page_url))

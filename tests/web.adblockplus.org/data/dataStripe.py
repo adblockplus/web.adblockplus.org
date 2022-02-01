@@ -9,7 +9,7 @@ MONTHLY_AMOUNT_UNDER_MINIMUM = '0.99'
 ONE_TIME_AMOUNT_UNDER_MINIMUM = '4.99'
 YEARLY_AMOUNT_UNDER_MINIMUM = '4.99'
 MONTHLY_AMOUNT_UNDER_MINIMUM_ERROR = \
-      'Oops! To help cover fees, the minimum monthly donation amount is $1.'
+      'Oops! To help cover fees, the minimum monthly donation amount is $1.99.'
 ONE_TIME_AMOUNT_UNDER_MINIMUM_ERROR = \
       'Oops! To help cover fees, the minimum one-time donation amount is $5.'
 YEARLY_AMOUNT_UNDER_MINIMUM_ERROR = \
