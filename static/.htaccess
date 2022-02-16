@@ -57,3 +57,8 @@ frame-src https://optimize.google.com www.youtube-nocookie.com;" \
 ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"
+
+# Enable subdomains to access resources
+SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CORS_ALLOW_ORIGIN=$1
+Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
+Header merge  Vary "Origin"
