@@ -1,11 +1,16 @@
 # adblockplus.org website
 
-adblockplus.org is a [eyeo/websites/cms](https://gitlab.com/eyeo/websites/cms) website.
+This repository contains [VSCode development container](https://code.visualstudio.com/docs/remote/containers) config to help you get started.
 
-## Usage
+If you prefer not to use VSCode or Docker then you can see `.devcontainer/Dockerfile` and `scripts/devcontainer-postCreate.sh` for config and build instructions.
 
-See [eyeo/websites/cms](https://gitlab.com/eyeo/websites/cms) to learn how to run the website locally for development or build it for production.
+There are two ways to "run" this website:
 
-You'll also have to `npm install` and `npm run build` to re-build static assets locally whenever you change them in development.
+1. The "quick" way: via eyeo/cms development test server
+    - `npm run quick`
+1. The "slow" way: via apache2
+    - `npm run slow`
 
-You can test `.htaccess` locally using apache2 and the provided adblockplus.org.conf virtual host.
+.htaccess features (e.g. redirect, geoip) only work the "slow" way.
+
+Try `127.0.0.1` if `localhost` doesn't work (effects the quick way on macOS).
