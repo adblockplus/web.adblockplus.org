@@ -4,14 +4,14 @@
   variables: &staging
     DOMAIN: "staging-new-adblockplus-org-1.uplink.eyeo.it"
     STRIPE_PUBLISHABLE_KEY: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN"
-    DONATION_SERVER_BASE_URL: "https://donation-staging.adblock-org.workers.dev/"
+    DONATION_SERVER_BASE_URL: "https://new-donation-staging.adblock-org.workers.dev/"
     DONATION_SERVER_BASE_URL_V1: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
 
 .production:
   variables: &production
     DOMAIN: "new.adblockplus.org"
     STRIPE_PUBLISHABLE_KEY: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs"
-    DONATION_SERVER_BASE_URL: "https://donation.adblock-org.workers.dev/"
+    DONATION_SERVER_BASE_URL: "https://new-donation.adblock-org.workers.dev/"
     DONATION_SERVER_BASE_URL_V1: "https://new-integration.adblockplus.org/"
 
 .common:

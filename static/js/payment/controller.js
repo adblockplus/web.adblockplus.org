@@ -10,11 +10,11 @@ var stripeConfig = {
   apiConfig: ns.stripeAPIConfig || {
     test: {
       key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
-      endpoint: "https://donation-staging.adblock-org.workers.dev"
+      endpoint: "https://new-donation-staging.adblock-org.workers.dev/"
     },
     live: {
       key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
-      endpoint: "https://donation.adblock-org.workers.dev/"
+      endpoint: "https://new-donation.adblock-org.workers.dev/"
     }
   }
 }

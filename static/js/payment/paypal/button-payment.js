@@ -18,11 +18,27 @@ var LOCALES = {
 
 var lang = doc.documentElement.lang;
 
+var paypalAPIConfig = {
+  live: {
+    business: "till@adblockplus.org",
+    url: "https://www.paypal.com/cgi-bin/webscr"
+  },
+  test: {
+    business: "abp-sandbox@adblockplus.org",
+    url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  }
+};
+
+var paypalEnv = (
+  window.location.hostname == "adblockplus.org" 
+  || window.location.hostname.endsWith(".adblockplus.org")
+) ? "live" : "test";
+
 var DEFAULTS = {
   charset: "utf-8",
   lc: LOCALES[lang] || lang.toUpperCase(),
   cmd: "_xclick",
-  business: "till@adblockplus.org",
+  business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "/img/adblock-plus-paypal.png",
   return: siteURL + "/payment-complete",
@@ -39,7 +55,7 @@ ns.paypalButtonPayment = function(data)
   var form = doc.createElement("form");
   form.target = "_blank";
   form.method = "post";
-  form.action = "https://www.paypal.com/cgi-bin/webscr";
+  form.action = paypalAPIConfig[paypalEnv].url;
 
   var inputs = Object.assign({}, DEFAULTS, {
     amount: data.amount,
