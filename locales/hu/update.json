@@ -4,7 +4,7 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Frissítettük az Adblock Plus-t! <span>(3.11 verzió)</span>"
+    "message": "Frissítettük az Adblock Plus-t! <span>(3.12 verzió)</span>"
   },
   "update-lead-1": {
     "message": "Az utóbbi néhány hónapban új funkciókkal egészítettük ki, és javítottuk az Adblock Plus teljesítményét. Szenvedélyesen törekszünk arra, hogy a legjobb reklámblokkolási technológiát nyújtsuk, és biztosítsuk a szabad böngészés örömét. Az Adblock Plus egy ingyenes, közösségi támogatással működő szoftver, ami <strong>nem lenne lehetséges a folyamatos támogatások nélkül.</strong>"
@@ -23,19 +23,16 @@
     "message": "Tekintse meg a legújabb fejlesztések és funkciók összefoglalóját. Hamarosan újabb változások várhatók!"
   },
   "whats-new-list-1": {
-    "message": "<strong>Új ajánlott szűrők.</strong> Egyszerűbbé tettük a további zavaró elemek, mint süti értesítések és sok más blokkolását. Látogasson el a <em>Beállítások > Általános > Ajánlott szűrők</em> oldalra és próbálja ki!"
+    "message": "<strong>Továbbfejlesztett reklámblokkolás.</strong> Számos webhely törekszik arra, hogy megakadályozza az Adblock Plus által végzett reklámblokkolást. Ennek megfelelően gyakran frissítjük funkcióinkat, hogy az új reklámblokkolás elkerülési próbálkozásokat is el tudjuk hárítani. Ha olyan webhellyel találkozna, amely nem engedélyezi a reklámok blokkolását, akkor kérjük, hogy jelentse nekünk a Probléma jelentése funkcióval."
   },
   "whats-new-list-2": {
-    "message": "<strong>Jobb reklámblokkolás.</strong> Számos weboldal megnehezíti, hogy az Adblock Plus blokkolhassa a megjelenő reklámokat. Javítottunk az ilyen oldalakon használt reklámblokkolásunkon, és ezt a funkciót rendszeresen frissítjük. Kérjük, használja a <em>Probléma jelentése</em> funkciót, ha problémát tapasztal a reklámblokkolási funkció működésében."
+    "message": "<strong>Hozzáadott intelligens nyelvi szűrők.</strong> A funkció bekapcsolásakor automatikusan értesítést kap azon nyelvek elérhető szűrőlistáiról, amelyeken általában böngészik. Ezáltal az adott nyelveken minden eddiginél egyszerűbbé válik a zavaró reklámok blokkolása. Adatainak védelmét természetesen tiszteletben tartjuk. Ez az információ a számítógépén marad, és sohase osztjuk meg a kiszolgálóinkkal. A funkciót az <em>Általános</em> lap > <em>Nyelvi szűrőlisták</em> menüpontban engedélyezheti."
   },
   "whats-new-list-3": {
-    "message": "<strong>Jobb teljesítmény.</strong> Javítottuk a kikapcsolt szűrőlisták ellenőrzését, hogy az Adblock Plus kisebb sávszélességet használjon."
+    "message": "<strong>Újabb reklám blokkolási támogatás került hozzáadásra további nyelveken.</strong> A finn vagy svéd nyelven böngésző felhasználók most blokkolhatják a reklámokat az adott nyelveket használó webhelyeken."
   },
   "whats-new-list-4": {
-    "message": "<strong>Jobb adatvédelem.</strong> A privát lapokon böngésző felhasználóknál nem vettük számításba a blokkolt kérelmek számát az összes blokkolás számláló esetében."
-  },
-  "whats-new-list-5": {
-    "message": "<strong>Jobb hibakeresés.</strong> Műszaki felhasználóink számára bevezettünk egy hibakeresés módot az elem elrejtő szűrőkhöz, ami bekapcsolható az Adblock Plus <em>Speciális</em> beállítások oldalon. Itt egyszerűen kiemelheti az elem elrejtő szűrők által érintett elemeket."
+    "message": "<strong>Jobb felhasználói élmény.</strong> Folyamatosan az Adblock Plus fejlesztésén dolgozunk. Nemrégiben számos hibaüzenetet frissítettünk az egyszerűbb hibaelhárítás érdekében, módosítottuk a használt fogalmakat, és új élőlábat adtunk a felugró menühöz, hogy még egyszerűbben hozzáférhessen minden szükséges menüponthoz."
   },
   "whats-new-support": {
     "message": "Problémát szeretne jelenteni? Lépjen velünk kapcsolatba a közösségi oldalakon, <a>e-mailben</a> vagy a <a>felhasználói fórumon</a>."
@@ -43,5 +40,38 @@
   "privacy-policy": {
     "description": "footer link",
     "message": "Adatvédelem"
+  },
+  "main-heading-1": {
+    "message": "Önkéntes hozzájárulási rendszer"
+  },
+  "main-lead-1": {
+    "message": "Üdvözli az Adblock Plus csapata! "
+  },
+  "main-lead-2": {
+    "message": "Az Adblock Plus díjazása önkéntes hozzájárulási alapon működik, ami azt <strong>jelenti, hogy megbízunk egymásban</strong>:"
+  },
+  "main-lead-3": {
+    "message": "Annyit <strong>fizet, amennyit megfelelőnek gondol</strong> az Adblock Plus-ért. <strong>Ön</strong> választja ki az árat."
+  },
+  "main-lead-4": {
+    "message": "Olyan funkciókat fejlesztünk, amelyekkel irányítása alatt tarthatja a böngészési élményt."
+  },
+  "main-lead-5": {
+    "message": "Befizetését <strong>visszatérítjük</strong>,  és <strong>az Adblock Plus</strong> alkalmazást megtarthatja, ha nem elégedett vele."
+  },
+  "main-heading-2": {
+    "message": "Küldjön egy e-mailt és segítünk."
+  },
+  "main-body-1": {
+    "message": "Kérjük, fizessen be amennyit megfelelőnek gondol, mert ha meggondolja magát, 120 napon belül visszatérítjük a befizetett összeget!"
+  },
+  "main-body-3": {
+    "message": "Ha segítségre van szüksége, az online súgó 24x7-ben elérhető, és az e-mailes segítség munkanapokon és munkaidőben a <a>help.eyeo.com</a> oldalon elérhető."
+  },
+  "main-body-4": {
+    "message": "Köszönjük, hogy az Adblock Plus-t választotta! Kellemes böngészést!"
+  },
+  "main-body-5": {
+    "message": "Üdvözlettel, <span></span>az Adblock Plus csapata"
   }
 }

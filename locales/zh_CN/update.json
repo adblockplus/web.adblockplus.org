@@ -4,7 +4,7 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus 已更新！ <span>(版本 3.11)</span>"
+    "message": "Adblock Plus 已更新！ <span>(版本 3.12)</span>"
   },
   "update-lead-1": {
     "message": "我们在过去几个月添加了新功能，并且改进了 Adblock Plus 的性能。我们热切地希望为您带来最好的广告拦截技术，让您能够享受纯净的网络空间。Adblock Plus 是社区支持的免费软件，<strong>没有您的持续支持，就无法成为可能。</strong>"
@@ -23,19 +23,16 @@
     "message": "以下概述了部分改进和新功能。更多改进即将推出！"
   },
   "whats-new-list-1": {
-    "message": "<strong>新的推荐筛选。</strong>我们让您可以更轻松地拦截 Cookie 通知及其他干扰。请访问设置 > 一般 > 推荐筛选试用一下！"
+    "message": "<strong>改进了广告拦截功能。</strong>许多网站寻找各种方法阻止 Adblock Plus 拦截讨厌的广告。因此，我们不断更新功能，以破除这些防广告拦截的企图。如果您遇到有网站不让您拦截广告，请使用“报告问题”功能告诉我们。"
   },
   "whats-new-list-2": {
-    "message": "<strong>改进的广告拦截。</strong>许多网站让 Adblock Plus 难以在其网站上拦截广告。我们改进了在这些网站上拦截广告的功能，并且将定期更新这一功能。请使用我们的报告问题功能告诉我们，您在使用我们的广告拦截功能时是否遇到任何问题。"
+    "message": "<strong>添加了智能语言筛选器。</strong>如果启用此功能，当您经常浏览的语言有可以使用的筛选清单时，您将自动收到通知。这样就大大地方便您更多地拦截这些语言的讨厌的广告。当然，我们始终尊重您的隐私。这些信息仍在您的电脑上，绝不会与我们的服务器共享。您可以在一般选项卡 > 语言筛选清单部分下的选项页面启用该功能。"
   },
   "whats-new-list-3": {
-    "message": "<strong>更好的性能。</strong>我们改进了检查关闭的筛选清单时使用的逻辑，这样 Adblock Plus 就可以使用更少的带宽。"
+    "message": "<strong>对更多语言添加了广告拦截支持。</strong>浏览芬兰语和瑞典语内容的用户现在可以在使用这些语言的网站上拦截广告。"
   },
   "whats-new-list-4": {
-    "message": "<strong>改进的隐私。</strong>对于使用隐私选项卡进行浏览的用户，我们在总拦截计数中排除了被拦截请求的数目。"
-  },
-  "whats-new-list-5": {
-    "message": "<strong>更好的 Bug 调试。</strong>对于我们的技术用户，我们推出了隐藏要素筛选的 Bug 调试模式，在 Adblock Plus 高级设置页面可以将其启用。您可轻松地突出显示受到隐藏要素筛选影响的要素。"
+    "message": "<strong>改进了用户体验。</strong>我们不断改进 Adblock Plus。最近我们更新了多个错误消息，以方便进行相关调试，我们更改了一些术语，并且在弹出菜单中添加了新的页脚，以让您更方便地访问所需内容。"
   },
   "whats-new-support": {
     "message": "需求报告问题？请通过社交媒体、<a>电子邮件</a>或<a>用户论坛</a>联系我们。"
@@ -43,5 +40,38 @@
   "privacy-policy": {
     "description": "footer link",
     "message": "隐私策略"
+  },
+  "main-heading-1": {
+    "message": "诚信制度"
+  },
+  "main-lead-1": {
+    "message": "Adblock Plus 团队向您问好！"
+  },
+  "main-lead-2": {
+    "message": "Adblock Plus 是一款诚信软件，这表示我们<strong>相信彼此的</strong>善意："
+  },
+  "main-lead-3": {
+    "message": "您向 Adblock Plus 支付可以承担的价格。<strong>您</strong>可以选择价格。"
+  },
+  "main-lead-4": {
+    "message": "我们开发各种功能，以让您掌控自己的浏览体验。"
+  },
+  "main-lead-5": {
+    "message": "如果不喜欢我们的产品，您可以获得<strong>退款</strong> - 并且可以<strong>保留 Adblock Plus</strong>。"
+  },
+  "main-heading-2": {
+    "message": "只需要发送一封电子邮件即可获得帮助"
+  },
+  "main-body-1": {
+    "message": "请尽您所能支付，因为您有 120 天的时间可以改变主意并获得退款！"
+  },
+  "main-body-3": {
+    "message": "无论任何时候您需要帮助，我们的支持门户 <a>help.eyeo.com</a> 上均可提供全天候 (24x7) 自助服务及工作日 (8x5) 电子邮件帮助服务。"
+  },
+  "main-body-4": {
+    "message": "感谢您选择 Adblock Plus！祝您享受愉悦的浏览体验！"
+  },
+  "main-body-5": {
+    "message": "此致，<span></span>Adblock Plus 团队"
   }
 }

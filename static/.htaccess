@@ -62,3 +62,11 @@ Header set X-Frame-Options "sameorigin"
 SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CORS_ALLOW_ORIGIN=$1
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
+
+<FilesMatch ^update$>
+  GeoIPEnable On
+</FilesMatch>
+
+# Show update page without payment form in RU and UA
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(RU|UA)$
+RewriteRule ".*(en|en[-_]US)/update$" "/en/update-1" [NC,L]

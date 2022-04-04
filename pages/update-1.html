@@ -1,0 +1,57 @@
+title=Adblock Plus has been updated
+prevent_cookie_prompt=1
+robots=none
+template=bare
+
+<head>
+  <link rel="stylesheet" href="build/css/update.min.css">
+</head>
+
+<main class="update container content">
+
+  <div class="update-header clearfix">
+    <img
+      alt=""
+      height="130"
+      width="130"
+      class="update-header-image"
+      src="/img/adblock-plus-latest.svg">
+    <h1 class="update-header-heading">
+      {{ update-heading-1[heading] Adblock Plus has been updated! <span class="small">(version 3.12) </span> }}
+    </h1>
+    <p class="update-header-lead">
+      {{ update-lead-1 We’ve spent the last few months adding new features and improving Adblock Plus’ performance. We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. Adblock Plus is free, community-supported software, and that <strong>wouldn't be possible without your continued support.</strong> }}
+    </p>
+  </div>
+
+  <h2>
+    {{ whats-new-header-1 What’s new? }}
+  </h2>
+  <p>
+    {{ whats-new-lead-1 Here is an overview of some improvements and new features. More changes coming soon! }}
+  </p>
+  <ul>
+    <li>
+      {{ whats-new-list-1 <strong>Improved ad blocking.</strong> Many websites look for ways to prevent Adblock Plus from blocking annoying ads. Because of this, we’re frequently updating our functionality so that we can overcome these anti-ad blocking attempts. If you ever run into a website that won’t allow you to block ads, please let us know by using our Report Issue feature. }}
+    </li>
+    <li>
+      {{ whats-new-list-2 <strong>Added Smart Language Filters.</strong> When you turn on this feature, you’ll be automatically notified of available filter lists in the languages you regularly browse in. This makes it easier than ever to block more annoying ads in those languages. Of course, we always respect your privacy. This information remains on your computer and is never shared with our servers. You can turn on the feature in your options page under the <em>General</em> tab > <em>Language Filter Lists</em> section. }}
+    </li>
+    <li>
+      {{ whats-new-list-3 <strong>Added support for blocking ads in more languages.</strong> Users who browse in Finnish and Swedish can now block ads on websites that are using these languages. }}
+    </li>
+    <li>
+      {{ whats-new-list-4 <strong>Improved user experience.</strong> We’re always at work to make Adblock Plus better. We’ve recently updated several error messages for easier debugging, made changes to our terminology, and added a new footer to the pop-up menu so you can conveniently access what you need. }}
+    </li>
+  </ul>
+  <p>
+    {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
+  </p>
+
+</main>
+
+<footer class="privacy-footer">
+  <a href="https://adblockplus.org/privacy">{{ privacy-policy[footer link] Privacy Policy }}</a>
+</footer>
+
+<script src="/js/address-masking.js"></script>

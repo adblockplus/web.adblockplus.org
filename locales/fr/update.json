@@ -4,7 +4,7 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus a été mis à jour ! <span>(version 3.11) </span>"
+    "message": "Adblock Plus a été mis à jour ! <span>(version 3.12) </span>"
   },
   "update-lead-1": {
     "message": "Au cours de ces derniers mois nous avons ajouté de nouvelles fonctionnalités et amélioré les performances d’Adblock Plus. Nous avons à cœur de vous offrir la meilleure technologie de blocage de publicité afin que vous puissiez profiter d’un Web propre. Adblock Plus est un logiciel gratuit, soutenu par la communauté, et qui <strong>n’existerait pas sans votre soutien continu.</strong>"
@@ -23,19 +23,16 @@
     "message": "Voici un aperçu de certaines améliorations et de quelques nouvelles fonctionnalités. Plus de changements très prochainement !"
   },
   "whats-new-list-1": {
-    "message": "<strong>Nouveaux filtres recommandés.</strong> Nous avons rendu plus simple le blocage des distractions supplémentaires telles que les notifications de cookies et plus encore. Allez dans <em>Paramètres > Général > Filtres recommandés</em> pour les essayer !"
+    "message": "<strong>Amélioration du blocage de publicité.</strong> De nombreux sites web cherchent des moyens d'empêcher Adblock Plus de bloquer les publicités agaçantes. En réponse, nous mettons fréquemment à jour nos fonctionnalités afin de contrer ces tentatives d'antiblocage de publicité. Si vous rencontrez un site web qui ne vous autorise pas à bloquer les publicités, veuillez nous en informer à l'aide de notre fonction Signaler un problème."
   },
   "whats-new-list-2": {
-    "message": "<strong>Blocage de publicité amélioré.</strong> De nombreux sites Web rendent difficile le blocage des publicités par Adblock Plus. Nous avons amélioré notre capacité de blocage de publicité sur ces sites Web et effectuons des mises à jour régulières. Veuillez utiliser notre fonctionnalité <em>Signalement de problème</em> pour nous indiquer si vous rencontrez des problèmes avec votre capacité de blocage de publicité."
+    "message": "<strong>Ajout de filtres de langue intelligents.</strong> Lorsque vous activez cette fonction, vous êtes automatiquement informé des listes de filtres disponibles pour les langues dans lesquelles vous naviguez régulièrement. Cela facilite plus que jamais le blocage des publicités les plus agaçantes dans ces langues. Bien entendu, nous respectons toujours votre vie privée. Ces informations restent sur votre ordinateur et ne sont jamais partagées avec nos serveurs. Vous pouvez activer cette fonction dans votre page d'options, sous l'onglet <em>Paramètres généraux</em> > section <em>Listes de filtres de langue</em>."
   },
   "whats-new-list-3": {
-    "message": "<strong>Meilleure performance.</strong> Nous avons amélioré notre logique pour la vérification des listes de filtres désactivées afin qu’Adblock Plus utilise moins de bande passante."
+    "message": "<strong>Ajout de la prise en charge du blocage des publicités dans plus de langues.</strong> Les utilisateurs qui naviguent en finnois et en suédois peuvent désormais bloquer les publicités sur les sites web qui utilisent ces langues."
   },
   "whats-new-list-4": {
-    "message": "<strong>Confidentialité améliorée.</strong> Pour nos utilisateurs qui naviguent avec des onglets privés, nous avons exclu le nombre de requêtes bloquées du compteur total de blocages."
-  },
-  "whats-new-list-5": {
-    "message": "<strong>Meilleur débogage.</strong> Pour nos utilisateurs techniques nous avons introduit un mode de débogage pour les filtres de masquage d’éléments qui peut être désactivé sur la page des paramètres <em>avancés</em> d’Adblock Plus. Vous pouvez facilement mettre en surbrillance les éléments qui sont affectés par les filtres de masquage d’éléments."
+    "message": "<strong>Amélioration de l'expérience utilisateur.</strong> Nous travaillons en permanence à l'amélioration d'Adblock Plus. Nous avons récemment mis à jour plusieurs messages d'erreur pour faciliter le débogage, apporté des modifications à notre terminologie et ajouté un nouveau pied de page au menu pop-up afin que vous puissiez accéder aisément à ce dont vous avez besoin."
   },
   "whats-new-support": {
     "message": "Besoin de signaler un problème ? Contactez-nous via les réseaux sociaux, par <a>courriel</a> ou par le biais du <a>forum des utilisateurs</a>."
@@ -43,5 +40,38 @@
   "privacy-policy": {
     "description": "footer link",
     "message": "Politique de protection de la vie privée"
+  },
+  "main-heading-1": {
+    "message": "Un système fondé sur l’honneur"
+  },
+  "main-lead-1": {
+    "message": "Bonjour de la part de l’équipe Adblock Plus !"
+  },
+  "main-lead-2": {
+    "message": "Adblock Plus est fondé sur l’honneur, ce qui signifie que <strong>nous faisons confiance à chacun</strong> pour être honnête :"
+  },
+  "main-lead-3": {
+    "message": "vous <strong>payez selon vos moyens</strong> pour Adblock Plus. Nous <strong>vous</strong> laissons choisir le prix."
+  },
+  "main-lead-4": {
+    "message": "Nous développons des fonctionnalités qui vous permettent de contrôler votre expérience de navigation"
+  },
+  "main-lead-5": {
+    "message": "Vous obtenez un <strong>remboursement</strong> - et vous pouvez <strong>conserver Adblock Plus</strong> - si vous ne l’appréciez pas."
+  },
+  "main-heading-2": {
+    "message": "Pour obtenir de l’aide, il vous suffit de nous envoyer un e-mail."
+  },
+  "main-body-1": {
+    "message": "Payez le maximum que vous pouvez, et si vous changez d’avis, vous bénéficiez de 120 jours pour obtenir un remboursement !"
+  },
+  "main-body-3": {
+    "message": "Si vous avez besoin d’aide, une auto-assistance 24h/24 et 7j/7 et une aide par e-mail en semaine pendant les heures ouvrables sont disponibles sur notre portail d’assistance, <a>help.eyeo.com</a>."
+  },
+  "main-body-4": {
+    "message": "Merci d’avoir choisi Adblock Plus ! Joyeuse navigation !"
+  },
+  "main-body-5": {
+    "message": "Amicalement, <span></span>l’équipe Adblock Plus"
   }
 }

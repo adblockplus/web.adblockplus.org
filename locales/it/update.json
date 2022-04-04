@@ -4,7 +4,7 @@
   },
   "update-heading-1": {
     "description": "heading",
-    "message": "Adblock Plus è stato aggiornato! <span>(versione 3.11)</span>"
+    "message": "Adblock Plus è stato aggiornato! <span>(versione 3.12)</span>"
   },
   "update-lead-1": {
     "message": "Negli ultimi mesi abbiamo aggiunto nuove funzionalità ad Adblock Plus e ne abbiamo migliorato le prestazioni. Ci impegniamo a offrirti la migliore tecnologia di ad blocking per consentirti di goderti un web pulito. Adblock Plus è un software gratuito e supportato dalla comunità, e questo <strong>non sarebbe possibile senza il tuo sostegno continuo.</strong>"
@@ -23,19 +23,16 @@
     "message": "Ecco una panoramica di alcuni miglioramenti e nuove funzioni. Prossimamente ci saranno altri cambiamenti!"
   },
   "whats-new-list-1": {
-    "message": "<strong>Nuovi filtri raccomandati.</strong> Abbiamo reso più facile bloccare altre distrazioni come le notifiche dei cookie ecc. Accedi a <em>Impostazioni > Generale > Filtri raccomandati</em> per provarli!"
+    "message": "<strong>Blocco degli annunci migliorato.</strong> Molti siti tentano di impedire ad Adblock Plus di bloccare gli annunci fastidiosi. Per superare questi tentativi contro il blocco degli annunci, aggiorniamo spesso la nostra funzionalità. Se ti imbatti in un sito che non ti consente di bloccare gli annunci, informaci utilizzando la funzionalità Segnala problema."
   },
   "whats-new-list-2": {
-    "message": "<strong>Ad blocking migliorato.</strong> Molti siti rendono difficile per Adblock Plus bloccare gli annunci. Abbiamo migliorato la nostra capacità di bloccare gli annunci e aggiorniamo regolarmente questa capacità. Puoi usare la nostra funzionalità <em>Segnala problema</em> per informarci di eventuali problemi con la nostra capacità di ad blocking."
+    "message": "<strong>Aggiunte Raccomandazioni elenchi filtri lingue.</strong> Attivando questa funzionalità, riceverai notifiche automatiche sugli elenchi di filtri disponibili nelle lingue in cui navighi normalmente. In questo modo, è più facile che mai bloccare gli annunci fastidiosi in tali lingue. Naturalmente, rispettiamo sempre la tua privacy. Queste informazioni rimangono sul tuo computer e non sono mai condivise con i nostri server. Puoi attivare questa funzionalità nella pagina opzioni nella scheda <em>Generali</em> > <em>Elenchi filtri lingue</em>."
   },
   "whats-new-list-3": {
-    "message": "<strong>Migliori prestazioni.</strong> Abbiamo migliorato la nostra logica nel verificare la presenza di elenchi filtri disattivati, così Adblock Plus utilizza meno larghezza di banda."
+    "message": "<strong>Aggiunto supporto per il blocco degli annunci in altre lingue.</strong> Gli utenti che navigano in finlandese e svedese ora possono bloccare gli annunci sui siti web che utilizzano queste lingue."
   },
   "whats-new-list-4": {
-    "message": "<strong>Privacy migliorata.</strong> Per i nostri utenti che navigano in schede private, abbiamo escluso il numero di richieste bloccate dal contatore del totale dei blocchi."
-  },
-  "whats-new-list-5": {
-    "message": "<strong>Miglior debugging.</strong> Per gli utenti tecnici abbiamo introdotto una modalità di debug per filtri nascondi elementi attivabile nella pagina delle impostazioni <em>avanzate</em> di Adblock Plus. Puoi facilmente evidenziare gli elementi che sono interessati dai filtri nascondi elementi."
+    "message": "<strong>Migliorata l'esperienza dell'utente.</strong> Ci impegniamo sempre a migliorare Adblock Plus. Abbiamo recentemente aggiornato diversi messaggi di errore per facilitare il debug, abbiamo apportato delle modifiche alla nostra terminologia e aggiunto un nuovo piè di pagina al menu pop-up per accedere comodamente a ciò di cui hai bisogno."
   },
   "whats-new-support": {
     "message": "Devi segnalare un problema? Puoi contattarci tramite social media, <a>email</a> o il <a>forum utenti</a>."
@@ -43,5 +40,38 @@
   "privacy-policy": {
     "description": "footer link",
     "message": "Politica sulla riservatezza"
+  },
+  "main-heading-1": {
+    "message": "Un sistema basato sulla fiducia"
+  },
+  "main-lead-1": {
+    "message": "Ciao dal team di Adblock Plus!"
+  },
+  "main-lead-2": {
+    "message": "Adblock Plus è un honorware, il che significa <strong>che si basa su un rapporto di fiducia reciproca</strong>:"
+  },
+  "main-lead-3": {
+    "message": "Tu <strong>paghi quello che ti puoi permettere</strong> per Adblock Plus. Lasciamo decidere il prezzo a <strong>te</strong>."
+  },
+  "main-lead-4": {
+    "message": "Sviluppiamo funzionalità che ti consentono di assumere il controllo della tua esperienza di esplorazione online."
+  },
+  "main-lead-5": {
+    "message": "Se Adblock Plus non dovesse piacerti, ti offriamo il <strong>rimborso</strong> e la possibilità di <strong>tenerlo comunque</strong>."
+  },
+  "main-heading-2": {
+    "message": "Se ti serve aiuto, inviaci un'e-mail"
+  },
+  "main-body-1": {
+    "message": "Ti chiediamo di pagare quanto puoi e se cambi idea hai 120 giorni per ottenere il rimborso."
+  },
+  "main-body-3": {
+    "message": "Se hai bisogno di noi, ti mettiamo a disposizione il supporto autonomo 24x7 e il supporto via e-mail 8x5 sul nostro portale di assistenza, <a>help.eyeo.com</a>."
+  },
+  "main-body-4": {
+    "message": "Grazie per aver scelto Adblock Plus! Buona esplorazione!"
+  },
+  "main-body-5": {
+    "message": "Saluti <span></span>dal team di Adblock Plus."
   }
 }
