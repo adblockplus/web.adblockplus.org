@@ -63,9 +63,9 @@ SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CO
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
 
-<FilesMatch ^update$>
-  GeoIPEnable On
-</FilesMatch>
+GeoIPEnable On
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+RewriteRule ".*(en|en[-_]US)/update$" "/en/about" [NC,L]
 
 # Show update page without payment form in RU and UA
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(RU|UA)$
