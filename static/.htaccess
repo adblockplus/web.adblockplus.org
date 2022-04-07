@@ -70,3 +70,5 @@ RewriteRule ".*(en|en[-_]US)/update$" "/en/about" [NC,L]
 # Show update page without payment form in RU and UA
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(RU|UA)$
 RewriteRule ".*(en|en[-_]US)/update$" "/en/update-1" [NC,L]
+
+RewriteRule ".*(en|en[-_]US)/update$" "/en/download" [NC,L]
