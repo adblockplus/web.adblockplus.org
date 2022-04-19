@@ -55,12 +55,10 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
         - Ereignis-Tracking:
         {: .has-horizontal-list .semicolon-separated }
             - App und/oder Erweiterungsversion
-            - Demographische Daten (Geschlecht, Alter)
             - Gerätetyp
             - Welche Plattformen werden verwendet
             - Standortdaten, basierend auf IP-Adresse (Land)
-            - Klicks auf Schaltflächen und/oder Navigationsmuster
-            - Angezeigte Bildfläche
+            - Anonyme Interaktionsereignisse (wie Button-Klicks)
     - Der auf Chromium basierende Adblock Browser enthält Chromium-spezifische Funktionalitäten, die jedoch Daten an Google senden können.
     - Adblock Browser für iOS (automatisch):
     {: .has-horizontal-list .semicolon-separated }
@@ -101,7 +99,8 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
         - Forum-Registrierungsdaten
         - E-Mail-Adresse
         - Daten, die du in Kommentaren zur Verfügung stellst
-        - Feedback und Filterdaten.
+        - Feedback und Filterdaten
+        - Bei einer Stellenbewerbung: Name, E-Mail-Adresse, dein Lebenslauf und alle anderen von dir freiwillig hochgeladenen/geteilten Daten
 3.  Für den Nutzersupport
     - Nutzername (Kontakt über soziale Netzwerke) und / oder E-Mail
     - Geräteinformationen
@@ -132,7 +131,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
     - Webseiten-Protokolle
-    - Daten, wie dein Name und/oder deine E-Mail-Adresse und/oder Kommunikationsdaten,die du während der Nutzung des Forums oder Blogs, über die „PARTNER WERDEN‶-Schaltfläche oder beim manuellen Teilen eines hinzugefügten Filters an uns sendest
+    - Daten wie Name und/oder E-Mail-Adresse und/oder Kommunikationsdaten, die von dir gesendet werden, wenn du unser Forum oder unseren Blog nutzt, den Button „PARTNER WERDEN“ verwendest, wenn du manuell hinzugefügte Filter teilst oder dich für eine Stelle bewirbst
     - Lediglich für Benutzer mit Wohnsitz außerhalb der EU/des EWR: über Google Analytics
 3.  Für den Nutzersupport:
 {: .has-horizontal-list .semicolon-separated }
@@ -159,6 +158,7 @@ Liste der Techniken und Hilfsmittel, die wir zur Datenerhebung verwenden.
 - Zum Erhalt von Spenden, die du uns schickst, sowie zur Betrugsaufdeckung.
 - Zur Vermarktung unserer Produkte.
 - Im Zusammenhang mit unseren Social Media-Webseiten nutzen soziale Netzwerke die Daten zu Marktforschungs- und Werbezwecken.
+- Zur Beurteilung deiner Bewerbung zu Rekrutierungszwecken und um dir Stellen anzubieten.
 
 ### Auf welcher Rechtsgrundlage erfolgt die Datenverarbeitung? {: #what-is-legal }
 
@@ -173,15 +173,18 @@ Wir verarbeiten deine personenbezogenen Daten im Einklang mit der Europäischen 
     - Webseiten-Protokolle
     - Daten im Zusammenhang mit Abonnement-Downloads, Prüfungen von Erweiterungsupdates, Notfallbenachrichtigungen
     - Daten in Bezug auf die Deinstallation der Erweiterung
-2.  Für einen Zeitraum von 180 Tagen:
+2.  Für einen Zeitraum von 90 Tagen:
 {: .has-horizontal-list .semicolon-separated }
     - Absturzberichte über unsere mobilen Produkte und Adblock Plus für Safari auf macOS
-3.  Für einen Zeitraum von 60 Tagen:
+3.  Für einen Zeitraum von zwei (2) Monaten:
 {: .has-horizontal-list .semicolon-separated }
     - Ereignis-Tracking
 4.  Blog- und Forumdaten, so lange wie der jeweilige Kommentar/das jeweilige Konto existiert
 5.  Alle Nutzersupport-Daten werden ein (1) Jahr nach Schließen des jeweiligen Problemfalls gelöscht.
-6. Für einen Zeitraum von 10 Jahren: 
+6. Für einen Zeitraum von drei (3) Monaten:
+{: .has-horizontal-list .semicolon-separated }
+    - Bewerbungsdaten nach Ablehnung von Kandidaten/innen
+7. Für einen Zeitraum von 10 Jahren: 
 {: .has-horizontal-list .semicolon-separated }
     - Daten zu Spendenberichten
     - Partnerdaten
@@ -292,6 +295,8 @@ Wir werden dich stets um deine Einwilligung zur Erhebung und Verarbeitung deiner
 
 Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann für die Erfüllung eines Vertrages, an dem du beteiligt bist, notwendig sein. Bereits vor Abschluss eines solchen Vertrages kann die Erhebung und Verarbeitung deiner personenbezogenen Daten erforderlich sein, um auf deinen Wunsch hin tätig zu werden. Dies gilt für die Installation (d. h. für vom Browser und/oder vom App Store gesammelte Daten) und die Nutzung unserer Produkte.
 
+Außerdem sind alle Daten, die du uns im Zusammenhang mit deiner Bewerbung zur Verfügung stellst, für den ausschließlichen Zweck erforderlich, neue Mitarbeiter/innen einzustellen und zu diesem Zweck Bewerber/innen zu beurteilen und auszuwählen, beispielsweise zur Planung und Durchführung von Bewerbungsgesprächen und Tests, zur Beurteilung und Auswertung der damit verbundenen Ergebnisse und je nach Bedarf im Rahmen der Rekrutierungsverfahren einschließlich der abschließenden Rekrutierung (d. h. Einleitung von Schritten vor Abschluss eines Arbeitsvertrags). Wenn du uns deine Bewerbungsdaten nicht sendest, kann deine Bewerbung nicht berücksichtigt werden.
+
 #### Die Erhebung und Verarbeitung ist zur Einhaltung gesetzlicher Pflichten denen der Verantwortliche unterliegt, erforderlich – Art. 6 (1) c DSGVO {: #compliance-permission }
 
 Die Erhebung und Verarbeitung deiner personenbezogenen Daten kann erforderlich sein, um einer rechtlichen Verpflichtung nachzukommen, der wir nach EU-Recht oder dem Recht eines EU-Mitgliedsstaates unterliegen.
@@ -315,7 +320,7 @@ Wir übermitteln deine personenbezogenen Daten nicht routinemäßig an Dritte, o
 
 Die folgenden Dienste werden von Nicht-EU/EWR-Dienstleistern erbracht. Diese externen Dienstleister wurden von uns mit größter Sorgfalt ausgewählt und unterliegen stetiger Kontrolle, um sicherzustellen, dass Privatsphäre und Datenschutz gewahrt bleiben. Die Service-Provider bieten ausreichende Garantien für ein angemessenes Datenschutzniveau und sind gehalten, deine persönlichen Daten nur in Übereinstimmung mit unseren Vorgaben und für die vorgesehenen Verwendungszwecke zu nutzen. Ebenso sind die Dienstleister vertraglich verpflichtet, deine personenbezogenen Daten ausschließlich in Übereinstimmung mit dieser Datenschutzrichtlinie und den europäischen Datenschutzbestimmungen zu verarbeiten:
 
-Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), für Absturzberichte und Ereignis-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari auf macOS ([[Firebase](https://firebase.google.com/)). Diese Dienste werden durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
+Wir nutzen Tools von externen Dienstleistern um E-Mails zu senden (GSuite), für die Analyse deiner Nutzung unserer Webseiten durch Nicht- EU/EWR-Nutzer ([Google Analytics](#google-analytics)), für A/B-Tests von Nicht- EU/EWR-Nutzern, basierend auf den Analysedaten ([Google Optimize](#google-optimize)), und für Ausfallberichte, anonyme Interaktionsereignisse und Event-Tracking in unseren mobilen Produkten und auf Adblock Plus für Safari in macOS ([[Firebase](https://firebase.google.com/)). Diese Dienste werden durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt. Um ein angemessenes Datenschutzniveau zu gewährleisten, haben wir einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) - Kommissionsentscheidung C (2010) 593. Eine Kopie dieses Vertrags findest du [hier](https://support.google.com/a/answer/2888485).
 
 Wir benutzen Tools von externen Dienstleistern, um Spenden zu erhalten und damit in Verbindung stehendes betrügerisches Verhalten zu analysieren. Dieser Service wird von der Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA, angeboten. Vor der Ausführung von Zahlungstransaktionen werden einige Cookies in deinem Browser gespeichert, um eine betrügerische Nutzung ihrer Dienste zu verhindern. Stripe sammelt identifizierende Informationen zu den Geräten, die auf seine Dienste zugreifen und verwendet diese Daten zur Betrugsaufdeckung. Für weitere Informationen lies bitte [die Cookie-Richtlinie von Stripe](https://stripe.com/cookies-policy/legal).
 
@@ -418,7 +423,7 @@ Du kannst freiwillig:
 Auf die verarbeiteten Berichte kann nur durch eine natürliche Person, die eindeutige ID kennt, zugegriffen werden. Diese IDs werden nur wie folgt weitergegeben:
 
 1. An die Betreiber der in dem Bericht aufgeführten Filterabonnements, wie EasyList-Autoren, die nicht bei eyeo angestellt sind.
-1. Bestimmte Mitglieder des Filterlistenteams von eyeo. eyeo verwendet die Berichte ausschließlich zu Zwecken der Problembehebung und Kontrolle.
+1. Bestimmte eyeo-Autoren von Filterlisten. eyeo verwendet die Berichte ausschließlich zu Zwecken der Problembehebung und Kontrolle.
 
 ##### Notfallbenachrichtigung {: #emergency-notification }
 
@@ -476,18 +481,16 @@ Absturzberichte werden 180 Tage lang gespeichert. Firebase speichert Instanz-IDs
 Ebenso erfassen wir Ereignisse, die du erstellst (z. B. Zugriff auf Einstellungen). In einem solchen Fall wird dieses Ereignis von Google, Inc. an unseren Serviceanbieter Firebase gesendet. Firebase macht dann folgende Daten für uns zugänglich:
 
 - App und/oder Erweiterungsversion
-- Demographische Daten (Geschlecht, Alter)
 - Gerätetyp
-- Welche Plattformen werden verwendet (Android und entsprechende Version)
+- Welche Plattformen werden verwendet (Android, iOS)
 - Standortdaten, basierend auf IP-Adresse (Land)
-- Klicks auf Schaltflächen und/oder Navigationsmuster
-- Angezeigte Bildfläche
+- Anonyme Interaktionsereignisse (wie Button-Klicks)
 
-Diese Daten werden ausschließlich zur Verbesserung unserer mobilen Produkte, Adblock Plus für Safari auf macOS und der Kundenzufriedenheit verwendet. Das Senden solcher Berichte kann hier deaktiviert werden: Einstellungen > Datenschutz.
+Diese Daten werden ausschließlich zur Verbesserung unserer mobilen Produkte, Adblock Plus für Safari auf macOS und der Kundenzufriedenheit verwendet. Du kannst dein Nichteinverständnis mit dem Senden dieser Berichte über den Abschnitt „Anonymisierte Daten teilen“ im Menü Einstellungen erklären.
 
 ###### Datenaufbewahrung
 
-Ereignis-Tracking mit IDs wird für 60 Tage gespeichert. Aggregierte Berichte können für einen längeren Zeitraum gespeichert werden.
+Ereignis-Tracking mit IDs wird für zwei (2) Monate gespeichert. Aggregierte Berichte können für einen längeren Zeitraum gespeichert werden.
 
 ##### Absturz- und Fehlermeldung {: #crash-error-reporter }
 
@@ -642,6 +645,12 @@ Bitte besuche die Webseite jedes sozialen Netzwerks, dass nachfolgend aufgeführ
 
 Die Links/Schaltflächen zu sozialen Medien und Plattformen (Facebook und Twitter), die innerhalb von Adblock Plus verwendet werden, um dich in die Lage zu versetzen, die Anzahl der Elemente weiterzugeben, die du mit Adblock Plus blockiert hast, stellen nur dann den Kontakt zwischen den sozialen Medien oder Plattformen und dir her, wenn du auf die Links/Schaltflächen klickst. Diese Funktion entspricht der Art und Weise, wie ein Online-Link normalerweise funktioniert. Wenn du auf einen solchen Link oder eine solche Schaltfläche klickst, öffnet sich eine neue Seite über die Server des jeweiligen sozialen Mediums oder der Plattform. Dadurch wird der Betreiber des sozialen Mediums darüber informiert, dass auf unsere Website über deine IP-Adresse zugegriffen wurde. Gleichzeitig kann das soziale Medium Cookies auf deinem Endgerät platzieren oder Cookies lesen, sofern du nicht die Nutzung von Cookies in deinem Browser deaktiviert hast. Weitere Informationen zur Verarbeitung deiner personenbezogenen Daten durch die Betreiber sozialer Medien und Plattformen findest du in den Datenschutzerklärungen von Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) und Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)).
 
+### Bewerbungsdaten {: #application-data}
+
+Wenn du dich online für eine Stelle auf unserer Webseite bewirbst, fragen wir dich nach bestimmten Informationen, um deine Bewerbung entsprechend beurteilen zu können. Aus diesem Grund benötigen wir zumindest deinen Namen, deine E-Mail-Adresse und einen Lebenslauf. Auf freiwilliger Basis kannst du außerdem eine Telefonnummer, ein Anschreiben, zusätzliche Unterlagen, wie z. B. Zertifikate, eine Webseite und zusätzliche Informationen über dich hinzufügen.
+
+Wir erfassen und bearbeiten diese Daten zum alleinigen Zweck der Verwaltung deiner rekrutierungsbezogenen Aktivitäten sowie zur organisatorischen Planung. Somit können wir deine personenbezogenen Daten in Bezug auf die Beurteilung und Auswahl von Bewerber/innen verwenden, beispielsweise zur Planung und Durchführung von Bewerbungsgesprächen und Tests, zur Beurteilung und Auswertung der damit verbundenen Ergebnisse und je nach Bedarf im Rahmen der Rekrutierungsverfahren einschließlich der abschließenden Rekrutierung.
+
 ### Datenschutzerklärung für Einwohner Kaliforniens {: #privacy-notice-california-residents }
 
 Dieser Abschnitt gilt ausschließlich für Einwohner Kaliforniens. Er erläutert, wie wir personenbezogene Daten erheben und nutzen und welche Rechte die Einwohner Kaliforniens unter dem [California Consumer Protection Act](http://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=) („CCPA“) ausüben können. Die Begriffe in diesem Abschnitt haben dieselbe Bedeutug wie im CCPA. Bitte beachten Sie, dass die im CCPA beschriebenen Begriffe in ihrer allgemeinen Bedeutung weiter ausgelegt werden können.
@@ -680,7 +689,7 @@ Darüber hinaus können wir deine personenbezogenen Daten auch an Strafverfolgun
 
 Wir erhalten personenbezogene Daten von dir, unseren Websites, deinem/deinen Gerät(en) sowie von unseren externen Dienstleistern. Zu den Kategorien der Quellen, aus denen wir personenbezogene Daten erhoben oder empfangen haben, zählen:
 
-* **Du**: Wir erheben Informationen, die du freiwillig bereitstellst, z. B. Registrierungsdaten aus unserem öffentlichen Forum oder Informationen, die du uns im Zusammenhang mit Berichten über Probleme, Supportanfragen und Benutzerbewertungen vorlegst.
+* **Du**: Wir erfassen Informationen, die du freiwillig zur Verfügung stellst, zum Beispiel Anmeldedaten auf unserem öffentlichen Forum oder Informationen, die du uns im Rahmen von Problemmeldungen, Supportanfragen, Nutzerbewertungen und Stellenbewerbungen sendest.
 * **Dein(e) Gerät(e)**: Wir empfangen Informationen von und über die Computer, Telefone und Browser, die du im Zusammenhang mit unseren Produkten verwendest.
 * **Unsere Websites**: Wir erheben Informationen darüber, wie du mit unseren Websites interagierst und diese nutzt.
 * **Deine Profile in sozialen Medien**: Wir erheben Informationen über deine Profile in sozialen Medien, wenn du dich dafür entscheidest, auf diese Weise zu Inhalten beizutragen.
@@ -704,7 +713,7 @@ Um diese Rechte auszuüben, sende bitte eine E-Mail an <a id='privacy-email' dat
 
 Bei Fragen zu diesem Abschnitt oder zur Ausübung deiner Rechte unter dem CCPA, <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>kontaktiere uns</a> bitte.
 
-<time datetime="2021-07">Juli 2021</time>
+<time datetime="2022-04">April 2022</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

@@ -55,12 +55,10 @@ The following privacy notice shall provide you with a general overview about the
         - Event tracking:
         {: .has-horizontal-list .semicolon-separated }
             - App and/or extension version
-            - Demographic data (gender, age)
             - Device type
             - Which platforms you are using
             - Location data based on your IP address (country)
-            - Button clicks and/or navigation patterns
-            - Screens shown
+            - Anonymous interaction events (like button clicks)
     - Adblock Browser, based on Chromium, provides Chromium-specific functionality which, however, may send data to Google.
     - Adblock Browser for iOS (automatically):
     {: .has-horizontal-list .semicolon-separated }
@@ -174,10 +172,10 @@ We process your personal data in compliance with the European General Data Prote
     - Website logs
     - Data related to subscription downloads, extension update checks, emergency notifications
     - Data related to uninstalling the extension
-2. For a period of 180 days:
+2. For a period of 90 days:
 {: .has-horizontal-list .semicolon-separated }
     - In our mobile products and Adblock Plus for Safari on macOS crash reporting   
-3. For a period of 60 days:
+3. For a period of two (2) months:
 {: .has-horizontal-list .semicolon-separated }
     - event tracking
 4. Blog and forum data as long as the respective comment / account exists
@@ -322,7 +320,7 @@ We will not transfer your personal data to third parties as a matter of course w
 
 For the following services, we use non-EU/EEA service providers. We have carefully selected these external service providers and review them regularly to ensure that your privacy is preserved. The service providers provide sufficient guarantees to ensure an adequate level of data protection and may only use personal data for the purposes stipulated by us and in accordance with our instructions. We also contractually require the service providers to treat your personal data solely in accordance with this Privacy Policy and the European data protection laws:
 
-We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
+We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports, anonymous interaction events and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision C(2010)593. You can access a copy of this agreement [here](https://support.google.com/a/answer/2888485).
 
 We use external service provider tools to receive donations and analyze fraudulent behavior in connection with donations.. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
 
@@ -425,7 +423,7 @@ You can  voluntarily:
 The processed reports can only be accessed by an individual who knows their unique ID. These IDs are only shared with:
 
 1.  Maintainers of the filter subscriptions mentioned in the report, as EasyList authors, who are not employed at eyeo.
-1.  Certain members of eyeo’s filter list team. eyeo will use the reports for troubleshooting and support monitoring purposes only.
+1.  Certain eyeo filter list authors. eyeo will use the reports for troubleshooting and support monitoring purposes only.
 
 ##### Emergency notification {: #emergency-notification }
 
@@ -476,25 +474,23 @@ Said data is only collected when the application crashes or throws an error. You
 
 ###### Data retention
 
-Crash reporting is retained for 180 days. Firebase retains Instance IDs until the Firebase customer makes an API call to delete the ID. After the call, data is removed from live and backup systems within 180 days.
+Crash reporting is retained for 90 days. Firebase retains Instance IDs until the Firebase customer makes an API call to delete the ID. After the call, data is removed from live and backup systems within 90 days.
 
 ##### Event tracking
 
 We also track when you create an event, e.g. when you access the settings. In such a case, this event will be sent to our service provider, Firebase from Google, Inc. Firebase then makes the following data accessible to us:
 
 - App and/or extension version
-- Demographic data (gender, age)
 - Device type
-- Which platforms you are using (Android and its respective version)
+- Which platforms you are using (Android, iOS)
 - Location data based on your IP address (country)
-- Button clicks and/or navigation patterns
-- Screens shown
+- Anonymous interaction events (like button clicks)
 
-This data is solely used to improve our mobile products and Adblock Plus for Safari on macOS and your user experience. You can opt-out from sending such reports via Settings > Privacy.
+This data is solely used to improve our mobile products and Adblock Plus for Safari on macOS and your user experience. You can opt-out from sending such reports via the “Share anonymized data” section in the Settings menu.
 
 ###### Data retention
 
-Event tracking with IDs is retained for 60 days. Aggregated reports may be retained for a longer period.
+Event tracking with IDs is retained for two (2) months. Aggregated reports may be retained for a longer period.
 
 #### Adblock Browser for iOS {: #adblock-browser-ios }
 
@@ -695,7 +691,7 @@ Additionally, we may also share your Personal Information with law enforcement o
 
 We receive Personal Information from you, our websites, your device(s), and our external service providers. The categories of sources from which we have collected or received Personal Information include:
 
-* **You**: We collect information that you voluntarily provide, such as registration data on our public forum or information that you send to us as part of issue reports, user support queries, and user reviews.
+* **You**: We collect information that you voluntarily provide, such as registration data on our public forum or information that you send to us as part of issue reports, user support queries, user reviews and job applications.
 * **Your device(s)**: We receive information from and about the computers, phones, and browsers that you use in connection with our Products.
 * **Our Websites**: We collect information about how you interact with and use our websites.
 * **Your Social Media Profiles**: We collect information about your social media subscriptions, if you choose to contribute to content in that manner.
@@ -719,7 +715,7 @@ To exercise any of these rights, please submit a request to <a id='privacy-email
 
 If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
 
-<time datetime="2021-09">September 2021</time>
+<time datetime="2022-04">April 2022</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

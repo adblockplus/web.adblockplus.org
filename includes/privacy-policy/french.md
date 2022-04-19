@@ -55,12 +55,10 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
         - Traceur d’événements :
         {: .has-horizontal-list .semicolon-separated }
             - App et/ou version de l’extension
-            - Données démographiques (genre, âge)
             - Type d’appareil
             - Quelles plates-formes utilisez-vous
             - Données de localisation basées sur votre adresse IP (pays)
-            - Clics de bouton et/ou modèles de navigation
-            - Écrans montrés
+            - Événements interactifs anonymes (comme les clics de bouton)
     - Adblock Browser basé sur Chromium fournit des fonctionnalités spécifiques à Chromium qui peuvent cependant envoyer des données à Google.
     - Adblock Browser pour iOS (automatiquement) :
     {: .has-horizontal-list .semicolon-separated }
@@ -102,6 +100,7 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
         - Adresse e-mail
         - Données que vous fournissez dans les commentaires
         - Données de retour et de filtre
+        - Lorsque vous postulez à une offre d'emploi : nom, adresse e-mail, CV et toutes les autres données que vous avez transférées/partagées de plein gré.
 3.  Pour assistance aux utilisateurs
     - Nom de l’utilisateur (contact via les réseaux sociaux) et/ou e-mail
     - Information d’appareil
@@ -132,7 +131,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
     - Historiques
-    - Données, comme le nom et/ou l’adresse e-mail et/ou les données de communication, que vous avez envoyées lorsque vous utilisez notre forum ou blog, en utilisant le bouton « DEVENEZ UN PARTENAIRE » ou,  lorsque vous partagez des filtres ajoutés manuellement
+    - Données, comme le nom et/ou l’adresse e-mail et/ou les données de communication, que vous avez envoyées lorsque vous utilisez notre forum ou blog, en utilisant le bouton « DEVENEZ UN PARTENAIRE » ou,  lorsque vous partagez des filtres ajoutés manuellement ou lorsque vous postulez à une offre d'emploi
     - Pour les utilisateurs non membres de l’UE/EEE uniquement : Via Google Analytics
 1.  Pour assistance aux utilisateurs :
 {: .has-horizontal-list .semicolon-separated }
@@ -159,6 +158,7 @@ Liste des techniques et outils que nous utilisons pour la collecte des données.
 - Pour recevoir les dons que vous nous envoyez et pour la détection des fraudes.
 - Pour promouvoir nos produits.
 - Dans le cadre de nos pages sur les réseaux sociaux, les réseaux sociaux utilisent les données à des fins d'études de marché et de publicité.
+- Pour évaluer votre candidature à des fins de recrutement et vous proposer des emplois.
 
 ### Quelle est la base légale du traitement des données ? {: #what-is-legal }
 
@@ -173,14 +173,17 @@ Nous traitons vos données personnelles conformément au Règlement Général Eu
     - Registres de visites du site web
     - Données relatives aux téléchargements d’abonnements, aux vérifications de mise à jour d’extensions, aux notifications d’urgence
     - Données associées à la désinstallation de l’extension
-1.  Pour une période de 180 jours :
+1.  Pour une période de 90 jours :
 {: .has-horizontal-list .semicolon-separated }
     - sur nos produits mobiles et Adblock Plus pour Safari sur macOS rapport de crash
-1.  Pour une période de 60 jours :
+1.  Pour une période de deux (2) mois :
 {: .has-horizontal-list .semicolon-separated }
     - traceur d’événements
 1.  Données de blog et de forum tant que le commentaire/compte respectif existe
 1.  Toutes les données de support utilisateur sont supprimées un (1) an après la clôture du dossier support correspondant
+1. Pendant une durée de trois (3) mois :
+{: .has-horizontal-list .semicolon-separated }
+    - données de candidature après le rejet d'un candidat
 1. Pour une période de 10 ans : 
 {: .has-horizontal-list .semicolon-separated }
     - Données du rapport sur les dons
@@ -288,6 +291,8 @@ Nous collectons et traitons vos données personnelles en conformité avec le RGP
 
 Nous vous demanderons toujours votre consentement pour collecter et traiter vos données personnelles aux fins spécifiques susmentionnées, à moins que la collecte et le traitement de vos données personnelles ne soient autorisés par les lois statutaires. Lorsque vous nous avez donné votre accord pour la collecte et le traitement de vos données personnelles aux fins spécifiques susmentionnées, vous avez le droit de retirer votre consentement à tout moment.
 
+Par ailleurs, veuillez noter que toutes les données que vous nous fournissez dans le cadre de votre candidature sont nécessaires dans le seul but de recruter de nouveaux salariés et d'évaluer et de sélectionner les candidats, y compris, par exemple, dans le but d'organiser et de mener des entretiens et des tests, d'évaluer les résultats et, au besoin dans les processus de recrutement, y compris le recrutement final (c'est-à-dire les mesures prises préalablement à la conclusion d'un contrat de travail). Si vous ne nous transmettez pas vos données de candidature, votre candidature ne pourra pas être prise en compte.
+
 #### La collecte et le traitement sont nécessaires pour prendre des mesures avant de conclure un contrat - Arti. 6 (1) b du RGPD {: #contract-permission }
 
 La collecte et le traitement de vos données personnelles peuvent être nécessaires pour l’exécution d’un contrat auquel vous pourriez être partie. Avant de conclure un tel contrat, la collecte et le traitement de vos données personnelles peuvent également être nécessaires afin de prendre des mesures à votre demande. Ceci s’applique à l’installation (données collectées par le navigateur et/ou l’App Store) et à l’utilisation de nos produits.
@@ -315,7 +320,7 @@ Nous ne transmettrons pas vos données personnelles à des tiers sans que vous n
 
 Pour les services suivants, nous avons recours à des fournisseurs de service non membres de l’UE/EEE. Nous avons choisi avec soin ces fournisseurs de services extérieurs et nous les contrôlons régulièrement afin de nous assurer que la protection de vos données est conservée. Ces fournisseurs de services apportent des garanties suffisantes pour assurer un niveau de protection des données suffisant et ils ne sont autorisés à utiliser vos données personnelles que pour les objectifs que nous avons stipulés et conformément à nos instructions. Nous demandons également à ces fournisseurs de services de traiter vos données personnelles conformément à la présente Politique de confidentialité et à la législation européenne sur la protection des données :
 
-Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web ([Google Analytics](#google-analytics))  des non membres de l'UE/EEE ; pour les essais A/B basés sur les données d’analyse ([Google Optimize](#google-optimize)) des non membres de l'UE/EEE ; et pour les rapports de crash et les traceurs d’événements dans nos produits mobiles et Adblock Plus pour Safari sur macOS ([Firebase](https://firebase.google.com/)). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord [ici](https://support.google.com/a/answer/2888485).
+Nous utilisons des outils de fournisseurs de services externes pour les e-mails (GSuite) ; pour analyser votre utilisation de nos sites web ([Google Analytics](#google-analytics))  des non membres de l'UE/EEE ; pour les essais A/B basés sur les données d’analyse ([Google Optimize](#google-optimize)) des non membres de l'UE/EEE ; et pour les rapports d'incidents, les événements interactifs anonymes et le suivi des événements sur nos produits mobiles et sur Adblock Plus pour Safari sur macOS ([Firebase](https://firebase.google.com/)). Ces services sont fournis par Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Pour garantir un niveau de protection des données suffisant, nous avons conclu un accord relatif au traitement des données qui comprend les clauses contractuelles type de l’UE (processeurs) - Décision C 593 de la Commission (2010). Vous pouvez obtenir une copie de cet accord [ici](https://support.google.com/a/answer/2888485).
 
 Nous utilisons des outils de prestataires de services externes pour recevoir des dons et analyser les comportements frauduleux liés aux dons. Ce service est assuré par Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, États-Unis. Certains cookies sont enregistrés sur votre navigateur avant de procéder aux opérations de paiement afin d'empêcher une utilisation frauduleuse de leurs services. Stripe recueille des informations d’identification sur les appareils qui se connectent à ses services et utilise ces informations pour détecter des fraudes. Pour plus d'informations, veuillez [consulter la politique de Stripe en matière de cookies](https://stripe.com/cookies-policy/legal).
 
@@ -415,7 +420,7 @@ Vous pouvez volontairement :
 Les rapports traités ne sont accessibles que par un individu qui connaît son identifiant unique. Ces ID sont partagés uniquement avec :
 
 1.  Les mainteneurs des abonnements aux filtres mentionnés dans le rapport, en tant qu’auteurs EasyList, qui ne sont pas employés chez eyeo,
-1.  Certains membres de l’équipe de liste de filtres d’eyeo. eyeo utilisera les rapports à des fins de dépannage et de surveillance du support uniquement.
+1.  Certains auteurs de listes de filtrage eyeo. eyeo utilisera les rapports à des fins de dépannage et de surveillance du support uniquement.
 
 ##### Notification d’urgence {: #emergency-notification }
 
@@ -473,18 +478,16 @@ Les rapports de crash sont conservés 180 jours. Firebase conserve les instances
 Nous réalisons un traçage lorsque vous créez un événement, c’est-à-dire lorsque vous allez sur les réglages. Dans un tel cas, l’événement sera transmis à notre fournisseur de services Firebase de Google Inc. Firebase nous permettra alors d’avoir accès aux données suivantes :
 
 - App et/ou version de l’extension
-- Données démographiques (genre, âge)
 - Type d’appareil
-- Quelles plates-formes utilisez-vous (Android et sa version respective)
+- Quelles plates-formes utilisez-vous (Android ou iOS)
 - Données de localisation basées sur votre adresse IP (pays)
-- Clics de bouton et/ou modèles de navigation
-- Écrans montrés
+- Événements interactifs anonymes (comme les clics de bouton)
 
-Ces données sont utilisées uniquement pour améliorer nos produits mobile, Adblock Plus pour Safari sur macOS et votre expérience d’utilisateur. Vous pouvez vous désinscrire de l’envoi de ce type de rapport via Paramètres > Confidentialité.
+Ces données sont utilisées uniquement pour améliorer nos produits mobile, Adblock Plus pour Safari sur macOS et votre expérience d’utilisateur. Vous pouvez refuser l'envoi de tels rapports en accédant à la section « Partager des données anonymisées » dans le menu Paramètres.
 
 ###### Rétention des données
 
-Le traceur d’événements avec ID est conservé pendant 60 jours. Les rapports agrégés peuvent être conservés plus longtemps.
+Le traceur d’événements avec ID est conservé pendant deux (2) mois. Les rapports agrégés peuvent être conservés plus longtemps.
 
 ##### Rapport de crash et d’erreur {: #crash-error-reporter }
 
@@ -639,6 +642,12 @@ Pour obtenir un aperçu détaillé des traitements respectifs et options de dés
 
 Les liens/boutons vers les réseaux sociaux et les plateformes (Facebook et Twitter) utilisés dans Adblock Plus dans le but de vous permettre de partager la quantité d'éléments que vous avez bloqués avec Adblock Plus n'établissent généralement un contact entre les réseaux sociaux/plateformes et vous que lorsque vous cliquez sur ces liens/boutons. Cette fonction correspond au fonctionnement d'un lien en ligne. Si vous cliquez sur un lien/bouton correspondant, cela ouvre une nouvelle page via les serveurs du réseau social ou de la plateforme respective. Par ce biais, l'opérateur du réseau social est informé que notre site Web a été consulté via votre adresse IP. Dans le même temps, le réseau social peut placer des cookies sur votre terminal ou lire des cookies sauf si vous avez interdit l'utilisation de cookies dans votre navigateur. Pour plus d'informations sur tout traitement de vos données personnelles par les opérateurs des réseaux sociaux ou des plateformes, veuillez vous référer aux politiques de confidentialité de Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) et Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)). 
 
+### Données de candidature {: #application-data}
+
+Si vous postulez en ligne pour un emploi sur notre site Web, nous vous demandons des informations spécifiques afin d'évaluer convenablement votre candidature. Pour cela, nous avons besoin d'au moins votre nom, votre adresse e-mail et un CV. De votre plein gré, vous pouvez en outre ajouter un numéro de téléphone, une lettre de motivation, des documents supplémentaires, tels que, mais sans s'y limiter, des certificats, un site Web et des informations supplémentaires à propos de vous.
+
+Nous collectons et traitons ces données dans le seul but de gérer nos activités liées au recrutement ainsi qu'à des fins de planification organisationnelle. Par conséquent, nous pouvons utiliser vos données personnelles en relation avec l'évaluation et la sélection des candidats, y compris, par exemple, pour la mise en place et la conduite d'entretiens et de tests, l'évaluation des résultats et, au besoin, dans les processus de recrutement, y compris le recrutement final.
+
 ### Avis de confidentialité pour la Californie {: #privacy-notice-california-residents}
 
 Cette section ne s'applique qu'aux résidents de Californie. Elle explique comment nous collectons et utilisons les informations personnelles ainsi que les droits accordés aux résidents de la Californie en vertu du [California Consumer Protection Act](http://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=) (« CCPA »). Les mots utilisés ici ont le même sens que celui qui leur est donné dans le CCPA. Veuillez noter que les mots tels que décrits dans le CCPA peuvent avoir un sens plus large que leur sens courant.
@@ -677,7 +686,7 @@ En outre, nous pouvons également partager vos informations personnelles avec le
 
 Nous recevons des Informations personnelles de votre part, de nos sites Web, de vos appareils et de nos prestataires de services externes. Les catégories de sources à partir desquelles nous avons collecté ou reçu des informations personnelles comprennent :
 
-* **Vous** : nous collectons les informations que vous fournissez volontairement, telles que les données d'inscription sur notre forum public ou les informations que vous nous envoyez dans le cadre de rapports de problèmes, de demandes d'assistance utilisateur et d'avis d'utilisateurs.
+* **Vous** : nous collectons les informations que vous fournissez volontairement, telles que les données d'inscription sur notre forum public ou les informations que vous nous envoyez dans le cadre de rapports de problèmes, de demandes d'assistance utilisateur, d'avis d'utilisateurs et de candidatures.
 * **Votre(vos) appareil(s)** : nous recevons des informations relatives aux/provenant des ordinateurs, téléphones et navigateurs que vous utilisez en relation avec nos Produits.
 * **Nos sites Web** : nous recueillons des informations sur la manière dont vous interagissez avec nos sites Web et la façon dont vous les utilisez.
 * **Vos profils de médias sociaux** : nous recueillons des informations sur vos abonnements aux médias sociaux, si vous choisissez de contribuer au contenu de cette manière.
@@ -701,7 +710,7 @@ Pour exercer l'un de ces droits, veuillez soumettre une demande à <a id='privac
 
 Pour toute question concernant cette section ou sur comment exercer vos droits en vertu du CCPA, veuillez <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>nous contacter</a>.
 
-<time datetime="2021-07">Juillet 2021</time>
+<time datetime="2022-04">Avril 2022</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
