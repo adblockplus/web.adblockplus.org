@@ -161,6 +161,9 @@ ns.setupForm = function(config)
   function validateCustomAmount(input)
   {
     if (!input.min || !("frequency" in input.dataset)) return;
+
+    // skip validation of empty custom amounts
+    if ((input.value + '').trim() == '') return;
     
     var value = parseFloat(input.value);
     if (isNaN(value)) value = 0;
