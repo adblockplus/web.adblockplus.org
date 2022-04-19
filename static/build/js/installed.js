@@ -168,10 +168,25 @@ ns.setupForm = function(config)
     var value = parseFloat(input.value);
     if (isNaN(value)) value = 0;
     
-    if (value < parseFloat(input.min))
-      error(i18n["min_" + input.dataset.frequency]);
-    else
+    var minErrorMessage;
+    if (value < parseFloat(input.min)) {
+      try {
+        minErrorMessage = i18n["min_" + input.dataset.frequency].replace(
+          /<span .*>.*<\/span>/,
+          '<span class="minimum-amount">' 
+          + new Intl.NumberFormat(
+            doc.documentElement.lang, 
+            {style: 'currency', currency: $currency.value}
+          ).format(input.min)
+          + '</span>'
+        )
+      } catch (error) {
+        minErrorMessage = i18n["min_" + input.dataset.frequency];
+      }
+      error(minErrorMessage);
+    } else {
       error(false);
+    }
   }
   
   $frequencies.addEventListener("input", function(event)
