@@ -88,11 +88,10 @@ The following privacy notice shall provide you with a general overview about the
     - Automatically:
     {: .has-horizontal-list .semicolon-separated }
         - IP address (stored separately)
-        - The time at which the request was made
-        - The web address accessed
-        - The browser identifier
-        - The referring page
+        - Information about the request, including, but not limited to, domain and path, date and time, request body and query
+        - Information about the response to the request, including, but not limited to, response code and bytes
         - Aggregated analytics data
+        - Session ID information necessary to test and operate our websites
     - Voluntary:
     {: .has-horizontal-list .semicolon-separated }
         - Forum registration data
@@ -531,7 +530,7 @@ When using our websites, as AdblockPlus.org and AdblockBrowser.org (Websites), w
 
 ###### Website logs {: #website-logs }
 
-All requests to our Websites are recorded in the website logs. Data stored includes your IP address (solely for the purpose of IT security and only accessible by eyeo's IT Security team), the time at which the request was made, the web address accessed, the browser identifier and the referring page. This data (IP address only aggregated via hashing with a daily changing salt) is used to generate usage statistics as well as to investigate potential security issues and forum or blog spam. Detailed logs are retained for a period of 30 days, after which only the aggregated usage statistics that cannot be connected to a single user remain. Everything else is deleted.
+All requests to our Websites are recorded in the website logs. Data stored includes your IP address (solely for the purpose of IT security and only accessible by eyeo's IT Security team), information about the request itself including date and time, domain and file path, request body and query, information about the response include response code and bytes, and session ID information needed to test and operate the website. This data (IP address only aggregated via hashing with a daily changing salt) is used to generate usage statistics as well as to investigate potential security issues and forum or blog spam. Detailed logs are retained for a period of 30 days, after which only the aggregated usage statistics that cannot be connected to a single user remain. Everything else is deleted.
 
 ###### Data retention {: #retention-website-requests }
 
