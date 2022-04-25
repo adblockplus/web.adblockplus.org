@@ -40,11 +40,66 @@ var DEFAULTS = {
   }
 };
 
+var VARIANT_CONFIG = {
+  AUD: { sign: "$" },
+  CAD: { sign: "$" },
+  CHF: { sign: "CHF"},
+  EUR: { sign: "€" },
+  GBP: { sign: "£" },
+  JPY: {
+    sign: "¥",
+    once: {
+      amounts: [1500, 2000, 2500, 3500, 5000],
+      placeholder: 3500,
+      minimum: 1500
+    },
+    monthly: {
+      amounts: [200, 300, 500, 1000, 1500],
+      placeholder: 650,
+      minimum: 250
+    }
+  },
+  NZD: { sign: "$" },
+  RUB: {
+    sign: "₽",
+    once: {
+      amounts: [250, 500, 1000, 2500, 5000],
+      placeholder: 2500,
+      minimum: 250
+    },
+    monthly: {
+      amounts: [150, 250, 400, 500, 1000],
+      placeholder: 500,
+      minimum: 150
+    }
+  },
+  USD: { sign: "$" }
+};
+
+/* Set VARIANT_CONFIG[CURRENCY][(once|monthly|yearly)] from DEFAULTS.USD
+ * Except copy yearly values from once values
+ */
+for (var currency in VARIANT_CONFIG) 
+{
+  if (!VARIANT_CONFIG[currency].once)
+    VARIANT_CONFIG[currency].once = DEFAULTS.USD.once;
+  if (!VARIANT_CONFIG[currency].monthly)
+    VARIANT_CONFIG[currency].monthly = DEFAULTS.USD.monthly;
+  if (!VARIANT_CONFIG[currency].yearly)
+    VARIANT_CONFIG[currency].yearly = VARIANT_CONFIG[currency].once;
+}
+
 ns.setupForm = function(config)
 {
-  config = config || DEFAULTS;
-
+  var config = config || DEFAULTS;
   var defaultCurrency = Object.keys(config)[0];
+  // Add all currencies to challenger variant
+  if (ns.pageId == 3 && ns.variantId == 1) config = VARIANT_CONFIG;
+  var currencies = Object.keys(config);
+  // Ensure the default currency from config (not VARIANT_CONFIG) is first
+  if (currencies.indexOf(defaultCurrency) != -1)
+    currencies.splice(currencies.indexOf(defaultCurrency), 1);
+  currencies = [defaultCurrency].concat(currencies);
 
   // ejs templates
   var _header = _.template(doc.getElementById("payment-header-template").innerHTML)
@@ -55,7 +110,7 @@ ns.setupForm = function(config)
   // if config has multiple currencies then _header will create $currency
   var $header = doc.getElementById("payment-header");
   $header.innerHTML = _header({
-    currencies: Object.keys(config)
+    currencies: currencies
   });
   var $currency = doc.getElementById("payment-currency");
   var $frequencies = doc.getElementById("payment-frequencies");
@@ -81,6 +136,8 @@ ns.setupForm = function(config)
 
   function updateFrequencies()
   {
+    // Set form dataset for styling when currency options exist and change
+    if ($currency) $form.dataset.currency = $currency.value;
     $frequencies.innerHTML = _frequencies({
       config: config[$currency ? $currency.value : defaultCurrency],
       _amounts: _amounts

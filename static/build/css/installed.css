@@ -2622,6 +2622,8 @@ h2 svg { display: block; }
 
 .custom-payment-amount input[type="text"] { width: 3.6rem; }
 
+[data-currency=CHF] .custom-payment-amount input[type="text"] { width: 2.6rem; }
+
 .payment-divide
 {
   display: block;
@@ -2639,6 +2641,12 @@ h2 svg { display: block; }
     width: 2px;
     margin: 2rem 1.5rem 0 1.5rem;
     padding: 0;
+  }
+
+  [data-currency=CHF] .payment-divide 
+  {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
   }
 }
 
