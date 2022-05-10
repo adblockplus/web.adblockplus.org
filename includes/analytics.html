@@ -1,0 +1,71 @@
+<script>(function () {
+
+var eyeo = window.eyeo = (window.eyeo || {});
+var CLIENT_ID = 'b';
+var SERVICE_URL = "https://europe-west1-abp-log-service.cloudfunctions.net/log";
+var events = [];
+
+var ALPHANUM = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var uid = eyeo.uid = function() {
+  for (var i = 0, uid = ''; i < 32; i++)
+    uid += ALPHANUM[Math.floor(Math.random() * ALPHANUM.length)];
+  return uid;
+}
+
+var sid = eyeo.sid = uid();
+
+var log = eyeo.log = function (event, payload) {
+  return new Promise(function (resolve, reject) {
+    payload.sid = sid;
+    var event = {
+      id: uid(),
+      client: CLIENT_ID,
+      event: event,
+      payload: payload
+    };
+    events.push(event);
+    var request = new XMLHttpRequest();
+    request.addEventListener('load', function () {
+      event.recieved = true;
+      resolve();
+    });
+    request.addEventListener('error', reject);
+    request.addEventListener('abort', reject);
+    request.open('POST', SERVICE_URL);
+    request.send(JSON.stringify(event));
+  });
+}
+
+var userAgent = navigator.userAgent;
+// Browser detection subset based on lancedikson/bowser
+eyeo.browser =
+  /opera|opr\/|opios/i.test(userAgent) ? 'opera'
+  : /SamsungBrowser/i.test(userAgent) ? 'samsung'
+  : /yabrowser/i.test(userAgent) ? 'yandex'
+  : /msie|trident/i.test(userAgent) ? 'ie'
+  : /\sedg\/|edg([ea]|ios)/i.test(userAgent) ? 'edge'
+  : /firefox|iceweasel|fxios/i.test(userAgent) ? 'firefox'
+  : /chrome|crios|crmo|chromium/i.test(userAgent) ? 'chrome'
+  : /safari|applewebkit/i.test(userAgent) ? 'safari'
+  : 'other';
+
+log('access', {
+  pageName: document.documentElement.dataset.page,
+  pageLanguage: document.documentElement.lang,
+  browserLanguage: navigator.language,
+  browserTimezone: new Date().getTimezoneOffset(),
+  browserAccessTime: parseInt(performance.now(), 10),
+  browserName: eyeo.browser,
+  browserHeight: window.innerHeight,
+  browserWidth: window.innerWidth,
+  screenHeight: screen.height,
+  screenWidth: screen.width
+});
+
+window.addEventListener('load', function () {
+  log('load', {
+    browserLoadTime: parseInt(performance.now(), 10)
+  });
+});
+
+})();</script>
