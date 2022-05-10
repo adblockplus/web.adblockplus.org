@@ -1,5 +1,8 @@
 <script>(function () {
 
+// Temporarily disable these features outside the installed page until Content-Security-Policy changes
+if (document.documentElement.dataset.page != 'installed') return;
+
 var eyeo = window.eyeo = (window.eyeo || {});
 var CLIENT_ID = 'b';
 var SERVICE_URL = "https://europe-west1-abp-log-service.cloudfunctions.net/log";
