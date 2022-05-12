@@ -1,13 +1,14 @@
 FROM debian
 
 RUN apt-get update -yqq
-RUN apt-get install -yqq git wget python2 apache2
+RUN apt-get install -yqq git wget python2 apache2 libapache2-mod-geoip
 
 # Configure apache2 to test .htaccess
 RUN a2enmod macro
 RUN a2enmod ssl
 RUN a2enmod rewrite
 RUN a2enmod headers
+RUN a2enmod geoip
 RUN openssl req -x509 -nodes -days 365 \
     -subj  "/C=US/ST=TX/O=Adblock Inc/CN=support@adblock.org" \
     -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key \
