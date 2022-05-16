@@ -63,12 +63,6 @@ SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CO
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
 
-RewriteCond %{TIME_SEC} [13579]$
-RewriteRule "([\w-_]*)\/installed$" "$1/installed-0" [NC,L]
-
-RewriteCond %{TIME_SEC} [24680]$
-RewriteRule "([\w-_]*)\/installed$" "$1/installed-1" [NC,L]
-
 <FilesMatch ^update$>
   GeoIPEnable On
 </FilesMatch>

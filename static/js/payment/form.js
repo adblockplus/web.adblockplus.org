@@ -1,46 +1,26 @@
 /* global _, eyeo */
 (function(doc, _, ns, i18n){
 
-var DEFAULTS = {
-  USD: {
-    sign: '$',
-    once: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5,
-    },
-    monthly: {
-      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
-      placeholder: 4.99,
-      minimum: 1
-    },
-    yearly: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5,
-    }
+var DEFAULT_AMOUNTS = {
+  once: {
+    amounts: [10, 15, 20, 35, 50],
+    placeholder: 35,
+    minimum: 5,
   },
-  EUR: {
-    sign: '€',
-    once: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5
-    },
-    monthly: {
-      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
-      placeholder: 4.99,
-      minimum: 1
-    },
-    yearly: {
-      amounts: [10, 15, 20, 35, 50],
-      placeholder: 35,
-      minimum: 5,
-    }
+  monthly: {
+    amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+    placeholder: 4.99,
+    minimum: 1
+  },
+  yearly: {
+    amounts: [10, 15, 20, 35, 50],
+    placeholder: 35,
+    minimum: 5,
   }
 };
 
-var VARIANT_CONFIG = {
+var CURRENCY_CONFIG = {
+  USD: { sign: "$" },
   AUD: { sign: "$" },
   CAD: { sign: "$" },
   CHF: { sign: "CHF"},
@@ -72,30 +52,26 @@ var VARIANT_CONFIG = {
       placeholder: 500,
       minimum: 150
     }
-  },
-  USD: { sign: "$" }
+  }
 };
 
 /* Set VARIANT_CONFIG[CURRENCY][(once|monthly|yearly)] from DEFAULTS.USD
  * Except copy yearly values from once values
  */
-for (var currency in VARIANT_CONFIG) 
+for (var currency in CURRENCY_CONFIG) 
 {
-  if (!VARIANT_CONFIG[currency].once)
-    VARIANT_CONFIG[currency].once = DEFAULTS.USD.once;
-  if (!VARIANT_CONFIG[currency].monthly)
-    VARIANT_CONFIG[currency].monthly = DEFAULTS.USD.monthly;
-  if (!VARIANT_CONFIG[currency].yearly)
-    VARIANT_CONFIG[currency].yearly = VARIANT_CONFIG[currency].once;
+  if (!CURRENCY_CONFIG[currency].once)
+    CURRENCY_CONFIG[currency].once = DEFAULT_AMOUNTS.once;
+  if (!CURRENCY_CONFIG[currency].monthly)
+    CURRENCY_CONFIG[currency].monthly = DEFAULT_AMOUNTS.monthly;
+  if (!CURRENCY_CONFIG[currency].yearly)
+    CURRENCY_CONFIG[currency].yearly = CURRENCY_CONFIG[currency].once;
 }
 
-ns.setupForm = function(config)
+ns.setupForm = function(_config)
 {
-  var config = config || DEFAULTS;
-  var defaultCurrency = Object.keys(config)[0];
-  // Add all currencies to challenger variant
-  if (ns.pageId == 3 && ns.variantId == 1) config = VARIANT_CONFIG;
-  var currencies = Object.keys(config);
+  var defaultCurrency = _config.defaultCurrency || 'USD';
+  var currencies = Object.keys(CURRENCY_CONFIG);
   // Ensure the default currency from config (not VARIANT_CONFIG) is first
   if (currencies.indexOf(defaultCurrency) != -1)
     currencies.splice(currencies.indexOf(defaultCurrency), 1);
@@ -139,7 +115,7 @@ ns.setupForm = function(config)
     // Set form dataset for styling when currency options exist and change
     if ($currency) $form.dataset.currency = $currency.value;
     $frequencies.innerHTML = _frequencies({
-      config: config[$currency ? $currency.value : defaultCurrency],
+      config: CURRENCY_CONFIG[$currency ? $currency.value : defaultCurrency],
       _amounts: _amounts
     });
   }
@@ -239,7 +215,7 @@ ns.setupForm = function(config)
     if (amount.startsWith("custom"))
       amount = formData.get(formData.get("amount"));
 
-    var currency = Object.keys(config).length > 1
+    var currency = Object.keys(CURRENCY_CONFIG).length > 1
       ? formData.get("currency")
       : defaultCurrency;
 
@@ -248,7 +224,7 @@ ns.setupForm = function(config)
       frequency: formData.get("frequency"),
       amount: amount,
       provider: formData.get("provider"),
-      sign: config[currency].sign
+      sign: CURRENCY_CONFIG[currency].sign
     }
   }
 
