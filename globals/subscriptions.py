@@ -29,7 +29,6 @@ subscriptions = {
         'Colombian filters by yecarrillo',
         'Eesti saitidele kohandatud filter',
         'Estonian filters by Gurud.ee',
-        'Filtros Nauscopicos',
         'hufilter',
         'Icelandic ABP List',
         "Peter Lowe's list",
@@ -649,25 +648,6 @@ subscriptions = {
         'type': u'social',
         'variants': [["Fanboy's Social Blocking List",
                      u'https://easylist-downloads.adblockplus.org/fanboy-social.txt'
-                     , False]],
-        },
-    'Filtros Nauscopicos': {
-        'blog': None,
-        'changelog': None,
-        'contact': None,
-        'deprecated': False,
-        'faq': None,
-        'forum': None,
-        'homepage': u'http://nauscopio.nireblog.com/cat/filtrado',
-        'maintainer': u'maty',
-        'policy': None,
-        'specialization': u'espa\xf1ol',
-        'supplemented': [],
-        'supplements': [],
-        'supplementsType': [],
-        'type': u'ads',
-        'variants': [['Filtros Nauscopicos',
-                     u'http://abp.mozilla-hispano.org/nauscopio/filtros.txt'
                      , False]],
         },
     "I don't care about cookies": {
