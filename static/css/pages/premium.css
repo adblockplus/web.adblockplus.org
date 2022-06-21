@@ -1,3 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
 .bg-lightgrey {
   background-color: #F7F7F7;
   color: #585858;
@@ -44,4 +56,51 @@
   .container {
     max-width: 1320px;
   }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+
+  .col {
+    flex: 1 0 0%;
+  }
+
+  .col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+
+  .order-0 {
+    order: 0 !important;
+  }
+
+  .order-1 {
+    order: 1 !important;
+  }
+
+  .order-2 {
+    order: 2 !important;
+  }
+
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #E6E6E6;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
