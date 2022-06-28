@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5 {
   background-color: #F7F7F7;
 }
 
-.bg-relative {
+#premium-background-1 {
   position: absolute;
   left: 0;
   width: 100%;
@@ -111,6 +111,8 @@ h1, h2, h3, h4, h5 {
   }
 
 }
+
+.break { display: inline-block; }
 
 .premium-header {
   padding-top: 3rem;
@@ -500,13 +502,13 @@ h1, h2, h3, h4, h5 {
 
 .premium-faqs {
   display: block;
-  margin: 3rem auto;
+  margin: 4rem auto;
   max-width: 55.125rem;
 }
 
 @media (min-width: 992px) {
   .premium-faqs {
-    margin: 6rem auto;
+    margin: 7rem auto;
   }
 }
 
@@ -529,7 +531,7 @@ h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
-.premium-faq h3 a {
+.premium-faq-question {
   display: block;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -541,7 +543,7 @@ h1, h2, h3, h4, h5 {
   cursor: pointer;
 }
 
-.premium-faq h3 a:after {
+.premium-faq-question:after {
   content: "";
   position: absolute;
   width: 1.5rem;
@@ -550,11 +552,10 @@ h1, h2, h3, h4, h5 {
   right: 1rem;
   z-index: -1;
   background: url(/img/arrow.svg) center center no-repeat;
-  transform: rotate(90deg);
 }
 
-.premium-faq.active h3 a:after {
-  transform: rotate(0deg);
+.active .premium-faq-question:after {
+  transform: rotate(180deg);
 }
 
 .premium-faq p {
