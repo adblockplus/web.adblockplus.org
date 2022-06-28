@@ -1,46 +1,32 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-
-html {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.5;
-  color: #585858;
-}
-
 body {
-  margin: 0;
-  padding: 0;
+  color: #585858;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight: 700;
   color: #000;
-  line-height: 1.3;
 }
 
-.bg-lightgrey {
-  background-color: #F7F7F7;
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-#premium-background-1 {
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+.premium-background-1 {
   position: absolute;
   left: 0;
   width: 100%;
+  background-color: #F7F7F7;
   z-index: -1;
 }
 
-.container {
+.premium-container {
   width: 100%;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -49,37 +35,25 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (min-width: 576px) {
-  .container {
+  .premium-container {
     max-width: 540px;
   }
 }
 
 @media (min-width: 992px) {
-  .container {
+  .premium-container {
     max-width: 960px;
   }
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-
-.row {
+.premium-row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -0.5rem;
   margin-left: -0.5rem;
 }
 
-.row > * {
+.premium-row > * {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
@@ -89,30 +63,30 @@ h1, h2, h3, h4, h5 {
 
 @media (min-width: 992px) {
 
-  .col {
+  .premium-column {
     flex: 1 0 0%;
   }
 
-  .col-4 {
+  .premium-column-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
 
-  .order-0 {
+  .premium-order-0 {
     order: 0 !important;
   }
 
-  .order-1 {
+  .premium-order-1 {
     order: 1 !important;
   }
 
-  .order-2 {
+  .premium-order-2 {
     order: 2 !important;
   }
 
 }
 
-.break { display: inline-block; }
+.premium-break { display: inline-block; }
 
 .premium-header {
   padding-top: 3rem;
@@ -129,6 +103,7 @@ h1, h2, h3, h4, h5 {
 
 .premium-header h1 {
   font-size: 3.25rem;
+  line-height: 1.1;
   margin: 0;
 }
 
@@ -376,7 +351,8 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-.premium-plan-highlighted .premium-button {
+.premium-plan-highlighted .premium-button,
+.premium-button-primary {
   background-color: #EDA51E;
   color: #fff;
   border: 0;
@@ -447,6 +423,13 @@ h1, h2, h3, h4, h5 {
   .premium-features {
     margin-top: 6rem;
   }
+}
+
+.premium-feature-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
 }
 
 .premium-features h2 {

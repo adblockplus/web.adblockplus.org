@@ -84,7 +84,7 @@ function onDOMContentLoaded()
   onMatchingHeightsScreenTransition();
 
   // Set heights and resize for backgrounds that should extend to specific points
-  var premiumBackground1 = document.getElementById('premium-background-1');
+  var premiumBackground1 = document.querySelector('.premium-background-1');
   var premiumPlan1 = document.querySelector('.premium-plan');
   var premiumFeatureImage1 = document.querySelector('.premium-feature-image');
   function onHeightFromOffsetChange()

@@ -1,22 +1,20 @@
 title=FIXME
-template=raw
+template=minimal
+style=pages/premium.css
 
-<link rel="stylesheet" href="/css/fonts.css">
-<link rel="stylesheet" href="/css/pages/premium.css">
-
-<div id="premium-background-1" class="bg-lightgrey"></div>
-<div class="container">
+<div class="premium-background-1"></div>
+<div class="premium-container">
   <header class="premium-header">
     <h1>
-      <span class="break">Block more</span> <span class="break">with Premium</span>
+      <span class="premium-break">Block more</span> <span class="premium-break">with Premium</span>
     </h1>
     <p>
       Say goodbye to additional annoyances like floating videos, newsletter pop-ups, and other distractions.
     </p>
   </header>
   <div class="premium-plans">
-    <div class="row">
-      <div class="col-4 order-1">
+    <div class="premium-row">
+      <div class="premium-column-4 premium-order-1">
         <div class="premium-plan premium-plan-highlighted">
           <p class="premium-plan-tab">
             <span class="premium-plan-tab-start">
@@ -84,10 +82,10 @@ template=raw
                 Ignore survey requests
               </li>
             </ul>
-          </div><!-- .premium-plan-list -->
-        </div><!-- .card -->
-      </div><!-- .col-4 -->
-      <div class="col-4 order-2">
+          </div>
+        </div>
+      </div>
+      <div class="premium-column-4 premium-order-2">
         <div class="premium-plan">
           <p class="premium-plan-tab">
             <span class="premium-plan-tab-start">
@@ -146,10 +144,10 @@ template=raw
                 Ignore survey requests
               </li>
             </ul>
-          </div><!-- .premium-plan-list -->
-        </div><!-- .card -->
-      </div><!-- .col-4 -->
-      <div class="col-4 order-0">
+          </div>
+        </div>
+      </div>
+      <div class="premium-column-4 premium-order-0">
         <div class="premium-plan">
           <p class="premium-plan-tab">
             <span class="premium-plan-tab-start">
@@ -205,19 +203,19 @@ template=raw
                 Ignore survey requests
               </li>
             </ul>
-          </div><!-- .premium-plan-list -->
-        </div><!-- .premium-plan -->
-      </div><!-- .col-4 -->
-    </div><!-- .row -->
-  </div><!-- .premium-plans -->
-</div><!-- .container -->
-<div class="container">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="premium-container">
   <div class="premium-features premium-features-container">
     <h2>
       Why go Premium?
     </h2>
-    <div class="row">
-      <div class="col">
+    <div class="premium-row">
+      <div class="premium-column">
         <div class="premium-feature">
           <img alt="" src="/img/premium-speaker.svg" class="premium-feature-image" height="192px">
           <h3>
@@ -226,12 +224,12 @@ template=raw
           <p class="premium-feature-description">
             Take control of your browser and browse the way you want to! Say goodbye to newsletter pop-ups, floating videos, and other annoying distractions with Distraction Control.
           </p>
-          <button>
+          <a class="premium-button premium-button-primary">
             Get Premium
-          </button>
-        </div><!-- .card -->
-      </div><!-- .col -->
-      <div class="col">
+          </a>
+        </div>
+      </div>
+      <div class="premium-column">
         <div class="premium-feature">
           <img alt="" src="/img/premium-light.svg" class="premium-feature-image" height="192px">
           <h3>
@@ -240,13 +238,13 @@ template=raw
           <p class="premium-feature-description">
             We are a small team and your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep ABP going for years to come and get access to more features as we release them.
           </p>
-          <button>
+          <a class="premium-button premium-button-primary">
             Get Premium
-          </button>
-        </div><!-- .card -->
-      </div><!-- .col -->
-    </div><!-- .row -->
-  </div><!-- .premium-features-container -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="premium-faqs">
     <h2>
       Frequently asked questions
@@ -260,7 +258,7 @@ template=raw
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-    </div><!-- .premium-faq -->
+    </div>
     <div class="premium-faq">
       <h3>
         <a class="premium-faq-question">
@@ -270,7 +268,7 @@ template=raw
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-    </div><!-- .premium-faq -->
+    </div>
     <div class="premium-faq">
       <h3>
         <a class="premium-faq-question">
@@ -282,11 +280,11 @@ template=raw
       </p>
     </div>
   </div>
-</div><!-- .container -->
+</div>
 <div class="bg-lightgrey">
-  <div class="container">
-    <div class="row">
-      <div class="col">
+  <div class="premium-container">
+    <div class="premium-row">
+      <div class="premium-column">
         <h2>
           Adblock Plus Premium
         </h2>
@@ -316,8 +314,8 @@ template=raw
           <input type="checkbox">
           Yes! I’d like to receive occasional updates from Adblock Plus.
         </p>
-      </div><!-- .col -->
-      <div class="col">
+      </div>
+      <div class="premium-column">
         <div class="card">
           <h3>
             Step 2: Choose payment type
@@ -342,13 +340,13 @@ template=raw
               $19.99/yr
             </span>
           </p>
-        </div><!-- .card -->
+        </div>
         <p>
           Donated to Adblock Plus before?
         </p>
-      </div><!-- .col -->
-    </div><!-- .row -->
-  </div><!-- .container -->
-</div><!-- .bg-lightgrey -->
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="/js/pages/premium.js"></script>
