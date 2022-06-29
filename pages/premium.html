@@ -6,7 +6,7 @@ style=pages/premium.css
 <div class="premium-container">
   <header class="premium-header">
     <h1>
-      <span class="premium-break">Block more</span> <span class="premium-break">with Premium</span>
+      <span class="break">Block more</span> <span class="break">with Premium</span>
     </h1>
     <p>
       Say goodbye to additional annoyances like floating videos, newsletter pop-ups, and other distractions.
@@ -37,18 +37,7 @@ style=pages/premium.css
           </h2>
           <div class="premium-plan-body">
             <p class="premium-plan-price">
-              <span class="premium-plan-price-currency">
-                $
-              </span>
-              <span class="premium-plan-price-large">
-                19
-              </span>
-              <span class="premium-plan-price-small">
-                99
-              </span>
-              <span class="premium-plan-price-frequency">
-                /yr
-              </span>
+              <span class="premium-plan-price-currency">$</span><span class="premium-plan-price-large">19</span><span class="premium-plan-price-small">99</span><span class="premium-plan-price-frequency">/yr</span>
             </p>
             <p class="premium-plan-description">
               Block additional distractions, including floating videos, newsletter pop-ups, and more
@@ -281,69 +270,116 @@ style=pages/premium.css
     </div>
   </div>
 </div>
-<div class="bg-lightgrey">
-  <div class="premium-container">
+<div class="premium-background-lightgrey">
+  <div class="premium-payment">
+    <h2 class="premium-payment-logo">
+      <img alt="" src="/img/adblockplus-logo.svg" class="premium-payment-logo-image" height="43px">
+      <span class="premium-payment-logo-text">
+        Adblock <strong>Plus</strong> Premium
+      </span>
+    </h2>
     <div class="premium-row">
-      <div class="premium-column">
-        <h2>
-          Adblock Plus Premium
-        </h2>
-        <h3>
-          Step 1: Choose your plan
-        </h3>
-        <p>
-          EUR
-        </p>
-        <hr>
-        <p>
-          <button>
-            $19.99/yr
-            <span>Save 17%</span>
-          </button>
-        </p>
-        <p>
-          <button>
-            $1.99/mo
-          </button>
-        </p>
-        <p>
-          60-Day money-back guarantee
-        </p>
-        <hr>
-        <p>
-          <input type="checkbox">
-          Yes! I’d like to receive occasional updates from Adblock Plus.
-        </p>
+      <div class="premium-column-6">
+        <div class="premium-payment-plans">
+          <fieldset>
+            <select class="premium-payment-currency">
+              <option>USD</option>
+            </select>
+            <legend>
+              Step 1: Choose your plan
+            </legend>
+            <div class="premium-payment-plans-body">
+              <ul>
+                <li>
+                  <label class="premium-payment-plan active">
+                    <input class="premium-payment-plan-radio" type="radio" name="premium-plan" value="1">
+                    <img class="premium-payment-plan-check" alt="" src="/img/premium-payment-plan-check.svg">
+                    <span class="premium-payment-plan-currency">
+                      $
+                    </span>
+                    <span class="premium-payment-plan-amount-large">
+                      19
+                    </span>
+                    <span class="premium-payment-plan-amount-small">
+                      99
+                    </span>
+                    <span class="premium-payment-plan-frequency">
+                      /yr
+                    </span>
+                    <span class="premium-payment-plan-discount">
+                      Save 17%
+                    </span>
+                  </label>
+                </li>
+                <li>
+                  <label class="premium-payment-plan">
+                    <input class="premium-payment-plan-radio" type="radio" name="premium-plan" value="1">
+                    <img class="premium-payment-plan-check" alt="" src="/img/premium-payment-plan-check.svg">
+                    <span class="premium-payment-plan-currency">
+                      $
+                    </span>
+                    <span class="premium-payment-plan-amount-large">
+                      1
+                    </span>
+                    <span class="premium-payment-plan-amount-small">
+                      99
+                    </span>
+                    <span class="premium-payment-plan-frequency">
+                      /yr
+                    </span>
+                  </label>
+                </li>
+              </ul>
+              <p class="premium-payment-plan-garantee">
+                60-Day money-back guarantee
+              </p>
+            </div>
+            <label class="premium-payment-plan-newsletter">
+              <input type="checkbox" class="premium-payment-plan-newsletter-input">
+              <span class="premium-payment-plan-newsletter-small">
+                Yes! I'd like to receive occasional updates from Adblock Plus.
+              </span>
+            </label>
+          </fieldset>
+        </div>
       </div>
-      <div class="premium-column">
-        <div class="card">
-          <h3>
-            Step 2: Choose payment type
-          </h3>
-          <hr>
-          <p>
-            <button>
-              Pay with Credit Card
-            </button>
-          </p>
-          <p>
-            <button>
-              Pay with PayPal
-            </button>
-          </p>
-          <hr>
-          <p>
-            <span>
-              Adblock Plus Premium total:
-            </span>
-            <span>
-              $19.99/yr
-            </span>
+      <div class="premium-column-6">
+        <div class="premium-payment-providers">
+          <fieldset>
+            <legend>
+              Step 2: Choose payment type
+            </legend>
+            <div class="premium-payment-providers-body">
+              <ul>
+                <li>
+                  <button class="premium-payment-provider-button premium-payment-provider-button-stripe">
+                    <img alt="" src="/img/premium-credit-card.svg" class="premium-payment-provider-button-image">
+                    Pay with Credit Card
+                  </button>
+                </li>
+                <li>
+                  <button class="premium-payment-provider-button premium-payment-provider-button-paypal">
+                    <img alt="" src="/img/premium-shopping-cart.svg" class="premium-payment-provider-button-image">
+                    Pay with PayPal
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <p class="premium-payment-total">
+              <span class="premium-payment-total-label">
+                Adblock Plus Premium total:
+              </span>
+              <span class="premium-payment-total-value">
+                $19.99/yr
+              </span>
+            </p>
+          </fieldset>
+          <p class="premium-payment-already">
+            <a>
+              Donated to Adblock Plus before?
+            </a>
           </p>
         </div>
-        <p>
-          Donated to Adblock Plus before?
-        </p>
       </div>
     </div>
   </div>
