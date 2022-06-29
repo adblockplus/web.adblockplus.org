@@ -1,0 +1,50 @@
+title=Supported currencies
+template=raw
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+  }
+</style>
+
+<script>
+
+  const languages = ['de', 'en', 'es', 'fr', 'it', 'nl', 'pt-BR', 'ru', 'zh-CN'];
+
+  const currencies = ['USD', 'AUD', 'CAD', 'CHF', 'EUR', 'GBP', 'JPY', 'NZD', 'RUB'];
+
+  const table = document.createElement('table');
+
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
+  td.textContent = '-';
+  tr.appendChild(td);
+  for (const language of languages) {
+    td = document.createElement('td');
+    td.textContent = language;
+    tr.appendChild(td);
+  }
+  table.appendChild(tr);
+
+  for (const currency of currencies) {
+    tr = document.createElement('tr');
+    let td = document.createElement('td');
+    td.textContent = currency;
+    tr.appendChild(td);
+    for (const language of languages) {
+      td = document.createElement('td');
+      td.textContent = new Intl.NumberFormat(language, { style: 'currency', currency: currency }).format(9999.99);
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+
+  document.body.appendChild(table);
+
+</script>
