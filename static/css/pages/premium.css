@@ -1,30 +1,60 @@
-body {
+/*******************************************************************************
+ * Page overrides
+ *******************************************************************************
+ * Overrides global styles for this page specifically.
+ * May effect global includes.
+ ******************************************************************************/
+
+/* Global font-size is 16px already. But I'm setting it here too in case it's
+ * ever changed globally because the layout of this page depends on it.
+ */
+html {
+  font-size: 16px;
+}
+
+/* Overriding global font-size change at this breakpoint because the layout of
+ * this page depends on a 16px 1rem.
+ *
+ * TODO: Change this global font-size change from 768 to 992 to get benefits of
+ * scale change without harming relatively narrow portriat tablet sizes.
+ */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.premium-page {
   color: #585858;
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5 {
+.premium-page h1,
+.premium-page h2,
+.premium-page h3,
+.premium-page h4,
+.premium-page h5 {
   color: #000;
 }
 
-p {
+.premium-page p {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-a:hover,
-a:active,
-a:focus {
+.premium-page a:hover,
+.premium-page a:active,
+.premium-page a:focus {
   text-decoration: none;
 }
 
-.premium-background-1 {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  background-color: #F7F7F7;
-  z-index: -1;
-}
+/*******************************************************************************
+ * Grid system
+ *******************************************************************************
+ * Implementing a separate grid system for this page because default.css grid
+ * can't support variable column width and column order without significant
+ * changes that are out of the scope of this page.
+ ******************************************************************************/
 
 .premium-container {
   width: 100%;
@@ -91,7 +121,33 @@ a:focus {
 
 }
 
-.break { display: inline-block; }
+/*******************************************************************************
+ * Text utilities
+ ******************************************************************************/
+
+/* for preferring not to break between specific words on resize  */
+.premium-break {
+  display: inline-block;
+}
+
+/*******************************************************************************
+ * Dynamic background behind first and second sections
+ *******************************************************************************
+ * See /js/pages/premium.js for height setting.
+ * It matches specific points on load and resize.
+ ******************************************************************************/
+
+.premium-background-1 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #F7F7F7;
+  z-index: -1;
+}
+
+/*******************************************************************************
+ * Page header
+ ******************************************************************************/
 
 .premium-header {
   padding-top: 3rem;
@@ -107,46 +163,52 @@ a:focus {
 }
 
 .premium-header h1 {
-  font-size: 3.25rem;
-  line-height: 1.1;
   margin: 0;
+  line-height: 1.1;
+  font-size: 3.25rem;
 }
 
 @media (min-width: 576px) {
+  /* Smaller, to fit in one line, when space allows */
   .premium-header h1 {
     font-size: 2.75rem;
   }
 }
 
 @media (min-width: 992px) {
+  /* Larger, still fitting in one line, when space allows */
   .premium-header h1 {
     font-size: 3.25rem;
   }
 }
 
 .premium-header p {
-  font-size: 1.5rem;
-  max-width: 52rem;
   margin-left: auto;
   margin-right: auto;
+  max-width: 52rem;
+  font-size: 1.5rem;
 }
 
+/*******************************************************************************
+ * Plan cards
+ ******************************************************************************/
+
 .premium-plans {
-  max-width: 48.5rem;
   margin-left: auto;
   margin-right: auto;
+  max-width: 48.5rem;
 }
 
 .premium-plan {
   position: relative;
-  border: 1px solid #E6E6E6;
-  border-radius: 6px;
-  padding: 1rem;
   margin-top: 3.5rem;
   margin-bottom: 1rem;
-  background-color: #fff;
-  color: #333;
+  border: 1px solid #E6E6E6;
+  border-radius: 6px;
   box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
+  padding: 1rem;
+  color: #333;
+  background-color: #fff;
 }
 
 @media (min-width: 992px) {
@@ -154,6 +216,7 @@ a:focus {
     margin-top: 2rem;
     box-shadow: none;
   }
+
   .premium-plan.premium-plan-highlighted {
     box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
   }
@@ -161,15 +224,15 @@ a:focus {
 
 .premium-plan-tab {
   position: absolute;
-  top: -3.5rem;
+  top: -2.5rem;
   left: 0;
   height: 2.5rem;
   width: 100%;
-  background-color: #E6E6E6;
-  color: #666666;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  font-weight: 400;
+  font-weight: 700;
+  color: #666666;
+  background-color: #E6E6E6;
 }
 
 .premium-plan-highlighted .premium-plan-tab {
@@ -180,22 +243,18 @@ a:focus {
 @media (min-width: 992px) {
   .premium-plan-tab {
     display: none;
-    top: -3rem;
+    top: -2rem;
     height: 2rem;
-    font-weight: 700;
   }
 
   .premium-plan-highlighted .premium-plan-tab {
     display: block;
-    color: #fff;
-    background-color: #0797E1;
   }
-  }
+}
 
 .premium-plan-tab-start {
   line-height: 2.5rem;
   font-size: 0.0.875rem;
-  margin-left: 1rem;
 }
 
 @media (min-width: 992px) {
@@ -203,6 +262,16 @@ a:focus {
     line-height: 2rem;
     font-size: 0.8125rem;
   }
+}
+
+[dir="ltr"] .premium-plan-tab-start {
+  float: left;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .premium-plan-tab-start {
+  float: right;
+  margin-right: 1rem;
 }
 
 .premium-plan-tab-frequency,
@@ -217,22 +286,14 @@ a:focus {
   }
 }
 
-[dir="ltr"] .premium-plan-tab-start {
-  float: left;
-}
-
-[dir="rtl"] .premium-plan-tab-start {
-  float: right;
-}
-
 .premium-plan-tab-end {
   display: none;
+  margin: 0.625rem 1rem;
   border: 1px solid #fff;
   border-radius: 6px;
-  font-size: 0.75rem;
-  margin: 0.625rem 1rem;
-  line-height: 1.25rem;
   padding: 0 0.5rem;
+  line-height: 1.25rem;
+  font-size: 0.75rem;
 }
 
 @media (min-width: 320px) {
@@ -243,8 +304,8 @@ a:focus {
 
 @media (min-width: 992px) {
   .premium-plan-tab-end {
-    font-size: 0.625rem;
     margin: 0.375rem 1rem;
+    font-size: 0.625rem;
   }
 }
 
@@ -284,17 +345,17 @@ a:focus {
 
 @media (min-width: 992px) {
   .premium-plan-body {
-    text-align: left;
     display: flex;
     flex-direction: column-reverse;
+    text-align: left;
   }
 }
 
 .premium-plan-description {
-  width: 85%;
-  max-width: 20rem;
   margin-left: auto;
   margin-right: auto;
+  width: 85%;
+  max-width: 20rem;
 }
 
 @media (min-width: 576px) {
@@ -304,10 +365,10 @@ a:focus {
 }
 
 .premium-plan-price {
-  text-align: center;
-  color: #000;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+  text-align: center;
+  color: #000;
 }
 
 .premium-plan-price span {
@@ -677,7 +738,7 @@ a:focus {
   display: none;
 }
 
-.premium-payment-plan-check  {
+.premium-payment-plan-check {
   display: none;
 }
 
