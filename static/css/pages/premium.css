@@ -25,8 +25,8 @@ html {
 }
 
 .premium-page {
-  color: #585858;
   font-weight: 400;
+  color: #585858;
 }
 
 .premium-page h1,
@@ -201,14 +201,15 @@ html {
 
 .premium-plan {
   position: relative;
+  /* larger margin-top to accomodate header tabs below */
   margin-top: 3.5rem;
   margin-bottom: 1rem;
   border: 1px solid #E6E6E6;
   border-radius: 6px;
   box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
   padding: 1rem;
-  color: #333;
   background-color: #fff;
+  color: #333;
 }
 
 @media (min-width: 992px) {
@@ -222,122 +223,181 @@ html {
   }
 }
 
-.premium-plan-tab {
-  position: absolute;
-  top: -2.5rem;
-  left: 0;
-  height: 2.5rem;
-  width: 100%;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+/* Plan card header / tabs
+ ******************************************************************************/
+
+/* Outline:
+ *
+ * header
+ *   heading
+ *   tab-start (e.g. Most Popular)
+ *   tab-end (e.g. Save 17%)
+ *
+ * The whole header is a tab on small screens.
+ * The heading is a heading and the tab-start/tab-end are tab on large screens.
+ */
+
+.premium-plan-header {
   font-weight: 700;
-  color: #666666;
-  background-color: #E6E6E6;
 }
 
-.premium-plan-highlighted .premium-plan-tab {
-  color: #fff;
-  background-color: #0797E1;
-}
+/* Small screen plan headers are tabs */
+@media (max-width: 991px) {
+  .premium-plan-header {
+    /* CAREFUL: These styles are duplicated below > 992px */
+    position: absolute;
+    /* header tabs appear above cards */
+    top: -2.5rem;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #E6E6E6;
+    line-height: 2.5rem;
+    font-size: 0.0.875rem;
+    color: #666666;
+  }
 
-@media (min-width: 992px) {
-  .premium-plan-tab {
+  .premium-plan-highlighted .premium-plan-header {
+    background-color: #0797E1;
+    color: #fff;
+  }
+
+  .premium-plan-header .premium-plan-heading {
+    /* overriding page level heading color */
+    color: inherit;
+  }
+
+  [dir="ltr"] .premium-plan-heading {
+    float: left;
+  }
+
+  [dir="rtl"] .premium-plan-heading {
+    float: right;
+  }
+
+  [dir="ltr"] .premium-plan-heading {
+    margin-left: 1rem;
+  }
+
+  [dir="rtl"] .premium-plan-heading {
+    margin-right: 1rem;
+  }
+
+  [dir="ltr"] .premium-plan-tab {
+    float: left;
+  }
+
+  [dir="rtl"] .premium-plan-tab {
+    float: right;
+  }
+
+  [dir="ltr"] .premium-plan-tab-start {
+    float: left;
+  }
+
+  [dir="rtl"] .premium-plan-tab-start {
+    float: right;
+  }
+
+  .premium-plan-tab-end {
+    /* only show when it can fit (media query below) */
     display: none;
-    top: -2rem;
-    height: 2rem;
+    /* CAREFUL: These styles are duplicated below > 992px */
+    margin: 0.625rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 0 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.75rem;
   }
 
-  .premium-plan-highlighted .premium-plan-tab {
-    display: block;
+  [dir="ltr"] .premium-plan-tab-end {
+    float: right;
   }
-}
 
-.premium-plan-tab-start {
-  line-height: 2.5rem;
-  font-size: 0.0.875rem;
-}
-
-@media (min-width: 992px) {
-  .premium-plan-tab-start {
-    line-height: 2rem;
-    font-size: 0.8125rem;
+  [dir="rtl"] .premium-plan-tab-end {
+    float: left;
   }
-}
-
-[dir="ltr"] .premium-plan-tab-start {
-  float: left;
-  margin-left: 1rem;
-}
-
-[dir="rtl"] .premium-plan-tab-start {
-  float: right;
-  margin-right: 1rem;
-}
-
-.premium-plan-tab-frequency,
-.premium-plan-tab-separator {
-  display: inline;
-}
-
-@media (min-width: 992px) {
-  .premium-plan-tab-frequency,
-  .premium-plan-tab-separator {
-    display: none;
-  }
-}
-
-.premium-plan-tab-end {
-  display: none;
-  margin: 0.625rem 1rem;
-  border: 1px solid #fff;
-  border-radius: 6px;
-  padding: 0 0.5rem;
-  line-height: 1.25rem;
-  font-size: 0.75rem;
 }
 
 @media (min-width: 320px) {
   .premium-plan-tab-end {
-    display: inline-block;
+    display: block;
   }
 }
 
+/* large screen headers are not tabs */
 @media (min-width: 992px) {
+  /* style plan-tab-start as a tab instead of the whole header */
+  .premium-plan-tab-start {
+    /* CAREFUL: These styles are duplicated above < 991px */
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #0797E1;
+    line-height: 2.5rem;
+    font-size: 0.0.875rem;
+    color: #fff;
+  }
+
+  [dir="ltr"] .premium-plan-tab-start {
+    padding-left: 1rem;
+  }
+
+  [dir="rtl"] .premium-plan-tab-start {
+    padding-right: 1rem;
+  }
+
+  .premium-plan-tab-separator {
+    display: none;
+  }
+
   .premium-plan-tab-end {
-    margin: 0.375rem 1rem;
-    font-size: 0.625rem;
+    position: absolute;
+    top: -2.5rem;
+    /* CAREFUL: These styles are duplicated above < 991px */
+    margin: 0.55rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 0 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.75rem;
+    color: #fff;
+  }
+
+  [dir="ltr"] .premium-plan-tab-end {
+    right: 0;
+  }
+
+  [dir="rtl"] .premium-plan-tab-end {
+    left: 0;
+  }
+
+  .premium-plan-heading {
+    margin: 1rem 0 0 0;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .premium-plan-highlighted .premium-plan-heading {
+    color: #EDA51E;
   }
 }
 
-[dir="ltr"] .premium-plan-tab-end {
-  float: right;
-}
-
-[dir="rtl"] .premium-plan-tab-end {
-  float: left;
-}
-
+/* Removing border-top-radius on plan cards with tabs */
 .premium-plan-highlighted {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
-.premium-plan-heading {
-  display: none;
-  margin: 1rem 0 0 0;
-  font-size: 1.75rem;
-  text-align: center;
-}
-
-@media (min-width: 992px) {
-  .premium-plan-heading {
-    display: block;
-  }
-}
-
-.premium-plan.premium-plan-highlighted .premium-plan-heading {
-  color: #EDA51E;
-}
+/* Plan card body
+ ******************************************************************************/
 
 .premium-plan-body {
   text-align: center;
@@ -346,6 +406,7 @@ html {
 @media (min-width: 992px) {
   .premium-plan-body {
     display: flex;
+    /* price appears above text on small screens and below on large */
     flex-direction: column-reverse;
     text-align: left;
   }
