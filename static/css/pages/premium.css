@@ -122,12 +122,32 @@ html {
 }
 
 /*******************************************************************************
- * Text utilities
+ * Utilities
  ******************************************************************************/
+
+.premium-background-lightgrey {
+  background-color: #F7F7F7;
+  overflow: auto;
+}
 
 /* for preferring not to break between specific words on resize  */
 .premium-break {
   display: inline-block;
+}
+
+.premium-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 13.5rem;
+  background-color: #EDA51E;
+  line-height: 2.5rem;
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
 }
 
 /*******************************************************************************
@@ -239,6 +259,7 @@ html {
 
 .premium-plan-header {
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* Small screen plan headers are tabs */
@@ -302,8 +323,7 @@ html {
   }
 
   .premium-plan-tab-end {
-    /* only show when it can fit (media query below) */
-    display: none;
+    display: block;
     /* CAREFUL: These styles are duplicated below > 992px */
     margin: 0.625rem 1rem;
     border: 1px solid #fff;
@@ -319,12 +339,6 @@ html {
 
   [dir="rtl"] .premium-plan-tab-end {
     float: left;
-  }
-}
-
-@media (min-width: 320px) {
-  .premium-plan-tab-end {
-    display: block;
   }
 }
 
@@ -453,36 +467,25 @@ html {
   margin-top: 0.6rem;
 }
 
-.premium-button {
-  display: block;
+.premium-plan .premium-button {
   margin-top: 1.625rem;
   margin-bottom: 2.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 13.5rem;
-  font-size: 1.125rem;
-  line-height: 2.5rem;
-  text-align: center;
-  font-weight: 700;
   color: #0797E1;
   background-color: #fff;
   border: 1px solid #C6C6C6;
-  border-radius: 6px;
 }
 
 @media (min-width: 992px) {
-  .premium-button {
+  .premium-plan .premium-button {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
 }
 
-.premium-plan-highlighted .premium-button,
-.premium-button-primary {
+.premium-plan-highlighted .premium-button {
+  border: 0;
   background-color: #EDA51E;
   color: #fff;
-  border: 0;
 }
 
 .premium-plan hr {
@@ -493,6 +496,9 @@ html {
   height: 1px;
   background-color: #E6E6E6;
 }
+
+/* Plan includes
+ ******************************************************************************/
 
 .premium-plan-list-preface {
   display: none;
@@ -505,12 +511,12 @@ html {
 }
 
 .premium-plan-list ul {
-  padding-left: 1.5rem;
-  max-width: 13rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  max-width: 13rem;
 }
 
 @media (min-width: 992px) {
@@ -518,7 +524,6 @@ html {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-
 }
 
 .premium-plan-list li {
@@ -540,10 +545,14 @@ html {
   list-style-image: url('/img/premium-list-cross.svg');
 }
 
+/*******************************************************************************
+ * Premium feature cards
+ ******************************************************************************/
+
 .premium-features {
-  max-width: 55.125rem;
   margin-left: auto;
   margin-right: auto;
+  max-width: 55.125rem;
 }
 
 @media (min-width: 992px) {
@@ -572,20 +581,14 @@ html {
   }
 }
 
-.premium-features-offset {
-  float: left;
-  margin-top: -13rem;
-  width: 100%;
-}
-
 .premium-feature {
-  background-color: #fff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border: 0;
   border-radius: 12px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
   padding: 2rem 2rem 2.5rem 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  background-color: #fff;
 }
 
 .premium-feature h3 {
@@ -593,22 +596,14 @@ html {
   margin: 0;
 }
 
-.premium-features button {
-  display: block;
-  width: 100%;
-  margin-top: 1.9rem;
-  font-size: 1.125rem;
-  line-height: 2.5rem;
-  text-align: center;
-  font-weight: 700;
-  background-color: #EDA51E;
-  color: #fff;
-  border-radius: 6px;
-  border: 0;
-  width: 12.875rem;
-  margin-left: auto;
-  margin-right: auto;
+.premium-features .premium-button {
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
+
+/*******************************************************************************
+ * FAQs
+ ******************************************************************************/
 
 .premium-faqs {
   display: block;
@@ -623,22 +618,22 @@ html {
 }
 
 .premium-faqs h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
   margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 992px) {
   .premium-faqs h2 {
-    font-size: 2.5rem;
     margin-bottom: 2.5rem;
+    font-size: 2.5rem;
   }
 }
 
 .premium-faq h3 {
   position: relative;
-  font-size: 1.125rem;
   margin: 0;
+  font-size: 1.125rem;
 }
 
 .premium-faq-question {
@@ -647,10 +642,17 @@ html {
   padding-bottom: 1rem;
   border-bottom: 1px solid #CDCDCD;
   text-decoration: none;
-  color: #585858;
-  padding-right: 3rem;
   line-height: 1.5;
+  color: #585858;
   cursor: pointer;
+}
+
+[dir="ltr"] .premium-faq-question {
+  padding-right: 3rem;
+}
+
+[dir="rtl"] .premium-faq-question {
+  padding-left: 3rem;
 }
 
 .premium-faq-question:after {
@@ -676,9 +678,9 @@ html {
   display: block;
 }
 
-.premium-background-lightgrey {
-  background-color: #F7F7F7;
-}
+/*******************************************************************************
+ * Payment form
+ ******************************************************************************/
 
 .premium-payment {
   margin: 4rem auto;
@@ -693,37 +695,71 @@ html {
 }
 
 .premium-payment-logo {
-  max-width: 30rem;
-  margin-left: auto;
-  margin-right: auto;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  font-size: 2.125rem;
-  font-weight: 300;
+  display: flex;
+  justify-content: center;
   margin-top: 6rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #000;
 }
 
-.premium-payment-logo-image,
-.premium-payment-logo-text {
-  float: left;
+@media (min-width: 576px) {
+  .premium-payment-logo {
+    margin-bottom: 3rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2.125rem;
+  }
 }
 
-.premium-payment-logo-text strong {
-  font-weight: 700;
-  margin-left: -0.5rem;
+@media (min-width: 992px) {
+  .premium-payment-logo {
+    display: block;
+    margin-bottom: 4rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .premium-payment-logo-image {
-  margin-right: 1rem;
+  height: 2rem;
+}
+
+@media (min-width: 576px) {
+  .premium-payment-logo-image {
+    height: 2.5rem;
+  }
+}
+
+[dir="ltr"] .premium-payment-logo-image {
+  float: left;
+}
+
+[dir="rtl"] .premium-payment-logo-image {
+  float: right;
+}
+
+[dir="ltr"] .premium-payment-logo-image {
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .premium-payment-logo-image {
+  margin-left: 0.5rem;
+}
+
+.premium-payment-logo strong {
+  font-weight: 700;
 }
 
 .premium-payment-plans {
   display: block;
-  max-width: 30rem;
-  padding: 2rem 0;
   margin-right: auto;
   margin-left: auto;
+  padding: 2rem 0;
+  max-width: 30rem;
 }
 
 @media (min-width: 992px) {
@@ -735,23 +771,33 @@ html {
 
 .premium-payment-plans legend {
   float: left;
+  margin: 0 0 1rem 0;
+  height: 2rem;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
-  height: 2rem;
-  margin: 0 0 1rem 0;
   color: #000;
 }
 
 .premium-payment-currency {
-  float: right;
-  font-size: 1rem;
-  height: 2rem;
-  line-height: 2rem;
+  display: block;
   margin: 0 0 1rem 0;
-  padding: 0 0.5rem;
   border: 1px solid #C6C6C6;
   border-radius: 6px;
+  padding: 0 0.5rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 567px) {
+  [dir="ltr"] .premium-payment-currency {
+    float: right;
+  }
+
+  [dir="rtl"] .premium-payment-currency {
+    float: left;
+  }
 }
 
 .premium-payment-plan-options {
@@ -770,24 +816,24 @@ html {
 
 .premium-payment-plan {
   display: block;
-  width: 100%;
-  border: 0;
-  border-radius: 6px;
-  line-height: 3rem;
-  height: 3rem;
-  background: #fff;
-  box-shadow: 0px 4px 8px rgba(51, 51, 51, 0.2);
-  font-size: 1.125rem;
+  position: relative;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(51, 51, 51, 0.2);
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
+  max-width: 24rem;
+  background: #fff;
+  font-size: 1.125rem;
   cursor: pointer;
   text-align: center;
   font-weight: 700;
   color: #000;
-  max-width: 24rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .premium-payment-plan.active {
@@ -808,12 +854,12 @@ html {
   position: absolute;
   top: 0;
   left: 0;
+  padding: 0.9375rem 0.75rem;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
   height: 3rem;
   width: 3rem;
   background-color: #0680BE;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  padding: 0.9375rem 0.75rem;
 }
 
 .premium-payment-plan-discount {
@@ -821,13 +867,20 @@ html {
   position: absolute;
   top: -1rem;
   right: -1rem;
+  padding: 0 0.6875rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   height: 2rem;
   line-height: 2rem;
   background-color: #EDA51E;
   color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 0 0.6875rem;
+}
+
+.premium-payment-plan-amount-small {
+  display: inline-block;
+  margin-top: -0.125rem;
+  font-size: 0.75rem;
+  vertical-align: top;
 }
 
 .premium-payment-plan-garantee {
@@ -837,9 +890,9 @@ html {
 }
 
 .premium-payment-plan-newsletter {
-  margin: 1rem 0;
-  position: relative;
   display: block;
+  position: relative;
+  margin: 1rem 0;
   width: 100%;
 }
 
@@ -855,16 +908,16 @@ html {
 }
 
 .premium-payment-providers {
-  max-width: 30rem;
   margin-left: auto;
   margin-right: auto;
+  max-width: 30rem;
 }
 
 .premium-payment-providers fieldset {
-  background-color: #fff;
-  border-radius: 6px;
   padding: 2rem 1rem;
+  border-radius: 6px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
 @media (min-width: 576px) {
@@ -875,38 +928,38 @@ html {
 
 .premium-payment-providers legend {
   float: left;
+  margin: 0 0 1rem 0;
   width: 100%;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
-  margin: 0 0 1rem 0;
   color: #000;
 }
 
 .premium-payment-providers-body {
   clear: both;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-style: solid;
   border-color: #C6C6C6;
   border-top-width: 1px;
   border-bottom-width: 1px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .premium-payment-provider-button {
-  position: relative;
   display: block;
+  position: relative;
+  margin: 1.5rem auto;
+  border-width: 0;
+  border-radius: 6px;
   width: 100%;
+  max-width: 24rem;
   height: 3rem;
   line-height: 3rem;
-  margin: 1.5rem auto;
   background-color: #0797E1;
-  color: #fff;
-  border-radius: 6px;
   text-align: center;
   font-weight: 700;
-  border-width: 0;
-  max-width: 24rem;
+  color: #fff;
 }
 
 .premium-payment-provider-button.premium-payment-provider-button-paypal {
@@ -915,11 +968,18 @@ html {
 
 .premium-payment-provider-button-image {
   display: none;
+  position: absolute;
+  top: 0.75rem;
   height: 1.5rem;
   width: 1.5rem;
-  position: absolute;
+}
+
+[dir="ltr"] .premium-payment-provider-button-image {
   left: 1.5rem;
-  top: 0.75rem;
+}
+
+[dir="rtl"] .premium-payment-provider-button-image {
+  right: 1.5rem;
 }
 
 @media (min-width: 400px) {
@@ -929,17 +989,25 @@ html {
 }
 
 .premium-payment-total {
+  overflow: auto;
   margin: 1.5rem 0 0 0;
   font-weight: 700;
-  overflow: auto;
 }
 
-.premium-payment-total-label {
+[dir="ltr"] .premium-payment-total-label {
   float: left;
 }
 
-.premium-payment-total-value {
+[dir="rtl"] .premium-payment-total-label {
   float: right;
+}
+
+[dir="ltr"] .premium-payment-total-value {
+  float: right;
+}
+
+[dir="rtl"] .premium-payment-total-value {
+  float: left;
 }
 
 .premium-payment-already {

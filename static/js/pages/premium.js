@@ -42,10 +42,11 @@ function setAutoHeights(targets)
  */
  function setHeightFromOffsetTop(heightTarget, offsetTarget, additionalStaticOffset)
  {
+   var bodyPaddingTop = parseFloat(getComputedStyle(document.body).paddingTop);
    additionalStaticOffset = additionalStaticOffset || 0;
    var offsetTargetOffset = offsetTarget.getBoundingClientRect().top
     + document.documentElement.scrollTop;
-   heightTarget.style.height = (offsetTargetOffset + additionalStaticOffset) + 'px';
+   heightTarget.style.height = (offsetTargetOffset + additionalStaticOffset - bodyPaddingTop) + 'px';
  }
 
 function onDOMContentLoaded()
@@ -56,6 +57,20 @@ function onDOMContentLoaded()
   {
     if (event.target.classList.contains('premium-faq-question')) {
       event.target.closest('.premium-faq').classList.toggle('active');
+    }
+  });
+
+  // Set up payment plan radio buttons
+  var paymentPlans = document.querySelector('.premium-payment-plans-body');
+  var activePaymentPlan = document.querySelector('.premium-payment-plans-body .active');
+  paymentPlans.addEventListener('click', function(event) {
+    var clicked = event.target.closest('.premium-payment-plan');
+    if (clicked && !clicked.classList.contains('active')) {
+      activePaymentPlan.classList.remove('active');
+      activePaymentPlan.querySelector('input[type="radio"]').checked = false;
+      activePaymentPlan = clicked;
+      activePaymentPlan.classList.add('active');
+      activePaymentPlan.querySelector('input[type="radio"]').checked = true;
     }
   });
 
