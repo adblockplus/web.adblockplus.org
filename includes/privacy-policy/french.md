@@ -89,11 +89,10 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
     - Automatiquement :
     {: .has-horizontal-list .semicolon-separated }
         - Adresse IP (enregistrée séparément)
-        - Heure à laquelle la demande a été faite
-        - Adresse web consultée
-        - Identificateur de navigateur
-        - Page de référence
+        - Les informations sur la demande, incluant, mais sans s'y limiter, le domaine et le chemin, la date et l'heure, le corps de la demande et la question
+        - Les informations sur la réponse à la demande, incluant, mais sans s'y limiter, le code de réponse et les octets
         - Données analytiques agrégées
+        - Les informations d'identification de session nécessaires pour tester et exploiter nos sites web
     - Volontairement :
     {: .has-horizontal-list .semicolon-separated }
         - Données d’inscription aux forums
@@ -526,7 +525,7 @@ Quand vous utilisez nos sites web, tels que AdblockPlus.org et AdblockBrowser.or
 
 ###### Registres de visites du site web {: #website-logs }
 
-Toutes les demandes à nos sites web sont enregistrées dans les registres de visites du site web. Les données enregistrées sont notamment votre adresse IP (uniquement aux fins de la sécurité informatique et seulement accessible par l’équipe de sécurité informatique eyeo), l’heure à laquelle la demande a été faite, l’adresse web accédée, l’identificateur de navigateur et la page de référence. Ces données (adresse IP uniquement agrégée par hachage avec un sel modifié chaque jour) sont utilisées pour générer des statistiques d’utilisation et pour enquêter sur les problèmes potentiels de sécurité, ainsi que le spam des forums ou blogs. Les registres détaillés sont conservés pendant 30 jours, après quoi seules les statistiques d’utilisation agrégées ne pouvant pas être reliées à un utilisateur unique sont conservées. Tout le reste est supprimé.
+Toutes les demandes à nos sites web sont enregistrées dans les registres de visites du site web. Les données enregistrées sont notamment votre adresse IP (uniquement aux fins de la sécurité informatique et seulement accessible par l’équipe de sécurité informatique eyeo), les informations sur la demande elle-même, incluant la date et l'heure, le domaine et le chemin du fichier, le corps de la demande et la question, les informations sur la réponse incluant le code de réponse et les octets, et les informations d'identification de session nécessaires pour tester et exploiter nos sites web. Ces données (adresse IP uniquement agrégée par hachage avec un sel modifié chaque jour) sont utilisées pour générer des statistiques d’utilisation et pour enquêter sur les problèmes potentiels de sécurité, ainsi que le spam des forums ou blogs. Les registres détaillés sont conservés pendant 30 jours, après quoi seules les statistiques d’utilisation agrégées ne pouvant pas être reliées à un utilisateur unique sont conservées. Tout le reste est supprimé.
 
 ###### Rétention des données {: #retention-website-requests }
 

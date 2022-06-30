@@ -89,11 +89,10 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
     - Automatisch:
     {: .has-horizontal-list .semicolon-separated }
         - IP-Adresse (separat gespeichert)
-        - die Uhrzeit der Anfragestellung
-        - die aufgerufene Internetadresse
-        - die Browser-Kennung
-        - die verweisende Seite
+        - Informationen zur Anfrage, unter anderem Domain und Pfad, Datum und Uhrzeit, Anforderungstext und Abfrage
+        - Informationen zur Antwort auf die Anfrage, unter anderem Antwortcode und Bytes
         - Aggregierte Analysedaten
+        - Zum Testen und Betreiben unserer Websites nötige Informationen zur Sitzungs-ID
     - Freiwillig:
     {: .has-horizontal-list .semicolon-separated }
         - Forum-Registrierungsdaten
@@ -529,7 +528,7 @@ Bei der Nutzung unserer Webseiten, wie z. B. AdblockPlus.org und AdblockBrowser.
 
 ###### Webseiten-Protokolle {: #website-logs }
 
-Alle Anfragen an unsere Webseiten werden in Webseiten-Protokollen erfasst. Zu den gespeicherten Daten gehören IP-Adresse (nur zum Zweck der IT-Sicherheit und nur durch das IT-Sicherheitsteam von eyeo einsehbar), die Uhrzeit der Anfragestellung, die aufgerufene Internetadresse, die Browser-Kennung und die verweisende Seite. Diese Daten (die IP-Adresse nur in aggregierter Form durch Hashing mithilfe eines sich täglich ändernden Zufallswerts) werden verwendet, um Nutzungsstatistiken zu erstellen und potenzielle Sicherheitsprobleme sowie Spam im Forum und Blog zu untersuchen. Detaillierte Protokolle werden für einen Zeitraum von 30 Tagen aufbewahrt. Anschließend verbleiben nur die aggregierten Nutzungsstatistiken, die mit keinem Nutzer in Verbindung gebracht werden können. Alles andere wird gelöscht.
+Alle Anfragen an unsere Webseiten werden in Webseiten-Protokollen erfasst. Zu den gespeicherten Daten gehören IP-Adresse (nur zum Zweck der IT-Sicherheit und nur durch das IT-Sicherheitsteam von eyeo einsehbar), Informationen zur Anfrage selbst, einschließlich Datum und Uhrzeit, Domain und Dateipfad, Anforderungstext und Abfrage, Informationen zur Antwort einschließlich Antwortcode und Bytes sowie zum Testen und Betreiben der Website nötige Informationen zur Sitzungs-ID. Diese Daten (die IP-Adresse nur in aggregierter Form durch Hashing mithilfe eines sich täglich ändernden Zufallswerts) werden verwendet, um Nutzungsstatistiken zu erstellen und potenzielle Sicherheitsprobleme sowie Spam im Forum und Blog zu untersuchen. Detaillierte Protokolle werden für einen Zeitraum von 30 Tagen aufbewahrt. Anschließend verbleiben nur die aggregierten Nutzungsstatistiken, die mit keinem Nutzer in Verbindung gebracht werden können. Alles andere wird gelöscht.
 
 ###### Datenaufbewahrung {: #retention-website-requests }
 
