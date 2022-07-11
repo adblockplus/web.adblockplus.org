@@ -39,7 +39,7 @@ function buildStripeMetadata(obj, curr, recurring, subType, product) {
         obj.variant_index = _experiment.variantIndex('Stripe');
     }
 }
-/* queryString creates a string of "key=value" from an object of key:value 
+/* queryString creates a string of "key=value" from an object of key:value
     => "key=value" pairs are concatenated with "&"
     => string is prepended with a "?"
     => returns empty string for empty object, non-object, null, or undefined.
@@ -48,9 +48,9 @@ function queryString(obj) {
     if (obj === null || typeof obj !== "object") { return ""; }
     var concatenated = Object.keys(obj).map(function(key) {
         return [key, obj[key]].join("=");
-    }).join("&"); 
-    if (concatenated.length > 0) { 
-        return "&" + concatenated; 
+    }).join("&");
+    if (concatenated.length > 0) {
+        return "&" + concatenated;
     } else {
         return "";
     }
@@ -66,9 +66,9 @@ function validateThankYouPage(thePage) { // VALIDATE that queryParams exists
                 return thePage;
             }
         } else if (thePage.queryParams) {
-            _logV2Error("Custom thank you page query params and window opening behavior ignored: no URL specified.");
+            //_logV2Error("Custom thank you page query params and window opening behavior ignored: no URL specified.");
         }
-    } 
+    }
     return defaultPage;
 }
 
@@ -113,7 +113,7 @@ var Paypal = {
             });
         }
     },
-  
+
     submitForm: function(element) {
         if ($(element).hasClass('paypal-button-grey') || $(element).hasClass('disabled')) {
             return false;
@@ -133,7 +133,7 @@ var Paypal = {
                 subType = this._settings.subType();
             }
         }
-        _logV2PaymentButtonClick("PayPal", amount, "", isSub, subType);
+        //_logV2PaymentButtonClick("PayPal", amount, "", isSub, subType);
         if (typeof this._settings.buttonClickCallback === "function") {
             this._settings.buttonClickCallback();
         }
@@ -142,7 +142,7 @@ var Paypal = {
   // Return a jQuery object pointing to a DOM form ready to submit to PayPal.
   _buildForm: function(element) {
         var form = document.createElement('form');
-        form.action = this.AUX.url; 
+        form.action = this.AUX.url;
         form.method = "post";
         form.name = "_xclick";
         form.target = "_blank";
@@ -282,7 +282,7 @@ var StripeAB = {
 
             var buttonType = "Stripe";
 
-            _logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, buttonType, that._recurring(), that._getSubType());
+            //_logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, buttonType, that._recurring(), that._getSubType());
 
             if (buttonType === "Stripe") {
                 var name = 'AdBlock';
@@ -426,7 +426,7 @@ var StripeCC = {
         this._elementChangeListener = settings.elementChangeListener || false;
         this._onErrorCb = settings.onErrorCb || function (msg) { alert("Sorry, but there was a problem:\n\n" + msg + "\n\nPlease try again."); };
         this._paymentFormSelector = typeof settings.paymentFormSelector !== "undefined" ? settings.paymentFormSelector : "";
-        this._getEmailAddress = typeof settings.getEmailAddress === 'function' ? settings.getEmailAddress : function() {return "";}; 
+        this._getEmailAddress = typeof settings.getEmailAddress === 'function' ? settings.getEmailAddress : function() {return "";};
         this._onAjaxComplete = settings.onAjaxComplete || function () {};
         this._getAmountCents = settings.getAmountCents;
         this.onSuccess = settings.onSuccess || function () {};
@@ -545,7 +545,7 @@ var StripeCC = {
             }
             buildStripeMetadata(that.DATA, that._currency(), that._recurring(), that._getSubType(), that._getProduct());
             if (that._customChargeURL !== "UPDATE") {
-                _logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, "Stripe", that._recurring(), that._getSubType());
+                //_logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, "Stripe", that._recurring(), that._getSubType());
             }
             $.ajax({
                 type: "POST",
@@ -622,7 +622,7 @@ const StripeCheckoutSession = {
         checkoutButton.addEventListener('click', function() {
             buildStripeMetadata(that.DATA, that._currency(), that._recurring(), that._getSubType(), that._getProduct());
             that.DATA.amount_cents = that._getAmountCents();
-            _logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, "Stripe", that._recurring(), that._getSubType());
+            //_logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, "Stripe", that._recurring(), that._getSubType());
             that.DATA.success_url = that._onSuccessURL;
             that.DATA.cancel_url = window.location.href; // the url to go back to if user clicks "back". Will be current page url.
             fetch(that.AUX.charge_url, {
@@ -705,12 +705,12 @@ StripeSourceInstance.prototype._wireUpButton = function (buttonEl) {
         // YOU HAVE TO SET THE TYPE CORRECTLY
         var buttonType = that._getSourceType();
         if (buttonType === "none") {
-            _logV2Error("Source not set up correctly");
+            //_logV2Error("Source not set up correctly");
             alert("Source not set up correctly\n\nPlease post a ticket to help.getadblock.com");
         }
         that.DATA.type = buttonType;
 
-        _logV2PaymentButtonClick(buttonType, that.DATA.amount_cents, buttonType, that._recurring(), that._getSubType());
+        //_logV2PaymentButtonClick(buttonType, that.DATA.amount_cents, buttonType, that._recurring(), that._getSubType());
 
         that._onAjaxStart();
         buildStripeMetadata(that.DATA, that._currency(), that._recurring(), that._getSubType());
@@ -804,12 +804,12 @@ var StripeSource = {
             // YOU HAVE TO SET THE TYPE CORRECTLY
             var buttonType = that._getSourceType();
             if (buttonType === "none") {
-                _logV2Error("Source not set up correctly");
+                //_logV2Error("Source not set up correctly");
                 alert("Source not set up correctly\n\nPlease post a ticket to help.getadblock.com");
             }
             that.DATA.type = buttonType;
 
-            _logV2PaymentButtonClick(buttonType, that.DATA.amount_cents, buttonType, that._recurring(), that._getSubType());
+            //_logV2PaymentButtonClick(buttonType, that.DATA.amount_cents, buttonType, that._recurring(), that._getSubType());
 
             that._onAjaxStart();
             buildStripeMetadata(that.DATA, that._currency(), that._recurring(), that._getSubType());
@@ -853,7 +853,7 @@ var StripePaymentRequestAPI = {
     init: function (settings) {
         if (typeof settings.onSetupFailure !== "function") {
             console.error("You cannot initialize Payment Request API without a fallback method for unsupported browsers");
-            _logV2Error("Attempted to initialize Payment Request API without an unsupported browser fallback method.");
+            //_logV2Error("Attempted to initialize Payment Request API without an unsupported browser fallback method.");
             return false;
         }
 
@@ -979,7 +979,7 @@ var StripePaymentRequestAPI = {
             }
             const recurringInterval = capitalizeFirst(that._getSubType());
             var paymentWindowLabel = pmtRecurs === true ? "Adblock " + recurringInterval : "Adblock";
-            _logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, that._buttonType, pmtRecurs, that._getSubType());
+            //_logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, that._buttonType, pmtRecurs, that._getSubType());
             that._paymentRequest.update({
                 currency: that._currency().toLowerCase(),
                 total: {
