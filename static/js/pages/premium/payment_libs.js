@@ -186,7 +186,7 @@ var Paypal = {
         add("cbt", "Return to AdBlock");
         add("item_number", recordTracking());
         add("custom", getPurchaseMetadata('PayPal', this.testmode));
-        //var image_url = "https://getadblock.com/images/updateAssets/core_logo_full_60x190.svg";
+        var image_url = "https://adblockplus.org/img/adblock-plus-paypal.png";
         if (typeof this._settings.customImageUrl === "string" && this._settings.customImageUrl.length > 0) {
             image_url = this._settings.customImageUrl;
         }
