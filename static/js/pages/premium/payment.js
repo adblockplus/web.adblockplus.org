@@ -35,7 +35,7 @@ $(document).ready(function () {
     }
 
     // Scroll on down to the payment block when the user clicks a CTA
-    $(".get-premium, .your-plan:not('.free')").on("click", function (ev) {
+    $(".get-premium, .your-plan:not('.free'), .premium-button").on("click", function (ev) {
         ev.preventDefault();
         const recInt = $(this).data("recurring-interval");
         if (recInt === "monthly" || recInt === "yearly") {
