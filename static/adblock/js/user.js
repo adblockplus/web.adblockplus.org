@@ -175,7 +175,7 @@ function getPlainSource() {
 }
 
 function isProd() {
-    if (document.location.href.indexOf('localhost') == -1 && 
+    if (document.location.href.indexOf('localhost') == -1 &&
         document.location.href.indexOf('dev.getadblock') == -1) {
         return true;
     }
@@ -294,7 +294,7 @@ function recordTracking() {
     const getPremiumReward = JSON.parse(localStorage.getItem("get_premium_reward"));
     if (getPremiumReward === true) {
         // prefix MyAdBlock product tag if it's not core.
-        return "ME X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;   
+        return "ME X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
     }
     return "X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a // return tracking string
 };
@@ -302,7 +302,7 @@ function recordTracking() {
 function getGAID() {
     if (typeof ga !== 'undefined' && typeof ga.getByName === 'function') {
         var tracker = ga.getByName('gatracker');
-        if (tracker !== null) {
+        if (tracker != null) {
             return tracker.get('clientId');
         }
         return '';
