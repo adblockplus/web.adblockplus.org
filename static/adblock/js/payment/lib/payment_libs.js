@@ -94,11 +94,11 @@ var Paypal = {
         this._settings = settings;
         this.testmode = settings.testmode || false;
         var AUX_LIVE = {
-            email: "adblockforchrome@gmail.com",
+            email: "till@adblockplus.org",
             url: "https://www.paypal.com/cgi-bin/webscr"
         };
         var AUX_TEST = {
-            email: "adblock-sandbox@getadblock.com",
+            email: "till@adblockplus.org",
             url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
         };
         this.AUX = (this.testmode ? AUX_TEST : AUX_LIVE);
@@ -186,7 +186,7 @@ var Paypal = {
         add("cbt", "Return to AdBlock");
         add("item_number", recordTracking());
         add("custom", getPurchaseMetadata('PayPal', this.testmode));
-        var image_url = "https://getadblock.com/images/updateAssets/core_logo_full_60x190.svg";
+        var image_url = "https://adblockplus.org/img/adblock-plus-logo-paypal.png";
         if (typeof this._settings.customImageUrl === "string" && this._settings.customImageUrl.length > 0) {
             image_url = this._settings.customImageUrl;
         }
@@ -238,12 +238,12 @@ var StripeAB = {
             testmode: settings.testmode || false,
         };
         var AUX_LIVE = {
-            key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-            charge_url: "https://getadblock.appspot.com/stripe/charges",
+            key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+            charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges",
         };
         var AUX_TEST = {
-            key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu", //adblock's test key
-            charge_url: "https://getadblock.appspot.com/stripe/charges", //adblock's charge url
+            key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", //adblock's test key
+            charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges", //adblock's charge url
         };
 
         this.AUX = (settings.testmode ? AUX_TEST : AUX_LIVE);
@@ -394,22 +394,22 @@ var StripeCC = {
         };
         const AUX_KEYS = {
             LIVE: {
-                key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-                charge_url: "https://getadblock.appspot.com/stripe/charges",
+                key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+                charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges",
             },
             TEST: {
-                key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu", //adblock's test key
-                charge_url: "https://getadblock.appspot.com/stripe/charges", //adblock's charge url
+                key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", //adblock's test key
+                charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges", //adblock's charge url
             }
         };
         const UPDATE_KEYS = {
             LIVE: {
-                key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-                charge_url: "https://getadblock.appspot.com/stripe/cards",
+                key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+                charge_url: "https://abp-payments.ey.r.appspot.com/stripe/cards",
             },
             TEST: {
-                key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu", //adblock's test key
-                charge_url: "https://getadblock.appspot.com/stripe/cards",
+                key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", //adblock's test key
+                charge_url: "https://abp-payments.ey.r.appspot.com/stripe/cards",
             }
         }
         this._settings = settings;
@@ -585,12 +585,12 @@ const StripeCheckoutSession = {
         };
         const AUX_KEYS = {
             LIVE: {
-                key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-                charge_url: "https://getadblock.appspot.com/stripe/create-checkout-session",
+                key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+                charge_url: "https://abp-payments.ey.r.appspot.com/stripe/create-checkout-session",
             },
             TEST: {
-                key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu",
-                charge_url: "https://getadblock.appspot.com/stripe/create-checkout-session",
+                key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
+                charge_url: "https://abp-payments.ey.r.appspot.com/stripe/create-checkout-session",
             }
         };
         this._settings = settings;
@@ -662,12 +662,12 @@ var StripeSourceInstance = function(settings) {
         testmode: settings.testmode || false,
     };
     var AUX_LIVE = {
-        key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-        source_url: "https://getadblock.appspot.com/stripe/sources",
+        key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+        source_url: "https://abp-payments.ey.r.appspot.com/stripe/sources",
     };
     var AUX_TEST = {
-        key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu", //adblock's test key
-        source_url: "https://getadblock.appspot.com/stripe/sources", //adblock's charge url
+        key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", //adblock's test key
+        source_url: "https://abp-payments.ey.r.appspot.com/stripe/sources", //adblock's charge url
     };
 
     this.AUX = (settings.testmode ? AUX_TEST : AUX_LIVE);
@@ -763,12 +763,12 @@ var StripeSource = {
             testmode: settings.testmode || false,
         };
         var AUX_LIVE = {
-            key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-            source_url: "https://getadblock.appspot.com/stripe/sources",
+            key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+            source_url: "https://abp-payments.ey.r.appspot.com/stripe/sources",
         };
         var AUX_TEST = {
-            key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu", //adblock's test key
-            source_url: "https://getadblock.appspot.com/stripe/sources", //adblock's charge url
+            key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", //adblock's test key
+            source_url: "https://abp-payments.ey.r.appspot.com/stripe/sources", //adblock's charge url
         };
 
         this.AUX = (settings.testmode ? AUX_TEST : AUX_LIVE);
@@ -862,12 +862,12 @@ var StripePaymentRequestAPI = {
         };
 
         var AUX_LIVE = {
-            key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-            charge_url: "https://getadblock.appspot.com/stripe/charges",
+            key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+            charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges",
         };
         var AUX_TEST = {
-            key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu", // AdBlock's test key
-            charge_url: "https://getadblock.appspot.com/stripe/charges", // AdBlock's test charge url
+            key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", // AdBlock's test key
+            charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges", // AdBlock's test charge url
         };
 
         this.AUX = (settings.testmode ? AUX_TEST : AUX_LIVE);
