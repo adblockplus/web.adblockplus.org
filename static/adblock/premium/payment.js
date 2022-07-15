@@ -158,7 +158,7 @@ $(document).ready(function () {
     var currentProcessor = "stripe";
 
     // translate the page
-    chrome.i18n._initialize("en", "/i18n/_locales/", function() {
+    chrome.i18n._initialize("en", "/adblock/i18n/_locales/", function() {
         if (typeof localizePage === "function") {
             initializePaymentBox(localizePage);
         }

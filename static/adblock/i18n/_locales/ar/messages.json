@@ -1,0 +1,3792 @@
+{
+  "adblock_contributors": {
+    "message": "مساهمو AdBlock",
+    "description": "Title of the Contributors page, which contains everyone who contributed to AdBlock"
+  },
+  "translators": {
+    "message": "المترجمون",
+    "description": "Link in the header"
+  },
+  "past_contributors": {
+    "message": "مساهمين في الماضي",
+    "description": "List of people who contributed in the past, but don't contribute anymore"
+  },
+  "privacy_policy": {
+    "message": "سياسة الخصوصية",
+    "description": "Button in the footer"
+  },
+  "privacy_policy_nav_btn": {
+    "message": "سياسة الخصوصية",
+    "description": "Button in the navbar"
+  },
+  "help_btn_text": {
+    "message": "المساعدة",
+    "description": "Button that redirects to our support site"
+  },
+  "contributors_btn_text": {
+    "message": "المُساهمون",
+    "description": "Button that redirects to /contributors"
+  },
+  "license_gplv3_camelcase": {
+    "message": "رخصة (GPLv3)",
+    "description": "Button in the footer. Do not translate 'GPLv3'."
+  },
+  "copyright_text": {
+    "message": "© حقوق الطبع والنشر 2009 - $replace$، جميع الحقوق محفوظة",
+    "description": "Copyright text where $replace$ is a year"
+  },
+  "popup_and_ads_title": {
+    "message": "تجوّل في الوِب دون منبثقات وإعلانات مزعجة!",
+    "description": "Page title"
+  },
+  "browser_title": {
+    "message": "حاجِب الإعلانات ل‍ $browser$ - نزّل وثبّت AdBlock for $browser$ الآن!",
+    "description": "Page title. 'Ad Blocker' is a generic term for an extension that blocks ads, not to be confused with the 'AdBlock' name. The 'browser' placeholder will be replaced with a browser name, such as Chrome or Safari.",
+    "placeholders": {
+      "browser": {
+        "content": "$1",
+        "example": "Chrome"
+      }
+    }
+  },
+  "generic_title_text": {
+    "message": "حاجِب الإعلانات لـ $replace$ - نزّل وثبّت AdBlock for $replace$ الآن!",
+    "description": "Page Title. 'Ad Blocker' is a generic term for an extension that blocks ads, not to be confused with the 'AdBlock' name. $replace$ will be filled in with the platform name such as Chrome or Safari."
+  },
+  "browser_install_text": {
+    "message": "ثبّته ل‍ $browser$",
+    "description": "Download button. The 'browser' placeholder will be replaced with a browser name, such as Chrome or Safari.",
+    "placeholders": {
+      "browser": {
+        "content": "$1",
+        "example": "Chrome"
+      }
+    }
+  },
+  "chrome_title": {
+    "message": "حاجِب الإعلانات ل‍ Chrome - نزّل وثبّت AdBlock for Chrome الآن!",
+    "description": "Page title for Chrome browser. 'Ad Blocker' is a generic term for an extension that blocks ads, not to be confused with the 'AdBlock' name."
+  },
+  "safari_title": {
+    "message": "حاجِب الإعلانات ل‍ Safari - نزّل وثبّت AdBlock for Safari الآن!",
+    "description": "Page title for Safari browser. 'Ad Blocker' is a generic term for an extension that blocks ads, not to be confused with the 'AdBlock' name."
+  },
+  "safari_install_text": {
+    "message": "ثبّته ل‍ Safari",
+    "description": "Download button for Safari browser"
+  },
+  "edge_title": {
+    "message": "حاجِب الإعلانات ل‍ Edge- نزّل وثبّت AdBlock for Edge الآن!",
+    "description": "Page title for Edge browser. 'Ad Blocker' is a generic term for an extension that blocks ads, not to be confused with the 'AdBlock' name."
+  },
+  "edge_install_text": {
+    "message": "ثبّته ل‍ Edge",
+    "description": "Download button for Edge browser"
+  },
+  "firefox_title": {
+    "message": "حاجِب الإعلانات ل‍فَيَرفُكس - نزّل وثبّت AdBlock ل‍ فَيَرفُكس الآن!",
+    "description": "Page title for Firefox browser. 'Ad Blocker' is a generic term for an extension that blocks ads, not to be confused with the 'AdBlock' name."
+  },
+  "firefox_install_text": {
+    "message": "تثبيت ل Firefox",
+    "description": "Download button for Firefox browser"
+  },
+  "get_adblock_now": {
+    "message": "أحصل على AdBlock الآن",
+    "description": "Button to download AdBlock"
+  },
+  "about_us": {
+    "message": "حول AdBlock",
+    "description": "'About AdBlock' used in various places"
+  },
+  "about_us_p1_1": {
+    "message": "أنشأنا AdBlock لتوفير تجربة خالية من القلق و التشتت في تصفح الأنترنيت للجميع.",
+    "description": "About us paragraph 1"
+  },
+  "about_us_p1_2": {
+    "message": "يستخدمها عشرات الملايين من المستخدمين في جميع أنحاء العالم على جميع المتصفحات الرئيسية بأكثر من 30 لغة.",
+    "description": "About us paragraph 1"
+  },
+  "about_us_p1_3": {
+    "message": "تم تصميمها من قبل Michael Gundlach في 2009، و يعتبر AdBlock واحدا من أكثر الأدوات المشهورة التي تُستعمل في المتصفحات. ",
+    "description": "About us paragraph 1"
+  },
+  "about_us_p2_1": {
+    "message": "البرمجية التي هي مفتوحة المصدر، قمنا بتصميمها على أساس إعطاء المستخدمين التحكم في ما يرونه في متصفح الأنترنيت الخاص بهم.",
+    "description": "About us paragraph 2"
+  },
+  "about_us_p2_2": {
+    "message": "كما أن الأداة تعطي المستخدمين القدرة على التحكم في خصوصياتهم عن طريق منع العديد من الأدوات التي يستخدمها المعلنون وشركات التكنولوجيا لتعقب الناس عندما يتصفحون الأنترنيت.",
+    "description": "About us paragraph 2"
+  },
+  "about_us_p3_1": {
+    "message": "نحن نؤمن بأنه يجب على الناشرين تمويل و دعم المحتوى الذي يقدمونه عن طريق الإعلانات.",
+    "description": "About us paragraph 3"
+  },
+  "about_us_p3_2": {
+    "message": "بعض المحتويات المفضلة لدينا نسمح بظهور الإعلانات فيها، و العديد من مستخدمينا أيضا يسمحون بظهور الإعلانات في المحتويات الذي يفضلونها، و ذلك بإستخدام ميزة متاحة في AdBlock.",
+    "description": "About us paragraph 3"
+  },
+  "about_us_p3_3": {
+    "message": "نحن نوجه تركيزنا على منع الإعلانات المزعجة و المتطفلة.",
+    "description": "About us paragraph 3"
+  },
+  "about_us_p3_4": {
+    "message": "منذ عام 2015، شاركنا في $opentag$ برنامج الإعلانات المقبولة$closetag$، حيث يؤكد الناشرون على أن إعلاناتهم $opentag2$ تستوفي معايير معينة$closetag2$.",
+    "description": "About us paragraph 3",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://acceptableads.com\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      },
+      "opentag2": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://acceptableads.com/standard\">"
+      },
+      "closetag2": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "about_us_p3_5": {
+    "message": "الإعلانات التي تعتبر غير متطفلة تظهر بشكل افتراضي لمستخدمي AdBlock.",
+    "description": "About us paragraph 3"
+  },
+  "about_us_p3_6": {
+    "message": "إذا كنت تود معرفة المزيد عن كيفية عمل الإعلانات المقبولة، و أين تذهب الأموال المحصّلة عن طريق البرنامج، و أكثر من ذلك، رجاءا قم زيارة قسم الأسئلة الشائعة حول $opentag$ الإعلانات المقبولة$closetag$",
+    "description": "About us paragraph 3",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://getadblock.com/acceptable-ads-faq/\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "about_us_p4_1": {
+    "message": "نحن فريق متنوع نعمل عن بعد مع موظفين منتشرين في أمريكا الشمالية و أنحاء العالم، ",
+    "description": "About us paragraph 4"
+  },
+  "about_us_p4_2": {
+    "message": "فريقنا المكوّن من مُصمّمين، ومبرمجين، وكُتّاب والمدِيرين مهووسون بجعل الأنترنت مكانًا أفضل.",
+    "description": "About us paragraph 4"
+  },
+  "about_us_p4_3": {
+    "message": "و نؤمن أن لكل شخص الحق في تصفح شبكة الأنترنيت دون أن يتعرض للإزعاج من طرف النوافذ المنبثقة أو إعلانات الفيديو أو أن يقوم المعلنون بتتبّعه في كل مكان يذهب إليه.",
+    "description": "About us paragraph 4"
+  },
+  "blog_nav_btn": {
+    "message": "المدونة",
+    "description": "Button in the navbar"
+  },
+  "support_nav_btn": {
+    "message": "الدعم",
+    "description": "Button in the navbar"
+  },
+  "platforms_nav_btn": {
+    "message": "المِنصات",
+    "description": "Navbar button text that when clicked shows which platforms AdBlock is available on"
+  },
+  "get_adblock_nav_btn": {
+    "message": "أحصل على AdBlock",
+    "description": "Download AdBlock button in the navbar"
+  },
+  "landing_subheader": {
+    "message": "استخدم AdBlock من أجل إيقاف الإعلانات المزعجة، وتحسين سرعة المتصفح، وحماية نفسك عبر الأنترنيت.",
+    "description": "Homepage subheader"
+  },
+  "browser_specific_subheader": {
+    "message": "منع الإعلانات المزعجة، بما في ذلك النوافذ المنبثقة، و إعلانات الفيديو التلقائية، كذلك الإعلانات على الفيسبوك، واليوتيوب، وعلى شبكة الأنترنيت.",
+    "description": "Subheader on browser specific pages"
+  },
+  "browser_specific_subheader2": {
+    "message": "منع الإعلانات المزعجة، بما في ذلك النوافذ المنبثقة، وإعلانات الفيديو التلقائية، كذلك الإعلانات الصوتية على فيسبوك، وYouTube، وTwitch، و في كل أرجاء الويب.",
+    "description": "Subheader on browser specific pages"
+  },
+  "browser_specific_download": {
+    "message": "أحصل على AdBlock الخاص بمتصفح $replace$",
+    "description": "Download AdBlock for a browser. $replace$ is a browser, like Chrome, please arrange it accordingly in the string"
+  },
+  "mobile_download_text": {
+    "message": "أحصل على AdBlock الخاص بالهواتف",
+    "description": "Download AdBlock for a mobile browser text."
+  },
+  "generic_adblock_for": {
+    "message": "AdBlock الخاص بمتصفح $replace$",
+    "description": "Specifies a platform that AdBlock is on. $replace$ is a browser, like Chrome, please arrange it accordingly in the string"
+  },
+  "block_ads_browser_feature_header": {
+    "message": "حجب الإعلانات",
+    "description": "Browser specific page feature card header"
+  },
+  "block_ads_browser_feature_subheader": {
+    "message": "إمنع الإعلانات في الفيسبوك، يوتيوب، و جميع أرجاء الأنترنيت.",
+    "description": "Browser specific page feature card subheader"
+  },
+  "block_ads2_browser_feature_subheader": {
+    "message": "قل وداعا للإعلانات في الفيسبوك، يوتيوب، و جميع أرجاء الأنترنيت.",
+    "description": "Browser specific page feature card subheader"
+  },
+  "privacy_browser_feature_header": {
+    "message": "تحسين الخصوصية",
+    "description": "Browser specific page feature card header"
+  },
+  "privacy_browser_feature_subheader": {
+    "message": "إمنع المتعقبين و المعلنين من تتبعك على الأنترنيت.",
+    "description": "Browser specific page feature card subheader"
+  },
+  "support_browser_feature_header": {
+    "message": "دعم المبدعين و منشئي المحتوى",
+    "description": "Browser specific page feature card header"
+  },
+  "support_browser_feature_subheader": {
+    "message": "السماح بالإعلانات على مواقعك المفضلة أو قنوات يوتيوب بنقرة واحدة.",
+    "description": "Browser specific page feature card subheader"
+  },
+  "darkmode_browser_feature_header": {
+    "message": "الوضع المظلم",
+    "description": "Browser specific page feature card header"
+  },
+  "darkmode_browser_feature_subheader": {
+    "message": "قم بتشغيل الوضع المظلم للاستمتاع بـ AdBlock في الظلام.",
+    "description": "Browser specific page feature card subheader"
+  },
+  "battery_browser_feature_header": {
+    "message": "زيادة عمر البطارية",
+    "description": "Browser specific page feature card header"
+  },
+  "battery_browser_feature_subheader": {
+    "message": "تحسين الأداء عن طريق تقليل استخدام بيانات التتبع الإعلانات و المتعقبين.",
+    "description": "Browser specific page feature card subheader"
+  },
+  "pageload_browser_feature_header": {
+    "message": "تحميل الصفحة بشكل أسرع",
+    "description": "Browser specific page feature card header"
+  },
+  "pageload_browser_feature_subheader": {
+    "message": "إزالة الإعلانات يساعد على زيادة مرات تحميل الصفحات بشكل كبير.",
+    "description": "Browser specific page feature card subheader"
+  },
+  "safari_platform_header": {
+    "message": "مانع إعلانات عصري لمتصفح سفاري",
+    "description": "Showcase text for Safari"
+  },
+  "safari_platform_subheader_1": {
+    "message": "صمّمنا AdBlock for Safari و جعلناه $opentag$مانع إعلانات قوي لأجهزة الـ Mac$closetag$",
+    "description": "Showcase subheader for Safari",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a id=\"safaridownloadlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "speed_browsing_fun": {
+    "message": "يمنع الإعلانات على الفور في الملايين من المواقع و سيسرع وقت تحميل الصفحات و يجعل تصفح الويب أمرا مُسلياً مجدداً.",
+    "description": "Showcase subheader for platform-specific pages"
+  },
+  "ios_platform_header": {
+    "message": "مانع إعلانات عصري لهاتفك ال‍ iPhone.",
+    "description": "Showcase text for iOS"
+  },
+  "ios_platform_subheader_1": {
+    "message": "صمّمنا AdBlock ل‍ iOS لجعله $opentag$ سهلًا في منع الإعلانات في جهازك ال‍ iPhone $closetag$ و كذلك بعض الأجهزة التي تعمل بنظام ال‍ iOS.",
+    "description": "Showcase subheader for iOS",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a id=\"iosdownloadlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "android_platform_header": {
+    "message": "أفضل مانع إعلانات لهاتفك ال‍ Android",
+    "description": "Showcase text for Android"
+  },
+  "android_platform_subheader": {
+    "message": "AdBlock لِـ Samsung Internet يُفلتر الإعلانات المُتطفّلة والمتعقّبة، باستخدام نفس قائمة الفلاتر التي نستخدمها لمنع الإعلانات في $opentag1$Chrome$closetag1$، و$opentag2$Safari$closetag2$، وباقي المتصفحات الأخرى.",
+    "description": "Showcase subheader for Android",
+    "placeholders": {
+      "opentag1": {
+        "content": "<span><a href=\"https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom\" class=\"mainContentLink\" >"
+      },
+      "opentag2": {
+        "content": "<span><a href=\"https://itunes.apple.com/us/app/adblock-for-safari/id1402042596?ls=1&mt=12\" class=\"mainContentLink\" >"
+      },
+      "closetag1": {
+        "content": "</a></span>"
+      },
+      "closetag2": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "speed_feature_header": {
+    "message": "زيادة سرعة التصفح",
+    "description": "Header for speed info card"
+  },
+  "speed_info_p1": {
+    "message": "قم بتحسين تحميل الصفحة وحفظ الذاكرة أثناء تجربة الأنترنيت بشكل أسرع.",
+    "description": "Speed feature info paragraph"
+  },
+  "speed_info_p2": {
+    "message": "تحسين سرعة تحميل الصفحات والاستمتاع بإنترنت أسرع.",
+    "description": "Speed feature info paragraph"
+  },
+  "speed_info_p3": {
+    "message": "AdBlock يمنع الإعلانات من التحميل و يعطي المتصفح الخاص بك زيادة في السرعة.",
+    "description": "Speed feature info paragraph"
+  },
+  "privacy_feature_header": {
+    "message": "حماية خصوصيتك",
+    "description": "Header for privacy info card"
+  },
+  "privacy_info_p1": {
+    "message": "لا تدع المُعلنين يتعقبونك عبر الإنترنت.",
+    "description": "Privacy feature info paragraph"
+  },
+  "privacy_info_p3": {
+    "message": "AdBlock يمنع متعقبي الطرف الثالث و يساعدك في ألا تكون مستهدفاً بالإعلانات.",
+    "description": "Privacy feature info paragraph"
+  },
+  "distraction_feature_header": {
+    "message": "الإبتعاد عن التشويش",
+    "description": "Header for distractions info card"
+  },
+  "distractions_info_p1": {
+    "message": "إزالة النوافذ المنبثقة و الشعارات و إعلانات الفيديو حتى تتمكن من مشاهدة ما هو مهم حقًا.",
+    "description": "Privacy feature info paragraph"
+  },
+  "distractions_info_p3": {
+    "message": "AdBlock يمنع الإعلانات المزعجة على اليوتيوب، الفيسبوك و التويتش، و كذلك مواقعك المفضلة.",
+    "description": "Privacy feature info paragraph"
+  },
+  "support_feature_header": {
+    "message": "دعم المواقع",
+    "description": "Header for safety info card"
+  },
+  "support_info_p1": {
+    "message": "دعم نظام بيئي صحي للمواقع و منشئي المحتوى عم طريق السماح بالإعلانات المقبولة.",
+    "description": "Support feature info paragraph"
+  },
+  "support_info_p2": {
+    "message": "AdBlock يمنع الإعلانات المزعجة و المتطفلة، و لكنه يسمع بالإعلانات المحترمة بالظهور بشكل افتراضي.",
+    "description": "Support feature info paragraph"
+  },
+  "support_info_p3": {
+    "message": "بإمكانك تغيير هذا الإعداد في أي وقت.",
+    "description": "Support feature info paragraph"
+  },
+  "support_info_p4": {
+    "message": "اطلع على المزيد.",
+    "description": "Support feature link to AA FAQ"
+  },
+  "as_seen_in": {
+    "message": "كما ظهر في",
+    "description": "Referring to news sites that have featured AdBlock"
+  },
+  "info_card_learn_more": {
+    "message": "معرفة المزيد",
+    "description": "Learn more highlight text for info cards"
+  },
+  "users_span": {
+    "message": "المستخدمون",
+    "description": "Users text in map, please keep lowercase"
+  },
+  "translators_span": {
+    "message": "المترجمون",
+    "description": "Translators text in map, please keep lowercase"
+  },
+  "languages_span": {
+    "message": "اللغات",
+    "description": "Languages text in map, please keep lowercase"
+  },
+  "full_time_employees_span": {
+    "message": "الموظفون بدوام كامل",
+    "description": "Full time employees text in map, please keep lowercase"
+  },
+  "pwyw_amount_title": {
+    "message": "ضع سعرًا عادلًا (بالدولار الأمريكي):",
+    "description": "Phrase before user selects a price"
+  },
+  "pwyw_method_title": {
+    "message": "ادفع باستخدام الأسلوب الذي ترغب به:",
+    "description": "Text above pay buttons"
+  },
+  "pwyw_method_cc": {
+    "message": "الدفع بواسطة بطاقة الائتمان",
+    "description": "Payment option"
+  },
+  "pwyw_method_paypal": {
+    "message": "الدفع بواسطة باي بال",
+    "description": "Payment option"
+  },
+  "pwyw_method_thanks": {
+    "message": "الدفع أرسل! شكرا!",
+    "description": "Payment confirmation"
+  },
+  "pwyw_method_thanks_2": {
+    "message": "شكرًا لك! سنسحب المبلغ من بطاقتك قريبًا.",
+    "description": "Payment confirmation"
+  },
+  "faq_title": {
+    "message": "الأسئلة الشائعة",
+    "description": "FAQ title"
+  },
+  "home_footer_btn": {
+    "message": "الصفحة الرئيسية",
+    "description": "Button in the footer"
+  },
+  "blog": {
+    "message": "المدونة",
+    "description": "Button in the footer"
+  },
+  "license_gplv3": {
+    "message": "ترخيص (GPLv3)",
+    "description": "Button in the footer. Do not translate 'GPLv3', and have the word 'LICENSE' in uppercase."
+  },
+  "meta_description": {
+    "message": "AdBlock هو أحد أكثر مانعات الإعلانات شهرة حول العالم، ويستخدمه أكثر من ٦٠ مليون مستخدمًا على Chrome، وSafari، وفَيَرفُكس، وEdige، وOpera وiOS وAndroid كذلك. استخدم AdBlock لحجب كل الإعلانات والمنبثقات. يمكنه AdBlock أيضًا حماية خصوصيتك بحجب المتعقبّات. تمنع الإضافة الإعلانات على فيسبوك، وYouTube ومواقع الويب الأخرى. نزّله الآن مجانًا!",
+    "description": "Website meta description"
+  },
+  "uninstall_title": {
+    "message": "تم إلغاء تثبيت AdBlock",
+    "description": "Title of getadblock.com/uninstall. This page is displayed when a user uninstalls AdBlock."
+  },
+  "uninstall_sorry": {
+    "message": "آسف لرؤيتك تذهب!",
+    "description": "Heading on getadblock.com/uninstall"
+  },
+  "uninstall_why": {
+    "message": "هل تمانع إعطائنا ثانية من وقتك وإخبارنا لماذا قمت بالتخلي عن AdBlock",
+    "description": "Question about the reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_error": {
+    "message": "الرجاء حدد سبب إلغاء التثبيت",
+    "description": "Error that prompts the user to select a reason for uninstalling"
+  },
+  "uninstall_other_empty_error": {
+    "message": "رجاء أدخل سببا لإزالة AdBlock",
+    "description": "Error that prompts the user to enter a reason in the Other field for uninstalling"
+  },
+  "uninstall_reason_aa": {
+    "message": "أنا لا أحب البرنامج \"إعلانات مقبولة\"",
+    "description": "Reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_reason_wasworking": {
+    "message": "AdBlock كان يعمل ولكن لقد بدأت رؤية الإعلانات مرة أخرى",
+    "description": "Reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_reason_breaks": {
+    "message": "AdBlock يدمر المواقع التي قمت بزيارتها",
+    "description": "Reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_reason_differentab": {
+    "message": "أنا أستخدام برنامج حظر إعلانات المختلفة",
+    "description": "Reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_reason_idu": {
+    "message": "لم أقم بإلغاء تثبيت AdBlock",
+    "description": "Reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_button_reinstall": {
+    "message": "إعادة تثبيت AdBlock",
+    "description": "Button user would press to re-install AdBlock on getadblock.com/uninstall"
+  },
+  "uninstall_reason_dwp": {
+    "message": "لا أرغب في دفع ثمن AdBlock",
+    "description": "Reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_adblock_is_free": {
+    "message": "لا يجب عليك أن تدفع! التبرعات تطوعية. <br/> مجرد إغلاق علامة التبويب التبرع عندما يظهر واستخدام AdBlock مجاناً.",
+    "description": "Displayed on getadblock.com/uninstall after a user chooses \"I don't want to pay for AdBlock\" to clarify that paying is optional."
+  },
+  "uninstall_button_reinstall_free": {
+    "message": "إعادة تثبيت AdBlock مجاناً",
+    "description": "Button user would press to re-install AdBlock on getadblock.com/uninstall, \"for free\" emphasizes on the fact that they don't have to pay."
+  },
+  "uninstall_reason_other": {
+    "message": "الأخرى",
+    "description": "Reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_enter_reason": {
+    "message": "آدخل سبب الغاء التثبيت هنا",
+    "description": "Placeholder for the textbox to enter a reason for uninstalling, if the 'Other' option has been chosen on getadblock.com/uninstall"
+  },
+  "uninstall_give_url": {
+    "message": "يمكن أن تعطينا عنوان URL حيث حدث الخطأ؟  ونحن سوف ننظر فيه  <br/> إذا كنت لا تريد أن تقول لنا عنوان URL، لا مشكلة، فقط انقر علي إرسال.",
+    "description": "Text asking user to provide the URL where an error occurred, on getadblock.com/uninstall"
+  },
+  "uninstall_submit": {
+    "message": "تأكيد",
+    "description": "Button to send the reason for uninstalling AdBlock, on getadblock.com/uninstall"
+  },
+  "uninstall_close": {
+    "message": "شكرا!  يمكنك إغلاق علامة التبويب هذه في أي وقت.",
+    "description": "Letting the user know they can close the page, on getadblock.com/uninstall"
+  },
+  "thank_you_so_much": {
+    "message": "شكرا جزيلا لك!",
+    "description": "Message on thank you page."
+  },
+  "ask_email_address": {
+    "message": "إذا لم تقم بالدفع عن طريق بطاقة الائتمان أو PayPal، فرجاءاً أدخل عنوان بريدك الإلكتروني حتى نتمكن من إرسال إيصال إليك.",
+    "description": "Message on thank you page."
+  },
+  "thanks": {
+    "message": "شكرا لك!",
+    "description": "Message on thank you page."
+  },
+  "enter_email_address": {
+    "message": "أدخل بريد الالكتروني هنا",
+    "description": "Message on thank you page. Placeholder text in email text field."
+  },
+  "submit": {
+    "message": "تأكيد",
+    "description": "Text on button on thank you page to submit the user's email address."
+  },
+  "love": {
+    "message": "مع خالص تحياتنا،",
+    "description": "Sign-off on thank you and installed pages. Used as a familiar alternative to \"sincerely\"."
+  },
+  "the_adblock_team": {
+    "message": "فريق AdBlock",
+    "description": "The signature on the thank you and installed pages."
+  },
+  "valid_email": {
+    "message": "الرجاء إدخال بريد إلكتروني صحيح.",
+    "description": "Error message for invalid email address."
+  },
+  "oops": {
+    "message": "المعذرة!",
+    "description": "Part of error message. Exclamation indicating a mistake or error has occurred."
+  },
+  "something_went_wrong": {
+    "message": "لقد حدث خطاء ما.",
+    "description": "Error message."
+  },
+  "support_team_help": {
+    "message": "$opentag$ فريق الدعم الخاص بنا $closetag$ سيكون سعيدا بمساعدتك!",
+    "description": "Link to a new ticket on our support site.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"supportticketlink\" href=\"https://help.getadblock.com/helpdesk/tickets/new\" target=\"_blank\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "success": {
+    "message": "تم بنجاح",
+    "description": "Exclamation indicating success."
+  },
+  "email_shortly": {
+    "message": "ستتلقى رسالة شكر منّا قريبا عبر بريدك الإلكتروني.",
+    "description": "Success message."
+  },
+  "if_doesnt_arrive": {
+    "message": "إذا لم تتلقى الرسالة، فالمرجو التواصل معنا في قسم $opentag$ دعم الموقع $closetag$.",
+    "description": "Link to our support site",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"supportlink\" href=\"https://help.getadblock.com/helpdesk/tickets/new\" target=\"_blank\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "new_mac_app": {
+    "message": "تطبيق AdBlock الجديد الخاص بالماك",
+    "description": "Title for Safari /update page about Mac app migration"
+  },
+  "get_ready": {
+    "message": "كُن مستعدًا لـAdBlock الجديد بشكلٍ كامل!",
+    "description": "Header for Safari /update page about Mac app migration"
+  },
+  "adblock_safari_moving": {
+    "message": "AdBlock for Safari ينتقل للـ Mac في الـApp Store.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "phasing_out_extensions": {
+    "message": "مع إصدار Safari الثاني عشر في شهر سبتمبر، بدأت Apple $opentag$الإلغاء التدريجي لإضافات المتصفح$closetag$ ومعرض إضافات Safari.",
+    "description": "Link to article about Apple phasing out browser extensions.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"articlelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "extensions_native_apps": {
+    "message": "بدلًا من ذلك، سيتم توزيع الإضافات من خلال تطبيقات ال‍ Mac الأصلية.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "available_mac_app_store": {
+    "message": "تطبيق AdBlock for Safari الجديد كليًا مُتاح الآن في $opentag$Mac App Store$closetag$!",
+    "description": "Link to our app in the App Store",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"appstorelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "install_today": {
+    "message": "قم بتثبيته اليوم، و أخبرنا برأيك على help@getadblock.com.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "more_information": {
+    "message": "للمزيد من المعلومات، المرجو الإطلاع على هذه المقالة في قاعدة المعرفة لدينا:",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "kb_upgrade_safaari_12": {
+    "message": "هل صحيح سيتوقف AdBlock عن العمل عندما أقوم بالترقية إلى سفاري النسخة 12؟",
+    "description": "Link to article about Safari changes"
+  },
+  "faq_extension_going_away": {
+    "message": "هل إضافة AdBlock سترحل؟",
+    "description": "Header for second FAQ on Safari /update page about Mac app migration"
+  },
+  "stop_supporting_extension": {
+    "message": "نعم، في وقت ما من عام 2019 سنتوقف عن دعم الإضافة القديمة إلا في حالات محددة.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "recommend_migrate_mac_app": {
+    "message": "ننصحك بشدة إلى الإنتقال لتطبيق الماك الجديد.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "investing_time_effort": {
+    "message": "هنا سنستثمر فيه كل وقتنا وجهودنا في جعل AdBlock for Safari أفضل مانع إعلانات على أجهزة Apple.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "faq_ready_to_upgrade": {
+    "message": "أنا جاهز للترقية الآن! ماذا أفعل؟",
+    "description": "Header for third FAQ on Safari /update page about Mac app migration"
+  },
+  "seamless_ad_blocking": {
+    "message": "جيّد! AdBlock for Safari الجديد يوفر تجربة منع إعلانات سلسة.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "get_started": {
+    "message": "إليك كل ما تحتاجه للبدء:",
+    "description": "Sentence introducing steps to upgrade to Mac app."
+  },
+  "install_from_app_store": {
+    "message": "$opentag$ تثبيت AdBlock for Safari $closetag$ من Mac App Store.",
+    "description": "Link to our app listing on the Mac App Store",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"appstorelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "disable_old_extension": {
+    "message": "<b> قم بتعطيل إضافة AdBlock القديمة </b> لتجنب الخلط و التأثير السلبي في الاداء الذي يمكن أن يَنتج عن إستخدام مانع إعلانات متعدد. ",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "uncheck_select_boxes": {
+    "message": "قم بإلغاء تحديد المربع 1. حدد المربعات 2 و 3.",
+    "description": "Instructions to go along with image of Safari extensions page with the numerals 1, 2, and 3 corresponding to extension boxes to check or uncheck."
+  },
+  "thats_it": {
+    "message": "هذا كل شيء!",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "dont_hesitate_to_ask": {
+    "message": "إذا كانت لديك أي أسئلة، يرجى عدم التردد في السؤال.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "were_an_email_away": {
+    "message": "نحن دائما متواجدون لردّ على البريد الإلكتروني عبر help@getadblock.com.",
+    "description": "Message on Safari /update page about Mac app migration"
+  },
+  "title_text_block": {
+    "message": "Block",
+    "description": "Segment of the scrolling title text. Do not translate if the word order won't make sense in your language."
+  },
+  "title_text_ads_browse": {
+    "message": "Ads. Browse",
+    "description": "Segment of the scrolling title text. Do not translate if the word order won't make sense in your language."
+  },
+  "txt_rotate_better": {
+    "message": "Better.",
+    "description": "'Better.' messaging for homepage text rotate. Do not translate if the word order won't make sense in your language."
+  },
+  "txt_rotate_safer": {
+    "message": "Safer.",
+    "description": "'Safer.' messaging for homepage text rotate. Do not translate if the word order won't make sense in your language."
+  },
+  "txt_rotate_faster": {
+    "message": "Faster.",
+    "description": "'Faster.' messaging for homepage text rotate. Do not translate if the word order won't make sense in your language."
+  },
+  "title_text_full_better": {
+    "message": "إمنع الإعلانات، تصفح بشكل أفضل.",
+    "description": "Full scrolling title text better"
+  },
+  "ads_and_popups": {
+    "message": "الإعلانات و النوافذ المنبثقة",
+    "description": "Midlevel feature page navigation item"
+  },
+  "cryptocurrency_mining": {
+    "message": "تعدين العملات المشفرة",
+    "description": "Midlevel feature page navigation item"
+  },
+  "malware": {
+    "message": "برمجيات خبيثة",
+    "description": "Midlevel feature page navigation item"
+  },
+  "youtube": {
+    "message": "يوتيوب",
+    "description": "Midlevel feature page navigation item"
+  },
+  "twitch": {
+    "message": "تويتش",
+    "description": "Midlevel feature page navigation item"
+  },
+  "facebook": {
+    "message": "فيس بوك",
+    "description": "Midlevel feature page navigation item"
+  },
+  "ads_and_popups_page_header": {
+    "message": "مانع الإعلانات العادية و المنبثقة",
+    "description": "Midlevel feature page navigation header"
+  },
+  "cryptocurrency_mining_page_header": {
+    "message": "تعدين العملات المشفرة",
+    "description": "Midlevel feature page navigation header"
+  },
+  "malware_page_header": {
+    "message": "الحماية من البرامج الضارة",
+    "description": "Midlevel feature page navigation header"
+  },
+  "youtube_page_header": {
+    "message": "امنع إعلانات اليوتيوب مع AdBlock",
+    "description": "Midlevel feature page navigation header"
+  },
+  "twitch_page_header": {
+    "message": "امنع إعلانات التويتش مع AdBlock",
+    "description": "Midlevel feature page navigation header"
+  },
+  "facebook_page_header": {
+    "message": "امنع إعلانات الفيسبوك مع AdBlock",
+    "description": "Midlevel feature page navigation header"
+  },
+  "benefits": {
+    "message": "الفوائد",
+    "description": "Midlevel feature page navigation item"
+  },
+  "ad_popup_blocker": {
+    "message": "مانع الإعلانات العادية و المنبثقة",
+    "description": "Midlevel feature page title"
+  },
+  "popups_annoying": {
+    "message": "الصفحات المنبثقة أو الإعلانات المنبثقة هي واحدة من أكثر أشكال الإعلانات إزعاجا على الأنترنيت.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "popups_old": {
+    "message": "هي أيضًا من أقدم الإعلانات: بحسب بعض التقديرات، كانت النوافذ المنبثقة مزعجة للناس $opentag$ لمدة 25 سنة $closetag$!",
+    "description": "Ads and popups midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"infolink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "popup_definition": {
+    "message": "النوافذ المنبثقة هي أي إعلانات تفتح أمام أي محتوى تحاول قراءته (ومن هنا جاء إسم \"منبثقة\").",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "poups_aggressive": {
+    "message": "النوافذ المنبثقة هي واحدة من أكثر أشكال الإعلانات إزعاجا و عدوانية، ومع AdBlock يمكنك منع النوافذ المنبثقة بشكل دائم.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "popup_variants": {
+    "message": "كما تطورت لتشمل متغيرات مزعجة بنفس القدر من النوافذ المنبثقة التي تشمل النوافذ التّحثية والنوافذ المنبثقة التي تشمل الفيديو أو الصوت.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "blocking_popups": {
+    "message": "منع الإعلانات المنبثقة، و التّحثية و المتعقبة",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "poups_more_aggressive": {
+    "message": "على مر السنين، أصبحت الإعلانات المنبثقة $opentag$أكثر عدوانية$closetag$ من أجل تجاوز مانعي الإعلانات مثل AdBlock.",
+    "description": "Ads and popups midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"popupkblink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "popunders": {
+    "message": "إذاً الآن ليس هناك فقط النوافذ المنبثقة، هناك أيضًا النوافذ -<em>التّحثية</em>.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "popunder_definition": {
+    "message": "الإعلانات التّحثية، هي الإعلانات التي تختفي خلف نافذة المتصفح الخاص بك، و تكشف عن نفسها فقط عندما تغادر الموقع الذي تزوره.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "third_party_trackers": {
+    "message": "التتبع من طرف ثالث، هو مثال آخر للإعلانات العدوانية، و الإعلانات التي \"تتبعك\" بينما تتصفح الانترنيت.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "ad_companies_tracking": {
+    "message": "شركات الإعلان تعتمد على هذا النوع من الإعلانات لتعقب سلوكك على الأنترنيت في قاعدة البيانات، و التي تستخدم لخدمة الإعلانات المصمّمة خصيصا لنشاطك الأخير.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "ad_tracking_example": {
+    "message": "إذا رأيت زوجا من الأحذية على موقع واحد، ثم رأيت إعلاناً لنفس زوج الأحذية على المواقع التي تزورها لاحقاً، فهذا نتيجة للمتعقبين الذين تعقبوك (و يسمى هذا النوع من صناعة الإعلانات ب\"إعادة التوجيه\").",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "adblock_block_popups": {
+    "message": "مانع الإعلانات الخاص بنا سوف $opentag$ يمنع النوافذ المنبثقة المزعجة $closetag$ فضلا عن النوافذ العدوانية التّحثية و تتبع الطرف الثالث.",
+    "description": "Ads and popups midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"popuplink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "adblock_protects": {
+    "message": "بتحميلك لAdBlock، ستحمي نفسك من أسوأ هذه الإعلانات.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "block_popups_protect_yourself": {
+    "message": "امنع النوافذ المنبثقة و احمي نفسك",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "block_popups_default": {
+    "message": "AdBlock يمنع النوافذ المنبثقة بشكل افتراضي.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "stop_seeing_popups": {
+    "message": "بمجرد تثبيته، ستلاحظ توقف ظهور النوافذ المنبثقة والمزعجة في Chrome، فَيَرفُكس وEdge، بالإضافة إلى Safari، $opentag$ Androidأو iPhone $closetag$.",
+    "description": "Ads and popups midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"mobilelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "popups_adware": {
+    "message": "إذا كنت لا تزال ترى النوافذ المنبثقة، فهذا قد يكون علامة بأن حاسوبك قد أصيب $opentag$ بنوع من البرامج الضارة التي تُسمى \"adware\" أو \"برمجية إعلانية\" $closetag$.",
+    "description": "Ads and popups midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"adwarelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "remove_adware": {
+    "message": "إذا كنت تعتقد أنك قد قمت بتثبيت برمجية إعلانية، فقم بزيارة مركز المساعدة الخاص بنا $opentag$ واتبع الخطوات لإزالة البرامج الخبيثة $closetag$.",
+    "description": "Ads and popups midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"malwarelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "enjoy_browsing": {
+    "message": "استمتع بالتصفح مجدداً",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "not_all_popups": {
+    "message": "ليست كل النوافذ المنبثقة إعلانات.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "useful_popups": {
+    "message": "قد ترغب في رؤية النوافذ المنبثقة التي تستخدمها المواقع لدعوتك للانضمام إلى القائمة البريدية الخاصة بها، لتُطلعك على المبيعات، أو تنبّهك عن توقيت الجلسة.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "control_popups": {
+    "message": "AdBlock يُسهل التحكم في $opentag$ أي النوافذ المنبثقة التي تريد رؤيتها أو منعها $closetag$.",
+    "description": "Ads and popups midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"whitelistlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "dont_put_up_with_popups": {
+    "message": "لست بحاجة لتتحمّل وضع النوافذ المنبثقة بعد الآن!",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "browse_how_you_want_to": {
+    "message": "قم بتثبيت AdBlock وتصفح بالطريقة التي تريدها: بدون تشتيت الانتباه.",
+    "description": "Ads and popups midlevel feature page content"
+  },
+  "cryptomining_definition": {
+    "message": "تعدين العملات المشفرة، أو العملات الرقمية، هي عملية استخدام قوة المعالجة لحاسوبك لحل المعادلات الرياضية المعقدة لكسب النقود الرقمية.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "crypto_definition": {
+    "message": "\"التعدين\" في العملات الرقمية هو إختصار للتشفير ، الذي يشير إلى التعليمات البرمجية التي تحتاج إلى حل لكسب العملة الرقمية.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "blockchain_definition": {
+    "message": "بمجرد حل المعادلة، تضاف إلى قائمة عامة من المعاملات تسمى $opentag$ البلوكتشين $closetag$.",
+    "description": "Cryptomining midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"blockchainlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "cryptocurrency_reward": {
+    "message": "مقابل ذلك، يجازى الناس بالعملات الرقمية - و من هنا جاء مصطلح تعدين العملات الرقمية.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "what_is_cryptocurrency": {
+    "message": "ما هي العملات الرقمية؟",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "digital_money": {
+    "message": "العملات الرقمية هي المال الإفتراضي أو ما يُصطلح عليه بالرقمي.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "bitcoin_etc": {
+    "message": "البيتكوين هو الأكثر شهرة ولكن هناك العديد من العملات، بما في ذلك Ripple و Monero .",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "cryptocurrency_uses": {
+    "message": "يمكنك استخدام العملات الرقمية في الشراء عبر الأنترنيت، إرسال الأموال إلى الأصدقاء، أو تخزينها في محفظة رقمية.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "no_physical_coins": {
+    "message": "و مع ذلك، لا توجد عملات مادية أو ورقية مرتبطة بالعملات الرقمية، لذا يمكنك إستخدامها فقط على الأنترنيت.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "not_governmental": {
+    "message": "على عكس العملات العادية، العملات الرقمية ليست مصنوعة من طرف الحكومات الوطنية.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "valued_by_circulation": {
+    "message": "هذه العملات غالبا ما تستمد قيمتها عن طريق كيفية استخدامها، و كم عدد العملات المتداولة حاليا.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "is_crypomining_safe": {
+    "message": "هل التشفير عملية آمنة؟",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "nothing_unsafe_cryptomining": {
+    "message": "لا يوجد شيء غير آمن حول استخدام الحاسوب الخاص بك لتعدين العملات الرقمية.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "cryptomining_high_costs": {
+    "message": "ولكن بما أن التعدين الفعال يتطلب إتصال أنترنيت عالي السرعة وحاسوباً قوياً جداً. قد تجد أن تكاليف تعدين العملات الرقمية أعلى من أي نقود رقمية قد تكسبها.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "high_cpu_cryptomining": {
+    "message": "في الحقيقة، إحدى الطرق التي يمكنك أن تلاحظ فيها ما إذا كان حاسوبك يقوم بتشفير العملات بشكل عفوي، هي أنه يُفرط في تشغيل وحدة المعالجة المركزية، الذي يمكن أن يتسبب في إبطاء الحاسوب.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "many_factors_crytomining": {
+    "message": "بالإضافة إلى الأمان، يجب أن تفكر أيضًا في عوامل أخرى، من تكلفة الكهرباء إلى تكلفة الباندويث، إذا ما أردت معرفة إذا كان التعدين سيكون مربحاً بالنسبة لك.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "cryptomining_malware": {
+    "message": "هل تعدين العملات الرقمية مرتبط بالبرمجيات الضارة؟",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "unfortunately_yes": {
+    "message": "للأسف، نعم.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "malware_to_mine": {
+    "message": "بما أن هناك الكثير من الأموال التي يمكن الحصول عليها من خلال تعدين العملات الرقمية، فإن الهاكرز المنظّمون يقومون بإبتكار طرق لاستخدام البرامج الضارة في حقن الحاسوب الخاص بك أو على بعض المواقع، حيث يتم إجبار حاسوبك على تعدين العملات الرقمية دون موافقتك.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "criminals_make_money": {
+    "message": "تُدفع أي عملة رقمية مكتسبة من هذه المخططات للمجرمين أنفسهم.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "cryptojacking": {
+    "message": "و يتم الإشارة لهذه المخططات على أنها \"تشفير ضار\" أو \"cryptojacking\".",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "why_care_cryptocurrency": {
+    "message": "لماذا AdBlock مهتم بالعملات الرقمية؟",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "widespread_cryptomining": {
+    "message": "بسبب الضجة حول البيتكوين والعملات الرقمية الأخرى، الكثير من المواقع ذات السمعة الطيبة و كذلك المواقع عديمة الضمير، قامت بابتكار مكائدٍ لخداع حاسوبك في تعدين العملات الرقمية ( و عادة بدون إخبارك أو أخذ إذن منك).",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "cryptojackers_definition": {
+    "message": "توجد أدوات أخرى تسمى \"cryptojackers\" تَستخدم جهاز الحاسوب الخاص بك بغرض التعدين السلبي للعملات الرقمية بدون موافقة منك.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "large_scale_cryptojacking": {
+    "message": "Cryptojackers هي شكل من أشكال البرمجيات الخبيثة التي غالبا ما ترتبط بمجموعات جيدة التنسيق من المجرمين الذين ينظّمون الاحتيال على نطاق واسع.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "how_protect_from_cryptojacking": {
+    "message": "ماذا يمكن أن أفعله لحماية نفسي من تعدين العملات الرقمية الضارة؟",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "sneaky_cryptomining": {
+    "message": "ربما قد سمعت عن مواقع شهيرة تُخفي برامج التعدين على مواقعها لتنقيب عملة رقمية من الزوار.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "cryptomining_examples": {
+    "message": "واحد من أكبر الأمثلة هو موقع تحميل التورنت المشهور The Pirate Bay، و كذلك $opentag$ موقعين يتم تشغيلهما من طرف Showtime (ترجمة) $closetag$.",
+    "description": "Cryptomining midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"showtimelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "bitcoin_mining_list": {
+    "message": "AdBlock (ترجمة)$opentag$(ترجمة) يستخدم مجموعة من القواعد$closetag$، تسمى قائمة حماية تعدين العملة الرقمية (بيتكوين) لمساعدته في تحديد أين يتم منع الإعلانات و التتبع في جلّ المواقع.",
+    "description": "Cryptomining midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"cryptolistlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "enabled_by_default": {
+    "message": "يتمّ تمكين قائمة الفلاتر بشكل افتراضي عند تثبيت AdBlock.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "protects_against_cryptojacking": {
+    "message": "نفس القائمة أيضا توفر الحماية من التكنولوجيات المستخدمة في مواقع الأنرنيت الضارة لإرغام الحاسوب الخاص بك على تعدين العملات المشفرة بدون موافقتك.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "adblock_protects_cryptojacking": {
+    "message": "بتثبيتك لAdBlock ، سيتم حمايتك من أي موقع يحاول استخدام موارد الحاسوب الخاص بك للتعدين العملات الرقمية بدون موافقتك.",
+    "description": "Cryptomining midlevel feature page content"
+  },
+  "malware_protection_header": {
+    "message": "الحماية من البرامج الضارة",
+    "description": "Malware midlevel feature page content"
+  },
+  "malware_been_around": {
+    "message": "البرمجيات الخبيثة كانت موجودة $opentag$فترة طويلة على الأنترنيت$closetag$، و لا تزال مصدر إزعاج على الأنترنيت إلى حد اليوم.",
+    "description": "Malware midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"malwarehistorylink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "adblock_protect_yourself": {
+    "message": "بتثبيتك ل AdBlock فأنت لست فقط تمنع الإعلانات المزعجة بل ستحمي نفسك كذلك من البرامج الخبيثة والأشكال الأخرى من الإعلانات الضارة.",
+    "description": "Malware midlevel feature page content"
+  },
+  "what_is_malware": {
+    "message": "ما هي البرمجيات الخبيثة؟",
+    "description": "Malware midlevel feature page content"
+  },
+  "malware_definition": {
+    "message": "البرمجيات الخبيثة هي شكل من أشكال البرامج الضارة التي تتسلّلُ إلى جهاز الحاسوب الخاص بك.",
+    "description": "Malware midlevel feature page content"
+  },
+  "malware_too_late": {
+    "message": "في معظم الأوقات، لا تعرف أنك قمت بتحميل البرمجيات الخبيثة حتى يكون الأوان قد فات.",
+    "description": "Malware midlevel feature page content"
+  },
+  "many_types_malware": {
+    "message": "هناك العديد من أنواع البمجيات الخبيثة،بداية من $opentag$البرمجيات الإعلانية$closetag$ إلى الفيروسات.",
+    "description": "Malware midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"adwarelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "malvertising_ransomware": {
+    "message": "في السنوات الأخيرة، اتخذت البرمجيات الضارة هي الأخرى شكلا من أشكال الإعلانات الخبيثة (تسمى \"المالفيرتايزن\") وبرمجيات الفدية، حيث يستخدم الهاكرز البرمجيات الخبيثة للتحكم في جهاز كمبيوتر، أو الشبكة ثم محاولت طلب فدية من المستخدمين لإزالة هذه البرمجيات الخبيثة.",
+    "description": "Malware midlevel feature page content"
+  },
+  "malware_hides": {
+    "message": "نظرًا لكون البرمجيات الخبيثة بجميع أشكالها تستطيع أن تُخفي نفسها في المواقع أو بالبرامج بسهولة، فمن المهم أن تقوم بحماية نفسك.",
+    "description": "Malware midlevel feature page content"
+  },
+  "how_block_malware": {
+    "message": "كيف يمكنني منع البرمجيات الخبيثة ؟",
+    "description": "Malware midlevel feature page content"
+  },
+  "dont_download_malware": {
+    "message": "من بين أكثر الطرق فعالية لمنع البرمجيات الخبيثة و هي كذلك واحدة من أكثر الطرق أساسية: لا تقم بتحميل أي شيء من المواقع التي لا تثق فيها، أو من رابط لا يمكنك التحقق أنه من مصدر موثوق به.",
+    "description": "Malware midlevel feature page content"
+  },
+  "protect_from_majority_malware": {
+    "message": "إذا قمت بذلك، فستحمي نفسك من الغالبية العظمى من البرمجيات الخبيثة، التي صمّمَت لخداع المستخدمين لتثبيتها.",
+    "description": "Malware midlevel feature page content"
+  },
+  "prevent_malware": {
+    "message": "بغض النظر عن ذلك، فإن أفضل طريقة لحماية نفسك من البرمجيات الخبيثة هي منعها من التحميل.",
+    "description": "Malware midlevel feature page content"
+  },
+  "adblock_safeguard_malware": {
+    "message": "و بما أن AdBlock يوقف متصفحك من تنزيل الإعلانات الخبيثة، فإنه يساعد على حماية متصفحك من البرمجيات الخبيثة.",
+    "description": "Malware midlevel feature page content"
+  },
+  "malware_protection_list": {
+    "message": "كمكافأة، من خلال تثبيت AdBlock فسوف تكون مشتركا في $opentag$قائمة الفلاتر الخاصة بالحماية من البرمجيات الخبيثة$closetag$ بشكل افتراضي.",
+    "description": "Malware midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"malwareprotectionlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "get_rid_of_malware": {
+    "message": "كيف يمكنني التخلص من البرمجيات الخبيثة؟",
+    "description": "Malware midlevel feature page content"
+  },
+  "malware_sounds_scary": {
+    "message": "البرمحيات الخبيثة تبدو مفزعة، ويمكن أن تكون مصدر صداع للتعامل معه.",
+    "description": "Malware midlevel feature page content"
+  },
+  "simple_remove_malware": {
+    "message": "لكن الخبر السار، هو أنه عادة ما يكون من السهل إزالة البرمجيات الخبيثة من جهاز الحاسوب الخاص بك.",
+    "description": "Malware midlevel feature page content"
+  },
+  "remove_malware_help": {
+    "message": "إذا كنت تعتقد أن حاسوبك مصابْ، فقم بزيارة مركز المساعدة الخاص بنا $opentag$ واتبع هذه الخطوات لإزالة البرمجية الخبيثة $closetag$.",
+    "description": "Malware midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"removemalwarelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "malware_protection_more": {
+    "message": "الحماية من البرمجيات الخبيثة والمزيد",
+    "description": "Malware midlevel feature page content"
+  },
+  "ad_blocker_malware": {
+    "message": "تثبيت مانع الإعلانات هو طريقة بسيطة و فعالة للبدء في حماية نفسك من البرمجيات الخبيثة.",
+    "description": "Malware midlevel feature page content"
+  },
+  "ad_blocker_antivirus": {
+    "message": "إذا كنت تستخدم مانع الإعلانات موازاةً مع طرق الحماية الأساسية الأخرى مثل برامج مكافحة الفيروسات، فستزيد فرص حماية نفسك من البرمجيات الخبيثة غير المرغوب فيها.",
+    "description": "Malware midlevel feature page content"
+  },
+  "adblock_rest_easy": {
+    "message": "مع AdBlock، يمكنك الاطمئنان لأنك محمي بسهولة من الإعلانات الضارة.",
+    "description": "Malware midlevel feature page content"
+  },
+  "download_adblock_malware": {
+    "message": "قم بتحميل AdBlock اليوم، واستمتع بالحماية من البرمجيات الخبيثة و المزيد!",
+    "description": "Malware midlevel feature page content"
+  },
+  "block_youtube_adblock": {
+    "message": "امنع إعلانات اليوتيوب مع AdBlock",
+    "description": "YouTube midlevel feature page content"
+  },
+  "youtube_popular": {
+    "message": "يوتيوب هو أكثر المنصات شعبية على الأنترنيت.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "unskippable_yt_ads": {
+    "message": "لكن الإعلانات الغير قابلة لتخطي التي تعمل قبل الفيديوهات وأثناءها وبعدها يمكن أن تجعل يوتيوب غير مطاق.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "control_yt_experience": {
+    "message": "مع AdBlock، يمكنك منع إعلانات يوتيوب و $opentag$ التحكم في تجربة يوتيوب الخاصة بك $closetag$.",
+    "description": "YouTube midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"youtubelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "yt_ad_blocking_options": {
+    "message": "خيارات منع الإعلانات على اليوتيوب",
+    "description": "YouTube midlevel feature page content"
+  },
+  "block_yt_ads_default": {
+    "message": "AdBlock يمنع إعلانات اليوتيوب بشكل إفتراضي، كما نوفر أدوات قوية لتخصيص طريقة منع الإعلانات عليه.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "pause_unpause": {
+    "message": "إيقاف/إعادة التشغيل",
+    "description": "YouTube midlevel feature page content"
+  },
+  "pause_adblock_temporarily": {
+    "message": "استخدم ميزة إيقاف AdBlock لإيقاف تشغيل AdBlock بشكل مؤقت.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "see_ads_when_paused": {
+    "message": "يرجى الملاحظة أنه سترى الإعلانات عند إيقاف AdBlock مؤقتاً.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "prefer_yt_dark_mode": {
+    "message": "تفضّل اليوتيوب بخاصية الوضع المظلم؟",
+    "description": "YouTube midlevel feature page content"
+  },
+  "optional_dark_mode": {
+    "message": "يتضمن AdBlock خيار سمة الوضع المظلم في قائمة AdBlock و إعدادات الصفحات.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "blocking_ads_yt": {
+    "message": "من الإعلانات في اليوتيوب",
+    "description": "YouTube midlevel feature page content"
+  },
+  "best_blockers_yt": {
+    "message": "نمنع <em>الملايير</em> من إعلانات يوتيوب في الشهر الواحد. ولهذا السبب نحن نعد من بين أفضل $opentag$ مانعي الإعلانات في اليوتيوب $closetag$.",
+    "description": "YouTube midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"youtubekblink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "install_say_goodbye_to": {
+    "message": "قم بتثبيت AdBlock اليوم، و قل وداعا ل:",
+    "description": "YouTube midlevel feature page content"
+  },
+  "unskippable_video_ads": {
+    "message": "إعلانات الفيديو الغير قابلة للتخطي",
+    "description": "YouTube midlevel feature page content"
+  },
+  "sidebar_ads": {
+    "message": "إعلانات الشريط الجانبي",
+    "description": "YouTube midlevel feature page content"
+  },
+  "banner_ads": {
+    "message": "إعلانات البانر",
+    "description": "YouTube midlevel feature page content"
+  },
+  "block_yt_ads_wherever": {
+    "message": "منع إعلانات اليوتيوب أينما ذهبت.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "control_yt_however": {
+    "message": "تحكّم في تجربتك في اليوتيوب بغض النظر عن الطريقة التي تتصفح بها.",
+    "description": "YouTube midlevel feature page content"
+  },
+  "block_yt_on_platforms": {
+    "message": "امنع إعلانات اليوتيوب في متصفح Chromt، فَيَرفُكس، Edge، وSafari، $opentag$ Androidأو iPhone$closetag$.",
+    "description": "YouTube midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"youtubemobilelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "more_yt_ad_blocker": {
+    "message": "أكثر من مجرد مانع إعلانات لليوتيوب",
+    "description": "YouTube midlevel feature page content"
+  },
+  "more_than_block_yt_ads": {
+    "message": "AdBlock لا يعمل فقط على منع إعلانات اليوتيوب، في الواقع يجعل اليوتيوب أفضل!",
+    "description": "YouTube midlevel feature page content"
+  },
+  "adblock_improvements": {
+    "message": "استعمل AdBlock لتقليل وقت تحميل الصفحات، $opentag$ حماية نفسك من البرامج الضارة و البرمجيات الإعلانية $closetag$، و المزيد.",
+    "description": "YouTube midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"youtubemalwarelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "install_adblock_and_experience": {
+    "message": "قم بتثبيت AdBlock و اختبر:",
+    "description": "YouTube midlevel feature page content"
+  },
+  "faster_video_loading": {
+    "message": "تحميل الفيديو بطريقة أسرع",
+    "description": "YouTube midlevel feature page content"
+  },
+  "malware_protection": {
+    "message": "الحماية من البرامج الضارة",
+    "description": "YouTube midlevel feature page content"
+  },
+  "uninterupted_playlists": {
+    "message": "قوائم التشغيل بدون انقطاع",
+    "description": "YouTube midlevel feature page content"
+  },
+  "block_twitch_ads": {
+    "message": "امنع إعلانات التويتش مع AdBlock",
+    "description": "Twitch midlevel feature page"
+  },
+  "what_is_twitch": {
+    "message": "ما هو التويتش؟",
+    "description": "Twitch midlevel feature page"
+  },
+  "know_what_twitch_is": {
+    "message": "سنفترض أنه إذا كنت تبحث عن مانع إعلانات لخدمة التويتش، فأنت تعرف مسبقاً ما هو التويتش.",
+    "description": "Twitch midlevel feature page"
+  },
+  "basics_twitch_adblock": {
+    "message": "لكن بالنسبة للعديد من مستخدمي الأنترنيت الذين قد يكتشفون التويتش في الأشهر أو السنوات القادمة، فسوف نضع لهم أساسيات التويتش، و كيف يمكن لAdBlock مساعدتك في تحسين تجربنك عند زيارته.",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_visited": {
+    "message": "$opentag$ التويتش $closetag$ هو أحد أكثر المواقع زيارة على الانترنيت.",
+    "description": "Twitch midlevel feature page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "twitch_popular": {
+    "message": "في الولايات المتحدة الأمريكية وحدها، التويتش يجذب ما يقارب 200 مليون زيارة شهرياً، لكن إذا كنت فوق الثلاثين سنة فقد تكون لم تسمع عنه من قبل.",
+    "description": "Twitch midlevel feature page"
+  },
+  "so_what_is_it": {
+    "message": "إذا ما هو التويتش؟",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_definition": {
+    "message": "$opentag$ التويتش $closetag$ هو موقع مخصص في المقام الأول للألعاب، و يظهر فيه أناس يلعبون ألعاب الفيديو في البث المباشر، و الملايين من من الناس يدردشون مع بعضهم البعض حول الألعاب التي يلعبون.",
+    "description": "Twitch midlevel feature page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchlink2\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "twitch_broadcast": {
+    "message": "بدأً بالفيفا و إلى فورتنايت، فيمكن للناس أن يبُثوا أنفسهم بشكل مباشر و هم يلعبون الألعاب (ويفعلون أشياء أخرى) بينما يتفاعلون مع جمهورهم من خلال أدوات الدردشة المدمجة.",
+    "description": "Twitch midlevel feature page"
+  },
+  "amazon_acquired_twitch": {
+    "message": "التويتش مشهور حدا، و يزداد في التفشّي بسرعة، لذلك قامت أمازون بالإستحواذ عليه بما يقرب مليار دولار قبل خمس سنوات تقريبا، في سبتمبر 2014.",
+    "description": "Twitch midlevel feature page"
+  },
+  "how_twitch_make_money": {
+    "message": "كيف تكسب خدمة التويتش المال؟",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_subscriptions_advertising": {
+    "message": "توجد طريقتان رئيسيتان لكي تكسب التويتش المال و هما: الإشتراكات و الإعلانات.",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_subscriptions": {
+    "message": "يمكن للمستخدمين الإشتراك في القنوات التي يحبونها مقابل 4.99 دولاراً في الشهر، و يتم تقسيم هذه الرسوم الشهرية بين صانعي المحتوى و التويتش، و تحتفظ التويتش بقيمة 30 إلى 50 بالمائة من الرسوم الشهرية.",
+    "description": "Twitch midlevel feature page"
+  },
+  "monetization_advertisements": {
+    "message": "بينما الطريقة الثانية هي عن طريق عرض الإعلانات.",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_streaming_ads": {
+    "message": "تماماً مثل اليوتيوب، يقوم التويتش بعرض الإعلانات قبل و أثناء، و بعد عرض بث الفيديو في الموقع.",
+    "description": "Twitch midlevel feature page"
+  },
+  "preroll_instream_ads": {
+    "message": "لذلك سيشاهد المستخدمون إعلانات الفيديو ما قبل التشغيل (15 ثانية من إعلانات الفيديو التي تعمل قبل البث) بالإضافة إلى الإعلانات أثناء الفيديوهات التي يشاهدونها.",
+    "description": "Twitch midlevel feature page"
+  },
+  "other_twitch_ads": {
+    "message": "سيشاهدون كذلك إعلانات أخرى تظهر بأشكال وأحجام مختلفة على التويتش، و ذلك بناءً على نوع المحتوى الذي يشاهده المستخدم.",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_ads_format": {
+    "message": "يوجد لدى التويتش لمحة عامة و مفصلة حول $opentag$أشكال الإعلانات هنا$closetag$",
+    "description": "Twitch midlevel feature page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchadformatslink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "every_twitch_stream_ads": {
+    "message": "هل يحتوي كل بث حي في التويتش إعلانات؟",
+    "description": "Twitch midlevel feature page"
+  },
+  "see_twitch_ads": {
+    "message": "سواءً كنت ترى الإعلانات على التوبتش أو لا، فذلك يعتمد على بضعة أشياء: إذا كنت مشتركا في خدمة أمازون برايم أو مشتركا في قناة معينة في التويتش، فأنت أقل عرضة لرؤية الإعلانات.",
+    "description": "Twitch midlevel feature page"
+  },
+  "streamer_ads": {
+    "message": "بعض الإعلانات التي يتم عرضها بواسطة المشرف -- أي الشخص الذي يبث فيديو فورتنيت مشهور، إذا كان لديهم عدد كاف من المشتركين، فيمكنهم أن يقرروا ما إذا كانوا يريدون إظهار الإعلانات للناس الذين يشاهدون بثهم أم لا.",
+    "description": "Twitch midlevel feature page"
+  },
+  "see_a_lot_of_twitch_ads": {
+    "message": "بالنسبة لزوار التويتش الذين ليسوا من مشتركي خدمة أمازون برايم أو يدفعون 4.99 دولار للقناة التي بشاهدونها، فمن المحتمل أن يرو الإعلانات، و $opentag$ غالبا الكثير منهم$closetag$.",
+    "description": "Twitch midlevel feature page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchredditlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "adblock_block_twitch_ads": {
+    "message": "هل يستطيع AdBlock منع إعلانات التويتش؟",
+    "description": "Twitch midlevel feature page"
+  },
+  "blocking_twitch_ads": {
+    "message": "أصبح منع الإعلانات على التويتش واحداً من أكثر الميزات التي نسمع عنها أكثر من قبل مستخدمينا.",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_help_article": {
+    "message": "لقد كتبنا $opentag$مقالا مفصلا في مكتب المساعدة$closetag$ حول الموضوع، و هو واحد من أكثر المحتويات مشاهدة فيه.",
+    "description": "Twitch midlevel feature page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchkblink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "some_twitch_ads_slip_through": {
+    "message": "نحن $opentag$نبذل قصارى جهدنا لمنع الإعلانات في التويتش$closetag$، و على الأرجح AdBlock سيكون قادراً على منع معظم الإعلانات في التويتش، لكن بعضها سوف يفلت من خلالها.",
+    "description": "Twitch midlevel feature page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchblockbestlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "instream_difficult_block": {
+    "message": "يصعب منع إعلانات الفيديو أثناء البث لأن الإعلانات والمحتوى (مقاطع الفيديو التي يشاهدها المستخدمون) يتم عرضها من نفس المكان، مما يعني أنه من الصعب التمييز بين محتوى الإعلان ومقاطع الفيديو نفسها.",
+    "description": "Twitch midlevel feature page"
+  },
+  "adblock_twitch_complicated": {
+    "message": "وهذا يعني أن الإجابة على السؤال، \"هل يعمل AdBlock على التويتش؟\" هي إجابة معقدة.",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_hundreds_engineers": {
+    "message": "مثل اليوتيوب، فمن المحتمل أن التويتش لديها المئات من المهندسين الذين يعملون على إنجاحها.",
+    "description": "Twitch midlevel feature page"
+  },
+  "twitch_constant_tweaks_updates": {
+    "message": "وهذا يعني أن التويتش تقوم باستمرار بإجراء تعديلات وتحديثات على التويتش التي من شأنها تعجيز قدرة AdBlock على منع الإعلانات مؤقتا.",
+    "description": "Twitch midlevel feature page"
+  },
+  "working_hard_twitch": {
+    "message": "كن على يقين بأننا نعمل بجد لمنعهم، وإذا كان لديك أي شكوى محددة، فيمكنك دائما التواصل لإعلامنا أين نركز جهودنا في منع إعلانات التويتش.",
+    "description": "Twitch midlevel feature page"
+  },
+  "block_facebook_ads_adblock": {
+    "message": "امنع إعلانات الفيسبوك مع AdBlock",
+    "description": "Facebook midlevel feature page content"
+  },
+  "facebook_popular": {
+    "message": "مع أكثر من مليار زائر يومي، الفيسبوك واحد من أكثر الوجهات شهرة في الويب.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "annoying_fb_ads": {
+    "message": "و بما أن الفيسبوك أداة رائعة للبقاء متّصلاً فإن الإعلانات فيه أصبحت مزعجة و مألوفة بشكل متزايد.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "fb_without_ads": {
+    "message": "مع AdBlock، يمكنك الإستمتاع بالتواصل مع الأصدقاء و العائلة على الفيسبوك بدون إعلانات.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "what_facebook_ads": {
+    "message": "ما هي إعلانات الفيسبوك؟",
+    "description": "Facebook midlevel feature page content"
+  },
+  "many_forms_fb_ads": {
+    "message": "إعلانات الفيسبوك تأتي بأشكال عديدة.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "fb_newsfeed_ads": {
+    "message": "ربما رأيتها  في الشريط الجانبي حيث تتصفح جدار الأخبار الخاصة بك، أو حتى داخل جدار الأخبار بنفسه.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "tailored_fb_ads": {
+    "message": "غالباً ما يتم توجيه إعلانات الفيسبوك لتتلائم مع سجل التصفح الحديث الخاص بك.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "targeted_fb_ads_definition": {
+    "message": "هذا يعني أنك إذا قمت بزيارة أمازون للبحث عن حمام طفل، فمن المرجح أن ترى عددا من إعلانات الفيس بوك التي لها علاقة بالطفل.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "why_block_fb_ads": {
+    "message": "لماذا تمنع إعلانات الفيسبوك؟",
+    "description": "Facebook midlevel feature page content"
+  },
+  "fb_ads_creepy": {
+    "message": "العديد من الناس بشعرون بأن إعلانات الفيسبوك تدعو إلى الذعر، خاصة بسبب مدى \" استهدافهم\".",
+    "description": "Facebook midlevel feature page content"
+  },
+  "feels_invasion_privacy": {
+    "message": "هذا يبدو و كأنه $opentag$ إقتحام الخصوصية $closetag$ للعديد من مستخدمي الفيسبوك.",
+    "description": "Facebook midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"facebooknytlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "block_fb_ads_reasons": {
+    "message": "يختار الناس منع إعلانات الفيسبوك لتقليل عدد المعلنين الذين يتعقّبونهم، و تحسين خصوصياتهم على الأنترنيت.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "how_block_fb_ads": {
+    "message": "كيف تمنع إعلانات الفيسبوك؟",
+    "description": "Facebook midlevel feature page content"
+  },
+  "adblock_fb_ads_default": {
+    "message": "بتثبيتك AdBlock، ستشرع في $opentag$ منع إعلانات الفيسبوك $closetag$ على الفور.",
+    "description": "Facebook midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"facebookbloglink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "block_other_fb_annoyances": {
+    "message": "إذا كنت ترغب في $opentag$ منع أشياء أخرى مزعجة على الفيسبوك $closetag$، فيمكن أن يساعدك AdBlock في ذلك أيضا!",
+    "description": "Facebook midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"facebookkblink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "block_fb_ads_wherever": {
+    "message": "امنع إعلانات الفيسبوك أينما مضيت",
+    "description": "Facebook midlevel feature page content"
+  },
+  "control_fb_wherever": {
+    "message": "تحكّم في تجربتك مع الفيسبوك بغض النظر عن الطريقة التي تتصفح بها.",
+    "description": "Facebook midlevel feature page content"
+  },
+  "block_fb_platforms": {
+    "message": "احجب إعلانات فيسبوك في Chrome، وفَيَرفُكس، وEdge، وSafari، $opentag$Android أو iPhone$closetag$.",
+    "description": "Facebook midlevel feature page content",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"facebookmobilelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "connections_without_annoyances": {
+    "message": "اتصالات بدون إزعاج",
+    "description": "Facebook midlevel feature page content"
+  },
+  "ready_block_fb_ads": {
+    "message": "جاهز لمنع إعلانات الفيسبوك و العودة إلى التواصل مع أصدقائك و عائلتك؟",
+    "description": "Facebook midlevel feature page content"
+  },
+  "install_adblock_enjoy_browsing": {
+    "message": "قم يتثبيت AdBlock اليوم، و استمتع بالتصفح مجدداً!",
+    "description": "Facebook midlevel feature page content "
+  },
+  "premium_enrollment": {
+    "message": "التسجيل في AdBlock Premium",
+    "description": "Title for Premium enrollment page"
+  },
+  "upgrade_now": {
+    "message": "قم بالترقية الآن",
+    "description": "Text for button to proceed with the upgrade"
+  },
+  "sync_settings": {
+    "message": "مزامنة الإعدادات الخاصة بك",
+    "description": "Header for sync feature box"
+  },
+  "take_settings_with_you": {
+    "message": "خذ قواعد حظر الإعلانات المخصصة بك، الإعدادات، والقوائم البيضاء إلى أي جهاز كمبيوتر تستخدمه.",
+    "description": "Description for sync feature box"
+  },
+  "make_adblock_yours": {
+    "message": "تحكم في AdBlock الخاص بك",
+    "description": "Header for themes feature box"
+  },
+  "control_look_feel": {
+    "message": "أنت المتحكم في مظهر، و حِسّ و حجم الخط الخاص بAdBlock مع ضوابط سهلة للإستخدام.",
+    "description": "Description for themes feature box"
+  },
+  "see_photos_not_ads": {
+    "message": "شاهد الصور، لا الإعلانات",
+    "description": "Header for image swap feature box"
+  },
+  "replace_ads_pictures": {
+    "message": "ستظل تمنع الإعلانات و لكن ستستبدل بعضها بصور القطط، و  الكلاب بالإضافة للطبيعة.",
+    "description": "Description for image swap feature box"
+  },
+  "amount_per_month": {
+    "message": "$replace$/شهريًا",
+    "description": "Monthly subscription amount"
+  },
+  "amount_per_year": {
+    "message": "$replace$/سنويًا",
+    "description": "Yearly subscription amount"
+  },
+  "email_address": {
+    "message": "عنوان البريد الإلكتروني",
+    "description": "Label for email entry field"
+  },
+  "credit_card_number": {
+    "message": "رقم بطاقة الائتمان",
+    "description": "Label for credit card number field"
+  },
+  "expiration_date": {
+    "message": "تاريخ انتهاء الصلاحية",
+    "description": "Label for expiration date field"
+  },
+  "cvc_cvv": {
+    "message": "CVC / CVV",
+    "description": "Label for CVC/CVV field"
+  },
+  "donated_before": {
+    "message": "لقد تبرعت ل AdBlock من قبل",
+    "description": "Link to unlock Premium using a previous donation"
+  },
+  "receive_updates": {
+    "message": "أجل! أرغب في تلقي تحديثات عرضية من AdBlock.",
+    "description": "Opt-in option to subscribe to our newsletter"
+  },
+  "find_previous_payment": {
+    "message": "سنستخدم بريدك الإلكتروني للعثور على معلومات الدفع السابقة",
+    "description": "Already donated subheader"
+  },
+  "enter_email": {
+    "message": "أدخل بريدك الإلكتروني",
+    "description": "Placeholder text for email address entry field"
+  },
+  "not_user_havent_donated": {
+    "message": "أنا لست مستخدم AdBlock Premium بعدْ، و لم أتبرع لAdBlock من قبل",
+    "description": "Link to go back to the payment section"
+  },
+  "check_email": {
+    "message": "رجاءاً، تحقق من البريد الإلكتروني الذي أرسلناه لك",
+    "description": "Already donated header"
+  },
+  "enter_code": {
+    "message": "قم بإدخال الرمز المكون من 6 رموز لتأكيد عنوان بريدك الإلكتروني.",
+    "description": "Already donated subheader"
+  },
+  "check_spam_contact_us": {
+    "message": "إذا لم تجد البريد الإلكتروني، رجاءاً تحقق من البريد المزعج الخاص بك ( السبام ) أو التواصل معنى على $opentag$help@getadblock.com$closetag$",
+    "description": "Link to email our support team",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"supportemaillink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "confirming": {
+    "message": "جاري التأكيد...",
+    "description": "Status message while confirming the verification code"
+  },
+  "ready_premium": {
+    "message": "أنت جاهز لبدء استخدام AdBlock Premium!",
+    "description": "Header of success card"
+  },
+  "thank_you_past_support": {
+    "message": "شكرا لك على دعمك لAdBlock في الماضي!",
+    "description": "Message on success card"
+  },
+  "couldnt_do_without_people": {
+    "message": "لم نكن لنتمكّن من فعل هذا لولا أشخاص مثلك!",
+    "description": "Message on success card"
+  },
+  "premium_three_months": {
+    "message": "نود أن نمنحك AdBlock Premium لمدة 3 أشهر مجاناً.",
+    "description": "Message on success card"
+  },
+  "follow_up_premium": {
+    "message": "سنتابع الأمر في المستقبل في حالة ما أردت الاستمرار في استخدام AdBlock Premium، لذلك لا تحتاج إلى القلق حيال ذلك.",
+    "description": "Message on success card"
+  },
+  "hope_love_features_donors": {
+    "message": "نأملُ أن تحبّوا هذه الميزات التي قدمناها للمتبرعين أمثالك.",
+    "description": "Message on success card"
+  },
+  "get_started_premium": {
+    "message": "ابدأ باستخدام AdBlock Premium",
+    "description": "Text for button taking the user to the AdBlock Options page"
+  },
+  "oops_period": {
+    "message": "عذراً.",
+    "description": "Generic error message header"
+  },
+  "cant_find_user_id": {
+    "message": "لم نتمكن من العثور على معرف المستخدم الخاص بك.",
+    "description": "Error message"
+  },
+  "problem_activating": {
+    "message": "حدثت مشكلة في تفعيل إضافتك.",
+    "description": "Error message"
+  },
+  "code_incorrect": {
+    "message": "هذا الرمز غير صحيح.",
+    "description": "Error message"
+  },
+  "problem_our_end": {
+    "message": "كانت هناك مشكلة من جانبنا.",
+    "description": "Error message"
+  },
+  "recorded_investigating": {
+    "message": "لقد تم تسجيلها ونحن نتحرّى الأمر.",
+    "description": "Error message"
+  },
+  "no_donations_for_email": {
+    "message": "لا يبدو أن لدينا أي تبرعات مسجّلة بالنسبة لهذا البريد الإلكتروني.",
+    "description": "Error message"
+  },
+  "reach_out_help_setup": {
+    "message": "$opentag$تواصل معنا$closetag$ ودعنا نساعدك على إنهاء الإعداد!",
+    "description": "Error message",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"supportlink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>"
+      }
+    }
+  },
+  "manage_premium_subscription": {
+    "message": "إدارة اشتراك حسابك Premium",
+    "description": "Title for Premium subscription management page"
+  },
+  "manage_subscription": {
+    "message": "إدارة الإشتراك",
+    "description": "Header for Premium subscription management page"
+  },
+  "subscription_details": {
+    "message": "تفاصيل الإشتراك",
+    "description": "Subheader for Premium subscription management page"
+  },
+  "auto_renews_data": {
+    "message": "التجديد تلقائياً في $date$.",
+    "description": "Informs user when their Premium subscription will renew",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "11/23/19"
+      }
+    }
+  },
+  "youll_be_charged_amount": {
+    "message": "ستتم شحن مبلغ $amount$.",
+    "description": "Informs user how much they'll be charged when their Premium subscription renews",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "20"
+      }
+    }
+  },
+  "subscription_canceled": {
+    "message": "تمّ إلغاء إشتراكك.",
+    "description": "Informational message after the user cancels their subscription"
+  },
+  "cancel_subscription": {
+    "message": "إلغاء الإشتراك",
+    "description": "Button to cancel subscription"
+  },
+  "keep_these_features": {
+    "message": "الحفاظ على هذه الميزات",
+    "description": "Button to cancel out of cancelling subscription"
+  },
+  "subscription_includes": {
+    "message": "إشتراكك يشمل:",
+    "description": "Section header for features review on the Manage Subscription page"
+  },
+  "free_access_premium": {
+    "message": "لديك حق الوصول مجاناً لحساب AdBlock Premium!",
+    "description": "Part 1 of message to show users in beta program or with temporary free licenses"
+  },
+  "free_license_expires": {
+    "message": "ترخيصك المجاني ينتهي في $date$.",
+    "description": "Part 2 of message to show users in beta program or with temporary free licenses",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "11/15/22"
+      }
+    }
+  },
+  "aa_faq_title": {
+    "message": "الأسئلة الشائعة حول الإعلانات المقبولة",
+    "description": "Acceptable Ads FAQ title"
+  },
+  "block_all_ads": {
+    "message": "هل يمنع AdBlock جميع الإعلانات؟",
+    "description": "Acceptable Ads FAQ question"
+  },
+  "not_possible_block_all": {
+    "message": "تِقنياً، ليس من الممكن منع جميع الإعلانات على الأنترنيت.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "different_ad_tech": {
+    "message": "نحن نبذل قصارى جهدنا، لكننا فريق عمل صغير و الأنترنيت مكان كبير، مع الكثير من أشكال الإعلانات المختلفة والتقنيات المختلفة المستخدمة لعرضها.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "not_all_ads": {
+    "message": "أيضا، لا نعتقد أن جميع الإعلانات خبيثة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "difference_between_ads": {
+    "message": "هناك فرق شاسع بين صوت صاخب منبيق و مزعج، وبين إعلان حسن الذوق و غير تطفلي يتم عرضه في موفعك المفضل.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "participate_aa_program": {
+    "message": "ولهذا السبب، منذ عام 2015، شاركنا في برنامج الإعلانات المقبولة، الذي يتحكم فيها منظمة مستقلة غير ربحية، مقرها في الولايات المتحدة و تسمى $opentag$ لجنة الإعلانات المقبولة$closetag$.",
+    "description": "Acceptable Ads FAQ answer",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://acceptableads.com/committee/\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "what_are_aa": {
+    "message": "ما هي الإعلانات المقبولة؟",
+    "description": "Acceptable Ads FAQ question"
+  },
+  "ads_dont_interfere": {
+    "message": "الإعلانات المقبولة هي التي لا تتداخل مع المحتوى و تُسمى يوضوح بكلمة \"إعلان\" أو ما يعادلها.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "ads_not_annoying": {
+    "message": "هذه الإعلانات ليست مزعجة أو متطفلة و لن تحتوي أبدا على أشياء مثل النوافذ المنبثقة أو الإعلانات الصوتية أو الإعلانات الأخرى التي تُغضب المستخدمين.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "aa_standards": {
+    "message": "لكي يكون الإعلان \"إعلانا مقبولا\"، يجب أن يلتزم ب $opentag1$ المعايير$closetag1$ التي تم تحديدها من قبل $opentag2$ لجنة الإعلانات المقبولة$closetag2$: مستقلة، المجموعة الغير ربحية و التي تشمل محامي المستخدمين، أعضاء صناعة الإعلان، و منظمات الحقوق الرقمية.",
+    "description": "Acceptable Ads FAQ answer",
+    "placeholders": {
+      "opentag1": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://acceptableads.com/standard\">"
+      },
+      "closetag1": {
+        "content": "</a></span>"
+      },
+      "opentag2": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://acceptableads.com/committee\">"
+      },
+      "closetag2": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "why_aa_enabled_default": {
+    "message": "لماذا يتم تمكين الإعلانات المقبولة بشكل افتراضي في AdBlock؟",
+    "description": "Acceptable Ads FAQ question"
+  },
+  "not_survive_without_ads": {
+    "message": "الكثير من مواقعنا المفضلة لن تكون قادرة على الاستمرار بدون الإعلانات.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "aa_middle_ground": {
+    "message": "نؤمن أن الإعلانات المقبولة توفر حلاّ وسط بين مستخدمي AdBlock ومالكي المواقع الذين يحتاجون إلى استخدام الإعلانات للحصول على الأموال التي يحتاجونها للإستمرار.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "not_deprive_sites": {
+    "message": "مع الإعلانات المقبولة، يمكننا القضاء على نوع الإعلانات التي تدفع الناس إلى تثبيت مانع الإعلانات في المقام الأول، في حين أنها لا تحرم المواقع بشكل كامل من أحد مصادر دخلهم الأساسية.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "turn_off_aa": {
+    "message": "هل يمكنني إيقاف تشغيل الإعلانات المقبولة؟",
+    "description": "Acceptable Ads FAQ question"
+  },
+  "disable_aa_any_time": {
+    "message": "بالتأكيد. يمكنك تعطيل هذه الميزة في أي وقت. إليك طريقة فعل ذلك:",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "adblock_chrome_edge": {
+    "message": "AdBlock ل‍ Chrome و Edge",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_chrome_step_1": {
+    "message": "1. انقر على أيقونة AdBlock في المتصفح الخاص بك (تبدو مثل علامة توقف حمراء).",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_chrome_step_2": {
+    "message": "2. انقر على أيقونة الإعدادات في الجزء العلوي الأيمن من القائمة المنبثقة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_chrome_step_3": {
+    "message": "3. إلغاء تحديد \"السماح بالإعلانات المقبولة\".",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_chrome_firefox_step_4": {
+    "message": "4. أغلق التبويب.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "adblock_firefox": {
+    "message": "AdBlock لـمتصفح فايرفوكس",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_firefox_step_1": {
+    "message": "1. انقر على أيقونة AdBlock في المتصفح الخاص بك (تبدو مثل علامة توقف حمراء).",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_firefox_step_2": {
+    "message": "2. انقر على أيقونة الإعدادات في الجزء العلوي الأيمن من القائمة المنبثقة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_firefox_step_3": {
+    "message": "3. إلغاء تحديد \"السماح ببعض الإعلانات الغير متطفّلة\".",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "adblock_safari_macos": {
+    "message": "AdBlock لمتصفح سفاري (MacOS)",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_safari_step_1": {
+    "message": "1. افتح تطبيق AdBlock، (بإستعمال Launchpad، يمكنك النقر على أيقونة AdBlock، و التي تبدو مثل علامة توقف حمراء).",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_safari_step_2": {
+    "message": "2. انقر على علامة التبويب \"قائمة الفلاتر\" في القسم الأيسر من النافذة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_safari_mobile_step_3": {
+    "message": "3. إلغاء تحديد \"السماح ببعض الإعلانات الغير متطفّلة\".",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_safari_mobile_step_4": {
+    "message": "4. أغلق التطبيق.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "adblock_samsung": {
+    "message": "AdBlock لمتصفح سامسونج أنترنيت",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_samsung_step_1": {
+    "message": "1. افتح AdBlock الخاص بسامسونج أنترنيت.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_samsung_step_2": {
+    "message": "2. قم بإلغاء تحديد \"السماح ببعض الإعلانات الغير متطفلة\".",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "adblock_mobile_ios": {
+    "message": "AdBlock للهواتف بنظام iOS",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_mobile_step_1": {
+    "message": "1. انقر على أيقونة AdBlock على جهاز iOS الخاص بك.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "disable_aa_mobile_step_2": {
+    "message": "2. انقر على أيقونة الإعدادات في التبويب.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "users_want_see_ads": {
+    "message": "هل يودّ مستخدموا  AdBlock حقاً رؤية الإعلانات؟",
+    "description": "Acceptable Ads FAQ question"
+  },
+  "not_all_ads_annoying": {
+    "message": "الغالبية العظمى من مستخدمينا يتفهمون أن الإعلانات ليست كلها مزعجة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "pay_participate_aa": {
+    "message": "هل يدفع الناشرون والمعلنون للمشاركة في الإعلانات المقبولة؟",
+    "description": "Acceptable Ads FAQ question"
+  },
+  "publishers_more_ad_impressions": {
+    "message": "الناشرون الذين لديهم أكثر من 10 ملايين إعلان يظهر كل شهر، يدفعون رسوماً للمشاركة في برنامج الإعلانات المقبولة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "fee_paid_to_eyeo": {
+    "message": "هذه الرسوم يتم دفعها إلى eyeo، الشركة التي أنشأت Adblock Plus وبرنامج الإعلانات المقبولة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "funds_development_adblock_plus": {
+    "message": "الإبرادات المحصّلة عليها من هؤلاء الناشرين تُمّول التطوير المستمر ل AdBlock Plus، وكذلك تشغيل برنامج الإعلانات المقبولة، بما في ذلك الالتزام، والرصد، و الدعم التقني، والمزيد.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "details_licensing_here": {
+    "message": "يمكنك الحصول على مزيد من التفاصيل حول الترخيص $opentag$هنا$closetag$.",
+    "description": "Acceptable Ads FAQ answer",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://adblockplus.org/about#monetization\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "publishers_not_pay": {
+    "message": "أما نسبة الـ 90 في المائة المتبقية من الناشرين المشاركين في الإعلانات المقبولة فلا يدفعون ثمن المشاركة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "ads_need_to_be_acceptable": {
+    "message": "الإعلانات التي تستخدمها هذه الشركات بحاجة إلى أن تكون ”مقبولة“ - أي غير متطفلة أو مزعجة - في جميع الأوقات؛ خلاف ذلك، لن يتم عرضها لمستخدمي AdBlock.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "example_companies_aa": {
+    "message": "هل يمكنك أن تعطيني مثالاً للشركات التي تشارك في الإعلانات المقبولة؟",
+    "description": "Acceptable Ads FAQ question"
+  },
+  "top_websites_participate": {
+    "message": "بالتأكيد. حوالي 25 بالمائة من أفضل 1000 موقع في العالم يشارك في برنامج الإعلانات المقبولة.",
+    "description": "Acceptable Ads FAQ answer"
+  },
+  "aa_whitelist_here": {
+    "message": "يمكنك مشاهدة القائمة البيضاء الكاملة الخاصة بالإعلانات المقبولة $opentag$هنا$closetag$.",
+    "description": "Acceptable Ads FAQ answer",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a class=\"mainContentLink\" href=\"\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "aa_forum": {
+    "message": "و يمكنك زيارة $opentag$منتدى الإعلانات المقبولة$closetag$ لمعرفة المزيد، أو لتعطي رأيك حول الإعلانات ما إذا كانت مزعجة أم غير مزعجة.",
+    "description": "Acceptable Ads FAQ answer",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a class=\"mainContentLink\" href=\"https://adblockplus.org/forum/viewforum.php?f=12\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "feedback_aa": {
+    "message": "يرجى التواصل معنا على $opentag$help@getadblock.com$closetag$ إذا كانت لديك أي ملاحظات قد تصلح لتحسين جودة و شفافية برنامج الإعلانات المقبولة.",
+    "description": "Acceptable Ads FAQ answer",
+    "placeholders": {
+      "opentag": {
+        "content": "<span><a class=\"mainContentLink\" href=\"mailto:help@getadblock.com\">"
+      },
+      "closetag": {
+        "content": "</a></span>"
+      }
+    }
+  },
+  "introducing": {
+    "message": "تقديم",
+    "description": "Lead-in to header on AdBlock Desktop beta waitlist page. Will be followed by 'AdBlock Desktop'"
+  },
+  "hello": {
+    "message": "مرحباً!",
+    "description": "Introduction to paragraph about the AdBlock Desktop beta waitlist"
+  },
+  "check_email_verify": {
+    "message": "شكراً! الرجاء تفقّد بريدك الإلكتروني للتّحقق من عنوانك.",
+    "description": "Message shown after the user submits their email address"
+  },
+  "thanks_youre_set": {
+    "message": "شكرًا. أنت جاهز الآن!",
+    "description": "Message shown after the user confirms their email address"
+  },
+  "eye_out_for_updates": {
+    "message": "ترقب التحديثات القادمة من فريق AdBlock!",
+    "description": "Message shown after the user confirms their email address"
+  },
+  "invalid_email_address": {
+    "message": "البريد الإلكتروني غير صالح",
+    "description": "Indavlid email address error"
+  },
+  "email_submission_error": {
+    "message": "عذراً! لم نتمكن من تسليمِ عنوان بريدك الإلكتروني.",
+    "description": "Generic email address submission error"
+  },
+  "try_again_later": {
+    "message": "الرجاء المحاولة مرة أخرى لاحقاً.",
+    "description": "Part of error message"
+  },
+  "block_ads_everywhere": {
+    "message": "امنع إعلانات Chrome في كل مكان تتصفحه!",
+    "description": "Chrome mid-level feature page description"
+  },
+  "block_in_chrome": {
+    "message": "منع النوافذ المنبثقة، الفيديوهات الإعلانية التلقائية، وإعلانات ال‍ Facebook و ال‍ YouTube، بالإضافة لمواقعك المفضلة في متصفّح الويب Chrome.",
+    "description": "Chrome mid-level feature page description"
+  },
+  "most_dependable": {
+    "message": "مع أكثر من 225,000 مراجعة خمس نجوم (وهي في تزايد!) AdBlock هو مانع الإعلانات الأكثر اعتمادًا على متصفح Chrome.",
+    "description": "Chrome mid-level feature page description"
+  },
+  "install_today_enjoy": {
+    "message": "قم بتثبيت AdBlock اليوم، واستمتع بتصفح بشكل أسرع و آمن!",
+    "description": "Chrome mid-level feature page description"
+  },
+  "five_star_review_count": {
+    "message": "<b>226,173</b> خمس نجوم  على شكل مراجعة إيجابية و هي في تزايد",
+    "description": "Chrome mid-level feature page description"
+  },
+  "most_trusted_chrome_extension": {
+    "message": "بلا شك، AdBlock هو أكثر إضافة مانع إعلانات متاح حاليًا في Chrome وموثوق به على نطاق واسع مع أكثر من 60 مليون مستخدم.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "simple_customizable": {
+    "message": "هذا يرجع لأن AdBlock الخاص بمتصفح كروم بسيط الاستخدام، قابل للتخصيص تماماً، ويوفر تحسينا هائلا في تجربتك على الأنترنيت.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "block_ads_protect_yourself": {
+    "message": "امنع الإعلانات و احمي نفسك على الأنترنيت",
+    "description": "Chrome mid-level feature page feature title"
+  },
+  "block_yt_ads": {
+    "message": "امنع إعلانات اليوتيوب",
+    "description": "Chrome mid-level feature page feature title"
+  },
+  "youtube_popular_ads": {
+    "message": "اليوتيوب هو واحد من أكثر الوجهات شعبية على شبكة الأنترنيت، وهو أبضا مَسكنٌ لبعض الإعلانات الأكثر إزعاجا.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "no_more_preroll": {
+    "message": "بفضل AdBlock الخاص بمتصفح كروم، لن ترى بعد الآن إعلانات الفيديو قبل التشغيل أو أي مكان آخر في اليوتيوب.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "yt_free_distractions": {
+    "message": "يسمح لك AdBlock بتجربة اليوتيوب بطريقة خالية تماما من التشتيت.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "whitelist_yt_channels": {
+    "message": "خيارات منع الإعلانات على اليوتيوب",
+    "description": "Chrome mid-level feature page feature title"
+  },
+  "adblock_chrome_allows_that": {
+    "message": "AdBlock الخاص بكروم يسمح لك بذلك.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "support_content_creators": {
+    "message": "فقط ببعض النقرات، ستتمكن من دعم صناع المحتوى المفضلين لديك (بينما تمنع ظهور الإعلانات في كل مكان آخر).",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "block_ads_twitch": {
+    "message": "امنع الإعلانات على التويتش",
+    "description": "Chrome mid-level feature page feature title"
+  },
+  "like_no_other": {
+    "message": "يوفر AdBlock خدمة منع الإعلانات على التويتش بطريقة لا يوفرها أي مانع إعلانات منافس.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "twitch_instructions": {
+    "message": "ببساطة قم بتثبيت AdBlock في متصفح كروم، افتح قائمة AdBlock، و قم بتحديد \"تمكين إخفاء إعلانات البث على التويتش\" و ذلك على صفحة الخيارات العامة.",
+    "description": "Chrome mid-level feature page feature description"
+  },
+  "faq_short_title": {
+    "message": "الأسئلة الشائعة",
+    "description": "Frequently Asked Questions title short-form used on narrow version of site"
+  },
+  "how_install_adblock": {
+    "message": "كيف أستطيع تثبيت AdBlock؟",
+    "description": "Chrome mid-level feature page FAQ question"
+  },
+  "have_to_pay": {
+    "message": "هل يتوجب علي الدفع لإستخدام AdBlock؟",
+    "description": "Chrome mid-level feature page FAQ question"
+  },
+  "cant_pay_okay": {
+    "message": "إذا لم تود الدفع الآن (أو لا تريد فعل ذلك)، فلابأس بذلك أيضاً.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "internet_happier_place": {
+    "message": "في AdBlock، نحن نريد جعل الأنترنيت مكانا أكثر سعادة دون الحاجة لتقاضي و لا قرش.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "is_adblock_safe": {
+    "message": "هل AdBlock آمن؟",
+    "description": "Chrome mid-level feature page FAQ question"
+  },
+  "safe_to_install": {
+    "message": "AdBlock هو بطبيعة الحال آمن لتقوم بتثبيته و خالي تماما من أي شكل من أشكال البرمجيات الخبيث، ولكن لا يغيب عن البال أن متاجر إضافات المتصفح الرسمية وموقعنا الإلكتروني هي الأماكن الوحيدة الآمنة للحصول على AdBlock.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "elsewhere_malware": {
+    "message": "إذا قمت بتثبيت \"AdBlock\" من أي مكان آخر، فقد يحتوي ذلك على برمجيات خبيثة يمكن أن تصيب جهاز الحاسوب الخاص بك.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "open_cource_access": {
+    "message": "AdBlock هو برنامج مفتوح المصدر، مما يعني أنه يمكن لأي شخص الوصول إلى الكود البرمجي الخاص بنا و استخدامه لأغراضه الخاصة.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "copycat_ad_blockers": {
+    "message": "و للأسف، هذا يدلّ على أن هناك وجود للكثير من أدوات منع الإعلانات بشكل مقلّد، لذلك فمن المهم اتخاذ الحذر عند تثبيت إضافة مثل AdBlock.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "why_adblock_permissions": {
+    "message": "لماذا يحتاج AdBlock إلى ترخيصات؟",
+    "description": "Chrome mid-level feature page FAQ question"
+  },
+  "permission_like_this": {
+    "message": "ستظن أن الأمر عبارة على هذا الشكل: \"AdBlock يمكنه قراءة وتعديل ونقل المحتوى من جميع صفحات الويب. و يمكن أن يتضمن ذلك معلومات حسّاسة مثل كلمات المرور، أرقام الهواتف وبطاقات الائتمان.\"",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "warnings_sound_scary": {
+    "message": "على الرغم من أن الصياغة الدقيقة تعتمد على المتصفح الذي تستخدمه، فإن كل التحذيرات التي تظهر تبدو مخيفة بعض الشيء.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "careful_browser_permissions": {
+    "message": "هذا لأنه من المهم أن نكون حذراً بشأن تصريحات المتصفح!",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "aware_extensions_do": {
+    "message": "يجب أن تكون على علم بما يمكن أن تفعله إضافات المتصفح.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "ad_blockers_work_by": {
+    "message": "يعمل مانع الإعلانات عن طريق: 1) منع طلبات صفحات الويب يتطلب تحميل الإعلانات من الخوادم التي تستضيفهم. 2) إخفاء أي إعلانات لا يمكن منعها.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "extension_needs_to": {
+    "message": "و للقيام بذلك، تحتاج الإضافة إلى ما يلي:",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "see_every_page": {
+    "message": "رؤية كل صفحة تفتحها حتى يتمكن AdBlock من تشغيل كل صفحة تزورها.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "adblock_knows_url": {
+    "message": "هذا يعني كذلك أن AdBlock يعرف عنوان URL لكل صفحة تزورها.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "see_data_find_ads": {
+    "message": "رؤية جميع بيانات الصفحة و ذلك للعثور على أي إعلانات لم يتم منعنها من بين المحتوى الآخر.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "see_forms_history": {
+    "message": "هذا يعني كذلك أن AdBlock يستطيع رؤية أي نماذج ترسلها و كذلك سجل التصفح الخاص بك على ذلك التبويب.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "change_data_on_page": {
+    "message": "تغيير البيانات على الصفحة بإضافة بعض أكواد HTML و CSS و JavaScript إلى الصفحة لإخفاء الإعلانات التي لا يمكن منعها.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "doesnt_do_anything": {
+    "message": "من المهم أن تعرف أن  قدرة AdBlock على رؤية كل شيء على صفحة الويب، لا يعني أنه في الواقع يفعل أي شيء به.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "does_not_record_capture": {
+    "message": "الإضافة لا تسجّل سجلّ التصفح الخاص بك، و لا تجمع كلمات المرور أو أرقام الحسابات البنكية، أو جمع أو تغيير البيانات التي ترسلها على شكل ويب (web).",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "adblock_do_with_info": {
+    "message": "ماذا يفعل AdBlock بمعلوماتي؟",
+    "description": "Chrome mid-level feature page FAQ question"
+  },
+  "obfuscate_pid": {
+    "message": "نقوم  بشكل منتظم بتشويش جميع المعلومات الشخصية التي يمكن التعرف عليها في سجلاتنا، مما يجعل كل البيانات التي لدينا مجهولة الهوية تماماً.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "dont_target_sell": {
+    "message": "والأهم من ذلك، نحن لا نستهدف أو نبيع أيا من البيانات التي نجمعها، أو التي يمكن التعرف عليها سواء كانت شخصية أو لا.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "no_tracking_selling": {
+    "message": "تتبع و بيع بيانات المستخدم يتعارض مع  قِيمنا و كل ما نمثّله كشركة.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "waht_filter_lists": {
+    "message": "ما هي \"قوائم الفلاتر\" وما هي القوائم التي يجب علي استخدامها؟",
+    "description": "Chrome mid-level feature page FAQ question"
+  },
+  "customize_lists": {
+    "message": "بينما يبدأ AdBlock في منع الإعلانات منذ لحظة تثبيته، تقوم قوائم الفلاتر بالسماح لك بزيادة تخصيص ما تراه (و ما لا تراه) على الأنترنيت.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "block_popups_widgets": {
+    "message": "على سبيل المثال، يمكنك استخدام قوائم الفلاتر في منع أشياء مثل النوافذ المنبثقة الخاصة بالنشرة الإخبارية، و أدوات وسائط التواصل الاجتماعي، وتحذيرات ملفات تعريف الارتباط.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "set_and_forget": {
+    "message": "إذا كنت تفضل \"تعيينه و نسيانه\"، يمكنك فعل ذلك كذلك!",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "subscribed_lists_need": {
+    "message": "عند تثبيتك AdBlock، سوف تكون مشتركاً في قوائم الفلاتر التي تحتاج إليها لمنع الإعلانات المزعجة والمساعدةِ في تحسين تجربتك في التصفح دون أي عمل إضافي مطلوب.",
+    "description": "Chrome mid-level feature page FAQ answer"
+  },
+  "adblock_vpn": {
+    "message": "AdBlock VPN",
+    "description": "VPN page product title"
+  },
+  "next_vpn": {
+    "message": "لقد استمعنا لملاحظاتكم ونحن نعمل جاهدين على منتجنا المقبل: AdBlock VPN!",
+    "description": "VPN Waitlist page description"
+  },
+  "vpn_protect_internet": {
+    "message": "شبكة VPN الخاص بنا، و التي تمثل الشبكة الخاصة الافتراضية، ستوفر الوصول إلى الأنترنيت بشكل خاص، و حمايتك عندما تستخدم شبكة الواي فاي، بالإضافة بثِّ المحتوى الذي تريده أينما كنت.",
+    "description": "VPN Waitlist page description"
+  },
+  "when_vpn_available": {
+    "message": "متى سوف يكون AdBlock VPN متاحاً؟",
+    "description": "VPN Waitlist page FAQ question"
+  },
+  "launch_beta_summer": {
+    "message": "سنقوم بإطلاق خدمة VPN لمستخدمي الإصدار التجريبي هذا الصيف.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "first_vpn_access": {
+    "message": "ستكون الأوائل للحصول على خدمة VPN وستساعدنا ملاحظاتك على تطوير خارطة الطريق الخاص بنا من أجل جعل الخدمة سلسة قدر الإمكان.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "devices_work_on": {
+    "message": "ما هي الأجهزة التي سيشتغل فيها AdBlock VPN؟",
+    "description": "VPN Waitlist page FAQ question"
+  },
+  "vpn_windows_android_ios": {
+    "message": "ستكون شبكة VPN الخاصة بنا متاحة في البداية على أجهزة ال‍ Windows، و ال‍ Android، وأجهزة iOS في البداية.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "notify_as_available": {
+    "message": "سنرسل إشعاراً للمستخدمين المسجلين في قائمة الانتظار المنصات الجديدة عندما تصبح متاحة.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "should_use_vpn": {
+    "message": "هل يجب علي استخدام VPN؟",
+    "description": "VPN Waitlist page FAQ question"
+  },
+  "public_hotspots_vpn": {
+    "message": "إذا كنت تقوم بتسجيل الدخول بشكل متكرر إلى الأنترنيت من نقاط اتصال الواي فاي العامة، و ترغب في الوصول المحتوى المفضل لديك من أي مكان في العالم، أو يساورك القلق بشأن خصوصيتك على الأنترنيت، فمن الأفضل أن تفكر في استخدام VPN.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "how_vpn_help_privacy": {
+    "message": "كيف سوف يساعد AdBlock VPN في حماية خصوصيتي؟",
+    "description": "VPN Waitlist page FAQ question"
+  },
+  "vpn_hide_ip": {
+    "message": "ستقوم شبكة VPN الخاصة بنا بإخفاء عنوان IP الخاص بك وتشفير جميع حركات مرور الويب الخاصة بك، و الذي يتضمن سجلَّ التصفح الخاص بك وما تستخدمه من خدمات البث،و ذلك حتى لا يرى أحد ما تفعله على الأنرنيت.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "vpn_be_free": {
+    "message": "هل ستكون خدمة VPN مجانية؟",
+    "description": "VPN Waitlist page FAQ question"
+  },
+  "free_supported_ads": {
+    "message": "الغالبية العظمى من شبكات VPN \"المجانية\" تكون مدعومة عن طريق إظهار إعلانات لك.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "other_sell_data": {
+    "message": "و شبكات VPNs الأخرى تبيع بياناتك الشخصية حتى تتمكن من تزويدك بشبكة VPN \"مجانية\".",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "adblock_never_do": {
+    "message": "AdBlock لن يقوم أبدا بأي من هذين الأمرين.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "charge_small_fee": {
+    "message": "بدلاً من ذلك، سنتقاضى رسوماً صغيرة، ونقدم خدمة رائعة، ونضمن أن تصل شبكة VPN الخاصة بنا إلى مستوى المعايير العالية للخصوصية والأمان في AdBlock.",
+    "description": "VPN Waitlist page FAQ answer"
+  },
+  "show_answer": {
+    "message": "إظهار الإجابة ",
+    "description": "aria-label for FAQ arrow in collapsed state"
+  },
+  "hide_answer": {
+    "message": "إخفاء الإجابة",
+    "description": "aria-label for FAQ arrow in expanded state"
+  },
+  "loading": {
+    "message": "جارِ التحميل",
+    "description": "alt text for loading indicator"
+  },
+  "vpn": {
+    "message": "VPN",
+    "description": "Link to AdBlock VPN waitlist page"
+  },
+  "upgrade_premium": {
+    "message": "الترقية إلى AdBlock Premium",
+    "description": "AdBlock Premium Enrollment page button text"
+  },
+  "make_adblock_yours_exclamation": {
+    "message": "تحكم في AdBlock الخاص بك",
+    "description": "AdBlock Premium Enrollment page feature description"
+  },
+  "support_fav_content_yt": {
+    "message": "فقط ببعض النقرات، ستتمكن من دعم صناع المحتوى المفضلين لديك (بينما تمنع ظهور الإعلانات في كل مكان آخر).",
+    "description": "Firefox mid-level feature page description"
+  },
+  "review_section_header": {
+    "message": "مراجعات مستخدم AdBlock",
+    "description": "Header for the carousel section visible only to screen readers."
+  },
+  "close": {
+    "message": "إغلاق",
+    "description": "General text for buttons and links for closing something"
+  },
+  "support_us_to_improve_internet": {
+    "message": "التبرعات من أشخاص مثلك تسمح لنا بالاستمرار في جعل الإنترنت مكاناً أفضل.",
+    "description": "Text on the installation thanks page."
+  },
+  "thank_your_for_subscribing": {
+    "message": "شكرًا لك على الاشتراك!",
+    "description": "Text confirming subscription to mailing list on the /thanks page."
+  },
+  "enter_url_here": {
+    "message": "أدخل الرابط هنا",
+    "description": "Placeholder for the textbox to enter a URL to the page where the error occurred."
+  },
+  "select_amount": {
+    "message": "حدد المبلغ",
+    "description": "Generic text to prompt the user to select an amount"
+  },
+  "select_currency": {
+    "message": "حدد العملة",
+    "description": "Generic text to prompt the user to select a currency"
+  },
+  "installing_adblock": {
+    "message": "تثبيت AdBlock...",
+    "description": "Install page: shown while progress bar loads"
+  },
+  "done": {
+    "message": "اكتمل.",
+    "description": "Install page: appended to the 'installing_adblock' message once the progress bar reaches 100%"
+  },
+  "seeing_this_every_time_you_start_your_browser": {
+    "message": "رؤية هذا في كل مرة تفتح فيها متصفحك؟",
+    "description": "Install page: link to click for help"
+  },
+  "installedtitle": {
+    "message": "AdBlock مثبّت الآن!",
+    "description": "Title for the installation success page"
+  },
+  "honor_system": {
+    "message": "نظام الشرف",
+    "description": "Donation page string"
+  },
+  "pamayc_refund": {
+    "message": "يرجى دفع بقدر ما استطعت، إذ أنك يمكنك استعادة المبلغ خلال <b>٦٠ يومًا</b> إن غيرت رأيك!",
+    "description": "Donation page string"
+  },
+  "pwyw_amount_title_generic": {
+    "message": "ضع سعرًا عادلًا:",
+    "description": "Phrase before user selects a price"
+  },
+  "pwyw_amount_title_no_colon": {
+    "message": "ضع سعرًا عادلًا",
+    "description": "Phrase before user selects a price"
+  },
+  "make_one_time_donation": {
+    "message": "تبرع <b>مرة واحدة</b>:",
+    "description": "Header above one time donation section"
+  },
+  "or_monthly_donation": {
+    "message": "أو تبرع <b>شهريًا</b>:",
+    "description": "Header above monthly donation section"
+  },
+  "pwyw_amount_hint": {
+    "message": "على الأقل ٥ دولارات لمساعدتنا على تغطية الرسوم، رجاءً!",
+    "description": "Displayed when the user types in less than 5 US dollars."
+  },
+  "pwyw_amount_hint_generic": {
+    "message": "على الأقل $amount$ لمساعدتنا على تغطية الرسوم، رجاءً!",
+    "description": "Displayed when the user types in a very small amount. The placeholder will automatically be replaced by an amount and the correct currency for the user's country, such as $5, £4, or 5€.",
+    "placeholders": {
+      "amount": {
+        "content": "<span id=\"min-row-span\"><span class=\"currency_symbol\">&#36;</span><span id=\"min-row-amount\">5</span></span>",
+        "example": "$5"
+      }
+    }
+  },
+  "payment_sent": {
+    "message": "أُرسل المبلغ! شكرًا لك!",
+    "description": "Donation page string"
+  },
+  "payment_sent_2": {
+    "message": "شكرًا لك! سنسحب المبلغ من بطاقتك قريبًا.",
+    "description": "Donation page string"
+  },
+  "currency_converter": {
+    "message": "محول العملة",
+    "description": "Donation page string"
+  },
+  "other": {
+    "message": "أخرى...",
+    "description": "Donation page string"
+  },
+  "pay_with": {
+    "message": "ادفع بِ‍:",
+    "description": "Donation page string"
+  },
+  "credit_card": {
+    "message": "بطاقة ائتمان",
+    "description": "Donation page string"
+  },
+  "unlike_other": {
+    "message": "بخلاف موانع الإعلانات الأخرى، نحن نعتمد على مستخدمينا لنتابع عجلة التطوير! إذا كنت تستطيع مساعدة AdBlock ليبقى أفضل مانع إعلانات متوفر، رجاءً افعل ذلك.",
+    "description": "Donation page string"
+  },
+  "cant_pay": {
+    "message": "وإن لم تسطيع أن تدفع، فرجاءً أغلق هذه الصفحة وتابع استخدام AdBlock كما يحلو لك.",
+    "description": "Donation page string"
+  },
+  "by_the_way": {
+    "message": "وبالمناسبة، هناك <a>طرق أخرى مختلفة يمكنك فيها دعم AdBlock</a>، وهي لا تكلّفك هللةً! :)",
+    "description": "Donation page string"
+  },
+  "honor_ware": {
+    "message": "إنّ AdBlock برمجيّة شرف، يعني ذلك بأننا <b>نثق ببعضنا البعض</b> لنكون متحابّين:\n",
+    "description": "Donation page string"
+  },
+  "choose_the_price": {
+    "message": "<b>تدفع ما تقدر عليه</b> ل‍ AdBlock. نتيح <b>لك</b> اختيار المبلغ.",
+    "description": "Donation page string"
+  },
+  "thank_you_short": {
+    "message": "سنبعث إليك ب‍<b>رسالة شكر</b> على ما قدّمت.",
+    "description": "Donation page string"
+  },
+  "refund": {
+    "message": "يمكنك طلب <b>ردّ المبلغ</b>، ومتابعة <b>استخدام AdBlock</b> إن لم <i>تحببه</i>.",
+    "description": "Donation page string"
+  },
+  "hi_from_adblock": {
+    "message": "مرحبًا من فريق AdBlock.",
+    "description": "Alternate donation page introduction"
+  },
+  "enjoy_using": {
+    "message": "نأمل بأنك مستمتع باستخدام AdBlock!",
+    "description": "For existing users who visit getadblock.com/pay to donate"
+  },
+  "install_ty": {
+    "message": "نشكرك على تثبيت AdBlock!",
+    "description": "Show appreciation for just installing the extension"
+  },
+  "eight_full_time": {
+    "message": "AdBlock لديه <b>ثمانية مطورين بدوامٍ كامل</b> يعتمدون على مساهماتك ودعمك.",
+    "description": "Donations help support AdBlock and its team"
+  },
+  "full_time_employees": {
+    "message": "AdBlock لديه <b>موظفين متفرغين</b> يعتمدون على مساهماتك ودعمك.",
+    "description": "Donations help support AdBlock and its team"
+  },
+  "stripe_secure": {
+    "message": "تعالج Stripe.com العملية بسرية",
+    "description": "Message for the credit card payment pop-up window. Indicates that the transaction will be processed in a secure manner. Should preferably stay under 36 characters."
+  },
+  "adblock_updated": {
+    "message": "لقد حُدّثت نسخة AdBlock لديك!",
+    "description": "Update page title"
+  },
+  "version_number": {
+    "message": "(الإصدار $number$)",
+    "description": "Update page subtitle with the version number of the latest release",
+    "placeholders": {
+      "number": {
+        "content": "<span class=\"update_version_number\">3.16.0</span>",
+        "example": "3.16.0"
+      }
+    }
+  },
+  "blocked_ads_for_you": {
+    "message": "لقد حجبنا إلى حد الساعة ما يقارب $number$ إعلان من شاشتك، وهذه هي البداية فحسب.",
+    "description": "Update page introduction. The placeholder will be replaced with the exact number of ads AdBlock has blocked for the user.",
+    "placeholders": {
+      "number": {
+        "content": "<span class=\"update_block_count\">1,500</span>",
+        "example": "1,500"
+      }
+    }
+  },
+  "blocked_ads_for_you_generic": {
+    "message": "كل يومٍ نحجب العشرات من الإعلانات والنوافذ المنبثقة والإعلانات المتتبعة من أجلك، وهذه هي البداية فقط.",
+    "description": "Generic update page introduction."
+  },
+  "release_includes": {
+    "message": "يتضمن هذا الإصدار عددًا من التحديثات المهمة والتي نظن أنها قد تنال إعجابك.",
+    "description": "Update page introduction."
+  },
+  "note_sponsors": {
+    "message": "ولكن قبل ذلك، نودّ الإشارة سريعًا إلى داعمينا:",
+    "description": "Update page introduction. 'Sponsors' refers to AdBlock users who would like to support the project."
+  },
+  "user_supported": {
+    "message": "برمجية AdBlock هي برمجية يدعمها المستخدمون. لا نعرض عليك إعلانات ولا نبيع معلوماتك الشخصية لنضمن بقاءنا ثابتين.",
+    "description": "Update page, second paragraph."
+  },
+  "user_supported_free": {
+    "message": "برمجية AdBlock هي برمجية مجانية يدعمها المستخدمون. لا نعرض لك إعلانات ولا نبيع معلوماتك الشخصية لنضمن بقاءنا ثابتين.",
+    "description": "Update page, second paragraph."
+  },
+  "rely_on_contributions": {
+    "message": "<b>نحن نعتمد على مساهماتك</b> لدعم مواصلة تطوير AdBlock.",
+    "description": "Update page, second paragraph."
+  },
+  "not_possible_without_your_help": {
+    "message": "إن هذا الإصدار وكل الميزات التي نعمل عليها <b>ما كانت ممكنة لو لا مساعدتك</b>.",
+    "description": "Update page, second paragraph."
+  },
+  "please_fair_price": {
+    "message": "نرجوك أن تدفع ما تراه عادلًا لعدم رؤيتك ما يقارب $number$ إعلان حجبناه حتى اللحظة. <b>تبرّع ولو بهللة!</b>",
+    "description": "Update page, second paragraph. The placeholder will be replaced with the exact number of ads AdBlock has blocked for the user.",
+    "placeholders": {
+      "number": {
+        "content": "<span class=\"update_block_count\">1,500</span>",
+        "example": "1,500"
+      }
+    }
+  },
+  "please_fair_price_generic": {
+    "message": "نرجو منك أن تدفع ما تراه مُنصفًا لعدم رؤيتك للإعلانات التي منعناها لحد الآن<b>كل دعم هو بمثابة مساعدة!</b>",
+    "description": "Update page, second paragraph. The placeholder will be replaced with the exact number of ads AdBlock has blocked for the user."
+  },
+  "sixty_days_refund": {
+    "message": "وإن لم تُسرّ بذلك، فلديك ستّين يومًا لاسترداد المبلغ.",
+    "description": "Update page, second paragraph."
+  },
+  "pay_what_you_can": {
+    "message": "نرجوك أن تدفع ما تقدر عليه:",
+    "description": "Update page, donation message."
+  },
+  "introducing_features": {
+    "message": "الآن وقد انتهينا من هذا، هذه بعض المزايا الجديدة التي أصدرناها في النسخ الأخيرة من AdBlock. وهناك مزايا أخرى قادمة قريبًا!",
+    "description": "Update page, section with enhancements or new features added in the latest release."
+  },
+  "introducing_features_this_release": {
+    "message": "الآن وقد انتهينا من هذا، هذه بعض الميزات الجديدة التي أصدرناها. وهناك مزايا أخرى قادمة قريبًا!",
+    "description": "Update page, section with enhancements or new features added in the latest release."
+  },
+  "hide_ads_on_facebook": {
+    "message": "<b>يمكننا الآن إخفاء الإعلانات على فيسبوك.</b> طريقة جديدة لترشيح طلبات الإعلانات ما يتيح لنا إخفاء الإعلانات التي لا تُحجب مثل تلك التي في فيسبوك.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "block_ads_more_sites": {
+    "message": "<b>يمكننا الآن حجب أنواع أخرى من الإعلانات وفي مواقع أكثر.</b> بحجبنا طريقتين تستخدمها شركات الإعلان لاستغلال نقاط ضعف Chrome، بات تمرير الإعلانات من AdBlock أمرا أصعب لعرضها في الأخبار، والفيديوهات المُبثّة وغيرها من المواقع المشهورة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "protect_you": {
+    "message": "<b>نحن الآن نحميك من</b>",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "cryptocurrency_miners": {
+    "message": "<b>المواقع التي تُعدّن العملات الرقمية</b>",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "add_mining_protection": {
+    "message": "أضفنا الحماية من المواقع التي تستخدم الكمبيوتر الخاص بك لتَعدين البيتكوين والعملات الرقمية الأخرى و الربح من وراء ذلك بدون موافقتك.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "excited_improvements": {
+    "message": "نحنُ متحمسونَ جدًا حيال كل التحسينات الجديدة التي سنقدّمها في AdBlock خلال الأشهر القادمة.",
+    "description": "Update page, section with enhancements or new features added in the latest release."
+  },
+  "drop_us_a_line": {
+    "message": "راسلنا.",
+    "description": "Link to send the AdBlock team a message with feedback."
+  },
+  "what_you_think": {
+    "message": "نود أن نعلم عما يجول في خاطرك.",
+    "description": "Invitation to send the AdBlock team a message with ideas or feedback."
+  },
+  "signed_adblock": {
+    "message": "مع خالص تحياتنا،<br>AdBlock",
+    "description": "Signature (by AdBlock) at the end of the update page. 'Love' is used as a closing formula/salutation and can be replaced with something like 'Thank you, AdBlock' or 'Signed, AdBlock' in your translation."
+  },
+  "ps_nothing_to_be_done": {
+    "message": "ملاحظة: لا تحتاج لفعل شيء للحصول على التحديث، لقد فعلنا ذلك مسبقًا لك، على الرحب والسعة!",
+    "description": "Postscript at the bottom of the update page. 'P.S.' is short for 'postcript', which is an additional remark at the end of a letter after the signature."
+  },
+  "click_here_to": {
+    "message": "أُنقر هنا لكي ",
+    "description": "Part 1 of message to click on the link to subscribe to a filter list."
+  },
+  "subscribe": {
+    "message": "تشترك",
+    "description": "Part 2 of message to click on the link to subscribe to a filter list. This is the link."
+  },
+  "to_this_filter_list": {
+    "message": "في قائمة الفلاتر هذه.",
+    "description": "Part 3 of message to click on the link to subscribe to a filter list."
+  },
+  "update_adblock_updated": {
+    "message": "لقد حُدّثت نسخة AdBlock لديك!",
+    "description": "Update page title"
+  },
+  "update_version_number": {
+    "message": "(الإصدار $replace$)",
+    "description": "Update page subtitle with the version number of the latest release"
+  },
+  "update_hard_at_work": {
+    "message": " كنا نعمل جاهدين في تحسين AdBlock خلال الأشهر القليلة الماضية.",
+    "description": "Update page introduction"
+  },
+  "update_new_features_improvements": {
+    "message": "ويتضمن أحدث إصداراتنا قدرًا كبيرًا من المميزات والتحسينات الجديدة.",
+    "description": "Update page introduction"
+  },
+  "update_quick_note": {
+    "message": "لقد قدّمنا لمحة عامة عما كنا نعمل عليه أدناه، و لكن أولًا سنقدم ملاحظة سريعة لداعمي مشروعنا:",
+    "description": "Update page introduction"
+  },
+  "update_adblock_free": {
+    "message": "برمجية AdBlock هي برمجية <b>مجانية</b> يدعمها المستخدمون.",
+    "description": "Update page, second paragraph"
+  },
+  "update_wouldnt_be_possible": {
+    "message": "هذا الإصدار وجميع الميزات التي نعمل عليها <b>ما كانت ممكنةً لو لا مُساعدتكم</b>.",
+    "description": "Update page, second paragraph"
+  },
+  "update_blocked_ads_for_you": {
+    "message": "نرجو منك أن تدفع ما تعتقد أنّه عادلٌ لعدم رؤيتك ما يقارب <b>$number$ إعلان</b> قمنا بمنه حتى الآن.",
+    "description": "Update page, second paragraph. The placeholder will be replaced with the exact number of ads AdBlock has blocked for the user.",
+    "placeholders": {
+      "number": {
+        "content": "<span class=\"update_block_count\">1,500</span>",
+        "example": "1,500"
+      }
+    }
+  },
+  "update_every_donation_helps": {
+    "message": "<b>كل تبرع يساعد!</b>",
+    "description": "Update page, second paragraph"
+  },
+  "update_pay_with": {
+    "message": "ادفع بِ‍:",
+    "description": "Donation page string"
+  },
+  "update_overview_of_features": {
+    "message": "هذه نظرة عامة عن بعض الميزات التي أدرجناها في الإصدارات الأخيرة من AdBlock.",
+    "description": "Update page, section with enhancements or new features added in the latest release."
+  },
+  "update_more_changes_soon": {
+    "message": "و هناك المزيد من التغييرات قادمة قريبا!",
+    "description": "Update page, section with enhancements or new features added in the latest release."
+  },
+  "update_faster_and_privacy": {
+    "message": "<b>تصفح سريع و حماية للخصوصية.</b>",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "update_load_faster_and_harder_tracking": {
+    "message": "لقد جهزنا خاصية تساعد المواقع على التحميل بشكل أسرع، و كذلك تجعل تعقّب الشركات لك أمرا صعبا عن طريق إعادة توجيه طلبات معينة للملفات المستخدمة على نطاق واسع.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "update_local_caching": {
+    "message": "نسمي هذه الخاصية بالتخزين المؤقت المحلي الخاصة بنا، يمكنك معرفة المزيد عنها $opentag$ على مدونتنا$closetag$.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"bloglink\" href=\"#\">",
+        "example": "<a id=\"bloglink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "update_temporarily_pause": {
+    "message": "<b>طريقة جديدة لإيقاف AdBlock مؤقتًا.</b>",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "update_automatically_back_on": {
+    "message": "أضفنا ميزة الإيقاف المؤقت حيث تقوم تلقائيًا بتشغيل AdBlock عند تصفحك لموقع مختلف.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "update_easier_to_visit": {
+    "message": "هذا يُيسر عليك زيارة المواقع التي تطلب منك إيقاف تشغيل AdBlock.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "update_old_pause_still_there": {
+    "message": "لا تقلق، ميزة الإيقاف المؤقت القديمة لم ترحل، مازالت موجودة أيضا!",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "update_excited_additional_improvements": {
+    "message": "نحن متحمسون حيال كل التحسينات الإضافية التي سندرجها في AdBlock خلال الأشهر القادمة.",
+    "description": "Update page, section with enhancements or new features added in the latest release."
+  },
+  "update_drop_us_a_line": {
+    "message": "راسلنا.",
+    "description": "Link to send the AdBlock team a message with feedback."
+  },
+  "update_know_what_you_think": {
+    "message": "نود أن نعلم عما يجول في خاطرك.",
+    "description": "Invitation to send the AdBlock team a message with ideas or feedback."
+  },
+  "update_love_adblock": {
+    "message": "مع خالص تحياتنا،<br>AdBlock",
+    "description": "Signature (by AdBlock) at the end of the update page. 'Love' is used as a closing formula/salutation and can be replaced with something like 'Thank you, AdBlock' or 'Signed, AdBlock' in your translation."
+  },
+  "update_pwyw_amount_hint_generic": {
+    "message": "على الأقل $amount$ لمساعدتنا على تغطية الرسوم، رجاءً!",
+    "description": "Displayed when the user types in a very small amount. The placeholder will automatically be replaced by an amount and the correct currency for the user's country, such as $5, £4, or 5€.",
+    "placeholders": {
+      "amount": {
+        "content": "<span id=\"min-row-span\"><span class=\"currency_symbol\">&#36;</span><span id=\"min-row-amount\">5</span></span>",
+        "example": "$5"
+      }
+    }
+  },
+  "update_pwyw_amount_hint_generic_recurring": {
+    "message": "على الأقل $amount$ سيساعد في تغطية الرسوم، لو سمحت!",
+    "description": "Displayed when the user types in a very small amount. The placeholder will automatically be replaced by an amount and the correct currency for the user's country, such as $5, £4, or 5€.",
+    "placeholders": {
+      "amount": {
+        "content": "<span id=\"min-row-span\"><span class=\"currency_symbol\">&#36;</span><span id=\"min-row-amount\">5</span></span>",
+        "example": "$5"
+      }
+    }
+  },
+  "ff_update_antitracking_feature": {
+    "message": "$opentag$ خاصية جديدة $closetag$ تجعل من الصعب على الشركات تتبع عادات التصفح الخاص بك",
+    "description": "Link to article about our new local content caching feature. The 'opentag' and 'closetag' placeholders will be replaced with relevant HTML 'A' tags.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"articlelink\" href=\"#\">",
+        "example": "<a id=\"articlelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "ff_update_cryptomining_protection": {
+    "message": "الحماية من المواقع التي تستخدم الكمبيوتر الخاص بك في $opentag$تعدين العملات المشفرة$closetag$",
+    "description": "Link to article aobut new anti-cryptomining feature. The 'opentag' and 'closetag' placeholders will be replaced with relevant HTML 'A' tags.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"articlelink\" href=\"#\">",
+        "example": "<a id=\"articlelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "ff_update_improve_blocking": {
+    "message": "سلسلة من الإصلاحات لتحسين القدرة على منع الإعلانات وتقليل أوقات تحميل الصفحات",
+    "description": "Description of improvements made in this update."
+  },
+  "quick_note": {
+    "message": "ملاحظة سريعة قبل أن تنطلق",
+    "description": "Title for the informational section of the donation page"
+  },
+  "started_blocking": {
+    "message": "يبدأ AdBlock في منع الإعلانات التطفلية في اللحظة التي يتم تثبيته، و لكن قد ترى <b> بعض الإعلانات الغير متطفلة</b> في بعض المواقع.",
+    "description": "Message letting the user know that AdBlock starts working immediately and that Acceptable Ads are enabled."
+  },
+  "good_neighbors": {
+    "message": "نحاول أن نكون $opentag$ جيرانا جيدين في الويب $closetag$ عن طريق تحقيق توازن بين حمايتك من الإعلانات السيئة و حرمان المواقع من الإيرادات التي يحتاجونها لتوفير المحتوى الذي تحبه.",
+    "description": "Information about Acceptable Ads. Links to our knowledge base article about Acceptable Ads.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"aalink\" href=\"#\">",
+        "example": "<a id=\"aalink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "opt_out": {
+    "message": "يمكنك $opentag$ إختيار هذا الإختيار الآن $closetag$  أو تشغيله أو إيقافه في وقت لاحق في خيارات AdBlock.",
+    "description": "Message about opting out of Acceptable Ads. Link disables Acceptable Ads.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"disableaalink\" href=\"#\">",
+        "example": "<a id=\"disableaalink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "your_choice": {
+    "message": "إنه خيارك، دائمًا.",
+    "description": "Continuation of message about opting out of Acceptable Ads."
+  },
+  "help_an_email_away": {
+    "message": "المساعدة عبر البريد الإلكتروني",
+    "description": "Subtitle for section of donation page about contacting us."
+  },
+  "need_us": {
+    "message": "إذا كنت في حاجة إلينا، فإن مساعدة البريد الإلكتروني 24×7 و 8×5 متوفرة على بوابة الدعم الخاصة بنا، $helplink$.",
+    "description": "Link to our support website",
+    "placeholders": {
+      "helplink": {
+        "content": "<a href=\"https://help.getadblock.com\">help.getadblock.com</a>",
+        "example": "<a href=\"https://help.getadblock.com\">help.getadblock.com</a>"
+      }
+    }
+  },
+  "thanks_again": {
+    "message": "شكرا مرة أخرى لاختيارك AdBlock.",
+    "description": "Closing message on donation page"
+  },
+  "happy_browsing": {
+    "message": "تصفحًا سعيدًا!",
+    "description": "Exclamation wishing the user an enjoyable browsing experience."
+  },
+  "mobile_links": {
+    "message": "أحصل على (ترجمة) $opentag1$ (ترحمة) AdBlock لنظام iOS (ترحمة) $closetag1$ (ترجمة) في متجر أبل ستور، أو (ترجمة) $opentag2$ (ترجمة) AdBlock لمتصفح سامسونج (ترجمة) $closetag2$ في متجر جوجل بلاي.",
+    "description": "Links to our mobile products",
+    "placeholders": {
+      "opentag1": {
+        "content": "<a id=\"ioslink\" href=\"#\">",
+        "example": "<a id=\"ioslink\" href=\"#\">"
+      },
+      "closetag1": {
+        "content": "</a>",
+        "example": "</a>"
+      },
+      "opentag2": {
+        "content": "<a id=\"samsunglink\" href=\"#\">",
+        "example": "<a id=\"samsunglink\" href=\"#\">"
+      },
+      "closetag2": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "recent_releases": {
+    "message": "تتضمن أحدث إصداراتنا على مجموعة من الميزات و التحسينات الجديدة.",
+    "description": "Part of the intro on the update page."
+  },
+  "highlighted": {
+    "message": "لقد أشرنا إلى بعض منها أدناه، لكن أولا، ملاحظة سريعة للمتبرعين:",
+    "description": "Part of the intro on the update page."
+  },
+  "release_not_possible": {
+    "message": "هذا الإصدار، و كل شيء آخر نقوم به <b> ما كان ليكون مُمكنا لولاكم</b>.",
+    "description": "Part of the intro on the update page."
+  },
+  "donate_fair_price": {
+    "message": "نرجو منك أن تتبرع بالمبلغ الذي تراه مُنصفا لعدم رؤيتك للإعلانات المزعجة و المتطفلة في كل موقع تزوره.",
+    "description": "Part of the intro on the update page."
+  },
+  "keyboard_commands": {
+    "message": "لكثرة الطلبات، قمنا بتسهيل عملية إيقاف و استثناف منع الإعلانات بإستعمال أوامر لوحة المفاتيح.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "better_blocking": {
+    "message": "منع الإعلانات التي تحاول حجب AdBlock بطريقة أحس.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "circumvention_industry": {
+    "message": "لقد تشكّلت صناعة تفرض الإعلانات على المستخدمين الذين اختاروا عدم رؤيتها، باستخدام تقنية الإعلانات المتقدمة لتتحايل على أدوات مانعي الإعلانات.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "new_filter_list": {
+    "message": "الآن يتضمن AdBlock قائمة فلاتر جديدة تُضعف تكنولوجيا الإعلانات العدوانية بشكل أسهل.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "subscribe_here": {
+    "message": "إذا كنت تود في تجربة قائمة الفلاتر الجديدة هذه،$opentag$ إشترك هنا$closetag$.",
+    "description": "Link to subscribe to the Anti-Circumvention filter list",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"subscribelink\" href=\"#\">",
+        "example": "<a id=\"subscribelink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "improved_ad_hiding": {
+    "message": "تحسين إخفاء الإعلانات.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "futher_improved_hiding": {
+    "message": "قمنا بزيادة تحسين قدرتنا على إخفاء العناصر الإعلامية في العديد من المواقع.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "improve_memory_and_ads": {
+    "message": "تحسين في استخدام الذاكرة وإخفاء الإعلانات.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "reduce_memory": {
+    "message": "قمنا بتحديث AdBlock لتقليل من استخدام الذاكرة الأولية بنسبة 8%.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "improve_hiding_ability": {
+    "message": "كما حسنا قدرتنا على إخفاء العناصر الإعلامية في العديد من المواقع.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "pause_context_menu": {
+    "message": "إيقاف سريع لAdBlock و إعادة التشغيل باستخدام قائمة السياق (النقر على اليمين).",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "easier_pause_resume": {
+    "message": "لكثرة الطلبات، قمنا بتسهيل عملية إيقاف و استثناف منع الإعلانات.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "right_click_menu": {
+    "message": "أنقر فقط على الزر الأيمن على الصفحة أينما يكون المؤشر الخاص بك، وحدد الخيار من قائمة AdBlock.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "more_ad_blocking": {
+    "message": "أكثر و أفضل مانع إعلانات.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "new_list_anticircumvention": {
+    "message": "الآن يتضمن AdBlock قائمة فلاتر جديدة تُضعف تكنولوجيا الإعلانات العدوانية بشكل أسهل.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "new_language_lists": {
+    "message": "أضفنا كذلك قوائم الفلاتر لمنع الإعلانات على المواقع الفيتنامية، البرازيلية و النرويجية بالإضافة للبرتغالية.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "enhancements_improvements": {
+    "message": "تحسين قائمة الفلاتر،و تحسين الواجهة، و كذلك إصلاح الأخطاء.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "other_fixes_improvements": {
+    "message": "كما قمنا كذلك بتحديث الروابط إلى عدد قليل من قوائم الفلاتر وجعلنا الروابط الأخرى أكثر أمانًا؛ تحديث بعض الترجمات وتنظيف قائمة AdBlock بالإضافة لإصلاح خطأ في القائمة السوداء والقائمة البيضاء الخاصة بنا.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "reduced_cpu_by_fifty_percent": {
+    "message": "خفض استخدام المعالج بأكثر من 50%.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "improvements_block_network_requests": {
+    "message": "قمنا بعمل تحسينات كبيرة على أداء AdBlock عن طريق تغيير كيفية منع طلبات الشبكة و إخفاء الإعلانات في بعض الصفحات.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "dark_mode": {
+    "message": "الوضع المظلم.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "customize_look_and_feel": {
+    "message": "أخرجنا الوضع المظلم للوجود من أجل السماح لك بتخصيص شكل و أسلوب AdBlock.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "options_page_link": {
+    "message": "يمكنك العثور عليه في $opentag$ صفحة خيارات AdBlock (ترجمة) $closetag$.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"optionsPageLink\" href=\"#\">",
+        "example": "<a id=\"optionsPageLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "branding_updates": {
+    "message": "تحديثات العلامة التجارية.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "new_look": {
+    "message": "AdBlock حصل على مظهر جديد!",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "redesigned_logo_and_menus": {
+    "message": "أعدنا تصميم شعارنا، و قوائم المنتج، و صفحات الخيارات لنطفي عليهم مظهرا أكثر حداثة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "doubled_customer_support": {
+    "message": "ضاعفنا عدد فريق دعم العملاء لدينا.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "one_day_response": {
+    "message": "هدفنا هو الإستجابة لملاحظات أي عميل في غضون يوم واحد، لذلك أضفنا موارد إضافية للرد على مستخدمي AdBlock بسرعة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "please_reach_out": {
+    "message": "الرجاء التواصل معنا!",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "something_fun": {
+    "message": "أخذنا أيضا بعض الوقت هذا العام لبناء شيء ممتع - لعبة AdBlock الأولى!",
+    "description": "Closing note about AdBlock's first game"
+  },
+  "try_it_here": {
+    "message": "من فضلك $opentag$حاول تجربتها من هنا$closetag$!",
+    "description": "Link to AdBlock the Game",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"gameLink\" href=\"#\">",
+        "example": "<a id=\"gameLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "whats_new": {
+    "message": "ما الجديد؟",
+    "description": "Header for section of update page that contains details about the new features available in AdBlock."
+  },
+  "please_reach_out_link": {
+    "message": "$opentag$يرجى التواصل معنا$closetag$!",
+    "description": "Link to help desk",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"helpLink\" href=\"#\">",
+        "example": "<a id=\"helpLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "goal_shorter": {
+    "message": "هدفنا هو الإستجابة لملاحظات أي عميل في غضون يوم واحد، لذلك أضفنا موارد إضافية للرد على مستخدمي AdBlock بسرعة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "darkmode_coming_soon": {
+    "message": "و الآن نحن جاهدون في العمل على بعض الميزات الجديدة لمستخدمي فايرفوكس، بما في ذلك الوضع المظلم.",
+    "description": "Closing note about new features that are coming soon to Firefox"
+  },
+  "advanced_ad_blocking": {
+    "message": "منع الإعلانات بطريقة مُتقدمة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "further_blocking_hiding": {
+    "message": "لقد قمنا بتحسين قدرتنا على منع و إخفاء الإعلانات في المواقع التي تستخدم تقنية الإعلانات العدوانية لحجب AdBlock.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "language_specific_lists": {
+    "message": "قوائم الفلاتر الخاصة بكل لغة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "updated_language_lists": {
+    "message": "قمنا بتحديث وتحسين بعض قوائم الفلاتر الخاصة بلغتنا حتى تتمكن من التقاط - ومنع - المزيد من الإعلانات المزعجة حول العالم.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "themes": {
+    "message": "السمات",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "customize_adblock": {
+    "message": "أخرجنا السمات للوجود لتسمح لك بتخصيص مظهر و أسلوب AdBlock.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "dark_rebecca_purple": {
+    "message": "كانت أول سمة لنا هي \"dark\" و الآن نحن نقدم سمة “Rebecca Purple” لتكريم ذكرى $opentag$Rebecca Alison Meyer$closetag$.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"rebeccaPurpleLink\" href=\"#\">",
+        "example": "<a id=\"rebeccaPurpleLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "redesigned_website": {
+    "message": "قمنا كذلك بإعادة تصميم $opentag1$ موقع AdBlock (ترجمة) $closetag1$ وقمنا بإنشاء صفحات لإعلام مستخدمينا عن كيف يستطيع AdBlock القيام (ترجمة) $opentag2$ بمنع الإعلانات المنبثفة $closetag2$، (ترجمة) $opentag3$ إيقاف البرمجيات الخبيثة $closetag3$، وكذلك $opentag4$ حذف إعلانات اليوتيوب $closetag4$.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag1": {
+        "content": "<a id=\"websiteLink\" href=\"#\">",
+        "example": "<a id=\"websiteLink\" href=\"#\">"
+      },
+      "closetag1": {
+        "content": "</a>",
+        "example": "</a>"
+      },
+      "opentag2": {
+        "content": "<a id=\"popupLink\" href=\"#\">",
+        "example": "<a id=\"popupLink\" href=\"#\">"
+      },
+      "closetag2": {
+        "content": "</a>",
+        "example": "</a>"
+      },
+      "opentag3": {
+        "content": "<a id=\"malwareLink\" href=\"#\">",
+        "example": "<a id=\"malwareLink\" href=\"#\">"
+      },
+      "closetag3": {
+        "content": "</a>",
+        "example": "</a>"
+      },
+      "opentag4": {
+        "content": "<a id=\"youtubeLink\" href=\"#\">",
+        "example": "<a id=\"youtubeLink\" href=\"#\">"
+      },
+      "closetag4": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "need_more_help": {
+    "message": "بحاجة للمزيد من المساعدة؟",
+    "description": "Closing note on /update page"
+  },
+  "visit_help_center": {
+    "message": "رجاءا قم بزيارة $opentag$ مركز المساعدة $closetag$ للمشاكل الشائعة المبلغ عنها و التي تم إصلاحها.",
+    "description": "Closing note on /update page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"helpcenterLink\" href=\"#\">",
+        "example": "<a id=\"helpcenterLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "stay_tuned_thank_you": {
+    "message": "ترقب تحديثات في المستقبل، و شكرا لك على $opentag$ دعم AdBlock (ترجمة) $closetag$!",
+    "description": "Closing note on /update page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"supportLink\" href=\"#\">",
+        "example": "<a id=\"supportLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "easier_customer_support": {
+    "message": "دعم العملاء بطريقة أسهل.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "simple_help": {
+    "message": "جعلنا أمر الحصول على المساعدة للمشاكل الشائعة داخل AdBlock سهلًا.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "redesigned_help_flow": {
+    "message": "أعدنا تصميم  \"استكشاف الأخطاء في الإعلان\" بالكامل، و الآن يمر عبر خطوات التعامل مع $opentag$الإعلانات غير المحظورة$closetag$ بسهولة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"unblockedAdsLink\" href=\"#\">",
+        "example": "<a id=\"unblockedAdsLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "better_accessibility": {
+    "message": "إمكانية وصول أفضل.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "accessible_popup_menu": {
+    "message": "قائمة AdBlock المنبثقة أصبحت الآن قابلة للوصول  عن طريق أوامر لوحة المفاتيح، مما يسهل استخدامها على الأشخاص الذين يعتمدون على لوحة المفاتيح أو قارئ الشاشة.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "options_page_twitch": {
+    "message": "إصلاح صفحة الخيارات و كذلك إخفاء إعلانات التويتش.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "redesigned_options_page": {
+    "message": "أعدنا تصميم صفحة الخيارات لجعلها أسهل في العثور على ما تبحث عنه.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "hide_ads_twitch": {
+    "message": "أضفنا كذلك إعدادات جديدة مثل خيار $opentag$ إخفاء الإعلانات في Twitch(ترجمة)$closetag$.\n",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchLink\" href=\"#\">",
+        "example": "<a id=\"twitchLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "edge_update_title": {
+    "message": "تحديث Edge - إستورد AdBlock معك",
+    "description": "Title of Edge migration update page"
+  },
+  "bring_adblock": {
+    "message": "واكب AdBlock معك إلى متصفح إيدج الجديد و استكشف واجهة حديثة و خيارات تخصيص جديدة",
+    "description": "Header for Edge migration update page"
+  },
+  "whole_lot_better": {
+    "message": "AdBlock الخاص بمتصفح Edge أصبح أفضل بكثير.",
+    "description": "Subheader for Edge migration update page"
+  },
+  "upgraded_adblock": {
+    "message": "يقدم متصفح Edge الجديد نسخة محسّنة من AdBlock مع تصميم تم تجديده بالكامل، و تحسين منع الإعلانات، بالإضافة إلى ميزات جديدة تمامًا (بما فيها AdBlock Premium).",
+    "description": "Part 1 of description for Edge migration update page"
+  },
+  "upgraded_adblock_features": {
+    "message": "أضف قنواتك المفضلة في يوتيوب إلى القائمة البيضاء، و امنع الإعلانات على تويتش، و المزيد.",
+    "description": "Part 2 of description for Edge migration update page"
+  },
+  "fall_in_love": {
+    "message": "سوف تعشق AdBlock من جديد!",
+    "description": "Part 3 of description for Edge migration update page"
+  },
+  "to_get_adblock": {
+    "message": "للحصول على AdBlock بعد تثبيت الإصدار الجديد من متصفح إيدج...",
+    "description": "Intro to steps to get AdBlock for Edge on migration update page"
+  },
+  "step_one": {
+    "message": "1. إفتح Edge",
+    "description": "Step 1 to get AdBlock for Edge on migration update page"
+  },
+  "step_two": {
+    "message": "2. انقر على الأيقونة $img$ في الزاوية اليمنى العليا من المتصفح الخاص بك",
+    "description": "Step 2 to get AdBlock for Edge on migration update page",
+    "placeholders": {
+      "img": {
+        "content": "<img/>",
+        "example": "A small picture of icon in the corner of the browser."
+      }
+    }
+  },
+  "step_three": {
+    "message": "3. أنقر على <b>إنهاء إعداد AdBlock</b> لفتح صفحة إضافات Edge",
+    "description": "Step 3 to get AdBlock for Edge on migration update page"
+  },
+  "step_four": {
+    "message": "تبديل الخيار الموجود على يمين قائمة AdBlock إلى <b>تشغيل</b>",
+    "description": "Step 4 to get AdBlock for Edge on migration update page"
+  },
+  "step_five": {
+    "message": "5. في مربع الحوار، انقر على <b>إعادة التمكين</b> لتمكين AdBlock",
+    "description": "Step 5 to get AdBlock for Edge on migration update page"
+  },
+  "step_six": {
+    "message": "أنت جاهز الآن!",
+    "description": "Step 6 to get AdBlock for Edge on migration update page"
+  },
+  "update_increased_adblock_usage": {
+    "message": "لقد شهدنا زيادة كبيرة في استخدام AdBlock هذا العام.",
+    "description": "Update page, first paragraph"
+  },
+  "update_overview_of_world": {
+    "message": "في جميع أنحاء العالم، يظل المستخدمون لدينا عالقين بالداخل، ويقضون وقتًا أطول على الإنترنت، ويتطلعون إلى تقليل عوامل التشتيت عبر الإنترنت.",
+    "description": "Update page, first paragraph"
+  },
+  "update_adblock_improving_update": {
+    "message": "لقد عملنا جاهدين على تحسين AdBlock خلال كل ذلك وقد أبرزنا بعض أعمالنا أدناه.",
+    "description": "Update page, first paragraph"
+  },
+  "update_safe_message": {
+    "message": "نأمل أن تكون أنت وعائلتك بأمان وبصحة جيدة خلال هذا الوقت الصعب.",
+    "description": "Update page, first paragraph"
+  },
+  "update_not_free_to_operate": {
+    "message": "ولكن ليس من الحريّ العمل.",
+    "description": "Update page, second paragraph"
+  },
+  "update_salaries_and_infrastructure": {
+    "message": "لدينا رواتب لدفعها وتكاليف البنية التحتية لتغطيتها لجعل AdBlock متاحة للمستخدمين الـ 65 مليون في جميع أنحاء العالم. ",
+    "description": "Update page, second paragraph"
+  },
+  "update_many_users_support_adblock": {
+    "message": "لحسن الحظ، يدعم العديد من المستخدمين <em></em> AdBlock عن طريق <b>التبرع بما يمكنهم تحمله</b> للمساعدة في دعم التطوير المستمر لـAdBlock. ",
+    "description": "Update page, second paragraph"
+  },
+  "update_love_and_exist": {
+    "message": "نحن نحبك ولا يمكن أن نوجد بدونك.",
+    "description": "Update page, second paragraph"
+  },
+  "update_able_to_donate_appreciate": {
+    "message": "إذا كنت قادرًا على التبرع لدعمنا، فنحن نقدر ذلك.",
+    "description": "Update page, second paragraph"
+  },
+  "recent_updates_edge": {
+    "message": "إليك هذه النظرة العامة حول بعض الميزات الجديدة التي أدرجناها مؤخرا في AdBlock على Edge!.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "premium_features_details": {
+    "message": "أضفنا سمات مخصصة، خيار إستبدال الإعلانات بصور قطط و كلاب، و القدرة على مزامنة الإعدادت عبر حواسيب متعددة، كل هذا ستجده في خدمة $opentag$AdBlock Premium$closetag$.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"premiumLink\" href=\"#\">",
+        "example": "<a id=\"premiumLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "adblock_stats": {
+    "message": "إحصائيات AdBlock.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "stats_description": {
+    "message": "أحصل على معلومات محسنة حول عدد الإعلانات والمتعقبين الذين قمنا بمنعها، عن طريق الموقع، مع $opentag$إحصائيات منع الإعلانات الجديدة$closetag$.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"statsLink\" href=\"#\">",
+        "example": "<a id=\"statsLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "improved_removal_ads": {
+    "message": "لقد قمنا بتحسين قدرتنا على إزالة الإعلانات في المواقع التي تستخدم تقنية الإعلانات العدوانية لحجب AdBlock.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "improved_twitch_hiding": {
+    "message": "تحسين إخفاء الإعلانات على Twitch.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "improved_twitch_details": {
+    "message": "تحسن قدرتنا عى $opentag$ إخفاء و كتم صوت إعلانات الفيديو على Twitch (ترجمة) $closetag$.",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock.",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"twitchLink\" href=\"#\">",
+        "example": "<a id=\"twitchLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "need_any_help": {
+    "message": "بحاجة لأي مساعدة؟",
+    "description": "Feature or enhancement introduced in the lastest version of AdBlock."
+  },
+  "overview_new_firefox": {
+    "message": "إليك هذه النظرة العامة حول بعض الميزات الجديدة التي أدرجناها مؤخرا في AdBlock على Firefox.",
+    "description": "Intro to features/changes on /update page"
+  },
+  "overview_new_chrome": {
+    "message": "إليك هذه النظرة العامة حول بعض الميزات الجديدة التي أدرجناها مؤخرا في AdBlock على Chrome.",
+    "description": "Intro to features/changes on /update page"
+  },
+  "more_exciting_changes": {
+    "message": "و هناك المزيد من التغييرات قادمة قريبا!",
+    "description": "Intro to features/changes on /update page"
+  },
+  "premium_updated": {
+    "message": "تم تحديث AdBlock Premium!",
+    "description": "Title of Premium update page"
+  },
+  "enjoying_enhanced_adblock": {
+    "message": "نأمل أن تستمتع يتجربة AdBlock بنسخته المحسنة.",
+    "description": "Intro on Premium update page"
+  },
+  "excited_premium_features": {
+    "message": "لم نكن لنتمكن من فعل هذا بدون دعمك، ونحن متحمسون للعديد من ميزات Premium التي لم ترى النور بعد.",
+    "description": "Intro on Premium update page"
+  },
+  "whats_new_caps": {
+    "message": "ما الجديد؟",
+    "description": "Section header on Premium update page"
+  },
+  "advanced_blocking_stats": {
+    "message": "إحصائيات منع متقدمة",
+    "description": "Section subheader on Premium update page"
+  },
+  "blocks_by_time": {
+    "message": "سنريك كم عدد الإعلانات التي قمت بمنعها في اليوم، الأسبوع أو الشهر.",
+    "description": "Description of feature on Premium update page"
+  },
+  "ads_replaced": {
+    "message": "سنريك كذلك عدد الإعلانات التي استبدلناها بصور القطط والكلاب والمناظر الطبيعية.",
+    "description": "Description of feature on Premium update page"
+  },
+  "cross_browser": {
+    "message": "زيادة قوة المتصفح إلى أعلى درجاته",
+    "description": "Section subheader on Premium update page"
+  },
+  "themes_sync": {
+    "message": "الوصول الكامل إلى كل سمات  AdBlock، ثم مزامنة القوائم البيضاء وإعدادات منع الإعلانات بين Chrome و Firefox و Edge.",
+    "description": "Description of feature on Premium update page"
+  },
+  "whats_coming": {
+    "message": "ما القادم؟",
+    "description": "Section header on Premium update page"
+  },
+  "custom_ad_replacements": {
+    "message": "تبديل الإعلانات المخصصة",
+    "description": "Section subheader on Premium update page"
+  },
+  "replace_with_your_images": {
+    "message": "استبدل الإعلانات بصور أصدقائك، عائلتك، حيوانك الأليف أو أي شيء تختاره.",
+    "description": "Description of feature on Premium update page"
+  },
+  "upload_favorite_photos": {
+    "message": "فقط قم برفع صورك المفضلة و سنستخدمها لاستبدال الإعلانات بصورك المفضلة.",
+    "description": "Description of feature on Premium update page"
+  },
+  "improve_security_privacy": {
+    "message": "قم بتحسين الأمان و خصوصيتك عبر الإنترنت باستخدام AdBlock VPN.",
+    "description": "Description of feature on Premium update page"
+  },
+  "simple_tool_safe": {
+    "message": "هذه الأداة البسيطة ستجعل من السهل إبقاء تصفحك للويب آمنًا.",
+    "description": "Description of feature on Premium update page"
+  },
+  "sign_up": {
+    "message": "إنشاء حساب",
+    "description": "Call to action for VPN feature"
+  },
+  "whats_next": {
+    "message": "ماذا بعد؟",
+    "description": "Section header on Premium update page"
+  },
+  "vote_now": {
+    "message": "صوت الآن!",
+    "description": "Call to action for future features"
+  },
+  "hear_what_youd_like": {
+    "message": "نحب أن نسمع منك عما تريد رؤيته بعد ذلك.",
+    "description": "Call to action for future features"
+  },
+  "image_replacement_launched": {
+    "message": "أطلقنا القدرة على استبدال الإعلانات المزعجة بصور أصدقائك أو عائلتك أو حيواناتك الأليفة أو أي صورة تختارها.",
+    "description": "Description of feature on Premium update page"
+  },
+  "upload_and_replace": {
+    "message": "فقط قم برفع صورك المفضلة و سنستخدمها لاستبدال الإعلانات بصورك المفضلة.",
+    "description": "Description of feature on Premium update page"
+  },
+  "click_to_try": {
+    "message": "انقر على $opentag$هُنا$closetag$ لتجربته.",
+    "description": "Description of feature on Premium update page",
+    "placeholders": {
+      "opentag": {
+        "content": "<a id=\"tryItLink\" href=\"#\">",
+        "example": "<a id=\"tryItLink\" href=\"#\">"
+      },
+      "closetag": {
+        "content": "</a>",
+        "example": "</a>"
+      }
+    }
+  },
+  "advanced_youtube_twitch": {
+    "message": "التحكم المُتقدم على اليوتيوب وفي تويتش",
+    "description": "Description of feature on Premium update page"
+  },
+  "control_youtube_twitch": {
+    "message": "لقد سهلنا عليك التحكم في وقت وكيفية مشاهدة الإعلانات على YouTube و Twitch.",
+    "description": "Description of feature on Premium update page"
+  },
+  "allow_ads_twitch": {
+    "message": "يمكنك الآن السماح للإعلانات بدعم ستريمرز المفضلين لديك على Twitch وإدارة الإعلانات على أي قناة على YouTube تشترك فيها بنقرة واحدة.",
+    "description": "Description of feature on Premium update page"
+  },
+  "hide_cookie_notifications": {
+    "message": "إخفاء إشعارات \"ملفات تعريف الارتباط\"",
+    "description": "Feature header on Premium update page"
+  },
+  "easy_hide_notifications": {
+    "message": "لقد جعلنا من السهل إخفاء الإشعارات التي تركز على الخصوصية والتي تستخدمها العديد من مواقع الويب لإعلام الزائرين بكيفية استخدامهم لملفات تعريف الارتباط.",
+    "description": "Description of feature on Premium update page"
+  },
+  "doesnt_prevent_cookies": {
+    "message": "ملاحظة: لا تمنع هذه الميزة مواقع الويب من استخدام ملفات تعريف الارتباط.",
+    "description": "Description of feature on update page"
+  },
+  "improve_online_privacy": {
+    "message": "حسِّن خصوصيتك على الإنترنت باستخدام AdBlock VPN.",
+    "description": "Description of feature on Premium update page"
+  },
+  "vpn_easy_to_use": {
+    "message": "AdBlock VPN هي أداة سهلة الاستخدام ستجعل من السهل الحفاظ على خصوصية بياناتك الشخصية وسجل التصفح.",
+    "description": "Description of feature on Premium update page"
+  },
+  "secure_internet_access": {
+    "message": "استمتع بإمكانية الوصول الآمن إلى الإنترنت حتى عندما تكون متصلًا بشبكة واي فاي عامة، وكن مطمئنًا لأنك تعلم أن نشاطك على الإنترنت لا يمكن لأي شخص مراقبته.",
+    "description": "Description of feature on Premium update page"
+  },
+  "sign_up_now": {
+    "message": "سجل الان!",
+    "description": "Link to sign up"
+  },
+  "increased_adoption": {
+    "message": "لقد شهدنا زيادة كبيرة في اعتماد AdBlock هذا العام.",
+    "description": "Intro on update page"
+  },
+  "users_stuck_inside": {
+    "message": "العديد من مستخدمينا عالقون في الداخل، ويقضون وقتًا أطول على الإنترنت، ويتطلعون إلى تقليل عوامل التشتيت.",
+    "description": "Intro on update page"
+  },
+  "highlighted_work": {
+    "message": "لقد عملنا على تحسين AdBlock خلال كل ذلك وقد أبرزنا هذا العمل أدناه.",
+    "description": "Intro on update page"
+  },
+  "every_contribution": {
+    "message": "كل مساهمة تساعد!",
+    "description": "Intro on update page"
+  },
+  "adblock_vpn_period": {
+    "message": "AdBlock VPN.",
+    "description": "Header for feature on update page"
+  },
+  "hide_cookie_notifications_period": {
+    "message": "إخفاء إشعارات \"ملفات تعريف الارتباط\".",
+    "description": "Header for feature on update page"
+  },
+  "allow_twitch_ads": {
+    "message": "السماح بإعلانات ال‍ Twitch.",
+    "description": "Header for feature on update page"
+  },
+  "youtube_fixes": {
+    "message": "إصلاحات ال‍ YouTube.",
+    "description": "Header for feature on update page"
+  },
+  "new_adblock_menu": {
+    "message": "قائمة AdBlock الجديدة.",
+    "description": "New feature on update page"
+  },
+  "contributors_footer_btn": {
+    "message": "المساهمون",
+    "description": "Button in the footer"
+  },
+  "support_footer_btn": {
+    "message": "الدعم",
+    "description": "Button in the footer"
+  },
+  "home_nav_btn": {
+    "message": "الصفحة الرئيسية",
+    "description": "alt tet for button that links to homepage"
+  },
+  "how_adblock_vpn_work": {
+    "message": "كيف يعمل AdBlock VPN؟",
+    "description": "VPN FAQ question"
+  },
+  "does_adblock_vpn_block_ads": {
+    "message": "هل يمنع AdBlock VPN الإعلانات؟",
+    "description": "VPN FAQ question"
+  },
+  "hope_to_add_soon": {
+    "message": "ليس بعد. نأمل أن نضيف هذه الوظيفة في المستقبل القريب.",
+    "description": "VPN FAQ answer"
+  },
+  "for_now_we_recommend": {
+    "message": "في الوقت الحالي، نوصي باستخدام AdBlock VPN بالاقتران مع ملحق متصفح AdBlock.",
+    "description": "VPN FAQ answer"
+  },
+  "is_adblock_vpn_free": {
+    "message": "هل AdBlock VPN مجاني؟",
+    "description": "VPN FAQ question"
+  },
+  "about": {
+    "message": "حول",
+    "description": "Link to text about the VPN."
+  },
+  "secure_simple_as_iphone": {
+    "message": "تأمين اتصالك بالإنترنت يجب أن يكون بسيطًا مثل استخدام الـ iPhone.",
+    "description": "VPN info paragraph."
+  },
+  "payment_details": {
+    "message": "تفاصيل الدفع",
+    "description": "Header shown upon successful payment."
+  },
+  "were_always_happy_to_help": {
+    "message": "نحن دائما سعداء للإستماع إليك!",
+    "description": "Helpdesk link description text"
+  },
+  "about_adblock_vpn": {
+    "message": "حول AdBlock VPN",
+    "description": "Header text"
+  },
+  "adblock_improvements_header": {
+    "message": "تحسينات AdBlock",
+    "description": "Feature header on update page"
+  },
+  "submit_feedback": {
+    "message": "إرسال الملاحظات",
+    "description": "Button text to submit a feedback form"
+  },
+  "new": {
+    "message": "جديد",
+    "description": "Text for the VPN banner CTA on the homepage."
+  },
+  "sign_out": {
+    "message": "تسجيل الخروج",
+    "description": "Logs the user out of their account."
+  }
+}
