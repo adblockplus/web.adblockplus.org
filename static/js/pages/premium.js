@@ -60,20 +60,6 @@ function onDOMContentLoaded()
     }
   });
 
-  // Set up payment plan radio buttons
-  var paymentPlans = document.querySelector('.premium-payment-plans-body');
-  var activePaymentPlan = document.querySelector('.premium-payment-plans-body .active');
-  paymentPlans.addEventListener('click', function(event) {
-    var clicked = event.target.closest('.premium-payment-plan');
-    if (clicked && !clicked.classList.contains('active')) {
-      activePaymentPlan.classList.remove('active');
-      activePaymentPlan.querySelector('input[type="radio"]').checked = false;
-      activePaymentPlan = clicked;
-      activePaymentPlan.classList.add('active');
-      activePaymentPlan.querySelector('input[type="radio"]').checked = true;
-    }
-  });
-
   var largeScreenQuery = window.matchMedia('(min-width:992px)');
 
   // Set heights and resize for sections that should match in height
