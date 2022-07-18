@@ -78,7 +78,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        url: "https://myadblock.licensing.getadblock.com/license/api/",
+        url: "https://myadblock.licensing.adblockplus.dev/license/api/",
         headers: {
             "Accept-Language": thisLang,
         },
@@ -214,7 +214,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: "https://myadblock.licensing.getadblock.com/license/api/",
+            url: "https://myadblock.licensing.adblockplus.dev/license/api/",
             method: "POST",
             dataType: "json",
             data: {
@@ -264,7 +264,7 @@ $(document).ready(function() {
         Page.RegistrationBox.show();
         Page.SpinnerNoText.show();
         $.ajax({
-            url: "https://myadblock.licensing.getadblock.com/license/api/",
+            url: "https://myadblock.licensing.adblockplus.dev/license/api/",
             method: "POST",
             dataType: "json",
             data: {
