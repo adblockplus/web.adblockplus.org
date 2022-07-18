@@ -730,12 +730,12 @@ subscriptions = {
         },
     'Latvian List': {
         'blog': None,
-        'changelog': u'https://notabug.org/latvian-list/adblock-latvian/commits/master/lists/latvian-list.txt',
+        'changelog': u'https://github.com/Latvian-List/adblock-latvian/commits/master',
         'contact': None,
         'deprecated': False,
         'faq': None,
-        'forum': u'https://forums.lanik.us/viewforum.php?f=99',
-        'homepage': u'https://notabug.org/latvian-list/adblock-latvian',
+        'forum': u'https://forums.lanik.us/viewforum.php?f=99-latvian-list',
+        'homepage': u'https://sproutsluckycorner.wordpress.com/2017/11/14/my-work-and-contact-resume/',
         'maintainer': u'anonymous74100',
         'policy': None,
         'specialization': u'latvie\u0161u valoda',
@@ -746,7 +746,8 @@ subscriptions = {
         'variants': [[u'Latvian List+EasyList',
                      u'https://easylist-downloads.adblockplus.org/latvianlist+easylist.txt'
                      , True], ['Latvian List',
-                     u'https://notabug.org/latvian-list/adblock-latvian/raw/master/lists/latvian-list.txt'
+                     u'https://raw.githubusercontent.com/Latvian-List/adblock-latvian/master/lists/latvian-list.txt
+'
                      , False]],
         },
     'Liste FR': {
