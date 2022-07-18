@@ -735,7 +735,7 @@ subscriptions = {
         'deprecated': False,
         'faq': None,
         'forum': u'https://forums.lanik.us/viewforum.php?f=99-latvian-list',
-        'homepage': u'https://sproutsluckycorner.wordpress.com/2017/11/14/my-work-and-contact-resume/',
+        'homepage': u'https://forums.lanik.us/viewforum.php?f=99-latvian-list',
         'maintainer': u'anonymous74100',
         'policy': None,
         'specialization': u'latvie\u0161u valoda',
