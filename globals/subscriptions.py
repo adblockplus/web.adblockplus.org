@@ -746,8 +746,7 @@ subscriptions = {
         'variants': [[u'Latvian List+EasyList',
                      u'https://easylist-downloads.adblockplus.org/latvianlist+easylist.txt'
                      , True], ['Latvian List',
-                     u'https://raw.githubusercontent.com/Latvian-List/adblock-latvian/master/lists/latvian-list.txt
-'
+                     u'https://raw.githubusercontent.com/Latvian-List/adblock-latvian/master/lists/latvian-list.txt'
                      , False]],
         },
     'Liste FR': {
