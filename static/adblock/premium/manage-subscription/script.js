@@ -1,10 +1,10 @@
 $(document).ready(function() {
     // translate the page
-    chrome.i18n._initialize("en", "/i18n/_locales/", function() {
-        if (typeof localizePage === "function") {
-            localizePage();
-        }
-    });
+    // chrome.i18n._initialize("en", "/i18n/_locales/", function() {
+    //     if (typeof localizePage === "function") {
+    //         localizePage();
+    //     }
+    // });
 
     var paymentInfoObj = null; // global to hold the paymentInfoObj after it's fetched
     var _licenseCode = [(document.location.search.match(/(?:[?&])lic=([a-zA-Z0-9]+)/) || {})[1], "false"];
