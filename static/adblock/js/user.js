@@ -302,7 +302,7 @@ function recordTracking() {
 function getGAID() {
     if (typeof ga !== 'undefined' && typeof ga.getByName === 'function') {
         var tracker = ga.getByName('gatracker');
-        if (tracker !== null) {
+        if (typeof tracker !== 'undefined' && typeof tracker.get === 'function') {
             return tracker.get('clientId');
         }
         return '';
