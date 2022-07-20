@@ -2,8 +2,6 @@
  * Browser-based styles
  *****************************************************************************/
 
-.show-on-msie,
-.msie .hide-on-msie,
 .show-on-ios,
 .ios .hide-on-ios,
 .show-on-android,
@@ -13,7 +11,6 @@
 .samsungBrowser.android .hide-on-samsung
 { display: none; }
 
-.msie .show-on-msie,
 .ios .show-on-ios,
 .android .show-on-android,
 .samsungBrowser .show-on-samsung
