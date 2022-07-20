@@ -17,10 +17,6 @@ browsers = [
     'name': 'Safari'
   },
   {
-    'id': 'msie',
-    'name': 'Internet Explorer'
-  },
-  {
     'id': 'msedge',
     'name': 'Microsoft Edge'
   },
