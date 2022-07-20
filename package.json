@@ -3,7 +3,10 @@
     "test": "tests"
   },
   "devDependencies": {
+    "commander": "^9.4.0",
     "csso": "4.2.0",
+    "glob": "^8.0.3",
+    "prompt-sync": "^4.2.0",
     "uglify-js": "3.12.1"
   },
   "scripts": {
