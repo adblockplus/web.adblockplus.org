@@ -943,7 +943,6 @@
     "firefox": "https://eyeo.to/adblockplus/firefox_install/",
     "msedge": "https://eyeo.to/adblockplus/edge_install/",
     "msedge_chromium": "https://eyeo.to/adblockplus/edge_chromium_install/",
-    "msie": "https://eyeo.to/adblockplus/ie_install/",
     "opera": "https://eyeo.to/adblockplus/opera_install/",
     "safari": "https://eyeo.to/adblockplus/safari_install/",
     "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install/"
@@ -1000,9 +999,9 @@
 
           document.querySelector(currentTab)
             .classList.remove("current-tab");
-          
+
           item.setAttribute("aria-selected", "false");
-          
+
           if (element.getAttribute("href") ==
           "#" + tabsContents[index].getAttribute("id")) {
 
@@ -1060,7 +1059,7 @@
 
           document.querySelector(linkSelector).parentNode.classList
             .add("current-tab");
-            
+
           document.querySelector(linkSelector)
             .setAttribute("aria-selected", "true");
 

@@ -374,11 +374,6 @@ a.download-button:visited
   background-image: url("/img/safari.svg");
 }
 
-#abp_msie.download-button::before
-{
-  background-image: url("/img/msie.svg");
-}
-
 #abp_msedge.download-button::before,
 #abp_msedge_chromium.download-button::before
 {
