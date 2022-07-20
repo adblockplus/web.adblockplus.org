@@ -12,12 +12,6 @@ TEST_DATA = [(
       'Mozilla/5.0 (Windows NT 5.1; rv:7.0.1) Gecko/20100101 Firefox/7.0.1',
       'https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/'
 ), (
-      'desktop_internet_explorer',
-      'AGREE AND INSTALL FOR INTERNET EXPLORER',
-      'https://eyeo.to/adblockplus/ie_install/index',
-      'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)',
-      'adblockplusie'
-), (
       'desktop_safari',
       'AGREE AND INSTALL FOR SAFARI',
       'https://eyeo.to/adblockplus/safari_install/index',

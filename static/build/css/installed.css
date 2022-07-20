@@ -1221,7 +1221,6 @@ a.download-button:visited
 .chromium .download-button::before { background-image: url("../../img/chrome.svg"); }
 .firefox .download-button::before { background-image: url("../../img/firefox.svg"); }
 .safari .download-button::before { background-image: url("../../img/safari.svg"); }
-.msie .download-button::before { background-image: url("../../img/msie.svg"); }
 .msedge .download-button::before,
 .msedge_chromium .download-button::before{ background-image: url("../../img/msedge.svg"); }
 .opera .download-button::before { background-image: url("../../img/opera.svg"); }
@@ -1231,7 +1230,6 @@ a.download-button:visited
 .chromium #install-button,
 .firefox #install-button,
 .safari #install-button,
-.msie #install-button,
 .msedge #install-button,
 .msedge_chromium #install-button,
 .opera #install-button,
