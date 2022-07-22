@@ -13,3 +13,20 @@
   margin-bottom: 1em;
   margin-right: 1em;
 }
+
+.reinstall-button,
+.reinstall-download-alternate {
+  margin-top: 1rem;
+}
+
+#reasons .alert {
+  display: none;
+}
+
+#reasons :checked + .reason-alert-container > .alert {
+  display: block;
+}
+
+.reason-alert-container {
+  display: inline;
+}
