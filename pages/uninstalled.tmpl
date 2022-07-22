@@ -14,6 +14,11 @@ template=minimal
   ("8v0", "reason-notifications", "I don't like getting notifications from Adblock Plus.", ""),
   ("9v0", "reason-ads-in-text", "I was annoyed by ads appearing in the middle of the text(s) I was reading", ""),
 ] %}
+{#
+  The following reason is hard coded below because it's markup is different.
+  If we add other options like it in the future then we should refactor this.
+  ("10v0", "reason-not-free", "I don't want to pay for Adblock Plus", ""),
+#}
 
 <head>
   <link href="/css/uninstalled.css" rel="stylesheet">
@@ -29,6 +34,26 @@ template=minimal
       <form id="reasons-form" action="uninstalled-submit" method="get">
         <fieldset>
           <ul id="reasons">
+            <li>
+              <input
+                id="reason-not-free-input"
+                type="checkbox"
+                name="reason"
+                value="10v0" />
+              <div class="reason-alert-container">
+                <label for="reason-not-free-input">
+                  {{ "I don't want to pay for Adblock Plus" | translate("reason-not-free") }}
+                </label>
+                <div class="alert">
+                  <div>
+                    {{ "You don't have to pay! Donations are voluntary. Just close the donation tab when it appears and use Adblock Plus for free." | translate("not-free-alert") }}
+                  </div>
+                  <div>
+                    <? include reinstall-button ?>
+                  </div>
+                </div>
+              </div>
+            </li>
             {%- for reasonId, stringId, value, adblockers in reasons %}
               <li>
                 <label>
