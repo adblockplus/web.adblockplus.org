@@ -1,0 +1,32 @@
+body {
+    padding-top: 4rem;
+}
+
+.flow-container {
+    border: 2px dashed gray;
+    margin-bottom: 1rem;
+}
+
+.flow-heading {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.mainPageContent {
+    width: 90%;
+    margin: auto;
+    margin-top: 36px;
+    font: 16px "Lato", sans-serif;
+    line-height: 20px;
+    font-weight: 150;
+    color: #333;
+    max-width: 1064px;
+    /* min-height: 40vw; */
+    margin-top: 96px;
+    /* Added styles */
+    margin-bottom: 96px;
+}
