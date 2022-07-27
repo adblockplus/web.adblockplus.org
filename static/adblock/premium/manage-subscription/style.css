@@ -92,7 +92,7 @@ i[class^=material-icons]  {
 }
 
 div#see-photos-image {
-    background: url("/premium/enrollment/images/see-photos.png") no-repeat;
+    background: url("/adblock/premium/enrollment/images/see-photos.png") no-repeat;
     width: 252px;
     height: 73px;
 }
@@ -323,7 +323,7 @@ div#registration-box {
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     div#see-photos-image {
-        background: url("/premium/enrollment/images/see-photos@2x.png") no-repeat;
+        background: url("/adblock/premium/enrollment/images/see-photos@2x.png") no-repeat;
         background-size: 252px 73px;
     }
 }
