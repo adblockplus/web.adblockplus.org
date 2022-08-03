@@ -34,8 +34,33 @@ body { padding: 0 !important; }
     background-color: #F7F7F7;
 }
 
+.premium-accounts-page p {
+    color: #585858 !important;
+}
+
+.premium-accounts-page a {
+    color: #0797E1 !important;
+}
+
+.premium-accounts-page .lds-ring div {
+    border-color: #0797E1 transparent transparent transparent
+}
+
+.premium-accounts-page .submit-btn,
+.premium-accounts-page .cta-button.gold-button,
+.premium-accounts-page #donate_now {
+    background-color: #0797E1;
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+}
+
+.premium-accounts-page #donate_now .donate-button-text {
+    color: #fff;
+}
+
 .premium-account-card {
-    background-color: #FFFFFF;
+    background-color: #fff;
     border: 1px solid #E6E6E6;
     border-radius: 4px !important;
     padding: 2rem;
