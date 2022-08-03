@@ -98,7 +98,7 @@ var Paypal = {
             url: "https://www.paypal.com/cgi-bin/webscr"
         };
         var AUX_TEST = {
-            email: "till@adblockplus.org",
+            email: "abp-sandbox@adblockplus.org",
             url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
         };
         this.AUX = (this.testmode ? AUX_TEST : AUX_LIVE);
