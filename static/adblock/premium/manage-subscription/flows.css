@@ -1,6 +1,4 @@
-body {
-    padding-top: 4rem;
-}
+body { padding: 0 !important; }
 
 .flow-container {
     border: 2px dashed gray;
@@ -14,6 +12,7 @@ body {
     font-weight: 700;
     line-height: 1.5;
     text-transform: uppercase;
+    color: gray;
 }
 
 .mainPageContent {
@@ -29,4 +28,8 @@ body {
     margin-top: 96px;
     /* Added styles */
     margin-bottom: 96px;
+}
+
+.premium-accounts-page {
+    background-color: #F7F7F7;
 }
