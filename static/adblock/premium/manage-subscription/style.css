@@ -3,7 +3,7 @@ html,
     box-sizing: border-box;
 }
 
-div#card2 h2, div#card2 h3 {
+#card2 h2, #card2 h3 {
     text-align: center;
 }
 
@@ -12,12 +12,12 @@ strong {
     font-weight: 700;
 }
 
-div#sunset-premium-infinity p {
+#sunset-premium-infinity p {
     font-size: 16px;
     color: #000000;
 }
 
-div#sunset-premium-infinity div {
+#sunset-premium-infinity div {
     margin-left: 0px;
     padding-left: 0px;
 }
@@ -26,17 +26,17 @@ img#topBarLogo {
     width: 200px;
 }
 
-div.socialIcons {
+.socialIcons {
     margin-top: -8px;
 }
 
-div#cool-stuff-you-get h4 {
+#cool-stuff-you-get h4 {
     font-size: 21px;
     color: #333333;
     width: 100%;
 }
 
-div.feature-card {
+.feature-card {
     width: 336px;
     min-height: 320px;
     border-radius: 6px;
@@ -45,7 +45,7 @@ div.feature-card {
     margin: 8px;
 }
 
-div.feature-card .featureCard-header {
+.feature-card .featureCard-header {
     background-color: #e6e6e6;
     min-height: 64px;
     border-radius: 6px 6px 0px 0px;
@@ -58,7 +58,7 @@ div.feature-card .featureCard-header {
     font-weight: 400;
 }
 
-div.feature-card .featureCard-body-text {
+.feature-card .featureCard-body-text {
     width: 288px;
     margin: auto;
     margin-top: 16px;
@@ -67,20 +67,20 @@ div.feature-card .featureCard-body-text {
     color: #666666;
 }
 
-div.feature-card-row {
+.feature-card-row {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin-top: 28px;
 }
 
-div.feature-card .featureCard-body-img {
+.feature-card .featureCard-body-img {
     display: flex;
     justify-content: center;
     margin-top: 36px;
 }
 
-div.feature-card-body {
+.feature-card-body {
     padding: 16px;
 }
 
@@ -91,7 +91,7 @@ i[class^=material-icons]  {
     width: auto;
 }
 
-div#see-photos-image {
+#see-photos-image {
     background: url("/adblock/premium/enrollment/images/see-photos.png") no-repeat;
     width: 252px;
     height: 73px;
@@ -106,8 +106,6 @@ div#see-photos-image {
     font-weight: 150;
     color: #333;
     max-width: 1064px;
-    min-height: 40vw;
-    margin-top: 96px;
 }
 
 .SubscriptionDetails {
@@ -155,13 +153,13 @@ div#see-photos-image {
     width: 210px;
 }
 
-div.row {
+.row {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
 }
 
-div.row .button-container {
+.row .button-container {
     width: 72%;
     min-height: 186px;
     display: flex;
@@ -180,14 +178,14 @@ h4 {
     padding: 12px 0px 32px 0px;
 }
 
-div.registration-box {
+.registration-box {
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 440px;
 }
-div#subscription-canceled {
+#subscription-canceled {
     margin-top: -24px;
     font-size: 21px;
     font-weight: normal;
@@ -197,32 +195,32 @@ div#subscription-canceled {
     color: #e40d0d;
 }
 
-div#payment-box {
+#payment-box {
     width: 90%;
 }
 
 /* Stripe card update box */
-div#update-subscription-box {
+#update-subscription-box {
     margin: 0px 0px 48px 0px;
 }
 #payment-box h2 {
     margin-top: 36px;
 }
-span.warning {
+.warning {
     color: #c90f0f;
 }
 #payment {
     padding: 16px 0px 48px 0px;
 }
-button#donate_now {
+#donate_now {
     margin: 48px auto;
 }
 /* end Stripe card update box */
 
-div#paypal-update-card .cta-button {
+#paypal-update-card .cta-button {
     width: 100%;
 }
-div.action-button-container {
+.action-button-container {
     width: 100%;
     justify-content: flex-start;
     align-items: flex-start;
@@ -230,20 +228,20 @@ div.action-button-container {
     height: 100%;
     margin-bottom: 36px;
 }
-div#update-payment-method {
+#update-payment-method {
     margin-bottom: 24px;
 }
 .hidden {
     display: none;
 }
 
-div.form-row.form-row-flex {
+.form-row.form-row-flex {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
 }
 
-div#registration-box {
+#registration-box {
     max-width: 720px;
     width: 100%;
 }
@@ -252,11 +250,11 @@ div#registration-box {
     width: auto;
 }
 
-div#payment_form_error {
+#payment_form_error {
     width: 100%;
 }
 
-div.card2-wrapper {
+.card2-wrapper {
     width: 95%;
     max-width: 524px;
     margin: auto;
@@ -264,38 +262,38 @@ div.card2-wrapper {
     flex-flow: column;
 }
 
-div#update-subscription-box {
+#update-subscription-box {
     align-items: flex-start;
 }
 
-div#card2 {
+#card2 {
     width: 100%;
 }
 
-div#code-entry {
+#code-entry {
     width: 95%;
     max-width: 320px;
     height: 100%;
     min-height: 96px;
 }
 
-div#code-entry input[type="text"] {
+#code-entry input[type="text"] {
     width: 95%;
     max-width: 240px;
 }
 
-div#submit_code {
+#submit_code {
     width: 95%;
     max-width: 320px;
     margin: 16px auto 8px auto;
 }
 
-div#card2 p.fine-print {
+#card2 .fine-print {
     width: 95%;
     max-width: 320px;
 }
 
-div#registration-box {
+#registration-box {
     width: auto;
 }
 
@@ -322,31 +320,31 @@ div#registration-box {
     only screen and (min-device-pixel-ratio: 2),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    div#see-photos-image {
+    #see-photos-image {
         background: url("/adblock/premium/enrollment/images/see-photos@2x.png") no-repeat;
         background-size: 252px 73px;
     }
 }
 
 @media screen and (min-width: 568px) {
-    div.feature-card-row {
+    .feature-card-row {
         flex-flow: row wrap;
     }
-    div.row .button-container {
+    .row .button-container {
         width: 100%;
         flex-flow: row nowrap;
     }
-    div.action-button-container {
+    .action-button-container {
         width: 20%;
     }
 }
 
 @media screen and (min-width: 1100px) {
-    div.feature-card-row {
+    .feature-card-row {
         flex-flow: row nowrap;
         justify-content: space-between;
     }
-    div.row .button-container {
+    .row .button-container {
         justify-content: space-between;
         margin: 64px auto;
         flex-flow: row nowrap;
