@@ -1,7 +1,7 @@
 FROM debian
 
 RUN apt-get update -yqq
-RUN apt-get install -yqq git wget python2 apache2 libapache2-mod-geoip
+RUN apt-get install -yqq git wget python2 apache2 libapache2-mod-geoip vim
 
 # Configure apache2 to test .htaccess
 RUN a2enmod macro
