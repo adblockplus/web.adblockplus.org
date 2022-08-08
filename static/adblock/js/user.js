@@ -1,9 +1,22 @@
+// Generates a userId based on same code as within the adblock extension
+function generateUserId() {
+    const timeSuffix = (Date.now()) % 1e8; // 8 digits from end of timestamp
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const result = [];
+    for (let i = 0; i < 8; i++) {
+        const choice = Math.floor(Math.random() * alphabet.length);
+        result.push(alphabet[choice]);
+    }
+    return result.join('') + timeSuffix;
+}
+
 // Returns the adblock userid, if known
 function getUserId() {
     var _userIdOptions = [
       (document.location.search.match(/(?:[?&])u=([a-zA-Z0-9]+)/) || {})[1],
       typeof adblock_userid !== "undefined" ? adblock_userid : undefined,
       (document.getElementById('adblock_user_id') || {}).innerText,
+      generateUserId(),
       ""
     ];
     // Use the first one that has a value.
