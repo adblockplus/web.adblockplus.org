@@ -16,7 +16,6 @@ function getUserId() {
       (document.location.search.match(/(?:[?&])u=([a-zA-Z0-9]+)/) || {})[1],
       typeof adblock_userid !== "undefined" ? adblock_userid : undefined,
       (document.getElementById('adblock_user_id') || {}).innerText,
-      generateUserId(),
       ""
     ];
     // Use the first one that has a value.
@@ -289,6 +288,16 @@ function getBrowser() {
     return a;
 }
 
+// setUserIdDiv creates a userid and sets it in a div#adblock_user_id with CSS 'display: none;'
+function setUserIdDiv() {
+    const newDiv = document.createElement("div");
+    newDiv.id = "adblock_user_id";
+    newDiv.style.display = "none";
+    const newContent = document.createTextNode(generateUserId());
+    newDiv.appendChild(newContent);
+    document.body.appendChild(newDiv);
+}
+
 // Builds tracking information
 // TODO name this something better
 function recordTracking() {
@@ -298,8 +307,11 @@ function recordTracking() {
       x = _experiment.xNumber("*");
       g = _experiment.variantIndex("*") + 1;
     }
-    var a = getUserId(),
-        a = a == "" ? "NA" : a; // set NA if userid isn't set
+    var a = getUserId();
+    if (a === "") {
+        setUserIdDiv();
+        a = getUserId();
+    }
     if (typeof getPlainSource === "function" && (getPlainSource().startsWith("ME") || getPlainSource().startsWith("HME"))) {
         // prefix MyAdBlock product tag if it's not core.
         return "ME X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;

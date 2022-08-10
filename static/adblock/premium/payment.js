@@ -728,6 +728,12 @@ $(document).ready(function () {
     const theURL = new URL(window.location);
     const queryParams = new URLSearchParams(theURL.search);
     queryParams.append("thankyou", 1);
+    var u = getUserId();
+    if (u === "") {
+        setUserIdDiv();
+        u = getUserId();
+    }
+    queryParams.append("u", u);
     const onPaymentSuccessURL = theURL.origin + theURL.pathname + "?" + queryParams.toString();
 
     // Set up Paypal and Stripe forms.
