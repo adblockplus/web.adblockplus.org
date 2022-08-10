@@ -253,11 +253,12 @@ $(document).ready(function () {
 
     // On successful activation, tell extension to activate MyAdBlock.
     function sendPaymentSuccessToExtension() {
+        const userId = new URLSearchParams(window.location.search).get("u");
         return new Promise(function (resolve, reject) {
             const version = 1;
             const payload = {
                 command: "payment_success",
-                transID: "",
+                userId: userId,
                 version: version,
             };
             window.addEventListener("message", function (response) {
