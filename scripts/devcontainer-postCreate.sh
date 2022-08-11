@@ -9,4 +9,4 @@ npm install
 npm run min
 
 # Build static website
-python2 -m cms.bin.generate_static_pages . public
+python3 -m cms.bin.generate_static_pages . public
