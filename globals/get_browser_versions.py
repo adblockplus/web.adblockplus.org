@@ -2,7 +2,7 @@ import re
 import os
 import sys
 import json
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import errno
 import logging
 import time
@@ -19,15 +19,15 @@ cache = {}
 
 
 def get_json_versions(product_url):
-    response = urllib.urlopen(product_url)
+    response = urllib.request.urlopen(product_url)
     try:
         doc = json.load(response)
     except json.ValueError:
-        print 'URL: %s not returning json object'.format(product_url)
+        print('URL: %s not returning json object'.format(product_url))
     finally:
         response.close()
 
-    for key, value in doc.iteritems():
+    for key, value in doc.items():
         if value:
             match = re.search(r'^(\d+)(?:\.\d+)?', value)
             if match:
@@ -49,7 +49,7 @@ BROWSERS['firefox'] = lambda: get_firefox_versions()
 
 
 def get_chrome_versions():
-    response = urllib.urlopen(CHROME_URL)
+    response = urllib.request.urlopen(CHROME_URL)
     try:
         data = json.load(response)
     finally:
@@ -69,7 +69,7 @@ BROWSERS['chrome'] = get_chrome_versions
 
 
 def get_opera_version(channel):
-    response = urllib.urlopen('https://autoupdate.geo.opera.com/netinstaller/' + channel)
+    response = urllib.request.urlopen('https://autoupdate.geo.opera.com/netinstaller/' + channel)
     try:
         spec = json.load(response)
     finally:
@@ -91,11 +91,11 @@ BROWSERS['opera'] = get_opera_versions
 
 
 def key_by_version(version):
-    return map(int, version.split('.'))
+    return list(map(int, version.split('.')))
 
 
 def get_yandex_version_raw(suffix, params):
-    response = urllib.urlopen('https://api.browser.yandex.ru/update-info/browser/yandex%s/win-yandex.xml%s' % (suffix, params))
+    response = urllib.request.urlopen('https://api.browser.yandex.ru/update-info/browser/yandex%s/win-yandex.xml%s' % (suffix, params))
     try:
         doc = minidom.parse(response)
     finally:
@@ -161,7 +161,7 @@ def get_browser_versions(context, browser):
         now = time.mktime(time.gmtime())
         if exc_info:
             if not cached_versions:
-                raise exc_info[0], exc_info[1], exc_info[2]
+                raise exc_info[0](exc_info[1]).with_traceback(exc_info[2])
 
             versions = cached_versions
             if now > versions['fail_silently_until']:
