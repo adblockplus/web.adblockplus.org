@@ -8,7 +8,7 @@ import logging
 import time
 from xml.dom import minidom
 
-from jinja2 import contextfunction
+from jinja2 import pass_context
 
 BROWSERS = {}
 BASE_URL = 'https://product-details.mozilla.org/1.0'
@@ -22,8 +22,9 @@ def get_json_versions(product_url):
     response = urllib.request.urlopen(product_url)
     try:
         doc = json.load(response)
-    except json.ValueError:
+    except json.JSONDecodeError:
         print('URL: %s not returning json object'.format(product_url))
+        doc = {}
     finally:
         response.close()
 
@@ -135,7 +136,7 @@ def open_cache_file(filename):
     return os.fdopen(fd, 'w+')
 
 
-@contextfunction
+@pass_context
 def get_browser_versions(context, browser):
     versions = cache.get(browser)
     if versions:

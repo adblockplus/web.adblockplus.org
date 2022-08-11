@@ -3,13 +3,13 @@ import base64
 import urllib.request, urllib.parse, urllib.error
 from mimetypes import MimeTypes
 
-from jinja2 import contextfilter
+from jinja2 import pass_context
 
 
 mime = MimeTypes()
 
 
-@contextfilter
+@pass_context
 def inline_file(context, path, mime_type=None):
     if mime_type is None:
         mime_type = mime.guess_type(path)[0]
