@@ -21,6 +21,6 @@ RUN rm setup_16.x
 RUN apt-get install -yqq nodejs
 
 # Install eyeo/cms
-RUN git clone -b laura-python-3 --single-branch https://gitlab.com/eyeo/websites/cms.git /srv/cms
+RUN git clone -b migration-to-python3 --single-branch https://gitlab.com/eyeo/websites/cms.git /srv/cms
 RUN python3 -m pip install -r /srv/cms/requirements.txt
 ENV PYTHONPATH="/srv/cms:$PYTHONPATH"
