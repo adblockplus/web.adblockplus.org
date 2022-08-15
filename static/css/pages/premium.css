@@ -156,6 +156,22 @@ html {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+.premium-button:disabled,
+.premium-button.disabled {
+  cursor: not-allowed;
+}
+
+.premium-button:disabled:hover,
+.premium-button:disabled:active,
+.premium-button:disabled:focus,
+.premium-button.disabled:hover,
+.premium-button.disabled:active,
+.premium-button.disabled:focus {
+  background-color: #C6C6C6 !important;
+  box-shadow: none !important;
+}
+
+
 /*******************************************************************************
  * Dynamic background behind first and second sections
  *******************************************************************************
@@ -256,7 +272,14 @@ html {
     background-color: #EDA51E;
     color: #fff;
   }
-  
+
+  .premium-plan:hover .premium-button.disabled,
+  .premium-plan:active .premium-button.disabled,
+  .premium-plan:focus .premium-button.disabled {
+    background-color: #C6C6C6;
+  }
+
+
 }
 
 /* Plan card header / tabs
