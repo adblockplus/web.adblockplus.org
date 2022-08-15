@@ -150,6 +150,12 @@ html {
   color: #fff;
 }
 
+.premium-button:hover,
+.premium-button:active,
+.premium-button:focus {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
 /*******************************************************************************
  * Dynamic background behind first and second sections
  *******************************************************************************
@@ -226,7 +232,6 @@ html {
   margin-bottom: 1rem;
   border: 1px solid #E6E6E6;
   border-radius: 6px;
-  box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
   padding: 1rem;
   background-color: #fff;
   color: #333;
@@ -238,9 +243,20 @@ html {
     box-shadow: none;
   }
 
-  .premium-plan.premium-plan-highlighted {
+  .premium-plan:hover,
+  .premium-plan:active,
+  .premium-plan:focus {
     box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
   }
+
+  .premium-plan:hover .premium-button,
+  .premium-plan:active .premium-button,
+  .premium-plan:focus .premium-button {
+    border: 0;
+    background-color: #EDA51E;
+    color: #fff;
+  }
+  
 }
 
 /* Plan card header / tabs
@@ -483,12 +499,6 @@ html {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-}
-
-.premium-plan-highlighted .premium-button {
-  border: 0;
-  background-color: #EDA51E;
-  color: #fff;
 }
 
 .premium-plan hr {
