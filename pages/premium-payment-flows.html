@@ -1,0 +1,639 @@
+title=Adblock Plus Premium | The world's #1 ad blocker
+description=Adblock Plus Premium, the upgraded version of the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
+template=minimal
+unadblock=1
+
+<link rel="stylesheet" href="/css/pages/premium.css">
+<link rel="stylesheet" href="/css/unadblock.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" />
+<link rel="stylesheet" type="text/css" href="/adblock/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/adblock/css/updateStyle.css" />
+<link rel="stylesheet" type="text/css" href="/adblock/premium/style.css" />
+<link rel="stylesheet" type="text/css" href="/adblock/premium/payment_section.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/adblock/js/log.js"></script>
+<script src="/adblock/js/user.js"></script>
+<script src="/adblock/js/currency.js"></script>
+<script src="/adblock/js/experiment.js"></script>
+<script src="/adblock/i18n/localesIndex.js"></script>
+<script src="/adblock/i18n/i18n.js"></script>
+
+<main class="premium-page">
+  <div class="premium-background-1"></div>
+  <div class="premium-container">
+    <header class="premium-header">
+      <h1>
+        <span class="premium-break">Block more</span> <span class="premium-break">with Premium</span>
+      </h1>
+      <p>
+        Say goodbye to additional annoyances like floating videos, newsletter pop-ups, and other distractions.
+      </p>
+    </header>
+    <div class="premium-plans">
+      <div class="premium-row">
+        <div class="premium-column-4 premium-order-1">
+          <section class="premium-plan premium-plan-highlighted">
+            <header class="premium-plan-header">
+              <h2 class="premium-plan-heading">
+                YEARLY
+              </h2>
+              <div class="premium-plan-tab-start">
+                <span class="premium-plan-tab-separator">-</span><span class="premium-plan-tab-popular">MOST
+                  POPULAR</span>
+              </div>
+              <div class="premium-plan-tab-end">
+                SAVE 17%
+              </div>
+            </header>
+            <div class="premium-plan-body">
+              <p class="premium-plan-price">
+                <span class="premium-plan-price-currency">$</span><span class="premium-plan-price-large">19</span><span
+                  class="premium-plan-price-small">99</span><span class="premium-plan-price-frequency">/yr</span>
+              </p>
+              <p class="premium-plan-description">
+                Block additional distractions, including floating videos, newsletter pop-ups, and more
+              </p>
+            </div>
+            <a class="premium-button">
+              Get Premium
+            </a>
+            <hr>
+            <div class="premium-plan-list">
+              <p class="premium-plan-list-preface">
+                Includes:
+              </p>
+              <ul>
+                <li>
+                  Block ads and pop-ups
+                </li>
+                <li>
+                  Stop trackers
+                </li>
+                <li>
+                  Block site notifications
+                </li>
+                <li>
+                  Stop floating videos
+                </li>
+                <li>
+                  Hide newsletter pop-ups
+                </li>
+                <li>
+                  Ignore survey requests
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="premium-column-4 premium-order-2">
+          <section class="premium-plan">
+            <header class="premium-plan-header">
+              <h2 class="premium-plan-heading">
+                MONTHLY
+              </h2>
+            </header>
+            <div class="premium-plan-body">
+              <p class="premium-plan-price">
+                <span class="premium-plan-price-currency">$</span><span class="premium-plan-price-large">1</span><span
+                  class="premium-plan-price-small">99</span><span class="premium-plan-price-frequency">/mo</span>
+              </p>
+              <p class="premium-plan-description">
+                Block additional distractions, including floating videos, newsletter pop-ups, and more
+              </p>
+            </div>
+            <a class="premium-button">
+              Get Premium
+            </a>
+            <hr>
+            <div class="premium-plan-list">
+              <p class="premium-plan-list-preface">
+                Includes:
+              </p>
+              <ul>
+                <li>
+                  Block ads and pop-ups
+                </li>
+                <li>
+                  Stop trackers
+                </li>
+                <li>
+                  Block site notifications
+                </li>
+                <li>
+                  Stop floating videos
+                </li>
+                <li>
+                  Hide newsletter pop-ups
+                </li>
+                <li>
+                  Ignore survey requests
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="premium-column-4 premium-order-0">
+          <section class="premium-plan">
+            <header class="premium-plan-header">
+              <h2 class="premium-plan-heading">
+                FREE
+              </h2>
+            </header>
+            <div class="premium-plan-body">
+              <p class="premium-plan-price">
+                <span class="premium-plan-price-currency">$</span><span class="premium-plan-price-large">0</span><span
+                  class="premium-plan-price-frequency">/yr</span>
+              </p>
+              <p class="premium-plan-description">
+                Simple, powerful ad blocking
+              </p>
+            </div>
+            <a class="premium-button disabled" onclick="function _suppressPremiumButtonClick (event) { event.preventDefault(); event.stopPropagation(); }">
+              Your plan
+            </a>
+            <hr>
+            <div class="premium-plan-list">
+              <p class="premium-plan-list-preface">
+                Includes:
+              </p>
+              <ul>
+                <li>
+                  Block ads and pop-ups
+                </li>
+                <li>
+                  Stop trackers
+                </li>
+                <li class="premium-plan-list-muted">
+                  Block site notifications
+                </li>
+                <li class="premium-plan-list-muted">
+                  Stop floating videos
+                </li>
+                <li class="premium-plan-list-muted">
+                  Hide newsletter pop-ups
+                </li>
+                <li class="premium-plan-list-muted">
+                  Ignore survey requests
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="premium-container">
+    <section class="premium-features">
+      <h2>
+        Why go Premium?
+      </h2>
+      <div class="premium-row">
+        <div class="premium-column">
+          <section class="premium-feature">
+            <img alt="" src="/img/premium-speaker.svg" class="premium-feature-image" height="192px">
+            <h3>
+              Block more distractions
+            </h3>
+            <p class="premium-feature-description">
+              Take control of your browser and browse the way you want to! Say goodbye to newsletter pop-ups, floating
+              videos, and other annoying distractions with Distraction Control.
+            </p>
+            <a class="premium-button">
+              Get Premium
+            </a>
+          </section>
+        </div>
+        <div class="premium-column">
+          <section class="premium-feature">
+            <img alt="" src="/img/premium-light.svg" class="premium-feature-image" height="192px">
+            <h3>
+              Support ABP
+            </h3>
+            <p class="premium-feature-description">
+              We are a small team and your support allows us to create a distraction-free and worry-free internet
+              experience for everyone. Help us keep ABP going for years to come and get access to more features as we
+              release them.
+            </p>
+            <a class="premium-button">
+              Get Premium
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="premium-faqs">
+      <h2>
+        Frequently asked questions
+      </h2>
+      <section class="premium-faq">
+        <h3>
+          <a class="premium-faq-question">
+            How do I upgrade to Adblock Plus?
+          </a>
+        </h3>
+        <p>
+          Your extension will be automatically upgraded once you purchase Adblock Plus Premium. And you can immediately try out Adblock Plus Premium features by enabling them from the General Settings page. If you’d like to redeem your upgrade on additional computers you use, please see <a href="https://help.eyeo.com/adblockplus/redeem-adblock-plus-premium">this article</a>.
+        </p>
+      </section>
+      <section class="premium-faq">
+        <h3>
+          <a class="premium-faq-question">
+            Why isn’t Adblock Plus Premium free?
+          </a>
+        </h3>
+        <p>
+          Adblock Plus Premium provides customization features that have been requested by users like you. To build these features, we need more developer resources that can be supported by one-time donations. Please note that this upgrade doesn’t provide additional ad blocking. Ad blocking has always been free and we intend to keep it that way!
+        </p>
+      </section>
+      <section class="premium-faq">
+        <h3>
+          <a class="premium-faq-question">
+            How can I learn more about Adblock Plus Premium?
+          </a>
+        </h3>
+        <p>
+          Please visit our <a href="https://help.eyeo.com">Help Center</a> to learn more about Adblock Plus Premium.
+        </p>
+      </section>
+    </section>
+  </div>
+  <section id="payments">
+    <div id="payments-content">
+      <img src="/img/adblock-plus-premium-logo.svg" style="max-width: 360px; width: 80vw" height="auto"
+        alt="" />
+      <div class="row" id="pay">
+        <div id="choose-plans" class="step">
+          <div id="choose-plans-header" class="row">
+            <h3 i18n="step_one_choose_plan">Step 1: Choose Your Plan</h3>
+            <div id="currency-and-amounts">
+              <label for="currency_dropdown" i18n="select_currency" class="screenreader-only">Select currency</label>
+              <select id="currency_dropdown" style="display:none;"></select>
+            </div>
+          </div>
+          <hr />
+          <div id="amount_select_row">
+            <button id="r_yearly" class="option option-tall selected" data-amount="10" data-recurring-frequency="yearly"
+              style="position: relative">
+              <div class="yearly-savings-callout" i18n="save_percent_amount" i18n_replacement_text="17">Save 17%</div>
+              <span i18n="amount_per_year" id="yearly-amount" style="display: none"></span>
+              <div class="selected-check"><i class="material-icons-outlined">done</i></div>
+              <span id="yearly-rate" class="amount-text" i18n="slash_yr" i18n_replacement_text="$10">$10/yr</span>
+            </button>
+            <button id="r_monthly" class="option" data-amount="1" data-recurring-frequency="monthly">
+              <span i18n="amount_per_month" id="monthly-amount" style="display: none"></span>
+              <div class="selected-check"><i class="material-icons-outlined">done</i></div>
+              <span id="monthly-rate" class="amount-text" i18n="slash_mo" i18n_replacement_text="$1">$1/mo</span>
+            </button>
+          </div>
+          <div id="money-back-guaranteed">
+            <img src="/adblock/premium/images/badge.svg?v=1626791040" alt="" />
+            <span i18n="sixty_day_money_back_guarantee">60-Day money-back guarantee</span>
+          </div>
+          <hr />
+          <div class="section-newsletter">
+            <div class="checkbox-icon">
+              <input id="newsletter-synthetic-checkbox-2" class="newsletter-synthetic-checkbox" type="checkbox" />
+              <i class="material-icons-outlined unchecked">circle</i>
+              <i class="material-icons checked">check_circle</i>
+            </div>
+            <label for="newsletter-synthetic-checkbox-2" class="occasional-updates" i18n="receive_updates">Yes! I'd like
+              to receive occasional updates from AdBlock.</label>
+          </div>
+        </div>
+        <!-- END choose plans -->
+
+        <!-- BEGIN SUCCESS -->
+        <div id="pmt-success-left" class="step" style="width: 44%; display: none">
+          <button class="get-started-with-myadblock" i18n="get_started_premium">Get started with AdBlock
+            Premium</button>
+          <div id="money-back-guaranteed">
+            <img src="/adblock/premium/images/badge.svg?v=1626791040" alt="" />
+            <span i18n="sixty_day_money_back_guarantee">60-Day money-back guarantee</span>
+          </div>
+          <hr />
+        </div>
+        <!-- END SUCCESS -->
+
+        <div id="choose-payment-type" class="column">
+          <div id="payment-box" class="step">
+            <div id="card-1" class="box-step">
+              <h3 i18n="step_two_choose_payment_type">Step 2: Choose Payment Type</h3>
+              <hr />
+              <div style="width: 100%; margin: auto; height: 82%">
+                <button class="payment-type-btn" id="donate_now">
+                  <i class="flex-1 material-icons material-icons-outlined">credit_card</i>
+                  <span class="flex-4" i18n="pwyw_method_cc">Pay with Credit Card</span>
+                  <span class="flex-1"></span>
+                </button>
+                <button class="payment-type-btn" id="paypal_button">
+                  <i class="flex-1 material-icons material-icons-outlined">shopping_cart</i>
+                  <span class="flex-4" i18n="pwyw_method_paypal"> Pay with PayPal </span>
+                  <span class="flex-1"></span>
+                </button>
+                <hr />
+                <div class="price-row">
+                  <span i18n="adblock_premium_total">AdBlock Premium Total:</span>
+                  <span class="plan-price">
+                    <span class="selected-plan-price">$10</span><span
+                      class="selected-plan-recurring-frequency-abbreviation">yr</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div id="card-2" class="box-step align-items-center" style="display: none">
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+            <div id="card-3" class="box-step" style="display: none">
+              <div class="box-step-content">
+                <h4 i18n="payment_confirmed">Payment Confirmed!</h4>
+                <hr />
+                <p>
+                  <span i18n="thank_you_for_upgrading_to_premium">
+                    Thank you for upgrading to AdBlock Premium!
+                  </span>
+                  <span i18n="click_get_started_with_premium">
+                    Click “Get Started with AdBlock Premium” to configure your settings.
+                  </span>
+                </p>
+
+                <div class="shadow-box">
+                  <h4 i18n="payment_details">Payment Details</h4>
+
+                  <ul class="no-bullet">
+                    <li>AdBlock Premium :
+                      <span class="amount-with-currency">$1</span>
+                      <span class="recurring-frequency">monthly</span>
+                    </li>
+                  </ul>
+                  <div class="hr hr-thin"></div>
+                  <p i18n="if_you_have_questions" i18n_replacement_el="helpdesk_q_link"
+                    i18n_replacement_el_2="helpdesk_q_email">
+                    If you have any questions, please
+                    <a href="https://support.getadblock.com/" target="_new" class="mainContentLink">visit our Help
+                      Center</a>
+                    or contact our support team at
+                    <a href="mailto:support@getadblock.com"
+                      class="mainContentLink helpdesk-email">support@getadblock.com</a>. We’re always happy to hear from
+                    you!
+                  </p>
+                  <a href="https://support.getadblock.com/" target="_new" id="helpdesk_q_link"
+                    class="mainContentLink"></a>
+                  <a href="mailto:support@getadblock.com" target="_new" id="helpdesk_q_email"
+                    class="mainContentLink helpdesk-email">support@getadblock.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="card-4" class="box-step" style="display: none">
+              <h2 i18n="oops_period">Oops.</h2>
+              <p> <span i18n="something_went_wrong">Something went wrong.</span> </p>
+            </div>
+          </div>
+          <div id="other-options">
+            <button id="already-premium-user" class="btn-link" i18n="premium_user">AdBlock Premium User?</button>
+            <button id="already-donated" class="btn-link" i18n="donated_before_question">Donated to AdBlock
+              before?</button>
+          </div>
+        </div>
+      </div>
+      <!-- END pay row -->
+
+      <!-- START already donated activity -->
+      <div class="row" id="already-donated-activity" style="display: none">
+        <div class="column">
+          <div id="already-donated-activity-box" class="step">
+            <div id="already-donated-card-1" class="box-step">
+              <div class="row justify-content-space-between">
+                <h3 i18n="enter_email_get_started">Welcome! Enter your email address to get started</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row" i18n="find_previous_payment">
+                We’ll use your email to find your previous payment information
+              </div>
+              <div class="row flex-start">
+                <form action="#" id="prev_donation">
+                  <input class="wide-input" placeholder="Enter your email address" id="prev_donation_email" type="email"
+                    required spellcheck="false" autofocus="true" i18n_placeholder="enter_email" />
+                  <button type="submit" style="display: none"></button>
+                </form>
+                <button class="submit-cta" id="submit_email" i18n="submit"> Submit </button>
+              </div>
+              <div class="row flex-start">
+                <div class="checkbox-icon">
+                  <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
+                  <i class="material-icons-outlined unchecked">circle</i>
+                  <i class="material-icons checked">check_circle</i>
+                </div>
+                <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">Yes! I'd
+                  like to receive occasional updates from AdBlock.</label>
+                <div class="progress-box">
+                  <div class="progress-circle complete" id="progress-1"></div>
+                  <div class="progress-circle" id="progress-2"></div>
+                  <div class="progress-circle" id="progress-3"></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="already-donated-card-2-code" class="box-step" style="display: none">
+              <div class="row justify-content-space-between">
+                <h3 i18n="check_email">Please check the email we sent you</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row" i18n="enter_code">
+                Enter the 6-character code to confirm your email address.
+              </div>
+              <div class="row flex-start">
+                <form id="confirmation-code">
+                  <input id="code" type="text" maxlength="6" minlength="6" placeholder="- - - - - -" spellcheck="false"
+                    autocomplete="false" autofocus="true" />
+                  <button type="submit" style="display: none"></button>
+                </form>
+                <button class="submit-cta" id="submit_code" i18n="submit"> Submit </button>
+              </div>
+              <div class="row flex-start">
+                <span i18n="no_email">No email?</span>
+                <span i18n="check_spam_or_contact" i18n_replacement_el="check_spam_or_contact_link">Please check your
+                  spam or
+                  <a href="https://support.getadblock.com/new/" class="mainContentLink">contact us</a>.</span>
+                <a href="https://support.getadblock.com/new/" class="mainContentLink" id="check_spam_or_contact_link"
+                  target="_blank"></a>
+              </div>
+              <div class="progress-box">
+                <div class="progress-circle complete" id="progress-1"></div>
+                <div class="progress-circle complete" id="progress-2"></div>
+                <div class="progress-circle" id="progress-3"></div>
+              </div>
+            </div>
+
+            <div id="already-donated-activity-waiting" class="box-step" style="display: none">
+              <div class="box-step align-items-center">
+                <div class="lds-ring">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="already-donated-card-3-oops" class="box-step" style="display: none">
+              <div class="row justify-content-space-between">
+                <h3 i18n="oops">Oops</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row flex-start">
+                <span i18n="code_incorrect">That code is incorrect.</span>
+                <span i18n="reach_out_help_setup" i18n_replacement_el="reach_out_help_setup_link"><a
+                    href="https://support.getadblock.com" class="mainContentLink">Reach out to us</a>
+                  and let us help you finish setup.</span>
+                <a href="https://support.getadblock.com/new/" class="mainContentLink" id="reach_out_help_setup_link"
+                  target="_blank"></a>
+              </div>
+              <div class="progress-box">
+                <div class="progress-circle" id="progress-1"></div>
+                <div class="progress-circle" id="progress-2"></div>
+                <div class="progress-circle" id="progress-3"></div>
+              </div>
+            </div>
+
+            <div id="card2-error-1" class="box-step" style="display: none">
+              <div class="row justify-content-space-between">
+                <h3 i18n="oops">Oops</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row flex-start">
+                <span i18n="no_donations_for_email">We don't seem to have any donations recorded for that email.</span>
+              </div>
+              <div class="progress-box">
+                <div class="progress-circle" id="progress-1"></div>
+                <div class="progress-circle" id="progress-2"></div>
+                <div class="progress-circle" id="progress-3"></div>
+              </div>
+            </div>
+
+            <div id="card2-error-2" class="box-step" style="display: none">
+              <div class="row justify-content-space-between">
+                <h3 i18n="oops">Oops</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row flex-start">
+                <span i18n="code_incorrect">That code is incorrect.</span>
+                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup1">Reach out to us and let us help
+                  you finish setup!</span>
+                <a href="https://help.getadblock.com/support/tickets/new" class="mainContentLink" target="_new"
+                  id="finish-setup1"></a>
+              </div>
+              <div class="progress-box">
+                <div class="progress-circle" id="progress-1"></div>
+                <div class="progress-circle" id="progress-2"></div>
+                <div class="progress-circle" id="progress-3"></div>
+              </div>
+            </div>
+
+            <div id="card2-error-3" class="box-step" style="display: none">
+              <div class="row justify-content-space-between">
+                <h3 i18n="oops">Oops</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row flex-start">
+                <span i18n="cant_find_user_id">We can't seem to find your user id.</span>
+                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup2">Reach out to us and let us help
+                  you finish setup!</span>
+                <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup2"></a>
+              </div>
+              <div class="progress-box">
+                <div class="progress-circle" id="progress-1"></div>
+                <div class="progress-circle" id="progress-2"></div>
+                <div class="progress-circle" id="progress-3"></div>
+              </div>
+            </div>
+
+            <div id="card2-error-4" class="box-step" style="display: none">
+              <div class="row justify-content-space-between">
+                <h3 i18n="oops">Oops</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row flex-start">
+                <span i18n="problem_activating">There was a problem activating your extension.</span>
+                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup3">Reach out to us and let us help
+                  you finish setup!</span>
+                <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup3"></a>
+              </div>
+              <div class="progress-box">
+                <div class="progress-circle" id="progress-1"></div>
+                <div class="progress-circle" id="progress-2"></div>
+                <div class="progress-circle" id="progress-3"></div>
+              </div>
+            </div>
+
+            <div id="card2-error-5" class="box-step" style="display: none">
+              <div class="row justify-content-space-between">
+                <h3 i18n="oops">Oops</h3>
+                <i class="material-icons back-to-payments">close</i>
+              </div>
+              <hr />
+              <div class="row flex-start">
+                <span i18n="problem_our_end">There was a problem on our end.</span>
+                <span i18n="recorded_investigating">It has been recorded and we're investigating.</span>
+                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup4">Reach out to us and let us help
+                  you finish setup!</span>
+                <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup4"></a>
+              </div>
+              <div class="progress-box">
+                <div class="progress-circle" id="progress-1"></div>
+                <div class="progress-circle" id="progress-2"></div>
+                <div class="progress-circle" id="progress-3"></div>
+              </div>
+            </div>
+
+            <div id="already-donated-card-4-goodtogo" class="box-step" style="display: none">
+              <div class="row">
+                <h3 i18n="ready_premium">You’re ready to start using AdBlock Premium!</h3>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="left">
+                  <img src="/adblock/premium/images/box-hooray.svg" alt="" />
+                </div>
+                <div class="right">
+                  <div class="row flex-start">
+                    <span i18n="click_below_to_customize">Click below to customize your online experience.</span>
+                    <span i18n="premium_features_get_started" class="nomargin">Choose a theme, block additional
+                      distractions, and more.</span>
+                  </div>
+                  <div class="row">
+                    <button class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta"
+                      style="margin-bottom: 0px">
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/js/pages/premium.js"></script>
+<script src="https://js.stripe.com/v3"></script>
+<script src="https://checkout.stripe.com/v3/checkout.js"></script>
+<script src="/adblock/js/payment/lib/payment_libs.js"></script>
+<script src="/adblock/premium/payment.js"></script>
