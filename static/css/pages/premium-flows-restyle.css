@@ -18,3 +18,69 @@
 #payments { padding: 0; }
 
 #payments-content { row-gap: 0; }
+
+.premium-enrolment-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 3.25rem 3rem;
+    filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.15));
+}
+
+.premium-enrolment-card-heading {
+    margin-top: 0;
+    font-size: 100% !important;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #C6C6C6;
+    margin-bottom: 2.5rem;
+}
+
+.premium-enrolment-card hr {
+    margin: 2rem 0;
+}
+
+.premium-enrolment-card a {
+    color: #2284F7;
+}
+
+.premium-enrolment-inner-card {
+    background: #F4F4F4;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.premium-enrolment-inner-card-heading {
+    font-size: 100% !important;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* Premium enrolment complete slide
+ *********************************************************************/
+
+.premium-enrolment-complete-cta {
+    max-width: 24rem;
+}
+
+.premium-enrolment-complete-cta-brand {
+    display: block;
+    margin: 0 auto !important;
+}
+
+.premium-enrolment-complete-cta-graphic {
+    display: block;
+    margin: 5rem auto 4rem auto !important;
+}
+
+.premium-enrolment-complete-cta-button {
+    color: #fff !important;
+    background-color: #0797E1;
+    padding: 0.9rem 1rem;
+    line-height: 1.2;
+    font-size: 100%;
+    width: 100%;
+    max-width: 100%;
+    filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.15));
+}
