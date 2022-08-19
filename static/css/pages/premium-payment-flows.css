@@ -1,0 +1,20 @@
+.flow-container {
+    border: 2px dashed gray;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flow-heading {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: gray;
+}
+
+#payments { padding: 0; }
+
+#payments-content { row-gap: 0; }
