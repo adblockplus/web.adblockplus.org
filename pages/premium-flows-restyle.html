@@ -2,6 +2,7 @@ title=Adblock Plus Premium | The world's #1 ad blocker
 description=Adblock Plus Premium, the upgraded version of the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
 template=minimal
 unadblock=1
+robots=none
 
 <head>
   <link rel="stylesheet" href="/css/pages/premium.css">
@@ -12,7 +13,7 @@ unadblock=1
   <link rel="stylesheet" href="/adblock/css/updateStyle.css" />
   <link rel="stylesheet" href="/adblock/premium/style.css" />
   <link rel="stylesheet" href="/adblock/premium/payment_section.css" />
-  <link rel="stylesheet" href="/css/pages/premium-flows.css">  
+  <link rel="stylesheet" href="/css/pages/premium-flows-restyle.css">  
 </head>
 
 <main class="premium-page">
@@ -230,6 +231,53 @@ unadblock=1
 
       <h2 class="flow-heading">Payment form > Return > Activation success</h2>
       <div class="flow-container">
+        <section id="premium-enrolment-complete" class="premium-enrolment-complete premium-enrolment-slide">
+          <div class="premium-row">
+            <div class="premium-column premium-order-1">
+              <div class="premium-enrolment-card">
+                <h3 class="premium-enrolment-card-heading">
+                  Payment Confirmed!
+                </h3>
+                <p>
+                  Thank you for upgrading to Adblock Plus Premium! Click “Get Started with Adblock Plus Premium” to configure your settings.
+                </p>
+                <aside class="premium-enrolment-inner-card">
+                  <h4 class="premium-enrolment-inner-card-heading">
+                    Payment Details
+                  </h4>
+                  <div>
+                    <span class="premium-enrolment-product">Adblock Plus Premium:</span> <span class="premium-enrolment-price">$19.99/yr</span>
+                  </div>
+                  <div>
+                    <span class="premium-enrolment-email">foo@bar.co</span>
+                  </div>
+                  <hr>
+                  <p>
+                    Questions? Please visit our <a href="#">Help Center</a> or contact <a href="#">support@getadblock.com</a>. We’re always happy to hear from you!
+                  </p>
+                </aside>
+              </div>  
+            </div>
+            <div class="premium-column premium-order-0">
+              <div class="premium-enrolment-complete-cta">
+                <img 
+                  alt=""
+                  class="premium-enrolment-complete-cta-brand"
+                  src="/img/adblock-plus-premium-logo.svg" 
+                  style="max-width: 360px">
+                <img 
+                  alt="" 
+                  class="premium-enrolment-complete-cta-graphic" 
+                  src="/img/browserwithgears.svg">
+                <a href="#" class="premium-button premium-enrolment-complete-cta-button">
+                  Get Started with Adblock Plus Premium
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--
         <div class="row" id="pay">
 
           <div id="pmt-success-left" class="step" style="width: 44%;">
@@ -331,6 +379,7 @@ unadblock=1
             </div>
           </div>
         </div>
+        -->
       </div>
 
       <h2 class="flow-heading">Already donated > Email submit > Response error 1 (!200)</h2>
@@ -516,27 +565,27 @@ unadblock=1
         <div class="row" id="already-donated-activity">
           <div class="column">
             <div id="already-donated-activity-box" class="step">
-              <div id="already-donated-card-4-goodtogo" class="box-step">
-                <div class="row">
-                  <h3 i18n="ready_premium">You’re ready to start using AdBlock Premium!</h3>
-                </div>
-                <hr />
-                <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
+              <div class="premium-enrolment-card premium-already-donated-complete">
+                <h3 i18n="ready_premium" class="premium-enrolment-card-heading">
+                  You’re ready to start using AdBlock Premium!
+                </h3>
+                <div class="premium-row">
+                  <div class="premium-column">
+                    <img 
+                      alt="" 
+                      src="/img/browser-with-gears.svg"
+                      class="premium-enrolment-completed-graphic">
                   </div>
-                  <div class="right">
-                    <div class="row flex-start">
+                  <div class="premium-column" style="position:relative">
+                    <p class="premium-enrolment-completed-lead">
                       <span i18n="click_below_to_customize">Click below to customize your online experience.</span>
                       <span i18n="premium_features_get_started" class="nomargin">Choose a theme, block additional
                         distractions, and more.</span>
-                    </div>
-                    <div class="row">
-                      <button class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta"
-                        style="margin-bottom: 0px">
-                        Get Started
-                      </button>
-                    </div>
+                    </p>
+                    <button class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta"
+                      style="margin-bottom: 0px">
+                      Get Started
+                    </button>
                   </div>
                 </div>
               </div>
