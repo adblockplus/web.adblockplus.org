@@ -16,7 +16,7 @@
 
 .common:
   tags:
-    - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/eyeo-python2.7-cms:latest"
+    - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest"
     - &TEST_IMAGE "registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium"
     - &BUILD_RUNNER "docker"
     - &US_RUNNER "web-qa-us-proxy-1.uplink.eyeo.it"
