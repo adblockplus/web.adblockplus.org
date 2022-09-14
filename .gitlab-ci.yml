@@ -48,7 +48,7 @@ cookies_settings_tests:
   tags:
     - *US_RUNNER
   script:
-    - pip install tox
+    - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_CookiesSettings.py
   when: manual
@@ -74,7 +74,7 @@ language_tests:
     <<: *staging
   image: *TEST_IMAGE
   script:
-    - pip install tox
+    - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Languages.py
   when: manual
@@ -89,7 +89,7 @@ stripe_donate_tests:
   tags:
     - *US_RUNNER
   script:
-    - pip install tox
+    - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=donate tests/test_StripeDonations.py
   when: manual
@@ -104,7 +104,7 @@ stripe_installed_tests:
   tags:
     - *US_RUNNER
   script:
-    - pip install tox
+    - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=installed tests/test_StripeDonations.py
   when: manual
@@ -119,7 +119,7 @@ stripe_update_tests:
   tags:
     - *US_RUNNER
   script:
-    - pip install tox
+    - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=update tests/test_StripeDonations.py
   when: manual
@@ -130,7 +130,7 @@ monitoring_scheduled_tests:
   stage: scheduled_monitoring_tests
   image: *TEST_IMAGE
   script:
-    - pip install tox
+    - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py tests/test_MonitorDonationPages.py
 
@@ -142,7 +142,7 @@ smoke_tests:
     <<: *staging
   image: *TEST_IMAGE
   script:
-    - pip install tox
+    - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
 
@@ -170,10 +170,10 @@ staging_build:
   tags:
     - *BUILD_RUNNER
   before_script:
-    - pip install -q crudini
+    - python3 -m pip install -q crudini
   script:
     - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
-    - python -m cms.bin.generate_static_pages $PWD build
+    - python3 -m cms.bin.generate_static_pages $PWD build
   artifacts:
     name:
       "$CI_COMMIT_REF_SLUG"
@@ -210,10 +210,10 @@ production_build:
   tags:
     - *BUILD_RUNNER
   before_script:
-    - pip install -q crudini
+    - python3 -m pip install -q crudini
   script:
     - crudini --set settings.ini general siteurl "https://$DOMAIN"
-    - python -m cms.bin.generate_static_pages $PWD build
+    - python3 -m cms.bin.generate_static_pages $PWD build
   artifacts:
     name:
       "$CI_COMMIT_REF_SLUG"
