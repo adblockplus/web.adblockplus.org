@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "おやまあ！手数料の関係から、一回の寄付は最低<span>$5</span>でお願いしております。"
+    "message": "おやまあ！手数料の関係から、一回の寄付は最低<span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>でお願いしております。"
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "おやまあ！手数料の関係から、一回の寄付は最低<span>$1.99</span>でお願いしております。"
+    "message": "おやまあ！手数料の関係から、一回の寄付は最低<span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">1.99</span>でお願いしております。"
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -62,7 +62,7 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "おや！経費を賄うため1年分の寄付の最低額は、<span>$5</span>となっております。"
+    "message": "おや！経費を賄うため1年分の寄付の最低額は、<span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>となっております。"
   },
   "pay-yearly": {
     "message": "寄付金額 {amount} / 年"

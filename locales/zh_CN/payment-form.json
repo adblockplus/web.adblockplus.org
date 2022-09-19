@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "抱歉！为了支付相关费用，一次性捐款额最低为 <span>$5</span>。"
+    "message": "抱歉！为了支付相关费用，一次性捐款额最低为 <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>。"
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "抱歉！为了支付相关费用，每月捐款额最低为 <span>$1.99</span>。"
+    "message": "抱歉！为了支付相关费用，每月捐款额最低为 <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">1.99</span>。"
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -62,7 +62,7 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "糟糕！为了足以支付费用，年度捐赠最低金额为<span>$5</span>。"
+    "message": "糟糕！为了足以支付费用，年度捐赠最低金额为<span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>。"
   },
   "pay-yearly": {
     "message": "捐赠 {amount} / 年"

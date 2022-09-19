@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό εφάπαξ δωρεάς είναι <span>$5</span>."
+    "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό εφάπαξ δωρεάς είναι <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό μηνιαίας δωρεάς είναι <span>$1.99</span>."
+    "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό μηνιαίας δωρεάς είναι <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">1.99</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -58,7 +58,7 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Ωχ! Για την στήριξη κάλυψης των εξόδων η ελάχιστη ετήσια δωρεά είναι <span>$5</span>."
+    "message": "Ωχ! Για την στήριξη κάλυψης των εξόδων η ελάχιστη ετήσια δωρεά είναι <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>."
   },
   "pay-monthly": {
     "message": "Δωρεά {amount} / μήνα"

@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Oeps! De minimale eenmalige donatiebijdrage om kosten te dekken is <span>$5</span>."
+    "message": "Oeps! De minimale eenmalige donatiebijdrage om kosten te dekken is <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Oeps! De minimale maandelijkse donatiebijdrage om kosten te dekken is <span>$1.99</span>."
+    "message": "Oeps! De minimale maandelijkse donatiebijdrage om kosten te dekken is <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">1.99</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -62,7 +62,7 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Oeps! Om de kosten te helpen dekken is het minimale jaarlijkse donatiebedra <span>$5</span>."
+    "message": "Oeps! Om de kosten te helpen dekken is het minimale jaarlijkse donatiebedra <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>."
   },
   "pay-yearly": {
     "message": "Doneer {amount} / per jaar"
