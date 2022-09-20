@@ -123,9 +123,26 @@ ns.setupForm = function(_config)
   // Set frequencies and amounts for the first time
   updateFrequencies();
 
+  // Set default currency sign correctly across the page
+  updateCurrencySign();
+
+  function updateCurrencySign()
+  {
+    // Set form dataset for styling when currency options exist and change
+    if ($currency) $form.dataset.currency = $currency.value;
+    var sign = CURRENCY_CONFIG[$currency ? $currency.value : defaultCurrency].sign;
+    var $signs = doc.querySelectorAll(".currency-symbol")
+    $signs.forEach(function(element) { element.innerHTML = sign });
+  }
+
+  function updateCurrency()
+  {
+    updateFrequencies();
+    updateCurrencySign();
+  }
   // Update frequencies and amounts when currency changes
   if ($currency) // $currency only exists if config has multiple currencies
-    $currency.addEventListener("change", updateFrequencies);
+    $currency.addEventListener("change", updateCurrency);
   
   $frequencies.addEventListener("change", function(event)
   {
