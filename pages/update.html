@@ -5,111 +5,54 @@ template=bare
 
 <head>
   <link rel="stylesheet" href="build/css/update.min.css">
-  <style>
-    .show-if-firefox { display: none; }
-    .hide-if-firefox { display: block; }
-    .firefox .show-if-firefox { display: block; }
-    .firefox .hide-if-firefox { display: none; }
-  </style>
   <script>
     path("payment", {
       pageId: 2,
-      campaignId: 2,
+      campaignId: 4,
     });
   </script>
 </head>
 
-<main class="update container content">
-  <div class="hide-if-firefox">
-    <div class="update-header clearfix">
-      <img
-        alt=""
-        height="130"
-        width="130"
-        class="update-header-image"
-        src="/img/adblock-plus-latest.svg">
-      <h1 class="update-header-heading">
-        {{ update-heading-1[heading] Adblock Plus has been updated! <span class="small">(version 3.12) </span> }}
-      </h1>
-      <p class="update-header-lead">
-        {{ update-lead-1 We’ve spent the last few months adding new features and improving Adblock Plus’ performance. We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. Adblock Plus is free, community-supported software, and that <strong>wouldn't be possible without your continued support.</strong> }}
-      </p>
-    </div>
-
-    <p>
-      {{ update-lead-2 We devote a lot of time and resources into developing and securing the best online experience for our users. Please donate what you think is a fair contribution to the Adblock Plus project and our attempts to keep the ad-blocking community alive. <strong>Every donation is appreciated!</strong> }}
+<div class="update container content">
+  <div class="update-header clearfix">
+    <img alt="" height="130" width="130" class="update-header-image" src="/img/adblock-plus-latest.svg">
+    <h1 class="update-header-heading">
+      {{ update-heading-1 Adblock Plus has been updated! }}
+    </h1>
+    <p class="update-header-lead">
+      {{ update-lead-1 We’ve spent the last few months adding new features and improving Adblock Plus’ performance. We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. Adblock Plus is free, community-supported software, and that wouldn't be possible without your continued support. }}
     </p>
   </div>
-
-  <div class="show-if-firefox">
-    <div class="update-header clearfix">
-      <img
-        alt=""
-        height="130"
-        width="130"
-        class="update-header-image"
-        src="/img/adblock-plus-latest.svg">
-      <h1 class="update-header-heading">
-        {{ main-heading-1 The honor system }}</h1>
-      </h1>
-      <div class="update-header-lead">
-        <p>{{ main-lead-1 Hi from the Adblock Plus team! }}</p>
-        <p>{{ main-lead-2 Adblock Plus is honor-ware, which means <strong>we trust each other</strong> to be nice: }}</p>
-        <ul>
-          <li>{{ main-lead-3 You <strong>pay what you can afford</strong> for Adblock Plus. We let <strong>you</strong> choose the price. }}</li>
-          <li>{{ main-lead-4 We develop features that put you in control of your browsing experience. }}</li>
-          <li>{{ main-lead-5 You get a <strong>refund</strong> - and you can <strong>keep Adblock Plus</strong> - if you don't <em>love</em> it. }}</li>
-        </ul>
-      </div>
-    </div>
-
-    <p>{{ main-body-1 Please pay as much as you can, since if you change your mind you have 120 days to get a refund! }}</p>
-  </div>
-
-    <? include payment/form ?>
-
-  <div class="hide-if-firefox">
-    <h2>
-      {{ whats-new-header-1 What’s new? }}
-    </h2>
-    <p>
-      {{ whats-new-lead-1 Here is an overview of some improvements and new features. More changes coming soon! }}
-    </p>
-    <ul>
-      <li>
-        {{ whats-new-list-1 <strong>Improved ad blocking.</strong> Many websites look for ways to prevent Adblock Plus from blocking annoying ads. Because of this, we’re frequently updating our functionality so that we can overcome these anti-ad blocking attempts. If you ever run into a website that won’t allow you to block ads, please let us know by using our Report Issue feature. }}
-      </li>
-      <li>
-        {{ whats-new-list-2 <strong>Added Smart Language Filters.</strong> When you turn on this feature, you’ll be automatically notified of available filter lists in the languages you regularly browse in. This makes it easier than ever to block more annoying ads in those languages. Of course, we always respect your privacy. This information remains on your computer and is never shared with our servers. You can turn on the feature in your options page under the <em>General</em> tab > <em>Language Filter Lists</em> section. }}
-      </li>
-      <li>
-        {{ whats-new-list-3 <strong>Added support for blocking ads in more languages.</strong> Users who browse in Finnish and Swedish can now block ads on websites that are using these languages. }}
-      </li>
-      <li>
-        {{ whats-new-list-4 <strong>Improved user experience.</strong> We’re always at work to make Adblock Plus better. We’ve recently updated several error messages for easier debugging, made changes to our terminology, and added a new footer to the pop-up menu so you can conveniently access what you need. }}
-      </li>
-    </ul>
-    <p>
-      {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
-    </p>
-  </div>
-
-  <div class="show-if-firefox">
-    <h2>{{ main-heading-2 Help is just an email away }}</h2>
-    <p>{{ main-body-3 If you ever need us, 24x7 self-help and 8x5 email help is available on our support portal, <a href="https://help.eyeo.com/">help.eyeo.com</a>. }}</p>
-    <p>{{ main-body-4 Thank you for choosing Adblock Plus! Happy Browsing! }}</p>
-    <p>{{ main-body-5 Love, <span class="block"></span> The Adblock Plus Team  }}</p>
-  </div>
-
-</main>
-
+  <p>
+    {{ update-lead-2 We devote a lot of time and resources into developing and securing the best online experience for our users. Please contribute what you think is a fair amount to the Adblock Plus project and our attempts to keep the ad-blocking community alive. Every contribution is appreciated! }}
+  </p>
+  <? include payment/form ?>
+  <h2>
+    {{ whats-new-header-1 What’s new? }}
+  </h2>
+  <p>
+    {{ whats-new-lead-1 Here is an overview of some recent improvements. }}
+  </p>
+  <ul>
+    <li>
+      {{ whats-new-list-1 <strong>Improved ad blocking functionality</strong>. Many websites look for ways to prevent Adblock Plus from blocking annoying ads. Because of this, we’re frequently updating our functionality so that we can overcome these anti-ad blocking attempts. If you ever run into a website that won’t allow you to block ads, please let us know by using our Report Issue feature. }}
+    </li>
+    <li>
+      {{ whats-new-list-2 <strong>Improved performance</strong>. We’ve changed the way we handle anti-circumvention snippets that target the same domains in order to keep only those that apply changes turned on. This means you can expect an overall better performance from our extension. }}
+    </li>
+    <li>
+      {{ whats-new-list-3 <strong>Improved foundation for the future</strong>. Manifest V3, the latest version of the extension platform for Chromium based browsers, is on the horizon. And we’ve been getting ready for it! MV3 represents a large shift in how browser extensions will work, requiring our team to make some big changes to how Adblock Plus works. We’ve made lots of progress so that we can continue to help Adblock Plus users stay in control of their online experience as the web evolves. }}
+    </li>
+  </ul>
+  <p>
+    {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
+  </p>
+</div>
 <footer class="privacy-footer">
-  <a href="https://adblockplus.org/privacy">{{ privacy-policy[footer link] Privacy Policy }}</a>
+  <a href="https://adblockplus.org/privacy">
+    {{ privacy-policy Privacy Policy }}
+  </a>
 </footer>
 
 <script src="https://js.stripe.com/v3/"></script>
 <script src="/build/js/update.min.js"></script>
-<script>
-  if (navigator.userAgent.toLowerCase().indexOf("firefox") != -1)
-    document.documentElement.classList.add("firefox");
-</script>
