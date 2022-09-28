@@ -1,7 +1,7 @@
 FROM debian
 
 RUN apt-get update -yqq
-RUN apt-get install -yqq git wget python2 apache2 libapache2-mod-geoip
+RUN apt-get install -yqq git wget python3 python3-pip apache2 libapache2-mod-geoip
 
 # Configure apache2 to test .htaccess
 RUN a2enmod macro
@@ -14,11 +14,6 @@ RUN openssl req -x509 -nodes -days 365 \
     -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key \
     -out /etc/ssl/certs/apache-selfsigned.crt;
 
-# Install pip2
-RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
-RUN python2 get-pip.py
-RUN rm get-pip.py
-
 # Install node LTS
 RUN wget https://deb.nodesource.com/setup_16.x
 RUN bash setup_16.x
@@ -26,6 +21,6 @@ RUN rm setup_16.x
 RUN apt-get install -yqq nodejs
 
 # Install eyeo/cms
-RUN git clone -b master --single-branch https://gitlab.com/eyeo/websites/cms.git /srv/cms
-RUN pip2 install -r /srv/cms/requirements.txt
+RUN git clone -b migration-to-python3 --single-branch https://gitlab.com/eyeo/websites/cms.git /srv/cms
+RUN python3 -m pip install -r /srv/cms/requirements.txt
 ENV PYTHONPATH="/srv/cms:$PYTHONPATH"

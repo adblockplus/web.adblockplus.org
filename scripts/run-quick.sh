@@ -1,2 +1,2 @@
 npm run min
-python2 -m cms.bin.test_server .
+python3 -m cms.bin.test_server .
