@@ -494,11 +494,9 @@ unadblock=1
               <hr />
               <div class="row flex-start">
                 <span i18n="code_incorrect">That code is incorrect.</span>
-                <span i18n="reach_out_help_setup" i18n_replacement_el="reach_out_help_setup_link"><a
-                    href="https://support.getadblock.com" class="mainContentLink">Reach out to us</a>
+                <span i18n="reach_out_help_setup">
+                  <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}' class="mainContentLink">Reach out to us</a>
                   and let us help you finish setup.</span>
-                <a href="https://support.getadblock.com/new/" class="mainContentLink" id="reach_out_help_setup_link"
-                  target="_blank"></a>
               </div>
               <div class="progress-box">
                 <div class="progress-circle" id="progress-1"></div>
@@ -531,10 +529,7 @@ unadblock=1
               <hr />
               <div class="row flex-start">
                 <span i18n="code_incorrect">That code is incorrect.</span>
-                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup1">Reach out to us and let us help
-                  you finish setup!</span>
-                <a href="https://help.getadblock.com/support/tickets/new" class="mainContentLink" target="_new"
-                  id="finish-setup1"></a>
+                <a i18n="reach_out_help_setup" data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>Reach out to us and let us help you finish setup!</a>
               </div>
               <div class="progress-box">
                 <div class="progress-circle" id="progress-1"></div>
@@ -551,9 +546,7 @@ unadblock=1
               <hr />
               <div class="row flex-start">
                 <span i18n="cant_find_user_id">We can't seem to find your user id.</span>
-                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup2">Reach out to us and let us help
-                  you finish setup!</span>
-                <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup2"></a>
+                <a i18n="reach_out_help_setup" data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>Reach out to us and let us help you finish setup!</a>
               </div>
               <div class="progress-box">
                 <div class="progress-circle" id="progress-1"></div>
@@ -570,8 +563,7 @@ unadblock=1
               <hr />
               <div class="row flex-start">
                 <span i18n="problem_activating">There was a problem activating your extension.</span>
-                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup3">Reach out to us and let us help
-                  you finish setup!</span>
+                <a i18n="reach_out_help_setup" data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>Reach out to us and let us help you finish setup!</a>
                 <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup3"></a>
               </div>
               <div class="progress-box">
@@ -590,9 +582,7 @@ unadblock=1
               <div class="row flex-start">
                 <span i18n="problem_our_end">There was a problem on our end.</span>
                 <span i18n="recorded_investigating">It has been recorded and we're investigating.</span>
-                <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup4">Reach out to us and let us help
-                  you finish setup!</span>
-                <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup4"></a>
+                <a i18n="reach_out_help_setup" data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>Reach out to us and let us help you finish setup!</a>
               </div>
               <div class="progress-box">
                 <div class="progress-circle" id="progress-1"></div>
@@ -637,3 +627,4 @@ unadblock=1
 <script src="https://checkout.stripe.com/v3/checkout.js"></script>
 <script src="/adblock/js/payment/lib/payment_libs.js"></script>
 <script src="/adblock/premium/payment.js"></script>
+<script src="/js/address-masking.js"></script>
