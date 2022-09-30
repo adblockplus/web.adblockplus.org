@@ -70,7 +70,7 @@ var CURRENCY_CONFIG = {
   USD: { sign: "$" },
   AUD: { sign: "$" },
   CAD: { sign: "$" },
-  CHF: { sign: "CHF"},
+  CHF: { sign: "CHF "},
   EUR: { sign: "€" },
   GBP: { sign: "£" },
   JPY: {

@@ -2604,6 +2604,16 @@ h2 svg { display: block; }
   align-items: center;
 }
 
+[data-currency=CHF] .payment-amount,
+[data-currency=CHF] .custom-payment-amount,
+[data-currency=JPY] .payment-amount,
+[data-currency=JPY] .custom-payment-amount,
+[data-currency=RUB] .payment-amount,
+[data-currency=RUB] .custom-payment-amount
+{
+  font-size: 15px;
+}
+
 [dir="ltr"] .payment-amount { margin-right: 1rem; }
 [dir="rtl"] .payment-amount { margin-left: 1rem; }
 
