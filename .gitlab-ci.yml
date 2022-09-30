@@ -134,9 +134,10 @@ monitoring_scheduled_tests:
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py tests/test_MonitorDonationPages.py
 
-smoke_tests:
+smoke_tests_staging:
   except:
     - schedules
+    - master
   stage: smoke_tests
   variables:
     <<: *staging
@@ -145,6 +146,21 @@ smoke_tests:
     - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
+
+smoke_tests_production:
+  except:
+    - schedules
+  only:
+    - master
+  stage: smoke_tests
+  variables:
+    <<: *production
+  image: *TEST_IMAGE
+  script:
+    - python3 -m pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=https://new.adblockplus.org tests/test_DownloadLinks.py
+
 
 lint:
   except:
