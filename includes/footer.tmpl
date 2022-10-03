@@ -111,7 +111,7 @@
         <p id="copyright-notice">{{ get_string("copyright", "footer") }}</p>
         <ul id="legal-list">
           {% if page == "gift-of-ad-blocking" %}
-            {% for pagename in ["terms", "privacy", "privacy-goab", "imprint"] %}
+            {% for pagename in ["terms", "privacy", "imprint"] %}
               <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
             {% endfor %}
           {% else %}
