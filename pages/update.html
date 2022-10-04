@@ -44,9 +44,15 @@ template=bare
       {{ whats-new-list-3 <strong>Improved foundation for the future</strong>. Manifest V3, the latest version of the extension platform for Chromium based browsers, is on the horizon. And we’ve been getting ready for it! MV3 represents a large shift in how browser extensions will work, requiring our team to make some big changes to how Adblock Plus works. We’ve made lots of progress so that we can continue to help Adblock Plus users stay in control of their online experience as the web evolves. }}
     </li>
   </ul>
-  <p>
+  <p id="whats-new-support">
     {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
   </p>
+  <script>
+    (function(){
+      var _wns = document.getElementById('whats-new-support');
+      _wns.innerHTML = _wns.innerHTML.replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+    })()
+  </script>
 </div>
 <footer class="privacy-footer">
   <a href="https://adblockplus.org/privacy">
