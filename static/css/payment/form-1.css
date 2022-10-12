@@ -28,8 +28,6 @@
 [dir="ltr"] .payment-form input[type="text"] { margin-left: 0.2rem; }
 [dir="rtl"] .payment-form input[type="text"] { margin-right: 0.2rem; }
 
-.payment-header { margin-bottom: 1rem; }
-
 .payment-heading { font-size: 24px !important; }
 
 .payment-heading.single-currency { display: block; }
@@ -62,6 +60,16 @@
   align-items: center;
 }
 
+[data-currency=CHF] .payment-amount,
+[data-currency=CHF] .custom-payment-amount,
+[data-currency=JPY] .payment-amount,
+[data-currency=JPY] .custom-payment-amount,
+[data-currency=RUB] .payment-amount,
+[data-currency=RUB] .custom-payment-amount
+{
+  font-size: 15px;
+}
+
 [dir="ltr"] .payment-amount { margin-right: 1rem; }
 [dir="rtl"] .payment-amount { margin-left: 1rem; }
 
@@ -70,6 +78,8 @@
 .custom-payment-amount { position: relative; }
 
 .custom-payment-amount input[type="text"] { width: 3.6rem; }
+
+[data-currency=CHF] .custom-payment-amount input[type="text"] { width: 2.6rem; }
 
 .payment-divide
 {
@@ -88,6 +98,12 @@
     width: 2px;
     margin: 2rem 1.5rem 0 1.5rem;
     padding: 0;
+  }
+
+  [data-currency=CHF] .payment-divide 
+  {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
   }
 }
 
@@ -133,11 +149,6 @@
 
 .payment-buttons { margin-top: 1.5rem; }
 
-.payment-buttons button { display: none; }
-
-[data-provider="stripe"] .stripe-button,
-[data-provider="paypal"] .paypal-button { display: block; }
-
 @media (min-width: 850px)
 {
   .payment-buttons { display: flex; }
@@ -178,7 +189,7 @@
 .stripe-button
 {
   color: #fff;
-  background-color: #0AAD03;
+  background-color: #2888F9;
   overflow: hidden;
 }
 
@@ -187,53 +198,3 @@
   color: #000;
   background-color: rgb(255, 187, 3);
 }
-
-.stripe-card-body 
-{ 
-  display: none; 
-  width: 320px; 
-  padding: 0;
-}
-
-[data-provider="stripe"] .stripe-card-body { display: block; }
-
-.stripe-card-field
-{
-  display: block;
-  margin: 1rem 0;
-  height: 40px;
-  width: 100%;
-  padding: 10px 10px;
-  border: 1px solid #cdcdcd;
-  border-radius: 5px 5px 5px 5px;
-  background-color: #fff;
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-@keyframes spinner-grow 
-{
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.spinner-grow 
-{
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  vertical-align: text-bottom;
-  background-color: currentColor;
-  border-radius: 50%;
-  opacity: 0;
-  animation: spinner-grow 0.75s linear infinite;
-}
-
-.payment-form .submitting-spinner { display: none; }
-.payment-form.is-submitting .submitting-label { display: none; }
-.payment-form.is-submitting .submitting-spinner { display: inline-block; }

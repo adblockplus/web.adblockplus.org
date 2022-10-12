@@ -1,0 +1,66 @@
+title=Adblock Plus has been updated
+prevent_cookie_prompt=1
+robots=none
+template=bare
+
+<head>
+  <link rel="stylesheet" href="build/css/update-1.min.css">
+  <script>
+    path("payment", {
+      pageId: 2,
+      campaignId: 4,
+      testId: 75,
+      variantId: 1
+    });
+  </script>
+</head>
+
+<div class="update container content">
+  <div class="update-header clearfix">
+    <img alt="" height="130" width="130" class="update-header-image" src="/img/adblock-plus-latest.svg">
+    <h1 class="update-header-heading">
+      {{ update-heading-1 Adblock Plus has been updated! }}
+    </h1>
+    <p class="update-header-lead">
+      {{ update-lead-1 We’ve spent the last few months adding new features and improving Adblock Plus’ performance. We’re passionate about bringing you the best ad-blocking technology so you can enjoy a clean web. Adblock Plus is free, community-supported software, and that <strong>wouldn't be possible without your continued support.</strong> }}
+    </p>
+  </div>
+  <p>
+    {{ update-lead-2 We devote a lot of time and resources into developing and securing the best online experience for our users. Please contribute what you think is a fair amount to the Adblock Plus project and our attempts to keep the ad-blocking community alive. <strong>Every contribution is appreciated!</strong> }}
+  </p>
+  <? include payment/form-1 ?>
+  <h2>
+    {{ whats-new-header-1 What’s new? }}
+  </h2>
+  <p>
+    {{ whats-new-lead-1 Here is an overview of some recent improvements. }}
+  </p>
+  <ul>
+    <li>
+      {{ whats-new-list-1 <strong>Improved ad blocking functionality</strong>. Many websites look for ways to prevent Adblock Plus from blocking annoying ads. Because of this, we’re frequently updating our functionality so that we can overcome these anti-ad blocking attempts. If you ever run into a website that won’t allow you to block ads, please let us know by using our Report Issue feature. }}
+    </li>
+    <li>
+      {{ whats-new-list-2 <strong>Improved performance</strong>. We’ve changed the way we handle anti-circumvention snippets that target the same domains in order to keep only those that apply changes turned on. This means you can expect an overall better performance from our extension. }}
+    </li>
+    <li>
+      {{ whats-new-list-3 <strong>Improved foundation for the future</strong>. Manifest V3, the latest version of the extension platform for Chromium based browsers, is on the horizon. And we’ve been getting ready for it! MV3 represents a large shift in how browser extensions will work, requiring our team to make some big changes to how Adblock Plus works. We’ve made lots of progress so that we can continue to help Adblock Plus users stay in control of their online experience as the web evolves. }}
+    </li>
+  </ul>
+  <p id="whats-new-support">
+    {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
+  </p>
+  <script>
+    (function(){
+      var _wns = document.getElementById('whats-new-support');
+      _wns.innerHTML = _wns.innerHTML.replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+    })()
+  </script>
+</div>
+<footer class="privacy-footer">
+  <a href="https://adblockplus.org/privacy">
+    {{ privacy-policy Privacy Policy }}
+  </a>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/build/js/update-1.min.js"></script>
