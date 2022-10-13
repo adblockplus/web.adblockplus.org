@@ -65,3 +65,9 @@ Header set X-Frame-Options "sameorigin"
 SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CORS_ALLOW_ORIGIN=$1
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
+
+RewriteCond %{TIME_SEC} [13579]$
+RewriteRule "([\w-_]*)\/update$" "$1/update-0" [NC,L]
+
+RewriteCond %{TIME_SEC} [24680]$
+RewriteRule "([\w-_]*)\/update$" "$1/update-1" [NC,L]
