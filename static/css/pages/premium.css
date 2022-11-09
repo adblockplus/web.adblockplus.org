@@ -253,6 +253,12 @@ html {
   color: #333;
 }
 
+.not-hovered .premium-plan-yearly .premium-button {
+  border: 1px solid #EDA51E;
+  background-color: #EDA51E;
+  color: #fff;
+}
+
 @media (min-width: 992px) {
   .premium-plan {
     margin-top: 2rem;
@@ -268,7 +274,7 @@ html {
   .premium-plan:hover .premium-button,
   .premium-plan:active .premium-button,
   .premium-plan:focus .premium-button {
-    border: 0;
+    border: 1px solid #EDA51E;
     background-color: #EDA51E;
     color: #fff;
   }
@@ -276,9 +282,9 @@ html {
   .premium-plan:hover .premium-button.disabled,
   .premium-plan:active .premium-button.disabled,
   .premium-plan:focus .premium-button.disabled {
+    border: 1px solid #C6C6C6;
     background-color: #C6C6C6;
   }
-
 
 }
 

@@ -118,6 +118,18 @@ function onDOMContentLoaded()
     window.addEventListener('load', onHeightFromOffsetChange);
   }
   onHeightFromOffsetChange();
+
+  // .premium-plan-yearly default style is .premium-plan:hover
+  // When a .premium-plan is hovered then .premium-plan-yearly is styled
+  // like the other .premium-plan until no .premium-plan is hovered again
+  document.querySelectorAll('.premium-plan').forEach(plan => {
+    plan.addEventListener('mouseenter', () => {
+      document.querySelector('.premium-plans').classList.remove('not-hovered');
+    });
+    plan.addEventListener('mouseleave', () => {
+      document.querySelector('.premium-plans').classList.add('not-hovered');
+    })
+  });
 }
 
 if (
