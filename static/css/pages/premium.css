@@ -1,0 +1,714 @@
+/*******************************************************************************
+ * Page overrides
+ *******************************************************************************
+ * Overrides global styles for this page specifically.
+ * May effect global includes.
+ ******************************************************************************/
+
+/* Global font-size is 16px already. But I'm setting it here too in case it's
+ * ever changed globally because the layout of this page depends on it.
+ */
+html {
+  font-size: 16px;
+}
+
+/* Overriding global font-size change at this breakpoint because the layout of
+ * this page depends on a 16px 1rem.
+ *
+ * TODO: Change this global font-size change from 768 to 992 to get benefits of
+ * scale change without harming relatively narrow portriat tablet sizes.
+ */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.premium-page {
+  font-weight: 400;
+  color: #585858;
+}
+
+.premium-page h1,
+.premium-page h2,
+.premium-page h3,
+.premium-page h4,
+.premium-page h5 {
+  color: #000;
+}
+
+.premium-page p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.premium-page a:hover,
+.premium-page a:active,
+.premium-page a:focus {
+  text-decoration: none;
+}
+
+/*******************************************************************************
+ * Grid system
+ *******************************************************************************
+ * Implementing a separate grid system for this page because default.css grid
+ * can't support variable column width and column order without significant
+ * changes that are out of the scope of this page.
+ ******************************************************************************/
+
+.premium-container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .premium-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 992px) {
+  .premium-container {
+    max-width: 960px;
+  }
+}
+
+.premium-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.premium-row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 992px) {
+
+  .premium-column {
+    flex: 1 0 0%;
+  }
+
+  .premium-column-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+
+  .premium-column-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  .premium-order-0 {
+    order: 0 !important;
+  }
+
+  .premium-order-1 {
+    order: 1 !important;
+  }
+
+  .premium-order-2 {
+    order: 2 !important;
+  }
+
+}
+
+/*******************************************************************************
+ * Utilities
+ ******************************************************************************/
+
+.premium-background-lightgrey {
+  background-color: #F7F7F7;
+  overflow: auto;
+}
+
+/* for preferring not to break between specific words on resize  */
+.premium-break {
+  display: inline-block;
+}
+
+.premium-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 13.5rem;
+  background-color: #EDA51E;
+  line-height: 2.5rem;
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+}
+
+.premium-button:hover,
+.premium-button:active,
+.premium-button:focus {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.premium-button:disabled,
+.premium-button.disabled {
+  cursor: not-allowed;
+}
+
+.premium-button:disabled:hover,
+.premium-button:disabled:active,
+.premium-button:disabled:focus,
+.premium-button.disabled:hover,
+.premium-button.disabled:active,
+.premium-button.disabled:focus {
+  background-color: #C6C6C6 !important;
+  box-shadow: none !important;
+}
+
+
+/*******************************************************************************
+ * Dynamic background behind first and second sections
+ *******************************************************************************
+ * See /js/pages/premium.js for height setting.
+ * It matches specific points on load and resize.
+ ******************************************************************************/
+
+.premium-background-1 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #F7F7F7;
+  z-index: -1;
+}
+
+/*******************************************************************************
+ * Page header
+ ******************************************************************************/
+
+.premium-header {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .premium-header {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.premium-header h1 {
+  margin: 0;
+  line-height: 1.1;
+  font-size: 3.25rem;
+}
+
+@media (min-width: 576px) {
+  /* Smaller, to fit in one line, when space allows */
+  .premium-header h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Larger, still fitting in one line, when space allows */
+  .premium-header h1 {
+    font-size: 3.25rem;
+  }
+}
+
+.premium-header p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 52rem;
+  font-size: 1.5rem;
+}
+
+/*******************************************************************************
+ * Plan cards
+ ******************************************************************************/
+
+.premium-plans {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48.5rem;
+}
+
+.premium-plan {
+  position: relative;
+  /* larger margin-top to accomodate header tabs below */
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #E6E6E6;
+  border-radius: 6px;
+  padding: 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+@media (min-width: 992px) {
+  .premium-plan {
+    margin-top: 2rem;
+    box-shadow: none;
+  }
+
+  .premium-plan:hover,
+  .premium-plan:active,
+  .premium-plan:focus {
+    box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
+  }
+
+  .premium-plan:hover .premium-button,
+  .premium-plan:active .premium-button,
+  .premium-plan:focus .premium-button {
+    border: 0;
+    background-color: #EDA51E;
+    color: #fff;
+  }
+
+  .premium-plan:hover .premium-button.disabled,
+  .premium-plan:active .premium-button.disabled,
+  .premium-plan:focus .premium-button.disabled {
+    background-color: #C6C6C6;
+  }
+
+
+}
+
+/* Plan card header / tabs
+ ******************************************************************************/
+
+/* Outline:
+ *
+ * header
+ *   heading
+ *   tab-start (e.g. Most Popular)
+ *   tab-end (e.g. Save 17%)
+ *
+ * The whole header is a tab on small screens.
+ * The heading is a heading and the tab-start/tab-end are tab on large screens.
+ */
+
+.premium-plan-header {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Small screen plan headers are tabs */
+@media (max-width: 991px) {
+  .premium-plan-header {
+    /* CAREFUL: These styles are duplicated below > 992px */
+    position: absolute;
+    /* header tabs appear above cards */
+    top: -2.5rem;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #E6E6E6;
+    line-height: 2.5rem;
+    font-size: 0.0.875rem;
+    color: #666666;
+  }
+
+  .premium-plan-highlighted .premium-plan-header {
+    background-color: #0797E1;
+    color: #fff;
+  }
+
+  .premium-plan-header .premium-plan-heading {
+    /* overriding page level heading color */
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+
+  [dir="ltr"] .premium-plan-heading {
+    float: left;
+  }
+
+  [dir="rtl"] .premium-plan-heading {
+    float: right;
+  }
+
+  [dir="ltr"] .premium-plan-heading {
+    margin-left: 1rem;
+  }
+
+  [dir="rtl"] .premium-plan-heading {
+    margin-right: 1rem;
+  }
+
+  [dir="ltr"] .premium-plan-tab {
+    float: left;
+  }
+
+  [dir="rtl"] .premium-plan-tab {
+    float: right;
+  }
+
+  [dir="ltr"] .premium-plan-tab-start {
+    float: left;
+  }
+
+  [dir="rtl"] .premium-plan-tab-start {
+    float: right;
+  }
+
+  .premium-plan-tab-end {
+    display: block;
+    /* CAREFUL: These styles are duplicated below > 992px */
+    margin: 0.625rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 0 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  [dir="ltr"] .premium-plan-tab-end {
+    float: right;
+  }
+
+  [dir="rtl"] .premium-plan-tab-end {
+    float: left;
+  }
+}
+
+/* large screen headers are not tabs */
+@media (min-width: 992px) {
+  /* style plan-tab-start as a tab instead of the whole header */
+  .premium-plan-tab-start {
+    /* CAREFUL: These styles are duplicated above < 991px */
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #0797E1;
+    line-height: 2.5rem;
+    font-size: 0.0.875rem;
+    color: #fff;
+  }
+
+  [dir="ltr"] .premium-plan-tab-start {
+    padding-left: 1rem;
+  }
+
+  [dir="rtl"] .premium-plan-tab-start {
+    padding-right: 1rem;
+  }
+
+  .premium-plan-tab-separator {
+    display: none;
+  }
+
+  .premium-plan-tab-end {
+    position: absolute;
+    top: -2.5rem;
+    /* CAREFUL: These styles are duplicated above < 991px */
+    margin: 0.55rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 0 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.75rem;
+    color: #fff;
+  }
+
+  [dir="ltr"] .premium-plan-tab-end {
+    right: 0;
+  }
+
+  [dir="rtl"] .premium-plan-tab-end {
+    left: 0;
+  }
+
+  .premium-plan-heading {
+    margin: 1rem 0 0 0;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .premium-plan-highlighted .premium-plan-heading {
+    color: #EDA51E;
+  }
+}
+
+/* Removing border-top-radius on plan cards with tabs */
+.premium-plan-highlighted {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/* Plan card body
+ ******************************************************************************/
+
+.premium-plan-body {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .premium-plan-body {
+    display: flex;
+    /* price appears above text on small screens and below on large */
+    flex-direction: column-reverse;
+    text-align: left;
+  }
+}
+
+.premium-plan-description {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  max-width: 20rem;
+}
+
+@media (min-width: 576px) {
+  .premium-plan-description {
+    width: 100%;
+  }
+}
+
+.premium-plan-price {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  color: #000;
+}
+
+.premium-plan-price span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1;
+}
+
+.premium-plan-price-currency {
+  font-size: 1.5rem;
+  margin-top: 0.6rem;
+}
+
+.premium-plan-price-large {
+  font-size: 3.5rem;
+}
+
+.premium-plan-price-small,
+.premium-plan-price-frequency {
+  font-size: 1.125rem;
+  margin-top: 0.6rem;
+}
+
+.premium-plan .premium-button {
+  margin-top: 1.625rem;
+  margin-bottom: 2.5rem;
+  color: #0797E1;
+  background-color: #fff;
+  border: 1px solid #C6C6C6;
+}
+
+@media (min-width: 992px) {
+  .premium-plan .premium-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.premium-plan hr {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  border: 0;
+  height: 1px;
+  background-color: #E6E6E6;
+}
+
+/* Plan includes
+ ******************************************************************************/
+
+.premium-plan-list-preface {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .premium-plan-list-preface {
+    display: block;
+  }
+}
+
+.premium-plan-list ul {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  max-width: 13rem;
+}
+
+@media (min-width: 992px) {
+  .premium-plan-list ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.premium-plan-list li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  list-style-image: url('/img/premium-list-check.svg');
+}
+
+[dir="ltr"] .premium-plan-list li {
+  padding-left: 0.8rem;
+}
+
+[dir="rtl"] .premium-plan-list li {
+  padding-right: 0.8rem;
+}
+
+.premium-plan-list .premium-plan-list-muted {
+  color: #999;
+  list-style-image: url('/img/premium-list-cross.svg');
+}
+
+/*******************************************************************************
+ * Premium feature cards
+ ******************************************************************************/
+
+.premium-features {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 55.125rem;
+}
+
+@media (min-width: 992px) {
+  .premium-features {
+    margin-top: 6rem;
+  }
+}
+
+.premium-feature-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.premium-features h2 {
+  display: none;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 992px) {
+  .premium-features h2 {
+    display: block;
+  }
+}
+
+.premium-feature {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 2rem 2rem 2.5rem 2rem;
+  background-color: #fff;
+}
+
+.premium-feature h3 {
+  font-size: 1.875rem;
+  margin: 0;
+}
+
+.premium-features .premium-button {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+/*******************************************************************************
+ * FAQs
+ ******************************************************************************/
+
+.premium-faqs {
+  display: block;
+  margin: 4rem auto;
+  max-width: 55.125rem;
+}
+
+@media (min-width: 992px) {
+  .premium-faqs {
+    margin: 7rem auto;
+  }
+}
+
+.premium-faqs h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .premium-faqs h2 {
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+  }
+}
+
+.premium-faq h3 {
+  position: relative;
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.premium-faq-question {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #CDCDCD;
+  text-decoration: none;
+  line-height: 1.5;
+  color: #585858;
+  cursor: pointer;
+}
+
+[dir="ltr"] .premium-faq-question {
+  padding-right: 3rem;
+}
+
+[dir="rtl"] .premium-faq-question {
+  padding-left: 3rem;
+}
+
+.premium-faq-question:after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  background: url(/img/arrow.svg) center center no-repeat;
+}
+
+.active .premium-faq-question:after {
+  transform: rotate(180deg);
+}
+
+.premium-faq p {
+  display: none;
+}
+
+.premium-faq.active p {
+  display: block;
+}

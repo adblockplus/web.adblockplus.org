@@ -1,0 +1,89 @@
+html { font-weight: 400; }
+
+body { padding: 0 !important; }
+
+.flow-container {
+    border: 2px dashed gray;
+    margin-bottom: 1rem;
+}
+
+.flow-heading {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.mainPageContent {
+    width: 90%;
+    margin: auto;
+    margin-top: 36px;
+    font: 16px "Lato", sans-serif;
+    line-height: 20px;
+    font-weight: 400;
+    color: #333;
+    max-width: 1064px;
+    /* min-height: 40vw; */
+    margin-top: 96px;
+    /* Added styles */
+    margin-bottom: 96px;
+}
+
+.premium-accounts-page {
+    background-color: #F7F7F7;
+}
+
+.premium-accounts-page p {
+    color: #585858 !important;
+}
+
+.premium-accounts-page a {
+    color: #0797E1 !important;
+}
+
+.premium-accounts-page .lds-ring div {
+    border-color: #0797E1 transparent transparent transparent
+}
+
+.premium-accounts-page .submit-btn,
+.premium-accounts-page .cta-button.gold-button,
+.premium-accounts-page #donate_now {
+    background-color: #0797E1;
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+}
+
+.premium-accounts-page #donate_now .donate-button-text {
+    color: #fff;
+}
+
+.premium-account-card {
+    background-color: #fff;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px !important;
+    padding: 2rem;
+}
+
+.premium-header-image {
+    display: block;
+    margin: 2.5rem auto;
+}
+
+/* TODO: Change in adblock CSS instead of override */
+#confirmation-code-error { 
+    font-weight: 700;
+}
+
+/* TODO: Change in adblock CSS instead of override */
+#subscription-canceled {
+    font-size: 100% !important;
+}
+
+/* TODO: Change in adblock CSS instead of override */
+.SubscriptionDetails {
+    font-size: 100% !important;
+}
