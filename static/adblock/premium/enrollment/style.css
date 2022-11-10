@@ -198,7 +198,6 @@ h1 {
     margin: 0 auto;
 }
 
-#already-premium-user,
 #already-donated,
 #havent-donated {
     appearance: none;
@@ -213,13 +212,11 @@ h1 {
     max-width: 350px;
 }
 
-#already-premium-user:hover,
 #already-donated:hover,
 #havent-donated:hover {
     box-shadow: none;
 }
 
-#already-premium-user,
 #havent-donated {
     color: #0047FF;
 }
