@@ -80,12 +80,6 @@ $(document).ready(function () {
         $("#pay").hide();
         $("#already-donated-activity").show();
     });
-    $("#already-premium-user").on("click", function () {
-        // "I'm already a Premium user..."
-        resetAlreadyDonatedActivity();
-        $("#pay").hide();
-        $("#already-donated-activity").show();
-    });
 
     let monthlyPrice = 1;
     let yearlyPrice = 10;
