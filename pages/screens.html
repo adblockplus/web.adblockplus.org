@@ -1,0 +1,164 @@
+title=Screens
+template=raw
+robots=none
+
+<head>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 14px;
+      font-family: sans-serif;
+    }
+    body {
+      margin: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    input, fieldset {
+      border-radius: 0;
+      border-width: 1px;
+      border-color: lightgray;
+    }
+    input[type=text] {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex: 1;
+    }
+    .radioset {
+      flex-direction: row;
+    }
+    .addressbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 50px;
+      width: 100%;
+      z-index: 2;
+      background-color: #fff;
+    }
+    .radioset label {
+      margin-right: 0.5rem;
+    }
+    .screens {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: auto;
+      padding-top: 50px;
+      z-index: 1;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    .screen {
+      margin: 1rem 0.5rem;
+      border: 1px solid lightgrey;
+    }
+  </style>
+</head>
+
+<form id="addressbar" class="addressbar">
+  <div class="row">
+    <input id="address" class="column" type="text" value="/en/index">
+    <fieldset id="preset" class="radioset column">
+      <legend>Presets</legend>
+      <label>
+        <input type="radio" name="preset" value="responsive" checked> Responsive
+      </label>
+      <label>
+        <input type="radio" name="preset" value="modern"> Modern
+      </label>
+      <label>
+        <input type="radio" name="preset" value="retro"> Retro
+      </label>
+      <label>
+        <input type="radio" name="preset" value="mobile"> Mobile
+      </label>
+      <label>
+        <input type="radio" name="preset" value="desktop"> Desktop
+      </label>
+      <label>
+        <input type="radio" name="preset" value="common"> Most common
+      </label>
+    </fieldset>
+  </div>
+</form>
+<div class="screens">
+  <iframe class="screen" width="576px"></iframe>
+  <iframe class="screen" width="768px"></iframe>
+  <iframe class="screen" style="flex: 1;"></iframe>
+</div>
+
+<script>
+
+  const presets = {
+    responsive: [[576, 0], [768, 0], [0, 0]],
+    modern: [[390, 844], [820, 1180], [1180, 820],],
+    retro: [[320, 480], [768, 1024], [1024, 768],],
+    mobile: [[360, 640], [360, 800], [414, 896],],
+    desktop: [[1366, 768],[1536, 864],[1920, 1080],],
+    common: [[920, 573],[1366, 712],[1920, 979]],
+  };
+
+  function setScreenSizes(preset) {
+    const width = 0;
+    const height = 1;
+    document.querySelectorAll('.screen').forEach((screen, number) => {
+      const presetHeight = preset[number][height];
+      const presetWidth = preset[number][width];
+      if (presetHeight) {
+        screen.height = (presetHeight + 2) + 'px';
+      } else {
+        screen.removeAttribute('height');
+      }
+      if (presetWidth) {
+        screen.width = (presetWidth + 2) + 'px';
+        screen.style.flex = null;
+      } else {
+        screen.removeAttribute('width');
+        screen.style.flex = 1;
+      }
+    });
+  }
+
+  // Enable changing preset
+  document.getElementById('preset').addEventListener('change', () => {
+    const preset = document.querySelector('#preset :checked').value;
+    setScreenSizes(presets[preset]);
+  });
+
+  // Enable submitting address
+  document.getElementById('addressbar').addEventListener('submit', event => {
+    event.preventDefault();
+    const address = document.getElementById('address').value;
+    document.querySelectorAll('.screen').forEach(screen => {
+      const src = screen.src;
+      if (src != address)
+        screen.src = address;
+      else
+        screen.contentWindow.location.reload();
+    });
+  });
+
+</script>
