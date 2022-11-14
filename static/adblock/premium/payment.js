@@ -81,8 +81,8 @@ $(document).ready(function () {
         $("#already-donated-activity").show();
     });
 
-    let monthlyPrice = 1;
-    let yearlyPrice = 10;
+    let monthlyPrice = 1.99;
+    let yearlyPrice = 19.99;
 
     // see if we're still doing the EUR GBP etectera
     // see if we should show the default based on geo
@@ -208,8 +208,8 @@ $(document).ready(function () {
             $(this).text(currency);
         });
 
-        const yearlyAmount = _currency.oneTimeAmountsForCurrency(currencyCode)[1];
-        const monthlyAmount = Math.round(yearlyAmount * 100 / 10 / 100);
+        const yearlyAmount = 19.99;
+        const monthlyAmount = 1.99;
 
         // Override default input values
         $(selectors.monthlyAmountInput).val(monthlyAmount);
