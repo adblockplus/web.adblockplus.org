@@ -48,6 +48,15 @@ html {
   text-decoration: none;
 }
 
+.premium-page a:hover,
+.premium-page a:active,
+.premium-page a:focus,
+.premium-page button:hover,
+.premium-page button:active,
+.premium-page button:focus {
+  cursor: pointer;
+}
+
 /*******************************************************************************
  * Grid system
  *******************************************************************************
