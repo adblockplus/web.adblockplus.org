@@ -62,7 +62,7 @@ unadblock=1
                 {{ s6 Block additional distractions, including floating videos, newsletter pop-ups, and more }}
               </p>
             </div>
-            <a class="premium-button">
+            <a class="premium-button" href="#payments">
               {{ s7 Get Premium }}
             </a>
             <hr>
@@ -111,7 +111,7 @@ unadblock=1
                 {{ s16 Block additional distractions, including floating videos, newsletter pop-ups, and more }}
               </p>
             </div>
-            <a class="premium-button">
+            <a class="premium-button" href="#payments">
               {{ s7 Get Premium }}
             </a>
             <hr>
@@ -208,7 +208,7 @@ unadblock=1
             <p class="premium-feature-description">
               {{ s22 Take control of your browser and browse the way you want to! Say goodbye to newsletter pop-ups, floating videos, and other annoying distractions with Distraction Control. }}
             </p>
-            <a class="premium-button">
+            <a class="premium-button" href="#payments">
               {{ s7 Get Premium }}
             </a>
           </section>
@@ -222,7 +222,7 @@ unadblock=1
             <p class="premium-feature-description">
               {{ s24 We are a small team and your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep ABP going for years to come and get access to more features as we release them. }}
             </p>
-            <a class="premium-button">
+            <a class="premium-button" href="#payments">
               {{ s7 Get Premium }}
             </a>
           </section>
@@ -319,16 +319,10 @@ unadblock=1
           </div><!-- #choose-plans -->
 
           <div id="pmt-success-left" class="step" style="width: 44%; display: none">
+            <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px">
             <button class="get-started-with-myadblock" i18n="get_started_premium">
               {{ get_started_premium Get started with Adblock Plus Premium }}
             </button>
-            <div id="money-back-guaranteed">
-              <img src="/adblock/premium/images/badge.svg?v=1626791040" alt="" />
-              <span i18n="sixty_day_money_back_guarantee">
-                {{ sixty_day_money_back_guarantee 60-Day money-back guarantee }}
-              </span>
-            </div>
-            <hr />
           </div><!-- #pmt-success-left -->
 
           <div id="choose-payment-type" class="column">
@@ -461,13 +455,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -669,9 +656,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -744,16 +729,10 @@ unadblock=1
           </div><!-- #choose-plans -->
 
           <div id="pmt-success-left" class="step" style="width: 44%;">
+            <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="padding: 68px 0">
             <button class="get-started-with-myadblock" i18n="get_started_premium">
               {{ get_started_premium Get started with Adblock Plus Premium }}
             </button>
-            <div id="money-back-guaranteed">
-              <img src="/adblock/premium/images/badge.svg?v=1626791040" alt="" />
-              <span i18n="sixty_day_money_back_guarantee">
-                {{ sixty_day_money_back_guarantee 60-Day money-back guarantee }}
-              </span>
-            </div>
-            <hr />
           </div><!-- #pmt-success-left -->
 
           <div id="choose-payment-type" class="column">
@@ -849,7 +828,7 @@ unadblock=1
 
             </div><!-- #payment-box -->
 
-            <div id="other-options">
+            <div id="other-options" style="display:none">
               <button id="already-donated" class="btn-link" i18n="donated_before_question">
                 {{ donated_before_question Donated to Adblock Plus before? }}
               </button>
@@ -886,13 +865,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -1094,269 +1066,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
-                  <div class="right">
-                    <div class="row flex-start">
-                      <span i18n="click_below_to_customize">
-                        {{ click_below_to_customize Click below to customize your online experience. }}
-                      </span>
-                      <span i18n="premium_features_get_started" class="nomargin">
-                        {{ premium_features_get_started Choose a theme, block additional distractions, and more. }}
-                      </span>
-                    </div>
-                    <div class="row">
-                      <button class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta" style="margin-bottom: 0px">
-                        {{ get_started_cta Get Started }}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- already-donated-card-4-goodtogo -->
-  
-            </div><!-- #already-donated-activity-box -->
-          </div><!-- .column -->
-        </div><!-- #already-donated-activity -->  
-      </div><!-- .flow-already -->
-
-      <div class="flow flow-already">
-        <div class="row" id="already-donated-activity">
-          <div class="column">
-            <div id="already-donated-activity-box" class="step">
-  
-              <div id="already-donated-card-1" class="box-step">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="enter_email_get_started">
-                    {{ enter_email_get_started Welcome! Enter your email address to get started }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row" i18n="find_previous_payment">
-                  {{ find_previous_payment We’ll use your email to find your previous payment information }}
-                </div>
-                <div class="row flex-start">
-                  <form action="#" id="prev_donation">
-                    <input class="wide-input" placeholder="{{ enter_email Enter your email address }}" id="prev_donation_email" type="email" required spellcheck="false" autofocus="true" i18n_placeholder="enter_email" />
-                    <button type="submit" style="display: none"></button>
-                  </form>
-                  <button class="submit-cta" id="submit_email" i18n="submit">
-                    {{ submit Submit }}
-                  </button>
-                </div>
-                <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
-                  <div class="progress-box">
-                    <div class="progress-circle complete" id="progress-1"></div>
-                    <div class="progress-circle" id="progress-2"></div>
-                    <div class="progress-circle" id="progress-3"></div>
-                  </div>
-                </div>
-              </div><!-- #already-donated-card-1 -->
-  
-              <div id="already-donated-card-2-code" class="box-step" style="display: none">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="check_email">
-                    {{ check_email Please check the email we sent you }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row" i18n="enter_code">
-                  {{ enter_code Enter the 6-character code to confirm your email address. }}
-                </div>
-                <div class="row flex-start">
-                  <form id="confirmation-code">
-                    <input id="code" type="text" maxlength="6" minlength="6" placeholder="- - - - - -" spellcheck="false" autocomplete="false" autofocus="true" />
-                    <button type="submit" style="display: none"></button>
-                  </form>
-                  <button class="submit-cta" id="submit_code" i18n="submit">
-                    {{ submit Submit }}
-                  </button>
-                </div>
-                <div class="row flex-start">
-                  <span i18n="no_email">
-                    {{ no_email No email? }}
-                  </span>
-                  <span i18n="check_spam_or_contact" i18n_replacement_el="check_spam_or_contact_link">
-                    {{ check_spam_or_contact Please check your spam or <a href="https://support.getadblock.com/new/" class="mainContentLink">contact us</a>. }}
-                  </span>
-                  <a href="https://support.getadblock.com/new/" class="mainContentLink" id="check_spam_or_contact_link" target="_blank"></a>
-                </div>
-                <div class="progress-box">
-                  <div class="progress-circle complete" id="progress-1"></div>
-                  <div class="progress-circle complete" id="progress-2"></div>
-                  <div class="progress-circle" id="progress-3"></div>
-                </div>
-              </div><!-- #already-donated-card-2-code -->
-  
-              <div id="already-donated-activity-waiting" class="box-step" style="display: none">
-                <div class="box-step align-items-center">
-                  <div class="lds-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                </div>
-              </div><!-- #already-donated-activity-waiting -->
-  
-              <div id="already-donated-card-3-oops" class="box-step" style="display: none">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="oops">
-                    {{ oops Oops }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row flex-start">
-                  <span i18n="code_incorrect">
-                    {{ code_incorrect That code is incorrect. }}
-                  </span>
-                  <span i18n="reach_out_help_setup">
-                    {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
-                  </span>
-                </div>
-                <div class="progress-box">
-                  <div class="progress-circle" id="progress-1"></div>
-                  <div class="progress-circle" id="progress-2"></div>
-                  <div class="progress-circle" id="progress-3"></div>
-                </div>
-              </div><!-- #already-donated-card-3-oops -->
-  
-              <div id="card2-error-1" class="box-step" style="display: none">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="oops">
-                    {{ oops Oops }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row flex-start">
-                  <span i18n="no_donations_for_email">
-                    {{ no_donations_for_email We don't seem to have any donations recorded for that email. }}
-                  </span>
-                </div>
-                <div class="progress-box">
-                  <div class="progress-circle" id="progress-1"></div>
-                  <div class="progress-circle" id="progress-2"></div>
-                  <div class="progress-circle" id="progress-3"></div>
-                </div>
-              </div><!-- #card2-error-1 -->
-  
-              <div id="card2-error-2" class="box-step" style="display: none">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="oops">
-                    {{ oops Oops }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row flex-start">
-                  <span i18n="code_incorrect">
-                    {{ code_incorrect That code is incorrect. }}
-                  </span>
-                  <span i18n="reach_out_help_setup">
-                    {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
-                  </span>
-                </div>
-                <div class="progress-box">
-                  <div class="progress-circle" id="progress-1"></div>
-                  <div class="progress-circle" id="progress-2"></div>
-                  <div class="progress-circle" id="progress-3"></div>
-                </div>
-              </div><!-- #card2-error-1 -->
-  
-              <div id="card2-error-3" class="box-step" style="display: none">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="oops">
-                    {{ oops Oops }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row flex-start">
-                  <span i18n="cant_find_user_id">
-                    {{ cant_find_user_id We can't seem to find your user id. }}
-                  </span>
-                  <span i18n="reach_out_help_setup">
-                    {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
-                  </span>
-                </div>
-                <div class="progress-box">
-                  <div class="progress-circle" id="progress-1"></div>
-                  <div class="progress-circle" id="progress-2"></div>
-                  <div class="progress-circle" id="progress-3"></div>
-                </div>
-              </div><!-- #card2-error-3 -->
-  
-              <div id="card2-error-4" class="box-step" style="display: none">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="oops">
-                    {{ oops Oops }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row flex-start">
-                  <span i18n="problem_activating">
-                    {{ problem_activating There was a problem activating your extension. }}
-                  </span>
-                  <span i18n="reach_out_help_setup">
-                    {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
-                  </span>
-                </div>
-                <div class="progress-box">
-                  <div class="progress-circle" id="progress-1"></div>
-                  <div class="progress-circle" id="progress-2"></div>
-                  <div class="progress-circle" id="progress-3"></div>
-                </div>
-              </div><!-- #card2-error-4 -->
-  
-              <div id="card2-error-5" class="box-step" style="display: none">
-                <div class="row justify-content-space-between">
-                  <h3 i18n="oops">
-                    {{ oops Oops }}
-                  </h3>
-                  <i class="material-icons back-to-payments">close</i>
-                </div>
-                <hr />
-                <div class="row flex-start">
-                  <span i18n="problem_our_end">
-                    {{ problem_our_end There was a problem on our end. }}
-                  </span>
-                  <span i18n="recorded_investigating">
-                    {{ recorded_investigating It has been recorded and we're investigating. }}
-                  </span>
-                  <span i18n="reach_out_help_setup">
-                    {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
-                  </span>
-                </div>
-                <div class="progress-box">
-                  <div class="progress-circle" id="progress-1"></div>
-                  <div class="progress-circle" id="progress-2"></div>
-                  <div class="progress-circle" id="progress-3"></div>
-                </div>
-              </div><!-- #card2-error-5 -->
-  
-              <div id="already-donated-card-4-goodtogo" class="box-step" style="display: none">
-                <div class="row">
-                  <h3 i18n="ready_premium">
-                    {{ ready_premium You’re ready to start using Adblock Plus Premium! }}
-                  </h3>
-                </div>
-                <hr />
-                <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -1406,13 +1116,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -1614,9 +1317,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -1666,13 +1367,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -1874,9 +1568,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -1926,13 +1618,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -2134,9 +1819,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -2186,13 +1869,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -2394,9 +2070,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -2446,13 +2120,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -2654,9 +2321,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -2706,13 +2371,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -2914,9 +2572,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -2966,13 +2622,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -3174,9 +2823,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">
@@ -3226,13 +2873,6 @@ unadblock=1
                   </button>
                 </div>
                 <div class="row flex-start">
-                  <div class="checkbox-icon">
-                    <input id="newsletter-synthetic-checkbox" class="newsletter-synthetic-checkbox" type="checkbox" />
-                    <i class="material-icons-outlined unchecked">circle</i>
-                    <i class="material-icons checked">check_circle</i>
-                  </div>
-                  <label for="newsletter-synthetic-checkbox" class="occasional-updates" i18n="receive_updates">
-                    {{ receive_updates Yes! I'd like to receive occasional updates from Adblock Plus.</label> }}
                   <div class="progress-box">
                     <div class="progress-circle complete" id="progress-1"></div>
                     <div class="progress-circle" id="progress-2"></div>
@@ -3434,9 +3074,7 @@ unadblock=1
                 </div>
                 <hr />
                 <div class="row">
-                  <div class="left">
-                    <img src="/adblock/premium/images/box-hooray.svg" alt="" />
-                  </div>
+                  <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="margin: 48px auto">
                   <div class="right">
                     <div class="row flex-start">
                       <span i18n="click_below_to_customize">

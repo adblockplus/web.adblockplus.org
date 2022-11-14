@@ -6,10 +6,6 @@ body {
   color: #333333;
 }
 
-* {
-    font-family: "Lato";
-}
-
 button:hover {
     cursor: pointer;
     -moz-box-shadow: 0px 5px 15px rgba(10, 14, 71, 0.2);
@@ -93,7 +89,6 @@ h1 {
 
 /* SECTION 2: LIST AND DESCRIPTION OF FEATURES */
 #premium-includes {
-    font-family: Lato;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
@@ -113,7 +108,6 @@ h1 {
 #features .feature {
     display: flex;
     margin-bottom: 40px;
-    font-family: Lato;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -769,7 +763,6 @@ div#confirmation-code-error {
 
 #card2-page-4 > h2,
 #card2-page-5 > h2 {
-    font-family: Lato;
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
@@ -782,7 +775,6 @@ div#confirmation-code-error {
 #card2-page-4 > p[i18n],
 #card2-page-4  p span[i18n],
 #card2-page-5 > p[i18n] {
-    font-family: Lato;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -796,7 +788,6 @@ div#confirmation-code-error {
     border-radius: 6px;
     min-height: 40px;
     min-width: 408px;
-    font-family: Lato;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
