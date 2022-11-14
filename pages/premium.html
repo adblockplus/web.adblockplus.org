@@ -265,11 +265,16 @@ unadblock=1
       </section>
     </section>
   </div>
+
   <section id="payments">
     <div id="payments-content">
+
       <img src="/img/adblock-plus-premium-logo.svg" style="max-width: 360px; width: 80vw" height="auto" alt="" />
+
       <div class="row" id="pay">
+
         <div id="choose-plans" class="step">
+
           <div id="choose-plans-header" class="row">
             <h3 i18n="step_one_choose_plan">
               {{ step_one_choose_plan Step 1: Choose Your Plan }}
@@ -280,8 +285,10 @@ unadblock=1
               </label>
               <select id="currency_dropdown" style="display:none;"></select>
             </div>
-          </div>
+          </div><!-- #choose-plans-header -->
+
           <hr />
+
           <div id="amount_select_row">
             <button id="r_yearly" class="option option-tall selected" data-amount="19.99" data-recurring-frequency="yearly" style="position: relative">
               <div class="yearly-savings-callout" i18n="save_percent_amount" i18n_replacement_text="17">
@@ -300,17 +307,17 @@ unadblock=1
                 {{ s35 $1.99/mo }}
               </span>
             </button>
-          </div>
+          </div><!-- #amount_select_row -->
+
           <div id="money-back-guaranteed">
             <img src="/adblock/premium/images/badge.svg?v=1626791040" alt="" />
             <span i18n="sixty_day_money_back_guarantee">
               {{ sixty_day_money_back_guarantee 60-Day money-back guarantee }}
             </span>
-          </div>
-        </div>
-        <!-- END choose plans -->
+          </div><!-- #money-back-gauranteed -->
 
-        <!-- BEGIN SUCCESS -->
+        </div><!-- #choose-plans -->
+
         <div id="pmt-success-left" class="step" style="width: 44%; display: none">
           <button class="get-started-with-myadblock" i18n="get_started_premium">
             {{ get_started_premium Get started with Adblock Plus Premium }}
@@ -322,11 +329,12 @@ unadblock=1
             </span>
           </div>
           <hr />
-        </div>
-        <!-- END SUCCESS -->
+        </div><!-- #pmt-success-left -->
 
         <div id="choose-payment-type" class="column">
+
           <div id="payment-box" class="step">
+
             <div id="card-1" class="box-step">
               <h3 i18n="step_two_choose_payment_type">
                 {{ step_two_choose_payment_type Step 2: Choose Payment Type }}
@@ -357,7 +365,7 @@ unadblock=1
                   </span>
                 </div>
               </div>
-            </div>
+            </div><!-- #card-1 -->
 
             <div id="card-2" class="box-step align-items-center" style="display: none">
               <div class="lds-ring">
@@ -366,7 +374,7 @@ unadblock=1
                 <div></div>
                 <div></div>
               </div>
-            </div>
+            </div><!-- #card-2 -->
 
             <div id="card-3" class="box-step" style="display: none">
               <div class="box-step-content">
@@ -401,7 +409,7 @@ unadblock=1
                   <a href="mailto:support@adblockplus.org" target="_new" id="helpdesk_q_email" class="mainContentLink helpdesk-email">support@adblockplus.org</a>
                 </div>
               </div>
-            </div>
+            </div><!-- #card-3 -->
 
             <div id="card-4" class="box-step" style="display: none">
               <h2 i18n="oops_period">
@@ -412,21 +420,24 @@ unadblock=1
                   {{ something_went_wrong Something went wrong. }}
                 </span>
               </p>
-            </div>
-          </div>
+            </div><!-- #card-4 -->
+
+          </div><!-- #payment-box -->
+
           <div id="other-options">
             <button id="already-donated" class="btn-link" i18n="donated_before_question">
               {{ donated_before_question Donated to Adblock Plus before? }}
             </button>
-          </div>
-        </div>
-      </div>
-      <!-- END pay row -->
+          </div><!-- #other-options -->
 
-      <!-- START already donated activity -->
+        </div><!-- #choose-payment-type-->
+
+      </div><!-- #pay -->
+
       <div class="row" id="already-donated-activity" style="display: none">
         <div class="column">
           <div id="already-donated-activity-box" class="step">
+
             <div id="already-donated-card-1" class="box-step">
               <div class="row justify-content-space-between">
                 <h3 i18n="enter_email_get_started">
@@ -461,7 +472,7 @@ unadblock=1
                   <div class="progress-circle" id="progress-3"></div>
                 </div>
               </div>
-            </div>
+            </div><!-- #already-donated-card-1 -->
 
             <div id="already-donated-card-2-code" class="box-step" style="display: none">
               <div class="row justify-content-space-between">
@@ -497,7 +508,7 @@ unadblock=1
                 <div class="progress-circle complete" id="progress-2"></div>
                 <div class="progress-circle" id="progress-3"></div>
               </div>
-            </div>
+            </div><!-- #already-donated-card-2-code -->
 
             <div id="already-donated-activity-waiting" class="box-step" style="display: none">
               <div class="box-step align-items-center">
@@ -508,7 +519,7 @@ unadblock=1
                   <div></div>
                 </div>
               </div>
-            </div>
+            </div><!-- #already-donated-activity-waiting -->
 
             <div id="already-donated-card-3-oops" class="box-step" style="display: none">
               <div class="row justify-content-space-between">
@@ -531,7 +542,7 @@ unadblock=1
                 <div class="progress-circle" id="progress-2"></div>
                 <div class="progress-circle" id="progress-3"></div>
               </div>
-            </div>
+            </div><!-- #already-donated-card-3-oops -->
 
             <div id="card2-error-1" class="box-step" style="display: none">
               <div class="row justify-content-space-between">
@@ -551,7 +562,7 @@ unadblock=1
                 <div class="progress-circle" id="progress-2"></div>
                 <div class="progress-circle" id="progress-3"></div>
               </div>
-            </div>
+            </div><!-- #card2-error-1 -->
 
             <div id="card2-error-2" class="box-step" style="display: none">
               <div class="row justify-content-space-between">
@@ -574,7 +585,7 @@ unadblock=1
                 <div class="progress-circle" id="progress-2"></div>
                 <div class="progress-circle" id="progress-3"></div>
               </div>
-            </div>
+            </div><!-- #card2-error-1 -->
 
             <div id="card2-error-3" class="box-step" style="display: none">
               <div class="row justify-content-space-between">
@@ -597,7 +608,7 @@ unadblock=1
                 <div class="progress-circle" id="progress-2"></div>
                 <div class="progress-circle" id="progress-3"></div>
               </div>
-            </div>
+            </div><!-- #card2-error-3 -->
 
             <div id="card2-error-4" class="box-step" style="display: none">
               <div class="row justify-content-space-between">
@@ -620,7 +631,7 @@ unadblock=1
                 <div class="progress-circle" id="progress-2"></div>
                 <div class="progress-circle" id="progress-3"></div>
               </div>
-            </div>
+            </div><!-- #card2-error-4 -->
 
             <div id="card2-error-5" class="box-step" style="display: none">
               <div class="row justify-content-space-between">
@@ -646,7 +657,7 @@ unadblock=1
                 <div class="progress-circle" id="progress-2"></div>
                 <div class="progress-circle" id="progress-3"></div>
               </div>
-            </div>
+            </div><!-- #card2-error-5 -->
 
             <div id="already-donated-card-4-goodtogo" class="box-step" style="display: none">
               <div class="row">
@@ -675,12 +686,15 @@ unadblock=1
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            </div><!-- already-donated-card-4-goodtogo -->
+
+          </div><!-- #already-donated-activity-box -->
+        </div><!-- .column -->
+      </div><!-- #already-donated-activity -->
+
+    </div><!-- #payments-content -->
+  </section><!-- #payments -->
+
 </main>
 
 <script src="/js/pages/premium.js"></script>
