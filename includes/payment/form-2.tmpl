@@ -1,0 +1,199 @@
+<script>
+  path("i18n.payment.form", {
+    item: "{{ get_string("purchase-item-name", "payment-form") }}",
+    min_once: '{{ get_string("min-donation-warning", "payment-form") }}',
+    min_monthly: '{{ get_string("min-subscription-warning", "payment-form") }}',
+    min_yearly: '{{ get_string("min-subscription-yearly-warning", "payment-form") }}'
+  });
+</script>
+
+<div class="payment-form-skeleton" role="presentation" aria-hidden="true">
+  <div style="padding-top: .5rem;">
+    <div class="skeleton" style="height: 2rem;width: 20rem;"></div>
+  </div>
+  <div class="grid small-full large-fit" style="padding-top: 1rem; width: 45.5rem; max-width: 100%;">
+    <div class="cell" style="padding-top: .5rem;">
+      <div class="skeleton" style="height: 5.5rem; width:100%;"></div>
+    </div>
+    <div class="cell" style="padding-top: .5rem;">
+      <div class="skeleton" style="height: 5.5rem; width: 100%;"></div>
+    </div>
+    <div class="cell" style="padding-top: .5rem;">
+      <div class="skeleton" style="height: 5.5rem; width: 100%;"></div>
+    </div>
+  </div>
+  <div style="padding-top: .5rem;">
+    <div class="skeleton" style="height: 2rem;width: 24rem;"></div>
+  </div>
+  <div style="padding-top: .5rem;">
+    <div class="skeleton" style="height: 2rem; width: 14.5rem;"></div>
+  </div>
+</div>
+
+<form id="payment-form" class="payment-form">
+
+  <input type="hidden" id="payment-frequency" name="frequency" value="once" />
+
+  <header id="payment-header" class="payment-header"></header>
+
+  <script id="payment-header-template" type="text/html">    
+    <% if (currencies.length > 1) { %>
+      <h2 class="payment-heading multi-currency">
+        {{ get_string("fair-amount-header-2", "payment-form") }}
+      </h2>
+      <select id="payment-currency" name="currency" class="payment-currency">
+      <% _.each(currencies, function(currency) { %>
+        <option><%- currency %></option>
+      <% }) %>
+      </select>
+    <% } else { %>
+      <h2 class="payment-heading single-currency">
+        <%- "{{ get_string("fair-amount-header-1", "payment-form") }}".replace("{currency}", currencies[0]) %>
+      </h2>
+    <% } %>
+  </script>
+
+  <div id="payment-frequencies" class="payment-frequencies"></div>
+
+  <script id="payment-frequencies-template" type="text/html">
+    <% if (config.once) { %>
+      <fieldset class="payment-frequency once">
+        <legend>
+          {{ get_string("one-time-legened-1", "payment-form") }}
+        </legend>
+        <div class="payment-amounts">
+          <%= _amounts(_.extend({frequency: "once", sign: config.sign}, config.once)) %>
+        </div>
+      </fieldset>
+    <% } %>
+    <% if (config.monthly) { %>
+      <hr class="payment-divide">
+      <fieldset class="payment-frequency monthly">
+        <legend>
+          {{ get_string("subscription-legend-1", "payment-form") }}
+        </legend>
+        <div class="payment-amounts">
+          <%= _amounts(_.extend({frequency: "monthly", sign: config.sign}, config.monthly)) %>
+        </div>
+      </fieldset>
+    <% } %>
+    <% if (config.yearly) { %>
+      <hr class="payment-divide">
+      <fieldset class="payment-frequency yearly">
+        <legend>
+          {{ get_string("yearly-subscription-legend-1", "payment-form") }}
+        </legend>
+        <div class="payment-amounts">
+          <%= _amounts(_.extend({frequency: "yearly", sign: config.sign}, config.yearly)) %>
+        </div>
+      </fieldset>
+    <% } %>
+  </script>
+
+  <script id="payment-amounts-template" type="text/html">
+    <div class="payment-amounts-row">
+    <% _.each(amounts, function(amount, index) { %>
+      <label class="payment-amount">
+        <input
+          type="radio"
+          name="amount"
+          value="<%- amount %>"
+          data-frequency="<%- frequency %>"
+        <% if (frequency == "once" && amount == 35) { %>
+          checked
+        <% } %>>
+        <%- sign %><%- amount %>
+      </label>
+      <% if (
+        (index + 1) % 3 == 0
+        && index != amounts.length
+      ) { %>
+      </div>
+      <div class="payment-amounts-row">
+      <% } %>
+    <% }) %>
+      <span class="payment-amount custom-payment-amount">
+        <input
+          id="custom-<%- frequency %>-radio"
+          data-input="custom-<%- frequency %>-amount"
+          data-frequency="<%- frequency %>"
+          value="custom-<%- frequency %>-amount"
+          type="radio"
+          name="amount">
+        <%- sign %>
+        <input
+          id="custom-<%- frequency %>-amount"
+          name="custom-<%- frequency %>-amount"
+          data-radio="custom-<%- frequency %>-radio"
+          data-frequency="<%- frequency %>"
+          type="text"
+          inputmode="numeric" 
+          min="<%- minimum %>"
+          autocomplete="off"
+          placeholder="<%- placeholder %>">
+      </span>
+    </div>
+  </script>
+  
+  <p id="payment-error" class="payment-error alert"></p>
+
+  <div id="what-is-included" class="info">
+    <span class="info-line"></span>
+    <p>
+      {{ get_string("what-is-included", "payment-form") }}
+    </p>
+  </div>
+
+  <div id="payment-buttons" class="payment-buttons">
+    <button id="stripe-button" class="stripe-button">
+      {{ get_string("stripe-label", "payment-form") }}
+    </button>
+    <button id="paypal-button" class="paypal-button">
+      {{ get_string("paypal-label", "payment-form") }}
+    </button>
+  </div>
+
+</form>
+
+<script>
+  path("i18n.payment.stripe.cardModal", {
+    once: "{{ get_string("pay-once", "payment-form") }}",
+    monthly: "{{ get_string("pay-monthly", "payment-form") }}",
+    yearly: "{{ get_string("pay-yearly", "payment-form") }}",
+    error_unexpected: "{{ get_string("stripe-sorry", "payment-form") }}",
+    error_card_brand: "{{ get_string("not-supported", "payment-form") }}",
+    error_declined: "{{ get_string("stripe-declined", "payment-form") }}"
+  });
+</script>
+
+<div id="stripe-card-modal" class="stripe-card-modal">
+  <div class="stripe-card-modal-overlay">
+    <form id="stripe-card-form" class="stripe-card-form">
+      <header class="stripe-card-header">
+        <h2 class="stripe-card-heading">Adblock Plus</h2>
+        <p class="stripe-card-subheading">{{ get_string("securely-processed", "payment-form") }}</p>
+        <button id="stripe-card-modal-close" class="stripe-card-modal-close">
+          <img src="/img/close.png" height="17" width="17" alt="" />
+        </button>
+      </header>
+      <div class="stripe-card-body">
+        <input 
+          type="email" 
+          id="stripe-card-email" 
+          name="email" 
+          class="stripe-card-field"
+          placeholder="{{ get_string("email-input", "payment-form") }}" />
+        <div id="stripe-card" class="stripe-card-field"></div>
+        <p id="stripe-card-error" class="stripe-card-error"></p>
+        <button id="stripe-card-submit" class="stripe-card-submit">
+          <span class="submitting-spinner" rale="status">
+            <span class="spinner-grow" aria-hidden="true"></span>
+            <span class="spinner-grow" aria-hidden="true"></span>
+            <span class="spinner-grow" aria-hidden="true"></span>
+          </span>
+          <span id="stripe-card-submit-label" class="submitting-label"></span>
+        </button>
+      </div>    
+    </form>  
+  </div>
+</div>

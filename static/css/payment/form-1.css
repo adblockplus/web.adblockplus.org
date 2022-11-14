@@ -198,3 +198,22 @@
   color: #000;
   background-color: rgb(255, 187, 3);
 }
+
+#what-is-included {
+  box-sizing: border-box;
+  min-height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #666666;
+  border-radius: 10px;
+  padding: 6px 10px;
+  column-gap: 28px;
+}
+
+.info-line {
+  width: 8px;
+  min-height: 63px;
+  background: #2284F7;
+  border-radius: 100px;
+}
