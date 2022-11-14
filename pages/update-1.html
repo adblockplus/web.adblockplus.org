@@ -1,0 +1,80 @@
+title=Adblock Plus has been updated
+prevent_cookie_prompt=1
+robots=none
+template=bare
+
+<head>
+  <link rel="stylesheet" href="build/css/update-1.min.css">
+  <script>
+    path("payment", {
+      pageId: 2,
+      campaignId: 5,
+      testId: 75,
+      variantId: 1
+    });
+  </script>
+</head>
+
+<div class="update container content">
+  <div class="update-header clearfix">
+    <img alt="" height="130" width="130" class="update-header-image" src="/img/adblock-plus-latest.svg">
+    <h1 class="update-header-heading">
+      {{ abp-can-be-improved Your Adblock Plus can be improved! }}
+    </h1>
+    <p class="update-header-lead">
+      {{ adding-new-features We’ve been adding new features and improving Adblock Plus’ performance. This year, we’ve developed Premium features that provide additional ways to ensure our users enjoy an internet experience with fewer pop-ups and distractions. We’ve highlighted that work below. }}
+    </p>
+  </div>
+  <p>
+    {{ abp-free-software Adblock Plus is free, community-supported software. It's important to us that anyone can use our software, regardless of whether they can contribute or not. But that wouldn't be possible without your continued support. }}
+  </p>
+  <p>
+    {{ abp-worked-hard We know that most users will never pay us, and it’s important to us that it remains that way. We want everyone to be able to use Adblock Plus, regardless of whether they can contribute or not. For those users who can contribute, we want to provide a compelling reason to do so. This year we’ve invested hundreds of hours in improving Adblock Plus’ performance. And we’ve also created Adblock Plus Premium, which creates an improved ad blocking experience by blocking more pop-ups and distractions. }}
+  </p>
+  <p>
+    {{ abp-premium-with-subs You’ll automatically receive a subscription to Adblock Plus Premium for one year when you contribute at least $20. We’d love for you to check it out. Every contribution helps!
+    }}
+  </p>
+  <? include payment/form-1 ?>
+  <h2>
+    {{ whats-new-header-1 What’s new? }}
+  </h2>
+  <p>
+    {{ internet-evolves As the internet evolves, traditional pop-up ads aren’t the only distractions you face as you browse the web. There are “sticky” videos that float on your screen and follow you as you browse. And there are many different types of pop-up notifications asking you to sign up for newsletters, share your location, and more. With Adblock Plus Premium, you can enjoy an internet experience with far fewer annoying pop-ups and distractions. You’ll block more ads, pop-ups, and distractions for less than $2 a month. }}
+  </p>
+  <ul>
+    <li>
+      {{ hide-newsletter <strong>Hide newsletter pop-ups. </strong> Block annoying pop-ups inviting you to sign up for a website's newsletter.
+    }}
+    </li>
+    <li>
+      {{ stop-floating-videos <strong>Stop floating videos.</strong> Stop most floating videos from playing automatically and following you around your screen. }}
+    </li>
+    <li>
+      {{ ignore-survey-requests <strong>Ignore survey requests.</strong> Automatically dismiss invitations from websites to participate in surveys. }}
+    </li>
+    <li>
+      {{ block-site-notifications <strong>Block site notifications.</strong> Many websites ask to track your location when you land on their site. Now we’ll automatically decline 'allow notifications' requests from the websites you visit. }}
+    </li>
+    <li>
+      {{ hide-cookie-notices <strong>Hide cookie consent notices.</strong> Soon you’ll be able to put an end to those annoying cookie consent banners used on most websites thanks to a new cookie blocking feature we’re finishing up. }}
+    </li>
+  </ul>
+  <p id="whats-new-support">
+    {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
+  </p>
+  <script>
+    (function(){
+      var _wns = document.getElementById('whats-new-support');
+      _wns.innerHTML = _wns.innerHTML.replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+    })()
+  </script>
+</div>
+<footer class="privacy-footer">
+  <a href="https://adblockplus.org/privacy">
+    {{ privacy-policy Privacy Policy }}
+  </a>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/build/js/update-1.min.js"></script>
