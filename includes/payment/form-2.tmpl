@@ -99,7 +99,7 @@
           name="amount"
           value="<%- amount %>"
           data-frequency="<%- frequency %>"
-        <% if (frequency == "once" && amount == 35) { %>
+        <% if (frequency == "once" && index == amounts.length - 2) { %>
           checked
         <% } %>>
         <%- sign %><%- amount %>
