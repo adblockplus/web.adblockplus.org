@@ -1,6 +1,7 @@
 title=Adblock Plus Premium | The world's #1 ad blocker
 description=Adblock Plus Premium, the upgraded version of the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
 template=minimal
+bodyclass=premium-accounts-page
 robots=none
 unadblock=1
 
@@ -9,25 +10,20 @@ unadblock=1
     <link rel="stylesheet" href="/adblock/css/updateStyle.css" />
     <link rel="stylesheet" href="/adblock/premium/enrollment/style.css" />
     <link rel="stylesheet" href="/adblock/premium/manage-subscription/style.css" />
+    <link rel="stylesheet" href="/adblock/premium/manage-subscription/flows.css" />
     <link rel="stylesheet" href="/css/unadblock.css" />    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/adblock/js/log.js"></script>
     <script src="/adblock/js/currency.js"></script>
     <script src="/adblock/js/user.js"></script>
     <script src="/adblock/i18n/localesIndex.js"></script>
-    <!-- <script src="/adblock/i18n/i18n.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <main role="main" id="mainPageContent">
-    <div class="mainContentH1" id="thank_you_header_text">
-        <span i18n="manage_subscription">
-            {{ manage_subscription Manage subscription }}
-        </span>
-    </div>
-
-    <div id="registration-box" class="registration-box">
+    <img alt="" src="/img/adblock-plus-premium-navbar.svg" class="premium-header-image">
+    <div id="registration-box" class="registration-box premium-account-card">
         <div id="card2">
             <div id="card2-page-2" class="card2-wrapper" style="display:none;">
                 <h2 i18n="check_email">
@@ -139,10 +135,10 @@ unadblock=1
     </div>
 
     <!-- Manage Subscription Activity -->
-    <div id="subscription-canceled" style="display:none;" i18n="subscription_canceled">
+    <div id="subscription-canceled" class="premium-account-card" style="display:none;" i18n="subscription_canceled">
         {{ subscription_canceled Your subscription has been canceled. }}
     </div>
-    <div id="sunset-premium-infinity" style="display:none;">
+    <div id="sunset-premium-infinity" class="premium-account-card" style="display:none;">
         <div class="row SubscriptionDetails">
             <h4 i18n="subscription_details">
                 {{ subscription_details Subscription Details }}
@@ -157,7 +153,7 @@ unadblock=1
             </p>
         </div>
     </div>
-    <div id="you-have-free-access" style="display:none;">
+    <div id="you-have-free-access" class="premium-account-card" style="display:none;">
         <span i18n="free_access_premium">
             {{ free_access_premium You have free access to AdBlock Premium! }}
         </span>
@@ -165,7 +161,7 @@ unadblock=1
             {{ free_license_expires Your free license expires on $1. }}
         </span>
     </div>
-    <div id="manage-subscription-activity" style="display:none;">
+    <div id="manage-subscription-activity" class="premium-account-card" style="display:none;">
         <div class="row SubscriptionDetails">
             <div class="text-content">
                 <h2 i18n="subscription_details">
@@ -347,7 +343,7 @@ unadblock=1
             </div>
         </div>
     </div>
-    <div id="cool-stuff-you-get" style="display:none;">
+    <div id="cool-stuff-you-get" class="premium-account-card" style="display:none;">
         <h4 i18n="subscription_includes">
             {{ subscription_includes Your subscription includes: }}
         </h4>

@@ -14,7 +14,7 @@
     {% endblock %}
   </head>
 
-  <body>
+  <body class="{{ bodyclass if bodyclass else "" }}">
     <? include navbar ?>
 
     {% block body %}
