@@ -422,6 +422,40 @@ body
   background-color: rgb(255, 187, 3);
 }
 
+.has-error #what-is-included {
+  display: none;
+}
+
+#what-is-included {
+  box-sizing: border-box;
+  min-height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #666666;
+  border-radius: 10px;
+  padding: 6px 10px;
+  column-gap: 28px;
+  margin-top: 18px;
+}
+
+#what-is-included .currency,
+#what-is-included .amount {
+  font-weight: 500;
+}
+
+.info-line {
+  width: 8px;
+  min-height: 63px;
+  background: #2284F7;
+  border-radius: 100px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
 .stripe-card-modal { display: none; }
 
 .stripe-card-modal.is-active { display: block; }

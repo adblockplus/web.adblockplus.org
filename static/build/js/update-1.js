@@ -140,6 +140,7 @@ ns.setupForm = function(_config)
   var $frequency = doc.getElementById("payment-frequency"); 
   var $buttons = doc.getElementById("payment-buttons");
   var $error = doc.getElementById("payment-error");
+  var $whatIsIncluded = doc.getElementById("what-is-included");
 
   function error(error)
   {
@@ -156,6 +157,52 @@ ns.setupForm = function(_config)
     }
   }
 
+  function updateFreePremium() {
+    const data = api.data();
+    const amount = Number(data.amount);
+    const config = CURRENCY_CONFIG[data.currency];
+
+    let i18nId, i18nDuration;
+    if (data.frequency === "once") {
+      if (amount < config.once.amounts[2]) {
+        i18nDuration = Math.floor(amount / config.monthly.amounts[0]);
+        i18nId = "x-months";
+      } else {
+        i18nDuration = Math.floor(amount / config.once.amounts[2]);
+        i18nId = i18nDuration === 1 ? "one-year" : "x-years";
+      }
+    } else if (data.frequency === "monthly") {
+      if (amount > config.monthly.amounts[0]) {
+        i18nId = "monthly";
+      }
+    } else if (data.frequency === "yearly") {
+      if (amount >= config.yearly.amounts[2]) {
+        i18nId = "yearly";
+      }
+    } else {
+      console.error("Unhandled frequency: " + data.frequency);
+    }
+
+    if (i18nId != null) {
+      $whatIsIncluded.classList.remove("hidden");
+      $whatIsIncluded.querySelectorAll("p").forEach(function(p) {
+        if (p.id === i18nId) {
+          p.classList.remove("hidden");
+          const duration = p.querySelector(".duration");
+          if (duration != null && i18nDuration != null) {
+            duration.innerText = i18nDuration;
+          }
+          p.querySelector(".currency").innerText = data.sign;
+          p.querySelector(".amount").innerText = amount;
+        } else {
+          p.classList.add("hidden");
+        }
+      });
+    } else {
+      $whatIsIncluded.classList.add("hidden");
+    }
+  }
+
   function updateFrequencies()
   {
     // Set form dataset for styling when currency options exist and change
@@ -164,10 +211,13 @@ ns.setupForm = function(_config)
       config: CURRENCY_CONFIG[$currency ? $currency.value : defaultCurrency],
       _amounts: _amounts
     });
+
+    updateFreePremium();
   }
 
   // Set frequencies and amounts for the first time
-  updateFrequencies();
+  // Runs off main thread to allow for public API to be available in handlers
+  setTimeout(updateFrequencies, 0);
 
   // Update frequencies and amounts when currency changes
   if ($currency) // $currency only exists if config has multiple currencies
@@ -188,6 +238,8 @@ ns.setupForm = function(_config)
     if (!event.target.parentElement.classList.contains("custom-payment-amount"))
       if ($form.classList.contains("has-error"))
         error(false);
+
+    updateFreePremium();
   });
 
   function validateCustomAmount(input)
@@ -197,10 +249,12 @@ ns.setupForm = function(_config)
     var value = parseFloat(input.value);
     if (isNaN(value)) value = 0;
     
-    if (value < parseFloat(input.min))
+    if (value < parseFloat(input.min)) {
       error(i18n["min_" + input.dataset.frequency]);
-    else
+    } else {
       error(false);
+      updateFreePremium();
+    }
   }
   
   $frequencies.addEventListener("input", function(event)
