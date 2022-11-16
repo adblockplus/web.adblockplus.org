@@ -49,6 +49,24 @@ function setAutoHeights(targets)
    heightTarget.style.height = (offsetTargetOffset + additionalStaticOffset - bodyPaddingTop) + 'px';
  }
 
+// Enable pre-selecting monthly/yearly payment options via clicking a 
+// .premium-button[data-plan] with an allowlisted plan
+const premiumPlans = ['monthly', 'yearly'];
+window.addEventListener('click', event => {
+  if (
+    event.target.classList
+    && event.target.classList.contains('premium-button')
+    && event.target.dataset
+    && event.target.dataset.plan
+  ) {
+    const plan = event.target.dataset.plan;
+    if (premiumPlans.indexOf(plan) == -1) return;
+    document
+      .querySelector(`[data-recurring-frequency="${plan}"]`)
+      .click();
+  }
+});
+
 function onDOMContentLoaded()
 {
   // Set up FAQ toggles
