@@ -129,7 +129,7 @@ ns.setupForm = function(_config)
         i18nId = "monthly";
       }
     } else if (data.frequency === "yearly") {
-      if (amount >= config.yearly.amounts[2]) {
+      if (amount >= config.yearly.amounts[0]) {
         i18nId = "yearly";
       }
     } else {
