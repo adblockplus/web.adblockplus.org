@@ -100,7 +100,7 @@ var CURRENCY_CONFIG = {
       minimum: 150
     }
   }
-};
+}
 
 /* Set VARIANT_CONFIG[CURRENCY][(once|monthly|yearly)] from DEFAULTS.USD
  * Except copy yearly values from once values
@@ -161,24 +161,26 @@ ns.setupForm = function(_config)
     const data = api.data();
     const amount = Number(data.amount);
     const config = CURRENCY_CONFIG[data.currency];
+    let planinfo = {
+      durationMonths: 0,
+      plan: "ME"
+    }
 
     let i18nId, i18nDuration;
     if (data.frequency === "once") {
       if (amount < config.once.amounts[2]) {
         i18nDuration = Math.floor(amount / config.monthly.amounts[0]);
         i18nId = "x-months";
+        planinfo.durationMonths = i18nDuration;
       } else {
         i18nDuration = Math.floor(amount / config.once.amounts[2]);
         i18nId = i18nDuration === 1 ? "one-year" : "x-years";
+        planinfo.durationMonths = 12 * i18nDuration;
       }
     } else if (data.frequency === "monthly") {
-      if (amount > config.monthly.amounts[0]) {
         i18nId = "monthly";
-      }
     } else if (data.frequency === "yearly") {
-      if (amount >= config.yearly.amounts[2]) {
         i18nId = "yearly";
-      }
     } else {
       console.error("Unhandled frequency: " + data.frequency);
     }
@@ -201,6 +203,8 @@ ns.setupForm = function(_config)
     } else {
       $whatIsIncluded.classList.add("hidden");
     }
+
+    localStorage.setItem("planinfo", JSON.stringify(planinfo));
   }
 
   function updateFrequencies()
