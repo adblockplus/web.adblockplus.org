@@ -226,7 +226,9 @@ ns.setupForm = function(_config)
     if ("radio" in event.target.dataset)
     {
       // Check custom amount radio button on custom amount text input focus
-      doc.getElementById(event.target.dataset.radio).checked = true;
+      if (typeof document.body.dispatchEvent === 'function') {
+        doc.getElementById(event.target.dataset.radio).dispatchEvent(new MouseEvent('click'));
+      }
 
       // Re-show min custom amount error if custom amount is below min
       validateCustomAmount(event.target);
