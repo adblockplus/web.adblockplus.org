@@ -215,8 +215,8 @@ ns.setupForm = function(_config)
     // Custom amount input data-radio points at it's sibling radio
     if ("radio" in event.target.dataset)
     {
-      // Check custom amount radio button on custom amount text input focus
-      doc.getElementById(event.target.dataset.radio).checked = true;
+      // Click respective radio btn to trigger update of frequencies
+      doc.getElementById(event.target.dataset.radio).click();
 
       // Re-show min custom amount error if custom amount is below min
       validateCustomAmount(event.target);
