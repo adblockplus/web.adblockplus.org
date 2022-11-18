@@ -173,9 +173,9 @@ $(document).ready(function() {
             }
             const amount = (paymentInfoObj["amount"] / 100).toFixed(2);
             const nextBill = $("span#amount-next-bill");
-            nextBill.text(nextBill.text().replace("$1", currencyText + amount));
+            nextBill.text(nextBill.text().replace("$AMOUNT", currencyText + amount));
             const renewsOnDate = $("span#renews-on-date");
-            const renewsText = renewsOnDate.text().replace("$1", (localeDateFromTimestamp(paymentInfoObj["nextBillTimestamp"])));
+            const renewsText = renewsOnDate.text().replace("$DATE", (localeDateFromTimestamp(paymentInfoObj["nextBillTimestamp"])));
             renewsOnDate.text(renewsText);
             setCardBrandAndExpDate(paymentInfoObj["last4_brand"], paymentInfoObj["exp_month"], paymentInfoObj["exp_year"]);
             $("span#next-bill").text(localeDateFromTimestamp(paymentInfoObj["nextBillTimestamp"]));
