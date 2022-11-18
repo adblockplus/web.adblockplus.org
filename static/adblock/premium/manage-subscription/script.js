@@ -182,35 +182,35 @@ $(document).ready(function() {
             $("span.current-card-expiration").each(function() {
                 $(this).text(`${paymentInfoObj["exp_month"]}/${paymentInfoObj["exp_year"]}`);
             });
-            $("div#update-payment-method").click(function(event) {
-                $("div#update-card-activity").toggle("hidden");
-            });
+            // $("div#update-payment-method").click(function(event) {
+            //     $("div#update-card-activity").toggle("hidden");
+            // });
 
-            if (paymentInfoObj["processor"] === "paypal") {
-                $("div#stripe-update-card").hide();
-                $("div#paypal-update-card").show();
-                const isTestmode = !!document.location.search.match(/testmode/);
-                const payPalDomain = isTestmode ? "https://sandbox.paypal.com" : "https://www.paypal.com"
-                $("a#paypal-manage-href").attr("href", `${payPalDomain}/myaccount/autopay/connect/${paymentInfoObj["subscriptionId"]}`);
-            } else if (paymentInfoObj["processor"] === "stripe") {
-                $("div#paypal-update-card").hide();
-                $("div#top-card-info").show();
-                $("div#stripe-update-card").show();
-                // if card needs update and biller is Stripe, show the manage subscription box.
-                if (paymentInfoObj["card_needs_update"] === true) {
-                    $("span.current-card-expiration").each(function() {
-                        $(this).addClass("warning");
-                    });
-                    // Show the card as action is needed.
-                    $("div#update-card-required").show();
-                    $("div#update-card-activity").show();
-                } else {
-                    // User can view card if they click "Update Payment Method" but not shown by default.
-                    $("div#update-card-optional").show();
-                }
-            } else {
-                console.log("unknown payment processor...", paymentInfoObj["processor"]);
-            }
+            // if (paymentInfoObj["processor"] === "paypal") {
+            //     $("div#stripe-update-card").hide();
+            //     $("div#paypal-update-card").show();
+            //     const isTestmode = !!document.location.search.match(/testmode/);
+            //     const payPalDomain = isTestmode ? "https://sandbox.paypal.com" : "https://www.paypal.com"
+            //     $("a#paypal-manage-href").attr("href", `${payPalDomain}/myaccount/autopay/connect/${paymentInfoObj["subscriptionId"]}`);
+            // } else if (paymentInfoObj["processor"] === "stripe") {
+            //     $("div#paypal-update-card").hide();
+            //     $("div#top-card-info").show();
+            //     $("div#stripe-update-card").show();
+            //     if card needs update and biller is Stripe, show the manage subscription box.
+            //     if (paymentInfoObj["card_needs_update"] === true) {
+            //         $("span.current-card-expiration").each(function() {
+            //             $(this).addClass("warning");
+            //         });
+            //         // Show the card as action is needed.
+            //         $("div#update-card-required").show();
+            //         $("div#update-card-activity").show();
+            //     } else {
+            //         // User can view card if they click "Update Payment Method" but not shown by default.
+            //         $("div#update-card-optional").show();
+            //     }
+            // } else {
+            //     console.log("unknown payment processor...", paymentInfoObj["processor"]);
+            // }
         }
 
         $.ajax({
@@ -435,22 +435,22 @@ $(document).ready(function() {
                 _logV2MiscEvent("premium_card_update_success");
             }
 
-            if (newCard.new_exp_year > nextBillYear || newCard.new_exp_year === nextBillYear && newCard.new_exp_month > nextBillMonth) {
-                $("span.current-card-expiration").each(function() {
-                    $(this).removeClass("warning");
-                });
-                $("div#update-card-required").hide();
-                $("div#update-card-optional").show();
-                $("div#update-card-activity").toggle("hidden");
-            } else {
-                // the card was updated to a card that's still going to expire.
-                // Show warnings and don't hide the payment form.
-                $("span.current-card-expiration").each(function() {
-                    $(this).addClass("warning");
-                });
-                // notify the user.
-                $("div#payment_form_error").text("This updated card will also expire before the next bill date. Please try another card.");
-            }
+            // if (newCard.new_exp_year > nextBillYear || newCard.new_exp_year === nextBillYear && newCard.new_exp_month > nextBillMonth) {
+            //     $("span.current-card-expiration").each(function() {
+            //         $(this).removeClass("warning");
+            //     });
+            //     $("div#update-card-required").hide();
+            //     $("div#update-card-optional").show();
+            //     $("div#update-card-activity").toggle("hidden");
+            // } else {
+            //     // the card was updated to a card that's still going to expire.
+            //     // Show warnings and don't hide the payment form.
+            //     $("span.current-card-expiration").each(function() {
+            //         $(this).addClass("warning");
+            //     });
+            //     // notify the user.
+            //     $("div#payment_form_error").text("This updated card will also expire before the next bill date. Please try another card.");
+            // }
             stripeCC.clearElementsFields();
         },
         onError: function () {
