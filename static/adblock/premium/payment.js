@@ -75,7 +75,7 @@ $(document).ready(function () {
     });
 
     $("#already-donated").on("click", function () {
-        // "I've donated to AdBlock before..."
+        // "I've donated to Adblock before..."
         resetAlreadyDonatedActivity();
         $("#pay").hide();
         $("#already-donated-activity").show();
@@ -721,7 +721,7 @@ $(document).ready(function () {
             return true;
         },
         itemName: function () {
-            return "AdBlock Premium";
+            return "Adblock Plus Premium";
         },
         recurring: isRecurring,
         subType: getSubType,
