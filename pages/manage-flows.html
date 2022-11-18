@@ -695,64 +695,54 @@ unadblock=1
         <div class="flow-container">
             <div class="mainPageContent">
                 <img alt="Adblock Plus Premium" src="/img/adblock-plus-premium-navbar.svg" class="premium-header-image">
-                <div id="cool-stuff-you-get" class="premium-account-card">
-                    <h4 i18n="subscription_includes">Your subscription includes:</h4>
-                    <div class="feature-card-row">
-                        <div class="feature-card">
-                            <div class="featureCard-header">
-                                <i class="material-icons leading-icon">featured_video</i>
-                                <span i18n="make_adblock_yours">Make AdBlock Yours</span>
-                            </div>
-                            <div class="featureCard-body">
-                                <div class="featureCard-body-text" i18n="control_look_feel">
-                                    You're in control of the look, feel, and font size of AdBlock with easy-to-use controls.
-                                </div>
-                                <div class="featureCard-body-img">
-                                    <img src="/adblock/premium/enrollment/images/make-yours.svg" />
-                                </div>
-                            </div>
+                <section id="cool-stuff-you-get" class="premium-account-card">
+                    <h2 i18n="subscription_includes">
+                        {{ subscription_includes Your subscription includes: }}
+                    </h2>
+                    <div class="row premium-cancel-cards">
+                        <div class="column one-third">
+                            <article class="premium-cancel-card">
+                                <h3 class="premium-cancel-card--heading">
+                                    {{ s6 Block additional distractions }}
+                                </h3>
+                                <p>
+                                    {{ s7 Say goodbye to newsletter pop-ups and other annoying distractions. }}
+                                </p>
+                                <img src="/img/DistractionImage.svg" alt="" style="margin-top: 4em">
+                            </article>
                         </div>
-            
-                        <div class="feature-card">
-                            <div class="featureCard-header">
-                                <i class="material-icons leading-icon">photo</i>
-                                <span i18n="see_photos_not_ads">See Photos, Not Ads</span>
-                            </div>
-                            <div class="featureCard-body">
-                                <div class="featureCard-body-text" i18n="replace_ads_pictures">
-                                    We'll still block ads, but we'll replace some with pretty pictures of cats, dogs, and
-                                    nature.
-                                </div>
-                                <div class="featureCard-body-img">
-                                    <div id="see-photos-image"></div>
-                                </div>
-                            </div>
+                        <div class="column one-third">
+                            <article class="premium-cancel-card">
+                                <h3 class="premium-cancel-card--heading">
+                                    {{ s8 Stop floating videos }}
+                                </h3>
+                                <p>
+                                    {{ s9 Hide some of the videos used by many websites that follow you around as you browse. }}
+                                </p>
+                                <img src="/img/FloatingVideoImage.svg" alt="" style="margin-top: 4em">
+                            </article>
                         </div>
-            
-                        <div class="feature-card">
-                            <div class="featureCard-header">
-                                <i class="material-icons leading-icon">sync</i>
-                                <span i18n="sync_settings">Sync Your Settings</span>
-                            </div>
-                            <div class="featureCard-body">
-                                <div class="featureCard-body-text" i18n="take_settings_with_you">
-                                    Take your custom ad blocking rules, settings, and whitelists with you on whatever
-                                    computer you use.
-                                </div>
-                                <div class="featureCard-body-img">
-                                    <img src="/adblock/premium/enrollment/images/sync-content.svg" />
-                                </div>
-                            </div>
+                        <div class="column one-third">
+                            <article class="premium-cancel-card">
+                                <h3 class="premium-cancel-card--heading">
+                                    {{ s10 ABP Contributor status }}
+                                </h3>
+                                <p>
+                                    {{ s11 We are a small team and your support allows us to create a distraction-free and worry-free internet experience for everyone. }}
+                                </p>
+                                <img src="/img/ContributorImage.svg" alt="">
+                            </article>
                         </div>
                     </div>
-            
-                    <div class="row">
-                        <div class="button-container">
-                            <div class="cta-button gold-button" id="keep-these-features" i18n="keep_these_features">Keep These Features</div>
-                            <div class="cta-button gray-button" id="no-really-cancel" i18n="cancel_subscription">Cancel Subscription</div>
-                        </div>
+                    <div class="premium-cancel-buttons">
+                        <button id="keep-these-features" class="cta-button gold-button">
+                            {{ keep_these_features Keep these features }}
+                        </button>
+                        <button id="no-really-cancel" class="cta-button gray-button">
+                            {{ cancel_subscription Cancel subscription}}
+                        </button>
                     </div>
-                </div>
+                </section>
             </div>    
         </div>
     

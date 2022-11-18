@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     /* Constants and cached selectors shared by the page */
     const Page = {
-        FeaturesDontMissOut: $("div#cool-stuff-you-get"),
+        FeaturesDontMissOut: $("#cool-stuff-you-get"),
         RegistrationBox: $("div#registration-box"),
         EnterConfirmationCode: $("div#card2-page-2"),
         EWrongConfirmationCode: $("div#card2-error-2"),
