@@ -4,6 +4,7 @@ import { join } from 'path';
 
 const LOCALES = 'locales';
 const DOT = '.';
+const HTML_ATTRIBUTES_PATTERN = /(?<=<[\w]+)(\s[^>]*)/gmiu;
 
 program.requiredOption('-i, --input <path>', 'path to translations');
 program.parse();
@@ -47,11 +48,19 @@ inputLocalePaths.forEach(inputLocale => {
   readdirSync(join(args.input, inputLocale))
   .reduce(excludeDotfiles, [])
   .forEach(inputFilePath => {
+    const outputPath = join(DOT, LOCALES, outputLocale, inputFilePath);
     const inputObject = openLocaleFile(join(args.input, inputLocale, inputFilePath));
-    const outputObject = openLocaleFile(join(DOT, LOCALES, outputLocale, inputFilePath));
+    const outputObject = openLocaleFile(outputPath);
     Object.keys(inputObject).forEach(key => {
+      let translation = inputObject[key];
+      // CAUTION: CMS only currently allows translations without HTML attributes through unescaped.
+      // HTML attributes are automatically inserted into translations if they exist in the default string.
+      if (HTML_ATTRIBUTES_PATTERN.exec(translation)) {
+        translation = translation.replaceAll(HTML_ATTRIBUTES_PATTERN, '');
+        console.warn(`Removing HTML attributes in ${outputPath}`, {before: inputObject[key], after: translation})
+      }
       if (!outputObject[key]) outputObject[key] = {};
-      outputObject[key].message = inputObject[key];
+      outputObject[key].message = translation;
     });
     writeFileSync(
       join(DOT, LOCALES, outputLocale, inputFilePath), 
