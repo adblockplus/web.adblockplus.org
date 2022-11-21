@@ -9,7 +9,13 @@ program.parse();
 const options = program.opts();
 
 const getJSON = (path) => {
-  return JSON.parse(readFileSync(path, {encoding: 'utf-8'}));
+  if (existsSync(path)) {
+    return JSON.parse(readFileSync(path, {encoding: 'utf-8'}));
+  } else {
+    console.warn('Creating missing path', path);
+    writeFileSync(path, JSON.stringify({}, null, 2));
+    return {};
+  }
 }
 
 const excludeHidden = (list, name) => {
@@ -38,7 +44,10 @@ inputDirectories.forEach(inputLocale => {
     const inputObject = getJSON(join(options.input, inputLocale, inputFilePath));
     const outputObject = getJSON(join('.', 'locales', outputDirectory, inputFilePath));
     Object.keys(inputObject).forEach(key => {
-      outputObject[key].message = inputObject[key];
+      if (outputObject[key])
+        outputObject[key].message = inputObject[key];
+      else
+        outputObject[key] = {message: inputObject[key]};
     });
     writeFileSync(
       join('.', 'locales', outputDirectory, inputFilePath), 
