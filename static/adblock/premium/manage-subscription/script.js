@@ -46,7 +46,7 @@ $(document).ready(function() {
         Page.FeaturesDontMissOut.show();
     });
 
-    $("div#keep-these-features").click(function() {
+    $("#keep-these-features").click(function() {
         Page.FeaturesDontMissOut.hide();
         Page.ManageSubscriptionActivity.show();
     });
