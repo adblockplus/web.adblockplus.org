@@ -553,6 +553,8 @@ html {
 /* Plan includes
  ******************************************************************************/
 
+[dir="rtl"] .premium-plan-list { text-align: right; }
+
 .premium-plan-list-preface {
   display: none;
 }
@@ -568,8 +570,15 @@ html {
   margin-right: auto;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  padding-left: 1.5rem;
   max-width: 13rem;
+}
+
+[dir="ltr"] .premium-plan-list ul {
+  padding-left: 1.5rem;
+}
+
+[dir="rtl"] .premium-plan-list ul {
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 992px) {
