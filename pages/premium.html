@@ -295,14 +295,14 @@ unadblock=1
               <span i18n="amount_per_year" id="yearly-amount" style="display: none"></span>
               <div class="selected-check"><i class="material-icons-outlined">done</i></div>
               <span id="yearly-rate" class="amount-text" i18n="slash_yr" i18n_replacement_text="$19.99">
-                {{ amount-monthly $19.99/yr }}
+                {{ amount-yearly $19.99/yr }}
               </span>
             </button>
             <button id="r_monthly" class="option" data-amount="1.99" data-recurring-frequency="monthly">
               <span i18n="amount_per_month" id="monthly-amount" style="display: none"></span>
               <div class="selected-check"><i class="material-icons-outlined">done</i></div>
               <span id="monthly-rate" class="amount-text" i18n="slash_mo" i18n_replacement_text="$1.99">
-                {{ amount-yearly $1.99/mo }}
+                {{ amount-monthly $1.99/mo }}
               </span>
             </button>
           </div><!-- #amount_select_row -->
