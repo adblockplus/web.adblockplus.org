@@ -1,7 +1,7 @@
 <script>(function () {
 
-// Temporarily disable these features outside the installed page until Content-Security-Policy changes
-if (document.documentElement.dataset.page != 'installed') return;
+// Temporarily disable these features outside of select pages until Content-Security-Policy changes
+if (['installed', 'premium', 'manage'].indexOf(document.documentElement.dataset.page) == -1) return;
 
 var eyeo = window.eyeo = (window.eyeo || {});
 var CLIENT_ID = 'b';
@@ -17,13 +17,13 @@ var uid = eyeo.uid = function() {
 
 var sid = eyeo.sid = uid();
 
-var log = eyeo.log = function (event, payload) {
+var log = eyeo.log = function (_event, payload) {
   return new Promise(function (resolve, reject) {
     payload.sid = sid;
     var event = {
       id: uid(),
       client: CLIENT_ID,
-      event: event,
+      event: _event,
       payload: payload
     };
     events.push(event);
