@@ -406,7 +406,6 @@ html {
     /* CAREFUL: These styles are duplicated above < 991px */
     position: absolute;
     top: -2.5rem;
-    left: 0;
     height: 2.5rem;
     width: 100%;
     border-top-left-radius: 6px;
@@ -420,10 +419,12 @@ html {
 
   [dir="ltr"] .premium-plan-tab-start {
     padding-left: 1rem;
+    left: 0;
   }
 
   [dir="rtl"] .premium-plan-tab-start {
     padding-right: 1rem;
+    right: 0;
   }
 
   .premium-plan-tab-separator {
