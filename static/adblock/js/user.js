@@ -307,22 +307,25 @@ function recordTracking() {
       x = _experiment.xNumber("*");
       g = _experiment.variantIndex("*") + 1;
     }
-    var a = getUserId();
-    if (a === "") {
-        setUserIdDiv();
-        a = getUserId();
+    var a = getUserId(),
+        a = a == "" ? "NA" : a; // set NA if userid isn't set
+
+    // prefix MyAdBlock product tag if it's not core.
+    let prefix = "ME"
+    try {
+        const purchaseInfoObj = JSON.parse(localStorage.getItem("planinfo"));
+        if (purchaseInfoObj.plan !== null) {
+            prefix = purchaseInfoObj.plan;
+            return prefix + " X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
+        }
+    } catch(e) {
+        console.error("recordTracking: error getting purchaseinfo object", e);
     }
-    if (typeof getPlainSource === "function" && (getPlainSource().startsWith("ME") || getPlainSource().startsWith("HME"))) {
-        // prefix MyAdBlock product tag if it's not core.
-        return "ME X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
-    }
-    const getPremiumReward = JSON.parse(localStorage.getItem("get_premium_reward"));
-    if (getPremiumReward === true) {
-        // prefix MyAdBlock product tag if it's not core.
-        return "ME X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
-    }
+
     return "X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a // return tracking string
 };
+
+
 
 function getGAID() {
     if (typeof ga !== 'undefined' && typeof ga.getByName === 'function') {
