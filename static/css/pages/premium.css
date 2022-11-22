@@ -729,3 +729,9 @@ html {
 .premium-faq.active p {
   display: block;
 }
+
+[lang="ar"] .premium-plan-tab-end,
+[lang="fr"] .premium-plan-tab-end,
+[lang="gr"] .premium-plan-tab-end,
+[lang="hu"] .premium-plan-tab-end,
+[lang="it"] .premium-plan-tab-end { display: none; }
