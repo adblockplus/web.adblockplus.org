@@ -2693,11 +2693,6 @@ h2 svg { display: block; }
 
 .payment-buttons { margin-top: 1.5rem; }
 
-.payment-buttons button { display: none; }
-
-[data-provider="stripe"] .stripe-button,
-[data-provider="paypal"] .paypal-button { display: block; }
-
 @media (min-width: 850px)
 {
   .payment-buttons { display: flex; }
@@ -2738,7 +2733,7 @@ h2 svg { display: block; }
 .stripe-button
 {
   color: #fff;
-  background-color: #0AAD03;
+  background-color: #2888F9;
   overflow: hidden;
 }
 

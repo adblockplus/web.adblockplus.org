@@ -47,7 +47,7 @@ style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.goo
 script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com https://checkout.stripe.com https://cdnjs.cloudflare.com; \
 connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it https://donation.adblock-org.workers.dev https://donation-staging.adblock-org.workers.dev https://europe-west1-abp-log-service.cloudfunctions.net https://abp-payments.ey.r.appspot.com https://myadblock.licensing.adblockplus.dev; \
 font-src 'self' https://fonts.gstatic.com; \
-frame-src https://optimize.google.com https://js.stripe.com;" \
+frame-src https://optimize.google.com https://js.stripe.com http://premium.staging-new-adblockplus-org-1.uplink.eyeo.it;" \
 ENV=!YOUTUBE_NOCOOKIES
 
 Header set Content-Security-Policy "default-src 'self'; \
@@ -56,7 +56,7 @@ style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.goo
 script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com https://checkout.stripe.com https://cdnjs.cloudflare.com; \
 connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it https://donation.adblock-org.workers.dev https://donation-staging.adblock-org.workers.dev https://europe-west1-abp-log-service.cloudfunctions.net https://abp-payments.ey.r.appspot.com https://myadblock.licensing.adblockplus.dev; \
 font-src 'self' https://fonts.gstatic.com; \
-frame-src https://optimize.google.com www.youtube-nocookie.com;" \
+frame-src https://optimize.google.com www.youtube-nocookie.com http://premium.staging-new-adblockplus-org-1.uplink.eyeo.it;" \
 ENV=YOUTUBE_NOCOOKIES
 
 Header set X-Frame-Options "sameorigin"

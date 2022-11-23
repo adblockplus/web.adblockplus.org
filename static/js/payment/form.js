@@ -142,7 +142,7 @@
         if ($form.classList.contains("has-error"))
           error(false);
     });
-  
+
     function validateCustomAmount(input)
     {
       if (!input.min || !("frequency" in input.dataset)) return;
@@ -155,28 +155,26 @@
       else
         error(false);
     }
-    
+  
     $frequencies.addEventListener("input", function(event)
     {
       // Show an error when a custom amount is below it's minimum
       validateCustomAmount(event.target);
     });
-  
+
     $frequencies.addEventListener("focusin", function(event)
     {
       // Custom amount input data-radio points at it's sibling radio
       if ("radio" in event.target.dataset)
       {
-        // Check custom amount radio button on custom amount text input focus
-        if (typeof document.body.dispatchEvent === 'function') {
-          doc.getElementById(event.target.dataset.radio).dispatchEvent(new MouseEvent('click'));
-        }
-  
+        // Click respective radio btn to trigger update of frequencies
+        doc.getElementById(event.target.dataset.radio).click();
+
         // Re-show min custom amount error if custom amount is below min
         validateCustomAmount(event.target);
       }      
     });
-  
+
     $buttons.addEventListener("click", function(event) {
       event.preventDefault();
       var data;
@@ -189,31 +187,31 @@
         callback(data);
       });  
     });
-  
+
     // PUBLIC API ////////////////////////////////////////////////////////////////
-  
+
     var api = {};
-  
+
     var submitCallbacks = [];
-  
+
     api.onSubmit = function(callback)
     {
       submitCallbacks.push(callback);
     }
-  
+
     api.data = function(privider)
     {
       var formData = new FormData($form);
-  
+
       var amount = formData.get("amount");
-  
+
       if (amount.startsWith("custom"))
         amount = formData.get(formData.get("amount"));
-  
+
       var currency = Object.keys(CURRENCY_CONFIG).length > 1
         ? formData.get("currency")
         : defaultCurrency;
-  
+
       return {
         currency: currency,
         frequency: formData.get("frequency"),
@@ -222,8 +220,7 @@
         sign: CURRENCY_CONFIG[currency].sign
       }
     }
-  
+
     return api;
   }
-  
-  })(document, _, path("payment"), path("i18n.payment.form"));
+})(document, _, path("payment"), path("i18n.payment.form"));

@@ -1,6 +1,7 @@
-title=FIXME
-description=FIXME
+title=Adblock Plus Premium | The world's #1 ad blocker
+description=Adblock Plus Premium, the upgraded version of the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
 template=minimal
+bodyclass=premium-accounts-page
 robots=none
 unadblock=1
 
@@ -9,27 +10,28 @@ unadblock=1
     <link rel="stylesheet" href="/adblock/css/updateStyle.css" />
     <link rel="stylesheet" href="/adblock/premium/enrollment/style.css" />
     <link rel="stylesheet" href="/adblock/premium/manage-subscription/style.css" />
+    <link rel="stylesheet" href="/adblock/premium/manage-subscription/flows.css" />
     <link rel="stylesheet" href="/css/unadblock.css" />    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/adblock/js/log.js"></script>
     <script src="/adblock/js/currency.js"></script>
     <script src="/adblock/js/user.js"></script>
     <script src="/adblock/i18n/localesIndex.js"></script>
-    <!-- <script src="/adblock/i18n/i18n.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <main role="main" id="mainPageContent">
-    <div class="mainContentH1" id="thank_you_header_text">
-        <span i18n="manage_subscription">Manage subscription</span>
-    </div>
-
-    <div id="registration-box" class="registration-box">
+    <img alt="" src="/img/adblock-plus-premium-navbar.svg" class="premium-header-image">
+    <div id="registration-box" class="registration-box premium-account-card">
         <div id="card2">
             <div id="card2-page-2" class="card2-wrapper" style="display:none;">
-                <h2 i18n="check_email">Please check the email we sent you</h2>
-                <p i18n="enter_code">Enter the 6-character code to confirm your email address.</p>
+                <h2 i18n="check_email">
+                    {{ check_email Please check the email we sent you }}
+                </h2>
+                <p i18n="enter_code">
+                    {{ enter_code Enter the 6-character code to confirm your email address. }}
+                </p>
                 <h3 id="user-email-address"></h3>
                 <div id="code-entry">
                     <form id="confirmation-code">
@@ -47,14 +49,15 @@ unadblock=1
                     </form>
                 </div>
                 <div id="confirmation-code-error" i18n="code_incorrect" style="display:none;">
-                    That code is incorrect.
+                    {{ code_incorrect That code is incorrect. }}
                 </div>
-                <div id="submit_code" class="submit-btn" i18n="uninstall_submit">Submit</div>
+                <div id="submit_code" class="submit-btn" i18n="uninstall_submit">
+                    {{ uninstall_submit Submit }}
+                </div>
                 <p class="fine-print" i18n="check_spam_contact_us" i18n_replacement_el="email-support-link">
-                    If you don't see an email, please check your spam or contact us at
-                    <a href="mailto:help@getadblock.com">help@getadblock.com</a>.
+                    {{ check_spam_contact_us If you don't see an email, please check your spam or contact us at <a href="mailto:support@adblockplus.org">support@adblockplus.org</a>. }}
                 </p>
-                <a id="email-support-link" href="mailto:help@getadblock.com"></a>
+                <a id="email-support-link" href="mailto:support@adblockplus.org"></a>
             </div>
             <div id="spinner-no-text" class="card2-wrapper">
                 <div class="lds-ring">
@@ -66,46 +69,65 @@ unadblock=1
             </div>
             <!-- Error cases -->
             <div id="card2-error-2" class="card2-wrapper" style="display: none;">
-                <h2 i18n="oops_period">Oops.</h2>
+                <h2 i18n="oops_period">
+                    {{ oops_period Oops. }}
+                </h2>
                 <p>
-                    <span i18n="code_incorrect">That code is incorrect.</span>
+                    <span i18n="code_incorrect">
+                        {{ code_incorrect That code is incorrect. }}
+                    </span>
                     <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup1">
-                        Reach out to us and let us help you finish setup!</span>
-                    <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup1"></a>
+                        {{ reach_out_help_setup Reach out to us and let us help you finish setup! }}
+                    </span>
+                    <a href="mailto:support@adblockplus.org" target="_new" id="finish-setup1"></a>
                 </p>
             </div>
             <div id="card2-error-3" class="card2-wrapper" style="display: none;">
-                <h2 i18n="oops_period">Oops.</h2>
+                <h2 i18n="oops_period">
+                    {{ oops_period Oops. }}
+                </h2>
                 <p>
-                    <span i18n="cant_find_user_id">We can't seem to find your user id.</span>
-                    <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup2">
-                        Reach out to us and let us help you finish setup!
+                    <span i18n="cant_find_user_id">
+                        {{ cant_find_user_id We can't seem to find your user id. }}
                     </span>
-                    <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup2"></a>
+                    <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup2">
+                        {{ reach_out_help_setup Reach out to us and let us help you finish setup! }}
+                    </span>
+                    <a href="mailto:support@adblockplus.org" target="_new" id="finish-setup2"></a>
                 </p>
             </div>
             <div id="card2-error-5" class="card2-wrapper" style="display: none;">
-                <h2 i18n="oops_period">Oops.</h2>
+                <h2 i18n="oops_period">
+                    {{ oops_period Oops. }}
+                </h2>
                 <p>
-                    <span i18n="problem_our_end">There was a problem on our end.</span>
-                    <span i18n="recorded_investigating">It has been recorded and we're investigating.</span>
-                    <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup4">
-                        Reach out to us and let us help you finish setup!
+                    <span i18n="problem_our_end">
+                        {{ problem_our_end There was a problem on our end. }}
                     </span>
-                    <a href="https://help.getadblock.com/support/tickets/new" target="_new" id="finish-setup4"></a>
+                    <span i18n="recorded_investigating">
+                        {{ recorded_investigating It has been recorded and we're investigating. }}
+                    </span>
+                    <span i18n="reach_out_help_setup" i18n_replacement_el="finish-setup4">
+                        {{ reach_out_help_setup Reach out to us and let us help you finish setup! }}
+                    </span>
+                    <a href="mailto:support@adblockplus.org" target="_new" id="finish-setup4"></a>
                 </p>
             </div>
             <div id="card2-error-6" class="card2-wrapper" style="display: none;">
-                <h2 i18n="oops_period">Oops.</h2>
+                <h2 i18n="oops_period">
+                    {{ oops_period Oops. }}
+                </h2>
                 <p>
-                    <span>We need a few minutes to finish processing your subscription.</span>
-                    <span>Please check back soon.</span>
+                    <span i18n="s1">
+                        {{ s1 We need a few minutes to finish processing your subscription. }}
+                    </span>
+                    <span i18n="s2">
+                        {{ s2 Please check back soon. }}
+                    </span>
                 </p>
                 <p>
-                    <span>If you need help right away,
-                        <a href="https://help.getadblock.com/support/tickets/new" target="_new">
-                            reach out to us!
-                        </a>
+                    <span>
+                        {{ s3 If you need help right away, <a href="mailto:support@adblockplus.org" target="_new">reach out to us!</a> }}
                     </span>
                 </p>
             </div>
@@ -113,92 +135,117 @@ unadblock=1
     </div>
 
     <!-- Manage Subscription Activity -->
-    <div id="subscription-canceled" style="display:none;" i18n="subscription_canceled">
-        Your subscription has been canceled.
+    <div id="subscription-canceled" class="premium-account-card" style="display:none;" i18n="subscription_canceled">
+        {{ subscription_canceled Your subscription has been canceled. }}
     </div>
-    <div id="sunset-premium-infinity" style="display:none;">
+    <div id="sunset-premium-infinity" class="premium-account-card" style="display:none;">
         <div class="row SubscriptionDetails">
-            <h4 i18n="subscription_details">Subscription Details</h4>
+            <h4 i18n="subscription_details">
+                {{ subscription_details Subscription Details }}
+            </h4>
         </div>
         <div class="row SubscriptionDetails">
             <p>
-                You updated your Premium account <span id="sunset-premium-infinity-update-date"></span>
+                {{ s4 You updated your Premium account <span id="sunset-premium-infinity-update-date"></span> }}
             </p>
             <p>
-                <strong>Free Unlimited Access</strong>
+                {{ s5 <strong>Free Unlimited Access</strong> }}
             </p>
         </div>
     </div>
-    <div id="you-have-free-access" style="display:none;">
+    <div id="you-have-free-access" class="premium-account-card" style="display:none;">
         <span i18n="free_access_premium">
-            You have free access to AdBlock Premium!
+            {{ free_access_premium You have free access to AdBlock Premium! }}
         </span>
         <span i18n="free_license_expires" id="free-license-expires-date">
-            Your free license expires on $1.
+            {{ free_license_expires Your free license expires on $1. }}
         </span>
     </div>
-    <div id="manage-subscription-activity" style="display:none;">
+    <div id="manage-subscription-activity" class="premium-account-card" style="display:none;">
         <div class="row SubscriptionDetails">
             <div class="text-content">
-                <h2 i18n="subscription_details">Subscription Details</h2>
+                <h2 i18n="subscription_details">
+                    {{ subscription_details Subscription Details }}
+                </h2>
                 <p>
-                    <span i18n="auto_renews_data" id="renews-on-date"></span>
-                    <span i18n="youll_be_charged_amount" id="amount-next-bill"></span>
+                    <span i18n="auto_renews_data" id="renews-on-date">
+                        {{ auto_renews_data Automatically renews on $date$. }}
+                    </span>
+                    <span i18n="youll_be_charged_amount" id="amount-next-bill">
+                        {{ youll_be_charged_amount You'll be charged $amount$. }}
+                    </span>
                 </p>
                 <div class="card-info hidden" id="top-card-info">
                     <p>
-                        <strong>Current Card:</strong>
+                        <strong>
+                            {{ current_card Current Card: }}
+                        </strong>
                         <span id="current-card">Stripe-4242</span>
                     </p>
                     <p>
-                        <span><strong>Expires:</strong></span>
+                        <span><strong>
+                            {{ expires Expires: }}
+                        </strong></span>
                         <span class="current-card-expiration">11/2020</span>
                     </p>
                 </div>
             </div>
             <div class="action-button-container">
-                <div class="cta-button gold-button" id="update-payment-method">Update Payment Method</div>
-                <div class="cta-button gray-button" id="initial-cancel-button" i18n="cancel_subscription">Cancel Subscription</div>
+                <div class="cta-button gold-button" id="update-payment-method" style="display:none">
+                    {{ update_method Update Payment Method }}
+                </div>
+                <div class="cta-button gray-button" id="initial-cancel-button" i18n="cancel_subscription">
+                    {{ cancel_subscription Cancel Subscription }}
+                </div>
             </div>
         </div>
         <div class="row" id="update-card-activity" style="display:none;">
             <div id="update-subscription-box" class="card2-wrapper">
                 <div id="payment-box">
-                    <h2>Update Payment Method</h2>
+                    <h2>
+                        {{ update_method Update Payment Method }}
+                    </h2>
                     <div id="update-card-required" class="hidden">
                         <p>
-                            Your current card <span class="warning">will expire before your Next Bill Date</span>.
-                            Update your card now for all of your favorite Premium features, like Themes, Image Swap,
-                            and Sync to continue uninterrupted.
+                            {{ update_expire_next Your current card <span class="warning">will expire before your Next Bill Date</span>. Update your card now for all of your favorite Premium features, like Themes, Image Swap, and Sync to continue uninterrupted. }}
                         </p>
                         <p>
-                            Your new card will not be charged until the Next Bill Date.
+                            {{ not_charged_next Your new card will not be charged until the Next Bill Date. }}
                         </p>
                         <p>
-                            <strong>Current Card:</strong>
+                            <strong>
+                                {{ current_card Current Card: }}
+                            </strong>
                             <span id="current-card"></span>
                         </p>
                         <p>
-                            <span class="warning"><strong>Expires:</strong></span>
+                            <span class="warning"><strong>
+                                {{ expires Expires: }}
+                            </strong></span>
                             <span class="warning current-card-expiration"></span>
                         </p>
                     </div>
                     <div id="update-card-optional" class="hidden">
                         <p>
-                            You may update the card you use to pay for all of your favorite
-                            Premium features, like Themes, Image Swap, and Sync.
+                            {{ you_may_update You may update the card you use to pay for all of your favorite Premium features, like Themes, Image Swap, and Sync. }}
                         </p>
                         <p>
-                            <strong>Current Card:</strong>
+                            <strong>
+                                {{ current_card Current Card: }}
+                            </strong>
                             <span id="current-card"></span>
                         </p>
                         <p>
-                            <span><strong>Expires:</strong></span>
+                            <span><strong>
+                                {{ expires Expires: }}
+                            </strong></span>
                             <span class="current-card-expiration"></span>
                         </p>
                     </div>
                     <p>
-                        <strong>Next Bill Date</strong>: <span id="next-bill"></span>
+                        <strong>
+                            {{ next_bill_date Next Bill Date: }}
+                        </strong> <span id="next-bill"></span>
                     </p>
                     <div id="stripe-update-card">
                         <div class="cc-input-form">
@@ -207,17 +254,23 @@ unadblock=1
                                 <form action="#" method="post" id="payment-form">
                                     <div class="form-row">
                                         <label>
-                                            <span>Credit Card Number</span>
+                                            <span>
+                                                {{ credit_card_number Credit Card Number }}
+                                            </span>
                                             <div id="card-no" class="wide-input form-field"></div>
                                         </label>
                                     </div>
                                     <div class="form-row form-row-flex">
                                         <label>
-                                            <span i18n="expiration_date">Expiration Date</span>
+                                            <span i18n="expiration_date">
+                                                {{ expiration_date Expiration Date }}
+                                            </span>
                                             <div id="card-exp" class="form-field skinny-form"></div>
                                         </label>
                                         <label id="cvc_label">
-                                            <span i18n="cvc_cvv">CVC / CVV</span>
+                                            <span i18n="cvc_cvv">
+                                                {{ cvc_cvv CVC / CVV }}
+                                            </span>
                                             <div id="card-cvc" class="form-field skinny-form"></div>
                                         </label>
                                         <div id="payment_form_error" style="display:none;"></div>
@@ -225,7 +278,7 @@ unadblock=1
                                     <button type="submit" style="display:none;"></button>
                                     <button id="donate_now">
                                         <div class="donate-button-text noselect">
-                                            Update Your Card Details
+                                            {{ update_card_details Update Your Card Details }}
                                         </div>
                                     </button>
                                 </form>
@@ -234,19 +287,21 @@ unadblock=1
                     </div>
                     <div id="paypal-update-card">
                         <p>
-                            <strong>Important Note:</strong>
+                            <strong>
+                                {{ important_note Important Note: }}
+                            </strong>
                             <p>
-                                If you are not logged in to your PayPal account yet, clicking the "Manage your PayPal subscription" button
-                                will have you log in, and <span class="warning">you might see a "Not Found" message</span>.
+                                {{ not_logged_in_paypal If you are not logged in to your PayPal account yet, clicking the "Manage your PayPal subscription" button will have you log in, and <span class="warning">you might see a "Not Found" message</span>. }}
                             </p>
                             <p>
-                                If you do, <strong>stay logged in to PayPal, switch back to this tab, and click the "Manage your PayPal subscription"
-                                button once more</strong>. You'll then see your subscription and be able to update your details.
+                                {{ stay_logged_in_paypal If you do, <strong>stay logged in to PayPal, switch back to this tab, and click the "Manage your PayPal subscription" button once more</strong>. You'll then see your subscription and be able to update your details. }}
                             </p>
                             <p>
-                                Thank you for your patience with this process. We are actively working to make this process more seamless for you.
+                                {{ thank_you_process Thank you for your patience with this process. We are actively working to make this process more seamless for you. }}
                             </p>
-                            <a href="#" target="_blank" id="paypal-manage-href"><button class="cta-button gold-button">Manage your PayPal subscription</button></a><br />
+                            <a href="#" target="_blank" id="paypal-manage-href"><button class="cta-button gold-button">
+                                {{ manage_paypal_subscription Manage your PayPal subscription }}
+                            </button></a><br />
                         </p>
                     </div>
                     <!-- End Stripe Credit Card Payment Form -->
@@ -258,7 +313,9 @@ unadblock=1
                         <div class="progress-circle" id="progress-3"></div>
                     </div>
                     <div id="card2-page-3" class="card2-wrapper" style="display: none;">
-                        <h2 i18n="confirming">Confirming...</h2>
+                        <h2 i18n="confirming">
+                            {{ confirming Confirming... }}
+                        </h2>
                         <div class="lds-ring">
                             <div></div>
                             <div></div>
@@ -267,14 +324,18 @@ unadblock=1
                         </div>
                     </div>
                     <div id="card2-page-4" class="card2-wrapper" style="display: none;">
-                        <h2>Your card has been updated.</h2>
+                        <h2>
+                            {{ your_card_updated Your card has been updated. }}
+                        </h2>
                     </div>
                     <!-- Error cases for card2 -->
                     <div id="card2-error-1" class="card2-wrapper" style="display: none;">
-                        <h2 i18n="oops_period">Oops.</h2>
+                        <h2 i18n="oops_period">
+                            {{ oops_period Oops. }}
+                        </h2>
                         <p>
                             <span>
-                                Something has gone wrong.
+                                {{ something_gone_wrong Something has gone wrong. }}
                             </span>
                         </p>
                     </div>
@@ -282,17 +343,21 @@ unadblock=1
             </div>
         </div>
     </div>
-    <div id="cool-stuff-you-get" style="display:none;">
-        <h4 i18n="subscription_includes">Your subscription includes:</h4>
+    <div id="cool-stuff-you-get" class="premium-account-card" style="display:none;">
+        <h4 i18n="subscription_includes">
+            {{ subscription_includes Your subscription includes: }}
+        </h4>
         <div class="feature-card-row">
             <div class="feature-card">
                 <div class="featureCard-header">
                     <i class="material-icons leading-icon">featured_video</i>
-                    <span i18n="make_adblock_yours">Make AdBlock Yours</span>
+                    <span i18n="make_adblock_yours">
+                        {{ make_adblock_yours Make AdBlock Yours }}
+                    </span>
                 </div>
                 <div class="featureCard-body">
                     <div class="featureCard-body-text" i18n="control_look_feel">
-                        You're in control of the look, feel, and font size of AdBlock with easy-to-use controls.
+                        {{ control_look_feel You're in control of the look, feel, and font size of AdBlock with easy-to-use controls. }}
                     </div>
                     <div class="featureCard-body-img">
                         <img src="/adblock/premium/enrollment/images/make-yours.svg" />
@@ -303,12 +368,13 @@ unadblock=1
             <div class="feature-card">
                 <div class="featureCard-header">
                     <i class="material-icons leading-icon">photo</i>
-                    <span i18n="see_photos_not_ads">See Photos, Not Ads</span>
+                    <span i18n="see_photos_not_ads">
+                        {{ see_photos_not_ads See Photos, Not Ads }}
+                    </span>
                 </div>
                 <div class="featureCard-body">
                     <div class="featureCard-body-text" i18n="replace_ads_pictures">
-                        We'll still block ads, but we'll replace some with pretty pictures of cats, dogs, and
-                        nature.
+                        {{ replace_ads_pictures We'll still block ads, but we'll replace some with pretty pictures of cats, dogs, and nature. }}
                     </div>
                     <div class="featureCard-body-img">
                         <div id="see-photos-image"></div>
@@ -319,12 +385,13 @@ unadblock=1
             <div class="feature-card">
                 <div class="featureCard-header">
                     <i class="material-icons leading-icon">sync</i>
-                    <span i18n="sync_settings">Sync Your Settings</span>
+                    <span i18n="sync_settings">
+                        {{ sync_settings Sync Your Settings }}
+                    </span>
                 </div>
                 <div class="featureCard-body">
                     <div class="featureCard-body-text" i18n="take_settings_with_you">
-                        Take your custom ad blocking rules, settings, and whitelists with you on whatever
-                        computer you use.
+                        {{ take_settings_with_you Take your custom ad blocking rules, settings, and whitelists with you on whatever computer you use. }}
                     </div>
                     <div class="featureCard-body-img">
                         <img src="/adblock/premium/enrollment/images/sync-content.svg" />
@@ -335,8 +402,12 @@ unadblock=1
 
         <div class="row">
             <div class="button-container">
-                <div class="cta-button gold-button" id="keep-these-features" i18n="keep_these_features">Keep These Features</div>
-                <div class="cta-button gray-button" id="no-really-cancel" i18n="cancel_subscription">Cancel Subscription</div>
+                <div class="cta-button gold-button" id="keep-these-features" i18n="keep_these_features">
+                    {{ keep_these_features Keep These Features }}
+                </div>
+                <div class="cta-button gray-button" id="no-really-cancel" i18n="cancel_subscription">
+                    {{ cancel_subscription Cancel Subscription }}
+                </div>
             </div>
         </div>
     </div>

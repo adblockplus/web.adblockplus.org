@@ -80,15 +80,9 @@ $(document).ready(function () {
         $("#pay").hide();
         $("#already-donated-activity").show();
     });
-    $("#already-premium-user").on("click", function () {
-        // "I'm already a Premium user..."
-        resetAlreadyDonatedActivity();
-        $("#pay").hide();
-        $("#already-donated-activity").show();
-    });
 
-    let monthlyPrice = 1;
-    let yearlyPrice = 10;
+    let monthlyPrice = 1.99;
+    let yearlyPrice = 19.99;
 
     // see if we're still doing the EUR GBP etectera
     // see if we should show the default based on geo
@@ -214,8 +208,8 @@ $(document).ready(function () {
             $(this).text(currency);
         });
 
-        const yearlyAmount = _currency.oneTimeAmountsForCurrency(currencyCode)[1];
-        const monthlyAmount = Math.round(yearlyAmount * 100 / 10 / 100);
+        const yearlyAmount = 19.99;
+        const monthlyAmount = 1.99;
 
         // Override default input values
         $(selectors.monthlyAmountInput).val(monthlyAmount);
@@ -253,7 +247,7 @@ $(document).ready(function () {
 
     // On successful activation, tell extension to activate MyAdBlock.
     function sendPaymentSuccessToExtension() {
-        const userId = new URLSearchParams(window.location.search).get("u");
+        const userId = getUserIdOrUnknown();
         return new Promise(function (resolve, reject) {
             const version = 1;
             const payload = {
@@ -363,23 +357,6 @@ $(document).ready(function () {
                             });
                             Page.AlreadyDonatedCard.hide();
                         });
-                        // If user opted in to receive newsletter, send log message.
-                        if (
-                            localStorage !== null &&
-                            typeof localStorage !== "undefined" &&
-                            typeof localStorage.getItem === "function"
-                        ) {
-                            try {
-                                if (Boolean(localStorage.getItem("email-optin")) === true) {
-                                    if (typeof _logV2MiscEvent === "function") {
-                                        _logV2MiscEvent("newsletter_optin");
-                                    }
-                                    localStorage.removeItem("email-optin");
-                                }
-                            } catch (err) {
-                                console.warn("Failed to get localStorage e-mail opt-in preference. Err: ", err);
-                            }
-                        }
                     },
                     function onFailure() {
                         showActivationError();
@@ -524,13 +501,6 @@ $(document).ready(function () {
                                     // Extension activated, show "You're ready to go" message
                                     Page.SuccessCard.show();
                                 });
-                                // log email opt-in preference if checked
-                                const newsletterIsChecked = $("input#newsletter-synthetic-checkbox").is(":checked");
-                                if (newsletterIsChecked === true) {
-                                    if (typeof _logV2MiscEvent === "function") {
-                                        _logV2MiscEvent("newsletter_optin");
-                                    }
-                                }
                             },
                             function onFailure() {
                                 Page.InProgressSpinner.fadeOut(1000, function () {
@@ -718,13 +688,6 @@ $(document).ready(function () {
     $("button#stripe_radio").on("click", switchToStripe);
     $("button#paypal_radio").on("click", switchToPaypal);
 
-    $("input.newsletter-synthetic-checkbox").on("click", function (ev) {
-        // When 1 checkbox is ticked, update all checkboxes to that box's value.
-        $("input.newsletter-synthetic-checkbox").each(function () {
-            $(this).prop("checked", ev.target.checked);
-        });
-    });
-
     // Compute URL to send the user to after a successful payment @onPaymentSuccessURL
     const theURL = new URL(window.location);
     const queryParams = new URLSearchParams(theURL.search);
@@ -747,21 +710,6 @@ $(document).ready(function () {
             return v;
         },
         buttonClickPreCheck: async function () {
-            // if email opt in selected, stash this in localstorage.
-            const newsletterIsChecked = $("input.newsletter-synthetic-checkbox").is(":checked");
-            if (newsletterIsChecked === true) {
-                if (
-                    localStorage !== null &&
-                    typeof localStorage !== "undefined" &&
-                    typeof localStorage.setItem === "function"
-                ) {
-                    try {
-                        localStorage.setItem("email-optin", 1);
-                    } catch (err) {
-                        console.warn("Failed to set localStorage e-mail opt-in preference. Err: ", err);
-                    }
-                }
-            }
             // return true to tell PayPal to go ahead with the transaction
             if (typeof logPaymentButtonClick === "function") {
                 logPaymentButtonClick({
