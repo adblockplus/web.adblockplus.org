@@ -119,6 +119,7 @@ function getPlainSource() {
             a = "G";
         else if (
             location.pathname.length > 1
+            && typeof getLocalesIndex == "function"
             && getLocalesIndex().includes(location.pathname.split("/")[1])
             && location.pathname.split("/").length === 3
         )
