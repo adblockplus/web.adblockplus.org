@@ -312,18 +312,22 @@ function recordTracking() {
         a = a == "" ? "NA" : a; // set NA if userid isn't set
 
     // prefix MyAdBlock product tag if it's not core.
-    let prefix = "ME"
-    try {
-        const purchaseInfoObj = JSON.parse(localStorage.getItem("planinfo"));
-        if (purchaseInfoObj.plan !== null) {
-            prefix = purchaseInfoObj.plan;
-            return prefix + " X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
-        }
-    } catch(e) {
-        console.error("recordTracking: error getting purchaseinfo object", e);
-    }
 
-    return "X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a // return tracking string
+    // FIXME: Commenting out use of the `planinfo` object,
+    // since license duration is calculated on the payment server.
+    let prefix = "ME"
+    // try {
+    //     const purchaseInfoObj = JSON.parse(localStorage.getItem("planinfo"));
+    //     if (purchaseInfoObj.plan !== null) {
+    //         prefix = purchaseInfoObj.plan;
+    //         return prefix + " X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
+    //     }
+    // } catch(e) {
+    //     console.error("recordTracking: error getting purchaseinfo object", e);
+    // }
+
+    // return "X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a // return tracking string
+    return prefix + " X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a; // return premium tracking string
 };
 
 
