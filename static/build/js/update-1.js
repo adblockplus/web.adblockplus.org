@@ -520,82 +520,83 @@ ns.setupStripeCardModal = function(config)
 /* global eyeo, URLSearchParams */
 (function(doc, _, ns){
 
-var lang = doc.documentElement.lang;
-
-ns.stripeCardPayment = function stripeCardPayment(data)
-{
-  function requestIntent()
+  var lang = doc.documentElement.lang;
+  
+  ns.stripeCardPayment = function stripeCardPayment(data)
   {
-    return new Promise(function(resolve, reject)
+    function requestIntent()
     {
-      var request = new XMLHttpRequest();
-      
-      request.open("POST", data.endpoint);
-
-      request.setRequestHeader(
-        "Content-Type", 
-        "application/x-www-form-urlencoded"
-      );
-
-      request.onreadystatechange = function()
+      return new Promise(function(resolve, reject)
       {
-        if (request.readyState == XMLHttpRequest.DONE)
-          if (request.status == 200)
-            resolve(request.responseText);
-          else
-            reject(request);
-      }
-
-      var requestData = {
-        lang: lang
-      };
-
-      var dataAllowlist = [
-        "amount",
-        "type",
-        "email",
-        "custom",
-        "currency"
-      ];
-
-      _.each(dataAllowlist, function (prop) { 
-        if (data[prop])
-          requestData[prop] = data[prop];
+        var request = new XMLHttpRequest();
+        
+        request.open("POST", data.endpoint);
+  
+        request.setRequestHeader(
+          "Content-Type", 
+          "application/x-www-form-urlencoded"
+        );
+  
+        request.onreadystatechange = function()
+        {
+          if (request.readyState == XMLHttpRequest.DONE)
+            if (request.status == 200)
+              resolve(request.responseText);
+            else
+              reject(request);
+        }
+  
+        var requestData = {
+          lang: lang
+        };
+  
+        var dataAllowlist = [
+          "amount",
+          "type",
+          "email",
+          "custom",
+          "currency",
+          "tracking"
+        ];
+  
+        _.each(dataAllowlist, function (prop) { 
+          if (data[prop])
+            requestData[prop] = data[prop];
+        });
+  
+        request.send(new URLSearchParams(requestData));
       });
-
-      request.send(new URLSearchParams(requestData));
-    });
-  }
-
-  function confirmIntent(intent)
-  {
-    return new Promise(function(resolve, reject)
+    }
+  
+    function confirmIntent(intent)
     {
-      data.stripe.confirmCardPayment(intent, {
-        payment_method: {
-          card: data.card,
-          billing_details: {
-            email: data.email
-          }
-        },
-        receipt_email: data.email
-      })
-      .then(function(result)
+      return new Promise(function(resolve, reject)
       {
-        if (result.hasOwnProperty("error"))
-          reject(result.error);
-        else
-          resolve();
-      })
-      .catch(reject);  
-    });
-  }
-
-  return requestIntent()
-  .then(confirmIntent)
-};
-
-})(document, _, path("payment"));
+        data.stripe.confirmCardPayment(intent, {
+          payment_method: {
+            card: data.card,
+            billing_details: {
+              email: data.email
+            }
+          },
+          receipt_email: data.email
+        })
+        .then(function(result)
+        {
+          if (result.hasOwnProperty("error"))
+            reject(result.error);
+          else
+            resolve();
+        })
+        .catch(reject);  
+      });
+    }
+  
+    return requestIntent()
+    .then(confirmIntent)
+  };
+  
+  })(document, _, path("payment"));
 /* global eyeo, URLSearchParams */
 (function(doc, _, ns){
 
@@ -1015,6 +1016,7 @@ function onConfigLoad()
 function onFormSubmit(data)
 {
   data.custom = session;
+  data.tracking = recordTracking();
 
   if (data.provider == "paypal")
     onPayPalIntent(data);
@@ -1038,7 +1040,7 @@ function onStripeIntent(data)
 function onStripeConfirm()
 {
   var data = _.extend(
-    {custom: session},
+    {custom: session, tracking: recordTracking() },
     form.data(),
     stripeCardModal.data()    
   );
