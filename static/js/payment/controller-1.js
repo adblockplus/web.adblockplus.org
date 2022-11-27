@@ -75,7 +75,6 @@ function onConfigLoad()
 function onFormSubmit(data)
 {
   data.custom = session;
-  data.tracking = recordTracking();
 
   if (data.provider == "paypal")
     onPayPalIntent(data);
@@ -85,6 +84,8 @@ function onFormSubmit(data)
 
 function onPayPalIntent(data)
 {
+  data.item_number = recordTracking(); // payment-server tracking string
+
   if (data.frequency == "once")
     ns.paypalButtonPayment(data);
   else
@@ -93,13 +94,14 @@ function onPayPalIntent(data)
 
 function onStripeIntent(data)
 {
+  data.tracking = recordTracking();
   stripeCardModal.show(data);
 }
 
 function onStripeConfirm()
 {
   var data = _.extend(
-    {custom: session, tracking: recordTracking() },
+    { custom: session, tracking: recordTracking() },
     form.data(),
     stripeCardModal.data()    
   );
