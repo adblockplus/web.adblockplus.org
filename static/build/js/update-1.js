@@ -721,7 +721,7 @@ var DEFAULTS = {
   business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + '/premium?' + returnParams.toString(),
+  return: 'https://accounts.adblockplus.org/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1
 };
@@ -814,7 +814,7 @@ var DEFAULTS = {
   business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + '/premium?' + returnParams.toString(),
+  return: 'https://accounts.adblockplus.org/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1,
   p3: 1, // Subscription duration (N*p3)
@@ -1126,7 +1126,7 @@ function onStripeComplete()
   returnParams.append('thankyou', 1);
   returnParams.append('u', forceGetUserId());
   returnParams.append('from', 'update-1');
-  window.location.href = siteURL + '/premium?' + returnParams.toString();
+  window.location.href = 'https://accounts.adblockplus.org/premium?' + returnParams.toString();
 }
 
 function onStripeError(error)
