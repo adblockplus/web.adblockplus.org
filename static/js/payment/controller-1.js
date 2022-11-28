@@ -137,7 +137,10 @@ function onStripeComplete()
     sid: session // session id
   });
 
-  window.location.href = siteURL + "/payment-complete?" + params.toString();
+  var returnParams = new URLSearchParams(window.location.search);
+  returnParams.append('thankyou', 1);
+  returnParams.append('u', forceGetUserId());
+  window.location.href = 'https://accounts.adblockplus.org/en/premium?' + returnParams.toString();
 }
 
 function onStripeError(error)
