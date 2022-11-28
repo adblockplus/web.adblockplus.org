@@ -709,6 +709,10 @@ var paypalEnv = (
   || window.location.hostname.endsWith(".adblockplus.org")
 ) ? "live" : "test";
 
+var returnParams = new URLSearchParams(window.location.search);
+returnParams.append('thankyou', 1);
+returnParams.append('u', forceGetUserId());
+
 var DEFAULTS = {
   charset: "utf-8",
   lc: LOCALES[lang] || lang.toUpperCase(),
@@ -716,7 +720,7 @@ var DEFAULTS = {
   business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + "/payment-complete",
+  return: 'https://accounts.adblockplus.org/en/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1
 };
@@ -797,6 +801,10 @@ var paypalEnv = (
   || window.location.hostname.endsWith(".adblockplus.org")
 ) ? "live" : "test";
 
+var returnParams = new URLSearchParams(window.location.search);
+returnParams.append('thankyou', 1);
+returnParams.append('u', forceGetUserId());
+
 var DEFAULTS = {
   charset: "utf-8",
   lc: LOCALES[lang] || lang.toUpperCase(),
@@ -804,7 +812,7 @@ var DEFAULTS = {
   business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + "/payment-complete",
+  return: 'https://accounts.adblockplus.org/en/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1,
   p3: 1, // Subscription duration (N*p3)
@@ -1112,7 +1120,10 @@ function onStripeComplete()
     sid: session // session id
   });
 
-  window.location.href = siteURL + "/payment-complete?" + params.toString();
+  var returnParams = new URLSearchParams(window.location.search);
+  returnParams.append('thankyou', 1);
+  returnParams.append('u', forceGetUserId());
+  window.location.href = 'https://accounts.adblockplus.org/en/premium?' + returnParams.toString();
 }
 
 function onStripeError(error)

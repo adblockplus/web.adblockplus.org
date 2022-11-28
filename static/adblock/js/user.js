@@ -10,6 +10,18 @@ function generateUserId() {
     return result.join('') + timeSuffix;
 }
 
+/** get userId or generate and get user Id  */
+function forceGetUserId()
+{
+    let userId = getUserId();
+    if (userId) {
+        return userId;
+    } else {
+        setUserIdDiv();
+        return getUserId();
+    }
+}
+
 // Returns the adblock userid, if known
 function getUserId() {
     var _userIdOptions = [
