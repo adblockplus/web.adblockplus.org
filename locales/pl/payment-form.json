@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Ups! W związku z opłatami dodatkowymi, minimalna kwota darowizny wynosi <span>$5</span>."
+    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna jednorazowa kwota wpłaty to <span>5</span><span>$</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Ups! W związku z opłatami dodatkowymi, minimalna kwota comiesięcznej darowizny wynosi <span>$1.99</span>."
+    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna miesięczna kwota wpłaty to <span>1,99</span><span>$</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,15 +21,15 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "Przekaż <strong>jednorazową</strong> darowiznę:"
+    "message": "Dokonaj <strong>jednorazowej</strong> wpłaty:"
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "Lub <strong>comiesięczny</strong> darowizną:"
+    "message": "Lub <strong>miesięcznej</strong> wpłaty:"
   },
   "yearly-subscription-legend-1": {
     "description": "heading",
-    "message": "Lub <strong>roczną</strong> darowizną:"
+    "message": "Lub <strong>rocznej</strong> wpłaty:"
   },
   "credit-card": {
     "message": "Karty kredytowej"
@@ -62,12 +62,27 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna roczna kwota darowizny wynos <span>$5</span>."
+    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna roczna kwota wpłaty to <span>5</span><span>$</span>."
   },
   "pay-yearly": {
     "message": "Wesprzyj {amount} / rok"
   },
   "not-supported": {
     "message": "Przepraszamy, ten typ karty nie jest akceptowany."
+  },
+  "what-is-included-1-year": {
+    "message": "Super! Wpłata w wysokości <span>20</span><span>$</span> zapewnia Adblock Plus Premium na rok. Dziękujemy za wsparcie."
+  },
+  "what-is-included-x-years": {
+    "message": "Super! Wpłata <span></span><span></span>zapewnia Adblock Plus Premium na<span></span> lata. Dziękujemy za wsparcie."
+  },
+  "what-is-included-x-months": {
+    "message": "Super! Wpłata <span></span><span></span>zapewnia Adblock Plus Premium na<span></span> miesiące. Dziękujemy za wsparcie."
+  },
+  "what-is-included-monthly": {
+    "message": "Super! Miesięczna <span></span><span></span>wpłata zapewnia Adblock Plus Premium. Dziękujemy za wsparcie."
+  },
+  "what-is-included-yearly": {
+    "message": "Super! Roczna <span></span><span></span>wpłata zapewnia Adblock Plus Premium. Dziękujemy za wsparcie."
   }
 }
