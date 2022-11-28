@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Oops! Para ajudar a cobrir o pagamento das taxas, o valor mínimo para doação única é <span>$5</span>."
+    "message": "Opa! Para ajudar nas despesas, o valor mínimo de uma única contribuição é <span>US$ </span><span>5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Oops! Para ajudar a cobrir o pagamento das taxas, o valor mínimo para doação mensal é <span>$1.99</span>."
+    "message": "Opa! Para ajudar nas despesas, o valor mínimo da contribuição mensal é <span>US$ </span><span>1,99</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,15 +21,15 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "Faça uma doação <strong>única</strong> :"
+    "message": "Faça <strong>uma única</strong> contribuição:"
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "Ou defina uma doação <strong>mensal</strong> :"
+    "message": "Ou uma contribuição <strong>mensal</strong>:"
   },
   "yearly-subscription-legend-1": {
     "description": "heading",
-    "message": "Ou defina uma doação <strong>anual</strong> :"
+    "message": "Ou uma contribuição <strong>anual</strong>:"
   },
   "credit-card": {
     "message": "Cartão de crédito"
@@ -62,12 +62,27 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Ops! Para ajudar a cobrir as despesas, o valor da doação anual mínimo <span>$5</span>."
+    "message": "Opa! Para ajudar nas despesas, o valor mínimo da contribuição anual é <span>US$ </span><span>5</span>."
   },
   "pay-yearly": {
     "message": "Doe {amount} / ano"
   },
   "not-supported": {
     "message": "Desculpe, este tipo de cartão não é aceite atualmente."
+  },
+  "what-is-included-1-year": {
+    "message": "Excelente! Com a contribuição de <span>US$ </span><span>20</span>, você tem um ano do Adblock Plus Premium. Agradecemos pelo seu apoio."
+  },
+  "what-is-included-x-years": {
+    "message": "Excelente! Com a contribuição de <span></span><span></span>, você tem <span></span> anos do Adblock Plus Premium. Agradecemos pelo seu apoio."
+  },
+  "what-is-included-x-months": {
+    "message": "Excelente! Com a contribuição de <span></span><span></span>, você tem <span></span> meses do Adblock Plus Premium. Agradecemos pelo seu apoio."
+  },
+  "what-is-included-monthly": {
+    "message": "Excelente! Com a contribuição mensal de <span></span><span></span>, você tem o Adblock Plus Premium. Agradecemos pelo seu apoio."
+  },
+  "what-is-included-yearly": {
+    "message": "Excelente! Com a contribuição anual de <span></span><span></span>, você tem o Adblock Plus Premium. Agradecemos pelo seu apoio."
   }
 }

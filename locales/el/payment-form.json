@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό εφάπαξ δωρεάς είναι <span>$5</span>."
+    "message": "Ωχ! Για την κάλυψη του κόστους, το ελάχιστο ποσό εφάπαξ εισφοράς είναι <span>$</span><span>5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Προσοχή! Για την κάλυψη των εξόδων, το ελάχιστο ποσό μηνιαίας δωρεάς είναι <span>$1.99</span>."
+    "message": "Ωχ! Για την κάλυψη του κόστους, το ελάχιστο ποσό μηνιαίας εισφοράς είναι <span>$</span><span>1,99</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,14 +21,14 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "Κάντε <strong>μια εφάπαξ</strong> δωρεά:"
+    "message": "Κάντε μια <strong>εφάπαξ</strong> εισφορά:"
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "Ή μια <strong>μηνιαία</strong> δωρεά:"
+    "message": "Ή μια <strong>μηνιαία</strong> εισφορά:"
   },
   "yearly-subscription-legend-1": {
-    "message": "Ή <strong>ετήσια</strong> δωρεά:"
+    "message": "Ή μια <strong>ετήσια</strong> εισφορά:"
   },
   "credit-card": {
     "message": "Πιστωτική κάρτα"
@@ -58,7 +58,7 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Ωχ! Για την στήριξη κάλυψης των εξόδων η ελάχιστη ετήσια δωρεά είναι <span>$5</span>."
+    "message": "Ωχ! Για την κάλυψη του κόστους, το ελάχιστο ποσό ετήσιας εισφοράς είναι <span>$</span><span>5</span>."
   },
   "pay-monthly": {
     "message": "Δωρεά {amount} / μήνα"
@@ -68,5 +68,20 @@
   },
   "not-supported": {
     "message": "Λυπούμαστε, αυτός ο τύπος κάρτας δεν είναι αποδεκτός αυτήν την στιγμή."
+  },
+  "what-is-included-1-year": {
+    "message": "Πολύ ωραία! Με μια εισφορά <span>$</span><span>20</span> λαμβάνετε το Adblock Plus Premium για ένα χρόνο. Ευχαριστούμε για την υποστήριξη."
+  },
+  "what-is-included-x-years": {
+    "message": "Πολύ ωραία! Με μια εισφορά <span></span><span></span> λαμβάνετε το Adblock Plus Premium για <span></span> χρόνια. Ευχαριστούμε για την υποστήριξη."
+  },
+  "what-is-included-x-months": {
+    "message": "Πολύ ωραία! Με μια εισφορά <span></span><span></span> λαμβάνετε το Adblock Plus Premium για <span></span> μήνες. Ευχαριστούμε για την υποστήριξη."
+  },
+  "what-is-included-monthly": {
+    "message": "Πολύ ωραία! Με μια μηνιαία εισφορά <span></span><span></span> λαμβάνετε το Adblock Plus Premium. Ευχαριστούμε για την υποστήριξη."
+  },
+  "what-is-included-yearly": {
+    "message": "Πολύ ωραία! Με μια ετήσια εισφορά <span></span><span></span> λαμβάνετε το Adblock Plus Premium. Ευχαριστούμε για την υποστήριξη."
   }
 }
