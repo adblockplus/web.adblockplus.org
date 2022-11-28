@@ -46,7 +46,7 @@ var DEFAULTS = {
   business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "/img/adblock-plus-paypal.png",
-  return: siteURL + '/premium?' + returnParams.toString(),
+  return: 'https://accounts.adblockplus.org/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1
 };
