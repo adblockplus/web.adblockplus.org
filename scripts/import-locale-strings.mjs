@@ -1,47 +1,69 @@
 import { program } from 'commander';
-import { writeFileSync, readdirSync, existsSync, readFileSync } from 'fs';
+import { writeFileSync, readdirSync, existsSync, readFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
+const LOCALES = 'locales';
+const DOT = '.';
+const HTML_ATTRIBUTES_PATTERN = /(?<=<[\w]+)(\s[^>]*)/gmiu;
+
 program.requiredOption('-i, --input <path>', 'path to translations');
-
 program.parse();
+const args = program.opts();
 
-const options = program.opts();
-
-const getJSON = (path) => {
-  return JSON.parse(readFileSync(path, {encoding: 'utf-8'}));
+const openLocaleFile = (path) => {
+  if (existsSync(path)) {
+    return JSON.parse(readFileSync(path, {encoding: 'utf-8'}));
+  } else {
+    // Warning in case locale file should but doesn't exist at path (aka the new or existing path is incorrect)
+    console.warn('Creating locale file', path);
+    writeFileSync(path, JSON.stringify({}, null, 2));
+    return {};
+  }
 }
 
-const excludeHidden = (list, name) => {
+const excludeDotfiles = (list, name) => {
   if (name[0] != '.') list.push(name);
   return list;
 }
 
-const inputDirectories = readdirSync(options.input)
-.reduce(excludeHidden, []); // exclude hidden files/directories e.g. .DS_Store
-if (!inputDirectories.length) throw new Error("Didn't find locale directories in input path");
+const inputLocalePaths = readdirSync(args.input)
+.reduce(excludeDotfiles, []);
+if (!inputLocalePaths.length) throw new Error("Didn't find locale paths in input path");
 
-const outputDirectories = readdirSync('./locales')
-.reduce(excludeHidden, []); // exclude hidden files/directories e.g. .DS_Store
-if (!outputDirectories.length) throw new Error("Didn't find locale directories in project path");
+const outputLocalePaths = readdirSync('./locales')
+.reduce(excludeDotfiles, []);
+if (!outputLocalePaths.length) throw new Error("Didn't find locale paths in project path");
 
-inputDirectories.forEach(inputLocale => {
-  const outputDirectory = existsSync(join('.', 'locales', inputLocale))
-  ? inputLocale
-  : existsSync(join('.', 'locales', inputLocale.split('_')[0]))
-  ? inputLocale.split('_')[0]
-  : false;
-  if (!outputDirectory) throw new Error(`Didn't find locale ${inputLocale} from input in project`);
-  readdirSync(join(options.input, inputLocale))
-  .reduce(excludeHidden, [])
+inputLocalePaths.forEach(inputLocale => {
+  let outputLocale = inputLocale;
+  let outputPath = join(DOT, LOCALES, outputLocale);
+  if (!existsSync(outputPath)) {
+    outputLocale = outputLocale.split('_')[0];
+    outputPath = join(DOT, LOCALES, outputLocale);
+    if (!existsSync(outputPath)) {
+      console.warn('Creating locale directory', outputPath)
+      mkdirSync(outputPath);
+    }
+  }
+  readdirSync(join(args.input, inputLocale))
+  .reduce(excludeDotfiles, [])
   .forEach(inputFilePath => {
-    const inputObject = getJSON(join(options.input, inputLocale, inputFilePath));
-    const outputObject = getJSON(join('.', 'locales', outputDirectory, inputFilePath));
+    const outputPath = join(DOT, LOCALES, outputLocale, inputFilePath);
+    const inputObject = openLocaleFile(join(args.input, inputLocale, inputFilePath));
+    const outputObject = openLocaleFile(outputPath);
     Object.keys(inputObject).forEach(key => {
-      outputObject[key].message = inputObject[key];
+      let translation = inputObject[key];
+      // CAUTION: CMS only currently allows translations without HTML attributes through unescaped.
+      // HTML attributes are automatically inserted into translations if they exist in the default string.
+      if (HTML_ATTRIBUTES_PATTERN.exec(translation)) {
+        translation = translation.replaceAll(HTML_ATTRIBUTES_PATTERN, '');
+        console.warn(`Removing HTML attributes in ${outputPath}`, {before: inputObject[key], after: translation})
+      }
+      if (!outputObject[key]) outputObject[key] = {};
+      outputObject[key].message = translation;
     });
     writeFileSync(
-      join('.', 'locales', outputDirectory, inputFilePath), 
+      join(DOT, LOCALES, outputLocale, inputFilePath), 
       JSON.stringify(outputObject, null, 2)
     );
   });

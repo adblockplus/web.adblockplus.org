@@ -406,7 +406,6 @@ html {
     /* CAREFUL: These styles are duplicated above < 991px */
     position: absolute;
     top: -2.5rem;
-    left: 0;
     height: 2.5rem;
     width: 100%;
     border-top-left-radius: 6px;
@@ -420,10 +419,12 @@ html {
 
   [dir="ltr"] .premium-plan-tab-start {
     padding-left: 1rem;
+    left: 0;
   }
 
   [dir="rtl"] .premium-plan-tab-start {
     padding-right: 1rem;
+    right: 0;
   }
 
   .premium-plan-tab-separator {
@@ -552,6 +553,8 @@ html {
 /* Plan includes
  ******************************************************************************/
 
+[dir="rtl"] .premium-plan-list { text-align: right; }
+
 .premium-plan-list-preface {
   display: none;
 }
@@ -567,8 +570,15 @@ html {
   margin-right: auto;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  padding-left: 1.5rem;
   max-width: 13rem;
+}
+
+[dir="ltr"] .premium-plan-list ul {
+  padding-left: 1.5rem;
+}
+
+[dir="rtl"] .premium-plan-list ul {
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 992px) {
@@ -729,3 +739,9 @@ html {
 .premium-faq.active p {
   display: block;
 }
+
+[lang="ar"] .premium-plan-tab-end,
+[lang="fr"] .premium-plan-tab-end,
+[lang="gr"] .premium-plan-tab-end,
+[lang="hu"] .premium-plan-tab-end,
+[lang="it"] .premium-plan-tab-end { display: none; }

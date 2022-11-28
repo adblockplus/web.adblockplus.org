@@ -162,7 +162,7 @@ var Paypal = {
             }
         }
         var curr = typeof this._settings.currency === 'function' ? this._settings.currency() : "USD";
-        var itemName = typeof this._settings.itemName === 'function' ? this._settings.itemName(element) : "AdBlock";
+        var itemName = typeof this._settings.itemName === 'function' ? this._settings.itemName(element) : "Adblock Plus";
         add("item_name", itemName);
         add("cmd", isSub ? "_xclick-subscriptions" : "_xclick");
         add("currency_code", curr);
@@ -183,7 +183,7 @@ var Paypal = {
         var typ = "";
         typ = validateThankYouPage(this._settings.thankYouPage);
         add("return", typ.url + "?u=" + getUserIdOrUnknown() + queryString(typ.queryParams));
-        add("cbt", "Return to AdBlock");
+        add("cbt", "Return to Adblock Plus");
         add("item_number", recordTracking());
         add("custom", getPurchaseMetadata('PayPal', this.testmode));
         var image_url = "https://adblockplus.org/img/adblock-plus-logo-paypal.png";
@@ -203,7 +203,7 @@ To use:
 StripeAB.init(settings); // must be called 1st.  Makes the button respond to clicks.
 
 When thePaymentButton is clicked, a payment to Stripe will be made via the
-AdBlock payment server.  settings.onSuccess(new_order_id) will be called when
+Adblock payment server.  settings.onSuccess(new_order_id) will be called when
 it succeeds.  If you then request an email address from the user, once you have
 it you can call:
 */
@@ -231,7 +231,7 @@ var StripeAB = {
     //       => If !chargeResult.success => "https://getadblock.com/thanks.php?u=" + that.DATA.userid;
     //       => Else => "https://getadblock.com/thanks.php?u=" + that.DATA.userid + "&o=" + chargeResult.charge_id;
     // Needed properties:
-    //   userid - string: AdBlock userid, access right before submitting purchase using
+    //   userid - string: Adblock userid, access right before submitting purchase using
     //     getUserId()
     init: function (settings) {
         this.DATA = {
@@ -285,9 +285,9 @@ var StripeAB = {
             _logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, buttonType, that._recurring(), that._getSubType());
 
             if (buttonType === "Stripe") {
-                var name = 'AdBlock';
+                var name = 'Adblock Plus';
                 if (typeof isPremium === "function" && isPremium()) {
-                    name = 'AdBlock Premium';
+                    name = 'Adblock Plus Premium';
                 }
                 var obj = {
                     name: name,
@@ -741,7 +741,7 @@ To use:
 StripeSource.init(settings); // must be called 1st.  Makes the button respond to clicks.
 
 When thePaymentButton is clicked, a payment to Stripe will be made via the
-AdBlock payment server.  settings.onSuccess(new_order_id) will be called when
+Adblock payment server.  settings.onSuccess(new_order_id) will be called when
 it succeeds.  If you then request an email address from the user, once you have
 it you can call:
 */
@@ -756,7 +756,7 @@ var StripeSource = {
     //     might hide the buttons and show an email request form at this point.
     //   testmode? - bool: true if Stripe testmode, defaults to false
     // Needed properties:
-    //   userid - string: AdBlock userid, access right before submitting purchase using
+    //   userid - string: Adblock userid, access right before submitting purchase using
     //     getUserId()
     init: function (settings) {
         this.DATA = {
@@ -866,8 +866,8 @@ var StripePaymentRequestAPI = {
             charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges",
         };
         var AUX_TEST = {
-            key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", // AdBlock's test key
-            charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges", // AdBlock's test charge url
+            key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN", // Adblock's test key
+            charge_url: "https://abp-payments.ey.r.appspot.com/stripe/charges", // Adblock's test charge url
         };
 
         this.AUX = (settings.testmode ? AUX_TEST : AUX_LIVE);

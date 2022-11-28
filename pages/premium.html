@@ -18,8 +18,6 @@ unadblock=1
   <script src="/adblock/js/user.js"></script>
   <script src="/adblock/js/currency.js"></script>
   <script src="/adblock/js/experiment.js"></script>
-  <script src="/adblock/i18n/localesIndex.js"></script>
-  <script src="/adblock/i18n/i18n.js"></script>
 </head>
 
 <main class="premium-page">
@@ -236,7 +234,7 @@ unadblock=1
       <section class="premium-faq">
         <h3>
           <a class="premium-faq-question">
-            {{ s26 How do I upgrade to Adblock Plus? }}
+            {{ s26 How do I upgrade to Adblock Plus Premium? }}
           </a>
         </h3>
         <p class="content">
@@ -297,14 +295,14 @@ unadblock=1
               <span i18n="amount_per_year" id="yearly-amount" style="display: none"></span>
               <div class="selected-check"><i class="material-icons-outlined">done</i></div>
               <span id="yearly-rate" class="amount-text" i18n="slash_yr" i18n_replacement_text="$19.99">
-                {{ amount-monthly $19.99/yr }}
+                {{ amount-yearly $19.99/yr }}
               </span>
             </button>
             <button id="r_monthly" class="option" data-amount="1.99" data-recurring-frequency="monthly">
               <span i18n="amount_per_month" id="monthly-amount" style="display: none"></span>
               <div class="selected-check"><i class="material-icons-outlined">done</i></div>
               <span id="monthly-rate" class="amount-text" i18n="slash_mo" i18n_replacement_text="$1.99">
-                {{ amount-yearly $1.99/mo }}
+                {{ amount-monthly $1.99/mo }}
               </span>
             </button>
           </div><!-- #amount_select_row -->
@@ -319,10 +317,10 @@ unadblock=1
         </div><!-- #choose-plans -->
 
         <div id="pmt-success-left" class="step" style="width: 44%; display: none">
-          <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px">
-          <button class="get-started-with-myadblock" i18n="get_started_premium">
+          <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="padding: 68px 0">
+          <a href="https://help.eyeo.com/en/adblockplus/getting-started-with-adblock-plus-premium" class="get-started-with-myadblock" i18n="get_started_premium">
             {{ get_started_premium Get started with Adblock Plus Premium }}
-          </button>
+          </a>
         </div><!-- #pmt-success-left -->
 
         <div id="choose-payment-type" class="column">
@@ -392,7 +390,7 @@ unadblock=1
 
                   <ul class="no-bullet">
                     <li>
-                      {{ s37 Adblock Plus Premium: <span class="amount-with-currency">$1.99</span><span class="recurring-frequency">monthly</span> }}
+                      {{ s37 Adblock Plus Premium: <span class="amount-with-currency">$1.99</span> <span class="recurring-frequency">monthly</span> }}
                     </li>
                   </ul>
                   <div class="hr hr-thin"></div>
@@ -667,9 +665,9 @@ unadblock=1
                     </span>
                   </div>
                   <div class="row">
-                    <button class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta" style="margin-bottom: 0px">
+                    <a href="https://help.eyeo.com/en/adblockplus/getting-started-with-adblock-plus-premium" class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta" style="margin-bottom: 0px">
                       {{ get_started_cta Get Started }}
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

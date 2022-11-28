@@ -75,7 +75,7 @@ $(document).ready(function () {
     });
 
     $("#already-donated").on("click", function () {
-        // "I've donated to AdBlock before..."
+        // "I've donated to Adblock before..."
         resetAlreadyDonatedActivity();
         $("#pay").hide();
         $("#already-donated-activity").show();
@@ -152,14 +152,14 @@ $(document).ready(function () {
     var currentProcessor = "stripe";
 
     // translate the page
-    chrome.i18n._initialize("en", "/adblock/i18n/_locales/", function() {
-        if (typeof localizePage === "function") {
-            initializePaymentBox(localizePage);
-        }
-        // TODO - bit of a hack, right now this translated string is not replacing the specified
-        // email text -- this updates the email text to match the actual href.
-        $(".helpdesk-email").text("support@getadblock.com");
-    });
+    // chrome.i18n._initialize("en", "/adblock/i18n/_locales/", function() {
+    //     if (typeof localizePage === "function") {
+    //         initializePaymentBox(localizePage);
+    //     }
+    //     // TODO - bit of a hack, right now this translated string is not replacing the specified
+    //     // email text -- this updates the email text to match the actual href.
+    //     $(".helpdesk-email").text("support@getadblock.com");
+    // });
 
     function initializePaymentBox(callback) {
         var firstCurrency = "USD";
@@ -190,6 +190,8 @@ $(document).ready(function () {
         changeCurrencySymbolAndAmounts(firstCurrency);
         callback();
     }
+
+    initializePaymentBox(function(){});
 
     function updateCurrency(newCurrency) {
         // changeCurrencySymbolAndAmounts(newCurrency.toLowerCase(), true);
@@ -721,7 +723,7 @@ $(document).ready(function () {
             return true;
         },
         itemName: function () {
-            return "AdBlock Premium";
+            return "Adblock Plus Premium";
         },
         recurring: isRecurring,
         subType: getSubType,

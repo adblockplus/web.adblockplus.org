@@ -1,12 +1,12 @@
 var _ADBLOCK_PROPER = "A";
 var _ADBLOCK_PREMIUM = "P";
-var abLogV2Url = "https://log.getadblock.com/v2/record_log.php";
-if (document.location.hostname !== undefined) {
-    if (document.location.hostname === "localhost" ||
-        (/^dev/).test(document.location.hostname) === true) {
-        abLogV2Url = "http://dev.log.getadblock.com/v2/record_log.php";
-    }
-}
+// var abLogV2Url = "https://log.getadblock.com/v2/record_log.php";
+// if (document.location.hostname !== undefined) {
+//     if (document.location.hostname === "localhost" ||
+//         (/^dev/).test(document.location.hostname) === true) {
+//         abLogV2Url = "http://dev.log.getadblock.com/v2/record_log.php";
+//     }
+// }
 
 _logV2Message = function(event, params, callback) {
     // Add basic params: userid, flavor, and os
@@ -25,22 +25,24 @@ _logV2Message = function(event, params, callback) {
             params['psess'] = getPremiumSession();
         }
     }
+
+    eyeo.log(event, params).finally(callback);
     
-    var payload = {'event':  event, 'payload': params};
+    // var payload = {'event':  event, 'payload': params};
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("post", abLogV2Url, true);
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("post", abLogV2Url, true);
 
-    if (typeof callback === "function") {
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                if (typeof callback === "function") {
-                    callback(xhr);
-                }
-            }
-        }
-    }
-    xhr.send(JSON.stringify(payload));
+    // if (typeof callback === "function") {
+    //     xhr.onreadystatechange = function() {
+    //         if (xhr.readyState === 4) {
+    //             if (typeof callback === "function") {
+    //                 callback(xhr);
+    //             }
+    //         }
+    //     }
+    // }
+    // xhr.send(JSON.stringify(payload));
 }
 
 _logV2DownloadButtonClick = function(extension, loc) {
