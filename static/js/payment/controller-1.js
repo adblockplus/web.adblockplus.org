@@ -141,7 +141,7 @@ function onStripeComplete()
   returnParams.append('thankyou', 1);
   returnParams.append('u', forceGetUserId());
   returnParams.append('from', 'update-1');
-  window.location.href = siteURL + '/premium?' + returnParams.toString();
+  window.location.href = 'https://accounts.adblockplus.org/premium?' + returnParams.toString();
 }
 
 function onStripeError(error)
