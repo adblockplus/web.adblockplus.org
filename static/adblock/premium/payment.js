@@ -580,6 +580,9 @@ $(document).ready(function () {
 
     // updates the "yearly / monthly" plan text at bottom of pmt form.
     function updatePlanText() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('from') == 'update-1')
+            $('.premium-success-details').hide();
         const amount = $("button.option.selected").attr("data-amount");
         const prevSelectedCurrency = localStorage.getItem("selectedCurrency");
         if (document.location.search.match(/thankyou/)) {
