@@ -712,6 +712,7 @@ var paypalEnv = (
 var returnParams = new URLSearchParams(window.location.search);
 returnParams.append('thankyou', 1);
 returnParams.append('u', forceGetUserId());
+returnParams.append('from', 'update-1');
 
 var DEFAULTS = {
   charset: "utf-8",
@@ -720,7 +721,7 @@ var DEFAULTS = {
   business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: 'https://accounts.adblockplus.org/en/premium?' + returnParams.toString(),
+  return: siteURL + '/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1
 };
@@ -804,6 +805,7 @@ var paypalEnv = (
 var returnParams = new URLSearchParams(window.location.search);
 returnParams.append('thankyou', 1);
 returnParams.append('u', forceGetUserId());
+returnParams.append('from', 'update-1');
 
 var DEFAULTS = {
   charset: "utf-8",
@@ -812,7 +814,7 @@ var DEFAULTS = {
   business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: 'https://accounts.adblockplus.org/en/premium?' + returnParams.toString(),
+  return: siteURL + '/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1,
   p3: 1, // Subscription duration (N*p3)
@@ -1123,7 +1125,8 @@ function onStripeComplete()
   var returnParams = new URLSearchParams(window.location.search);
   returnParams.append('thankyou', 1);
   returnParams.append('u', forceGetUserId());
-  window.location.href = 'https://accounts.adblockplus.org/en/premium?' + returnParams.toString();
+  returnParams.append('from', 'update-1');
+  window.location.href = siteURL + '/premium?' + returnParams.toString();
 }
 
 function onStripeError(error)
