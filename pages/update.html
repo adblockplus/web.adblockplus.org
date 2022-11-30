@@ -4,7 +4,7 @@ robots=none
 template=bare
 
 <head>
-  <link rel="stylesheet" href="build/css/update-1.min.css">
+  <link rel="stylesheet" href="build/css/update.min.css">
   <script>
     path("payment", {
       pageId: 2,
@@ -26,7 +26,7 @@ template=bare
   <p>
     {{ update-lead-2 We devote a lot of time and resources into developing and securing the best online experience for our users. Please contribute what you think is a fair amount to the Adblock Plus project and our attempts to keep the ad-blocking community alive. <strong>Every contribution is appreciated!</strong> }}
   </p>
-  <? include payment/form-1 ?>
+  <? include payment/form ?>
   <h2>
     {{ whats-new-header-1 What’s new? }}
   </h2>
@@ -61,4 +61,4 @@ template=bare
 </footer>
 
 <script src="https://js.stripe.com/v3/"></script>
-<script src="/build/js/update-1.min.js"></script>
+<script src="/build/js/update.min.js"></script>

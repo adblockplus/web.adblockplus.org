@@ -138,7 +138,6 @@ ns.setupForm = function(_config)
   var $currency = doc.getElementById("payment-currency");
   var $frequencies = doc.getElementById("payment-frequencies");
   var $frequency = doc.getElementById("payment-frequency"); 
-  var $providers = doc.getElementById("payment-providers");
   var $buttons = doc.getElementById("payment-buttons");
   var $error = doc.getElementById("payment-error");
 
@@ -223,25 +222,19 @@ ns.setupForm = function(_config)
     }      
   });
 
-  // Toggle submit button according to provider radio
-  $providers.addEventListener("change", function(event)
-  {
-    // Provider button display is set by parent [data-provider] in css
-    $buttons.dataset.provider = event.target.value;
-  });
-
-  $form.addEventListener("submit", function(event)
-  {
+  $buttons.addEventListener("click", function(event) {
     event.preventDefault();
-    
-    var data = api.data();
-
+    var data;
+    if (event.target.classList.contains('paypal-button'))
+      data = api.data('paypal');
+    else if (event.target.classList.contains('stripe-button'))
+      data = api.data('stripe');
     _.each(submitCallbacks, function(callback)
     {
       callback(data);
-    });
+    });  
   });
-  
+
   // PUBLIC API ////////////////////////////////////////////////////////////////
 
   var api = {};
@@ -253,7 +246,7 @@ ns.setupForm = function(_config)
     submitCallbacks.push(callback);
   }
 
-  api.data = function()
+  api.data = function(privider)
   {
     var formData = new FormData($form);
 
@@ -270,7 +263,7 @@ ns.setupForm = function(_config)
       currency: currency,
       frequency: formData.get("frequency"),
       amount: amount,
-      provider: formData.get("provider"),
+      provider: privider,
       sign: CURRENCY_CONFIG[currency].sign
     }
   }
