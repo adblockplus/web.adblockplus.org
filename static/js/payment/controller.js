@@ -99,7 +99,7 @@ function onStripeConfirm()
 {
   var data = _.extend(
     {custom: session},
-    form.data(),
+    form.data("stripe"),
     stripeCardModal.data()    
   );
 

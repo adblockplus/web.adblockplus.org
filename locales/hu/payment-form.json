@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Hoppá! A kezelési költségek fedezésére az egyszeri adomány minimum összege <span>$5</span>."
+    "message": "Hoppá! A kezelési költségek miatt <span></span><span>5</span> dollár az egyszeri hozzájárulás minimális összege."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Hoppá! A kezelési költségek fedezésére a havi rendszeres adomány minimum összege <span>$1.99</span>."
+    "message": "Hoppá! A kezelési költségek miatt <span></span><span>1,99</span> dollár a havi hozzájárulás minimális összege."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,15 +21,15 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "Küldjön <strong>egyszeri</strong> adományt:"
+    "message": "<strong>Egyszeri</strong> hozzájárulás:"
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "Vagy <strong>havi rendszeres</strong> adományt:"
+    "message": "Vagy <strong>havi</strong> hozzájárulás:"
   },
   "yearly-subscription-legend-1": {
     "description": "heading",
-    "message": "Vagy <strong>évenkénti</strong> adományt:"
+    "message": "Vagy <strong>éves</strong> hozzájárulás:"
   },
   "credit-card": {
     "message": "Bankkártya"
@@ -62,12 +62,27 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Hoppá! A díjak fedezete érdekében a minimális éves adomány értéke <span>$5</span>."
+    "message": "Hoppá! A kezelési költségek miatt <span></span><span>5</span> dollár az éves hozzájárulás minimális összege."
   },
   "pay-yearly": {
     "message": "{amount} adomány év"
   },
   "not-supported": {
     "message": "Elnézést, ez a kártyatípus jelenleg nem támogatott."
+  },
+  "what-is-included-1-year": {
+    "message": "Nagyszerű! Egy <span></span><span>20$</span> értékű hozzájárulás esetén egy évig használhatja az Adblock Plus Premium szoftvert. Köszönjük a támogatását."
+  },
+  "what-is-included-x-years": {
+    "message": "Nagyszerű! Egy <span></span><span></span> értékű hozzájárulás esetén <span></span> évig használhatja az Adblock Plus Premium szoftvert. Köszönjük a támogatását."
+  },
+  "what-is-included-x-months": {
+    "message": "Nagyszerű! Egy <span></span><span></span> értékű hozzájárulás esetén <span></span> hónapig használhatja az Adblock Plus Premium szoftvert. Köszönjük a támogatását."
+  },
+  "what-is-included-monthly": {
+    "message": "Nagyszerű! Egy havi <span></span><span></span> értékű hozzájárulás esetén megszerzi az Adblock Plus Premium szoftver használati jogát. Köszönjük a támogatását."
+  },
+  "what-is-included-yearly": {
+    "message": "Nagyszerű! Egy évi <span></span><span></span> értékű hozzájárulás esetén megszerzi az Adblock Plus Premium szoftver használati jogát. Köszönjük a támogatását."
   }
 }

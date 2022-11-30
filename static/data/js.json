@@ -29,6 +29,23 @@
     ],
     "output_name": "update"
   },
+  "update_page_1": {
+    "js_files": [
+      "static/js/vendor/url-search-params.min.js",
+      "static/js/vendor/lodash.custom.min.js",
+      "static/adblock/js/user.js",
+      "static/js/payment/form-1.js",
+      "static//js/payment/stripe/card-modal.js",
+      "static//js/payment/stripe/card-payment-1.js",
+      "static//js/payment/stripe/card-subscription-1.js",
+      "static//js/payment/paypal/button-payment-1.js",
+      "static//js/payment/paypal/button-subscription-1.js",
+      "static//js/payment/session.js",
+      "static//js/payment/controller-1.js",
+      "static/js/address-masking.js"
+    ],
+    "output_name": "update-1"
+  },
   "donate_page": {
     "js_files": [
       "static/js/vendor/url-search-params.min.js",

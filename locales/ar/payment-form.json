@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "عفوًا! للمساعدة في تغطية التكاليف، الحد الأدنى للتبرّع لمرة واحدة هو <span>$5</span>."
+    "message": "عذرًا! للمساعدة في تغطية التكاليف، الحد الأدنى لمبلغ المساهمة لمرة واحدة هو <span></span><span>5 دولارات أمريكية</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "عفوًا! للمساعدة في تغطية التكاليف، الحد الأدنى للتبرّع الشهري هو <span>$1.99</span>."
+    "message": "عذرًا! للمساعدة في تغطية التكاليف، الحد الأدنى لمبلغ المساهمة الشهرية هو <span></span><span>1.99 دولار أمريكي</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,15 +21,15 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "تبرّع <strong>لمرة واحدة فقط</strong>:"
+    "message": "قدّم مساهمة <strong>لمرة واحدة</strong>:"
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "أو <strong>تبرّع</strong> بشكل شهري:"
+    "message": "أو مساهمة <strong>شهرية</strong>:"
   },
   "yearly-subscription-legend-1": {
     "description": "heading",
-    "message": "أو تبرّع <strong>سنوي</strong>:"
+    "message": "أو مساهمة <strong>سنوية</strong>:"
   },
   "credit-card": {
     "message": "بطاقة إئتمان"
@@ -59,7 +59,7 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "عذرًا! للمساعدة في تغطية الرسوم، يبلغ الحد الأدنى لمبلغ التبرّع السنوي <span>$5</span>."
+    "message": "عذرًا! للمساعدة في تغطية التكاليف، الحد الأدنى لمبلغ المساهمة السنوية هو <span></span><span>5 دولارات أمريكية</span>."
   },
   "pay-monthly": {
     "message": "تبرع بمبلغ {amount} / الشهر"
@@ -69,5 +69,20 @@
   },
   "not-supported": {
     "message": "عذرًا، هذا النوع من البطاقات غير مقبول حاليًا."
+  },
+  "what-is-included-1-year": {
+    "message": "رائع! بتقديم مساهمة بقيمة <span></span><span>20 دولارًا أمريكيًا</span> تحصل على Adblock Plus Premium لمدة سنة. شكرًا لك على دعمك."
+  },
+  "what-is-included-x-years": {
+    "message": "رائع! بتقديم مساهمة بقيمة <span></span><span></span> تحصل على Adblock Plus Premium لمدة <span></span> من السنوات. شكرًا لك على دعمك."
+  },
+  "what-is-included-x-months": {
+    "message": "رائع! بتقديم مساهمة بقيمة <span></span><span></span> تحصل على Adblock Plus Premium لمدة <span></span> من الشهور. شكرًا لك على دعمك."
+  },
+  "what-is-included-monthly": {
+    "message": "رائع! بتقديم مساهمة شهرية بقيمة <span></span><span></span> تحصل على Adblock Plus Premium. شكرًا لك على دعمك."
+  },
+  "what-is-included-yearly": {
+    "message": "رائع! بتقديم مساهمة سنوية بقيمة <span></span><span></span> تحصل على Adblock Plus Premium. شكرًا لك على دعمك."
   }
 }

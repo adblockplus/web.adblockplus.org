@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Oeps! De minimale eenmalige donatiebijdrage om kosten te dekken is <span>$5</span>."
+    "message": "Oeps! Om de kosten te dekken, is de minimale eenmalige bijdrage <span>$</span><span> 5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Oeps! De minimale maandelijkse donatiebijdrage om kosten te dekken is <span>$1.99</span>."
+    "message": "Oeps! Om de kosten te dekken, is de minimale maandelijkse bijdrage <span>$</span><span> 1,99</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,15 +21,15 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "Doe een <strong>eenmalige</strong> donatie:"
+    "message": "Doe een <strong>eenmalige</strong> bijdrage:"
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "Of een <strong>maandelijkse</strong> donatie:"
+    "message": "Of een <strong>maandelijkse</strong> bijdrage:"
   },
   "yearly-subscription-legend-1": {
     "description": "heading",
-    "message": "Of een <strong>jaarlijkse</strong> donatie:"
+    "message": "Of een <strong>jaarlijkse</strong> bijdrage:"
   },
   "credit-card": {
     "message": "Creditcard"
@@ -62,12 +62,27 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Oeps! Om de kosten te helpen dekken is het minimale jaarlijkse donatiebedra <span>$5</span>."
+    "message": "Oeps! Om de kosten te dekken, is de minimale jaarlijkse bijdrage <span>$</span><span> 5</span>."
   },
   "pay-yearly": {
     "message": "Doneer {amount} / per jaar"
   },
   "not-supported": {
     "message": "Sorry, dit type creditcard wordt momenteel niet geaccepteerd."
+  },
+  "what-is-included-1-year": {
+    "message": "Geweldig! Met een bijdrage van <span>$</span><span> 20</span> ontvangt u Adblock Plus Premium voor een jaar. Hartelijk dank voor uw steun."
+  },
+  "what-is-included-x-years": {
+    "message": "Geweldig! Met een bijdrage van <span></span><span></span> ontvangt u Adblock Plus Premium voor <span></span> jaar. Hartelijk dank voor uw steun."
+  },
+  "what-is-included-x-months": {
+    "message": "Geweldig! Met een bijdrage van <span></span><span></span> ontvangt u Adblock Plus Premium voor <span></span> maanden. Hartelijk dank voor uw steun."
+  },
+  "what-is-included-monthly": {
+    "message": "Geweldig! Met een maandelijkse bijdrage van <span></span><span></span> ontvangt u Adblock Plus Premium. Hartelijk dank voor uw steun."
+  },
+  "what-is-included-yearly": {
+    "message": "Geweldig! Met een jaarlijkse bijdrage van <span></span><span></span> ontvangt u Adblock Plus Premium. Hartelijk dank voor uw steun."
   }
 }
