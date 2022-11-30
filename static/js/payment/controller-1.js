@@ -102,7 +102,7 @@ function onStripeConfirm()
 {
   var data = _.extend(
     { custom: session, tracking: recordTracking() },
-    form.data(),
+    form.data("stripe"),
     stripeCardModal.data()    
   );
 

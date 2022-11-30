@@ -860,7 +860,7 @@ ns.setupStripeCardModal = function(config)
       return api.showError(i18n.error_card_brand);
     }
 
-    var data = api.data();
+    var data = api.data("stripe");
 
     $form.classList.add("is-submitting");
     $submit.disabled = true;
@@ -1548,7 +1548,7 @@ function onStripeConfirm()
 {
   var data = _.extend(
     { custom: session, tracking: recordTracking() },
-    form.data(),
+    form.data("stripe"),
     stripeCardModal.data()    
   );
 
