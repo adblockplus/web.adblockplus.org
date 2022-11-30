@@ -557,7 +557,7 @@ var CURRENCY_CONFIG = {
       minimum: 150
     }
   }
-}
+};
 
 /* Set VARIANT_CONFIG[CURRENCY][(once|monthly|yearly)] from DEFAULTS.USD
  * Except copy yearly values from once values
@@ -739,16 +739,20 @@ ns.setupForm = function(_config)
 
   $buttons.addEventListener("click", function(event) {
     event.preventDefault();
+    var target = event.target.classList.contains('paypal-button')
+      ? "paypal"
+      : event.target.classList.contains('stripe-button')
+      ? "stripe"
+      : false;
     var data;
-    if (event.target.classList.contains('paypal-button'))
-      data = api.data('paypal');
-    else if (event.target.classList.contains('stripe-button'))
-      data = api.data('stripe');
-    _.each(submitCallbacks, function(callback)
-    {
-      callback(data);
-    });  
-  });
+    if (target) {
+      data = api.data(target);
+      _.each(submitCallbacks, function(callback)
+      {
+        callback(data);
+      });
+    }
+});
 
   // PUBLIC API ////////////////////////////////////////////////////////////////
 

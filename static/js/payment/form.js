@@ -53,7 +53,7 @@
         minimum: 150
       }
     }
-  }
+  };
   
   /* Set VARIANT_CONFIG[CURRENCY][(once|monthly|yearly)] from DEFAULTS.USD
    * Except copy yearly values from once values
@@ -167,10 +167,8 @@
       // Custom amount input data-radio points at it's sibling radio
       if ("radio" in event.target.dataset)
       {
-        // Check custom amount radio button on custom amount text input focus
-        if (typeof document.body.dispatchEvent === 'function') {
-          doc.getElementById(event.target.dataset.radio).dispatchEvent(new MouseEvent('click'));
-        }
+      // Click respective radio btn to trigger update of frequencies
+      doc.getElementById(event.target.dataset.radio).click();
   
         // Re-show min custom amount error if custom amount is below min
         validateCustomAmount(event.target);
@@ -179,15 +177,19 @@
   
     $buttons.addEventListener("click", function(event) {
       event.preventDefault();
+      var target = event.target.classList.contains('paypal-button')
+        ? "paypal"
+        : event.target.classList.contains('stripe-button')
+        ? "stripe"
+        : false;
       var data;
-      if (event.target.classList.contains('paypal-button'))
-        data = api.data('paypal');
-      else if (event.target.classList.contains('stripe-button'))
-        data = api.data('stripe');
-      _.each(submitCallbacks, function(callback)
-      {
-        callback(data);
-      });  
+      if (target) {
+        data = api.data(target);
+        _.each(submitCallbacks, function(callback)
+        {
+          callback(data);
+        });
+      }
     });
   
     // PUBLIC API ////////////////////////////////////////////////////////////////
