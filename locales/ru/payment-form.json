@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "Упс! С учетом комиссии минимальная сумма разового вклада составляет <span></span><span>5</span> долларов."
+    "message": "Ой! С учетом накладных расходов, минимальная сумма однократного пожертвования составляет <span>$5</span>."
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "Упс! С учетом комиссии минимальная сумма ежемесячного вклада составляет <span></span><span>1,99</span> доллара."
+    "message": "Ой! С учетом накладных расходов, минимальная сумма ежемесячного пожертвования составляет <span>$1.99</span>."
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,15 +21,15 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "Сделать <strong>разовый</strong> вклад:"
+    "message": "Сделать <strong>однократное</strong> пожертвование:"
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "Или <strong>ежемесячный</strong> вклад:"
+    "message": "Или <strong>ежемесячное</strong> пожертвование:"
   },
   "yearly-subscription-legend-1": {
     "description": "heading",
-    "message": "Или <strong>ежегодный</strong> вклад:"
+    "message": "Или <strong>ежегодное</strong> пожертвование:"
   },
   "credit-card": {
     "message": "Кредитной карты"
@@ -62,27 +62,12 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "Упс! С учетом комиссии минимальная сумма ежегодного вклада составляет <span></span><span>5</span> долларов."
+    "message": "Упс! Ввиду применимых комиссий минимальная сумма ежегодного пожертвования составляет <span>$5</span>."
   },
   "pay-yearly": {
     "message": "Жертвовать {amount} / год"
   },
   "not-supported": {
     "message": "Извините, данный тип карт в настоящее время не принимается."
-  },
-  "what-is-included-1-year": {
-    "message": "Отлично! Сделав вклад в размере <span></span><span>20</span> долларов, вы получите подписку на Adblock Plus Premium на один год. Благодарим вас за поддержку."
-  },
-  "what-is-included-x-years": {
-    "message": "Отлично! Сделав вклад в размере<span></span><span></span>, вы получите подписку на Adblock Plus Premium на <span></span> лет. Благодарим вас за поддержку."
-  },
-  "what-is-included-x-months": {
-    "message": "Отлично! Сделав вклад в размере<span></span><span></span>, вы получите подписку на Adblock Plus Premium на <span></span> месяцев. Благодарим вас за поддержку."
-  },
-  "what-is-included-monthly": {
-    "message": "Отлично! Вы получите подписку на Adblock Plus Premium, делая вклад в размере <span></span><span></span> ежемесячно. Благодарим вас за поддержку."
-  },
-  "what-is-included-yearly": {
-    "message": "Отлично! Вы получите подписку на Adblock Plus Premium, делая вклад в размере <span></span><span></span> ежегодно. Благодарим вас за поддержку."
   }
 }
