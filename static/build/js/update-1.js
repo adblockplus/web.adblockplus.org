@@ -358,34 +358,35 @@ function setUserIdDiv() {
     document.body.appendChild(newDiv);
 }
 
+var MABTracking = {
+    /** A Tracking.Id is made of space separated Sections */
+    Id: function(sections) {
+        // Filter out empty sections and join by space
+        return sections.reduce(function(sections, section) {
+            if (section) sections.push(section);
+            return sections;
+        }, []).join(" ");
+    },
+    /** A Tracking.Section is made of server side allowlisted values */
+    Section: function(values) {
+        // Allowlisted values are always the same length when the length matters
+        return values.join("");
+    }
+};
+
 // Builds tracking information
 // TODO name this something better
 function recordTracking() {
-    var x = "0";
-    var g = "0";
-    if (typeof _experiment !== 'undefined' && _experiment.isExperimentRunning("*")) {
-      x = _experiment.xNumber("*");
-      g = _experiment.variantIndex("*") + 1;
-    }
-    var a = getUserId(),
-        a = a == "" ? "NA" : a; // set NA if userid isn't set
-
-    // prefix MyAdBlock product tag if it's not core.
-    let prefix = "ME"
-    try {
-        const purchaseInfoObj = JSON.parse(localStorage.getItem("planinfo"));
-        if (purchaseInfoObj.plan !== null) {
-            prefix = purchaseInfoObj.plan;
-            return prefix + " X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
-        }
-    } catch(e) {
-        console.error("recordTracking: error getting purchaseinfo object", e);
-    }
-
-    return "X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a // return tracking string
-};
-
-
+    // Adblock Plus is not yet integrating with AdBlock experiments
+    var experimentId = "0";
+    var experimentVariant = "0";
+    return MABTracking.Id([
+        MABTracking.Section([eyeo.payment.productId]),
+        MABTracking.Section(["X", experimentId, "G", experimentVariant]),
+        MABTracking.Section([getBrowser(), getOS(), getSource()]),
+        MABTracking.Section([forceGetUserId()])
+    ]);
+}
 
 function getGAID() {
     if (typeof ga !== 'undefined' && typeof ga.getByName === 'function') {
