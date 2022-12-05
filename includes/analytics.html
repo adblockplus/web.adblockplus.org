@@ -6,7 +6,6 @@ if (['installed', 'premium', 'manage'].indexOf(document.documentElement.dataset.
 var eyeo = window.eyeo = (window.eyeo || {});
 var CLIENT_ID = 'b';
 var SERVICE_URL = "https://europe-west1-abp-log-service.cloudfunctions.net/log";
-var events = [];
 
 var ALPHANUM = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var uid = eyeo.uid = function() {
@@ -26,12 +25,8 @@ var log = eyeo.log = function (_event, payload) {
       event: _event,
       payload: payload
     };
-    events.push(event);
     var request = new XMLHttpRequest();
-    request.addEventListener('load', function () {
-      event.recieved = true;
-      resolve();
-    });
+    request.addEventListener('load', resolve);
     request.addEventListener('error', reject);
     request.addEventListener('abort', reject);
     request.open('POST', SERVICE_URL);
