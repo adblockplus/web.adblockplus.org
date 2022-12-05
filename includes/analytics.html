@@ -4,6 +4,11 @@
 if (['installed', 'premium', 'manage'].indexOf(document.documentElement.dataset.page) == -1) return;
 
 var eyeo = window.eyeo = (window.eyeo || {});
+
+var beaconPayload = {
+  browserAccessTime: parseInt(performance.now(), 10),
+};
+
 var CLIENT_ID = 'b';
 var SERVICE_URL = "https://europe-west1-abp-log-service.cloudfunctions.net/log";
 
@@ -32,6 +37,28 @@ function makeLogEntry(event, payload) {
   return JSON.stringify(entry);
 }
 
+/** 
+ * Assign data to "beacon" event log entry
+ * 
+ * "beacon" events are special in that they are sent via sendBeacon on 
+ * "visibilitychange". sendBeacon POSTS data async even if the tab is closing
+ * without preventing the tab from closing. "visibilitychange" occurs when a 
+ * user navigates to a new page, switches tabs, closes a tab, minimizes or 
+ * closes the browser, or switches apps on mobile operating systems.
+ * 
+ * @param {object} data
+ */
+ var beacon = eyeo.beacon = function(data) {
+  Object.assign(beaconPayload, data);
+}
+
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState == 'hidden') {
+    beaconPayload.browserBeaconTime = parseInt(performance.now(), 10);
+    navigator.sendBeacon(SERVICE_URL, makeLogEntry("beacon", beaconPayload));
+  }
+});
+
 /**
  * Log an event with a payload to log-service
  * 
@@ -51,30 +78,6 @@ var log = eyeo.log = function(event, payload) {
   });
 }
 
-var beaconPayload = {};
-
-/** 
- * Assign data to "beacon" event log entry
- * 
- * "beacon" events are special in that they are sent via sendBeacon on 
- * "visibilitychange". sendBeacon POSTS data async even if the tab is closing
- * without preventing the tab from closing. "visibilitychange" occurs when a 
- * user navigates to a new page, switches tabs, closes a tab, minimizes or 
- * closes the browser, or switches apps on mobile operating systems.
- * 
- * @param {object} data
- */
-eyeo.beacon = function(data) {
-  Object.assign(beaconPayload, data);
-}
-
-document.addEventListener('visibilitychange', function() {
-  if (document.visibilityState == 'hidden') {
-    beaconPayload.browserBeaconTime = parseInt(performance.now(), 10);
-    navigator.sendBeacon(SERVICE_URL, makeLogEntry("beacon", beaconPayload));
-  }
-});
-
 var userAgent = navigator.userAgent;
 // Browser detection subset based on lancedikson/bowser
 eyeo.browser =
@@ -93,7 +96,6 @@ log('access', {
   pageLanguage: document.documentElement.lang,
   browserLanguage: navigator.language,
   browserTimezone: new Date().getTimezoneOffset(),
-  browserAccessTime: parseInt(performance.now(), 10),
   browserName: eyeo.browser,
   browserHeight: window.innerHeight,
   browserWidth: window.innerWidth,
@@ -102,7 +104,7 @@ log('access', {
 });
 
 window.addEventListener('load', function() {
-  log('load', {
+  beacon({
     browserLoadTime: parseInt(performance.now(), 10)
   });
 });
