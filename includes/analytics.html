@@ -16,23 +16,52 @@ var uid = eyeo.uid = function() {
 
 var sid = eyeo.sid = uid();
 
+function makeLogEntry(event, payload) {
+  payload.sid = sid;
+  var entry = {
+    id: uid(),
+    client: CLIENT_ID,
+    event: event,
+    payload: payload
+  };
+  return JSON.stringify(entry);
+}
+
 var log = eyeo.log = function(event, payload) {
   return new Promise(function(resolve, reject) {
-    payload.sid = sid;
-    var entry = {
-      id: uid(),
-      client: CLIENT_ID,
-      event: event,
-      payload: payload
-    };
+    var entry = makeLogEntry(event, payload)
     var request = new XMLHttpRequest();
     request.addEventListener('load', resolve);
     request.addEventListener('error', reject);
     request.addEventListener('abort', reject);
     request.open('POST', SERVICE_URL);
-    request.send(JSON.stringify(entry));
+    request.send(entry);
   });
 }
+
+var beaconPayload = {};
+
+/** 
+ * Assign data to "beacon" event log entry
+ * 
+ * "beacon" events are special in that they are sent via sendBeacon on 
+ * "visibilitychange". sendBeacon POSTS data async even if the tab is closing
+ * without preventing the tab from closing. "visibilitychange" occurs when a 
+ * user navigates to a new page, switches tabs, closes a tab, minimizes or 
+ * closes the browser, or switches apps on mobile operating systems.
+ * 
+ * @param {object} data
+ */
+eyeo.beacon = function(data) {
+  Object.assign(beaconPayload, data);
+}
+
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState == 'hidden') {
+    beaconPayload.browserBeaconTime = parseInt(performance.now(), 10);
+    navigator.sendBeacon(SERVICE_URL, makeLogEntry("beacon", beaconPayload));
+  }
+});
 
 var userAgent = navigator.userAgent;
 // Browser detection subset based on lancedikson/bowser
