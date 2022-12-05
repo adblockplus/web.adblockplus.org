@@ -3,14 +3,11 @@
 // Temporarily disable these features outside of select pages until Content-Security-Policy changes
 if (['installed', 'premium', 'manage'].indexOf(document.documentElement.dataset.page) == -1) return;
 
+var accessTime = parseInt(performance.now(), 10);
 var eyeo = window.eyeo = (window.eyeo || {});
 
-var beaconPayload = {
-  browserAccessTime: parseInt(performance.now(), 10),
-};
-
 var CLIENT_ID = 'b';
-var SERVICE_URL = "https://europe-west1-abp-log-service.cloudfunctions.net/log";
+var SERVICE_URL = 'https://europe-west1-abp-log-service.cloudfunctions.net/log';
 
 var ALPHANUM = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -26,16 +23,43 @@ var uid = eyeo.uid = function() {
 
 var sid = eyeo.sid = uid();
 
-function makeLogEntry(event, payload) {
-  payload.sid = sid;
-  var entry = {
-    id: uid(),
-    client: CLIENT_ID,
-    event: event,
-    payload: payload
-  };
-  return JSON.stringify(entry);
+var logEntries = [];
+
+/**
+ * Log an event with a payload to log-service
+ * 
+ * @param {string} event - name of event in log entry
+ * @param {object} payload - JSON stringified data in log entry
+ * @returns {Promimse}
+ */
+var log = eyeo.log = function(event, payload) {
+  return new Promise(function(resolve, reject) {
+    var entry = {
+      id: uid(),
+      client: CLIENT_ID,
+      event: event,
+      payload: payload
+    };
+    var reference = {
+      recieved: false,
+      entry: entry
+    };
+    logEntries.push(reference);
+    var request = new XMLHttpRequest();
+    request.addEventListener('load', function() {
+      reference.recieved = true;
+      resolve();
+    });
+    request.addEventListener('error', reject);
+    request.addEventListener('abort', reject);
+    request.open('POST', SERVICE_URL);
+    request.send(JSON.stringify(entry));
+  });
 }
+
+var beaconPayload = {
+  accessTime: accessTime
+};
 
 /** 
  * Assign data to "beacon" event log entry
@@ -48,35 +72,27 @@ function makeLogEntry(event, payload) {
  * 
  * @param {object} data
  */
- var beacon = eyeo.beacon = function(data) {
+var beacon = eyeo.beacon = function(data) {
   Object.assign(beaconPayload, data);
 }
 
 document.addEventListener('visibilitychange', function() {
+  var unrecievedLogEntries;
   if (document.visibilityState == 'hidden') {
-    beaconPayload.browserBeaconTime = parseInt(performance.now(), 10);
-    navigator.sendBeacon(SERVICE_URL, makeLogEntry("beacon", beaconPayload));
+    unrecievedLogEntries = logEntries.reduce(function(collection, reference) {
+      if (!reference.recieved) collection.push(reference.entry);
+      return collection;
+    }, []);
+    beaconPayload.beaconTime = parseInt(performance.now(), 10);
+    beaconPayload.unrecievedLogEntries = unrecievedLogEntries;
+    navigator.sendBeacon(SERVICE_URL, JSON.stringify({
+      id: uid(),
+      client: CLIENT_ID,
+      event: 'beacon',
+      payload: beaconPayload
+    }));
   }
 });
-
-/**
- * Log an event with a payload to log-service
- * 
- * @param {string} event - name of event in log entry
- * @param {object} payload - JSON stringified data in log entry
- * @returns {Promimse}
- */
-var log = eyeo.log = function(event, payload) {
-  return new Promise(function(resolve, reject) {
-    var entry = makeLogEntry(event, payload);
-    var request = new XMLHttpRequest();
-    request.addEventListener('load', resolve);
-    request.addEventListener('error', reject);
-    request.addEventListener('abort', reject);
-    request.open('POST', SERVICE_URL);
-    request.send(entry);
-  });
-}
 
 var userAgent = navigator.userAgent;
 // Browser detection subset based on lancedikson/bowser
@@ -95,7 +111,6 @@ log('access', {
   pageName: document.documentElement.dataset.page,
   pageLanguage: document.documentElement.lang,
   browserLanguage: navigator.language,
-  browserTimezone: new Date().getTimezoneOffset(),
   browserName: eyeo.browser,
   browserHeight: window.innerHeight,
   browserWidth: window.innerWidth,
@@ -105,7 +120,7 @@ log('access', {
 
 window.addEventListener('load', function() {
   beacon({
-    browserLoadTime: parseInt(performance.now(), 10)
+    loadTime: parseInt(performance.now(), 10)
   });
 });
 
