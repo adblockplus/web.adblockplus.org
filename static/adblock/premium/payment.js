@@ -281,11 +281,19 @@ $(document).ready(function () {
         });
         Promise.race([sendPaymentSuccessToExtension(), maxWait])
             .then(function () {
+                eyeo.log("premiumActivation", {
+                    successful: true,
+                    id: forceGetUserId()
+                });
                 if (typeof onSuccess === "function") {
                     onSuccess();
                 }
             })
             .catch(function (err) {
+                eyeo.log("premiumActivation", {
+                    successful: false,
+                    id: forceGetUserId()
+                });
                 if (typeof onFailure === "function") {
                     onFailure(err);
                 }
@@ -295,6 +303,10 @@ $(document).ready(function () {
     // User was redirected here from PayPal, so just activate extension
     // then jump to "You're ready to go" message.
     if (document.location.search.match(/thankyou/)) {
+        eyeo.log("premiumActivationIntent", {
+            from: urlParams.get("from") || "premium",
+            id: forceGetUserId()
+        });
         Page.PaymentCard.hide();
         Page.AlreadyDonatedCard.show();
         Page.EnterPurchaseEmail.hide();
@@ -440,6 +452,9 @@ $(document).ready(function () {
 
     $("form#prev_donation").on("submit", function (e) {
         e.preventDefault();
+        eyeo.log("premiumEntitlement", {
+            email: $("#prev_donation_email").val()
+        });
         handleEmailSubmit();
     });
 
