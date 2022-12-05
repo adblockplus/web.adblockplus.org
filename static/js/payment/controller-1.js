@@ -4,27 +4,42 @@
 var siteURL = doc.documentElement.getAttribute("data-siteurl") 
   || "https://adblockplus.org"; 
 
-// May be overriden by setting ns.stripeAPIConfig
+var queryParameters = new URLSearchParams(window.location.search);
+
 var stripeConfig = {
-  supportedCardBrands: ["visa", "mastercard", "amex"],
-  apiConfig: ns.stripeAPIConfig || {
-    test: {
-      key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
-      endpoint: "https://donation-staging.adblock-org.workers.dev"
-    },
-    live: {
-      key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
-      endpoint: "https://donation.adblock-org.workers.dev/"
-    }
+  providers: ["visa", "mastercard", "amex"],
+  test: {
+    key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
+    endpoint: "https://donation-staging.adblock-org.workers.dev"
+  },
+  live: {
+    key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+    endpoint: "https://donation.adblock-org.workers.dev/"
   }
 }
 
-var stripeAPIConfig = stripeConfig.apiConfig;
+var paypalConfig = {
+  live: {
+    business: "till@adblockplus.org",
+    action: "https://www.paypal.com/cgi-bin/webscr"
+  },
+  test: {
+    business: "abp-sandbox@adblockplus.org",
+    action: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  }
+}
 
-var stripeEnv = (
-  window.location.hostname == "adblockplus.org" 
-  || window.location.hostname.endsWith(".adblockplus.org")
-) ? "live" : "test";
+var paymentEnvironment = queryParameters.get('mode');
+
+if (paymentEnvironment && (!stripeConfig[paymentEnvironment || !paypalConfig[paymentEnvironment]]))
+  alert('Invalid payment mode: ' + mode);
+
+if (!paymentEnvironment) {
+  paymentEnvironment = (
+    window.location.hostname == "adblockplus.org"
+    || window.location.hostname.endsWith(".adblockplus.org")
+  ) ? "live" : "test";
+}
 
 var session;
 
@@ -64,10 +79,11 @@ function onConfigLoad()
   
   form = ns.setupForm(ns.config);
   form.onSubmit(onFormSubmit);
+
   stripeCardModal = ns.setupStripeCardModal({
-    key: stripeAPIConfig[stripeEnv].key,
-    endpoint: stripeAPIConfig[stripeEnv].endpoint,
-    supportedCardBrands: stripeConfig.supportedCardBrands
+    key: stripeConfig[paymentEnvironment].key,
+    endpoint: stripeConfig[paymentEnvironment].endpoint,
+    supportedCardBrands: stripeConfig.providers
   });
   stripeCardModal.onSubmit(onStripeConfirm);
 }
@@ -87,9 +103,9 @@ function onPayPalIntent(data)
   data.item_number = recordTracking(); // payment-server tracking string
 
   if (data.frequency == "once")
-    ns.paypalButtonPayment(data);
+    ns.paypalButtonPayment(paypalConfig[paymentEnvironment], data);
   else
-    ns.paypalButtonSubscription(data);
+    ns.paypalButtonSubscription(paypalConfig[paymentEnvironment], data);
 }
 
 function onStripeIntent(data)

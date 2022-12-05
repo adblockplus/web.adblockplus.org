@@ -4,8 +4,10 @@
 var siteURL = document.documentElement
   .getAttribute("data-siteurl") || "https://adblockplus.org";
 
-// Locales supported by our website that have different PayPal codes
-var LOCALES = {
+var pageLanguage = doc.documentElement.lang;
+
+// Maps our locale codes to PayPal's locale codes (excluding same values)
+var PAYPAL_LOCALE = {
   "en": "US",
   "zh_cn": "C2",
   "pt_br": "BR",
@@ -16,29 +18,10 @@ var LOCALES = {
   "ar": "DZ"
 };
 
-var lang = doc.documentElement.lang;
-
-var paypalAPIConfig = {
-  live: {
-    business: "till@adblockplus.org",
-    url: "https://www.paypal.com/cgi-bin/webscr"
-  },
-  test: {
-    business: "abp-sandbox@adblockplus.org",
-    url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
-  }
-};
-
-var paypalEnv = (
-  window.location.hostname == "adblockplus.org" 
-  || window.location.hostname.endsWith(".adblockplus.org")
-) ? "live" : "test";
-
-var DEFAULTS = {
+var protectedInputs = {
   charset: "utf-8",
-  lc: LOCALES[lang] || lang.toUpperCase(),
+  lc: PAYPAL_LOCALE[pageLanguage] || pageLanguage.toUpperCase(),
   cmd: "_xclick",
-  business: paypalAPIConfig[paypalEnv].business,
   item_name: i18n.item,
   image_url: siteURL + "/img/adblock-plus-paypal.png",
   return: siteURL + "/payment-complete",
@@ -48,19 +31,26 @@ var DEFAULTS = {
 
 /**
  * Submit a PayPal button payment
- * @param {Object} data - A compatible card payment data object
+ * @param {Object} environment
+ * @param {string} environment.action - PayPal payment form action endpoint
+ * @param {string} environment.business - PayPal payment reciever
+ * @param {Object} submission
+ * @param {number} submission.amount - Float payment amount
+ * @param {string} submission.custom - Payment session ID
+ * @param {string} submission.currency - Payment currency ID
  */
-ns.paypalButtonPayment = function(data)
+ns.paypalButtonPayment = function(environment, submission)
 {
   var form = doc.createElement("form");
   form.target = "_blank";
   form.method = "post";
-  form.action = paypalAPIConfig[paypalEnv].url;
+  form.action = environment.action;
   
-  var inputs = Object.assign({}, DEFAULTS, {
-    amount: data.amount,
-    custom: data.custom,
-    currency_code: data.currency
+  var inputs = Object.assign({}, protectedInputs, {
+    business: environment.business,
+    amount: submission.amount,
+    custom: submission.custom,
+    currency_code: submission.currency
   });
 
   var input;
