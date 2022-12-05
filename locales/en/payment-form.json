@@ -3,13 +3,13 @@
     "message": "Adblock Plus contribution"
   },
   "min-donation-warning": {
-    "message": "Oops! To help cover fees, the minimum one-time donation amount is <span class=\"minimum-amount\">$5</span>."
+    "message": "Oops! To help cover fees, the minimum one-time contribution amount is <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>."
   },
   "min-subscription-warning": {
-    "message": "Oops! To help cover fees, the minimum monthly donation amount is <span class=\"minimum-amount\">$1.99</span>."
+    "message": "Oops! To help cover fees, the minimum monthly contribution amount is <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">1.99</span>."
   },
   "min-subscription-yearly-warning": {
-    "message": "Oops! To help cover fees, the minimum yearly donation amount is <span class=\"minimum-amount\">$5</span>."
+    "message": "Oops! To help cover fees, the minimum yearly contribution amount is <span class=\"currency-symbol\">$</span><span class=\"minimum-amount\">5</span>."
   },
   "fair-amount-header-2": {
     "message": "Name a fair amount:"
@@ -18,13 +18,13 @@
     "message": "Name a fair amount (in {currency})"
   },
   "one-time-legened-1": {
-    "message": "Make a <strong>one-time</strong> donation:"
+    "message": "Make a <strong>one-time</strong> contribution:"
   },
   "subscription-legend-1": {
-    "message": "Or a <strong>monthly</strong> donation:"
+    "message": "Or a <strong>monthly</strong> contribution:"
   },
   "yearly-subscription-legend-1": {
-    "message": "Or a <strong>yearly</strong> donation:"
+    "message": "Or a <strong>yearly</strong> contribution:"
   },
   "credit-card": {
     "message": "Credit card"
@@ -58,5 +58,20 @@
   },
   "email-input": {
     "message": "Email"
+  },
+  "what-is-included-1-year": {
+    "message": "Nice! A <span class=\"currency\">$</span><span class=\"amount\">20</span> contribution gets Adblock Plus Premium for one year. Thanks for your support."
+  },
+  "what-is-included-x-years": {
+    "message": "Nice! A <span class=\"currency\"></span><span class=\"amount\"></span> contribution gets Adblock Plus Premium for <span class=\"duration\"></span> years. Thanks for your support."
+  },
+  "what-is-included-x-months": {
+    "message": "Nice! A <span class=\"currency\"></span><span class=\"amount\"></span> contribution gets Adblock Plus Premium for <span class=\"duration\"></span> months. Thanks for your support."
+  },
+  "what-is-included-monthly": {
+    "message": "Nice! A monthly <span class=\"currency\"></span><span class=\"amount\"></span> contribution gets Adblock Plus Premium. Thanks for your support."
+  },
+  "what-is-included-yearly": {
+    "message": "Nice! A yearly <span class=\"currency\"></span><span class=\"amount\"></span> contribution gets Adblock Plus Premium. Thanks for your support."
   }
 }

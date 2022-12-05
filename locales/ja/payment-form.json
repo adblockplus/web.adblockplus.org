@@ -5,11 +5,11 @@
   },
   "min-donation-warning": {
     "description": "notice",
-    "message": "おやまあ！手数料の関係から、一回の寄付は最低<span>$5</span>でお願いしております。"
+    "message": "申し訳ございません。当社により手数料を負担するため、一時的なご寄付は <span>$</span><span>5</span> 以上でお願いします。"
   },
   "min-subscription-warning": {
     "description": "notice",
-    "message": "おやまあ！手数料の関係から、一回の寄付は最低<span>$1.99</span>でお願いしております。"
+    "message": "申し訳ございません。当社により手数料を負担するため、毎月のご寄付は <span>$</span><span>1.99</span> 以上でお願いします。"
   },
   "fair-amount-header-2": {
     "description": "heading",
@@ -21,15 +21,15 @@
   },
   "one-time-legened-1": {
     "description": "heading",
-    "message": "寄付を<strong>一回</strong>送る："
+    "message": "<strong>一度</strong>寄付する："
   },
   "subscription-legend-1": {
     "description": "heading",
-    "message": "または、寄付を<strong>毎月</strong>送る："
+    "message": "<strong>毎月</strong>寄付する："
   },
   "yearly-subscription-legend-1": {
     "description": "heading",
-    "message": "または、<strong>毎年</strong>の寄付："
+    "message": "<strong>毎年</strong>寄付する："
   },
   "credit-card": {
     "message": "クレジットカード"
@@ -62,12 +62,27 @@
   },
   "min-subscription-yearly-warning": {
     "description": "notice",
-    "message": "おや！経費を賄うため1年分の寄付の最低額は、<span>$5</span>となっております。"
+    "message": "申し訳ございません。当社により手数料を負担するため、毎年のご寄付は <span>$</span><span>5</span> 以上でお願いします。"
   },
   "pay-yearly": {
     "message": "寄付金額 {amount} / 年"
   },
   "not-supported": {
     "message": "申し訳ございません。このカードは現在ご利用になれません。"
+  },
+  "what-is-included-1-year": {
+    "message": "素晴らしい！<span>$</span><span>20</span>のご寄付により、Adblock Plus Premium を1年間ご利用いただけます。ご協力いただき誠にありがとうございます。"
+  },
+  "what-is-included-x-years": {
+    "message": "素晴らしい！<span></span><span></span> のご寄付により、Adblock Plus Premium を<span></span>年間ご利用いただけます。ご協力いただき誠にありがとうございます。"
+  },
+  "what-is-included-x-months": {
+    "message": "素晴らしい！<span></span><span></span> のご寄付により、Adblock Plus Premium を<span></span>か月間ご利用いただけます。ご協力いただき誠にありがとうございます。"
+  },
+  "what-is-included-monthly": {
+    "message": "素晴らしい！<span></span><span></span> のご寄付により、Adblock Plus Premium をご利用いただけます。ご協力いただき誠にありがとうございます。"
+  },
+  "what-is-included-yearly": {
+    "message": "素晴らしい！ 年間 <span></span><span></span> のご寄付により、Adblock Plus Premium をご利用いただけます。ご協力いただき誠にありがとうございます。"
   }
 }
