@@ -16,8 +16,8 @@ var uid = eyeo.uid = function() {
 
 var sid = eyeo.sid = uid();
 
-var log = eyeo.log = function (event, payload) {
-  return new Promise(function (resolve, reject) {
+var log = eyeo.log = function(event, payload) {
+  return new Promise(function(resolve, reject) {
     payload.sid = sid;
     var entry = {
       id: uid(),
@@ -60,7 +60,7 @@ log('access', {
   screenWidth: screen.width
 });
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
   log('load', {
     browserLoadTime: parseInt(performance.now(), 10)
   });
