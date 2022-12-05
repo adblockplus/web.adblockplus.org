@@ -16,13 +16,13 @@ var uid = eyeo.uid = function() {
 
 var sid = eyeo.sid = uid();
 
-var log = eyeo.log = function (_event, payload) {
+var log = eyeo.log = function (event, payload) {
   return new Promise(function (resolve, reject) {
     payload.sid = sid;
-    var event = {
+    var entry = {
       id: uid(),
       client: CLIENT_ID,
-      event: _event,
+      event: event,
       payload: payload
     };
     var request = new XMLHttpRequest();
@@ -30,7 +30,7 @@ var log = eyeo.log = function (_event, payload) {
     request.addEventListener('error', reject);
     request.addEventListener('abort', reject);
     request.open('POST', SERVICE_URL);
-    request.send(JSON.stringify(event));
+    request.send(JSON.stringify(entry));
   });
 }
 
