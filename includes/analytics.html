@@ -33,6 +33,7 @@ var logEntries = [];
  * @returns {Promimse}
  */
 var log = eyeo.log = function(event, payload) {
+  payload = payload || {};
   return new Promise(function(resolve, reject) {
     var entry = {
       id: uid(),
