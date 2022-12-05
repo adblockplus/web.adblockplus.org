@@ -2,41 +2,222 @@
 
 .staging:
   variables: &staging
-    DOMAIN: "staging-new-adblockplus-org-1.uplink.eyeo.it"
-    STRIPE_PUBLISHABLE_KEY: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN"
-    DONATION_SERVER_BASE_URL: "https://donation-staging.adblock-org.workers.dev/"
-    DONATION_SERVER_BASE_URL_V1: "https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/"
+    DOMAIN: staging-new-adblockplus-org-1.uplink.eyeo.it
+    STRIPE_PUBLISHABLE_KEY: pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN
+    DONATION_SERVER_BASE_URL: https://donation-staging.adblock-org.workers.dev/
+    DONATION_SERVER_BASE_URL_V1: https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/
 
 .production:
   variables: &production
-    DOMAIN: "new.adblockplus.org"
-    STRIPE_PUBLISHABLE_KEY: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs"
-    DONATION_SERVER_BASE_URL: "https://donation.adblock-org.workers.dev/"
-    DONATION_SERVER_BASE_URL_V1: "https://new-integration.adblockplus.org/"
+    DOMAIN: new.adblockplus.org
+    STRIPE_PUBLISHABLE_KEY: pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs
+    DONATION_SERVER_BASE_URL: https://donation.adblock-org.workers.dev/
+    DONATION_SERVER_BASE_URL_V1: https://new-integration.adblockplus.org/
 
 .common:
   tags:
-    - &BUILD_IMAGE "registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest"
-    - &TEST_IMAGE "registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium"
-    - &BUILD_RUNNER "docker"
-    - &US_RUNNER "web-qa-us-proxy-1.uplink.eyeo.it"
-    - &STAGING_RUNNER "eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it"
-    - &PRODUCTION_RUNNER1 "eyeo_cms_web_server_new-adblockplus-org-1.uplink.eyeo.it"
-    - &PRODUCTION_RUNNER2 "eyeo_cms_web_server_new-adblockplus-org-2.uplink.eyeo.it"
-    - &PRODUCTION_RUNNER3 "eyeo_cms_web_server_new-adblockplus-org-3.uplink.eyeo.it"
-    - &PRODUCTION_RUNNER4 "eyeo_cms_web_server_new-adblockplus-org-4.uplink.eyeo.it"
-    - &PRODUCTION_RUNNER5 "eyeo_cms_web_server_new-adblockplus-org-5.uplink.eyeo.it"
-    - &PRODUCTION_RUNNER6 "eyeo_cms_web_server_new-adblockplus-org-6.uplink.eyeo.it"
+    - &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
+    - &TEST_IMAGE registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium
+    - &BUILD_RUNNER docker
+    - &US_RUNNER web-qa-us-proxy-1.uplink.eyeo.it
+    - &STAGING_RUNNER eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it
+    - &PRODUCTION_RUNNER1 eyeo_cms_web_server_new-adblockplus-org-1.uplink.eyeo.it
+    - &PRODUCTION_RUNNER2 eyeo_cms_web_server_new-adblockplus-org-2.uplink.eyeo.it
+    - &PRODUCTION_RUNNER3 eyeo_cms_web_server_new-adblockplus-org-3.uplink.eyeo.it
+    - &PRODUCTION_RUNNER4 eyeo_cms_web_server_new-adblockplus-org-4.uplink.eyeo.it
+    - &PRODUCTION_RUNNER5 eyeo_cms_web_server_new-adblockplus-org-5.uplink.eyeo.it
+    - &PRODUCTION_RUNNER6 eyeo_cms_web_server_new-adblockplus-org-6.uplink.eyeo.it
 
 # https://docs.gitlab.com/ee/ci/yaml/#stages
 stages:
-  - "build"
-  - "deploy_staging"
-  - "build_production"
-  - "deploy_production"
-  - "smoke_tests"
-  - "manually_triggered_tests"
-  - "scheduled_monitoring_tests"
+  - build_production
+  - deploy_production
+  - build_staging
+  - deploy_staging
+  - smoke_tests
+  - manually_triggered_tests
+  - scheduled_monitoring_tests
+
+
+production_build:
+  stage: build_production
+  except:
+    - schedules
+  variables:
+    <<: *production
+  image: *BUILD_IMAGE
+  tags:
+    - *BUILD_RUNNER
+  before_script:
+    - python3 -m pip install -q crudini
+  script:
+    - crudini --set settings.ini general siteurl https://$DOMAIN
+    - python3 -m cms.bin.generate_static_pages $PWD build_production
+  artifacts:
+    name: $CI_COMMIT_REF_SLUG
+    paths:
+      - build_production
+  only:
+    - master
+
+deploy_production1:
+  stage: deploy_production
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER1
+  script:
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - master
+
+
+deploy_production2:
+  stage: deploy_production
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER2
+  script:
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - master
+
+deploy_production3:
+  stage: deploy_production
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER3
+  script:
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - master
+
+deploy_production4:
+  stage: deploy_production
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER4
+  script:
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - master
+
+deploy_production5:
+  stage: deploy_production
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER5
+  script:
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - master
+
+deploy_production6:
+  stage: deploy_production
+  except:
+    - schedules
+  variables:
+    <<: *production
+  tags:
+    - *PRODUCTION_RUNNER6
+  script:
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
+  environment:
+    name: $DOMAIN
+    url: http://$DOMAIN
+  only:
+    - master
+
+staging_build:
+  stage: build_staging
+  except:
+    - schedules
+  variables:
+    <<: *staging
+  image: *BUILD_IMAGE
+  tags:
+    - *BUILD_RUNNER
+  before_script:
+    - python3 -m pip install -q crudini
+  script:
+    - crudini --set settings.ini general siteurl http://$CI_COMMIT_REF_SLUG.$DOMAIN
+    - python3 -m cms.bin.generate_static_pages $PWD build_staging
+  artifacts:
+    name: $CI_COMMIT_REF_SLUG
+    paths:
+      - build_staging
+
+deploy_staging:
+  stage: deploy_staging
+  except:
+    - schedules
+  variables:
+    <<: *staging
+  tags:
+    - *STAGING_RUNNER
+  dependencies:
+    - staging_build
+  script:
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_staging/
+  environment:
+    name: staging/$CI_COMMIT_REF_SLUG
+    url: http://$CI_COMMIT_REF_SLUG.$DOMAIN
+
+smoke_tests_staging:
+  except:
+    - schedules
+    - master
+  stage: smoke_tests
+  variables:
+    <<: *staging
+  image: *TEST_IMAGE
+  script:
+    - python3 -m pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
+
+smoke_tests_production:
+  except:
+    - schedules
+  only:
+    - master
+  stage: smoke_tests
+  variables:
+    <<: *production
+  image: *TEST_IMAGE
+  script:
+    - python3 -m pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=https://new.adblockplus.org tests/test_DownloadLinks.py
 
 cookies_settings_tests:
   except:
@@ -124,44 +305,6 @@ stripe_update_tests:
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=update tests/test_StripeDonations.py
   when: manual
 
-monitoring_scheduled_tests:
-  only:
-    - schedules
-  stage: scheduled_monitoring_tests
-  image: *TEST_IMAGE
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py tests/test_MonitorDonationPages.py
-
-smoke_tests_staging:
-  except:
-    - schedules
-    - master
-  stage: smoke_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
-
-smoke_tests_production:
-  except:
-    - schedules
-  only:
-    - master
-  stage: smoke_tests
-  variables:
-    <<: *production
-  image: *TEST_IMAGE
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=https://new.adblockplus.org tests/test_DownloadLinks.py
-
-
 lint:
   except:
     - schedules
@@ -173,169 +316,12 @@ lint:
     - ./node_modules/.bin/eslint static/js
   when: manual
 
-staging_build:
-  stage:
-    "build"
-  except:
-    - "master"
-    - schedules
-  variables:
-    <<: *staging
-  image:
-    *BUILD_IMAGE
-  tags:
-    - *BUILD_RUNNER
-  before_script:
-    - python3 -m pip install -q crudini
-  script:
-    - crudini --set settings.ini general siteurl "http://$CI_COMMIT_REF_SLUG.$DOMAIN"
-    - python3 -m cms.bin.generate_static_pages $PWD build
-  artifacts:
-    name:
-      "$CI_COMMIT_REF_SLUG"
-    paths:
-      - "build"
-
-deploy_staging:
-  stage:
-    "deploy_staging"
-  except:
-    - "master"
-    - schedules
-  variables:
-    <<: *staging
-  tags:
-    - *STAGING_RUNNER
-  dependencies:
-    - "staging_build"
-  script:
-    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build/"
-  environment:
-    name: staging/$CI_COMMIT_REF_SLUG
-    url: http://$CI_COMMIT_REF_SLUG.$DOMAIN
-
-production_build:
-  stage:
-    "build_production"
-  except:
-    - schedules
-  variables:
-    <<: *production
-  image:
-    *BUILD_IMAGE
-  tags:
-    - *BUILD_RUNNER
-  before_script:
-    - python3 -m pip install -q crudini
-  script:
-    - crudini --set settings.ini general siteurl "https://$DOMAIN"
-    - python3 -m cms.bin.generate_static_pages $PWD build
-  artifacts:
-    name:
-      "$CI_COMMIT_REF_SLUG"
-    paths:
-      - "build"
+monitoring_scheduled_tests:
   only:
-    - "master"
-
-deploy_production1:
-  stage:
-    "deploy_production"
-  except:
     - schedules
-  variables:
-    <<: *production
-  tags:
-    - *PRODUCTION_RUNNER1
+  stage: scheduled_monitoring_tests
+  image: *TEST_IMAGE
   script:
-    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - "master"
-
-deploy_production2:
-  stage:
-    "deploy_production"
-  except:
-    - schedules
-  variables:
-    <<: *production
-  tags:
-    - *PRODUCTION_RUNNER2
-  script:
-    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - "master"
-
-deploy_production3:
-  stage:
-    "deploy_production"
-  except:
-    - schedules
-  variables:
-    <<: *production
-  tags:
-    - *PRODUCTION_RUNNER3
-  script:
-    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - "master"
-
-deploy_production4:
-  stage:
-    "deploy_production"
-  except:
-    - schedules
-  variables:
-    <<: *production
-  tags:
-    - *PRODUCTION_RUNNER4
-  script:
-    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - "master"
-
-deploy_production5:
-  stage:
-    "deploy_production"
-  except:
-    - schedules
-  variables:
-    <<: *production
-  tags:
-    - *PRODUCTION_RUNNER5
-  script:
-    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - "master"
-
-deploy_production6:
-  stage:
-    "deploy_production"
-  except:
-    - schedules
-  variables:
-    <<: *production
-  tags:
-    - *PRODUCTION_RUNNER6
-  script:
-    - "sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build"
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - "master"
+    - python3 -m pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py tests/test_MonitorDonationPages.py
