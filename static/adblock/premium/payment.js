@@ -281,7 +281,7 @@ $(document).ready(function () {
         });
         Promise.race([sendPaymentSuccessToExtension(), maxWait])
             .then(function () {
-                eyeo.log("premiumActivation", {
+                eyeo.log("premium_activation", {
                     successful: true,
                     id: forceGetUserId()
                 });
@@ -290,7 +290,7 @@ $(document).ready(function () {
                 }
             })
             .catch(function (err) {
-                eyeo.log("premiumActivation", {
+                eyeo.log("premium_activation", {
                     successful: false,
                     id: forceGetUserId()
                 });
@@ -303,7 +303,7 @@ $(document).ready(function () {
     // User was redirected here from PayPal, so just activate extension
     // then jump to "You're ready to go" message.
     if (document.location.search.match(/thankyou/)) {
-        eyeo.log("premiumActivationIntent", {
+        eyeo.log("premium_activation_intent", {
             from: urlParams.get("from") || "premium",
             id: forceGetUserId()
         });
@@ -452,7 +452,7 @@ $(document).ready(function () {
 
     $("form#prev_donation").on("submit", function (e) {
         e.preventDefault();
-        eyeo.log("premiumEntitlement", {
+        eyeo.log("premium_entitlement", {
             email: $("#prev_donation_email").val()
         });
         handleEmailSubmit();

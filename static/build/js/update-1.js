@@ -1524,7 +1524,7 @@ function onConfigLoad()
     paymentSetupTime: parseInt(performance.now(), 10),
   });
 
-  eyeo.log("paymenSetup", {
+  eyeo.log("paymen_setup", {
     session: session,
     referrer: queryParameters.get('an')
   });
@@ -1542,7 +1542,7 @@ function onFormSubmit(data)
     });
   }
 
-  eyeo.log("paymentIntention", {
+  eyeo.log("payment_intention", {
     currency: data.currency,
     frequency: data.frequency,
     amount: data.amount,
