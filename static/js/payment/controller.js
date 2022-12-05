@@ -86,10 +86,46 @@ function onConfigLoad()
     supportedCardBrands: stripeConfig.providers
   });
   stripeCardModal.onSubmit(onStripeConfirm);
+
+  eyeo.beacon({
+    fromExtension: !!queryParameters.get('an'),
+    paymentSession: session,
+    paymentSetup: true,
+    paymentSetupTime: parseInt(performance.now(), 10)
+  });
+
+  eyeo.log("payment-setup", {
+    fromExtension: !!queryParameters.get('an'),
+    session: session,
+    browserName: eyeo.browser,
+    pageLanguage: document.documentElement.lang
+  });
 }
+
+var intents = [];
+var firstIntentTime;
 
 function onFormSubmit(data)
 {
+  if (!firstIntentTime) firstIntentTime = parseInt(performance.now(), 10);
+
+  var intent = {
+    currency: data.currency,
+    frequency: data.frequency,
+    amount: data.amount,
+    provider: data.provider
+  };
+
+  intents.push(intent);
+
+  eyeo.beacon({
+    paymentIntended: true,
+    paymentIntendedTime: firstIntentTime,
+    paymentIntents: intents
+  });
+
+  eyeo.log("payment-intent", intent);
+
   data.custom = session;
 
   if (data.provider == "paypal")
