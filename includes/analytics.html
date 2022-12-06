@@ -82,12 +82,12 @@ var beacon = eyeo.beacon = function(data) {
 document.addEventListener('visibilitychange', function() {
   var unrecievedLogEntries;
   if (document.visibilityState == 'hidden') {
-    unrecievedLogEntries = logEntries.reduce(function(collection, reference) {
-      if (!reference.recieved) collection.push(reference.entry);
-      return collection;
-    }, []);
+    // unrecievedLogEntries = logEntries.reduce(function(collection, reference) {
+    //   if (!reference.recieved) collection.push(reference.entry);
+    //   return collection;
+    // }, []);
     beaconPayload.beaconTime = parseInt(performance.now(), 10);
-    beaconPayload.unrecievedLogEntries = unrecievedLogEntries;
+    // beaconPayload.unrecievedLogEntries = unrecievedLogEntries;
     navigator.sendBeacon(SERVICE_URL, JSON.stringify({
       id: uid(),
       client: CLIENT_ID,
