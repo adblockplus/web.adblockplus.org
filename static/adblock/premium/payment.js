@@ -273,6 +273,7 @@ $(document).ready(function () {
     }
 
     function activateExtension(onSuccess, onFailure) {
+        eyeo.beacon({premiumActivationAttempt: true});
         // wait up to 10 seconds to receive pmt success receipt verification from extension
         const maxWait = new Promise(function (_, reject) {
             setTimeout(function () {
@@ -281,15 +282,17 @@ $(document).ready(function () {
         });
         Promise.race([sendPaymentSuccessToExtension(), maxWait])
             .then(function () {
+                if (typeof onSuccess === "function") {
+                    onSuccess();
+                }
+                eyeo.beacon({premiumActivationSuccessful: true});
                 eyeo.log("premium_activation", {
                     successful: true,
                     id: forceGetUserId()
                 });
-                if (typeof onSuccess === "function") {
-                    onSuccess();
-                }
             })
             .catch(function (err) {
+                eyeo.beacon({premiumActivationSuccessful: false});
                 eyeo.log("premium_activation", {
                     successful: false,
                     id: forceGetUserId()
@@ -303,6 +306,11 @@ $(document).ready(function () {
     // User was redirected here from PayPal, so just activate extension
     // then jump to "You're ready to go" message.
     if (document.location.search.match(/thankyou/)) {
+        eyeo.beacon({
+            premiumId: forceGetUserId(),
+            premiumActivationIntended: true,
+            premiumActivationSource: urlParams.get("from") || "premium"
+        });
         eyeo.log("premium_activation_intent", {
             from: urlParams.get("from") || "premium",
             id: forceGetUserId()
