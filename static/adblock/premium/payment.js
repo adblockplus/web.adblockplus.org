@@ -460,10 +460,8 @@ $(document).ready(function () {
 
     $("form#prev_donation").on("submit", function (e) {
         e.preventDefault();
-        eyeo.log("premium_entitlement", {
-            email: $("#prev_donation_email").val()
-        });
         handleEmailSubmit();
+        eyeo.beacon({premiumEntitlementAttempted: true});
     });
 
     $("#submit_email").on("click", function (e) {
