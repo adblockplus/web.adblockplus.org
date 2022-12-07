@@ -127,4 +127,12 @@ window.addEventListener('load', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-click]').forEach(function(target) {
+    target.addEventListener('click', function(event) {
+      log("click", JSON.parse(target.dataset.click));
+    });
+  });
+});
+
 })();</script>
