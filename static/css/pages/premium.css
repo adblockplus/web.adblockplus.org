@@ -745,3 +745,7 @@ html {
 [lang="gr"] .premium-plan-tab-end,
 [lang="hu"] .premium-plan-tab-end,
 [lang="it"] .premium-plan-tab-end { display: none; }
+
+#navbar .active a::before {
+  top: 62px;
+}
