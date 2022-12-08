@@ -336,7 +336,7 @@ function recordTracking() {
     return MABTracking.Id([
         MABTracking.Section([eyeo.payment.productId]),
         MABTracking.Section(["X", experimentId, "G", experimentVariant]),
-        MABTracking.Section([getBrowser(), getOS(), getSource()]),
+        MABTracking.Section(["F", getBrowser(), getOS(), getSource()]),
         MABTracking.Section([forceGetUserId()])
     ]);
 }
