@@ -7,12 +7,14 @@
     "csso": "4.2.0",
     "glob": "^8.0.3",
     "prompt-sync": "^4.2.0",
-    "uglify-js": "3.12.1"
+    "uglify-js": "3.12.1",
+    "json5": "~2.2.1"
   },
   "scripts": {
     "min": "node static/js/tools/build.js",
     "quick": "bash -i scripts/run-quick.sh",
-    "slow": "bash -i scripts/run-slow.sh"
+    "slow": "bash -i scripts/run-slow.sh",
+    "rename-service-ids": "node scripts/rename-service-ids-in-firebase-config.mjs"
   },
   "repository": {
     "type": "git",

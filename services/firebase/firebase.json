@@ -1,0 +1,240 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "utils",
+      "prebuild_staging.mjs"
+    ],
+    "cleanUrls": true,
+    "i18n": {
+      "root": "/"
+    },
+    "redirects": [
+      // Refs #493 redirect old browser index pages to root index page
+      {
+        "regex": "(?i)^/android$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/android$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/chrome$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/chrome$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/edge$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/edge$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/firefox$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/firefox$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/internet-expolorer$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/internet-explorer$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/opera$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/opera$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/safari$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/safari$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/yandex-browser$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^(.*)/yandex-browser$",
+        "destination": "/",
+        "type": 301
+      },
+
+      // Refd #617 migrate simple file-to-file rules to .htaccess
+      {
+        "regex": "(?i)^(.*/)?(android|chrome|edge|firefox|internet-explorer|opera|safari|yandex-browser)/?$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?changelog-1.3.1$",
+        "destination": "/$1\\changelog-1.3",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/downloads/(.*)",
+        "destination": "https://downloads.adblockplus.org/$1",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/update.rdf$",
+        "destination": "https://update.adblockplus.org/gecko/update.rdf",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/updates.plist$",
+        "destination": "https://update.adblockplus.org/adblockplussafari/updates.plist",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/androidupdate.json$",
+        "destination": "https://update.adblockplus.org/adblockplusandroid/update.json",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/androidupdates.xml$",
+        "destination": "https://update.adblockplus.org/adblockplusandroid/updates.xml",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/ieupdate.json$",
+        "destination": "https://update.adblockplus.org/adblockplusie/update.json",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?adblock-browser/?$",
+        "destination": "https://adblockbrowser.org/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/devbuilds/?$",
+        "destination": "https://adblockplus.org/development-builds",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/poland/?$",
+        "destination": "/poland.html",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/de/ad-blocker-safari/?$",
+        "destination": "https://adblockplus.org/de/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/fr/ad-blocker-safari/?$",
+        "destination": "https://adblockplus.org/fr/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?filters$",
+        "destination": "https://help.eyeo.com/en/adblockplus/how-to-write-filters",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?android-about/?$",
+        "destination": "https://adblockplus.org/",
+        "type": 301
+      },
+
+      // Refd adblockplus-org#16 redirect removed job posting to Careers Page
+      {
+        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?software-engineer-adblock-plus/?$",
+        "destination": "https://adblockplus.org/careers",
+        "type": 301
+      },
+
+      // Redirect to cloud run rewrite for payment config
+      // FIXME: This will lead to circular redirect?
+      {
+        "source": "/js/payment/config/load.js",
+        "destination": "/payment-config-function",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/headers",
+        "run": {
+          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/payment-config-function",
+        "run": {
+          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "region": "europe-west1"
+        }
+      }
+    ],
+
+    "headers": [
+      // Refd #474 - Migrate XSS and clickjacking prevention headers to .htaccess
+      {
+        "regex": "(?i)^/(:?\\w\\w(_\\w\\w)?/)?(?:index|firefox|chrome|opera|android|internet-explorer|safari|yandex-browser|maxthon)?$|^/blog/|^/poland/?",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; img-src https://optimize.google.com * data:; style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com https://optimize.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com; connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/; font-src 'self' https://fonts.gstatic.com data:; frame-src https://optimize.google.com www.youtube-nocookie.com;"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; img-src https://optimize.google.com * data:; style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com https://optimize.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com https://optimize.google.com https://js.stripe.com; connect-src 'self' https://www.google-analytics.com https://api.stripe.com https://new-integration.adblockplus.org https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it https://donation.adblock-org.workers.dev https://donation-staging.adblock-org.workers.dev https://europe-west1-abp-log-service.cloudfunctions.net; font-src 'self' https://fonts.gstatic.com; frame-src https://optimize.google.com https://js.stripe.com;"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Frame-Options",
+            "value": "sameorigin"
+          }
+        ]
+      }
+
+      // TODO: Enable subdomains to access resources
+    ]
+  }
+}
