@@ -1,5 +1,5 @@
 title=Política de Privacidade
-description=This Privacy Policy describes how we use, process, and protect information that we collect from users through our websites and our products.
+description=Esta Política de privacidade descreve como utilizamos, processamos e protegemos as informações que coletamos de usuários através dos nossos sites e produtos.
 notoc=True
 
 - [Política de Privacidade (versão resumida)](#privacy-policy-short)
