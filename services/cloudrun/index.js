@@ -18,9 +18,6 @@ app.get('/payment-config-function', (req, res) => {
 
   const countryCode = req.headers['x-country-code'];
 
-  // FIXME: returning `us.js` as default instead of `load.js` to prevent circular redirect
-  // TODO: Confirm this doesn't break anything
-  // const paymentConfig = geoipRules[countryCode] || 'load.js';
   const paymentConfig = geoipRules[countryCode] || 'us.js';
 
   const queryString = Object.keys(req.query).length > 0
@@ -28,20 +25,6 @@ app.get('/payment-config-function', (req, res) => {
     : '';
 
   res.redirect(302, `/js/payment/config/${paymentConfig}${queryString}`);
-});
-
-// Demo function to show req headers
-app.get('/headers', (req, res) => {
-  console.log('web-abp-org-cloudrun-service received a headers request.');
-
-  res.send(`<!doctype html>
-    <head>
-      <title>Request Headers</title>
-    </head>
-    <body>
-      <pre>${JSON.stringify(req.headers, null, 2)}</pre>
-    </body>
-  </html>`);
 });
 
 const port = process.env.PORT || 8080;
