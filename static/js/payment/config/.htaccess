@@ -5,6 +5,8 @@ RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
 RewriteRule ^load.js us.js
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^DE$
 RewriteRule ^load.js de.js
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^FR$
+RewriteRule ^load.js fr.js
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$
 RewriteRule ^load.js ch.js
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$

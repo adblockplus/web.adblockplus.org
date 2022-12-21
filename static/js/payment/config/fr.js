@@ -1,4 +1,4 @@
 path("payment.config", {
   defaultCurrency: 'EUR'
 });
-document.documentElement.classList.add('de');
+document.documentElement.classList.add('fr');

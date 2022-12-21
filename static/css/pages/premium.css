@@ -180,6 +180,39 @@ html {
   box-shadow: none !important;
 }
 
+.fr .premium-button,
+.de .premium-button {
+  color: #C6C6C6 !important;
+  border: 1px solid #C6C6C6 !important;
+  background-color: #fff !important;
+}
+
+.de .premium-button:hover,
+.de .premium-button:active,
+.de .premium-button:focus,
+.de .premium-button:hover,
+.de .premium-button:active,
+.de .premium-button:focus,
+.fr .premium-button:hover,
+.fr .premium-button:active,
+.fr .premium-button:focus,
+.fr .premium-button:hover,
+.fr .premium-button:active,
+.fr .premium-button:focus {
+  color: #fff !important;
+  background-color: #C6C6C6 !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+.fr-only,
+.de-only { display: none; }
+
+.fr .fr-only,
+.de .de-only { display: block; }
+
+.fr .not-fr,
+.de .not-de { display: none !important; }
 
 /*******************************************************************************
  * Dynamic background behind first and second sections
@@ -194,6 +227,70 @@ html {
   width: 100%;
   background-color: #F7F7F7;
   z-index: -1;
+}
+
+/*******************************************************************************
+ * Alert bars
+ ******************************************************************************/
+
+.alert-bar {
+  text-align: center;
+  padding: 1rem;
+  color: #000;
+  background-color: gray;
+}
+
+.alert-bar.alert-bar--gold {
+  background-color: #EDA51E;
+}
+
+/*******************************************************************************
+ * Tooltips
+ ******************************************************************************/
+
+.tooltip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  width: 276px;
+  height: auto;
+  z-index: -9001;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 0 1rem;
+}
+
+.tooltip strong {
+  color: #000;
+}
+
+.tooltip::after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 2rem;
+  right: auto;
+  bottom: -13px;
+  border: 7px solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*******************************************************************************
+ * Blockquotes
+ ******************************************************************************/
+
+.blockquote {
+  padding-left: 1rem;
+  margin: 1rem 0 0 0;
+  color: #585858;
+  border-left: 4px solid #585858;
+}
+
+.blockquote.blockquote--gold {
+  border-color: rgba(237, 165, 30, 0.5);
 }
 
 /*******************************************************************************
