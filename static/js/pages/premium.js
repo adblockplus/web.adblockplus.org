@@ -149,25 +149,31 @@ function onDOMContentLoaded()
     })
   });
 
-  // Show and position tooltips using data-tooltip-target
-  document.querySelectorAll('[data-tooltip-target]').forEach(tooltip => {
-    const tooltipHeight = tooltip.getBoundingClientRect().height;
-    tooltip.style.height = tooltipHeight + 'px'
-    tooltip.style.display = 'none';
-    tooltip.style.zIndex = 9001;
-    tooltip.style.visibility = 'visible';
-    document.querySelectorAll(tooltip.dataset.tooltipTarget).forEach(tooltipTarget => {
-      tooltipTarget.addEventListener('mouseover', () => {
-        const targetRect = tooltipTarget.getBoundingClientRect();
-        tooltip.style.top =  (targetRect.top - tooltipHeight - 14 + window.scrollY) + 'px';
-        tooltip.style.left = (targetRect.left - 16 + window.scrollX) + 'px';
-        tooltip.style.display = 'block';
-      });
-      tooltipTarget.addEventListener('mouseout', () => {
-        tooltip.style.display = 'none';
+  if (
+    document.documentElement.classList.contains('de')
+    || document.documentElement.classList.contains('fr')
+  ) {
+    // Show and position tooltips using data-tooltip-target
+    document.querySelectorAll('[data-tooltip-target]').forEach(tooltip => {
+      tooltip.style.display = 'block';
+      const tooltipHeight = tooltip.getBoundingClientRect().height;
+      tooltip.style.height = tooltipHeight + 'px'
+      tooltip.style.display = 'none';
+      tooltip.style.zIndex = 9001;
+      tooltip.style.visibility = 'visible';
+      document.querySelectorAll(tooltip.dataset.tooltipTarget).forEach(tooltipTarget => {
+        tooltipTarget.addEventListener('mouseover', () => {
+          const targetRect = tooltipTarget.getBoundingClientRect();
+          tooltip.style.top =  (targetRect.top - tooltipHeight - 14 + window.scrollY) + 'px';
+          tooltip.style.left = (targetRect.left - 16 + window.scrollX) + 'px';
+          tooltip.style.display = 'block';
+        });
+        tooltipTarget.addEventListener('mouseout', () => {
+          tooltip.style.display = 'none';
+        });
       });
     });
-  })
+  }
 }
 
 if (
