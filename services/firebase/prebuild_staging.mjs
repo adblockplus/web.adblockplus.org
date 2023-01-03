@@ -11,32 +11,27 @@ import {promisify} from 'util';
 import {writeFile} from 'fs/promises';
 
 // Find existing firebase-hosting preview channel for `branch`
-const getChannel = async (branch) => {
+async function getChannel(branch) {
   const {stdout} = await promisify(exec)(`firebase hosting:channel:list --json`);
   const {result} = JSON.parse(stdout);
 
-  return result.channels.find(deploy => deploy.name.split('/').pop() === branch);
+  return result.channels.find(deploy => deploy.name.split('/').slice(-1)[0] === branch);
 };
 
 // Delete firebase-hosting preview channel for `branch` if it exists
-const deleteChannel = async (branch) => {
+async function deleteChannel(branch) {
   let channel = await getChannel(branch);
 
   if (channel) {
     console.log(`Deleting [Channel: ${branch}]`);
-    try {
-      await promisify(exec)(`firebase hosting:channel:delete ${branch} --force`);
-    } catch (error) {
-      console.log('Catch firebase-tools error on channel delete with --force option',
-      'Issue here: https://github.com/firebase/firebase-tools/issues/3571');
-    }
+    await promisify(exec)(`firebase hosting:channel:delete ${branch} --force`);
   } else {
     console.log(`[Channel: ${branch}] doesn't exist yet`);
   }
 };
 
 // Create new firebase-hosting preview channel and return its url
-const generateBranchDeployUrl = async (branch) => {
+async function generateBranchDeployUrl(branch) {
   const {stdout} = await promisify(exec)(`firebase hosting:channel:create ${branch} --json`);
   const {result} = JSON.parse(stdout);
 
@@ -46,7 +41,7 @@ const generateBranchDeployUrl = async (branch) => {
 };
 
 // Set preview URL in CI env
-const setEnv = async (url) => {
+async function setEnv(url) {
   const envs = {
     REVIEW_URL: url,
   };
@@ -58,7 +53,7 @@ const setEnv = async (url) => {
 };
 
 // Replace preview channel if one exists & set env accordingly
-const prep_staging = async (branch) => {
+async function prep_staging(branch) {
   await deleteChannel(branch);
 
   let url = await generateBranchDeployUrl(branch);
@@ -70,9 +65,4 @@ const prep_staging = async (branch) => {
 
 prep_staging(
   process.argv[2] || process.env.CI_COMMIT_REF_SLUG,
-)
-  .catch(e => {
-    console.error(e);
-
-    process.exit(1);
-  });
+);

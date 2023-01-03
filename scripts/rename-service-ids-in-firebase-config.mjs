@@ -43,7 +43,7 @@ program.parse();
 
 const options = program.opts();
 
-const config = JSON5.parse(readFileSync(options.input));
+const config = JSON5.parse(readFileSync(options.input, { encoding: 'utf8' }));
 
 const newName = options.name;
 

@@ -180,7 +180,6 @@
       },
 
       // Redirect to cloud run rewrite for payment config
-      // FIXME: This will lead to circular redirect?
       {
         "source": "/js/payment/config/load.js",
         "destination": "/payment-config-function",
@@ -233,8 +232,6 @@
           }
         ]
       }
-
-      // TODO: Enable subdomains to access resources
     ]
   }
 }
