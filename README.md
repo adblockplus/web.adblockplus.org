@@ -14,24 +14,3 @@ There are two ways to "run" this website:
 .htaccess features (e.g. redirect, geoip) only work the "slow" way.
 
 Try `127.0.0.1` if `localhost` doesn't work (effects the quick way on macOS).
-
-## Managing locales
-
-### Removing strings from page locale files
-
-See `node scripts/remove-locale-strings.mjs --help`
-
-#### Example
-
-```
-$ node scripts/remove-locale-strings.mjs -p getting_started -s s26,s27,s28,s29,s30,s31
-hits {
-  'locales/de/getting_started.json': 6,
-  'locales/es/getting_started.json': 6,
-  'locales/fr/getting_started.json': 6,
-  'locales/nl/getting_started.json': 6,
-  'locales/ru/getting_started.json': 6,
-  'locales/zh_CN/getting_started.json': 6
-}
-Proceed y/n? y
-```
