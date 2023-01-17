@@ -376,6 +376,7 @@ build:review:
     - python3 -m pip install -q crudini
   script:
     - crudini --set settings.ini general siteurl "$REVIEW_URL"
+    - crudini --set settings.ini general premiumdomain "$REVIEW_URL"
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
     # copy contents of default locale to base of public root (for firebase), 
@@ -391,7 +392,7 @@ build:review:staging:
   except:
     - schedules
   variables:
-    <<: *production
+    <<: *staging
   image: *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
@@ -399,6 +400,7 @@ build:review:staging:
     - python3 -m pip install -q crudini
   script:
     - crudini --set settings.ini general siteurl "$FIREBASE_DOMAIN"
+    - crudini --set settings.ini general premiumdomain "$REVIEW_URL"
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
     # copy contents of default locale to base of public root (for firebase), 
@@ -424,6 +426,7 @@ build:production:
     - python3 -m pip install -q crudini
   script:
     - crudini --set settings.ini general siteurl "$FIREBASE_DOMAIN"
+    - crudini --set settings.ini general premiumdomain "$REVIEW_URL"
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
     # copy contents of default locale to base of public root (for firebase), 
@@ -558,7 +561,7 @@ deploy_firebase_hosting:review:staging:
   image:
     *NODE_IMAGE
   variables:
-    <<: *production
+    <<: *staging
   dependencies:
     - build:review:staging
   before_script:

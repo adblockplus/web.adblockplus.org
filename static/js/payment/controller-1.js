@@ -4,6 +4,9 @@
 var siteURL = doc.documentElement.getAttribute("data-siteurl") 
   || "https://adblockplus.org"; 
 
+var premiumDomain = doc.documentElement.getAttribute("data-premiumdomain")
+  || "https://accounts.adblockplus.org";
+
 var queryParameters = new URLSearchParams(window.location.search);
 
 var stripeConfig = {
@@ -179,7 +182,7 @@ function onStripeComplete()
   returnParams.append('thankyou', 1);
   returnParams.append('u', forceGetUserId());
   returnParams.append('from', 'update-1');
-  window.location.href = 'https://accounts.adblockplus.org/premium?' + returnParams.toString();
+  window.location.href = premiumDomain + '/premium?' + returnParams.toString();
 }
 
 function onStripeError(error)

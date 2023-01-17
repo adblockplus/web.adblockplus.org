@@ -4,6 +4,9 @@
 var siteURL = document.documentElement
   .getAttribute("data-siteurl") || "https://adblockplus.org";
 
+var premiumDomain = doc.documentElement
+  .getAttribute("data-premiumdomain") || "https://accounts.adblockplus.org";
+
 var pageLanguage = doc.documentElement.lang;
 
 // Maps our locale codes to PayPal's locale codes (excluding same values)
@@ -35,7 +38,7 @@ var DEFAULTS = {
   cmd: "_xclick-subscriptions",
   item_name: i18n.item,
   image_url: siteURL + "/img/adblock-plus-paypal.png",
-  return: 'https://accounts.adblockplus.org/premium?' + returnParams.toString(),
+  return: premiumDomain + '/premium?' + returnParams.toString(),
   cancel_return: location.href,
   no_note: 1,
   p3: 1, // Subscription duration (N*p3)

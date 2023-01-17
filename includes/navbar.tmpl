@@ -21,7 +21,7 @@
         </li>
       {% endfor %}
       <li class="{{ "active" if page == "premium" else "" }}">
-        <a href="https://accounts.adblockplus.org/premium">{{ get_string("premium", "menu") }}</a>
+        <a href="{{ config.get("general", "premiumdomain") }}/premium">{{ get_string("premium", "menu") }}</a>
       </li>
       <li>
         <a href="https://help.eyeo.com" target="_blank">{{ get_string("help", "menu") }}</a>

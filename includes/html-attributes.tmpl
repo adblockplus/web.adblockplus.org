@@ -2,5 +2,6 @@
 lang="{{ locale }}"
 data-page="{{ page }}"
 data-siteurl="{{ config.get("general", "siteurl") }}"
+data-premiumdomain="{{ config.get("general", "premiumdomain") }}"
 dir="{{ "rtl" if config.has_option("rtl", locale) else "ltr" }}"
 class="no-js {{ "unadblock" if unadblock else "" }}"
