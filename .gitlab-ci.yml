@@ -376,7 +376,7 @@ build:review:staging:
   except:
     - schedules
   variables:
-    <<: *production
+    <<: *staging
   image: *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
@@ -543,7 +543,7 @@ deploy_firebase_hosting:review:staging:
   image:
     *NODE_IMAGE
   variables:
-    <<: *production
+    <<: *staging
   dependencies:
     - build:review:staging
   before_script:
