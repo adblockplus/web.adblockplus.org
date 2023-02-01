@@ -317,6 +317,21 @@ stripe_update_tests:
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=update tests/test_StripeDonations.py
   when: manual
 
+legacy_redirect_tests:
+  except:
+    - schedules
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
+  image: *TEST_IMAGE
+  tags:
+    - *US_RUNNER
+  script:
+    - python3 -m pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Redirects.py
+  when: manual
+
 lint:
   except:
     - schedules

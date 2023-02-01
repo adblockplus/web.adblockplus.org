@@ -41,6 +41,124 @@ RewriteRule ^(\w\w(_\w\w)?/)?software-engineer-adblock-plus/?$ https://adblockpl
 # Refd #474 - Migrate XSS and clickjacking prevention headers to .htaccess
 SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|internet-explorer|safari|yandex-browser|maxthon)?$|^/blog/|^/poland/? YOUTUBE_NOCOOKIES
 
+# Begin Refd #924 - Add .htaccess rules for /redirect processing
+<If "%{REQUEST_URI} == '/redirect'">
+
+  RewriteRule ^ - [E=adblock_browser_android_download:https://downloads.adblockplus.org/adblockbrowser-1.1.0-arm.apk]
+  RewriteRule ^ - [E=adblock_browser_android_store:https://play.google.com/store/apps/details?id=org.adblockplus.browser]
+
+  RewriteRule ^ - [E=lang:en]
+  
+  RewriteCond %{QUERY_STRING} "(?:^|&)lang=(\w+)(?:&|$)"
+  RewriteRule ^ - [E=lang:%1,E=arg_lang:%1]
+
+  RewriteCond %{QUERY_STRING} "(?:^|&)link=(\w+)(?:&|$)"
+  RewriteRule ^ - [E=link:%1]
+
+  # Google Play is not available in China, so we redirect them to the
+  # builds for download, see http://hub.eyeo.com/issues/20183
+  RewriteCond %{QUERY_STRING} "(?:^|&)locale=zh(-|_)\w\w(?:&|$)"
+  RewriteRule ^ - [E=adblock_browser_android_store:https://downloads.adblockplus.org/adblockbrowser-1.1.0-arm.apk]
+
+  RewriteCond %{ENV:link} ^adblock_browser_android_store$
+  RewriteRule ^ %{ENV:adblock_browser_android_store} [L,NC,R=301]
+
+  RewriteCond %{ENV:link} ^adblock_browser_promotion_\d$
+  RewriteRule ^ https://adblockplus.org/adblock-browser [L,NC,R=301]
+
+  RewriteCond %{ENV:link} ^adblock_browser_android_download$
+  RewriteRule ^ %{ENV:adblock_browser_android_download} [L,NC,R=301]
+
+  RewriteCond %{ENV:link} ^filterdoc$
+  RewriteRule ^ https://help.eyeo.com/adblockplus/how-to-write-filters [L,NC,R=301]
+
+  RewriteCond %{ENV:link} ^imprint$
+  RewriteRule ^ https://adblockplus.org/%{ENV:lang}/imprint [L,NC,R=301]
+
+  RewriteCond %{ENV:link} ^adblock_plus_report_issue$
+  RewriteRule ^ https://forums.lanik.us/viewforum.php?f=${forum_map:%{ENV:lang}|64} [L,NC,R=301]
+  
+  RewriteRule ^ - [E=link_found:0]
+  RewriteRule ^ - [E=is_uninstall:0]
+
+  RewriteCond %{QUERY_STRING} "(?:^|&)link=share-(?:&|$)"
+  RewriteRule ^ - [E=link_found:1,E=link:share,E=anchor:?a=minimal]
+
+  RewriteCond %{ENV:link} ^uninstalled$
+  RewriteRule ^ - [E=link_found:1,E=link:uninstalled,E=is_uninstall:1]
+
+  RewriteCond %{ENV:link} ^gettingStarted$
+  RewriteRule ^ - [E=link_found:1,E=link:getting_started]
+
+  RewriteCond %{ENV:link} ^faq$
+  RewriteRule ^ - [E=link_found:1,E=link:faq]
+
+  RewriteCond %{ENV:link} ^subscriptions$
+  RewriteRule ^ - [E=link_found:1,E=link:subscriptions]
+
+  RewriteCond %{ENV:link} ^reporter_privacy$
+  RewriteRule ^ - [E=link_found:1,E=link:privacy,E=anchor:#issue-reporter]
+
+  RewriteCond %{ENV:link} ^privacy$
+  RewriteRule ^ - [E=link_found:1,E=link:privacy]
+
+  RewriteCond %{ENV:link} ^contribute$
+  RewriteRule ^ - [E=link_found:1,E=link:contribute]
+
+  RewriteCond %{ENV:link} ^donate$
+  RewriteRule ^ - [E=link_found:1,E=link:donate]
+
+  RewriteCond %{ENV:link} ^acceptable_ads$
+  RewriteRule ^ - [E=link_found:1,E=link:acceptable-ads]
+
+  RewriteCond %{ENV:link} ^acceptable_ads_criteria$
+  RewriteRule ^ - [E=link_found:1,E=link:acceptable-ads,E=anchor:#criteria]
+
+  RewriteCond %{ENV:link} ^contributors$
+  RewriteRule ^ - [E=link_found:1,E=link:contributors]
+
+  RewriteCond %{ENV:link} ^whitelist$
+  RewriteRule ^ - [E=link_found:1,E=link:faq_basics,E=anchor:#disable]
+
+  RewriteCond %{ENV:link} ^allowlist$
+  RewriteRule ^ - [E=link_found:1,E=link:faq_basics,E=anchor:#disable]
+
+  RewriteCond %{ENV:link} ^acceptable_ads_opt_out$
+  RewriteRule ^ - [E=link_found:1,E=link:acceptable-ads,E=anchor:#optout]
+
+  RewriteCond %{ENV:link} ^donate_settings_page$
+  RewriteRule ^ - [E=link_found:1,E=link:donate,E=anchor:?utm_source=abp&utm_medium=settings_page&utm_campaign=donate]
+
+  RewriteCond %{QUERY_STRING} "(?:^|&)link=share(?:&|$)"
+  RewriteRule ^ https://share.adblockplus.org/%{ENV:lang}/? [L,NC,R=301]
+
+  RewriteCond "%{DOCUMENT_ROOT}/%{ENV:lang}/%{ENV:link}" !-f
+  RewriteRule ^ - [E=lang:!!]
+
+  RewriteRule ^ - [E=langtest:%{ENV:arg_lang}\ %{ENV:lang}]
+
+  RewriteCond %{ENV:langtest} "^(\w+)-(\w+) !!$"
+  RewriteRule ^ - [E=lang:%1_%2]
+
+  RewriteCond "%{DOCUMENT_ROOT}/%{ENV:lang}/%{ENV:link}" !-f
+  RewriteRule ^ - [E=lang:en]
+
+  # For the uninstallation page we need to preserve the query parameters
+  RewriteCond %{ENV:link_found} "=1"
+  RewriteCond %{ENV:is_uninstall} "=1"
+  RewriteRule ^ /%{ENV:lang}/%{ENV:link} [NC,R=301]
+
+  RewriteCond %{ENV:link_found} "=1"
+  RewriteCond %{ENV:is_uninstall} "=0"
+  RewriteRule ^ /%{ENV:lang}/%{ENV:link}%{ENV:anchor}? [NE,R=301]
+
+  # If there is no match in the legacy redirects, bridge request to new redirect service:
+  RewriteCond %{ENV:link_found} "=0"
+  RewriteRule ^ %{REQUEST_SCHEME}://eyeo.to/adblockplus/%1/legacy [NC,R=301]
+
+</If>
+# End Refd #924 - add .htaccess rules for /redirect processing
+
 Header set Content-Security-Policy "default-src 'self'; \
 img-src https://optimize.google.com * data:; \
 style-src 'self' 'unsafe-inline' https://tagmanager.google.com https://fonts.googleapis.com https://optimize.google.com; \
