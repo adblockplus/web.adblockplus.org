@@ -110,84 +110,34 @@ deploy_production1:
     - master
 
 deploy_production2:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER2
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production3:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER3
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production4:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER4
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production5:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER5
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production6:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER6
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 staging_build:
   stage: build_staging
