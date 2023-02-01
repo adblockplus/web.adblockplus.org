@@ -20,6 +20,12 @@ variables:
     DONATION_SERVER_BASE_URL: https://donation.adblock-org.workers.dev/
     DONATION_SERVER_BASE_URL_V1: https://new-integration.adblockplus.org/
 
+.production0:
+  variables: &production0
+    DOMAIN: adblockplus.org
+  extends:
+    ".production"
+
 .common:
   tags:
     - &NODE_IMAGE node:16-alpine
@@ -29,6 +35,7 @@ variables:
     - &BUILD_RUNNER docker
     - &US_RUNNER web-qa-us-proxy-1.uplink.eyeo.it
     - &STAGING_RUNNER eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it
+    - &PRODUCTION_RUNNER0 eyeo_cms_web_server_adblockplus-org-2.adblockplus.org
     - &PRODUCTION_RUNNER1 eyeo_cms_web_server_new-adblockplus-org-1.uplink.eyeo.it
     - &PRODUCTION_RUNNER2 eyeo_cms_web_server_new-adblockplus-org-2.uplink.eyeo.it
     - &PRODUCTION_RUNNER3 eyeo_cms_web_server_new-adblockplus-org-3.uplink.eyeo.it
@@ -50,6 +57,20 @@ stages:
   - deploy_cloud_run
   - deploy_firebase
 
+
+production_build0:
+  variables:
+    <<: *production0
+  extends:
+    "production_build"
+
+deploy_production0:
+  variables:
+    <<: *production0
+  tags:
+    - *PRODUCTION_RUNNER0
+  extends:
+    "deploy_production1"
 
 production_build:
   stage: build_production
@@ -87,7 +108,6 @@ deploy_production1:
     url: http://$DOMAIN
   only:
     - master
-
 
 deploy_production2:
   stage: deploy_production
