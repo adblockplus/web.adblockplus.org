@@ -658,6 +658,7 @@ var protectedInputs = {
  * @param {number} submission.amount - Float payment amount
  * @param {string} submission.custom - Payment session ID
  * @param {string} submission.currency - Payment currency ID
+ * @param {string} submission.item_number - Payment tracking ID
  */
 ns.paypalButtonPayment = function(environment, submission)
 {
@@ -670,7 +671,8 @@ ns.paypalButtonPayment = function(environment, submission)
     business: environment.business,
     amount: submission.amount,
     custom: submission.custom,
-    currency_code: submission.currency
+    currency_code: submission.currency,
+    item_number: submission.item_number,
   });
 
   var input;
@@ -739,6 +741,7 @@ var protectedInputs = {
  * @param {string} submission.currency - Payment currency ID
  * @param {number} submission.amount - Float payment amount
  * @param {string} submission.frequency - Payment frequency
+ * @param {string} submission.item_number - Payment tracking ID
  */
  ns.paypalButtonSubscription = function (environment, submission)
 {
@@ -755,6 +758,7 @@ var protectedInputs = {
     currency_code: submission.currency,
     a3: submission.amount,
     t3: frequency,
+    item_number: submission.item_number,
   });
 
   var input;
@@ -941,6 +945,8 @@ if (!paymentEnvironment) {
   ) ? "live" : "test";
 }
 
+var defaultTrackingID = "X0G0 FEOWSI unknown";
+
 var session;
 
 function onDOMReady()
@@ -1027,6 +1033,8 @@ function onFormSubmit(data)
 
 function onPayPalIntent(data)
 {
+  data.item_number = defaultTrackingID; // payment-server tracking string
+
   if (data.frequency == "once")
     ns.paypalButtonPayment(paypalConfig[paymentEnvironment], data);
   else

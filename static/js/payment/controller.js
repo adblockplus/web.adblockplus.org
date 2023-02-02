@@ -41,6 +41,8 @@ if (!paymentEnvironment) {
   ) ? "live" : "test";
 }
 
+var defaultTrackingID = "X0G0 FEOWSI unknown";
+
 var session;
 
 function onDOMReady()
@@ -127,6 +129,8 @@ function onFormSubmit(data)
 
 function onPayPalIntent(data)
 {
+  data.item_number = defaultTrackingID; // payment-server tracking string
+
   if (data.frequency == "once")
     ns.paypalButtonPayment(paypalConfig[paymentEnvironment], data);
   else

@@ -38,6 +38,7 @@ var protectedInputs = {
  * @param {number} submission.amount - Float payment amount
  * @param {string} submission.custom - Payment session ID
  * @param {string} submission.currency - Payment currency ID
+ * @param {string} submission.item_number - Payment tracking ID
  */
 ns.paypalButtonPayment = function(environment, submission)
 {
@@ -50,7 +51,8 @@ ns.paypalButtonPayment = function(environment, submission)
     business: environment.business,
     amount: submission.amount,
     custom: submission.custom,
-    currency_code: submission.currency
+    currency_code: submission.currency,
+    item_number: submission.item_number,
   });
 
   var input;
