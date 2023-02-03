@@ -154,7 +154,7 @@ SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|i
 
   # If there is no match in the legacy redirects, bridge request to new redirect service:
   RewriteCond %{ENV:link_found} "=0"
-  RewriteRule ^ %{REQUEST_SCHEME}://eyeo.to/adblockplus/%1/legacy [NC,R=301]
+  RewriteRule ^ %{REQUEST_SCHEME}://eyeo.to/adblockplus/%{ENV:link}/legacy [NC,R=301]
 
 </If>
 # End Refd #924 - add .htaccess rules for /redirect processing
