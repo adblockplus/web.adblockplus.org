@@ -429,11 +429,11 @@ Adblock Plus contient un mécanisme de notification d’urgence qui lui permet d
 
 Adblock Plus peut faire d’autres demandes à AdblockPlus.org selon les besoins. Par exemple, quand un lien de documentation est cliqué ou quand la liste complète des souscriptions de filtres doit être téléchargée. Ces demandes tombent sous le coup de la présente [politique de confidentialité](https://adblockplus.org/privacy).
 
-##### Informations sur la désinstallation et la collecte de dons
+##### Informations sur la désinstallation et la collecte de dons, paiements
 
 En désinstallant Adblock Plus sur le Bureau et/ou en nous faisant un don, vous serez dirigé vers une page web de désinstallation et/ou de collecte de dons où les informations suivantes seront automatiquement collectées : Langue de votre navigateur, nom et version de l'extension, type et version du navigateur, système d'exploitation et version, nombre de téléchargements de notifications, informations indiquant si le stockage local de la configuration de l'extension est corrompu, paramètre de version des listes de filtres et si des abonnements aux filtres ont été activés ou désactivés au moment de la désinstallation. Vous pouvez si vous le souhaitez nous indiquer les raisons pour lesquelles vous avez désinstallé Adblock Plus. Nous avons besoin de cette information pour améliorer nos produits.
 
-Pour les dons, nous travaillons avec des prestataires de paiement (Stripe, Inc. et PayPal S.à r.l. et Cie, S.C.A.). Ces prestataires sont responsables du traitement des données que vous saisissez concernant les dons que vous nous envoyez. Le traitement comprend toutes les données que vous saisissez dans le formulaire, notamment, le type de carte, le nom du titulaire de la carte, les coordonnées bancaires (à l'exception du numéro de carte dans son intégralité), l'adresse, le pays, le code postal et l’adresse e-mail. De plus, Stripe recueille des informations d’identification sur les appareils qui se connectent à ses services et utilise ces informations pour détecter des fraudes. Pour obtenir des informations complémentaires sur la façon dont ces prestataires gèrent le traitement des données personnelles, veuillez consulter la [Politique de confidentialité de Stripe](https://stripe.com/privacy) et la [Politique de confidentialité de PayPal](https://www.paypal.com/webapps/mpp/ua/privacy-full). Nous stockons les rapports que nous présentent ces prestataires de paiement pour les besoins de la comptabilité.
+Pour les dons et les paiements, nous travaillons avec des prestataires de paiement (Stripe, Inc., PayPal S.à r.l. et Cie, S.C.A., Paddle.com Inc). Ces prestataires sont responsables du traitement des données que vous saisissez concernant les dons et les paiements que vous nous envoyez. Le traitement comprend toutes les données que vous saisissez dans le formulaire, notamment, le type de carte bancaire, le nom du titulaire de la carte, les coordonnées bancaires (à l'exception du numéro de carte dans son intégralité), l'adresse, le pays, le code postal et l'adresse courriel. Pour obtenir des informations complémentaires sur la façon dont ces prestataires gèrent le traitement des données personnelles, veuillez consulter la [Politique de confidentialité de Stripe](https://stripe.com/privacy), la [Politique de confidentialité de PayPal](https://www.paypal.com/webapps/mpp/ua/privacy-full) et la [Politique de confidentialité de Paddle](https://www.paddle.com/legal/privacy). Nous stockons les rapports que nous présentent ces prestataires de paiement pour les besoins de la comptabilité. Vous pouvez demander la suppression de vos données de paiement [par e-mail](mailto:privacy@eyeo.com).
 
 ##### Rétention des données {: #data-retention }
 
@@ -448,6 +448,10 @@ Adblock Plus stocke certaines données dans le [profil Firefox](http://support.
 Adblock Browser pour Android est basé sur Chromium. Certaines collectes et certains traitements de données associés à Adblock Browser pour Android tombent sous le coup de la [Politique de confidentialité de Google](https://policies.google.com/privacy) ainsi que de l’[Avis de confidentialité de Google Chrome](https://www.google.com/intl/en/chrome/privacy/). Veuillez noter qu’Adblock Browser se connecte automatiquement à Chromium et ses prestataires de service pour fournir la sécurité, des extraits et autres éléments ([Avis de confidentialité Google Chrome](https://www.google.com/intl/en/chrome/privacy/)) ; et quand vous le lui demandez, Adblock Browser se connecte aussi à Google pour vous fournir des fonctionnalités telles que les services de localisation ([Avis de confidentialité de Google Chrome](https://www.google.com/intl/en/chrome/privacy/)).
 
 Contrairement à la description dans l’[Avis de confidentialité de Google Chrome](https://www.google.com/intl/en/chrome/privacy/), les mises à jour de Chromium sont fournies sous le contrôle de eyeo et certaines fonctionnalités comme par exemple les statistiques d’utilisation et les rapports de crash sont désactivées.
+
+##### Utilisation du filtrage de publicités {: #adblock-browser-ad-filtering }
+
+Nous recueillons des données anonymisées d'utilisation du filtrage des publicités, afin de nous aider à améliorer nos produits et services. Nous utilisons ces données anonymisées sur votre utilisation de nos listes de filtres, uniquement dans le but d'améliorer nos technologies de filtrage de publicités.
 
 #### Pour tous les produits mobile et pour Adblock Plus pour Safari sur macOS {: #all-mobile-products }
 
@@ -709,7 +713,7 @@ Pour exercer l'un de ces droits, veuillez soumettre une demande à <a id='privac
 
 Pour toute question concernant cette section ou sur comment exercer vos droits en vertu du CCPA, veuillez <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>nous contacter</a>.
 
-<time datetime="2022-04">Avril 2022</time>
+<time datetime="2023-01">Janvier 2023</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

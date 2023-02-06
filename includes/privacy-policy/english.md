@@ -432,11 +432,11 @@ Adblock Plus contains an emergency notification mechanism that allows it to noti
 
 Adblock Plus may make further requests to AdblockPlus.org as required. For example, a documentation link is clicked or the full list of filter subscriptions needs to be downloaded. These requests are subject to this [Privacy Policy](https://adblockplus.org/privacy).
 
-##### Uninstallation and donation information
+##### Uninstallation, donation information, payments
 
 When uninstalling Adblock Plus for desktop and/or donating to us, you will be referred to an uninstallation and/or donation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, version parameter of filter lists, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
 
-For donations, we work with payment providers (Stripe, Inc. and PayPalPaypal S.à r.l. et Cie, S.C.A.). These providers are responsible for processing the data you enter in regards to the  donations you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. In addition, Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For further information as to how these providers handle the processing of personal data, please refer to Stripe’s [Privacy Policy](https://stripe.com/privacy) and PayPal’s [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full). We store the reports the payment service providers present us with for accounting purposes.
+For donations and payments, we work with payment providers (Stripe, Inc., PayPal S.à r.l. et Cie, S.C.A., Paddle.com Inc). These providers are responsible for processing the data you enter in regards to the  donations and payments you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. In addition, Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For further information as to how these providers handle the processing of personal data, please refer to Stripe’s [Privacy Policy](https://stripe.com/privacy), PayPal’s [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full) and Paddle's [Privacy Policy](https://www.paddle.com/legal/privacy). We store the reports the payment service providers present us with for accounting purposes. You can request the deletion of your payment data [via email](mailto:privacy@eyeo.com).
 
 ##### Data retention {: #data-retention }
 
@@ -451,6 +451,10 @@ Adblock Plus stores some data in [the Firefox profile](http://support.mozilla.co
 Adblock Browser for Android is based on Chromium. Some data collection and processing in connection with Adblock Browser for Android are subject to [Google’s Privacy Policy](https://policies.google.com/privacy) and the additional [Google Chrome Privacy Notice](https://www.google.com/intl/en/chrome/privacy/). Please note that Adblock Browser automatically connects to Chromium and its service providers to provide security, snippets and other features ([Google Chrome Privacy Notice](https://www.google.com/intl/en/chrome/privacy/)); and when you ask it to, Adblock Browser also connects to Google to provide you with features such as location services ([Google Chrome Privacy Notice](https://www.google.com/intl/en/chrome/privacy/)).
 
 Deviating from the description in [Google Chrome's Privacy Notice](https://www.google.com/intl/en/chrome/privacy/), Chromium updates are provided under eyeo's control and some features, such as Chrome’s usage statistics and crash reports, are disabled.
+
+##### Ad-filtering usage {: #adblock-browser-ad-filtering }
+
+We collect anonymized ad-filtering usage data to help us improve our products and services. We use this anonymized data about your use of our filter lists solely to improve our ad-filtering technologies.
 
 #### All mobile products and for Adblock Plus for Safari on macOS {: #all-mobile-products }
 
@@ -714,7 +718,7 @@ To exercise any of these rights, please submit a request to <a id='privacy-email
 
 If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
 
-<time datetime="2022-04">April 2022</time>
+<time datetime="2023-01">January 2023</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

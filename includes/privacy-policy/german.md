@@ -432,11 +432,11 @@ Adblock Plus enthält einen Mechanismus für Notfallbenachrichtigungen, mit dem 
 
 Adblock Plus kann bei Bedarf weitere Anfragen an AdblockPlus.org stellen. Beispiele dafür sind das Klicken auf einen Dokumentationslink oder der Download der vollständigen Liste der Filterabonnements. Solche Anfragen unterliegen dieser [Datenschutzerklärung](https://adblockplus.org/privacy).
 
-##### Deinstallations- und Spendeninformationen
+##### Deinstallations-, Spendeninformationen, Zahlungen
 
 Bei der Deinstallation von Adblock Plus und/oder bei einer Spende an uns wirst du auf eine Deinstallations- und/oder Spendenwebseite verwiesen, auf der folgende Informationen automatisch erfasst werden: Sprache Ihres Browsers, Name und Version der Erweiterung, Browsertyp und -version, Betriebssystem und -version, Anzahl der Downloads von Benachrichtigungen, Informationen darüber, ob die lokale Speicherung der Erweiterungskonfiguration korrumpiert wurde, Versionsparameter von Filterlisten und ob etwaige Filterabonnements zum Zeitpunkt der Deinstallation aktiviert oder deaktiviert wurden. Auf freiwilliger Basis kannst du uns den Grund angeben, aus dem du Adblock Plus deinstalliert hast. Wir benötigen diese Informationen, um unsere Produkte zu verbessern.
 
-Für Spenden arbeiten wir mit Zahlungsanbietern zusammen (Stripe, Inc. und PayPal S.à r.l. et Cie, S.C.A.). Diese Anbieter sind für die Bearbeitung der Daten verantwortlich, die du bezüglich der von dir getätigten Spenden eingegeben hast. Zur Datenverarbeitung gehören u. a. alle Daten, die du in das entsprechende Formular eingegeben hast, einschließlich Kartenart, Name des Karteninhabers, Kreditkarteninformationen (mit Ausnahme der vollständigen Kartennummer), Adresse, Land, Postleitzahl und E-Mail-Adresse. Darüber hinaus sammelt Stripe identifizierende Informationen zu den Geräten, die auf seine Dienste zugreifen und verwendet diese Daten zur Betrugsaufdeckung. Weitere Informationen zum Bearbeitungsprozess von personenbezogenen Daten dieser Anbieter findest du in der [Datenschutzrichtlinie](https://stripe.com/privacy) von Stripe sowie der [Datenschutzrichtlinie](https://www.paypal.com/webapps/mpp/ua/privacy-full) von PayPal. Wir speichern die von den Zahlungsdienstleistern geschickten Berichte zu Bilanzierungszwecken.
+Für Spenden und Zahlungen arbeiten wir mit Zahlungsanbietern zusammen (Stripe, Inc. und PayPal S.à r.l. et Cie, S.C.A., Paddle.com Inc). Diese Anbieter sind für die Verarbeitung der Daten verantwortlich, die du bezüglich der von dir getätigten Spenden eingegeben hast. Die Datenverarbeitung umfasst u. a. alle Daten, die du in das entsprechende Formular eingegeben hast, einschließlich Kartentyp, Name des Karteninhabers, Kreditkarteninformationen (mit Ausnahme der vollständigen Kartennummer), Adresse, Land, Postleitzahl und E-Mail-Adresse. Darüber hinaus sammelt Stripe identifizierende Informationen zu den Geräten, die auf seine Dienste zugreifen und verwendet diese Daten zur Betrugsaufdeckung. Weitere Informationen zum Verarbeitungsprozess von personenbezogenen Daten dieser Anbieter findest du in der [Datenschutzrichtlinie](https://stripe.com/privacy) von Stripe sowie der [Datenschutzrichtlinie](https://www.paypal.com/webapps/mpp/ua/privacy-full) von PayPal und der [Datenschutzrichtlinie](https://www.paddle.com/legal/privacy) von Paddle. Wir speichern die von den Zahlungsdienstleistern geschickten Berichte zu Bilanzierungszwecken.
 
 ##### Datenaufbewahrung {: #data-retention }
 
@@ -451,6 +451,10 @@ Adblock Plus speichert einige Daten im [Firefox-Profil](http://support.mozilla.
 Der Adblock Browser für Android basiert auf Chromium. Einige Datenerhebungen und -verarbeitungen in Verbindung mit dem Adblock Browser für Android unterliegen der [Google Datenschutzerklärung](https://policies.google.com/privacy) und der weiterführenden [Google Chrome-Datenschutzrichtlinie](https://www.google.com/intl/en/chrome/privacy/). Beachte bitte, dass sich der Adblock Browser automatisch mit Chromium und seinen Dienstanbietern verbindet, um Sicherheit, Snippets und andere Funktionen ([Google Chrome-Datenschutzrichtlinie](https://www.google.com/intl/en/chrome/privacy/)) bereitzustellen. Bei einer entsprechenden Anfrage durch dich, verbindet sich der Adblock Browser ebenfalls mit Google, um Funktionen wie Standortdienste ([Google Chrome-Datenschutzrichtlinie](https://www.google.com/intl/en/chrome/privacy/)) bereitzustellen.
 
 Abweichend von der Beschreibung in der [Google Chrome-Datenschutzrichtlinie](https://www.google.com/intl/en/chrome/privacy/) werden Chromium-Aktualisierungen unter der Kontrolle von eyeo bereitgestellt. Einige Funktionen wie der Chrome-Statusbericht und Absturzbericht sind deaktiviert.
+
+##### Nutzung von Werbefiltern {: #adblock-browser-ad-filtering }
+
+Wir erheben anonymisierte Daten zur Nutzung von Werbefiltern, um unsere Produkte und Dienstleistungen zu verbessern. Wir verwenden diese anonymisierten Daten über Ihre Nutzung unserer Filterlisten ausschließlich zur Verbesserung unserer Werbefiltertechnologien.
 
 #### Alle mobilen Produkte und für Adblock Plus für Safari auf macOS {: #all-mobile-products }
 
@@ -712,7 +716,7 @@ Um diese Rechte auszuüben, sende bitte eine E-Mail an <a id='privacy-email' dat
 
 Bei Fragen zu diesem Abschnitt oder zur Ausübung deiner Rechte unter dem CCPA, <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>kontaktiere uns</a> bitte.
 
-<time datetime="2022-04">April 2022</time>
+<time datetime="2023-01">Januar 2023</time>
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
