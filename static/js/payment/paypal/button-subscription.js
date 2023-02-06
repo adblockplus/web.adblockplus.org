@@ -30,7 +30,7 @@ var protectedInputs = {
   cmd: "_xclick-subscriptions",
   item_name: i18n.item,
   image_url: siteURL + "/img/adblock-plus-paypal.png",
-  return: siteURL + "/payment-complete",
+  return: siteURL + ns.paymentCompleteUrl,
   cancel_return: location.href,
   no_note: 1,
   p3: 1, // Subscription duration (N*p3)

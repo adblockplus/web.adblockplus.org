@@ -4,12 +4,16 @@ robots=none
 template=bare
 
 <head>
+  <? include optimizely ?>
   <link rel="stylesheet" href="build/css/update-1.min.css">
   <script>
     path("payment", {
       pageId: 2,
+      sourceId: "B",
       campaignId: 5,
-      productId: "ME"
+      productId: "ME",
+      paymentCompleteUrl: "/update-payment-complete",
+      shouldStoreContributionInfo: true
     });
   </script>
 </head>

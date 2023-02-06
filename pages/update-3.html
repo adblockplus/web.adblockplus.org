@@ -5,11 +5,15 @@ template=bare
 page=update-0
 
 <head>
+  <? include optimizely ?>
   <link rel="stylesheet" href="build/css/update.min.css">
   <script>
     path("payment", {
       pageId: 2,
-      campaignId: 5
+      sourceId: "B",
+      campaignId: 5,
+      paymentCompleteUrl: "/update-payment-complete",
+      shouldStoreContributionInfo: true
     });
   </script>
 </head>

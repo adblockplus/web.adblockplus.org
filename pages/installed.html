@@ -5,11 +5,16 @@ page=installed
 template=installed/main
 
 <head>
+  <? include optimizely ?>
+  <? include hotjar ?>
   <link rel="stylesheet" href="/build/css/installed.min.css">
   <script>
     path("payment", {
       pageId: 3,
+      sourceId: "I",
       campaignId: 3,
+      paymentCompleteUrl: "/installed-payment-complete",
+      shouldStoreContributionInfo: true
     });
   </script>
 </head>

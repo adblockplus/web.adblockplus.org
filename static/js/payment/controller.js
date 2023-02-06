@@ -119,6 +119,19 @@ function onFormSubmit(data)
     provider: data.provider
   });
 
+  // Storing information to be consumed by optimizely and hotjar experiments
+  if (ns.shouldStoreContributionInfo) {
+    localStorage.setItem("contributionInfo", JSON.stringify({
+      "amount": data.amount,
+      "frequency": data.frequency,
+      "processor": data.provider,
+      "currency": data.currency,
+      "lang": doc.documentElement.lang,
+      "source": ns.sourceId || "U",
+      "clickTs": Date.now()
+    }));
+  }
+
   data.custom = session;
 
   if (data.provider == "paypal")
@@ -181,7 +194,7 @@ function onStripeComplete()
     sid: session // session id
   });
 
-  window.location.href = siteURL + "/payment-complete?" + params.toString();
+  window.location.href = siteURL + ns.paymentCompleteUrl + "?" + params.toString();
 }
 
 function onStripeError(error)

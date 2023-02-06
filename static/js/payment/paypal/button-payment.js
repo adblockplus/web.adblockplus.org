@@ -24,7 +24,7 @@ var protectedInputs = {
   cmd: "_xclick",
   item_name: i18n.item,
   image_url: siteURL + "/img/adblock-plus-paypal.png",
-  return: siteURL + "/payment-complete",
+  return: siteURL + ns.paymentCompleteUrl,
   cancel_return: location.href,
   no_note: 1
 };
