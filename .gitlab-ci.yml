@@ -20,6 +20,12 @@ variables:
     DONATION_SERVER_BASE_URL: https://donation.adblock-org.workers.dev/
     DONATION_SERVER_BASE_URL_V1: https://new-integration.adblockplus.org/
 
+.production0:
+  variables: &production0
+    DOMAIN: adblockplus.org
+  extends:
+    ".production"
+
 .common:
   tags:
     - &NODE_IMAGE node:16-alpine
@@ -29,6 +35,7 @@ variables:
     - &BUILD_RUNNER docker
     - &US_RUNNER web-qa-us-proxy-1.uplink.eyeo.it
     - &STAGING_RUNNER eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it
+    - &PRODUCTION_RUNNER0 eyeo_cms_web_server_adblockplus-org-2.adblockplus.org
     - &PRODUCTION_RUNNER1 eyeo_cms_web_server_new-adblockplus-org-1.uplink.eyeo.it
     - &PRODUCTION_RUNNER2 eyeo_cms_web_server_new-adblockplus-org-2.uplink.eyeo.it
     - &PRODUCTION_RUNNER3 eyeo_cms_web_server_new-adblockplus-org-3.uplink.eyeo.it
@@ -50,6 +57,20 @@ stages:
   - deploy_cloud_run
   - deploy_firebase
 
+
+production_build0:
+  variables:
+    <<: *production0
+  extends:
+    "production_build"
+
+deploy_production0:
+  variables:
+    <<: *production0
+  tags:
+    - *PRODUCTION_RUNNER0
+  extends:
+    "deploy_production1"
 
 production_build:
   stage: build_production
@@ -88,86 +109,35 @@ deploy_production1:
   only:
     - master
 
-
 deploy_production2:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER2
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production3:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER3
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production4:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER4
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production5:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER5
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 deploy_production6:
-  stage: deploy_production
-  except:
-    - schedules
-  variables:
-    <<: *production
   tags:
     - *PRODUCTION_RUNNER6
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
+  extends:
+    "deploy_production1"
 
 staging_build:
   stage: build_staging
@@ -317,6 +287,21 @@ stripe_update_tests:
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=update tests/test_StripeDonations.py
   when: manual
 
+legacy_redirect_tests:
+  except:
+    - schedules
+  stage: manually_triggered_tests
+  variables:
+    <<: *staging
+  image: *TEST_IMAGE
+  tags:
+    - *US_RUNNER
+  script:
+    - python3 -m pip install tox
+    - cd tests/web.adblockplus.org
+    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Redirects.py
+  when: manual
+
 lint:
   except:
     - schedules
@@ -391,7 +376,7 @@ build:review:staging:
   except:
     - schedules
   variables:
-    <<: *production
+    <<: *staging
   image: *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
@@ -558,7 +543,7 @@ deploy_firebase_hosting:review:staging:
   image:
     *NODE_IMAGE
   variables:
-    <<: *production
+    <<: *staging
   dependencies:
     - build:review:staging
   before_script:

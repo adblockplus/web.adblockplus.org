@@ -429,11 +429,13 @@ O Adblock Plus contém um mecanismo de notificação de emergência que permite 
 
 O Adblock Plus pode fazer outras solicitações ao AdblockPlus.org conforme necessário. Por exemplo, um link de documentação é clicado ou a lista completa de assinaturas de filtro precisa ser baixada. Estes pedidos estão sujeitos a esta [Política de Privacidade](https://adblockplus.org/privacy).
 
-#### Informações de desinstalação e doação
+#### Desinstalação, informações de doações e pagamentos
 
-Ao desinstalar o Adblock Plus para desktop e/ou nos fazer uma doação, você será encaminhado para uma página de desinstalação e/ou doação onde as seguintes informações são coletadas automaticamente: Idioma do seu navegador, nome e versão da extensão, tipo e versão do navegador, sistema operacional e versão, número de downloads de notificação, informações se o armazenamento local da configuração da extensão está corrompido, parâmetro de versão das listas de filtros e se alguma assinatura de filtro foi habilitada ou desabilitada no momento da desinstalação. De forma voluntária, você pode nos fornecer o motivo da desinstalação do Adblock Plus. Precisamos dessas informações para melhorar nossos produtos.
+Ao desinstalar o Adblock Plus para desktop e/ou nos fazer uma doação, você será encaminhado para uma página de desinstalação e/ou doação onde as seguintes informações são coletadas automaticamente: Idioma do seu navegador, nome e versão da extensão, tipo e versão do navegador, sistema operacional e versão, número de downloads de notificação, informações se o armazenamento local da configuração da extensão está corrompido, parâmetro de versão das listas de filtros e se alguma assinatura de filtro foi habilitada ou desabilitada no momento da desinstalação.
 
 Para doações, trabalhamos com os seguintes provedores de pagamentos (Stripe, Inc. e PayPalPaypal S.à r.l. et Cie, S.C.A.). Esses provedores são responsáveis pelo processamento dos dados que você insere em relação às doações que nos envia. O processamento inclui todos os dados inseridos no respectivo formulário, como, mas não limitado, o tipo de cartão, nome do titular do cartão, detalhes do cartão de crédito (exceto o número completo do cartão), endereço, país, CEP e endereço de e-mail. Além disso, a Stripe coleta informações de identificação sobre os dispositivos que se conectam aos seus serviços e usa essas informações para detecção de fraudes. Para obter mais informações sobre como esses provedores lidam com o processamento de dados pessoais, consulte a  [Política de Privacidadeda](https://stripe.com/privacy) Stripe e a [Política de Privacidadedo](https://www.paypal.com/webapps/mpp/ua/privacy-full) PayPal. Para fins contábeis armazenamos os relatórios que os provedores de serviços de pagamento nos apresentam.
+
+No caso de doações e pagamentos, trabalhamos com prestadores de serviços de pagamento (Stripe, Inc., PayPal S.à r.l. et Cie, S.C.A., Paddle.com Inc). Esses provedores são responsáveis pelo processamento dos dados que você insere em relação às doações e pagamentos que nos envia. O processamento inclui todos os dados inseridos no respectivo formulário, entre eles: o tipo de cartão, nome do titular do cartão, detalhes do cartão de crédito (exceto o número completo do cartão), endereço, país, CEP e endereço de e-mail. Além disso, a Stripe coleta informações de identificação sobre os dispositivos que se conectam aos seus serviços e utiliza essas informações para detecção de fraudes. Para mais informações sobre como esses provedores lidam com o processamento de dados pessoais, consulte a [Política de Privacidadeda](https://stripe.com/privacy) da Stripe, a [Política de Privacidadedo](https://www.paypal.com/webapps/mpp/ua/privacy-full) do PayPal e a [Política de Privacidade](https://www.paddle.com/legal/privacy) da Paddle. Para fins contábeis, armazenamos os relatórios que os provedores de serviços de pagamento nos apresentam. Você pode solicitar a exclusão dos seus dados de pagamento pelo e-mail (mailto:privacy@eyeo.com).
 
 #### Retenção de dados {: #data-retention }
 
@@ -448,6 +450,10 @@ O Adblock Plus armazena alguns dados [no perfil do Firefox](http://support.mozi
 O Adblock Browser para Android é baseado no Chromium. Algumas coletas e processamentos de dados em conexão com o Adblock Browser para Android estão sujeitos a  [Política de Privacidade do Google](https://policies.google.com/privacy) e ao [Aviso de Privacidade do Google Chrome](https://www.google.com/intl/en/chrome/privacy/). Observe que o Adblock Browser se conecta automaticamente ao Chromium e seus provedores de serviços para fornecer segurança, snippets e outros recursos ([Aviso de Privacidade do Google Chrome](https://www.google.com/intl/en/chrome/privacy/)); e quando solicitado, o Adblock Browser também se conecta ao Google para fornecer recursos como serviços de localização ([Aviso de Privacidade do Google Chrome](https://www.google.com/intl/en/chrome/privacy/)).
 
 Desviando da descrição do [Aviso de Privacidade do Google Chrome](https://www.google.com/intl/en/chrome/privacy/), as atualizações do Chromium são fornecidas sob o controle da eyeo e alguns recursos, como estatísticas de uso do Chrome e relatórios de falhas, estão desativados.
+
+##### Uso de filtros de anúncios {: #adblock-browser-ad-filtering }
+
+Coletamos dados anonimizados dos usos de filtros de anúncios para nos ajudar a aprimorar nossos produtos e serviços. Utilizamos esses dados anonimizados sobre a forma como você usa as nossas listas de filtros exclusivamente com o objetivo de aprimorar as nossas tecnologias de filtros de anúncios.
 
 #### Todos os produtos móveis e Adblock Plus para Safari no macOS {: #all-mobile-products }
 
@@ -701,4 +707,4 @@ Para exercer qualquer um destes direitos, envie uma solicitação para <a id='p
 
 Se você tiver alguma dúvida sobre esta seção ou como exercer seus direitos sob a CCPA, entre <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>em contato conosco</a>.
 
-<time datetime="2022-04">Abril 2022</time>
+<time datetime="2023-01">Janeiro 2023</time>

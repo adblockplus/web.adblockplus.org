@@ -47,6 +47,7 @@ var protectedInputs = {
  * @param {string} submission.currency - Payment currency ID
  * @param {number} submission.amount - Float payment amount
  * @param {string} submission.frequency - Payment frequency
+ * @param {string} submission.item_number - Payment tracking ID
  */
  ns.paypalButtonSubscription = function (environment, submission)
 {
@@ -63,6 +64,7 @@ var protectedInputs = {
     currency_code: submission.currency,
     a3: submission.amount,
     t3: frequency,
+    item_number: submission.item_number,
   });
 
   var input;
