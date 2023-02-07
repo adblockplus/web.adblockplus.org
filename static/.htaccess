@@ -188,13 +188,6 @@ Header merge  Vary "Origin"
   GeoIPEnable On
 </FilesMatch>
 
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
-RewriteRule "([\w-_]*)\/update$" "$1/update-3" [NC,L]
-
-RewriteRule "(de|de_DE|de-DE|fr|fr_FR|fr-FR)\/update$" "$1/update-3" [NC,L]
-
-RewriteRule "([\w-_]*)\/update$" "$1/update-1" [NC,L]
-
 RewriteRule ^(devbuilds(/.*)?) https://downloads.adblockplus.org/$1 [NC,L]
 
 RewriteRule ^(blog|releases|development-builds|atom|rss|category|section|author|file_download|images|textpattern)($|/) https://blog.adblockplus.org/$1
