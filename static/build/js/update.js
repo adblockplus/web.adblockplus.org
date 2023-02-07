@@ -644,7 +644,7 @@ var protectedInputs = {
   cmd: "_xclick",
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + "/payment-complete",
+  return: siteURL + ns.paymentCompleteUrl,
   cancel_return: location.href,
   no_note: 1
 };
@@ -722,7 +722,7 @@ var protectedInputs = {
   cmd: "_xclick-subscriptions",
   item_name: i18n.item,
   image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + "/payment-complete",
+  return: siteURL + ns.paymentCompleteUrl,
   cancel_return: location.href,
   no_note: 1,
   p3: 1, // Subscription duration (N*p3)
@@ -1017,6 +1017,19 @@ function onFormSubmit(data)
     provider: data.provider
   });
 
+  // Storing information to be consumed by optimizely and hotjar experiments
+  if (ns.shouldStoreContributionInfo) {
+    localStorage.setItem("contributionInfo", JSON.stringify({
+      "amount": data.amount,
+      "frequency": data.frequency,
+      "processor": data.provider,
+      "currency": data.currency,
+      "lang": doc.documentElement.lang,
+      "source": ns.sourceId || "U",
+      "clickTs": Date.now()
+    }));
+  }
+
   data.custom = session;
 
   if (data.provider == "paypal")
@@ -1077,7 +1090,7 @@ function onStripeComplete()
     sid: session // session id
   });
 
-  window.location.href = siteURL + "/payment-complete?" + params.toString();
+  window.location.href = siteURL + ns.paymentCompleteUrl + "?" + params.toString();
 }
 
 function onStripeError(error)
