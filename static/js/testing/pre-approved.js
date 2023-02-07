@@ -4,11 +4,12 @@
 
   var variant = eyeo.variant = eyeo.variant || {};
 
-  var domain = window.location.hostname
-    // get top level domain
-    .split('.').slice(-2).join('.')
-    // strip port
-    .split(':')[0];
+  var host = window.location.hostname;
+
+  // Set `domain` to whole hostname if Firebase preview page
+  var domain = host.startsWith('dev--adblockplus-org--') && host.endsWith('.web.app')
+    ? host
+    : host.split(".").slice(-2).join(".").split(":")[0];
 
   var origin = window.location.origin
     // location.origin is not supported by IE

@@ -198,6 +198,20 @@
         "source": "/js/testing/hotjar.js",
         "destination": "/hotjar-function",
         "type": 301
+      },
+
+      // Redirect to cloud run rewrite for cookie & tracking config
+      {
+        "source": "/js/testing/setup.js",
+        "destination": "/cookie-tracking-function",
+        "type": 301
+      },
+
+      // Redirect to cloud run rewrite for pre-approved config
+      {
+        "source": "/js/testing/pre-approved.js",
+        "destination": "/pre-approved-function",
+        "type": 301
       }
     ],
     "rewrites": [
@@ -217,6 +231,20 @@
       },
       {
         "source": "/hotjar-function",
+        "run": {
+          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/cookie-tracking-function",
+        "run": {
+          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/pre-approved-function",
         "run": {
           "serviceId": "PLACEHOLDER-SERVICE-ID",
           "region": "europe-west1"

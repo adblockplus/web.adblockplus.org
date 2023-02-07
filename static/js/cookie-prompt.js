@@ -7,11 +7,12 @@
   var TRACKING_CONSENT = "eyeo-ga-consent";
   var TRACKING_UID = "UA-18643396-6";
 
-  var domain = window.location.hostname
-    // get top level domain
-    .split(".").slice(-2).join(".")
-    // strip port
-    .split(":")[0];
+  var host = window.location.hostname;
+
+  // Set `domain` to whole hostname if Firebase preview page
+  var domain = host.startsWith('dev--adblockplus-org--') && host.endsWith('.web.app')
+    ? host
+    : host.split(".").slice(-2).join(".").split(":")[0];
 
   function addListeners(event, targets, callback)
   {
