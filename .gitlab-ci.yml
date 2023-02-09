@@ -433,7 +433,7 @@ deploy_cloud_run:review:
   script:
     - cd services/cloudrun
     - gcloud builds submit --tag gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy $CI_COMMIT_REF_SLUG --image gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
+    - gcloud run deploy b-$CI_COMMIT_REF_SLUG --image gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     on_stop: teardown_cloud_run:review
@@ -448,7 +448,7 @@ teardown_cloud_run:review:
     - gcloud auth activate-service-account --key-file $GCP_SERVICE_ACCOUNT_CREDENTIALS
     - gcloud config set project $GCP_PROJECT_ID
   script:
-    - gcloud run services delete $CI_COMMIT_REF_SLUG --region europe-west1 --quiet
+    - gcloud run services delete b-$CI_COMMIT_REF_SLUG --region europe-west1 --quiet
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     action: stop
@@ -506,7 +506,7 @@ deploy_firebase_hosting:review:
     - cp $GCP_SERVICE_ACCOUNT_CREDENTIALS ~/gcp.json
     - export GOOGLE_APPLICATION_CREDENTIALS=~/gcp.json
   script:
-    - npm run rename-service-ids -- --input ./services/firebase/firebase.json --name $CI_COMMIT_REF_SLUG
+    - npm run rename-service-ids -- --input ./services/firebase/firebase.json --name b-$CI_COMMIT_REF_SLUG
     - cd services/firebase
     - firebase use staging
     - firebase hosting:channel:deploy $CI_COMMIT_REF_SLUG --expires $PREVIEW_CHANNEL_EXPIRATION
