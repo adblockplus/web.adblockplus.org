@@ -1,6 +1,6 @@
-  {% if page == "installed-payment-complete" %}
+  {% if payment_source == "installed" %}
       <? include optimizely ?>
       <? include hotjar ?>
-  {% elif page == "update-payment-complete" %}
+  {% elif payment_source == "update" %}
       <? include optimizely ?>
   {% endif %}
