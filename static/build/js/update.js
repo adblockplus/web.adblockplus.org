@@ -621,9 +621,6 @@ ns.stripeCardSubscription = function stripeCardSubscription(data)
 /* global eyeo, URLSearchParams, paymentTranslations */
 (function(doc, ns, i18n){
 
-var siteURL = document.documentElement
-  .getAttribute("data-siteurl") || "https://adblockplus.org";
-
 var pageLanguage = doc.documentElement.lang;
 
 // Maps our locale codes to PayPal's locale codes (excluding same values)
@@ -643,8 +640,8 @@ var protectedInputs = {
   lc: PAYPAL_LOCALE[pageLanguage] || pageLanguage.toUpperCase(),
   cmd: "_xclick",
   item_name: i18n.item,
-  image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + ns.paymentCompleteUrl,
+  image_url: window.location.origin + "../../img/adblock-plus-paypal.png",
+  return: window.location.origin + ns.paymentCompleteUrl,
   cancel_return: location.href,
   no_note: 1
 };
@@ -695,9 +692,6 @@ ns.paypalButtonPayment = function(environment, submission)
 /* global eyeo, URLSearchParams, paymentTranslations */
 (function(doc, ns, i18n){
 
-var siteURL = document.documentElement
-  .getAttribute("data-siteurl") || "https://adblockplus.org";
-
 var pageLanguage = doc.documentElement.lang;
 
 // Maps our locale codes to PayPal's locale codes (excluding same values)
@@ -723,8 +717,8 @@ var protectedInputs = {
   lc: PAYPAL_LOCALE[pageLanguage] || pageLanguage.toUpperCase(),
   cmd: "_xclick-subscriptions",
   item_name: i18n.item,
-  image_url: siteURL + "../../img/adblock-plus-paypal.png",
-  return: siteURL + ns.paymentCompleteUrl,
+  image_url: window.location.origin + "../../img/adblock-plus-paypal.png",
+  return: window.location.origin + ns.paymentCompleteUrl,
   cancel_return: location.href,
   no_note: 1,
   p3: 1, // Subscription duration (N*p3)
@@ -904,9 +898,6 @@ ns.getSession = function()
 })(path("payment"));
 /* global eyeo */
 (function(doc, _, ns, i18n){
-
-var siteURL = doc.documentElement.getAttribute("data-siteurl") 
-  || "https://adblockplus.org";
 
 var queryParameters = new URLSearchParams(window.location.search);
 
@@ -1098,7 +1089,7 @@ function onStripeComplete()
     sid: session // session id
   });
 
-  window.location.href = siteURL + ns.paymentCompleteUrl + "?" + params.toString();
+  window.location.href = window.location.origin + ns.paymentCompleteUrl + "?" + params.toString();
 }
 
 function onStripeError(error)

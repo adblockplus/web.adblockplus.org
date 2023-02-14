@@ -1,9 +1,6 @@
 /* global eyeo */
 (function(doc, _, ns, i18n){
 
-var siteURL = doc.documentElement.getAttribute("data-siteurl") 
-  || "https://adblockplus.org";
-
 var queryParameters = new URLSearchParams(window.location.search);
 
 var stripeConfig = {
@@ -194,7 +191,7 @@ function onStripeComplete()
     sid: session // session id
   });
 
-  window.location.href = siteURL + ns.paymentCompleteUrl + "?" + params.toString();
+  window.location.href = window.location.origin + ns.paymentCompleteUrl + "?" + params.toString();
 }
 
 function onStripeError(error)
