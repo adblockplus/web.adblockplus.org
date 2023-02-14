@@ -123,6 +123,18 @@ app.get('/pre-approved-function', (req, res) => {
   res.redirect(302, `/js/testing/${target}${queryString}`);
 });
 
+app.get('/update-function', (req, res) => {
+  const countryCode = req.headers['x-country-code'];
+
+  const queryString = getQueryString(req);
+
+  const target = ['DE', 'FR'].includes(countryCode)
+    ? 'periodic-contribution'
+    : 'update-f'
+  
+  res.redirect(302, `/${target}${queryString}`);
+});
+
 
 
 // Listener config

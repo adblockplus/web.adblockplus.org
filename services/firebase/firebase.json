@@ -212,41 +212,55 @@
         "source": "/js/testing/pre-approved.js",
         "destination": "/pre-approved-function",
         "type": 301
+      },
+
+      // Redirect to cloud run rewrite for update page
+      {
+        "regex": "(?i)^/(?:[\\w-]{2,6}/)update/?$",
+        "destination": "/update-function",
+        "type": 301
       }
     ],
     "rewrites": [
       {
         "source": "/payment-config-function",
         "run": {
-          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
         }
       },
       {
         "source": "/optimizely-function",
         "run": {
-          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
         }
       },
       {
         "source": "/hotjar-function",
         "run": {
-          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
         }
       },
       {
         "source": "/cookie-tracking-function",
         "run": {
-          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
         }
       },
       {
         "source": "/pre-approved-function",
         "run": {
-          "serviceId": "PLACEHOLDER-SERVICE-ID",
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/update-function",
+        "run": {
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
         }
       }
