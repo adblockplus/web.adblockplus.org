@@ -150,7 +150,7 @@ SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|i
 
   RewriteCond %{ENV:link_found} "=1"
   RewriteCond %{ENV:is_uninstall} "=0"
-  RewriteRule ^ /%{ENV:lang}/%{ENV:link}%{ENV:anchor}? [NE,R=301]
+  RewriteRule ^ /%{ENV:lang}/%{ENV:link}%{ENV:anchor} [NE,R=301]
 
   # If there is no match in the legacy redirects, bridge request to new redirect service:
   RewriteCond %{ENV:link_found} "=0"
