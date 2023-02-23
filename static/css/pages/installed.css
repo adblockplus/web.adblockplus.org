@@ -351,3 +351,52 @@ h2 svg { display: block; }
 
   .page-loaded .donation-form { animation: fadeIn 2.6s; }
 }
+
+/* AppealForm customisations
+ ******************************************************************************/
+
+.installed .appeal-form .appeal-form-amount__input, 
+.installed .appeal-form .appeal-form-header__select {
+  border-color: #cdcdcd;
+  border-radius: 2px;
+}
+
+.installed .appeal-form .appeal-form-header {
+  margin-bottom: 0.25rem;
+}
+
+.installed .appeal-form .appeal-form-header__heading {
+  font-size: 1.4rem;
+}
+
+.installed .appeal-form .appeal-form-frequency__heading {
+  color: inherit;
+}
+
+.installed .appeal-form .appeal-form-frequencies {
+  margin-bottom: 0.875rem;
+}
+
+.installed .appeal-form .appeal-form__error {
+  padding: 0.675rem 0.875rem;
+  margin: 0.875rem 0;
+  background-color: #fff;
+  border: 1px solid #a1a1a1;
+  border-radius: 4px;
+}
+
+:not([dir='rtl']).installed .appeal-form .appeal-form__error {
+  border-left: 5px solid #ea2349;
+}
+
+[dir='rtl'].installed .appeal-form .appeal-form__error {
+  border-right: 5px solid #ea2349;
+}
+
+.installed .appela-form .appeal-form-checkout {
+  margin-top: 0.876rem;
+}
+
+.installed .appeal-form .appeal-form-checkout__submit {
+  background-color: #2888f9;
+}
