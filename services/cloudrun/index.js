@@ -34,13 +34,13 @@ function getQueryString(req) {
 
 app.get('/payment-config-function', (req, res) => {
   euRules = euRules || [
-    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU', 'IE',
+    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'GR', 'HU', 'IE',
     'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE'
   ].reduce((acc, country) => ({...acc, [country]: 'eu.js'}), {});
 
   geoipRules = geoipRules || {
     'GB': 'gb.js', 'US': 'us.js', 'DE': 'de.js', 'CH': 'ch.js', 'AU': 'au.js',
-    'CA': 'ca.js', 'NZ': 'nz.js', 'RU': 'ru.js', 'JP': 'jp.js',
+    'CA': 'ca.js', 'NZ': 'nz.js', 'RU': 'ru.js', 'JP': 'jp.js', 'FR': "fr.js",
     ...euRules
   };
 
@@ -51,6 +51,28 @@ app.get('/payment-config-function', (req, res) => {
   const queryString = getQueryString(req);
 
   res.redirect(302, `/js/payment/config/${paymentConfig}${queryString}`);
+});
+
+app.get('/currency-function', (req, res) => {
+  euRules = euRules || [
+    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU',
+    'IE', 'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI',
+    'ES', 'SE', 'DE'
+  ].reduce((acc, country) => ({...acc, [country]: 'eur.js'}), {});
+
+  geoipRules = geoipRules || {
+    'AU': 'aud.js', 'CA': 'cad.js', 'CH': 'chf.js', 'GB': 'gbp.js',
+    'JP': 'jpy.js', 'NZ': 'nzd.js', 'RU': 'rub.js',
+    ...euRules
+  };
+
+  const countryCode = req.headers['x-country-code'];
+
+  const paymentConfig = geoipRules[countryCode] || 'usd.js';
+
+  const queryString = getQueryString(req);
+
+  res.redirect(302, `/currencies/${paymentConfig}${queryString}`);
 });
 
 app.get('/optimizely-function', (req, res) => {

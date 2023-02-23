@@ -329,7 +329,7 @@ var MABTracking = {
 
 // Builds tracking information
 // TODO name this something better
-function recordTracking() {
+function recordTracking(omitUserId) {
     // Adblock Plus is not yet integrating with AdBlock experiments
     var experimentId = "0";
     var experimentVariant = "0";
@@ -337,7 +337,7 @@ function recordTracking() {
         MABTracking.Section([eyeo.payment.productId]),
         MABTracking.Section(["X", experimentId, "G", experimentVariant]),
         MABTracking.Section(["F", getBrowser(), getOS(), getSource()]),
-        MABTracking.Section([forceGetUserId()])
+        MABTracking.Section([omitUserId ? "unknown" : forceGetUserId()])
     ]);
 }
 
