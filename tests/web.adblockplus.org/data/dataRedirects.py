@@ -99,7 +99,7 @@ TEST_DATA_ABPO = [(
       '/en/contribute',
 ), (
       '/redirect?link=donate',
-      '/en/donate',
+      '/en/periodic-contribution',
 ), (
       '/redirect?link=acceptable_ads',
       '/en/acceptable-ads',
@@ -120,7 +120,7 @@ TEST_DATA_ABPO = [(
       '/en/acceptable-ads#optout',
 ), (
       '/redirect?link=donate_settings_page',
-      '/en/donate?utm_source=abp&utm_medium=settings_page&utm_campaign=donate',
+      '/en/periodic-contribution?utm_source=abp&utm_medium=settings_page&utm_campaign=donate',
 ), (
       '/blog',
       '/blog/',

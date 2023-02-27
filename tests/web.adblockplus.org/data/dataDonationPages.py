@@ -1,6 +1,6 @@
 TEST_DATA = [(
       'donation_page',
-      'https://adblockplus.org/donate',
+      'https://adblockplus.org/periodic-contribution',
 ), (
       'update_page',
       'https://new.adblockplus.org/update',
