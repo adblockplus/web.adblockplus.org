@@ -167,12 +167,27 @@ SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CO
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
 
-<FilesMatch ^(update|installed)$>
-  GeoIPEnable On
-</FilesMatch>
+GeoIPEnable On
 
-RewriteCond %{QUERY_STRING} !geo=
-RewriteRule "([\w\-]{2,6})\/installed$" "/$1/installed?geo=%{ENV:GEOIP_COUNTRY_CODE}" [QSA,NC,R]
+# If country is detected and not in query string then append it
+RewriteCond %{GEOIP_COUNTRY_CODE} [A-Z]{2}
+RewriteCond %{QUERY_STRING} !g=
+RewriteRule ^(.*)$ %{REQUEST_URI}?g=%{GEOIP_COUNTRY_CODE} [QSA,NC,R]
+
+# If country is detected and in query string then replace it
+RewriteCond %{GEOIP_COUNTRY_CODE} [A-Z]{2}
+RewriteCond %{QUERY_STRING} ^(.*[&?]|)g=(.*)([&?].*|)$
+RewriteRule ^(.*)$ /$1?%1g=%{ENV:GEOIP_COUNTRY_CODE}%2 [R=301,NC,L]
+
+# If country is not detected and not in query string then append default country
+RewriteCond %{GEOIP_COUNTRY_CODE} ""
+RewriteCond %{QUERY_STRING} !g=
+RewriteRule ^(.*)$ %{REQUEST_URI}?g=XX [QSA,NC,R]
+
+# If country is not detected and in query string then replace it with default country
+RewriteCond %{GEOIP_COUNTRY_CODE} ""
+RewriteCond %{QUERY_STRING} ^(.*&)?(g=)((?!XX).*)(&.*)?$
+RewriteRule ^(.*)$ %{REQUEST_URI}?%1%2XX%3 [NC,R]
 
 # Fall back to general update page for FR and DE location
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
