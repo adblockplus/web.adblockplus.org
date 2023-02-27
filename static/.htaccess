@@ -167,9 +167,12 @@ SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CO
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
 
-<FilesMatch ^update$>
+<FilesMatch ^(update|installed)$>
   GeoIPEnable On
 </FilesMatch>
+
+RewriteCond %{QUERY_STRING} !geo=
+RewriteRule "([\w\-]{2,6})\/installed$" "/$1/installed?geo=%{ENV:GEOIP_COUNTRY_CODE}" [QSA,NC,R]
 
 # Fall back to general update page for FR and DE location
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$

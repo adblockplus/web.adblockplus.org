@@ -1,7 +1,10 @@
 <script>
+  const searchParameters = new URLSearchParams(location.search);
   window.adblock = {
+    searchParameters,
     settings: {
       locale: {{ locale | tojson }},
+      geo: searchParameters.get("geo"),
     },
     strings: {
       "appeal-form-header__heading": {{ get_string("fair-amount-header-2", "payment-form") | tojson }},
