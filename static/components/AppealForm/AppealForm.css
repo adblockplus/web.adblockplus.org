@@ -1,290 +1,225 @@
-.appeal-form
-{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.appeal-form {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.appeal-form .appeal-form__placeholder
-{
-    position: relative;
-
-    display: inline-block;
-    overflow: hidden;
-
-    height: 1em;
-
-    border-radius: 3px;
-    background-color: #e6e6e6;
+.appeal-form .appeal-form__placeholder {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 1em;
+  border-radius: 3px;
+  background-color: #e6e6e6;
 }
 
-.appeal-form .appeal-form__placeholder::after
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    content: '';
-    transform: translateX(-100%);
-    animation: shimmer 3s infinite;
-
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .2) 20%, rgba(255, 255, 255, .5) 60%, rgba(255, 255, 255, 0));
+.appeal-form .appeal-form__placeholder::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  transform: translateX(-100%);
+  animation: shimmer 3s infinite;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .2) 20%, rgba(255, 255, 255, .5) 60%, rgba(255, 255, 255, 0));
 }
 
-@-webkit-keyframes shimmer
-{
-    100%
-    {
-        transform: translateX(100%);
-    }
+@-webkit-keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
-@keyframes shimmer
-{
-    100%
-    {
-        transform: translateX(100%);
-    }
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
-.appeal-form .appeal-form-header
-{
-    margin-bottom: .5rem;
+.appeal-form .appeal-form-header {
+  margin-bottom: .5rem;
 }
 
-.appeal-form .appeal-form-header__heading
-{
-    font-size: 1.125rem;
-
-    display: inline-block;
-
-    margin: 0;
+.appeal-form .appeal-form-header__heading {
+  font-size: 1.125rem;
+  display: inline-block;
+  margin: 0;
 }
 
-.appeal-form .appeal-form-header__select
-{
-    font-size: .875rem;
+.appeal-form .appeal-form-header__select {
+  font-size: .875rem;
 }
 
-.appeal-form .appeal-form-frequencies
-{
-    display: flex;
-    flex-wrap: wrap;
-
-    max-width: 53.125rem;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
+.appeal-form .appeal-form-frequencies {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 53.125rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }
 
-:not([dir='rtl']) .appeal-form .appeal-form-frequencies
-{
-    margin-left: -1rem;
+:not([dir='rtl']) .appeal-form .appeal-form-frequencies {
+  margin-left: -1rem;
 }
 
-[dir='rtl'] .appeal-form .appeal-form-frequencies
-{
-    margin-right: -1rem;
+[dir='rtl'] .appeal-form .appeal-form-frequencies {
+  margin-right: -1rem;
 }
 
-.appeal-form .appeal-form-frequency
-{
-    flex: 0 0 100%;
-
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+.appeal-form .appeal-form-frequency {
+  flex: 0 0 100%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 
-:not([dir='rtl']) .appeal-form .appeal-form-frequency
-{
-    padding-left: 1rem;
+:not([dir='rtl']) .appeal-form .appeal-form-frequency {
+  padding-left: 1rem;
 }
 
-[dir='rtl'] .appeal-form .appeal-form-frequency
-{
-    padding-right: 1rem;
+[dir='rtl'] .appeal-form .appeal-form-frequency {
+  padding-right: 1rem;
 }
 
-@media (min-width: 55.125rem)
-{
-    .appeal-form .appeal-form-frequency
-    {
-        flex: 1;
-
-        padding-top: 0;
-    }
+@media (min-width: 55.125rem) {
+  .appeal-form .appeal-form-frequency {
+    flex: 1;
+    padding-top: 0;
+  }
 }
 
-.appeal-form .appeal-form-frequency__heading
-{
-    font-size: 1rem;
-    font-weight: normal;
-
-    margin-top: 0;
-    margin-bottom: .375rem;
+.appeal-form .appeal-form-frequency__heading {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: .375rem;
 }
 
-.appeal-form .appeal-form-amounts
-{
-    display: flex;
-    flex-wrap: wrap;
-
-    max-width: 16.70875rem;
+.appeal-form .appeal-form-amounts {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 16.70875rem;
 }
 
-:not([dir='rtl']) .appeal-form .appeal-form-amounts
-{
-    padding-right: 1rem;
+:not([dir='rtl']) .appeal-form .appeal-form-amounts {
+  padding-right: 1rem;
 }
 
-[dir='rtl'] .appeal-form .appeal-form-amounts
-{
-    padding-left: 1rem;
+[dir='rtl'] .appeal-form .appeal-form-amounts {
+  padding-left: 1rem;
 }
 
-@media (min-width: 55.125rem)
-{
-    :not([dir='rtl']) .appeal-form .appeal-form-amounts
-    {
-        border-right: 1px solid gray;
-    }
+@media (min-width: 55.125rem) {
+  :not([dir='rtl']) .appeal-form .appeal-form-amounts {
+    border-right: 1px solid gray;
+  }
 
-    [dir='rtl'] .appeal-form .appeal-form-amounts
-    {
-        border-left: 1px solid gray;
-    }
+  [dir='rtl'] .appeal-form .appeal-form-amounts {
+    border-left: 1px solid gray;
+  }
 
-    .appeal-form .appeal-form-frequency:last-of-type .appeal-form-amounts
-    {
-        border: 0;
-    }
-}
-
-.appeal-form .appeal-form-amount
-{
-    line-height: 1.7;
-
-    display: flex;
-
-    width: 33.33333333%;
-}
-
-:not([dir='rtl']) .appeal-form .appeal-form-amount__radio
-{
-    margin-left: 0;
-}
-
-[dir='rtl'] .appeal-form .appeal-form-amount__radio
-{
-    margin-right: 0;
-}
-
-.appeal-form .appeal-form-amount__text
-{
-    padding-top: 1.5px;
-}
-
-.appeal-form .appeal-form-amount__input
-{
-    font-size: .875rem;
-
-    width: 100%;
-    height: 1.4rem;
-    margin-top: .1875rem;
-    padding: .125rem .25rem .125rem .25rem;
-
-    border: 1px solid gray;
-}
-
-:not([dir='rtl']) .appeal-form .appeal-form-amount__input
-{
-    margin-right: .1875rem;
-}
-
-[dir='rtl'] .appeal-form .appeal-form-amount__input
-{
-    margin-left: .1875rem;
-}
-
-@media (min-width: 55.125rem)
-{
-    .appeal-form .appeal-form-checkout
-    {
-        display: flex;
-    }
-}
-
-.appeal-form .appeal-form-checkout__submit
-{
-    font-size: .9375rem;
-    font-weight: 700;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: 2rem;
-    margin-bottom: 1rem;
-
-    text-align: center;
-
-    color: #fff;
+  .appeal-form .appeal-form-frequency:last-of-type .appeal-form-amounts {
     border: 0;
-    border-radius: 3.5px;
-    background-color: #0047ff;
-    box-shadow: 0 0 1px 0 rgb(0 0 0 / 20%);
+  }
 }
 
-.appeal-form .appeal-form-checkout__submit:disabled
-{
-    filter: grayscale(100);
+.appeal-form .appeal-form-amount {
+  line-height: 1.7;
+
+  display: flex;
+
+  width: 33.33333333%;
 }
 
-@media (min-width: 23.75rem)
-{
-    .appeal-form .appeal-form-checkout__submit
-    {
-        max-width: 14rem;
-    }
-
-    :not([dir='rtl']) .appeal-form .appeal-form-checkout__submit
-    {
-        margin-right: 1rem;
-    }
-
-    [dir='rtl'] .appeal-form .appeal-form-checkout__submit
-    {
-        margin-left: 1rem;
-    }
+:not([dir='rtl']) .appeal-form .appeal-form-amount__radio {
+  margin-left: 0;
 }
 
-@media (min-width: 55.125rem)
-{
-    .appeal-form .appeal-form-checkout__submit
-    {
-        margin-bottom: 0;
-    }
+[dir='rtl'] .appeal-form .appeal-form-amount__radio {
+  margin-right: 0;
 }
 
-.appeal-form .appeal-form-checkout__icon
-{
-    height: 1rem;
+.appeal-form .appeal-form-amount__text {
+  padding-top: 1.5px;
 }
 
-:not([dir='rtl']) .appeal-form .appeal-form-checkout__icon
-{
-    margin-right: .25rem;
+.appeal-form .appeal-form-amount__input {
+  font-size: .875rem;
+  width: 100%;
+  height: 1.4rem;
+  margin-top: .1875rem;
+  padding: .125rem .25rem .125rem .25rem;
+  border: 1px solid gray;
 }
 
-[dir='rtl'] .appeal-form .appeal-form-checkout__icon
-{
-    margin-left: .25rem;
+:not([dir='rtl']) .appeal-form .appeal-form-amount__input {
+  margin-right: .1875rem;
 }
 
-.appeal-form .appeal-form-checkout__image
-{
-    width: 100%;
-    max-width: 340px;
-    max-height: 32px;
+[dir='rtl'] .appeal-form .appeal-form-amount__input {
+  margin-left: .1875rem;
+}
+
+@media (min-width: 55.125rem) {
+  .appeal-form .appeal-form-checkout {
+    display: flex;
+  }
+}
+
+.appeal-form .appeal-form-checkout__submit {
+  font-size: .9375rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  border-radius: 3.5px;
+  background-color: #0047ff;
+  box-shadow: 0 0 1px 0 rgb(0 0 0 / 20%);
+}
+
+.appeal-form .appeal-form-checkout__submit:disabled {
+  filter: grayscale(100);
+}
+
+@media (min-width: 23.75rem) {
+  .appeal-form .appeal-form-checkout__submit {
+    max-width: 14rem;
+  }
+
+  :not([dir='rtl']) .appeal-form .appeal-form-checkout__submit {
+    margin-right: 1rem;
+  }
+
+  [dir='rtl'] .appeal-form .appeal-form-checkout__submit {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 55.125rem) {
+  .appeal-form .appeal-form-checkout__submit {
+    margin-bottom: 0;
+  }
+}
+
+.appeal-form .appeal-form-checkout__icon {
+  height: 1rem;
+}
+
+:not([dir='rtl']) .appeal-form .appeal-form-checkout__icon {
+  margin-right: .25rem;
+}
+
+[dir='rtl'] .appeal-form .appeal-form-checkout__icon {
+  margin-left: .25rem;
+}
+
+.appeal-form .appeal-form-checkout__image {
+  width: 100%;
+  max-width: 340px;
+  max-height: 32px;
 }
