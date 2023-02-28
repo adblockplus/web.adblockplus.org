@@ -1,4 +1,4 @@
-/* global adblock, Paddle */
+/* global adblock, eyeo, Paddle */
 
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
@@ -26,6 +26,19 @@ const appealForm = new AppealForm({
 appealForm.onSubmit((data) => {
 
   appealForm.disable();
+
+  // Storing information to be consumed by optimizely and hotjar experiments
+  if (eyeo && eyeo.payment && eyeo.payment.shouldStoreContributionInfo) {
+    localStorage.setItem("contributionInfo", JSON.stringify({
+      amount: data.amount,
+      frequency: data.frequency,
+      processor: "paddle",
+      currency: data.currency,
+      lang: doc.documentElement.lang,
+      source: eyeo.payment.sourceId || "U",
+      clickTs: Date.now(),
+    }));
+  }
 
   const passthrough = {
     testmode: false,
