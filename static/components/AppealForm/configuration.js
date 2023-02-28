@@ -9,7 +9,7 @@ export const CONFIGURATION = {
       : country == "MX" ? "MXN"
       : [
         "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","GR","HU","IE","IT",
-        "LV","LT","LG","MT","NL","PL","PT","RO","SK","SI","ES","SE"
+        "LV","LT","LG","MT","NL","PL","PT","RO","SK","SI","ES","SE","DE","FR"
       ].includes(country) ? "EUR"
       : "USD"
     })(adblock.settings.geo),
