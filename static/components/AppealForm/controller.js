@@ -7,7 +7,7 @@ let paddleConfiguration = CONFIGURATION.Paddle.sandbox;
 
 const queryParameters = new URLSearchParams(location.search);
 
-if (queryParameters.get("sandbox")) {
+if (queryParameters.get("testmode")) {
   paddleConfiguration = CONFIGURATION.Paddle.sandbox;
 }
 
