@@ -1,6 +1,18 @@
 export const CONFIGURATION = {
   AppealForm: {
-    currency: "USD",
+    currency: (country => {
+      return country == "GB" ? "GBP"
+      : country == "AU" ? "AUD"
+      : country == "CA" ? "CAD"
+      : country == "RU" ? "RUB"
+      : country == "JP" ? "JPY"
+      : country == "MX" ? "MXN"
+      : [
+        "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","GR","HU","IE","IT",
+        "LV","LT","LG","MT","NL","PL","PT","RO","SK","SI","ES","SE"
+      ].includes(country) ? "EUR"
+      : "USD"
+    })(adblock.settings.geo),
     selected: 3
   },
   Paddle: {

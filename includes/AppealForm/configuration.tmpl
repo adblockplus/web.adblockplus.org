@@ -4,7 +4,7 @@
     searchParameters,
     settings: {
       locale: {{ locale | tojson }},
-      geo: searchParameters.get("geo"),
+      geo: searchParameters.get("fg") || searchParameters.get("g"),
     },
     strings: {
       "appeal-form-header__heading": {{ get_string("fair-amount-header-2", "payment-form") | tojson }},
