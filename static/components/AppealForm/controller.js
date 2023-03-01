@@ -34,7 +34,7 @@ appealForm.onSubmit((data) => {
       frequency: data.frequency,
       processor: "paddle",
       currency: data.currency,
-      lang: doc.documentElement.lang,
+      lang: document.documentElement.lang,
       source: eyeo.payment.sourceId || "U",
       clickTs: Date.now(),
     }));
