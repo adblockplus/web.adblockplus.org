@@ -128,7 +128,7 @@ SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|i
   RewriteRule ^ - [E=link_found:1,E=link:acceptable-ads,E=anchor:#optout]
 
   RewriteCond %{ENV:link} ^donate_settings_page$
-  RewriteRule ^ - [E=link_found:1,E=link:donate,E=anchor:?utm_source=abp&utm_medium=settings_page&utm_campaign=donate]
+  RewriteRule ^ - [E=link_found:1,E=link:periodic-contribution,E=anchor:?utm_source=abp&utm_medium=settings_page&utm_campaign=donate]
 
   RewriteCond %{QUERY_STRING} "(?:^|&)link=share(?:&|$)"
   RewriteRule ^ https://share.adblockplus.org/%{ENV:lang}/? [L,NC,R=301]
