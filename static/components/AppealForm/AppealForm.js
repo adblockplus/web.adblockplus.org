@@ -9,6 +9,10 @@ function toDollarNumber(currency, cents) {
   return currency == "JPY" ? cents : cents / 100;
 }
 
+function toCentsNumber(currency, dollars) {
+  return currency == "JPY" ? dollars : dollars * 100;
+}
+
 function toDollarString(currency, cents) {
   const locale = adblock.settings.language;
   const dollars = toDollarNumber(currency, cents);
@@ -168,7 +172,7 @@ export class AppealForm {
     let amount = selected.value;
     if (amount == "custom") {
       selected = selected.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__input");
-      amount = selected.value;
+      amount = toCentsNumber(currency, parseFloat(selected.value));
     }
     const frequency = selected.dataset.frequency;
     const product = selected.dataset.product;
