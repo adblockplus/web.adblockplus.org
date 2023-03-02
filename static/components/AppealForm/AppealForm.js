@@ -10,7 +10,7 @@ function toDollarNumber(currency, cents) {
 }
 
 function toDollarString(currency, cents) {
-  const locale = adblock.settings.locale;
+  const locale = adblock.settings.language;
   const dollars = toDollarNumber(currency, cents);
   const longFormat = { style: "currency", currency: currency }
   const shortFormat = Object.assign({}, longFormat, { notation: "compact" });
@@ -97,10 +97,16 @@ export class AppealForm {
 
   #onCurrencyChange(event) {
     const inputValues = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__input")).map(element => element.value);
-    const selectedRadio = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).findIndex(element => element.checked);
+    const selectedRadio = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).find(element => element.checked);
+    const selectedRadioIndex = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).findIndex(element => element.checked);
     this.#replaceFrequencies(event.currentTarget.value);
     this.#frequencies.querySelectorAll(".appeal-form-amount__input").forEach((input, i) => input.value = inputValues[i]);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[selectedRadio].checked = true;
+    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[selectedRadioIndex].checked = true;
+    if (selectedRadio.value == "custom") {
+      this.#handleInputError(
+        selectedRadio.parentElement.querySelector(".appeal-form-amount__input")
+      );
+    }
   }
 
   #handleInputError(target) {
@@ -108,6 +114,25 @@ export class AppealForm {
     const targetMinimum = parseFloat(target.min);
     if (targetValue && targetValue < targetMinimum) {
       this.#error.innerHTML = adblock.strings[`appeal-form__error--${target.dataset.frequency}`];
+
+      // Replacing separated currency symbol and minimum amount in existing 
+      // string and translations with a single correctly formatted minimum 
+      // amount (including symbol etc)
+      // 
+      // TODO: Replace separated currency symbol and amounts in existing strings
+      // with a single <amount /> placeholder to replace
+      const currencySymbolSpan = this.#error.querySelector(".currency-symbol");
+      const minimumAmountSpan = this.#error.querySelector(".minimum-amount");
+      const minimumAmount = parseFloat(target.min);
+      const numberFormat = new Intl.NumberFormat(adblock.settings.language, { style: "currency", notation: "compact", currency: this.#currencySelect.value });
+      if (
+        (currencySymbolSpan.textContent || "").trim() == "$"
+        && (minimumAmountSpan.textContent || "").trim() == "5"
+      ) {
+        currencySymbolSpan.textContent = "";
+        minimumAmountSpan.textContent = numberFormat.format(minimumAmount);
+      }
+
       this.#error.hidden = false;
     } else {
       this.#error.hidden = true;
