@@ -9,7 +9,10 @@
       language: {{ locale | tojson }},
       country: searchParameters.get("g"),
     },
-    strings: {}
+    error: alert,
+    strings: {
+      "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
+    }
   };
 
   var eyeo = window.eyeo = {
