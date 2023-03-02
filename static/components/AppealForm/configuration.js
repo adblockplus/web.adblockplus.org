@@ -230,7 +230,7 @@ export const CONFIGURATION = {
       },
     },
     live: {
-      vendor: 11004,
+      vendor: 164164,
       products: {
         "USD": {
           "once": {
