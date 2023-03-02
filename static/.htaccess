@@ -17,7 +17,7 @@ RewriteRule "^safari$" "/" [NC,R=301]
 RewriteRule "^(.*)/safari$" "/" [NC,R=301]
 RewriteRule "^yandex-browser$" "/" [NC,R=301]
 RewriteRule "^(.*)/yandex-browser$" "/" [NC,R=301]
-RewriteRule "^(.*)/donate$" "/periodic-contribution" [NC,R=301]
+RewriteRule "^(.*)/donate$" "/periodic-contribution" [NC,R,L]
 
 # Refd #617 migrate simple file-to-file rules to .htaccess
 RewriteRule ^(.*/)?(android|chrome|edge|firefox|internet-explorer|opera|safari|yandex-browser)/?$ / [NC,R=301]
