@@ -18,7 +18,7 @@ export const CONFIGURATION = {
   },
   Paddle: {
     sandbox: {
-      vendor: 7645,
+      vendor: 11004,
       products: {
         "USD": {
           "once": {
