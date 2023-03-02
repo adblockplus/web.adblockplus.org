@@ -3,7 +3,7 @@
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
 
-let paddleConfiguration = CONFIGURATION.Paddle.sandbox;
+let paddleConfiguration = CONFIGURATION.Paddle.live;
 
 const queryParameters = new URLSearchParams(location.search);
 
