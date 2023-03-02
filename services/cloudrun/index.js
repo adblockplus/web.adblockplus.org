@@ -135,6 +135,21 @@ app.get('/update-function', (req, res) => {
   res.redirect(302, `/${target}${queryString}`);
 });
 
+// IMPORTANT: Fallback locale rerouting, must be final routing function
+// Refd #943 - URLs containing non-exact matching locale paths return a 404
+app.get(/^\/([\w-]{2,6})(\/.*)?$/, (req, res) => {
+  // Strip locale down to lang only if not in lang-only format eg. `xy_XY`
+  // If locale is lang-only eg. `xy`, resource cannot be found at `locale`, so remove `locale`
+  const localePath = !(/^[a-z]{2}$/.test(req.params[0]))
+    ? `/${req.params[0].slice(0,2).toLowerCase()}`
+    : ''
+  
+  const target = req.params[1] || '/';
+
+  const queryString = getQueryString(req);
+
+  res.redirect(301, `${localePath}${target}${queryString}`);
+});
 
 
 // Listener config

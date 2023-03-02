@@ -216,7 +216,7 @@
 
       // Redirect to cloud run rewrite for update page
       {
-        "regex": "(?i)^/(?:[\\w-]{2,6}/)update/?$",
+        "regex": "(?i)^/(?:[\\w-]{2,6}/)?update/?$",
         "destination": "/update-function",
         "type": 301
       }
@@ -259,6 +259,15 @@
       },
       {
         "source": "/update-function",
+        "run": {
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
+          "region": "europe-west1"
+        }
+      },
+      // IMPORTANT: Fallback locale rerouting function, must stay at bottom of "rewrites" array
+      // Refd #943 - URLs containing non-exact matching locale paths return a 404
+      {
+        "regex": "(?i)^/([\\w-]{2,6})(/.*)?$",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
