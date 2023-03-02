@@ -12,7 +12,7 @@ export const CONFIGURATION = {
         "LV","LT","LG","MT","NL","PL","PT","RO","SK","SI","ES","SE","DE","FR"
       ].includes(country) ? "EUR"
       : "USD"
-    })(adblock.settings.geo),
+    })(adblock.settings.country),
     selected: 3
   },
   Paddle: {

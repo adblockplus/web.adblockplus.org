@@ -1,6 +1,17 @@
 <script>
   var noop = function() {};
 
+  var searchParameters = new URLSearchParams(location.search);
+
+  var adblock = window.adblock = {
+    searchParameters: searchParameters,
+    settings: {
+      language: {{ locale | tojson }},
+      country: searchParameters.get("l"),
+    },
+    strings: {}
+  };
+
   var eyeo = window.eyeo = {
     preventCookiePrompt: {{ "true" if prevent_cookie_prompt else "false" }},
     userTesting: {{ "true" if user_testing else "false" }},

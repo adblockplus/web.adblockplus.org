@@ -1,21 +1,13 @@
 <script>
-  const searchParameters = new URLSearchParams(location.search);
-  window.adblock = {
-    searchParameters,
-    settings: {
-      locale: {{ locale | tojson }},
-      geo: searchParameters.get("fg") || searchParameters.get("g"),
-    },
-    strings: {
-      "appeal-form-header__heading": {{ get_string("fair-amount-header-2", "payment-form") | tojson }},
-      "appeal-form-frequency__heading--once": {{ get_string("one-time-legened-1", "payment-form" ) | tojson }},
-      "appeal-form-frequency__heading--monthly": {{ get_string("subscription-legend-1", "payment-form" ) | tojson }},
-      "appeal-form-frequency__heading--yearly": {{ get_string("yearly-subscription-legend-1", "payment-form") | tojson }},
-      "appeal-form__error--once": {{ get_string("min-donation-warning", "payment-form") | tojson }},
-      "appeal-form__error--monthly": {{ get_string("min-subscription-warning", "payment-form") | tojson }},
-      "appeal-form__error--yearly": {{ get_string("min-subscription-yearly-warning", "payment-form") | tojson }},
-      "appeal-form-checkout__submit": {{ get_string("appeal-form-checkout__submit", "payment-form") | tojson }},
-      "appeal-form-checkout__title": {{ get_string("purchase-item-name", "payment-form") | tojson }},
-    }
-  }
+  Object.assign(window.adblock.strings, {
+    "appeal-form-header__heading": {{ get_string("fair-amount-header-2", "payment-form") | tojson }},
+    "appeal-form-frequency__heading--once": {{ get_string("one-time-legened-1", "payment-form" ) | tojson }},
+    "appeal-form-frequency__heading--monthly": {{ get_string("subscription-legend-1", "payment-form" ) | tojson }},
+    "appeal-form-frequency__heading--yearly": {{ get_string("yearly-subscription-legend-1", "payment-form") | tojson }},
+    "appeal-form__error--once": {{ get_string("min-donation-warning", "payment-form") | tojson }},
+    "appeal-form__error--monthly": {{ get_string("min-subscription-warning", "payment-form") | tojson }},
+    "appeal-form__error--yearly": {{ get_string("min-subscription-yearly-warning", "payment-form") | tojson }},
+    "appeal-form-checkout__submit": {{ get_string("appeal-form-checkout__submit", "payment-form") | tojson }},
+    "appeal-form-checkout__title": {{ get_string("purchase-item-name", "payment-form") | tojson }},
+  });
 </script>

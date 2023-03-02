@@ -65,31 +65,31 @@ appealForm.onSubmit((data) => {
   const product = data.product;
 
   const checkoutOptions = {
-    passthrough,
-    locale: adblock.settings.locale,
+    locale: adblock.settings.language,
     title: adblock.strings["appeal-form-checkout__title"],
-    allowQuantity: false,
     success: passthrough.success_url,
-    closeCallback: () => { appealForm.enable(); },    
+    closeCallback: () => { appealForm.enable(); },
   };
 
   if (product == "custom") {
     fetch("https://getadblock.appspot.com/paddle/generate-pay-link", {
       method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(passthrough),
     })
     .then(response => response.json())
     .then(session => {
-      checkoutOptions.override = session.url;
-      Paddle.Checkout.open(checkoutOptions);
+      Paddle.Checkout.open(Object.assign(checkoutOptions, {
+        override: session.url,
+      }));
     })
     .catch(error => adblock.error(error));
   } else {
-    checkoutOptions.product = product;
-    Paddle.Checkout.open(checkoutOptions);
+    Paddle.Checkout.open(Object.assign(checkoutOptions, {
+      allowQuantity: false,
+      passthrough,
+      product,
+    }));
   }
   
 });
