@@ -6,8 +6,7 @@
   var adblock = window.adblock = {
     searchParameters: searchParameters,
     settings: {
-      language: {{ locale | tojson }},
-      country: searchParameters.get("g"),
+      language: {{ locale | tojson }},,
     },
     error: alert,
     strings: {

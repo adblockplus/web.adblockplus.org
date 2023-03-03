@@ -1,19 +1,6 @@
 export const CONFIGURATION = {
   AppealForm: {
-    currency: (country => {
-      return country == "GB" ? "GBP"
-      : country == "AU" ? "AUD"
-      : country == "CA" ? "CAD"
-      : country == "RU" ? "RUB"
-      : country == "JP" ? "JPY"
-      : country == "NZ" ? "NZD"
-      : country == "CH" ? "CHF"
-      : [
-        "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","GR","HU","IE","IT",
-        "LV","LT","LG","MT","NL","PL","PT","RO","SK","SI","ES","SE","DE","FR"
-      ].includes(country) ? "EUR"
-      : "USD"
-    })(adblock.settings.country),
+    currency: adblock.settings.currency || "USD",
     selected: 3
   },
   Paddle: {
