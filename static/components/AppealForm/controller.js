@@ -72,7 +72,7 @@ appealForm.onSubmit((data) => {
   };
 
   if (product == "custom") {
-    fetch("https://getadblock.appspot.com/paddle/generate-pay-link", {
+    fetch("https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(passthrough),
