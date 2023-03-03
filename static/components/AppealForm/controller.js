@@ -11,7 +11,9 @@ if (queryParameters.get("testmode")) {
   paddleConfiguration = CONFIGURATION.Paddle.sandbox;
 }
 
-if (paddleConfiguration == CONFIGURATION.Paddle.sandbox) {
+const isTestmode = paddleConfiguration == CONFIGURATION.Paddle.sandbox;
+
+if (isTestmode) {
   Paddle.Environment.set("sandbox");
 }
 
@@ -41,7 +43,7 @@ appealForm.onSubmit((data) => {
   }
 
   const passthrough = {
-    testmode: false,
+    testmode: isTestmode,
     userid: "",
     tracking: recordTracking(true),
     locale: "",
