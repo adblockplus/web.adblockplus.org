@@ -184,5 +184,7 @@ RewriteRule ^(blog|releases|development-builds|atom|rss|category|section|author|
 
 RewriteRule ^forum($|/.*) https://forum.adblockplus.org$1
 
+RewriteRule "^(.*)/careers$" "https://adblock.pinpointhq.com/en#js-careers-jobs-block" [NC,R,L]
+
 # TODO: investigate if we can rewrite /getSubscription into a different
 # virtual host

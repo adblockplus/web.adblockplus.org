@@ -179,6 +179,12 @@
         "type": 301
       },
 
+      {
+        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?careers/?$",
+        "destination": "https://adblock.pinpointhq.com/en#js-careers-jobs-block",
+        "type": 301
+      },      
+
       // Redirect to cloud run rewrite for payment config
       {
         "source": "/js/payment/config/load.js",
