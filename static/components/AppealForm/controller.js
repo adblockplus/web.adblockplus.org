@@ -81,7 +81,7 @@ appealForm.onSubmit((data) => {
     })
     .then(response => response.json())
     .then(session => {
-      if (session.hasOwnProperity("success") && session.success == false) {
+      if (session.hasOwnProperty("success") && session.success == false) {
         throw new Error(
           adblock.strings["error--unexpected"]
         );  
@@ -90,7 +90,9 @@ appealForm.onSubmit((data) => {
         override: session.url,
       }));
     })
-    .catch(error => adblock.error(error));
+    .catch((error) => {
+      adblock.error(error)
+    });
   } else {
     Paddle.Checkout.open(Object.assign(checkoutOptions, {
       allowQuantity: false,
