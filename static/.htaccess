@@ -177,15 +177,9 @@ Header merge  Vary "Origin"
 
 </FilesMatch>
 
-<FilesMatch ^installed$>
-
+<FilesMatch ^country$>
   GeoIPEnable On
-
-  # If geo is detected and not in query then prepend it
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} .+
-  RewriteCond %{QUERY_STRING} !g=
-  RewriteRule . %{REQUEST_URI}?g=%{ENV:GEOIP_COUNTRY_CODE}%2 [QSA,NC,R,L]
-
+  Header set adblock-country "%{ENV:GEOIP_COUNTRY_CODE}e"
 </FilesMatch>
 
 # Fall back to general update page for fr and de languages
