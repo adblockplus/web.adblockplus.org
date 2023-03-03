@@ -177,15 +177,25 @@ Header merge  Vary "Origin"
 
 </FilesMatch>
 
-<FilesMatch ^installed$>
-
+<FilesMatch ^currency$>
   GeoIPEnable On
-
-  # If geo is detected and not in query then prepend it
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} .+
-  RewriteCond %{QUERY_STRING} !g=
-  RewriteRule . %{REQUEST_URI}?g=%{ENV:GEOIP_COUNTRY_CODE}%2 [QSA,NC,R,L]
-
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+  RewriteRule .* /currencies/gbp.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$
+  RewriteRule .* /currencies/chf.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$
+  RewriteRule .* /currencies/aud.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$
+  RewriteRule .* /currencies/cad.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^NZ$
+  RewriteRule .* /currencies/nzd.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^RU$
+  RewriteRule .* /currencies/rub.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$
+  RewriteRule .* /currencies/jpy.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
+  RewriteRule .* /currencies/eur.js [L]
+  RewriteRule .* /currencies/usd.js [L]
 </FilesMatch>
 
 # Fall back to general update page for fr and de languages
