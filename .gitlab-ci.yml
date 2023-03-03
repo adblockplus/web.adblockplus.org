@@ -408,7 +408,7 @@ build:production:
   before_script:
     - python3 -m pip install -q crudini
   script:
-    - crudini --set settings.ini general siteurl "$FIREBASE_DOMAIN"
+    - crudini --set settings.ini general siteurl https://$DOMAIN
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
     # copy contents of default locale to base of public root (for firebase), 
