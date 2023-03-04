@@ -25,7 +25,7 @@
   <p>
     {{ new-tab-lead-2 Adblock Plus is free, community-supported software. It's important to us that anyone can use our software, regardless of whether they can contribute or not. But that wouldn't be possible without your continued support. We devote a lot of time and resources into developing and securing the best online experience for our users. Please contribute what you think is a fair amount to the Adblock Plus project and our attempts to keep the ad-blocking community alive. Every contribution is appreciated! }}
   </p>
-  <? include payment/form ?>
+  <? include AppealForm/bootstrap ?>
   <h2>
     {{ an-overview Here's an overview of the work we've recently introduced in Adblock Plus. }}
   </h2>
@@ -57,5 +57,6 @@
   </a>
 </footer>
 
-<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/currency"></script>
 <script src="/build/js/update.min.js"></script>
