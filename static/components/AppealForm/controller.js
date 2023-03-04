@@ -53,10 +53,12 @@ appealForm.onSubmit((data) => {
     }));
   }
 
+  const omitUserId = true;
+
   const passthrough = {
     testmode: isTestmode,
     userid: "",
-    tracking: recordTracking(true),
+    tracking: recordTracking(omitUserId),
     locale: "",
     country: "unknown",
     ga_id: "",
