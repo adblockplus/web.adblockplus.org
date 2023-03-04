@@ -1,10 +1,8 @@
 <script>
   var noop = function() {};
 
-  var searchParameters = new URLSearchParams(location.search);
-
   var adblock = window.adblock = {
-    searchParameters: searchParameters,
+    searchParameters: new URLSearchParams(location.search),
     settings: {
       language: {{ locale | tojson }},
     },

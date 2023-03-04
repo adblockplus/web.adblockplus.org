@@ -3,12 +3,23 @@
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
 
-let paddleConfiguration = CONFIGURATION.Paddle.live;
+const SANDBOX_ORIGINS = [
+  /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/,
+  /^dev--adblockplus-org--[\w\-]+.web.app$/,
+];
 
-const queryParameters = new URLSearchParams(location.search);
+let paddleConfiguration = SANDBOX_ORIGINS.some((originPattern) => {
+  return originPattern.test(location.origin)
+}) ? CONFIGURATION.Paddle.sandbox : CONFIGURATION.Paddle.live;
 
-if (queryParameters.get("testmode")) {
+if (
+  // For compatibility with AdBlock
+  adblock.searchParameters.has("testmode")
+  || ["test", "sandbox"].includes(adblock.searchParameters.get("mode"))
+) {
   paddleConfiguration = CONFIGURATION.Paddle.sandbox;
+} else if (adblock.searchParameters.get("mode") == "live") {
+  paddleConfiguration = CONFIGURATION.Paddle.live;
 }
 
 const isTestmode = paddleConfiguration == CONFIGURATION.Paddle.sandbox;
