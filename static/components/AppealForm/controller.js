@@ -3,13 +3,13 @@
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
 
-const SANDBOX_ORIGINS = [
+const SANDBOX_HOSTNAMES = [
   /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/,
   /^dev--adblockplus-org--[\w\-]+.web.app$/,
 ];
 
-let paddleConfiguration = SANDBOX_ORIGINS.some((originPattern) => {
-  return originPattern.test(location.origin)
+let paddleConfiguration = SANDBOX_HOSTNAMES.some((originPattern) => {
+  return originPattern.test(location.hostname)
 }) ? CONFIGURATION.Paddle.sandbox : CONFIGURATION.Paddle.live;
 
 if (
