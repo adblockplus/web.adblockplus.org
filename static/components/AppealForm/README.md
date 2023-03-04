@@ -16,14 +16,15 @@ Pay once:               Or monthly:                   Or yearly:
 
 ```js
 window.adblock = {
-  searchParameters: URLSearchParameters,
   settings: {
     language: "2 or 5 char locale code",
-    country: "2 char country code",
+    currency: "3 uppercase char currency code",
   },
   strings: {
-    string__id: string__value // BEM format is recommended
+    "error--unexpected": "An unexpected critical error message"
   }
+  error: (message) => { /* handle unexpected critical error here */ }
+  searchParameters: URLSearchParameters,
 }
 ```
 
@@ -37,9 +38,9 @@ Object.assign(window.adblock.strings, {
   "appeal-form-frequency__heading--once": "Pay once:",
   "appeal-form-frequency__heading--monthly": "Or monthly:",
   "appeal-form-frequency__heading--yearly": "Or yearly:",
-  "appeal-form__error--once": "Please pay at least $5 to cover fees.",
-  "appeal-form__error--monthly": "Please pay at least $2 to cover fees.",
-  "appeal-form__error--yearly": "Please pay at least $5 to cover fees.",
+  "appeal-form__error--once": "Please pay at least <amount /> to cover fees.",
+  "appeal-form__error--monthly": "Please pay at least <amount /> to cover fees.",
+  "appeal-form__error--yearly": "Please pay at least <amount /> to cover fees.",
   "appeal-form-checkout__submit": "Checkout now",
   "appeal-form-checkout__title": "Adblock Plus Contribution",
 });
@@ -49,10 +50,82 @@ See `/includes/AppealForm/configuration.tmpl` for example.
 
 ### Markup on page
 
-- See `/includes/AppealForm/skeleton.html`
-    - A skeleton container (an element to replace with the form) is required but a fully blown placeholder like the one in `/includes/AppealForm/skeleton.html` is not required
-- See `/includes/AppealForm/templates.html`
-    - These templates must be on the page to add AppealForm(s) to the page. Their markup is not very flexible without changing `/static/components/AppealForm.js`
+A placeholder is required.
+
+```html
+<div class="appeal-form"></div>
+```
+
+The placeholder may contain a loading skeleton of the form. e.g.
+
+```html
+<div class="appeal-form appeal-form--skeleton" role="presentation" aria-hidden="true">
+  <div style="padding-top: .5rem;">
+    <div class="appeal-form__placeholder" style="height: 2rem; width: 100%; max-width: 16rem;"></div>
+  </div>
+  <div class="appeal-form-frequencies" style="max-width: 50rem; margin-top: 0.25rem; margin-bottom: 0.25rem;">
+    <div class="appeal-form-frequency" style="padding-bottom: 0;">
+      <div class="appeal-form__placeholder" style="height: 5.5rem; width:100%;"></div>
+    </div>
+    <div class="appeal-form-frequency" style="padding-bottom: 0;">
+      <div class="appeal-form__placeholder" style="height: 5.5rem; width:100%;"></div>
+    </div>
+    <div class="appeal-form-frequency" style="padding-bottom: 0;">
+      <div class="appeal-form__placeholder" style="height: 5.5rem; width:100%;"></div>
+    </div>
+  </div>
+  <div style="padding-top: 0; margin-bottom: 2.5rem">
+    <div class="appeal-form__placeholder" style="height: 2rem; width: 100%; max-width: 33rem;"></div>
+  </div>
+</div>
+```
+
+See `/includes/AppealForm/skeleton.html` for example.
+
+The following templates are required and not very flexible without modifying the component:
+
+```html
+<template id="appeal-form">
+  <form class="appeal-form">
+    <header class="appeal-form-header">
+      <h2 class="appeal-form-header__heading"></h2>
+      <select class="appeal-form-header__select"></select>
+    </header>
+    <div class="appeal-form-frequencies"></div>
+    <div class="appeal-form__error" hidden></div>
+    <div class="appeal-form-checkout">
+      <button class="appeal-form-checkout__submit">
+        <img alt="" src="/components/AppealForm/appeal-form-checkout__icon.png" class="appeal-form-checkout__icon">
+        <span></span>
+      </button>
+      <img alt="" src="/components/AppealForm/appeal-form-checkout__image.svg" class="appeal-form-checkout__image">
+    </div>
+  </form>  
+</template>
+
+<template id="appeal-form-frequency">
+  <div class="appeal-form-frequency">
+    <h3 class="appeal-form-frequency__heading"></h3>
+    <div class="appeal-form-amounts"></div>
+  </div>  
+</template>
+
+<template id="appeal-form-amount--fixed">
+  <label class="appeal-form-amount appeal-form-amount--fixed">
+    <input type="radio" name="appeal-form-amount__radio" class="appeal-form-amount__radio">
+    <span class="appeal-form-amount__text"></span>
+  </label>  
+</template>
+
+<template id="appeal-form-amount--custom">
+  <label class="appeal-form-amount appeal-form-amount--custom">
+    <input type="radio" name="appeal-form-amount__radio" class="appeal-form-amount__radio" value="custom">
+    <input type="number" step=".01" class="appeal-form-amount__input">
+  </label>  
+</template>
+```
+
+See `/includes/AppealForm/templates.html` for example.
 
 ### Configuration in implementation/build of the component
 
@@ -97,7 +170,7 @@ The AppealForm component is expecting to be initialised / controlled roughly as 
     1. Disable AppealForm
     1. Do whatever you need to do with AppealForm submit data
     1. Checkout with Paddle
-      1. Then enable AppealForm again
+      1. Then enable AppealForm again, if applicable
 
 See `/static/components/AppealForm/controller.js` for example.
 
@@ -153,11 +226,10 @@ If your project uses an older module/building system or no build system at all
 then you can build AppealForm into an es6 bundle using esbuild or an es5 bundle
 using webpack like so:
 
-
 ### Build into an es6 bundle
 
 ```bash
-npx esbuild --bundle ./path/to/AppealForm/controller.jss --outfile=./path/to/AppealForm/bundle.js
+npx esbuild --bundle ./path/to/AppealForm/controller.js --outfile=./path/to/AppealForm/bundle.js
 ```
 
 (Optionally pass --minify and --sourcemap if you wish.)
@@ -167,5 +239,7 @@ npx esbuild --bundle ./path/to/AppealForm/controller.jss --outfile=./path/to/App
 ```bash
 npx webpack-cli bundle ./path/to/AppealForm/controller.js -o ./path/to/AppealForm/ --mode production
 ```
+
+See `./path/to/AppealForm/main.js`.
 
 (You must develop a webpack config if you want to control this build more granularly.)

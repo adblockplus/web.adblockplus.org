@@ -2,14 +2,14 @@
   var noop = function() {};
 
   var adblock = window.adblock = {
-    searchParameters: new URLSearchParams(location.search),
     settings: {
       language: {{ locale | tojson }},
     },
-    error: alert,
     strings: {
       "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
     }
+    searchParameters: new URLSearchParams(location.search),
+    error: (message) => { alert(message) },
   };
 
   var eyeo = window.eyeo = {
