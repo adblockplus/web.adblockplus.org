@@ -117,26 +117,19 @@ export class AppealForm {
     const targetValue = parseFloat(target.value);
     const targetMinimum = parseFloat(target.min);
     if (targetValue && targetValue < targetMinimum) {
-      this.#error.innerHTML = adblock.strings[`appeal-form__error--${target.dataset.frequency}`];
-
-      // Replacing separated currency symbol and minimum amount in existing 
-      // string and translations with a single correctly formatted minimum 
-      // amount (including symbol etc)
-      // 
-      // TODO: Replace separated currency symbol and amounts in existing strings
-      // with a single <amount /> placeholder to replace
-      const currencySymbolSpan = this.#error.querySelector(".currency-symbol");
-      const minimumAmountSpan = this.#error.querySelector(".minimum-amount");
+      const numberFormat = new Intl.NumberFormat(
+        navigator.language || adblock.settings.language, {
+          style: "currency",
+          notation: "compact",
+          currency: this.#currencySelect.value
+      });
       const minimumAmount = parseFloat(target.min);
-      const numberFormat = new Intl.NumberFormat(adblock.settings.language, { style: "currency", notation: "compact", currency: this.#currencySelect.value });
-      if (
-        (currencySymbolSpan.textContent || "").trim() == "$"
-        && (minimumAmountSpan.textContent || "").trim() == "5"
-      ) {
-        currencySymbolSpan.textContent = "";
-        minimumAmountSpan.textContent = numberFormat.format(minimumAmount);
-      }
-
+      this.#error.innerHTML = adblock.strings[
+        `appeal-form__error--${target.dataset.frequency}`.replace(
+          '<amount />',
+          numberFormat.format(minimumAmount)
+        )
+      ];
       this.#error.hidden = false;
     } else {
       this.#error.hidden = true;
