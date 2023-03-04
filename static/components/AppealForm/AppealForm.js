@@ -14,7 +14,7 @@ function toCentsNumber(currency, dollars) {
 }
 
 function toDollarString(currency, cents) {
-  const locale = adblock.settings.language;
+  const locale = navigator.lanugage || adblock.settings.language;
   const dollars = toDollarNumber(currency, cents);
   const longFormat = { style: "currency", currency: currency }
   const shortFormat = Object.assign({}, longFormat, { notation: "compact" });

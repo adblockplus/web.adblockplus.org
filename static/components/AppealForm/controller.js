@@ -15,7 +15,7 @@ let paddleConfiguration = SANDBOX_ORIGINS.some((originPattern) => {
 if (
   // For compatibility with AdBlock
   adblock.searchParameters.has("testmode")
-  || ["test", "sandbox"].includes(adblock.searchParameters.get("mode"))
+  || adblock.searchParameters.get("mode") == "test"
 ) {
   paddleConfiguration = CONFIGURATION.Paddle.sandbox;
 } else if (adblock.searchParameters.get("mode") == "live") {
