@@ -19,6 +19,12 @@ const frequencyTemplate = document.getElementById("appeal-form-frequency");
 const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
 const customAmountTemplate = document.getElementById("appeal-form-amount--custom");
 
+function getLanguage() {
+  // prefer navigator language to settings language so that more specific language variants can differentiate currencies
+  // e.g. 10 USD in "en" is $10 but 10 USD in "en-CA" is US$10
+  return (navigator.language || adblock.settings.language).replace("_", "-");
+}
+
 function toDollarNumber(currency, cents) {
   return currency == "JPY" ? cents : cents / 100;
 }
@@ -28,12 +34,11 @@ function toCentsNumber(currency, dollars) {
 }
 
 function toDollarString(currency, cents) {
-  const locale = navigator.lanugage || adblock.settings.language;
   const dollars = toDollarNumber(currency, cents);
   const longFormat = { style: "currency", currency: currency }
   const shortFormat = Object.assign({}, longFormat, { notation: "compact" });
   const outputFormat = Number.isInteger(dollars) ? shortFormat : longFormat;
-  return new Intl.NumberFormat(locale, outputFormat).format(dollars);
+  return new Intl.NumberFormat(getLanguage(), outputFormat).format(dollars);
 }
 
 class AppealForm {
@@ -136,7 +141,7 @@ class AppealForm {
     if (targetValue && targetValue < targetMinimum) {
       const minimumAmount = parseFloat(target.min);
       const numberFormat = new Intl.NumberFormat(
-        navigator.language || adblock.settings.language, {
+        getLanguage(), {
           style: "currency",
           currency: this.#currencySelect.value
       });
@@ -858,7 +863,7 @@ appealForm.onSubmit((data) => {
   };
 
   if (product == "custom") {
-    fetch("https://241-dot-abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
+    fetch("https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(passthrough),
