@@ -186,6 +186,13 @@
         "type": 301
       },
 
+      // Redirect to cloud run rewrite for currency config
+      {
+        "source": "/currency",
+        "destination": "/currency-function",
+        "type": 301
+      },
+
       // Redirect to cloud run rewrite for optimizely
       {
         "source": "/js/testing/optimizely.js",
