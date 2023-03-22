@@ -105,7 +105,7 @@ appealForm.onSubmit((data) => {
       }));
     })
     .catch((error) => {
-      adblock.error(error)
+      adblock.error(adblock.strings["error--unexpected"]);
     });
   } else {
     Paddle.Checkout.open(Object.assign(checkoutOptions, {
