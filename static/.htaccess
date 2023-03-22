@@ -168,12 +168,35 @@ Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_O
 Header merge  Vary "Origin"
 
 <FilesMatch ^update$>
+
   GeoIPEnable On
+
+  # Fall back to general update page for FR and DE location
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
+  RewriteRule "([\w\-]{2,6})\/update$" "$1/periodic-contribution" [NC,L]
+
 </FilesMatch>
 
-# Fall back to general update page for FR and DE location
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
-RewriteRule "([\w\-]{2,6})\/update$" "$1/periodic-contribution" [NC,L]
+<FilesMatch ^currency$>
+  GeoIPEnable On
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+  RewriteRule .* /currencies/gbp.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$
+  RewriteRule .* /currencies/chf.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$
+  RewriteRule .* /currencies/aud.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$
+  RewriteRule .* /currencies/cad.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^NZ$
+  RewriteRule .* /currencies/nzd.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^RU$
+  RewriteRule .* /currencies/rub.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$
+  RewriteRule .* /currencies/jpy.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
+  RewriteRule .* /currencies/eur.js [L]
+  RewriteRule .* /currencies/usd.js [L]
+</FilesMatch>
 
 # Fall back to general update page for fr and de languages
 RewriteRule "(de|de_DE|de-DE|fr|fr_FR|fr-FR)\/update$" "$1/periodic-contribution" [NC,L]

@@ -1,0 +1,18 @@
+title=Appeal
+robots=none
+prevent_cookie_prompt=1
+
+<head>
+  <link rel="stylesheet" href="/components/AppealForm/AppealForm.css">
+  <script>
+    // Required by user.js > recordTracking()
+    path("payment", { productId: "I" });
+  </script>
+</head>
+
+<? include AppealForm/bootstrap ?>
+
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/currency"></script>
+<script src="/adblock/js/user.js"></script>
+<script src="/components/AppealForm/controller.js" type="module"></script>
