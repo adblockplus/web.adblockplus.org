@@ -20,11 +20,10 @@ function toCentsNumber(currency, dollars) {
 }
 
 function toDollarString(currency, cents) {
-  const dollars = toDollarNumber(currency, cents);
-  const longFormat = { style: "currency", currency: currency }
-  const shortFormat = Object.assign({}, longFormat, { notation: "compact" });
-  const outputFormat = Number.isInteger(dollars) ? shortFormat : longFormat;
-  return new Intl.NumberFormat(getLanguage(), outputFormat).format(dollars);
+  return new Intl.NumberFormat(
+    getLanguage(),
+    { style: "currency", currency, minimumFractionDigits: 0 }
+  ).format(toDollarNumber(currency, cents));
 }
 
 export class AppealForm {
