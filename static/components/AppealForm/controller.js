@@ -4,6 +4,7 @@ import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
 
 const SANDBOX_HOSTNAMES = [
+  /^localhost$/,
   /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/,
   /^dev--adblockplus-org--[\w\-]+.web.app$/,
 ];

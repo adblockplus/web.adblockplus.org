@@ -1,6 +1,6 @@
 export const CONFIGURATION = {
   AppealForm: {
-    currency: adblock.settings.currency || "USD",
+    currency: typeof adblock == "object" ? adblock.settings.currency || "USD" : "USD",
     selected: 3
   },
   Paddle: {
