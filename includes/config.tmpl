@@ -14,10 +14,6 @@
 
   var eyeo = window.eyeo = {
     preventCookiePrompt: {{ "true" if prevent_cookie_prompt else "false" }},
-    userTesting: {{ "true" if user_testing else "false" }},
-    userTestingVariants: {{ "true" if user_testing_variants else "false" }},
-    testAnalytics: {{ "true" if analytics_testing else "false" }},
-    testOptimize: {{ "true" if optimize_testing else "false" }},
     log: noop,
     beacon: noop
   };

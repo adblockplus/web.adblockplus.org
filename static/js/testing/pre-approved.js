@@ -22,19 +22,13 @@
   }
 
   user.analytics = !hasCookie('eyeo-ga-opt-out');
-  user.optimize = !hasCookie('eyeo-ab-opt-out');
 
   variant.analytics = user.analytics;
-
-  variant.optimize = variant.analytics && user.optimize && eyeo.userTesting;
 
   var analyticsData = {
     anonymize_ip: true,
     transport_type: 'beacon'
   };
-
-  if (variant.optimize)
-    analyticsData.optimize_id = 'GTM-NW8L5JT';
 
   // Record first visit to page with cookie prompt
   if (!eyeo.preventCookiePrompt && !hasCookie('eyeo-seen-cookie-prompt'))
@@ -85,9 +79,4 @@
       eyeo.cookieEnabled = true;
     }
   }
-
-  if (!variant.analytics || !variant.optimize) {
-    document.documentElement.classList.remove('async-hide');
-  }
-
 }());

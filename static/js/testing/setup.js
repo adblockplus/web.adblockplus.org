@@ -3,8 +3,6 @@
 
   var user = eyeo.user = eyeo.user || {};
 
-  var variant = eyeo.variant = eyeo.variant || {};
-
   var host = window.location.hostname;
 
   // Set `domain` to whole hostname if Firebase preview page
@@ -25,19 +23,11 @@
 
   user.consent = hasCookie("eyeo-seen-cookie-prompt");
   user.analytics = !hasCookie("eyeo-ga-opt-out");
-  user.optimize = !hasCookie("eyeo-ab-opt-out");
-
-  variant.analytics = user.analytics;
-
-  variant.optimize = variant.analytics && user.optimize && eyeo.userTesting;
 
   var analyticsData = {
     "anonymize_ip": true,
     "transport_type": "beacon"
   };
-
-  if (variant.optimize)
-    analyticsData.optimize_id = "GTM-NW8L5JT";
 
   // Record first visit to page with cookie prompt
   if (!eyeo.preventCookiePrompt && !user.consent)
@@ -45,7 +35,7 @@
 
   if (
     // Track users who not have opted out of tracking
-    variant.analytics
+    user.analytics
 
     // Track users who have seen cookie prompt on pages without cookie prompt
     && !(eyeo.preventCookiePrompt && !user.consent)
@@ -81,13 +71,4 @@
       eyeo.cookieEnabled = true;
     }
   }
-
-  if (
-    !variant.analytics
-    || !variant.optimize
-    || (eyeo.preventCookiePrompt && !user.consent)
-  ) {
-    document.documentElement.classList.remove('async-hide');
-  }
-
 }());

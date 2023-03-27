@@ -3,7 +3,6 @@
   var eyeo = root.eyeo || {};
   var HAS_SEEN_COOKIE_PROMPT = "eyeo-seen-cookie-prompt";
   var TRACKING_OPT_OUT = "eyeo-ga-opt-out";
-  var TESTING_OPT_OUT = "eyeo-ab-opt-out";
   var TRACKING_CONSENT = "eyeo-ga-consent";
   var TRACKING_UID = "UA-18643396-6";
 
@@ -37,7 +36,6 @@
 
   var hasSeenCookiePrompt = hasCookie(HAS_SEEN_COOKIE_PROMPT);
   var trackingOptOut = hasCookie(TRACKING_OPT_OUT);
-  var testingOptOut = hasCookie(TESTING_OPT_OUT);
   var trackingConsent = hasCookie(TRACKING_CONSENT);
 
   function initializeCookiePrompt()
@@ -47,7 +45,6 @@
     var settingsButtons = doc.querySelectorAll(".cookies-settings");
     var settingsDropups = doc.querySelectorAll(".cookies-dropup");
     var trackingCookiesButtons = doc.querySelectorAll(".tracking-cookies");
-    var testingCookiesButtons = doc.querySelectorAll(".testing-cookies");
 
     function toggleCookieNotice()
     {
@@ -93,22 +90,11 @@
     {
       trackingOptOut = !trackingOptOut;
       flipTrackingSwitches(!trackingOptOut);
-      if (trackingOptOut)
-        flipTestingSwitches(false);
-      else if (!testingOptOut)
-        flipTestingSwitches(true);
-    }
-
-    function toggleTestingPreference()
-    {
-      testingOptOut = !testingOptOut;
-      flipTestingSwitches(!testingOptOut);
     }
 
     function saveCookieSettings()
     {
       setCookie(TRACKING_OPT_OUT, trackingOptOut);
-      setCookie(TESTING_OPT_OUT, testingOptOut);
       // consent cookie is saved separately by triggering any notice closing event
 
       // This immediately disables or undisables tracking
@@ -124,7 +110,6 @@
           var cookie = cookies[i].split("=")[0].trim();
 
           if (cookie !== TRACKING_OPT_OUT &&
-            cookie !== TESTING_OPT_OUT &&
             cookie !== TRACKING_CONSENT)
             setCookie(cookie, false);
         }
@@ -144,14 +129,6 @@
         trackingOptOutSwitches[i].checked = checked;
     }
 
-    function flipTestingSwitches(checked)
-    {
-      var testingOptOutSwitches = doc.querySelectorAll("input.testing-cookies");
-
-      for (var i = 0; i < testingOptOutSwitches.length; i++)
-        testingOptOutSwitches[i].checked = checked;
-    }
-
     doc.addEventListener("click", onCookieSettingsBlur, true);
 
     addListeners("click", closeButtons, saveCookieConsent);
@@ -162,8 +139,6 @@
 
     addListeners("change", trackingCookiesButtons, toggleTrackingPreference);
 
-    addListeners("change", testingCookiesButtons, toggleTestingPreference);
-
     addListeners("click", saveButtons, saveCookieSettings);
 
 
@@ -173,11 +148,8 @@
     if (trackingOptOut)
     {
       flipTrackingSwitches(false);
-      flipTestingSwitches(false);
     }
 
-    if (testingOptOut)
-      flipTestingSwitches(false);
   }
 
   if (document.readyState == "complete" ||
