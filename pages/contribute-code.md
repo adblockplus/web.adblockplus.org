@@ -20,7 +20,3 @@ title=Contributing code to Adblock Plus
 {{submit-merge-request Now you can [create a merge request](https://docs.gitlab.com/ce/gitlab-basics/add-merge-request.html) in the respective project on GitLab.}}
 
 {{contributor-agreement Finally, before we can accept your patch, you need to sign the [contributor agreement](https://adblockplus.org/eyeo-contributor-license-agreement.pdf). Please print it out, sign it, scan that or take a picture of it and send it to one of your reviewers.}}
-
-## {{becoming-a-comitter Becoming a committer}}
-
-{{becoming-a-comitter If you intend to contribute to a project on a regular basis, you might want to become a [committer](committer).}}
