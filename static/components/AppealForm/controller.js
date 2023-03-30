@@ -9,7 +9,7 @@ const SANDBOX_HOSTNAMES = [
   /^dev--adblockplus-org--[\w\-]+.web.app$/,
 ];
 
-let paddleConfiguration = SANDBOX_HOSTNAMES.some((originPattern) => {
+let paddleConfig = SANDBOX_HOSTNAMES.some((originPattern) => {
   return originPattern.test(location.hostname)
 }) ? CONFIGURATION.Paddle.sandbox : CONFIGURATION.Paddle.live;
 
@@ -18,24 +18,22 @@ if (
   adblock.searchParameters.has("testmode")
   || adblock.searchParameters.get("mode") == "test"
 ) {
-  paddleConfiguration = CONFIGURATION.Paddle.sandbox;
+  paddleConfig = CONFIGURATION.Paddle.sandbox;
 } else if (adblock.searchParameters.get("mode") == "live") {
-  paddleConfiguration = CONFIGURATION.Paddle.live;
+  paddleConfig = CONFIGURATION.Paddle.live;
 }
 
-const isTestmode = paddleConfiguration == CONFIGURATION.Paddle.sandbox;
+const isTestmode = paddleConfig == CONFIGURATION.Paddle.sandbox;
 
 if (isTestmode) {
   Paddle.Environment.set("sandbox");
 }
 
-Paddle.Setup({ vendor: paddleConfiguration.vendor });
+Paddle.Setup({ vendor: paddleConfig.vendor });
 
-const appealForm = new AppealForm({
-  paddleConfiguration,
-  formConfiguration: CONFIGURATION.AppealForm,
-  placeholder: document.querySelector(".appeal-form"),
-});
+const formConfig = CONFIGURATION.AppealForm;
+const placeholder = document.querySelector(".appeal-form");
+const appealForm = new AppealForm({ paddleConfig, formConfig, placeholder });
 
 appealForm.onSubmit((data) => {
 

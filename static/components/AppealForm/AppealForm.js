@@ -1,7 +1,6 @@
 /* global adblock */
 
 const formTemplate = document.getElementById("appeal-form");
-const frequencyTemplate = document.getElementById("appeal-form-frequency");
 const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
 const customAmountTemplate = document.getElementById("appeal-form-amount--custom");
 
@@ -28,91 +27,111 @@ function toDollarString(currency, cents) {
 
 export class AppealForm {
 
-  #paddleConfiguration;
+  #paddleConfig;
 
-  #formConfiguration;
-
-  #form;
+  #formParent;
 
   #currencySelect;
 
-  #frequencies;
+  #frequenciesParent;
 
-  #error;
+  #amountControls = [];
 
-  constructor({placeholder, paddleConfiguration, formConfiguration}) {
-    this.#paddleConfiguration = paddleConfiguration;
-    this.#formConfiguration = formConfiguration;
-    this.#constructForm()
-    this.#constructCurrencies();
-    this.#constructFrequencies();
-    this.#error = this.#form.querySelector(".appeal-form__error");
-    placeholder.replaceWith(this.#form);
-  }
+  #errorAlert;
 
-  #constructForm() {
-    this.#form = formTemplate.content.cloneNode(true).firstElementChild;
-    this.#form.querySelector(".appeal-form-header__heading").innerHTML = adblock.strings["appeal-form-header__heading"];
-    this.#form.querySelector(".appeal-form-checkout__submit span").innerHTML = adblock.strings["appeal-form-checkout__submit"]
-    this.#form.addEventListener("submit", event => this.#onSubmit(event));
-  }
+  constructor({placeholder, paddleConfig, formConfig}) {
+    
+    // store configuration
+    this.#paddleConfig = paddleConfig;
+    const defaultCurrency = formConfig.currency;
+    const defaultSelected = formConfig.selected;
 
-  #constructCurrencies() {
-    this.#currencySelect = this.#form.querySelector(".appeal-form-header__select");
-    for (const currency in this.#paddleConfiguration.products) {
+    // construct and reference form parent
+    this.#formParent = formTemplate.content.cloneNode(true).firstElementChild;
+    this.#formParent.querySelector(".appeal-form-header__heading").innerHTML = adblock.strings["appeal-form-header__heading"];
+    this.#formParent.querySelector(".appeal-form-checkout__submit span").innerHTML = adblock.strings["appeal-form-checkout__submit"];
+
+    // reference form error alert
+    this.#errorAlert = this.#formParent.querySelector(".appeal-form__error");
+
+    // construct and reference form currency select
+    this.#currencySelect = this.#formParent.querySelector(".appeal-form-header__select");
+    for (const currency in this.#paddleConfig.products) {
       const option = document.createElement("option");
-      option.textContent = currency;
+      option.textContent = currency.toUpperCase();
+      option.value = currency.toUpperCase();
       this.#currencySelect.appendChild(option);
     }
-    this.#currencySelect.value = this.#formConfiguration.currency;
-    this.#currencySelect.addEventListener("change", event => this.#onCurrencyChange(event));
-  }
+    this.#currencySelect.value = defaultCurrency;
 
-  #constructFrequencies() {
-    this.#frequencies = this.#form.querySelector(".appeal-form-frequencies");
-    this.#replaceFrequencies(this.#formConfiguration.currency);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[this.#formConfiguration.selected].checked = true;
-    this.#frequencies.addEventListener("focusin", event => this.#onAmountFocusin(event));
-    this.#frequencies.addEventListener("input", event => this.#handleAmountInput(event));
-  }
-
-  #replaceFrequencies(currency) {
-    const frequencies = [];
-    for (const frequency in this.#paddleConfiguration.products[currency]) {
-      const frequencySection = frequencyTemplate.content.cloneNode(true).firstElementChild;
-      frequencySection.querySelector(".appeal-form-frequency__heading").innerHTML = adblock.strings[`appeal-form-frequency__heading--${frequency}`];
-      const amountsParent = frequencySection.querySelector(".appeal-form-amounts");
-      for (const amount in this.#paddleConfiguration.products[currency][frequency]) {
+    // construct and reference form amounts
+    this.#frequenciesParent = this.#formParent.querySelector(".appeal-form-frequencies");
+    let i = 0;
+    for (const frequency in this.#paddleConfig.products[defaultCurrency]) {
+      const amountsParent = this.#frequenciesParent.querySelector(`.appeal-form-frequency--${frequency} .appeal-form-amounts`);
+      for (const amount in this.#paddleConfig.products[defaultCurrency][frequency]) {
+        let amountControl, amountRadio, amountInput;
         if (amount == "custom") {
-          const customAmount = customAmountTemplate.content.cloneNode(true).firstElementChild;
-          const input = customAmount.querySelector(".appeal-form-amount__input");
-          input.placeholder = toDollarString(currency, Object.keys(this.#paddleConfiguration.products[currency][frequency])[3]);
-          input.min = toDollarNumber(currency, this.#paddleConfiguration.products[currency][frequency][amount]);
-          input.dataset.frequency = frequency;
-          input.dataset.product = "custom";
-          amountsParent.appendChild(customAmount);
+          amountControl = customAmountTemplate.content.cloneNode(true).firstElementChild;
+          amountInput = amountControl.querySelector(".appeal-form-amount__input");
+          amountInput.dataset.testid = `appeal-form-amount__input--${frequency};`
+          amountInput.dataset.frequency = frequency;
         } else {
-          const fixedAmount = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
-          fixedAmount.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
-          const radio = fixedAmount.querySelector(".appeal-form-amount__radio");
-          radio.value = amount;
-          radio.dataset.frequency = frequency;
-          radio.dataset.product = this.#paddleConfiguration.products[currency][frequency][amount];
-          amountsParent.appendChild(fixedAmount);
+          amountControl = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
+        }
+        amountRadio = amountControl.querySelector(".appeal-form-amount__radio");
+        amountRadio.dataset.testid = `appeal-form-amount__radio--${i++}`;
+        amountRadio.dataset.frequency = frequency;
+        this.#amountControls.push(amountControl);
+        amountsParent.appendChild(amountControl);
+      }
+    }
+
+    // update constructed amounts with configured currency
+    this.#updateAmounts(defaultCurrency);
+    
+    // check configured selected amount
+    this.#frequenciesParent.querySelectorAll(".appeal-form-amount__radio")[defaultSelected].checked = true;
+
+    // add form interaction listeners
+    this.#currencySelect.addEventListener("change", event => this.#onCurrencyChange(event));
+    this.#frequenciesParent.addEventListener("focusin", event => this.#onAmountFocusin(event));
+    this.#frequenciesParent.addEventListener("input", event => this.#onAmountInput(event));
+    this.#formParent.addEventListener("submit", event => this.#onFormSubmit(event));
+
+    // replace placeholder with constructed form
+    placeholder.replaceWith(this.#formParent);
+
+    // set constructed testid for playwright tests
+    this.#formParent.dataset.testid = "appeal-form-constructed";
+  }
+
+  #updateAmounts(currency) {
+    let i = 0;
+    for (const frequency in this.#paddleConfig.products[currency]) {
+      for (const amount in this.#paddleConfig.products[currency][frequency]) {
+        const amountControl = this.#amountControls[i++];
+        if (amount == "custom") {
+          const amountInput = amountControl.querySelector(".appeal-form-amount__input");
+          amountInput.placeholder = toDollarString(currency, Object.keys(this.#paddleConfig.products[currency][frequency])[3]);
+          amountInput.min = toDollarNumber(currency, this.#paddleConfig.products[currency][frequency][amount]);
+        } else {
+          amountControl.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
+          const amountRadio = amountControl.querySelector(".appeal-form-amount__radio");
+          amountRadio.value = amount;
+          amountRadio.dataset.product = this.#paddleConfig.products[currency][frequency][amount];
         }
       }
-      frequencies.push(frequencySection);
     }
-    this.#frequencies.replaceChildren(...frequencies);
   }
 
   #onCurrencyChange(event) {
-    const inputValues = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__input")).map(element => element.value);
-    const selectedRadio = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).find(element => element.checked);
-    const selectedRadioIndex = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).findIndex(element => element.checked);
-    this.#replaceFrequencies(event.currentTarget.value);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__input").forEach((input, i) => input.value = inputValues[i]);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[selectedRadioIndex].checked = true;
+    const inputValues = Array.from(this.#frequenciesParent.querySelectorAll(".appeal-form-amount__input")).map(element => element.value);
+    const selectedRadio = Array.from(this.#frequenciesParent.querySelectorAll(".appeal-form-amount__radio")).find(element => element.checked);
+    const selectedRadioIndex = Array.from(this.#frequenciesParent.querySelectorAll(".appeal-form-amount__radio")).findIndex(element => element.checked);
+    this.#updateAmounts(event.currentTarget.value);
+    this.#frequenciesParent.querySelectorAll(".appeal-form-amount__input").forEach((input, i) => input.value = inputValues[i]);
+    this.#frequenciesParent.querySelectorAll(".appeal-form-amount__radio")[selectedRadioIndex].checked = true;
     if (selectedRadio.value == "custom") {
       this.#handleInputError(
         selectedRadio.parentElement.querySelector(".appeal-form-amount__input")
@@ -130,13 +149,13 @@ export class AppealForm {
           style: "currency",
           currency: this.#currencySelect.value
       });
-      this.#error.innerHTML = adblock.strings[`appeal-form__error--${target.dataset.frequency}`].replace(
+      this.#errorAlert.innerHTML = adblock.strings[`appeal-form__error--${target.dataset.frequency}`].replace(
         '<span class="amount"></span>',
         numberFormat.format(minimumAmount)
       );
-      this.#error.hidden = false;
+      this.#errorAlert.hidden = false;
     } else {
-      this.#error.hidden = true;
+      this.#errorAlert.hidden = true;
     }
   }
 
@@ -150,7 +169,7 @@ export class AppealForm {
     }
   }
 
-  #handleAmountInput(event) {
+  #onAmountInput(event) {
     if (event.target.type == "number") {
       this.#handleInputError(event.target);
     }
@@ -162,10 +181,10 @@ export class AppealForm {
     this.#submitCallbacks.push(callback);
   }
 
-  #onSubmit(event) { 
+  #onFormSubmit(event) { 
     event.preventDefault();
     const currency = this.#currencySelect.value;
-    let selected = this.#frequencies.querySelector(":checked");
+    let selected = this.#frequenciesParent.querySelector(":checked");
     let amount = selected.value;
     if (amount == "custom") {
       selected = selected.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__input");
@@ -182,13 +201,13 @@ export class AppealForm {
   }
 
   disable() {
-    this.#form.classList.add("appeal-form--disabled");
-    this.#form.querySelectorAll("input, button").forEach(field => { field.disabled = true; });
+    this.#formParent.classList.add("appeal-form--disabled");
+    this.#formParent.querySelectorAll("input, button").forEach(field => { field.disabled = true; });
   }
 
   enable() {
-    this.#form.classList.remove("appeal-form--disabled");
-    this.#form.querySelectorAll("input, button").forEach(field => { field.disabled = false; });
+    this.#formParent.classList.remove("appeal-form--disabled");
+    this.#formParent.querySelectorAll("input, button").forEach(field => { field.disabled = false; });
   }
 
 }
