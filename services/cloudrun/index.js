@@ -4,6 +4,8 @@ const app = express();
 // geoip based rules in static/js/payment/config/.htaccess
 let euRules, geoipRules;
 
+let euRules2, geoipRules2;
+
 // EU countries in static/js/testing/.htaccess
 let euCountries;
 
@@ -54,13 +56,13 @@ app.get('/payment-config-function', (req, res) => {
 });
 
 app.get('/currency-function', (req, res) => {
-  euRules = euRules || [
+  euRules2 = euRules2 || [
     'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU',
     'IE', 'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI',
     'ES', 'SE', 'DE'
   ].reduce((acc, country) => ({...acc, [country]: 'eur.js'}), {});
 
-  geoipRules = geoipRules || {
+  geoipRules2 = geoipRules2 || {
     'AU': 'aud.js', 'CA': 'cad.js', 'CH': 'chf.js', 'GB': 'gbp.js',
     'JP': 'jpy.js', 'NZ': 'nzd.js', 'RU': 'rub.js',
     ...euRules
