@@ -24,23 +24,38 @@
 </div>
 
 <script>
-  /* global adblock */
-  if (!adblock.searchParameters.get("skipLoading")) {
-    const progressBar = document.querySelector(".loader-progress");
-    const completedText = document.querySelector(".loader-progress-done");
-    const refreshRate = 1000 / 60;
-    const refreshProgress = 1 / (2500 / refreshRate);
-    document.body.classList.add("page-loading");
-    const tickInterval = setInterval(() => {
-      progressBar.value += refreshProgress;
-      if (progressBar.value >= 1) {
-        completedText.classList.remove("hidden");
-        setTimeout(() => {
-          document.body.classList.remove("page-loading");
-          document.body.classList.add("page-loaded");
-        }, 1000);
-        clearInterval(tickInterval);
+  'use strict';
+
+  showPageLoader();
+
+  function showPageLoader() {
+    var doc = document;
+    var start = Date.now();
+    var bar = doc.querySelector(".loader-progress");
+    var doneText = doc.querySelector(".loader-progress-done");
+
+    (function loadingOriginal() {
+      var runLength = 2500;
+      var pctTime = (Date.now() - start) / runLength;
+      var pctDone = Math.pow(pctTime, 4);
+
+      bar.value = pctDone;
+
+      if (pctDone < 1) {
+        window.setTimeout(loadingOriginal, 20);
+
+        return doc.body.classList.add("page-loading");
       }
-    }, refreshRate)
+
+      window.setTimeout(function() {
+        doneText.classList.remove("hidden");
+      }, 20);
+
+      window.setTimeout(function() {
+        doc.body.classList.remove("page-loading");
+        doc.body.classList.add("page-loaded");
+      }, 1000);
+
+    })();
   }
 </script>

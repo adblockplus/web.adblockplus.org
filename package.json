@@ -6,16 +6,13 @@
     "commander": "^9.4.0",
     "csso": "4.2.0",
     "glob": "^8.0.3",
-    "json5": "~2.2.1",
     "prompt-sync": "^4.2.0",
-    "uglify-js": "^3.17.4",
-    "webpack-cli": "^5.0.1"
+    "uglify-js": "3.12.1",
+    "json5": "~2.2.1"
   },
   "scripts": {
-    "build": "bash -i scripts/build.sh",
-    "prefast": "bash -i scripts/build.sh",
-    "fast": "bash -i scripts/run-fast.sh",
-    "preslow": "bash -i scripts/build.sh",
+    "min": "node static/js/tools/build.js",
+    "quick": "bash -i scripts/run-quick.sh",
     "slow": "bash -i scripts/run-slow.sh",
     "rename-service-ids": "node scripts/rename-service-ids-in-firebase-config.mjs"
   },
