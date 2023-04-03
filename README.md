@@ -6,8 +6,8 @@ If you prefer not to use VSCode or Docker then you can see `.devcontainer/Docker
 
 There are two ways to "run" this website:
 
-1. The "quick" way: via eyeo/cms development test server
-    - `npm run quick`
+1. The "fast" way: via eyeo/cms development test server
+    - `npm run fast`
 1. The "slow" way: via apache2
     - `npm run slow`
 
