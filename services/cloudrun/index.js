@@ -159,19 +159,6 @@ app.get('/update-function', (req, res) => {
   res.redirect(302, `/${target}${queryString}`);
 });
 
-app.get('/installed-function', (req, res) => {
-  const countryCode = req.headers['x-country-code'];
-
-  const queryString = getQueryString(req);
-
-  const target = ['DE', 'FR'].includes(countryCode)
-    ? 'installed-fr-de'
-    : 'installed-fallback'
-  
-  res.redirect(302, `/${target}${queryString}`);
-});
-
-
 // IMPORTANT: Fallback locale rerouting, must be final routing function
 // Refd #943 - URLs containing non-exact matching locale paths return a 404
 app.get(/^\/([\w-]{2,6})(\/.*)?$/, (req, res) => {

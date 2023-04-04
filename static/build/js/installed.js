@@ -1,1358 +1,1123 @@
-// Generates a userId based on same code as within the adblock extension
-function generateUserId() {
-    const timeSuffix = (Date.now()) % 1e8; // 8 digits from end of timestamp
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    const result = [];
-    for (let i = 0; i < 8; i++) {
-        const choice = Math.floor(Math.random() * alphabet.length);
-        result.push(alphabet[choice]);
-    }
-    return result.join('') + timeSuffix;
-}
+/*! (c) Andrea Giammarchi - ISC */
+var self=this||{};try{!function(t,e){if(new t("q=%2B").get("q")!==e||new t({q:e}).get("q")!==e||new t([["q",e]]).get("q")!==e||"q=%0A"!==new t("q=\n").toString()||"q=+%26"!==new t({q:" &"}).toString()||"q=%25zx"!==new t({q:"%zx"}).toString())throw t;self.URLSearchParams=t}(URLSearchParams,"+")}catch(t){!function(t,a,o){"use strict";var u=t.create,h=t.defineProperty,e=/[!'\(\)~]|%20|%00/g,n=/%(?![0-9a-fA-F]{2})/g,r=/\+/g,i={"!":"%21","'":"%27","(":"%28",")":"%29","~":"%7E","%20":"+","%00":"\0"},s={append:function(t,e){p(this._ungap,t,e)},delete:function(t){delete this._ungap[t]},get:function(t){return this.has(t)?this._ungap[t][0]:null},getAll:function(t){return this.has(t)?this._ungap[t].slice(0):[]},has:function(t){return t in this._ungap},set:function(t,e){this._ungap[t]=[a(e)]},forEach:function(e,n){var r=this;for(var i in r._ungap)r._ungap[i].forEach(t,i);function t(t){e.call(n,t,a(i),r)}},toJSON:function(){return{}},toString:function(){var t=[];for(var e in this._ungap)for(var n=v(e),r=0,i=this._ungap[e];r<i.length;r++)t.push(n+"="+v(i[r]));return t.join("&")}};for(var c in s)h(f.prototype,c,{configurable:!0,writable:!0,value:s[c]});function f(t){var e=u(null);switch(h(this,"_ungap",{value:e}),!0){case!t:break;case"string"==typeof t:"?"===t.charAt(0)&&(t=t.slice(1));for(var n=t.split("&"),r=0,i=n.length;r<i;r++){var a=(s=n[r]).indexOf("=");-1<a?p(e,g(s.slice(0,a)),g(s.slice(a+1))):s.length&&p(e,g(s),"")}break;case o(t):for(var s,r=0,i=t.length;r<i;r++){p(e,(s=t[r])[0],s[1])}break;case"forEach"in t:t.forEach(l,e);break;default:for(var c in t)p(e,c,t[c])}}function l(t,e){p(this,e,t)}function p(t,e,n){var r=o(n)?n.join(","):n;e in t?t[e].push(r):t[e]=[r]}function g(t){return decodeURIComponent(t.replace(n,"%25").replace(r," "))}function v(t){return encodeURIComponent(t).replace(e,d)}function d(t){return i[t]}self.URLSearchParams=f}(Object,String,Array.isArray)}!function(d){var r=!1;try{r=!!Symbol.iterator}catch(t){}function t(t,e){var n=[];return t.forEach(e,n),r?n[Symbol.iterator]():{next:function(){var t=n.shift();return{done:void 0===t,value:t}}}}"forEach"in d||(d.forEach=function(n,r){var i=this,t=Object.create(null);this.toString().replace(/=[\s\S]*?(?:&|$)/g,"=").split("=").forEach(function(e){!e.length||e in t||(t[e]=i.getAll(e)).forEach(function(t){n.call(r,t,e,i)})})}),"keys"in d||(d.keys=function(){return t(this,function(t,e){this.push(e)})}),"values"in d||(d.values=function(){return t(this,function(t,e){this.push(t)})}),"entries"in d||(d.entries=function(){return t(this,function(t,e){this.push([e,t])})}),!r||Symbol.iterator in d||(d[Symbol.iterator]=d.entries),"sort"in d||(d.sort=function(){for(var t,e,n,r=this.entries(),i=r.next(),a=i.done,s=[],c=Object.create(null);!a;)e=(n=i.value)[0],s.push(e),e in c||(c[e]=[]),c[e].push(n[1]),a=(i=r.next()).done;for(s.sort(),t=0;t<s.length;t++)this.delete(s[t]);for(t=0;t<s.length;t++)e=s[t],this.append(e,c[e].shift())}),function(f){function l(t){var e=t.append;t.append=d.append,URLSearchParams.call(t,t._usp.search.slice(1)),t.append=e}function p(t,e){if(!(t instanceof e))throw new TypeError("'searchParams' accessed on an object that does not implement interface "+e.name)}function t(e){var n,r,i,t=e.prototype,a=v(t,"searchParams"),s=v(t,"href"),c=v(t,"search");function o(t,e){d.append.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function u(t){d.delete.call(this,t),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}function h(t,e){d.set.call(this,t,e),t=this.toString(),i.set.call(this._usp,t?"?"+t:"")}!a&&c&&c.set&&(i=c,r=function(t,e){return t.append=o,t.delete=u,t.set=h,g(t,"_usp",{configurable:!0,writable:!0,value:e})},n=function(t,e){return g(t,"_searchParams",{configurable:!0,writable:!0,value:r(e,t)}),e},f.defineProperties(t,{href:{get:function(){return s.get.call(this)},set:function(t){var e=this._searchParams;s.set.call(this,t),e&&l(e)}},search:{get:function(){return c.get.call(this)},set:function(t){var e=this._searchParams;c.set.call(this,t),e&&l(e)}},searchParams:{get:function(){return p(this,e),this._searchParams||n(this,new URLSearchParams(this.search.slice(1)))},set:function(t){p(this,e),n(this,t)}}}))}var g=f.defineProperty,v=f.getOwnPropertyDescriptor;try{t(HTMLAnchorElement),/^function|object$/.test(typeof URL)&&URL.prototype&&t(URL)}catch(t){}}(Object)}(self.URLSearchParams.prototype,Object);
+/**
+ * @license
+ * Lodash (Custom Build) lodash.com/license | Underscore.js 1.8.3 underscorejs.org/LICENSE
+ * Build: `lodash include="each,template,isNumber,isArray,toNumber,isFinite,toArray,extend" exports="global"`
+ */
+;(function(){function t(t,r,n){switch(n.length){case 0:return t.call(r);case 1:return t.call(r,n[0]);case 2:return t.call(r,n[0],n[1]);case 3:return t.call(r,n[0],n[1],n[2])}return t.apply(r,n)}function r(t,r){for(var n=-1,e=null==t?0:t.length;++n<e&&r(t[n],n,t)!==false;);return t}function n(t,r){for(var n=-1,e=null==t?0:t.length,u=0,o=[];++n<e;){var i=t[n];r(i,n,t)&&(o[u++]=i)}return o}function e(t,r){for(var n=-1,e=null==t?0:t.length,u=Array(e);++n<e;)u[n]=r(t[n],n,t);return u}function u(t,r){for(var n=-1,e=r.length,u=t.length;++n<e;)t[u+n]=r[n];
+return t}function o(t,r){for(var n=-1,e=null==t?0:t.length;++n<e;)if(r(t[n],n,t))return true;return false}function i(t){return t.split("")}function c(t){return function(r){return null==r?Vr:r[t]}}function a(t){return function(r){return null==t?Vr:t[r]}}function f(t,r){for(var n=-1,e=Array(t);++n<t;)e[n]=r(n);return e}function s(t){return function(r){return t(r)}}function l(t,r){return e(r,function(r){return t[r]})}function p(t,r){return t.has(r)}function h(t){return"\\"+Le[t]}function _(t,r){return null==t?Vr:t[r];
+}function v(t){return Ee.test(t)}function y(t){for(var r,n=[];!(r=t.next()).done;)n.push(r.value);return n}function b(t){var r=-1,n=Array(t.size);return t.forEach(function(t,e){n[++r]=[e,t]}),n}function g(t,r){return function(n){return t(r(n))}}function d(t){var r=-1,n=Array(t.size);return t.forEach(function(t){n[++r]=t}),n}function j(t){return v(t)?w(t):i(t)}function w(t){return t.match(Se)||[]}function m(){}function O(t){var r=-1,n=null==t?0:t.length;for(this.clear();++r<n;){var e=t[r];this.set(e[0],e[1]);
+}}function A(){this.__data__=Au?Au(null):{},this.size=0}function x(t){var r=this.has(t)&&delete this.__data__[t];return this.size-=r?1:0,r}function z(t){var r=this.__data__;if(Au){var n=r[t];return n===Jr?Vr:n}return Xe.call(r,t)?r[t]:Vr}function S(t){var r=this.__data__;return Au?r[t]!==Vr:Xe.call(r,t)}function E(t,r){var n=this.__data__;return this.size+=this.has(t)?0:1,n[t]=Au&&r===Vr?Jr:r,this}function $(t){var r=-1,n=null==t?0:t.length;for(this.clear();++r<n;){var e=t[r];this.set(e[0],e[1])}
+}function k(){this.__data__=[],this.size=0}function I(t){var r=this.__data__,n=Y(r,t);return!(n<0)&&(n==r.length-1?r.pop():fu.call(r,n,1),--this.size,true)}function L(t){var r=this.__data__,n=Y(r,t);return n<0?Vr:r[n][1]}function F(t){return Y(this.__data__,t)>-1}function R(t,r){var n=this.__data__,e=Y(n,t);return e<0?(++this.size,n.push([t,r])):n[e][1]=r,this}function P(t){var r=-1,n=null==t?0:t.length;for(this.clear();++r<n;){var e=t[r];this.set(e[0],e[1])}}function U(){this.size=0,this.__data__={
+hash:new O,map:new(ju||$),string:new O}}function M(t){var r=qt(this,t).delete(t);return this.size-=r?1:0,r}function N(t){return qt(this,t).get(t)}function T(t){return qt(this,t).has(t)}function B(t,r){var n=qt(this,t),e=n.size;return n.set(t,r),this.size+=n.size==e?0:1,this}function C(t){var r=-1,n=null==t?0:t.length;for(this.__data__=new P;++r<n;)this.add(t[r])}function D(t){return this.__data__.set(t,Jr),this}function W(t){return this.__data__.has(t)}function V(t){this.size=(this.__data__=new $(t)).size;
+}function q(){this.__data__=new $,this.size=0}function G(t){var r=this.__data__,n=r.delete(t);return this.size=r.size,n}function H(t){return this.__data__.get(t)}function J(t){return this.__data__.has(t)}function K(t,r){var n=this.__data__;if(n instanceof $){var e=n.__data__;if(!ju||e.length<Gr-1)return e.push([t,r]),this.size=++n.size,this;n=this.__data__=new P(e)}return n.set(t,r),this.size=n.size,this}function Q(t,r){var n=Wu(t),e=!n&&Du(t),u=!n&&!e&&Vu(t),o=!n&&!e&&!u&&Hu(t),i=n||e||u||o,c=i?f(t.length,String):[],a=c.length;
+for(var s in t)!r&&!Xe.call(t,s)||i&&("length"==s||u&&("offset"==s||"parent"==s)||o&&("buffer"==s||"byteLength"==s||"byteOffset"==s)||Zt(s,a))||c.push(s);return c}function X(t,r,n){var e=t[r];Xe.call(t,r)&&yr(e,n)&&(n!==Vr||r in t)||rt(t,r,n)}function Y(t,r){for(var n=t.length;n--;)if(yr(t[n][0],r))return n;return-1}function Z(t,r){return t&&Lt(r,Fr(r),t)}function tt(t,r){return t&&Lt(r,Rr(r),t)}function rt(t,r,n){"__proto__"==r&&pu?pu(t,r,{configurable:true,enumerable:true,value:n,writable:true}):t[r]=n;
+}function nt(t,n,e,u,o,i){var c,a=n&Qr,f=n&Xr,s=n&Yr;if(e&&(c=o?e(t,u,o,i):e(t)),c!==Vr)return c;if(!mr(t))return t;var l=Wu(t);if(l){if(c=Qt(t),!a)return It(t,c)}else{var p=Tu(t),h=p==_n||p==vn;if(Vu(t))return xt(t,a);if(p==dn||p==cn||h&&!o){if(c=f||h?{}:Xt(t),!a)return f?Rt(t,tt(c,t)):Ft(t,Z(c,t))}else{if(!ke[p])return o?t:{};c=Yt(t,p,a)}}i||(i=new V);var _=i.get(t);if(_)return _;if(i.set(t,c),Gu(t))return t.forEach(function(r){c.add(nt(r,n,e,r,t,i))}),c;if(qu(t))return t.forEach(function(r,u){
+c.set(u,nt(r,n,e,u,t,i))}),c;var v=s?f?Wt:Dt:f?Rr:Fr,y=l?Vr:v(t);return r(y||t,function(r,u){y&&(u=r,r=t[u]),X(c,u,nt(r,n,e,u,t,i))}),c}function et(t,r){return t&&Pu(t,r,Fr)}function ut(t,r){r=At(r,t);for(var n=0,e=r.length;null!=t&&n<e;)t=t[pr(r[n++])];return n&&n==e?t:Vr}function ot(t,r,n){var e=r(t);return Wu(t)?e:u(e,n(t))}function it(t){return null==t?t===Vr?zn:gn:lu&&lu in Object(t)?Jt(t):fr(t)}function ct(t,r){return null!=t&&r in Object(t)}function at(t){return Or(t)&&it(t)==cn}function ft(t,r,n,e,u){
+return t===r||(null==t||null==r||!Or(t)&&!Or(r)?t!==t&&r!==r:st(t,r,n,e,ft,u))}function st(t,r,n,e,u,o){var i=Wu(t),c=Wu(r),a=i?an:Tu(t),f=c?an:Tu(r);a=a==cn?dn:a,f=f==cn?dn:f;var s=a==dn,l=f==dn,p=a==f;if(p&&Vu(t)){if(!Vu(r))return false;i=true,s=false}if(p&&!s)return o||(o=new V),i||Hu(t)?Tt(t,r,n,e,u,o):Bt(t,r,a,n,e,u,o);if(!(n&Zr)){var h=s&&Xe.call(t,"__wrapped__"),_=l&&Xe.call(r,"__wrapped__");if(h||_){var v=h?t.value():t,y=_?r.value():r;return o||(o=new V),u(v,y,n,e,o)}}return!!p&&(o||(o=new V),Ct(t,r,n,e,u,o));
+}function lt(t){return Or(t)&&Tu(t)==yn}function pt(t,r,n,e){var u=n.length,o=u,i=!e;if(null==t)return!o;for(t=Object(t);u--;){var c=n[u];if(i&&c[2]?c[1]!==t[c[0]]:!(c[0]in t))return false}for(;++u<o;){c=n[u];var a=c[0],f=t[a],s=c[1];if(i&&c[2]){if(f===Vr&&!(a in t))return false}else{var l=new V;if(e)var p=e(f,s,a,t,r,l);if(!(p===Vr?ft(s,f,Zr|tn,e,l):p))return false}}return true}function ht(t){return!(!mr(t)||er(t))&&(jr(t)?ru:ee).test(hr(t))}function _t(t){return Or(t)&&Tu(t)==On}function vt(t){return Or(t)&&wr(t.length)&&!!$e[it(t)];
+}function yt(t){return typeof t=="function"?t:null==t?Tr:typeof t=="object"?Wu(t)?jt(t[0],t[1]):dt(t):Cr(t)}function bt(t){if(!ur(t))return yu(t);var r=[];for(var n in Object(t))Xe.call(t,n)&&"constructor"!=n&&r.push(n);return r}function gt(t){if(!mr(t))return ar(t);var r=ur(t),n=[];for(var e in t)("constructor"!=e||!r&&Xe.call(t,e))&&n.push(e);return n}function dt(t){var r=Gt(t);return 1==r.length&&r[0][2]?ir(r[0][0],r[0][1]):function(n){return n===t||pt(n,t,r)}}function jt(t,r){return rr(t)&&or(r)?ir(pr(t),r):function(n){
+var e=Ir(n,t);return e===Vr&&e===r?Lr(n,t):ft(r,e,Zr|tn)}}function wt(t){return function(r){return ut(r,t)}}function mt(t,r){return Bu(sr(t,r,Tr),t+"")}function Ot(t){if(typeof t=="string")return t;if(Wu(t))return e(t,Ot)+"";if(Sr(t))return Lu?Lu.call(t):"";var r=t+"";return"0"==r&&1/t==-en?"-0":r}function At(t,r){return Wu(t)?t:rr(t,r)?[t]:Cu(kr(t))}function xt(t,r){if(r)return t.slice();var n=t.length,e=ou?ou(n):new t.constructor(n);return t.copy(e),e}function zt(t){var r=new t.constructor(t.byteLength);
+return new uu(r).set(new uu(t)),r}function St(t,r){return new t.constructor(r?zt(t.buffer):t.buffer,t.byteOffset,t.byteLength)}function Et(t){var r=new t.constructor(t.source,te.exec(t));return r.lastIndex=t.lastIndex,r}function $t(t){return Iu?Object(Iu.call(t)):{}}function kt(t,r){return new t.constructor(r?zt(t.buffer):t.buffer,t.byteOffset,t.length)}function It(t,r){var n=-1,e=t.length;for(r||(r=Array(e));++n<e;)r[n]=t[n];return r}function Lt(t,r,n,e){var u=!n;n||(n={});for(var o=-1,i=r.length;++o<i;){
+var c=r[o],a=e?e(n[c],t[c],c,n,t):Vr;a===Vr&&(a=t[c]),u?rt(n,c,a):X(n,c,a)}return n}function Ft(t,r){return Lt(t,Mu(t),r)}function Rt(t,r){return Lt(t,Nu(t),r)}function Pt(t){return mt(function(r,n){var e=-1,u=n.length,o=u>1?n[u-1]:Vr,i=u>2?n[2]:Vr;for(o=t.length>3&&typeof o=="function"?(u--,o):Vr,i&&tr(n[0],n[1],i)&&(o=u<3?Vr:o,u=1),r=Object(r);++e<u;){var c=n[e];c&&t(r,c,e,o)}return r})}function Ut(t,r){return function(n,e){if(null==n)return n;if(!br(n))return t(n,e);for(var u=n.length,o=r?u:-1,i=Object(n);(r?o--:++o<u)&&e(i[o],o,i)!==false;);
+return n}}function Mt(t){return function(r,n,e){for(var u=-1,o=Object(r),i=e(r),c=i.length;c--;){var a=i[t?c:++u];if(n(o[a],a,o)===false)break}return r}}function Nt(t,r,n,e){return t===Vr||yr(t,Je[n])&&!Xe.call(e,n)?r:t}function Tt(t,r,n,e,u,i){var c=n&Zr,a=t.length,f=r.length;if(a!=f&&!(c&&f>a))return false;var s=i.get(t);if(s&&i.get(r))return s==r;var l=-1,h=true,_=n&tn?new C:Vr;for(i.set(t,r),i.set(r,t);++l<a;){var v=t[l],y=r[l];if(e)var b=c?e(y,v,l,r,t,i):e(v,y,l,t,r,i);if(b!==Vr){if(b)continue;h=false;break;
+}if(_){if(!o(r,function(t,r){if(!p(_,r)&&(v===t||u(v,t,n,e,i)))return _.push(r)})){h=false;break}}else if(v!==y&&!u(v,y,n,e,i)){h=false;break}}return i.delete(t),i.delete(r),h}function Bt(t,r,n,e,u,o,i){switch(n){case $n:if(t.byteLength!=r.byteLength||t.byteOffset!=r.byteOffset)return false;t=t.buffer,r=r.buffer;case En:return!(t.byteLength!=r.byteLength||!o(new uu(t),new uu(r)));case sn:case ln:case bn:return yr(+t,+r);case hn:return t.name==r.name&&t.message==r.message;case mn:case An:return t==r+"";case yn:
+var c=b;case On:var a=e&Zr;if(c||(c=d),t.size!=r.size&&!a)return false;var f=i.get(t);if(f)return f==r;e|=tn,i.set(t,r);var s=Tt(c(t),c(r),e,u,o,i);return i.delete(t),s;case xn:if(Iu)return Iu.call(t)==Iu.call(r)}return false}function Ct(t,r,n,e,u,o){var i=n&Zr,c=Dt(t),a=c.length;if(a!=Dt(r).length&&!i)return false;for(var f=a;f--;){var s=c[f];if(!(i?s in r:Xe.call(r,s)))return false}var l=o.get(t);if(l&&o.get(r))return l==r;var p=true;o.set(t,r),o.set(r,t);for(var h=i;++f<a;){s=c[f];var _=t[s],v=r[s];if(e)var y=i?e(v,_,s,r,t,o):e(_,v,s,t,r,o);
+if(!(y===Vr?_===v||u(_,v,n,e,o):y)){p=false;break}h||(h="constructor"==s)}if(p&&!h){var b=t.constructor,g=r.constructor;b!=g&&"constructor"in t&&"constructor"in r&&!(typeof b=="function"&&b instanceof b&&typeof g=="function"&&g instanceof g)&&(p=false)}return o.delete(t),o.delete(r),p}function Dt(t){return ot(t,Fr,Mu)}function Wt(t){return ot(t,Rr,Nu)}function Vt(){var t=m.iteratee||Br;return t=t===Br?yt:t,arguments.length?t(arguments[0],arguments[1]):t}function qt(t,r){var n=t.__data__;return nr(r)?n[typeof r=="string"?"string":"hash"]:n.map;
+}function Gt(t){for(var r=Fr(t),n=r.length;n--;){var e=r[n],u=t[e];r[n]=[e,u,or(u)]}return r}function Ht(t,r){var n=_(t,r);return ht(n)?n:Vr}function Jt(t){var r=Xe.call(t,lu),n=t[lu];try{t[lu]=Vr;var e=true}catch(t){}var u=Ze.call(t);return e&&(r?t[lu]=n:delete t[lu]),u}function Kt(t,r,n){r=At(r,t);for(var e=-1,u=r.length,o=false;++e<u;){var i=pr(r[e]);if(!(o=null!=t&&n(t,i)))break;t=t[i]}return o||++e!=u?o:(u=null==t?0:t.length,!!u&&wr(u)&&Zt(i,u)&&(Wu(t)||Du(t)))}function Qt(t){var r=t.length,n=new t.constructor(r);
+return r&&"string"==typeof t[0]&&Xe.call(t,"index")&&(n.index=t.index,n.input=t.input),n}function Xt(t){return typeof t.constructor!="function"||ur(t)?{}:Fu(iu(t))}function Yt(t,r,n){var e=t.constructor;switch(r){case En:return zt(t);case sn:case ln:return new e(+t);case $n:return St(t,n);case kn:case In:case Ln:case Fn:case Rn:case Pn:case Un:case Mn:case Nn:return kt(t,n);case yn:return new e;case bn:case An:return new e(t);case mn:return Et(t);case On:return new e;case xn:return $t(t)}}function Zt(t,r){
+var n=typeof t;return r=null==r?un:r,!!r&&("number"==n||"symbol"!=n&&oe.test(t))&&t>-1&&t%1==0&&t<r}function tr(t,r,n){if(!mr(n))return false;var e=typeof r;return!!("number"==e?br(n)&&Zt(r,n.length):"string"==e&&r in n)&&yr(n[r],t)}function rr(t,r){if(Wu(t))return false;var n=typeof t;return!("number"!=n&&"symbol"!=n&&"boolean"!=n&&null!=t&&!Sr(t))||(Jn.test(t)||!Hn.test(t)||null!=r&&t in Object(r))}function nr(t){var r=typeof t;return"string"==r||"number"==r||"symbol"==r||"boolean"==r?"__proto__"!==t:null===t;
+}function er(t){return!!Ye&&Ye in t}function ur(t){var r=t&&t.constructor;return t===(typeof r=="function"&&r.prototype||Je)}function or(t){return t===t&&!mr(t)}function ir(t,r){return function(n){return null!=n&&(n[t]===r&&(r!==Vr||t in Object(n)))}}function cr(t){var r=vr(t,function(t){return n.size===Kr&&n.clear(),t}),n=r.cache;return r}function ar(t){var r=[];if(null!=t)for(var n in Object(t))r.push(n);return r}function fr(t){return Ze.call(t)}function sr(r,n,e){return n=bu(n===Vr?r.length-1:n,0),
+function(){for(var u=arguments,o=-1,i=bu(u.length-n,0),c=Array(i);++o<i;)c[o]=u[n+o];o=-1;for(var a=Array(n+1);++o<n;)a[o]=u[o];return a[n]=e(c),t(r,this,a)}}function lr(t){var r=0,n=0;return function(){var e=gu(),u=nn-(e-n);if(n=e,u>0){if(++r>=rn)return arguments[0]}else r=0;return t.apply(Vr,arguments)}}function pr(t){if(typeof t=="string"||Sr(t))return t;var r=t+"";return"0"==r&&1/t==-en?"-0":r}function hr(t){if(null!=t){try{return Qe.call(t)}catch(t){}try{return t+""}catch(t){}}return""}function _r(t,n){
+return(Wu(t)?r:Ru)(t,Vt(n,3))}function vr(t,r){if(typeof t!="function"||null!=r&&typeof r!="function")throw new TypeError(Hr);var n=function(){var e=arguments,u=r?r.apply(this,e):e[0],o=n.cache;if(o.has(u))return o.get(u);var i=t.apply(this,e);return n.cache=o.set(u,i)||o,i};return n.cache=new(vr.Cache||P),n}function yr(t,r){return t===r||t!==t&&r!==r}function br(t){return null!=t&&wr(t.length)&&!jr(t)}function gr(t){if(!Or(t))return false;var r=it(t);return r==hn||r==pn||typeof t.message=="string"&&typeof t.name=="string"&&!xr(t);
+}function dr(t){return typeof t=="number"&&vu(t)}function jr(t){if(!mr(t))return false;var r=it(t);return r==_n||r==vn||r==fn||r==wn}function wr(t){return typeof t=="number"&&t>-1&&t%1==0&&t<=un}function mr(t){var r=typeof t;return null!=t&&("object"==r||"function"==r)}function Or(t){return null!=t&&typeof t=="object"}function Ar(t){return typeof t=="number"||Or(t)&&it(t)==bn}function xr(t){if(!Or(t)||it(t)!=dn)return false;var r=iu(t);if(null===r)return true;var n=Xe.call(r,"constructor")&&r.constructor;return typeof n=="function"&&n instanceof n&&Qe.call(n)==tu;
+}function zr(t){return typeof t=="string"||!Wu(t)&&Or(t)&&it(t)==An}function Sr(t){return typeof t=="symbol"||Or(t)&&it(t)==xn}function Er(t){if(!t)return[];if(br(t))return zr(t)?j(t):It(t);if(su&&t[su])return y(t[su]());var r=Tu(t);return(r==yn?b:r==On?d:Pr)(t)}function $r(t){if(typeof t=="number")return t;if(Sr(t))return on;if(mr(t)){var r=typeof t.valueOf=="function"?t.valueOf():t;t=mr(r)?r+"":r}if(typeof t!="string")return 0===t?t:+t;t=t.replace(Xn,"");var n=ne.test(t);return n||ue.test(t)?Fe(t.slice(2),n?2:8):re.test(t)?on:+t;
+}function kr(t){return null==t?"":Ot(t)}function Ir(t,r,n){var e=null==t?Vr:ut(t,r);return e===Vr?n:e}function Lr(t,r){return null!=t&&Kt(t,r,ct)}function Fr(t){return br(t)?Q(t):bt(t)}function Rr(t){return br(t)?Q(t,true):gt(t)}function Pr(t){return null==t?[]:l(t,Fr(t))}function Ur(t){return t=kr(t),t&&Wn.test(t)?t.replace(Dn,qe):t}function Mr(t,r,n){var e=m.templateSettings;n&&tr(t,r,n)&&(r=Vr),t=kr(t),r=Ku({},r,e,Nt);var u,o,i=Ku({},r.imports,e.imports,Nt),c=Fr(i),a=l(i,c),f=0,s=r.interpolate||ie,p="__p+='",_="sourceURL"in r?"//# sourceURL="+r.sourceURL+"\n":"";
+t.replace(RegExp((r.escape||ie).source+"|"+s.source+"|"+(s===Gn?Zn:ie).source+"|"+(r.evaluate||ie).source+"|$","g"),function(r,n,e,i,c,a){return e||(e=i),p+=t.slice(f,a).replace(ce,h),n&&(u=true,p+="'+__e("+n+")+'"),c&&(o=true,p+="';"+c+";\n__p+='"),e&&(p+="'+((__t=("+e+"))==null?'':__t)+'"),f=a+r.length,r}),p+="';";var v=r.variable;v||(p="with(obj){"+p+"}"),p=(o?p.replace(Tn,""):p).replace(Bn,"$1").replace(Cn,"$1;"),p="function("+(v||"obj")+"){"+(v?"":"obj||(obj={});")+"var __t,__p=''"+(u?",__e=_.escape":"")+(o?",__j=Array.prototype.join;function print(){__p+=__j.call(arguments,'')}":";")+p+"return __p}";
+var y=Qu(function(){return Function(c,_+"return "+p).apply(Vr,a)});if(y.source=p,gr(y))throw y;return y}function Nr(t){return function(){return t}}function Tr(t){return t}function Br(t){return yt(typeof t=="function"?t:nt(t,Qr))}function Cr(t){return rr(t)?c(pr(t)):wt(t)}function Dr(){return[]}function Wr(){return false}var Vr,qr="4.17.5",Gr=200,Hr="Expected a function",Jr="__lodash_hash_undefined__",Kr=500,Qr=1,Xr=2,Yr=4,Zr=1,tn=2,rn=800,nn=16,en=1/0,un=9007199254740991,on=NaN,cn="[object Arguments]",an="[object Array]",fn="[object AsyncFunction]",sn="[object Boolean]",ln="[object Date]",pn="[object DOMException]",hn="[object Error]",_n="[object Function]",vn="[object GeneratorFunction]",yn="[object Map]",bn="[object Number]",gn="[object Null]",dn="[object Object]",jn="[object Promise]",wn="[object Proxy]",mn="[object RegExp]",On="[object Set]",An="[object String]",xn="[object Symbol]",zn="[object Undefined]",Sn="[object WeakMap]",En="[object ArrayBuffer]",$n="[object DataView]",kn="[object Float32Array]",In="[object Float64Array]",Ln="[object Int8Array]",Fn="[object Int16Array]",Rn="[object Int32Array]",Pn="[object Uint8Array]",Un="[object Uint8ClampedArray]",Mn="[object Uint16Array]",Nn="[object Uint32Array]",Tn=/\b__p\+='';/g,Bn=/\b(__p\+=)''\+/g,Cn=/(__e\(.*?\)|\b__t\))\+'';/g,Dn=/[&<>"']/g,Wn=RegExp(Dn.source),Vn=/<%-([\s\S]+?)%>/g,qn=/<%([\s\S]+?)%>/g,Gn=/<%=([\s\S]+?)%>/g,Hn=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,Jn=/^\w*$/,Kn=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,Qn=/[\\^$.*+?()[\]{}|]/g,Xn=/^\s+|\s+$/g,Yn=/\\(\\)?/g,Zn=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,te=/\w*$/,re=/^[-+]0x[0-9a-f]+$/i,ne=/^0b[01]+$/i,ee=/^\[object .+?Constructor\]$/,ue=/^0o[0-7]+$/i,oe=/^(?:0|[1-9]\d*)$/,ie=/($^)/,ce=/['\n\r\u2028\u2029\\]/g,ae="\\ud800-\\udfff",fe="\\u0300-\\u036f",se="\\ufe20-\\ufe2f",le="\\u20d0-\\u20ff",pe=fe+se+le,he="\\ufe0e\\ufe0f",_e="["+ae+"]",ve="["+pe+"]",ye="\\ud83c[\\udffb-\\udfff]",be="(?:"+ve+"|"+ye+")",ge="[^"+ae+"]",de="(?:\\ud83c[\\udde6-\\uddff]){2}",je="[\\ud800-\\udbff][\\udc00-\\udfff]",we="\\u200d",me=be+"?",Oe="["+he+"]?",Ae="(?:"+we+"(?:"+[ge,de,je].join("|")+")"+Oe+me+")*",xe=Oe+me+Ae,ze="(?:"+[ge+ve+"?",ve,de,je,_e].join("|")+")",Se=RegExp(ye+"(?="+ye+")|"+ze+xe,"g"),Ee=RegExp("["+we+ae+pe+he+"]"),$e={};
+$e[kn]=$e[In]=$e[Ln]=$e[Fn]=$e[Rn]=$e[Pn]=$e[Un]=$e[Mn]=$e[Nn]=true,$e[cn]=$e[an]=$e[En]=$e[sn]=$e[$n]=$e[ln]=$e[hn]=$e[_n]=$e[yn]=$e[bn]=$e[dn]=$e[mn]=$e[On]=$e[An]=$e[Sn]=false;var ke={};ke[cn]=ke[an]=ke[En]=ke[$n]=ke[sn]=ke[ln]=ke[kn]=ke[In]=ke[Ln]=ke[Fn]=ke[Rn]=ke[yn]=ke[bn]=ke[dn]=ke[mn]=ke[On]=ke[An]=ke[xn]=ke[Pn]=ke[Un]=ke[Mn]=ke[Nn]=true,ke[hn]=ke[_n]=ke[Sn]=false;var Ie={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},Le={"\\":"\\","'":"'","\n":"n","\r":"r","\u2028":"u2028","\u2029":"u2029"
+},Fe=parseInt,Re=typeof global=="object"&&global&&global.Object===Object&&global,Pe=typeof self=="object"&&self&&self.Object===Object&&self,Ue=Re||Pe||Function("return this")(),Me=typeof exports=="object"&&exports&&!exports.nodeType&&exports,Ne=Me&&typeof module=="object"&&module&&!module.nodeType&&module,Te=Ne&&Ne.exports===Me,Be=Te&&Re.process,Ce=function(){try{return Be&&Be.binding&&Be.binding("util")}catch(t){}}(),De=Ce&&Ce.isMap,We=Ce&&Ce.isSet,Ve=Ce&&Ce.isTypedArray,qe=a(Ie),Ge=Array.prototype,He=Function.prototype,Je=Object.prototype,Ke=Ue["__core-js_shared__"],Qe=He.toString,Xe=Je.hasOwnProperty,Ye=function(){
+var t=/[^.]+$/.exec(Ke&&Ke.keys&&Ke.keys.IE_PROTO||"");return t?"Symbol(src)_1."+t:""}(),Ze=Je.toString,tu=Qe.call(Object),ru=RegExp("^"+Qe.call(Xe).replace(Qn,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$"),nu=Te?Ue.Buffer:Vr,eu=Ue.Symbol,uu=Ue.Uint8Array,ou=nu?nu.allocUnsafe:Vr,iu=g(Object.getPrototypeOf,Object),cu=Object.create,au=Je.propertyIsEnumerable,fu=Ge.splice,su=eu?eu.iterator:Vr,lu=eu?eu.toStringTag:Vr,pu=function(){try{var t=Ht(Object,"defineProperty");
+return t({},"",{}),t}catch(t){}}(),hu=Object.getOwnPropertySymbols,_u=nu?nu.isBuffer:Vr,vu=Ue.isFinite,yu=g(Object.keys,Object),bu=Math.max,gu=Date.now,du=Ht(Ue,"DataView"),ju=Ht(Ue,"Map"),wu=Ht(Ue,"Promise"),mu=Ht(Ue,"Set"),Ou=Ht(Ue,"WeakMap"),Au=Ht(Object,"create"),xu=hr(du),zu=hr(ju),Su=hr(wu),Eu=hr(mu),$u=hr(Ou),ku=eu?eu.prototype:Vr,Iu=ku?ku.valueOf:Vr,Lu=ku?ku.toString:Vr,Fu=function(){function t(){}return function(r){if(!mr(r))return{};if(cu)return cu(r);t.prototype=r;var n=new t;return t.prototype=Vr,
+n}}();m.templateSettings={escape:Vn,evaluate:qn,interpolate:Gn,variable:"",imports:{_:m}},O.prototype.clear=A,O.prototype.delete=x,O.prototype.get=z,O.prototype.has=S,O.prototype.set=E,$.prototype.clear=k,$.prototype.delete=I,$.prototype.get=L,$.prototype.has=F,$.prototype.set=R,P.prototype.clear=U,P.prototype.delete=M,P.prototype.get=N,P.prototype.has=T,P.prototype.set=B,C.prototype.add=C.prototype.push=D,C.prototype.has=W,V.prototype.clear=q,V.prototype.delete=G,V.prototype.get=H,V.prototype.has=J,
+V.prototype.set=K;var Ru=Ut(et),Pu=Mt(),Uu=pu?function(t,r){return pu(t,"toString",{configurable:true,enumerable:false,value:Nr(r),writable:true})}:Tr,Mu=hu?function(t){return null==t?[]:(t=Object(t),n(hu(t),function(r){return au.call(t,r)}))}:Dr,Nu=hu?function(t){for(var r=[];t;)u(r,Mu(t)),t=iu(t);return r}:Dr,Tu=it;(du&&Tu(new du(new ArrayBuffer(1)))!=$n||ju&&Tu(new ju)!=yn||wu&&Tu(wu.resolve())!=jn||mu&&Tu(new mu)!=On||Ou&&Tu(new Ou)!=Sn)&&(Tu=function(t){var r=it(t),n=r==dn?t.constructor:Vr,e=n?hr(n):"";
+if(e)switch(e){case xu:return $n;case zu:return yn;case Su:return jn;case Eu:return On;case $u:return Sn}return r});var Bu=lr(Uu),Cu=cr(function(t){var r=[];return 46===t.charCodeAt(0)&&r.push(""),t.replace(Kn,function(t,n,e,u){r.push(e?u.replace(Yn,"$1"):n||t)}),r});vr.Cache=P;var Du=at(function(){return arguments}())?at:function(t){return Or(t)&&Xe.call(t,"callee")&&!au.call(t,"callee")},Wu=Array.isArray,Vu=_u||Wr,qu=De?s(De):lt,Gu=We?s(We):_t,Hu=Ve?s(Ve):vt,Ju=Pt(function(t,r){Lt(r,Rr(r),t)}),Ku=Pt(function(t,r,n,e){
+Lt(r,Rr(r),t,e)}),Qu=mt(function(r,n){try{return t(r,Vr,n)}catch(t){return gr(t)?t:Error(t)}});m.assignIn=Ju,m.assignInWith=Ku,m.constant=Nr,m.iteratee=Br,m.keys=Fr,m.keysIn=Rr,m.memoize=vr,m.property=Cr,m.toArray=Er,m.values=Pr,m.extend=Ju,m.extendWith=Ku,m.attempt=Qu,m.eq=yr,m.escape=Ur,m.forEach=_r,m.get=Ir,m.hasIn=Lr,m.identity=Tr,m.isArguments=Du,m.isArray=Wu,m.isArrayLike=br,m.isBuffer=Vu,m.isError=gr,m.isFinite=dr,m.isFunction=jr,m.isLength=wr,m.isMap=qu,m.isNumber=Ar,m.isObject=mr,m.isObjectLike=Or,
+m.isPlainObject=xr,m.isSet=Gu,m.isString=zr,m.isSymbol=Sr,m.isTypedArray=Hu,m.stubArray=Dr,m.stubFalse=Wr,m.template=Mr,m.toNumber=$r,m.toString=kr,m.each=_r,m.VERSION=qr,Ue._=m}).call(this);
+/* global _, eyeo */
+(function(doc, _, ns, i18n){
 
-/** get userId or generate and get user Id  */
-function forceGetUserId()
-{
-    let userId = getUserId();
-    if (userId) {
-        return userId;
-    } else {
-        setUserIdDiv();
-        return getUserId();
-    }
-}
-
-// Returns the adblock userid, if known
-function getUserId() {
-    var _userIdOptions = [
-      (document.location.search.match(/(?:[?&])u=([a-zA-Z0-9]+)/) || {})[1],
-      typeof adblock_userid !== "undefined" ? adblock_userid : undefined,
-      (document.getElementById('adblock_user_id') || {}).innerText,
-      ""
-    ];
-    // Use the first one that has a value.
-    return _userIdOptions.filter(function(o) { return o !== undefined; })[0];
-}
-
-// Returns the adblock userid if exists, else return unknown
-function getUserIdOrUnknown() {
-    var userId = getUserId();
-    return userId === "" ? "unknown" : userId;
-}
-
-// Returns the adblock premium userid, if known
-function getPremiumUserId() {
-    var _userIdOptions = [
-      (document.location.search.match(/(?:[?&])u=([a-zA-Z0-9]+)/) || {})[1],
-      typeof adblock_premium_userid !== "undefined" ? adblock_premium_userid : undefined,
-      (document.getElementById('adblock_premium_user_id') || {}).innerText,
-      ""
-    ];
-    // Use the first one that has a value.
-    return _userIdOptions.filter(function(o) { return o !== undefined; })[0];
-}
-
-// Returns the adblock userid if exists, else return unknown
-function getPremiumUserIdOrUnknown() {
-    var userId = getPremiumUserId();
-    return userId === "" ? "unknown" : userId;
-}
-
-function getCountryCode() {
-    var _geoOptions = [
-      (document.location.search.match(/(?:[?&])geo=([a-zA-Z0-9]+)/) || {})[1],
-      (typeof adblockGeo === "object" && typeof adblockGeo.countryCode === "string") ? adblockGeo.countryCode : "unknown",
-      "unknown"
-    ];
-    return _geoOptions.filter(function(o) { return o !== undefined; })[0];
-}
-
-function getLanguage() {
-    var lan = (document.location.search.match(/(?:[?&])lang=([a-zA-Z0-9_]+)/) || {})[1];
-    if (!lan) {
-        lan = getLanguageInPath();
-    }
-    if (!lan) {
-        lan = window.navigator.userLanguage || window.navigator.language || "";
-    }
-    return lan;
-}
-
-function getLanguageQueryString() {
-    var lan = (document.location.search.match(/(?:[?&])lang=([a-zA-Z0-9_]+)/) || {})[1]
-    if (lan === undefined) {
-        return "";
-    }
-    return lan;
-}
-
-function getLanguageInPath() {
-    const firstPath = window.location.pathname.split('/')[1];
-    try {
-        Intl.getCanonicalLocales(firstPath.replace("_", "-"));
-    } catch (error) {
-        return ""
-    }
-    return firstPath;
-}
-
-function getTwoLetterLocale() {
-    var lan = getLanguage();
-    return lan.slice(0, 2);
-}
-
-function getFirstRunBool() {
-    var innerText = (document.getElementById('adblock_first_run_id') || {}).innerText;
-    if (innerText === undefined) {
-        return undefined;
-    }
-    return innerText === 'true';
-}
-
-// Returns "SI" if /installed, "SY" if /pay, "SG" if /, and "SU" for unknown
-function getSource() {
-    return "S" + getPlainSource();
-}
-
-function getPlainSource() {
-    var a = "U";
-    if (location.pathname.indexOf('premium') == -1) {
-        if (location.pathname.indexOf('mobile/installed') != -1)
-            a = "MI"
-        else if (location.pathname.indexOf('install') != -1)
-            a = "I";
-        else if (location.pathname.indexOf('mobile/pay') != -1)
-            a = "M"
-        else if (location.pathname.indexOf('mobile/test') != -1)
-            a = "T"
-        else if (location.pathname.indexOf('pay') != -1)
-            a = "Y"
-        else if (location.pathname.length == 1)
-            a = "G";
-        else if (
-            location.pathname.length > 1
-            && typeof getLocalesIndex == "function"
-            && getLocalesIndex().includes(location.pathname.split("/")[1])
-            && location.pathname.split("/").length === 3
-        )
-            a = "G";
-        else if (location.pathname.indexOf('survey') != -1)
-            a = "Q";
-        else if (location.pathname.indexOf('update') != -1)
-            a = "B";
-        else if (location.pathname.indexOf('chrome') != -1)
-            a = "GC";
-        else if (location.pathname.indexOf('edge') != -1)
-            a = "GE";
-        else if (location.pathname.indexOf('firefox') != -1)
-            a = "GF";
-        else if (location.pathname.indexOf('safari') != -1)
-            a = "GS";
-        else if (location.pathname.indexOf('iOS') != -1)
-            a = "GI";
-        else if (location.pathname.indexOf('android') != -1)
-            a = "GA";
-        else if (location.pathname.indexOf('thanks') != -1)
-            a = "GT";
-        else if (location.pathname.indexOf('block-ads-and-popups') != -1)
-            a = "BAAP";
-        else if (location.pathname.indexOf('block-facebook-ads-with-adblock') != -1)
-            a = "BFBA";
-        else if (location.pathname.indexOf('block-youtube-ads-with-adblock') != -1)
-            a = "BYTA";
-        else if (location.pathname.indexOf('block-twitch-ads-with-adblock') != -1)
-            a = "BTA";
-        else if (location.pathname.indexOf('cryptocurrency-mining') != -1)
-            a = "CM";
-        else if (location.pathname.indexOf('malware-protection') != -1)
-            a = "MP";
-    } else {
-        // Must be before otherwise returns 'ME'
-        if (location.pathname.indexOf('premium/enrollment/distraction-control')  != -1) {
-            a = "MEDC";
-        } else if (location.pathname.indexOf('premium/enrollment') != -1) {
-            a = "ME";
-        } else if (location.pathname.indexOf('premium') != -1) {
-            a = "HME";
-        } else if (location.pathname.indexOf('installed') != -1) {
-            a = "Z";
-        } else if (location.pathname.indexOf('payment') != -1) {
-            a = "X";
-        } else if (location.pathname.indexOf('terms') != -1) {
-            a = "PS";
-        } else if (location.pathname.indexOf('privacy') != -1) {
-            a = "PP";
-        } else if (location.pathname.indexOf('thankyou') != -1) {
-            a = "PT";
-        } else if (location.pathname.indexOf('uninstall') != -1) {
-            a = "PU";
-        }
-    }
-    if ((location.pathname.indexOf('/update/4.6.0/1') != -1) ||
-        (location.pathname.indexOf('/update/4.6.0/2') != -1) ||
-        (location.pathname.indexOf('/update/4.6.0/3') != -1) ||
-        (location.pathname.indexOf('/update/4.7.3/1') != -1) ||
-        (location.pathname.indexOf('/update/4.7.3/2') != -1)) {
-        // TODO: remove me after the current /update/4.6.0 and / update/4.7.3 experiments.
-        a = "ME";
-    }
-    return a
-}
-
-function isProd() {
-    if (document.location.href.indexOf('localhost') == -1 &&
-        document.location.href.indexOf('dev.getadblock') == -1) {
-        return true;
-    }
-    return false;
-}
-
-function isEnglish() {
-    var lan = window.navigator.userLanguage || window.navigator.language;
-    var nonEnglish = (lan.slice(0, 2) !== "en");
-    if (nonEnglish) {
-        return false;
-    }
-    return true;
-}
-
-function isIOS() {
-    if (navigator.userAgent.indexOf("iPhone") != -1 ||
-        navigator.userAgent.indexOf("iPad") != -1 ||
-        navigator.userAgent.indexOf("iPod") != -1) {
-        return true;
-    }
-    return false;
-}
-
-function getOSSingleChar() {
-    var a = "U";
-    if (- 1 != navigator.appVersion.indexOf("Win")) {
-        a = "W";
-    } else if (isIOS()) {
-        a = "I";
-    } else if (- 1 != navigator.appVersion.indexOf("Mac")) {
-        a = "M";
-    } else if (- 1 != navigator.appVersion.indexOf("X11")) {
-        a = "L";
-    } else if (- 1 != navigator.appVersion.indexOf("Linux")) {
-        a = "L";
-    }
-    return a
-
-}
-
-// Returns OS from navigator object
-function getOS() {
-    return "O" + getOSSingleChar();
-}
-
-function getOSVersion() {
-    var forcedOSVersion = (document.location.search.match(/(?:[?&])ov=([0-9_]+)/) || {})[1];
-    if (typeof forcedOSVersion !== "undefined") {
-        return forcedOSVersion;
-    }
-    var match = navigator.userAgent.match(/(CrOS\ \w+|Windows\ NT|Mac\ OS\ X|Linux)\ ([\d\._]+)?/);
-    return (match || [])[2] || "unknown";
-}
-
-function getBrowser() {
-    var a = "U";
-    var forcedBrowser = (document.location.search.match(/(?:[?&])bro=([A-Z])/) || {})[1]
-    if (forcedBrowser !== undefined) {
-        return forcedBrowser;
-    }
-
-    var chrome = navigator.userAgent.indexOf("Chrome");
-    var opera = navigator.userAgent.indexOf("OPR");
-    var edg = navigator.userAgent.indexOf("Edg");
-    var edge = navigator.userAgent.indexOf("Edge");
-    var safari = navigator.userAgent.indexOf("Safari");
-    var firefox = navigator.userAgent.indexOf("Firefox");
-    var samsung = navigator.userAgent.indexOf("Samsung");
-    var trident = navigator.userAgent.indexOf("Trident");
-    if ((chrome !== -1) &&
-        (opera === -1) &&
-        (samsung === -1) &&
-        (edg === -1) &&
-        (edge === -1)) {
-        a = "E";
-    } else if ((safari !== -1) &&
-               (opera === -1) &&
-               (samsung === -1) &&
-               (edg === -1) &&
-               (edge === -1)) {
-        a = "S";
-    } else if (firefox !== -1) {
-        a = "F";
-    } else if (opera !== -1) {
-        a = "O";
-    } else if (edge !== -1) {
-        a = "M";
-    } else if (edg !== -1) {
-        a = "CM";
-    } else if (navigator.appName === 'Microsoft Internet Explorer') {
-        a = "T";
-    } else if (trident !== -1) {
-        a = "T";
-    } else if (samsung !== -1) {
-        a = "G";
-    }
-    return a;
-}
-
-// setUserIdDiv creates a userid and sets it in a div#adblock_user_id with CSS 'display: none;'
-function setUserIdDiv() {
-    const newDiv = document.createElement("div");
-    newDiv.id = "adblock_user_id";
-    newDiv.style.display = "none";
-    const newContent = document.createTextNode(generateUserId());
-    newDiv.appendChild(newContent);
-    document.body.appendChild(newDiv);
-}
-
-var MABTracking = {
-    /** A Tracking.Id is made of space separated Sections */
-    Id: function(sections) {
-        // Filter out empty sections and join by space
-        return sections.reduce(function(sections, section) {
-            if (section) sections.push(section);
-            return sections;
-        }, []).join(" ");
+  var DEFAULT_AMOUNTS = {
+    once: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
     },
-    /** A Tracking.Section is made of server side allowlisted values */
-    Section: function(values) {
-        // Allowlisted values are always the same length when the length matters
-        return values.join("");
-    }
-};
-
-// Builds tracking information
-// TODO name this something better
-function recordTracking(omitUserId) {
-    // Adblock Plus is not yet integrating with AdBlock experiments
-    var experimentId = "0";
-    var experimentVariant = "0";
-    return MABTracking.Id([
-        MABTracking.Section([eyeo.payment.productId]),
-        MABTracking.Section(["X", experimentId, "G", experimentVariant]),
-        MABTracking.Section(["F", getBrowser(), getOS(), getSource()]),
-        MABTracking.Section([omitUserId ? "unknown" : forceGetUserId()])
-    ]);
-}
-
-function getGAID() {
-    if (typeof ga !== 'undefined' && typeof ga.getByName === 'function') {
-        var tracker = ga.getByName('gatracker');
-        if (tracker != null) {
-            return tracker.get('clientId');
-        }
-        return '';
-    }
-    return '';
-};
-
-function isPremium() {
-    var abPremium = !!document.location.pathname.match(/premium/);
-    return abPremium;
-}
-
-function getPremiumCid() {
-    if (isPremium()) {
-        if (typeof premiumVars === 'object' && typeof premiumVars.cid === "string") {
-            return premiumVars.cid;
-        }
-    }
-    return "0";
-}
-
-function getPremiumSid() {
-    if (isPremium()) {
-        if (typeof premiumVars === 'object' && typeof premiumVars.sid === "string") {
-            return premiumVars.sid;
-        }
-    }
-    return "0";
-}
-
-function getPremiumSession() {
-    if (isPremium()) {
-        if (typeof premiumVars === 'object' && typeof premiumVars.sess === "string") {
-            return premiumVars.sess;
-        }
-    }
-    return "";
-}
-
-function getPurchaseMetadata(flavor, testMode) {
-    var string = "";
-    if (typeof _experiment !== 'undefined') {
-        string = "E="+_experiment.name(flavor)+"EI="+_experiment.experimentId(flavor)+"V="+_experiment.variant(flavor)+
-                  "VI="+_experiment.variantIndex(flavor);
-    } else {
-        string = "E=EI=V=VI=";
-    }
-
-    if (typeof getUserId === 'function') {
-        string = string + "U="+getUserId();
-    } else {
-        string = string + "U=";
-    }
-
-    string = string + "G=" + getGAID();
-    string = string + "L=" + getLanguage();
-    string = string + "C=" + getCountryCode();
-    string = string + "P=" + (typeof isPremium === "function" ? (isPremium() ? "true" : "false") : "false");
-    string = string + "CID=" + (typeof getPremiumCid === "function" ? getPremiumCid() : "0");
-    string = string + "SID=" + (typeof getPremiumSid === "function" ? getPremiumSid() : "0");
-    return string;
-}
-
-// Should be used to run a function that expects the userId to
-// be present.  This functionality is useful since the userId is
-// not present until window.onload.
-//
-// To register a function to run call _userIdDispatch.runWithUserId(func)
-// with the desired function.  The user ID will be supplied as the only
-// parameter.  The user ID can be an empty string.
-//
-// ** Call runWithUserId before window.onload
-var _userIdDispatch = (function() {
-    var callbacks = [];
-
-    var runCallbacks = function() {
-        var numTrys = 0;
-        (function checkForInjection() {
-            // Run later to get behind the userid injection.
-            setTimeout(function() {
-                var userId = getUserIdOrUnknown();
-                var firstRun = getFirstRunBool();
-                var dispatchNow = false;
-                if (userId === "unknown" || firstRun === undefined) {
-                    numTrys++;
-                    if (numTrys <= 10) {
-                        checkForInjection();
-                    } else {
-                        dispatchNow = true;
-                    }
-                } else {
-                    dispatchNow = true;
-                }
-
-                if (dispatchNow) {
-                    for (var i = 0; i < callbacks.length; i++) {
-                        callbacks[i](userId, firstRun);
-                    }
-                }
-            }, 1000);
-        })();
-    };
-    window.addEventListener('load', runCallbacks, false);
-
-    return {
-        runWithUserId: function(func) {
-            callbacks.push(func);
-        }
-    }
-})();
-
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./static/components/AppealForm/AppealForm.js":
-/*!****************************************************!*\
-  !*** ./static/components/AppealForm/AppealForm.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AppealForm": () => (/* binding */ AppealForm)
-/* harmony export */ });
-/* global adblock */
-
-const formTemplate = document.getElementById("appeal-form");
-const frequencyTemplate = document.getElementById("appeal-form-frequency");
-const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
-const customAmountTemplate = document.getElementById("appeal-form-amount--custom");
-
-function getLanguage() {
-  // prefer navigator language to settings language so that more specific language variants can differentiate currencies
-  // e.g. 10 USD in "en" is $10 but 10 USD in "en-CA" is US$10
-  return (navigator.language || adblock.settings.language).replace("_", "-");
-}
-
-function toDollarNumber(currency, cents) {
-  return currency == "JPY" ? cents : cents / 100;
-}
-
-function toCentsNumber(currency, dollars) {
-  return currency == "JPY" ? dollars : dollars * 100;
-}
-
-function toDollarString(currency, cents) {
-  return new Intl.NumberFormat(
-    getLanguage(),
-    { style: "currency", currency, minimumFractionDigits: 0 }
-  ).format(toDollarNumber(currency, cents));
-}
-
-class AppealForm {
-
-  #paddleConfiguration;
-
-  #formConfiguration;
-
-  #form;
-
-  #currencySelect;
-
-  #frequencies;
-
-  #error;
-
-  constructor({placeholder, paddleConfiguration, formConfiguration}) {
-    this.#paddleConfiguration = paddleConfiguration;
-    this.#formConfiguration = formConfiguration;
-    this.#constructForm()
-    this.#constructCurrencies();
-    this.#constructFrequencies();
-    this.#error = this.#form.querySelector(".appeal-form__error");
-    placeholder.replaceWith(this.#form);
-  }
-
-  #constructForm() {
-    this.#form = formTemplate.content.cloneNode(true).firstElementChild;
-    this.#form.querySelector(".appeal-form-header__heading").innerHTML = adblock.strings["appeal-form-header__heading"];
-    this.#form.querySelector(".appeal-form-checkout__submit span").innerHTML = adblock.strings["appeal-form-checkout__submit"]
-    this.#form.addEventListener("submit", event => this.#onSubmit(event));
-  }
-
-  #constructCurrencies() {
-    this.#currencySelect = this.#form.querySelector(".appeal-form-header__select");
-    for (const currency in this.#paddleConfiguration.products) {
-      const option = document.createElement("option");
-      option.textContent = currency;
-      this.#currencySelect.appendChild(option);
-    }
-    this.#currencySelect.value = this.#formConfiguration.currency;
-    this.#currencySelect.addEventListener("change", event => this.#onCurrencyChange(event));
-  }
-
-  #constructFrequencies() {
-    this.#frequencies = this.#form.querySelector(".appeal-form-frequencies");
-    this.#replaceFrequencies(this.#formConfiguration.currency);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[this.#formConfiguration.selected].checked = true;
-    this.#frequencies.addEventListener("focusin", event => this.#onAmountFocusin(event));
-    this.#frequencies.addEventListener("input", event => this.#handleAmountInput(event));
-  }
-
-  #replaceFrequencies(currency) {
-    const frequencies = [];
-    for (const frequency in this.#paddleConfiguration.products[currency]) {
-      const frequencySection = frequencyTemplate.content.cloneNode(true).firstElementChild;
-      frequencySection.querySelector(".appeal-form-frequency__heading").innerHTML = adblock.strings[`appeal-form-frequency__heading--${frequency}`];
-      const amountsParent = frequencySection.querySelector(".appeal-form-amounts");
-      for (const amount in this.#paddleConfiguration.products[currency][frequency]) {
-        if (amount == "custom") {
-          const customAmount = customAmountTemplate.content.cloneNode(true).firstElementChild;
-          const input = customAmount.querySelector(".appeal-form-amount__input");
-          input.placeholder = toDollarString(currency, Object.keys(this.#paddleConfiguration.products[currency][frequency])[3]);
-          input.min = toDollarNumber(currency, this.#paddleConfiguration.products[currency][frequency][amount]);
-          input.dataset.frequency = frequency;
-          input.dataset.product = "custom";
-          amountsParent.appendChild(customAmount);
-        } else {
-          const fixedAmount = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
-          fixedAmount.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
-          const radio = fixedAmount.querySelector(".appeal-form-amount__radio");
-          radio.value = amount;
-          radio.dataset.frequency = frequency;
-          radio.dataset.product = this.#paddleConfiguration.products[currency][frequency][amount];
-          amountsParent.appendChild(fixedAmount);
-        }
-      }
-      frequencies.push(frequencySection);
-    }
-    this.#frequencies.replaceChildren(...frequencies);
-  }
-
-  #onCurrencyChange(event) {
-    const inputValues = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__input")).map(element => element.value);
-    const selectedRadio = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).find(element => element.checked);
-    const selectedRadioIndex = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).findIndex(element => element.checked);
-    this.#replaceFrequencies(event.currentTarget.value);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__input").forEach((input, i) => input.value = inputValues[i]);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[selectedRadioIndex].checked = true;
-    if (selectedRadio.value == "custom") {
-      this.#handleInputError(
-        selectedRadio.parentElement.querySelector(".appeal-form-amount__input")
-      );
-    }
-  }
-
-  #handleInputError(target) {
-    const targetValue = parseFloat(target.value);
-    const targetMinimum = parseFloat(target.min);
-    if (targetValue && targetValue < targetMinimum) {
-      const minimumAmount = parseFloat(target.min);
-      const numberFormat = new Intl.NumberFormat(
-        getLanguage(), {
-          style: "currency",
-          currency: this.#currencySelect.value
-      });
-      this.#error.innerHTML = adblock.strings[`appeal-form__error--${target.dataset.frequency}`].replace(
-        '<span class="amount"></span>',
-        numberFormat.format(minimumAmount)
-      );
-      this.#error.hidden = false;
-    } else {
-      this.#error.hidden = true;
-    }
-  }
-
-  #onAmountFocusin(event) {
-    if (event.target.type == "number") {
-      const radio = event.target.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__radio");
-      if (false == radio.checked) radio.checked = true;
-    }
-    if (event.target.type == "number" || event.target.type == "radio") {
-      this.#handleInputError(event.target);
-    }
-  }
-
-  #handleAmountInput(event) {
-    if (event.target.type == "number") {
-      this.#handleInputError(event.target);
-    }
-  }
-
-  #submitCallbacks = [];
-
-  onSubmit(callback) {
-    this.#submitCallbacks.push(callback);
-  }
-
-  #onSubmit(event) { 
-    event.preventDefault();
-    const currency = this.#currencySelect.value;
-    let selected = this.#frequencies.querySelector(":checked");
-    let amount = selected.value;
-    if (amount == "custom") {
-      selected = selected.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__input");
-      amount = toCentsNumber(currency, parseFloat(selected.value));
-    }
-    const frequency = selected.dataset.frequency;
-    const product = selected.dataset.product;
-    this.#submitCallbacks.forEach(callback => callback({
-      currency, 
-      frequency, 
-      amount, 
-      product,
-    }));
-  }
-
-  disable() {
-    this.#form.classList.add("appeal-form--disabled");
-    this.#form.querySelectorAll("input, button").forEach(field => { field.disabled = true; });
-  }
-
-  enable() {
-    this.#form.classList.remove("appeal-form--disabled");
-    this.#form.querySelectorAll("input, button").forEach(field => { field.disabled = false; });
-  }
-
-}
-
-/***/ }),
-
-/***/ "./static/components/AppealForm/configuration.js":
-/*!*******************************************************!*\
-  !*** ./static/components/AppealForm/configuration.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CONFIGURATION": () => (/* binding */ CONFIGURATION)
-/* harmony export */ });
-const CONFIGURATION = {
-  AppealForm: {
-    currency: typeof adblock == "object" ? adblock.settings.currency || "USD" : "USD",
-    selected: 3
-  },
-  Paddle: {
-    sandbox: {
-      vendor: 11004,
-      products: {
-        "USD": {
-          "once": {
-            "1000": 46028,
-            "1500": 46029,
-            "2000": 46030,
-            "3500": 46031,
-            "5000": 46032,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 46074,
-            "299": 46075,
-            "399": 46076,
-            "499": 46077,
-            "999": 46078,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 46079,
-            "1500": 46080,
-            "2000": 46081,
-            "3500": 46082,
-            "5000": 46083,
-            "custom": 500
-          }
-        },
-        "AUD": {
-          "once": {
-            "1000": 46033,
-            "1500": 46034,
-            "2000": 46035,
-            "3500": 46036,
-            "5000": 46037,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 46084,
-            "299": 46085,
-            "399": 46086,
-            "499": 46087,
-            "999": 46088,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 46089,
-            "1500": 46090,
-            "2000": 46091,
-            "3500": 46092,
-            "5000": 46093,
-            "custom": 500
-          }
-        },
-        "CAD": {
-          "once": {
-            "1000": 46038,
-            "1500": 46039,
-            "2000": 46040,
-            "3500": 46041,
-            "5000": 46042,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 46094,
-            "299": 46095,
-            "399": 46096,
-            "499": 46097,
-            "999": 46098,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 46099,
-            "1500": 46181,
-            "2000": 46182,
-            "3500": 46183,
-            "5000": 46184,
-            "custom": 500
-          }
-        },
-        "EUR": {
-          "once": {
-            "1000": 46048,
-            "1500": 46049,
-            "2000": 46050,
-            "3500": 46051,
-            "5000": 46052,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 46195,
-            "299": 46196,
-            "399": 46197,
-            "499": 46198,
-            "999": 46199,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 46200,
-            "1500": 46201,
-            "2000": 46202,
-            "3500": 46203,
-            "5000": 46204,
-            "custom": 500
-          }
-        },
-        "GBP": {
-          "once": {
-            "1000": 46053,
-            "1500": 46054,
-            "2000": 46055,
-            "3500": 46056,
-            "5000": 46057,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 46205,
-            "299": 46206,
-            "399": 46207,
-            "499": 46208,
-            "999": 46209,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 46210,
-            "1500": 46211,
-            "2000": 46212,
-            "3500": 46213,
-            "5000": 46214,
-            "custom": 500
-          }
-        },
-        "JPY": {
-          "once": {
-            "1500": 46064,
-            "2000": 46065,
-            "2500": 46066,
-            "3500": 46067,
-            "5000": 46068,
-            "custom": 500
-          },
-          "monthly": {
-            "200": 46225,
-            "300": 46226,
-            "500": 46227,
-            "1000": 46228,
-            "1500": 46229,
-            "custom": 200
-          },
-          "yearly": {
-            "1500": 46230,
-            "2000": 46231,
-            "2500": 46232,
-            "3500": 46233,
-            "5000": 46234,
-            "custom": 500
-          }
-        },
-        "NZD": {
-          "once": {
-            "1000": 46058,
-            "1500": 46059,
-            "2000": 46060,
-            "3500": 46062,
-            "5000": 46063,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 46215,
-            "299": 46216,
-            "399": 46217,
-            "499": 46218,
-            "999": 46219,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 46220,
-            "1500": 46221,
-            "2000": 46222,
-            "3500": 46223,
-            "5000": 46224,
-            "custom": 500
-          }
-        },
-        "CHF": {
-          "once": {
-            "1000": 46043,
-            "1500": 46044,
-            "2000": 46045,
-            "3500": 46046,
-            "5000": 46047,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 46185,
-            "299": 46186,
-            "399": 46187,
-            "499": 46188,
-            "999": 46189,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 46190,
-            "1500": 46191,
-            "2000": 46192,
-            "3500": 46193,
-            "5000": 46194,
-            "custom": 500
-          }
-        },
-        "RUB": {
-          "once": {
-            "25000": 46069,
-            "50000": 46070,
-            "100000": 46071,
-            "250000": 46072,
-            "500000": 46073,
-            "custom": 25000
-          },
-          "monthly": {
-            "15000": 46235,
-            "25000": 46236,
-            "40000": 46237,
-            "50000": 46238,
-            "100000": 46239,
-            "custom": 15000
-          },
-          "yearly": {
-            "25000": 46240,
-            "50000": 46241,
-            "100000": 46242,
-            "250000": 46243,
-            "500000": 46244,
-            "custom": 25000
-          }
-        },
-      },
-    },    
-    live: {
-      vendor: 164164,
-      products: {
-        "USD": {
-          "once": {
-            "1000": 816549,
-            "1500": 816550,
-            "2000": 816551,
-            "3500": 816552,
-            "5000": 816553,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 816774,
-            "299": 816775,
-            "399": 816776,
-            "499": 816777,
-            "999": 816778,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 816779,
-            "1500": 816780,
-            "2000": 816781,
-            "3500": 816782,
-            "5000": 816783,
-            "custom": 500
-          }
-        },
-        "AUD": {
-          "once": {
-            "1000": 816522,
-            "1500": 816523,
-            "2000": 816524,
-            "3500": 816525,
-            "5000": 816526,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 816692,
-            "299": 816693,
-            "399": 816694,
-            "499": 816696,
-            "999": 816697,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 816699,
-            "1500": 816700,
-            "2000": 816702,
-            "3500": 816703,
-            "5000": 816705,
-            "custom": 500
-          }
-        },
-        "CAD": {
-          "once": {
-            "1000": 816528,
-            "1500": 816529,
-            "2000": 816530,
-            "3500": 816531,
-            "5000": 816532,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 816706,
-            "299": 816708,
-            "399": 816710,
-            "499": 816711,
-            "999": 816712,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 816714,
-            "1500": 816715,
-            "2000": 816716,
-            "3500": 816717,
-            "5000": 816718,
-            "custom": 500
-          }
-        },
-        "EUR": {
-          "once": {
-            "1000": 816517,
-            "1500": 816518,
-            "2000": 816519,
-            "3500": 816520,
-            "5000": 816521,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 816681,
-            "299": 816682,
-            "399": 816683,
-            "499": 816684,
-            "999": 816686,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 816687,
-            "1500": 816688,
-            "2000": 816689,
-            "3500": 816690,
-            "5000": 816691,
-            "custom": 500
-          }
-        },
-        "GBP": {
-          "once": {
-            "1000": 816538,
-            "1500": 816539,
-            "2000": 816540,
-            "3500": 816541,
-            "5000": 816542,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 816734,
-            "299": 816735,
-            "399": 816736,
-            "499": 816737,
-            "999": 816738,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 816739,
-            "1500": 816740,
-            "2000": 816741,
-            "3500": 816743,
-            "5000": 816744,
-            "custom": 500
-          }
-        },
-        "JPY": {
-          "once": {
-            "1500": 816554,
-            "2000": 816555,
-            "2500": 816556,
-            "3500": 816557,
-            "5000": 816558,
-            "custom": 500
-          },
-          "monthly": {
-            "200": 816784,
-            "300": 816785,
-            "500": 816786,
-            "1000": 816787,
-            "1500": 816788,
-            "custom": 200
-          },
-          "yearly": {
-            "1500": 816789,
-            "2000": 816791,
-            "2500": 816792,
-            "3500": 816794,
-            "5000": 816795,
-            "custom": 500
-          }
-        },
-        "NZD": {
-          "once": {
-            "1000": 816543,
-            "1500": 816544,
-            "2000": 816545,
-            "3500": 816547,
-            "5000": 816548,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 816760,
-            "299": 816762,
-            "399": 816764,
-            "499": 816766,
-            "999": 816768,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 816769,
-            "1500": 816770,
-            "2000": 816771,
-            "3500": 816772,
-            "5000": 816773,
-            "custom": 500
-          }
-        },
-        "CHF": {
-          "once": {
-            "1000": 816533,
-            "1500": 816535,
-            "2000": 816534,
-            "3500": 816536,
-            "5000": 816537,
-            "custom": 500
-          },
-          "monthly": {
-            "199": 816720,
-            "299": 816722,
-            "399": 816723,
-            "499": 816725,
-            "999": 816726,
-            "custom": 199
-          },
-          "yearly": {
-            "1000": 816727,
-            "1500": 816728,
-            "2000": 816730,
-            "3500": 816731,
-            "5000": 816733,
-            "custom": 500
-          }
-        },
-        "RUB": {
-          "once": {
-            "25000": 816559,
-            "50000": 816560,
-            "100000": 816561,
-            "250000": 816562,
-            "500000": 816563,
-            "custom": 25000
-          },
-          "monthly": {
-            "15000": 816796,
-            "25000": 816797,
-            "40000": 816799,
-            "50000": 816800,
-            "100000": 816801,
-            "custom": 15000
-          },
-          "yearly": {
-            "25000": 816802,
-            "50000": 816803,
-            "100000": 816804,
-            "250000": 816805,
-            "500000": 816806,
-            "custom": 25000
-          }
-        },
-      },
+    monthly: {
+      amounts: [1.99, 2.99, 3.99, 4.99, 9.99],
+      placeholder: 4.99,
+      minimum: 1
     },
-  },
-}
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!****************************************************!*\
-  !*** ./static/components/AppealForm/controller.js ***!
-  \****************************************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _configuration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./configuration.js */ "./static/components/AppealForm/configuration.js");
-/* harmony import */ var _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppealForm.js */ "./static/components/AppealForm/AppealForm.js");
-/* global adblock, eyeo, Paddle */
-
-
-
-
-const SANDBOX_HOSTNAMES = [
-  /^localhost$/,
-  /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/,
-  /^dev--adblockplus-org--[\w\-]+.web.app$/,
-];
-
-let paddleConfiguration = SANDBOX_HOSTNAMES.some((originPattern) => {
-  return originPattern.test(location.hostname)
-}) ? _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox : _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
-
-if (
-  // For compatibility with AdBlock
-  adblock.searchParameters.has("testmode")
-  || adblock.searchParameters.get("mode") == "test"
-) {
-  paddleConfiguration = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
-} else if (adblock.searchParameters.get("mode") == "live") {
-  paddleConfiguration = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
-}
-
-const isTestmode = paddleConfiguration == _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
-
-if (isTestmode) {
-  Paddle.Environment.set("sandbox");
-}
-
-Paddle.Setup({ vendor: paddleConfiguration.vendor });
-
-const appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
-  paddleConfiguration,
-  formConfiguration: _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AppealForm,
-  placeholder: document.querySelector(".appeal-form"),
-});
-
-appealForm.onSubmit((data) => {
-
-  appealForm.disable();
-
-  // Storing information to be consumed by optimizely and hotjar experiments
-  if (eyeo && eyeo.payment && eyeo.payment.shouldStoreContributionInfo) {
-    localStorage.setItem("contributionInfo", JSON.stringify({
-      amount: data.amount,
-      frequency: data.frequency,
-      processor: "paddle",
-      currency: data.currency,
-      lang: document.documentElement.lang,
-      source: eyeo.payment.sourceId || "U",
-      clickTs: Date.now(),
-    }));
-  }
-
-  const omitUserId = true;
-
-  const passthrough = {
-    testmode: isTestmode,
-    userid: "",
-    tracking: recordTracking(omitUserId),
-    locale: "",
-    country: "unknown",
-    ga_id: "",
-    premium: "false",
-    premium_cid: "0",
-    premium_sid: "0",
-    currency: data.currency,
-    recurring: data.frequency != "once",
-    subType: data.frequency != "once" ? data.frequency : "",
-    experiment: "",
-    experiment_id: "",
-    variant: "",
-    variant_index: -1,
-    amount_cents: parseInt(data.amount, 10),
-    success_url: `${location.origin}/payment-complete`,
-    cancel_url: location.href,
+    yearly: {
+      amounts: [10, 15, 20, 35, 50],
+      placeholder: 35,
+      minimum: 5,
+    }
   };
-
-  const product = data.product;
-
-  const checkoutOptions = {
-    locale: adblock.settings.language,
-    title: adblock.strings["appeal-form-checkout__title"],
-    success: passthrough.success_url,
-    closeCallback: () => { appealForm.enable(); },
-  };
-
-  if (product == "custom") {
-    fetch("https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(passthrough),
-    })
-    .then(response => response.json())
-    .then(session => {
-      if (session.hasOwnProperty("success") && session.success == false) {
-        throw new Error(
-          adblock.strings["error--unexpected"]
-        );  
+  
+  var CURRENCY_CONFIG = {
+    USD: { sign: "$" },
+    AUD: { sign: "$" },
+    CAD: { sign: "$" },
+    CHF: { sign: "CHF "},
+    EUR: { sign: "€" },
+    GBP: { sign: "£" },
+    JPY: {
+      sign: "¥",
+      once: {
+        amounts: [1500, 2000, 2500, 3500, 5000],
+        placeholder: 3500,
+        minimum: 1500
+      },
+      monthly: {
+        amounts: [200, 300, 500, 1000, 1500],
+        placeholder: 650,
+        minimum: 250
       }
-      Paddle.Checkout.open(Object.assign(checkoutOptions, {
-        override: session.url,
-      }));
-    })
-    .catch((error) => {
-      adblock.error(adblock.strings["error--unexpected"]);
-    });
-  } else {
-    Paddle.Checkout.open(Object.assign(checkoutOptions, {
-      allowQuantity: false,
-      passthrough,
-      product,
-    }));
+    },
+    NZD: { sign: "$" },
+    RUB: {
+      sign: "₽",
+      once: {
+        amounts: [250, 500, 1000, 2500, 5000],
+        placeholder: 2500,
+        minimum: 250
+      },
+      monthly: {
+        amounts: [150, 250, 400, 500, 1000],
+        placeholder: 500,
+        minimum: 150
+      }
+    }
+  };
+  
+  /* Set VARIANT_CONFIG[CURRENCY][(once|monthly|yearly)] from DEFAULTS.USD
+   * Except copy yearly values from once values
+   */
+  for (var currency in CURRENCY_CONFIG) 
+  {
+    if (!CURRENCY_CONFIG[currency].once)
+      CURRENCY_CONFIG[currency].once = DEFAULT_AMOUNTS.once;
+    if (!CURRENCY_CONFIG[currency].monthly)
+      CURRENCY_CONFIG[currency].monthly = DEFAULT_AMOUNTS.monthly;
+    if (!CURRENCY_CONFIG[currency].yearly)
+      CURRENCY_CONFIG[currency].yearly = CURRENCY_CONFIG[currency].once;
   }
   
-});
-})();
+  ns.setupForm = function(_config)
+  {
+    var defaultCurrency = _config.defaultCurrency || 'USD';
+    var currencies = Object.keys(CURRENCY_CONFIG);
+    // Ensure the default currency from config (not VARIANT_CONFIG) is first
+    if (currencies.indexOf(defaultCurrency) != -1)
+      currencies.splice(currencies.indexOf(defaultCurrency), 1);
+    currencies = [defaultCurrency].concat(currencies);
+  
+    // ejs templates
+    var _header = _.template(doc.getElementById("payment-header-template").innerHTML)
+    var _frequencies = _.template(doc.getElementById("payment-frequencies-template").innerHTML);
+    var _amounts = _.template(doc.getElementById("payment-amounts-template").innerHTML);
+  
+    var $form = doc.getElementById("payment-form");
+    // if config has multiple currencies then _header will create $currency
+    var $header = doc.getElementById("payment-header");
+    $header.innerHTML = _header({
+      currencies: currencies
+    });
+    var $currency = doc.getElementById("payment-currency");
+    var $frequencies = doc.getElementById("payment-frequencies");
+    var $frequency = doc.getElementById("payment-frequency"); 
+    var $buttons = doc.getElementById("payment-buttons");
+    var $error = doc.getElementById("payment-error");
+  
+    function error(error)
+    {
+      if (error)
+      {
+        $error.innerHTML = error;
+        $form.classList.add("has-error");
+        _.each($buttons.children, function($button) { $button.disabled = true; });
+      }
+      else
+      {
+        $form.classList.remove("has-error");
+        _.each($buttons.children, function($button) { $button.disabled = false; });
+      }
+    }
+  
+    function updateFrequencies()
+    {
+      // Set form dataset for styling when currency options exist and change
+      if ($currency) $form.dataset.currency = $currency.value;
+      $frequencies.innerHTML = _frequencies({
+        config: CURRENCY_CONFIG[$currency ? $currency.value : defaultCurrency],
+        _amounts: _amounts
+      });
+    }
 
-/******/ })()
-;
+    // Set frequencies and amounts for the first time
+    updateFrequencies();
+  
+    // Update frequencies and amounts when currency changes
+    if ($currency) // $currency only exists if config has multiple currencies
+      $currency.addEventListener("change", updateFrequencies);
+    
+    $frequencies.addEventListener("change", function(event)
+    {
+      // Track amount frequency in hidden input
+      // Each amount radio has a data-frequency
+      if ("frequency" in event.target.dataset)
+        $frequency.value = event.target.dataset.frequency;
+  
+      // Focus custom amount input on custom radio check
+      if ("input" in event.target.dataset)
+        doc.getElementById(event.target.dataset.input).focus();
+  
+      // Clear minimum amount error when a custom amount is unselected
+      if (!event.target.parentElement.classList.contains("custom-payment-amount"))
+        if ($form.classList.contains("has-error"))
+          error(false);
+    });
+  
+    function validateCustomAmount(input)
+    {
+      if (!input.min || !("frequency" in input.dataset)) return;
+      
+      var value = parseFloat(input.value);
+      if (isNaN(value)) value = 0;
+      
+      if (value < parseFloat(input.min))
+        error(i18n["min_" + input.dataset.frequency]);
+      else
+        error(false);
+    }
+    
+    $frequencies.addEventListener("input", function(event)
+    {
+      // Show an error when a custom amount is below it's minimum
+      validateCustomAmount(event.target);
+    });
+  
+    $frequencies.addEventListener("focusin", function(event)
+    {
+      // Custom amount input data-radio points at it's sibling radio
+      if ("radio" in event.target.dataset)
+      {
+      // Click respective radio btn to trigger update of frequencies
+      doc.getElementById(event.target.dataset.radio).click();
+  
+        // Re-show min custom amount error if custom amount is below min
+        validateCustomAmount(event.target);
+      }      
+    });
+  
+    $buttons.addEventListener("click", function(event) {
+      event.preventDefault();
+      var target = event.target.classList.contains('paypal-button')
+        ? "paypal"
+        : event.target.classList.contains('stripe-button')
+        ? "stripe"
+        : false;
+      var data;
+      if (target) {
+        data = api.data(target);
+        _.each(submitCallbacks, function(callback)
+        {
+          callback(data);
+        });
+      }
+    });
+  
+    // PUBLIC API ////////////////////////////////////////////////////////////////
+  
+    var api = {};
+  
+    var submitCallbacks = [];
+  
+    api.onSubmit = function(callback)
+    {
+      submitCallbacks.push(callback);
+    }
+  
+    api.data = function(privider)
+    {
+      var formData = new FormData($form);
+  
+      var amount = formData.get("amount");
+  
+      if (amount.startsWith("custom"))
+        amount = formData.get(formData.get("amount"));
+  
+      var currency = Object.keys(CURRENCY_CONFIG).length > 1
+        ? formData.get("currency")
+        : defaultCurrency;
+  
+      return {
+        currency: currency,
+        frequency: formData.get("frequency"),
+        amount: amount,
+        provider: privider,
+        sign: CURRENCY_CONFIG[currency].sign
+      }
+    }
+  
+    return api;
+  }
+  
+  })(document, _, path("payment"), path("i18n.payment.form"));
+/* global _, eyeo */
+(function(doc, ns, i18n){
+
+var DEFAULT_LOCALE = "auto";
+
+// Updated 21/11/19
+var LOCALE_ALTERNATIVE = {
+  "es_MX": "es-419",
+  "pt_BR": "pt-BR",
+  "zh_CN": "zh",
+  "zh_TW": "zh-TW"
+};
+
+var docLang = doc.documentElement.lang;
+
+var stripeLocale = docLang || DEFAULT_LOCALE;
+
+if (LOCALE_ALTERNATIVE.hasOwnProperty(docLang))
+  stripeLocale = LOCALE_ALTERNATIVE[docLang];
+
+ns.setupStripeCardModal = function(config)
+{
+  var $modal = doc.getElementById("stripe-card-modal");
+  var $form = doc.getElementById("stripe-card-form");
+  var $close = doc.getElementById("stripe-card-modal-close");
+  var $email = doc.getElementById("stripe-card-email");
+  var $submit = doc.getElementById("stripe-card-submit");
+  var $submitLabel = doc.getElementById("stripe-card-submit-label");
+  var $error = doc.getElementById("stripe-card-error");
+
+  var stripeStyles = {
+    base: {
+      color: '#32325d',
+      fontFamily:
+        '-apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': { color: '#aab7c4' }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+
+  var stripe = Stripe(config.key, {locale: stripeLocale});
+  var stripeElements = stripe.elements();
+  var stripeCard = stripeElements.create("card", {style: stripeStyles});
+
+  stripeCard.mount("#stripe-card");
+
+  $close.addEventListener("click", function(event)
+  {
+    event.preventDefault();
+
+    api.hide();
+  });
+
+  $form.addEventListener("submit", function(event)
+  {
+    event.preventDefault();
+
+    if (
+      cardBrand != "unknown" 
+      && config.supportedCardBrands.indexOf(cardBrand) == -1
+    ) {
+      return api.showError(i18n.error_card_brand);
+    }
+
+    var data = api.data("stripe");
+
+    $form.classList.add("is-submitting");
+    $submit.disabled = true;
+
+    var submissionProgress = [];
+
+    _.each(submitCallbacks, function(callback)
+    {
+      submissionProgress.push(Promise.resolve(callback(data)));
+    });
+
+    Promise.all(submissionProgress).finally(function()
+    {
+      if (hasError)
+        $form.classList.remove("is-submitting");
+    });
+  });
+
+  $form.addEventListener("input", function(event)
+  {
+    if (hasError)
+      api.showError(false);
+  });
+
+  var cardBrand = "unknown";
+
+  stripeCard.addEventListener("change", function(event)
+  {
+    if (typeof event.brand == "string" && event.brand != "unknown")
+    {
+      cardBrand = event.brand;
+
+      if (config.supportedCardBrands.indexOf(event.brand) == -1)
+        return api.showError(i18n.error_card_brand);
+    }      
+
+    if (typeof event.error != "object") 
+      return api.showError(false);
+    
+    var message;
+
+    if (event.error.code && i18n["error_" + event.error.code])
+      message = i18n["error_" + event.error.code];
+    else if (event.error.message)
+      message = event.error.message;
+    else
+      message = i18n.error_unexpected
+
+    api.showError(message);
+  });
+  
+  // PUBLIC API ////////////////////////////////////////////////////////////////
+
+  var api = {};
+
+  var submitCallbacks = [];
+
+  api.onSubmit = function(callback)
+  {
+    submitCallbacks.push(callback);
+  }
+
+  api.data = function()
+  {
+    return {
+      email: $email.value,
+      stripe: stripe,
+      card: stripeCard,
+      endpoint: config.endpoint
+    };
+  }
+
+  api.show = function(config)
+  {
+    $submitLabel.textContent = i18n[config.frequency]
+      .replace(
+        "{amount}",  
+        config.sign == "€" 
+          ? config.amount + config.sign 
+          : config.sign + config.amount
+      );
+
+    $modal.classList.add("is-active");
+
+    $email.focus();
+  }
+
+  api.hide = function()
+  {
+    $modal.classList.remove("is-active");
+  }
+
+  var hasError = false;
+
+  api.showError = function(error)
+  {
+    if (error)
+    {
+      hasError = true;
+      $modal.classList.add("has-error");
+      $error.textContent = error;
+      $submit.disabled = true;
+    }
+    else
+    {
+      hasError = false;
+      $modal.classList.remove("has-error");
+      $submit.disabled = false;
+    }
+  }
+
+  return api;
+}
+
+})(document, path("payment"), path("i18n.payment.stripe.cardModal"));
+
+
+/* global eyeo, URLSearchParams */
+(function(doc, _, ns){
+
+var lang = doc.documentElement.lang;
+
+ns.stripeCardPayment = function stripeCardPayment(data)
+{
+  function requestIntent()
+  {
+    return new Promise(function(resolve, reject)
+    {
+      var request = new XMLHttpRequest();
+      
+      request.open("POST", data.endpoint);
+
+      request.setRequestHeader(
+        "Content-Type", 
+        "application/x-www-form-urlencoded"
+      );
+
+      request.onreadystatechange = function()
+      {
+        if (request.readyState == XMLHttpRequest.DONE)
+          if (request.status == 200)
+            resolve(request.responseText);
+          else
+            reject(request);
+      }
+
+      var requestData = {
+        lang: lang
+      };
+
+      var dataAllowlist = [
+        "amount",
+        "type",
+        "email",
+        "custom",
+        "currency"
+      ];
+
+      _.each(dataAllowlist, function (prop) { 
+        if (data[prop])
+          requestData[prop] = data[prop];
+      });
+
+      request.send(new URLSearchParams(requestData));
+    });
+  }
+
+  function confirmIntent(intent)
+  {
+    return new Promise(function(resolve, reject)
+    {
+      data.stripe.confirmCardPayment(intent, {
+        payment_method: {
+          card: data.card,
+          billing_details: {
+            email: data.email
+          }
+        },
+        receipt_email: data.email
+      })
+      .then(function(result)
+      {
+        if (result.hasOwnProperty("error"))
+          reject(result.error);
+        else
+          resolve();
+      })
+      .catch(reject);  
+    });
+  }
+
+  return requestIntent()
+  .then(confirmIntent)
+};
+
+})(document, _, path("payment"));
+/* global eyeo, URLSearchParams */
+(function(doc, _, ns){
+
+var lang = doc.documentElement.lang;
+
+ns.stripeCardSubscription = function stripeCardSubscription(data)
+{
+  function confirmPayment(result)
+  {
+    return new Promise(function(resolve, reject)
+    {
+      var request = new XMLHttpRequest();
+
+      data.method = result.paymentMethod.id;
+
+      request.open("POST", data.endpoint);
+
+      request.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
+
+      request.onreadystatechange = function()
+      {
+        if (request.readyState == XMLHttpRequest.DONE)
+          if (request.status == 200)
+            resolve();
+          else
+            reject(request);
+      }
+
+      var requestData = {
+        lang: lang
+      };
+
+      var dataAllowlist = [
+        "amount",
+        "type",
+        "email",
+        "custom",
+        "currency"
+      ];
+
+      _.each(dataAllowlist, function (prop) { 
+        if (data[prop])
+          requestData[prop] = data[prop];
+      });
+
+      request.send(new URLSearchParams(data));
+    });
+  }
+
+  return new Promise(function(resolve, reject)
+  {
+    data.stripe.createPaymentMethod({
+      type: "card",
+      card: data.card,
+      billing_details: {
+        email: data.email
+      }
+    })
+    .then(function(result)
+    {
+      if (result.hasOwnProperty("error"))
+        reject(result.error);
+      else
+        confirmPayment(result)
+        .then(resolve)
+        .catch(reject);
+    })
+    .catch(reject);
+  });
+
+};
+
+})(document, _, path("payment"));
+/* global eyeo, URLSearchParams, paymentTranslations */
+(function(doc, ns, i18n){
+
+var pageLanguage = doc.documentElement.lang;
+
+// Maps our locale codes to PayPal's locale codes (excluding same values)
+var PAYPAL_LOCALE = {
+  "en": "US",
+  "zh_cn": "C2",
+  "pt_br": "BR",
+  "tr": "TM",
+  "el_gr": "GR",
+  "jp": "JP",
+  "kr": "KO",
+  "ar": "DZ"
+};
+
+var protectedInputs = {
+  charset: "utf-8",
+  lc: PAYPAL_LOCALE[pageLanguage] || pageLanguage.toUpperCase(),
+  cmd: "_xclick",
+  item_name: i18n.item,
+  image_url: window.location.origin + "../../img/adblock-plus-paypal.png",
+  return: window.location.origin + ns.paymentCompleteUrl,
+  cancel_return: location.href,
+  no_note: 1
+};
+
+/**
+ * Submit a PayPal button payment
+ * @param {Object} environment
+ * @param {string} environment.action - PayPal payment form action endpoint
+ * @param {string} environment.business - PayPal payment reciever
+ * @param {Object} submission
+ * @param {number} submission.amount - Float payment amount
+ * @param {string} submission.custom - Payment session ID
+ * @param {string} submission.currency - Payment currency ID
+ * @param {string} submission.item_number - Payment tracking ID
+ */
+ns.paypalButtonPayment = function(environment, submission)
+{
+  var form = doc.createElement("form");
+  form.target = "_blank";
+  form.method = "post";
+  form.action = environment.action;
+  
+  var inputs = Object.assign({}, protectedInputs, {
+    business: environment.business,
+    amount: submission.amount,
+    custom: submission.custom,
+    currency_code: submission.currency,
+    item_number: submission.item_number,
+  });
+
+  var input;
+  for (var name in inputs)
+  {
+    input = doc.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = inputs[name];
+    form.appendChild(input);
+  }
+
+  doc.body.appendChild(form);
+  form.submit();
+  doc.body.removeChild(form);  
+};
+
+})(document, path("payment"), path("i18n.payment.form"));
+
+/* global eyeo, URLSearchParams, paymentTranslations */
+(function(doc, ns, i18n){
+
+var pageLanguage = doc.documentElement.lang;
+
+// Maps our locale codes to PayPal's locale codes (excluding same values)
+var PAYPAL_LOCALE = {
+  "en": "US",
+  "zh_cn": "C2",
+  "pt_br": "BR",
+  "tr": "TM",
+  "el_gr": "GR",
+  "jp": "JP",
+  "kr": "KO",
+  "ar": "DZ"
+};
+
+// Maps frequencies we support to frequencies PayPal supports
+var PAYPAL_FREQUENCY = {
+  'monthly': 'M',
+  'yearly': 'Y'
+};
+
+var protectedInputs = {
+  charset: "utf-8",
+  lc: PAYPAL_LOCALE[pageLanguage] || pageLanguage.toUpperCase(),
+  cmd: "_xclick-subscriptions",
+  item_name: i18n.item,
+  image_url: window.location.origin + "../../img/adblock-plus-paypal.png",
+  return: window.location.origin + ns.paymentCompleteUrl,
+  cancel_return: location.href,
+  no_note: 1,
+  p3: 1, // Subscription duration (N*p3)
+  src: 1 // Subscription payments recur 1 or not 0
+};
+
+/**
+ * Submit a PayPal button subscription
+ * @param {Object} environment
+ * @param {string} environment.action - PayPal payment form action endpoint
+ * @param {string} environment.business - PayPal payment reciever
+ * @param {Object} submission
+ * @param {string} submission.custom - Payment session ID
+ * @param {string} submission.currency - Payment currency ID
+ * @param {number} submission.amount - Float payment amount
+ * @param {string} submission.frequency - Payment frequency
+ * @param {string} submission.item_number - Payment tracking ID
+ */
+ ns.paypalButtonSubscription = function (environment, submission)
+{
+  var form = doc.createElement("form");
+  form.target = "_blank";
+  form.method = "post";
+  form.action = environment.action;
+
+  var frequency = PAYPAL_FREQUENCY[submission.frequency];
+
+  var inputs = Object.assign({}, protectedInputs, {
+    business: environment.business,
+    custom: submission.custom + "-" + frequency.toLowerCase(),
+    currency_code: submission.currency,
+    a3: submission.amount,
+    t3: frequency,
+    item_number: submission.item_number,
+  });
+
+  var input;
+  for (var name in inputs)
+  {
+    input = doc.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = inputs[name];
+    form.appendChild(input);
+  }
+
+  doc.body.appendChild(form);
+  form.submit();
+  doc.body.removeChild(form);  
+};
+
+})(document, path("payment"), path("i18n.payment.form"));
+  
+/* global eyeo */
+(function(ns){
+
+/* A payment session is a unique payment flow identifier that has user
+ * testing, support troubleshooting, and application performance information
+ * encoded into it for convinience. e.g. to better understand the context of a 
+ * report when investigating an incident or incidents in aggregate.
+ */
+
+var CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
+function getRandomChars(length)
+{
+  var string = "";
+  for (var i = 0; i < length; i++)
+    string += CHARS.charAt(Math.floor(Math.random() * CHARS.length));  
+  return string;
+}
+
+function zeroPad(input, length)
+{
+  var string = String(input);
+
+  if (string.length < length)
+    for (var i = string.length; i < length; i++)
+      string = "0" + string;
+
+  return string;
+}
+
+function getConfig(key, pad, test)
+{
+  var result = zeroPad("x", pad);
+
+  if (typeof ns[key] != "undefined")
+  {
+    result = String(ns[key]);
+
+    if (result.length < pad) result = zeroPad(result, pad);
+
+    if (!test.test(result)) result = zeroPad("f", pad);
+  }
+  
+  return result;
+}
+
+// Payment page ID, set manually in page, limited to 1 char
+function getPageId()
+{
+  return getConfig("pageId", 1, /^[0-3]{1}$/)
+}
+
+// Payment campaign ID, set manually in page, limited to 3 char
+function getCampaignId()
+{
+  return getConfig("campaignId", 3, /^[a-z0-9]{3}$/);
+}
+
+// Split test ID, set manually in page, limited to 4 chars
+function getTestId()
+{
+  return getConfig("testId", 4, /^[a-z0-9]{4}$/);
+}
+
+// Split test variant ID, set manually in page, limited to 1 char
+function getVariantId()
+{
+  return getConfig("variantId", 1, /^[a-z0-9]{1}$/);
+}
+
+/* Zero padded performance timestamp in milliseconds, limited to 8 chars
+ * "0000000a" if performance.now is not available
+ * "0000000b" if runtime has exceeded 99999999 milliseconds already
+ */
+function createPerformanceTimestamp()
+{
+  var now;
+
+  try {
+    now = String(parseInt(String(performance.now()), 10));
+  } catch (err) {
+    now = "a";
+  }
+
+  if (now.length > 8)
+    now = "b";
+
+  return zeroPad(now, 8);
+}
+
+// YYYYMMDDHHSS format date timestamp
+function createDatetimestamp()
+{
+  var date = new Date();
+
+  return String(date.getUTCFullYear()).slice(-2) 
+  + zeroPad(String(date.getUTCMonth() + 1), 2) 
+  + zeroPad(String(date.getUTCDate()), 2)
+  + zeroPad(String(date.getUTCHours()), 2)
+  + zeroPad(String(date.getUTCMinutes()), 2)
+  + zeroPad(String(date.getUTCSeconds()), 2);
+}
+
+var session;
+
+/** Get or create and get payment session */
+ns.getSession = function()
+{
+  if (!session)
+  {
+    session = ""
+    + getVariantId() + "-"
+    + getPageId() + "-"
+    + createPerformanceTimestamp() + "-"
+    + getTestId() + "-"
+    + "4" + getCampaignId() + "-"
+    + getRandomChars(4) + "-"
+    + createDatetimestamp();
+  }
+
+  return session;
+};
+
+})(path("payment"));
+/* global eyeo */
+(function(doc, _, ns, i18n){
+
+var queryParameters = new URLSearchParams(window.location.search);
+
+var stripeConfig = {
+  providers: ["visa", "mastercard", "amex"],
+  live: {
+    key: "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+    endpoint: "https://donation.adblock-org.workers.dev/"
+  },
+  test: {
+    key: "pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN",
+    endpoint: "https://donation-staging.adblock-org.workers.dev"
+  }
+}
+
+var paypalConfig = {
+  live: {
+    business: "till@adblockplus.org",
+    action: "https://www.paypal.com/cgi-bin/webscr"
+  },
+  test: {
+    business: "abp-sandbox@adblockplus.org",
+    action: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  }
+}
+
+var paymentEnvironment = queryParameters.get('mode');
+
+if (paymentEnvironment && (!stripeConfig[paymentEnvironment || !paypalConfig[paymentEnvironment]]))
+  alert('Invalid payment mode: ' + mode);
+
+if (!paymentEnvironment) {
+  paymentEnvironment = (
+    window.location.hostname == "adblockplus.org"
+    || window.location.hostname.endsWith(".adblockplus.org")
+  ) ? "live" : "test";
+}
+
+var defaultTrackingID = "X0G0 FEOWSI unknown";
+
+var session;
+
+function onDOMReady()
+{
+  session = ns.getSession();
+
+  var script = doc.createElement("script");
+  script.onload = onConfigLoad;
+  script.onerror = onConfigLoad;
+  
+  var URLParams = new URLSearchParams(location.search);
+  
+  var report = new URLSearchParams({
+    an: URLParams.get('an'), // addon name
+    av: URLParams.get('av'), // addon version
+    ap: URLParams.get('ap'), // browser name
+    apv: URLParams.get('apv'), // browser version
+    p: URLParams.get('p'), // engine name
+    pv: URLParams.get('pv'), // engine version
+    bl: doc.documentElement.lang, // browser language
+    cid: session.slice(2,3), // payment page id
+    sid: session // payment session id
+  }).toString();
+  
+  script.src = "/../js/payment/config/load.js?" + report;
+  doc.body.appendChild(script);
+}
+
+var form;
+
+var stripeCardModal;
+
+function onConfigLoad()
+{
+  document.documentElement.classList.add("payment-form-loaded");
+  
+  form = ns.setupForm(ns.config);
+  form.onSubmit(onFormSubmit);
+
+  stripeCardModal = ns.setupStripeCardModal({
+    key: stripeConfig[paymentEnvironment].key,
+    endpoint: stripeConfig[paymentEnvironment].endpoint,
+    supportedCardBrands: stripeConfig.providers
+  });
+  stripeCardModal.onSubmit(onStripeConfirm);
+
+  eyeo.beacon({
+    paymentSetup: true,
+    paymentSetupTime: parseInt(performance.now(), 10),
+  });
+
+  eyeo.log("payment_setup", {
+    session: session,
+    referrer: queryParameters.get('an')
+  });
+}
+
+var hasIntendedPayment = false;
+
+function onFormSubmit(data)
+{
+  if (!hasIntendedPayment) {
+    hasIntendedPayment = true;
+    eyeo.beacon({
+      paymentIntended: true,
+      paymentIntendedTime: parseInt(performance.now(), 10)
+    });
+  }
+
+  eyeo.log("payment_intention", {
+    currency: data.currency,
+    frequency: data.frequency,
+    amount: data.amount,
+    provider: data.provider
+  });
+
+  // Storing information to be consumed by optimizely and hotjar experiments
+  if (ns.shouldStoreContributionInfo) {
+    localStorage.setItem("contributionInfo", JSON.stringify({
+      "amount": data.amount,
+      "frequency": data.frequency,
+      "processor": data.provider,
+      "currency": data.currency,
+      "lang": doc.documentElement.lang,
+      "source": ns.sourceId || "U",
+      "clickTs": Date.now()
+    }));
+  }
+
+  data.custom = session;
+
+  if (data.provider == "paypal")
+    onPayPalIntent(data);
+  else
+    onStripeIntent(data);
+}
+
+function onPayPalIntent(data)
+{
+  data.item_number = defaultTrackingID; // payment-server tracking string
+
+  if (data.frequency == "once")
+    ns.paypalButtonPayment(paypalConfig[paymentEnvironment], data);
+  else
+    ns.paypalButtonSubscription(paypalConfig[paymentEnvironment], data);
+}
+
+function onStripeIntent(data)
+{
+  stripeCardModal.show(data);
+}
+
+function onStripeConfirm()
+{
+  var data = _.extend(
+    {custom: session},
+    form.data("stripe"),
+    stripeCardModal.data()    
+  );
+
+  switch (data.frequency) {
+    case "once":
+      data.type = "donation";
+      break;
+    case "monthly":
+      data.type = "monthly-subscription";
+      break;
+    case "yearly":
+      data.type = "yearly-subscription";
+      break;
+  }
+
+  var payment;
+
+  if (data.frequency == "once")
+    payment = ns.stripeCardPayment(data);
+  else
+    payment = ns.stripeCardSubscription(data);
+  
+  return payment
+  .then(onStripeComplete)
+  .catch(onStripeError)
+}
+
+function onStripeComplete()
+{
+  var params = new URLSearchParams({
+    pp: "stripe", // payment processor
+    sid: session // session id
+  });
+
+  window.location.href = window.location.origin + ns.paymentCompleteUrl + "?" + params.toString();
+}
+
+function onStripeError(error)
+{
+  var message = i18n["error_unexpected"];
+
+  if (typeof error == "object")
+    if (error.code && i18n["error_" + error.code])
+      message = i18n["error_" + error.code];
+    else if (error.status == 402)
+      message = i18n["error_declined"];
+    else if (typeof error.message == "string" && error.message.length)
+      message = error.message;
+  
+  stripeCardModal.showError(message);
+}
+
+if (
+  doc.readyState === "complete" 
+  || doc.readyState === "loaded" 
+  || doc.readyState === "interactive"
+) {
+  onDOMReady();
+} else {
+  doc.addEventListener("DOMContentLoaded", onDOMReady);
+}
+
+})(document, _, path("payment"), path("i18n.payment.stripe.cardModal"));
 /*!
  * This file is part of website-defaults
  * Copyright (C) 2016-present eyeo GmbH
