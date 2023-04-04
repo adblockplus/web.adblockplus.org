@@ -242,7 +242,25 @@
         "regex": "(?i)^/(?:[\\w-]{2,6}/)?update/?$",
         "destination": "/update-function",
         "type": 301
-      }
+      },
+      // Redirect to cloud run rewrite for installed page
+      {
+        "regex": "(?i)^\/?installed\/?$",
+        "destination": "/installed-function",
+        "type": 302
+      },
+      // Redirect to cloud run rewrite for installed page
+      {
+        "regex": "(?i)^\/?de/installed\/?$",
+        "destination": "/de/installed-fr-de",
+        "type": 302
+      },
+      // Redirect to cloud run rewrite for installed page
+      {
+        "regex": "(?i)^\/?fr/installed\/?$",
+        "destination": "/fr/installed-fr-de",
+        "type": 302
+      }      
     ],
     "rewrites": [
       {
@@ -289,6 +307,13 @@
       },
       {
         "source": "/update-function",
+        "run": {
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/installed-function",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
