@@ -245,7 +245,7 @@
       },
       // Redirect to cloud run rewrite for installed page
       {
-        "regex": "(?i)^\/?installed\/?$",
+        "regex": "(?i)^/(?:[\\w-]{2,6}/)?installed/?$",
         "destination": "/installed-function",
         "type": 302
       },
