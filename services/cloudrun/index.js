@@ -70,7 +70,7 @@ app.get('/currency-function', (req, res) => {
 
   const countryCode = req.headers['x-country-code'];
 
-  const paymentConfig = geoipRules[countryCode] || 'usd.js';
+  const paymentConfig = geoipRules2[countryCode] || 'usd.js';
 
   const queryString = getQueryString(req);
 
