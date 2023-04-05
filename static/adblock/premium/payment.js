@@ -249,7 +249,8 @@ $(document).ready(function () {
 
     // On successful activation, tell extension to activate MyAdBlock.
     function sendPaymentSuccessToExtension() {
-        const userId = getUserIdOrUnknown();
+        // The extension checks for falsy values with !data.userId
+        const userId = getUserId();
         return new Promise(function (resolve, reject) {
             const version = 1;
             const payload = {
