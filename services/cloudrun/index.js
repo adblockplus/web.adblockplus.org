@@ -65,7 +65,7 @@ app.get('/currency-function', (req, res) => {
   geoipRules2 = geoipRules2 || {
     'AU': 'aud.js', 'CA': 'cad.js', 'CH': 'chf.js', 'GB': 'gbp.js',
     'JP': 'jpy.js', 'NZ': 'nzd.js', 'RU': 'rub.js',
-    ...euRules
+    ...euRules2
   };
 
   const countryCode = req.headers['x-country-code'];
