@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // geoip based rules in static/js/payment/config/.htaccess
 let euRules, geoipRules;
@@ -141,18 +142,15 @@ app.get('/update-function', (req, res) => {
   res.redirect(302, `/${target}${queryString}`);
 });
 
-app.get('/installed-function', (req, res) => {
-  const countryCode = req.headers['x-country-code'];
-
-  const queryString = getQueryString(req);
-
-  const target = ['DE', 'FR'].includes(countryCode)
+app.get('/installed-function/:language?', (req, res) => {
+  const country = req.headers['x-country-code'] || '';
+  const language = req.params.language || '';
+  const page = ['DE', 'FR'].includes(country)
     ? 'installed-fr-de'
-    : 'installed-fallback'
-  
-  res.redirect(302, `/${target}${queryString}`);
+    : 'installed-fallback';
+  const query = getQueryString(req);
+  res.redirect(302, path.join('/', language, page) + query);
 });
-
 
 // IMPORTANT: Fallback locale rerouting, must be final routing function
 // Refd #943 - URLs containing non-exact matching locale paths return a 404

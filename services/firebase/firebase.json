@@ -238,22 +238,10 @@
       },
       // Redirect to cloud run rewrite for installed page
       {
-        "regex": "(?i)^/(?:[\\w-]{2,6}/)?installed/?$",
-        "destination": "/installed-function",
+        "regex": "(?i)^/(?P<language>[\\w-]{2,6}/)?installed/?$",
+        "destination": "/installed-function/:language?",
         "type": 302
-      },
-      // Redirect to cloud run rewrite for installed page
-      {
-        "regex": "(?i)^\/?de/installed\/?$",
-        "destination": "/de/installed-fr-de",
-        "type": 302
-      },
-      // Redirect to cloud run rewrite for installed page
-      {
-        "regex": "(?i)^\/?fr/installed\/?$",
-        "destination": "/fr/installed-fr-de",
-        "type": 302
-      }      
+      }
     ],
     "rewrites": [
       {
@@ -299,7 +287,7 @@
         }
       },
       {
-        "source": "/installed-function",
+        "source": "/installed-function/:language?",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
