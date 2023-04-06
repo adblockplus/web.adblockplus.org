@@ -303,17 +303,6 @@ legacy_redirect_tests:
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Redirects.py
   when: manual
 
-lint:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  image: node:latest
-  script:
-    - npm init -y
-    - npm install eslint eslint-config-eyeo --save-dev
-    - ./node_modules/.bin/eslint static/js
-  when: manual
-
 monitoring_scheduled_tests:
   only:
     - schedules
