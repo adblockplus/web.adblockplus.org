@@ -175,6 +175,7 @@ deploy_staging:
     url: http://$CI_COMMIT_REF_SLUG.$DOMAIN
 
 smoke_tests_staging:
+  when: manual
   except:
     - schedules
     - master
