@@ -115,24 +115,6 @@ app.get('/hotjar-function', (req, res) => {
   res.redirect(302, `/js/testing/${target}${queryString}`);
 });
 
-app.get('/cookie-tracking-function', (req, res) => {
-  euCountries = euCountries || [
-    'AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE','ES', 'FI', 'FR', 'GB', 'GR',
-    'HR', 'HU', 'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'PL',
-    'PT', 'RO', 'SE', 'SI'
-  ];
-
-  const countryCode = req.headers['x-country-code'];
-
-  const queryString = getQueryString(req);
-
-  const target = euCountries.includes(countryCode)
-    ? 'teardown.js'
-    : 'firebase/setup.js';
-  
-  res.redirect(302, `/js/testing/${target}${queryString}`);
-});
-
 app.get('/pre-approved-function', (req, res) => {
   preapprovedCountries = preapprovedCountries || ['AU', 'CA', 'NZ'];
 
