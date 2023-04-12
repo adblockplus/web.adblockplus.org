@@ -172,6 +172,42 @@ body
   .privacy-footer a { color: #fff; }
 }
 
+@media (min-width: 830px) {
+  html {
+      background: linear-gradient(180deg, rgba(237, 30, 69, 0), rgba(49, 4, 12, 1))!important;
+      background-color: #ED1E45!important;
+  }
+}
+
+.cv-adb-7-1-desc-nav {
+  margin: 0!important;
+}
+
+.cv-adb-7-1-upd-header {
+  min-height: unset!important;
+}
+
+.cv-adb-7-1-nav-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.cv-adb-7-1-nav-top-title {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 35px;
+  color: #212121;
+}
+
+.cv-adb-7-1-nav-top-logo {
+  margin-right: 16px;
+  width: 73px;
+  height: 73px;
+}
 .grid { display: flex; flex-wrap: wrap; margin: -1rem 0 0 -1rem; }
 
 .grid .cell { flex: 1; padding: 1rem 0 0 1rem; }
