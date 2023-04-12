@@ -134,8 +134,8 @@ app.get('/update-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
   const page = ['DE', 'FR'].includes(country)
-    ? 'update-fr-de'
-    : 'update-fallback';
+    ? 'update-restricted'
+    : 'update-unrestricted';
   const query = getQueryString(req);
   res.redirect(302, path.join('/', language, page) + query);
 });
@@ -144,8 +144,8 @@ app.get('/installed-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
   const page = ['DE', 'FR'].includes(country)
-    ? 'installed-fr-de'
-    : 'installed-fallback';
+    ? 'installed-restricted'
+    : 'installed-unrestricted';
   const query = getQueryString(req);
   res.redirect(302, path.join('/', language, page) + query);
 });
@@ -154,8 +154,8 @@ app.get('/contribution-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
   const page = ['DE', 'FR'].includes(country)
-    ? 'contribution-fr-de'
-    : 'contribution-fallback';
+    ? 'contribution-restricted'
+    : 'contribution-unrestricted';
   const query = getQueryString(req);
   res.redirect(302, path.join('/', language, page) + query);
 });

@@ -1,7 +1,7 @@
 <head>
   <? include optimizely ?>
   <? include hotjar ?>
-  <link rel="stylesheet" href="/build/css/installed.min.css">
+  <? include restricted-styles ?>
   <script>
     path("payment", {
       pageId: 3,
@@ -50,7 +50,7 @@
     </section>
     <section class="content column donation-form">
       <p>{{ main-body-1 Please pay as much as you can, since if you change your mind you have 120 days to get a refund! }}</p>
-      <? include AppealForm/bootstrap ?>
+      <? include payment-form ?>
     </section>
     <section class="content column quick-note">
       <h2>{{ main-heading-2 A quick note before you go }}</h2>
@@ -103,6 +103,4 @@
   </div>
 </footer>
 
-<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-<script src="/currency"></script>
-<script src="/build/js/installed.min.js"></script>
+<? include restricted-payment-scripts ?>

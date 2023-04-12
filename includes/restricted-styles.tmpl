@@ -1,0 +1,5 @@
+{% if restricted %}
+  <link rel="stylesheet" href="/build/css/{{ page }}-restricted.min.css">
+{% else %}
+  <link rel="stylesheet" href="/build/css/{{ page }}.min.css">
+{% endif %}

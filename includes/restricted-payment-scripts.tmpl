@@ -1,0 +1,8 @@
+{% if restricted %}
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="/build/js/{{ page }}-restricted.min.js"></script>
+{% else %}
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script src="/currency"></script>
+  <script src="/build/js/{{ page }}.min.js"></script>
+{% endif %}

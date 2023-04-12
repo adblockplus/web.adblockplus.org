@@ -1,12 +1,6 @@
-title=Adblock Plus has been updated
-prevent_cookie_prompt=1
-robots=none
-template=bare
-page=update
-
 <head>
   <? include optimizely ?>
-  <link rel="stylesheet" href="build/css/update-fr-de.min.css">
+  <? include restricted-styles ?>
   <script>
     path("payment", {
       pageId: 2,
@@ -31,7 +25,7 @@ page=update
   <p>
     {{ new-tab-lead-2 Adblock Plus is free, community-supported software. It's important to us that anyone can use our software, regardless of whether they can contribute or not. But that wouldn't be possible without your continued support. We devote a lot of time and resources into developing and securing the best online experience for our users. Please contribute what you think is a fair amount to the Adblock Plus project and our attempts to keep the ad-blocking community alive. Every contribution is appreciated! }}
   </p>
-  <? include payment/form ?>
+  <? include payment-form ?>
   <h2>
     {{ out-mission-heading-1 Creating a better web experience for everyone }}
   </h2>
@@ -54,5 +48,4 @@ page=update
   </a>
 </footer>
 
-<script src="https://js.stripe.com/v3/"></script>
-<script src="/build/js/update-fr-de.min.js"></script>
+<? include restricted-payment-scripts ?>

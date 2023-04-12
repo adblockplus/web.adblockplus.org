@@ -173,7 +173,7 @@ Header merge  Vary "Origin"
 
   # Fall back to general update page for FR and DE location
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
-  RewriteRule "([\w\-]{2,6})\/update$" "/$1/update-fr-de" [NC,L]
+  RewriteRule "([\w\-]{2,6})\/update$" "/$1/update-restricted" [NC,L]
 
 </FilesMatch>
 
@@ -183,7 +183,7 @@ Header merge  Vary "Origin"
 
   # Fall back to general update page for FR and DE location
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
-  RewriteRule "([\w\-]{2,6})\/installed$" "/$1/installed-fr-de" [NC,L]
+  RewriteRule "([\w\-]{2,6})\/installed$" "/$1/installed-restricted" [NC,L]
 
 </FilesMatch>
 
@@ -193,7 +193,7 @@ Header merge  Vary "Origin"
 
   # Fall back to general update page for FR and DE location
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
-  RewriteRule "([\w\-]{2,6})\/contribution$" "/$1/contribution-fr-de" [NC,L]
+  RewriteRule "([\w\-]{2,6})\/contribution$" "/$1/contribution-restricted" [NC,L]
 
 </FilesMatch>
 
