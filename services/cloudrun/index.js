@@ -130,16 +130,14 @@ app.get('/pre-approved-function', (req, res) => {
   res.redirect(302, `/js/testing/${target}${queryString}`);
 });
 
-app.get('/update-function', (req, res) => {
-  const countryCode = req.headers['x-country-code'];
-
-  const queryString = getQueryString(req);
-
-  const target = ['DE', 'FR'].includes(countryCode)
-    ? 'periodic-contribution'
-    : 'update-f'
-  
-  res.redirect(302, `/${target}${queryString}`);
+app.get('/update-function/:language?', (req, res) => {
+  const country = req.headers['x-country-code'] || '';
+  const language = req.params.language || '';
+  const page = ['DE', 'FR'].includes(country)
+    ? 'update-fr-de'
+    : 'update-fallback';
+  const query = getQueryString(req);
+  res.redirect(302, path.join('/', language, page) + query);
 });
 
 app.get('/installed-function/:language?', (req, res) => {
