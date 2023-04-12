@@ -61,7 +61,7 @@
         <legend>
           {{ get_string("one-time-legened-1", "payment-form") }}
         </legend>
-        <div class="payment-amounts">
+        <div class="payment-amounts cv-adb-8-0-active-freq">
           <%= _amounts(_.extend({frequency: "once", sign: config.sign}, config.once)) %>
         </div>
       </fieldset>
@@ -72,7 +72,7 @@
         <legend>
           {{ get_string("subscription-legend-1", "payment-form") }}
         </legend>
-        <div class="payment-amounts">
+        <div class="payment-amounts cv-adb-8-0-active-not-freq">
           <%= _amounts(_.extend({frequency: "monthly", sign: config.sign}, config.monthly)) %>
         </div>
       </fieldset>
@@ -83,11 +83,16 @@
         <legend>
           {{ get_string("yearly-subscription-legend-1", "payment-form") }}
         </legend>
-        <div class="payment-amounts">
+        <div class="payment-amounts cv-adb-8-0-active-not-freq">
           <%= _amounts(_.extend({frequency: "yearly", sign: config.sign}, config.yearly)) %>
         </div>
       </fieldset>
     <% } %>
+    <div class="cv-adb-8-0-toggle-wrap">
+      <div class="cv-adb-8-0-toggle-main-txt">Monthly</div><label class="cv-adb-8-0-switch"><input
+          class="cv-adb-8-0-toggle-input" type="checkbox"><span class="cv-adb-8-0-slider cv-adb-8-0-round"></span></label>
+      <div class="cv-adb-8-0-toggle-main-txt">Yearly</div>
+    </div>
   </script>
 
   <script id="payment-amounts-template" type="text/html">

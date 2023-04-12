@@ -171,3 +171,205 @@ body
 {
   .privacy-footer a { color: #fff; }
 }
+
+/* ADB 7.1 - Background colour change [Legitimacy] from conversion.com
+ ******************************************************************************/
+
+@media (min-width: 830px) {
+  html {
+      background: linear-gradient(180deg, rgba(237, 30, 69, 0), rgba(49, 4, 12, 1))!important;
+      background-color: #ED1E45!important;
+  }
+}
+
+.cv-adb-7-1-desc-nav {
+  margin: 0!important;
+}
+
+.cv-adb-7-1-upd-header {
+  min-height: unset!important;
+}
+
+.cv-adb-7-1-nav-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.cv-adb-7-1-nav-top-title {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 35px;
+  color: #212121;
+}
+
+.cv-adb-7-1-nav-top-logo {
+  margin-right: 16px;
+  width: 73px;
+  height: 73px;
+}
+
+/* ADB 8.0 - Toggle between monthly/yearly [Choice]
+ ******************************************************************************/
+ header#payment-header {
+  display: none !important;
+}
+div#what-is-included {
+  display: none !important;
+}
+.cv-adb-8-0-desc-nav {
+  margin: 0 !important;
+}
+.cv-adb-8-0-upd-header {
+  min-height: unset !important;
+}
+.cv-adb-8-0-nav-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+}
+.cv-adb-8-0-nav-top-title {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 35px;
+  color: #212121;
+}
+.cv-adb-8-0-nav-top-logo {
+  margin-right: 16px;
+  width: 73px;
+  height: 73px;
+}
+.cv-adb-8-0-es-adjust-nf{
+  width: 420px !important;
+}
+.cv-adb-8-0-es-adjust-tw{
+  margin-left: -127px!important;
+}
+@media (min-width: 850px){
+  .payment-frequency.once .payment-amounts{
+    width: 356px !important;
+  }
+  .payment-frequency.monthly .payment-amounts,.payment-frequency.yearly .payment-amounts{
+    width: 382px;
+  }
+  .payment-amounts {
+    height: 124px !important;
+    border-radius: 6px !important;
+    padding: 24px 40px !important;
+  }
+  .cv-adb-8-0-active-freq {
+    border: 1px solid #2788f9 !important;
+  }
+  .cv-adb-8-0-active-not-freq {
+    border: 1px solid rgba(0, 0, 0, 0.35) !important;
+  }
+  .payment-amounts-row {
+    line-height: 34px !important;
+    margin-bottom: 8px !important;
+  }
+  [dir="ltr"] .payment-amount {
+    margin-right: 48px !important;
+  }
+  hr.payment-divide {
+    display: none !important;
+  }
+  fieldset.payment-frequency.once {
+    margin-right: 40px;
+  }
+  .cv-adb-8-0-hide-elem {
+    display: none !important;
+  }
+  .payment-frequency legend {
+    width: auto !important;
+    height: 34px !important;
+    font-family: "Source Sans Pro", Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 34px !important;
+    color: #000000 !important;
+    margin: 32px 0 0 !important;
+  }
+  /* TOGGLE */
+  .cv-adb-8-0-toggle-wrap {
+    display: flex;
+    align-items: center;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 34px;
+    height: 34px;
+    color: #000000;
+    margin-left: -127px;
+  }
+  .cv-adb-8-0-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    margin: 0 10px;
+  }
+  
+  .cv-adb-8-0-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .cv-adb-8-0-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196f3;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .cv-adb-8-0-slider:before {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  input:checked + .cv-adb-8-0-slider {
+    background-color: #2196f3;
+  }
+  
+  input:focus + .cv-adb-8-0-slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+  
+  input:checked + .cv-adb-8-0-slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+  }
+  .cv-adb-8-0-slider.cv-adb-8-0-round {
+    border-radius: 34px;
+  }
+  
+  .cv-adb-8-0-slider.cv-adb-8-0-round:before {
+    border-radius: 50%;
+  }
+}
+@media (max-width: 849px){
+  .cv-adb-8-0-toggle-wrap{
+    display: none;
+  }
+}
