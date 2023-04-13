@@ -1,6 +1,10 @@
 @media (min-width: 830px)
 {
-  html { background-color: #000; }
+  html { 
+    background: linear-gradient(180deg, rgba(237, 30, 69, 0), rgba(49, 4, 12, 1));
+    background-color: #ED1E45;
+  }
+  
 }
 
 body
@@ -46,42 +50,29 @@ body
   }
 }
 
-.update-header
+.update-header 
 {
-  position: relative;
-  /* Must be at-least as tall as the image within to space properly */
-  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.update-header-image
+.update-header-image 
 {
-  display: block;
-  margin: 0 auto;
+  margin-right: 1rem;
+  width: 4rem;
+  height: 4rem;
 }
 
-@media (min-width: 576px)
+.update-header-heading
 {
-  .update-header-image { position: absolute; }
-
-  [dir="ltr"] .update-header-image { left: 0; }
-
-  [dir="rtl"] .update-header-image { right: 0; }
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #212121;
 }
-
-@media (min-width: 576px)
-{
-  [dir="ltr"] .update-header-heading,
-  [dir="ltr"] .update-header-lead { margin-left: 150px; }
-
-  [dir="rtl"] .update-header-heading,
-  [dir="rtl"] .update-header-lead { margin-right: 150px; }
-
-  .content .update-header-heading { margin-top: 0; }
-}
-
-.content .update-header-heading small { font-weight: normal; }
-
-.content .update-header-lead { margin-bottom: 0; }
 
 .privacy-footer
 {
@@ -170,43 +161,6 @@ body
 @media (min-width: 830px)
 {
   .privacy-footer a { color: #fff; }
-}
-
-@media (min-width: 830px) {
-  html {
-      background: linear-gradient(180deg, rgba(237, 30, 69, 0), rgba(49, 4, 12, 1))!important;
-      background-color: #ED1E45!important;
-  }
-}
-
-.cv-adb-7-1-desc-nav {
-  margin: 0!important;
-}
-
-.cv-adb-7-1-upd-header {
-  min-height: unset!important;
-}
-
-.cv-adb-7-1-nav-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.cv-adb-7-1-nav-top-title {
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 27px;
-  line-height: 35px;
-  color: #212121;
-}
-
-.cv-adb-7-1-nav-top-logo {
-  margin-right: 16px;
-  width: 73px;
-  height: 73px;
 }
 .grid { display: flex; flex-wrap: wrap; margin: -1rem 0 0 -1rem; }
 
