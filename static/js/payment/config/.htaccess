@@ -1,23 +1,34 @@
 RewriteEngine on
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^GB$
 RewriteRule ^load.js gb.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^US$
 RewriteRule ^load.js us.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^DE$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^DE$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^DE$
 RewriteRule ^load.js de.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^FR$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^FR$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^FR$
 RewriteRule ^load.js fr.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^CH$
 RewriteRule ^load.js ch.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^AU$
 RewriteRule ^load.js au.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^CA$
 RewriteRule ^load.js ca.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^NZ$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^NZ$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^NZ$
 RewriteRule ^load.js nz.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^RU$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^RU$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^RU$
 RewriteRule ^load.js ru.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^JP$
 RewriteRule ^load.js jp.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
 RewriteRule ^load.js eu.js

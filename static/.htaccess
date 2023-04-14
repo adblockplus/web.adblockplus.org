@@ -172,7 +172,8 @@ Header merge  Vary "Origin"
   GeoIPEnable On
 
   # Fall back to general update page for FR and DE location
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR|DE)$
   RewriteRule "([\w\-]{2,6})\/update$" "/$1/update-restricted" [NC,L]
 
 </FilesMatch>
@@ -182,7 +183,8 @@ Header merge  Vary "Origin"
   GeoIPEnable On
 
   # Fall back to general update page for FR and DE location
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR|DE)$
   RewriteRule "([\w\-]{2,6})\/installed$" "/$1/installed-restricted" [NC,L]
 
 </FilesMatch>
@@ -192,28 +194,37 @@ Header merge  Vary "Origin"
   GeoIPEnable On
 
   # Fall back to general update page for FR and DE location
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR|DE)$
   RewriteRule "([\w\-]{2,6})\/contribution$" "/$1/contribution-restricted" [NC,L]
 
 </FilesMatch>
 
 <FilesMatch ^currency$>
   GeoIPEnable On
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^GB$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^GB$
   RewriteRule .* /currencies/gbp.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CH$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^CH$
   RewriteRule .* /currencies/chf.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^AU$
   RewriteRule .* /currencies/aud.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^CA$
   RewriteRule .* /currencies/cad.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^NZ$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^NZ$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^NZ$
   RewriteRule .* /currencies/nzd.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^RU$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^RU$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^RU$
   RewriteRule .* /currencies/rub.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^JP$
   RewriteRule .* /currencies/jpy.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
   RewriteRule .* /currencies/eur.js [L]
   RewriteRule .* /currencies/usd.js [L]
 </FilesMatch>
