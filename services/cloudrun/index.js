@@ -56,7 +56,7 @@ app.get('/payment-config-function', (req, res) => {
   res.redirect(302, `/js/payment/config/${paymentConfig}${queryString}`);
 });
 
-app.get('/currency-function', (req, res) => {
+app.get('/currency', (req, res) => {
   euRules2 = euRules2 || [
     'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU',
     'IE', 'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI',

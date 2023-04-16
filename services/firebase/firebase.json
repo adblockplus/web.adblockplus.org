@@ -203,11 +203,6 @@
         "destination": "/payment-config-function",
         "type": 301
       },
-      {
-        "source": "/currency",
-        "destination": "/currency-function",
-        "type": 301
-      },
 
       // Redirect to cloud run rewrite for optimizely
       {
@@ -257,7 +252,7 @@
         }
       },
       {
-        "source": "/currency-function",
+        "source": "/currency",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
