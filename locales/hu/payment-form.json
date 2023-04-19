@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Hozzájárulás az Adblock Plus reklámblokkoló használatához"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "Hoppá! A kezelési költségek miatt <span></span><span>5</span> dollár az egyszeri hozzájárulás minimális összege."
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "Hoppá! A kezelési költségek miatt <span></span><span>1,99</span> dollár a havi hozzájárulás minimális összege."
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "Adja meg mennyit szánna erre:"
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "Adja meg mennyit szánna erre ({currency})"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "<strong>Egyszeri</strong> hozzájárulás:"
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "Vagy <strong>havi</strong> hozzájárulás:"
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "description": "heading",
     "message": "Vagy <strong>éves</strong> hozzájárulás:"
   },
@@ -60,7 +60,7 @@
   "pay-monthly": {
     "message": "{amount} adomány havonta"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "Hoppá! A kezelési költségek miatt <span></span><span>5</span> dollár az éves hozzájárulás minimális összege."
   },

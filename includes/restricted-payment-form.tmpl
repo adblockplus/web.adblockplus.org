@@ -1,9 +1,9 @@
 <script>
   path("i18n.payment.form", {
-    item: "{{ get_string("purchase-item-name", "payment-form") }}",
-    min_once: '{{ get_string("min-donation-warning", "payment-form") }}',
-    min_monthly: '{{ get_string("min-subscription-warning", "payment-form") }}',
-    min_yearly: '{{ get_string("min-subscription-yearly-warning", "payment-form") }}'
+    item: "{{ get_string("appeal-form-checkout__title", "payment-form") }}",
+    min_once: '{{ get_string("appeal-form__error--once", "payment-form") }}',
+    min_monthly: '{{ get_string("appeal-form__error--monthly", "payment-form") }}',
+    min_yearly: '{{ get_string("appeal-form__error--yearly", "payment-form") }}'
   });
 </script>
 
@@ -39,7 +39,7 @@
   <script id="payment-header-template" type="text/html">    
     <% if (currencies.length > 1) { %>
       <h2 class="payment-heading multi-currency">
-        {{ get_string("fair-amount-header-2", "payment-form") }}
+        {{ get_string("appeal-form-header__heading", "payment-form") }}
       </h2>
       <select id="payment-currency" name="currency" class="payment-currency">
       <% _.each(currencies, function(currency) { %>
@@ -59,7 +59,7 @@
     <% if (config.once) { %>
       <fieldset class="payment-frequency once">
         <legend>
-          {{ get_string("one-time-legened-1", "payment-form") }}
+          {{ get_string("appeal-form-frequency__heading--once", "payment-form") }}
         </legend>
         <div class="payment-amounts">
           <%= _amounts(_.extend({frequency: "once", sign: config.sign}, config.once)) %>
@@ -70,7 +70,7 @@
       <hr class="payment-divide">
       <fieldset class="payment-frequency monthly">
         <legend>
-          {{ get_string("subscription-legend-1", "payment-form") }}
+          {{ get_string("appeal-form-frequency__heading--monthly", "payment-form") }}
         </legend>
         <div class="payment-amounts">
           <%= _amounts(_.extend({frequency: "monthly", sign: config.sign}, config.monthly)) %>
@@ -81,7 +81,7 @@
       <hr class="payment-divide">
       <fieldset class="payment-frequency yearly">
         <legend>
-          {{ get_string("yearly-subscription-legend-1", "payment-form") }}
+          {{ get_string("appeal-form-frequency__heading--yearly", "payment-form") }}
         </legend>
         <div class="payment-amounts">
           <%= _amounts(_.extend({frequency: "yearly", sign: config.sign}, config.yearly)) %>

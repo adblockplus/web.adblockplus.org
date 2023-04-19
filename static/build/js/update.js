@@ -470,199 +470,279 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppealForm": () => (/* binding */ AppealForm)
 /* harmony export */ });
+function _classPrivateMethodInitSpec(obj, privateSet) { _checkPrivateRedeclaration(obj, privateSet); privateSet.add(obj); }
+function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
+function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
+function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
+function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
 /* global adblock */
 
 const formTemplate = document.getElementById("appeal-form");
-const frequencyTemplate = document.getElementById("appeal-form-frequency");
 const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
 const customAmountTemplate = document.getElementById("appeal-form-amount--custom");
 
-function getLanguage() {
-  // prefer navigator language to settings language so that more specific language variants can differentiate currencies
-  // e.g. 10 USD in "en" is $10 but 10 USD in "en-CA" is US$10
-  return (navigator.language || adblock.settings.language).replace("_", "-");
-}
-
+/** 
+ * Cent amount (int) to dollar amount (float) (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} cents - amount in cents (for applicable currencies)
+ */
 function toDollarNumber(currency, cents) {
   return currency == "JPY" ? cents : cents / 100;
 }
 
-function toCentsNumber(currency, dollars) {
-  return currency == "JPY" ? dollars : dollars * 100;
-}
-
+/** 
+ * Cent amount (int) to dollar amount (float) with localised formatting (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} cents - amount in cents (for applicable currencies)
+ */
 function toDollarString(currency, cents) {
-  return new Intl.NumberFormat(
-    getLanguage(),
-    { style: "currency", currency, minimumFractionDigits: 0 }
-  ).format(toDollarNumber(currency, cents));
+  return new Intl.NumberFormat(navigator.language, {
+    style: "currency",
+    currency,
+    minimumFractionDigits: 0
+  }).format(toDollarNumber(currency, cents));
 }
-
+var _paddleConfig = /*#__PURE__*/new WeakMap();
+var _parentElement = /*#__PURE__*/new WeakMap();
+var _currencySelect = /*#__PURE__*/new WeakMap();
+var _frequenciesParentElement = /*#__PURE__*/new WeakMap();
+var _amountsControlElements = /*#__PURE__*/new WeakMap();
+var _errorMessageElement = /*#__PURE__*/new WeakMap();
+var _submitButton = /*#__PURE__*/new WeakMap();
+var _updateAmounts = /*#__PURE__*/new WeakSet();
+var _showMinimumAmountError = /*#__PURE__*/new WeakSet();
+var _hideMinimumAmountError = /*#__PURE__*/new WeakSet();
+var _handleMinimumAmountError = /*#__PURE__*/new WeakSet();
+var _getCustomRadioInput = /*#__PURE__*/new WeakSet();
+var _getCustomInputRadio = /*#__PURE__*/new WeakSet();
+var _onAmountFocusin = /*#__PURE__*/new WeakSet();
+var _onAmountInput = /*#__PURE__*/new WeakSet();
+var _submitCallbacks = /*#__PURE__*/new WeakMap();
+var _onSubmit = /*#__PURE__*/new WeakSet();
 class AppealForm {
-
-  #paddleConfiguration;
-
-  #formConfiguration;
-
-  #form;
-
-  #currencySelect;
-
-  #frequencies;
-
-  #error;
-
-  constructor({placeholder, paddleConfiguration, formConfiguration}) {
-    this.#paddleConfiguration = paddleConfiguration;
-    this.#formConfiguration = formConfiguration;
-    this.#constructForm()
-    this.#constructCurrencies();
-    this.#constructFrequencies();
-    this.#error = this.#form.querySelector(".appeal-form__error");
-    placeholder.replaceWith(this.#form);
-  }
-
-  #constructForm() {
-    this.#form = formTemplate.content.cloneNode(true).firstElementChild;
-    this.#form.querySelector(".appeal-form-header__heading").innerHTML = adblock.strings["appeal-form-header__heading"];
-    this.#form.querySelector(".appeal-form-checkout__submit span").innerHTML = adblock.strings["appeal-form-checkout__submit"]
-    this.#form.addEventListener("submit", event => this.#onSubmit(event));
-  }
-
-  #constructCurrencies() {
-    this.#currencySelect = this.#form.querySelector(".appeal-form-header__select");
-    for (const currency in this.#paddleConfiguration.products) {
+  constructor(_ref) {
+    let {
+      placeholder,
+      paddleConfig,
+      formConfig
+    } = _ref;
+    /** Handle when the form is submitted */
+    _classPrivateMethodInitSpec(this, _onSubmit);
+    /** Handle when an amount radio is selected or a custom amount input is filled */
+    _classPrivateMethodInitSpec(this, _onAmountInput);
+    /** Handle when a custom amount input is selected / focused for input */
+    _classPrivateMethodInitSpec(this, _onAmountFocusin);
+    /** Get custom amount radio from reference to custom amount input */
+    _classPrivateMethodInitSpec(this, _getCustomInputRadio);
+    /** Get custom amount input from reference to custom amount radio */
+    _classPrivateMethodInitSpec(this, _getCustomRadioInput);
+    /** Handle possibility of minimum amount error on target custom amount input */
+    _classPrivateMethodInitSpec(this, _handleMinimumAmountError);
+    _classPrivateMethodInitSpec(this, _hideMinimumAmountError);
+    /** show minimum amount error for custom amount input */
+    _classPrivateMethodInitSpec(this, _showMinimumAmountError);
+    /**
+     * Update amount control labels and values (in place)
+     * 
+     * @param {string} currency - 3 letter currency
+     */
+    _classPrivateMethodInitSpec(this, _updateAmounts);
+    /** @member {Object} paddle config @see ./configuration.js */
+    _classPrivateFieldInitSpec(this, _paddleConfig, {
+      writable: true,
+      value: void 0
+    });
+    /** @member {Element} form parent element */
+    _classPrivateFieldInitSpec(this, _parentElement, {
+      writable: true,
+      value: void 0
+    });
+    /** @member {Element} form currency select element */
+    _classPrivateFieldInitSpec(this, _currencySelect, {
+      writable: true,
+      value: void 0
+    });
+    /** @member {Element} form frequencies (once, monthly, yearly) parent element */
+    _classPrivateFieldInitSpec(this, _frequenciesParentElement, {
+      writable: true,
+      value: void 0
+    });
+    /** @member {Element[]} form amount control elements (parent, label, and inputs) */
+    _classPrivateFieldInitSpec(this, _amountsControlElements, {
+      writable: true,
+      value: []
+    });
+    /** @member {Element} form error message (above checkout button) */
+    _classPrivateFieldInitSpec(this, _errorMessageElement, {
+      writable: true,
+      value: void 0
+    });
+    /** @member {Element} form submit button */
+    _classPrivateFieldInitSpec(this, _submitButton, {
+      writable: true,
+      value: void 0
+    });
+    _classPrivateFieldInitSpec(this, _submitCallbacks, {
+      writable: true,
+      value: []
+    });
+    _classPrivateFieldSet(this, _paddleConfig, paddleConfig);
+    _classPrivateFieldSet(this, _parentElement, formTemplate.content.cloneNode(true).firstElementChild);
+    _classPrivateFieldGet(this, _parentElement).querySelector(".appeal-form-header__heading").innerHTML = adblock.strings["appeal-form-header__heading"];
+    _classPrivateFieldGet(this, _parentElement).querySelector(".appeal-form-checkout__submit").innerHTML = adblock.strings["appeal-form-checkout__submit"];
+    _classPrivateFieldSet(this, _errorMessageElement, _classPrivateFieldGet(this, _parentElement).querySelector(".appeal-form__error"));
+    _classPrivateFieldSet(this, _submitButton, _classPrivateFieldGet(this, _parentElement).querySelector(".appeal-form-checkout__submit"));
+    // construct and reference form currency select
+    _classPrivateFieldSet(this, _currencySelect, _classPrivateFieldGet(this, _parentElement).querySelector(".appeal-form-header__select"));
+    for (const currency in paddleConfig.products) {
       const option = document.createElement("option");
-      option.textContent = currency;
-      this.#currencySelect.appendChild(option);
+      option.textContent = currency.toUpperCase();
+      option.value = currency.toUpperCase();
+      _classPrivateFieldGet(this, _currencySelect).appendChild(option);
     }
-    this.#currencySelect.value = this.#formConfiguration.currency;
-    this.#currencySelect.addEventListener("change", event => this.#onCurrencyChange(event));
-  }
-
-  #constructFrequencies() {
-    this.#frequencies = this.#form.querySelector(".appeal-form-frequencies");
-    this.#replaceFrequencies(this.#formConfiguration.currency);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[this.#formConfiguration.selected].checked = true;
-    this.#frequencies.addEventListener("focusin", event => this.#onAmountFocusin(event));
-    this.#frequencies.addEventListener("input", event => this.#handleAmountInput(event));
-  }
-
-  #replaceFrequencies(currency) {
-    const frequencies = [];
-    for (const frequency in this.#paddleConfiguration.products[currency]) {
-      const frequencySection = frequencyTemplate.content.cloneNode(true).firstElementChild;
-      frequencySection.querySelector(".appeal-form-frequency__heading").innerHTML = adblock.strings[`appeal-form-frequency__heading--${frequency}`];
-      const amountsParent = frequencySection.querySelector(".appeal-form-amounts");
-      for (const amount in this.#paddleConfiguration.products[currency][frequency]) {
+    _classPrivateFieldGet(this, _currencySelect).value = formConfig.currency;
+    // construct and reference form amounts
+    _classPrivateFieldSet(this, _frequenciesParentElement, _classPrivateFieldGet(this, _parentElement).querySelector(".appeal-form-frequencies"));
+    for (const frequency in paddleConfig.products[formConfig.currency]) {
+      let radioNumber = 1;
+      const frequencyParent = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(`.appeal-form-frequency--${frequency}`);
+      frequencyParent.querySelector(".appeal-form-frequency__heading").innerHTML = adblock.strings[`appeal-form-frequency__heading--${frequency}`];
+      const amountsParent = frequencyParent.querySelector(".appeal-form-amounts");
+      for (const amount in paddleConfig.products[formConfig.currency][frequency]) {
+        let amountControl, amountRadio, amountInput;
         if (amount == "custom") {
-          const customAmount = customAmountTemplate.content.cloneNode(true).firstElementChild;
-          const input = customAmount.querySelector(".appeal-form-amount__input");
-          input.placeholder = toDollarString(currency, Object.keys(this.#paddleConfiguration.products[currency][frequency])[3]);
-          input.min = toDollarNumber(currency, this.#paddleConfiguration.products[currency][frequency][amount]);
-          input.dataset.frequency = frequency;
-          input.dataset.product = "custom";
-          amountsParent.appendChild(customAmount);
+          amountControl = customAmountTemplate.content.cloneNode(true).firstElementChild;
+          amountInput = amountControl.querySelector(".appeal-form-amount__input");
+          amountInput.dataset.testid = `appeal-form-amount__input--${frequency}`;
+          amountInput.dataset.frequency = frequency;
         } else {
-          const fixedAmount = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
-          fixedAmount.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
-          const radio = fixedAmount.querySelector(".appeal-form-amount__radio");
-          radio.value = amount;
-          radio.dataset.frequency = frequency;
-          radio.dataset.product = this.#paddleConfiguration.products[currency][frequency][amount];
-          amountsParent.appendChild(fixedAmount);
+          amountControl = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
         }
+        amountRadio = amountControl.querySelector(".appeal-form-amount__radio");
+        amountRadio.dataset.testid = `appeal-form-amount__radio--${frequency}-${radioNumber++}`;
+        amountRadio.dataset.frequency = frequency;
+        _classPrivateFieldGet(this, _amountsControlElements).push(amountControl);
+        amountsParent.appendChild(amountControl);
       }
-      frequencies.push(frequencySection);
     }
-    this.#frequencies.replaceChildren(...frequencies);
+    _classPrivateMethodGet(this, _updateAmounts, _updateAmounts2).call(this, formConfig.currency);
+    _classPrivateFieldGet(this, _frequenciesParentElement).querySelectorAll(".appeal-form-amount__radio")[formConfig.selected].checked = true;
+    // add form interaction listeners
+    _classPrivateFieldGet(this, _currencySelect).addEventListener("change", event => _classPrivateMethodGet(this, _updateAmounts, _updateAmounts2).call(this, event.currentTarget.value));
+    _classPrivateFieldGet(this, _frequenciesParentElement).addEventListener("focusin", event => _classPrivateMethodGet(this, _onAmountFocusin, _onAmountFocusin2).call(this, event));
+    _classPrivateFieldGet(this, _frequenciesParentElement).addEventListener("input", event => _classPrivateMethodGet(this, _onAmountInput, _onAmountInput2).call(this, event));
+    _classPrivateFieldGet(this, _parentElement).addEventListener("submit", event => _classPrivateMethodGet(this, _onSubmit, _onSubmit2).call(this, event));
+    // replace placeholder with constructed form
+    placeholder.replaceWith(_classPrivateFieldGet(this, _parentElement));
+    // set testid on parent to signal to playwright tests that construction is completed
+    _classPrivateFieldGet(this, _parentElement).dataset.testid = "appeal-form-constructed";
   }
-
-  #onCurrencyChange(event) {
-    const inputValues = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__input")).map(element => element.value);
-    const selectedRadio = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).find(element => element.checked);
-    const selectedRadioIndex = Array.from(this.#frequencies.querySelectorAll(".appeal-form-amount__radio")).findIndex(element => element.checked);
-    this.#replaceFrequencies(event.currentTarget.value);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__input").forEach((input, i) => input.value = inputValues[i]);
-    this.#frequencies.querySelectorAll(".appeal-form-amount__radio")[selectedRadioIndex].checked = true;
-    if (selectedRadio.value == "custom") {
-      this.#handleInputError(
-        selectedRadio.parentElement.querySelector(".appeal-form-amount__input")
-      );
-    }
-  }
-
-  #handleInputError(target) {
-    const targetValue = parseFloat(target.value);
-    const targetMinimum = parseFloat(target.min);
-    if (targetValue && targetValue < targetMinimum) {
-      const minimumAmount = parseFloat(target.min);
-      const numberFormat = new Intl.NumberFormat(
-        getLanguage(), {
-          style: "currency",
-          currency: this.#currencySelect.value
-      });
-      this.#error.innerHTML = adblock.strings[`appeal-form__error--${target.dataset.frequency}`].replace(
-        '<span class="amount"></span>',
-        numberFormat.format(minimumAmount)
-      );
-      this.#error.hidden = false;
-    } else {
-      this.#error.hidden = true;
-    }
-  }
-
-  #onAmountFocusin(event) {
-    if (event.target.type == "number") {
-      const radio = event.target.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__radio");
-      if (false == radio.checked) radio.checked = true;
-    }
-    if (event.target.type == "number" || event.target.type == "radio") {
-      this.#handleInputError(event.target);
-    }
-  }
-
-  #handleAmountInput(event) {
-    if (event.target.type == "number") {
-      this.#handleInputError(event.target);
-    }
-  }
-
-  #submitCallbacks = [];
-
+  /** Register a callback for when the form is submitted */
   onSubmit(callback) {
-    this.#submitCallbacks.push(callback);
+    _classPrivateFieldGet(this, _submitCallbacks).push(callback);
   }
-
-  #onSubmit(event) { 
-    event.preventDefault();
-    const currency = this.#currencySelect.value;
-    let selected = this.#frequencies.querySelector(":checked");
-    let amount = selected.value;
-    if (amount == "custom") {
-      selected = selected.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__input");
-      amount = toCentsNumber(currency, parseFloat(selected.value));
-    }
-    const frequency = selected.dataset.frequency;
-    const product = selected.dataset.product;
-    this.#submitCallbacks.forEach(callback => callback({
-      currency, 
-      frequency, 
-      amount, 
-      product,
-    }));
-  }
-
   disable() {
-    this.#form.classList.add("appeal-form--disabled");
-    this.#form.querySelectorAll("input, button").forEach(field => { field.disabled = true; });
+    _classPrivateFieldGet(this, _parentElement).classList.add("appeal-form--disabled");
+    _classPrivateFieldGet(this, _parentElement).querySelectorAll("input, button").forEach(field => {
+      field.disabled = true;
+    });
   }
-
   enable() {
-    this.#form.classList.remove("appeal-form--disabled");
-    this.#form.querySelectorAll("input, button").forEach(field => { field.disabled = false; });
+    _classPrivateFieldGet(this, _parentElement).classList.remove("appeal-form--disabled");
+    _classPrivateFieldGet(this, _parentElement).querySelectorAll("input, button").forEach(field => {
+      field.disabled = false;
+    });
   }
-
+}
+function _updateAmounts2(currency) {
+  let i = 0;
+  for (const frequency in _classPrivateFieldGet(this, _paddleConfig).products[currency]) {
+    for (const amount in _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency]) {
+      const control = _classPrivateFieldGet(this, _amountsControlElements)[i++];
+      const radio = control.querySelector(".appeal-form-amount__radio");
+      if (amount == "custom") {
+        const input = control.querySelector(".appeal-form-amount__input");
+        input.placeholder = String(toDollarNumber(currency, Object.keys(_classPrivateFieldGet(this, _paddleConfig).products[currency][frequency])[3]));
+        input.dataset.minimum = toDollarNumber(currency, _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount]);
+        radio.dataset.product = "custom";
+      } else {
+        control.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
+        radio.value = amount;
+        radio.dataset.product = _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount];
+      }
+    }
+  }
+}
+function _showMinimumAmountError2(input) {
+  _classPrivateFieldGet(this, _errorMessageElement).innerHTML = adblock.strings[`appeal-form__error--${input.dataset.frequency}`];
+  _classPrivateFieldGet(this, _errorMessageElement).hidden = false;
+  _classPrivateFieldGet(this, _submitButton).disabled = true;
+}
+function _hideMinimumAmountError2() {
+  _classPrivateFieldGet(this, _errorMessageElement).hidden = true;
+  _classPrivateFieldGet(this, _submitButton).disabled = false;
+}
+function _handleMinimumAmountError2(input) {
+  if (input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
+    _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
+  } else {
+    _classPrivateMethodGet(this, _hideMinimumAmountError, _hideMinimumAmountError2).call(this);
+  }
+}
+function _getCustomRadioInput2(radio) {
+  return radio.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__input");
+}
+function _getCustomInputRadio2(input) {
+  return input.closest(".appeal-form-amount--custom").querySelector(".appeal-form-amount__radio");
+}
+function _onAmountFocusin2(event) {
+  if (event.target.type == "number") {
+    // Check checkbox beside custom amount input when custom amount input is selected for entry
+    _classPrivateMethodGet(this, _getCustomInputRadio, _getCustomInputRadio2).call(this, event.target).checked = true;
+    // Handle possible minimum amount error when custom amount input re-selected already has a value below the minimum
+    _classPrivateMethodGet(this, _handleMinimumAmountError, _handleMinimumAmountError2).call(this, event.target);
+  }
+}
+function _onAmountInput2(event) {
+  if (event.target.type == "number") {
+    // Handle possible minimum amount error when custom amount input is filled
+    _classPrivateMethodGet(this, _handleMinimumAmountError, _handleMinimumAmountError2).call(this, event.target);
+  } else if (event.target.type == "radio") {
+    // Handle possible minimum amount error when custom amount is re-selected via radio
+    if (event.target.value == "custom") {
+      _classPrivateMethodGet(this, _handleMinimumAmountError, _handleMinimumAmountError2).call(this, _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, event.target));
+    } else {
+      // Hide minimum amount error when fixed amount (a non custom amount) is selected
+      _classPrivateMethodGet(this, _hideMinimumAmountError, _hideMinimumAmountError2).call(this);
+    }
+  }
+}
+function _onSubmit2(event) {
+  event.preventDefault();
+  let radio = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(".appeal-form-amount__radio:checked");
+  let value = radio.value;
+  if (value == "custom") {
+    const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
+    if (!input.value || parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
+      return _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
+    } else {
+      value = input.value;
+    }
+  }
+  const frequency = radio.dataset.frequency;
+  const product = radio.dataset.product;
+  _classPrivateFieldGet(this, _submitCallbacks).forEach(callback => callback({
+    currency: _classPrivateFieldGet(this, _currencySelect).value,
+    frequency,
+    amount: value,
+    product
+  }));
 }
 
 /***/ }),
@@ -919,9 +999,9 @@ const CONFIGURATION = {
             "500000": 46244,
             "custom": 25000
           }
-        },
-      },
-    },    
+        }
+      }
+    },
     live: {
       vendor: 164164,
       products: {
@@ -1158,11 +1238,11 @@ const CONFIGURATION = {
             "500000": 816806,
             "custom": 25000
           }
-        },
-      },
-    },
-  },
-}
+        }
+      }
+    }
+  }
+};
 
 /***/ })
 
@@ -1235,43 +1315,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-const SANDBOX_HOSTNAMES = [
-  /^localhost$/,
-  /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/,
-  /^dev--adblockplus-org--[\w\-]+.web.app$/,
-];
-
-let paddleConfiguration = SANDBOX_HOSTNAMES.some((originPattern) => {
-  return originPattern.test(location.hostname)
+const SANDBOX_HOSTNAMES = [/^localhost$/, /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/, /^dev--adblockplus-org--[\w\-]+.web.app$/];
+let paddleConfig = SANDBOX_HOSTNAMES.some(originPattern => {
+  return originPattern.test(location.hostname);
 }) ? _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox : _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
-
-if (
-  // For compatibility with AdBlock
-  adblock.searchParameters.has("testmode")
-  || adblock.searchParameters.get("mode") == "test"
-) {
-  paddleConfiguration = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
+if (adblock.searchParameters.has("testmode") || adblock.searchParameters.get("mode") == "test") {
+  paddleConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
 } else if (adblock.searchParameters.get("mode") == "live") {
-  paddleConfiguration = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
+  paddleConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
 }
-
-const isTestmode = paddleConfiguration == _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
-
-if (isTestmode) {
-  Paddle.Environment.set("sandbox");
-}
-
-Paddle.Setup({ vendor: paddleConfiguration.vendor });
-
-const appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
-  paddleConfiguration,
-  formConfiguration: _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AppealForm,
-  placeholder: document.querySelector(".appeal-form"),
+const isTestmode = paddleConfig == _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
+if (isTestmode) Paddle.Environment.set("sandbox");
+Paddle.Setup({
+  vendor: paddleConfig.vendor
 });
-
-appealForm.onSubmit((data) => {
-
+const formConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AppealForm;
+const placeholder = document.querySelector(".appeal-form");
+const appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
+  paddleConfig,
+  formConfig,
+  placeholder
+});
+appealForm.onSubmit(data => {
   appealForm.disable();
 
   // Storing information to be consumed by optimizely and hotjar experiments
@@ -1283,12 +1348,10 @@ appealForm.onSubmit((data) => {
       currency: data.currency,
       lang: document.documentElement.lang,
       source: eyeo.payment.sourceId || "U",
-      clickTs: Date.now(),
+      clickTs: Date.now()
     }));
   }
-
   const omitUserId = true;
-
   const passthrough = {
     testmode: isTestmode,
     userid: "",
@@ -1308,46 +1371,42 @@ appealForm.onSubmit((data) => {
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
     success_url: `${location.origin}/payment-complete`,
-    cancel_url: location.href,
+    cancel_url: location.href
   };
-
   const product = data.product;
-
   const checkoutOptions = {
     locale: adblock.settings.language,
     title: adblock.strings["appeal-form-checkout__title"],
     success: passthrough.success_url,
-    closeCallback: () => { appealForm.enable(); },
+    closeCallback: () => {
+      appealForm.enable();
+    }
   };
-
   if (product == "custom") {
     fetch("https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
       method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(passthrough),
-    })
-    .then(response => response.json())
-    .then(session => {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(passthrough)
+    }).then(response => response.json()).then(session => {
       if (session.hasOwnProperty("success") && session.success == false) {
-        throw new Error(
-          adblock.strings["error--unexpected"]
-        );  
+        throw new Error();
       }
       Paddle.Checkout.open(Object.assign(checkoutOptions, {
-        override: session.url,
+        override: session.url
       }));
-    })
-    .catch((error) => {
+    }).catch(error => {
       adblock.error(adblock.strings["error--unexpected"]);
+      appealForm.enable();
     });
   } else {
     Paddle.Checkout.open(Object.assign(checkoutOptions, {
       allowQuantity: false,
       passthrough,
-      product,
+      product
     }));
   }
-  
 });
 })();
 

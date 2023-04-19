@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Пожертвование для Adblock Plus"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "Упс! С учетом комиссии минимальная сумма разового вклада составляет <span></span><span>5</span> долларов."
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "Упс! С учетом комиссии минимальная сумма ежемесячного вклада составляет <span></span><span>1,99</span> доллара."
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "Укажите справедливую сумму:"
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "Укажите справедливую сумму (в долларах <span>США</span>)"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "Сделать <strong>разовый</strong> вклад:"
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "Или <strong>ежемесячный</strong> вклад:"
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "description": "heading",
     "message": "Или <strong>ежегодный</strong> вклад:"
   },
@@ -60,7 +60,7 @@
   "pay-monthly": {
     "message": "Жертвовать {amount} / месяц"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "Упс! С учетом комиссии минимальная сумма ежегодного вклада составляет <span></span><span>5</span> долларов."
   },

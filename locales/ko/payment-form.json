@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Adblock Plus에 기부하기"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "저런! 취급 수수료때문에 1회 기부의 최소 금액은 <span>$</span><span>5</span>입니다."
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "저런! 취급 수수료때문에 월간 기부의 최소 금액은 <span>$</span><span>1.99</span>입니다."
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "합당한 금액 입력:"
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "합당한 금액 입력({currency})"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "<strong>1회</strong> 기부하기:"
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "<strong>매월</strong> 기부하기:"
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "description": "heading",
     "message": "<strong>매년</strong> 기부하기:"
   },
@@ -60,7 +60,7 @@
   "pay-monthly": {
     "message": "기부금: {amount} / 월"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "저런! 취급 수수료때문에 연간 기부의 최소 금액은 <span>$</span><span>5</span>입니다."
   },

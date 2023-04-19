@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Adblock Plus に寄付"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "申し訳ございません。当社により手数料を負担するため、一時的なご寄付は <span>$</span><span>5</span> 以上でお願いします。"
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "申し訳ございません。当社により手数料を負担するため、毎月のご寄付は <span>$</span><span>1.99</span> 以上でお願いします。"
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "適切な額をご指定ください："
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "適切な額をご指定ください (<span>米ドル</span>)"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "<strong>一度</strong>寄付する："
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "<strong>毎月</strong>寄付する："
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "description": "heading",
     "message": "<strong>毎年</strong>寄付する："
   },
@@ -60,7 +60,7 @@
   "pay-monthly": {
     "message": "寄付金額 {amount} / 月"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "申し訳ございません。当社により手数料を負担するため、毎年のご寄付は <span>$</span><span>5</span> 以上でお願いします。"
   },

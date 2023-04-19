@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Donatie aan Adblock Plus"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "Oeps! Om de kosten te dekken, is de minimale eenmalige bijdrage <span>$</span><span> 5</span>."
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "Oeps! Om de kosten te dekken, is de minimale maandelijkse bijdrage <span>$</span><span> 1,99</span>."
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "Kies een passende bijdrage:"
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "Kies een passende bijdrage (in {currency})"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "Doe een <strong>eenmalige</strong> bijdrage:"
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "Of een <strong>maandelijkse</strong> bijdrage:"
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "description": "heading",
     "message": "Of een <strong>jaarlijkse</strong> bijdrage:"
   },
@@ -60,7 +60,7 @@
   "pay-monthly": {
     "message": "Doneer {amount} / per maand"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "Oeps! Om de kosten te dekken, is de minimale jaarlijkse bijdrage <span>$</span><span> 5</span>."
   },

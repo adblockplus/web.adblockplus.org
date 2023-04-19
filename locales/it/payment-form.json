@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Contributo ad Adblock Plus"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "Ops! Per aiutare a coprire le spese, il contributo una tantum minimo è <span>$</span><span>5</span>."
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "Ops! Per aiutare a coprire le spese, il contributo mensile minimo è <span>$</span><span>1,99</span>."
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "Indica un importo equo:"
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "Indica un importo equo (in {currency})"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "Dai un contributo <strong>una tantum</strong>:"
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "Oppure un contributo <strong>mensile</strong>:"
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "description": "heading",
     "message": "Oppure un contributo <strong>annuale</strong>:"
   },
@@ -60,7 +60,7 @@
   "pay-monthly": {
     "message": "Dona {amount} / al mese"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "Ops! Per aiutare a coprire le spese, il contributo annuale minimo è <span>$</span><span>5</span>."
   },

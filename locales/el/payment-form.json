@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Συνεισφορά στο Adblock Plus"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "Ωχ! Για την κάλυψη του κόστους, το ελάχιστο ποσό εφάπαξ εισφοράς είναι <span>$</span><span>5</span>."
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "Ωχ! Για την κάλυψη του κόστους, το ελάχιστο ποσό μηνιαίας εισφοράς είναι <span>$</span><span>1,99</span>."
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "Δηλώστε ένα δίκαιο ποσό:"
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "Δηλώστε ένα δίκαιο ποσό (σε {currency})"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "Κάντε μια <strong>εφάπαξ</strong> εισφορά:"
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "Ή μια <strong>μηνιαία</strong> εισφορά:"
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "message": "Ή μια <strong>ετήσια</strong> εισφορά:"
   },
   "credit-card": {
@@ -56,7 +56,7 @@
   "email-input": {
     "message": "Email"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "Ωχ! Για την κάλυψη του κόστους, το ελάχιστο ποσό ετήσιας εισφοράς είναι <span>$</span><span>5</span>."
   },

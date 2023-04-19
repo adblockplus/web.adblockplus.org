@@ -3,39 +3,30 @@
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
 
+
 const SANDBOX_HOSTNAMES = [
   /^localhost$/,
   /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/,
   /^dev--adblockplus-org--[\w\-]+.web.app$/,
 ];
 
-let paddleConfiguration = SANDBOX_HOSTNAMES.some((originPattern) => {
-  return originPattern.test(location.hostname)
-}) ? CONFIGURATION.Paddle.sandbox : CONFIGURATION.Paddle.live;
+let paddleConfig = SANDBOX_HOSTNAMES.some((originPattern) => { return originPattern.test(location.hostname) }) ? CONFIGURATION.Paddle.sandbox : CONFIGURATION.Paddle.live;
 
-if (
-  // For compatibility with AdBlock
-  adblock.searchParameters.has("testmode")
-  || adblock.searchParameters.get("mode") == "test"
-) {
-  paddleConfiguration = CONFIGURATION.Paddle.sandbox;
+if (adblock.searchParameters.has("testmode") || adblock.searchParameters.get("mode") == "test") {
+  paddleConfig = CONFIGURATION.Paddle.sandbox;
 } else if (adblock.searchParameters.get("mode") == "live") {
-  paddleConfiguration = CONFIGURATION.Paddle.live;
+  paddleConfig = CONFIGURATION.Paddle.live;
 }
 
-const isTestmode = paddleConfiguration == CONFIGURATION.Paddle.sandbox;
+const isTestmode = paddleConfig == CONFIGURATION.Paddle.sandbox;
 
-if (isTestmode) {
-  Paddle.Environment.set("sandbox");
-}
+if (isTestmode) Paddle.Environment.set("sandbox");
 
-Paddle.Setup({ vendor: paddleConfiguration.vendor });
+Paddle.Setup({ vendor: paddleConfig.vendor });
 
-const appealForm = new AppealForm({
-  paddleConfiguration,
-  formConfiguration: CONFIGURATION.AppealForm,
-  placeholder: document.querySelector(".appeal-form"),
-});
+const formConfig = CONFIGURATION.AppealForm;
+const placeholder = document.querySelector(".appeal-form");
+const appealForm = new AppealForm({ paddleConfig, formConfig, placeholder });
 
 appealForm.onSubmit((data) => {
 
@@ -96,9 +87,7 @@ appealForm.onSubmit((data) => {
     .then(response => response.json())
     .then(session => {
       if (session.hasOwnProperty("success") && session.success == false) {
-        throw new Error(
-          adblock.strings["error--unexpected"]
-        );  
+        throw new Error();
       }
       Paddle.Checkout.open(Object.assign(checkoutOptions, {
         override: session.url,
@@ -106,6 +95,7 @@ appealForm.onSubmit((data) => {
     })
     .catch((error) => {
       adblock.error(adblock.strings["error--unexpected"]);
+      appealForm.enable();
     });
   } else {
     Paddle.Checkout.open(Object.assign(checkoutOptions, {

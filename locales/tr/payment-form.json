@@ -1,17 +1,17 @@
 {
-  "purchase-item-name": {
+  "appeal-form-checkout__title": {
     "description": "item being paid for",
     "message": "Adblock Plus'a Katkı"
   },
-  "min-donation-warning": {
+  "appeal-form__error--once": {
     "description": "notice",
     "message": "Eyvah! Ücretlerin karşılanmasına yardımcı olmak için gereken tek seferlik asgari katkı tutarı <span>5</span><span>$’dır</span>."
   },
-  "min-subscription-warning": {
+  "appeal-form__error--monthly": {
     "description": "notice",
     "message": "Eyvah! Ücretlerin karşılanmasına yardımcı olmak için gereken aylık asgari katkı tutarı <span>1,99</span><span>$’dır</span>."
   },
-  "fair-amount-header-2": {
+  "appeal-form-header__heading": {
     "description": "heading",
     "message": "Adil bir miktar belirtin:"
   },
@@ -19,15 +19,15 @@
     "description": "heading",
     "message": "Adil bir miktar belirtin (<span>ABD</span> doları)"
   },
-  "one-time-legened-1": {
+  "appeal-form-frequency__heading--once": {
     "description": "heading",
     "message": "<strong>Tek seferlik</strong> bir katkı yapın:"
   },
-  "subscription-legend-1": {
+  "appeal-form-frequency__heading--monthly": {
     "description": "heading",
     "message": "Ya da <strong>aylık</strong> olarak düzenli katkı yapın:"
   },
-  "yearly-subscription-legend-1": {
+  "appeal-form-frequency__heading--yearly": {
     "description": "heading",
     "message": "Ya da <strong>yıllık</strong> olarak düzenli katkı yapın:"
   },
@@ -60,7 +60,7 @@
   "pay-monthly": {
     "message": "Aylık {amount} bağışta bulunun"
   },
-  "min-subscription-yearly-warning": {
+  "appeal-form__error--yearly": {
     "description": "notice",
     "message": "Eyvah! Ücretlerin karşılanmasına yardımcı olmak için gereken yıllık asgari katkı tutarı <span>5</span><span>$’dır</span>."
   },

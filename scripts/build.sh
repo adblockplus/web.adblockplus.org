@@ -1,2 +1,2 @@
-npx webpack-cli bundle ./static/components/AppealForm/controller.js -o ./static/components/AppealForm/ --mode development --devtool hidden-source-map
+npx webpack
 node ./static/js/tools/build.js
