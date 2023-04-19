@@ -104,6 +104,7 @@ class AppealForm {
           input.min = toDollarNumber(currency, this.#paddleConfiguration.products[currency][frequency][amount]);
           input.dataset.frequency = frequency;
           input.dataset.product = "custom";
+          input.dataset.value = customAmount;
           amountsParent.appendChild(customAmount);
         } else {
           const fixedAmount = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
