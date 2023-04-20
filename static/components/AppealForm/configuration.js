@@ -14,7 +14,10 @@ export const CONFIGURATION = {
             "2000": 46030,
             "3500": 46031,
             "5000": 46032,
-            "custom": 500
+            "custom": {
+              "min": 500,
+              "default": 35000
+            }
           },
           "monthly": {
             "199": 46074,
@@ -22,7 +25,10 @@ export const CONFIGURATION = {
             "399": 46076,
             "499": 46077,
             "999": 46078,
-            "custom": 199
+            "custom": {
+              "min": 199,
+              "default": 499
+            }
           },
           "yearly": {
             "1000": 46079,
@@ -30,7 +36,10 @@ export const CONFIGURATION = {
             "2000": 46081,
             "3500": 46082,
             "5000": 46083,
-            "custom": 500
+            "custom": {
+              "min": 500,
+              "default": 3500
+            }
           }
         },
         "AUD": {

@@ -70,13 +70,17 @@ export class AppealForm {
       const frequencyParent = this.#frequenciesParentElement.querySelector(`.appeal-form-frequency--${frequency}`);
       frequencyParent.querySelector(".appeal-form-frequency__heading").innerHTML = adblock.strings[`appeal-form-frequency__heading--${frequency}`]
       const amountsParent = frequencyParent.querySelector(".appeal-form-amounts");
-      for (const amount in paddleConfig.products[formConfig.currency][frequency]) {
+      const formCurrencyValues = paddleConfig.products[formConfig.currency]
+      for (const amount in formCurrencyValues[frequency]) {
         let amountControl, amountRadio, amountInput;
         if (amount == "custom") {
           amountControl = customAmountTemplate.content.cloneNode(true).firstElementChild;
+          amountRadio = amountControl.querySelector(".appeal-form-amount__radio");
           amountInput = amountControl.querySelector(".appeal-form-amount__input");
           amountInput.dataset.testid = `appeal-form-amount__input--${frequency}`;
           amountInput.dataset.frequency = frequency;
+          console.log(formCurrencyValues[frequency]["custom"]["default"]);
+          amountRadio.value = formCurrencyValues[frequency]["custom"]["default"] || 0;
         } else {
           amountControl = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
         }
@@ -89,6 +93,7 @@ export class AppealForm {
     }
     this.#updateAmounts(formConfig.currency);
     this.#frequenciesParentElement.querySelectorAll(".appeal-form-amount__radio")[formConfig.selected].checked = true;
+
     // add form interaction listeners
     this.#currencySelect.addEventListener("change", event => this.#updateAmounts(event.currentTarget.value));
     this.#frequenciesParentElement.addEventListener("focusin", event => this.#onAmountFocusin(event));
@@ -114,7 +119,7 @@ export class AppealForm {
         if (amount == "custom") {
           const input = control.querySelector(".appeal-form-amount__input");
           input.placeholder = String(toDollarNumber(currency, Object.keys(this.#paddleConfig.products[currency][frequency])[3]));
-          input.dataset.minimum = toDollarNumber(currency, this.#paddleConfig.products[currency][frequency][amount]);
+          radio.value = this.#paddleConfig.products[currency][frequency][amount]["default"];
           radio.dataset.product = "custom";
         } else {
           control.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
@@ -168,12 +173,15 @@ export class AppealForm {
 
   /** Handle when an amount radio is selected or a custom amount input is filled */
   #onAmountInput(event) {
+    console.log("onAmountInput", event.target)
     if (event.target.type == "number") {
+      console.log("onAmountInput", event.target);
+      this.#getCustomInputRadio(event.target).value = Number(event.target.value) * 100;
       // Handle possible minimum amount error when custom amount input is filled
       this.#handleMinimumAmountError(event.target);
     } else if (event.target.type == "radio") {
       // Handle possible minimum amount error when custom amount is re-selected via radio
-      if (event.target.value == "custom") {
+      if (event.target.dataset.product == "custom") {
         this.#handleMinimumAmountError(this.#getCustomRadioInput(event.target));
       } else {
         // Hide minimum amount error when fixed amount (a non custom amount) is selected
@@ -193,17 +201,9 @@ export class AppealForm {
   #onSubmit(event) { 
     event.preventDefault();
     let radio = this.#frequenciesParentElement.querySelector(".appeal-form-amount__radio:checked");
-    let value = radio.value;
-    if (value == "custom") {
-      const input = this.#getCustomRadioInput(radio);
-      if (!input.value || parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
-        return this.#showMinimumAmountError(input);
-      } else {
-        value = input.value;
-      }
-    }
-    const frequency = radio.dataset.frequency;
     const product = radio.dataset.product;
+    const frequency = radio.dataset.frequency;
+
     this.#submitCallbacks.forEach(callback => callback({
       currency: this.#currencySelect.value, 
       frequency, 

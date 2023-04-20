@@ -614,13 +614,17 @@ class AppealForm {
       const frequencyParent = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(`.appeal-form-frequency--${frequency}`);
       frequencyParent.querySelector(".appeal-form-frequency__heading").innerHTML = adblock.strings[`appeal-form-frequency__heading--${frequency}`];
       const amountsParent = frequencyParent.querySelector(".appeal-form-amounts");
-      for (const amount in paddleConfig.products[formConfig.currency][frequency]) {
+      const formCurrencyValues = paddleConfig.products[formConfig.currency];
+      for (const amount in formCurrencyValues[frequency]) {
         let amountControl, amountRadio, amountInput;
         if (amount == "custom") {
           amountControl = customAmountTemplate.content.cloneNode(true).firstElementChild;
+          amountRadio = amountControl.querySelector(".appeal-form-amount__radio");
           amountInput = amountControl.querySelector(".appeal-form-amount__input");
           amountInput.dataset.testid = `appeal-form-amount__input--${frequency}`;
           amountInput.dataset.frequency = frequency;
+          console.log(formCurrencyValues[frequency]["custom"]["default"]);
+          amountRadio.value = formCurrencyValues[frequency]["custom"]["default"] || 0;
         } else {
           amountControl = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
         }
@@ -633,6 +637,7 @@ class AppealForm {
     }
     _classPrivateMethodGet(this, _updateAmounts, _updateAmounts2).call(this, formConfig.currency);
     _classPrivateFieldGet(this, _frequenciesParentElement).querySelectorAll(".appeal-form-amount__radio")[formConfig.selected].checked = true;
+
     // add form interaction listeners
     _classPrivateFieldGet(this, _currencySelect).addEventListener("change", event => _classPrivateMethodGet(this, _updateAmounts, _updateAmounts2).call(this, event.currentTarget.value));
     _classPrivateFieldGet(this, _frequenciesParentElement).addEventListener("focusin", event => _classPrivateMethodGet(this, _onAmountFocusin, _onAmountFocusin2).call(this, event));
@@ -669,7 +674,7 @@ function _updateAmounts2(currency) {
       if (amount == "custom") {
         const input = control.querySelector(".appeal-form-amount__input");
         input.placeholder = String(toDollarNumber(currency, Object.keys(_classPrivateFieldGet(this, _paddleConfig).products[currency][frequency])[3]));
-        input.dataset.minimum = toDollarNumber(currency, _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount]);
+        radio.value = _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount]["default"];
         radio.dataset.product = "custom";
       } else {
         control.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
@@ -710,12 +715,15 @@ function _onAmountFocusin2(event) {
   }
 }
 function _onAmountInput2(event) {
+  console.log("onAmountInput", event.target);
   if (event.target.type == "number") {
+    console.log("onAmountInput", event.target);
+    _classPrivateMethodGet(this, _getCustomInputRadio, _getCustomInputRadio2).call(this, event.target).value = Number(event.target.value) * 100;
     // Handle possible minimum amount error when custom amount input is filled
     _classPrivateMethodGet(this, _handleMinimumAmountError, _handleMinimumAmountError2).call(this, event.target);
   } else if (event.target.type == "radio") {
     // Handle possible minimum amount error when custom amount is re-selected via radio
-    if (event.target.value == "custom") {
+    if (event.target.dataset.product == "custom") {
       _classPrivateMethodGet(this, _handleMinimumAmountError, _handleMinimumAmountError2).call(this, _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, event.target));
     } else {
       // Hide minimum amount error when fixed amount (a non custom amount) is selected
@@ -726,17 +734,8 @@ function _onAmountInput2(event) {
 function _onSubmit2(event) {
   event.preventDefault();
   let radio = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(".appeal-form-amount__radio:checked");
-  let value = radio.value;
-  if (value == "custom") {
-    const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
-    if (!input.value || parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
-      return _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
-    } else {
-      value = input.value;
-    }
-  }
-  const frequency = radio.dataset.frequency;
   const product = radio.dataset.product;
+  const frequency = radio.dataset.frequency;
   _classPrivateFieldGet(this, _submitCallbacks).forEach(callback => callback({
     currency: _classPrivateFieldGet(this, _currencySelect).value,
     frequency,
@@ -773,7 +772,10 @@ const CONFIGURATION = {
             "2000": 46030,
             "3500": 46031,
             "5000": 46032,
-            "custom": 500
+            "custom": {
+              "min": 500,
+              "default": 35000
+            }
           },
           "monthly": {
             "199": 46074,
@@ -781,7 +783,10 @@ const CONFIGURATION = {
             "399": 46076,
             "499": 46077,
             "999": 46078,
-            "custom": 199
+            "custom": {
+              "min": 199,
+              "default": 499
+            }
           },
           "yearly": {
             "1000": 46079,
@@ -789,7 +794,10 @@ const CONFIGURATION = {
             "2000": 46081,
             "3500": 46082,
             "5000": 46083,
-            "custom": 500
+            "custom": {
+              "min": 500,
+              "default": 3500
+            }
           }
         },
         "AUD": {
