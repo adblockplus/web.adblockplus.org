@@ -15,6 +15,16 @@ function toDollarNumber(currency, cents) {
 }
 
 /** 
+ * Dollar amount (float) to cent amount (int) (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} dollar - amount in dollars (for applicable currencies)
+ */
+function toCentNumber(currency, dollar) {
+  return currency == "JPY" ? dollar : dollar * 100;
+}
+
+/** 
  * Cent amount (int) to dollar amount (float) with localised formatting (for applicable currencies) 
  * 
  * @param {string} currency - 3 letter currency code
@@ -193,23 +203,19 @@ export class AppealForm {
   #onSubmit(event) { 
     event.preventDefault();
     let radio = this.#frequenciesParentElement.querySelector(".appeal-form-amount__radio:checked");
-    let value = radio.value;
-    if (value == "custom") {
+    const currency = this.#currencySelect.value;
+    const frequency = radio.dataset.frequency;
+    const product = radio.dataset.product;
+    let amount = radio.value;
+    if (amount == "custom") {
       const input = this.#getCustomRadioInput(radio);
       if (!input.value || parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
         return this.#showMinimumAmountError(input);
       } else {
-        value = input.value;
+        amount = toCentNumber(currency, parseFloat(input.value));
       }
     }
-    const frequency = radio.dataset.frequency;
-    const product = radio.dataset.product;
-    this.#submitCallbacks.forEach(callback => callback({
-      currency: this.#currencySelect.value, 
-      frequency, 
-      amount: value, 
-      product,
-    }));
+    this.#submitCallbacks.forEach(callback => callback({ currency, frequency, amount,  product, }));
   }
 
   disable() {
