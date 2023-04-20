@@ -742,10 +742,11 @@ function _onSubmit2(event) {
   let amount = radio.value;
   if (amount == "custom") {
     const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
-    if (!input.value || parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
+    amount = parseFloat(input.value === "" ? input.placeholder : input.value);
+    if (parseFloat(amount) < parseFloat(input.dataset.minimum)) {
       return _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
     } else {
-      amount = toCentNumber(currency, parseFloat(input.value));
+      amount = toCentNumber(currency, amount);
     }
   }
   _classPrivateFieldGet(this, _submitCallbacks).forEach(callback => callback({

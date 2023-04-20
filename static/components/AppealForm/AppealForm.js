@@ -209,10 +209,11 @@ export class AppealForm {
     let amount = radio.value;
     if (amount == "custom") {
       const input = this.#getCustomRadioInput(radio);
-      if (!input.value || parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
+      amount = parseFloat(input.value === "" ? input.placeholder : input.value);
+      if (parseFloat(amount) < parseFloat(input.dataset.minimum)) {
         return this.#showMinimumAmountError(input);
       } else {
-        amount = toCentNumber(currency, parseFloat(input.value));
+        amount = toCentNumber(currency, amount);
       }
     }
     this.#submitCallbacks.forEach(callback => callback({ currency, frequency, amount,  product, }));
