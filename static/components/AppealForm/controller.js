@@ -28,12 +28,19 @@ const formConfig = CONFIGURATION.AppealForm;
 const placeholder = document.querySelector(".appeal-form");
 const appealForm = new AppealForm({ paddleConfig, formConfig, placeholder });
 
+eyeo = eyeo || {};
+eyeo.payment = eyeo.payment || {};
+
+function getCompletedUrl() {
+  return `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
+}
+
 appealForm.onSubmit((data) => {
 
   appealForm.disable();
 
   // Storing information to be consumed by optimizely and hotjar experiments
-  if (eyeo && eyeo.payment && eyeo.payment.shouldStoreContributionInfo) {
+  if (eyeo.payment.shouldStoreContributionInfo) {
     localStorage.setItem("contributionInfo", JSON.stringify({
       amount: data.amount,
       frequency: data.frequency,
@@ -65,7 +72,7 @@ appealForm.onSubmit((data) => {
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: `${location.origin}/payment-complete`,
+    success_url: getCompletedUrl(),
     cancel_url: location.href,
   };
 

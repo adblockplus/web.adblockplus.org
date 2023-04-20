@@ -1348,11 +1348,16 @@ const appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
   formConfig,
   placeholder
 });
+eyeo = eyeo || {};
+eyeo.payment = eyeo.payment || {};
+function getCompletedUrl() {
+  return `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
+}
 appealForm.onSubmit(data => {
   appealForm.disable();
 
   // Storing information to be consumed by optimizely and hotjar experiments
-  if (eyeo && eyeo.payment && eyeo.payment.shouldStoreContributionInfo) {
+  if (eyeo.payment.shouldStoreContributionInfo) {
     localStorage.setItem("contributionInfo", JSON.stringify({
       amount: data.amount,
       frequency: data.frequency,
@@ -1382,7 +1387,7 @@ appealForm.onSubmit(data => {
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: `${location.origin}/payment-complete`,
+    success_url: getCompletedUrl(),
     cancel_url: location.href
   };
   const product = data.product;
