@@ -76,10 +76,10 @@ export class AppealForm {
     // construct and reference form amounts
     this.#frequenciesParentElement = this.#parentElement.querySelector(".appeal-form-frequencies");
     for (const frequency in paddleConfig.products[formConfig.currency]) {
-      let radioNumber = 1;
       const frequencyParent = this.#frequenciesParentElement.querySelector(`.appeal-form-frequency--${frequency}`);
       frequencyParent.querySelector(".appeal-form-frequency__heading").innerHTML = adblock.strings[`appeal-form-frequency__heading--${frequency}`]
       const amountsParent = frequencyParent.querySelector(".appeal-form-amounts");
+      let i = 0;
       for (const amount in paddleConfig.products[formConfig.currency][frequency]) {
         let amountControl, amountRadio, amountInput;
         if (amount == "custom") {
@@ -91,10 +91,11 @@ export class AppealForm {
           amountControl = fixedAmountTemplate.content.cloneNode(true).firstElementChild;
         }
         amountRadio = amountControl.querySelector(".appeal-form-amount__radio");
-        amountRadio.dataset.testid = `appeal-form-amount__radio--${frequency}-${radioNumber++}`;
+        amountRadio.dataset.testid = `appeal-form-amount__radio--${frequency}-${i}`;
         amountRadio.dataset.frequency = frequency;
         this.#amountsControlElements.push(amountControl);
         amountsParent.appendChild(amountControl);
+        i = i + 1;
       }
     }
     this.#updateAmounts(formConfig.currency);
@@ -119,7 +120,7 @@ export class AppealForm {
     let i = 0;
     for (const frequency in this.#paddleConfig.products[currency]) {
       for (const amount in this.#paddleConfig.products[currency][frequency]) {
-        const control = this.#amountsControlElements[i++];
+        const control = this.#amountsControlElements[i];
         const radio = control.querySelector(".appeal-form-amount__radio");
         if (amount == "custom") {
           const input = control.querySelector(".appeal-form-amount__input");
@@ -131,6 +132,7 @@ export class AppealForm {
           radio.value = amount;
           radio.dataset.product = this.#paddleConfig.products[currency][frequency][amount];
         }
+        i = i + 1;
       }
     }
   }

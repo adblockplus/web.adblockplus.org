@@ -22,7 +22,17 @@ const isTestmode = paddleConfig == CONFIGURATION.Paddle.sandbox;
 
 if (isTestmode) Paddle.Environment.set("sandbox");
 
-Paddle.Setup({ vendor: paddleConfig.vendor });
+Paddle.Setup({ vendor: paddleConfig.vendor, eventCallback: data => {
+  if (data.event == "Checkout.Loaded") {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.classList.add("paddle-checkout-event")
+    input.dataset.event = "Checkout.Loaded";
+    input.dataset.currency = data.eventData.checkout.prices.customer.currency;
+    input.dataset.total = data.eventData.checkout.prices.customer.total;
+    document.body.appendChild(input);
+  }
+} });
 
 const formConfig = CONFIGURATION.AppealForm;
 const placeholder = document.querySelector(".appeal-form");
