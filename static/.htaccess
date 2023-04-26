@@ -133,6 +133,9 @@ SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|i
   RewriteCond %{QUERY_STRING} "(?:^|&)link=share(?:&|$)"
   RewriteRule ^ https://share.adblockplus.org/%{ENV:lang}/? [L,NC,R=301]
 
+  RewriteCond %{ENV:link} ^learn_more_premium_pass$
+  RewriteRule ^ https://flattr.com/ [L,NC,R=301]
+
   RewriteCond "%{DOCUMENT_ROOT}/%{ENV:lang}/%{ENV:link}" !-f
   RewriteRule ^ - [E=lang:!!]
 
