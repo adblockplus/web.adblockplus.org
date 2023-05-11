@@ -133,7 +133,7 @@ app.get('/pre-approved-function', (req, res) => {
 app.get('/update-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = ['DE', 'FR'].includes(country)
+  const page = country == 'DE'
     ? 'update-restricted'
     : 'update-unrestricted';
   const query = getQueryString(req);
@@ -143,7 +143,7 @@ app.get('/update-function/:language?', (req, res) => {
 app.get('/installed-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = ['DE', 'FR'].includes(country)
+  const page = country == 'DE'
     ? 'installed-restricted'
     : 'installed-unrestricted';
   const query = getQueryString(req);
@@ -153,7 +153,7 @@ app.get('/installed-function/:language?', (req, res) => {
 app.get('/contribution-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = ['DE', 'FR'].includes(country)
+  const page = country == 'DE'
     ? 'contribution-restricted'
     : 'contribution-unrestricted';
   const query = getQueryString(req);
