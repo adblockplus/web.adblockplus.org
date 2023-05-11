@@ -162,6 +162,42 @@ body
 {
   .privacy-footer a { color: #fff; }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+body.cv-2-2 .cv-hide {
+  display: none;
+}
+body.cv-2-2 .cv-2-2__message {
+  border: 4px solid #e40d0d;
+  border-radius: 7px;
+  margin-bottom: 32px;
+  margin-top: 35px;
+}
+body.cv-2-2 .cv-2-2__message-header {
+  height: 42px;
+  background: #e40d0d;
+  text-align: center;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0;
+}
+body.cv-2-2 .cv-2-2__message-text {
+  padding: 16px 24px;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
 .grid { display: flex; flex-wrap: wrap; margin: -1rem 0 0 -1rem; }
 
 .grid .cell { flex: 1; padding: 1rem 0 0 1rem; }

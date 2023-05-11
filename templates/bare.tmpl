@@ -12,7 +12,7 @@
     {% endblock %}
   </head>
 
-  <body>
+  <body class="{{ bodyClassName if bodyClassName else "" }}">
     {% block body %}
       {{ body | safe }}
     {% endblock %}
