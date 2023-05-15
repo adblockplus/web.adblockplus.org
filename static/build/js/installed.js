@@ -87,13 +87,15 @@ function getLanguageQueryString() {
 }
 
 function getLanguageInPath() {
-    const firstPath = window.location.pathname.split('/')[1];
+    const pathParts = location.pathname.split("/");
+    const firstPath = pathParts[1];
     try {
+        if (pathParts.length < 3) throw new Error();
         Intl.getCanonicalLocales(firstPath.replace("_", "-"));
+        return firstPath;
     } catch (error) {
         return ""
     }
-    return firstPath;
 }
 
 function getTwoLetterLocale() {
