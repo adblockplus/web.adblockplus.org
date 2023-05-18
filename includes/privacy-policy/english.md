@@ -41,6 +41,7 @@ The following privacy notice shall provide you with a general overview about the
         - Information whether the local storage of the extension configuration is corrupted
         - Filter subscriptions enabled/disabled
         - Identifying information about the devices that connect to the payment service provider
+        - IP address, metadata associated with the request such as language, user-agent and additional meta data associated with the message such as type of message, content, language
     - For all mobile products and Adblock Plus for Safari on macOS
         - Crash reports:
         {: .has-horizontal-list .semicolon-separated }
@@ -326,6 +327,8 @@ We use external service provider tools to receive donations and analyze fraudule
 We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk). We have entered into data processing agreements with Zendesk including the EU Standard Contractual Clauses (processors) – Commission Decision 2021/914 of 4 June 2021.
 
 We may store data on servers in countries outside the European Union, but only provided that an adequate level of protection is guaranteed and recognized by a specific adequacy decision of the European Commission (pursuant to Art. 45 GDPR). You can access the list of countries that the European Commission has recognized as providing adequate protection [here](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
+
+We use external service provider tools to help us optimize our performance in running donation campaigns and first run page. This service is provided by MoEngage, 315 Montgomery Street, 10th floor, San Francisco, 94104, USA. We have entered into data processing agreements with MoEngage including the EU Standard Contractual Clauses (processors) – Commission Decision 2021/914 of 4 June 2021.
 
 ### What rights do you have? {: #your-rights-long }
 

@@ -41,6 +41,7 @@ Der folgende Datenschutzhinweis soll dir einen allgemeinen Überblick über die 
         - Information, ob der lokale Speicher der Konfiguration der Erweiterung beschädigt ist
         - Filterabonnement aktiviert/deaktiviert
         - Identifizierung von Informationen zu Geräten, über die eine Verbindung zum Zahlungsanbieter hergestellt wird
+        - IP-Adresse, mit der Anfrage verknüpfte Metadaten wie z. B. Sprache, Nutzer-Agent sowie zusätzliche mit der Nachricht verknüpfte Metadaten wie Art der Nachricht, Inhalt oder Sprache
     - Für alle mobilen Produkte und Adblock Plus für Safari auf macOS
         - Absturzmelder:
         {: .has-horizontal-list .semicolon-separated }
@@ -325,7 +326,9 @@ Wir benutzen Tools von externen Dienstleistern, um Spenden zu erhalten. Dieser S
 
 Zudem nutzen wir auch Tools von Drittanbietern für den Nutzersupport. Diese Dienste werden von Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk bereitgestellt. Wir haben mit Zendesk einen Auftragsverarbeitungsvertrag geschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) −  Kommissionsentscheidung 2021/914 vom 4. Juni 2021. 
 
-Wir speichern möglicherweise Daten auf Servern in Ländern außerhalb der Europäischen Union, jedoch nur, wenn ein angemessenes Schutzniveau gewährleistet und durch einen spezifischen Angemessenheitsbeschluss der Europäischen Kommission (gemäß Art. 45 DSGVO) anerkannt ist. Die Liste der Länder, die von der Europäischen Kommission als hinreichend schützend anerkannt wurden, können Sie [hier](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) einsehen.
+Wir speichern möglicherweise Daten auf Servern in Ländern außerhalb der Europäischen Union, jedoch nur, wenn ein angemessenes Schutzniveau gewährleistet und durch einen spezifischen Angemessenheitsbeschluss der Europäischen Kommission (gemäß Art. 45 DSGVO) anerkannt ist. Die Liste der Länder, die von der Europäischen Kommission als hinreichend schützend anerkannt wurden, können du [hier](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) einsehen.
+
+Wir verwenden externe Zahlungsanbieter-Tools, die uns bei der Optimierung unserer Performance bei der Durchführung von Spendenkampagnen und der Willkommen-Seite unterstützten. Dieser Dienst wird von MoEngage, 315 Montgomery Street, 10. Etage, San Francisco, 94104, USA bereitgestellt. Wir haben Datenverarbeitungsverträge mit MoEngage abgeschlossen, einschließlich der EU-Standardvertragsklauseln (Datenverarbeiter) – Kommissionsentscheidung 2021/914 vom 4. Juni 2021.
 
 ### Welche Rechte hast du? {: #your-rights-long }
 

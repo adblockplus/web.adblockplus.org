@@ -40,6 +40,7 @@ A seguinte política de privacidade dará a você uma visão geral da coleta, pr
         - Informações sobre o armazenamento local da configuração da extensão estar ou não corrompido
         - Assinaturas de filtros habilitadas/desabilitadas
         - Informações de identificação sobre os dispositivos que se conectam ao provedor de serviços de pagamento
+        - Endereço IP, metadados associados à solicitação, como idioma, usuário-agente e metadados adicionais associados à mensagem, como tipo, conteúdo ou idioma da mensagem
     - Em todos os produtos móveis e no Adblock Plus para Safari no macOS
         - Relatório de falhas:
         {: .has-horizontal-list .semicolon-separated }
@@ -326,6 +327,8 @@ Utilizamos ferramentas de provedores de serviços externos para receber doaçõe
 Também usamos ferramentas de provedores de serviços externos no suporte ao usuário. Esses serviços são prestados pela Zendesk, Inc., 1019 Market Street, São Francisco, CA 94103 (Zendesk). Firmamos acordos de processamento de dados com a Zendesk que incluem as Cláusulas Contratuais Padrão da UE (processadores) – Decisão da Comissão 2021/914 de 4 de junho de 2021.
 
 Podemos armazenar dados em servidores em países fora da União Europeia, mas apenas se um nível adequado de proteção seja garantido e reconhecido por uma decisão de adequação específica da Comissão Europeia (de acordo com o Art. 45 do GDPR). Você pode acessar a lista de países que a Comissão Europeia reconheceu como tendo proteção adequada [aqui](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
+
+Utilizamos ferramentas de provedores de serviços externos para nos ajudar a otimizar o nosso desempenho na realização de campanhas de doações e página de primeira execução. O serviço é fornecido pela MoEngage, 315 Montgomery Street, 10th floor, San Francisco, 94104, EUA. Nós celebramos acordos de processamento de dados com a MoEngage, incluindo as Cláusulas Contratuais Padrão da UE (processadores) – Decisão da Comissão 2021/914 de 4 de junho de 2021.
 
 ### Quais direitos você tem? {: #your-rights-long }
 

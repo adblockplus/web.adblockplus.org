@@ -41,6 +41,7 @@ L’avis de confidentialité ci-dessous vous donne un aperçu général de la co
         - Information mentionnant si le stockage local de la configuration de l'extension est corrompu
         - Activation/désactivation aux abonnements à une liste de filtres
         - Identification des informations à propos des appareils qui se connectent au fournisseur de service de paiement
+        - Adresse IP et métadonnées associées à la demande, comme la langue, l’agent utilisateur et les métadonnées supplémentaires liées au message, comme le type de message, le contenu et la langue
     - Pour tous les produits mobile et Adblock Plus pour Safari sur macOS
         - Rapports de crash :
         {: .has-horizontal-list .semicolon-separated }
@@ -326,6 +327,8 @@ Nous utilisons les outils de prestataires de services externes pour la collecte 
 Nous utilisons également des outils de fournisseurs de services externes pour l'assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103, États-Unis (Zendesk). Nous avons conclu des accords de traitement de données avec Zendesk, comprenant les clauses contractuelles types de l'UE (processeurs) - Décision d'exécution (UE) 2021/914 de la Commission du 4 juin 2021.
 
 Nous pouvons stocker des données sur des serveurs situés dans des pays hors de l'Union européenne, mais uniquement à condition qu'un niveau de protection adéquat soit garanti et reconnu par une décision d'adéquation spécifique de la Commission européenne (conformément à l'article 45 du RGPD). Vous pouvez accéder à la liste des pays que la Commission européenne a reconnus comme offrant une protection adéquate [ici](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
+
+Nous avons recours à des prestataires de services externes pour optimiser les performances de nos campagnes de dons et de notre première page de lancement. Ce service est assuré par MoEngage, 315 Montgomery Street, 10th floor, San Francisco, 94104, USA. Nous avons conclu des accords de traitement des données avec MoEngage, y compris les Clauses contractuelles types de l’UE (sous-traitants) – Décision de la Commission 2021/914 du 4 juin 2021.
 
 ### Quels sont vos droits ? {: #your-rights-long }
 
