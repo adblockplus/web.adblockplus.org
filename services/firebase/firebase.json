@@ -204,20 +204,6 @@
         "type": 301
       },
 
-      // Redirect to cloud run rewrite for optimizely
-      {
-        "source": "/js/testing/optimizely.js",
-        "destination": "/optimizely-function",
-        "type": 301
-      },
-
-      // Redirect to cloud run rewrite for hotjar
-      {
-        "source": "/js/testing/hotjar.js",
-        "destination": "/hotjar-function",
-        "type": 301
-      },
-
       // Redirect to cloud run rewrite for update page
       {
         "regex": "(?i)^/(?P<language>[\\w-]{2,6}/)?update/?$",
@@ -246,20 +232,6 @@
       },
       {
         "source": "/currency",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/optimizely-function",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/hotjar-function",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"

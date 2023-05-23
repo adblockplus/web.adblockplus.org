@@ -7,12 +7,6 @@ let euRules, geoipRules;
 
 let euRules2, geoipRules2;
 
-// EU countries in static/js/testing/.htaccess
-let euCountries;
-
-// hotjar countries in static/js/testing/.htaccess
-let hotjarCountries;
-
 // pre-approved countries in static/js/testing/.htaccess
 let preapprovedCountries;
 
@@ -76,44 +70,6 @@ app.get('/currency', (req, res) => {
   const queryString = getQueryString(req);
 
   res.redirect(302, `/currencies/${paymentConfig}${queryString}`);
-});
-
-app.get('/optimizely-function', (req, res) => {
-  euCountries = euCountries || [
-    'AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE','ES', 'FI', 'FR', 'GB', 'GR',
-    'HR', 'HU', 'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'PL',
-    'PT', 'RO', 'SE', 'SI'
-  ];
-
-  const countryCode = req.headers['x-country-code'];
-
-  const queryString = getQueryString(req);
-
-  const target = euCountries.includes(countryCode)
-    ? 'noop.js'
-    : 'firebase/optimizely.js';
-  
-  res.redirect(302, `/js/testing/${target}${queryString}`);
-});
-
-app.get('/hotjar-function', (req, res) => {
-  hotjarCountries = hotjarCountries || ['US', 'CA', 'AU', 'NZ'];
-
-  const countryCode = req.headers['x-country-code'];
-
-  const acceptLanguages = req.headers['accept-language'].split(',');
-
-  const queryString = getQueryString(req);
-
-  let target;
-
-  if (hotjarCountries.includes(countryCode) && acceptLanguages.includes('en')) {
-    target = 'firebase/hotjar.js';
-  } else {
-    target = 'noop.js';
-  }
-  
-  res.redirect(302, `/js/testing/${target}${queryString}`);
 });
 
 app.get('/update-function/:language?', (req, res) => {
