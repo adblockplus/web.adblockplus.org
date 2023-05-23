@@ -422,8 +422,8 @@ deploy_cloud_run:review:
     - gcloud config set project $GCP_PROJECT_ID
   script:
     - cd services/cloudrun
-    - gcloud builds submit --tag gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy b-$CI_COMMIT_REF_SLUG --image gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
+    - gcloud builds submit --tag europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
+    - gcloud run deploy b-$CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     on_stop: teardown_cloud_run:review
@@ -454,8 +454,8 @@ deploy_cloud_run:review:staging:
     - gcloud config set project $GCP_PROJECT_ID
   script:
     - cd services/cloudrun
-    - gcloud builds submit --tag gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy $CI_COMMIT_REF_SLUG --image gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
+    - gcloud builds submit --tag europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
+    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
   environment:
     name: review/staging/$CI_COMMIT_REF_SLUG
   only:
@@ -471,8 +471,8 @@ deploy_cloud_run:production:
     - gcloud config set project $GCP_PROJECT_ID
   script:
     - cd services/cloudrun
-    - gcloud builds submit --tag gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy $CI_COMMIT_REF_SLUG --image gcr.io/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
+    - gcloud builds submit --tag europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
+    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
   environment:
     name: production/$CI_COMMIT_REF_SLUG
   only:
