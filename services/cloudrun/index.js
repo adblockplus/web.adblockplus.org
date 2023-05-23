@@ -116,20 +116,6 @@ app.get('/hotjar-function', (req, res) => {
   res.redirect(302, `/js/testing/${target}${queryString}`);
 });
 
-app.get('/pre-approved-function', (req, res) => {
-  preapprovedCountries = preapprovedCountries || ['AU', 'CA', 'NZ'];
-
-  const countryCode = req.headers['x-country-code'];
-
-  const queryString = getQueryString(req);
-
-  const target = !preapprovedCountries.includes(countryCode)
-    ? 'setup.js'
-    : 'firebase/pre-approved.js';
-  
-  res.redirect(302, `/js/testing/${target}${queryString}`);
-});
-
 app.get('/update-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
