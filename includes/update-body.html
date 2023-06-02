@@ -42,25 +42,37 @@
     </div>
   </aside>
   <? include payment-form ?>
-  <h2>
+  <h2 style="margin-block-end: 0.5rem;">
     {{ whats-new-header-1-unrestricted What’s new? }}
   </h2>
   <p>
-    {{ whats-new-lead-1 Here is an overview of some recent improvements. }}
+    {{ new__paragraph-1 At Adblock Plus, we aim to continue to provide functionality that makes your internet browsing experience better. Here are a few things we’ve been working on: }}
   </p>
+  <h3>
+    {{ new__item-1__heading Continued improvements to ad blocking }}
+  </h3>
   <p>
-    {{ improved-ad-blocking-functionality-unrestricted <strong>Improved ad blocking functionality.</strong> Many websites look for ways to prevent Adblock Plus from blocking annoying ads. That’s why we’ve focused on improving our ability to block these ads and keep up with these ever changing sites. With the newly redesigned AdBlock for Safari, along with updates in Chrome, Edge, and Firefox, you’ll continue to see less intrusive ads as you browse the web. }}
+    {{ new__item-1__paragraph-1 Many websites look for new ways to prevent Adblock Plus from blocking annoying ads. Our goal is to stay ahead of these ever-changing sites and help you stay ad-free! }}
   </p>
+  <h3>
+    {{ new__item-2__heading Block more distractions (Premium) }}
+  </h3>
   <p>
-    {{ improved-architecture-for-the-future <strong>Improved architecture for the future.</strong>. Manifest V3, the latest version of the extension platform for Chromium based browsers, is on the horizon. And we’ve been getting ready for it! MV3 represents a large shift in how browser extensions will work, requiring our team to make some big changes to how Adblock Plus works. We’ve made lots of progress so that we can continue to serve our users as the internet landscape changes. }}
+    {{ new__item-2__paragraph-1 We've added functionality to help remove annoyances like newsletter popups, push notifications, floating videos, or surveys to make your browsing experience even more seamless. This functionality is turned on automatically for new Premium users. }}
   </p>
+  <h3>
+    {{ new__item-3__heading Fewer anti-adblock walls (Premium) }}
+  </h3>
   <p>
-    {{ customize-pages-as-you-browse <strong>Customize pages as you browse.</strong> We’ve released our block element feature which allows you to block parts of a webpage even if it’s not an ad. For instance, you could find parts of a web page, like sidebar suggestions, particularly annoying. With this new feature, you can block any part of a page so that it remains hidden every time you visit that site. }}
+    {{ new__item-3__paragraph-1 Coming soon! You may have noticed that more sites are beginning to ask you to turn off your ad blocker when you visit. We’ve introduced a new feature for Adblock Plus Premium that reduces the number of walls that ask you to turn off ad blockers, so you can see fewer ads overall and continue having a good browsing experience. }}
   </p>
+  <h3>
+    {{ new__item-3__heading Hide cookie warnings (Premium)}}
+  </h3>
   <p>
-    {{ adblock-plus-premium-is-here <strong>Adblock Plus Premium is here!</strong> With Adblock Plus Premium, you can block more targeted distractions across websites including site notifications, floating videos, newsletter pop-ups, and more. You can learn more about Premium <a href="https://accounts.adblockplus.org/premium">here</a>. And if you’ve already contributed before, you can <a href="https://help.adblockplus.org/hc/en-us/articles/7982499964051-How-to-redeem-your-Adblock-Plus-Premium-upgrade">access</a> these Premium features right away. }}
+    {{ new__item-4__paragraph-1 Coming soon! A new list will allow you to access the content you want without seeing cookie prompts on every site. <a href="https://accounts.adblockplus.org/premium">Learn more about Adblock Plus Premium.</a> }}
   </p>
-  <p id="whats-new-support">
+  <p id="whats-new-support" style="margin-block-start: 1.5rem;">
     {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
   </p>
   <script>
