@@ -3,9 +3,9 @@ import { writeFileSync, readdirSync, existsSync, readFileSync, mkdirSync } from 
 import { join } from 'path';
 
 const LOCALES = 'locales';
-const DOT = '.';
 const HTML_ATTRIBUTES_PATTERN = /(?<=<[\w]+)(\s[^>]*)/gmiu;
 
+program.option("-o, --output <path>", "path to website", ".")
 program.requiredOption('-i, --input <path>', 'path to translations');
 program.parse();
 const args = program.opts();
@@ -14,17 +14,19 @@ const openLocaleFile = (path) => {
   if (existsSync(path)) {
     return JSON.parse(readFileSync(path, {encoding: 'utf-8'}));
   } else {
-    // Warning in case locale file should but doesn't exist at path (aka the new or existing path is incorrect)
-    console.warn('Creating locale file', path);
-    writeFileSync(path, JSON.stringify({}, null, 2));
+    console.warn("Opening new locale file", path)
     return {};
   }
 }
 
+/** remove dotfiles from list via reduce */
 const excludeDotfiles = (list, name) => {
   if (name[0] != '.') list.push(name);
   return list;
 }
+
+/** remove copy marks from file names e.g. "name (1).ext" > "name.ext" */
+const removeCopyMarks = (name) => name.replace(/\s\(\d\)/, "")
 
 const inputLocalePaths = readdirSync(args.input)
 .reduce(excludeDotfiles, []);
@@ -36,10 +38,10 @@ if (!outputLocalePaths.length) throw new Error("Didn't find locale paths in proj
 
 inputLocalePaths.forEach(inputLocale => {
   let outputLocale = inputLocale;
-  let outputPath = join(DOT, LOCALES, outputLocale);
+  let outputPath = join(args.output, LOCALES, outputLocale);
   if (!existsSync(outputPath)) {
     outputLocale = outputLocale.split('_')[0];
-    outputPath = join(DOT, LOCALES, outputLocale);
+    outputPath = join(args.output, LOCALES, outputLocale);
     if (!existsSync(outputPath)) {
       console.warn('Creating locale directory', outputPath)
       mkdirSync(outputPath);
@@ -47,9 +49,10 @@ inputLocalePaths.forEach(inputLocale => {
   }
   readdirSync(join(args.input, inputLocale))
   .reduce(excludeDotfiles, [])
-  .forEach(inputFilePath => {
-    const outputPath = join(DOT, LOCALES, outputLocale, inputFilePath);
-    const inputObject = openLocaleFile(join(args.input, inputLocale, inputFilePath));
+  .forEach(inputFilename => {
+    const outputFilename = removeCopyMarks(inputFilename);
+    const outputPath = join(args.output, LOCALES, outputLocale, outputFilename);
+    const inputObject = openLocaleFile(join(args.input, inputLocale, inputFilename));
     const outputObject = openLocaleFile(outputPath);
     Object.keys(inputObject).forEach(key => {
       let translation = inputObject[key];
@@ -63,7 +66,7 @@ inputLocalePaths.forEach(inputLocale => {
       outputObject[key].message = translation;
     });
     writeFileSync(
-      join(DOT, LOCALES, outputLocale, inputFilePath), 
+      join(args.output, LOCALES, outputLocale, outputFilename), 
       JSON.stringify(outputObject, null, 2)
     );
   });
