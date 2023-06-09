@@ -56,6 +56,12 @@ inputLocalePaths.forEach(inputLocale => {
     const outputObject = openLocaleFile(outputPath);
     Object.keys(inputObject).forEach(key => {
       let translation = inputObject[key];
+      if (typeof translation == "object" && translation.hasOwnProperty("message")) {
+        translation = translation.message;
+      }
+      if (typeof translation != "string") {
+        throw new TypeError("Translation format error");
+      }
       // CAUTION: CMS only currently allows translations without HTML attributes through unescaped.
       // HTML attributes are automatically inserted into translations if they exist in the default string.
       if (HTML_ATTRIBUTES_PATTERN.exec(translation)) {
