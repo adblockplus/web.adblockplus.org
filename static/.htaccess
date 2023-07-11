@@ -181,17 +181,6 @@ Header merge  Vary "Origin"
 
 </FilesMatch>
 
-<FilesMatch ^installed$>
-
-  GeoIPEnable On
-
-  # Fall back to general update page for FR and DE location
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$ [OR]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR|DE)$
-  RewriteRule "([\w\-]{2,6})\/installed$" "/$1/installed-restricted" [NC,L]
-
-</FilesMatch>
-
 <FilesMatch ^contribution$>
 
   GeoIPEnable On

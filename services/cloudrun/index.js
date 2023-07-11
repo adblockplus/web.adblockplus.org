@@ -82,16 +82,6 @@ app.get('/update-function/:language?', (req, res) => {
   res.redirect(302, path.join('/', language, page) + query);
 });
 
-app.get('/installed-function/:language?', (req, res) => {
-  const country = req.headers['x-country-code'] || '';
-  const language = req.params.language || '';
-  const page = country == 'DE'
-    ? 'installed-restricted'
-    : 'installed-unrestricted';
-  const query = getQueryString(req);
-  res.redirect(302, path.join('/', language, page) + query);
-});
-
 app.get('/contribution-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';

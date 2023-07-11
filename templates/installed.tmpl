@@ -3,18 +3,16 @@
   <head>
     <? include meta/standard ?>
     <? include config ?>
-    <? include analytics ?>
-
+    <? include optimizely ?>
+    <? include hotjar ?>
+    <? include pre-approved-analytics ?>
     {% block head %}
       {{ head | safe }}
     {% endblock %}
   </head>
-
   <body>
     {% block body %}
       {{ body | safe }}
     {% endblock %}
-
-    <? include pre-approved-analytics ?>
   </body>
 </html>
