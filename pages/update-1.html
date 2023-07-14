@@ -1,0 +1,74 @@
+title=Adblock Plus has been updated
+prevent_cookie_prompt=1
+robots=none
+template=bare
+page=update
+
+<head>
+  <link rel="stylesheet" href="build/css/update-1.min.css">
+  <script>
+    path("payment", {
+      pageId: 2,
+      campaignId: 5,
+      productId: "ME"
+    });
+  </script>
+</head>
+
+<div class="update container content">
+  <div class="update-header clearfix">
+    <img alt="" height="130" width="130" class="update-header-image" src="/img/adblock-plus-latest.svg">
+    <h1 class="update-header-heading">
+      {{ abp-can-be-improved Your Adblock Plus can be improved! }}
+    </h1>
+    <p class="update-header-lead">
+      {{ adding-enhancements We’ve recently made the first of a series of enhancements to Adblock Plus. With the launch of Adblock Plus Premium, we’ve developed additional ways to help our users enjoy an internet experience with fewer pop-ups and distractions. We’ve highlighted that work below. }}
+    </p>
+  </div>
+  <p>
+    {{ abp-free-software Our team spends thousands of hours ensuring that Adblock Plus provides the best online experience for everyone. This year we’ve focused on making it easier for our users to block more pop-ups and distractions, and we’re just getting started. We’ve love for you to check out Adblock Plus Premium. <strong>Every contribution is appreciated!</strong> }}
+  </p>
+
+  <? include payment-form ?>
+
+  <? include product-info-dialog ?>
+
+  <h2>
+    {{ whats-new-header-1 What’s new? }}
+  </h2>
+  <p>
+    {{ enjoy-fewer-distractions With Adblock Premium you can enjoy an internet experience with far fewer distractions. }}
+  </p>
+  <ul>
+    <li>
+      {{ stop-autoplay-video <strong>Stop autoplay video feeds. </strong> Hide the videos used by many websites that play automatically and follow you around their website as you browse. }}
+    </li>
+    <li>
+      {{ remove-newsletter-popups <strong>Remove newsletter pop-ups.</strong> Put an end to the pop-ups websites use to get you to sign up for their emails and newsletter lists. }}
+    </li>
+    <li>
+      {{ block-survey-requests <strong>Block Site Notifications and Survey Requests.</strong> Many websites ask to track your location or ask you to participate in short surveys. Now we’ll automatically decline these requests from the websites you visit. }}
+    </li>
+    <li>
+      {{ hide-cookie-notices <strong>Hide cookie consent notices.</strong> Soon you’ll be able to put an end to those annoying cookie consent banners used on most websites thanks to a new cookie blocking feature we’re finishing up. }}
+    </li>
+  </ul>
+  <p id="whats-new-support">
+    {{ whats-new-support Need to report an issue? Reach out to us via social media, <a data-mask='{"href": "bWFpbHRvOmRvbmF0aW9uc0BhZGJsb2NrcGx1cy5vcmc="}'>email</a> or the <a href="https://adblockplus.org/forum">user forum</a>. }}
+  </p>
+  <script>
+    (function(){
+      var _wns = document.getElementById('whats-new-support');
+      _wns.innerHTML = _wns.innerHTML.replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+    })()
+  </script>
+</div>
+<footer class="privacy-footer">
+  <a href="https://adblockplus.org/privacy">
+    {{ privacy-policy Privacy Policy }}
+  </a>
+</footer>
+
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/currency"></script>
+<script src="/build/js/update-1.min.js"></script>
