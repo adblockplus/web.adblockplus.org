@@ -486,7 +486,8 @@ $(document).ready(function() {
         queryParams.append("thankyou", 1);
         queryParams.append("var", 1);
     }
-    const onSuccessURL = theURL.origin + theURL.pathname + "?" + queryParams.toString();
+    queryParams.append("u", getUserId());
+    const onSuccessURL = `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
 
     var ___AB_DROPDOWN_SHOW = false;
     var ___AB_USING_CURRENCY_LIB = false;
