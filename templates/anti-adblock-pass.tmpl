@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html <? include html-attributes ?>>
+  <head>
+    <? include meta/standard ?>
+    <? include meta/social ?>
+    <? include styles ?>
+    <? include config ?>
+    {% block head %}
+      {{ head | safe }}
+    {% endblock %}
+  </head>
+
+  <body class="{{ bodyclass if bodyclass else "" }}">
+    <div class="page">
+      {% block body %}
+        {{ body | safe }}
+      {% endblock %}
+    </div>
+
+    <? include footer ?>
+  </body>
+</html>
