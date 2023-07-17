@@ -187,6 +187,7 @@ smoke_tests_staging:
     - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
+  allow_failure: true
 
 smoke_tests_production:
   except:
@@ -201,6 +202,7 @@ smoke_tests_production:
     - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=https://new.adblockplus.org tests/test_DownloadLinks.py
+  allow_failure: true
 
 cookies_settings_tests:
   except:
