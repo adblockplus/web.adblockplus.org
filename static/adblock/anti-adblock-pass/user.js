@@ -13,34 +13,8 @@
         }
         return result.join('') + timeSuffix;
     }
-
-    function injectUserId() {
-        let userId = window.adblock_userid = getUserId() || getPremiumUserId() || generateUserId();
-        let userIdElement = document.getElementById("adblock_user_id");
-        if (!userIdElement) {
-            userIdElement = document.createElement("div");
-            userIdElement.id = "adblock_user_id";
-            userIdElement.innerText = userId;
-            userIdElement.hidden = true;
-            document.body.appendChild(userIdElement);
-        }
-    
-        let premiumUserId = window.adblock_premium_userid = getPremiumUserId() || userId;
-        let premiumUserIdElement = document.getElementById("adblock_premium_user_id");
-        if (!premiumUserIdElement) {
-            premiumUserIdElement = document.createElement("div");
-            premiumUserIdElement.id = "adblock_premium_user_id"
-            premiumUserIdElement.innerText = premiumUserId;
-            premiumUserIdElement.hidden = true;
-            document.body.appendChild(premiumUserIdElement);       
-        }    
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", injectUserId);
-    } else {
-        injectUserId();
-    }
+    const userId = window.adblock_userid = getUserId() || getPremiumUserId() || generateUserId();
+    const premiumUserId = window.adblock_premium_userid = getPremiumUserId() || userId;
 })();
 
 // Returns the adblock userid, if known
