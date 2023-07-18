@@ -19,13 +19,11 @@ function matchHeightOnResize(matchTarget, heightTarget, minWidth) {
 
 }
 
-/*
 matchHeightOnResize(
-  document.getElementById("anti-adblock-pass__section-3__plan-1__description"),
-  document.getElementById("anti-adblock-pass__section-3__plan-2__description"),
-  720
+  document.getElementById("anti-adblock-pass__plan-1__subheading"),
+  document.getElementById("anti-adblock-pass__plan-2__subheading"),
+  576
 );
-*/
 
 /**
  * Simple inline tooltip
