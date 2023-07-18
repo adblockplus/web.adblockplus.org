@@ -144,7 +144,7 @@ html {
   display: inline-block;
 }
 
-.premium-button {
+.premium-cta {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -159,60 +159,26 @@ html {
   color: #fff;
 }
 
-.premium-button:hover,
-.premium-button:active,
-.premium-button:focus {
+.premium-cta:hover,
+.premium-cta:active,
+.premium-cta:focus {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-.premium-button:disabled,
-.premium-button.disabled {
+.premium-cta:disabled,
+.premium-cta.disabled {
   cursor: not-allowed;
 }
 
-.premium-button:disabled:hover,
-.premium-button:disabled:active,
-.premium-button:disabled:focus,
-.premium-button.disabled:hover,
-.premium-button.disabled:active,
-.premium-button.disabled:focus {
+.premium-cta:disabled:hover,
+.premium-cta:disabled:active,
+.premium-cta:disabled:focus,
+.premium-cta.disabled:hover,
+.premium-cta.disabled:active,
+.premium-cta.disabled:focus {
   background-color: #C6C6C6 !important;
   box-shadow: none !important;
 }
-
-.fr .premium-button,
-.de .premium-button {
-  color: #C6C6C6 !important;
-  border: 1px solid #C6C6C6 !important;
-  background-color: #fff !important;
-}
-
-.de .premium-button:hover,
-.de .premium-button:active,
-.de .premium-button:focus,
-.de .premium-button:hover,
-.de .premium-button:active,
-.de .premium-button:focus,
-.fr .premium-button:hover,
-.fr .premium-button:active,
-.fr .premium-button:focus,
-.fr .premium-button:hover,
-.fr .premium-button:active,
-.fr .premium-button:focus {
-  color: #fff !important;
-  background-color: #C6C6C6 !important;
-  box-shadow: none !important;
-  cursor: not-allowed !important;
-}
-
-.fr-only,
-.de-only { display: none; }
-
-.fr .fr-only,
-.de .de-only { display: block; }
-
-.fr .not-fr,
-.de .not-de { display: none !important; }
 
 /*******************************************************************************
  * Dynamic background behind first and second sections
@@ -227,21 +193,6 @@ html {
   width: 100%;
   background-color: #F7F7F7;
   z-index: -1;
-}
-
-/*******************************************************************************
- * Alert bars
- ******************************************************************************/
-
-.alert-bar {
-  text-align: center;
-  padding: 1rem;
-  color: #000;
-  background-color: gray;
-}
-
-.alert-bar.alert-bar--gold {
-  background-color: #EDA51E;
 }
 
 /*******************************************************************************
@@ -360,7 +311,7 @@ html {
   color: #333;
 }
 
-.not-hovered .premium-plan-yearly .premium-button {
+.not-hovered .premium-plan-yearly .premium-cta {
   border: 1px solid #EDA51E;
   background-color: #EDA51E;
   color: #fff;
@@ -378,17 +329,17 @@ html {
     box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
   }
 
-  .premium-plan:hover .premium-button,
-  .premium-plan:active .premium-button,
-  .premium-plan:focus .premium-button {
+  .premium-plan:hover .premium-cta,
+  .premium-plan:active .premium-cta,
+  .premium-plan:focus .premium-cta {
     border: 1px solid #EDA51E;
     background-color: #EDA51E;
     color: #fff;
   }
 
-  .premium-plan:hover .premium-button.disabled,
-  .premium-plan:active .premium-button.disabled,
-  .premium-plan:focus .premium-button.disabled {
+  .premium-plan:hover .premium-cta.disabled,
+  .premium-plan:active .premium-cta.disabled,
+  .premium-plan:focus .premium-cta.disabled {
     border: 1px solid #C6C6C6;
     background-color: #C6C6C6;
   }
@@ -624,7 +575,7 @@ html {
   margin-top: 0.6rem;
 }
 
-.premium-plan .premium-button {
+.premium-plan .premium-cta {
   margin-top: 1.625rem;
   margin-bottom: 2.5rem;
   color: #0797E1;
@@ -633,7 +584,7 @@ html {
 }
 
 @media (min-width: 992px) {
-  .premium-plan .premium-button {
+  .premium-plan .premium-cta {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -756,7 +707,7 @@ html {
   margin: 0;
 }
 
-.premium-features .premium-button {
+.premium-features .premium-cta {
   color: #fff;
   margin-top: 2rem;
   margin-bottom: 0;

@@ -55,7 +55,7 @@ const premiumPlans = ['monthly', 'yearly'];
 window.addEventListener('click', event => {
   if (
     event.target.classList
-    && event.target.classList.contains('premium-button')
+    && event.target.classList.contains('premium-cta')
     && event.target.dataset
     && event.target.dataset.plan
   ) {
