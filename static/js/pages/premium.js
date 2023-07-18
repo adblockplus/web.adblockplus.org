@@ -50,6 +50,7 @@ function setAutoHeights(targets)
  }
 
 // Enable pre-selecting monthly/yearly payment options via clicking a 
+<<<<<<< Updated upstream
 // .premium-button[data-plan] with an allowlisted plan
 const premiumPlans = ['monthly', 'yearly'];
 window.addEventListener('click', event => {
@@ -66,6 +67,24 @@ window.addEventListener('click', event => {
       .click();
   }
 });
+=======
+// .premium-cta[data-plan] with an allowlisted plan
+// const premiumPlans = ['monthly', 'yearly'];
+// window.addEventListener('click', event => {
+//   if (
+//     event.target.classList
+//     && event.target.classList.contains('premium-cta')
+//     && event.target.dataset
+//     && event.target.dataset.plan
+//   ) {
+//     const plan = event.target.dataset.plan;
+//     if (premiumPlans.indexOf(plan) == -1) return;
+//     document
+//       .querySelector(`[data-recurring-frequency="${plan}"]`)
+//       .click();
+//   }
+// });
+>>>>>>> Stashed changes
 
 function onDOMContentLoaded()
 {
