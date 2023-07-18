@@ -80,9 +80,7 @@ class InlineTooltip {
   }
 }
 
-/*
 new InlineTooltip(
   document.getElementById("anti-adblock-pass-tooltip-trigger"),
   document.getElementById("anti-adblock-pass-tooltip")
 );
-*/
