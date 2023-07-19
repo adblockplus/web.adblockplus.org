@@ -670,45 +670,52 @@ $(document).ready(function() {
             .done(function(msg) {
                 if (msg) {
                     if (msg.success === true) {
-                        activateExtension(
-                            function onSuccess() {
-                                setProgressIndicatorTo(3);
-                                Page.InProgressSpinner.fadeOut(1000, function() {
-                                    Page.SuccessCard.show();
-                                });
-                                // If user opted in to receive newsletter, send log message.
-                                if (
-                                    localStorage !== null &&
-                                    typeof localStorage !== "undefined" &&
-                                    typeof localStorage.getItem === "function"
-                                ) {
-                                    try {
-                                        if (Boolean(localStorage.getItem("email-optin")) === true) {
-                                            if (typeof _logV2MiscEvent === "function") {
-                                                _logV2MiscEvent("newsletter_optin");
-                                            }
-                                            localStorage.removeItem("email-optin");
-                                        }
-                                    } catch (err) {
-                                        console.warn("Failed to get localStorage e-mail opt-in preference. Err: ", err);
-                                    }
-                                }
-                                if (pageActionAlreadyDonated && typeof _logV2MiscEvent === "function") {
-                                    // Log if user successfully completes already donated flow from email link.
-                                    _logV2MiscEvent("email_already_donated_success");
-                                }
-                            },
-                            function onFailure() {
-                                Page.InProgressSpinner.fadeOut(1000, function() {
-                                    Page.EProblemActivating.show();
-                                    setProgressIndicatorTo(0);
-                                    if (pageActionAlreadyDonated && typeof _logV2MiscEvent === "function") {
-                                        // Log if user successfully completes already donated flow.
-                                        _logV2MiscEvent("email_already_donated_fail");
-                                    }
-                                });
-                            }
-                        );
+                        // FIXME: Temporary solution for the anti-adblock-pass page since ABP won't activate from anywhere other than /premium
+                        const activationParams = new URLSearchParams();
+                        activationParams.add("thankyou", 1);
+                        activationParams.add("var", 1);
+                        activationParams.add("u", getUserId());
+                        window.location.href = `https://accounts.adblockplus.org/premium?${activationParams.toString()}`;
+                        return;
+                        // activateExtension(
+                        //     function onSuccess() {
+                        //         setProgressIndicatorTo(3);
+                        //         Page.InProgressSpinner.fadeOut(1000, function() {
+                        //             Page.SuccessCard.show();
+                        //         });
+                        //         // If user opted in to receive newsletter, send log message.
+                        //         if (
+                        //             localStorage !== null &&
+                        //             typeof localStorage !== "undefined" &&
+                        //             typeof localStorage.getItem === "function"
+                        //         ) {
+                        //             try {
+                        //                 if (Boolean(localStorage.getItem("email-optin")) === true) {
+                        //                     if (typeof _logV2MiscEvent === "function") {
+                        //                         _logV2MiscEvent("newsletter_optin");
+                        //                     }
+                        //                     localStorage.removeItem("email-optin");
+                        //                 }
+                        //             } catch (err) {
+                        //                 console.warn("Failed to get localStorage e-mail opt-in preference. Err: ", err);
+                        //             }
+                        //         }
+                        //         if (pageActionAlreadyDonated && typeof _logV2MiscEvent === "function") {
+                        //             // Log if user successfully completes already donated flow from email link.
+                        //             _logV2MiscEvent("email_already_donated_success");
+                        //         }
+                        //     },
+                        //     function onFailure() {
+                        //         Page.InProgressSpinner.fadeOut(1000, function() {
+                        //             Page.EProblemActivating.show();
+                        //             setProgressIndicatorTo(0);
+                        //             if (pageActionAlreadyDonated && typeof _logV2MiscEvent === "function") {
+                        //                 // Log if user successfully completes already donated flow.
+                        //                 _logV2MiscEvent("email_already_donated_fail");
+                        //             }
+                        //         });
+                        //     }
+                        // );
                     }
                 } else {
                     // we didn't get a response from the server at all...
