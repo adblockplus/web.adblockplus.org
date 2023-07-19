@@ -792,6 +792,6 @@ $(document).ready(function() {
     }
 
     if (typeof _logV2PageView !== "undefined") {
-        _logV2PageView("myadblock_enrollment");
+        _logV2PageView("anti_adblock_pass");
     }
 });
