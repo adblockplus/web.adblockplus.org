@@ -486,6 +486,7 @@ $(document).ready(function() {
         queryParams.append("thankyou", 1);
         queryParams.append("var", 1);
     }
+    queryParams.append("anti_adblock_pass__checkout", 1);
     queryParams.append("u", getUserId());
     const onSuccessURL = `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
 
@@ -674,6 +675,7 @@ $(document).ready(function() {
                         const activationParams = new URLSearchParams();
                         activationParams.append("thankyou", 1);
                         activationParams.append("var", 1);
+                        activationParams.append("anti_adblock_pass__already_donated", 1);
                         activationParams.append("u", getUserId());
                         window.location.href = `https://accounts.adblockplus.org/premium?${activationParams.toString()}`;
                         return;

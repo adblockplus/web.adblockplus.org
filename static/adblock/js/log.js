@@ -26,6 +26,18 @@ _logV2Message = function(event, params, callback) {
         }
     }
 
+    // FIXME: Patching in anti_adblock_pass params as log params
+    // to destinguish between regular events and events caused artificially
+    // by the need to redirect from the anti-adblock-pass page to the premium
+    // page for activation without an extension release 
+    const logParams = new URLSearchParams(window.location.search);
+    if (logParams.has("anti_adblock_pass__checkout")) {
+        params["anti_adblock_pass__checkout"] = 1;
+    }
+    if (logParams.has("anti_adblock_pass__already_donated")) {
+        params["anti_adblock_pass__already_donated"] = 1;
+    }
+
     eyeo.log(event, params).finally(callback);
     
     // var payload = {'event':  event, 'payload': params};
