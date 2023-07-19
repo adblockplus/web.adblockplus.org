@@ -158,7 +158,7 @@ $(document).ready(function () {
     //     }
     //     // TODO - bit of a hack, right now this translated string is not replacing the specified
     //     // email text -- this updates the email text to match the actual href.
-    //     $(".helpdesk-email").text("support@getadblock.com");
+    //     $(".helpdesk-email").text("support@adblockplus.org");
     // });
 
     function initializePaymentBox(callback) {

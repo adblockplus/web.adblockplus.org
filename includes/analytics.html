@@ -1,7 +1,7 @@
 <script>(function () {
 
 // Temporarily disable these features outside of select pages until Content-Security-Policy changes
-if (['premium', 'manage'].indexOf(document.documentElement.dataset.page) == -1) return;
+if (['premium', 'manage', 'anti-adblock-pass'].indexOf(document.documentElement.dataset.page) == -1) return;
 
 var accessTime = parseInt(performance.now(), 10);
 var eyeo = window.eyeo = (window.eyeo || {});
