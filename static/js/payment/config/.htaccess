@@ -29,6 +29,6 @@ RewriteRule ^load.js ru.js
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$ [OR]
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^JP$
 RewriteRule ^load.js jp.js
-RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$ [OR]
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
 RewriteRule ^load.js eu.js
