@@ -486,9 +486,14 @@ $(document).ready(function() {
         queryParams.append("thankyou", 1);
         queryParams.append("var", 1);
     }
-    queryParams.append("anti_adblock_pass__checkout", 1);
-    queryParams.append("u", getUserId());
-    const onSuccessURL = `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
+    const onSuccessURL = () => {
+        const [amount, frequency] = getSelectedAmountFrequencyPlan();
+        queryParams.append("u", getUserId());
+        queryParams.append("anti_adblock_pass__checkout", 1);
+        queryParams.append("anti_adblock_pass__amount", amount);
+        queryParams.append("anti_adblock_pass__frequency", frequency);
+        return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
+    }
 
     var ___AB_DROPDOWN_SHOW = false;
     var ___AB_USING_CURRENCY_LIB = false;

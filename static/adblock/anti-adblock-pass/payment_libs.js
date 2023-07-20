@@ -585,7 +585,7 @@ const PaddleCheckout = {
                     title: that._title(),
                     product: maybeProductID,
                     allowQuantity: false,
-                    success: that.DATA.success_url,
+                    success: typeof that.DATA.success_url == "function" ? that.DATA.success_url() : that.DATA.success_url,
                     locale: that.DATA.locale,
                     passthrough: that.DATA,
                 });
