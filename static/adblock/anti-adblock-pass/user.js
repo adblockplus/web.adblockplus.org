@@ -124,12 +124,12 @@ function getPlainSource() {
           a = "Y"
       else if (location.pathname.length == 1)
           a = "G";
-      else if (
-          location.pathname.length > 1
-          //&& getLocalesIndex().includes(location.pathname.split("/")[1])
-          && location.pathname.split("/").length === 3
-      )
-          a = "G";
+    //   else if (
+    //       location.pathname.length > 1
+    //       && getLocalesIndex().includes(location.pathname.split("/")[1])
+    //       && location.pathname.split("/").length === 3
+    //   )
+    //       a = "G";
       else if (location.pathname.indexOf('survey') != -1)
           a = "Q";
       else if (location.pathname.indexOf('update') != -1)
