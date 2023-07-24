@@ -1509,3 +1509,119 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
 
 /******/ })()
 ;
+/*!
+ * This file is part of website-defaults
+ * Copyright (C) 2016-present eyeo GmbH
+ *
+ * website-defaults is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * website-defaults is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with website-defaults.  If not, see <http://www.gnu.org/licenses/>.
+ */
+var ADDRESS_MASKING_DELAY = 250;
+
+function unmaskAddress(target)
+{
+  var attributes = JSON.parse(target.getAttribute("data-mask"));
+
+  for (var attr in attributes)
+    target[attr] = atob(attributes[attr]);
+
+  target.removeAttribute("data-mask");
+}
+
+document.addEventListener("DOMContentLoaded", function()
+{
+  var unmaskAfterTimeout = setTimeout.bind(
+    this,
+    unmaskAddress,
+    ADDRESS_MASKING_DELAY
+  );
+
+  var linksToBeMasked = [].slice.call(
+    document.querySelectorAll("[data-mask]")
+  );
+
+  linksToBeMasked.forEach(unmaskAddress);
+});
+
+/* global adblock */
+(function(){
+  const AppealForm = adblock.lib.AppealForm;
+
+  const premiumAlert = document.getElementById("what-is-included");
+  
+  const currencySigns = {
+    "USD": "$",
+    "EUR": "€",
+    "GBP": "£",
+    "AUD": "$",
+    "CAD": "$",
+    "CHF": "CHF ",
+    "JPY": "¥",
+    "RUB": "₽",
+    "MXN": "$"
+  }
+
+  const config = adblock.config.paddle.products;
+  
+  function updatePremiumAlert() {
+    const { currency,  amount, frequency } = adblock.runtime.appealForm.state();
+    let durationMonths;
+    let i18nId = frequency;
+    let i18nDuration;
+    if (frequency == "once") {
+      const amountNumerator = parseInt(amount, 10);
+      const onceDenominator = parseInt(Object.keys(config[currency].once)[2], 10);
+      const monthlyDenominator = parseInt(Object.keys(config[currency].monthly)[0], 10);
+      if (amountNumerator < onceDenominator) {
+        i18nDuration = Math.floor(amountNumerator / monthlyDenominator);
+        i18nId = "x-months";
+        durationMonths = i18nDuration;
+      } else {
+        i18nDuration = Math.floor(amountNumerator / onceDenominator);
+        i18nId = i18nDuration === 1 ? "one-year" : "x-years";
+        durationMonths = 12 * i18nDuration;
+      }
+    }
+    premiumAlert.hidden = false;
+    premiumAlert.querySelectorAll("p").forEach(function(paragraph) {
+      if (paragraph.id === i18nId) {
+        paragraph.hidden = false;
+        const duration = paragraph.querySelector(".duration");
+        if (duration && i18nDuration) {
+          duration.textContent = i18nDuration;
+        }
+        paragraph.querySelector(".currency").textContent = currencySigns[currency] || "$";
+        paragraph.querySelector(".amount").textContent = amount/100;
+      } else {
+        paragraph.hidden = true;
+      }
+    });
+    localStorage.setItem("planinfo", JSON.stringify({
+      plan: "ME",
+      durationMonths
+    }));
+  }
+
+  document.querySelector(".appeal-form__error").after(premiumAlert);
+  
+  const events = adblock.runtime.appealForm.events;
+  const EVENTS = AppealForm.EVENTS;
+  events.on(EVENTS.CHANGE_CURRENCY, updatePremiumAlert);
+  events.on(EVENTS.AMOUNT_CHANGE. updateFreePremium);
+  events.on(EVENTS.SHOW_MINIMUM_AMOUNT_ERROR, () => {
+    premiumAlert.hidden = true;
+  });
+  events.on(EVENTS.HIDE_MINIMUM_AMOUNT_ERROR, updatePremiumAlert);
+
+  updatePremiumAlert();
+})();

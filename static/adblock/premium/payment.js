@@ -607,7 +607,7 @@ $(document).ready(function () {
             $('.premium-success-details').hide();
             return;
         }
-        const amount = params.get("anti_adblock_pass__amount") || $("button.option.selected").attr("data-amount");
+        const amount = params.get("from__amount") || params.get("anti_adblock_pass__amount") || $("button.option.selected").attr("data-amount");
         const prevSelectedCurrency = localStorage.getItem("selectedCurrency");
         if (document.location.search.match(/thankyou/)) {
             if (prevSelectedCurrency && typeof prevSelectedCurrency === "string" && prevSelectedCurrency.length > 0) {
@@ -617,7 +617,7 @@ $(document).ready(function () {
         }
         const currencySymbol = _currency.getSymbol(selectedCurrency);
         const amountString = `${currencySymbol}${amount}`;
-        const recurringFrequency = params.get("anti_adblock_pass__frequency") || $("button.option.selected").attr("data-recurring-frequency");
+        const recurringFrequency = params.get("from__frequency") || $("button.option.selected").attr("data-recurring-frequency");
         const recurringFrequencyWithoutLy = recurringFrequency.slice(0, -2); // slice off the "ly"
         const recurringFrequencyAbbreviation = { yearly: "/yr", monthly: "/mo" }[recurringFrequency];
 

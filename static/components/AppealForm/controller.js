@@ -2,7 +2,7 @@
 
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
-
+import { toDollarNumber } from "../currency.js";
 
 const SANDBOX_HOSTNAMES = [
   /^localhost$/,
@@ -18,24 +18,28 @@ if (adblock.searchParameters.has("testmode") || adblock.searchParameters.get("mo
   paddleConfig = CONFIGURATION.Paddle.live;
 }
 
+adblock.config.paddle = paddleConfig;
+
 const isTestmode = paddleConfig == CONFIGURATION.Paddle.sandbox;
 
 if (isTestmode) Paddle.Environment.set("sandbox");
 
 Paddle.Setup({ vendor: paddleConfig.vendor });
 
-const formConfig = CONFIGURATION.AppealForm;
 const placeholder = document.querySelector(".appeal-form");
-const appealForm = new AppealForm({ paddleConfig, formConfig, placeholder });
+const formConfig = CONFIGURATION.AppealForm;
+const appealForm = adblock.runtime.appealForm = new AppealForm({ paddleConfig, formConfig, placeholder });
 
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
 
 function getCompletedUrl() {
-  return `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
+  return eyeo.payment.paymentCompleteUrl && eyeo.payment.paymentCompleteUrl.startsWith("http")
+    ? `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`
+    : `${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
 }
 
-appealForm.onSubmit((data) => {
+appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
 
   appealForm.disable();
 
@@ -53,6 +57,18 @@ appealForm.onSubmit((data) => {
   }
 
   const omitUserId = true;
+
+  const tracking = recordTracking(omitUserId);
+  const successParameters = new URLSearchParams();
+  if (tracking.startsWith("ME ")) {
+    const trackingParts = tracking.split(" ");
+    successParameters.append("thankyou", 1);
+    successParameters.append("var", 1);
+    successParameters.append("u", trackingParts[trackingParts.length - 1]);
+    successParameters.append("from", eyeo.payment.variant_name || "null");
+    successParameters.append("from__amount", toDollarNumber(data.amount));
+    successParameters.append("from__frequency", data.frequency);
+  }
 
   const passthrough = {
     testmode: isTestmode,
@@ -72,7 +88,7 @@ appealForm.onSubmit((data) => {
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: getCompletedUrl(),
+    success_url: `${getCompletedUrl()}?${successParameters.toString()}`,
     cancel_url: location.href,
   };
 
