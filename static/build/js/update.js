@@ -502,6 +502,7 @@ var _submitButton = /*#__PURE__*/new WeakMap();
 var _updateAmounts = /*#__PURE__*/new WeakSet();
 var _showMinimumAmountError = /*#__PURE__*/new WeakSet();
 var _hideMinimumAmountError = /*#__PURE__*/new WeakSet();
+var _hasMinimumAmountError = /*#__PURE__*/new WeakSet();
 var _handleMinimumAmountError = /*#__PURE__*/new WeakSet();
 var _getCustomRadioInput = /*#__PURE__*/new WeakSet();
 var _getCustomInputRadio = /*#__PURE__*/new WeakSet();
@@ -525,6 +526,7 @@ class AppealForm {
     /** Get custom amount input from reference to custom amount radio */
     _classPrivateMethodInitSpec(this, _getCustomRadioInput);
     _classPrivateMethodInitSpec(this, _handleMinimumAmountError);
+    _classPrivateMethodInitSpec(this, _hasMinimumAmountError);
     _classPrivateMethodInitSpec(this, _hideMinimumAmountError);
     _classPrivateMethodInitSpec(this, _showMinimumAmountError);
     _classPrivateMethodInitSpec(this, _updateAmounts);
@@ -681,8 +683,11 @@ function _hideMinimumAmountError2() {
   _classPrivateFieldGet(this, _submitButton).disabled = false;
   this.events.fire(AppealForm.EVENTS.HIDE_MINIMUM_AMOUNT_ERROR);
 }
+function _hasMinimumAmountError2(input) {
+  return input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum);
+}
 function _handleMinimumAmountError2(input) {
-  if (input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
+  if (_classPrivateMethodGet(this, _hasMinimumAmountError, _hasMinimumAmountError2).call(this, input)) {
     _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
   } else {
     _classPrivateMethodGet(this, _hideMinimumAmountError, _hideMinimumAmountError2).call(this);
@@ -719,18 +724,14 @@ function _onAmountInput2(event) {
 }
 function _onSubmit2(event) {
   event.preventDefault();
-  const state = this.state();
   const radio = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(".appeal-form-amount__radio:checked");
   if (radio.value == "custom") {
     const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
-    amount = parseFloat(input.value === "" ? input.placeholder : input.value);
-    if (amount < parseFloat(input.dataset.minimum)) {
-      return _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio));
-    } else {
-      amount = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toCentNumber)(state.currency, amount);
+    if (_classPrivateMethodGet(this, _hasMinimumAmountError, _hasMinimumAmountError2).call(this, input)) {
+      return _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
     }
   }
-  this.events.fire(AppealForm.EVENTS.SUBMIT, state);
+  this.events.fire(AppealForm.EVENTS.SUBMIT, this.state());
 }
 /** @static {Object} EVENTS names constants */
 _defineProperty(AppealForm, "EVENTS", {

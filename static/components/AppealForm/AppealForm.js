@@ -129,9 +129,13 @@ export class AppealForm {
     this.events.fire(AppealForm.EVENTS.HIDE_MINIMUM_AMOUNT_ERROR)
   }
 
+  #hasMinimumAmountError(input) {
+    return input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum)
+  }
+
   #handleMinimumAmountError(input) {
-    if (input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
-      this.#showMinimumAmountError(input)
+    if (this.#hasMinimumAmountError(input)) {
+      this.#showMinimumAmountError(input);
     } else {
       this.#hideMinimumAmountError();
     }
@@ -176,18 +180,14 @@ export class AppealForm {
 
   #onSubmit(event) {
     event.preventDefault();
-    const state = this.state();
     const radio = this.#frequenciesParentElement.querySelector(".appeal-form-amount__radio:checked");
     if (radio.value == "custom") {
       const input = this.#getCustomRadioInput(radio);
-      amount = parseFloat(input.value === "" ? input.placeholder : input.value);
-      if (amount < parseFloat(input.dataset.minimum)) {
-        return this.#showMinimumAmountError(this.#getCustomRadioInput(radio));
-      } else {
-        amount = toCentNumber(state.currency, amount);
+      if (this.#hasMinimumAmountError(input)) {
+        return this.#showMinimumAmountError(input);
       }
     }
-    this.events.fire(AppealForm.EVENTS.SUBMIT, state);
+    this.events.fire(AppealForm.EVENTS.SUBMIT, this.state());
   }
 
   /**
