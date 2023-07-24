@@ -610,7 +610,7 @@ a:hover, a:active {
   display: inline-block;
 }
 
-.--en-only {
+[lang] .--en-only {
   display: none !important;
 }
 
