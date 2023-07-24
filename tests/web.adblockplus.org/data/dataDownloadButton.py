@@ -15,8 +15,8 @@ TEST_DATA = [(
       'desktop_safari',
       'AGREE AND INSTALL FOR SAFARI',
       'https://eyeo.to/adblockplus/safari_install/index',
-      'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_6; en-en) AppleWebKit/533.19.4 '
-      '(KHTML, like Gecko) Version/5.0.3 Safari/533.19.4',
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) '
+      'Version/16.4 Safari/605.1.15',
       'adblockplussafari'
 ), (
       'desktop_edge',
