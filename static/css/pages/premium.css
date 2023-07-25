@@ -144,7 +144,7 @@ html {
   display: inline-block;
 }
 
-.premium-cta {
+.premium-button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -159,23 +159,23 @@ html {
   color: #fff;
 }
 
-.premium-cta:hover,
-.premium-cta:active,
-.premium-cta:focus {
+.premium-button:hover,
+.premium-button:active,
+.premium-button:focus {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-.premium-cta:disabled,
-.premium-cta.disabled {
+.premium-button:disabled,
+.premium-button.disabled {
   cursor: not-allowed;
 }
 
-.premium-cta:disabled:hover,
-.premium-cta:disabled:active,
-.premium-cta:disabled:focus,
-.premium-cta.disabled:hover,
-.premium-cta.disabled:active,
-.premium-cta.disabled:focus {
+.premium-button:disabled:hover,
+.premium-button:disabled:active,
+.premium-button:disabled:focus,
+.premium-button.disabled:hover,
+.premium-button.disabled:active,
+.premium-button.disabled:focus {
   background-color: #C6C6C6 !important;
   box-shadow: none !important;
 }
@@ -311,7 +311,7 @@ html {
   color: #333;
 }
 
-.not-hovered .premium-plan-yearly .premium-cta {
+.not-hovered .premium-plan-yearly .premium-button {
   border: 1px solid #EDA51E;
   background-color: #EDA51E;
   color: #fff;
@@ -329,17 +329,17 @@ html {
     box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
   }
 
-  .premium-plan:hover .premium-cta,
-  .premium-plan:active .premium-cta,
-  .premium-plan:focus .premium-cta {
+  .premium-plan:hover .premium-button,
+  .premium-plan:active .premium-button,
+  .premium-plan:focus .premium-button {
     border: 1px solid #EDA51E;
     background-color: #EDA51E;
     color: #fff;
   }
 
-  .premium-plan:hover .premium-cta.disabled,
-  .premium-plan:active .premium-cta.disabled,
-  .premium-plan:focus .premium-cta.disabled {
+  .premium-plan:hover .premium-button.disabled,
+  .premium-plan:active .premium-button.disabled,
+  .premium-plan:focus .premium-button.disabled {
     border: 1px solid #C6C6C6;
     background-color: #C6C6C6;
   }
@@ -575,7 +575,7 @@ html {
   margin-top: 0.6rem;
 }
 
-.premium-plan .premium-cta {
+.premium-plan .premium-button {
   margin-top: 1.625rem;
   margin-bottom: 2.5rem;
   color: #0797E1;
@@ -584,7 +584,7 @@ html {
 }
 
 @media (min-width: 992px) {
-  .premium-plan .premium-cta {
+  .premium-plan .premium-button {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -707,7 +707,7 @@ html {
   margin: 0;
 }
 
-.premium-features .premium-cta {
+.premium-features .premium-button {
   color: #fff;
   margin-top: 2rem;
   margin-bottom: 0;
