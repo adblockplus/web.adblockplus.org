@@ -35,8 +35,8 @@ eyeo.payment = eyeo.payment || {};
 
 function getCompletedUrl() {
   return eyeo.payment.paymentCompleteUrl && eyeo.payment.paymentCompleteUrl.startsWith("http")
-    ? `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`
-    : `${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
+    ? `${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`
+    : `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
 }
 
 appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
@@ -56,24 +56,22 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
     }));
   }
 
-  const omitUserId = true;
-
-  const tracking = recordTracking(omitUserId);
+  const tracking = recordTracking();
   const successParameters = new URLSearchParams();
   if (tracking.startsWith("ME ")) {
     const trackingParts = tracking.split(" ");
     successParameters.append("thankyou", 1);
     successParameters.append("var", 1);
     successParameters.append("u", trackingParts[trackingParts.length - 1]);
-    successParameters.append("from", eyeo.payment.variant_name || "null");
-    successParameters.append("from__amount", toDollarNumber(data.amount));
+    successParameters.append("from", eyeo.payment.variantName || "null");
+    successParameters.append("from__amount", toDollarNumber(data.currency, data.amount));
     successParameters.append("from__frequency", data.frequency);
   }
 
   const passthrough = {
     testmode: isTestmode,
     userid: "",
-    tracking: recordTracking(omitUserId),
+    tracking: tracking,
     locale: "",
     country: "unknown",
     ga_id: "",

@@ -198,7 +198,7 @@ export class AppealForm {
     const currency = this.#currencySelect.value;
     const frequency = radio.dataset.frequency;
     const product = radio.dataset.product;
-    let amount = radio.value;
+    let amount = parseFloat(radio.value);
     if (amount == "custom") {
       const input = this.#getCustomRadioInput(radio);
       amount = toCentNumber(currency, parseFloat(input.value === "" ? input.placeholder : input.value));

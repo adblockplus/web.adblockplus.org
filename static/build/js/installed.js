@@ -627,7 +627,7 @@ class AppealForm {
     const currency = _classPrivateFieldGet(this, _currencySelect).value;
     const frequency = radio.dataset.frequency;
     const product = radio.dataset.product;
-    let amount = radio.value;
+    let amount = parseFloat(radio.value);
     if (amount == "custom") {
       const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
       amount = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toCentNumber)(currency, parseFloat(input.value === "" ? input.placeholder : input.value));
@@ -1421,7 +1421,7 @@ const appealForm = adblock.runtime.appealForm = new _AppealForm_js__WEBPACK_IMPO
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
 function getCompletedUrl() {
-  return eyeo.payment.paymentCompleteUrl && eyeo.payment.paymentCompleteUrl.startsWith("http") ? `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}` : `${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
+  return eyeo.payment.paymentCompleteUrl && eyeo.payment.paymentCompleteUrl.startsWith("http") ? `${eyeo.payment.paymentCompleteUrl || '/payment-complete'}` : `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
 }
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
   appealForm.disable();
@@ -1438,22 +1438,21 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
       clickTs: Date.now()
     }));
   }
-  const omitUserId = true;
-  const tracking = recordTracking(omitUserId);
+  const tracking = recordTracking();
   const successParameters = new URLSearchParams();
   if (tracking.startsWith("ME ")) {
     const trackingParts = tracking.split(" ");
     successParameters.append("thankyou", 1);
     successParameters.append("var", 1);
     successParameters.append("u", trackingParts[trackingParts.length - 1]);
-    successParameters.append("from", eyeo.payment.variant_name || "null");
-    successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.amount));
+    successParameters.append("from", eyeo.payment.variantName || "null");
+    successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
     successParameters.append("from__frequency", data.frequency);
   }
   const passthrough = {
     testmode: isTestmode,
     userid: "",
-    tracking: recordTracking(omitUserId),
+    tracking: tracking,
     locale: "",
     country: "unknown",
     ga_id: "",
