@@ -50,7 +50,7 @@ function setAutoHeights(targets)
  }
 
 // Enable pre-selecting monthly/yearly payment options via clicking a 
-// .premium-cta[data-plan] with an allowlisted plan
+// .premium-button[data-plan] with an allowlisted plan
 const premiumPlans = ['monthly', 'yearly'];
 window.addEventListener('click', event => {
   if (
@@ -60,10 +60,11 @@ window.addEventListener('click', event => {
     && event.target.dataset.plan
   ) {
     const plan = event.target.dataset.plan;
-    if (premiumPlans.indexOf(plan) == -1) return;
-    document
-      .querySelector(`[data-recurring-frequency="${plan}"]`)
-      .click();
+    const slider = document.querySelector("#payments .slider");
+    const sliderPlan = slider.classList.contains("active") ? "yearly" : "monthly";
+    if (plan != sliderPlan) {
+      slider.click();
+    }
   }
 });
 

@@ -250,19 +250,6 @@ img {
 .clearfix {
   zoom: 1;
 }
-/* Tyopgraphy Styles*/
-@font-face {
-  font-family: "Open Sans Light";
-  src: url("fonts/OpenSansLight.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url("fonts/OpenSans.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Open Sans Semibold";
-  src: url("fonts/OpenSansSemibold.ttf") format("truetype");
-}
 .align_center {
   text-align: center;
 }
@@ -606,22 +593,8 @@ hr {
   background-position: 0 -45px;
   text-shadow: 0px 0px 10px white;
 }
-#stripe_email_wrapper {
-  display: none;
-}
 /* Avoid making bonus step look wrong when confirming user's email address */
-#stripe_email_wrapper p {
-  margin-bottom: auto !important;
-}
-#paypal {
-  position: relative;
-  padding: 0px 25px 0px 60px;
-  color: white;
-  font-family: "Open Sans";
-  padding-top: 12px;
-  background-color: #78be63;
-  border-radius: 4px;
-}
+
 .count#bonus {
   margin-top: 10px;
   font-size: 30px;
@@ -687,7 +660,6 @@ button:active,
 button:focus,
 a:active,
 a:focus,
-.StripeElement--focus,
 a:active > img,
 a:focus > img {
   outline: rgb(0, 95, 204) auto 1px;

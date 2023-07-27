@@ -37,7 +37,6 @@ section.top-level {
     box-sizing: border-box;
     display: flex;
     flex-flow: column;
-    min-height: 400px;
     border-radius: 6px;
 }
 #choose-plans {
@@ -52,7 +51,6 @@ section.top-level {
     align-items: center;
     width: 95%;
     justify-content: space-between;
-    flex-flow: row nowrap;
 }
 @media (min-width: 1024px) {
     #choose-payment-type {
@@ -76,7 +74,7 @@ section.top-level {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 40px auto;
+    margin: 20px auto;
     font-family: "Lato";
     font-style: normal;
     font-weight: 700;
@@ -93,25 +91,19 @@ button:hover {
     transform: scale(1.1);
 }
 
-#paypal_button {
-    background-color: #ffca00;
-    color: #000000;
-}
-#paypal_button ~ hr {
-    margin-top: 50px;
-    margin-bottom: 33px;
-}
 #donate_now {
-    background-color: #0075ff;
-    color: white;
+    background-color: #ffca00;
+    color: #333333;
 }
 #payments h3 {
-    font-family: "Lato";
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 140%;
-    color: #333;
+    color: #000000;
+    margin: 0;
+    padding: 0;
 }
 div#card-1 {
     padding: 24px;
@@ -121,6 +113,9 @@ div#card-1 {
 }
 .flex-4 {
     flex: 4;
+}
+#already-donated-activity hr {
+    margin: 0;
 }
 #payments hr {
     height: 1px;
@@ -133,7 +128,8 @@ div#card-1 {
 .yearly-savings-callout {
     position: absolute;
     top: -16px;
-    right: -16px;
+    left: 310px;
+    white-space: nowrap;
     background: #ffca00;
     border-radius: 1000px;
     height: 32px;
@@ -141,7 +137,6 @@ div#card-1 {
     color: #333333;
     font-weight: 700;
     font-size: 16px;
-    display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -379,15 +374,15 @@ button.btn-link {
     flex-direction: column;
 }
 #other-options {
-    display: flex;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333;
     margin-top: 32px;
-    justify-content: space-around;
-    flex-flow: row wrap;
+    text-align: center;
 }
-/* StripeCC / PayPal CSS */
-
-/* Select Stripe or Paypal */
-
 
 label.occasional-updates {
     font-family: "Lato";
@@ -399,7 +394,6 @@ label.occasional-updates {
 }
 
 /* Input element styling */
-/* Style the injected Stripe Elements we cannot specify in the JS initialization */
 
 div.payment-box p {
     font-size: 16px;
@@ -449,9 +443,11 @@ div.box-step.align-items-center {
 }
 
 #payment-options-narrow {
-    max-width: 288px;
+    display: flex;
     margin: auto;
     flex-flow: column;
+    align-items: center;
+    margin-top: -240px;
 }
 
 .payment-option.full-width {
@@ -474,22 +470,19 @@ div.box-step.align-items-center {
 #payment-options-wide .gray-header {
     margin-top: -4px;
 }
-/* #payment-options-wide .gold-header {
-    margin-top: -4px;
-} */
 #payment-options-wide {
     display: none;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1200px;
 }
 
 #payment-options-wide .payment-option {
-    padding-top: 64px;
+    padding-top: 0px;
 }
 
 li.feature-card {
-    padding: 48px;
-    margin: 64px 0px;
+    min-height: 200px;
+    padding: 32px;
 }
 li.feature-card div {
     margin: 0px;
@@ -504,13 +497,11 @@ li.feature-card div {
     margin-top: -164px;
 }
 
-@media all and (min-width: 600px) {
-    #payment-options-narrow {
-        display: none;
-    }
-    #payment-options-medium {
+@media all and (min-width: 864px) {
+    /* #payment-options-medium {
         display: flex;
-    }
+    } */
+
     main #hero {
         min-height: 324px;
     }
@@ -519,12 +510,12 @@ li.feature-card div {
         width: 25%;
     }
     li.feature-card div.right.wide {
-        width: 55%;
-        padding-left: 15%;
+        width: 69%;
+        padding-left: 10%;
         align-items: flex-start;
     }
     li.feature-card div.left.wide {
-        width: 55%;
+        width: 69%;
         padding-left: 10%;
         align-items: flex-start;
     }
@@ -535,6 +526,7 @@ li.feature-card div {
     }
     li p.feature-card-description {
         text-align: left;
+        min-width: 496px;
     }
     div.left.wide h2.feature-card-title {
         text-align: left;
@@ -549,12 +541,18 @@ li.feature-card div {
 }
 
 @media all and (min-width: 1024px) {
-    #payment-options-medium {
+    #payment-options-narrow {
         display: none;
     }
     #payment-options-wide {
         display: flex;
     }
+    /* #payment-options- {
+        display: none;
+    } */
+    /* #payment-options-wide {
+        display: flex;
+    } */
     #wide-screen-feature-legend {
         display: flex;
     }
@@ -562,11 +560,11 @@ li.feature-card div {
         min-height: 396px;
     }
     #payment-options-wide {
-        margin-top: -164px;
-        max-width: 888px;
+        margin-top: -226px;
+        max-width: 900px;
     }
     #payments {
-        padding: 190px 0px;
+        padding: 164px 0px;
     }
     #payments-content {
         max-width: 1024px;
