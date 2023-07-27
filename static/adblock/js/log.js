@@ -8,17 +8,6 @@ var _ADBLOCK_PREMIUM = "P";
 //     }
 // }
 
-const query = new URLSearchParams(window.location.search);
-
-function getMoeCampaign() {
-    const campaign = query.get("moe-campaign");
-    if (false == isNaN(parseInt(campaign, 10))) {
-        return campaign;
-    } else {
-        return undefined;
-    }
-}
-
 _logV2Message = function(event, params, callback) {
     // Add basic params: userid, flavor, and os
     params['u'] = getUserIdOrUnknown();
@@ -28,9 +17,6 @@ _logV2Message = function(event, params, callback) {
     params['p'] = false;
     params['psess'] = "";
     params['wsrc'] = "core";
-    if (query.get("moe-campaign")) {
-        params["moe-campaign"] = getMoeCampaign();
-    }
     if (typeof isPremium === "function" && isPremium() === true) {
         params['p'] = isPremium();
         // get premium userid instead of regular
@@ -38,6 +24,18 @@ _logV2Message = function(event, params, callback) {
         if (typeof getPremiumSession === "function") {
             params['psess'] = getPremiumSession();
         }
+    }
+
+    // FIXME: Patching in anti_adblock_pass params as log params
+    // to destinguish between regular events and events caused artificially
+    // by the need to redirect from the anti-adblock-pass page to the premium
+    // page for activation without an extension release 
+    const logParams = new URLSearchParams(window.location.search);
+    if (logParams.has("anti_adblock_pass__checkout")) {
+        params["anti_adblock_pass__checkout"] = 1;
+    }
+    if (logParams.has("anti_adblock_pass__already_donated")) {
+        params["anti_adblock_pass__already_donated"] = 1;
     }
 
     eyeo.log(event, params).finally(callback);
@@ -172,7 +170,7 @@ _logV2PremiumPageView = function(page, additionalParams) {
     _logV2Message("premium_" + page + "_page_view", payload);
 }
 
-_logV2UninstallReason = function(reason, miscText, t, bc, abclt, wafc, callback) {
+_logV2UninstallReason = function(reason, miscText, t, bc, abclt, callback) {
     var payload = {
         "s": getPlainSource(),
         "cid": "0",
@@ -181,8 +179,7 @@ _logV2UninstallReason = function(reason, miscText, t, bc, abclt, wafc, callback)
         "misc_text": miscText,
         "t": t,
         "bc": bc,
-        "abclt": abclt,
-        "wafc": wafc
+        "abclt": abclt
     }
     
     if (typeof isPremium === 'function' && isPremium()) {

@@ -189,7 +189,8 @@ var _experiment = (function() {
     };
     
     function setExperiment(expMap, experiment) {
-        expMap['Paddle'] = experiment;
+        expMap['Stripe'] = experiment;
+        expMap['PayPal'] = experiment;
         expMap['*'] = experiment;
     }
     var experiments = {};
