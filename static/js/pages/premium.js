@@ -70,7 +70,7 @@ window.addEventListener('click', event => {
 if (adblock.searchParameters.has("bc")) {
   document.querySelector(".premium-header--default").hidden = true;
   document.querySelector(".premium-header--churned").hidden = false;
-  document.querySelector(".premium-churned__heading__blocked").textContent = adblock.searchParameters.get("bc")
+  document.querySelector(".premium-churned__heading__blocked").textContent = new Intl.NumberFormat(document.documentElement.lang).format(parseInt(adblock.searchParameters.get("bc"), 10));
 }
 
 function onDOMContentLoaded()
