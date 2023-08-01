@@ -67,6 +67,12 @@ window.addEventListener('click', event => {
   }
 });
 
+if (adblock.searchParameters.has("bc")) {
+  document.querySelector(".premium-header--default").hidden = true;
+  document.querySelector(".premium-header--churned").hidden = false;
+  document.querySelector(".premium-churned__heading__blocked").textContent = adblock.searchParameters.get("bc")
+}
+
 function onDOMContentLoaded()
 {
   // Set up FAQ toggles

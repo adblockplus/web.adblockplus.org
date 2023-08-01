@@ -36,7 +36,15 @@ unadblock=1
   <? include premium-restrictions ?>
   <div class="premium-background-1"></div>
   <div class="premium-container">
-    <header class="premium-header">
+    <header class="premium-header premium-header--churned" hidden>
+      <h1>
+        {{ premium-churned__heading <span class="premium-churned__heading__blocked">10,000</span> ads blocked <span class="premium-churned__heading__line-2">since you enrolled in Premium</span> }}
+      </h1>
+      <p>
+        {{ premium-churned__subheading Re-enroll to keep blocking additional annoyances like floating videos, newsletter pop-ups, and other distractions. }}
+      </p>
+    </header>
+    <header class="premium-header premium-header--default">
       <h1>
         {{ s1 <span class="premium-break">Block more</span> <span class="premium-break">with Premium</span> }}
       </h1>

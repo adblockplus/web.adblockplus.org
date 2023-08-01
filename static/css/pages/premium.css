@@ -260,6 +260,10 @@ html {
     padding-top: 7rem;
     padding-bottom: 5rem;
   }
+
+  .premium-header--churned {
+    padding-top: 5rem;
+  }
 }
 
 .premium-header h1 {
@@ -280,6 +284,30 @@ html {
   .premium-header h1 {
     font-size: 3.25rem;
   }
+}
+
+.premium-header--churned h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 576px) {
+  .premium-header--churned h1 {
+    font-size: 3.25rem;
+  }  
+}
+
+@media (min-width: 992px) {
+  .premium-header--churned h1 {
+    font-size: 4rem;
+  }  
+}
+
+@media (min-width: 576px) {
+  .premium-churned__heading__line-2 {
+    display: block;
+    font-size: 62.5%;
+    margin-block-start: 1rem;
+  }  
 }
 
 .premium-header p {
