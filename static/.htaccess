@@ -170,17 +170,6 @@ SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CO
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
 
-<FilesMatch ^update$>
-
-  GeoIPEnable On
-
-  # Fall back to general update page for FR and DE location
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$ [OR]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR|DE)$
-  RewriteRule "([\w\-]{2,6})\/update$" "/$1/update-restricted" [NC,L]
-
-</FilesMatch>
-
 <FilesMatch ^contribution$>
 
   GeoIPEnable On

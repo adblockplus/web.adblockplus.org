@@ -12,9 +12,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppealForm": () => (/* binding */ AppealForm)
 /* harmony export */ });
+/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Events.js */ "./static/components/Events.js");
+/* harmony import */ var _currency_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../currency.js */ "./static/components/currency.js");
 function _classPrivateMethodInitSpec(obj, privateSet) { _checkPrivateRedeclaration(obj, privateSet); privateSet.add(obj); }
 function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
 function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
 function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
 function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
@@ -23,43 +28,10 @@ function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!priva
 function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
 /* global adblock */
 
+
 const formTemplate = document.getElementById("appeal-form");
 const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
 const customAmountTemplate = document.getElementById("appeal-form-amount--custom");
-
-/** 
- * Cent amount (int) to dollar amount (float) (for applicable currencies) 
- * 
- * @param {string} currency - 3 letter currency code
- * @param {number} cents - amount in cents (for applicable currencies)
- */
-function toDollarNumber(currency, cents) {
-  return currency == "JPY" ? cents : cents / 100;
-}
-
-/** 
- * Dollar amount (float) to cent amount (int) (for applicable currencies) 
- * 
- * @param {string} currency - 3 letter currency code
- * @param {number} dollar - amount in dollars (for applicable currencies)
- */
-function toCentNumber(currency, dollar) {
-  return currency == "JPY" ? dollar : dollar * 100;
-}
-
-/** 
- * Cent amount (int) to dollar amount (float) with localised formatting (for applicable currencies) 
- * 
- * @param {string} currency - 3 letter currency code
- * @param {number} cents - amount in cents (for applicable currencies)
- */
-function toDollarString(currency, cents) {
-  return new Intl.NumberFormat(navigator.language, {
-    style: "currency",
-    currency,
-    minimumFractionDigits: 0
-  }).format(toDollarNumber(currency, cents));
-}
 var _paddleConfig = /*#__PURE__*/new WeakMap();
 var _parentElement = /*#__PURE__*/new WeakMap();
 var _currencySelect = /*#__PURE__*/new WeakMap();
@@ -70,12 +42,12 @@ var _submitButton = /*#__PURE__*/new WeakMap();
 var _updateAmounts = /*#__PURE__*/new WeakSet();
 var _showMinimumAmountError = /*#__PURE__*/new WeakSet();
 var _hideMinimumAmountError = /*#__PURE__*/new WeakSet();
+var _hasMinimumAmountError = /*#__PURE__*/new WeakSet();
 var _handleMinimumAmountError = /*#__PURE__*/new WeakSet();
 var _getCustomRadioInput = /*#__PURE__*/new WeakSet();
 var _getCustomInputRadio = /*#__PURE__*/new WeakSet();
 var _onAmountFocusin = /*#__PURE__*/new WeakSet();
 var _onAmountInput = /*#__PURE__*/new WeakSet();
-var _submitCallbacks = /*#__PURE__*/new WeakMap();
 var _onSubmit = /*#__PURE__*/new WeakSet();
 class AppealForm {
   constructor(_ref) {
@@ -84,7 +56,6 @@ class AppealForm {
       paddleConfig,
       formConfig
     } = _ref;
-    /** Handle when the form is submitted */
     _classPrivateMethodInitSpec(this, _onSubmit);
     /** Handle when an amount radio is selected or a custom amount input is filled */
     _classPrivateMethodInitSpec(this, _onAmountInput);
@@ -94,17 +65,13 @@ class AppealForm {
     _classPrivateMethodInitSpec(this, _getCustomInputRadio);
     /** Get custom amount input from reference to custom amount radio */
     _classPrivateMethodInitSpec(this, _getCustomRadioInput);
-    /** Handle possibility of minimum amount error on target custom amount input */
     _classPrivateMethodInitSpec(this, _handleMinimumAmountError);
+    _classPrivateMethodInitSpec(this, _hasMinimumAmountError);
     _classPrivateMethodInitSpec(this, _hideMinimumAmountError);
-    /** show minimum amount error for custom amount input */
     _classPrivateMethodInitSpec(this, _showMinimumAmountError);
-    /**
-     * Update amount control labels and values (in place)
-     * 
-     * @param {string} currency - 3 letter currency
-     */
     _classPrivateMethodInitSpec(this, _updateAmounts);
+    /** @member {Events} events interface */
+    _defineProperty(this, "events", void 0);
     /** @member {Object} paddle config @see ./configuration.js */
     _classPrivateFieldInitSpec(this, _paddleConfig, {
       writable: true,
@@ -140,10 +107,7 @@ class AppealForm {
       writable: true,
       value: void 0
     });
-    _classPrivateFieldInitSpec(this, _submitCallbacks, {
-      writable: true,
-      value: []
-    });
+    this.events = new _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
     _classPrivateFieldSet(this, _paddleConfig, paddleConfig);
     _classPrivateFieldSet(this, _parentElement, formTemplate.content.cloneNode(true).firstElementChild);
     _classPrivateFieldGet(this, _parentElement).querySelector(".appeal-form-header__heading").innerHTML = adblock.strings["appeal-form-header__heading"];
@@ -195,9 +159,27 @@ class AppealForm {
     // set testid on parent to signal to playwright tests that construction is completed
     _classPrivateFieldGet(this, _parentElement).dataset.testid = "appeal-form-constructed";
   }
-  /** Register a callback for when the form is submitted */
-  onSubmit(callback) {
-    _classPrivateFieldGet(this, _submitCallbacks).push(callback);
+  /**
+   * @returns { currency, ferquency, product, amount }
+   */
+  state() {
+    const radio = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(".appeal-form-amount__radio:checked");
+    const currency = _classPrivateFieldGet(this, _currencySelect).value;
+    const frequency = radio.dataset.frequency;
+    const product = radio.dataset.product;
+    let amount = radio.value;
+    if (amount == "custom") {
+      const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
+      amount = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toCentNumber)(currency, parseFloat(input.value === "" ? input.placeholder : input.value));
+    } else {
+      amount = parseFloat(amount);
+    }
+    return {
+      currency,
+      frequency,
+      product,
+      amount
+    };
   }
   disable() {
     _classPrivateFieldGet(this, _parentElement).classList.add("appeal-form--disabled");
@@ -220,28 +202,34 @@ function _updateAmounts2(currency) {
       const radio = control.querySelector(".appeal-form-amount__radio");
       if (amount == "custom") {
         const input = control.querySelector(".appeal-form-amount__input");
-        input.placeholder = String(toDollarNumber(currency, Object.keys(_classPrivateFieldGet(this, _paddleConfig).products[currency][frequency])[3]));
-        input.dataset.minimum = toDollarNumber(currency, _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount]);
+        input.placeholder = String((0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarNumber)(currency, Object.keys(_classPrivateFieldGet(this, _paddleConfig).products[currency][frequency])[3]));
+        input.dataset.minimum = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarNumber)(currency, _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount]);
         radio.dataset.product = "custom";
       } else {
-        control.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
+        control.querySelector(".appeal-form-amount__text").textContent = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarString)(currency, amount);
         radio.value = amount;
         radio.dataset.product = _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount];
       }
     }
   }
+  this.events.fire(AppealForm.EVENTS.CURRENCY_CHANGE);
 }
 function _showMinimumAmountError2(input) {
   _classPrivateFieldGet(this, _errorMessageElement).innerHTML = adblock.strings[`appeal-form__error--${input.dataset.frequency}`];
   _classPrivateFieldGet(this, _errorMessageElement).hidden = false;
   _classPrivateFieldGet(this, _submitButton).disabled = true;
+  this.events.fire(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_SHOW);
 }
 function _hideMinimumAmountError2() {
   _classPrivateFieldGet(this, _errorMessageElement).hidden = true;
   _classPrivateFieldGet(this, _submitButton).disabled = false;
+  this.events.fire(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_HIDE);
+}
+function _hasMinimumAmountError2(input) {
+  return input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum);
 }
 function _handleMinimumAmountError2(input) {
-  if (input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
+  if (_classPrivateMethodGet(this, _hasMinimumAmountError, _hasMinimumAmountError2).call(this, input)) {
     _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
   } else {
     _classPrivateMethodGet(this, _hideMinimumAmountError, _hideMinimumAmountError2).call(this);
@@ -274,30 +262,28 @@ function _onAmountInput2(event) {
       _classPrivateMethodGet(this, _hideMinimumAmountError, _hideMinimumAmountError2).call(this);
     }
   }
+  this.events.fire(AppealForm.EVENTS.AMOUNT_CHANGE);
 }
 function _onSubmit2(event) {
   event.preventDefault();
-  let radio = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(".appeal-form-amount__radio:checked");
-  const currency = _classPrivateFieldGet(this, _currencySelect).value;
-  const frequency = radio.dataset.frequency;
-  const product = radio.dataset.product;
-  let amount = radio.value;
-  if (amount == "custom") {
+  const radio = _classPrivateFieldGet(this, _frequenciesParentElement).querySelector(".appeal-form-amount__radio:checked");
+  if (radio.value == "custom") {
     const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
-    amount = parseFloat(input.value === "" ? input.placeholder : input.value);
-    if (parseFloat(amount) < parseFloat(input.dataset.minimum)) {
+    if (_classPrivateMethodGet(this, _hasMinimumAmountError, _hasMinimumAmountError2).call(this, input)) {
       return _classPrivateMethodGet(this, _showMinimumAmountError, _showMinimumAmountError2).call(this, input);
-    } else {
-      amount = toCentNumber(currency, amount);
     }
   }
-  _classPrivateFieldGet(this, _submitCallbacks).forEach(callback => callback({
-    currency,
-    frequency,
-    amount,
-    product
-  }));
+  this.events.fire(AppealForm.EVENTS.SUBMIT, this.state());
 }
+/** @static {Object} EVENTS names constants */
+_defineProperty(AppealForm, "EVENTS", {
+  CURRENCY_CHANGE: "CURRENCY_CHANGE",
+  MINIMUM_AMOUNT_ERROR_SHOW: "SHOW_MINIMUM_AMOUNT_ERROR",
+  MINIMUM_AMOUNT_ERROR_HIDE: "HIDE_MINIMUM_AMOUNT_ERROR",
+  AMOUNT_CHANGE: "AMOUNT_CHANGE",
+  SUBMIT: "SUBMIT"
+});
+adblock.lib.AppealForm = AppealForm;
 
 /***/ }),
 
@@ -798,6 +784,87 @@ const CONFIGURATION = {
   }
 };
 
+/***/ }),
+
+/***/ "./static/components/Events.js":
+/*!*************************************!*\
+  !*** ./static/components/Events.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Events)
+/* harmony export */ });
+class Events {
+  constructor() {
+    this.callbacks = {};
+  }
+  on(event, callback) {
+    if (!this.callbacks[event]) this.callbacks[event] = [];
+    this.callbacks[event].push(callback);
+  }
+  fire(event, data) {
+    if (this.callbacks[event]) {
+      for (const callback of this.callbacks[event]) {
+        try {
+          callback(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./static/components/currency.js":
+/*!***************************************!*\
+  !*** ./static/components/currency.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toCentNumber": () => (/* binding */ toCentNumber),
+/* harmony export */   "toDollarNumber": () => (/* binding */ toDollarNumber),
+/* harmony export */   "toDollarString": () => (/* binding */ toDollarString)
+/* harmony export */ });
+/** 
+ * Cent amount (int) to dollar amount (float) (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} cents - amount in cents (for applicable currencies)
+ */
+function toDollarNumber(currency, cents) {
+  return currency == "JPY" ? cents : cents / 100;
+}
+
+/** 
+ * Dollar amount (float) to cent amount (int) (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} dollar - amount in dollars (for applicable currencies)
+ */
+function toCentNumber(currency, dollar) {
+  return currency == "JPY" ? dollar : dollar * 100;
+}
+
+/** 
+ * Cent amount (int) to dollar amount (float) with localised formatting (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} cents - amount in cents (for applicable currencies)
+ */
+function toDollarString(currency, cents) {
+  return new Intl.NumberFormat(navigator.language, {
+    style: "currency",
+    currency,
+    minimumFractionDigits: 0
+  }).format(toDollarNumber(currency, cents));
+}
+
 /***/ })
 
 /******/ 	});
@@ -865,7 +932,9 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _configuration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./configuration.js */ "./static/components/AppealForm/configuration.js");
 /* harmony import */ var _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppealForm.js */ "./static/components/AppealForm/AppealForm.js");
+/* harmony import */ var _currency_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../currency.js */ "./static/components/currency.js");
 /* global adblock, eyeo, Paddle */
+
 
 
 
@@ -878,14 +947,15 @@ if (adblock.searchParameters.has("testmode") || adblock.searchParameters.get("mo
 } else if (adblock.searchParameters.get("mode") == "live") {
   paddleConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
 }
+adblock.config.paddle = paddleConfig;
 const isTestmode = paddleConfig == _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
 if (isTestmode) Paddle.Environment.set("sandbox");
 Paddle.Setup({
   vendor: paddleConfig.vendor
 });
-const formConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AppealForm;
 const placeholder = document.querySelector(".appeal-form");
-const appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
+const formConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AppealForm;
+const appealForm = adblock.runtime.appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
   paddleConfig,
   formConfig,
   placeholder
@@ -893,28 +963,47 @@ const appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
 function getCompletedUrl() {
-  return `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
+  if (typeof eyeo != "object" || typeof eyeo.payment != "object" || typeof eyeo.payment.paymentCompleteUrl != "string") {
+    return "/payment-complete";
+  } else {
+    return eyeo.payment.paymentCompleteUrl;
+  }
 }
-appealForm.onSubmit(data => {
+appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
   appealForm.disable();
+  const contributionInfo = JSON.stringify({
+    amount: data.amount,
+    frequency: data.frequency,
+    processor: "paddle",
+    currency: data.currency,
+    lang: document.documentElement.lang,
+    source: eyeo.payment.sourceId || "U",
+    clickTs: Date.now()
+  });
+  const successParameters = new URLSearchParams();
+  if (eyeo.payment.productId == "ME") {
+    successParameters.append("thankyou", 1);
+    successParameters.append("var", 1);
+    successParameters.append("u", forceGetUserId());
+    successParameters.append("from", eyeo.payment.variantName || "null");
+    successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
+    successParameters.append("from__frequency", data.frequency);
+  }
 
   // Storing information to be consumed by optimizely and hotjar experiments
   if (eyeo.payment.shouldStoreContributionInfo) {
-    localStorage.setItem("contributionInfo", JSON.stringify({
-      amount: data.amount,
-      frequency: data.frequency,
-      processor: "paddle",
-      currency: data.currency,
-      lang: document.documentElement.lang,
-      source: eyeo.payment.sourceId || "U",
-      clickTs: Date.now()
-    }));
+    localStorage.setItem("contributionInfo", contributionInfo);
   }
-  const omitUserId = true;
+
+  // Passing contributionInfo from new.abp.o to accounts.abp.o to work around
+  // Premium activation limitation. See premium.html for read.
+  if (eyeo.payment.shouldStoreContributionInfo && eyeo.payment.productId == "ME") {
+    successParameters.append("from__contributionInfo", contributionInfo);
+  }
   const passthrough = {
     testmode: isTestmode,
     userid: "",
-    tracking: recordTracking(omitUserId),
+    tracking: recordTracking(),
     locale: "",
     country: "unknown",
     ga_id: "",
@@ -929,7 +1018,7 @@ appealForm.onSubmit(data => {
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: getCompletedUrl(),
+    success_url: `${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
     cancel_url: location.href
   };
   const product = data.product;

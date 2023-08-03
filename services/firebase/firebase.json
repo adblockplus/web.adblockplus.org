@@ -204,12 +204,6 @@
         "type": 301
       },
 
-      // Redirect to cloud run rewrite for update page
-      {
-        "regex": "(?i)^/(?P<language>[\\w-]{2,6}/)?update/?$",
-        "destination": "/update-function/:language?",
-        "type": 301
-      },
       {
         "regex": "(?i)^/(?P<language>[\\w-]{2,6}/)?contribution/?$",
         "destination": "/contribution-function/:language?",
@@ -226,13 +220,6 @@
       },
       {
         "source": "/currency",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/update-function/:language?",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"

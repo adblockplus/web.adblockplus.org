@@ -2,7 +2,7 @@
 
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
-
+import { toDollarNumber } from "../currency.js";
 
 const SANDBOX_HOSTNAMES = [
   /^localhost$/,
@@ -18,46 +18,68 @@ if (adblock.searchParameters.has("testmode") || adblock.searchParameters.get("mo
   paddleConfig = CONFIGURATION.Paddle.live;
 }
 
+adblock.config.paddle = paddleConfig;
+
 const isTestmode = paddleConfig == CONFIGURATION.Paddle.sandbox;
 
 if (isTestmode) Paddle.Environment.set("sandbox");
 
 Paddle.Setup({ vendor: paddleConfig.vendor });
 
-const formConfig = CONFIGURATION.AppealForm;
 const placeholder = document.querySelector(".appeal-form");
-const appealForm = new AppealForm({ paddleConfig, formConfig, placeholder });
+const formConfig = CONFIGURATION.AppealForm;
+const appealForm = adblock.runtime.appealForm = new AppealForm({ paddleConfig, formConfig, placeholder });
 
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
 
 function getCompletedUrl() {
-  return `${location.origin}${eyeo.payment.paymentCompleteUrl || '/payment-complete'}`;
+  if (typeof eyeo != "object" || typeof eyeo.payment != "object" || typeof eyeo.payment.paymentCompleteUrl != "string" ) {
+    return "/payment-complete";
+  } else {
+    return eyeo.payment.paymentCompleteUrl;
+  }
 }
 
-appealForm.onSubmit((data) => {
+appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
 
   appealForm.disable();
 
-  // Storing information to be consumed by optimizely and hotjar experiments
-  if (eyeo.payment.shouldStoreContributionInfo) {
-    localStorage.setItem("contributionInfo", JSON.stringify({
-      amount: data.amount,
-      frequency: data.frequency,
-      processor: "paddle",
-      currency: data.currency,
-      lang: document.documentElement.lang,
-      source: eyeo.payment.sourceId || "U",
-      clickTs: Date.now(),
-    }));
+  const contributionInfo = JSON.stringify({
+    amount: data.amount,
+    frequency: data.frequency,
+    processor: "paddle",
+    currency: data.currency,
+    lang: document.documentElement.lang,
+    source: eyeo.payment.sourceId || "U",
+    clickTs: Date.now()
+  });
+
+  const successParameters = new URLSearchParams();
+  if (eyeo.payment.productId == "ME") {
+    successParameters.append("thankyou", 1);
+    successParameters.append("var", 1);
+    successParameters.append("u", forceGetUserId());
+    successParameters.append("from", eyeo.payment.variantName || "null");
+    successParameters.append("from__amount", toDollarNumber(data.currency, data.amount));
+    successParameters.append("from__frequency", data.frequency);
   }
 
-  const omitUserId = true;
+  // Storing information to be consumed by optimizely and hotjar experiments
+  if (eyeo.payment.shouldStoreContributionInfo) {
+    localStorage.setItem("contributionInfo", contributionInfo);
+  }
+
+  // Passing contributionInfo from new.abp.o to accounts.abp.o to work around
+  // Premium activation limitation. See premium.html for read.
+  if (eyeo.payment.shouldStoreContributionInfo && eyeo.payment.productId == "ME") {
+    successParameters.append("from__contributionInfo", contributionInfo);
+  }
 
   const passthrough = {
     testmode: isTestmode,
     userid: "",
-    tracking: recordTracking(omitUserId),
+    tracking: recordTracking(),
     locale: "",
     country: "unknown",
     ga_id: "",
@@ -72,7 +94,7 @@ appealForm.onSubmit((data) => {
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: getCompletedUrl(),
+    success_url: `${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
     cancel_url: location.href,
   };
 
