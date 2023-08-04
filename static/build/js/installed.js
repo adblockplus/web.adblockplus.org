@@ -1462,12 +1462,12 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
   }
   const passthrough = {
     testmode: isTestmode,
-    userid: "",
+    userid: eyeo.payment.productId == "ME" ? forceGetUserId() : "",
     tracking: recordTracking(),
     locale: "",
     country: "unknown",
     ga_id: "",
-    premium: "false",
+    premium: eyeo.payment.productId == "ME" ? "true" : "false",
     premium_cid: "0",
     premium_sid: "0",
     currency: data.currency,
