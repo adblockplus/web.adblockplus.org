@@ -6,17 +6,17 @@
         <div id="choose-plans-header" class="row">
           <div class="row" style="display:flex; flex-flow:row nowrap;">
             <h3 i18n="step_one_choose_plan">
-              {{ step_one_choose_plan Choose Your Plan }}
+              {{ get_string("step_one_choose_plan", "premium-flows") }}
             </h3>
             <div class="monthly-yearly-slider no-border-transparent-bg" style="align-items:flex-end;height:36px;">
               <span i18n="monthly_title_case">
-                {{ monthly_title_case Monthly }}
+                {{ get_string("monthly_title_case", "premium-flows") }}
               </span>
               <div class="slider active">
                 <div class="slider-circle"></div>
               </div>
               <span i18n="yearly_title_case">
-                {{ yearly_title_case Yearly }}
+                {{ get_string("yearly_title_case", "premium-flows") }}
               </span>
             </div>
           </div>
@@ -34,7 +34,7 @@
           </button>
           <button id="r_monthly" class="option option-tall selected" data-amount="20" data-recurring-frequency="yearly" data-plan="me" style="position:relative">
             <div class="yearly-savings-callout" i18n="save_percent_amount" i18n_replacement_text="17">
-              {{ save_percent_amount Save 17% }}
+              {{ get_string("save_percent_amount", "premium-flows") }}
             </div>
             <span i18n="amount_per_month" id="monthly-amount" style="display: none"></span>
             <div class="selected-check">
@@ -49,13 +49,13 @@
         <div id="money-back-guaranteed">
           <img src="/adblock/premium/images/badge.svg?v=1626791040" alt=""/>
           <span i18n="sixty_day_money_back_guarantee">
-            {{ sixty_day_money_back_guarantee 60-Day money-back guarantee }}
+            {{ get_string("sixty_day_money_back_guarantee", "premium-flows") }}
           </span>
         </div><!-- #money-back-gauranteed -->
       </div><!-- #choose plans -->
       <div id="pmt-success-left" class="step" style="display: none">
         <h1 i18n="payment_confirmed_header">
-          {{ payment_confirmed_header Payment Confirmed }}
+          {{ get_string("payment_confirmed_header", "premium-flows") }}
         </h1>
         <div style="width:auto;margin-top: 16px;">
           <span class="plan-name">
@@ -75,7 +75,7 @@
         <div id="payment-box" class="step">
           <div id="card-1" class="box-step">
             <h3 i18n="payment_title">
-              {{ payment_title Payment }}
+              {{ get_string("payment_title", "premium-flows") }}
             </h3>
             <hr/>
             <div style="width: 100%; margin: auto; height: 82%">
@@ -83,7 +83,7 @@
                 <i class="material-icons material-icons-outlined">lock</i>
                 &nbsp;
                 <span i18n="checkout_now">
-                  {{ checkout_now Checkout Now }}
+                  {{ get_string("checkout_now", "premium-flows") }}
                 </span>
               </button>
               <img style="width: 100%; margin-left: 10px;" src="/adblock/anti-adblock-pass/logos_paddle_providers.svg"></img>
@@ -94,7 +94,7 @@
                     Adblock Plus Premium + VPN
                   </span>
                   <span i18n="total">
-                    {{ total Total: }}
+                    {{ get_string("total", "premium-flows") }}
                   </span>
                 </div>
                 <span class="plan-price">
@@ -120,83 +120,83 @@
     
             <div class="box-step-content" id="mevpn-success" style="display:none;">
               <h1 i18n="welcome_to_plan">
-                {{ welcome_to_plan Welcome to <span class="plan-name">Adblock Plus Premium + VPN</span>! }}
+                {{ get_string("welcome_to_plan", "premium-flows") }}
               </h1>
               <ol>
                 <li>
                   <span i18n="you_have_adblock_premium_access">
-                    {{ you_have_adblock_premium_access You now have access to Adblock Plus Premium. }}
+                    {{ get_string("you_have_adblock_premium_access", "premium-flows") }}
                   </span>
                   <a href="#" class="get-started-with-myadblock">
                     <span i18n="click_here_to_configure_premium_settings">
-                      {{ click_here_to_configure_premium_settings Click here to configure your settings. }}
+                      {{ get_string("click_here_to_configure_premium_settings", "premium-flows") }}
                     </span>
                   </a>
                 </li>
                 <li i18n="install_adblock_vpn_below">
-                  {{ install_adblock_vpn_below Install Adblock Plus VPN below }}
+                  {{ get_string("install_adblock_vpn_below", "premium-flows") }}
                 </li>
               </ol>
               <a class="vpn-cta" id="download-vpn">
                 <i class="material-icons" style="margin-right:16px;margin-left:-16px;">download</i>
                 <span i18n="download_vpn_for_platform">
-                  {{ download_vpn_for_platform Download Adblock Plus VPN for }}
+                  {{ get_string("download_vpn_for_platform", "premium-flows") }}
                 </span>
                 &nbsp;
                 <span id="vpn-os-display-name">Windows</span>
               </a>
               <p>
                 <span i18n="email_sent_for_more_devices">
-                  {{ email_sent_for_more_devices An email has been sent to install the VPN on additional devices. }}
+                  {{ get_string("email_sent_for_more_devices", "premium-flows") }}
                 </span>
                 <span i18n="premium_you_have_questions" i18n_replacement_el="premium_help_center_link_2" i18n_replacement_el_2="contact_email_2">
-                  {{ premium_you_have_questions Questions? Please <a href="https://help.adblockplus.org/" target="_new" class="mainContentLink">visit our Help Center</a> or contact <a href="mailto:support@adblockplus.org" class="mainContentLink helpdesk-email">support@adblockplus.org</a>. }}
+                  {{ get_string("premium_you_have_questions", "premium-flows") }}
                 </span>
               </p>
             </div><!-- #mevpn-success-->
     
             <div class="box-step-content" id="me-success" style="display:none;">
               <h1 i18n="welcome_to_plan">
-                {{ welcome_to_plan Welcome to <span class="plan-name">Adblock Plus Premium</span>! }}
+                {{ get_string("welcome_to_plan", "premium-flows") }}
               </h1>
               <p>
                 <span i18n="click_below_to_customize">
-                  {{ click_below_to_customize Click below to customize your online experience. }}
+                  {{ get_string("click_below_to_customize", "premium-flows") }}
                 </span>
                 <br/>
                 <span i18n="premium_features_get_started">
-                  {{ premium_features_get_started Choose a theme, block additional distractions, and more. }}
+                  {{ get_string("premium_features_get_started", "premium-flows") }}
                 </span>
               </p>
               <button class="prem-cta get-started-with-myadblock">
                 <span i18n="get_started_cta">
-                  {{ get_started_cta Get Started }}
+                  {{ get_string("get_started_cta", "premium-flows") }}
                 </span>
               </button>
               <p i18n="premium_you_have_questions" i18n_replacement_el="premium_help_center_link_1" i18n_replacement_el_2="contact_email">
-                {{ premium_you_have_questions Questions? Please <a href="https://help.adblockplus.org/" target="_new" class="mainContentLink">visit our Help Center</a> or contact <a href="mailto:support@adblockplus.org" class="mainContentLink helpdesk-email">support@adblockplus.org</a>. }}
+                {{ get_string("premium_you_have_questions", "premium-flows") }}
               </p>
             </div><!-- #me-success -->
             
           </div><!-- #card-3 -->
           <div id="card-4" class="box-step" style="display: none">
             <h2 i18n="oops_period">
-              {{ oops_period Oops. }}
+              {{ get_string("oops_period", "premium-flows") }}
             </h2>
             <p>
               <span i18n="something_went_wrong">
-                {{ something_went_wrong Something went wrong. }}
+                {{ get_string("something_went_wrong", "premium-flows") }}
               </span>
             </p>
           </div><!-- #card-4 -->
       </div><!-- #hoose-payment-type -->
       <div id="other-options">
         <span i18n="already_have_contributed_before">
-          {{ already_have_contributed_before Already have premium or contributed before? }}
+          {{ get_string("already_have_contributed_before", "premium-flows") }}
         </span>
         <a href="#" id="already-donated">
           <span i18n="activate_here">
-            {{ activate_here Activate here }}
+            {{ get_string("activate_here", "premium-flows") }}
           </span>
         </a>
       </div><!-- #other-options -->
@@ -209,13 +209,13 @@
           <div id="already-donated-card-1" class="box-step">
             <div class="already-contributed-card-header">
               <h3 i18n="enter_email_get_started">
-                {{ enter_email_get_started Welcome! Enter your email address to get started }}
+                {{ get_string("enter_email_get_started", "premium-flows") }}
               </h3>
               <i class="material-icons back-to-payments" i18n-aria-label="close" aria-label="close" role="button">close</i>
             </div>
             <hr>
             <p class="already-contributed-card-instruction" i18n="find_previous_payment">
-              {{ find_previous_payment We’ll use your email to find your previous payment information }}
+              {{ get_string("find_previous_payment", "premium-flows") }}
             </p>
             <div class="already-donated-action">
               <form action="#" id="prev_donation">
@@ -223,7 +223,7 @@
                 <button type="submit" style="display: none"></button>
               </form>
               <button class="submit-cta" id="submit_email" i18n="submit">
-                {{ submit Submit }}
+                {{ get_string("submit", "premium-flows") }}
               </button>
             </div>
             <div class="progress-box">
@@ -237,13 +237,13 @@
           <div id="already-donated-card-2-code" class="box-step" style="display: none">
             <div class="already-contributed-card-header">
               <h3 i18n="check_email">
-                {{ check_email Please check the email we sent you }}
+                {{ get_string("check_email", "premium-flows") }}
               </h3>
               <i class="material-icons back-to-payments" i18n-aria-label="close" aria-label="close" role="button">close</i>
             </div>
             <hr>
             <p class="already-contributed-card-instruction" i18n="enter_code">
-              {{ enter_code Enter the 6-character code to confirm your email address. }}
+              {{ get_string("enter_code", "premium-flows") }}
             </p>
             <div class="already-donated-action">
               <form id="confirmation-code">
@@ -251,16 +251,16 @@
                 <button type="submit" style="display: none"></button>
               </form>
               <button class="submit-cta" id="submit_code" i18n="submit">
-                {{ submit Submit }}
+                {{ get_string("submit", "premium-flows") }}
               </button>
             </div>
             <div class="row flex-start">
               <span i18n="no_email">
-                {{ no_email No email? }}
+                {{ get_string("no_email", "premium-flows") }}
               </span>
               &nbsp;
               <span i18n="check_spam_or_contact" i18n_replacement_el="check_spam_or_contact_link">
-                {{ check_spam_or_contact Please check your spam or <a href="mailto:support@adblockplus.org" class="mainContentLink">contact us</a>. }}
+                {{ get_string("check_spam_or_contact", "premium-flows") }}
               </span>
             </div>
             <div class="progress-box">
@@ -285,14 +285,14 @@
           <div id="card2-error-1" class="box-step" style="display: none">
             <div class="already-contributed-card-header">
               <h3 i18n="oops">
-                {{ oops Oops }}
+                {{ get_string("oops", "premium-flows") }}
               </h3>
               <i class="material-icons back-to-payments" i18n-aria-label="close" aria-label="close" role="button">close</i>
             </div>
             <hr>
             <p class="already-contributed-card-instruction">
               <span i18n="no_donations_for_email">
-                {{ no_donations_for_email We don't seem to have any donations recorded for that email. }}
+                {{ get_string("no_donations_for_email", "premium-flows") }}
                 </span>
               </p>
               <div class="progress-box">
@@ -305,18 +305,18 @@
             <div id="card2-error-2" class="box-step" style="display: none">
               <div class="already-contributed-card-header">
                 <h3 i18n="oops">
-                  {{ oops Oops }}
+                  {{ get_string("oops", "premium-flows") }}
                 </h3>
                 <i class="material-icons back-to-payments" i18n-aria-label="close" aria-label="close" role="button">close</i>
               </div>
               <hr>
               <p class="already-contributed-card-instruction">
                 <span i18n="code_incorrect">
-                  {{ code_incorrect That code is incorrect. }}
+                  {{ get_string("code_incorrect", "premium-flows") }}
                 </span>
                 &nbsp;
                 <span i18n="reach_out_help_setup" i18n_replacement_el="reach_out_to_us_3">
-                  {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
+                  {{ get_string("reach_out_help_setup", "premium-flows") }}
                 </span>
               </p>
               <div class="progress-box">
@@ -330,18 +330,18 @@
             <div id="card2-error-3" class="box-step" style="display: none">
               <div class="already-contributed-card-header">
                 <h3 i18n="oops">
-                  {{ oops Oops }}
+                  {{ get_string("oops", "premium-flows") }}
                 </h3>
                 <i class="material-icons back-to-payments" i18n-aria-label="close" aria-label="close" role="button">close</i>
               </div>
               <hr>
               <p class="already-contributed-card-instruction">
                 <span i18n="cant_find_user_id">
-                  {{ cant_find_user_id We can't seem to find your user id. }}
+                  {{ get_string("cant_find_user_id", "premium-flows") }}
               </span>
               &nbsp;
               <span i18n="reach_out_help_setup" i18n_replacement_el="reach_out_to_us_4">
-                {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
+                {{ get_string("reach_out_help_setup", "premium-flows") }}
               </span>
             </p>
             <div class="progress-box">
@@ -355,18 +355,18 @@
           <div id="card2-error-4" class="box-step" style="display: none">
             <div class="already-contributed-card-header">
               <h3 i18n="oops">
-                {{ oops Oops }}
+                {{ get_string("oops", "premium-flows") }}
               </h3>
               <i class="material-icons back-to-payments" i18n-aria-label="close" aria-label="close" role="button">close</i>
             </div>
             <hr>
             <p class="already-contributed-card-instruction">
               <span i18n="problem_activating">
-                {{ problem_activating There was a problem activating your extension. }}
+                {{ get_string("problem_activating", "premium-flows") }}
               </span>
               &nbsp;
               <span i18n="reach_out_help_setup" i18n_replacement_el="reach_out_to_us_1">
-                {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
+                {{ get_string("reach_out_help_setup", "premium-flows") }}
               </span>
             </p>
             <div class="progress-box">
@@ -380,21 +380,21 @@
           <div id="card2-error-5" class="box-step" style="display: none">
             <div class="already-contributed-card-header">
               <h3 i18n="oops">
-                {{ oops Oops }}
+                {{ get_string("oops", "premium-flows") }}
               </h3>
               <i class="material-icons back-to-payments" i18n-aria-label="close" aria-label="close" role="button">close</i>
             </div>
             <hr>
             <p class="already-contributed-card-instruction">
               <span i18n="problem_our_end">
-                {{ problem_our_end There was a problem on our end. }}
+                {{ get_string("problem_our_end", "premium-flows") }}
               </span>
               &nbsp;
               <span i18n="recorded_investigating">
-                {{ recorded_investigating It has been recorded and we're investigating. }}
+                {{ get_string("recorded_investigating", "premium-flows") }}
                 </span>
                 <span i18n="reach_out_help_setup" i18n_replacement_el="reach_out_to_us_2">
-                  {{ reach_out_help_setup <a href="mailto:support@adblockplus.org" class="mainContentLink">Reach out to us</a> and let us help you finish setup. }}
+                  {{ get_string("reach_out_help_setup", "premium-flows") }}
                 </span>
               </p>
               <div class="progress-box">
@@ -408,7 +408,7 @@
             <div id="already-donated-card-4-goodtogo" class="box-step" style="display: none">
               <div class="row">
                 <h3 i18n="ready_premium">
-                  {{ ready_premium You’re ready to start using Adblock Plus Premium! }}
+                  {{ get_string("ready_premium", "premium-flows") }}
                 </h3>
               </div>
               <hr />
@@ -419,15 +419,15 @@
                 <div class="right">
                   <div class="row flex-start">
                     <span i18n="click_below_to_customize">
-                      {{ click_below_to_customize Click below to customize your online experience. }}
+                      {{ get_string("click_below_to_customize", "premium-flows") }}
                     </span>
                     <span i18n="premium_features_get_started" class="nomargin">
-                      {{ premium_features_get_started Choose a theme, block additional distractions, and more. }}
+                      {{ get_string("premium_features_get_started", "premium-flows") }}
                     </span>
                   </div>
                   <div class="row">
                     <a href="https://help.eyeo.com/en/adblockplus/getting-started-with-adblock-plus-premium" class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta" style="margin-bottom: 0px">
-                      {{ get_started_cta Get Started }}
+                      {{ get_string("get_started_cta", "premium-flows") }}
                     </a>
                   </div>
                 </div>
