@@ -70,7 +70,17 @@ window.addEventListener('click', event => {
 if (adblock.searchParameters.has("bc")) {
   document.querySelector(".premium-header--default").hidden = true;
   document.querySelector(".premium-header--churned").hidden = false;
-  document.querySelector(".premium-churned__heading__blocked").textContent = new Intl.NumberFormat(document.documentElement.lang).format(parseInt(adblock.searchParameters.get("bc"), 10));
+  const blockedCount = parseInt(adblock.searchParameters.get("bc"), 10);
+  const blockedCountOptions = {};
+  if (blockedCount > 9999999) {
+    blockedCountOptions.notation = "compact";
+  }
+  if (blockedCount <= 99) {
+    document.querySelector(".premium-churned__heading").hidden = true;
+  } else {
+    document.querySelector(".premium-churned__heading__blocked").textContent
+      = new Intl.NumberFormat(document.documentElement.lang, blockedCountOptions).format(blockedCount);
+  }
 }
 
 function onDOMContentLoaded()
