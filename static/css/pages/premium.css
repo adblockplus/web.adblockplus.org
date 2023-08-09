@@ -299,7 +299,11 @@ html {
 @media (min-width: 992px) {
   .premium-header--churned h1 {
     font-size: 4rem;
-  }  
+  }
+
+  .premium-header--churned .premium-churned__heading--low-variant {
+    font-size: 3.5rem;
+  }
 }
 
 @media (min-width: 576px) {
