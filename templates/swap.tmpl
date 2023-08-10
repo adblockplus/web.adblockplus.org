@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html <? include html-attributes ?>>
+  <head>
+    <template id="swap-head">
+      <!-- swap-head -->
+      <? include meta/standard ?>
+      <? include meta/social ?>
+      <? include styles ?>
+      <? include config ?>
+      <? include analytics ?>
+  
+      {% block head %}
+        {{ head | safe }}
+      {% endblock %}
+      <!-- /swap-head -->
+    </template>
+  </head>
+
+  <body class="{{ bodyclass if bodyclass else "" }}">
+    <template id="swap-body">
+      <!-- swap-body -->
+      <? include navbar ?>
+
+      {% block body %}
+        {{ body | safe }}
+      {% endblock %}
+  
+      <? include footer ?>
+      <? include cookie/index ?>
+      <? include google/analytics ?>
+      <? include scripts ?>
+      <!-- /swap-body -->
+    </template>
+    <script>
+      (async function(){
+        const params = new URLSearchParams(location.search);
+        const head = document.getElementById("swap-head");
+        const body = document.getElementById("swap-body");
+        function runScripts (scripts) {
+          if (!scripts.length) return;
+          const oldScript = scripts[0];
+          const newScript = document.createElement("script");
+          scripts.shift();
+          if (oldScript.src)
+            newScript.onload = () => runScripts(scripts)
+          else
+            setTimeout(() => runScripts(scripts), 1)
+          Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+          newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        }
+        if (params.has("swap")) {
+          const response = await fetch("/en/premium-paddle");
+          const text = await response.text();
+          document.head.innerHTML = text.substring(
+            text.indexOf("<!-- swap-head -->"),
+            text.indexOf("<!-- /swap-head -->")
+          );
+          document.body.innerHTML = text.substring(
+            text.indexOf("<!-- swap-body -->"),
+            text.indexOf("<!-- /swap-body -->")
+          );
+          runScripts(Array.from(document.documentElement.querySelectorAll("script")));
+        } else {
+          document.head.innerHTML = head.innerHTML;
+          document.body.innerHTML = body.innerHTML;
+          runScripts(Array.from(document.documentElement.querySelectorAll("script")));
+        }
+      })();
+    </script>
+  </body>
+</html>
