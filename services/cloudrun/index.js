@@ -72,6 +72,13 @@ app.get('/currency', (req, res) => {
   res.redirect(302, `/currencies/${paymentConfig}${queryString}`);
 });
 
+app.get('/update-function/:language?', (req, res) => {
+  const language = req.params.language || '';
+  const page = 'update-fallback';
+  const query = getQueryString(req);
+  res.redirect(302, path.join('/', language, page) + query);
+});
+
 app.get('/contribution-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
