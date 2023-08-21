@@ -14,7 +14,7 @@ variables:
 
 .production:
   variables: &production
-    DEPLOY_PATH: build_production
+    DEPLOY_PATH: build_production0
     DOMAIN: new.adblockplus.org
     FIREBASE_DOMAIN: https://www.adblockplus.dev/
     STRIPE_PUBLISHABLE_KEY: pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs
@@ -24,7 +24,7 @@ variables:
 .production0:
   variables: &production0
     DOMAIN: adblockplus.org
-    DEPLOY_PATH: build_production0
+    DEPLOY_PATH: build_production
   extends:
     ".production"
 
