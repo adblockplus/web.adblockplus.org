@@ -154,7 +154,7 @@ modern_production_deploy5:
   tags:
     - *PRODUCTION_RUNNER6
   extends:
-    "legacy_production_deploy1"
+    "modern_production_deploy0"
 
 staging_build:
   stage: build_staging
