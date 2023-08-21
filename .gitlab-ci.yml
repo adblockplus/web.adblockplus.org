@@ -213,7 +213,7 @@ smoke_tests_production:
     - master
   stage: smoke_tests
   variables:
-    <<: *production
+    <<: *legacy_production
   image: *TEST_IMAGE
   script:
     - python3 -m pip install tox
@@ -410,7 +410,7 @@ build:production:
   except:
     - schedules
   variables:
-    <<: *production
+    <<: *modern_production
   image: *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
@@ -580,7 +580,7 @@ deploy_firebase_hosting:production:
     - schedules
   image: *NODE_IMAGE
   variables:
-    <<: *production
+    <<: *modern_production
   dependencies:
     - build:production
   before_script:
