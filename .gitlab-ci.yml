@@ -14,6 +14,7 @@ variables:
 
 .production:
   variables: &production
+    DEPLOY_PATH: build_production
     DOMAIN: new.adblockplus.org
     FIREBASE_DOMAIN: https://www.adblockplus.dev/
     STRIPE_PUBLISHABLE_KEY: pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs
@@ -23,6 +24,7 @@ variables:
 .production0:
   variables: &production0
     DOMAIN: adblockplus.org
+    DEPLOY_PATH: build_production0
   extends:
     ".production"
 
@@ -70,7 +72,7 @@ production_build:
     - python3 -m pip install -q crudini
   script:
     - crudini --set settings.ini general siteurl https://$DOMAIN
-    - python3 -m cms.bin.generate_static_pages $PWD build_production
+    - python3 -m cms.bin.generate_static_pages $PWD $DEPLOY_PATH
   artifacts:
     name: $CI_COMMIT_REF_SLUG
     paths:
@@ -93,7 +95,7 @@ deploy_production1:
   tags:
     - *PRODUCTION_RUNNER1
   script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/$DEPLOY_PATH
   environment:
     name: $DOMAIN
     url: http://$DOMAIN
