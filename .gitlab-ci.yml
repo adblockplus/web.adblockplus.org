@@ -114,31 +114,31 @@ deploy_production2:
   tags:
     - *PRODUCTION_RUNNER2
   extends:
-    "deploy_production1"
+    "deploy_production0"
 
 deploy_production3:
   tags:
     - *PRODUCTION_RUNNER3
   extends:
-    "deploy_production1"
+    "deploy_production0"
 
 deploy_production4:
   tags:
     - *PRODUCTION_RUNNER4
   extends:
-    "deploy_production1"
+    "deploy_production0"
 
 deploy_production5:
   tags:
     - *PRODUCTION_RUNNER5
   extends:
-    "deploy_production1"
+    "deploy_production0"
 
 deploy_production6:
   tags:
     - *PRODUCTION_RUNNER6
   extends:
-    "deploy_production1"
+    "deploy_production0"
 
 staging_build:
   stage: build_staging
