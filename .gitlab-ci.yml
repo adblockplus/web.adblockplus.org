@@ -12,21 +12,19 @@ variables:
     DONATION_SERVER_BASE_URL: https://donation-staging.adblock-org.workers.dev/
     DONATION_SERVER_BASE_URL_V1: https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/
 
-.production:
-  variables: &production
-    DEPLOY_PATH: build_production0
-    DOMAIN: new.adblockplus.org
+.legacy_production:
+  variables: &legacy_production
+    DOMAIN: adblockplus.org
     FIREBASE_DOMAIN: https://www.adblockplus.dev/
     STRIPE_PUBLISHABLE_KEY: pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs
     DONATION_SERVER_BASE_URL: https://donation.adblock-org.workers.dev/
     DONATION_SERVER_BASE_URL_V1: https://new-integration.adblockplus.org/
 
-.production0:
-  variables: &production0
-    DOMAIN: adblockplus.org
-    DEPLOY_PATH: build_production
+.modern_production:
   extends:
-    ".production"
+    ".legacy_production"
+  variables: &modern_production
+    DOMAIN: new.adblockplus.org
 
 .common:
   tags:
@@ -47,8 +45,10 @@ variables:
 
 # https://docs.gitlab.com/ee/ci/yaml/#stages
 stages:
-  - build_production
-  - deploy_production
+  - build_legacy_production
+  - deploy_legacy_production
+  - build_modern_production
+  - deploy_modern_production
   - build_staging
   - deploy_staging
   - smoke_tests
@@ -59,12 +59,12 @@ stages:
   - deploy_cloud_run
   - deploy_firebase
 
-production_build:
-  stage: build_production
+legacy_production_build:
+  stage: build_legacy_production
   except:
     - schedules
   variables:
-    <<: *production
+    <<: *legacy_production
   image: *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
@@ -72,73 +72,89 @@ production_build:
     - python3 -m pip install -q crudini
   script:
     - crudini --set settings.ini general siteurl https://$DOMAIN
-    - python3 -m cms.bin.generate_static_pages $PWD $DEPLOY_PATH
+    - python3 -m cms.bin.generate_static_pages $PWD build_production
   artifacts:
     name: $CI_COMMIT_REF_SLUG
     paths:
-      - $DEPLOY_PATH
+      - build_production
   only:
     - master
 
-production_build0:
-  variables:
-    <<: *production0
-  extends:
-    "production_build"
-
-deploy_production1:
-  stage: deploy_production
+legacy_production_deploy0:
+  stage: deploy_legacy_production
   except:
     - schedules
   variables:
-    <<: *production
+    <<: *legacy_production
   tags:
-    - *PRODUCTION_RUNNER1
+    - *PRODUCTION_RUNNER0
   script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/$DEPLOY_PATH
+    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
   environment:
     name: $DOMAIN
     url: http://$DOMAIN
   only:
     - master
 
-deploy_production0:
+modern_production_build:
+  stage: build_modern_production
+  except:
+    - schedules
   variables:
-    <<: *production0
+    <<: *modern_production
+  image: *BUILD_IMAGE
   tags:
-    - *PRODUCTION_RUNNER0
-  extends:
-    "deploy_production1"
+    - *BUILD_RUNNER
+  before_script:
+    - python3 -m pip install -q crudini
+  script:
+    - crudini --set settings.ini general siteurl https://$DOMAIN
+    - python3 -m cms.bin.generate_static_pages $PWD build_production
+  artifacts:
+    name: $CI_COMMIT_REF_SLUG
+    paths:
+      - build_production
+  only:
+    - master
 
-deploy_production2:
+modern_production_deploy0:
+  stage: deploy_modern_production
+  variables:
+    <<: *modern_production
+  tags:
+    - *PRODUCTION_RUNNER1
+  extends:
+    "legacy_production_deploy0"
+
+modern_production_deploy1:
   tags:
     - *PRODUCTION_RUNNER2
   extends:
-    "deploy_production0"
+    "modern_production_deploy0"
 
-deploy_production3:
+modern_production_deploy2:
   tags:
     - *PRODUCTION_RUNNER3
   extends:
-    "deploy_production0"
+    "modern_production_deploy0"
 
-deploy_production4:
+modern_production_deploy3:
   tags:
     - *PRODUCTION_RUNNER4
   extends:
-    "deploy_production0"
+    "modern_production_deploy0"
 
-deploy_production5:
+modern_production_deploy4:
   tags:
     - *PRODUCTION_RUNNER5
   extends:
-    "deploy_production0"
+    "modern_production_deploy0"
 
-deploy_production6:
+modern_production_deploy5:
   tags:
     - *PRODUCTION_RUNNER6
   extends:
-    "deploy_production0"
+    "legacy_production_deploy1"
 
 staging_build:
   stage: build_staging
