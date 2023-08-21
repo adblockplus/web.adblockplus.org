@@ -76,7 +76,7 @@ production_build:
   artifacts:
     name: $CI_COMMIT_REF_SLUG
     paths:
-      - build_production
+      - $DEPLOY_PATH
   only:
     - master
 
