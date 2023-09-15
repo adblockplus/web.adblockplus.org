@@ -136,6 +136,9 @@ SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|i
   RewriteCond %{ENV:link} ^learn_more_premium_pass$
   RewriteRule ^ https://flattr.com/ [L,NC,R=301]
 
+  RewriteCond %{ENV:link} ^adblock_ios$
+  RewriteRule ^ https://apps.apple.com/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868 [L,NC,R=301]
+
   RewriteCond "%{DOCUMENT_ROOT}/%{ENV:lang}/%{ENV:link}" !-f
   RewriteRule ^ - [E=lang:!!]
 
