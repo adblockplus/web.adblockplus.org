@@ -101,7 +101,7 @@
               duration.textContent = durationText;
             }
             paragraph.querySelector(".premium-upsell__currency").textContent = currencySigns[currency] || "$";
-            paragraph.querySelector(".premium-upsell__amount").textContent = amount / 100;
+            paragraph.querySelector(".premium-upsell__amount").textContent = currency == "JPY" ? amount : amount / 100;
           } else {
             paragraph.hidden = true;
           }
