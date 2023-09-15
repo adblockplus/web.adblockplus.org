@@ -61,6 +61,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
     successParameters.append("var", 1);
     successParameters.append("u", forceGetUserId());
     successParameters.append("from", eyeo.payment.variantName || "null");
+    successParameters.append("from__currency", data.currency);
     successParameters.append("from__amount", toDollarNumber(data.currency, data.amount));
     successParameters.append("from__frequency", data.frequency);
   }

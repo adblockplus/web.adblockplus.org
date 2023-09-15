@@ -275,6 +275,9 @@ $(document).ready(function () {
 
     function activateExtension(onSuccess, onFailure) {
         eyeo.beacon({premiumActivationAttempt: true});
+        if (adblock.searchParameters.has("activationSkip")) {
+          return onSuccess();
+        }
         // wait up to 10 seconds to receive pmt success receipt verification from extension
         const maxWait = new Promise(function (_, reject) {
             setTimeout(function () {
@@ -608,7 +611,7 @@ $(document).ready(function () {
             return;
         }
         const amount = params.get("from__amount") || params.get("anti_adblock_pass__amount") || $("button.option.selected").attr("data-amount");
-        const prevSelectedCurrency = localStorage.getItem("selectedCurrency");
+        const prevSelectedCurrency = params.get("from__currency") || localStorage.getItem("selectedCurrency");
         if (document.location.search.match(/thankyou/)) {
             if (prevSelectedCurrency && typeof prevSelectedCurrency === "string" && prevSelectedCurrency.length > 0) {
                 selectedCurrency = prevSelectedCurrency;
