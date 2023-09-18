@@ -213,9 +213,6 @@ Header merge  Vary "Origin"
   RewriteRule .* /currencies/usd.js [L]
 </FilesMatch>
 
-# Fall back to general update page for fr and de languages
-RewriteRule "(de|de_DE|de-DE|fr|fr_FR|fr-FR)\/update$" "$1/contribution" [NC,L]
-
 RewriteRule ^(devbuilds(/.*)?) https://downloads.adblockplus.org/$1 [NC,L]
 
 RewriteRule ^(blog|releases|development-builds|atom|rss|category|section|author|file_download|images|textpattern)($|/) https://blog.adblockplus.org/$1

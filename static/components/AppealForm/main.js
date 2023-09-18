@@ -986,6 +986,7 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     successParameters.append("var", 1);
     successParameters.append("u", forceGetUserId());
     successParameters.append("from", eyeo.payment.variantName || "null");
+    successParameters.append("from__currency", data.currency);
     successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
     successParameters.append("from__frequency", data.frequency);
   }

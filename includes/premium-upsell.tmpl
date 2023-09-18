@@ -1,123 +1,125 @@
-<style>
-  .content .premium-upsell {
-    display: flex;
-    border: 1px solid #666666;
-    border-radius: 10px;
-    margin: 1rem 0;
-    padding: 0.5rem;
-  }
+{% if locale not in ("de", "fr") %}
+  <style>
+    .content .premium-upsell {
+      display: flex;
+      border: 1px solid #666666;
+      border-radius: 10px;
+      margin: 1rem 0;
+      padding: 0.5rem;
+    }
 
-  .content .premium-upsell__border-start {
-    display: flex;
-    width: 0.5rem;
-    background-color: #2284F7;
-    border-radius: 4px;
-    align-items: stretch;
-  }
+    .content .premium-upsell__border-start {
+      display: flex;
+      width: 0.5rem;
+      background-color: #2284F7;
+      border-radius: 4px;
+      align-items: stretch;
+    }
 
-  .content .premium-upsell > p {
-    margin: 0.5rem 0;
-    margin-inline-start: 1rem;
-  }
-</style>
+    .content .premium-upsell > p {
+      margin: 0.5rem 0;
+      margin-inline-start: 1rem;
+    }
+  </style>
 
-<div id="what-is-included" class="info premium-upsell" hidden>
-  <span class="info-line premium-upsell__border-start"></span>
-  <p id="one-year" class="premium-upsell__year">
-    {{ get_string("what-is-included-1-year", "payment-form") }}
-  </p>
-  <p id="x-years" class="premium-upsell__years" hidden>
-    {{ get_string("what-is-included-x-years", "payment-form") }}
-  </p>
-  <p id="x-months" class="premium-upsell__months" hidden>
-    {{ get_string("what-is-included-x-months", "payment-form") }}
-  </p>
-  <p id="monthly" class="premium-upsell__monthly" hidden>
-    {{ get_string("what-is-included-monthly", "payment-form") }}
-  </p>
-  <p id="yearly" class="premium-upsell__yearly" hidden>
-    {{ get_string("what-is-included-yearly", "payment-form") }}
-  </p>
-</div>
+  <div id="what-is-included" class="info premium-upsell" hidden>
+    <span class="info-line premium-upsell__border-start"></span>
+    <p id="one-year" class="premium-upsell__year">
+      {{ get_string("what-is-included-1-year", "payment-form") }}
+    </p>
+    <p id="x-years" class="premium-upsell__years" hidden>
+      {{ get_string("what-is-included-x-years", "payment-form") }}
+    </p>
+    <p id="x-months" class="premium-upsell__months" hidden>
+      {{ get_string("what-is-included-x-months", "payment-form") }}
+    </p>
+    <p id="monthly" class="premium-upsell__monthly" hidden>
+      {{ get_string("what-is-included-monthly", "payment-form") }}
+    </p>
+    <p id="yearly" class="premium-upsell__yearly" hidden>
+      {{ get_string("what-is-included-yearly", "payment-form") }}
+    </p>
+  </div>
 
-<script>
-  /* global adblock, eyeo */
-  (() => {
+  <script>
+    /* global adblock, eyeo */
+    (() => {
 
-    const currencySigns = {
-      "USD": "$",
-      "EUR": "€",
-      "GBP": "£",
-      "AUD": "$",
-      "CAD": "$",
-      "CHF": "CHF ",
-      "JPY": "¥",
-      "RUB": "₽",
-      "MXN": "$"
-    };
+      const currencySigns = {
+        "USD": "$",
+        "EUR": "€",
+        "GBP": "£",
+        "AUD": "$",
+        "CAD": "$",
+        "CHF": "CHF ",
+        "JPY": "¥",
+        "RUB": "₽",
+        "MXN": "$"
+      };
 
-    // FIXME: adblock.lib.upsellPremium kept for backwards compatibility with conversion.com
-    adblock.lib.upsellPremium = adblock.api.upsellPremium = () => {
+      // FIXME: adblock.lib.upsellPremium kept for backwards compatibility with conversion.com
+      adblock.lib.upsellPremium = adblock.api.upsellPremium = () => {
 
-      const appealForm = adblock.runtime.appealForm;
-      const AppealForm = adblock.lib.AppealForm;
-      const config = adblock.config.paddle.products;
+        const appealForm = adblock.runtime.appealForm;
+        const AppealForm = adblock.lib.AppealForm;
+        const config = adblock.config.paddle.products;
 
-      // configure product and payment flow endpoint
-      // @see static/components/AppealForm/controller.js
-      eyeo.payment.productId = "ME";
-      eyeo.payment.variantName = "update__202308";
-      eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
+        // configure product and payment flow endpoint
+        // @see static/components/AppealForm/controller.js
+        eyeo.payment.productId = "ME";
+        eyeo.payment.variantName = "update__202308";
+        eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
 
-      const premiumAlert = document.querySelector(".premium-upsell");
+        const premiumAlert = document.querySelector(".premium-upsell");
 
-      function updatePremiumAlert() {
+        function updatePremiumAlert() {
 
-        const {currency, amount, frequency} = appealForm.state();
-        let frequencyClassSuffix = frequency, durationMonths, durationText;
+          const {currency, amount, frequency} = appealForm.state();
+          let frequencyClassSuffix = frequency, durationMonths, durationText;
 
-        if (frequency == "once") {
-          const amountNumerator = parseInt(amount, 10);
-          const onceDenominator = parseInt(Object.keys(config[currency].once)[2], 10);
-          const monthlyDenominator = parseInt(Object.keys(config[currency].monthly)[0], 10);
-          if (amountNumerator < onceDenominator) {
-            durationText = Math.floor(amountNumerator / monthlyDenominator);
-            frequencyClassSuffix = "months";
-            durationMonths = durationText;
-          } else {
-            durationText = Math.floor(amountNumerator / onceDenominator);
-            frequencyClassSuffix = durationText === 1 ? "year" : "years";
-            durationMonths = 12 * durationText;
+          if (frequency == "once") {
+            const amountNumerator = parseInt(amount, 10);
+            const onceDenominator = parseInt(Object.keys(config[currency].once)[2], 10);
+            const monthlyDenominator = parseInt(Object.keys(config[currency].monthly)[0], 10);
+            if (amountNumerator < onceDenominator) {
+              durationText = Math.floor(amountNumerator / monthlyDenominator);
+              frequencyClassSuffix = "months";
+              durationMonths = durationText;
+            } else {
+              durationText = Math.floor(amountNumerator / onceDenominator);
+              frequencyClassSuffix = durationText === 1 ? "year" : "years";
+              durationMonths = 12 * durationText;
+            }
           }
+
+          premiumAlert.hidden = false;
+
+          premiumAlert.querySelectorAll("p").forEach(function (paragraph) {
+            if (paragraph.classList.contains(`premium-upsell__${frequencyClassSuffix}`)) {
+              paragraph.hidden = false;
+              const duration = paragraph.querySelector(".premium-upsell__duration");
+              if (duration && durationText) {
+                duration.textContent = durationText;
+              }
+              paragraph.querySelector(".premium-upsell__currency").textContent = currencySigns[currency] || "$";
+              paragraph.querySelector(".premium-upsell__amount").textContent = currency == "JPY" ? amount : amount / 100;
+            } else {
+              paragraph.hidden = true;
+            }
+          });
+          localStorage.setItem("planinfo", JSON.stringify({plan: "ME", durationMonths}));
         }
 
-        premiumAlert.hidden = false;
+        document.querySelector(".appeal-form__error").after(premiumAlert);
 
-        premiumAlert.querySelectorAll("p").forEach(function (paragraph) {
-          if (paragraph.classList.contains(`premium-upsell__${frequencyClassSuffix}`)) {
-            paragraph.hidden = false;
-            const duration = paragraph.querySelector(".premium-upsell__duration");
-            if (duration && durationText) {
-              duration.textContent = durationText;
-            }
-            paragraph.querySelector(".premium-upsell__currency").textContent = currencySigns[currency] || "$";
-            paragraph.querySelector(".premium-upsell__amount").textContent = amount / 100;
-          } else {
-            paragraph.hidden = true;
-          }
+        appealForm.events.on(AppealForm.EVENTS.CURRENCY_CHANGE, updatePremiumAlert);
+        appealForm.events.on(AppealForm.EVENTS.AMOUNT_CHANGE.updateFreePremium);
+        appealForm.events.on(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_SHOW, () => {
+          premiumAlert.hidden = true;
         });
-        localStorage.setItem("planinfo", JSON.stringify({plan: "ME", durationMonths}));
-      }
-
-      document.querySelector(".appeal-form__error").after(premiumAlert);
-
-      appealForm.events.on(AppealForm.EVENTS.CURRENCY_CHANGE, updatePremiumAlert);
-      appealForm.events.on(AppealForm.EVENTS.AMOUNT_CHANGE.updateFreePremium);
-      appealForm.events.on(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_SHOW, () => {
-        premiumAlert.hidden = true;
-      });
-      appealForm.events.on(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_HIDE, updatePremiumAlert);
-      updatePremiumAlert();
-    };
-  })();
-</script>
+        appealForm.events.on(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_HIDE, updatePremiumAlert);
+        updatePremiumAlert();
+      };
+    })();
+  </script>
+{% endif %}
