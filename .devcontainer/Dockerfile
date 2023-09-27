@@ -15,12 +15,12 @@ RUN openssl req -x509 -nodes -days 365 \
     -out /etc/ssl/certs/apache-selfsigned.crt;
 
 # Install node LTS
-RUN wget https://deb.nodesource.com/setup_16.x
-RUN bash setup_16.x
-RUN rm setup_16.x
+RUN wget https://deb.nodesource.com/setup_18.x
+RUN bash setup_18.x
+RUN rm setup_18.x
 RUN apt-get install -yqq nodejs
 
 # Install eyeo/cms
 RUN git clone -b migration-to-python3 --single-branch https://gitlab.com/eyeo/websites/cms.git /srv/cms
-RUN python3 -m pip install -r /srv/cms/requirements.txt
+RUN python3 -m pip install -r /srv/cms/requirements.txt --break-system-packages
 ENV PYTHONPATH="/srv/cms:$PYTHONPATH"

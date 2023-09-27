@@ -6,7 +6,8 @@ service apache2 start
 
 # Build static resources
 npm install
-npm run min
+npm run prefast
+npm run fast
 
 # Build static website
 echo "Building website pages..."
