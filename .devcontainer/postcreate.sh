@@ -1,13 +1,13 @@
-# Setup and start apache2 vhost
+# Start apache using localhost.conf
 ln -s $PWD /var/www/localhost
 ln -s $PWD/localhost.conf /etc/apache2/sites-available/localhost.conf
 a2ensite localhost
 service apache2 start
 
-# Build static resources
+# Build via npm
 npm install
-npm run min
+npm run build
 
-# Build static website
+# Build via cms
 echo "Building website pages..."
-python3 -m cms.bin.generate_static_pages . public
+$PYTHON_VENV/bin/python -m cms.bin.generate_static_pages . public

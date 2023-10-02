@@ -2,7 +2,7 @@
 
 This repository contains [VSCode development container](https://code.visualstudio.com/docs/remote/containers) config to help you get started.
 
-If you prefer not to use VSCode or Docker then you can see `.devcontainer/Dockerfile` and `scripts/devcontainer-postCreate.sh` for config and build instructions.
+If you prefer not to use VSCode or Docker then you can see `.devcontainer/Dockerfile` and `.devcontainer/postcreate.sh` for config and build instructions.
 
 There are two ways to "run" this website:
 
@@ -13,4 +13,4 @@ There are two ways to "run" this website:
 
 .htaccess features (e.g. redirect, geoip) only work the "slow" way.
 
-Try `127.0.0.1` if `localhost` doesn't work (effects the quick way on macOS).
+Try `127.0.0.1` if `localhost` doesn't work (effects the fast way on macOS).

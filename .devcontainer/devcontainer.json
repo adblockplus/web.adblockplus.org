@@ -2,5 +2,5 @@
   "name": "adblockplus.org",
   "dockerFile": "Dockerfile",
   "forwardPorts": [80, 443, 5000],
-  "postCreateCommand": "bash -i scripts/devcontainer-postCreate.sh"
+  "postCreateCommand": "bash -i .devcontainer/postcreate.sh"
 }

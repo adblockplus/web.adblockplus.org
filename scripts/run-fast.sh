@@ -1,1 +1,1 @@
-python3 -m cms.bin.test_server .
+$PYTHON_VENV/bin/python -m cms.bin.test_server .
