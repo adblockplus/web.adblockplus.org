@@ -11,6 +11,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.svelte$/,
+        use: {
+          loader: 'svelte-loader',
+          options: {
+            compilerOptions: {
+              customElement: true
+            }
+          },
+        },
+      },
+      {
         test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/,
         use: {
@@ -28,5 +39,9 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  resolve: {
+    extensions: ['.mjs', '.js', '.svelte'],
+    conditionNames: ['svelte','require','node'],
+  },
 };
