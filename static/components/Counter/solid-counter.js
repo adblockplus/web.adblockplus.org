@@ -6,25 +6,25 @@ function Button({ children, ...props }) {
 };
 
 const style = `div * {
-          font-size: 200%;
-        }
+    font-size: 200%;
+  }
 
-        span {
-          width: 4rem;
-          display: inline-block;
-          text-align: center;
-        }
+  span {
+    width: 4rem;
+    display: inline-block;
+    text-align: center;
+  }
 
-        button {
-          width: 4rem;
-          height: 4rem;
-          border: none;
-          border-radius: 10px;
-          background-color: seagreen;
-          color: white;
-        }`;
+  button {
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 10px;
+    background-color: seagreen;
+    color: white;
+  }`;
 
-customElement("my-counter", () => {
+customElement("solid-counter", () => {
   const [count, setCount] = createSignal(0);
   return (
     <div>
