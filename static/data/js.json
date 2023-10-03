@@ -16,7 +16,7 @@
   "update_page": {
     "js_files": [
       "static/adblock/js/user.js",
-      "static/components/AppealForm/main.js",
+      "static/components/main.js",
       "static/js/address-masking.js"
     ],
     "output_name": "update"
@@ -24,7 +24,7 @@
   "installed_page": {
     "js_files": [
       "static/adblock/js/user.js",
-      "static/components/AppealForm/main.js"
+      "static/components/main.js"
     ],
     "output_name": "installed"
   }
