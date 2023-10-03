@@ -1246,6 +1246,150 @@ const CONFIGURATION = {
 
 /***/ }),
 
+/***/ "./static/components/AppealForm/controller.js":
+/*!****************************************************!*\
+  !*** ./static/components/AppealForm/controller.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _configuration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./configuration.js */ "./static/components/AppealForm/configuration.js");
+/* harmony import */ var _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppealForm.js */ "./static/components/AppealForm/AppealForm.js");
+/* harmony import */ var _currency_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../currency.js */ "./static/components/currency.js");
+/* global adblock, eyeo, Paddle */
+
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  const SANDBOX_HOSTNAMES = [/^localhost$/, /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/, /^dev--adblockplus-org--[\w\-]+.web.app$/];
+  console.log('is this working?');
+  let paddleConfig = SANDBOX_HOSTNAMES.some(originPattern => {
+    return originPattern.test(location.hostname);
+  }) ? _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox : _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
+  if (adblock.searchParameters.has("testmode") || adblock.searchParameters.get("mode") == "test") {
+    paddleConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
+  } else if (adblock.searchParameters.get("mode") == "live") {
+    paddleConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
+  }
+  adblock.config.paddle = paddleConfig;
+  const isTestmode = paddleConfig == _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
+  if (isTestmode) Paddle.Environment.set("sandbox");
+  Paddle.Setup({
+    vendor: paddleConfig.vendor
+  });
+  const placeholder = document.querySelector(".appeal-form");
+  const formConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AppealForm;
+  const appealForm = adblock.runtime.appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
+    paddleConfig,
+    formConfig,
+    placeholder
+  });
+  eyeo = eyeo || {};
+  eyeo.payment = eyeo.payment || {};
+  function getCompletedUrl() {
+    if (typeof eyeo != "object" || typeof eyeo.payment != "object" || typeof eyeo.payment.paymentCompleteUrl != "string") {
+      return "/payment-complete";
+    } else {
+      return eyeo.payment.paymentCompleteUrl;
+    }
+  }
+  appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
+    appealForm.disable();
+    const contributionInfo = JSON.stringify({
+      amount: data.amount,
+      frequency: data.frequency,
+      processor: "paddle",
+      currency: data.currency,
+      lang: document.documentElement.lang,
+      source: eyeo.payment.sourceId || "U",
+      clickTs: Date.now()
+    });
+    const successParameters = new URLSearchParams();
+    if (eyeo.payment.productId == "ME") {
+      successParameters.append("thankyou", 1);
+      successParameters.append("var", 1);
+      successParameters.append("u", forceGetUserId());
+      successParameters.append("from", eyeo.payment.variantName || "null");
+      successParameters.append("from__currency", data.currency);
+      successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
+      successParameters.append("from__frequency", data.frequency);
+    }
+
+    // Storing information to be consumed by optimizely and hotjar experiments
+    if (eyeo.payment.shouldStoreContributionInfo) {
+      localStorage.setItem("contributionInfo", contributionInfo);
+    }
+
+    // Passing contributionInfo from new.abp.o to accounts.abp.o to work around
+    // Premium activation limitation. See premium.html for read.
+    if (eyeo.payment.shouldStoreContributionInfo && eyeo.payment.productId == "ME") {
+      successParameters.append("from__contributionInfo", contributionInfo);
+    }
+    const passthrough = {
+      testmode: isTestmode,
+      userid: eyeo.payment.productId == "ME" ? forceGetUserId() : "",
+      tracking: recordTracking(),
+      locale: "",
+      country: "unknown",
+      ga_id: "",
+      premium: eyeo.payment.productId == "ME" ? "true" : "false",
+      premium_cid: "0",
+      premium_sid: "0",
+      currency: data.currency,
+      recurring: data.frequency != "once",
+      subType: data.frequency != "once" ? data.frequency : "",
+      experiment: "",
+      experiment_id: "",
+      variant: "",
+      variant_index: -1,
+      amount_cents: parseInt(data.amount, 10),
+      success_url: `${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
+      cancel_url: location.href
+    };
+    const product = data.product;
+    const checkoutOptions = {
+      locale: adblock.settings.language,
+      title: adblock.strings["appeal-form-checkout__title"],
+      success: passthrough.success_url,
+      closeCallback: () => {
+        appealForm.enable();
+      }
+    };
+    if (product == "custom") {
+      fetch("https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(passthrough)
+      }).then(response => response.json()).then(session => {
+        if (session.hasOwnProperty("success") && session.success == false) {
+          throw new Error();
+        }
+        Paddle.Checkout.open(Object.assign(checkoutOptions, {
+          override: session.url
+        }));
+      }).catch(error => {
+        adblock.error(adblock.strings["error--unexpected"]);
+        appealForm.enable();
+      });
+    } else {
+      Paddle.Checkout.open(Object.assign(checkoutOptions, {
+        allowQuantity: false,
+        passthrough,
+        product
+      }));
+    }
+  });
+}
+;
+
+/***/ }),
+
 /***/ "./static/components/Events.js":
 /*!*************************************!*\
   !*** ./static/components/Events.js ***!
@@ -1386,137 +1530,13 @@ function toDollarString(currency, cents) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!****************************************************!*\
-  !*** ./static/components/AppealForm/controller.js ***!
-  \****************************************************/
+/*!************************************!*\
+  !*** ./static/components/index.js ***!
+  \************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _configuration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./configuration.js */ "./static/components/AppealForm/configuration.js");
-/* harmony import */ var _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppealForm.js */ "./static/components/AppealForm/AppealForm.js");
-/* harmony import */ var _currency_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../currency.js */ "./static/components/currency.js");
-/* global adblock, eyeo, Paddle */
+/* harmony import */ var _AppealForm_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppealForm/controller */ "./static/components/AppealForm/controller.js");
 
-
-
-
-const SANDBOX_HOSTNAMES = [/^localhost$/, /^[\w\-]+.staging-new-adblockplus-org-1.uplink.eyeo.it$/, /^dev--adblockplus-org--[\w\-]+.web.app$/];
-let paddleConfig = SANDBOX_HOSTNAMES.some(originPattern => {
-  return originPattern.test(location.hostname);
-}) ? _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox : _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
-if (adblock.searchParameters.has("testmode") || adblock.searchParameters.get("mode") == "test") {
-  paddleConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
-} else if (adblock.searchParameters.get("mode") == "live") {
-  paddleConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.live;
-}
-adblock.config.paddle = paddleConfig;
-const isTestmode = paddleConfig == _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.Paddle.sandbox;
-if (isTestmode) Paddle.Environment.set("sandbox");
-Paddle.Setup({
-  vendor: paddleConfig.vendor
-});
-const placeholder = document.querySelector(".appeal-form");
-const formConfig = _configuration_js__WEBPACK_IMPORTED_MODULE_0__.CONFIGURATION.AppealForm;
-const appealForm = adblock.runtime.appealForm = new _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm({
-  paddleConfig,
-  formConfig,
-  placeholder
-});
-eyeo = eyeo || {};
-eyeo.payment = eyeo.payment || {};
-function getCompletedUrl() {
-  if (typeof eyeo != "object" || typeof eyeo.payment != "object" || typeof eyeo.payment.paymentCompleteUrl != "string") {
-    return "/payment-complete";
-  } else {
-    return eyeo.payment.paymentCompleteUrl;
-  }
-}
-appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
-  appealForm.disable();
-  const contributionInfo = JSON.stringify({
-    amount: data.amount,
-    frequency: data.frequency,
-    processor: "paddle",
-    currency: data.currency,
-    lang: document.documentElement.lang,
-    source: eyeo.payment.sourceId || "U",
-    clickTs: Date.now()
-  });
-  const successParameters = new URLSearchParams();
-  if (eyeo.payment.productId == "ME") {
-    successParameters.append("thankyou", 1);
-    successParameters.append("var", 1);
-    successParameters.append("u", forceGetUserId());
-    successParameters.append("from", eyeo.payment.variantName || "null");
-    successParameters.append("from__currency", data.currency);
-    successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
-    successParameters.append("from__frequency", data.frequency);
-  }
-
-  // Storing information to be consumed by optimizely and hotjar experiments
-  if (eyeo.payment.shouldStoreContributionInfo) {
-    localStorage.setItem("contributionInfo", contributionInfo);
-  }
-
-  // Passing contributionInfo from new.abp.o to accounts.abp.o to work around
-  // Premium activation limitation. See premium.html for read.
-  if (eyeo.payment.shouldStoreContributionInfo && eyeo.payment.productId == "ME") {
-    successParameters.append("from__contributionInfo", contributionInfo);
-  }
-  const passthrough = {
-    testmode: isTestmode,
-    userid: eyeo.payment.productId == "ME" ? forceGetUserId() : "",
-    tracking: recordTracking(),
-    locale: "",
-    country: "unknown",
-    ga_id: "",
-    premium: eyeo.payment.productId == "ME" ? "true" : "false",
-    premium_cid: "0",
-    premium_sid: "0",
-    currency: data.currency,
-    recurring: data.frequency != "once",
-    subType: data.frequency != "once" ? data.frequency : "",
-    experiment: "",
-    experiment_id: "",
-    variant: "",
-    variant_index: -1,
-    amount_cents: parseInt(data.amount, 10),
-    success_url: `${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
-    cancel_url: location.href
-  };
-  const product = data.product;
-  const checkoutOptions = {
-    locale: adblock.settings.language,
-    title: adblock.strings["appeal-form-checkout__title"],
-    success: passthrough.success_url,
-    closeCallback: () => {
-      appealForm.enable();
-    }
-  };
-  if (product == "custom") {
-    fetch("https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(passthrough)
-    }).then(response => response.json()).then(session => {
-      if (session.hasOwnProperty("success") && session.success == false) {
-        throw new Error();
-      }
-      Paddle.Checkout.open(Object.assign(checkoutOptions, {
-        override: session.url
-      }));
-    }).catch(error => {
-      adblock.error(adblock.strings["error--unexpected"]);
-      appealForm.enable();
-    });
-  } else {
-    Paddle.Checkout.open(Object.assign(checkoutOptions, {
-      allowQuantity: false,
-      passthrough,
-      product
-    }));
-  }
-});
+(0,_AppealForm_controller__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
 
 /******/ })()

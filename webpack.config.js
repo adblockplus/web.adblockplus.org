@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './static/components/AppealForm/controller.js',
+  entry: './static/components/index.js',
   output: {
-    path: path.resolve(__dirname, 'static/components/AppealForm/'),
+    path: path.resolve(__dirname, 'static/components/'),
     filename: 'main.js',
   },
   mode: 'development',
