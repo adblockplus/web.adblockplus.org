@@ -34,6 +34,7 @@ function AppealForm(props) {
         <ToggleSwitch on:click={handleToggleFrequencyClick} /> */}
       </div>
       <input type="submit" value="Submit" />
+      <style>{styles}</style>
     </form>
   );
 }
