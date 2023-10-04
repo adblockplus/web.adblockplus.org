@@ -1,18 +1,40 @@
 import { customElement } from "solid-element";
 import { CONFIGURATION as config } from "../../AppealForm/configuration";
 
+import styles from '../../AppealForm/AppealForm.css';
+
 function AppealForm(props) {
   const currency = props.currency;
-  const sandbox = props.environment !== "production";
   const products =
-    config.Paddle[sandbox ? "sandbox" : "production"].products[currency];
+    config.Paddle[props.environment !== "production" ? "sandbox" : "live"]
+      .products[currency];
 
   return (
-    <div>
-      <p>currency: {currency}</p>
-      <p>sandbox: {sandbox.toString()}</p>
-      <p>products: {JSON.stringify(products)}</p>
-    </div>
+    <form
+      class="appeal-form"
+      // on:submit={(e) => {
+      //   e.preventDefault();
+      //   const data = new FormData(e.target);
+      //   const entries = [...data.entries()];
+        
+      //   // TODO: Handle form submission
+      // }}
+    >
+      <div class="appeal-form-frequencies">
+        {/* <Frequency
+          frequency="once"
+          products={products.once}
+          legendText="Make a <strong>one-off</strong> contribution"
+        />
+        <Frequency
+          frequency={products[recurringFrequency]}
+          products={products[recurringFrequency]}
+          legendText="Make a <strong>Recurring</strong> contribution"
+        />
+        <ToggleSwitch on:click={handleToggleFrequencyClick} /> */}
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
   );
 }
 
