@@ -1396,8 +1396,60 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _svelte_AppealForm_svelte__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./svelte/AppealForm.svelte */ "./static/components/AppealFormDos/svelte/AppealForm.svelte");
+/* harmony import */ var _solidjs_AppealForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./solidjs/AppealForm */ "./static/components/AppealFormDos/solidjs/AppealForm.js");
+/* harmony import */ var _svelte_AppealForm_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./svelte/AppealForm.svelte */ "./static/components/AppealFormDos/svelte/AppealForm.svelte");
 
+
+
+/***/ }),
+
+/***/ "./static/components/AppealFormDos/solidjs/AppealForm.js":
+/*!***************************************************************!*\
+  !*** ./static/components/AppealFormDos/solidjs/AppealForm.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var solid_js_web__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! solid-js/web */ "./node_modules/solid-js/web/dist/web.cjs");
+/* harmony import */ var solid_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! solid-element */ "./node_modules/solid-element/dist/index.js");
+/* harmony import */ var _AppealForm_configuration__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../AppealForm/configuration */ "./static/components/AppealForm/configuration.js");
+
+
+
+const _tmpl$ = /*#__PURE__*/(0,solid_js_web__WEBPACK_IMPORTED_MODULE_0__.template)(`<div><p>currency: </p><p>sandbox: </p><p>products: `);
+
+
+function AppealForm(props) {
+  const currency = props.currency;
+  const sandbox = props.environment !== 'production';
+  const products = _AppealForm_configuration__WEBPACK_IMPORTED_MODULE_1__.CONFIGURATION.Paddle[sandbox ? 'sandbox' : 'production'].products[currency];
+  return (() => {
+    const _el$ = _tmpl$(),
+      _el$2 = _el$.firstChild,
+      _el$3 = _el$2.firstChild,
+      _el$4 = _el$2.nextSibling,
+      _el$5 = _el$4.firstChild,
+      _el$6 = _el$4.nextSibling,
+      _el$7 = _el$6.firstChild;
+    (0,solid_js_web__WEBPACK_IMPORTED_MODULE_0__.insert)(_el$2, currency, null);
+    (0,solid_js_web__WEBPACK_IMPORTED_MODULE_0__.insert)(_el$4, () => sandbox.toString(), null);
+    (0,solid_js_web__WEBPACK_IMPORTED_MODULE_0__.insert)(_el$6, () => JSON.stringify(products), null);
+    return _el$;
+  })();
+}
+(0,solid_element__WEBPACK_IMPORTED_MODULE_2__.customElement)("appeal-form", {
+  currency: "USD",
+  environment: "development"
+}, props => {
+  return (0,solid_js_web__WEBPACK_IMPORTED_MODULE_0__.createComponent)(AppealForm, {
+    get currency() {
+      return props.currency;
+    },
+    get environment() {
+      return props.environment;
+    }
+  });
+});
 
 /***/ }),
 
