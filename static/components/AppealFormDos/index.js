@@ -1,1 +1,1 @@
-import './solidjs/AppealForm';
+import './AppealForm';

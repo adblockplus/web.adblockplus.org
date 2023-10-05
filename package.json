@@ -3,6 +3,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "@paddle/paddle-js": "^0.2.0",
     "solid-element": "^1.7.1",
     "solid-js": "^1.7.12"
   },
@@ -19,7 +20,7 @@
     "vite-plugin-solid": "^2.7.0"
   },
   "scripts": {
-    "build": "vite build && bash -i scripts/build.sh",
+    "build": "bash -i scripts/build.sh",
     "prefast": "bash -i scripts/build.sh",
     "fast": "bash -i scripts/run-fast.sh",
     "preslow": "bash -i scripts/build.sh",
