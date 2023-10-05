@@ -1,6 +1,6 @@
 export default function ToggleSwitch(props) {
   return (
-    <div class="toggle-wrap">
+    <div class="toggle-wrap" onClick={(e) => e.stopPropagation()}>
       <div class="toggle-main-txt">Monthly</div>
       <label class="switch">
         <input

@@ -1,6 +1,9 @@
-import { formatAmount } from "../utils";
+import { toDollarString } from "../currency";
 
 export default function Frequency(props) {
+  let customAmountRadio;
+  let customAmountInput;
+
   return (
     <fieldset
       class="appeal-form-frequency"
@@ -10,12 +13,12 @@ export default function Frequency(props) {
       <legend
         class="appeal-form-frequency__heading"
         innerHTML={props.legendText}
+        onClick={(e) => e.stopPropagation()}
       />
       <div class="appeal-form-frequency__options">
         <div class="appeal-form-amounts">
           <For each={Object.keys(props.products)}>
-            {(productAmount) => {
-              // TODO: handle this case
+            {(productAmount, index) => {
               if (productAmount === "custom") {
                 return;
               }
@@ -28,14 +31,14 @@ export default function Frequency(props) {
                     class="appeal-form-amount__radio"
                     data-testid={`appeal-form-amount__radio--${
                       props.frequency
-                    }-${0}`}
+                    }-${index()}`}
                     data-frequency={props.frequency}
                     value={productAmount}
                     data-product={props.products[productAmount]}
                     checked={productAmount === props.defaultProduct}
                   />
                   <span class="appeal-form-amount__text">
-                    {formatAmount(productAmount, props.currency)}
+                    {toDollarString(props.currency, productAmount)}
                   </span>
                 </label>
               );
@@ -50,16 +53,21 @@ export default function Frequency(props) {
               data-testid={`appeal-form-amount__radio--${props.frequency}-6`}
               data-frequency={props.frequency}
               data-product="custom"
+              ref={customAmountRadio}
+              onClick={() => customAmountInput.focus()}
             />
             <input
               type="number"
               step=".01"
               class="appeal-form-amount__input"
+              name="appeal-form-amount__input"
               data-product="custom"
               data-testid={`appeal-form-amount__input--${props.frequency}`}
               data-frequency={props.frequency}
               placeholder="35"
               data-minimum="5"
+              ref={customAmountInput}
+              onFocus={() => customAmountRadio.click()}
             />
           </label>
         </div>

@@ -3,7 +3,7 @@
   margin-bottom: 1rem;
 }
 
-.appeal-form .appeal-form__placeholder {
+.appeal-form__placeholder {
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -12,7 +12,7 @@
   background-color: #e6e6e6;
 }
 
-.appeal-form .appeal-form__placeholder::after {
+.appeal-form__placeholder::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -42,98 +42,76 @@
   }
 }
 
-.appeal-form .appeal-form-header {
-  margin-bottom: 0.5rem;
+.appeal-form-header {
+  margin-bottom: 2.5rem;
 }
 
-.appeal-form .appeal-form-header__heading {
+.appeal-form-header__heading {
   font-size: 1.125rem;
   display: inline-block;
   margin: 0;
+  margin-right: 0.5rem;
 }
 
-.appeal-form .appeal-form-header__select {
+.appeal-form-header__select {
   font-size: 0.875rem;
 }
 
-.appeal-form .appeal-form-frequencies {
+.appeal-form-frequencies {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
   max-width: 53.125rem;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-:not([dir="rtl"]) .appeal-form .appeal-form-frequencies {
-  margin-left: -1rem;
-}
-
-[dir="rtl"] .appeal-form .appeal-form-frequencies {
-  margin-right: -1rem;
-}
-
-.appeal-form .appeal-form-frequency {
-  position: relative;
-  flex: 0 0 90%;
-  padding: 1rem;
-  border-radius: 0.25rem;
-  border-width: 1px;
-  border-color: #e6e6e6;
-}
-
-:not([dir="rtl"]) .appeal-form .appeal-form-frequency {
-  padding-left: 1rem;
-}
-
-[dir="rtl"] .appeal-form .appeal-form-frequency {
-  padding-right: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 55.125rem) {
-  .appeal-form .appeal-form-frequency {
-    flex: 1;
-    padding-top: 0;
+  .appeal-form-frequencies {
+    gap: 2rem;
   }
 }
 
-.appeal-form .appeal-form-frequency__heading {
+.appeal-form-frequency {
+  position: relative;
+  flex: 0 0 90%;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  padding-top: 1rem;
+}
+
+@media (min-width: 55.125rem) {
+  .appeal-form-frequency {
+    flex: 1;
+  }
+}
+
+.appeal-form-frequency__heading {
+  position: absolute;
+  top: -2rem;
   font-size: 1rem;
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 0.375rem;
 }
 
-.appeal-form .appeal-form-amounts {
+.appeal-form-frequency__options {
+  padding: 0 0 0.5rem;
+}
+
+.appeal-form-amounts {
   display: flex;
   flex-wrap: wrap;
-  max-width: 16.70875rem;
   align-items: center;
+  padding: 0 1rem;
 }
 
-:not([dir="rtl"]) .appeal-form .appeal-form-amounts {
-  padding-right: 1rem;
-}
-
-[dir="rtl"] .appeal-form .appeal-form-amounts {
+[dir="rtl"] .appeal-form-amounts {
   padding-left: 1rem;
 }
 
-@media (min-width: 55.125rem) {
-  :not([dir="rtl"]) .appeal-form .appeal-form-amounts {
-    border-right: 1px solid gray;
-  }
-
-  [dir="rtl"] .appeal-form .appeal-form-amounts {
-    border-left: 1px solid gray;
-  }
-
-  .appeal-form .appeal-form-frequency:last-of-type .appeal-form-amounts {
-    border: 0;
-  }
-}
-
-.appeal-form .appeal-form-amount {
+.appeal-form-amount {
   line-height: 1.7;
 
   display: flex;
@@ -141,42 +119,34 @@
   width: 33.33333333%;
 }
 
-:not([dir="rtl"]) .appeal-form .appeal-form-amount__radio {
-  margin-left: 0;
-}
-
-[dir="rtl"] .appeal-form .appeal-form-amount__radio {
+[dir="rtl"] .appeal-form-amount__radio {
   margin-right: 0;
 }
 
-.appeal-form .appeal-form-amount__text {
+.appeal-form-amount__text {
   padding-top: 1.5px;
 }
 
-.appeal-form .appeal-form-amount__input {
+.appeal-form-amount__input {
   font-size: 0.875rem;
   width: 100%;
-  height: 1.4rem;
+  height: 1.2rem;
   margin-top: 0.1875rem;
   padding: 0.125rem 0.25rem 0.125rem 0.25rem;
   border: 1px solid gray;
 }
 
-:not([dir="rtl"]) .appeal-form .appeal-form-amount__input {
-  margin-right: 0.1875rem;
-}
-
-[dir="rtl"] .appeal-form .appeal-form-amount__input {
+[dir="rtl"] .appeal-form-amount__input {
   margin-left: 0.1875rem;
 }
 
 @media (min-width: 55.125rem) {
-  .appeal-form .appeal-form-checkout {
+  .appeal-form-checkout {
     display: flex;
   }
 }
 
-.appeal-form .appeal-form-checkout__submit {
+.appeal-form-checkout__submit {
   font-size: 0.9375rem;
   font-weight: 700;
   display: flex;
@@ -195,43 +165,39 @@
   cursor: pointer;
 }
 
-.appeal-form .appeal-form-checkout__submit:disabled {
+.appeal-form-checkout__submit:disabled {
   filter: grayscale(100);
 }
 
 @media (min-width: 23.75rem) {
-  .appeal-form .appeal-form-checkout__submit {
+  .appeal-form-checkout__submit {
     max-width: 14rem;
   }
 
-  :not([dir="rtl"]) .appeal-form .appeal-form-checkout__submit {
+  :not([dir="rtl"]) .appeal-form-checkout__submit {
     margin-right: 1rem;
   }
 
-  [dir="rtl"] .appeal-form .appeal-form-checkout__submit {
+  [dir="rtl"] .appeal-form-checkout__submit {
     margin-left: 1rem;
   }
 }
 
 @media (min-width: 55.125rem) {
-  .appeal-form .appeal-form-checkout__submit {
+  .appeal-form-checkout__submit {
     margin-bottom: 0;
   }
 }
 
-.appeal-form .appeal-form-checkout__icon {
+.appeal-form-checkout__icon {
   height: 1rem;
 }
 
-:not([dir="rtl"]) .appeal-form .appeal-form-checkout__icon {
-  margin-right: 0.25rem;
-}
-
-[dir="rtl"] .appeal-form .appeal-form-checkout__icon {
+[dir="rtl"] .appeal-form-checkout__icon {
   margin-left: 0.25rem;
 }
 
-.appeal-form .appeal-form-checkout__image {
+.appeal-form-checkout__image {
   width: 100%;
   max-width: 340px;
   max-height: 32px;
@@ -242,7 +208,7 @@
 .toggle-wrap {
   position: absolute;
   top: -38px;
-  right: 10px;
+  right: -1rem;
   padding: 0 2px;
   background-color: #fff;
   display: flex;
@@ -255,6 +221,13 @@
   height: 34px;
   color: #000000;
 }
+
+@media (min-width: 55.125rem) {
+  .toggle-wrap {
+    right: 0.5rem;
+  }
+}
+
 .switch {
   position: relative;
   display: inline-block;
