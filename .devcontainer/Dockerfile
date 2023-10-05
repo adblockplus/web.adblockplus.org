@@ -1,26 +1,30 @@
 FROM debian
 
+# Shared setup
 RUN apt-get update -yqq
-RUN apt-get install -yqq git wget python3 python3-pip apache2 libapache2-mod-geoip
+RUN apt-get install -yqq ca-certificates curl gnupg git
+RUN mkdir -p /etc/apt/keyrings
 
-# Configure apache2 to test .htaccess
-RUN a2enmod macro
-RUN a2enmod ssl
-RUN a2enmod rewrite
-RUN a2enmod headers
-RUN a2enmod geoip
+# Setup apache2 and "localhost" vhost
+RUN apt-get install -yqq apache2 libapache2-mod-geoip
+RUN a2enmod macro ssl rewrite headers geoip
 RUN openssl req -x509 -nodes -days 365 \
     -subj  "/C=US/ST=TX/O=Adblock Inc/CN=support@adblock.org" \
     -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key \
     -out /etc/ssl/certs/apache-selfsigned.crt;
 
-# Install node LTS
-RUN wget https://deb.nodesource.com/setup_16.x
-RUN bash setup_16.x
-RUN rm setup_16.x
-RUN apt-get install -yqq nodejs
+# Setup node
+ENV NODE_MAJOR=18
+RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
+RUN apt-get install -yqq nodejs npm
 
-# Install eyeo/cms
-RUN git clone -b migration-to-python3 --single-branch https://gitlab.com/eyeo/websites/cms.git /srv/cms
-RUN python3 -m pip install -r /srv/cms/requirements.txt
-ENV PYTHONPATH="/srv/cms:$PYTHONPATH"
+# Setup python and venv
+RUN apt-get install -yqq python3-full
+RUN python3 -m venv /usr/local/cms_venv
+ENV PATH="/usr/local/cms_venv/bin:$PATH"
+
+# Setup cms
+RUN git clone https://gitlab.com/eyeo/websites/cms.git /usr/local/cms
+RUN pip install -r /usr/local/cms/requirements.txt
+ENV PYTHONPATH="/usr/local/cms:$PYTHONPATH"
