@@ -23,6 +23,7 @@ const defaultAmount = 3500;
  * TODO: Switch out banner text depending on the amount selected
  * TODO: Add translations
  * TODO: set ui error message after checkout error
+ * BUG: When switching from monthly to yearly, the you get an error unless you select another amount
  */
 
 function AppealForm(props) {
