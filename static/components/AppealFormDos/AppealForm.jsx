@@ -9,10 +9,9 @@ import {
   createCheckoutOptions,
   checkout,
 } from "../AppealForm/controller";
-import { toDollarString } from "../currency";
 import Frequency from "./Frequency";
 import ToggleSwitch from "./ToggleSwitch";
-import Banner from "./Banner";
+import PremiumUpsellBanner from "./PremiumUpsellBanner";
 
 import styles from "./AppealForm.css";
 
@@ -20,7 +19,6 @@ const paddleConfig = createPaddleConfig();
 const defaultAmount = 3500;
 
 /**
- * TODO: Switch out banner text depending on the amount selected
  * TODO: Add translations
  * TODO: set ui error message after checkout error
  * BUG: When switching from monthly to yearly, the you get an error unless you select another amount
@@ -37,6 +35,10 @@ function AppealForm(props) {
     setRecurringFrequency(e.target.checked ? "yearly" : "monthly");
   };
 
+  const getFrequency = () => {
+    return activeFrequency() === "once" ? "once" : recurringFrequency();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -47,8 +49,7 @@ function AppealForm(props) {
 
     setButtonDisabled(true);
 
-    const frequency =
-      activeFrequency() === "once" ? "once" : recurringFrequency();
+    const frequency = getFrequency();
 
     const data = {
       product: paddleConfig.products[currency()][frequency][amount()],
@@ -59,6 +60,10 @@ function AppealForm(props) {
 
     const contributionInfo = createContributionInfo(data);
     const successParameters = createSuccessParameters(data);
+
+    eyeo.payment.productId = "ME";
+    eyeo.payment.variantName = "update__202308";
+    eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
 
     // Storing information to be consumed by optimizely and hotjar experiments
     if (eyeo.payment.shouldStoreContributionInfo) {
@@ -148,7 +153,12 @@ function AppealForm(props) {
             <ToggleSwitch onClick={handleToggleFrequencyClick} />
           </Frequency>
         </div>
-        <Banner amount={toDollarString(currency(), amount())} />
+        <PremiumUpsellBanner
+          products={paddleConfig.products[currency()]}
+          currency={currency()}
+          amount={amount()}
+          frequency={getFrequency()}
+        />
         <div class="appeal-form-checkout">
           <input
             class="appeal-form-checkout__submit"
