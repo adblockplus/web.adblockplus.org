@@ -21,7 +21,6 @@ const defaultAmount = 3500;
 /**
  * TODO: Add translations
  * TODO: set ui error message after checkout error
- * BUG: When switching from monthly to yearly, the you get an error unless you select another amount
  */
 
 function AppealForm(props) {
@@ -30,10 +29,6 @@ function AppealForm(props) {
   const [activeFrequency, setActiveFrequency] = createSignal("once"); // "once" or "recurring"
   const [buttonDisabled, setButtonDisabled] = createSignal(false);
   const [currency, setCurrency] = createSignal(props.currency);
-
-  const handleToggleFrequencyClick = (e) => {
-    setRecurringFrequency(e.target.checked ? "yearly" : "monthly");
-  };
 
   const getFrequency = () => {
     return activeFrequency() === "once" ? "once" : recurringFrequency();
@@ -90,21 +85,30 @@ function AppealForm(props) {
     });
   };
 
-  const handleFormChange = (e) => {
-    // this means one of the radio buttons for custom amounts was clicked and it shouldn't do anything
-    if (e.target.value === "custom" || e.target.type === "checkbox") return;
+  const handleToggleFrequencyClick = (e) => {
+    const freq = e.target.checked ? "yearly" : "monthly";
+    const startingProductIndex = 3;
+    const firstAmount = Number(Object.keys(paddleConfig.products[currency()][freq])[startingProductIndex]);
 
-    // starting off the amount is zero so we don't want to do anything until they've started typing
-    if (e.target.type === "number") {
-      e.target.value ? setAmount(e.target.value * 100) : setAmount(0);
-    } else {
-      setAmount(e.target.value);
-    }
+    setAmount(firstAmount);
+    setRecurringFrequency(freq);
+    setActiveFrequency("recurring");
   };
 
   const handleCurrencyChange = (e) => {
     setCurrency(e.target.value);
   };
+
+  const handleProductChange = (freq) => (e) => {
+    setActiveFrequency(freq);
+
+    if (e.target.type === "number" && currency() !== "JPY") {
+      // text/number "custom" input convert to cents
+      setAmount(e.target.value * 100);
+    } else {
+      setAmount(e.target.value);
+    }
+  }
 
   return (
     <>
@@ -128,8 +132,6 @@ function AppealForm(props) {
       <form
         class="appeal-form"
         onSubmit={handleSubmit}
-        onChange={handleFormChange}
-        onInput={handleFormChange}
       >
         <div class="appeal-form-frequencies">
           <Frequency
@@ -137,18 +139,21 @@ function AppealForm(props) {
             products={paddleConfig.products[currency()]["once"]}
             legendText="Make a <strong>one-off</strong> contribution"
             currency={currency()}
-            defaultProduct={defaultAmount.toString()}
+            checkedProduct={getFrequency() === "once" && paddleConfig.products[currency()]["once"][amount()]}
             active={activeFrequency() === "once"}
-            onClick={() => setActiveFrequency("once")}
+            onChange={handleProductChange("once")}
           />
           <Frequency
             frequency={recurringFrequency()}
             products={paddleConfig.products[currency()][recurringFrequency()]}
             legendText="Make a <strong>Recurring</strong> contribution"
             currency={currency()}
-            borderColor="#2196f3"
+            checkedProduct={
+              activeFrequency() === "recurring" &&
+              paddleConfig.products[currency()][recurringFrequency()][amount()]
+            }
             active={activeFrequency() === "recurring"}
-            onClick={() => setActiveFrequency("recurring")}
+            onChange={handleProductChange("recurring")}
           >
             <ToggleSwitch onClick={handleToggleFrequencyClick} />
           </Frequency>

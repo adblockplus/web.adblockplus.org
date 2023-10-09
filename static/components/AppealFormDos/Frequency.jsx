@@ -35,7 +35,8 @@ export default function Frequency(props) {
                     data-frequency={props.frequency}
                     value={productAmount}
                     data-product={props.products[productAmount]}
-                    checked={productAmount === props.defaultProduct}
+                    checked={props.products[productAmount] === props.checkedProduct}
+                    onChange={props.onChange}
                   />
                   <span class="appeal-form-amount__text">
                     {toDollarString(props.currency, productAmount)}
@@ -68,6 +69,7 @@ export default function Frequency(props) {
               data-minimum="5"
               ref={customAmountInput}
               onFocus={() => customAmountRadio.click()}
+              onInput={props.onChange}
             />
           </label>
         </div>
