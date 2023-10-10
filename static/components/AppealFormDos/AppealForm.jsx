@@ -17,6 +17,7 @@ import styles from "./AppealForm.css";
 
 const paddleConfig = createPaddleConfig();
 const defaultAmount = 3500;
+const translations = adblock.strings;
 
 /**
  * TODO: Add translations
@@ -117,7 +118,7 @@ function AppealForm(props) {
           class="appeal-form-header__heading"
           data-testid="appeal-form-header__heading"
         >
-          Name a fair amount:
+          {translations["appeal-form-header__heading"]}
         </h2>
         <select
           class="appeal-form-header__select"
@@ -137,7 +138,7 @@ function AppealForm(props) {
           <Frequency
             frequency="once"
             products={paddleConfig.products[currency()]["once"]}
-            legendText="Make a <strong>one-off</strong> contribution"
+            legendText={translations["appeal-form-frequency__heading--once"]}
             currency={currency()}
             checkedProduct={getFrequency() === "once" && paddleConfig.products[currency()]["once"][amount()]}
             active={activeFrequency() === "once"}
@@ -146,7 +147,7 @@ function AppealForm(props) {
           <Frequency
             frequency={recurringFrequency()}
             products={paddleConfig.products[currency()][recurringFrequency()]}
-            legendText="Make a <strong>Recurring</strong> contribution"
+            legendText={translations[`appeal-form-frequency__heading--${recurringFrequency()}`]}
             currency={currency()}
             checkedProduct={
               activeFrequency() === "recurring" &&
@@ -169,7 +170,7 @@ function AppealForm(props) {
             class="appeal-form-checkout__submit"
             data-testid="appeal-form-checkout__submit"
             type="submit"
-            value="Checkout Now"
+            value={translations["appeal-form-checkout__submit"]}
             disabled={buttonDisabled()}
           />
           <img
