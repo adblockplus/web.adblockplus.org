@@ -19,17 +19,13 @@ const paddleConfig = createPaddleConfig();
 const defaultAmount = 3500;
 const translations = adblock.strings;
 
-/**
- * TODO: Add translations
- * TODO: set ui error message after checkout error
- */
-
 function AppealForm(props) {
   const [recurringFrequency, setRecurringFrequency] = createSignal("monthly"); // "monthly" or "yearly"
   const [amount, setAmount] = createSignal(defaultAmount);
   const [activeFrequency, setActiveFrequency] = createSignal("once"); // "once" or "recurring"
   const [buttonDisabled, setButtonDisabled] = createSignal(false);
   const [currency, setCurrency] = createSignal(props.currency);
+  const [errorMessage, setErrorMessage] = createSignal(null);
 
   const getFrequency = () => {
     return activeFrequency() === "once" ? "once" : recurringFrequency();
@@ -59,7 +55,8 @@ function AppealForm(props) {
 
     eyeo.payment.productId = "ME";
     eyeo.payment.variantName = "update__202308";
-    eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
+    eyeo.payment.paymentCompleteUrl =
+      "https://accounts.adblockplus.org/premium";
 
     // Storing information to be consumed by optimizely and hotjar experiments
     if (eyeo.payment.shouldStoreContributionInfo) {
@@ -82,14 +79,16 @@ function AppealForm(props) {
 
     checkout(data.product, passthrough, checkoutOptions, (error) => {
       setButtonDisabled(false);
-      // setErrorMessage(error);
+      setErrorMessage(error.message);
     });
   };
 
   const handleToggleFrequencyClick = (e) => {
     const freq = e.target.checked ? "yearly" : "monthly";
     const startingProductIndex = 3;
-    const firstAmount = Number(Object.keys(paddleConfig.products[currency()][freq])[startingProductIndex]);
+    const firstAmount = Number(
+      Object.keys(paddleConfig.products[currency()][freq])[startingProductIndex]
+    );
 
     setAmount(firstAmount);
     setRecurringFrequency(freq);
@@ -102,14 +101,30 @@ function AppealForm(props) {
 
   const handleProductChange = (freq) => (e) => {
     setActiveFrequency(freq);
+    let newAmount;
 
     if (e.target.type === "number" && currency() !== "JPY") {
       // text/number "custom" input convert to cents
-      setAmount(e.target.value * 100);
+      newAmount = e.target.value * 100;
     } else {
-      setAmount(e.target.value);
+      newAmount = Number(e.target.value);
     }
-  }
+
+    const frequency = getFrequency();
+
+    if ((frequency === "once" || frequency === "yearly") && newAmount < 500) {
+      setErrorMessage(adblock.strings[`appeal-form__error--${frequency}`]);
+      return;
+    }
+
+    if (newAmount < 199) {
+      setErrorMessage(adblock.strings["appeal-form__error--monthly"]);
+      return;
+    }
+
+    setErrorMessage(null);
+    setAmount(newAmount);
+  };
 
   return (
     <>
@@ -130,24 +145,28 @@ function AppealForm(props) {
           </For>
         </select>
       </header>
-      <form
-        class="appeal-form"
-        onSubmit={handleSubmit}
-      >
+      <form class="appeal-form" onSubmit={handleSubmit}>
         <div class="appeal-form-frequencies">
           <Frequency
             frequency="once"
             products={paddleConfig.products[currency()]["once"]}
             legendText={translations["appeal-form-frequency__heading--once"]}
             currency={currency()}
-            checkedProduct={getFrequency() === "once" && paddleConfig.products[currency()]["once"][amount()]}
+            checkedProduct={
+              getFrequency() === "once" &&
+              paddleConfig.products[currency()]["once"][amount()]
+            }
             active={activeFrequency() === "once"}
             onChange={handleProductChange("once")}
           />
           <Frequency
             frequency={recurringFrequency()}
             products={paddleConfig.products[currency()][recurringFrequency()]}
-            legendText={translations[`appeal-form-frequency__heading--${recurringFrequency()}`]}
+            legendText={
+              translations[
+                `appeal-form-frequency__heading--${recurringFrequency()}`
+              ]
+            }
             currency={currency()}
             checkedProduct={
               activeFrequency() === "recurring" &&
@@ -159,19 +178,24 @@ function AppealForm(props) {
             <ToggleSwitch onClick={handleToggleFrequencyClick} />
           </Frequency>
         </div>
-        <PremiumUpsellBanner
-          products={paddleConfig.products[currency()]}
-          currency={currency()}
-          amount={amount()}
-          frequency={getFrequency()}
-        />
+        <Show when={!errorMessage()}>
+          <PremiumUpsellBanner
+            products={paddleConfig.products[currency()]}
+            currency={currency()}
+            amount={amount()}
+            frequency={getFrequency()}
+          />
+        </Show>
+        <Show when={errorMessage()}>
+          <div class="appeal-form__error" data-testid="appeal-form__error" innerHTML={errorMessage()} />
+        </Show>
         <div class="appeal-form-checkout">
           <input
             class="appeal-form-checkout__submit"
             data-testid="appeal-form-checkout__submit"
             type="submit"
             value={translations["appeal-form-checkout__submit"]}
-            disabled={buttonDisabled()}
+            disabled={buttonDisabled() || errorMessage()}
           />
           <img
             alt=""

@@ -296,3 +296,14 @@ input:checked + .slider:before {
   margin: 0.5rem 0;
   margin-inline-start: 1rem;
 }
+
+/* Error component */
+
+.appeal-form__error {
+  color: #ff0000;
+  font-size: 0.875rem;
+  padding: 1rem;
+  border: 1px solid #ff0000;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
