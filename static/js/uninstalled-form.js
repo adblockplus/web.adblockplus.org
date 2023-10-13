@@ -41,7 +41,7 @@
 
     // Randomly add reasons
     var reasonsContainer = document.getElementById("reasons");
-    var reasons = document.querySelectorAll("#reasons > li");
+    var reasons = document.querySelectorAll("#reasons > li:not(.reason-ignored)");
     reasons = Array.prototype.slice.call(reasons);
     while (reasons.length)
     {

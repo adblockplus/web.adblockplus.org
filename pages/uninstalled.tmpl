@@ -16,9 +16,10 @@ template=minimal
   ("11v0", "reason-refreshing-ads", 'I was annoyed by ads reloading new ad content in the same ad slot (“refreshing ads”).', ""),
 ] %}
 {#
-  The following reason is hard coded below because it's markup is different.
+  The following reasons are hard coded below because it's markup is different.
   If we add other options like it in the future then we should refactor this.
-  ("10v0", "reason-not-free", "I don't want to pay for Adblock Plus", ""),
+
+  10v0, 12x0
 #}
 
 <head>
@@ -36,7 +37,17 @@ template=minimal
       <form id="reasons-form" action="uninstalled-submit" method="get">
         <fieldset>
           <ul id="reasons">
-            <li>
+            <li class="reason-ignored">
+              <input
+                id="reason-youtube"
+                type="checkbox"
+                name="reason"
+                value="12v0" />
+              <label for="reason-youtube">
+                {{ "Looking for another ad-blocker to stop YouTube ads" | translate("reason-youtube") }}
+              </label>
+            </li>
+            <li class="reason-ignored">
               <input
                 id="reason-not-free-input"
                 type="checkbox"
