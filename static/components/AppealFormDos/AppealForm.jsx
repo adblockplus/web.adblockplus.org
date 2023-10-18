@@ -8,7 +8,7 @@ import {
   createPassthrough,
   createCheckoutOptions,
   checkout,
-} from "../AppealForm/controller";
+} from "./helpers";
 import Frequency from "./Frequency";
 import ToggleSwitch from "./ToggleSwitch";
 import PremiumUpsellBanner from "./PremiumUpsellBanner";
@@ -17,14 +17,16 @@ import styles from "./AppealForm.css";
 
 const paddleConfig = createPaddleConfig();
 const defaultAmount = 3500;
+const defaultCurrency =
+  typeof adblock == "object" ? adblock.settings.currency || "USD" : "USD";
 const translations = adblock.strings;
 
-function AppealForm(props) {
+function AppealForm() {
   const [recurringFrequency, setRecurringFrequency] = createSignal("monthly"); // "monthly" or "yearly"
   const [amount, setAmount] = createSignal(defaultAmount);
   const [activeFrequency, setActiveFrequency] = createSignal("once"); // "once" or "recurring"
   const [buttonDisabled, setButtonDisabled] = createSignal(false);
-  const [currency, setCurrency] = createSignal(props.currency);
+  const [currency, setCurrency] = createSignal(defaultCurrency);
   const [errorMessage, setErrorMessage] = createSignal(null);
 
   const getFrequency = () => {
@@ -187,7 +189,11 @@ function AppealForm(props) {
           />
         </Show>
         <Show when={errorMessage()}>
-          <div class="appeal-form__error" data-testid="appeal-form__error" innerHTML={errorMessage()} />
+          <div
+            class="appeal-form__error"
+            data-testid="appeal-form__error"
+            innerHTML={errorMessage()}
+          />
         </Show>
         <div class="appeal-form-checkout">
           <input
@@ -209,6 +215,4 @@ function AppealForm(props) {
   );
 }
 
-customElement("appeal-form", { currency: "USD" }, (props) => {
-  return <AppealForm currency={props.currency} />;
-});
+customElement("appeal-form", () => <AppealForm />);

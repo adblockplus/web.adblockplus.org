@@ -1,4 +1,2 @@
-import appealFormController from './AppealForm/controller';
+import './AppealForm/controller';
 import './AppealFormDos';
-
-appealFormController();

@@ -15,6 +15,7 @@ template=bare
       shouldStoreContributionInfo: true
     });
   </script>
+  <? include AppealForm/configuration ?>
 </head>
 
 <div class="update container content">
@@ -44,13 +45,28 @@ template=bare
     </div>
   </aside>
   <div>
-    <h1>SolidJS Version:</h1>
-    <appeal-form currency="USD" />
+    <appeal-form>
+      <div class="appeal-form--skeleton" role="presentation" aria-hidden="true">
+        <div style="padding-top: .5rem;">
+          <div class="appeal-form__placeholder" style="height: 2rem; width: 100%; max-width: 16rem;"></div>
+        </div>
+        <div class="appeal-form-frequencies" style="max-width: 50rem; margin-top: 0.25rem; margin-bottom: 0.25rem;">
+          <div class="appeal-form-frequency" style="padding-bottom: 0;">
+            <div class="appeal-form__placeholder" style="height: 6.5rem; width:100%;"></div>
+          </div>
+          <div class="appeal-form-frequency" style="padding-bottom: 0;">
+            <div class="appeal-form__placeholder" style="height: 6.5rem; width:100%;"></div>
+          </div>
+        </div>
+        <div style="padding-top: 0; margin-bottom: 0.25rem">
+          <div class="appeal-form__placeholder" style="height: 4rem; width: 100%;"></div>
+        </div>
+        <div style="padding-top: 0; margin-bottom: 2.5rem">
+          <div class="appeal-form__placeholder" style="height: 2rem; width: 100%; max-width: 33rem;"></div>
+        </div>
+      </div>
+    </appeal-form>
   </div>
-  <hr />
-  <h1>Original Version:</h1>
-  <? include AppealForm/bootstrap ?>
-  <? include premium-upsell ?>
   <h2 style="margin-block-end: 0.5rem;">
     {{ whats-new-header-1-unrestricted What’s new? }}
   </h2>
@@ -101,6 +117,4 @@ template=bare
 </footer>
 
 <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-<script src="/currency"></script>
 <script src="/build/js/update.min.js"></script>
-<? include premium-upsell-init ?>
