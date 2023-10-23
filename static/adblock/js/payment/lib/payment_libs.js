@@ -118,6 +118,22 @@ var Paypal = {
         if ($(element).hasClass('paypal-button-grey') || $(element).hasClass('disabled')) {
             return false;
         }
+
+        // FIXME: ABP only exception to add contributioninfo
+        if (location.pathname.split("/").includes("premium")) {
+            if (false == (localStorage && localStorage.setItem)) return;
+            const amountButton = document.querySelector("#amount_select_row .selected");
+            localStorage.setItem("contributionInfo", JSON.stringify({
+                amount: amountButton.dataset.amount,
+                frequency: amountButton.dataset.frequency,
+                processor: "paypal",
+                currency: "USD",
+                lang: document.documentElement.lang,
+                source: "HME",
+                clickTs: Date.now()            
+            }));
+        }
+
         var form = Paypal._buildForm(element);
         document.body.appendChild(form);
         form.submit();
@@ -625,6 +641,22 @@ const StripeCheckoutSession = {
             _logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, "Stripe", that._recurring(), that._getSubType());
             that.DATA.success_url = that._onSuccessURL;
             that.DATA.cancel_url = window.location.href; // the url to go back to if user clicks "back". Will be current page url.
+
+            // FIXME: ABP only exception to add contributioninfo
+            if (location.pathname.split("/").includes("premium")) {
+                if (false == (localStorage && localStorage.setItem)) return;
+                const amountButton = document.querySelector("#amount_select_row .selected");
+                localStorage.setItem("contributionInfo", JSON.stringify({
+                    amount: amountButton.dataset.amount,
+                    frequency: amountButton.dataset.frequency,
+                    processor: "stripe",
+                    currency: "USD",
+                    lang: document.documentElement.lang,
+                    source: "HME",
+                    clickTs: Date.now()            
+                }));
+            }
+
             fetch(that.AUX.charge_url, {
                 method: 'POST',
                 headers: {
