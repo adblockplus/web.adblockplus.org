@@ -66,6 +66,8 @@ html {
  ******************************************************************************/
 
 .premium-container {
+  position: relative;
+  z-index: 1;
   width: 100%;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -168,6 +170,7 @@ html {
 .premium-button:disabled,
 .premium-button.disabled {
   cursor: not-allowed;
+  color: #585858 !important;
 }
 
 .premium-button:disabled:hover,
@@ -192,7 +195,7 @@ html {
   left: 0;
   width: 100%;
   background-color: #F7F7F7;
-  z-index: -1;
+  z-index: 0;
 }
 
 /*******************************************************************************
@@ -321,12 +324,6 @@ html {
   .premium-plan {
     margin-top: 2rem;
     box-shadow: none;
-  }
-
-  .premium-plan:hover,
-  .premium-plan:active,
-  .premium-plan:focus {
-    box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
   }
 
   .premium-plan:hover .premium-button,
@@ -516,6 +513,7 @@ html {
 .premium-plan-highlighted {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.2);
 }
 
 /* Plan card body
