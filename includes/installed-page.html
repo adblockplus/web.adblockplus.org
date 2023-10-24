@@ -13,18 +13,27 @@
 
 <aside class="installed-loader__overlay">
   <div class="installed-loader__card">
-    <img src="/img/installed-main__block-1__logo.svg" height="67" width="66" class="installed-loader__card__image" alt="">
+    <header class="installed-loader__card__header">
+      <img src="/img/installed-main__block-1__logo.svg" height="60" width="60" class="installed-loader__card__image" alt="">
+      <h1>
+        {{ installed-loader__card__body__text--installing }}
+      </h1>
+    </header>
+    <progress class="installed-loader__card__progress" value="0" max="1"></progress>
     <div class="installed-loader__card__body">
-      <p class="installed-loader__card__text">
-        <span>
-          {{ installed-loader__card__body__text--installing }}
-        </span>
-        <span class="installed-loader__card__text--done" hidden>
-          {{ installed-loader__card__body__text--done }}
-        </span>
+      <h2>
+        {{ installed-loader__section-2__heading Surf the web with no annoying ads }}
+      </h2>
+      <div class="installed-loader__card__body__divider"></div>
+      <p>
+        {{ installed-loader__section-2__paragraph-1 Experience a cleaner, faster web and block annoying ads, while keeping your data and devices safe.}}
       </p>
-      <progress class="installed-loader__card__progress" value="0" max="1"></progress>
     </div>
+    <img class="installed-loader__background__ad installed-loader__background__ad--1" src="/img/installed-loader__background__ad-1.svg" alt="">
+    <img class="installed-loader__background__ad installed-loader__background__ad--3" src="/img/installed-loader__background__ad-3.svg" alt="">
+    <img class="installed-loader__background__ad installed-loader__background__ad--2" src="/img/installed-loader__background__ad-2.svg" alt="">
+    <img class="installed-loader__background__ad installed-loader__background__ad--5" src="/img/installed-loader__background__ad-5.svg" alt="">
+    <img class="installed-loader__background__ad installed-loader__background__ad--4" src="/img/installed-loader__background__ad-4.svg" alt="">
   </div>
 </aside>
 
@@ -42,13 +51,12 @@
     document.documentElement.classList.add("--loading");
     if (null == adblock.searchParameters.get("keepLoading")) {
       const progressBar = document.querySelector(".installed-loader__card__progress");
-      const completedText = document.querySelector(".installed-loader__card__text--done");
       const refreshRate = 1000 / 60;
-      const refreshProgress = 1 / (2500 / refreshRate);
+      const totalDuration = 9000;
+      const refreshProgress = 1 / (totalDuration / refreshRate);
       const tickInterval = setInterval(() => {
         progressBar.value += refreshProgress;
         if (progressBar.value >= 1) {
-          completedText.hidden = false;
           setTimeout(() => {
             document.documentElement.classList.remove("--loading");
             document.documentElement.classList.add("--loaded");
@@ -58,6 +66,19 @@
       }, refreshRate);
     }
   }
+
+  let animationInterval = 1000;
+
+  document.querySelectorAll(".installed-loader__background__ad").forEach((ad) => {
+    setTimeout(() => {
+      ad.style.transition = "all 1s ease-in-out";
+      ad.style.transform = "scale(0, 0)";
+      // fade out
+      ad.style.opacity = 0;
+    }, animationInterval);
+
+    animationInterval += 1000;
+  });
 </script>
 
 <div class="installed-container">
