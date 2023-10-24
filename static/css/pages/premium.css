@@ -67,7 +67,6 @@ html {
 
 .premium-container {
   position: relative;
-  z-index: 1;
   width: 100%;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -136,11 +135,6 @@ html {
  * Utilities
  ******************************************************************************/
 
-.premium-background-lightgrey {
-  background-color: #F7F7F7;
-  overflow: auto;
-}
-
 /* for preferring not to break between specific words on resize  */
 .premium-break {
   display: inline-block;
@@ -191,11 +185,8 @@ html {
  ******************************************************************************/
 
 .premium-background-1 {
-  position: absolute;
-  left: 0;
-  width: 100%;
   background-color: #F7F7F7;
-  z-index: 0;
+  padding-bottom: 5rem;
 }
 
 /*******************************************************************************

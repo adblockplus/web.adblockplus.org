@@ -102,41 +102,6 @@ function onDOMContentLoaded()
   }
   onMatchingHeightsScreenTransition();
 
-  // Set heights and resize for backgrounds that should extend to specific points
-  var premiumBackground1 = document.querySelector('.premium-background-1');
-  var premiumPlan1 = document.querySelector('.premium-plan');
-  var premiumFeatureImage1 = document.querySelector('.premium-feature-image');
-  function onHeightFromOffsetChange()
-  {
-    if (largeScreenQuery.matches) {
-      setHeightFromOffsetTop(
-        premiumBackground1,
-        premiumFeatureImage1,
-        (premiumFeatureImage1.clientHeight / 2)
-      );
-    } else {
-      setHeightFromOffsetTop(
-        premiumBackground1,
-        premiumPlan1,
-        4
-      );
-    }
-  }
-  largeScreenQuery.addEventListener('change', onHeightFromOffsetChange);
-  window.addEventListener('resize', function()
-  {
-    if (!largeScreenQuery.matches) {
-      onHeightFromOffsetChange();
-    }
-  });
-  if (
-    document.readyState != "complete"
-    && document.readyState != "loaded"
-  ) {
-    window.addEventListener('load', onHeightFromOffsetChange);
-  }
-  onHeightFromOffsetChange();
-
   // .premium-plan-yearly default style is .premium-plan:hover
   // When a .premium-plan is hovered then .premium-plan-yearly is styled
   // like the other .premium-plan until no .premium-plan is hovered again
