@@ -81,26 +81,17 @@ unadblock=1
             <hr>
             <div class="premium-plan-list">
               <p class="premium-plan-list-preface">
-                {{ s8 Includes: }}
+                {{ premium-benefits_title All Free features, plus: }}
               </p>
               <ul>
                 <li>
-                  {{ s9 Block ads and pop-ups }}
+                  {{ premium-benefit_1 Block floating videos, site notifications, and more }}
                 </li>
                 <li>
-                  {{ s10 Stop trackers }}
+                  {{ premium-benefit_2 Block cookie consent pop-ups }}
                 </li>
                 <li>
-                  {{ s11 Block site notifications }}
-                </li>
-                <li>
-                  {{ s12 Stop floating videos }}
-                </li>
-                <li>
-                  {{ s13 Hide newsletter pop-ups }}
-                </li>
-                <li>
-                  {{ s14 Ignore survey requests }}
+                  {{ premium-benefit_3 Keep your ad blocker on }}
                 </li>
               </ul>
             </div>
@@ -130,26 +121,17 @@ unadblock=1
             <hr>
             <div class="premium-plan-list">
               <p class="premium-plan-list-preface">
-                {{ s8 Includes: }}
+                {{ premium-benefits_title All Free features, plus: }}
               </p>
               <ul>
                 <li>
-                  {{ s9 Block ads and pop-ups }}
+                  {{ premium-benefit_1 Block floating videos, site notifications, and more }}
                 </li>
                 <li>
-                  {{ s10 Stop trackers }}
+                  {{ premium-benefit_2 Block cookie consent pop-ups }}
                 </li>
                 <li>
-                  {{ s11 Block site notifications }}
-                </li>
-                <li>
-                  {{ s12 Stop floating videos }}
-                </li>
-                <li>
-                  {{ s13 Hide newsletter pop-ups }}
-                </li>
-                <li>
-                  {{ s14 Ignore survey requests }}
+                  {{ premium-benefit_3 Keep your ad blocker on }}
                 </li>
               </ul>
             </div>
@@ -182,22 +164,13 @@ unadblock=1
               </p>
               <ul>
                 <li>
-                  {{ s9 Block ads and pop-ups }}
+                  {{ free-benefit_1 Block ads and pop-ups }}
                 </li>
                 <li>
-                  {{ s10 Stop trackers }}
+                  {{ free-benefit_2 Stop trackers }}
                 </li>
-                <li class="premium-plan-list-muted">
-                  {{ s11 Block site notifications }}
-                </li>
-                <li class="premium-plan-list-muted">
-                  {{ s12 Stop floating videos }}
-                </li>
-                <li class="premium-plan-list-muted">
-                  {{ s13 Hide newsletter pop-ups }}
-                </li>
-                <li class="premium-plan-list-muted">
-                  {{ s14 Ignore survey requests }}
+                <li>
+                  {{ free-benefit_3 Block site notifications }}
                 </li>
               </ul>
             </div>
@@ -211,36 +184,31 @@ unadblock=1
       <h2>
         {{ s20 Why go Premium? }}
       </h2>
-      <div class="premium-row">
-        <div class="premium-column">
-          <section class="premium-feature">
-            <img alt="" src="/img/premium-speaker.svg" class="premium-feature-image" height="192px">
-            <h3>
-              {{ s21 Block more distractions }}
-            </h3>
-            <p class="premium-feature-description">
-              {{ s22 Take control of your browser and browse the way you want to! Say goodbye to newsletter pop-ups, floating videos, and other annoying distractions with Distraction Control. }}
-            </p>
-            <a class="premium-button premium-cta" href="#payments" data-click='{"group": "get-premium", "target": "block-more"}'>
-              {{ s7 Get Premium }}
-            </a>
-          </section>
+      <div class="divider"></div>
+      <section class="premium-feature">
+        <img alt="" src="/img/premium-cookie.svg" class="premium-feature-image" height="143px">
+        <div class="premium-feature-text">
+          <h3>{{ benefit_1-heading Block cookie consent pop-ups }}</h3>
+          <p>{{ benefit_1-paragraph Across the internet, websites are showing notifications that inform you about cookie usage on their sites. You can hide these annoying pop-ups with Premium access. }}</p>
         </div>
-        <div class="premium-column">
-          <section class="premium-feature">
-            <img alt="" src="/img/premium-light.svg" class="premium-feature-image" height="192px">
-            <h3>
-              {{ s23 Support ABP }}
-            </h3>
-            <p class="premium-feature-description">
-              {{ s24 We are a small team and your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep ABP going for years to come and get access to more features as we release them. }}
-            </p>
-            <a class="premium-button premium-cta" href="#payments" data-click='{"group": "get-premium", "target": "support-abp"}'>
-              {{ s7 Get Premium }}
-            </a>
-          </section>
+      </section>
+      <section class="premium-feature">
+        <img alt="" src="/img/premium-speaker.svg" class="premium-feature-image" height="143px">
+        <div class="premium-feature-text">
+          <h3>{{ s21 Block more distractions }}</h3>
+          <p>{{ s22 Take control of your browser and browse the way you want to! Say goodbye to newsletter pop-ups, floating videos, and other annoying distractions with Distraction Control. }}</p>
         </div>
-      </div>
+      </section>
+      <section class="premium-feature">
+        <img alt="" src="/img/premium-light.svg" class="premium-feature-image" height="143px">
+        <div class="premium-feature-text">
+          <h3>{{ s23 Support ABP }}</h3>
+          <p>{{ s24 We are a small team and your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep ABP going for years to come and get access to more features as we release them. }}</p>
+        </div>
+      </section>
+      <a class="premium-button premium-cta" href="#payments" data-click='{"group": "get-premium", "target": "support-abp"}'>
+        {{ s7 Get Premium }}
+      </a>
     </section>
     <section class="premium-faqs">
       <h2>
