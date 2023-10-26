@@ -7,7 +7,7 @@
     "appeal-form__error--once": {{ get_string("appeal-form__error--once", "payment-form") | tojson }},
     "appeal-form__error--monthly": {{ get_string("appeal-form__error--monthly", "payment-form") | tojson }},
     "appeal-form__error--yearly": {{ get_string("appeal-form__error--yearly", "payment-form") | tojson }},
-    "appeal-form-checkout__submit": {{ get_string("appeal-form-checkout__submit", "payment-form") | tojson }},
+    "appeal-form-checkout__submit": {{ get_string("appeal-form-checkout__submit", "installed" if page == "installed" and locale == "en" else "payment-form") | tojson }},
     "appeal-form-checkout__title": {{ get_string("appeal-form-checkout__title", "payment-form") | tojson }},
   });
 </script>
