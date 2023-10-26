@@ -1,4 +1,7 @@
 <script>
+  const checkoutLabel = (navigator.language == "en" || navigator.language.startsWith("en-")) && {{ 1 if page == "installed" else 0 }}
+    ? "{{ get_string("appeal-form-checkout__submit", "installed") }}"
+    : "{{ get_string("appeal-form-checkout__submit", "payment-form") }}";
   Object.assign(window.adblock.strings, {
     "appeal-form-header__heading": {{ get_string("appeal-form-header__heading", "payment-form") | tojson }},
     "appeal-form-frequency__heading--once": {{ get_string("appeal-form-frequency__heading--once", "payment-form" ) | tojson }},
@@ -7,7 +10,7 @@
     "appeal-form__error--once": {{ get_string("appeal-form__error--once", "payment-form") | tojson }},
     "appeal-form__error--monthly": {{ get_string("appeal-form__error--monthly", "payment-form") | tojson }},
     "appeal-form__error--yearly": {{ get_string("appeal-form__error--yearly", "payment-form") | tojson }},
-    "appeal-form-checkout__submit": {{ get_string("appeal-form-checkout__submit", "installed" if page == "installed" and locale == "en" else "payment-form") | tojson }},
+    "appeal-form-checkout__submit": checkoutLabel,
     "appeal-form-checkout__title": {{ get_string("appeal-form-checkout__title", "payment-form") | tojson }},
   });
 </script>
