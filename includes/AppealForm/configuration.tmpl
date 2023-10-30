@@ -1,7 +1,7 @@
 <script>
-  const checkoutLabel = (navigator.language == "en" || navigator.language.startsWith("en-")) && {{ 1 if page == "installed" else 0 }}
-    ? "{{ get_string("appeal-form-checkout__submit", "installed") }}"
-    : "{{ get_string("appeal-form-checkout__submit", "payment-form") }}";
+  const checkoutLabel = {{ 1 if page == "installed" else 0 }}
+    ? {{ get_string("appeal-form-checkout__submit", "installed") | tojson }}
+    : {{ get_string("appeal-form-checkout__submit", "payment-form") | tojson }};
   Object.assign(window.adblock.strings, {
     "appeal-form-header__heading": {{ get_string("appeal-form-header__heading", "payment-form") | tojson }},
     "appeal-form-frequency__heading--once": {{ get_string("appeal-form-frequency__heading--once", "payment-form" ) | tojson }},
