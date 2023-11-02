@@ -617,7 +617,7 @@ function getSecondDescendingAmount(currency, frequency) {
 
 const defaultAmount = adblock.settings.defaultAmount || getSecondDescendingAmount(defaultCurrency, defaultFrequency);
 
-const paymentView = adblock.runtime.updatePaymentView = new UpdatePaymentView(
+const updatePaymentView = adblock.runtime.updatePaymentView = new UpdatePaymentView(
   document.querySelector(".update-payment"),
   {
     products: updatePaymentProducts,
@@ -722,7 +722,7 @@ function onInstalledSubmit(view, options) {
   }
 }
 
-paymentView.events.on("submit", data => onInstalledSubmit(updatePaymentView,  data));
+updatePaymentView.events.on("submit", data => onInstalledSubmit(updatePaymentView,  data));
 
 // UpdatePaymentView setup end /////////////////////////////////////////////////
 
@@ -746,9 +746,9 @@ function getReward(currency, frequency, amount) {
 }
 
 function renderReward() {
-  const currency = paymentView.currency;
-  const frequency = paymentView.frequency;
-  const amount = paymentView.amount;
+  const currency = updatePaymentView.currency;
+  const frequency = updatePaymentView.frequency;
+  const amount = updatePaymentView.amount;
   const frequencySuffixes = {
     "once": "",
     "monthly": adblock.strings["suffix__monthly"],
@@ -763,7 +763,7 @@ function renderReward() {
   localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
 }
 
-paymentView.events.on("amount", renderReward);
+updatePaymentView.events.on("amount", renderReward);
 document.addEventListener("DOMContentLoaded", renderReward);
 
 // InstalledModalView setup start //////////////////////////////////////////////
