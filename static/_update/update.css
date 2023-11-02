@@ -1,5 +1,4 @@
 @import url("/css/fonts.css");
-@import url(/_update/InstalledModalView.css);
 
 *,
 *::before,
@@ -54,6 +53,94 @@ input[type=number] {
   border-radius: 3px;
   padding-block: 0.1rem;
   padding-inline: 0.2rem;
+}
+
+.update-exit-modal {
+  display: none;
+}
+
+.update-exit-modal.update-exit-modal--open {
+  display: block;
+}
+
+.update-exit-modal__card {
+  border-radius: 8px;
+  border: 1px solid #E40D0D;
+  background: #FFF;
+  padding: 2rem;
+  width: 100%;
+  max-width: 505px;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.update-exit-modal__overlay {
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+}
+
+.update-exit-modal__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block-start: 0;
+}
+
+.update-exit-modal__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 1rem auto 0 auto;
+  height: 2rem;
+  padding: 0;
+  width: 100%;
+  max-width: 260px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.update-exit-modal__button.update-exit-modal__button--checkout {
+  margin-block-start: 2rem;
+  background: #0047FF;
+  color: #fff;
+  border: 1px solid #0047FF;
+}
+
+.update-exit-modal__button.update-exit-modal__button--close {
+  border: 1px solid #0047FF;
+  background: transparent;
+  color: #0047FF;
+}
+
+.update-exit-modal--submitting .update-exit-modal__button.update-exit-modal__button--close {
+  background: lightgray;
+  border-color: lightgray;
+}
+
+.update-exit-modal__loader {
+  width:6px;
+  height:6px;
+  margin-block-start: 5px;
+  margin-block-end: 6px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 10px 0 #FFFFFF22,-10px 0 #FFFFFF;
+  animation: update-payment__loader 1s infinite linear alternate;
+}
+
+@keyframes update-exit-modal__loader {
+    0% {box-shadow: 10px 0 #FFFFFF,-10px 0 #FFFFFF22;background: #FFFFFF}
+    33%{box-shadow: 10px 0 #FFFFFF,-10px 0 #FFFFFF22;background: #FFFFFF22}
+    66%{box-shadow: 10px 0 #FFFFFF22,-10px 0 #FFFFFF;background: #FFFFFF22}
 }
 
 .update__container {

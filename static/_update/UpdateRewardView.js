@@ -27,17 +27,15 @@ export default class UpdateRewardView {
     this.planName = adblock.strings[this.planStringIds[plan]];
     this.textElement.textContent = baseTranslation
       .replace( // replace amount
-        `<span id=""><span class="currency_symbol">$</span><span id="contribution-amount">35.00</span></span>`, 
+        `<span class="amount">35.00</span>`, 
         getDollarString(currency, amount)
       )
       .replace( // replace product
-        `<span id="contribution-free-products">AdBlock Premium and VPN</span>`, 
+        `<span class="product">Adblock Plus Premium</span>`, 
         this.planName
       )
       .replace( // replace duration (when not 1 month or year)
-        duration > 12
-          ? `<span id="duration-in-years">8</span>`
-          : `<span id="duration-in-months">8</span>`,
+        `<span class="duration">8</span>`,
         Math.floor(duration > 12 ? duration / 12 : duration)
       );
   }

@@ -1,7 +1,7 @@
 import Events from "./events.js";
 import { getDollarString } from "./currency.js";
 
-export default class InstalledModalView {
+export default class UpdateExitModalView {
 
   /**
    * @param {Element} parent - parent element
@@ -15,32 +15,32 @@ export default class InstalledModalView {
     this.options = options;
     this.events = new Events();
     this.loading = false;
-    parent.querySelector(".checkout-button__amount").textContent = getDollarString(options.currency, options.amount);
-    parent.querySelector(".installed-modal__button--checkout").addEventListener("click", event => {
+    parent.querySelector(".update-exit-modal__amount").textContent = getDollarString(options.currency, options.amount);
+    parent.querySelector(".update-exit-modal__button--checkout").addEventListener("click", event => {
       event.preventDefault();
       this.events.fire("submit", this.options);
     });
-    parent.querySelector(".installed-modal__button--close").addEventListener("click", event => {
+    parent.querySelector(".update-exit-modal__button--close").addEventListener("click", event => {
       event.preventDefault();
       this.open = false;
     });
   }
 
   get submitting () {
-    return this.parent.classList.contains("installed-modal--submitting");
+    return this.parent.classList.contains("update-exit-modal--submitting");
   }
 
   set submitting (submitting) {
     if (submitting) {
-      this.parent.classList.add("installed-modal--submitting")
-      this.parent.querySelectorAll(".installed-modal__button").forEach(button => {
+      this.parent.classList.add("update-exit-modal--submitting")
+      this.parent.querySelectorAll(".update-exit-modal__button").forEach(button => {
         button.dataset.innerHTML = button.innerHTML;
-        button.innerHTML = `<div class="installed-modal__loader"></div>`;
+        button.innerHTML = `<div class="update-exit-modal__loader"></div>`;
         button.disabled = true;
       });
     } else {
-      this.parent.classList.remove("installed-modal--submitting");
-      this.parent.querySelectorAll(".installed-modal__button").forEach(button => {
+      this.parent.classList.remove("update-exit-modal--submitting");
+      this.parent.querySelectorAll(".update-exit-modal__button").forEach(button => {
         if (button.dataset.innerHTML) {
           button.innerHTML = button.dataset.innerHTML;
         }
@@ -50,11 +50,11 @@ export default class InstalledModalView {
   }
 
   get open() {
-    return this.parent.classList.contains("installed-modal--open");
+    return this.parent.classList.contains("update-exit-modal--open");
   }
 
   set open(open) {
-    this.parent.classList[open ? "add" : "remove"]("installed-modal--open");
+    this.parent.classList[open ? "add" : "remove"]("update-exit-modal--open");
     this.events.fire(open ? "open" : "close", this.options);
   }
   
