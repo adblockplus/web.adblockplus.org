@@ -4,85 +4,90 @@ template=update
 <head>
   <link rel="stylesheet" href="/_update/update.css">
   <script>
-    Object.assign(adblock.config, {
-      currency: false,
-      frequency: "once",
-      amount: false,
-    });
     Object.assign(adblock.strings, {
-      "product__premium": "Adblock Plus Premium",
-      "update-payment-reward__1-month": `Nice! A <span id=""><span class="currency_symbol">$</span><span id="contribution-amount">35.00</span></span> contribution gets <span id="contribution-free-products">AdBlock Premium and VPN</span> for one month. Thanks for your support.`,
-      "update-payment-reward__n-months": `Nice! A <span id=""><span class="currency_symbol">$</span><span id="contribution-amount">35.00</span></span> contribution gets <span id="contribution-free-products">AdBlock Premium and VPN</span> for <span id="duration-in-months">8</span> months. Thanks for your support.`,
-      "update-payment-reward__1-year": `Nice! A <span id=""><span class="currency_symbol">$</span><span id="contribution-amount">35.00</span></span> contribution gets <span id="contribution-free-products">AdBlock Premium and VPN</span> for one year. Thanks for your support.`,
-      "update-payment-reward__n-years": `Nice! A <span id=""><span class="currency_symbol">$</span><span id="contribution-amount">35.00</span></span> contribution gets <span id="contribution-free-products">AdBlock Premium and VPN</span> for <span id="duration-in-years">8</span> years. Thanks for your support.`,
-      "update-payment-reward__n-years": `Nice! A <span id=""><span class="currency_symbol">$</span><span id="contribution-amount">35.00</span></span> contribution gets <span id="contribution-free-products">AdBlock Premium and VPN</span> for <span id="duration-in-years">8</span> years. Thanks for your support.`,
-      "update-payment-reward": `Nice! A <span id=""><span class="currency_symbol">$</span><span id="contribution-amount">35.00</span></span> contribution gets <span id="contribution-free-products">AdBlock Premium and VPN</span>. Thanks for your support.`,
-      "suffix__yearly": `/year`,
-      "suffix__monthly": `/month`,
+      "product__premium": `{{ product__premium Adblock Plus Premium }}`,
+      "update-payment-reward__1-month": `{{ update-payment-reward__1-month Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for one month. Thanks for your support. }}`,
+      "update-payment-reward__n-months": `{{ update-payment-reward__n-months Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> months. Thanks for your support. }}`,
+      "update-payment-reward__1-year": `{{ update-payment-reward__1-year Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for one year. Thanks for your support. }}`,
+      "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
+      "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
+      "update-payment-reward": `{{ update-payment-reward Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span>. Thanks for your support. }}`,
     });
   </script>
 </head>
 
-<aside class="installed-modal">
-  <div class="installed-modal__overlay">
-    <div class="installed-modal__card">
-      <h2 class="installed__heading installed-modal__heading" i18n="honor-system__heading--with-icon">
-        <img alt="" height="40" width="40" src="/_update/installed-modal__logo.png"> The honor system
+<aside class="update-exit-modal">
+  <div class="update-exit-modal__overlay">
+    <div class="update-exit-modal__card">
+      <h2 class="update-exit-modal__heading">
+        <img alt="" height="40" width="40" src="/_update/update-exit-modal__logo.png"> {{ update-exit-modal__heading The honor system }}
       </h2>
-      <p i18n="installed-modal__paragraph--1">
-        We rely on your contribution to help cover the costs of our infrastructure, as well as developing new features to improve Adblock Plus and <strong>keep your online experience ad free</strong>. 
+      <p>
+        {{ update-exit-modal__paragraph-1 We rely on your contribution to help cover the costs of our infrastructure, as well as developing new features to improve Adblock Plus and <strong>keep your online experience ad free</strong>.  }}
       </p>
-      <p i18n="installed-modal__paragraph--2">
-        <strong>We appreciate your support</strong> and together we can make the internet a better place by blocking annoying and intrusive ads. 
+      <p>
+        {{ update-exit-modal__paragraph-2 <strong>We appreciate your support</strong> and together we can make the internet a better place by blocking annoying and intrusive ads.  }}
       </p>
-      <button class="installed-modal__button installed-modal__button--checkout" i18n="installed-modal__button--checkout">
-        Checkout Now <span class="checkout-button__amount">$10</span>
+      <button class="update-exit-modal__button update-exit-modal__button--checkout">
+        {{ update-exit-modal__button--checkout Checkout Now <span class="update-exit-modal__amount">$10</span> }}
       </button>
-      <button class="installed-modal__button installed-modal__button--close" i18n="installed-modal__button--close">
-        I don’t want to contribute
+      <button class="update-exit-modal__button update-exit-modal__button--close">
+        {{ update-exit-modal__button--close I don’t want to contribute }}
       </button>
-    </div><!-- ./installed-modal__card-->
-  </div><!-- ./installed-modal__overlay -->
-</aside><!-- ./installed-modal -->
+    </div><!-- /update-exit-modal__card-->
+  </div><!-- /update-exit-modal__overlay -->
+</aside><!-- /update-exit-modal -->
+
 <div class="update-navbar">
   <img height="45" width="248" class="update-navbar__img" src="/_update/update-navbar__img.png" alt="">
 </div>
+
 <div class="update-section-1">
   <div class="update__container">
+
     <header class="update-section-1__header">
-      <h1 class="update-section-1__heading" i18n="update_adblock_updated">
-        Your Adblock Plus has been updated!
+      <h1 class="update-section-1__heading">
+        {{ update-section-1__heading Adblock Plus has been updated! }}
       </h1>
     </header>
+
     <div class="update-section-1__columns">
+
       <aside class="update-section-1__column update-section-1-column-1">
-        <h2 class="update-section-1-column-1__heading" i18n="please_dont_scroll_away">
-          Please don't scroll away
+        <h2 class="update-section-1-column-1__heading">
+          {{ update-section-1-column-1__heading Please don’t scroll away }}
         </h2>
         <div class="update-section-1-column-1__body">
-          <p i18n="hey_there">
-            Hey there,<br><br>As an AdBlock user, you know firsthand the value that our software brings to your online experience. By blocking unwanted and intrusive ads, AdBlock helps you browse the web faster, safer, and with fewer distractions. But did you know that AdBlock is completely free, with no hidden fees or upgrades? We believe that everyone should have access to a better, ad-free internet, which is why we offer AdBlock for free to all users.
+          <p>
+            {{ update-section-1-column-1__paragraph-1 Hey there, }}
           </p>
-          <p i18n="we_need_your_help">
-            But we need your help to keep AdBlock running and improving. While a small percentage of users generously contribute to support our mission, we rely on the support of users like you to keep AdBlock alive and free for everyone. Your contribution, no matter how small, can make a big difference. So if AdBlock has saved you even just a few dollars or hours of frustration from dealing with unwanted ads, please consider contributing to support our team and advance the cause of an ad-free internet for all. Thank you for your support. Together, we can make the internet a better place for everyone.
+          <p>
+            {{ update-section-1-column-1__paragraph-2 As an Adblock Plus user, you know firsthand the value that our software brings to your online experience. By blocking unwanted and intrusive ads, Adblock Plus helps you browse the web faster, safer, and with fewer distractions. But did you know that Adblock Plus is completely free, with no hidden fees? We believe that everyone should have access to a better, ad-free internet, which is why we offer Adblock Plus for free to all users. }}
           </p>
-          <p i18n="sincerely_the_adblock_team">
-            Sincerely,<br>The AdBlock Team
+          <p>
+            {{ update-section-1-column-1__paragraph-3 But we need your help to keep Adblock Plus running and improving. While a small percentage of users generously contribute to support our mission, we rely on the support of users like you to keep Adblock Plus alive and free for everyone. Your contribution, no matter how small, can make a big difference. So if Adblock Plus has saved you even just a few dollars or hours of frustration from dealing with unwanted ads, please consider contributing to support our team and advance the cause of an ad-free internet for all. Thank you for your support. Together, we can make the internet a better place for everyone. }}
+          </p>
+          <p>
+            {{ update-section-1-column-1__paragraph-4 Sincerely,<span class="br"></span> The Adblock Plus Team }}
           </p>
         </div>
-      </aside><!-- .update-section-1-column-1 -->
+      </aside><!-- /update-section-1-column-1 -->
+
       <div class="update-section-1__column update-section-1-column-2">
+
         <div class="update-gaurantee">
           <img class="update-gaurantee__image" src="/_update/update-gaurantee__image.svg" height="24" width="25">
-          <div class="update-gaurantee__text" i18n="update-gaurantee__text">
-            Support us with confidence: <strong>60 day money-back guarantee</strong>. And you can keep Adblock Plus.
+          <div class="update-gaurantee__text">
+            {{ update-gaurantee__text Support us with confidence: <strong>60 day money-back guarantee.</strong> And you can keep Adblock Plus. }}
           </div>
         </div>
+
         <form class="update-payment" data-loading="false" data-enabled="true">
           <div class="update-payment-frequencies">
+
             <div class="update-payment-frequency update-payment-frequency--once">
-              <h3 class="update-payment-frequency__label" i18n="contribution__one-time--bold">
-                Make a <strong>one-off</strong> contribution
+              <h3 class="update-payment-frequency__label update-payment-frequency__label--once">
+                {{ update-payment-frequency__label--once Make a <strong>one-off</strong> contribution }}
               </h3>
               <div class="update-payment-amounts">
                 <div class="update-payment-amount">
@@ -119,21 +124,22 @@ template=update
                   <input id="update-payment-amount-6" class="update-payment-amount__radio update-payment-amount__radio--custom" name="update-payment-amount__radio" type="radio" data-frequency="once">
                   <input type="number" class="update-payment-amount__value update-payment-amount__input" placeholder="$35" data-min="10" step=".01">
                 </div>
-              </div><!-- ./update-payment-amounts -->
-            </div><!-- ./update-payment-frequency -->
+              </div><!-- /update-payment-amounts -->
+            </div><!-- /update-payment-frequency--once -->
+
             <div class="update-payment-frequency update-payment-frequency--recurring">
               <header class="update-payment-frequency__header">
-                <h3 class="update-payment-frequency__label" i18n="contribution__monthly--bold">
-                  Make a <strong>recurring</strong> contribution
+                <h3 class="update-payment-frequency__label update-payment-frequency__label--recurring">
+                  {{ update-payment-frequency__label--recurring Make a <strong>recurring</strong> contribution }}
                 </h3>
                 <div class="update-payment-switch">
-                  <label for="update-payment-switch__monthly" class="update-payment-switch__label">
-                    Monthly
+                  <label for="update-payment-switch__monthly" class="update-payment-switch__label--monthly">
+                    {{ update-payment-switch__label--monthly Monthly }}
                   </label>
                   <input type="radio" id="update-payment-switch__monthly" name="update-payment-switch__radio" class="update-payment-switch__radio update-payment-switch__monthly" checked value="monthly">
                   <input type="radio" id="update-payment-switch__yearly" name="update-payment-switch__radio" class="update-payment-switch__radio update-payment-switch__yearly" value="yearly">
                   <label for="update-payment-switch__yearly" class="update-payment-switch__label">
-                    Yearly
+                    {{ update-payment-switch__label--monthly Yearly }}
                   </label>
                 </div>
               </header>
@@ -172,32 +178,45 @@ template=update
                   <input id="update-payment-amount-12" class="update-payment-amount__radio update-payment-amount__radio--custom" name="update-payment-amount__radio" type="radio" data-frequency="monthly">
                   <input type="number" class="update-payment-amount__value update-payment-amount__input" placeholder="$4.99" data-min="1.99" step=".01">
                 </div>
-              </div><!-- ./update-payment-amounts -->
-            </div><!-- ./update-payment-frequency -->
-          </div><!-- ./update-payment-frequencies -->
+              </div><!-- /update-payment-amounts -->
+            </div><!-- /update-payment-frequency -->
+
+          </div><!-- /update-payment-frequencies -->
+
           <div class="update-payment-reward">
             <span class="update-payment-reward__highlight"></span>
-            <div class="update-payment-reward__text" i18n="thanks_tailored_contribution_amount_one_year">
-              Nice! A <span class="update-payment-reward__amount">35.00</span> contribution gets <span class="update-payment-reward__product">AdBlock Premium and VPN</span> <span class="update-payment-reward__duration">for one year</span>. Thanks for your support.
+            <div class="update-payment-reward__text">
+              {{ update-payment-reward__text Nice! A <span class="update-payment-reward__amount">$35.00</span> contribution gets <span class="update-payment-reward__product">Adblock Plus Premium</span> <span class="update-payment-reward__duration">for one year</span>. Thanks for your support. }}
             </div>
-          </div>  
+          </div>
+
           <button class="update-payment__checkout-button">
-            Checkout Now
+            {{ update-payment__checkout-button Checkout Now }}
           </button>
-          <img alt="" src="/components/AppealForm/appeal-form-checkout__image.svg?3332076540" class="appeal-form-checkout__image">
-        </form><!-- ./update-payment -->
-      </div><!-- .update-section-1-column-2 -->
-    </div><!-- .update-section-1__columns -->
-  </div><!-- ./update__container -->
-</div><!-- .update-section-1 -->
+
+          <img alt="" src="/img/payment-providers.svg">
+
+        </form><!-- /update-payment -->
+
+      </div><!-- /update-section-1-column-2 -->
+
+    </div><!-- /update-section-1__columns -->
+
+  </div><!-- /update__container -->
+</div><!-- /update-section-1 -->
+
 <div class="update-section-3">
   <div class="update__container">
     <? include update-news ?>
-  </div><!-- ./update__container -->
-</div><!-- .update-section-3 -->
+  </div><!-- /update__container -->
+</div><!-- /update-section-3 -->
+
 <footer class="update-section-4">
-  <a href="privacy">Privacy Policy</a>
+  <a href="privacy">
+    {{ privacy-policy Privacy Policy }}
+  </a>
 </footer>
+
 <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=Intl.NumberFormat,Intl.NumberFormat.~locale.en"></script>
 <script src="/adblock/anti-adblock-pass/user.js"></script>

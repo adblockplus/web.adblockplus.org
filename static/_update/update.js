@@ -5,7 +5,7 @@ import { generateTrackingId, generateUserId, getUserId } from "./user.js";
 import Events from "./events.js";
 import UpdatePaymentView from "./UpdatePaymentView.js";
 import UpdateRewardView from "./UpdateRewardView.js";
-import InstalledModalView from "./InstalledModalView.js";
+import UpdateExitModalView from "./UpdateExitModalView.js";
 
 // Adding exports to namespace for third parties (aka conversion.com)
 adblock.lib.Events = Events;
@@ -46,26 +46,28 @@ const PADDLE = adblock.config.paddle = {
     RUB: { once: 50000, monthly: 20000, yearly: 50000 },
     USD: { once: 1000, monthly: 199, yearly: 1000 }
   },
-  INSTALLED_MODAL_PRODUCTS: {
+  UPDATE_EXIT_MODAL_PRODUCTS: {
     LIVE: {
-      "USD": [ "500", "" ],
-      "AUD": [ "500", "" ],
-      "CAD": [ "500", "" ],
-      "EUR": [ "500", "" ],
-      "GBP": [ "500", "" ],
-      "JPY": [ "500", "" ],
-      "MXN": [ "10000", "" ],
-      "RUB": [ "25000", "" ]
+      "USD": [ "1000", "816549" ],
+      "AUD": [ "1000", "816522" ],
+      "CAD": [ "1000", "816528" ],
+      "EUR": [ "1000", "816517" ],
+      "GBP": [ "1000", "816538" ],
+      "JPY": [ "1500", "816554" ],
+      "NZD": [ "1000", "816543" ],
+      "CHF": [ "1000", "816533" ],
+      "RUB": [ "25000", "816559" ],
     },
     TEST: {
-      "USD": [ "500", "" ],
-      "AUD": [ "500", "" ],
-      "CAD": [ "500", "" ],
-      "EUR": [ "500", "" ],
-      "GBP": [ "500", "" ],
-      "JPY": [ "500", "" ],
-      "MXN": [ "10000", "" ],
-      "RUB": [ "25000", "" ]
+      "USD": [ "1000", "46028" ],
+      "AUD": [ "1000", "46033" ],
+      "CAD": [ "1000", "46038" ],
+      "EUR": [ "1000", "46048" ],
+      "GBP": [ "1000", "46053" ],
+      "JPY": [ "1500", "46064" ],
+      "NZD": [ "1000", "46058" ],
+      "CHF": [ "1000", "46043" ],
+      "RUB": [ "25000", "46069" ],
     }
   },
   UPDATE_PAYMENT_PRODUCTS: {
@@ -555,8 +557,6 @@ const customAmountServiceURL = paddleEnvironment.CUSTOM_AMOUNT_URL;
 const paddleTitle = "Adblock Plus";
 const paddleLocale = PADDLE.LOCALES[language] || language;
 
-// paddle setup start //////////////////////////////////////////////////////////
-
 if (environment == "TEST") {
   Paddle.Environment.set("sandbox");
 }
@@ -571,12 +571,8 @@ Paddle.Setup({
 
 adblock.runtime.paddle = { events: paddleEvents };
 
-// paddle setup end ////////////////////////////////////////////////////////////
-
-// UpdatePaymentView setup //////////////////////////////////////////////////
-
 const updatePaymentProducts = PADDLE.UPDATE_PAYMENT_PRODUCTS[environment];
-const installedModalProducts = PADDLE.INSTALLED_MODAL_PRODUCTS[environment];
+const updateExitModalProducts = PADDLE.UPDATE_EXIT_MODAL_PRODUCTS[environment];
 
 const defaultFrequency = adblock.settings.defaultFrequency || "monthly";
 
@@ -630,7 +626,7 @@ const updatePaymentView = adblock.runtime.updatePaymentView = new UpdatePaymentV
 
 let planId = "";
 
-function onInstalledSubmit(view, options) {
+function onPaymentSubmit(view, options) {
   const currency = options.currency;
   const frequency = options.frequency;
   const amount = options.amount;
@@ -722,11 +718,7 @@ function onInstalledSubmit(view, options) {
   }
 }
 
-updatePaymentView.events.on("submit", data => onInstalledSubmit(updatePaymentView,  data));
-
-// UpdatePaymentView setup end /////////////////////////////////////////////////
-
-// UpdateRewardView setup start ////////////////////////////////////////////////
+updatePaymentView.events.on("submit", data => onPaymentSubmit(updatePaymentView,  data));
 
 const rewardView = new UpdateRewardView(
   document.querySelector(".update-payment-reward")
@@ -766,42 +758,38 @@ function renderReward() {
 updatePaymentView.events.on("amount", renderReward);
 document.addEventListener("DOMContentLoaded", renderReward);
 
-// InstalledModalView setup start //////////////////////////////////////////////
-
-const installedModalView = adblock.runtime.installedModalView = new InstalledModalView(
-  document.querySelector(".installed-modal"),
+const updateExitModalView = adblock.runtime.updateExitModalView = new UpdateExitModalView(
+  document.querySelector(".update-exit-modal"),
   {
     currency: defaultCurrency, 
-    amount: installedModalProducts[defaultCurrency][0], 
-    product: installedModalProducts[defaultCurrency][1]
+    amount: updateExitModalProducts[defaultCurrency][0], 
+    product: updateExitModalProducts[defaultCurrency][1]
   }
 );
 
-installedModalView.events.on("submit", data => onInstalledSubmit(installedModalView, data));
+updateExitModalView.events.on("submit", data => onPaymentSubmit(updateExitModalView, data));
 
-let installedModalHasOpened = false;
+let updateExitModalHasOpened = false;
 
-function showInstalledModal() {
+function showUpdateExitModal() {
   if (
-    false == installedModalHasOpened
-    && false == installedModalView.open 
+    false == updateExitModalHasOpened
+    && false == updateExitModalView.open 
     && true != adblock.config.disableModal
   ) {
-    installedModalHasOpened = true;
-    installedModalView.open = true;
+    updateExitModalHasOpened = true;
+    updateExitModalView.open = true;
   }
 }
 
 setTimeout(() => {
   document.documentElement.addEventListener("mouseleave", event => {
     if (event.clientY <= 0 && !document.querySelector(":invalid")) {
-      showInstalledModal();
+      showUpdateExitModal();
     }
   });
 }, adblock.config.modalDelay || 5000);
 
 if (adblock.config.modalShow) {
-  showInstalledModal();
+  showUpdateExitModal();
 }
-
-// InstalledModalView setup end ////////////////////////////////////////////////
