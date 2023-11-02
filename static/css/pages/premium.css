@@ -610,6 +610,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  row-gap: 1em;
   align-items: flex-start;
   min-height: 120px;
 }
