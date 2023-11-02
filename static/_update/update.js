@@ -5,6 +5,7 @@ import { generateTrackingId, generateUserId, getUserId } from "./user.js";
 import Events from "./events.js";
 import UpdatePaymentView from "./UpdatePaymentView.js";
 import UpdateRewardView from "./UpdateRewardView.js";
+import InstalledModalView from "./InstalledModalView.js";
 
 // Adding exports to namespace for third parties (aka conversion.com)
 adblock.lib.Events = Events;
@@ -44,6 +45,28 @@ const PADDLE = adblock.config.paddle = {
     MXN: { once: 8000, monthly: 3000, yearly: 8000 },
     RUB: { once: 50000, monthly: 20000, yearly: 50000 },
     USD: { once: 1000, monthly: 199, yearly: 1000 }
+  },
+  INSTALLED_MODAL_PRODUCTS: {
+    LIVE: {
+      "USD": [ "500", "" ],
+      "AUD": [ "500", "" ],
+      "CAD": [ "500", "" ],
+      "EUR": [ "500", "" ],
+      "GBP": [ "500", "" ],
+      "JPY": [ "500", "" ],
+      "MXN": [ "10000", "" ],
+      "RUB": [ "25000", "" ]
+    },
+    TEST: {
+      "USD": [ "500", "" ],
+      "AUD": [ "500", "" ],
+      "CAD": [ "500", "" ],
+      "EUR": [ "500", "" ],
+      "GBP": [ "500", "" ],
+      "JPY": [ "500", "" ],
+      "MXN": [ "10000", "" ],
+      "RUB": [ "25000", "" ]
+    }
   },
   UPDATE_PAYMENT_PRODUCTS: {
     TEST: {
@@ -553,6 +576,7 @@ adblock.runtime.paddle = { events: paddleEvents };
 // UpdatePaymentView setup //////////////////////////////////////////////////
 
 const updatePaymentProducts = PADDLE.UPDATE_PAYMENT_PRODUCTS[environment];
+const installedModalProducts = PADDLE.INSTALLED_MODAL_PRODUCTS[environment];
 
 const defaultFrequency = adblock.settings.defaultFrequency || "monthly";
 
@@ -606,8 +630,19 @@ const paymentView = adblock.runtime.updatePaymentView = new UpdatePaymentView(
 
 let planId = "";
 
-paymentView.events.on("submit", ({currency, frequency, amount}) => {
-  let product = updatePaymentProducts[currency][frequency][amount];
+function onInstalledSubmit(view, options) {
+  const currency = options.currency;
+  const frequency = options.frequency;
+  const amount = options.amount;
+  let product = options.product;
+  if (!product) {
+    try {
+      product = updatePaymentProducts[currency][frequency][amount];
+    } catch (error) {
+      // no big deal, it's just a custom amount or an amount we haven't created 
+      // a product for yet configured above
+    }
+  }
 
   const paymentSuccessParameters = new URLSearchParams();
   paymentSuccessParameters.append("thankyou", 1);
@@ -662,7 +697,7 @@ paymentView.events.on("submit", ({currency, frequency, amount}) => {
       passthrough: paddleMetadata,
     });
   } else {
-    paymentView.submitting = true;
+    view.submitting = true;
     fetch(customAmountServiceURL, {
       method: 'POST',
       headers: {
@@ -682,10 +717,12 @@ paymentView.events.on("submit", ({currency, frequency, amount}) => {
       alert(adblock.strings.errorUnexpected);
     })
     .finally(() => {
-      paymentView.submitting = false
+      view.submitting = false
     });
   }
-});
+}
+
+paymentView.events.on("submit", data => onInstalledSubmit(updatePaymentView,  data));
 
 // UpdatePaymentView setup end /////////////////////////////////////////////////
 
@@ -728,3 +765,43 @@ function renderReward() {
 
 paymentView.events.on("amount", renderReward);
 document.addEventListener("DOMContentLoaded", renderReward);
+
+// InstalledModalView setup start //////////////////////////////////////////////
+
+const installedModalView = adblock.runtime.installedModalView = new InstalledModalView(
+  document.querySelector(".installed-modal"),
+  {
+    currency: defaultCurrency, 
+    amount: installedModalProducts[defaultCurrency][0], 
+    product: installedModalProducts[defaultCurrency][1]
+  }
+);
+
+installedModalView.events.on("submit", data => onInstalledSubmit(installedModalView, data));
+
+let installedModalHasOpened = false;
+
+function showInstalledModal() {
+  if (
+    false == installedModalHasOpened
+    && false == installedModalView.open 
+    && true != adblock.config.disableModal
+  ) {
+    installedModalHasOpened = true;
+    installedModalView.open = true;
+  }
+}
+
+setTimeout(() => {
+  document.documentElement.addEventListener("mouseleave", event => {
+    if (event.clientY <= 0 && !document.querySelector(":invalid")) {
+      showInstalledModal();
+    }
+  });
+}, adblock.config.modalDelay || 5000);
+
+if (adblock.config.modalShow) {
+  showInstalledModal();
+}
+
+// InstalledModalView setup end ////////////////////////////////////////////////
