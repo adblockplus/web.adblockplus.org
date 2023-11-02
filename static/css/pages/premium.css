@@ -296,12 +296,13 @@ html {
   position: relative;
   /* larger margin-top to accomodate header tabs below */
   margin-top: 3.5rem;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border: 1px solid #E6E6E6;
   border-radius: 6px;
   padding: 1rem;
   background-color: #fff;
   color: #333;
+  height: 100%;
 }
 
 .not-hovered .premium-plan-yearly .premium-button {
@@ -601,6 +602,7 @@ html {
   font-weight: 700;
   line-height: 140%;
   margin-bottom: 0.75rem;
+  min-height: 50px;
 }
 
 .premium-plan-list ul {
