@@ -12,6 +12,8 @@ template=update
       "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
       "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
       "update-payment-reward": `{{ update-payment-reward Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span>. Thanks for your support. }}`,
+      "suffix__monthly": `{{ update-payment-suffix__monthly /monthly }}`,
+      "suffix__yearly": `{{ update-payment-suffix__yearly /yearly }}`,
     });
   </script>
 </head>
@@ -194,7 +196,7 @@ template=update
             {{ update-payment__checkout-button Checkout Now }}
           </button>
 
-          <img alt="" src="/img/payment-providers.svg">
+          <img alt="" src="/img/payment-providers.svg" style="margin-inline: auto">
 
         </form><!-- /update-payment -->
 

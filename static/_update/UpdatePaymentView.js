@@ -13,69 +13,100 @@ export default class UpdatePaymentView {
    * @param {string} options.defaultAmount default selected amount (amount must be in product frequency)
    */
   constructor(parent, { products, minimums, defaultCurrency, defaultFrequency, defaultAmount }) {
+
     this.events = new Events();
     this.parent = parent;
     this.products = products;
     this.minimums = minimums;
     this.currency = defaultCurrency;
-    this.enabled = true;
     this.submitting = false;
+
+    // update amounts for defalut currency
     this._renderAmounts("once");
-    this._renderAmounts("monthly");
+    this._renderAmounts(defaultFrequency == "yearly" ? "yearly" : "monthly");
+
+    // check default amount radio
     parent.querySelector(`.update-payment-amount__radio[data-frequency="${defaultFrequency}"][data-amount="${defaultAmount}"]`).checked = true;
-    let requiredInput = null;
+
+    /**
+     * Pointer to the current/last non-empty custom amount input selected
+     *
+     * Below we will set and unset its min attribute when it is selected, changed,
+     * and deselected to enable and disable minimum amount validation appropriately.
+     */
+    let customInput = null;
+
+    // listen to custom amount text input
     parent.addEventListener("input", event => {
       if (event.target.classList.contains("update-payment-amount__input")) {
         const input = event.target;
-        if (input.value.length >= 1) {
+        if (input.value.length != 0) {
           input.min = event.target.dataset.min;
-          requiredInput = input;
+          customInput = input;
+        } else {
+          input.removeAttribute("min");
         }
         const radio = input.closest(".update-payment-amount").querySelector(".update-payment-amount__radio");
+        // keep custom amount sibling radio amount in sync with custom amount input amount
         radio.dataset.amount = getCentNumber(this.currency, input.value) ||  input.dataset.default;
-        this.events.fire("amount", this.amount);
+        this.events.fire("amount");
       }
     }, true);
+    
+    // listen to radio and custom input focus events (via keyboard tab/arrow and mouse click)
     parent.addEventListener("focus", event => {
       let radio, input;
       if (event.target.classList.contains("update-payment-amount__radio")) {
         radio = event.target;
         input = radio.closest(".update-payment-amount").querySelector(".update-payment-amount__input");
-      }
-      if (event.target.classList.contains("update-payment-amount__input")) {
+        // input will be null when radio is not a custom amount radio
+      } else if (event.target.classList.contains("update-payment-amount__input")) {
         input = event.target;
         radio = input.closest(".update-payment-amount").querySelector(".update-payment-amount__radio");
         radio.checked = true;
       }
-      if (radio && input) {
-        this.events.fire("amount", this.amount);
+      if (
+        radio && !input && customInput // custom amount is deselected
+        || radio && input && customInput && input != customInput // alternate custom amount is selected
+      ) {
+        customInput.removeAttribute("min");
+        customInput = null;
       }
-      if (input && radio && input.value.length >= 1) {
+      if (input && radio && input.value.length != 0) {
         input.min = input.dataset.min;
-        requiredInput = input;
+        customInput = input;
       }
-      if (radio && requiredInput && !input) {
-        requiredInput.removeAttribute("min");
-        requiredInput = null;
+      if (radio && input) {
+        this.events.fire("amount");
       }
     }, true);
+
     parent.addEventListener("change", event => {
+
+      // fire amount change event on selected amount change
       if (event.target.classList.contains("update-payment-amount__radio")) {
-        this.events.fire("amount", this.amount);
+        this.events.fire("amount");
+
+      // render recurring frequency amounts on recurring frequency switch change
       } else if (event.target.classList.contains("update-payment-switch__radio")) {
-        this.frequency = event.target.value;
+        this._renderAmounts(event.target.value);
+        this.events.fire("amount")
       }
+
     }, true);
+
     parent.addEventListener("keydown", event => {
       if (event.key == "Enter") {
         event.preventDefault();
         this.submit();
       }
     });
+
     parent.addEventListener("submit", event => {
       event.preventDefault();
       this.submit();
     });
+
   }
 
   _renderAmounts(frequency) {
@@ -100,12 +131,37 @@ export default class UpdatePaymentView {
     }
   }
 
-  get frequency() {
-    return this.parent.querySelector(".update-payment-amount__radio:checked").dataset.frequency;
+  /** @param {number} duration */
+  set rewardDuration(duration) {
+    let baseTranslation;
+    if (duration > 12) {
+      baseTranslation = adblock.strings["update-payment-reward__n-years"];
+    } else if (duration == 12) {
+      baseTranslation = adblock.strings["update-payment-reward__1-year"];
+    } else if (duration > 1) {
+      baseTranslation = adblock.strings["update-payment-reward__n-months"];
+    } else if (duration == 1) {
+      baseTranslation = adblock.strings["update-payment-reward__1-month"];
+    } else {
+      baseTranslation = adblock.strings["update-payment-reward"];
+    }
+    this.parent.querySelector(".update-payment-reward__text").textContent = baseTranslation
+    .replace(
+      `<span class="amount">35.00</span>`, 
+      getDollarString(this.currency, this.amount)
+    )
+    .replace(
+      `<span class="product">Adblock Plus Premium</span>`, 
+      adblock.strings["product__premium"]
+    )
+    .replace(
+      `<span class="duration">8</span>`,
+      Math.floor(duration > 12 ? duration / 12 : duration)
+    );
   }
 
-  set frequency(frequency) {
-    this._renderAmounts(frequency);
+  get frequency() {
+    return this.parent.querySelector(".update-payment-amount__radio:checked").dataset.frequency;
   }
 
   get amount() {
@@ -123,16 +179,6 @@ export default class UpdatePaymentView {
     this.events.fire("submit", filterable);
   }
 
-  get enabled() {
-    return !this.parent.dataset.enabled;
-  }
-
-  set enabled(enabled) {
-    this.parent.dataset.enabled = enabled;
-    this.parent.querySelectorAll("input").forEach(element => element.disabled = !enabled);
-    this.events.fire("enabled", { enabled });
-  }
-
   get submitting() {
     return this.parent.dataset.submitting;
   }
@@ -140,13 +186,13 @@ export default class UpdatePaymentView {
   set submitting(submitting) {
     this.parent.dataset.submitting = submitting;
     if (submitting) {
-      this.enabled = false;
+      this.parent.querySelectorAll("input").forEach(element => element.disabled = true);
       this.parent.querySelectorAll(".update-payment__checkout-button").forEach(button => {
         button.dataset.innerHTML = button.innerHTML;
         button.innerHTML = `<div class="update-payment__loader"></div>`;
       });  
     } else {
-      this.enabled = true;
+      this.parent.querySelectorAll("input").forEach(element => element.disabled = false);
       this.parent.querySelectorAll(".update-payment__checkout-button").forEach(button => {
         if (button.dataset.innerHTML) {
           button.innerHTML = button.dataset.innerHTML;
