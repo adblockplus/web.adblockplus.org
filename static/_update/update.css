@@ -137,12 +137,6 @@ input[type=number] {
   animation: update-payment__loader 1s infinite linear alternate;
 }
 
-@keyframes update-exit-modal__loader {
-    0% {box-shadow: 10px 0 #FFFFFF,-10px 0 #FFFFFF22;background: #FFFFFF}
-    33%{box-shadow: 10px 0 #FFFFFF,-10px 0 #FFFFFF22;background: #FFFFFF22}
-    66%{box-shadow: 10px 0 #FFFFFF22,-10px 0 #FFFFFF;background: #FFFFFF22}
-}
-
 .update__container {
   width: 100%;
   max-width: 990px;
@@ -369,13 +363,15 @@ input[type=number] {
 }
 
 .update-payment__checkout-button {
+  display: flex;
+  justify-content: center;
+  margin-block-end: 1rem;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
   background: #2E47FF;
   padding-block: 0.5rem;
   padding-inline: 0;
-  text-align: center;
   border: 0;
   border-radius: 4px;
   cursor: pointer;
@@ -390,7 +386,7 @@ input[type=number] {
   background: #FFFFFF;
   border-radius: 50%;
   box-shadow: 10px 0 #FFFFFF22,-10px 0 #FFFFFF;
-  animation: installed-payment__loader 1s infinite linear alternate;
+  animation: update-payment__loader 1s infinite linear alternate;
 }
 
 @keyframes update-payment__loader {

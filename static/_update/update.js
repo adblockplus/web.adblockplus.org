@@ -4,7 +4,6 @@ import { matchHeights } from "./responsive.js";
 import { generateTrackingId, generateUserId, getUserId } from "./user.js";
 import Events from "./events.js";
 import UpdatePaymentView from "./UpdatePaymentView.js";
-import UpdateRewardView from "./UpdateRewardView.js";
 import UpdateExitModalView from "./UpdateExitModalView.js";
 
 // Adding exports to namespace for third parties (aka conversion.com)
@@ -14,7 +13,6 @@ adblock.lib.getDollarNumber = getDollarNumber;
 adblock.lib.getCentNumber = getCentNumber;
 adblock.lib.getDollarString = getDollarString;
 adblock.lib.UpdatePaymentView = UpdatePaymentView;
-adblock.lib.UpdateRewardView = UpdateRewardView;
 
 const PADDLE = adblock.config.paddle = {
   ENVIRONMENTS: {
@@ -79,7 +77,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46030,
           "3500": 46031,
           "5000": 46032,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 46074,
@@ -87,7 +85,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 46076,
           "499": 46077,
           "999": 46078,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 46079,
@@ -95,7 +93,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46081,
           "3500": 46082,
           "5000": 46083,
-          "custom": 500
+          "custom": 3500
         }
       },
       "AUD": {
@@ -105,7 +103,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46035,
           "3500": 46036,
           "5000": 46037,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 46084,
@@ -113,7 +111,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 46086,
           "499": 46087,
           "999": 46088,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 46089,
@@ -121,7 +119,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46091,
           "3500": 46092,
           "5000": 46093,
-          "custom": 500
+          "custom": 3500
         }
       },
       "CAD": {
@@ -131,7 +129,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46040,
           "3500": 46041,
           "5000": 46042,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 46094,
@@ -139,7 +137,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 46096,
           "499": 46097,
           "999": 46098,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 46099,
@@ -147,7 +145,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46182,
           "3500": 46183,
           "5000": 46184,
-          "custom": 500
+          "custom": 3500
         }
       },
       "EUR": {
@@ -157,7 +155,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46050,
           "3500": 46051,
           "5000": 46052,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 46195,
@@ -165,7 +163,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 46197,
           "499": 46198,
           "999": 46199,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 46200,
@@ -173,7 +171,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46202,
           "3500": 46203,
           "5000": 46204,
-          "custom": 500
+          "custom": 3500
         }
       },
       "GBP": {
@@ -183,7 +181,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46055,
           "3500": 46056,
           "5000": 46057,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 46205,
@@ -191,7 +189,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 46207,
           "499": 46208,
           "999": 46209,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 46210,
@@ -199,7 +197,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46212,
           "3500": 46213,
           "5000": 46214,
-          "custom": 500
+          "custom": 3500
         }
       },
       "JPY": {
@@ -209,7 +207,7 @@ const PADDLE = adblock.config.paddle = {
           "2500": 46066,
           "3500": 46067,
           "5000": 46068,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "200": 46225,
@@ -217,7 +215,7 @@ const PADDLE = adblock.config.paddle = {
           "500": 46227,
           "1000": 46228,
           "1500": 46229,
-          "custom": 200
+          "custom": 1000
         },
         "yearly": {
           "1500": 46230,
@@ -225,7 +223,7 @@ const PADDLE = adblock.config.paddle = {
           "2500": 46232,
           "3500": 46233,
           "5000": 46234,
-          "custom": 500
+          "custom": 3500
         }
       },
       "NZD": {
@@ -235,7 +233,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46060,
           "3500": 46062,
           "5000": 46063,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 46215,
@@ -243,7 +241,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 46217,
           "499": 46218,
           "999": 46219,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 46220,
@@ -251,7 +249,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46222,
           "3500": 46223,
           "5000": 46224,
-          "custom": 500
+          "custom": 3500
         }
       },
       "CHF": {
@@ -261,7 +259,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46045,
           "3500": 46046,
           "5000": 46047,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 46185,
@@ -269,7 +267,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 46187,
           "499": 46188,
           "999": 46189,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 46190,
@@ -277,7 +275,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 46192,
           "3500": 46193,
           "5000": 46194,
-          "custom": 500
+          "custom": 3500
         }
       },
       "RUB": {
@@ -287,7 +285,7 @@ const PADDLE = adblock.config.paddle = {
           "100000": 46071,
           "250000": 46072,
           "500000": 46073,
-          "custom": 25000
+          "custom": 250000
         },
         "monthly": {
           "15000": 46235,
@@ -295,7 +293,7 @@ const PADDLE = adblock.config.paddle = {
           "40000": 46237,
           "50000": 46238,
           "100000": 46239,
-          "custom": 15000
+          "custom": 50000
         },
         "yearly": {
           "25000": 46240,
@@ -303,7 +301,7 @@ const PADDLE = adblock.config.paddle = {
           "100000": 46242,
           "250000": 46243,
           "500000": 46244,
-          "custom": 25000
+          "custom": 250000
         }
       },
     },
@@ -315,7 +313,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816551,
           "3500": 816552,
           "5000": 816553,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 816774,
@@ -323,7 +321,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 816776,
           "499": 816777,
           "999": 816778,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 816779,
@@ -331,7 +329,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816781,
           "3500": 816782,
           "5000": 816783,
-          "custom": 500
+          "custom": 3500
         }
       },
       "AUD": {
@@ -341,7 +339,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816524,
           "3500": 816525,
           "5000": 816526,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 816692,
@@ -349,7 +347,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 816694,
           "499": 816696,
           "999": 816697,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 816699,
@@ -357,7 +355,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816702,
           "3500": 816703,
           "5000": 816705,
-          "custom": 500
+          "custom": 3500
         }
       },
       "CAD": {
@@ -367,7 +365,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816530,
           "3500": 816531,
           "5000": 816532,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 816706,
@@ -375,7 +373,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 816710,
           "499": 816711,
           "999": 816712,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 816714,
@@ -383,7 +381,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816716,
           "3500": 816717,
           "5000": 816718,
-          "custom": 500
+          "custom": 3500
         }
       },
       "EUR": {
@@ -393,7 +391,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816519,
           "3500": 816520,
           "5000": 816521,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 816681,
@@ -401,7 +399,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 816683,
           "499": 816684,
           "999": 816686,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 816687,
@@ -409,7 +407,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816689,
           "3500": 816690,
           "5000": 816691,
-          "custom": 500
+          "custom": 3500
         }
       },
       "GBP": {
@@ -419,7 +417,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816540,
           "3500": 816541,
           "5000": 816542,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 816734,
@@ -427,7 +425,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 816736,
           "499": 816737,
           "999": 816738,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 816739,
@@ -435,7 +433,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816741,
           "3500": 816743,
           "5000": 816744,
-          "custom": 500
+          "custom": 3500
         }
       },
       "JPY": {
@@ -445,7 +443,7 @@ const PADDLE = adblock.config.paddle = {
           "2500": 816556,
           "3500": 816557,
           "5000": 816558,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "200": 816784,
@@ -453,7 +451,7 @@ const PADDLE = adblock.config.paddle = {
           "500": 816786,
           "1000": 816787,
           "1500": 816788,
-          "custom": 200
+          "custom": 1000
         },
         "yearly": {
           "1500": 816789,
@@ -461,7 +459,7 @@ const PADDLE = adblock.config.paddle = {
           "2500": 816792,
           "3500": 816794,
           "5000": 816795,
-          "custom": 500
+          "custom": 3500
         }
       },
       "NZD": {
@@ -471,7 +469,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816545,
           "3500": 816547,
           "5000": 816548,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 816760,
@@ -479,7 +477,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 816764,
           "499": 816766,
           "999": 816768,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 816769,
@@ -487,7 +485,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816771,
           "3500": 816772,
           "5000": 816773,
-          "custom": 500
+          "custom": 3500
         }
       },
       "CHF": {
@@ -497,7 +495,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816534,
           "3500": 816536,
           "5000": 816537,
-          "custom": 500
+          "custom": 3500
         },
         "monthly": {
           "199": 816720,
@@ -505,7 +503,7 @@ const PADDLE = adblock.config.paddle = {
           "399": 816723,
           "499": 816725,
           "999": 816726,
-          "custom": 199
+          "custom": 499
         },
         "yearly": {
           "1000": 816727,
@@ -513,7 +511,7 @@ const PADDLE = adblock.config.paddle = {
           "2000": 816730,
           "3500": 816731,
           "5000": 816733,
-          "custom": 500
+          "custom": 3500
         }
       },
       "RUB": {
@@ -523,7 +521,7 @@ const PADDLE = adblock.config.paddle = {
           "100000": 816561,
           "250000": 816562,
           "500000": 816563,
-          "custom": 25000
+          "custom": 250000
         },
         "monthly": {
           "15000": 816796,
@@ -531,7 +529,7 @@ const PADDLE = adblock.config.paddle = {
           "40000": 816799,
           "50000": 816800,
           "100000": 816801,
-          "custom": 15000
+          "custom": 50000
         },
         "yearly": {
           "25000": 816802,
@@ -539,7 +537,7 @@ const PADDLE = adblock.config.paddle = {
           "100000": 816804,
           "250000": 816805,
           "500000": 816806,
-          "custom": 25000
+          "custom": 250000
         }
       },
     }
@@ -556,6 +554,8 @@ const paddleId = paddleEnvironment.VENDOR_ID;
 const customAmountServiceURL = paddleEnvironment.CUSTOM_AMOUNT_URL;
 const paddleTitle = "Adblock Plus";
 const paddleLocale = PADDLE.LOCALES[language] || language;
+const updatePaymentProducts = PADDLE.UPDATE_PAYMENT_PRODUCTS[environment];
+const updateExitModalProducts = PADDLE.UPDATE_EXIT_MODAL_PRODUCTS[environment];
 
 if (environment == "TEST") {
   Paddle.Environment.set("sandbox");
@@ -570,11 +570,6 @@ Paddle.Setup({
 });
 
 adblock.runtime.paddle = { events: paddleEvents };
-
-const updatePaymentProducts = PADDLE.UPDATE_PAYMENT_PRODUCTS[environment];
-const updateExitModalProducts = PADDLE.UPDATE_EXIT_MODAL_PRODUCTS[environment];
-
-const defaultFrequency = adblock.settings.defaultFrequency || "monthly";
 
 // From https://european-union.europa.eu/institutions-law-budget/euro/countries-using-euro_en
 const EUR_COUNTRIES = [
@@ -604,6 +599,8 @@ const defaultCurrency = adblock.settings.defaultCurrency = adblock.settings.defa
   || CURRENCY_MAP[country]
   || (EUR_COUNTRIES.includes(country) ? "EUR" : "USD");
 
+const defaultFrequency = adblock.settings.defaultFrequency || "monthly";
+
 function getSecondDescendingAmount(currency, frequency) {
   // Must be sorted because objects don't garantee key order
   return Object.keys(updatePaymentProducts[currency][frequency]).sort((a, b) => {
@@ -624,7 +621,73 @@ const updatePaymentView = adblock.runtime.updatePaymentView = new UpdatePaymentV
   }
 );
 
-let planId = "";
+function calculatePremiumReward(currency, frequency, amount) {
+  if (frequency == "once") {
+    const amountNumerator = parseInt(amount, 10);
+    const onceDenominator = parseInt(Object.keys(updatePaymentProducts[currency].once)[2], 10);
+    const monthlyDenominator = parseInt(Object.keys(updatePaymentProducts[currency].monthly)[0], 10);
+    if (amountNumerator < onceDenominator) {
+      return Math.floor(amountNumerator / monthlyDenominator);
+    } else {
+      return 12 * Math.floor(amountNumerator / onceDenominator);
+    }
+  }
+}
+
+function updatePremiumReward() {
+  const currency = updatePaymentView.currency;
+  const frequency = updatePaymentView.frequency;
+  const amount = updatePaymentView.amount;
+  const frequencySuffixes = {
+    "once": "",
+    "monthly": adblock.strings["suffix__monthly"],
+    "yearly": adblock.strings["suffix__yearly"],
+  };
+  const plan = "ME";
+  const planName = adblock.strings["adblock__premium"];
+  const suffix = frequencySuffixes[frequency];
+  const durationMonths = calculatePremiumReward(currency, frequency, amount);
+  updatePaymentView.rewardDuration = durationMonths;
+  localStorage.setItem("planinfo", JSON.stringify({ durationMonths, plan }));
+  localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
+}
+
+updatePaymentView.events.on("amount", updatePremiumReward);
+document.addEventListener("DOMContentLoaded", updatePremiumReward);
+
+const updateExitModalView = adblock.runtime.updateExitModalView = new UpdateExitModalView(
+  document.querySelector(".update-exit-modal"),
+  {
+    currency: defaultCurrency, 
+    amount: updateExitModalProducts[defaultCurrency][0], 
+    product: updateExitModalProducts[defaultCurrency][1]
+  }
+);
+
+let updateExitModalHasOpened = false;
+
+function showUpdateExitModal() {
+  if (
+    false == updateExitModalHasOpened
+    && false == updateExitModalView.open 
+    && true != adblock.config.disableModal
+  ) {
+    updateExitModalHasOpened = true;
+    updateExitModalView.open = true;
+  }
+}
+
+setTimeout(() => {
+  document.documentElement.addEventListener("mouseleave", event => {
+    if (event.clientY <= 0 && !document.querySelector(":invalid")) {
+      showUpdateExitModal();
+    }
+  });
+}, adblock.config.modalDelay || 5000);
+
+if (adblock.config.modalShow) {
+  showUpdateExitModal();
+}
 
 function onPaymentSubmit(view, options) {
   const currency = options.currency;
@@ -652,7 +715,7 @@ function onPaymentSubmit(view, options) {
   const paddleMetadata = {
     testmode: environment == "TEST",
     userid: userid,
-    tracking: generateTrackingId(planId),
+    tracking: generateTrackingId("ME", userid),
     locale: language,
     country: country,
     ga_id: "",
@@ -719,77 +782,4 @@ function onPaymentSubmit(view, options) {
 }
 
 updatePaymentView.events.on("submit", data => onPaymentSubmit(updatePaymentView,  data));
-
-const rewardView = new UpdateRewardView(
-  document.querySelector(".update-payment-reward")
-);
-
-function getReward(currency, frequency, amount) {
-  if (frequency == "once") {
-    const amountNumerator = parseInt(amount, 10);
-    const onceDenominator = parseInt(Object.keys(updatePaymentProducts[currency].once)[2], 10);
-    const monthlyDenominator = parseInt(Object.keys(updatePaymentProducts[currency].monthly)[0], 10);
-    if (amountNumerator < onceDenominator) {
-      return Math.floor(amountNumerator / monthlyDenominator);
-    } else {
-      return 12 * Math.floor(amountNumerator / onceDenominator);
-    }
-  }
-}
-
-function renderReward() {
-  const currency = updatePaymentView.currency;
-  const frequency = updatePaymentView.frequency;
-  const amount = updatePaymentView.amount;
-  const frequencySuffixes = {
-    "once": "",
-    "monthly": adblock.strings["suffix__monthly"],
-    "yearly": adblock.strings["suffix__yearly"],
-  };
-  const plan = "ME";
-  const planName = adblock.strings["adblock__premium"];
-  const suffix = frequencySuffixes[frequency];
-  const durationMonths = getReward(currency, frequency, amount);
-  rewardView.render(currency, amount, plan, durationMonths);
-  localStorage.setItem("planinfo", JSON.stringify({ durationMonths, plan }));
-  localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
-}
-
-updatePaymentView.events.on("amount", renderReward);
-document.addEventListener("DOMContentLoaded", renderReward);
-
-const updateExitModalView = adblock.runtime.updateExitModalView = new UpdateExitModalView(
-  document.querySelector(".update-exit-modal"),
-  {
-    currency: defaultCurrency, 
-    amount: updateExitModalProducts[defaultCurrency][0], 
-    product: updateExitModalProducts[defaultCurrency][1]
-  }
-);
-
 updateExitModalView.events.on("submit", data => onPaymentSubmit(updateExitModalView, data));
-
-let updateExitModalHasOpened = false;
-
-function showUpdateExitModal() {
-  if (
-    false == updateExitModalHasOpened
-    && false == updateExitModalView.open 
-    && true != adblock.config.disableModal
-  ) {
-    updateExitModalHasOpened = true;
-    updateExitModalView.open = true;
-  }
-}
-
-setTimeout(() => {
-  document.documentElement.addEventListener("mouseleave", event => {
-    if (event.clientY <= 0 && !document.querySelector(":invalid")) {
-      showUpdateExitModal();
-    }
-  });
-}, adblock.config.modalDelay || 5000);
-
-if (adblock.config.modalShow) {
-  showUpdateExitModal();
-}

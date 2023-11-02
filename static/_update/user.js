@@ -17,8 +17,7 @@ export function generateUserId() {
   return generatedChars.join('') + timestamp;
 }
 
-export function generateTrackingId(productId) {
-  const userid = getUserId() || "NA";
+export function generateTrackingId(productId, userid) {
   const browserId = getBrowserId();
   const osId = getOsId();
   const sourceId = getSourceId();
