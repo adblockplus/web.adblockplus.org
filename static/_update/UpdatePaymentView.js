@@ -125,8 +125,8 @@ export default class UpdatePaymentView {
       } else {
         labels[i].textContent = getDollarString(this.currency, amount);
         radios[i].dataset.amount = amount;
-        radios[i].dataset.frequency = frequency;
       }
+      radios[i].dataset.frequency = frequency;
       i++;
     }
   }
