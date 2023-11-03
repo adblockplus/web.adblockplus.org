@@ -730,7 +730,7 @@ function onPaymentSubmit(view, options) {
     variant: "",
     variant_index: -1,
     amount_cents: parseFloat(amount),
-    success_url: `https://getadblock.com/premium/?${paymentSuccessParameters.toString()}`,
+    success_url: `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`,
     cancel_url: window.location.href
   };
 
