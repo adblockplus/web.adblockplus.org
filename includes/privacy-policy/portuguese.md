@@ -252,10 +252,8 @@ Alemanha<br>
 Se você tiver alguma dúvida sobre seus dados pessoais, não hesite em entrar em contato com nosso Encarregado de Proteção de Dados:
 
 <address>
-  Cornelius Witt
+  Carlo Piltz
   <dl>
-    <dt>Fone</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 64306371'>+49 (0) 221 / 64306371</a></dd>
     <dt>E-mail</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>privacy@eyeo.com</a></dd>
     <dt>Fax</dt>

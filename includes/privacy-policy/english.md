@@ -252,10 +252,8 @@ Germany<br>
 If you have any questions regarding your personal data, please do not hesitate to contact our Data Protection Officer:
 
 <address>
-  Cornelius Witt
+  Carlo Piltz
   <dl>
-    <dt>Phone</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 64306371'>+49 (0) 221 / 64306371</a></dd>
     <dt>Email</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>Fax</dt>

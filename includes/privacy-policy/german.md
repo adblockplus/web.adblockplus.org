@@ -252,10 +252,8 @@ Germany<br>
 Bei Fragen zu deinen personenbezogenen Daten, zögere nicht, unsere Datenschutzbeauftragte zu kontaktieren.
 
 <address>
-  Cornelius Witt
+  Carlo Piltz
   <dl>
-    <dt>Telefon</dt>
-    <dd><a id='privacy-phone' href='tel:+49 (0) 221 / 64306371'>+49 (0) 221 / 64306371</a></dd>
     <dt>E-Mail</dt>
     <dd><a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20=", "textContent": "cHJpdmFjeUBleWVvLmNvbQ=="}'>email address</a></dd>
     <dt>Fax</dt>
