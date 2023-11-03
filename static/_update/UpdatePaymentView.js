@@ -116,12 +116,13 @@ export default class UpdatePaymentView {
     const amounts = this.products[this.currency][frequency];
     let i = 0;
     for (const amount in amounts) {
-      if (amount == "custom") {
-        // the label is a number input
+      if (amount == "custom") { // the label is a number input
+        if (radios[i].dataset.amount == labels[i].dataset.default) { // update radio value to input default when input is unchanged
+          radios[i].dataset.amount = getCentNumber(labels[i].value) || amounts[amount];
+        }
         labels[i].placeholder = getDollarString(this.currency, amounts[amount]);
         labels[i].dataset.default = amounts[amount];
         labels[i].dataset.min = getDollarNumber(this.currency, this.minimums[this.currency][frequency]);
-        radios[i].dataset.amount = getCentNumber(labels[i].value) || amounts[amount];
       } else {
         labels[i].textContent = getDollarString(this.currency, amount);
         radios[i].dataset.amount = amount;
