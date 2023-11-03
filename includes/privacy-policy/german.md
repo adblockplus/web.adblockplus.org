@@ -207,7 +207,7 @@ Wir erheben so wenig Daten wie möglich. Sofern eine anonyme oder pseudonyme Nut
 
 ### Fragen? {: #questions }
 
-Kontaktiere unsere Datenschutzbeauftragte Cornelius Witt per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a> oder [Telefon](tel:+49 (0) 221 / 64306371){: title="Telefonnummer der Datenschutzbeauftragten bei eyeo GmbH" }.
+Kontaktiere unsere Datenschutzbeauftragte Carlo Piltz per <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="E-Mail-Adresse der Datenschutzbeauftragten bei eyeo GmbH">E-Mail</a>.
 
 ---
 

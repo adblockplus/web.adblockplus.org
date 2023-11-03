@@ -207,7 +207,7 @@ Coletamos o mínimo de dados possível. Na medida em que é possível o uso anô
 
 ### Dúvidas? {: #questions }
 
-Entre em contato com o nosso diretor de proteção de dados, Cornelius Witt, por <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 64306371){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
+Entre em contato com o nosso diretor de proteção de dados, Carlo Piltz, por <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a>.
 
 ---
 

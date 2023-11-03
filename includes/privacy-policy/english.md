@@ -207,7 +207,7 @@ We collect as little data as possible. As far as anonymous or pseudonymous use i
 
 ### Questions? {: #questions }
 
-Contact our Data Protection Officer, Cornelius Witt, via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a> or [phone](tel:+49 (0) 221 / 64306371){: title="telephone number of Data Protection Officer at eyeo GmbH" }.
+Contact our Data Protection Officer, Carlo Piltz, via <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="email address of Data Protection Officer at eyeo GmbH">email</a>.
 
 ---
 

@@ -207,7 +207,7 @@ Nous recueillons aussi peu de données que possible. Dans la mesure où une util
 
 ### Des questions ? {: #questions }
 
-Contactez notre responsable de la protection des données, Cornelius Witt, par <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a> ou par [téléphone](tel:+49 (0) 221 / 64306371){: title="numéro de téléphone du responsable de la protection des données de eyeo GmbH" }.
+Contactez notre responsable de la protection des données, Carlo Piltz, par <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}' title="adresse e-mail du responsable de la protection des données de eyeo GmbH">e-mail</a>.
 
 ---
 
