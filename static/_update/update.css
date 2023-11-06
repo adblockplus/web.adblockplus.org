@@ -301,6 +301,7 @@ input[type=number] {
   font-weight: 300;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .update-payment-switch__radio {
@@ -312,7 +313,7 @@ input[type=number] {
   background: #2788F9;
 }
 
-.update-payment-switch__radio:checked::after {
+.update-payment-switch__yearly::after {
   display: block;
   content: "";
   margin: 0.125rem;
@@ -320,6 +321,15 @@ input[type=number] {
   width: 1.125rem;
   border-radius: 50%;
   background: #fff;
+  transition: 0.4s;
+}
+
+.update-payment-switch__yearly::after {
+  transform: translateX(-1.375rem);
+}
+
+.update-payment-switch__yearly:checked::after {
+  transform: translateX(0);
 }
 
 .update-payment-switch__monthly {
