@@ -25,8 +25,22 @@ export default class UpdatePaymentView {
     this._renderAmounts("once");
     this._renderAmounts(defaultFrequency == "yearly" ? "yearly" : "monthly");
 
-    // check default amount radio
-    parent.querySelector(`.update-payment-amount__radio[data-frequency="${defaultFrequency}"][data-amount="${defaultAmount}"]`).checked = true;
+    // The following handler toggles the monthly/yearly switch when the user
+    // clicks either option. The switch is toggled regardless of option clicked
+    // to be more familiar/alike a typical on/off switch
+    let lastFrequency = "monthly";
+    let didFlipFrequency = false;
+    parent.addEventListener("click", event => {
+      if (event.target.classList.contains("update-payment-switch__radio")) {
+        if (event.target.value == lastFrequency && false == didFlipFrequency) {
+          parent.querySelector(".update-payment-switch__radio:not(:checked)").checked = true;
+          didFlipFrequency = true;
+        } else {
+          didFlipFrequency = false;
+        }
+        lastFrequency = event.target.value;
+      }
+    });
 
     /**
      * Pointer to the current/last non-empty custom amount input selected
