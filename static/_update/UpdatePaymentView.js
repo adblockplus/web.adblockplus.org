@@ -160,18 +160,18 @@ export default class UpdatePaymentView {
     } else {
       baseTranslation = adblock.strings["update-payment-reward"];
     }
-    this.parent.querySelector(".update-payment-reward__text").textContent = baseTranslation
+    this.parent.querySelector(".update-payment-reward__text").innerHTML = baseTranslation
     .replace(
       `<span class="amount">35.00</span>`, 
-      getDollarString(this.currency, this.amount)
+      `<span class="amount">${getDollarString(this.currency, this.amount)}</span>`
     )
     .replace(
       `<span class="product">Adblock Plus Premium</span>`, 
-      adblock.strings["product__premium"]
+      `<span class="product">${adblock.strings["product__premium"]}</span>`
     )
     .replace(
       `<span class="duration">8</span>`,
-      Math.floor(duration > 12 ? duration / 12 : duration)
+      `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`
     );
   }
 
