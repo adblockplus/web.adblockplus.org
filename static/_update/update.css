@@ -265,7 +265,7 @@ input[type=number] {
   gap: 0.5rem;
   padding-block: 1.5rem;
   padding-inline: 2.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.35);;
   border-radius: 6px;
   width: 100%;
 }
@@ -307,6 +307,11 @@ input[type=number] {
   font-weight: 300;
   display: flex;
   align-items: center;
+}
+
+.update-payment-switch,
+.update-payment-switch__radio,
+.update-payment-switch__label {
   cursor: pointer;
 }
 
