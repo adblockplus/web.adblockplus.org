@@ -270,6 +270,12 @@ input[type=number] {
   width: 100%;
 }
 
+[data-frequency="once"] .update-payment-frequency--once .update-payment-amounts,
+[data-frequency="monthly"] .update-payment-frequency--recurring .update-payment-amounts,
+[data-frequency="yearly"] .update-payment-frequency--recurring .update-payment-amounts {
+  border-color: #2788F9;
+}
+
 .update-payment-amount {
   display: flex;
   height: 2rem;
