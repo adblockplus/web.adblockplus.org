@@ -376,6 +376,11 @@ input[type=number] {
   margin-inline: 1.5rem;
 }
 
+.update-payment-reward__text .amount,
+.update-payment-reward__text .product {
+  font-weight: 400;
+}
+
 .update-payment__checkout-button {
   display: flex;
   justify-content: center;
