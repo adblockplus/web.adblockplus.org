@@ -100,6 +100,7 @@ export default class UpdatePaymentView {
       // fire amount change event on selected amount change
       if (event.target.classList.contains("update-payment-amount__radio")) {
         this.events.fire("amount");
+        parent.dataset.frequency = event.target.dataset.frequency;
 
       // render recurring frequency amounts on recurring frequency switch change
       } else if (event.target.classList.contains("update-payment-switch__radio")) {
