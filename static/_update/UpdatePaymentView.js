@@ -18,8 +18,22 @@ export default class UpdatePaymentView {
     this.parent = parent;
     this.products = products;
     this.minimums = minimums;
-    this.currency = defaultCurrency;
-    this.submitting = false;
+
+    // Populate configured products currencies
+    const currencySelect = parent.querySelector(".update-payment-currency");
+    const defaultCurrencyOption = parent.querySelector(".update-payment-currency__default");
+    defaultCurrencyOption.textContent = defaultCurrency;
+    for (const currency in products) {
+      if (currency == defaultCurrency) continue;
+      const option = document.createElement("option");
+      option.textContent = currency;
+      currencySelect.append(option);
+    }
+    // Bind select change to currency state change
+    currencySelect.addEventListener("change", () => {
+      this._renderAmounts("once");
+      this._renderAmounts(this.frequency);
+    });
 
     // update amounts for defalut currency
     this._renderAmounts("once");
@@ -113,15 +127,74 @@ export default class UpdatePaymentView {
     parent.addEventListener("keydown", event => {
       if (event.key == "Enter") {
         event.preventDefault();
-        this.submit();
+        this._submit();
       }
     });
 
     parent.addEventListener("submit", event => {
       event.preventDefault();
-      this.submit();
+      this._submit();
     });
 
+  }
+
+  get currency() {
+    return this.parent.querySelector(".update-payment-currency").value;
+  }
+
+  get frequency() {
+    return this.parent.querySelector(".update-payment-amount__radio:checked").dataset.frequency;
+  }
+
+  get amount() {
+    return this.parent.querySelector(".update-payment-amount__radio:checked").dataset.amount;
+  }
+
+  setRewardDuration(duration) {
+    let baseTranslation;
+    if (duration > 12) {
+      baseTranslation = adblock.strings["update-payment-reward__n-years"];
+    } else if (duration == 12) {
+      baseTranslation = adblock.strings["update-payment-reward__1-year"];
+    } else if (duration > 1) {
+      baseTranslation = adblock.strings["update-payment-reward__n-months"];
+    } else if (duration == 1) {
+      baseTranslation = adblock.strings["update-payment-reward__1-month"];
+    } else {
+      baseTranslation = adblock.strings["update-payment-reward"];
+    }
+    this.parent.querySelector(".update-payment-reward__text").innerHTML = baseTranslation
+    .replace(
+      `<span class="amount">35.00</span>`, 
+      `<span class="amount">${getDollarString(this.currency, this.amount)}</span>`
+    )
+    .replace(
+      `<span class="product">Adblock Plus Premium</span>`, 
+      `<span class="product">${adblock.strings["product__premium"]}</span>`
+    )
+    .replace(
+      `<span class="duration">8</span>`,
+      `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`
+    );
+  }
+
+  setSubmitting(submitting) {
+    this.parent.dataset.submitting = submitting;
+    if (submitting) {
+      this.parent.querySelectorAll("input").forEach(element => element.disabled = true);
+      this.parent.querySelectorAll(".update-payment__checkout-button").forEach(button => {
+        button.dataset.innerHTML = button.innerHTML;
+        button.innerHTML = `<div class="update-payment__loader"></div>`;
+      });  
+    } else {
+      this.parent.querySelectorAll("input").forEach(element => element.disabled = false);
+      this.parent.querySelectorAll(".update-payment__checkout-button").forEach(button => {
+        if (button.dataset.innerHTML) {
+          button.innerHTML = button.dataset.innerHTML;
+        }
+      });
+    }
+    this.events.fire("submitting", { submitting });
   }
 
   _renderAmounts(frequency) {
@@ -150,44 +223,7 @@ export default class UpdatePaymentView {
     }
   }
 
-  /** @param {number} duration */
-  set rewardDuration(duration) {
-    let baseTranslation;
-    if (duration > 12) {
-      baseTranslation = adblock.strings["update-payment-reward__n-years"];
-    } else if (duration == 12) {
-      baseTranslation = adblock.strings["update-payment-reward__1-year"];
-    } else if (duration > 1) {
-      baseTranslation = adblock.strings["update-payment-reward__n-months"];
-    } else if (duration == 1) {
-      baseTranslation = adblock.strings["update-payment-reward__1-month"];
-    } else {
-      baseTranslation = adblock.strings["update-payment-reward"];
-    }
-    this.parent.querySelector(".update-payment-reward__text").innerHTML = baseTranslation
-    .replace(
-      `<span class="amount">35.00</span>`, 
-      `<span class="amount">${getDollarString(this.currency, this.amount)}</span>`
-    )
-    .replace(
-      `<span class="product">Adblock Plus Premium</span>`, 
-      `<span class="product">${adblock.strings["product__premium"]}</span>`
-    )
-    .replace(
-      `<span class="duration">8</span>`,
-      `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`
-    );
-  }
-
-  get frequency() {
-    return this.parent.querySelector(".update-payment-amount__radio:checked").dataset.frequency;
-  }
-
-  get amount() {
-    return this.parent.querySelector(".update-payment-amount__radio:checked").dataset.amount;
-  }
-
-  submit() {
+  _submit() {
     const filterable = { 
       currency: this.currency,
       frequency: this.frequency,
@@ -197,28 +233,4 @@ export default class UpdatePaymentView {
     this.events.fire("submit-filter", filterable);
     this.events.fire("submit", filterable);
   }
-
-  get submitting() {
-    return this.parent.dataset.submitting;
-  }
-
-  set submitting(submitting) {
-    this.parent.dataset.submitting = submitting;
-    if (submitting) {
-      this.parent.querySelectorAll("input").forEach(element => element.disabled = true);
-      this.parent.querySelectorAll(".update-payment__checkout-button").forEach(button => {
-        button.dataset.innerHTML = button.innerHTML;
-        button.innerHTML = `<div class="update-payment__loader"></div>`;
-      });  
-    } else {
-      this.parent.querySelectorAll("input").forEach(element => element.disabled = false);
-      this.parent.querySelectorAll(".update-payment__checkout-button").forEach(button => {
-        if (button.dataset.innerHTML) {
-          button.innerHTML = button.dataset.innerHTML;
-        }
-      });
-    }
-    this.events.fire("submitting", { submitting });
-  }
-
 }

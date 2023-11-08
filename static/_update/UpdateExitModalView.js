@@ -22,15 +22,11 @@ export default class UpdateExitModalView {
     });
     parent.querySelector(".update-exit-modal__button--close").addEventListener("click", event => {
       event.preventDefault();
-      this.open = false;
+      this.setOpen(false);
     });
   }
 
-  get submitting () {
-    return this.parent.classList.contains("update-exit-modal--submitting");
-  }
-
-  set submitting (submitting) {
+  setSubmitting (submitting) {
     if (submitting) {
       this.parent.classList.add("update-exit-modal--submitting")
       this.parent.querySelectorAll(".update-exit-modal__button").forEach(button => {
@@ -49,11 +45,7 @@ export default class UpdateExitModalView {
     }
   }
 
-  get open() {
-    return this.parent.classList.contains("update-exit-modal--open");
-  }
-
-  set open(open) {
+  setOpen(open) {
     this.parent.classList[open ? "add" : "remove"]("update-exit-modal--open");
     this.events.fire(open ? "open" : "close", this.options);
   }

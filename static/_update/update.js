@@ -647,7 +647,7 @@ function updatePremiumReward() {
   const planName = adblock.strings["adblock__premium"];
   const suffix = frequencySuffixes[frequency];
   const durationMonths = calculatePremiumReward(currency, frequency, amount);
-  updatePaymentView.rewardDuration = durationMonths;
+  updatePaymentView.setRewardDuration (durationMonths);
   localStorage.setItem("planinfo", JSON.stringify({ durationMonths, plan }));
   localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
 }
@@ -674,7 +674,7 @@ function showUpdateExitModal() {
     && true != adblock.config.disableModal
   ) {
     updateExitModalHasOpened = true;
-    updateExitModalView.open = true;
+    updateExitModalView.setOpen(true);
   }
 }
 
@@ -757,7 +757,7 @@ function onPaymentSubmit(view, options) {
       passthrough: paddleMetadata,
     });
   } else {
-    view.submitting = true;
+    view.setSubmitting(true);
     fetch(customAmountServiceURL, {
       method: 'POST',
       headers: {
@@ -777,7 +777,7 @@ function onPaymentSubmit(view, options) {
       alert(adblock.strings.errorUnexpected);
     })
     .finally(() => {
-      view.submitting = false
+      view.setSubmitting(false);
     });
   }
 }
