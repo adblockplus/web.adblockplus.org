@@ -88,9 +88,14 @@ template=update
           <div class="update-payment-frequencies">
 
             <div class="update-payment-frequency update-payment-frequency--once">
-              <h3 class="update-payment-frequency__label update-payment-frequency__label--once">
-                {{ update-payment-frequency__label--once Make a <strong>one-off</strong> contribution }}
-              </h3>
+              <header class="update-payment-frequency__header">
+                <h3 class="update-payment-frequency__label update-payment-frequency__label--once">
+                  {{ update-payment-frequency__label--once Make a <strong>one-off</strong> contribution }}
+                </h3>
+                <select class="update-payment-currency">
+                  <option class="update-payment-currency__default">USD</option>
+                </select>
+              </header>
               <div class="update-payment-amounts">
                 <div class="update-payment-amount">
                   <input id="update-payment-amount-1" class="update-payment-amount__radio" name="update-payment-amount__radio" type="radio" data-frequency="once">
