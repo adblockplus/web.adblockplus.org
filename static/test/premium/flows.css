@@ -1,0 +1,48 @@
+.test {
+  display: block;
+  width: 920px;
+  text-align: start;
+  margin-block: 1rem;
+  margin-inline: auto;
+}
+
+.test h2, .test h3 {
+  display: block;
+  margin: 1rem 0;
+  color: black;
+}
+
+.test h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+}
+
+.test h3 {
+  font-size: 1.25rem;
+}
+
+.test input,
+.test button,
+.test textarea {
+  display: block;
+  margin-block: 1rem;
+}
+
+.test input[type=radio],
+.test input[type=checkbox] {
+  display: inline-block;
+  margin-inline-end: 0.5rem;
+  margin-block: 0;
+}
+
+.test textarea {
+  width: 100%;
+  height: 8rem;
+  overflow-y: scroll;
+}
+
+.test button {
+  background: black;
+  color: white;
+  padding: 0.125rem 1rem;
+}
