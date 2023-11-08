@@ -35,14 +35,13 @@ const PADDLE = adblock.config.paddle = {
     "uk": "en",
   },
   MINIMUMS: {
-    AUD: { once: 1000, monthly: 199, yearly: 1000 },
-    CAD: { once: 1000, monthly: 199, yearly: 1000 },
-    EUR: { once: 1000, monthly: 199, yearly: 1000 },
-    GBP: { once: 1000, monthly: 199, yearly: 1000 },
-    JPY: { once: 700, monthly: 300, yearly: 700 },
-    MXN: { once: 8000, monthly: 3000, yearly: 8000 },
-    RUB: { once: 50000, monthly: 20000, yearly: 50000 },
-    USD: { once: 1000, monthly: 199, yearly: 1000 }
+    AUD: { once: 500, monthly: 199, yearly: 500 },
+    CAD: { once: 500, monthly: 199, yearly: 500 },
+    EUR: { once: 500, monthly: 199, yearly: 500 },
+    GBP: { once: 500, monthly: 199, yearly: 500 },
+    JPY: { once: 500, monthly: 200, yearly: 500 },
+    RUB: { once: 25000, monthly: 15000, yearly: 25000 },
+    USD: { once: 500, monthly: 199, yearly: 500 }
   },
   UPDATE_EXIT_MODAL_PRODUCTS: {
     LIVE: {
@@ -588,8 +587,7 @@ const CURRENCY_MAP = {
   "CA": "CAD",
   "NZ": "NZD",
   "RU": "RUB",
-  "JP": "JPY",
-  "MX": "MXN"
+  "JP": "JPY"
 };
 
 // prefer CURRENCY_MAP to EUR_COUNTRIES so that Euro area countries may prefer
