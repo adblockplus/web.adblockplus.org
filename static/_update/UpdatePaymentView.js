@@ -138,6 +138,9 @@ export default class UpdatePaymentView {
         labels[i].placeholder = getDollarString(this.currency, amounts[amount]);
         labels[i].dataset.default = amounts[amount];
         labels[i].dataset.min = getDollarNumber(this.currency, this.minimums[this.currency][frequency]);
+        if (radios[i].checked) {
+          labels[i].min = labels[i].dataset.min;
+        }
       } else {
         labels[i].textContent = getDollarString(this.currency, amount);
         radios[i].dataset.amount = amount;
