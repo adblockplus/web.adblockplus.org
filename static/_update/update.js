@@ -39,6 +39,8 @@ const PADDLE = adblock.config.paddle = {
     CAD: { once: 500, monthly: 199, yearly: 500 },
     EUR: { once: 500, monthly: 199, yearly: 500 },
     GBP: { once: 500, monthly: 199, yearly: 500 },
+    NZD: { once: 500, monthly: 199, yearly: 500 },
+    CHF: { once: 500, monthly: 199, yearly: 500 },
     JPY: { once: 500, monthly: 200, yearly: 500 },
     RUB: { once: 25000, monthly: 15000, yearly: 25000 },
     USD: { once: 500, monthly: 199, yearly: 500 }
