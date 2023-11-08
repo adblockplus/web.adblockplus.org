@@ -660,7 +660,8 @@ const updateExitModalView = adblock.runtime.updateExitModalView = new UpdateExit
   {
     currency: defaultCurrency, 
     amount: updateExitModalProducts[defaultCurrency][0], 
-    product: updateExitModalProducts[defaultCurrency][1]
+    product: updateExitModalProducts[defaultCurrency][1],
+    frequency: "once"
   }
 );
 
