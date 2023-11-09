@@ -17,7 +17,8 @@ function onPaddleLoaded() {
   //////////////////////////////////////////////////////////////////////////////
 
   append(create([
-    ["environment__heading", "h2", { textContent: "Refresh environment" }],
+    ["environment__heading", "h2", { textContent: "Set environment" }],
+    ["environment__paragraph", "p", { innerHTML: "You can use <a href='https://developer.paddle.com/concepts/payment-methods/credit-debit-card'>test cards</a> in testmode." }],
     ["environment__checkbox", "input", { type: "checkbox", id: "test-environment", checked: isTestmode }],
     ["environment__label", "label", { textContent: "Testmode", htmlFor: "test-environment" }],
   ]));
@@ -43,7 +44,9 @@ function onPaddleLoaded() {
   // 1. Checkout ///////////////////////////////////////////////////////////////
 
   append(create([
-    ["purchase__checkout__heading", "h3", { textContent: "1. Submit checkout" }],
+    ["purchase__checkout__heading", "h3", { textContent: "1. Checkout" }],
+    ["purchase__checkout__paragraph-1", "p", { innerHTML: "Don't forget to reinstall first if you want a fresh start." }],
+    ["purchase__checkout__paragraph-2", "p", { textContent: "ABP doesn't support VPN or other currencies yet." }],
     ["purchase__checkout__monthly", "button", { textContent: "Checkout monthly" }],
     ["purchase__checkout__yearly", "button", { textContent: "Checkout yearly" }],
     ["purchase__checkout__status", "textarea", { disabled: true }],
@@ -110,7 +113,8 @@ function onPaddleLoaded() {
   // 2. Activate ///////////////////////////////////////////////////////////////
 
   append(create([
-    ["purchase__activate__heading", "h3", { textContent: "2. Message activation" }],
+    ["purchase__activate__heading", "h3", { textContent: "2. Activation" }],
+    ["purchase__activate__paragraph", "p", { textContent: "The checkout will redirect back here with test__checkout__success and test__checkout__userid parameters required for this step." }],
     ["purchase__activate__status", "textarea", { disabled: true }],
   ]));
 
@@ -141,17 +145,18 @@ function onPaddleLoaded() {
   }
 
   //////////////////////////////////////////////////////////////////////////////
-  // Verify flow
+  // Already donated flow
   //////////////////////////////////////////////////////////////////////////////
 
   append(create([
-    ["verify__heading", "h2", { textContent: "Verify flow" }],
+    ["verify__heading", "h2", { textContent: "Already donated flow" }],
   ]));
 
   // 1. Submit email ///////////////////////////////////////////////////////////
 
   append(create([
     ["verify__email__heading", "h3", { textContent: "1. Submit email" }],
+    ["verify__email__paragraph", "p", { textContent: "Don't forget to reinstall if you want a fresh start." }],
     ["verify__email__input", "input", { placeholder: "Email" }],
     ["verify__email__submit", "button", { textContent: "Submit email" }],
     ["verify__email__status", "textarea", { disabled: true }],
@@ -178,10 +183,11 @@ function onPaddleLoaded() {
 
   append(create([
     ["verify__code__heading", "h3", { textContent: "2. Submit code" }],
+    ["verify__code__paragraph", "p", { textContent: "Find the code in your email." }],
     ["verify__code__input", "input", { placeholder: "Code" }],
     ["verify__code__submit", "button", { textContent: "Submit code" }],
     ["verify__code__status", "textarea", { disabled: true }],
-    ["verify__activate__heading", "h3", { textContent: "3. Message activation" }],
+    ["verify__activate__heading", "h3", { textContent: "3. Activation" }],
     ["verify__activate__status", "textarea", { disabled: true }],
   ]));
 
@@ -245,6 +251,7 @@ function onPaddleLoaded() {
 
   append(create([
     ["cancel__license__heading", "h3", { textContent: "1. Submit license" }],
+    ["cancel__license__paragraph", "p", { innerHTML: "Find your license in the <a href='https://adblock-premium-support.pages.dev/'>support app</a> or the query parameters of the manage subscription link in the extensions options page." }],
     ["cancel__license__input", "input", { placeholder: "License" }],
     ["cancel__license__submit", "button", { textContent: "Submit license" }],
     ["cancel__license__status", "textarea", { disabled: true }],
@@ -278,6 +285,7 @@ function onPaddleLoaded() {
 
   append(create([
     ["cancel__code__heading", "h3", { textContent: "2. Submit code" }],
+    ["cancel__code__paragraph", "p", { textContent: "Find the code in your email." }],
     ["cancel__code__input", "input", { placeholder: "Code" }],
     ["cancel__code__submit", "button", { textContent: "Submit code" }],
     ["cancel__code__status", "textarea", { disabled: true }],
@@ -315,8 +323,8 @@ function onPaddleLoaded() {
   // 3. Submit cancel //////////////////////////////////////////////////////////
 
   append(create([
-    ["cancel__cancel__heading", "h3", { textContent: "3. Submit cancel" }],
-    ["cancel__cancel__submit", "button", { textContent: "Submit cancel" }],
+    ["cancel__cancel__heading", "h3", { textContent: "3. Cancel" }],
+    ["cancel__cancel__submit", "button", { textContent: "Cancel" }],
     ["cancel__cancel__status", "textarea", { disabled: true }],
   ]))
 
