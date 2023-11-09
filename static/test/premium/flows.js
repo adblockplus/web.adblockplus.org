@@ -39,14 +39,14 @@ function onPaddleLoaded() {
 
   append(create([
     ["purchase__heading", "h2", { textContent: "Purchase flow" }],
+    ["purchase__checkout__paragraph-1", "p", { innerHTML: "Don't forget to reinstall first if you want a fresh start." }],
   ]));
 
   // 1. Checkout ///////////////////////////////////////////////////////////////
 
   append(create([
     ["purchase__checkout__heading", "h3", { textContent: "1. Checkout" }],
-    ["purchase__checkout__paragraph-1", "p", { innerHTML: "Don't forget to reinstall first if you want a fresh start." }],
-    ["purchase__checkout__paragraph-2", "p", { textContent: "ABP doesn't support VPN or other currencies yet." }],
+    ["purchase__checkout__paragraph-3", "p", { textContent: "ABP doesn't support VPN or other currencies yet." }],
     ["purchase__checkout__monthly", "button", { textContent: "Checkout monthly" }],
     ["purchase__checkout__yearly", "button", { textContent: "Checkout yearly" }],
     ["purchase__checkout__status", "textarea", { disabled: true }],
@@ -114,7 +114,8 @@ function onPaddleLoaded() {
 
   append(create([
     ["purchase__activate__heading", "h3", { textContent: "2. Activation" }],
-    ["purchase__activate__paragraph", "p", { textContent: "The checkout will redirect back here with test__checkout__success and test__checkout__userid parameters required for this step." }],
+    ["purchase__activate__paragraph-1", "p", { textContent: "The checkout will redirect back here with test__checkout__success and test__checkout__userid parameters required for this step." }],
+    ["purchase__activate__paragraph-2", "p", { textContent: "You'll need to manually remove these parameters afterwards or else this step will be repeated whenever you refresh this page." }],
     ["purchase__activate__status", "textarea", { disabled: true }],
   ]));
 
@@ -150,13 +151,14 @@ function onPaddleLoaded() {
 
   append(create([
     ["verify__heading", "h2", { textContent: "Already donated flow" }],
+    ["verify__email__paragraph-1", "p", { textContent: "Don't forget to reinstall if you want a fresh start." }],
+    ["verify__email__paragraph-2", "p", { innerHTML: "Don't forget to refresh if you reinstall or else you won't be able to reactivate." }],
   ]));
 
   // 1. Submit email ///////////////////////////////////////////////////////////
 
   append(create([
     ["verify__email__heading", "h3", { textContent: "1. Submit email" }],
-    ["verify__email__paragraph", "p", { textContent: "Don't forget to reinstall if you want a fresh start." }],
     ["verify__email__input", "input", { placeholder: "Email" }],
     ["verify__email__submit", "button", { textContent: "Submit email" }],
     ["verify__email__status", "textarea", { disabled: true }],
