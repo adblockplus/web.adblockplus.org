@@ -48,7 +48,7 @@ export default class UpdatePaymentView {
     parent.addEventListener("click", event => {
       if (event.target.classList.contains("update-payment-switch__radio")) {
         if (event.target.value == lastFrequency && false == didFlipFrequency) {
-          parent.querySelector(".update-payment-switch__radio:not(:checked)").checked = true;
+          parent.querySelector(".update-payment-switch__radio:not(:checked)").click();
           didFlipFrequency = true;
         } else {
           didFlipFrequency = false;
