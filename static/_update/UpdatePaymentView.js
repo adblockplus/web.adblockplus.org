@@ -31,8 +31,9 @@ export default class UpdatePaymentView {
     }
     // Bind select change to currency state change
     currencySelect.addEventListener("change", () => {
+      const checkedRecurringFrequency = parent.querySelector("update-payment-switch__radio:checked");
       this._renderAmounts("once");
-      this._renderAmounts(this.frequency);
+      this._renderAmounts(checkedRecurringFrequency ? checkedRecurringFrequency.value : "monthly");
     });
 
     // update amounts for defalut currency
