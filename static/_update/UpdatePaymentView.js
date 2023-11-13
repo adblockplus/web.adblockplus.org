@@ -24,11 +24,9 @@ export default class UpdatePaymentView {
     this.submitting = false;
     this.rewardDuration = null;
 
-    parent
-      .querySelector(".update-payment-currency")
-      .addEventListener("change", () => {
-        this.events.fire("currency");
-      });
+    parent.querySelector(".update-payment-currency").addEventListener("change", () => {
+      this.events.fire("currency");
+    });
     
     this.events.on("currency", () => {
       this._renderAmounts("once");
@@ -37,9 +35,7 @@ export default class UpdatePaymentView {
       this.events.fire("amount");
     });
   
-    parent
-      .querySelector(".update-payment-switch__toggle")
-      .addEventListener("click", () => {
+    parent.querySelector(".update-payment-switch__toggle").addEventListener("click", () => {
       // toggle monthly/yearly switch on click regardless of side clicked
       parent.querySelector(".update-payment-switch__radio:not(:checked)").click();
     });
@@ -53,21 +49,11 @@ export default class UpdatePaymentView {
     parent.addEventListener("focus", event => {
       if (event.target.classList.contains("update-payment-amount__input")) {
         // check custom amount radio when custom amount input is focused
-        event.target
-          .closest(".update-payment-amount")
-          .querySelector(".update-payment-amount__radio")
-          .click();
+        event.target.closest(".update-payment-amount").querySelector(".update-payment-amount__radio").click();
       }
     }, true);
 
     parent.addEventListener("change", event => {
-      if (event.target.classList.contains("update-payment-amount__radio--custom")) {
-        // focust custom amount when custom amount radio selected
-        event.target
-          .closest(".update-payment-amount")
-          .querySelector(".update-payment-amount__input")
-          .focus();
-      }
       if (event.target.classList.contains("update-payment-amount__radio")) {
         this.events.fire("amount");
       }
@@ -81,10 +67,14 @@ export default class UpdatePaymentView {
       this.events.fire("amount");
     });
 
-    parent.addEventListener("keydown", event => {
-      if (event.key == "Enter") {
-        event.preventDefault();
-        this._submit();
+    // set and validate selected custom amount min only when custom amount is selected and submitted
+    // submit button click event occurs on click and space/enter key press before submit event
+    parent.querySelector(".update-payment__checkout-button").addEventListener("click", () => {
+      document.querySelectorAll(".update-payment-amount__input").forEach(input => input.removeAttribute("min"));
+      const checkedAmountRadio = this.parent.querySelector(".update-payment-amount__radio:checked");
+      if (checkedAmountRadio.classList.contains("update-payment-amount__radio--custom")) {
+        const customAmountInput = checkedAmountRadio.closest(".update-payment-amount").querySelector(".update-payment-amount__input");
+        customAmountInput.min = customAmountInput.dataset.min;
       }
     });
 
@@ -115,9 +105,7 @@ export default class UpdatePaymentView {
     const checked = this.parent.querySelector(".update-payment-amount__radio:checked");
     // if checked amount is custom
     if (checked.classList.contains("update-payment-amount__radio--custom")) {
-      const customInput = checked
-        .closest(".update-payment-amount")
-        .querySelector(".update-payment-amount__input");
+      const customInput = checked.closest(".update-payment-amount").querySelector(".update-payment-amount__input");
       // return custom value or default
       return getCentNumber(this.currency, customInput.value) || customInput.dataset.default;
     } else {
@@ -175,7 +163,7 @@ export default class UpdatePaymentView {
         const input = label;
         input.placeholder = getDollarString(this.currency, amounts[amount]);
         input.dataset.default = amounts[amount];
-        input.min = getDollarNumber(this.currency, this.minimums[this.currency][frequency]);
+        input.dataset.min = getDollarNumber(this.currency, this.minimums[this.currency][frequency]);
       } else {
         label.textContent = getDollarString(this.currency, amount);
         radio.value = amount;
@@ -214,12 +202,12 @@ export default class UpdatePaymentView {
   }
 
   _submit() {
+    // a "filter" enables someone to change properties by reference
     const filterable = { 
       currency: this.currency,
       frequency: this.frequency,
       amount: this.amount
     };
-    // a "filter" enables someone to change properties by reference
     this.events.fire("submit-filter", filterable);
     this.events.fire("submit", filterable);
   }
