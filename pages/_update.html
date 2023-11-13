@@ -143,8 +143,11 @@ template=update
                   <label for="update-payment-switch__monthly" class="update-payment-switch__label">
                     {{ update-payment-switch__label--monthly Monthly }}
                   </label>
-                  <input type="radio" id="update-payment-switch__monthly" name="update-payment-switch__radio" class="update-payment-switch__radio update-payment-switch__monthly" checked value="monthly">
-                  <input type="radio" id="update-payment-switch__yearly" name="update-payment-switch__radio" class="update-payment-switch__radio update-payment-switch__yearly" value="yearly">
+                  <div class="update-payment-switch__inputs" data-value="monthly">
+                    <input type="radio" id="update-payment-switch__monthly" name="update-payment-switch__radio" class="update-payment-switch__radio update-payment-switch__monthly" checked value="monthly">
+                    <input type="radio" id="update-payment-switch__yearly" name="update-payment-switch__radio" class="update-payment-switch__radio update-payment-switch__yearly" value="yearly">
+                    <div class="update-payment-switch__toggle"></div>  
+                  </div>
                   <label for="update-payment-switch__yearly" class="update-payment-switch__label">
                     {{ update-payment-switch__label--yearly Yearly }}
                   </label>

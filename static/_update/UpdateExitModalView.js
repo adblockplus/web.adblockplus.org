@@ -14,19 +14,24 @@ export default class UpdateExitModalView {
     this.parent = parent;
     this.options = options;
     this.events = new Events();
-    this.loading = false;
-    parent.querySelector(".update-exit-modal__amount").textContent = getDollarString(options.currency, options.amount);
-    parent.querySelector(".update-exit-modal__button--checkout").addEventListener("click", event => {
-      event.preventDefault();
-      this.events.fire("submit", this.options);
-    });
-    parent.querySelector(".update-exit-modal__button--close").addEventListener("click", event => {
-      event.preventDefault();
-      this.setOpen(false);
-    });
+    this.open = false;
+    this.submitting = false;
+    parent.querySelector(".update-exit-modal__amount")
+      .textContent = getDollarString(options.currency, options.amount);
+    parent.querySelector(".update-exit-modal__button--checkout")
+      .addEventListener("click", event => {
+        event.preventDefault();
+        this.events.fire("submit", this.options);
+      });
+    parent.querySelector(".update-exit-modal__button--close")
+      .addEventListener("click", event => {
+        event.preventDefault();
+        this.setOpen(false);
+      });
   }
 
   setSubmitting (submitting) {
+    this.submitting = submitting;
     if (submitting) {
       this.parent.classList.add("update-exit-modal--submitting")
       this.parent.querySelectorAll(".update-exit-modal__button").forEach(button => {
@@ -43,11 +48,13 @@ export default class UpdateExitModalView {
         button.disabled = false;
       });
     }
+    this.events.fire("submitting");
   }
 
   setOpen(open) {
+    this.open = open;
     this.parent.classList[open ? "add" : "remove"]("update-exit-modal--open");
-    this.events.fire(open ? "open" : "close", this.options);
+    this.events.fire("open");
   }
   
 }

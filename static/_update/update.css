@@ -358,6 +358,10 @@ html:not([dir=rtl]) .update-payment-amount__radio {
 .update-payment-switch {
   font-size: 0.6875rem;
   font-weight: 300;
+}
+
+.update-payment-switch,
+.update-payment-switch__inputs {
   display: flex;
   align-items: center;
 }
@@ -366,6 +370,12 @@ html:not([dir=rtl]) .update-payment-amount__radio {
 .update-payment-switch__radio,
 .update-payment-switch__label {
   cursor: pointer;
+}
+
+.update-payment-switch__inputs {
+  position: relative;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .update-payment-switch__radio {
@@ -380,9 +390,11 @@ html:not([dir=rtl]) .update-payment-amount__radio {
   border-radius: 0;
 }
 
-.update-payment-switch__yearly::after {
+.update-payment-switch__toggle {
   display: block;
-  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   margin: 0.125rem;
   height: 1.125rem;
   width: 1.125rem;
@@ -391,29 +403,27 @@ html:not([dir=rtl]) .update-payment-amount__radio {
   transition: 0.4s;
 }
 
-html:not([dir="rtl"]) .update-payment-switch__yearly::after {
-  transform: translateX(-1.375rem);
-}
-
-[dir="rtl"] .update-payment-switch__yearly::after {
+html:not([dir="rtl"]) .update-payment-switch__yearly:checked + .update-payment-switch__toggle {
   transform: translateX(1.375rem);
 }
 
-html:not([dir="rtl"]) .update-payment-switch__yearly:checked::after,
-[dir="rtl"] .update-payment-switch__yearly:checked::after {
+[dir="rtl"] .update-payment-switch__yearly:checked + .update-payment-switch__toggle {
+  transform: translateX(-1.375rem);
+}
+
+html:not([dir="rtl"]) .update-payment-switch__monthly:checked + .update-payment-switch__toggle,
+[dir="rtl"] .update-payment-switch__monthly:checked + .update-payment-switch__toggle {
   transform: translateX(0);
 }
 
 html:not([dir='rtl']) .update-payment-switch__monthly {
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
-  margin-left: 0.5rem;
 }
 
 [dir='rtl'] .update-payment-switch__monthly {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  margin-right: 0.5rem;
 }
 
 html:not([dir='rtl']) .update-payment-switch__yearly {
