@@ -621,7 +621,7 @@ const updatePaymentView = adblock.runtime.updatePaymentView = new UpdatePaymentV
   }
 );
 
-function calculatePremiumReward(currency, frequency, amount) {
+function getRewardDuration(currency, frequency, amount) {
   if (frequency == "once") {
     const amountNumerator = parseInt(amount, 10);
     const onceDenominator = parseInt(Object.keys(updatePaymentProducts[currency].once)[2], 10);
@@ -634,7 +634,7 @@ function calculatePremiumReward(currency, frequency, amount) {
   }
 }
 
-function updatePremiumReward() {
+function updateRewardDuration() {
   const currency = updatePaymentView.currency;
   const frequency = updatePaymentView.frequency;
   const amount = updatePaymentView.amount;
@@ -646,14 +646,14 @@ function updatePremiumReward() {
   const plan = "ME";
   const planName = adblock.strings["adblock__premium"];
   const suffix = frequencySuffixes[frequency];
-  const durationMonths = calculatePremiumReward(currency, frequency, amount);
-  updatePaymentView.setRewardDuration (durationMonths);
+  const durationMonths = getRewardDuration(currency, frequency, amount);
+  updatePaymentView.setRewardDuration(durationMonths);
   localStorage.setItem("planinfo", JSON.stringify({ durationMonths, plan }));
   localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
 }
 
-updatePaymentView.events.on("amount", updatePremiumReward);
-document.addEventListener("DOMContentLoaded", updatePremiumReward);
+updatePaymentView.events.on("amount", updateRewardDuration);
+document.addEventListener("DOMContentLoaded", updateRewardDuration);
 
 const updateExitModalView = adblock.runtime.updateExitModalView = new UpdateExitModalView(
   document.querySelector(".update-exit-modal"),
@@ -671,7 +671,7 @@ function showUpdateExitModal() {
   if (
     false == updateExitModalHasOpened
     && false == updateExitModalView.open 
-    && true != adblock.config.disableModal
+    && true != adblock.settings.disableUpdateExitModal
   ) {
     updateExitModalHasOpened = true;
     updateExitModalView.setOpen(true);
