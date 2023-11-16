@@ -16,11 +16,25 @@
     api: {},
   };
 
+  adblock.query = adblock.searchParameters;
+
+  if (adblock.query.has("dev")) document.documentElement.classList.add("dev");
+  if (adblock.query.has("design")) document.documentElement.classList.add("design");
+
   var eyeo = window.eyeo = {
     preventCookiePrompt: {{ "true" if prevent_cookie_prompt else "false" }},
     log: noop,
     beacon: noop
   };
+
+  //FIXME: eyeo/cms doesn't support img in string so this replaces span with img
+  // e.g. <span src="image.png" class="img"> turns into <img src="image.png" class="img">
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("span.img").forEach(span => {
+        span.innerHTML = span.outerHTML.replace("span", "img");
+        span.replaceWith(span.querySelector("img"));
+    });
+  });
 
   /**
    * Apply config/properties to a namespace

@@ -5,6 +5,7 @@ if (['premium', 'manage', 'premium-paddle', 'anti-adblock-pass'].indexOf(documen
 
 var accessTime = parseInt(performance.now(), 10);
 var eyeo = window.eyeo = (window.eyeo || {});
+var adblock = window.adblock = (window.adblock || {});
 
 var CLIENT_ID = 'b';
 var SERVICE_URL = 'https://europe-west1-abp-log-service.cloudfunctions.net/log';
@@ -32,7 +33,7 @@ var logEntries = [];
  * @param {object} payload - JSON stringified data in log entry
  * @returns {Promimse}
  */
-var log = eyeo.log = function(event, payload) {
+var log = eyeo.log = adblock.log = (event, payload) => {
   payload = payload || {};
   payload.sid = sid;
   return new Promise(function(resolve, reject) {
@@ -47,6 +48,9 @@ var log = eyeo.log = function(event, payload) {
       entry: entry
     };
     logEntries.push(reference);
+    if ((adblock.query.has("dev") || adblock.query.has("test")) && typeof console == "object" && typeof console.log == "function") {
+      console.log("adblock.log", entry);
+    }
     var request = new XMLHttpRequest();
     request.addEventListener('load', function() {
       reference.recieved = true;
@@ -75,7 +79,7 @@ var beaconPayload = {
  * 
  * @param {object} data
  */
-var beacon = eyeo.beacon = function(data) {
+var beacon = eyeo.beacon = adblock.beacon = (data) => {
   Object.assign(beaconPayload, data);
 }
 

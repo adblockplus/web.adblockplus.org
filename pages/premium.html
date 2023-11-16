@@ -665,6 +665,8 @@ unadblock=1
     </div><!-- #payments-content -->
   </section><!-- #payments -->
 
+  <? include premium/checkout ?>
+
 </main>
 
 <script src="/js/pages/premium.js"></script>
@@ -673,19 +675,27 @@ unadblock=1
 <script src="/adblock/js/payment/lib/payment_libs.js"></script>
 <script src="/adblock/premium/payment.js"></script>
 <script>(function(){
-  const query = new URLSearchParams(location.search);
-  if (query.has("test")) {
-    const resources = [
+  let resources = [];
+  if (adblock.query.has("test") || adblock.query.has("dev")) {
+    resources.push(["script", { src: "https://cdn.paddle.com/paddle/paddle.js" }]);
+  }
+  if (adblock.query.has("test")) {
+    resources.push(
       ["link", { href: "/test/premium/flows.css", rel: "stylesheet" }],
-      ["script", { src: "https://cdn.paddle.com/paddle/paddle.js" }],
       ["script", { src: "/test/premium/flows.js", type: "module" }],
-    ];
-    for (const [tagName, tagAttributes] of resources) {
-      const resource = document.createElement(tagName);
-      for (const attributeName in tagAttributes) {
-        resource[attributeName] = tagAttributes[attributeName];
-      }
-      document.body.append(resource);
+    );
+  }
+  if (adblock.query.has("dev")) {
+    resources.push(
+      ["link", { href: "/premium/checkout.css", rel: "stylesheet" }],
+      ["script", { src: "/premium/checkout.js", type: "module" }],
+    );
+  }
+  for (const [tagName, tagAttributes] of resources) {
+    const resource = document.createElement(tagName);
+    for (const attributeName in tagAttributes) {
+      resource[attributeName] = tagAttributes[attributeName];
     }
+    document.body.append(resource);
   }
 })()</script>
