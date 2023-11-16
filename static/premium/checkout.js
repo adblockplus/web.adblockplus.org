@@ -14,7 +14,7 @@ async function onPaddleLoaded() {
   // GLOBALS
   ////////////////////////////////////////////////////////////////////////////////
 
-  const TIMEOUT_DELAY = 30000;
+  const TIMEOUT_DELAY = adblock.query.get("premium-checkout__timeout") || 30000;
 
   const PADDLE = {
     test: {
