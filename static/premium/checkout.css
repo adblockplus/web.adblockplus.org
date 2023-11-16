@@ -358,8 +358,13 @@ html:not([dir="rtl"]) .premium-checkout-purchase__checkout-button > img {
 
 .premium-checkout-success__button {
   margin-top: 2.625rem;
-  background: #0797E1;
-  color: #fff;
+  background: #0797E1 !important;
+  color: #fff !important;
+}
+
+.premium-checkout-success__button:hover,
+.premium-checkout-success__button:active {
+  text-decoration: none !important;
 }
 
 .premium-checkout .premium-checkout-card__lead {
