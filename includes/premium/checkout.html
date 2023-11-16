@@ -1,3 +1,10 @@
+<script>
+  Object.assign(adblock.strings, {
+    "premium-checkout-activated__monthly": `{{ premium-checkout-activated__monhly Adblock Plus Premium: <span class="premium-checkout-activated__amount">$2</span> monthly }}`,
+    "premium-checkout-activated__yearly": `{{ premium-checkout-activated__yearly Adblock Plus Premium: <span class="premium-checkout-activated__amount">$20</span> yearly }}`,
+  })
+</script>
+
 <div id="premium-checkout" class="premium-checkout" hidden>
 
   <div class="premium-checkout__section">
@@ -39,14 +46,14 @@
               <div class="premium-checkout-card-body-column">
                 <button class="premium-checkout__button premium-checkout-purchase-price" type="button" aria-pressed="true" value="yearly">
                   <span class="premium-checkout-purchase-price__text">
-                    {{ premium-checkout-purchase-price__yearly <span class="premium-checkout-purchase-price__amount">$19.99</span>&nbsp;/ yearly }}
+                    {{ premium-checkout-purchase-price__yearly <span class="premium-checkout-purchase-price__amount">$20</span>&nbsp;/ yearly }}
                   </span>
                   <span class="premium-checkout-purchase-price__badge">
                     {{ premium-checkout-purchase-price__badge Save <span class="premium-checkout-purchase-price__discount">17</span>% }}
                   </span>
                 </button>
                 <button class="premium-checkout__button premium-checkout-purchase-price" type="button" value="monthly">
-                  {{ premium-checkout-purchase-price__monthly <span class="premium-checkout-purchase-price__amount">$1.99</span>&nbsp;/ monthly }}
+                  {{ premium-checkout-purchase-price__monthly <span class="premium-checkout-purchase-price__amount">$2</span>&nbsp;/ monthly }}
                 </button>
               </div><!-- /premium-checkout-card-body-column -->
               <div class="premium-checkout-card-body-column">
@@ -99,7 +106,7 @@
                   {{ premium-checkout-activated__heading-2 Payment Details }}
                 </h3>
                 <p class="premium-checkout-activated__plan">
-                  {{ premium-checkout-activated__paragraph-1 Adblock Plus Premium: <span class="premium-checkout-activated__amount">$1.99</span> monthly }}
+                  {{ premium-checkout-activated__yearly Adblock Plus Premium: <span class="premium-checkout-activated__amount">$20</span> yearly }}
                 </p>
                 <p>
                   {{ premium-checkout-activated__paragraph-2 If you have any questions, please visit our <a href="https://help.adblockplus.org">Help Center</a> or contact our support team at <a href="mailto:support@adblockplus.org">support@adblockplus.org</a>. We’re always happy to hear from you! }}

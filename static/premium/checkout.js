@@ -350,7 +350,7 @@ async function onPaddleLoaded() {
       super.render();
       this.element
       .querySelector(".premium-checkout-activated__plan")
-      .innerHTML = adblock.strings[`premium-checkout-activated__plan--${frequency}`];
+      .innerHTML = adblock.strings[`premium-checkout-activated__${frequency}`];
       this.element
       .querySelector(".premium-checkout-activated__amount")
       .textContent = getDollarString(currency, amount);
@@ -453,18 +453,24 @@ async function onPaddleLoaded() {
 
   let flow = "purchase";
 
-  steps.purchase.on("checkout-now", () => {
+  steps.purchase.on("checkout-now", async () => {
     flow = "purchase";
     const frequency = steps.purchase.getSelectedValue();
     const currency = "USD";
     const amount = paddleEnvironment[frequency].amount;
     const productId = paddleEnvironment[frequency].productId;
+    await goto(steps.loading, { log: false });
     checkout(userid, productId, currency, frequency, amount)
     .then(
       () => activatePremium(userid)
-        .then(() => goto(steps.activated, { flow, currency, frequency, amount }))
-        .catch(() => goto(steps.error, { flow })),
-      () => adblock.log("premium-checkout__checkout-close", { userid: userid, productId, currency, frequency, amount })
+        .then(
+          () => goto(steps.activated, { flow, currency, frequency, amount }),
+          () => goto(steps.error, { flow })
+        ),
+      () => {
+        adblock.log("premium-checkout__checkout-close", { userid: userid, productId, currency, frequency, amount });
+        goto(steps.purchase, { log: false });
+      }
     )
   });  
 
@@ -509,7 +515,7 @@ async function onPaddleLoaded() {
     const frequency = adblock.query.get("premium-checkout__frequency");
     const amount = adblock.query.get("premium-checkout__amount");
     card.scrollIntoView();
-    await goto(steps.loading);
+    await goto(steps.loading, { log: false });
     activatePremium(userid).then(
       () => goto(steps.activated, { flow, currency, frequency, amount }),
       () => goto(steps.error, { flow })
