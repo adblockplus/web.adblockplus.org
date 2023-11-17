@@ -40,7 +40,7 @@ function reduceToStringObject(object, string) {
   // Exporting to IUC JSON format for XTM excluding string context
   if (context)
     console.warn('Excluding context in string', string);
-  object[id] = content;
+  object[id] = { message: content };
   return object;
 }
 
