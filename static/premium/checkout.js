@@ -14,7 +14,8 @@ async function onPaddleLoaded() {
   // GLOBALS
   ////////////////////////////////////////////////////////////////////////////////
 
-  const TIMEOUT_DELAY = adblock.query.get("premium-checkout__timeout") || 30000;
+  const REQUEST_TIMEOUT = adblock.query.get("premium-checkout__request-timeout") || 30000;
+  const ACTIVATION_DELAY = adblock.query.get("premium-checkout__activation-delay") || 3000;
 
   const PADDLE = {
     test: {
@@ -214,7 +215,7 @@ async function onPaddleLoaded() {
       });
       resolvePremiumActivation = resolve;
       rejectPremiumActivation = reject;
-      setTimeout(() => reject({ reason: "timeout" }), TIMEOUT_DELAY);
+      setTimeout(() => reject({ reason: "timeout" }), REQUEST_TIMEOUT);
     });
   }
 
@@ -238,7 +239,7 @@ async function onPaddleLoaded() {
         }
       })
       .catch(reject);
-      setTimeout(reject, TIMEOUT_DELAY);
+      setTimeout(reject, REQUEST_TIMEOUT);
     });
   }
 
@@ -263,7 +264,7 @@ async function onPaddleLoaded() {
         }
       })
       .catch(reject);
-      setTimeout(reject, TIMEOUT_DELAY);
+      setTimeout(reject, REQUEST_TIMEOUT);
     });
   }
 
@@ -462,11 +463,14 @@ async function onPaddleLoaded() {
     await goto(steps.loading, { log: false });
     checkout(userid, productId, currency, frequency, amount)
     .then(
-      () => activatePremium(userid)
+      async () => {
+        await new Promise(resolve => setTimeout(ACTIVATION_DELAY, resolve));
+        activatePremium(userid)
         .then(
           () => goto(steps.activated, { flow, currency, frequency, amount }),
           () => goto(steps.error, { flow })
-        ),
+        );
+      },
       () => {
         adblock.log("premium-checkout__checkout-close", { userid: userid, productId, currency, frequency, amount });
         goto(steps.purchase, { log: false });
@@ -516,6 +520,7 @@ async function onPaddleLoaded() {
     const amount = adblock.query.get("premium-checkout__amount");
     card.scrollIntoView();
     await goto(steps.loading, { log: false });
+    await new Promise(resolve => setTimeout(ACTIVATION_DELAY, resolve));
     activatePremium(userid).then(
       () => goto(steps.activated, { flow, currency, frequency, amount }),
       () => goto(steps.error, { flow })
