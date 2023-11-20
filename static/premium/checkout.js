@@ -464,7 +464,7 @@ async function onPaddleLoaded() {
     checkout(userid, productId, currency, frequency, amount)
     .then(
       async () => {
-        await new Promise(resolve => setTimeout(ACTIVATION_DELAY, resolve));
+        await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
         activatePremium(userid)
         .then(
           () => goto(steps.activated, { flow, currency, frequency, amount }),
@@ -520,7 +520,7 @@ async function onPaddleLoaded() {
     const amount = adblock.query.get("premium-checkout__amount");
     card.scrollIntoView();
     await goto(steps.loading, { log: false });
-    await new Promise(resolve => setTimeout(ACTIVATION_DELAY, resolve));
+    await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
     activatePremium(userid).then(
       () => goto(steps.activated, { flow, currency, frequency, amount }),
       () => goto(steps.error, { flow })
