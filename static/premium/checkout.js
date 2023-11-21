@@ -321,8 +321,8 @@ async function onPaddleLoaded() {
         event.preventDefault();
         const pressedPrice = this.element.querySelector(".premium-checkout-purchase-price[aria-pressed='true']");
         if (pressedPrice != clickedPrice) {
-          pressedPrice.ariaPressed = false;
-          clickedPrice.ariaPressed = true;
+          pressedPrice.setAttribute("aria-pressed", false);
+          clickedPrice.setAttribute("aria-pressed", true);
         }
       }));
 
