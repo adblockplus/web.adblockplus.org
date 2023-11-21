@@ -14,8 +14,8 @@ async function onPaddleLoaded() {
   // GLOBALS
   ////////////////////////////////////////////////////////////////////////////////
 
-  const REQUEST_TIMEOUT = adblock.query.get("premium-checkout__request-timeout") || 30000;
-  const ACTIVATION_DELAY = adblock.query.get("premium-checkout__activation-delay") || 3000;
+  const REQUEST_TIMEOUT = parseInt(adblock.query.get("premium-checkout__request-timeout"), 10) || 30000;
+  const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 3000;
 
   const PADDLE = {
     test: {
