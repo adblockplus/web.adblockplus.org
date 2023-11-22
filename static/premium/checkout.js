@@ -158,10 +158,10 @@ if (isTestmode) {
 Paddle.Setup({
   vendor: paddleEnvironment.vendorId,
   eventCallback: event => {
-    if (typeof event == "object" && typeof event.event == "string") {
+    if (typeof event == "object" && event && typeof event.event == "string") {
       if (event.event == "Checkout.Customer.Details") {
-        if (typeof event.eventData == "object" && typeof event.eventData.user == "object") {
-          email = event.eventData.email;
+        if (typeof event.eventData == "object" && event.eventData && typeof event.eventData.user == "object" && event.eventData.user && event.eventData.user.email) {
+          email = event.eventData.user.email;
         }
       } else if (event.event == "Checkout.Loaded") {
         checkoutLog("premium-checkout__paddle-loaded");
