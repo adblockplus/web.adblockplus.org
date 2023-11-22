@@ -194,7 +194,7 @@ function checkout(product, currency, frequency, amount) {
   return new Promise((resolve, reject) => {
     checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
     localStorage.setItem("contributionInfo", JSON.stringify({
-      amount: getDollarNumber(currency, amount),
+      amount: amount,
       frequency: frequency,
       processor: "paddle",
       currency: currency,
