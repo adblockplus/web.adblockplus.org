@@ -62,7 +62,7 @@ window.addEventListener('click', event => {
     const plan = event.target.dataset.plan;
     if (premiumPlans.indexOf(plan) == -1) return;
     document
-      .querySelector(`[data-recurring-frequency="${plan}"]`)
+      .querySelector(`.premium-checkout-purchase-price[value="${plan}"]`)
       .click();
   }
 });

@@ -488,6 +488,14 @@ $(document).ready(function() {
     }
     const onSuccessURL = () => {
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
+        // New way
+        queryParams.append("premium-checkout__activate", 1);
+        queryParams.append("premium-checkout__flow", "anti-adblock-pass");
+        queryParams.append("premium-checkout__userid", getUserId());
+        queryParams.append("premium-checkout__currency", "USD");
+        queryParams.append("premium-checkout__amount", amount);
+        queryParams.append("premium-checkout__frequency", frequency);
+        // Old way; to be removed as soon as we migrate dashboards
         queryParams.append("u", getUserId());
         queryParams.append("anti_adblock_pass__checkout", 1);
         queryParams.append("anti_adblock_pass__amount", amount);

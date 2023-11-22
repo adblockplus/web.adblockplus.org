@@ -57,6 +57,14 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
 
   const successParameters = new URLSearchParams();
   if (eyeo.payment.productId == "ME") {
+    // New way
+    queryParams.append("premium-checkout__activate", 1);
+    queryParams.append("premium-checkout__flow",  eyeo.payment.variantName || "update");
+    queryParams.append("premium-checkout__userid", forceGetUserId());
+    queryParams.append("premium-checkout__currency", data.currency);
+    queryParams.append("premium-checkout__amount", toDollarNumber(data.currency, data.amount));
+    queryParams.append("premium-checkout__frequency", data.frequency);
+    // Old way; to be removed as soon as we update dashboards and integrations
     successParameters.append("thankyou", 1);
     successParameters.append("var", 1);
     successParameters.append("u", forceGetUserId());
