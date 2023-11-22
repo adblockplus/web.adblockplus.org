@@ -1,0 +1,196 @@
+title=Adblock Plus Premium Black Friday Deal Page
+description=Enjoy our Black Friday promotion and get 50% off a yearly subscription to Adblock Plus Premium. Get a more distraction-free web now!
+template=minimal
+robots=none
+unadblock=1
+nonavbar=1
+
+<head>
+  <? include accounts-redirect-fallback ?>
+  <? include optimizely ?>
+  <? include hotjar ?>
+  <link rel="stylesheet" href="/css/pages/premium.css">
+  <link rel="stylesheet" href="/css/pages/deal.css">
+  <script src="/js/payment/config/load.js"></script>
+</head>
+
+<nav id="navbar-page-deal">
+  <div id="navbar-container">
+    <a href="/en/" hreflang="en" id="navbar-logo">
+      <img src="/img/adblockplus-logo-color.svg" alt="Adblock Plus logo in navigation menu">
+    </a>
+    <a class="premium-button premium-cta discount" data-plan="yearly">
+      {{ s17 Get 50% Off Adblock Plus Premium }}
+    </a>
+  </div>
+</nav>
+<main class="premium-page" id="deal-page">
+  <? include premium-restrictions ?>
+  <div class="premium-background-1">
+    <img alt="" src="/img/deal/snow.jpg" id="hero-snow">
+    <div class="premium-container">
+      <header class="premium-header">
+        <h1>
+          {{ s1 Celebrate the holidays with a more powerful Adblock Plus }}
+        </h1>
+      </header>
+      <div class="premium-plans not-hovered">
+        <div class="premium-row">
+          <div class="premium-column-4">
+            <section class="premium-plan">
+              <header class="premium-plan-header">
+                <h2 class="premium-plan-heading">
+                  Adblock Plus Premium
+                </h2>
+              </header>
+              <div class="premium-plan-body">
+                <p class="premium-plan-price">
+                  <span class="premium-plan-price-currency">$</span>
+                  <span class="premium-plan-price-large">2</span>
+                  <span class="premium-plan-price-frequency">
+                    {{ s2 /month }}
+                  </span>
+                </p>
+              </div>
+              <div id="regular-price">
+                <p>{{ s3 Regular Price: $2/month }}</p>
+              </div>
+              <div class="premium-plan-list">
+                <ul>
+                  <li>
+                    {{ premium-benefit_1 Block Block ads and pop ups }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_2 Stop trackers }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_3 Block site notifications }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_4 Stop floating videos }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_5 Hide newsletter pop-ups }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_6 Ignore survey requests }}
+                  </li>
+                </ul>
+              </div>
+              <a class="premium-button premium-cta" data-plan="monthly">
+                {{ s4 Get Adblock Plus Premium }}
+              </a>
+            </section>
+          </div>
+          <div class="premium-column-4">
+            <section class="premium-plan discount">
+              <header class="premium-plan-header">
+                <h2 class="premium-plan-heading">Adblock Plus Premium</h2>
+              </header>
+              <div class="premium-plan-body">
+                <p class="premium-plan-price red">
+                  <span class="premium-plan-price-currency">$</span>
+                  <span class="premium-plan-price-large">0.83</span>
+                  <span class="premium-plan-price-frequency">
+                    <span>{{ s2 /month }}</span>&#42;
+                  </span>
+                </p>
+              </div>
+              <div id="box-deal">
+                <p>
+                    <span>{{ s5 Black Friday Deal: }}</span>
+                    <br>
+                    <span>{{ s6 50% off yearly subscription }}</span>
+                </p>
+              </div>
+              <div class="premium-plan-list">
+                <ul>
+                  <li>
+                    {{ premium-benefit_1 Block Block ads and pop ups }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_2 Stop trackers }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_3 Block site notifications }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_4 Stop floating videos }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_5 Hide newsletter pop-ups }}
+                  </li>
+                  <li>
+                    {{ premium-benefit_6 Ignore survey requests }}
+                  </li>
+                </ul>
+              </div>
+              <a class="premium-button premium-cta discount" data-plan="yearly">
+                {{ s7 Get 50% off Adblock Plus Premium }}
+              </a>
+
+              <span id="actual-price">
+                &#42;<span>{{ s8 $10 billed annually }}</span>
+              </span>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="premium-container">
+    <section class="premium-features">
+      <h2>
+        {{ s9 Enjoy a better online shopping experience with Adblock Plus Premium }}
+      </h2>
+      <section class="premium-feature">
+        <img alt="" src="/img/deal/focus_on_what_matters.svg" class="premium-feature-image">
+        <div class="premium-feature-text">
+          <h3>{{ benefit_1-heading Focus on what matters. }}</h3>
+          <p>{{ benefit_1-paragraph With Adblock Plus Premium, you can shop and browse the web with fewer distractions. Concentrate on the content you want to see, whether it’s hunting for the best online shopping deals or simply visiting your favorite sites. }}</p>
+        </div>
+      </section>
+      <hr>
+      <section class="premium-feature">
+        <img alt="" src="/img/deal/avoid_tracking.svg" class="premium-feature-image">
+        <div class="premium-feature-text">
+          <h3>{{ benefit_2-heading Avoid some tracking from advertisers. }}</h3>
+          <p>{{ benefit_2-paragraph Adblock Plus Premium can block cookie consent pop-ups while automatically rejecting cookies that we can on your behalf. That means you don’t have to see those pesky notices asking you to accept cookies for every site you visit. And you’ll only accept those cookies that are functional to a site, rather than third-party and advertising cookies. }}</p>
+        </div>
+      </section>
+      <hr>
+      <section class="premium-feature">
+        <img alt="" src="/img/deal/hottest_deal.svg" class="premium-feature-image">
+        <div class="premium-feature-text">
+          <h3>{{ benefit_3-heading Get the hottest deals fast. }}</h3>
+          <p>{{ benefit_3-paragraph Adblock Plus gives you faster page load times allowing you to grab those limited time offers and in demand products at lightning speed. }}</p>
+        </div>
+      </section>
+    </section>
+  </div>
+  <section class="premium-container">
+    <h2>
+      {{ s10 Act fast – this offer won’t last! }}
+    </h2>
+    <p>
+      <span>{{ s11 Ready to experience a more private and distraction-free web? Get started today and make the most out of the year’s biggest online shopping season. }}</span>
+      <br>
+      <span>{{ s12 Click below to subscribe now: }}</span>
+      
+    </p>
+    <a class="premium-button premium-cta discount" data-plan="yearly">
+      {{ s13 Subscribe Now and Save 50%! }}
+    </a>
+    <img alt="" src="/img/deal/shop_online.svg" width="280" height="auto">
+    <p style="font-style: italic; margin-top: 3rem;">
+      <span>{{ s14 This is a limited time offer available November 24, 2023 - December 3, 2023. }}</span>
+      <br>
+      <span>{{ s15 The 50% discount applies to one year of your yearly subscription. After this year, your subscription will renew at the regular price. Prices are shown in USD $. }}</span>
+      <span> {{ s16 If you choose to pay in a different currency, you may be subject to an additional charge from your bank or payment processor. }}</span>
+    </p>
+  </section>
+
+</main>
+
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/js/pages/deal.js" type="module"></script>
