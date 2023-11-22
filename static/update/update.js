@@ -705,6 +705,14 @@ function onPaymentSubmit(view, options) {
   }
 
   const paymentSuccessParameters = new URLSearchParams();
+  // New way
+  paymentSuccessParameters.append("premium-checkout__activate", 1);
+  paymentSuccessParameters.append("premium-checkout__flow",  "update");
+  paymentSuccessParameters.append("premium-checkout__userid", userid);
+  paymentSuccessParameters.append("premium-checkout__currency", currency);
+  paymentSuccessParameters.append("premium-checkout__amount", amount);
+  paymentSuccessParameters.append("premium-checkout__frequency", frequency);
+  // Old way; to be removed as soon as we update dashboards and integrations
   paymentSuccessParameters.append("thankyou", 1);
   paymentSuccessParameters.append("var", 1);
   paymentSuccessParameters.append("u", userid);
