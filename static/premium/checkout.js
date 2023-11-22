@@ -214,7 +214,7 @@ function checkout(product, currency, frequency, amount) {
     } else {
       const params = new URLSearchParams();
       params.set("premium-checkout__activate", true);
-      params.set("premium-checkout__flow", adblock.settings.premiumCheckoutFlow || "purchase");
+      params.set("premium-checkout__flow", "purchase");
       params.set("premium-checkout__userid", userid);
       params.set("premium-checkout__currency", currency);
       params.set("premium-checkout__amount", amount);
