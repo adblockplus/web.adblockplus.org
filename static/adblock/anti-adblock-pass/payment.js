@@ -493,12 +493,12 @@ $(document).ready(function() {
         queryParams.append("premium-checkout__flow", "anti-adblock-pass");
         queryParams.append("premium-checkout__userid", getUserId());
         queryParams.append("premium-checkout__currency", "USD");
-        queryParams.append("premium-checkout__amount", amount);
+        queryParams.append("premium-checkout__amount", amount * 100);
         queryParams.append("premium-checkout__frequency", frequency);
         // Old way; to be removed as soon as we migrate dashboards
         queryParams.append("u", getUserId());
         queryParams.append("anti_adblock_pass__checkout", 1);
-        queryParams.append("anti_adblock_pass__amount", amount);
+        queryParams.append("anti_adblock_pass__amount", amount * 100);
         queryParams.append("anti_adblock_pass__frequency", frequency);
         return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
