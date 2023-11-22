@@ -498,7 +498,7 @@ $(document).ready(function() {
         // Old way; to be removed as soon as we migrate dashboards
         queryParams.append("u", getUserId());
         queryParams.append("anti_adblock_pass__checkout", 1);
-        queryParams.append("anti_adblock_pass__amount", amount * 100);
+        queryParams.append("anti_adblock_pass__amount", amount);
         queryParams.append("anti_adblock_pass__frequency", frequency);
         return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
