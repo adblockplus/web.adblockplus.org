@@ -982,17 +982,18 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
   });
   const successParameters = new URLSearchParams();
   if (eyeo.payment.productId == "ME") {
+    const _userid = forceGetUserId();
     // New way
-    queryParams.append("premium-checkout__activate", 1);
-    queryParams.append("premium-checkout__flow", eyeo.payment.variantName || "update");
-    queryParams.append("premium-checkout__userid", forceGetUserId());
-    queryParams.append("premium-checkout__currency", data.currency);
-    queryParams.append("premium-checkout__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
-    queryParams.append("premium-checkout__frequency", data.frequency);
+    successParameters.append("premium-checkout__activate", 1);
+    successParameters.append("premium-checkout__flow", "update");
+    successParameters.append("premium-checkout__userid", _userid);
+    successParameters.append("premium-checkout__currency", data.currency);
+    successParameters.append("premium-checkout__amount", data.amount);
+    successParameters.append("premium-checkout__frequency", data.frequency);
     // Old way; to be removed as soon as we update dashboards and integrations
     successParameters.append("thankyou", 1);
     successParameters.append("var", 1);
-    successParameters.append("u", forceGetUserId());
+    successParameters.append("u", _userid);
     successParameters.append("from", eyeo.payment.variantName || "null");
     successParameters.append("from__currency", data.currency);
     successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
