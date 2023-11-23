@@ -164,10 +164,6 @@ function checkout(product, currency, frequency, amount) {
       source: "D",
       clickTs: Date.now()
     };
-    if (frequency == "yearly") {
-      contributionInfo.coupon = "SAVE50";
-    }
-    localStorage.setItem("contributionInfo", JSON.stringify(contributionInfo));
     const paddleOptions = {
       title: CHECKOUT_TITLE,
       product: product,
@@ -176,8 +172,11 @@ function checkout(product, currency, frequency, amount) {
       closeCallback: reject,
     };
     if (frequency == "yearly") {
+      contributionInfo.coupon = "SAVE50";
       paddleOptions.coupon = "SAVE50";
+      amount = amount * .5;
     }
+    localStorage.setItem("contributionInfo", JSON.stringify(contributionInfo));
     const params = new URLSearchParams();
     params.set("premium-checkout__activate", true);
     params.set("premium-checkout__flow", "black-friday-2023");
