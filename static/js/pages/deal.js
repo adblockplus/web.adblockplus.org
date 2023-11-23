@@ -173,13 +173,6 @@ function checkout(product, currency, frequency, amount) {
       closeCallback: reject,
     };
     const params = new URLSearchParams();
-    if (frequency == "yearly") {
-      contributionInfo.coupon = "SAVE50";
-      paddleOptions.coupon = "SAVE50";
-      params.set("premium-checkout__coupon", "SAVE50");
-      amount = amount * .5;
-    }
-    localStorage.setItem("contributionInfo", JSON.stringify(contributionInfo));
     params.set("premium-checkout__handoff", true);
     params.set("premium-checkout__flow", "black-friday-2023");
     params.set("premium-checkout__userid", userid);
@@ -188,6 +181,12 @@ function checkout(product, currency, frequency, amount) {
     params.set("premium-checkout__frequency", frequency);
     params.set("premium-checkout__language", language);
     params.set("premium-checkout__timestamp", clickTimestamp);
+    if (frequency == "yearly") {
+      contributionInfo.coupon = "SAVE50";
+      paddleOptions.coupon = "SAVE50";
+      params.set("premium-checkout__coupon", "SAVE50");
+      amount = amount * .5;
+    }
     paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {
@@ -211,6 +210,7 @@ function checkout(product, currency, frequency, amount) {
         "cancel_url": location.href,
       }
     };
+    localStorage.setItem("contributionInfo", JSON.stringify(contributionInfo));
     Paddle.Checkout.open(Object.assign({}, paddleOptions, adblockOptions));
   });
 }
