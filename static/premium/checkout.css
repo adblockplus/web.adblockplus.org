@@ -217,6 +217,11 @@
   align-items: center;
 }
 
+.premium-checkout-card-footer-column {
+  display: flex;
+  align-items: center;
+}
+
 html:not([dir="rtl"]) .premium-checkout-card-footer-column > img {
   margin-right: 0.25rem;
 }
