@@ -277,12 +277,21 @@ html:not([dir="rtl"]) .premium-checkout-purchase__heading {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
   height: 100%;
   width: 48px;
   background: #0680BE url("/img/toggle-button-check.svg") center no-repeat;
+}
+
+html:not([dir="rtl"]) .premium-checkout-purchase-price[aria-pressed="true"]::after {
+  left: 0;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
+}
+
+[dir="rtl"] .premium-checkout-purchase-price[aria-pressed="true"]::after {
+  right: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .premium-checkout-purchase-price__badge {
