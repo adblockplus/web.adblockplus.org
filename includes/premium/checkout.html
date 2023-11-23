@@ -19,10 +19,8 @@
         DYNAMIC CARD (See checkout.js)
       ---------------------------------------------------------------------- -->
 
-      <div class="premium-checkout__separator">
-        <div class="premium-checkout-card premium-checkout-card--interactive">
-          <!-- built from cards below by checkout.js -->
-        </div>
+      <div class="premium-checkout-card premium-checkout-card--interactive">
+        <!-- built from cards below by checkout.js -->
       </div>
 
       <!-- ---------------------------------------------------------------------
@@ -31,6 +29,13 @@
 
       <!-- PURCHASE CARD --------------------------------------------------- -->
 
+      <div class="premium-checkout__separator-heading">
+        SHARED BETWEEN FLOWS
+      </div>
+
+      <div class="premium-checkout__separator-label">
+        PURCHASE CARD
+      </div>
       <div class="premium-checkout__separator">
         <div class="premium-checkout-card">
           <form class="premium-checkout-step premium-checkout-purchase">
@@ -77,6 +82,9 @@
 
       <!-- LOADING CARD ---------------------------------------------------- -->
 
+      <div class="premium-checkout__separator-label">
+        LOADING CARD
+      </div>
       <div class="premium-checkout__separator">
         <div class="premium-checkout-card">
           <div class="premium-checkout-step premium-checkout-loading">
@@ -87,8 +95,48 @@
         </div><!-- /premium-checkout-card -->
       </div><!-- /premium-checkout__separator -->
 
+      <!-- ERROR CARD ------------------------------------------------------ -->
+
+      <div class="premium-checkout__separator-label">
+        UNEXPECTED ERROR CARD
+      </div>      
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card">
+          <div class="premium-checkout-step premium-checkout-error premium-checkout-step--closeable">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading">
+                {{ premium-checkout-error__heading-1 An unexpected error has occurred }}
+              </h2>
+              <button class="premium-checkout-card-header__close-button" type="button">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ premium-checkout__close-alt Return to checkout }}">
+              </button>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body">
+              <p class="premium-checkout-card__lead">
+                {{ premium-checkout-error__paragraph-1 We're very sorry about the inconvenience. }}
+              </p>
+              <p>
+                {{ premium-checkout-error__paragraph-3 This error has been recorded and will be investigated by our developers as soon as possible. }}
+              </p>
+              <p>
+                {{ premium-checkout-error__paragraph-2 Please contact <a href="mailto:support@adblockplus.org">support@adblockplus.org</a> and quote <span class="premium-checkout-error__code">fujny1su71494640</span> to proceed. }}
+              </p>
+            </div><!-- /premium-checkout__columns -->
+          </div><!-- /premium-checkout-error -->
+        </div><!-- /premium-checkout-card -->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- PURCHASE FLOW --------------------------------------------------- -->
+
+      <div class="premium-checkout__separator-heading">
+        PURCHASE FLOW
+      </div>
+
       <!-- ACTIVATED CARD -------------------------------------------------- -->
 
+      <div class="premium-checkout__separator-label">
+        ACTIVATED CARD
+      </div>
       <div class="premium-checkout__separator">
         <div class="premium-checkout-card">
           <div class="premium-checkout-step premium-checkout-success premium-checkout-activated">
@@ -120,36 +168,17 @@
         </div><!-- /premium-checkout-card -->
       </div><!-- /premium-checkout__separator -->
 
-      <!-- ERROR CARD ------------------------------------------------------ -->
+      <!-- ALREADY CONTRIBUTED FLOW ---------------------------------------- -->
 
-      <div class="premium-checkout__separator">
-        <div class="premium-checkout-card">
-          <div class="premium-checkout-step premium-checkout-error premium-checkout-step--closeable">
-            <div class="premium-checkout-card-header">
-              <h2 class="premium-checkout-card-header__heading">
-                {{ premium-checkout-error__heading-1 An unexpected error has occurred }}
-              </h2>
-              <button class="premium-checkout-card-header__close-button" type="button">
-                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ premium-checkout__close-alt Return to checkout }}">
-              </button>
-            </div><!-- /premium-checkout-card-header -->
-            <div class="premium-checkout-card-body">
-              <p class="premium-checkout-card__lead">
-                {{ premium-checkout-error__paragraph-1 We're very sorry about the inconvenience. }}
-              </p>
-              <p>
-                {{ premium-checkout-error__paragraph-3 This error has been recorded and will be investigated by our developers as soon as possible. }}
-              </p>
-              <p>
-                {{ premium-checkout-error__paragraph-2 Please contact <a href="mailto:support@adblockplus.org">support@adblockplus.org</a> and quote <span class="premium-checkout-error__code">fujny1su71494640</span> to proceed. }}
-              </p>
-            </div><!-- /premium-checkout__columns -->
-          </div><!-- /premium-checkout-error -->
-        </div><!-- /premium-checkout-card -->
-      </div><!-- /premium-checkout__separator -->
+      <div class="premium-checkout__separator-heading">
+        ALREADY CONTRIBUTED FLOW
+      </div>
 
       <!-- VERIFY EMAIL CARD ----------------------------------------------- -->
 
+      <div class="premium-checkout__separator-label">
+        VERIFY EMAIL CARD
+      </div>
       <div class="premium-checkout__separator">
         <div class="premium-checkout-card">
           <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-email premium-checkout-step--closeable">
@@ -178,6 +207,9 @@
 
       <!-- VERIFY CODE CARD ------------------------------------------------ -->
 
+      <div class="premium-checkout__separator-label">
+        VERIFY CODE CARD
+      </div>
       <div class="premium-checkout__separator">
         <div class="premium-checkout-card premium-checkout-verify">
           <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-code premium-checkout-step--closeable">
@@ -207,8 +239,45 @@
         </div><!-- /premium-checkout-card-->  
       </div><!-- /premium-checkout__separator -->
 
+      <!-- VERIFY CODE CARD (WRONG CODE ERROR) ----------------------------- -->
+
+      <div class="premium-checkout__separator-label">
+        VERIFY CODE CARD (WITH CODE ERROR)
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card premium-checkout-verify">
+          <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-code premium-checkout-step--closeable">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading ">
+                {{ premium-checkout-verify-code__heading-1 Step 2: Check the email that we sent to you }}
+              </h2>
+              <button class="premium-checkout-card-header__close-button" type="button">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ premium-checkout__close-alt Return to checkout }}">
+              </button>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body">
+              <div class="premium-checkout-verify__lead">
+                {{ premium-checkout-verify-code__paragraph-1 Enter the 6 character code that we sent to you to verify your email address. }}
+              </div>
+              <form class="premium-checkout-verify__form">
+                <input type="text" class="premium-checkout-verify__input">
+                <button class="premium-checkout__button premium-checkout-verify__submit">
+                  {{ premium-checkout-verify-email__button-1 Submit }}
+                </button>
+              </form>
+              <div class="premium-checkout-verify__error">
+                {{ premium-checkout-verify-code__error-1 The code that was submitted was incorrect. Please correct it or reach out to <a href="support@adblockplus.org">support@adblockplus.org</a> to proceed. }}
+              </div>
+            </div><!-- /premium-checkout-card-body--columns -->
+          </div><!-- /premium-checkout-verify /premium-checkout-verify-code -->
+        </div><!-- /premium-checkout-card-->  
+      </div><!-- /premium-checkout__separator -->
+
       <!-- REACTIVATED CARD ------------------------------------------------ -->
 
+      <div class="premium-checkout__separator-label">
+        REACTIVATED CARD
+      </div>
       <div class="premium-checkout__separator">
         <div class="premium-checkout-card">
           <div class="premium-checkout-step premium-checkout-success premium-checkout-reactivated">

@@ -39,6 +39,35 @@
   padding-right: 1rem;
 }
 
+.premium-checkout__separator-label {
+  display: none;
+}
+
+.design .premium-checkout__separator-label {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  border: 1px dashed lightgray;
+  border-bottom-width: 0;
+}
+
+.premium-checkout__separator-heading {
+  display: none;
+}
+
+.design .premium-checkout__separator-heading {
+  display: block;
+  font-weight: 700;
+  color: #fff;
+  background-color: #333;
+  padding: 0.25rem 0.5rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: 1rem;
+}
+
+
 .design .premium-checkout__separator {
   border: 1px dashed lightgray;
   margin-bottom: 2rem;
@@ -90,6 +119,10 @@
   .premium-checkout-card {
     padding: 0 2.5rem;
   }  
+}
+
+.design .premium-checkout-card--interactive {
+  margin-bottom: 8rem;
 }
 
 .premium-checkout-card.premium-checkout-card--interactive,
