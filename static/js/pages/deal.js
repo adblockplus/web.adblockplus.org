@@ -215,6 +215,9 @@ function checkout(product, currency, frequency, amount) {
 document.querySelectorAll(".premium-cta").forEach(button => {
   button.addEventListener("click", event => {
     event.preventDefault();
+    if (document.documentElement.classList.contains("de") || document.documentElement.classList.contains("fr")) {
+      return;
+    }
     const frequency = event.target.getAttribute("data-plan");
     const currency = "USD";
     const amount = paddleEnvironment[frequency].amount;
