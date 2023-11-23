@@ -669,6 +669,7 @@ steps.verifyCode.on("submit", async () => {
 if (adblock.query.has("premium-checkout__fake-error")) {
   email = adblock.query.get("premium-checkout__email") || "";
   userid = adblock.query.get("premium-checkout__userid") || userid;
+  card.scrollIntoView();
   goto(steps.error);
 } else if (adblock.query.has("premium-checkout__activate")) {
   flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
