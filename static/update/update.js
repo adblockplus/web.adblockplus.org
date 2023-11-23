@@ -546,8 +546,8 @@ const PADDLE = adblock.config.paddle = {
 };
 
 const userid = getUserId() || generateUserId();
-const page = adblock.settings.page || "update";
-const language = adblock.settings.language || "en";
+const page = document.documentElement.getAttribute("data-page") || "update";
+const language = document.documentElement.getAttribute("lang") || "en";
 const country = adblock.settings.country || "unknown";
 const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
 const paddleEnvironment = PADDLE.ENVIRONMENTS[environment];
@@ -704,22 +704,27 @@ function onPaymentSubmit(view, options) {
     }
   }
 
+  const clickTimestamp = Date.now();
+
+  localStorage.setItem("contributionInfo", JSON.stringify({
+    amount: amount,
+    frequency: frequency,
+    processor: "paddle",
+    currency: currency,
+    lang: language,
+    source: page,
+    clickTs: clickTimestamp
+  }));
+
   const paymentSuccessParameters = new URLSearchParams();
-  // New way
-  paymentSuccessParameters.append("premium-checkout__activate", 1);
-  paymentSuccessParameters.append("premium-checkout__flow",  "update");
-  paymentSuccessParameters.append("premium-checkout__userid", userid);
-  paymentSuccessParameters.append("premium-checkout__currency", currency);
-  paymentSuccessParameters.append("premium-checkout__amount", amount);
-  paymentSuccessParameters.append("premium-checkout__frequency", frequency);
-  // Old way; to be removed as soon as we update dashboards and integrations
-  paymentSuccessParameters.append("thankyou", 1);
-  paymentSuccessParameters.append("var", 1);
-  paymentSuccessParameters.append("u", userid);
-  paymentSuccessParameters.append("from", page);
-  paymentSuccessParameters.append("from__currency", currency);
-  paymentSuccessParameters.append("from__amount", getDollarNumber(currency, amount));
-  paymentSuccessParameters.append("from__frequency", frequency);
+  paymentSuccessParameters.set("premium-checkout__handoff", 1);
+  paymentSuccessParameters.set("premium-checkout__flow", page);
+  paymentSuccessParameters.set("premium-checkout__userid", userid);
+  paymentSuccessParameters.set("premium-checkout__currency", currency);
+  paymentSuccessParameters.set("premium-checkout__amount", amount);
+  paymentSuccessParameters.set("premium-checkout__frequency", frequency);
+  paymentSuccessParameters.set("premium-checkout__language", language);
+  paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
 
   const paddleMetadata = {
     testmode: environment == "TEST",
@@ -742,18 +747,6 @@ function onPaymentSubmit(view, options) {
     success_url: `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`,
     cancel_url: window.location.href
   };
-
-  localStorage.setItem("contributionInfo", JSON.stringify({
-    processor: "paddle",
-    lang: language,
-    geo: country,
-    amount: String(getDollarNumber(currency, amount)),
-    currency: currency,
-    frequency: frequency == "once" ? "one-time" : frequency,
-    source: page,
-    clickTs: Date.now(),
-    plan: "ME",
-  }));
 
   if (product) {
     Paddle.Checkout.open({
