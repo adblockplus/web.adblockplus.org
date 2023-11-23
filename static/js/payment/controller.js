@@ -124,7 +124,7 @@ function onFormSubmit(data)
       "processor": data.provider,
       "currency": data.currency,
       "lang": doc.documentElement.lang,
-      "source": ns.sourceId || "U",
+      "source": document.documentElement.getAttribute("data-page"),
       "clickTs": Date.now()
     }));
   }

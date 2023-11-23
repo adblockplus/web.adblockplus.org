@@ -193,14 +193,15 @@ Paddle.Setup({
 function checkout(product, currency, frequency, amount) {
   return new Promise((resolve, reject) => {
     checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
+    const clickTimestamp = Date.now();
     localStorage.setItem("contributionInfo", JSON.stringify({
       amount: amount,
       frequency: frequency,
       processor: "paddle",
       currency: currency,
       lang: language,
-      source: "ME",
-      clickTs: Date.now()
+      source: document.documentElement.getAttribute("data-page"),
+      clickTs: clickTimestamp
     }));
     const paddleOptions = {
       title: CHECKOUT_TITLE,
@@ -213,12 +214,14 @@ function checkout(product, currency, frequency, amount) {
       paddleOptions.successCallback = resolve;
     } else {
       const params = new URLSearchParams();
-      params.set("premium-checkout__activate", true);
+      params.set("premium-checkout__handoff", 1);
       params.set("premium-checkout__flow", "purchase");
       params.set("premium-checkout__userid", userid);
       params.set("premium-checkout__currency", currency);
       params.set("premium-checkout__amount", amount);
       params.set("premium-checkout__frequency", frequency);
+      params.set("premium-checkout__language", language);
+      params.set("premium-checkout__timestamp", clickTimestamp);
       paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
     }
     const adblockOptions = {
@@ -653,7 +656,7 @@ steps.verifyCode.on("submit", async () => {
 // ACTIVATION HANDOFF FLOW /////////////////////////////////////////////////////
 
 // you can hand a purchase flow on another page off to this page via the
-// premium-checkout__activate parameter to begin the "activation-handoff" flow.
+// premium-checkout__handoff parameter to begin the "activation-handoff" flow.
 // 
 // you can optionally name the handoff flow via premium-checkout__flow parameter.
 //
@@ -671,7 +674,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   userid = adblock.query.get("premium-checkout__userid") || userid;
   card.scrollIntoView();
   goto(steps.error);
-} else if (adblock.query.has("premium-checkout__activate")) {
+} else if (adblock.query.has("premium-checkout__handoff")) {
   flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
   email = adblock.query.get("premium-checkout__email") || "";
   userid = adblock.query.get("premium-checkout__userid") || userid;

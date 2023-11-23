@@ -1431,44 +1431,33 @@ function getCompletedUrl() {
 }
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
   appealForm.disable();
+  const language = document.documentElement.lang || navigator.language;
+  const clickTimestamp = Date.now();
   const contributionInfo = JSON.stringify({
     amount: data.amount,
     frequency: data.frequency,
     processor: "paddle",
     currency: data.currency,
     lang: document.documentElement.lang,
-    source: eyeo.payment.sourceId || "U",
-    clickTs: Date.now()
+    source: document.documentElement.getAttribute("data-page"),
+    clickTs: clickTimestamp
   });
   const successParameters = new URLSearchParams();
   if (eyeo.payment.productId == "ME") {
     const _userid = forceGetUserId();
-    // New way
-    successParameters.append("premium-checkout__activate", 1);
-    successParameters.append("premium-checkout__flow", "update");
-    successParameters.append("premium-checkout__userid", _userid);
-    successParameters.append("premium-checkout__currency", data.currency);
-    successParameters.append("premium-checkout__amount", data.amount);
-    successParameters.append("premium-checkout__frequency", data.frequency);
-    // Old way; to be removed as soon as we update dashboards and integrations
-    successParameters.append("thankyou", 1);
-    successParameters.append("var", 1);
-    successParameters.append("u", _userid);
-    successParameters.append("from", eyeo.payment.variantName || "null");
-    successParameters.append("from__currency", data.currency);
-    successParameters.append("from__amount", (0,_currency_js__WEBPACK_IMPORTED_MODULE_2__.toDollarNumber)(data.currency, data.amount));
-    successParameters.append("from__frequency", data.frequency);
+    successParameters.set("premium-checkout__handoff", 1);
+    successParameters.set("premium-checkout__flow", document.documentElement.getAttribute("data-page"));
+    successParameters.set("premium-checkout__userid", _userid);
+    successParameters.set("premium-checkout__currency", data.currency);
+    successParameters.set("premium-checkout__amount", data.amount);
+    successParameters.set("premium-checkout__frequency", data.frequency);
+    successParameters.set("premium-checkout__language", language);
+    successParameters.set("premium-checkout__timestamp", clickTimestamp);
   }
 
   // Storing information to be consumed by optimizely and hotjar experiments
   if (eyeo.payment.shouldStoreContributionInfo) {
     localStorage.setItem("contributionInfo", contributionInfo);
-  }
-
-  // Passing contributionInfo from new.abp.o to accounts.abp.o to work around
-  // Premium activation limitation. See premium.html for read.
-  if (eyeo.payment.shouldStoreContributionInfo && eyeo.payment.productId == "ME") {
-    successParameters.append("from__contributionInfo", contributionInfo);
   }
   const passthrough = {
     testmode: isTestmode,

@@ -155,14 +155,15 @@ function checkout(product, currency, frequency, amount) {
     if (typeof adblock == "object" && typeof adblock.log == "function") {
       adblock.log("black-friday-2023__checkout", { product, currency, frequency, amount });
     }
+    const clickTimestamp = Date.now();
     const contributionInfo = {
       amount: amount,
       frequency: frequency,
       processor: "paddle",
       currency: currency,
       lang: language,
-      source: "D",
-      clickTs: Date.now()
+      source: document.documentElement.getAttribute("data-page"),
+      clickTs: clickTimestamp
     };
     const paddleOptions = {
       title: CHECKOUT_TITLE,
@@ -171,19 +172,22 @@ function checkout(product, currency, frequency, amount) {
       locale: paddleLocale,
       closeCallback: reject,
     };
+    const params = new URLSearchParams();
     if (frequency == "yearly") {
       contributionInfo.coupon = "SAVE50";
       paddleOptions.coupon = "SAVE50";
+      params.set("premium-checkout__coupon", "SAVE50");
       amount = amount * .5;
     }
     localStorage.setItem("contributionInfo", JSON.stringify(contributionInfo));
-    const params = new URLSearchParams();
-    params.set("premium-checkout__activate", true);
+    params.set("premium-checkout__handoff", true);
     params.set("premium-checkout__flow", "black-friday-2023");
     params.set("premium-checkout__userid", userid);
     params.set("premium-checkout__currency", currency);
     params.set("premium-checkout__amount", amount);
     params.set("premium-checkout__frequency", frequency);
+    params.set("premium-checkout__language", language);
+    params.set("premium-checkout__timestamp", clickTimestamp);
     paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {

@@ -487,19 +487,17 @@ $(document).ready(function() {
         queryParams.append("var", 1);
     }
     const onSuccessURL = () => {
+        const language = document.documentElement.lang || navigator.language;
+        const clickTimestamp = Date.now();
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
-        // New way
-        queryParams.append("premium-checkout__activate", 1);
-        queryParams.append("premium-checkout__flow", "anti-adblock-pass");
-        queryParams.append("premium-checkout__userid", getUserId());
-        queryParams.append("premium-checkout__currency", "USD");
-        queryParams.append("premium-checkout__amount", amount * 100);
-        queryParams.append("premium-checkout__frequency", frequency);
-        // Old way; to be removed as soon as we migrate dashboards
-        queryParams.append("u", getUserId());
-        queryParams.append("anti_adblock_pass__checkout", 1);
-        queryParams.append("anti_adblock_pass__amount", amount);
-        queryParams.append("anti_adblock_pass__frequency", frequency);
+        queryParams.set("premium-checkout__handoff", 1);
+        queryParams.set("premium-checkout__flow", "anti-adblock-pass");
+        queryParams.set("premium-checkout__userid", getUserId());
+        queryParams.set("premium-checkout__currency", "USD");
+        queryParams.set("premium-checkout__amount", amount * 100);
+        queryParams.set("premium-checkout__frequency", frequency);
+        queryParams.set("premium-checkout__language", language);
+        queryParams.set("premium-checkout__timestamp", clickTimestamp);  
         return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
 
