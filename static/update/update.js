@@ -684,7 +684,7 @@ setTimeout(() => {
       showUpdateExitModal();
     }
   });
-}, adblock.config.modalDelay || 5000);
+}, adblock.config.modalDelay || 13000);
 
 if (adblock.config.modalShow) {
   showUpdateExitModal();
@@ -792,3 +792,25 @@ function onPaymentSubmit(view, options) {
 
 updatePaymentView.events.on("submit", data => onPaymentSubmit(updatePaymentView,  data));
 updateExitModalView.events.on("submit", data => onPaymentSubmit(updateExitModalView, data));
+
+// Artificial installing update loader /////////////////////////////////////////
+
+const loaderParent = document.querySelector(".update-loader");
+const loaderProgress = document.querySelector(".update-loader__progress");
+
+if (adblock.query.has("update-loader__skip")) {
+  loaderParent.hidden = true;
+} else {
+  const refreshRate = 1000 / 60;
+  const totalDuration = 7000;
+  const refreshProgress = 1 / (totalDuration / refreshRate);
+  const tickInterval = setInterval(() => {
+    loaderProgress.value += refreshProgress;
+    if (loaderProgress.value >= 1) {
+      setTimeout(() => {
+        loaderParent.hidden = true;
+      }, 1000);
+      clearInterval(tickInterval);
+    }
+  }, refreshRate);
+}

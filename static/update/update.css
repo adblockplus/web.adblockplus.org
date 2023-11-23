@@ -61,6 +61,61 @@ input[type=number] {
   padding: 0.1rem 0.2rem;
 }
 
+.update-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(78.8% 78.8% at 50% 21.2%, #003979 0%, #012146 64.61%, #00162F 100%);
+  z-index: 9001;
+}
+
+.update-loader__card {
+  margin: 0 auto;
+  width: 600px;
+  background: #F8F8F8;
+  padding: 60px 40px;
+  border-radius: 8px;
+  display: flex;
+  margin-top: 20vh;
+}
+
+.update-loader__image {
+  margin-right: 2rem;
+}
+
+.update-loader__label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.update-loader__progress {
+  width: 100%;
+}
+
+.update-loader__body {
+  width: 100%;
+}
+
+.update-loader__progress {
+  height: 18px;
+  appearance: none;
+  border-radius: 4px;
+  border: 1px solid #666;
+  padding: 2px;
+}
+
+.update-loader__progress[value]::-webkit-progress-value {
+  background: #07F;
+  border-radius: 2px;
+}
+
+.update-loader__progress[value]::-webkit-progress-bar {
+  background: #fff;
+}
+
 .update-exit-modal {
   display: none;
 }
