@@ -131,7 +131,7 @@ function getOS() {
  * @todo import from shared source
  */
 function generateTrackingId() {
-  return `ME X0G0 F${getBrowser()}O${getOS()}SME ${userid}`;
+  return `ME X0G0 F${getBrowser()}O${getOS()}SD ${userid}`;
 }
 
 if (isTestmode) {
@@ -161,7 +161,7 @@ function checkout(product, currency, frequency, amount) {
       processor: "paddle",
       currency: currency,
       lang: language,
-      source: "ME",
+      source: "D",
       clickTs: Date.now()
     };
     if (frequency == "yearly") {
