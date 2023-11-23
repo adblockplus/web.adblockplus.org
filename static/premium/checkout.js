@@ -680,7 +680,10 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   userid = adblock.query.get("premium-checkout__userid") || userid;
   const currency = adblock.query.get("premium-checkout__currency");
   const frequency = adblock.query.get("premium-checkout__frequency");
-  const amount = adblock.query.get("premium-checkout__amount");
+  let amount = adblock.query.get("premium-checkout__amount");
+  let discount = adblock.query.get("premium-checkout__discount");
+  discount = parseFloat(discount) || 1;
+  amount = amount * discount;
   card.scrollIntoView();
   await goto(steps.loading);
   await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));

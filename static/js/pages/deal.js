@@ -184,6 +184,7 @@ function checkout(product, currency, frequency, amount) {
     if (frequency == "yearly") {
       contributionInfo.coupon = "SAVE50";
       paddleOptions.coupon = "SAVE50";
+      params.set("premium-checkout__discount", 0.5);
       params.set("premium-checkout__coupon", "SAVE50");
       amount = amount * .5;
     }
