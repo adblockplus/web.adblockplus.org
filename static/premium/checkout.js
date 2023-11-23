@@ -5,7 +5,7 @@
 const CHECKOUT_TITLE = "Adblock Plus Premium";
 
 const REQUEST_TIMEOUT = parseInt(adblock.query.get("premium-checkout__request-timeout"), 10) || 15000;
-const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 6000;
+const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 5000;
 
 const PADDLE = {
   test: {
@@ -210,20 +210,16 @@ function checkout(product, currency, frequency, amount) {
       locale: paddleLocale,
       closeCallback: reject,
     };
-    if (location.origin == "https://accounts.adblockplus.org" && location.pathname.endsWith("/premium")) {
-      paddleOptions.successCallback = resolve;
-    } else {
-      const params = new URLSearchParams();
-      params.set("premium-checkout__handoff", 1);
-      params.set("premium-checkout__flow", "purchase");
-      params.set("premium-checkout__userid", userid);
-      params.set("premium-checkout__currency", currency);
-      params.set("premium-checkout__amount", amount);
-      params.set("premium-checkout__frequency", frequency);
-      params.set("premium-checkout__language", language);
-      params.set("premium-checkout__timestamp", clickTimestamp);
-      paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
-    }
+    const params = new URLSearchParams();
+    params.set("premium-checkout__handoff", 1);
+    params.set("premium-checkout__flow", document.documentElement.getAttribute("data-page"));
+    params.set("premium-checkout__userid", userid);
+    params.set("premium-checkout__currency", currency);
+    params.set("premium-checkout__amount", amount);
+    params.set("premium-checkout__frequency", frequency);
+    params.set("premium-checkout__language", language);
+    params.set("premium-checkout__timestamp", clickTimestamp);
+    paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {
         "testmode": isTestmode,
