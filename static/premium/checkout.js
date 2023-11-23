@@ -275,6 +275,9 @@ window.addEventListener("message", response => {
 function activatePremium() {
   checkoutLog("premium-checkout__activate");
   return new Promise((resolve, reject) => {
+    if (adblock.query.has("premium-checkout__fake-activation")) {
+      return resolve();
+    }
     resolvePremiumActivation = resolve;
     rejectPremiumActivation = reject;
     window.postMessage({
