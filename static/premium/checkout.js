@@ -5,7 +5,7 @@
 const CHECKOUT_TITLE = "Adblock Plus Premium";
 
 const REQUEST_TIMEOUT = parseInt(adblock.query.get("premium-checkout__request-timeout"), 10) || 15000;
-const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 5000;
+const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 6000;
 
 const PADDLE = {
   test: {
