@@ -28,7 +28,7 @@
   };
 
   //FIXME: eyeo/cms doesn't support img in string so this replaces span with img
-  // e.g. <span src="image.png" class="img"> turns into <img src="image.png" class="img">
+  // e.g. span src image.png class img turns into img src image.png class img
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("span.img").forEach(span => {
         span.innerHTML = span.outerHTML.replace("span", "img");
