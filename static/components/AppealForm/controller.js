@@ -45,7 +45,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
 
   appealForm.disable();
 
-  const language = document.documentElement.lang || navigator.language;
+  const language = document.documentElement.lang || "en";
 
   const clickTimestamp = Date.now();
 
@@ -95,7 +95,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: `${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
+    success_url: `/${language}/${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
     cancel_url: location.href,
   };
 

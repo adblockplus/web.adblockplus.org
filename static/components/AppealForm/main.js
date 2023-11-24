@@ -971,7 +971,7 @@ function getCompletedUrl() {
 }
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
   appealForm.disable();
-  const language = document.documentElement.lang || navigator.language;
+  const language = document.documentElement.lang || "en";
   const clickTimestamp = Date.now();
   const contributionInfo = JSON.stringify({
     amount: data.amount,
@@ -1017,7 +1017,7 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: `${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
+    success_url: `/${language}/${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
     cancel_url: location.href
   };
   const product = data.product;

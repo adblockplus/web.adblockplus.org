@@ -34,7 +34,7 @@ const PADDLE = {
 const isTestmode = adblock.query.has("testmode");
 
 /** manually set language > page language > browser language */
-const language = adblock.settings.language || document.documentElement.lang || navigator.language;
+const language = document.documentElement.lang || "en";
 
 const paddleEnvironment = isTestmode
   ? PADDLE.test
@@ -219,7 +219,7 @@ function checkout(product, currency, frequency, amount) {
     params.set("premium-checkout__frequency", frequency);
     params.set("premium-checkout__language", language);
     params.set("premium-checkout__timestamp", clickTimestamp);
-    paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
+    paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {
         "testmode": isTestmode,
