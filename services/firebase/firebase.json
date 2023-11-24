@@ -202,12 +202,6 @@
         "source": "/js/payment/config/load.js",
         "destination": "/payment-config-function",
         "type": 301
-      },
-
-      {
-        "regex": "(?i)^/(?P<language>[\\w-]{2,6}/)?contribution/?$",
-        "destination": "/contribution-function/:language?",
-        "type": 302
       }
     ],
     "rewrites": [

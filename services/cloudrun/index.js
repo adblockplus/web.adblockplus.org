@@ -87,11 +87,8 @@ app.get('/installed-function/:language?', (req, res) => {
 });
 
 app.get('/contribution-function/:language?', (req, res) => {
-  const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = country == 'DE'
-    ? 'contribution-restricted'
-    : 'contribution-unrestricted';
+  const page = 'contribution-fallback';
   const query = getQueryString(req);
   res.redirect(302, path.join('/', language, page) + query);
 });
