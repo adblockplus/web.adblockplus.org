@@ -81,8 +81,12 @@ input[type=number] {
   margin-top: 20vh;
 }
 
-.update-loader__image {
+html:not([dir=rtl]) .update-loader__image {
   margin-right: 2rem;
+}
+
+[dir=rtl] .update-loader__image {
+  margin-left: 2rem;
 }
 
 .update-loader__label {
@@ -449,13 +453,20 @@ html:not([dir=rtl]) .update-payment-amount__radio {
   display: block;
   position: absolute;
   top: 0;
-  left: 0;
   margin: 0.125rem;
   height: 1.125rem;
   width: 1.125rem;
   border-radius: 50%;
   background: #fff;
   transition: 0.4s;
+}
+
+html:not([dir=rtl]) .update-payment-switch__toggle {
+  left: 0;
+}
+
+[dir=rtl] .update-payment-switch__toggle {
+  right: 0;
 }
 
 html:not([dir="rtl"]) .update-payment-switch__yearly:checked + .update-payment-switch__toggle {
@@ -482,13 +493,11 @@ html:not([dir='rtl']) .update-payment-switch__monthly {
 }
 
 html:not([dir='rtl']) .update-payment-switch__yearly {
-  margin-right: 0.5rem;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 
 [dir='rtl'] .update-payment-switch__yearly {
-  margin-left: 0.5rem;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
 }
