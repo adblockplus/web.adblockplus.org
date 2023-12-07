@@ -1161,8 +1161,13 @@ a.icon-button:visited
 
 .item-group img
 {
-  height: 15em;
+  height: 9em;
   width: auto;
+}
+
+.illustration-container {
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 575px)
@@ -1210,12 +1215,17 @@ a.icon-button:visited
     min-height: 6em; /* Height of image */
   }
 
-  .item-group img
+  .illustration-container
   {
     position: absolute;
     left: 1em;
     top: 0;
-    height: 8em;
+    width: 145px;
+  }
+
+  .item-group img {
+    height: 6em;
+    margin-top: 0.5em;
   }
 
   [dir="rtl"] .item-group img
