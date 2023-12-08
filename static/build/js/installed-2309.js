@@ -1467,6 +1467,8 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
   if (eyeo.payment.shouldStoreContributionInfo) {
     localStorage.setItem("contributionInfo", contributionInfo);
   }
+  let successURL = eyeo.payment.paymentCompleteUrl || "/payment-complete";
+  if (false == successURL.startsWith("https://")) successURL = `/${language}/${successURL}`;
   const passthrough = {
     testmode: isTestmode,
     userid: eyeo.payment.productId == "ME" ? forceGetUserId() : "",
@@ -1485,7 +1487,7 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: `/${language}/${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
+    success_url: `${successURL}?${successParameters.toString()}`,
     cancel_url: location.href
   };
   const product = data.product;

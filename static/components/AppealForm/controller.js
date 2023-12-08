@@ -77,6 +77,9 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
     localStorage.setItem("contributionInfo", contributionInfo);
   }
 
+  let successURL = eyeo.payment.paymentCompleteUrl || "/payment-complete";
+  if (false == successURL.startsWith("https://")) successURL = `/${language}/${successURL}`
+
   const passthrough = {
     testmode: isTestmode,
     userid: eyeo.payment.productId == "ME" ? forceGetUserId() : "",
@@ -95,7 +98,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
     variant: "",
     variant_index: -1,
     amount_cents: parseInt(data.amount, 10),
-    success_url: `/${language}/${eyeo.payment.paymentCompleteUrl || "/payment-complete"}?${successParameters.toString()}`,
+    success_url: `${successURL}?${successParameters.toString()}`,
     cancel_url: location.href,
   };
 
