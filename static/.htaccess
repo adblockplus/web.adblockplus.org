@@ -33,7 +33,7 @@ RewriteRule ^devbuilds/?$ https://adblockplus.org/development-builds [NC,R=301]
 RewriteRule ^poland/?$ /poland.html [NC,L,R=301]
 RewriteRule ^de/ad-blocker-safari/?$ https://adblockplus.org/de/ [NC,R=301]
 RewriteRule ^fr/ad-blocker-safari/?$ https://adblockplus.org/fr/ [NC,R=301]
-RewriteRule ^(\w\w(_\w\w)?/)?filters$ https://help.eyeo.com/en/adblockplus/how-to-write-filters [NC,R=301]
+RewriteRule ^(\w\w(_\w\w)?/)?filters$ https://help.adblockplus.org/hc/articles/360062733293 [NC,R=301]
 RewriteRule ^(\w\w(_\w\w)?/)?android-about/?$ https://adblockplus.org/ [NC,R=301]
 
 # Refd adblockplus-org#16 redirect removed job posting to Careers Page
@@ -71,7 +71,7 @@ SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|i
   RewriteRule ^ %{ENV:adblock_browser_android_download} [L,NC,R=301]
 
   RewriteCond %{ENV:link} ^filterdoc$
-  RewriteRule ^ https://help.eyeo.com/adblockplus/how-to-write-filters [L,NC,R=301]
+  RewriteRule ^ https://help.adblockplus.org/hc/en-us/articles/360062733293 [L,NC,R=301]
 
   RewriteCond %{ENV:link} ^imprint$
   RewriteRule ^ https://adblockplus.org/%{ENV:lang}/imprint [L,NC,R=301]

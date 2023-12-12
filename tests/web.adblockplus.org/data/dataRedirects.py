@@ -204,10 +204,10 @@ TEST_DATA_DIFFERENT_DOMAIN = [(
       'https://adblockplus.org/development-builds/',
 ), (
       '/filters',
-      'https://help.eyeo.com/en/adblockplus/how-to-write-filters',
+      'https://help.adblockplus.org/hc/articles/360062733293',
 ), (
       '/fr/filters',
-      'https://help.eyeo.com/en/adblockplus/how-to-write-filters',
+      'https://help.adblockplus.org/hc/articles/360062733293',
 ), (
       '/redirect?locale=zh_CN&link=adblock_browser_android_store',
       'data:,',
@@ -219,7 +219,7 @@ TEST_DATA_DIFFERENT_DOMAIN = [(
       'data:,',
 ), (
       '/redirect?link=filterdoc',
-      'https://help.eyeo.com/adblockplus/how-to-write-filters',
+      'https://help.adblockplus.org/hc/en-us/articles/360062733293',
 ), (
       '/redirect?link=adblock_plus_report_issue',
       'https://forums.lanik.us/viewforum.php?f=64',
