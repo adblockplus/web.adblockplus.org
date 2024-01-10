@@ -185,7 +185,9 @@
 
             var headingLink = document.querySelector("#toc-float [href='#"+ contentHeadings[0].id +"']");
 
-            headingLink.classList.add("active");
+            if (headingLink) {
+                headingLink.classList.add("active");
+            }
 
             //console.log(floatingTOC.getBoundingClientRect().top, headingLink.getBoundingClientRect().bottom);
         }
