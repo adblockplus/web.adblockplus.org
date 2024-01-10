@@ -81,6 +81,7 @@
       buttonClass = `abp-${mobilePlatform}`;
     }
   } else {
+    if (!browser) browser = "chrome";
     buttonHREF = desktopDownloads[browser];
     buttonClass = `abp-${browser}`;
   }
