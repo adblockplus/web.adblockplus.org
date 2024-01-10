@@ -16,7 +16,7 @@
     }
 
     // Show "Change cookie settings" links and info text to EEA users
-    if (eyeo && eyeo.cookieEnabled) // created in "js/testing/setup.js"
+    if (typeof eyeo == "object" && eyeo.cookieEnabled) // created in "js/testing/setup.js"
         document.documentElement.classList.add("has-cookies");
 
     // Prevent Cookies bar (desktop/mobile) from hiding footer contents
@@ -28,6 +28,8 @@
         var cookieBarCloseButton = document.querySelector(".cookies-close");
         var cookiePromptCloseButton = [].slice.call(document
                                           .querySelectorAll(".cookies-submit"));
+
+        if (!cookieBar) return;
 
         setInterval(function() {
             if (isBlockShown(cookiePrompt))
@@ -116,18 +118,20 @@
             newScrollAction = false;
         });
 
-        setInterval(function() {
-          if (
-            !scrollHandled &&
-            ( // locale menu is not visible
-              !navbarLocale || // our blog doesn't have a locale menu
-              !navbarLocale.classList.contains("visible")
-            )
-          ) {
-              scrollHandled = handleScroll();
-          }
-        }, 250);
-
+        if (!document.getElementById("toc-float")) {
+            setInterval(function() {
+                if (
+                  !scrollHandled &&
+                  ( // locale menu is not visible
+                    !navbarLocale || // our blog doesn't have a locale menu
+                    !navbarLocale.classList.contains("visible")
+                  )
+                ) {
+                    scrollHandled = handleScroll();
+                }
+              }, 250);      
+        }
+        
         function handleScroll() {
             var currentScroll = window.pageYOffset;
             var hash = document.location.hash;
