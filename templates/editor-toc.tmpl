@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html <? include html-attributes ?>>
+  <head>
+    <? include meta/standard ?>
+    <? include styles ?>
+    <link rel="stylesheet" href="/css/editor.css">
+    <? inludes globals ?>
+    {% block head %}
+      {{head|safe}}
+    {% endblock %}
+  </head>
+  <body>
+    <? include navbar ?>
+    <div class="container editor" style="padding-top: 3rem;">
+
+      {% if heading %}
+        <h1 class="display-2 pb1 mb2 border-bottom">{{ heading | translate("heading", "heading") }}</h1>
+      {% elif title and not noheading %}
+        <h1 class="display-2 pb1 mb2 border-bottom">{{ title | translate("title") }}</h1>
+      {% endif %}
+
+      {% macro toc(toclist) %}
+        <ul>
+          {% for item in toclist %}
+            <li>
+              <a href="#{{item.anchor}}">{{item.title|anchortext}}</a>
+              {% if item.subitems %}{{toc(item.subitems)}}{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endmacro %}
+
+      {% set toclist = body|toclist %}
+      {% if toclist %}
+        <div id="toc-float" class="toc toc-list">
+          <p>Index</p>
+          {{toc(toclist)}}
+        </div>
+      {% endif %}
+
+      <div class="toc-page-container">
+        {{body|safe}}
+      </div>
+    </div>
+    <? include footer ?>
+    <? include scripts ?>
+    <script src="/js/editor.js"></script>
+  </body>
+</html>
