@@ -17,10 +17,18 @@ export function generateUserId() {
   return generatedChars.join('') + timestamp;
 }
 
+export function userLocation() {
+  const userGeo = window.abp_geo || '';
+  return userGeo;
+}
+
 export function generateTrackingId(productId, userid) {
   const browserId = getBrowserId();
   const osId = getOsId();
   const sourceId = getSourceId();
+  if (['DE', 'FR'].includes(userLocation())) {
+    productId = ''; // No purchase of Premium allowed
+  }
   return `${productId ? productId + " " : ""}X0G0 F${browserId}${osId}${sourceId} ${userid}`;
 };
 

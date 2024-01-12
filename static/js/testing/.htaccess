@@ -20,3 +20,15 @@ RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(US|CA|AU|NZ)$ [OR]
 RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(US|CA|AU|NZ)$
 RewriteCond %{HTTP:Accept-Language} !^en
 RewriteRule ^hotjar.js noop.js
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(DE|FR)$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(DE|FR)$
+RewriteRule ^update update-restricted
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(DE)$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(DE)$
+RewriteRule ^abp-geo.js abp-geo-de.js
+
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR)$ [OR]
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR)$
+RewriteRule ^abp-geo.js abp-geo-fr.js
