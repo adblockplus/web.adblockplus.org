@@ -75,7 +75,7 @@ app.get('/currency', (req, res) => {
 app.get('/update-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = ('DE', 'FR').includes(country)
+  const page = ['DE', 'FR'].includes(country)
     ? 'update-restricted'
     : 'update';
   const query = getQueryString(req);
