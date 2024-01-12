@@ -75,12 +75,11 @@ app.get('/currency', (req, res) => {
 app.get('/update-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = ['DE', 'FR'].includes(country)
-    ? 'update-restricted'
-    : 'update';
   const query = getQueryString(req);
-  res.redirect(302, path.join('/', language, page) + query);
-
+  if (['DE', 'FR'].includes(country)) {
+    res.redirect(302, path.join('/', language, 'update-restricted') + query);
+  }
+  res.send();
 });
 
 app.get('/installed-function/:language?', (req, res) => {
