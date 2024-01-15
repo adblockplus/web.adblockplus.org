@@ -17,6 +17,12 @@ body
 
 .br { display: block; }
 
+.restrict-premium .premium-only,
+.restrict-premium .if-premium,
+html:not(.restrict-premium) .if-not-premium {
+  display: none !important;
+}
+
 @media (min-width: 576px)
 {
   .content h1 { font-size: 27px; }
