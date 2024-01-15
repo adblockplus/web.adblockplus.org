@@ -72,14 +72,13 @@ app.get('/currency', (req, res) => {
   res.redirect(302, `/currencies/${paymentConfig}${queryString}`);
 });
 
+// TODO: Remove rewrite and respective redirect when Premium can be sold in DE and FR
 app.get('/update-function/:language?', (req, res) => {
   const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
   const query = getQueryString(req);
-  if (['DE', 'FR'].includes(country)) {
-    res.redirect(302, path.join('/', language, 'update-restricted') + query);
-  }
-  res.send();
+  const page = ['DE', 'FR'].includes(country) ? 'update-restricted' : 'update-unrestricted';
+  res.redirect(302, path.join('/', language, page) + query);
 });
 
 app.get('/installed-function/:language?', (req, res) => {
