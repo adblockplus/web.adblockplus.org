@@ -665,10 +665,15 @@ function onPaymentSubmit(view, options) {
   paymentSuccessParameters.set("premium-checkout__language", language);
   paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
 
+  // TODO: Remove block and always set 'ME' when Premium can be sold in DE and FR
+  const pathname = new URLPattern(document.location).pathname;
+  const isRestricted = pathname.includes('update-restricted')
+  const productId = isRestricted ? "" : "ME"
+
   const paddleMetadata = {
     testmode: environment == "TEST",
     userid: userid,
-    tracking: generateTrackingId("ME", userid),
+    tracking: generateTrackingId(productId , userid),
     locale: language,
     country: country,
     ga_id: "",
