@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+const legacyRedirects = require('./handlers/legacy_redirects');
+
 // geoip based rules in static/js/payment/config/.htaccess
 let euRules, geoipRules;
 
@@ -28,6 +30,8 @@ function getQueryString(req) {
 
 
 // Request handlers
+
+app.use('/redirect', legacyRedirects);
 
 app.get('/payment-config-function', (req, res) => {
   euRules = euRules || [
