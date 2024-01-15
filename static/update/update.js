@@ -669,6 +669,9 @@ function onPaymentSubmit(view, options) {
   const pathname = new URLPattern(document.location).pathname;
   const isRestricted = pathname.includes('update-restricted')
   const productId = isRestricted ? "" : "ME"
+  const successUrl = isRestricted
+    ? "https://adblockplus.org/update-payment-complete"
+    : `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`
 
   const paddleMetadata = {
     testmode: environment == "TEST",
@@ -688,7 +691,7 @@ function onPaymentSubmit(view, options) {
     variant: "",
     variant_index: -1,
     amount_cents: parseFloat(amount),
-    success_url: `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`,
+    success_url: successUrl,
     cancel_url: window.location.href
   };
 
