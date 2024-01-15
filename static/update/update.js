@@ -665,10 +665,15 @@ function onPaymentSubmit(view, options) {
   paymentSuccessParameters.set("premium-checkout__language", language);
   paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
 
+  const productId = adblock.settings.restrictPremium ? "" : "ME";
+  const successURL = adblock.settings.restrictPremium
+    ? "https://adblockplus.org/update-payment-complete"
+    : `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`;
+
   const paddleMetadata = {
     testmode: environment == "TEST",
     userid: userid,
-    tracking: generateTrackingId("ME", userid),
+    tracking: generateTrackingId(productId, userid),
     locale: language,
     country: country,
     ga_id: "",
@@ -683,7 +688,7 @@ function onPaymentSubmit(view, options) {
     variant: "",
     variant_index: -1,
     amount_cents: parseFloat(amount),
-    success_url: `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`,
+    success_url: successURL,
     cancel_url: window.location.href
   };
 
