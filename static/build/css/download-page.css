@@ -916,6 +916,8 @@ pre
 
 .toc.toc-list { padding: 1em; }
 
+.toc.toc-list ul li { list-style: none; }
+
 .toc.toc-list p
 {
   margin-top: 0;
@@ -962,8 +964,12 @@ pre
   top: -2px;
 }
 
+#toc-float { display: none; }
+
 @media(min-width: 991px)
 {
+  #toc-float { display: block; }
+
   .toc.toc-list
   {
     width: 30%;
