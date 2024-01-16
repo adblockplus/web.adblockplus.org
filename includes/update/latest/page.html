@@ -1,7 +1,5 @@
-title=Adblock Plus has been updated
-template=update
-
 <head>
+  <link rel="stylesheet" href="/update/update.css">
   <script>
     Object.assign(adblock.strings, {
       "product__premium": `{{ product__premium Adblock Plus Premium }}`,
@@ -17,7 +15,21 @@ template=update
   </script>
 </head>
 
-<? include update/loader-and-navbar ?>
+<aside class="update-loader">
+  <div class="update-loader__card">
+    <img alt="" src="/img/adblock-plus-logo-60-60.png" height="60" width="60" class="update-loader__image">
+    <div class="update-loader__body">
+      <div class="update-loader__label">
+        {{ update__installing-card__heading-1 Installing the latest Adblock Plus update }}
+      </div>
+      <progress class="update-loader__progress" value="0" max="1" class="update-loader__progress"></progress>  
+    </div>
+  </div>
+</aside>
+
+<div class="update-navbar">
+  <img height="45" width="248" class="update-navbar__img" src="/update/update-navbar__img.png" alt="">
+</div>
 
 <div class="update-section-1">
   <div class="update__container">
@@ -30,7 +42,25 @@ template=update
 
     <div class="update-section-1__columns">
 
-      <? include update/red-box ?>
+      <aside class="update-section-1__column update-section-1-column-1">
+        <h2 class="update-section-1-column-1__heading">
+          {{ please_dont_scroll_away Please don’t scroll away }}
+        </h2>
+        <div class="update-section-1-column-1__body">
+          <p>
+            {{ update-section-1-column-1__paragraph-1 Hey there, }}
+          </p>
+          <p>
+            {{ update-section-1-column-1__paragraph-2 Our mission at Adblock Plus is to create a worry-free and distraction-free internet for everyone. That’s why we developed our extension to block pop-ups, annoying ads, and other distractions across the web. Adblock Plus helps you to browse the web faster, safer, and with more control over your internet experience. }}
+          </p>
+          <p>
+            {{ update-section-1-column-1__paragraph-3 Adblock Plus is also free of charge to users, as we believe that everyone should have access to a better internet experience. That’s why many users choose to contribute to our efforts. If you believe in what we do and want to help us on our journey, you can do so below. Together, we can make the internet a better place for everyone! }}
+          </p>
+          <p>
+            {{ update-section-1-column-1__paragraph-4 Sincerely,<span class="br"></span> The Adblock Plus Team }}
+          </p>
+        </div>
+      </aside><!-- /update-section-1-column-1 -->
 
       <div class="update-section-1__column update-section-1-column-2">
 
@@ -150,7 +180,7 @@ template=update
 
           </div><!-- /update-payment-frequencies -->
 
-          <div class="update-payment-reward">
+          <div class="update-payment-reward premium-only">
             <span class="update-payment-reward__highlight"></span>
             <div class="update-payment-reward__text">
               {{ update-payment-reward__text Nice! A <span class="update-payment-reward__amount">$35.00</span> contribution gets <span class="update-payment-reward__product">Adblock Plus Premium</span> <span class="update-payment-reward__duration">for one year</span>. Thanks for your support. }}
@@ -174,7 +204,7 @@ template=update
 
 <div class="update-section-3">
   <div class="update__container">
-    <? include update/whats-new ?>
+    <? include update/shared/news ?>
   </div><!-- /update__container -->
 </div><!-- /update-section-3 -->
 

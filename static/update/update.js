@@ -665,13 +665,10 @@ function onPaymentSubmit(view, options) {
   paymentSuccessParameters.set("premium-checkout__language", language);
   paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
 
-  // TODO: Remove block and always set 'ME' when Premium can be sold in DE and FR
-  const pathname = new URLPattern(document.location).pathname;
-  const isRestricted = pathname.includes('update-restricted')
-  const productId = isRestricted ? "" : "ME"
-  const successUrl = isRestricted
+  const productId = adblock.settings.restrictPremium ? "" : "ME";
+  const successURL = adblock.settings.restrictPremium
     ? "https://adblockplus.org/update-payment-complete"
-    : `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`
+    : `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`;
 
   const paddleMetadata = {
     testmode: environment == "TEST",
@@ -691,7 +688,7 @@ function onPaymentSubmit(view, options) {
     variant: "",
     variant_index: -1,
     amount_cents: parseFloat(amount),
-    success_url: successUrl,
+    success_url: successURL,
     cancel_url: window.location.href
   };
 

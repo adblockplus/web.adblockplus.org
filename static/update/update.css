@@ -61,6 +61,10 @@ input[type=number] {
   padding: 0.1rem 0.2rem;
 }
 
+.restrict-premium .premium-only {
+  display: none !important;
+}
+
 .update-loader {
   position: fixed;
   top: 0;
