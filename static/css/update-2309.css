@@ -69,7 +69,8 @@ body
   }
 }
 
-.restrict-premium .premium-only {
+.restrict-premium .premium-only,
+:not(.restrict-premium) .not-premium-only {
   display: none !important;
 }
 
