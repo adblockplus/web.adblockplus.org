@@ -62,7 +62,7 @@ input[type=number] {
 }
 
 .restrict-premium .premium-only,
-:not(.restrict-premium) .not-premium-only {
+html:not(.restrict-premium) .not-premium-only {
   display: none !important;
 }
 
