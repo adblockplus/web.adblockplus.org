@@ -10,6 +10,8 @@ let adblock_browser_android_download, adblock_browser_android_store, forums, lin
 
 router.get('/', (req, res) => {
   let lang = req.query.lang || 'en';
+  // DEBUG:
+  console.log(`Query lang is: ${lang}`);
   let link = req.query.link;
 
   adblock_browser_android_download = adblock_browser_android_download || 'https://downloads.adblockplus.org/adblockbrowser-1.1.0-arm.apk';
@@ -56,7 +58,7 @@ router.get('/', (req, res) => {
 
 function getForum(lang) {
   // DEBUG:
-  console.log(`lang is ${lang}`);
+  console.log(`Query lang from beginning of getForum is ${lang}`);
   forums = forums || {
     'id': 94, 'nl': 100, 'de': 90, 'it': 96, 'es': 103,
     'lt': 101, 'lv': 99, 'ar': 98, 'fr': 91, 'ru': 102,
