@@ -5,27 +5,30 @@
 const express = require('express');
 const router = express.Router();
 
-let adblock_browser_android_download, adblock_browser_android_store, forums, links;
+const { getQueryString } = require('../utils/utils.js');
+
+let forums;
 
 
 router.get('/', (req, res) => {
   let lang = req.query.lang || 'en';
-  // DEBUG:
-  console.log(`Query lang is: ${lang}`);
   let link = req.query.link;
+  let locale = req.query.locale
+  let queryString = getQueryString(req);
 
-  adblock_browser_android_download = adblock_browser_android_download || 'https://downloads.adblockplus.org/adblockbrowser-1.1.0-arm.apk';
-  adblock_browser_android_store = adblock_browser_android_store || 'https://play.google.com/store/apps/details?id=org.adblockplus.browser';
+  let adblock_browser_android_download = 'https://downloads.adblockplus.org/adblockbrowser-1.1.0-arm.apk';
 
-  links = links || {
+  // Google Play is not available in China, so we redirect them to the builds for download, see http://hub.eyeo.com/issues/20183
+  let adblock_browser_android_store = locale && /zh(-|_)\w\w/.test(locale) ?
+      adblock_browser_android_download : 'https://play.google.com/store/apps/details?id=org.adblockplus.browser';
+
+  let stringLiteralMatches = {
     'adblock_browser_android_store': adblock_browser_android_store,
-    'adblock_browser_promotion_': 'https://adblockplus.org/adblock-browser',  // FIXME requires alternative solution as regex format `adblock_browser_promotion_\d`
     'adblock_browser_android_download': adblock_browser_android_download,
     'filterdoc': 'https://help.adblockplus.org/hc/en-us/articles/360062733293',
     'imprint': `https://adblockplus.org/${lang}/imprint`,
-    'adblock_plus_report_issue': `https://forums.lanik.us/viewforum.php?f=${getForum(lang)}`, // FIXME Lang doesn't seem to be working 
-    '(?:^|&)link=share-(?:&|$)': `/${lang}/share?a=minimal`,  //FIXME
-    'uninstalled': `/${lang}/uninstalled`, //FIXME Add query params
+    'adblock_plus_report_issue': `https://forums.lanik.us/viewforum.php?f=${getForum(lang)}`,
+    'uninstalled': `/${lang}/uninstalled${queryString}`,
     'gettingStarted': `/${lang}/getting_started`,
     'faq': `/${lang}/faq`,
     'subscription': `/${lang}/subscriptions`,
@@ -40,25 +43,28 @@ router.get('/', (req, res) => {
     'allowlist': `/${lang}/faq_basics#disable`,
     'acceptable_ads_opt_out': `/${lang}/acceptable-ads#optout`,
     'donate_settings_page': `/${lang}/contribution?utm_source=abp&utm_medium=settings_page&utm_campaign=donate`,
-    '(?:^|&)link=share(?:&|$)': `https://share.adblockplus.org/${lang}/?`,  //FIXME
     'learn_more_premium_pass': 'https://flattr.com/',
     'adblock_ios': 'https://apps.apple.com/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868',
   };
+  let destination = stringLiteralMatches[link];
 
-  // DEBUG:
-  console.log(`Forum link: ${links['adblock_plus_report_issue']}`);
+  // Regex match if no literal match
+  regexMatch: if (!destination) {
+    if (/adblock_browser_promotion_\d/.test(link)) {
+      destination = 'https://adblockplus.org/adblock-browser';
+      break regexMatch;
+    }
+  }
   
-  if (links[link]) {
-    return res.redirect(links[link]);
+  if (destination) {
+    return res.redirect(destination);
   }
 
   // If there is no match in the above legacy redirects, bridge request to new redirect service
   return res.redirect(`${req.protocol}://eyeo.to/adblockplus/${link}/legacy`);
 });
 
-function getForum(lang) {
-  // DEBUG:
-  console.log(`Query lang from beginning of getForum is ${lang}`);
+const getForum = (lang) => {
   forums = forums || {
     'id': 94, 'nl': 100, 'de': 90, 'it': 96, 'es': 103,
     'lt': 101, 'lv': 99, 'ar': 98, 'fr': 91, 'ru': 102,
