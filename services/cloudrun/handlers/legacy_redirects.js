@@ -47,14 +47,16 @@ router.get('/', (req, res) => {
   console.log(`Forum link: ${links['adblock_plus_report_issue']}`);
   
   if (links[link]) {
-    res.redirect(links[link]);
+    return res.redirect(links[link]);
   }
 
   // If there is no match in the above legacy redirects, bridge request to new redirect service
-  res.redirect(`${req.protocol}://eyeo.to/adblockplus/${link}/legacy`);
+  return res.redirect(`${req.protocol}://eyeo.to/adblockplus/${link}/legacy`);
 });
 
 function getForum(lang) {
+  // DEBUG:
+  console.log(`lang is ${lang}`);
   forums = forums || {
     'id': 94, 'nl': 100, 'de': 90, 'it': 96, 'es': 103,
     'lt': 101, 'lv': 99, 'ar': 98, 'fr': 91, 'ru': 102,
