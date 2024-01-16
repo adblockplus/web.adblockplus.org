@@ -260,6 +260,15 @@
             "value": "sameorigin"
           }
         ]
+      },
+      {
+        "source": "/settings.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
       }
     ]
   }
