@@ -9,8 +9,10 @@
     <title>{{ title | translate("title") }}</title>
     <meta property="og:image" content="/img/adblockplus_promo.png">
     <meta name="robots" content="none">
+    <link rel="stylesheet" href="/update/update.css">
     <? include globals ?>
     <? include optimizely ?>
+  
     {% block head %}
       {{ head | safe }}
     {% endblock %}

@@ -69,6 +69,11 @@ body
   }
 }
 
+.restrict-premium .premium-only,
+html:not(.restrict-premium) .not-premium-only {
+  display: none !important;
+}
+
 .update-header 
 {
   display: flex;

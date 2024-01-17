@@ -1,1 +1,0 @@
-adblock.lib.upsellPremium();
