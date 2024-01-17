@@ -42,6 +42,20 @@ unadblock=1
           {{ s2 Say goodbye to additional annoyances like floating videos, newsletter pop-ups, and other distractions. }}
         </p>
       </header>
+      <header class="premium-header premium-header--reenroll" hidden>
+        <h1>
+          {{ premium-reenroll__heading <span class="premium-break">Keep blocking distractions</span> <span class="premium-break">with Adblock Plus Premium</span> }}
+        </h1>
+        <p>
+          {{ premium-reenroll__subheading Re-enroll to keep blocking additional annoyances like floating videos, newsletter pop-ups, and other distractions. }}
+        </p>
+      </header>
+      <script>
+        if (adblock.query.has("reenroll")) {
+          document.querySelector(".premium-header").setAttribute("hidden", true);
+          document.querySelector(".premium-header--reenroll").removeAttribute("hidden");
+        }
+      </script>
       <div class="premium-plans not-hovered">
         <div class="premium-row">
           <div class="premium-column-4 premium-order-1">
