@@ -66,16 +66,6 @@ html:not(.restrict-premium) .not-premium-only {
   display: none !important;
 }
 
-.update-loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: radial-gradient(78.8% 78.8% at 50% 21.2%, #003979 0%, #012146 64.61%, #00162F 100%);
-  z-index: 9001;
-}
-
 .update-loader__card {
   margin: 0 auto;
   width: 600px;
