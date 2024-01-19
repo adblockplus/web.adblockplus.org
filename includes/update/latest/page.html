@@ -27,29 +27,29 @@
       </h1>
     </header>
 
-    <div class="update-section-1__columns">
+    <div class="update-section-1__rows">
 
-      <aside class="update-section-1__column update-section-1-column-1">
-        <h2 class="update-section-1-column-1__heading">
+      <aside class="update-section-1__row update-section-1-row-1">
+        <h2 class="update-section-1-row-1__heading">
           {{ please_dont_scroll_away Please don’t scroll away }}
         </h2>
-        <div class="update-section-1-column-1__body">
+        <div class="update-section-1-row-1__body">
           <p>
-            {{ update-section-1-column-1__paragraph-1 Hey there, }}
+            {{ update-section-1-row-1__paragraph-1 Hey there, }}
           </p>
           <p>
-            {{ update-section-1-column-1__paragraph-2 Our mission at Adblock Plus is to create a worry-free and distraction-free internet for everyone. That’s why we developed our extension to block pop-ups, annoying ads, and other distractions across the web. Adblock Plus helps you to browse the web faster, safer, and with more control over your internet experience. }}
+            {{ update-section-1-row-1__paragraph-2 Our mission at Adblock Plus is to create a worry-free and distraction-free internet for everyone. That’s why we developed our extension to block pop-ups, annoying ads, and other distractions across the web. Adblock Plus helps you to browse the web faster, safer, and with more control over your internet experience. }}
           </p>
           <p>
-            {{ update-section-1-column-1__paragraph-3 Adblock Plus is also free of charge to users, as we believe that everyone should have access to a better internet experience. That’s why many users choose to contribute to our efforts. If you believe in what we do and want to help us on our journey, you can do so below. Together, we can make the internet a better place for everyone! }}
+            {{ update-section-1-row-1__paragraph-3 Adblock Plus is also free of charge to users, as we believe that everyone should have access to a better internet experience. That’s why many users choose to contribute to our efforts. If you believe in what we do and want to help us on our journey, you can do so below. Together, we can make the internet a better place for everyone! }}
           </p>
           <p>
-            {{ update-section-1-column-1__paragraph-4 Sincerely,<span class="br"></span> The Adblock Plus Team }}
+            {{ update-section-1-row-1__paragraph-4 Sincerely,<span class="br"></span> The Adblock Plus Team }}
           </p>
         </div>
-      </aside><!-- /update-section-1-column-1 -->
+      </aside><!-- /update-section-1-row-1 -->
 
-      <div class="update-section-1__column update-section-1-column-2">
+      <div class="update-section-1__row update-section-1-row-2">
 
         <div class="update-gaurantee">
           <img class="update-gaurantee__image" src="/update/update-gaurantee__image.svg" height="24" width="25">
@@ -174,17 +174,20 @@
             </div>
           </div>
 
-          <button class="update-payment__checkout-button">
-            {{ update-payment__checkout-button Checkout Now }}
-          </button>
-
-          <img alt="" src="/img/paddle-providers.svg" style="margin-inline: auto">
+          <div class="update-payment-checkout__columns">
+            <div class="update-payment-checkout__column">
+              <button class="update-payment__checkout-button">
+                {{ update-payment__checkout-button Checkout Now }}
+              </button>  
+              <img alt="" src="/img/paddle-providers.svg" style="margin-inline: auto">    
+            </div>
+          </div>
 
         </form><!-- /update-payment -->
 
-      </div><!-- /update-section-1-column-2 -->
+      </div><!-- /update-section-1-row-2 -->
 
-    </div><!-- /update-section-1__columns -->
+    </div><!-- /update-section-1__rows -->
 
   </div><!-- /update__container -->
 </div><!-- /update-section-1 -->
