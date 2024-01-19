@@ -312,6 +312,16 @@ html {
 }
 
 @media (min-width: 992px) {
+
+  .premium-plans .premium-row {
+    justify-content: center;
+  }
+
+  .premium-plans .premium-column-4 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
   .premium-plan {
     margin-top: 2rem;
     box-shadow: none;
