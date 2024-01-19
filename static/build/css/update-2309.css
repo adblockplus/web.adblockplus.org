@@ -9,6 +9,23 @@
   
 }
 
+/* TODO: remove after update 2024 01 22 due to lack of translations
+** for these languages and older content being rendered */
+html[lang="ar"] .update__container h3:last-of-type,
+html[lang="hu"] .update__container h3:last-of-type,
+html[lang="el"] .update__container h3:last-of-type,
+html[lang="ko"] .update__container h3:last-of-type,
+html[lang="pl"] .update__container h3:last-of-type,
+html[lang="tr"] .update__container h3:last-of-type,
+html[lang="ar"] .update__container h3:last-of-type + p,
+html[lang="hu"] .update__container h3:last-of-type + p,
+html[lang="el"] .update__container h3:last-of-type + p,
+html[lang="ko"] .update__container h3:last-of-type + p,
+html[lang="pl"] .update__container h3:last-of-type + p,
+html[lang="tr"] .update__container h3:last-of-type + p {
+  display: none;
+}
+
 body
 {
   display: block;
