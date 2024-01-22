@@ -1,6 +1,5 @@
 #promotional-banner {
-  background: linear-gradient(30deg, #E6E6E6 27%, #F4F4F4 27%);
-  filter: brightness(0.95);
+  background: #F7F7F7;
   display: flex;
   justify-content: center;
   padding-left: 60px;
@@ -10,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  min-height: 164px;
+  min-height: 151px;
   padding: 8px;
   height: fit-content;
   height: -moz-fit-content;
@@ -43,6 +42,7 @@
 
 #block-cookie-img-box > img {
   position: absolute;
+  bottom: -110px;
 }
 #block-cookie-img-box {
   display: block;
@@ -161,13 +161,13 @@
   min-width: 200px;
   max-width: fit-content;
   max-width: -moz-fit-content;
-  background: #0055b7;
-  background: linear-gradient(to right bottom, #0075ff 50%, #0055b7 50%);
+  background: #0797E1;
   border-radius: 6px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
+  font-family: Source Sans Pro;
   font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: center;
   line-height: 140%;
   display: flex;
   align-items: center;
