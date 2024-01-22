@@ -162,6 +162,8 @@ function getPlainSource() {
           a = "MP";
       else if (location.pathname.indexOf('anti-adblock-pass') != -1)
           a = "AAP";
+      else if (location.pathname.indexOf('block-cookie-banners') != -1)
+          a = "BCB";
   } else {
       // Must be before otherwise returns 'ME'
       if (location.pathname.indexOf('premium/distraction-control') != -1) {
@@ -307,7 +309,7 @@ function recordTracking() {
   var a = getUserId(),
       a = a == "" ? "NA" : a; // set NA if userid isn't set
 
-  const sourcesWithPremium = ["ME", "HME", "AAP", "MEDC"];
+  const sourcesWithPremium = ["ME", "HME", "AAP", "MEDC", "BCB"];
   if (
       typeof getPlainSource === "function"
       && sourcesWithPremium.includes(getPlainSource())

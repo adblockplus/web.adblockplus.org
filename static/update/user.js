@@ -112,6 +112,7 @@ export function getPlainSource() {
     "update": "B",
     "update-fallback": "B",
     "anti-adblock-pass": "AAP",
+    "block-cookie-banners": "BCB",
     "premium": "ME",
   }
   return pageIds[page] || "U";
