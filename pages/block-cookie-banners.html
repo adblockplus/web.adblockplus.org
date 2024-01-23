@@ -1,0 +1,128 @@
+title=Block Cookie Banners | Adblock Plus Premium
+description=Block annoying cookie banners that ask you to accept cookies while you browse the web. Get started with Adblock Plus Premium now!
+robots=none
+template=bare
+style=pages/block-cookie-banners.css
+
+<div class="navbar">
+  <div class="navbar__container">
+    <img alt="Adblock Plus" src="/update/update-navbar__img.png" height="40" class="navbar__brand">
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero__container">
+    <header>
+      <h1 class="hero__heading">
+        {{ hero__heading You can now remove cookie banners across the web! }}
+      </h1>
+      <p class="hero__subheading">
+        {{ hero__subheading Leave a frustrating browsing experience behind when you block cookie banners with Adblock Plus Premium. }}
+      </p>
+    </header>
+  </div>
+</div>
+
+<aside class="hero-aside">
+  <div class="hero-aside__container">
+    <div class="hero-aside-card">
+      <div class="hero-aside-card__header">
+        <h2 class="hero-aside-card__heading">
+          {{ hero-aside__heading Please don’t scroll away }}
+        </h2>
+      </div>
+      <div class="hero-aside-card__body">
+        <p>
+          {{ hero-aside__paragraph-1 Hey there, }}
+        </p>
+        <p>
+          {{ hero-aside__paragraph-2 You’re probably all too familiar with the pesky pop-ups that ask you to consent to cookie usage as you surf the web. They’re everywhere thanks to internet privacy laws. And while we’re big fans of transparency and online privacy, there’s no denying that these cookie banners are an annoyance for internet users. }}
+        </p>
+        <p>
+          {{ hero-aside__paragraph-3 We’re excited to announce that you can now block cookie banners with Adblock Plus Premium! Get where you’re going faster when Adblock Plus Premium hides those banners from view and rejects all the unnecessary cookies we can on your behalf. Enjoy a seamless browsing experience with fewer interruptions and less tracking from advertisers. Sign up for Adblock Plus Premium today to get started. }}
+        </p>
+        <p>
+          {{ hero-aside__paragraph-4 Sincerely, <span class="break">The Adblock Plus Team</span> }}
+        </p>  
+      </div>
+    </div>
+  </div>
+</aside>
+
+<form class="premium-checkout">
+  <div class="premium-checkout__container">
+    <header class="premium-checkout-header">
+      <h2 class="premium-checkout-header__heading">
+        {{ premium-checkout-header__heading Start blocking cookie banners and get started today: }}
+      </h2>
+      <select class="premium-checkout-header__select">
+        <option>USD</option>
+      </select>
+    </header>
+    <div class="premium-checkout-card">
+      <div class="premium-checkout-card-header">
+        <img alt="Adblock Plus Premium" src="/update/update-navbar__img.png" height="40" class="premium-checkout-card-header__heading">
+      </div>
+      <div class="premium-checkout-card-body">
+        <div class="premium-checkout-card-body-option">
+          <button class="premium-checkout-card-body-option__button" data-frequency="monthly">
+            {{ premium-checkout-card-option__button-1 <span class="amount">$2</span><span>Monthly Premium</span> }}
+          </button>          
+        </div>
+        <div class="premium-checkout-card-body-option">
+          <button class="premium-checkout-card-body-option__button" data-frequency="yearly" aria-pressed="true">
+            {{ premium-checkout-card-option__button-2 <span class="amount">$20</span><span>Annual Premium</span> }}
+          </button>
+          <div class="premium-checkout-card-bondy-option__badge">
+            {{ premium-checkout-card-option__badge Save 20% }}
+          </div>
+        </div>
+        <div class="premium-checkout-card-body-features">
+          <h3 class="premium-checkout-card-body-features__heading">
+            {{ premium-checkout-features__heading What’s included? }}
+          </h3>
+          <ul class="premium-checkout-card-body-features__list">
+            <li class="premium-checkout-card-body-features__item">
+              {{ premium-checkout-features__item-1 With Premium, you'll enjoy enhanced pop-up blocking. Say goodbye to annoying distractions like floating videos, newsletter requests, cookie banners, and more. }}
+            </li>
+            <li class="premium-checkout-card-body-features__item">
+              {{ premium-checkout-features__item-2 Sync your settings across multiple devices when you use Premium. }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="premium-checkout-submit">
+      <button class="premium-checkout-submit-button">
+        <img alt="" src="/img/button-lock--fat.png" height="16" class="premium-checkout-submit-button__image">
+        <span class="premium-checkout-submit-button__text">
+          {{ premium-checkout-submit__button Complete Purchase }}
+        </span>
+      </button>
+      <img alt="" src="/img/paddle-providers.svg" height="24">
+    </div>  
+  </div>
+</form>
+
+<aside class="premium-checkout-policy">
+  <div class="premium-checkout-policy__container">
+    <div class="premium-checkout-policy-alert">
+      <div class="premium-checkout-policy-alert-start">
+        <img alt="" src="/update/update-gaurantee__image.svg" height="24" width="24" class="premium-checkout-policy-alert__image">
+      </div>
+      <div class="premium-checkout-policy-alert-end">
+        <h3 class="premium-checkout-policy-alert__heading">
+          {{ premium-checkout-policy__heading Support us with confidence }}
+        </h3>
+        <p class="premium-checkout-policy-alert__text">
+          {{ premium-checkout-policy__text If you’re not completely happy with premium  then you can cancel your upgrade at any time. And you can keep Adblock Plus! }}
+        </p>  
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/js/vendor/NumberFormat.min.js"></script>
+<script src="/currency"></script>
+<script type="module" src="/js/pages/block-cookie-banners.js"></script>
