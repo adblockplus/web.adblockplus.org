@@ -45,9 +45,9 @@ const paddleLocale = PADDLE.locales[language] || language;
 
 let userid = adblock.query.get("premium-checkout__userid") || generateUserId();
 
-let email = "";
+let email = adblock.query.get("premium-checkout__email") || "";
 
-let flow = "none";
+let flow = adblock.query.get("premium-checkout__none") || "none";
 
 const section = document.querySelector(".premium-checkout");
 
