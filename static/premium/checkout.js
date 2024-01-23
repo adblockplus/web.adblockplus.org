@@ -555,11 +555,13 @@ let lastStep = {
  * @param {Step} nextStep 
  * @param {object} [state]
  */
-async function goto(nextStep, state) {
-  checkoutLog("premium-checkout__step", {
-    last: lastStep.name, 
-    next: nextStep.name,
-  });
+async function goto(nextStep, state, log) {
+  if (log !== false) {
+    checkoutLog("premium-checkout__step", {
+      last: lastStep.name,
+      next: nextStep.name,
+    });
+  }
   await lastStep.hide();
   await nextStep.render(state);
   await new Promise(resolve => setTimeout(resolve, 100));
@@ -697,7 +699,7 @@ async function initialize() {
   } else {
   // if you don't begin an activation-handoff flow on load then the default
   // flow is "none" and the default step is steps.purchase
-    goto(steps.purchase);
+    goto(steps.purchase, undefined, false);
   }
 }
 
