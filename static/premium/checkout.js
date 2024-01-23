@@ -47,7 +47,7 @@ let userid = adblock.query.get("premium-checkout__userid") || generateUserId();
 
 let email = adblock.query.get("premium-checkout__email") || "";
 
-let flow = adblock.query.get("premium-checkout__none") || "none";
+let flow = adblock.query.get("premium-checkout__flow") || "none";
 
 const section = document.querySelector(".premium-checkout");
 
@@ -546,7 +546,7 @@ for (const step of Object.values(steps)) {
 
 // creating a fake last step so that we can always assume a las step in goto below
 let lastStep = {
-  name: "none",
+  name: flow,
   hide: () => new Promise(resolve => resolve())
 };
 
