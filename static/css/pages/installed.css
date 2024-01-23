@@ -503,3 +503,8 @@ a:hover, a:active {
   display: block;
   margin: 0;
 }
+
+.restrict-premium .premium-only,
+html:not(.restrict-premium) .not-premium-only {
+  display: none !important;
+}
