@@ -192,13 +192,8 @@ for (const currency in products) {
   $currencies.append($currency);
 }
 
-// Set default currency
-if (adblock.settings.currency) {
-  $currencies.value = adblock.settings.currency;
-}
-
 // Update option amounts on currency change
-$currencies.addEventListener("change", event => {
+function onCurrencyChange() {
   const currency = $currencies.value;
   document
   .querySelectorAll(".premium-checkout-card-body-option__button")
@@ -207,7 +202,15 @@ $currencies.addEventListener("change", event => {
     const amount = Object.keys(products[currency][frequency])[0];
     button.querySelector(".amount").textContent = getDollarString(currency, amount);
   });
-});
+}
+
+$currencies.addEventListener("change", onCurrencyChange);
+
+// Set default currency
+if (adblock.settings.currency) {
+  $currencies.value = adblock.settings.currency;
+  onCurrencyChange();
+}
 
 // Update selected option on option click
 document
