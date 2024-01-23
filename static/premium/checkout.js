@@ -697,8 +697,11 @@ async function initialize() {
       () => goto(steps.error)
     );
   } else {
-  // if you don't begin an activation-handoff flow on load then the default
-  // flow is "none" and the default step is steps.purchase
+    // if you don't begin an activation-handoff flow on load then the default
+    // flow is "none" and the default step is steps.purchase
+    if (flow != "none") {
+      checkoutLog("premium-checkout__handover");
+    }
     goto(steps.purchase, undefined, false);
   }
 }
