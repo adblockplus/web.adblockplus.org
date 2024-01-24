@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
   const adblock_browser_android_download = 'https://downloads.adblockplus.org/adblockbrowser-1.1.0-arm.apk';
 
   // Google Play is not available in China, so we redirect them to the builds for download, see http://hub.eyeo.com/issues/20183
-  let adblock_browser_android_store = locale && /zh(-|_)\w\w/.test(locale) ?
+  let adblock_browser_android_store = (locale && (locale.startsWith("zh_") || locale.startsWith("zh-")))  ?
       adblock_browser_android_download : 'https://play.google.com/store/apps/details?id=org.adblockplus.browser';
 
   // String literal matches
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
     'uninstalled': `/${language}/uninstalled${query}`,
     'gettingStarted': `/${language}/getting_started`,
     'faq': `/${language}/faq`,
-    'subscription': `/${language}/subscriptions`,
+    'subscriptions': `/${language}/subscriptions`,
     'reporter_privacy': `/${language}/privacy#issue-reporter`,
     'privacy': `/${language}/privacy`,
     'contribute': `/${language}/contribute`,
