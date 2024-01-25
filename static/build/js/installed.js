@@ -1535,7 +1535,7 @@ const installedParams = new URLSearchParams(window.location.search);
 const currentBrowser = installedParams.get('ap');
 
 if (currentBrowser === "firefox") {
-  const version = parseFloat(installedParams.get('av'));
+  const version = installedParams.get('av');
 
   const showDataCollectionText = (v1, v2) => {
     const thisVersion = v1.split(".").map((number) => parseInt(number));
