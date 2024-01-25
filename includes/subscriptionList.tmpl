@@ -27,14 +27,11 @@
             {{ " "|translate("maintainer_suffix") }}
           </address>
           {%- endif %}
-          {%- set is_first = True %}
           <p>
           {% for key, default in (('homepage', 'Homepage'), ('forum', 'Forum'), ('contact', 'Contact page'), ('faq', 'FAQ'), ('blog', 'Blog'), ('changelog', 'Changelog'), ('policy', 'Policy')) -%}
           {%- set url = subscription[key] -%}
             {%- if url -%}
-              {%- if not is_first %}, {% endif -%}
-              {%- set is_first = False -%}
-              <a href="{{ url }}">{{ default|translate(key) }}</a>
+              <a href="{{ url }}">{{ default|translate(key) }}</a><span class="inline-list-separator">, </span>
             {%- endif %}
           {%- endfor %}
           </p>
