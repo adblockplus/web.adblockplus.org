@@ -3,7 +3,7 @@
 const installedParams = new URLSearchParams(window.location.search);
 const currentBrowser = installedParams.get('ap');
 
-if (currentBrowser === "firefox") {
+if (currentBrowser.toLowerCase() === "firefox") {
   const version = installedParams.get('av');
 
   const showDataCollectionText = (v1, v2) => {
