@@ -978,7 +978,7 @@ subscriptions = {
         'specialization': 'magyar',
         'supplemented': [],
         'supplements': ['EasyList'],
-        'supplementsType': [ads],
+        'supplementsType': ['ads'],
         'type': 'ads',
         'variants': [['hufilter+EasyList',
                      'https://easylist-downloads.adblockplus.org/hufilter+easylist.txt'
