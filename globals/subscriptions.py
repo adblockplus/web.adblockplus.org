@@ -977,11 +977,13 @@ subscriptions = {
         'policy': None,
         'specialization': 'magyar',
         'supplemented': [],
-        'supplements': [],
-        'supplementsType': [],
+        'supplements': ['EasyList'],
+        'supplementsType': [ads],
         'type': 'ads',
-        'variants': [['hufilter',
-                     'https://raw.githubusercontent.com/hufilter/hufilter/master/hufilter-abp.txt'
+        'variants': [['hufilter+EasyList',
+                     'https://easylist-downloads.adblockplus.org/hufilter+easylist.txt'
+                     , True], ['hufilter',
+                     'https://raw.githubusercontent.com/hufilter/hufilter/master/hufilter.txt'
                      , False]],
         },
     'void.gr': {
