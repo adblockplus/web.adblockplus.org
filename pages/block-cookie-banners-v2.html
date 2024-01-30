@@ -5,9 +5,7 @@ template=bare
 style=pages/block-cookie-banners.css
 
 <div class="navbar">
-  <div class="navbar__container">
-    <img alt="Adblock Plus" src="/update/update-navbar__img.png" height="40" class="navbar__brand">
-  </div>
+  <img alt="Adblock Plus" height="45" width="248" class="navbar__img" src="/update/update-navbar__img.png?1658173883">
 </div>
 
 <div class="hero">
@@ -20,12 +18,7 @@ style=pages/block-cookie-banners.css
         {{ hero__subheading Leave a frustrating browsing experience behind when you block cookie banners with Adblock Plus Premium. }}
       </p>
     </header>
-  </div>
-</div>
-
-<aside class="hero-aside">
-  <div class="hero-aside__container">
-    <div class="hero-aside-card">
+    <aside class="hero-aside-card">
       <div class="hero-aside-card__header">
         <h2 class="hero-aside-card__heading">
           {{ hero-aside__heading Please don’t scroll away }}
@@ -45,9 +38,9 @@ style=pages/block-cookie-banners.css
           {{ hero-aside__paragraph-4 Sincerely, <span class="break">The Adblock Plus Team</span> }}
         </p>  
       </div>
-    </div>
+    </aside>
   </div>
-</aside>
+</div>
 
 <form class="premium-checkout">
   <div class="premium-checkout__container">
@@ -119,6 +112,12 @@ style=pages/block-cookie-banners.css
     </div>
   </div>
 </aside>
+
+<footer class="privacy-footer">
+  <a href="privacy" class="privacy-footer__link">
+    {{ privacy-policy Privacy Policy }}
+  </a>
+</footer>
 
 <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
 <script src="/js/vendor/NumberFormat.min.js"></script>
