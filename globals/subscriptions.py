@@ -316,6 +316,7 @@ subscriptions = {
             'RU AdList',
             'Colombian filters by yecarrillo',
             'Icelandic ABP List',
+            'hufilter',
             'void.gr',
             ],
         'supplements': [],
