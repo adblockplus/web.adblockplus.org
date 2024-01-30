@@ -20,7 +20,7 @@ const PADDLE = adblock.config.paddle = {
     TEST: {
       "USD": {
         "monthly": {
-          "199": 46074,
+          "200": null,
         },
         "yearly": {
           "2000": 46081,
@@ -28,7 +28,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "AUD": {
         "monthly": {
-          "199": 46084,
+          "200": null,
         },
         "yearly": {
           "2000": 46091,
@@ -36,7 +36,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "CAD": {
         "monthly": {
-          "199": 46094,
+          "200": null,
         },
         "yearly": {
           "2000": 46182,
@@ -44,7 +44,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "EUR": {
         "monthly": {
-          "199": 46195,
+          "200": null,
         },
         "yearly": {
           "2000": 46202,
@@ -52,7 +52,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "GBP": {
         "monthly": {
-          "199": 46205,
+          "200": null,
         },
         "yearly": {
           "2000": 46212,
@@ -60,7 +60,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "JPY": {
         "monthly": {
-          "200": 46225,
+          "200": null,
         },
         "yearly": {
           "2500": 46232,
@@ -68,7 +68,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "NZD": {
         "monthly": {
-          "199": 46215,
+          "200": null,
         },
         "yearly": {
           "2000": 46222,
@@ -76,7 +76,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "CHF": {
         "monthly": {
-          "199": 46185,
+          "200": null,
         },
         "yearly": {
           "2000": 46192,
@@ -94,7 +94,7 @@ const PADDLE = adblock.config.paddle = {
     LIVE: {
       "USD": {
         "monthly": {
-          "199": 816774,
+          "200": null,
         },
         "yearly": {
           "2000": 816781,
@@ -102,7 +102,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "AUD": {
         "monthly": {
-          "199": 816692,
+          "200": null,
         },
         "yearly": {
           "2000": 816702,
@@ -110,7 +110,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "CAD": {
         "monthly": {
-          "199": 816706,
+          "200": null,
         },
         "yearly": {
           "2000": 816716,
@@ -118,7 +118,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "EUR": {
         "monthly": {
-          "199": 816681,
+          "200": null,
         },
         "yearly": {
           "2000": 816689,
@@ -126,7 +126,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "GBP": {
         "monthly": {
-          "199": 816734,
+          "200": null,
         },
         "yearly": {
           "2000": 816741,
@@ -134,7 +134,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "JPY": {
         "monthly": {
-          "200": 816784,
+          "200": null,
         },
         "yearly": {
           "2500": 816792,
@@ -142,7 +142,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "NZD": {
         "monthly": {
-          "199": 816760,
+          "200": null,
         },
         "yearly": {
           "2000": 816771,
@@ -150,7 +150,7 @@ const PADDLE = adblock.config.paddle = {
       },
       "CHF": {
         "monthly": {
-          "199": 816720,
+          "200": null,
         },
         "yearly": {
           "2000": 816730,
@@ -176,6 +176,7 @@ const paddleId = PADDLE.ENVIRONMENTS[environment];
 const paddleTitle = "Adblock Plus";
 const paddleLocale = PADDLE.LOCALES[language] || language;
 const products = PADDLE.PRODUCTS[environment];
+const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
 
 if (environment == "TEST") {
   Paddle.Environment.set("sandbox");
@@ -225,6 +226,8 @@ document
   });
 });
 
+const checkoutButton = document.querySelector(".premium-checkout-submit-button");
+
 // Handoff to Paddle and premium flow on submit
 document
 .querySelector(".premium-checkout")
@@ -254,12 +257,12 @@ document
   paymentSuccessParameters.set("premium-checkout__frequency", frequency);
   paymentSuccessParameters.set("premium-checkout__language", language);
   paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
-  const productId = "ME";
+  const planId = "ME";
   const successURL = `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`;
   const paddleMetadata = {
     testmode: environment == "TEST",
     userid: userid,
-    tracking: generateTrackingId(productId , userid),
+    tracking: generateTrackingId(planId , userid),
     locale: language,
     country: "unknown",
     ga_id: "",
@@ -277,12 +280,34 @@ document
     success_url: successURL,
     cancel_url: window.location.href
   };
-  Paddle.Checkout.open({
-    title: paddleTitle,
-    product: product,
-    allowQuantity: false,
-    success: paddleMetadata.success_url,
-    locale: paddleLocale,
-    passthrough: paddleMetadata,
-  });
+  if (product) {
+    Paddle.Checkout.open({
+      title: paddleTitle,
+      product: product,
+      allowQuantity: false,
+      success: paddleMetadata.success_url,
+      locale: paddleLocale,
+      passthrough: paddleMetadata,
+    });  
+  } else {
+    checkoutButton.disabled = true;
+    fetch(customAmountServiceURL, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(paddleMetadata),
+    })
+    .then(response => response.json())
+    .then(session => {
+      Paddle.Checkout.open({
+        title: paddleTitle,
+        locale: paddleLocale,
+        override: session.url,
+      });
+    })
+    .finally(() => {
+      checkoutButton.disabled = false;
+    })
+  }
 });

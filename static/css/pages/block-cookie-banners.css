@@ -325,6 +325,11 @@ html[dir="rtl"] .premium-checkout-card-body-option__button .amount {
   text-align: center;
 }
 
+.premium-checkout-submit-button:disabled {
+  background-color:#585858;
+  cursor: not-allowed;
+}
+
 .premium-checkout-submit-button__image {
   display: none;
 }
