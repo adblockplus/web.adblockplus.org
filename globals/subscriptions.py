@@ -968,7 +968,7 @@ subscriptions = {
         },
     'hufilter': {
         'blog': None,
-        'changelog': 'https://github.com/hufilter/hufilter/commits/master/hufilter-abp.txt',
+        'changelog': 'https://github.com/hufilter/hufilter/commits/master/hufilter.txt',
         'contact': None,
         'deprecated': False,
         'faq': None,
