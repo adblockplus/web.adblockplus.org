@@ -94,6 +94,11 @@
         "destination": "/",
         "type": 301
       },
+      {
+        "regex": "(?i)(^|\/)donate$",
+        "destination": "/contribution",
+        "type": 302
+      },
 
       // Refd #617 migrate simple file-to-file rules to .htaccess
       {
@@ -183,7 +188,13 @@
         "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?careers/?$",
         "destination": "https://adblock.pinpointhq.com/en#js-careers-jobs-block",
         "type": 301
-      },      
+      },
+
+      {
+        "regex": "(?i)^/(devbuilds/(.*)?)",
+        "destination": "https://downloads.adblockplus.org/:1",
+        "type": 302
+      },
 
       // Refd #946
       {
@@ -235,6 +246,13 @@
       },
       {
         "source": "/contribution-function/:language?",
+        "run": {
+          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/redirect",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
