@@ -1,21 +1,36 @@
 'use strict';
 
-var SCROLL_TICK_LENGTH = 10;
-var SCROLL_TIME = 500;
+const installedParams = new URLSearchParams(window.location.search);
+const currentBrowser = installedParams.get('ap');
 
-var page = document.scrollingElement || document.documentElement; // IE
-var body = document.body;
-var donationHeading = document.querySelector('.payment-heading');
+if (currentBrowser.toLowerCase() === "firefox") {
+  const version = installedParams.get('av');
 
-window.addEventListener('resize', function() {
-  if (window.innerWidth > 991)
-    if (!page.classList.contains('hide-form'))
-      page.classList.add('show-form');
-  else
-    page.classList.remove('show-form');
-});
+  // List of release versions here: https://blog.adblockplus.org/releases
+  // 3.22 introduced the content script logic to listen to the hyperlink click
+  // 3.21.1 is the latest version without that support
+  const shouldShowDataCollectionText = (version) => {
+    const thisVersion = version.split('.').map((number) => parseInt(number));
+    const lastUnsupported = [ 3, 21, 1 ];
 
-document.documentElement.classList.remove('no-js');
+    if (!version) {
+      return false;
+    }
 
-// sticky footer
-document.querySelector('main.container').setAttribute('id', 'content');
+    for (var i in thisVersion) {
+      if (thisVersion[i] > lastUnsupported[i]) {
+        return true;
+      }
+      else if (thisVersion[i] < lastUnsupported[i]) {
+        return false;
+      }
+      else if (thisVersion.length - 1 == i) {
+        return false;
+      }
+    }
+  };
+
+  if (shouldShowDataCollectionText(version)) {
+    document.getElementById('fx-data-collection').style.display = 'block';
+  }
+}

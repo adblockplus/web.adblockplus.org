@@ -316,6 +316,7 @@ subscriptions = {
             'RU AdList',
             'Colombian filters by yecarrillo',
             'Icelandic ABP List',
+            'hufilter',
             'void.gr',
             ],
         'supplements': [],
@@ -967,7 +968,7 @@ subscriptions = {
         },
     'hufilter': {
         'blog': None,
-        'changelog': 'https://github.com/hufilter/hufilter/commits/master/hufilter-abp.txt',
+        'changelog': 'https://github.com/hufilter/hufilter/commits/master/hufilter.txt',
         'contact': None,
         'deprecated': False,
         'faq': None,
@@ -977,11 +978,13 @@ subscriptions = {
         'policy': None,
         'specialization': 'magyar',
         'supplemented': [],
-        'supplements': [],
-        'supplementsType': [],
+        'supplements': ['EasyList'],
+        'supplementsType': ['ads'],
         'type': 'ads',
-        'variants': [['hufilter',
-                     'https://raw.githubusercontent.com/hufilter/hufilter/master/hufilter-abp.txt'
+        'variants': [['hufilter+EasyList',
+                     'https://easylist-downloads.adblockplus.org/hufilter+easylist.txt'
+                     , True], ['hufilter',
+                     'https://raw.githubusercontent.com/hufilter/hufilter/master/hufilter.txt'
                      , False]],
         },
     'void.gr': {
