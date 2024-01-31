@@ -45,9 +45,9 @@ const paddleLocale = PADDLE.locales[language] || language;
 
 let userid = adblock.query.get("premium-checkout__userid") || generateUserId();
 
-let email = "";
+let email = adblock.query.get("premium-checkout__email") || "";
 
-let flow = "none";
+let flow = adblock.query.get("premium-checkout__flow") || "none";
 
 const section = document.querySelector(".premium-checkout");
 
@@ -546,7 +546,7 @@ for (const step of Object.values(steps)) {
 
 // creating a fake last step so that we can always assume a las step in goto below
 let lastStep = {
-  name: "none",
+  name: flow,
   hide: () => new Promise(resolve => resolve())
 };
 
@@ -555,11 +555,13 @@ let lastStep = {
  * @param {Step} nextStep 
  * @param {object} [state]
  */
-async function goto(nextStep, state) {
-  checkoutLog("premium-checkout__step", {
-    last: lastStep.name, 
-    next: nextStep.name,
-  });
+async function goto(nextStep, state, log) {
+  if (log !== false) {
+    checkoutLog("premium-checkout__step", {
+      last: lastStep.name,
+      next: nextStep.name,
+    });
+  }
   await lastStep.hide();
   await nextStep.render(state);
   await new Promise(resolve => setTimeout(resolve, 100));
@@ -695,9 +697,12 @@ async function initialize() {
       () => goto(steps.error)
     );
   } else {
-  // if you don't begin an activation-handoff flow on load then the default
-  // flow is "none" and the default step is steps.purchase
-    goto(steps.purchase);
+    // if you don't begin an activation-handoff flow on load then the default
+    // flow is "none" and the default step is steps.purchase
+    if (flow != "none") {
+      checkoutLog("premium-checkout__handover");
+    }
+    goto(steps.purchase, undefined, false);
   }
 }
 
