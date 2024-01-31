@@ -386,6 +386,10 @@ html[dir="rtl"] .premium-checkout-card-body-option__button .amount {
   display: block;
 }
 
+[lang="ja"] .premium-checkout-policy-alert__heading {
+  display: none;
+}
+
 .privacy-footer {
   border-top: 3px solid #EDEDED;
   text-align: center;
