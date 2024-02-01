@@ -290,7 +290,7 @@ subscriptions = {
         'faq': None,
         'forum': 'https://forums.lanik.us/',
         'homepage': 'https://easylist.to/',
-        'maintainer': 'fanboy, MonztA, Khrin',
+        'maintainer': 'fanboy, MonztA, Khrin, Yuki2718, PiQuark6046',
         'policy': 'https://easylist.to/pages/policy.html',
         'specialization': 'English',
         'supplemented': [
