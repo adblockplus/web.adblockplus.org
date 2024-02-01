@@ -261,7 +261,9 @@ document
   paymentSuccessParameters.set("premium-checkout__frequency", frequency);
   paymentSuccessParameters.set("premium-checkout__language", language);
   paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
-  const planId = "ME";
+  let funnel = adblock.query.get("s");
+  if (funnel) funnel = funnel.toUpperCase();
+  const planId = funnel ? `ME_${funnel}` : "ME";
   const successURL = `https://accounts.adblockplus.org/${language}/premium?${paymentSuccessParameters.toString()}`;
   const paddleMetadata = {
     testmode: environment == "TEST",

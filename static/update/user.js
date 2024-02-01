@@ -113,6 +113,8 @@ export function getPlainSource() {
     "update-fallback": "B",
     "anti-adblock-pass": "AAP",
     "premium": "ME",
+    "block-cookie-banner": "BCB",
+    "block-cookie-banner-v2": "BCBV",
   }
   return pageIds[page] || "U";
 }
