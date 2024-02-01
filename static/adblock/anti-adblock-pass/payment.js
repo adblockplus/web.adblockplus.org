@@ -686,7 +686,7 @@ $(document).ready(function() {
                         const activationParams = new URLSearchParams();
                         activationParams.append("thankyou", 1);
                         activationParams.append("var", 1);
-                        activationParams.append("premium-checkout__handoff");
+                        activationParams.append("premium-checkout__handoff", 1);
                         activationParams.append("u", getUserId());
                         window.location.href = `https://accounts.adblockplus.org/premium?${activationParams.toString()}`;
                         return;
