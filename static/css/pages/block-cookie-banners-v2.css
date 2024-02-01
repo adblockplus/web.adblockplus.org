@@ -141,6 +141,10 @@ body {
   margin-right: auto;
 }
 
+.premium-checkout__container.premium-checkout__container--wide {
+  max-width: none;
+}
+
 @media (min-width: 576px) {
   .premium-checkout__container {
     padding-left: 2rem;
@@ -154,6 +158,10 @@ body {
   gap: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.premium-checkout__container--wide .premium-checkout-header {
+  justify-content: center;
 }
 
 .premium-checkout-header__heading {

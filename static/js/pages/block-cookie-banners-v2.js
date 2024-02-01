@@ -311,3 +311,15 @@ document
     })
   }
 });
+
+// widen checkout header when text wraps (in translations)
+if (
+  (
+    document.querySelector(".premium-checkout-header__select").offsetTop
+    - document.querySelector(".premium-checkout-header__heading").offsetTop
+  ) > 5
+) {
+  document.querySelector(".premium-checkout__container").classList.add(
+    "premium-checkout__container--wide"
+  );
+}
