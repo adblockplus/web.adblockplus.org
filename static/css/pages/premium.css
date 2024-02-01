@@ -712,6 +712,25 @@ html {
   font-weight: 400 !important;
 }
 
+.title-with-badge {
+  display: flex;
+  flex-flow: row;
+  column-gap: 1rem;
+  justify-content: left;
+  align-items: center;
+}
+
+.premium-feature .badge {
+  border-radius: 4px;
+  text-transform: uppercase;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-weight: 700;
+  background: #0797E1;
+  color: #fff;
+  white-space: nowrap;
+}
+
 @media (min-width: 992px) {
   .premium-feature-text {
     padding-right: 3rem;
