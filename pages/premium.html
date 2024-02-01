@@ -23,12 +23,15 @@ unadblock=1
   <? include optimizely ?>
   <? include hotjar ?>
   <link rel="stylesheet" href="/css/pages/premium.css">
+  <link rel="stylesheet" href="/css/premium-promo-banner.css">
   <link rel="stylesheet" href="/premium/checkout.css">
   <script src="/js/payment/config/load.js"></script>
+  <script src="/js/settings.js"></script>
 </head>
 
 <main class="premium-page">
   <? include premium-restrictions ?>
+  <? include premium/cookie-promo-banner ?>
   <div class="premium-background-1">
     <div class="premium-container">
       <header class="premium-header">
@@ -180,7 +183,10 @@ unadblock=1
       <section class="premium-feature">
         <img alt="" src="/img/premium-cookie.svg" class="premium-feature-image" height="143px">
         <div class="premium-feature-text">
-          <h3>{{ benefit_1-heading Block cookie consent pop-ups }}</h3>
+          <div class="title-with-badge">
+            <span class="badge">{{ premium-banner-badge NEW! }}</span>
+            <h3>{{ benefit_1-heading Block cookie consent pop-ups }}</h3>
+          </div>
           <p>{{ benefit_1-paragraph Across the internet, websites are showing notifications that inform you about cookie usage on their sites. You can hide these annoying pop-ups with Premium access. }}</p>
         </div>
       </section>
