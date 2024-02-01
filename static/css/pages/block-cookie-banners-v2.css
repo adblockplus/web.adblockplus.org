@@ -227,19 +227,12 @@ body {
   align-items: center;
   min-width: 220px;
   justify-content: center;
+  gap: 0.375rem;
 }
 
 .premium-checkout-card-body-option__button .amount {
   font-size: 1.125rem;
   font-weight: 700;
-}
-
-html:not([dir="rtl"]) .premium-checkout-card-body-option__button .amount {
-  margin-right: 0.375rem;
-}
-
-html[dir="rtl"] .premium-checkout-card-body-option__button .amount {
-  margin-left: 0.375rem;
 }
 
 .premium-checkout-card-body-option__button[aria-pressed="true"] {
