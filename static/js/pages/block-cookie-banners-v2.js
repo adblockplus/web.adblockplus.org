@@ -258,7 +258,7 @@ document
   paymentSuccessParameters.set("premium-checkout__language", language);
   paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
   const planId = "ME";
-  const successURL = `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`;
+  const successURL = `https://accounts.adblockplus.org/${language}/premium?${paymentSuccessParameters.toString()}`;
   const paddleMetadata = {
     testmode: environment == "TEST",
     userid: userid,
