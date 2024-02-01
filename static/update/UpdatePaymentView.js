@@ -23,6 +23,7 @@ export default class UpdatePaymentView {
     this.defaultAmount = defaultAmount;
     this.submitting = false;
     this.rewardDuration = null;
+    this.frequencyHeaders = parent.querySelectorAll(".update-payment-frequency__header");
 
     parent.querySelector(".update-payment-currency").addEventListener("change", () => {
       this.events.fire("currency");
@@ -87,6 +88,8 @@ export default class UpdatePaymentView {
     this._renderAmounts("once");
     this._renderAmounts(defaultFrequency == "yearly" ? "yearly" : "monthly");
     parent.querySelector(`.update-payment-amount__radio[data-frequency="${defaultFrequency}"][value="${defaultAmount}"]`).click();
+    window.addEventListener("resize", () => this._onresize());
+    this._onresize();
   }
 
   get currency() {
@@ -199,6 +202,16 @@ export default class UpdatePaymentView {
       `<span class="duration">8</span>`,
       `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`
     );
+  }
+
+  _onresize() {
+    // CAUTION: Assumes two columns with two frequency headers
+    this.frequencyHeaders.forEach(frequencyHeader => frequencyHeader.style.height = "auto");    
+    if (this.frequencyHeaders[0].clientHeight > this.frequencyHeaders[1].clientHeight) {
+      this.frequencyHeaders[1].style.height = this.frequencyHeaders[0].clientHeight + "px";
+    } else {
+      this.frequencyHeaders[0].style.height = this.frequencyHeaders[1].clientHeight + "px";
+    }
   }
 
   _submit() {
