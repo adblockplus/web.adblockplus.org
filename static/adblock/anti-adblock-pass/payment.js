@@ -498,7 +498,7 @@ $(document).ready(function() {
         queryParams.set("premium-checkout__frequency", frequency);
         queryParams.set("premium-checkout__language", language);
         queryParams.set("premium-checkout__timestamp", clickTimestamp);  
-        return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
+        return `https://accounts.adblockplus.org/${language}/premium?${queryParams.toString()}`;
     }
 
     var ___AB_DROPDOWN_SHOW = false;
