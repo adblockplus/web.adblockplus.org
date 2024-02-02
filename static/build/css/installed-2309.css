@@ -861,7 +861,8 @@ a:hover, a:active {
 /* main block 5
  ******************************************************************************/
 
-.installed-main__block-5 {
+.installed-main__block-5,
+.installed-main__block-6 {
   font-size: 0.875rem;
   padding-block-start: 1rem;
 }
@@ -952,4 +953,9 @@ a:hover, a:active {
 .installed-footer__block-2__ul-1__li {
   display: block;
   margin: 0;
+}
+
+.restrict-premium .premium-only,
+html:not(.restrict-premium) .not-premium-only {
+  display: none !important;
 }
