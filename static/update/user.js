@@ -112,7 +112,6 @@ export function getPlainSource() {
     "update": "B",
     "update-fallback": "B",
     "anti-adblock-pass": "AAP",
-    "block-cookie-banners": "BCB",
     "premium": "ME",
     "block-cookie-banners": "BCB",
     "block-cookie-banners-v2": "BCBV",
