@@ -219,7 +219,7 @@ function checkout(product, currency, frequency, amount) {
     params.set("premium-checkout__frequency", frequency);
     params.set("premium-checkout__language", language);
     params.set("premium-checkout__timestamp", clickTimestamp);
-    paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
+    paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {
         "testmode": isTestmode,

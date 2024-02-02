@@ -188,7 +188,7 @@ function checkout(product, currency, frequency, amount) {
       params.set("premium-checkout__coupon", "SAVE50");
       amount = amount * .5;
     }
-    paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
+    paddleOptions.success = `https://accounts.adblockplus.org/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {
         "testmode": isTestmode,
