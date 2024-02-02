@@ -615,6 +615,16 @@ const PaddleCheckout = {
                     that._onErrorCb(error);
                 });
             }
+
+            localStorage.setItem("contributionInfo", JSON.stringify({
+              amount: amt_cents,
+              frequency: subType,
+              processor: "paddle",
+              currency: currency,
+              lang: page_locale,
+              source: document.documentElement.getAttribute("data-page"),
+              clickTs: Date.now()
+            }));
         });
     },
 };
