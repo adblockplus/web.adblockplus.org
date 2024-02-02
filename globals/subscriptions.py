@@ -290,7 +290,7 @@ subscriptions = {
         'faq': None,
         'forum': 'https://forums.lanik.us/',
         'homepage': 'https://easylist.to/',
-        'maintainer': 'fanboy, MonztA, Khrin',
+        'maintainer': 'fanboy, MonztA, Khrin, Yuki2718, PiQuark6046',
         'policy': 'https://easylist.to/pages/policy.html',
         'specialization': 'English',
         'supplemented': [
@@ -860,7 +860,7 @@ subscriptions = {
         'homepage': 'https://forums.lanik.us/viewforum.php?f=102',
         'maintainer': 'Lain_13, dimisa',
         'policy': None,
-        'specialization': '\u0440\u0443\u0441\u0441\u043a\u0438\u0439, \u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430',
+        'specialization': '\u0440\u0443\u0441\u0441\u043a\u0438\u0439, \u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430, \u004f\u02bb\u007a\u0062\u0065\u006b\u0063\u0068\u0061, \u049b\u0430\u0437\u0430\u049b\u0448\u0430',
         'supplemented': [],
         'supplements': ['EasyList'],
         'supplementsType': ['ads'],

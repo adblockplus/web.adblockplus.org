@@ -114,6 +114,8 @@ export function getPlainSource() {
     "anti-adblock-pass": "AAP",
     "block-cookie-banners": "BCB",
     "premium": "ME",
+    "block-cookie-banners": "BCB",
+    "block-cookie-banners-v2": "BCBV",
   }
   return pageIds[page] || "U";
 }
