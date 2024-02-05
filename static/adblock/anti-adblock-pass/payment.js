@@ -488,6 +488,8 @@ $(document).ready(function() {
     }
     const onSuccessURL = () => {
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
+        const clickTimestamp = Date.now();
+        const language = document.documentElement.lang;
         const page = document.documentElement.getAttribute("data-page");
         queryParams.set("premium-checkout__handoff", 1);
         queryParams.set("premium-checkout__flow", `${page}__purchase`);
@@ -495,6 +497,8 @@ $(document).ready(function() {
         queryParams.set("premium-checkout__currency", "USD");
         queryParams.set("premium-checkout__amount", amount * 100);
         queryParams.set("premium-checkout__frequency", frequency);
+        queryParams.set("premium-checkout__language", language);
+        queryParams.set("premium-checkout__timestamp", clickTimestamp);
         if (adblock.query.has("s")) queryParams.set("s", adblock.query.get("s"));
         return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
