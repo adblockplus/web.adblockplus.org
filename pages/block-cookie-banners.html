@@ -1,6 +1,8 @@
-title=Adblock Plus Premium Anti Adblock Pass
+title=Block Cookie Banners | Adblock Plus Premium
+description=Block annoying cookie banners that ask you to accept cookies while you browse the web. Get started with Adblock Plus Premium now!
+page=block-cookie-banners
 template=anti-adblock-pass
-robots=none
+robots=all
 unadblock=1
 
 <head>
@@ -12,6 +14,7 @@ unadblock=1
   <link rel="stylesheet" href="/css/pages/anti-adblock-pass.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" />
+  <script>path("payment", { shouldStoreContributionInfo: false });</script>
   <script src="/js/payment/config/load.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="/adblock/anti-adblock-pass/log.js"></script>
@@ -20,18 +23,6 @@ unadblock=1
 </head>
 
 <? include premium-restrictions ?>
-
-<div class="inline-tooltip" id="anti-adblock-pass-tooltip" style="width: 238px;">
-  <p>
-    {{ anti-adblock-pass__tip-1__paragraph-1 }}
-  </p>
-  <p>
-    {{ anti-adblock-pass__tip-1__paragraph-2 }}
-  </p>
-  <a href="https://flattr.com">
-    {{ shared__button__find-out-more }}
-  </a>
-</div>  
 
 <div class="logo-header">
   <div class="container logo-header__container">
@@ -42,10 +33,10 @@ unadblock=1
 <div class="section-1 section">
   <div class="container section-1__container">
     <h1 class="h1">
-      {{ anti-adblock-pass__section-1__heading }}
+      {{ block-cookie-banners__section-1__heading }}
     </h1>
     <p class="section-1__paragraph--lead">
-      {{ anti-adblock-pass__section-1__subheading }}
+      {{ block-cookie-banners__section-1__subheading }}
     </p>
     <div class="button__container section-1__button__container">
       <a href="#" class="button premium-cta">
@@ -59,18 +50,18 @@ unadblock=1
   <div class="container section-2__container">
     <div class="card--md">
       <header class="media-start--md section-2__media-start--md">
-        <img src="/adblock/anti-adblock-pass/adblock-wall-settings.svg" width="153" height="122" class="section__image section-2__image">
+        <img src="/img/premium-cookie.svg" class="section__image section-2__image" style="max-height: 112px;">
         <div>
           <h2 class="h2">
-            {{ anti-adblock-pass__section-2__heading }}
+            {{ block-cookie-banners__section-2__heading }}
           </h2>            
         </div>
       </header>
       <p>
-        {{ anti-adblock-pass__section-2__paragraph-1 }}
+        {{ block-cookie-banners__section-2__paragraph-1 }}
       </p>
       <p>
-        {{ anti-adblock-pass__section-2__paragraph-2 }}
+        {{ block-cookie-banners__section-2__paragraph-2 }}
       </p>
       <div class="button__container">
         <a href="#" class="button premium-cta">
@@ -85,20 +76,20 @@ unadblock=1
   <div class="container">
 
     <h2 class="h1 section-3__h1">
-      {{ anti-adblock-pass__section-3__heading }}
+      {{ block-cookie-banners__section-3__heading }}
     </h2>
 
     <div class="premium-plans">
       <article class="premium-plan">
         <h3 class="premium-plan__heading">
-          {{ anti-adblock-pass__plan-1__heading }}
+          {{ block-cookie-banners__plan-1__heading }}
         </h3>
         <p class="premium-plan__subheading" id="anti-adblock-pass__plan-1__subheading">
-          {{ anti-adblock-pass__plan-1__subheading }}
+          {{ block-cookie-banners__plan-1__subheading }}
         </p>
         <div class="premium-plan__button__container">
           <a class="button button--outlined button--disabled">
-            {{ anti-adblock-pass__plan-1__button }}
+            {{ block-cookie-banners__plan-1__button }}
           </a>  
         </div>
         <p class="premium-plan__feature-list-heading">
@@ -106,32 +97,32 @@ unadblock=1
         </p>
         <ul class="premium-plan__feature-list">
           <li>
-            {{ anti-adblock-pass__plan-1__item-1 }}
+            {{ block-cookie-banners__plan-1__item-1 }}
           </li>
           <li>
-            {{ anti-adblock-pass__plan-1__item-2 }}
+            {{ block-cookie-banners__plan-1__item-2 }}
           </li>
           <li class="premium-plan-list-muted">
-            {{ anti-adblock-pass__plan-1__item-3 }}
+            {{ block-cookie-banners__plan-1__item-3 }}
           </li>
           <li class="premium-plan-list-muted">
-            {{ anti-adblock-pass__plan-1__item-4 }}
+            {{ block-cookie-banners__plan-1__item-4 }}
           </li>
           <li class="premium-plan-list-muted">
-            {{ anti-adblock-pass__plan-1__item-5 }}
+            {{ block-cookie-banners__plan-1__item-5 }}
           </li>
           <li class="premium-plan-list-muted">
-            {{ anti-adblock-pass__plan-1__item-6 }}
+            {{ block-cookie-banners__plan-1__item-6 }}
           </li>
         </ul>
       </article><!-- .premium-plan -->
   
       <article class="premium-plan premium-plan--highlighted">
         <h3 class="premium-plan__heading">
-          {{ anti-adblock-pass__plan-2__heading }}
+          {{ block-cookie-banners__plan-2__heading }}
         </h3>
         <p class="premium-plan__subheading" id="anti-adblock-pass__plan-2__subheading">
-          {{ anti-adblock-pass__plan-2__subheading }}
+          {{ block-cookie-banners__plan-2__subheading }}
         </p>
         <div class="premium-plan__button__container">
           <a href="#" class="button premium-cta">
@@ -143,25 +134,25 @@ unadblock=1
         </p>
         <ul class="premium-plan__feature-list">
           <li>
-            {{ anti-adblock-pass__plan-2__item-1 }}
+            {{ block-cookie-banners__plan-2__item-1 }}
           </li>
           <li>
-            {{ anti-adblock-pass__plan-2__item-2 }}
+            {{ block-cookie-banners__plan-2__item-2 }}
           </li>
           <li>
-            {{ anti-adblock-pass__plan-2__item-3 }}
+            {{ block-cookie-banners__plan-2__item-3 }}
           </li>
           <li>
-            {{ anti-adblock-pass__plan-2__item-4 }}
+            {{ block-cookie-banners__plan-2__item-4 }}
           </li>
           <li>
-            {{ anti-adblock-pass__plan-2__item-5 }}
+            {{ block-cookie-banners__plan-2__item-5 }}
           </li>
           <li>
-            {{ anti-adblock-pass__plan-2__item-6 }}
+            {{ block-cookie-banners__plan-2__item-6 }}
           </li>
           <li>
-            {{ anti-adblock-pass__plan-2__item-7 }}
+            {{ block-cookie-banners__plan-2__item-7 }}
           </li>
         </ul>
       </article><!-- .premium-plan -->
@@ -175,19 +166,19 @@ unadblock=1
   <div class="container">
     <div class="card--md">
       <h2 class="section-4__heading h1">
-        {{ anti-adblock-pass__section-4__heading }}
+        {{ block-cookie-banners__section-4__heading }}
       </h2>
       
       <article class="section section-4__section media-start--md">
         <div class="section-4__media-start__start">
-          <img src="/adblock/anti-adblock-pass/adblock-wall-settings.svg" width="153" height="122" class="section__image section-4__section__image">
+          <img src="/img/premium-cookie.svg" width="106" height="112" class="section__image section-4__section__image">
         </div>
         <div>
           <h3 class="h2">
-            {{ anti-adblock-pass__section-4__article-1__heading }}
+            {{ block-cookie-banners__section-4__article-1__heading }}
           </h3>
           <p>
-            {{ anti-adblock-pass__section-4__article-1__paragraph-1 }}
+            {{ block-cookie-banners__section-4__article-1__paragraph-1 }}
           </p>  
         </div>
       </article>
@@ -198,10 +189,10 @@ unadblock=1
         </div>
         <div>
           <h3 class="h2">
-            {{ anti-adblock-pass__section-4__article-2__heading }}
+            {{ block-cookie-banners__section-4__article-2__heading }}
           </h3>
           <p>
-            {{ anti-adblock-pass__section-4__article-2__paragraph-1 }}
+            {{ block-cookie-banners__section-4__article-2__paragraph-1 }}
           </p>  
         </div>
       </article>
@@ -212,10 +203,10 @@ unadblock=1
         </div>
         <div>
           <h3 class="h2">
-            {{ anti-adblock-pass__section-4__article-3__heading }}
+            {{ block-cookie-banners__section-4__article-3__heading }}
           </h3>
           <p>
-            {{ anti-adblock-pass__section-4__article-3__paragraph-1 }}
+            {{ block-cookie-banners__section-4__article-3__paragraph-1 }}
           </p>  
         </div>
       </article>
@@ -248,4 +239,3 @@ unadblock=1
 <script src="/adblock/anti-adblock-pass/payment_libs.js"></script>
 <script src="/adblock/anti-adblock-pass/payment.js"></script>
 <script src="/adblock/anti-adblock-pass/index.js"></script>
-<script src="/adblock/anti-adblock-pass/inlineToolip.js"></script>

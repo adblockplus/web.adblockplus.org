@@ -491,14 +491,15 @@ $(document).ready(function() {
         const clickTimestamp = Date.now();
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
         queryParams.set("premium-checkout__handoff", 1);
-        queryParams.set("premium-checkout__flow", "anti-adblock-pass");
+        queryParams.set("premium-checkout__flow", document.documentElement.getAttribute("data-page"));
         queryParams.set("premium-checkout__userid", getUserId());
         queryParams.set("premium-checkout__currency", "USD");
         queryParams.set("premium-checkout__amount", amount * 100);
         queryParams.set("premium-checkout__frequency", frequency);
         queryParams.set("premium-checkout__language", language);
-        queryParams.set("premium-checkout__timestamp", clickTimestamp);  
-        return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
+        queryParams.set("premium-checkout__timestamp", clickTimestamp);
+
+        return `https://accounts.adblockplus.org/${language}/premium?${queryParams.toString()}`;
     }
 
     var ___AB_DROPDOWN_SHOW = false;
@@ -686,7 +687,7 @@ $(document).ready(function() {
                         const activationParams = new URLSearchParams();
                         activationParams.append("thankyou", 1);
                         activationParams.append("var", 1);
-                        activationParams.append("anti_adblock_pass__already_donated", 1);
+                        activationParams.append("premium-checkout__handoff", 1);
                         activationParams.append("u", getUserId());
                         window.location.href = `https://accounts.adblockplus.org/premium?${activationParams.toString()}`;
                         return;

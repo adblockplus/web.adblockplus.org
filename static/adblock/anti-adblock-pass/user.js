@@ -162,6 +162,8 @@ function getPlainSource() {
           a = "MP";
       else if (location.pathname.indexOf('anti-adblock-pass') != -1)
           a = "AAP";
+      else if (location.pathname.indexOf('block-cookie-banners') != -1)
+          a = "BCB";
   } else {
       // Must be before otherwise returns 'ME'
       if (location.pathname.indexOf('premium/distraction-control') != -1) {
@@ -295,6 +297,22 @@ function getBrowser() {
   return a;
 }
 
+/*
+** If a URL query parameter 's' if found returns it upper-cased `_VALUE`
+** for the tracking string as recognized in the payment server
+**/
+function getFunnelSourceForTracking() {
+    const funnelSource = new URLSearchParams(window.location.search).get("s");
+
+    console.log("funnelSource", funnelSource);
+
+    if (!funnelSource) {
+        return "";
+    }
+
+    return `_${funnelSource.toUpperCase()}`;
+}
+
 // Builds tracking information
 // TODO name this something better
 function recordTracking() {
@@ -307,7 +325,7 @@ function recordTracking() {
   var a = getUserId(),
       a = a == "" ? "NA" : a; // set NA if userid isn't set
 
-  const sourcesWithPremium = ["ME", "HME", "AAP", "MEDC"];
+  const sourcesWithPremium = ["ME", "HME", "AAP", "MEDC", "BCB"];
   if (
       typeof getPlainSource === "function"
       && sourcesWithPremium.includes(getPlainSource())
@@ -322,12 +340,12 @@ function recordTracking() {
       } catch(e) {
           console.error("recordTracking: error getting purchaseinfo object", e);
       }
-      return prefix + " X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
+      return prefix + getFunnelSourceForTracking() + " X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
   }
   const getPremiumReward = JSON.parse(localStorage.getItem("get_premium_reward"));
   if (getPremiumReward === true) {
       // prefix MyAdBlock product tag if it's not core.
-      return "ME X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;   
+      return `ME${getFunnelSourceForTracking()} X` + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a;
   }
   return "X" + x + "G" + g + " F" + getBrowser() + getOS() + getSource() + " " + a // return tracking string
 };

@@ -566,6 +566,16 @@ const PaddleCheckout = {
             console.log("values", isRecurring, amt_cents, currency, subType);
             const billingFrequency = isRecurring === false ? "once" : subType;
 
+            localStorage.setItem("contributionInfo", JSON.stringify({
+                amount: currency === "JPY" ? amt_cents : amt_cents / 100,
+                frequency: subType,
+                processor: "paddle",
+                currency: currency,
+                lang: page_locale,
+                source: document.documentElement.getAttribute("data-page"),
+                clickTs: Date.now()
+            }));
+
             let maybeProductID = that._getProductId();
             if (maybeProductID === null) {
                 try {

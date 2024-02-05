@@ -212,3 +212,14 @@ RewriteRule (^|\/)careers$ "https://adblock.pinpointhq.com/en" [NC,R,L]
 
 # TODO: investigate if we can rewrite /getSubscription into a different
 # virtual host
+
+<FilesMatch "^(.*)settings.js(.*)">
+  GeoIPEnable On
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(DE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(DE)$
+  RewriteRule .* /js/testing/settings-restricted.js [L]
+
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR)$
+  RewriteRule .* /js/testing/settings-restricted.js [L]
+</FilesMatch>
