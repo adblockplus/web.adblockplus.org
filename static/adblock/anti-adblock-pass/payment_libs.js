@@ -567,7 +567,7 @@ const PaddleCheckout = {
             const billingFrequency = isRecurring === false ? "once" : subType;
 
             localStorage.setItem("contributionInfo", JSON.stringify({
-                amount: currency === "JPY" ? amt_cents : amount / 100,
+                amount: currency === "JPY" ? amt_cents : amt_cents / 100,
                 frequency: subType,
                 processor: "paddle",
                 currency: currency,
