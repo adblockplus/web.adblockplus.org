@@ -487,19 +487,15 @@ $(document).ready(function() {
         queryParams.append("var", 1);
     }
     const onSuccessURL = () => {
-        const language = document.documentElement.lang || navigator.language;
-        const clickTimestamp = Date.now();
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
+        const page = document.documentElement.getAttribute("data-page");
         queryParams.set("premium-checkout__handoff", 1);
-        queryParams.set("premium-checkout__flow", document.documentElement.getAttribute("data-page"));
+        queryParams.set("premium-checkout__flow", `${page}__purchase`);
         queryParams.set("premium-checkout__userid", getUserId());
         queryParams.set("premium-checkout__currency", "USD");
         queryParams.set("premium-checkout__amount", amount * 100);
         queryParams.set("premium-checkout__frequency", frequency);
-        queryParams.set("premium-checkout__language", language);
-        queryParams.set("premium-checkout__timestamp", clickTimestamp);
-
-        return `https://accounts.adblockplus.org/${language}/premium?${queryParams.toString()}`;
+        return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
 
     var ___AB_DROPDOWN_SHOW = false;
