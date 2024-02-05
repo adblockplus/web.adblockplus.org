@@ -495,6 +495,7 @@ $(document).ready(function() {
         queryParams.set("premium-checkout__currency", "USD");
         queryParams.set("premium-checkout__amount", amount * 100);
         queryParams.set("premium-checkout__frequency", frequency);
+        if (adblock.query.has("s")) queryParams.set("s", adblock.query.get("s"));
         return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
 
