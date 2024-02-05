@@ -22,6 +22,7 @@ subscriptions = {
         'Liste FR',
         'ROList',
         'RU AdList',
+        'Turkish Filters',
         '280blocker for japanese mobile site',
         'ABP Japanese Filters',
         'AdBlockFarsi',
@@ -314,6 +315,7 @@ subscriptions = {
             'Liste FR',
             'ROList',
             'RU AdList',
+            'Turkish Filters',
             'Colombian filters by yecarrillo',
             'Icelandic ABP List',
             'hufilter',
@@ -907,6 +909,27 @@ subscriptions = {
         'type': 'malware',
         'variants': [['Spam404',
                      'https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt'
+                     , False]],
+        },
+    'Turkish Filters': {
+        'blog': None,
+        'changelog': 'https://gitlab.com/eyeo/filterlists/turkishfilters/-/commits/main/',
+        'contact': None,
+        'deprecated': False,
+        'faq': None,
+        'forum': 'https://gitlab.com/eyeo/filterlists/turkishfilters/-/issues',
+        'homepage': 'https://gitlab.com/eyeo/filterlists/turkishfilters',
+        'maintainer': 'eyeo GmbH',
+        'policy': None,
+        'specialization': '\u0054\u00fc\u0072\u006b\u00e7\u0065',
+        'supplemented': [],
+        'supplements': ['EasyList'],
+        'supplementsType': ['ads'],
+        'type': 'ads',
+        'variants': [['Turkish Filters+EasyList',
+                     'https://easylist-downloads.adblockplus.org/turkish-filters+easylist.txt'
+                     , True], ['Turkish Filters',
+                     'https://easylist-downloads.adblockplus.org/turkish-filters.txt'
                      , False]],
         },
     'Xfiles': {
