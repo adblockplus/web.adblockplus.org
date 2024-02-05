@@ -1,7 +1,14 @@
 <script>(function () {
 
 // Temporarily disable these features outside of select pages until Content-Security-Policy changes
-if (['premium', 'manage', 'deal', 'anti-adblock-pass'].indexOf(document.documentElement.dataset.page) == -1) return;
+if ([
+  'premium', 
+  'manage', 
+  'deal', 
+  'anti-adblock-pass', 
+  'block-cookie-banners', 
+  'block-cookie-banners-v2'
+].indexOf(document.documentElement.dataset.page) == -1) return;
 
 var accessTime = parseInt(performance.now(), 10);
 var eyeo = window.eyeo = (window.eyeo || {});
@@ -114,7 +121,13 @@ eyeo.browser =
   : /safari|applewebkit/i.test(userAgent) ? 'safari'
   : 'other';
 
+var CODE_FORMAT = /^[\w-]+$/g;
+var trafficSource = adblock.query.get("s") || "u";
+if (false == CODE_FORMAT.test(trafficSource)) trafficSource = "u";
+adblock.settings.trafficSource = trafficSource;
+
 log('access', {
+  trafficSource: trafficSource,
   pageName: document.documentElement.dataset.page,
   pageLanguage: document.documentElement.lang,
   browserLanguage: navigator.language,
