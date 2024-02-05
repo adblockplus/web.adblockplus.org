@@ -685,10 +685,12 @@ $(document).ready(function() {
                     if (msg.success === true) {
                         // FIXME: Temporary solution for the anti-adblock-pass page since ABP won't activate from anywhere other than /premium
                         const activationParams = new URLSearchParams();
-                        activationParams.append("thankyou", 1);
-                        activationParams.append("var", 1);
+                        const page = document.documentElement.getAttribute("data-page");
                         activationParams.append("premium-checkout__handoff", 1);
-                        activationParams.append("u", getUserId());
+                        activationParams.append("premium-checkout__flow", `${page}__already-contributed`);
+                        activationParams.append("premium-checkout__email", Page.EmailAddressInput.val());
+                        activationParams.append("premium-checkout__userid", getUserId());
+                        if (adblock.query.has("s")) activationParams.append("s", adblock.query.get("s"));
                         window.location.href = `https://accounts.adblockplus.org/premium?${activationParams.toString()}`;
                         return;
                         // activateExtension(
