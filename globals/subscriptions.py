@@ -16,6 +16,7 @@ subscriptions = {
         'EasyList Portuguese',
         'EasyList Spanish',
         'IndianList',
+        'Japanese Filters',
         'KoreanList',
         'Latvian List',
         'Liste AR',
@@ -310,6 +311,7 @@ subscriptions = {
             'EasyList Portuguese',
             'EasyList Spanish',
             'IndianList',
+            'Japanese Filters',
             'KoreanList',
             'Latvian List',
             'Liste FR',
@@ -708,6 +710,27 @@ subscriptions = {
                      'https://easylist-downloads.adblockplus.org/indianlist+easylist.txt'
                      , True], ['IndianList',
                      'https://easylist-downloads.adblockplus.org/indianlist.txt'
+                     , False]],
+        },
+    'Japanese Filters': {
+        'blog': None,
+        'changelog': 'https://gitlab.com/eyeo/filterlists/japanesefilters/-/commits/main/',
+        'contact': None,
+        'deprecated': False,
+        'faq': None,
+        'forum': 'https://gitlab.com/eyeo/filterlists/japanesefilters/-/issues',
+        'homepage': 'https://gitlab.com/eyeo/filterlists/japanesefilters',
+        'maintainer': 'eyeo GmbH',
+        'policy': None,
+        'specialization': '\u65e5\u672c\u8a9e',
+        'supplemented': [],
+        'supplements': ['EasyList'],
+        'supplementsType': ['ads'],
+        'type': 'ads',
+        'variants': [['Japanese Filters+EasyList',
+                     'https://easylist-downloads.adblockplus.org/japanese-filters+easylist.txt'
+                     , True], ['Japanese Filters',
+                     'https://easylist-downloads.adblockplus.org/japanese-filters.txt'
                      , False]],
         },
     'KoreanList': {
