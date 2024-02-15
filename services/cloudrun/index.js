@@ -73,7 +73,7 @@ app.get('/update-function/:language?', (req, res) => {
   "NC","BB","MD","MC","CI","MU","SN","MG","MQ","GF","AW","NA","LC","GA",
   "AZ","FO","TZ","GD","TG","BW","YT","BF","TJ","CM","GY","MZ","GG","VC",
   ].includes(countryCode)) {
-    res.redirect(302, path.join("/", language, "update") + query);
+    res.redirect(302, path.join("/", language, "update-fallback") + query);
   } else {
     res.redirect(302, path.join("/", language, "educational") + query)
   }
