@@ -673,7 +673,7 @@ subscriptions = {
         'type': 'ads',
         'variants': [['Global Filters+EasyList',
                      'https://easylist-downloads.adblockplus.org/global-filters+easylist.txt'
-                     , True], ['Japanese Filters',
+                     , True], ['Global Filters',
                      'https://easylist-downloads.adblockplus.org/global-filters.txt'
                      , False]],
         },
