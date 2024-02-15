@@ -15,6 +15,7 @@ subscriptions = {
         'EasyList Polish',
         'EasyList Portuguese',
         'EasyList Spanish',
+        'Global Filters',
         'IndianList',
         'Japanese Filters',
         'KoreanList',
@@ -310,6 +311,7 @@ subscriptions = {
             'EasyList Polish',
             'EasyList Portuguese',
             'EasyList Spanish',
+            'Global Filters',
             'IndianList',
             'Japanese Filters',
             'KoreanList',
@@ -652,6 +654,27 @@ subscriptions = {
         'type': 'social',
         'variants': [["Fanboy's Social Blocking List",
                      'https://easylist-downloads.adblockplus.org/fanboy-social.txt'
+                     , False]],
+        },
+    'Global Filters': {
+        'blog': None,
+        'changelog': 'https://gitlab.com/eyeo/filterlists/globalfilters/-/commits/main/',
+        'contact': None,
+        'deprecated': False,
+        'faq': None,
+        'forum': 'https://gitlab.com/eyeo/filterlists/globalfilters/-/issues',
+        'homepage': 'https://gitlab.com/eyeo/filterlists/globalfilters',
+        'maintainer': 'eyeo GmbH',
+        'policy': None,
+        'specialization': '\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22, \u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae, \u0053\u006c\u006f\u0076\u0065\u006e\u0161\u010d\u0069\u006e\u0061, \u0048\u0072\u0076\u0061\u0074\u0073\u006b\u0069, \u0421\u0440\u043f\u0441\u043a\u0438, \u0042\u006f\u0073\u0061\u006e\u0073\u006b\u0069',
+        'supplemented': [],
+        'supplements': ['EasyList'],
+        'supplementsType': ['ads'],
+        'type': 'ads',
+        'variants': [['Global Filters+EasyList',
+                     'https://easylist-downloads.adblockplus.org/global-filters+easylist.txt'
+                     , True], ['Japanese Filters',
+                     'https://easylist-downloads.adblockplus.org/global-filters.txt'
                      , False]],
         },
     "I don't care about cookies": {
