@@ -63,10 +63,19 @@ app.get('/currency', (req, res) => {
 });
 
 app.get('/update-function/:language?', (req, res) => {
-  const language = req.params.language || '';
-  const page = 'update-fallback';
+  const countryCode = req.headers['x-country-code'];
   const query = getQueryString(req);
-  res.redirect(302, path.join('/', language, page) + query);
+  if (["US","GB","CA","FR","DE","NL","IT","ES","BE","SE","CH","MX","IL",
+  "DK","IE","AT","NO","CZ","GR","FI","CL","PT","HU","SK","RO","ZA","SA",
+  "SI","EE","UA","IS","LV","BG","HR","PR","LT","LU","UY","CR","CY","DO",
+  "MT","RE","PA","KE","BM","GT","JM","PY","SV","TT","GE","GP","VG","CW",
+  "NC","BB","MD","MC","CI","MU","SN","MG","MQ","GF","AW","NA","LC","GA",
+  "AZ","FO","TZ","GD","TG","BW","YT","BF","TJ","CM","GY","MZ","GG","VC",
+  ].includes(countryCode)) {
+    res.redirect(302, path.join("/", language, "update") + query);
+  } else {
+    res.redirect(302, path.join("/", language, "educational") + query)
+  }
 });
 
 app.get('/installed-function/:language?', (req, res) => {

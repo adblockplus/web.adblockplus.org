@@ -213,6 +213,12 @@
         "source": "/js/payment/config/load.js",
         "destination": "/payment-config-function",
         "type": 301
+      },
+
+      {
+        "source": "(?i)^/update/?$",
+        "destination": "/update-function",
+        "type": 302
       }
     ],
     "rewrites": [
