@@ -64,6 +64,7 @@ app.get('/currency', (req, res) => {
 
 app.get('/update-function/:language?', (req, res) => {
   const countryCode = req.headers['x-country-code'];
+  const language = req.params.language || 'en';
   const query = getQueryString(req);
   if (["US","GB","CA","FR","DE","NL","IT","ES","BE","SE","CH","MX","IL",
   "DK","IE","AT","NO","CZ","GR","FI","CL","PT","HU","SK","RO","ZA","SA",
