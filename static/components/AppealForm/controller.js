@@ -139,3 +139,50 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
   }
   
 });
+
+/* temporarily adding the update premium reward feature to installed for testing
+ ******************************************************************************/
+
+const upsellPremium = adblock.config.upsellPremium = () => {
+  adblock.config.upsellPremium = true;
+  eyeo.payment.productId = "ME";
+  eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
+  document.querySelector(".update-payment-reward").removeAttribute("hidden");
+}
+
+if (adblock.query.has("upsellPremium")) upsellPremium();
+
+const rewardController = adblock.runtime.rewardController = {};
+
+const getReward = rewardController.getReward = (currency, frequency, amount) => {
+  if (frequency == "once") {
+    const amountNumerator = parseInt(amount, 10);
+    const onceDenominator = parseInt(Object.keys(paddleConfig.products[currency].once)[2], 10);
+    const monthlyDenominator = parseInt(Object.keys(paddleConfig.products[currency].monthly)[0], 10);
+    if (amountNumerator < onceDenominator) {
+      return Math.floor(amountNumerator / monthlyDenominator);
+    } else {
+      return 12 * Math.floor(amountNumerator / onceDenominator);
+    }
+  }
+}
+
+const updateReward = rewardController.renderReward = () => {
+  if (!adblock.config.upsellPremium) return;
+  const { currency, frequency, product, amount } = appealForm.state();
+  const frequencySuffixes = {
+    "once": "",
+    "monthly": adblock.strings["suffix__monthly"],
+    "yearly": adblock.strings["suffix__yearly"],
+  };
+  const plan = "ME";
+  const planName = adblock.strings["adblock__premium"];
+  const suffix = frequencySuffixes[frequency];
+  const durationMonths = getReward(currency, frequency, amount);
+  appealForm.setRewardDuration(currency, amount, durationMonths);
+  localStorage.setItem("planinfo", JSON.stringify({ durationMonths, plan }));
+  localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
+}
+
+appealForm.events.on(AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
+document.addEventListener("DOMContentLoaded", updateReward);

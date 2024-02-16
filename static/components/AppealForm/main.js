@@ -193,6 +193,23 @@ class AppealForm {
       field.disabled = false;
     });
   }
+
+  // temporarily adding the update premium reward feature to installed for testing
+  setRewardDuration(currency, amount, duration) {
+    let baseTranslation;
+    if (duration > 12) {
+      baseTranslation = adblock.strings["update-payment-reward__n-years"];
+    } else if (duration == 12) {
+      baseTranslation = adblock.strings["update-payment-reward__1-year"];
+    } else if (duration > 1) {
+      baseTranslation = adblock.strings["update-payment-reward__n-months"];
+    } else if (duration == 1) {
+      baseTranslation = adblock.strings["update-payment-reward__1-month"];
+    } else {
+      baseTranslation = adblock.strings["update-payment-reward"];
+    }
+    document.querySelector(".update-payment-reward__text").innerHTML = baseTranslation.replace(`<span class="amount">35.00</span>`, `<span class="amount">${(0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarString)(currency, amount)}</span>`).replace(`<span class="product">Adblock Plus Premium</span>`, `<span class="product">${adblock.strings["product__premium"]}</span>`).replace(`<span class="duration">8</span>`, `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`);
+  }
 }
 function _updateAmounts2(currency) {
   let i = 0;
@@ -247,6 +264,7 @@ function _onAmountFocusin2(event) {
     _classPrivateMethodGet(this, _getCustomInputRadio, _getCustomInputRadio2).call(this, event.target).checked = true;
     // Handle possible minimum amount error when custom amount input re-selected already has a value below the minimum
     _classPrivateMethodGet(this, _handleMinimumAmountError, _handleMinimumAmountError2).call(this, event.target);
+    this.events.fire(AppealForm.EVENTS.AMOUNT_CHANGE);
   }
 }
 function _onAmountInput2(event) {
@@ -1057,6 +1075,62 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     }));
   }
 });
+
+/* temporarily adding the update premium reward feature to installed for testing
+ ******************************************************************************/
+
+const upsellPremium = adblock.config.upsellPremium = () => {
+  adblock.config.upsellPremium = true;
+  eyeo.payment.productId = "ME";
+  eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
+  document.querySelector(".update-payment-reward").removeAttribute("hidden");
+};
+if (adblock.query.has("upsellPremium")) upsellPremium();
+const rewardController = adblock.runtime.rewardController = {};
+const getReward = rewardController.getReward = (currency, frequency, amount) => {
+  if (frequency == "once") {
+    const amountNumerator = parseInt(amount, 10);
+    const onceDenominator = parseInt(Object.keys(paddleConfig.products[currency].once)[2], 10);
+    const monthlyDenominator = parseInt(Object.keys(paddleConfig.products[currency].monthly)[0], 10);
+    if (amountNumerator < onceDenominator) {
+      return Math.floor(amountNumerator / monthlyDenominator);
+    } else {
+      return 12 * Math.floor(amountNumerator / onceDenominator);
+    }
+  }
+};
+const updateReward = rewardController.renderReward = () => {
+  if (!adblock.config.upsellPremium) return;
+  const {
+    currency,
+    frequency,
+    product,
+    amount
+  } = appealForm.state();
+  const frequencySuffixes = {
+    "once": "",
+    "monthly": adblock.strings["suffix__monthly"],
+    "yearly": adblock.strings["suffix__yearly"]
+  };
+  const plan = "ME";
+  const planName = adblock.strings["adblock__premium"];
+  const suffix = frequencySuffixes[frequency];
+  const durationMonths = getReward(currency, frequency, amount);
+  appealForm.setRewardDuration(currency, amount, durationMonths);
+  localStorage.setItem("planinfo", JSON.stringify({
+    durationMonths,
+    plan
+  }));
+  localStorage.setItem("purchaseinfo", JSON.stringify({
+    amount,
+    frequency,
+    plan,
+    suffix,
+    planName
+  }));
+};
+appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
+document.addEventListener("DOMContentLoaded", updateReward);
 })();
 
 /******/ })()

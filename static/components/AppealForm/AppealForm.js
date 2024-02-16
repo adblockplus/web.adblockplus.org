@@ -158,6 +158,7 @@ export class AppealForm {
       this.#getCustomInputRadio(event.target).checked = true;
       // Handle possible minimum amount error when custom amount input re-selected already has a value below the minimum
       this.#handleMinimumAmountError(event.target);
+      this.events.fire(AppealForm.EVENTS.AMOUNT_CHANGE);
     }
   }
 
@@ -216,6 +217,35 @@ export class AppealForm {
   enable() {
     this.#parentElement.classList.remove("appeal-form--disabled");
     this.#parentElement.querySelectorAll("input, button").forEach(field => { field.disabled = false; });
+  }
+
+  // temporarily adding the update premium reward feature to installed for testing
+  setRewardDuration(currency, amount, duration) {
+    let baseTranslation;
+    if (duration > 12) {
+      baseTranslation = adblock.strings["update-payment-reward__n-years"];
+    } else if (duration == 12) {
+      baseTranslation = adblock.strings["update-payment-reward__1-year"];
+    } else if (duration > 1) {
+      baseTranslation = adblock.strings["update-payment-reward__n-months"];
+    } else if (duration == 1) {
+      baseTranslation = adblock.strings["update-payment-reward__1-month"];
+    } else {
+      baseTranslation = adblock.strings["update-payment-reward"];
+    }
+    document.querySelector(".update-payment-reward__text").innerHTML = baseTranslation
+    .replace(
+      `<span class="amount">35.00</span>`, 
+      `<span class="amount">${toDollarString(currency, amount)}</span>`
+    )
+    .replace(
+      `<span class="product">Adblock Plus Premium</span>`, 
+      `<span class="product">${adblock.strings["product__premium"]}</span>`
+    )
+    .replace(
+      `<span class="duration">8</span>`,
+      `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`
+    );
   }
 
 }
