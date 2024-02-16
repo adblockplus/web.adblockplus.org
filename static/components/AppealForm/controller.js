@@ -144,7 +144,6 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
  ******************************************************************************/
 
 const upsellPremium = adblock.config.upsellPremium = () => {
-  adblock.config.upsellPremium = true;
   eyeo.payment.productId = "ME";
   eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
   document.querySelector(".update-payment-reward").removeAttribute("hidden");
@@ -168,7 +167,7 @@ const getReward = rewardController.getReward = (currency, frequency, amount) => 
 }
 
 const updateReward = rewardController.renderReward = () => {
-  if (!adblock.config.upsellPremium) return;
+  if (eyeo.payment.productId != "ME") return;
   const { currency, frequency, product, amount } = appealForm.state();
   const frequencySuffixes = {
     "once": "",

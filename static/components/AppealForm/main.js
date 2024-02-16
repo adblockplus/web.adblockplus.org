@@ -1080,7 +1080,6 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
  ******************************************************************************/
 
 const upsellPremium = adblock.config.upsellPremium = () => {
-  adblock.config.upsellPremium = true;
   eyeo.payment.productId = "ME";
   eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
   document.querySelector(".update-payment-reward").removeAttribute("hidden");
@@ -1100,7 +1099,7 @@ const getReward = rewardController.getReward = (currency, frequency, amount) => 
   }
 };
 const updateReward = rewardController.renderReward = () => {
-  if (!adblock.config.upsellPremium) return;
+  if (eyeo.payment.productId != "ME") return;
   const {
     currency,
     frequency,
