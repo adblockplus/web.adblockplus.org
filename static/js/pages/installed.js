@@ -1,9 +1,9 @@
 'use strict';
 
 const installedParams = new URLSearchParams(window.location.search);
-const currentBrowser = installedParams.get('ap');
+const currentBrowser = installedParams.get('ap') || "";
 
-if (currentBrowser.toLowerCase() === "firefox") {
+if (currentBrowser.toLowerCase() == "firefox") {
   const version = installedParams.get('av');
 
   // List of release versions here: https://blog.adblockplus.org/releases
