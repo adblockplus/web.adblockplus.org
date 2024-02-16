@@ -1547,24 +1547,30 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
 /* temporarily adding the update premium reward feature to installed for testing
  ******************************************************************************/
 
-const upsellPremium = adblock.config.upsellPremium = () => {
+adblock.config.upsellPremium = () => {
   eyeo.payment.productId = "ME";
   eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
   document.querySelector(".update-payment-reward").removeAttribute("hidden");
 };
-if (adblock.query.has("upsellPremium")) upsellPremium();
+if (adblock.query.has("upsellPremium")) adblock.config.upsellPremium();
 const rewardController = adblock.runtime.rewardController = {};
 const getReward = rewardController.getReward = (currency, frequency, amount) => {
+  let plan = "ME";
+  let months;
   if (frequency == "once") {
     const amountNumerator = parseInt(amount, 10);
     const onceDenominator = parseInt(Object.keys(paddleConfig.products[currency].once)[2], 10);
     const monthlyDenominator = parseInt(Object.keys(paddleConfig.products[currency].monthly)[0], 10);
     if (amountNumerator < onceDenominator) {
-      return Math.floor(amountNumerator / monthlyDenominator);
+      months = Math.floor(amountNumerator / monthlyDenominator);
     } else {
-      return 12 * Math.floor(amountNumerator / onceDenominator);
+      months = 12 * Math.floor(amountNumerator / onceDenominator);
     }
   }
+  return {
+    plan,
+    months
+  };
 };
 const updateReward = rewardController.renderReward = () => {
   if (eyeo.payment.productId != "ME") return;
@@ -1579,13 +1585,15 @@ const updateReward = rewardController.renderReward = () => {
     "monthly": adblock.strings["suffix__monthly"],
     "yearly": adblock.strings["suffix__yearly"]
   };
-  const plan = "ME";
+  const {
+    plan,
+    months
+  } = getReward(currency, frequency, amount);
   const planName = adblock.strings["adblock__premium"];
   const suffix = frequencySuffixes[frequency];
-  const durationMonths = getReward(currency, frequency, amount);
-  appealForm.setRewardDuration(currency, amount, durationMonths);
+  appealForm.setRewardDuration(currency, amount, months);
   localStorage.setItem("planinfo", JSON.stringify({
-    durationMonths,
+    durationMonths: months,
     plan
   }));
   localStorage.setItem("purchaseinfo", JSON.stringify({
