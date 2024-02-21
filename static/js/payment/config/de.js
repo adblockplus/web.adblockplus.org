@@ -1,4 +1,6 @@
 path("payment.config", {
   defaultCurrency: 'EUR'
 });
-document.documentElement.classList.add('de');
+if (!adblock.query.has("legal")) {
+  document.documentElement.classList.add('de');
+}
