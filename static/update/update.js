@@ -664,6 +664,7 @@ function onPaymentSubmit(view, options) {
   paymentSuccessParameters.set("premium-checkout__frequency", frequency);
   paymentSuccessParameters.set("premium-checkout__language", language);
   paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
+  if (adblock.query.has("legal")) paymentSuccessParameters.set("legal", 1);
 
   const productId = adblock.settings.restrictPremium ? "" : "ME";
   const successURL = adblock.settings.restrictPremium
