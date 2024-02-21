@@ -5,7 +5,6 @@
     || window.location.hostname == "127.0.0.1"
     || window.location.hostname.endsWith("web.app")
     || window.location.hostname.endsWith("eyeo.it")
-    || adblock.query.has("legal")
   )) {
     window.location.href = window.location.href.replace(window.location.hostname, "accounts.adblockplus.org");
   }
