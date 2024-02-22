@@ -88,52 +88,6 @@ const section = document.querySelector(".premium-checkout");
 const card = document.querySelector(".premium-checkout-card--interactive");
 
 ////////////////////////////////////////////////////////////////////////////////
-// CURRENCIES
-////////////////////////////////////////////////////////////////////////////////
-
-const $currencies = document.querySelector(".premium-checkout-header__select");
-
-// Populate currencies
-for (const currency in products) {
-  const $currency = document.createElement("option");
-  $currency.textContent = currency;
-  $currencies.append($currency);
-}
-
-function getCurrencySymbol(currencyCode) {
-  const a = 0;
-  a.toLocaleString("en", {
-    style:"currency",
-    currency: currencyCode
-  }).replace("0.00", "")
-}
-// Update option amounts on currency change
-function onCurrencyChange() {
-  const currency = $currencies.value;
-  const currencySymbol = getCurrencySymbol(currency);
-
-  document
-    .querySelectorAll(".premium-plan-price-currency")
-    .forEach(element => element.innerText = currencySymbol);
-
-  document
-  .querySelectorAll(".premium-checkout-purchase-price__amount")
-  .forEach(element => {
-    const frequency = element.closest("button").value;
-    const amount = Object.keys(products[currency][frequency])[0];
-    element.textContent = getDollarString(currency, amount);
-  });
-}
-
-$currencies.addEventListener("change", onCurrencyChange);
-
-// Set default currency
-if (adblock.settings.currency) {
-  $currencies.value = adblock.settings.currency;
-  onCurrencyChange();
-}
-
-////////////////////////////////////////////////////////////////////////////////
 // UTILITIES
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -226,10 +180,18 @@ function generateTrackingId() {
   return `ME X0G0 F${getBrowser()}O${getOS()}SME ${userid}`;
 }
 
+// Return symbol like '$' for given currency code like 'USD'
+function getCurrencySymbol(currencyCode) {
+  const a = 0;
+  return a.toLocaleString("en", {
+    style:"currency",
+    currency: currencyCode
+  }).replace("0.00", "")
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // PADDLE SETUP
 ////////////////////////////////////////////////////////////////////////////////
-
 
 Paddle.Setup({
   vendor: paddleId,
@@ -784,3 +746,47 @@ async function initialize() {
 }
 
 initialize();
+
+////////////////////////////////////////////////////////////////////////////////
+// CURRENCIES
+// Due to how pages are generated we always end up with 2 dropdown so we need
+// to select the dropdown actually shown to the users in the generated "card"
+////////////////////////////////////////////////////////////////////////////////
+
+const $currencies = card.querySelector('.premium-checkout-header__select')
+
+// Populate currencies
+for (const currency in products) {
+  const $currency = document.createElement("option");
+  $currency.textContent = currency;
+  $currencies.append($currency);
+}
+
+// Update option amounts on currency change
+function onCurrencyChange() {
+  console.log("onCurrencyChange");
+
+  const currency = $currencies.value;
+  const currencySymbol = getCurrencySymbol(currency);
+
+  document
+    .querySelectorAll(".premium-plan-price-currency")
+    .forEach(element => element.innerText = currencySymbol);
+
+  document
+  .querySelectorAll(".premium-checkout-purchase-price__amount")
+  .forEach(element => {
+    const frequency = element.closest("button").value;
+    const amount = Object.keys(products[currency][frequency])[0];
+    element.textContent = getDollarString(currency, amount);
+  });
+}
+
+$currencies.addEventListener("change", onCurrencyChange);
+
+// Set default currency
+console.log("adblock.settings.currency", adblock.settings.currency);
+if (adblock.settings.currency) {
+  $currencies.value = adblock.settings.currency;
+  onCurrencyChange();
+}
