@@ -100,15 +100,28 @@ for (const currency in products) {
   $currencies.append($currency);
 }
 
+function getCurrencySymbol(currencyCode) {
+  const a = 0;
+  a.toLocaleString("en", {
+    style:"currency",
+    currency: currencyCode
+  }).replace("0.00", "")
+}
 // Update option amounts on currency change
 function onCurrencyChange() {
   const currency = $currencies.value;
+  const currencySymbol = getCurrencySymbol(currency);
+
   document
-  .querySelectorAll(".premium-checkout-card-body-option__button")
-  .forEach(button => {
-    const frequency = button.dataset.frequency;
+    .querySelectorAll(".premium-plan-price-currency")
+    .forEach(element => element.innerText = currencySymbol);
+
+  document
+  .querySelectorAll(".premium-checkout-purchase-price__amount")
+  .forEach(element => {
+    const frequency = element.closest("button").value;
     const amount = Object.keys(products[currency][frequency])[0];
-    button.querySelector(".amount").textContent = getDollarString(currency, amount);
+    element.textContent = getDollarString(currency, amount);
   });
 }
 
