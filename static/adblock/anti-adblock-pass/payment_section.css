@@ -52,6 +52,12 @@ section.top-level {
     width: 95%;
     justify-content: space-between;
 }
+.premium-checkout-header__select {
+    display: block;
+    height: fit-content;
+    border-radius: 4px;
+    border: 1px solid #CDCDCD;
+}
 @media (min-width: 1024px) {
     #choose-payment-type {
         width: 50%;

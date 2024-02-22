@@ -7,19 +7,51 @@ const CHECKOUT_TITLE = "Adblock Plus Premium";
 const REQUEST_TIMEOUT = parseInt(adblock.query.get("premium-checkout__request-timeout"), 10) || 15000;
 const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 6000;
 
-const PADDLE = {
-  test: {
-    vendorId: 11004,
-    monthly: { amount: 200, productId: 55427 },
-    yearly: { amount: 2000, productId: 55428 },
+const PADDLE = adblock.config.paddle = {
+  ENVIRONMENTS: {
+    LIVE: 164164,
+    TEST: 11004
   },
-  live: {
-    vendorId: 164164,
-    monthly: { amount: 200, productId: 842007 },
-    yearly: { amount: 2000, productId: 842011 },
+  PRODUCTS: {
+    TEST: {
+      "USD": {
+        "monthly": {
+          "200": 55427,
+        },
+        "yearly": {
+          "2000": 55428,
+        }
+      },
+      "EUR": {
+        "monthly": {
+          "200": null,
+        },
+        "yearly": {
+          "2000": null,
+        }
+      }
+    },
+    LIVE: {
+      "USD": {
+        "monthly": {
+          "200": 842007,
+        },
+        "yearly": {
+          "2000": 842011,
+        }
+      },
+      "EUR": {
+        "monthly": {
+          "200": null,
+        },
+        "yearly": {
+          "2000": null,
+        }
+      }
+    }
   },
   // Paddle uses some non-standard/different-stand locale codes
-  locales: {
+  LOCALES: {
     "zh_CN": "zh-Hans",
     "sv": "da",
     "pt_BR": "pt",
@@ -30,18 +62,19 @@ const PADDLE = {
   }
 };
 
-/** should we use the Paddle sandbox instead of the live environment? */
-const isTestmode = adblock.query.has("testmode");
+const language = document.documentElement.getAttribute("lang") || "en";
+const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
+const paddleId = PADDLE.ENVIRONMENTS[environment];
+const paddleTitle = "Adblock Plus";
+const paddleLocale = PADDLE.LOCALES[language] || language;
+const products = PADDLE.PRODUCTS[environment];
+const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
 
-/** manually set language > page language > browser language */
-const language = document.documentElement.lang || "en";
-
-const paddleEnvironment = isTestmode
-  ? PADDLE.test
-  : PADDLE.live;
+if (environment == "TEST") {
+  Paddle.Environment.set("sandbox");
+}
 
 /** the locale of the paddle checkout */
-const paddleLocale = PADDLE.locales[language] || language;
 
 let userid = adblock.query.get("premium-checkout__userid") || generateUserId();
 
@@ -53,6 +86,39 @@ const section = document.querySelector(".premium-checkout");
 
 /** interactive card (parent element to steps below) */
 const card = document.querySelector(".premium-checkout-card--interactive");
+
+////////////////////////////////////////////////////////////////////////////////
+// CURRENCIES
+////////////////////////////////////////////////////////////////////////////////
+
+const $currencies = document.querySelector(".premium-checkout-header__select");
+
+// Populate currencies
+for (const currency in products) {
+  const $currency = document.createElement("option");
+  $currency.textContent = currency;
+  $currencies.append($currency);
+}
+
+// Update option amounts on currency change
+function onCurrencyChange() {
+  const currency = $currencies.value;
+  document
+  .querySelectorAll(".premium-checkout-card-body-option__button")
+  .forEach(button => {
+    const frequency = button.dataset.frequency;
+    const amount = Object.keys(products[currency][frequency])[0];
+    button.querySelector(".amount").textContent = getDollarString(currency, amount);
+  });
+}
+
+$currencies.addEventListener("change", onCurrencyChange);
+
+// Set default currency
+if (adblock.settings.currency) {
+  $currencies.value = adblock.settings.currency;
+  onCurrencyChange();
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // UTILITIES
@@ -151,12 +217,9 @@ function generateTrackingId() {
 // PADDLE SETUP
 ////////////////////////////////////////////////////////////////////////////////
 
-if (isTestmode) {
-  Paddle.Environment.set('sandbox');
-}
 
 Paddle.Setup({
-  vendor: paddleEnvironment.vendorId,
+  vendor: paddleId,
   eventCallback: event => {
     if (typeof event == "object" && event && typeof event.event == "string") {
       if (event.event == "Checkout.Customer.Details") {
@@ -582,9 +645,9 @@ async function goto(nextStep, state, log) {
 steps.purchase.on("checkout-now", async () => {
   flow = "purchase";
   const frequency = steps.purchase.getSelectedValue();
-  const currency = "USD";
-  const amount = paddleEnvironment[frequency].amount;
-  const productId = paddleEnvironment[frequency].productId;
+  const currency = $currencies.value;
+  const [ amount, productId ] = Object.entries(products[currency][frequency])[0];
+  console.log(`amount=${amount}, productId=${productId}, frequency=${frequency}, currency=${currency}`);
   await goto(steps.loading);
   checkout(productId, currency, frequency, amount)
   .then(

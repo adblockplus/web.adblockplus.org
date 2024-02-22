@@ -461,3 +461,14 @@ html:not([dir="rtl"]) .premium-checkout-purchase__checkout-button > img {
 .premium-checkout-verify__error {
   color: #B00020;
 }
+
+/*******************************************************************************
+ * CURRENCY DROPDOWN
+ ******************************************************************************/
+
+.premium-checkout-header__select {
+  display: block;
+  height: fit-content;
+  border-radius: 4px;
+  border: 1px solid #CDCDCD;
+}
