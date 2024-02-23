@@ -190,7 +190,7 @@ function getCurrencySymbol(currencyCode) {
 ////////////////////////////////////////////////////////////////////////////////
 // PADDLE SETUP
 ////////////////////////////////////////////////////////////////////////////////
-
+console.log("paddleId", paddleId);
 Paddle.Setup({
   vendor: paddleId,
   eventCallback: event => {
@@ -621,7 +621,7 @@ steps.purchase.on("checkout-now", async () => {
   const frequency = steps.purchase.getSelectedValue();
   const currency = $currencies.value;
   const [ amount, productId ] = Object.entries(products[currency][frequency])[0];
-  console.log(`amount=${amount}, productId=${productId}, frequency=${frequency}, currency=${currency}`);
+  console.log("products", products);
   await goto(steps.loading);
   checkout(productId, currency, frequency, amount)
   .then(
