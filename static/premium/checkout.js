@@ -22,10 +22,10 @@ const PADDLE = adblock.config.paddle = {
       },
       "EUR": {
         "monthly": {
-          "200": null,
+          "200": 68054,
         },
         "yearly": {
-          "2000": null,
+          "2000": 68053,
         }
       }
     },
@@ -40,10 +40,10 @@ const PADDLE = adblock.config.paddle = {
       },
       "EUR": {
         "monthly": {
-          "200": null,
+          "200": 874224,
         },
         "yearly": {
-          "2000": null,
+          "2000": 874223,
         }
       }
     }
@@ -227,6 +227,7 @@ Paddle.Setup({
  * @todo add retries
  */
 function checkout(product, currency, frequency, amount) {
+  console.log("checkout", product, currency, frequency, amount);
   return new Promise((resolve, reject) => {
     checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
     const clickTimestamp = Date.now();
