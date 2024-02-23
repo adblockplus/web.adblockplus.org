@@ -1,3 +1,5 @@
+const { locale } = require("yargs");
+
 $(document).ready(function() {
     // The pricing code...
     const monthlyPricesUSD = [0, 2, 4];
@@ -27,6 +29,77 @@ $(document).ready(function() {
     const monthlyPriceInterval = $("#i18n-slash_mo_no_replace").text();
     const yearlyPriceInterval = $("#i18n-slash_yr_no_replace").text();
 
+    ////
+    const PADDLE = adblock.config.paddle = {
+        ENVIRONMENTS: {
+          LIVE: 164164,
+          TEST: 11004
+        },
+        PRODUCTS: {
+          TEST: {
+            "USD": {
+              "monthly": {
+                "200": 55427,
+              },
+              "yearly": {
+                "2000": 55428,
+              }
+            },
+            "EUR": {
+              "monthly": {
+                "200": 68054,
+              },
+              "yearly": {
+                "2000": 68053,
+              }
+            }
+          },
+          LIVE: {
+            "USD": {
+              "monthly": {
+                "200": 842007,
+              },
+              "yearly": {
+                "2000": 842011,
+              }
+            },
+            "EUR": {
+              "monthly": {
+                "200": 874224,
+              },
+              "yearly": {
+                "2000": 874223,
+              }
+            }
+          }
+        },
+        // Paddle uses some non-standard/different-stand locale codes
+        LOCALES: {
+          "zh_CN": "zh-Hans",
+          "sv": "da",
+          "pt_BR": "pt",
+          "ko_KR": "ko",
+          "pl_PL": "pl",
+          "ca": "en",
+          "uk": "en",
+        }
+      };
+      
+      const language = document.documentElement.getAttribute("lang") || "en";
+      const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
+      const paddleId = PADDLE.ENVIRONMENTS[environment];
+      const paddleTitle = "Adblock Plus Premium";
+      const paddleLocale = PADDLE.LOCALES[language] || language;
+      const products = PADDLE.PRODUCTS[environment];
+      const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
+      
+      if (environment == "TEST") {
+        Paddle.Environment.set("sandbox");
+      }
+
+    ////
+
+
     /* Constants and cached selectors shared by the page */
     const Page = {
         PaymentCard: $("#pay"),
@@ -52,8 +125,59 @@ $(document).ready(function() {
         PaymentBox: $("#payments-content")
     };
 
+    ////////////////////////////////////////////////////////////////////////////
+    // CURRENCIES
+    // Due to how pages are generated we always end up with 2 dropdown so we need
+    // to select the dropdown actually shown to the users in the generated "card"
+    ////////////////////////////////////////////////////////////////////////////////
+
+    const $currencies = card.querySelector('.premium-checkout-header__select')
+
+    // Populate currencies
+    for (const currency in products) {
+    const $currency = document.createElement("option");
+    $currency.textContent = currency;
+    $currencies.append($currency);
+    }
+
+    // Return symbol like '$' for given currency code like 'USD'
+    function getCurrencySymbol(currencyCode) {
+        const a = 0;
+        return a.toLocaleString("en", {
+            style:"currency",
+            currency: currencyCode
+        }).replace("0.00", "")
+    }
+
+    // Update option amounts on currency change
+    function onCurrencyChange() {
+        const currency = $currencies.value;
+        const currencySymbol = getCurrencySymbol(currency);
+
+        document
+            .querySelectorAll(".premium-plan-price-currency")
+            .forEach(element => element.innerText = currencySymbol);
+
+        document
+        .querySelectorAll(".selected-plan-price")
+        .forEach(element => {
+            const frequency = element.closest("button").value;
+            const amount = Object.keys(products[currency][frequency])[0];
+            element.textContent = getDollarString(currency, amount);
+        });
+        // also for .amount-with-currency
+    }
+
+    $currencies.addEventListener("change", onCurrencyChange);
+
+    // Set default currency
+    if (adblock.settings.currency) {
+        $currencies.value = adblock.settings.currency;
+        onCurrencyChange();
+    }
+
     const isYearly = () => $(".slider").hasClass("active");
-    const isTestmode = () => !!document.location.search.match(/testmode/);
+    const isTestmode = () => !!environment === "TEST";
     const toggleSliders = () => $(".slider").each(function() { $(this).toggleClass("active"); });
     const getPricesForRecurringFrequency = () => isYearly() ? yearlyPricesUSD : monthlyPricesUSD;
     const getPaddleProductsIdsForRecurringFrequency = () => {
@@ -459,17 +583,6 @@ $(document).ready(function() {
         return productId;
     }
 
-    function getTitle() {
-        const [amount, frequency, plan, suffix, planName, productId] = getSelectedAmountFrequencyPlan();
-        if (plan === "me") {
-            return "Adblock Plus Premium";
-        } else if (plan === "mevpn") {
-            return "Adblock Plus Premium + VPN";
-        }
-
-        return "Adblock Plus";
-    }
-
     function getCurrency() {
         // right now, all USD.
         return "USD";
@@ -489,7 +602,6 @@ $(document).ready(function() {
     const onSuccessURL = () => {
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
         const clickTimestamp = Date.now();
-        const language = document.documentElement.lang;
         const page = document.documentElement.getAttribute("data-page");
         queryParams.set("premium-checkout__handoff", 1);
         queryParams.set("premium-checkout__flow", `${page}__purchase`);
@@ -510,12 +622,11 @@ $(document).ready(function() {
     PaddleCheckout.init({
         testmode: isTestmode(),
         submitButtonId: "donate_now",
-        currency: getCurrency,
         recurring: isRecurring,
         subType: getSubType,
-        locale: getLanguageInPath,
+        locale: language,
         getProductId: getProductId,
-        title: getTitle,
+        title: paddleTitle,
         getAmountCents: function() {
             v=getAmountString();
             if (___AB_DROPDOWN_SHOW === true && _currency.currencyUsesDecimals(getCurrency()) === false) {
