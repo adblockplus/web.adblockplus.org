@@ -1,31 +1,7 @@
-const { locale } = require("yargs");
-
 $(document).ready(function() {
     // The pricing code...
     const monthlyPricesUSD = [0, 2, 4];
     const yearlyPricesUSD = [0, 20, 40];
-    const premiumPaddleProductIds = {
-        "sandbox": {
-            "monthly": {
-                "me": 55427,
-                "mevpn": 47981
-            },
-            "yearly": {
-                "me": 55428,
-                "mevpn": 47980
-            }
-        },
-        "prod": {
-            "monthly": {
-                "me": 842007,
-                "mevpn": 822817
-            },
-            "yearly": {
-                "me": 842011,
-                "mevpn": 822814
-            }
-        }
-    }
     const monthlyPriceInterval = $("#i18n-slash_mo_no_replace").text();
     const yearlyPriceInterval = $("#i18n-slash_yr_no_replace").text();
 
@@ -127,17 +103,35 @@ $(document).ready(function() {
 
     ////////////////////////////////////////////////////////////////////////////
     // CURRENCIES
-    // Due to how pages are generated we always end up with 2 dropdown so we need
-    // to select the dropdown actually shown to the users in the generated "card"
     ////////////////////////////////////////////////////////////////////////////////
 
-    const $currencies = card.querySelector('.premium-checkout-header__select')
+    const $currencies = document.querySelector('.premium-checkout-header__select');
 
     // Populate currencies
     for (const currency in products) {
     const $currency = document.createElement("option");
     $currency.textContent = currency;
     $currencies.append($currency);
+    }
+
+    /** convert a cent number to a dollar number in relevant supported currencies */
+    function getDollarNumber(currency, amount) {
+        return currency == "JPY" ? amount : amount / 100;
+    }
+
+    /** convert a cent number to a locally formatted dollar string in relevant supported currencies */
+    function getDollarString(currency, centAmountString) {
+        const dollarNumber = getDollarNumber(currency, centAmountString);
+        const formatOptions = {
+            style: 'currency', 
+            currency: currency, 
+            currencyDisplay: 'narrowSymbol'
+        };
+        if (dollarNumber % 1 === 0) {
+            formatOptions.minimumFractionDigits = 0;
+            formatOptions.maximumFractionDigits = 0;
+        }
+        return new Intl.NumberFormat(language.replace("_", "-"), formatOptions).format(dollarNumber);
     }
 
     // Return symbol like '$' for given currency code like 'USD'
@@ -153,6 +147,7 @@ $(document).ready(function() {
     function onCurrencyChange() {
         const currency = $currencies.value;
         const currencySymbol = getCurrencySymbol(currency);
+        const $selectedPlanBtn = $("#amount_select_row button.selected");
 
         document
             .querySelectorAll(".premium-plan-price-currency")
@@ -161,7 +156,7 @@ $(document).ready(function() {
         document
         .querySelectorAll(".selected-plan-price")
         .forEach(element => {
-            const frequency = element.closest("button").value;
+            const frequency = $selectedPlanBtn.attr("data-recurring-frequency");
             const amount = Object.keys(products[currency][frequency])[0];
             element.textContent = getDollarString(currency, amount);
         });
@@ -180,18 +175,10 @@ $(document).ready(function() {
     const isTestmode = () => !!environment === "TEST";
     const toggleSliders = () => $(".slider").each(function() { $(this).toggleClass("active"); });
     const getPricesForRecurringFrequency = () => isYearly() ? yearlyPricesUSD : monthlyPricesUSD;
-    const getPaddleProductsIdsForRecurringFrequency = () => {
-        if (isTestmode()) {
-            if (isYearly()) 
-                return premiumPaddleProductIds["sandbox"]["yearly"] 
-            else
-                return premiumPaddleProductIds["sandbox"]["monthly"] 
-        } else {
-            if (isYearly()) 
-                return premiumPaddleProductIds["prod"]["yearly"] 
-            else
-                return premiumPaddleProductIds["prod"]["monthly"] 
-        }
+    const getCurrentPaddleProductId = () => {
+        const currency = document.querySelector('.premium-checkout-header__select').value || 'EUR';
+        const frequency = isYearly() ? 'yearly' : 'monthly';
+        return products[currency][frequency][1];
     }
 
     const setPrices = (prices) => {
@@ -212,9 +199,8 @@ $(document).ready(function() {
         $("#r_monthly").attr("data-amount", me);
     };
 
-    const setPaddleProductIds = (productIds) => {
-        $("button[data-plan=mevpn]").attr("data-product-id", productIds["mevpn"]);
-        $("button[data-plan=me]").attr("data-product-id", productIds["me"]);
+    const setPaddleProductId = (productId) => {
+        $("button[data-plan=me]").attr("data-product-id", productId);
     };
 
     const getSelectedAmountFrequencyPlan = () => {
@@ -233,7 +219,8 @@ $(document).ready(function() {
 
     const updateSelectedPlanText = () => {
         const [amount, frequency, plan, suffix, planName, productId] = getSelectedAmountFrequencyPlan();
-        const currencySymbol = "$"; // right now only USD.
+        const currency = $currencies.value || 'EUR';
+        const currencySymbol = getCurrencySymbol(currency);
         $(".plan-name").each(function() { $(this).text(planName); })
         $(".selected-plan-price").each(function() { $(this).text(`${currencySymbol}${amount}`); });
         $(".selected-plan-recurring-frequency-abbreviation").each(function() { $(this).text(suffix); });
@@ -296,14 +283,6 @@ $(document).ready(function() {
         "mevpn": "me"
     };
 
-    $("#amount_select_row button").on("click", function() {
-        const thisButtonPlan = $(this).data("plan");
-        $(this).addClass("selected");
-        const otherPlan = planInverseMap[thisButtonPlan];
-        $(`#amount_select_row button[data-plan="${otherPlan}"]`).removeClass("selected");
-        updateSelectedPlanText();
-    });
-
     $(".your-plan").on("click", function() {
         const thisPlan = $(this).data("plan");
         if (thisPlan !== "free") {
@@ -323,8 +302,9 @@ $(document).ready(function() {
     $(".monthly-yearly-slider").on("click", function(ev) {
         toggleSliders();
         setPrices(getPricesForRecurringFrequency());
-        setPaddleProductIds(getPaddleProductsIdsForRecurringFrequency());
+        setPaddleProductId(getCurrentPaddleProductId());
         updateSelectedPlanText();
+        onCurrencyChange(); // Make sure currency is reflecting dropdown selection still
     });
 
     $("p.get-it-now, #upgrade-to-premium, .premium-cta").on("click", function(event) {
@@ -370,7 +350,7 @@ $(document).ready(function() {
     var ___AB_USING_CURRENCY_LIB = false;
 
     // setup paddle product IDs
-    setPaddleProductIds(getPaddleProductsIdsForRecurringFrequency());
+    setPaddleProductId(getCurrentPaddleProductId());
 
     // Utility fn to show/hide cards using query params for testing.
     const cardPageToShow = urlParams.get("showcards");
