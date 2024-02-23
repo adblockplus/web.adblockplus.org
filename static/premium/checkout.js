@@ -2,8 +2,6 @@
 // GLOBALS
 ////////////////////////////////////////////////////////////////////////////////
 
-const CHECKOUT_TITLE = "Adblock Plus Premium";
-
 const REQUEST_TIMEOUT = parseInt(adblock.query.get("premium-checkout__request-timeout"), 10) || 15000;
 const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 6000;
 
@@ -65,7 +63,7 @@ const PADDLE = adblock.config.paddle = {
 const language = document.documentElement.getAttribute("lang") || "en";
 const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
 const paddleId = PADDLE.ENVIRONMENTS[environment];
-const paddleTitle = "Adblock Plus";
+const paddleTitle = "Adblock Plus Premium";
 const paddleLocale = PADDLE.LOCALES[language] || language;
 const products = PADDLE.PRODUCTS[environment];
 const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
@@ -242,7 +240,7 @@ function checkout(product, currency, frequency, amount) {
       clickTs: clickTimestamp
     }));
     const paddleOptions = {
-      title: CHECKOUT_TITLE,
+      title: paddleTitle,
       product: product,
       allowQuantity: false,
       locale: paddleLocale,
@@ -261,7 +259,7 @@ function checkout(product, currency, frequency, amount) {
     paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {
-        "testmode": isTestmode,
+        "testmode": !!environment === "TEST",
         "userid": userid,
         "tracking": generateTrackingId(userid),
         "locale": language,
@@ -764,8 +762,6 @@ for (const currency in products) {
 
 // Update option amounts on currency change
 function onCurrencyChange() {
-  console.log("onCurrencyChange");
-
   const currency = $currencies.value;
   const currencySymbol = getCurrencySymbol(currency);
 
@@ -785,7 +781,6 @@ function onCurrencyChange() {
 $currencies.addEventListener("change", onCurrencyChange);
 
 // Set default currency
-console.log("adblock.settings.currency", adblock.settings.currency);
 if (adblock.settings.currency) {
   $currencies.value = adblock.settings.currency;
   onCurrencyChange();
