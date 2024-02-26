@@ -178,7 +178,10 @@ $(document).ready(function() {
     const getCurrentPaddleProductId = () => {
         const currency = document.querySelector('.premium-checkout-header__select').value || 'EUR';
         const frequency = isYearly() ? 'yearly' : 'monthly';
-        return products[currency][frequency][1];
+        const amount = Object.keys(products[currency][frequency])[0];
+        console.log("currency=", currency, "frequency=", frequency, "amount=", amount);
+        console.log("id=", products[currency][frequency][amount]);
+        return products[currency][frequency][amount];
     }
 
     const setPrices = (prices) => {
@@ -200,7 +203,7 @@ $(document).ready(function() {
     };
 
     const setPaddleProductId = (productId) => {
-        $("button[data-plan=me]").attr("data-product-id", productId);
+        $("#amount_select_row button.selected").attr("data-product-id", productId);
     };
 
     const getSelectedAmountFrequencyPlan = () => {
