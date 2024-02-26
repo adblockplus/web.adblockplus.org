@@ -599,12 +599,17 @@ $(document).ready(function() {
     }
 
     function getTitle() { return paddleTitle };
+    function getCurrency() {
+        return document.querySelector('.premium-checkout-header__select').value || 'EUR';
+    };
+
     var ___AB_DROPDOWN_SHOW = false;
     var ___AB_USING_CURRENCY_LIB = false;
 
     // Paddle Checkout initialization
     console.log(isTestmode(), getProductId())
     PaddleCheckout.init({
+        currency: getCurrency,
         testmode: isTestmode(),
         submitButtonId: "donate_now",
         recurring: isRecurring,
