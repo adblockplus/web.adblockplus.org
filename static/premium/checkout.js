@@ -783,6 +783,10 @@ $currencies.addEventListener("change", onCurrencyChange);
 
 // Set default currency
 if (adblock.settings.currency) {
-  $currencies.value = adblock.settings.currency;
+  const currencyForGeo = adblock.settings.currency;
+  const supportedCurrencies = Object.keys(products);
+  console.log("supportedCurrencies", supportedCurrencies);
+  const currency = allowedCurrencies.includes(currencyForGeo) ? currencyForGeo : 'USD';
+  $currencies.value = currency;
   onCurrencyChange();
 }
