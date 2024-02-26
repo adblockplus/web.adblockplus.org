@@ -17,55 +17,6 @@ template=installed
   <script src="/js/settings.js"></script>
 </head>
 
-<aside class="installed-loader__overlay">
-  <div class="installed-loader__card">
-    <img src="/img/installed-main__block-1__logo.svg" height="67" width="66" class="installed-loader__card__image" alt="">
-    <div class="installed-loader__card__body">
-      <p class="installed-loader__card__text">
-        <span>
-          {{ installed-loader__card__body__text--installing }}
-        </span>
-        <span class="installed-loader__card__text--done" hidden>
-          {{ installed-loader__card__body__text--done }}
-        </span>
-      </p>
-      <progress class="installed-loader__card__progress" value="0" max="1"></progress>
-    </div>
-  </div>
-</aside>
-
-<script>
-  /* global adblock */
-
-  /* Installed loader
-   *
-   * Supports the following query parameters:
-   * 
-   * - skipLoading: use to skip loading
-   * - keepLoading: use to load forever
-   */
-  if (null == adblock.searchParameters.get("skipLoading")) {
-    document.documentElement.classList.add("--loading");
-    if (null == adblock.searchParameters.get("keepLoading")) {
-      const progressBar = document.querySelector(".installed-loader__card__progress");
-      const completedText = document.querySelector(".installed-loader__card__text--done");
-      const refreshRate = 1000 / 60;
-      const refreshProgress = 1 / (2500 / refreshRate);
-      const tickInterval = setInterval(() => {
-        progressBar.value += refreshProgress;
-        if (progressBar.value >= 1) {
-          completedText.hidden = false;
-          setTimeout(() => {
-            document.documentElement.classList.remove("--loading");
-            document.documentElement.classList.add("--loaded");
-          }, 1000);
-          clearInterval(tickInterval);
-        }
-      }, refreshRate);
-    }
-  }
-</script>
-
 <div class="installed-container">
 
   <main class="installed-main">
