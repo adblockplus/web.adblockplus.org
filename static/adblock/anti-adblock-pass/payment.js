@@ -160,7 +160,7 @@ $(document).ready(function() {
             const amount = Object.keys(products[currency][frequency])[0];
             element.textContent = getDollarString(currency, amount);
         });
-        // also for .amount-with-currency
+        setPaddleProductId(getCurrentPaddleProductId());
     }
 
     $currencies.addEventListener("change", onCurrencyChange);
