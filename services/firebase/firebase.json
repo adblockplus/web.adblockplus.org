@@ -213,6 +213,12 @@
         "source": "/js/payment/config/load.js",
         "destination": "/payment-config-function",
         "type": 301
+      },
+
+      {
+        "source": ".*\/deal",
+        "destination": "https://accounts.adblockplus.org/premium",
+        "type": 307
       }
     ],
     "rewrites": [
