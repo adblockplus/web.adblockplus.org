@@ -607,7 +607,6 @@ $(document).ready(function() {
     var ___AB_USING_CURRENCY_LIB = false;
 
     // Paddle Checkout initialization
-    console.log(isTestmode(), getProductId())
     PaddleCheckout.init({
         currency: getCurrency,
         testmode: isTestmode(),
