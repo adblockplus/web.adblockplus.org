@@ -488,7 +488,7 @@ const PaddleCheckout = {
         this._keys = AUX_KEYS;
         this.AUX = (settings.testmode ? this._keys.TEST : this._keys.LIVE);
         this._submitButtonId = settings.submitButtonId || null;
-        this._title = typeof settings.title === 'function' ? settings.title : function() { return "AdBlock" };
+        this._title = typeof settings.title === 'function' ? settings.title : function() { return "Adblock Plus Premium" };
         this._elementChangeListener = settings.elementChangeListener || false;
         this._onSuccessURL = settings.onSuccessURL || 'https://adblockplus.org/payment-complete';
         this._onErrorCb = settings.onErrorCb || function (msg) { alert("Sorry, but there was a problem:\n\n" + msg + "\n\nPlease try again."); };

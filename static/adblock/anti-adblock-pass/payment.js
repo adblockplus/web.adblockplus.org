@@ -595,10 +595,12 @@ $(document).ready(function() {
         return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
 
+    function getTitle() { return paddleTitle };
     var ___AB_DROPDOWN_SHOW = false;
     var ___AB_USING_CURRENCY_LIB = false;
 
     // Paddle Checkout initialization
+    console.log(isTestmode(), getProductId())
     PaddleCheckout.init({
         testmode: isTestmode(),
         submitButtonId: "donate_now",
@@ -606,7 +608,7 @@ $(document).ready(function() {
         subType: getSubType,
         locale: language,
         getProductId: getProductId,
-        title: paddleTitle,
+        title: getTitle,
         getAmountCents: function() {
             v=getAmountString();
             if (___AB_DROPDOWN_SHOW === true && _currency.currencyUsesDecimals(getCurrency()) === false) {
