@@ -101,6 +101,11 @@ $(document).ready(function() {
         PaymentBox: $("#payments-content")
     };
 
+
+    const setPaddleProductId = (productId) => {
+        $("#amount_select_row button.selected").attr("data-product-id", productId);
+    };
+
     ////////////////////////////////////////////////////////////////////////////
     // CURRENCIES
     ////////////////////////////////////////////////////////////////////////////////
@@ -143,6 +148,15 @@ $(document).ready(function() {
         }).replace("0.00", "")
     }
 
+    const getCurrentPaddleProductId = () => {
+        const currency = document.querySelector('.premium-checkout-header__select').value || 'EUR';
+        const frequency = isYearly() ? 'yearly' : 'monthly';
+        const amount = Object.keys(products[currency][frequency])[0];
+        console.log("currency=", currency, "frequency=", frequency, "amount=", amount);
+        console.log("id=", products[currency][frequency][amount]);
+        return products[currency][frequency][amount];
+    }
+
     // Update option amounts on currency change
     function onCurrencyChange() {
         const currency = $currencies.value;
@@ -179,14 +193,6 @@ $(document).ready(function() {
     const isTestmode = () => !!environment === "TEST";
     const toggleSliders = () => $(".slider").each(function() { $(this).toggleClass("active"); });
     const getPricesForRecurringFrequency = () => isYearly() ? yearlyPricesUSD : monthlyPricesUSD;
-    const getCurrentPaddleProductId = () => {
-        const currency = document.querySelector('.premium-checkout-header__select').value || 'EUR';
-        const frequency = isYearly() ? 'yearly' : 'monthly';
-        const amount = Object.keys(products[currency][frequency])[0];
-        console.log("currency=", currency, "frequency=", frequency, "amount=", amount);
-        console.log("id=", products[currency][frequency][amount]);
-        return products[currency][frequency][amount];
-    }
 
     const setPrices = (prices) => {
         const [free, me, mevpn] = prices;
@@ -204,10 +210,6 @@ $(document).ready(function() {
         }
         $("#r_yearly").attr("data-amount", mevpn);
         $("#r_monthly").attr("data-amount", me);
-    };
-
-    const setPaddleProductId = (productId) => {
-        $("#amount_select_row button.selected").attr("data-product-id", productId);
     };
 
     const getSelectedAmountFrequencyPlan = () => {
