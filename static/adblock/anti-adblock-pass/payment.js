@@ -106,6 +106,10 @@ $(document).ready(function() {
         $("#amount_select_row button.selected").attr("data-product-id", productId);
     };
 
+    const isYearly = () => $(".slider").hasClass("active");
+    const isTestmode = () => !!environment === "TEST";
+    const toggleSliders = () => $(".slider").each(function() { $(this).toggleClass("active"); });
+    const getPricesForRecurringFrequency = () => isYearly() ? yearlyPricesUSD : monthlyPricesUSD;
     ////////////////////////////////////////////////////////////////////////////
     // CURRENCIES
     ////////////////////////////////////////////////////////////////////////////////
@@ -188,11 +192,6 @@ $(document).ready(function() {
         $currencies.value = currency;
         onCurrencyChange();
     }
-
-    const isYearly = () => $(".slider").hasClass("active");
-    const isTestmode = () => !!environment === "TEST";
-    const toggleSliders = () => $(".slider").each(function() { $(this).toggleClass("active"); });
-    const getPricesForRecurringFrequency = () => isYearly() ? yearlyPricesUSD : monthlyPricesUSD;
 
     const setPrices = (prices) => {
         const [free, me, mevpn] = prices;
