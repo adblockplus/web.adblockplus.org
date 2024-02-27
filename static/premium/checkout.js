@@ -786,7 +786,7 @@ if (adblock.settings.currency) {
   const currencyForGeo = adblock.settings.currency;
   const supportedCurrencies = Object.keys(products);
   console.log("supportedCurrencies", supportedCurrencies);
-  const currency = allowedCurrencies.includes(currencyForGeo) ? currencyForGeo : 'USD';
+  const currency = supportedCurrencies.includes(currencyForGeo) ? currencyForGeo : 'USD';
   $currencies.value = currency;
   onCurrencyChange();
 }
