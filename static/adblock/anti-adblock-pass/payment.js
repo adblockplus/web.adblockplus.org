@@ -587,6 +587,12 @@ $(document).ready(function() {
         queryParams.append("thankyou", 1);
         queryParams.append("var", 1);
     }
+
+    function getTitle() { return paddleTitle };
+    function getCurrency() {
+        return document.querySelector('.premium-checkout-header__select').value || 'EUR';
+    };
+
     const onSuccessURL = () => {
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
         const clickTimestamp = Date.now();
@@ -594,7 +600,7 @@ $(document).ready(function() {
         queryParams.set("premium-checkout__handoff", 1);
         queryParams.set("premium-checkout__flow", `${page}__purchase`);
         queryParams.set("premium-checkout__userid", getUserId());
-        queryParams.set("premium-checkout__currency", "USD");
+        queryParams.set("premium-checkout__currency", getCurrency());
         queryParams.set("premium-checkout__amount", amount * 100);
         queryParams.set("premium-checkout__frequency", frequency);
         queryParams.set("premium-checkout__language", language);
@@ -602,11 +608,6 @@ $(document).ready(function() {
         if (adblock.query.has("s")) queryParams.set("s", adblock.query.get("s"));
         return `https://accounts.adblockplus.org/premium?${queryParams.toString()}`;
     }
-
-    function getTitle() { return paddleTitle };
-    function getCurrency() {
-        return document.querySelector('.premium-checkout-header__select').value || 'EUR';
-    };
 
     var ___AB_DROPDOWN_SHOW = false;
     var ___AB_USING_CURRENCY_LIB = false;
