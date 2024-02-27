@@ -216,9 +216,9 @@
       },
 
       {
-        "source": ".*\/deal",
+        "regex": ".*\/deal",
         "destination": "https://accounts.adblockplus.org/premium",
-        "type": 307
+        "type": 302
       }
     ],
     "rewrites": [
