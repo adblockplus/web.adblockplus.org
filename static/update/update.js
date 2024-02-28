@@ -618,10 +618,18 @@ function updateRewardDuration() {
     "yearly": adblock.strings["suffix__yearly"],
   };
   const plan = "ME";
-  const planName = adblock.strings["adblock__premium"];
+  const planName = adblock.strings["product__premium"];
   const suffix = frequencySuffixes[frequency];
   const durationMonths = getRewardDuration(currency, frequency, amount);
-  updatePaymentView.setRewardDuration(durationMonths);
+  if (frequency == "once") {
+    if (amount >= PADDLE.MINIMUMS[currency][frequency]) {
+      updatePaymentView.setRewardDuration(durationMonths);
+    } else {
+      updatePaymentView.hideRewardDuration();
+    }
+  } else {
+    updatePaymentView.setRewardDuration(0);
+  }
   localStorage.setItem("planinfo", JSON.stringify({ durationMonths, plan }));
   localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
 }

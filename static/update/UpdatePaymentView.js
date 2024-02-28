@@ -110,7 +110,9 @@ export default class UpdatePaymentView {
     if (checked.classList.contains("update-payment-amount__radio--custom")) {
       const customInput = checked.closest(".update-payment-amount").querySelector(".update-payment-amount__input");
       // return custom value or default
-      return getCentNumber(this.currency, customInput.value) || customInput.dataset.default;
+      let centNumber = getCentNumber(this.currency, customInput.value);
+      if (isNaN(centNumber)) return customInput.dataset.default;
+      else return centNumber;
     } else {
       return checked.value;
     }
@@ -118,8 +120,13 @@ export default class UpdatePaymentView {
 
   setRewardDuration(duration) {
     this.rewardDuration = duration;
+    this.parent.querySelector(".update-payment-reward").hidden = false;
     this._renderRewardDuration(duration);
     this.events.fire("rewardDuration");
+  }
+
+  hideRewardDuration() {
+    this.parent.querySelector(".update-payment-reward").hidden = true;
   }
 
   setSubmitting(submitting) {
