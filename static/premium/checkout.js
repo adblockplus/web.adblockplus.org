@@ -2,24 +2,54 @@
 // GLOBALS
 ////////////////////////////////////////////////////////////////////////////////
 
-const CHECKOUT_TITLE = "Adblock Plus Premium";
-
 const REQUEST_TIMEOUT = parseInt(adblock.query.get("premium-checkout__request-timeout"), 10) || 15000;
 const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 6000;
 
-const PADDLE = {
-  test: {
-    vendorId: 11004,
-    monthly: { amount: 200, productId: 55427 },
-    yearly: { amount: 2000, productId: 55428 },
+const PADDLE = adblock.config.paddle = {
+  ENVIRONMENTS: {
+    LIVE: 164164,
+    TEST: 11004
   },
-  live: {
-    vendorId: 164164,
-    monthly: { amount: 200, productId: 842007 },
-    yearly: { amount: 2000, productId: 842011 },
+  PRODUCTS: {
+    TEST: {
+      "USD": {
+        "monthly": {
+          "200": 55427,
+        },
+        "yearly": {
+          "2000": 55428,
+        }
+      },
+      "EUR": {
+        "monthly": {
+          "200": 68054,
+        },
+        "yearly": {
+          "2000": 68053,
+        }
+      }
+    },
+    LIVE: {
+      "USD": {
+        "monthly": {
+          "200": 842007,
+        },
+        "yearly": {
+          "2000": 842011,
+        }
+      },
+      "EUR": {
+        "monthly": {
+          "200": 874224,
+        },
+        "yearly": {
+          "2000": 874223,
+        }
+      }
+    }
   },
   // Paddle uses some non-standard/different-stand locale codes
-  locales: {
+  LOCALES: {
     "zh_CN": "zh-Hans",
     "sv": "da",
     "pt_BR": "pt",
@@ -30,18 +60,19 @@ const PADDLE = {
   }
 };
 
-/** should we use the Paddle sandbox instead of the live environment? */
-const isTestmode = adblock.query.has("testmode");
+const language = document.documentElement.getAttribute("lang") || "en";
+const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
+const paddleId = PADDLE.ENVIRONMENTS[environment];
+const paddleTitle = "Adblock Plus Premium";
+const paddleLocale = PADDLE.LOCALES[language] || language;
+const products = PADDLE.PRODUCTS[environment];
+const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
 
-/** manually set language > page language > browser language */
-const language = document.documentElement.lang || "en";
-
-const paddleEnvironment = isTestmode
-  ? PADDLE.test
-  : PADDLE.live;
+if (environment == "TEST") {
+  Paddle.Environment.set("sandbox");
+}
 
 /** the locale of the paddle checkout */
-const paddleLocale = PADDLE.locales[language] || language;
 
 let userid = adblock.query.get("premium-checkout__userid") || generateUserId();
 
@@ -147,16 +178,21 @@ function generateTrackingId() {
   return `ME X0G0 F${getBrowser()}O${getOS()}SME ${userid}`;
 }
 
+// Return symbol like '$' for given currency code like 'USD'
+function getCurrencySymbol(currencyCode) {
+  const a = 0;
+  return a.toLocaleString("en", {
+    style:"currency",
+    currency: currencyCode
+  }).replace("0.00", "")
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // PADDLE SETUP
 ////////////////////////////////////////////////////////////////////////////////
-
-if (isTestmode) {
-  Paddle.Environment.set('sandbox');
-}
-
+console.log("paddleId", paddleId);
 Paddle.Setup({
-  vendor: paddleEnvironment.vendorId,
+  vendor: paddleId,
   eventCallback: event => {
     if (typeof event == "object" && event && typeof event.event == "string") {
       if (event.event == "Checkout.Customer.Details") {
@@ -191,6 +227,7 @@ Paddle.Setup({
  * @todo add retries
  */
 function checkout(product, currency, frequency, amount) {
+  console.log("checkout", product, currency, frequency, amount);
   return new Promise((resolve, reject) => {
     checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
     const clickTimestamp = Date.now();
@@ -204,7 +241,7 @@ function checkout(product, currency, frequency, amount) {
       clickTs: clickTimestamp
     }));
     const paddleOptions = {
-      title: CHECKOUT_TITLE,
+      title: paddleTitle,
       product: product,
       allowQuantity: false,
       locale: paddleLocale,
@@ -223,7 +260,7 @@ function checkout(product, currency, frequency, amount) {
     paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
     const adblockOptions = {
       passthrough: {
-        "testmode": isTestmode,
+        "testmode": !!environment === "TEST",
         "userid": userid,
         "tracking": generateTrackingId(userid),
         "locale": language,
@@ -582,9 +619,9 @@ async function goto(nextStep, state, log) {
 steps.purchase.on("checkout-now", async () => {
   flow = "purchase";
   const frequency = steps.purchase.getSelectedValue();
-  const currency = "USD";
-  const amount = paddleEnvironment[frequency].amount;
-  const productId = paddleEnvironment[frequency].productId;
+  const currency = $currencies.value;
+  const [ amount, productId ] = Object.entries(products[currency][frequency])[0];
+  console.log("products", products);
   await goto(steps.loading);
   checkout(productId, currency, frequency, amount)
   .then(
@@ -708,3 +745,48 @@ async function initialize() {
 }
 
 initialize();
+
+////////////////////////////////////////////////////////////////////////////////
+// CURRENCIES
+// Due to how pages are generated we always end up with 2 dropdown so we need
+// to select the dropdown actually shown to the users in the generated "card"
+////////////////////////////////////////////////////////////////////////////////
+
+const $currencies = card.querySelector('.premium-checkout-header__select')
+
+// Populate currencies
+for (const currency in products) {
+  const $currency = document.createElement("option");
+  $currency.textContent = currency;
+  $currencies.append($currency);
+}
+
+// Update option amounts on currency change
+function onCurrencyChange() {
+  const currency = $currencies.value;
+  const currencySymbol = getCurrencySymbol(currency);
+
+  document
+    .querySelectorAll(".premium-plan-price-currency")
+    .forEach(element => element.innerText = currencySymbol);
+
+  document
+  .querySelectorAll(".premium-checkout-purchase-price__amount")
+  .forEach(element => {
+    const frequency = element.closest("button").value;
+    const amount = Object.keys(products[currency][frequency])[0];
+    element.textContent = getDollarString(currency, amount);
+  });
+}
+
+$currencies.addEventListener("change", onCurrencyChange);
+
+// Set default currency
+if (adblock.settings.currency) {
+  const currencyForGeo = adblock.settings.currency;
+  const supportedCurrencies = Object.keys(products);
+  console.log("supportedCurrencies", supportedCurrencies);
+  const currency = supportedCurrencies.includes(currencyForGeo) ? currencyForGeo : 'USD';
+  $currencies.value = currency;
+  onCurrencyChange();
+}

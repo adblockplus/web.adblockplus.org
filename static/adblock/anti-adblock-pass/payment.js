@@ -2,30 +2,79 @@ $(document).ready(function() {
     // The pricing code...
     const monthlyPricesUSD = [0, 2, 4];
     const yearlyPricesUSD = [0, 20, 40];
-    const premiumPaddleProductIds = {
-        "sandbox": {
-            "monthly": {
-                "me": 55427,
-                "mevpn": 47981
-            },
-            "yearly": {
-                "me": 55428,
-                "mevpn": 47980
-            }
-        },
-        "prod": {
-            "monthly": {
-                "me": 842007,
-                "mevpn": 822817
-            },
-            "yearly": {
-                "me": 842011,
-                "mevpn": 822814
-            }
-        }
-    }
     const monthlyPriceInterval = $("#i18n-slash_mo_no_replace").text();
     const yearlyPriceInterval = $("#i18n-slash_yr_no_replace").text();
+
+    ////
+    const PADDLE = adblock.config.paddle = {
+        ENVIRONMENTS: {
+          LIVE: 164164,
+          TEST: 11004
+        },
+        PRODUCTS: {
+          TEST: {
+            "USD": {
+              "monthly": {
+                "200": 55427,
+              },
+              "yearly": {
+                "2000": 55428,
+              }
+            },
+            "EUR": {
+              "monthly": {
+                "200": 68054,
+              },
+              "yearly": {
+                "2000": 68053,
+              }
+            }
+          },
+          LIVE: {
+            "USD": {
+              "monthly": {
+                "200": 842007,
+              },
+              "yearly": {
+                "2000": 842011,
+              }
+            },
+            "EUR": {
+              "monthly": {
+                "200": 874224,
+              },
+              "yearly": {
+                "2000": 874223,
+              }
+            }
+          }
+        },
+        // Paddle uses some non-standard/different-stand locale codes
+        LOCALES: {
+          "zh_CN": "zh-Hans",
+          "sv": "da",
+          "pt_BR": "pt",
+          "ko_KR": "ko",
+          "pl_PL": "pl",
+          "ca": "en",
+          "uk": "en",
+        }
+      };
+      
+      const language = document.documentElement.getAttribute("lang") || "en";
+      const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
+      const paddleId = PADDLE.ENVIRONMENTS[environment];
+      const paddleTitle = "Adblock Plus Premium";
+      const paddleLocale = PADDLE.LOCALES[language] || language;
+      const products = PADDLE.PRODUCTS[environment];
+      const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
+      
+      if (environment == "TEST") {
+        Paddle.Environment.set("sandbox");
+      }
+
+    ////
+
 
     /* Constants and cached selectors shared by the page */
     const Page = {
@@ -52,22 +101,96 @@ $(document).ready(function() {
         PaymentBox: $("#payments-content")
     };
 
+
+    const setPaddleProductId = (productId) => {
+        $("#amount_select_row button.selected").attr("data-product-id", productId);
+    };
+
     const isYearly = () => $(".slider").hasClass("active");
-    const isTestmode = () => !!document.location.search.match(/testmode/);
+    const isTestmode = () => !!environment === "TEST";
     const toggleSliders = () => $(".slider").each(function() { $(this).toggleClass("active"); });
     const getPricesForRecurringFrequency = () => isYearly() ? yearlyPricesUSD : monthlyPricesUSD;
-    const getPaddleProductsIdsForRecurringFrequency = () => {
-        if (isTestmode()) {
-            if (isYearly()) 
-                return premiumPaddleProductIds["sandbox"]["yearly"] 
-            else
-                return premiumPaddleProductIds["sandbox"]["monthly"] 
-        } else {
-            if (isYearly()) 
-                return premiumPaddleProductIds["prod"]["yearly"] 
-            else
-                return premiumPaddleProductIds["prod"]["monthly"] 
+    ////////////////////////////////////////////////////////////////////////////
+    // CURRENCIES
+    ////////////////////////////////////////////////////////////////////////////////
+
+    const $currencies = document.querySelector('.premium-checkout-header__select');
+
+    // Populate currencies
+    for (const currency in products) {
+    const $currency = document.createElement("option");
+    $currency.textContent = currency;
+    $currencies.append($currency);
+    }
+
+    /** convert a cent number to a dollar number in relevant supported currencies */
+    function getDollarNumber(currency, amount) {
+        return currency == "JPY" ? amount : amount / 100;
+    }
+
+    /** convert a cent number to a locally formatted dollar string in relevant supported currencies */
+    function getDollarString(currency, centAmountString) {
+        const dollarNumber = getDollarNumber(currency, centAmountString);
+        const formatOptions = {
+            style: 'currency', 
+            currency: currency, 
+            currencyDisplay: 'narrowSymbol'
+        };
+        if (dollarNumber % 1 === 0) {
+            formatOptions.minimumFractionDigits = 0;
+            formatOptions.maximumFractionDigits = 0;
         }
+        return new Intl.NumberFormat(language.replace("_", "-"), formatOptions).format(dollarNumber);
+    }
+
+    // Return symbol like '$' for given currency code like 'USD'
+    function getCurrencySymbol(currencyCode) {
+        const a = 0;
+        return a.toLocaleString("en", {
+            style:"currency",
+            currency: currencyCode
+        }).replace("0.00", "")
+    }
+
+    const getCurrentPaddleProductId = () => {
+        const currency = document.querySelector('.premium-checkout-header__select').value || 'EUR';
+        const frequency = isYearly() ? 'yearly' : 'monthly';
+        const amount = Object.keys(products[currency][frequency])[0];
+        console.log("currency=", currency, "frequency=", frequency, "amount=", amount);
+        console.log("id=", products[currency][frequency][amount]);
+        return products[currency][frequency][amount];
+    }
+
+    // Update option amounts on currency change
+    function onCurrencyChange() {
+        const currency = $currencies.value;
+        const currencySymbol = getCurrencySymbol(currency);
+        const $selectedPlanBtn = $("#amount_select_row button.selected");
+
+        document
+            .querySelectorAll(".premium-plan-price-currency")
+            .forEach(element => element.innerText = currencySymbol);
+
+        document
+        .querySelectorAll(".selected-plan-price")
+        .forEach(element => {
+            const frequency = $selectedPlanBtn.attr("data-recurring-frequency");
+            const amount = Object.keys(products[currency][frequency])[0];
+            element.textContent = getDollarString(currency, amount);
+        });
+        setPaddleProductId(getCurrentPaddleProductId());
+    }
+
+    $currencies.addEventListener("change", onCurrencyChange);
+
+    // Set default currency
+    if (adblock.settings.currency) {
+        const currencyForGeo = adblock.settings.currency;
+        const supportedCurrencies = Object.keys(products);
+        console.log("supportedCurrencies", supportedCurrencies);
+        const currency = supportedCurrencies.includes(currencyForGeo) ? currencyForGeo : 'USD';
+        $currencies.value = currency;
+        onCurrencyChange();
     }
 
     const setPrices = (prices) => {
@@ -88,11 +211,6 @@ $(document).ready(function() {
         $("#r_monthly").attr("data-amount", me);
     };
 
-    const setPaddleProductIds = (productIds) => {
-        $("button[data-plan=mevpn]").attr("data-product-id", productIds["mevpn"]);
-        $("button[data-plan=me]").attr("data-product-id", productIds["me"]);
-    };
-
     const getSelectedAmountFrequencyPlan = () => {
         const $selectedOption = $("#amount_select_row button.selected");
         const amount = $selectedOption.attr("data-amount");
@@ -109,7 +227,8 @@ $(document).ready(function() {
 
     const updateSelectedPlanText = () => {
         const [amount, frequency, plan, suffix, planName, productId] = getSelectedAmountFrequencyPlan();
-        const currencySymbol = "$"; // right now only USD.
+        const currency = $currencies.value || 'EUR';
+        const currencySymbol = getCurrencySymbol(currency);
         $(".plan-name").each(function() { $(this).text(planName); })
         $(".selected-plan-price").each(function() { $(this).text(`${currencySymbol}${amount}`); });
         $(".selected-plan-recurring-frequency-abbreviation").each(function() { $(this).text(suffix); });
@@ -172,14 +291,6 @@ $(document).ready(function() {
         "mevpn": "me"
     };
 
-    $("#amount_select_row button").on("click", function() {
-        const thisButtonPlan = $(this).data("plan");
-        $(this).addClass("selected");
-        const otherPlan = planInverseMap[thisButtonPlan];
-        $(`#amount_select_row button[data-plan="${otherPlan}"]`).removeClass("selected");
-        updateSelectedPlanText();
-    });
-
     $(".your-plan").on("click", function() {
         const thisPlan = $(this).data("plan");
         if (thisPlan !== "free") {
@@ -199,8 +310,9 @@ $(document).ready(function() {
     $(".monthly-yearly-slider").on("click", function(ev) {
         toggleSliders();
         setPrices(getPricesForRecurringFrequency());
-        setPaddleProductIds(getPaddleProductsIdsForRecurringFrequency());
+        setPaddleProductId(getCurrentPaddleProductId());
         updateSelectedPlanText();
+        onCurrencyChange(); // Make sure currency is reflecting dropdown selection still
     });
 
     $("p.get-it-now, #upgrade-to-premium, .premium-cta").on("click", function(event) {
@@ -246,7 +358,7 @@ $(document).ready(function() {
     var ___AB_USING_CURRENCY_LIB = false;
 
     // setup paddle product IDs
-    setPaddleProductIds(getPaddleProductsIdsForRecurringFrequency());
+    setPaddleProductId(getCurrentPaddleProductId());
 
     // Utility fn to show/hide cards using query params for testing.
     const cardPageToShow = urlParams.get("showcards");
@@ -459,17 +571,6 @@ $(document).ready(function() {
         return productId;
     }
 
-    function getTitle() {
-        const [amount, frequency, plan, suffix, planName, productId] = getSelectedAmountFrequencyPlan();
-        if (plan === "me") {
-            return "Adblock Plus Premium";
-        } else if (plan === "mevpn") {
-            return "Adblock Plus Premium + VPN";
-        }
-
-        return "Adblock Plus";
-    }
-
     function getCurrency() {
         // right now, all USD.
         return "USD";
@@ -486,15 +587,20 @@ $(document).ready(function() {
         queryParams.append("thankyou", 1);
         queryParams.append("var", 1);
     }
+
+    function getTitle() { return paddleTitle };
+    function getCurrency() {
+        return document.querySelector('.premium-checkout-header__select').value || 'EUR';
+    };
+
     const onSuccessURL = () => {
         const [amount, frequency] = getSelectedAmountFrequencyPlan();
         const clickTimestamp = Date.now();
-        const language = document.documentElement.lang;
         const page = document.documentElement.getAttribute("data-page");
         queryParams.set("premium-checkout__handoff", 1);
         queryParams.set("premium-checkout__flow", `${page}__purchase`);
         queryParams.set("premium-checkout__userid", getUserId());
-        queryParams.set("premium-checkout__currency", "USD");
+        queryParams.set("premium-checkout__currency", getCurrency());
         queryParams.set("premium-checkout__amount", amount * 100);
         queryParams.set("premium-checkout__frequency", frequency);
         queryParams.set("premium-checkout__language", language);
@@ -508,12 +614,12 @@ $(document).ready(function() {
 
     // Paddle Checkout initialization
     PaddleCheckout.init({
+        currency: getCurrency,
         testmode: isTestmode(),
         submitButtonId: "donate_now",
-        currency: getCurrency,
         recurring: isRecurring,
         subType: getSubType,
-        locale: getLanguageInPath,
+        locale: language,
         getProductId: getProductId,
         title: getTitle,
         getAmountCents: function() {
