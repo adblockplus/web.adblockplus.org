@@ -144,6 +144,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
  ******************************************************************************/
 
 adblock.config.upsellPremium = () => {
+  if (document.documentElement.getAttribute("data-page") != "installed") return;
   eyeo.payment.productId = "ME";
   eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
   document.querySelector(".update-payment-reward").removeAttribute("hidden");
