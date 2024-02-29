@@ -144,10 +144,11 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
  ******************************************************************************/
 
 adblock.config.upsellPremium = () => {
-  if (document.documentElement.getAttribute("data-page") != "installed") return;
+  if (document.documentElement.getAttribute("data-page") != "installed") return false;
   eyeo.payment.productId = "ME";
   eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
   document.querySelector(".update-payment-reward").removeAttribute("hidden");
+  return true;
 }
 
 if (adblock.query.has("upsellPremium")) adblock.config.upsellPremium();
