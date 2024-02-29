@@ -1607,6 +1607,7 @@ const updateReward = rewardController.renderReward = () => {
   }));
 };
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
+appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
 document.addEventListener("DOMContentLoaded", updateReward);
 })();
 

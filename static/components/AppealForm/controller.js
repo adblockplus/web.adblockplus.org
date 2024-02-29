@@ -188,4 +188,5 @@ const updateReward = rewardController.renderReward = () => {
 }
 
 appealForm.events.on(AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
+appealForm.events.on(AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
 document.addEventListener("DOMContentLoaded", updateReward);
