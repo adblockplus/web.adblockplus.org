@@ -139,3 +139,54 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
   }
   
 });
+
+/* temporarily adding the update premium reward feature to installed for testing
+ ******************************************************************************/
+
+adblock.config.upsellPremium = () => {
+  if (document.documentElement.getAttribute("data-page") != "installed") return false;
+  eyeo.payment.productId = "ME";
+  eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
+  document.querySelector(".update-payment-reward").removeAttribute("hidden");
+  return true;
+}
+
+if (adblock.query.has("upsellPremium")) adblock.config.upsellPremium();
+
+const rewardController = adblock.runtime.rewardController = {};
+
+const getReward = rewardController.getReward = (currency, frequency, amount) => {
+  let plan = "ME";
+  let months;
+  if (frequency == "once") {
+    const amountNumerator = parseInt(amount, 10);
+    const onceDenominator = parseInt(Object.keys(paddleConfig.products[currency].once)[2], 10);
+    const monthlyDenominator = parseInt(Object.keys(paddleConfig.products[currency].monthly)[0], 10);
+    if (amountNumerator < onceDenominator) {
+      months = Math.floor(amountNumerator / monthlyDenominator);
+    } else {
+      months = 12 * Math.floor(amountNumerator / onceDenominator);
+    }
+  }
+  return { plan, months };
+}
+
+const updateReward = rewardController.renderReward = () => {
+  if (eyeo.payment.productId != "ME") return;
+  const { currency, frequency, product, amount } = appealForm.state();
+  const frequencySuffixes = {
+    "once": "",
+    "monthly": adblock.strings["suffix__monthly"],
+    "yearly": adblock.strings["suffix__yearly"],
+  };
+  const { plan, months } = getReward(currency, frequency, amount)
+  const planName = adblock.strings["adblock__premium"];
+  const suffix = frequencySuffixes[frequency];
+  appealForm.setRewardDuration(currency, amount, months);
+  localStorage.setItem("planinfo", JSON.stringify({ durationMonths: months, plan }));
+  localStorage.setItem("purchaseinfo", JSON.stringify({ amount, frequency, plan, suffix, planName }));
+}
+
+appealForm.events.on(AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
+appealForm.events.on(AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
+document.addEventListener("DOMContentLoaded", updateReward);

@@ -539,6 +539,10 @@
 /* document
  ******************************************************************************/
 
+[hidden] {
+  display: none !important;
+}
+
 *,
 *::before,
 *::after {
@@ -882,4 +886,54 @@ a:hover, a:active {
 .restrict-premium .premium-only,
 html:not(.restrict-premium) .not-premium-only {
   display: none !important;
+}
+
+/* temporarily adding the update premium reward feature to installed for testing
+ ******************************************************************************/
+
+.update-payment-reward {
+  position: relative;
+  border-radius: 10px;
+  background: #FFF;
+  padding: 0.875rem;
+  border: 1px solid #666;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.update-payment-reward__highlight {
+  display: flex;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0.5rem;
+}
+
+root:not([dir='rtl']) .update-payment-reward__highlight {
+  left: 0.5rem;
+}
+
+[dir='rtl'] .update-payment-reward__highlight {
+  right: 0.5rem;
+}
+
+.update-payment-reward__highlight::before {
+  flex: 1;
+  content: "";
+  background: #2284F7;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.update-payment-reward__text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.update-payment-reward__text .amount,
+.update-payment-reward__text .product {
+  font-weight: 400;
 }

@@ -7,6 +7,18 @@
       paymentCompleteUrl: "/installed-payment-complete",
       shouldStoreContributionInfo: true
     });
+    // temporarily adding the update premium reward feature to installed for testing
+    Object.assign(adblock.strings, {
+      "product__premium": `{{ product__premium Adblock Plus Premium }}`,
+      "update-payment-reward__1-month": `{{ update-payment-reward__1-month Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for one month. Thanks for your support. }}`,
+      "update-payment-reward__n-months": `{{ update-payment-reward__n-months Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> months. Thanks for your support. }}`,
+      "update-payment-reward__1-year": `{{ update-payment-reward__1-year Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for one year. Thanks for your support. }}`,
+      "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
+      "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
+      "update-payment-reward": `{{ update-payment-reward Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span>. Thanks for your support. }}`,
+      "suffix__monthly": `{{ update-payment-suffix__monthly /monthly }}`,
+      "suffix__yearly": `{{ update-payment-suffix__yearly /yearly }}`,
+    });
   </script>
   <link rel="stylesheet" href="/build/css/installed.min.css">
   <script src="/js/settings.js"></script>
@@ -35,7 +47,17 @@
       
       <section class="installed-main__block-3">
         <? include AppealForm/bootstrap ?>
-      </section><!-- .installed-main__block-3 -->  
+      </section><!-- .installed-main__block-3 -->
+
+      <!--
+      temporarily adding the update premium reward feature to installed for testing
+      -->
+      <div class="update-payment-reward premium-only" hidden>
+        <span class="update-payment-reward__highlight"></span>
+        <div class="update-payment-reward__text">
+          {{ update-payment-reward__text Nice! A <span class="update-payment-reward__amount">$35.00</span> contribution gets <span class="update-payment-reward__product">Adblock Plus Premium</span> <span class="update-payment-reward__duration">for one year</span>. Thanks for your support. }}
+        </div>
+      </div>
   
     </div><!-- .installed-main__container -->
   
