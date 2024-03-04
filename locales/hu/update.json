@@ -17,7 +17,7 @@
     "message": "Fizetési módok:"
   },
   "whats-new-header-1": {
-    "message": "Újdonságok"
+    "message": "Vedd át az irányítást a böngészési élményed felett."
   },
   "whats-new-lead-1": {
     "message": "Az alábbiakban olvashatja a legutóbbi fejlesztéseink áttekintését."
@@ -35,7 +35,7 @@
     "message": "<strong>Jobb felhasználói élmény.</strong> Folyamatosan az Adblock Plus fejlesztésén dolgozunk. Nemrégiben számos hibaüzenetet frissítettünk az egyszerűbb hibaelhárítás érdekében, módosítottuk a használt fogalmakat, és új élőlábat adtunk a felugró menühöz, hogy még egyszerűbben hozzáférhessen minden szükséges menüponthoz."
   },
   "whats-new-support": {
-    "message": "Jelenteni szeretnél egy problémát? A közösségi médián, <a>e-mailen</a> vagy a <a>felhasználói fórumon</a> lépj velünk kapcsolatba."
+    "message": "Problémát szeretnél jelenteni? Az <a>Ügyfélszolgálaton</a> vagy az <a>support@adblockplus.org</a> e-mail címen léphetsz kapcsolatba velünk."
   },
   "privacy-policy": {
     "description": "footer link",
@@ -168,22 +168,22 @@
     "message": "Az Adblock Plus cégnél hiszünk a mindenki számára jobb internetes élmény biztosítása fontosságában. Az alábbiakban olvashatod a legújabb fejlesztéseinket, amelyekkel az álom valósággá válhat:"
   },
   "new__item-1__heading": {
-    "message": "Reklámblokkolás további nyelveken"
+    "message": "Webszerte több zavaró elem blokkolása (Premium)"
   },
   "new__item-1__paragraph-1": {
-    "message": "Magyar, thai, horvát, szerb, szlovén, bosnyák és további nyelvekkel bővítettük a támogatást."
+    "message": "Jobban összpontosíthatsz arra, amire akarsz, ha blokkolod a további előugró ablakokat, köztük az automatikus videolejátszásokat, előugró hírlevélre való feliratkozási ajánlatokat, felmérési kérelmeket és egyebeket."
   },
   "new__item-2__heading": {
-    "message": "Jobb infrastruktúra a jövő számára"
+    "message": "Nem kívánt követés blokkolása"
   },
   "new__item-2__paragraph-1": {
-    "message": "Az olyan jövőbeli internetes változások küszöbén, mint a <a>Manifest V3</a> befektettünk az infrastruktúránkba. Ezekkel a frissítéssel szeretnénk biztosítani, hogy az Adblock Plus bővítmény ma és a jövőben is jobb internetes élményt nyújtson."
+    "message": "Az Adblock Plus bővítmény egy szűrőlistával van ellátva, amely böngészés közben <a>blokkolja a követést</a>, ezáltal megnehezíti harmadik felek számára a személyes adataid gyűjtését."
   },
   "new__item-3__heading": {
     "message": "Sütinyilatkozatok blokkolása (Premium)"
   },
   "new__item-3__paragraph-1": {
-    "message": "Ismered azokat az idegesítő előugró ablakokat, amelyek minden webhelyen arra kérnek, hogy fogadd el a sütik használatát? Az Adblock Plus Premium bővítmény használatával most blokkolhatod ezeket az előugró ablakokat, miközben a nevedben bármely süti használatát elutasíthatjuk. A funkcióra vonatkozó további részletekért, <a>itt olvashatod el a blogbejegyzést</a>."
+    "message": "Gyorsabban jutsz el oda, ahová szeretnél, ha <a>blokkolod azokat bosszantó sütinyilatkozatokat</a>, amelyek arra kérnek, hogy fogadd el a webhelyek sütijeit, miközben elutasíthatsz annyi szükségtelen sütit, amennyit csak tudsz."
   },
   "new__item-4__heading": {
     "message": "Webszerte lobb reklámblokkolás"
@@ -198,10 +198,10 @@
     "message": "Problémát szeretnél jelenteni? Lépj velünk kapcsolatba a közösségi oldalainkon, <a>e-mailben</a> vagy a <a>felhasználói fórumon keresztül</a>."
   },
   "new__item-5__heading": {
-    "message": "Süti figyelmeztetések elrejtése (Premium)"
+    "message": "Szabd személyre a böngészési élményed"
   },
   "new__item-5__paragraph-1": {
-    "message": "Egy újabb Premium funkciót adtunk hozzá, amellyel elrejtheted a mindenhol felbukkanó, sütihasználat elfogadását kérő felugró ablakokat a weboldalak megnyitásakor. További részleteket erről a funkcióról <a>a blogbejegyzésünkben olvashatsz.</a>"
+    "message": "Mi van akkor, ha nem hirdetés, amit blokkolni akarsz? A <a>kézi elrejtés varázsló segítségével</a> személyre szabhatod a böngészési élményed az oldal azon részeinek elrejtésével, amelyeket nem akarsz látni."
   },
   "support-money-back": {
     "message": "Bízzon bennünk, és támogasson bennünket: <strong>60 napos visszafizetési garancia</strong>. És megtarthatja az Adblock Plus bővítményt."
@@ -269,13 +269,22 @@
   "update__installing-card__heading-1": {
     "message": "A legutóbbi Adblock Plus bővítmény frissítés telepítése"
   },
-  "new__paragraph-1-unrestricted": {
-    "message": "Keményen dolgozunk azon, hogy a hirdetések, zavarások és nyomkövetők egyre növekvő számú blokkolásával még értékesebb legyen a számodra az Adblock Plus bővítmény. Azt a módot is fejlesztjük, ahogyan a felhasználók támogatását kérjük — célunk, hogy még értékesebb legyen a számodra az Adblock Plus Premium bővítmény, és arra kérünk, hogy Premium felhasználóvá válásod által támogass bennünket. A további zavarások, sütinyilatkozatok és egyebek blokkolásával javítja az Adblock Plus Premium bővítmény az internetes élményedet. Köszönjük a támogatásodat!"
+  "whats-new-paragraph-1": {
+    "message": "Az AdBlock Plus bővítmény zökkenőmentes módot biztosít a gyorsabb, biztonságosabb és kevesebb zavaró elemmel járó böngészéshez. Mindenki számára jobb hellyé tesszük az internetet."
   },
-  "new__paragraph-2-unrestricted": {
-    "message": "Itt található egy rövid ismertető arról, hogy min dolgoztunk legutóbb:"
+  "whats-new-paragraph-2": {
+    "message": "Íme néhány tudnivaló röviden arról, hogy mit tehetsz az AdBlock Plus bővítménnyel:"
   },
-  "new__paragraph-1-restricted": {
-    "message": "Keményen dolgozunk azon, hogy még értékesebbé tegyük az Adblock Plus bővítményt a számodra. Itt található egy rövid ismertető arról, hogy min dolgoztunk legutóbb:"
+  "new__item-6__heading": {
+    "message": "Kedvenc tartalomkészítőid támogatása"
+  },
+  "new__item-6__paragraph-1": {
+    "message": "Sok tartalomkészítő esetén a hirdetési bevételtől függ, hogy fedezi tudja-e a tartalomkészítést. Azáltal támogasd azokat, akiket kedvelsz, hogy <a>megadott webhelyeken engedélyezed a hirdetéseket</a>, míg máshol folytatod a blokkolásukat."
+  },
+  "new__item-7__heading": {
+    "message": "Élvezd a diszkrétebb, biztonságosabb böngészést"
+  },
+  "new__item-7__paragraph-1": {
+    "message": "Az AdBlock partnerei által készített <a>AdBlock VPN</a> alkalmazással jobban kézben tarthatod a böngészésed módját. Rejtsd el az online identitásodat, használd biztonságosabban a nyilvános WiFi-hálózatot és élvezd a nagyobb online biztonságot az első lépések megtételekor."
   }
 }
