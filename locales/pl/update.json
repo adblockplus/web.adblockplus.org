@@ -17,7 +17,7 @@
     "message": "Zapłać za pomocą:"
   },
   "whats-new-header-1": {
-    "message": "Co nowego?"
+    "message": "Dajemy Ci kontrolę nad przeglądaniem stron internetowych."
   },
   "whats-new-lead-1": {
     "message": "Oto przegląd niektórych ostatnich ulepszeń."
@@ -35,7 +35,7 @@
     "message": "<strong>Ulepszona obsługa.</strong> Cały czas pracujemy nad tym, aby Adblock Plus był jeszcze lepszy. Niedawno zaktualizowaliśmy kilka komunikatów o błędach, aby ułatwić ich usuwanie, wprowadziliśmy zmiany w naszej terminologii oraz dodaliśmy nową stopkę do wyskakującego menu, dzięki czemu można wygodnie uzyskać dostęp do potrzebnych informacji."
   },
   "whats-new-support": {
-    "message": "Chcesz zgłosić problem? Skontaktuj się z nami za pośrednictwem mediów społecznościowych, <a>poczty elektronicznej</a> lub <a>forum użytkowników</a>."
+    "message": "Chcesz zgłosić problem? Skontaktuj się z nami za pośrednictwem naszego <a>Centrum pomocy</a> lub pod adresem <a>support@adblockplus.org</a>."
   },
   "privacy-policy": {
     "description": "footer link",
@@ -168,22 +168,22 @@
     "message": "W Adblock Plus ciągle staramy się zapewniać funkcje, które sprawiają, że przeglądanie Internetu jest przyjemniejsze. Oto kilka rzeczy, nad którymi pracowaliśmy:"
   },
   "new__item-1__heading": {
-    "message": "Blokowanie reklam w większej liczbie języków"
+    "message": "Blokuj więcej elementów rozpraszających uwagę w całej sieci (Premium)."
   },
   "new__item-1__paragraph-1": {
-    "message": "Dodaliśmy obsługę języków takich jak węgierski, tajski, chorwacki, serbski, słoweński, bośniacki oraz inne."
+    "message": "Dzięki blokowaniu dodatkowych wyskakujących okienek, w tym np. automatycznie odtwarzanych filmów, powiadomień o biuletynach czy próśb o wypełnienie ankiet, możesz skupić się bardziej na tym, co chcesz zrobić."
   },
   "new__item-2__heading": {
-    "message": "Poprawa infrastruktury na przyszłość"
+    "message": "Zapobiegaj niechcianemu śledzeniu"
   },
   "new__item-2__paragraph-1": {
-    "message": "W obliczu przyszłych zmian w Internecie, takich jak <a>Manifest V3</a>, zainwestowaliśmy w naszą infrastrukturę. Dzięki tej aktualizacji chcemy, aby Adblock Plus nadal zapewniał użytkownikom lepsze wrażenia z korzystania z Internetu teraz i w przyszłości."
+    "message": "Adblock Plus zawiera opcję listy filtrów, która <a>blokuje dodatkowe śledzenie podczas przeglądania</a>, utrudniając stronom trzecim gromadzenie danych osobowych użytkownika."
   },
   "new__item-3__heading": {
     "message": "Blokowanie powiadomień o plikach cookie (Premium)"
   },
   "new__item-3__paragraph-1": {
-    "message": "Zapewne znasz te uciążliwe wyskakujące okienka z prośbą o zaakceptowanie plików cookie na każdej stronie internetowej? Dzięki Adblock Plus Premium możesz teraz blokować te wyskakujące okienka, a my w Twoim imieniu odrzucamy wszelkie pliki cookie, które możemy. Więcej informacji na temat tej funkcji można znaleźć w <a>naszym wpisie na blogu</a>."
+    "message": "Szybciej docieraj tam, gdzie chcesz, <a>blokując te nieznośne banery</a>, które proszą o akceptację plików cookie, jednocześnie odrzucając wszystkie niepotrzebne pliki cookie."
   },
   "new__item-4__heading": {
     "message": "Lepsze blokowanie reklam w Internecie"
@@ -198,10 +198,10 @@
     "message": "Chcesz zgłosić problem? Skontaktuj się z nami za pośrednictwem mediów społecznościowych, <a>poczty elektronicznej</a> lub <a>forum użytkowników</a>."
   },
   "new__item-5__heading": {
-    "message": "Ukryj ostrzeżenia o plikach cookie (Premium)"
+    "message": "Dostosuj swoje środowisko internetowe"
   },
   "new__item-5__paragraph-1": {
-    "message": "Dodaliśmy kolejną funkcję Premium, dzięki której można ukryć wyskakujące okienka zgody na pliki cookie, które informują o korzystaniu z plików cookie podczas odwiedzania witryny. Więcej informacji na temat tej funkcji można znaleźć w <a>naszym blogu.</a>"
+    "message": "Co zrobić, jeśli to, co chcesz zablokować, nie jest reklamą? Możesz spersonalizować sposób przeglądania Internetu, <a>korzystając z ręcznego kreatora ukrywania</a>, aby ukryć części strony, których nie chcesz widzieć."
   },
   "support-money-back": {
     "message": "Wspieraj nas bez obaw: <strong>60-dniowa gwarancja zwrotu pieniędzy</strong>. Ponadto możesz zatrzymać Plus."
@@ -268,5 +268,23 @@
   },
   "update__installing-card__heading-1": {
     "message": "Instalacja najnowszej aktualizacji Adblock Plus"
+  },
+  "whats-new-paragraph-1": {
+    "message": "AdBlock Plus zapewnia sposób na szybsze, bezpieczniejsze i mniej rozpraszające przeglądanie sieci. Sprawiamy, że Internet jest lepszym miejscem dla wszystkich."
+  },
+  "whats-new-paragraph-2": {
+    "message": "Oto kilka informacji o tym, co możesz zrobić dzięki AdBlock Plus:"
+  },
+  "new__item-6__heading": {
+    "message": "Wspieraj swoich ulubionych twórców treści"
+  },
+  "new__item-6__paragraph-1": {
+    "message": "Wielu twórców treści jest uzależnionych od przychodów z reklam. Wspieraj swoich ulubionych twórców, <a>zezwalając na reklamy w określonych witrynach</a>, jednocześnie blokując je gdzie indziej."
+  },
+  "new__item-7__heading": {
+    "message": "Bardziej prywatna i bezpieczniejsza sieć"
+  },
+  "new__item-7__paragraph-1": {
+    "message": "Dzięki <a>AdBlock VPN</a>, stworzonemu przez naszych partnerów z AdBlock, masz jeszcze większą kontrolę nad sposobem przeglądania. Ukryj swoją tożsamość online, bezpieczniej korzystaj z publicznych sieci Wi-Fi oraz ciesz się zwiększonym bezpieczeństwem online."
   }
 }
