@@ -254,16 +254,6 @@ legacy_redirect_tests:
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Redirects.py
   when: manual
 
-monitoring_scheduled_tests:
-  only:
-    - schedules
-  stage: scheduled_monitoring_tests
-  image: *TEST_IMAGE
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://adblockplus.org/ tests/test_DownloadLinks.py tests/test_MonitorDonationPages.py
-
 pre_review_build:
   stage: prebuild_firebase
   except:
