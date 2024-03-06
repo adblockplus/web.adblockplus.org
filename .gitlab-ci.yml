@@ -10,7 +10,6 @@ variables:
     PREVIEW_CHANNEL_EXPIRATION: 30d
     STRIPE_PUBLISHABLE_KEY: pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN
     DONATION_SERVER_BASE_URL: https://donation-staging.adblock-org.workers.dev/
-    DONATION_SERVER_BASE_URL_V1: https://staging-new-integration-adblockplus-org-1.uplink.eyeo.it/
 
 .legacy_production:
   variables: &legacy_production
@@ -18,7 +17,6 @@ variables:
     FIREBASE_DOMAIN: https://www.adblockplus.dev/
     STRIPE_PUBLISHABLE_KEY: pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs
     DONATION_SERVER_BASE_URL: https://donation.adblock-org.workers.dev/
-    DONATION_SERVER_BASE_URL_V1: https://new-integration.adblockplus.org/
 
 .modern_production:
   extends:
@@ -33,7 +31,6 @@ variables:
     - &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
     - &TEST_IMAGE registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium
     - &BUILD_RUNNER docker
-    - &US_RUNNER web-qa-us-proxy-1.uplink.eyeo.it
     - &STAGING_RUNNER eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it
     - &PRODUCTION_RUNNER0 eyeo_cms_web_server_adblockplus-org-2.adblockplus.org
 
@@ -153,21 +150,6 @@ smoke_tests_production:
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=https://new.adblockplus.org tests/test_DownloadLinks.py
   allow_failure: true
 
-cookies_settings_tests:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  tags:
-    - *US_RUNNER
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_CookiesSettings.py
-  when: manual
-
 download_links_tests:
   except:
     - schedules
@@ -192,66 +174,6 @@ language_tests:
     - python3 -m pip install tox
     - cd tests/web.adblockplus.org
     - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Languages.py
-  when: manual
-
-stripe_donate_tests:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  tags:
-    - *US_RUNNER
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=donate tests/test_StripeDonations.py
-  when: manual
-
-stripe_installed_tests:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  tags:
-    - *US_RUNNER
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=installed tests/test_StripeDonations.py
-  when: manual
-
-stripe_update_tests:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  tags:
-    - *US_RUNNER
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN --generic_donation_page=update tests/test_StripeDonations.py
-  when: manual
-
-legacy_redirect_tests:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  tags:
-    - *US_RUNNER
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Redirects.py
   when: manual
 
 pre_review_build:
