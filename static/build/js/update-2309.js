@@ -1477,17 +1477,20 @@ const getReward = rewardController.getReward = (currency, frequency, amount) => 
   };
 };
 const updateReward = rewardController.renderReward = () => {
-  if (!(eyeo.payment.productId == "ME" || upsellPremium)) return;
   const {
     currency,
     frequency,
     product,
     amount
   } = appealForm.state();
-  if (upsellPremiumCurrencies.includes(currency)) {
-    document.querySelector(".update-payment-reward").removeAttribute("hidden");
-  } else {
-    document.querySelector(".update-payment-reward").setAttribute("hidden", true);
+  if (upsellPremium) {
+    if (upsellPremiumCurrencies.includes(currency)) {
+      document.querySelector(".update-payment-reward").removeAttribute("hidden");
+      eyeo.payment.productId = "ME";
+    } else {
+      document.querySelector(".update-payment-reward").setAttribute("hidden", true);
+      eyeo.payment.productId = originalProductId;
+    }
   }
   const frequencySuffixes = {
     "once": "",
@@ -1516,9 +1519,10 @@ const updateReward = rewardController.renderReward = () => {
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
 document.addEventListener("DOMContentLoaded", updateReward);
+let originalProductId = false;
 adblock.config.upsellPremium = () => {
+  if (originalProductId === false) originalProductId = eyeo.payment.productId;
   if (document.documentElement.getAttribute("data-page") != "installed") {
-    upsellPremium = false;
     return false;
   } else {
     upsellPremium = true;
@@ -1531,10 +1535,7 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
   appealForm.disable();
   let productId = eyeo.payment.productId;
   let paymentCompleteUrl = eyeo.payment.paymentCompleteUrl;
-  if (upsellPremium) {
-    productId = "ME";
-    paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
-  }
+  if (productId == "ME") paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
   const language = document.documentElement.lang || "en";
   const clickTimestamp = Date.now();
   const contributionInfo = JSON.stringify({
