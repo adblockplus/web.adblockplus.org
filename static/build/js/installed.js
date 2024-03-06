@@ -1455,8 +1455,86 @@ function getCompletedUrl() {
     return eyeo.payment.paymentCompleteUrl;
   }
 }
+let upsellPremium = false;
+const upsellPremiumCurrencies = ["USD", "CAD", "AUD"];
+const rewardController = adblock.runtime.rewardController = {};
+const getReward = rewardController.getReward = (currency, frequency, amount) => {
+  let plan = "ME";
+  let months;
+  if (frequency == "once") {
+    const amountNumerator = parseInt(amount, 10);
+    const onceDenominator = parseInt(Object.keys(paddleConfig.products[currency].once)[2], 10);
+    const monthlyDenominator = parseInt(Object.keys(paddleConfig.products[currency].monthly)[0], 10);
+    if (amountNumerator < onceDenominator) {
+      months = Math.floor(amountNumerator / monthlyDenominator);
+    } else {
+      months = 12 * Math.floor(amountNumerator / onceDenominator);
+    }
+  }
+  return {
+    plan,
+    months
+  };
+};
+const updateReward = rewardController.renderReward = () => {
+  if (!(eyeo.payment.productId == "ME" || upsellPremium)) return;
+  const {
+    currency,
+    frequency,
+    product,
+    amount
+  } = appealForm.state();
+  if (upsellPremiumCurrencies.includes(currency)) {
+    document.querySelector(".update-payment-reward").removeAttribute("hidden");
+  } else {
+    document.querySelector(".update-payment-reward").setAttribute("hidden", true);
+  }
+  const frequencySuffixes = {
+    "once": "",
+    "monthly": adblock.strings["suffix__monthly"],
+    "yearly": adblock.strings["suffix__yearly"]
+  };
+  const {
+    plan,
+    months
+  } = getReward(currency, frequency, amount);
+  const planName = adblock.strings["adblock__premium"];
+  const suffix = frequencySuffixes[frequency];
+  appealForm.setRewardDuration(currency, amount, months);
+  localStorage.setItem("planinfo", JSON.stringify({
+    durationMonths: months,
+    plan
+  }));
+  localStorage.setItem("purchaseinfo", JSON.stringify({
+    amount,
+    frequency,
+    plan,
+    suffix,
+    planName
+  }));
+};
+appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
+appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
+document.addEventListener("DOMContentLoaded", updateReward);
+adblock.config.upsellPremium = () => {
+  if (document.documentElement.getAttribute("data-page") != "installed") {
+    upsellPremium = false;
+    return false;
+  } else {
+    upsellPremium = true;
+    updateReward();
+    return true;
+  }
+};
+if (adblock.query.has("upsellPremium")) adblock.config.upsellPremium();
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
   appealForm.disable();
+  let productId = eyeo.payment.productId;
+  let paymentCompleteUrl = eyeo.payment.paymentCompleteUrl;
+  if (upsellPremium) {
+    productId = "ME";
+    paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
+  }
   const language = document.documentElement.lang || "en";
   const clickTimestamp = Date.now();
   const contributionInfo = JSON.stringify({
@@ -1469,7 +1547,7 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     clickTs: clickTimestamp
   });
   const successParameters = new URLSearchParams();
-  if (eyeo.payment.productId == "ME") {
+  if (productId == "ME") {
     const _userid = forceGetUserId();
     successParameters.set("premium-checkout__handoff", 1);
     successParameters.set("premium-checkout__flow", document.documentElement.getAttribute("data-page"));
@@ -1485,16 +1563,16 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
   if (eyeo.payment.shouldStoreContributionInfo) {
     localStorage.setItem("contributionInfo", contributionInfo);
   }
-  let successURL = eyeo.payment.paymentCompleteUrl || "/payment-complete";
+  let successURL = paymentCompleteUrl || "/payment-complete";
   if (false == successURL.startsWith("https://")) successURL = `/${language}/${successURL}`;
   const passthrough = {
     testmode: isTestmode,
-    userid: eyeo.payment.productId == "ME" ? forceGetUserId() : "",
+    userid: productId == "ME" ? forceGetUserId() : "",
     tracking: recordTracking(),
     locale: "",
     country: "unknown",
     ga_id: "",
-    premium: eyeo.payment.productId == "ME" ? "true" : "false",
+    premium: productId == "ME" ? "true" : "false",
     premium_cid: "0",
     premium_sid: "0",
     currency: data.currency,
@@ -1543,72 +1621,6 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     }));
   }
 });
-
-/* temporarily adding the update premium reward feature to installed for testing
- ******************************************************************************/
-
-adblock.config.upsellPremium = () => {
-  if (document.documentElement.getAttribute("data-page") != "installed") return false;
-  eyeo.payment.productId = "ME";
-  eyeo.payment.paymentCompleteUrl = "https://accounts.adblockplus.org/premium";
-  document.querySelector(".update-payment-reward").removeAttribute("hidden");
-  return true;
-};
-if (adblock.query.has("upsellPremium")) adblock.config.upsellPremium();
-const rewardController = adblock.runtime.rewardController = {};
-const getReward = rewardController.getReward = (currency, frequency, amount) => {
-  let plan = "ME";
-  let months;
-  if (frequency == "once") {
-    const amountNumerator = parseInt(amount, 10);
-    const onceDenominator = parseInt(Object.keys(paddleConfig.products[currency].once)[2], 10);
-    const monthlyDenominator = parseInt(Object.keys(paddleConfig.products[currency].monthly)[0], 10);
-    if (amountNumerator < onceDenominator) {
-      months = Math.floor(amountNumerator / monthlyDenominator);
-    } else {
-      months = 12 * Math.floor(amountNumerator / onceDenominator);
-    }
-  }
-  return {
-    plan,
-    months
-  };
-};
-const updateReward = rewardController.renderReward = () => {
-  if (eyeo.payment.productId != "ME") return;
-  const {
-    currency,
-    frequency,
-    product,
-    amount
-  } = appealForm.state();
-  const frequencySuffixes = {
-    "once": "",
-    "monthly": adblock.strings["suffix__monthly"],
-    "yearly": adblock.strings["suffix__yearly"]
-  };
-  const {
-    plan,
-    months
-  } = getReward(currency, frequency, amount);
-  const planName = adblock.strings["adblock__premium"];
-  const suffix = frequencySuffixes[frequency];
-  appealForm.setRewardDuration(currency, amount, months);
-  localStorage.setItem("planinfo", JSON.stringify({
-    durationMonths: months,
-    plan
-  }));
-  localStorage.setItem("purchaseinfo", JSON.stringify({
-    amount,
-    frequency,
-    plan,
-    suffix,
-    planName
-  }));
-};
-appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
-appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
-document.addEventListener("DOMContentLoaded", updateReward);
 })();
 
 /******/ })()
