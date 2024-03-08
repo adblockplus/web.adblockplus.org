@@ -502,7 +502,7 @@ bla bla bla
 
 </div>
 
-[Buy now](example){ .button .button--gold .full-width }
+[Buy now](https://example.com){ .button .button--gold .full-width }
 
 <? include editor/card-end ?>
 <? include editor/column ?>
@@ -525,7 +525,7 @@ bla bla bla
 
 </div>
 
-[Buy now](example){ .button .button--gold .full-width }
+[Buy now](https://example.com){ .button .button--gold .full-width }
 
 <? include editor/card-end ?>
 <? include editor/column ?>
@@ -548,7 +548,7 @@ bla bla bla
 
 </div>
 
-[Buy now](example){ .button .button--gold .full-width }
+[Buy now](https://example.com){ .button .button--gold .full-width }
 
 <? include editor/card-end ?>
 <? include editor/columns-end ?>
