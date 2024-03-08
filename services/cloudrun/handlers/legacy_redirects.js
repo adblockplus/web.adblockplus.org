@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
     'filterdoc': 'https://help.adblockplus.org/hc/en-us/articles/360062733293',
     'imprint': `https://adblockplus.org/${language}/imprint`,
     'adblock_plus_report_issue': `https://forums.lanik.us/viewforum.php?f=${getForumLanguage(language)}`,
+    'manifestv3_explanation': 'https://blog.adblockplus.org/blog/how-adblock-plus-is-getting-ready-for-manifest-v3',
     'uninstalled': `/${language}/uninstalled${query}`,
     'gettingStarted': `/${language}/getting_started`,
     'faq': `/${language}/faq`,
