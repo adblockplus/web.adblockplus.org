@@ -1,6 +1,7 @@
 import { program } from 'commander';
 import { writeFileSync, readdirSync, existsSync, readFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import he from 'he';
 
 const LOCALES = 'locales';
 const HTML_ATTRIBUTES_PATTERN = /(?<=<[\w]+)(\s[^>]*)/gmiu;
@@ -57,7 +58,7 @@ inputLocalePaths.forEach(inputLocale => {
     Object.keys(inputObject).forEach(key => {
       let translation = inputObject[key];
       if (typeof translation == "object" && translation.hasOwnProperty("message")) {
-        translation = translation.message;
+        translation = he.decode(translation.message);
       }
       if (typeof translation != "string") {
         throw new TypeError("Translation format error");
