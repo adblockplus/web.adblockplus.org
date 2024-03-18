@@ -97,12 +97,12 @@
 					filter_data.code = true;
 				})
 				.catch((error) => {
-					if (error.message === "Failed to fetch") {
-						filter_data.status = `Blocked by Adblocker`;
-						filter_data.code = false;
-					} else {
+					if (error.message.includes("404")) {
 						filter_data.status = "Not Blocked";
 						filter_data.code = true;
+					} else {
+						filter_data.status = "Blocked by Adblocker";
+						filter_data.code = false;
 					}
 				});
 		});
