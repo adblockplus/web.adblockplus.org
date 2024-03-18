@@ -118,14 +118,10 @@
 			obj[key] = filter.code;
 			return obj;
 		}, {});
-    if (typeof adblock.log == "function") {
-      adblock.log("aa_snippet", pxparams);
-    } else {
-      const pxurl = "/access.gif";
-      const urlParams = new URLSearchParams(pxparams).toString();
-      const fullUrl = `${pxurl}?${urlParams}`;
-      fetch(fullUrl).catch(() => {});
-    }
+    const pxurl = "/access.gif";
+    const urlParams = new URLSearchParams(pxparams).toString();
+    const fullUrl = `${pxurl}?${urlParams}`;
+    fetch(fullUrl).catch(() => {});
 	});
 
 }, 0);</script>
