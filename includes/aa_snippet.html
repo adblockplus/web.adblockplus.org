@@ -1,0 +1,131 @@
+<script>setTimeout(() => {
+
+  const baitreqs = [
+    // Check for easylist, all adblockers have block this
+    {
+      order: "a",
+      filter: "/ad?pos_",
+      allowed_on: null,
+      blocked_on: "EasyList",
+    },
+    //Check for Ublock blocking
+    {
+      order: "b",
+      filter: "/pu-placer.js",
+      allowed_on: null,
+      blocked_on: "UbO_ads",
+    },
+    {
+      order: "b",
+      filter: "/discourse-fingerprint-",
+      allowed_on: null,
+      blocked_on: "UbO_privacy",
+    },
+    {
+      order: "b",
+      filter: "/webtracking.min.js",
+      allowed_on: null,
+      blocked_on: "UbO_unbreak",
+    },
+    {
+      order: "b",
+      filter: "/ea/fl.js",
+      allowed_on: null,
+      blocked_on: "UbO_ads",
+    },
+    // Check for ublock unblocking
+    {
+      order: "c",
+      filter: "/thermostat.js",
+      allowed_on: "UbO_unbreak",
+      blocked_on: "EasyPrivacy",
+    },
+    {
+      order: "c",
+      filter: "/ads1.",
+      allowed_on: "UbO_unbreak",
+      blocked_on: "EasyList",
+    },
+    // Check for Ghostery blocking this when ublock allows the others
+    {
+      order: "d",
+      filter: "/nielsen.js",
+      allowed_on: "UbO_unbreak",
+      blocked_on: "Ghostery",
+    },
+    {
+      order: "d",
+      filter: "/1pixel.php",
+      allowed_on: "UbO_unbreak",
+      blocked_on: "Ghostery",
+    },
+    {
+      order: "d",
+      filter: "/adstream.",
+      allowed_on: "UbO_unbreak",
+      blocked_on: "Ghostery",
+    },
+    // Check for AA detection
+    {
+      order: "e",
+      filter: "/aadetect/px.gif?ch=1",
+      allowed_on: "ExceptionList",
+      blocked_on: "EasyPrivacy",
+    },
+    {
+      order: "e",
+      filter: "/aadetect/px.gif?ch=2",
+      allowed_on: null,
+      blocked_on: "ExceptionList",
+    },
+  ];
+
+	let bait = new Promise((resolve, reject) => {
+		let fetchPromises = baitreqs.map((filter_data) => {
+			let url = filter_data.filter;
+			return fetch(url)
+				.then((response) => {
+					if (!response.ok) {
+						filter_data.status =
+							"Response not OK, SHOULD NOT HAPPEN";
+						filter_data.code = "Unexpected";
+						throw new Error(
+							`HTTP error! status: ${response.status}`
+						);
+					}
+					filter_data.status = "Response OK";
+					filter_data.code = true;
+				})
+				.catch((error) => {
+					if (error.message === "Failed to fetch") {
+						filter_data.status = `Blocked by Adblocker`;
+						filter_data.code = false;
+					} else {
+						filter_data.status = "Not Blocked";
+						filter_data.code = true;
+					}
+				});
+		});
+
+		Promise.all(fetchPromises)
+			.then(() => resolve())
+			.catch((error) => reject(error));
+	});
+    
+	bait.then(() => {
+		const pxparams = baitreqs.reduce((obj, filter, index) => {
+			const key = `${filter.order}_${index + 1}`;
+			obj[key] = filter.code;
+			return obj;
+		}, {});
+    if (typeof adblock.log == "function") {
+      adblock.log("aa_snippet", pxparams);
+    } else {
+      const pxurl = "/access.gif";
+      const urlParams = new URLSearchParams(pxparams).toString();
+      const fullUrl = `${pxurl}?${urlParams}`;
+      fetch(fullUrl).catch(() => {});
+    }
+	});
+
+}, 0);</script>
