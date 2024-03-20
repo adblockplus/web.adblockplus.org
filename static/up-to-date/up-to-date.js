@@ -732,7 +732,7 @@ function checkout(data) {
   paymentSuccessParameters.set("premium-checkout__amount", amount);
   paymentSuccessParameters.set("premium-checkout__frequency", frequency);
   paymentSuccessParameters.set("premium-checkout__language", language);
-  paymentSuccessParameters.set("premium-checkout__timestamp", clickTimestamp);
+  paymentSuccessParameters.set("premium-checkout__timestamp", Date.now());
   const paddleMetadata = {
     testmode: environment == "TEST",
     userid: userid,
