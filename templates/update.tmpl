@@ -8,11 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title | translate("title") }}</title>
     <meta property="og:image" content="/img/adblockplus_promo.png">
-    <meta name="robots" content="none">
-    <link rel="stylesheet" href="/update/update.css">
-    <? include globals ?>
-    <? include optimizely ?>
-  
+    <meta name="robots" content="none">  
     {% block head %}
       {{ head | safe }}
     {% endblock %}

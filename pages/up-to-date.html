@@ -1,0 +1,180 @@
+title=Your Adblock Plus is up to date!
+page=update
+template=update
+
+<head>
+  <link rel="stylesheet" href="/up-to-date/up-to-date.css">
+  <? include globals ?>
+  <? include optimizely ?>
+  <script>
+    Object.assign(adblock.strings, {
+      "product__premium": `{{ product__premium Adblock Plus Premium }}`,
+      "update-payment-reward__1-month": `{{ update-payment-reward__1-month Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for one month. Thanks for your support. }}`,
+      "update-payment-reward__n-months": `{{ update-payment-reward__n-months Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> months. Thanks for your support. }}`,
+      "update-payment-reward__1-year": `{{ update-payment-reward__1-year Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for one year. Thanks for your support. }}`,
+      "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
+      "update-payment-reward__n-years": `{{ update-payment-reward__n-years Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span> for <span class="duration">8</span> years. Thanks for your support. }}`,
+      "update-payment-reward": `{{ update-payment-reward Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span>. Thanks for your support. }}`,
+      "suffix__monthly": `{{ update-payment-suffix__monthly /monthly }}`,
+      "suffix__yearly": `{{ update-payment-suffix__yearly /yearly }}`,
+    });
+  </script>
+</head>
+
+<div class="up-to-date-navbar">
+  <div class="up-to-date-navbar__container">
+    <img height="45" width="248" class="update-navbar__img" src="/update/update-navbar__img.png" alt="Adblock Plus">
+  </div>
+</div>
+<div class="up-to-date-section-1">
+  <div class="up-to-date__container">
+    <header class="up-to-date-section-1__header">
+      <h1 class="up-to-date-section-1__heading">
+        {{ uptodate-section-1__heading Your Adblock Plus is up to date! }}
+      </h1>
+      <p class="up-to-date-section-1__subheading">
+        {{ uptodate-section-1__subheading Support us and get a better ad blocking experience }}
+      </p>
+    </header>
+    <div class="up-to-date-section-1__rows">
+      <aside class="up-to-date-section-1__row up-to-date-section-1-row-1">
+        <h2 class="up-to-date-section-1-row-1__heading">
+          {{ please_dont_scroll_away Please don’t scroll away }}
+        </h2>
+        <div class="up-to-date-section-1-row-1__body">
+          <p>
+            {{ update-section-1-row-1__paragraph-1 Hey there, }}
+          </p>
+          <p>
+            {{ update-section-1-row-1__paragraph-2 Our mission at Adblock Plus is to create a worry-free and distraction-free internet for everyone. That’s why we developed our extension to block pop-ups, annoying ads, and other distractions across the web. Adblock Plus helps you to browse the web faster, safer, and with more control over your internet experience. }}
+          </p>
+          <p>
+            {{ uptodate-section-1-row-1__paragraph-3 Adblock Plus Premium gives you an even better browsing experience when you block additional pop-ups. This feature allows you to stop most videos from playing automatically while preventing floating or “sticky” videos that follow you across the screen as you browse. And you can block pop-ups for newsletter sign-ups, survey invitations, and requests to “allow site notifications.” Enjoy browsing the web with Adblock Plus Premium! }}
+          </p>
+          <p>
+            {{ update-section-1-row-1__paragraph-4 Sincerely,<span class="br"></span> The Adblock Plus Team }}
+          </p>
+        </div>
+      </aside>
+      <div class="up-to-date-section-1__row up-to-date-section-1-row-2">
+        <form class="up-to-date-payment">
+          <div class="up-to-date-gaurantee">
+            <img class="up-to-date-gaurantee__image" src="/up-to-date/up-to-date__gaurantee.svg" height="24" width="25">
+            <div class="up-to-date-gaurantee__text">
+              {{ uptodate-gaurantee__text Support us with confidence: <strong>60 day money-back guarantee.</strong> }}
+            </div>
+          </div>
+          <div class="up-to-date-payment-card">
+            <div class="up-to-date-payment-card-header">
+              <span class="up-to-date-payment-card-header__text">
+                <img src="/up-to-date/up-to-date__adblock-plus-logo.svg" height="40" width="40" alt=""> <span>Adblock<b>Plus</b> <span class="color-red">Premium</span></span>
+              </span>
+              <select class="up-to-date-payment-currency"><option>USD</option></select>
+            </div>
+            <div class="up-to-date-payment-card-body">
+              <div class="up-to-date-payment-options">
+                <div class="up-to-date-payment-option">
+                  <input class="up-to-date-payment-option__button" data-amount="200" data-frequency="once" data-product="ME" placeholder="{{ uptodate-payment-once__label One time payment }}" data-min="5" step=".01" type="number">
+                </div>
+                <div class="up-to-date-payment-option">
+                  <button class="up-to-date-payment-option__button" data-amount="200" data-frequency="monthly" data-product="ME" type="button">
+                    <span class="up-to-date-payment-option__amount">
+                      $4
+                    </span>
+                    <span class="up-to-date-payment-option__label">
+                      {{ uptodate-payment-monthly__label Monthly Subscription }}
+                    </span>
+                  </button>
+                </div>
+                <div class="up-to-date-payment-option">
+                  <button class="up-to-date-payment-option__button" aria-pressed="true" data-amount="2000" data-product="ME" data-frequency="yearly" type="button" aria-pressed="true">
+                    <span class="up-to-date-payment-option__amount">
+                      $40
+                    </span>
+                    <span class="up-to-date-payment-option__label">
+                      {{ uptodate-payment-yearly__label Yearly Subscription }}
+                    </span>
+                  </button>
+                  <span class="up-to-date-payment-option__discount">
+                    {{ uptodate-payment-yearly__discount Save 17% }}
+                  </span>  
+                </div>
+              </div>
+              <div class="up-to-date-payment-included">
+                <h2 class="up-to-date-payment-included__heading">
+                  {{ uptodate-payment-included__heading What's included? }}
+                </h2>
+                <ul class="up-to-date-payment-included__list">
+                  <li class="up-to-date-payment-included__list-item">
+                    {{ uptodate-payment-included__list-item-1 With Premium, you'll enjoy enhanced pop-up blocking. Say goodbye to annoying distractions like floating videos, newsletter requests, cookie banners, and more. }}
+                  </li>
+                  <li class="up-to-date-payment-included__list-item">
+                    {{ uptodate-payment-included__list-item-2 Sync your settings across multiple devices when you use Premium. }}
+                  </li>
+                  <li class="up-to-date-payment-included__list-item">
+                    {{ uptodate-payment-included__list-item-3 Your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep ABP going for years to come and get access to more features as we release them. }}
+                  </li>
+                </ul>  
+              </div>
+            </div>
+          </div>
+          <div class="up-to-date-payment-checkout">
+            <aside class="uptodate-payment-reward">
+              <span class="update-payment-reward__highlight"></span>
+              <span class="update-payment-reward__text">
+                {{ update-payment-reward Nice! A <span class="amount">35.00</span> contribution gets <span class="product">Adblock Plus Premium</span>. <span class="inline-break">Thanks for your support.</span> }}
+              </span>
+            </aside>
+            <button class="up-to-date-payment-checkout__button" type="submit">
+              {{ uptodate-payment-checkout__button <span class="uptodate-payment-checkout__button-icon"></span> Complete Purchase }}
+            </button>
+          </div>
+          <img src="/img/paddle-providers.svg" alt="" width="320" class="up-to-date-payment-checkout__providers">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="up-to-date-section-3">
+  <div class="up-to-date__container">
+    <h2>
+      {{ uptodate-news__heading Adblock Plus Premium improves your browsing experience. }}
+    </h2>
+    <p>
+      {{ uptodate-news__lead-1 Adblock Plus Premium puts you in greater control of how you browse the web. Enjoy a more worry-free and distraction-free web when you become a Premium user! }}
+    </p>
+    <p>
+      {{ whats-new-paragraph-2 Here’s a little about what you can do with Adblock Plus Premium: }}
+    </p>
+    <h3>
+      {{ uptodate-item-1__heading Hide cookie banners }}
+    </h3>
+    <p>
+      {{ uptodate-item-1__paragraph-1 Get where you’re going faster when you <a href="https://accounts.adblockplus.org/block-cookie-banners?s=up">block those pesky cookie banners</a> that ask you to accept cookies on websites, all while rejecting the unnecessary cookies you can. }}
+    </p>
+    <h3>
+      {{ uptodate-item-2__heading Block more distractions across the web }}
+    </h3>
+    <p>
+      {{ uptodate-item-3__paragraph-1 Focus more on what you want when you <a href="https://accounts.adblockplus.org/premium?s=up">block additional pop-ups</a> including auto-play videos, newsletter pop-ups, survey requests, and more. }}
+    </p>
+    <p>
+      {{ new__item-4__paragraph-2 <a href="https://accounts.adblockplus.org/premium">Learn more about Adblock Plus Premium.</a> }}
+    </p>
+    <p id="whats-new-support" style="margin-block-start: 1.5rem;">
+      {{ whats-new-support Need to report an issue? Reach out to us via our <a href="https://help.adblockplus.org/?s=up">Help Center</a> or email at <a href="mailto:support@adblockplus.org">support@adblockplus.org</a>. }}
+    </p>
+  </div>
+</div>
+
+<footer class="update-section-4">
+  <a href="privacy">
+    {{ privacy-policy Privacy Policy }}
+  </a>
+</footer>
+
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/js/vendor/NumberFormat.min.js"></script>
+<script src="/currency"></script>
+<script type="module" src="/up-to-date/up-to-date.js"></script>
+<script src="/js/address-masking.js"></script>
