@@ -736,7 +736,7 @@ function checkout(data) {
   const paddleMetadata = {
     testmode: environment == "TEST",
     userid: userid,
-    tracking: generateTrackingId(productId , userid),
+    tracking: generateTrackingId("ME" , userid),
     locale: language,
     country: country,
     ga_id: "",
