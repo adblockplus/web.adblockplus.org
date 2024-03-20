@@ -14,36 +14,44 @@ const PADDLE = adblock.config.paddle = {
     TEST: {
       "USD": {
         "monthly": {
-          "200": 55427,
+          amount: "400",
+          product: 68391,
         },
         "yearly": {
-          "2000": 55428,
-        }
+          amount: "4000",
+          product: 68392,
+        },
       },
       "EUR": {
         "monthly": {
-          "200": 68054,
+          amount: "400",
+          product: 68393,
         },
         "yearly": {
-          "2000": 68053,
-        }
+          amount: "4000",
+          product: 68394,
+        },
       }
     },
     LIVE: {
       "USD": {
         "monthly": {
-          "200": 842007,
+          amount: "400",
+          product: 877570,
         },
         "yearly": {
-          "2000": 842011,
-        }
+          amount: "4000",
+          product: 877572,
+        },
       },
       "EUR": {
         "monthly": {
-          "200": 874224,
+          amount: "400",
+          product: 877578,
         },
         "yearly": {
-          "2000": 874223,
+          amount: "4000",
+          product: 877579,
         }
       }
     }
@@ -65,8 +73,11 @@ const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
 const paddleId = PADDLE.ENVIRONMENTS[environment];
 const paddleTitle = "Adblock Plus Premium";
 const paddleLocale = PADDLE.LOCALES[language] || language;
-const products = PADDLE.PRODUCTS[environment];
+const paddleProducts = PADDLE.PRODUCTS[environment];
 const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
+const defaultCurrency = Object.keys(paddleProducts).includes(adblock.settings.currency)
+  ? adblock.settings.currency
+  : "USD";
 
 if (environment == "TEST") {
   Paddle.Environment.set("sandbox");
@@ -190,7 +201,6 @@ function getCurrencySymbol(currencyCode) {
 ////////////////////////////////////////////////////////////////////////////////
 // PADDLE SETUP
 ////////////////////////////////////////////////////////////////////////////////
-console.log("paddleId", paddleId);
 Paddle.Setup({
   vendor: paddleId,
   eventCallback: event => {
@@ -227,7 +237,6 @@ Paddle.Setup({
  * @todo add retries
  */
 function checkout(product, currency, frequency, amount) {
-  console.log("checkout", product, currency, frequency, amount);
   return new Promise((resolve, reject) => {
     checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
     const clickTimestamp = Date.now();
@@ -445,6 +454,9 @@ class Step {
 class PurchaseStep extends Step {
 
   /**
+   * - Populates currencies in currency select
+   * - Sets default currency in currency select
+   * - Listens to currency selection to update currency
    * - Listens to price button click to toggle checkout buttons
    * - Listens to form submit to trigger custom submit event
    * - Listens to already contributed link click to trigger custom already-contributed event
@@ -452,6 +464,26 @@ class PurchaseStep extends Step {
   constructor(element, name) {
 
     super(element, name);
+
+    const currencySelect = this.element.querySelector(".premium-checkout-header__select");
+    for (const currency in paddleProducts) {
+      const currencyOption = document.createElement("option");
+      currencyOption.textContent = currency;
+      currencyOption.value = currency;
+      currencySelect.append(currencyOption);
+    }
+    currencySelect.value = defaultCurrency;
+    currencySelect.addEventListener("change", () => {
+      const currency = currencySelect.value;
+      this.element.querySelectorAll(".premium-checkout-purchase-price").forEach(priceButton => {
+        const frequency = priceButton.value;
+        priceButton.querySelector(".premium-checkout-purchase-price__amount").textContent = getDollarString(
+          currency, 
+          paddleProducts[currency][frequency].amount
+        );
+      });
+      this.fire("currency-change", currency);
+    });
 
     this.element
     .querySelectorAll(".premium-checkout-purchase-price")
@@ -563,7 +595,7 @@ class VerifyStep extends Step {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// FLOW SETUP
+// STEP CONSTRUCTION
 ////////////////////////////////////////////////////////////////////////////////
 
 /** steps initialised based on (probably hidden) dom elements */
@@ -581,6 +613,28 @@ const steps = {
 for (const step of Object.values(steps)) {
   card.append(step.element);
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// PAGE CONSTRUCTION
+////////////////////////////////////////////////////////////////////////////////
+
+class Page {
+
+  setCurrency(currency) {
+    document.querySelectorAll(".premium-plan-price").forEach(price => {
+      const amount = paddleProducts[currency][price.dataset.frequency].amount;
+      price.textContent = getDollarString(currency, amount);
+    });
+  }
+
+}
+
+const page = new Page();
+steps.purchase.on("currency-change", currency => page.setCurrency(currency));
+
+////////////////////////////////////////////////////////////////////////////////
+// FLOW CONSTRUCTION
+////////////////////////////////////////////////////////////////////////////////
 
 // creating a fake last step so that we can always assume a las step in goto below
 let lastStep = {
@@ -620,8 +674,8 @@ steps.purchase.on("checkout-now", async () => {
   flow = "purchase";
   const frequency = steps.purchase.getSelectedValue();
   const currency = $currencies.value;
-  const [ amount, productId ] = Object.entries(products[currency][frequency])[0];
-  console.log("products", products);
+  const amount = paddleProducts[currency][frequency].amount;
+  const productId = paddleProducts[currency][frequency].product;
   await goto(steps.loading);
   checkout(productId, currency, frequency, amount)
   .then(
@@ -705,88 +759,39 @@ steps.verifyCode.on("submit", async () => {
 // 2. steps.activated OR steps.reactivated (depending on currency, frequency, and amount parameters)
 //
 // with steps.error on error.
-async function initialize() {
-  if (adblock.query.has("premium-checkout__fake-error")) {
-    email = adblock.query.get("premium-checkout__email") || "";
-    userid = adblock.query.get("premium-checkout__userid") || userid;
-    card.scrollIntoView();
-    goto(steps.error);
-  } else if (adblock.query.has("premium-checkout__handoff")) {
-    flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
-    email = adblock.query.get("premium-checkout__email") || "";
-    userid = adblock.query.get("premium-checkout__userid") || userid;
-    const currency = adblock.query.get("premium-checkout__currency");
-    const frequency = adblock.query.get("premium-checkout__frequency");
-    let amount = adblock.query.get("premium-checkout__amount");
-    let discount = adblock.query.get("premium-checkout__discount");
-    discount = parseFloat(discount) || 1;
-    amount = amount * discount;
-    card.scrollIntoView();
-    await goto(steps.loading);
-    await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
-    activatePremium().then(
-      () => {
-        if (currency && frequency && amount) {
-          goto(steps.activated, { currency, frequency, amount });
-        } else {
-          goto(steps.reactivated);
-        }
-      },
-      () => goto(steps.error)
-    );
-  } else {
-    // if you don't begin an activation-handoff flow on load then the default
-    // flow is "none" and the default step is steps.purchase
-    if (flow != "none") {
-      checkoutLog("premium-checkout__handover");
-    }
-    goto(steps.purchase, undefined, false);
+if (adblock.query.has("premium-checkout__fake-error")) {
+  email = adblock.query.get("premium-checkout__email") || "";
+  userid = adblock.query.get("premium-checkout__userid") || userid;
+  card.scrollIntoView();
+  goto(steps.error);
+} else if (adblock.query.has("premium-checkout__handoff")) {
+  flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
+  email = adblock.query.get("premium-checkout__email") || "";
+  userid = adblock.query.get("premium-checkout__userid") || userid;
+  const currency = adblock.query.get("premium-checkout__currency");
+  const frequency = adblock.query.get("premium-checkout__frequency");
+  let amount = adblock.query.get("premium-checkout__amount");
+  let discount = adblock.query.get("premium-checkout__discount");
+  discount = parseFloat(discount) || 1;
+  amount = amount * discount;
+  card.scrollIntoView();
+  await goto(steps.loading);
+  await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
+  activatePremium().then(
+    () => {
+      if (currency && frequency && amount) {
+        goto(steps.activated, { currency, frequency, amount });
+      } else {
+        goto(steps.reactivated);
+      }
+    },
+    () => goto(steps.error)
+  );
+} else {
+  // if you don't begin an activation-handoff flow on load then the default
+  // flow is "none" and the default step is steps.purchase
+  if (flow != "none") {
+    checkoutLog("premium-checkout__handover");
   }
-}
-
-initialize();
-
-////////////////////////////////////////////////////////////////////////////////
-// CURRENCIES
-// Due to how pages are generated we always end up with 2 dropdown so we need
-// to select the dropdown actually shown to the users in the generated "card"
-////////////////////////////////////////////////////////////////////////////////
-
-const $currencies = card.querySelector('.premium-checkout-header__select')
-
-// Populate currencies
-for (const currency in products) {
-  const $currency = document.createElement("option");
-  $currency.textContent = currency;
-  $currencies.append($currency);
-}
-
-// Update option amounts on currency change
-function onCurrencyChange() {
-  const currency = $currencies.value;
-  const currencySymbol = getCurrencySymbol(currency);
-
-  document
-    .querySelectorAll(".premium-plan-price-currency")
-    .forEach(element => element.innerText = currencySymbol);
-
-  document
-  .querySelectorAll(".premium-checkout-purchase-price__amount")
-  .forEach(element => {
-    const frequency = element.closest("button").value;
-    const amount = Object.keys(products[currency][frequency])[0];
-    element.textContent = getDollarString(currency, amount);
-  });
-}
-
-$currencies.addEventListener("change", onCurrencyChange);
-
-// Set default currency
-if (adblock.settings.currency) {
-  const currencyForGeo = adblock.settings.currency;
-  const supportedCurrencies = Object.keys(products);
-  console.log("supportedCurrencies", supportedCurrencies);
-  const currency = supportedCurrencies.includes(currencyForGeo) ? currencyForGeo : 'USD';
-  $currencies.value = currency;
-  onCurrencyChange();
+  goto(steps.purchase, undefined, false);
 }
