@@ -25,26 +25,26 @@ const PADDLE = adblock.config.paddle = {
   AMOUNTS: {
     DEFAULT: {
       "ME": {
-        monthly: 400,
-        yearly: 4000
+        monthly: 200,
+        yearly: 2000
       },
     },
     JPY: {
       "ME": {
-        monthly: 1000,
-        yearly: 10000,
+        monthly: 500,
+        yearly: 5000,
       },
     },
     MXN: {
       "ME": {
-        monthly: 8000,
-        yearly: 80000
+        monthly: 4000,
+        yearly: 40000
       },
     },
     RUB: {
       "ME": {
-        monthly: 30000,
-        yearly: 300000,
+        monthly: 15000,
+        yearly: 150000,
       },
     },
   },
