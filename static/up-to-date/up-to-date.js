@@ -21,43 +21,202 @@ const PADDLE = adblock.config.paddle = {
     "ca": "en",
     "uk": "en",
   },
-  CURRENCIES: ["AUD","CAD","EUR","GBP","JPY","MXN","RUB","USD"],
-  AMOUNTS: {
-    DEFAULT: {
-      "ME": {
-        monthly: 200,
-        yearly: 2000
+  PRODUCTS: {
+    TEST: {
+      "USD": {
+        "monthly": {
+          amount: "200",
+          product: 55427,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 55428,
+        },
+      },
+      "AUD": {
+        "monthly": {
+          amount: "200",
+          product: 68404,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 68405,
+        },
+      },
+      "CAD": {
+        "monthly": {
+          amount: "200",
+          product: 68407,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 68408,
+        },
+      },
+      "EUR": {
+        "monthly": {
+          amount: "200",
+          product: 68054,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 68053,
+        },
+      },
+      "GBP": {
+        "monthly": {
+          amount: "200",
+          product: 68409,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 68410,
+        },
+      },
+      "JPY": {
+        "monthly": {
+          amount: "500",
+          product: 68411,
+        },
+        "yearly": {
+          amount: "5000",
+          product: 68412,
+        },
+      },
+      "NZD": {
+        "monthly": {
+          amount: "200",
+          product: 68413,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 68414,
+        },
+      },
+      "CHF": {
+        "monthly": {
+          amount: "200",
+          product: 68415,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 68416,
+        },
+      },
+      "RUB": {
+        "monthly": {
+          amount: "15000",
+          product: 68417,
+        },
+        "yearly": {
+          amount: "30000",
+          product: 68418,
+        },
       },
     },
-    JPY: {
-      "ME": {
-        monthly: 500,
-        yearly: 5000,
+    LIVE: {
+      "USD": {
+        "monthly": {
+          amount: "200",
+          product: 842007,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 842011,
+        },
       },
-    },
-    MXN: {
-      "ME": {
-        monthly: 4000,
-        yearly: 40000
+      "AUD": {
+        "monthly": {
+          amount: "200",
+          product: 877751,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 877752,
+        },
       },
-    },
-    RUB: {
-      "ME": {
-        monthly: 15000,
-        yearly: 150000,
+      "CAD": {
+        "monthly": {
+          amount: "200",
+          product: 877754,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 877755,
+        },
+      },
+      "EUR": {
+        "monthly": {
+          amount: "200",
+          product: 874224,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 874223,
+        },
+      },
+      "GBP": {
+        "monthly": {
+          amount: "200",
+          product: 877756,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 877757,
+        },
+      },
+      "JPY": {
+        "monthly": {
+          amount: "500",
+          product: 877758,
+        },
+        "yearly": {
+          amount: "1000",
+          product: 877759,
+        },
+      },
+      "NZD": {
+        "monthly": {
+          amount: "200",
+          product: 877760,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 877761,
+        },
+      },
+      "CHF": {
+        "monthly": {
+          amount: "200",
+          product: 877762,
+        },
+        "yearly": {
+          amount: "2000",
+          product: 877763,
+        },
+      },
+      "RUB": {
+        "monthly": {
+          amount: "15000",
+          product: 877764,
+        },
+        "yearly": {
+          amount: "30000",
+          product: 877765,
+        },
       },
     },
   },
   MINIMUMS: {
-    AUD: { once: 500, monthly: 199, yearly: 500 },
-    CAD: { once: 500, monthly: 199, yearly: 500 },
-    EUR: { once: 500, monthly: 199, yearly: 500 },
-    GBP: { once: 500, monthly: 199, yearly: 500 },
-    NZD: { once: 500, monthly: 199, yearly: 500 },
-    CHF: { once: 500, monthly: 199, yearly: 500 },
-    JPY: { once: 500, monthly: 200, yearly: 500 },
-    RUB: { once: 25000, monthly: 15000, yearly: 25000 },
-    USD: { once: 500, monthly: 199, yearly: 500 }
+    AUD: 500, 
+    CAD: 500, 
+    EUR: 500, 
+    GBP: 500, 
+    NZD: 500, 
+    CHF: 500, 
+    JPY: 500, 
+    RUB: 25000,
+    USD: 500,
   },
   UPDATE_PAYMENT_PRODUCTS: {
     TEST: {
@@ -532,7 +691,7 @@ const PADDLE = adblock.config.paddle = {
         }
       },
     }
-  }
+  },
 };
 
 const userid = generateUserId();
@@ -542,6 +701,7 @@ const country = adblock.settings.country || "unknown";
 const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
 const paddleEnvironment = PADDLE.ENVIRONMENTS[environment];
 const paddleId = paddleEnvironment.VENDOR_ID;
+const paddleProducts = PADDLE.PRODUCTS[environment];
 const customAmountServiceURL = paddleEnvironment.CUSTOM_AMOUNT_URL;
 const paddleTitle = "Adblock Plus";
 const paddleLocale = PADDLE.LOCALES[language] || language;
@@ -605,12 +765,12 @@ document
 // Set currencies and default currency
 document.querySelectorAll(".up-to-date-payment-currency").forEach(select => {
   select.innerHTML = "";
-  PADDLE.CURRENCIES.forEach(currency => {
+  for (const currency in paddleProducts) {
     const option = document.createElement("option");
     option.value = currency;
     option.textContent = currency;
     select.appendChild(option);
-  });
+  }
   select.value = defaultCurrency;
   updateRewardDuration();
 });
@@ -618,13 +778,13 @@ document.querySelectorAll(".up-to-date-payment-currency").forEach(select => {
 // Update amounts on currency change
 function updateSelectionData(currency) {
   document.querySelectorAll("button.up-to-date-payment-option__button").forEach(option => {
-    const amounts = PADDLE.AMOUNTS[currency] || PADDLE.AMOUNTS.DEFAULT;
-    const amount = amounts[option.dataset.product][option.dataset.frequency];
+    const frequency = option.dataset.frequency;
+    const amount = paddleProducts[currency][frequency].amount;
     option.dataset.amount = amount;
     option.querySelector(".up-to-date-payment-option__amount").textContent = getDollarString(currency, amount);
     updateRewardDuration();
   });
-  const min = PADDLE.MINIMUMS[currency].once;
+  const min = PADDLE.MINIMUMS[currency];
   const input = document.querySelector("input[type=number].up-to-date-payment-option__button");
   input.dataset.min = currency == "JPY" ? min : min / 100;
   if (input.getAttribute("aria-pressed") == "true") input.min = input.dataset.min;
@@ -724,6 +884,7 @@ function updateLocalstorage(data) {
 
 function checkout(data) {
   const { currency, amount, frequency, plan, suffix, planName, durationMonths } = data;
+  const product = frequency == "once" ? false : paddleProducts[currency][frequency].product;
   const paymentSuccessParameters = new URLSearchParams();
   paymentSuccessParameters.set("premium-checkout__handoff", 1);
   paymentSuccessParameters.set("premium-checkout__flow", page);
@@ -754,21 +915,33 @@ function checkout(data) {
     success_url: `https://accounts.adblockplus.org/premium?${paymentSuccessParameters.toString()}`,
     cancel_url: window.location.href
   };
-  return fetch(customAmountServiceURL, {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(paddleMetadata),
-  })
-  .then(response => response.json())
-  .then(session => {
+  if (product) {
     Paddle.Checkout.open({
       title: paddleTitle,
+      product: product,
+      allowQuantity: false,
+      success: paddleMetadata.success_url,
       locale: paddleLocale,
-      override: session.url,
+      passthrough: paddleMetadata,
     });
-  });
+    return new Promise(resolve => setTimeout(() => resolve(), 100));
+  } else {
+    return fetch(customAmountServiceURL, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(paddleMetadata),
+    })
+    .then(response => response.json())
+    .then(session => {
+      Paddle.Checkout.open({
+        title: paddleTitle,
+        locale: paddleLocale,
+        override: session.url,
+      });
+    });  
+  }
 }
 
 // Process payment on submit
