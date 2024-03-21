@@ -109,7 +109,7 @@ const PADDLE = adblock.config.paddle = {
           product: 68417,
         },
         "yearly": {
-          amount: "30000",
+          amount: "150000",
           product: 68418,
         },
       },
@@ -171,7 +171,7 @@ const PADDLE = adblock.config.paddle = {
           product: 877758,
         },
         "yearly": {
-          amount: "1000",
+          amount: "5000",
           product: 877759,
         },
       },
@@ -201,7 +201,7 @@ const PADDLE = adblock.config.paddle = {
           product: 877764,
         },
         "yearly": {
-          amount: "30000",
+          amount: "150000",
           product: 877765,
         },
       },
@@ -214,8 +214,8 @@ const PADDLE = adblock.config.paddle = {
     GBP: 500, 
     NZD: 500, 
     CHF: 500, 
-    JPY: 500, 
-    RUB: 25000,
+    JPY: 200, 
+    RUB: 15000,
     USD: 500,
   },
   UPDATE_PAYMENT_PRODUCTS: {
@@ -852,7 +852,9 @@ function getCheckoutData() {
     ? currency == "JPY"
       ? pressed.value
       : pressed.value * 100
-    : pressed.min * 100
+    : currency == "JPY"
+      ? pressed.min
+      : pressed.min * 100
   : pressed.dataset.amount;
   const plan = pressed.dataset.product;
   const frequencySuffixes = {
