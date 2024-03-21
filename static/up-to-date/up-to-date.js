@@ -776,12 +776,12 @@ document.querySelector(".up-to-date-payment").addEventListener("submit", event =
   event.preventDefault();
   let data, submit;
   const handleError = (_error, _data) => {
-    const params = new URLSearchParams();
-    const data = Object.assign({}, _data, _error);
-    for (const key in data) {
-      params.set(key, data[key]);
+    const reportParams = new URLSearchParams();
+    const reportData = Object.assign({}, _data, _error);
+    for (const key in reportData) {
+      reportParams.set(key, reportData[key]);
     }
-    fetch(`/error?${params.toString()}`);
+    fetch(`/error?${reportParams.toString()}`);
     submit.disabled = false;
   }
   try {
