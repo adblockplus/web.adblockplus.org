@@ -777,8 +777,9 @@ document.querySelector(".up-to-date-payment").addEventListener("submit", event =
   let data, submit;
   const handleError = (_error, _data) => {
     const params = new URLSearchParams();
-    for (const [key, val] of Object.fromEntries(Object.assign({}, _data, _error))) {
-      params.set(key, val);
+    const data = Object.assign({}, _data, _error);
+    for (const key in data) {
+      params.set(key, data[key]);
     }
     fetch(`/error?${params.toString()}`);
     submit.disabled = false;
