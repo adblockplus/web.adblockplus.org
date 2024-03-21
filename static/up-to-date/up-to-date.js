@@ -692,7 +692,7 @@ function getCheckoutData() {
     ? currency == "JPY"
       ? pressed.value
       : pressed.value * 100
-    : pressed.min 
+    : pressed.min * 100
   : pressed.dataset.amount;
   const plan = pressed.dataset.product;
   const frequencySuffixes = {
