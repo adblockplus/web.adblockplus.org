@@ -231,7 +231,6 @@ const paddleProducts = PADDLE.PRODUCTS[environment];
 const customAmountServiceURL = paddleEnvironment.CUSTOM_AMOUNT_URL;
 const paddleTitle = "Adblock Plus";
 const paddleLocale = PADDLE.LOCALES[language] || language;
-const updatePaymentProducts = PADDLE.UPDATE_PAYMENT_PRODUCTS[environment];
 if (environment == "TEST") Paddle.Environment.set("sandbox");
 Paddle.Setup({ vendor: paddleId });
 
