@@ -551,27 +551,8 @@ html {
   margin-bottom: 1.25rem;
   text-align: center;
   color: #000;
-}
-
-.premium-plan-price span {
-  display: inline-block;
-  vertical-align: top;
-  line-height: 1;
-}
-
-.premium-plan-price-currency {
-  font-size: 1.5rem;
-  margin-top: 0.6rem;
-}
-
-.premium-plan-price-large {
   font-size: 3.5rem;
-}
-
-.premium-plan-price-small,
-.premium-plan-price-frequency {
-  font-size: 1.125rem;
-  margin-top: 0.6rem;
+  line-height: 1;
 }
 
 .premium-plan .premium-button {
