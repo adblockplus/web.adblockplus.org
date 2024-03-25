@@ -28,7 +28,7 @@ const PADDLE = adblock.config.paddle = {
     GBP: 500, 
     NZD: 500, 
     CHF: 500, 
-    JPY: 200, 
+    JPY: 500,
     RUB: 15000,
     USD: 500,
   },
