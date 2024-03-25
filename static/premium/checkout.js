@@ -429,7 +429,8 @@ class Step {
   }
 
   fire(event, data) {
-    for (const callback of this._events[event]) callback(data);
+    if (this._events[event])
+      for (const callback of this._events[event]) callback(data);
   }
 
   render() {
@@ -473,28 +474,15 @@ class PurchaseStep extends Step {
       currencySelect.append(currencyOption);
     }
     currencySelect.value = defaultCurrency;
-    currencySelect.addEventListener("change", () => {
-      const currency = currencySelect.value;
-      this.element.querySelectorAll(".premium-checkout-purchase-price").forEach(priceButton => {
-        const frequency = priceButton.value;
-        priceButton.querySelector(".premium-checkout-purchase-price__amount").textContent = getDollarString(
-          currency, 
-          paddleProducts[currency][frequency].amount
-        );
-      });
-      this.fire("currency-change", currency);
-    });
+
+    this._onCurrencyChange({currentTarget: currencySelect});
+    currencySelect.addEventListener("change", event => this._onCurrencyChange(event));
 
     this.element
     .querySelectorAll(".premium-checkout-purchase-price")
-    .forEach(clickedPrice => clickedPrice.addEventListener("click", event => {
-      event.preventDefault();
-      const pressedPrice = this.element.querySelector(".premium-checkout-purchase-price[aria-pressed='true']");
-      if (pressedPrice != clickedPrice) {
-        pressedPrice.setAttribute("aria-pressed", false);
-        clickedPrice.setAttribute("aria-pressed", true);
-      }
-    }));
+    .forEach(option => {
+      option.addEventListener("click", event => this._onOptionPress(event));
+    });
 
     this.element.addEventListener("submit", event => {
       event.preventDefault();
@@ -509,9 +497,36 @@ class PurchaseStep extends Step {
 
   }
 
+  _onOptionPress(event) {
+    event.preventDefault();
+    const clickedPrice = event.currentTarget;
+    const pressedPrice = this.element.querySelector(".premium-checkout-purchase-price[aria-pressed='true']");
+    if (pressedPrice != clickedPrice) {
+      pressedPrice.setAttribute("aria-pressed", false);
+      clickedPrice.setAttribute("aria-pressed", true);
+    }
+  }
+
+  _onCurrencyChange(event) {
+    const currencySelect = event.currentTarget;
+    const currency = currencySelect.value;
+    this.element.querySelectorAll(".premium-checkout-purchase-price").forEach(priceButton => {
+      const frequency = priceButton.value;
+      priceButton.querySelector(".premium-checkout-purchase-price__amount").textContent = getDollarString(
+        currency, 
+        paddleProducts[currency][frequency].amount
+      );
+    });
+    this.fire("currency-change", currency);
+  }
+
   /** get the pressed amount value */
   getSelectedValue() {
     return this.element.querySelector(".premium-checkout-purchase-price[aria-pressed='true']").value;
+  }
+
+  getCurrency() {
+    return this.element.querySelector(".premium-checkout-header__select").value;
   }
 
 }
@@ -673,7 +688,7 @@ async function goto(nextStep, state, log) {
 steps.purchase.on("checkout-now", async () => {
   flow = "purchase";
   const frequency = steps.purchase.getSelectedValue();
-  const currency = $currencies.value;
+  const currency = steps.purchase.getCurrency();
   const amount = paddleProducts[currency][frequency].amount;
   const productId = paddleProducts[currency][frequency].product;
   await goto(steps.loading);
