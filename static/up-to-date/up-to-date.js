@@ -307,12 +307,12 @@ function updateSelectionData(currency) {
     const amount = paddleProducts[currency][frequency].amount;
     option.dataset.amount = amount;
     option.querySelector(".up-to-date-payment-option__amount").textContent = getDollarString(currency, amount);
-    updateRewardDuration();
   });
   const min = PADDLE.MINIMUMS[currency];
   const input = document.querySelector("input[type=number].up-to-date-payment-option__button");
   input.dataset.min = currency == "JPY" ? min : min / 100;
   if (input.getAttribute("aria-pressed") == "true") input.min = input.dataset.min;
+  updateRewardDuration();
 }
 document.querySelectorAll(".up-to-date-payment-currency").forEach(select => {
   select.addEventListener("change", event => {
