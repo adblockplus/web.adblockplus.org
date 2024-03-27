@@ -5,7 +5,12 @@ template=update
   <? include globals ?>
   <script>
   if (adblock.settings.restrictPremium) {
-    window.location.href = window.location.href.replace("/up-to-date", "/update");
+    const trafficSource = adblock.query.get("s");
+    if (trafficSource == "ipmopd") {
+      window.location.href = window.location.href.replace("/up-to-date", "/premium");
+    } else {
+      window.location.href = window.location.href.replace("/up-to-date", "/update");
+    }
   }
   </script>
   <? include optimizely ?>
