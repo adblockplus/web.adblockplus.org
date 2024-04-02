@@ -43,13 +43,13 @@ app.get('/payment-config-function', (req, res) => {
 app.get('/currency', (req, res) => {
   euRules2 = euRules2 || [
     'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU',
-    'IE', 'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI',
-    'ES', 'SE', 'DE'
+    'IE', 'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PT', 'RO', 'SK', 'SI', 'ES', 
+    'SE', 'DE'
   ].reduce((acc, country) => ({...acc, [country]: 'eur.js'}), {});
 
   geoipRules2 = geoipRules2 || {
     'AU': 'aud.js', 'CA': 'cad.js', 'CH': 'chf.js', 'GB': 'gbp.js',
-    'JP': 'jpy.js', 'NZ': 'nzd.js', 'RU': 'rub.js',
+    'JP': 'jpy.js', 'NZ': 'nzd.js', 'RU': 'rub.js', 'PL': 'pln.js',
     ...euRules2
   };
 
