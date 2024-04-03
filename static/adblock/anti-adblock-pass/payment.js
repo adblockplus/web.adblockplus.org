@@ -110,8 +110,72 @@ $(document).ready(function() {
               "yearly": {
                 "2000": 874223,
               }
-            }
-          }
+            },
+            "CAD": {
+              "monthly": {
+                "200": 879236,
+              },
+              "yearly": {
+                "2000": 879245,
+              }
+            },
+            "GBP": {
+              "monthly": {
+                "200": 879237,
+              },
+              "yearly": {
+                "2000": 879246,
+              }
+            },
+            "AUD": {
+              "monthly": {
+                "200": 879238,
+              },
+              "yearly": {
+                "2000": 879247,
+              }
+            },
+            "NZD": {
+              "monthly": {
+                "200": 879239,
+              },
+              "yearly": {
+                "2000": 879248,
+              }
+            },
+            "CHF": {
+              "monthly": {
+                "200": 879240,
+              },
+              "yearly": {
+                "2000": 879249,
+              }
+            },
+            "PLN": {
+              "monthly": {
+                "800": 879241,
+              },
+              "yearly": {
+                "8000": 879250,
+              }
+            },
+            "JPY": {
+              "monthly": {
+                "300": 879242,
+              },
+              "yearly": {
+                "3000": 879251,
+              }
+            },
+            "RUB": {
+              "monthly": {
+                "150": 879244,
+              },
+              "yearly": {
+                "1500": 879252,
+              }
+            },
+          },
         },
         // Paddle uses some non-standard/different-stand locale codes
         LOCALES: {
