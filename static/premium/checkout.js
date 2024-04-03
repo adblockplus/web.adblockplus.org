@@ -31,6 +31,86 @@ const PADDLE = adblock.config.paddle = {
           amount: "4000",
           product: 68394,
         },
+      },
+      "CAD": {
+        "monthly": {
+          amount: "400",
+          product: 68592,
+        },
+        "yearly": {
+          amount: "4000",
+          product: 68593,
+        },
+      },
+      "GBP": {
+        "monthly": {
+          amount: "400",
+          product: 68594,
+        },
+        "yearly": {
+          amount: "4000",
+          product: 68595,
+        },
+      },
+      "AUD": {
+        "monthly": {
+          amount: "400",
+          product: 68590,
+        },
+        "yearly": {
+          amount: "4000",
+          product: 68591,
+        },
+      },
+      "NZD": {
+        "monthly": {
+          amount: "400",
+          product: 68596,
+        },
+        "yearly": {
+          amount: "4000",
+          product: 68597,
+        },
+      },
+      "CHF": {
+        "monthly": {
+          amount: "400",
+          product: 68598,
+        },
+        "yearly": {
+          amount: "4000",
+          product: 68599,
+        },
+      },
+      "PLN": {
+        "monthly": {
+          amount: "1500",
+          product: 68604,
+        },
+        "yearly": {
+          amount: "15000",
+          product: 68605,
+        },
+      },
+      "JPY": {
+        "monthly": {
+          amount: "600",
+          product: 68600,
+        },
+        "yearly": {
+          amount: "6000",
+          product: 68601,
+        },
+      },
+      "RUB": {
+        "monthly": {
+          amount: "30000",
+          product: 68602,
+        },
+        "yearly": {
+          amount: "300000",
+          product: 68603,
+        },
       }
     },
     LIVE: {
