@@ -355,15 +355,15 @@ function updateRewardDuration() {
   }
   document.querySelector(".update-payment-reward__text").innerHTML = baseTranslation
   .replace(
-    `<span class="amount">35.00</span>`, 
+    `<span>35.00</span>`, 
     `<span class="amount">${getDollarString(currency, amount)}</span>`
   )
   .replace(
-    `<span class="product">Adblock Plus Premium</span>`, 
+    `<span>Adblock Plus Premium</span>`, 
     `<span class="product">${adblock.strings["product__premium"]}</span>`
   )
   .replace(
-    `<span class="duration">8</span>`,
+    `<span>8</span>`,
     `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`
   );
 }
