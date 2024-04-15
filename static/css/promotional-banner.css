@@ -17,8 +17,10 @@
   -webkit-animation: slideup-entrance 1s ease-in-out 1 normal;
 }
 
-#promotional-banner-container > div:nth-child(1) {
-  flex-grow: 1;
+@media (min-width: 720px) {
+  #promotional-banner-container > div:nth-child(1) {
+    flex-grow: 1;
+  }  
 }
 
 @keyframes slideup-entrance {
@@ -40,9 +42,11 @@
   position: relative;
 }
 
-#block-cookie-img-box > img {
-  position: absolute;
-  bottom: -110px;
+@media (min-width: 720px) {
+  #block-cookie-img-box > img {
+    position: absolute;
+    bottom: -110px;
+  }  
 }
 #block-cookie-img-box {
   display: block;
@@ -230,7 +234,6 @@
   #block-cookie-img-box {
     padding: 0;
     margin: 8px 24px;
-    height: 260px;
   }
   #promotional-banner-container > * {
     width: fit-content;
