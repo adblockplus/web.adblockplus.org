@@ -685,7 +685,7 @@ subscriptions = {
         'faq': None,
         'forum': None,
         'homepage': 'https://www.i-dont-care-about-cookies.eu/',
-        'maintainer': 'Daniel Kladnik',
+        'maintainer': 'Gen Digital Inc.',
         'policy': None,
         'specialization': 'filters obtrusive EU cookie law notices',
         'supplemented': [],
