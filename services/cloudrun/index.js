@@ -55,6 +55,10 @@ app.get('/currency', (req, res) => {
   res.redirect(302, `/currencies/${paymentConfig}${queryString}`);
 });
 
+app.get('/geo', (req, res) => {
+  res.send(req.headers['x-country-code']);
+});
+
 app.get('/update-function/:language?', (req, res) => {
   const language = req.params.language || '';
   const page = 'update-fallback';
