@@ -30,7 +30,7 @@ variables:
     - &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:409.0.0
     - &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
     - &TEST_IMAGE registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium
-    - &BUILD_RUNNER docker
+    - &BUILD_RUNNER saas-linux-small-amd64
     - &STAGING_RUNNER eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it
     - &PRODUCTION_RUNNER0 eyeo_cms_web_server_adblockplus-org-2.adblockplus.org
 
