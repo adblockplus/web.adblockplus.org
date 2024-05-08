@@ -8,10 +8,11 @@
     <? include config ?>
     <? include analytics ?>
     <? include optimizely ?>
-    <? include hotjar ?>
     {% block head %}
       {{ head | safe }}
     {% endblock %}
+    <? include hotjar ?>
+    <? include profitwell ?>
   </head>
 
   <body class="{{ bodyclass if bodyclass else "" }}">
