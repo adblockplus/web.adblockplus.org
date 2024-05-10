@@ -104,11 +104,11 @@ const PADDLE = adblock.config.paddle = {
       },
       "RUB": {
         "monthly": {
-          amount: "30000",
+          amount: "35000",
           product: 68602,
         },
         "yearly": {
-          amount: "300000",
+          amount: "350000",
           product: 68603,
         },
       }
@@ -206,11 +206,11 @@ const PADDLE = adblock.config.paddle = {
       },
       "RUB": {
         "monthly": {
-          amount: "30000",
+          amount: "35000",
           product: 879261,
         },
         "yearly": {
-          amount: "300000",
+          amount: "350000",
           product: 879270,
         },
       }
