@@ -795,6 +795,10 @@ for (const step of Object.values(steps)) {
 
 class Page {
 
+  constructor() {
+    this.setCurrency(defaultCurrency);
+  }
+
   setCurrency(currency) {
     document.querySelectorAll(".premium-plan-price").forEach(price => {
       const amount = paddleProducts[currency][price.dataset.frequency].amount;
