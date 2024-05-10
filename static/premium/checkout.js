@@ -84,12 +84,12 @@ const PADDLE = adblock.config.paddle = {
       },
       "PLN": {
         "monthly": {
-          amount: "1500",
+          amount: "1499",
           product: 68604,
         },
         "yearly": {
-          amount: "15000",
-          product: 68605,
+          amount: "1499",
+          product: 68510,
         },
       },
       "JPY": {
@@ -186,11 +186,11 @@ const PADDLE = adblock.config.paddle = {
       },
       "PLN": {
         "monthly": {
-          amount: "1500",
+          amount: "1499",
           product: 879259,
         },
         "yearly": {
-          amount: "15000",
+          amount: "14999",
           product: 879268,
         },
       },
