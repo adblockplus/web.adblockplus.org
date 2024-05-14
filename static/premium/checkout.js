@@ -88,7 +88,7 @@ const PADDLE = adblock.config.paddle = {
           product: 68604,
         },
         "yearly": {
-          amount: "1499",
+          amount: "14999",
           product: 68510,
         },
       },
