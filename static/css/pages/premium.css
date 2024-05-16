@@ -813,3 +813,146 @@ html {
 #navbar .active a::before {
   top: 62px;
 }
+
+html:not([lang="en"]) .premium-motivation {
+  display: none !important;
+}
+
+@media (min-width: 992px) {
+  .premium-motivation-header {
+      text-align: center;
+  }    
+}
+
+.premium-motivation-header__heading {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .premium-motivation-header__heading {
+      font-size: 2.5rem;
+  }
+}
+
+.premium-motivation .premium-motivation-header__subheading {
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+}
+
+.premium-motivation-slider {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  box-shadow: 0px 10px 20px 0px #33333333;
+}
+
+@media (min-width: 992px) {
+  .premium-motivation-slider {
+    margin-bottom: 8rem;
+  }
+}
+
+.premium-motivation-slider-header {
+  background-color: #fff;
+  box-shadow: 0px 3.17px 3.17px 0px #0000001A;
+  padding: 1.25rem;
+  z-index: 3;
+}
+
+.premium-motivation-slider-header__heading {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  .premium-motivation-slider-header__heading {
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+}
+
+.premium-motivation-slider-header__heading-image {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .premium-motivation-slider-header__heading-image {
+    display: block;
+  }
+}
+
+.premium-motivation-slider-body {
+  position: relative;
+  height: 384.90px;
+  width: 508px;
+}
+
+@media (min-width: 992px) {
+  .premium-motivation-slider-body {
+    height: 672.82px;
+    width: 888px;
+  }  
+}
+
+.premium-motivation-slider-image {
+  position: absolute;
+  left: 0;
+  left: 0;
+}
+
+.premium-motivation-slider-image--after {
+  width: 25%;
+  overflow: hidden;
+}
+
+.premium-motivation-slider-image__img {
+  height: 384.90px;
+  width: 508px;
+  max-width: none;
+}
+
+@media (min-width: 992px) {
+  .premium-motivation-slider-image__img {
+    height: 672.82px;
+    width: 888px;
+  }  
+}
+
+.premium-motivation-silder-modal-slider {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 25%;
+  height: 100%;
+}
+
+.premium-motivation-silder-modal-slider__button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  height: 60px;
+  width: 60px;
+  cursor: grab;
+}
+
+.premium-motivation-silder-modal-slider__button:active {
+  cursor: grabbing
+}
+
+.premium-motivation-silder-modal-slider__border {
+  border-left: 2px solid #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}

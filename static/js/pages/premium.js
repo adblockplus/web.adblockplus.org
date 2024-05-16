@@ -150,3 +150,41 @@ if (
 } else {
   document.addEventListener('DOMContentLoaded', onDOMContentLoaded)
 }
+
+(function() {
+  const modalBody = document.querySelector(".premium-motivation-slider-body");
+  const button = document.querySelector(".premium-motivation-silder-modal-slider__button");
+  const slider = document.querySelector(".premium-motivation-silder-modal-slider");
+  const image = document.querySelector(".premium-motivation-slider-image--after");
+
+  let sliding = false;
+
+  function onMove(event) {
+    if (sliding) {
+      const touchX = (event.clientX || event.touches[0].clientX);
+      const imageX = image.getBoundingClientRect().left;
+      const modalWidth = modalBody.offsetWidth;
+      let slidePercentage = (((touchX - imageX) / modalWidth)*100);
+      if (slidePercentage < 0) slidePercentage = 0;
+      if (slidePercentage > 100) slidePercentage = 100;
+      slider.style.left = slidePercentage + "%";
+      image.style.width = slidePercentage + "%";
+    }
+  }
+
+  function onStart (event) {
+    event.preventDefault();
+    if (!sliding) sliding = true;
+  }
+
+  function onEnd (event) {
+    if (sliding) sliding = false;
+  }
+
+  button.addEventListener("mousedown", onStart);
+  button.addEventListener("touchstart", onStart);
+  document.addEventListener("mouseup", onEnd);
+  document.addEventListener("touchend", onEnd);
+  modalBody.addEventListener("mousemove", onMove);
+  modalBody.addEventListener("touchmove", onMove);
+})();
