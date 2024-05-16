@@ -737,3 +737,53 @@ function onPaymentSubmit(view, options) {
 }
 
 updatePaymentView.events.on("submit", data => onPaymentSubmit(updatePaymentView,  data));
+
+(function() {
+  const notification = document.querySelector(".update-motivation-notification");
+  const modal = document.querySelector(".update-motivation-slider");
+
+  const modalCloseButton = document.querySelector(".update-motivation-slider-modal-header__close");
+  modalCloseButton.addEventListener("click", () => modal.style.display = "none");
+
+  const notificationClose = document.querySelector(".update-motivation-notification-header__close");
+  notificationClose.addEventListener("click", () => notification.style.display = "none");
+
+  const notificationOpen = document.querySelector(".update-motivation-notification-body__button");
+  notificationOpen.addEventListener("click", () => modal.style.display = "flex");
+
+  const modalBody = document.querySelector(".update-motivation-slider-modal-body");
+  const button = document.querySelector(".update-motivation-silder-modal-slider__button");
+  const slider = document.querySelector(".update-motivation-silder-modal-slider");
+  const image = document.querySelector(".update-motivation-slider-modal-image--after");
+
+  let sliding = false;
+
+  function onMove(event) {
+    if (sliding) {
+      const touchX = (event.clientX || event.touches[0].clientX);
+      const imageX = image.getBoundingClientRect().left;
+      const modalWidth = modalBody.offsetWidth;
+      let slidePercentage = (((touchX - imageX) / modalWidth)*100);
+      if (slidePercentage < 0) slidePercentage = 0;
+      if (slidePercentage > 100) slidePercentage = 100;
+      slider.style.left = slidePercentage + "%";
+      image.style.width = slidePercentage + "%";
+    }
+  }
+
+  function onStart (event) {
+    event.preventDefault();
+    if (!sliding) sliding = true;
+  }
+
+  function onEnd (event) {
+    if (sliding) sliding = false;
+  }
+
+  button.addEventListener("mousedown", onStart);
+  button.addEventListener("touchstart", onStart);
+  document.addEventListener("mouseup", onEnd);
+  document.addEventListener("touchend", onEnd);
+  modalBody.addEventListener("mousemove", onMove);
+  modalBody.addEventListener("touchmove", onMove);
+})();
