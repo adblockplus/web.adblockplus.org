@@ -597,12 +597,7 @@ root:not([dir='rtl']) .update-payment-reward__highlight {
   border-radius: 12px;
   box-shadow: 0px 4px 8px 0px #0000001A;
   margin-top: 1.5rem;
-}
-
-@media (min-width: 420px) {
-  [lang="en"] .update-motivation-notification {
-    display: block;
-  }
+  cursor: pointer;
 }
 
 @media (min-width: 884px) {
@@ -861,4 +856,21 @@ html:not([dir="rtl"]) .update-motivation-slider-modal-header__column-3 {
   top: 0;
   left: 0;
   height: 100%;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fade-in;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

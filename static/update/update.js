@@ -740,16 +740,28 @@ updatePaymentView.events.on("submit", data => onPaymentSubmit(updatePaymentView,
 
 (function() {
   const notification = document.querySelector(".update-motivation-notification");
+
+  setTimeout(() => {
+    notification.classList.add("fade-in");
+    notification.style.display = "block";
+  }, 3000);
+
   const modal = document.querySelector(".update-motivation-slider");
+
+  modal.addEventListener("click", event => {
+    if (event.target == modal) modal.style.display = "none";
+  });
 
   const modalCloseButton = document.querySelector(".update-motivation-slider-modal-header__close");
   modalCloseButton.addEventListener("click", () => modal.style.display = "none");
 
-  const notificationClose = document.querySelector(".update-motivation-notification-header__close");
-  notificationClose.addEventListener("click", () => notification.style.display = "none");
-
-  const notificationOpen = document.querySelector(".update-motivation-notification-body__button");
-  notificationOpen.addEventListener("click", () => modal.style.display = "flex");
+  notification.addEventListener("click", event => {
+    if (event.target.closest(".update-motivation-notification-header__close")) {
+      notification.style.display = "none";
+    } else {
+      modal.style.display = "flex";
+    }
+  });
 
   const modalBody = document.querySelector(".update-motivation-slider-modal-body");
   const button = document.querySelector(".update-motivation-silder-modal-slider__button");
