@@ -1003,7 +1003,7 @@ const appealForm = adblock.runtime.appealForm = new _AppealForm_js__WEBPACK_IMPO
 });
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
-let upsellPremium = document.documentElement.dataset.page == "installed";
+let upsellPremium = document.documentElement.dataset.page == "installed" && !adblock.settings.restrictPremium;
 const rewardController = adblock.runtime.rewardController = {};
 const getReward = rewardController.getReward = (currency, frequency, amount) => {
   let plan = "ME";

@@ -32,7 +32,7 @@ const appealForm = adblock.runtime.appealForm = new AppealForm({ paddleConfig, f
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
 
-let upsellPremium = document.documentElement.dataset.page == "installed";
+let upsellPremium = document.documentElement.dataset.page == "installed" && !adblock.settings.restrictPremium;
 
 const rewardController = adblock.runtime.rewardController = {};
 
