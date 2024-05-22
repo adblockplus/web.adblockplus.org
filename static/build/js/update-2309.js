@@ -676,7 +676,7 @@ class AppealForm {
     } else {
       baseTranslation = adblock.strings["update-payment-reward"];
     }
-    document.querySelector(".update-payment-reward__text").innerHTML = baseTranslation.replace(`<span class="amount">35.00</span>`, `<span class="amount">${(0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarString)(currency, amount)}</span>`).replace(`<span class="product">Adblock Plus Premium</span>`, `<span class="product">${adblock.strings["product__premium"]}</span>`).replace(`<span class="duration">8</span>`, `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`);
+    document.querySelector(".update-payment-reward__text").innerHTML = baseTranslation.replace(`<span>35.00</span>`, `<span class="amount">${(0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.getDollarString)(currency, amount)}</span>`).replace(`<span>Adblock Plus Premium</span>`, `<span class="product">${adblock.strings["product__premium"]}</span>`).replace(`<span>8</span>`, `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`);
   }
 }
 function _updateAmounts2(currency) {
@@ -1313,6 +1313,9 @@ class Events {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getCentNumber": () => (/* binding */ getCentNumber),
+/* harmony export */   "getDollarNumber": () => (/* binding */ getDollarNumber),
+/* harmony export */   "getDollarString": () => (/* binding */ getDollarString),
 /* harmony export */   "toCentNumber": () => (/* binding */ toCentNumber),
 /* harmony export */   "toDollarNumber": () => (/* binding */ toDollarNumber),
 /* harmony export */   "toDollarString": () => (/* binding */ toDollarString)
@@ -1349,6 +1352,28 @@ function toDollarString(currency, cents) {
     currency,
     minimumFractionDigits: 0
   }).format(toDollarNumber(currency, cents));
+}
+function getDollarNumber(currency, centAmountString) {
+  const centAmountNumber = parseInt(centAmountString, 10);
+  return currency == "JPY" ? centAmountNumber : centAmountNumber / 100;
+}
+function getCentNumber(currency, dollarString) {
+  const dollarNumber = parseFloat(dollarString);
+  return currency == "JPY" ? dollarNumber : dollarNumber * 100;
+}
+function getDollarString(currency, centAmountString) {
+  const dollarNumber = getDollarNumber(currency, centAmountString);
+  const formatOptions = {
+    style: 'currency',
+    currency: currency,
+    currencyDisplay: 'narrowSymbol'
+  };
+  if (dollarNumber % 1 === 0) {
+    formatOptions.minimumFractionDigits = 0;
+    formatOptions.maximumFractionDigits = 0;
+  }
+  const language = String(document.documentElement.lang) || "en";
+  return new Intl.NumberFormat(language.replace("_", "-"), formatOptions).format(dollarNumber);
 }
 
 /***/ })
@@ -1418,9 +1443,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _configuration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./configuration.js */ "./static/components/AppealForm/configuration.js");
 /* harmony import */ var _AppealForm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppealForm.js */ "./static/components/AppealForm/AppealForm.js");
-/* harmony import */ var _currency_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../currency.js */ "./static/components/currency.js");
 /* global adblock, eyeo, Paddle */
-
 
 
 
@@ -1448,15 +1471,7 @@ const appealForm = adblock.runtime.appealForm = new _AppealForm_js__WEBPACK_IMPO
 });
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
-function getCompletedUrl() {
-  if (typeof eyeo != "object" || typeof eyeo.payment != "object" || typeof eyeo.payment.paymentCompleteUrl != "string") {
-    return "/payment-complete";
-  } else {
-    return eyeo.payment.paymentCompleteUrl;
-  }
-}
-let upsellPremium = false;
-const upsellPremiumCurrencies = ["USD", "CAD", "AUD"];
+let upsellPremium = document.documentElement.dataset.page == "installed";
 const rewardController = adblock.runtime.rewardController = {};
 const getReward = rewardController.getReward = (currency, frequency, amount) => {
   let plan = "ME";
@@ -1483,15 +1498,9 @@ const updateReward = rewardController.renderReward = () => {
     product,
     amount
   } = appealForm.state();
-  if (upsellPremium) {
-    if (upsellPremiumCurrencies.includes(currency)) {
-      document.querySelector(".update-payment-reward").removeAttribute("hidden");
-      eyeo.payment.productId = "ME";
-    } else {
-      document.querySelector(".update-payment-reward").setAttribute("hidden", true);
-      eyeo.payment.productId = originalProductId;
-    }
-  }
+  if (!upsellPremium) return;
+  document.querySelector(".update-payment-reward").removeAttribute("hidden");
+  eyeo.payment.productId = "ME";
   const frequencySuffixes = {
     "once": "",
     "monthly": adblock.strings["suffix__monthly"],
@@ -1518,19 +1527,7 @@ const updateReward = rewardController.renderReward = () => {
 };
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
-document.addEventListener("DOMContentLoaded", updateReward);
-let originalProductId = false;
-adblock.config.upsellPremium = () => {
-  if (originalProductId === false) originalProductId = eyeo.payment.productId;
-  if (document.documentElement.getAttribute("data-page") != "installed") {
-    return false;
-  } else {
-    upsellPremium = true;
-    updateReward();
-    return true;
-  }
-};
-if (adblock.query.has("upsellPremium")) adblock.config.upsellPremium();
+updateReward();
 appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVENTS.SUBMIT, data => {
   appealForm.disable();
   let productId = eyeo.payment.productId;

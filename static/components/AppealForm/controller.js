@@ -2,7 +2,6 @@
 
 import { CONFIGURATION } from "./configuration.js";
 import { AppealForm } from "./AppealForm.js";
-import { toDollarNumber } from "../currency.js";
 
 const SANDBOX_HOSTNAMES = [
   /^localhost$/,
@@ -33,16 +32,7 @@ const appealForm = adblock.runtime.appealForm = new AppealForm({ paddleConfig, f
 eyeo = eyeo || {};
 eyeo.payment = eyeo.payment || {};
 
-function getCompletedUrl() {
-  if (typeof eyeo != "object" || typeof eyeo.payment != "object" || typeof eyeo.payment.paymentCompleteUrl != "string" ) {
-    return "/payment-complete";
-  } else {
-    return eyeo.payment.paymentCompleteUrl;
-  }
-}
-
-let upsellPremium = false;
-const upsellPremiumCurrencies = ["USD", "CAD", "AUD"];
+let upsellPremium = document.documentElement.dataset.page == "installed";
 
 const rewardController = adblock.runtime.rewardController = {};
 
@@ -64,15 +54,9 @@ const getReward = rewardController.getReward = (currency, frequency, amount) => 
 
 const updateReward = rewardController.renderReward = () => {
   const { currency, frequency, product, amount } = appealForm.state();
-  if (upsellPremium) {
-    if (upsellPremiumCurrencies.includes(currency)) {
-      document.querySelector(".update-payment-reward").removeAttribute("hidden");
-      eyeo.payment.productId = "ME"
-    } else {
-      document.querySelector(".update-payment-reward").setAttribute("hidden", true);
-      eyeo.payment.productId = originalProductId;
-    }  
-  }
+  if (!upsellPremium) return;
+  document.querySelector(".update-payment-reward").removeAttribute("hidden");
+  eyeo.payment.productId = "ME"
   const frequencySuffixes = {
     "once": "",
     "monthly": adblock.strings["suffix__monthly"],
@@ -88,22 +72,7 @@ const updateReward = rewardController.renderReward = () => {
 
 appealForm.events.on(AppealForm.EVENTS.AMOUNT_CHANGE, updateReward);
 appealForm.events.on(AppealForm.EVENTS.CURRENCY_CHANGE, updateReward);
-document.addEventListener("DOMContentLoaded", updateReward);
-
-let originalProductId = false;
-
-adblock.config.upsellPremium = () => {
-  if (originalProductId === false) originalProductId = eyeo.payment.productId;
-  if (document.documentElement.getAttribute("data-page") != "installed") {
-    return false;
-  } else {
-    upsellPremium = true;
-    updateReward();
-    return true;
-  }
-}
-
-if (adblock.query.has("upsellPremium")) adblock.config.upsellPremium();
+updateReward();
 
 appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
 

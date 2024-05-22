@@ -1,6 +1,6 @@
 /* global adblock */
 import Events from "../Events.js";
-import { toDollarNumber, toCentNumber, toDollarString } from "../currency.js";
+import { toDollarNumber, toCentNumber, toDollarString, getDollarString } from "../currency.js";
 
 const formTemplate = document.getElementById("appeal-form");
 const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
@@ -235,15 +235,15 @@ export class AppealForm {
     }
     document.querySelector(".update-payment-reward__text").innerHTML = baseTranslation
     .replace(
-      `<span class="amount">35.00</span>`, 
-      `<span class="amount">${toDollarString(currency, amount)}</span>`
+      `<span>35.00</span>`, 
+      `<span class="amount">${getDollarString(currency, amount)}</span>`
     )
     .replace(
-      `<span class="product">Adblock Plus Premium</span>`, 
+      `<span>Adblock Plus Premium</span>`, 
       `<span class="product">${adblock.strings["product__premium"]}</span>`
     )
     .replace(
-      `<span class="duration">8</span>`,
+      `<span>8</span>`,
       `<span class="duration">${Math.floor(duration > 12 ? duration / 12 : duration)}</span>`
     );
   }
