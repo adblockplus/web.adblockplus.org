@@ -672,10 +672,6 @@ root:not([dir='rtl']) .update-payment-reward__highlight {
   width: 100%;
 }
 
-html:not([lang="en"]) .update-motivation-slider {
-  display: none !important;
-}
-
 @media (max-width: 419px) {
   .update-motivation-slider {
     display: none !important;
