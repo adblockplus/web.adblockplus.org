@@ -477,11 +477,11 @@ const PaddleCheckout = {
         const AUX_KEYS = {
             LIVE: {
                 key: "pk_live_Zr0d52ZJA1wFGrhLGcIT2ZhB",
-                charge_url: "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
+                charge_url: "https://pln-plans-test-dot-abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
             },
             TEST: {
                 key: "pk_test_iqOTH7z37sT1seSKNzhhKzUu",
-                charge_url: "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
+                charge_url: "https://pln-plans-test-dot-abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
             }
         };
         this._settings = settings;

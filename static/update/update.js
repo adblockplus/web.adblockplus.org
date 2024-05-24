@@ -17,11 +17,11 @@ const PADDLE = adblock.config.paddle = {
   ENVIRONMENTS: {
     LIVE: {
       VENDOR_ID: 164164,
-      CUSTOM_AMOUNT_URL: "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
+      CUSTOM_AMOUNT_URL: "https://pln-plans-test-dot-abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
     },
     TEST: {
       VENDOR_ID: 11004,
-      CUSTOM_AMOUNT_URL: "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
+      CUSTOM_AMOUNT_URL: "https://pln-plans-test-dot-abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
     }
   },
   LOCALES: {

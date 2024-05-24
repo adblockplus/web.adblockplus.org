@@ -150,7 +150,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
   };
 
   if (product == "custom") {
-    fetch("https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
+    fetch("https://pln-plans-test-dot-abp-payments.ey.r.appspot.com/paddle/generate-pay-link", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(passthrough),

@@ -180,7 +180,7 @@ const paddleId = PADDLE.ENVIRONMENTS[environment];
 const paddleTitle = "Adblock Plus";
 const paddleLocale = PADDLE.LOCALES[language] || language;
 const products = PADDLE.PRODUCTS[environment];
-const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
+const customAmountServiceURL = "https://pln-plans-test-dot-abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
 
 if (environment == "TEST") {
   Paddle.Environment.set("sandbox");
