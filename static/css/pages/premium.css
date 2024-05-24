@@ -814,10 +814,6 @@ html {
   top: 62px;
 }
 
-html:not([lang="en"]) .premium-motivation {
-  display: none !important;
-}
-
 @media (min-width: 992px) {
   .premium-motivation-header {
       text-align: center;
