@@ -638,7 +638,7 @@ class AppealForm {
     let amount = radio.value;
     if (amount == "custom") {
       const input = _classPrivateMethodGet(this, _getCustomRadioInput, _getCustomRadioInput2).call(this, radio);
-      amount = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.getCentNumber)(currency, parseFloat(input.value === "" ? input.placeholder : input.value));
+      amount = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toCentNumber)(currency, parseFloat(input.value === "" ? input.placeholder : input.value));
     } else {
       amount = parseFloat(amount);
     }
@@ -687,11 +687,11 @@ function _updateAmounts2(currency) {
       const radio = control.querySelector(".appeal-form-amount__radio");
       if (amount == "custom") {
         const input = control.querySelector(".appeal-form-amount__input");
-        input.placeholder = String((0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.getDollarNumber)(currency, Object.keys(_classPrivateFieldGet(this, _paddleConfig).products[currency][frequency])[3]));
-        input.dataset.minimum = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.getDollarNumber)(currency, _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount]);
+        input.placeholder = String((0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarNumber)(currency, Object.keys(_classPrivateFieldGet(this, _paddleConfig).products[currency][frequency])[3]));
+        input.dataset.minimum = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarNumber)(currency, _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount]);
         radio.dataset.product = "custom";
       } else {
-        control.querySelector(".appeal-form-amount__text").textContent = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.getDollarString)(currency, amount);
+        control.querySelector(".appeal-form-amount__text").textContent = (0,_currency_js__WEBPACK_IMPORTED_MODULE_1__.toDollarString)(currency, amount);
         radio.value = amount;
         radio.dataset.product = _classPrivateFieldGet(this, _paddleConfig).products[currency][frequency][amount];
       }

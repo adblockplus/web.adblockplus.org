@@ -1,6 +1,6 @@
 /* global adblock */
 import Events from "../Events.js";
-import { getDollarNumber, getCentNumber, getDollarString } from "../currency.js";
+import { toDollarNumber, toCentNumber, toDollarString, getDollarString } from "../currency.js";
 
 const formTemplate = document.getElementById("appeal-form");
 const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
@@ -103,11 +103,11 @@ export class AppealForm {
         const radio = control.querySelector(".appeal-form-amount__radio");
         if (amount == "custom") {
           const input = control.querySelector(".appeal-form-amount__input");
-          input.placeholder = String(getDollarNumber(currency, Object.keys(this.#paddleConfig.products[currency][frequency])[3]));
-          input.dataset.minimum = getDollarNumber(currency, this.#paddleConfig.products[currency][frequency][amount]);
+          input.placeholder = String(toDollarNumber(currency, Object.keys(this.#paddleConfig.products[currency][frequency])[3]));
+          input.dataset.minimum = toDollarNumber(currency, this.#paddleConfig.products[currency][frequency][amount]);
           radio.dataset.product = "custom";
         } else {
-          control.querySelector(".appeal-form-amount__text").textContent = getDollarString(currency, amount);
+          control.querySelector(".appeal-form-amount__text").textContent = toDollarString(currency, amount);
           radio.value = amount;
           radio.dataset.product = this.#paddleConfig.products[currency][frequency][amount];
         }
@@ -202,7 +202,7 @@ export class AppealForm {
     let amount = radio.value;
     if (amount == "custom") {
       const input = this.#getCustomRadioInput(radio);
-      amount = getCentNumber(currency, parseFloat(input.value === "" ? input.placeholder : input.value));
+      amount = toCentNumber(currency, parseFloat(input.value === "" ? input.placeholder : input.value));
     } else {
       amount = parseFloat(amount);
     }
