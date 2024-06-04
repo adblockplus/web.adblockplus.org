@@ -31,8 +31,9 @@ function getUserId() {
       ""
     ];
     // Use the first one that has a value.
-    return _userIdOptions.filter(function(o) { return o !== undefined; })[0];
-}
+    const userid = _userIdOptions.filter(function(o) { return o !== undefined; })[0];
+    return userid.length == 16 ? userid : "";
+  }
 
 // Returns the adblock userid if exists, else return unknown
 function getUserIdOrUnknown() {
