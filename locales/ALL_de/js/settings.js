@@ -7,7 +7,7 @@
 // e.g. /premium instead of /en/premium. If we stop doing that by default then
 // another workaround will need to be developed.
 if (window.location.pathname.split("/").length <= 2 && document.documentElement.lang != "de") {
-  window.location.href = `${window.location.origin}/de/${window.location.pathname}${window.location.search}`;
+  window.location.href = `${window.location.origin}/de${window.location.pathname}${window.location.search}`;
 }
 
 // LEGAL REQUIREMENT: Anything we sell in Germany must be sold in EUR
