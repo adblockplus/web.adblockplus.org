@@ -1,22 +1,6 @@
+<? include globals ?>
 <script>
   var noop = function() {};
-
-  var adblock = window.adblock = {
-    settings: {
-      language: {{ locale | tojson }},
-    },
-    strings: {
-      "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
-    },
-    searchParameters: new URLSearchParams(location.search),
-    error: (message) => { alert(message) },
-    runtime: {},
-    config: {},
-    lib: {},
-    api: {},
-  };
-
-  adblock.query = adblock.searchParameters;
 
   if (adblock.query.has("dev")) document.documentElement.classList.add("dev");
   if (adblock.query.has("design")) document.documentElement.classList.add("design");

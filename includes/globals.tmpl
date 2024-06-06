@@ -2,14 +2,20 @@
   const query = new URLSearchParams(window.location.search);
   const adblock = window.adblock = {
     query,
-    lib: {},
+    searchParameters: query,
+    error: (message) => { alert(message) },
     runtime: {},
-    strings: {},
     config: {},
+    lib: {},
+    api: {},
+    config: {},
+    strings: {
+      "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
+    },
     settings: {
       userid: document.documentElement.dataset.userid || false,
       page: document.documentElement.dataset.page || false,
-      language: document.documentElement.lang || false,
+      language: {{ locale | tojson }},
     },
   };
 </script>
