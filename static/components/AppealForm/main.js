@@ -317,7 +317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const CONFIGURATION = {
   AppealForm: {
-    currency: typeof adblock == "object" ? adblock.settings.currency || "USD" : "USD",
+    currency: typeof adblock == "object" ? adblock.settings.defaultCurrency || "USD" : "USD",
     selected: 3
   },
   Paddle: {

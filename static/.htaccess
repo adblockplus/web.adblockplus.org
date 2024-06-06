@@ -220,9 +220,9 @@ RewriteRule (^|\/)careers$ "https://adblock.pinpointhq.com/en" [NC,R,L]
   GeoIPEnable On
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(DE)$ [OR]
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(DE)$
-  RewriteRule .* /js/testing/settings-restricted.js [L]
+  RewriteRule .* /ALL_de/js/settings.js [L]
 
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR)$ [OR]
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR)$
-  RewriteRule .* /js/testing/settings-restricted.js [L]
+  RewriteRule .* /ALL_fr/js/settings.js [L]
 </FilesMatch>

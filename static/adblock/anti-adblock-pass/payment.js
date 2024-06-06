@@ -915,4 +915,6 @@ $(document).ready(function() {
     if (typeof _logV2PageView !== "undefined") {
         _logV2PageView("myadblock_enrollment");
     }
+
+    $currencies.value = adblock.settings.defaultCurrency || "USD";
 });
