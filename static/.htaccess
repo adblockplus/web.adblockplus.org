@@ -199,7 +199,10 @@ Header merge  Vary "Origin"
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^JP$ [OR]
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^JP$
   RewriteRule .* /currencies/jpy.js [L]
-  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^PL$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^PL$
+  RewriteRule .* /currencies/pln.js [L]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PT|RO|SK|SI|ES|SE)$ [OR]
   RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(AT|BE|BG|HR|CY|CZ|DK|EE|FI|FR|GR|HU|IE|IT|LV|LT|LG|MT|NL|PL|PT|RO|SK|SI|ES|SE)$
   RewriteRule .* /currencies/eur.js [L]
   RewriteRule .* /currencies/usd.js [L]
