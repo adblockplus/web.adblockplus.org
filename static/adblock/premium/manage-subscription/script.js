@@ -78,7 +78,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        url: "https://myadblock.licensing.adblockplus.dev/license/api/",
+        url: "https://abp-premium-licensing.web.app/license/api/",
         headers: {
             "Accept-Language": thisLang,
         },
@@ -214,7 +214,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: "https://myadblock.licensing.adblockplus.dev/license/api/",
+            url: "https://abp-premium-licensing.web.app/license/api/",
             method: "POST",
             dataType: "json",
             data: {
@@ -264,7 +264,7 @@ $(document).ready(function() {
         Page.RegistrationBox.show();
         Page.SpinnerNoText.show();
         $.ajax({
-            url: "https://myadblock.licensing.adblockplus.dev/license/api/",
+            url: "https://abp-premium-licensing.web.app/license/api/",
             method: "POST",
             dataType: "json",
             data: {
