@@ -916,5 +916,5 @@ $(document).ready(function() {
         _logV2PageView("myadblock_enrollment");
     }
 
-    $currencies.value = adblock.settings.defaultCurrency || "USD";
+    $currencies.value = ["EUR", "USD"].includes(adblock.settings.defaultCurrency) ? adblock.settings.defaultCurrency : "USD";
 });
