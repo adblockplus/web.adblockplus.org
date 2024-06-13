@@ -1,26 +1,16 @@
 <style>
-  .fr-only,
-  .de-only { display: none; }
+  .fr-only { display: none; }
 
-  .fr .fr-only,
-  .de .de-only { display: block; }
+  .fr .fr-only { display: block; }
 
-  .fr .not-fr,
-  .de .not-de { display: none !important; }
+  .fr .not-fr { display: none !important; }
 
-  .fr .premium-cta,
-  .de .premium-cta {
+  .fr .premium-cta {
     color: #C6C6C6 !important;
     border: 1px solid #C6C6C6 !important;
     background-color: #fff !important;
   }
 
-  .de .premium-cta:hover,
-  .de .premium-cta:active,
-  .de .premium-cta:focus,
-  .de .premium-cta:hover,
-  .de .premium-cta:active,
-  .de .premium-cta:focus,
   .fr .premium-cta:hover,
   .fr .premium-cta:active,
   .fr .premium-cta:focus,
@@ -45,7 +35,7 @@
   }
 </style>
 
-<aside class="alert-bar alert-bar--gold fr-only de-only">
+<aside class="alert-bar alert-bar--gold fr-only">
   <div class="container">
     {{ get_string("s41", "premium") }}
   </div>

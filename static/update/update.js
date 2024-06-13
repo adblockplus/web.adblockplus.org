@@ -568,7 +568,7 @@ const CURRENCY_MAP = {
 
 // prefer CURRENCY_MAP to EUR_COUNTRIES so that Euro area countries may prefer
 // their own currency to EUR or fall back to EUR if it's not supported
-const defaultCurrency = adblock.settings.defaultCurrency = adblock.settings.defaultCurrency
+const defaultCurrency = adblock.settings.defaultCurrency
   || adblock.settings.currency
   || CURRENCY_MAP[country]
   || (EUR_COUNTRIES.includes(country) ? "EUR" : "USD");

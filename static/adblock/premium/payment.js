@@ -162,7 +162,7 @@ $(document).ready(function () {
     // });
 
     function initializePaymentBox(callback) {
-        var firstCurrency = "USD";
+        var firstCurrency = adblock.settings.defaultCurrency || "USD";
         var dropdownItems = [];
         const acceptedCurrencies = new Set(["USD", "EUR", "CAD", "GBP"]);
         if (
