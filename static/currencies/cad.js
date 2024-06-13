@@ -1,1 +1,1 @@
-adblock.settings.currency = "CAD";
+adblock.settings.currency = adblock.settings.defaultCurrency = "CAD";

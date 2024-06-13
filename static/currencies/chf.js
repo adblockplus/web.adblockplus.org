@@ -1,1 +1,1 @@
-adblock.settings.currency = "CHF";
+adblock.settings.currency = adblock.settings.defaultCurrency = "CHF";

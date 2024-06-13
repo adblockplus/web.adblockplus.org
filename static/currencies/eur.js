@@ -1,1 +1,1 @@
-adblock.settings.currency = "EUR";
+adblock.settings.currency = adblock.settings.defaultCurrency = "EUR";

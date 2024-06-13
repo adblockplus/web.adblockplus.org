@@ -1,1 +1,1 @@
-adblock.settings.currency = "NZD";
+adblock.settings.currency = adblock.settings.defaultCurrency = "NZD";

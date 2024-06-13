@@ -1,1 +1,1 @@
-adblock.settings.currency = "AUD";
+adblock.settings.currency = adblock.settings.defaultCurrency = "AUD";
