@@ -1,5 +1,5 @@
 import Events from "./events.js";
-import { getCentNumber, getDollarString, getDollarNumber } from "./currency.js";
+import { getCentNumber, getDollarString, getDollarNumber } from "../shared/currency.js";
 
 export default class UpdatePaymentView {
 
@@ -171,11 +171,11 @@ export default class UpdatePaymentView {
       const label = labels[i];
       if (amount == "custom") {
         const input = label;
-        input.placeholder = getDollarString(this.currency, amounts[amount]);
+        input.placeholder = getDollarString(adblock.settings.language, this.currency, amounts[amount]);
         input.dataset.default = amounts[amount];
         input.dataset.min = getDollarNumber(this.currency, this.minimums[this.currency][frequency]);
       } else {
-        label.textContent = getDollarString(this.currency, amount);
+        label.textContent = getDollarString(adblock.settings.language, this.currency, amount);
         radio.value = amount;
       }
       radio.dataset.frequency = frequency;

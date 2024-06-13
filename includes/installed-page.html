@@ -23,7 +23,7 @@
       {{ installed-hero__heading Thank you for installing Adblock Plus! }}
     </h1>
     <p class="installed-hero__subheading">
-      {{ installed-hero__subheading <span>Adblock Plus is honor-ware, which means that <strong>we trust each other</strong> to be nice.</span> <span>We have <strong>full time employees</strong> that depend on your contributions and support.</span> }}
+      {{ installed-hero__subheading Adblock Plus is honor-ware, which means that <strong>we trust each other</strong> to be nice. }}
     </p>
   </div>
 </header>
@@ -51,21 +51,21 @@
   </div>
 </aside>
 
-<form class="installed-payment">
+<form id="installed-payment" data-testid="installed-payment" class="installed-payment">
   <div class="installed-container">
 
     <div class="installed-payment-currency">
       <label for="installed-payment-currency__select" class="installed-payment-currency__label">
         {{ installed-payment-currency__label Select your preferred contribution }}
       </label>
-      <select id="installed-payment-currency__select" class="installed-payment-currency__select">
+      <select data-testid="installed-payment-currency" class="installed-payment-currency__select">
         <option>USD</option>
       </select>
     </div>
   
     <div class="installed-payment-frequencies">
   
-      <section class="installed-payment-frequency installed-payment-frequency--active" data-frequency="yearly">
+      <section data-testid="installed-payment-frequency--yearly" class="installed-payment-frequency installed-payment-frequency--active" data-frequency="yearly">
         <h2 class="installed-payment-frequency__heading">
           {{ installed-payment-yearly__heading Yearly }}
         </h2>
@@ -79,25 +79,26 @@
         </ul>
         <div class="installed-payment-options">
           <div class="installed-payment-options__row">
-            <button class="installed-payment-option" data-frequency="yearly" data-option="0" type="button">
+            <button data-testid="installed-payment-option--yearly-1" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="0" type="button">
               $10
             </button>
-            <button class="installed-payment-option" data-frequency="yearly" data-option="1" type="button">
+            <button data-testid="installed-payment-option--yearly-2" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="1" type="button">
               $15
             </button>
-            <button class="installed-payment-option" data-frequency="yearly" data-option="2" type="button">
+            <button data-testid="installed-payment-option--yearly-3" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="2" type="button">
               $20
             </button>
           </div>
           <div class="installed-payment-options__row">
-            <button class="installed-payment-option installed-payment-option--active" data-frequency="yearly" data-option="3" type="button">
+            <button data-testid="installed-payment-option--yearly-4" class="installed-payment-option installed-payment-option--fixed installed-payment-option--active" data-frequency="yearly" data-option="3" type="button">
               $35
             </button>
-            <button class="installed-payment-option" data-frequency="yearly" data-option="4" type="button">
+            <button data-testid="installed-payment-option--yearly-5" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="4" type="button">
               $50
             </button>
             <input 
-              class="installed-payment-option installed-payment-option--input"
+              data-testid="installed-payment-option--yearly-6"
+              class="installed-payment-option installed-payment-option--custom"
               type="number"
               step=".01"
               placeholder="{{ installed-payment-option--custom $ Custom }}"
@@ -107,7 +108,7 @@
         </div>
       </section>
   
-      <section class="installed-payment-frequency" data-frequency="monthly">
+      <section data-testid="installed-payment-frequency--monthly" class="installed-payment-frequency" data-frequency="monthly">
         <h2 class="installed-payment-frequency__heading">
           {{ installed-payment-monthly__heading Monthly }}
         </h2>
@@ -121,25 +122,26 @@
         </ul>
         <div class="installed-payment-options">
           <div class="installed-payment-options__row">
-            <button class="installed-payment-option" data-frequency="monthly" data-option="0" type="button">
+            <button data-testid="installed-payment-option--monthly-1" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="0" type="button">
               $2
             </button>
-            <button class="installed-payment-option" data-frequency="monthly" data-option="1" type="button">
+            <button data-testid="installed-payment-option--monthly-2" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="1" type="button">
               $3
             </button>
-            <button class="installed-payment-option" data-frequency="monthly" data-option="2" type="button">
+            <button data-testid="installed-payment-option--monthly-3" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="2" type="button">
               $4
             </button>
           </div>
           <div class="installed-payment-options__row installed-payment-options__row--2">
-            <button class="installed-payment-option" data-frequency="monthly" data-option="3" type="button">
+            <button data-testid="installed-payment-option--monthly-4" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="3" type="button">
               $5
             </button>
-            <button class="installed-payment-option" data-frequency="monthly" data-option="4" type="button">
+            <button data-testid="installed-payment-option--monthly-5" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="4" type="button">
               $10
             </button>
             <input
-              class="installed-payment-option installed-payment-option--input"
+              data-testid="installed-payment-option--monthly-6"
+              class="installed-payment-option installed-payment-option--custom"
               type="number"
               step=".01"
               placeholder="{{ installed-payment-option--custom $ Custom }}"
@@ -152,14 +154,14 @@
     </div>
   
     <div class="installed-payment-checkout">
-      <button class="installed-payment-checkout__button">
+      <button data-testid="installed-payment-checkout" class="installed-payment-checkout__button">
         <img alt="" height="14" width="14" src="/installed/installed-payment-checkout__button-image.png">
         <span>
           {{ installed-payment-checkout__button Complete Purchase }}
         </span>
       </button>
       <img alt="" height="24" src="/installed/installed-payment-checkout__providers.svg" class="installed-payment-checkout__providers">
-      <aside class="payment-reward__text">
+      <aside data-testid="installed-payment-reward" class="payment-reward__text">
         Nice! A <span>$35</span> contribution gets <span>Adblock Plus Premium</span>. Thanks for your support.
       </aside>
     </div>  

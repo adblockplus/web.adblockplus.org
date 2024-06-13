@@ -60,9 +60,6 @@ input[type=number] {
   -webkit-appearance: none;
   -moz-appearance:textfield;
   appearance: none;
-  border: 1px solid grey;
-  border-radius: 3px;
-  padding: 0.1rem 0.2rem;
 }
 
 .restrict-premium .premium-only,
@@ -282,13 +279,13 @@ html:not(.restrict-premium) .not-premium-only {
   margin-bottom: 1rem;
 }
 
-.installed-payment--long .installed-payment-options__row {
+.installed-payment--long-currency .installed-payment-options__row,
+.installed-payment--long-language .installed-payment-options__row {
   flex-wrap: wrap;
   row-gap: 1rem;
 }
 
-.installed-payment-option,
-input[type="number"].installed-payment-option {
+.installed-payment-option {
   border: 2px solid #CDCDCD;
   background-color: #fff;
   padding: 1rem;
@@ -298,24 +295,25 @@ input[type="number"].installed-payment-option {
   outline: none !important;
 }
 
-.installed-payment--long input[type="number"].installed-payment-option.installed-payment-option--input {
-  width: 16rem;
+.installed-payment--long-currency .installed-payment-option--custom,
+.installed-payment--long-language .installed-payment-option--custom {
+  width: 18rem;
 }
 
-.installed-payment--long .installed-payment-options__row--2 .installed-payment-option {
-  width: 7.7rem;
+.installed-payment--long-currency .installed-payment-option,
+.installed-payment--long-language .installed-payment-option {
+  flex: 1;
 }
 
-.installed-payment--long .installed-payment-option {
-  width: 5rem;
+.installed-payment--long-currency .installed-payment-option:nth-of-type(3) {
+  display: none;
 }
 
-input[type="number"].installed-payment-option.installed-payment-option--input {
+.installed-payment-option--custom {
   width: 6rem;
 }
 
-.installed-payment-option--active,
-input[type="number"].installed-payment-option--active {
+.installed-payment-option--active {
   color: #0047FF;
   font-weight: 700;
   border-color: #0047FF;
@@ -393,7 +391,7 @@ input[type="number"].installed-payment-option--active {
 }
 
 .payment-reward__text {
-  background-color: #E9ECF6;
+  background-color: #F5F5F5;
   border-radius: 6px;
   padding: 1rem;
   margin: 2rem auto 0 auto;

@@ -1,5 +1,5 @@
 /* global Paddle, adblock */
-import { getDollarNumber, getCentNumber, getDollarString } from "./currency.js";
+import { getDollarNumber, getCentNumber, getDollarString } from "../shared/currency.js";
 import { matchHeights } from "./responsive.js";
 import { generateTrackingId, generateUserId, getUserId } from "./user.js";
 import Events from "./events.js";

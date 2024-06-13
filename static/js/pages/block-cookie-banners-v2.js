@@ -1,5 +1,5 @@
 /* global Paddle, adblock */
-import { getDollarString } from "../../update/currency.js";
+import { getDollarString } from "../../shared/currency.js";
 import { generateTrackingId, generateUserId, getUserId } from "../../update/user.js";
 
 // restricted premium traffic shouldn't be sent here
@@ -205,7 +205,7 @@ function onCurrencyChange() {
   .forEach(button => {
     const frequency = button.dataset.frequency;
     const amount = Object.keys(products[currency][frequency])[0];
-    button.querySelector(".amount").textContent = getDollarString(currency, amount);
+    button.querySelector(".amount").textContent = getDollarString(adblock.settings.language, currency, amount);
   });
 }
 

@@ -1,14 +1,34 @@
 <script>
+
+  class Events {
+    constructor() {
+      this.eventCallbacks = {};
+      this.eventHistory = [];
+      this.eventsHistories = {};
+    }
+    on(event, callback) {
+      if (!this.eventCallbacks[event]) this.eventCallbacks[event] = [];
+      this.eventCallbacks[event].push(callback);
+    }
+    fire(event, context) {
+      if (this.eventCallbacks[event]) {
+        this.eventCallbacks[event].forEach(callback => callback(context));
+        this.eventHistory.push([event, context]);
+        if (!this.eventsHistories[event]) this.eventsHistories[event] = [];
+        this.eventsHistories[event].push(context);
+      }
+    }
+  }
+
   const query = new URLSearchParams(window.location.search);
+  
   const adblock = window.adblock = {
-    query,
-    searchParameters: query,
-    error: (message) => { alert(message) },
     runtime: {},
     config: {},
     lib: {},
     api: {},
-    config: {},
+    events: new Events(),
+    query,
     strings: {
       "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
     },
@@ -18,5 +38,12 @@
       language: {{ locale | tojson }},
     },
   };
+
+  adblock.searchParameters = query;
+
+  adblock.error = (message) => { alert(message) };
+
+  adblock.lib.eventCallbacks = Events;
+
 </script>
 <script src="/js/settings.js"></script>
