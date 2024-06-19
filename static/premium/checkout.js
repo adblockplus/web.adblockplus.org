@@ -507,7 +507,7 @@ function activatePremium() {
 function verifyEmail(email) {
   checkoutLog("premium-checkout__email");
   return new Promise((resolve, reject) => {
-    fetch("https://abp-premium-licensing.web.app/license/api/", {
+    fetch("https://myadblock.licensing.adblockplus.dev/license/api/", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -540,7 +540,7 @@ function verifyEmail(email) {
 function verifyCode(code) {
   checkoutLog("premium-checkout__code", { userid, code });
   return new Promise((resolve, reject) => {
-    fetch("https://abp-premium-licensing.web.app/license/api/", {
+    fetch("https://myadblock.licensing.adblockplus.dev/license/api/", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
