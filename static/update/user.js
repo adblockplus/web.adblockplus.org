@@ -5,7 +5,7 @@ export function getUserId() {
   if (adblock.query.has("u")) {
     const userid = adblock.query.get("u");
     const page = document.documentElement.dataset.page;
-    if (page == "manage" || userid.length == 16) return userid;
+    if (page == "manage" || userid.length == 16 || userid.length == 15) return userid;
   }
   return "";
 }
