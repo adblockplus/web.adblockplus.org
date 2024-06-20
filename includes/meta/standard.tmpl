@@ -17,5 +17,5 @@
   if (location.hostname == "welcome.adblockplus.org" && location.pathname.endsWith("/installed")) return;
   if (location.hostname == "accounts.adblockplus.org" && location.pathname.endsWith("/premium")) return;
   if (location.hostname == "accounts.adblockplus.org" && location.pathname.endsWith("/manage")) return;
-  if (location.hostname != "adblockplus.org") location.href = `https://adblockplus.org${location.pathname}${location.search}${location.hash}`;
+  if (!(location.hostname == "adblockplus.org" || location.hostname == "localhost" || location.hostname.endsWith("web.app"))) location.href = `https://adblockplus.org${location.pathname}${location.search}${location.hash}`;
 })()</script>
