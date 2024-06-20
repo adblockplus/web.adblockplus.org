@@ -7,9 +7,15 @@
 {% endif %}
 <link rel="canonical" href="{{ get_canonical_url(page | ignore_browsers) }}">
 
-{% if config.get("general", "siteurl") != "https://adblockplus.org" %}
-  <meta name="robots" content="none">
-{% elif robots  %}
+{% if robots  %}
   <meta name="robots" content="{{ robots }}">
 {% endif %}
 
+<script>(function(){
+  if (location.hostname == "new.adblockplus.org" && location.pathname.endsWith("/update")) return;
+  if (location.hostname == "new.adblockplus.org" && location.pathname.endsWith("/up-to-date")) return;
+  if (location.hostname == "welcome.adblockplus.org" && location.pathname.endsWith("/installed")) return;
+  if (location.hostname == "accounts.adblockplus.org" && location.pathname.endsWith("/premium")) return;
+  if (location.hostname == "accounts.adblockplus.org" && location.pathname.endsWith("/manage")) return;
+  if (location.hostname != "adblockplus.org") location.href = `https://adblockplus.org${location.pathname}${location.search}${location.hash}`;
+})()</script>
