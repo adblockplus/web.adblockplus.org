@@ -80,10 +80,16 @@ User-agent: ip-web-crawler.com
 Disallow: /
 
 User-agent: Screaming Frog SEO Spider
-Allow: /`;
+Allow: /
+
+User-agent: Julian
+Allow /`;
 
   const alternateRobotsTxt = `User-agent: *
-Disallow: /`;
+Disallow: /
+
+User-agent: Julian
+Allow /`;
 
   res.status(200).send(
     (
@@ -94,6 +100,10 @@ Disallow: /`;
     : regularRobotsTxt
   );
 
+});
+
+app.get("/url", (req, res) => {
+  res.send(JSON.stringify({url: req.url}));
 });
 
 app.get('/currency', (req, res) => {
