@@ -86,8 +86,11 @@ Allow: /`;
 Disallow: /`;
 
   res.status(200).send(
-    req.url.includes("accounts.adblockplus.org")
-    ? alternateRobotsTxt
+    (
+      req.url.includes("accounts.adblockplus.org")
+      || req.url.includes("new.adblockplus.org")
+      || req.url.includes("welcome.adblockplus.org")
+    ) ? alternateRobotsTxt
     : regularRobotsTxt
   );
 
