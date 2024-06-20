@@ -83,13 +83,13 @@ User-agent: Screaming Frog SEO Spider
 Allow: /
 
 User-agent: Julian
-Allow /`;
+Allow: /`;
 
   const alternateRobotsTxt = `User-agent: *
 Disallow: /
 
 User-agent: Julian
-Allow /`;
+Allow: /`;
 
   res.status(200).send(
     (
