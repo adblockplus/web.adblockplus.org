@@ -80,16 +80,10 @@ User-agent: ip-web-crawler.com
 Disallow: /
 
 User-agent: Screaming Frog SEO Spider
-Allow: /
-
-User-agent: Julian
 Allow: /`;
 
   const alternateRobotsTxt = `User-agent: *
-Disallow: /
-
-User-agent: Julian
-Allow: /`;
+Disallow: /`;
 
   if (req.headers["x-forwarded-host"] != "adblockplus.org") {
     res.status(200).send(alternateRobotsTxt);
@@ -97,10 +91,6 @@ Allow: /`;
     res.status(200).send(regularRobotsTxt);
   }
 
-});
-
-app.get("/host", (req, res) => {
-  res.send(JSON.stringify({host: req.headers["x-forwarded-host"]}));
 });
 
 app.get('/currency', (req, res) => {
