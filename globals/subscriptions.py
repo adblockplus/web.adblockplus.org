@@ -1053,7 +1053,7 @@ subscriptions = {
         'variants': [['hufilter+EasyList',
                      'https://easylist-downloads.adblockplus.org/hufilter+easylist.txt'
                      , True], ['hufilter',
-                     'https://raw.githubusercontent.com/hufilter/hufilter/master/hufilter.txt'
+                     'https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter.txt'
                      , False]],
         },
     'void.gr': {
