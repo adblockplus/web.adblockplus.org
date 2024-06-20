@@ -91,19 +91,16 @@ Disallow: /
 User-agent: Julian
 Allow: /`;
 
-  res.status(200).send(
-    (
-      req.url.includes("accounts.adblockplus.org")
-      || req.url.includes("new.adblockplus.org")
-      || req.url.includes("welcome.adblockplus.org")
-    ) ? alternateRobotsTxt
-    : regularRobotsTxt
-  );
+  if (req.headers["x-forwarded-host"] != "adblockplus.org") {
+    res.status(200).send(alternateRobotsTxt);
+  } else {
+    res.status(200).send(regularRobotsTxt);
+  }
 
 });
 
-app.get("/url", (req, res) => {
-  res.send(JSON.stringify({url: req.url}));
+app.get("/host", (req, res) => {
+  res.send(JSON.stringify({host: req.headers["x-forwarded-host"]}));
 });
 
 app.get('/currency', (req, res) => {
