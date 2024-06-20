@@ -82,10 +82,11 @@ Disallow: /
 User-agent: Screaming Frog SEO Spider
 Allow: /`;
 
-  const alternateRobotsTxt = `Disallow: /`;
+  const alternateRobotsTxt = `User-agent: *
+Disallow: /`;
 
   res.status(200).send(
-    req.url.includes("accounts.adblockplus.org/")
+    req.url.includes("accounts.adblockplus.org")
     ? alternateRobotsTxt
     : regularRobotsTxt
   );
