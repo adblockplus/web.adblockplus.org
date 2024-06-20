@@ -40,7 +40,7 @@ app.get('/payment-config-function', (req, res) => {
   res.redirect(302, `/js/payment/config/${paymentConfig}${queryString}`);
 });
 
-app.get("/robots.txt", (req, res) => {
+app.get("/robots-function", (req, res) => {
 
   const regularRobotsTxt = `User-agent: *
 Disallow: /textpattern/

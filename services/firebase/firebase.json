@@ -216,6 +216,12 @@
       },
 
       {
+        "source": "/robots.txt",
+        "destination": "/robots-function",
+        "type": 302
+      },
+
+      {
         "regex": ".*\/deal",
         "destination": "https://accounts.adblockplus.org/premium",
         "type": 302
@@ -230,7 +236,7 @@
         }
       },
       {
-        "source": "/robots.txt",
+        "source": "/robots-function",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
