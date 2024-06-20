@@ -40,6 +40,58 @@ app.get('/payment-config-function', (req, res) => {
   res.redirect(302, `/js/payment/config/${paymentConfig}${queryString}`);
 });
 
+app.get("/robots.txt", (req, res) => {
+
+  const regularRobotsTxt = `User-agent: *
+Disallow: /textpattern/
+Disallow: /forum/adm/
+Disallow: /forum/download/
+Disallow: /forum/images/
+Disallow: /forum/includes/
+Disallow: /forum/language/
+Disallow: /forum/styles/
+Disallow: /forum/common.php
+Disallow: /forum/config.php
+Disallow: /forum/cron.php
+Disallow: /forum/faq.php
+Disallow: /forum/mcp.php
+Disallow: /forum/memberlist.php
+Disallow: /forum/posting.php
+Disallow: /forum/report.php
+Disallow: /forum/search.php
+Disallow: /forum/ucp.php
+Disallow: /forum/viewonline.php
+Disallow: /openid
+Disallow: /babelzilla.php
+Disallow: /getSubscription
+Disallow: /403.html
+Disallow: /_include/
+
+User-agent: 008
+Disallow: /
+
+User-agent: Linguee
+Disallow: /
+
+User-agent: mxbot
+Disallow: /
+
+User-agent: ip-web-crawler.com
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Allow: /`;
+
+  const alternateRobotsTxt = `Disallow: /`;
+
+  res.status(200).send(
+    req.url.includes("accounts.adblockplus.org/")
+    ? alternateRobotsTxt
+    : regularRobotsTxt
+  );
+
+});
+
 app.get('/currency', (req, res) => {
   euRules2 = euRules2 || [
     'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU',
