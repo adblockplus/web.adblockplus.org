@@ -74,6 +74,10 @@ html:not(.restrict-premium) .not-premium-only {
   display: none !important;
 }
 
+html:not(.fr) .fr-only {
+  display: none !important;
+}
+
 .update-loader__card {
   margin: 0 auto;
   width: 600px;

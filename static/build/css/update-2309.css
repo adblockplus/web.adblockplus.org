@@ -15,6 +15,14 @@ body
   padding-top: 0;
 }
 
+.fr .not-fr {
+  display: none !important;
+}
+
+html:not(.fr) .fr-only {
+  display: none !important;
+}
+
 .br { display: block; }
 
 @media (min-width: 576px)
