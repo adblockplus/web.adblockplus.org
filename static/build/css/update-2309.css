@@ -15,12 +15,11 @@ body
   padding-top: 0;
 }
 
-.fr .not-fr,
-html[lang="fr"] .not-fr {
+.fr .not-fr {
   display: none !important;
 }
 
-html:not([lang="fr"]) .fr-only {
+html:not(.fr) .fr-only {
   display: none !important;
 }
 
