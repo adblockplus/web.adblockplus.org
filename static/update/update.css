@@ -70,11 +70,11 @@ html:not(.restrict-premium) .not-premium-only {
   display: none !important;
 }
 
-html[lang="fr"] .not-fr {
+.fr .not-fr {
   display: none !important;
 }
 
-html:not([lang="fr"]) .fr-only {
+html:not(.fr) .fr-only {
   display: none !important;
 }
 
