@@ -15,7 +15,7 @@ body
   padding-top: 0;
 }
 
-.fr .not-fr {
+.fr .not-fr,
 html[lang="fr"] .not-fr {
   display: none !important;
 }
