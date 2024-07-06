@@ -3,21 +3,21 @@
 (function()
 {
   var desktopBrowsers = {
-    "chrome": "https://eyeo.to/adblockplus/chrome_install/polish-lp",
-    "opera": "https://eyeo.to/adblockplus/opera_install/polish-lp",
-    "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install/polish-lp",
-    "msedge": "https://eyeo.to/adblockplus/edge_install/polish-lp",
-    "firefox": "https://eyeo.to/adblockplus/firefox_install/polish-lp",
-    "safari": "https://eyeo.to/adblockplus/safari_install/polish-lp"
+    "chrome": "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "opera": "https://addons.opera.com/en/extensions/details/adblock-plus/",
+    "yandexbrowser": "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "msedge": "https://microsoftedge.microsoft.com/addons/detail/adblock-plus-free-ad-bl/gmgoamodcdcjnbaobigkjelfplakmdhh",
+    "firefox": "https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/",
+    "safari": "https://apps.apple.com/us/app/adblock-plus-for-safari-abp/id1432731683"
   };
 
   var mobileBrowsers = {
-    "safari": "https://eyeo.to/adblockplus/ios_safari_install/polish-lp",
-    "samsungBrowser": "https://eyeo.to/adblockplus/android_samsung_install/polish-lp"
+    "safari": "https://apps.apple.com/us/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868",
+    "samsungBrowser": "https://play.google.com/store/apps/details?id=org.adblockplus.adblockplussbrowser"
   };
 
   var mobilePlatforms = {
-    "android": "https://eyeo.to/adblockbrowser/android/polish-lp"
+    "android": "https://play.google.com/store/apps/details?id=org.adblockplus.browser"
   };
 
   function getBowserKey(keys)

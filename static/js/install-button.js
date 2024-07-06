@@ -1,24 +1,24 @@
 (function()
 {
   var desktopBrowsers = {
-    "chrome": "https://eyeo.to/adblockplus/chrome_install/",
-    "chromium": "https://eyeo.to/adblockplus/chrome_install/",
-    "firefox": "https://eyeo.to/adblockplus/firefox_install/",
-    "msedge": "https://eyeo.to/adblockplus/edge_install/",
-    "msedge_chromium": "https://eyeo.to/adblockplus/edge_chromium_install/",
-    "opera": "https://eyeo.to/adblockplus/opera_install/",
-    "safari": "https://eyeo.to/adblockplus/safari_install/",
-    "yandexbrowser": "https://eyeo.to/adblockplus/yandex_install/"
+    "chrome": "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "chromium": "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+    "firefox": "https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/",
+    "msedge": "https://microsoftedge.microsoft.com/addons/detail/adblock-plus-free-ad-bl/gmgoamodcdcjnbaobigkjelfplakmdhh",
+    "msedge_chromium": "https://microsoftedge.microsoft.com/addons/detail/adblock-plus-free-ad-bl/gmgoamodcdcjnbaobigkjelfplakmdhh",
+    "opera": "https://addons.opera.com/en/extensions/details/adblock-plus/",
+    "safari": "https://apps.apple.com/us/app/adblock-plus-for-safari-abp/id1432731683",
+    "yandexbrowser": "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb"
   };
 
   var mobileBrowsers = {
-    "safari": "https://eyeo.to/adblockplus/ios_safari_install/",
-    "samsungBrowser": "https://eyeo.to/adblockplus/android_samsung_install/"
+    "safari": "https://apps.apple.com/us/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868",
+    "samsungBrowser": "https://play.google.com/store/apps/details?id=org.adblockplus.adblockplussbrowser"
   };
 
   var mobilePlatforms = {
-    "android": "https://eyeo.to/adblockbrowser/android/",
-    "ios": "https://eyeo.to/adblockbrowser/ios/"
+    "android": "https://play.google.com/store/apps/details?id=org.adblockplus.browser",
+    "ios": "https://apps.apple.com/us/app/adblock-plus-for-safari-abp/id1028871868"
   };
 
   var browser, mobilePlatform;
