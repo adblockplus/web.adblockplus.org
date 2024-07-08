@@ -39,6 +39,7 @@
     var bodyClassList = document.body.classList,
         installButton = document.getElementById("install-button"),
         installClassList = installButton.classList,
+        installSuffix = installButton.getAttribute("data-install-suffix"),
         installerHref, installTextTemplate, gaData;
 
     mobilePlatform = getDetectedBrowserLabel(mobilePlatforms);
@@ -65,6 +66,7 @@
 
     if (mobilePlatform || browser)
     {
+      installerHref += installSuffix;
       installClassList.remove("go-to-download");
     }
 
