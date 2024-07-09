@@ -18,6 +18,11 @@
         "destination": "/update",
         "type": 301
       },
+      {
+        "regex": "(?i)^/update-2309$",
+        "destination": "/update",
+        "type": 301
+      },
       // Refs #493 redirect old browser index pages to root index page
       {
         "regex": "(?i)^/android$",

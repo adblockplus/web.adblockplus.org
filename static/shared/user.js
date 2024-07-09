@@ -107,7 +107,6 @@ export function getPlainSource() {
     return parts[parts.length - 1];
   })();
   const pageIds = {
-    "update-2309": "UC",
     "installed": "I",
     "installed-fallback": "I",
     "contribution": "Y",
