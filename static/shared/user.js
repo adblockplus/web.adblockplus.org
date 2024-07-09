@@ -1,7 +1,6 @@
 // AdBlock's user.js adapted for adblockplus.org
 
 export function getUserId() {
-  if (adblock.settings.userid) return adblock.settings.userid;
   if (adblock.query.has("u")) {
     const userid = adblock.query.get("u");
     const page = document.documentElement.dataset.page;

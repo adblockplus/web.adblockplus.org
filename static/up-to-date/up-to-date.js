@@ -1,5 +1,5 @@
-import { getDollarString } from "../update/currency.js";
-import { generateTrackingId, generateUserId } from "../update/user.js";
+import { getDollarString } from "../shared/currency.js";
+import { generateTrackingId, generateUserId } from "../shared/user.js";
 
 const PADDLE = adblock.config.paddle = {
   ENVIRONMENTS: {

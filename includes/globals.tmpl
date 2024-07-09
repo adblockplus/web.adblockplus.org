@@ -1,22 +1,32 @@
 <script>
   const query = new URLSearchParams(window.location.search);
+  
   const adblock = window.adblock = {
-    query,
-    searchParameters: query,
-    error: (message) => { alert(message) },
     runtime: {},
     config: {},
     lib: {},
     api: {},
-    config: {},
+    query,
     strings: {
       "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
     },
     settings: {
-      userid: document.documentElement.dataset.userid || false,
-      page: document.documentElement.dataset.page || false,
+      page: {{ page | tojson }} || false,
       language: {{ locale | tojson }},
     },
   };
+
+  adblock.searchParameters = query;
+
+  adblock.error = (message) => { alert(message) };
+
+  try {
+    adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo);
+  } catch (error) {}
+
+  try {
+    adblock.extensions.adblock = JSON.parse(document.documentElement.dataset.adblockExtensionInfo);
+  } catch (error) {}
+
 </script>
 <script src="/js/settings.js"></script>

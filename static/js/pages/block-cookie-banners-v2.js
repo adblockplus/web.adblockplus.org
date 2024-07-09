@@ -1,6 +1,6 @@
 /* global Paddle, adblock */
-import { getDollarString } from "../../update/currency.js";
-import { generateTrackingId, generateUserId, getUserId } from "../../update/user.js";
+import { getDollarString } from "../../shared/currency.js";
+import { generateTrackingId, generateUserId, getUserId } from "../../shared/user.js";
 
 // restricted premium traffic shouldn't be sent here
 // if it is somehow then redirect to /premium because it handles that via UI and this page doesn't
