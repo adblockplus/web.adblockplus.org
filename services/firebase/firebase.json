@@ -13,6 +13,11 @@
       "root": "/"
     },
     "redirects": [
+      {
+        "regex": "(?i)^/up-to-date$",
+        "destination": "/update",
+        "type": 301
+      },
       // Refs #493 redirect old browser index pages to root index page
       {
         "regex": "(?i)^/android$",
