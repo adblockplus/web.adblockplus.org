@@ -254,10 +254,13 @@ if (isTestmode) Paddle.Environment.set("sandbox");
 
 Paddle.Setup({ vendor: isTestmode ? paddleConfig.sandboxVendor : paddleConfig.liveVendor });
 
-const checkout = adblock.api.checkout = function checkout({currency, frequency, amount, paddleProduct}) {
+const checkout = adblock.api.checkout = function checkout({currency, frequency, amount}) {
 
-  amount = amount || getPaddleAmount({currency, frequency});
-  paddleProduct = paddleProduct || getPaddleProduct({currency, frequency});
+  let paddleProduct;
+  if (amount == undefined) {
+    paddleProduct = getPaddleProduct({currency, frequency});
+    amount = getPaddleAmount({currency, frequency});
+  }
 
   const clickTimestamp = Date.now();
 
@@ -341,7 +344,7 @@ document.querySelectorAll(".update-premium-checkout-button").forEach(button => {
   button.addEventListener("click", () => {
     const currency = button.dataset.currency || defaultCurrency;
     const frequency = button.dataset.frequency;
-    const amount = button.dataset.amount || getPaddleAmount({currency, frequency});
+    const amount = button.dataset.amount || undefined;
     checkout({currency, frequency, amount})
   });
 });
