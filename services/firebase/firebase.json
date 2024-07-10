@@ -23,6 +23,21 @@
         "destination": "/update",
         "type": 301
       },
+      {
+        "regex": "(?i)^/contribution$",
+        "destination": "/update",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/contribution-function$",
+        "destination": "/update",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/donate$",
+        "destination": "/update",
+        "type": 301
+      },
       // Refs #493 redirect old browser index pages to root index page
       {
         "regex": "(?i)^/android$",
@@ -103,11 +118,6 @@
         "regex": "(?i)^(.*)/yandex-browser$",
         "destination": "/",
         "type": 301
-      },
-      {
-        "regex": "(?i)(^|\/)donate$",
-        "destination": "/contribution",
-        "type": 302
       },
 
       // Refd #617 migrate simple file-to-file rules to .htaccess
@@ -275,13 +285,6 @@
       },
       {
         "source": "/installed-function/:language?",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/contribution-function/:language?",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
