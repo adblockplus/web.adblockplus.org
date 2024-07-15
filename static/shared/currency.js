@@ -4,7 +4,7 @@ export function getNumber(string) {
 }
 
 export function getAccountingNumber(number) {
-  return parseFloat(number.toFixed(2));
+  return parseFloat(parseFloat(number).toFixed(2));
 }
 
 export function getDollarNumber(currency, centAmountString) {
@@ -13,12 +13,11 @@ export function getDollarNumber(currency, centAmountString) {
 }
 
 export function getCentNumber(currency, dollarString) {
-  const dollarNumber = parseFloat(parseFloat(dollarString).toFixed(2));
+  const dollarNumber = getAccountingNumber(dollarString);
   return currency == "JPY" ? dollarNumber : getAccountingNumber(dollarNumber * 100);
 }
 
 export function getDollarString(currency, centAmountString, showTrailingZeros = false) {
-  const language = adblock.settings.language;
   const dollarNumber = getDollarNumber(currency, centAmountString);
   const formatOptions = {
     style: 'currency',
@@ -29,5 +28,5 @@ export function getDollarString(currency, centAmountString, showTrailingZeros = 
     formatOptions.minimumFractionDigits = 0;
     formatOptions.maximumFractionDigits = 0;
   }
-  return new Intl.NumberFormat(language.replace("_", "-"), formatOptions).format(dollarNumber);
+  return new Intl.NumberFormat(adblock.settings.locale.replace("_", "-"), formatOptions).format(dollarNumber);
 }
