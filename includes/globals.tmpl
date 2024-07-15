@@ -19,7 +19,7 @@
   adblock.searchParameters = query;
   adblock.settings.language = adblock.settings.locale;
 
-  adblock.error = (message) => { alert(message) };
+  adblock.error = () => { alert(adblock.strings["error--unexpected"]); };
 
   try {
     adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo);
