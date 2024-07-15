@@ -12,11 +12,12 @@
     },
     settings: {
       page: {{ page | tojson }} || false,
-      language: {{ locale | tojson }},
+      locale: {{ locale | tojson }},
     },
   };
 
   adblock.searchParameters = query;
+  adblock.settings.language = adblock.settings.locale;
 
   adblock.error = (message) => { alert(message) };
 
