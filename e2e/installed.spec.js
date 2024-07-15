@@ -138,13 +138,15 @@ async function getCustomOptionValue(frequency) {
 async function testUserStory(page, {locale, currency, frequency, fixedOption, customDollarAmount}) {
   if (fixedOption != undefined && customDollarAmount != undefined) throw new Error("testUserStory() requires {fixedOption OR customAmount, NOT BOTH}");
   if (locale == undefined) locale = DEFAULT_LOCALE;
+  if (currency == undefined) currency = DEFAULT_CURRENCY;
+  if (frequency == undefined) frequency = DEFAULT_FREQUENCY;
+  if (fixedOption == undefined && customDollarAmount == undefined) fixedOption = DEFAULT_FIXED_OPTION;
+  
   await gotoPage(page, locale);
   await awaitInstalledForm(page);
   if (currency != undefined) await selectCurrency(currency)
-  else currency = DEFAULT_CURRENCY;
   await expectCurrencySelected(currency);
   await expectFixedAmountSelection(page, locale, currency);
-  if (frequency == undefined) frequency = DEFAULT_FREQUENCY;
   let dollarAmount;
   if (customDollarAmount != undefined) {
     await selectCustomOption(frequency);
@@ -153,7 +155,6 @@ async function testUserStory(page, {locale, currency, frequency, fixedOption, cu
     dollarAmount = await getCustomOptionValue(frequency);
   } else {
     if (fixedOption != undefined) await selectFixedOption(frequency, fixedOption);
-    if (fixedOption == undefined && customDollarAmount == undefined) fixedOption = DEFAULT_FIXED_OPTION;
     await expectFixedOptionSelected(frequency, fixedOption);
     dollarAmount = await getFixedOptionValue(frequency, fixedOption);
   }

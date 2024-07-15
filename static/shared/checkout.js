@@ -90,16 +90,21 @@ export const checkout = adblock.api.checkout = function checkout({ plan, currenc
       if (!checkoutConfig.pageCodes.hasOwnProperty(page)) throw new Error("Unknown page");
   
       plan = plan || "contribution";
-      if (!checkoutConfig.plans.hasOwnProperty(plan)) throw new Error("Unsupported plan");
+      if (
+        false == checkoutConfig.plans.hasOwnProperty(plan) 
+        || false == paddleConfig.environments[paddleEnvironment].plans.hasOwnProperty(plan)
+      ) {
+        throw new Error("Unsupported plan");
+      }
 
       currency = currency || "USD";
-      if (false == currency in paddleConfig.environments[paddleEnvironment].plans) throw new Error("Unsupported currency");
+      if (false == currency in paddleConfig.environments[paddleEnvironment].plans[plan]) throw new Error("Unsupported currency");
 
       frequency = frequency || "yearly";
-      if (false == frequency in paddleConfig.environments[paddleEnvironment].plans[currency]) throw new Error("Unsupported frequency");
+      if (false == frequency in paddleConfig.environments[paddleEnvironment].plans[plan][currency]) throw new Error("Unsupported frequency");
   
       const title = checkoutConfig.plans[plan].title;
-      if (!title.length) throw new Error("Missing plan title");
+      if (false == title) throw new Error("Missing plan title");
       
       const locale = adblock.settings.locale || "en";
   

@@ -8,7 +8,8 @@ const CHECKOUT_HOST = process.env.CHECKOUT_HOST || "http://localhost:8080";
 const CHECKOUT_LOCALE = process.env.CHECKOUT_LOCALE || "en";
 const CHECKOUT_PAGE = process.env.CHECKOUT_PAGE || "installed";
 const CHECKOUT_ENVIRONMENT = process.env.CHECKOUT_ENVIRONMENT || "sandbox";
-const CHECKOUT_SEARCH = CHECKOUT_ENVIRONMENT == "sandbox" ? "?testmode" : "";
+
+const checkoutSearch = CHECKOUT_ENVIRONMENT == "sandbox" ? "?testmode" : "";
 
 const environmentConfig = paddleConfig.environments[CHECKOUT_ENVIRONMENT];
 for (const plan in environmentConfig.plans) {
@@ -19,7 +20,7 @@ for (const plan in environmentConfig.plans) {
       const frequencyConfig = currencyConfig[frequency];
       for (const amount in frequencyConfig) {
         test(JSON.stringify({CHECKOUT_ENVIRONMENT, plan, currency, frequency, amount}), async ({page}) => {
-          await page.goto(`${CHECKOUT_HOST}/${CHECKOUT_LOCALE}/${CHECKOUT_PAGE}${CHECKOUT_SEARCH}`);
+          await page.goto(`${CHECKOUT_HOST}/${CHECKOUT_LOCALE}/${CHECKOUT_PAGE}${checkoutSearch}`);
           await page.evaluate(({plan, currency, frequency, amount}) => {
             adblock.api.checkout({plan, currency, frequency, amount});
           }, {plan, currency, frequency, amount});
