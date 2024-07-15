@@ -69,14 +69,6 @@ export const paddleConfig = {
               "4000": 68599,
             },
           },
-          "PLN": {
-            "monthly": {
-              "1499": 68604,
-            },
-            "yearly": {
-              "14999": 68510,
-            },
-          },
           "JPY": {
             "monthly": {
               "600": 68600,
@@ -363,14 +355,6 @@ export const paddleConfig = {
             },
             "yearly": {
               "4000": 879267,
-            },
-          },
-          "PLN": {
-            "monthly": {
-              "1499": 879259,
-            },
-            "yearly": {
-              "14999": 879268,
             },
           },
           "JPY": {
