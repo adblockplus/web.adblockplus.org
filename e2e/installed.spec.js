@@ -1,11 +1,13 @@
 import { test, expect } from "playwright/test";
 import { formatAmount } from "./shared/currency";
 import { expectPaddlePresents } from "./shared/paddle";
-import { getNumber } from "../static/shared/currency";
+import { getNumber, getDollarNumber } from "../static/shared/currency";
 import { PaymentOptions } from "../static/installed/PaymentOptions";
 import { checkoutConfig } from "../static/shared/checkoutConfig";
 
-const TEST_DOMAIN = process.env.TEST_DOMAIN = "http://localhost:8080";
+const TEST_HOST = process.env.TEST_HOST = "http://localhost:8080";
+
+const TEST_PAGE = process.env.TEST_PAGE = "installed";
 
 const PADDLE_ENVIRONMENT = process.env.PADDLE_ENVIRONMENT || "sandbox";
 
@@ -19,6 +21,10 @@ const DEFAULT_CURRENCY = process.env.DEFAULT_CURRENCY || "USD";
 const DEFAULT_FREQUENCY = process.env.DEFAULT_OPTION_FREQUENCY = "yearly";
 
 const DEFAULT_FIXED_OPTION = process.env.DEFAULT_FIXED_OPTION || 3;
+
+const currencies = Object.keys(PaymentOptions);
+
+const frequencies = Object.keys(PaymentOptions.USD.minimums);
 
 /** classname patterns that can be used to determine an (option|frequency) selection */
 const SELECTION_PATTERNS = {
@@ -37,7 +43,7 @@ function getCustomMinimum(currency, frequency) {
 async function gotoPage(page, locale = "en") {
   const search = new URLSearchParams();
   if (PADDLE_ENVIRONMENT == "sandbox") search.append("testmode", true);
-  await page.goto(`${TEST_DOMAIN}/${locale}/installed?${search.toString()}`);
+  await page.goto(`${TEST_HOST}/${locale}/${TEST_PAGE}?${search.toString()}`);
 }
 
 let installedForm;
@@ -135,38 +141,79 @@ async function getCustomOptionValue(frequency) {
   return getNumber(await installedForm.customOptions[frequency].inputValue())
 }
 
-async function testUserStory(page, {locale, currency, frequency, fixedOption, customDollarAmount}) {
-  if (fixedOption != undefined && customDollarAmount != undefined) throw new Error("testUserStory() requires {fixedOption OR customAmount, NOT BOTH}");
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+async function expectResults(page, {currency, frequency, option, dollarAmount}) {
+  if (option == 5 && dollarAmount < getCustomMinimum(currency, frequency)) {
+    await expectInvalidForm();
+  } else {
+    await expectPaddlePresents(page, {
+      title: checkoutConfig.plans.contribution.title,
+      frequency,
+      formattedAmount: formatAmount(page, {locale, currency, dollarAmount}),
+    });
+  }
+}
+
+async function testNoActions(page, locale) {
+  const currency = DEFAULT_CURRENCY;
+  await expectCurrencySelected(currency);
+  await expectFixedAmountSelection(page, locale, currency);
+  const frequency = DEFAULT_FREQUENCY;
+  const option = DEFAULT_FIXED_OPTION;
+  await expectFixedOptionSelected(frequency, option);
+  dollarAmount = await getFixedOptionValue(frequency, option);
+  await pressCheckoutButton();
+  await expectResults(page, {currency, frequency, option, dollarAmount});
+}
+
+async function testStandardActions(page, {locale, currency, frequency, option, dollarAmount}) {
   if (locale == undefined) locale = DEFAULT_LOCALE;
-  if (currency == undefined) currency = DEFAULT_CURRENCY;
-  if (frequency == undefined) frequency = DEFAULT_FREQUENCY;
-  if (fixedOption == undefined && customDollarAmount == undefined) fixedOption = DEFAULT_FIXED_OPTION;
-  
   await gotoPage(page, locale);
   await awaitInstalledForm(page);
   if (currency != undefined) await selectCurrency(currency)
+  else currency = DEFAULT_CURRENCY;
   await expectCurrencySelected(currency);
   await expectFixedAmountSelection(page, locale, currency);
-  let dollarAmount;
-  if (customDollarAmount != undefined) {
+  if (frequency == undefined) frequency = DEFAULT_FREQUENCY;
+  if (option == 5) {
     await selectCustomOption(frequency);
     await expectCustomOptionSelected(frequency);
-    await fillCustomOption(frequency, customDollarAmount);
+    await fillCustomOption(frequency, dollarAmount);
     dollarAmount = await getCustomOptionValue(frequency);
   } else {
-    if (fixedOption != undefined) await selectFixedOption(frequency, fixedOption);
-    await expectFixedOptionSelected(frequency, fixedOption);
+    if (option != undefined) await selectFixedOption(frequency, fixedOption);
+    else option = DEFAULT_FIXED_OPTION;
+    await expectFixedOptionSelected(frequency, option);
     dollarAmount = await getFixedOptionValue(frequency, fixedOption);
   }
   await pressCheckoutButton();
-  const title = checkoutConfig.plans.contribution.title;
-  const minimumDollarAmount = getCustomMinimum(currency, frequency);
-  const formattedAmount = await formatAmount(page, {locale, currency, dollarAmount});
-  if (customDollarAmount != undefined && dollarAmount < minimumDollarAmount) {
-    await expectInvalidForm();
-  } else {
-    await expectPaddlePresents(page, {title, currency, frequency, formattedAmount});
+  await expectResults(page, {currency, frequency, option, dollarAmount});
+}
+
+async function testRandomActions(page, locale, actions) {
+  if (locale == undefined) locale = DEFAULT_LOCALE;
+  await gotoPage(page, locale);
+  await awaitInstalledForm(page);
+  let currency, frequency, option, dollarAmount;
+  for (let i = 0; i < actions; i++) {
+    const action = getRandomNumber(0,2);
+    if (action == 0) {
+      currency = state.currency = currencies[getRandomNumber(0, currencies.length - 1)];
+      await selectCurrency(currency);
+    } else if (action == 1) {
+      frequency = frequencies[getRandomNumber(0,1)];
+      option = getRandomNumber(0,4);
+      await selectFixedOption(frequency, option);
+    } else {
+      dollarAmount = getDollarNumber(currency, getRandomNumber(0, 900100));
+      await fillCustomOption(frequency, dollarAmount);
+    }
   }
+  await pressCheckoutButton();
+  await expectResults(page, {currency, frequency, option, dollarAmount});
 }
 
 test("default", async ({page}) => {
