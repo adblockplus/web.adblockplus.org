@@ -14,5 +14,6 @@ export const checkoutConfig = {
   },
   pageCodes: {
     "test-checkout": "TC",
+    "installed": "I",
   }
 };

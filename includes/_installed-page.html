@@ -1,0 +1,208 @@
+<head>
+  <script>
+    Object.assign(adblock.strings, {
+      "product__premium": `{{ product__premium Adblock Plus Premium }}`,
+      "payment-reward": `{{ payment-reward Nice! A <span>35.00</span> contribution gets <span>Adblock Plus Premium</span>. Thanks for your support. }}`,
+      "suffix__monthly": `{{ payment-suffix__monthly /monthly }}`,
+      "suffix__yearly": `{{ payment-suffix__yearly /yearly }}`,
+      "installed-payment-option--custom": `{{ installed-payment-option--custom $ Custom }}`,
+    });
+  </script>
+  <link rel="stylesheet" href="/_installed/installed.css">
+  <script src="/js/settings.js"></script>
+</head>
+
+<div class="installed-header">
+  <div class="installed-container">
+    <img class="installed-header__img" alt="" height="47" width="260" src="/_installed/installed-header__logo.svg" class="installed-header__logo">
+  </div>
+</div>
+
+<header class="installed-hero">
+  <div class="installed-container">
+    <h1 class="installed-hero__heading">
+      {{ installed-hero__heading Thank you for installing Adblock Plus! }}
+    </h1>
+    <p class="installed-hero__subheading">
+      {{ installed-hero__subheading Adblock Plus is honor-ware, which means that <strong>we trust each other</strong> to be nice. }}
+    </p>
+  </div>
+</header>
+
+<aside class="installed-hero-feature-bar">
+  <div class="installed-container">
+    <div class="installed-hero-feature">
+      <img alt="" height="32" width="32" src="/_installed/installed-hero-feature__image-1.svg" class="installed-hero-feature__image">
+      <p class="installed-hero-feature__text">
+        {{ installed-hero__feature-1 We let <strong>you</strong> choose the price you can afford. }}
+      </p>  
+    </div>
+    <div class="installed-hero-feature">
+      <img alt="" height="32" width="32" src="/_installed/installed-hero-feature__image-2.svg" class="installed-hero-feature__image">
+      <p class="installed-hero-feature__text">
+        {{ installed-hero__feature-2 You help support Adblock Plus. }}
+      </p>
+    </div>
+    <div class="installed-hero-feature">
+      <img alt="" height="32" width="32" src="/_installed/installed-hero-feature__image-3.svg" class="installed-hero-feature__image">
+      <p class="installed-hero-feature__text">
+        {{ installed-hero__feature-3 <strong>Full refund</strong> up to 60 days - if you don’t love it. }}
+      </p>  
+    </div>
+  </div>
+</aside>
+
+<form id="installed-payment" data-testid="installed-payment" class="installed-payment">
+  <div class="installed-container">
+
+    <div class="installed-payment-currency">
+      <label for="installed-payment-currency__select" class="installed-payment-currency__label">
+        {{ installed-payment-currency__label Select your preferred contribution }}
+      </label>
+      <select data-testid="installed-payment-currency" class="installed-payment-currency__select">
+        <option>USD</option>
+      </select>
+    </div>
+  
+    <div class="installed-payment-frequencies">
+  
+      <section data-testid="installed-payment-frequency--yearly" class="installed-payment-frequency installed-payment-frequency--yearly installed-payment-frequency--active" data-frequency="yearly">
+        <h2 class="installed-payment-frequency__heading">
+          {{ installed-payment-yearly__heading Yearly }}
+        </h2>
+        <ul class="installed-payment-frequency-features">
+          <li class="installed-payment-frequency-feature">
+            {{ installed-payment-yearly__feature-1 Block ads and pop-ups }}
+          </li>
+          <li class="installed-payment-frequency-feature">
+            {{ installed-payment-yearly__feature-2 Cancel anytime }}
+          </li>
+        </ul>
+        <div class="installed-payment-options">
+          <div class="installed-payment-options__row">
+            <button data-testid="installed-payment-option--yearly-1" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="0" type="button">
+              $10
+            </button>
+            <button data-testid="installed-payment-option--yearly-2" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="1" type="button">
+              $15
+            </button>
+            <button data-testid="installed-payment-option--yearly-3" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="2" type="button">
+              $20
+            </button>
+          </div>
+          <div class="installed-payment-options__row">
+            <button data-testid="installed-payment-option--yearly-4" class="installed-payment-option installed-payment-option--fixed installed-payment-option--active" data-frequency="yearly" data-option="3" type="button">
+              $35
+            </button>
+            <button data-testid="installed-payment-option--yearly-5" class="installed-payment-option installed-payment-option--fixed" data-frequency="yearly" data-option="4" type="button">
+              $50
+            </button>
+            <input 
+              data-testid="installed-payment-option--yearly-6"
+              class="installed-payment-option installed-payment-option--custom"
+              type="number"
+              step=".01"
+              placeholder="{{ installed-payment-option--custom $ Custom }}"
+              data-frequency="yearly"
+              data-option="5">
+          </div>
+        </div>
+      </section>
+  
+      <section data-testid="installed-payment-frequency--monthly" class="installed-payment-frequency installed-payment-frequency--monthly" data-frequency="monthly">
+        <h2 class="installed-payment-frequency__heading">
+          {{ installed-payment-monthly__heading Monthly }}
+        </h2>
+        <ul class="installed-payment-frequency-features">
+          <li class="installed-payment-frequency-feature">
+            {{ installed-payment-yearly__feature-1 Block ads and pop-ups }}
+          </li>
+          <li class="installed-payment-frequency-feature">
+            {{ installed-payment-yearly__feature-2 Cancel anytime }}
+          </li>
+        </ul>
+        <div class="installed-payment-options">
+          <div class="installed-payment-options__row">
+            <button data-testid="installed-payment-option--monthly-1" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="0" type="button">
+              $2
+            </button>
+            <button data-testid="installed-payment-option--monthly-2" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="1" type="button">
+              $3
+            </button>
+            <button data-testid="installed-payment-option--monthly-3" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="2" type="button">
+              $4
+            </button>
+          </div>
+          <div class="installed-payment-options__row installed-payment-options__row--2">
+            <button data-testid="installed-payment-option--monthly-4" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="3" type="button">
+              $5
+            </button>
+            <button data-testid="installed-payment-option--monthly-5" class="installed-payment-option installed-payment-option--fixed" data-frequency="monthly" data-option="4" type="button">
+              $10
+            </button>
+            <input
+              data-testid="installed-payment-option--monthly-6"
+              class="installed-payment-option installed-payment-option--custom"
+              type="number"
+              step=".01"
+              placeholder="{{ installed-payment-option--custom $ Custom }}"
+              data-frequency="monthly"
+              data-option="5">
+          </div>
+        </div>
+      </section>
+  
+    </div>
+  
+    <div class="installed-payment-checkout">
+      <button data-testid="installed-payment-checkout" class="installed-payment-checkout__button">
+        <img alt="" height="14" width="14" src="/_installed/installed-payment-checkout__button-image.png">
+        <span>
+          {{ installed-payment-checkout__button Complete Purchase }}
+        </span>
+      </button>
+      <img alt="" height="24" src="/_installed/installed-payment-checkout__providers.svg" class="installed-payment-checkout__providers">
+      <aside data-testid="installed-payment-reward" class="payment-reward__text">
+        Nice! A <span>$35</span> contribution gets <span>Adblock Plus Premium</span>. Thanks for your support.
+      </aside>
+    </div>  
+    
+  </div>
+</form>
+
+<div class="installed-body">
+  <div class="installed-container">
+
+    <h2>{{ installed-main__block-4__heading-1 }}</h2>
+    <p>{{ installed-main__block-4__paragraph-1 }}</p>
+    <p id="fx-data-collection" style="display: none;">
+      {{ installed-main__block-4__paragraph-2 }}
+    </p>
+  
+    <h2>{{ installed-main__block-6__heading-1 }}</h2>
+    <p class="premium-only">{{ installed-main__block-6__paragraph-1 }}</p>
+    <p>{{ installed-footer__block-1__paragraph-1 }}</p>
+  
+    <h2>{{ installed-main__block-5__heading-1 }}</h2>
+    <p>{{ installed-main__block-5__paragraph-1 }}</p>
+    <div class="installed-support">
+      <p class="installed-support__p">
+        <img class="installed-main__block-5__list-image" src="/img/installed-main__block-5__list-1__icon-1.svg" height="14" width="14" alt="">
+        {{ installed-main__block-5__item-1 }}  
+      </p>
+      <p class="installed-support__p">
+        <img class="installed-main__block-5__list-image" src="/img/installed-main__block-5__list-1__icon-2.svg" height="14" width="14" alt="">
+        {{ installed-main__block-5__item-2 }}  
+      </p>
+    </div>
+    
+    <footer class="installed-privacy">
+      {{ installed-footer__block-2__paragraph-1 }}
+    </footer>
+
+  </div>
+</div>
+
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/currency"></script>
+<script src="/_installed/installed.js" type="module"></script>
