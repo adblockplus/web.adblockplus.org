@@ -42,6 +42,10 @@ function updateReward() {
   }
 }
 
+function getCurrencySign(string) {
+  return string.replace(/[\d,]/g, "").trim();
+}
+
 function handleCurrencyChange() {
   let isLongCurrency = false;
   selectedCurrency = currencySelect.value;
@@ -65,6 +69,9 @@ function handleCurrencyChange() {
   updateCustomOptionButton(monthlyCustomOptionButton);
   // apply form presentation modifier if the localised dollar amount text exceeds the length of the fixed option buttons
   paymentForm.classList[isLongCurrency ? "add" : "remove"]("installed-payment--long-currency");
+  const customText = adblock.strings["installed-payment-option--custom"].replace("$", getCurrencySign(monthlyFixedOptionButtons[0].textContent));
+  yearlyCustomOptionButton.placeholder = customText;
+  monthlyCustomOptionButton.placeholder = customText;
   updateReward();
 }
 currencySelect.addEventListener("change", handleCurrencyChange);
