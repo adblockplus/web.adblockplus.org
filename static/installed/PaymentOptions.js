@@ -1,4 +1,4 @@
-export const InstalledPaymentOptions = {
+export const PaymentOptions = {
   USD: {
     minimums: { yearly: 500, monthly: 200 },
     amounts: {
@@ -64,10 +64,10 @@ export const InstalledPaymentOptions = {
   },
 }
 
-export function getInstalledPaymentAmount(currency, frequency, index) {
-  return InstalledPaymentOptions[currency].amounts[frequency][index];
+export function getInstalledAmount(currency, frequency, index) {
+  return PaymentOptions[currency].amounts[frequency][index];
 }
 
-export function getInstalledPaymentMinimum(currency, frequency) {
-  return InstalledPaymentOptions[currency].minimums[frequency];
+export function getInstalledMinimum(currency, frequency) {
+  return PaymentOptions[currency].minimums[frequency];
 }

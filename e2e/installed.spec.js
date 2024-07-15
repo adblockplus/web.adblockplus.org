@@ -2,7 +2,7 @@ import { test, expect } from "playwright/test";
 import { formatAmount } from "./shared/currency";
 import { expectPaddlePresents } from "./shared/paddle";
 import { getNumber } from "../static/shared/currency";
-import { InstalledPaymentOptions } from "../static/installed/InstalledPaymentOptions";
+import { PaymentOptions } from "../static/installed/PaymentOptions";
 import { checkoutConfig } from "../static/shared/checkoutConfig";
 
 const TEST_DOMAIN = process.env.TEST_DOMAIN = "http://localhost:8080";
@@ -27,11 +27,11 @@ const SELECTION_PATTERNS = {
 };
 
 function getFixedAmount(currency, frequency, option) {
-  return InstalledPaymentOptions[currency].amounts[frequency][option];
+  return PaymentOptions[currency].amounts[frequency][option];
 }
 
 function getCustomMinimum(currency, frequency) {
-  return InstalledPaymentOptions[currency].minimums[frequency];
+  return PaymentOptions[currency].minimums[frequency];
 }
 
 async function gotoPage(page, locale = "en") {

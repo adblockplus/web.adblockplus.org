@@ -1,6 +1,6 @@
 /* global Paddle, adblock */
 import { getDollarString, getDollarNumber, getCentNumber } from "../shared/currency.js";
-import { InstalledPaymentOptions, getInstalledPaymentAmount, getInstalledPaymentMinimum } from "./InstalledPaymentOptions.js";
+import { PaymentOptions, getInstalledAmount, getInstalledMinimum } from "./PaymentOptions.js";
 import { checkout } from "../shared/checkout.js";
 
 const LOCALE_BREAKPOINT = 8;
@@ -22,7 +22,7 @@ if (yearlyCustomOptionButton.placeholder.length > LOCALE_BREAKPOINT)
 
 // populate currencies, select default currency, and reference the selected currency
 currencySelect.innerHTML = "";
-for (const currency in InstalledPaymentOptions) {
+for (const currency in PaymentOptions) {
   const option = document.createElement("option");
   option.textContent = currency;
   currencySelect.appendChild(option);
@@ -46,7 +46,7 @@ function handleCurrencyChange() {
   let isLongCurrency = false;
   selectedCurrency = currencySelect.value;
   function updateFixedOptionButton(optionButton, index) {
-    const centAmountNumber = getInstalledPaymentAmount(selectedCurrency, optionButton.dataset.frequency, index);
+    const centAmountNumber = getInstalledAmount(selectedCurrency, optionButton.dataset.frequency, index);
     const dollarAmountString = getDollarString(adblock.settings.locale, selectedCurrency, centAmountNumber);
     optionButton.textContent = dollarAmountString;
     optionButton.dataset.amount = centAmountNumber;
@@ -55,7 +55,7 @@ function handleCurrencyChange() {
   monthlyFixedOptionButtons.forEach(updateFixedOptionButton);
   yearlyFixedOptionButtons.forEach(updateFixedOptionButton);
   function updateCustomOptionButton(optionButton) {
-    optionButton.dataset.min = getInstalledPaymentMinimum(selectedCurrency, optionButton.dataset.frequency);
+    optionButton.dataset.min = getInstalledMinimum(selectedCurrency, optionButton.dataset.frequency);
     // update custom option minimum if custom option is selected
     if (optionButton.classList.contains("installed-payment-option--active")) {
       optionButton.min = getDollarNumber(selectedCurrency, optionButton.dataset.min);
