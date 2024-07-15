@@ -4,13 +4,12 @@ import { checkoutConfig } from "./checkoutConfig.js";
 
 const paddleEnvironment = location.hostname == "localhost" || adblock.query.has("testmode") ? "sandbox" : "live";
 
-if (paddleEnvironment == "sandbox") Paddle.Environment.set("sandbox");
-
-Paddle.Setup({
-  vendor: paddleEnvironment == "sandbox"
-    ? paddleConfig.environments.sandbox.vendor
-    : paddleConfig.environments.live.vendor,
-});
+if (paddleEnvironment == "sandbox") {
+  Paddle.Environment.set("sandbox");
+  Paddle.Setup({ vendor: paddleConfig.environments.sandbox.vendor });
+} else {
+  Paddle.Setup({ vendor: paddleConfig.environments.live.vendor });
+}
 
 function generatePremiumId() {
   const timestamp = (Date.now()) % 1e8; // 8 digits from end of timestamp
