@@ -17,7 +17,8 @@ export function getCentNumber(currency, dollarString) {
   return currency == "JPY" ? dollarNumber : getAccountingNumber(dollarNumber * 100);
 }
 
-export function getDollarString(language, currency, centAmountString, showTrailingZeros = false) {
+export function getDollarString(currency, centAmountString, showTrailingZeros = false) {
+  const language = adblock.settings.language;
   const dollarNumber = getDollarNumber(currency, centAmountString);
   const formatOptions = {
     style: 'currency',
