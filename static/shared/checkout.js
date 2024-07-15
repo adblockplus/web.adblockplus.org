@@ -10,7 +10,6 @@ Paddle.Setup({
   vendor: paddleEnvironment == "sandbox"
     ? paddleConfig.environments.sandbox.vendor
     : paddleConfig.environments.live.vendor,
-  eventCallback: data => adblock.events.fire(`Paddle.${data.event}`, data)
 });
 
 function generatePremiumId() {
