@@ -205,7 +205,7 @@ function onCurrencyChange() {
   .forEach(button => {
     const frequency = button.dataset.frequency;
     const amount = Object.keys(products[currency][frequency])[0];
-    button.querySelector(".amount").textContent = getDollarString(adblock.settings.language, currency, amount);
+    button.querySelector(".amount").textContent = getDollarString(adblock.settings.locale, currency, amount);
   });
 }
 

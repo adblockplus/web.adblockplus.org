@@ -1,38 +1,73 @@
-export const installedPaymentOptions = {
+export const InstalledPaymentOptions = {
   USD: {
-    minimums: [500,199],
-    amounts: [1000,1500,2000,3500,5000,199,299,399,499,999],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1000, 1500, 2000, 3500, 5000],
+      monthly: [200, 300, 400, 500, 1000],
+    },
   },
   AUD: {
-    minimums: [500,199],
-    amounts: [1000,1500,2000,3500,5000,199,299,399,499,999],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1000, 1500, 2000, 3500, 5000],
+      monthly: [200, 300, 400, 500, 1000],
+    },
   },
   CAD: {
-    minimums: [500,199],
-    amounts: [1000,1500,2000,3500,5000,199,299,399,499,999],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1000, 1500, 2000, 3500, 5000],
+      monthly: [200, 300, 400, 500, 1000],
+    },
   },
   EUR: {
-    minimums: [500,199],
-    amounts: [1000,1500,2000,3500,5000,199,299,399,499,999],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1000, 1500, 2000, 3500, 5000],
+      monthly: [200, 300, 400, 500, 1000],
+    },
   },
   GBP: {
-    minimums: [500,199],
-    amounts: [1000,1500,2000,3500,5000,199,299,399,499,999],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1000, 1500, 2000, 3500, 5000],
+      monthly: [200, 300, 400, 500, 1000],
+    },
   },
   JPY: {
-    minimums: [500,200],
-    amounts: [1500,2000,2500,3500,5000,200,300,500,1000,1500],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1500, 2000, 2500, 3500, 5000],
+      monthly: [200, 300, 500, 1000, 1500],
+    },
   },
   NZD: {
-    minimums: [500,199],
-    amounts: [1000,1500,2000,3500,5000,199,299,399,499,999],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1000, 1500, 2000, 3500, 5000],
+      monthly: [200, 300, 400, 500, 1000],
+    },
   },
   CHF: {
-    minimums: [500,199],
-    amounts: [1000,1500,2000,3500,5000,199,299,399,499,999],
+    minimums: { yearly: 500, monthly: 200 },
+    amounts: {
+      yearly: [1000, 1500, 2000, 3500, 5000],
+      monthly: [200, 300, 400, 500, 1000],
+    },
   },
   RUB: {
-    minimums: [25000,15000],
-    amounts: [25000,50000,100000,250000,500000,15000,25000,40000,50000,100000],
+    minimums: { yearly: 25000, monthly: 15000 },
+    amounts: {
+      yearly: [25000, 50000, 100000, 250000, 500000],
+      monthly: [15000, 25000, 40000, 50000, 100000],
+    },
   },
+}
+
+export function getInstalledPaymentAmount(currency, frequency, index) {
+  return InstalledPaymentOptions[currency].amounts[frequency][index];
+}
+
+export function getInstalledPaymentMinimum(currency, frequency) {
+  return InstalledPaymentOptions[currency].minimums[frequency];
 }

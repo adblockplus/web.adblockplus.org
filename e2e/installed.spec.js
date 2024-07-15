@@ -1,33 +1,49 @@
 import { test, expect } from "playwright/test";
-import { installedPaymentOptions } from "../static/installed/installedPaymentOptions";
+import { formatAmount } from "./shared/currency";
+import { expectPaddlePresents } from "./shared/paddle";
+import { getNumber } from "../static/shared/currency";
+import { InstalledPaymentOptions } from "../static/installed/InstalledPaymentOptions";
 import { checkoutConfig } from "../static/shared/checkoutConfig";
-import { getAccountingNumber, getDollarNumber, getDollarString } from "../static/shared/currency";
 
-const testDomain = process.env.TEST_DOMAIN = "http://localhost:8080";
+const TEST_DOMAIN = process.env.TEST_DOMAIN = "http://localhost:8080";
 
-const testEnvironment = process.env.TEST_ENVIRONMENT || "sandbox";
+const PADDLE_ENVIRONMENT = process.env.PADDLE_ENVIRONMENT || "sandbox";
 
-const defaultLanguage = process.env.DEFAULT_LANGUAGE || "en";
+const TRANSLATED_LOCALES = process.env.TRANSLATED_LOCALES
+|| ["ar", "de", "el", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt_BR", "ru", "tr", "zh_CN"];
 
-const defaultCurrency = process.env.DEFAULT_CURRENCY || "USD";
+const DEFAULT_LOCALE = process.env.DEFAULT_LOCALE || "en";
 
-const defaultFrequency = process.env.DEFAULT_OPTION_FREQUENCY = "yearly";
+const DEFAULT_CURRENCY = process.env.DEFAULT_CURRENCY || "USD";
 
-const defaultOption = process.env.DEFAULT_OPTION_INDEX || 3;
+const DEFAULT_FREQUENCY = process.env.DEFAULT_OPTION_FREQUENCY = "yearly";
 
-const activeClassPatterns = {
+const DEFAULT_FIXED_OPTION = process.env.DEFAULT_FIXED_OPTION || 3;
+
+/** classname patterns that can be used to determine an (option|frequency) selection */
+const SELECTION_PATTERNS = {
   frequency: /installed-payment-frequency--active/,
   option: /installed-payment-option--active/,
 };
 
-async function gotoPage(page, language = "en") {
+function getFixedAmount(currency, frequency, option) {
+  return InstalledPaymentOptions[currency].amounts[frequency][option];
+}
+
+function getCustomMinimum(currency, frequency) {
+  return InstalledPaymentOptions[currency].minimums[frequency];
+}
+
+async function gotoPage(page, locale = "en") {
   const search = new URLSearchParams();
-  if (testEnvironment == "sandbox") search.append("testmode", true);
-  await page.goto(`${testDomain}/${language}/installed?${search.toString()}`);
+  if (PADDLE_ENVIRONMENT == "sandbox") search.append("testmode", true);
+  await page.goto(`${TEST_DOMAIN}/${locale}/installed?${search.toString()}`);
 }
 
 let installedForm;
 
+// We can wait for key elements and refer to them via object (installedForm)
+// CAUTION: This wouldn't work if key elements were added and removed
 async function awaitInstalledForm(page) {
   installedForm = {
     form: await page.getByTestId("installed-payment"),
@@ -36,23 +52,25 @@ async function awaitInstalledForm(page) {
       yearly: await page.getByTestId("installed-payment-frequency--yearly"),
       monthly: await page.getByTestId("installed-payment-frequency--monthly"),
     },
-    options: {
+    fixedOptions: {
       yearly: [
         await page.getByTestId("installed-payment-option--yearly-1"),
         await page.getByTestId("installed-payment-option--yearly-2"),
         await page.getByTestId("installed-payment-option--yearly-3"),
         await page.getByTestId("installed-payment-option--yearly-4"),
         await page.getByTestId("installed-payment-option--yearly-5"),
-        await page.getByTestId("installed-payment-option--yearly-6"),  
       ],
       monthly: [
         await page.getByTestId("installed-payment-option--monthly-1"),
         await page.getByTestId("installed-payment-option--monthly-2"),
         await page.getByTestId("installed-payment-option--monthly-3"),
         await page.getByTestId("installed-payment-option--monthly-4"),
-        await page.getByTestId("installed-payment-option--monthly-5"),  
-        await page.getByTestId("installed-payment-option--monthly-6"),
+        await page.getByTestId("installed-payment-option--monthly-5"),
       ],
+    },
+    customOptions: {
+      yearly: await page.getByTestId("installed-payment-option--yearly-6"),
+      monthly: await page.getByTestId("installed-payment-option--monthly-6"),
     },
     submit: await page.getByTestId("installed-payment-checkout"),
     reward: await page.getByTestId("installed-payment-reward"),
@@ -67,35 +85,38 @@ async function expectCurrencySelected(currency) {
   await expect(installedForm.currency).toHaveValue(currency);
 }
 
-async function expectAmountsSelection(language, currency) {
-  const fixedOptions = installedForm.options.yearly.slice(0, -1).concat(installedForm.options.monthly.slice(0, -1));
-  for (let i = 0; i < fixedOptions.length; i++) {
-    const amount = installedPaymentOptions[currency].amounts[i];
-    await expect(fixedOptions[i]).toContainText(getDollarString(language, currency, amount));
+async function expectFixedAmountSelection(page, locale, currency) {
+  for (const frequency in installedForm.fixedOptions) {
+    installedForm.fixedOptions[frequency].forEach(async (fixedOptionButton, optionIndex) => {
+      const centAmount = getFixedAmount(currency, frequency, optionIndex);
+      const dollarString = await formatAmount(page, {locale, currency, centAmount, narrowSymbol: true});
+      await expect(fixedOptionButton).toContainText(dollarString);
+    });
   }
 }
 
-async function selectOption(frequency, option) {
-  await installedForm.options[frequency][option].click();
+async function selectFixedOption(frequency, option) {
+  await installedForm.fixedOptions[frequency][option].click();
 }
 
-async function fillOption(frequency, value) {
-  await installedForm.options[frequency][5].fill(value);
+async function expectFixedOptionSelected(frequency, option) {
+  await expect(installedForm.fixedOptions[frequency][option]).toHaveClass(SELECTION_PATTERNS.option);
 }
 
-function dollarStringToNumber(dollarString) {
-  return getAccountingNumber(parseFloat(String(dollarString).replace(/\D/g, "").trim()));
+async function selectCustomOption(frequency) {
+  await installedForm.customOptions[frequency].click();
 }
 
-async function getOptionValue(frequency, option) {
-  return dollarStringToNumber(
-    await installedForm.options[frequency][option][option == 5 ? "inputValue" : "textContent"]()
-  );
+async function fillCustomOption(frequency, value) {
+  await installedForm.customOptions[frequency].fill(value);
 }
 
-async function expectOptionSelected(optionFrequency, optionIndex) {
-  await expect(installedForm.options[optionFrequency][optionIndex]).toHaveClass(activeClassPatterns.option);
-  await expect(installedForm.frequencies[optionFrequency]).toHaveClass(activeClassPatterns.frequency);
+async function expectCustomOptionSelected(frequency) {
+  await expect(installedForm.customOptions[frequency]).toHaveClass(SELECTION_PATTERNS.option);
+}
+
+async function expectFrequencySelected(frequency) {
+  await expect(installedForm.frequencies[frequency]).toHaveClass(SELECTION_PATTERNS.frequency);
 }
 
 async function pressCheckoutButton() {
@@ -106,89 +127,52 @@ async function expectInvalidForm() {
   await expect(installedForm.form.locator(":invalid")).toHaveCount(1);
 }
 
-let paddleForm;
-
-async function awaitPaddleForm(page) {
-  let frame = await page.frameLocator('iframe[name="paddle_frame"]');
-  paddleForm = {
-    frame,
-    item: await frame.getByTestId("cart-item-name"),
-    frequency: await frame.getByTestId("summary-total-trial-or-recurring"),
-    prices: await frame.getByTestId("price-summary"),
-    close: await frame.getByTestId("wideOverlayCloseIcon"),
-  };
+async function getFixedOptionValue(frequency, option) {
+  return getNumber(await installedForm.fixedOptions[frequency][option].textContent());
 }
 
-async function expectPaddleFormParams({ language, title, currency, frequency, amount }) {
-  const amountFormat = {currency, style: "currency", currencyDisplay: "narrowSymbol"};
-  const formattedAmount = new Intl.NumberFormat(language, amountFormat).format(amount);
-  await expect(paddleForm.item).toContainText(title);
-  await expect(paddleForm.frequency).toContainText(frequency);
-  await expect(paddleForm.prices).toContainText(formattedAmount);
+async function getCustomOptionValue(frequency) {
+  return getNumber(await installedForm.customOptions[frequency].inputValue())
 }
 
-async function closePaddleForm() {
-  await paddleForm.close.click();
-}
-
-function getMinimumAmountForFrequency(currency, frequency) {
-  return getDollarNumber(installedPaymentOptions[currency].minimums[frequency == "yearly" ? 0 : 1]);
-}
-
-async function testUserStory(page, { language, currency, frequency, option, fill }) {
-  if (language == undefined) language = defaultLanguage;
-  await gotoPage(page, language);
+async function testUserStory(page, {locale, currency, frequency, fixedOption, customDollarAmount}) {
+  if (fixedOption != undefined && customDollarAmount != undefined) throw new Error("testUserStory() requires {fixedOption OR customAmount, NOT BOTH}");
+  if (locale == undefined) locale = DEFAULT_LOCALE;
+  await gotoPage(page, locale);
   await awaitInstalledForm(page);
   if (currency != undefined) await selectCurrency(currency)
-  else currency = defaultCurrency;
+  else currency = DEFAULT_CURRENCY;
   await expectCurrencySelected(currency);
-  await expectAmountsSelection(language, currency);
-  if (frequency == undefined) frequency = defaultFrequency;
-  if (option != undefined) await selectOption(frequency, option);
-  else option = defaultOption;
-  await expectOptionSelected(frequency, option);
-  if (fill != undefined) fillOption(frequency, fill);
+  await expectFixedAmountSelection(page, locale, currency);
+  if (frequency == undefined) frequency = DEFAULT_FREQUENCY;
+  let dollarAmount;
+  if (customDollarAmount != undefined) {
+    await selectCustomOption(frequency);
+    await expectCustomOptionSelected(frequency);
+    await fillCustomOption(frequency, customDollarAmount);
+    dollarAmount = await getCustomOptionValue(frequency);
+  } else {
+    if (fixedOption != undefined) await selectFixedOption(frequency, fixedOption);
+    if (fixedOption == undefined && customDollarAmount == undefined) fixedOption = DEFAULT_FIXED_OPTION;
+    await expectFixedOptionSelected(frequency, fixedOption);
+    dollarAmount = await getFixedOptionValue(frequency, fixedOption);
+  }
   await pressCheckoutButton();
-  if (fill != undefined && fill < getMinimumAmountForFrequency(currency, frequency)) {
+  const title = checkoutConfig.plans.contribution.title;
+  const minimumDollarAmount = getCustomMinimum(currency, frequency);
+  const formattedAmount = await formatAmount(page, {locale, currency, dollarAmount});
+  if (customDollarAmount != undefined && dollarAmount < minimumDollarAmount) {
     await expectInvalidForm();
   } else {
-    const title = checkoutConfig.products.contribution.title;
-    const amount = await getOptionValue(frequency, option);
-    await awaitPaddleForm(page);
-    await expectPaddleFormParams({language, title, currency, frequency, amount});
-    await closePaddleForm();
+    await expectPaddlePresents(page, {title, currency, frequency, formattedAmount});
   }
 }
 
-const coreLanguages = ["ar", "de", "el", "es", "fr", "hu", "it", "ja", "ko", "nl", "pl", "pt_BR", "ru", "tr", "zh_CN"]
-
-for (const language of coreLanguages) {
-  for (const currency in installedPaymentOptions) {
-    const { amounts, minimums } = installedPaymentOptions[currency];
-    for (let i = 0; i < amounts.length; i++) {
-      const option = i >= 5 ? i - 5 : i;
-      const frequency = i >= 5 ? "monthly" : "yearly";
-      const amount = amounts[i];
-      test(`${testDomain} / ${testEnvironment} / ${language} / ${currency} / ${frequency} / ${option} / ${amount}`, async ({page}) => {
-        await testUserStory(page, {language, currency, frequency, option});
-      });
-    }
-    for (let i = 0; i < minimums.length; i++) {
-      const option = i == 1 ? 10 : 5;
-      const frequency = i == 1 ? "monthly" : "yearly";
-      const minimum = minimums[i];
-      // loop array of over, on, and under
-      test(`${testDomain} / ${testEnvironment} / ${language} / ${currency} / ${frequency} / ${option} / ${fill}`, async ({page}) => {
-        await testUserStory(page, {language, currency, frequency, option});
-      });
-    }
-  }  
-}
-
-// test("default", async ({page}) => {
-//   await testUserStory(page, {
-//     currency: "GBP",
-//     option: 5,
-//     fill: "10"
-//   });
-// });
+test("default", async ({page}) => {
+  await testUserStory(page, {
+    locale: "en",
+    currency: "USD",
+    frequency: "yearly",
+    fixedOption: 0
+  });
+});

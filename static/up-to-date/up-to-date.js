@@ -306,7 +306,7 @@ function updateSelectionData(currency) {
     const frequency = option.dataset.frequency;
     const amount = paddleProducts[currency][frequency].amount;
     option.dataset.amount = amount;
-    option.querySelector(".up-to-date-payment-option__amount").textContent = getDollarString(adblock.settings.language, currency, amount);
+    option.querySelector(".up-to-date-payment-option__amount").textContent = getDollarString(adblock.settings.locale, currency, amount);
   });
   const min = PADDLE.MINIMUMS[currency];
   const input = document.querySelector("input[type=number].up-to-date-payment-option__button");
@@ -356,7 +356,7 @@ function updateRewardDuration() {
   document.querySelector(".update-payment-reward__text").innerHTML = baseTranslation
   .replace(
     `<span>35.00</span>`, 
-    `<span class="amount">${getDollarString(adblock.settings.language, currency, amount)}</span>`
+    `<span class="amount">${getDollarString(adblock.settings.locale, currency, amount)}</span>`
   )
   .replace(
     `<span>Adblock Plus Premium</span>`, 

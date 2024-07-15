@@ -280,7 +280,7 @@ html:not(.restrict-premium) .not-premium-only {
 }
 
 .installed-payment--long-currency .installed-payment-options__row,
-.installed-payment--long-language .installed-payment-options__row {
+.installed-payment--long-locale .installed-payment-options__row {
   flex-wrap: wrap;
   row-gap: 1rem;
 }
@@ -296,18 +296,15 @@ html:not(.restrict-premium) .not-premium-only {
 }
 
 .installed-payment--long-currency .installed-payment-option--custom,
-.installed-payment--long-language .installed-payment-option--custom {
+.installed-payment--long-locale .installed-payment-option--custom {
   width: 18rem;
 }
 
 .installed-payment--long-currency .installed-payment-option,
-.installed-payment--long-language .installed-payment-option {
+.installed-payment--long-locale .installed-payment-option {
   flex: 1;
 }
 
-.installed-payment--long-currency .installed-payment-option:nth-of-type(3) {
-  display: none;
-}
 
 .installed-payment-option--custom {
   width: 6rem;

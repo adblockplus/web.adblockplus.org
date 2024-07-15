@@ -1,24 +1,23 @@
 <script>
 
   class Events {
+
     constructor() {
-      this.eventCallbacks = {};
-      this.eventHistory = [];
-      this.eventsHistories = {};
+      this.callbacks = {};
     }
+
     on(event, callback) {
-      if (!this.eventCallbacks[event]) this.eventCallbacks[event] = [];
-      this.eventCallbacks[event].push(callback);
+      if (!this.callbacks[event]) this.callbacks[event] = [];
+      this.callbacks[event].push(callback);
     }
+
     fire(event, context) {
-      if (this.eventCallbacks[event]) {
-        this.eventCallbacks[event].forEach(callback => callback(context));
-        this.eventHistory.push([event, context]);
-        if (!this.eventsHistories[event]) this.eventsHistories[event] = [];
-        this.eventsHistories[event].push(context);
+      if (this.callbacks[event]) {
+        this.callbacks[event].forEach(callback => callback(context));
       }
     }
-  }
+
+  };
 
   const query = new URLSearchParams(window.location.search);
   
@@ -27,7 +26,6 @@
     config: {},
     lib: {},
     api: {},
-    events: new Events(),
     query,
     strings: {
       "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
@@ -35,15 +33,18 @@
     settings: {
       userid: document.documentElement.dataset.userid || false,
       page: document.documentElement.dataset.page || false,
-      language: {{ locale | tojson }},
+      locale: {{ locale | tojson }},
     },
+    events: new Events(),
   };
 
-  adblock.searchParameters = query;
+  adblock.lib.Events = Events;
 
   adblock.error = (message) => { alert(message) };
 
-  adblock.lib.eventCallbacks = Events;
-
+  //backwards compatibility
+  adblock.searchParameters = query;
+  adblock.settings.language = adblock.settings.locale;
+  
 </script>
 <script src="/js/settings.js"></script>

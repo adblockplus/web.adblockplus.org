@@ -11,7 +11,7 @@ export const paddleConfig = {
   environments: {
     sandbox: {
       vendor: 7645,
-      products: {
+      plans: {
         premium: {
           "USD": {
             "monthly": {
@@ -307,7 +307,7 @@ export const paddleConfig = {
     },
     live: {
       vendor: 151630,
-      products: {
+      plans: {
         premium: {
           "USD": {
             "monthly": {

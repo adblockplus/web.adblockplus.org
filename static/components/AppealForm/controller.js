@@ -143,7 +143,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
   const product = data.product;
 
   const checkoutOptions = {
-    locale: adblock.settings.language,
+    locale: adblock.settings.locale,
     title: adblock.strings["appeal-form-checkout__title"],
     success: passthrough.success_url,
     closeCallback: () => { appealForm.enable(); },

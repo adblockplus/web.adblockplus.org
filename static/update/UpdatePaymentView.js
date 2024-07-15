@@ -171,11 +171,11 @@ export default class UpdatePaymentView {
       const label = labels[i];
       if (amount == "custom") {
         const input = label;
-        input.placeholder = getDollarString(adblock.settings.language, this.currency, amounts[amount]);
+        input.placeholder = getDollarString(adblock.settings.locale, this.currency, amounts[amount]);
         input.dataset.default = amounts[amount];
         input.dataset.min = getDollarNumber(this.currency, this.minimums[this.currency][frequency]);
       } else {
-        label.textContent = getDollarString(adblock.settings.language, this.currency, amount);
+        label.textContent = getDollarString(adblock.settings.locale, this.currency, amount);
         radio.value = amount;
       }
       radio.dataset.frequency = frequency;

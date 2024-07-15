@@ -1,40 +1,40 @@
 import { test, expect } from "playwright/test";
-import { testCheckoutAmount } from "./shared/checkout.utils.js";
 import { paddleConfig } from "../static/shared/paddleConfig.js";
+import { checkoutConfig } from "../static/shared/checkoutConfig.js";
+import { formatAmount } from "./shared/currency.js";
+import { expectPaddlePresents } from "./shared/paddle.js";
 
-const checkoutURL = process.env.CHECKOUT_URL || "https://adblockplus.org/en/installed";
+const CHECKOUT_HOST = process.env.CHECKOUT_HOST || "http://localhost:8080";
+const CHECKOUT_LOCALE = process.env.CHECKOUT_LOCALE || "en";
+const CHECKOUT_PAGE = process.env.CHECKOUT_PAGE || "installed";
+const CHECKOUT_ENVIRONMENT = process.env.CHECKOUT_ENVIRONMENT || "sandbox";
+const CHECKOUT_SEARCH = CHECKOUT_ENVIRONMENT == "sandbox" ? "?testmode" : "";
 
-for (const environmentName in paddleConfig.environments) {
-  if (environmentName != "sandbox") continue;
-  const environmentConfig = paddleConfig.environments[environmentName];
-  for (const productName in environmentConfig.products) {
-    const productConfig = environmentConfig.products[productName];
-    for (const currencyName in productConfig) {
-      const currencyConfig = productConfig[currencyName];
-      for (const frequencyName in currencyConfig) {
-        const frequencyConfig = currencyConfig[frequencyName];
-        for (const amount in frequencyConfig) {
-          test(`${environment} / ${productName} / ${currencyName} / ${frequencyName} / ${ amount }`, async ({ page }) => {
-            const urlSearch = environment == "sandbox" ? "?testmode" : "";
-            await page.goto(`${checkoutURL}${urlSearch}`);
-            await testCheckoutAmount(page, {
-              amount, 
-              product: productName,
-              currency: currencyName,
-              frequency: frequencyName,
-            });
+const environmentConfig = paddleConfig.environments[CHECKOUT_ENVIRONMENT];
+for (const plan in environmentConfig.plans) {
+  const planConfig = environmentConfig.plans[plan];
+  for (const currency in planConfig) {
+    const currencyConfig = planConfig[currency];
+    for (const frequency in currencyConfig) {
+      const frequencyConfig = currencyConfig[frequency];
+      for (const amount in frequencyConfig) {
+        test(JSON.stringify({CHECKOUT_ENVIRONMENT, plan, currency, frequency, amount}), async ({page}) => {
+          await page.goto(`${CHECKOUT_HOST}/${CHECKOUT_LOCALE}/${CHECKOUT_PAGE}${CHECKOUT_SEARCH}`);
+          await page.evaluate(({plan, currency, frequency, amount}) => {
+            adblock.api.checkout({plan, currency, frequency, amount});
+          }, {plan, currency, frequency, amount});
+          const formattedAmount = await formatAmount(page, {
+            locale: CHECKOUT_LOCALE,
+            currency,
+            centAmount: amount
           });
-        }
+          await expectPaddlePresents(page, {
+            title: checkoutConfig.plans[plan].title,
+            frequency,
+            formattedAmount
+          });
+        });
       }
     }
   }
-}
-
-async function expectCheckoutParameters(page, { language, title, currency, frequency, amount }) {
-  const frame = await page.frameLocator('iframe[name="paddle_frame"]');
-  const amountFormat = {currency, style: "currency", currencyDisplay: "narrowSymbol"};
-  const formattedAmount = new Intl.NumberFormat(language, amountFormat).format(amount);
-  await expect(frame.getByTestId("cart-item-name")).toContainText(title);
-  await expect(frame.getByTestId("summary-total-trial-or-recurring")).toContainText(frequency);
-  await expect(frame.getByTestId("price-summary")).toContainText(formattedAmount);
 }

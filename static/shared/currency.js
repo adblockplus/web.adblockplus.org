@@ -1,4 +1,8 @@
 
+export function getNumber(string) {
+  return getAccountingNumber(parseFloat(string.replace(/\D/g, "").trim()));
+}
+
 export function getAccountingNumber(number) {
   return parseFloat(number.toFixed(2));
 }
@@ -17,7 +21,7 @@ export function getDollarString(language, currency, centAmountString, showTraili
   const dollarNumber = getDollarNumber(currency, centAmountString);
   const formatOptions = {
     style: 'currency',
-    currency: currency, 
+    currency: currency,
     currencyDisplay: 'narrowSymbol'
   };
   if (!showTrailingZeros && dollarNumber % 1 == 0) {
