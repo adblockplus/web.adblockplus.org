@@ -2,24 +2,40 @@
   const query = new URLSearchParams(window.location.search);
   
   const adblock = window.adblock = {
+    settings: {
+      page: {{ page | tojson }} || false,
+      locale: {{ locale | tojson }},
+    },
+    strings: {
+      "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
+    },
+    extensions: {},
     runtime: {},
     config: {},
     lib: {},
     api: {},
     query,
-    strings: {
-      "error--unexpected": {{ get_string("stripe-sorry", "payment-form") | tojson }}
-    },
-    settings: {
-      page: {{ page | tojson }} || false,
-      locale: {{ locale | tojson }},
-    },
   };
 
+  adblock.api.error = () => { alert(adblock.strings["error--unexpected"]); };
+
+  let hasSettings = false;
+  const settingsCallbacks = [];
+
+  adblock.api.onSettings = callback => {
+    if (hasSettings) return callback();
+    else return settingsCallbacks.push(callback);
+  };
+
+  fetch("https://adblockplus.org/settings").then(settings => {
+    console.log(settings);
+    settingsCallbacks.forEach(callback => callback());
+  });
+
+  // backwards compatibility
   adblock.searchParameters = query;
   adblock.settings.language = adblock.settings.locale;
-
-  adblock.error = () => { alert(adblock.strings["error--unexpected"]); };
+  adblock.error = adblock.api.error;
 
   try {
     adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo);
