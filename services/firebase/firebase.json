@@ -216,12 +216,6 @@
       },
 
       {
-        "source": "/robots.txt",
-        "destination": "/robots-function",
-        "type": 302
-      },
-
-      {
         "regex": ".*\/deal",
         "destination": "https://accounts.adblockplus.org/premium",
         "type": 302
@@ -229,14 +223,7 @@
     ],
     "rewrites": [
       {
-        "source": "/payment-config-function",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/robots-function",
+        "source": "/robots.txt",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
@@ -250,28 +237,7 @@
         }
       },
       {
-        "source": "/currency",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/update-function/:language?",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/installed-function/:language?",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/contribution-function/:language?",
+        "source": "/settings",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
