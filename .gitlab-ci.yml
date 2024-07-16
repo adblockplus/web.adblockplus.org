@@ -5,176 +5,26 @@ variables:
 
 .staging:
   variables: &staging
-    DOMAIN: staging-new-adblockplus-org-1.uplink.eyeo.it
     FIREBASE_DOMAIN: https://staging.adblockplus.dev/
     PREVIEW_CHANNEL_EXPIRATION: 30d
-    STRIPE_PUBLISHABLE_KEY: pk_test_qZJPIgNMdOMferLFulcfPvXO007x2ggldN
-    DONATION_SERVER_BASE_URL: https://donation-staging.adblock-org.workers.dev/
 
-.legacy_production:
-  variables: &legacy_production
+.production:
+  variables: &production
     DOMAIN: adblockplus.org
     FIREBASE_DOMAIN: https://www.adblockplus.dev/
-    STRIPE_PUBLISHABLE_KEY: pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs
-    DONATION_SERVER_BASE_URL: https://donation.adblock-org.workers.dev/
-
-.modern_production:
-  extends:
-    ".legacy_production"
-  variables: &modern_production
-    DOMAIN: new.adblockplus.org
 
 .common:
   tags:
     - &NODE_IMAGE node:16-alpine
     - &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:409.0.0
     - &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
-    - &TEST_IMAGE registry.gitlab.com/eyeo/websites/docker/python-chromedriver:3.6-xvfb-selenium
     - &BUILD_RUNNER saas-linux-small-amd64
-    - &STAGING_RUNNER eyeo_cms_web_server_staging-new-adblockplus-org-1.uplink.eyeo.it
-    - &PRODUCTION_RUNNER0 eyeo_cms_web_server_adblockplus-org-2.adblockplus.org
 
-# https://docs.gitlab.com/ee/ci/yaml/#stages
 stages:
-  - build_legacy_production
-  - deploy_legacy_production
-  - build_staging
-  - deploy_staging
-  - smoke_tests
-  - manually_triggered_tests
-  - scheduled_monitoring_tests
   - prebuild_firebase
   - build_firebase
   - deploy_cloud_run
   - deploy_firebase
-
-legacy_production_build:
-  stage: build_legacy_production
-  except:
-    - schedules
-  variables:
-    <<: *legacy_production
-  image: *BUILD_IMAGE
-  tags:
-    - *BUILD_RUNNER
-  before_script:
-    - python3 -m pip install -q crudini
-  script:
-    - crudini --set settings.ini general siteurl https://$DOMAIN
-    - python3 -m cms.bin.generate_static_pages $PWD build_production
-  artifacts:
-    name: $CI_COMMIT_REF_SLUG
-    paths:
-      - build_production
-  only:
-    - master
-
-legacy_production_deploy0:
-  stage: deploy_legacy_production
-  except:
-    - schedules
-  variables:
-    <<: *legacy_production
-  tags:
-    - *PRODUCTION_RUNNER0
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_production
-  environment:
-    name: $DOMAIN
-    url: http://$DOMAIN
-  only:
-    - master
-
-staging_build:
-  stage: build_staging
-  except:
-    - schedules
-  variables:
-    <<: *staging
-  image: *BUILD_IMAGE
-  tags:
-    - *BUILD_RUNNER
-  before_script:
-    - python3 -m pip install -q crudini
-  script:
-    - crudini --set settings.ini general siteurl http://$CI_COMMIT_REF_SLUG.$DOMAIN
-    - python3 -m cms.bin.generate_static_pages $PWD build_staging
-  artifacts:
-    name: $CI_COMMIT_REF_SLUG
-    paths:
-      - build_staging
-
-deploy_staging:
-  stage: deploy_staging
-  except:
-    - schedules
-  variables:
-    <<: *staging
-  tags:
-    - *STAGING_RUNNER
-  dependencies:
-    - staging_build
-  script:
-    - sudo /usr/local/sbin/deploy_eyeo_cms_web_$DOMAIN $CI_PROJECT_DIR/build_staging/
-  environment:
-    name: staging/$CI_COMMIT_REF_SLUG
-    url: http://$CI_COMMIT_REF_SLUG.$DOMAIN
-
-smoke_tests_staging:
-  when: manual
-  except:
-    - schedules
-    - master
-  stage: smoke_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
-  allow_failure: true
-
-smoke_tests_production:
-  except:
-    - schedules
-  only:
-    - master
-  stage: smoke_tests
-  variables:
-    <<: *legacy_production
-  image: *TEST_IMAGE
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=https://new.adblockplus.org tests/test_DownloadLinks.py
-  allow_failure: true
-
-download_links_tests:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  script:
-    - pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_DownloadLinks.py
-  when: manual
-
-language_tests:
-  except:
-    - schedules
-  stage: manually_triggered_tests
-  variables:
-    <<: *staging
-  image: *TEST_IMAGE
-  script:
-    - python3 -m pip install tox
-    - cd tests/web.adblockplus.org
-    - xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" tox -- --landing_page_url=http://$CI_COMMIT_REF_SLUG.$DOMAIN tests/test_Languages.py
-  when: manual
 
 pre_review_build:
   stage: prebuild_firebase
@@ -254,7 +104,7 @@ build:production:
   except:
     - schedules
   variables:
-    <<: *modern_production
+    <<: *production
   image: *BUILD_IMAGE
   tags:
     - *BUILD_RUNNER
@@ -424,7 +274,7 @@ deploy_firebase_hosting:production:
     - schedules
   image: *NODE_IMAGE
   variables:
-    <<: *modern_production
+    <<: *production
   dependencies:
     - build:production
   before_script:
