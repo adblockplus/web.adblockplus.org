@@ -27,7 +27,7 @@
     else return settingsCallbacks.push(callback);
   };
 
-  fetch("https://adblockplus.org/settings").then(settings => {
+  fetch("/settings").then(settings => {
     console.log(settings);
     settingsCallbacks.forEach(callback => callback());
   });
