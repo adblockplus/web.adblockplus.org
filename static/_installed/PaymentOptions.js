@@ -62,6 +62,13 @@ export const PaymentOptions = {
       monthly: [15000, 25000, 40000, 50000, 100000],
     },
   },
+  PLN: {
+    minimums: { yearly: 13999, monthly: 1999 },
+    amounts: {
+      yearly: [3999, 5999, 7999, 13999, 19999],
+      monhly: [799, 1199, 1599, 1999, 3999],
+    },
+  },
 }
 
 export function getInstalledAmount(currency, frequency, index) {

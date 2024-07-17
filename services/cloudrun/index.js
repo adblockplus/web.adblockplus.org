@@ -5,27 +5,20 @@ const path = require('path');
 const legacyRedirects = require('./handlers/legacy_redirects');
 const { getQueryString } = require('./utils/utils.js');
 
-// geoip based rules in static/js/payment/config/.htaccess
-let euRules, geoipRules;
-
-let euRules2, geoipRules2;
-
 // pre-approved countries in static/js/testing/.htaccess
 let preapprovedCountries;
-
-
 
 // Request handlers
 
 app.use('/redirect', legacyRedirects);
 
 app.get('/payment-config-function', (req, res) => {
-  euRules = euRules || [
+  const euRules = [
     'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'GR', 'HU', 'IE',
     'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE'
   ].reduce((acc, country) => ({...acc, [country]: 'eu.js'}), {});
 
-  geoipRules = geoipRules || {
+  const geoipRules = {
     'GB': 'gb.js', 'US': 'us.js', 'DE': 'de.js', 'CH': 'ch.js', 'AU': 'au.js',
     'CA': 'ca.js', 'NZ': 'nz.js', 'RU': 'ru.js', 'JP': 'jp.js', 'FR': 'fr.js',
     ...euRules
@@ -94,15 +87,15 @@ Disallow: /`;
 });
 
 app.get('/currency', (req, res) => {
-  euRules2 = euRules2 || [
+  const euRules2 = [
     'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU',
-    'IE', 'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI',
-    'ES', 'SE', 'DE'
+    'IE', 'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PT', 'RO', 'SK', 'SI', 'ES', 
+    'SE', 'DE'
   ].reduce((acc, country) => ({...acc, [country]: 'eur.js'}), {});
 
-  geoipRules2 = geoipRules2 || {
+  const geoipRules2 = {
     'AU': 'aud.js', 'CA': 'cad.js', 'CH': 'chf.js', 'GB': 'gbp.js',
-    'JP': 'jpy.js', 'NZ': 'nzd.js', 'RU': 'rub.js',
+    'JP': 'jpy.js', 'NZ': 'nzd.js', 'RU': 'rub.js', 'PL': 'pln.js',
     ...euRules2
   };
 
