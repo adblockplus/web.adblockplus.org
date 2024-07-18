@@ -247,7 +247,9 @@ const isTestmode = location.hostname == "localhost" || adblock.query.has("testmo
 const environment = isTestmode ? "sandbox" : "live";
 const page = adblock.settings.page || "update";
 const defaultCurrency = adblock.settings.currency || "USD";
-const premiumId = adblock.extensions?.adblockPlus?.premiumId || generateUserId();
+let premiumId;
+try { premiumId = adblock.extensions.adblockPlus.premiumId || generateUserId(); }
+catch (error) { premiumId = generateUserId(); }
 const trackingId = generateTrackingId("ME", premiumId);
 
 if (isTestmode) Paddle.Environment.set("sandbox");
