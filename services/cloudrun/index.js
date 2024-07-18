@@ -73,9 +73,9 @@ app.get("/robots.txt", (req, res) => {
 });
 
 app.get("/settings", (req, res) => {
-  const country = req.headers['x-country-code'];
+  const location = req.headers['x-country-code'];
   const settings = {
-    country,
+    location,
   }
   res.setHeader('Content-Type', 'application/json');
   res.status(200);
