@@ -131,42 +131,14 @@
     ],
     "rewrites": [
       {
-        "source": "/payment-config-function",
+        "source": "/robots.txt",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
         }
       },
       {
-        "source": "/robots-function",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/url",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/currency",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/update-function/:language?",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/installed-function/:language?",
+        "source": "/settings",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
@@ -179,8 +151,6 @@
           "region": "europe-west1"
         }
       },
-      // IMPORTANT: Fallback locale rerouting function, must stay at bottom of "rewrites" array
-      // Refd #943 - URLs containing non-exact matching locale paths return a 404
       {
         "regex": "(?i)^/([\\w-]{2,6})(/.*)?$",
         "run": {
@@ -189,7 +159,6 @@
         }
       }
     ],
-
     "headers": [
       {
         "source": "**",
@@ -197,15 +166,6 @@
           {
             "key": "X-Frame-Options",
             "value": "sameorigin"
-          }
-        ]
-      },
-      {
-        "source": "js/settings.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
           }
         ]
       }
