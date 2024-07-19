@@ -1,0 +1,54 @@
+<script>
+  var noop = function() {};
+
+  if (adblock.query.has("dev")) document.documentElement.classList.add("dev");
+  if (adblock.query.has("design")) document.documentElement.classList.add("design");
+
+  var eyeo = window.eyeo = {
+    preventCookiePrompt: {{ "true" if prevent_cookie_prompt else "false" }},
+    log: noop,
+    beacon: noop
+  };
+
+  //FIXME: eyeo/cms doesn't support img in string so this replaces span with img
+  // e.g. span src image.png class img turns into img src image.png class img
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("span.img").forEach(span => {
+        span.innerHTML = span.outerHTML.replace("span", "img");
+        span.replaceWith(span.querySelector("img"));
+    });
+  });
+
+  /**
+   * Apply config/properties to a namespace
+   *
+   * This is especially useful for building and retrieving config at paths that 
+   * may or may not have been created yet e.g. to test components together or
+   * separately. It also forces all config to be applied to only one global
+   * namespace (`eyeo`).
+   *
+   * Careful! It doesn't check/warn you about typos in path!
+   *
+   * @param {string} path - A Javascript object path to be created or retrieved
+   * @param {string} config - Config/properties to be applied to the path
+   */
+  function path(path, config)
+  {
+    var parts = path.split(".");
+    var point = eyeo;
+
+    for (var i = 0; i < parts.length; i++)
+    {
+      if (!point.hasOwnProperty(parts[i]))
+        point[parts[i]] = {};
+      
+      point = point[parts[i]];
+    }
+
+    if (typeof config == "object")
+      for (var key in config)
+        point[key] = config[key];
+
+    return point;
+  }
+</script>
