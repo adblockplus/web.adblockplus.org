@@ -31,6 +31,8 @@
     adblock.extensions.adblock = JSON.parse(document.documentElement.dataset.adblockExtensionInfo);
   } catch (error) {}
 
+  adblock.lib.fetch = fetchRetry(fetch);
+
   let hasSettings = false;
   const onSettingsCallbacks = [];
 
@@ -39,7 +41,7 @@
     else onSettingsCallbacks.push(callback);
   }
 
-  fetchRetry("/settings")
+  adblock.lib.fetch("/settings")
   .then(response => response.json())
   .then(settings => {
     Object.assign(adblock.settings, settings);
