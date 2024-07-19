@@ -1,0 +1,63 @@
+<script>
+  /* global fetchRetry */
+
+  /**
+   * @prop {object} adblock global namespace
+   * @prop {object} adblock.api namespace for functions provided to third parties to interact with first party scripts at runtime
+   * @prop {object} adblock.config namespace for script configurations (configurations should be objects)
+   * @prop {object} adblock.extensions namespace for injecting extension data
+   * @prop {object} adblock.lib namespace for shared first party functions and reusable components
+   * @prop {object} adblock.page namespace for statically generated page properties
+   * @prop {object} adblock.query instanceof URLSearchParams from window.location.search (API to check URL Search Params)
+   * @prop {object} adblock.runtime namespace for references to instantiated first party components
+   * @prop {object} adblock.settings namespace for shared script and component properties (properties should not be objects)
+   * @prop {object} adblock.translations namespace for translated strings intended to be used by scripts and components
+   */
+  const adblock = window.adblock = {
+    api: {},
+    config: {},
+    extensions: {},
+    lib: {},
+    page: {},
+    query: new URLSearchParams(window.location.search),
+    runtime: {},
+    settings: {},
+    translations: {},
+  };
+
+  /** fetch wrapper that retries on network failure */
+  adblock.api.fetchRetry = fetchRetry(fetch);
+
+  /** general purpose event logging */
+  adblock.api.log = (event, data) => {}
+
+  /** general purpose fatal error function to log error and say sorry */
+  adblock.api.error = () => alert(adblock.translations.errorUnexpected)
+
+  /** injected info about Adblock Plus */
+  try { adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo); } 
+  catch (error) {}
+
+  /** injected info about AdBlock */
+  try { adblock.extensions.adblock = JSON.parse(document.documentElement.dataset.adblockExtensionInfo); } 
+  catch (error) {}
+
+  let hasDynamicSettings = false;
+  const dynamicSettingsCallbacks = [];
+
+  /** callback when dynamic settings are applied */
+  adblock.api.onDynamicSettings = (callback) => {
+    if (hasDynamicSettings) callback();
+    else dynamicSettingsCallbacks.push(callback);
+  }
+
+  adblock.api.fetchRetry("/settings")
+  .then(response => response.json())
+  .then(settings => {
+    Object.assign(adblock.settings, settings);
+    hasDynamicSettings = true;
+    dynamicSettingsCallbacks.forEach(callback => callback());
+  })
+  .catch(adblock.api.error);
+
+</script>
