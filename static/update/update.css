@@ -546,3 +546,22 @@ html:not(.de) .de-only { display: none; }
   font-weight: inherit;
   text-decoration: none;
 }
+
+.premium-plan-tax {
+  display: none;
+  text-align: center;
+  width: 100%;
+}
+
+.vat-exclusive .premium-plan-tax {
+  display: block;
+}
+
+.update-plan .premium-plan-tax {
+  margin-top: -1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.update-premium-ctas .premium-plan-tax {
+  margin-top: 0;
+}
