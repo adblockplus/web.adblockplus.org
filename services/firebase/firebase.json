@@ -14,121 +14,13 @@
     },
     "redirects": [
       {
-        "regex": "(?i)^/up-to-date$",
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?(up-to-date|update-2309|contribution|donate)/?$",
         "destination": "/update",
         "type": 301
       },
       {
-        "regex": "(?i)^/update-2309$",
-        "destination": "/update",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/contribution$",
-        "destination": "/update",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/contribution-function$",
-        "destination": "/update",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/donate$",
-        "destination": "/update",
-        "type": 301
-      },
-      // Refs #493 redirect old browser index pages to root index page
-      {
-        "regex": "(?i)^/android$",
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?(android|chrome|edge|firefox|internet-expolorer|opera|yandex-browser|safari)/?$",
         "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/android$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/chrome$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/chrome$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/edge$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/edge$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/firefox$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/firefox$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/internet-expolorer$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/internet-explorer$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/opera$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/opera$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/safari$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/safari$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/yandex-browser$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^(.*)/yandex-browser$",
-        "destination": "/",
-        "type": 301
-      },
-
-      // Refd #617 migrate simple file-to-file rules to .htaccess
-      {
-        "regex": "(?i)^(.*/)?(android|chrome|edge|firefox|internet-explorer|opera|safari|yandex-browser)/?$",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?changelog-1.3.1$",
-        "destination": "/$1\\changelog-1.3",
         "type": 301
       },
       {
@@ -162,61 +54,50 @@
         "type": 301
       },
       {
-        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?adblock-browser/?$",
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?adblock-browser/?$",
         "destination": "https://adblockbrowser.org/",
         "type": 301
       },
       {
         "regex": "(?i)^/devbuilds/?$",
-        "destination": "https://adblockplus.org/development-builds",
+        "destination": "/development-builds",
         "type": 301
       },
-      {
-        "regex": "(?i)^/poland/?$",
-        "destination": "/poland.html",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/de/ad-blocker-safari/?$",
-        "destination": "https://adblockplus.org/de/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/fr/ad-blocker-safari/?$",
-        "destination": "https://adblockplus.org/fr/",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?filters$",
-        "destination": "https://help.adblockplus.org/hc/articles/360062733293",
-        "type": 301
-      },
-      {
-        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?android-about/?$",
-        "destination": "https://adblockplus.org/",
-        "type": 301
-      },
-
-      // Refd adblockplus-org#16 redirect removed job posting to Careers Page
-      {
-        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?software-engineer-adblock-plus/?$",
-        "destination": "https://adblockplus.org/careers",
-        "type": 301
-      },
-
-      {
-        "regex": "(?i)^/(\\w\\w(_\\w\\w)?/)?careers/?$",
-        "destination": "https://adblock.pinpointhq.com/en#js-careers-jobs-block",
-        "type": 301
-      },
-
       {
         "regex": "(?i)^/(devbuilds/(.*)?)",
         "destination": "https://downloads.adblockplus.org/:1",
         "type": 302
       },
-
-      // Refd #946
+      {
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?poland/?$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/de/ad-blocker-safari/?$",
+        "destination": "/de/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/fr/ad-blocker-safari/?$",
+        "destination": "/fr/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?filters/?$",
+        "destination": "https://help.adblockplus.org/hc/articles/360062733293",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?android-about/?$",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?careers/?$",
+        "destination": "https://adblock.pinpointhq.com/en#js-careers-jobs-block",
+        "type": 301
+      },
       {
         "regex": "(?i)^/(blog|releases|development-builds|atom|rss|category|section|author|file_download|images|textpattern)($|/)",
         "destination": "https://blog.adblockplus.org/:1",
@@ -227,22 +108,18 @@
         "destination": "https://forum.adblockplus.org/:1",
         "type": 301
       },
-
-      // Redirect to cloud run rewrite for payment config
       {
         "source": "/js/payment/config/load.js",
         "destination": "/payment-config-function",
         "type": 301
       },
-
       {
         "source": "/robots.txt",
         "destination": "/robots-function",
         "type": 302
       },
-
       {
-        "regex": ".*\/deal",
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?deal/?",
         "destination": "https://accounts.adblockplus.org/premium",
         "type": 302
       }
