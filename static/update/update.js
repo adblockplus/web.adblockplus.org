@@ -354,13 +354,13 @@ document.querySelectorAll(".update-premium-checkout-button").forEach(button => {
 document.querySelectorAll(".update-premium-checkout-button-price").forEach(price => {
   const frequency = price.parentElement.dataset.frequency;
   const amount = getPaddleAmount({currency: defaultCurrency, frequency});
-  price.textContent = getDollarString(defaultCurrency, amount);
+  price.textContent = getDollarString(defaultCurrency, amount, false, false);
 });
 
 document.querySelectorAll(".update-plan-heading-price").forEach(price => {
   const frequency = price.dataset.frequency;
   const amount = getPaddleAmount({currency: defaultCurrency, frequency});
-  const amountText = getDollarString(defaultCurrency, amount);
+  const amountText = getDollarString(defaultCurrency, amount, false, false);
   const amountSignText = amountText.replace(/[\d\,\.]/g, "").trim();
   const amountNumberText = amountText.replace(amountSignText, "").trim();
   price.querySelector(".update-plan-heading-price__final-amount").textContent = amountNumberText;
