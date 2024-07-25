@@ -246,7 +246,7 @@ const language = adblock.settings.language || "en";
 const isTestmode = location.hostname == "localhost" || adblock.query.has("testmode");
 const environment = isTestmode ? "sandbox" : "live";
 const page = adblock.settings.page || "update";
-const defaultCurrency = adblock.settings.currency || "USD";
+const defaultCurrency = adblock.query.get("currency") || adblock.settings.currency || "USD";
 let premiumId;
 try { premiumId = adblock.extensions.adblockPlus.premiumId || generateUserId(); }
 catch (error) { premiumId = generateUserId(); }
