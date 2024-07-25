@@ -1,0 +1,195 @@
+template=raw
+
+<head>
+  <title>Local currency</title>
+  <meta name="robots" content="none">
+  <style>
+    html { font-family: monospace; }
+    th { background-color: black; color: white; }
+    tr:nth-child(even) { background: lightgray; }
+    td { border: 1px solid darkgrey; padding: 0.2rem; }
+  </style>
+</head>
+
+<table id="currency"></table>
+
+<script>
+
+  const locales = [
+    "en-US",
+    "tr-TR",
+    "ru-RU",
+    "pt-BR", 
+    "pl-PL",
+    "ko-KR",
+    "ja-JP",
+    "it-IT",
+    "hu-HU",
+    "fr-FR",
+    "es-ES",
+    "el-GR",
+    "de-DE",
+    "nl-NL",
+    "zh-CN", 
+    "ar-EG",
+  ];
+
+  const prices = {
+    USD: {
+      monthly: {
+        "ME": { amount: 200, product: 47979 },
+        "VP": { amount: 399, product: 52460 },
+        "ME-VP": { amount: 400, product: 47981 },
+      },
+      yearly: {
+        "ME": { amount: 2000, product: 47987 },
+        "VP": { amount: 3999, product: 52459 },
+        "ME-VP": { amount: 4000, product: 47980 },
+      },
+    },
+    AUD: {
+      monthly: {
+        "ME": { amount: 200, product: 68692 },
+        "ME-VP": { amount: 400, product: 68708 },
+      },
+      yearly: {
+        "ME": { amount: 2000, product: 68699 },
+        "ME-VP": { amount: 4000, product: 68744 },
+      },
+    },
+    CAD: {
+      monthly: {
+        "ME": { amount: 200, product: 68693 },
+        "ME-VP": { amount: 400, product: 68709 },
+      },
+      yearly: {
+        "ME": { amount: 2000, product: 68700 },
+        "ME-VP": { amount: 4000, product: 68745 },
+      },
+    },
+    EUR: {
+      monthly: {
+        "ME": { amount: 200, product: 68694 },
+        "ME-VP": { amount: 400, product: 68710 },
+      },
+      yearly: {
+        "ME": { amount: 2000, product: 68701 },
+        "ME-VP": { amount: 4000, product: 68746 },
+      },
+    },
+    GBP: {
+      monthly: {
+        "ME": { amount: 200, product: 68695 },
+        "ME-VP": { amount: 400, product: 68711 },
+      },
+      yearly: {
+        "ME": { amount: 2000, product: 68702 },
+        "ME-VP": { amount: 4000, product: 68747 },
+      },
+    },
+    NZD: {
+      monthly: {
+        "ME": { amount: 200, product: 68695 },
+        "ME-VP": { amount: 400, product: 68711 },
+      },
+      yearly: {
+        "ME": { amount: 2000, product: 68702 },
+        "ME-VP": { amount: 4000, product: 68747 },
+      },
+    },
+    CHF: {
+      monthly: {
+        "ME": { amount: 200, product: 68695 },
+        "ME-VP": { amount: 400, product: 68711 },
+      },
+      yearly: {
+        "ME": { amount: 2000, product: 68702 },
+        "ME-VP": { amount: 4000, product: 68747 },
+      },
+    },
+    JPY: {
+      monthly: {
+        "ME": { amount: 300, product: 68696 },
+        "ME-VP": { amount: 600, product: 68712 },
+      },
+      yearly: {
+        "ME": { amount: 3000, product: 68703 },
+        "ME-VP": { amount: 6000, product: 68748 },
+      },
+    },
+    MXN: {
+      monthly: {
+        "ME": { amount: 4000, product: 68697 },
+        "ME-VP": { amount: 8000, product: 68713 },
+      },
+      yearly: {
+        "ME": { amount: 40000, product: 68704 },
+        "ME-VP": { amount: 80000, product: 68749 },
+      },
+    },
+    RUB: {
+      monthly: {
+        "ME": { amount: 15000, product: 68698 },
+        "ME-VP": { amount: 30000, product: 68714 },
+      },
+      yearly: {
+        "ME": { amount: 150000, product: 68705 },
+        "ME-VP": { amount: 300000, product: 68750 },
+      },
+    },
+  };
+
+
+  function getAccountingNumber(number) {
+    return parseFloat(parseFloat(number).toFixed(2));
+  }
+
+  function getDollarNumber(currency, centAmountString) {
+    const centAmountNumber = parseInt(centAmountString, 10);
+    return currency == "JPY" ? centAmountNumber : getAccountingNumber(centAmountNumber / 100);
+  }
+
+  function formatAmount(locale, currency, amount, narrowSymbol, ) {
+    const  dollarNumber = getDollarNumber(currency, amount);
+    const formatOptions = {
+      style: 'currency',
+      currency: currency,
+    };
+    if (narrowSymbol) {
+      formatOptions.currencyDisplay = 'narrowSymbol';
+    }
+    if (dollarNumber % 1 == 0) {
+      formatOptions.minimumFractionDigits = 0;
+      formatOptions.maximumFractionDigits = 0;
+    }
+    return Intl.NumberFormat(locale.replace("_", "-"), formatOptions).format(dollarNumber);
+  }
+
+  const table = document.getElementById("currency");
+
+  const thead = document.createElement("thead");
+  const blankth = document.createElement("th");
+  thead.appendChild(blankth);
+  for (const locale of locales) {
+    const th = document.createElement("th");
+    th.textContent = locale;
+    thead.appendChild(th);
+  }
+  table.appendChild(thead);
+
+  for (const currency in prices) {
+    const tr = document.createElement("tr");
+    const amount = prices[currency].monthly.ME.amount;
+    const currencytd = document.createElement("td");
+    currencytd.textContent = currency;
+    tr.appendChild(currencytd);
+    for (const locale of locales) {
+      const td = document.createElement("td");
+      td.innerHTML = `${formatAmount(locale, currency, amount, true)}<br>
+      ${formatAmount(locale, currency, amount, false)}`;
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+
+</script>
