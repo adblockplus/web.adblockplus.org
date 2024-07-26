@@ -952,3 +952,14 @@ html {
   left: 0;
   height: 100%;
 }
+
+.premium-page .premium-plan-tax {
+  display: none;
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.vat-exclusive .premium-page .premium-plan-tax {
+  display: block;
+}
