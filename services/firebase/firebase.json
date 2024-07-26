@@ -14,7 +14,7 @@
     },
     "redirects": [
       {
-        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?(up-to-date|update-2309|contribution|donate)/?$",
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?(up-to-date|update-2309|contribution|donate|deal)/?$",
         "destination": "/update",
         "type": 301
       },
