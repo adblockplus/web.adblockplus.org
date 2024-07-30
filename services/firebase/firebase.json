@@ -14,6 +14,11 @@
     },
     "redirects": [
       {
+        "regex": "(?i)^/getSubscription$",
+        "destination": "https://subscription-fallback.adblockplus.org/getSubscription",
+        "type": 301
+      },
+      {
         "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?(up-to-date|update-2309|contribution|donate|deal)/?$",
         "destination": "/update",
         "type": 301
