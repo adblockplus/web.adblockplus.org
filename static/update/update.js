@@ -367,6 +367,19 @@ document.querySelectorAll(".update-plan-heading-price").forEach(price => {
   price.querySelector(".update-plan-heading-price__final-currency").textContent = amountSignText;
 });
 
+// Show block count ////////////////////////////////////////////////////////////
+
+const BLOCK_COUNT_MINIMUM = 1000;
+let extensionInfo;
+try { extensionInfo = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo); }
+catch (error) { extensionInfo = {}; }
+const blockCount = adblock.query.has("bc") ? parseInt(adblock.query.get("bc"), 10) : extensionInfo.blockCount;
+if (blockCount > BLOCK_COUNT_MINIMUM) {
+  document.querySelector(".update-header-section-1__heading--with-block-count .ads-blocked")
+  .textContent = new Intl.NumberFormat(navigator.language).format(blockCount);
+  document.documentElement.classList.add("--has-block-count");
+}
+
 // Fix plan discount height across languages ///////////////////////////////////
 
 const desktopWidthMediaQuery = window.matchMedia(`(min-width: 992px)`);

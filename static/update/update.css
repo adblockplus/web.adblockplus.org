@@ -102,6 +102,14 @@ html:not(.de) .de-only { display: none; }
   font-size: 1.5rem;
 }
 
+.update-header-section-1__heading .ads-blocked {
+  color: #E40D0D;
+}
+
+.update-header-section-1__heading--with-block-count, 
+.--has-block-count .update-header-section-1__heading { display: none; }
+.--has-block-count .update-header-section-1__heading.update-header-section-1__heading--with-block-count { display: block; }
+
 @media (min-width: 992px) {
   .update-header-section-1__heading {
     font-size: 2.5rem;
@@ -111,19 +119,8 @@ html:not(.de) .de-only { display: none; }
 .update-header-section-1__subheading {
   width: 100%;
   margin: 0 0 -0.5rem 0;
-}
-
-.update-header-section-2 {
-  padding: 2rem 0;
-  color: #666666;
   font-size: 1.125rem;
-  margin: 0;
-}
-
-@media (min-width: 992px) {
-  .update-header-section-2 {
-    text-align: center;
-  }    
+  color: #666;
 }
 
 .update-header-section-3 {
