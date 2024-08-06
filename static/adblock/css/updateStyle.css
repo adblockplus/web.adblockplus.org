@@ -1298,3 +1298,13 @@ p.infoCardTeaserText {
     margin: 0px auto 0px 0px;
   }
 }
+
+.premium-plan-tax {
+  display: none;
+  width: 100%;
+  margin-top: -1.5rem !important;
+}
+
+.vat-exclusive .premium-plan-tax {
+  display: block;
+}

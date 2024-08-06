@@ -404,3 +404,14 @@ body {
   font-weight: inherit;
   text-decoration: none;
 }
+
+.premium-plan-tax {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin: -0.5rem 0 0 0;
+}
+
+.vat-exclusive .premium-plan-tax {
+  display: block;
+}
