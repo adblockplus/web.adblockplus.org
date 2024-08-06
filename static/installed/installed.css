@@ -400,3 +400,14 @@ html:not(.restrict-premium) .not-premium-only {
 .payment-reward__text span {
   font-weight: bolder;
 }
+
+.premium-plan-tax {
+  display: none;
+  text-align: center;
+  width: 100%;
+  margin: -1rem 0 0.5rem 0;
+}
+
+.vat-exclusive .premium-plan-tax {
+  display: block;
+}
