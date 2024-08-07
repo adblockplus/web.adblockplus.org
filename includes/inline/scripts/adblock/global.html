@@ -29,10 +29,10 @@
   adblock.api.fetchRetry = fetchRetry(fetch);
 
   /** general purpose event logging */
-  adblock.api.log = (event, data) => {}
+  adblock.api.log = (event, data) => {};
 
   /** general purpose fatal error function to log error and say sorry */
-  adblock.api.error = () => alert(adblock.translations.errorUnexpected)
+  adblock.api.error = () => alert(adblock.translations.errorUnexpected);
 
   /** injected info about Adblock Plus */
   try { adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo); } 
@@ -42,21 +42,21 @@
   try { adblock.extensions.adblock = JSON.parse(document.documentElement.dataset.adblockExtensionInfo); } 
   catch (error) {}
 
-  let hasDynamicSettings = false;
-  const dynamicSettingsCallbacks = [];
+  let hasSettings = false;
+  const settingsCallbacks = [];
 
   /** callback when dynamic settings are applied */
-  adblock.api.onDynamicSettings = (callback) => {
-    if (hasDynamicSettings) callback();
-    else dynamicSettingsCallbacks.push(callback);
+  adblock.api.onSettings = (callback) => {
+    if (hasSettings) callback();
+    else settingsCallbacks.push(callback);
   }
 
   adblock.api.fetchRetry("/settings")
   .then(response => response.json())
   .then(settings => {
     Object.assign(adblock.settings, settings);
-    hasDynamicSettings = true;
-    dynamicSettingsCallbacks.forEach(callback => callback());
+    hasSettings = true;
+    settingsCallbacks.forEach(callback => callback());
   })
   .catch(adblock.api.error);
 
