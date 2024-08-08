@@ -6,7 +6,7 @@ import { expectPaddlePresents } from "./shared/paddle.js";
 
 const HOST = process.env.CHECKOUT_HOST || "https://adblockplus.org";
 const LOCALE = process.env.CHECKOUT_LOCALE || "en";
-const PAGE = process.env.CHECKOUT_PAGE || "test-checkout";
+const PAGE = process.env.CHECKOUT_PAGE || "installed";
 const PADDLE_ENVIRONMENT = process.env.CHECKOUT_ENVIRONMENT || "sandbox";
 
 const MINIMUM_AMOUNT = 1;
