@@ -3,10 +3,10 @@ title=Contributing code to Adblock Plus
 
 ## {{things-to-work-on Finding something to work on}}
 
-* {{javascript-work If you know **JavaScript**, you can work on the [Adblock Plus core code](modules#core), the [Adblock Plus Web Extension](modules#platform) or [our websites](modules#websites).}}
-* {{cpp-work If you know **C++**, you can work on [Adblock Plus for Internet Explorer](modules#adblock-plus-for-internet-explorer).}}
-* {{java-work If you know **Java**, you can work on [Adblock Browser for Android](modules#adblock-browser-for-android) or [Adblock Plus for Samsung Browser](modules#adblock-plus-for-samsung-browser).}}
-* {{swift-work If you know **Swift**, you can work on [Adblock Plus for iOS/macOS](modules#adblock-plus-for-ios)}}
+* {{javascript-work If you know **JavaScript**, you can work on the Adblock Plus core code, the Adblock Plus Web Extension or our websites.}}
+* {{cpp-work If you know **C++**, you can work on Adblock Plus for Internet Explorer.}}
+* {{java-work If you know **Java**, you can work on Adblock Browser for Android or Adblock Plus for Samsung Browser.}}
+* {{swift-work If you know **Swift**, you can work on Adblock Plus for iOS/macOS}}
 
 {{issues We're keeping track of all the things we want to fix and improve in the issue tracker of our [projects on GitLab](https://gitlab.com/eyeo/adblockplus).}}
 
