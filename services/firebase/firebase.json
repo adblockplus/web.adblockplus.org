@@ -34,6 +34,11 @@
         "type": 301
       },
       {
+        "regex": "(?i)^/block-cookie-banners-v2/?$",
+        "destination": "/block-cookie-banners",
+        "type": 301
+      },
+      {
         "regex": "(?i)^/update.rdf$",
         "destination": "https://update.adblockplus.org/gecko/update.rdf",
         "type": 301

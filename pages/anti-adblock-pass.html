@@ -5,18 +5,11 @@ unadblock=1
 
 <head>
   <link rel="stylesheet" href="/adblock/anti-adblock-pass/style.css" />
-  <link rel="stylesheet" href="/adblock/css/updateStyle.css" />
-  <link rel="stylesheet" href="/adblock/anti-adblock-pass/payment_section.css" />
-  <link rel="stylesheet" href="/adblock/anti-adblock-pass/premium_style.css" />
   <link rel="stylesheet" href="/css/unadblock.css">
   <link rel="stylesheet" href="/css/pages/anti-adblock-pass.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" />
-  <script src="/js/payment/config/load.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="/adblock/anti-adblock-pass/log.js"></script>
-  <script src="/adblock/anti-adblock-pass/user.js"></script>
-  <script src="/adblock/anti-adblock-pass/experiment.js"></script>
+  <link rel="stylesheet" href="/premium/checkout.css">
 </head>
 
 <? include premium-restrictions ?>
@@ -48,7 +41,7 @@ unadblock=1
       {{ anti-adblock-pass__section-1__subheading }}
     </p>
     <div class="button__container section-1__button__container">
-      <a href="#" class="button premium-cta">
+      <a href="#premium-checkout" class="button premium-cta">
         {{ shared__button__get-premium }}
       </a>  
     </div>
@@ -73,7 +66,7 @@ unadblock=1
         {{ anti-adblock-pass__section-2__paragraph-2 }}
       </p>
       <div class="button__container">
-        <a href="#" class="button premium-cta">
+        <a href="#premium-checkout" class="button premium-cta">
           {{ shared__button__get-premium }}
         </a>  
       </div>  
@@ -134,7 +127,7 @@ unadblock=1
           {{ anti-adblock-pass__plan-2__subheading }}
         </p>
         <div class="premium-plan__button__container">
-          <a href="#" class="button premium-cta">
+          <a href="#premium-checkout" class="button premium-cta">
             {{ shared__button__get-premium }}
           </a>  
         </div>
@@ -221,7 +214,7 @@ unadblock=1
       </article>
     
       <div class="button__container">
-        <a href="#" class="button premium-cta">
+        <a href="#premium-checkout" class="button premium-cta">
           {{ shared__button__get-premium }}
         </a>  
       </div>
@@ -231,21 +224,8 @@ unadblock=1
   </div><!-- .container -->
 </section><!-- .section-4 -->
 
-<? include adblock/premium_only/checkout_flow ?>
-<script>
-  if (typeof _logV2MiscButtonClick == "function") {
-    const ctaButtons = Array.from(document.querySelectorAll(".premium-cta"));
-    ctaButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        _logV2MiscButtonClick("aap-cta", {
-          ctaIndex: ctaButtons.indexOf(button)
-        });
-      });
-    });
-  }
-</script>
+<? include premium/checkout ?>
 <script src="/currency"></script>
 <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-<script src="/adblock/anti-adblock-pass/payment_libs.js"></script>
-<script src="/adblock/anti-adblock-pass/payment.js"></script>
+<script src="/premium/checkout.js" type="module"></script>
 <script src="/adblock/anti-adblock-pass/index.js"></script>
