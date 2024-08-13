@@ -134,7 +134,7 @@ export const checkout = adblock.api.checkout = function checkout({ plan, currenc
         userid: premiumId,
         tracking: trackingId,
         testmode: paddleEnvironment == "sandbox",
-        country: "unknown",
+        country: adblock.settings.country || "unknown",
         ga_id: "",
         premium: "false",
         premium_cid: "0",

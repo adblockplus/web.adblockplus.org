@@ -291,7 +291,7 @@ const checkout = adblock.api.checkout = function checkout({currency, frequency, 
     "userid": premiumId,
     "tracking": trackingId,
     "locale": language,
-    "country": "unknown", // ABP doesn't have generic geo location yet
+    "country": adblock.settings.country || "unknown", // ABP doesn't have generic geo location yet
     "ga_id": "", // ABP doesn't track GA
     "premium": false, // ABP doesn't track premium && cid/sid
     "premium_cid": "0", // ^

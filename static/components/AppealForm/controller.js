@@ -123,7 +123,7 @@ appealForm.events.on(AppealForm.EVENTS.SUBMIT, (data) => {
     userid: productId == "ME" ? forceGetUserId() : "",
     tracking: recordTracking(),
     locale: "",
-    country: "unknown",
+    country: adblock.settings.country || "unknown",
     ga_id: "",
     premium: productId == "ME" ? "true" : "false",
     premium_cid: "0",

@@ -1100,7 +1100,7 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     userid: productId == "ME" ? forceGetUserId() : "",
     tracking: recordTracking(),
     locale: "",
-    country: "unknown",
+    country: adblock.settings.country || "unknown",
     ga_id: "",
     premium: productId == "ME" ? "true" : "false",
     premium_cid: "0",

@@ -69,6 +69,7 @@ function getPremiumUserIdOrUnknown() {
 }
 
 function getCountryCode() {
+    if (adblock && adblock.settings && adblock.settings.country) return adblock.settings.country;
     var _geoOptions = [
       (document.location.search.match(/(?:[?&])geo=([a-zA-Z0-9]+)/) || {})[1],
       (typeof adblockGeo === "object" && typeof adblockGeo.countryCode === "string") ? adblockGeo.countryCode : "unknown",
@@ -1570,7 +1571,7 @@ appealForm.events.on(_AppealForm_js__WEBPACK_IMPORTED_MODULE_1__.AppealForm.EVEN
     userid: productId == "ME" ? forceGetUserId() : "",
     tracking: recordTracking(),
     locale: "",
-    country: "unknown",
+    country: adblock.settings.country || "unknown",
     ga_id: "",
     premium: productId == "ME" ? "true" : "false",
     premium_cid: "0",
