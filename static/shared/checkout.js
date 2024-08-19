@@ -57,13 +57,13 @@ function getOperatingSystemCode() {
   else if (navigator.appVersion.includes("Mac")) char = "M";
   else if (navigator.appVersion.includes("X11")) char = "L";
   else if (navigator.appVersion.includes("Linux")) char = "L";
-  return `O${char}`;
+  return char;
 }
 
 function generateTrackingId(pageName, productName, premiumId) {
   if (!checkoutConfig.pageCodes.hasOwnProperty(pageName)) throw new Error("Unknown page");
   const pageCode = checkoutConfig.pageCodes[pageName];
-  const trackingId = `X0G0 F${getBrowserCode()}${getOperatingSystemCode()}${pageCode} ${premiumId}`;
+  const trackingId = `X0G0 F${getBrowserCode()}O${getOperatingSystemCode()}S${pageCode} ${premiumId}`;
   if (!checkoutConfig.plans.hasOwnProperty(productName)) throw new Error("Unknown product");
   const productCode = checkoutConfig.plans[productName].code;
   return productCode ? `${productCode} ${trackingId}` : trackingId;
