@@ -618,16 +618,24 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   card.scrollIntoView();
   await goto(steps.loading);
   await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
-  activatePremium().then(
-    () => {
-      if (currency && frequency && amount) {
-        goto(steps.activated, { currency, frequency, amount });
-      } else {
-        goto(steps.reactivated);
-      }
-    },
-    () => goto(steps.error)
-  );
+  if (!!document.documentElement.dataset.adblockPlusExtensionInfo) {
+    activatePremium().then(
+      () => {
+        if (currency && frequency && amount) {
+          goto(steps.activated, { currency, frequency, amount });
+        } else {
+          goto(steps.reactivated);
+        }
+      },
+      () => goto(steps.error)
+    );  
+  } else {
+    if (currency && frequency && amount) {
+      goto(steps.activated, { currency, frequency, amount });
+    } else {
+      goto(steps.reactivated);
+    }
+  }
 } else if (adblock.query.has("already-contributed")) {
   flow = "already-contributed";
   card.scrollIntoView();
