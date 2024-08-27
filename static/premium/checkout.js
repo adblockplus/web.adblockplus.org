@@ -986,16 +986,24 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   card.scrollIntoView();
   await goto(steps.loading);
   await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
-  activatePremium().then(
-    () => {
-      if (currency && frequency && amount) {
-        goto(steps.activated, { currency, frequency, amount });
-      } else {
-        goto(steps.reactivated);
-      }
-    },
-    () => goto(steps.error)
-  );
+  if (adblock.extensions.adblockPlus) {
+    activatePremium().then(
+      () => {
+        if (currency && frequency && amount) {
+          goto(steps.activated, { currency, frequency, amount });
+        } else {
+          goto(steps.reactivated);
+        }
+      },
+      () => goto(steps.error)
+    );  
+  } else {
+    if (currency && frequency && amount) {
+      goto(steps.activated, { currency, frequency, amount });
+    } else {
+      goto(steps.reactivated);
+    }
+  }
 } else {
   // if you don't begin an activation-handoff flow on load then the default
   // flow is "none" and the default step is steps.purchase
