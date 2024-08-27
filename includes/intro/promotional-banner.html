@@ -1,25 +1,26 @@
-<div id="promotional-banner" class="premium-only">
-  <section id="promotional-banner-container">
-    <div id="block-cookie-img-box">
-      <img id="block-cookie-logo" src="/img/premium-cookie-filled.svg" alt="">
+<div class="block-cookie-banner premium-only">
+  <div class="block-cookie-banner__container">
+    <div class="block-cookie-banner-start">
+      <img src="/img/premium-cookie-filled.svg" alt="" class="block-cookie-banner-start__image">
     </div>
-    <div id="promotional-banner-text">
-      <p id="promotiona-banner-heading">
-        <span id="promotional-new-badge">
-          {{ promotional-banner-badge NEW! }}
-        </span>
-        <span id="promotional-banner-title">
+    <div class="block-cookie-banner-middle">
+      <h2 class="block-cookie-banner-middle-heading">
+        <span class="block-cookie-banner-middle-heading__badge">{{ promotional-banner-badge NEW! }}</span>
+        <span class="block-cookie-banner-middle-heading__text">
           {{ promotional-banner-heading Block annoying cookie banners }}
         </span>
-      </p>
-      <p class="promotional-banner-text" >
+      </h2>
+      <p class="block-cookie-banner-middle-body__text" >
         {{ promotional-banner-paragraph-1 Tired of those frustrating pop-ups about cookies on every website? Start blocking them with Adblock Plus Premium and enjoy a better browsing experience today. }}
       </p>
-    </div>
-    <div id="learn-more-section">
-      <a id="learn-more-btn" href="https://accounts.adblockplus.org/block-cookie-banners?s=hpban">
+      <a href="https://accounts.adblockplus.org/block-cookie-banners?s=hpban" class="block-cookie-banner-middle__button block-cookie-banner__button">
         {{ promotional-banner-button Learn More }}
       </a>
     </div>
-  </section>
+    <div class="block-cookie-banner-end">
+      <a href="https://accounts.adblockplus.org/block-cookie-banners?s=hpban" class="block-cookie-banner-end__button block-cookie-banner__button">
+        {{ promotional-banner-button Learn More }}
+      </a>
+    </div>
+  </div>
 </div>
