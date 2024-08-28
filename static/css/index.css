@@ -757,6 +757,10 @@ html[dir="rtl"] #intro-standard ul li
   .block-cookie-banner-start {
     display: block;
   }
+
+  .block-cookie-banner-start__image {
+    max-height: 90%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -764,6 +768,7 @@ html[dir="rtl"] #intro-standard ul li
     position: absolute;
     left: 2rem;
     top: 1rem;
+    max-height: none;
   }
 }
 
@@ -841,6 +846,13 @@ html[dir="rtl"] #intro-standard ul li
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
   padding: 0.5rem 1rem;
   width: fit-content;
+}
+
+.block-cookie-banner__button:hover,
+.block-cookie-banner__button:active,
+.block-cookie-banner__button:focus {
+  background-color: #0679b4;
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
