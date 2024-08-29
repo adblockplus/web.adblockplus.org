@@ -42,7 +42,7 @@
   "installed-main__block-5__item-2": {
     "message": "Von 8 bis 17 Uhr kannst du uns auf unserem Portal eine E-Mail senden"
   },
-  "appeal-form-checkout__submit": {
+  "installed-payment-checkout__submit": {
     "message": "Jetzt kaufen"
   },
   "installed-main__block-6__heading-1": {
@@ -54,55 +54,36 @@
   "installed-main__block-4__paragraph-2": {
     "message": "Um das bestmögliche Nutzererlebnis zu gewährleisten, sammelt die Adblock Plus-Erweiterung automatisch einige Nutzerdaten. Du kannst die Datenerhebung <a>hier</a> untersagen."
   },
-  "product__premium": {
-    "message": "Adblock Plus Premium"
+  "installed-payment-header__heading": {
+    "description": "heading",
+    "message": "Nenne einen fairen Betrag:"
   },
-  "payment-reward": {
-    "message": "Sehr anständig! Für eine Spende von <span>35,00</span> bekommst du <span>Adblock Plus Premium</span>. Vielen Dank für deine Unterstützung."
+  "installed-payment-frequency__heading--once": {
+    "description": "heading",
+    "message": "Spende nur <strong>einmal</strong>:"
   },
-  "payment-suffix__monthly": {
-    "message": "/monatlich"
+  "installed-payment-frequency__heading--monthly": {
+    "description": "heading",
+    "message": "Oder spende <strong>monatlich</strong>:"
   },
-  "payment-suffix__yearly": {
-    "message": "/jährlich"
+  "installed-payment-frequency__heading--yearly": {
+    "description": "heading",
+    "message": "Oder spende <strong>jährlich</strong>:"
   },
-  "installed-payment-option--custom": {
-    "message": "$ üblich"
+  "installed-payment__error--once": {
+    "description": "notice",
+    "message": "Hoppla! Zur Abdeckung der Gebühren beträgt der einmalige Spendenbetrag <span>$</span><span>5</span>."
   },
-  "installed-hero__heading": {
-    "message": "Vielen Dank für die Installation von Adblock Plus!"
+  "installed-payment__error--monthly": {
+    "description": "notice",
+    "message": "Hoppla! Zur Abdeckung der Gebühren beträgt der monatliche Mindestbetrag <span>$</span><span>1,99</span>."
   },
-  "installed-hero__subheading": {
-    "message": "Adblock Plus ist Honorware, das heißt, dass <strong>wir einander vertrauen</strong>, uns anständig zu verhalten."
+  "installed-payment__error--yearly": {
+    "description": "notice",
+    "message": "Hoppla! Zur Abdeckung der Gebühren beträgt der jährliche Mindestbetrag <span>$</span><span>5</span>."
   },
-  "installed-hero__feature-1": {
-    "message": "<strong>Du</strong> wählst einen Preis, den du dir leisten kannst."
-  },
-  "installed-hero__feature-2": {
-    "message": "Du unterstützt damit Adblock Plus."
-  },
-  "installed-hero__feature-3": {
-    "message": "Bis zu 60 Tage <strong>volle Rückerstattung</strong> − falls es dir nicht gefällt."
-  },
-  "installed-payment-currency__label": {
-    "message": "Wähle deine gewünschte Spende aus"
-  },
-  "installed-payment-yearly__heading": {
-    "message": "Jährlich"
-  },
-  "installed-payment-yearly__feature-1": {
-    "message": "Werbung und Pop-ups blockieren"
-  },
-  "installed-payment-yearly__feature-2": {
-    "message": "Jederzeit kündbar"
-  },
-  "installed-payment-monthly__heading": {
-    "message": "Monatlich"
-  },
-  "installed-payment-checkout__button": {
-    "message": "Kauf abschließen"
-  },
-  "installed-footer__block-2__paragraph-1": {
-    "message": "Copyright © 2023 Alle Rechte vorbehalten. Adblock Plus<sup>®</sup> ist ein eingetragenes Markenzeichen der <a>eyeo GmbH</a> − <a>Datenschutzerklärung</a>"
+  "installed-payment-checkout__title": {
+    "description": "item being paid for",
+    "message": "Beitrag zu Adblock Plus"
   }
 }

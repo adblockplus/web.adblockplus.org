@@ -42,67 +42,48 @@
   "installed-main__block-5__item-2": {
     "message": "Puedes enviarnos un correo electrónico en nuestro portal de 8:00 a 17:00"
   },
-  "appeal-form-checkout__submit": {
+  "installed-payment-checkout__submit": {
     "message": "Finaliza tu compra"
   },
   "installed-main__block-6__heading-1": {
     "message": "Bloquea mucho más que anuncios"
   },
   "installed-main__block-6__paragraph-1": {
-    "message": "Disfruta de una mejor experiencia de navegación con Adblock Plus Premium y bloquea distracciones como avisos de cookies, vídeos flotantes, solicitudes de encuestas y mucho más. ¡Apúntate ya a <a>Adblock Plus Premium</a>!"
+    "message": "Disfruta de una mejor experiencia de navegación con AdBlock Plus Premium y bloquea distracciones como avisos de cookies, vídeos flotantes, solicitudes de encuestas y mucho más. ¡Apúntate ya a <a>AdBlock Plus Premium</a>!"
   },
   "installed-main__block-4__paragraph-2": {
     "message": "Con el fin de ofrecer la mejor experiencia de usuario/a posible, la extensión Adblock Plus recopila algunos datos de manera predeterminada. Puedes optar por excluirte de la recopilación de datos <a>aquí</a>."
   },
-  "product__premium": {
-    "message": "Adblock Plus Premium"
+  "installed-payment-header__heading": {
+    "description": "heading",
+    "message": "Indica aquí la cantidad que te parezca apropiada:"
   },
-  "payment-reward": {
-    "message": "¡Genial! Con una contribución de <span>35,00</span> se obtiene <span>Adblock Plus Premium</span>. Gracias por tu ayuda."
+  "installed-payment-frequency__heading--once": {
+    "description": "heading",
+    "message": "Realiza una contribución <strong>puntual</strong>:"
   },
-  "payment-suffix__monthly": {
-    "message": "/mes"
+  "installed-payment-frequency__heading--monthly": {
+    "description": "heading",
+    "message": "O una contribución <strong>mensual</strong>:"
   },
-  "payment-suffix__yearly": {
-    "message": "/año"
+  "installed-payment-frequency__heading--yearly": {
+    "description": "heading",
+    "message": "O una contribución <strong>anual</strong>:"
   },
-  "installed-payment-option--custom": {
-    "message": "$ personalizado"
+  "installed-payment__error--once": {
+    "description": "notice",
+    "message": "¡Ups! Para ayudar a cubrir los gastos, el importe mínimo de la contribución puntual es de <span>5 </span><span>$</span>."
   },
-  "installed-hero__heading": {
-    "message": "Gracias por instalar Adblock Plus."
+  "installed-payment__error--monthly": {
+    "description": "notice",
+    "message": "¡Ups! Para ayudar a cubrir los gastos, el importe mínimo de la contribución mensual es de <span>1,99 </span><span>$</span>."
   },
-  "installed-hero__subheading": {
-    "message": "Adblock Plus se basa en el honor, lo que significa que <strong>confiamos los unos en los otros</strong> para ser amables."
+  "installed-payment__error--yearly": {
+    "description": "notice",
+    "message": "¡Ups! Para ayudar a cubrir los gastos, el importe mínimo de la contribución anual es de <span>5 </span><span>$</span>."
   },
-  "installed-hero__feature-1": {
-    "message": "<strong>Te</strong> dejamos elegir el precio que puedes permitirte."
-  },
-  "installed-hero__feature-2": {
-    "message": "Tu contribución ayuda a Adblock Plus."
-  },
-  "installed-hero__feature-3": {
-    "message": "<strong>Reembolso completo</strong> de hasta 60 días si no te encanta."
-  },
-  "installed-payment-currency__label": {
-    "message": "Selecciona tu contribución preferida"
-  },
-  "installed-payment-yearly__heading": {
-    "message": "Anual"
-  },
-  "installed-payment-yearly__feature-1": {
-    "message": "Bloquea anuncios y elementos emergentes"
-  },
-  "installed-payment-yearly__feature-2": {
-    "message": "Cancela en cualquier momento"
-  },
-  "installed-payment-monthly__heading": {
-    "message": "Mensual"
-  },
-  "installed-payment-checkout__button": {
-    "message": "Finalizar la compra"
-  },
-  "installed-footer__block-2__paragraph-1": {
-    "message": "Copyright © 2023. Todos los derechos reservados. Adblock Plus<sup>®</sup> es una marca comercial registrada de <a>eyeo GmbH</a> - <a>Política de privacidad</a>"
+  "installed-payment-checkout__title": {
+    "description": "item being paid for",
+    "message": "Aportación a Adblock Plus"
   }
 }
