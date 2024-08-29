@@ -62,13 +62,13 @@ const paymentCurrency = paymentForm.querySelector(".installed-payment-header__se
 
 function constructPaymentCurrencies() {
   for (const currency in PAYMENT_CONFIG) {
-    if (currency == defaultCurrency) continue;
     const option = document.createElement("option");
     option.textContent = currency;
     paymentCurrency.appendChild(option);
   }
   paymentCurrency.value = defaultCurrency;
 }
+paymentCurrency.innerHTML = "";
 constructPaymentCurrencies();
 
 function getSelectedCurrency() {
