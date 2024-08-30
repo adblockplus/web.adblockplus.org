@@ -8,4 +8,4 @@ const docList = document.documentElement.classList;
 docList.add(adblock.settings.country);
 if (adblock.settings.restrictPrivacy) docList.add("restrict-privacy");
 if (adblock.settings.restrictPremium) docList.add("restrict-premium");
-if (document.documentElement.lang != "de") window.location.href = `${window.location.origin}/de${window.location.pathname}${window.location.search}`;
+
