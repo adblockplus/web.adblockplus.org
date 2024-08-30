@@ -16,7 +16,7 @@ const UNIQUE_CURRENCIES = {"AU":"AUD","CA":"CAD","CH":"CHF","GB":"GBP","JP":"JPY
 
 const DE_EXCEPTION = `// EXCEPTION: Redirect all DE country to DE language when language is not specified; overriding browser preferred language.
 const pathSplit = location.pathname.split("/");
-const pathLanguage = pathSplit[1].test(/^[a-z]{2}[\-\_]{0,1}[A-Z]{0,2}$/) ? pathSplit[1] : null;
+const pathLanguage = /^[a-z]{2}[\-\_]{0,1}[A-Z]{0,2}$/.test(pathSplit[1]) ? pathSplit[1] : null;
 const pageLanguage = document.documentElement.lang;
 if (pageLanguage != "de" && pathLanguage == null) location.href = location.origin + "/de" + location.pathname + location.search + location.hash;
 `;
