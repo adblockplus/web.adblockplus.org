@@ -1,3 +1,5 @@
+import { checkout, paddleEvents } from "../shared/checkout.js";
+
 ////////////////////////////////////////////////////////////////////////////////
 // GLOBALS
 ////////////////////////////////////////////////////////////////////////////////
@@ -5,243 +7,51 @@
 const REQUEST_TIMEOUT = parseInt(adblock.query.get("premium-checkout__request-timeout"), 10) || 15000;
 const ACTIVATION_DELAY = parseInt(adblock.query.get("premium-checkout__activation-delay"), 10) || 6000;
 
-const PADDLE = adblock.config.paddle = {
-  ENVIRONMENTS: {
-    LIVE: 164164,
-    TEST: 11004
+const PREMIUM_PRICES = {
+  "USD": {
+    "monthly": 400,
+    "yearly": 4000,
   },
-  PRODUCTS: {
-    TEST: {
-      "USD": {
-        "monthly": {
-          amount: "400",
-          product: 68391,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 68392,
-        },
-      },
-      "EUR": {
-        "monthly": {
-          amount: "400",
-          product: 68393,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 68394,
-        },
-      },
-      "CAD": {
-        "monthly": {
-          amount: "400",
-          product: 68592,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 68593,
-        },
-      },
-      "GBP": {
-        "monthly": {
-          amount: "400",
-          product: 68594,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 68595,
-        },
-      },
-      "AUD": {
-        "monthly": {
-          amount: "400",
-          product: 68590,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 68591,
-        },
-      },
-      "NZD": {
-        "monthly": {
-          amount: "400",
-          product: 68596,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 68597,
-        },
-      },
-      "CHF": {
-        "monthly": {
-          amount: "400",
-          product: 68598,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 68599,
-        },
-      },
-      "PLN": {
-        "monthly": {
-          amount: "1499",
-          product: 68604,
-        },
-        "yearly": {
-          amount: "14999",
-          product: 68510,
-        },
-      },
-      "JPY": {
-        "monthly": {
-          amount: "600",
-          product: 68600,
-        },
-        "yearly": {
-          amount: "6000",
-          product: 68601,
-        },
-      },
-      "RUB": {
-        "monthly": {
-          amount: "35000",
-          product: 68602,
-        },
-        "yearly": {
-          amount: "350000",
-          product: 68603,
-        },
-      }
-    },
-    LIVE: {
-      "USD": {
-        "monthly": {
-          amount: "400",
-          product: 877570,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 877572,
-        },
-      },
-      "EUR": {
-        "monthly": {
-          amount: "400",
-          product: 877578,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 877579,
-        }
-      },
-      "CAD": {
-        "monthly": {
-          amount: "400",
-          product: 879254,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 879263,
-        },
-      },
-      "GBP": {
-        "monthly": {
-          amount: "400",
-          product: 879255,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 879264,
-        },
-      },
-      "AUD": {
-        "monthly": {
-          amount: "400",
-          product: 879256,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 879265,
-        },
-      },
-      "NZD": {
-        "monthly": {
-          amount: "400",
-          product: 879257,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 879266,
-        },
-      },
-      "CHF": {
-        "monthly": {
-          amount: "400",
-          product: 879258,
-        },
-        "yearly": {
-          amount: "4000",
-          product: 879267,
-        },
-      },
-      "PLN": {
-        "monthly": {
-          amount: "1499",
-          product: 879259,
-        },
-        "yearly": {
-          amount: "14999",
-          product: 879268,
-        },
-      },
-      "JPY": {
-        "monthly": {
-          amount: "600",
-          product: 879260,
-        },
-        "yearly": {
-          amount: "6000",
-          product: 879269,
-        },
-      },
-      "RUB": {
-        "monthly": {
-          amount: "35000",
-          product: 879261,
-        },
-        "yearly": {
-          amount: "350000",
-          product: 879270,
-        },
-      }
-    }
+  "EUR": {
+    "monthly": 400,
+    "yearly": 4000,
   },
-  // Paddle uses some non-standard/different-stand locale codes
-  LOCALES: {
-    "zh_CN": "zh-Hans",
-    "sv": "da",
-    "pt_BR": "pt",
-    "ko_KR": "ko",
-    "pl_PL": "pl",
-    "ca": "en",
-    "uk": "en",
+  "CAD": {
+    "monthly": 400,
+    "yearly": 4000,
+  },
+  "GBP": {
+    "monthly": 400,
+    "yearly": 4000,
+  },
+  "AUD": {
+    "monthly": 400,
+    "yearly": 4000,
+  },
+  "NZD": {
+    "monthly": 400,
+    "yearly": 4000,
+  },
+  "CHF": {
+    "monthly": 400,
+    "yearly": 4000,
+  },
+  "PLN": {
+    "monthly": 1499,
+    "yearly": 14999,
+  },
+  "JPY": {
+    "monthly": 600,
+    "yearly": 6000,
+  },
+  "RUB": {
+    "monthly": 35000,
+    "yearly": 350000,
   }
 };
 
 const language = document.documentElement.getAttribute("lang") || "en";
-const environment = adblock.query.has("testmode") ? "TEST" : "LIVE";
-const paddleId = PADDLE.ENVIRONMENTS[environment];
-const paddleTitle = "Adblock Plus Premium";
-const paddleLocale = PADDLE.LOCALES[language] || language;
-const paddleProducts = PADDLE.PRODUCTS[environment];
-const customAmountServiceURL = "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link";
-const defaultCurrency = Object.keys(paddleProducts).includes(adblock.settings.currency)
-  ? adblock.settings.currency
-  : "USD";
-
-if (environment == "TEST") {
-  Paddle.Environment.set("sandbox");
-}
+const defaultCurrency = adblock.settings.defaultCurrency || adblock.settings.currency || "USD";
 
 /** the locale of the paddle checkout */
 
@@ -361,97 +171,19 @@ function getCurrencySymbol(currencyCode) {
 ////////////////////////////////////////////////////////////////////////////////
 // PADDLE SETUP
 ////////////////////////////////////////////////////////////////////////////////
-Paddle.Setup({
-  vendor: paddleId,
-  eventCallback: event => {
-    if (typeof event == "object" && event && typeof event.event == "string") {
-      if (event.event == "Checkout.Customer.Details") {
-        if (typeof event.eventData == "object" && event.eventData && typeof event.eventData.user == "object" && event.eventData.user && event.eventData.user.email) {
-          email = event.eventData.user.email;
-        }
-      } else if (event.event == "Checkout.Loaded") {
-        checkoutLog("premium-checkout__paddle-loaded");
-      } else if (event.event == "Checkout.Payment.Selection") {
-        checkoutLog("premium-checkout__paddle-payment");
-      } else if (event.event == "Checkout.Complete") {
-        checkoutLog("premium-checkout__paddle-complete");
-      }
-    }
-  },
+paddleEvents.on("Checkout.Customer.Details", () => {
+  if (typeof event.eventData == "object" && event.eventData && typeof event.eventData.user == "object" && event.eventData.user && event.eventData.user.email) {
+    email = event.eventData.user.email;
+  }
 });
+
+paddleEvents.on("Checkout.Loaded", () => checkoutLog("premium-checkout__paddle-loaded"));
+paddleEvents.on("Checkout.Payment.Selection", () => checkoutLog("premium-checkout__paddle-payment"))
+paddleEvents.on("Checkout.Complete", () => checkoutLog("premium-checkout__paddle-complete"))
 
 ////////////////////////////////////////////////////////////////////////////////
 // PROMISIFIED REQUEST WRAPPERS
 ////////////////////////////////////////////////////////////////////////////////
-
-// CHECKOUT ////////////////////////////////////////////////////////////////////
-
-/**
- * Checkout with Paddle
- * @param {string} product paddle product id
- * @param {string} currency 3 letter currency
- * @param {string} frequency yearly, monthly, once
- * @param {string} amount cent amount
- * @returns {Promise}
- * @todo import from shared source
- * @todo add retries
- */
-function checkout(product, currency, frequency, amount) {
-  return new Promise((resolve, reject) => {
-    checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
-    const clickTimestamp = Date.now();
-    localStorage.setItem("contributionInfo", JSON.stringify({
-      amount: amount,
-      frequency: frequency,
-      processor: "paddle",
-      currency: currency,
-      lang: language,
-      source: document.documentElement.getAttribute("data-page"),
-      clickTs: clickTimestamp
-    }));
-    const paddleOptions = {
-      title: paddleTitle,
-      product: product,
-      allowQuantity: false,
-      locale: paddleLocale,
-      closeCallback: reject,
-    };
-    const params = new URLSearchParams();
-    params.set("premium-checkout__handoff", 1);
-    params.set("premium-checkout__flow", document.documentElement.getAttribute("data-page"));
-    params.set("premium-checkout__userid", userid);
-    params.set("premium-checkout__currency", currency);
-    params.set("premium-checkout__amount", amount);
-    params.set("premium-checkout__frequency", frequency);
-    params.set("premium-checkout__language", language);
-    params.set("premium-checkout__timestamp", clickTimestamp);
-    if (adblock.query.has("legal")) params.set("legal", 1);
-    paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
-    const adblockOptions = {
-      passthrough: {
-        "testmode": !!environment === "TEST",
-        "userid": userid,
-        "tracking": generateTrackingId(userid),
-        "locale": language,
-        "country": adblock.settings.country || "unknown", // ABP doesn't have generic geo location yet
-        "ga_id": "", // ABP doesn't track GA
-        "premium": false, // ABP doesn't track premium && cid/sid
-        "premium_cid": "0", // ^
-        "premium_sid": "0", // ^
-        "currency": currency,
-        "recurring": true,
-        "subType": frequency,
-        "experiment": "", // ABP doesn't support these experiments/variants
-        "experiment_id": "", // ^
-        "variant": "", // ^
-        "variant_index": -1, // ^
-        "amount_cents": amount,
-        "cancel_url": location.href,
-      }
-    };
-    Paddle.Checkout.open(Object.assign({}, paddleOptions, adblockOptions));
-  });
-}
 
 // ACTIVATION //////////////////////////////////////////////////////////////////
 
@@ -627,7 +359,7 @@ class PurchaseStep extends Step {
     super(element, name);
 
     const currencySelect = this.element.querySelector(".premium-checkout-header__select");
-    for (const currency in paddleProducts) {
+    for (const currency in PREMIUM_PRICES) {
       const currencyOption = document.createElement("option");
       currencyOption.textContent = currency;
       currencyOption.value = currency;
@@ -674,7 +406,7 @@ class PurchaseStep extends Step {
       const frequency = priceButton.value;
       priceButton.querySelector(".premium-checkout-purchase-price__amount").textContent = getDollarString(
         currency, 
-        paddleProducts[currency][frequency].amount
+        PREMIUM_PRICES[currency][frequency]
       );
     });
     this.fire("currency-change", currency);
@@ -801,7 +533,7 @@ class Page {
 
   setCurrency(currency) {
     document.querySelectorAll(".premium-plan-price").forEach(price => {
-      const amount = paddleProducts[currency][price.dataset.frequency].amount;
+      const amount = PREMIUM_PRICES[currency][price.dataset.frequency];
       price.textContent = getDollarString(currency, amount);
     });
   }
@@ -853,12 +585,17 @@ steps.purchase.on("checkout-now", async () => {
   flow = "purchase";
   const frequency = steps.purchase.getSelectedValue();
   const currency = steps.purchase.getCurrency();
-  const amount = paddleProducts[currency][frequency].amount;
-  const productId = paddleProducts[currency][frequency].product;
+  const amount = PREMIUM_PRICES[currency][frequency];
+  const plan = "premium";
   await goto(steps.loading);
-  checkout(productId, currency, frequency, amount)
+  checkoutLog("premium-checkout__checkout", { plan, currency, frequency, amount });
+  checkout({ plan, currency, frequency, amount })
   .then(
-    async () => {
+    async (response) => {
+      if (typeof response == "object" && response.from == "Paddle.Close") {
+        checkoutLog("premium-checkout__paddle-closed", { productId: plan, currency, frequency, amount });
+        goto(steps.purchase);
+      }
       await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
       activatePremium()
       .then(
@@ -867,8 +604,8 @@ steps.purchase.on("checkout-now", async () => {
       );
     },
     () => {
-      checkoutLog("premium-checkout__checkout-rejected", { productId, currency, frequency, amount });
-      goto(steps.purchase);
+      checkoutLog("premium-checkout__checkout-rejected", { productId: plan, currency, frequency, amount });
+      goto(steps.error);
     }
   )
 });

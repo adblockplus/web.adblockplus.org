@@ -1,15 +1,19 @@
 /* global adblock, Paddle */
 import { paddleConfig } from "./paddleConfig.js";
 import { checkoutConfig } from "./checkoutConfig.js";
+import Events from "./events.js";
 
 const paddleEnvironment = location.hostname == "localhost" || adblock.query.has("testmode") ? "sandbox" : "live";
 
+export const paddleEvents = new Events();
+let vendor = paddleConfig.environments.live.vendor;
 if (paddleEnvironment == "sandbox") {
   Paddle.Environment.set("sandbox");
-  Paddle.Setup({ vendor: paddleConfig.environments.sandbox.vendor });
-} else {
-  Paddle.Setup({ vendor: paddleConfig.environments.live.vendor });
+  vendor = paddleConfig.environments.sandbox.vendor
 }
+Paddle.Setup({ vendor, eventCallback: event => {
+  paddleEvents.fire(event.event, event);
+}});
 
 function generatePremiumId() {
   const timestamp = (Date.now()) % 1e8; // 8 digits from end of timestamp
@@ -80,7 +84,7 @@ function isValidTrackingId(planName, trackingId) {
   return true;
 }
 
-export const checkout = adblock.api.checkout = function checkout({ plan, currency, frequency, amount}) {
+export const checkout = adblock.api.checkout = function checkout({ plan, currency, frequency, amount }) {
   return new Promise((resolve, reject) => {
     try {
 
@@ -126,6 +130,7 @@ export const checkout = adblock.api.checkout = function checkout({ plan, currenc
       successParams.set("premium-checkout__frequency", frequency);
       successParams.set("premium-checkout__language", locale);
       successParams.set("premium-checkout__timestamp", clickTimestamp);
+      if (adblock.query.has("legal")) successParams.set("legal", adblock.query.get("legal"));
   
       const successURL = `${checkoutConfig.plans[plan].successURL}?${successParams.toString()}`;
   
