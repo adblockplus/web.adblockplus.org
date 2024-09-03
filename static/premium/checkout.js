@@ -922,6 +922,36 @@ steps.verifyCode.on("submit", async () => {
   });
 });
 
+// DOWNLOAD BUTTON SETUP ///////////////////////////////////////////////////////
+
+if (!adblock.extensions.adblockPlus) {
+  document.querySelectorAll(".download-button").forEach(button => {
+    const browser = getBrowser();
+    if (browser == "F") {
+      button.href = "https://eyeo.to/adblockplus/firefox_install/";
+      button.textContent = document.querySelector("#download-label-firefox").textContent;
+      button.parentElement.classList.add("firefox");
+    } else if (browser == "CM") {
+      button.href = "https://eyeo.to/adblockplus/edge_chromium_install/";
+      button.textContent = document.querySelector("#download-label-edge").textContent;
+      button.parentElement.classList.add("edge");
+    } else {
+      button.href = "https://eyeo.to/adblockplus/chrome_install/";
+      button.textContent = document.querySelector("#download-label-chrome").textContent;
+      button.parentElement.classList.add("chrome");
+    }
+    button.setAttribute("target", "_blank");
+    button.style.display = "block";
+    button.addEventListener("click", event => {
+      setTimeout(() => {
+        window.location.href = "https://welcome.adblockplus.org/installed?install-and-activate&" + adblock.query.toString();
+      }, 1000);
+    });
+  });
+  document.querySelectorAll(".install-and-activate").forEach(div => div.removeAttribute("hidden"));
+  document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.style.display = "none");
+}
+
 // ACTIVATION HANDOFF FLOW /////////////////////////////////////////////////////
 
 // you can hand a purchase flow on another page off to this page via the
@@ -956,16 +986,24 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   card.scrollIntoView();
   await goto(steps.loading);
   await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
-  activatePremium().then(
-    () => {
-      if (currency && frequency && amount) {
-        goto(steps.activated, { currency, frequency, amount });
-      } else {
-        goto(steps.reactivated);
-      }
-    },
-    () => goto(steps.error)
-  );
+  if (adblock.extensions.adblockPlus) {
+    activatePremium().then(
+      () => {
+        if (currency && frequency && amount) {
+          goto(steps.activated, { currency, frequency, amount });
+        } else {
+          goto(steps.reactivated);
+        }
+      },
+      () => goto(steps.error)
+    );  
+  } else {
+    if (currency && frequency && amount) {
+      goto(steps.activated, { currency, frequency, amount });
+    } else {
+      goto(steps.reactivated);
+    }
+  }
 } else {
   // if you don't begin an activation-handoff flow on load then the default
   // flow is "none" and the default step is steps.purchase

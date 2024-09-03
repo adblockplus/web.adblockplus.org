@@ -206,3 +206,20 @@
 <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
 <script src="/currency"></script>
 <script src="/installed/installed.js" type="module"></script>
+
+<script>
+  if (adblock.query.has("install-and-activate")) {
+    try {
+      localStorage.setItem("abInstallAndActivate", adblock.query.toString());
+      document.documentElement.innerHTML = "<h1>You may close this tab or window</h1>";
+    } catch (error) {}
+  } else {
+    try {
+      const installAndActivate = localStorage.getItem("abInstallAndActivate");
+      if (typeof installAndActivate == "string") {
+        localStorage.removeItem("abInstallAndActivate");
+        window.location.href = "https://accounts.adblockplus.org/premium?" + installAndActivate;
+      }
+    } catch (error) {}
+  }
+</script>
