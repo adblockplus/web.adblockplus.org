@@ -1,5 +1,5 @@
 import "/js/vendor/NumberFormat.min.js";
-import { getDollarNumber, getDollarString } from "../shared/currency.js";
+import { getDollarNumber, getCentNumber, getDollarString } from "../shared/currency.js";
 import { checkout } from "../shared/checkout.js"
 
 const PAYMENT_CONFIG = {
@@ -81,7 +81,13 @@ function getSelectedFrequency(selected) {
 
 function getSelectedAmount(selected) {
   return selected.value == "custom" 
-    ? selected.closest(".installed-payment-amount").querySelector(".installed-payment-amount__input").value
+    ? getCentNumber(
+        getSelectedCurrency(),
+        selected
+          .closest(".installed-payment-amount")
+          .querySelector(".installed-payment-amount__input")
+          .value
+      )
     : selected.value;
 }
 
