@@ -108,7 +108,10 @@ html[dir="rtl"] #intro-standard ul li
  * #intro-standard
  *****************************************************************************/
 
-#intro-standard { padding-top: 3em; }
+#intro-standard {
+  padding-top: 3em;
+  padding-bottom: 3rem;
+}
 
 @media (min-width: 576px) and (max-width: 1023px)
 {
@@ -122,110 +125,9 @@ html[dir="rtl"] #intro-standard ul li
 
 @media(min-width: 1024px)
 {
-  #intro-standard { padding-top: 8em; }
-}
-
-/* Applied ::after to enable use of opacity */
-#intro-graphic-background::after
-{
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0.5;
-  background-image: url("/img/hero-background.svg");
-  background-repeat: no-repeat;
-  background-position: top -520px right -1120px;
-  z-index: -1;
-}
-
-@media(min-width: 768px)
-{
-  #intro-graphic-background::after
-  {
-    width: 50%;
-    opacity: 1;
-    background-position: top -540px left -400px;
-  }
-}
-
-@media(min-width: 1024px)
-{
-  #intro-graphic-background::after { background-position: top -590px left -330px; }
-}
-
-#intro-graphic
-{
-  padding-top: 3em;
-  padding-bottom: 3em;
-  overflow: hidden;
-}
-
-@media(max-width: 1024px)
-{
-  #intro-graphic
-  {
-    width: 100%;
-  }
-}
-
-@media(min-width: 1024px)
-{
-  #intro-graphic
-  {
-    padding-top: 5em;
-    padding-bottom: 5em;
-  }
-}
-
-/* Fixes img max-width bug in IE */
-#intro-graphic img
-{
-  width: 100%;
-}
-
-@media (max-width: 1024px)
-{
-  #intro-graphic img
-  {
-    max-width: 350px;
-  }
-}
-
-@media (max-width: 767px)
-{
-  [dir="ltr"] #intro-graphic { direction: rtl; }
-
-  [dir="rtl"] #intro-graphic { direction: ltr; }
-}
-
-#intro-graphic-small
-{
-  min-width: 50%;
-  max-width: 300px;
-  margin: 0 auto;
-  display: block;
-}
-
-@media (min-width: 1025px)
-{
-  #intro-graphic-small { display: none; }
-}
-
-#intro-graphic-large { display: none; }
-
-@media (min-width: 1025px)
-{
-  #intro-graphic-large { display: block; }
-}
-
-@media (min-width: 768px) and (max-width: 1023px)
-{
-  #intro-graphic-small
-  {
-    max-width: unset;
+  #intro-standard {
+    padding-top: 8em;
+    padding-bottom: 8rem;
   }
 }
 
@@ -250,6 +152,26 @@ html[dir="rtl"] #intro-standard ul li
   #intro-standard h1 { font-size: 50px; }
 
   [lang="ru"] #intro-standard h1 { font-size: 42px; }
+}
+
+@media(max-width: 1024px) {
+  #intro-graphic {
+    width: 100%;
+  }
+}
+
+#intro-graphic__image {
+  display: block;
+  margin: 0 auto;
+  padding: 0 0 2rem 0;
+  height: 41rem;
+  width: auto;
+}
+
+@media (min-width: 1024px) {
+  #intro-graphic__image {
+    padding: 4rem 0;
+  }
 }
 
 #hero-download-tos
