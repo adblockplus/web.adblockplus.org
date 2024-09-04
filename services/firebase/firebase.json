@@ -24,6 +24,11 @@
         "type": 301
       },
       {
+        "regex": "/(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?installed-2309/?$",
+        "destination": "/installed",
+        "type": 301
+      },
+      {
         "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?(android|chrome|edge|firefox|internet-expolorer|opera|yandex-browser|safari)/?$",
         "destination": "/",
         "type": 301

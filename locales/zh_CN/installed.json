@@ -42,7 +42,7 @@
   "installed-main__block-5__item-2": {
     "message": "上午 8 时至下午 5 时可在我们的门户网站上向我们发送电子邮件"
   },
-  "appeal-form-checkout__submit": {
+  "installed-payment-checkout__submit": {
     "message": "完成购买"
   },
   "installed-main__block-6__heading-1": {
@@ -54,55 +54,36 @@
   "installed-main__block-4__paragraph-2": {
     "message": "为了提供最好的用户体验，Adblock Plus 扩展程序默认收集某些用户数据。您可以<a>在此</a>选择退出数据收集。"
   },
-  "product__premium": {
-    "message": "Adblock Plus Premium"
+  "installed-payment-header__heading": {
+    "description": "heading",
+    "message": "选择适当金额："
   },
-  "payment-reward": {
-    "message": "很好！捐赠 <span>35.00</span> 美元可获得 <span>Adblock Plus Premium</span>。感谢您的支持。"
+  "installed-payment-frequency__heading--once": {
+    "description": "heading",
+    "message": "<strong>一次性</strong>捐赠："
   },
-  "payment-suffix__monthly": {
-    "message": "/月"
+  "installed-payment-frequency__heading--monthly": {
+    "description": "heading",
+    "message": "或者<strong>按月</strong>捐赠："
   },
-  "payment-suffix__yearly": {
-    "message": "/年"
+  "installed-payment-frequency__heading--yearly": {
+    "description": "heading",
+    "message": "或者<strong>按年</strong>捐赠："
   },
-  "installed-payment-option--custom": {
-    "message": "$ 自定义"
+  "installed-payment__error--once": {
+    "description": "notice",
+    "message": "糟糕！为了支付相关费用，一次性捐赠金额最低为 <span></span><span>5 美元</span>。"
   },
-  "installed-hero__heading": {
-    "message": "感谢您安装 Adblock Plus！"
+  "installed-payment__error--monthly": {
+    "description": "notice",
+    "message": "糟糕！为了支付相关费用，每月捐赠金额最低为 <span></span><span>1.99 美元</span>。"
   },
-  "installed-hero__subheading": {
-    "message": "Adblock Plus 是自愿付费软件，这意味着<strong>我们信任用户</strong>。"
+  "installed-payment__error--yearly": {
+    "description": "notice",
+    "message": "糟糕！为了支付相关费用，每年捐赠金额最低为 <span></span><span>5 美元</span>。"
   },
-  "installed-hero__feature-1": {
-    "message": "我们让<strong>您</strong>自己选择可以接受的价格。"
-  },
-  "installed-hero__feature-2": {
-    "message": "支持 Adblock Plus"
-  },
-  "installed-hero__feature-3": {
-    "message": "<strong>如果您不喜欢我们的软件，60 天内</strong>可以获得全额退款。"
-  },
-  "installed-payment-currency__label": {
-    "message": "选择您偏好的捐赠方式"
-  },
-  "installed-payment-yearly__heading": {
-    "message": "年度"
-  },
-  "installed-payment-yearly__feature-1": {
-    "message": "拦截广告和弹出窗口"
-  },
-  "installed-payment-yearly__feature-2": {
-    "message": "随时取消"
-  },
-  "installed-payment-monthly__heading": {
-    "message": "月度"
-  },
-  "installed-payment-checkout__button": {
-    "message": "完成购买"
-  },
-  "installed-footer__block-2__paragraph-1": {
-    "message": "版权所有 © 2023 保留所有权利。Adblock Plus<sup>®</sup> 是 <a>eyeo GmbH</a> 的注册商标 - <a>隐私政策</a>"
+  "installed-payment-checkout__title": {
+    "description": "item being paid for",
+    "message": "助力 Adblock Plus"
   }
 }

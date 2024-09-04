@@ -42,7 +42,7 @@
   "installed-main__block-5__item-2": {
     "message": "午前8時から午後5時までポータルからメール対応"
   },
-  "appeal-form-checkout__submit": {
+  "installed-payment-checkout__submit": {
     "message": "購入を完了する"
   },
   "installed-main__block-6__heading-1": {
@@ -52,57 +52,38 @@
     "message": "Adblock Plus Premiumでクッキー関連バナー、フローティング動画、アンケート依頼などの迷惑要素をブロックし、より良いブラウザー体験をお楽しみください。今すぐ<a>Adblock Plus Premium</a>にお申し込みを！"
   },
   "installed-main__block-4__paragraph-2": {
-    "message": "可能な限り最善のユーザー体験を提供するため、Adblock Plus拡張機能はデフォルトで一部のユーザーデータを収集します。データ収集は、<a>こちら</a>から解除することができます。"
+    "message": "可能な限り最善のユーザー体験を提供するため、AdBlock Plus拡張機能はデフォルトで一部のユーザーデータを収集します。データ収集は、<a>こちら</a>から解除することができます。"
   },
-  "product__premium": {
-    "message": "Adblock Plus Premium"
+  "installed-payment-header__heading": {
+    "description": "heading",
+    "message": "適切な額をご指定ください："
   },
-  "payment-reward": {
-    "message": "素晴らしい！<span>35.00</span>のご寄付をいただくと、<span>Adblock Plus Premium</span>が利用できます。ご協力誠にありがとうございます。"
+  "installed-payment-frequency__heading--once": {
+    "description": "heading",
+    "message": "<strong>一度</strong>寄付する："
   },
-  "payment-suffix__monthly": {
-    "message": "/月"
+  "installed-payment-frequency__heading--monthly": {
+    "description": "heading",
+    "message": "<strong>毎月</strong>寄付する："
   },
-  "payment-suffix__yearly": {
-    "message": "/年"
+  "installed-payment-frequency__heading--yearly": {
+    "description": "heading",
+    "message": "<strong>毎年</strong>寄付する："
   },
-  "installed-payment-option--custom": {
-    "message": "$ Custom"
+  "installed-payment__error--once": {
+    "description": "notice",
+    "message": "申し訳ございません。当社により手数料を負担するため、一時的なご寄付は <span>$</span><span>5</span> 以上でお願いします。"
   },
-  "installed-hero__heading": {
-    "message": "Adblock Plusをインストールしていただきありがとうございます。"
+  "installed-payment__error--monthly": {
+    "description": "notice",
+    "message": "申し訳ございません。当社により手数料を負担するため、毎月のご寄付は <span>$</span><span>1.99</span> 以上でお願いします。"
   },
-  "installed-hero__subheading": {
-    "message": "Adblock Plusは信頼ウェアです。つまり、お互いの親切を<strong>信頼</strong>します。"
+  "installed-payment__error--yearly": {
+    "description": "notice",
+    "message": "申し訳ございません。当社により手数料を負担するため、毎年のご寄付は <span>$</span><span>5</span> 以上でお願いします。"
   },
-  "installed-hero__feature-1": {
-    "message": "お支払い金額は<strong>ご自身が</strong>お選びください。"
-  },
-  "installed-hero__feature-2": {
-    "message": "Adblock Plusをご支援ください。"
-  },
-  "installed-hero__feature-3": {
-    "message": "お気に召さなかった場合は、最大60日間まで<strong>完全返金</strong>いたします。"
-  },
-  "installed-payment-currency__label": {
-    "message": "寄付の方法を選択してください"
-  },
-  "installed-payment-yearly__heading": {
-    "message": "年間"
-  },
-  "installed-payment-yearly__feature-1": {
-    "message": "広告とポップアップをブロック"
-  },
-  "installed-payment-yearly__feature-2": {
-    "message": "いつでもキャンセル可能"
-  },
-  "installed-payment-monthly__heading": {
-    "message": "月間"
-  },
-  "installed-payment-checkout__button": {
-    "message": "購入を実行"
-  },
-  "installed-footer__block-2__paragraph-1": {
-    "message": "Copyright © 2023 All rights reserved. Adblock Plus<sup>®</sup>は、<a>eyeo GmbH</a>の登録商標です - <a>プライバシーポリシー</a>"
+  "installed-payment-checkout__title": {
+    "description": "item being paid for",
+    "message": "Adblock Plus に寄付"
   }
 }

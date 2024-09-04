@@ -42,7 +42,7 @@
   "installed-main__block-5__item-2": {
     "message": "Od 8:00 do 17:00 możesz wysłać do nas e-mail za pośrednictwem naszego portalu"
   },
-  "appeal-form-checkout__submit": {
+  "installed-payment-checkout__submit": {
     "message": "Zakończ zakup"
   },
   "installed-main__block-6__heading-1": {
@@ -54,55 +54,36 @@
   "installed-main__block-4__paragraph-2": {
     "message": "Aby zapewnić jak najlepszą obsługę użytkownika, rozszerzenie Adblock Plus domyślnie zbiera niektóre dane użytkownika. <a>Tutaj </a>możesz zrezygnować z gromadzenia tych danych."
   },
-  "product__premium": {
-    "message": "Adblock Plus Premium już jest!"
+  "installed-payment-header__heading": {
+    "description": "heading",
+    "message": "Wybierz dowolną kwotę:"
   },
-  "payment-reward": {
-    "message": "Nieźle! Wpłata w wysokości </span>35,00<span> zapewnia <span>Adblock Plus Premium</span>. Dziękujemy za wsparcie."
+  "installed-payment-frequency__heading--once": {
+    "description": "heading",
+    "message": "Dokonaj <strong>jednorazowej</strong> wpłaty:"
   },
-  "payment-suffix__monthly": {
-    "message": "/miesięcznie"
+  "installed-payment-frequency__heading--monthly": {
+    "description": "heading",
+    "message": "Lub <strong>miesięcznej</strong> wpłaty:"
   },
-  "payment-suffix__yearly": {
-    "message": "/rocznie"
+  "installed-payment-frequency__heading--yearly": {
+    "description": "heading",
+    "message": "Lub <strong>rocznej</strong> wpłaty:"
   },
-  "installed-payment-option--custom": {
-    "message": "$ niestandardowe"
+  "installed-payment__error--once": {
+    "description": "notice",
+    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna jednorazowa kwota wpłaty to <span>5</span><span>$</span>."
   },
-  "installed-hero__heading": {
-    "message": "Dziękujemy za zainstalowanie Adblock Plus!"
+  "installed-payment__error--monthly": {
+    "description": "notice",
+    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna miesięczna kwota wpłaty to <span>1,99</span><span>$</span>."
   },
-  "installed-hero__subheading": {
-    "message": "Adblock Plus jest oprogramowaniem honorowym, co oznacza, <strong>że ufamy sobie nawzajem</strong>."
+  "installed-payment__error--yearly": {
+    "description": "notice",
+    "message": "Ups! Aby pomóc w pokryciu opłat, minimalna roczna kwota wpłaty to <span>5</span><span>$</span>."
   },
-  "installed-hero__feature-1": {
-    "message": "Pozwalamy <strong>Ci</strong> wybrać cenę, na którą możesz sobie pozwolić."
-  },
-  "installed-hero__feature-2": {
-    "message": "Pomagasz wspierać Adblock Plus."
-  },
-  "installed-hero__feature-3": {
-    "message": "<strong>Pełny zwrot</strong> pieniędzy do 60 dni – jeśli Ci się nie spodoba."
-  },
-  "installed-payment-currency__label": {
-    "message": "Wybierz preferowane wsparcie"
-  },
-  "installed-payment-yearly__heading": {
-    "message": "Rocznie"
-  },
-  "installed-payment-yearly__feature-1": {
-    "message": "Blokuj reklamy i wyskakujące okienka"
-  },
-  "installed-payment-yearly__feature-2": {
-    "message": "Anuluj w dowolnym momencie"
-  },
-  "installed-payment-monthly__heading": {
-    "message": "Miesięcznie"
-  },
-  "installed-payment-checkout__button": {
-    "message": "Dokonaj zakupu"
-  },
-  "installed-footer__block-2__paragraph-1": {
-    "message": "Copyright © 2023 Wszelkie prawa zastrzeżone. Adblock Plus<sup>®</sup> jest zastrzeżonym znakiem towarowym firmy <a>eyeo GmbH</a> - <a>Polityka prywatności </a>"
+  "installed-payment-checkout__title": {
+    "description": "item being paid for",
+    "message": "Pomoc na rzecz Adblock Plus"
   }
 }
