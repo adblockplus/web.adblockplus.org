@@ -36,9 +36,6 @@ RewriteRule ^fr/ad-blocker-safari/?$ https://adblockplus.org/fr/ [NC,R=301]
 RewriteRule ^(\w\w(_\w\w)?/)?filters$ https://help.adblockplus.org/hc/articles/360062733293 [NC,R=301]
 RewriteRule ^(\w\w(_\w\w)?/)?android-about/?$ https://adblockplus.org/ [NC,R=301]
 
-# Refd adblockplus-org#16 redirect removed job posting to Careers Page
-RewriteRule ^(\w\w(_\w\w)?/)?software-engineer-adblock-plus/?$ https://adblockplus.org/careers [NC,R=301]
-
 # Refd #474 - Migrate XSS and clickjacking prevention headers to .htaccess
 SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|internet-explorer|safari|yandex-browser|maxthon)?$|^/blog/|^/poland/? YOUTUBE_NOCOOKIES
 
@@ -210,8 +207,6 @@ RewriteRule ^(devbuilds(/.*)?) https://downloads.adblockplus.org/$1 [NC,L]
 RewriteRule ^(blog|releases|development-builds|atom|rss|category|section|author|file_download|images|textpattern)($|/) https://blog.adblockplus.org/$1
 
 RewriteRule ^forum($|/.*) https://forum.adblockplus.org$1
-
-RewriteRule (^|\/)careers$ "https://adblock.pinpointhq.com/en" [NC,R,L]
 
 # TODO: investigate if we can rewrite /getSubscription into a different
 # virtual host
