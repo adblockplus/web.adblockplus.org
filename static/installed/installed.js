@@ -148,8 +148,9 @@ paymentForm.addEventListener("submit", event => {
   const currency = getSelectedCurrency();
   const frequency = getSelectedFrequency(selected)
   const amount = getSelectedAmount(selected);
+  const successURL = "https://welcome.adblockplus.org/payment-complete";
   disablePaymentForm();
-  checkout({currency, frequency, amount})
+  checkout({currency, frequency, amount, successURL})
   .finally(enablePaymentForm);
 });
 
