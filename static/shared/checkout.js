@@ -127,7 +127,7 @@ export const checkout = adblock.api.checkout = function checkout({ plan, currenc
       successParams.set("premium-checkout__language", locale);
       successParams.set("premium-checkout__timestamp", clickTimestamp);
   
-      const successURL = `${successURL || checkoutConfig.plans[plan].successURL}?${successParams.toString()}`;
+      const successURL = `${checkoutConfig.plans[plan].successURL}?${successParams.toString()}`;
   
       const paddleMetadata = {
         locale,
