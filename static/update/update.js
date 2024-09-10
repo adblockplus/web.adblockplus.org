@@ -4,7 +4,8 @@ import { generateUserId, generateTrackingId } from "../shared/user.js";
 import "../shared/premium-difference.js";
 
 const paddleConfig = adblock.config.paddle = {
-  serviceURL: "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
+  // serviceURL: "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
+  serviceURL: "https://paddle-billing-abp-dot-abp-payments.ey.r.appspot.com/paddle-billing/webhooks/",
   sandboxVendor: 11004,
   liveVendor: 164164,
   locales: {
