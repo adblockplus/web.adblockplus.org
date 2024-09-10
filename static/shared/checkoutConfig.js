@@ -4,7 +4,7 @@ export const checkoutConfig = {
     contribution: {
       code: "",
       title: "Adblock Plus",
-      successURL: "https://welcome.adblockplus.org/payment-complete",
+      successURL: "https://adblockplus.org/payment-complete",
     },
     premium: {
       code: "ME",
