@@ -80,7 +80,7 @@ function isValidTrackingId(planName, trackingId) {
   return true;
 }
 
-export const checkout = adblock.api.checkout = function checkout({ plan, currency, frequency, amount }) {
+export const checkout = adblock.api.checkout = function checkout({ plan, currency, frequency, amount, successURL }) {
   return new Promise((resolve, reject) => {
     try {
 
@@ -127,7 +127,7 @@ export const checkout = adblock.api.checkout = function checkout({ plan, currenc
       successParams.set("premium-checkout__language", locale);
       successParams.set("premium-checkout__timestamp", clickTimestamp);
   
-      const successURL = `${checkoutConfig.plans[plan].successURL}?${successParams.toString()}`;
+      successURL = `${successURL || checkoutConfig.plans[plan].successURL}?${successParams.toString()}`;
   
       const paddleMetadata = {
         locale,
