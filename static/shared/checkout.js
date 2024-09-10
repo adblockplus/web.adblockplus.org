@@ -80,7 +80,7 @@ function isValidTrackingId(planName, trackingId) {
   return true;
 }
 
-export const checkout = adblock.api.checkout = function checkout({ plan, currency, frequency, amount, successURL }) {
+export const checkout = adblock.api.checkout = function checkout({ plan, currency, frequency, amount }) {
   return new Promise((resolve, reject) => {
     try {
 
