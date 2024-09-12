@@ -255,7 +255,10 @@ const trackingId = generateTrackingId("ME", premiumId);
 
 if (isTestmode) Paddle.Environment.set("sandbox");
 
-Paddle.Setup({ vendor: isTestmode ? paddleConfig.sandboxVendor : paddleConfig.liveVendor });
+Paddle.Initialize({ 
+  token: 'test_7c371ab0fd38baad927d6f0e228'
+});
+// Paddle.Setup({ vendor: isTestmode ? paddleConfig.sandboxVendor : paddleConfig.liveVendor });
 
 const checkout = adblock.api.checkout = function checkout({currency, frequency, amount}) {
 
