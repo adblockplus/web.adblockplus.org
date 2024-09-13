@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    {% block head %}
+      {{ head | safe }}
+    {% endblock %}
+  </head>
+  <body>
+    <? include navbar ?>
+    {% block body %}
+      {{ body | safe }}
+    {% endblock %}
+  </body>
+</html>

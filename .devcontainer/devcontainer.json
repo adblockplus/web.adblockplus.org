@@ -1,7 +1,0 @@
-{
-  "name": "adblockplus.org",
-  "dockerFile": "Dockerfile",
-  "forwardPorts": [80, 443, 5000],
-  "postCreateCommand": "bash -i .devcontainer/postcreate.sh",
-  "postAttachCommand": "npm run fast"
-}

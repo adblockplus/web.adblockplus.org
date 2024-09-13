@@ -1,1 +1,0 @@
-node ./static/js/tools/build.js

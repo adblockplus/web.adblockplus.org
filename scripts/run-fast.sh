@@ -1,1 +1,0 @@
-python -m cms.bin.test_server .

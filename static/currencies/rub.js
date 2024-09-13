@@ -1,1 +1,0 @@
-adblock.settings.currency = adblock.settings.defaultCurrency = "RUB";

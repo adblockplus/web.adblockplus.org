@@ -1,47 +1,11 @@
-{% from "macros/pageitem" import pageitem %}
-
-{% if not nonavbar %}
-
-<nav id="navbar">
-  <div class="container">
-    {{ "index" | linkify(id="navbar-logo") }}
-      <img
-        src="/img/adblockplus-logo-color.svg"
-        alt="Adblock Plus logo in navigation menu">
-    </a>
-    <a href="#" id="navbar-menu-toggle">
-      <img
-        src="/img/menu-toggle-black.svg"
-        alt="Top menu toggle">
-    </a>
-    <ul id="navbar-menu">
-      {% for pagename in ["download", "about"] %}
-        <li class="{{ "active" if page == pagename else "" }}">
-          {{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a>
-        </li>
-      {% endfor %}
-      <li class="{{ "active" if page == "premium" else "" }}">
-        <a href="https://accounts.adblockplus.org/premium">{{ get_string("premium", "menu") }}</a>
-      </li>
-      <li>
-        <a href="https://help.adblockplus.org" target="_blank">{{ get_string("help", "menu") }}</a>
-      </li>
-      <li id="navbar-locale-menubar">
-        <a id="navbar-locale-selected">
-          {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
-        </a>
-        <ul id="navbar-locale-menu">
-          {% for available_locale in available_locales %}
-            <li>
-              {{ page | linkify(available_locale) }}
-                {{ config.get("langnames", available_locale) }} ({{ available_locale | to_og_locale | to_og_location }})
-              </a>
-            </li>
-          {% endfor %}
-        </ul>{# #navbar-locale-menu #}
-      </li>
-    </ul>{# #navbar-menu #}
-  </div>{# .container #}
-</nav>{# #navbar #}
-
-{% endif %}
+<nav>
+  <ul>
+  {% for available_locale in available_locales %}
+    <li>
+      <a href="/{{ available_locale }}/{{ page }}">
+        {{ config.get("langnames", available_locale) }} ({{ available_locale }})
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</nav>

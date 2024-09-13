@@ -1,0 +1,38 @@
+<button id="buy">{{ buy Buy }}</button>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+<script>
+
+  const urlSearchParams = new URLSearchParams(location.search);
+
+  const PADDLE_TOKEN_TEST = "test_7c371ab0fd38baad927d6f0e228";
+  const PADDLE_TOKEN_LIVE = "live_52dc0edcc9abb569cb3250848b3";
+
+  let token = PADDLE_TOKEN_LIVE;
+
+  const environment = location.hostname == "localhost" ? "test"
+  : location.hostname.endsWith("web.app") ? "test"
+  : urlSearchParams.has("testmode") ? "test" : "live";
+
+  if (environment == "test") {
+    token = PADDLE_TOKEN_TEST;
+    Paddle.Environment.set("sandbox");
+  }
+
+  Paddle.Initialize({ token });
+
+  const buyButton = document.getElementById("buy");
+
+  buyButton.addEventListener("click", () => {
+    Paddle.Checkout.open({
+      settings: {
+        successUrl: `${location.origin}?success`,
+        locale: document.documentElement.lang,
+      },
+      customData: { hello: "world" },
+      items: [{ priceId: "pri_01j737zqrsvgn30b8pdpnxh1sr" }],
+    });
+  });
+
+</script>

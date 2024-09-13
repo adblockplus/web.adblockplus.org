@@ -1,0 +1,38 @@
+<button id="buy">{{ buy Buy }}</button>
+
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+
+<script>
+
+  const urlSearchParams = new URLSearchParams(location.search);
+
+  const PADDLE_VENDOR_TEST = 11004;
+  const PADDLE_VENDOR_LIVE = 164164;
+
+  let vendor = PADDLE_VENDOR_LIVE;
+
+  const environment = location.hostname == "localhost" ? "test"
+  : location.hostname.endsWith("web.app") ? "test"
+  : urlSearchParams.has("testmode") ? "test" : "live";
+
+  if (environment == "test") {
+    vendor = PADDLE_VENDOR_TEST;
+    Paddle.Environment.set("sandbox");
+  }
+
+  Paddle.Setup({ vendor });
+
+  const buyButton = document.getElementById("buy");
+
+  buyButton.addEventListener("click", () => {
+    Paddle.Checkout.open({
+      title: "Example checkout",
+      product: 68391,
+      allowQuantity: false,
+      success: `${location.origin}?success`,
+      locale: document.documentElement.lang,
+      passthrough: { hello: "world" },
+    });
+  });
+
+</script>

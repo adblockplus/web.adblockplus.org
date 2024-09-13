@@ -1,56 +1,15 @@
 <!DOCTYPE html>
-<html <? include html-attributes ?>>
-
+<html>
   <head>
-    <? include meta/standard ?>
-    <? include meta/social ?>
-    <? include styles ?>
-    <? include config ?>
-    <? include analytics ?>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}
-      {{head|safe}}
+      {{ head | safe }}
     {% endblock %}
   </head>
-
   <body>
-    <? include navbar ?>
-
-    <div id="content" class="container content {{ localefile == "index" and page }}">
-      {% if heading %}
-        <h1>{{ heading | translate("heading", "heading") }}</h1>
-      {% elif title and not noheading %}
-        <h1>{{ title | translate("title") }}</h1>
-      {% endif %}
-
-      {% if not notoc %}
-        {% macro toc(toclist) %}
-          <ul>
-            {% for item in toclist %}
-              <li>
-                <a href="#{{item.anchor}}">{{item.title|anchortext}}</a>
-                {% if item.subitems %}{{toc(item.subitems)}}{% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endmacro %}
-
-        {% set toclist = body|toclist %}
-        {% if toclist %}
-          <div class="toc">
-            {{toc(toclist)}}
-          </div>
-        {% endif %}
-      {% endif %}
-
-      {% block body %}
-        {{body|safe}}
-      {% endblock %}
-    </div>
-
-    <? include footer ?>
-    <? include cookie/index ?>
-    <? include google/analytics ?>
-    <? include scripts ?>
+    {% block body %}
+      {{ body | safe }}
+    {% endblock %}
   </body>
 </html>

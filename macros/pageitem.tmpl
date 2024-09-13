@@ -1,7 +1,0 @@
-{% macro pageitem(name) %}
-  {% if name == page %}
-    <li class="selected">{{get_string(name, "menu")}}</li>
-  {% else %}
-    <li>{{name|linkify}}{{get_string(name, "menu")}}</a></li>
-  {% endif %}
-{% endmacro %}
