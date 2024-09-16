@@ -426,7 +426,10 @@ function checkout(product, currency, frequency, amount) {
     params.set("premium-checkout__language", language);
     params.set("premium-checkout__timestamp", clickTimestamp);
     if (adblock.query.has("legal")) params.set("legal", 1);
-    paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
+    paddleOptions.settings = {
+      successUrl: `${location.origin}/${language}/premium?${params.toString()}`,
+      locale: paddleLocale,
+    } 
     const adblockOptions = {
       customData: {
         "testmode": !!environment === "TEST",
