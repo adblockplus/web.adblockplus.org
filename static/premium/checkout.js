@@ -361,8 +361,8 @@ function getCurrencySymbol(currencyCode) {
 ////////////////////////////////////////////////////////////////////////////////
 // PADDLE SETUP
 ////////////////////////////////////////////////////////////////////////////////
-Paddle.Setup({
-  vendor: paddleId,
+Paddle.Initialize({
+  token: "test_6d1f67984d279aaa3c8f0c95841",
   eventCallback: event => {
     if (typeof event == "object" && event && typeof event.event == "string") {
       if (event.event == "Checkout.Customer.Details") {
@@ -410,8 +410,8 @@ function checkout(product, currency, frequency, amount) {
       clickTs: clickTimestamp
     }));
     const paddleOptions = {
-      title: paddleTitle,
-      product: product,
+      // title: paddleTitle,
+      // product: product,
       allowQuantity: false,
       locale: paddleLocale,
       closeCallback: reject,
@@ -428,9 +428,11 @@ function checkout(product, currency, frequency, amount) {
     if (adblock.query.has("legal")) params.set("legal", 1);
     paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
     const adblockOptions = {
-      passthrough: {
-        "testmode": !!environment === "TEST",
-        "userid": userid,
+      customData: {
+        // "testmode": !!environment === "TEST",
+        "testmode": true,
+        // "userid": userid,
+        "userid": "",
         "tracking": generateTrackingId(userid),
         "locale": language,
         "country": adblock.settings.country || "unknown", // ABP doesn't have generic geo location yet
@@ -447,8 +449,9 @@ function checkout(product, currency, frequency, amount) {
         "variant_index": -1, // ^
         "amount_cents": amount,
         "cancel_url": location.href,
-      }
-    };
+      },
+      items: [{priceId: "pri_01j7bh5tgtrs3fzwqew7jvcpzf"}]
+    }; 
     Paddle.Checkout.open(Object.assign({}, paddleOptions, adblockOptions));
   });
 }

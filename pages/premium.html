@@ -278,46 +278,5 @@ unadblock=1
 
 <script src="/js/pages/premium.js"></script>
 <script src="/currency"></script>
-<!-- <script src="https://cdn.paddle.com/paddle/paddle.js"></script> -->
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script src="/premium/paddleBilling.js" type="module"></script>
 <script src="/premium/checkout.js" type="module"></script>
-<script>
-  Paddle.Environment.set('sandbox');
-  // https://developer.paddle.com/paddlejs/include-paddlejs
-  Paddle.Initialize({
-    token: 'test_6d1f67984d279aaa3c8f0c95841'
-  });
-
-  const prices = {
-    "47979": "pri_01j1z1r8x9q51r0448xtjg9bv8",
-    "47981": "pri_01j1z1rxahfcysthj25sk8scbx",
-    "47987": "pri_01j20xczqk8e32caz587dv3hs7",
-    "47980": "pri_01j20xe7xqy5r1c3r6bvar6tfz",
-    "47982": "pri_01j7bh5tgtrs3fzwqew7jvcpzf"
-  }
-
-  const paddleCheckoutSettings = {
-    settings: {
-      successUrl: "https://dev--adblockplus-org--paddle-billing-sandbox-jeokucqs.web.app/",
-      locale: 'en',
-    },
-    customData: {
-      testmode: true,
-      currency: "USD",
-      recurring: true,
-      subType: "monthly",
-      locale: "en",
-      country: "DE",
-      userId: "",
-      amount_cents: 400,
-    },
-    discountCode: "",
-    items: [{ 
-      priceId: "pri_01j7bh5tgtrs3fzwqew7jvcpzf",
-    }],
-  }
-  
-  // https://developer.paddle.com/paddlejs/methods/paddle-checkout-open
-  Paddle.Checkout.open(paddleCheckoutSettings);
-</script>
