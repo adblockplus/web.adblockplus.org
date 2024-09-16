@@ -429,10 +429,8 @@ function checkout(product, currency, frequency, amount) {
     paddleOptions.success = `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`;
     const adblockOptions = {
       customData: {
-        // "testmode": !!environment === "TEST",
-        "testmode": true,
-        // "userid": userid,
-        "userid": "",
+        "testmode": !!environment === "TEST",
+        "userid": userid,
         "tracking": generateTrackingId(userid),
         "locale": language,
         "country": adblock.settings.country || "unknown", // ABP doesn't have generic geo location yet
