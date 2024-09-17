@@ -6,6 +6,7 @@ unadblock=1
 
 <head>
   <? include accounts-redirect-fallback ?>
+  <? include scripts/extension-detection ?>
   <script>(()=>{
     adblock.settings.pageCode = "ME";
     if (adblock.query.has("premium-checkout__flow")) {
