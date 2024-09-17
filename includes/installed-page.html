@@ -230,7 +230,7 @@
   if (adblock.query.has("install-and-activate")) {
     try {
       localStorage.setItem("abInstallAndActivate", adblock.query.toString());
-      document.documentElement.innerHTML = "<h1>You may close this tab or window</h1>";
+      document.documentElement.innerHTML = "<h1>You may close this tab</h1>";
     } catch (error) {}
   } else {
     try {
