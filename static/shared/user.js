@@ -23,8 +23,9 @@ export function generateUserId() {
 export function generateTrackingId(productId, userid) {
   const browserId = getBrowserId();
   const osId = getOsId();
-  const sourceId = getSourceId();
-  return `${productId ? productId + " " : ""}X0G0 F${browserId}${osId}${sourceId} ${userid}`;
+  const sourceId = getSourceId() || "";
+  const funnelId = adblock.query.has("s") ? `_${adblock.query.get("s")}` : "";
+  return `${productId || funnelId ? productId + funnelId + " " : ""}X0G0 F${browserId}${osId}${sourceId} ${userid}`;
 };
 
 export function getBrowserId() {
