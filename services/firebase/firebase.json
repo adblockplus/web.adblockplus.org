@@ -109,6 +109,11 @@
         "type": 301
       },
       {
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?careers/?$",
+        "destination": "https://eyeo.com/careers",
+        "type": 301
+      },
+      {
         "regex": "(?i)^/(blog|releases|development-builds|atom|rss|category|section|author|file_download|images|textpattern)($|/)",
         "destination": "https://blog.adblockplus.org/:1",
         "type": 301

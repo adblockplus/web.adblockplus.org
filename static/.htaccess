@@ -208,5 +208,7 @@ RewriteRule ^(blog|releases|development-builds|atom|rss|category|section|author|
 
 RewriteRule ^forum($|/.*) https://forum.adblockplus.org$1
 
+RewriteRule (^|\/)careers$ "https://eyeo.com/careers" [NC,R,L]
+
 # TODO: investigate if we can rewrite /getSubscription into a different
 # virtual host
