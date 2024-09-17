@@ -27,6 +27,27 @@
       document.head.appendChild(script);
     }
   })()</script>
+  <script>(()=>{
+    // the install and activate flow redirects here with ?install-and-activate to record it's progress so that it can
+    // be continued when the installed page opens after the extension is installed
+    if (adblock.query.has("install-and-activate")) {
+      try {
+        localStorage.setItem("abInstallAndActivate", adblock.query.toString());
+        document.documentElement.innerHTML = "<h1>You may close this tab</h1>";
+      } catch (error) {}
+    } 
+    // when the extension is installed, if progress from the install and activate flow was recorded, then the user
+    // is directed to the premium activation flow with that progress instead of this installed contribute page
+    else {
+      try {
+        const installAndActivate = localStorage.getItem("abInstallAndActivate");
+        if (typeof installAndActivate == "string") {
+          localStorage.removeItem("abInstallAndActivate");
+          window.location.href = "https://accounts.adblockplus.org/premium?" + installAndActivate;
+        }
+      } catch (error) {}
+    }
+  })()</script>
 </head>
 
 <div class="installed-container">
@@ -223,6 +244,7 @@
   
 </div><!-- .installed-container -->
 
+<<<<<<< HEAD
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/installed/installed.js" type="module"></script>
 
@@ -247,3 +269,7 @@
     } catch (error) {}
   }
 </script>
+=======
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="/installed/installed.js" type="module"></script>
+>>>>>>> 74643594 (fix: Moved installed page install and activate flow handling to the head to avoid flicker due to slow downloading)
