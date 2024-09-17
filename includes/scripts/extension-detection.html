@@ -1,0 +1,36 @@
+<script>(function(){
+
+  const ABPDetectedCallbacks = [];
+
+  function isABPDetected() {
+    return !!document.documentElement.dataset.adblockPlusExtensionInfo;
+  }
+
+  function onABPDetected() {
+    try {
+      adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo);
+    } catch (error) {
+      adblock.extensions.adblockPlus = {};
+      console.error("Failed to parse Adblock Plus extension injection", error);
+    }
+    ABPDetectedCallbacks.forEach(callback => callback());
+  }
+
+  adblock.api.onABPDetected = (callback) => {
+    if (isABPDetected()) callback();
+    else ABPDetectedCallbacks.push(callback);
+  };
+
+  if (isABPDetected()) {
+    onABPDetected();
+  } else {
+    const ABPDetectedObserver = new MutationObserver(() => {
+      onABPDetected();
+      ABPDetectedObserver.disconnect();
+    });
+    ABPDetectedObserver.observe(document.documentElement, {
+      attributeFilter: ["data-adblock-plus-extension-info"]
+    });
+  }
+
+})()</script>

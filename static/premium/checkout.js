@@ -694,14 +694,51 @@ class PurchaseStep extends Step {
 class ActivatedStep extends Step {
 
   /** renders the activation step dom with the passed frequency and amount */
-  render({ currency, frequency, amount }) {
+  render(options = {}) {
+    const { currency, frequency, amount } = options;
     super.render();
-    this.element
-    .querySelector(".premium-checkout-activated__plan")
-    .innerHTML = adblock.strings[`premium-checkout-activated__${frequency}`];
-    this.element
-    .querySelector(".premium-checkout-activated__amount")
-    .textContent = getDollarString(currency, amount);
+    if (currency && frequency && amount) {
+      this.element
+        .querySelector(".premium-checkout-activated__plan")
+        .innerHTML = adblock.strings[`premium-checkout-activated__${frequency}`];
+      this.element
+        .querySelector(".premium-checkout-activated__amount")
+        .textContent = getDollarString(currency, amount);
+    }
+    // replace getting started button with download button if extension not detected
+    if (!adblock.extensions.adblockPlus) {
+      document.querySelectorAll(".download-button").forEach(button => {
+        const browser = getBrowser();
+        if (browser == "F") {
+          button.href = "https://eyeo.to/adblockplus/firefox_install/";
+          button.textContent = document.querySelector("#download-label-firefox").textContent;
+          button.parentElement.classList.add("firefox");
+        } else if (browser == "CM") {
+          button.href = "https://eyeo.to/adblockplus/edge_chromium_install/";
+          button.textContent = document.querySelector("#download-label-edge").textContent;
+          button.parentElement.classList.add("edge");
+        } else {
+          button.href = "https://eyeo.to/adblockplus/chrome_install/";
+          button.textContent = document.querySelector("#download-label-chrome").textContent;
+          button.parentElement.classList.add("chrome");
+        }
+        button.setAttribute("target", "_blank");
+        button.hidden = false;
+        button.addEventListener("click", event => {
+          setTimeout(() => {
+            window.location.href = "https://welcome.adblockplus.org/installed?install-and-activate&" + adblock.query.toString();
+          }, 1000);
+        });
+      });
+      document.querySelectorAll(".install-and-activate").forEach(div => div.hidden = false);
+      document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.hidden = true);
+    }
+    // else replace download button with getting started button if extension is detected
+    else {
+      document.querySelectorAll(".download-button").forEach(button => button.hidden = true);
+      document.querySelectorAll(".install-and-activate").forEach(div => div.hidden = true);
+      document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.hidden = false);
+    }
   }
 
 }
@@ -781,7 +818,7 @@ const steps = {
   error: new ErrorStep(section.querySelector(".premium-checkout-error"), "error"),
   verifyEmail: new VerifyStep(section.querySelector(".premium-checkout-verify-email"), "verify-email"),
   verifyCode: new VerifyStep(section.querySelector(".premium-checkout-verify-code"), "verify-code"),
-  reactivated: new Step(section.querySelector(".premium-checkout-reactivated"), "reactivated")
+  reactivated: new ActivatedStep(section.querySelector(".premium-checkout-reactivated"), "reactivated")
 };
 
 // adding step elements to the interactive card
@@ -922,36 +959,6 @@ steps.verifyCode.on("submit", async () => {
   });
 });
 
-// DOWNLOAD BUTTON SETUP ///////////////////////////////////////////////////////
-
-if (!adblock.extensions.adblockPlus) {
-  document.querySelectorAll(".download-button").forEach(button => {
-    const browser = getBrowser();
-    if (browser == "F") {
-      button.href = "https://eyeo.to/adblockplus/firefox_install/";
-      button.textContent = document.querySelector("#download-label-firefox").textContent;
-      button.parentElement.classList.add("firefox");
-    } else if (browser == "CM") {
-      button.href = "https://eyeo.to/adblockplus/edge_chromium_install/";
-      button.textContent = document.querySelector("#download-label-edge").textContent;
-      button.parentElement.classList.add("edge");
-    } else {
-      button.href = "https://eyeo.to/adblockplus/chrome_install/";
-      button.textContent = document.querySelector("#download-label-chrome").textContent;
-      button.parentElement.classList.add("chrome");
-    }
-    button.setAttribute("target", "_blank");
-    button.style.display = "block";
-    button.addEventListener("click", event => {
-      setTimeout(() => {
-        window.location.href = "https://welcome.adblockplus.org/installed?install-and-activate&" + adblock.query.toString();
-      }, 1000);
-    });
-  });
-  document.querySelectorAll(".install-and-activate").forEach(div => div.removeAttribute("hidden"));
-  document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.style.display = "none");
-}
-
 // ACTIVATION HANDOFF FLOW /////////////////////////////////////////////////////
 
 // you can hand a purchase flow on another page off to this page via the
@@ -984,9 +991,9 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   discount = parseFloat(discount) || 1;
   amount = amount * discount;
   card.scrollIntoView();
-  await goto(steps.loading);
-  await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
-  if (adblock.extensions.adblockPlus) {
+  adblock.api.onABPDetected(async () => {
+    await goto(steps.loading);
+    await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
     activatePremium().then(
       () => {
         if (currency && frequency && amount) {
@@ -996,13 +1003,12 @@ if (adblock.query.has("premium-checkout__fake-error")) {
         }
       },
       () => goto(steps.error)
-    );  
+    );
+  });
+  if (currency && frequency && amount) {
+    goto(steps.activated, { currency, frequency, amount });
   } else {
-    if (currency && frequency && amount) {
-      goto(steps.activated, { currency, frequency, amount });
-    } else {
-      goto(steps.reactivated);
-    }
+    goto(steps.reactivated);
   }
 } else {
   // if you don't begin an activation-handoff flow on load then the default
