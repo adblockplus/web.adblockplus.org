@@ -26,6 +26,7 @@
       <li>
         <a href="https://help.adblockplus.org" target="_blank">{{ get_string("help", "menu") }}</a>
       </li>
+      {% if available_locales | length > 1: %}
       <li id="navbar-locale-menubar">
         <a id="navbar-locale-selected">
           {{ config.get("langnames", locale) }} ({{ locale | to_og_locale | to_og_location }})
@@ -40,6 +41,7 @@
           {% endfor %}
         </ul>{# #navbar-locale-menu #}
       </li>
+      {% endif %}
     </ul>{# #navbar-menu #}
   </div>{# .container #}
 </nav>{# #navbar #}
