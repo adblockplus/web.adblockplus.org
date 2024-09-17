@@ -420,14 +420,14 @@ function checkout(product, currency, frequency, amount) {
     params.set("premium-checkout__handoff", 1);
     params.set("premium-checkout__flow", document.documentElement.getAttribute("data-page"));
     params.set("premium-checkout__userid", userid);
-    params.set("premium-checkout__currency", currency);
+    params.set("premium-checkout__currency", "EUR");
     params.set("premium-checkout__amount", amount);
     params.set("premium-checkout__frequency", frequency);
     params.set("premium-checkout__language", language);
     params.set("premium-checkout__timestamp", clickTimestamp);
     if (adblock.query.has("legal")) params.set("legal", 1);
     paddleOptions.settings = {
-      successUrl: `${location.origin}/${language}/premium?${params.toString()}`,
+      successUrl: `https://accounts.adblockplus.org/${language}/premium?${params.toString()}`,
       locale: paddleLocale,
     } 
     const adblockOptions = {
