@@ -124,11 +124,6 @@
         "type": 301
       },
       {
-        "source": "/js/payment/config/load.js",
-        "destination": "/payment-config-function",
-        "type": 301
-      },
-      {
         "source": "/robots.txt",
         "destination": "/robots-function",
         "type": 302
@@ -141,13 +136,6 @@
     ],
     "rewrites": [
       {
-        "source": "/payment-config-function",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
         "source": "/robots-function",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
@@ -156,27 +144,6 @@
       },
       {
         "source": "/url",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/currency",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/update-function/:language?",
-        "run": {
-          "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
-          "region": "europe-west1"
-        }
-      },
-      {
-        "source": "/installed-function/:language?",
         "run": {
           "serviceId": "AUTOMATICALLY_REPLACED_BY_BUILD",
           "region": "europe-west1"
