@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="/installed/installed.css">
   <script>(()=>{
     if (adblock.query.has("ab-aw-set")) {
-      doc.cookie = `ab-aw-test=${adblock.get("ab-aw-set")}; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=adblockplus.org; path=/`;
+      document.cookie = `ab-aw-test=${adblock.query.get("ab-aw-set")}; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=adblockplus.org; path=/`;
     }
     if (document.cookie.includes("ab-aw-test")) {
       const script = document.createElement("script");
