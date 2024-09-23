@@ -1,6 +1,32 @@
 <head>
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/installed/installed.css">
+  <script>(()=>{
+    if (adblock.query.has("ab-aw-set")) {
+      doc.cookie = `ab-aw-test=${adblock.get("ab-aw-set")}; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=adblockplus.org; path=/`;
+    }
+    if (document.cookie.includes("ab-aw-test")) {
+      const script = document.createElement("script");
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-VCX0BRJMZ3";
+      script.async = true;
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-VCX0BRJMZ3");
+      gtag("consent", "default", {
+        "ad_storage": "denied",
+        "ad_user_data": "denied",
+        "ad_personalization": "denied",
+        "analytics_storage": "granted",
+        "functionality_storage": "denied",
+        "personalization_storage": "denied",
+        "security_storage": "denied",
+      });
+      gtag('config', 'AW-16679929794');
+      gtag('event', 'conversion', {'send_to': 'AW-16679929794/QHQ6CJagpdMZEMKPzpE-'});
+    }
+  })()</script>
 </head>
 
 <div class="installed-container">
