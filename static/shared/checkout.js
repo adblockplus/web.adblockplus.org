@@ -984,15 +984,15 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   } catch (error) {}
 
   const successParams = new URLSearchParams();
-  successParams.set("checkout__handoff", 1);
-  successParams.set("checkout__flow", flow);
-  successParams.set("checkout__page", pageName);
-  successParams.set("checkout__premiumId", premiumId);
-  successParams.set("checkout__currency", currency);
-  successParams.set("checkout__frequency", frequency);
-  successParams.set("checkout__amount", amount);
-  successParams.set("checkout__locale", locale);
-  successParams.set("checkout__timestamp", clickTs);
+  successParams.set("premium-checkout__handoff", 1);
+  successParams.set("premium-checkout__flow", flow);
+  successParams.set("premium-checkout__page", pageName);
+  successParams.set("premium-checkout__userid", premiumId);
+  successParams.set("premium-checkout__currency", currency);
+  successParams.set("premium-checkout__frequency", frequency);
+  successParams.set("premium-checkout__amount", amount);
+  successParams.set("premium-checkout__locale", locale);
+  successParams.set("premium-checkout__timestamp", clickTs);
   successUrl = `${successUrl}?${successParams.toString()}`;
 
   const customData = {
