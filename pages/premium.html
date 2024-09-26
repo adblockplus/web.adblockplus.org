@@ -5,8 +5,8 @@ robots=none
 unadblock=1
 
 <head>
-  <? include accounts-redirect-fallback ?>
   <script>
+    adblock.settings.pageCode = "ME";
     if (adblock.query.has("premium-checkout__handoff")) {
       localStorage.setItem("contributionInfo", JSON.stringify({
         amount: adblock.query.get("premium-checkout__amount"),
@@ -270,5 +270,5 @@ unadblock=1
 
 <script src="/js/pages/premium.js"></script>
 <script src="/currency"></script>
-<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/premium/checkout.js" type="module"></script>

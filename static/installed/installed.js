@@ -1,6 +1,6 @@
 import "/js/vendor/NumberFormat.min.js";
 import { getDollarNumber, getCentNumber, getDollarString } from "../shared/currency.js";
-import { checkout } from "../shared/checkout.js"
+import { checkout, checkoutEvents } from "../shared/checkout.js"
 
 const PAYMENT_CONFIG = {
   USD: {
@@ -144,15 +144,16 @@ paymentForm.addEventListener("focusin", event => {
 
 paymentForm.addEventListener("submit", event => {
   event.preventDefault();
+  const product = "contribution";
   const selected = paymentForm.querySelector(".installed-payment-amount__radio:checked");
   const currency = getSelectedCurrency();
   const frequency = getSelectedFrequency(selected)
   const amount = getSelectedAmount(selected);
-  const successURL = "https://welcome.adblockplus.org/payment-complete";
   disablePaymentForm();
-  checkout({currency, frequency, amount, successURL})
-  .finally(enablePaymentForm);
+  checkout({product, currency, frequency, amount});
 });
+
+checkoutEvents.on("checkout.closed", enablePaymentForm);
 
 function disablePaymentForm() {
   paymentForm.classList.add("installed-payment--disabled");

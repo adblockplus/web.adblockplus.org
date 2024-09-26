@@ -115,7 +115,6 @@ export function getPlainSource() {
     "update-fallback": "B",
     "premium": "ME",
     "block-cookie-banners": "BCB",
-    "block-cookie-banners-v2": "BCBV",
   }
   return pageIds[page] || "U";
 }
