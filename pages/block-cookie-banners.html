@@ -3,6 +3,7 @@ description=Block annoying cookie banners that ask you to accept cookies while y
 template=block-cookie-banners
 unadblock=1
 
+
 <head>
   <link rel="stylesheet" href="/adblock/block-cookie-banners/style.css" />
   <link rel="stylesheet" href="/css/unadblock.css">
@@ -10,6 +11,9 @@ unadblock=1
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" />
   <link rel="stylesheet" href="/premium/checkout.css">
+  <script>
+    adblock.settings.pageCode = "BCB";
+  </script>
 </head>
 
 <? include premium-restrictions ?>
@@ -29,7 +33,7 @@ unadblock=1
       {{ block-cookie-banners__section-1__subheading }}
     </p>
     <div class="button__container section-1__button__container">
-      <a href="#" class="button premium-cta">
+      <a href="#premium-checkout" class="button premium-cta">
         {{ shared__button__get-premium }}
       </a>  
     </div>
@@ -54,7 +58,7 @@ unadblock=1
         {{ block-cookie-banners__section-2__paragraph-2 }}
       </p>
       <div class="button__container">
-        <a href="#" class="button premium-cta">
+        <a href="#premium-checkout" class="button premium-cta">
           {{ shared__button__get-premium }}
         </a>  
       </div>  
@@ -115,7 +119,7 @@ unadblock=1
           {{ block-cookie-banners__plan-2__subheading }}
         </p>
         <div class="premium-plan__button__container">
-          <a href="#" class="button premium-cta">
+          <a href="#premium-checkout" class="button premium-cta">
             {{ shared__button__get-premium }}
           </a>  
         </div>
@@ -202,7 +206,7 @@ unadblock=1
       </article>
     
       <div class="button__container">
-        <a href="#" class="button premium-cta">
+        <a href="#premium-checkout" class="button premium-cta">
           {{ shared__button__get-premium }}
         </a>  
       </div>
@@ -214,6 +218,6 @@ unadblock=1
 
 <? include premium/checkout ?>
 <script src="/currency"></script>
-<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/premium/checkout.js" type="module"></script>
 <script src="/adblock/block-cookie-banners/index.js"></script>
