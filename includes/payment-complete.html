@@ -1,5 +1,21 @@
 <head>
-  <? include payment-complete-tracking ?>
+  <script>
+    if (adblock.query.has("checkout__flow")) {
+      localStorage.setItem("contributionInfo", JSON.stringify({
+        processor: "paddle",
+        currency: adblock.query.get("checkout__currency"),
+        frequency: adblock.query.get("checkout__frequency"),
+        amount: adblock.query.get("checkout__amount"),
+        clickTs: adblock.query.get("checkout__timestamp"),
+        plan: adblock.query.get("checkout__product"),
+        source: dblock.query.get("checkout__page"),
+        lang: adblock.query.get("checkout__language"),
+        geo: adblock.query.get("checkout__country"),
+      }));
+    }
+  </script>
+  <? include optimizely ?>
+  <? include hotjar ?>
   <link rel="stylesheet" href="/css/pages/confirmation-page.css">
   <link rel="stylesheet" href="/css/faq-accordion.css">
 </head>
