@@ -274,8 +274,7 @@ $(document).ready(function () {
     }
 
     function activateExtension(onSuccess, onFailure) {
-        eyeo.beacon({premiumActivationAttempt: true});
-        if (adblock.searchParameters.has("activationSkip")) {
+        if (adblock.query.has("activationSkip")) {
           return onSuccess();
         }
         // wait up to 10 seconds to receive pmt success receipt verification from extension
@@ -289,18 +288,8 @@ $(document).ready(function () {
                 if (typeof onSuccess === "function") {
                     onSuccess();
                 }
-                eyeo.beacon({premiumActivationSuccessful: true});
-                eyeo.log("premium_activation", {
-                    successful: true,
-                    id: forceGetUserId()
-                });
             })
             .catch(function (err) {
-                eyeo.beacon({premiumActivationSuccessful: false});
-                eyeo.log("premium_activation", {
-                    successful: false,
-                    id: forceGetUserId()
-                });
                 if (typeof onFailure === "function") {
                     onFailure(err);
                 }
@@ -310,15 +299,6 @@ $(document).ready(function () {
     // User was redirected here from PayPal, so just activate extension
     // then jump to "You're ready to go" message.
     if (document.location.search.match(/thankyou/)) {
-        eyeo.beacon({
-            premiumId: forceGetUserId(),
-            premiumActivationIntended: true,
-            premiumActivationSource: urlParams.get("from") || "premium"
-        });
-        eyeo.log("premium_activation_intent", {
-            from: urlParams.get("from") || "premium",
-            id: forceGetUserId()
-        });
         Page.PaymentCard.hide();
         Page.AlreadyDonatedCard.show();
         Page.EnterPurchaseEmail.hide();
@@ -465,7 +445,6 @@ $(document).ready(function () {
     $("form#prev_donation").on("submit", function (e) {
         e.preventDefault();
         handleEmailSubmit();
-        eyeo.beacon({premiumEntitlementAttempted: true});
     });
 
     $("#submit_email").on("click", function (e) {

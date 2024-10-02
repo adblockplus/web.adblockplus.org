@@ -1,8 +1,8 @@
 /* global eyeo */
 (function() {
-  var user = eyeo.user = eyeo.user || {};
+  var user = {};
 
-  var variant = eyeo.variant = eyeo.variant || {};
+  var variant = {};
 
   var host = window.location.hostname;
 
@@ -31,7 +31,7 @@
   };
 
   // Record first visit to page with cookie prompt
-  if (!eyeo.preventCookiePrompt && !hasCookie('eyeo-seen-cookie-prompt'))
+  if (!adblock.settings.suppressCookiePrompt && !hasCookie('eyeo-seen-cookie-prompt'))
     document.cookie = 'eyeo-seen-cookie-prompt=1; ' +
       'expires=Fri, 31 Dec 9999 23:59:59 GMT; ' +
       'samesite=lax; domain=' + domain + '; path=/';
@@ -69,14 +69,14 @@
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TFZZB3Q');
 
-    if (!eyeo.preventCookiePrompt) {
+    if (!adblock.settings.suppressCookiePrompt) {
       var cookiePromptScript = document.createElement('script');
 
       cookiePromptScript.async = true;
       cookiePromptScript.src = origin + '/js/cookie-prompt.js';
 
       document.head.appendChild(cookiePromptScript);
-      eyeo.cookieEnabled = true;
+      adblock.settings.allowCookies = true;
     }
   }
 }());

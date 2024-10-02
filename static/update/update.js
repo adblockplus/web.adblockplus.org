@@ -3,6 +3,8 @@ import { getDollarString } from "../shared/currency.js";
 import { generateUserId, generateTrackingId } from "../shared/user.js";
 import "../shared/premium-difference.js";
 
+adblock.config = adblock.config || {};
+
 const paddleConfig = adblock.config.paddle = {
   serviceURL: "https://abp-payments.ey.r.appspot.com/paddle/generate-pay-link",
   sandboxVendor: 11004,
@@ -242,13 +244,13 @@ function getPaddleAmount({currency, frequency}) {
   }
 }
 
-const language = adblock.settings.language || "en";
+const language = adblock.settings.locale || "en";
 const isTestmode = location.hostname == "localhost" || adblock.query.has("testmode");
 const environment = isTestmode ? "sandbox" : "live";
 const page = adblock.settings.page || "update";
 const defaultCurrency = adblock.query.get("currency") || adblock.settings.currency || "USD";
 let premiumId;
-try { premiumId = adblock.extensions.adblockPlus.premiumId || generateUserId(); }
+try { premiumId = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo).premiumId || generateUserId(); }
 catch (error) { premiumId = generateUserId(); }
 const trackingId = generateTrackingId("ME", premiumId);
 

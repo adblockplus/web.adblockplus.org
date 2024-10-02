@@ -38,7 +38,7 @@ _logV2Message = function(event, params, callback) {
         params["anti_adblock_pass__already_donated"] = 1;
     }
 
-    eyeo.log(event, params).finally(callback);
+    adblock.log(event, params).finally(callback);
     
     // var payload = {'event':  event, 'payload': params};
 
