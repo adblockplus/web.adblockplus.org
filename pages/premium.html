@@ -5,21 +5,22 @@ robots=none
 unadblock=1
 
 <head>
-  <script>
+  <script>(()=>{
     adblock.settings.pageCode = "ME";
-    if (adblock.query.has("premium-checkout__handoff")) {
+    if (adblock.query.has("checkout__flow")) {
       localStorage.setItem("contributionInfo", JSON.stringify({
-        amount: adblock.query.get("premium-checkout__amount"),
-        frequency: adblock.query.get("premium-checkout__frequency"),
         processor: "paddle",
-        currency: adblock.query.get("premium-checkout__currency"),
-        lang: adblock.query.get("premium-checkout__language"),
-        source: adblock.query.get("premium-checkout__flow"),
-        clickTs: adblock.query.get("premium-checkout__timestamp"),
-        coupon: adblock.query.get("premium-checkout__coupon")
+        currency: adblock.query.get("checkout__currency"),
+        frequency: adblock.query.get("checkout__frequency"),
+        amount: adblock.query.get("checkout__amount"),
+        clickTs: adblock.query.get("checkout__timestamp"),
+        plan: adblock.query.get("checkout__product"),
+        source: dblock.query.get("checkout__page"),
+        lang: adblock.query.get("checkout__language"),
+        geo: adblock.query.get("checkout__country"),
       }));
     }
-  </script>
+  })()</script>
   <? include optimizely ?>
   <? include hotjar ?>
   <link rel="stylesheet" href="/css/pages/premium.css">
