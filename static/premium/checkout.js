@@ -72,11 +72,7 @@ const card = document.querySelector(".premium-checkout-card--interactive");
 
 /** log an event (always include global userid, email, and flow) */
 function checkoutLog(event, data = {}) {
-  Object.assign(data, {
-    userid,
-    email,
-    flow
-  });
+  adblock.data.flow = flow;
   console.info(event, data);
   return typeof adblock.log == "function"
   ? adblock.log(event, data)
@@ -179,7 +175,7 @@ function verifyEmail(email) {
  * @todo add retries
  */
 function verifyCode(code) {
-  checkoutLog("premium-checkout__code", { userid, code });
+  checkoutLog("premium-checkout__code");
   return new Promise((resolve, reject) => {
     fetch("https://myadblock.licensing.adblockplus.dev/license/api/", {
       method: 'POST',
@@ -368,7 +364,7 @@ class ErrorStep extends Step {
   /** renders the activation step dom with the global email and userid */
   render() {
     super.render();
-    this.element.querySelector(".premium-checkout-error__code").textContent = email ? `${email}:${userid}` : userid;
+    this.element.querySelector(".premium-checkout-error__code").textContent = `${email}:${userid}:${adblock.sid}`;
   }
 
 }
@@ -563,7 +559,6 @@ steps.verifyCode.on("submit", async () => {
 
 [steps.error, steps.verifyEmail, steps.verifyCode].forEach(step => {
   step.on("close", () => {
-    checkoutLog("premium-checkout__close");
     flow = "none";
     goto(steps.purchase)
   });
@@ -617,10 +612,5 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   card.scrollIntoView();
   goto(steps.verifyEmail);
 } else {
-  // if you don't begin an activation-handoff flow on load then the default
-  // flow is "none" and the default step is steps.purchase
-  if (flow != "none") {
-    checkoutLog("premium-checkout__handover");
-  }
   goto(steps.purchase, undefined, false);
 }

@@ -3,6 +3,8 @@ import { getDollarString } from "../shared/currency.js";
 import { checkout } from "../shared/checkout.js"
 import "../shared/premium-difference.js";
 
+adblock.config = adblock.config || {};
+
 const PRICES = {
   USD: {
     monthly: 400,

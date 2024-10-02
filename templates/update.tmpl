@@ -9,7 +9,7 @@
     <title>{{ title | translate("title") }}</title>
     <meta property="og:image" content="/img/adblockplus_promo.png">
     <meta name="robots" content="none">
-    <? include globals ?>
+    <? include inline-globals ?>
     <? include optimizely ?>
     {% block head %}
       {{ head | safe }}
