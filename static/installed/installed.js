@@ -1,5 +1,5 @@
 import "/js/vendor/NumberFormat.min.js";
-import { getDollarNumber, getCentNumber, getDollarString } from "../shared/currency.js";
+import { getDollarString } from "../shared/currency.js";
 import { checkout, checkoutEvents } from "../shared/checkout.js"
 
 const PAYMENT_CONFIG = {
@@ -80,15 +80,7 @@ function getSelectedFrequency(selected) {
 }
 
 function getSelectedAmount(selected) {
-  return selected.value == "custom" 
-    ? getCentNumber(
-        getSelectedCurrency(),
-        selected
-          .closest(".installed-payment-amount")
-          .querySelector(".installed-payment-amount__input")
-          .value
-      )
-    : selected.value;
+  return selected.value;
 }
 
 function updatePaymentAmounts(currency) {
@@ -101,46 +93,12 @@ function updatePaymentAmounts(currency) {
       amountLabel.querySelector(".installed-payment-amount__radio").value = amount;
       amountLabel.querySelector(".installed-payment-amount__text").textContent = getDollarString(currency, amount);
     });
-    paymentFrequency.querySelector(".installed-payment-amount__input").placeholder = getDollarString(
-      currency,
-      PAYMENT_CONFIG[currency][frequency][2]
-    );
   });
 }
 
 updatePaymentAmounts(defaultCurrency);
 
 paymentCurrency.addEventListener("change", () => updatePaymentAmounts(paymentCurrency.value));
-
-let requiredCustomAmount = null;
-
-paymentForm.addEventListener("focusin", event => {
-  // unset and untrack previously required custom amount on amount change
-  if (
-    (event.target.classList.contains("installed-payment-amount__radio")
-    || event.target.classList.contains("installed-payment-amount__input")) 
-    && requiredCustomAmount != null
-  ) {
-    requiredCustomAmount.required = null;
-    requiredCustomAmount.min = null;
-    requiredCustomAmount = null;
-  }
-  if (event.target.classList.contains("installed-payment-amount__input")) {
-    // check radios beside custom amounts when custom amounts are directly focused
-    event.target.closest(".installed-payment-amount").querySelector(".installed-payment-amount__radio").checked = true;
-    // set and track custom amount minimums when custom amounts are selected
-    requiredCustomAmount = event.target;
-    event.target.required = true;
-    event.target.min = getDollarNumber(
-      getSelectedCurrency(),
-      PAYMENT_CONFIG[getSelectedCurrency()][getSelectedFrequency(event.target)][0]
-    );
-  }
-  // focus custom amount inputs when custom amount radios are directly focused
-  if (event.target.classList.contains("installed-payment-amount__radio") && event.target.value == "custom") {
-    event.target.closest(".installed-payment-amount").querySelector(".installed-payment-amount__input").focus();
-  }
-});
 
 paymentForm.addEventListener("submit", event => {
   event.preventDefault();
