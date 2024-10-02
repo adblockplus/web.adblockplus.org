@@ -74,6 +74,12 @@ window.addEventListener("load", function onLoad() {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
+  document.querySelectorAll("[data-click]", function onDataClick(target) {
+    adblock.log("click", JSON.parse(target.dataset.click));
+  });
+});
+
 /** global general error handling and logging function */
 adblock.handleError = function handleError({name, message, context, handler}) {
   if (handler) handler({name, message, context});
