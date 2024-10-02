@@ -339,7 +339,7 @@ const checkout = adblock.api.checkout = function checkout({currency, frequency, 
       });
     })
     .catch(() => {
-      adblock.error(adblock.strings["error--unexpected"]);
+      adblock.handleError(adblock.strings["error--unexpected"]);
     });
   }
 }
