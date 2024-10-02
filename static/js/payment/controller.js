@@ -85,16 +85,6 @@ function onConfigLoad()
     supportedCardBrands: stripeConfig.providers
   });
   stripeCardModal.onSubmit(onStripeConfirm);
-
-  eyeo.beacon({
-    paymentSetup: true,
-    paymentSetupTime: parseInt(performance.now(), 10),
-  });
-
-  eyeo.log("payment_setup", {
-    session: session,
-    referrer: queryParameters.get('an')
-  });
 }
 
 var hasIntendedPayment = false;
@@ -103,18 +93,7 @@ function onFormSubmit(data)
 {
   if (!hasIntendedPayment) {
     hasIntendedPayment = true;
-    eyeo.beacon({
-      paymentIntended: true,
-      paymentIntendedTime: parseInt(performance.now(), 10)
-    });
   }
-
-  eyeo.log("payment_intention", {
-    currency: data.currency,
-    frequency: data.frequency,
-    amount: data.amount,
-    provider: data.provider
-  });
 
   // Storing information to be consumed by optimizely and hotjar experiments
   if (ns.shouldStoreContributionInfo) {

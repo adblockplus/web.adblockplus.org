@@ -1,0 +1,5 @@
+<script>(()=>{
+  adblock.settings.page = {{ page | tojson }};
+  adblock.settings.locale = {{ locale | tojson }};
+  {% if prevent_cookie_prompt %} adblock.settings.suppressCookiePrompt = true; {% endif %}
+})()</script>

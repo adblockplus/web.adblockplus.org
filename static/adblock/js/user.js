@@ -339,7 +339,7 @@ function recordTracking(omitUserId) {
     var experimentId = "0";
     var experimentVariant = "0";
     return MABTracking.Id([
-        MABTracking.Section([eyeo.payment.productId]),
+        MABTracking.Section(["ME"]),
         MABTracking.Section(["X", experimentId, "G", experimentVariant]),
         MABTracking.Section(["F", getBrowser(), getOS(), getSource()]),
         MABTracking.Section([omitUserId ? "unknown" : forceGetUserId()])
