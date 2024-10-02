@@ -958,7 +958,6 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   product = product || planCodeCompatibility[plan] || planCodeCompatibility[adblockPlan] || plan || adblockPlan;
   if (!PRODUCT_CONFIG.hasOwnProperty(product)) throw new Error("Invalid product");
   const productCode = PRODUCT_CONFIG[product].code;
-  if (typeof productCode != "string") throw new Error("Invalid product code");
   if (plan || adblockPlan) console.warn("Please use checkout({product}) instead of checkout({plan|adblockPlan})");
 
   const priceId = PADDLE_PRICES[paddleEnvironment][product]?.[currency]?.[frequency]?.[amount]
@@ -971,6 +970,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   if (typeof successUrl != "string" || !successUrl.length) throw new Error("Invalid successUrl");
 
   const successParams = new URLSearchParams();
+  successParams.set("premium-checkout__handoff", 1); //FIXME: Remove after contributionInfo migration
   successParams.set("checkout__flow", flow);
   successParams.set("checkout__page", pageName);
   successParams.set("checkout__product", product);
