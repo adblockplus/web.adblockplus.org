@@ -47,6 +47,26 @@ template=minimal
                 {{ "Looking for another ad-blocker to stop YouTube ads" | translate("reason-youtube") }}
               </label>
             </li>
+            <li class="reason-ignored">
+              <input
+                id="reason-not-free-input"
+                type="checkbox"
+                name="reason"
+                value="10v0" />
+              <div class="reason-alert-container">
+                <label for="reason-not-free-input">
+                  {{ "I don't want to pay for Adblock Plus" | translate("reason-not-free") }}
+                </label>
+                <div class="alert">
+                  <div>
+                    {{ "You don't have to pay! Donations are voluntary. Just close the donation tab when it appears and use Adblock Plus for free." | translate("not-free-alert") }}
+                  </div>
+                  <div>
+                    <? include reinstall-button ?>
+                  </div>
+                </div>
+              </div>
+            </li>
             {%- for reasonId, stringId, value, adblockers in reasons %}
               <li>
                 <label>
