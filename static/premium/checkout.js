@@ -55,11 +55,11 @@ const defaultCurrency = PRICES.hasOwnProperty(adblock.settings.currency)
   ? adblock.settings.currency
   : "USD";
 
-let userid = adblock.query.get("premium-checkout__userid") || adblock.settings.premiumId;
+let userid = adblock.query.get("checkout__premiumId") || adblock.settings.premiumId;
 
-let email = adblock.query.get("premium-checkout__email") || "";
+let email = "";
 
-let flow = adblock.query.get("premium-checkout__flow") || "none";
+let flow = adblock.query.get("checkout__flow") || "none";
 
 const section = document.querySelector(".premium-checkout");
 
@@ -562,7 +562,7 @@ steps.verifyCode.on("submit", async () => {
 // ACTIVATION HANDOFF FLOW /////////////////////////////////////////////////////
 
 // you can hand a purchase flow on another page off to this page via the
-// premium-checkout__handoff parameter to begin the "activation-handoff" flow.
+// checkout__flow parameter to begin the "activation-handoff" flow.
 // 
 // you can optionally name the handoff flow via premium-checkout__flow parameter.
 //
@@ -576,20 +576,15 @@ steps.verifyCode.on("submit", async () => {
 //
 // with steps.error on error.
 if (adblock.query.has("premium-checkout__fake-error")) {
-  email = adblock.query.get("premium-checkout__email") || "";
-  userid = adblock.query.get("premium-checkout__userid") || userid;
+  userid = adblock.query.get("checkout__premiumId") || userid;
   card.scrollIntoView();
   goto(steps.error);
-} else if (adblock.query.has("premium-checkout__handoff")) {
-  flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
-  email = adblock.query.get("premium-checkout__email") || "";
-  userid = adblock.query.get("premium-checkout__userid") || userid;
-  const currency = adblock.query.get("premium-checkout__currency");
-  const frequency = adblock.query.get("premium-checkout__frequency");
-  let amount = adblock.query.get("premium-checkout__amount");
-  let discount = adblock.query.get("premium-checkout__discount");
-  discount = parseFloat(discount) || 1;
-  amount = amount * discount;
+} else if (adblock.query.has("checkout__flow")) {
+  flow = adblock.query.get("checkout__flow") || "activation-handoff";
+  userid = adblock.query.get("checkout__premiumId") || userid;
+  const currency = adblock.query.get("checkout__currency");
+  const frequency = adblock.query.get("checkout__frequency");
+  const amount = adblock.query.get("checkout__amount");
   card.scrollIntoView();
   await goto(steps.loading);
   await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
