@@ -944,14 +944,15 @@ const planCodeCompatibility = {
  * @param {string} options.frequency - checkout frequency (e.g. once|monthly|yearly)
  * @param {string} options.amount - checkout amount in cents (e.g. 1000|199)
  * @param {string} [options.flow] - checkout flow being completed (default: page name)
+ * @param {string} [options.successUrl] - checkout success URL redirected to
  */
 export const checkout = adblock.api.checkout = function checkout(options) {
 
-  let { product, plan, adblockPlan, currency, frequency, amount, flow } = options;
-
-  flow = flow || pageName;
+  let { product, plan, adblockPlan, currency, frequency, amount, flow, successUrl } = options;
 
   const clickTs = Date.now();
+
+  flow = flow || pageName;
 
   // FIXME: We should only use this temporarily to avoid breaking ongoing conversion.com experiments
   product = product || planCodeCompatibility[plan] || planCodeCompatibility[adblockPlan] || plan || adblockPlan;
@@ -960,13 +961,13 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   if (typeof productCode != "string") throw new Error("Invalid product code");
   if (plan || adblockPlan) console.warn("Please use checkout({product}) instead of checkout({plan|adblockPlan})");
 
-  const priceId = PADDLE_PRICES[paddleEnvironment][product][currency][frequency][amount]
-  || PADDLE_EXPERIMENT_PRICES[paddleEnvironment][product][currency][frequency][amount];
+  const priceId = PADDLE_PRICES[paddleEnvironment][product]?.[currency]?.[frequency]?.[amount]
+  || PADDLE_EXPERIMENT_PRICES[paddleEnvironment][product]?.[currency]?.[frequency]?.[amount];
   if (typeof priceId != "string" || !priceId.length) throw new Error("Invalid price");
-  if ((!experimentId || !experimentVariantId) && !PADDLE_PRICES[paddleEnvironment][product][currency][frequency][amount])
+  if ((!experimentId || !experimentVariantId) && !PADDLE_PRICES[paddleEnvironment][product]?.[currency]?.[frequency]?.[amount])
     console.warn("Please use adblock.api.setExperimentId(id) and adblock.api.setExperimentVariantId(id) if running an experiment, else add experimental prices to PADDLE_PRICES on integration");
 
-  let successUrl = PRODUCT_CONFIG[product].successUrl;
+  successUrl = successUrl || PRODUCT_CONFIG[product].successUrl;
   if (typeof successUrl != "string" || !successUrl.length) throw new Error("Invalid successUrl");
 
   const successParams = new URLSearchParams();
