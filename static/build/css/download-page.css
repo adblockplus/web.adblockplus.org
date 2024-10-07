@@ -2147,6 +2147,20 @@ small,
 
 /* shared cookie styles *******************************************************/
 
+.cookie 
+{
+  color: #212121;
+  font-size: 18px;
+}
+
+@media (max-width: 768px)
+{
+  .cookie 
+  {
+    font-size: 16px;
+  }
+}
+
 .cookie p
 {
   margin-top: 1em;

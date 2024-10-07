@@ -1,4 +1,3 @@
-{% if not suppress_cookie_prompt %}
 <script>/* global adblock */(()=>{
 
   // CAUTION: set via /settings.js
@@ -39,6 +38,13 @@
   const hasOptedOutOfTracking = adblock.query.has("cookie-consent__tracking-opted-out")
     ? adblock.query.get("cookie-consent__tracking-opted-out") != "0"
     : document.cookie.includes(COOKIE_TRACKING_OPT_OUT);
+
+  // CAUTION: set via cms based on page frontmatter
+  let suppressCookiePrompt = {{ "true" if suppress_cookie_prompt else "false" }};
+
+  if (localStorage.getItem("cart")) suppressCookiePrompt = false;
+
+  if (suppressCookiePrompt && !userHasSeenCookiePrompt) return;
 
   const closeButtons = document.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save");
   const saveButtons = document.querySelectorAll(".cookies-save");
@@ -121,4 +127,3 @@
   document.documentElement.classList.add("has-cookies");
 
 })();</script>
-{% endif %}

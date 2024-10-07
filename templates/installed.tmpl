@@ -3,6 +3,7 @@
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
+    <? include styles ?>
     <? include config ?>
     <? include google/analytics ?>
     <? include optimizely ?>
@@ -15,5 +16,6 @@
     {% block body %}
       {{ body | safe }}
     {% endblock %}
+    <? include cookie-consent/index ?>
   </body>
 </html>
