@@ -547,7 +547,7 @@ Nous utilisons Google Analytics sur notre site web, un service de Google Inc. (�
 **Vous pouvez désactiver Google Analytics si vous ne souhaitez pas nous aider à améliorer nos produits.** Veuillez cependant noter que dans ce cas, un cookie sera créé afin de sauvegarder votre choix de désactivation. Ce cookie est considéré comme un « cookie nécessaire » et il ne peut pas être désactivé.
 {: .eea-element }
 
-<? include cookie/settings-link ?>
+<? include cookie-consent/settings-link ?>
 
 ###### Pour les utilisateurs non membres de l’UE/EEE uniquement : Google Tag Manager {: #google-tag-manager }
 
@@ -562,7 +562,7 @@ Google Optimize utilise des cookies qui nous permettent d’optimiser et d’ana
 **Vous pouvez désactiver Google Optimize si vous ne souhaitez pas nous aider à améliorer nos produits.** Veuillez cependant noter que dans ce cas, un cookie sera créé afin de sauvegarder votre choix de désactivation. Ce cookie est considéré comme un « cookie nécessaire » et il ne peut pas être désactivé.
 {: .eea-element }
 
-<? include cookie/settings-link ?>
+<? include cookie-consent/settings-link ?>
 
 ###### Sur adblock.ai {: #adblock-ai }
 
@@ -718,3 +718,5 @@ Pour toute question concernant cette section ou sur comment exercer vos droits e
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}
+
+<? include cookie-consent/script ?>

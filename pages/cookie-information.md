@@ -19,7 +19,9 @@ noheading=1
     {{ change-cookie-settings-label[button label] Change cookie settings }}
   </a>
   <div class="cookies-dropup-menu text-start" tabindex="1">
-    <? include cookie/settings ?>
+    <? include cookie-consent/settings ?>
     <span class="arrow"></span>
   </div>
 </div>
+
+<? include cookie-consent/script ?>

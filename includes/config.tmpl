@@ -6,7 +6,6 @@
   if (adblock.query.has("design")) document.documentElement.classList.add("design");
 
   var eyeo = window.eyeo = {
-    preventCookiePrompt: {{ "true" if prevent_cookie_prompt else "false" }},
     log: noop,
     beacon: noop
   };

@@ -6,6 +6,7 @@
     <? include styles ?>
     <? include config ?>
     <? include analytics ?>
+    <? include google/analytics ?>
 
     {% block head %}
       {{ head | safe }}
@@ -17,7 +18,6 @@
       {{ body | safe }}
     {% endblock %}
 
-    <? include cookie/index ?>
-    <? include google/analytics ?>
+    <? include cookie-consent/index ?>
   </body>
 </html>

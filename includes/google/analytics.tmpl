@@ -1,3 +1,42 @@
-{% if not disable_analytics -%}
-  <script src="/js/testing/setup.js"></script>
-{%- endif %}
+<script>/* global adblock */(()=>{
+
+  // CAUTION: set via /settings.js
+  if (adblock.settings.restrictPrivacy) return;
+
+  const userHasSeenCookiePrompt = adblock.query.has("cookie-consent__seen")
+    ? adblock.query.get("cookie-consent__seen") != "0"
+    : document.cookie.includes("eyeo-seen-cookie-prompt");
+
+  // CAUTION: set via cms based on page frontmatter
+  let suppressCookiePrompt = {{ "true" if suppress_cookie_prompt else "false" }};
+
+  if (localStorage.getItem("cart")) suppressCookiePrompt = false;
+
+  if (suppressCookiePrompt && !userHasSeenCookiePrompt) return;
+
+  const userHasOptedOutOfAnalytics = adblock.query.has("cookie-consent__tracking-opted-out")
+    ? adblock.query.get("cookie-consent__tracking-opted-out") != "0"
+    : document.cookie.includes("eyeo-ga-opt-out");
+
+  if (userHasOptedOutOfAnalytics) return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("consent", "default", {
+    "ad_storage": "denied",
+    "ad_user_data": "denied",
+    "ad_personalization": "denied",
+    "analytics_storage": "granted",
+    "functionality_storage": "denied",
+    "personalization_storage": "denied",
+    "security_storage": "denied",
+  });
+  gtag("config", "G-VCX0BRJMZ3");
+
+  const analyticsScript = document.createElement("script");
+  analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=G-VCX0BRJMZ3";
+  analyticsScript.async = true;
+  document.head.appendChild(analyticsScript);
+
+})()</script>

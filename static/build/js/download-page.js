@@ -15,10 +15,6 @@
         element.style.paddingBottom = value;
     }
 
-    // Show "Change cookie settings" links and info text to EEA users
-    if (typeof eyeo == "object" && eyeo.cookieEnabled) // created in "js/testing/setup.js"
-        document.documentElement.classList.add("has-cookies");
-
     // Prevent Cookies bar (desktop/mobile) from hiding footer contents
     function initPreventFooterOverlap() {
         var pageFooter = document.getElementById("footer");

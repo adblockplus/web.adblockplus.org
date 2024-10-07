@@ -1,0 +1,124 @@
+{% if not suppress_cookie_prompt %}
+<script>/* global adblock */(()=>{
+
+  // CAUTION: set via /settings.js
+  if (adblock.settings.restrictPrivacy) return;
+
+  const COOKIE_SEEN_PROMPT = "eyeo-seen-cookie-prompt";
+  const COOKIE_TRACKING_OPT_OUT = "eyeo-ga-opt-out";
+  const COOKIE_CONSENT = "eyeo-ga-consent";
+  const ANALYTICS_ID = "G-VCX0BRJMZ3";
+
+  function isStagingEnvironment(hostname) {
+    return hostname.startsWith("dev--adblockplus-org--") && hostname.endsWith(".web.app")
+  }
+
+  function toTopLevelDomain(hostname) {
+    return hostname.split(".").slice(-2).join(".").split(":")[0];
+  }
+
+  const cookieDomain = isStagingEnvironment(location.hostname) ? location.hostname : toTopLevelDomain(location.hostname);
+
+  function addListeners(event, targets, callback) {
+    for (var i = 0; i < targets.length; i++)
+      targets[i].addEventListener(event, callback, false);
+  }
+
+  function setCookie(name, value="") {
+    document.cookie = `${name}=${value}; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=${cookieDomain}; path=/`;
+  }
+
+  const hasSeenCookiePrompt = adblock.query.has("cookie-consent__seen")
+    ? adblock.query.get("cookie-consent__seen") != "0"
+    : document.cookie.includes(COOKIE_SEEN_PROMPT);
+
+  const hasConsentedToCookiePrompt = adblock.query.has("cookie-consent__consented")
+    ? adblock.query.get("cookie-consent__consented") != "0"
+    : document.cookie.includes(COOKIE_CONSENT);
+
+  const hasOptedOutOfTracking = adblock.query.has("cookie-consent__tracking-opted-out")
+    ? adblock.query.get("cookie-consent__tracking-opted-out") != "0"
+    : document.cookie.includes(COOKIE_TRACKING_OPT_OUT);
+
+  const closeButtons = document.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save");
+  const saveButtons = document.querySelectorAll(".cookies-save");
+  const settingsButtons = document.querySelectorAll(".cookies-settings");
+  const settingsDropups = document.querySelectorAll(".cookies-dropup");
+  const trackingCookiesButtons = document.querySelectorAll(".tracking-cookies");
+
+  function toggleCookieNotice() {
+    document.documentElement.classList.toggle("show-cookies-notice");
+    document.documentElement.classList.remove("show-cookies-settings");
+  }
+
+  function closeCookieNotice() {
+    document.documentElement.classList.remove("show-cookies-notice");
+    document.documentElement.classList.remove("show-cookies-settings");
+  }
+
+  function toggleCookieSettings() {
+    if (window.innerWidth >= 576)
+      this.parentElement.classList.toggle("show-cookies-settings");
+    else
+      document.documentElement.classList.toggle("show-cookies-settings");
+  }
+
+  function onCookieSettingsBlur(event) {
+    let isInDropup = false;
+    for (let i = 0; i < settingsDropups.length; i++)
+      if (settingsDropups[i].contains(event.target))
+        isInDropup = true;
+    if (event.target.classList.contains("cookies-save") ||
+      (window.innerWidth >= 576 &&
+      window.innerHeight >= 575 &&
+      // Is the click outside the cookie settings dropup?
+      isInDropup == false)
+    ) {
+      [].slice.call(settingsDropups).forEach(function(node) {
+        node.classList.remove("show-cookies-settings");
+      });
+    }
+  }
+
+  function toggleTrackingPreference() {
+    hasOptedOutOfTracking = !hasOptedOutOfTracking;
+    flipTrackingSwitches(!hasOptedOutOfTracking);
+  }
+
+  function saveCookieSettings()
+  {
+    setCookie(COOKIE_TRACKING_OPT_OUT, hasOptedOutOfTracking);
+    // consent cookie is saved separately by triggering any notice closing event
+    // This immediately disables or undisables tracking
+    window["ga-disable-" + ANALYTICS_ID] = !hasOptedOutOfTracking;
+    // Delete all non-essential cookies when tracking is disabled
+    if (hasOptedOutOfTracking) {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].split("=")[0].trim();
+        if (cookie !== COOKIE_TRACKING_OPT_OUT && cookie !== COOKIE_CONSENT) setCookie(cookie, false);
+      }
+    }
+  }
+
+  function saveCookieConsent() {
+    setCookie(COOKIE_CONSENT, true);
+  }
+
+  function flipTrackingSwitches(checked) {
+    const trackingOptOutSwitches = document.querySelectorAll("input.tracking-cookies");
+    for (let i = 0; i < trackingOptOutSwitches.length; i++) trackingOptOutSwitches[i].checked = checked;
+  }
+
+  document.addEventListener("click", onCookieSettingsBlur, true);
+  addListeners("click", closeButtons, saveCookieConsent);
+  addListeners("click", closeButtons, closeCookieNotice);
+  addListeners("click", settingsButtons, toggleCookieSettings);
+  addListeners("change", trackingCookiesButtons, toggleTrackingPreference);
+  addListeners("click", saveButtons, saveCookieSettings);
+  if (!hasConsentedToCookiePrompt) toggleCookieNotice();
+  if (hasOptedOutOfTracking) flipTrackingSwitches(false);
+  document.documentElement.classList.add("has-cookies");
+
+})();</script>
+{% endif %}

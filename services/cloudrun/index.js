@@ -10,11 +10,6 @@ let euRules, geoipRules;
 
 let euRules2, geoipRules2;
 
-// pre-approved countries in static/js/testing/.htaccess
-let preapprovedCountries;
-
-
-
 // Request handlers
 
 app.use('/redirect', legacyRedirects);

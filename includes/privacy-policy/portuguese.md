@@ -544,6 +544,8 @@ A solicitação para nossos sites, incluindo seu endereço IP, é armazenada qua
 
 Usamos cookies para reconhecer usuários conectados ou para armazenar suas preferências de privacidade. Cookies são pequenos arquivos que são armazenados em seu computador com a ajuda de seu navegador de internet. Os cookies são necessários para fornecer nossos serviços, não são avaliados de nenhuma outra maneira e nunca são usados para rastrear os visitantes do site. Se você não desejar ativar os cookies, pode optar por não usá-los selecionando as configurações apropriadas em seu navegador. Observe que, como resutado, a eficiência e o alcance dos serviços da eyeo podem ser restritos.
 
+<? include cookie-consent/settings-link ?>
+
 ###### Apenas para usuários fora da UE/EEE: Google Analytics {: #google-analytics }
 
 Usamos o Google Analytics, um serviço de análise da Web da Google Inc. ("Google"), em nossos sites. O Google Analytics usa os chamados "cookies" (arquivos de texto armazenados em seu computador que nos permitem analisar seu uso dos nossos sites). As informações geradas pelos cookies (incluindo seu endereço IP abreviado) são transmitidas e armazenadas em um servidor do Google nos Estados Unidos. O Google usa essas informações para avaliar seu uso dos nossos sites, compilar relatórios de atividades e fornecer mais serviços relacionados ao uso dos nossos sites. É possível que o Google transmita essas informações a terceiros, se exigido por lei, ou se terceiros processarem essas informações em nome do Google.
@@ -557,6 +559,8 @@ Nosso site usa o Google Tag Manager para a implementação do [Google Analytics]
 Nosso site usa o serviço de análise e otimização da Web Google Optimize fornecido pelo Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, EUA ("Google"). Usamos o serviço Google Optimize para aumentar a atratividade, o conteúdo e a funcionalidade do nosso site, reproduzindo novos recursos e conteúdo para uma porcentagem de nossos usuários e avaliando estatisticamente a mudança de uso (teste A/B). O Google Optimize é um sub-serviço do [Google Analytics](#google-analytics).
 
 O Google Optimize usa cookies, que nos permitem otimizar e analisar seu uso do nosso site. As informações geradas por esses cookies sobre o uso do nosso site geralmente são transferidas para um servidor do Google nos EUA e lá armazenadas. Usamos o Google Optimize com anonimização de IP ativada para que seu endereço de IP seja encurtado pelo Google nos estados membros da União Europeia ou no Espaço Econômico Europeu. Somente em casos excepcionais, o endereço IP completo será transmitido para um servidor do Google nos EUA e encurtado lá. O Google usará essas informações para avaliar seu uso do nosso site, compilar relatórios sobre testes de otimização e atividades relacionadas ao site e fornecer outros serviços relacionados à atividade do site e uso da Internet.
+
+<? include cookie-consent/settings-link ?>
 
 ###### No adblock.ai {: #adblock-ai }
 
@@ -709,3 +713,5 @@ Para exercer qualquer um destes direitos, envie uma solicitação para <a id='p
 Se você tiver alguma dúvida sobre esta seção ou como exercer seus direitos sob a CCPA, entre <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>em contato conosco</a>.
 
 <time datetime="2023-01">Janeiro 2023</time>
+
+<? include cookie-consent/script ?>

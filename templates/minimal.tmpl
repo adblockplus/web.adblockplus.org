@@ -6,6 +6,7 @@
     <? include styles ?>
     <? include config ?>
     <? include analytics ?>
+    <? include google/analytics ?>
 
     {% block head %}
       {{ head | safe }}
@@ -20,8 +21,7 @@
     {% endblock %}
 
     <? include footer ?>
-    <? include cookie/index ?>
-    <? include google/analytics ?>
+    <? include cookie-consent/index ?>
     <? include scripts ?>
   </body>
 </html>
