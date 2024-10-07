@@ -44,7 +44,7 @@
 
   if (localStorage.getItem("cart")) suppressCookiePrompt = false;
 
-  if (suppressCookiePrompt && !userHasSeenCookiePrompt) return;
+  if (suppressCookiePrompt && !hasSeenCookiePrompt) return;
 
   const closeButtons = document.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save");
   const saveButtons = document.querySelectorAll(".cookies-save");
