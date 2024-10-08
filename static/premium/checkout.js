@@ -966,6 +966,10 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     },
     () => goto(steps.error)
   );
+} else if (adblock.query.has("already-contributed")) {
+  flow = "already-contributed";
+  card.scrollIntoView();
+  goto(steps.verifyEmail);
 } else {
   // if you don't begin an activation-handoff flow on load then the default
   // flow is "none" and the default step is steps.purchase
