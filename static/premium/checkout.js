@@ -346,7 +346,7 @@ function getOS() {
  * @todo import from shared source
  */
 function generateTrackingId() {
-  return `ME X0G0 F${getBrowser()}O${getOS()}SME ${userid}`;
+  return `ME${adblock.query.has("s") ? "_" + adblock.query.get("s") : ""} X0G0 F${getBrowser()}O${getOS()}SME ${userid}`;
 }
 
 // Return symbol like '$' for given currency code like 'USD'
