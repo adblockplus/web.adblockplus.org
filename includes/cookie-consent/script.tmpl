@@ -42,8 +42,6 @@
   // CAUTION: set via cms based on page frontmatter
   let suppressCookiePrompt = {{ "true" if suppress_cookie_prompt else "false" }};
 
-  if (localStorage.getItem("cart")) suppressCookiePrompt = false;
-
   if (suppressCookiePrompt && !hasSeenCookiePrompt) return;
 
   const closeButtons = document.querySelectorAll(".cookies-close, .cookies-submit, .cookies-save");
