@@ -20,9 +20,13 @@
    color: #fff;
    background-color: #000;
  }
- 
- body { margin: 0; }
- 
+
+ body {
+  margin: 0;
+  font-weight: 400;
+  padding-top: 0;
+}
+  
  h5, h4, h3, h2, h1 {
    color: #000;
    margin-top: 0;
@@ -37,6 +41,8 @@
  
  p { margin: 0.5rem 0; }
  
+ ul { list-style: disc; }
+
  html:not([dir="rtl"]) ul { margin-left: 1.5rem; }
  html[dir="rtl"] ul { margin-right: 1.5rem; }
  
@@ -284,7 +290,7 @@
   ******************************************************************************/
  
  .installed-footer__block-2 {
-   padding: 2rem;
+   padding: 2rem 2rem 7rem 2rem;
  }
  
  @media (min-width: 903px) {
