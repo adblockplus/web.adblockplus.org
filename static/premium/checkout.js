@@ -757,6 +757,14 @@ class VerifyStep extends Step {
 
   }
 
+  show() {
+    const showAnimation = super.show();
+    showAnimation.then(() => {
+      this.element.querySelector(".premium-checkout-verify__input").focus();
+    });
+    return showAnimation;
+  }
+
   /** get input value */
   getValue() {
     return this.element.querySelector(".premium-checkout-verify__input").value;
