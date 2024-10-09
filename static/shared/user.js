@@ -23,9 +23,10 @@ export function generateUserId() {
 export function generateTrackingId(productId, userid) {
   const browserId = getBrowserId();
   const osId = getOsId();
-  const sourceId = getSourceId() || "";
-  const funnelId = adblock.query.has("s") ? `_${adblock.query.get("s")}` : "";
-  return `${productId || funnelId ? productId + funnelId + " " : ""}X0G0 F${browserId}${osId}${sourceId} ${userid}`;
+  const sourceId = getSourceId();
+  const funnelId = adblock.query.has("s") ? adblock.query.get("s").trim() : "";
+  const productPrefix = funnelId ? `${productId}_${funnelId} ` : productId ? `${productId} ` : "";
+  return `${productPrefix}X0G0 F${browserId}${osId}${sourceId} ${userid}`;
 };
 
 export function getBrowserId() {
@@ -116,7 +117,6 @@ export function getPlainSource() {
     "update-fallback": "B",
     "premium": "ME",
     "block-cookie-banners": "BCB",
-    "block-cookie-banners-v2": "BCBV",
   }
   return pageIds[page] || "U";
 }

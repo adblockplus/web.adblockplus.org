@@ -63,11 +63,11 @@ function getOperatingSystemCode() {
 function generateTrackingId(pageName, productName, premiumId) {
   if (!checkoutConfig.pageCodes.hasOwnProperty(pageName)) throw new Error("Unknown page");
   const pageCode = checkoutConfig.pageCodes[pageName];
-  const trackingId = `X0G0 F${getBrowserCode()}O${getOperatingSystemCode()}S${pageCode} ${premiumId}`;
   if (!checkoutConfig.plans.hasOwnProperty(productName)) throw new Error("Unknown product");
-  const productCode = checkoutConfig.plans[productName].code || "";
-  const funnelCode = adblock.query.has("s") ? `_${adblock.query.get("s")}` : "";
-  return productCode || funnelCode ? `${productCode}${funnelCode} ${trackingId}` : trackingId;
+  const productId = checkoutConfig.plans[productName].code || "";
+  const funnelId = adblock.query.has("s") ? adblock.query.get("s").trim() : "";
+  const productPrefix = funnelId ? `${productId}_${funnelId} ` : productId ? `${productId} ` : "";
+  return `${productPrefix}X0G0 F${getBrowserCode()}O${getOperatingSystemCode()}S${pageCode} ${premiumId}`;
 }
 
 const reTrackingId = /([EX])([0-9]+)G(.) (?:F((?:CM)|.{1}))?(?:O(.))?(?:S([A-Z]+))?(?: ([a-z0-9]{0,7}[a-z][a-z0-9]{0,7}[0-9]{0,8}))?/;
