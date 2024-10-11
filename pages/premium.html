@@ -6,20 +6,20 @@ unadblock=1
 
 <head>
   <? include accounts-redirect-fallback ?>
-  <script>
-    if (adblock.query.has("premium-checkout__handoff")) {
+  <script>(()=>{
+    adblock.settings.pageCode = "ME";
+    if (adblock.query.has("premium-checkout__flow")) {
       localStorage.setItem("contributionInfo", JSON.stringify({
+        clickTs: adblock.query.get("premium-checkout__timestamp"),
         amount: adblock.query.get("premium-checkout__amount"),
         frequency: adblock.query.get("premium-checkout__frequency"),
-        processor: "paddle",
         currency: adblock.query.get("premium-checkout__currency"),
-        lang: adblock.query.get("premium-checkout__language"),
-        source: adblock.query.get("premium-checkout__flow"),
-        clickTs: adblock.query.get("premium-checkout__timestamp"),
-        coupon: adblock.query.get("premium-checkout__coupon")
+        lang: adblock.query.get("premium-checkout__locale"),
+        source: adblock.query.get("premium-checkout__page"),
+        processor: "paddle",
       }));
     }
-  </script>
+  })()</script>
   <? include optimizely ?>
   <? include hotjar ?>
   <link rel="stylesheet" href="/css/pages/premium.css">
@@ -270,5 +270,5 @@ unadblock=1
 
 <script src="/js/pages/premium.js"></script>
 <script src="/currency"></script>
-<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/premium/checkout.js" type="module"></script>

@@ -177,8 +177,7 @@
    }
  }
  
- .installed-main__block-3 .installed-payment .installed-payment-header__select,
- .installed-main__block-3 .installed-payment .installed-payment-amount__input {
+ .installed-main__block-3 .installed-payment .installed-payment-header__select {
    border-radius: 3px;
  }
  
@@ -529,23 +528,6 @@
 
 .installed-payment .installed-payment-amount__text {
   padding-top: 1.5px;
-}
-
-.installed-payment .installed-payment-amount__input {
-  font-size: .875rem;
-  width: 100%;
-  height: 1.4rem;
-  margin-top: .1875rem;
-  padding: .125rem .25rem .125rem .25rem;
-  border: 1px solid gray;
-}
-
-:not([dir='rtl']) .installed-payment .installed-payment-amount__input {
-  margin-right: .1875rem;
-}
-
-[dir='rtl'] .installed-payment .installed-payment-amount__input {
-  margin-left: .1875rem;
 }
 
 @media (min-width: 55.125rem) {
