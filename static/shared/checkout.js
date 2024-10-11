@@ -899,7 +899,7 @@ const locale = adblock.settings.locale || "en";
 const country = adblock.settings.country || "unknown";
 const pageName = adblock.settings.page || "U";
 const pageCode = adblock.settings.pageCode || "U";
-const funnelCode = adblock.query.get("s") || "";
+const funnelCode = (adblock.query.get("s") || "").trim();
 const premiumId = adblock.settings.premiumId = adblock.settings.premiumId || generatePremiumId();
 const browserCode = getBrowserCode();
 const operatingSystemCode = getOperatingSystemCode();
@@ -997,10 +997,12 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     console.error(error);
   }
 
+  const trackingPrefix = (productCode || funnelCode) ? `${productCode}_${funnelCode} ` : "";
+
   const customData = {
     locale,
     userid: premiumId,
-    tracking: `${productCode}_${funnelCode} X0G0 F${browserCode}O${operatingSystemCode}S${pageCode} ${premiumId}`,
+    tracking: `${trackingPrefix}X0G0 F${browserCode}O${operatingSystemCode}S${pageCode} ${premiumId}`,
     testmode: paddleEnvironment == "test",
     country,
     ga_id: "",
