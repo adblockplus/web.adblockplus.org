@@ -970,18 +970,32 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   if (typeof successUrl != "string" || !successUrl.length) throw new Error("Invalid successUrl");
 
   const successParams = new URLSearchParams();
-  successParams.set("premium-checkout__handoff", 1); //FIXME: Remove after contributionInfo migration
-  successParams.set("checkout__flow", flow);
-  successParams.set("checkout__page", pageName);
-  successParams.set("checkout__product", product);
-  successParams.set("checkout__premiumId", premiumId);
-  successParams.set("checkout__currency", currency);
-  successParams.set("checkout__frequency", frequency);
-  successParams.set("checkout__amount", amount);
-  successParams.set("checkout__country", country);
-  successParams.set("checkout__locale", locale);
-  successParams.set("checkout__timestamp", clickTs);
+  successParams.set("premium-checkout__handoff", 1);
+  successParams.set("premium-checkout__flow", flow);
+  successParams.set("premium-checkout__page", pageName);
+  successParams.set("premium-checkout__product", product);
+  successParams.set("premium-checkout__premiumId", premiumId);
+  successParams.set("premium-checkout__currency", currency);
+  successParams.set("premium-checkout__frequency", frequency);
+  successParams.set("premium-checkout__amount", amount);
+  successParams.set("premium-checkout__country", country);
+  successParams.set("premium-checkout__locale", locale);
+  successParams.set("premium-checkout__timestamp", clickTs);
   successUrl = `${successUrl}?${successParams.toString()}`;
+
+  try {
+    localStorage.setItem("contributionInfo", JSON.stringify({
+      clickTs,
+      amount,
+      frequency,
+      currency,
+      lang: locale,
+      source: pageName,
+      processor: "paddle",
+    }));
+  } catch (error) {
+    console.error(error);
+  }
 
   const customData = {
     locale,

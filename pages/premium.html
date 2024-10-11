@@ -7,17 +7,15 @@ unadblock=1
 <head>
   <script>(()=>{
     adblock.settings.pageCode = "ME";
-    if (adblock.query.has("checkout__flow")) {
+    if (adblock.query.has("premium-checkout__flow")) {
       localStorage.setItem("contributionInfo", JSON.stringify({
+        clickTs: adblock.query.get("premium-checkout__timestamp"),
+        amount: adblock.query.get("premium-checkout__amount"),
+        frequency: adblock.query.get("premium-checkout__frequency"),
+        currency: adblock.query.get("premium-checkout__currency"),
+        lang: adblock.query.get("premium-checkout__locale"),
+        source: adblock.query.get("premium-checkout__page"),
         processor: "paddle",
-        currency: adblock.query.get("checkout__currency"),
-        frequency: adblock.query.get("checkout__frequency"),
-        amount: adblock.query.get("checkout__amount"),
-        clickTs: adblock.query.get("checkout__timestamp"),
-        plan: adblock.query.get("checkout__product"),
-        source: dblock.query.get("checkout__page"),
-        lang: adblock.query.get("checkout__language"),
-        geo: adblock.query.get("checkout__country"),
       }));
     }
   })()</script>

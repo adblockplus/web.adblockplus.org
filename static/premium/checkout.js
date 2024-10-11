@@ -55,11 +55,11 @@ const defaultCurrency = PRICES.hasOwnProperty(adblock.settings.currency)
   ? adblock.settings.currency
   : "USD";
 
-let userid = adblock.query.get("checkout__premiumId") || adblock.settings.premiumId;
+let userid = adblock.query.get("premium-checkout__premiumId") || adblock.settings.premiumId;
 
 let email = "";
 
-let flow = adblock.query.get("checkout__flow") || "none";
+let flow = adblock.query.get("premium-checkout__flow") || "none";
 
 const section = document.querySelector(".premium-checkout");
 
@@ -576,15 +576,15 @@ steps.verifyCode.on("submit", async () => {
 //
 // with steps.error on error.
 if (adblock.query.has("premium-checkout__fake-error")) {
-  userid = adblock.query.get("checkout__premiumId") || userid;
+  userid = adblock.query.get("premium-checkout__premiumId") || userid;
   card.scrollIntoView();
   goto(steps.error);
-} else if (adblock.query.has("checkout__flow")) {
-  flow = adblock.query.get("checkout__flow") || "activation-handoff";
-  userid = adblock.query.get("checkout__premiumId") || userid;
-  const currency = adblock.query.get("checkout__currency");
-  const frequency = adblock.query.get("checkout__frequency");
-  const amount = adblock.query.get("checkout__amount");
+} else if (adblock.query.has("premium-checkout__flow")) {
+  flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
+  userid = adblock.query.get("premium-checkout__premiumId") || userid;
+  const currency = adblock.query.get("premium-checkout__currency");
+  const frequency = adblock.query.get("premium-checkout__frequency");
+  const amount = adblock.query.get("premium-checkout__amount");
   card.scrollIntoView();
   await goto(steps.loading);
   await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
