@@ -1,22 +1,22 @@
 <style>
-  .fr-only { display: none; }
+  .restrict-premium-only { display: none; }
 
-  .fr .fr-only { display: block; }
+  .restrict-premium .restrict-premium-only { display: block; }
 
-  .fr .not-fr { display: none !important; }
+  .restrict-premium .premium-checkout { display: none !important }
 
-  .fr .premium-cta {
+  .restrict-premium .premium-cta {
     color: #C6C6C6 !important;
     border: 1px solid #C6C6C6 !important;
     background-color: #fff !important;
   }
 
-  .fr .premium-cta:hover,
-  .fr .premium-cta:active,
-  .fr .premium-cta:focus,
-  .fr .premium-cta:hover,
-  .fr .premium-cta:active,
-  .fr .premium-cta:focus {
+  .restrict-premium .premium-cta:hover,
+  .restrict-premium .premium-cta:active,
+  .restrict-premium .premium-cta:focus,
+  .restrict-premium .premium-cta:hover,
+  .restrict-premium .premium-cta:active,
+  .restrict-premium .premium-cta:focus {
     color: #fff !important;
     background-color: #C6C6C6 !important;
     box-shadow: none !important;
@@ -35,7 +35,7 @@
   }
 </style>
 
-<aside class="alert-bar alert-bar--gold fr-only">
+<aside class="alert-bar alert-bar--gold restrict-premium-only">
   <div class="container">
     {{ get_string("s41", "premium") }}
   </div>

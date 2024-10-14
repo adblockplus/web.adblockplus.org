@@ -15,11 +15,8 @@ body
   padding-top: 0;
 }
 
-.fr .not-fr {
-  display: none !important;
-}
 
-html:not(.fr) .fr-only {
+html:not(.restrict-premium) .restrict-premium-only {
   display: none !important;
 }
 
