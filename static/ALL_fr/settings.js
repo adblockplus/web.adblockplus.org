@@ -5,7 +5,7 @@ adblock.settings.defaultCurrency = "EUR";
 adblock.settings.restrictPrivacy = true;
 adblock.settings.restrictPremium = true;
 const docList = document.documentElement.classList;
-docList.add(adblock.settings.country);
+docList.add(adblock.settings.country.toLowerCase());
 if (adblock.settings.restrictPrivacy) docList.add("restrict-privacy");
 if (adblock.settings.restrictPremium) docList.add("restrict-premium");
 

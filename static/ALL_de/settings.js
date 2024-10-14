@@ -5,7 +5,7 @@ adblock.settings.defaultCurrency = "EUR";
 adblock.settings.restrictPrivacy = true;
 adblock.settings.restrictPremium = false;
 const docList = document.documentElement.classList;
-docList.add(adblock.settings.country);
+docList.add(adblock.settings.country.toLowerCase());
 if (adblock.settings.restrictPrivacy) docList.add("restrict-privacy");
 if (adblock.settings.restrictPremium) docList.add("restrict-premium");
 // EXCEPTION: Redirect all DE country to DE language when language is not specified; overriding browser preferred language.

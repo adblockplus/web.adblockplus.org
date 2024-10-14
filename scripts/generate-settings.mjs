@@ -32,7 +32,7 @@ adblock.settings.defaultCurrency = "${UNIQUE_CURRENCIES[country] || (EUR_COUNTRI
 adblock.settings.restrictPrivacy = ${PRIVACY_RESTRICTED_COUNTRIES.includes(country) ? "true" : "false"};
 adblock.settings.restrictPremium = ${PREMIUM_RESTRICTED_COUNTRIES.includes(country) ? "true" : "false"};
 const docList = document.documentElement.classList;
-docList.add(adblock.settings.country);
+docList.add(adblock.settings.country.toLowerCase());
 if (adblock.settings.restrictPrivacy) docList.add("restrict-privacy");
 if (adblock.settings.restrictPremium) docList.add("restrict-premium");
 ${country == "DE" ? DE_EXCEPTION : ""}

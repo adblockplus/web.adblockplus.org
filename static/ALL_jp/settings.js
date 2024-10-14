@@ -5,7 +5,7 @@ adblock.settings.defaultCurrency = "JPY";
 adblock.settings.restrictPrivacy = false;
 adblock.settings.restrictPremium = false;
 const docList = document.documentElement.classList;
-docList.add(adblock.settings.country);
+docList.add(adblock.settings.country.toLowerCase());
 if (adblock.settings.restrictPrivacy) docList.add("restrict-privacy");
 if (adblock.settings.restrictPremium) docList.add("restrict-premium");
 
