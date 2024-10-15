@@ -39,7 +39,7 @@ adblock.uid = function uid(length = 32) {
 }
 
 /** browsing session uid */
-adblock.sid = adblock.query.get("sid") || uid();
+adblock.sid = adblock.query.get("sid") || adblock.uid();
 
 /** record data/activity via access log entry */
 adblock.log = function log(event, data = {}) {
