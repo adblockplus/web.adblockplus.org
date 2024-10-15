@@ -103,9 +103,9 @@ adblock.afterExtensionInjection = function afterExtensionInjection(extensionName
   injectionCallbacks[extensionName].push(callback);
 }
 
-function parseExtensionInjection(extensionName, extensionId) {
+function handleExtensionInjection(extensionName, extensionId) {
   try {
-    adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionName]);
+    adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
     if (injectionCallbacks[extensionName])
       injectionCallbacks[extensionName].forEach(callback => callback());
   } catch (error) {
@@ -117,13 +117,15 @@ function parseExtensionInjection(extensionName, extensionId) {
 
 function observeExtensionInjection(extensionName, extensionId) {
   if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
-    parseExtensionInjection(extensionName, extensionId);
+    handleExtensionInjection(extensionName, extensionId);
   } else {
     const observer = new MutationObserver(() => {
-      parseExtensionInjection(extensionName, extensionId);
-      observer.disconnect();
+      if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
+        handleExtensionInjection(extensionName, extensionId);
+        observer.disconnect();
+      }
     });
-    observer.observe(document.documentElement);
+    observer.observe(document.documentElement, {attributes: true});
   }
 }
 
