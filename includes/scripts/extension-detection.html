@@ -6,7 +6,9 @@
     return !!document.documentElement.dataset.adblockPlusExtensionInfo;
   }
 
-  function onABPDetected() {
+  adblock.api.isABPDetected = isABPDetected;
+
+  function handleABPDetected() {
     try {
       adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo);
     } catch (error) {
@@ -16,16 +18,16 @@
     ABPDetectedCallbacks.forEach(callback => callback());
   }
 
-  adblock.api.onABPDetected = (callback) => {
+  adblock.api.onABPDetected = function onABPDetected(callback) {
     if (isABPDetected()) callback();
     else ABPDetectedCallbacks.push(callback);
   };
 
   if (isABPDetected()) {
-    onABPDetected();
+    handleABPDetected();
   } else {
     const ABPDetectedObserver = new MutationObserver(() => {
-      onABPDetected();
+      handleABPDetected();
       ABPDetectedObserver.disconnect();
     });
     ABPDetectedObserver.observe(document.documentElement, {

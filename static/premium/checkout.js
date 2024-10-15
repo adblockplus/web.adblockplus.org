@@ -337,14 +337,13 @@ class ActivatedStep extends Step {
         .textContent = getDollarString(currency, amount);
     }
     // replace getting started button with download button if extension not detected
-    if (!adblock.extensions.adblockPlus) {
+    if (!adblock.api.isABPDetected()) {
       document.querySelectorAll(".download-button").forEach(button => {
-        const browser = getBrowser();
-        if (browser == "F") {
+        if (/firefox/i.test(navigator.userAgent)) {
           button.href = "https://eyeo.to/adblockplus/firefox_install/";
           button.textContent = document.querySelector("#download-label-firefox").textContent;
           button.parentElement.classList.add("firefox");
-        } else if (browser == "CM") {
+        } else if (/\sedg\/|edg([ea])/i.test(navigator.userAgent)) {
           button.href = "https://eyeo.to/adblockplus/edge_chromium_install/";
           button.textContent = document.querySelector("#download-label-edge").textContent;
           button.parentElement.classList.add("edge");
@@ -357,17 +356,17 @@ class ActivatedStep extends Step {
         button.hidden = false;
         button.addEventListener("click", event => {
           setTimeout(() => {
-            window.location.href = "https://welcome.adblockplus.org/installed?install-and-activate&" + adblock.query.toString();
+            window.location.href = "https://welcome.adblockplus.org/installed?premium-checkout__install&" + adblock.query.toString();
           }, 1000);
         });
       });
-      document.querySelectorAll(".install-and-activate").forEach(div => div.hidden = false);
+      document.querySelectorAll(".premium-checkout-success__install").forEach(div => div.hidden = false);
       document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.hidden = true);
     }
     // else replace download button with getting started button if extension is detected
     else {
       document.querySelectorAll(".download-button").forEach(button => button.hidden = true);
-      document.querySelectorAll(".install-and-activate").forEach(div => div.hidden = true);
+      document.querySelectorAll(".premium-checkout-success__install").forEach(div => div.hidden = true);
       document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.hidden = false);
     }
   }
