@@ -354,11 +354,9 @@ class ActivatedStep extends Step {
         }
         button.setAttribute("target", "_blank");
         button.hidden = false;
-        button.addEventListener("click", event => {
-          setTimeout(() => {
-            window.location.href = "https://welcome.adblockplus.org/installed?premium-checkout__install&" + adblock.query.toString();
-          }, 1000);
-        });
+        button.addEventListener("click", () => setTimeout(() => {
+          window.location.href = "https://welcome.adblockplus.org/installed?premium-checkout__install&" + adblock.query.toString();
+        }));
       });
       document.querySelectorAll(".premium-checkout-success__install").forEach(div => div.hidden = false);
       document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.hidden = true);
