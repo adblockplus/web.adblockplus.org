@@ -617,7 +617,11 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   const currency = adblock.query.get("premium-checkout__currency");
   const frequency = adblock.query.get("premium-checkout__frequency");
   const amount = adblock.query.get("premium-checkout__amount");
-  card.scrollIntoView();
+  if (currency && frequency && amount) {
+    goto(steps.activated, { currency, frequency, amount });
+  } else {
+    goto(steps.reactivated);
+  }
   adblock.api.onAdblockPlusDetected(async () => {
     await goto(steps.loading);
     await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
@@ -632,11 +636,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
       () => goto(steps.error)
     );
   });
-  if (currency && frequency && amount) {
-    goto(steps.activated, { currency, frequency, amount });
-  } else {
-    goto(steps.reactivated);
-  }
+  card.scrollIntoView();
 } else if (adblock.query.has("already-contributed")) {
   flow = "already-contributed";
   card.scrollIntoView();
