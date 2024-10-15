@@ -337,7 +337,7 @@ class ActivatedStep extends Step {
         .textContent = getDollarString(currency, amount);
     }
     // replace getting started button with download button if extension not detected
-    if (!adblock.api.isABPDetected()) {
+    if (!adblock.api.detectAdblockPlus()) {
       document.querySelectorAll(".download-button").forEach(button => {
         if (/firefox/i.test(navigator.userAgent)) {
           button.href = "https://eyeo.to/adblockplus/firefox_install/";
@@ -620,7 +620,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   const frequency = adblock.query.get("premium-checkout__frequency");
   const amount = adblock.query.get("premium-checkout__amount");
   card.scrollIntoView();
-  adblock.api.onABPDetected(async () => {
+  adblock.api.onAdblockPlusDetected(async () => {
     await goto(steps.loading);
     await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
     activatePremium().then(

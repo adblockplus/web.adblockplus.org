@@ -2,13 +2,11 @@
 
   const ABPDetectedCallbacks = [];
 
-  function isABPDetected() {
+  adblock.api.detectAdblockPlus = function detectAdblockPlus() {
     return !!document.documentElement.dataset.adblockPlusExtensionInfo;
   }
 
-  adblock.api.isABPDetected = isABPDetected;
-
-  function handleABPDetected() {
+  function handleAdblockPlusDetected() {
     try {
       adblock.extensions.adblockPlus = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo);
     } catch (error) {
@@ -18,19 +16,19 @@
     ABPDetectedCallbacks.forEach(callback => callback());
   }
 
-  adblock.api.onABPDetected = function onABPDetected(callback) {
-    if (isABPDetected()) callback();
+  adblock.api.onAdblockPlusDetected = function onAdblockPlusDetected(callback) {
+    if (adblock.api.detectAdblockPlus()) callback();
     else ABPDetectedCallbacks.push(callback);
   };
 
-  if (isABPDetected()) {
-    handleABPDetected();
+  if (adblock.api.detectAdblockPlus()) {
+    handleAdblockPlusDetected();
   } else {
-    const ABPDetectedObserver = new MutationObserver(() => {
-      handleABPDetected();
-      ABPDetectedObserver.disconnect();
+    const AdblockPlusDetectionObserver = new MutationObserver(() => {
+      handleAdblockPlusDetected();
+      AdblockPlusDetectionObserver.disconnect();
     });
-    ABPDetectedObserver.observe(document.documentElement, {
+    AdblockPlusDetectionObserver.observe(document.documentElement, {
       attributeFilter: ["data-adblock-plus-extension-info"]
     });
   }
