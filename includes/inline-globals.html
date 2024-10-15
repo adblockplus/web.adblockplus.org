@@ -132,10 +132,7 @@ function observeExtensionInjection(extensionName, extensionId) {
 observeExtensionInjection("adblock", "adblockExtensionInfo");
 observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
 
-if (adblock.query.has("dev")) document.documentElement.classList.add("dev");
 if (adblock.query.has("design")) document.documentElement.classList.add("design");
-if (adblock.query.has("test")) document.documentElement.classList.add("test");
-if (adblock.query.has("legal")) document.documentElement.classList.add("legal");
 
 // FIXME: Hotfix to support images in localised strings via CMS
 // Remove when img tag added to allowlist of tags in strings
