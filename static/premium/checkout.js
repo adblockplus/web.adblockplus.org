@@ -72,7 +72,7 @@ const card = document.querySelector(".premium-checkout-card--interactive");
 
 /** log an event (always include global userid, email, and flow) */
 function checkoutLog(event, data = {}) {
-  adblock.data.flow = flow;
+  data.flow = flow;
   return adblock.log(event, data);
 }
 
