@@ -77,7 +77,10 @@ function checkoutLog(event, data = {}) {
     email,
     flow
   });
-  return adblock.log(event, data);
+  console.info(event, data);
+  return typeof adblock.log == "function"
+  ? adblock.log(event, data)
+  : new Promise(resolve => resolve())
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -598,7 +601,11 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     },
     () => goto(steps.error)
   );
-} else if (adblock.query.has("already-contributed")) {
+} else if (
+  location.pathname.endsWith("/restore-purchase")
+  || adblock.query.has("already-contributed")
+  || adblock.query.has("restore-purchase")
+) {
   flow = "already-contributed";
   card.scrollIntoView();
   goto(steps.verifyEmail);

@@ -1,0 +1,21 @@
+title=Adblock Plus Premium | The world's #1 ad blocker
+description=Adblock Plus Premium, the upgraded version of the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
+template=minimal
+robots=none
+
+<head>
+  <? include accounts-redirect-fallback ?>
+  <? include optimizely ?>
+  <? include hotjar ?>
+  <link rel="stylesheet" href="/premium/checkout.css">
+  <style>
+    .premium-checkout-card-header__close-button {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<? include premium/checkout ?>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="/premium/checkout.js" type="module"></script>
