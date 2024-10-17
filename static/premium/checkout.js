@@ -118,7 +118,7 @@ function activatePremium() {
     if (adblock.query.has("premium-checkout__fake-activation")) {
       return resolve();
     }
-    if (location.hostname == "accounts.adblockplus.org" && location.pathname.endsWith("/premium")) {
+    if (window.location.hostname == "accounts.adblockplus.org" && window.location.pathname.endsWith("/premium")) {
       resolvePremiumActivation = resolve;
       rejectPremiumActivation = reject;
       window.postMessage({
@@ -609,7 +609,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     () => goto(steps.error)
   );
 } else if (
-  location.pathname.endsWith("/restore-purchase")
+  window.location.pathname.endsWith("/restore-purchase")
   || adblock.query.has("restore-purchase")
   || adblock.query.has("already-contributed")
 ) {
