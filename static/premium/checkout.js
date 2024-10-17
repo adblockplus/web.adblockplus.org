@@ -118,14 +118,21 @@ function activatePremium() {
     if (adblock.query.has("premium-checkout__fake-activation")) {
       return resolve();
     }
-    resolvePremiumActivation = resolve;
-    rejectPremiumActivation = reject;
-    window.postMessage({
-      command: "payment_success",
-      userId:  userid,
-      version: 1,
-    });
-    setTimeout(() => reject({ reason: "timeout" }), REQUEST_TIMEOUT);
+    if (location.hostname == "accounts.adblockplus.org" && location.pathname.endsWith("/premium")) {
+      resolvePremiumActivation = resolve;
+      rejectPremiumActivation = reject;
+      window.postMessage({
+        command: "payment_success",
+        userId:  userid,
+        version: 1,
+      });
+      setTimeout(() => reject({ reason: "timeout" }), REQUEST_TIMEOUT);
+    } else {
+      const activationQuery = new URLSearchParams(adblock.query);
+      activationQuery.set("premium-checkout__flow", flow);
+      activationQuery.set("premium-checkout__premiumId", userid);
+      window.location.href = `https://accounts.adblockplus.org/premium?${activationQuery.toString()}`;
+    }
   });
 }
 
@@ -254,7 +261,7 @@ class PurchaseStep extends Step {
    * - Listens to currency selection to update currency
    * - Listens to price button click to toggle checkout buttons
    * - Listens to form submit to trigger custom submit event
-   * - Listens to already contributed link click to trigger custom already-contributed event
+   * - Listens to already contributed link click to trigger custom restore-purchase event
    */
   constructor(element, name) {
 
@@ -283,10 +290,10 @@ class PurchaseStep extends Step {
       this.fire("checkout-now");
     });
 
-    this.element.querySelector(".premium-checkout-purchase__already-contributed-link")
+    this.element.querySelector(".premium-checkout-purchase__restore-purchase-link")
     .addEventListener("click", event => {
       event.preventDefault();
-      this.fire("already-contributed");
+      this.fire("restore-purchase");
     });
 
   }
@@ -515,16 +522,16 @@ checkoutEvents.on("checkout.completed", () => checkoutLog("premium-checkout__pad
 
 // ALREADY CONTRIBUTED FLOW ////////////////////////////////////////////////////
 
-// steps.purchase "already-contributed" event begins the "already-contributed" flow
+// steps.purchase "restore-purchase" event begins the "restore-purchase" flow
 //
-// the "already-contributed" flow goes:
+// the "restore-purchase" flow goes:
 // 1. steps.verifyEmail
 // 2. steps.verifyCode
 // 3. steps.reactivated
 //
 // with loading steps in between and error steps on error.
-steps.purchase.on("already-contributed", () => {
-  flow = "already-contributed";
+steps.purchase.on("restore-purchase", () => {
+  flow = "restore-purchase";
   goto(steps.verifyEmail);
 });
 
@@ -603,10 +610,10 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   );
 } else if (
   location.pathname.endsWith("/restore-purchase")
-  || adblock.query.has("already-contributed")
   || adblock.query.has("restore-purchase")
+  || adblock.query.has("already-contributed")
 ) {
-  flow = "already-contributed";
+  flow = "restore-purchase";
   card.scrollIntoView();
   goto(steps.verifyEmail);
 } else {
