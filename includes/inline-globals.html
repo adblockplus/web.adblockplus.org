@@ -51,7 +51,7 @@ adblock.log = function log(event, data = {}) {
     if (data[property] == null || data[property] == undefined) continue;
     params.set(property, data[property]);
   }
-  return fetch(`/log?${params.toString()}`);
+  return fetch(`/access?${params.toString()}`);
 }
 
 /** logs essential analytics on load */
