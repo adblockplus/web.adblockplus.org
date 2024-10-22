@@ -193,7 +193,10 @@ div#subscription-canceled {
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
-    color: #e40d0d;
+}
+
+#subscription-end dt {
+    font-weight: 700;
 }
 
 div#payment-box {

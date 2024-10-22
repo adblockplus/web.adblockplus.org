@@ -229,6 +229,15 @@ $(document).ready(function() {
                 if (msg && typeof msg.paymentInfo !== "undefined") {
                     paymentInfoObj = msg.paymentInfo;
                     if (paymentInfoObj === false || paymentInfoObj["cancelled"] === true) {
+                        if (paymentInfoObj.active_until) {
+                            const activeUntilDate = new Date(paymentInfoObj.active_until);
+                            if (!isNaN(activeUntilDate)) {
+                                $("#subscription-end-date")
+                                    .attr("datetime", activeUntilDate.toTimeString())
+                                    .text(activeUntilDate.toString());
+                                $("#subscription-end").show();
+                            }
+                        }
                         Page.RegistrationBox.fadeOut(1000, function() {
                             Page.SubscriptionCanceledMessage.show();
                         });

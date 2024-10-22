@@ -137,7 +137,13 @@ unadblock=1
 
     <!-- Manage Subscription Activity -->
     <div id="subscription-canceled" class="premium-account-card" style="display:none;" i18n="subscription_canceled">
-        {{ subscription_canceled Your subscription has been canceled. }}
+        <p>
+            {{ subscription_canceled Your subscription has been canceled. }}
+        </p>
+        <dl id="subscription-end" style="display:none">
+            <dt>{{ expiration_date Expiration Date }}</dt>
+            <dd><time id="subscription-end-date"></time></dd>
+        </dl>
     </div>
     <div id="sunset-premium-infinity" class="premium-account-card" style="display:none;">
         <div class="row SubscriptionDetails">
