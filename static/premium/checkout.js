@@ -640,6 +640,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
       () => goto(steps.error)
     );
   };
+  card.scrollIntoView();
   if (adblock.adblockPlus) {
     await handleAdblockPlusDetected();
   } else {
@@ -650,7 +651,6 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     }
     adblock.afterAdblockPlusDetected(handleAdblockPlusDetected);
   }
-  card.scrollIntoView();
 } else if (
   window.location.pathname.endsWith("/restore-purchase")
   || adblock.query.has("restore-purchase")
