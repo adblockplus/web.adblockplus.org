@@ -641,14 +641,14 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     );
   };
   if (adblock.adblockPlus) {
-    handleAdblockPlusDetected();
+    await handleAdblockPlusDetected();
   } else {
-    adblock.afterAdblockPlusDetected(handleAdblockPlusDetected);
     if (currency && frequency && amount) {
-      goto(steps.activated, { currency, frequency, amount });
+      await goto(steps.activated, { currency, frequency, amount });
     } else {
-      goto(steps.reactivated);
+      await goto(steps.reactivated);
     }
+    adblock.afterAdblockPlusDetected(handleAdblockPlusDetected);
   }
   card.scrollIntoView();
 } else if (
