@@ -16,7 +16,7 @@
     }
 
     // Show "Change cookie settings" links and info text to EEA users
-    if (typeof eyeo == "object" && eyeo.cookieEnabled) // created in "js/testing/setup.js"
+    if (adblock.settings.allowCookies) // created in "js/testing/setup.js"
         document.documentElement.classList.add("has-cookies");
 
     // Prevent Cookies bar (desktop/mobile) from hiding footer contents

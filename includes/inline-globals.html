@@ -1,0 +1,157 @@
+<script>(()=>{
+
+const scriptTime = parseInt(performance.now(), 10);
+
+const query = new URLSearchParams(window.location.search);
+
+/**
+ * @namespace
+ * @prop {object} query - global reference to initial window.location.search URL Search Params
+ * @prop {object} api - functions provided to third parties
+ * @prop {object} strings - localised strings injected via script
+ * @prop {object} settings - shared settings injected via script
+ */
+const adblock = window.adblock = {
+  query,
+  api: {},
+  strings: {},
+  settings: {
+    detectedOperatingSystem: navigator.userAgent.includes("Windows NT") ? "windows"
+      : navigator.userAgent.includes("iPhone") || navigator.userAgent.includes("iPad") ? "ios"
+      : navigator.userAgent.includes("Macintosh") ? "mac"
+      : navigator.userAgent.includes("Linux") ? "linux"
+      : "other",
+    detectedBrowser: /opera|opr\//i.test(navigator.userAgent) ? "opera"
+      : /SamsungBrowser/i.test(navigator.userAgent) ? "samsung"
+      : /\sedg\/|edg([ea])/i.test(navigator.userAgent) ? "edge"
+      : /firefox|iceweasel/i.test(navigator.userAgent) ? "firefox"
+      : /chrome|chromium/i.test(navigator.userAgent) ? "chrome"
+      : /safari|applewebkit/i.test(navigator.userAgent) ? "safari"
+      : "other",
+  },
+};
+
+const ALPHANUM = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+/** generate sudo-random id */
+adblock.uid = function uid(length = 32) {
+  return [...Array(length)].map(() => ALPHANUM[Math.floor(Math.random() * ALPHANUM.length)]).join("");
+}
+
+/** browsing session uid */
+adblock.sid = adblock.query.get("sid") || adblock.uid();
+
+/** record data/activity via access log entry */
+adblock.log = function log(event, data = {}) {
+  const params = new URLSearchParams();
+  params.set("event", event);
+  params.set("sid", adblock.sid);
+  for (const property in data) {
+    if (["event", "sid"].includes(property)) throw new Error("Reserved data property name");
+    if (data[property] == null || data[property] == undefined) continue;
+    params.set(property, data[property]);
+  }
+  return fetch(`/access?${params.toString()}`);
+}
+
+/** logs essential analytics on load */
+window.addEventListener("load", function onLoad() {
+  adblock.log("load", {
+    scriptTime,
+    loadTime: parseInt(performance.now(), 10),
+    trafficSource: adblock.query.get("s"),
+    pageName: adblock.settings.page,
+    pageLocale: adblock.settings.locale,
+    detectedCountry: adblock.settings.detectedCountry,
+    detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
+    detectedBrowser: adblock.settings.detectedBrowser,
+    browserHeight: window.innerHeight,
+    browserWidth: window.innerWidth,
+    screenHeight: screen.height,
+    screenWidth: screen.width,
+    adblockPlusInstalled: !!adblock?.adblockPlus,
+    adblockPlusPremium: !!adblock?.adblockPlus?.isPremium,
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
+  document.querySelectorAll("[data-click]", function onDataClick(target) {
+    adblock.log("click", JSON.parse(target.dataset.click));
+  });
+});
+
+/** global general error handling and logging function */
+adblock.handleError = function handleError({name, message, context, handler}) {
+  if (handler) handler({name, message, context});
+  else if (message) alert(message);
+  console.error(name, message, context);
+  let shareableContext;
+  try { shareableContext = JSON.stringify(context); }
+  catch (error) {}
+  adblock.log("error", {name, shareableContext})
+}
+
+const injectionCallbacks = {};
+
+/** 
+ * Call a callback after an extension injects data into the page
+ * (or immediately if the extension has already injected data into the page)
+ */
+adblock.afterExtensionInjection = function afterExtensionInjection(extensionName, callback) {
+  if (adblock[extensionName]) return callback();
+  if (!injectionCallbacks[extensionName]) injectionCallbacks[extensionName] = [];
+  injectionCallbacks[extensionName].push(callback);
+}
+
+adblock.afterAdblockPlusDetected = callback => adblock.afterExtensionInjection("adblockPlus", callback);
+
+function handleExtensionInjection(extensionName, extensionId) {
+  try {
+    adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
+    if (injectionCallbacks[extensionName])
+      injectionCallbacks[extensionName].forEach(callback => callback());
+  } catch (error) {
+    const context = {};
+    context[extensionId] = document.documentElement.dataset[extensionId];
+    adblock.handleError({name: "parse-extension-injection", context});
+  }
+}
+
+function observeExtensionInjection(extensionName, extensionId) {
+  if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
+    handleExtensionInjection(extensionName, extensionId);
+  } else {
+    const observer = new MutationObserver(() => {
+      if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
+        handleExtensionInjection(extensionName, extensionId);
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.documentElement, {attributes: true});
+  }
+}
+
+observeExtensionInjection("adblock", "adblockExtensionInfo");
+observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
+
+if (adblock.query.has("design")) document.documentElement.classList.add("design");
+
+// FIXME: Hotfix to support images in localised strings via CMS
+// Remove when img tag added to allowlist of tags in strings
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("span.img").forEach(span => {
+    span.innerHTML = span.outerHTML.replace("span", "img");
+    span.replaceWith(span.querySelector("img"));
+  });
+});
+
+})()</script>
+
+<!-- strings injected via cms -->
+<? include inline-strings ?>
+
+<!-- settings injected via cms -->
+<? include inline-settings ?>
+
+<!-- settings injected via cloud function -->
+<script src="/settings.js"></script>

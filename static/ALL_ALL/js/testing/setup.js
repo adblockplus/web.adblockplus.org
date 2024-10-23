@@ -1,7 +1,7 @@
 /* global eyeo */
 (function(){
 
-  var user = eyeo.user = eyeo.user || {};
+  var user = {};
 
   var host = window.location.hostname;
 
@@ -30,7 +30,7 @@
   };
 
   // Record first visit to page with cookie prompt
-  if (!eyeo.preventCookiePrompt && !user.consent)
+  if (!adblock.settings.suppressCookiePrompt && !user.consent)
     document.cookie = "eyeo-seen-cookie-prompt=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; samesite=lax; domain=" + domain + "; path=/";
 
   if (
@@ -38,7 +38,7 @@
     user.analytics
 
     // Track users who have seen cookie prompt on pages without cookie prompt
-    && !(eyeo.preventCookiePrompt && !user.consent)
+    && !(adblock.settings.suppressCookiePrompt && !user.consent)
   ) {
 
     // Analytics snippet (Modifications explained in comments below)
@@ -62,13 +62,13 @@
       j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TFZZB3Q');
 
-    if (!eyeo.preventCookiePrompt)
+    if (!adblock.settings.suppressCookiePrompt)
     {
       var cookiePromptScript = document.createElement("script");
       cookiePromptScript.async = true;
       cookiePromptScript.src = origin + "/js/cookie-prompt.js";
       document.head.appendChild(cookiePromptScript);
-      eyeo.cookieEnabled = true;
+      adblock.settings.allowCookies = true;
     }
   }
 }());

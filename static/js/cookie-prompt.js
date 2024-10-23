@@ -142,7 +142,7 @@
     addListeners("click", saveButtons, saveCookieSettings);
 
 
-    if (!eyeo.preventCookiePrompt && !trackingConsent)
+    if (!adblock.settings.suppressCookiePrompt && !trackingConsent)
       toggleCookieNotice();
 
     if (trackingOptOut)

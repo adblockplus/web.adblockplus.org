@@ -72,11 +72,7 @@ const card = document.querySelector(".premium-checkout-card--interactive");
 
 /** log an event (always include global userid, email, and flow) */
 function checkoutLog(event, data = {}) {
-  Object.assign(data, {
-    userid,
-    email,
-    flow
-  });
+  data.flow = flow;
   console.info(event, data);
   return typeof adblock.log == "function"
   ? adblock.log(event, data)
@@ -179,7 +175,7 @@ function verifyEmail(email) {
  * @todo add retries
  */
 function verifyCode(code) {
-  checkoutLog("premium-checkout__code", { userid, code });
+  checkoutLog("premium-checkout__code");
   return new Promise((resolve, reject) => {
     fetch("https://myadblock.licensing.adblockplus.dev/license/api/", {
       method: 'POST',
@@ -335,14 +331,46 @@ class PurchaseStep extends Step {
 class ActivatedStep extends Step {
 
   /** renders the activation step dom with the passed frequency and amount */
-  render({ currency, frequency, amount }) {
+  render(options = {}) {
+    const { currency, frequency, amount } = options;
     super.render();
-    this.element
-    .querySelector(".premium-checkout-activated__plan")
-    .innerHTML = adblock.strings[`premium-checkout-activated__${frequency}`];
-    this.element
-    .querySelector(".premium-checkout-activated__amount")
-    .textContent = getDollarString(currency, amount);
+    if (currency && frequency && amount) {
+      this.element
+        .querySelector(".premium-checkout-activated__plan")
+        .innerHTML = adblock.strings[`premium-checkout-activated__${frequency}`];
+      this.element
+        .querySelector(".premium-checkout-activated__amount")
+        .textContent = getDollarString(currency, amount);
+    }
+    // replace getting started button with download button if extension not detected
+    if (!adblock.adblockPlus) {
+      document.querySelectorAll(".download-button").forEach(button => {
+        if (/firefox/i.test(navigator.userAgent)) {
+          button.href = "https://eyeo.to/adblockplus/firefox_install/";
+          button.textContent = document.querySelector("#download-label-firefox").textContent;
+          button.parentElement.classList.add("firefox");
+        } else if (/\sedg\/|edg([ea])/i.test(navigator.userAgent)) {
+          button.href = "https://eyeo.to/adblockplus/edge_chromium_install/";
+          button.textContent = document.querySelector("#download-label-edge").textContent;
+          button.parentElement.classList.add("edge");
+        } else {
+          button.href = "https://eyeo.to/adblockplus/chrome_install/";
+          button.textContent = document.querySelector("#download-label-chrome").textContent;
+          button.parentElement.classList.add("chrome");
+        }
+        button.setAttribute("target", "_blank");
+        button.addEventListener("click", () => setTimeout(() => {
+          window.location.href = "https://welcome.adblockplus.org/installed?premium-checkout__install&" + adblock.query.toString();
+        }));
+      });
+      document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.hidden = true);
+      document.querySelectorAll(".premium-checkout-success__install").forEach(div => div.hidden = false);
+    }
+    // else replace download button with getting started button if extension is detected
+    else {
+      document.querySelectorAll(".premium-checkout-success__install").forEach(div => div.hidden = true);
+      document.querySelectorAll(".premium-checkout-success__button").forEach(button => button.hidden = false);
+    }
   }
 
 }
@@ -368,7 +396,7 @@ class ErrorStep extends Step {
   /** renders the activation step dom with the global email and userid */
   render() {
     super.render();
-    this.element.querySelector(".premium-checkout-error__code").textContent = email ? `${email}:${userid}` : userid;
+    this.element.querySelector(".premium-checkout-error__code").textContent = `${email}:${userid}:${adblock.sid}`;
   }
 
 }
@@ -430,7 +458,7 @@ const steps = {
   error: new ErrorStep(section.querySelector(".premium-checkout-error"), "error"),
   verifyEmail: new VerifyStep(section.querySelector(".premium-checkout-verify-email"), "verify-email"),
   verifyCode: new VerifyStep(section.querySelector(".premium-checkout-verify-code"), "verify-code"),
-  reactivated: new Step(section.querySelector(".premium-checkout-reactivated"), "reactivated")
+  reactivated: new ActivatedStep(section.querySelector(".premium-checkout-reactivated"), "reactivated")
 };
 
 // adding step elements to the interactive card
@@ -563,7 +591,6 @@ steps.verifyCode.on("submit", async () => {
 
 [steps.error, steps.verifyEmail, steps.verifyCode].forEach(step => {
   step.on("close", () => {
-    checkoutLog("premium-checkout__close");
     flow = "none";
     goto(steps.purchase)
   });
@@ -588,26 +615,41 @@ steps.verifyCode.on("submit", async () => {
 if (adblock.query.has("premium-checkout__fake-error")) {
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
   card.scrollIntoView();
-  goto(steps.error);
+  goto(steps.error, undefined, false);
+} else if (adblock.query.has("already-contributed")) {
+  flow = "already-contributed";
+  card.scrollIntoView();
+  goto(steps.verifyEmail);
 } else if (adblock.query.has("premium-checkout__flow")) {
   flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
   const currency = adblock.query.get("premium-checkout__currency");
   const frequency = adblock.query.get("premium-checkout__frequency");
   const amount = adblock.query.get("premium-checkout__amount");
-  card.scrollIntoView();
-  await goto(steps.loading);
-  await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
-  activatePremium().then(
-    () => {
-      if (currency && frequency && amount) {
-        goto(steps.activated, { currency, frequency, amount });
-      } else {
-        goto(steps.reactivated);
-      }
-    },
-    () => goto(steps.error)
-  );
+  const handleAdblockPlusDetected = async () => {
+    await goto(steps.loading);
+    await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
+    activatePremium().then(
+      () => {
+        if (currency && frequency && amount) {
+          goto(steps.activated, { currency, frequency, amount });
+        } else {
+          goto(steps.reactivated);
+        }
+      },
+      () => goto(steps.error)
+    );
+  };
+  if (adblock.adblockPlus) {
+    handleAdblockPlusDetected();
+  } else {
+    adblock.afterAdblockPlusDetected(handleAdblockPlusDetected);
+    if (currency && frequency && amount) {
+      goto(steps.activated, { currency, frequency, amount });
+    } else {
+      goto(steps.reactivated);
+    }
+  }
 } else if (
   window.location.pathname.endsWith("/restore-purchase")
   || adblock.query.has("restore-purchase")
@@ -615,12 +657,6 @@ if (adblock.query.has("premium-checkout__fake-error")) {
 ) {
   flow = "restore-purchase";
   card.scrollIntoView();
-  goto(steps.verifyEmail);
 } else {
-  // if you don't begin an activation-handoff flow on load then the default
-  // flow is "none" and the default step is steps.purchase
-  if (flow != "none") {
-    checkoutLog("premium-checkout__handover");
-  }
   goto(steps.purchase, undefined, false);
 }

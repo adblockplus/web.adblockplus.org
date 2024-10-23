@@ -6,6 +6,8 @@
   })
 </script>
 
+<? include install-button-text ?>
+
 <div id="premium-checkout" class="premium-checkout">
 
   <div class="premium-checkout__section">
@@ -170,6 +172,9 @@
                 <a href="https://help.adblockplus.org/hc/articles/8155189140115-Get-started-with-AdBlock-Plus-Premium" class="premium-checkout__button premium-checkout-success__button" data-extension-page="premium-onboarding">
                   {{ premium-checkout-activated__button-1 Get Started with Adblock Plus Premium }}
                 </a>
+                <div class="premium-checkout-success__install" hidden>
+                  <? include install ?>
+                </div>
               </div><!-- /premium-checkout-card-body-column -->
             </div><!-- /premium-checkout__columns -->  
           </div><!-- /premium-checkout-success /premium-checkout-activated -->
@@ -308,6 +313,9 @@
                 <a href="https://help.adblockplus.org/hc/articles/8155189140115-Get-started-with-AdBlock-Plus-Premium" class="premium-checkout-success__button premium-checkout__button" data-extension-page="premium-onboarding">
                   {{ premium-checkout-reactivated__button-1 Get Started with Adblock Plus Premium }}
                 </a>
+                <div class="premium-checkout-success__install" hidden>
+                  <? include install ?>
+                </div>
               </div><!-- /premium-checkout-card-body-column -->
             </div><!-- /premium-checkout__columns -->
           </div><!-- /premium-checkout-success /premium-checkout-reactivated -->
@@ -318,3 +326,6 @@
   </div><!-- /premium-checkout-section -->
 
 </div><!-- /premium-checkout -->
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="/premium/checkout.js" type="module"></script>

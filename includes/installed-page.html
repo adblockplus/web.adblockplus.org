@@ -27,6 +27,27 @@
       document.head.appendChild(script);
     }
   })()</script>
+  <script>(()=>{
+    // the install and activate flow redirects here with ?premium-checkout__install to record it's progress so that it can
+    // be continued when the installed page opens after the extension is installed
+    if (adblock.query.has("premium-checkout__install")) {
+      try {
+        localStorage.setItem("premium-checkout__install", adblock.query.toString());
+        window.location.href = "https://help.adblockplus.org/hc/en-us/articles/8155189140115-Get-started-with-Adblock-Plus-Premium";
+      } catch (error) {}
+    } 
+    // when the extension is installed, if progress from the install and activate flow was recorded, then the user
+    // is directed to the premium activation flow with that progress instead of this installed contribute page
+    else {
+      try {
+        const installAndActivate = localStorage.getItem("premium-checkout__install");
+        if (typeof installAndActivate == "string") {
+          localStorage.removeItem("premium-checkout__install");
+          window.location.href = "https://accounts.adblockplus.org/premium?" + installAndActivate;
+        }
+      } catch (error) {}
+    }
+  })()</script>
 </head>
 
 <div class="installed-container">
