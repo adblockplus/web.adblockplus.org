@@ -352,7 +352,7 @@ class ActivatedStep extends Step {
         } else if (/\sedg\/|edg([ea])/i.test(navigator.userAgent)) {
           button.href = "https://eyeo.to/adblockplus/edge_chromium_install/";
           button.textContent = document.querySelector("#download-label-msedge").textContent;
-          button.parentElement.classList.add("edge");
+          button.parentElement.classList.add("msedge");
         } else {
           button.href = "https://eyeo.to/adblockplus/chrome_install/";
           button.textContent = document.querySelector("#download-label-chrome").textContent;
