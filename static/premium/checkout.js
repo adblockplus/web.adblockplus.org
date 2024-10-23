@@ -614,12 +614,12 @@ steps.verifyCode.on("submit", async () => {
 // with steps.error on error.
 if (adblock.query.has("premium-checkout__fake-error")) {
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
-  card.scrollIntoView();
   goto(steps.error, undefined, false);
+  card.scrollIntoView();
 } else if (adblock.query.has("already-contributed")) {
   flow = "already-contributed";
-  card.scrollIntoView();
   goto(steps.verifyEmail);
+  card.scrollIntoView();
 } else if (adblock.query.has("premium-checkout__flow")) {
   flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
@@ -650,6 +650,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
       goto(steps.reactivated);
     }
   }
+  card.scrollIntoView();
 } else if (
   window.location.pathname.endsWith("/restore-purchase")
   || adblock.query.has("restore-purchase")
