@@ -643,7 +643,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   if (adblock.adblockPlus) {
     handleAdblockPlusDetected();
   } else {
-    adblock.afterExtensionInjection("adblockPlus", handleAdblockPlusDetected);
+    adblock.afterAdblockPlusDetected(handleAdblockPlusDetected);
     if (currency && frequency && amount) {
       goto(steps.activated, { currency, frequency, amount });
     } else {

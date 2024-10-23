@@ -103,6 +103,8 @@ adblock.afterExtensionInjection = function afterExtensionInjection(extensionName
   injectionCallbacks[extensionName].push(callback);
 }
 
+adblock.afterAdblockPlusDetected = callback => adblock.afterExtensionInjection("adblockPlus", callback);
+
 function handleExtensionInjection(extensionName, extensionId) {
   try {
     adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
