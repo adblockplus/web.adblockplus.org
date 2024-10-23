@@ -616,16 +616,13 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
   goto(steps.error, undefined, false);
   card.scrollIntoView();
-} else if (adblock.query.has("already-contributed")) {
-  flow = "already-contributed";
-  goto(steps.verifyEmail);
-  card.scrollIntoView();
 } else if (adblock.query.has("premium-checkout__flow")) {
   flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
   const currency = adblock.query.get("premium-checkout__currency");
   const frequency = adblock.query.get("premium-checkout__frequency");
   const amount = adblock.query.get("premium-checkout__amount");
+  card.scrollIntoView();
   const handleAdblockPlusDetected = async () => {
     await goto(steps.loading);
     await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
@@ -640,7 +637,6 @@ if (adblock.query.has("premium-checkout__fake-error")) {
       () => goto(steps.error)
     );
   };
-  card.scrollIntoView();
   if (adblock.adblockPlus) {
     await handleAdblockPlusDetected();
   } else {
@@ -657,6 +653,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   || adblock.query.has("already-contributed")
 ) {
   flow = "restore-purchase";
+  goto(steps.verifyEmail);
   card.scrollIntoView();
 } else {
   goto(steps.purchase, undefined, false);
