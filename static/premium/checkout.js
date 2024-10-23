@@ -343,7 +343,7 @@ class ActivatedStep extends Step {
         .textContent = getDollarString(currency, amount);
     }
     // replace getting started button with download button if extension not detected
-    if (!adblock.api.detectAdblockPlus()) {
+    if (!adblock.adblockPlus) {
       document.querySelectorAll(".download-button").forEach(button => {
         if (/firefox/i.test(navigator.userAgent)) {
           button.href = "https://eyeo.to/adblockplus/firefox_install/";
@@ -640,10 +640,10 @@ if (adblock.query.has("premium-checkout__fake-error")) {
       () => goto(steps.error)
     );
   };
-  if (adblock.api.detectAdblockPlus()) {
+  if (adblock.adblockPlus) {
     handleAdblockPlusDetected();
   } else {
-    adblock.api.onAdblockPlusDetected(handleAdblockPlusDetected);
+    adblock.afterExtensionInjection("adblockPlus", handleAdblockPlusDetected);
     if (currency && frequency && amount) {
       goto(steps.activated, { currency, frequency, amount });
     } else {
