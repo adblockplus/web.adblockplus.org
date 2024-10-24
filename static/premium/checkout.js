@@ -51,8 +51,8 @@ const PRICES = {
   }
 };
 
-const defaultCurrency = PRICES.hasOwnProperty(adblock.settings.currency)
-  ? adblock.settings.currency
+const defaultCurrency = PRICES.hasOwnProperty(adblock.settings.defaultCurrency)
+  ? adblock.settings.defaultCurrency
   : "USD";
 
 let userid = adblock.query.get("premium-checkout__premiumId") || adblock.settings.premiumId;

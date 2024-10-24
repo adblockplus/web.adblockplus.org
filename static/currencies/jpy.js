@@ -1,1 +1,1 @@
-adblock.settings.currency = adblock.settings.defaultCurrency = "JPY";
+adblock.settings.defaultCurrency = adblock.settings.defaultCurrency = "JPY";

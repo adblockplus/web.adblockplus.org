@@ -1,2 +1,2 @@
-adblock.settings.currency = adblock.settings.defaultCurrency = "CHF";
+adblock.settings.defaultCurrency = adblock.settings.defaultCurrency = "CHF";
 document.documentElement.classList.add("vat-exclusive");
