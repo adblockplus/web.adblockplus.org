@@ -937,7 +937,16 @@ if (paddleEnvironment == "test") {
   Paddle.Environment.set("sandbox");
 }
 
-Paddle.Initialize({ token: paddleToken, eventCallback: paddleEventCallback });
+const paddleOptions = {
+  token: paddleToken,
+  eventCallback: paddleEventCallback,
+};
+
+if (window.location.pathname.endsWith("/premium")) {
+  paddleOptions.pwCustomer = {};
+}
+
+Paddle.Initialize(paddleOptions);
 
 // FIXME: We should only use this temporarily to avoid breaking ongoing conversion.com experiments
 const planCodeCompatibility = {
