@@ -1,8 +1,8 @@
 <script>
   Object.assign(adblock.strings, {
-    "premium-checkout-activated__once": `{{ premium-checkout-activated__once Adblock Plus Premium: <span class="premium-checkout-activated__amount">$2</span> }}`,
-    "premium-checkout-activated__monthly": `{{ premium-checkout-activated__monthly Adblock Plus Premium: <span class="premium-checkout-activated__amount">$2</span> monthly }}`,
-    "premium-checkout-activated__yearly": `{{ premium-checkout-activated__yearly Adblock Plus Premium: <span class="premium-checkout-activated__amount">$20</span> yearly }}`,
+    "premium-checkout-activated__once": `{{ get_string("premium-checkout-activated__once", "premium-checkout") }}`,
+    "premium-checkout-activated__monthly": `{{ get_string("premium-checkout-activated__monthly", "premium-checkout")  }}`,
+    "premium-checkout-activated__yearly": `{{ get_string("premium-checkout-activated__yearly", "premium-checkout") }}`,
   })
 </script>
 
@@ -44,7 +44,7 @@
           <form class="premium-checkout-step premium-checkout-purchase">
             <div class="premium-checkout-card-header">
               <h2 class="premium-checkout-card-header__heading premium-checkout-purchase__heading">
-                {{ premium-checkout-purchase__heading-1 Choose your subscription }}
+                {{ get_string("premium-checkout-purchase__heading-1", "premium-checkout") }}
               </h2>
               <select class="premium-checkout-header__select"></select>
             </div><!-- /premium-checkout-card-header -->
@@ -53,25 +53,25 @@
                 <button class="premium-checkout__button premium-checkout-purchase-price" type="button" aria-pressed="true" value="yearly">
                   <span class="premium-checkout-purchase-price__text">
                     <span>
-                      {{ premium-checkout-purchase-price__yearly <span class="premium-checkout-purchase-price__amount">$20</span> / yearly }}
+                      {{ get_string("premium-checkout-purchase-price__yearly", "premium-checkout") }}
                     </span>
                   </span>
                   <span class="premium-checkout-purchase-price__badge">
-                    {{ premium-checkout-purchase-price__badge Save <span class="premium-checkout-purchase-price__discount">17</span>% }}
+                    {{ get_string("premium-checkout-purchase-price__badge", "premium-checkout") }}
                   </span>
                 </button>
                 <button class="premium-checkout__button premium-checkout-purchase-price" type="button" value="monthly">
                   <span>
-                    {{ premium-checkout-purchase-price__monthly <span class="premium-checkout-purchase-price__amount">$2</span> / monthly }}
+                    {{ get_string("premium-checkout-purchase-price__monthly", "premium-checkout") }}
                   </span>
                 </button>
                 <p class="premium-plan-tax"><small>
-                  {{ premium-plan-tax exclusive of VAT }}
+                  {{ get_string("premium-plan-tax", "premium-checkout") }}
                 </small></p>  
               </div><!-- /premium-checkout-card-body-column -->
               <div class="premium-checkout-card-body-column">
                 <button class="premium-checkout__button premium-checkout-purchase__checkout-button" type="submit">
-                  {{ premium-checkout-purchase__providers__paddle <span class="img" alt="" src="/img/button-lock.svg" height="24" width="24"></span> Checkout Now }}
+                  {{ get_string("premium-checkout-purchase__providers__paddle", "premium-checkout") }}
                 </button>
                 <img alt="" src="/img/paddle-providers.svg" height="32" width="358" class="premium-checkout-purchase__providers">
               </div> <!-- /premium-checkout-card-body-column -->
@@ -79,11 +79,11 @@
             <div class="premium-checkout-card-footer premium-checkout-card-footer--columns">
               <div class="premium-checkout-card-footer-column">
                 <div>
-                  {{ premium-checkout-card-footer__paragraph-1 Already have premium or contributed before? &nbsp;<a class="premium-checkout-purchase__restore-purchase-link" href="#">Activate here</a> }}
+                  {{ get_string("premium-checkout-card-footer__paragraph-1", "premium-checkout") }}
                 </div>
               </div>
               <div class="premium-checkout-card-footer-column">
-                {{ premium-checkout-card-footer__paragraph-2 <span class="img" src="/img/checked-shield.svg" height="24" width="22" alt=""></span> 60-Day money-back guarantee }}
+                {{ get_string("premium-checkout-card-footer__paragraph-2", "premium-checkout") }}
               </div>
             </div><!-- /premium-checkout-card-footer -->
           </form><!-- /premium-checkout-purchase -->
@@ -115,21 +115,21 @@
           <div class="premium-checkout-step premium-checkout-error premium-checkout-step--closeable">
             <div class="premium-checkout-card-header">
               <h2 class="premium-checkout-card-header__heading">
-                {{ premium-checkout-error__heading-1 An unexpected error has occurred }}
+                {{ get_string("premium-checkout-error__heading-1", "premium-checkout") }}
               </h2>
               <button class="premium-checkout-card-header__close-button" type="button">
-                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ premium-checkout__close-alt Return to checkout }}">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt", "premium-checkout") }}">
               </button>
             </div><!-- /premium-checkout-card-header -->
             <div class="premium-checkout-card-body">
               <p class="premium-checkout-card__lead">
-                {{ premium-checkout-error__paragraph-1 We're very sorry about the inconvenience. }}
+                {{ get_string("premium-checkout-error__paragraph-1", "premium-checkout") }}
               </p>
               <p>
-                {{ premium-checkout-error__paragraph-3 This error has been recorded and will be investigated by our developers as soon as possible. }}
+                {{ get_string("premium-checkout-error__paragraph-3", "premium-checkout") }}
               </p>
               <p>
-                {{ premium-checkout-error__paragraph-2 Please contact <a href="mailto:support@adblockplus.org">support@adblockplus.org</a> and quote <span class="premium-checkout-error__code">fujny1su71494640</span> to proceed. }}
+                {{ get_string("premium-checkout-error__paragraph-2", "premium-checkout") }}
               </p>
             </div><!-- /premium-checkout__columns -->
           </div><!-- /premium-checkout-error -->
@@ -152,7 +152,7 @@
           <div class="premium-checkout-step premium-checkout-success premium-checkout-activated">
             <div class="premium-checkout-card-header">
               <h2 class="premium-checkout-card-header__heading">
-                {{ premium-checkout-activated__heading-1 Payment confirmed }}
+                {{ get_string("premium-checkout-activated__heading-1", "premium-checkout") }}
               </h2>
             </div><!-- /premium-checkout-card-header -->
             <div class="premium-checkout-card-body premium-checkout-card-body--columns">
@@ -161,16 +161,16 @@
               </div><!-- /premium-checkout-card-body-column -->
               <div class="premium-checkout-card-body-column">
                 <h3>
-                  {{ premium-checkout-activated__heading-2 Payment Details }}
+                  {{ get_string("premium-checkout-activated__heading-2", "premium-checkout") }}
                 </h3>
                 <p class="premium-checkout-activated__plan">
-                  {{ premium-checkout-activated__yearly Adblock Plus Premium: <span class="premium-checkout-activated__amount">$20</span> yearly }}
+                  {{ get_string("premium-checkout-activated__yearly", "premium-checkout") }}
                 </p>
                 <p>
-                  {{ premium-checkout-activated__paragraph-2 If you have any questions, please visit our <a href="https://help.adblockplus.org">Help Center</a> or contact our support team at <a href="mailto:support@adblockplus.org">support@adblockplus.org</a>. We’re always happy to hear from you! }}
+                  {{ get_string("premium-checkout-activated__paragraph-2", "premium-checkout") }}
                 </p>
                 <a href="https://help.adblockplus.org/hc/articles/8155189140115-Get-started-with-AdBlock-Plus-Premium" class="premium-checkout__button premium-checkout-success__button" data-extension-page="premium-onboarding">
-                  {{ premium-checkout-activated__button-1 Get Started with Adblock Plus Premium }}
+                  {{ get_string("premium-checkout-activated__button-1", "premium-checkout") }}
                 </a>
                 <div class="premium-checkout-success__install" hidden>
                   <? include install ?>
@@ -197,20 +197,20 @@
           <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-email premium-checkout-step--closeable">
             <div class="premium-checkout-card-header">
               <h2 class="premium-checkout-card-header__heading">
-                {{ premium-checkout-verify-email__heading-1 Step 1: Enter your email address }}
+                {{ get_string("premium-checkout-verify-email__heading-1", "premium-checkout") }}
               </h2>
               <button class="premium-checkout-card-header__close-button" type="button">
-                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ premium-checkout__close-alt Return to checkout }}">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt", "premium-checkout") }}">
               </button>
             </div><!-- /premium-checkout-card-header -->
             <div class="premium-checkout-card-body">
               <div class="premium-checkout-verify__lead">
-                {{ premium-checkout-verify-email__paragraph-1 We'll use your email address to confirm that you have contributed before. }}
+                {{ get_string("premium-checkout-verify-email__paragraph-1", "premium-checkout") }}
               </div>
               <form class="premium-checkout-verify__form">
                 <input type="email" class="premium-checkout-verify__input">
                 <button class="premium-checkout__button premium-checkout-verify__submit">
-                  {{ premium-checkout-verify-email__button-1 Submit }}
+                  {{ get_string("premium-checkout-verify-email__button-1", "premium-checkout") }}
                 </button>
               </form>
             </div><!-- /premium-checkout-card-body -->
@@ -228,24 +228,24 @@
           <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-code premium-checkout-step--closeable">
             <div class="premium-checkout-card-header">
               <h2 class="premium-checkout-card-header__heading ">
-                {{ premium-checkout-verify-code__heading-1 Step 2: Check the email that we sent to you }}
+                {{ get_string("premium-checkout-verify-code__heading-1", "premium-checkout") }}
               </h2>
               <button class="premium-checkout-card-header__close-button" type="button">
-                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ premium-checkout__close-alt Return to checkout }}">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt", "premium-checkout") }}">
               </button>
             </div><!-- /premium-checkout-card-header -->
             <div class="premium-checkout-card-body">
               <div class="premium-checkout-verify__lead">
-                {{ premium-checkout-verify-code__paragraph-1 Enter the 6 character code that we sent to you to verify your email address. }}
+                {{ get_string("premium-checkout-verify-code__paragraph-1", "premium-checkout") }}
               </div>
               <form class="premium-checkout-verify__form">
                 <input type="text" class="premium-checkout-verify__input">
                 <button class="premium-checkout__button premium-checkout-verify__submit">
-                  {{ premium-checkout-verify-email__button-1 Submit }}
+                  {{ get_string("premium-checkout-verify-email__button-1", "premium-checkout") }}
                 </button>
               </form>
               <div class="premium-checkout-verify__error" hidden>
-                {{ premium-checkout-verify-code__error-1 The code that was submitted was incorrect. Please correct it or reach out to <a href="mailto:support@adblockplus.org">support@adblockplus.org</a> to proceed. }}
+                {{ get_string("premium-checkout-verify-code__error-1", "premium-checkout") }}
               </div>
             </div><!-- /premium-checkout-card-body--columns -->
           </div><!-- /premium-checkout-verify /premium-checkout-verify-code -->
@@ -262,24 +262,24 @@
           <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-code premium-checkout-step--closeable">
             <div class="premium-checkout-card-header">
               <h2 class="premium-checkout-card-header__heading ">
-                {{ premium-checkout-verify-code__heading-1 Step 2: Check the email that we sent to you }}
+                {{ get_string("premium-checkout-verify-code__heading-1", "premium-checkout") }}
               </h2>
               <button class="premium-checkout-card-header__close-button" type="button">
-                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ premium-checkout__close-alt Return to checkout }}">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt", "premium-checkout") }}">
               </button>
             </div><!-- /premium-checkout-card-header -->
             <div class="premium-checkout-card-body">
               <div class="premium-checkout-verify__lead">
-                {{ premium-checkout-verify-code__paragraph-1 Enter the 6 character code that we sent to you to verify your email address. }}
+                {{ get_string("premium-checkout-verify-code__paragraph-1", "premium-checkout") }}
               </div>
               <form class="premium-checkout-verify__form">
                 <input type="text" class="premium-checkout-verify__input">
                 <button class="premium-checkout__button premium-checkout-verify__submit">
-                  {{ premium-checkout-verify-email__button-1 Submit }}
+                  {{ get_string("premium-checkout-verify-email__button-1", "premium-checkout") }}
                 </button>
               </form>
               <div class="premium-checkout-verify__error">
-                {{ premium-checkout-verify-code__error-1 The code that was submitted was incorrect. Please correct it or reach out to <a href="mailto:support@adblockplus.org">support@adblockplus.org</a> to proceed. }}
+                {{ get_string("premium-checkout-verify-code__error-1", "premium-checkout") }}
               </div>
             </div><!-- /premium-checkout-card-body--columns -->
           </div><!-- /premium-checkout-verify /premium-checkout-verify-code -->
@@ -296,7 +296,7 @@
           <div class="premium-checkout-step premium-checkout-success premium-checkout-reactivated">
             <div class="premium-checkout-card-header">
               <h2 class="premium-checkout-card-header__heading">
-                {{ premium-checkout-reactivated__heading Step 3: Click below to get started  }}
+                {{ get_string("premium-checkout-reactivated__heading", "premium-checkout") }}
               </h2>
             </div><!-- /premium-checkout-card-header -->
             <div class="premium-checkout-card-body premium-checkout-card-body--columns">
@@ -305,13 +305,13 @@
               </div><!-- /premium-checkout-card-body-column -->
               <div class="premium-checkout-card-body-column">
                 <h3>
-                  {{ premium-checkout-reactivated__heading-1 You’re ready to start using Adblock Plus Premium! }}
+                  {{ get_string("premium-checkout-reactivated__heading-1", "premium-checkout") }}
                 </h3>
                 <p>
-                  {{ premium-checkout-reactivated__paragraph-1 If you have any questions, please visit our <a href="https://help.adblockplus.org">Help Center</a> or contact our support team at <a href="mailto:support@adblockplus.org">support@adblockplus.org</a>. We’re always happy to hear from you! }}
+                  {{ get_string("premium-checkout-reactivated__paragraph-1", "premium-checkout") }}
                 </p>
                 <a href="https://help.adblockplus.org/hc/articles/8155189140115-Get-started-with-AdBlock-Plus-Premium" class="premium-checkout-success__button premium-checkout__button" data-extension-page="premium-onboarding">
-                  {{ premium-checkout-reactivated__button-1 Get Started with Adblock Plus Premium }}
+                  {{ get_string("premium-checkout-reactivated__button-1", "premium-checkout") }}
                 </a>
                 <div class="premium-checkout-success__install" hidden>
                   <? include install ?>

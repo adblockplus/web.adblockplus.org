@@ -1,5 +1,5 @@
 import { program } from "commander";
-import { readFileSync, readdirSync, writeFileSync } from "fs";
+import { readFileSync, readdirSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
 
 program
@@ -24,7 +24,7 @@ for (const locale of locales) {
     const inputPath = join("locales", locale, inputFilename);
     const outputPath = join("locales", locale, outputFilename);
     const input = JSON.parse(readFileSync(inputPath));
-    const output = JSON.parse(readFileSync(outputPath));
+    const output = existsSync(outputPath) ? JSON.parse(readFileSync(outputPath)) : {};
     for (const string of strings) {
       if (input[string]) {
         output[string] = input[string];
