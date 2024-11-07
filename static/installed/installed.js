@@ -98,7 +98,10 @@ function updatePaymentAmounts(currency) {
 
 updatePaymentAmounts(defaultCurrency);
 
-paymentCurrency.addEventListener("change", () => updatePaymentAmounts(paymentCurrency.value));
+paymentCurrency.addEventListener("change", () => {
+  updatePaymentAmounts(paymentCurrency.value);
+  adblock.api.setVATExclusive(paymentCurrency.value);
+});
 
 paymentForm.addEventListener("submit", event => {
   event.preventDefault();

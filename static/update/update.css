@@ -545,13 +545,8 @@ html:not(.de) .de-only { display: none; }
 }
 
 .premium-plan-tax {
-  display: none;
   text-align: center;
   width: 100%;
-}
-
-.vat-exclusive .premium-plan-tax {
-  display: block;
 }
 
 .update-plan .premium-plan-tax {
