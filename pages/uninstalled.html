@@ -1,0 +1,210 @@
+title=Adblock Plus has been successfully uninstalled
+prevent_cookie_prompt=1
+robots=none
+template=minimal
+
+<head>
+  <? include optimizely ?>
+  <link href="/css/uninstalled.css" rel="stylesheet">
+  <link href="/css/survey-form.css" rel="stylesheet">
+</head>
+
+<div id="content">
+  <section id="uninstall-reasons">
+    <div class="container content">
+      <h1>
+        {{ title Adblock Plus has been successfully uninstalled }}
+      </h1>
+      <? include reinstall ?>
+      <h2>
+        {{ sorry-go Sorry to see you go!  }}
+      </h2>
+      <p>
+        {{ reason-header Would you mind taking a moment and telling us why you've uninstalled Adblock Plus? }}
+      </p>
+      <form id="reasons-form" action="uninstalled-submit" method="get">
+        <fieldset>
+          <ul id="reasons">
+            <li>
+              <input id="reason-unblocked" type="checkbox" name="reason" value="13v0" />
+              <div class="reason-alert-container">
+                <label for="reason-unblocked">
+                  {{ reason-unblocked I was still seeing ads }}
+                </label>
+                <div class="alert alert--info">
+                  <div>
+                    {{ reason-unblocked-where Could you share the URL where ads appeared? We'll investigate it. If you'd rather not, that’s okay—just click Submit. }}
+                  </div>
+                  <textarea name="reason-unblocked" placeholder="example.com" style="width: 100%; max-width: none;" maxlength="300"></textarea>
+                </div>
+              </div>
+            </li>
+            <li>
+              <input id="reason-youtube" type="checkbox" name="reason" value="12v0" />
+              <div class="reason-alert-container">
+                <label for="reason-youtube">
+                  {{ reason-youtube YouTube ads weren't being blocked }}
+                </label>
+              </div>
+            </li>
+            <li>
+              <input id="reason-broken" type="checkbox" name="reason" value="14v0" />
+              <div class="reason-alert-container">
+                <label for="reason-broken">
+                  {{ reason-broken I had trouble with certain websites breaking or my browser slowing down }}
+                </label>
+                <div class="alert">
+                  <div>
+                    {{ reason-broken-support In rare instances, Adblock Plus may prevent some websites from displaying or functioning correctly. This is typically not a bug but rather a problem with a filter list (or custom filter). See <a href="https://help.adblockplus.org/hc/en-us/articles/1500002533742-Adblock-Plus-breaks-the-websites-I-visit" target="_blank">Adblock Plus breaks the websites I visit</a> to find out how to troubleshoot these issues. }}
+                  </div>
+                  <div>
+                    <? include reinstall-button ?>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <input id="reason-competition" type="checkbox" name="reason" value="5v0" />
+              <div class="reason-alert-container">
+                <label for="reason-competition">
+                  {{ reason-competition I'm using a different ad blocker }}
+                </label>
+                <div class="alert alert--info">
+                  <div>
+                    {{ reason-competition-which Could you share which ad blocker? }}&nbsp;
+                    <select name="otherAdblockerPredefined">
+                      <option>AdBlock</option>
+                      <option>uBlock</option>
+                      <option>uBlock Origin</option>
+                      <option>Ghostery</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <hr>
+                  <div>
+                    {{ reason-competition-why Could you tell us why you chose that ad blocker instead? }}
+                  </div>
+                  <textarea name="reason-competition" placeholder="" style="width: 100%; max-width: none;" maxlength="300"></textarea>
+                  <div>
+                    {{ rather-not If you'd rather not, that's okay-just click Submit. }}
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <input id="reason-disable" type="checkbox" name="reason" value="15v0" />
+              <div class="reason-alert-container">
+                <label for="reason-disable">
+                  {{ reason-disable I kept getting asked to disable my ad blocker(s) }}
+                </label>
+                <div class="alert">
+                  <div>
+                    {{ reason-disable-support One of the most common questions our team receives is if there is any way to work around adblock walls. See <a href="https://help.adblockplus.org/hc/en-us/articles/4402789017747-A-site-asks-me-to-disable-ABP-What-to-do" target="_blank">A site asks me to disable ABP. What to do?</a> to find out how to troubleshoot these issues. }}
+                  </div>
+                  <div>
+                    <? include reinstall-button ?>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <input id="reason-marketing" type="checkbox" name="reason" value="16v0" />
+              <div class="reason-alert-container">
+                <label for="reason-marketing">
+                  {{ reason-marketing I don't like all the messaging I'm getting }}
+                </label>
+              </div>
+            </li>
+            <li>
+              <input id="reason-pay" type="checkbox" name="reason" value="10v0" />
+              <div class="reason-alert-container">
+                <label for="reason-pay">
+                  {{ reason-not-free I don't want to pay }}
+                </label>
+                <div class="alert">
+                  <div>
+                    {{ not-free-alert No payment is needed. Contributions are optional, so you can simply close the tab and continue using it for free. }}
+                  </div>
+                  <div>
+                    <? include reinstall-button ?>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <input id="reason-aa" type="checkbox" name="reason" value="3v0" />
+              <div class="reason-alert-container">
+                <label for="reason-aa">
+                  {{ reason-aa I don't like the Acceptable Ads program }}
+                </label>
+                <div class="alert">
+                  <div>
+                    {{ reason-aa-support Did you know you can easily opt out of Acceptable Ads?  You can easily disable it in the options page under 'General' and 'Filter Lists. You'll still enjoy full ad blocking! }}
+                  </div>
+                  <div>
+                    <? include reinstall-button ?>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <input id="reason-other" type="checkbox" name="reason" value="0v0" />
+              <div class="reason-alert-container">
+                <label for="reason-other">
+                  {{ reason-other Another reason not listed here }}
+                </label>
+                <div class="alert alert--info">
+                  <div>
+                    {{ reason-other-what Could you let us know why you're uninstalling Adblock Plus? Your feedback helps us improve. If you'd rather not, that’s okay—just click Submit. }}
+                  </div>
+                  <textarea name="reasonOther" style="width: 100%; max-width: none;" maxlength="300"></textarea>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </fieldset>
+        <p id="reason-error">
+          {{ error-msg Please select at least one of the options above }}
+        </p>
+        <p>
+          <button id="reason-submit" class="button primary">{{ submit Submit }}</button>
+        </p>
+      </form>
+      <p class="disclaimer">
+        <small>{{ disclaimer By clicking Submit, you are sending your response to Adblock Plus. Please see our <a href='/privacy'>privacy policy</a>. }}</small>
+      </p>
+    </div>
+  </section>
+</div>
+
+<script src="/js/vendor/bowser.js"></script>
+<script src="/js/install-button.js"></script>
+<script>(()=>{
+  
+  const form = document.getElementById("reasons-form");
+
+  // pass along query parameters from uninstall to uninstall submit
+  adblock.query.forEach((value, key) => {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = decodeURIComponent(key);
+    input.value = decodeURIComponent(value);
+    form.appendChild(input);
+  });
+
+  // shuffle reason order
+  const reasons = document.getElementById("reasons");
+  for (let i = reasons.children.length; i >= 0; i--) {
+    reasons.appendChild(reasons.children[Math.random() * i | 0]);
+  }
+
+  form.addEventListener("submit", event => {
+    if (!reasons.querySelector("li>input[type=checkbox]:checked")) {
+      form.classList.add("error");
+      event.preventDefault();
+    } else {
+      form.classList.remove("error");
+    }
+  });
+
+})();</script>

@@ -1,17 +1,9 @@
 {% from "macros/install_button" import install_button %}
 
-<aside id="reinstall">
-  <div id="reinstall-label">
-    <div id="reinstall-title">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33398 14C2.33398 7.55998 7.56065 2.33331 14.0007 2.33331C20.4407 2.33331 25.6673 7.55998 25.6673 14C25.6673 20.44 20.4407 25.6666 14.0007 25.6666C7.56065 25.6666 2.33398 20.44 2.33398 14ZM18.6673 14L11.6673 8.74998V19.25L18.6673 14Z" fill="#E40D0D"/>
-      </svg>
-      <h4>{{ "Are YouTube ads the reason for leaving? Don't give up on us yet!" | translate("reason-youtube-header") }}</h4>
-    </div>
-    <p>{{ "We’re actively working on a solution to YouTube’s anti-ad blocking wall. If this is your reason for uninstalling, please reconsider so that we may continue to block other annoying ads across the web for you." | translate("reason-youtube-paragraph") }}</p>
-  </div>
-  {# <span id="reinstall-label">{{ "Did you uninstall Adblock Plus by accident?" | translate("reinstall-headline", "Text
-    next to the Reinstallation button") }}</span> #}
+<aside id="reinstall" class="alert">
+  <h2>
+    {{ "Didn't want to uninstall?" | translate("einstall-headline") }}
+  </h2>
   <div>
     {{ install_button(
     page,
