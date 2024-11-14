@@ -27,4 +27,5 @@ If your current ad blocker or extension no longer works in Chrome, visit the [Ch
 
 When Manifest V3 was announced we went to work updating and testing Adblock Plus so we could continue offering you the same high-quality ad-blocking experience across all of your devices and browsers. 
 
-We believe you should have the choice of what browser to use and still have the tools available to make your online experience better. [Adblock Plus was one of the first extensions to migrate to Manifest V3](https://blog.adblockplus.org/blog/how-adblock-plus-is-getting-ready-for-manifest-v3) and is compatible with the latest version of Chrome. Hopefully, you didn’t even notice when the change happened.  
+We believe you should have the choice of what browser to use and still have the tools available to make your online experience better. [Adblock Plus was one of the first extensions to migrate to Manifest V3](https://blog.adblockplus.org/blog/how-adblock-plus-is-getting-ready-for-manifest-v3) and is compatible with the latest version of Chrome. Hopefully, you didn’t even notice when the change happened. 
+{ .mb3 } 
