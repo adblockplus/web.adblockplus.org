@@ -231,7 +231,13 @@ $(document).ready(function() {
             },
         })
             .done(function(msg) {
-                if (msg && typeof msg.paymentInfo !== "undefined") {
+                const hasPayload = msg && typeof msg.paymentInfo !== "undefined";
+                // Got response with error message of failed operation
+                if (hasPayload && hasPayload["success"] === false) {
+                    Page.SpinnerNoText.fadeOut(1000, function() {
+                        Page.EGenericError.show();
+                    });
+                } else if (hasPayload) {
                     paymentInfoObj = msg.paymentInfo;
                     if (paymentInfoObj === false || paymentInfoObj["cancelled"] === true) {
                         if (paymentInfoObj.active_until) {
