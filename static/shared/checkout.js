@@ -10,7 +10,7 @@ const PADDLE_PRICES = {
     "premium": {
       "USD": {
         "monthly": {
-          "400": "pri_01j8m8j8945gk9mv9hxd3ykmtm"
+          "400": "pri_01jd1s3te630p72wv044r5e785"
         },
         "yearly": {
           "4000": "pri_01j8m8j8p25fdrsde138c9n4ef"
