@@ -182,6 +182,11 @@ $(document).ready(function() {
             $("span.current-card-expiration").each(function() {
                 $(this).text(`${paymentInfoObj["exp_month"]}/${paymentInfoObj["exp_year"]}`);
             });
+            // Prevent stripe users to cancel during migration
+            if (paymentInfoObj["processor"].toLowerCase() === "stripe") {
+                $("#initial-cancel-button").hide();
+                $("#initial-cancel-button").css("pointer-events", "none");
+            }
             // $("div#update-payment-method").click(function(event) {
             //     $("div#update-card-activity").toggle("hidden");
             // });
@@ -226,7 +231,13 @@ $(document).ready(function() {
             },
         })
             .done(function(msg) {
-                if (msg && typeof msg.paymentInfo !== "undefined") {
+                const hasPayload = msg && typeof msg.paymentInfo !== "undefined";
+                // Got response with error message of failed operation
+                if (hasPayload && hasPayload["success"] === false) {
+                    Page.SpinnerNoText.fadeOut(1000, function() {
+                        Page.EGenericError.show();
+                    });
+                } else if (hasPayload) {
                     paymentInfoObj = msg.paymentInfo;
                     if (paymentInfoObj === false || paymentInfoObj["cancelled"] === true) {
                         if (paymentInfoObj.active_until) {
