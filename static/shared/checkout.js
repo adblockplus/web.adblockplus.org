@@ -1321,7 +1321,7 @@ const PADDLE_PRICES = {
 };
 
 const PADDLE_EXPERIMENT_PRICES = {
-  test: {
+  "test": {
     "contribution": {
       "USD": {
         "once": {
@@ -1367,7 +1367,9 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m97zdwgdkn9p3kzptrkrhw"
           },
           "400": {
-            "0": "pri_01j9xrszg0hy0jzh65wcq62nqb"
+            "0": "pri_01j9xrszg0hy0jzh65wcq62nqb",
+            "7": "pri_01je7a360ja50h0g2ej54at3tk",
+            "14": "pri_01je7a366cwvdj0axr9cygyrmh"
           },
           "500": {
             "0": "pri_01j8m97ztnv0rwk8e8adaph1p4"
@@ -1397,6 +1399,10 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "3000": {
             "0": "pri_01j8m983pme1qjk189t43am94k"
+          },
+          "4000": {
+            "7": "pri_01je7a36d6d5nxdqd1jf9ffnrn",
+            "14": "pri_01je7a36k2ewf0b2d7djvh5605"
           },
           "4500": {
             "0": "pri_01j9xrszwgq0cfjqx0ahr21yee"
@@ -1433,7 +1439,9 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m987pc8gf2jftmj5y7japp"
           },
           "400": {
-            "0": "pri_01j9xrt0a1ce59dn9ccgmgtb7g"
+            "0": "pri_01j9xrt0a1ce59dn9ccgmgtb7g",
+            "7": "pri_01je7a36rb29tgythvzpzffqc3",
+            "14": "pri_01je7a373v29bzm6e84hsmh1v7"
           },
           "500": {
             "0": "pri_01j8m98863gxe8v7f8wse28kg7"
@@ -1463,6 +1471,10 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "3000": {
             "0": "pri_01j8m98bw8s61xe9y4ybdk0mdp"
+          },
+          "4000": {
+            "7": "pri_01je7a379ry86c6qef5ced5dg7",
+            "14": "pri_01je7a37g8msmzs2vt63x3wd7f"
           },
           "4500": {
             "0": "pri_01j9xrt0r0z0ztv63q2gqqqay6"
@@ -1499,7 +1511,9 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m98fpb7c8r4zg0s7bt9hxg"
           },
           "400": {
-            "0": "pri_01j9xrt1k5b3p1857pn3snrckq"
+            "0": "pri_01j9xrt1k5b3p1857pn3snrckq",
+            "7": "pri_01je7a37p1vzhrm1trvqnj96n2",
+            "14": "pri_01je7a37vgf967by6rvw60b2w2"
           },
           "500": {
             "0": "pri_01j8m98g30ny54gbfn8nvfbkxf"
@@ -1530,6 +1544,10 @@ const PADDLE_EXPERIMENT_PRICES = {
           "3000": {
             "0": "pri_01j8m98k8c6e506aw4cw83z520"
           },
+          "4000": {
+            "7": "pri_01je7a3815hayy8yxwcx6fd704",
+            "14": "pri_01je7a389qag9cnw37daex1vwg"
+          },
           "4500": {
             "0": "pri_01j9xrt20sydmfz9hvak3cw3hh"
           },
@@ -1555,7 +1573,7 @@ const PADDLE_EXPERIMENT_PRICES = {
       }
     }
   },
-  live: {
+  "live": {
     "contribution": {
       "USD": {
         "once": {
@@ -1601,7 +1619,9 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m9anwby89ft9qt0tdnpxnd"
           },
           "400": {
-            "0": "pri_01j9xrscm90ajdn223hs0grdqh"
+            "0": "pri_01j9xrscm90ajdn223hs0grdqh",
+            "7": "pri_01je7aajfpqfmrcn8s62tq9410",
+            "14": "pri_01je7aajn9ntgtzprnndxqv35a"
           },
           "500": {
             "0": "pri_01j8m9ap914cf8d2a1f9xef33z"
@@ -1631,6 +1651,10 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "3000": {
             "0": "pri_01j8m9asba04d8d8tc31x87b2h"
+          },
+          "4000": {
+            "7": "pri_01je7aajvc70pbsy5vw4mcsfje",
+            "14": "pri_01je7aak1hydr2bpzzgp2vfqq2"
           },
           "4500": {
             "0": "pri_01j9xrsd0s5xzdszgntygcpswe"
@@ -1667,7 +1691,9 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m9awtt2j1hs9fas2nxm8jw"
           },
           "400": {
-            "0": "pri_01j9xrsdd83yytar6phnzc1kt8"
+            "0": "pri_01j9xrsdd83yytar6phnzc1kt8",
+            "7": "pri_01je7aak7rj12vgejp7hbp26cy",
+            "14": "pri_01je7aakdr49tj2bx587xfsck3"
           },
           "500": {
             "0": "pri_01j8m9ax71rz503vc29p33jy9c"
@@ -1697,6 +1723,10 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "3000": {
             "0": "pri_01j8m9b0vph6gfzxqphqq3f1t5"
+          },
+          "4000": {
+            "7": "pri_01je7aakkzzwdsjqwbqc6y2va4",
+            "14": "pri_01je7aaksycg9q8nptmbdf7xcz"
           },
           "4500": {
             "0": "pri_01j9xrsdsnxwewaenf5ezq6ppk"
@@ -1733,7 +1763,9 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m9b4ngcz8gkjd8pmhnbn9y"
           },
           "400": {
-            "0": "pri_01j9xrse69mxszjy9qbs0pekqc"
+            "0": "pri_01j9xrse69mxszjy9qbs0pekqc",
+            "7": "pri_01je7aakzxvzb91bvg2145np0s",
+            "14": "pri_01je7aam5dtpd1hxz6ca1npk23"
           },
           "500": {
             "0": "pri_01j8m9b595p7yz5605shjht26z"
@@ -1763,6 +1795,10 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "3000": {
             "0": "pri_01j8m9b92e76a51r9f2fr8b6ps"
+          },
+          "4000": {
+            "7": "pri_01je7aamb0rvvvxdgk0spwg5hk",
+            "14": "pri_01je7aamgx218x0b46wem4vzs4"
           },
           "4500": {
             "0": "pri_01j9xrsemdzaap971gfefnj5rv"
