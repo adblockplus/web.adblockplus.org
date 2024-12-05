@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "Altro, vale a dire ..."
+    "message": "Un altro motivo non elencato qui"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "Invia"
   },
   "title": {
-    "message": "Adblock Plus è stato disinstallato"
+    "message": "Adblock Plus è stato disinstallato con successo"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "Ero infastidito dagli annunci che ricaricavano nuovi contenuti pubblicitari nello stesso spazio (\"refresh degli annunci\")."
   },
   "reason-not-free": {
-    "message": "Non voglio pagare per avere Adblock Plus"
+    "message": "Non voglio pagare"
   },
   "reason-youtube-header": {
     "message": "Ci stai lasciando per colpa degli annunci su YouTube? Non abbandonarci!"
@@ -99,6 +99,57 @@
     "message": "Al momento stiamo lavorando a una soluzione ai muri anti-annunci di YouTube. Se è questa la ragione per la quale ci stai disinstallando, non farlo, perché potremmo riuscire a bloccare altri annunci nel web."
   },
   "reason-youtube": {
-    "message": "Sto cercando un altro ad-blocker per non vedere gli annunci di YouTube."
+    "message": "Gli annunci di YouTube non venivano bloccati"
+  },
+  "sorry-go": {
+    "message": "Mi dispiace vederti andare via!"
+  },
+  "reason-header": {
+    "message": "Ti dispiacerebbe prenderti un momento per dirci perché hai disinstallato Adblock Plus?"
+  },
+  "reason-unblocked": {
+    "message": "Continuavo a vedere annunci"
+  },
+  "reason-unblocked-where": {
+    "message": "Potresti condividere l'URL in cui sono apparsi gli annunci? Indagheremo. Se preferisci non farlo, non c'è problema: fai clic su Invia."
+  },
+  "reason-broken": {
+    "message": "Ho avuto problemi di interruzione di alcuni siti web o di rallentamento del browser"
+  },
+  "reason-broken-support": {
+    "message": "In rari casi, Adblock Plus può impedire la visualizzazione o il corretto funzionamento di alcuni siti web. In genere non si tratta di un bug ma piuttosto di un problema con un elenco filtri (o un filtro personalizzato). Vedi <a>Adblock Plus interrompe i siti web che visito</a> per scoprire come risolvere questi problemi."
+  },
+  "reason-competition": {
+    "message": "Sto usando un altro ad blocker"
+  },
+  "reason-competition-which": {
+    "message": "Potresti indicare quale ad blocker?"
+  },
+  "reason-competition-why": {
+    "message": "Potresti dirci perché hai scelto proprio quell'ad blocker?"
+  },
+  "rather-not": {
+    "message": "Se preferisci non farlo, non c'è problema: fai clic su Invia."
+  },
+  "reason-disable": {
+    "message": "Costanti richieste di disattivare il blocco degli annunci"
+  },
+  "reason-disable-support": {
+    "message": "Una delle domande più frequenti che il nostro team riceve è se esiste un modo per aggirare i muri del blocco degli annunci. Vedi <a>Un sito mi chiede di disabilitare ABP. Cosa fare?</a> per scoprire come risolvere questi problemi."
+  },
+  "reason-marketing": {
+    "message": "Non mi piacciono tutti i messaggi che sto ricevendo"
+  },
+  "not-free-alert": {
+    "message": "Non è necessario alcun pagamento. I contributi sono facoltativi, quindi puoi semplicemente chiudere la scheda e continuare a usarlo gratuitamente."
+  },
+  "reason-aa": {
+    "message": "Non mi piace il programma Annunci accettabili"
+  },
+  "reason-aa-support": {
+    "message": "Sapevi che puoi facilmente rinunciare agli Annunci accettabili?  Puoi facilmente disabilitarlo nella pagina delle opzioni alla voce “Generale” e “Elenchi filtri”. Potrai comunque usufruire del blocco totale degli annunci!"
+  },
+  "reason-other-what": {
+    "message": "Potresti dirci perché stai disinstallando Adblock Plus? Il tuo feedback ci aiuterà a migliorare. Se preferisci non farlo, non c'è problema: fai clic su Invia."
   }
 }

@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "Inny, a dokładniej..."
+    "message": "Inny powód, który nie został tutaj wymieniony"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "Prześlij"
   },
   "title": {
-    "message": "Rozszerzenie Adblock Plus zostało odinstalowane"
+    "message": "Adblock Plus został pomyślnie odinstalowany"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "Denerwowały mnie reklamy, które ponownie wczytywały nową treść reklamy w tym samym boksie reklamowym (\"odświeżanie reklam\")"
   },
   "reason-not-free": {
-    "message": "Nie chcę płacić za Adblock Plus"
+    "message": "Nie chcę płacić"
   },
   "reason-youtube-header": {
     "message": "Czy reklamy na YouTube są powodem odejścia? Nie rezygnuj z nas jeszcze!"
@@ -99,6 +99,57 @@
     "message": "Aktywnie pracujemy nad rozwiązaniem problemu blokowania przez YouTube. Jeśli jest to powód odinstalowania aplikacji, prosimy o ponowne rozważenie tej decyzji, abyśmy mogli nadal blokować dla Ciebie inne irytujące reklamy."
   },
   "reason-youtube": {
-    "message": "Szukasz innego narzędzia do blokowania reklam na YouTube"
+    "message": "Reklamy na YouTube nie były blokowane"
+  },
+  "sorry-go": {
+    "message": "Przykro nam, że odchodzisz!"
+  },
+  "reason-header": {
+    "message": "Czy zechcesz poświęcić chwilę i powiedzieć nam, dlaczego odinstalowałeś/aś Adblock Plus?"
+  },
+  "reason-unblocked": {
+    "message": "Reklamy wciąż mi się wyświetlały"
+  },
+  "reason-unblocked-where": {
+    "message": "Czy możesz udostępnić adres URL, pod którym pojawiły się reklamy? Sprawdzimy to. Jeśli nie chcesz tego robić, nie ma problemu — po prostu kliknij Prześlij."
+  },
+  "reason-broken": {
+    "message": "Miałem problemy z działaniem niektórych stron internetowych lub spowolnieniem przeglądarki"
+  },
+  "reason-broken-support": {
+    "message": "W rzadkich przypadkach Adblock Plus może uniemożliwić wyświetlanie lub prawidłowe działanie niektórych stron internetowych. Zazwyczaj nie jest to błąd, ale raczej problem z listą filtrów (lub filtrem niestandardowym). Aby dowiedzieć się, jak rozwiązać te problemy, zobacz artykuł </a>Adblock Plus zakłóca działanie odwiedzanych przeze mnie stron.<a>"
+  },
+  "reason-competition": {
+    "message": "Używam innego programu do blokowania reklam"
+  },
+  "reason-competition-which": {
+    "message": "Czy możesz podać nazwę swojego programu blokującego reklamy?"
+  },
+  "reason-competition-why": {
+    "message": "Czy możesz nam powiedzieć, dlaczego wybrałeś ten program do blokowania reklam?"
+  },
+  "rather-not": {
+    "message": "Jeśli nie chcesz tego robić, nie ma problemu — po prostu kliknij Prześlij."
+  },
+  "reason-disable": {
+    "message": "Ciągle byłem proszony/a o wyłączenie blokowania reklam."
+  },
+  "reason-disable-support": {
+    "message": "Jednym z najczęstszych pytań, jakie otrzymuje nasz zespół, jest to, czy istnieje sposób na obejście blokad reklam. Zobacz <a>Strona prosi mnie o wyłączenie ABP. Co zrobić?</a> Aby dowiedzieć się, jak rozwiązać te problemy."
+  },
+  "reason-marketing": {
+    "message": "Nie podoba mi się komunikacja, jaką otrzymuję"
+  },
+  "not-free-alert": {
+    "message": "Płatność nie jest wymagana. Wpłaty są opcjonalne, więc możesz po prostu zamknąć kartę i nadal korzystać za darmo."
+  },
+  "reason-aa": {
+    "message": "Nie podoba mi się program akceptowalnych reklam"
+  },
+  "reason-aa-support": {
+    "message": "Czy wiesz, że możesz łatwo zrezygnować z akceptowanych reklam?  Można ją łatwo wyłączyć na stronie opcji w sekcji \"Ogólne\" i \"Listy filtrów\". Nadal będziesz cieszyć się pełnym blokowaniem reklam!"
+  },
+  "reason-other-what": {
+    "message": "Czy możesz nam powiedzieć, dlaczego odinstalowujesz Adblock Plus? Twoja opinia pomoże nam się poprawić. Jeśli nie chcesz tego robić, nie ma problemu — po prostu kliknij Prześlij."
   }
 }

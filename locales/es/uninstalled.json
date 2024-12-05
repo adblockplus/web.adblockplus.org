@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "Otras, concretamente..."
+    "message": "Otro motivo que no figura aquí."
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "Enviar"
   },
   "title": {
-    "message": "Adblock Plus ha sido desinstalado"
+    "message": "Adblock Plus se ha desinstalado correctamente"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "Me molestaban los anuncios que recargaban nuevo contenido publicitario en el mismo espacio para anuncios (\"anuncios actualizables\")"
   },
   "reason-not-free": {
-    "message": "No quiero pagar por Adblock Plus"
+    "message": "No quiero pagar"
   },
   "reason-youtube-header": {
     "message": "¿Los anuncios de YouTube son el motivo por el que te marchas? ¡No nos abandones todavía!"
@@ -99,6 +99,57 @@
     "message": "Estamos haciendo lo posible para encontrar una solución para la barrera antibloqueadores de anuncios de YouTube. Si ese es el motivo por el que has decidido desinstalar, piénsatelo de nuevo y deja que sigamos bloqueando otros anuncios molestos para ti en la web."
   },
   "reason-youtube": {
-    "message": "Buscando otro bloqueador de anuncios para detener los anuncios de YouTube."
+    "message": "No se bloqueaban los anuncios de YouTube"
+  },
+  "sorry-go": {
+    "message": "¡Sentimos mucho que te marches!"
+  },
+  "reason-header": {
+    "message": "¿Te importaría dedicar un momento a decirnos por qué has desinstalado Adblock Plus?"
+  },
+  "reason-unblocked": {
+    "message": "Todavía veía anuncios"
+  },
+  "reason-unblocked-where": {
+    "message": "¿Podrías compartir la URL en la que aparecieron los anuncios? Lo investigaremos. Si prefieres no hacerlo, no pasa nada; simplemente haz clic en Enviar."
+  },
+  "reason-broken": {
+    "message": "He tenido problemas con algunos sitios web que cerraban o ralentizaban mi navegador"
+  },
+  "reason-broken-support": {
+    "message": "En raras ocaciones, Adblock Plus puede evitar que algunos sitios web se muestren o funcionen correctamente. Esto no suele ser un error, sino un problema con una lista de filtros (o filtro personalizado). Consulta <a>Adblock Plus cierra los sitios web que visito</a> para averiguar cómo solucionar estos problemas."
+  },
+  "reason-competition": {
+    "message": "Estoy usando un bloqueador de anuncios diferente"
+  },
+  "reason-competition-which": {
+    "message": "¿Podrías decirnos qué bloqueador de anuncios usas?"
+  },
+  "reason-competition-why": {
+    "message": "¿Podrías decirnos por qué has elegido ese bloqueador de anuncios?"
+  },
+  "rather-not": {
+    "message": "Si prefieres no hacerlo, no pasa nada; simplemente haz clic en Enviar."
+  },
+  "reason-disable": {
+    "message": "Todavía se me pide que deshabilite mi(s) bloqueadore(s) de anuncios"
+  },
+  "reason-disable-support": {
+    "message": "Una de las preguntas más frecuentes que recibe nuestro equipo es si existe alguna forma de evitar los muros del bloqueador de anuncios. Consulta <a>Un sitio me pide que deshabilite ABP. ¿Qué hacer?</a> para averiguar cómo resolver estos problemas."
+  },
+  "reason-marketing": {
+    "message": "No me gustan todos los mensajes que estoy recibiendo"
+  },
+  "not-free-alert": {
+    "message": "No es necesario ningún pago. Las aportaciones son opcionales, así que simplemente cierra la pestaña y continúa usándolo de forma gratuita."
+  },
+  "reason-aa": {
+    "message": "No me gusta el programa Anuncios Aceptables"
+  },
+  "reason-aa-support": {
+    "message": "¿Sabías que puedes salir fácilmente de Anuncios Aceptables?  Puedes deshabilitarlo fácilmente en la página de opciones en «General» y «Listas de filtros». ¡Seguirás disfrutando del bloqueo de anuncios completo!"
+  },
+  "reason-other-what": {
+    "message": "¿Podrías contarnos por qué estás desinstalando Adblock Plus? Tus comentarios nos ayudan a mejorar. Si prefieres no hacerlo, no pasa nada; simplemente haz clic en Enviar."
   }
 }

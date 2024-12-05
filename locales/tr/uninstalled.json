@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "Diğer, yani..."
+    "message": "Burada belirtilmeyen başka bir neden"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "Gönder"
   },
   "title": {
-    "message": "Adblock Plus kaldırıldı"
+    "message": "Adblock Plus başarıyla kaldırıldı"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "Aynı reklam alanında yeni reklam içeriğini yeniden yükleyen reklamlar (\"yenilenen reklamlar\") beni rahatsız etti"
   },
   "reason-not-free": {
-    "message": "Adblock Plus için ödeme yapmak istemiyorum"
+    "message": "Katkı ödemesi yapmak istemiyorum"
   },
   "reason-youtube-header": {
     "message": "Ayrılmanızın nedeni YouTube reklamları mı? Bizden umudunuzu hemen kesmeyin!"
@@ -99,6 +99,57 @@
     "message": "YouTube'un reklam engelleme karşıtı duvarına karşı bir çözüm üzerinde aktif şekilde çalışıyoruz. Kaldırma nedeniniz buysa, lütfen tekrar düşünün; böylece sizin için web'deki diğer rahatsız edici reklamları engellemeye devam edebiliriz."
   },
   "reason-youtube": {
-    "message": "YouTube reklamlarını durdurmak için başka bir reklam engelleyici arayışındayım"
+    "message": "YouTube reklamları engellenmiyordu"
+  },
+  "sorry-go": {
+    "message": "Gittiğiniz için üzgünüz!"
+  },
+  "reason-header": {
+    "message": "Lütfen bir dakikanızı ayırıp bize Adblock Plus'ı neden kaldırdığınızı söyler misiniz?"
+  },
+  "reason-unblocked": {
+    "message": "Karşıma reklam çıkmaya devam ediyordu"
+  },
+  "reason-unblocked-where": {
+    "message": "Lütfen reklamlarla karşılaştığınız URL'yi paylaşır mısınız? Konuyu araştıracağız. Gerekçenizi paylaşmak istemiyorsanız sorun değil; Gönder düğmesine tıklamanız yeterli."
+  },
+  "reason-broken": {
+    "message": "Bazı web sitelerinin çökmesi ya da tarayıcımın yavaşlaması gibi sorunlar yaşadım"
+  },
+  "reason-broken-support": {
+    "message": "Nadiren de olsa Adblock Plus bazı web sitelerinin düzgün bir şekilde görüntülenmesini ya da çalışmasını engelleyebilir. Bu genellikle bir hata değil, bir filtre listesi (ya da özel filtre) sorunudur. Bu sorunların nasıl giderileceği hakkında bilgi edinmek için <a>Adblock Plus ziyaret ettiğim web sitelerinin çökmesine yol açıyor</a> bölümüne bakın."
+  },
+  "reason-competition": {
+    "message": "Farklı bir reklam engelleyici kullanıyorum"
+  },
+  "reason-competition-which": {
+    "message": "Lütfen hangi reklam engelleyiciyi kullandığınızı paylaşır mısınız?"
+  },
+  "reason-competition-why": {
+    "message": "Lütfen, neden o reklam engelleyiciyi tercih ettiğinizi belirtir misiniz?"
+  },
+  "rather-not": {
+    "message": "Gerekçenizi paylaşmak istemiyorsanız sorun değil; Gönder düğmesine tıklamanız yeterli."
+  },
+  "reason-disable": {
+    "message": "Sürekli olarak reklam engelleyici(leri)mi devre dışı bırakmam istendi"
+  },
+  "reason-disable-support": {
+    "message": "Ekibimize bildirilen en yaygın sorulardan biri, reklam engelleyici duvarlarını aşmanın bir yolu olup olmadığıdır. Bu sorunları nasıl gidereceğinizi öğrenmek için <a>Bir site benden ABP'yi devre dışı bırakmamı istiyor. Ne yapmalıyım?</a> bölümüne bakın."
+  },
+  "reason-marketing": {
+    "message": "Bana iletilen bütün o mesajlardan hoşlanmıyorum"
+  },
+  "not-free-alert": {
+    "message": "Herhangi bir ödeme yapmanız gerekmiyor. Katkı ödemeleri isteğe bağlıdır; yani ilgili sekmeyi kapatıp ABP’yi ücretsiz olarak kullanmaya devam edebilirsiniz."
+  },
+  "reason-aa": {
+    "message": "Kabul Edilebilir Reklamlar programından hoşlanmıyorum"
+  },
+  "reason-aa-support": {
+    "message": "Kabul Edilebilir Reklamlar Programı'ndan kolayca çıkabileceğinizi biliyor muydunuz?  Programı, 'Genel' ve 'Filtre Listeleri' sekmeleri altındaki seçenekler sayfasından kolayca devre dışı bırakabilirsiniz. Ardından, ABP’nin hiçbir özellik ve avantajından yoksun kalmadan reklam engellemenin keyfini çıkarmaya devam edebilirsiniz!"
+  },
+  "reason-other-what": {
+    "message": "Lütfen Adblock Plus'ı kaldırma nedeninizi bizimle paylaşır mısınız? Sağlayacağınız geri bildirim kendimizi geliştirip iyileştirmemize yardımcı olacaktır. Gerekçenizi paylaşmak istemiyorsanız sorun değil; Gönder düğmesine tıklamanız yeterli."
   }
 }

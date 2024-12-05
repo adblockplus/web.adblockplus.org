@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "その他、特に..."
+    "message": "ここに記載されていない別の理由"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "送信"
   },
   "title": {
-    "message": "Adblock Plus がアンインストールされました"
+    "message": "Adblock Plusは正常にアンインストールされました。"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "同じ広告枠に新しいコンテンツが再読み込みされる広告 (\"リフレッシュ広告\") が迷惑である"
   },
   "reason-not-free": {
-    "message": "Adblock Plusのための支払いを希望しません"
+    "message": "お金を払いたくない"
   },
   "reason-youtube-header": {
     "message": "YouTubeに広告が表示されると閉じたくなりますか？まだ、あきらめないでください！"
@@ -99,6 +99,57 @@
     "message": "当社では、YouTubeの広告ブロック無効化の壁の解決策に積極的に取り組んでいます。このことが理由でアンインストールを希望される場合は、どうぞお考え直しください。ウェブ全体で他の迷惑な広告のブロックを継続します。"
   },
   "reason-youtube": {
-    "message": "YouTube広告を非表示にする別の広告ブロッカーを探す"
+    "message": "YouTubeの広告がブロックされていなかった"
+  },
+  "sorry-go": {
+    "message": "お客様がキャンセルされるのは残念です！"
+  },
+  "reason-header": {
+    "message": "Adblock Plusをアンインストールした理由を教えていただけますか？"
+  },
+  "reason-unblocked": {
+    "message": "まだ広告が表示されていた"
+  },
+  "reason-unblocked-where": {
+    "message": "広告が表示されたURLを教えていただけますか？当社で調査します。回答をご希望でない場合は、そのまま「送信」をクリックしてください。"
+  },
+  "reason-broken": {
+    "message": "特定のウェブサイトの表示が壊れたり、ブラウザーの動作が遅くなったりした"
+  },
+  "reason-broken-support": {
+    "message": "まれに、Adblock Plusによって一部のウェブサイトが表示されなかったり、正しく機能しないことがあります。これは通常バグではなく、フィルターリスト（またはカスタムフィルター）の問題です。このような問題のトラブルシューティング方法については「<a>Adblockが私の訪問するウェブサイトを壊す</a>」をご覧ください。"
+  },
+  "reason-competition": {
+    "message": "別の広告ブロッカーを使っている"
+  },
+  "reason-competition-which": {
+    "message": "どの広告ブロッカーをご利用ですか？"
+  },
+  "reason-competition-why": {
+    "message": "その広告ブロッカーを選んだ理由を教えていただけますか？"
+  },
+  "rather-not": {
+    "message": "回答をご希望でない場合は、そのまま「送信」をクリックしてください。"
+  },
+  "reason-disable": {
+    "message": "広告ブロッカーを無効にするよう何度も求められた"
+  },
+  "reason-disable-support": {
+    "message": "当社のチームに寄せられる最も一般的な質問の1つは、広告ブロックの壁を回避する方法があるかどうかというものです。「<a>サイトでABPを無効にするよう求めてきます」を参照してください。</a>これらの問題のトラブルシューティングを見つけるにはどうしますか？"
+  },
+  "reason-marketing": {
+    "message": "表示されるメッセージがすべて気に入らない"
+  },
+  "not-free-alert": {
+    "message": "お支払いは必要ありません。寄付は任意です。タブを閉じるだけで無料でお使いいただけます。"
+  },
+  "reason-aa": {
+    "message": "控えめな広告プログラムが気に入らない"
+  },
+  "reason-aa-support": {
+    "message": "控えめな広告から簡単にオプトアウトできることをご存知ですか？オプションページの「一般」と「フィルターリスト」で簡単に無効にできます。それでも完全に広告ブロックができます！"
+  },
+  "reason-other-what": {
+    "message": "Adblock Plusをアンインストールする理由を教えていただけますか？お客様のフィードバックは当社の改善に役立ちます。回答をご希望でない場合は、そのまま「送信」をクリックしてください。"
   }
 }

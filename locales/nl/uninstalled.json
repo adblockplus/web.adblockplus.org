@@ -37,7 +37,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "Anders, namelijk..."
+    "message": "Een andere reden die hier niet wordt vermeld"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -68,7 +68,7 @@
     "message": "Verzenden"
   },
   "title": {
-    "message": "Adblock Plus is verwijderd"
+    "message": "Adblock Plus is succesvol verwijderd"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -82,7 +82,7 @@
     "message": "Ik ergerde me aan advertenties die nieuwe inhoud laden in dezelfde advertentieruimte ('vernieuwen van advertenties')"
   },
   "reason-not-free": {
-    "message": "Ik wil niet betalen voor Adblock Plus"
+    "message": "Ik wil niet betalen"
   },
   "reason-youtube-header": {
     "message": "Zijn YouTube-advertenties de reden dat u ons verlaat? Geef ons nog niet op!"
@@ -91,6 +91,57 @@
     "message": "We werken actief aan een oplossing voor de anti-advertentieblokkeringsmuur van YouTube. Als dit de reden is dat u het programma verwijdert, overweeg uw keuze dan nogmaals zodat we andere vervelende advertenties voor u kunnen blijven blokkeren over het hele web."
   },
   "reason-youtube": {
-    "message": "Zoeken naar een andere reclameblokkering om YouTube-advertenties te stoppen."
+    "message": "YouTube-advertenties werden niet geblokkeerd"
+  },
+  "sorry-go": {
+    "message": "Het spijt ons dat u weggaat!"
+  },
+  "reason-header": {
+    "message": "Wilt u eventjes de tijd nemen en ons vertellen waarom u Adblock Plus heeft verwijderd?"
+  },
+  "reason-unblocked": {
+    "message": "Ik zag nog steeds advertenties"
+  },
+  "reason-unblocked-where": {
+    "message": "Kunt u de URL delen waar u de advertenties heeft gezien? We zullen het onderzoeken. Als u dat liever niet doet, is dat ook goed. Klik dan gewoon op 'Verzenden'."
+  },
+  "reason-broken": {
+    "message": "Ik had problemen met bepaalde websites die crashten of mijn browser werd trager"
+  },
+  "reason-broken-support": {
+    "message": "In zeldzame gevallen kan Adblock Plus voorkomen dat sommige websites correct worden weergegeven of functioneren. Dit is meestal geen bug, maar eerder een probleem met een filterlijst (of aangepast filter). Zie <a>Adblock Plus verhindert de werking van de websites die ik bezoek</a> om te ontdekken hoe u deze problemen kunt oplossen."
+  },
+  "reason-competition": {
+    "message": "Ik gebruik een andere advertentieblokkering"
+  },
+  "reason-competition-which": {
+    "message": "Kunt u aangeven welke advertentieblokkering?"
+  },
+  "reason-competition-why": {
+    "message": "Kunt u ons vertellen waarom u voor die advertentieblokkering heeft gekozen?"
+  },
+  "rather-not": {
+    "message": "Als u dat liever niet doet, is dat ook goed. Klik dan gewoon op 'Verzenden'."
+  },
+  "reason-disable": {
+    "message": "Ik werd steeds gevraagd om mijn advertentieblokkering uit te schakelen"
+  },
+  "reason-disable-support": {
+    "message": "Een van de meest voorkomende vragen die ons team krijgt, is of er een manier is om de adblock-muren te omzeilen. Zie <a>Een site vraagt me om ABP uit te schakelen. Wat moet ik doen?</a> om te ontdekken hoe u deze problemen kunt oplossen."
+  },
+  "reason-marketing": {
+    "message": "Ik hou niet van alle berichten die ik krijg"
+  },
+  "not-free-alert": {
+    "message": "Er is geen betaling nodig. Bijdragen zijn optioneel, dus u kunt het tabblad gewoon sluiten en het gratis blijven gebruiken."
+  },
+  "reason-aa": {
+    "message": "Ik hou niet van het Acceptabele Advertenties-programma"
+  },
+  "reason-aa-support": {
+    "message": "Wist u dat u zich eenvoudig kunt afmelden voor Acceptabele Advertenties?  U kunt dit eenvoudig uitschakelen in de pagina 'Opties' onder 'Algemeen' en 'Filterlijsten'. U geniet nog steeds van volledige advertentieblokkering!"
+  },
+  "reason-other-what": {
+    "message": "Wilt u ons laten weten waarom u Adblock Plus verwijdert? Uw feedback helpt ons te verbeteren. Als u dat liever niet doet, is dat ook goed. Klik dan gewoon op 'Verzenden'."
   }
 }

@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "기타, 즉 구체적으로..."
+    "message": "다른 이유가 여기 없다"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "제출"
   },
   "title": {
-    "message": "Adblock Plus가 제거되었습니다"
+    "message": "Adblock Plus가 성공적으로 삭제되었습니다"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "동일한 광고 슬롯에 새로운 광고 콘텐츠를 재로딩하는 것이 거슬렸다 (“광고 새로고침”)"
   },
   "reason-not-free": {
-    "message": "Adblock Plus 결제를 원치 않습니다"
+    "message": "지불하고 싶지 않다"
   },
   "reason-youtube-header": {
     "message": "유튜브 광고 때문에 떠납니까? 저희를 믿어 주십시오!"
@@ -99,6 +99,57 @@
     "message": "유튜브 반 광고 차단 벽에 대한 솔루션을 적극적으로 찾고 있습니다. 이것이 삭제 이유라면, 재고해 주십시오. 귀하의 웹 전체에 거슬리는 다른 광고를 계속 차단해 줄 수 있습니다."
   },
   "reason-youtube": {
-    "message": "유튜브 광고 차단을 위한 다른 광고 차단기를 찾는 중"
+    "message": "유튜브 광고가 차단되지 않았다"
+  },
+  "sorry-go": {
+    "message": "떠나신다니 아쉽습니다!"
+  },
+  "reason-header": {
+    "message": "Adblock Plus를 삭제한 이유를 저희에게 말씀해 주실 수 있으신가요?"
+  },
+  "reason-unblocked": {
+    "message": "여전히 광고가 보인다"
+  },
+  "reason-unblocked-where": {
+    "message": "어느 광고가 보였는지 해당 URL을 공유해 주시겠습니까? 저희가 조사해 보겠습니다. 공유하고 싶지 않으셔도 괜찮습니다. 제출을 클릭해 주십시오."
+  },
+  "reason-broken": {
+    "message": "특정 웹사이트가 깨지거나 브라우저가 느려지는 문제를 겪었다"
+  },
+  "reason-broken-support": {
+    "message": "매우 드물지만, Adblock Plus가 일부 웹사이트의 표시나 기능을 올바르게 하지 못하는 원인이 될 수 있습니다. 이는 일반적으로 버그보다는 필터 목록(또는 맞춤 필터)의 문제입니다. <a>Adblock Plus로 인해 방문한 웹사이트가 깨짐</a>을 확인해 이러한 문제를 해결하는 방법을 확인하세요."
+  },
+  "reason-competition": {
+    "message": "다른 광고 차단기를 사용 중이다"
+  },
+  "reason-competition-which": {
+    "message": "어떤 광고 차단기인지 알려주시겠습니까?"
+  },
+  "reason-competition-why": {
+    "message": "해당 광고 차단기를 저희 대신에 선택한 이유를 말씀해 주시겠습니까?"
+  },
+  "rather-not": {
+    "message": "공유하고 싶지 않으셔도 괜찮습니다. 제출을 클릭해 주십시오."
+  },
+  "reason-disable": {
+    "message": "광고 차단기를 꺼 달라는 요청을 계속 받았다"
+  },
+  "reason-disable-support": {
+    "message": "저희 팀이 받는 가장 일반적인 질문 중 한 가지는 광고 차단벽을 우회할 방법이 있느냐는 질문입니다. <a>한 사이트가 ABP를 꺼 달라고 요청합니다. 어떻게 해야 합니까?</a>를 확인해 이러한 문제를 해결하는 방법을 확인하세요."
+  },
+  "reason-marketing": {
+    "message": "내가 받는 모든 메시지가 마음에 들지 않는다"
+  },
+  "not-free-alert": {
+    "message": "지불 할 필요가 없습니다. 기부는 선택 사항입니다. 탭을 닫고 무료로 계속 사용하실 수 있습니다."
+  },
+  "reason-aa": {
+    "message": "허용되는 광고 프로그램이 마음에 들지 않는다"
+  },
+  "reason-aa-support": {
+    "message": "허용되는 광고를 쉽게 중단할 수 있다는 점을 아셨나요?  ‘General(일반)’ 및 ‘Filter Lists(필터 목록) 아래의 옵션 페이지에서 쉽게 중단하실 수 있습니다. 계속해서 완전한 광고 차단을 누리실 수 있습니다."
+  },
+  "reason-other-what": {
+    "message": "Adblock Plus를 삭제하는 이유를 알려주시겠습니까? 귀하의 피드백은 저희의 개선에 도움이 됩니다. 공유하고 싶지 않으셔도 괜찮습니다. 제출을 클릭해 주십시오."
   }
 }

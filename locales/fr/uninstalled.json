@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "Autre, c’est-à-dire..."
+    "message": "Une autre raison non mentionnée ici."
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "Envoyer"
   },
   "title": {
-    "message": "Adblock Plus a été désinstallé"
+    "message": "Adblock Plus a été désinstallé avec succès."
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "J’étais agacé(e) par les publicités rechargeant du nouveau contenu dans le même emplacement publicitaire (« publicités à rafraîchissement automatique »)."
   },
   "reason-not-free": {
-    "message": "Je ne souhaite pas payer pour Adblock Plus"
+    "message": "Je ne veux pas payer."
   },
   "reason-youtube-header": {
     "message": "Vous nous quittez à cause des publicités sur YouTube ? Ne partez pas si vite !"
@@ -99,6 +99,57 @@
     "message": "Nous travaillons activement à la recherche d’une solution au mur antibloqueur de publicités de YouTube. Si c’est la raison pour laquelle vous souhaitez désinstaller Adblock Plus, nous vous invitons à reconsidérer votre décision afin que nous puissions continuer à bloquer les autres publicités gênantes sur Internet."
   },
   "reason-youtube": {
-    "message": "À la recherche d’un autre bloqueur de publicités pour bloquer les publicités sur YouTube"
+    "message": "Les publicités sur YouTube n’étaient pas bloquées."
+  },
+  "sorry-go": {
+    "message": "Nous regrettons de vous voir partir !"
+  },
+  "reason-header": {
+    "message": "Pourriez-vous prendre un peu de temps pour nous dire pourquoi vous avez désinstallé Adblock Plus ?"
+  },
+  "reason-unblocked": {
+    "message": "Je voyais encore des publicités."
+  },
+  "reason-unblocked-where": {
+    "message": "Pourriez-vous nous indiquer une URL où vous avez vu des publicités ? Nous mènerons une enquête. Si vous ne souhaitez pas le faire, cliquez simplement sur Envoyer."
+  },
+  "reason-broken": {
+    "message": "Certains sites web ne fonctionnaient pas ou mon navigateur ralentissait."
+  },
+  "reason-broken-support": {
+    "message": "Dans de rares cas, Adblock Plus peut empêcher certains sites web de s’afficher ou de fonctionner correctement. En général, il ne s’agit pas d’un bug, mais plutôt d’un problème lié à une liste de filtrage (ou à un filtre personnalisé). Consultez l’article <a>Adblock Plus perturbe les sites web que je visite</a> pour savoir comment résoudre ces problèmes."
+  },
+  "reason-competition": {
+    "message": "J’utilise un autre bloqueur de publicité."
+  },
+  "reason-competition-which": {
+    "message": "Pourriez-vous nous dire de quel bloqueur de publicité il s’agit ?"
+  },
+  "reason-competition-why": {
+    "message": "Pouvez-vous nous dire pourquoi vous avez choisi ce bloqueur de publicité ?"
+  },
+  "rather-not": {
+    "message": "Si vous ne souhaitez pas le faire, cliquez simplement sur Envoyer."
+  },
+  "reason-disable": {
+    "message": "On me demandait sans cesse de désactiver mon (mes) bloqueur(s) de publicité."
+  },
+  "reason-disable-support": {
+    "message": "L’une des questions les plus fréquemment posées à notre équipe est de savoir s’il existe un moyen de contourner les murs antibloqueurs de publicités. Voir l’article <a>Un site me demande de désactiver ABP. Que faire ?</a> pour savoir comment résoudre ces problèmes."
+  },
+  "reason-marketing": {
+    "message": "Je n’aime pas les messages que je reçois."
+  },
+  "not-free-alert": {
+    "message": "Aucun paiement n’est nécessaire. Les contributions sont facultatives, vous pouvez donc simplement fermer l’onglet et continuer à l’utiliser gratuitement."
+  },
+  "reason-aa": {
+    "message": "Je n’aime pas le programme Publicité acceptable."
+  },
+  "reason-aa-support": {
+    "message": "Saviez-vous que vous pouvez facilement vous retirer du programme Publicité acceptable ?  Vous pouvez facilement le désactiver dans la page des options sous « Général » et « Listes de filtrage ». Vous continuerez à bénéficier d’un blocage total des publicités !"
+  },
+  "reason-other-what": {
+    "message": "Pourriez-vous nous indiquer pourquoi vous désinstallez Adblock Plus ? Votre avis nous aide à nous améliorer. Si vous ne souhaitez pas le faire, cliquez simplement sur Envoyer."
   }
 }

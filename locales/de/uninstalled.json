@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "Andere Gründe, nämlich ..."
+    "message": "Ein anderer, hier nicht aufgeführter Grund"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "Senden"
   },
   "title": {
-    "message": "Adblock Plus wurde deinstalliert"
+    "message": "Adblock Plus wurde erfolgreich deinstalliert"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "Ich war genervt, dass Werbung neue Werbeinhalte im selben Anzeigenplatz lädt („Werbung aktualisieren“)"
   },
   "reason-not-free": {
-    "message": "Ich möchte für Adblock Plus nicht bezahlen"
+    "message": "Ich möchte nicht bezahlen"
   },
   "reason-youtube-header": {
     "message": "Ist YouTube-Werbung der Grund dafür, warum du uns verlässt? Gib uns noch eine Chance!"
@@ -99,6 +99,57 @@
     "message": "Wir arbeiten aktiv an einer Lösung für die Anti-Adblock-Hindernisse auf YouTube. Wenn das der Grund dafür ist, warum du uns deinstallierst, warte bitte noch, damit wir für dich weiter andere lästige Internetwerbung blockieren können."
   },
   "reason-youtube": {
-    "message": "Suche nach einem anderen Adblocker, um YouTube-Werbung zu stoppen"
+    "message": "YouTube-Werbung wurde nicht blockiert"
+  },
+  "sorry-go": {
+    "message": "Schade, dass du uns verlässt!"
+  },
+  "reason-header": {
+    "message": "Würdest du uns freundlicherweise mitteilen, warum du Adblock Plus deinstalliert hast?"
+  },
+  "reason-unblocked": {
+    "message": "Ich habe trotzdem Werbung gesehen"
+  },
+  "reason-unblocked-where": {
+    "message": "Kannst du uns die Internetadresse (URL) mitteilen, wo Werbung eingeblendet wurde? Wir werden uns das ansehen. Kein Problem, wenn du uns das nicht mitteilen möchtest − klicke einfach auf Senden."
+  },
+  "reason-broken": {
+    "message": "Ich hatte Probleme damit, dass bestimmte Websites nicht aufgerufen werden konnten oder mein Browser langsamer wurde"
+  },
+  "reason-broken-support": {
+    "message": "In seltenen Fällen verhindert Adblock Plus, dass einige Webseiten richtig angezeigt werden oder einwandfrei funktionieren. Das ist normalerweise kein Programmfehler, sondern eher ein Problem mit einer Filterliste (oder benutzerdefinierten Filtern). Siehe <a>Adblock Plus zeigt die Websites, die ich besuche</a>, nicht an, um herauszufinden, wie du diese Probleme lösen kannst."
+  },
+  "reason-competition": {
+    "message": "Ich verwende einen anderen Adblocker"
+  },
+  "reason-competition-which": {
+    "message": "Kannst du uns mitteilen, welchen Adblocker du verwendest?"
+  },
+  "reason-competition-why": {
+    "message": "Kannst du uns mitteilen, warum du stattdessen diesen Adblocker verwendest?"
+  },
+  "rather-not": {
+    "message": "Kein Problem, wenn du uns das nicht mitteilen möchtest − klicke einfach auf Senden."
+  },
+  "reason-disable": {
+    "message": "Ich wurde immer wieder aufgefordert, meine(n) Adblocker zu deaktivieren."
+  },
+  "reason-disable-support": {
+    "message": "Eine der häufigsten Fragen an unser Team ist die Frage, ob es Möglichkeiten gibt, Adblock-Wände zu umgehen. Siehe <a>Eine Website verlangt von mir, ABP zu deaktivieren. Was soll ich tun?</a>, um herauszufinden, wie du diese Probleme lösen kannst."
+  },
+  "reason-marketing": {
+    "message": "Mir missfallen die vielen Nachrichten, die ich bekomme"
+  },
+  "not-free-alert": {
+    "message": "Es ist keine Zahlung erforderlich. Zahlungen erfolgen auf freiwilliger Basis. Du kannst die Registerkarte einfach schließen und mit der kostenlosen Nutzung fortfahren."
+  },
+  "reason-aa": {
+    "message": "Mir gefällt das Acceptable Ads-Programm nicht"
+  },
+  "reason-aa-support": {
+    "message": "Wusstest du, dass du die Zustimmung zu Acceptable Ads verweigern kannst?  Du kannst sie über die Optionen-Seite unter „Allgemein“ und „Filterlisten“ ganz einfach deaktivieren. Werbung wird für dich auch weiterhin komplett blockiert!"
+  },
+  "reason-other-what": {
+    "message": "Kannst du uns mitteilen, warum du Adblock Plus deinstallierst? Dein Feedback hilft uns bei der Verbesserung. Kein Problem, wenn du uns das nicht mitteilen möchtest − klicke einfach auf Senden."
   }
 }

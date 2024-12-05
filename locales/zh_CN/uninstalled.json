@@ -45,7 +45,7 @@
   },
   "reason-other": {
     "description": "Last uninstallation reason",
-    "message": "其他，即"
+    "message": "此处未列出的其他原因"
   },
   "reason-other-placeholder": {
     "description": "Textarea placeholder text, appears after selecting 'Other, namely...' option",
@@ -76,7 +76,7 @@
     "message": "提交"
   },
   "title": {
-    "message": "Adblock Plus 已被卸载"
+    "message": "已成功卸载 Adblock Plus"
   },
   "reason-notifications": {
     "description": "Uninstallation reason",
@@ -90,7 +90,7 @@
     "message": "在同一个广告位重新加载新内容的广告（“刷新式广告”）让我觉得恼火。"
   },
   "reason-not-free": {
-    "message": "我不想为 Adblock Plus 付款"
+    "message": "我不想支付。"
   },
   "reason-youtube-header": {
     "message": "您是因为我们无法拦截 YouTube 广告而想要离开吗？请先不要放弃我们！"
@@ -99,6 +99,57 @@
     "message": "我们正在积极地开发针对 YouTube 反广告拦截墙的解决方案。如果您是因此而选择卸载，请再考虑一下，这样我们就有可能继续为您拦截网络上其他令人厌烦的广告。"
   },
   "reason-youtube": {
-    "message": "想使用其他广告拦截程序来阻止 YouTube 广告"
+    "message": "没有拦截 YouTube 广告"
+  },
+  "sorry-go": {
+    "message": "很遗憾看到您想卸载！"
+  },
+  "reason-header": {
+    "message": "可以请您抽点时间告诉我们为什么您要卸载 Adblock Plus 吗？"
+  },
+  "reason-unblocked": {
+    "message": "我仍看到广告"
+  },
+  "reason-unblocked-where": {
+    "message": "可以请您分享显示广告的 URL 吗？我们会进行调查。如果您不想提供反馈，也没关系，只需要点击“提交”即可。"
+  },
+  "reason-broken": {
+    "message": "我遇到问题，会导致有些网站崩溃，或者浏览器速度变慢"
+  },
+  "reason-broken-support": {
+    "message": "在极少情况下，Adblock Plus 可能会导致有些网站无法正确显示或运行这通常不是 Bug，而是筛选清单（或者自定义筛选器）出了问题。请参阅 <a>Adblock Plus 导致我访问的网站崩溃</a>，以了解如何排查这些问题。"
+  },
+  "reason-competition": {
+    "message": "我正在使用其他广告拦截程序"
+  },
+  "reason-competition-which": {
+    "message": "可以告诉我们是哪个广告拦截程序吗？"
+  },
+  "reason-competition-why": {
+    "message": "可以告诉我们为什么您选择那款广告拦截程序吗？"
+  },
+  "rather-not": {
+    "message": "如果您不想说，也没关系，只需要点击“提交”即可。"
+  },
+  "reason-disable": {
+    "message": "我总是收到要求禁用广告拦截程序的提示"
+  },
+  "reason-disable-support": {
+    "message": "我们的团队收到一个最常见的问题就是，询问是否有任何方法可以绕过广告拦截墙。请参阅<a>有个网站要求我禁用 ABP。我该怎么办？</a>以了解如何排查这些问题。"
+  },
+  "reason-marketing": {
+    "message": "我不喜欢发给我的一些消息"
+  },
+  "not-free-alert": {
+    "message": "您无需进行任何支付。您可以选择是否捐款，因此您可以直接关闭该选项卡，继续免费使用。"
+  },
+  "reason-aa": {
+    "message": "我不喜欢“可接受广告”计划"
+  },
+  "reason-aa-support": {
+    "message": "您知道您可以轻松地选择不显示可接受广告吗？您可以在选项页面的“通用”和“筛选清单”下轻松禁用可接受广告。这样您仍可拦截所有广告！"
+  },
+  "reason-other-what": {
+    "message": "可以告诉我们您卸载 Adblock Plus 的原因吗？您的反馈可以帮助我们改进。如果您不想提供反馈，也没关系，只需要点击“提交”即可。"
   }
 }
