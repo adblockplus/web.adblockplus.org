@@ -953,7 +953,8 @@ html {
   height: 100%;
 }
 
-.premium-page .premium-plan-tax {
+.premium-page .vat-exclusive__text,
+.premium-page .vat-inclusive__text {
   text-align: center;
   margin-top: -0.5rem;
   margin-bottom: 1.25rem;

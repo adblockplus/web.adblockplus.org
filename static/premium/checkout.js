@@ -315,7 +315,7 @@ class PurchaseStep extends Step {
       );
     });
     this.fire("currency-change", currency);
-    adblock.api.setVATExclusive(currency);
+    adblock.api.updateVATState(currency);
   }
 
   /** get the pressed amount value */

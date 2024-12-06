@@ -65,9 +65,7 @@
                     {{ get_string("premium-checkout-purchase-price__monthly", "premium-checkout") }}
                   </span>
                 </button>
-                <p class="premium-plan-tax"><small>
-                  {{ get_string("premium-plan-tax", "premium-checkout") }}
-                </small></p>  
+                <? include vat-message ?>
               </div><!-- /premium-checkout-card-body-column -->
               <div class="premium-checkout-card-body-column">
                 <button class="premium-checkout__button premium-checkout-purchase__checkout-button" type="submit">

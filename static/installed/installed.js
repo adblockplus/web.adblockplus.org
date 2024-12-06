@@ -100,7 +100,7 @@ updatePaymentAmounts(defaultCurrency);
 
 paymentCurrency.addEventListener("change", () => {
   updatePaymentAmounts(paymentCurrency.value);
-  adblock.api.setVATExclusive(paymentCurrency.value);
+  adblock.api.updateVATState(paymentCurrency.value);
 });
 
 paymentForm.addEventListener("submit", event => {

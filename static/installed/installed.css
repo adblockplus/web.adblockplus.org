@@ -423,7 +423,8 @@
   flex-wrap: wrap;
 }
 
-.installed-payment .installed-payment-header .premium-plan-tax {
+.installed-payment .installed-payment-header .vat-exclusive__text,
+.installed-payment .installed-payment-header .vat-inclusive__text {
   margin: 0 0.5rem;
 }
 
