@@ -21,7 +21,7 @@ adblock.settings.restrictPrivacy = adblock.query.get("restrictPrivacy") || eurCo
 if (adblock.settings.restrictPrivacy) documentClassList.add("restrict-privacy");
 
 const uniqueCurrencies = {"AU":"AUD","CA":"CAD","CH":"CHF","GB":"GBP","JP":"JPY","NZ":"NZD","RU":"RUB"};
-adblock.settings.defaultCurrency = adblock.query.get("defaultCurrency") || uniqueCurrencies[country] || eurCountries.includes(country) ? "EUR" : "USD";
+adblock.settings.defaultCurrency = adblock.query.get("defaultCurrency") || uniqueCurrencies[country] || (eurCountries.includes(country) ? "EUR" : "USD");
 
 const vatInclusiveCurrencies = ["GBP","EUR","PLN","CHF"];
 adblock.api.updateVATState = currency => {
