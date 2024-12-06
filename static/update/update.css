@@ -544,16 +544,19 @@ html:not(.de) .de-only { display: none; }
   text-decoration: none;
 }
 
-.premium-plan-tax {
+.vat-exclusive__text,
+.vat-inclusive__text {
   text-align: center;
   width: 100%;
 }
 
-.update-plan .premium-plan-tax {
+.update-plan .vat-exclusive__text,
+.update-plan .vat-inclusive__text {
   margin-top: -1.8rem;
   margin-bottom: 1.5rem;
 }
 
-.update-premium-ctas .premium-plan-tax {
+.update-premium-ctas .vat-exclusive__text,
+.update-premium-ctas .vat-inclusive__text {
   margin-top: 0;
 }

@@ -1,0 +1,18 @@
+<style>
+  .vat-exclusive__text,
+  .vat-inclusive__text { display: none; }
+  .vat-exclusive .vat-exclusive__text { display: block; }
+  .vat-inclusive .vat-inclusive__text { display: block; }
+</style>
+
+<p class="vat-inclusive__text">
+  <small>
+    {{ get_string("vat-inclusive__text", "premium-checkout") }}
+  </small>
+</p>
+
+<p class="vat-exclusive__text">
+  <small>
+    {{ get_string("vat-exclusive__text", "premium-checkout") }}
+  </small>
+</p>

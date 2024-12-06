@@ -1,6 +1,6 @@
 <head>
   <script>(()=>{
-    if (adblock.query.has("premium-checkout__flow")) {
+    if (adblock.query.has("premium-checkout__flow") || adblock.query.has("premium-checkout__handoff")) {
       localStorage.setItem("contributionInfo", JSON.stringify({
         clickTs: adblock.query.get("premium-checkout__timestamp"),
         amount: adblock.query.get("premium-checkout__amount"),

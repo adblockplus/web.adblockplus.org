@@ -48,7 +48,7 @@ const PRICES = {
   }
 };
 
-const defaultCurrency = adblock.query.get("currency") || adblock.settings.defaultCurrency || "USD";
+const defaultCurrency = adblock.settings.defaultCurrency || "USD";
 
 document.querySelectorAll(".update-premium-checkout-button").forEach(button => {
   button.addEventListener("click", () => {

@@ -97,9 +97,7 @@
             </span>
           </span>
         </h2>
-        <p class="premium-plan-tax"><small>
-          {{ premium-plan-tax exclusive of VAT }}
-        </small></p>
+        <? include vat-message ?>
         <button class="update-plan-checkout-button update-premium-checkout-button update-premium-checkout-button--active" data-frequency="yearly">
           {{ update-plan-checkout-button Complete Purchase }}
         </button>
@@ -120,7 +118,7 @@
             </span>
           </span>
         </h2>
-        <? include vat-exclusive ?>
+        <? include vat-message ?>
         <button class="update-plan-checkout-button update-premium-checkout-button" data-frequency="monthly">
           {{ update-plan-checkout-button Complete Purchase }}
         </button>
@@ -231,9 +229,7 @@
           {{ update-premium-checkout-button-frequency__monthly Monthly }}
         </span>
       </button>
-      <p class="premium-plan-tax"><small>
-        {{ premium-plan-tax exclusive of VAT }}
-      </small></p>
+      <? include vat-message ?>
     </div>
 
   </div>
@@ -299,9 +295,7 @@
             {{ update-premium-checkout-button-frequency__monthly Monthly }}
           </span>
         </button>
-        <p class="premium-plan-tax"><small>
-          {{ premium-plan-tax exclusive of VAT }}
-        </small></p>
+        <? include vat-message ?>
       </div>  
     </div>  
   </div>
