@@ -46,7 +46,7 @@ subscriptions = {
         'EasyList Cookie List',
         'Spam404',
         "Fanboy's Notifications Blocking List",
-        'CPBL Filters for Adblock Plus',
+        'CPBL Filters for Adblock Plus (Mini)',
         'NoCoin',
         'EasyPrivacy',
         "Fanboy's Social Blocking List",
@@ -226,9 +226,9 @@ subscriptions = {
                      'https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt'
                      , False]],
         },
-    'CPBL Filters for Adblock Plus': {
+    'CPBL Filters for Adblock Plus (Mini)': {
         'blog': None,
-        'changelog': 'https://github.com/bongochong/CombinedPrivacyBlockLists/commits/master/cpbl-abp-list.txt',
+        'changelog': 'https://github.com/bongochong/CombinedPrivacyBlockLists/commits/master/MiniLists/cpbl-abp-mini.txt',
         'contact': None,
         'deprecated': False,
         'faq': None,
@@ -242,7 +242,7 @@ subscriptions = {
         'supplementsType': [],
         'type': 'other',
         'variants': [['CPBL Filters for Adblock Plus',
-                     'https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/cpbl-abp-list.txt'
+                     'https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt'
                      , False]],
         },
     'Colombian filters by yecarrillo': {
