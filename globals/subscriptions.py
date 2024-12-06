@@ -241,7 +241,7 @@ subscriptions = {
         'supplements': [],
         'supplementsType': [],
         'type': 'other',
-        'variants': [['CPBL Filters for Adblock Plus',
+        'variants': [['CPBL Filters for Adblock Plus (Mini)',
                      'https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt'
                      , False]],
         },
