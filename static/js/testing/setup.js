@@ -54,6 +54,8 @@
       gtag('js', new Date());
       // Passing analyticsData constructed above
       gtag('config', 'UA-18643396-6', analyticsData);
+      gtag('config', 'AW-16679929794');
+      gtag('config', 'AW-998912317');
     }());
 
     // Tag Manager snippet
