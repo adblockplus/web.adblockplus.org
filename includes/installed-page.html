@@ -2,32 +2,6 @@
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/installed/installed.css">
   <script>(()=>{
-    if (adblock.query.has("ab-aw-set")) {
-      document.cookie = `ab-aw-test=${adblock.query.get("ab-aw-set")}; expires=Fri, 31 Dec 9999 23:59:59 GMT; domain=adblockplus.org; path=/`;
-    }
-    if (document.cookie.includes("ab-aw-test")) {
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("consent", "default", {
-        "ad_storage": "denied",
-        "ad_user_data": "denied",
-        "ad_personalization": "denied",
-        "analytics_storage": "granted",
-        "functionality_storage": "denied",
-        "personalization_storage": "denied",
-        "security_storage": "denied",
-      });
-      gtag("config", "G-VCX0BRJMZ3");
-      gtag('config', 'AW-16679929794');
-      gtag('event', 'conversion', {'send_to': 'AW-16679929794/QHQ6CJagpdMZEMKPzpE-'});
-      const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-VCX0BRJMZ3";
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  })()</script>
-  <script>(()=>{
     function handleActivateAndInstall() {
       // the install and activate flow redirects here with ?premium-checkout__install to record it's progress so that it can
       // be continued when the installed page opens after the extension is installed
