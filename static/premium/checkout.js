@@ -1,5 +1,5 @@
 import { checkout, checkoutEvents } from "../shared/checkout.js";
-import { getDollarString } from "../shared/currency.js";
+import { getDollarString, getDollarNumber } from "../shared/currency.js";
 
 ////////////////////////////////////////////////////////////////////////////////
 // GLOBALS
@@ -617,7 +617,10 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
   goto(steps.error, undefined, false);
   card.scrollIntoView();
-} else if (adblock.query.has("premium-checkout__flow")) {
+} else if (
+  adblock.query.has("premium-checkout__handoff")
+  || adblock.query.has("premium-checkout__flow")
+) {
   flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
   const currency = adblock.query.get("premium-checkout__currency");
@@ -658,4 +661,20 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   card.scrollIntoView();
 } else {
   goto(steps.purchase, undefined, false);
+}
+
+if (
+  typeof gtag == "function"
+  && adblock.query.has("premium-checkout__handoff")
+  && adblock.query.get("premium-checkout__product") == "premium"
+) {
+  const frequency = adblock.query.get("premium-checkout__frequency");
+  const send_to = frequency == "yearly" ? "AW-998912317/zT75CIDd0eszEL3iqNwD"
+    : frequency == "monthly" ? "AW-998912317/Q6WWCM-R0uszEL3iqNwD" : false;
+  const currency = adblock.query.get("premium-checkout__currency");
+  const value = getDollarNumber(currency, adblock.query.get("premium-checkout__amount")) + "";
+  const transition_id = "";
+  if (send_to && currency && value) {
+    gtag('event', 'conversion', { send_to, value, currency, transition_id });
+  }
 }
