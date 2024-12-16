@@ -1,5 +1,7 @@
 {% from "macros/pageitem" import pageitem %}
 
+{% if not nofooter %}
+
 <footer id="footer" class="content">
   <div class="footer-wrap footer-links">
     <div class="container">
@@ -124,3 +126,5 @@
     </div> {# .container #}
   </div> {# .footer-wrap.footer-legal-links #}
 </footer> {# #footer #}
+
+{% endif %}
