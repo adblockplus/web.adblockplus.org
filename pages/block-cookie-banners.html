@@ -3,12 +3,10 @@ description=Block annoying cookie banners that ask you to accept cookies while y
 template=minimal
 nonavbar=1
 unadblock=1
+code=BCB
 
 <head>
   <? include accounts-redirect-fallback ?>
-  <script>
-    adblock.settings.pageCode = "BCB";
-  </script>
   <? include optimizely ?>
   <? include hotjar ?>
   <link rel="stylesheet" href="/adblock/block-cookie-banners/style.css" />

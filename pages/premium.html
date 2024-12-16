@@ -2,11 +2,11 @@ title=Adblock Plus Premium | The world's #1 ad blocker
 description=Adblock Plus Premium, the upgraded version of the most popular ad blocker on Firefox, Chrome, Safari, Android and iOS. Block pop-ups and annoying ads on websites like Facebook and YouTube.
 template=minimal
 unadblock=1
+code=ME
 
 <head>
   <? include accounts-redirect-fallback ?>
   <script>(()=>{
-    adblock.settings.pageCode = "ME";
     if (adblock.query.has("premium-checkout__flow")) {
       localStorage.setItem("contributionInfo", JSON.stringify({
         clickTs: adblock.query.get("premium-checkout__timestamp"),
