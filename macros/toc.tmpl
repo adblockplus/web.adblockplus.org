@@ -1,0 +1,10 @@
+{% macro toc(toclist) %}
+  <ul>
+    {% for item in toclist %}
+      <li>
+        <a href="#{{item.anchor}}">{{item.title|anchortext}}</a>
+        {% if item.subitems %}{{toc(item.subitems)}}{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

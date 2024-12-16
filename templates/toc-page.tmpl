@@ -21,19 +21,8 @@
       {% elif title and not noheading %}
         <h1>{{ title | translate("title") }}</h1>
       {% endif %}
-
       {% if not notoc %}
-        {% macro toc(toclist) %}
-          <ul>
-            {% for item in toclist %}
-              <li>
-                <a href="#{{item.anchor}}">{{item.title|anchortext}}</a>
-                {% if item.subitems %}{{toc(item.subitems)}}{% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endmacro %}
-
+        {% from "macros/toc" import toc %}
         {% set toclist = body|toclist %}
         {% if toclist %}
           <div id="toc-float" class="toc toc-list">
@@ -42,14 +31,12 @@
           </div>
         {% endif %}
       {% endif %}
-
       {% block body %}
         <div class="toc-page-container">
           {{body|safe}}
         </div>
       {% endblock %}
     </div>
-
     <? include footer ?>
     <? include cookie/index ?>
     <? include google/analytics ?>

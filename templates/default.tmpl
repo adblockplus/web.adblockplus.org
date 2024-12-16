@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html <? include html-attributes ?>>
-
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
     <? include styles ?>
     <? include inline-globals ?>
-
     {% block head %}
       {{head|safe}}
     {% endblock %}
   </head>
-
   <body>
     <? include navbar ?>
-
-    <div id="content" class="container content {{ localefile == "index" and page }}">
+    <main id="content" class="container content {{ localefile == "index" and page }}">
       {% if heading %}
         <h1>{{ heading | translate("heading", "heading") }}</h1>
       {% elif title and not noheading %}
         <h1>{{ title | translate("title") }}</h1>
       {% endif %}
-
       {% if not notoc %}
-        {% macro toc(toclist) %}
-          <ul>
-            {% for item in toclist %}
-              <li>
-                <a href="#{{item.anchor}}">{{item.title|anchortext}}</a>
-                {% if item.subitems %}{{toc(item.subitems)}}{% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endmacro %}
-
+        {% from "macros/toc" import toc %}
         {% set toclist = body|toclist %}
         {% if toclist %}
           <div class="toc">
@@ -41,12 +26,10 @@
           </div>
         {% endif %}
       {% endif %}
-
       {% block body %}
         {{body|safe}}
       {% endblock %}
-    </div>
-
+    </main>
     <? include footer ?>
     <? include cookie/index ?>
     <? include google/analytics ?>
