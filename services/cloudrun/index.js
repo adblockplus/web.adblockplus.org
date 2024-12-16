@@ -122,13 +122,6 @@ app.get('/update-function/:language?', (req, res) => {
   res.redirect(302, path.join('/', language, page) + query);
 });
 
-app.get('/installed-function/:language?', (req, res) => {
-  const language = req.params.language || '';
-  const page = 'installed-fallback';
-  const query = getQueryString(req);
-  res.redirect(302, path.join('/', language, page) + query);
-});
-
 // IMPORTANT: Fallback locale rerouting, must be final routing function
 // Refd #943 - URLs containing non-exact matching locale paths return a 404
 app.get(/^\/([\w-]{2,6})(\/.*)?$/, (req, res) => {
