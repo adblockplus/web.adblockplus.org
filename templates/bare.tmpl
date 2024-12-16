@@ -5,18 +5,16 @@
     <? include meta/social ?>
     <? include styles ?>
     <? include inline-globals ?>
-
     {% block head %}
       {{ head | safe }}
     {% endblock %}
   </head>
-
   <body>
     {% block body %}
       {{ body | safe }}
     {% endblock %}
-
     <? include cookie/index ?>
     <? include google/analytics ?>
+    <? include scripts ?>
   </body>
 </html>

@@ -5,19 +5,15 @@
     <? include meta/social ?>
     <? include styles ?>
     <? include inline-globals ?>
-
     {% block head %}
       {{ head | safe }}
     {% endblock %}
   </head>
-
-  <body class="{{ bodyclass if bodyclass else "" }}">
+  <body>
     <? include navbar ?>
-
     {% block body %}
       {{ body | safe }}
     {% endblock %}
-
     <? include footer ?>
     <? include cookie/index ?>
     <? include google/analytics ?>

@@ -13,13 +13,12 @@
     {% endblock %}
   </head>
 
-  <body class="{{ bodyclass if bodyclass else "" }}">
+  <body>
     <div class="page">
       {% block body %}
         {{ body | safe }}
       {% endblock %}
     </div>
-
     <? include footer ?>
   </body>
 </html>
