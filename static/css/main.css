@@ -144,11 +144,11 @@ pre
   top: -2px;
 }
 
-#toc-float { display: none; }
+#toc-fixed-left { display: none; }
 
 @media(min-width: 991px)
 {
-  #toc-float { display: block; }
+  #toc-fixed-left { display: block; }
 
   .toc.toc-list
   {
@@ -164,7 +164,7 @@ pre
     position: fixed;
   }
 
-  .toc-page-container
+  .toc-contents-right
   {
     float: right;
     width: 70%;

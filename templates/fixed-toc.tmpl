@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html <? include html-attributes ?>>
-
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
     <? include styles ?>
     <? include inline-globals ?>
-
     {% block head %}
-      {{head|safe}}
+      {{ head | safe }}
     {% endblock %}
   </head>
-
   <body>
     <? include navbar ?>
-
     <div id="content" class="container content {{ localefile == "index" and page }}">
       {% if heading %}
         <h1>{{ heading | translate("heading", "heading") }}</h1>
@@ -25,15 +21,15 @@
         {% from "macros/toc" import toc %}
         {% set toclist = body|toclist %}
         {% if toclist %}
-          <div id="toc-float" class="toc toc-list">
+          <div id="toc-fixed-left" class="toc toc-list">
             <p>Index</p>
             {{toc(toclist)}}
           </div>
         {% endif %}
       {% endif %}
       {% block body %}
-        <div class="toc-page-container">
-          {{body|safe}}
+        <div class="toc-contents-right">
+          {{ body | safe }}
         </div>
       {% endblock %}
     </div>

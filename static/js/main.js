@@ -118,7 +118,7 @@
             newScrollAction = false;
         });
 
-        if (!document.getElementById("toc-float")) {
+        if (!document.getElementById("toc-fixed-left")) {
             setInterval(function() {
                 if (
                   !scrollHandled &&
@@ -159,21 +159,21 @@
 
     // logic for floating TOC a.k.a. table of contents
     function initTOCScroll() {
-        var floatingTOC = document.getElementById("toc-float");
+        var floatingTOC = document.getElementById("toc-fixed-left");
 
         // check if element exists due to using different templates
         if (!floatingTOC) return;
 
-        var pageContainer = document.querySelector(".toc-page-container");
+        var pageContainer = document.querySelector(".toc-contents-right");
 
         function updateActiveTOCLink() {
-            var headingLinks = document.querySelectorAll("#toc-float a");
+            var headingLinks = document.querySelectorAll("#toc-fixed-left a");
 
             for (var i = 0; i < headingLinks.length; i++) {
                 headingLinks[i].classList.remove("active");
             }
 
-            var contentHeadings = document.querySelectorAll(".toc-page-container > h2, .toc-page-container > h3");
+            var contentHeadings = document.querySelectorAll(".toc-contents-right > h2, .toc-contents-right > h3");
 
             // convert NodeList to an Array so we can sort
             contentHeadings = Array.prototype.slice.call(contentHeadings);
@@ -183,7 +183,7 @@
                 return Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top);
             });
 
-            var headingLink = document.querySelector("#toc-float [href='#"+ contentHeadings[0].id +"']");
+            var headingLink = document.querySelector("#toc-fixed-left [href='#"+ contentHeadings[0].id +"']");
 
             if (headingLink) {
                 headingLink.classList.add("active");
