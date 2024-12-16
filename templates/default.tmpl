@@ -6,7 +6,7 @@
     <? include styles ?>
     <? include inline-globals ?>
     {% block head %}
-      {{head|safe}}
+      {{ head | safe }}
     {% endblock %}
   </head>
   <body>
@@ -27,7 +27,7 @@
         {% endif %}
       {% endif %}
       {% block body %}
-        {{body|safe}}
+        {{ body | safe }}
       {% endblock %}
     </main>
     <? include footer ?>
