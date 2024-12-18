@@ -190,12 +190,8 @@ a:hover, a:active, a:focus {
 }
 
 .installed-slide {
-  display: none;
-  margin: 2.5rem 0;
-}
-
-.installed-slide.active {
   display: block;
+  margin: 2.5rem 0;
 }
 
 .installed-slide p {
