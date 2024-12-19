@@ -6,13 +6,13 @@ program
   .description("copy strings from one locale file to another")
   .requiredOption("-i, --input <name>", "input locale file name (without .json)")
   .requiredOption("-o, --output <name>", "output locale file name (without .json)")
-  .requiredOption("-s, --strings <ids>", "comma separated string ids to copy")
+  .option("-s, --strings <ids>", "comma separated string ids to copy")
 
 program.parse();
 const options = program.opts();
 const inputFilename = `${options.input}.json`;
 const outputFilename = `${options.output}.json`;
-const strings = options.strings.split(",");
+let strings = options.strings ? options.strings.split(",") : [];
 const locales = readdirSync("locales");
 
 const hits = [];
@@ -25,6 +25,7 @@ for (const locale of locales) {
     const outputPath = join("locales", locale, outputFilename);
     const input = JSON.parse(readFileSync(inputPath));
     const output = existsSync(outputPath) ? JSON.parse(readFileSync(outputPath)) : {};
+    if (!strings.length) strings = Object.keys(input);
     for (const string of strings) {
       if (input[string]) {
         output[string] = input[string];
