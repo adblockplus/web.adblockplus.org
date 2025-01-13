@@ -1,0 +1,41 @@
+{
+  "s1": {
+    "message": "A uBlock Origin elhagyja a Chrome böngészőt. Íme, amit tudni érdemes:"
+  },
+  "s2": {
+    "message": "A Google Chrome elkezdte letiltani az uBlock Origin kiterjesztést a böngészőben. A nyár elején a Chrome átállította a kiterjesztési platformját a Manifest V3-ra, ezzel megszüntetve a Manifest V2 és az összes MV2 kiterjesztés támogatását. Azok a Chrome kiterjesztések, amelyek nem frissültek a Manifest V3-ra, most fokozatosan kivezetésre kerülnek a böngészőből."
+  },
+  "s3": {
+    "message": "Az MV2 kiterjesztésként az uBlock Origin már nem fog működni a Chrome böngészőben. Az uBlock Origin nyilvánosan kijelentette, hogy nem fogja frissíteni a teljes verzióját az MV3 követelmények teljesítéséhez, és a <a>Chrome automatikusan kikapcsolja az uBlock Origin kiterjesztést, mert már nem támogatott</a>."
+  },
+  "s4": {
+    "message": "Egy Chrome reklámblokkoló keresése"
+  },
+  "s5": {
+    "message": "<span>Győződj meg arról, hogy a böngésződ naprakész</span> Általában a böngésző frissítések a háttérben történnek, de ha egy ideje nem zártad be a böngészőt, lehet, hogy van egy függőben lévő frissítésed. Az kiterjesztések nem működhetnek megfelelően, ha a böngésző elavult. Ismerd meg <a>itt</a>, hogyan végezheted kézzel a Chrome böngésző frissítését az asztali számítógépén, Android vagy iOS eszközeiden, vagy csak ellenőrizd, hogy a legújabb verziót használod-e."
+  },
+  "s6": {
+    "message": "<span>Keress olyan kiterjesztéseket, amelyek működnek a Chrome böngészőben</span> Ha a jelenlegi reklámblokkoló vagy kiterjesztés már nem működik a Chrome böngészőben, akkor látogass el a <a>Chrome Web Store</a> oldalra, hogy MV3-kompatibilis kiterjesztéseket találj."
+  },
+  "s7": {
+    "message": "Mit jelent a Manifest V3 a reklámblokkoló számára?"
+  },
+  "s8": {
+    "message": "A bővítmények, mint például a reklámblokkolók és a jelszókezelők, olyan eszközök, amelyeket a böngészőhöz adunk, hogy az internetes élményünket személyre szabottabbá és biztonságosabbá tegyük. A háttérben a böngészők egy platformot biztosítanak, amelyet a fejlesztők használnak ezeknek a bővítményeknek a fejlesztéséhez, biztosítva, hogy zökkenőmentesen működjenek, miközben tiszteletben tartják a felhasználói adatok védelmét és a biztonságot."
+  },
+  "s9": {
+    "message": "Nemrégiben a Google frissítette a Chrome bővítmények kezelésének módját a platformján keresztül, <a>Manifest V3</a>. Ezek a frissítések hatással voltak arra, hogyan működnek sok Chrome bővítmény, beleértve néhány népszerű reklámblokkolót is. A legfontosabb változások közé tartozik a régebbi funkciók újabbakkal való helyettesítése, mint például a „szolgáltatási munkavállalók” használata a háttéroldalak helyett, szigorúbb szabályok bevezetése a webes kérések módosítására, és a távolról tárolt kódok betiltása. A Google szerint ezek a frissítések célja a bővítmények biztonságának, adatvédelmének és teljesítményének javítása, miközben megőrzik a fontos funkciókat."
+  },
+  "s10": {
+    "message": "Azonban az olyan bővítmények, mint az uBlock Origin Chrome, amelyek nem váltottak át az MV3-ra, jelenleg eltávolításra kerülnek a Chrome Web Store kínálatából, és nem fognak működni a Chrome böngészőben."
+  },
+  "s11": {
+    "message": "Az Adblock Plus MV3-kompatibilis és elérhető a Chrome böngészőben"
+  },
+  "s12": {
+    "message": "Amikor bejelentették a Manifest V3-at, elkezdtük frissíteni és tesztelni az Adblock Plus reklámblokkolót, hogy továbbra is ugyanazt a magas színvonalú reklámblokkolási élményt nyújthassuk minden eszközön és böngészőben."
+  },
+  "s13": {
+    "message": "Úgy gondoljuk, hogy neked kell választania, melyik böngészőt használod, és mégis rendelkezésére kell állniuk azoknak az eszközöknek, amelyek jobbá teszik az internetes élményed. <a>Az Adblock Plus volt az egyik első kiterjesztés, amely átállt a Manifest V3-ra</a>, és kompatibilis a Chrome legújabb verziójával. Remélhetőleg észre sem vetted, amikor a változás megtörtént."
+  }
+}

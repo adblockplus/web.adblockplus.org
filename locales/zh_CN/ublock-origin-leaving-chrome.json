@@ -1,0 +1,41 @@
+{
+  "s1": {
+    "message": "uBlock Origin 即将在 Chrome 中停用。以下是您需要了解的内容："
+  },
+  "s2": {
+    "message": "Google Chrome 已开始在其浏览器中禁用 uBlock Origin。早在今年夏天，Chrome 已将其扩展程序平台过渡到 Manifest V3，结束了对 Manifest V2 和所有 MV2 扩展程序的支持。未更新至 Manifest V3 的 Chrome 扩展程序现在将在该浏览器中逐步淘汰。"
+  },
+  "s3": {
+    "message": "作为一款 MV2 扩展程序，uBlock Origin 将无法再在 Chrome 中使用。uBlock Origin 已公开声明，不会将其完整版更新至符合 MV3 要求，并且<a>由于 uBlock Origin 不再受支持，Chrome 会将其自动关闭</a>。"
+  },
+  "s4": {
+    "message": "寻找 Chrome 广告拦截程序"
+  },
+  "s5": {
+    "message": "<span>确保已将浏览器更新到最新版本</span>通常浏览器会在后台更新，但如果您已有一段时间没有关闭浏览器，则可能有待执行的更新。如果浏览器过时，扩展程序可能无法正常工作。<a>在此</a>了解如何在桌面设备、Android 或 iOS 设备上手动更新 Chrome，或查看您是否已更新到最新版本。"
+  },
+  "s6": {
+    "message": "<span>查找可在 Chrome 中使用的扩展程序</span>如果您当前的广告拦截程序或扩展程序无法再在 Chrome 中使用，请访问 <a>Chrome Web Store</a> 以查找兼容 MV3 的扩展程序。"
+  },
+  "s7": {
+    "message": "Manifest V3 对广告拦截程序意味着什么？"
+  },
+  "s8": {
+    "message": "扩展程序（比如广告拦截程序和密码管理器）是我们添加到浏览器中的工具，旨在让我们的在线体验更加个性化、更安全。浏览器在幕后提供了一个平台，让开发者可以使用这个平台来开发扩展程序，确保它们流畅地运行，同时尊重用户隐私和确保安全。"
+  },
+  "s9": {
+    "message": "最近，Google 通过发布 <a>Manifest V3</a> 平台更新了 Chrome 处理扩展程序的方式。这些更新影响了许多 Chrome 扩展程序的工作方式，包括一些流行的广告拦截程序。关键变化包括使用新功能取代旧功能，例如使用 “Service Workers” 而不是背景页面、针对修改网页请求推出更严格的规则，以及禁止远程托管的代码。Google 表示这些更新旨在提高扩展程序的安全性、隐私和性能，同时保留重要的功能。"
+  },
+  "s10": {
+    "message": "但是 uBlock Origin Chrome 等没有过渡到 MV3 的扩展程序目前正在被 Chrome Web Store 移除，并且无法在 Chrome 中正常使用。"
+  },
+  "s11": {
+    "message": "Adblock Plus 兼容 MV3，并可在 Chrome 中使用"
+  },
+  "s12": {
+    "message": "当 Manifest V3 宣布时，我们已着手更新和测试 Adblock Plus，以便继续在所有设备和浏览器一如既往地为您提供高质量的广告拦截体验。"
+  },
+  "s13": {
+    "message": "我们相信，您有权在您选择的任何浏览器中继续使用改善在线体验的工具。<a>Adblock Plus 是第一批迁移到 Manifest V3 的扩展程序之一</a>，与最新版 Chrome 兼容。希望真正实施变化时，您不会受到影响，甚至毫无察觉。"
+  }
+}

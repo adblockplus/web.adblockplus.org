@@ -1,0 +1,41 @@
+{
+  "s1": {
+    "message": "uBlock Origin disparaît de Chrome. Voici ce que vous devez savoir :"
+  },
+  "s2": {
+    "message": "Google Chrome a commencé à désactiver uBlock Origin dans son navigateur. Au début de l'été, Chrome a fait passer sa plateforme d'extensions à Manifest V3, mettant fin à la prise en charge de Manifest V2 et de toutes les extensions MV2. Les extensions Chrome qui n'ont pas été mises à jour vers Manifest V3 sont désormais supprimées dans le navigateur."
+  },
+  "s3": {
+    "message": "En tant qu'extension MV2, uBlock Origin ne fonctionnera plus dans Chrome. uBlock Origin a déclaré publiquement qu'il ne mettrait pas à jour sa version complète pour répondre aux exigences MV3 et que <a>Chrome désactivera automatiquement uBlock Origin car l'extension n'est plus prise en charge.</a>"
+  },
+  "s4": {
+    "message": "Trouver un bloqueur de publicités pour Chrome"
+  },
+  "s5": {
+    "message": "<span>Assurez-vous que votre navigateur est à jour</span> Généralement, les mises à jour du navigateur se font en arrière-plan, mais si vous n'avez pas fermé votre navigateur depuis un certain temps, une mise à jour est peut-être en attente. Les extensions peuvent ne pas fonctionner correctement si votre navigateur est obsolète. Découvrez <a>ici</a> comment mettre à jour manuellement Chrome sur votre ordinateur de bureau, vos appareils Android ou iOS, ou vérifiez simplement que vous disposez de la dernière version."
+  },
+  "s6": {
+    "message": "<span>Trouvez des extensions qui fonctionnent avec Chrome</span> Si votre bloqueur de publicités ou extension actuel ne fonctionne plus avec Chrome, visitez le <a>Chrome Web Store</a> pour trouver des extensions compatibles MV3."
+  },
+  "s7": {
+    "message": "Que signifie l'arrivée de Manifest V3 pour les bloqueurs de publicité ?"
+  },
+  "s8": {
+    "message": "Les extensions, comme les bloqueurs de publicité et les gestionnaires de mots de passe, sont des outils que nous ajoutons à nos navigateurs pour personnaliser et sécuriser notre expérience en ligne. En coulisses, les navigateurs offrent une plateforme que les développeurs utilisent pour créer ces extensions, garantissant ainsi leur bon fonctionnement tout en respectant la vie privée et la sécurité des utilisateurs."
+  },
+  "s9": {
+    "message": "Récemment, Google a mis à jour la manière dont Chrome gère les extensions via sa plateforme, <a>Manifest V3</a>. Ces mises à jour ont eu un impact sur le fonctionnement de nombreuses extensions Chrome, y compris certains bloqueurs de publicité populaires. Parmi les principaux changements, citons le remplacement d'anciennes fonctionnalités par de nouvelles, comme l'utilisation de « service workers » au lieu de pages d'arrière-plan, le durcissement des règles relatives à la modification des requêtes web et l'interdiction du code hébergé à distance. Selon Google, ces mises à jour visent à améliorer la sécurité, la confidentialité et les performances des extensions, tout en conservant des fonctionnalités importantes."
+  },
+  "s10": {
+    "message": "Toutefois, les extensions, comme uBlock Origin Chrome, qui ne sont pas passées à MV3 sont actuellement supprimées du Chrome Web Store et cesseront de fonctionner dans Chrome."
+  },
+  "s11": {
+    "message": "Adblock Plus est compatible avec MV3 et disponible sur Chrome"
+  },
+  "s12": {
+    "message": "Dès l'annonce de Manifest V3, nous avons commencé à mettre à jour et à tester Adblock Plus afin de pouvoir continuer à vous offrir la même expérience de blocage des publicités de haute qualité sur tous vos appareils et navigateurs."
+  },
+  "s13": {
+    "message": "Nous estimons que vous devriez pouvoir choisir votre navigateur tout en disposant des outils nécessaires pour améliorer votre expérience en ligne. <a>Adblock Plus a été l'une des premières extensions à migrer vers Manifest V3</a> et est compatible avec la dernière version de Chrome. Avec un peu de chance, vous n'avez même pas remarqué le changement."
+  }
+}

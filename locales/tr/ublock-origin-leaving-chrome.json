@@ -1,0 +1,41 @@
+{
+  "s1": {
+    "message": "uBlock Origin artık Chrome'da kullanılamayacak. İşte bilmeniz gerekenler:"
+  },
+  "s2": {
+    "message": "Google Chrome, tarayıcısında uBlock Origin'i devre dışı bırakma sürecini başlattı. Bu yaz başında Chrome, uzantı platformunu Manifest V3'e geçirerek Manifest V2 ve tüm MV2 uzantılarına yönelik desteği sonlandırdı. Manifest V3'e güncellenmeyen Chrome uzantıları bundan böyle tarayıcıda aşamalı olarak kullanımdan kaldırılıyor."
+  },
+  "s3": {
+    "message": "Bir MV2 uzantısı olan uBlock Origin de artık Chrome üzerinde çalışmayacak. uBlock Origin tam sürümünü MV3 gerekliliklerini karşılayacak şekilde güncellemeyeceğini ve <a>Chrome'un, artık desteklenmediği için uBlock Origin'i otomatik olarak kapattığını kamuoyuna duyurdu</a>."
+  },
+  "s4": {
+    "message": "Chrome’da kullanabileceğiniz bir reklam engelleyici bulun"
+  },
+  "s5": {
+    "message": "<span>Tarayıcınızın güncel olduğundan emin olun</span> Normalde tarayıcı güncellemeleri arka planda gerçekleşir, ancak tarayıcınızı bir süredir kapatmadıysanız bekleyen bir güncellemeniz söz konusu olabilir. Tarayıcınız güncel değilse uzantılar düzgün çalışmayabilir. <a>Buradan</a> masaüstü, Android ya da iOS cihazlarınızda Chrome'u manüel olarak nasıl güncelleyeceğinizi öğrenebilir ya da en son sürüme sahip olup olmadığınızı kontrol edebilirsiniz."
+  },
+  "s6": {
+    "message": "<span>Chrome'da çalışan uzantıları bulun</span> Mevcut reklam engelleyiciniz ya da uzantınız artık Chrome'da çalışmıyorsa, MV3 uyumlu uzantıları bulmak için <a>Chrome Web Mağazası'nı</a> ziyaret edin."
+  },
+  "s7": {
+    "message": "Manifest V3 reklam engelleyiciler için ne anlama geliyor?"
+  },
+  "s8": {
+    "message": "Reklam engelleyiciler ve parola yöneticileri gibi uzantılar, çevrimiçi deneyimimizi daha kişisel ve güvenli hale getirmek için tarayıcılarımıza eklediğimiz araçlardır. Tarayıcılar, perde arkasında, geliştiricilerin bu uzantıları oluşturmak için kullandıkları bir platform sağlayarak, kullanıcı gizliliğine ve güvenliğine saygı çerçevesinde sorunsuz bir şekilde çalışmalarını sağlar."
+  },
+  "s9": {
+    "message": "Yakın zaman içerisinde Google, Chrome'un <a>Manifest V3</a> platformu üzerinden uzantıları işleme şeklini güncelledi. Bu güncellemeler, bazı popüler reklam engelleyiciler de dâhil olmak üzere birçok Chrome uzantısının çalışma şeklini etkiledi. Önemli değişiklikler arasında; arka plan sayfaları yerine “service worker”ların kullanılması, web taleplerinin değiştirilmesi konusunda daha katı kurallar getirilmesi ve uzaktan barındırılan kodların yasaklanması gibi olmak üzere, eski özelliklerin yerine yenilerinin kullanıma sunulması yer alıyor. Google, bu güncellemelerin uzantıların güvenlik, gizlilik ve performansını iyileştirirken önemli işlevleri de korumayı amaçladığını belirtiyor."
+  },
+  "s10": {
+    "message": "Ancak, uBlock Origin Chrome gibi MV3'e geçiş yapmayan uzantılar şu anda Chrome Web Mağazası'ndan kaldırılıyor ve bunlar bundan böyle Chrome üzerinde çalışmayacak."
+  },
+  "s11": {
+    "message": "Adblock Plus MV3 uyumludur ve Chrome üzerinde kullanılabilir"
+  },
+  "s12": {
+    "message": "Manifest V3 duyurulduğunda, Adblock Plus’ın, tüm cihaz ve tarayıcılarınızda aynı yüksek kaliteli reklam engelleme deneyimini sunmayı sürdürmemize olanak sağlayacak şekilde güncellenmesi ve test edilmesi doğrultusunda çalışmalarımıza başladık."
+  },
+  "s13": {
+    "message": "Biz, hangi tarayıcıyı kullanacağınızı seçme olanağına sahip olmanız ve aynı zamanda da çevrimiçi deneyiminizi daha iyi hale getirecek araçlardan yararlanabilmeniz gerektiğine inanıyoruz. <a>Adblock, Manifest V3'e geçiş yapan ilk uzantılardan biri olmuştur</a> ve Chrome'un en son sürümüyle uyumludur. Değişikliğin ne zaman gerçekleştiğini fark dahi etmemiş olduğunuzu umuyoruz."
+  }
+}
