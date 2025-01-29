@@ -14,24 +14,24 @@ const PRICES = {
     "yearly": 4000,
   },
   "EUR": {
-    "monthly": 400,
-    "yearly": 4000,
+    "monthly": 350,
+    "yearly": 3500,
   },
   "CAD": {
-    "monthly": 400,
-    "yearly": 4000,
+    "monthly": 500,
+    "yearly": 5000,
   },
   "GBP": {
-    "monthly": 400,
-    "yearly": 4000,
+    "monthly": 350,
+    "yearly": 3500,
   },
   "AUD": {
-    "monthly": 400,
-    "yearly": 4000,
+    "monthly": 600,
+    "yearly": 6000,
   },
   "NZD": {
-    "monthly": 400,
-    "yearly": 4000,
+    "monthly": 600,
+    "yearly": 6000,
   },
   "CHF": {
     "monthly": 400,

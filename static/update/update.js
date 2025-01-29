@@ -6,45 +6,45 @@ import "../shared/premium-difference.js";
 adblock.config = adblock.config || {};
 
 const PRICES = {
-  USD: {
-    monthly: 400,
-    yearly: 4000,
+  "USD": {
+    "monthly": 400,
+    "yearly": 4000,
   },
-  EUR: {
-    monthly: 400,
-    yearly: 4000,
+  "EUR": {
+    "monthly": 350,
+    "yearly": 3500,
   },
-  CAD: {
-    monthly: 400,
-    yearly: 4000,
+  "CAD": {
+    "monthly": 500,
+    "yearly": 5000,
   },
-  GBP: {
-    monthly: 400,
-    yearly: 4000,
+  "GBP": {
+    "monthly": 350,
+    "yearly": 3500,
   },
-  AUD: {
-    monthly: 400,
-    yearly: 4000,
+  "AUD": {
+    "monthly": 600,
+    "yearly": 6000,
   },
-  NZD: {
-    monthly: 400,
-    yearly: 4000,
+  "NZD": {
+    "monthly": 600,
+    "yearly": 6000,
   },
-  CHF: {
-    monthly: 400,
-    yearly: 4000,
+  "CHF": {
+    "monthly": 400,
+    "yearly": 4000,
   },
-  PLN: {
-    monthly: 1499,
-    yearly: 14999,
+  "PLN": {
+    "monthly": 1499,
+    "yearly": 14999,
   },
-  JPY: {
-    monthly: 600,
-    yearly: 6000,
+  "JPY": {
+    "monthly": 600,
+    "yearly": 6000,
   },
-  RUB: {
-    monthly: 35000,
-    yearly: 350000,
+  "RUB": {
+    "monthly": 35000,
+    "yearly": 350000,
   }
 };
 
