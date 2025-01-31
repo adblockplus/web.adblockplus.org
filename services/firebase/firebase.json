@@ -204,6 +204,15 @@
             "value": "no-cache"
           }
         ]
+      },
+      {
+        "source": "**/checkout.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=60"
+          }
+        ]
       }
     ]
   }
