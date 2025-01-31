@@ -210,7 +210,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=60"
+            "value": "max-age=60, must-revalidate"
           }
         ]
       }
