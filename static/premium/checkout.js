@@ -1,5 +1,5 @@
-import { checkout, checkoutEvents } from "../shared/checkout.js";
-import { getDollarString, getDollarNumber } from "../shared/currency.js";
+import { checkout, checkoutEvents } from "../modules/checkout.js";
+import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
 ////////////////////////////////////////////////////////////////////////////////
 // GLOBALS
