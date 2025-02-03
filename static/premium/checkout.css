@@ -470,7 +470,7 @@ html:not([dir="rtl"]) .premium-checkout-purchase__checkout-button > img {
  ******************************************************************************/
 
 .premium-checkout-header__select {
-  display: block;
+  display: none !important;
   height: fit-content;
   border-radius: 4px;
   border: 1px solid #CDCDCD;
