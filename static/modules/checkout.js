@@ -22,61 +22,61 @@ const PADDLE_PRICES = {
       },
       "EUR": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8j937a41kvwrsz2z996xj"
+          "350": {
+            "0": "pri_01jjktekt8haxwceypyjn42780"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8j9fvb0vnxt276c6gbk59"
+          "3500": {
+            "0": "pri_01jjkt3y8r8a8jqd6drymfz4d7"
           }
         }
       },
       "CAD": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8j9w2eag4k5px5hf8qk9r"
+          "500": {
+            "0": "pri_01jjkt7jghfab1bdt5mryhkjwv"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8ja906bjxpysjydt7bdy7"
+          "5000": {
+            "0": "pri_01jjkt4vag5qjb1y3nvsq6qd6j"
           }
         }
       },
       "GBP": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8jap4rmvqsafxdpejy91q"
+          "350": {
+            "0": "pri_01jjktdvr9ph8ys5g2e4qc0mwk"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8jb2r2dmg32q31jfp03n4"
+          "3500": {
+            "0": "pri_01jjkt2qwd20xxhsdxmpej0pf7"
           }
         }
       },
       "AUD": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8jbftsgr2nvj01q93m398"
+          "600": {
+            "0": "pri_01jjktaq8nj09tfwk49g8aq0hf"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8jbvz4gbvtfejc0ede1y5"
+          "6000": {
+            "0": "pri_01jjkt6pdw6mr6q6bgr8kdt4dx"
           }
         }
       },
       "NZD": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8jc802v7d8cv4gmrntgnp"
+          "600": {
+            "0": "pri_01jjktd0n4cbvky0pt9xvq4qj2"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8jcn1kcymtgq3f5y25e2y"
+          "6000": {
+            "0": "pri_01jjkt5vvsvhrwe2vdw20m3q8g"
           }
         }
       },
@@ -678,61 +678,61 @@ const PADDLE_PRICES = {
       },
       "EUR": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8wpmve955d1azhz0cbzf6"
+          "350": {
+            "0": "pri_01jjktrecyx31ptetfb2nkvh3g"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8wq0h4m6mjxhx6hm1629b"
+          "3500": {
+            "0": "pri_01jjktmcq32jnyhc5evq533j99"
           }
         }
       },
       "CAD": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8wqbvd57bp3h8jk9vv6ay"
+          "500": {
+            "0": "pri_01jjktshb9dv746spnpe3hv4yx"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8wqrabsr8bbjksf1hfkbn"
+          "5000": {
+            "0": "pri_01jjktn4xqq2zzrr665pq2jsa4"
           }
         }
       },
       "GBP": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8wr4grtx8f2rv3nzvj0dz"
+          "350": {
+            "0": "pri_01jjktqks08svkht5kha2y0k36"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8wrgxpqjkk4dqps0h0961"
+          "3500": {
+            "0": "pri_01jjktkdfxvpy6fp2ye8g7zze6"
           }
         }
       },
       "AUD": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8wrxpzdrgnabqd2sacgy6"
+          "600": {
+            "0": "pri_01jjktt75djfd5d898mfjecgs0"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8wsbtvmrk9zztcf12a2hw"
+          "6000": {
+            "0": "pri_01jjktnz58ybwpc4063tmh2fbd"
           }
         }
       },
       "NZD": {
         "monthly": {
-          "400": {
-            "0": "pri_01j8m8wstvvrrtrza2j3dzfnza"
+          "600": {
+            "0": "pri_01jjktver782hry7vjmatqchn9"
           }
         },
         "yearly": {
-          "4000": {
-            "0": "pri_01j8m8wt94wywyjhcdff831fg5"
+          "6000": {
+            "0": "pri_01jjktpv3p7f6gm1vj8td0eyr1"
           }
         }
       },
