@@ -5,10 +5,6 @@ const documentClassList = document.documentElement.classList;
 const country = adblock.settings.country = adblock.query.get("country") || "TW";
 documentClassList.add(adblock.settings.country.toLowerCase());
 
-const premiumRestrictedCountries = ["FR"];
-adblock.settings.restrictPremium = adblock.query.get("restrictPremium") || premiumRestrictedCountries.includes(country);
-if (adblock.settings.restrictPremium) documentClassList.add("restrict-premium");
-
 const eurCountries = ["AT","BE","BG","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","ME","MT","NL","NO","PL","PT","RO","SE","SI","SK","XK"];
 
 adblock.settings.restrictPrivacy = adblock.query.get("restrictPrivacy") || eurCountries.includes(country);
