@@ -103,3 +103,10 @@ function fixDiscountHeight() {
 }
 window.addEventListener("resize", fixDiscountHeight);
 fixDiscountHeight();
+
+// Hide skeletons //////////////////////////////////////////////////////////////
+
+// see skeleton API in globals
+document.querySelectorAll(".skeleton").forEach(element => {
+  element.classList.remove("skeleton");
+});
