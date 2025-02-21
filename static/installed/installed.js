@@ -1,72 +1,98 @@
+/* global Paddle, adblock */
+import { getDollarString } from "../modules/currency.js";
+import { checkout } from "../modules/checkout.js"
 
-// reusing translated "1 of 4" string by replacing 1 with the current slide
-document.querySelectorAll(".installed-slide-progress").forEach((element, index) => {
-  element.textContent = element.textContent.replace("1", index + 1);
+const PRICES = {
+  "USD": {
+    "monthly": 400,
+    "yearly": 4000,
+  },
+  "EUR": {
+    "monthly": 350,
+    "yearly": 3500,
+  },
+  "CAD": {
+    "monthly": 500,
+    "yearly": 5000,
+  },
+  "GBP": {
+    "monthly": 350,
+    "yearly": 3500,
+  },
+  "AUD": {
+    "monthly": 600,
+    "yearly": 6000,
+  },
+  "NZD": {
+    "monthly": 600,
+    "yearly": 6000,
+  },
+  "CHF": {
+    "monthly": 400,
+    "yearly": 4000,
+  },
+  "PLN": {
+    "monthly": 1499,
+    "yearly": 14999,
+  },
+  "JPY": {
+    "monthly": 600,
+    "yearly": 6000,
+  },
+  "RUB": {
+    "monthly": 35000,
+    "yearly": 350000,
+  }
+};
+
+const defaultCurrency = adblock.settings.defaultCurrency || "USD";
+
+function getSelectedFrequency() {
+  return document.querySelector(".installed-payment-option__button[aria-pressed=\"true\"]").dataset.frequency;
+}
+
+function updateHeaderPrice() {
+  const selectedFrequency = getSelectedFrequency();
+  document.querySelector(".installed-header-1-subheading__price").textContent = getDollarString(defaultCurrency, PRICES[defaultCurrency][selectedFrequency], false, false);
+}
+
+function updateHeaderFrequency() {
+  document.querySelector(".installed-header-1-subheading__frequency").textContent = adblock.strings[`installed-header-subheading__frequency--${getSelectedFrequency()}`]
+}
+
+// set option prices
+document.querySelectorAll(".installed-payment-option__price").forEach(price => {
+  price.textContent = getDollarString(defaultCurrency, PRICES[defaultCurrency][price.parentElement.dataset.frequency], false, false);
 });
 
-const sidebar = document.querySelector(".installed-sidebar");
-const sidebarBody = document.querySelector(".installed-sidebar-body");
-const sidebarBreakpoint = window.matchMedia("(min-width: 54rem)");
+// set yearly discount
+document.getElementById("discount__number").textContent = Math.floor((1 - (PRICES[defaultCurrency]["yearly"] / (PRICES[defaultCurrency]["monthly"] * 12))) * 100) + "%";
 
-function showSidebar () {
-  sidebar.classList.add("active");
-  sidebarBody.hidden = false;
-}
+updateHeaderPrice();
+updateHeaderFrequency();
 
-function hideSidebar() {
-  sidebar.classList.remove("active");
-  sidebarBody.hidden = true;
-}
-
-function toggleSidebar() {
-  sidebar.classList.toggle("active");
-  sidebarBody.hidden = !sidebarBody.hidden;
-}
-
-// show sidebar on large screens, allow toggle on small screens
-function hideSidebarOnResize() {
-  if (sidebarBreakpoint.matches) showSidebar();
-  else hideSidebar();
-}
-sidebarBreakpoint.addEventListener("change", hideSidebarOnResize);
-hideSidebarOnResize();
-
-// enable sidebar toggle on small screens
-document.querySelector(".installed-sidebar-toggle").addEventListener("click", event => {
-  event.preventDefault();
-  toggleSidebar();
+// remove placeholders, see skeleton api in inline-globals
+document.querySelectorAll(".skeleton").forEach(element => {
+  element.classList.remove("skeleton");
 });
 
-// hide sidebar on sidebar link click when sidebar is toggled on small screens
-document.querySelectorAll(".installed-sidebar [data-slide]").forEach(button => {
-  button.addEventListener("click", () => {
-    if (!sidebarBreakpoint.matches && sidebar.classList.contains("active")) {
-      hideSidebar();
-    }
-  });
-});
-
-function gotoSlide(number) {
-  document.querySelector(".installed-slide:not([hidden])").hidden = true;
-  document.querySelector(`.installed-slide:nth-of-type(${number})`).hidden = false;
-  document.querySelector(".installed-slide-list .active").classList.remove("active");
-  document.querySelector(`.installed-slide-list li:nth-of-type(${number}) a`).classList.add("active");
-  history.pushState({slide: button.dataset.slide}, "", `installed#${button.dataset.slide}`);
-}
-
-// add [data-slide] to enable gotoSlide on any link/button/element
-document.querySelectorAll("[data-slide]").forEach(button => {
+document.querySelectorAll(".installed-payment-option__button").forEach(button => {
   button.addEventListener("click", event => {
     event.preventDefault();
-    gotoSlide(button.dataset.slide);
+    document.querySelectorAll(".installed-payment-option__button").forEach(button => {
+      if (button == event.currentTarget) button.setAttribute("aria-pressed", "true");
+      else button.setAttribute("aria-pressed", "false");
+    });  
+    updateHeaderPrice();
+    updateHeaderFrequency();
   });
 });
 
-// allow deep linking to slides via number
-if (window.location.hash) {
-  try {
-    gotoSlide(window.location.hash.replace("#",""));
-  } catch (error) {
-    // fail quietly
-  }
-}
+document.getElementById("purchase").addEventListener("submit", event => {
+  event.preventDefault();
+  const product = "premium";
+  const currency = defaultCurrency;
+  const frequency = getSelectedFrequency();
+  const amount = PRICES[currency][frequency];
+  checkout({product, currency, frequency, amount});
+});

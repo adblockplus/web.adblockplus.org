@@ -1,0 +1,37 @@
+<style>
+  .footer-legal {
+    color: #fff;
+    background-color: #000;
+    padding-block: 1rem;
+  }
+
+  .footer-legal .container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-legal a {
+    color: #fff;
+  }
+
+</style>
+<footer class="footer-legal">
+  <div class="container">
+    <div class="footer-legal-copywrite">{{ get_string("copyright", "footer") }}</div>
+    <ul class="footer-legal-links">
+      <li><a href="terms">{{ get_string("terms", "menu") }}</a></li>
+      <li><a href="privacy">{{ get_string("privacy", "menu") }}</a></li>
+      <li><a href="imprint">{{ get_string("imprint", "menu") }}</a></li>
+    </ul>  
+  </div>
+</footer>
