@@ -16,21 +16,31 @@
  html {
    font-size: 16px;
    font-family: "Source Sans Pro", sans-serif;
-   line-height: 1.4;
+   line-height: 1.5;
    color: #333333;
  }
 
- body {
+body {
   margin: 0;
   font-weight: 400;
-  padding-top: 0;
+  padding-block-start: 0;
 }
 
-h1, h2 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+h1, h2, h3 {
+  margin-block-start: 0;
+  margin-block-end: 1rem;
   font-weight: 700;
   line-height: 1.2;
+}
+
+h1 { font-size: 2rem; }
+
+h2 { font-size: 1.5rem; }
+
+h3 { font-size: 1.125rem; }
+
+p {
+  margin-block: 1rem;
 }
 
 a, a:link, a:visited {
@@ -41,3 +51,221 @@ a:hover, a:active, a:focus {
   text-decoration: underline;
 }
 
+.installed-header-1 {
+  padding-block: 2.5rem;
+  text-align: start;
+  background-color: #F5F5F5;
+}
+
+@media (min-width: 576px) {
+  .installed-header-1 {
+    text-align: center;
+  }
+}
+
+.installed-header-1__body {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 53.25rem;
+}
+
+.installed-header-1__heading {
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+  font-size: 2rem;
+}
+
+.installed-header-1-subheading {
+  margin-block-end: 0;
+  font-size: 1.125rem;
+}
+
+.installed-header-1-subheading__price,
+.installed-header-1-subheading__frequency { font-weight: bolder; }
+
+.installed-header-2 {
+  background-color: #E9ECF6;
+  padding-block: 1.5rem;
+}
+
+.installed-features {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: 1rem;
+  margin-block: 0;
+  justify-content: start;
+  padding: 0;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+@media (min-width: 576px) {
+  .installed-features {
+    justify-content: center;
+  }
+}
+
+.installed-feature {
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.installed-payment {
+  width: 100%;
+  max-width: 51.1875rem;
+}
+
+.installed-gaurantee {
+  margin-block: 2.5rem;
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  background-color: rgba(34, 132, 247, 0.1);
+  border: 0;
+  border-radius: 6px;
+}
+
+.installed-payment-options {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.installed-payment-options-header {
+  background-color: #fff;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+}
+
+.installed-payment-options-header__logo { display: block; }
+
+.installed-payment-options-body {
+  background-color: rgba(246, 246, 246, 1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .installed-payment-options-body {
+    flex-direction: row;
+  }
+}
+
+.installed-payment-options-body__column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.installed-payment-option {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .installed-payment-option {
+    flex-wrap: nowrap;
+  }
+}
+
+.installed-payment-option__button {
+  display: flex;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  align-items: center;
+  border: 2px solid rgba(205, 205, 205, 1);
+  border-radius: 6px;
+  background-color: #fff;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  width: 13.75rem;
+}
+
+.installed-payment-option__button[aria-pressed="true"] {
+  border-color: rgba(237, 30, 69, 1);
+}
+
+.installed-payment-option__price {
+  font-size: 1.125rem;
+  font-weight: bolder;
+}
+
+.installed-payment-options-body__column-2 {
+  flex: 1;
+}
+
+.installed-payment-option-discount {
+  color: #fff;
+  background-color: rgba(237, 30, 69, 1);
+  border-radius: 25px;
+  font-weight: bolder;
+  text-align: center;
+  padding-inline: 1rem;
+  padding-block: 0.375rem 0.5625rem;
+}
+
+.installed-payment-options-features__list {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.installed-payment-options-features__list-item {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.installed-payment-checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 2rem 3.75rem;
+}
+
+.installed-payment-checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #fff;
+  background-color: rgba(0, 71, 255, 1);
+  padding-block: 0.9375rem;
+  padding-inline: 1rem;
+  width: 100%;
+  max-width: 25rem;
+  border: 0;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  font-weight: bolder;
+}
+
+.installed-footer {
+  background-color: rgba(245, 245, 245, 1);
+  padding-block: 2.5rem 3.75rem;
+}
+
+.installed-footer .container {
+  max-width: 57.125rem;
+}
+
+.installed-footer .container :last-child {
+  margin-block-end: 0;
+}
+
+.vat-inclusive__text,
+.vat-exclusive__text {
+  margin-block: -0.5rem 0;
+  margin-inline: 0.25rem 0;
+}
