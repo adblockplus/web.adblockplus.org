@@ -18,7 +18,6 @@ variables:
     - &NODE_IMAGE node:16-alpine
     - &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:409.0.0
     - &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
-    - &BUILD_RUNNER saas-linux-small-amd64
 
 stages:
   - prebuild_firebase
@@ -56,8 +55,6 @@ build:review:
   variables:
     <<: *staging
   image: *BUILD_IMAGE
-  tags:
-    - *BUILD_RUNNER
   dependencies:
     - pre_review_build
   before_script:
@@ -81,8 +78,6 @@ build:review:staging:
   variables:
     <<: *staging
   image: *BUILD_IMAGE
-  tags:
-    - *BUILD_RUNNER
   before_script:
     - python3 -m pip install -q crudini
   script:
@@ -106,8 +101,6 @@ build:production:
   variables:
     <<: *production
   image: *BUILD_IMAGE
-  tags:
-    - *BUILD_RUNNER
   before_script:
     - python3 -m pip install -q crudini
   script:
