@@ -407,6 +407,7 @@ html:not(.de) .de-only { display: none; }
 .premium-motivation-slider-image__img {
   height: 384.90px;
   width: 508px;
+  max-width: none;
 }
 
 @media (min-width: 992px) {
