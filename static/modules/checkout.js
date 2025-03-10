@@ -1823,6 +1823,44 @@ const PADDLE_EXPERIMENT_PRICES = {
           }
         }
       }
+    },
+    "premiumvpn": {
+      "USD": {
+        "monthly": {
+          "400": {
+            "30": "pri_01jnkves5nnmbr94948tp3zvcq"
+          }
+        },
+        "yearly": {
+          "4000": {
+            "30": "pri_01jnkvgbgfvamyg2py80kak55p"
+          }
+        }
+      },
+      "CAD": {
+        "monthly": {
+          "500": {
+            "30": "pri_01jnkvhqz69vx3b7jxkgcefns4"
+          }
+        },
+        "yearly": {
+          "5000": {
+            "30": "pri_01jnkvn24ey2fbatm4804jeswc"
+          }
+        }
+      },
+      "AUD": {
+        "monthly": {
+          "600": {
+            "30": "pri_01jnkw6r7vrt2ddnxxp561ch79"
+          }
+        },
+        "yearly": {
+          "6000": {
+            "30": "pri_01jnkw8gphhcfrsp0b1saxgjep"
+          }
+        }
+      }
     }
   }
 };
