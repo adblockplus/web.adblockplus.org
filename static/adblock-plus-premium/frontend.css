@@ -1,0 +1,252 @@
+/* Elements that can't be styled via theme.json
+ ******************************************************************************/
+
+code {
+  font-family: var(--wp--preset--font-family--monospace);
+  color: var(--wp--preset--color--abp-black);
+  background-color: var(--wp--preset--color--abp-light-grey);
+  padding: 0 0.25rem;
+}
+
+kbd {
+  font-family: var(--wp--preset--font-family--monospace);
+  color: var(--wp--preset--color--abp-light-grey);
+  background-color: var(--wp--preset--color--abp-dark-grey);
+  padding: 0 0.25rem;
+}
+
+/* Overriding block theme defaults
+ ******************************************************************************/
+
+.wp-block-post-featured-image :where(img) {
+  width: auto;
+}
+
+.wp-block-post-title a,
+.wp-block-post-title a:hover,
+.wp-block-post-title a:active,
+.wp-block-post-title a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Page building utility classes
+ ******************************************************************************/
+
+.darken-hover a:hover,
+.darken-hover a:active,
+.darken-hover a:focus {
+  background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+}
+
+@media (max-width: 782px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 782px) {
+
+  .desktop-column-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .desktop-no-border-right {
+    border-right: 0 !important;
+  }
+
+  .desktop-no-border-radius-right {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .desktop-no-border-radius-bottom-left {
+    border-bottom-left-radius: 0 !important;
+  }
+
+}
+
+/* Premium slider pattern *****************************************************/
+
+.abp-premium-difference {
+  margin-top: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 508px;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .abp-premium-difference {
+    margin-bottom: 3.75rem;
+    width: 888px;
+  }
+}
+
+.abp-premium-difference-slider {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px 0px #33333333;
+}
+
+.abp-premium-difference-slider-header {
+  background-color: #fff;
+  box-shadow: 0px 3.17px 3.17px 0px #0000001A;
+  padding: 1rem;
+  z-index: 3;
+}
+
+.abp-premium-difference-slider-header__heading {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  .abp-premium-difference-slider-header__heading {
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+}
+
+.abp-premium-difference-slider-header__heading-image {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .abp-premium-difference-slider-header__heading-image {
+    display: block;
+  }
+}
+
+.abp-premium-difference-slider-body {
+  position: relative;
+  height: 384.90px;
+  width: 508px;
+}
+
+@media (min-width: 992px) {
+  .abp-premium-difference-slider-body {
+    height: 672.82px;
+    width: 888px;
+  }  
+}
+
+.abp-premium-difference-slider-image {
+  position: absolute;
+  left: 0;
+  left: 0;
+}
+
+.abp-premium-difference-slider-image--after {
+  width: 25%;
+  overflow: hidden;
+}
+
+.abp-premium-difference-slider-image__img {
+  height: 384.90px;
+  width: 508px;
+}
+
+@media (min-width: 992px) {
+  .abp-premium-difference-slider-image__img {
+    height: 672.82px;
+    width: 888px;
+  }  
+}
+
+.abp-premium-difference-silder-modal-slider {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 25%;
+  height: 100%;
+}
+
+.abp-premium-difference-silder-modal-slider__button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  height: 60px;
+  width: 60px;
+  cursor: grab;
+}
+
+.abp-premium-difference-silder-modal-slider__button:active {
+  cursor: grabbing
+}
+
+.abp-premium-difference-silder-modal-slider__border {
+  border-left: 2px solid #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+/* Frequency switch pattern ***************************************************/
+
+#frequency-switch {
+  column-gap: 2rem !important;
+}
+
+#frequency-switch .ab-frequency-switch-button {
+  position: relative;
+}
+
+#frequency-switch-monthly::after {
+  content: " ";
+  display: block;
+  height: 22px;
+  width: 44px;
+  background: #0688CB;
+  border-radius: 34px;
+  position: absolute;
+  top: 12px;
+  right: -35px;
+  z-index: 9001;
+  cursor: pointer;
+}
+
+#frequency-switch-yearly::before {
+  content: " ";
+  display: block;
+  height: 18px;
+  width: 18px;
+  background: #fff;
+  box-shadow: -2px 2px 4px 0px #00000026;
+  border-radius: 34px;
+  position: absolute;
+  top: 14px;
+  left: -39px;
+  z-index: 9002;
+  cursor: pointer;
+}
+
+#frequency-switch[data-frequency="yearly"] #frequency-switch-yearly::before {
+  left: -17px;
+}
+
+a.wp-block-button__link:hover,
+a.wp-block-button__link:active,
+a.wp-block-button__link:focus {
+  text-decoration: none;
+}
+
+.vat-exclusive__text,
+.vat-inclusive__text {
+  text-align: center;
+  margin-top: -1rem;
+}
+
+body {
+  padding-top: 0;
+}
