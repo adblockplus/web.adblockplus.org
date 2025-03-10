@@ -9,7 +9,7 @@
       {{ head | safe }}
     {% endblock %}
   </head>
-  <body>
+  <body class="{{ bodyclass }}">
     <? include navbar ?>
     {% block body %}
       {{ body | safe }}
