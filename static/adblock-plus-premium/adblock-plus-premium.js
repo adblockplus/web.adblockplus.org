@@ -71,6 +71,16 @@ function updateFrequency(value) {
   else frequency = frequency == "yearly" ? "monthly" : "yearly";
   document.getElementById("billed-frequency").textContent = FREQUENCY_STRINGS[frequency];
   document.getElementById("frequency-switch").dataset.frequency = frequency;
+  const amountText = getDollarString(
+    defaultCurrency, 
+    frequency == "yearly" 
+      ? PRICES[defaultCurrency]["yearly"]/12
+      : PRICES[defaultCurrency]["monthly"], 
+    false, 
+    false
+  );
+  const amountNumberText = amountText.replace(amountSignText, "").trim();
+  document.getElementById("price-amount").textContent = amountNumberText;
 }
 
 document.getElementById("frequency-switch-monthly").addEventListener("click", event => {
