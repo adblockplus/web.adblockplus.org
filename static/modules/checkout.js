@@ -1627,7 +1627,8 @@ const PADDLE_EXPERIMENT_PRICES = {
           "400": {
             "0": "pri_01j9xrscm90ajdn223hs0grdqh",
             "7": "pri_01je7aajfpqfmrcn8s62tq9410",
-            "14": "pri_01je7aajn9ntgtzprnndxqv35a"
+            "14": "pri_01je7aajn9ntgtzprnndxqv35a",
+            "30": "pri_01jnkves5nnmbr94948tp3zvcq"
           },
           "500": {
             "0": "pri_01j8m9ap914cf8d2a1f9xef33z"
@@ -1660,7 +1661,8 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "4000": {
             "7": "pri_01je7aajvc70pbsy5vw4mcsfje",
-            "14": "pri_01je7aak1hydr2bpzzgp2vfqq2"
+            "14": "pri_01je7aak1hydr2bpzzgp2vfqq2",
+            "30": "pri_01jnkvgbgfvamyg2py80kak55p"
           },
           "4500": {
             "0": "pri_01j9xrsd0s5xzdszgntygcpswe"
@@ -1702,7 +1704,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "14": "pri_01je7aakdr49tj2bx587xfsck3"
           },
           "500": {
-            "0": "pri_01j8m9ax71rz503vc29p33jy9c"
+            "0": "pri_01j8m9ax71rz503vc29p33jy9c",
+            "30": "pri_01jnkvhqz69vx3b7jxkgcefns4"
           },
           "600": {
             "0": "pri_01j8m9axkcr8nawf7ga822x1za"
@@ -1738,7 +1741,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j9xrsdsnxwewaenf5ezq6ppk"
           },
           "5000": {
-            "0": "pri_01j8m9b18xtf0djqxv3dtbzww8"
+            "0": "pri_01j8m9b18xtf0djqxv3dtbzww8",
+            "30": "pri_01jnkvn24ey2fbatm4804jeswc"
           },
           "6000": {
             "0": "pri_01j8m9b1nd9wn3vdr932x6smd0"
@@ -1777,7 +1781,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m9b595p7yz5605shjht26z"
           },
           "600": {
-            "0": "pri_01j8m9b5vy5abphmr46mz6q8cf"
+            "0": "pri_01j8m9b5vy5abphmr46mz6q8cf",
+            "30": "pri_01jnkw6r7vrt2ddnxxp561ch79"
           },
           "700": {
             "0": "pri_01j8m9b6fjr3d1xhp93n3x4nnz"
@@ -1813,7 +1818,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m9b9ee9ehhcc1cb78jnmwd"
           },
           "6000": {
-            "0": "pri_01j8m9b9tfzdk8e094b310eydz"
+            "0": "pri_01j8m9b9tfzdk8e094b310eydz",
+            "30": "pri_01jnkw8gphhcfrsp0b1saxgjep"
           },
           "7000": {
             "0": "pri_01j8m9ba6ft9m9dpcp9vakk786"
@@ -1826,44 +1832,6 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "10000": {
             "0": "pri_01j8m9bb9s9gn7h9c2nks7ch22"
-          }
-        }
-      }
-    },
-    "premiumvpn": {
-      "USD": {
-        "monthly": {
-          "400": {
-            "30": "pri_01jnkves5nnmbr94948tp3zvcq"
-          }
-        },
-        "yearly": {
-          "4000": {
-            "30": "pri_01jnkvgbgfvamyg2py80kak55p"
-          }
-        }
-      },
-      "CAD": {
-        "monthly": {
-          "500": {
-            "30": "pri_01jnkvhqz69vx3b7jxkgcefns4"
-          }
-        },
-        "yearly": {
-          "5000": {
-            "30": "pri_01jnkvn24ey2fbatm4804jeswc"
-          }
-        }
-      },
-      "AUD": {
-        "monthly": {
-          "600": {
-            "30": "pri_01jnkw6r7vrt2ddnxxp561ch79"
-          }
-        },
-        "yearly": {
-          "6000": {
-            "30": "pri_01jnkw8gphhcfrsp0b1saxgjep"
           }
         }
       }
