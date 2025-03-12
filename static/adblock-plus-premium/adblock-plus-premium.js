@@ -56,7 +56,7 @@ const defaultCurrency = adblock.settings.defaultCurrency || "USD";
 
 let frequency = "yearly";
 
-const amountText = getDollarString(defaultCurrency, PRICES[defaultCurrency]["monthly"], false, false);
+const amountText = getDollarString(defaultCurrency, PRICES[defaultCurrency]["yearly"]/12, false, false);
 const amountSignText = amountText.replace(/[\d\,\.]/g, "").trim();
 const amountNumberText = amountText.replace(amountSignText, "").trim();
 document.getElementById("price-amount").textContent = amountNumberText;
