@@ -59,6 +59,7 @@ let frequency = "yearly";
 const amountText = getDollarString(defaultCurrency, PRICES[defaultCurrency]["yearly"]/12, false, false);
 const amountSignText = amountText.replace(/[\d\,\.]/g, "").trim();
 const amountNumberText = amountText.replace(amountSignText, "").trim();
+document.getElementById("header-amount").textContent = getDollarString(defaultCurrency, PRICES[defaultCurrency]["monthly"], false, false);
 document.getElementById("price-amount").textContent = amountNumberText;
 document.getElementById("price-sign").textContent = amountSignText;
 document.querySelectorAll(".plan-savings").forEach(element => {
