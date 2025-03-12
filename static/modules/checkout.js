@@ -1369,7 +1369,8 @@ const PADDLE_EXPERIMENT_PRICES = {
           "400": {
             "0": "pri_01j9xrszg0hy0jzh65wcq62nqb",
             "7": "pri_01je7a360ja50h0g2ej54at3tk",
-            "14": "pri_01je7a366cwvdj0axr9cygyrmh"
+            "14": "pri_01je7a366cwvdj0axr9cygyrmh",
+            "30": "pri_01jp03wa3j8xjmc6d19nygrj1y"
           },
           "500": {
             "0": "pri_01j8m97ztnv0rwk8e8adaph1p4"
@@ -1402,7 +1403,8 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "4000": {
             "7": "pri_01je7a36d6d5nxdqd1jf9ffnrn",
-            "14": "pri_01je7a36k2ewf0b2d7djvh5605"
+            "14": "pri_01je7a36k2ewf0b2d7djvh5605",
+            "30": "pri_01jp03xp93c20dcdys0z7acgdm"
           },
           "4500": {
             "0": "pri_01j9xrszwgq0cfjqx0ahr21yee"
@@ -1444,7 +1446,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "14": "pri_01je7a373v29bzm6e84hsmh1v7"
           },
           "500": {
-            "0": "pri_01j8m98863gxe8v7f8wse28kg7"
+            "0": "pri_01j8m98863gxe8v7f8wse28kg7",
+            "30": "pri_01jp03yrwtznkgdy5kx3sse0m4"
           },
           "600": {
             "0": "pri_01j8m988hx82fkqqx1fv8hj49q"
@@ -1480,7 +1483,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j9xrt0r0z0ztv63q2gqqqay6"
           },
           "5000": {
-            "0": "pri_01j8m98c9exyprbh2t5879qyg9"
+            "0": "pri_01j8m98c9exyprbh2t5879qyg9",
+            "30": "pri_01jp03zvxskn17dhj9qax0j94e"
           },
           "6000": {
             "0": "pri_01j8m98csm3aw0a1gn941jfcp1"
@@ -1519,7 +1523,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m98g30ny54gbfn8nvfbkxf"
           },
           "600": {
-            "0": "pri_01j8m98gk13qezss99ejsq09h5"
+            "0": "pri_01j8m98gk13qezss99ejsq09h5",
+            "30": "pri_01jp042328s1hv1fk5c8avmg1y"
           },
           "700": {
             "0": "pri_01j8m98h0641gbq47nek58w059"
@@ -1555,7 +1560,8 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m98knnfyb9k06jjx7pwp7j"
           },
           "6000": {
-            "0": "pri_01j8m98m0zbgtssqpkqfdac3ed"
+            "0": "pri_01j8m98m0zbgtssqpkqfdac3ed",
+            "30": "pri_01jp0432f2w2z0f4gcb0dzeshx"
           },
           "7000": {
             "0": "pri_01j8m98mc0spdfny5x3jfyn5ay"
