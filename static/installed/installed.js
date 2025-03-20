@@ -57,7 +57,7 @@ function updateHeaderPrice() {
 }
 
 function updateHeaderFrequency() {
-  document.querySelector(".installed-header-1-subheading__frequency").textContent = adblock.strings[`installed-header-subheading__frequency--${getSelectedFrequency()}`]
+  document.querySelector(".installed-header-1-subheading__frequency").innerHTML = (adblock.strings[`installed-header-subheading__frequency--${getSelectedFrequency()}`])
 }
 
 // set option prices
