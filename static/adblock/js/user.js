@@ -71,14 +71,7 @@ function getCountryCode() {
 }
 
 function getLanguage() {
-    var lan = (document.location.search.match(/(?:[?&])lang=([a-zA-Z0-9_]+)/) || {})[1];
-    if (!lan) {
-        lan = getLanguageInPath();
-    }
-    if (!lan) {
-        lan = window.navigator.userLanguage || window.navigator.language || "";
-    }
-    return lan;
+    return document.lang || navigator.language;
 }
 
 function getLanguageQueryString() {
