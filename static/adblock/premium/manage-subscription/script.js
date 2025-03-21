@@ -245,7 +245,7 @@ $(document).ready(function() {
                             if (!isNaN(activeUntilDate)) {
                                 $("#subscription-end-date")
                                     .attr("datetime", activeUntilDate.toTimeString())
-                                    .text(activeUntilDate.toString());
+                                    .text(localeDateFromTimestamp(activeUntilDate));
                                 $("#subscription-end").show();
                             }
                         }
