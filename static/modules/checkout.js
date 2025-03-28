@@ -1976,7 +1976,7 @@ function URLSearchObject(search) {
  */
 export const checkout = adblock.api.checkout = function checkout(options) {
 
-  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl } = options;
+  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl, coupon, email } = options;
 
   const clickTs = Date.now();
 
@@ -2055,13 +2055,21 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     cancel_url: window.location.href
   };
 
-  Paddle.Checkout.open({
+  let paddleCheckoutData = {
     settings: {
       successUrl,
       locale: PADDLE_LOCALE_EXCEPTIONS[locale] || locale,
     },
     customData,
     items: [{ priceId }],
-  });
+  };
+
+  // Below are optional and conditional settings
+  if (coupon)
+    paddleCheckoutData.discountCode = coupon;
+  if (email)
+    paddleCheckoutData.customer = { email };
+
+  Paddle.Checkout.open(paddleCheckoutData);
 
 };
