@@ -2017,7 +2017,8 @@ export const checkout = adblock.api.checkout = function checkout(options) {
 
   const customData = {
     version: "1.0.0",
-    url: `${location.pathname}${location.search}`,
+    pathname: location.pathname,
+    search: location.search,
     locale,
     userid: premiumId,
     tracking: `${trackingPrefix}X0G0 F${browserCode}O${operatingSystemCode}S${pageCode} ${premiumId}`,
