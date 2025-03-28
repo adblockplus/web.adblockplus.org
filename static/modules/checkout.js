@@ -1970,7 +1970,9 @@ function URLSearchObject(search) {
  * @param {string} options.currency - checkout currency (e.g. USD|EUR|GBP)
  * @param {string} options.frequency - checkout frequency (e.g. once|monthly|yearly)
  * @param {string} options.amount - checkout amount in cents (e.g. 1000|199)
- * @param {string} options.trial - number of trial days
+ * @param {string} [options.trial] - number of trial days
+ * @param {string} [options.coupon] - coupon to be applied
+ * @param {string} [options.email] - customer email
  * @param {string} [options.flow] - checkout flow being completed (default: page name)
  * @param {string} [options.successUrl] - checkout success URL redirected to
  */
@@ -2055,7 +2057,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     cancel_url: window.location.href
   };
 
-  let paddleCheckoutData = {
+  let checkoutOptions = {
     settings: {
       successUrl,
       locale: PADDLE_LOCALE_EXCEPTIONS[locale] || locale,
@@ -2064,12 +2066,9 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     items: [{ priceId }],
   };
 
-  // Below are optional and conditional settings
-  if (coupon)
-    paddleCheckoutData.discountCode = coupon;
-  if (email)
-    paddleCheckoutData.customer = { email };
+  if (coupon) checkoutOptions.discountCode = coupon;
+  if (email) checkoutOptions.customer = { email };
 
-  Paddle.Checkout.open(paddleCheckoutData);
+  Paddle.Checkout.open(checkoutOptions);
 
 };

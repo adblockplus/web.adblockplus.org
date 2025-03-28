@@ -533,8 +533,8 @@ steps.purchase.on("checkout-now", async () => {
   const currency = steps.purchase.getCurrency();
   const amount = PRICES[currency][frequency];
   const product = "premium";
-  const email = adblock.query.get("email") || null;
-  const coupon = adblock.query.get("coupon") || null;
+  const email = adblock.query.get("email");
+  const coupon = adblock.query.get("coupon");
   await goto(steps.loading);
   try {
     checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
