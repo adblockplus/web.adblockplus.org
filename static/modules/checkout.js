@@ -1947,20 +1947,6 @@ const planCodeCompatibility = {
   "ME-VP": "premiumvpn",
 };
 
-function URLSearchObject(search) {
-  const params = new URLSearchParams(search);
-  return params.entries().reduce((object, entry) => {
-    const [key, value] = entry;
-    if (object.hasOwnProperty(key)) {
-      if (Array.isArray(object[key])) object[key].push(value);
-      else object[key] = [object[key], value];
-    } else {
-      object[key] = value;
-    }
-    return object;
-  }, {});
-}
-
 /**
  * Use this function instead of calling Paddle.Checkout.open() yourself to avoid
  * spreading and/or duplicating paddle config, validation, and custom payment
@@ -2030,11 +2016,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   const trackingPrefix = (productCode || funnelCode) ? `${productCode}_${funnelCode} ` : "";
 
   const customData = {
-    version: "1.0.0",
     locale,
-    page: adblock.settings.page,
-    path: location.pathname,
-    urlParams: URLSearchObject(location.search),
     userid: premiumId,
     tracking: `${trackingPrefix}X0G0 F${browserCode}O${operatingSystemCode}S${pageCode} ${premiumId}`,
     testmode: paddleEnvironment == "test",
