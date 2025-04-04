@@ -2031,9 +2031,10 @@ export const checkout = adblock.api.checkout = function checkout(options) {
 
   const customData = {
     version: "1.0.0",
-    pathName: location.pathname,
-    urlParams: URLSearchObject(location.search),
     locale,
+    page: adblock.settings.page,
+    path: location.pathname,
+    urlParams: URLSearchObject(location.search),
     userid: premiumId,
     tracking: `${trackingPrefix}X0G0 F${browserCode}O${operatingSystemCode}S${pageCode} ${premiumId}`,
     testmode: paddleEnvironment == "test",
