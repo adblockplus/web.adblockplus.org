@@ -96,7 +96,9 @@ document.querySelectorAll(".cta").forEach(button => {
     const product = "premium";
     const currency = defaultCurrency;
     const amount = PRICES[currency][frequency];
-    checkout({product, currency, frequency, amount});
+    const email = adblock.query.get("email") || null;
+    const coupon = adblock.query.get("coupon") || null;
+    checkout({product, currency, frequency, amount, coupon, email});
   });
 });
 

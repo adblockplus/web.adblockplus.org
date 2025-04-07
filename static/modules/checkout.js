@@ -1970,13 +1970,15 @@ function URLSearchObject(search) {
  * @param {string} options.currency - checkout currency (e.g. USD|EUR|GBP)
  * @param {string} options.frequency - checkout frequency (e.g. once|monthly|yearly)
  * @param {string} options.amount - checkout amount in cents (e.g. 1000|199)
- * @param {string} options.trial - number of trial days
+ * @param {string} [options.trial] - number of trial days
+ * @param {string} [options.coupon] - coupon to be applied
+ * @param {string} [options.email] - customer email
  * @param {string} [options.flow] - checkout flow being completed (default: page name)
  * @param {string} [options.successUrl] - checkout success URL redirected to
  */
 export const checkout = adblock.api.checkout = function checkout(options) {
 
-  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl } = options;
+  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl, coupon, email } = options;
 
   const clickTs = Date.now();
 
@@ -2055,13 +2057,18 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     cancel_url: window.location.href
   };
 
-  Paddle.Checkout.open({
+  let checkoutOptions = {
     settings: {
       successUrl,
       locale: PADDLE_LOCALE_EXCEPTIONS[locale] || locale,
     },
     customData,
     items: [{ priceId }],
-  });
+  };
+
+  if (coupon) checkoutOptions.discountCode = coupon;
+  if (email) checkoutOptions.customer = { email };
+
+  Paddle.Checkout.open(checkoutOptions);
 
 };
