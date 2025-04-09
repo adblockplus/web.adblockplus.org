@@ -24,8 +24,10 @@ function forceGetUserId()
 
 // Returns the adblock userid, if known
 function getUserId() {
+  try {
+    return JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo).premiumId;
+  } catch (error) {
     var _userIdOptions = [
-      (document.location.search.match(/(?:[?&])u=([a-zA-Z0-9]+)/) || {})[1],
       typeof adblock_userid !== "undefined" ? adblock_userid : undefined,
       (document.getElementById('adblock_user_id') || {}).innerText,
       ""
@@ -35,6 +37,7 @@ function getUserId() {
     const page = document.documentElement.dataset.page;
     return (page == "manage" || userid.length == 16 || userid.length == 15) ? userid : "";
   }
+}
 
 // Returns the adblock userid if exists, else return unknown
 function getUserIdOrUnknown() {
@@ -45,7 +48,6 @@ function getUserIdOrUnknown() {
 // Returns the adblock premium userid, if known
 function getPremiumUserId() {
     var _userIdOptions = [
-      (document.location.search.match(/(?:[?&])u=([a-zA-Z0-9]+)/) || {})[1],
       typeof adblock_premium_userid !== "undefined" ? adblock_premium_userid : undefined,
       (document.getElementById('adblock_premium_user_id') || {}).innerText,
       ""
