@@ -76,6 +76,21 @@ adblock.uid = function uid(length = 32) {
 /** browsing session uid */
 adblock.sid = adblock.query.get("sid") || adblock.uid();
 
+/** create an object from url params **/
+adblock.URLSearchObject = function URLSearchObject(search) {
+  const params = new URLSearchParams(search);
+  return params.entries().reduce((object, entry) => {
+    const [key, value] = entry;
+    if (object.hasOwnProperty(key)) {
+      if (Array.isArray(object[key])) object[key].push(value);
+      else object[key] = [object[key], value];
+    } else {
+      object[key] = value;
+    }
+    return object;
+  }, {});
+}
+
 /** record data/activity via access log entry */
 adblock.log = function log(event, data = {}) {
   const params = new URLSearchParams();
@@ -92,11 +107,14 @@ adblock.log = function log(event, data = {}) {
 /** logs essential analytics on load */
 window.addEventListener("load", function onLoad() {
   adblock.log("load", {
+    version: "1.1.0",
     scriptTime,
     loadTime: parseInt(performance.now(), 10),
     trafficSource: adblock.query.get("s"),
     pageName: adblock.settings.page,
     pageLocale: adblock.settings.locale,
+    pagePath: location.pathname,
+    urlParams: URLSearchObject(location.search),
     detectedCountry: adblock.settings.detectedCountry,
     detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
     detectedBrowser: adblock.settings.detectedBrowser,
