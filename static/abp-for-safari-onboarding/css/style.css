@@ -1,0 +1,167 @@
+/* Base imports and variables */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-background-light: #F5F5F5;
+  --color-divider: #E6E6E6;
+  --color-placeholder: #E5E2E2;
+
+  /* Typography */
+  --font-family-primary: "Inter", sans-serif;
+  --font-family-system: "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-large: 24px;
+  --font-size-medium: 18px;
+  --font-size-default: 17px;
+
+  /* Spacing */
+  --spacing-standard: 16px;
+  --spacing-large: 42px;
+  --spacing-xl: 72px;
+
+  /* Layout */
+  --header-height: 80px;
+  --background-height: 30vh;
+}
+
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-primary), sans-serif;
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+/* Layout components */
+.header {
+  height: var(--header-height);
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  z-index: 1;
+}
+
+.centered-heading {
+  text-align: center;
+}
+
+.background-section {
+  width: 100%;
+  height: var(--background-height);
+  background-color: var(--color-background-light);
+}
+
+.content-container {
+  background-color: var(--color-white);
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+}
+
+/* Header elements */
+.logo {
+  max-width: 200px;
+  max-height: 60px;
+}
+
+/* Typography styles */
+h1#title {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  font-family: var(--font-family-system), sans-serif;
+  text-align: left;
+  margin-top: var(--spacing-xl);
+  padding-left: var(--spacing-standard);
+  padding-right: var(--spacing-standard);
+}
+
+h3#title {
+  font-size: var(--font-size-medium);
+  font-family: var(--font-family-system), sans-serif;
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding-left: var(--spacing-standard);
+  padding-right: var(--spacing-standard);
+}
+
+.description {
+  font-size: var(--font-size-default);
+  font-weight: 400;
+  padding-left: var(--spacing-standard);
+  padding-right: var(--spacing-standard);
+}
+
+/* Permission section */
+.permission-row {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-standard);
+}
+
+.permission-row h1#title {
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.checkbox-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* Instructions */
+.instruction-list {
+  margin-top: 0;
+  padding-left: var(--spacing-standard);
+  padding-right: var(--spacing-standard);
+}
+
+.instruction-item {
+  position: relative;
+  padding-bottom: var(--spacing-standard);
+  margin-bottom: var(--spacing-standard);
+  font-size: var(--font-size-default);
+}
+
+.instruction-item:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-divider);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Image placeholders */
+.image-placeholder {
+  width: 240px;
+  height: 200px;
+  background-color: var(--color-placeholder);
+  margin: var(--spacing-large) auto;
+}
+
+.enable-extension-animation {
+  width: 80%;
+  aspect-ratio: 1200 / 426; /* Original dimensions of your iframe */
+  overflow: hidden;
+  margin: 42px 10%;
+}
+
+.enable-extension-animation iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
