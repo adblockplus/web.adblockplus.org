@@ -76,13 +76,38 @@ adblock.uid = function uid(length = 32) {
 /** browsing session uid */
 adblock.sid = adblock.query.get("sid") || adblock.uid();
 
+/** create an object from url params **/
+adblock.URLSearchObject = function URLSearchObject(search) {
+  const params = new URLSearchParams(search);
+  return params.entries().reduce((object, entry) => {
+    const [key, value] = entry;
+    if (object.hasOwnProperty(key)) {
+      if (Array.isArray(object[key])) object[key].push(value);
+      else object[key] = [object[key], value];
+    } else {
+      object[key] = value;
+    }
+    return object;
+  }, {});
+}
+
+const urlParamsJSON = JSON.stringify(adblock.URLSearchObject(location.search));
+
 /** record data/activity via access log entry */
 adblock.log = function log(event, data = {}) {
+  const hardcoded = {
+    logVersion: "1.1.0",
+    event: event,
+    sid: adblock.sid,
+    pagePath: location.pathname,
+    urlParams: urlParamsJSON,
+  };
   const params = new URLSearchParams();
-  params.set("event", event);
-  params.set("sid", adblock.sid);
+  for (const property in hardcoded) {
+    params.set(property, hardcoded[property]);
+  }
   for (const property in data) {
-    if (["event", "sid"].includes(property)) throw new Error("Reserved data property name");
+    if (hardcoded.hasOwnProperty(property)) throw new Error(`adblock.log() recieved data argument with reserved property name: ${property}`);
     if (data[property] == null || data[property] == undefined) continue;
     params.set(property, data[property]);
   }
@@ -92,11 +117,12 @@ adblock.log = function log(event, data = {}) {
 /** logs essential analytics on load */
 window.addEventListener("load", function onLoad() {
   adblock.log("load", {
+    entryVersion: "1.1.0",
     scriptTime,
     loadTime: parseInt(performance.now(), 10),
-    trafficSource: adblock.query.get("s"),
     pageName: adblock.settings.page,
     pageLocale: adblock.settings.locale,
+    trafficSource: adblock.query.get("s"),
     detectedCountry: adblock.settings.detectedCountry,
     detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
     detectedBrowser: adblock.settings.detectedBrowser,
