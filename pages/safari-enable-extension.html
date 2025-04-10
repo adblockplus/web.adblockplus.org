@@ -7,26 +7,23 @@ template=raw
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link rel="stylesheet" href="/abp-for-safari-onboarding/css/style.css">
+    <script src="/abp-for-safari-onboarding/js/replace-inline-images.js"></script>
 </head>
 
 <div class="content">
-    <h3 class="header">{{ safari-enable-extension-title Oops! It looks like the Safari extension isn’t enabled. Here’s how to set it up: }}</h3>
+    <h3 class="header">{{ safari-enable-extension-title Oops! It looks like the Safari extension isn't enabled. Here's how to set it up: }}</h3>
     <div class="enable-extension-animation">
         <iframe src="https://cdn.lottielab.com/l/CtgpuFfjAM5qJh.html" width="1200" height="426"></iframe>
     </div>
 
     <div class="instruction-list">
         <div class="instruction-item">
-            <span>{{ safari-enable-extension-instruction1-part1 1. Tap }}</span>
-            <img src="/abp-for-safari-onboarding/img/safari_menu_icon.svg" alt="Safari menu button">
-            <span>{{ safari-enable-extension-instruction1-part2 icon on the left side of the search field}}</span>
+            {{ safari-enable-extension-instruction1 1. Tap [[IMG:safari_menu_icon]] icon on the left side of the search field}}
         </div>
         <div class="instruction-item">{{ safari-enable-extension-instruction2 2. Tap <strong>"Manage Extensions"</strong>}}</div>
         <div class="instruction-item">{{ safari-enable-extension-instruction3 3. Tap the toggle to turn <strong>on</strong> Adblock Plus and tap <strong>Done</strong>}}</div>
         <div class="instruction-item">
-            <span>{{ safari-enable-extension-instruction4-part1 4. Tap }}</span>
-            <img src="/abp-for-safari-onboarding/img/warning_icon.svg" alt="Warning button">
-            <span>{{ safari-enable-extension-instruction4-part2 next to Adblock Plus}}</span>
+            {{ safari-enable-extension-instruction4 4. Tap [[IMG:warning_icon]] next to Adblock Plus}}
         </div>
         <div class="instruction-item">{{ safari-enable-extension-instruction5 5. Tap <strong>"Always Allow"</strong>}}</div>
         <div class="instruction-item">{{ safari-enable-extension-instruction6 6. Tap <strong>"Always Allow on Every Website"</strong>}}</div>

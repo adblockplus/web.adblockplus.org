@@ -7,6 +7,7 @@ template=raw
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link rel="stylesheet" href="/abp-for-safari-onboarding/css/style.css">
+    <script src="/abp-for-safari-onboarding/js/replace-inline-images.js"></script>
 </head>
 
 <header class="header">
@@ -20,9 +21,7 @@ template=raw
     <div class="image-placeholder"></div>
     <div class="instruction-list">
         <div class="instruction-item">
-            <span>{{ safari-request-permissions-instruction1_part1 1. Tap on the review button at the top or the }}</span>
-            <img src="/abp-for-safari-onboarding/img/safari_menu_icon.svg" alt="Safari menu button">
-            <span>{{ safari-request-permissions-instruction1_part2 in the address bar}}</span>
+            {{ safari-request-permissions-instruction1 1. Tap on the review button at the top or the [[IMG:safari_menu_icon]] in the address bar}}
         </div>
         <div class="instruction-item">{{ safari-request-permissions-instruction2 2. Tap <strong>"Always Allow"</strong>}}</div>
         <div class="instruction-item">{{ safari-request-permissions-instruction3 3. Tap <strong>"Always Allow on Every Website"</strong>}}</div>
