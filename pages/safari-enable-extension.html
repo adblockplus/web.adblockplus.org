@@ -1,0 +1,62 @@
+title=Enable Adblock Plus
+template=raw
+
+<head>
+    <meta name="robots" content="none">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ safari-enable-extension-page-title Enable Adblock Plus }}</title>
+    <link rel="stylesheet" href="/abp-for-safari-onboarding/css/style.css">
+    <script type="module" src="/abp-for-safari-onboarding/js/analytics.js"></script>
+    <script src="/abp-for-safari-onboarding/js/replace-inline-images.js"></script>
+</head>
+
+<div class="content">
+    <h3 class="header">{{ safari-enable-extension-title Oops! It looks like the Safari extension isn't enabled. Here's how to set it up: }}</h3>
+    <div class="enable-extension-animation" id="animation-container">
+        <!-- The iframe will be dynamically inserted here -->
+    </div>
+
+    <div class="instruction-list">
+        <div class="instruction-item">
+            {{ safari-enable-extension-instruction1 1. Tap [[IMG:safari_menu_icon]] icon on the left side of the search field}}
+        </div>
+        <div class="instruction-item">{{ safari-enable-extension-instruction2 2. Tap <strong>"Manage Extensions"</strong>}}</div>
+        <div class="instruction-item">{{ safari-enable-extension-instruction3 3. Tap the toggle to turn <strong>on</strong> Adblock Plus and tap <strong>Done</strong>}}</div>
+        <div class="instruction-item">
+            {{ safari-enable-extension-instruction4 4. Tap [[IMG:warning_icon]] next to Adblock Plus}}
+        </div>
+        <div class="instruction-item">{{ safari-enable-extension-instruction5 5. Tap <strong>"Always Allow"</strong>}}</div>
+        <div class="instruction-item">{{ safari-enable-extension-instruction6 6. Tap <strong>"Always Allow on Every Website"</strong>}}</div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('animation-container');
+        const iframe = document.createElement('iframe');
+
+        if (isDesktopOrIPad()) {
+            // Desktop or iPad animation
+            iframe.src = "https://cdn.lottielab.com/l/3qUKEvsCuFqXuj.html";
+        } else {
+            // iPhone animation
+            iframe.src = "https://cdn.lottielab.com/l/CtgpuFfjAM5qJh.html";
+        }
+
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.border = "none";
+
+        container.appendChild(iframe);
+    });
+
+    function isDesktopOrIPad() {
+        const isIPad = /iPad/.test(navigator.userAgent);
+        const isMacWithTouchSupport = /Macintosh/.test(navigator.userAgent) && 'ontouchend' in document;
+        const isDesktop = !(/iPhone|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent));
+
+        return isIPad || isMacWithTouchSupport || isDesktop;
+    }
+</script>
