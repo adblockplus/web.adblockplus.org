@@ -13,8 +13,8 @@ template=raw
 
 <div class="content">
     <h3 class="header">{{ safari-enable-extension-title Oops! It looks like the Safari extension isn't enabled. Here's how to set it up: }}</h3>
-    <div class="enable-extension-animation">
-        <iframe src="https://cdn.lottielab.com/l/CtgpuFfjAM5qJh.html" width="1200" height="426"></iframe>
+    <div class="enable-extension-animation" id="animation-container">
+        <!-- The iframe will be dynamically inserted here -->
     </div>
 
     <div class="instruction-list">
@@ -30,3 +30,33 @@ template=raw
         <div class="instruction-item">{{ safari-enable-extension-instruction6 6. Tap <strong>"Always Allow on Every Website"</strong>}}</div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('animation-container');
+        const iframe = document.createElement('iframe');
+
+        if (isDesktopOrIPad()) {
+            // Desktop or iPad animation
+            iframe.src = "https://cdn.lottielab.com/l/3qUKEvsCuFqXuj.html";
+        } else {
+            // iPhone animation
+            iframe.src = "https://cdn.lottielab.com/l/CtgpuFfjAM5qJh.html";
+        }
+
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.border = "none";
+
+        container.appendChild(iframe);
+    });
+
+    function isDesktopOrIPad() {
+        const isIPad = /iPad/.test(navigator.userAgent);
+        const isMacWithTouchSupport = /Macintosh/.test(navigator.userAgent) && 'ontouchend' in document;
+        const isDesktop = !(/iPhone|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent));
+
+        return isIPad || isMacWithTouchSupport || isDesktop;
+    }
+</script>
