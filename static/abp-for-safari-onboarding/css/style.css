@@ -79,7 +79,8 @@ body {
 /* Header elements */
 .logo {
   max-width: 245px;
-  max-height: 60px;
+  margin-top: var(--spacing-large);
+  margin-bottom: var(--spacing-large);
 }
 
 /* Typography styles */
@@ -133,7 +134,7 @@ h3#title {
 
 /* Instructions */
 .instruction-list {
-  margin-top: 0;
+  margin-top: var(--spacing-large);
   padding-left: var(--spacing-standard);
   padding-right: var(--spacing-standard);
 }
@@ -154,14 +155,6 @@ h3#title {
   position: absolute;
   bottom: 0;
   left: 0;
-}
-
-/* Image placeholders */
-.image-placeholder {
-  width: 240px;
-  height: 200px;
-  background-color: var(--color-placeholder);
-  margin: var(--spacing-large) auto;
 }
 
 .enable-extension-animation {
