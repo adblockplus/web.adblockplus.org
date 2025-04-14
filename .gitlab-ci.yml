@@ -298,9 +298,3 @@ automated_tests:
   variables:
     DEPLOY_URL: $FIREBASE_DOMAIN
   needs: ["deploy_firebase_hosting:review"]
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      when: always
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-      when: never
-
