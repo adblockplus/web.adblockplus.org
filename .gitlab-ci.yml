@@ -297,7 +297,7 @@ automated_tests:
     branch: "Websites-Robert" # will be removed after testing concludes
   variables:
     DEPLOY_URL: $FIREBASE_DOMAIN
-  needs: ["deploy_firebase_hosting:review:staging"]
+  needs: ["deploy_firebase"]
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       when: always
