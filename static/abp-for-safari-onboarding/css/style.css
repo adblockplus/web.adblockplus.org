@@ -16,7 +16,9 @@
   --font-size-default: 17px;
 
   /* Spacing */
+  --spacing-tiny: 4px;
   --spacing-standard: 16px;
+  --spacing-medium: 24px;
   --spacing-large: 42px;
   --spacing-xl: 72px;
 
@@ -50,8 +52,9 @@ body {
 
 .centered-heading {
   text-align: center;
-  padding-left: var(--spacing-standard);
-  padding-right: var(--spacing-standard);
+  margin-top: var(--spacing-medium);
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
 }
 
 .centered-heading p {
@@ -61,6 +64,10 @@ body {
 
 .centered-heading p:not(:last-child) {
   margin-bottom: 5px;
+}
+
+.large-text {
+  font-size: 24px;
 }
 
 .background-section {
@@ -80,63 +87,33 @@ body {
 .logo {
   max-width: 245px;
   margin-top: var(--spacing-large);
-  margin-bottom: var(--spacing-large);
+  margin-bottom: var(--spacing-medium);
 }
 
 /* Typography styles */
-h1#title {
+.title {
   font-size: var(--font-size-large);
-  font-weight: 700;
-  font-family: var(--font-family-system), sans-serif;
-  text-align: left;
-  margin-top: var(--spacing-xl);
-  padding-left: var(--spacing-standard);
-  padding-right: var(--spacing-standard);
-}
-
-h3#title {
-  font-size: var(--font-size-medium);
+  font-weight: 400;
   font-family: var(--font-family-system), sans-serif;
   text-align: center;
-  margin-top: var(--spacing-xl);
-  padding-left: var(--spacing-standard);
-  padding-right: var(--spacing-standard);
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
+  margin-top: var(--spacing-medium);
+  margin-bottom: var(--spacing-large);
 }
 
 .description {
   font-size: var(--font-size-default);
   font-weight: 400;
-  padding-left: var(--spacing-standard);
-  padding-right: var(--spacing-standard);
-}
-
-/* Permission section */
-.permission-row {
-  display: flex;
-  align-items: center;
-  padding: var(--spacing-standard);
-}
-
-.permission-row h1#title {
-  margin: 0;
-  padding: 0;
-  font-size: var(--font-size-large);
-  font-weight: 700;
-  line-height: 30px;
-}
-
-.checkbox-icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  flex-shrink: 0;
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
 }
 
 /* Instructions */
 .instruction-list {
   margin-top: var(--spacing-large);
-  padding-left: var(--spacing-standard);
-  padding-right: var(--spacing-standard);
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
 }
 
 .instruction-item {
@@ -157,11 +134,44 @@ h3#title {
   left: 0;
 }
 
+.feature-list {
+  margin-top: var(--spacing-large);
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
+}
+
+.feature-item {
+  position: relative;
+  padding-bottom: var(--spacing-tiny);
+  margin-bottom: var(--spacing-tiny);
+  font-size: 16px;
+  font-weight: 590;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-divider);
+  margin-left: var(--spacing-standard);
+  margin-right: var(--spacing-standard);
+}
+
+a {
+  color: #2284F7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover, a:visited, a:active {
+  color: #2284F7;
+  text-decoration: none;
+}
+
 .enable-extension-animation {
   width: 80%;
   aspect-ratio: 1200 / 426; /* Original dimensions of your iframe */
   overflow: hidden;
-  margin: 42px 10%;
+  margin: var(--spacing-medium) 10%;
 }
 
 .enable-extension-animation iframe {
