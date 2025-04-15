@@ -213,6 +213,8 @@ deploy_firebase_hosting:review:
     name: review/$CI_COMMIT_REF_SLUG
     url: $REVIEW_URL
     on_stop: teardown_firebase_hosting:review
+  artifacts:
+    URL: $REVIEW_URL
 
 teardown_firebase_hosting:review:
   stage: deploy_firebase
