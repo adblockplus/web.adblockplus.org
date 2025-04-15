@@ -294,7 +294,7 @@ automated_tests:
   stage: test
   trigger:
     project: "eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests"
-    branch: "Websites-Robert" # will be removed after testing concludes
+    branch: "carly-abp" # will be removed after testing concludes
   variables:
     RUN_TEST: "adblockpluse2etest"
     REVIEW_URL: $REVIEW_URL
