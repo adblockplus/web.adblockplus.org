@@ -1984,6 +1984,10 @@ export const checkout = adblock.api.checkout = function checkout(options) {
 
   flow = flow || pageName;
 
+  coupon = coupon || adblock.query.get("coupon");
+
+  email = email || adblock.query.get("email");
+
   trial = Number.isInteger(parseFloat(trial)) ? parseInt(trial, 10) : "0";
 
   // FIXME: We should only use this temporarily to avoid breaking ongoing conversion.com experiments
