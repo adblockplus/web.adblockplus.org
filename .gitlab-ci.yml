@@ -293,7 +293,7 @@ deploy_firebase_hosting:production:
 automated_tests:
   stage: test
   trigger:
-    project: "eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests"
+    project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
     branch: "carly-abp" # will be removed after testing concludes
   variables:
     RUN_TEST: "adblockpluse2etest"
