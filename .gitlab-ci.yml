@@ -296,5 +296,5 @@ automated_tests:
     project: "eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests"
     branch: "Websites-Robert" # will be removed after testing concludes
   variables:
-    DEPLOY_URL: $FIREBASE_DOMAIN
+    DEPLOY_URL: $REVIEW_URL
   needs: ["deploy_firebase_hosting:review"]
