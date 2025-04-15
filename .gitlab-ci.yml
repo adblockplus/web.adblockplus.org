@@ -213,6 +213,8 @@ deploy_firebase_hosting:review:
     name: review/$CI_COMMIT_REF_SLUG
     url: $REVIEW_URL
     on_stop: teardown_firebase_hosting:review
+  artifacts:
+    URL: $REVIEW_URL
 
 teardown_firebase_hosting:review:
   stage: deploy_firebase
@@ -297,5 +299,4 @@ automated_tests:
     branch: "carly-abp" # will be removed after testing concludes
   variables:
     RUN_TEST: "adblockpluse2etest"
-    REVIEW_URL: $CI_COMMIT_REF_SLUG
   needs: ["deploy_firebase_hosting:review"]
