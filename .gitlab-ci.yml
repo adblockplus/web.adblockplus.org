@@ -25,7 +25,6 @@ stages:
   - deploy_cloud_run
   - deploy_firebase
   - test
-  - test
 
 pre_review_build:
   stage: prebuild_firebase
@@ -297,10 +296,6 @@ automated_tests:
     project: "eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests"
     branch: "carly-abp" # will be removed after testing concludes
   variables:
-<<<<<<< HEAD
     RUN_TEST: "adblockpluse2etest"
     REVIEW_URL: $REVIEW_URL
-=======
-    DEPLOY_URL: $REVIEW_URL
->>>>>>> 0360eb9d (Update URL to REVIEW_URL)
   needs: ["deploy_firebase_hosting:review"]
