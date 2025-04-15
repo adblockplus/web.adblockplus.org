@@ -25,6 +25,7 @@ stages:
   - deploy_cloud_run
   - deploy_firebase
   - test
+  - test
 
 pre_review_build:
   stage: prebuild_firebase
