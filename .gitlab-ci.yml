@@ -296,6 +296,6 @@ automated_tests:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
     branch: "carly-abp" # will be removed after testing concludes
   variables:
-<<<<<<< HEAD
     RUN_TEST: "adblockpluse2etest"
     REVIEW_URL: "$REVIEW_URL"
+  needs: ["deploy_firebase_hosting:review"]
