@@ -297,4 +297,7 @@ automated_tests:
     branch: "carly-abp" # will be removed after testing concludes
   variables:
     RUN_TEST: "adblockpluse2etest"
-    REVIEW_URL: $CI_COMMIT_REF_SLUG
+    REVIEW_URL: "$REVIEW_URL"
+  needs:
+    - pre_review_build
+
