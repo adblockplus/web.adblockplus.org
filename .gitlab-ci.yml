@@ -297,5 +297,5 @@ automated_tests:
     branch: "Websites-Robert" # will be removed after testing concludes
   variables:
     RUN_TEST: "adblockpluse2etest"
-    REVIEW_URL: "$REVIEW_URL"
+    REVIEW_URL: $REVIEW_URL
   needs: ["deploy_firebase_hosting:review"]
