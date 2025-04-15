@@ -292,11 +292,9 @@ deploy_firebase_hosting:production:
 
 automated_tests:
   stage: test
-  dependencies:
-    - pre_review_build
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
     branch: "carly-abp" # will be removed after testing concludes
   variables:
     RUN_TEST: "adblockpluse2etest"
-    REVIEW_URL: $REVIEW_URL
+    REVIEW_URL: $CI_COMMIT_REF_SLUG
