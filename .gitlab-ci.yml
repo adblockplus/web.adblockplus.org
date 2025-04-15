@@ -300,4 +300,4 @@ automated_tests:
     REVIEW_URL: "$REVIEW_URL"
   needs:
     - pre_review_build
-
+    - deploy_firebase_hosting:review
