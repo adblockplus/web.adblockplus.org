@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-import { getAnalytics, setUserId } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+import { getAnalytics, setUserId, logEvent } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,3 +29,15 @@ const userId = params.get('user_id');
 if (userId) {
     setUserId(analytics, userId);
 }
+
+// Get current page information
+const pagePath = window.location.pathname;
+const pageName = pagePath.split('/').pop().replace('.html', '');
+
+logEvent(analytics, 'page_view', {
+    page_title: document.title,
+    page_path: pagePath,
+    page_name: pageName
+});
+
+console.log(`Analytics event logged: page_view for ${pageName}`);
