@@ -298,6 +298,3 @@ automated_tests:
   variables:
     RUN_TEST: "adblockpluse2etest"
     REVIEW_URL: "$REVIEW_URL"
-  needs:
-    - pre_review_build
-    - deploy_firebase_hosting:review
