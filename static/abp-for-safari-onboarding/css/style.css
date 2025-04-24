@@ -83,9 +83,25 @@ body {
   padding-top: 20px;
 }
 
+.centered-footer {
+  text-align: center;
+  margin-top: var(--spacing-medium);
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
+}
+
+.centered-footer p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.centered-footer p:not(:last-child) {
+  margin-bottom: 5px;
+}
+
 /* Header elements */
 .logo {
-  max-width: 245px;
+  max-width: 145px;
   margin-top: var(--spacing-large);
   margin-bottom: var(--spacing-medium);
 }
