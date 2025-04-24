@@ -297,4 +297,4 @@ automated_tests:
     branch: "carly-abp" # will be removed after testing concludes
   variables:
     PROJECT: "e2eabp"
-    REVIEW_URL: "$REVIEW_URL"
+    URL: "$REVIEW_URL"
