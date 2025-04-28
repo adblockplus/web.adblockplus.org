@@ -208,13 +208,15 @@
       {
         "source": "/user.json",
         "headers": [{
-          "Access-Control-Allow-Origin": "*"
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }]
       },
       {
         "source": "/julian.png",
         "headers": [{
-          "Access-Control-Allow-Origin": "*"
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }]
       }
     ]
