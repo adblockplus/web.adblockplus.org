@@ -111,6 +111,13 @@ body {
   margin-bottom: var(--spacing-medium);
 }
 
+/* Header elements */
+.logo-large {
+  max-width: 254px;
+  margin-top: var(--spacing-large);
+  margin-bottom: var(--spacing-medium);
+}
+
 /* Typography styles */
 .title {
   font-size: var(--font-size-large);
