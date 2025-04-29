@@ -294,7 +294,6 @@ automated_tests:
   stage: test
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
-    branch: "carly-abp" # will be removed after testing concludes
   variables:
     PROJECT: "e2eabp"
     URL: "$REVIEW_URL"
