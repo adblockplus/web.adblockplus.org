@@ -204,6 +204,20 @@
             "value": "no-cache"
           }
         ]
+      },
+      {
+        "source": "/user.json",
+        "headers": [{
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }]
+      },
+      {
+        "source": "/julian.png",
+        "headers": [{
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }]
       }
     ]
   }
