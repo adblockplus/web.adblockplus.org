@@ -297,4 +297,4 @@ automated_tests:
     branch: "fix-abp-run"
   variables:
     PROJECT: "e2eabp"
-    URL: ""
+    URL: "$REVIEW_URL"
