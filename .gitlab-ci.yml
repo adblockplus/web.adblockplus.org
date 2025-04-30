@@ -294,6 +294,7 @@ automated_tests:
   stage: test
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
+    branch: "fix-abp_run"
   variables:
     PROJECT: "e2eabp"
     URL: "$REVIEW_URL"
