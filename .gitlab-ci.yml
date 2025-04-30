@@ -24,6 +24,7 @@ stages:
   - build_firebase
   - deploy_cloud_run
   - deploy_firebase
+  - test
 
 pre_review_build:
   stage: prebuild_firebase
@@ -288,3 +289,11 @@ deploy_firebase_hosting:production:
     url: $FIREBASE_DOMAIN
   only:
     - master
+
+automated_tests:
+  stage: test
+  trigger:
+    project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
+  variables:
+    PROJECT: "e2eabp"
+    URL: "$REVIEW_URL"
