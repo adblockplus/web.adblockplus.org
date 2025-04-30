@@ -159,8 +159,7 @@ function verifyEmail(email) {
       } else {
         reject({ reason: "response", response });
       }
-    })
-    .catch(reject);
+    });
     setTimeout(() => reject({ reason: "timeout" }), REQUEST_TIMEOUT);
   });
 }
@@ -194,7 +193,6 @@ function verifyCode(code) {
         reject({ reason: "response", response });
       }
     })
-    .catch(reject);
     setTimeout(() => reject({ reason: "timeout" }), REQUEST_TIMEOUT);
   });
 }
@@ -528,8 +526,8 @@ async function goto(nextStep, state, log) {
 //
 // with steps.error on error.
 steps.purchase.on("checkout-now", async () => {
-  flow = "purchase";
   try {
+    flow = "purchase";
     const frequency = steps.purchase.getSelectedValue();
     const currency = steps.purchase.getCurrency();
     const amount = PRICES[currency][frequency];
@@ -538,7 +536,7 @@ steps.purchase.on("checkout-now", async () => {
     checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
     checkout({product, currency, frequency, amount, flow});
   } catch (error) {
-    adblock.logError("premium.checkout", error);
+    adblock.logScriptError("premium.checkout", error);
     await goto(steps.error);
   }
 });
@@ -566,29 +564,29 @@ steps.purchase.on("restore-purchase", () => {
 });
 
 steps.verifyEmail.on("submit", async () => {
-  await goto(steps.loading);
-  email = steps.verifyEmail.getValue();
   try {
+    await goto(steps.loading);
+    email = steps.verifyEmail.getValue();
     verifyEmail(email)
     .then(() => goto(steps.verifyCode))
     .catch(rejection => {
-      adblock.logRejection("premium.verifyEmail", rejection);
+      adblock.logServiceError("premium.verifyEmail", rejection);
       goto(steps.error);
     });
   } catch (error) {
-    adblock.logError("premium.verifyEmail", error);
+    adblock.logScriptError("premium.verifyEmail", error);
   }
 });
 
 steps.verifyCode.on("submit", async () => {
-  await goto(steps.loading);
   try {
+    await goto(steps.loading);
     verifyCode(steps.verifyCode.getValue())
     .then(() => {
       activatePremium()
       .then(() => goto(steps.reactivated))
       .catch(rejection => {
-        adblock.logRejection("premium.verifyCode", rejection);
+        adblock.logServiceError("premium.verifyCode", rejection);
         goto(steps.error);
       });
     })
@@ -597,12 +595,12 @@ steps.verifyCode.on("submit", async () => {
         await goto(steps.verifyCode);
         steps.verifyCode.showError();
       } else {
-        adblock.logRejection("premium.verifyCode", rejection);
+        adblock.logServiceError("premium.verifyCode", rejection);
         goto(steps.error);
       }
     });
   } catch (error) {
-    adblock.logError("premium.verifyCode", error);
+    adblock.logScriptError("premium.verifyCode", error);
   }
 });
 
@@ -631,58 +629,72 @@ steps.verifyCode.on("submit", async () => {
 // with steps.error on error.
 if (adblock.query.has("premium-checkout__fake-error")) {
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
-  goto(steps.error, undefined, false);
+  await goto(steps.error, undefined, false);
   card.scrollIntoView();
 } else if (
   adblock.query.has("premium-checkout__handoff")
   || adblock.query.has("premium-checkout__flow")
 ) {
-  flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
-  userid = adblock.query.get("premium-checkout__premiumId") || userid;
-  const currency = adblock.query.get("premium-checkout__currency");
-  const frequency = adblock.query.get("premium-checkout__frequency");
-  const amount = adblock.query.get("premium-checkout__amount");
-  card.scrollIntoView();
-  const handleAdblockPlusDetected = async () => {
-    await goto(steps.loading);
-    await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
-    activatePremium()
-    .then(() => {
-      if (currency && frequency && amount) {
-        goto(steps.activated, { currency, frequency, amount });
-      } else {
-        goto(steps.reactivated);
-      }
-    })
-    .catch(rejection => {
-      adblock.logRejection("premium.activate", rejection);
-    })
-  };
-  if (adblock.adblockPlus) {
-    await handleAdblockPlusDetected();
-  } else {
-    if (currency && frequency && amount) {
-      await goto(steps.activated, { currency, frequency, amount });
+  try {
+    flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
+    userid = adblock.query.get("premium-checkout__premiumId") || userid;
+    const currency = adblock.query.get("premium-checkout__currency");
+    const frequency = adblock.query.get("premium-checkout__frequency");
+    const amount = adblock.query.get("premium-checkout__amount");
+    card.scrollIntoView();
+    const handleAdblockPlusDetected = async () => {
+      await goto(steps.loading);
+      await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
+      activatePremium()
+      .then(() => {
+        if (currency && frequency && amount) {
+          goto(steps.activated, { currency, frequency, amount });
+        } else {
+          goto(steps.reactivated);
+        }
+      })
+      .catch(rejection => {
+        adblock.logServiceError("premium.activate", rejection);
+      })
+    };
+    if (adblock.adblockPlus) {
+      await handleAdblockPlusDetected();
     } else {
-      await goto(steps.reactivated);
+      if (currency && frequency && amount) {
+        await goto(steps.activated, { currency, frequency, amount });
+      } else {
+        await goto(steps.reactivated);
+      }
+      adblock.afterAdblockPlusDetected(handleAdblockPlusDetected);
     }
-    adblock.afterAdblockPlusDetected(handleAdblockPlusDetected);
+  } catch (error) {
+    adblock.logScriptError("premium.handoff", error);
   }
 } else if (
   window.location.pathname.endsWith("/restore-purchase")
   || adblock.query.has("restore-purchase")
   || adblock.query.has("already-contributed")
 ) {
-  flow = "restore-purchase";
-  goto(steps.verifyEmail);
-  card.scrollIntoView();
+  try {
+    flow = "restore-purchase";
+    await goto(steps.verifyEmail);
+    card.scrollIntoView();  
+  } catch (error) {
+    adblock.logScriptError("premium.restore-purchase", error);
+  }
 } else {
-  goto(steps.purchase, undefined, false);
-  // see skeleton API in globals
-  document.querySelectorAll(".skeleton").forEach(element => {
-    element.classList.remove("skeleton");
-  });
+  try {
+    await goto(steps.purchase, undefined, false);
+  } catch (error) {
+    adblock.logScriptError("premium.purchase", error);
+  }
 }
+
+// see skeleton API in globals
+document.querySelectorAll(".skeleton").forEach(element => {
+  element.classList.remove("skeleton");
+});
+
 
 if (
   typeof gtag == "function"

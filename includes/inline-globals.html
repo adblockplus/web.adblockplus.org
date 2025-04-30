@@ -114,12 +114,12 @@ adblock.log = function log(event, data = {}) {
   return fetch(`/access?${params.toString()}`);
 }
 
-adblock.logError = function logError(from, error) {
-  return adblock.log("error", { from, message: error?.message, lineNumber: error?.lineNumber});
+adblock.logScriptError = function logScriptError(source, error) {
+  return adblock.log("script-error", { source, message: error?.message, lineNumber: error?.lineNumber});
 }
 
-adblock.logRejection = function logRejection(from, rejection) {
-  return adblock.log("rejection", { from, reason: rejection?.reason, response: JSON.stringify(rejection?.response)});
+adblock.logServiceError = function logServiceError(source, rejection) {
+  return adblock.log("service-error", { source, reason: rejection?.reason, response: JSON.stringify(rejection?.response)});
 }
 
 /** logs essential analytics on load */
