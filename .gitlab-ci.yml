@@ -296,3 +296,4 @@ automated_tests:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
   variables:
     PROJECT: "e2eabp"
+    URL: "$REVEW_URL"
