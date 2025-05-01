@@ -503,17 +503,20 @@ let lastStep = {
  * @param {object} [state]
  */
 async function goto(nextStep, state, log) {
-  if (log !== false) {
-    checkoutLog("premium-checkout__step", {
-      last: lastStep.name,
-      next: nextStep.name,
-    });
+  try {
+    if (log !== false) {
+      checkoutLog("premium-checkout__step", {
+        last: lastStep.name,
+        next: nextStep.name,
+      });
+    }
+    await lastStep.hide();
+    await nextStep.render(state);
+    await new Promise(resolve => setTimeout(resolve, 100));
+    await nextStep.show();
+  } finally {
+    lastStep = nextStep;
   }
-  await lastStep.hide();
-  await nextStep.render(state);
-  await new Promise(resolve => setTimeout(resolve, 100));
-  await nextStep.show();
-  lastStep = nextStep;
 }
 
 // PURCHASE FLOW ///////////////////////////////////////////////////////////////
@@ -559,8 +562,13 @@ checkoutEvents.on("checkout.completed", () => checkoutLog("premium-checkout__pad
 //
 // with loading steps in between and error steps on error.
 steps.purchase.on("restore-purchase", () => {
-  flow = "restore-purchase";
-  goto(steps.verifyEmail);
+  try {
+    flow = "restore-purchase";
+    goto(steps.verifyEmail);  
+  } catch (error) {
+    adblock.logScriptError("premium.verifyEmail", error);
+    goto(steps.error);
+  }
 });
 
 steps.verifyEmail.on("submit", async () => {
@@ -575,6 +583,7 @@ steps.verifyEmail.on("submit", async () => {
     });
   } catch (error) {
     adblock.logScriptError("premium.verifyEmail", error);
+    goto(steps.error);
   }
 });
 
@@ -601,6 +610,7 @@ steps.verifyCode.on("submit", async () => {
     });
   } catch (error) {
     adblock.logScriptError("premium.verifyCode", error);
+    goto(steps.error);
   }
 });
 
@@ -655,6 +665,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
       })
       .catch(rejection => {
         adblock.logServiceError("premium.activate", rejection);
+        goto(steps.error);
       })
     };
     if (adblock.adblockPlus) {
@@ -669,6 +680,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     }
   } catch (error) {
     adblock.logScriptError("premium.handoff", error);
+    goto(steps.error);
   }
 } else if (
   window.location.pathname.endsWith("/restore-purchase")
@@ -681,12 +693,14 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     card.scrollIntoView();  
   } catch (error) {
     adblock.logScriptError("premium.restore-purchase", error);
+    goto(steps.error);
   }
 } else {
   try {
     await goto(steps.purchase, undefined, false);
   } catch (error) {
     adblock.logScriptError("premium.purchase", error);
+    goto(steps.error);
   }
 }
 
