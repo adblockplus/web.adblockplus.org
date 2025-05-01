@@ -1,0 +1,24 @@
+.content ol {
+  list-style-type: none;
+  counter-reset: item;
+  padding: 0;
+}
+
+.content ol > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.5em;
+}
+
+.content ol > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.5em;
+  font-weight: bolder;
+}
+
+.content li ol > li { margin: 0; }
+
+.content li ol > li:before { content: counters(item, ".") " "; }
+
+.content ol li p { margin: 0.5rem 0; }
