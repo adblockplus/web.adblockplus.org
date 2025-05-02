@@ -97,7 +97,7 @@ window.addEventListener("message", response => {
     if (response.data.ack) {
       resolvePremiumActivation(response.data);
     } else {
-      rejectPremiumActivation(response.data);
+      rejectPremiumActivation({ reason: "response", response: response.data });
     }
   }
 });
@@ -143,6 +143,7 @@ function activatePremium() {
  */
 function verifyEmail(email) {
   checkoutLog("premium-checkout__email");
+  let status;
   return new Promise((resolve, reject) => {
     fetch("https://myadblock.licensing.adblockplus.dev/license/api/", {
       method: 'POST',
@@ -152,12 +153,15 @@ function verifyEmail(email) {
         email: email
       })
     })
-    .then(response => response.json())
+    .then(response => {
+      status = response.status;
+      return response.json()
+    })
     .then(response => {
       if (typeof response == "object" && response.success) {
         resolve();
       } else {
-        reject({ reason: "response", response });
+        reject({ reason: "response", response, status });
       }
     });
     setTimeout(() => reject({ reason: "timeout" }), REQUEST_TIMEOUT);
@@ -175,6 +179,7 @@ function verifyEmail(email) {
  */
 function verifyCode(code) {
   checkoutLog("premium-checkout__code");
+  let status;
   return new Promise((resolve, reject) => {
     fetch("https://myadblock.licensing.adblockplus.dev/license/api/", {
       method: 'POST',
@@ -185,12 +190,15 @@ function verifyCode(code) {
         userid,
       })
     })
-    .then(response => response.json())
+    .then(response => {
+      status = response.status;
+      return response.json()
+    })
     .then(response => {
       if (typeof response == "object" && response.success) {
         resolve(response);
       } else {
-        reject({ reason: "response", response });
+        reject({ reason: "response", response, status });
       }
     })
     setTimeout(() => reject({ reason: "timeout" }), REQUEST_TIMEOUT);
@@ -595,7 +603,7 @@ steps.verifyCode.on("submit", async () => {
       activatePremium()
       .then(() => goto(steps.reactivated))
       .catch(rejection => {
-        adblock.logServiceError("premium.verifyCode", rejection);
+        adblock.logServiceError("premium.reactivate", rejection);
         goto(steps.error);
       });
     })
