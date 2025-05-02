@@ -52,37 +52,37 @@ style=terms.css
 
     1. **Application.**  The terms and conditions under this Section 7 only apply to your use of the subscriptions of the Services. In the event of any conflict between the terms and conditions of this Section 7 and the other terms and conditions of these Terms, the terms and conditions of this Section 7 will govern but solely with respect to the subject matter of this Section.
 
-1. **Right of Withdrawal of Contract under German Law.**
+    1. **Right of Withdrawal of Contract under German Law.**
 
-    1. Under German law, you are entitled to a statutory right of withdrawal from a contract when entering into contracts for certain consumer transactions. Subject to Section 7.2.2 below, this right can be exercised at any time within 14 days from entering into the contract for the transaction (the “**Withdrawal Period**”). For clarity, your statutory Withdrawal Period commences on the date that you receive an e-mail confirmation of your purchase of the subscription of the Services.
+        1. Under German law, you are entitled to a statutory right of withdrawal from a contract when entering into contracts for certain consumer transactions. Subject to Section 7.2.2 below, this right can be exercised at any time within 14 days from entering into the contract for the transaction (the “**Withdrawal Period**”). For clarity, your statutory Withdrawal Period commences on the date that you receive an e-mail confirmation of your purchase of the subscription of the Services.
 
-    1. Your statutory right of withdrawal from a contract under German law expires for contracts for the supply of digital content that is not based on a tangible medium upon the occurrence of the following events:
+        1. Your statutory right of withdrawal from a contract under German law expires for contracts for the supply of digital content that is not based on a tangible medium upon the occurrence of the following events:
 
-        1. the vendor (e.g., us) has begun to perform the contract;
+            1. the vendor (e.g., us) has begun to perform the contract;
 
-        1. the consumer (e.g., you) has expressly agreed that the vendor may begin to perform the contract before the end of the withdrawal period;
+            1. the consumer (e.g., you) has expressly agreed that the vendor may begin to perform the contract before the end of the withdrawal period;
 
-        1. on commencement of performance of the contract, if the consumer has confirmed that he is aware that his right of withdrawal from a contract will expire as a result of his consent in accordance with Section 7.2.2.2 above; and 
+            1. on commencement of performance of the contract, if the consumer has confirmed that he is aware that his right of withdrawal from a contract will expire as a result of his consent in accordance with Section 7.2.2.2 above; and 
 
-        1. the vendor has provided the consumer with a confirmation in accordance with Section 312(f) of the German Civil Code.
+            1. the vendor has provided the consumer with a confirmation in accordance with Section 312(f) of the German Civil Code.
 
-1. **Multiple Installations.**  During the period of time that your subscription of the Services is active, you may install and re-install the subscription on all your supported devices without incurring any additional costs. 
+    1. **Multiple Installations.**  During the period of time that your subscription of the Services is active, you may install and re-install the subscription on all your supported devices without incurring any additional costs. 
 
-1. **Premium Services Term and Termination.**
+    1. **Premium Services Term and Termination.**
 
-    1. These Terms will become effective with respect to your use of the subscription of the Services on the date that you receive an e-mail confirmation of your purchase of the subscription and will continue in effect until your subscription is no longer active.
+        1. These Terms will become effective with respect to your use of the subscription of the Services on the date that you receive an e-mail confirmation of your purchase of the subscription and will continue in effect until your subscription is no longer active.
 
-    1. At the end of each subscription period, your subscription of the Services will automatically renew for additional subscription periods that are each equal in duration to the subscription period that had just lapsed. For example:
+        1. At the end of each subscription period, your subscription of the Services will automatically renew for additional subscription periods that are each equal in duration to the subscription period that had just lapsed. For example:
 
-        1. For 1-year subscription periods, your subscription of the Services will automatically renew for additional 1-year subscription periods.
+            1. For 1-year subscription periods, your subscription of the Services will automatically renew for additional 1-year subscription periods.
 
-        1. For 1-month subscription periods, your subscription of the Services will automatically renew for additional 1-month subscription periods.
+            1. For 1-month subscription periods, your subscription of the Services will automatically renew for additional 1-month subscription periods.
 
-    1. You will be charged the then-current price for subscriptions of the Services that is valid at the time of your renewal.
+        1. You will be charged the then-current price for subscriptions of the Services that is valid at the time of your renewal.
 
-    1. You may terminate your subscription of the Services at any time during your subscription period.
+        1. You may terminate your subscription of the Services at any time during your subscription period.
 
-    1. Each of our (i.e., you and eyeo) right to extraordinary termination of these Terms for good cause remains unaffected. An important reason exists in particular if one party intentionally or negligently violates an essential obligation from this contract and therefore the terminating party can no longer be reasonably expected to adhere to the contract.
+        1. Each of our (i.e., you and eyeo) right to extraordinary termination of these Terms for good cause remains unaffected. An important reason exists in particular if one party intentionally or negligently violates an essential obligation from this contract and therefore the terminating party can no longer be reasonably expected to adhere to the contract.
 
 1. **Dispute resolution.**  The European Commission provides a platform for online dispute resolution (OS). This can be accessed via the following link: https://ec.europa.eu/consumers/odr. eyeo GmbH is neither obliged nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
