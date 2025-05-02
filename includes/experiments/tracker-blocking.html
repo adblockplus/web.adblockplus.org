@@ -1,0 +1,77 @@
+<style>
+  .tracker-blocking--active .update-header-section-3 { display: none; }
+
+  .tracker-blocking {
+    display: none;
+    padding: 1.875rem 1rem;
+  }
+
+  .tracker-blocking--active .tracker-blocking {
+    display: block;
+  }
+
+  .tracker-blocking__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.875rem;
+  }
+
+  .tracker-blocking__body {
+    max-width: 22.75rem;
+  }
+
+  .tracker-blocking__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    line-height: 140%;
+    margin-top: 0;
+    margin-bottom: 0.625rem;
+  }
+
+  .tracker-blocking__badge {
+    display: flex;
+    border-radius: 4px;
+    background: #FFCA00;
+    padding: 0.1rem 0.5rem 0 0.5rem;
+    font-size: 1rem;
+    line-height: 140%;
+    height: 1.5rem;
+  }
+
+  .tracker-blocking__text {
+    margin: 0.625rem 0 0 0;
+    line-height: 140%;
+  }
+</style>
+
+<aside id="tracker-blocking" class="bg-light-blue tracker-blocking">
+  <div class="tracker-blocking__container">
+    <img
+      class="tracker-blocking__image"
+      src="/experiments/tracker-blocking/featured.svg"
+      height="93"
+      width="93"
+      alt="">
+    <div class="tracker-blocking__body">
+      <header>
+        <h2 class="tracker-blocking__heading">
+          <span class="tracker-blocking__badge">NEW!</span>
+          Block Trackers
+        </h2>
+      </header>
+      <p class="tracker-blocking__text">
+        Ads contain unseen trackers that follow you around. AdBlock Premium blocks them for you!
+      </p>
+    </div>
+  </div>
+</aside>
+
+<script>(() => {
+  if (adblock.query.has("tracker-blocking")) {
+    document.documentElement.classList.add("tracker-blocking--active");
+  }
+})()</script>
