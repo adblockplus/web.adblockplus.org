@@ -148,7 +148,7 @@ adblock.logServiceError = function logServiceError(source, rejection) {
     response: JSON.stringify(rejection?.response),
     browser: adblock.settings.detectedOperatingSystem,
     os: adblock.settings.detectedOperatingSystem,
-    ABPInstalled: !!adbolck?.adblockPlus,
+    ABPInstalled: !!adblock?.adblockPlus,
     ABPPremium: !!adblock?.adblockPlus?.isPremium,
     ABPVersion: adblock?.adblockPLus?.version,
   });
