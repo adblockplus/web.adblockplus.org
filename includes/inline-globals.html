@@ -114,6 +114,46 @@ adblock.log = function log(event, data = {}) {
   return fetch(`/access?${params.toString()}`);
 }
 
+/**
+ * @param {string} source - Where did the error come from?
+ * @param {Error} error - The Error that was thrown
+ * @returns {Promise}
+ */
+adblock.logScriptError = function logScriptError(source, error) {
+  return adblock.log("script-error", {
+    source,
+    message: error?.message,
+    stack: error?.stack,
+    browser: adblock.settings.detectedBrowser,
+    os: adblock.settings.detectedOperatingSystem,
+    ABPInstalled: !!adblock?.adblockPlus,
+    ABPPremium: !!adblock?.adblockPlus?.isPremium,
+    ABPVersion: adblock?.adblockPLus?.version,
+  });
+}
+
+/**
+ * @param {string} source - Where did the rejection come from?
+ * @param {Object} rejection
+ * @param {string} rejection.reason - Categorize why the rejection occurd by name e.g. (response|timeout)
+ * @param {string} rejection.status - The HTTP status that was returned, if relevant
+ * @param {Object|string} rejection.response - The response data that we recieved from the server (must be JSON stringifyable)
+ * @returns {Promise}
+ */
+adblock.logServiceError = function logServiceError(source, rejection) {
+  return adblock.log("service-error", {
+    source,
+    reason: rejection?.reason,
+    status: rejection?.status,
+    response: JSON.stringify(rejection?.response),
+    browser: adblock.settings.detectedBrowser,
+    os: adblock.settings.detectedOperatingSystem,
+    ABPInstalled: !!adblock?.adblockPlus,
+    ABPPremium: !!adblock?.adblockPlus?.isPremium,
+    ABPVersion: adblock?.adblockPLus?.version,
+  });
+}
+
 /** logs essential analytics on load */
 window.addEventListener("load", function onLoad() {
   adblock.log("load", {
