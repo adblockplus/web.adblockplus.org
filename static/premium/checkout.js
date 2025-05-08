@@ -600,6 +600,7 @@ steps.verifyCode.on("submit", async () => {
     await goto(steps.loading);
     verifyCode(steps.verifyCode.getValue())
     .then(() => {
+      if (!adblock.adblockPlus) return goto(steps.reactivated);
       activatePremium()
       .then(() => goto(steps.reactivated))
       .catch(rejection => {
