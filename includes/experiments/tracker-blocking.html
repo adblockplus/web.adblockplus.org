@@ -72,6 +72,13 @@
 
 <script>(() => {
   const applyExperiment = () => document.documentElement.classList.add("tracker-blocking--active");
-  if (adblock.query.has("tracker-blocking")) applyExperiment();
-  else adblock.afterAdblockPlusDetected(() => { if (adblock?.adblockPlus?.is_privacy_premium) applyExperiment(); });
+  if (adblock.query.has("tracker-blocking")) {
+    applyExperiment();
+  } else {
+    adblock.afterAdblockPlusDetected(() => { 
+      if (adblock?.adblockPlus?.experimentFlags?.is_privacy_premium) {
+        applyExperiment();
+      }
+    });
+  }
 })()</script>
