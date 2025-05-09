@@ -38,6 +38,22 @@ code=ME
           {{ s2 Say goodbye to additional annoyances like floating videos, newsletter pop-ups, and other distractions. }}
         </p>
       </header>
+      <header class="premium-header premium-header--premium-user" hidden>
+        <h1 class="premium-header__heading">
+          <img alt src="/adblock-plus-premium/check_24px.svg" width="24" height="24">
+          {{ thank_you_premium <span>Thank you for subscribing to AdblockPlus Premium</span>}}
+        </h1>
+        <nav class="premium-header-nav">
+          <a class="lead" href="/premium/settings">
+            <img src="/img/settings.svg" alt="" width="137" height="186">
+            {{ premium_settings <span class="premium-header-nav__settings">Settings</span> }}
+          </a>
+          <a class="lead" href="https://help.adblockplus.org">
+            <img src="/img/help-center.svg" alt="" width="193" height="185">
+            {{ premium_help <span class="premium-header-nav__help">Help Center</span> }}
+          </a>
+        </nav>
+      </header>
       <header class="premium-header premium-header--reenroll" hidden>
         <h1>
           {{ premium-reenroll__heading <span class="premium-break">Keep blocking distractions</span> <span class="premium-break">with Adblock Plus Premium</span> }}
@@ -47,11 +63,29 @@ code=ME
         </p>
       </header>
       <script>
-        if (adblock.query.has("reenroll")) {
-          document.querySelector(".premium-header").setAttribute("hidden", true);
-          document.querySelector(".premium-header--reenroll").removeAttribute("hidden");
-        }
+        (()=>{
+          const premiumHeader = document.querySelector('.premium-header');
+
+          function updatePremiumUI() {
+            if (adblock.query.has("reenroll")) {
+              premiumHeader?.setAttribute('hidden', '');
+              document.querySelector(".premium-header--reenroll").removeAttribute("hidden");
+            } else if (adblock.adblockPlus?.isPremium) {
+              premiumHeader?.setAttribute('hidden', '');
+              document.querySelector('.premium-plans').setAttribute('hidden', '');
+              document.querySelector('.premium-motivation').setAttribute('hidden', '');
+              document.querySelector(".premium-checkout__section").setAttribute("hidden", '');
+              document.querySelector(".premium-features__header--default").setAttribute("hidden", '');
+              document.querySelector('.premium-header--premium-user').removeAttribute('hidden');
+              document.querySelector(".premium-features__header--premium").removeAttribute("hidden")
+            }
+          }
+
+          // Wait for Adblock Plus extension data to be available
+          adblock.afterAdblockPlusDetected(updatePremiumUI);
+        })();
       </script>
+
       <div class="premium-plans not-hovered">
         <div class="premium-row">
           <div class="premium-column-4 premium-order-1">
@@ -195,8 +229,11 @@ code=ME
   </div>
   <div class="premium-container" style="margin-top: -5.75rem">
     <section class="premium-features">
-      <h2>
+      <h2 class="premium-features__header premium-features__header--default">
         {{ s20 Why go Premium? }}
+      </h2>
+      <h2 class="premium-features__header premium-features__header--premium" hidden>
+        {{ s20 Premium Features }}
       </h2>
       <div class="divider"></div>
       <section class="premium-feature">
