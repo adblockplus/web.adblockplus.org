@@ -45,11 +45,11 @@ code=ME
         </h1>
         <nav class="premium-header-nav">
           <a class="lead" href="/premium/settings">
-            <img src="/img/settings.svg" alt="" width="137" height="186">
+            <img src="/img/educational/settings.svg" alt="" width="200" height="186">
             {{ premium_settings <span class="premium-header-nav__settings">Settings</span> }}
           </a>
           <a class="lead" href="https://help.adblockplus.org">
-            <img src="/img/help-center.svg" alt="" width="193" height="185">
+            <img src="/img/educational/help-center.svg" alt="" width="280" height="186">
             {{ premium_help <span class="premium-header-nav__help">Help Center</span> }}
           </a>
         </nav>
@@ -68,15 +68,17 @@ code=ME
 
           function updatePremiumUI() {
             if (adblock.query.has("reenroll")) {
-              premiumHeader?.setAttribute('hidden', '');
+              premiumHeader?.setAttribute("hidden", "");
               document.querySelector(".premium-header--reenroll").removeAttribute("hidden");
             } else if (adblock.adblockPlus?.isPremium) {
-              premiumHeader?.setAttribute('hidden', '');
-              document.querySelector('.premium-plans').setAttribute('hidden', '');
-              document.querySelector('.premium-motivation').setAttribute('hidden', '');
-              document.querySelector(".premium-checkout__section").setAttribute("hidden", '');
-              document.querySelector(".premium-features__header--default").setAttribute("hidden", '');
-              document.querySelector('.premium-header--premium-user').removeAttribute('hidden');
+              premiumHeader?.setAttribute("hidden", "");
+              document.querySelector("#cookie-cutter-banner")?.setAttribute("hidden", "");
+              document.querySelector('.premium-plans').setAttribute("hidden", "");
+              document.querySelector('.premium-motivation').setAttribute("hidden", "");
+              document.querySelector(".premium-checkout__section").setAttribute("hidden", "");
+              document.querySelector(".premium-features__header--default").setAttribute("hidden", "");
+              document.querySelector(".premium-features")?.classList.add("has-premium");
+              document.querySelector('.premium-header--premium-user').removeAttribute("hidden");
               document.querySelector(".premium-features__header--premium").removeAttribute("hidden")
             }
           }
