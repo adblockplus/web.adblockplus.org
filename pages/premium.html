@@ -41,16 +41,16 @@ code=ME
       <header class="premium-header premium-header--premium-user" hidden>
         <h1 class="premium-header__heading">
           <img alt src="/adblock-plus-premium/check_24px.svg" width="24" height="24">
-          {{ thank_you_premium <span>Thank you for subscribing to AdblockPlus Premium</span>}}
+          {{ has-premium__heading <span>Thank you for subscribing to Adblock Plus Premium</span>}}
         </h1>
         <nav class="premium-header-nav">
           <a class="lead" href="/premium/settings">
             <img src="/img/educational/settings.svg" alt="" width="200" height="186">
-            {{ premium_settings <span class="premium-header-nav__settings">Settings</span> }}
+            {{ has-premium-nav__settings <span class="premium-header-nav__settings">Settings</span> }}
           </a>
           <a class="lead" href="https://help.adblockplus.org">
             <img src="/img/educational/help-center.svg" alt="" width="280" height="186">
-            {{ premium_help <span class="premium-header-nav__help">Help Center</span> }}
+            {{ has-premium-nav__help <span class="premium-header-nav__help">Help Center</span> }}
           </a>
         </nav>
       </header>
@@ -235,7 +235,7 @@ code=ME
         {{ s20 Why go Premium? }}
       </h2>
       <h2 class="premium-features__header premium-features__header--premium" hidden>
-        {{ s20 Premium Features }}
+        {{ premium-features__heading Premium Features }}
       </h2>
       <div class="divider"></div>
       <section class="premium-feature">
