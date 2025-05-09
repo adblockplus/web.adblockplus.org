@@ -299,6 +299,10 @@ html {
   line-height: 1.5;
 }
 
+.premium-header.premium-header--premium-user {
+  padding-top: 5rem;
+}
+
 /*******************************************************************************
  * Plan cards
  ******************************************************************************/
@@ -735,6 +739,14 @@ html {
 .premium-features .divider {
   margin: 1.75rem 0 5rem;
   border-top: 1px solid #C6C6C6;
+}
+
+.premium-features.has-premium {
+  padding-bottom: 3.25rem;
+}
+
+.premium-features.has-premium a.premium-button {
+  display: none;
 }
 
 .premium-feature {
