@@ -53,35 +53,28 @@ code=ME
         }
       </script>
 
-      <header class="premium-header premium-header--premium-user" hidden>
-        <h1 class="premium-header__heading">
+      <div class="premium-navigation-container">
+        <h1 class="premium-navigation-container__header">
           <img alt src="/adblock-plus-premium/check_24px.svg" width="24" height="24">
           {{ has-premium__heading <span>Thank you for subscribing to Adblock Plus Premium</span>}}
         </h1>
-        <nav class="premium-header-nav">
-          <a class="lead open-settings-page">
+        <nav class="premium-navigation-nav">
+          <a class="premium-navigation-nav__link">
             <img src="/img/settings.svg" alt="" width="200" height="186">
-            {{ has-premium-nav__settings <span class="premium-header-nav__settings">Settings</span> }}
+            {{ has-premium-nav__settings <span class="premium-navigation-nav__settings">Settings</span> }}
           </a>
-          <a class="lead" href="https://help.adblockplus.org">
+          <a class="premium-navigation-nav__link" href="https://help.adblockplus.org">
             <img src="/img/help-center.svg" alt="" width="280" height="186">
-            {{ has-premium-nav__help <span class="premium-header-nav__help">Help Center</span> }}
+            {{ has-premium-nav__help <span class="premium-navigation-nav__help">Help Center</span> }}
           </a>
         </nav>
-      </header>
+      </div>
       <script>
         (()=>{
           adblock.afterAdblockPlusDetected(() => {
             if (adblock.adblockPlus?.isPremium && !adblock.query.has("reenroll")) {
-              document.querySelector('.premium-header').setAttribute("hidden", "");
-              document.querySelector("#cookie-cutter-banner")?.setAttribute("hidden", "");
-              document.querySelector('.premium-plans').setAttribute("hidden", "");
-              document.querySelector('.premium-motivation').setAttribute("hidden", "");
-              document.querySelector(".premium-checkout__section").setAttribute("hidden", "");
-              document.querySelector(".premium-features__header--default").setAttribute("hidden", "");
+              document.querySelector(".premium-page")?.classList.add("has-premium");
               document.querySelector(".premium-features")?.classList.add("has-premium");
-              document.querySelector('.premium-header--premium-user').removeAttribute("hidden");
-              document.querySelector(".premium-features__header--premium").removeAttribute("hidden")
             }
           });
         })();
@@ -233,7 +226,7 @@ code=ME
       <h2 class="premium-features__header premium-features__header--default">
         {{ s20 Why go Premium? }}
       </h2>
-      <h2 class="premium-features__header premium-features__header--premium" hidden>
+      <h2 class="premium-features__header premium-features__header--premium">
         {{ premium-features__heading Premium Features }}
       </h2>
       <div class="divider"></div>
