@@ -283,26 +283,6 @@ html {
   font-size: 1.5rem;
 }
 
-.premium-header .premium-header__heading {
-  margin-block-end: 1rem;
-  text-align: start;
-  border-radius: 12px;
-  border: 1px solid #DADADA;
-  background: #FFF;
-  color: #000;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: fit-content;
-  line-height: 1.5;
-}
-
-.premium-header.premium-header--premium-user {
-  padding-top: 5rem;
-}
-
 /*******************************************************************************
  * Plan cards
  ******************************************************************************/
@@ -662,19 +642,40 @@ html {
  * Premium navigation cards
  ******************************************************************************/
 
-.premium-header-nav {
+.premium-navigation-container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.premium-navigation-container__header {
+  margin-block-end: 1rem;
+  text-align: start;
+  border-radius: 12px;
+  border: 1px solid #DADADA;
+  background: #FFF;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  line-height: 1.5;
+}
+
+.premium-navigation-nav {
   display: flex;
   gap: 0.25rem;
   flex-wrap: wrap;
 }
 
 @media (min-width: 992px) {
-  .premium-header-nav {
+  .premium-navigation-nav {
     gap: 2.25rem;
   }
 }
 
-.premium-header-nav a {
+.premium-navigation-nav__link {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -687,6 +688,7 @@ html {
   border-radius: 12px;
   text-decoration: none;
   color: inherit;
+  font-size: 1.25em;
   font-weight: 700;
   height: 20rem;
   width: 20rem;
@@ -743,10 +745,6 @@ html {
 
 .premium-features.has-premium {
   padding-bottom: 3.25rem;
-}
-
-.premium-features.has-premium a.premium-button {
-  display: none;
 }
 
 .premium-feature {
@@ -1022,4 +1020,28 @@ html {
   text-align: center;
   margin-top: -0.5rem;
   margin-bottom: 1.25rem;
+}
+
+/*******************************************************************************
+ * Premium content display
+ ******************************************************************************/
+
+.premium-navigation-container,
+.premium-features__header.premium-features__header--premium {
+  display: none;
+}
+
+.premium-page.has-premium .premium-header:not(.premium-header--premium-user),
+.premium-page.has-premium #cookie-cutter-banner,
+.premium-page.has-premium .premium-plans,
+.premium-page.has-premium .premium-motivation,
+.premium-page.has-premium .premium-checkout__section,
+.premium-page.has-premium .premium-features__header--default,
+.premium-page.has-premium .premium-features > .premium-button {
+  display: none;
+}
+
+.premium-page.has-premium .premium-navigation-container,
+.premium-page.has-premium .premium-features__header.premium-features__header--premium {
+  display: block;
 }
