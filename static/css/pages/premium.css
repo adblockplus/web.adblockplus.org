@@ -1027,13 +1027,13 @@ html {
   display: none;
 }
 
-.premium-page.has-premium .premium-header:not(.premium-header--premium-user),
+.premium-page.has-premium .premium-header,
 .premium-page.has-premium #cookie-cutter-banner,
 .premium-page.has-premium .premium-plans,
 .premium-page.has-premium .premium-motivation,
 .premium-page.has-premium .premium-checkout__section,
 .premium-page.has-premium .premium-features__header--default,
-.premium-page.has-premium .premium-features > .premium-button {
+.premium-page.has-premium .premium-features > .premium-button.premium-cta {
   display: none;
 }
 
