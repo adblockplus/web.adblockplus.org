@@ -74,9 +74,11 @@ code=ME
           adblock.afterAdblockPlusDetected(() => {
             if (adblock.adblockPlus?.isPremium && !adblock.query.has("reenroll")) {
               document.querySelector(".premium-page")?.classList.add("has-premium");
-              document.querySelector(".premium-features")?.classList.add("has-premium");
             }
           });
+          if (adblock.query.has("has-premium")) {
+            document.querySelector(".premium-page")?.classList.add("has-premium");
+          }
         })();
       </script>
 
