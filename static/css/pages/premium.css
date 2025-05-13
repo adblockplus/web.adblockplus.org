@@ -743,10 +743,6 @@ html {
   border-top: 1px solid #C6C6C6;
 }
 
-.premium-features.has-premium {
-  padding-bottom: 3.25rem;
-}
-
 .premium-feature {
   margin-bottom: 3rem;
 }
@@ -1044,4 +1040,8 @@ html {
 .premium-page.has-premium .premium-navigation-container,
 .premium-page.has-premium .premium-features__header.premium-features__header--premium {
   display: block;
+}
+
+.premium-page.has-premium .premium-features {
+  padding-bottom: 3.25rem;
 }
