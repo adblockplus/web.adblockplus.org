@@ -698,8 +698,19 @@ if (adblock.query.has("premium-checkout__fake-error")) {
 ) {
   try {
     flow = "restore-purchase";
-    await goto(steps.verifyEmail);
-    card.scrollIntoView();  
+    if (adblock.query.has("email")) {
+      await goto(steps.loading);
+      email = adblock.query.get("email");
+      verifyEmail(email)
+      .then(() => goto(steps.verifyCode))
+      .catch(rejection => {
+        adblock.logServiceError("premium.verifyEmail", rejection);
+        goto(steps.error);
+      });
+    } else {
+      await goto(steps.verifyEmail);
+      card.scrollIntoView();  
+    }
   } catch (error) {
     adblock.logScriptError("premium.restore-purchase", error);
     goto(steps.error);
