@@ -665,12 +665,14 @@ html {
 
 .premium-navigation-nav {
   display: flex;
-  gap: 0.25rem;
   flex-wrap: wrap;
+  gap: 1.25rem;
+  flex-direction: column;
 }
 
 @media (min-width: 992px) {
   .premium-navigation-nav {
+    flex-direction: row;
     gap: 2.25rem;
   }
 }
@@ -691,10 +693,14 @@ html {
   font-size: 1.25em;
   font-weight: 700;
   height: 20rem;
-  width: 20rem;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
+@media (min-width: 992px) {
+  .premium-navigation-nav__link {
+    width: 20rem;
+  }
+}
 
 /*******************************************************************************
  * Premium feature cards
