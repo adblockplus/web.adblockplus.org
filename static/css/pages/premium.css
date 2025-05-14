@@ -1033,19 +1033,19 @@ html {
   display: none;
 }
 
+.premium-page.has-premium .premium-navigation-container,
+.premium-page.has-premium .premium-features__header.premium-features__header--premium {
+  display: block;
+}
+
 .premium-page.has-premium .premium-header,
 .premium-page.has-premium #cookie-cutter-banner,
 .premium-page.has-premium .premium-plans,
 .premium-page.has-premium .premium-motivation,
 .premium-page.has-premium .premium-checkout__section,
 .premium-page.has-premium .premium-features__header--default,
-.premium-page.has-premium .premium-features > .premium-button.premium-cta {
+.premium-page.has-premium .premium-features .premium-button {
   display: none;
-}
-
-.premium-page.has-premium .premium-navigation-container,
-.premium-page.has-premium .premium-features__header.premium-features__header--premium {
-  display: block;
 }
 
 .premium-page.has-premium .premium-features {
