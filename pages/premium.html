@@ -72,7 +72,7 @@ code=ME
       <script>
         (()=>{
           adblock.afterAdblockPlusDetected(() => {
-            if (adblock.adblockPlus?.isPremium && !adblock.query.has("reenroll")) {
+            if (adblock.adblockPlus?.isPremium) {
               document.querySelector(".premium-page")?.classList.add("has-premium");
             }
           });
