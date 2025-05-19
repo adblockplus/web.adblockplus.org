@@ -1028,12 +1028,12 @@ html {
  * Premium content display
  ******************************************************************************/
 
-.premium-navigation-container,
+.premium-navigation,
 .premium-features__header.premium-features__header--premium {
   display: none;
 }
 
-.premium-page.has-premium .premium-navigation-container,
+.premium-page.has-premium .premium-navigation,
 .premium-page.has-premium .premium-features__header.premium-features__header--premium {
   display: block;
 }
