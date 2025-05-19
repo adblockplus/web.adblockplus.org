@@ -1,0 +1,56 @@
+<script>(()=>{
+
+  // investigating instances of new tab campaigns opening more than once in a week
+
+  const now = Date.now();
+
+  const reportDefaults = {
+    last: now,
+    count: 1,
+    recent: [ now ],
+    id: null,
+    version: null,
+    isPremium: null,
+    detectedBrowser: adblock.settings.detectedBrowser,
+    detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
+  };
+
+  const extensionInjectionTimeout = 5000;
+
+  const reportHistory = localStorage.getItem("duplicate-tab-investigation");
+
+  const report = reportHistory ? JSON.parse(reportHistory) : reportDefaults;
+
+  adblock.afterAdblockPlusDetected(() => {
+    report.id = adblock?.adblockPlus?.id;
+    report.version = adblock?.adblockPlus?.version;
+    report.isPremium = adblock?.adblockPlus?.isPremium;
+  });
+
+  if (reportHistory != null) {
+    const oneWeekAgo = new Date();
+    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+    // if last report was within the last week
+    if (report.last > oneWeekAgo) {
+      report.count++;
+      report.last = now;
+      report.recent.push(now);
+      let sent = false;
+      const sendReport = () => {
+        if (!sent) {
+          sent = true;
+          adblock.log("duplicate-tab-investigation", report);
+        }
+      }
+      adblock.afterAdblockPlusDetected(sendReport);
+      setTimeout(sendReport, extensionInjectionTimeout);
+    } else {
+      report.count = 1;
+      report.last = now;
+      report.recent = [ now ];
+    }
+  }
+
+  localStorage.setItem("duplicate-tab-investigation", JSON.stringify(report));
+
+})()</script>
