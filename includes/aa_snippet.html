@@ -40,6 +40,7 @@
       allowed_on: "UbO_unbreak",
       blocked_on: "EasyPrivacy",
     },
+    // bait below not working as expected since the filter isn't deactivated in ubO unbreak
     {
       order: "c",
       filter: "/ads1.",
@@ -77,6 +78,12 @@
       filter: "/aadetect/px.gif?ch=2",
       allowed_on: null,
       blocked_on: "ExceptionList",
+    },
+    {
+      order: "f",
+      filter: "https://api.btloader.com/country",
+      allowed_on: null,
+      blocked_on: "EasyPrivacy",
     },
   ];
 
