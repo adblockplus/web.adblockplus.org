@@ -8,11 +8,11 @@
  *::after {
    box-sizing: border-box;
  }
- 
+
  @media (prefers-reduced-motion: no-preference) {
    :root { scroll-behavior: smooth; }
  }
- 
+
  html {
    font-size: 16px;
    font-family: "Source Sans Pro", sans-serif;
@@ -268,4 +268,60 @@ a:hover, a:active, a:focus {
 .vat-exclusive__text {
   margin-block: -0.5rem 0;
   margin-inline: 0.25rem 0;
+}
+
+.text-red {
+  color: #ED1E45;
+}
+
+/*******************************************************************************
+ * Experimental Blocked Count Header
+ ******************************************************************************/
+
+.installed-header-1__body--blocked-count {
+  display: none;
+}
+
+.installed-header-1-subheading__icon {
+  display: none;
+}
+
+.blocked-count--active .installed-header-1__body {
+  display: none;
+}
+
+.blocked-count--active .installed-header-1__body--blocked-count {
+  max-width: 55.25rem;
+  display: block;
+}
+
+.blocked-count--active.v1 .installed-header-1-subheading__icon,
+.blocked-count--active.v2 .installed-header-1-subheading__icon {
+  display: block;
+}
+
+.blocked-count--active.v1 .installed-header-1-subheading,
+.blocked-count--active.v2 .installed-header-1-subheading {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocked-count--active.v1 .installed-header-1-subheading__icon,
+.blocked-count--active.v2 .installed-header-1-subheading__icon {
+  display: block;
+}
+
+.blocked-count--active.v2 .installed-header-1-subheading {
+  max-width: 735px;
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(rgba(34, 132, 247, 0.1), rgba(34, 132, 247, 0.1)), #fff;
+  border-radius: 6px;
+  border: 0;
+  margin-inline: auto;
 }
