@@ -33,10 +33,45 @@ nofooter=1
           </h1>
           <p class="installed-header-1-subheading">
             {{ installed-header__subheading Help support Adblock Plus by upgrading to Premium today for as little as <span id="header-price" class="installed-header-1-subheading__price skeleton">$4</span> <span id="header-frequency" class="installed-header-1-subheading__frequency skeleton">a month</span>. Your contribution will enable us to stay ahead of the big ad companies and save you time and frustration. }}
-          </p>  
-        </div>
+          </p>
+        </div> <!-- Default header 1 content -->
+
+        <div class="installed-header-1__body installed-header-1__body--blocked-count">
+          <h1 class="installed-header-1__heading">
+            {{ installed-header__heading_v1 Let the blocking begin! Expect <span class="text-red">10,000</span> fewer ads every month }}
+          </h1>
+          <p class="installed-header-1-subheading">
+            <img src="/installed/mute-icon.svg" alt="" height="24" width="24" class="installed-header-1-subheading__icon"> <!-- Display: none for v2 -->
+            <span>{{ installed-header__subheading_v1 Get even more with Premium - block trackers, cookie banners, and more distractions. }}</span>
+          </p>
+        </div> <!-- Experimental header 1 content -->
+
       </div><!-- .container -->
     </div><!-- .background--light-grey -->
+    <script>
+      (() => {
+        const applyExperiment = (v) => {
+          document.documentElement.classList.add("blocked-count--active");
+          if (v) {
+            document.documentElement.classList.add(v);
+          }
+        }
+
+        if (adblock.query.has("blocked-count")) {
+          const variant = adblock.query.get("blocked-count");
+          console.log(variant)
+          applyExperiment(variant);
+        } else {
+          // TODO: define how pass flag with several variants
+          // adblock.afterAdblockPlusDetected( () => {
+          //   if (adblock?.adblockPlus?.experimentFlags?.is_blocked_count) {
+          //
+          //   }
+          // })
+        }
+
+      })();
+    </script>
 
     <div class="installed-header-2">
       <ul class="installed-features">
