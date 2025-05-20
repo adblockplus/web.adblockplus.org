@@ -6,8 +6,10 @@ import he from 'he';
 const LOCALES = 'locales';
 const HTML_ATTRIBUTES_PATTERN = /(?<=<[\w]+)(\s[^>]*)/gmiu;
 
+program.requiredOption('-i, --input <path>', 'path to translations dir');
+program.option("-if, --inFile <inFile>", "input file name substring")
 program.option("-o, --output <path>", "path to website", ".")
-program.requiredOption('-i, --input <path>', 'path to translations');
+program.option("-of, --outFile <outFile>", "exact output filename")
 program.parse();
 const args = program.opts();
 
@@ -51,7 +53,8 @@ inputLocalePaths.forEach(inputLocale => {
   readdirSync(join(args.input, inputLocale))
   .reduce(excludeDotfiles, [])
   .forEach(inputFilename => {
-    const outputFilename = removeCopyMarks(inputFilename);
+    if (args.inFile && !inputFilename.includes(args.inFile)) return;
+    const outputFilename = args.outFile || removeCopyMarks(inputFilename);
     const outputPath = join(args.output, LOCALES, outputLocale, outputFilename);
     const inputObject = openLocaleFile(join(args.input, inputLocale, inputFilename));
     const outputObject = openLocaleFile(outputPath);
