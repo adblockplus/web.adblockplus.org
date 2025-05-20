@@ -639,6 +639,70 @@ html {
 }
 
 /*******************************************************************************
+ * Premium navigation cards
+ ******************************************************************************/
+
+.premium-navigation {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.premium-navigation__header {
+  margin-block-end: 1rem;
+  text-align: start;
+  border-radius: 12px;
+  border: 1px solid #DADADA;
+  background: #FFF;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  line-height: 1.5;
+}
+
+.premium-navigation-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .premium-navigation-nav {
+    flex-direction: row;
+    gap: 2.25rem;
+  }
+}
+
+.premium-navigation-nav__link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem;
+  background-color: #fff;
+  border: 1px solid #E6E6E6;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25em;
+  font-weight: 700;
+  height: 20rem;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 992px) {
+  .premium-navigation-nav__link {
+    width: 20rem;
+  }
+}
+
+/*******************************************************************************
  * Premium feature cards
  ******************************************************************************/
 
@@ -817,7 +881,7 @@ html {
 @media (min-width: 992px) {
   .premium-motivation-header {
       text-align: center;
-  }    
+  }
 }
 
 .premium-motivation-header__heading {
@@ -893,7 +957,7 @@ html {
   .premium-motivation-slider-body {
     height: 672.82px;
     width: 888px;
-  }  
+  }
 }
 
 .premium-motivation-slider-image {
@@ -917,7 +981,7 @@ html {
   .premium-motivation-slider-image__img {
     height: 672.82px;
     width: 888px;
-  }  
+  }
 }
 
 .premium-motivation-silder-modal-slider {
@@ -958,4 +1022,32 @@ html {
   text-align: center;
   margin-top: -0.5rem;
   margin-bottom: 1.25rem;
+}
+
+/*******************************************************************************
+ * Premium content display
+ ******************************************************************************/
+
+.premium-navigation,
+.premium-features__header.premium-features__header--premium {
+  display: none;
+}
+
+.premium-page.has-premium .premium-navigation,
+.premium-page.has-premium .premium-features__header.premium-features__header--premium {
+  display: block;
+}
+
+.premium-page.has-premium .premium-header,
+.premium-page.has-premium #cookie-cutter-banner,
+.premium-page.has-premium .premium-plans,
+.premium-page.has-premium .premium-motivation,
+.premium-page.has-premium .premium-checkout__section,
+.premium-page.has-premium .premium-features__header--default,
+.premium-page.has-premium .premium-features .premium-button {
+  display: none;
+}
+
+.premium-page.has-premium .premium-features {
+  padding-bottom: 3.25rem;
 }

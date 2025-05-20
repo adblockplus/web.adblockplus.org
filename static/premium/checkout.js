@@ -90,8 +90,8 @@ let rejectPremiumActivation = () => {};
 
 window.addEventListener("message", response => {
   if (
-    typeof response == "object" 
-    && typeof response.data == "object" 
+    typeof response == "object"
+    && typeof response.data == "object"
     && typeof response.data.ack == "boolean"
   ) {
     if (response.data.ack) {
@@ -211,7 +211,7 @@ function verifyCode(code) {
 
 /**
  * Generic user flow step
- * 
+ *
  * - Gets it's DOM from a (probably hidden) element on the page
  * - Has a name for reporting purposes
  * - Has a simple on/fire event system
@@ -316,7 +316,7 @@ class PurchaseStep extends Step {
     this.element.querySelectorAll(".premium-checkout-purchase-price").forEach(priceButton => {
       const frequency = priceButton.value;
       priceButton.querySelector(".premium-checkout-purchase-price__amount").textContent = getDollarString(
-        currency, 
+        currency,
         PRICES[currency][frequency]
       );
     });
@@ -507,7 +507,7 @@ let lastStep = {
 
 /**
  * log flow progress and transition from lastStep to nextStep
- * @param {Step} nextStep 
+ * @param {Step} nextStep
  * @param {object} [state]
  */
 async function goto(nextStep, state, log) {
@@ -572,7 +572,7 @@ checkoutEvents.on("checkout.completed", () => checkoutLog("premium-checkout__pad
 steps.purchase.on("restore-purchase", () => {
   try {
     flow = "restore-purchase";
-    goto(steps.verifyEmail);  
+    goto(steps.verifyEmail);
   } catch (error) {
     adblock.logScriptError("premium.verifyEmail", error);
     goto(steps.error);
@@ -634,11 +634,11 @@ steps.verifyCode.on("submit", async () => {
 
 // you can hand a purchase flow on another page off to this page via the
 // checkout__flow parameter to begin the "activation-handoff" flow.
-// 
+//
 // you can optionally name the handoff flow via premium-checkout__flow parameter.
 //
 // premium-checkout__(currency, frequency, and amount) are required paramaters
-// for steps.activated. If they are not included then steps.reactivated will 
+// for steps.activated. If they are not included then steps.reactivated will
 // render instead.
 //
 // the "activation-handoff" flow goes:
@@ -662,6 +662,9 @@ if (adblock.query.has("premium-checkout__fake-error")) {
     const amount = adblock.query.get("premium-checkout__amount");
     card.scrollIntoView();
     const handleAdblockPlusDetected = async () => {
+      if (adblock.adblockPlus.isPremium) {
+        return;
+      }
       await goto(steps.loading);
       await new Promise(resolve => setTimeout(resolve, ACTIVATION_DELAY));
       activatePremium()
@@ -699,7 +702,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   try {
     flow = "restore-purchase";
     await goto(steps.verifyEmail);
-    card.scrollIntoView();  
+    card.scrollIntoView();
   } catch (error) {
     adblock.logScriptError("premium.restore-purchase", error);
     goto(steps.error);

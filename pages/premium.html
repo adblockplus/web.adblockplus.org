@@ -52,6 +52,36 @@ code=ME
           document.querySelector(".premium-header--reenroll").removeAttribute("hidden");
         }
       </script>
+
+      <div class="premium-navigation">
+        <h1 class="premium-navigation__header">
+          <img alt="" src="/adblock-plus-premium/check_24px.svg" width="24" height="24">
+          <span>{{ has-premium__heading Thank you for subscribing to Adblock Plus Premium}}</span>
+        </h1>
+        <nav class="premium-navigation-nav">
+          <a class="premium-navigation-nav__link" href="https://help.adblockplus.org/hc/en-us/articles/8155189140115-Get-started-with-Adblock-Plus-Premium" data-extension-page="premium-onboarding">
+            <img src="/img/settings.svg" alt="" width="200" height="186">
+            <span class="premium-navigation-nav__settings">{{ has-premium-nav__settings Settings }}</span>
+          </a>
+          <a class="premium-navigation-nav__link" href="https://help.adblockplus.org">
+            <img src="/img/help-center.svg" alt="" width="280" height="186">
+            <span class="premium-navigation-nav__help">{{ has-premium-nav__help Help Center }}</span>
+          </a>
+        </nav>
+      </div>
+      <script>
+        (()=>{
+          adblock.afterAdblockPlusDetected(() => {
+            if (adblock.adblockPlus?.isPremium) {
+              document.querySelector(".premium-page")?.classList.add("has-premium");
+            }
+          });
+          if (adblock.query.has("has-premium")) {
+            document.querySelector(".premium-page")?.classList.add("has-premium");
+          }
+        })();
+      </script>
+
       <div class="premium-plans not-hovered">
         <div class="premium-row">
           <div class="premium-column-4 premium-order-1">
@@ -195,8 +225,11 @@ code=ME
   </div>
   <div class="premium-container" style="margin-top: -5.75rem">
     <section class="premium-features">
-      <h2>
+      <h2 class="premium-features__header premium-features__header--default">
         {{ s20 Why go Premium? }}
+      </h2>
+      <h2 class="premium-features__header premium-features__header--premium">
+        {{ premium-features__heading Premium Features }}
       </h2>
       <div class="divider"></div>
       <section class="premium-feature">
