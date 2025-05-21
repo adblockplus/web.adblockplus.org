@@ -56,20 +56,10 @@ nofooter=1
             document.documentElement.classList.add(v);
           }
         }
-
         if (adblock.query.has("blocked-count")) {
           const variant = adblock.query.get("blocked-count");
-          console.log(variant)
           applyExperiment(variant);
-        } else {
-          // TODO: define how pass flag with several variants
-          // adblock.afterAdblockPlusDetected( () => {
-          //   if (adblock?.adblockPlus?.experimentFlags?.is_blocked_count) {
-          //
-          //   }
-          // })
         }
-
       })();
     </script>
 
