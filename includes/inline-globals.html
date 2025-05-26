@@ -239,7 +239,7 @@ observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
 // information into adblockplus.org so that we can consider it in our UX
 adblock.afterAdblockPlusDetected(() => {
   const injectionTime = parseInt(performance.now(), 10);
-  adblock.log("injection-time-investigation", {
+  adblock.log("injection-time", {
     scriptTime,
     injectionTime,
     version: adblock.adblockPlus.version,
