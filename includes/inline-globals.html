@@ -128,7 +128,7 @@ adblock.logScriptError = function logScriptError(source, error) {
     os: adblock.settings.detectedOperatingSystem,
     ABPInstalled: !!adblock?.adblockPlus,
     ABPPremium: !!adblock?.adblockPlus?.isPremium,
-    ABPVersion: adblock?.adblockPLus?.version,
+    ABPVersion: adblock?.adblockPlus?.version,
   });
 }
 
@@ -150,7 +150,7 @@ adblock.logServiceError = function logServiceError(source, rejection) {
     os: adblock.settings.detectedOperatingSystem,
     ABPInstalled: !!adblock?.adblockPlus,
     ABPPremium: !!adblock?.adblockPlus?.isPremium,
-    ABPVersion: adblock?.adblockPLus?.version,
+    ABPVersion: adblock?.adblockPlus?.version,
   });
 }
 
@@ -234,6 +234,19 @@ function observeExtensionInjection(extensionName, extensionId) {
 
 observeExtensionInjection("adblock", "adblockExtensionInfo");
 observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
+
+// Temporarily measuring the time it takes for Adblock Plus to inject
+// information into adblockplus.org so that we can consider it in our UX
+adblock.afterAdblockPlusDetected(() => {
+  const injectionTime = parseInt(performance.now(), 10);
+  adblock.log("injection-time-investigation", {
+    scriptTime,
+    injectionTime,
+    version: adblock.adblockPlus.version,
+    browser: adblock.settings.detectedBrowser,
+    operatingSystem: adblock.settings.detectedOperatingSystem,
+  });
+});
 
 if (adblock.query.has("design")) document.documentElement.classList.add("design");
 
