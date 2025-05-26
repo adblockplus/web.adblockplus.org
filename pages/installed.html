@@ -36,32 +36,11 @@ nofooter=1
           </p>
         </div> <!-- Default header 1 content -->
 
-        <div class="installed-header-1__body installed-header-1__body--blocked-count">
-          <h1 class="installed-header-1__heading">
-            {{ installed-header__heading_v1 Let the blocking begin! Expect <span class="text-red">10,000</span> fewer ads every month }}
-          </h1>
-          <p class="installed-header-1-subheading">
-            <img src="/installed/mute-icon.svg" alt="" height="24" width="24" class="installed-header-1-subheading__icon"> <!-- Display: none for v2 -->
-            <span>{{ installed-header__subheading_v1 Get even more with Premium - block trackers, cookie banners, and more distractions. }}</span>
-          </p>
-        </div> <!-- Experimental header 1 content -->
+        <? include experiments/ads-blocked-header ?> <!-- Experimental header 1 content -->
 
       </div><!-- .container -->
     </div><!-- .background--light-grey -->
-    <script>
-      (() => {
-        const applyExperiment = (v) => {
-          document.documentElement.classList.add("blocked-count--active");
-          if (v) {
-            document.documentElement.classList.add(v);
-          }
-        }
-        if (adblock.query.has("blocked-count")) {
-          const variant = adblock.query.get("blocked-count");
-          applyExperiment(variant);
-        }
-      })();
-    </script>
+
 
     <div class="installed-header-2">
       <ul class="installed-features">
