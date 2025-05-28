@@ -24,6 +24,11 @@
         "type": 301
       },
       {
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?distraction-control/?$",
+        "destination": "/premium",
+        "type": 301
+      },
+      {
         "regex": "/(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?installed-2309/?$",
         "destination": "/installed",
         "type": 301
