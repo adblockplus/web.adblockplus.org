@@ -27,16 +27,20 @@ nofooter=1
 
     <div class="installed-header-1">
       <div class="container">
-        <div class="installed-header-1__body">
+        <div class="installed-header-1-body">
           <h1 class="installed-header-1__heading">
             {{ installed-header__heading Thank you for installing Adblock Plus! }}
           </h1>
           <p class="installed-header-1-subheading">
             {{ installed-header__subheading Help support Adblock Plus by upgrading to Premium today for as little as <span id="header-price" class="installed-header-1-subheading__price skeleton">$4</span> <span id="header-frequency" class="installed-header-1-subheading__frequency skeleton">a month</span>. Your contribution will enable us to stay ahead of the big ad companies and save you time and frustration. }}
-          </p>  
-        </div>
+          </p>
+        </div> <!-- Default header 1 content -->
+
+        <? include experiments/ads-blocked-header ?> <!-- Experimental header 1 content -->
+
       </div><!-- .container -->
     </div><!-- .background--light-grey -->
+
 
     <div class="installed-header-2">
       <ul class="installed-features">

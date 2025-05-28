@@ -8,11 +8,11 @@
  *::after {
    box-sizing: border-box;
  }
- 
+
  @media (prefers-reduced-motion: no-preference) {
    :root { scroll-behavior: smooth; }
  }
- 
+
  html {
    font-size: 16px;
    font-family: "Source Sans Pro", sans-serif;
@@ -63,7 +63,7 @@ a:hover, a:active, a:focus {
   }
 }
 
-.installed-header-1__body {
+.installed-header-1-body {
   margin-inline: auto;
   width: 100%;
   max-width: 53.25rem;
