@@ -24,8 +24,8 @@
         "type": 301
       },
       {
-        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?distraction-control/?$",
-        "destination": "/premium",
+        "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?(distraction-control|premium/distraction-control|premium/block-cookie-banners)/?$",
+        "destination": "/update",
         "type": 301
       },
       {
