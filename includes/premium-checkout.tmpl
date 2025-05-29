@@ -19,11 +19,11 @@
       <img alt="Adblock Plus Premium" src="/img/adblock-plus-premium.png" class="premium-checkout-section__heading" height="48" width="374">
 
       <!-- ---------------------------------------------------------------------
-        DYNAMIC CARD (See checkout.js)
+        DYNAMIC CARD (See premium-checkout.js)
       ---------------------------------------------------------------------- -->
 
       <div class="premium-checkout-card premium-checkout-card--interactive">
-        <!-- built from cards below by checkout.js -->
+        <!-- built from cards below by premium-checkout.js -->
       </div>
 
       <!-- ---------------------------------------------------------------------
@@ -326,4 +326,5 @@
 </div><!-- /premium-checkout -->
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script src="/premium/checkout.js" type="module"></script>
+<script src="/js/premium-checkout.js" type="module"></script>
+<? include prevent-duplicate-subscriptions ?>

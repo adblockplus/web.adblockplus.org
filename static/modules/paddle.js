@@ -1927,6 +1927,7 @@ const paddleEnvironment = location.hostname == "localhost" ? "test"
 if (paddleEnvironment == "test") {
   paddleToken = PADDLE_TEST_TOKEN;
   Paddle.Environment.set("sandbox");
+  document.documentElement.classList.add("--paddle-sandbox")
 }
 
 const paddleOptions = {

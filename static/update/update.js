@@ -1,7 +1,7 @@
 /* global Paddle, adblock */
 import { getDollarString } from "../modules/currency.js";
-import { checkout } from "../modules/checkout.js"
-import "../modules/premium-difference.js";
+import { checkout } from "../modules/paddle.js"
+import "./premium-difference.js";
 
 adblock.config = adblock.config || {};
 

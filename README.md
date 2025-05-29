@@ -46,6 +46,11 @@ Unless a language is provided in the URL (e.g. via selecting language in the nav
 ### Payment pages
 
 - `testmode` flag - changes the payment environment from "live" to "sandbox".
+- `has-subscription-response` string - Fake a has-subscription API response
+    - `yes` - The user has a subscription
+    - `no` - The user has no subscription
+    - `error` - The API returns an error
+    - `timeout` - The API never responds
 
 ### Update page
 

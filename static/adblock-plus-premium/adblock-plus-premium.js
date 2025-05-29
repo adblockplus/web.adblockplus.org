@@ -1,6 +1,6 @@
 /* global Paddle, adblock */
 import { getDollarString } from "../modules/currency.js";
-import { checkout } from "../modules/checkout.js";
+import { checkout } from "../modules/paddle.js";
 import { matchHeights } from "../modules/responsive.js";
 
 const PRICES = {

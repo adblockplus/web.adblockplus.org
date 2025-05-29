@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/prevent-duplicate-subscription.css">
+
+<div id="account-restore" class="account-restore">
+  <div id="account-restore-loading" class="account-restore-loading">
+    <div class="account-restore-loading__loader"></div>
+  </div>
+  <div id="account-restore-found" class="account-restore-found">
+    <button id="account-restore-found__close" class="account-restore-found__close">
+      <img alt="{{ get_string("close", "shared") }}" src="/img/account-restore-found__close.svg" height="24" width="24">
+    </button>
+    <div class="account-restore-found-logo">
+      <img alt src="/img/adblock-plus-latest.svg" height="40" width="40">
+      <span>Adblock<strong>Plus</strong> Premium</span>
+    </div>
+    <div class="account-restore-found-body">
+      <h2 class="account-restore-found-body__heading">{{ get_string("account-restore-found__heading", "shared") }}</h2>
+      <p class="account-restore-found-body__text">{{ get_string("account-restore-found__text", "shared") }}</p>
+    </div>
+    <div class="account-restore-found-buttons">
+      <a id="account-restore-found-buttons__restore" href="restore-purchase" class="account-restore-found-buttons__restore">{{ get_string("account-restore-found__button", "shared") }}</a>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/js/prevent-duplicate-subscription.js"></script>
