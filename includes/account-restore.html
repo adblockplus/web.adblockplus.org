@@ -1,0 +1,279 @@
+<style>
+  .account-restore {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2147483647; /* max value in the css standard */
+  }
+
+  /* The overlay and modal height, width, and border radius are precisely
+   * copied across screen sizes from Paddle checkout overlay as of 2025-05-29[1]
+   *
+   * [1] except for the short + wide case, which falls back to small, because
+   * I though Paddle's styles were unreasonably complicated
+   */
+
+  @media (min-width: 816px) and (min-height: 816px) {
+    .account-restore {
+      height: 86vh;
+    }
+  }
+
+  @media (min-width: 990px) and (min-height: 816px) {
+    .account-restore {
+      height: 85vh;
+    }
+  }
+
+  @media (min-width: 1156px) and (min-height: 816px) {
+    .account-restore {
+      height: 86vh;
+    }
+  }
+
+  .--finding-account .account-restore,
+  .--found-account .account-restore { display: flex; }
+
+  .account-restore-loading,
+  .account-restore-found {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 816px) and (min-height: 816px) {
+    .account-restore-loading,
+    .account-restore-found {
+      max-width: 780px;
+      border-radius: 10px;
+      height: 520px;
+    }
+  }
+
+  @media (min-width: 1296px) and (min-height: 816px) {
+    .account-restore-loading,
+    .account-restore-found {
+      max-width: 840px;
+    }
+  }
+
+  /* the modal is pushed down by the test mode text in the sandbox env */
+  @media (min-width: 816px) and (min-height: 816px) {
+    .--paddle-sandbox .account-restore-loading,
+    .--paddle-sandbox .account-restore-found { margin-top: 41px; }
+  }
+
+  .--finding-account .account-restore-loading { display: flex; }
+
+  /* adapted from https://css-loaders.com/ */
+  .account-restore-loading__loader {
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #000;
+    --_m: 
+      conic-gradient(#0000 10%,#000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: account-restore-loading__loader 2s infinite linear;
+  }
+
+  @keyframes account-restore-loading__loader {to{transform: rotate(1turn)}}
+
+  .account-restore-found {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2rem;
+  }
+
+  .--found-account .account-restore-found { display: flex; }
+
+  .account-restore-found__close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: 0;
+  }
+
+  .account-restore-found-logo {
+    display: flex;
+    gap: 0.625rem;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+
+  .account-restore-found-logo strong {
+    font-weight: 700;
+  }
+
+  .account-restore-found-body {
+    text-align: center;
+    max-width: 23rem;
+    margin: 0 auto;
+  }
+
+  .account-restore-found-body__heading {
+    font-size: 1.3125rem;
+    margin: 0;
+  }
+
+  .account-restore-found-body__text {
+    margin: 0;
+  }
+
+  .account-restore-found-buttons {
+    width: 100%;
+    max-width: 21.25rem;
+    margin: 2.5rem auto;
+  }
+
+  a.account-restore-found-buttons__restore {
+    display: block;
+    color: #fff;
+    font-weight: bolder;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    background-color: #1C46F5;
+    border-radius: 0.25rem;
+    text-align: center;
+  }
+
+  a.account-restore-found-buttons__restore:hover,
+  a.account-restore-found-buttons__restore:active,
+  a.account-restore-found-buttons__restore:focus {
+    text-decoration: none;
+    background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+  }
+</style>
+
+<div id="account-restore" class="account-restore">
+  <div id="account-restore-loading" class="account-restore-loading">
+    <div class="account-restore-loading__loader"></div>
+  </div>
+  <div id="account-restore-found" class="account-restore-found">
+    <button id="account-restore-found__close" class="account-restore-found__close">
+      <img alt="{{ close Close }}" src="/img/account-restore-found__close.svg" height="24" width="24">
+    </button>
+    <div class="account-restore-found-logo">
+      <img alt src="/img/adblock-plus-latest.svg" height="40" width="40">
+      <span>Adblock<strong>Plus</strong> Premium</span>
+    </div>
+    <div class="account-restore-found-body">
+      <h2 class="account-restore-found-body__heading">{{ account-restore-found__heading We found an active subscription with that email }}</h2>
+      <p class="account-restore-found-body__text">{{ account-restore-found__text Your license can be used across multiple browsers and devices. Click below to restore. }}</p>
+    </div>
+    <div class="account-restore-found-buttons">
+      <a id="account-restore-found-buttons__restore" href="restore-purchase" class="account-restore-found-buttons__restore">{{ account-restore-found__button Restore Purchase }}</a>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { checkoutEvents } from "/modules/checkout.js"
+
+  // FIXME: stubbing API request for local development without CORS and convinience
+  // yes@email.address will return true and all else will return false
+  const _realFetch = window.fetch;
+  window.fetch = function(url, options) {
+    if (url == "https://is-premium-endpoint-dot-getadblock.appspot.com/user/has_active_premium_subcription") {
+      if (options.body.includes("yes@email.address")) {
+        return new Promise(resolve => setTimeout(
+          () => resolve({ok: true, json: () => new Promise(resolve => resolve({has_active_premium_sub:true}))})
+          , 1000
+        ));
+      } else {
+        return new Promise(resolve => setTimeout(
+          () => resolve({ok: true, json: () => new Promise(resolve => resolve({has_active_premium_sub:false}))})
+          , 1000
+        ));
+      }
+    } else {
+      return _realFetch(url, options);
+    }
+  }
+
+  const doc = document.documentElement;
+  const overlay = document.getElementById("account-restore");
+  const restoreButton = document.getElementById("account-restore-found-buttons__restore");
+
+  function findAccount(event) {
+    // moving overlay below the Paddle iframe in the DOM so that it can
+    // display on top of the Paddle iframe which also has the maximum z-index
+    document.body.appendChild(overlay);
+    doc.classList.add("--finding-account");
+
+    let response;
+
+    fetch(
+      "https://is-premium-endpoint-dot-getadblock.appspot.com/user/has_active_premium_subcription",
+      {
+        method: "POST",
+        headers: { 
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          livemode: false,
+          email: event.customer.email,
+        })
+      }
+    )
+    .then((_response) => {
+      response = _response;
+      if (response.ok) {
+        return response.json();
+      } else {
+        return response.text();
+      }
+    })
+    .then((result) => {
+      if (response.ok) {
+        if (result.has_active_premium_sub) {
+          restoreButton.href = `/${doc.lang}/restore-purchase?email=${event.customer.email}`;
+          doc.classList.add("--found-account");
+        }
+      } else {
+        adblock.logServiceError("checkout.findAccount", {
+          reason: "response",
+          status: response.status,
+          response: result
+        });
+      }
+      doc.classList.remove("--finding-account");
+    })
+    .catch((error) => {
+      adblock.logScriptError("checkout.findAccount", error);
+      doc.classList.remove("--finding-account");
+    });
+
+    // TODO: Add timeout error handling
+  }
+
+  checkoutEvents.on("checkout.customer.created", findAccount);
+  checkoutEvents.on("checkout.customer.updated", findAccount);
+
+  const closeButton = document.getElementById("account-restore-found__close");
+
+  closeButton.addEventListener("click", () => {
+    Paddle.Checkout.close();
+    doc.classList.remove("--found-account");
+  });
+
+</script>
