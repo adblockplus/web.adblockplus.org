@@ -1,0 +1,180 @@
+/* styles includes/prevent-duplicate-subscription.tmpl
+ *
+ * .--paddle-sandbox
+ * .--finding-account || .--found-account
+ * 
+ * .account-restore
+ *     .account-restore-loading
+ *         .account-restore-loading__loader
+ *     .account-restore-found
+ *         .account-restore-found__close
+ *         .account-restore-found-logo
+ *         .account-restore-found-body
+ *         .account-restore-found-body__heading
+ *         .account-restore-found-body__text
+ *         .account-restore-found-buttons
+ *             .account-restore-found-buttons__restore
+ */
+
+.account-restore {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483647; /* max value in the css standard */
+}
+
+/* The overlay and modal height, width, and border radius are precisely
+ * copied across screen sizes from Paddle checkout overlay as of 2025-05-29[1]
+ *
+ * [1] except for the short + wide case, which falls back to small, because
+ * I though Paddle's styles were unreasonably complicated
+ */
+
+@media (min-width: 816px) and (min-height: 816px) {
+  .account-restore {
+    height: 86vh;
+  }
+}
+
+@media (min-width: 990px) and (min-height: 816px) {
+  .account-restore {
+    height: 85vh;
+  }
+}
+
+@media (min-width: 1156px) and (min-height: 816px) {
+  .account-restore {
+    height: 86vh;
+  }
+}
+
+.--finding-account .account-restore,
+.--found-account .account-restore { display: flex; }
+
+.account-restore-loading,
+.account-restore-found {
+  display: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 816px) and (min-height: 816px) {
+  .account-restore-loading,
+  .account-restore-found {
+    max-width: 780px;
+    border-radius: 10px;
+    height: 520px;
+  }
+}
+
+@media (min-width: 1296px) and (min-height: 816px) {
+  .account-restore-loading,
+  .account-restore-found {
+    max-width: 840px;
+  }
+}
+
+/* the modal is pushed down by the test mode text in the sandbox env */
+@media (min-width: 816px) and (min-height: 816px) {
+  .--paddle-sandbox .account-restore-loading,
+  .--paddle-sandbox .account-restore-found { margin-top: 41px; }
+}
+
+.--finding-account .account-restore-loading { display: flex; }
+
+/* adapted from https://css-loaders.com/ */
+.account-restore-loading__loader {
+  width: 100px;
+  height: 100px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #000;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: account-restore-loading__loader 2s infinite linear;
+}
+
+@keyframes account-restore-loading__loader {to{transform: rotate(1turn)}}
+
+.account-restore-found {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 2rem;
+}
+
+.--found-account .account-restore-found { display: flex; }
+
+.account-restore-found__close {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 0;
+}
+
+.account-restore-found-logo {
+  display: flex;
+  gap: 0.625rem;
+  font-size: 1.5rem;
+  align-items: center;
+}
+
+.account-restore-found-logo strong {
+  font-weight: 700;
+}
+
+.account-restore-found-body {
+  text-align: center;
+  max-width: 23rem;
+  margin: 0 auto;
+}
+
+.account-restore-found-body__heading {
+  font-size: 1.3125rem;
+  margin: 0;
+}
+
+.account-restore-found-body__text {
+  margin: 0;
+}
+
+.account-restore-found-buttons {
+  width: 100%;
+  max-width: 21.25rem;
+  margin: 2.5rem auto;
+}
+
+a.account-restore-found-buttons__restore {
+  display: block;
+  color: #fff;
+  font-weight: bolder;
+  padding: 0.5rem 0.5rem;
+  width: 100%;
+  background-color: #1C46F5;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+a.account-restore-found-buttons__restore:hover,
+a.account-restore-found-buttons__restore:active,
+a.account-restore-found-buttons__restore:focus {
+  text-decoration: none;
+  background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+}

@@ -1,4 +1,4 @@
-import { checkout, checkoutEvents } from "../modules/checkout.js";
+import { checkout, checkoutEvents } from "../modules/paddle.js";
 import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
 ////////////////////////////////////////////////////////////////////////////////
