@@ -59,7 +59,8 @@ function showInterventionLoading() {
 }
 
 function showSubscriptionFound(email) {
-  restoreAccountButton.href = `/${document.documentElement.lang}/restore-purchase?email=${email}`;
+  const urlParams = new URLSearchParams({email});
+  restoreAccountButton.href = `/${document.documentElement.lang}/restore-purchase?${urlParams.toString()}`;
   document.documentElement.classList.remove("--finding-account");
   document.documentElement.classList.add("--found-account");
 }
