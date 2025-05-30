@@ -727,6 +727,10 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   }
 }
 
+checkoutEvents.on("checkout.loaded", () => {
+  goto(steps.purchase, undefined, false);
+});
+
 // see skeleton API in globals
 document.querySelectorAll(".skeleton").forEach(element => {
   element.classList.remove("skeleton");
