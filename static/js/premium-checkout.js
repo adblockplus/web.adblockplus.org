@@ -729,11 +729,13 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   }
 }
 
-// see placeholder API in includes
+checkoutEvents.on("checkout.loaded", () => {
+  goto(steps.purchase, undefined, false);
+});
+
 document.querySelectorAll(".placeholder").forEach(element => {
   element.classList.remove("placeholder");
 });
-
 
 if (
   typeof gtag == "function"
