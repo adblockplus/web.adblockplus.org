@@ -1,41 +1,6 @@
-<style>
-  @keyframes skeleton-loading {
-    0% {
-      background-color: hsl(200, 20%, 80%);
-    }
-    100% {
-      background-color: hsl(200, 20%, 95%);
-    }
-  }
-  
-  .skeleton,
-  .skeleton * {
-    color: transparent !important;
-    outline: transparent !important;
-    list-style: none !important;
-    border-color: transparent !important;
-    background: transparent;
-    box-shadow: none !important;
-  }
-  
-  .skeleton * {
-    background-color: transparent !important;
-  }
-  
-  .animate-skeletons .skeleton {
-    animation: skeleton-loading 1s linear infinite alternate;
-  }
-</style>
 <script>(()=>{
 
 const scriptTime = parseInt(performance.now(), 10);
-
-// skeletons are transparent for the first 250ms before the begin animating
-// so that we can remove them before the user unnecessarily observes them
-setTimeout(() => {
-  if (!document.querySelector(".skeleton")) return;
-  document.documentElement.classList.add("animate-skeletons");
-}, 250);
 
 const query = new URLSearchParams(window.location.search);
 
@@ -266,6 +231,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- settings injected via cms -->
 <? include inline-settings ?>
-
-<!-- settings injected via cloud function -->
-<script src="/settings.js"></script>

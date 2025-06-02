@@ -104,9 +104,9 @@ function fixDiscountHeight() {
 window.addEventListener("resize", fixDiscountHeight);
 fixDiscountHeight();
 
-// Hide skeletons //////////////////////////////////////////////////////////////
+// Hide placeholders //////////////////////////////////////////////////////////////
 
-// see skeleton API in globals
-document.querySelectorAll(".skeleton").forEach(element => {
-  element.classList.remove("skeleton");
+// see placeholder API in includes
+document.querySelectorAll(".placeholder").forEach(element => {
+  element.classList.remove("placeholder");
 });

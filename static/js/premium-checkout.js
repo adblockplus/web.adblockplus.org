@@ -727,9 +727,9 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   }
 }
 
-// see skeleton API in globals
-document.querySelectorAll(".skeleton").forEach(element => {
-  element.classList.remove("skeleton");
+// see placeholder API in includes
+document.querySelectorAll(".placeholder").forEach(element => {
+  element.classList.remove("placeholder");
 });
 
 

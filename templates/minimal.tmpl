@@ -3,8 +3,10 @@
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
-    <? include styles ?>
-    <? include inline-globals ?>
+    <? include early-scripts ?>
+    <? include placeholder-animations ?>
+    <? include shared-styles ?>
+    <? include dynamic-scripts ?>
     {% block head %}
       {{ head | safe }}
     {% endblock %}
@@ -17,6 +19,6 @@
     <? include footer ?>
     <? include cookie/index ?>
     <? include google/analytics ?>
-    <? include scripts ?>
+    <? include shared-scripts ?>
   </body>
 </html>

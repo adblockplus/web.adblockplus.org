@@ -104,7 +104,7 @@ matchHeights(document.querySelectorAll(".price"), 782);
 
 matchHeights(document.querySelectorAll(".description"), 782);
 
-// see skeleton API in globals
-document.querySelectorAll(".skeleton").forEach(element => {
-  element.classList.remove("skeleton");
+// see placeholder API in includes
+document.querySelectorAll(".placeholder").forEach(element => {
+  element.classList.remove("placeholder");
 });

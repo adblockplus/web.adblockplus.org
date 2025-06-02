@@ -71,9 +71,9 @@ document.getElementById("discount__number").textContent = Math.floor((1 - (PRICE
 updateHeaderPrice();
 updateHeaderFrequency();
 
-// remove placeholders, see skeleton api in inline-globals
-document.querySelectorAll(".skeleton").forEach(element => {
-  element.classList.remove("skeleton");
+// see placeholder api in includes
+document.querySelectorAll(".placeholder").forEach(element => {
+  element.classList.remove("placeholder");
 });
 
 document.querySelectorAll(".installed-payment-option__button").forEach(button => {

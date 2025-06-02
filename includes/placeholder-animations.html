@@ -1,0 +1,42 @@
+<style>
+  
+  /* placeholder loading animations */
+
+  @keyframes placeholder-loading {
+    0% {
+      background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
+  }
+  
+  .placeholder,
+  .placeholder * {
+    color: transparent !important;
+    outline: transparent !important;
+    list-style: none !important;
+    border-color: transparent !important;
+    background: transparent;
+    box-shadow: none !important;
+  }
+  
+  .placeholder * {
+    background-color: transparent !important;
+  }
+  
+  .animate-placeholders .placeholder {
+    animation: placeholder-loading 1s linear infinite alternate;
+  }
+
+</style>
+
+<script>
+  // placeholder loading animations are transparent for the first 250ms before they
+  // begin animating so that we can possibly remove them if their loading finishes
+  // before the user sees
+  setTimeout(() => {
+    if (!document.querySelector(".placeholder")) return;
+    document.documentElement.classList.add("animate-placeholders");
+  }, 250);
+</script>
