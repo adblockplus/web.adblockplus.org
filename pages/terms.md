@@ -1,6 +1,9 @@
 title=TERMS OF USE
 description=The Terms of Use regulate the permitted use of Adblock Plus and the terms and conditions under which we provide ABP.
-style=terms.css
+
+<head>
+  <link rel="stylesheet" href="/css/terms.css">
+</head>
 
 1. **INTRODUCTION**
 
