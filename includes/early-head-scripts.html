@@ -70,13 +70,13 @@ adblock.log = function log(event, data = {}) {
       urlParams: urlParamsJSON,
     };
     const params = new URLSearchParams();
-    for (const property in hardcoded) {
-      params.set(property, hardcoded[property]);
-    }
     for (const property in data) {
-      if (hardcoded.hasOwnProperty(property)) throw new Error(`adblock.log() recieved data argument with reserved property name: ${property}`);
+      if (hardcoded.hasOwnProperty(property)) console.error(`adblock.log() recieved data with reserved property: ${property}`);
       if (data[property] == null || data[property] == undefined) continue;
       params.set(property, data[property]);
+    }
+    for (const property in hardcoded) {
+      params.set(property, hardcoded[property]);
     }
     return fetch(`/access?${params.toString()}`);
   } catch (error) {
@@ -92,13 +92,13 @@ adblock.log = function log(event, data = {}) {
 adblock.logScriptError = function logScriptError(source, error) {
   return adblock.log("script-error", {
     source,
-    message: error?.message,
-    stack: error?.stack,
+    message: error.message,
+    stack: error.stack,
     browser: adblock.settings.detectedBrowser,
     os: adblock.settings.detectedOperatingSystem,
-    ABPInstalled: !!adblock?.adblockPlus,
-    ABPPremium: !!adblock?.adblockPlus?.isPremium,
-    ABPVersion: adblock?.adblockPlus?.version,
+    ABPInstalled: !!adblock.adblockPlus,
+    ABPPremium: !!adblock.adblockPlus?.isPremium,
+    ABPVersion: adblock.adblockPlus?.version,
   });
 }
 
