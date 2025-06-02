@@ -3,10 +3,10 @@
   <head>
     <? include meta/standard ?>
     <? include meta/social ?>
-    <? include early-scripts ?>
+    <? include early-head-scripts ?>
     <? include placeholder-animations ?>
     <? include shared-styles ?>
-    <? include dynamic-scripts ?>
+    <? include late-head-scripts ?>
     {% block head %}
       {{ head | safe }}
     {% endblock %}
