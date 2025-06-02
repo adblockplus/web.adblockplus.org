@@ -12,6 +12,7 @@ const query = new URLSearchParams(window.location.search);
  * @prop {object} settings - shared settings injected via script
  */
 const adblock = window.adblock = {
+  scriptTime,
   query,
   api: {},
   strings: {},
@@ -119,33 +120,6 @@ adblock.logServiceError = function logServiceError(source, rejection) {
   });
 }
 
-/** logs essential analytics on load */
-window.addEventListener("load", function onLoad() {
-  adblock.log("load", {
-    entryVersion: "1.1.0",
-    scriptTime,
-    loadTime: parseInt(performance.now(), 10),
-    pageName: adblock.settings.page,
-    pageLocale: adblock.settings.locale,
-    trafficSource: adblock.query.get("s"),
-    detectedCountry: adblock.settings.detectedCountry,
-    detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
-    detectedBrowser: adblock.settings.detectedBrowser,
-    browserHeight: window.innerHeight,
-    browserWidth: window.innerWidth,
-    screenHeight: screen.height,
-    screenWidth: screen.width,
-    adblockPlusInstalled: !!adblock?.adblockPlus,
-    adblockPlusPremium: !!adblock?.adblockPlus?.isPremium,
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
-  document.querySelectorAll("[data-click]", function onDataClick(target) {
-    adblock.log("click", JSON.parse(target.dataset.click));
-  });
-});
-
 /** global general error handling and logging function */
 adblock.handleError = function handleError({name, message, context, handler}) {
   if (handler) handler({name, message, context});
@@ -210,17 +184,6 @@ adblock.afterAdblockPlusDetected(() => {
     version: adblock.adblockPlus.version,
     browser: adblock.settings.detectedBrowser,
     operatingSystem: adblock.settings.detectedOperatingSystem,
-  });
-});
-
-if (adblock.query.has("design")) document.documentElement.classList.add("design");
-
-// FIXME: Hotfix to support images in localised strings via CMS
-// Remove when img tag added to allowlist of tags in strings
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("span.img").forEach(span => {
-    span.innerHTML = span.outerHTML.replace("span", "img");
-    span.replaceWith(span.querySelector("img"));
   });
 });
 

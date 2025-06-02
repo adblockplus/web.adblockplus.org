@@ -1,2 +1,44 @@
+<script>(()=>{
+
+/** logs essential analytics on load */
+window.addEventListener("load", function onLoad() {
+  adblock.log("load", {
+    entryVersion: "1.1.0",
+    scriptTime: adblock.scriptTime,
+    loadTime: parseInt(performance.now(), 10),
+    pageName: adblock.settings.page,
+    pageLocale: adblock.settings.locale,
+    trafficSource: adblock.query.get("s"),
+    detectedCountry: adblock.settings.detectedCountry,
+    detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
+    detectedBrowser: adblock.settings.detectedBrowser,
+    browserHeight: window.innerHeight,
+    browserWidth: window.innerWidth,
+    screenHeight: screen.height,
+    screenWidth: screen.width,
+    adblockPlusInstalled: !!adblock?.adblockPlus,
+    adblockPlusPremium: !!adblock?.adblockPlus?.isPremium,
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
+  document.querySelectorAll("[data-click]", function onDataClick(target) {
+    adblock.log("click", JSON.parse(target.dataset.click));
+  });
+});
+
+if (adblock.query.has("design")) document.documentElement.classList.add("design");
+
+// FIXME: Hotfix to support images in localised strings via CMS
+// Remove when img tag added to allowlist of tags in strings
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("span.img").forEach(span => {
+    span.innerHTML = span.outerHTML.replace("span", "img");
+    span.replaceWith(span.querySelector("img"));
+  });
+});
+
+})()</script>
+
 <!-- TODO: Change settings.js to set location only and implement location based features inline below -->
 <script src="/settings.js"></script>
