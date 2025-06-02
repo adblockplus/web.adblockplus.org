@@ -1,8 +1,9 @@
 title=uBlock Origin is no longer available in Chrome due to MV3
 description=Discover how Google’s Manifest V3 affects uBlock Origin and other ad blockers on Chrome. Learn about the implications for your browsing experience and explore alternative solutions to maintain ad-blocking functionality.
-template=modern
+noheading=1
+notoc=1
 
-![](/img/ABP-Youtube-Blog-post-min.png){ .full-width, .mb1 }
+![](/img/ABP-Youtube-Blog-post-min.png){ style="margin-top:2rem" }
 
 # {{ s1 uBlock Origin is leaving Chrome. Here’s what to know: }}
 
