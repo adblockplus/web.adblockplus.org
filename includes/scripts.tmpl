@@ -1,7 +1,3 @@
-{% if not nonavbar and page not in ["download"] %}
+{% if not nonavbar %}
   <script src="/js/main.js"></script>
-{% endif %}
-
-{% if page in ["download"] %}
-  <script src="/build/js/{{ page }}-page.min.js"></script>
 {% endif %}
