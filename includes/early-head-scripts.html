@@ -2,10 +2,9 @@
 
 const scriptTime = parseInt(performance.now(), 10);
 
-const query = new URLSearchParams(window.location.search);
-
 /**
  * @namespace
+ * @prop {number} scriptTime - the earliest point where an inline script could measure performance
  * @prop {object} query - global reference to initial window.location.search URL Search Params
  * @prop {object} api - functions provided to third parties
  * @prop {object} strings - localised strings injected via script
@@ -13,7 +12,7 @@ const query = new URLSearchParams(window.location.search);
  */
 const adblock = window.adblock = {
   scriptTime,
-  query,
+  query: new URLSearchParams(window.location.search),
   api: {},
   strings: {},
   settings: {
@@ -113,14 +112,14 @@ adblock.logScriptError = function logScriptError(source, error) {
 adblock.logServiceError = function logServiceError(source, rejection) {
   return adblock.log("service-error", {
     source,
-    reason: rejection?.reason,
-    status: rejection?.status,
-    response: JSON.stringify(rejection?.response),
+    reason: rejection.reason,
+    status: rejection.status,
+    response: JSON.stringify(rejection.response),
     browser: adblock.settings.detectedBrowser,
     os: adblock.settings.detectedOperatingSystem,
-    ABPInstalled: !!adblock?.adblockPlus,
-    ABPPremium: !!adblock?.adblockPlus?.isPremium,
-    ABPVersion: adblock?.adblockPlus?.version,
+    ABPInstalled: !!adblock.adblockPlus,
+    ABPPremium: !!adblock.adblockPlus?.isPremium,
+    ABPVersion: adblock.adblockPlus?.version,
   });
 }
 
