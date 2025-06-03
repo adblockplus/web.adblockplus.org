@@ -31,6 +31,49 @@ const adblock = window.adblock = {
   },
 };
 
+const eventCallbacks = {};
+
+/**
+ * Call a callback after an event is triggered
+ * @param {string} event - event name
+ * @param {function} callback - callback function
+ */
+adblock.on = function onEvent(event, callback) {
+  if (!Array.isArray(eventCallbacks[event])) eventCallbacks[event] = [];
+  eventCallbacks[event].push(callback);
+}
+
+const onceAfterCallbacks = {};
+
+/**
+ * Call a callback only once after an event has occured once
+ * 
+ * Will call immediately if the event has already been tirggered
+ * 
+ * @param event - event name
+ * @param callback - callback function
+ */
+adblock.onceAfter = function afterEvent(event, callback) {
+  if (onceAfterCallbacks[event] === true) return callback()
+  if (onceAfterCallbacks[event] === undefined) onceAfterCallbacks[event] = [];
+  onceAfterCallbacks[event].push(callback);
+}
+
+/**
+ * Trigger an event (call it's callbacks)
+ * @param {string} event - event name
+ * @param {object} data - event data
+ */
+adblock.trigger = function triggerEvent(event, data) {
+  if (Array.isArray(onceAfterCallbacks[event])) {
+    onceAfterCallbacks[event].forEach(callback => callback(data));
+    onceAfterCallbacks[event] = true;
+  }
+  if (Array.isArray(eventCallbacks[event])) {
+    eventCallbacks[event].forEach(callback => callback(data));
+  }
+}
+
 const ALPHANUM = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 /** generate sudo-random id */
@@ -123,43 +166,6 @@ adblock.logServiceError = function logServiceError(source, rejection) {
   });
 }
 
-/** global general error handling and logging function */
-adblock.handleError = function handleError({name, message, context, handler}) {
-  if (handler) handler({name, message, context});
-  else if (message) alert(message);
-  console.error(name, message, context);
-  let shareableContext;
-  try { shareableContext = JSON.stringify(context); }
-  catch (error) {}
-  adblock.log("error", {name, shareableContext})
-}
-
-const injectionCallbacks = {};
-
-/** 
- * Call a callback after an extension injects data into the page
- * (or immediately if the extension has already injected data into the page)
- */
-adblock.afterExtensionInjection = function afterExtensionInjection(extensionName, callback) {
-  if (adblock[extensionName]) return callback();
-  if (!injectionCallbacks[extensionName]) injectionCallbacks[extensionName] = [];
-  injectionCallbacks[extensionName].push(callback);
-}
-
-adblock.afterAdblockPlusDetected = callback => adblock.afterExtensionInjection("adblockPlus", callback);
-
-function handleExtensionInjection(extensionName, extensionId) {
-  try {
-    adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
-    if (injectionCallbacks[extensionName])
-      injectionCallbacks[extensionName].forEach(callback => callback());
-  } catch (error) {
-    const context = {};
-    context[extensionId] = document.documentElement.dataset[extensionId];
-    adblock.handleError({name: "parse-extension-injection", context});
-  }
-}
-
 function observeExtensionInjection(extensionName, extensionId) {
   if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
     handleExtensionInjection(extensionName, extensionId);
@@ -174,8 +180,20 @@ function observeExtensionInjection(extensionName, extensionId) {
   }
 }
 
-observeExtensionInjection("adblock", "adblockExtensionInfo");
+function handleExtensionInjection(extensionName, extensionId) {
+  try {
+    adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
+    adblock.fire(extensionName)
+  } catch (error) {
+    const context = {};
+    context[extensionId] = document.documentElement.dataset[extensionId];
+    adblock.logScriptError("handleExtensionInjection", error);
+  }
+}
+
 observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
+
+adblock.afterAdblockPlusDetected = callback => adblock.onceAfter("adblockPlus", callback)
 
 // Temporarily measuring the time it takes for Adblock Plus to inject
 // information into adblockplus.org so that we can consider it in our UX
