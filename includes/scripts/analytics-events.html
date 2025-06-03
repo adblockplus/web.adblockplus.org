@@ -1,13 +1,22 @@
 <script>(()=>{
 // requires scripts/namespace
+// requires scripts/events
 // requires scripts/analytics
+// uses scripts/extension-injection
+// uses scripts/platform-detection
 
-/** logs essential analytics on load */
-window.addEventListener("load", function onLoad() {
+const maxLoadReportDelay = 3000;
+
+let loadReported = false;
+
+function reportLoad() {
+  if (loadReported) return;
+  loadReported = true;
   adblock.log("load", {
-    entryVersion: "1.1.0",
+    entryVersion: "2.0.0",
     scriptTime: adblock.scriptTime,
-    loadTime: parseInt(performance.now(), 10),
+    injectionTime: adblock.injectionTime,
+    loadTime: adblock.loadTime,
     pageName: adblock.settings.page,
     pageLocale: adblock.settings.locale,
     trafficSource: adblock.query.get("s"),
@@ -21,6 +30,37 @@ window.addEventListener("load", function onLoad() {
     adblockPlusInstalled: !!adblock?.adblockPlus,
     adblockPlusPremium: !!adblock?.adblockPlus?.isPremium,
   });
+}
+
+setTimeout(reportLoad, maxLoadReportDelay);
+
+window.addEventListener("load", function onLoad() {
+  adblock.loadTime = parseInt(performance.now(), 10);
+  if (loadReported) {
+    adblock.log("late-load", {
+      entryVersion: "1.0.0",
+      scriptTime: adblock.scriptTime,
+      injectionTime: adblock.injectionTime,
+      loadTime: adblock.loadTime,
+    });
+  } else {
+    reportLoad();
+  }
+});
+
+adblock.onceAfter("adblockPlus", () => {
+  adblock.injectionTime = parseInt(performance.now(), 10);
+  if (loadReported) {
+    adblock.log("late-injection", {
+      entryVersion: "1.0.0",
+      scriptTime: adblock.scriptTime,
+      injectionTime: adblock.injectionTime,
+      loadTime: adblock.loadTime,
+      version: adblock.adblockPlus.version,
+      browser: adblock.settings.detectedBrowser,
+      operatingSystem: adblock.settings.detectedOperatingSystem,
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
