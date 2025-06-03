@@ -21,7 +21,7 @@ function observeExtensionInjection(extensionName, extensionId) {
 function handleExtensionInjection(extensionName, extensionId) {
   try {
     adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
-    adblock.fire(extensionName)
+    adblock.trigger(extensionName)
   } catch (error) {
     const context = {};
     context[extensionId] = document.documentElement.dataset[extensionId];
@@ -32,5 +32,9 @@ function handleExtensionInjection(extensionName, extensionId) {
 observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
 
 adblock.afterAdblockPlusDetected = callback => adblock.onceAfter("adblockPlus", callback);
+
+adblock.afterAdblockPlusDetected(() => {
+  adblock.injectionTime = parseInt(performance.now(), 10);
+});
 
 })()</script>

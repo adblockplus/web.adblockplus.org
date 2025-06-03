@@ -50,13 +50,20 @@ const PRICES = {
 
 const defaultCurrency = adblock.settings.defaultCurrency || "USD";
 
-document.querySelectorAll(".update-premium-checkout-button").forEach(button => {
+document.querySelectorAll(".update-premium-checkout-button").forEach((button, index) => {
+  const currency = defaultCurrency;
+  const frequency = button.dataset.frequency;
+  const amount = PRICES[currency][frequency];
+  const trigger = `button-${index + 1}`;
+  button.dataset.click = JSON.stringify({
+    type: "checkout-start",
+    currency,
+    frequency,
+    amount,
+    trigger,
+  });
   button.addEventListener("click", () => {
-    const product = "premium";
-    const currency = defaultCurrency;
-    const frequency = button.dataset.frequency;
-    const amount = PRICES[currency][frequency];
-    checkout({product, currency, frequency, amount});
+    checkout({product, currency, frequency, amount, trigger});
   });
 });
 

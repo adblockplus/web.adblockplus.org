@@ -1,8 +1,8 @@
 <script>(()=>{
 // requires scripts/namespace
 // requires scripts/events
-// requires scripts/analytics
-// uses scripts/extension-injection
+// requires scripts/analytics-functions
+// requires scripts/extension-injection
 // uses scripts/platform-detection
 
 const maxLoadReportDelay = 3000;
@@ -48,8 +48,7 @@ window.addEventListener("load", function onLoad() {
   }
 });
 
-adblock.onceAfter("adblockPlus", () => {
-  adblock.injectionTime = parseInt(performance.now(), 10);
+adblock.afterAdblockPlusDetected(() => {
   if (loadReported) {
     adblock.log("late-injection", {
       entryVersion: "1.0.0",
@@ -61,12 +60,6 @@ adblock.onceAfter("adblockPlus", () => {
       operatingSystem: adblock.settings.detectedOperatingSystem,
     });
   }
-});
-
-document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
-  document.querySelectorAll("[data-click]", function onDataClick(target) {
-    adblock.log("click", JSON.parse(target.dataset.click));
-  });
 });
 
 })()</script>

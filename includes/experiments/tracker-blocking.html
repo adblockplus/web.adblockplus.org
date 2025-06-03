@@ -70,14 +70,41 @@
 </aside>
 
 <script>(() => {
-  const applyExperiment = () => document.documentElement.classList.add("tracker-blocking--active");
+
+  function applyExperiment() {
+
+    if (
+      adblock.adblockPlus?.experimentFlags?.is_privacy_premium == true
+      || adblock.query.get("tracker-blocking") == "1"
+    ) {
+      document.documentElement.classList.add("tracker-blocking--active");
+    }
+
+    const experiment = 1;
+
+    const variant = adblock.query.has("tracker-blocking")
+      ? adblock.query.get("tracker-blocking") == "1" ? 1 : 0
+      : adblock.extension?.experimentFlags?.is_privacy_premium ? 1 : 0;
+
+    adblock.on("log", ({event, data}) => {
+      data.experiments = `,${experiment}|${variant},`;
+    });
+
+    adblock.on("checkout-options", options => {
+      options.customData.experiment_id = experiment;
+      options.customData.variant_index = variant;
+    });
+    
+  }
+
   if (adblock.query.has("tracker-blocking")) {
     applyExperiment();
   } else {
-    adblock.afterAdblockPlusDetected(() => { 
-      if (adblock?.adblockPlus?.experimentFlags?.is_privacy_premium) {
+    adblock.afterAdblockPlusDetected(() => {
+      if (adblock.adblockPlus?.experimentFlags.hasOwnProperty("is_privacy_premium")) {
         applyExperiment();
       }
     });
   }
+
 })()</script>

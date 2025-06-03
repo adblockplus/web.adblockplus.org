@@ -1,0 +1,28 @@
+<script>(()=>{
+// requires scripts/namespace
+// requires scripts/analytics-functions
+// requires scripts/error-reporting
+
+document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
+  document.querySelectorAll(".track-click, [data-click]").forEach(target => {
+    target.addEventListener("click", function onTrackedClick() {
+      try {
+        const data = {};
+        if (typeof target.dataset == "object" && typeof target.dataset.click == "string") {
+          // if target has data-click then use that for click tracking data
+          Object.assign(data, JSON.parse(target.dataset.click));
+        } else {
+          // else use the indexOf the target in the page and its classes as "tags"
+          let targetIndex = Array.from(document.querySelectorAll(".track-click")).indexOf(target);
+          data.trigger = `trigger-${targetIndex + 1}`;
+          data.tags = Array.from(target.classList);
+        }
+        adblock.log("click", data);
+      } catch (error) {
+        adblock.logScriptError("click-tracking", error);
+      }
+    });
+  });
+});
+
+})()</script>

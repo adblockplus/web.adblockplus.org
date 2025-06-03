@@ -23,6 +23,7 @@ const urlParamsJSON = JSON.stringify(adblock.URLSearchObject(location.search));
 /** record data/activity via access log entry */
 adblock.log = function log(event, data = {}) {
   try {
+    adblock.trigger("log", {event, data});
     const hardcoded = {
       logVersion: "2.1.0",
       event: event,

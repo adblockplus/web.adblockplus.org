@@ -778,6 +778,23 @@ adblock.api.setExperimentVariantId = variant => { experimentVariantId = variant;
 export const checkoutEvents = adblock.api.checkoutEvents = new Events();
 const paddleEventCallback = event => checkoutEvents.fire(event.name, event.data);
 
+[
+  "checkout.loaded",
+  "checkout.customer.created",
+  "checkout.payment.initiated"
+]
+.forEach(name => {
+  checkoutEvents.on(name, data => {
+    adblock.log("checkout-event", {
+      name: name,
+      amount: data.custom_data?.amount_cents,
+      frequency: data.custom_data?.sub_type,
+      currency: data.custom_data?.currency,
+      trigger: data.custom_data?.trigger,
+    });
+  })
+});
+
 let paddleToken = PADDLE_LIVE_TOKEN;
 
 const paddleEnvironment = location.hostname == "localhost" ? "test"
@@ -820,10 +837,11 @@ const planCodeCompatibility = {
  * @param {string} [options.email] - customer email
  * @param {string} [options.flow] - checkout flow being completed (default: page name)
  * @param {string} [options.successUrl] - checkout success URL redirected to
+ * @param {string} [options.trigger] - identifier for the source/trigger of the checkout on the page (e.g. button-1)
  */
 export const checkout = adblock.api.checkout = function checkout(options) {
 
-  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl, coupon, email } = options;
+  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl, coupon, email, trigger } = options;
 
   const clickTs = Date.now();
 
@@ -881,7 +899,8 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   const trackingPrefix = (productCode || funnelCode) ? `${productCode}_${funnelCode} ` : "";
 
   const customData = {
-    version: "1.0.0",
+    version: "1.1.0",
+    trigger,
     locale,
     page: adblock.settings.page,
     path: location.pathname,
@@ -906,7 +925,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     cancel_url: window.location.href
   };
 
-  let checkoutOptions = {
+  const checkoutOptions = {
     settings: {
       successUrl,
       locale: PADDLE_LOCALE_EXCEPTIONS[locale] || locale,
@@ -914,6 +933,8 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     customData,
     items: [{ priceId }],
   };
+
+  adblock.trigger("checkout-options", checkoutOptions);
 
   if (coupon) checkoutOptions.discountCode = coupon;
   if (email) checkoutOptions.customer = { email };
