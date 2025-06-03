@@ -30,6 +30,8 @@ adblock.log = function log(event, data = {}) {
       logVersion: "2.1.0",
       event: event,
       sid: adblock.sid,
+      pageName: adblock.settings.page,
+      pageLocale: adblock.settings.locale,
       pagePath: location.pathname,
       urlParams: urlParamsJSON,
     };
