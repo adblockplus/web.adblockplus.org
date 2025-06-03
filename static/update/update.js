@@ -51,6 +51,7 @@ const PRICES = {
 const defaultCurrency = adblock.settings.defaultCurrency || "USD";
 
 document.querySelectorAll(".update-premium-checkout-button").forEach((button, index) => {
+  const product = "premium";
   const currency = defaultCurrency;
   const frequency = button.dataset.frequency;
   const amount = PRICES[currency][frequency];
