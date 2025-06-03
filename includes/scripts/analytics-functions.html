@@ -1,0 +1,48 @@
+<script>(()=>{
+// source scripts/analytics-functions
+// requires scripts/namespace
+// requires scripts/sessions
+
+/** create an object from url params **/
+adblock.URLSearchObject = function URLSearchObject(search) {
+  const params = new URLSearchParams(search);
+  return params.entries().reduce((object, entry) => {
+    const [key, value] = entry;
+    if (object.hasOwnProperty(key)) {
+      if (Array.isArray(object[key])) object[key].push(value);
+      else object[key] = [object[key], value];
+    } else {
+      object[key] = value;
+    }
+    return object;
+  }, {});
+}
+
+const urlParamsJSON = JSON.stringify(adblock.URLSearchObject(location.search));
+
+/** record data/activity via access log entry */
+adblock.log = function log(event, data = {}) {
+  try {
+    const hardcoded = {
+      logVersion: "2.1.0",
+      event: event,
+      sid: adblock.sid,
+      pagePath: location.pathname,
+      urlParams: urlParamsJSON,
+    };
+    const params = new URLSearchParams();
+    for (const property in data) {
+      if (hardcoded.hasOwnProperty(property)) console.error(`adblock.log() recieved data with reserved property: ${property}`);
+      if (data[property] == null || data[property] == undefined) continue;
+      params.set(property, data[property]);
+    }
+    for (const property in hardcoded) {
+      params.set(property, hardcoded[property]);
+    }
+    return fetch(`/access?${params.toString()}`);
+  } catch (error) {
+    console.error("adblock.log", event, data, error);
+  }
+}
+
+})()</script>

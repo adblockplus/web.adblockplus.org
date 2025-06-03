@@ -1,0 +1,48 @@
+<script>(()=>{
+// source scripts/events
+// requires scripts/namespace
+
+const eventCallbacks = {};
+
+/**
+ * Call a callback after an event is triggered
+ * @param {string} event - event name
+ * @param {function} callback - callback function
+ */
+adblock.on = function onEvent(event, callback) {
+  if (!Array.isArray(eventCallbacks[event])) eventCallbacks[event] = [];
+  eventCallbacks[event].push(callback);
+}
+
+const onceAfterCallbacks = {};
+
+/**
+ * Call a callback only once after an event has occured once
+ * 
+ * Will call immediately if the event has already been tirggered
+ * 
+ * @param event - event name
+ * @param callback - callback function
+ */
+adblock.onceAfter = function afterEvent(event, callback) {
+  if (onceAfterCallbacks[event] === true) return callback()
+  if (onceAfterCallbacks[event] === undefined) onceAfterCallbacks[event] = [];
+  onceAfterCallbacks[event].push(callback);
+}
+
+/**
+ * Trigger an event (call it's callbacks)
+ * @param {string} event - event name
+ * @param {object} data - event data
+ */
+adblock.trigger = function triggerEvent(event, data) {
+  if (Array.isArray(onceAfterCallbacks[event])) {
+    onceAfterCallbacks[event].forEach(callback => callback(data));
+    onceAfterCallbacks[event] = true;
+  }
+  if (Array.isArray(eventCallbacks[event])) {
+    eventCallbacks[event].forEach(callback => callback(data));
+  }
+}
+
+})()</script>

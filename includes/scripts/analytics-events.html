@@ -1,0 +1,32 @@
+<script>(()=>{
+// requires scripts/namespace
+// requires scripts/analytics
+
+/** logs essential analytics on load */
+window.addEventListener("load", function onLoad() {
+  adblock.log("load", {
+    entryVersion: "1.1.0",
+    scriptTime: adblock.scriptTime,
+    loadTime: parseInt(performance.now(), 10),
+    pageName: adblock.settings.page,
+    pageLocale: adblock.settings.locale,
+    trafficSource: adblock.query.get("s"),
+    detectedCountry: adblock.settings.detectedCountry,
+    detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
+    detectedBrowser: adblock.settings.detectedBrowser,
+    browserHeight: window.innerHeight,
+    browserWidth: window.innerWidth,
+    screenHeight: screen.height,
+    screenWidth: screen.width,
+    adblockPlusInstalled: !!adblock?.adblockPlus,
+    adblockPlusPremium: !!adblock?.adblockPlus?.isPremium,
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
+  document.querySelectorAll("[data-click]", function onDataClick(target) {
+    adblock.log("click", JSON.parse(target.dataset.click));
+  });
+});
+
+})()</script>

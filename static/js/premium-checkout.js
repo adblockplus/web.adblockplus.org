@@ -1,6 +1,8 @@
 import { checkout, checkoutEvents } from "../modules/paddle.js";
 import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
+if (adblock.query.has("design")) document.documentElement.classList.add("design");
+
 ////////////////////////////////////////////////////////////////////////////////
 // GLOBALS
 ////////////////////////////////////////////////////////////////////////////////

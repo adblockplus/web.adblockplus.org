@@ -1,0 +1,18 @@
+<script>(()=>{
+// requires scripts/namespace
+
+adblock.settings.detectedOperatingSystem = navigator.userAgent.includes("Windows NT") ? "windows"
+  : navigator.userAgent.includes("iPhone") || navigator.userAgent.includes("iPad") ? "ios"
+  : navigator.userAgent.includes("Macintosh") ? "mac"
+  : navigator.userAgent.includes("Linux") ? "linux"
+  : "other";
+
+adblock.settings.detectedBrowser = /opera|opr\//i.test(navigator.userAgent) ? "opera"
+  : /SamsungBrowser/i.test(navigator.userAgent) ? "samsung"
+  : /\sedg\/|edg([ea])/i.test(navigator.userAgent) ? "edge"
+  : /firefox|iceweasel/i.test(navigator.userAgent) ? "firefox"
+  : /chrome|chromium/i.test(navigator.userAgent) ? "chrome"
+  : /safari|applewebkit/i.test(navigator.userAgent) ? "safari"
+  : "other";
+
+})()</script>

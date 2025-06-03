@@ -1,0 +1,15 @@
+<script>
+// source scripts/sessions
+// requires scripts/namespace
+
+const ALPHANUM = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+/** generate sudo-random id */
+adblock.uid = function uid(length = 32) {
+  return [...Array(length)].map(() => ALPHANUM[Math.floor(Math.random() * ALPHANUM.length)]).join("");
+}
+
+/** browsing session uid */
+adblock.sid = adblock.query.get("sid") || adblock.uid();
+
+</script>

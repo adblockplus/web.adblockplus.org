@@ -1,0 +1,36 @@
+<script>(()=>{
+// source scripts/extension-injection
+// requires scripts/namespace
+// requires scripts/events
+// requires scripts/error-reporting
+
+function observeExtensionInjection(extensionName, extensionId) {
+  if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
+    handleExtensionInjection(extensionName, extensionId);
+  } else {
+    const observer = new MutationObserver(() => {
+      if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
+        handleExtensionInjection(extensionName, extensionId);
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.documentElement, {attributes: true});
+  }
+}
+
+function handleExtensionInjection(extensionName, extensionId) {
+  try {
+    adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
+    adblock.fire(extensionName)
+  } catch (error) {
+    const context = {};
+    context[extensionId] = document.documentElement.dataset[extensionId];
+    adblock.logScriptError("handleExtensionInjection", error);
+  }
+}
+
+observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
+
+adblock.afterAdblockPlusDetected = callback => adblock.onceAfter("adblockPlus", callback);
+
+})()</script>
