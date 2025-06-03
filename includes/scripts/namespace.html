@@ -3,6 +3,8 @@
 
 const scriptTime = parseInt(performance.now(), 10);
 
+const isLive = location.hostname == "adblockplus.org" || location.hostname.endsWith(".adblockplus.org");
+
 /**
  * @namespace
  * @prop {number} scriptTime - the earliest point where an inline script could measure performance
@@ -12,6 +14,7 @@ const scriptTime = parseInt(performance.now(), 10);
  * @prop {object} settings - shared settings injected via script
  */
 const adblock = window.adblock = {
+  isLive,
   scriptTime,
   query: new URLSearchParams(window.location.search),
   api: {},
