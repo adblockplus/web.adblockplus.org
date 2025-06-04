@@ -1,0 +1,25 @@
+<script>(()=>{
+// requires scripts/namespace
+
+const experimentRecordName = "experiments";
+
+adblock.getExperimentStore = function getExperimentStore() {
+  const experimentRecord = localStorage.getItem(experimentRecordName);
+  if (typeof experimentRecord == "string" && experimentRecord.length > 0) {
+    return JSON.parse(experimentRecord);
+  } else {
+    return {};
+  }
+};
+
+adblock.storeExperiment = function storeExperiment(experiment, variant) {
+  const experimentStore = adblock.getExperimentStore();
+  experimentStore[experiment] = variant;
+  localStorage.setItem(experimentRecordName, JSON.stringify(experimentStore));
+};
+
+adblock.formatExperimentRecord = function formatExperimentRecord(experimentStore) {
+  return Object.entries(experimentStore).map((entry) => entry.join("|")).join(",");
+};
+
+})()</script>

@@ -4,6 +4,18 @@ robots=none
 template=minimal
 
 <head>
+  <script>(()=>{
+    try {
+      const experimentStore = adblock.getExperimentStore();
+      if (Object.entries(experimentStore).length > 0) {
+        adblock.log("experiment-uninstall", {
+          experiments: adblock.formatExperimentRecord(experimentStore)
+        });
+      }
+    } catch (error) {
+      adblock.logScriptError("experiment-uninstall", error);
+    }
+  })()</script>
   <? include optimizely ?>
   <link href="/css/uninstalled.css" rel="stylesheet">
   <link href="/css/survey-form.css" rel="stylesheet">

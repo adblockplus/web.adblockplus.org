@@ -87,14 +87,16 @@
       : adblock.extension?.experimentFlags?.is_privacy_premium ? 1 : 0;
 
     adblock.on("log", ({event, data}) => {
-      data.experiments = `,${experiment}|${variant},`;
+      data.experiments = adblock.formatExperimentRecord(Object.fromEntries([[experiment, variant]]));
     });
 
     adblock.on("checkout-options", options => {
       options.customData.experiment_id = experiment;
       options.customData.variant_index = variant;
     });
-    
+
+    adblock.storeExperiment(experiment, variant);
+
   }
 
   if (adblock.query.has("tracker-blocking")) {
