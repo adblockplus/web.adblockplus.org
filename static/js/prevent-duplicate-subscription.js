@@ -8,7 +8,7 @@ import { checkoutEvents } from "../modules/paddle.js";
 // Premium subscirption and shows them instructions to activate Premium instead 
 // of purchasing another Premium subscription if they do.
 
-const hasSubscriptionEndpoint = "https://abp-payments.ey.r.appspot.com/user/has_active_premium_subcription";
+const hasSubscriptionEndpoint = "https://abp-payments.ey.r.appspot.com/user/has_active_premium_subscription";
 const maximumInterventionDelay = 5000;
 
 const interventionOverlay = document.getElementById("account-restore");
