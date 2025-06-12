@@ -142,6 +142,21 @@
         "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?deal/?",
         "destination": "https://accounts.adblockplus.org/premium",
         "type": 302
+      },
+      {
+        "regex": "(?i)^/get-abp-ios-safari-qrcode/?$",
+        "destination": "https://apps.apple.com/app/apple-store/id1028871868?pt=117871164&ct=grow-98-qrcode&mt=8",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/get-abp-ios-safari-badge/?$",
+        "destination": "https://apps.apple.com/app/apple-store/id1028871868?pt=117871164&ct=grow-98-badge&mt=8",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/get-abp-browser-android/?$",
+        "destination": "https://adblockbrowser.org/",
+        "type": 301
       }
     ],
     "rewrites": [
