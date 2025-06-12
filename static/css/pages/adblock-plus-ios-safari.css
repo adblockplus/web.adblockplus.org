@@ -1,0 +1,173 @@
+h1 {
+    font-size: 50px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Intro section ******************************************************************/
+
+.tag {
+    background: #eda51e;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 50px 0 25px;
+}
+
+.section-intro-image {
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media (min-width: 700px) {
+    .section-intro {
+        display: flex;
+        gap: 30px;
+    }  
+    
+    .section-intro-image {
+        margin-top: 0;
+    }
+
+    .section-intro-image,
+    .section-intro-header {
+        flex: 1;
+    }
+}
+
+/* QR Code ******************************************************************/
+
+.qr-code-cta {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 160px 120px;
+}
+
+.qr-code-cta figcaption {
+    font-weight: bold;
+    position: relative;
+}
+
+.app-store-badge {
+    display: block;
+    margin-top: 20px;
+}
+
+@media (min-width: 380px) {
+    .qr-code-cta {
+        gap: 80px;
+    }
+
+    .qr-code-cta figcaption:after {
+        background-image: url(/adblock-plus-ios-safari/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        display: block;
+        height: 17px;
+        position: absolute;
+        right: -60px;
+        top: 50px;
+        width: 42px;
+    }
+}
+
+/* Features section ******************************************************************/
+
+.section-features {
+    background: #e6f5fc;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features-item-list {
+    margin: 0 10px;
+}
+
+.features-item-list li {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+    margin: 25px 0;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.features-item-list h2 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 700px) {
+    .features-item-list {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-item-list li {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    .features-item-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Scroll button ******************************************************************/
+
+.scroll-to-button {
+    background: #0688cb;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 50px;
+    padding: 0.5rem calc(1rem + 20px) 0.5rem 1rem;
+    position: relative;
+    text-align: center;
+}
+
+.scroll-to-button:after {
+    content: "↑";
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+.scroll-to-button:link,
+.scroll-to-button:visited {
+    color: #fff;
+}
+
+.scroll-to-button:hover,
+.scroll-to-button:active,
+.scroll-to-button:focus {
+    background-color: #0679b4;
+    cursor: pointer;
+    text-decoration: none;
+}
