@@ -18,19 +18,20 @@ template=raw
     <div class="title">
         <strong>{{ safari-installed-title You’re all set.}}</strong>
         <br>
-        {{ safari-installed-subtitle Annoying ads blocked.}}
+        {{ safari-installed-subtitle Ads are now blocked in Safari.}}
+        <img src="/abp-for-safari-onboarding/img/lady_and_phone.svg" alt="Setup icon" class="logo-large">
     </div>
 
     <div class="description">
-        {{ safari-installed-desc Open the app to adjust your <a href="abp://safari-installed">settings</a> and explore additional features that enhance your
-        experience on Safari.}}
+        <span>{{ safari-installed-desc Want even more protection?}}</span>
+        <span>{{ safari-installed-desc-2 Open the app to enable blocking for cookie pop-ups, surveys, and other distractions - all in just a tap. }}</span>
     </div>
-    <div class="feature-list">
-        <div class="feature-item">
-            ✨ Block cookie consent pop-ups
-        </div>
-        <div class="feature-item">
-            ✨ Hide pop-ups, surveys, and distractions
-        </div>
-    </div>
+
+</div>
+<div class="footer">
+    <a class="ios-button" href="abp://safari-installed">
+        {{ safari-settings-action Enable More Blocking }}
+    </a>
+    <p>{{ safari-installed-note Additional features are off by default to keep things simple. You can enable them any time in the app. }}</p>
+</div>
 </div>

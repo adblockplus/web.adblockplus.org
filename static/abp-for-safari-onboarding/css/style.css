@@ -7,7 +7,7 @@
   --color-background-light: #F5F5F5;
   --color-divider: #E6E6E6;
   --color-placeholder: #E5E2E2;
-
+  --text-colorTextBase: #000;
   /* Typography */
   --font-family-primary: "Inter", sans-serif;
   --font-family-system: "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -34,6 +34,8 @@ body {
   font-family: var(--font-family-primary), sans-serif;
   background-color: var(--color-white);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Layout components */
@@ -78,9 +80,12 @@ body {
 
 .content-container {
   background-color: var(--color-white);
-  position: relative;
   z-index: 1;
   padding-top: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .centered-footer {
@@ -101,7 +106,7 @@ body {
 }
 
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Header elements */
@@ -135,6 +140,8 @@ body {
   font-weight: 400;
   padding-left: var(--spacing-medium);
   padding-right: var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Instructions */
@@ -190,14 +197,17 @@ a {
   font-weight: 500;
 }
 
-a:hover, a:visited, a:active {
+a:hover,
+a:visited,
+a:active {
   color: #2284F7;
   text-decoration: none;
 }
 
 .enable-extension-animation {
   width: 80%;
-  aspect-ratio: 1200 / 426; /* Original dimensions of your iframe */
+  aspect-ratio: 1200 / 426;
+  /* Original dimensions of your iframe */
   overflow: hidden;
   margin: var(--spacing-medium) 10%;
 }
@@ -206,4 +216,60 @@ a:hover, a:visited, a:active {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+button {
+  display: flex;
+  padding: 12px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 100px;
+  background: #4A4A4A;
+  color: #FFF;
+  font-family: var(--font-family-primary), sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.footer {
+  padding: 18px var(--spacing-medium);
+}
+
+.footer p {
+  font-size: 12px;
+}
+
+.ios-button {
+  display: flex;
+  padding: 12px 8px;
+  margin: 8px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 100px;
+  background: #4A4A4A;
+  color: #fff;
+}
+
+.ios-button.outline {
+  border: 1px solid var(--text-colorTextBase, #000);
+  background: #FFF;
+  color: var(--text-colorTextBase, #000);
+}
+
+.ios-button:visited,
+.ios-button:hover,
+.ios-button:active {
+  color: #fff;
+}
+
+.ios-button.outline:visited,
+.ios-button.outline:hover,
+.ios-button.outline:active {
+  color: var(--text-colorTextBase, #000);
 }
