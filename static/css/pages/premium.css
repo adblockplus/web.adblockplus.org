@@ -311,6 +311,12 @@ html {
   color: #fff;
 }
 
+.premium-plan.selected .premium-button {
+  border: 1px solid #EDA51E;
+  background-color: #EDA51E;
+  color: #fff;
+}
+
 @media (min-width: 992px) {
 
   .premium-plans .premium-row {

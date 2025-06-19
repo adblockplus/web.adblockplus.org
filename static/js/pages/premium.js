@@ -1,3 +1,5 @@
+import steps from '../premium-checkout.js'
+
 /**
  * Set all targets height equal to the largest targets height
  * CAUTION: This only works as-is for elements without padding
@@ -49,9 +51,19 @@ function setAutoHeights(targets)
    heightTarget.style.height = (offsetTargetOffset + additionalStaticOffset - bodyPaddingTop) + 'px';
  }
 
-// Enable pre-selecting monthly/yearly payment options via clicking a 
+// Enable pre-selecting monthly/yearly payment options via clicking a
 // .premium-cta[data-plan] with an allowlisted plan
 const premiumPlans = ['monthly', 'yearly'];
+const plansContainer = document.querySelector('.premium-plans');
+
+window.addEventListener('paddleCheckoutClosed', () => {
+  plansContainer.classList.remove('has-selection');
+  plansContainer.classList.add('not-hovered');
+  document.querySelectorAll('.premium-plan').forEach(plan => {
+    plan.classList.remove('selected');
+  });
+});
+
 window.addEventListener('click', event => {
   if (
     event.target.classList
@@ -59,11 +71,16 @@ window.addEventListener('click', event => {
     && event.target.dataset
     && event.target.dataset.plan
   ) {
-    const plan = event.target.dataset.plan;
-    if (premiumPlans.indexOf(plan) == -1) return;
-    document
-      .querySelector(`.premium-checkout-purchase-price[value="${plan}"]`)
-      .click();
+    const frequency = event.target.dataset.plan;
+    console.log(frequency);
+    if (premiumPlans.indexOf(frequency) == -1) return;
+
+    event.preventDefault();
+
+    const currency = adblock.settings.defaultCurrency || "USD";
+    console.log(currency);
+
+    steps.purchase.fire("checkout-now", { frequency, currency });
   }
 });
 
@@ -107,10 +124,14 @@ function onDOMContentLoaded()
   // like the other .premium-plan until no .premium-plan is hovered again
   document.querySelectorAll('.premium-plan').forEach(plan => {
     plan.addEventListener('mouseenter', () => {
-      document.querySelector('.premium-plans').classList.remove('not-hovered');
+      if (!document.querySelector('.premium-plans').classList.contains('has-selection')){
+        document.querySelector('.premium-plans').classList.remove('not-hovered');
+      }
     });
     plan.addEventListener('mouseleave', () => {
-      document.querySelector('.premium-plans').classList.add('not-hovered');
+      if (!document.querySelector('.premium-plans').classList.contains('has-selection')) {
+        document.querySelector('.premium-plans').classList.add('not-hovered');
+      }
     })
   });
 
