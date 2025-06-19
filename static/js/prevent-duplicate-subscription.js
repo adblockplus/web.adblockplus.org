@@ -78,6 +78,8 @@ interventionCloseButton.addEventListener("click", () => finishIntervention(true)
  */
 function preventDuplicateSubscription(event) {
 
+  if (event.status == "past_due") return;
+
   startIntervention();
   showInterventionLoading();
 
