@@ -49,9 +49,19 @@ function setAutoHeights(targets)
    heightTarget.style.height = (offsetTargetOffset + additionalStaticOffset - bodyPaddingTop) + 'px';
  }
 
-// Enable pre-selecting monthly/yearly payment options via clicking a 
+// Enable pre-selecting monthly/yearly payment options via clicking a
 // .premium-cta[data-plan] with an allowlisted plan
 const premiumPlans = ['monthly', 'yearly'];
+const plansContainer = document.querySelector('.premium-plans');
+const useDirectCheckout = adblock.query.has('direct-checkout') || plansContainer.classList.contains("direct-checkout");
+window.addEventListener('paddleCheckoutClosed', () => {
+  plansContainer.classList.remove('has-selection');
+  plansContainer.classList.add('not-hovered');
+  document.querySelectorAll('.premium-plan').forEach(plan => {
+    plan.classList.remove('selected');
+  });
+});
+
 window.addEventListener('click', event => {
   if (
     event.target.classList
@@ -61,9 +71,18 @@ window.addEventListener('click', event => {
   ) {
     const plan = event.target.dataset.plan;
     if (premiumPlans.indexOf(plan) == -1) return;
+
     document
-      .querySelector(`.premium-checkout-purchase-price[value="${plan}"]`)
-      .click();
+        .querySelector(`.premium-checkout-purchase-price[value="${plan}"]`)
+        .click();
+
+    if (useDirectCheckout) {
+      event.preventDefault(); // prevent scrolling and trigger submit action directly
+      plansContainer.classList.add('has-selection');
+      plansContainer.classList.remove('not-hovered');
+      event.target.closest('.premium-plan').classList.add('selected');
+      document.querySelector('.premium-checkout-purchase__checkout-button').click();
+    }
   }
 });
 
@@ -107,10 +126,14 @@ function onDOMContentLoaded()
   // like the other .premium-plan until no .premium-plan is hovered again
   document.querySelectorAll('.premium-plan').forEach(plan => {
     plan.addEventListener('mouseenter', () => {
-      document.querySelector('.premium-plans').classList.remove('not-hovered');
+      if (!document.querySelector('.premium-plans').classList.contains('has-selection')){
+        document.querySelector('.premium-plans').classList.remove('not-hovered');
+      }
     });
     plan.addEventListener('mouseleave', () => {
-      document.querySelector('.premium-plans').classList.add('not-hovered');
+      if (!document.querySelector('.premium-plans').classList.contains('has-selection')) {
+        document.querySelector('.premium-plans').classList.add('not-hovered');
+      }
     })
   });
 
