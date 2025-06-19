@@ -538,11 +538,10 @@ async function goto(nextStep, state, log) {
 // 2. steps.activated
 //
 // with steps.error on error.
-steps.purchase.on("checkout-now", async () => {
+steps.purchase.on("checkout-now", async ({frequency, currency}) => {
+  console.log("checkout-now", {frequency, currency});
   try {
     flow = "purchase";
-    const frequency = steps.purchase.getSelectedValue();
-    const currency = steps.purchase.getCurrency();
     const amount = PRICES[currency][frequency];
     const product = "premium";
     await goto(steps.loading);
@@ -714,7 +713,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
       });
     } else {
       await goto(steps.verifyEmail);
-      card.scrollIntoView();  
+      card.scrollIntoView();
     }
   } catch (error) {
     adblock.logScriptError("premium.restore-purchase", error);
@@ -752,3 +751,5 @@ if (
     gtag('event', 'conversion', { send_to, value, currency, transition_id });
   }
 }
+
+export default steps;
