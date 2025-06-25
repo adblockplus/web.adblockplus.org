@@ -18,14 +18,10 @@ robots=none
 
         <figure class="section-intro__qr-code-cta">
           <figcaption>
-            {{ scan-qr-code Scan the QR code with your iPhone or iPad to download }}
-            <a class="section-intro__app-store-badge" href="https://adblockplus.org/get-abp-ios-safari-badge">
-              <img src="/adblock-plus-ios-safari/app-store.svg" height="46" width="144" alt="{{ download-app-store Download on the App Store }}" />
-            </a>
+            {{ scan-qr-code Scan the QR code to download the app }}
+            <img class="section-intro__badge" src="/adblock-plus-ios-safari/badge.svg" height="37" width="175" alt="{{ for-iphone-ipad For iPhone & iPad }}" />
           </figcaption>
-          <a href="https://adblockplus.org/get-abp-ios-safari-qrcode">
-            <img src="/adblock-plus-ios-safari/qrcode.svg" height="120" width="120" alt="" />
-          </a>
+          <img src="/adblock-plus-ios-safari/qrcode.svg" height="120" width="120" alt="" />
         </figure>
       </header>
       <div class="section-intro__image">
@@ -68,9 +64,9 @@ robots=none
 
 <script>(() => {
   /**
-   * Store experiment ID / variant to measure uninstalls 
-   * after seeing the page. Note there is no control for 
-   * this experiment but we are using variant=1 for 
+   * Store experiment ID / variant to measure uninstalls
+   * after seeing the page. Note there is no control for
+   * this experiment but we are using variant=1 for
    * tracking purposes.
    */
   function applyExperiment() {
