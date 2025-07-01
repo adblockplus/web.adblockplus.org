@@ -645,6 +645,22 @@ html {
 }
 
 /*******************************************************************************
+ * Premium - Already contributed
+ ******************************************************************************/
+
+.premium-plans__already-contributed {
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+}
+
+.premium-plans__already-contributed > a {
+  color: #0055B7;
+}
+
+/*******************************************************************************
  * Premium navigation cards
  ******************************************************************************/
 
