@@ -84,6 +84,16 @@ window.addEventListener('click', event => {
   }
 });
 
+document.addEventListener("click", event => {
+  const link = event.target.closest(".premium-checkout-purchase__restore-purchase-link");
+  if (!link) return;
+
+  event.preventDefault();
+
+  document.querySelector("#premium-checkout-flows").removeAttribute("hidden");
+  steps.purchase.fire("restore-purchase");
+});
+
 function onDOMContentLoaded()
 {
   // Set up FAQ toggles
