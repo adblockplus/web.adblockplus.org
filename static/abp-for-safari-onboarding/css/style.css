@@ -38,6 +38,13 @@ body {
   flex-direction: column;
 }
 
+/** Safari */
+@supports (background: -webkit-named-image(i)) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+}
+
 /* Layout components */
 .header {
   height: var(--header-height);
