@@ -262,10 +262,6 @@ class PurchaseStep extends Step {
   /**
    * - Populates currencies in currency select
    * - Sets default currency in currency select
-   * - Listens to currency selection to update currency
-   * - Listens to price button click to toggle checkout buttons
-   * - Listens to form submit to trigger custom submit event
-   * - Listens to already contributed link click to trigger custom restore-purchase event
    */
   constructor(element, name) {
 
@@ -282,34 +278,6 @@ class PurchaseStep extends Step {
 
     this._onCurrencyChange({currentTarget: currencySelect});
     currencySelect.addEventListener("change", event => this._onCurrencyChange(event));
-
-    this.element
-    .querySelectorAll(".premium-checkout-purchase-price")
-    .forEach(option => {
-      option.addEventListener("click", event => this._onOptionPress(event));
-    });
-
-    this.element.addEventListener("submit", event => {
-      event.preventDefault();
-      this.fire("checkout-now");
-    });
-
-    this.element.querySelector(".premium-checkout-purchase__restore-purchase-link")
-    .addEventListener("click", event => {
-      event.preventDefault();
-      this.fire("restore-purchase");
-    });
-
-  }
-
-  _onOptionPress(event) {
-    event.preventDefault();
-    const clickedPrice = event.currentTarget;
-    const pressedPrice = this.element.querySelector(".premium-checkout-purchase-price[aria-pressed='true']");
-    if (pressedPrice != clickedPrice) {
-      pressedPrice.setAttribute("aria-pressed", false);
-      clickedPrice.setAttribute("aria-pressed", true);
-    }
   }
 
   _onCurrencyChange(event) {
@@ -324,15 +292,6 @@ class PurchaseStep extends Step {
     });
     this.fire("currency-change", currency);
     adblock.api.updateVATState(currency);
-  }
-
-  /** get the pressed amount value */
-  getSelectedValue() {
-    return this.element.querySelector(".premium-checkout-purchase-price[aria-pressed='true']").value;
-  }
-
-  getCurrency() {
-    return this.element.querySelector(".premium-checkout-header__select").value;
   }
 
 }
