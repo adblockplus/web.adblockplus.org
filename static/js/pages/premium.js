@@ -92,6 +92,14 @@ document.addEventListener("click", event => {
   steps.purchase.fire("restore-purchase");
 });
 
+window.addEventListener("click", event => {
+  if (event.target.id === "premium-cta--features") {
+    event.preventDefault();
+    const plans = document.querySelector(".premium-plans");
+    if (plans) plans.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
+
 function onDOMContentLoaded()
 {
   // Set up FAQ toggles
