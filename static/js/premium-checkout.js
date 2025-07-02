@@ -539,7 +539,6 @@ async function goto(nextStep, state, log) {
 //
 // with steps.error on error.
 steps.purchase.on("checkout-now", async ({frequency, currency}) => {
-  console.log("checkout-now", {frequency, currency});
   try {
     flow = "purchase";
     const amount = PRICES[currency][frequency];
@@ -627,6 +626,13 @@ steps.verifyCode.on("submit", async () => {
 [steps.error, steps.verifyEmail, steps.verifyCode].forEach(step => {
   step.on("close", () => {
     flow = "none";
+
+    document.querySelector("#premium-checkout-flows")?.setAttribute("hidden", "true");
+
+    // Scroll back to the plans section
+    const plans = document.querySelector(".premium-plans");
+    plans?.scrollIntoView({ behavior: "smooth", block: "start" });
+
     goto(steps.purchase)
   });
 });
