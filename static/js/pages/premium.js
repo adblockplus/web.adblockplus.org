@@ -72,13 +72,11 @@ window.addEventListener('click', event => {
     && event.target.dataset.plan
   ) {
     const frequency = event.target.dataset.plan;
-    console.log(frequency);
     if (premiumPlans.indexOf(frequency) == -1) return;
 
     event.preventDefault();
 
     const currency = adblock.settings.defaultCurrency || "USD";
-    console.log(currency);
 
     steps.purchase.fire("checkout-now", { frequency, currency });
   }
