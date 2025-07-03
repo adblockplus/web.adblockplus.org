@@ -75,9 +75,7 @@ window.addEventListener('click', event => {
     if (premiumPlans.indexOf(frequency) == -1) return;
 
     event.preventDefault();
-
     const currency = adblock.settings.defaultCurrency || "USD";
-
     steps.purchase.fire("checkout-now", { frequency, currency });
   }
 });
@@ -87,8 +85,7 @@ document.addEventListener("click", event => {
   if (!link) return;
 
   event.preventDefault();
-
-  document.querySelector("#premium-checkout-flows").removeAttribute("hidden");
+  document.getElementById("premium-checkout")?.removeAttribute("hidden");
   steps.purchase.fire("restore-purchase");
 });
 

@@ -1,7 +1,10 @@
 import { checkout, checkoutEvents } from "../modules/paddle.js";
 import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
-if (adblock.query.has("design")) document.documentElement.classList.add("design");
+if (adblock.query.has("design")) {
+  document.getElementById("premium-checkout").removeAttribute("hidden");
+  document.documentElement.classList.add("design")
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // GLOBALS
@@ -586,7 +589,7 @@ steps.verifyCode.on("submit", async () => {
   step.on("close", () => {
     flow = "none";
 
-    document.querySelector("#premium-checkout-flows")?.setAttribute("hidden", "true");
+    document.getElementById("premium-checkout")?.setAttribute("hidden", "true");
 
     // Scroll back to the plans section
     const plans = document.querySelector(".premium-plans");
