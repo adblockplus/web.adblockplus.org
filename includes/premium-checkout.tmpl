@@ -8,7 +8,7 @@
 
 <? include install-button-text ?>
 
-<div id="premium-checkout" class="premium-checkout">
+<div id="premium-checkout" class="premium-checkout" hidden>
 
   <div class="premium-checkout__section">
     <div class="premium-checkout__container">
@@ -30,16 +30,12 @@
         STATIC CARDS (See /premium?design)
       ---------------------------------------------------------------------- -->
 
-      <!-- PURCHASE CARD --------------------------------------------------- -->
-
       <div class="premium-checkout__separator-heading">
         SHARED BETWEEN FLOWS
       </div>
 
-      <div class="premium-checkout__separator-label">
-        PURCHASE CURRENCY CARD
-      </div>
-      <div class="premium-checkout__separator">
+      <!-- PURCHASE CURRENCY --------------------------------------------------- -->
+      <div class="premium-checkout__separator" hidden>
         <div class="premium-checkout-card">
           <form class="premium-checkout-step premium-checkout-purchase">
             <select class="premium-checkout-header__select"></select>
