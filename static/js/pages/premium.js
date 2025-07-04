@@ -88,6 +88,10 @@ document.addEventListener("click", event => {
   const link = event.target.closest(".premium-checkout-purchase__restore-purchase-link");
   if (!link) return;
 
+  const allowAction = link.closest(".premium-plans__already-contributed");
+  console.log(allowAction)
+  if (!allowAction) return;
+
   event.preventDefault();
   document.getElementById("premium-checkout")?.removeAttribute("hidden");
   steps.purchase.fire("restore-purchase");
