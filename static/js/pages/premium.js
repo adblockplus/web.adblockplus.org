@@ -99,12 +99,16 @@ document.addEventListener("click", event => {
   steps.purchase.fire("restore-purchase");
 });
 
-window.addEventListener("click", event => {
-  if (event.target.id === "premium-cta--features") {
+document.querySelectorAll("[data-scroll-target]").forEach(link => {
+  link.addEventListener("click", event => {
     event.preventDefault();
-    const plans = document.querySelector(".premium-plans");
-    if (plans) plans.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+
+    const targetId = link.dataset.scrollTarget;
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
 });
 
 function onDOMContentLoaded()
