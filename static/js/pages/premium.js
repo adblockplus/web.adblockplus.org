@@ -71,12 +71,13 @@ window.addEventListener('click', event => {
     && event.target.dataset
     && event.target.dataset.plan
   ) {
-    const frequency = event.target.dataset.plan;
-    if (premiumPlans.indexOf(frequency) == -1) return;
+    const plan = event.target.dataset.plan;
+    if (premiumPlans.indexOf(plan) == -1) return;
+    document
+        .querySelector(`.premium-checkout-purchase-price[value="${plan}"]`)
+        .click();
 
-    event.preventDefault();
-    const currency = adblock.settings.defaultCurrency || "USD";
-    steps.purchase.fire("checkout-now", { frequency, currency });
+    steps.purchase.fire("checkout-now");
   }
 });
 
