@@ -58,7 +58,7 @@ const plansContainer = document.querySelector('.premium-plans');
 
 window.addEventListener('paddleCheckoutClosed', () => {
   plansContainer.classList.remove('has-selection');
-  plansContainer.classList.add('not-hovered');
+  plansContainer.classList.add('hovered');
   document.querySelectorAll('.premium-plan').forEach(plan => {
     plan.querySelector('.premium-cta').classList.remove('selected');
   });
@@ -71,7 +71,7 @@ window.addEventListener('click', event => {
     && event.target.dataset
     && event.target.dataset.plan
   ) {
-    plansContainer.classList.remove('not-hovered');
+    plansContainer.classList.remove('hovered');
     plansContainer.classList.add('has-selection');
     event.target.classList.add('selected');
     const plan = event.target.dataset.plan;
@@ -146,12 +146,12 @@ function onDOMContentLoaded()
   document.querySelectorAll('.premium-plan').forEach(plan => {
     plan.addEventListener('mouseenter', () => {
       if (!document.querySelector('.premium-plans').classList.contains('has-selection')){
-        document.querySelector('.premium-plans').classList.remove('not-hovered');
+        document.querySelector('.premium-plans').classList.remove('hovered');
       }
     });
     plan.addEventListener('mouseleave', () => {
       if (!document.querySelector('.premium-plans').classList.contains('has-selection')) {
-        document.querySelector('.premium-plans').classList.add('not-hovered');
+        document.querySelector('.premium-plans').classList.add('hovered');
       }
     })
   });
