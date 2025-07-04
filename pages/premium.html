@@ -107,7 +107,7 @@ code=ME
                 </p>
               </div>
               <? include vat-message ?>
-              <a class="premium-button premium-cta" data-plan="yearly" href="#premium-checkout" data-click='{"group": "get-premium", "target": "yearly"}'>
+              <a id="get-premium-yearly" class="premium-button premium-cta" data-plan="yearly" data-click='{"group": "get-premium", "target": "yearly"}'>
                 {{ s7 Get Premium }}
               </a>
               <hr>
@@ -143,7 +143,7 @@ code=ME
                 </p>
               </div>
               <? include vat-message ?>
-              <a class="premium-button premium-cta" data-plan="monthly" href="#premium-checkout" data-click='{"group": "get-premium", "target": "monthly"}'>
+              <a id="get-premium-monthly" class="premium-button premium-cta" data-plan="monthly" data-click='{"group": "get-premium", "target": "monthly"}'>
                 {{ s7 Get Premium }}
               </a>
               <hr>
@@ -260,7 +260,7 @@ code=ME
           <p>{{ s24 We are a small team and your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep ABP going for years to come and get access to more features as we release them. }}</p>
         </div>
       </section>
-      <a id="premium-cta--features" class="premium-button premium-cta" href="#premium-checkout" data-click='{"group": "get-premium", "target": "support-abp"}'>
+      <a id="premium-cta--features" class="premium-button premium-cta" data-click='{"group": "get-premium", "target": "support-abp"}'>
         {{ s7 Get Premium }}
       </a>
     </section>
