@@ -5,7 +5,7 @@ import { checkoutEvents } from "../modules/paddle.js";
 // This component overlays the Paddle checkout overlay after the user submits
 // their email address and before the users submits their card details. It uses
 // the user's email address to determine whether they already have an active
-// Premium subscirption and shows them instructions to activate Premium instead 
+// Premium subscirption and shows them instructions to activate Premium instead
 // of purchasing another Premium subscription if they do.
 
 const hasSubscriptionEndpoint = "https://abp-payments.ey.r.appspot.com/user/has_active_premium_subscription";
@@ -14,7 +14,7 @@ const maximumInterventionDelay = 5000;
 const interventionOverlay = document.getElementById("account-restore");
 const restoreAccountButton = document.getElementById("account-restore-found-buttons__restore");
 const interventionCloseButton = document.getElementById("account-restore-found__close");
- 
+
 // Fake hasSubscriptionEndpoint responses via URL params
 //
 // has-subscription-response=
@@ -61,6 +61,7 @@ function showInterventionLoading() {
 function showSubscriptionFound(email) {
   const urlParams = new URLSearchParams({email});
   restoreAccountButton.href = `/${document.documentElement.lang}/restore-purchase?${urlParams.toString()}`;
+  document.getElementById("premium-checkout")?.removeAttribute("hidden");
   document.documentElement.classList.remove("--finding-account");
   document.documentElement.classList.add("--found-account");
 }
@@ -72,7 +73,7 @@ function finishIntervention(closePaddle) {
 
 interventionCloseButton.addEventListener("click", () => finishIntervention(true));
 
-/** 
+/**
  * @param {object} event - Paddle checkout overlay event
  * @see https://developer.paddle.com/paddlejs/events/overview#attributes
  */
