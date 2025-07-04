@@ -60,7 +60,7 @@ window.addEventListener('paddleCheckoutClosed', () => {
   plansContainer.classList.remove('has-selection');
   plansContainer.classList.add('not-hovered');
   document.querySelectorAll('.premium-plan').forEach(plan => {
-    plan.classList.remove('selected');
+    plan.querySelector('.premium-cta').classList.remove('selected');
   });
 });
 
@@ -71,6 +71,9 @@ window.addEventListener('click', event => {
     && event.target.dataset
     && event.target.dataset.plan
   ) {
+    plansContainer.classList.remove('not-hovered');
+    plansContainer.classList.add('has-selection');
+    event.target.classList.add('selected');
     const plan = event.target.dataset.plan;
     if (premiumPlans.indexOf(plan) == -1) return;
     document
