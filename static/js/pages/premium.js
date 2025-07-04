@@ -93,7 +93,7 @@ document.addEventListener("click", event => {
   if (!allowAction) return;
 
   event.preventDefault();
-  document.getElementById("premium-checkout")?.removeAttribute("hidden");
+  document.getElementById("premium-checkout")?.classList.add("visible");
   steps.purchase.fire("restore-purchase");
 });
 

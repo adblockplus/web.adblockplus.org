@@ -1073,3 +1073,11 @@ html {
 .premium-page.has-premium .premium-features {
   padding-bottom: 3.25rem;
 }
+
+.premium-page .premium-checkout {
+  display: none;
+}
+
+.premium-page .premium-checkout.visible {
+  display: block;
+}
