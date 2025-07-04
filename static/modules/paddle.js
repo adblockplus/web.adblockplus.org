@@ -778,10 +778,6 @@ adblock.api.setExperimentVariantId = variant => { experimentVariantId = variant;
 export const checkoutEvents = adblock.api.checkoutEvents = new Events();
 const paddleEventCallback = event => checkoutEvents.fire(event.name, event.data);
 
-checkoutEvents.on("checkout.closed", () => {
-  window.dispatchEvent(new CustomEvent('paddleCheckoutClosed'));
-});
-
 [
   "checkout.loaded",
   "checkout.customer.created",

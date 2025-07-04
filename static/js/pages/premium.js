@@ -1,4 +1,5 @@
 import steps from '../premium-checkout.js'
+import { checkoutEvents } from '../../modules/paddle.js';
 
 /**
  * Set all targets height equal to the largest targets height
@@ -56,7 +57,7 @@ function setAutoHeights(targets)
 const premiumPlans = ['monthly', 'yearly'];
 const plansContainer = document.querySelector('.premium-plans');
 
-window.addEventListener('paddleCheckoutClosed', () => {
+checkoutEvents.on("checkout.closed", () => {
   plansContainer.classList.remove('has-selection');
   plansContainer.classList.add('hovered');
   document.querySelectorAll('.premium-plan').forEach(plan => {
@@ -94,6 +95,7 @@ document.addEventListener("click", event => {
 
   event.preventDefault();
   document.getElementById("premium-checkout")?.classList.add("visible");
+  console.log(document.getElementById("premium-checkout").classList);
   steps.purchase.fire("restore-purchase");
 });
 
