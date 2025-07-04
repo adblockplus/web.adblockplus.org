@@ -8,7 +8,7 @@
 
 <? include install-button-text ?>
 
-<div id="premium-checkout" class="premium-checkout" hidden>
+<div id="premium-checkout" class="premium-checkout">
 
   <div class="premium-checkout__section">
     <div class="premium-checkout__container">
@@ -30,15 +30,60 @@
         STATIC CARDS (See /premium?design)
       ---------------------------------------------------------------------- -->
 
+      <!-- PURCHASE CARD --------------------------------------------------- -->
+
       <div class="premium-checkout__separator-heading">
         SHARED BETWEEN FLOWS
       </div>
 
-      <!-- PURCHASE CURRENCY --------------------------------------------------- -->
-      <div class="premium-checkout__separator" hidden>
+      <div class="premium-checkout__separator-label">
+        PURCHASE CARD
+      </div>
+      <div class="premium-checkout__separator">
         <div class="premium-checkout-card">
           <form class="premium-checkout-step premium-checkout-purchase">
-            <select class="premium-checkout-header__select"></select>
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading premium-checkout-purchase__heading">
+                {{ get_string("premium-checkout-purchase__heading-1") }}
+              </h2>
+              <select class="premium-checkout-header__select"></select>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body premium-checkout-card-body--columns">
+              <div class="premium-checkout-card-body-column">
+                <button class="premium-checkout__button premium-checkout-purchase-price placeholder" type="button" aria-pressed="true" value="yearly">
+                  <span class="premium-checkout-purchase-price__text">
+                    <span>
+                      {{ get_string("premium-checkout-purchase-price__yearly") }}
+                    </span>
+                  </span>
+                  <span class="premium-checkout-purchase-price__badge">
+                    {{ get_string("premium-checkout-purchase-price__badge") }}
+                  </span>
+                </button>
+                <button class="premium-checkout__button premium-checkout-purchase-price placeholder" type="button" value="monthly">
+                  <span>
+                    {{ get_string("premium-checkout-purchase-price__monthly") }}
+                  </span>
+                </button>
+                <? include vat-message ?>
+              </div><!-- /premium-checkout-card-body-column -->
+              <div class="premium-checkout-card-body-column">
+                <button class="premium-checkout__button premium-checkout-purchase__checkout-button" type="submit">
+                  {{ get_string("premium-checkout-purchase__providers__paddle") }}
+                </button>
+                <img alt="" src="/img/paddle-providers.svg" height="32" width="358" class="premium-checkout-purchase__providers">
+              </div> <!-- /premium-checkout-card-body-column -->
+            </div><!-- /premium-checkout-card-body--columns -->
+            <div class="premium-checkout-card-footer premium-checkout-card-footer--columns">
+              <div class="premium-checkout-card-footer-column">
+                <div>
+                  {{ get_string("premium-checkout-card-footer__paragraph-1") }}
+                </div>
+              </div>
+              <div class="premium-checkout-card-footer-column">
+                {{ get_string("premium-checkout-card-footer__paragraph-2") }}
+              </div>
+            </div><!-- /premium-checkout-card-footer -->
           </form><!-- /premium-checkout-purchase -->
         </div><!-- /premium-checkout-card -->
       </div><!-- /premium-checkout__separator -->
@@ -53,7 +98,7 @@
           <div class="premium-checkout-step premium-checkout-loading">
             <div class="premium-checkout-card-body premium-checkout-loading-card-body">
               <div class="premium-checkout-loading__loader"><div></div><div></div><div></div><div></div></div>
-            </div><!-- /premium-checkout__columns -->  
+            </div><!-- /premium-checkout__columns -->
           </div><!-- /premium-checkout-loading -->
         </div><!-- /premium-checkout-card -->
       </div><!-- /premium-checkout__separator -->
@@ -62,7 +107,7 @@
 
       <div class="premium-checkout__separator-label">
         UNEXPECTED ERROR CARD
-      </div>      
+      </div>
       <div class="premium-checkout__separator">
         <div class="premium-checkout-card">
           <div class="premium-checkout-step premium-checkout-error premium-checkout-step--closeable">
@@ -168,7 +213,7 @@
               </form>
             </div><!-- /premium-checkout-card-body -->
           </div><!-- /premium-checkout-verify /premium-checkout-verify-email -->
-        </div><!-- /premium-checkout-card-->  
+        </div><!-- /premium-checkout-card-->
       </div><!-- /premium-checkout__separator -->
 
       <!-- VERIFY CODE CARD ------------------------------------------------ -->
@@ -202,7 +247,7 @@
               </div>
             </div><!-- /premium-checkout-card-body--columns -->
           </div><!-- /premium-checkout-verify /premium-checkout-verify-code -->
-        </div><!-- /premium-checkout-card-->  
+        </div><!-- /premium-checkout-card-->
       </div><!-- /premium-checkout__separator -->
 
       <!-- VERIFY CODE CARD (WRONG CODE ERROR) ----------------------------- -->
@@ -236,7 +281,7 @@
               </div>
             </div><!-- /premium-checkout-card-body--columns -->
           </div><!-- /premium-checkout-verify /premium-checkout-verify-code -->
-        </div><!-- /premium-checkout-card-->  
+        </div><!-- /premium-checkout-card-->
       </div><!-- /premium-checkout__separator -->
 
       <!-- REACTIVATED CARD ------------------------------------------------ -->

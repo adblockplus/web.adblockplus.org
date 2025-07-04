@@ -302,6 +302,12 @@ code=ME
   </div>
 
   <? include premium-checkout ?>
+  <script>
+    (() => {
+      // hide an additional checkout form fore premium page only
+      document.getElementById("premium-checkout")?.setAttribute("hidden", "true");
+    })()
+  </script>
 
 </main>
 
