@@ -632,8 +632,9 @@ steps.verifyCode.on("submit", async () => {
   step.on("close", () => {
     flow = "none";
 
-    const isPremiumPage = location.pathname.includes("/premium");
-    if(isPremiumPage) {
+
+    const page = document.documentElement.dataset.page;
+    if(page === "premium") {
       document.getElementById("premium-checkout")?.setAttribute("hidden", "true");
       // Scroll back to the plans section
       const plans = document.querySelector(".premium-plans");
