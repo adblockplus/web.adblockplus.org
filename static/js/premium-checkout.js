@@ -632,11 +632,13 @@ steps.verifyCode.on("submit", async () => {
   step.on("close", () => {
     flow = "none";
 
-    document.getElementById("premium-checkout")?.setAttribute("hidden", "true");
-
-    // Scroll back to the plans section
-    const plans = document.querySelector(".premium-plans");
-    plans?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const isPremiumPage = location.pathname.includes("/premium");
+    if(isPremiumPage) {
+      document.getElementById("premium-checkout")?.setAttribute("hidden", "true");
+      // Scroll back to the plans section
+      const plans = document.querySelector(".premium-plans");
+      plans?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 
     goto(steps.purchase)
   });
