@@ -2,7 +2,7 @@ import { checkout, checkoutEvents } from "../modules/paddle.js";
 import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
 if (adblock.query.has("design")) {
-  document.getElementById("premium-checkout").removeAttribute("hidden");
+  document.getElementById("premium-checkout")?.classList.add("visible");
   document.documentElement.classList.add("design")
 }
 
@@ -635,7 +635,7 @@ steps.verifyCode.on("submit", async () => {
 
     const page = document.documentElement.dataset.page;
     if(page === "premium") {
-      document.getElementById("premium-checkout")?.setAttribute("hidden", "true");
+      document.getElementById("premium-checkout").classList.remove("visible");
       // Scroll back to the plans section
       const plans = document.querySelector(".premium-plans");
       plans?.scrollIntoView({ behavior: "smooth", block: "start" });
