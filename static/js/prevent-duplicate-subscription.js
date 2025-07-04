@@ -61,7 +61,7 @@ function showInterventionLoading() {
 function showSubscriptionFound(email) {
   const urlParams = new URLSearchParams({email});
   restoreAccountButton.href = `/${document.documentElement.lang}/restore-purchase?${urlParams.toString()}`;
-  document.getElementById("premium-checkout")?.removeAttribute("hidden");
+  document.getElementById("premium-checkout")?.classList.add("visible");
   document.documentElement.classList.remove("--finding-account");
   document.documentElement.classList.add("--found-account");
 }
