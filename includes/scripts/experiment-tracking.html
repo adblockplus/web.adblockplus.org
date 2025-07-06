@@ -14,8 +14,14 @@ adblock.getExperimentStore = function getExperimentStore() {
 
 adblock.storeExperiment = function storeExperiment(experiment, variant) {
   const experimentStore = adblock.getExperimentStore();
-  experimentStore[experiment] = variant;
+  experimentStore[experiment ?? adblock.experiment] = variant ?? adblock.variant;
   localStorage.setItem(experimentRecordName, JSON.stringify(experimentStore));
+};
+
+adblock.setExperiment = function setExperiment({experiment, variant}) {
+  adblock.experiment = experiment;
+  adblock.variant = variant;
+  adblock.storeExperiment();
 };
 
 adblock.formatExperimentRecord = function formatExperimentRecord(experimentStore) {
