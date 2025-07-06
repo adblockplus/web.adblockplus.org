@@ -4,6 +4,8 @@
 // requires scripts/events
 // requires scripts/error-reporting
 
+const EXTENSION_INJECTION_TIMOUT = 1000;
+
 function observeExtensionInjection(extensionName, extensionId) {
   if (document.documentElement.dataset.hasOwnProperty(extensionId)) {
     handleExtensionInjection(extensionName, extensionId);
@@ -31,7 +33,31 @@ function handleExtensionInjection(extensionName, extensionId) {
 
 observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
 
-adblock.afterAdblockPlusDetected = callback => adblock.onceAfter("adblockPlus", callback);
+/**
+ * Call a callback after Adblock Plus is detected (or a fallback Adblock Plus
+ * detection times out)
+ * 
+ * @param {function} callback - function to call when detection successful
+ * @param {function|boolean} fallback - call callback (boolean) or fallback (function) on timeout
+ */
+adblock.afterAdblockPlusDetected = (callback, fallback) => {
+  let cancelFallback = false;
+  adblock.onceAfter("adblockPlus", data => {
+    if (!fallback || !cancelFallback) {
+      cancelFallback = true;
+      callback(data);
+    }
+  });
+  if (fallback) {
+    setTimeout(() => {
+      if (!cancelFallback) {
+        cancelFallback = true;
+        if (typeof fallback == "function") fallback();
+        else callback();
+      }
+    }, EXTENSION_INJECTION_TIMOUT);
+  }
+}
 
 adblock.afterAdblockPlusDetected(() => {
   adblock.injectionTime = parseInt(performance.now(), 10);

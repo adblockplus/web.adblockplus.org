@@ -1,7 +1,7 @@
 /* styles includes/prevent-duplicate-subscription.tmpl
  *
  * .--paddle-sandbox
- * .--finding-account || .--found-account
+ * [data-account="finding"] || [data-account="found"]
  * 
  * .account-restore
  *     .account-restore-loading
@@ -26,6 +26,23 @@
   align-items: center;
   justify-content: center;
   z-index: 2147483647; /* max value in the css standard */
+}
+
+.--inline-checkout .account-restore {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+[data-account="finding"].--inline-checkout .account-restore {
+  display: flex;
+  opacity: 0.8;
+  top: auto;
+  bottom: 8rem;
+  height: 5.5rem;
 }
 
 /* The overlay and modal height, width, and border radius are precisely
@@ -53,12 +70,19 @@
   }
 }
 
-.--finding-account .account-restore,
-.--found-account .account-restore { display: flex; }
+[data-account="finding"] .account-restore,
+[data-account="found"] .account-restore { display: flex; }
 
-.account-restore-loading,
+.account-restore-loading {
+  display: none;
+}
+
 .account-restore-found {
   display: none;
+}
+
+html:not(.--inline-checkout) .account-restore-loading,
+.account-restore-found {
   position: relative;
   height: 100%;
   width: 100%;
@@ -68,8 +92,8 @@
 }
 
 @media (min-width: 816px) and (min-height: 816px) {
-  .account-restore-loading,
-  .account-restore-found {
+  html:not(.--inline-checkout) .account-restore-loading,
+  html:not(.--inline-checkout) .account-restore-found {
     max-width: 780px;
     border-radius: 10px;
     height: 520px;
@@ -77,19 +101,19 @@
 }
 
 @media (min-width: 1296px) and (min-height: 816px) {
-  .account-restore-loading,
-  .account-restore-found {
+  html:not(.--inline-checkout) .account-restore-loading,
+  html:not(.--inline-checkout) .account-restore-found {
     max-width: 840px;
   }
 }
 
 /* the modal is pushed down by the test mode text in the sandbox env */
 @media (min-width: 816px) and (min-height: 816px) {
-  .--paddle-sandbox .account-restore-loading,
-  .--paddle-sandbox .account-restore-found { margin-top: 41px; }
+  .--paddle-sandbox:not(.--inline-checkout) .account-restore-loading,
+  .--paddle-sandbox:not(.--inline-checkout) .account-restore-found { margin-top: 41px; }
 }
 
-.--finding-account .account-restore-loading { display: flex; }
+[data-account="finding"] .account-restore-loading { display: flex; }
 
 /* adapted from https://css-loaders.com/ */
 .account-restore-loading__loader {
@@ -109,6 +133,11 @@
   animation: account-restore-loading__loader 2s infinite linear;
 }
 
+.--inline-checkout .account-restore-loading__loader {
+  height: 40px;
+  width: 40px;
+}
+
 @keyframes account-restore-loading__loader {to{transform: rotate(1turn)}}
 
 .account-restore-found {
@@ -118,7 +147,11 @@
   padding: 2rem;
 }
 
-.--found-account .account-restore-found { display: flex; }
+.--inline-checkout .account-restore-found {
+  justify-content: start;
+}
+
+[data-account="found"] .account-restore-found { display: flex; }
 
 .account-restore-found__close {
   display: block;
@@ -127,6 +160,10 @@
   right: 1rem;
   background: transparent;
   border: 0;
+}
+
+.--inline-checkout .account-restore-found__close {
+  display: none;
 }
 
 .account-restore-found-logo {
@@ -138,6 +175,10 @@
 
 .account-restore-found-logo strong {
   font-weight: 700;
+}
+
+.--inline-checkout .account-restore-found-logo {
+  display: none;
 }
 
 .account-restore-found-body {

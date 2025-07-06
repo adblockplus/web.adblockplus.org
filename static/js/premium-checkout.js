@@ -1,4 +1,4 @@
-import { checkout, checkoutEvents } from "../modules/paddle.js";
+import { checkout } from "../modules/paddle.js";
 import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
 if (adblock.query.has("design")) document.documentElement.classList.add("design");
@@ -554,12 +554,12 @@ steps.purchase.on("checkout-now", async () => {
   }
 });
 
-checkoutEvents.on("checkout.closed", async () => goto(steps.purchase));
-checkoutEvents.on("checkout.customer.created", data => email = data.customer.email);
-checkoutEvents.on("checkout.customer.updated", data => email = data.customer.email);
-checkoutEvents.on("checkout.loaded", () => checkoutLog("premium-checkout__paddle-loaded"));
-checkoutEvents.on("checkout.payment.selected", () => checkoutLog("premium-checkout__paddle-payment"));
-checkoutEvents.on("checkout.completed", () => checkoutLog("premium-checkout__paddle-complete"));
+adblock.on("checkout.closed", async () => goto(steps.purchase));
+adblock.on("checkout.customer.created", data => email = data.customer.email);
+adblock.on("checkout.customer.updated", data => email = data.customer.email);
+adblock.on("checkout.loaded", () => checkoutLog("premium-checkout__paddle-loaded"));
+adblock.on("checkout.payment.selected", () => checkoutLog("premium-checkout__paddle-payment"));
+adblock.on("checkout.completed", () => checkoutLog("premium-checkout__paddle-complete"));
 
 // ALREADY CONTRIBUTED FLOW ////////////////////////////////////////////////////
 
@@ -729,7 +729,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   }
 }
 
-checkoutEvents.on("checkout.loaded", () => {
+adblock.on("checkout.loaded", () => {
   goto(steps.purchase, undefined, false);
 });
 

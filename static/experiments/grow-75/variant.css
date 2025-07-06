@@ -1,0 +1,174 @@
+html, body {
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0;
+}
+
+a:link,
+a:visited {
+  color: #2788F9;
+}
+
+strong {
+  font-weight: bolder;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.container {
+  width: 100%;
+  max-width: 540px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.update-header {
+  margin-block: 3.125rem;
+  text-align: center;
+}
+
+.update-heading {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 1.25rem;
+  justify-content: center;
+  margin-block-end: 1rem;
+}
+
+.update-heading > img {
+  height: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  .update-heading {
+    font-size: 2.5rem;
+  }
+}
+
+.update-subheading {
+  color: #333;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.inline-checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+  margin-block: 3.125rem;
+}
+
+.inline-checkout-logo {
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+@media (min-width: 992px) {
+  .inline-checkout-main {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .inline-checkout-details,
+  .inline-checkout-container {
+    flex: 1;
+  }
+}
+
+.inline-checkout-form {
+  position: relative;
+  min-height: 655px;
+}
+
+.inline-checkout-form.placeholder .paddle-frame {
+  opacity: 0;
+}
+
+.inline-checkout-details {
+  display: flex;
+  gap: 0.625rem;
+  flex-direction: column;
+  margin-block-end: 3.125rem;
+}
+
+@media (min-width: 992px) {
+  .inline-checkout-details {
+    max-width: 20rem;
+  }
+}
+
+.inline-checkout-totals {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 992px) {
+  .inline-checkout-totals {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.inline-checkout-totals__fee {
+  color: #007AFF;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.inline-checkout-feature {
+  border-radius: 8px;
+  background: #E6F5FC;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+
+.inline-checkout-feature__heading {
+  font-size: 1rem;
+}
+
+.inline-checkout-reviews {
+  margin-block-start: 1.25rem;
+  display: flex;
+  gap: 1.5625rem;
+  font-size: 0.75rem;
+}
+
+.inline-checkout-reviews-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.inline-checkout-reviews-details strong {
+  font-size: 1.125rem;
+  font-weight: bolder;
+}
+
+.inline-checkout-footer {
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.inline-checkout-gaurantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block-end: 2rem;
+}

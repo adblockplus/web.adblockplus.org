@@ -1,5 +1,6 @@
 /* global adblock, Paddle */
-import Events from "./events.js";
+// requires scripts/namespace
+// requires scripts/events
 
 const PADDLE_LIVE_TOKEN = "live_d10b49fa5fc207ade026db6535c";
 const PADDLE_TEST_TOKEN = "test_b0e15dc1f1e4f20b0fe6396e893";
@@ -774,27 +775,6 @@ adblock.api.flagExperiment = flag => isExperiment = !!flag;
 adblock.api.setExperimentId = id => { experimentId = id; isExperiment = true; }
 adblock.api.setExperimentVariantId = variant => { experimentVariantId = variant; isExperiment = true; }
 
-/** Provides reference to Paddle's Checkout events via on/fire API */
-export const checkoutEvents = adblock.api.checkoutEvents = new Events();
-const paddleEventCallback = event => checkoutEvents.fire(event.name, event.data);
-
-[
-  "checkout.loaded",
-  "checkout.customer.created",
-  "checkout.payment.initiated"
-]
-.forEach(name => {
-  checkoutEvents.on(name, data => {
-    adblock.log("checkout-event", {
-      name: name,
-      amount: data.custom_data?.amount_cents,
-      frequency: data.custom_data?.sub_type,
-      currency: data.custom_data?.currency,
-      trigger: data.custom_data?.trigger,
-    });
-  })
-});
-
 let paddleToken = PADDLE_LIVE_TOKEN;
 
 const paddleEnvironment = location.hostname == "localhost" ? "test"
@@ -807,16 +787,46 @@ if (paddleEnvironment == "test") {
   document.documentElement.classList.add("--paddle-sandbox")
 }
 
+function onPaddleEvent (event) {
+  if (!event.name || !event.data) return;
+  if (!adblock.isLive) console.log(event);
+  adblock.trigger(event.name, event.data);
+}
+
 const paddleOptions = {
   token: paddleToken,
-  eventCallback: paddleEventCallback,
+  eventCallback: onPaddleEvent,
 };
 
-if (window.location.pathname.endsWith("/premium")) {
+if (typeof adblock.paddleOptions == "object") {
+  Object.assign(paddleOptions, adblock.paddleOptions);
+}
+
+if (location.pathname.endsWith("/premium")) {
   paddleOptions.pwCustomer = {};
 }
 
 Paddle.Initialize(paddleOptions);
+
+adblock.on("checkout.loaded", data => {
+  if (data?.settings?.display_mode == "inline") {
+    document.documentElement.classList.add("--inline-checkout");
+  }
+});
+
+function reportCheckoutEvent(data) {
+  adblock.log("checkout-event", {
+    name: name,
+    amount: data.custom_data?.amount_cents,
+    frequency: data.custom_data?.sub_type,
+    currency: data.custom_data?.currency,
+    trigger: data.custom_data?.trigger,
+  });
+}
+
+adblock.on("checkout.loaded", reportCheckoutEvent);
+adblock.onceAfter("checkout.customer.created", reportCheckoutEvent);
+adblock.onceAfter("checkout.payment.initiated", reportCheckoutEvent);
 
 // FIXME: We should only use this temporarily to avoid breaking ongoing conversion.com experiments
 const planCodeCompatibility = {
@@ -897,6 +907,13 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   }
 
   const trackingPrefix = (productCode || funnelCode) ? `${productCode}_${funnelCode} ` : "";
+
+  let experiment_id = "";
+  let variant_index = -1;
+  if (adblock.hasOwnProperty("experiment")) {
+    experiment_id = adblock.experiment;
+    variant_index = adblock.variant;
+  }
 
   const customData = {
     version: "1.1.0",
