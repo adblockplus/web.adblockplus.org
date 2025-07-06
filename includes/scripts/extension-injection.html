@@ -33,7 +33,14 @@ function handleExtensionInjection(extensionName, extensionId) {
 
 observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
 
-adblock.afterAdblockPlusDetected = function (callback, fallback = false) {
+/**
+ * Call a callback after Adblock Plus is detected (or a fallback Adblock Plus
+ * detection times out)
+ *
+ * @param {function} callback - function to call when detection successful
+ * @param {function|boolean} fallback - call callback (boolean) or fallback (function) on timeout
+ */
+adblock.afterAdblockPlusDetected = (callback, fallback) => {
   let cancelFallback = false;
   adblock.onceAfter("adblockPlus", data => {
     if (!fallback || !cancelFallback) {

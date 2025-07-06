@@ -30,6 +30,7 @@ A "flag" type below counts as "true" regardless of the query param value.
 
 ### Sitewide
 
+- `variant` number - experiment variant to apply
 - `country` string - 2 letter country code
 - `defaultCurrency` string - 3 letter currency code
 - `restrictPremium` boolean - used to disable buying premium
@@ -46,11 +47,13 @@ Unless a language is provided in the URL (e.g. via selecting language in the nav
 ### Payment pages
 
 - `testmode` flag - changes the payment environment from "live" to "sandbox".
-- `has-subscription-response` string - Fake a has-subscription API response
-    - `yes` - The user has a subscription
-    - `no` - The user has no subscription
-    - `error` - The API returns an error
-    - `timeout` - The API never responds
+- `has-subscription` string - Fake "prevent duplicate subscirption" intervention states and outcomes
+    - `yes` - The client will always have a subscription
+    - `no` - The client will never have a subscription
+    - `error` - The subscription check will always fail
+    - `timeout` - The subscription check will always timeout
+    - `finding` - Show the subscription finding state
+    - `found` - Show the subscription found state
 
 ### Update page
 

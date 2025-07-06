@@ -24,8 +24,6 @@ const urlParamsJSON = JSON.stringify(adblock.URLSearchObject(location.search));
 adblock.log = function log(event, data = {}) {
   try {
 
-    adblock.trigger("log", {event, data});
-
     const hardcoded = {
       logVersion: "2.1.1",
       event: event,
@@ -35,6 +33,11 @@ adblock.log = function log(event, data = {}) {
       pagePath: location.pathname,
       urlParams: urlParamsJSON,
     };
+
+    if (adblock.hasOwnProperty("experiment")) {
+      hardcoded.experiment = adblock.experiment;
+      hardcoded.variant = adblock.variant;
+    }
 
     const params = new URLSearchParams();
 
