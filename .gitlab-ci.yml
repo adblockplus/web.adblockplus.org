@@ -304,12 +304,3 @@ automated_tests:
   script:
     - npm ci
     - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test
-    - echo "https://$CI_PROJECT_NAMESPACE.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/playwright-report/index.html"
-  allow_failure: true
-
-# Publish Playwright test results as artifacts and keep for 2 days
-artifacts:
-  when: always
-  paths:
-    - playwright-report
-  expire_in: 2 days
