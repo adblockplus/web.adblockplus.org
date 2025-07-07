@@ -290,10 +290,26 @@ deploy_firebase_hosting:production:
   only:
     - master
 
-automated_tests:
+platform_tests:
   stage: test
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
   variables:
     PROJECT: "e2eabp"
     URL: "$REVIEW_URL"
+
+automated_tests:
+  stage: test
+  image: mcr.microsoft.com/playwright:v1.39.0-jammy
+  script:
+    - npm ci
+    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test
+    - echo "https://$CI_PROJECT_NAMESPACE.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/playwright-report/index.html"
+  allow_failure: true
+
+# Publish Playwright test results as artifacts and keep for 2 days
+artifacts:
+  when: always
+  paths:
+    - playwright-report
+  expire_in: 2 days
