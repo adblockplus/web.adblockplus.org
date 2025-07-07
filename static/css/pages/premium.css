@@ -180,6 +180,40 @@ html {
   box-shadow: none !important;
 }
 
+.fr .premium-button,
+.de .premium-button {
+  color: #C6C6C6 !important;
+  border: 1px solid #C6C6C6 !important;
+  background-color: #fff !important;
+}
+
+.de .premium-button:hover,
+.de .premium-button:active,
+.de .premium-button:focus,
+.de .premium-button:hover,
+.de .premium-button:active,
+.de .premium-button:focus,
+.fr .premium-button:hover,
+.fr .premium-button:active,
+.fr .premium-button:focus,
+.fr .premium-button:hover,
+.fr .premium-button:active,
+.fr .premium-button:focus {
+  color: #fff !important;
+  background-color: #C6C6C6 !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+.fr-only,
+.de-only { display: none; }
+
+.fr .fr-only,
+.de .de-only { display: block; }
+
+.fr .not-fr,
+.de .not-de { display: none !important; }
+
 /*******************************************************************************
  * Dynamic background behind first and second sections
  *******************************************************************************
@@ -193,6 +227,21 @@ html {
   width: 100%;
   background-color: #F7F7F7;
   z-index: -1;
+}
+
+/*******************************************************************************
+ * Alert bars
+ ******************************************************************************/
+
+.alert-bar {
+  text-align: center;
+  padding: 1rem;
+  color: #000;
+  background-color: gray;
+}
+
+.alert-bar.alert-bar--gold {
+  background-color: #EDA51E;
 }
 
 /*******************************************************************************

@@ -59,7 +59,7 @@ function queryString(obj) {
     => if no URL, or missing query params, it returns a default and warns if query parameters are being ignored
 */
 function validateThankYouPage(thePage) { // VALIDATE that queryParams exists
-    var defaultPage = { url: "https://accounts.adblockplus.org/payment-complete", queryParams: {} };
+    var defaultPage = { url: "https://getadblock.com/thanks.php", queryParams: {} };
     if (thePage !== null && typeof thePage === "object") {
         if (thePage.url && typeof thePage.url === "string" && thePage.url.length !== 0) {
             if (thePage.queryParams && typeof thePage.queryParams === "object") {
@@ -118,22 +118,6 @@ var Paypal = {
         if ($(element).hasClass('paypal-button-grey') || $(element).hasClass('disabled')) {
             return false;
         }
-
-        // FIXME: ABP only exception to add contributioninfo
-        if (location.pathname.split("/").includes("premium")) {
-            if (false == (localStorage && localStorage.setItem)) return;
-            const amountButton = document.querySelector("#amount_select_row .selected");
-            localStorage.setItem("contributionInfo", JSON.stringify({
-                amount: amountButton.dataset.amount,
-                frequency: amountButton.dataset.recurringFrequency,
-                processor: "paypal",
-                currency: "USD",
-                lang: document.documentElement.lang,
-                source: "HME",
-                clickTs: Date.now()            
-            }));
-        }
-
         var form = Paypal._buildForm(element);
         document.body.appendChild(form);
         form.submit();
@@ -240,12 +224,12 @@ var StripeAB = {
     //     check params, or whatever, to stop the button click from continuing.  E.g. check
     //     that amount is of a certain value.
     //   thankYouPage - [optional]: Object that contains the following keys:
-    //       => [required, default: "https://accounts.adblockplus.org/payment-complete"] url (string): page to redirect to *without* any query parameters appended
+    //       => [required, default: "https://getadblock.com/thanks.php"] url (string): page to redirect to *without* any query parameters appended
     //       => [optional, default: {}] queryParams (object): key-value pairs (e.g., {"transid":1234} becomes '&transid=1234')
     //       => [optional, default: false] newWindow (boolean): true => window.open(url) false => window.location.href = url;
     //     If no url is provided, optional parameters are ignored and we fallback to defaults:
-    //       => If !chargeResult.success => "https://accounts.adblockplus.org/payment-complete?u=" + that.DATA.userid;
-    //       => Else => "https://accounts.adblockplus.org/payment-complete?u=" + that.DATA.userid + "&o=" + chargeResult.charge_id;
+    //       => If !chargeResult.success => "https://getadblock.com/thanks.php?u=" + that.DATA.userid;
+    //       => Else => "https://getadblock.com/thanks.php?u=" + that.DATA.userid + "&o=" + chargeResult.charge_id;
     // Needed properties:
     //   userid - string: Adblock userid, access right before submitting purchase using
     //     getUserId()
@@ -339,7 +323,7 @@ var StripeAB = {
                                 }
                             },
                             error: function () {
-                                that._onError("Unknown error. Please e-mail support@adblockplus.org for assistance.");
+                                that._onError("Unknown error. Please e-mail help@getadblock.com for assistance.");
                             },
                             complete: that._onAjaxComplete,
                         });
@@ -615,7 +599,7 @@ const StripeCheckoutSession = {
         this._stripeHandle = Stripe(this.AUX.key);
         this._submitButtonId = settings.submitButtonId || null;
         this._elementChangeListener = settings.elementChangeListener || false;
-        this._onSuccessURL = settings.onSuccessURL || 'https://accounts.adblockplus.org/payment-complete';
+        this._onSuccessURL = settings.onSuccessURL || 'https://getadblock.com/thanks.php';
         this._onErrorCb = settings.onErrorCb || function (msg) { alert("Sorry, but there was a problem:\n\n" + msg + "\n\nPlease try again."); };
         this._getAmountCents = settings.getAmountCents;
         this._currency = typeof settings.currency === 'function' ? settings.currency : function() {return "USD";};
@@ -641,22 +625,6 @@ const StripeCheckoutSession = {
             _logV2PaymentButtonClick("Stripe", that.DATA.amount_cents, "Stripe", that._recurring(), that._getSubType());
             that.DATA.success_url = that._onSuccessURL;
             that.DATA.cancel_url = window.location.href; // the url to go back to if user clicks "back". Will be current page url.
-
-            // FIXME: ABP only exception to add contributioninfo
-            if (location.pathname.split("/").includes("premium")) {
-                if (false == (localStorage && localStorage.setItem)) return;
-                const amountButton = document.querySelector("#amount_select_row .selected");
-                localStorage.setItem("contributionInfo", JSON.stringify({
-                    amount: amountButton.dataset.amount,
-                    frequency: amountButton.dataset.recurringFrequency,
-                    processor: "stripe",
-                    currency: "USD",
-                    lang: document.documentElement.lang,
-                    source: "HME",
-                    clickTs: Date.now()            
-                }));
-            }
-
             fetch(that.AUX.charge_url, {
                 method: 'POST',
                 headers: {
@@ -738,7 +706,7 @@ StripeSourceInstance.prototype._wireUpButton = function (buttonEl) {
         var buttonType = that._getSourceType();
         if (buttonType === "none") {
             _logV2Error("Source not set up correctly");
-            alert("Source not set up correctly\n\nPlease post a ticket to help.adblockplus.org");
+            alert("Source not set up correctly\n\nPlease post a ticket to help.getadblock.com");
         }
         that.DATA.type = buttonType;
 
@@ -837,7 +805,7 @@ var StripeSource = {
             var buttonType = that._getSourceType();
             if (buttonType === "none") {
                 _logV2Error("Source not set up correctly");
-                alert("Source not set up correctly\n\nPlease post a ticket to help.adblockplus.org");
+                alert("Source not set up correctly\n\nPlease post a ticket to help.getadblock.com");
             }
             that.DATA.type = buttonType;
 

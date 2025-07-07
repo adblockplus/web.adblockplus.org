@@ -1,24 +1,40 @@
 /* global adblock */
-import Events from "../Events.js";
-import { toDollarNumber, toCentNumber, toDollarString } from "../currency.js";
 
 const formTemplate = document.getElementById("appeal-form");
 const fixedAmountTemplate = document.getElementById("appeal-form-amount--fixed");
 const customAmountTemplate = document.getElementById("appeal-form-amount--custom");
 
+/** 
+ * Cent amount (int) to dollar amount (float) (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} cents - amount in cents (for applicable currencies)
+ */
+function toDollarNumber(currency, cents) {
+  return currency == "JPY" ? cents : cents / 100;
+}
+
+/** 
+ * Dollar amount (float) to cent amount (int) (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} dollar - amount in dollars (for applicable currencies)
+ */
+function toCentNumber(currency, dollar) {
+  return currency == "JPY" ? dollar : dollar * 100;
+}
+
+/** 
+ * Cent amount (int) to dollar amount (float) with localised formatting (for applicable currencies) 
+ * 
+ * @param {string} currency - 3 letter currency code
+ * @param {number} cents - amount in cents (for applicable currencies)
+ */
+function toDollarString(currency, cents) {
+  return new Intl.NumberFormat(navigator.language, { style: "currency", currency, minimumFractionDigits: 0 }).format(toDollarNumber(currency, cents));
+}
+
 export class AppealForm {
-
-  /** @member {Events} events interface */
-  events;
-
-  /** @static {Object} EVENTS names constants */
-  static EVENTS = {
-    CURRENCY_CHANGE: "CURRENCY_CHANGE",
-    MINIMUM_AMOUNT_ERROR_SHOW: "SHOW_MINIMUM_AMOUNT_ERROR",
-    MINIMUM_AMOUNT_ERROR_HIDE: "HIDE_MINIMUM_AMOUNT_ERROR",
-    AMOUNT_CHANGE: "AMOUNT_CHANGE",
-    SUBMIT: "SUBMIT",
-  }
 
   /** @member {Object} paddle config @see ./configuration.js */
   #paddleConfig;
@@ -42,7 +58,6 @@ export class AppealForm {
   #submitButton;
 
   constructor({placeholder, paddleConfig, formConfig}) {
-    this.events = new Events();
     this.#paddleConfig = paddleConfig;
     this.#parentElement = formTemplate.content.cloneNode(true).firstElementChild;
     this.#parentElement.querySelector(".appeal-form-header__heading").innerHTML = adblock.strings["appeal-form-header__heading"];
@@ -95,6 +110,11 @@ export class AppealForm {
     this.#parentElement.dataset.testid = "appeal-form-constructed";
   }
 
+  /**
+   * Update amount control labels and values (in place)
+   * 
+   * @param {string} currency - 3 letter currency
+   */
   #updateAmounts(currency) {
     let i = 0;
     for (const frequency in this.#paddleConfig.products[currency]) {
@@ -113,29 +133,24 @@ export class AppealForm {
         }
       }
     }
-    this.events.fire(AppealForm.EVENTS.CURRENCY_CHANGE);
   }
 
+  /** show minimum amount error for custom amount input */
   #showMinimumAmountError(input) {
     this.#errorMessageElement.innerHTML = adblock.strings[`appeal-form__error--${input.dataset.frequency}`];
     this.#errorMessageElement.hidden = false;
     this.#submitButton.disabled = true;
-    this.events.fire(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_SHOW);
   }
 
   #hideMinimumAmountError() {
     this.#errorMessageElement.hidden = true;
     this.#submitButton.disabled = false;
-    this.events.fire(AppealForm.EVENTS.MINIMUM_AMOUNT_ERROR_HIDE)
   }
 
-  #hasMinimumAmountError(input) {
-    return input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum)
-  }
-
+  /** Handle possibility of minimum amount error on target custom amount input */
   #handleMinimumAmountError(input) {
-    if (this.#hasMinimumAmountError(input)) {
-      this.#showMinimumAmountError(input);
+    if (input.value && parseFloat(input.value) < parseFloat(input.dataset.minimum)) {
+      this.#showMinimumAmountError(input)
     } else {
       this.#hideMinimumAmountError();
     }
@@ -175,37 +190,33 @@ export class AppealForm {
         this.#hideMinimumAmountError();
       }
     }
-    this.events.fire(AppealForm.EVENTS.AMOUNT_CHANGE);
   }
 
-  #onSubmit(event) {
+  #submitCallbacks = [];
+
+  /** Register a callback for when the form is submitted */
+  onSubmit(callback) {
+    this.#submitCallbacks.push(callback);
+  }
+
+  /** Handle when the form is submitted */
+  #onSubmit(event) { 
     event.preventDefault();
-    const radio = this.#frequenciesParentElement.querySelector(".appeal-form-amount__radio:checked");
-    if (radio.value == "custom") {
-      const input = this.#getCustomRadioInput(radio);
-      if (this.#hasMinimumAmountError(input)) {
-        return this.#showMinimumAmountError(input);
-      }
-    }
-    this.events.fire(AppealForm.EVENTS.SUBMIT, this.state());
-  }
-
-  /**
-   * @returns { currency, ferquency, product, amount }
-   */
-  state() {
-    const radio = this.#frequenciesParentElement.querySelector(".appeal-form-amount__radio:checked");
+    let radio = this.#frequenciesParentElement.querySelector(".appeal-form-amount__radio:checked");
     const currency = this.#currencySelect.value;
     const frequency = radio.dataset.frequency;
     const product = radio.dataset.product;
     let amount = radio.value;
     if (amount == "custom") {
       const input = this.#getCustomRadioInput(radio);
-      amount = toCentNumber(currency, parseFloat(input.value === "" ? input.placeholder : input.value));
-    } else {
-      amount = parseFloat(amount);
+      amount = parseFloat(input.value === "" ? input.placeholder : input.value);
+      if (parseFloat(amount) < parseFloat(input.dataset.minimum)) {
+        return this.#showMinimumAmountError(input);
+      } else {
+        amount = toCentNumber(currency, amount);
+      }
     }
-    return { currency, frequency, product, amount }
+    this.#submitCallbacks.forEach(callback => callback({ currency, frequency, amount,  product, }));
   }
 
   disable() {
@@ -219,5 +230,3 @@ export class AppealForm {
   }
 
 }
-
-adblock.lib.AppealForm = AppealForm;

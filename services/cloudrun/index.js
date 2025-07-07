@@ -31,13 +31,13 @@ function getQueryString(req) {
 
 app.get('/payment-config-function', (req, res) => {
   euRules = euRules || [
-    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'GR', 'HU', 'IE',
+    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'HU', 'IE',
     'IT', 'LV', 'LT', 'LG', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE'
   ].reduce((acc, country) => ({...acc, [country]: 'eu.js'}), {});
 
   geoipRules = geoipRules || {
     'GB': 'gb.js', 'US': 'us.js', 'DE': 'de.js', 'CH': 'ch.js', 'AU': 'au.js',
-    'CA': 'ca.js', 'NZ': 'nz.js', 'RU': 'ru.js', 'JP': 'jp.js', 'FR': 'fr.js',
+    'CA': 'ca.js', 'NZ': 'nz.js', 'RU': 'ru.js', 'JP': 'jp.js',
     ...euRules
   };
 
@@ -73,15 +73,21 @@ app.get('/currency', (req, res) => {
 });
 
 app.get('/update-function/:language?', (req, res) => {
+  const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = 'update-fallback';
+  const page = country == 'DE'
+    ? 'update-restricted'
+    : 'update-unrestricted';
   const query = getQueryString(req);
   res.redirect(302, path.join('/', language, page) + query);
 });
 
 app.get('/installed-function/:language?', (req, res) => {
+  const country = req.headers['x-country-code'] || '';
   const language = req.params.language || '';
-  const page = 'installed-fallback';
+  const page = country == 'DE'
+    ? 'installed-restricted'
+    : 'installed-unrestricted';
   const query = getQueryString(req);
   res.redirect(302, path.join('/', language, page) + query);
 });

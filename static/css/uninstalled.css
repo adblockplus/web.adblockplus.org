@@ -1,70 +1,17 @@
 /* #reinstall
  ******************************************************************************/
 
-#reinstall {
-  box-shadow: 0rem 0.278rem 1.111rem 0rem rgba(0, 0, 0, 0.15);
-  border-radius: 0.444rem;
-  border: 0.056rem solid #D9D9D9;
-  background: #FFF;
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
-  padding: 1.333rem 2.222rem 1.944rem;
+#reinstall
+{
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-#reinstall * {
-  line-height: 140%;
-}
-
-@media (min-width: 42.667rem) {
-  #reinstall {
-    display: flex;
-    gap: 3.444rem;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-#reinstall h4 {
-  margin: 0;
-  padding: 0;
-}
-
-#reinstall-label {
-  font-size: 0.889rem; 
-  font-weight: 400;
-  margin-bottom: 0.889rem;
-}
-
-@media (min-width: 42.667rem) {
-  #reinstall-label {
-    margin-bottom: 0;
-  }
-}
-
-#reinstall-label svg {
-  min-width: 1.556rem;
-}
-
-#reinstall-label p {
-  margin: 0;
-  padding: 0;
-}
-
-#reinstall-title {
-  display: flex;
-  align-items: center;
-  gap: 0.389rem;
-  margin-left: -0.167rem; /* this compensates for the slightly offset icon in the design */
-  margin-bottom: 0.278rem;
-}
-
-#reinstall-title h4 {
-  font-size: 1.111rem;
-}
-
-#install-button {
-  width: max-content;
-  box-shadow: 0rem 0.278rem 1.111rem 0rem rgba(0, 0, 0, 0.15);
+#reinstall-label
+{
+  display: inline-block;
+  margin-bottom: 1em;
+  margin-right: 1em;
 }
 
 .reinstall-button,

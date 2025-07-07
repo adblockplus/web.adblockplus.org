@@ -5,9 +5,6 @@ robots=none
 unadblock=1
 
 <head>
-  <? include accounts-redirect-fallback ?>
-  <? include optimizely ?>
-  <? include hotjar ?>
   <link rel="stylesheet" href="/css/pages/premium.css">
   <link rel="stylesheet" href="/css/unadblock.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
@@ -21,11 +18,7 @@ unadblock=1
       productId: "ME",
       shouldStoreContributionInfo: false
     });
-    if (localStorage && adblock.searchParameters.has("from__contributionInfo")) {
-      localStorage.setItem("contributionInfo", adblock.searchParameters.get("from__contributionInfo"));
-    }
   </script>
-  <? include payment-complete-tracking ?>
   <script src="/js/payment/config/load.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="/adblock/js/log.js"></script>
@@ -35,7 +28,24 @@ unadblock=1
 </head>
 
 <main class="premium-page">
-  <? include premium-restrictions ?>
+  <aside class="alert-bar alert-bar--gold fr-only de-only">
+    <div class="container">
+      {{ s41 <strong>Adblock Plus Premium is unavailable in your country.</strong> Thank you for your interest, please check back soon we are working hard to make it available. }}
+    </div>
+  </aside>
+  <aside class="tooltip" data-tooltip-target=".premium-button">
+    <p>
+      {{ s38 <strong>Adblock Plus Premium is unavailable in your country</strong> }}
+    </p>
+    <div class="blockquote blockquote--gold">
+      <p>
+        {{ s39 Thanks for your interest! We are working on testing, expanding, and offering the Adblock Plus subscription service to your region in the near future. }}
+      </p>
+      <p>
+        {{ s40 We'll make an announcement as soon as we've expanded the service to your locale. }}
+      </p>
+    </div>
+  </aside>
   <div class="premium-background-1"></div>
   <div class="premium-container">
     <header class="premium-header">
@@ -75,7 +85,7 @@ unadblock=1
                 {{ s6 Block additional distractions, including floating videos, newsletter pop-ups, and more }}
               </p>
             </div>
-            <a class="premium-button premium-cta" data-plan="yearly" href="#payments" data-click='{"group": "get-premium", "target": "yearly"}'>
+            <a class="premium-button" data-plan="yearly" href="#payments" data-click='{"group": "get-premium", "target": "yearly"}'>
               {{ s7 Get Premium }}
             </a>
             <hr>
@@ -124,7 +134,7 @@ unadblock=1
                 {{ s16 Block additional distractions, including floating videos, newsletter pop-ups, and more }}
               </p>
             </div>
-            <a class="premium-button premium-cta" data-plan="monthly" href="#payments" data-click='{"group": "get-premium", "target": "monthly"}'>
+            <a class="premium-button" data-plan="monthly" href="#payments" data-click='{"group": "get-premium", "target": "monthly"}'>
               {{ s7 Get Premium }}
             </a>
             <hr>
@@ -221,7 +231,7 @@ unadblock=1
             <p class="premium-feature-description">
               {{ s22 Take control of your browser and browse the way you want to! Say goodbye to newsletter pop-ups, floating videos, and other annoying distractions with Distraction Control. }}
             </p>
-            <a class="premium-button premium-cta" href="#payments" data-click='{"group": "get-premium", "target": "block-more"}'>
+            <a class="premium-button" href="#payments" data-click='{"group": "get-premium", "target": "block-more"}'>
               {{ s7 Get Premium }}
             </a>
           </section>
@@ -235,7 +245,7 @@ unadblock=1
             <p class="premium-feature-description">
               {{ s24 We are a small team and your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep ABP going for years to come and get access to more features as we release them. }}
             </p>
-            <a class="premium-button premium-cta" href="#payments" data-click='{"group": "get-premium", "target": "support-abp"}'>
+            <a class="premium-button" href="#payments" data-click='{"group": "get-premium", "target": "support-abp"}'>
               {{ s7 Get Premium }}
             </a>
           </section>
@@ -333,7 +343,7 @@ unadblock=1
 
         <div id="pmt-success-left" class="step" style="width: 44%; display: none">
           <img alt="" src="/img/browserwithgears.svg" heigh="164px" width="187px" style="padding: 68px 0">
-          <a href="https://help.eyeo.com/en/adblockplus/getting-started-with-adblock-plus-premium" class="get-started-with-myadblock" i18n="get_started_premium" data-extension-page="premium-onboarding">
+          <a href="https://help.eyeo.com/en/adblockplus/getting-started-with-adblock-plus-premium" class="get-started-with-myadblock" i18n="get_started_premium">
             {{ get_started_premium Get started with Adblock Plus Premium }}
           </a>
         </div><!-- #pmt-success-left -->
@@ -348,14 +358,14 @@ unadblock=1
               </h3>
               <hr />
               <div style="width: 100%; margin: auto; height: 82%">
-                <button class="payment-type-btn" id="donate_now" data-processor="stripe" data-click='{"group": "pay-with", "target": "credit"}'>
+                <button class="payment-type-btn" id="donate_now" data-click='{"group": "pay-with", "target": "credit"}'>
                   <i class="flex-1 material-icons material-icons-outlined">credit_card</i>
                   <span class="flex-4" i18n="pwyw_method_cc">
                     {{ pwyw_method_cc Pay with Credit Card }}
                   </span>
                   <span class="flex-1"></span>
                 </button>
-                <button class="payment-type-btn" id="paypal_button" data-processor="paypal" data-click='{"group": "pay-with", "target": "paypal"}'>
+                <button class="payment-type-btn" id="paypal_button" data-click='{"group": "pay-with", "target": "paypal"}'>
                   <i class="flex-1 material-icons material-icons-outlined">shopping_cart</i>
                   <span class="flex-4" i18n="pwyw_method_paypal">
                     {{ pwyw_method_paypal Pay with PayPal }}
@@ -681,7 +691,7 @@ unadblock=1
                     </span>
                   </div>
                   <div class="row">
-                    <a href="https://help.eyeo.com/en/adblockplus/getting-started-with-adblock-plus-premium" class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta" style="margin-bottom: 0px" data-extension-page="premium-onboarding">
+                    <a href="https://help.eyeo.com/en/adblockplus/getting-started-with-adblock-plus-premium" class="submit-cta full-width get-started-with-myadblock" i18n="get_started_cta" style="margin-bottom: 0px">
                       {{ get_started_cta Get Started }}
                     </a>
                   </div>

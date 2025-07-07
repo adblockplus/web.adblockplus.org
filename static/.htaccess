@@ -136,9 +136,6 @@ SetEnvIf Request_URI ^/(:?\w\w(_\w\w)?/)?(?:index|firefox|chrome|opera|android|i
   RewriteCond %{ENV:link} ^learn_more_premium_pass$
   RewriteRule ^ https://flattr.com/ [L,NC,R=301]
 
-  RewriteCond %{ENV:link} ^adblock_ios$
-  RewriteRule ^ https://apps.apple.com/app/adblock-plus-abp-remove-ads-browse-faster-without-tracking/id1028871868 [L,NC,R=301]
-
   RewriteCond "%{DOCUMENT_ROOT}/%{ENV:lang}/%{ENV:link}" !-f
   RewriteRule ^ - [E=lang:!!]
 
@@ -172,6 +169,28 @@ Header set X-Frame-Options "sameorigin"
 SetEnvIf Origin ^(https?://(?:.+\.)?(adblockplus\.org|eyeo.it)(?::\d{1,5})?)$ CORS_ALLOW_ORIGIN=$1
 Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
 Header merge  Vary "Origin"
+
+<FilesMatch ^update$>
+
+  GeoIPEnable On
+
+  # Fall back to general update page for FR and DE location
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR|DE)$
+  RewriteRule "([\w\-]{2,6})\/update$" "/$1/update-restricted" [NC,L]
+
+</FilesMatch>
+
+<FilesMatch ^installed$>
+
+  GeoIPEnable On
+
+  # Fall back to general update page for FR and DE location
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^(FR|DE)$ [OR]
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE_V6} ^(FR|DE)$
+  RewriteRule "([\w\-]{2,6})\/installed$" "/$1/installed-restricted" [NC,L]
+
+</FilesMatch>
 
 <FilesMatch ^contribution$>
 
@@ -212,6 +231,9 @@ Header merge  Vary "Origin"
   RewriteRule .* /currencies/eur.js [L]
   RewriteRule .* /currencies/usd.js [L]
 </FilesMatch>
+
+# Fall back to general update page for fr and de languages
+RewriteRule "(de|de_DE|de-DE|fr|fr_FR|fr-FR)\/update$" "$1/contribution" [NC,L]
 
 RewriteRule ^(devbuilds(/.*)?) https://downloads.adblockplus.org/$1 [NC,L]
 

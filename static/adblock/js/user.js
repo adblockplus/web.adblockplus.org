@@ -346,7 +346,7 @@ function recordTracking(omitUserId) {
 function getGAID() {
     if (typeof ga !== 'undefined' && typeof ga.getByName === 'function') {
         var tracker = ga.getByName('gatracker');
-        if (tracker) {
+        if (tracker != null) {
             return tracker.get('clientId');
         }
         return '';

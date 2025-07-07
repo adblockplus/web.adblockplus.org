@@ -14,14 +14,15 @@
     ],
     "output_name": "update"
   },
-  "update_2309": {
+  "update_page_fr_de": {
     "css_files": [
-      "static/css/update-2309.css",
+      "static/css/update.css",
       "static/css/grid.css",
       "static/css/skeleton.css",
-      "static/components/AppealForm/AppealForm.css"
+      "static/css/payment/form.css",
+      "static/css/payment/stripe/card-modal.css"
     ],
-    "output_name": "update-2309"
+    "output_name": "update-restricted"
   },
   "download_page": {
     "css_files": [
@@ -35,20 +36,27 @@
   },
   "installed_page": {
     "css_files": [
+      "static/css/defaults.css",
       "static/css/fonts.css",
+      "static/css/main.css",
+      "static/css/grid.css",
       "static/css/skeleton.css",
       "static/components/AppealForm/AppealForm.css",
       "static/css/pages/installed.css"
     ],
     "output_name": "installed"
   },
-  "installed_2309": {
+  "installed_page_fr_de": {
     "css_files": [
+      "static/css/defaults.css",
       "static/css/fonts.css",
+      "static/css/main.css",
+      "static/css/grid.css",
       "static/css/skeleton.css",
-      "static/components/AppealForm/AppealForm.css",
-      "static/css/pages/installed-2309.css"
+      "static/css/pages/installed.css",
+      "static/css/payment/form.css",
+      "static/css/payment/stripe/card-modal.css"
     ],
-    "output_name": "installed-2309"
+    "output_name": "installed-restricted"
   }
 }

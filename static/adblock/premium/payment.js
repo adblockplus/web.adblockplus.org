@@ -158,7 +158,7 @@ $(document).ready(function () {
     //     }
     //     // TODO - bit of a hack, right now this translated string is not replacing the specified
     //     // email text -- this updates the email text to match the actual href.
-    //     $(".helpdesk-email").text("support@adblockplus.org");
+    //     $(".helpdesk-email").text("support@getadblock.com");
     // });
 
     function initializePaymentBox(callback) {
@@ -275,9 +275,6 @@ $(document).ready(function () {
 
     function activateExtension(onSuccess, onFailure) {
         eyeo.beacon({premiumActivationAttempt: true});
-        if (adblock.searchParameters.has("activationSkip")) {
-          return onSuccess();
-        }
         // wait up to 10 seconds to receive pmt success receipt verification from extension
         const maxWait = new Promise(function (_, reject) {
             setTimeout(function () {
@@ -606,12 +603,10 @@ $(document).ready(function () {
     // updates the "yearly / monthly" plan text at bottom of pmt form.
     function updatePlanText() {
         const params = new URLSearchParams(window.location.search);
-        if (params.has("anti_adblock_pass__already_donated")) {
+        if (params.get('from') == 'update-1')
             $('.premium-success-details').hide();
-            return;
-        }
-        const amount = params.get("from__amount") || params.get("anti_adblock_pass__amount") || $("button.option.selected").attr("data-amount");
-        const prevSelectedCurrency = params.get("from__currency") || localStorage.getItem("selectedCurrency");
+        const amount = $("button.option.selected").attr("data-amount");
+        const prevSelectedCurrency = localStorage.getItem("selectedCurrency");
         if (document.location.search.match(/thankyou/)) {
             if (prevSelectedCurrency && typeof prevSelectedCurrency === "string" && prevSelectedCurrency.length > 0) {
                 selectedCurrency = prevSelectedCurrency;
@@ -620,10 +615,9 @@ $(document).ready(function () {
         }
         const currencySymbol = _currency.getSymbol(selectedCurrency);
         const amountString = `${currencySymbol}${amount}`;
-        const recurringFrequency = params.get("from__frequency") || params.get("anti_adblock_pass__frequency") || $("button.option.selected").attr("data-recurring-frequency");
+        const recurringFrequency = $("button.option.selected").attr("data-recurring-frequency");
         const recurringFrequencyWithoutLy = recurringFrequency.slice(0, -2); // slice off the "ly"
         const recurringFrequencyAbbreviation = { yearly: "/yr", monthly: "/mo" }[recurringFrequency];
-
         $("span.selected-plan-name").each(function () {
             const recurringText = recurringFrequency[0].toUpperCase() + recurringFrequency.slice(1);
             $(this).text(`${recurringText} Plan`);

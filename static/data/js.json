@@ -21,26 +21,45 @@
     ],
     "output_name": "update"
   },
-  "update_2309": {
+  "update_page_fr_de": {
     "js_files": [
-      "static/adblock/js/user.js",
-      "static/components/AppealForm/main.js",
+      "static/js/vendor/lodash.custom.min.js",
+      "static/js/payment/form.js",
+      "static/js/payment/stripe/card-modal.js",
+      "static/js/payment/stripe/card-payment.js",
+      "static/js/payment/stripe/card-subscription.js",
+      "static/js/payment/paypal/button-payment.js",
+      "static/js/payment/paypal/button-subscription.js",
+      "static/js/payment/session.js",
+      "static/js/payment/controller.js",
       "static/js/address-masking.js"
     ],
-    "output_name": "update-2309"
+    "output_name": "update-restricted"
   },
   "installed_page": {
     "js_files": [
       "static/adblock/js/user.js",
-      "static/components/AppealForm/main.js"
+      "static/components/AppealForm/main.js",
+      "static/js/address-masking.js",
+      "static/js/pages/installed.js"
     ],
     "output_name": "installed"
   },
-  "installed_2309": {
+  "installed_page_fr_de": {
     "js_files": [
-      "static/adblock/js/user.js",
-      "static/components/AppealForm/main.js"
+      "static/js/vendor/url-search-params.min.js",
+      "static/js/vendor/lodash.custom.min.js",
+      "static/js/payment/form.js",
+      "static/js/payment/stripe/card-modal.js",
+      "static/js/payment/stripe/card-payment.js",
+      "static/js/payment/stripe/card-subscription.js",
+      "static/js/payment/paypal/button-payment.js",
+      "static/js/payment/paypal/button-subscription.js",
+      "static/js/payment/session.js",
+      "static/js/payment/controller.js",
+      "static/js/address-masking.js",
+      "static/js/pages/installed.js"
     ],
-    "output_name": "installed-2309"
+    "output_name": "installed-restricted"
   }
 }

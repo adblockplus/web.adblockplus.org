@@ -41,9 +41,7 @@ def test_check_download_links(id, driver, button_text, link, download_url):
         assert landing_page.get_download_button_link == link
         landing_page.click_download_button()
         if 'safari' in id:
-            # Workflow has changed. This does not apply anymore.
-            # assert gf.wait_for_file_in_downloads(download_url)
-            assert True
+            assert gf.wait_for_file_in_downloads(download_url)
         elif 'chrome' in id:
             chrome_cookie_notification = ChromeCookiesNotification(driver)
             chrome_cookie_notification.click_i_agree_button_chrome()
