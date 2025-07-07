@@ -355,15 +355,15 @@ class ActivatedStep extends Step {
     if (!adblock.adblockPlus) {
       document.querySelectorAll(".download-button").forEach(button => {
         if (/firefox/i.test(navigator.userAgent)) {
-          button.href = "https://eyeo.to/adblockplus/firefox_install/";
+          button.href = "https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/";
           button.textContent = document.querySelector("#download-label-firefox").textContent;
           button.parentElement.classList.add("firefox");
         } else if (/\sedg\/|edg([ea])/i.test(navigator.userAgent)) {
-          button.href = "https://eyeo.to/adblockplus/edge_chromium_install/";
+          button.href = "https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb";
           button.textContent = document.querySelector("#download-label-msedge").textContent;
           button.parentElement.classList.add("msedge");
         } else {
-          button.href = "https://eyeo.to/adblockplus/chrome_install/";
+          button.href = "https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb";
           button.textContent = document.querySelector("#download-label-chrome").textContent;
           button.parentElement.classList.add("chrome");
         }
