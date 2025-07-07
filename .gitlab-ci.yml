@@ -64,7 +64,7 @@ build:review:
     - crudini --set settings.ini general siteurl "$REVIEW_URL"
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
-    # copy contents of default locale to base of public root (for firebase), 
+    # copy contents of default locale to base of public root (for firebase),
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
   artifacts:
@@ -85,7 +85,7 @@ build:review:staging:
     - crudini --set settings.ini general siteurl "$FIREBASE_DOMAIN"
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
-    # copy contents of default locale to base of public root (for firebase), 
+    # copy contents of default locale to base of public root (for firebase),
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
   artifacts:
@@ -108,7 +108,7 @@ build:production:
     - crudini --set settings.ini general siteurl https://$DOMAIN
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
-    # copy contents of default locale to base of public root (for firebase), 
+    # copy contents of default locale to base of public root (for firebase),
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
   artifacts:
