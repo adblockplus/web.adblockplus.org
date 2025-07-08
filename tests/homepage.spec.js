@@ -11,7 +11,7 @@ test('Cookie Banner link', async ({ page, browserName }) => {
 });
 
 test('Extension download link', async ({ page, browserName }) => {
-	switch (browserName) {
+	switch(browserName) {
 	case "firefox":
 		await page.locator("#install-button").click();
 		await expect(page).toHaveURL('https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/');
