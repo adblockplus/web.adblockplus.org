@@ -57,6 +57,6 @@ test('Adblock Browser download link', async ({ page }) => {
 		const pagePromise = page.waitForEvent('popup');
 		await page.getByRole('link', { name: pageLink }).click();
 		const newTab = await pagePromise;
-  		await expect(newTab).toHaveURL(expectedUrl);
+		await expect(newTab).toHaveURL(expectedUrl);
 	});
 });
