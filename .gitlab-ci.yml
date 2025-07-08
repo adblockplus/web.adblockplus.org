@@ -304,5 +304,5 @@ automated_tests:
   script:
     - npm ci
   #  - npm install
-  #  - npx playwright install
+    - npx playwright install
     - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --retries=0
