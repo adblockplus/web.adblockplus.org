@@ -302,7 +302,7 @@ automated_tests:
   stage: test
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
-  #  - npm ci
-    - npm install
-    - npx playwright install
+    - npm ci
+  #  - npm install
+  #  - npx playwright install
     - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --retries=0
