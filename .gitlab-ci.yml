@@ -290,14 +290,13 @@ deploy_firebase_hosting:production:
   only:
     - master
 
-platform_tests:
-  stage: test
-  trigger:
-    project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
-  variables:
-    PROJECT: "e2eabp"
-    URL: "$REVIEW_URL"
-  when: never
+#platform_tests:
+#  stage: test
+#  trigger:
+#    project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
+#  variables:
+#    PROJECT: "e2eabp"
+#    URL: "$REVIEW_URL"
 
 automated_tests:
   stage: test
