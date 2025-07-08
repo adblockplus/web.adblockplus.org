@@ -300,7 +300,7 @@ platform_tests:
 
 automated_tests:
   stage: test
-  image: mcr.microsoft.com/playwright:v1.39.0-jammy
+  image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
     - npm ci
     - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test
