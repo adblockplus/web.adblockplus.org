@@ -303,5 +303,5 @@ automated_tests:
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
     - npm ci
-    - npx playwright install --with-deps
+    - npx playwright install chrome edge --with-deps
     - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --retries=0
