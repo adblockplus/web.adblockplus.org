@@ -11,15 +11,17 @@ test('Cookie Banner link', async ({ page, browserName }) => {
 });
 
 test('Extension download link', async ({ page, browserName }) => {
-	await page.locator("#install-button").click();
 	switch (browserName) {
 	case "firefox":
+		await page.locator("#install-button").click();
 		await expect(page).toHaveURL('https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/');
 		break;
 	case "webkit":
-		await expect(page).toHaveURL('https://apps.apple.com/us/app/adblock-plus-for-safari-abp/id1432731683');
+		// Playwright cannot interact with App Store so check link is correct without clicking
+		await expect(page.locator("#install-button")).toHaveAttribute('href', 'https://apps.apple.com/us/app/adblock-plus-for-safari-abp/id1432731683');
 		break;
 	default:
+		await page.locator("#install-button").click();
 		await expect(page).toHaveURL('https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb');
 	};
 });
