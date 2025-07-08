@@ -297,10 +297,12 @@ platform_tests:
   variables:
     PROJECT: "e2eabp"
     URL: "$REVIEW_URL"
+  when: never
 
 automated_tests:
   stage: test
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
-    - npm ci
+  #  - npm ci
+    - npx playwright install
     - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test

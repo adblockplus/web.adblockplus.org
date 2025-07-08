@@ -52,7 +52,8 @@ test('Adblock Browser download link', async ({ page }) => {
 	{ pageLink: 'New York Times logo', expectedUrl: 'https://www.nytimes.com/2015/08/20/technology/personaltech/ad-blockers-and-the-nuisance-at-the-heart-of-the-modern-web.html' },
 	{ pageLink: 'Media post logo', expectedUrl: 'https://www.mediapost.com/publications/article/289691/adblock-plus-comes-to-new-york.html' },
 ].forEach(({ pageLink, expectedUrl }) => {
-	test("As mentioned on links: " + pageLink, async ({ page }) => {
+	test("As mentioned on links: " + pageLink, async ({ page, browserName }) => {
+		test.skip(browserName !== 'chromium', 'Only need to test third party links on Chromium');
 		const pagePromise = page.waitForEvent('popup');
 		await page.getByRole('link', { name: pageLink }).click();
 		const newTab = await pagePromise;
