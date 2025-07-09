@@ -22,9 +22,6 @@ test('Extension download link', async ({ page, browserName, channel }) => {
 		// Playwright cannot interact with App Store so check link is correct without clicking
 		await expect(page.locator('#install-button')).toHaveAttribute('href', 'https://apps.apple.com/us/app/adblock-plus-for-safari-abp/id1432731683');
 		break;
-	case 'Microsoft Edge':
-		await expect(page).toHaveURL('https://microsoftedge.microsoft.com/addons/detail/adblock-plus-free-ad-bl/gmgoamodcdcjnbaobigkjelfplakmdhh');
-		break;
 	default:
 		switch(channel) {
 			case 'msedge':
