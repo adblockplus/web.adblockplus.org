@@ -290,7 +290,7 @@ deploy_firebase_hosting:production:
   only:
     - master
 
-chromium__only_tests:
+chromium_tests:
   stage: test
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
