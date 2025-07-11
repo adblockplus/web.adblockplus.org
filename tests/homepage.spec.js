@@ -12,7 +12,7 @@ test('Cookie Banner link', async ({ page, browserName }) => {
 
 test('Extension download link', { tag: ['@all_browsers'] }, async ({ page, browserName, channel }) => {
   if (browserName !== 'webkit') {
-	await page.locator('#install-button').click();
+    await page.locator('#install-button').click();
   }
   switch(browserName) {
     case 'firefox':
