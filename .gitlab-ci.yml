@@ -290,18 +290,26 @@ deploy_firebase_hosting:production:
   only:
     - master
 
-#platform_tests:
-#  stage: test
-#  trigger:
-#    project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
-#  variables:
-#    PROJECT: "e2eabp"
-#    URL: "$REVIEW_URL"
+chromium__only_tests:
+  stage: test
+  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  script:
+    - npm ci
+    - npx playwright install --with-deps
+    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test  --project 'chromium' --grep-invert "@third_party_link|@all_browsers" --retries=0
 
-automated_tests:
+all_browser_tests:
   stage: test
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
     - npm ci
     - npx playwright install chrome msedge --with-deps
-    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --retries=0
+    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --grep @all_browsers --retries=0
+
+platform_tests:
+  stage: test
+  trigger:
+    project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
+  variables:
+    PROJECT: "e2eabp"
+    URL: "$REVIEW_URL"
