@@ -15,21 +15,21 @@ test('Extension download link', { tag: ['@all_browsers'] }, async ({ page, brows
 	await page.locator('#install-button').click();
   }
   switch(browserName) {
-	case 'firefox':
-	  await expect(page).toHaveURL('https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/');
-	  break;
-	case 'webkit':
+    case 'firefox':
+      await expect(page).toHaveURL('https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/');
+      break;
+    case 'webkit':
       // Playwright cannot interact with App Store so check link is correct without clicking
       await expect(page.locator('#install-button')).toHaveAttribute('href', 'https://apps.apple.com/us/app/adblock-plus-for-safari-abp/id1432731683');
       break;
-	default:
-    switch(channel) {
-      case 'msedge':
-        await expect(page).toHaveURL('https://microsoftedge.microsoft.com/addons/detail/adblock-plus-free-ad-bl/gmgoamodcdcjnbaobigkjelfplakmdhh');
-        break;
-		default:
-		  await expect(page).toHaveURL('https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb');
-	  }
+    default:
+      switch(channel) {
+        case 'msedge':
+          await expect(page).toHaveURL('https://microsoftedge.microsoft.com/addons/detail/adblock-plus-free-ad-bl/gmgoamodcdcjnbaobigkjelfplakmdhh');
+          break;
+        default:
+          await expect(page).toHaveURL('https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb');
+      }
   };
 });
 
