@@ -48,8 +48,8 @@ test('Adblock Browser download link', async ({ page }) => {
   { pageLink: 'forum', expectedUrl: 'https://forum.adblockplus.org//viewforum.php?f=12' },
 ].forEach(({ pageLink, expectedUrl }) => {
   test('Page links: ' + pageLink, async ({ page }) => {
-	await page.getByRole('link', { name: pageLink, exact: true }).click();
-	expect(page.url()).toContain(expectedUrl);
+    await page.getByRole('link', { name: pageLink, exact: true }).click();
+    expect(page.url()).toContain(expectedUrl);
   });
 });
 
@@ -66,10 +66,10 @@ test('Gnu.org link', { tag: ['@third_party_link'] }, async ({ page }) => {
   { pageLink: 'Media post logo', expectedUrl: 'https://www.mediapost.com/publications/article/289691/adblock-plus-comes-to-new-york.html' },
 ].forEach(({ pageLink, expectedUrl }) => {
   test('As mentioned on links: ' + pageLink, { tag: ['@third_party_link'] }, async ({ page, browserName }) => {
-	test.skip(browserName !== 'chromium', 'Only need to test third party links on Chromium');
-	const pagePromise = page.waitForEvent('popup');
-	await page.getByRole('link', { name: pageLink }).click();
-	const newTab = await pagePromise;
-	await expect(newTab).toHaveURL(expectedUrl);
+    test.skip(browserName !== 'chromium', 'Only need to test third party links on Chromium');
+    const pagePromise = page.waitForEvent('popup');
+    await page.getByRole('link', { name: pageLink }).click();
+    const newTab = await pagePromise;
+    await expect(newTab).toHaveURL(expectedUrl);
   });
 });
