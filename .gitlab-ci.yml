@@ -296,8 +296,14 @@ chromium_tests:
   script:
     - npm ci
     - npx playwright install --with-deps
-    - echo "The tests will run on Chromium using ${REVIEW_URL}"
-    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
+    - |-
+      if [ -z "${REVIEW_URL}" ]; then
+        echo "The tests will run on Chromium on adblockplus.org"
+        npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
+      else
+        echo "The tests will run on Chromium using ${REVIEW_URL}"
+        STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
+      fi
 
 all_browser_tests:
   stage: test
@@ -305,8 +311,14 @@ all_browser_tests:
   script:
     - npm ci
     - npx playwright install chrome msedge --with-deps
-    - echo "The browser tests will run using ${REVIEW_URL}"
-    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --grep @all_browsers --retries=0
+    - |-
+      if [ -z "${REVIEW_URL}" ]; then
+        echo "The browser tests will run on adblockplus.org"
+        npx playwright test --grep @all_browsers --retries=0
+      else
+        echo "The browser tests will run using ${REVIEW_URL}"
+        STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --grep @all_browsers --retries=0
+      fi
 
 platform_tests:
   stage: test
