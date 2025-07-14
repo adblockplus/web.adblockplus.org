@@ -73,10 +73,47 @@ Unless a language is provided in the URL (e.g. via selecting language in the nav
 
 ### Installed page
 
-#### Installed data collection 
+#### Installed data collection
 
 `ap` of `firefox` and `av` of greater or equal to `3.21.1` are used to show a message about data collection to Firefox users on the installed page.
 
 #### Install and activate redirection
 
 When premium is purchased before ABP is installed then `premium-checkout__install` is used to trigger storing values in the browser to cause the post-install page to redirect to the premium activation page.
+
+## Automated tests
+
+### Pipeline test runs
+
+The following test jobs run in the GitLab pipeline:
+- all_browsers - this is a subset of tests that run for all browsers (Chromium, Edge, Chrome, Safari, and Firefox)
+- chromium_tests - this is all of the remaining tests (except third party link tests) run on Chromium only
+- platform_tests - this runs a downstream pipeline of the https://gitlab.com/eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests and will eventually be phased out
+
+Additionally there is a nightly scheduled run of all tests on all browsers (except third party link tests), and a weekly scheduled run of the third party link tests.
+
+### Running tests locally
+
+Initial Playwright installation in Terminal from adblockplus.org folder:
+- `npm install`
+- `npx playwright install`
+
+Running tests in Terminal from adblockplus.org folder:
+- `npx playwright test --project chromium`
+- To run on a staging URL: `STAGING=1 STAGING_URL=any_url_here npx playwright test --project chromium`
+- Can run the tests on all browsers using simply `npx playwright test`, but this will take longer to run
+  - Running on all browsers may also require installation of Chrome/Edge: `npx playwright install chrome msedge`
+- Possible projects currently:
+  - chromium
+  - firefox
+  - webkit - this will run tests on Safari
+
+### Available test tags
+
+Can also run tests only for specific tags:
+- Run for a specific tag: `npx playwright test --grep @all_browsers`
+- Exclude specific tags and only run on Chromium: `npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers"`
+
+Available tags:
+- @all_browsers - these tests have different behaviour on different browsers
+- @third_party_link - these tests can fail due to third party sites being down

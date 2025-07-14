@@ -297,7 +297,7 @@ chromium_tests:
     - npm ci
     - npx playwright install --with-deps
     - echo "The tests will run on Chromium using ${REVIEW_URL}"
-    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test  --project 'chromium' --grep-invert "@third_party_link|@all_browsers" --retries=0
+    - STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
 
 all_browser_tests:
   stage: test
