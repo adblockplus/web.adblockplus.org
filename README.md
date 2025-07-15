@@ -90,7 +90,7 @@ The following test jobs run in the GitLab pipeline:
 - chromium_tests - this is all of the remaining tests (except third party link tests) run on Chromium only
 - platform_tests - this runs a downstream pipeline of the https://gitlab.com/eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests and will eventually be phased out
 
-Additionally there is a nightly scheduled run of all tests on all browsers.
+Additionally there is a daily scheduled run of all tests on all browsers.
 
 ### Running tests locally
 
