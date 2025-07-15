@@ -93,8 +93,32 @@ document.addEventListener("click", event => {
   if (!allowAction) return;
 
   event.preventDefault();
+
+  console.log("Before steps:", {
+    purchaseClasses: document.querySelector(".premium-checkout-purchase")?.classList.toString(),
+    stepsPurchaseState: steps.purchase?.state,
+    stepsVerifyState: steps.verify?.state
+  });
+
+  document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--active");
+  document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--transition");
   document.getElementById("premium-checkout")?.classList.add("visible");
+
+  console.log("Before fire:", {
+    purchaseClasses: document.querySelector(".premium-checkout-purchase")?.classList.toString(),
+    stepsPurchaseState: steps.purchase?.state,
+    stepsVerifyState: steps.verify?.state
+  });
+
   steps.purchase.fire("restore-purchase");
+
+  console.log("After steps:", {
+    purchaseClasses: document.querySelector(".premium-checkout-purchase")?.classList.toString(),
+    stepsPurchaseState: steps.purchase?.state,
+    stepsVerifyState: steps.verify?.state
+  });
+
+
 });
 
 document.querySelectorAll("[data-scroll-target]").forEach(link => {
