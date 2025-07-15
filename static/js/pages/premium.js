@@ -90,12 +90,10 @@ document.addEventListener("click", event => {
   if (!link) return;
 
   const allowAction = link.closest(".premium-plans__already-contributed");
-  console.log(allowAction)
   if (!allowAction) return;
 
   event.preventDefault();
   document.getElementById("premium-checkout")?.classList.add("visible");
-  console.log(document.getElementById("premium-checkout").classList);
   steps.purchase.fire("restore-purchase");
 });
 
