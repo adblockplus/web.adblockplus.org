@@ -3,6 +3,7 @@ import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
 if (adblock.query.has("design")) {
   document.getElementById("premium-checkout")?.classList.add("visible");
+  document.getElementById("premium-checkout")?.classList.add("visible");
   document.documentElement.classList.add("design")
 }
 
@@ -225,6 +226,17 @@ function verifyCode(code) {
 class Step {
 
   constructor(element, name) {
+
+    console.log('Constructor called with:', {
+      name,
+      elementId: element.id,
+      elementClasses: element.className,
+      timestamp: new Date().toISOString(),
+      // Add stack trace to see where it's being called from
+      trace: new Error().stack
+    });
+
+
     this.element = element.cloneNode(true);
     this.transitionDuration = 300;
     this.name = name;
