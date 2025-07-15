@@ -1078,6 +1078,14 @@ html {
   display: none;
 }
 
+.premium-page .premium-checkout .premium-checkout-step.premium-checkout-purchase {
+  display: none;
+}
+
 .premium-page .premium-checkout.visible {
+  display: block;
+}
+
+.premium-page .premium-checkout.visible .premium-checkout-step.premium-checkout-purchase {
   display: block;
 }

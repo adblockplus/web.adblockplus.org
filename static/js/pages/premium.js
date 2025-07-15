@@ -100,8 +100,8 @@ document.addEventListener("click", event => {
     stepsVerifyState: steps.verify?.state
   });
 
-  document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--active");
-  document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--transition");
+  // document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--active");
+  // document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--transition");
   document.getElementById("premium-checkout")?.classList.add("visible");
 
   console.log("Before fire:", {
