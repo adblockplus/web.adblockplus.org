@@ -292,6 +292,8 @@ deploy_firebase_hosting:production:
 
 chromium_tests:
   stage: test
+  except:
+    - schedules
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
     - npm ci
@@ -307,6 +309,8 @@ chromium_tests:
 
 all_browser_tests:
   stage: test
+  except:
+    - schedules
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
     - npm ci
@@ -319,6 +323,16 @@ all_browser_tests:
         echo "The browser tests will run using ${REVIEW_URL}"
         STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --grep @all_browsers --retries=0
       fi
+
+all_website_tests:
+  stage: test
+  only:
+    - schedules
+  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  script:
+    - npm ci
+    - npx playwright install chrome msedge --with-deps
+    - npx playwright test
 
 platform_tests:
   stage: test
