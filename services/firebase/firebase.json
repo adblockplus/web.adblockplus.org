@@ -157,6 +157,26 @@
         "regex": "(?i)^/get-abp-browser-android/?$",
         "destination": "https://adblockbrowser.org/",
         "type": 301
+      },
+      {
+        "regex": "(?i)^/r/grow-157/ios-v1/?$",
+        "destination": "https://apps.apple.com/app/apple-store/id1028871868?pt=117871164&ct=grow-157-v1&mt=8",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/r/grow-157/ios-v2/?$",
+        "destination": "https://apps.apple.com/app/apple-store/id1028871868?pt=117871164&ct=grow-157-v2&mt=8",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/r/grow-157/ios-v3/?$",
+        "destination": "https://apps.apple.com/app/apple-store/id1028871868?pt=117871164&ct=grow-157-v3&mt=8",
+        "type": 301
+      },
+      {
+        "regex": "(?i)^/r/grow-157/ios-v4/?$",
+        "destination": "https://apps.apple.com/app/apple-store/id1028871868?pt=117871164&ct=grow-157-v4&mt=8",
+        "type": 301
       }
     ],
     "rewrites": [
