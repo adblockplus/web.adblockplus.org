@@ -3,7 +3,6 @@ import { getDollarString, getDollarNumber } from "../modules/currency.js";
 
 if (adblock.query.has("design")) {
   document.getElementById("premium-checkout")?.classList.add("visible");
-  document.getElementById("premium-checkout")?.classList.add("visible");
   document.documentElement.classList.add("design")
 }
 
@@ -69,8 +68,16 @@ let flow = adblock.query.get("premium-checkout__flow") || "none";
 
 const section = document.querySelector(".premium-checkout");
 
+const plansContainer = document.querySelector('.premium-plans');
+
 /** interactive card (parent element to steps below) */
 const card = document.querySelector(".premium-checkout-card--interactive");
+
+const isPremiumPage = document.documentElement.dataset.page === "premium";
+
+// Enable pre-selecting monthly/yearly payment options via clicking a
+// .premium-cta[data-plan] with an allowlisted plan
+const premiumPlans = ['monthly', 'yearly'];
 
 ////////////////////////////////////////////////////////////////////////////////
 // UTILITIES
@@ -83,6 +90,51 @@ function checkoutLog(event, data = {}) {
   return typeof adblock.log == "function"
   ? adblock.log(event, data)
   : new Promise(resolve => resolve())
+}
+
+function initGlobalEventHandlers() {
+  if (!isPremiumPage) return;
+
+  console.log("GLOBAL LISTENERS INITIATED")
+
+  window.addEventListener("click", event => {
+    console.log("handle click #1");
+    if (
+      event.target.classList
+      && event.target.classList.contains('premium-cta')
+      && event.target.dataset
+      && event.target.dataset.plan
+    ) {
+      console.log("handle click on premium cta");
+      plansContainer.classList.remove('hovered');
+      plansContainer.classList.add('has-selection');
+      event.target.classList.add('selected');
+      const plan = event.target.dataset.plan;
+      if (premiumPlans.indexOf(plan) === -1) return;
+      document
+        .querySelector(`.premium-checkout-purchase-price[value="${plan}"]`)
+        .click();
+
+      steps.purchase.fire("checkout-now");
+    }
+  });
+
+  document.addEventListener("click", event => {
+    console.log("handle click #2");
+    const link = event.target.closest(".premium-checkout-purchase__restore-purchase-link");
+    if (!link) return;
+
+    const allowAction = link.closest(".premium-plans__already-contributed");
+    if (!allowAction) return;
+
+    event.preventDefault();
+
+    console.log("handle click on restore purchase link");
+
+    document.getElementById("premium-checkout")?.classList.add("visible");
+
+    steps.purchase.fire("restore-purchase");
+  });
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -777,5 +829,7 @@ if (
     gtag('event', 'conversion', { send_to, value, currency, transition_id });
   }
 }
+
+initGlobalEventHandlers();
 
 export default steps;
