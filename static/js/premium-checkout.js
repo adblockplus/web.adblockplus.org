@@ -95,17 +95,13 @@ function checkoutLog(event, data = {}) {
 function initGlobalEventHandlers() {
   if (!isPremiumPage) return;
 
-  console.log("GLOBAL LISTENERS INITIATED")
-
   window.addEventListener("click", event => {
-    console.log("handle click #1");
     if (
       event.target.classList
       && event.target.classList.contains('premium-cta')
       && event.target.dataset
       && event.target.dataset.plan
     ) {
-      console.log("handle click on premium cta");
       plansContainer.classList.remove('hovered');
       plansContainer.classList.add('has-selection');
       event.target.classList.add('selected');
@@ -120,7 +116,6 @@ function initGlobalEventHandlers() {
   });
 
   document.addEventListener("click", event => {
-    console.log("handle click #2");
     const link = event.target.closest(".premium-checkout-purchase__restore-purchase-link");
     if (!link) return;
 
@@ -128,8 +123,6 @@ function initGlobalEventHandlers() {
     if (!allowAction) return;
 
     event.preventDefault();
-
-    console.log("handle click on restore purchase link");
 
     document.getElementById("premium-checkout")?.classList.add("visible");
 
@@ -278,17 +271,6 @@ function verifyCode(code) {
 class Step {
 
   constructor(element, name) {
-
-    console.log('Constructor called with:', {
-      name,
-      elementId: element.id,
-      elementClasses: element.className,
-      timestamp: new Date().toISOString(),
-      // Add stack trace to see where it's being called from
-      trace: new Error().stack
-    });
-
-
     this.element = element.cloneNode(true);
     this.transitionDuration = 300;
     this.name = name;
