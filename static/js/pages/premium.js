@@ -1,4 +1,3 @@
-import steps from '../premium-checkout.js'
 import { checkoutEvents } from '../../modules/paddle.js';
 
 /**
@@ -52,9 +51,6 @@ function setAutoHeights(targets)
    heightTarget.style.height = (offsetTargetOffset + additionalStaticOffset - bodyPaddingTop) + 'px';
  }
 
-// Enable pre-selecting monthly/yearly payment options via clicking a
-// .premium-cta[data-plan] with an allowlisted plan
-const premiumPlans = ['monthly', 'yearly'];
 const plansContainer = document.querySelector('.premium-plans');
 
 checkoutEvents.on("checkout.closed", () => {
@@ -63,62 +59,6 @@ checkoutEvents.on("checkout.closed", () => {
   document.querySelectorAll('.premium-plan').forEach(plan => {
     plan.querySelector('.premium-cta').classList.remove('selected');
   });
-});
-
-window.addEventListener('click', event => {
-  if (
-    event.target.classList
-    && event.target.classList.contains('premium-cta')
-    && event.target.dataset
-    && event.target.dataset.plan
-  ) {
-    plansContainer.classList.remove('hovered');
-    plansContainer.classList.add('has-selection');
-    event.target.classList.add('selected');
-    const plan = event.target.dataset.plan;
-    if (premiumPlans.indexOf(plan) == -1) return;
-    document
-        .querySelector(`.premium-checkout-purchase-price[value="${plan}"]`)
-        .click();
-
-    steps.purchase.fire("checkout-now");
-  }
-});
-
-document.addEventListener("click", event => {
-  const link = event.target.closest(".premium-checkout-purchase__restore-purchase-link");
-  if (!link) return;
-
-  const allowAction = link.closest(".premium-plans__already-contributed");
-  if (!allowAction) return;
-
-  event.preventDefault();
-
-  console.log("Before steps:", {
-    purchaseClasses: document.querySelector(".premium-checkout-purchase")?.classList.toString(),
-    stepsPurchaseState: steps.purchase?.state,
-    stepsVerifyState: steps.verify?.state
-  });
-
-  // document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--active");
-  // document.querySelector(".premium-checkout-purchase")?.classList.remove("premium-checkout-step--transition");
-  document.getElementById("premium-checkout")?.classList.add("visible");
-
-  console.log("Before fire:", {
-    purchaseClasses: document.querySelector(".premium-checkout-purchase")?.classList.toString(),
-    stepsPurchaseState: steps.purchase?.state,
-    stepsVerifyState: steps.verify?.state
-  });
-
-  steps.purchase.fire("restore-purchase");
-
-  console.log("After steps:", {
-    purchaseClasses: document.querySelector(".premium-checkout-purchase")?.classList.toString(),
-    stepsPurchaseState: steps.purchase?.state,
-    stepsVerifyState: steps.verify?.state
-  });
-
-
 });
 
 document.querySelectorAll("[data-scroll-target]").forEach(link => {
