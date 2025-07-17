@@ -71,5 +71,5 @@ test('Gnu.org link', { tag: ['@third_party_link'] }, async ({ page }) => {
     await page.getByRole('link', { name: pageLink }).click();
     const newTab = await pagePromise;
     await expect(newTab).toHaveURL(expectedUrl);
-});
+  });
 });
