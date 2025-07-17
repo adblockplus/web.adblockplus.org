@@ -338,6 +338,6 @@ platform_tests:
   stage: test
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
-  variables:
-    PROJECT: "e2eabp"
-    URL: "$REVIEW_URL"
+    variables:
+      PROJECT: "e2eabp"
+      URL: "$REVIEW_URL"
