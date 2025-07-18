@@ -53,10 +53,14 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 24px;
   z-index: 1;
+  flex-direction: column;
+}
+
+.header-margins {
+  margin-left: var(--spacing-standard);
+  margin-right: var(--spacing-standard);
+  margin-top: var(--spacing-medium);
 }
 
 .centered-heading {
@@ -163,6 +167,10 @@ body {
   padding-bottom: var(--spacing-standard);
   margin-bottom: var(--spacing-standard);
   font-size: var(--font-size-default);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .instruction-item:not(:last-child)::after {
@@ -249,6 +257,61 @@ button {
 .footer p {
   font-size: 12px;
   text-align: center;
+}
+
+.warning-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  max-width: 700px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin: 24px auto;
+  border: 1px solid #DFB616;
+  background: #FFD533;
+  box-sizing: border-box;
+}
+
+.variant-box--red {
+  border: 1px solid #E0ABB5;
+  background: #FFE1E4;
+}
+
+.warning-text {
+  font-size: 17px;
+  font-weight: 400;
+  color: #161515;
+}
+
+.black-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(0) saturate(100%);
+}
+
+.bullet-number {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 100px;
+  background: #000;
+}
+
+.bullet-number-text {
+  align-self: stretch;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .ios-button {

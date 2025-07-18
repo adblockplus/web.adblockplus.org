@@ -9,21 +9,50 @@ template=raw
     <link rel="stylesheet" href="/abp-for-safari-onboarding/css/style.css">
     <script type="module" src="/abp-for-safari-onboarding/js/analytics.js"></script>
     <script src="/abp-for-safari-onboarding/js/replace-inline-images.js"></script>
+    <script src="/abp-for-safari-onboarding/js/update-warning-box.js"></script>
 </head>
 
-<header class="header">
-    <img src="/abp-for-safari-onboarding/img/abp_logo.svg" alt="ABP Logo" class="logo-large">
-</header>
 <div class="content">
-    <div class="centered-heading">
-        <p><strong>{{ safari-request-permissions-title Browsing just got better.}}</strong></p>
-        <p>{{ safari-request-permissions-desc Enable advanced ad-blocking for a smoother, cleaner experience.}}</p>
-        </div>
-    <div class="instruction-list">
-        <div class="instruction-item">
-            {{ safari-request-permissions-instruction1 1. Tap on the <strong>Review</strong> button at the top or the [[IMG:safari_menu_icon]] in the address bar}}
-        </div>
-        <div class="instruction-item">{{ safari-request-permissions-instruction2 2. Tap <strong>"Always Allow"</strong>}}</div>
-        <div class="instruction-item">{{ safari-request-permissions-instruction3 3. Tap <strong>"Always Allow on Every Website"</strong>}}</div>
+  <div class="header-margins">
+    <div class="warning-box">
+      <img src="/abp-for-safari-onboarding/img/warning_icon.svg" class="black-icon" alt="">
+      <span class="warning-text">{{ safari-request-permissions-warning }}</span>
     </div>
+  </div>
+  <div class="header header-margins">
+    <img src="/abp-for-safari-onboarding/img/abp_logo.svg" alt="ABP Logo" class="logo-large">
+  </div>
+
+  <div class="centered-heading">
+      <div class="large-text">
+        <p><strong>{{ safari-request-permissions-title }}</strong></p>
+      </div>
+      <p>{{ safari-request-permissions-desc }}</p>
+      </div>
+    <div class="instruction-list">
+      <div class="instruction-item">
+        <div class="bullet-number">
+          <span class="bullet-number-text">1</span>
+        </div>
+        <div>
+          {{ safari-request-permissions-instruction1 }}
+        </div>
+      </div>
+      <div class="instruction-item">
+        <div class="bullet-number">
+          <span class="bullet-number-text">2</span>
+        </div>
+        <div>
+          {{ safari-request-permissions-instruction2 }}
+        </div>
+      </div>
+      <div class="instruction-item">
+        <div class="bullet-number">
+          <span class="bullet-number-text">3</span>
+        </div>
+        <div>
+          {{ safari-request-permissions-instruction3 }}
+        </div>
+      </div>
+  </div>
 </div>
