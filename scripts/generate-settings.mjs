@@ -16,7 +16,7 @@ const eurCountries = ["AT","BE","BG","CY","CZ","DE","DK","EE","ES","FI","FR","GB
 adblock.settings.restrictPrivacy = adblock.query.get("restrictPrivacy") || eurCountries.includes(country);
 if (adblock.settings.restrictPrivacy) documentClassList.add("restrict-privacy");
 
-const uniqueCurrencies = {"AU":"AUD","CA":"CAD","CH":"CHF","GB":"GBP","JP":"JPY","NZ":"NZD","RU":"RUB"};
+const uniqueCurrencies = {"AU":"AUD","CA":"CAD","CH":"CHF","GB":"GBP","JP":"JPY","NZ":"NZD","PL":"PLN","RU":"RUB"};
 adblock.settings.defaultCurrency = adblock.query.get("defaultCurrency") || uniqueCurrencies[country] || (eurCountries.includes(country) ? "EUR" : "USD");
 
 const vatInclusiveCurrencies = ["GBP","EUR","PLN","CHF"];
@@ -26,7 +26,7 @@ adblock.api.updateVATState = currency => {
       documentClassList.add("vat-inclusive");
       documentClassList.remove("vat-exclusive");
     } else {
-      documentClassList.add("vat-exclusive");     
+      documentClassList.add("vat-exclusive");
       documentClassList.remove("vat-inclusive");
     }
   } else {
