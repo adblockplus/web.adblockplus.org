@@ -64,7 +64,7 @@ build:review:
     - crudini --set settings.ini general siteurl "$REVIEW_URL"
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
-    # copy contents of default locale to base of public root (for firebase), 
+    # copy contents of default locale to base of public root (for firebase),
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
   artifacts:
@@ -85,7 +85,7 @@ build:review:staging:
     - crudini --set settings.ini general siteurl "$FIREBASE_DOMAIN"
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
-    # copy contents of default locale to base of public root (for firebase), 
+    # copy contents of default locale to base of public root (for firebase),
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
   artifacts:
@@ -108,7 +108,7 @@ build:production:
     - crudini --set settings.ini general siteurl https://$DOMAIN
     - python3 -m cms.bin.generate_static_pages $PWD services/firebase/public
     - python services/firebase/utils/html_extender.py services/firebase/public
-    # copy contents of default locale to base of public root (for firebase), 
+    # copy contents of default locale to base of public root (for firebase),
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
   artifacts:
@@ -290,7 +290,51 @@ deploy_firebase_hosting:production:
   only:
     - master
 
-automated_tests:
+chromium_tests:
+  stage: test
+  except:
+    - schedules
+  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  script:
+    - npm ci
+    - npx playwright install --with-deps
+    - |-
+      if [ -z "${REVIEW_URL}" ]; then
+        echo "The tests will run on Chromium on adblockplus.org"
+        npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
+      else
+        echo "The tests will run on Chromium using ${REVIEW_URL}"
+        STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
+      fi
+
+all_browser_tests:
+  stage: test
+  except:
+    - schedules
+  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  script:
+    - npm ci
+    - npx playwright install chrome msedge --with-deps
+    - |-
+      if [ -z "${REVIEW_URL}" ]; then
+        echo "The browser tests will run on adblockplus.org"
+        npx playwright test --grep @all_browsers --retries=0
+      else
+        echo "The browser tests will run using ${REVIEW_URL}"
+        STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --grep @all_browsers --retries=0
+      fi
+
+all_website_tests:
+  stage: test
+  only:
+    - schedules
+  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  script:
+    - npm ci
+    - npx playwright install chrome msedge --with-deps
+    - npx playwright test
+
+platform_tests:
   stage: test
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
