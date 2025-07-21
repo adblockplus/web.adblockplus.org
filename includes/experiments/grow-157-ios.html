@@ -1,0 +1,31 @@
+<script>(() => {
+  function applyExperimentDataFromParams() {
+    const expParam = adblock.query.get("exp");
+    const varParam = adblock.query.get("var");
+    const experiment = expParam ? Number(expParam) : null;
+    const variant = varParam ? Number(varParam) : null;
+
+    if (Number.isNaN(experiment) || Number.isNaN(variant)) {
+      return;
+    }
+
+    // Restrict to Grow-157 specific parameters (exp=8, var=[0-4])
+    if (experiment !== 8 || variant < 0 || variant > 4) {
+      return;
+    }
+
+    adblock.on("log", ({event, data}) => {
+      data.experiments = adblock.formatExperimentRecord(Object.fromEntries([[experiment, variant]]));
+    });
+
+    adblock.on("checkout-options", options => {
+      options.customData.experiment_id = experiment;
+      options.customData.variant_index = variant;
+    });
+  }
+
+  if (adblock.query.has("exp") && adblock.query.has("var")) {
+    applyExperimentDataFromParams();
+  }
+
+})()</script>
