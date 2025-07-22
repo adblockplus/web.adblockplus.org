@@ -608,7 +608,11 @@ checkoutEvents.on("checkout.customer.created", data => email = data.customer.ema
 checkoutEvents.on("checkout.customer.updated", data => email = data.customer.email);
 checkoutEvents.on("checkout.loaded", () => checkoutLog("premium-checkout__paddle-loaded"));
 checkoutEvents.on("checkout.payment.selected", () => checkoutLog("premium-checkout__paddle-payment"));
-checkoutEvents.on("checkout.completed", () => checkoutLog("premium-checkout__paddle-complete"));
+checkoutEvents.on("checkout.completed", () => {
+  console.log("checkout.completed");
+  checkoutLog("premium-checkout__paddle-complete");
+  document.getElementById("premium-checkout")?.classList.add("visible");
+});
 
 // ALREADY CONTRIBUTED FLOW ////////////////////////////////////////////////////
 
@@ -708,6 +712,7 @@ steps.verifyCode.on("submit", async () => {
 //
 // with steps.error on error.
 if (adblock.query.has("premium-checkout__fake-error")) {
+  document.getElementById("premium-checkout")?.classList.add("visible");
   userid = adblock.query.get("premium-checkout__premiumId") || userid;
   await goto(steps.error, undefined, false);
   card.scrollIntoView();
@@ -715,6 +720,7 @@ if (adblock.query.has("premium-checkout__fake-error")) {
   adblock.query.has("premium-checkout__handoff")
   || adblock.query.has("premium-checkout__flow")
 ) {
+  document.getElementById("premium-checkout")?.classList.add("visible");
   try {
     flow = adblock.query.get("premium-checkout__flow") || "activation-handoff";
     userid = adblock.query.get("premium-checkout__premiumId") || userid;
