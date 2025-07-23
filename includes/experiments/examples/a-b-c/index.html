@@ -1,0 +1,39 @@
+<head>
+  <!-- Required dependencies for experiments -->
+  <? include scripts/namespace ?>
+  <? include scripts/events ?>
+  <? include scripts/analytics-functions ?>
+  <? include scripts/error-reporting ?>
+  <? include scripts/frontend-experiments ?>
+
+  <script src="/adblock/js/log.js"></script>
+  <script src="/adblock/js/user.js"></script>
+  <script src="/adblock/i18n/localesIndex.js"></script>
+  <script src="/adblock/i18n/i18n.js"></script>
+
+  <!-- Experiment's resources -->
+  <link rel="stylesheet" href="/css/fonts.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="heading">Control</h1>
+    <button id="cta">CTA</button>
+  </div>
+</body>
+
+<script>
+  adblock.setupExperiment({
+    id: "a-b-c",
+    variants: [
+      { callback: () => document.getElementById("heading").textContent = "Variant 1" },
+      { callback: () => document.getElementById("heading").textContent = "Variant 2" },
+      // add as many variants as you like
+    ]
+  });
+
+  document.getElementById("cta").addEventListener("click", () => {
+    adblock.log("click");
+  });
+</script>
