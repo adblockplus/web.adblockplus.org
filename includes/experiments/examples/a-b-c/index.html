@@ -8,9 +8,10 @@
 </head>
 
 <body>
+  <h2>A-B-C Experiment Example</h2>
   <div class="container">
-    <h1 id="heading">Control</h1>
-    <button id="cta">CTA</button>
+    <h3 id="heading">Control</h3>
+    <button id="cta">Button</button>
   </div>
 </body>
 
@@ -24,8 +25,6 @@
       // add as many variants as you like
     ]
   });
-
-  adblock.log("experiment_page_view"); // optional
 
   document.getElementById("cta").addEventListener("click", () => {
     adblock.log("click");
