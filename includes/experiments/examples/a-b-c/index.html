@@ -26,6 +26,7 @@
 <script>
   adblock.setupExperiment({
     id: "a-b-c",
+    conditions: () => true,
     variants: [
       { callback: () => document.getElementById("heading").textContent = "Variant 1" },
       { callback: () => document.getElementById("heading").textContent = "Variant 2" },
