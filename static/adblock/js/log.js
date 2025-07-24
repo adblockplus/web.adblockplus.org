@@ -26,15 +26,6 @@ _logV2Message = function(event, params, callback) {
         }
     }
 
-    if (
-      typeof adblock === "object"
-      && typeof adblock.experiment === "number"
-      && typeof adblock.variant === "number"
-    ) {
-      params['exp'] = adblock.experiment;
-      params['var'] = adblock.variant;
-    }
-
     // FIXME: Patching in anti_adblock_pass params as log params
     // to destinguish between regular events and events caused artificially
     // by the need to redirect from the anti-adblock-pass page to the premium
