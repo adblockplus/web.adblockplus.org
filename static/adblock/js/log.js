@@ -26,10 +26,19 @@ _logV2Message = function(event, params, callback) {
         }
     }
 
+    if (
+      typeof adblock === "object"
+      && typeof adblock.experiment === "number"
+      && typeof adblock.variant === "number"
+    ) {
+      params['exp'] = adblock.experiment;
+      params['var'] = adblock.variant;
+    }
+
     // FIXME: Patching in anti_adblock_pass params as log params
     // to destinguish between regular events and events caused artificially
     // by the need to redirect from the anti-adblock-pass page to the premium
-    // page for activation without an extension release 
+    // page for activation without an extension release
     const logParams = new URLSearchParams(window.location.search);
     if (logParams.has("anti_adblock_pass__checkout")) {
         params["anti_adblock_pass__checkout"] = 1;
@@ -39,7 +48,7 @@ _logV2Message = function(event, params, callback) {
     }
 
     adblock.log(event, params).finally(callback);
-    
+
     // var payload = {'event':  event, 'payload': params};
 
     // var xhr = new XMLHttpRequest();
@@ -64,8 +73,8 @@ _logV2DownloadButtonClick = function(extension, loc) {
     if (typeof loc !== 'string') {
         loc = "";
     }
-    var payload = { 
-        "s": getPlainSource(), 
+    var payload = {
+        "s": getPlainSource(),
         "exp": 0,
         "var": 0,
         "ext": extension,
@@ -91,8 +100,8 @@ _logV2DownloadButtonClick = function(extension, loc) {
 _logV2PaymentButtonClick = function(processor, cents, buttonType, isSubscription, subType) {
     var isSub = isSubscription === true ? isSubscription : false;
     var sType = typeof subType === "string" && isSub === true ? subType : "";
-    var payload = { 
-        "s": getPlainSource(), 
+    var payload = {
+        "s": getPlainSource(),
         "processor": processor,
         "buttonType": buttonType,
         "cents": cents,
@@ -181,7 +190,7 @@ _logV2UninstallReason = function(reason, miscText, t, bc, abclt, callback) {
         "bc": bc,
         "abclt": abclt
     }
-    
+
     if (typeof isPremium === 'function' && isPremium()) {
         if (typeof getPremiumCid === 'function' && typeof getPremiumSid === 'function') {
             payload['sid'] = getPremiumSid();
@@ -207,7 +216,7 @@ _logV2MiscButtonClick = function(buttonName, additionalParams, callback) {
             payload[prop] = additionalParams[prop];
         }
     }
-    
+
     if (typeof isPremium === 'function' && isPremium()) {
         if (typeof getPremiumCid === 'function' && typeof getPremiumSid === 'function') {
             payload['sid'] = getPremiumSid();
@@ -236,7 +245,7 @@ _logV2MiscEvent = function(event_name, additionalParams, callback) {
             payload[prop] = additionalParams[prop];
         }
     }
-    
+
     if (typeof _experiment !== 'undefined' && _experiment.isExperimentRunning("*")) {
         payload['exp'] = _experiment.xNumber("*");
         payload['var'] = _experiment.variantIndex("*") + 1;
@@ -250,7 +259,7 @@ _logV2Error = function(errorMessage, sourceFile, lineNum, colNum, additionalPara
     sourceFile = sourceFile !== null && typeof sourceFile === "string" ? sourceFile : "";
     lineNum = (lineNum !== null && !isNaN(lineNum)) ? Number(lineNum) : -1;
     colNum = (colNum !== null && !isNaN(colNum)) ? Number(colNum) : -1;
-    
+
     var payload = {
         "s": getPlainSource(),
         "exp": 0,

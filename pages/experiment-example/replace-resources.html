@@ -1,0 +1,43 @@
+title=Replace Resources Experiment Example
+robots=none
+noindex=1
+nonavbar=1
+nofooter=1
+notoc=1
+
+<head>
+  <!-- Required dependencies for experiments -->
+  <? include scripts/frontend-experiments ?>
+
+  <!-- Experiment's resources -->
+  <link rel="stylesheet" href="/css/fonts.css">
+</head>
+
+<body>
+<div class="container">
+  <h1 id="heading">Placeholder</h1>
+  <button id="cta">Button</button>
+</div>
+</body>
+
+<script>
+  adblock.setupExperiment({
+    id: "replace-resources",
+    conditions: () => true,
+    // the control and the variant apply themselves via mutually exclusive resources
+    // (that way they don't need to be slowed down by download each others resources)
+    control: {
+      style: "/experiments/examples/replace-resources/control.css",
+      script: "/experiments/examples/replace-resources/control.js"
+    },
+    variant: {
+      style: "/experiments/examples/replace-resources/variant.css",
+      script: "/experiments/examples/replace-resources/variant.js"
+    }
+  });
+
+  document.getElementById("cta").addEventListener("click", () => {
+    adblock.log("click");
+  });
+</script>
+

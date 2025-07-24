@@ -1,0 +1,38 @@
+title=A-B-C Experiment Example
+robots=none
+noindex=1
+nonavbar=1
+nofooter=1
+notoc=1
+
+<head>
+  <!-- Required dependencies for experiments -->
+  <? include scripts/frontend-experiments ?>
+
+  <!-- Experiment's resources -->
+  <link rel="stylesheet" href="/css/fonts.css">
+
+</head>
+
+<body>
+<div class="container">
+  <h1 id="heading">Control</h1>
+  <button id="cta">Button</button>
+</div>
+</body>
+
+<script>
+  adblock.setupExperiment({
+    id: "a-b-c",
+    conditions: () => true,
+    variants: [
+      { callback: () => document.getElementById("heading").textContent = "Variant 1" },
+      { callback: () => document.getElementById("heading").textContent = "Variant 2" },
+      // add as many variants as you like
+    ]
+  });
+
+  document.getElementById("cta").addEventListener("click", () => {
+    adblock.log("click");
+  });
+</script>

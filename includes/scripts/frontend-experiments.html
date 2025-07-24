@@ -1,0 +1,249 @@
+<script>(()=>{
+// requires scripts/namespace
+// requires scripts/events
+// requires scripts/error-reporting
+
+  const EXPERIMENT_TIMEOUT = 5000;
+  const ID_UPPER_LIMIT = 2n ** 53n - 1n;
+  const ID_LOWER_LIMIT = -(2n ** 53n - 1n);
+
+  /**
+   * @typedef variant
+   * @prop {string} [redirect] - an href to redirect to
+   * @prop {string} [script] - a script src to load
+   * @prop {string} [style] - a stylesheet href to load
+   * @prop {function} [callback] - a callback to call
+   */
+
+  /**
+   * Setup an experiment
+   *
+   * @param {object} options
+   * @param {string} options.id - unique experiment id
+   * @param {function} options.conditions - callback that returns or resolves whether a client can participate
+   * @param {variant} [control] - optional control configuration
+   * @param {variant|number} [variant] - optional, variant will be randomly selected from variants if not passed
+   * @param {variant[]} [variants] - optional, variant configurations
+   * @param {function} [timeoutCallback] - timeout callback
+   *
+   * You'll probably apply variants via adding resources most of the time.
+   * @see /examples/frontend-experiments/add-resources/
+   *
+   * If your variant(s) don't rely on your control(s) resources then you may
+   * wish to provide a control variant configuration including control specific
+   * resources so that the variants don't have to download them.
+   * @see /examples/frontend-experiments/replace-resources/
+   *
+   * You may pass one variant configuration or many variants configurations.
+   * The following examples show one variant and many variants respectively,
+   * using existing resources and a callback function to apply themselves.
+   * @see /examples/frontend-experiments/use-existing-resources/
+   * @see /examples/frontend-experiments/a-b-c/
+   *
+   * You may also apply variants via redirecting. If you do then you'll need to
+   * setup the experiment on the destination pages too and pass the variant
+   * number instead of the variant configuration there. CAUTION: The destination
+   * page variant numbers will not be validated!
+   * @see /examples/frontend-experiments/redirect/
+   *
+   * You may wish to provide a timeoutCallback to remove placeholders if your
+   * experiment variant fails to apply before the EXPERIMENT_TIMEOUT
+   * @see /examples/frontend-experiments/timeout/
+   */
+  adblock.setupExperiment = async function setupExperiment(options) {
+    try {
+
+      if (typeof options.timeoutCallback !== "undefined" && typeof options.timeoutCallback !== "function") {
+        throw new Error("adblock.experiment({timeoutCallback}) must be a function or undefined");
+      }
+      let finished = false;
+      let timedout = false;
+      setTimeout(() => {
+        if (finished) return;
+        timedout = true;
+        adblock.logServiceError("adblock.experiment", {
+          reason: "timeout",
+          response: JSON.stringify(options),
+        });
+        if (options.timeoutCallback) options.timeoutCallback();
+      }, EXPERIMENT_TIMEOUT);
+
+      if (false === await canParticipate(options.conditions)) return;
+
+      await setExperimentId(options.id);
+
+      await setVariantId(options.id, options.variant, options.variants);
+
+      localStorage.setItem(options.id, adblock.variant);
+
+      if (adblock.variant === 0) {
+        if (typeof options.control === "object") {
+          await applyVariant(options.control);
+        }
+      } else if (adblock.variant === 1 && options.variant) {
+        await applyVariant(options.variant);
+      } else {
+        await applyVariant(options.variants[adblock.variant - 1]);
+      }
+
+      if (!timedout) {
+        finished = true;
+        adblock.experimentTime = parseInt(performance.now(), 10);
+
+        adblock.on("log", ({event, data}) => {
+          data.experiments = adblock.formatExperimentRecord(Object.fromEntries([[adblock.experiment, adblock.variant]]));
+        });
+
+        adblock.on("checkout-options", options => {
+          options.customData.experiment_id = adblock.experiment;
+          options.customData.variant_index = adblock.variant;
+        });
+
+        adblock.trigger("experiment.loaded");
+        adblock.log("experiment.loaded")
+      }
+
+    } catch (error) {
+      adblock.logScriptError("adblock.experiment", error);
+    }
+
+  }
+
+  async function canParticipate(conditions) {
+    if (typeof conditions !== "function") {
+      throw new Error("adblock.experiment({conditions}) must be a function");
+    }
+    const result = await conditions();
+    if (typeof result !== "boolean") {
+      throw  new Error("adblock.experiment({conditions}) must resolve to a boolean");
+    }
+    return result;
+  }
+
+  /**
+   * FNV-1a hash that fits in 53-bit signed integer space
+   * Safe for JavaScript numbers, JSON transport, and BigQuery INT64
+   * @param {string} string
+   * @returns {number} Signed 53-bit integer
+   */
+  function toExperimentNumber(string) {
+    const FNV_OFFSET = 0xcbf29ce484222325n;
+    const FNV_PRIME = 0x100000001b3n;
+    const MAX_SAFE_UINT53 = 0x1FFFFFFFFFFFFFn; // 2^53 - 1
+    let hash = FNV_OFFSET;
+    for (let i = 0; i < string.length; i++) {
+      hash ^= BigInt(string.charCodeAt(i));
+      hash = (hash * FNV_PRIME) & 0x1FFFFFFFFFFFFFn; // mask to 53 bits
+    }
+    // Convert to signed 53-bit int (centered around 0)
+    const signed = hash > MAX_SAFE_UINT53 / 2n
+      ? hash - MAX_SAFE_UINT53 - 1n
+      : hash;
+    return Number(signed);
+  }
+
+  async function setExperimentId(id) {
+    if (typeof id !== "string" || id.length < 1) {
+      throw new Error("adblock.experiment({id}) must be a string with contents");
+    }
+    adblock.experiment = toExperimentNumber(id);
+    if (
+      typeof adblock.experiment !== "number"
+      || adblock.experiment < ID_LOWER_LIMIT
+      || adblock.experiment > ID_UPPER_LIMIT
+    ) {
+      throw new Error("adblock.experiment() experimentId out of range");
+    }
+  }
+
+  async function setVariantId(id, variant, variants) {
+    let variantsLength;
+    if (typeof variant !== "undefined" && typeof variants !== "undefined") {
+      throw new Error("adblock.experiment() must be passed variant OR variants");
+    }
+    if (typeof variant !== "undefined") {
+      if (typeof variant !== "number" && typeof variant !== "object") {
+        throw new Error("adblock.experiment({variant}) must be number OR object");
+      }
+      if (typeof variant === "number") {
+        if (variant < 0 || variant > ID_UPPER_LIMIT) {
+          throw new Error("adblock.experiment({variant}) out of range");
+        }
+        adblock.variant = variant;
+        return;
+      } else {
+        variantsLength = 2;
+      }
+    }
+    if (typeof variants !== "undefined") {
+      if (Array.isArray(variants) === false || variants.length < 2) {
+        throw new Error("adblock.experiment({variants}) must be an array with more than one variant if passed");
+      }
+      variantsLength = variants.length + 1; // variants + 1 for control
+    }
+    adblock.variant = adblock.variant = parseInt(
+      adblock.query.get("variant")
+      ?? localStorage.getItem(id)
+      ?? Math.floor(Math.random() * variantsLength),
+      10
+    );
+    if (adblock.variant < 0 || adblock.variant > variantsLength || adblock.variant > ID_UPPER_LIMIT) {
+      throw new Error("adblock.experiment() variant out of range");
+    }
+  }
+
+  function loadStyle(href) {
+    return new Promise(resolve => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      link.onload = resolve;
+      document.head.appendChild(link);
+    });
+  }
+
+  function loadScript(src) {
+    return new Promise(resolve => {
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src = src;
+      script.onload = resolve;
+      document.head.appendChild(script);
+    });
+  }
+
+  async function applyVariant(options) {
+    if (typeof options.redirect !== "undefined") {
+      if (typeof options.redirect === "string" && options.redirect.length > 0) {
+        location.href = options.redirect;
+      } else {
+        throw new Error("adblock.experiment({variants[{redirect}]}) must be string with contents");
+      }
+    }
+    if (typeof options.style !== "undefined") {
+      if (typeof options.style === "string" && options.style.length > 0) {
+        await loadStyle(options.style);
+      } else {
+        throw new Error("adblock.experiment({variants[{style}]}) must be string with contents");
+      }
+    }
+    if (typeof options.script !== "undefined") {
+      if (typeof options.script === "string" && options.script.length > 0) {
+        await loadScript(options.script);
+      } else {
+        throw new Error("adblock.experiment({variants[{script}]}) must be string with contents");
+      }
+    }
+    if (typeof options.callback !== "undefined") {
+      if (typeof options.callback === "function") {
+        await options.callback();
+      } else {
+        throw new Error("adblock.experiment({variants[{callback}]}) must be function");
+      }
+    }
+    if ([options.redirect, options.style, options.script, options.callback].every(value => value === undefined)) {
+      throw new Error("adblock.experiment({variants}) must all have changes");
+    }
+  }
+
+})()</script>
