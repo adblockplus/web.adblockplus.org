@@ -167,10 +167,14 @@ body {
   padding-bottom: var(--spacing-standard);
   margin-bottom: var(--spacing-standard);
   font-size: var(--font-size-default);
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 12px;
+  display: block;
+}
+
+.instruction-item strong,
+.instruction-item img {
+  display: inline;
+  margin: 0;
+  vertical-align: middle;
 }
 
 .instruction-item:not(:last-child)::after {
