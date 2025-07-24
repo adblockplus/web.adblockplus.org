@@ -1,15 +1,6 @@
 <head>
   <!-- Required dependencies for experiments -->
-  <? include scripts/namespace ?>
-  <? include scripts/events ?>
-  <? include scripts/analytics-functions ?>
-  <? include scripts/error-reporting ?>
   <? include scripts/frontend-experiments ?>
-
-  <script src="/adblock/js/log.js"></script>
-  <script src="/adblock/js/user.js"></script>
-  <script src="/adblock/i18n/localesIndex.js"></script>
-  <script src="/adblock/i18n/i18n.js"></script>
 
   <!-- Experiment's resources -->
   <link rel="stylesheet" href="/css/fonts.css">
@@ -34,9 +25,9 @@
     ]
   });
 
-  _logV2PageView("experiment-test");
+  adblock.log("experiment_page_view"); // optional
 
   document.getElementById("cta").addEventListener("click", () => {
-    _logV2MiscButtonClick("experiment-cta")
+    adblock.log("click");
   });
 </script>
