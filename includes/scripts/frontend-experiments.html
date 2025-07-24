@@ -135,12 +135,10 @@
       hash ^= BigInt(string.charCodeAt(i));
       hash = (hash * FNV_PRIME) & 0x1FFFFFFFFFFFFFn; // mask to 53 bits
     }
-    console.log(hash);
     // Convert to signed 53-bit int (centered around 0)
     const signed = hash > MAX_SAFE_UINT53 / 2n
       ? hash - MAX_SAFE_UINT53 - 1n
       : hash;
-    console.log(signed);
     return Number(signed);
   }
 
@@ -148,7 +146,6 @@
     if (typeof id !== "string" || id.length < 1) {
       throw new Error("adblock.experiment({id}) must be a string with contents");
     }
-    console.log("adblock.experiment", {id});
     adblock.experiment = toExperimentNumber(id);
     if (
       typeof adblock.experiment !== "number"
