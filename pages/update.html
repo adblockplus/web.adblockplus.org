@@ -21,12 +21,11 @@ code=B
 <script>(()=>{
   adblock.setupExperiment({
     id: "GROW-75",
-    conditions: () => true,
-    // conditions: () => (
-    //   ["US", "CA", "AU"].includes(adblock.settings.country)
-    //   && "en" === adblock.settings.locale
-    //   && window.innerWidth >= 992
-    // ) || adblock.query.has("grow-75"),
+    conditions: () => (
+      ["US", "CA", "AU"].includes(adblock.settings.country)
+      && "en" === adblock.settings.locale
+      && window.innerWidth >= 992
+    ) || adblock.query.has("grow-75"),
     control: {
       style: "/update/update.css",
       script: "/update/update.js"

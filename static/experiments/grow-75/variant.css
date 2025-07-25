@@ -134,8 +134,19 @@ strong {
   background: #E6F5FC;
   padding: 1rem;
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-size: 0.75rem;
+}
+
+.inline-checkout-feature div {
+  width: auto;
+}
+
+@media (min-width: 992px) {
+  .inline-checkout-feature div {
+    width: 14rem;
+  }
 }
 
 .inline-checkout-feature__heading {
