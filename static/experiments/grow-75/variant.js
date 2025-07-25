@@ -53,7 +53,14 @@ checkout({
   product: "premium",
   currency: currency,
   frequency: "yearly",
-  amount: PRICES[currency]["yearly"]
+  amount: PRICES[currency]["yearly"],
+  settings: {
+    displayMode: "inline",
+    variant: "one-page",
+    frameTarget: "inline-checkout-form",
+    frameInitialHeight: "450",
+    frameStyle: "width: 100%; min-width: 312px; background-color: transparent; border: none; zoom: 0.8;"
+  }
 });
 
 function formatAmount({amount, trailingZeros = false, narrowSymbol = true}) {
