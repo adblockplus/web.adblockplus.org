@@ -5,40 +5,43 @@ nonavbar=1
 nofooter=1
 code=B
 
-<template id="variant-0">
-<? include experiments/grow-75/variant-0 ?>
-</template>
+<head>
+  <? include scripts/frontend-experiments ?>
+</head>
 
-<template id="variant-1">
-<? include experiments/grow-75/variant-1 ?>
-</template>
+<div id="control" hidden>
+  <? include experiments/grow-75/control ?>
+</div>
+
+<div id="variant-1" hidden>
+  <? include experiments/grow-75/variant-1 ?>
+</div>
 
 <script>(()=>{
-  const experiment = 6;
-  let variant = 0;
-  if (
-    adblock.query.has("variant")
-    || (
-      ["US", "CA", "AU"].includes(adblock.settings.country)
-      && "en" == adblock.settings.locale
-      && window.innerWidth >= 992
-    )
-  ) {
-    variant = adblock.query.get("variant") ?? Math.round(Math.random());
-    adblock.setExperiment({experiment, variant});
-  }
-  const clone = document.getElementById(`variant-${variant}`).content.cloneNode(true);
-  const scripts = clone.querySelectorAll('script');
-  scripts.forEach(script => script.parentNode.removeChild(script));
-  document.body.appendChild(clone);
-  scripts.forEach(oldScript => {
-    const newScript = document.createElement('script');
-    [...oldScript.attributes].forEach(attr => newScript.setAttribute(attr.name, attr.value));
-    newScript.textContent = oldScript.textContent;
-    newScript.async = false;
-    document.body.appendChild(newScript);
+  adblock.setupExperiment({
+    id: "GROW-75",
+    conditions: () => true,
+    // conditions: () => (
+    //   ["US", "CA", "AU"].includes(adblock.settings.country)
+    //   && "en" === adblock.settings.locale
+    //   && window.innerWidth >= 992
+    // ) || adblock.query.has("grow-75"),
+    control: {
+      style: "/update/update.css",
+      script: "/update/update.js"
+    },
+    variant: {
+      style: "/experiments/grow-75/variant.css",
+      script: "/experiments/grow-75/variant.js"
+    }
   });
 })()</script>
 
+<? include footer--update ?>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="/js/vendor/NumberFormat.min.js"></script>
+
+<? include prevent-duplicate-subscriptions ?>
 <? include aa_snippet ?>
 <? include bt_snippet ?>
