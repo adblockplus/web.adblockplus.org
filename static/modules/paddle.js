@@ -842,6 +842,7 @@ const planCodeCompatibility = {
  * @param {string} options.currency - checkout currency (e.g. USD|EUR|GBP)
  * @param {string} options.frequency - checkout frequency (e.g. once|monthly|yearly)
  * @param {string} options.amount - checkout amount in cents (e.g. 1000|199)
+ * @param {object} options.settings - settings object to pass to Paddle for customization
  * @param {string} [options.trial] - number of trial days
  * @param {string} [options.coupon] - coupon to be applied
  * @param {string} [options.email] - customer email
@@ -851,7 +852,7 @@ const planCodeCompatibility = {
  */
 export const checkout = adblock.api.checkout = function checkout(options) {
 
-  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl, coupon, email, trigger } = options;
+  let { product, plan, adblockPlan, currency, frequency, amount, settings, trial, flow, successUrl, coupon, email, trigger } = options;
 
   const clickTs = Date.now();
 
@@ -952,6 +953,10 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   };
 
   adblock.trigger("checkout-options", checkoutOptions);
+
+  if (typeof settings === "object") {
+    Object.assign(checkoutOptions.settings, settings);
+  }
 
   if (coupon) checkoutOptions.discountCode = coupon;
   if (email) checkoutOptions.customer = { email };
