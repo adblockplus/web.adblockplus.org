@@ -45,6 +45,8 @@ const PRICES = {
   }
 };
 
+document.getElementById("variant-1").hidden = false;
+
 const currency = adblock.settings.defaultCurrency || "USD";
 
 checkout({
@@ -65,7 +67,7 @@ function formatAmount({amount, trailingZeros = false, narrowSymbol = true}) {
     formatOptions.maximumFractionDigits = 0;
   }
   return new Intl.NumberFormat(
-    adblock.settings.locale.replace("_", "-"), 
+    adblock.settings.locale.replace("_", "-"),
     formatOptions
   ).format(amount);
 }
