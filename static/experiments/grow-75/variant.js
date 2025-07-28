@@ -1,6 +1,7 @@
 /* global Paddle, adblock */
-
-import { checkout } from "../../modules/paddle.js";
+import { getDollarString } from "../../modules/currency.js";
+import { checkout } from "../../modules/paddle.js"
+import "../../update/premium-difference.js";
 
 const PRICES = {
   "USD": {
@@ -45,28 +46,73 @@ const PRICES = {
   }
 };
 
-document.getElementById("variant-1").hidden = false;
+const defaultCurrency = adblock.settings.defaultCurrency || "USD";
+const modal = document.getElementById("variant-1");
+modal.querySelector(".inline-checkout-modal__close").addEventListener("click", () => {
+  modal.hidden = true;
+})
 
-const currency = adblock.settings.defaultCurrency || "USD";
+document.querySelectorAll(".update-premium-checkout-button-price").forEach(price => {
+  console.log("checkout button price update: ", price);
+  const frequency = price.parentElement.dataset.frequency;
+  const amount = PRICES[defaultCurrency][frequency];
+  price.textContent = getDollarString(defaultCurrency, amount, false, false);
+});
 
-checkout({
-  product: "premium",
-  currency: currency,
-  frequency: "yearly",
-  amount: PRICES[currency]["yearly"],
-  settings: {
-    displayMode: "inline",
-    variant: "one-page",
-    frameTarget: "inline-checkout-form",
-    frameInitialHeight: "450",
-    frameStyle: "width: 100%; min-width: 312px; background-color: transparent; border: none; zoom: 0.8;"
-  }
+document.querySelectorAll(".update-plan-heading-price").forEach(price => {
+  console.log("plan price update: ", price);
+  const frequency = price.dataset.frequency;
+  const amount = PRICES[defaultCurrency][frequency];
+  const amountText = getDollarString(defaultCurrency, amount, false, false);
+  const amountSignText = amountText.replace(/[\d\,\.]/g, "").trim();
+  const amountNumberText = amountText.replace(amountSignText, "").trim();
+  price.querySelector(".update-plan-heading-price__final-amount").textContent = amountNumberText;
+  price.querySelector(".update-plan-heading-price__final-currency").textContent = amountSignText;
+});
+
+document.querySelectorAll(".update-premium-checkout-button").forEach((button, index) => {
+  console.log("checkout button update: ", button);
+  const frequency = button.dataset.frequency;
+  const currency = defaultCurrency;
+  const amount = PRICES[currency][frequency];
+  const trigger = `button-${index + 1}`;
+
+  // Keep original click tracking
+  button.dataset.click = JSON.stringify({
+    type: "checkout-start",
+    currency,
+    frequency,
+    amount,
+    trigger,
+  });
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Show modal
+    modal.hidden = false;
+
+    checkout({
+      product: "premium",
+      currency,
+      frequency,
+      amount,
+      trigger,
+      settings: {
+        displayMode: "inline",
+        variant: "one-page",
+        frameTarget: "inline-checkout-form",
+        frameInitialHeight: "450",
+        frameStyle: "width: 100%; min-width: 312px; background-color: transparent; border: none; zoom: 0.8;"
+      }
+    });
+  });
 });
 
 function formatAmount({amount, trailingZeros = false, narrowSymbol = true}) {
   const formatOptions = {
     style: 'currency',
-    currency: currency,
+    currency: defaultCurrency,
   };
   if (narrowSymbol) formatOptions.currencyDisplay = 'narrowSymbol';
   if (trailingZeros == false && amount % 1 == 0) {
@@ -112,6 +158,7 @@ adblock.on("checkout.loaded", updateTotals);
 adblock.on("checkout.customer.updated", updateTotals);
 
 function removePaddlePlaceholder() {
+  console.log("removePaddlePlaceholder");
   const form = document.getElementById("inline-checkout-form");
   form.classList.remove("placeholder");
   form.style.minHeight = "initial";
@@ -119,9 +166,22 @@ function removePaddlePlaceholder() {
 
 adblock.on("checkout.loaded", () => setTimeout(removePaddlePlaceholder, 100));
 
+// Show block count ////////////////////////////////////////////////////////////
+
+const BLOCK_COUNT_MINIMUM = 1000;
+let extensionInfo;
+try { extensionInfo = JSON.parse(document.documentElement.dataset.adblockPlusExtensionInfo); }
+catch (error) { extensionInfo = {}; }
+const blockCount = adblock.query.has("bc") ? parseInt(adblock.query.get("bc"), 10) : extensionInfo.blockCount;
+if (blockCount > BLOCK_COUNT_MINIMUM) {
+  document.querySelector(".update-header-section-1__heading--with-block-count .ads-blocked")
+    .textContent = new Intl.NumberFormat(navigator.language).format(blockCount);
+  document.documentElement.classList.add("--has-block-count");
+}
+
 function updateBlockCount() {
   const blockCount = adblock.adblockPlus?.blockCount || parseInt(adblock.query.get("bc"), 10);
-  if (blockCount > 1000 ) {
+  if (blockCount > BLOCK_COUNT_MINIMUM ) {
     document.getElementById("block-count").textContent = blockCount.toLocaleString();
     document.getElementById("update-heading").hidden = true;
     document.getElementById("update-heading--block-count").hidden = false;
@@ -129,5 +189,24 @@ function updateBlockCount() {
     document.getElementById("update-heading-placeholder").classList.remove("placeholder");
   }
 }
+
+const desktopWidthMediaQuery = window.matchMedia(`(min-width: 992px)`);
+const plan1Discount = document.querySelector(".update-plan-1-discount");
+const plan2 = document.querySelector(".update-plan-2");
+function fixDiscountHeight() {
+  if (desktopWidthMediaQuery.matches && plan2?.style.marginTop != plan1Discount?.offsetHeight) {
+    plan2.style.marginTop = plan1Discount?.offsetHeight + "px";
+  } else if (plan2?.style.marginTop != 0) {
+    plan2.style.marginTop = 0;
+  }
+}
+window.addEventListener("resize", fixDiscountHeight);
+fixDiscountHeight();
+
+
+// Hide placeholders
+document.querySelectorAll(".placeholder:not(.inline-checkout-modal .placeholder)").forEach(element => {
+  element.classList.remove("placeholder");
+});
 
 adblock.afterAdblockPlusDetected(updateBlockCount, true);

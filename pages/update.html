@@ -6,12 +6,12 @@ nofooter=1
 code=B
 
 <head>
+  <link rel="stylesheet" href="/update/update.css">
   <? include scripts/frontend-experiments ?>
 </head>
 
-<div id="control" hidden>
-  <? include experiments/grow-75/control ?>
-</div>
+<!-- Base content that will be shown for both variants -->
+<? include experiments/grow-75/control ?>
 
 <div id="variant-1" hidden>
   <? include experiments/grow-75/variant-1 ?>
@@ -21,32 +21,19 @@ code=B
 <script src="/js/vendor/NumberFormat.min.js"></script>
 
 <script>(()=>{
-  const createFallbackResources = () => ({
-    style: Object.assign(document.createElement('link'), {
-      rel: 'stylesheet',
-      href: '/update/update.css'
-    }),
-    script: Object.assign(document.createElement('script'), {
-      type: 'module',
-      src: '/update/update.js'
-    })
+  console.log({
+    country: adblock.settings.country,
+    locale: adblock.settings.locale,
+    width: window.innerWidth,
+    hasGrow75: adblock.query.has("grow-75")
   });
 
   adblock.setupExperiment({
     id: "GROW-75",
     conditions: () => {
-      const isEligible = (["US", "CA", "AU"].includes(adblock.settings.country)
-      && "en" === adblock.settings.locale
-      && window.innerWidth >= 992) || adblock.query.has("grow-75");
-
-      if (!isEligible) {
-        // fallback to control
-        const resources = createFallbackResources();
-        document.head.appendChild(resources.style);
-        document.body.appendChild(resources.script);
-        document.getElementById("control").removeAttribute("hidden");
-      }
-      return isEligible;
+      return (["US", "CA", "AU"].includes(adblock.settings.country)
+        && "en" === adblock.settings.locale
+        && window.innerWidth >= 992) || adblock.query.has("grow-75");
     },
     control: {
       style: "/update/update.css",
