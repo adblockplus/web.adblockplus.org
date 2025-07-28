@@ -48,8 +48,6 @@ const PRICES = {
   }
 };
 
-document.getElementById("control").hidden = false;
-
 const defaultCurrency = adblock.settings.defaultCurrency || "USD";
 
 document.querySelectorAll(".update-premium-checkout-button").forEach((button, index) => {
