@@ -21,13 +21,33 @@ code=B
 <script src="/js/vendor/NumberFormat.min.js"></script>
 
 <script>(()=>{
+  const createFallbackResources = () => ({
+    style: Object.assign(document.createElement('link'), {
+      rel: 'stylesheet',
+      href: '/update/update.css'
+    }),
+    script: Object.assign(document.createElement('script'), {
+      type: 'module',
+      src: '/update/update.js'
+    })
+  });
+
   adblock.setupExperiment({
     id: "GROW-75",
-    conditions: () => (
-      ["US", "CA", "AU"].includes(adblock.settings.country)
+    conditions: () => {
+      const isEligible = (["US", "CA", "AU"].includes(adblock.settings.country)
       && "en" === adblock.settings.locale
-      && window.innerWidth >= 992
-    ) || adblock.query.has("grow-75"),
+      && window.innerWidth >= 992) || adblock.query.has("grow-75");
+
+      if (!isEligible) {
+        // fallback to control
+        const resources = createFallbackResources();
+        document.head.appendChild(resources.style);
+        document.body.appendChild(resources.script);
+        document.getElementById("control").removeAttribute("hidden");
+      }
+      return isEligible;
+    },
     control: {
       style: "/update/update.css",
       script: "/update/update.js"
