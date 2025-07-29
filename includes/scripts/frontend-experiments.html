@@ -52,10 +52,13 @@
    */
   adblock.setupExperiment = async function setupExperiment(options) {
     try {
-
       if (typeof options.timeoutCallback !== "undefined" && typeof options.timeoutCallback !== "function") {
         throw new Error("adblock.experiment({timeoutCallback}) must be a function or undefined");
       }
+      if (typeof options.noParticipateCallback !== "undefined" && typeof options.noParticipateCallback !== "function") {
+        throw new Error("adblock.experiment({noParticipateCallback}) must be a function or undefined");
+      }
+
       let finished = false;
       let timedout = false;
       setTimeout(() => {
@@ -68,7 +71,11 @@
         if (options.timeoutCallback) options.timeoutCallback();
       }, EXPERIMENT_TIMEOUT);
 
-      if (false === await canParticipate(options.conditions)) return;
+      if (false === await canParticipate(options.conditions)) {
+        finished = true;
+        if (options.noParticipateCallback) options.noParticipateCallback();
+        return;
+      }
 
       await setExperimentId(options.id);
 
