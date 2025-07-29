@@ -53,14 +53,12 @@ modal.querySelector(".inline-checkout-modal__close").addEventListener("click", (
 })
 
 document.querySelectorAll(".update-premium-checkout-button-price").forEach(price => {
-  console.log("checkout button price update: ", price);
   const frequency = price.parentElement.dataset.frequency;
   const amount = PRICES[defaultCurrency][frequency];
   price.textContent = getDollarString(defaultCurrency, amount, false, false);
 });
 
 document.querySelectorAll(".update-plan-heading-price").forEach(price => {
-  console.log("plan price update: ", price);
   const frequency = price.dataset.frequency;
   const amount = PRICES[defaultCurrency][frequency];
   const amountText = getDollarString(defaultCurrency, amount, false, false);
@@ -71,7 +69,6 @@ document.querySelectorAll(".update-plan-heading-price").forEach(price => {
 });
 
 document.querySelectorAll(".update-premium-checkout-button").forEach((button, index) => {
-  console.log("checkout button update: ", button);
   const frequency = button.dataset.frequency;
   const currency = defaultCurrency;
   const amount = PRICES[currency][frequency];
@@ -158,7 +155,6 @@ adblock.on("checkout.loaded", updateTotals);
 adblock.on("checkout.customer.updated", updateTotals);
 
 function removePaddlePlaceholder() {
-  console.log("removePaddlePlaceholder");
   const form = document.getElementById("inline-checkout-form");
   form.classList.remove("placeholder");
   form.style.minHeight = "initial";
@@ -179,17 +175,6 @@ if (blockCount > BLOCK_COUNT_MINIMUM) {
   document.documentElement.classList.add("--has-block-count");
 }
 
-function updateBlockCount() {
-  const blockCount = adblock.adblockPlus?.blockCount || parseInt(adblock.query.get("bc"), 10);
-  if (blockCount > BLOCK_COUNT_MINIMUM ) {
-    document.getElementById("block-count").textContent = blockCount.toLocaleString();
-    document.getElementById("update-heading").hidden = true;
-    document.getElementById("update-heading--block-count").hidden = false;
-  } else {
-    document.getElementById("update-heading-placeholder").classList.remove("placeholder");
-  }
-}
-
 const desktopWidthMediaQuery = window.matchMedia(`(min-width: 992px)`);
 const plan1Discount = document.querySelector(".update-plan-1-discount");
 const plan2 = document.querySelector(".update-plan-2");
@@ -208,5 +193,3 @@ fixDiscountHeight();
 document.querySelectorAll(".placeholder:not(.inline-checkout-modal .placeholder)").forEach(element => {
   element.classList.remove("placeholder");
 });
-
-adblock.afterAdblockPlusDetected(updateBlockCount, true);

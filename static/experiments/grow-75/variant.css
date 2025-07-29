@@ -27,11 +27,10 @@ html, body {
   max-width: 992px;
   width: 90%;
   max-height: 90vh;
-  overflow-y: auto;
   position: relative;
-  padding: 2rem;
   border-radius: 8px;
   margin: 1.5rem;
+  overflow: hidden;
 }
 
 .inline-checkout-modal__close {
@@ -43,13 +42,20 @@ html, body {
   align-items: center;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.7rem;
   cursor: pointer;
   padding: 0.5rem;
   line-height: 1;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   color: #666;
+}
+
+.inline-checkout-modal__scrollable-body {
+  height: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
 }
 
 .inline-checkout-modal__close:hover {
@@ -82,7 +88,7 @@ strong {
   }
 }
 
-@media (min-width: 1200) {
+@media (min-width: 1200px) {
   .container {
     max-width: 1140px;
   }
@@ -121,8 +127,7 @@ strong {
 .inline-checkout {
   display: flex;
   flex-direction: column;
-  gap: 3.125rem;
-  margin-block: 3.125rem;
+  gap: 0.25rem;
 }
 
 .inline-checkout-logo {
@@ -157,7 +162,6 @@ strong {
   display: flex;
   gap: 0.625rem;
   flex-direction: column;
-  margin-block-end: 3.125rem;
 }
 
 @media (min-width: 992px) {
@@ -207,6 +211,10 @@ strong {
   font-size: 1rem;
 }
 
+.inline-checkout-feature div p {
+  margin: 0.5rem 0 0;
+}
+
 .inline-checkout-reviews {
   margin-block-start: 1.25rem;
   display: flex;
@@ -226,8 +234,12 @@ strong {
 }
 
 .inline-checkout-footer {
-  font-size: 1.125rem;
   text-align: center;
+}
+
+.inline-checkout-footer p {
+  margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 .inline-checkout-gaurantee {
