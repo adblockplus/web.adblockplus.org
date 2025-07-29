@@ -21,29 +21,17 @@ code=B
 <script src="/js/vendor/NumberFormat.min.js"></script>
 
 <script>(()=>{
-  console.log({
-    country: adblock.settings.country,
-    locale: adblock.settings.locale,
-    width: window.innerWidth,
-    hasGrow75: adblock.query.has("grow-75")
-  });
-
   adblock.setupExperiment({
     id: "GROW-75",
-    conditions: () => {
-      const isEligible =  (["US", "CA", "AU"].includes(adblock.settings.country)
+    conditions: () => (["US", "CA", "AU"].includes(adblock.settings.country)
         && "en" === adblock.settings.locale
-        && window.innerWidth >= 992) || adblock.query.has("grow-75");
-
-      if (!isEligible) {
-        const script = Object.assign(document.createElement('script'), {
-          type: 'module',
-          src: '/update/update.js'
-        });
-        document.body.appendChild(script);
-      }
-
-      return isEligible;
+        && window.innerWidth >= 992) || adblock.query.has("grow-75"),
+    noParticipateCallback: () => {
+      const script = Object.assign(document.createElement('script'), {
+        type: 'module',
+        src: '/update/update.js'
+      });
+      document.body.appendChild(script);
     },
     control: {
       style: "/update/update.css",
