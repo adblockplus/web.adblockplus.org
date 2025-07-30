@@ -50,6 +50,7 @@ const defaultCurrency = adblock.settings.defaultCurrency || "USD";
 const modal = document.getElementById("variant-1");
 modal.querySelector(".inline-checkout-modal__close").addEventListener("click", () => {
   modal.hidden = true;
+  adblock.trigger("checkout.close");
 })
 
 document.querySelectorAll(".update-premium-checkout-button-price").forEach(price => {
@@ -74,7 +75,6 @@ document.querySelectorAll(".update-premium-checkout-button").forEach((button, in
   const amount = PRICES[currency][frequency];
   const trigger = `button-${index + 1}`;
 
-  // Keep original click tracking
   button.dataset.click = JSON.stringify({
     type: "checkout-start",
     currency,
