@@ -21,10 +21,12 @@
    * @param {object} options
    * @param {string} options.id - unique experiment id
    * @param {function} options.conditions - callback that returns or resolves whether a client can participate
+   * @param {number} [trafficAllocation] - percentage of eligible traffic to include (0-100)
    * @param {variant} [control] - optional control configuration
    * @param {variant|number} [variant] - optional, variant will be randomly selected from variants if not passed
    * @param {variant[]} [variants] - optional, variant configurations
    * @param {function} [timeoutCallback] - timeout callback
+   * @param {function} [noParticipateCallback] - callback on experiment conditions not met
    *
    * You'll probably apply variants via adding resources most of the time.
    * @see /examples/frontend-experiments/add-resources/
@@ -58,6 +60,9 @@
       if (typeof options.noParticipateCallback !== "undefined" && typeof options.noParticipateCallback !== "function") {
         throw new Error("adblock.experiment({noParticipateCallback}) must be a function or undefined");
       }
+      if (typeof options.trafficAllocation !== "undefined" && typeof options.trafficAllocation !== "number") {
+        throw new Error("adblock.experiment({trafficAllocation}) must be a number or undefined");
+      }
 
       let finished = false;
       let timedout = false;
@@ -72,6 +77,14 @@
       }, EXPERIMENT_TIMEOUT);
 
       if (false === await canParticipate(options.conditions)) {
+        finished = true;
+        if (options.noParticipateCallback) options.noParticipateCallback();
+        return;
+      }
+
+      const storedVariant = localStorage.getItem(options.id);
+      if ((!storedVariant || storedVariant === "0")
+        && false === meetsThreshold(options.trafficAllocation)) {
         finished = true;
         if (options.noParticipateCallback) options.noParticipateCallback();
         return;
@@ -125,6 +138,10 @@
       throw  new Error("adblock.experiment({conditions}) must resolve to a boolean");
     }
     return result;
+  }
+
+  function meetsThreshold(percentage) {
+    return percentage === "undefined" ? true : Math.random() * 100 <= percentage;
   }
 
   /**
