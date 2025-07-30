@@ -24,6 +24,8 @@ function showSubscriptionFound(email) {
   const urlParams = new URLSearchParams({email});
   restoreAccountButton.href = `/${document.documentElement.lang}/restore-purchase?${urlParams.toString()}`;
   document.documentElement.dataset.account = "found";
+  const paddleIframe = document.querySelector(".paddle-frame-inline");
+  if (paddleIframe) paddleIframe.hidden = true;
 }
 
 function finishIntervention() {
@@ -130,6 +132,7 @@ if (adblock.query.has("has-subscription")) {
   if (result == "finding") {
     adblock.onceAfter("checkout.loaded", showSubscirptionFinding);
   } else if (result == "found") {
+    console.log("showing subscription found");
     adblock.onceAfter("checkout.loaded", () => {
       showSubscriptionFound(adblock.query.get("email") || "help@adblockplus.org")
     });

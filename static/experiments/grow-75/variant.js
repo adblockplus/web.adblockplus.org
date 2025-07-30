@@ -50,7 +50,11 @@ const defaultCurrency = adblock.settings.defaultCurrency || "USD";
 const modal = document.getElementById("variant-1");
 modal.querySelector(".inline-checkout-modal__close").addEventListener("click", () => {
   modal.hidden = true;
-  adblock.trigger("checkout.close");
+  delete document.documentElement.dataset.account;
+  const totalsContainer = document.getElementById("inline-checkout-totals");
+  if (totalsContainer) totalsContainer.classList.add("placeholder");
+  const paddleIframe = document.querySelector(".paddle-frame-inline");
+  if (paddleIframe) paddleIframe.hidden = false;
 })
 
 document.querySelectorAll(".update-premium-checkout-button-price").forEach(price => {
