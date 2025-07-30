@@ -34,9 +34,8 @@ adblock.log = function log(event, data = {}) {
       urlParams: urlParamsJSON,
     };
 
-    if (adblock.hasOwnProperty("experiment")) {
-      hardcoded.experiment = adblock.experiment;
-      hardcoded.variant = adblock.variant;
+    if (adblock.hasOwnProperty("experiment") && adblock.hasOwnProperty("variant")) {
+      hardcoded.experiments = adblock.formatExperimentRecord(Object.fromEntries([[adblock.experiment, adblock.variant]]));
     }
 
     const params = new URLSearchParams();

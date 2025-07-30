@@ -109,16 +109,6 @@
       if (!timedout) {
         finished = true;
         adblock.experimentTime = parseInt(performance.now(), 10);
-
-        adblock.on("log", ({event, data}) => {
-          data.experiments = adblock.formatExperimentRecord(Object.fromEntries([[adblock.experiment, adblock.variant]]));
-        });
-
-        adblock.on("checkout-options", options => {
-          options.customData.experiment_id = adblock.experiment;
-          options.customData.variant_index = adblock.variant;
-        });
-
         adblock.trigger("experiment.loaded");
         adblock.log("experiment.loaded")
       }
