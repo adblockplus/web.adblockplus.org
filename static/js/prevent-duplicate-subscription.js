@@ -45,6 +45,10 @@ function preventDuplicateSubscription(data) {
 
   if (data.status == "past_due") return;
 
+  // Sometimes the checkout.customer.updated event can fire when filling
+  // out the inline form before a valid email address has been entered.
+  if (typeof data.customer.email !== "string") return;
+
   // if the checkout is not inline then we need to move it to the bottom of the
   // DOM so that it can overlay Paddle's overlay
   if (data?.settings?.display_mode != "inline") {
