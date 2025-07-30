@@ -1,5 +1,3 @@
-import { checkoutEvents } from '../../modules/paddle.js';
-
 /**
  * Set all targets height equal to the largest targets height
  * CAUTION: This only works as-is for elements without padding
@@ -53,7 +51,7 @@ function setAutoHeights(targets)
 
 const plansContainer = document.querySelector('.premium-plans');
 
-checkoutEvents.on("checkout.closed", () => {
+adblock.on("checkout.closed", () => {
   plansContainer.classList.remove('has-selection');
   plansContainer.classList.add('hovered');
   document.querySelectorAll('.premium-plan').forEach(plan => {

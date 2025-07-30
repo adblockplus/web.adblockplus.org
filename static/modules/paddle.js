@@ -909,13 +909,6 @@ export const checkout = adblock.api.checkout = function checkout(options) {
 
   const trackingPrefix = (productCode || funnelCode) ? `${productCode}_${funnelCode} ` : "";
 
-  let experiment_id = "";
-  let variant_index = -1;
-  if (adblock.hasOwnProperty("experiment")) {
-    experiment_id = adblock.experiment;
-    variant_index = adblock.variant;
-  }
-
   const customData = {
     version: "1.1.0",
     trigger,
@@ -935,9 +928,9 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     recurring: frequency != "once",
     subType: frequency != "once" ? frequency : "",
     experiment: "",
-    experiment_id: "",
+    experiment_id: adblock.hasOwnProperty("experiment") ? adblock.experiment : "",
     variant: "",
-    variant_index: -1,
+    variant_index: adblock.hasOwnProperty("variant") ? adblock.variant : -1,
     amount_cents: amount,
     success_url: successUrl,
     cancel_url: window.location.href
