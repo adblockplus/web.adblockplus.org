@@ -789,7 +789,7 @@ if (paddleEnvironment == "test") {
 
 function onPaddleEvent (event) {
   if (!event.name || !event.data) return;
-  if (!adblock.isLive) console.log(event);
+  event.data.name = event.name;
   adblock.trigger(event.name, event.data);
 }
 
@@ -816,7 +816,7 @@ adblock.on("checkout.loaded", data => {
 
 function reportCheckoutEvent(data) {
   adblock.log("checkout-event", {
-    name: name,
+    name: data.name,
     amount: data.custom_data?.amount_cents,
     frequency: data.custom_data?.sub_type,
     currency: data.custom_data?.currency,
