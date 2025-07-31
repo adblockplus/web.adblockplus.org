@@ -44,7 +44,7 @@
   height: 5.5rem;
 }
 
-[data-account="found"] .inline-checkout-footer {
+[data-account="found"].--inline-checkout .inline-checkout-footer {
   display: none;
 }
 
@@ -57,19 +57,28 @@
 
 @media (min-width: 816px) and (min-height: 816px) {
   .account-restore {
-    height: 35vh;
+    height: 86vh;
+  }
+  .--inline-checkout .account-restore {
+    height: 36rem;
   }
 }
 
-/*@media (min-width: 990px) and (min-height: 816px) {*/
-/*  .account-restore {*/
-/*    height: 85vh;*/
-/*  }*/
-/*}*/
+@media (min-width: 990px) and (min-height: 816px) {
+  .account-restore {
+    height: 85vh;
+  }
+  .--inline-checkout .account-restore {
+    height: 35rem;
+  }
+}
 
 @media (min-width: 1156px) and (min-height: 816px) {
   .account-restore {
     height: 86vh;
+  }
+  .--inline-checkout .account-restore {
+    height: 36rem;
   }
 }
 
