@@ -48,6 +48,12 @@
   display: none;
 }
 
+@media (max-width: 991px) {
+  [data-account="found"].--inline-checkout .inline-checkout-details {
+    display: none;
+  }
+}
+
 /* The overlay and modal height, width, and border radius are precisely
  * copied across screen sizes from Paddle checkout overlay as of 2025-05-29[1]
  *
@@ -60,7 +66,7 @@
     height: 86vh;
   }
   .--inline-checkout .account-restore {
-    height: 36rem;
+    height: 36vh;
   }
 }
 
@@ -69,7 +75,7 @@
     height: 85vh;
   }
   .--inline-checkout .account-restore {
-    height: 35rem;
+    height: 35vh;
   }
 }
 
@@ -78,7 +84,7 @@
     height: 86vh;
   }
   .--inline-checkout .account-restore {
-    height: 36rem;
+    height: 36vh;
   }
 }
 
@@ -161,6 +167,12 @@ html:not(.--inline-checkout) .account-restore-loading,
 
 .--inline-checkout .account-restore-found {
   justify-content: start;
+}
+
+@media (max-width: 991px) {
+  .--inline-checkout .account-restore-found {
+    justify-content: center;
+  }
 }
 
 [data-account="found"] .account-restore-found { display: flex; }

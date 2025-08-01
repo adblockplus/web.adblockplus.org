@@ -82,8 +82,7 @@
         return;
       }
 
-      const storedVariant = localStorage.getItem(options.id);
-      if ((!storedVariant || storedVariant === "0")
+      if ((!localStorage.getItem(options.id))
         && false === meetsThreshold(options.trafficAllocation)) {
         finished = true;
         if (options.noParticipateCallback) options.noParticipateCallback();

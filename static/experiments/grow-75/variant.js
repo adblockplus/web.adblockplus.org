@@ -161,7 +161,7 @@ adblock.on("checkout.customer.updated", updateTotals);
 function removePaddlePlaceholder() {
   const form = document.getElementById("inline-checkout-form");
   form.classList.remove("placeholder");
-  form.style.minHeight = "initial";
+  form.style.minHeight = "320px";
 }
 
 adblock.on("checkout.loaded", () => setTimeout(removePaddlePlaceholder, 100));
