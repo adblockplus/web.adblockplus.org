@@ -132,7 +132,6 @@ if (adblock.query.has("has-subscription")) {
   if (result == "finding") {
     adblock.onceAfter("checkout.loaded", showSubscirptionFinding);
   } else if (result == "found") {
-    console.log("showing subscription found");
     adblock.onceAfter("checkout.loaded", () => {
       showSubscriptionFound(adblock.query.get("email") || "help@adblockplus.org")
     });
