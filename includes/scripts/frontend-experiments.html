@@ -130,7 +130,7 @@
   }
 
   function meetsThreshold(percentage) {
-    return percentage === "undefined" ? true : Math.random() * 100 <= percentage;
+    return typeof percentage === "undefined" ? true : Math.random() * 100 <= percentage;
   }
 
   /**
