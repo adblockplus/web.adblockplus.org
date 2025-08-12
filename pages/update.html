@@ -24,8 +24,8 @@ code=B
   adblock.setupExperiment({
     id: "GROW-75",
     conditions: () => (["US", "CA", "AU"].includes(adblock.settings.country)
-        && "en" === adblock.settings.locale
-        && window.innerWidth >= 992) || adblock.query.has("grow-75"),
+      && "en" === adblock.settings.locale
+      && window.innerWidth >= 992) || adblock.query.has("grow-75"),
     noParticipateCallback: () => {
       const script = Object.assign(document.createElement('script'), {
         type: 'module',
