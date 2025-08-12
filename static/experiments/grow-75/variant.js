@@ -55,6 +55,9 @@ modal.querySelector(".inline-checkout-modal__close").addEventListener("click", (
   if (totalsContainer) totalsContainer.classList.add("placeholder");
   const paddleIframe = document.querySelector(".paddle-frame-inline");
   if (paddleIframe) paddleIframe.hidden = false;
+
+  adblock.trigger("checkout.closed");
+  adblock.log("checkout.closed");
 })
 
 document.querySelectorAll(".update-premium-checkout-button-price").forEach(price => {
