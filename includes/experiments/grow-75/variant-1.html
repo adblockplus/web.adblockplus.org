@@ -1,0 +1,82 @@
+<div class="inline-checkout-modal">
+  <div class="inline-checkout-modal__content">
+    <button class="inline-checkout-modal__close" aria-label="Close">×</button>
+    <div class="inline-checkout-modal__scrollable-body">
+      <div class="container">
+        <div class="inline-checkout">
+          <div class="inline-checkout-main">
+            <div class="inline-checkout-details">
+              <img alt="Adblock Plus Premium" src="/img/adblock-plus-premium.png" height="40" class="inline-checkout-logo">
+              <div id="inline-checkout-totals" class="inline-checkout-totals placeholder">
+          <span class="inline-block">
+            <span class="inline-checkout-totals__fee" id="inline-checkout-subtotal">
+              $40.00
+            </span>
+            <span id="inline-checkout-tax--inclusive" class="inline-checkout-totals__tax">
+              {{ inline-checkout-totals__tax inc. VAT }}
+            </span>
+            <span id="inline-checkout-tax--exclusive" class="inline-checkout-totals__tax">
+              {{ inline-checkout-totals__tax plus <span id="inline-checkout-tax">$4.00</span> tax }}
+            </span>
+          </span>
+                <span class="inline-block">
+            {{ inline-checkout-totals__renew then <span id="inline-checkout-total">$44.00</span> <span id="inline-checkout-frequency">yearly</span>. }}
+          </span>
+              </div><!-- .inline-checkout-totals -->
+              <article class="inline-checkout-feature">
+                <img alt src="/experiments/grow-75/inline-checkout-feature-1.svg" height="50" width="55">
+                <div>
+                  <h2 class="inline-checkout-feature__heading">
+                    {{ inline-checkout-feature-1__heading Block ads when streaming }}
+                  </h2>
+                  <p>
+                    {{ inline-checkout-feature-1__body Stream videos without being disrupted by ads. }}
+                  </p>
+                </div>
+              </article>
+              <article class="inline-checkout-feature">
+                <img alt src="/experiments/grow-75/inline-checkout-feature-2.svg" height="50" width="55">
+                <div>
+                  <h2 class="inline-checkout-feature__heading">
+                    {{ inline-checkout-feature-2__heading Enhanced privacy }}
+                  </h2>
+                  <p>
+                    {{ inline-checkout-feature-2__body Block invasive trackers and protect your privacy. }}
+                  </p>
+                </div>
+              </article>
+              <article class="inline-checkout-feature">
+                <img alt src="/experiments/grow-75/inline-checkout-feature-3.svg" height="50" width="55">
+                <div>
+                  <h2 class="inline-checkout-feature__heading">
+                    {{ inline-checkout-feature-3__heading Block cookie-consent banners }}
+                  </h2>
+                  <p>
+                    {{ inline-checkout-feature-3__body Block cookie-consent banners and website pop-ups for fewer interruptions. }}
+                  </p>
+                </div>
+              </article>
+              <article class="inline-checkout-reviews">
+                <img alt src="/experiments/grow-75/inline-checkout-reviews-store.svg" height="50">
+                <div class="inline-checkout-reviews-details">
+                  <img alt src="/experiments/grow-75/inline-checkout-reviews-stars.svg">
+                  <p>
+                    {{ inline-checkout-reviews-details <strong>4.5 out of 5</strong> with 290k reviews }}
+                  </p>
+                </div>
+              </article>
+            </div><!-- .inline-checkout-details -->
+            <div class="inline-checkout-container">
+              <div id="inline-checkout-form" class="inline-checkout-form placeholder"></div>
+            </div>
+          </div><!-- .inline-checkout-row -->
+          <div class="inline-checkout-footer">
+            <p class="inline-checkout-restore">
+              {{ inline-checkout-restore Already have Premium or contributed before? <a href="restore-purchase">Activate here</a> }}
+            </p>
+          </div>
+        </div><!-- .inline-checkout -->
+      </div>
+    </div>
+  </div>
+</div>

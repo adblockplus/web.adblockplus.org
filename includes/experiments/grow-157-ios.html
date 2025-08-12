@@ -14,14 +14,8 @@
       return;
     }
 
-    adblock.on("log", ({event, data}) => {
-      data.experiments = adblock.formatExperimentRecord(Object.fromEntries([[experiment, variant]]));
-    });
-
-    adblock.on("checkout-options", options => {
-      options.customData.experiment_id = experiment;
-      options.customData.variant_index = variant;
-    });
+    adblock.experiment = experiment;
+    adblock.variant = variant;
   }
 
   if (adblock.query.has("exp") && adblock.query.has("var")) {

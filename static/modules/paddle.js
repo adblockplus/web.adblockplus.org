@@ -1,5 +1,6 @@
 /* global adblock, Paddle */
-import Events from "./events.js";
+// requires scripts/namespace
+// requires scripts/events
 
 const PADDLE_LIVE_TOKEN = "live_d10b49fa5fc207ade026db6535c";
 const PADDLE_TEST_TOKEN = "test_b0e15dc1f1e4f20b0fe6396e893";
@@ -774,27 +775,6 @@ adblock.api.flagExperiment = flag => isExperiment = !!flag;
 adblock.api.setExperimentId = id => { experimentId = id; isExperiment = true; }
 adblock.api.setExperimentVariantId = variant => { experimentVariantId = variant; isExperiment = true; }
 
-/** Provides reference to Paddle's Checkout events via on/fire API */
-export const checkoutEvents = adblock.api.checkoutEvents = new Events();
-const paddleEventCallback = event => checkoutEvents.fire(event.name, event.data);
-
-[
-  "checkout.loaded",
-  "checkout.customer.created",
-  "checkout.payment.initiated"
-]
-.forEach(name => {
-  checkoutEvents.on(name, data => {
-    adblock.log("checkout-event", {
-      name: name,
-      amount: data.custom_data?.amount_cents,
-      frequency: data.custom_data?.sub_type,
-      currency: data.custom_data?.currency,
-      trigger: data.custom_data?.trigger,
-    });
-  })
-});
-
 let paddleToken = PADDLE_LIVE_TOKEN;
 
 const paddleEnvironment = location.hostname == "localhost" ? "test"
@@ -807,16 +787,46 @@ if (paddleEnvironment == "test") {
   document.documentElement.classList.add("--paddle-sandbox")
 }
 
+function onPaddleEvent (event) {
+  if (!event.name || !event.data) return;
+  event.data.name = event.name;
+  adblock.trigger(event.name, event.data);
+}
+
 const paddleOptions = {
   token: paddleToken,
-  eventCallback: paddleEventCallback,
+  eventCallback: onPaddleEvent,
 };
 
-if (window.location.pathname.endsWith("/premium")) {
+if (typeof adblock.paddleOptions == "object") {
+  Object.assign(paddleOptions, adblock.paddleOptions);
+}
+
+if (location.pathname.endsWith("/premium")) {
   paddleOptions.pwCustomer = {};
 }
 
 Paddle.Initialize(paddleOptions);
+
+adblock.on("checkout.loaded", data => {
+  if (data?.settings?.display_mode == "inline") {
+    document.documentElement.classList.add("--inline-checkout");
+  }
+});
+
+function reportCheckoutEvent(data) {
+  adblock.log("checkout-event", {
+    name: data.name,
+    amount: data.custom_data?.amount_cents,
+    frequency: data.custom_data?.sub_type,
+    currency: data.custom_data?.currency,
+    trigger: data.custom_data?.trigger,
+  });
+}
+
+adblock.on("checkout.loaded", reportCheckoutEvent);
+adblock.onceAfter("checkout.customer.created", reportCheckoutEvent);
+adblock.onceAfter("checkout.payment.initiated", reportCheckoutEvent);
 
 // FIXME: We should only use this temporarily to avoid breaking ongoing conversion.com experiments
 const planCodeCompatibility = {
@@ -832,6 +842,7 @@ const planCodeCompatibility = {
  * @param {string} options.currency - checkout currency (e.g. USD|EUR|GBP)
  * @param {string} options.frequency - checkout frequency (e.g. once|monthly|yearly)
  * @param {string} options.amount - checkout amount in cents (e.g. 1000|199)
+ * @param {object} options.settings - settings object to pass to Paddle for customization
  * @param {string} [options.trial] - number of trial days
  * @param {string} [options.coupon] - coupon to be applied
  * @param {string} [options.email] - customer email
@@ -841,7 +852,7 @@ const planCodeCompatibility = {
  */
 export const checkout = adblock.api.checkout = function checkout(options) {
 
-  let { product, plan, adblockPlan, currency, frequency, amount, trial, flow, successUrl, coupon, email, trigger } = options;
+  let { product, plan, adblockPlan, currency, frequency, amount, settings, trial, flow, successUrl, coupon, email, trigger } = options;
 
   const clickTs = Date.now();
 
@@ -917,9 +928,9 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     recurring: frequency != "once",
     subType: frequency != "once" ? frequency : "",
     experiment: "",
-    experiment_id: "",
+    experiment_id: adblock.hasOwnProperty("experiment") ? adblock.experiment : "",
     variant: "",
-    variant_index: -1,
+    variant_index: adblock.hasOwnProperty("variant") ? adblock.variant : -1,
     amount_cents: amount,
     success_url: successUrl,
     cancel_url: window.location.href
@@ -935,6 +946,10 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   };
 
   adblock.trigger("checkout-options", checkoutOptions);
+
+  if (typeof settings === "object") {
+    Object.assign(checkoutOptions.settings, settings);
+  }
 
   if (coupon) checkoutOptions.discountCode = coupon;
   if (email) checkoutOptions.customer = { email };
