@@ -19,7 +19,9 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. **Reservation of Rights.**  We reserve the right to change these Terms at our sole discretion. We will inform you at least one month in advance of the effective date of any new Terms (i.e., the date at which the new Terms will become effective). If you do not object to the new Terms within one month after their effective date, you will be considered to have agreed to be bound by the new Terms. 
 
-1. **License.**  Services other than Adblock Plus for Safari iOS (version 3.x or higher). Unless otherwise stated, the Services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms.
+1. **License.**
+
+    1. **Services other than Adblock Plus for Safari iOS (version 3.x or higher).** Unless otherwise stated, the Services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms.
 
     1. **Adblock Plus for Safari iOS (version 3.x or higher).**
 
@@ -45,7 +47,7 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. You acknowledge and understand that the filters that are used on the Services may occasionally result in blocked content. This is an unwanted side effect of some filters and cannot be completely avoided.
 
-    1. The Services by themselves do not have any functionality. They do not block anything until you “tell” them to block certain elements of a website by adding [external filter lists](https://adblockplus.org/en/about#workings) to the Services. Filter lists are essentially an extensive set of rules that instruct the Services which elements of a website to block. You acknowledge and understand that we do not have contrel over filter lists.
+    1. The Services by themselves do not have any functionality. They do not block anything until you “tell” them to block certain elements of a website by adding [external filter lists](https://adblockplus.org/en/about#workings) to the Services. Filter lists are essentially an extensive set of rules that instruct the Services which elements of a website to block. You acknowledge and understand that we do not have control over filter lists.
 
     1. We encourage you to immediately [report](bugs) any errors or incorrect blocking of the Services that you may discover. These reports will help us improve the Services.
 
