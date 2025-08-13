@@ -19,7 +19,15 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. **Reservation of Rights.**  We reserve the right to change these Terms at our sole discretion. We will inform you at least one month in advance of the effective date of any new Terms (i.e., the date at which the new Terms will become effective). If you do not object to the new Terms within one month after their effective date, you will be considered to have agreed to be bound by the new Terms. 
 
-1. **License.**  The Services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms.
+1. **License.**  Services other than Adblock Plus for Safari iOS (version 3.x or higher). Unless otherwise stated, the services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms.
+
+    1. **Adblock Plus for Safari iOS (version 3.x or higher).**
+
+        1. **License Grant.** Subject to and conditioned on your compliance with the terms and conditions of these Terms, we grant to you a limited, revocable, non-exclusive, non-sublicensable, non-transferable, and non-assignable license to download, install, and use a copy of Adblock Plus for Safari iOS App (version 3.x or higher) for your personal, non-commercial use on a compatible device that you own or control solely as expressly authorized and/or required by these Terms.
+
+        1. **Ownership.** You acknowledge and agree that a copy of Adblock Plus for Safari iOS (version 3.x or higher) is provided under license, and not sold, to you. You do not acquire any title or ownership interest in or to Adblock Plus for Safari iOS (version 3.x or higher), including any copy thereof, or any rights other than your right to use your copy of Adblock Plus for Safari iOS (version 3.x or higher) in accordance with the license granted to you in these Terms. Except as expressly granted to you in these Terms, we and our licensors reserve our entire right, title, and interest in and to Adblock Plus for Safari iOS (version 3.x or higher), including all copyrights, trademarks, and other intellectual property rights arising therefrom or related thereto. Further, we reserve all rights not expressly granted or waived in these Terms.
+
+    1. **Feedback.**  You may, but are not required to, provide us with recommendations, suggestions, comments, ideas, proposals, evaluations, reviews, feedback, input or other information related to the Services (collectively **“Feedback”**). In the event that you provide us Feedback, you hereby grant us and our affiliates a perpetual, irrevocable, worldwide license to use Feedback in any way for any purpose without reimbursement or compensation and without any obligation to report on such use or other restriction on such use.
 
 1. **Non-Permitted Use of the Services.**  Please note that some website owners may not permit ad filtering users to visit their websites. You agree that you will not use the Services in the following cases:
 
@@ -37,7 +45,7 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. You acknowledge and understand that the filters that are used on the Services may occasionally result in blocked content. This is an unwanted side effect of some filters and cannot be completely avoided.
 
-    1. The Services by themselves do not have any functionality. They do not block anything until you “tell” them to block certain elements of a website by adding [external filter lists](https://adblockplus.org/en/about#workings) to the Services. Filter lists are essentially an extensive set of rules that instruct the Services which elements of a website to block. You acknowledge and understand that we do not have any influence over filter lists.
+    1. The Services by themselves do not have any functionality. They do not block anything until you “tell” them to block certain elements of a website by adding [external filter lists](https://adblockplus.org/en/about#workings) to the Services. Filter lists are essentially an extensive set of rules that instruct the Services which elements of a website to block. You acknowledge and understand that we do not have contrel over filter lists.
 
     1. We encourage you to immediately [report](bugs) any errors or incorrect blocking of the Services that you may discover. These reports will help us improve the Services.
 
@@ -99,4 +107,4 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. In the event that any provision of these Terms is or becomes invalid, such invalidity will not affect the validity of the remaining provisions. 
 
-Last updated: 30 April 2025
+Last updated: 13 August 2025
