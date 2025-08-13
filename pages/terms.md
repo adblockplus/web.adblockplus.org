@@ -19,7 +19,7 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. **Reservation of Rights.**  We reserve the right to change these Terms at our sole discretion. We will inform you at least one month in advance of the effective date of any new Terms (i.e., the date at which the new Terms will become effective). If you do not object to the new Terms within one month after their effective date, you will be considered to have agreed to be bound by the new Terms. 
 
-1. **License.**  Services other than Adblock Plus for Safari iOS (version 3.x or higher). Unless otherwise stated, the services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms.
+1. **License.**  Services other than Adblock Plus for Safari iOS (version 3.x or higher). Unless otherwise stated, the Services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms.
 
     1. **Adblock Plus for Safari iOS (version 3.x or higher).**
 
