@@ -40,7 +40,7 @@ test('Adblock Browser download link', async ({ page }) => {
 
 [
   { pageLink: 'learn more', expectedUrl: '/acceptable-ads' },
-  { pageLink: '1', expectedUrl: '/#footnote' },
+  { pageLink: '1', expectedUrl: '#footnote' },
   { pageLink: 'Terms of Use', expectedUrl: '/terms' },
   { pageLink: 'Download Adblock Plus for another browser', expectedUrl: '/download' },
   { pageLink: 'Learn how', expectedUrl: '/acceptable-ads#optout' },
