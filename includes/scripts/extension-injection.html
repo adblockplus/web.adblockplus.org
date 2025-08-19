@@ -23,7 +23,7 @@ function observeExtensionInjection(extensionName, extensionId) {
 function handleExtensionInjection(extensionName, extensionId) {
   try {
     adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
-    adblock.trigger(extensionName)
+    adblock.trigger(extensionName);
   } catch (error) {
     const context = {};
     context[extensionId] = document.documentElement.dataset[extensionId];
