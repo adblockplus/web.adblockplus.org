@@ -15,9 +15,9 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. **Privacy.**  We collect and process certain personal data to provide secure, efficient, and user-friendly experiences with the Services. For information on how we collect and process your personal data, please read our [Privacy Policy](privacy).
 
-    1. **eyeo GmbH.**  For purposes of these Terms, “eyeo”, “we”, “us”, or “our” means eyeo GmbH, Kunibertsgasse 10, 50668 Cologne, Germany, Local Court Cologne HRB 73508, VAT ID: DE279292414, represented by the managing directors Frank Einecke and Jan Wittek, telephone number: +49 (0)221 / 6430630, e-mail address: info@eyeo.com.
+    1. **eyeo GmbH.**  For purposes of these Terms, “eyeo”, “we”, “us”, or “our” means eyeo GmbH, Kunibertsgasse 10, 50668 Cologne, Germany, Local Court Cologne HRB 73508, VAT ID: DE279292414, represented by the managing directors Till Faida, telephone number: +49 (0)221 / 6430630, e-mail address: info@eyeo.com.
 
-    1. **Reservation of Rights.**  We reserve the right to change these Terms at our sole discretion. We will inform you at least one month in advance of the effective date of any new Terms (i.e., the date at which the new Terms will become effective). If you do not object to the new Terms within one month after their effective date, you will be considered to have agreed to be bound by the new Terms. 
+    1. **Reservation of Rights.**  We reserve the right to change these Terms at our sole discretion. We will inform you at least one month in advance of the effective date of any new Terms (i.e., the date at which the new Terms will become effective). If you do not object to the new Terms within one month after their effective date, you will be considered to have agreed to be bound by the new Terms.
 
 1. **License.**
 
@@ -75,11 +75,11 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
             1. the consumer (e.g., you) has expressly agreed that the vendor may begin to perform the contract before the end of the withdrawal period;
 
-            1. on commencement of performance of the contract, if the consumer has confirmed that he is aware that his right of withdrawal from a contract will expire as a result of his consent in accordance with Section 7.2.2.2 above; and 
+            1. on commencement of performance of the contract, if the consumer has confirmed that he is aware that his right of withdrawal from a contract will expire as a result of his consent in accordance with Section 7.2.2.2 above; and
 
             1. the vendor has provided the consumer with a confirmation in accordance with Section 312(f) of the German Civil Code.
 
-    1. **Multiple Installations.**  During the period of time that your subscription of the Services is active, you may install and re-install the subscription on all your supported devices without incurring any additional costs. 
+    1. **Multiple Installations.**  During the period of time that your subscription of the Services is active, you may install and re-install the subscription on all your supported devices without incurring any additional costs.
 
     1. **Premium Services Term and Termination.**
 
@@ -105,8 +105,8 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. At the time that these Terms become effective on each of us (i.e., you and eyeo), there are no verbal ancillary agreements and/or additions. Collateral agreements, amendments, or supplements must be made in writing and signed by an authorized representative of each party to be effective. The waiver of the written form requirement must also be in writing.
 
-    1. In the event that a circumstance beyond our reasonable control prevents us from providing you the Services in accordance with these Terms (each a “**Force Majeure Event**”), you acknowledge and agree that we have no obligation under these Terms to the extent and duration of such Force Majeure Event. 
+    1. In the event that a circumstance beyond our reasonable control prevents us from providing you the Services in accordance with these Terms (each a “**Force Majeure Event**”), you acknowledge and agree that we have no obligation under these Terms to the extent and duration of such Force Majeure Event.
 
-    1. In the event that any provision of these Terms is or becomes invalid, such invalidity will not affect the validity of the remaining provisions. 
+    1. In the event that any provision of these Terms is or becomes invalid, such invalidity will not affect the validity of the remaining provisions.
 
 Last updated: 13 August 2025
