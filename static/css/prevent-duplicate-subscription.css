@@ -48,10 +48,17 @@
   display: none;
 }
 
-@media (max-width: 991px) {
-  [data-account="found"].--inline-checkout .inline-checkout-details {
-    display: none;
-  }
+[data-account="found"].--inline-checkout .inline-checkout-details {
+  display: none;
+}
+
+[data-account="found"].--inline-checkout .inline-checkout-form {
+  margin:2.5rem;
+  padding: 1rem;
+}
+
+[data-account="found"].--inline-checkout .account-restore-found {
+  justify-content: center;
 }
 
 /* The overlay and modal height, width, and border radius are precisely
