@@ -164,10 +164,8 @@ function updateTotals(data) {
 
   if (isTaxInclusive || data.totals.tax == 0) {
     subtotalPrice.textContent = formatAmount({amount: data.totals.total});
-    summarySubtotalPrice.textContent = formatAmount({amount: data.totals.total});
   } else {
     subtotalPrice.textContent = formatAmount({amount: data.totals.subtotal});
-    summarySubtotalPrice.textContent = formatAmount({amount: data.totals.subtotal});
   }
   if (isTaxInclusive) {
     taxExclusive.hidden = true;
@@ -178,10 +176,12 @@ function updateTotals(data) {
     summaryTaxPrice.textContent = formatAmount({amount: 0});
   } else {
     taxPrice.textContent = formatAmount({amount: data.totals.tax});
-    summaryTaxPrice.textContent = formatAmount({amount: data.totals.tax});
     taxInclusive.hidden = true;
     taxExclusive.hidden = false;
   }
+
+  summarySubtotalPrice.textContent = formatAmount({amount: data.totals.subtotal});
+  summaryTaxPrice.textContent = formatAmount({amount: data.totals.tax});
   totalPrice.textContent = formatAmount({amount: data.totals.total});
   summaryTotalPrice.textContent = formatAmount({amount: data.totals.total});
   frequency.textContent = data.custom_data.sub_type;
