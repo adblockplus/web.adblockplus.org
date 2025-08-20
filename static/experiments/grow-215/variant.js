@@ -132,6 +132,7 @@ function formatAmount({amount, trailingZeros = false, narrowSymbol = true}) {
 const isTaxInclusive = !!document.documentElement.classList.contains("vat-inclusive");
 
 function updateTotals(data) {
+  console.log("updateTotals", data);
   const contentContainer = document.getElementById("inline-checkout-content");
   const totalPrice = document.getElementById("inline-checkout-total");
   const subtotalPrice = document.getElementById("inline-checkout-subtotal");
