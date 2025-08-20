@@ -11,10 +11,10 @@ code=B
 </head>
 
 <!-- Base content that will be shown for both variants -->
-<? include experiments/grow-75/control ?>
+<? include experiments/grow-215/control ?>
 
 <div id="variant-1" hidden>
-  <? include experiments/grow-75/variant-1 ?>
+  <? include experiments/grow-215/variant-1 ?>
 </div>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
@@ -22,10 +22,10 @@ code=B
 
 <script>(()=>{
   adblock.setupExperiment({
-    id: "GROW-75",
+    id: "GROW-215",
     conditions: () => (["US", "CA", "AU"].includes(adblock.settings.country)
       && "en" === adblock.settings.locale
-      && window.innerWidth >= 992) || adblock.query.has("grow-75"),
+      && window.innerWidth >= 992) || adblock.query.has("grow-215"),
     noParticipateCallback: () => {
       const script = Object.assign(document.createElement('script'), {
         type: 'module',
@@ -38,8 +38,8 @@ code=B
       script: "/update/update.js"
     },
     variant: {
-      style: "/experiments/grow-75/variant.css",
-      script: "/experiments/grow-75/variant.js"
+      style: "/experiments/grow-215/variant.css",
+      script: "/experiments/grow-215/variant.js"
     }
   });
 })()</script>
