@@ -167,7 +167,7 @@ body {
   padding-bottom: var(--spacing-standard);
   margin-bottom: var(--spacing-standard);
   font-size: var(--font-size-default);
-  display: block;
+  display: flex;
 }
 
 .instruction-item strong,
@@ -175,6 +175,10 @@ body {
   display: inline;
   margin: 0;
   vertical-align: middle;
+}
+
+.instruction-item .bullet-number {
+  margin: 2px 8px 0px 0px;
 }
 
 .instruction-item:not(:last-child)::after {
