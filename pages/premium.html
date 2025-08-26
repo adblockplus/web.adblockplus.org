@@ -6,7 +6,6 @@ code=ME
 
 <head>
   <? include accounts-redirect-fallback ?>
-  <? include experiments/grow-157-ios ?>
   <script>(()=>{
     if (adblock.query.has("premium-checkout__flow")) {
       localStorage.setItem("contributionInfo", JSON.stringify({
@@ -167,8 +166,11 @@ code=ME
             </section>
           </div>
         </div>
-        <div class="premium-plans__already-contributed">
+        <div class="premium-plans__already-contributed placeholder">
           {{ premium-checkout-card-footer__paragraph-1 }}
+        </div>
+        <div class="premium-plans__already-purchased-sign-in" hidden>
+          Already purchased premium?&nbsp;<a class="premium-checkout-purchase__restore-purchase-sign-in-link" href="#">Click to sign in</a>.
         </div>
       </div>
 
@@ -302,10 +304,9 @@ code=ME
     </section>
   </div>
 
-  <? include premium-checkout ?>
-
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 
+  <? include premium-checkout-grow-185 ?>
 </main>
 
 <script src="/js/pages/premium.js" type="module"></script>

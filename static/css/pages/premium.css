@@ -645,10 +645,11 @@ html {
 }
 
 /*******************************************************************************
- * Premium - Already contributed
+ * Premium - Already purchased
  ******************************************************************************/
 
-.premium-plans__already-contributed {
+.premium-plans__already-contributed,
+.premium-plans__already-purchased-sign-in {
   display: flex;
   margin-top: 4rem;
   align-items: center;
@@ -656,7 +657,8 @@ html {
   font-size: 1.125rem;
 }
 
-.premium-plans__already-contributed > a {
+.premium-plans__already-contributed > a,
+.premium-plans__already-purchased-sign-in > a {
   color: #0055B7;
 }
 
