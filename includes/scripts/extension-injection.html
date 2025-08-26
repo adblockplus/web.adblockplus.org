@@ -23,7 +23,8 @@ function observeExtensionInjection(extensionName, extensionId) {
 function handleExtensionInjection(extensionName, extensionId) {
   try {
     adblock[extensionName] = JSON.parse(document.documentElement.dataset[extensionId]);
-    adblock.trigger(extensionName);
+    adblock.injectionTime = parseInt(performance.now(), 10);
+    adblock.trigger(extensionName, adblock[extensionName]);
   } catch (error) {
     const context = {};
     context[extensionId] = document.documentElement.dataset[extensionId];
@@ -34,7 +35,7 @@ function handleExtensionInjection(extensionName, extensionId) {
 observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
 
 /**
- * Call a callback after Adblock Plus is detected (or a fallback Adblock Plus
+ * Call a callback after Adblock Plus is detected (or fallback Adblock Plus
  * detection times out)
  *
  * @param {function} callback - function to call when detection successful
@@ -42,25 +43,26 @@ observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
  */
 adblock.afterAdblockPlusDetected = (callback, fallback) => {
   let cancelFallback = false;
-  adblock.onceAfter("adblockPlus", data => {
-    if (!fallback || !cancelFallback) {
-      cancelFallback = true;
-      callback(data);
-    }
-  });
-  if (fallback) {
-    setTimeout(() => {
-      if (!cancelFallback) {
+  if (adblock.adblockPlus && document.documentElement.dataset.hasOwnProperty("adblockPlusExtensionInfo")) {
+    cancelFallback = true;
+    callback(adblock.adblockPlus);
+  } else {
+    adblock.onceAfter("adblockPlus", data => {
+      if (!fallback || !cancelFallback) {
         cancelFallback = true;
-        if (typeof fallback === "function") fallback();
-        else callback();
+        callback(data);
       }
-    }, EXTENSION_INJECTION_TIMOUT);
+    });
+    if (fallback) {
+      setTimeout(() => {
+        if (!cancelFallback) {
+          cancelFallback = true;
+          if (typeof fallback === "function") fallback();
+          else callback();
+        }
+      }, EXTENSION_INJECTION_TIMOUT);
+    }
   }
 }
-
-adblock.afterAdblockPlusDetected(() => {
-  adblock.injectionTime = parseInt(performance.now(), 10);
-});
 
 })()</script>
