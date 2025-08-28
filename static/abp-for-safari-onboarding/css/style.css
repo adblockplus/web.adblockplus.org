@@ -168,6 +168,8 @@ body {
   margin-bottom: var(--spacing-standard);
   font-size: var(--font-size-default);
   display: flex;
+  align-items: center;
+  line-height: 1.5;
 }
 
 .instruction-item strong,
@@ -175,6 +177,10 @@ body {
   display: inline;
   margin: 0;
   vertical-align: middle;
+}
+
+.instruction-item img {
+  padding: 0 4px;
 }
 
 .instruction-item .bullet-number {
