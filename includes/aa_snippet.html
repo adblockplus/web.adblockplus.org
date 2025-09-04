@@ -143,8 +143,14 @@
       return obj;
     }, {});
     const pxurl = "/access.gif";
-    const urlParams = new URLSearchParams(pxparams).toString();
-    const fullUrl = `${pxurl}?${urlParams}`;
+    const urlParams = new URLSearchParams(pxparams);
+    const src = window.location.pathname.endsWith("/update") ? "update" :
+                window.location.pathname.endsWith("/installed") ? "installed" : null;
+
+    if (src) {
+      urlParams.append("s", src);
+    }
+    const fullUrl = `${pxurl}?${urlParams.toString()}`;
     fetch(fullUrl).catch(() => {});
   });
 
