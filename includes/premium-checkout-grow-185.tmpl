@@ -326,7 +326,6 @@
 <? include scripts/frontend-experiments ?>
 <script>(()=>{
   function loadDefaultPremiumScript() {
-    console.log('GROW-185: did not participate');
     const checkoutScript = document.createElement("script");
     checkoutScript.type = "module";
     checkoutScript.async = false;
@@ -359,22 +358,17 @@
       id: "GROW-185",
       conditions: () => {
         return new Promise((resolve, reject) => {
-          console.log('GROW-185: waiting for extension info');
           try {
             adblock.afterAdblockPlusDetected(() => {
               const extensionVersion = adblock.query.get("qa-xv") || adblock.adblockPlus?.version;
               if (adblock.adblockPlus?.isPremium) {
-                console.log('GROW-185: user already has premium');
                 resolve(false);
               } else if (meetsExtensionVersion(extensionVersion)) {
-                console.log('GROW-185: meets minimum extension version');
                 resolve(true);
               } else {
-                console.log('GROW-185: does not meet minimum extension version');
                 resolve(false);
               }
             }, () => {
-              console.log('GROW-185: extension not detected');
               resolve(false);
             });
           } catch (error) {
@@ -406,13 +400,8 @@
                         (["US", "CA", "AU"].includes(adblock.settings.country) || adblock.query.has("grow-185"));
 
   if (meetsCriteria) {
-    console.log('GROW-185: meets basic experiment criteria');
-    adblock.on("experiment.loaded", () => {
-      console.log("GROW-185: variant", adblock.variant);
-    });
     initExperiment();
   } else {
-    console.log('GROW-185: does not meet basic experiment criteria');
     loadDefaultPremiumScript();
   }
 
