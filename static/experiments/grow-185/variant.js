@@ -397,6 +397,22 @@ adblock.on("checkout.completed", async (data) => {
     return;
   }
 
+  /**
+   * Show the account loading spinner. Ideally we could separate out
+   * the spinner from the duplicate subscription CSS into its own
+   * component. But for now we can re-use it.
+   */
+  try {
+    const accountRestore = document.getElementById("account-restore");
+
+    if (accountRestore) {
+      document.documentElement.dataset.account = "finding";
+      document.body.appendChild(document.getElementById(accountRestore));
+    }
+  } catch (e) {
+    // do nothing
+  }
+
   // Send purchase data to GA is present
   try {
     const frequency = data.custom_data.sub_type;
