@@ -109,7 +109,7 @@
         finished = true;
         adblock.experimentTime = parseInt(performance.now(), 10);
         adblock.trigger("experiment.loaded");
-        adblock.log("experiment.loaded")
+        adblock.log("experiment.loaded");
       }
 
     } catch (error) {
@@ -220,6 +220,7 @@
       const script = document.createElement("script");
       script.type = "module";
       script.src = src;
+      script.async = false;
       script.onload = resolve;
       document.head.appendChild(script);
     });
@@ -241,10 +242,14 @@
       }
     }
     if (typeof options.script !== "undefined") {
-      if (typeof options.script === "string" && options.script.length > 0) {
+      if (Array.isArray(options.script) && options.script.length > 0) {
+        options.script.forEach(async script => {
+          await loadScript(script);
+        });
+      } else if (typeof options.script === "string" && options.script.length > 0) {
         await loadScript(options.script);
       } else {
-        throw new Error("adblock.experiment({variants[{script}]}) must be string with contents");
+        throw new Error("adblock.experiment({variants[{script}]}) must be string or array with contents");
       }
     }
     if (typeof options.callback !== "undefined") {

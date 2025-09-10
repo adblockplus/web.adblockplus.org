@@ -1,0 +1,435 @@
+<script>
+  Object.assign(adblock.strings, {
+    "premium-checkout-activated__once": `{{ get_string("premium-checkout-activated__once") }}`,
+    "premium-checkout-activated__monthly": `{{ get_string("premium-checkout-activated__monthly")  }}`,
+    "premium-checkout-activated__yearly": `{{ get_string("premium-checkout-activated__yearly") }}`,
+  })
+</script>
+<? include install-button-text ?>
+
+<div id="premium-checkout" class="premium-checkout">
+
+  <div class="premium-checkout__section">
+    <div class="premium-checkout__container">
+
+      <!-- ---------------------------------------------------------------------
+        SECTION HEADING
+      ---------------------------------------------------------------------- -->
+      <img alt="Adblock Plus Premium" src="/img/adblock-plus-premium.png" class="premium-checkout-section__heading" height="48" width="374">
+
+      <!-- ---------------------------------------------------------------------
+        DYNAMIC CARD (See premium-checkout.js)
+      ---------------------------------------------------------------------- -->
+
+      <div class="premium-checkout-card premium-checkout-card--interactive">
+        <!-- built from cards below by premium-checkout.js -->
+      </div>
+
+      <!-- ---------------------------------------------------------------------
+        STATIC CARDS (See /premium?design)
+      ---------------------------------------------------------------------- -->
+
+      <!-- PURCHASE CARD --------------------------------------------------- -->
+
+      <div class="premium-checkout__separator-heading">
+        SHARED BETWEEN FLOWS
+      </div>
+
+      <div class="premium-checkout__separator-label">
+        PURCHASE CARD
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card">
+          <form class="premium-checkout-step premium-checkout-purchase">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading premium-checkout-purchase__heading">
+                {{ get_string("premium-checkout-purchase__heading-1") }}
+              </h2>
+              <select class="premium-checkout-header__select"></select>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body premium-checkout-card-body--columns">
+              <div class="premium-checkout-card-body-column">
+                <button class="premium-checkout__button premium-checkout-purchase-price placeholder" type="button" aria-pressed="true" value="yearly">
+                  <span class="premium-checkout-purchase-price__text">
+                    <span>
+                      {{ get_string("premium-checkout-purchase-price__yearly") }}
+                    </span>
+                  </span>
+                  <span class="premium-checkout-purchase-price__badge">
+                    {{ get_string("premium-checkout-purchase-price__badge") }}
+                  </span>
+                </button>
+                <button class="premium-checkout__button premium-checkout-purchase-price placeholder" type="button" value="monthly">
+                  <span>
+                    {{ get_string("premium-checkout-purchase-price__monthly") }}
+                  </span>
+                </button>
+                <? include vat-message ?>
+              </div><!-- /premium-checkout-card-body-column -->
+              <div class="premium-checkout-card-body-column">
+                <button class="premium-checkout__button premium-checkout-purchase__checkout-button" type="submit">
+                  {{ get_string("premium-checkout-purchase__providers__paddle") }}
+                </button>
+                <img alt="" src="/img/paddle-providers.svg" height="32" width="358" class="premium-checkout-purchase__providers">
+              </div> <!-- /premium-checkout-card-body-column -->
+            </div><!-- /premium-checkout-card-body--columns -->
+            <div class="premium-checkout-card-footer premium-checkout-card-footer--columns">
+              <div class="premium-checkout-card-footer-column">
+                <div>
+                  {{ get_string("premium-checkout-card-footer__paragraph-1") }}
+                </div>
+              </div>
+              <div class="premium-checkout-card-footer-column">
+                {{ get_string("premium-checkout-card-footer__paragraph-2") }}
+              </div>
+            </div><!-- /premium-checkout-card-footer -->
+          </form><!-- /premium-checkout-purchase -->
+        </div><!-- /premium-checkout-card -->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- LOADING CARD ---------------------------------------------------- -->
+
+      <div class="premium-checkout__separator-label">
+        LOADING CARD
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card">
+          <div class="premium-checkout-step premium-checkout-loading">
+            <div class="premium-checkout-card-body premium-checkout-loading-card-body">
+              <div class="premium-checkout-loading__loader"><div></div><div></div><div></div><div></div></div>
+            </div><!-- /premium-checkout__columns -->
+          </div><!-- /premium-checkout-loading -->
+        </div><!-- /premium-checkout-card -->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- ERROR CARD ------------------------------------------------------ -->
+
+      <div class="premium-checkout__separator-label">
+        UNEXPECTED ERROR CARD
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card">
+          <div class="premium-checkout-step premium-checkout-error premium-checkout-step--closeable">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading">
+                {{ get_string("premium-checkout-error__heading-1") }}
+              </h2>
+              <button class="premium-checkout-card-header__close-button" type="button">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt") }}">
+              </button>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body">
+              <p class="premium-checkout-card__lead">
+                {{ get_string("premium-checkout-error__paragraph-1") }}
+              </p>
+              <p>
+                {{ get_string("premium-checkout-error__paragraph-3") }}
+              </p>
+              <p>
+                {{ get_string("premium-checkout-error__paragraph-2") }}
+              </p>
+            </div><!-- /premium-checkout__columns -->
+          </div><!-- /premium-checkout-error -->
+        </div><!-- /premium-checkout-card -->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- PURCHASE FLOW --------------------------------------------------- -->
+
+      <div class="premium-checkout__separator-heading">
+        PURCHASE FLOW
+      </div>
+
+      <!-- ACTIVATED CARD -------------------------------------------------- -->
+
+      <div class="premium-checkout__separator-label">
+        ACTIVATED CARD
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card">
+          <div class="premium-checkout-step premium-checkout-success premium-checkout-activated">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading">
+                {{ get_string("premium-checkout-activated__heading-1") }}
+              </h2>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body premium-checkout-card-body--columns">
+              <div class="premium-checkout-card-body-column">
+                <img alt="" src="/img/browser-with-gears.svg" height="224" width="247" class="premium-checkout-success__image">
+              </div><!-- /premium-checkout-card-body-column -->
+              <div class="premium-checkout-card-body-column">
+                <h3>
+                  {{ get_string("premium-checkout-activated__heading-2") }}
+                </h3>
+                <p class="premium-checkout-activated__plan">
+                  {{ get_string("premium-checkout-activated__yearly") }}
+                </p>
+                <p>
+                  {{ get_string("premium-checkout-activated__paragraph-2") }}
+                </p>
+                <a href="https://help.adblockplus.org/hc/articles/8155189140115-Get-started-with-AdBlock-Plus-Premium" class="premium-checkout__button premium-checkout-success__button" data-extension-page="premium-onboarding">
+                  {{ get_string("premium-checkout-activated__button-1") }}
+                </a>
+                <div class="premium-checkout-success__install" hidden>
+                  <? include install ?>
+                </div>
+              </div><!-- /premium-checkout-card-body-column -->
+            </div><!-- /premium-checkout__columns -->
+          </div><!-- /premium-checkout-success /premium-checkout-activated -->
+        </div><!-- /premium-checkout-card -->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- ALREADY CONTRIBUTED FLOW ---------------------------------------- -->
+
+      <div class="premium-checkout__separator-heading">
+        ALREADY CONTRIBUTED FLOW
+      </div>
+
+      <!-- VERIFY EMAIL CARD ----------------------------------------------- -->
+
+      <div class="premium-checkout__separator-label">
+        VERIFY EMAIL CARD
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card">
+          <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-email premium-checkout-step--closeable">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading">
+                {{ get_string("premium-checkout-verify-email__heading-1") }}
+              </h2>
+              <button class="premium-checkout-card-header__close-button" type="button">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt") }}">
+              </button>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body">
+              <div class="premium-checkout-verify__lead">
+                {{ get_string("premium-checkout-verify-email__paragraph-1") }}
+              </div>
+              <form class="premium-checkout-verify__form">
+                <input type="email" class="premium-checkout-verify__input" required>
+                <button class="premium-checkout__button premium-checkout-verify__submit">
+                  {{ get_string("premium-checkout-verify-email__button-1") }}
+                </button>
+              </form>
+            </div><!-- /premium-checkout-card-body -->
+          </div><!-- /premium-checkout-verify /premium-checkout-verify-email -->
+        </div><!-- /premium-checkout-card-->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- VERIFY CODE CARD ------------------------------------------------ -->
+
+      <div class="premium-checkout__separator-label">
+        VERIFY CODE CARD
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card premium-checkout-verify">
+          <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-code premium-checkout-step--closeable">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading ">
+                {{ get_string("premium-checkout-verify-code__heading-1") }}
+              </h2>
+              <button class="premium-checkout-card-header__close-button" type="button">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt") }}">
+              </button>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body">
+              <div class="premium-checkout-verify__lead">
+                {{ get_string("premium-checkout-verify-code__paragraph-1") }}
+              </div>
+              <form class="premium-checkout-verify__form">
+                <input type="text" class="premium-checkout-verify__input">
+                <button class="premium-checkout__button premium-checkout-verify__submit">
+                  {{ get_string("premium-checkout-verify-email__button-1") }}
+                </button>
+              </form>
+              <div class="premium-checkout-verify__error" hidden>
+                {{ get_string("premium-checkout-verify-code__error-1") }}
+              </div>
+            </div><!-- /premium-checkout-card-body--columns -->
+          </div><!-- /premium-checkout-verify /premium-checkout-verify-code -->
+        </div><!-- /premium-checkout-card-->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- VERIFY CODE CARD (WRONG CODE ERROR) ----------------------------- -->
+
+      <div class="premium-checkout__separator-label">
+        VERIFY CODE CARD (WITH CODE ERROR)
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card premium-checkout-verify">
+          <div class="premium-checkout-step premium-checkout-verify premium-checkout-verify-code premium-checkout-step--closeable">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading ">
+                {{ get_string("premium-checkout-verify-code__heading-1") }}
+              </h2>
+              <button class="premium-checkout-card-header__close-button" type="button">
+                <img src="/img/close-cross-black.svg" height="24" width="25" alt="{{ get_string("premium-checkout__close-alt") }}">
+              </button>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body">
+              <div class="premium-checkout-verify__lead">
+                {{ get_string("premium-checkout-verify-code__paragraph-1") }}
+              </div>
+              <form class="premium-checkout-verify__form">
+                <input type="text" class="premium-checkout-verify__input">
+                <button class="premium-checkout__button premium-checkout-verify__submit">
+                  {{ get_string("premium-checkout-verify-email__button-1") }}
+                </button>
+              </form>
+              <div class="premium-checkout-verify__error">
+                {{ get_string("premium-checkout-verify-code__error-1") }}
+              </div>
+            </div><!-- /premium-checkout-card-body--columns -->
+          </div><!-- /premium-checkout-verify /premium-checkout-verify-code -->
+        </div><!-- /premium-checkout-card-->
+      </div><!-- /premium-checkout__separator -->
+
+      <!-- REACTIVATED CARD ------------------------------------------------ -->
+
+      <div class="premium-checkout__separator-label">
+        REACTIVATED CARD
+      </div>
+      <div class="premium-checkout__separator">
+        <div class="premium-checkout-card">
+          <div class="premium-checkout-step premium-checkout-success premium-checkout-reactivated">
+            <div class="premium-checkout-card-header">
+              <h2 class="premium-checkout-card-header__heading">
+                {{ get_string("premium-checkout-reactivated__heading") }}
+              </h2>
+            </div><!-- /premium-checkout-card-header -->
+            <div class="premium-checkout-card-body premium-checkout-card-body--columns">
+              <div class="premium-checkout-card-body-column">
+                <img alt="" src="/img/browser-with-gears.svg" height="224" width="247" class="premium-checkout-success__image">
+              </div><!-- /premium-checkout-card-body-column -->
+              <div class="premium-checkout-card-body-column">
+                <h3>
+                  {{ get_string("premium-checkout-reactivated__heading-1") }}
+                </h3>
+                <p>
+                  {{ get_string("premium-checkout-reactivated__paragraph-1") }}
+                </p>
+                <a href="https://help.adblockplus.org/hc/articles/8155189140115-Get-started-with-AdBlock-Plus-Premium" class="premium-checkout-success__button premium-checkout__button" data-extension-page="premium-onboarding">
+                  {{ get_string("premium-checkout-reactivated__button-1") }}
+                </a>
+                <div class="premium-checkout-success__install" hidden>
+                  <? include install ?>
+                </div>
+              </div><!-- /premium-checkout-card-body-column -->
+            </div><!-- /premium-checkout__columns -->
+          </div><!-- /premium-checkout-success /premium-checkout-reactivated -->
+        </div><!-- /premium-checkout-card -->
+      </div><!-- /premium-checkout__separator -->
+    </div><!-- /premium-checkout__container -->
+  </div><!-- /premium-checkout-section -->
+
+</div><!-- /premium-checkout -->
+
+<? include scripts/frontend-experiments ?>
+<script>(()=>{
+  function loadDefaultPremiumScript() {
+    const checkoutScript = document.createElement("script");
+    checkoutScript.type = "module";
+    checkoutScript.async = false;
+    checkoutScript.src = "/js/premium-checkout.js";
+    document.body.appendChild(checkoutScript);
+
+    const preventDuplicateScript = document.createElement("script");
+    preventDuplicateScript.type = "module";
+    preventDuplicateScript.async = false;
+    preventDuplicateScript.src = "/js/prevent-duplicate-subscription.js";
+    document.body.appendChild(preventDuplicateScript);
+  }
+
+  function meetsExtensionVersion(version) {
+    if (!version) return false;
+
+    const target = [4, 26, 0];
+    const current = version.split('.').map(Number);
+
+    for (let i = 0; i < 3; i++) {
+      if (current[i] > target[i]) return true;
+      if (current[i] < target[i]) return false;
+    }
+
+    return true;
+  }
+
+  function initExperiment() {
+    adblock.setupExperiment({
+      id: "GROW-185",
+      conditions: () => {
+        return new Promise((resolve, reject) => {
+          try {
+            adblock.afterAdblockPlusDetected(() => {
+              const extensionVersion = adblock.query.get("qa-xv") || adblock.adblockPlus?.version;
+              if (adblock.adblockPlus?.isPremium) {
+                resolve(false);
+              } else if (meetsExtensionVersion(extensionVersion)) {
+                resolve(true);
+              } else {
+                resolve(false);
+              }
+            }, () => {
+              resolve(false);
+            });
+          } catch (error) {
+            adblock.logScriptError("adblock.experiment", error);
+            resolve(false);
+          }
+        });
+      },
+      noParticipateCallback: loadDefaultPremiumScript,
+      trafficAllocation: 0,
+      control: {
+        script: ["/js/premium-checkout.js", "/js/prevent-duplicate-subscription.js"]
+      },
+      variant: {
+        script: ["/experiments/grow-185/variant.js", "/experiments/grow-185/ua-prevent-duplicate-subscription.js"]
+      }
+    });
+  }
+
+  // Exclude referrals from other pages handing off to old activation flow.
+  // Limit experiment to English only, US, CA, AU
+  const meetsCriteria = window.location.pathname.endsWith("/premium") &&
+                        !adblock.query.has("premium-checkout__handoff") &&
+                        !adblock.query.has("premium-checkout__flow") &&
+                        !adblock.query.has("restore-purchase") &&
+                        !adblock.query.has("already-contributed") &&
+                        !adblock.query.has("_ptxn") &&
+                        "en" === adblock.settings.locale &&
+                        (["US", "CA", "AU"].includes(adblock.settings.country) || adblock.query.has("grow-185"));
+
+  if (meetsCriteria) {
+    initExperiment();
+  } else {
+    loadDefaultPremiumScript();
+  }
+
+})()</script>
+
+
+<!-- Prevent duplicate subscriptions include for grow-185 experiment -->
+
+<link rel="stylesheet" href="/css/prevent-duplicate-subscription.css">
+
+<div id="account-restore" class="account-restore">
+  <div id="account-restore-loading" class="account-restore-loading">
+    <div class="account-restore-loading__loader"></div>
+  </div>
+  <div id="account-restore-found" class="account-restore-found">
+    <button id="account-restore-found__close" class="account-restore-found__close">
+      <img alt="{{ get_string("close", "shared") }}" src="/img/account-restore-found__close.svg" height="24" width="24">
+    </button>
+    <div class="account-restore-found-logo">
+      <img alt src="/img/adblock-plus-latest.svg" height="40" width="40">
+      <span>Adblock<strong>Plus</strong> Premium</span>
+    </div>
+    <div class="account-restore-found-body">
+      <h2 class="account-restore-found-body__heading">{{ get_string("account-restore-found__heading", "shared") }}</h2>
+      <p class="account-restore-found-body__text">{{ get_string("account-restore-found__text", "shared") }}</p>
+    </div>
+    <div class="account-restore-found-buttons">
+      <a id="account-restore-found-buttons__restore" href="restore-purchase" class="account-restore-found-buttons__restore">{{ get_string("account-restore-found__button", "shared") }}</a>
+    </div>
+  </div>
+</div>

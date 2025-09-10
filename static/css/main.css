@@ -746,6 +746,54 @@ a.icon-button:visited
   background: #EDF9FF;
 }
 
+/* #navbar #navbar-menu #navbar-account-login
+ * User accounts portal log-in button. Only visible for English locale for now.
+ ******************************************************************************/
+
+#navbar-menu #navbar-account-login {
+  display: none;
+}
+
+[lang="en"] #navbar-menu #navbar-account-login {
+  display: inline-block;
+}
+
+#navbar-menu #navbar-account-login a {
+  border: 1px solid #666;
+  margin: 0.75em 0;
+  display: inline;
+  padding: 0.25em 3em;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#navbar-menu #navbar-account-login span {
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+}
+
+[dir="rtl"] #navbar-menu #navbar-account-login span {
+  padding-left: 0;
+  padding-right: 25px;
+}
+
+#navbar-menu #navbar-account-login span:before {
+  background-image: url(../img/log-in.svg);
+  content: "";
+  top: calc(50% - 10px);
+  left: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
+[dir="rtl"] #navbar-menu #navbar-account-login span:before {
+  left: auto;
+  right: 0;
+}
+
 /* #navbar #navbar-menu (desktop)
  ******************************************************************************/
 
@@ -841,6 +889,11 @@ a.icon-button:visited
   #navbar-menu li a:focus
   {
     color: #0779d0;
+  }
+
+  #navbar-menu #navbar-account-login a {
+    display: inline-block;
+    margin: 0.75em 1em;
   }
 }
 
