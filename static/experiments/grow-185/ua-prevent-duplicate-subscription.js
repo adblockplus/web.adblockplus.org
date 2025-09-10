@@ -27,8 +27,15 @@ function showSubscriptionFinding() {
   document.documentElement.dataset.account = "finding";
 }
 
-function showSubscriptionFound() {
-  restoreAccountButton.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w`;
+function showSubscriptionFound(email) {
+  let emailParam = "";
+
+  if (email) {
+    const param = new URLSearchParams({email});
+    emailParam = `&${param}`;
+  }
+
+  restoreAccountButton.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w${emailParam}`;
   document.documentElement.dataset.account = "found";
   const paddleIframe = document.querySelector(".paddle-frame-inline");
   if (paddleIframe) paddleIframe.hidden = true;
@@ -100,7 +107,7 @@ function preventDuplicateSubscription(data) {
           preventionLogged = true;
           adblock.log("prevented-duplicate-subscription");
         }
-        return showSubscriptionFound();
+        return showSubscriptionFound(data.customer.email);
       }
     } else {
       adblock.logServiceError("prevent-duplicate-subscription", {
