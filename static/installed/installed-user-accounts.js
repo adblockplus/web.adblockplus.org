@@ -1,6 +1,13 @@
 /* global Paddle, adblock */
-import { getDollarString } from "../modules/currency.js";
+import { getDollarString, getDollarNumber } from "../modules/currency.js";
 import { checkout } from "../modules/paddle.js";
+import { fireGAConversionEvent } from "../modules/conversion.js";
+
+const paddleEnvironment = location.hostname == "localhost" ? "test"
+  : location.hostname.endsWith(".web.app") ? "test"
+  : adblock.query.has("testmode") ? "test" : "live";
+
+const USER_ACCOUNTS_DOMAIN = paddleEnvironment === "live" ? "https://myaccount.adblockplus.org/" : "https://abp.ua-qa.eyeo.it/";
 
 const PRICES = {
   "USD": {
@@ -94,5 +101,55 @@ document.getElementById("purchase").addEventListener("submit", event => {
   const currency = defaultCurrency;
   const frequency = getSelectedFrequency();
   const amount = PRICES[currency][frequency];
-  checkout({product, currency, frequency, amount});
+  checkout({
+    product,
+    currency,
+    frequency,
+    amount,
+    settings: {
+      successUrl: null // override successUrl as we want to redirect with transaction ID / email from post purchase.
+    }
+  });
+});
+
+adblock.on("checkout.completed", async (data) => {
+  if (!data.transaction_id || !data.customer.email) {
+    return;
+  }
+
+  /**
+   * Show the account loading spinner. Ideally we could separate out
+   * the spinner from the duplicate subscription CSS into its own
+   * component. But for now we can re-use it.
+   */
+  try {
+    const accountRestore = document.getElementById("account-restore");
+
+    if (accountRestore) {
+      document.documentElement.dataset.account = "finding";
+      document.body.appendChild(document.getElementById(accountRestore));
+    }
+  } catch (e) {
+    // do nothing
+  }
+
+  // Send purchase data to GA is present
+  try {
+    const frequency = data.custom_data.sub_type;
+    const currency = data.custom_data.currency;
+    const amount = data.custom_data.amount_cents;
+
+    if (frequency && currency && amount) {
+      const value = getDollarNumber(currency, amount) + "";
+      fireGAConversionEvent(frequency, currency, value);
+    }
+  } catch (e) {
+    // do nothing
+  }
+
+  // Forward transaction ID / email to user accounts portal.
+  const transaction_id = encodeURIComponent(data.transaction_id);
+  const email = encodeURIComponent(data.customer.email);
+  const successUrl = `${USER_ACCOUNTS_DOMAIN}?transaction_id=${transaction_id}&email=${email}&s=abp-w`;
+  window.location.href = successUrl;
 });
