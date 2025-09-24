@@ -7,7 +7,7 @@ import { AdblockPlusPremiumPage } from './test-pages/adblock-plus-premium-page.j
 import { PaddlePaymentForm } from "./test-pages/paddle-payment-form.js";
 import { EmailHelper } from "./test-helpers/email-helper.js";
 
-[
+const testParameters = [
   { paymentPage: PremiumPage, frequency: 'Monthly' },
 	{ paymentPage: PremiumPage, frequency: 'Yearly' },
 	{ paymentPage: UpdatePage, frequency: 'Monthly' },
@@ -18,15 +18,17 @@ import { EmailHelper } from "./test-helpers/email-helper.js";
 	{ paymentPage: BlockCookieBannersPage, frequency: 'Yearly' },
 	{ paymentPage: AdblockPlusPremiumPage, frequency: 'Monthly' },
   { paymentPage: AdblockPlusPremiumPage, frequency: 'Yearly' }
-].forEach(({ paymentPage, frequency }) => {
+]
+
+testParameters.forEach(({ paymentPage, frequency }) => {
   test('Premium payment old flow: ' + frequency + ' payment on ' + paymentPage.name, async ({ page }) => {
     const premiumPaymentPage = new paymentPage(page);
-		const paddlePaymentForm = new PaddlePaymentForm(page);
-		await premiumPaymentPage.openPage();
-		await premiumPaymentPage.clickCheckout(frequency);
+    const paddlePaymentForm = new PaddlePaymentForm(page);
+    await premiumPaymentPage.openPage();
+    await premiumPaymentPage.clickCheckout(frequency);
     const email = await EmailHelper.createNewEmail(paymentPage.name + frequency);
     await paddlePaymentForm.makeTestPayment(email);
     const thankYouPage = new PremiumPage(page);
-		await thankYouPage.checkThankYouPageLoadsNoExtension();
+    await thankYouPage.checkThankYouPageLoadsNoExtension();
   });
 });

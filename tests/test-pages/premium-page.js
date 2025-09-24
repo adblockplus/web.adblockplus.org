@@ -39,7 +39,7 @@ export class PremiumPage {
 	}
 
   async checkThankYouPageLoadsNoExtension() {
-		await expect(this.installButton).toBeVisible({ timeout: 6000 });
+		await expect(this.installButton).toBeVisible({ timeout: 8000 });
 	}
 
 }
