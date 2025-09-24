@@ -8,12 +8,12 @@ export class BlockCookieBannersPage {
 
   get yearlySubscriptionButton() {
     // Needs test ID but for now this is the first button
-		return this.page.getByRole('button').first();
+    return this.page.getByRole('button').first();
   }
 
   get monthlySubscriptionButton() {
     // Needs test ID but for now this is the second button
-		return this.page.getByRole('button').nth(1);
+    return this.page.getByRole('button').nth(1);
   }
 
   get checkoutNowButton() {

@@ -7,16 +7,16 @@ export class InstalledPage {
   }
 
   get monthlySubscriptionButton() {
-		return this.page.locator('#monthly-option');
-	}
+    return this.page.locator('#monthly-option');
+  }
 
   get yearlySubscriptionButton() {
-		return this.page.locator('#yearly-option');
-	}
+    return this.page.locator('#yearly-option');
+  }
 
   get completePurchaseButton() {
-		return this.page.locator("#purchase-button");
-	}
+    return this.page.locator("#purchase-button");
+  }
 
   async openPage(optionalParam = '') {
     const pageURL = '/en/installed';

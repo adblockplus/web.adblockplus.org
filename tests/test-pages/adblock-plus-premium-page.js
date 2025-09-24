@@ -7,12 +7,12 @@ export class AdblockPlusPremiumPage {
   }
 
   get completePurchaseButton() {
-		return this.page.locator('#cta-2');
-	}
+    return this.page.locator('#cta-2');
+  }
 
-	get frequencyToggle() {
-		return this.page.locator('#frequency-switch-monthly');
-	}
+  get frequencyToggle() {
+    return this.page.locator('#frequency-switch-monthly');
+  }
 
   async openPage(optionalParam = '') {
     const pageURL = '/en/adblock-plus-premium';
@@ -26,8 +26,8 @@ export class AdblockPlusPremiumPage {
   async clickCheckout(frequency = 'Yearly') {
     if (frequency == 'Monthly') {
       // Toggle defaults to Yearly so need to set to Monthly
-			await this.frequencyToggle.click();
-		}
-		await this.completePurchaseButton.click();
+      await this.frequencyToggle.click();
+    }
+    await this.completePurchaseButton.click();
   }
 }

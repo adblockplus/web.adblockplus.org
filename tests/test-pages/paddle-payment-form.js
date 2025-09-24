@@ -1,46 +1,44 @@
-import { expect } from '@playwright/test';
-
 export class PaddlePaymentForm {
 
-	constructor(page) {
-		this.page = page;
-	}
+  constructor(page) {
+    this.page = page;
+  }
 
   get paddleFrame() {
-		return this.page.frameLocator('iframe[name=\"paddle_frame\"]');
-	}
+    return this.page.frameLocator('iframe[name=\"paddle_frame\"]');
+  }
 
   get emailAddressField() {
-		return this.paddleFrame.getByTestId('authenticationEmailInput');
-	}
+    return this.paddleFrame.getByTestId('authenticationEmailInput');
+  }
 
   get zipPostcodeField() {
-		return this.paddleFrame.getByTestId('postcodeInput');
-	}
+    return this.paddleFrame.getByTestId('postcodeInput');
+  }
 
   get continueButton() {
-		return this.paddleFrame.getByTestId('combinedAuthenticationLocationFormSubmitButton');
-	}
+    return this.paddleFrame.getByTestId('combinedAuthenticationLocationFormSubmitButton');
+  }
 
   get cardNumberField() {
-		return this.paddleFrame.getByTestId('cardNumberInput');
-	}
+    return this.paddleFrame.getByTestId('cardNumberInput');
+  }
 
   get nameOnCardField() {
-		return this.paddleFrame.getByTestId('cardholderNameInput');
-	}
+    return this.paddleFrame.getByTestId('cardholderNameInput');
+  }
 
   get expirationDateField() {
-		return this.paddleFrame.getByTestId('expiryDateField');
-	}
+    return this.paddleFrame.getByTestId('expiryDateField');
+  }
 
   get SecurityCodeField() {
-		return this.paddleFrame.getByTestId('cardVerificationValueInput');
-	}
+    return this.paddleFrame.getByTestId('cardVerificationValueInput');
+  }
 
   get subscribeNowButton() {
-		return this.paddleFrame.getByTestId('cardPaymentFormSubmitButton');
-	}
+    return this.paddleFrame.getByTestId('cardPaymentFormSubmitButton');
+  }
 
   async makeTestPayment(email) {
     await this.emailAddressField.fill(email);
