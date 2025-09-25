@@ -1,5 +1,6 @@
-import { checkout } from "../../modules/paddle.js";
-import { getDollarString, getDollarNumber } from "../../modules/currency.js";
+import { checkout } from "../modules/paddle.js";
+import { getDollarString, getDollarNumber } from "../modules/currency.js";
+import { fireGAConversionEvent } from "../modules/conversion.js";
 
 if (adblock.query.has("design")) {
   document.getElementById("premium-checkout")?.classList.add("visible");
@@ -115,20 +116,6 @@ function initGlobalEventHandlers() {
       steps.purchase.fire("checkout-now");
     }
   });
-
-  document.addEventListener("click", event => {
-    const link = event.target.closest(".premium-checkout-purchase__restore-purchase-sign-in-link");
-    if (!link) return;
-
-    const allowAction = link.closest(".premium-plans__already-purchased-sign-in");
-    if (!allowAction) return;
-
-    event.preventDefault();
-
-    // Redirect to user accounts portal login flow, which
-    // also handles extension reactivation.
-    window.location.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w`;
-  });
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -217,13 +204,6 @@ class PurchaseStep extends Step {
       event.preventDefault();
       this.fire("checkout-now");
     });
-
-    this.element.querySelector(".premium-checkout-purchase__restore-purchase-link")
-    .addEventListener("click", event => {
-      event.preventDefault();
-      this.fire("restore-purchase");
-    });
-
   }
 
   _onOptionPress(event) {
@@ -420,7 +400,8 @@ adblock.on("checkout.completed", async (data) => {
     const amount = data.custom_data.amount_cents;
 
     if (frequency && currency && amount) {
-      fireGAConversionEvent(frequency, currency, amount);
+      const value = getDollarNumber(currency, amount) + "";
+      fireGAConversionEvent(frequency, currency, value);
     }
   } catch (e) {
     // do nothing
@@ -448,27 +429,38 @@ adblock.on("checkout.loaded", () => {
   goto(steps.purchase, undefined, false);
 });
 
-// Show sign-in link
-document.querySelector('.premium-plans__already-contributed').hidden=true;
-document.querySelector('.premium-plans__already-purchased-sign-in').hidden = false;
+function initReactivationLinks() {
+  document.querySelector(".premium-checkout__user-accounts-sign-in-link").addEventListener("click", event => {
+    event.preventDefault();
+    // Redirect to user accounts portal login flow, which
+    // also handles extension reactivation.
+    window.location.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w`
+  });
+
+  // Show sign-in link on /premium page
+  const oldPremiumReactivationLink = document.querySelector('.premium-plans__already-contributed');
+  const newPremiumReactivationLink = document.querySelector('.premium-plans__already-purchased-sign-in');
+
+  if (oldPremiumReactivationLink && newPremiumReactivationLink) {
+    oldPremiumReactivationLink.hidden = true;
+    newPremiumReactivationLink.hidden = false;
+  }
+
+  // show sign-in linnk on checkout card
+  const oldCheckouCardReactivationLink = document.querySelector('.premium-checkout-card-footer-column__already-contributed');
+  const newCheckouCardReactivationLink = document.querySelector('.premium-checkout-card-footer-column__already-purchased-sign-in');
+
+  if (oldCheckouCardReactivationLink && newCheckouCardReactivationLink) {
+    oldCheckouCardReactivationLink.hidden = true;
+    newCheckouCardReactivationLink.hidden = false;
+  }
+}
 
 document.querySelectorAll(".placeholder").forEach(element => {
   element.classList.remove("placeholder");
 });
 
-function fireGAConversionEvent(frequency, currency, amount) {
-  if (typeof gtag == "function") {
-    const send_to = frequency == "yearly" ? "AW-998912317/zT75CIDd0eszEL3iqNwD"
-      : frequency == "monthly" ? "AW-998912317/Q6WWCM-R0uszEL3iqNwD" : false;
-    const value = getDollarNumber(currency, amount) + "";
-    const transition_id = "";
-    const transport_type = 'beacon';
-    if (send_to && currency && value) {
-      gtag('event', 'conversion', { send_to, value, currency, transition_id, transport_type });
-    }
-  }
-}
-
 initGlobalEventHandlers();
+initReactivationLinks();
 
 export default steps;

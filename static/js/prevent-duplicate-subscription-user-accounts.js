@@ -88,7 +88,7 @@ function preventDuplicateSubscription(data) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "X-Application-ID": "255aedf9e8ae7054977dd7c68acddf79"
+      "X-Application-ID": "0cfxmxavm5y2ere7ecsz5x1lgu5nolsv"
     }
   })
   .then((_response) => {

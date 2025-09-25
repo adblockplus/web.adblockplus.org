@@ -75,8 +75,11 @@
             </div><!-- /premium-checkout-card-body--columns -->
             <div class="premium-checkout-card-footer premium-checkout-card-footer--columns">
               <div class="premium-checkout-card-footer-column">
-                <div>
+                <div class="premium-checkout-card-footer-column__already-contributed placeholder">
                   {{ get_string("premium-checkout-card-footer__paragraph-1") }}
+                </div>
+                <div class="premium-checkout-card-footer-column__already-purchased-sign-in" hidden>
+                  Already purchased premium?&nbsp;<a class="premium-checkout__user-accounts-sign-in-link" href="#">Click to sign in</a>.
                 </div>
               </div>
               <div class="premium-checkout-card-footer-column">
@@ -323,113 +326,5 @@
 
 </div><!-- /premium-checkout -->
 
-<? include scripts/frontend-experiments ?>
-<script>(()=>{
-  function loadDefaultPremiumScript() {
-    const checkoutScript = document.createElement("script");
-    checkoutScript.type = "module";
-    checkoutScript.async = false;
-    checkoutScript.src = "/js/premium-checkout.js";
-    document.body.appendChild(checkoutScript);
-
-    const preventDuplicateScript = document.createElement("script");
-    preventDuplicateScript.type = "module";
-    preventDuplicateScript.async = false;
-    preventDuplicateScript.src = "/js/prevent-duplicate-subscription.js";
-    document.body.appendChild(preventDuplicateScript);
-  }
-
-  function meetsExtensionVersion(version) {
-    if (!version) return false;
-
-    const target = [4, 26, 0];
-    const current = version.split('.').map(Number);
-
-    for (let i = 0; i < 3; i++) {
-      if (current[i] > target[i]) return true;
-      if (current[i] < target[i]) return false;
-    }
-
-    return true;
-  }
-
-  function initExperiment() {
-    adblock.setupExperiment({
-      id: "GROW-185",
-      conditions: () => {
-        return new Promise((resolve, reject) => {
-          try {
-            adblock.afterAdblockPlusDetected(() => {
-              const extensionVersion = adblock.query.get("qa-xv") || adblock.adblockPlus?.version;
-              if (adblock.adblockPlus?.isPremium) {
-                resolve(false);
-              } else if (meetsExtensionVersion(extensionVersion)) {
-                resolve(true);
-              } else {
-                resolve(false);
-              }
-            }, () => {
-              resolve(false);
-            });
-          } catch (error) {
-            adblock.logScriptError("adblock.experiment", error);
-            resolve(false);
-          }
-        });
-      },
-      noParticipateCallback: loadDefaultPremiumScript,
-      trafficAllocation: 100,
-      control: {
-        script: ["/js/premium-checkout.js", "/js/prevent-duplicate-subscription.js"]
-      },
-      variant: {
-        script: ["/experiments/grow-185/variant.js", "/experiments/grow-185/ua-prevent-duplicate-subscription.js"]
-      }
-    });
-  }
-
-  // Exclude referrals from other pages handing off to old activation flow.
-  // Limit experiment to English only, US, CA, AU
-  const meetsCriteria = window.location.pathname.endsWith("/premium") &&
-                        !adblock.query.has("premium-checkout__handoff") &&
-                        !adblock.query.has("premium-checkout__flow") &&
-                        !adblock.query.has("restore-purchase") &&
-                        !adblock.query.has("already-contributed") &&
-                        !adblock.query.has("_ptxn") &&
-                        "en" === adblock.settings.locale &&
-                        (["US", "CA", "AU"].includes(adblock.settings.country) || adblock.query.has("grow-185"));
-
-  if (meetsCriteria) {
-    initExperiment();
-  } else {
-    loadDefaultPremiumScript();
-  }
-
-})()</script>
-
-
-<!-- Prevent duplicate subscriptions include for grow-185 experiment -->
-
-<link rel="stylesheet" href="/css/prevent-duplicate-subscription.css">
-
-<div id="account-restore" class="account-restore">
-  <div id="account-restore-loading" class="account-restore-loading">
-    <div class="account-restore-loading__loader"></div>
-  </div>
-  <div id="account-restore-found" class="account-restore-found">
-    <button id="account-restore-found__close" class="account-restore-found__close">
-      <img alt="{{ get_string("close", "shared") }}" src="/img/account-restore-found__close.svg" height="24" width="24">
-    </button>
-    <div class="account-restore-found-logo">
-      <img alt src="/img/adblock-plus-latest.svg" height="40" width="40">
-      <span>Adblock<strong>Plus</strong> Premium</span>
-    </div>
-    <div class="account-restore-found-body">
-      <h2 class="account-restore-found-body__heading">{{ get_string("account-restore-found__heading", "shared") }}</h2>
-      <p class="account-restore-found-body__text">{{ get_string("account-restore-found__text", "shared") }}</p>
-    </div>
-    <div class="account-restore-found-buttons">
-      <a id="account-restore-found-buttons__restore" href="restore-purchase" class="account-restore-found-buttons__restore">{{ get_string("account-restore-found__button", "shared") }}</a>
-    </div>
-  </div>
-</div>
+<? include prevent-duplicate-subscriptions ?>
+<script src="/js/premium-init.js" type="module"></script>
