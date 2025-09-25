@@ -7,6 +7,8 @@ If you prefer not to use VSCode or Docker then you can see `.devcontainer/Docker
 There are two ways to "run" this website:
 
 1. The "fast" way: via eyeo/cms development test server
+    - clone [cms server](https://gitlab.com/eyeo/websites/cms.git) 
+    - in your `.zshrc` set path to your cms project `export PYTHONPATH="$HOME/<path>/cms:$PYTHONPATH"`
     - `npm run fast`
 1. The "slow" way: via apache2
     - `npm run slow`
