@@ -1,1 +1,1 @@
-python -m cms.bin.test_server .
+python -m cms.bin.test_server . --port 8000
