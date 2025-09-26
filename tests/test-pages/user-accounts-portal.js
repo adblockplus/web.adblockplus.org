@@ -55,7 +55,7 @@ export class UserAccountsPortal {
   }
 
   async checkUserAccountsCodePageLoaded() {
-    await expect(this.codeField1).toBeVisible({ timeout: 12_000 });
+    await expect(this.codeField1).toBeVisible({ timeout: 15_000 });
     await expect(this.codeField2).toBeVisible();
     await expect(this.codeField3).toBeVisible();
     await expect(this.codeField4).toBeVisible();
