@@ -15,6 +15,20 @@ export class PremiumPage {
     return this.page.locator('#get-premium-monthly');
   }
 
+  // This element only appear with an extension that supports User Accounts
+  get signInLink() {
+    return this.page.getByRole('link', { name: 'Click to sign in' });
+  }
+
+  // These elements only appear with no extension installed or an old extension that does not support User Accounts
+  get activateHereLink() {
+    return this.page.getByRole('link', { name: 'Activate here' });
+  }
+
+  get activateFlowEmailHeading() {
+    return this.page.getByRole('heading', { name: 'Step 1: Enter your email address' });
+  }
+
   // This element only appears on /premium thank you page with no extension installed
   get installButton() {
     return this.page.locator('#install-button').first();

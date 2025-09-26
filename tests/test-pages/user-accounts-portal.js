@@ -9,6 +9,18 @@ export class UserAccountsPortal {
     this.page = page;
   }
 
+  get emailField() {
+    return this.page.locator('#enter-email-email');
+  }
+
+  get sendCodeButton() {
+    return this.page.locator('#enter-email-submit');
+  }
+
+  get codeField1() {
+    return this.page.locator('#finish-setup-input-1');
+  }
+
   get codeField1() {
     return this.page.locator('#finish-setup-input-1');
   }
@@ -35,6 +47,11 @@ export class UserAccountsPortal {
 
   get verifyButton() {
     return this.page.locator('#finish-setup-submit');
+  }
+
+  async checkUserAccountsEmailLoginPageLoaded() {
+    await expect(this.emailField).toBeVisible();
+    await expect(this.sendCodeButton).toBeVisible();
   }
 
   async checkUserAccountsCodePageLoaded() {
