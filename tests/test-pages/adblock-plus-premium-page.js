@@ -20,7 +20,7 @@ export class AdblockPlusPremiumPage {
     await this.page.goto(testURL);
     // Slow loading due to User Accounts flow for EN users and old flow for others
     // Can remove this eventually when all users on User Accounts flow
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(1_000);
   }
 
   async clickCheckout(frequency = 'Yearly') {

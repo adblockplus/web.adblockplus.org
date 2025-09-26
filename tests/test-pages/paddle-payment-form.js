@@ -1,5 +1,7 @@
 export class PaddlePaymentForm {
 
+  // This is a third party payment form owned by Paddle.com
+
   constructor(page) {
     this.page = page;
   }
