@@ -4,9 +4,9 @@ import { UpdatePage } from './test-pages/update-page.js';
 import { InstalledPage } from './test-pages/installed-page.js';
 import { BlockCookieBannersPage } from './test-pages/block-cookie-banners-page.js';
 import { AdblockPlusPremiumPage } from './test-pages/adblock-plus-premium-page.js';
-import { PaddlePaymentForm } from "./test-pages/paddle-payment-form.js";
-import { UserAccountsPortal } from "./test-pages/user-accounts-portal.js";
-import { EmailHelper } from "./test-helpers/email-helper.js";
+import { PaddlePaymentForm } from './test-pages/paddle-payment-form.js';
+import { UserAccountsPortal } from './test-pages/user-accounts-portal.js';
+import { EmailHelper } from './test-helpers/email-helper.js';
 import { ExtensionHelper } from './test-helpers/extension-helper.js';
 
 const paymentPages = [PremiumPage, UpdatePage, InstalledPage, BlockCookieBannersPage, AdblockPlusPremiumPage];

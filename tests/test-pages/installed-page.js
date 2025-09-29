@@ -15,7 +15,7 @@ export class InstalledPage {
   }
 
   get completePurchaseButton() {
-    return this.page.locator("#purchase-button");
+    return this.page.locator('#purchase-button');
   }
 
   async openPage(optionalParam = '') {
