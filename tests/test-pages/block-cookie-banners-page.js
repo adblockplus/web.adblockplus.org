@@ -7,11 +7,11 @@ export class BlockCookieBannersPage {
   }
 
   get yearlySubscriptionButton() {
-    return this.page.locator('#yearly-option');
+    return this.page.getByTestId('yearly-option');
   }
 
   get monthlySubscriptionButton() {
-    return this.page.locator('#monthly-option');
+    return this.page.getByTestId('monthly-option');
   }
 
   get checkoutNowButton() {
