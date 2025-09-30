@@ -7,11 +7,13 @@ export class BlockCookieBannersPage {
   }
 
   get yearlySubscriptionButton() {
-    return this.page.getByTestId('yearly-option');
+    // Struggled to set up ID due to page design, but for now this is the first button
+		return this.page.getByRole("button").first();
   }
 
   get monthlySubscriptionButton() {
-    return this.page.getByTestId('monthly-option');
+    // Struggled to set up ID due to page design, this is the second button
+		return this.page.getByRole("button").nth(1);
   }
 
   get checkoutNowButton() {
