@@ -15,7 +15,7 @@ export class PremiumPage {
     return this.page.locator('#get-premium-monthly');
   }
 
-  // This element only appear with an extension that supports User Accounts
+  // This element only appears with an extension that supports User Accounts
   get signInLink() {
     return this.page.getByRole('link', { name: 'Click to sign in' });
   }

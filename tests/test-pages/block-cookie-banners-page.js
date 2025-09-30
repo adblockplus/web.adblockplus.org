@@ -18,7 +18,7 @@ export class BlockCookieBannersPage {
     return this.page.getByRole('button', { name: 'Checkout Now' });
   }
 
-  // This element only appear with an extension that supports User Accounts
+  // This element only appears with an extension that supports User Accounts
   get signInLink() {
     return this.page.getByRole('link', { name: 'Click to sign in' });
   }
