@@ -54,8 +54,7 @@ test('Adblock Browser download link', async ({ page }) => {
 });
 
 test('Gnu.org link', { tag: ['@third_party_link'] }, async ({ page }) => {
-  await page.getByRole('link', { name: 'GPLv3+' }).click();
-  expect(page.url()).toContain('https://www.gnu.org/licenses/gpl-3.0.html');
+  await expect(page.getByRole('link', { name: 'GPLv3+' })).toHaveAttribute('href', 'https://www.gnu.org/licenses/gpl.html');
 });
 
 [
