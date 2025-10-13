@@ -22,3 +22,8 @@
 .content li ol > li:before { content: counters(item, ".") " "; }
 
 .content ol li p { margin: 0.5rem 0; }
+
+/* disclaimer shown on non-English terms pages */
+html[lang="en"] #disclaimer {
+  display: none;
+}

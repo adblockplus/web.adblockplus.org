@@ -1,126 +1,226 @@
 {
-  "abp-error-heading": {
-    "description": "heading\n{1}: ABP",
-    "message": "Was ist zu beachten, wenn ABP nicht ordnungsgemäß funktioniert?"
-  },
-  "abp-error-item-1": {
-    "description": "list item\n{1}: eyeo, {2}: Acceptable Ads, {3}: ABP",
-    "message": "Weder garantiert noch sichert eyeo zu, dass alle Anzeigen blockiert werden. Insbesondere <a>Acceptable Ads</a> werden in den Standardeinstellungen von ABP angezeigt."
-  },
-  "abp-error-item-2": {
-    "description": "list item",
-    "message": "<strong>Dir ist bekannt und du verstehst, dass die von dir verwendeten Filter in seltenen Fällen auch nicht werbliche Inhalte blockieren können. Das ist ein unerwünschter Nebeneffekt von einigen Filtern und lässt sich nicht komplett vermeiden.</strong>"
-  },
-  "abp-error-item-3": {
-    "description": "list item\n{1}: ABP, {2}: ABP, {3}: eyeo",
-    "message": "ABP selbst hat keine eigenständige Funktion. ABP blockiert solange nichts, bis du es über das Hinzufügen von <a>externen Filterlisten</a> dazu “anweist“. Bei Filterlisten handelt es sich im Wesentlichen um einen umfangreichen Regelsatz, der ABP mitteilt, welche Elemente einer Website blockiert werden sollen. eyeo hat keinerlei Einfluss auf diese Filterlisten."
-  },
-  "abp-error-paragraph-1": {
-    "description": "paragraph\n{1}: ABP, {2}: ABP, {3}: eyeo, {4}: ABP",
-    "message": "ABP wird ohne Gewährleistung und in der vorliegenden Form zur Verfügung gestellt. Du verwendest ABP auf eigenes Risiko. eyeo garantiert weder noch sichert eyeo zu, dass ABP deinen Anforderungen entspricht oder unterbrechungsfrei, rechtzeitig, sicher oder fehlerfrei funktioniert:"
-  },
-  "abp-error-paragraph-2": {
-    "description": "paragraph",
-    "message": "Solltest du Fehler oder nicht korrektes Blockieren feststellen, zum Beispiel das Blockieren von nicht werblichen Inhalten, <a>informiere</a> uns bitte umgehend."
-  },
-  "abp-subheading": {
-    "description": "sub-heading\n{1}: Adblock Plus",
-    "message": "{1}"
-  },
-  "acceptable-ads-heading": {
-    "description": "heading\n{1}: Acceptable Ads",
-    "message": "Was sind Acceptable Ads?"
-  },
-  "acceptable-ads-item-1": {
-    "description": "list item",
-    "message": "Teilnehmer können die Einhaltung der <a>Kriterien</a> nicht durch Zahlungen umgehen. Jede freigeschaltete Werbung muss den Kriterien entsprechen."
-  },
-  "acceptable-ads-item-2": {
-    "description": "list item\n{1}: Acceptable Ads",
-    "message": "Im Sinne der Transparenz findest du alle freigeschalteten Acceptable Ads in unserem <a>Forum</a> aufgelistet, damit unsere Nutzer Feedback abgeben können."
-  },
-  "acceptable-ads-item-3": {
-    "description": "list item\n{1}: Acceptable Ads",
-    "message": "Wir haben ein offenes Ohr für unsere Nutzer. Wird ein Vorschlag für Acceptable Ads von unserer Community aus berechtigten Gründen beanstandet, werden wir die Werbung aus der Allowlist entfernen."
-  },
-  "acceptable-ads-paragraph-1": {
-    "description": "paragraph\n{1}: ABP, {2}: Acceptable Ads, {3}: ABP",
-    "message": "In den Standardeinstellungen wird nicht aufdringliche Werbung bei der Nutzung von ABP nicht geblockt, um Webseiten zu unterstützen (<a>erfahre mehr</a>). Du kannst diese Funktion jederzeit deaktivieren, indem du das Häkchen entfernst (<a>Anleitung wie du Acceptable Ads deaktivieren kannst</a>). Dies beeinträchtigt die ABP Blocking-Funktionen nicht."
-  },
-  "acceptable-ads-paragraph-2": {
-    "description": "paragraph\n{1}: Acceptable Ads",
-    "message": "Die folgenden Regeln haben und werden stets ausnahmslos für alle gelten:"
-  },
-  "acceptable-ads-paragraph-3": {
-    "description": "paragraph",
-    "message": "Unser Open Source Produkt ist weiterhin kostenfrei, da wir großen Unternehmen die Allowlisting-Dienste in Rechnung stellen. Für die restlichen ca. 90 Prozent unserer Partner erbringen wir auch diese Dienstleistungen kostenlos."
-  },
-  "additional-information-heading": {
-    "description": "heading",
-    "message": "Zusätzliche Informationen"
-  },
-  "additional-information-paragraph-1": {
-    "description": "paragraph",
-    "message": "Diese Nutzungsbedingungen unterliegen den Gesetzen der Bundesrepublik Deutschland. Wenn du keinen Gerichtsstand in Deutschland oder einem anderen EU-Mitgliedsstaat besitzst, du nach dem Inkrafttreten dieser Nutzungsbedingungen deinen festen Wohnsitz ins Ausland verlegt hast oder dein Wohnsitz oder gewöhnlicher Aufenthaltsort zum Zeitpunkt eines gerichtlichen Vorgehens unbekannt ist, ist der alleinige Gerichtsstand für alle sich aus diesem Vertrag ergebenden Rechtsstreitigkeiten der Ort unserer Niederlassungen."
-  },
-  "additional-information-paragraph-2": {
-    "description": "paragraph",
-    "message": "Wir behalten uns das Recht vor, diese Nutzungsbedingungen in Zukunft zu verändern und anzupassen. Du kannst die aktuell geltende Version der Nutzungsbedingungen von unserer <a>Rechtsabteilung anfordern</a> oder auf unserer Webseite abrufen. Du wirst spätestens einen Monat vor dem Inkrafttreten neuer Nutzungsbedingungen benachrichtigt. Wenn du den neuen Nutzungsbedingungen nicht innerhalb eines Monats nach dem Inkrafttreten widersprichst, wird dies als Zustimmung zu den neuen Nutzungsbedingungen gewertet. Wir werden dich in geeigneter Form separat über die Bedeutung des einmonatigen Benachrichtigungszeitraums, dein Widerspruchsrecht und die juristischen Folgen einer Nichtablehnung informieren. Diese Änderungsregelung gilt nicht für Änderungen der wesentlichen Vertragspflichten der Parteien."
+  "title": {
+    "description": "meta",
+    "message": "NUTZUNGSBEDINGUNGEN"
   },
   "description": {
     "description": "meta",
     "message": "Diese Nutzungsbedingungen regeln den gestatteten Nutzungsumfang und die Bedingungen unter denen wir ABP anbieten."
   },
-  "free-meaning-heading": {
-    "description": "heading\n{1}: ABP",
-    "message": "Was bedeutet „ABP kann kostenlos genutzt werden“?"
-  },
-  "free-meaning-paragraph": {
-    "description": "paragraph\n{1}: ABP, {2}: GPLv3, {3}: ABP, {4}: GPLv3",
-    "message": "ABP ist ein Open-Source-Projekt, das unter der <a>GPLv3</a> lizenziert ist und von jedermann ohne Nutzungsgebühr verwendet werden kann. Die Nutzung von ABP unterliegt den Einschränkungen der <a>GPLv3</a>."
-  },
-  "introductory-paragraph": {
-    "description": "paragraph\n{1}: eyeo GmbH, {2}: Lichtstrasse 25, 50825 Cologne, Germany, {3}: eyeo, {4}: Adblock Plus, {5}: ABP, {6}: ABP, {7}: Chrome, {8}: Firefox, {9}: Internet Explorer, {10}: Maxthon, {11}: Opera, {12}: Safari, {13}: Yandex.Browser, {14}: ABP",
-    "message": "Wir, die eyeo GmbH, Lichtstr. 25, 50825 Köln („eyeo“; „wir“), haben die Browser-Erweiterung Adblock Plus („ABP“) entwickelt, die über unsere <a>Webseite</a> oder anderen Domains heruntergeladen werden kann. ABP ist eine kostenlose Erweiterung, die dir – neben <a>anderen Dingen</a> – eine auf dich angepasste Webnutzung ermöglicht. Du kannst störende Werbung blockieren, Tracking ausschalten und Domains blockieren, die dafür bekannt sind, Malware zu verbreiten. ABP ist für die Browser Chrome, Firefox, Internet Explorer, Maxthon, Opera, Safari und Yandex verfügbar. ABP unterstützt diverse Filterlisten, die du auswählen kannst, um unerwünschte Elemente auf einer Webseite zu blockieren."
-  },
-  "meaning-heading": {
-    "description": "heading",
-    "message": "Zweck dieses Dokuments"
-  },
-  "meaning-paragraph": {
-    "description": "paragraph\n{1}: ABP, {2}: ABP",
-    "message": "ABP wird dir als Nutzer kostenlos zur Verfügung gestellt – auch in Zukunft. Allerdings haben wir einen Punkt erreicht, an dem weitergehende Nutzungsbedingungen, wie diese, erforderlich sind. Das schützt dich und uns. Diese Nutzungsbedingungen gelten für deine Verwendung von ABP."
-  },
-  "not-permitted-heading": {
-    "description": "heading\n{1}: ABP",
-    "message": "Unzulässige Nutzung von ABP"
-  },
-  "not-permitted-item-1": {
-    "description": "list item\n{1}: ABP",
-    "message": "Du darfst ABP nicht auf Webseiten verwenden, bei denen du einer Nichtverwendung zugestimmt hast, z.B. wenn du Nutzungsbedingungen auf der jeweiligen Webseite akzeptiert hast, welche die Nutzung von Werbeblockern verbieten."
-  },
-  "not-permitted-item-2": {
-    "description": "list item\n{1}: ABP",
-    "message": "Es ist dir nicht gestattet, ABP in Verbindung mit Tools zu verwenden, mit denen wirksame technische Vorkehrungen umgangen werden können, die den Zugriff auf Webseiten kontrollieren."
-  },
-  "not-permitted-paragraph": {
+  "disclaimer": {
     "description": "paragraph",
-    "message": "Bitte beachte, dass manche Webseitenbetreiber die Nutzung ihrer Website mit einem Werbeblocker nicht gestatten. Dies ist zu respektieren, insbesondere in den folgenden Fällen:"
+    "message": "Die folgende Übersetzung unserer Nutzungsbedingungen dient lediglich der Übersichtlichkeit. Im Falle von Abweichungen zwischen den Übersetzungen ist die englische Version unserer Nutzungsbedingungen maßgebend."
   },
-  "print-alt": {
-    "description": "alt text",
-    "message": "Drucken"
-  },
-  "print-link": {
-    "description": "link text",
-    "message": "Drucken"
-  },
-  "title": {
-    "description": "meta",
-    "message": "Nutzungsbedingungen"
-  },
-  "tou-heading": {
+  "intro": {
     "description": "heading",
-    "message": "Nutzungsbedingungen"
+    "message": "EINFÜHRUNG"
+  },
+  "intro-1": {
+    "description": "paragraph",
+    "message": "<strong>Dienste.</strong> Wir haben einige verschiedene Werbefilter Desktop-Browsererweiterungen und mobile Anwendungen unter den Marken Adblock Plus und AdBlock Browser (zusammen die„Dienste“) entwickelt, die Sie über unsere Website und andere Domains herunterladen können. Mit diesen Diensten können Sie , unter anderem, Ihr Web-Erlebnis anpassen. Sie können mit diesen Diensten lästige Werbung blockieren, das Tracking deaktivieren, Domains blockieren, die dafür bekannt sind, Malware zu verbreiten, und vieles mehr. Weitere Informationen über die Dienste erhalten Sie <a>hier</a>."
+  },
+  "intro-2": {
+    "description": "paragraph",
+    "message": "<strong>Premium-Dienste.</strong> Es sind auch Premium-Abonnements für die Dienste  zum Kauf verfügbar. Zusätzlich zu den Funktionen, die in den kostenlosen Versionen der Dienste zur Verfügung stehen, enthalten die Abonnements für die Dienste auch  weitere Premium-Funktionen. Weitere Informationen zu den Abonnements der Dienste erhalten Sie <a>hier</a>."
+  },
+  "intro-3": {
+    "description": "paragraph",
+    "message": "<strong>Nutzungsbedingungen.</strong> Diese Nutzungsbedingungen (die <strong>„Bedingungen“</strong>) gelten für Ihre Nutzung der Dienste. Wenn Sie die Dienste (sofern zutreffend) herunterladen oder kaufen, bestätigen Sie, dass Sie diese Bedingungen gelesen haben und erklären sich damit einverstanden, dass Sie rechtlich an diese Bedingungen gebunden sind. Wenn Sie mit diesen Bedingungen nicht einverstanden sind, dürfen Sie die Dienste (sofern zutreffend) nicht herunterladen oder kaufen und/oder Sie müssen sie von Ihren Browsern und Ihren Geräten deinstallieren."
+  },
+  "intro-4": {
+    "description": "paragraph",
+    "message": "<strong>Datenschutz.</strong> Wir erheben und verarbeiten bestimmte personenbezogene Daten, um eine sichere, effiziente und benutzerfreundliche Nutzung der Dienste zu ermöglichen. Informationen darüber, wie wir Ihre personenbezogenen Daten erfassen und verarbeiten, erhalten Sie in unserer <a>Datenschutzrichtlinie</a>."
+  },
+  "intro-5": {
+    "description": "paragraph",
+    "message": "<strong>eyeo GmbH.</strong> Für die Zwecke dieser Bedingungen steht „eyeo“, „wir“, ‚uns‘ oder „unser“ für die eyeo GmbH, Kunibertsgasse 10, 50668 Köln, Deutschland, Amtsgericht Köln HRB 73508, Umsatzsteuer-ID: DE279292414, vertreten durch den Geschäftsführer Till Faida, Rufnummer: +49 (0)221 / 6430630, E-Mail-Adresse: info@eyeo.com."
+  },
+  "intro-6": {
+    "description": "paragraph",
+    "message": "<strong>Rechtsvorbehalt.</strong> Wir behalten uns das Recht vor, diese Bedingungen nach  eigenem Ermessen zu ändern. Sie werden mindestens einen Monat im Voraus über das Inkrafttreten neuer Bedingungen informiert (d. h. das Datum, an dem die neuen Bedingungen in Kraft treten). Wenn Sie den neuen Bedingungen nicht innerhalb eines Monats nach deren Inkrafttreten widersprechen, wird davon ausgegangen, dass Sie mit den neuen Bedingungen einverstanden sind. "
+  },
+  "license": {
+    "description": "heading",
+    "message": "Lizenz."
+  },
+  "license-1": {
+    "description": "paragraph",
+    "message": "<strong>Dienste mit Ausnahme von Adblock Plus für Safari iOS (Version 3.x oder höher)</strong>. Sofern nicht anders angegeben, sind die Dienste unter der <a>GPLv3</a> lizenziert. Die Bedingungen der GPLv3 werden durch Bezugnahme in diese Bedingungen aufgenommen und zu einem Teil dieser Bedingungen gemacht."
+  },
+  "license-2": {
+    "description": "paragraph",
+    "message": "<strong>Adblock Plus für Safari iOS (Version 3.x oder höher).</strong>"
+  },
+  "license-2-1t": {
+    "description": "paragraph",
+    "message": "<strong>Lizenzgewährung.</strong> Vorbehaltlich und unter der Bedingung, dass Sie sich an die Bedingungen dieser Bedingungen halten, gewähren wir Ihnen eine eingeschränkte, widerrufliche, nicht exklusive, nicht unterlizenzierbare, nicht übertragbare und nicht abtretbare Lizenz zum Herunterladen, Installieren und Verwenden einer Kopie der Adblock Plus für Safari iOS App (Version 3.x oder höher) für Ihren privaten, nicht-kommerziellen Gebrauch auf einem kompatiblen Gerät, das sich in Ihrem Besitz oder unter Ihrer Kontrolle befindet. Dies geschieht ausschließlich in dem Maße, wie es diese Bedingungen ausdrücklich erlauben und/oder erfordern."
+  },
+  "license-2-2": {
+    "description": "paragraph",
+    "message": "<strong>Eigentümerschaft.</strong> Sie erkennen an und erklären sich damit einverstanden, dass Ihnen eine Kopie von Adblock Plus für Safari iOS (Version 3.x oder höher) unter Lizenz zur Verfügung gestellt und nicht verkauft wird. Mit dem Erwerb von Adblock Plus für Safari iOS (Version 3.x oder höher), einschließlich einer Kopie davon, erwerben Sie weder ein Eigentumsrecht noch andere Rechte als das Recht, Ihre Kopie von Adblock Plus für Safari iOS (Version 3.x oder höher) in Übereinstimmung mit der Ihnen in diesen Bedingungen gewährten Lizenz zu nutzen. Vorbehaltlich der Ihnen in diesen Bedingungen ausdrücklich gewährten Rechte behalten wir und unsere Lizenzgeber alle Rechte, Titel und Interessen an Adblock Plus für Safari iOS (Version 3.x oder höher) vor, einschließlich aller Urheberrechte, Marken und anderer geistiger Eigentumsrechte, die sich daraus ergeben oder damit verbunden sind. Ferner behalten wir uns alle Rechte vor, die in diesen Bedingungen nicht ausdrücklich gewährt werden oder auf die wir verzichten."
+  },
+  "license-3": {
+    "description": "paragraph",
+    "message": "<strong>Feedback.</strong> Es steht Ihnen frei, uns Empfehlungen, Anregungen, Kommentare, Ideen, Vorschläge, Bewertungen, Rezensionen, Feedback, Eingaben oder andere Informationen im Zusammenhang mit den Diensten zukommen zu lassen (zusammenfassend <strong>„Feedback“</strong>), Sie sind jedoch nicht dazu verpflichtet. Sollten Sie uns Feedback zur Verfügung stellen, gewähren Sie uns und den mit uns verbundenen Unternehmen hiermit eine unbefristete, unwiderrufliche, weltweite Lizenz zur Nutzung des Feedbacks in jeglicher Form und zu jeglichem Zweck ohne Rückerstattung oder Entschädigung und ohne Verpflichtung zur Berichterstattung über eine solche Nutzung oder eine andere Einschränkung einer solchen Nutzung."
+  },
+  "non-permitted-use": {
+    "description": "paragraph",
+    "message": "<strong>Nicht erlaubte Nutzung der Dienste.</strong> Für einige Website-Betreiber ist der Besuch ihrer Websites durch Benutzer von Werbefiltern nicht gestattet. Sie stimmen zu, dass Sie die Dienste in den folgenden Fällen nicht nutzen werden:"
+  },
+  "non-permitted-use-1": {
+    "description": "paragraph",
+    "message": "Sie dürfen die Dienste nicht auf einer Website nutzen, auf der Sie zugestimmt haben, keine Tools für das Filtern von Werbung zu verwenden (z. B. indem Sie den allgemeinen Geschäftsbedingungen auf den jeweiligen Websites zugestimmt haben, keine Werbefilter zu verwenden)."
+  },
+  "non-permitted-use-2": {
+    "description": "paragraph",
+    "message": "Sie dürfen die Dienste nicht in Verbindung mit anderen Tools nutzen, die technologische Maßnahmen zur wirksamen Zugangskontrolle zu Websites oder bestimmten Website-Inhalten umgehen."
+  },
+  "acceptable-ads": {
+    "description": "paragraph",
+    "message": "<strong>Was sind Acceptable Ads?</strong> Standardmäßig werden nicht-aufdringliche Anzeigen nicht blockiert, wenn Sie die Dienste nutzen, um Websites zu unterstützen (<a>Mehr erfahren</a>). Sie können diese Funktion jederzeit deaktivieren (<a>Anleitung zur Deaktivierung von Acceptable Ads</a>). Die Deaktivierung von Acceptable Ads hat keinen Einfluss auf die anderen Funktionen der Dienste."
+  },
+  "not-working": {
+    "description": "headingh",
+    "message": "Was sollten Sie tun, wenn die Dienste nicht richtig funktionieren?"
+  },
+  "not-working-1": {
+    "description": "paragraph",
+    "message": "Mit Ausnahme aller gesetzlichen Rechte für digitale Produkte und Dienste, auf die Sie gegebenenfalls Anspruch haben und auf die Sie nicht von Rechts wegen verzichten können, werden die Dienste im Ist-Zustand und auf der Basis „wie verfügbar“ bereitgestellt. Sie nehmen zur Kenntnis, dass die Dienste beispielsweise während eines Wartungs- oder Reparaturfensters, eines Stromausfalls oder einer Unterbrechung des Internetdienstes nicht verfügbar sein können."
+  },
+  "not-working-2": {
+    "description": "paragraph",
+    "message": "Sie nutzen die Dienste auf eigenes Risiko. Wir machen keine Zusicherungen oder Garantien, dass die Dienste Ihren Anforderungen entsprechen oder ununterbrochen, rechtzeitig, sicher oder fehlerfrei funktionieren. Unbeschadet der Allgemeingültigkeit der vorherigen Aussagen geben wir auch keine Zusicherung oder Garantie, dass alle Anzeigen blockiert werden. Wir weisen darauf hin, dass <a>Acceptable Ads</a> über die Dienste als Teil ihrer Standardeinstellungen angezeigt werden."
+  },
+  "not-working-3": {
+    "description": "paragraph",
+    "message": "Sie nehmen zur Kenntnis und verstehen, dass die Filter, die in den Diensten verwendet werden, gelegentlich zu blockierten Inhalten führen können. Dabei handelt es sich um eine unerwünschte Nebenwirkung einiger Filter, die nicht vollständig vermieden werden kann."
+  },
+  "not-working-4": {
+    "description": "paragraph",
+    "message": "Die Dienste selbst verfügen über keinerlei Funktionalität. Sie blockieren so lange nichts, bis Sie ihnen „sagen“, dass sie gewisse Elemente einer Website blockieren sollen, indem Sie <a>externe Filterlisten</a> zu den Diensten hinzufügen. Die Filterlisten sind im Grunde ein umfangreiches Regelwerk, das die Dienste anweist, welche Elemente einer Website zu blockieren sind. Sie nehmen zur Kenntnis und verstehen, dass wir keine Kontrolle über Filterlisten haben."
+  },
+  "not-working-5": {
+    "description": "paragraph",
+    "message": "Wir möchten Sie ermutigen, Fehler oder eine fehlerhafte Blockierung der Dienste, die Sie feststellen, unverzüglich zu <a>melden</a>. Diese Meldungen helfen uns, die Dienste zu verbessern."
+  },
+  "liability": {
+    "description": "heading",
+    "message": "Haftungsbeschränkung."
+  },
+  "liability-1": {
+    "description": "paragraph",
+    "message": "Mit Ausnahme von Ansprüchen auf Schadensersatz aus der Verletzung des Lebens, des Körpers, der Gesundheit oder aus der Verletzung wesentlicher Vertragspflichten (sog. Kardinalpflichten) haftet eyeo nur für Schäden, soweit diese auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung von eyeo, seiner gesetzlichen Vertreter oder seiner Mittler beruhen. Als wesentliche Vertragspflichten gelten solche, deren Erfüllung zur Erreichung des Ziels des Vertrages notwendig ist."
+  },
+  "liability-2": {
+    "description": "paragraph",
+    "message": "Im Falle der Verletzung wesentlicher Vertragspflichten ist die Haftung von eyeo auf den vertragstypischen, vorhersehbaren Schaden begrenzt, soweit dieser durch einfache Fahrlässigkeit verursacht wurde, es sei denn, Ihre Ansprüche auf Schadensersatz basieren auf der Verletzung des Lebens, des Körpers oder der Gesundheit."
+  },
+  "liability-3": {
+    "description": "paragraph",
+    "message": "Die vorstehend in den Ziffern 6.1 und 6.2 genannten Haftungsbeschränkungen gelten auch für die gesetzlichen Vertreter, Mitarbeiter und Mittler von eyeo, sofern Ansprüche direkt gegen diese geltend gemacht werden."
+  },
+  "liability-4": {
+    "description": "paragraph",
+    "message": "Die Haftungsbeschränkungen in den vorstehenden Ziffern 6.1 und 6.2 gelten nicht, wenn eyeo eine Garantie für die Beschaffenheit der Dienste übernommen oder einen Mangel an den Diensten arglistig verschwiegen hat. Die in den vorstehenden Ziffern 6.1 und 6.2 genannten Haftungsbeschränkungen gelten auch dann nicht, wenn eyeo und Sie eine gesonderte, schriftliche Vereinbarung über die Beschaffenheit der Dienste getroffen haben. Die Bestimmungen des deutschen Produkthaftungsgesetzes bleiben unberührt."
+  },
+  "premium": {
+    "description": "heading",
+    "message": "Premium-Dienste – Nutzungsbedingungen."
+  },
+  "premium-application": {
+    "description": "paragraph",
+    "message": "<strong>Anwendungsbereich.</strong> Die in diesem Abschnitt 7 genannten allgemeinen Geschäftsbedingungen gelten nur für Ihre Nutzung der Abonnements der Dienste. Bei Widersprüchen zwischen den allgemeinen Geschäftsbedingungen dieses Abschnitts 7 und den anderen allgemeinen Geschäftsbedingungen dieser Bedingungen gelten die allgemeinen Geschäftsbedingungen dieses Abschnitts 7, jedoch ausschließlich in Bezug auf den Gegenstand dieses Abschnitts."
+  },
+  "premium-right": {
+    "description": "paragraph",
+    "message": "<strong>Recht auf Vertragsrücktritt nach deutschem Recht.</strong>"
+  },
+  "premium-right-1": {
+    "description": "paragraph",
+    "message": "Nach deutschem Recht steht Ihnen beim Abschluss von Verträgen über bestimmte Verbrauchergeschäfte ein gesetzliches Widerrufsrecht zu. Dieses Recht kann vorbehaltlich des nachfolgenden Abschnitts 7.2.2 jederzeit innerhalb von 14 Tagen nach Abschluss des Vertrags über die Transaktion ausgeübt werden (die <strong>„Widerrufsfrist“</strong>). Zur Klarstellung: Ihre gesetzliche Widerrufsfrist beginnt an dem Tag, an dem Sie eine E-Mail-Bestätigung über Ihren Kauf des Abonnements der Dienste erhalten."
+  },
+  "premium-right-2": {
+    "description": "paragraph",
+    "message": "Bei Verträgen über die Lieferung von digitalen Inhalten, die nicht auf einem materiellen Datenträger basieren, erlischt Ihr gesetzliches Widerrufsrecht nach deutschem Recht bei Eintritt folgender Ereignisse:"
+  },
+  "premium-right-2-1": {
+    "description": "paragraph",
+    "message": "der Verkäufer (z. B. wir) hat mit der Erfüllung des Vertrags begonnen;"
+  },
+  "premium-right-2-2": {
+    "description": "paragraph",
+    "message": "der Verbraucher (z. B. Sie) hat sich ausdrücklich damit einverstanden erklärt, dass der Verkäufer vor Ablauf der Widerrufsfrist mit der Erfüllung des Vertrages beginnen kann;"
+  },
+  "premium-right-2-3": {
+    "description": "paragraph",
+    "message": "bei Beginn der Vertragserfüllung, sofern der Verbraucher bestätigt hat, dass ihm bekannt ist, dass sein Widerrufsrecht aufgrund seiner Zustimmung gemäß Abschnitt 7.2.2.2 erlöschen wird; und"
+  },
+  "premium-right-2-4": {
+    "description": "paragraph",
+    "message": "der Verkäufer hat dem Verbraucher eine Bestätigung gemäß § 312(f) des deutschen Bürgerlichen Gesetzbuches zur Verfügung gestellt."
+  },
+  "multiple-installs": {
+    "description": "paragraph",
+    "message": "<strong>Mehrere Installationen.</strong> Während des Gültigkeitszeitraums Ihres Abonnements für die Dienste können Sie das Abonnement auf all Ihren unterstützten Geräten installieren und erneut installieren, ohne dass Ihnen zusätzliche Kosten entstehen."
+  },
+  "premium-termination": {
+    "description": "heading",
+    "message": "Premium-Dienste – Laufzeit und Kündigung."
+  },
+  "premium-termination-1": {
+    "description": "paragraph",
+    "message": "Diese Bedingungen werden in Bezug auf Ihre Nutzung des Abonnements für die Dienste an dem Tag wirksam, an dem Sie eine E-Mail-Bestätigung über den Kauf des Abonnements erhalten, und bleiben in Kraft, bis Ihr Abonnement nicht mehr aktiv ist."
+  },
+  "premium-termination-2": {
+    "description": "paragraph",
+    "message": "Am Ende eines jeden Abonnementzeitraums verlängert sich Ihr Abonnement für die Dienste automatisch um weitere Abonnementzeiträume, die jeweils der Dauer des gerade abgelaufenen Abonnementzeitraums entsprechen. Zum Beispiel:"
+  },
+  "premium-termination-2-1": {
+    "description": "paragraph",
+    "message": "Bei einem 1-Jahres-Abonnement verlängert sich Ihr Abonnement für die Dienste automatisch um jeweils ein weiteres Jahr."
+  },
+  "premium-termination-2-2": {
+    "description": "paragraph",
+    "message": "Bei einer Abonnementlaufzeit von 1 Monat verlängert sich Ihr Abonnement für die Dienste automatisch jeweils Laufzeiten von einem (1) weiteren Monat."
+  },
+  "premium-termination-3": {
+    "description": "paragraph",
+    "message": "Der zum Zeitpunkt der Verlängerung gültige Preis für Abonnements der Dienste wird Ihnen in Rechnung gestellt."
+  },
+  "premium-termination-4": {
+    "description": "paragraph",
+    "message": "Sie können Ihr Abonnement für die Dienste jederzeit während der Laufzeit Ihres Abonnements kündigen."
+  },
+  "premium-termination-5": {
+    "description": "paragraph",
+    "message": "Unser Recht (d. h. Ihres und das von eyeo) zur außerordentlichen Kündigung dieser Bedingungen aus wichtigem Grund bleibt unberührt. Von einem wichtigen Grund ist insbesondere dann auszugehen, wenn eine Partei vorsätzlich oder fahrlässig eine wesentliche Pflicht aus diesem Vertrag verletzt und deshalb der kündigenden Partei ein Festhalten am Vertrag nicht mehr zugemutet werden kann."
+  },
+  "dispute-resolution": {
+    "description": "paragraph",
+    "message": "<strong>Streitbeilegung.</strong> Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Diese kann über den folgenden Link aufgerufen werden: https://ec.europa.eu/consumers/odr. Die eyeo GmbH ist weder zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle verpflichtet noch dazu bereit."
+  },
+  "final-provisions": {
+    "description": "paragraph",
+    "message": "Schlussbestimmungen"
+  },
+  "final-provisions-1": {
+    "description": "paragraph",
+    "message": "Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss der Bestimmungen des UN-Übereinkommens über Verträge über den internationalen Warenkauf. Sollte sich Ihr gewöhnlicher Aufenthaltsort zu dem Zeitpunkt, an dem Sie die Dienste (wie zutreffend) heruntergeladen oder gekauft haben, jedoch in einer Rechtsordnung befinden, die die Anwendung ihrer eigenen Gesetze auf diese Bedingungen vorschreibt, so gelten diese Gesetze für diese Bedingungen."
+  },
+  "final-provisions-2": {
+    "description": "paragraph",
+    "message": "Ab dem Zeitpunkt, an dem diese Bedingungen für jeden von uns (d. h. für Sie und eyeo) wirksam werden, bestehen keine mündlichen Nebenabreden und/oder Ergänzungen. Nebenabreden, Änderungen oder Ergänzungen müssen zu ihrer Wirksamkeit schriftlich erfolgen und von einem bevollmächtigten Vertreter jeder Partei unterzeichnet werden. Ein Verzicht auf das Schriftformerfordernis muss ebenfalls schriftlich erfolgen."
+  },
+  "final-provisions-3": {
+    "description": "paragraph",
+    "message": "Im Falle, dass ein Umstand, der sich unserer Kontrolle entzieht, uns daran hindert, Ihnen die Dienste  in Übereinstimmung mit diesen Bedingungen zu erbringen (jeweils ein <strong>„Ereignis höherer Gewalt“</strong>), nehmen Sie zur Kenntnis und erklären sich damit einverstanden, dass wir für den Umfang und die Dauer eines solchen Ereignisses höherer Gewalt keine Verpflichtung im Rahmen dieser Bedingungen haben."
+  },
+  "final-provisions-4": {
+    "description": "paragraph",
+    "message": "Sollte eine Bestimmung dieser Bedingungen ungültig sein oder werden, so bleibt die Gültigkeit der übrigen Bestimmungen davon unberührt."
+  },
+  "last-updated": {
+    "description": "paragraph",
+    "message": "Zuletzt aktualisiert: 13. August 2025"
   }
 }
