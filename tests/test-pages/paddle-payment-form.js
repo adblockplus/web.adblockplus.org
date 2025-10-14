@@ -44,7 +44,10 @@ export class PaddlePaymentForm {
 
   async makeTestPayment(email) {
     await this.emailAddressField.fill(email);
-    await this.zipPostcodeField.fill('11111');
+    if (await this.zipPostcodeField.isVisible()) {
+      // Postcode field does not appear for all countries
+      await this.zipPostcodeField.fill('11111');
+    }
     await this.continueButton.click();
     await this.cardNumberField.fill('4242424242424242');
     await this.nameOnCardField.fill('Test Payment');
