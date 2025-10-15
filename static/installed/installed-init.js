@@ -32,16 +32,10 @@ function initLegacyPurchaseFlow() {
  * Limit new flow to English only for now.
  */
 async function initPurchaseFlow() {
-  const meetsCriteria = "en" === adblock.settings.locale;
+  const hasMimimumExtensionVersion = await checkExtensionVersion();
 
-  if (meetsCriteria) {
-    const hasMimimumExtensionVersion = await checkExtensionVersion();
-
-    if (hasMimimumExtensionVersion) {
-      initUserAccountsFlow();
-    } else {
-      initLegacyPurchaseFlow();
-    }
+  if (hasMimimumExtensionVersion) {
+    initUserAccountsFlow();
   } else {
     initLegacyPurchaseFlow();
   }

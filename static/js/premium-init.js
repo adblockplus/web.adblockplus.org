@@ -37,8 +37,7 @@ async function initPremiumFlow() {
                         !adblock.query.has("premium-checkout__flow") &&
                         !adblock.query.has("restore-purchase") &&
                         !adblock.query.has("already-contributed") &&
-                        !adblock.query.has("_ptxn") &&
-                        "en" === adblock.settings.locale;
+                        !adblock.query.has("_ptxn");
 
   if (meetsCriteria) {
     const hasMimimumExtensionVersion = await checkExtensionVersion();
