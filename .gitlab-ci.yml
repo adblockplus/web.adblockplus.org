@@ -328,6 +328,8 @@ all_website_tests:
   stage: test
   only:
     - schedules
+  tags:
+    - eyeo-medium-runner
   image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
     - npm ci
