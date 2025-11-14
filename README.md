@@ -7,7 +7,7 @@ If you prefer not to use VSCode or Docker then you can see `.devcontainer/Docker
 There are two ways to "run" this website:
 
 1. The "fast" way: via eyeo/cms development test server
-    - clone [cms server](https://gitlab.com/eyeo/websites/cms.git) 
+    - clone [cms server](https://gitlab.com/eyeo/websites/cms.git)
     - in your `.zshrc` set path to your cms project `export PYTHONPATH="$HOME/<path>/cms:$PYTHONPATH"`
     - `npm run fast`
 1. The "slow" way: via apache2
@@ -90,12 +90,19 @@ When premium is purchased before ABP is installed then `premium-checkout__instal
 
 ### Pipeline test runs
 
-The following test jobs run in the GitLab pipeline:
-- all_browsers - this is a subset of tests that run for all browsers (Chromium, Edge, Chrome, Safari, and Firefox)
-- chromium_tests - this is all of the remaining tests (except third party link tests) run on Chromium only
-- platform_tests - this runs a downstream pipeline of the https://gitlab.com/eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests and will eventually be phased out
+These test jobs run automatically in the GitLab pipeline:
+- browser_tests - this is a subset of tests that run for all browsers (Chromium, Edge, Chrome, Safari, and Firefox)
+- chromium_tests - this is all of the remaining tests (except third party link and visual regression tests) run on Chromium only
+
+These test jobs are available in the Gitlab pipeline to be manually run as needed:
+- platform_tests - this runs a downstream pipeline of https://gitlab.com/eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests and will eventually be phased out
+- visual_regression_tests - these compare snapshots of pages against baseline snapshots
 
 Additionally there is a daily scheduled run of all tests on all browsers.
+
+## Investigating pipeline test fails
+
+Can download the artifacts for any test fails and use the trace.zip file from the test-results folder with https://trace.playwright.dev to view detailed results.
 
 ### Running tests locally
 
@@ -110,6 +117,8 @@ Running tests in Terminal from adblockplus.org folder:
   - Running on all browsers may also require installation of Chrome/Edge: `npx playwright install chrome msedge`
 - Possible projects currently:
   - chromium
+  - "Google Chrome"
+  - "Microsoft Edge"
   - firefox
   - webkit - this will run tests on Safari
 
@@ -122,3 +131,10 @@ Can also run tests only for specific tags:
 Available tags:
 - @all_browsers - these tests have different behaviour on different browsers
 - @third_party_link - these tests can fail due to third party sites being down
+- @visual_regression - compares snapshots for each page against an approved baseline snapshot
+
+## Updating visual regression snapshots
+
+Currently visual regression snapshots are only included in the repository for Linux Chromium. In order to update these snapshots can download the visual_regression_tests:archive artifact after the test job has failed. Rename the actual file to be simply the browser name and then replace the existing file in the linux folder for the page.
+
+If running snapshot tests locally and no existing snapshot exists, Playwright will automatically create the baseline snapshot. These can then be used as the baseline for future runs locally. If running locally and there are snapshot differences and want to confirm new changes can run `npx playwright test --grep @visual_regression --update-snapshots` to update all snapshots for that environment.
