@@ -138,3 +138,11 @@ Available tags:
 Currently visual regression snapshots are only included in the repository for Linux Chromium. In order to update these snapshots can download the visual_regression_tests:archive artifact after the test job has failed. Rename the actual file to be simply the browser name and then replace the existing file in the linux folder for the page.
 
 If running snapshot tests locally and no existing snapshot exists, Playwright will automatically create the baseline snapshot. These can then be used as the baseline for future runs locally. If running locally and there are snapshot differences and want to confirm new changes can run `npx playwright test --grep @visual_regression --update-snapshots` to update all snapshots for that environment.
+
+## Mocking the extension data
+
+It is possible to mock the extension data for tests that require the extension to be installed. `mockExtensionData` can be found in /test-helpers/extension-helper.js and there is an example of it in use in /premium.spec.js.
+
+Simply use `await ExtensionHelper.mockExtensionData(page, '4.31.0', false);` before opening the page to insert the relevant extension data into the page. You can include any extension version that may be needed, and true or false to indicate whether Premium should be enabled.
+
+Some tests may require full extension installation, for example for links that open extension pages. This is not yet set up for the Adblock Plus website, but the AdBlock website has this enabled as a testWithExtension fixture in extension-helper.js so it would be easy to copy this example for Adblock Plus tests when needed. Mocking the extension data is preferable when suitable for faster test runs.
