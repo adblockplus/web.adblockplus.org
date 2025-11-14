@@ -1,7 +1,13 @@
 import { test, expect } from '@playwright/test';
+import { VisualRegressionHelper } from './test-helpers/visual-regression-helper.js';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('');
+});
+
+test('Homepage displays as expected', { tag: ['@visual_regression'] }, async ({ page, browserName, channel }) => {
+  const snapshotName = await VisualRegressionHelper.PrepareForVisualRegression(test, page, browserName, channel);
+  await expect(page).toHaveScreenshot(`${snapshotName}.png`, { fullPage: true, maxDiffPixels: 408 });
 });
 
 test('Cookie Banner link', async ({ page, browserName }) => {
