@@ -10,7 +10,8 @@ import { EmailHelper } from './test-helpers/email-helper.js';
 import { ExtensionHelper } from './test-helpers/extension-helper.js';
 
 const paymentPages = [PremiumPage, UpdatePage, InstalledPage, BlockCookieBannersPage, AdblockPlusPremiumPage];
-const paymentPageParameters = paymentPages.flatMap(paymentPage => ({ paymentPage }));
+const flow = ['Old', 'New'];
+const paymentPageParameters = paymentPages.flatMap(paymentPage => flow.map(flow => ({ paymentPage, flow: flow })));
 const frequency = ['Monthly', 'Yearly'];
 const testParameters  = paymentPages.flatMap(paymentPage => frequency.map(freq => ({ paymentPage, frequency: freq })));
 const paymentPagesWithSignIn = [PremiumPage, BlockCookieBannersPage, AdblockPlusPremiumPage];
@@ -123,10 +124,13 @@ testParameters.forEach(({ paymentPage, frequency }) => {
   });
 });
 
-paymentPageParameters.forEach(({ paymentPage }) => {
-  test('Ensure past due card update not blocked due to multi subs on ' + paymentPage.name, async ({ page }) => {
+paymentPageParameters.forEach(({ paymentPage, flow }) => {
+  test('Ensure past due card update not blocked due to ' + flow + ' multi subs on ' + paymentPage.name, async ({ page }) => {
     const premiumPaymentPage = new paymentPage(page);
     const paddlePaymentForm = new PaddlePaymentForm(page);
+    if (flow === 'New') {
+      await ExtensionHelper.mockExtensionData(page, '4.28.0', true);
+    }
     // Include a Paddle past due payment in URL
     await premiumPaymentPage.openPage('_ptxn=txn_01jy3p1czw4zk0rce047q73ggj');
     var activeSubMessage = false;
