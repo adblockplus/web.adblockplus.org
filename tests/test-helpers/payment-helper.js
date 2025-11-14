@@ -1,4 +1,44 @@
 import { expect } from '@playwright/test';
+import { PremiumPage } from '../test-pages/premium-page.js';
+import { UpdatePage } from '../test-pages/update-page.js';
+import { InstalledPage } from '../test-pages/installed-page.js';
+import { BlockCookieBannersPage } from '../test-pages/block-cookie-banners-page.js';
+import { AdblockPlusPremiumPage } from '../test-pages/adblock-plus-premium-page.js';
+
+export class PaymentTestParameters {
+
+  // Test parameters that can be used to run a test against every payment page and payment button
+  // See premium-payments.spec.js for examples of how to use
+
+  get paymentPages() {
+    const paymentPages = [PremiumPage, UpdatePage, InstalledPage, BlockCookieBannersPage, AdblockPlusPremiumPage];
+    return paymentPages;
+  }
+
+  get paymentPageParameters() {
+    const paymentPageParameters = this.paymentPages.flatMap(paymentPage => ({ paymentPage }));
+    return paymentPageParameters;
+  }
+
+  get paymentPageButtonParameters() {
+    const frequency = ['Monthly', 'Yearly'];
+    const paymentPageButtonParameters  = this.paymentPages.flatMap(paymentPage => frequency.map(freq => ({ paymentPage, frequency: freq })));
+    return paymentPageButtonParameters;
+  }
+
+  get paymentPageFlowParameters() {
+    const flow = ['Old', 'New'];
+    const paymentPageFlowParameters  = this.paymentPages.flatMap(paymentPage => flow.map(flow => ({ paymentPage, flow: flow })));
+    return paymentPageFlowParameters;
+  }
+
+  get signInParameters() {
+    const paymentPagesWithSignIn = [PremiumPage, BlockCookieBannersPage, AdblockPlusPremiumPage];
+    const signInParameters  = paymentPagesWithSignIn.flatMap(paymentPage => ({ paymentPage }));
+    return signInParameters;
+  }
+
+}
 
 export class PaddlePaymentForm {
 

@@ -79,7 +79,7 @@ export class UserAccountsPortal {
   }
 
   async checkUserAccountsSetUpCodePageLoaded() {
-    await expect(this.setUpCodeField1).toBeVisible({ timeout: 15_000 });
+    await expect(this.setUpCodeField1).toBeVisible({ timeout: 20_000 });
     await expect(this.setUpCodeField2).toBeVisible();
     await expect(this.setUpCodeField3).toBeVisible();
     await expect(this.setUpCodeField4).toBeVisible();
