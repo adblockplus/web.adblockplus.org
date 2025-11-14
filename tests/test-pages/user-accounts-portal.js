@@ -17,36 +17,60 @@ export class UserAccountsPortal {
     return this.page.locator('#enter-email-submit');
   }
 
-  get codeField1() {
+  get setUpCodeField1() {
     return this.page.locator('#finish-setup-input-1');
   }
 
-  get codeField1() {
-    return this.page.locator('#finish-setup-input-1');
-  }
-
-  get codeField2() {
+  get setUpCodeField2() {
     return this.page.locator('#finish-setup-input-2');
   }
 
-  get codeField3() {
+  get setUpCodeField3() {
     return this.page.locator('#finish-setup-input-3');
   }
 
-  get codeField4() {
+  get setUpCodeField4() {
     return this.page.locator('#finish-setup-input-4');
   }
 
-  get codeField5() {
+  get setUpCodeField5() {
     return this.page.locator('#finish-setup-input-5');
   }
 
-  get codeField6() {
+  get setUpCodeField6() {
     return this.page.locator('#finish-setup-input-6');
   }
 
-  get verifyButton() {
+  get setUpVerifyButton() {
     return this.page.locator('#finish-setup-submit');
+  }
+
+  get restoreCodeField1() {
+    return this.page.locator('#enter-otp-input-1');
+  }
+
+  get restoreCodeField2() {
+    return this.page.locator('#enter-otp-input-2');
+  }
+
+  get restoreCodeField3() {
+    return this.page.locator('#enter-otp-input-3');
+  }
+
+  get restoreCodeField4() {
+    return this.page.locator('#enter-otp-input-4');
+  }
+
+  get restoreCodeField5() {
+    return this.page.locator('#enter-otp-input-5');
+  }
+
+  get restoreCodeField6() {
+    return this.page.locator('#enter-otp-input-6');
+  }
+
+  get restoreVerifyButton() {
+    return this.page.locator('#enter-otp-submit');
   }
 
   async checkUserAccountsEmailLoginPageLoaded() {
@@ -54,14 +78,24 @@ export class UserAccountsPortal {
     await expect(this.sendCodeButton).toBeVisible();
   }
 
-  async checkUserAccountsCodePageLoaded() {
-    await expect(this.codeField1).toBeVisible({ timeout: 15_000 });
-    await expect(this.codeField2).toBeVisible();
-    await expect(this.codeField3).toBeVisible();
-    await expect(this.codeField4).toBeVisible();
-    await expect(this.codeField5).toBeVisible();
-    await expect(this.codeField6).toBeVisible();
-    await expect(this.verifyButton).toBeVisible();
+  async checkUserAccountsSetUpCodePageLoaded() {
+    await expect(this.setUpCodeField1).toBeVisible({ timeout: 15_000 });
+    await expect(this.setUpCodeField2).toBeVisible();
+    await expect(this.setUpCodeField3).toBeVisible();
+    await expect(this.setUpCodeField4).toBeVisible();
+    await expect(this.setUpCodeField5).toBeVisible();
+    await expect(this.setUpCodeField6).toBeVisible();
+    await expect(this.setUpVerifyButton).toBeVisible();
+  }
+
+  async checkUserAccountsRestoreCodePageLoaded() {
+    await expect(this.restoreCodeField1).toBeVisible({ timeout: 15_000 });
+    await expect(this.restoreCodeField2).toBeVisible();
+    await expect(this.restoreCodeField3).toBeVisible();
+    await expect(this.restoreCodeField4).toBeVisible();
+    await expect(this.restoreCodeField5).toBeVisible();
+    await expect(this.restoreCodeField6).toBeVisible();
+    await expect(this.restoreVerifyButton).toBeVisible();
   }
 
 }
