@@ -50,7 +50,7 @@ paymentPageButtonParameters.forEach(({ paymentPage, frequency }) => {
     await premiumPaymentPage.clickCheckout(frequency);
     await paddlePaymentForm.fillInEmailPage(email);
     const responsePromise = page.waitForResponse(response => response.url().startsWith('https://api.ua-qa.eyeo.it/v1/subscriptions/abp/has-active?customerId=')
-      && response.status() === 200 && response.request().method() === 'GET', { timeout: 10_000 });
+      && response.status() === 200 && response.request().method() === 'GET', { timeout: 15_000 });
     await paddlePaymentForm.continueButton.click();
     const response = await responsePromise;
     const jsonResponse = await response.json();
