@@ -346,7 +346,7 @@ browser_tests:
     - npx playwright install chrome msedge --with-deps
     - *playwright-test-script
 
-visual-regression-tests:
+visual_regression_tests:
   <<: *playwright-base
   variables:
     TEST_ARGS: '--project chromium --grep @visual_regression'
