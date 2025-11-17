@@ -11,7 +11,11 @@ dist
 public
 access.log
 error.log
+
+# Playwright
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+tests/snapshots/**/darwin/
+tests/test-helpers/extension-downloads/

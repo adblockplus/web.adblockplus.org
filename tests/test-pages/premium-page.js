@@ -34,6 +34,19 @@ export class PremiumPage {
     return this.page.locator('#install-button').first();
   }
 
+  // These elements only appear on /premium when extension already has Premium enabled
+  get thankYouBanner() {
+    return this.page.getByRole('heading', { name: 'Thank you for subscribing to AdBlock Plus Premium' });
+  }
+
+  get settingsButton() {
+    return this.page.getByRole("link", { name: "Settings" });
+  }
+
+  get helpCenterButton() {
+    return this.page.getByRole("link", { name: "Help Center" });
+  }
+
   async openPage(optionalParam = '') {
     const pageURL = '/en/premium';
     const testURL = await URLHelper.addURLParameter(pageURL, optionalParam);
@@ -53,7 +66,7 @@ export class PremiumPage {
   }
 
   async checkThankYouPageLoadsNoExtension() {
-    await expect(this.installButton).toBeVisible({ timeout: 8_000 });
+    await expect(this.installButton).toBeVisible({ timeout: 15_000 });
   }
 
 }

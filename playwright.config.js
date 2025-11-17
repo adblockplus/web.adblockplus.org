@@ -13,6 +13,8 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
+  snapshotDir: './tests/snapshots',
+  snapshotPathTemplate: '{snapshotDir}/{testFilePath}/{platform}/{arg}{ext}',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -29,7 +31,7 @@ export default defineConfig({
     baseURL: process.env.STAGING === '1' ? process.env.STAGING_URL + '/en' : 'https://adblockplus.org/en',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */

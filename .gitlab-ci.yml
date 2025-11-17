@@ -290,54 +290,85 @@ deploy_firebase_hosting:production:
   only:
     - master
 
-chromium_tests:
+# ============================================================================
+# TEST JOBS
+# ============================================================================
+
+.playwright-artifacts: &playwright-artifacts
+  artifacts:
+    when: always
+    paths:
+     - test-results/
+     - playwright-report/
+    expire_in: 1 week
+
+.playwright-base: &playwright-base
   stage: test
+  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  before_script:
+    - npm ci
+    - export CI_RUN=1
+  <<: *playwright-artifacts
+
+# This only works with TEST_ARGS that do not contain quotes
+.playwright-test-script: &playwright-test-script
+  |-
+    if [ -z "${REVIEW_URL}" ]; then
+      echo "${CI_JOB_NAME} will run on getadblock.com"
+      npx playwright test ${TEST_ARGS} --retries=0
+    else
+      echo "${CI_JOB_NAME} will run on ${REVIEW_URL}"
+      STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test ${TEST_ARGS} --retries=0
+    fi
+
+chromium_tests:
+  <<: *playwright-base
   except:
     - schedules
-  image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
-    - npm ci
     - npx playwright install --with-deps
     - |-
       if [ -z "${REVIEW_URL}" ]; then
         echo "The tests will run on Chromium on adblockplus.org"
-        npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
+        npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers|@visual_regression" --retries=0
       else
         echo "The tests will run on Chromium using ${REVIEW_URL}"
-        STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers" --retries=0
+        STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers|@visual_regression" --retries=0
       fi
 
-all_browser_tests:
-  stage: test
+browser_tests:
+  <<: *playwright-base
   except:
     - schedules
-  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  variables:
+    TEST_ARGS: '--grep @all_browsers'
   script:
-    - npm ci
     - npx playwright install chrome msedge --with-deps
-    - |-
-      if [ -z "${REVIEW_URL}" ]; then
-        echo "The browser tests will run on adblockplus.org"
-        npx playwright test --grep @all_browsers --retries=0
-      else
-        echo "The browser tests will run using ${REVIEW_URL}"
-        STAGING=1 STAGING_URL=${REVIEW_URL} npx playwright test --grep @all_browsers --retries=0
-      fi
+    - *playwright-test-script
+
+visual_regression_tests:
+  <<: *playwright-base
+  variables:
+    TEST_ARGS: '--project chromium --grep @visual_regression'
+  when: manual
+  allow_failure: true
+  script:
+    - npx playwright install --with-deps
+    - *playwright-test-script
 
 all_website_tests:
-  stage: test
+  <<: *playwright-base
   only:
     - schedules
   tags:
     - eyeo-medium-runner
-  image: mcr.microsoft.com/playwright:v1.53.2-jammy
   script:
-    - npm ci
     - npx playwright install chrome msedge --with-deps
     - npx playwright test
 
 platform_tests:
   stage: test
+  when: manual
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
   variables:
