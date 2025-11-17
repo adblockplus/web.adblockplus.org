@@ -139,6 +139,8 @@ Currently visual regression snapshots are only included in the repository for Li
 
 If running snapshot tests locally and no existing snapshot exists, Playwright will automatically create the baseline snapshot. These can then be used as the baseline for future runs locally. If running locally and there are snapshot differences and want to confirm new changes can run `npx playwright test --grep @visual_regression --update-snapshots` to update all snapshots for that environment.
 
+For some visual regression tests it can be useful to open the page for a specific country to control changing details such as currency and pricing. Can use the ?country=DE parameter in the URL as shown in premium.spec.js: `await premiumPage.openPage('country=DE');`
+
 ## Mocking the extension data
 
 It is possible to mock the extension data for tests that require the extension to be installed. `mockExtensionData` can be found in /test-helpers/extension-helper.js and there is an example of it in use in /premium.spec.js.

@@ -7,7 +7,7 @@ import { ExtensionHelper } from './test-helpers/extension-helper.js';
 
 test('Premium page displays as expected', { tag: ['@visual_regression'] }, async ({ page, browserName, channel }) => {
   const premiumPage = new PremiumPage(page);
-  await premiumPage.openPage('geo=DE');
+  await premiumPage.openPage('country=DE');
   const snapshotName = await VisualRegressionHelper.PrepareForVisualRegression(test, page, browserName, channel);
   await expect(page).toHaveScreenshot(`${snapshotName}.png`, { fullPage: true, maxDiffPixels: 61 });
 });
