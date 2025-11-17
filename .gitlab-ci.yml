@@ -368,7 +368,9 @@ all_website_tests:
 
 platform_tests:
   stage: test
-  when: manual
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - when: manual
   trigger:
     project: eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests
   variables:
