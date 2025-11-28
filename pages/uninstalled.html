@@ -16,7 +16,6 @@ template=minimal
       adblock.logScriptError("experiment-uninstall", error);
     }
   })()</script>
-  <? include optimizely ?>
   <link href="/css/uninstalled.css" rel="stylesheet">
   <link href="/css/survey-form.css" rel="stylesheet">
 </head>
@@ -192,7 +191,7 @@ template=minimal
 <script src="/js/vendor/bowser.js"></script>
 <script src="/js/install-button.js"></script>
 <script>(()=>{
-  
+
   const form = document.getElementById("reasons-form");
 
   // pass along query parameters from uninstall to uninstall submit

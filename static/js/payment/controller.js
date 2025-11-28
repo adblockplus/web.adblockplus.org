@@ -49,9 +49,9 @@ function onDOMReady()
   var script = doc.createElement("script");
   script.onload = onConfigLoad;
   script.onerror = onConfigLoad;
-  
+
   var URLParams = new URLSearchParams(location.search);
-  
+
   var report = new URLSearchParams({
     an: URLParams.get('an'), // addon name
     av: URLParams.get('av'), // addon version
@@ -63,7 +63,7 @@ function onDOMReady()
     cid: session.slice(2,3), // payment page id
     sid: session // payment session id
   }).toString();
-  
+
   script.src = "/js/payment/config/load.js?" + report;
   doc.body.appendChild(script);
 }
@@ -75,7 +75,7 @@ var stripeCardModal;
 function onConfigLoad()
 {
   document.documentElement.classList.add("payment-form-loaded");
-  
+
   form = ns.setupForm(ns.config);
   form.onSubmit(onFormSubmit);
 
@@ -95,7 +95,7 @@ function onFormSubmit(data)
     hasIntendedPayment = true;
   }
 
-  // Storing information to be consumed by optimizely and hotjar experiments
+  // Storing information to be consumed by hotjar experiments
   if (ns.shouldStoreContributionInfo) {
     localStorage.setItem("contributionInfo", JSON.stringify({
       "amount": data.amount,
@@ -136,7 +136,7 @@ function onStripeConfirm()
   var data = _.extend(
     {custom: session},
     form.data("stripe"),
-    stripeCardModal.data()    
+    stripeCardModal.data()
   );
 
   switch (data.frequency) {
@@ -157,7 +157,7 @@ function onStripeConfirm()
     payment = ns.stripeCardPayment(data);
   else
     payment = ns.stripeCardSubscription(data);
-  
+
   return payment
   .then(onStripeComplete)
   .catch(onStripeError)
@@ -184,13 +184,13 @@ function onStripeError(error)
       message = i18n["error_declined"];
     else if (typeof error.message == "string" && error.message.length)
       message = error.message;
-  
+
   stripeCardModal.showError(message);
 }
 
 if (
-  doc.readyState === "complete" 
-  || doc.readyState === "loaded" 
+  doc.readyState === "complete"
+  || doc.readyState === "loaded"
   || doc.readyState === "interactive"
 ) {
   onDOMReady();
