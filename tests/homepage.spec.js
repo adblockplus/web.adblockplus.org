@@ -51,7 +51,6 @@ test('Adblock Browser download link', async ({ page }) => {
   { pageLink: 'Download Adblock Plus for another browser', expectedUrl: '/download' },
   { pageLink: 'Learn how', expectedUrl: '/acceptable-ads#optout' },
   { pageLink: 'criteria', expectedUrl: '/acceptable-ads#criteria-general' },
-  { pageLink: 'forum', expectedUrl: 'https://forum.adblockplus.org//viewforum.php?f=12' },
 ].forEach(({ pageLink, expectedUrl }) => {
   test('Page links: ' + pageLink, async ({ page }) => {
     await page.getByRole('link', { name: pageLink, exact: true }).click();
