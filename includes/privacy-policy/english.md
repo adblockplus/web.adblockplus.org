@@ -30,9 +30,10 @@ The following privacy notice shall provide you with a general overview about the
             - Active filter lists
             - Access to browser settings and installed plug-ins
             - Enabled extensions (voluntary)
-    - Donations:
+    - Payments:
     {: .has-horizontal-list .semicolon-separated }
-        - Amount of donation
+        - Email address
+        - Amount of payment
         - Browser language
         - Extension name and version
         - Browser type and version
@@ -42,13 +43,17 @@ The following privacy notice shall provide you with a general overview about the
         - Filter subscriptions enabled/disabled
         - Identifying information about the devices that connect to the payment service provider
         - IP address, metadata associated with the request such as language, user-agent and additional meta data associated with the message such as type of message, content, language
+    - Accounts:
+    {: .has-horizontal-list .semicolon-separated }
+        - Email address
+        - One-time-password sent to the email address provided (for authentication purposes)
     - For all mobile products and Adblock Plus for Safari on macOS
         - Crash reports:
         {: .has-horizontal-list .semicolon-separated }
             - UUID and crash traces in order to help a user associate crash data with specific instances of our products
             - Instance IDS
             - Device type
-            - application ID
+            - Application ID
             - App and/or extension version
             - Free space
             - Free ram
@@ -60,6 +65,11 @@ The following privacy notice shall provide you with a general overview about the
             - Which platforms you are using
             - Location data based on your IP address (country)
             - Anonymous interaction events (like button clicks)
+    - For the Adblock Plus iPhone/iPad app:
+    {: .has-horizontal-list .semicolon-separated }
+        - Block count for number of ads and cookie banners blocked (stored locally, does not leave your device)
+        - DNS resolution requests (for users who have enabled DNS-based blocking)
+        - Anonymous device identifier
     - Adblock Browser, based on Chromium, provides Chromium-specific functionality which, however, may send data to Google.
     - Adblock Browser for iOS (automatically):
     {: .has-horizontal-list .semicolon-separated }
@@ -95,7 +105,6 @@ The following privacy notice shall provide you with a general overview about the
         - Session ID information necessary to test and operate our websites
     - Voluntary:
     {: .has-horizontal-list .semicolon-separated }
-        - Forum registration data
         - Email address
         - Data you provide in comments
         - Feedback and filter data
@@ -106,7 +115,7 @@ The following privacy notice shall provide you with a general overview about the
     - Version of Adblock Plus and other applicable tech specifications
     - URLs the user is having issues with
     - Adblock Plus issues
-    - Address and transaction ID numbers for donation refunds (voluntary)
+    - Address and transaction ID numbers for payment refunds (voluntary)
 1. In connection with social media
     - On our social media pages: Usage profiles
     - Link / button to social media in Adblock Plus: Amount of blocked elements
@@ -122,21 +131,22 @@ List of techniques and tools we use for data collection.
     - Sending issue reports
     - Sending crash reports
     - In our mobile products and Adblock Plus for Safari on macOS: via Firebase Analytics
+    - In the Adblock Plus iPhone/iPad app: via DNS resolution requests (for users who have enabled DNS-based blocking)
     - Emergency notification checks
-    - Referring to an uninstall or donation webpage
-    - Data in connection with receiving donations
+    - Referring to an uninstall or subscription campaign webpage
+    - Data in connection with receiving payments
     - Log files in connection with Updates page
+    - Data sent by you, such as your email address when signing up for a subscription
 2. On our websites:
 {: .has-horizontal-list .semicolon-separated }
     - Cookies
     - Log files
-    - Data, like name and / or email address and / or communication data, sent by you when using our forum or blog, using the “BECOME A PARTNER” button, when sharing manually added filters or when applying for a job
+    - Data, like name and / or email address and / or communication data, sent by you when purchasing a subscription, using the "BECOME A PARTNER" button, when sharing manually added filters or when applying for a job
     - For non-EU/EEA users only: Via Google Analytics
 3. For user support:
 {: .has-horizontal-list .semicolon-separated }
     - Via email sent by you
     - From user reviews in App Stores
-    - From forum posts
     - From Browser Web Store reviews
     - From social platforms like Facebook and Twitter
 4. Data you provide to us via social media
@@ -148,13 +158,14 @@ List of techniques and tools we use for data collection.
 ### How and why do we process your data? {: #why-we-process-data }
 
 - In order to inform you about urgent issues in connection with our products.
+- To provide product features where such data processing is necessary for product functionality.
 - To improve and to evaluate our products by processing and analyzing subscription downloads, extension updates, emergency downloads, uninstallation information, and issue reports you send to us.
 - For technical purposes, such as, but not limited to, preventing security attacks, to improve our website / products, to ensure website / product security.
 - To analyze aggregated website logs, and for non-EU/EEA users analytics data, to improve our website.
-- For communication and assistance purposes in our forum and blog.
+- For communication and assistance purposes in our customer support portal and blog.
 - For discussing and negotiating a partnership with you.
 - For assisting you with any issues you may have with our products.
-- For receiving donations that you send to us and for fraud detection.
+- For receiving payments that you send to us and for fraud detection.
 - To promote our products.
 - In connection with our social media pages, social networks use the data for market research and advertising purposes.
 - For evaluating your application for recruitment purposes and offering you jobs.
@@ -178,14 +189,14 @@ We process your personal data in compliance with the European General Data Prote
 3. For a period of two (2) months:
 {: .has-horizontal-list .semicolon-separated }
     - event tracking
-4. Blog and forum data as long as the respective comment / account exists
+4. Blog data as long as the respective comment exists
 5. All user support data is deleted one (1) year after closing the respective support case.
 6. For a period of three (3) months: 
 {: .has-horizontal-list .semicolon-separated }
     - Application data after rejection of a candidate
-7. For a period of 10 years: 
+7. For a period of 10 years:
 {: .has-horizontal-list .semicolon-separated }
-    - Donation report data
+    - Payment report data
     - Partner data
 
  **Note**: “Aggregated usage statistics”, such as analytics data and other data without any connection to a single user, may be retained beyond these periods.
@@ -232,7 +243,7 @@ The following information applies to the collection, processing and use of perso
 
 ### General notes {: #general-notes }
 
-Your protection and data confidentiality is of utmost importance to us ("eyeo", "we", "our"). We take the protection of your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) (“GDPR”), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites.
+Your protection and data confidentiality is of utmost importance to us ("eyeo", "we", "our"). We take the protection of your personal data very seriously and collect as little data as possible. Nevertheless, collecting data helps our products and websites function correctly, and allows us to communicate with you. Our general privacy policy is to avoid collecting more data than necessary. Collected data is anonymized, if possible, and deleted when no longer needed. This privacy policy shall inform you about the collection, processing and use of your personal data. We gather and use personal data firmly within the provisions of the European General Data Protection Regulation (Regulation (EU) 2016/679) ("GDPR"), the applicable EU Laws and German national data protection laws. In the following text we will inform you about the specific data, the scope and the purpose of the collection and use of personal data by <fix>eyeo</fix> when using our products and visiting our websites.
 
 ### Who is responsible for data collection and processing (contacts)? {: #who-is-responsible }
 
@@ -242,8 +253,8 @@ The legal person responsible for the collection, processing and / or use of pers
 
 <address>
 eyeo GmbH<br>
-Lichtstr. 25<br>
-50825 Cologne<br>
+Kunibertsgasse 10<br>
+50668 Cologne<br>
 Germany<br>
 </address>
 
@@ -265,8 +276,6 @@ If you have any questions regarding your personal data, please do not hesitate t
 
 The purpose of data protection is to protect personal data. Personal data means any information relating to an identified or identifiable natural person ("data subject"). An identifiable natural person is one who can be identified, directly or indirectly, in particular, by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.
 
-This information includes, for example, details such as name and email address, but also nicknames and information in your forum posts.
-
 ### What is the purpose of data processing and what is the legal basis? {: #what-is-purpose }
 
 #### Purpose of data collection and processing {: #purpose }
@@ -278,8 +287,8 @@ We collect and process your personal data solely for the following purposes:
 1. We collect and process your personal data, such as website logs and data relating to subscription downloads, extension update checks (such data is collected and processed by Google, see [Google Privacy Policy](https://www.google.com/policies/privacy/)), emergency notifications and Issue Reporter data sent by you, for technical purposes. We mainly collect and process such data to prevent security attacks and are thus able to provide our services to you in a secure and data-efficient manner.
 1. We collect and process your personal data relating to subscription downloads, extension updates, emergency downloads, and Issue Reporter data sent to us by you to improve and evaluate our products.
 1. We send emergency notifications in order to inform you about urgent issues in connection with our products.
-1. We collect and process the data you have provided us with in our blog and forum in order to communicate with you and / or to assist you.
-1. We collect data in connection with donations you have made to support us for accounting purposes.
+1. We collect and process the data you have provided us with in our blog and customer support portal in order to communicate with you and / or to assist you.
+1. We collect data in connection with payments you have made for accounting purposes.
 
 #### Legal basis of data collection and processing {: #legal-basis }
 
@@ -291,7 +300,7 @@ We will always ask for your consent to collect and process your personal data fo
 
 #### Collection and processing is necessary for taking steps prior to enter into a contract - Art. 6 (1) b GDPR {: #contract-permission }
 
-The collection and processing of your personal data may be necessary for the performance of a contract to which you may be a party. Prior to entering into such a contract, the collection and processing of your personal data may also be necessary in order to take steps at your request. This applies for installation (data gathered by the browser and / or app store) and the use of our products.
+The collection and processing of your personal data may be necessary for the performance of a contract to which you may be a party. Prior to entering into such a contract, the collection and processing of your personal data may also be necessary in order to take steps at your request. This applies for installation (data gathered by the browser and / or app store), account and payment information, and the use of our products.
 
 Also, all data you provide us with in connection with your application is necessary for the sole purpose of hiring new employees and therefore evaluating and selecting applicants including for example setting up and conducting interviews and tests, evaluating and assessing the results thereto and as is otherwise needed in the recruitment processes including the final recruitment (meaning taking steps prior to enter into an employment contract). If you don’t send us your application data, your application cannot be taken into account.
 
@@ -320,7 +329,7 @@ For the following services, we use non-EU/EEA service providers. We have careful
 
 We use external service provider tools for email (GSuite); for non-EU/EEA users only to analyze your use of our Websites ([Google Analytics](#google-analytics)); for non-EU/EEA users only for A/B testing based on the analytics data ([Google Optimize](#google-optimize)) and for crash reports, anonymous interaction events and event tracking in our mobile products and on Adblock Plus for Safari on macOS ([Firebase](https://firebase.google.com/)). These services are provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. In order to ensure an adequate level of data protection, we have entered into a data processing agreement including the EU Standard Contractual Clauses (processors) – Commission Decision 2021/914 of 4 June 2021. You can access a copy of this agreement [here](https://business.safety.google/adsprocessorterms/) and [here](https://cloud.google.com/terms/data-processing-addendum).
 
-We use external service provider tools to receive donations and analyze fraudulent behavior in connection with donations.. This service is provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For more information, please [consult Stripe’s cookie policy](https://stripe.com/cookies-policy/legal).
+We use external service provider tools to receive payments and analyze fraudulent behavior in connection with payments. Some payment services are provided by Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA. Some cookies are saved to your browser before proceeding with payment transactions in order to prevent fraudulent use of their services. Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For more information, please [consult Stripe's cookie policy](https://stripe.com/cookies-policy/legal).
 
 We use the services of RevenueCat to manage in-app purchases. We only provide RevenueCat with the minimum amount of data required to process your purchase in accordance with the [Data Processing Addendum](https://www.revenuecat.com/dpa/) we entered into with RevenueCat, Inc. For more details, please see [RevenueCat’s privacy policy](https://www.revenuecat.com/privacy/).
 
@@ -328,7 +337,7 @@ We also use external service provider tools for user support. These services are
 
 We may store data on servers in countries outside the European Union, but only provided that an adequate level of protection is guaranteed and recognized by a specific adequacy decision of the European Commission (pursuant to Art. 45 GDPR). You can access the list of countries that the European Commission has recognized as providing adequate protection [here](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
 
-We use external service provider tools to help us optimize our performance in running donation campaigns and first run page. This service is provided by MoEngage, 315 Montgomery Street, 10th floor, San Francisco, 94104, USA. We have entered into data processing agreements with MoEngage including the EU Standard Contractual Clauses (processors) – Commission Decision 2021/914 of 4 June 2021.
+We use external service provider tools to help us optimize our performance in running premium campaigns and first run page. This service is provided by MoEngage, 315 Montgomery Street, 10th floor, San Francisco, 94104, USA. We have entered into data processing agreements with MoEngage including the EU Standard Contractual Clauses (processors) – Commission Decision 2021/914 of 4 June 2021.
 
 ### What rights do you have? {: #your-rights-long }
 
@@ -371,8 +380,8 @@ To exercise your rights, please contact us via <a data-mask='{"href": "bWFpbHRvO
 
 <address>
 eyeo GmbH<br>
-Lichtstr. 25<br>
-50825 Cologne<br>
+Kunibertsgasse 10<br>
+50668 Cologne<br>
 Germany<br>
 </address>
 
@@ -389,7 +398,7 @@ When you use the Adblock Plus browser extension, we collect and process the foll
 
 ##### Extension update checks {: #update-checks }
 
-Your browser periodically checks for updates of all your extensions, including Adblock Plus. Some general information - browser version, extension version, operating system, date of last update and your IP address - are transmitted during an update check. After a successful update, a website may be automatically opened. Data stored on this website includes your IP address (solely for the purpose of IT security and only accessible by eyeo's IT Security team), the time at which the request was made, the web address accessed, the browser identifier and the referring page. This data (IP address only aggregated via hashing with a daily changing salt) is used to generate usage statistics as well as to investigate potential security issues and forum or blog spam. Detailed logs are retained for a period of 30 days, after which only the aggregated usage statistics that cannot be connected to a single user remain. Everything else is deleted.
+Your browser periodically checks for updates of all your extensions, including Adblock Plus. Some general information - browser version, extension version, operating system, date of last update and your IP address - are transmitted during an update check. After a successful update, a website may be automatically opened. Data stored on this website includes your IP address (solely for the purpose of IT security and only accessible by eyeo's IT Security team), the time at which the request was made, the web address accessed, the browser identifier and the referring page. This data (IP address only aggregated via hashing with a daily changing salt) is used to generate usage statistics as well as to investigate potential security issues.. Detailed logs are retained for a period of 30 days, after which only the aggregated usage statistics that cannot be connected to a single user remain. Everything else is deleted.
 
 Updates for Adblock Plus for Android and Internet Explorer are handled by the Adblock Plus website and the data transmitted is subject to [the Adblock Plus Privacy Policy](#website-logs). Updates to Adblock Plus for Firefox are handled by the Mozilla website and are subject to the [Mozilla's Privacy Policy](https://www.mozilla.org/privacy/). Updates to Adblock Plus for Chrome are handled by the Google Web Store website and are subject to the [Google Privacy Policy](https://www.google.com/policies/privacy/). Updates to Adblock Plus for Opera are handled by the Opera Add-ons website and are subject to the [Opera Privacy Policy](http://www.opera.com/privacy#web). Updates to Adblock Plus for Safari are handled by the Safari Extensions website and are subject to the [Apple Privacy Policy](https://www.apple.com/privacy/privacy-policy/).
 
@@ -404,7 +413,7 @@ Furthermore, if a subscription download fails on several consecutive occasions, 
 
 Adblock Plus allows you to send issue reports that will be temporarily stored on the AdblockPlus.org website. These reports contain information required to investigate the issue including the Adblock Plus version, browser version, browser build number, if any, URL of referred page, if any, URL of page that opened the given webpage, address of the webpage where the problem is visible, blockable items on the webpage, matching filters, active subscriptions, type of issue report (i.e. false positive or false negative), and a screenshot of the issue (we recommend that you remove particularly sensitive sections of the page before the report is sent). Parameter values are removed from all transmitted addresses to avoid unintentionally leaking private information.
 
-You can  voluntarily:
+You can voluntarily:
 
 - Provide your email address in order for us to request more information from you or to update you on the issue.
 - Include an optional comment about the issue.
@@ -435,15 +444,17 @@ Adblock Plus contains an emergency notification mechanism that allows it to noti
 
 Adblock Plus may make further requests to AdblockPlus.org as required. For example, a documentation link is clicked or the full list of filter subscriptions needs to be downloaded. These requests are subject to this [Privacy Policy](https://adblockplus.org/privacy).
 
-##### Uninstallation, donation information, payments
+##### Uninstallation, payments
 
-When uninstalling Adblock Plus for desktop and/or donating to us, you will be referred to an uninstallation and/or donation webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, version parameter of filter lists, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
+When uninstalling Adblock Plus for desktop and/or making a payment to us, you will be referred to an uninstallation and/or payment webpage where the following information is automatically collected: Language of your browser, extension name and version, browser type and version, operating system and version, number of notification downloads, information whether the local storage of the extension configuration is corrupted, version parameter of filter lists, and whether any filter subscriptions have been enabled or disabled at the time of uninstallation. On a voluntary basis, you can provide us with your reason why you have uninstalled Adblock Plus. We need this information to improve our products.
 
-For donations and payments, we work with payment providers (Stripe, Inc., PayPal S.à r.l. et Cie, S.C.A., Paddle.com Inc). These providers are responsible for processing the data you enter in regards to the  donations and payments you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. In addition, Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For further information as to how these providers handle the processing of personal data, please refer to Stripe’s [Privacy Policy](https://stripe.com/privacy), PayPal’s [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full) and Paddle's [Privacy Policy](https://www.paddle.com/legal/privacy). We store the reports the payment service providers present us with for accounting purposes. You can request the deletion of your payment data [via email](mailto:privacy@eyeo.com).
+For payments, we work with payment providers (Stripe, Inc., PayPal S.à r.l. et Cie, S.C.A., Paddle Payments Limited. These providers are responsible for processing the data you enter in regards to the payments you send to us. Processing includes all data you enter into the respective form, as but not limited to, the type of card, cardholder name, credit card details (except full card number), address, country, zip/postal code, and email address. In addition, Stripe collects identifying information about the devices that connect to its services and uses this information for fraud detection. For further information as to how these providers handle the processing of personal data, please refer to Stripe's [Privacy Policy](https://stripe.com/privacy), PayPal's [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full) and Paddle's [Privacy Policy](https://www.paddle.com/legal/privacy). We store the reports the payment service providers present us with for accounting purposes. You can request the deletion of your payment data <a data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>via email</a>.
+
+When you provide your email address in order to purchase an Adblock Plus Premium subscription, we use this email address to create an account for you. We use this email address to manage your subscription and to send you one-time-passcodes to login to your account. We may also contact you with occasional transactional messages regarding your account. By logging into your account using your email address and one-time-passcode, you can manage your subscription and account settings.
 
 ##### Data retention {: #data-retention }
 
-Data related to subscription downloads, extension update checks, emergency notifications, Issue Reporter data (as well as the full reports and their associated data), and data in connection with uninstallations and donations are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. Donation report data is stored for a period of 10 years in accordance with the German tax law requirements.
+Data related to subscription downloads, extension update checks, emergency notifications, Issue Reporter data (as well as the full reports and their associated data), and data in connection with uninstallations are automatically removed after 30 days. Only a subset of the data will be kept longer. This includes only the country code of users filing an issue (extracted from the IP address) for analytic purposes, which is stored separately from the full reports and cannot be connected to an individual after deletion of the full reports. Payment report data is stored for a period of 10 years in accordance with the German tax law requirements.
 
 Adblock Plus stores some data in [the Firefox profile](http://support.mozilla.com/kb/Profiles) on your computer. Adblock Plus never transmits this data to any servers, but other extensions and services, such as [Firefox Sync](https://mozilla.com/privacy-policy/), may do so. Most of the data (your preferences, filter subscriptions and custom filters) is unobjectionable privacy-wise. However, filter hit statistics and recent issue reports could be used to reconstruct your browsing history. Adblock Plus treats this information identically to how history data is treated by the browser; this data isn't stored if you are using [private browsing mode](http://support.mozilla.com/kb/Private+Browsing) and is removed if you choose to clear your browsing history.
 
@@ -498,6 +509,32 @@ This data is solely used to improve our mobile products and Adblock Plus for Saf
 
 Event tracking with IDs is retained for two (2) months. Aggregated reports may be retained for a longer period.
 
+#### Accounts and payments
+
+When you provide your email address in order to purchase a subscription, we use this email address to create an account for you. We use this email address to manage your subscription and to send you one-time-passcodes to login to your account. We may also contact you with occasional transactional messages regarding your account. By logging into your account using your email address and one-time-passcode, you can manage your subscription and account settings.
+
+###### Data retention
+
+Account information is stored as long as your account is active. Payment records will be stored as long as necessary to comply with tax/financial reporting obligations.
+
+#### Adblock Plus iPhone/iPad App
+
+##### Adblocking in Safari
+
+* When you opt in to adblocking in Safari, we count the total number of ads and cookie banners blocked in Safari. These statistics are displayed within the app to show you the blocking effectiveness of the app. This information is stored locally and does not leave your device.
+
+##### DNS-based tracker blocking and adblocking
+
+* DNS-based tracker blocking and adblocking features are only available to users who change their device's DNS settings to use the Adblock Plus DNS.
+* When you opt in to DNS blocking and change your device's DNS settings to use the Adblock Plus DNS, your device's DNS requests will be processed via Adblock Plus's cloud DNS servers. This processing is necessary in order to intercept and block DNS requests sent by your device to advertising and tracking domains, which allows us to block ads and/or trackers across your device.
+* Adblock Plus's cloud DNS infrastructure is provided by Whalebone s.r.o., an EU-based leader in DNS cybersecurity solutions. We have a data processing agreement with Whalebone in accordance with the requirements of the GDPR.
+* Although Whalebone does not store DNS request data, Adblock Plus may access DNS request data as it is processed by Whalebone to conduct aggregate analysis for debugging and product improvement purposes, and to provide you with device-specific statistics about the app's blocking effectiveness. DNS requests related to domains that are blocked are aggregated on a per-device basis using the unique ID assigned to your device.
+* When you opt in to DNS blocking, your device will be assigned a unique, anonymous ID. This ID allows us to set configuration preferences for your device to ensure you receive the filtering services you have selected. This ID is also used to produce statistics of tracking and/or advertising domains blocked on your device. These statistics are displayed within the app to show you the blocking effectiveness of the app.
+
+##### Push Notifications
+
+* When you consent to receive push notifications on your device, we generate a unique token that is used to send push notifications to your device. These messages may include information about the app's functionality, updates about your premium trial status, and occasional promotional messages. You may turn off push notifications at any time in your device's system settings.
+
 #### Adblock Browser for iOS {: #adblock-browser-ios }
 
 ##### Crash and error reporter {: #crash-error-reporter }
@@ -537,11 +574,11 @@ When using our websites, as AdblockPlus.org and AdblockBrowser.org (Websites), w
 
 ###### Website logs {: #website-logs }
 
-All requests to our Websites are recorded in the website logs. Data stored includes your IP address (solely for the purpose of IT security and only accessible by eyeo's IT Security team), information about the request itself including date and time, domain and file path, request body and query, information about the response include response code and bytes, and session ID information needed to test and operate the website. This data (IP address only aggregated via hashing with a daily changing salt) is used to generate usage statistics as well as to investigate potential security issues and forum or blog spam. Detailed logs are retained for a period of 30 days, after which only the aggregated usage statistics that cannot be connected to a single user remain. Everything else is deleted.
+All requests to our Websites are recorded in the website logs. Data stored includes your IP address (solely for the purpose of IT security and only accessible by eyeo's IT Security team), information about the request itself including date and time, domain and file path, request body and query, information about the response include response code and bytes, and session ID information needed to test and operate the website. This data (IP address only aggregated via hashing with a daily changing salt) is used to generate usage statistics as well as to investigate potential security issues.. Detailed logs are retained for a period of 30 days, after which only the aggregated usage statistics that cannot be connected to a single user remain. Everything else is deleted.
 
 ###### Data retention {: #retention-website-requests }
 
-The request to our Websites, including your IP address, is stored when you create a forum post, submit a contact form, or add a blog comment. This allows administrators to effectively address spam content and security breaches. All stored requests are deleted after 30 days.
+The request to our Websites, including your IP address, is stored when you submit a contact form or add a blog comment. This allows administrators to effectively address spam content and security breaches. All stored requests are deleted after 30 days.
 
 ###### Necessary cookies {: #cookies }
 
@@ -551,10 +588,6 @@ We use cookies to recognize signed-in users or to store your privacy preferences
 
 We use Google Analytics, a web analytics service from Google Inc. ("Google"), on our Websites. Google Analytics uses so-called "cookies" (text files stored on your computer that enable us to analyze your use of our Websites). Information generated by the cookies (including your abbreviated IP address) is transmitted to and stored at a Google server in the United States. Google uses this information to assess your use of our Websites, to compile activity reports, and to provide more services connected with the use of our Websites. It is possible that Google may transmit this information to third parties if required by law, or if third parties process this information on behalf of Google.
 
-**You can deactivate Google Analytics if you do not want to help us improve our products.** But please note that in this case, a cookie will be set that stores your deactivation choice. This cookie is considered a “necessary cookie” and can’t be deactivated.
-{: .eea-element }
-
-<? include cookie/settings-link ?>
 
 ###### For non-EU/EEA users only: Google Tag Manager {: #google-tag-manager }
 
@@ -566,34 +599,9 @@ Our Website uses the web analysis and optimization service Google Optimize provi
 
 Google Optimize uses cookies, which enable us to optimize and analyze your use of our Website. The information generated by these cookies about your use of our Website is usually transferred to a Google server in the USA and stored there. We use Google Optimize with activated IP anonymization so that your IP address is shortened by Google within member states of the European Union, or within the European Economic Area. Only in exceptional cases will the full IP address be transmitted to a Google server in the USA and shortened there. Google will use this information for the purpose of evaluating your use of our Website, compiling reports on optimization tests and related website activity and providing other services relating to website activity and internet usage.
 
-**You can deactivate Google Optimize if you do not want to help us improve our products.** But please note that in this case, a cookie will be set that stores your deactivation choice. This cookie is considered a “necessary cookie” and can’t be deactivated.
-{: .eea-element }
-
-<? include cookie/settings-link ?>
-
-###### On adblock.ai {: #adblock-ai }
-
-On our website adblock.ai, we automatically collect the following information.
-
-**Facebook Messenger integration**
-{: #facebook-messenger-integration }
-
-We have embedded the Facebook Messenger functionality, owned by Facebook, Inc., into the adblock.ai website to enable you to submit screenshots to our bot (“Adblock AI”) via Messenger, without having to access the Facebook website. Please note that Messenger is hosted by Facebook. We have disabled the function that would otherwise send personal data to Facebook when you access our website; however, when you click on the button to help train Adblock AI with your screenshots (“START NOW”) you will activate Messenger. Only then will some personal data, including IP address, be transferred to Facebook. For more information, please review Facebook's [Privacy Policy](https://facebook.com/privacy/explanation). **If you do not want to transfer data to Facebook, please do not click on the button to send information to Adblock AI through Facebook Messenger.**
-
 ##### Information you give to us on a voluntary basis {: #voluntary-info }
 
-The Adblock Plus [forum](https://adblockplus.org/forum/) and [blog](https://adblockplus.org/blog/) are both publicly available to all visitors. If you write a post or comment, we collect and process personal data as follows:
-
-###### Forum registration {: #forum-registration }
-
-We use personal data you entered during forum registration to form the user's public profile, which is visible to other forum visitors for the purpose that users can associate forum posts with a particular person.
-
-Passwords and email addresses will not be visible to other forum visitors.
-
-- Passwords go through one-way encryption before they are stored on the server.
-- Email addresses are only displayed in the public profile if explicitly agreed to. By default, they are only used for the sending of notifications to which you subscribed.
-
-**Note:** Registration is not required to read articles in the forum and you can delete your account at any time.
+The Adblock Plus [blog](https://adblockplus.org/blog/) is both publicly available to all visitors. If you write a comment, we collect and process personal data as follows:
 
 ###### Blog comments {: #blog-comments }
 
@@ -611,9 +619,7 @@ If you click on our “BECOME A PARTNER” button, your email client will open w
 
 ###### Data retention {: #retention-communications }
 
-Data provided by you in connection with our blog and our forum will be retained for the same time as the comment and / or your account exists.
-
-In general, we do not store your email address unless it’s specifically required to execute the related campaign (i.e. email signups for a newsletter or signing up to get notified about a product launch). In cases where we do store your email address, we only store it for the length of time that is needed to execute the campaign (i.e. once you’ve been notified of the launch).
+Data provided by you in connection with our blog will be retained for the same time as the comment exists.
 
 In case you are entering into a partner agreement, please find more information on our retention periods here: [https://eyeo.com/privacy/#privacy_information_business_partner](https://eyeo.com/privacy/#privacy_information_business_partner).
 
@@ -626,7 +632,7 @@ For user support, we use a customer relation management software from Zendesk, I
 - Version of Adblock Plus and other applicable tech specifications
 - URLs the user is having issues with
 - Adblock Plus issues
-- Address and transaction ID numbers for donation refunds (voluntary)
+- Address and transaction ID numbers for payment refunds (voluntary)
 
 All user support data is deleted one (1) year after closing the respective support case.
 
@@ -697,7 +703,7 @@ Additionally, we may also share your Personal Information with law enforcement o
 
 We receive Personal Information from you, our websites, your device(s), and our external service providers. The categories of sources from which we have collected or received Personal Information include:
 
-* **You**: We collect information that you voluntarily provide, such as registration data on our public forum or information that you send to us as part of issue reports, user support queries, user reviews and job applications.
+* **You**: We collect information that you voluntarily provide, such as your email address if you sign up for a subscription or information that you send to us as part of issue reports, user support queries, user reviews and job applications.
 * **Your device(s)**: We receive information from and about the computers, phones, and browsers that you use in connection with our Products.
 * **Our Websites**: We collect information about how you interact with and use our websites.
 * **Your Social Media Profiles**: We collect information about your social media subscriptions, if you choose to contribute to content in that manner.
@@ -721,7 +727,7 @@ To exercise any of these rights, please submit a request to <a id='privacy-email
 
 If you have any questions about this section or how to exercise your rights under the CCPA, please <a id='privacy-email' data-mask='{"href": "bWFpbHRvOnByaXZhY3lAZXllby5jb20="}'>contact us</a>.
 
-<time datetime="2023-01">January 2023</time>
+Last updated: 12 December 2025
 
 *[{{ gdpr-abbr[GDPR abbreviation] GDPR }}]: {{gdpr-abbr-dfn[General Data Protection Regulation abbreviation definition] General Data Protection Regulation }}
 *[{{ eu-abbr[EU abbreviation] EU }}]: {{eu-abbr-dfn[European Union abbreviation definition] European Union }}

@@ -23,13 +23,13 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
 1. **{{ license[heading] License. }}**
 
-    1. {{ license-1[paragraph] **Services other than Adblock Plus for Safari iOS (version 3.x or higher).** Unless otherwise stated, the Services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms. }}
+    1. {{ license-1[paragraph] **Services other than the Adblock Plus iPhone/iPad App (Version 3.x or higher).** Unless otherwise stated, the Services are licensed under the [GPLv3](https://www.gnu.org/licenses/). The terms and conditions of the GPLv3 are hereby incorporated by reference and made a part of these Terms. }}
 
-    1. {{ license-2[paragraph] **Adblock Plus for Safari iOS (version 3.x or higher).** }}
+    1. {{ license-2[paragraph] **Adblock Plus iPhone/iPad App (version 3.x or higher).** }}
 
-        1. {{ license-2-1t[paragraph] **License Grant.** Subject to and conditioned on your compliance with the terms and conditions of these Terms, we grant to you a limited, revocable, non-exclusive, non-sublicensable, non-transferable, and non-assignable license to download, install, and use a copy of Adblock Plus for Safari iOS App (version 3.x or higher) for your personal, non-commercial use on a compatible device that you own or control solely as expressly authorized and/or required by these Terms. }}
+        1. {{ license-2-1t[paragraph] **License Grant.** Subject to and conditioned on your compliance with the terms and conditions of these Terms, we grant to you a limited, revocable, non-exclusive, non-sublicensable, non-transferable, and non-assignable license to download, install, and use a copy of Adblock Plus iPhone/iPad App (version 3.x or higher) for your personal, non-commercial use on a compatible device that you own or control solely as expressly authorized and/or required by these Terms. }}
 
-        1. {{ license-2-2[paragraph] **Ownership.** You acknowledge and agree that a copy of Adblock Plus for Safari iOS (version 3.x or higher) is provided under license, and not sold, to you. You do not acquire any title or ownership interest in or to Adblock Plus for Safari iOS (version 3.x or higher), including any copy thereof, or any rights other than your right to use your copy of Adblock Plus for Safari iOS (version 3.x or higher) in accordance with the license granted to you in these Terms. Except as expressly granted to you in these Terms, we and our licensors reserve our entire right, title, and interest in and to Adblock Plus for Safari iOS (version 3.x or higher), including all copyrights, trademarks, and other intellectual property rights arising therefrom or related thereto. Further, we reserve all rights not expressly granted or waived in these Terms. }}
+        1. {{ license-2-2[paragraph] **Ownership.** You acknowledge and agree that a copy of the Adblock Plus iPhone/iPad App  (version 3.x or higher) is provided under license, and not sold, to you. You do not acquire any title or ownership interest in or to the Adblock Plus iPhone/iPad App (Version 3.x or higher), including any copy thereof, or any rights other than your right to use your copy of the Adblock Plus iPhone/iPad App (Version 3.x or higher) in accordance with the license granted to you in these Terms. Except as expressly granted to you in these Terms, we and our licensors reserve our entire right, title, and interest in and to the Adblock Plus iPhone/iPad App (Version 3.x or higher), including all copyrights, trademarks, and other intellectual property rights arising therefrom or related thereto. Further, we reserve all rights not expressly granted or waived in these Terms. }}
 
     1. {{ license-3[paragraph] **Feedback.**  You may, but are not required to, provide us with recommendations, suggestions, comments, ideas, proposals, evaluations, reviews, feedback, input or other information related to the Services (collectively **“Feedback”**). In the event that you provide us Feedback, you hereby grant us and our affiliates a perpetual, irrevocable, worldwide license to use Feedback in any way for any purpose without reimbursement or compensation and without any obligation to report on such use or other restriction on such use. }}
 
@@ -111,4 +111,4 @@ description=The Terms of Use regulate the permitted use of Adblock Plus and the 
 
     1. {{ final-provisions-4[paragraph] In the event that any provision of these Terms is or becomes invalid, such invalidity will not affect the validity of the remaining provisions. }}
 
-{{ last-updated[paragraph] Last updated: 13 August 2025 }}
+{{ last-updated[paragraph] Last updated: 12 December 2025 }}
