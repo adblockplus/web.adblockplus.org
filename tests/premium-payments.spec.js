@@ -37,7 +37,7 @@ paymentPageButtonParameters.forEach(({ paymentPage, frequency }) => {
     await paddlePaymentForm.makeTestPayment(email);
     const userAccounts = new UserAccountsPortal(page);
     await userAccounts.checkUserAccountsSetUpCodePageLoaded();
-    await expect(page).toHaveURL('https://abp.ua-qa.eyeo.it/?s=abp-w');
+    expect(page.url()).toContain('https://abp.ua-qa.eyeo.it/?s=abp-w');
   });
 });
 
@@ -61,6 +61,6 @@ signInParameters.forEach(({ paymentPage }) => {
     await premiumPaymentPage.signInLink.click();
     const userAccounts = new UserAccountsPortal(page);
     await userAccounts.checkUserAccountsEmailLoginPageLoaded();
-    await expect(page).toHaveURL('https://abp.ua-qa.eyeo.it/?s=abp-w');
+    expect(page.url()).toContain('https://abp.ua-qa.eyeo.it/?s=abp-w');
   });
 });

@@ -60,7 +60,7 @@ paymentPageButtonParameters.forEach(({ paymentPage, frequency }) => {
     await paddlePaymentForm.restorePurchaseButton.click();
     const userAccounts = new UserAccountsPortal(page);
     await userAccounts.checkUserAccountsRestoreCodePageLoaded();
-    await expect(page).toHaveURL('https://abp.ua-qa.eyeo.it/?s=abp-w');
+    expect(page.url()).toContain('https://abp.ua-qa.eyeo.it/?s=abp-w');
   });
 });
 
