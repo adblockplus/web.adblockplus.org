@@ -27,7 +27,7 @@
 </style>
 <footer class="footer-legal">
   <div class="container">
-    <div class="footer-legal-copywrite">{{ get_string("copyright", "footer") }}</div>
+    <div class="footer-legal-copywrite">{{ get_string("copyright", "footer") | replace("{year}", current_year|string) }}</div>
     <ul class="footer-legal-links">
       <li><a href="terms">{{ get_string("terms", "menu") }}</a></li>
       <li><a href="privacy">{{ get_string("privacy", "menu") }}</a></li>
