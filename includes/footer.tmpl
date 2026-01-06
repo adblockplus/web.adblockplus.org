@@ -109,7 +109,7 @@
   <div class="footer-wrap footer-legal-links">
     <div class="container">
       <div id="footer-legal">
-        <p id="copyright-notice">{{ get_string("copyright", "footer") }}</p>
+        <p id="copyright-notice">{{ get_string("copyright", "footer") | replace("{year}", current_year|string) }}</p>
         <ul id="legal-list">
           {% if page == "gift-of-ad-blocking" %}
             {% for pagename in ["terms", "privacy", "imprint"] %}
