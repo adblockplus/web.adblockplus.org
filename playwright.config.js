@@ -12,6 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  globalSetup: './tests/global.setup.js',
   testDir: './tests',
   snapshotDir: './tests/snapshots',
   snapshotPathTemplate: '{snapshotDir}/{testFilePath}/{platform}/{arg}{ext}',
@@ -37,26 +38,18 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'setup',
-      testMatch: /global\.setup\.js/,
-    },
-
-    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-      dependencies: ['setup'],
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
-      dependencies: ['setup'],
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
-      dependencies: ['setup'],
     },
 
     /* Test against mobile viewports. */
@@ -70,15 +63,13 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-	  {
+    {
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
-      dependencies: ['setup'],
     },
     {
       name: 'Google Chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-      dependencies: ['setup'],
     },
   ],
 
