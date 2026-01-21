@@ -12,6 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  globalSetup: './tests/global.setup.js',
   testDir: './tests',
   snapshotDir: './tests/snapshots',
   snapshotPathTemplate: '{snapshotDir}/{testFilePath}/{platform}/{arg}{ext}',
@@ -62,7 +63,7 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-	  {
+    {
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },

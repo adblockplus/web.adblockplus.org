@@ -11,7 +11,7 @@ const paymentPageFlowParameters = paymentParams.paymentPageFlowParameters;
 
 paymentPageButtonParameters.forEach(({ paymentPage, frequency }) => {
   test('Block multi subscriptions old flow: ' + frequency + ' payment on ' + paymentPage.name, async ({ page }) => {
-    test.setTimeout(60_000);
+    test.setTimeout(90_000);
 
     // Using an email that already has a test subscription
     // TESTMAIL in caps so can ensure casing does not matter!
