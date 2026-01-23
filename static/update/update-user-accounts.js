@@ -108,9 +108,12 @@ try { extensionInfo = JSON.parse(document.documentElement.dataset.adblockPlusExt
 catch (error) { extensionInfo = {}; }
 const blockCount = adblock.query.has("bc") ? parseInt(adblock.query.get("bc"), 10) : extensionInfo.blockCount;
 if (blockCount > BLOCK_COUNT_MINIMUM) {
-  document.querySelector(".update-header-section-1__heading--with-block-count .ads-blocked")
-  .textContent = new Intl.NumberFormat(navigator.language).format(blockCount);
-  document.documentElement.classList.add("--has-block-count");
+  const adsBlockedContainer = document.querySelector(".update-header-section-1__heading--with-block-count .ads-blocked");
+
+  if (adsBlockedContainer) {
+    adsBlockedContainer.textContent = new Intl.NumberFormat(navigator.language).format(blockCount);
+    document.documentElement.classList.add("--has-block-count");
+  }
 }
 
 // Fix plan discount height across languages ///////////////////////////////////

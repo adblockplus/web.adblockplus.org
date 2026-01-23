@@ -106,14 +106,14 @@ html:not(.de) .de-only { display: none; }
   color: #E40D0D;
 }
 
-.update-header-section-1__heading--with-block-count, 
+.update-header-section-1__heading--with-block-count,
 .--has-block-count .update-header-section-1__heading { display: none; }
 .--has-block-count .update-header-section-1__heading.update-header-section-1__heading--with-block-count { display: block; }
 
 @media (min-width: 992px) {
   .update-header-section-1__heading {
     font-size: 2.5rem;
-  }    
+  }
 }
 
 .update-header-section-1__subheading {
@@ -144,6 +144,173 @@ html:not(.de) .de-only { display: none; }
   align-items: center;
   gap: 0.5rem;
 }
+
+/**
+ * Begin 20-years celebration update campaign
+ */
+
+.update-20-years .update-header-section-1__subheading {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.update-20-years .update-header-section-3-item {
+  padding: 0 1.5rem;
+}
+
+.update-20-years .update-header-section-3 h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.update-20-years .update-header-section-3 ul {
+  list-style-type: disc;
+  margin-inline-start: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .update-20-years .bg-white .container,
+  .update-20-years .bg-light-blue .container,
+  .update-20-years .update-header-section-1,
+  .update-20-years .update-header-section-3,
+  .update-20-years .update-header-section-3-item-1,
+  .update-20-years .update-header-section-3-item-2 {
+    position: relative;
+  }
+
+  .update-20-years .update-header-section-1::before,
+  .update-20-years .update-header-section-1::after {
+    background: transparent url('/update/20-years/star.svg') top left no-repeat;
+    background-size: 18px 20px;
+    content: "";
+    display: block;
+    height: 18px;
+    left: 50%;
+    position: absolute;
+    width: 20px;
+  }
+
+  .update-20-years .update-header-section-1::before {
+    top: 20px;
+    margin-left: -350px;
+  }
+
+  .update-20-years .update-header-section-1::after {
+    top: 20px;
+    margin-left: 350px;
+  }
+
+  .update-20-years .bg-white .container::before {
+    background: transparent url('/update/20-years/sign-20-years.svg') top left no-repeat;
+    background-size: 172px 274px;
+    content: "";
+    display: block;
+    height: 274px;
+    left: 50%;
+    position: absolute;
+    top: -50px;
+    width: 172px;
+    margin-left: -450px;
+  }
+
+  html[lang="el"] .update-20-years .bg-white .container::before,
+  html[lang="fr"] .update-20-years .bg-white .container::before,
+  html[lang="ja"] .update-20-years .bg-white .container::before {
+    margin-left: -500px;
+  }
+
+  html[dir="rtl"] .update-20-years .bg-white .container::before {
+    margin-left: 190px;
+  }
+
+  .update-20-years .bg-light-blue .container::before,
+  .update-20-years .bg-light-blue .container::after {
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+  }
+
+  .update-20-years .bg-light-blue .container::before {
+    background: transparent url('/update/20-years/confetti-left.svg') top left no-repeat;
+    background-size: 128px 154px;
+    height: 154px;
+    top: 60px;
+    width: 128px;
+    margin-left: -570px;
+  }
+
+  html[lang="el"] .update-20-years .bg-light-blue .container::before,
+  html[lang="fr"] .update-20-years .bg-light-blue .container::before,
+  html[lang="ja"] .update-20-years .bg-light-blue .container::before {
+    margin-left: -630px;
+  }
+
+  .update-20-years .bg-light-blue .container::after {
+    background: transparent url('/update/20-years/confetti-right.svg') top left no-repeat;
+    background-size: 66px 296px;
+    height: 296px;
+    top: -45px;
+    width: 66px;
+    margin-left: 470px;
+  }
+
+  html[lang="el"] .update-20-years .bg-light-blue .container::after,
+  html[lang="fr"] .update-20-years .bg-light-blue .container::after,
+  html[lang="ja"] .update-20-years .bg-light-blue .container::after {
+    margin-left: 530px;
+  }
+
+  .update-20-years .update-header-section-3-item-1:before,
+  .update-20-years .update-header-section-3-item-2:before,
+  .update-20-years .update-header-section-3-item-2:after,
+  .update-20-years .update-header-section-3:after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  .update-20-years .update-header-section-3-item-1:before {
+    background: transparent url('/update/20-years/confetti-white.svg') top left no-repeat;
+    background-size: 18px 12px;
+    height: 12px;
+    top: -30px;
+    width: 18px;
+    left: 200px;
+  }
+
+  .update-20-years .update-header-section-3-item-2:before {
+    background: transparent url('/update/20-years/confetti-white.svg') top left no-repeat;
+    background-size: 27px 18px;
+    height: 18px;
+    top: -35px;
+    width: 27px;
+    left: 230px;
+    transform: rotate(15deg);
+  }
+
+  .update-20-years .update-header-section-3-item-2:after {
+    background: transparent url('/update/20-years/confetti-yellow.svg') top left no-repeat;
+    background-size: 30px 22px;
+    height: 22px;
+    bottom: -40px;
+    width: 30px;
+    left: 30px;
+  }
+
+  .update-20-years .update-header-section-3:after {
+    background: transparent url('/update/20-years/confetti-red.svg') top left no-repeat;
+    background-size: 22px 20px;
+    height: 20px;
+    bottom: -40px;
+    width: 22px;
+    right: 250px;
+  }
+}
+
+/**
+ * End 20-years celebration update campaign
+ */
 
 .update-plans {
   padding: 2.75rem 0 2rem 0;
@@ -304,7 +471,7 @@ html:not(.de) .de-only { display: none; }
 @media (min-width: 992px) {
   .update-premium-difference-header {
     text-align: center;
-  }  
+  }
 }
 
 .update-premium-difference-header__heading {
@@ -390,7 +557,7 @@ html:not(.de) .de-only { display: none; }
   .premium-motivation-slider-body {
     height: 672.82px;
     width: 888px;
-  }  
+  }
 }
 
 .premium-motivation-slider-image {
@@ -414,7 +581,7 @@ html:not(.de) .de-only { display: none; }
   .premium-motivation-slider-image__img {
     height: 672.82px;
     width: 888px;
-  }  
+  }
 }
 
 .premium-motivation-silder-modal-slider {
@@ -466,7 +633,7 @@ html:not(.de) .de-only { display: none; }
 
   .update-premium-cta {
     width: 200px;
-  }  
+  }
 }
 
 .update-premium-features {
@@ -488,7 +655,7 @@ html:not(.de) .de-only { display: none; }
   .update-premium-features__heading {
     font-size: 3rem;
     text-align: center;
-  }    
+  }
 }
 
 .update-premium-features-list {

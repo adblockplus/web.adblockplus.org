@@ -9,7 +9,7 @@ code=B
   <link rel="stylesheet" href="/update/update.css">
 </head>
 
-<header>
+<header class="update-20-years">
   <div class="bg-white">
     <div class="container">
       <div class="update-header-section-1">
@@ -19,14 +19,11 @@ code=B
           height="40"
           width="40"
           src="/update/abp-logo.svg">
-        <h1 class="update-header-section-1__heading placeholder">
-          {{ update-header-section-1__heading Your Adblock Plus is up to date }}
-        </h1>
-        <h1 class="update-header-section-1__heading update-header-section-1__heading--with-block-count">
-          {{ update-header-section-2__heading We have blocked <span class="ads-blocked">23,358</span> ads for you! }}
+        <h1 class="update-header-section-1__heading">
+          {{ update-header-20-years-section-1__heading Protecting you for 20 years }}
         </h1>
         <p class="update-header-section-1__subheading">
-          {{ update-header-section-2 Focus on what really matters and say goodbye to distractions with Adblock Plus Premium. }}
+          {{ update-header-20-years-section-2__heading Now Premium is even better }}
         </p>
       </div>
     </div>
@@ -34,39 +31,26 @@ code=B
   <div class="bg-light-blue">
     <div class="container">
       <div class="update-header-section-3">
-        <p class="update-header-section-3-item update-header-section-3-item-1">
-          <img
-            alt=""
-            class="update-header-section-3-item__tick"
-            height="24"
-            width="24"
-            src="/update/green-check.svg">
-          <span>
-            {{ update-header-section-3-item-1 Hide annoying cookie consent banners }}
-          </span>
-        </p>
-        <p class="update-header-section-3-item update-header-section-3-item-2">
-          <img
-            alt=""
-            class="update-header-section-3-item__tick"
-            height="24"
-            width="24"
-            src="/update/green-check.svg">
-          <span>
-            {{ update-header-section-3-item-2 Block floating videos, email-signs-ups and more }}
-          </span>
-        </p>
-        <p class="update-header-section-3-item update-header-section-3-item-3">
-          <img
-            alt=""
-            class="update-header-section-3-item__tick"
-            height="24"
-            width="24"
-            src="/update/green-check.svg">
-          <span>
-            {{ update-header-section-3-item-3 Get faster page load speeds }}
-          </span>
-        </p>
+        <div class="update-header-section-3-item update-header-section-3-item-1">
+          <div>
+            <h2>{{ update-header-20-years-section-3-item-1__heading Best-in-class Desktop protection }}</h2>
+            <ul>
+              <li>{{ update-header-20-years-section-3-item-1-listitem-1 Hide cookie banners and consent pop-ups }}</li>
+              <li>{{ update-header-20-years-section-3-item-1-listitem-2 Block intrusive ads, pop-ups, and videos }}</li>
+              <li>{{ update-header-20-years-section-3-item-1-listitem-3 Enjoy faster, cleaner web pages }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="update-header-section-3-item update-header-section-3-item-2">
+          <div>
+            <h2>{{ update-header-section-3-item-2__heading Full protection on iPhone and iPad }}</h2>
+            <ul>
+              <li>{{ update-header-section-3-item-2-listitem-1 Block ads in Safari}}</li>
+              <li>{{ update-header-section-3-item-2-listitem-2 Block ads inside apps }}</li>
+              <li>{{ update-header-section-3-item-2-listitem-3 Stop trackers across apps and websites }}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
