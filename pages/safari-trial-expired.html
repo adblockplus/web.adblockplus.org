@@ -1,0 +1,56 @@
+title=Adblock Plus for Safari trial expired
+template=raw
+
+<head>
+    <meta name="robots" content="none">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ safari-trial-expired-page-title Adblock Plus for Safari trial expired }}</title>
+    <link rel="stylesheet" href="/abp-for-safari-onboarding/css/style.css">
+    <script type="module" src="/abp-for-safari-onboarding/js/analytics.js"></script>
+    <script src="/abp-for-safari-onboarding/js/trial-expired.js"></script>
+</head>
+
+<header class="header header-margins">
+    <img src="/abp-for-safari-onboarding/img/abp_logo.svg" alt="ABP Logo" class="logo-large">
+</header>
+<div class="content-container">
+    <div class="title">
+        <strong>{{ safari-trial-expired-title Your trial period of Premium has ended }} ☹️</strong>
+    </div>
+
+    <div class="description">
+        <span>{{ safari-trial-expired-subtitle We’re just letting you know as you will start seeing ads in apps again.}}</span>
+    </div>
+
+    <div class="info-blocks">
+        <div class="info-block">
+            <img src="/abp-for-safari-onboarding/img/safari.svg" alt="" class="info-block-icon">
+            <div class="info-block-content">
+                <span class="info-block-title">{{ safari-trial-expired-info-1-title-1 Safari blocking is }} <span class="underline">{{ safari-trial-expired-info-1-title-2 still active }}</span>.</span>
+                <span class="info-block-desc">{{ safari-trial-expired-info-1-desc Always free!}}</span>
+            </div>
+        </div>
+
+        <div class="info-block" id="ads-blocked-info" style="display: none;">
+            <img src="/abp-for-safari-onboarding/img/phone.svg" alt="" class="info-block-icon">
+            <div class="info-block-content">
+                <span class="info-block-title">{{ safari-trial-expired-info-2-title-1 We've blocked }} <span class="info-block-highlight" id="ads-blocked-count"></span> {{ safari-trial-expired-info-2-title-2 ads across apps during your trial. }}</span>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <img src="/abp-for-safari-onboarding/img/clock.arrow.svg" alt="" class="info-block-icon">
+            <div class="info-block-content">
+                <span class="info-block-title">{{ safari-trial-expired-info-3-title Want more time?}}</span>
+                <span class="info-block-desc">{{ safari-trial-expired-info-3-desc Extend your trial and re-discover quiet, distraction-free apps.}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="footer">
+    <a class="ios-button" href="abp://paywall?source=safari_trial_expired">
+        {{ safari-trial-expired-action Extend My Trial }}
+    </a>
+</div>
