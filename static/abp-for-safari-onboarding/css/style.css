@@ -142,8 +142,8 @@ body {
   text-align: center;
   padding-left: var(--spacing-medium);
   padding-right: var(--spacing-medium);
-  margin-top: var(--spacing-medium);
-  margin-bottom: var(--spacing-large);
+  margin-top: var(--spacing-standard);
+  margin-bottom: var(--spacing-standard);
 }
 
 .description {
@@ -331,7 +331,7 @@ button {
   gap: 8px;
   align-self: stretch;
   border-radius: 100px;
-  background: #4A4A4A;
+  background: #0091FF;
   color: #fff;
 }
 
@@ -351,4 +351,48 @@ button {
 .ios-button.outline:hover,
 .ios-button.outline:active {
   color: var(--text-colorTextBase, #000);
+}
+
+/* Info blocks for trial expired page */
+.info-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-block-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-block-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-block-title {
+  font-size: var(--font-size-default);
+  font-family: var(--font-family-system);
+  font-weight: 600;
+  color: var(--text-colorTextBase);
+}
+
+.info-block-desc {
+  font-size: var(--font-size-default);
+  font-family: var(--font-family-system);
+  font-weight: 400;
+  color: var(--text-colorTextBase);
 }
