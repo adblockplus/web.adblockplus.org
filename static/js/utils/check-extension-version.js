@@ -20,8 +20,10 @@ export async function checkExtensionVersion() {
         if (adblock.adblockPlus?.isPremium) {
           resolve(false);
         } else if (meetsExtensionVersion(extensionVersion)) {
+          adblock.log('payment_flow_event_user_accounts');
           resolve(true);
         } else {
+          adblock.log('payment_flow_event_legacy');
           resolve(false);
         }
       }, () => {
