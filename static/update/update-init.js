@@ -42,3 +42,39 @@ async function initPurchaseFlow() {
 }
 
 initPurchaseFlow();
+
+/**
+ * The update page going to be used for users having free trial accepted on Email Marketing Program
+ * */
+
+async function checkIsFreemiumUser() {
+  return new Promise((resolve, reject) => {
+    try {
+      adblock.afterAdblockPlusDetected(() => {
+        if (adblock.adblockPlus?.isTrial) {
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      }, () => {
+        resolve(false);
+      });
+    } catch (error) {
+      adblock.logScriptError("checkIsFreemiumUser", error);
+      resolve(false);
+    }
+  });
+}
+
+async function initHeaderContent() {
+  const isFreemiumUser = await checkIsFreemiumUser();
+  const regularHeaderContent = document.getElementById("regular-user-header");
+  const freemiumHeaderContent = document.getElementById("freemium-user-header");
+
+  regularHeaderContent.hidden = isFreemiumUser;
+  freemiumHeaderContent.hidden = !isFreemiumUser;
+
+  if (isFreemiumUser) freemiumHeaderContent.classList.remove("placeholder")
+}
+
+initHeaderContent();

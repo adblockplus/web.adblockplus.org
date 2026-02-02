@@ -90,6 +90,10 @@ html:not(.de) .de-only { display: none; }
   align-items: center;
 }
 
+.placeholder .update-header-section-1 img {
+  display: none;
+}
+
 @media (min-width: 992px) {
   .update-header-section-1 {
     justify-content: center;
