@@ -51,6 +51,15 @@ a:hover, a:active, a:focus {
   text-decoration: underline;
 }
 
+.background--color {
+  background-color: #F5F5F5;
+}
+
+.background--pattern {
+  fill: #EDF9FF;
+  background: #E6E6E6 url('./background-pattern.svg') repeat top left;
+}
+
 .installed-header-1 {
   padding-block: 2.5rem;
   text-align: start;
@@ -171,6 +180,7 @@ a:hover, a:active, a:focus {
 }
 
 @media (min-width: 576px) {
+  .installed-trial-proposal,
   .installed-payment-option {
     flex-wrap: nowrap;
   }
@@ -269,3 +279,269 @@ a:hover, a:active, a:focus {
   margin-block: -0.5rem 0;
   margin-inline: 0.25rem 0;
 }
+
+/*******************************************************************************
+ * PAGE LOADER
+ ******************************************************************************/
+
+.installed-page-loader {
+  display: block;
+}
+
+.installed-page-loader-body {
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .installed-page-loader-body {
+    padding: 8rem 0;
+  }
+}
+
+.installed-page-loader__loader {
+  width: 173px;
+  height: 173px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.installed-page-loader__loader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  margin: 6px;
+  border: 12px solid;
+  border-radius: 50%;
+  animation: installed-page-loader__loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #0797E1 transparent transparent transparent;
+}
+
+.installed-page-loader__loader div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.installed-page-loader__loader div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.installed-page-loader__loader div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes installed-page-loader__loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*******************************************************************************
+ * EMAIL MARKETING PROGRAM
+ ******************************************************************************/
+
+:root {
+  --white: #FFFFFF;
+  --gray-0: #F7F7F7;
+  --grey-1: #FAFAFA;
+  --grey-2: #E6E6E6;
+  --grey-3: #C6C6C6;
+  --grey-4: #ADADAD;
+  --grey-5: #999999;
+  --grey-6: #7A7A7A;
+  --grey-7: #5B5B5B;
+  --grey-8: #1C1C1E;
+  --black: #000000;
+  --red: #E40D0D;
+  --red--light: #FEF2F2;
+  --red--dark: #F2DCDC;
+  --green--light: #DCFCE7;
+  --green--dark: #096C15;
+  --yellow--light: #FDF7D8;
+  --yellow--dark: #D39100;
+  --blue: #0797E1;
+  --blue--dark: #0797e1ee;
+  --xxs: .25rem;
+  --xs: .5rem;
+  --sm: .75rem;
+  --md: 1rem;
+  --lg: 1.5rem;
+  --xl: 2.25rem;
+  --xxl: 2.5rem;
+  --display-1-font-size: 2rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --h4-font-size: 1.125rem;
+  --heading-line-height: 1.2;
+  --default-font-size: 1rem;
+  --default-line-height: 1.5;
+  --larger-font-size: 1.125rem;
+  --smaller-font-size: .875rem;
+  --default-font-weight: 400;
+  --thin-font-weight: 300;
+  --bold-font-weight: 700
+}
+
+.container.trial {
+  display: flex;
+  justify-content: center;
+}
+
+.installed-trial-proposal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px 0 #0000001A;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5rem 3rem 3rem;
+  margin-inline: auto;
+  padding: 2.25rem;
+  max-width: 30rem;
+  background-color: #F7F7F7;
+}
+
+@media (max-width: 576px) {
+  .installed-trial-proposal {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .installed-header--on-load {
+    padding-inline: 2.25rem;
+    padding-block: 0.84rem;
+  }
+
+  .header.header--logo-only {
+    border-bottom: 1px solid #CDCDCD;
+    padding-bottom: 1rem;
+  }
+}
+
+.installed-trial-proposal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: 460px;
+}
+
+.installed-trial-proposal-body p,
+.installed-trial-proposal-body h2{
+  margin: 0;
+}
+
+.installed-trial-proposal-body ul {
+  margin-left: 1.25rem;
+  list-style: inherit;
+}
+
+.installed-trial-proposal-header img {
+  margin-left: -0.9rem;
+}
+
+.installed-trial-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.installed-trial-proposal-header hr {
+  color:  #CDCDCD;
+  border: none;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.installed-trial-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.installed-trial-actions a.secondary-nav-link {
+  color: #5A5A5A;
+  font-size: 0.8rem;
+}
+
+.installed-trial-actions a.installed-primary-button {
+  color: #fff;
+  font-size: 1.125rem;
+  border-radius: 6px;
+  background: #0797E1;
+  padding-block: 0.65rem;
+  padding-inline: 2.5rem;
+  border: 0;
+}
+
+.installed-trial-offer-benefits--item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.installed-trial-offer-benefits--item__span {
+  align-self: flex-start;
+}
+
+.installed-checkbox-custom {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #0797E1;
+  background-color: white;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.installed-checkbox-custom.checked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0797E1;
+}
+
+.checkbox-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: white;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.installed-trial-offer-benefits--item:hover ~ .installed-trial-actions .installed-primary-button {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(7, 151, 225, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
