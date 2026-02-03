@@ -51,6 +51,15 @@ a:hover, a:active, a:focus {
   text-decoration: underline;
 }
 
+.background--color {
+  background-color: #F5F5F5;
+}
+
+.background--pattern {
+  fill: #EDF9FF;
+  background: #E6E6E6 url('./background-pattern.svg') repeat top left;
+}
+
 .installed-header-1 {
   padding-block: 2.5rem;
   text-align: start;
@@ -627,3 +636,4 @@ html.modal-open {
   align-items: center;
   font-weight: 700;
 }
+
