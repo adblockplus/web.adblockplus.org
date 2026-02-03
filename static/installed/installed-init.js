@@ -28,17 +28,63 @@ function initLegacyPurchaseFlow() {
   document.body.appendChild(preventDuplicateScript);
 }
 
-/**
- * Limit new flow to English only for now.
- */
 async function initPurchaseFlow() {
-  const hasMimimumExtensionVersion = await checkExtensionVersion();
+  const hasMinimumExtensionVersion = await checkExtensionVersion();
 
-  if (hasMimimumExtensionVersion) {
+  if (hasMinimumExtensionVersion) {
     initUserAccountsFlow();
   } else {
     initLegacyPurchaseFlow();
   }
 }
 
-initPurchaseFlow();
+// initPurchaseFlow();
+
+/**
+ * Init experiment for Email Marketing Program
+ * */
+
+function applyControl() {
+  const loader = document.getElementById("installed-loader");
+  if (loader) {
+    loader.hidden = true;
+  }
+  const defaultContent = document.getElementById("installed")
+  if (defaultContent) {
+    defaultContent.classList.remove("placeholder");
+    defaultContent.hidden = false;
+  }
+  console.log('init purchase flow');
+  initPurchaseFlow();
+}
+
+async function setupExperiment() {
+  const dev = adblock.query.has("emp");
+  const meetsCriteria = (["US", "CA", "AU"].includes(adblock.strings.country)
+      && adblock.strings.locale === 'en')
+    || dev;
+  console.log('country meets criteria: ', meetsCriteria);
+  if (!meetsCriteria) {
+    console.log('apply control');
+    applyControl();
+    return;
+  }
+
+  const hasMinimumExtensionVersion = await checkExtensionVersion();
+
+  adblock.setupExperiment({
+    id: "EMP",
+    conditions: () => hasMinimumExtensionVersion || dev,
+    noParticipateCallback: applyControl,
+    trafficAllocation: 0,
+    control: {
+      script: ["https://cdn.paddle.com/paddle/v2/paddle.js", "/js/vendor/NumberFormat.min.js"]
+    },
+    variant: {
+      script: "/experiments/email-marketing-program/variant.js"
+    },
+  });
+
+}
+
+setupExperiment();

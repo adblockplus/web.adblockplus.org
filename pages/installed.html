@@ -8,6 +8,7 @@ nofooter=1
 <head>
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/installed/installed.css">
+  <? include scripts/frontend-experiments ?>
   <? include scripts/handle-install-and-activate ?>
   <? include hotjar ?>
   <script>
@@ -18,146 +19,22 @@ nofooter=1
   </script>
 </head>
 
-<? include header--logo-only ?>
+<section class="installed-header--on-load" id="installed-loader">
+  <div class="installed-page-loader">
+    <div class="installed-page-loader-body">
+      <div class="installed-page-loader__loader"><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+</section>
 
-<main>
+<section id="installed" class="installed" hidden>
+  <? include experiments/email-marketing-program/control ?>
+</section>
+<section id="installed-variant" class="installed" hidden>
+  <? include experiments/email-marketing-program/variant ?>
+</section>
 
-  <header>
-
-    <div class="installed-header-1">
-      <div class="container">
-        <div class="installed-header-1-body">
-          <h1 class="installed-header-1__heading">
-            {{ installed-header__heading Thank you for installing Adblock Plus! }}
-          </h1>
-          <p class="installed-header-1-subheading">
-            {{ installed-header__subheading Help support Adblock Plus by upgrading to Premium today for as little as <span id="header-price" class="installed-header-1-subheading__price placeholder">$4</span> <span id="header-frequency" class="installed-header-1-subheading__frequency placeholder">a month</span>. Your contribution will enable us to stay ahead of the big ad companies and save you time and frustration. }}
-          </p>
-        </div> <!-- Default header 1 content -->
-
-        <? include experiments/ads-blocked-header ?> <!-- Experimental header 1 content -->
-
-      </div><!-- .container -->
-    </div><!-- .background--light-grey -->
-
-
-    <div class="installed-header-2">
-      <ul class="installed-features">
-        <li class="installed-feature">
-          <img src="/installed/like-icon.svg" alt="" height="32" width="32">
-          <span>
-            {{ installed-feature-1 Get enhanced ad blocking capabilities }}
-          </span>
-        </li>
-        <li class="installed-feature">
-          <img src="/installed/like-icon.svg" alt="" height="32" width="32">
-          <span>
-            {{ installed-feature-2 Help support Adblock Plus and future ad blocking development }}
-          </span>
-        </li>
-        <li class="installed-feature">
-          <img src="/installed/like-icon.svg" alt="" height="32" width="32">
-          <span>
-            {{ installed-feature-3 Cancel anytime and you can keep Adblock Plus }}
-          </span>
-        </li>
-      </ul>
-    </div><!-- .background--light-blue -->
-
-  </header><!-- .installed-header -->
-
-  <form id="purchase" class="container installed-payment">
-
-    <aside class="installed-gaurantee">
-      <img src="/installed/check--blue-badge.svg" alt="" height="24" width="25">
-      <div>
-        {{ installed-gaurantee Support us with confidence: <strong>60 day money-back guarantee</strong>. And you can keep Adblock Plus. }}
-      </div>
-    </aside>
-
-    <div class="installed-payment-options">
-      <div class="installed-payment-options-header">
-        <img src="/installed/abp-premium-logo--with-text.svg" alt="Adblock Plus Premium" height="44" width="293" class="installed-payment-options-header__logo">
-      </div>
-      <div class="installed-payment-options-body">
-        <div class="installed-payment-options-body__column installed-payment-options-body__column-1">
-          <div class="installed-payment-option">
-            <button id="monthly-option" class="installed-payment-option__button placeholder" type="button" aria-pressed="false" data-frequency="monthly">
-              <span class="installed-payment-option__price price">$4</span>
-              <span class="installed-payment-option__text">{{ installed-payment-option__text--monthly Monthly Subscription }}</span>
-            </button>
-          </div>
-          <div class="installed-payment-option">
-            <button id="yearly-option" class="installed-payment-option__button placeholder" type="button" aria-pressed="true" data-frequency="yearly">
-              <span class="installed-payment-option__price price">$40</span>
-              <span class="installed-payment-option__text">{{ installed-payment-option__text--yearly Yearly Subscription }}</span>
-            </button>
-            <span class="installed-payment-option-discount placeholder">
-              {{ installed-payment-option-discount Save <span id="discount__number">17%</span> }}
-            </span>
-          </div>
-          <? include vat-message ?>
-        </div><!-- .installed-payment-options-body__column-1 -->
-        <div class="installed-payment-options-body__column installed-payment-options-body__column-2 installed-payment-options-features">
-          <h3 class="installed-payment-options-features__heading">
-            {{ installed-payment-options-features__heading What's included? }}
-          </h3>
-          <ul class="installed-payment-options-features__list">
-            <li class="installed-payment-options-features__list-item">
-              <img src="/installed/check--red.svg" alt="" height="24" width="24">
-              <span>{{ installed-payment-options-features__list-item-1 With Premium, enjoy enhanced pop-up blocking. Say goodbye to annoying distractions like floating videos, newsletter sign-ups, survey requests, and more. }}</span>
-            </li>
-            <li class="installed-payment-options-features__list-item">
-              <img src="/installed/check--red.svg" alt="" height="24" width="24">
-              <span>{{ installed-payment-options-features__list-item-2 Hide those annoying cookie consent pop-ups that appear on almost every website. }}</span>
-            </li>
-            <li class="installed-payment-options-features__list-item">
-              <img src="/installed/check--red.svg" alt="" height="24" width="24">
-              <span>{{ installed-payment-options-features__list-item-3 Your support allows us to create a distraction-free and worry-free internet for everyone. Help us keep Adblock Plus going for years to come and get access to more features as we release them. }}</span>
-            </li>
-          </ul><!-- .installed-payment-options-features__list -->
-        </div><!-- .installed-payment-options-body__column-2 -->
-      </div><!-- .installed-payment-options-body -->
-    </div><!-- .installed-payment-options -->
-
-    <div class="installed-payment-checkout">
-      <button id="purchase-button" class="installed-payment-checkout-button" type="submit">
-        <img src="/installed/lock-icon.png" alt="" height="16" width="14">
-        <span>{{ installed-payment-checkout-button__text Complete Purchase }}</span>
-      </button>
-      <img src="/installed/payment-processors.svg" alt="Visa, Mastercard, PayPal, Apple Pay, Google Pay, AMEX" height="24" width="400">
-    </div><!-- .installed-payment-checkout -->
-
-  </form><!-- .installed-payment -->
-
-  <div class="installed-footer">
-    <div class="container">
-      <h2>
-        {{ installed-footer__heading-1 A fair internet for everyone }}
-      </h2>
-      <p>
-        {{ installed-footer__paragraph-1 Disruptive and annoying ads are always blocked. You may see some ads that help keep the content you love free—but they will never interrupt your flow. You always have the option to <a href="https://help.adblockplus.org/hc/en-us/articles/1500002514182-Block-all-ads">turn off this setting and block all ads</a>. It’s your choice, always. }}
-      </p>
-      <h3>
-        {{ installed-footer__heading-2 Help is just an email away }}
-      </h3>
-      <p>
-        {{ installed-footer__paragraph-2 If you ever need, 24x7 self-help and 8x5 email help is available on our support portal: <a href="https://help.adblockplus.org">https://help.adblockplus.org</a> }}
-      </p>
-      <p>
-        {{ installed-footer__paragraph-3 Thanks again for choosing Adblock Plus. Happy browsing! }}
-      </p>
-    </div><!-- .container -->
-  </div><!-- .background--light-grey -->
-
-</main><!-- .installed-main -->
-
-<? include footer--legal ?>
-
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script src="/js/vendor/NumberFormat.min.js"></script>
 <script src="/installed/installed-init.js" type="module"></script>
-<? include prevent-duplicate-subscriptions ?>
 <script>(()=>{
   if (typeof gtag == "function") {
     gtag('event', 'conversion', {'send_to': 'AW-16679929794/QHQ6CJagpdMZEMKPzpE-'});
