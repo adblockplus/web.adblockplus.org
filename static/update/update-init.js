@@ -68,11 +68,12 @@ async function checkIsFreemiumUser() {
 
 async function initHeaderContent() {
   const isFreemiumUser = await checkIsFreemiumUser();
+  const isFreemiumParam = adblock.query.has('trial')
   const regularHeaderContent = document.getElementById("regular-user-header");
   const freemiumHeaderContent = document.getElementById("freemium-user-header");
 
-  regularHeaderContent.hidden = isFreemiumUser;
-  freemiumHeaderContent.hidden = !isFreemiumUser;
+  regularHeaderContent.hidden = isFreemiumUser || isFreemiumParam;
+  freemiumHeaderContent.hidden = !isFreemiumUser && !isFreemiumParam;
 
   if (isFreemiumUser) freemiumHeaderContent.classList.remove("placeholder")
 }
