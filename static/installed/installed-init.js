@@ -59,6 +59,7 @@ async function setupExperiment() {
     localStorage.setItem('EMP', mockVariant);
   }
 
+
   const dev = adblock.query.has("emp");
   const meetsCriteria = (["US", "CA", "AU"].includes(adblock.strings.country)
       && adblock.strings.locale === 'en')
