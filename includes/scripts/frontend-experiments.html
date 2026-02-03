@@ -53,6 +53,7 @@
    * @see /examples/frontend-experiments/timeout/
    */
   adblock.setupExperiment = async function setupExperiment(options) {
+    console.log("EXPERIMENT SETUP: ", options);
     try {
       if (typeof options.timeoutCallback !== "undefined" && typeof options.timeoutCallback !== "function") {
         throw new Error("adblock.experiment({timeoutCallback}) must be a function or undefined");
@@ -76,6 +77,9 @@
         if (options.timeoutCallback) options.timeoutCallback();
       }, EXPERIMENT_TIMEOUT);
 
+      console.log("EXPERIMENT_TIMEOUT:", timedout);
+
+      console.log("CAN PARTICIPATE");
       if (false === await canParticipate(options.conditions)) {
         finished = true;
         if (options.noParticipateCallback) options.noParticipateCallback();
@@ -89,11 +93,15 @@
         return;
       }
 
+      console.log("EXPERIMENT SHOULD BE READY");
+
       await setExperimentId(options.id);
 
       await setVariantId(options.id, options.variant, options.variants);
 
       localStorage.setItem(options.id, adblock.variant);
+
+      console.log("EXPERIMENT DATA: ", options.id, options.variant, options.variants);
 
       if (adblock.variant === 0) {
         if (typeof options.control === "object") {
