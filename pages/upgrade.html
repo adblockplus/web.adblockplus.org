@@ -1,4 +1,4 @@
-title=Adblock Plus has been updated
+title=Adblock Plus upgrade
 template=minimal
 robots=none
 nonavbar=1
@@ -9,7 +9,7 @@ code=B
   <link rel="stylesheet" href="/update/update.css">
 </head>
 
-<header id="regular-user-header" class="update-20-years placeholder">
+<header class="active-trial-header">
   <div class="bg-white">
     <div class="container">
       <div class="update-header-section-1">
@@ -20,10 +20,10 @@ code=B
           width="40"
           src="/update/abp-logo.svg">
         <h1 class="update-header-section-1__heading">
-          {{ update-header-20-years-section-1__heading Protecting you for 20 years }}
+          More privacy and control with Premium
         </h1>
         <p class="update-header-section-1__subheading">
-          {{ update-header-20-years-section-2__heading Now Premium is even better }}
+          Enjoy a cleaner web with extra protection on desktop and mobile.
         </p>
       </div>
     </div>
@@ -291,6 +291,8 @@ code=B
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/js/vendor/NumberFormat.min.js"></script>
-<script type="module" src="/update/update-init.js"></script>
+<script type="module" src="/update/upgrade.js"></script>
+<script type="module" src="/update/update-user-accounts.js"></script>
+<script type="module" src="/js/prevent-duplicate-subscription-user-accounts.js"></script>
 <? include prevent-duplicate-subscriptions ?>
 <? include aa_snippet ?>

@@ -167,6 +167,7 @@ html:not(.de) .de-only { display: none; }
   margin-bottom: 1rem;
 }
 
+.active-trial-header .update-header-section-3 ul,
 .update-20-years .update-header-section-3 ul {
   list-style-type: disc;
   margin-inline-start: 1.5rem;
@@ -194,6 +195,11 @@ html:not(.de) .de-only { display: none; }
     width: 20px;
   }
 
+  .update-20-years.placeholder .update-header-section-1::before,
+  .update-20-years.placeholder .update-header-section-1::after {
+    display: none;
+  }
+
   .update-20-years .update-header-section-1::before {
     top: 20px;
     margin-left: -350px;
@@ -215,6 +221,10 @@ html:not(.de) .de-only { display: none; }
     top: -50px;
     width: 172px;
     margin-left: -450px;
+  }
+
+  .update-20-years.placeholder .bg-white .container::before {
+    display: none;
   }
 
   html[lang="el"] .update-20-years .bg-white .container::before,
@@ -244,6 +254,10 @@ html:not(.de) .de-only { display: none; }
     margin-left: -570px;
   }
 
+  .update-20-years.placeholder .bg-light-blue .container::before {
+    display: none;
+  }
+
   html[lang="el"] .update-20-years .bg-light-blue .container::before,
   html[lang="fr"] .update-20-years .bg-light-blue .container::before,
   html[lang="ja"] .update-20-years .bg-light-blue .container::before {
@@ -257,6 +271,10 @@ html:not(.de) .de-only { display: none; }
     top: -45px;
     width: 66px;
     margin-left: 470px;
+  }
+
+  .update-20-years.placeholder .bg-light-blue .container::after {
+    display: none;
   }
 
   html[lang="el"] .update-20-years .bg-light-blue .container::after,
@@ -283,6 +301,10 @@ html:not(.de) .de-only { display: none; }
     left: 200px;
   }
 
+  .update-20-years.placeholder .update-header-section-3-item-1:before {
+    display: none;
+  }
+
   .update-20-years .update-header-section-3-item-2:before {
     background: transparent url('/update/20-years/confetti-white.svg') top left no-repeat;
     background-size: 27px 18px;
@@ -291,6 +313,10 @@ html:not(.de) .de-only { display: none; }
     width: 27px;
     left: 230px;
     transform: rotate(15deg);
+  }
+
+  .update-20-years.placeholder .update-header-section-3-item-2:before {
+    display: none;
   }
 
   .update-20-years .update-header-section-3-item-2:after {
@@ -302,6 +328,10 @@ html:not(.de) .de-only { display: none; }
     left: 30px;
   }
 
+  .update-20-years.placeholder .update-header-section-3-item-2:after {
+    display: none;
+  }
+
   .update-20-years .update-header-section-3:after {
     background: transparent url('/update/20-years/confetti-red.svg') top left no-repeat;
     background-size: 22px 20px;
@@ -309,6 +339,10 @@ html:not(.de) .de-only { display: none; }
     bottom: -40px;
     width: 22px;
     right: 250px;
+  }
+
+  .update-20-years.placeholder .update-header-section-3:after {
+    display: none;
   }
 }
 

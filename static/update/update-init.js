@@ -29,12 +29,16 @@ function initLegacyPurchaseFlow() {
 }
 
 /**
- * Limit new flow to English only for now.
+ * Init update page scripts.
  */
 async function initPurchaseFlow() {
-  const hasMimimumExtensionVersion = await checkExtensionVersion();
+  const hasMinimumExtensionVersion = await checkExtensionVersion();
 
-  if (hasMimimumExtensionVersion) {
+  // redirect to the upgrade page users with active trial
+  const isTrialActive = adblock.adblockPlus?.isTrial || adblock.query.has("trial");
+  if (isTrialActive) window.location.replace(`/${adblock.settings.locale}/upgrade${window.location.search}`);
+
+  if (hasMinimumExtensionVersion) {
     initUserAccountsFlow();
   } else {
     initLegacyPurchaseFlow();
@@ -42,40 +46,3 @@ async function initPurchaseFlow() {
 }
 
 initPurchaseFlow();
-
-/**
- * The update page going to be used for users having free trial accepted on Email Marketing Program
- * */
-
-async function checkIsFreemiumUser() {
-  return new Promise((resolve, reject) => {
-    try {
-      adblock.afterAdblockPlusDetected(() => {
-        if (adblock.adblockPlus?.isTrial) {
-          resolve(true);
-        } else {
-          resolve(false);
-        }
-      }, () => {
-        resolve(false);
-      });
-    } catch (error) {
-      adblock.logScriptError("checkIsFreemiumUser", error);
-      resolve(false);
-    }
-  });
-}
-
-async function initHeaderContent() {
-  const isFreemiumUser = await checkIsFreemiumUser();
-  const isFreemiumParam = adblock.query.has('trial')
-  const regularHeaderContent = document.getElementById("regular-user-header");
-  const freemiumHeaderContent = document.getElementById("freemium-user-header");
-
-  regularHeaderContent.hidden = isFreemiumUser || isFreemiumParam;
-  freemiumHeaderContent.hidden = !isFreemiumUser && !isFreemiumParam;
-
-  if (isFreemiumUser) freemiumHeaderContent.classList.remove("placeholder")
-}
-
-initHeaderContent();
