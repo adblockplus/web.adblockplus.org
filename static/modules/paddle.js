@@ -825,6 +825,9 @@ function reportCheckoutEvent(data) {
 }
 
 adblock.on("checkout.loaded", reportCheckoutEvent);
+adblock.on("checkout.closed", reportCheckoutEvent);
+adblock.on("checkout.payment.failed", reportCheckoutEvent);
+adblock.on("checkout.error", reportCheckoutEvent);
 adblock.onceAfter("checkout.customer.created", reportCheckoutEvent);
 adblock.onceAfter("checkout.payment.initiated", reportCheckoutEvent);
 
