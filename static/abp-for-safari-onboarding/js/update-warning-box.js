@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (tryParam === "2") {
     warningBox.style.display = "flex";
   } else if (tryParam === "3" || tryParam > "3") {
-    warningBox.classList.add("variant-box--red");
+    warningBox.classList.add("warning-box--red");
   }
 });
