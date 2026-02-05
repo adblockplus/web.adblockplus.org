@@ -34,10 +34,6 @@ function initLegacyPurchaseFlow() {
 async function initPurchaseFlow() {
   const hasMinimumExtensionVersion = await checkExtensionVersion();
 
-  // redirect to the upgrade page users with active trial
-  const isTrialActive = adblock.adblockPlus?.isTrial || adblock.query.has("trial");
-  if (isTrialActive) window.location.replace(`/${adblock.settings.locale}/upgrade${window.location.search}`);
-
   if (hasMinimumExtensionVersion) {
     initUserAccountsFlow();
   } else {
