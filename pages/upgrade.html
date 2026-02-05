@@ -20,10 +20,10 @@ code=B
           width="40"
           src="/update/abp-logo.svg">
         <h1 class="update-header-section-1__heading">
-          More privacy and control with Premium
+          {{ upgrade-header-section-1__heading More privacy and control with Premium }}
         </h1>
         <p class="update-header-section-1__subheading">
-          Enjoy a cleaner web with extra protection on desktop and mobile.
+          {{ upgrade-header-section-1__subheading Enjoy a cleaner web with extra protection on desktop and mobile. }}
         </p>
       </div>
     </div>
@@ -33,11 +33,11 @@ code=B
       <div class="update-header-section-3">
         <div class="update-header-section-3-item update-header-section-3-item-1">
           <div>
-            <h2>{{ update-header-20-years-section-3-item-1__heading Best-in-class Desktop protection }}</h2>
+            <h2>{{ upgrade-header-section-3-item-1__heading Best-in-class Desktop protection }}</h2>
             <ul>
-              <li>{{ update-header-20-years-section-3-item-1-listitem-1 Hide cookie banners and consent pop-ups }}</li>
-              <li>{{ update-header-20-years-section-3-item-1-listitem-2 Block intrusive ads, pop-ups, and videos }}</li>
-              <li>{{ update-header-20-years-section-3-item-1-listitem-3 Enjoy faster, cleaner web pages }}</li>
+              <li>{{ upgrade-header-section-3-item-1-listitem-1 Hide cookie banners and consent pop-ups }}</li>
+              <li>{{ upgrade-header-section-3-item-1-listitem-2 Block intrusive ads, pop-ups, and videos }}</li>
+              <li>{{ upgrade-header-section-3-item-1-listitem-3 Enjoy faster, cleaner web pages }}</li>
             </ul>
           </div>
         </div>
@@ -72,10 +72,6 @@ code=B
             {{ update-plan-heading__frequency-yearly YEARLY }}
           </span>
           <span class="update-plan-heading-price" data-frequency="yearly">
-            <!--
-            <span class="update-plan-heading-price__original-currency">$</span>
-            <span class="update-plan-heading-price__original-amount">48</span>
-            -->
             <span class="update-plan-heading-price__final-currency">$</span>
             <span class="update-plan-heading-price__final-amount">40</span>
             <span class="update-plan-heading-price__frequency">
@@ -294,4 +290,3 @@ code=B
 <script type="module" src="/update/update-user-accounts.js"></script>
 <script type="module" src="/js/prevent-duplicate-subscription-user-accounts.js"></script>
 <? include prevent-duplicate-subscriptions ?>
-<? include aa_snippet ?>
