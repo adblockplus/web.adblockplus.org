@@ -29,12 +29,12 @@ function initLegacyPurchaseFlow() {
 }
 
 /**
- * Limit new flow to English only for now.
+ * Init update page scripts.
  */
 async function initPurchaseFlow() {
-  const hasMimimumExtensionVersion = await checkExtensionVersion();
+  const hasMinimumExtensionVersion = await checkExtensionVersion();
 
-  if (hasMimimumExtensionVersion) {
+  if (hasMinimumExtensionVersion) {
     initUserAccountsFlow();
   } else {
     initLegacyPurchaseFlow();

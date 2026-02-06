@@ -1,4 +1,4 @@
-title=Adblock Plus has been updated
+title=Adblock Plus upgrade
 template=minimal
 robots=none
 nonavbar=1
@@ -9,7 +9,7 @@ code=B
   <link rel="stylesheet" href="/update/update.css">
 </head>
 
-<header class="update-20-years">
+<header class="active-trial-header">
   <div class="bg-white">
     <div class="container">
       <div class="update-header-section-1">
@@ -20,10 +20,10 @@ code=B
           width="40"
           src="/update/abp-logo.svg">
         <h1 class="update-header-section-1__heading">
-          {{ update-header-20-years-section-1__heading Protecting you for 20 years }}
+          {{ upgrade-header-section-1__heading More privacy and control with Premium }}
         </h1>
         <p class="update-header-section-1__subheading">
-          {{ update-header-20-years-section-2__heading Now Premium is even better }}
+          {{ upgrade-header-section-1__subheading Enjoy a cleaner web with extra protection on desktop and mobile. }}
         </p>
       </div>
     </div>
@@ -33,11 +33,11 @@ code=B
       <div class="update-header-section-3">
         <div class="update-header-section-3-item update-header-section-3-item-1">
           <div>
-            <h2>{{ update-header-20-years-section-3-item-1__heading Best-in-class Desktop protection }}</h2>
+            <h2>{{ upgrade-header-section-3-item-1__heading Best-in-class Desktop protection }}</h2>
             <ul>
-              <li>{{ update-header-20-years-section-3-item-1-listitem-1 Hide cookie banners and consent pop-ups }}</li>
-              <li>{{ update-header-20-years-section-3-item-1-listitem-2 Block intrusive ads, pop-ups, and videos }}</li>
-              <li>{{ update-header-20-years-section-3-item-1-listitem-3 Enjoy faster, cleaner web pages }}</li>
+              <li>{{ upgrade-header-section-3-item-1-listitem-1 Hide cookie banners and consent pop-ups }}</li>
+              <li>{{ upgrade-header-section-3-item-1-listitem-2 Block intrusive ads, pop-ups, and videos }}</li>
+              <li>{{ upgrade-header-section-3-item-1-listitem-3 Enjoy faster, cleaner web pages }}</li>
             </ul>
           </div>
         </div>
@@ -287,6 +287,6 @@ code=B
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/js/vendor/NumberFormat.min.js"></script>
-<script type="module" src="/update/update-init.js"></script>
+<script type="module" src="/update/update-user-accounts.js"></script>
+<script type="module" src="/js/prevent-duplicate-subscription-user-accounts.js"></script>
 <? include prevent-duplicate-subscriptions ?>
-<? include aa_snippet ?>
