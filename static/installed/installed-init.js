@@ -38,32 +38,37 @@ async function initPurchaseFlow() {
   }
 }
 
-// initPurchaseFlow();
+initPurchaseFlow();
 
 /**
  * Init experiment for Email Marketing Program
  * */
 
 function applyControl() {
+  document.documentElement.classList.remove('modal-open');
   const loader = document.getElementById("installed-loader");
   if (loader) {
     loader.hidden = true;
   }
-  const defaultContent = document.getElementById("installed")
-  if (defaultContent) {
-    defaultContent.classList.remove("placeholder");
-    defaultContent.hidden = false;
+  const overlay = document.getElementById("installed-blur-overlay");
+  if (overlay) {
+    overlay.hidden = true;
   }
-  console.log('init purchase flow');
-  initPurchaseFlow();
 }
 
 async function setupExperiment() {
+  document.documentElement.classList.add("modal-open");
+
+  // TODO: remove mock
+  const mockVariant = adblock.query.get('v');
+  if (mockVariant) {
+    localStorage.setItem('EMP', mockVariant);
+  }
+
   const dev = adblock.query.has("emp");
   const meetsCriteria = (["US", "CA", "AU"].includes(adblock.strings.country)
       && adblock.strings.locale === 'en')
     || dev;
-  console.log('country meets criteria: ', meetsCriteria);
   if (!meetsCriteria) {
     console.log('apply control');
     applyControl();
@@ -78,7 +83,7 @@ async function setupExperiment() {
     noParticipateCallback: applyControl,
     trafficAllocation: 0,
     control: {
-      script: ["https://cdn.paddle.com/paddle/v2/paddle.js", "/js/vendor/NumberFormat.min.js"]
+      script: "/experiments/email-marketing-program/control.js"
     },
     variant: {
       script: "/experiments/email-marketing-program/variant.js"

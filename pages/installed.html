@@ -19,21 +19,30 @@ nofooter=1
   </script>
 </head>
 
-<section class="installed-header--on-load" id="installed-loader">
-  <div class="installed-page-loader">
-    <div class="installed-page-loader-body">
-      <div class="installed-page-loader__loader"><div></div><div></div><div></div><div></div></div>
+<!-- Control content always presents; blurred or not based on state -->
+<? include experiments/email-marketing-program/control ?>
+
+<!-- Blur overlay -->
+<div id="installed-blur-overlay" class="installed-blur-overlay"></div>
+
+<!-- Loader overlay -->
+<section id="installed-loader" class="installed-modal-backdrop">
+  <div class="installed-header--on-load">
+    <div class="installed-page-loader">
+      <div class="installed-page-loader-body">
+        <div class="installed-page-loader__loader"><div></div><div></div><div></div><div></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="installed" class="installed" hidden>
-  <? include experiments/email-marketing-program/control ?>
-</section>
-<section id="installed-variant" class="installed" hidden>
+<!-- Variant content shows as modal -->
+<section id="installed-variant" class="installed-modal-backdrop hidden" hidden>
   <? include experiments/email-marketing-program/variant ?>
 </section>
 
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="/js/vendor/NumberFormat.min.js"></script>
 <script src="/installed/installed-init.js" type="module"></script>
 <script>(()=>{
   if (typeof gtag == "function") {
