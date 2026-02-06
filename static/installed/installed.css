@@ -51,15 +51,6 @@ a:hover, a:active, a:focus {
   text-decoration: underline;
 }
 
-.background--color {
-  background-color: #F5F5F5;
-}
-
-.background--pattern {
-  fill: #EDF9FF;
-  background: #E6E6E6 url('./background-pattern.svg') repeat top left;
-}
-
 .installed-header-1 {
   padding-block: 2.5rem;
   text-align: start;
@@ -346,47 +337,29 @@ a:hover, a:active, a:focus {
  * EMAIL MARKETING PROGRAM
  ******************************************************************************/
 
-:root {
-  --white: #FFFFFF;
-  --gray-0: #F7F7F7;
-  --grey-1: #FAFAFA;
-  --grey-2: #E6E6E6;
-  --grey-3: #C6C6C6;
-  --grey-4: #ADADAD;
-  --grey-5: #999999;
-  --grey-6: #7A7A7A;
-  --grey-7: #5B5B5B;
-  --grey-8: #1C1C1E;
-  --black: #000000;
-  --red: #E40D0D;
-  --red--light: #FEF2F2;
-  --red--dark: #F2DCDC;
-  --green--light: #DCFCE7;
-  --green--dark: #096C15;
-  --yellow--light: #FDF7D8;
-  --yellow--dark: #D39100;
-  --blue: #0797E1;
-  --blue--dark: #0797e1ee;
-  --xxs: .25rem;
-  --xs: .5rem;
-  --sm: .75rem;
-  --md: 1rem;
-  --lg: 1.5rem;
-  --xl: 2.25rem;
-  --xxl: 2.5rem;
-  --display-1-font-size: 2rem;
-  --h1-font-size: 1.75rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
-  --h4-font-size: 1.125rem;
-  --heading-line-height: 1.2;
-  --default-font-size: 1rem;
-  --default-line-height: 1.5;
-  --larger-font-size: 1.125rem;
-  --smaller-font-size: .875rem;
-  --default-font-weight: 400;
-  --thin-font-weight: 300;
-  --bold-font-weight: 700
+html.modal-open {
+  overflow: hidden !important;
+}
+
+.installed-blur-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(16px) brightness(0.75);
+  z-index: 998;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.installed-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container.trial {
@@ -544,4 +517,3 @@ a:hover, a:active, a:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
-
