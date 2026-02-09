@@ -18,22 +18,22 @@ const trialOffer = document.getElementById("trial-offer");
 const trialBenefits = document.getElementById("trial-offer-benefits");
 const overlay = document.getElementById("installed-blur-overlay");
 
-const skipLink = document.getElementById("skip-trial-offer");
-if (skipLink) {
-  skipLink.addEventListener("click", function(e) {
+const ignoreLink = document.getElementById("ignore-trial-offer");
+if (ignoreLink) {
+  ignoreLink.addEventListener("click", function(e) {
     adblock.log("click", {trigger: e.target.id});
-    if (trialOffer) {
-      trialOffer.hidden = true;
-    }
     if (trialBenefits) {
-      trialBenefits.hidden = false;
+      trialBenefits.hidden = true;
+    }
+    if (trialOffer) {
+      trialOffer.hidden = false;
     }
   })
 }
 
-const ignoreLink = document.getElementById("ignore-trial-offer");
-if (ignoreLink) {
-  ignoreLink.addEventListener("click", function(e) {
+const skipLink = document.getElementById("skip-trial-offer");
+if (skipLink) {
+  skipLink.addEventListener("click", function(e) {
     adblock.log("click", {trigger: e.target.id});
     document.documentElement.classList.remove('modal-open');
     if (trialOffer) {
