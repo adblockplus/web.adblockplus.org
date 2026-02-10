@@ -257,9 +257,9 @@ a:hover, a:active, a:focus {
   padding-block: 2.5rem 3.75rem;
 }
 
-.installed-footer .container {
+/* .installed-footer .container {
   max-width: 57.125rem;
-}
+} */
 
 .installed-footer .container :last-child {
   margin-block-end: 0;
@@ -365,6 +365,7 @@ html.modal-open {
 .container.trial {
   display: flex;
   justify-content: center;
+  max-width: 29rem;
 }
 
 .installed-trial-proposal {
@@ -378,7 +379,7 @@ html.modal-open {
   margin: 5rem 3rem 3rem;
   margin-inline: auto;
   padding: 2.25rem;
-  max-width: 30rem;
+  max-width: 28rem;
   background-color: #F7F7F7;
 }
 
@@ -556,6 +557,13 @@ html.modal-open {
   color: #000000;
 }
 
+.installed-benefit-text-plain {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #000000;
+}
+
 .installed-benefit-divider {
   margin: 0;
   border: none;
@@ -612,4 +620,5 @@ html.modal-open {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
 }
