@@ -1,21 +1,162 @@
 # adblockplus.org website
 
-This repository contains [VSCode development container](https://code.visualstudio.com/docs/remote/containers) config to help you get started.
+## Hosting
 
-If you prefer not to use VSCode or Docker then you can see `.devcontainer/Dockerfile` and `.devcontainer/postcreate.sh` for config and build instructions.
+This website is hosted on [Firebase](https://console.firebase.google.com/project/www-adblockplus-org/overview). A small number of dynamic endpoints (robots.txt, redirects, locale routing) are handled by a [Cloud Run](https://console.cloud.google.com/) service.
 
-There are two ways to "run" this website:
+- `services/firebase/firebase.json` — Firebase Hosting config (redirects, rewrites, headers)
+- `services/firebase/.firebaserc` — Firebase project aliases (`staging` and `production`)
+- `services/cloudrun/index.js` — Cloud Run Express app (dynamic endpoint handlers)
+- `services/cloudrun/handlers/` — Individual route handlers (e.g. legacy redirects)
 
-1. The "fast" way: via eyeo/cms development test server
-    - clone [cms server](https://gitlab.com/eyeo/websites/cms.git)
-    - in your `.zshrc` set path to your cms project `export PYTHONPATH="$HOME/<path>/cms:$PYTHONPATH"`
-    - `npm run fast`
-1. The "slow" way: via apache2
-    - `npm run slow`
+> **Note:** The repository still contains some legacy Apache-era files (`.htaccess` etc.) that are no longer used in production and still require cleaning up.
 
-.htaccess features (e.g. redirect, geoip) only work the "slow" way.
+## Running locally
 
-Try `127.0.0.1` if `localhost` doesn't work (effects the fast way on macOS).
+### Prerequisites
+
+1. Install and start [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+2. Install Python 3.9 (required by the CMS). [pyenv](https://github.com/pyenv/pyenv) is recommended:
+   ```sh
+   pyenv install 3.9
+   pyenv local 3.9
+   ```
+3. Clone the [CMS server](https://gitlab.com/eyeo/websites/cms.git) somewhere on your machine
+4. Add it to your Python path, e.g. in your `.zshrc`:
+   ```sh
+   export PYTHONPATH="$HOME/path/to/cms:$PYTHONPATH"
+   ```
+5. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Start the dev server
+
+```sh
+npm run fast
+```
+
+This starts the CMS test server on `http://localhost:8000`. Use `127.0.0.1` instead of `localhost` if you have issues on macOS.
+
+> **Note:** `npm run slow` also exists but relies on a legacy Apache setup that is no longer used. You can mostly ignore it.
+
+> **VSCode Dev Container:** A dev container config exists in `.devcontainer/` but is not actively supported. See `.devcontainer/Dockerfile` and `.devcontainer/postcreate.sh` if you want to try it.
+
+## Making changes
+
+### Development workflow
+
+1. Create a branch from `master` and make your changes
+2. Push your branch and open a **merge request** in GitLab
+3. The CI pipeline will automatically build and deploy a **preview site** on a temporary Firebase Hosting channel — the URL will appear in the MR environment
+4. Automated Playwright tests (Chromium + cross-browser) run against the preview URL
+5. Review your changes on the preview site before merging
+
+### Deploying to production
+
+Merging to `master` triggers an automatic deployment to **production** (`adblockplus.org`). There is no manual gate — **merge with care**.
+
+The pipeline deploys in this order:
+1. Static pages are generated via the CMS
+2. The Cloud Run service is deployed (`services/cloudrun/`)
+3. Firebase Hosting is updated (`services/firebase/`)
+
+### Rolling back a production change
+
+If a bad change reaches production, create a revert commit and open a merge request so the fix goes through the normal review and preview pipeline:
+
+```sh
+git revert <commit-hash>
+git push origin my-revert-branch
+# then open an MR in GitLab
+```
+
+Once the MR is merged to `master`, the pipeline will deploy the reverted state to production. For an immediate static-only rollback, you can also revert to a previous Firebase Hosting release directly from the [Firebase console](https://console.firebase.google.com/project/www-adblockplus-org/hosting), but note that this won't revert Cloud Run changes.
+
+## Country-specific settings
+
+Pages load `/settings.js` (via `includes/late-head-scripts.html`) which sets the visitor's country, default currency, privacy restrictions, and VAT state. Firebase serves a different version of this file per country using its [i18n rewrites](https://firebase.google.com/docs/hosting/i18n-rewrites) feature.
+
+**How it works:**
+
+1. `scripts/generate-settings.mjs` pre-generates a `settings.js` for every country code into `static/ALL_{cc}/settings.js` (e.g. `static/ALL_de/settings.js` hard-codes `country = "DE"`). A fallback is generated at `static/ALL_all/settings.js` with `country = "unknown"`.
+2. The `i18n.root` setting in `firebase.json` tells Firebase Hosting to look for country-specific static files in `ALL_{cc}/` subdirectories, selected automatically based on the visitor's IP.
+3. The `Cache-Control: no-cache` header on `settings.js` (in `firebase.json`) ensures visitors always get fresh country data.
+
+To regenerate these files after editing the template:
+
+```sh
+node scripts/generate-settings.mjs
+```
+
+## Event logging
+
+Pages send analytics events to `/access?{params}` via the `adblock.log()` function defined in `includes/scripts/analytics-functions.html`. Each event includes a session ID, page name, locale, and a `logVersion` field (currently `2.1.1`) for schema versioning.
+
+### Example Event types
+
+| Event | Source file | Purpose |
+|-------|------------|---------|
+| `load` | `includes/scripts/load-tracking.html` | Page load with browser/OS detection, screen size, timing |
+| `click` | `includes/scripts/click-tracking.html` | Clicks on `.track-click` or `[data-click]` elements |
+| `script-error` | `includes/scripts/error-reporting.html` | JavaScript errors with stack traces |
+| `service-error` | `includes/scripts/error-reporting.html` | API/service call failures |
+| `experiment.loaded` | `includes/scripts/frontend-experiments.html` | A/B test variant assignments |
+
+### Where the data goes
+
+Request logs from the `/access` endpoint flow through Cloud Logging into [BigQuery](https://console.cloud.google.com/bigquery?project=www-adblockplus-org&ws=) where they can be queried for analytics and debugging. Website events are stored in the `www-adblockplus-org.firebase_hosting_reqs.firebasehosting_googleapis_com_webrequests` table.
+
+### Google Analytics and cookie consent
+
+Google Analytics, Google Tag Manager, and the cookie consent banner are loaded conditionally based on the visitor's country. All pages load `js/testing/setup.js` via `includes/google/analytics.tmpl`. Firebase's i18n rewrites serve different versions of this file per country:
+
+| Region | Countries | Behaviour |
+|--------|-----------|-----------|
+| EEA/GDPR | AT, BE, BG, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, NO, PL, PT, RO, SE, SI | No tracking. `setup.js` is replaced with a no-op comment. |
+| Default | All other countries (incl. US, AU, CA, NZ) | GA and GTM load immediately. A cookie banner (`js/cookie-prompt.js`) is shown on first visit but tracking starts regardless of consent. |
+
+Key files:
+- `static/js/testing/setup.js` — default GA/GTM/cookie-prompt loader
+- `static/ALL_{cc}/js/testing/setup.js` — per-country overrides (GDPR countries get a no-op)
+- `static/js/cookie-prompt.js` — cookie consent banner UI
+
+> **Note:** The repository also contains `static/js/testing/pre-approved.js` and `includes/pre-approved-analytics.tmpl`. These were part of a three-tier consent system under the legacy Apache setup but are no longer used — `pre-approved-analytics.tmpl` is not included by any template.
+
+Users can opt out via the `eyeo-ga-opt-out` cookie. Individual pages can suppress the banner by setting `prevent_cookie_prompt` in their page attributes.
+
+## Locale translations
+
+The site supports 24 languages configured in `settings.ini` (under `[langnames]`). English (`en`) is the default locale.
+
+### How it works
+
+- Translation strings live in `locales/{locale}/{section}.json` using Chrome i18n JSON format:
+  ```json
+  {
+    "follow-us-header": {
+      "message": "Follow us on",
+      "description": "Optional context for translators"
+    }
+  }
+  ```
+- Templates reference strings with `{{ get_string("key-name", "section") }}` where `section` maps to the JSON filename (e.g. `"footer"` reads from `footer.json`).
+- The CMS automatically determines which locales are available for each page based on whether a matching JSON file exists in that locale directory.
+- URLs are locale-prefixed (e.g. `/de/download`, `/fr/premium`). The navbar language dropdown is generated from the available locales for the current page.
+
+### Adding or changing translated content
+
+1. Add the English string to `locales/en/{section}.json`
+2. Reference it in your template with `get_string("your-key", "section")`
+3. Translations for other languages are handled via Crowdin — import/export scripts are in `scripts/`:
+   - `scripts/export-locale-from-html.mjs` — export strings for translation
+   - `scripts/import-locale-strings.mjs` — import translations from a Crowdin export
+   - `scripts/copy-locale-strings.mjs` — copy strings between locales
+
+### RTL support
+
+Arabic (`ar`) and Hebrew (`he`) are configured as right-to-left languages in `settings.ini` under `[rtl]`.
 
 ## Templates
 
@@ -49,7 +190,7 @@ Unless a language is provided in the URL (e.g. via selecting language in the nav
 ### Payment pages
 
 - `testmode` flag - changes the payment environment from "live" to "sandbox".
-- `has-subscription` string - Fake "prevent duplicate subscirption" intervention states and outcomes
+- `has-subscription` string - Fake "prevent duplicate subscription" intervention states and outcomes
     - `yes` - The client will always have a subscription
     - `no` - The client will never have a subscription
     - `error` - The subscription check will always fail
@@ -74,7 +215,7 @@ Unless a language is provided in the URL (e.g. via selecting language in the nav
 - `premium-checkout__country` string - 2 letter country code from premium checkout
 - `premium-checkout__locale` string - 2-5 letter language code from premium checkout
 - `premium-checkout__timestamp` number - datetime stamp from premium checkout
-- `reenroll` flag - used to show an alternative premium CTA for reenrolling.
+- `reenroll` flag - used to show an alternative premium CTA for re-enrolling.
 
 ### Installed page
 
@@ -98,7 +239,7 @@ These test jobs are available in the Gitlab pipeline to be manually run as neede
 - platform_tests - this runs a downstream pipeline of https://gitlab.com/eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests and will eventually be phased out
 - visual_regression_tests - these compare snapshots of pages against baseline snapshots
 
-Additionally there is a daily scheduled run of all tests on all browsers.
+Additionally there is a daily scheduled run of all tests on all browsers. Test failures are reported in the `#infrastructure-alerts` Slack channel.
 
 ## Investigating pipeline test fails
 
@@ -129,7 +270,7 @@ Can also run tests only for specific tags:
 - Exclude specific tags and only run on Chromium: `npx playwright test --project chromium --grep-invert "@third_party_link|@all_browsers"`
 
 Available tags:
-- @all_browsers - these tests have different behaviour on different browsers
+- @all_browsers - these tests have different behavior on different browsers
 - @third_party_link - these tests can fail due to third party sites being down
 - @visual_regression - compares snapshots for each page against an approved baseline snapshot
 

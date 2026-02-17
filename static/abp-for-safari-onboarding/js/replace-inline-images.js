@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const content = document.querySelector('.content');
+    const content = document.querySelector('.content-container') || document.querySelector('.content');
     const html = content.innerHTML;
 
     // Replace image placeholders with actual img tags

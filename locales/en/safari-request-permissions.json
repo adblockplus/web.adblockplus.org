@@ -14,13 +14,19 @@
   "safari-request-permissions-title-alt": {
     "message": "The latest update of Adblock Plus requires some additional permissions to allow us to block more nuisance ads."
   },
-  "safari-request-permissions-instruction1": {
+  "safari-request-permissions-instruction-tap-review-or-menu": {
     "message": "Tap on the review button at the top or the [[IMG:safari_menu_icon]] in the address bar"
   },
-  "safari-request-permissions-instruction2": {
-    "message": "Tap <strong>“Always Allow“</strong>"
+  "safari-request-permissions-instruction-tap-abp-warning": {
+    "message": "Tap <strong>\"Adblock Plus [[IMG:warning_icon]]\"</strong>"
   },
-  "safari-request-permissions-instruction3": {
-    "message": "Then tap <strong>“Always Allow on Every Website“</strong>"
+  "safari-request-permissions-instruction-tap-warning": {
+    "message": "Tap [[IMG:warning_icon]] next to Adblock Plus"
+  },
+  "safari-request-permissions-instruction-always-allow": {
+    "message": "Tap <strong>\"Always Allow...\"</strong>"
+  },
+  "safari-request-permissions-instruction-always-allow-every-website": {
+    "message": "Then tap <strong>\"Always Allow on Every Website\"</strong>"
   }
 }

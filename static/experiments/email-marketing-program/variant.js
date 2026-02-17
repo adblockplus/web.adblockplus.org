@@ -63,14 +63,6 @@ if (skipLink) {
 document.querySelectorAll(".installed-primary-button").forEach((element) => {
   element.href = `${USER_ACCOUNTS_DOMAIN}?flow=trial&s=abp-w`
   element.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const href = e.currentTarget.href;
     adblock.log("click", { trigger: e.currentTarget.id });
-
-    // set timeout before navigate to log a click
-    setTimeout(() => {
-      window.location.href = href;
-    }, 100);
   })
 });

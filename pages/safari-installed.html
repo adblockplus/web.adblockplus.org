@@ -15,22 +15,30 @@ template=raw
 </header>
 <hr class="divider">
 <div class="content-container">
+    <div class="icon-with-badge">
+        <img src="/abp-for-safari-onboarding/img/safari.svg" alt="Safari icon" class="icon-with-badge__icon">
+        <img src="/abp-for-safari-onboarding/img/shield_valid.svg" alt="enabled" class="icon-with-badge__badge">
+    </div>
     <div class="title">
-        <strong>{{ safari-installed-title You’re all set.}}</strong>
-        <br>
-        {{ safari-installed-subtitle Ads are now blocked in Safari.}}
-        <img src="/abp-for-safari-onboarding/img/lady_and_phone.svg" alt="Setup icon" class="logo-large">
+        <strong>{{ safari-installed-title You're all set.}}</strong>
+        <div>{{ safari-installed-subtitle Ads are now blocked in Safari.}}</div>
     </div>
 
     <div class="description">
-        <span>{{ safari-installed-desc Want even more protection?}}</span>
-        <span>{{ safari-installed-desc-2 Open the app to enable blocking for cookie pop-ups, surveys, and other distractions - all in just a tap. }}</span>
+        <span>{{ safari-installed-desc Cookie banners and other distractions will also be blocked based on your settings.}}</span>
+    </div>
+
+    <div class="icon-box">
+        <img src="/abp-for-safari-onboarding/img/phone.svg" alt="Phone icon" class="icon-box__icon">
+    </div>
+
+    <div class="description description--semibold">
+        <span>{{ safari-installed-desc-2 Check back in the app often to see blocking stats & enable extra features.}}</span>
     </div>
 
 </div>
 <div class="footer">
     <a class="ios-button" href="abp://safari-installed">
-        {{ safari-installed-action Enable More Blocking }}
+        {{ safari-installed-action Explore More Features }}
     </a>
-    <p>{{ safari-installed-note Additional features are off by default to keep things simple. You can enable them any time in the app. }}</p>
 </div>
