@@ -362,6 +362,11 @@ html.modal-open {
   justify-content: center;
 }
 
+.installed-modal-backdrop:focus,
+#trial-offer:focus {
+  outline: none;
+}
+
 .container.trial {
   display: flex;
   justify-content: center;
@@ -469,7 +474,7 @@ html.modal-open {
 
 /* Gold/Yellow Text */
 .text-gold {
-  color: #EDA51E;
+  color: #B45309;
 }
 
 /* Success Banner */
@@ -503,7 +508,7 @@ html.modal-open {
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.125rem;
-  color: #22C55E;
+  color: #15803D;
 }
 
 /* Benefit Subheading */

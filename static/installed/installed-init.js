@@ -45,19 +45,13 @@ initPurchaseFlow();
  * */
 
 function applyControl() {
-  document.documentElement.classList.remove('modal-open');
   const loader = document.getElementById("installed-loader");
   if (loader) {
     loader.hidden = true;
   }
-  const overlay = document.getElementById("installed-blur-overlay");
-  if (overlay) {
-    overlay.hidden = true;
-  }
 }
 
 async function setupExperiment() {
-  document.documentElement.classList.add("modal-open");
 
   // TODO: remove mock
   const mockVariant = adblock.query.get('v');
@@ -70,7 +64,6 @@ async function setupExperiment() {
       && adblock.strings.locale === 'en')
     || dev;
   if (!meetsCriteria) {
-    console.log('apply control');
     applyControl();
     return;
   }
