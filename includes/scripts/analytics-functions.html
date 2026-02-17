@@ -51,7 +51,7 @@ adblock.log = function log(event, data = {}) {
     }
 
     if (adblock.isLive) {
-      return fetch(`/access?${params.toString()}`);
+      return fetch(`/access?${params.toString()}`, {keepalive: true});
     } else {
       return new Promise(resolve => {
         console.log(event, adblock.URLSearchObject(params.toString()));
