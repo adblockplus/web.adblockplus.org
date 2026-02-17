@@ -65,21 +65,10 @@ async function setupExperiment() {
     localStorage.setItem('EMP', mockVariant);
   }
 
-  const dev = adblock.query.has("emp");
-  const meetsCriteria = (["US", "CA", "AU"].includes(adblock.strings.country)
-      && adblock.strings.locale === 'en')
-    || dev;
-  if (!meetsCriteria) {
-    console.log('apply control');
-    applyControl();
-    return;
-  }
-
-  const hasMinimumExtensionVersion = await checkExtensionVersion();
-
   adblock.setupExperiment({
     id: "EMP",
-    conditions: () => hasMinimumExtensionVersion || dev,
+    conditions: () => (["US", "CA", "AU"].includes(adblock.settings.country)
+        && adblock.settings.locale === 'en') ||  adblock.query.has("emp"),
     noParticipateCallback: applyControl,
     trafficAllocation: 0,
     control: {
@@ -89,7 +78,6 @@ async function setupExperiment() {
       script: "/experiments/email-marketing-program/variant.js"
     },
   });
-
 }
 
 setupExperiment();
