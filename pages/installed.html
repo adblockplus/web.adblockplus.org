@@ -23,7 +23,7 @@ nofooter=1
 <? include experiments/email-marketing-program/control ?>
 
 <!-- Blur overlay -->
-<div id="installed-blur-overlay" class="installed-blur-overlay"></div>
+<div id="installed-blur-overlay" class="installed-blur-overlay" hidden></div>
 
 <!-- Loader overlay -->
 <section id="installed-loader" class="installed-modal-backdrop">
@@ -37,7 +37,7 @@ nofooter=1
 </section>
 
 <!-- Variant content shows as modal -->
-<section id="installed-variant" class="installed-modal-backdrop hidden" hidden>
+<section id="installed-variant" class="installed-modal-backdrop hidden" hidden role="dialog" aria-modal="true" aria-label="Premium trial offer" tabindex="-1">
   <? include experiments/email-marketing-program/variant ?>
 </section>
 

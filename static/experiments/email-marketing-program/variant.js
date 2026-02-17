@@ -2,6 +2,7 @@ document.documentElement.classList.add("modal-open");
 
 const loader = document.getElementById("installed-loader");
 const variant = document.getElementById("installed-variant");
+const overlay = document.getElementById("installed-blur-overlay");
 const environment = location.hostname === "localhost" ? "dev"
   : location.hostname.endsWith(".web.app") ? "dev" : "live";
 
@@ -13,10 +14,19 @@ if (loader) {
 if (variant) {
   variant.hidden = false
 }
+if (overlay) {
+  overlay.hidden = false
+}
 
 const trialOffer = document.getElementById("trial-offer");
 const trialBenefits = document.getElementById("trial-offer-benefits");
-const overlay = document.getElementById("installed-blur-overlay");
+
+// Trap focus: make all sibling body content inert
+const backgroundEls = [...document.body.children].filter(el => el !== variant);
+backgroundEls.forEach(el => el.setAttribute('inert', ''));
+
+// Move focus into the dialog so screen readers announce it without highlighting a button
+if (variant) variant.focus();
 
 const ignoreLink = document.getElementById("ignore-trial-offer");
 if (ignoreLink) {
@@ -27,6 +37,7 @@ if (ignoreLink) {
     }
     if (trialOffer) {
       trialOffer.hidden = false;
+      trialOffer.focus();
     }
   })
 }
@@ -45,6 +56,7 @@ if (skipLink) {
     if (overlay) {
       overlay.hidden = true;
     }
+    backgroundEls.forEach(el => el.removeAttribute('inert'));
   })
 }
 
