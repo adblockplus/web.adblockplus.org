@@ -270,6 +270,12 @@ a:hover, a:active, a:focus {
   max-width: 57.125rem;
 }
 
+@media (max-width: 768px) {
+  .installed-footer .container {
+    max-width: 100%;
+  }
+}
+
 .installed-footer .container :last-child {
   margin-block-end: 0;
 }
