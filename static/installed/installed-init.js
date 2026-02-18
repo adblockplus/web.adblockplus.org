@@ -74,12 +74,10 @@ async function setupExperiment() {
     return;
   }
 
-  // const hasMinimumExtensionVersion = await checkExtensionVersion();
-
   adblock.setupExperiment({
     id: "EMP",
-    conditions: () => (["US", "CA", "AU"].includes(adblock.settings.country)
-        && adblock.settings.locale === 'en') || dev,
+    conditions: () => ((["US", "CA", "AU"].includes(adblock.settings.country)
+        && adblock.settings.locale === 'en') || dev) && !adblock.query.has("experiment_disable"),
     noParticipateCallback: applyControl,
     trafficAllocation: 0,
     control: {
