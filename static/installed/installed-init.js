@@ -73,7 +73,7 @@ async function setupExperiment() {
 
   adblock.setupExperiment({
     id: "EMP",
-    conditions: () => hasMinimumExtensionVersion || dev,
+    conditions: () => (hasMinimumExtensionVersion || dev) && !adblock.query.has("experiment_disable"),
     noParticipateCallback: applyControl,
     trafficAllocation: 0,
     control: {
