@@ -13,12 +13,14 @@ variables:
     DOMAIN: adblockplus.org
     FIREBASE_DOMAIN: https://www.adblockplus.dev/
 
-.common:
+.images:
+  node: &NODE_IMAGE node:16-alpine
+  cloud_sdk: &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:409.0.0
+  build: &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
+
+default:
   tags:
     - "eyeo-small-runner"
-    - &NODE_IMAGE node:16-alpine
-    - &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:409.0.0
-    - &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
 
 stages:
   - prebuild_firebase
