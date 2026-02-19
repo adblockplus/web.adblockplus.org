@@ -3,85 +3,93 @@
   <div id="trial-offer" class="container trial center-justify align-items-center" hidden tabindex="-1">
     <div class="installed-trial-proposal">
       <div class="installed-trial-proposal-header">
-        <img src="/installed/abp-logo--with-text.svg" alt="Adblock Plus Premium" width="294" height="47" class="installed-payment-options-header__logo">
+        <img src="/installed/abp-logo--with-text.svg" alt="Adblock Plus Premium" width="294" height="47" class="installed-trial-proposal-header__logo">
         <hr>
       </div>
       <div class="installed-trial-proposal-body">
-        <h2>Are you sure you want to skip this offer?</h2>
-        <p class="installed-benefit-subheading">You can experience a calmer web for <strong><span class="text-gold">a full month</span></strong> with zero risk:</p>
+        <h2>Before you continue...</h2>
+        <p class="installed-benefit-subheading">You can try Premium free for 30 days with no payment details. It switches back automatically.</p>
         <div class="installed-benefits-list">
-          <div class="installed-benefit-item">
-            <img src="/installed/icon-no-payment.svg" alt="" class="installed-benefit-icon">
+          <div class="installed-benefit-item align-items-center">
+            <img src="/experiments/email-marketing-program/icon-auto-revert.svg" alt="" class="installed-benefit-icon">
+            <span class="installed-benefit-text">Automatically reverts to free <span class="installed-benefit-text-plain">after the trial ends</span></span>
+          </div>
+          <hr class="installed-benefit-divider">
+          <div class="installed-benefit-item align-items-center">
+            <img src="/experiments/email-marketing-program/icon-no-payment.svg" alt="" class="installed-benefit-icon">
             <span class="installed-benefit-text">No payment <span class="installed-benefit-text-plain">required</span></span>
           </div>
           <hr class="installed-benefit-divider">
-          <div class="installed-benefit-item">
-            <img src="/installed/icon-no-card.svg" alt="" class="installed-benefit-icon">
+          <div class="installed-benefit-item align-items-center">
+            <img src="/experiments/email-marketing-program/icon-no-card.svg" alt="" class="installed-benefit-icon">
             <span class="installed-benefit-text">No credit card <span class="installed-benefit-text-plain">needed</span></span>
           </div>
           <hr class="installed-benefit-divider">
-          <div class="installed-benefit-item">
-            <img src="/installed/icon-full-access.svg" alt="" class="installed-benefit-icon">
+          <div class="installed-benefit-item align-items-center">
+            <img src="/experiments/email-marketing-program/icon-full-access.svg" alt="" class="installed-benefit-icon">
             <span class="installed-benefit-text">Full access <span class="installed-benefit-text-plain">during trial</span></span>
-          </div>
-          <hr class="installed-benefit-divider">
-          <div class="installed-benefit-item">
-            <img src="/installed/icon-auto-revert.svg" alt="" class="installed-benefit-icon">
-            <span class="installed-benefit-text">Automatically reverts to free <span class="installed-benefit-text-plain">after the trial ends</span></span>
           </div>
         </div>
         <div class="installed-trial-actions">
-          <a id="accept-trial-offer" class="installed-primary-button" href="https://myaccount.adblockplus.org/?s=abp-w">Sure, activate my free month</a>
-          <p class="installed-trial-subtext"><strong>No</strong> credit card required • <strong>Free</strong> account creation</p>
+          <a id="accept-trial-offer" class="installed-primary-button" href="https://myaccount.adblockplus.org/?s=abp-w">Start free trial</a>
+          <a id="skip-trial-offer" href="#" class="secondary-nav-link installed-skip-link">Continue with basic protection</a>
         </div>
       </div>
-      <a id="skip-trial-offer" href="#" class="secondary-nav-link installed-skip-link">Skip for now</a>
     </div>
   </div>
 
   <div id="trial-offer-benefits" class="container trial center-justify align-items-center">
     <div class="installed-trial-proposal">
       <div class="installed-trial-proposal-header">
-        <img src="/installed/abp-logo--with-text.svg" alt="Adblock Plus Premium" width="294" height="45" class="installed-payment-options-header__logo">
+        <div class="installed-trial-proposal-header__logo-container">
+          <img src="/installed/abp-logo--with-text.svg" alt="Adblock Plus" width="294" height="45" class="installed-trial-proposal-header__logo">
+          <div class="installed-trial-proposal-header__badge">
+            <img src="/experiments/email-marketing-program/crown-icon.svg" alt="Premium" width="14" height="14">
+            <span>Premium</span>
+          </div>
+        </div>
         <hr>
       </div>
       <div class="installed-trial-proposal-body">
         <div class="installed-success-banner">
           <span class="installed-success-icon">
-            <img alt="" src="/installed/check--white.svg" class="installed-checkbox-icon">
+            <img alt="" src="/experiments/email-marketing-program/check--white.svg" class="installed-checkbox-icon">
           </span>
           <span class="installed-success-text">Adblock Plus is now active - you're blocking ads!</span>
         </div>
-        <h2>Get 1 month of Premium <span class="text-gold">FREE</span></h2>
-        <p class="installed-benefit-subheading">Experience a calmer, better web:</p>
+        <h2>Enjoy Premium <span class="text-gold">free for 30 days</span></h2>
+        <p class="installed-benefit-subheading">Switches back to free automatically after the trial ends. No credit card. No commitment.</p>
         <div class="installed-benefits-list">
           <div class="installed-benefit-item">
-            <img src="/installed/icon-no-cookies.svg" alt="" class="installed-benefit-icon">
-            <span class="installed-benefit-text">No cookie consent banner</span>
+            <img src="/experiments/email-marketing-program/icon-no-cookies.svg" alt="" class="installed-benefit-icon">
+            <div class="installed-benefit-text-container">
+              <p class="installed-benefit-text">Auto-reject cookie consent pop-ups</p>
+              <p class="installed-benefit-text-plain">We decline non-essential cookies for you, so you don't have to.</p>
+            </div>
+
           </div>
           <hr class="installed-benefit-divider">
           <div class="installed-benefit-item">
-            <img src="/installed/icon-video-ads.svg" alt="" class="installed-benefit-icon">
-            <span class="installed-benefit-text">No video ads</span>
+            <img src="/experiments/email-marketing-program/icon-popup.svg" alt="" class="installed-benefit-icon">
+            <div class="installed-benefit-text-container">
+              <p class="installed-benefit-text">Block more intrusive overlays</p>
+              <p class="installed-benefit-text-plain">Stops disruptive pop-ups and aggressive interruptions.</p>
+            </div>
           </div>
           <hr class="installed-benefit-divider">
           <div class="installed-benefit-item">
-            <img src="/installed/icon-popup.svg" alt="" class="installed-benefit-icon">
-            <span class="installed-benefit-text">No annoying pop-ups</span>
-          </div>
-          <hr class="installed-benefit-divider">
-          <div class="installed-benefit-item">
-            <img src="/installed/icon-overlay.svg" alt="" class="installed-benefit-icon">
-            <span class="installed-benefit-text">No sticky overlays</span>
+            <img src="/experiments/email-marketing-program/icon-faster-pages.svg" alt="" class="installed-benefit-icon">
+            <div class="installed-benefit-text-container">
+              <p class="installed-benefit-text">Enjoy faster, cleaner pages</p>
+              <p class="installed-benefit-text-plain">Advanced Premium filters deliver a lighter, calmer web experience.</p>
+            </div>
           </div>
         </div>
         <div class="installed-trial-actions">
-          <a id="activate-trial" class="installed-primary-button" href="https://myaccount.adblockplus.org/?s=abp-w">Activate My Free Month</a>
-          <p class="installed-trial-subtext"><strong>No</strong> credit card required • <strong>Free</strong> account creation</p>
+          <a id="activate-trial" class="installed-primary-button" href="https://myaccount.adblockplus.org/?s=abp-w">Activate my free month</a>
+          <a id="ignore-trial-offer" href="#" class="secondary-nav-link installed-skip-link">Maybe later</a>
         </div>
       </div>
-      <a id="ignore-trial-offer" href="#" class="secondary-nav-link installed-skip-link">Skip for now</a>
     </div>
   </div>
-
 </main>
