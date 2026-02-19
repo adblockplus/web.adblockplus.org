@@ -61,8 +61,8 @@ if (skipLink) {
 }
 
 document.querySelectorAll(".installed-primary-button").forEach((element) => {
-  element.href = `${USER_ACCOUNTS_DOMAIN}?flow=trial&s=abp-w`
-  element.addEventListener("click", (e) => {
+  element.href = `${USER_ACCOUNTS_DOMAIN}?flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`
+  element.addEventListener("click", async (e) => {
     adblock.log("click", { trigger: e.currentTarget.id });
   })
 });
