@@ -31,19 +31,88 @@ if (trialEmailModal) {
   trialEmailModal.focus();
 }
 
+// Email validation
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMPLOYEE_DOMAINS = ['@adblockplus.org', '@eyeo.com'];
+
+function validateEmail(email) {
+  // Check basic format
+  if (!EMAIL_REGEX.test(email)) {
+    return { valid: false, error: "Please enter a valid email address" };
+  }
+
+  // Check for '+' character (email alias abuse prevention)
+  if (email.includes('+')) {
+    // Allow '+' for employee domains
+    const isEmployeeDomain = EMPLOYEE_DOMAINS.some(domain => email.endsWith(domain));
+    if (!isEmployeeDomain) {
+      return { valid: false, error: "Email addresses with '+' are not allowed" };
+    }
+  }
+
+  return { valid: true };
+}
+
+function showEmailError(message) {
+  const emailInput = document.getElementById("trial-email-input");
+  let errorElement = document.getElementById("trial-email-error");
+
+  if (!errorElement) {
+    errorElement = document.createElement("div");
+    errorElement.id = "trial-email-error";
+    errorElement.className = "installed-email-error";
+    emailInput.parentNode.appendChild(errorElement);
+  }
+
+  errorElement.textContent = message;
+  errorElement.hidden = false;
+  emailInput.classList.add("installed-email-input--error");
+  emailInput.setAttribute("aria-invalid", "true");
+  emailInput.setAttribute("aria-describedby", "trial-email-error");
+}
+
+function clearEmailError() {
+  const emailInput = document.getElementById("trial-email-input");
+  const errorElement = document.getElementById("trial-email-error");
+
+  if (errorElement) {
+    errorElement.hidden = true;
+  }
+
+  emailInput.classList.remove("installed-email-input--error");
+  emailInput.removeAttribute("aria-invalid");
+  emailInput.removeAttribute("aria-describedby");
+}
+
 // Handle email form submission
 const emailForm = document.getElementById("trial-email-form");
 if (emailForm) {
+  const emailInput = document.getElementById("trial-email-input");
+
+  // Clear error on input
+  if (emailInput) {
+    emailInput.addEventListener("input", clearEmailError);
+  }
+
   emailForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const emailInput = document.getElementById("trial-email-input");
     const email = emailInput ? emailInput.value.trim() : "";
 
     if (!email) {
-      alert("Please enter a valid email address");
+      showEmailError("Please enter your email address");
       return;
     }
+
+    // Validate email
+    const validation = validateEmail(email);
+    if (!validation.valid) {
+      showEmailError(validation.error);
+      return;
+    }
+
+    // Clear any errors
+    clearEmailError();
 
     // Log the submission
     adblock.log("click", { trigger: "submit-email-trial", email: email });

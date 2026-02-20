@@ -731,6 +731,13 @@ html.modal-open {
   width: 100%;
 }
 
+.installed-email-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
 .installed-email-input {
   box-sizing: border-box;
   display: flex;
@@ -754,6 +761,27 @@ html.modal-open {
 .installed-email-input:focus {
   outline: none;
   border-color: #0797E1;
+}
+
+.installed-email-input--error {
+  border-color: #C41E3A;
+}
+
+.installed-email-input--error:focus {
+  border-color: #C41E3A;
+}
+
+.installed-email-error {
+  font-size: 12px;
+  line-height: 16px;
+  color: #C41E3A;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.installed-email-error[hidden] {
+  display: none;
 }
 
 .installed-privacy-notice {
