@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <div id="trial-offer-benefits" class="container trial center-justify align-items-center">
+  <div id="trial-offer-benefits" class="container trial center-justify align-items-center" hidden>
     <div class="installed-trial-proposal">
       <div class="installed-trial-proposal-header">
         <div class="installed-trial-proposal-header__logo-container">
@@ -89,6 +89,50 @@
           <a id="activate-trial" class="installed-primary-button" href="https://myaccount.adblockplus.org/?s=abp-w">Activate my free month</a>
           <a id="ignore-trial-offer" href="#" class="secondary-nav-link installed-skip-link">Maybe later</a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="trial-offer-email" class="container trial center-justify align-items-center" hidden tabindex="-1">
+    <div class="installed-trial-proposal installed-trial-proposal--email">
+      <div class="installed-trial-proposal-header">
+        <img src="/installed/abp-logo--with-text.svg" alt="Adblock Plus" width="176" height="32" class="installed-trial-proposal-header__logo">
+        <hr>
+      </div>
+      <div class="installed-trial-proposal-body">
+        <h2>Welcome to Adblock Plus</h2>
+        <p class="installed-benefit-subheading">Enter your email address to access your account. No password needed.</p>
+
+        <form id="trial-email-form" class="installed-email-form">
+          <div class="installed-email-input-wrapper">
+            <input
+              type="email"
+              id="trial-email-input"
+              name="email"
+              placeholder="Your Email"
+              class="installed-email-input"
+              required
+              aria-label="Email address">
+          </div>
+
+          <p class="installed-privacy-notice">Your email address will be processed in accordance with our <a href="https://adblockplus.org/en/privacy" class="installed-privacy-link">Privacy Policy</a>.</p>
+
+          <div class="installed-checkbox-wrapper">
+            <input
+              type="checkbox"
+              id="trial-marketing-opt-in"
+              name="marketing-opt-in"
+              class="installed-checkbox">
+            <label for="trial-marketing-opt-in" class="installed-checkbox-label">
+              Keep me in the loop with <strong>online safety tips</strong> and deals
+            </label>
+          </div>
+
+          <div class="installed-trial-actions">
+            <button type="submit" id="submit-email-trial" class="installed-primary-button">Continue</button>
+            <a id="skip-email-trial" href="#" class="secondary-nav-link installed-skip-link">Maybe later</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
