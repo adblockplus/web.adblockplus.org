@@ -9,13 +9,13 @@ const environment = location.hostname === "localhost" ? "dev"
 const USER_ACCOUNTS_DOMAIN = environment === "live" ? "https://myaccount.adblockplus.org/" : "https://abp.ua-qa.eyeo.it/";
 
 if (loader) {
-  loader.hidden = true
+  loader.hidden = true;
 }
 if (variant) {
-  variant.hidden = false
+  variant.hidden = false;
 }
 if (overlay) {
-  overlay.hidden = false
+  overlay.hidden = false;
 }
 
 const trialOffer = document.getElementById("trial-offer");
@@ -30,6 +30,48 @@ if (trialEmailModal) {
   trialEmailModal.hidden = false;
   trialEmailModal.focus();
 }
+
+// Regional consent checkbox behavior
+const CONSENT_REQUIRED_COUNTRIES = [
+  // EU Countries (27)
+  'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE',
+  // GDPR-like Countries
+  'GB', 'CH', 'AU', 'IL', 'JP'
+];
+const CONSENT_FREE_COUNTRIES = ['US', 'TW'];
+
+function setupConsentCheckbox() {
+  const checkbox = document.getElementById("trial-marketing-opt-in");
+  const checkboxWrapper = document.querySelector(".installed-checkbox-wrapper");
+  if (!checkbox) return;
+
+  const country = adblock.settings.country || adblock.strings.country || 'US';
+
+  if (CONSENT_FREE_COUNTRIES.includes(country)) {
+    // Consent-free countries (US, TW): hide checkbox completely
+    checkbox.checked = true; // Set to true for backend
+    checkbox.disabled = true;
+    if (checkboxWrapper) {
+      checkboxWrapper.style.display = 'none';
+    }
+  } else if (CONSENT_REQUIRED_COUNTRIES.includes(country)) {
+    // Consent-required countries (EU + GDPR-like): unchecked, user can toggle
+    checkbox.checked = false;
+    checkbox.disabled = false;
+    if (checkboxWrapper) {
+      checkboxWrapper.style.display = 'flex';
+    }
+  } else {
+    // All other countries: checked by default, user can toggle
+    checkbox.checked = true;
+    checkbox.disabled = false;
+    if (checkboxWrapper) {
+      checkboxWrapper.style.display = 'flex';
+    }
+  }
+}
+
+setupConsentCheckbox();
 
 // Email validation
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -114,15 +156,19 @@ if (emailForm) {
     // Clear any errors
     clearEmailError();
 
-    // Log the submission
-    adblock.log("click", { trigger: "submit-email-trial", email: email });
+    // Get consent value
+    const consentCheckbox = document.getElementById("trial-marketing-opt-in");
+    const consent = consentCheckbox ? consentCheckbox.checked : false;
 
-    // Construct URL with email parameter
-    const url = `${USER_ACCOUNTS_DOMAIN}?email=${encodeURIComponent(email)}&flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`;
+    // Log the submission
+    adblock.log("click", { trigger: "submit-email-trial", email: email, consent: consent });
+
+    // Construct URL with email and consent parameters
+    const url = `${USER_ACCOUNTS_DOMAIN}?email=${encodeURIComponent(email)}&consent=${consent}&flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`;
 
     // Redirect to user portal
     window.location.href = url;
-  })
+  });
 }
 
 // Handle "Maybe later" link
@@ -142,13 +188,14 @@ if (skipEmailLink) {
       trialOffer.hidden = false;
       trialOffer.focus();
     }
-  })
+  });
 }
 
 // Handle skip on trial offer (if shown after "Maybe later")
 const skipTrialLink = document.getElementById("skip-trial-offer");
 if (skipTrialLink) {
   skipTrialLink.addEventListener("click", function(e) {
+    e.preventDefault();
     adblock.log("click", { trigger: e.target.id });
     document.documentElement.classList.remove('modal-open');
     if (trialOffer) {
@@ -161,14 +208,14 @@ if (skipTrialLink) {
       overlay.hidden = true;
     }
     backgroundEls.forEach(el => el.removeAttribute('inert'));
-  })
+  });
 }
 
 // Handle accept trial offer button (if shown after "Maybe later")
 const acceptTrialButton = document.getElementById("accept-trial-offer");
 if (acceptTrialButton) {
-  acceptTrialButton.href = `${USER_ACCOUNTS_DOMAIN}?flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`
+  acceptTrialButton.href = `${USER_ACCOUNTS_DOMAIN}?flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`;
   acceptTrialButton.addEventListener("click", async (e) => {
     adblock.log("click", { trigger: e.currentTarget.id });
-  })
+  });
 }
