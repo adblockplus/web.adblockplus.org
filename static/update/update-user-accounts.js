@@ -12,6 +12,14 @@ const USER_ACCOUNTS_DOMAIN = paddleEnvironment === "live" ? "https://myaccount.a
 
 adblock.config = adblock.config || {};
 
+// Set experiment IDs for Paddle checkout tracking
+// Read variant directly from localStorage since experiment setup won't run on this page
+const variant = localStorage.getItem('EMP');
+if (variant) {
+   adblock.api.setExperimentId('EMP');
+   adblock.api.setExperimentVariantId(variant);
+}
+
 const PRICES = {
   "USD": {
     "monthly": 400,
