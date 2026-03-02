@@ -43,37 +43,31 @@ initPurchaseFlow();
 /**
  * Init experiment for Email Marketing Program
  * */
-
 function applyControl() {
   const loader = document.getElementById("installed-loader");
   if (loader) {
     loader.hidden = true;
+  }
+  const overlay = document.getElementById("installed-blur-overlay");
+  if (overlay) {
+    overlay.hidden = true;
   }
 }
 
 async function setupExperiment() {
 
   // TODO: remove mock
+  const dev = adblock.query.has("emp");
   const mockVariant = adblock.query.get('v');
-  if (mockVariant) {
+  if (dev && mockVariant) {
     localStorage.setItem('EMP', mockVariant);
   }
-
-
-  const dev = adblock.query.has("emp");
-  const meetsCriteria = (["US", "CA", "AU"].includes(adblock.strings.country)
-      && adblock.strings.locale === 'en')
-    || dev;
-  if (!meetsCriteria) {
-    applyControl();
-    return;
-  }
-
-  const hasMinimumExtensionVersion = await checkExtensionVersion();
+  // TODO: mock end
 
   adblock.setupExperiment({
     id: "EMP",
-    conditions: () => (hasMinimumExtensionVersion || dev) && !adblock.query.has("experiment_disable"),
+    conditions: () => ((["US", "CA", "AU"].includes(adblock.settings.country)
+        && adblock.settings.locale === 'en') || dev) && !adblock.query.has("experiment_disable"),
     noParticipateCallback: applyControl,
     trafficAllocation: 0,
     control: {

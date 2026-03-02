@@ -14,6 +14,7 @@ adblock.config = adblock.config || {};
 
 // Set experiment IDs for Paddle checkout tracking
 // Read variant directly from localStorage since experiment setup won't run on this page
+// NOTE: this make not possible to run experiments on the update page till we have the EMP experiment active.
 const variant = localStorage.getItem('EMP');
 if (variant) {
    adblock.api.setExperimentId('EMP');
