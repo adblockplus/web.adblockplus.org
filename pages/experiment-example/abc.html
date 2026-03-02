@@ -25,6 +25,9 @@ notoc=1
   adblock.setupExperiment({
     id: "a-b-c",
     conditions: () => true,
+    // optional: set custom distribution weights [control, variant1, variant2, ...]
+    // must sum to 100, omit for equal distribution
+    distribution: [50, 25, 25],
     variants: [
       { callback: () => document.getElementById("heading").textContent = "Variant 1" },
       { callback: () => document.getElementById("heading").textContent = "Variant 2" },
