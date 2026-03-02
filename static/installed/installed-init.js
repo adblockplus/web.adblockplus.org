@@ -79,11 +79,11 @@ async function setupExperiment() {
     control: {
       script: "/experiments/email-marketing-program/control.js"
     },
-    variant: {
-      script: "/experiments/email-marketing-program/variant.js"
-    },
+    variants: [
+      {script: "/experiments/email-marketing-program/variant.js"},
+      {script: "/experiments/email-marketing-program/variant-2.js"},
+    ],
   });
-
 }
 
 setupExperiment();
