@@ -22,6 +22,7 @@
    * @param {string} options.id - unique experiment id
    * @param {function} options.conditions - callback that returns or resolves whether a client can participate
    * @param {number} [trafficAllocation] - percentage of eligible traffic to include (0-100)
+   * @param {number[]} [distribution] - percentage weights per variant [control, variant1, ...] must sum to 100
    * @param {variant} [control] - optional control configuration
    * @param {variant|number} [variant] - optional, variant will be randomly selected from variants if not passed
    * @param {variant[]} [variants] - optional, variant configurations
@@ -63,6 +64,9 @@
       if (typeof options.trafficAllocation !== "undefined" && typeof options.trafficAllocation !== "number") {
         throw new Error("adblock.experiment({trafficAllocation}) must be a number or undefined");
       }
+      if (typeof options.distribution !== "undefined") {
+        validateDistribution(options.distribution, options.variant, options.variants);
+      }
 
       let finished = false;
       let timedout = false;
@@ -91,7 +95,7 @@
 
       await setExperimentId(options.id);
 
-      await setVariantId(options.id, options.variant, options.variants);
+      await setVariantId(options.id, options.variant, options.variants, options.distribution);
 
       localStorage.setItem(options.id, adblock.variant);
 
@@ -133,6 +137,35 @@
     return typeof percentage === "undefined" ? true : Math.random() * 100 <= percentage;
   }
 
+  function validateDistribution(distribution, variant, variants) {
+    if (!Array.isArray(distribution) || distribution.length < 2) {
+      throw new Error("adblock.experiment({distribution}) must be an array with at least 2 values");
+    }
+    const expectedLength = typeof variant !== "undefined" ? 2 : (typeof variants !== "undefined" ? variants.length + 1 : 0);
+    if (expectedLength > 0 && distribution.length !== expectedLength) {
+      throw new Error("adblock.experiment({distribution}) length must match number of variants + control");
+    }
+    for (let i = 0; i < distribution.length; i++) {
+      if (typeof distribution[i] !== "number" || distribution[i] < 0) {
+        throw new Error("adblock.experiment({distribution}) values must be non-negative numbers");
+      }
+    }
+    const sum = distribution.reduce((a, b) => a + b, 0);
+    if (Math.abs(sum - 100) > 0.01) {
+      throw new Error("adblock.experiment({distribution}) values must sum to 100");
+    }
+  }
+
+  function weightedRandom(distribution) {
+    const roll = Math.random() * 100;
+    let cumulative = 0;
+    for (let i = 0; i < distribution.length; i++) {
+      cumulative += distribution[i];
+      if (roll < cumulative) return i;
+    }
+    return distribution.length - 1;
+  }
+
   /**
    * FNV-1a hash that fits in 53-bit signed integer space
    * Safe for JavaScript numbers, JSON transport, and BigQuery INT64
@@ -169,7 +202,7 @@
     }
   }
 
-  async function setVariantId(id, variant, variants) {
+  async function setVariantId(id, variant, variants, distribution) {
     let variantsLength;
     if (typeof variant !== "undefined" && typeof variants !== "undefined") {
       throw new Error("adblock.experiment() must be passed variant OR variants");
@@ -194,10 +227,13 @@
       }
       variantsLength = variants.length + 1; // variants + 1 for control
     }
-    adblock.variant = adblock.variant = parseInt(
+    const randomVariant = distribution
+      ? weightedRandom(distribution)
+      : Math.floor(Math.random() * variantsLength);
+    adblock.variant = parseInt(
       adblock.query.get("variant")
       ?? localStorage.getItem(id)
-      ?? Math.floor(Math.random() * variantsLength),
+      ?? randomVariant,
       10
     );
     if (adblock.variant < 0 || adblock.variant > variantsLength || adblock.variant > ID_UPPER_LIMIT) {
