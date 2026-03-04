@@ -55,7 +55,6 @@ function applyControl() {
 }
 
 async function setupExperiment() {
-
   // TODO: remove mock
   const dev = adblock.query.has("emp");
   const mockVariant = adblock.query.get('v');

@@ -25,6 +25,23 @@ const trialEmailModal = document.getElementById("trial-offer-email");
 const backgroundEls = [...document.body.children].filter(el => el !== variant);
 backgroundEls.forEach(el => el.setAttribute('inert', ''));
 
+function closeVariantFlow() {
+  document.documentElement.classList.remove("modal-open");
+  if (trialOffer) {
+    trialOffer.hidden = true;
+  }
+  if (trialEmailModal) {
+    trialEmailModal.hidden = true;
+  }
+  if (variant) {
+    variant.hidden = true;
+  }
+  if (overlay) {
+    overlay.hidden = true;
+  }
+  backgroundEls.forEach(el => el.removeAttribute("inert"));
+}
+
 // Show email collection modal
 if (trialEmailModal) {
   trialEmailModal.hidden = false;
@@ -197,17 +214,7 @@ if (skipTrialLink) {
   skipTrialLink.addEventListener("click", function(e) {
     e.preventDefault();
     adblock.log("click", { trigger: e.target.id });
-    document.documentElement.classList.remove('modal-open');
-    if (trialOffer) {
-      trialOffer.hidden = true;
-    }
-    if (trialEmailModal) {
-      trialEmailModal.hidden = true;
-    }
-    if (overlay) {
-      overlay.hidden = true;
-    }
-    backgroundEls.forEach(el => el.removeAttribute('inert'));
+    closeVariantFlow();
   });
 }
 

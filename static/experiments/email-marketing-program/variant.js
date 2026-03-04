@@ -25,6 +25,23 @@ const trialBenefits = document.getElementById("trial-offer-benefits");
 const backgroundEls = [...document.body.children].filter(el => el !== variant);
 backgroundEls.forEach(el => el.setAttribute('inert', ''));
 
+function closeVariantFlow() {
+  document.documentElement.classList.remove("modal-open");
+  if (trialOffer) {
+    trialOffer.hidden = true;
+  }
+  if (trialBenefits) {
+    trialBenefits.hidden = true;
+  }
+  if (variant) {
+    variant.hidden = true;
+  }
+  if (overlay) {
+    overlay.hidden = true;
+  }
+  backgroundEls.forEach(el => el.removeAttribute("inert"));
+}
+
 if (trialBenefits) {
   trialBenefits.hidden = false;
   trialBenefits.focus();
@@ -33,6 +50,7 @@ if (trialBenefits) {
 const ignoreLink = document.getElementById("ignore-trial-offer");
 if (ignoreLink) {
   ignoreLink.addEventListener("click", function(e) {
+    e.preventDefault();
     adblock.log("click", {trigger: e.target.id});
     if (trialBenefits) {
       trialBenefits.hidden = true;
@@ -47,18 +65,9 @@ if (ignoreLink) {
 const skipLink = document.getElementById("skip-trial-offer");
 if (skipLink) {
   skipLink.addEventListener("click", function(e) {
+    e.preventDefault();
     adblock.log("click", {trigger: e.target.id});
-    document.documentElement.classList.remove('modal-open');
-    if (trialOffer) {
-      trialOffer.hidden = true;
-    }
-    if (trialBenefits) {
-      trialBenefits.hidden = true;
-    }
-    if (overlay) {
-      overlay.hidden = true;
-    }
-    backgroundEls.forEach(el => el.removeAttribute('inert'));
+    closeVariantFlow();
   })
 }
 
