@@ -17,8 +17,8 @@ adblock.config = adblock.config || {};
 // NOTE: this make not possible to run experiments on the update page till we have the EMP experiment active.
 const variant = localStorage.getItem('EMP');
 if (variant) {
-   adblock.api.setExperimentId('EMP');
-   adblock.api.setExperimentVariantId(variant);
+  adblock.experiment = 643324065449477 // hash generated for 'EMP' experiment string id
+  adblock.variant = variant;
 }
 
 const PRICES = {
