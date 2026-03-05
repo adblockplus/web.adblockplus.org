@@ -28,13 +28,10 @@ function initLegacyPurchaseFlow() {
   document.body.appendChild(preventDuplicateScript);
 }
 
-/**
- * Limit new flow to English only for now.
- */
 async function initPurchaseFlow() {
-  const hasMimimumExtensionVersion = await checkExtensionVersion();
+  const hasMinimumExtensionVersion = await checkExtensionVersion();
 
-  if (hasMimimumExtensionVersion) {
+  if (hasMinimumExtensionVersion) {
     initUserAccountsFlow();
   } else {
     initLegacyPurchaseFlow();
@@ -42,3 +39,44 @@ async function initPurchaseFlow() {
 }
 
 initPurchaseFlow();
+
+/**
+ * Init experiment for Email Marketing Program
+ * */
+function applyControl() {
+  const loader = document.getElementById("installed-loader");
+  if (loader) {
+    loader.hidden = true;
+  }
+  const overlay = document.getElementById("installed-blur-overlay");
+  if (overlay) {
+    overlay.hidden = true;
+  }
+}
+
+async function setupExperiment() {
+  // TODO: remove mock
+  const dev = adblock.query.has("emp");
+  const mockVariant = adblock.query.get('v');
+  if (dev && mockVariant) {
+    localStorage.setItem('EMP', mockVariant);
+  }
+  // TODO: mock end
+
+  adblock.setupExperiment({
+    id: "EMP",
+    conditions: () => ((["US", "CA", "AU"].includes(adblock.settings.country)
+        && adblock.settings.locale === 'en') || dev) && !adblock.query.has("experiment_disable"),
+    noParticipateCallback: applyControl,
+    trafficAllocation: 0,
+    control: {
+      script: "/experiments/email-marketing-program/control.js"
+    },
+    variants: [
+      {script: "/experiments/email-marketing-program/variant.js"},
+      {script: "/experiments/email-marketing-program/variant-2.js"},
+    ],
+  });
+}
+
+setupExperiment();
