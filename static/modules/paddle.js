@@ -934,6 +934,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     experiment_id: adblock.hasOwnProperty("experiment") ? adblock.experiment : "",
     variant: "",
     variant_index: adblock.hasOwnProperty("variant") ? adblock.variant : -1,
+    ext_experiments: adblock.adblockPlus?.experimentFlags || {},
     amount_cents: amount,
     success_url: successUrl,
     cancel_url: window.location.href
