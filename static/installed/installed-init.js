@@ -55,20 +55,12 @@ function applyControl() {
 }
 
 async function setupExperiment() {
-  // TODO: remove mock
-  const dev = adblock.query.has("emp");
-  const mockVariant = adblock.query.get('v');
-  if (dev && mockVariant) {
-    localStorage.setItem('EMP', mockVariant);
-  }
-  // TODO: mock end
-
   adblock.setupExperiment({
     id: "EMP",
-    conditions: () => ((["US", "CA", "AU"].includes(adblock.settings.country)
-        && adblock.settings.locale === 'en') || dev) && !adblock.query.has("experiment_disable"),
+    conditions: () => ["US", "CA", "AU"].includes(adblock.settings.country)
+        && adblock.settings.locale === 'en' && !adblock.query.has("experiment_disable"),
     noParticipateCallback: applyControl,
-    trafficAllocation: 0,
+    trafficAllocation: 7.5,
     control: {
       script: "/experiments/email-marketing-program/control.js"
     },
