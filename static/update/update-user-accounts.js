@@ -15,10 +15,22 @@ adblock.config = adblock.config || {};
 // Set experiment IDs for Paddle checkout tracking
 // Read variant directly from localStorage since experiment setup won't run on this page
 // NOTE: this make not possible to run experiments on the update page till we have the EMP experiment active.
-const variant = localStorage.getItem('EMP');
-if (variant) {
+const storedVariant = localStorage.getItem('EMP');
+const experimentQuery = adblock.query.get('e');
+if (storedVariant) {
   adblock.experiment = 643324065449477 // hash generated for 'EMP' experiment string id
-  adblock.variant = variant;
+  adblock.variant = storedVariant;
+} else if (experimentQuery) {
+  const experiment = experimentQuery.split('-').map(id => parseInt(id, 10));
+  adblock.experiment = experiment[0];
+  adblock.variant = experiment[1];
+}
+
+// Remove the 'e' param from URL without reloading to avoid data duplication in logs
+const url = new URL(window.location.href);
+if (experimentQuery) {
+  url.searchParams.delete('e');
+  window.history.replaceState({}, '', url);
 }
 
 const PRICES = {
