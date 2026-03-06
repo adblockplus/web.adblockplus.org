@@ -57,7 +57,8 @@ function applyControl() {
 async function setupExperiment() {
   adblock.setupExperiment({
     id: "EMP",
-    conditions: () => ["US", "CA", "AU"].includes(adblock.settings.country)
+    conditions: () => !localStorage.getItem('EMP-completed')
+        && ["US", "CA", "AU"].includes(adblock.settings.country)
         && adblock.settings.locale === 'en' && !adblock.query.has("experiment_disable"),
     noParticipateCallback: applyControl,
     trafficAllocation: 7.5,

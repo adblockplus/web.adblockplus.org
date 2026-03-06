@@ -236,7 +236,7 @@
       ?? randomVariant,
       10
     );
-    if (adblock.variant < 0 || adblock.variant > variantsLength || adblock.variant > ID_UPPER_LIMIT) {
+    if (adblock.variant < 0 || adblock.variant >= variantsLength || adblock.variant > ID_UPPER_LIMIT) {
       throw new Error("adblock.experiment() variant out of range");
     }
   }

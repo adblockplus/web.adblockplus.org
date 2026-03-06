@@ -183,6 +183,9 @@ if (emailForm) {
     // Construct URL with email and consent parameters
     const url = `${USER_ACCOUNTS_DOMAIN}?email=${encodeURIComponent(email)}&consent=${consent}&flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`;
 
+    // Mark experiment as completed so the modal doesn't reappear on return visits
+    localStorage.setItem('EMP-completed', 'true');
+
     // Redirect to user portal
     window.location.href = url;
   });
