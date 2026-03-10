@@ -66,6 +66,7 @@ const skipLink = document.getElementById("skip-trial-offer");
 if (skipLink) {
   skipLink.addEventListener("click", function(e) {
     e.preventDefault();
+    window.removeEventListener("beforeunload", onBeforeUnload);
     adblock.log("click", {trigger: e.target.id});
     closeVariantFlow();
   })
@@ -74,6 +75,15 @@ if (skipLink) {
 document.querySelectorAll(".installed-primary-button").forEach((element) => {
   element.href = `${USER_ACCOUNTS_DOMAIN}?flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`
   element.addEventListener("click", async (e) => {
+    window.removeEventListener("beforeunload", onBeforeUnload);
     adblock.log("click", { trigger: e.currentTarget.id });
   })
 });
+
+function onBeforeUnload(e) {
+  e.preventDefault();
+  e.returnValue = "Installation not completed yet. Are you sure you want to leave?";
+  adblock.log("experiment.abandoned", { trigger: "tab-close" });
+}
+
+window.addEventListener("beforeunload", onBeforeUnload);
