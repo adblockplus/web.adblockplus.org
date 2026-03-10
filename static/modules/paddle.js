@@ -911,6 +911,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   }
 
   const trackingPrefix = (productCode || funnelCode) ? `${productCode}_${funnelCode} ` : "";
+  const extensionInfo = adblock.adblockPlus || {};
 
   const customData = {
     version: "1.1.0",
@@ -936,7 +937,10 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     variant_index: adblock.hasOwnProperty("variant") ? adblock.variant : -1,
     amount_cents: amount,
     success_url: successUrl,
-    cancel_url: window.location.href
+    cancel_url: window.location.href,
+    er: extensionInfo.er || "", // remote config revision id
+    ev: extensionInfo.ev || "", // experiment variants encoded
+    ca: extensionInfo.ca || "", // cohorts encoded
   };
 
   const checkoutOptions = {
