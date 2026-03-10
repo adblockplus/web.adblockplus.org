@@ -130,7 +130,7 @@
     if (typeof result !== "boolean") {
       throw  new Error("adblock.experiment({conditions}) must resolve to a boolean");
     }
-    return result && adblock.query.get("experiment_disable") !== "true";
+    return result && !navigator.webdriver && adblock.query.get("experiment_disable") !== "true";
   }
 
   function meetsThreshold(percentage) {
