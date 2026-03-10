@@ -22,7 +22,7 @@ const trialOffer = document.getElementById("trial-offer");
 const trialBenefits = document.getElementById("trial-offer-benefits");
 
 // Trap focus: make all sibling body content inert
-const backgroundEls = [...document.body.children].filter(el => el !== variant);
+const backgroundEls = [...document.body.children].filter(el => el !== variant && !el.classList.contains('cookie'));
 backgroundEls.forEach(el => el.setAttribute('inert', ''));
 
 function closeVariantFlow() {
