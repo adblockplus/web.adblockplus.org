@@ -186,6 +186,8 @@ if (emailForm) {
     // Mark experiment as completed so the modal doesn't reappear on return visits
     localStorage.setItem('EMP-completed', 'true');
 
+    window.removeEventListener("beforeunload", onBeforeUnload);
+
     // Redirect to user portal
     window.location.href = url;
   });
@@ -216,16 +218,26 @@ const skipTrialLink = document.getElementById("skip-trial-offer");
 if (skipTrialLink) {
   skipTrialLink.addEventListener("click", function(e) {
     e.preventDefault();
+    window.removeEventListener("beforeunload", onBeforeUnload);
     adblock.log("click", { trigger: e.target.id });
     closeVariantFlow();
   });
 }
+
+function onBeforeUnload(e) {
+  e.preventDefault();
+  e.returnValue = "Installation not completed yet. Are you sure you want to leave?";
+  adblock.log("experiment.abandoned", { trigger: "tab-close" });
+}
+
+window.addEventListener("beforeunload", onBeforeUnload);
 
 // Handle accept trial offer button (if shown after "Maybe later")
 const acceptTrialButton = document.getElementById("accept-trial-offer");
 if (acceptTrialButton) {
   acceptTrialButton.href = `${USER_ACCOUNTS_DOMAIN}?flow=trial&s=abp-w&e=${adblock.experiment}-${adblock.variant}`;
   acceptTrialButton.addEventListener("click", async (e) => {
+    window.removeEventListener("beforeunload", onBeforeUnload);
     adblock.log("click", { trigger: e.currentTarget.id });
   });
 }
