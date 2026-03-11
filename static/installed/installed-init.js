@@ -55,19 +55,11 @@ function applyControl() {
 }
 
 async function setupExperiment() {
-  // TODO: remove mock
-  const dev = adblock.query.has("emp");
-  const mockVariant = adblock.query.get('v');
-  if (dev && mockVariant) {
-    localStorage.setItem('EMP', mockVariant);
-  }
-  // TODO: mock end
-
   adblock.setupExperiment({
     id: "EMP",
     conditions: () => (!localStorage.getItem('EMP-completed')
         && ["US", "CA", "AU"].includes(adblock.settings.country)
-        && adblock.settings.locale === 'en') || dev,
+        && adblock.settings.locale === 'en'),
     noParticipateCallback: applyControl,
     trafficAllocation: 7.5,
     control: {
