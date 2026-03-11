@@ -938,6 +938,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     amount_cents: amount,
     success_url: successUrl,
     cancel_url: window.location.href,
+    ext_version: extensionInfo.version || "", // extension version
     er: extensionInfo.er || "", // remote config revision id
     ev: extensionInfo.ev || "", // experiment variants encoded
     ca: extensionInfo.ca || "", // cohorts encoded
