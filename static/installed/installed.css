@@ -350,7 +350,8 @@ html.modal-open {
 .installed-blur-overlay {
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(16px) brightness(0.75);
+  /*backdrop-filter: blur(16px) brightness(0.75);*/
+  background-color: #C6C6C6;
   z-index: 998;
   pointer-events: none;
   transition: opacity 0.2s ease;
