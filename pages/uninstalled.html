@@ -12,6 +12,12 @@ template=minimal
           experiments: adblock.formatExperimentRecord(experimentStore)
         });
       }
+      const empExperimentVariation = localStorage.getItem("EMP");
+      if (empExperimentVariation) {
+        adblock.experiment = 643324065449477 // hash generated for 'EMP' experiment string id
+        adblock.variant = empExperimentVariation;
+        adblock.log("experiment-uninstall");
+      }
     } catch (error) {
       adblock.logScriptError("experiment-uninstall", error);
     }
