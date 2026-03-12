@@ -97,11 +97,26 @@
     <div class="installed-trial-proposal installed-trial-proposal--email">
       <div class="installed-trial-proposal-header">
         <img src="/installed/abp-logo--with-text.svg" alt="Adblock Plus" width="176" height="32" class="installed-trial-proposal-header__logo">
-        <hr>
+        <div class="installed-progress-steps">
+          <div class="installed-progress-bar-track">
+            <div class="installed-progress-bar-fill"></div>
+          </div>
+          <div class="installed-steps-labels">
+            <span class="installed-step-label installed-step-label--completed">✓ Install</span>
+            <span class="installed-step-label installed-step-label--active"><img src="/img/right-arrow-icon.svg" class="installed-arrow-icon" alt="">Setup</span>
+            <span class="installed-step-label installed-step-label--pending">Done</span>
+          </div>
+        </div>
       </div>
       <div class="installed-trial-proposal-body">
-        <h2>Welcome to Adblock Plus</h2>
-        <p class="installed-benefit-subheading">Enter your email address to access your account. No password needed.</p>
+
+        <div class="installed-notification-banner">
+          <span class="installed-notification-dot"></span>
+          <strong>Almost finished – one more step to finish setup</strong>
+        </div>
+
+        <h2>Let's set up AdBlock Plus</h2>
+        <p class="installed-benefit-subheading">Enter your email address to create your free account. No password needed.</p>
 
         <form id="trial-email-form" class="installed-email-form">
           <div class="installed-email-input-wrapper">
@@ -129,7 +144,7 @@
           </div>
 
           <div class="installed-trial-actions">
-            <button type="submit" id="submit-email-trial" class="installed-primary-button">Continue</button>
+            <button type="submit" id="submit-email-trial" class="installed-primary-button">Complete setup<img src="/img/right-arrow-icon.svg" class="installed-arrow-icon" alt=""></button>
             <a id="skip-email-trial" href="#" class="secondary-nav-link installed-skip-link">Maybe later</a>
           </div>
         </form>

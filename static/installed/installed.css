@@ -350,7 +350,8 @@ html.modal-open {
 .installed-blur-overlay {
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(16px) brightness(0.75);
+  /*backdrop-filter: blur(16px) brightness(0.75);*/
+  background-color: #C6C6C6;
   z-index: 998;
   pointer-events: none;
   transition: opacity 0.2s ease;
@@ -674,16 +675,15 @@ html.modal-open {
 /* Email Collection Modal Styles */
 #trial-offer .installed-trial-proposal,
 .installed-trial-proposal--email {
-  width: 460px;
   max-width: 460px;
   padding: 36px;
   gap: 24px;
   border-radius: 10px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
 .installed-trial-proposal--email .installed-trial-proposal-header {
-  width: 388px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -697,7 +697,7 @@ html.modal-open {
 }
 
 .installed-trial-proposal--email .installed-trial-proposal-header hr {
-  width: 388px;
+  width: 100%;
   height: 0;
   margin: 0;
   border: none;
@@ -706,7 +706,7 @@ html.modal-open {
 }
 
 .installed-trial-proposal--email .installed-trial-proposal-body {
-  width: 388px;
+  width: 100%;
   padding: 16px 16px 24px;
   gap: 24px;
 }
@@ -840,10 +840,11 @@ html.modal-open {
 
   /* Button layout */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 356px;
+  gap: 8px;
+  width: 100%;
   height: 48px;
   padding: 0 24px;
 
@@ -860,12 +861,131 @@ html.modal-open {
 }
 
 .installed-trial-proposal--email .installed-primary-button:hover {
-  background: #0686c9;
+  background: #0797e1ee;
+}
+
+/* --- EMP variant-2: progress steps --- */
+.installed-progress-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.installed-progress-bar-track {
+  width: 100%;
+  height: 4px;
+  background: #E6E6E6;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.installed-progress-bar-fill {
+  height: 100%;
+  width: 33%;
+  background: #EDA51E;
+  border-radius: 2px;
+}
+
+.installed-steps-labels {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+  width: 100%;
+}
+
+.installed-step-label {
+  font-size: 12px;
+  line-height: 15px;
+  color: #5A5A5A;
+}
+
+.installed-step-label--completed {
+  color: #000000;
+}
+
+.installed-step-label--active {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #EDA51E;
+  font-weight: 600;
+}
+
+.installed-arrow-icon {
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Recolor arrow icons — scoped to email modal to avoid affecting other usages of the same SVG */
+/* img SVGs don't support color/fill properties; filter is the CSS equivalent of passing a hex color */
+.installed-trial-proposal--email .installed-step-label--active .installed-arrow-icon {
+  /* #FF8C00 orange */
+  filter: brightness(0) saturate(100%) invert(57%) sepia(97%) saturate(573%) hue-rotate(2deg) brightness(102%);
+}
+
+.installed-trial-proposal--email .installed-primary-button .installed-arrow-icon {
+  width: 12px;
+  height: 10px;
+  margin-top: 3px;
+  filter: brightness(0) invert(1)
+          drop-shadow(0.3px 0 0 #FFFFFF) drop-shadow(-0.3px 0 0 #FFFFFF)
+          drop-shadow(0 0.3px 0 #FFFFFF) drop-shadow(0 -0.3px 0 #FFFFFF);
+}
+
+.installed-step-label--pending {
+  color: #C6C6C6;
+}
+
+/* --- EMP variant-2: notification banner --- */
+.installed-notification-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #FFF4E0;
+  border: 1px solid #EDA51E;
+  border-radius: 8px;
+}
+
+.installed-notification-dot {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  background: #EDA51E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF; /* controls arrow color */
+}
+
+.installed-notification-dot::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 10px;
+  background-color: currentColor;
+  -webkit-mask-image: url('/img/right-arrow-icon.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url('/img/right-arrow-icon.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  filter: drop-shadow(0.3px 0 0 #FFFFFF) drop-shadow(-0.3px 0 0 #FFFFFF)
+          drop-shadow(0 0.3px 0 #FFFFFF) drop-shadow(0 -0.3px 0 #FFFFFF);
+}
+
+.installed-notification-banner strong {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #000000;
 }
 
 .installed-trial-proposal--email .installed-skip-link {
   font-size: 12px;
   line-height: 15px;
-  width: 356px;
   text-align: center;
 }
