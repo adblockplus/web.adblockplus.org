@@ -26,12 +26,6 @@ export class PaymentTestParameters {
     return paymentPageButtonParameters;
   }
 
-  get paymentPageFlowParameters() {
-    const flow = ['Old', 'New'];
-    const paymentPageFlowParameters  = this.paymentPages.flatMap(paymentPage => flow.map(flow => ({ paymentPage, flow: flow })));
-    return paymentPageFlowParameters;
-  }
-
   get signInParameters() {
     const paymentPagesWithSignIn = [PremiumPage, BlockCookieBannersPage, AdblockPlusPremiumPage];
     const signInParameters  = paymentPagesWithSignIn.flatMap(paymentPage => ({ paymentPage }));
