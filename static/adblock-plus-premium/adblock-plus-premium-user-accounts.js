@@ -103,6 +103,7 @@ document.querySelectorAll(".cta").forEach(button => {
     const product = "premium";
     const currency = defaultCurrency;
     const amount = PRICES[currency][frequency];
+    console.log("checkout", {product, currency, frequency, amount});
     checkout({
       product,
       currency,
@@ -162,6 +163,7 @@ function initReactivationLinks() {
     event.preventDefault();
     // Redirect to user accounts portal login flow, which
     // also handles extension reactivation.
+    console.log("redirecting to user accounts portal");
     window.location.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w`
   });
 

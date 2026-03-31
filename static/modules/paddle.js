@@ -857,6 +857,8 @@ export const checkout = adblock.api.checkout = function checkout(options) {
 
   let { product, plan, adblockPlan, currency, frequency, amount, settings, trial, flow, successUrl, coupon, email, trigger } = options;
 
+  console.log("paddle.checkout", successUrl);
+
   const clickTs = Date.now();
 
   flow = flow || pageName;

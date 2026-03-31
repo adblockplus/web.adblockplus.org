@@ -18,11 +18,11 @@
       <img alt="Adblock Plus Premium" src="/img/adblock-plus-premium.png" class="premium-checkout-section__heading" height="48" width="374">
 
       <!-- ---------------------------------------------------------------------
-        DYNAMIC CARD (See premium-checkout.js)
+        DYNAMIC CARD (See premium-checkout-user-accounts.js)
       ---------------------------------------------------------------------- -->
 
       <div class="premium-checkout-card premium-checkout-card--interactive">
-        <!-- built from cards below by premium-checkout.js -->
+        <!-- built from cards below by premium-checkout-user-accounts.js -->
       </div>
 
       <!-- ---------------------------------------------------------------------
@@ -75,10 +75,7 @@
             </div><!-- /premium-checkout-card-body--columns -->
             <div class="premium-checkout-card-footer premium-checkout-card-footer--columns">
               <div class="premium-checkout-card-footer-column">
-                <div class="premium-checkout-card-footer-column__already-contributed placeholder">
-                  {{ get_string("premium-checkout-card-footer__paragraph-1") }}
-                </div>
-                <div class="premium-checkout-card-footer-column__already-purchased-sign-in" hidden>
+                <div class="premium-checkout-card-footer-column__already-purchased-sign-in placeholder">
                   {{ get_string("premium-checkout-card-footer__paragraph-1__sign-in") }}
                 </div>
               </div>
@@ -327,4 +324,4 @@
 </div><!-- /premium-checkout -->
 
 <? include prevent-duplicate-subscriptions ?>
-<script src="/js/premium-init.js" type="module"></script>
+<script src="/js/premium-checkout-user-accounts.js" type="module"></script>
