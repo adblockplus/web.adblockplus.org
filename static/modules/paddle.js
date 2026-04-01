@@ -849,19 +849,13 @@ const planCodeCompatibility = {
  * @param {string} [options.trial] - number of trial days
  * @param {string} [options.coupon] - coupon to be applied
  * @param {string} [options.email] - customer email
- * @param {string} [options.flow] - checkout flow being completed (default: page name)
- * @param {string} [options.successUrl] - checkout success URL redirected to
  * @param {string} [options.trigger] - identifier for the source/trigger of the checkout on the page (e.g. button-1)
  */
 export const checkout = adblock.api.checkout = function checkout(options) {
 
-  let { product, plan, adblockPlan, currency, frequency, amount, settings, trial, flow, successUrl, coupon, email, trigger } = options;
-
-  console.log("paddle.checkout", successUrl);
+  let { product, plan, adblockPlan, currency, frequency, amount, settings, trial, coupon, email, trigger } = options;
 
   const clickTs = Date.now();
-
-  flow = flow || pageName;
 
   coupon = coupon || adblock.query.get("coupon");
 
@@ -880,23 +874,6 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   if (typeof priceId != "string" || !priceId.length) throw new Error("Invalid price");
   if ((!experimentId || !experimentVariantId) && !PADDLE_PRICES[paddleEnvironment][product]?.[currency]?.[frequency]?.[amount])
     console.warn("Please use adblock.api.setExperimentId(id) and adblock.api.setExperimentVariantId(id) if running an experiment, else add experimental prices to PADDLE_PRICES on integration");
-
-  successUrl = successUrl || PRODUCT_CONFIG[product].successUrl;
-  if (typeof successUrl != "string" || !successUrl.length) throw new Error("Invalid successUrl");
-
-  const successParams = new URLSearchParams();
-  successParams.set("premium-checkout__handoff", 1);
-  successParams.set("premium-checkout__flow", flow);
-  successParams.set("premium-checkout__page", pageName);
-  successParams.set("premium-checkout__product", product);
-  successParams.set("premium-checkout__premiumId", premiumId);
-  successParams.set("premium-checkout__currency", currency);
-  successParams.set("premium-checkout__frequency", frequency);
-  successParams.set("premium-checkout__amount", amount);
-  successParams.set("premium-checkout__country", country);
-  successParams.set("premium-checkout__locale", locale);
-  successParams.set("premium-checkout__timestamp", clickTs);
-  successUrl = `${successUrl}?${successParams.toString()}`;
 
   try {
     localStorage.setItem("contributionInfo", JSON.stringify({
@@ -924,21 +901,20 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     urlParams: adblock.URLSearchObject(location.search),
     userid: premiumId,
     tracking: `${trackingPrefix}X0G0 F${browserCode}O${operatingSystemCode}S${pageCode} ${premiumId}`,
-    testmode: paddleEnvironment == "test",
+    testmode: paddleEnvironment === "test",
     country,
     ga_id: "",
     premium: "false",
     premium_cid: "0",
     premium_sid: "0",
     currency,
-    recurring: frequency != "once",
-    subType: frequency != "once" ? frequency : "",
+    recurring: frequency !== "once",
+    subType: frequency !== "once" ? frequency : "",
     experiment: "",
     experiment_id: adblock.hasOwnProperty("experiment") ? adblock.experiment : "",
     variant: "",
     variant_index: adblock.hasOwnProperty("variant") ? adblock.variant : -1,
     amount_cents: amount,
-    success_url: successUrl,
     cancel_url: window.location.href,
     ext_version: extensionInfo.version || "", // extension version
     er: extensionInfo.er || "", // remote config revision id
@@ -948,7 +924,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
 
   const checkoutOptions = {
     settings: {
-      successUrl,
+      successUrl: null,
       locale: PADDLE_LOCALE_EXCEPTIONS[locale] || locale,
     },
     customData,
@@ -965,5 +941,4 @@ export const checkout = adblock.api.checkout = function checkout(options) {
   if (email) checkoutOptions.customer = { email };
 
   Paddle.Checkout.open(checkoutOptions);
-
 };

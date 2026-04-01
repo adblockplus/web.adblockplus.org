@@ -98,9 +98,6 @@ document.querySelectorAll(".update-premium-checkout-button").forEach((button, in
       frequency,
       amount,
       trigger,
-      settings: {
-        successUrl: null // override successUrl as we want to redirect with transaction ID / email from post purchase.
-      }
     });
   });
 });

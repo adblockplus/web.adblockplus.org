@@ -103,15 +103,11 @@ document.querySelectorAll(".cta").forEach(button => {
     const product = "premium";
     const currency = defaultCurrency;
     const amount = PRICES[currency][frequency];
-    console.log("checkout", {product, currency, frequency, amount});
     checkout({
       product,
       currency,
       frequency,
       amount,
-      settings: {
-        successUrl: null // override successUrl as we want to redirect with transaction ID / email from post purchase.
-      }
     });
   });
 });

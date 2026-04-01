@@ -6,19 +6,6 @@ code=ME
 
 <head>
   <? include accounts-redirect-fallback ?>
-  <script>(()=>{
-    if (adblock.query.has("premium-checkout__flow")) {
-      localStorage.setItem("contributionInfo", JSON.stringify({
-        clickTs: adblock.query.get("premium-checkout__timestamp"),
-        amount: adblock.query.get("premium-checkout__amount"),
-        frequency: adblock.query.get("premium-checkout__frequency"),
-        currency: adblock.query.get("premium-checkout__currency"),
-        lang: adblock.query.get("premium-checkout__locale"),
-        source: adblock.query.get("premium-checkout__page"),
-        processor: "paddle",
-      }));
-    }
-  })()</script>
   <? include hotjar ?>
   <link rel="stylesheet" href="/css/pages/premium.css">
   <link rel="stylesheet" href="/css/premium-promo-banner.css">
