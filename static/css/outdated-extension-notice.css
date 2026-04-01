@@ -1,0 +1,19 @@
+.outdated-extension-notice {
+  position: sticky;
+  top: 0;
+  z-index: 9005;
+  background: #fff3cd;
+  border-bottom: 1px solid #ffc107;
+  padding: 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.outdated-extension-notice__text {
+  margin: 0;
+}
+
+.outdated-extension-notice__link {
+  font-weight: bold;
+}

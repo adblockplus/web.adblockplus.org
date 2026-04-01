@@ -1,0 +1,17 @@
+<div id="outdated-extension-notice" class="outdated-extension-notice" hidden>
+  <div class="container">
+    <p class="outdated-extension-notice__text">{{ get_string("outdated-extension-notice__text-1", "outdated-extension-notice") }}</p>
+    <p class="outdated-extension-notice__text">{{ get_string("outdated-extension-notice__text-2", "outdated-extension-notice") }}</p>
+  </div>
+</div>
+<script type="module">
+import { checkExtensionVersion } from '/js/utils/check-extension-version.js';
+
+checkExtensionVersion().then(meetsVersion => {
+  console.log('meetsVersion', meetsVersion);
+  if (!meetsVersion && !adblock.adblockPlus?.isPremium) {
+    console.log('showing outdated extension notice');
+    document.getElementById('outdated-extension-notice').hidden = false;
+  }
+});
+</script>

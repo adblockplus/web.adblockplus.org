@@ -106,9 +106,6 @@ document.getElementById("purchase").addEventListener("submit", event => {
     currency,
     frequency,
     amount,
-    settings: {
-      successUrl: null // override successUrl as we want to redirect with transaction ID / email from post purchase.
-    }
   });
 });
 
@@ -118,7 +115,7 @@ adblock.on("checkout.completed", async (data) => {
   }
 
   /**
-   * Show the account loading spinner. Ideally we could separate out
+   * Show the account loading spinner. Ideally, we could separate out
    * the spinner from the duplicate subscription CSS into its own
    * component. But for now we can re-use it.
    */
