@@ -8,9 +8,7 @@
 import { checkExtensionVersion } from '/js/utils/check-extension-version.js';
 
 checkExtensionVersion().then(meetsVersion => {
-  console.log('meetsVersion', meetsVersion);
   if (!meetsVersion && !adblock.adblockPlus?.isPremium) {
-    console.log('showing outdated extension notice');
     document.getElementById('outdated-extension-notice').hidden = false;
   }
 });

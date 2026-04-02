@@ -18,10 +18,8 @@ export async function checkExtensionVersion() {
       adblock.afterAdblockPlusDetected(() => {
         const extensionVersion = adblock.query.get("qa-xv") || adblock.adblockPlus?.version;
         if (meetsExtensionVersion(extensionVersion)) {
-          adblock.log('payment_flow_event_user_accounts');
           resolve(true);
         } else {
-          adblock.log('payment_flow_event_legacy');
           resolve(false);
         }
       }, () => {
