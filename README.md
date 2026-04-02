@@ -11,16 +11,6 @@ This website is hosted on [Firebase](https://console.firebase.google.com/project
 
 > **Note:** The repository still contains some legacy Apache-era files (`.htaccess` etc.) that are no longer used in production and still require cleaning up.
 
-## Help / Support
-
-Firebase status page can be found at https://status.firebase.google.com/
-
-For filing new support issues with Firebase you can use the customer support portal at https://firebase.google.com/support.
-
-Note: the "Sign In" button might not work when using your eyeo email on their support page. This is an annoying problem we have raised with them, so hopefully it will get fixed. If you encounter problems signing in, you can instead use a personal Gmail account to fill out the form. Their support team will then ask you to prove who you are, which usually requires replying from your eyeo email.
-
-For issues relating to Cloud Logging or GCP, we can file a support ticket with our support contractors, [DoiT International](https://console.doit.com/customers/cmtMGFFexxcvhdWm6Gx7/support?open-case-iq=true).
-
 ## Running locally
 
 ### Prerequisites
@@ -81,6 +71,14 @@ git revert <commit-hash>
 git push origin my-revert-branch
 # then open an MR in GitLab
 ```
+
+## Help / Support
+
+Firebase status page can be found at https://status.firebase.google.com/
+
+For filing new support issues with Firebase you can use the customer support portal at https://firebase.google.com/support. You can also try emailing firebase-support@google.com should you have issues signing in to the portal.
+
+For issues relating to Cloud Logging or GCP, we can file a support ticket with our support contractors, [DoiT International](https://console.doit.com/customers/cmtMGFFexxcvhdWm6Gx7/support?open-case-iq=true).
 
 Once the MR is merged to `master`, the pipeline will deploy the reverted state to production. For an immediate static-only rollback, you can also revert to a previous Firebase Hosting release directly from the [Firebase console](https://console.firebase.google.com/project/www-adblockplus-org/hosting), but note that this won't revert Cloud Run changes.
 
