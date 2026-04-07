@@ -244,7 +244,6 @@ These test jobs run automatically in the GitLab pipeline:
 - chromium_tests - this is all of the remaining tests (except third party link and visual regression tests) run on Chromium only
 
 These test jobs are available in the Gitlab pipeline to be manually run as needed:
-- platform_tests - this runs a downstream pipeline of https://gitlab.com/eyeo/browser-extensions-and-premium/user-accounts/platform-team-tests and will eventually be phased out
 - visual_regression_tests - these compare snapshots of pages against baseline snapshots
 
 Additionally there is a daily scheduled run of all tests on all browsers. Test failures are reported in the `#infrastructure-alerts` Slack channel.
