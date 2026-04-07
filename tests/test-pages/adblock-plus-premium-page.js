@@ -23,7 +23,6 @@ export class AdblockPlusPremiumPage {
     const pageURL = '/en/adblock-plus-premium';
     const testURL = await URLHelper.addURLParameter(pageURL, optionalParam);
     await this.page.goto(testURL);
-    await this.page.waitForTimeout(1_000);
   }
 
   async clickCheckout(frequency = 'Yearly') {

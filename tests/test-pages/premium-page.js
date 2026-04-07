@@ -36,7 +36,6 @@ export class PremiumPage {
     const pageURL = '/en/premium';
     const testURL = await URLHelper.addURLParameter(pageURL, optionalParam);
     await this.page.goto(testURL);
-    await this.page.waitForTimeout(1_500);
   }
 
   async clickCheckout(frequency = 'Yearly') {

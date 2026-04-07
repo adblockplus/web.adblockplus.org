@@ -410,9 +410,10 @@ adblock.on("checkout.completed", async (data) => {
   window.location.href = successUrl;
 });
 
-// Set the initial page state to steps.purchase
+// Set the initial page state to steps.purchase without animation
 try {
-  await goto(steps.purchase, undefined, false);
+  steps.purchase.render();
+  steps.purchase.show();
 } catch (error) {
   adblock.logScriptError("premium.purchase", error);
   document.getElementById("premium-checkout").classList.add("visible");
