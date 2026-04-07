@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { PaddlePaymentForm, PaymentTestParameters } from './test-helpers/payment-helper.js';
 import { UserAccountsPortal } from './test-pages/user-accounts-portal.js';
-import { ExtensionHelper } from './test-helpers/extension-helper.js';
 
 const paymentParams = new PaymentTestParameters();
 // Test parameters for the monthly and yearly buttons on each payment page:
@@ -19,7 +18,6 @@ paymentPageButtonParameters.forEach(({ paymentPage, frequency }) => {
 
     const premiumPaymentPage = new paymentPage(page);
     const paddlePaymentForm = new PaddlePaymentForm(page);
-    await ExtensionHelper.mockExtensionData(page, '4.28.0', false);
     await premiumPaymentPage.openPage();
     await premiumPaymentPage.clickCheckout(frequency);
     await paddlePaymentForm.fillInEmailPage(email);
@@ -43,7 +41,6 @@ paymentPageParameters.forEach(({ paymentPage }) => {
     test.setTimeout(60_000);
     const premiumPaymentPage = new paymentPage(page);
     const paddlePaymentForm = new PaddlePaymentForm(page);
-    await ExtensionHelper.mockExtensionData(page, '4.28.0', true);
     // Include a Paddle past due payment in URL
     await premiumPaymentPage.openPage('_ptxn=txn_01jy3p1czw4zk0rce047q73ggj');
     var activeSubMessage = false;
