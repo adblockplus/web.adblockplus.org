@@ -161,15 +161,6 @@ function initReactivationLinks() {
     // also handles extension reactivation.
     window.location.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w`
   });
-
-  // Show sign-in link
-  const oldPremiumReactivationLink = document.querySelector('.premium-plans__already-contributed');
-  const newPremiumReactivationLink = document.querySelector('.premium-plans__already-purchased-sign-in');
-
-  if (oldPremiumReactivationLink && newPremiumReactivationLink) {
-    oldPremiumReactivationLink.hidden = true;
-    newPremiumReactivationLink.hidden = false;
-  }
 }
 
 initReactivationLinks();
