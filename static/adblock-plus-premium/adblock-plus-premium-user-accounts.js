@@ -159,7 +159,6 @@ function initReactivationLinks() {
     event.preventDefault();
     // Redirect to user accounts portal login flow, which
     // also handles extension reactivation.
-    console.log("redirecting to user accounts portal");
     window.location.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w`
   });
 

@@ -411,15 +411,8 @@ adblock.on("checkout.completed", async (data) => {
 });
 
 // Set the initial page state to steps.purchase without animation
-try {
-  steps.purchase.render();
-  steps.purchase.show();
-} catch (error) {
-  adblock.logScriptError("premium.purchase", error);
-  document.getElementById("premium-checkout").classList.add("visible");
-  await goto(steps.error);
-  card.scrollIntoView();
-}
+steps.purchase.render();
+steps.purchase.show();
 
 adblock.on("checkout.loaded", () => {
   goto(steps.purchase, undefined, false);
