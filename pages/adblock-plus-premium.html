@@ -131,8 +131,10 @@ See /adblock-plus-premium/frontend.css and /adblock-plus-premium/adblock-plus-pr
       @font-face{font-family:"Source Sans Pro";font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/Source-Sans-Pro/400/greek-ext.woff2') format('woff2');unicode-range:U+1F00-1FFF;}
       @font-face{font-family:"Source Sans Pro";font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/Source-Sans-Pro/700/greek-ext.woff2') format('woff2');unicode-range:U+1F00-1FFF;}
     </style>
+  <link rel="stylesheet" href="/css/outdated-extension-notice.css">
 </head>
 
+<? include outdated-extension-notice ?>
 <a class="skip-link screen-reader-text" href="#wp--skip-link--target">Skip to content</a><div class="wp-site-blocks">
   <main class="wp-block-group has-global-padding is-layout-constrained wp-container-core-group-is-layout-29 wp-block-group-is-layout-constrained" id="wp--skip-link--target">
     <div class="entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-container-core-post-content-is-layout-1 wp-block-post-content-is-layout-constrained">
@@ -441,10 +443,7 @@ See /adblock-plus-premium/frontend.css and /adblock-plus-premium/adblock-plus-pr
 
 
   <p class="has-text-align-center has-lead-font-size">
-    <span class="premium-plans__already-contributed placeholder">
-      Already have Premium or contributed before?&nbsp;<a href="restore-purchase" style="color:#0797E1;">Activate here</a>
-    </span>
-    <span class="premium-plans__already-purchased-sign-in" hidden>
+    <span class="premium-plans__already-purchased-sign-in placeholder">
       Already purchased premium?&nbsp;<a class="premium-checkout__user-accounts-sign-in-link" style="color:#0797E1;" href="#">Click to sign in</a>.
     </span>
   </p>
@@ -580,5 +579,5 @@ See /adblock-plus-premium/frontend.css and /adblock-plus-premium/adblock-plus-pr
 <? include footer--update ?>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/js/vendor/NumberFormat.min.js"></script>
-<script type="module" src="/adblock-plus-premium/adblock-plus-premium-init.js"></script>
+<script type="module" src="/adblock-plus-premium/adblock-plus-premium-user-accounts.js"></script>
 <? include prevent-duplicate-subscriptions ?>

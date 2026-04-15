@@ -9,7 +9,6 @@ nofooter=1
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/installed/installed.css">
   <? include scripts/frontend-experiments ?>
-  <? include scripts/handle-install-and-activate ?>
   <? include hotjar ?>
   <script>
     Object.assign(adblock.strings, {
@@ -43,7 +42,8 @@ nofooter=1
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="/js/vendor/NumberFormat.min.js"></script>
-<script src="/installed/installed-init.js" type="module"></script>
+<script src="/installed/installed-user-accounts.js" type="module"></script>
+<script src="/installed/installed-experiment-init.js" type="module"></script>
 <script>(()=>{
   if (typeof gtag == "function") {
     gtag('event', 'conversion', {'send_to': 'AW-16679929794/QHQ6CJagpdMZEMKPzpE-'});

@@ -230,11 +230,26 @@
         window.addEventListener('resize', updateFloatingTOCPosition);
     }
 
+    function initLoginButton() {
+      var loginLink = document.querySelector('#navbar-account-login a');
+      if (!loginLink) return;
+      var isTest = (
+        location.hostname == "localhost" ||
+        location.hostname.endsWith(".web.app") ||
+        adblock.query.has("testmode")
+      );
+      var domain = isTest
+        ? "https://abp.ua-qa.eyeo.it/"
+        : "https://myaccount.adblockplus.org/";
+      loginLink.href = domain + "?s=abp-w";
+    }
+
     initLanguageSelection();
     initMenu();
     initNavbarToggle();
     initPreventFooterOverlap();
     initTOCScroll();
+    initLoginButton();
 })();
 
 (function()

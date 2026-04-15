@@ -342,7 +342,6 @@ async function goto(nextStep, state, log) {
 // steps.purchase "checkout-now" event begins the "purchase" flow
 steps.purchase.on("checkout-now", async () => {
   try {
-    flow = "purchase";
     const frequency = steps.purchase.getSelectedValue();
     const currency = steps.purchase.getCurrency();
     const amount = PRICES[currency][frequency];
@@ -354,10 +353,6 @@ steps.purchase.on("checkout-now", async () => {
       currency,
       frequency,
       amount,
-      flow,
-      settings: {
-        successUrl: null // override successUrl as we want to redirect with transaction ID / email from post purchase.
-      }
     });
   } catch (error) {
     adblock.logScriptError("premium.checkout", error);
@@ -415,15 +410,9 @@ adblock.on("checkout.completed", async (data) => {
   window.location.href = successUrl;
 });
 
-// Set the initial page state to steps.purchase
-try {
-  await goto(steps.purchase, undefined, false);
-} catch (error) {
-  adblock.logScriptError("premium.purchase", error);
-  document.getElementById("premium-checkout").classList.add("visible");
-  await goto(steps.error);
-  card.scrollIntoView();
-}
+// Set the initial page state to steps.purchase without animation
+steps.purchase.render();
+steps.purchase.show();
 
 adblock.on("checkout.loaded", () => {
   goto(steps.purchase, undefined, false);
@@ -436,24 +425,6 @@ function initReactivationLinks() {
     // also handles extension reactivation.
     window.location.href = `${USER_ACCOUNTS_DOMAIN}?premium=false&s=abp-w`
   });
-
-  // Show sign-in link on /premium page
-  const oldPremiumReactivationLink = document.querySelector('.premium-plans__already-contributed');
-  const newPremiumReactivationLink = document.querySelector('.premium-plans__already-purchased-sign-in');
-
-  if (oldPremiumReactivationLink && newPremiumReactivationLink) {
-    oldPremiumReactivationLink.hidden = true;
-    newPremiumReactivationLink.hidden = false;
-  }
-
-  // show sign-in linnk on checkout card
-  const oldCheckouCardReactivationLink = document.querySelector('.premium-checkout-card-footer-column__already-contributed');
-  const newCheckouCardReactivationLink = document.querySelector('.premium-checkout-card-footer-column__already-purchased-sign-in');
-
-  if (oldCheckouCardReactivationLink && newCheckouCardReactivationLink) {
-    oldCheckouCardReactivationLink.hidden = true;
-    newCheckouCardReactivationLink.hidden = false;
-  }
 }
 
 document.querySelectorAll(".placeholder").forEach(element => {

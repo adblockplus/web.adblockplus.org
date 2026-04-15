@@ -17,17 +17,14 @@ export async function checkExtensionVersion() {
     try {
       adblock.afterAdblockPlusDetected(() => {
         const extensionVersion = adblock.query.get("qa-xv") || adblock.adblockPlus?.version;
-        if (adblock.adblockPlus?.isPremium) {
-          resolve(false);
-        } else if (meetsExtensionVersion(extensionVersion)) {
-          adblock.log('payment_flow_event_user_accounts');
+        if (meetsExtensionVersion(extensionVersion)) {
           resolve(true);
         } else {
-          adblock.log('payment_flow_event_legacy');
           resolve(false);
         }
       }, () => {
-        resolve(false);
+        // do not show notice if the extension is not installed, portal has an own message for that
+        resolve(true);
       });
     } catch (error) {
       adblock.logScriptError("checkExtensionVersion", error);
