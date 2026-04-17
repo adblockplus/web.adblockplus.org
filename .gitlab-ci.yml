@@ -137,6 +137,7 @@ deploy_cloud_run:review:
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     on_stop: teardown_cloud_run:review
+    auto_stop_in: 30d
 
 teardown_cloud_run:review:
   stage: deploy_cloud_run
@@ -144,6 +145,7 @@ teardown_cloud_run:review:
     - master
     - schedules
   image: *GOOGLE_CLOUD_SDK_IMAGE
+  dependencies: []
   before_script:
     - gcloud auth activate-service-account --key-file $GCP_SERVICE_ACCOUNT_CREDENTIALS
     - gcloud config set project $GCP_PROJECT_ID
