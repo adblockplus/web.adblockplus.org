@@ -50,7 +50,7 @@
       },
       {
         "regex": "(?i)^/([a-z]{2}/)?([a-z]{2}[-]{1}[a-z]{2}/)?manage/?$",
-        "destination": "https://myaccount.adblockplus.org/",
+        "destination": "https://myaccount.adblockplus.org/?s=abp-w",
         "type": 301
       },
       {
