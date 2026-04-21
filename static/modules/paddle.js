@@ -920,6 +920,7 @@ export const checkout = adblock.api.checkout = function checkout(options) {
     er: extensionInfo.er || "", // remote config revision id
     ev: extensionInfo.ev || "", // experiment variants encoded
     ca: extensionInfo.ca || "", // cohorts encoded
+    install_date: extensionInfo.installDate || "", // extension install date
   };
 
   const checkoutOptions = {
