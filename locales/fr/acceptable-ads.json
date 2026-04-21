@@ -173,7 +173,7 @@
   },
   "hate-ads": {
     "description": "Section header",
-    "message": "Mais je déteste tous les types de publicités !"
+    "message": "Vous voulez tout bloquer ? Pas de problème."
   },
   "hover-effect-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -302,10 +302,6 @@
   "process-of-whitelisting": {
     "description": "Text in \"how to be whitelisted\" section",
     "message": "Après avoir confirmé la conformité de vos publicités aux critères de la Publicité Acceptable, leur intégration sur la lite blanche ne devrait durer qu’autour de dix jours :"
-  },
-  "revenue": {
-    "description": "Section header",
-    "message": "Faut-il payer ?"
   },
   "rich-ads": {
     "description": "Bullet point in \"not Acceptable Ad\" section",
@@ -473,34 +469,13 @@
     "message": "Dans la barre d’outils Safari, cliquez sur l’icône <strong>Adblock Plus</strong> et sélectionnez <strong>Ouvrir Adblock Plus</strong>."
   },
   "what-is-aac-1": {
-    "message": "Comme nous l’avions <a>annoncé</a>, en 2017 eyeo / Adblock Plus a transféré la gestion de l’initiative Publicité Acceptable à un groupe indépendant, le <a>Comité Publicité Acceptable</a>. Le Comité Publicité Acceptable rassemble des parties intéressées provenant d’associations à but non lucratif, des experts de l’industrie et des utilisateurs d’Internet comme vous."
-  },
-  "report-aa-step-3": {
-    "message": "Si connu, indiquez si une connexion ou un VPN est nécessaire pour reproduire le problème."
-  },
-  "report-aa-step-2": {
-    "message": "Capture d’écran de toute la page, qui inclut la publicité OU une description détaillée de l’emplacement de la publicité sur la page"
-  },
-  "report-aa-step-1": {
-    "message": "URL de la page où la publicité apparaît"
-  },
-  "get-allowlisted": {
-    "message": "Comment obtenir l'ajout des publicités de mon site web sur la liste autorisée ?"
+    "message": "Le <a>Comité des publicités acceptables</a> est composé d'un ensemble varié d'experts en ligne – issus d'entreprises, d'organisations à but non lucratif, etc. – souhaitant établir de meilleurs standards publicitaires."
   },
   "why-is-aa-enabled-1": {
-    "message": "Nous sommes convaincus que les publicités acceptables représentent un compromis durable entre le choix des utilisateurs d’utiliser un bloqueur de publicité et la nécessité constante de soutenir la publicité pour que l'accès à certains sites reste gratuit. Si la majorité des utilisateurs d’Adblock Plus activent l’option Publicités Acceptables, cela incitera les publicitaires à créer des formats d’annonces plus respectueux et moins intrusifs."
+    "message": "Les publicités acceptables sont activées par défaut car nous pensons que le meilleur résultat pour les utilisateurs est un web avec moins de publicités, mais de meilleure qualité — et non un choix binaire entre tout accepter ou tout bloquer. En n'autorisant que les publicités qui répondent à des critères stricts et vérifiés de manière indépendante, Adblock Plus contribue à élever les standards de toute l'industrie publicitaire. Vous pouvez le désactiver à tout moment en deux clics."
   },
   "disable-samsung": {
     "message": "Adblock Plus pour Samsung Internet"
-  },
-  "get-allowlisted-1": {
-    "message": "Le processus d’ajout de vos publicités sur la liste autorisée prend une dizaine de jours ouvrables une fois que leur conformité aux normes des Publicités Acceptables a été vérifiée :"
-  },
-  "do-users-want-aa-1": {
-    "message": "Oui ! Quatre-vingt-trois pour cent (<a>83 %</a>) d’utilisateurs d’Adblock Plus ne sont pas dérangés par les publicités acceptables car leur expérience de navigation n’est pas gâchée par des publicités bruyantes, agaçantes et non pertinentes."
-  },
-  "view-aa-list-1": {
-    "message": "Absolument. Vous pouvez accéder à cette liste en <a>cliquant ici</a>."
   },
   "why-is-aa-enabled": {
     "message": "Pourquoi la fonctionnalité des publicités acceptables est-elle activée par défaut ?"
@@ -510,9 +485,6 @@
   },
   "disable-latest-step-4": {
     "message": "Fermez l’onglet."
-  },
-  "view-aa-list": {
-    "message": "Est-ce que je peux voir la liste autorisée des Publicités Acceptables ?"
   },
   "disable-latest-step-1": {
     "message": "Dans la barre d’outils de votre navigateur, cliquez sur l'icône <strong>Adblock Plus</strong> et sélectionnez l’icône d’<strong>engrenage</strong> en haut à droite."
@@ -536,22 +508,10 @@
     "message": "Désélectionnez <strong>Autoriser certaines publicités non intrusives</strong>."
   },
   "what-are-aa-1": {
-    "message": "Les publicités acceptables sont des publicités qui ne sont ni intrusives ni dérangeantes. Elles sont respectueuses, ne s’immiscent pas dans le contenu et sont clairement identifiées par le mot « publicité » ou un équivalent. Pour qu’une annonce soit une « Publicité Acceptable », elle doit respecter des <a>normes</a> qui ont été définies par le <a>Comité Publicités Acceptables</a>."
+    "message": "Les publicités acceptables sont des publicités non intrusives et non gênantes. Elles sont respectueuses, n’interfèrent pas avec le contenu et sont clairement identifiées par le mot « publicité » ou son équivalent. Pour qu’une publicité soit une « publicité acceptable », elle doit respecter les <a>standards</a> établis par le <a>Comité des publicités acceptables</a>."
   },
   "what-are-aa-2": {
-    "message": "Les publicités qui respectent les critères des Publicités Acceptables sont placées sur une liste autorisée. Les publicités de la liste autorisée sont alors visibles par les utilisateurs de bloqueurs de publicité qui autorisent les publicités acceptables."
-  },
-  "what-are-aa-wo-1": {
-    "message": "Les publicités acceptables sans traçage tiers sont des publicités qui répondent aux critères des Publicités Acceptables et ne permettent pas le traçage de votre navigation par des tiers. Il s'agit de publicités conformes à <a>« Interdire le suivi »</a> (Do Not Track) et/ou de publicités servies par un domaine appartenant exclusivement à la même société."
-  },
-  "get-allowlisted-step-1-1": {
-    "message": "Ajouter des publicités acceptables sur la liste blanche"
-  },
-  "get-allowlisted-step-2": {
-    "message": "Un collaborateur d’<a>eyeo</a>, l’entreprise qui gère Adblock Plus, prendra contact avec vous afin d’identifier ces publicités et vérifier si elles sont conformes aux critères."
-  },
-  "get-allowlisted-step-1": {
-    "message": "Si votre site web a des publicités qui respectent les <a>normes des Publicités Acceptables</a>, remplissez simplement <a>ce formulaire</a>."
+    "message": "Les publicités qui respectent le standard des publicités acceptables sont ajoutées à une liste autorisée. Ces publicités sont ensuite affichées aux utilisateurs de bloqueurs de publicités qui ont activé les publicités acceptables."
   },
   "disable-ie-step-1": {
     "message": "Cliquez l’icône Adblock Plus et sélectionnez <strong>Paramètres</strong>."
@@ -559,20 +519,8 @@
   "disable-ie-step-2": {
     "message": "Désélectionnez <strong>Autoriser certaines publicités non intrusives</strong>."
   },
-  "page-under-review": {
-    "message": "Cette page est en maintenance car la gestion de l’initiative Publicité Acceptable a été transférée à un groupe indépendant, le <a>Comité Publicité Acceptable</a>."
-  },
-  "get-allowlisted-step-3-1": {
-    "message": "Lien vers la page des accords de Publicités Acceptables"
-  },
-  "get-allowlisted-step-4": {
-    "message": "Nous soumettons la proposition de mise sur la liste autorisée sur <a>le forum</a> et les annonces sont mises en liste autorisée en même temps."
-  },
   "desktop-criteria-1": {
     "message": "Les publicités ne doivent pas interrompre la lecture normale de l'utilisateur. Ces publicités doivent être placées au-dessus, sur les côtés ou en dessous du Contenu Principal."
-  },
-  "are-all-aa-blocked-1": {
-    "message": "Non. Il n’est pas techniquement possible de reconnaître automatiquement les publicités qui ne respectent pas les critères de Publicité Acceptable. Nous avons des <a>accords</a> avec certains sites Internet et publicitaires qui stipulent que seules les publicités correspondant aux critères de Publicité Acceptable seront visibles quand les utilisateurs d’Adblock Plus visitent ces sites."
   },
   "disable-safari": {
     "message": "Adblock Plus pour Safari"
@@ -584,13 +532,10 @@
     "message": "Adblock <strong>Plus</strong>"
   },
   "what-are-aa-3": {
-    "message": "La plupart des sites web utilisent la publicité pour générer des revenus, ce qui vous permet d'accéder gratuitement à ces sites web. Cependant, beaucoup d’entre eux ont recours à des publicités trop dérangeantes ou intrusives pour attirer votre attention. Adblock Plus vous permet de choisir de bloquer les publicités, mais nous pensons que les sites internet ne devraient pas être punis."
+    "message": "La plupart des sites web dépendent de la publicité pour rester gratuits. Adblock Plus bloque par défaut les publicités intrusives — et vous donne la possibilité de soutenir les sites auxquels vous faites confiance en échangeant un peu de votre attention contre un petit nombre de publicités non intrusives et clairement identifiées."
   },
   "disable-firefox-step-2": {
     "message": "Désélectionnez <strong>Autoriser certaines publicités non intrusives</strong>."
-  },
-  "are-all-aa-blocked": {
-    "message": "Toutes les publicités dérangeantes sont-elles bloquées ?"
   },
   "disable-firefox-step-1": {
     "message": "Cliquez sur l’icône Adblock Plus et sélectionnez <strong>Préférences de filtrage</strong>."
@@ -619,32 +564,14 @@
   "aa-criteria-1": {
     "message": "La Publicité Acceptable, selon la définition du Comité Publicité Acceptable, doit respecter les critères suivants :"
   },
-  "do-users-want-aa": {
-    "message": "Les utilisateurs d’Adblock Plus veulent-ils vraiment voir des publicités acceptables ?"
-  },
-  "get-allowlisted-step-3": {
-    "message": "Une fois les changements effectués, les deux parties signent un <a>accord</a>."
-  },
   "disable-android": {
     "message": "Adblock Browser pour Android"
   },
-  "report-aa-1": {
-    "message": "Envoyez un message à <a>adresse e-mail</a> en fournissant les informations suivantes :"
-  },
   "hate-ads-1": {
-    "message": "Aucun problème, vous pouvez désactiver ce paramètre à tout moment :"
-  },
-  "report-aa": {
-    "message": "Comment signaler une publicité qui ne respecte pas les critères ?"
-  },
-  "what-are-aa-wo": {
-    "message": "Que sont les publicités acceptables sans traçage tiers ?"
+    "message": "Vous pouvez désactiver cette fonctionnalité à tout moment :"
   },
   "desktop-criteria": {
     "message": "Critères pour les ordinateurs"
-  },
-  "revenue-1": {
-    "message": "Cliquez <a>ici</a> pour avoir un aperçu détaillé de nos informations financières."
   },
   "disable-latest": {
     "message": "Adblock Plus pour Chrome, Firefox (versions 3 et suivantes), Maxthon, Opera, Yandex Browser"

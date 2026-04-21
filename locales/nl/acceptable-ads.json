@@ -3,10 +3,6 @@
     "message": "Adblock Plus introduceert het Acceptabele advertenties-initiatief: Ondersteun websites die afhankelijk zijn van reclame, maar ervoor kiezen om de advertenties op een niet-opdringerige wijze aan te bieden.",
     "description": "Description meta tag content inside head tag"
   },
-  "page-under-review": {
-    "message": "Deze pagina wordt momenteel beoordeeld aangezien het beheer van het Acceptabele advertenties-initiatief is overgedragen aan het onafhankelijke <a>Acceptabele advertenties-comité</a>.",
-    "description": "Page under review notice"
-  },
   "about": {
     "message": "Waar gaat dit over?",
     "description": "Section header"
@@ -342,7 +338,7 @@
     "description": "Text in \"Why is this feature enabled by default?\" section"
   },
   "hate-ads": {
-    "message": "Ik heb een hekel aan alle advertenties!",
+    "message": "Alles willen blokkeren? Geen probleem.",
     "description": "Section header"
   },
   "can-disable": {
@@ -433,10 +429,6 @@
     "message": "De <a>resultaten van onze gebruikersenquête</a> zeggen van wel. Volgens de enquête is slechts 25 procent van de Adblock Plus-gebruikers sterk gekant tegen alle advertenties. Zij kunnen de functie uitschakelen en volledig advertentievrij surfen. De overige 75 procent antwoordde dat ze bepaalde advertenties zouden accepteren om websites te helpen steunen.",
     "description": "Text in \"who want acceptable ads\" section"
   },
-  "revenue": {
-    "message": "Moet ergens voor betaald worden?",
-    "description": "Section header"
-  },
   "main-revenue": {
     "message": "We ontvangen wat donaties van onze gebruikers, maar onze grootste inkomstenbron komt voort uit het Acceptable Ads-initiatief. Grotere entiteiten (zoals hieronder gedefinieerd) betalen een licentievergoeding voor de aangevraagde en aan hen geleverde whitelisting-diensten (ongeveer 90 procent van de licenties wordt gratis verstrekt). Er moet worden opgemerkt dat aan de Acceptable Ads-criteria moet worden voldaan, onafhankelijk van de overweging voor vergoedingen. Als niet aan de criteria wordt voldaan, is whitelisting niet mogelijk.",
     "description": "Text in \"Is there payment involved?\" section"
@@ -493,34 +485,13 @@
     "message": "Klik in de werkbalk van Safari op het pictogram <strong>Adblock Plus</strong> en klik op <strong>Adblock Plus openen</strong>."
   },
   "what-is-aac-1": {
-    "message": "Zoals <a>eerder aangekondigd</a>, heeft eyeo/Adblock Plus in 2017 het beheer van het Acceptabele advertenties-initiatief overgedragen aan een onafhankelijke groep: het <a>Acceptabele advertenties-comité</a>. Het Acceptabele advertenties-comité bestaat uit geïnteresseerden van bedrijven met winstoogmerk, industrie-experts en internetgebruikers zoals u."
-  },
-  "report-aa-step-3": {
-    "message": "Geef, indien bekend, aan of inloggegevens of VPN nodig zijn om het probleem te reproduceren"
-  },
-  "report-aa-step-2": {
-    "message": "Screenshot van de gehele pagina, inclusief de advertentie OF een gedetailleerde beschrijving van waar de advertentie zich op de pagina bevindt"
-  },
-  "report-aa-step-1": {
-    "message": "URL van de pagina waar de advertentie verschijnt"
-  },
-  "get-allowlisted": {
-    "message": "Hoe kan ik advertenties op mijn website op de lijst met uitzonderingen krijgen?"
+    "message": "Het <a>Acceptable Ads Committee</a> bestaat uit een gevarieerde mix van online experts – van bedrijven, non-profitorganisaties, etc. – die geïnteresseerd zijn in het opstellen van betere advertentiestandaarden."
   },
   "why-is-aa-enabled-1": {
-    "message": "Wij geloven dat acceptabele advertenties de duurzame middenweg zijn tussen de keuze van een gebruiker om een adblocker te gebruiken en de blijvende noodzaak om gratis online content te ondersteunen met advertenties. Als de meerderheid van de Adblock Plus gebruikers de Acceptabele advertenties-functie heeft ingeschakeld, dan hebben adverteerders een grotere stimulans om betere, minder opdringerige advertentieformaten te produceren."
+    "message": "Acceptable Ads staat standaard aan omdat wij geloven dat het beste resultaat voor gebruikers een web is met minder, maar betere advertenties — geen binaire keuze tussen alle advertenties of geen. Door alleen advertenties toe te laten die voldoen aan strikte, onafhankelijk geverifieerde criteria, helpt Adblock Plus de gehele reclame-industrie naar hogere standaarden te duwen. Je kunt het op elk moment met twee klikken uitschakelen."
   },
   "disable-samsung": {
     "message": "Adblock Plus voor Samsung Internet"
-  },
-  "get-allowlisted-1": {
-    "message": "Het proces om uw advertenties op de uitzonderingslijst te laten plaatsen duurt ongeveer 10 werkdagen zodra de advertenties voldoen aan de Acceptabele advertenties-normen:"
-  },
-  "do-users-want-aa-1": {
-    "message": "Ja! Drieëntachtig procent (<a>83%</a>) van de Adblock Plus-gebruikers vindt het niet erg om acceptabele advertenties te zien, omdat hun surfervaring niet wordt verpest door schreeuwerige, vervelende en irrelevante advertenties."
-  },
-  "view-aa-list-1": {
-    "message": "Absoluut. U kunt de lijst bekijken door <a>hier te klikken</a>."
   },
   "why-is-aa-enabled": {
     "message": "Waarom is de Acceptabele advertenties-functie standaard ingeschakeld?"
@@ -530,9 +501,6 @@
   },
   "disable-latest-step-4": {
     "message": "Sluit het tabblad."
-  },
-  "view-aa-list": {
-    "message": "Kan ik de filterlijst met uitzonderingen voor acceptabele advertenties bekijken?"
   },
   "disable-latest-step-1": {
     "message": "Klik in de werkbalk van uw browser op het pictogram <strong>Adblock Plus</strong> en klik op het <strong>tandwiel</strong>-pictogram in de rechterbovenhoek."
@@ -556,22 +524,10 @@
     "message": "Vink <strong>acceptabele advertenties toestaan</strong> aan."
   },
   "what-are-aa-1": {
-    "message": "Acceptabele advertenties zijn advertenties die niet opdringerig of vervelend zijn. Deze advertenties zijn respectvol, verstoren de content van een website niet en zijn duidelijk gelabeld met het woord \"reclame\" of een vergelijkbare term. Een advertentie is een \"acceptabele advertentie\" als de advertentie voldoet aan de <a>standaard</a> die door het <a>Acceptabele advertenties-comité</a> is vastgesteld."
+    "message": "Acceptable Ads zijn advertenties die niet opdringerig of irritant zijn. Ze zijn respectvol, verstoren de inhoud niet en zijn duidelijk gelabeld met het woord “advertentie” of een equivalent. Om een advertentie een “Acceptable Ad” te noemen, moet deze voldoen aan de <a>standaarden</a> die zijn vastgesteld door het <a>Acceptable Ads Committee</a>."
   },
   "what-are-aa-2": {
-    "message": "Advertenties die voldoen aan de standaard voor acceptabele advertenties worden op een uitzonderingslijst geplaatst. De advertenties op de uitzonderingslijst worden vervolgens getoond aan gebruikers die advertenties blokkeren en acceptabele advertenties toestaan."
-  },
-  "what-are-aa-wo-1": {
-    "message": "Acceptabele advertenties zonder tracking door derden zijn advertenties die voldoen aan de criteria voor acceptabele advertenties en die derden niet toestaan om uw surfgedrag te volgen. Dit zijn advertenties die voldoen aan <a>Do Not Track</a> en/of advertenties die worden aangeboden door het domein dat volledig eigendom is van hetzelfde bedrijf."
-  },
-  "get-allowlisted-step-1-1": {
-    "message": "Acceptabele advertenties op de witte lijst laten plaatsen"
-  },
-  "get-allowlisted-step-2": {
-    "message": "Iemand van <a>eyeo</a>, het bedrijf achter Adblock Plus, neemt contact met u op om de exacte advertenties te bepalen en om te controleren of deze voldoen aan onze criteria."
-  },
-  "get-allowlisted-step-1": {
-    "message": "Als uw website advertenties heeft die voldoen aan de <a>Acceptabele advertenties-standaard</a>, vul dan gewoon <a>dit formulier</a> in."
+    "message": "Advertenties die voldoen aan de Acceptable Ads Standard worden op een toelatingslijst geplaatst. De advertenties op de toelatingslijst worden vervolgens getoond aan gebruikers van advertentieblokkers die Acceptable Ads toestaan."
   },
   "disable-ie-step-1": {
     "message": "Klik op het pictogram Adblock Plus en klik op <strong>Instellingen</strong>."
@@ -579,14 +535,8 @@
   "disable-ie-step-2": {
     "message": "Vink <strong>acceptabele advertenties toestaan</strong> aan."
   },
-  "get-allowlisted-step-3-1": {
-    "message": "Link naar de pagina Acceptabele advertenties-overeenkomsten"
-  },
   "desktop-criteria-1": {
     "message": "De advertenties mogen de natuurlijke leeservaring van de gebruiker niet verstoren. Dergelijke advertenties moeten boven, naast of onder de primaire inhoud worden geplaatst."
-  },
-  "are-all-aa-blocked-1": {
-    "message": "Nee. Het is technisch niet mogelijk om advertenties die niet voldoen aan de Acceptabele advertenties-criteria automatisch te herkennen. We hebben <a>overeenkomsten</a> met sommige websites en adverteerders die bepalen dat alleen advertenties die voldoen aan de Acceptabele advertenties-criteria worden weergegeven als Adblock Plus gebruikers deze specifieke sites bezoeken."
   },
   "disable-safari": {
     "message": "Adblock Plus voor Safari"
@@ -595,13 +545,10 @@
     "message": "Criteria voor Acceptabele advertenties"
   },
   "what-are-aa-3": {
-    "message": "De meeste websites gebruiken advertenties om geld te verdienen. Dit betekent dat u deze websites gratis kunt zien. Veel websites gebruiken echter te veel vervelende of opdringerige advertenties om uw aandacht te trekken. Met Adblock Plus kunt u ervoor kiezen om advertenties te blokkeren, maar wij vinden niet dat websites gestraft moeten worden."
+    "message": "De meeste websites zijn afhankelijk van advertenties om gratis te blijven. Adblock Plus blokkeert standaard de opdringerige advertenties — en geeft je de keuze om sites die je vertrouwt te ondersteunen door een klein beetje aandacht te ruilen voor een beperkt aantal niet-opdringerige, duidelijk gelabelde advertenties."
   },
   "disable-firefox-step-2": {
     "message": "Vink <strong>acceptabele advertenties toestaan</strong> aan."
-  },
-  "are-all-aa-blocked": {
-    "message": "Worden alle vervelende advertenties geblokkeerd?"
   },
   "disable-firefox-step-1": {
     "message": "Klik op het Adblock Plus-pictogram en klik op <strong>Filtervoorkeuren</strong>."
@@ -630,32 +577,14 @@
   "aa-criteria-1": {
     "message": "Acceptabele advertenties, zoals gedefinieerd door het Acceptabele advertenties-comité, moeten voldoen aan de volgende criteria:"
   },
-  "do-users-want-aa": {
-    "message": "Willen Adblock Plus-gebruikers echt acceptabele advertenties zien?"
-  },
-  "get-allowlisted-step-3": {
-    "message": "Nadat u de noodzakelijke wijzigingen hebt doorgevoerd, ondertekenen beide partijen een <a>overeenkomst</a>\"."
-  },
   "disable-android": {
     "message": "Adblock Browser voor Android"
   },
-  "report-aa-1": {
-    "message": "Stuur een bericht naar <a>e-mailadres</a> met de volgende informatie:"
-  },
   "hate-ads-1": {
-    "message": "Geen probleem, u kunt deze functie op elk moment uitschakelen:"
-  },
-  "report-aa": {
-    "message": "Hoe meld ik een advertentie die niet aan de criteria voldoet?"
-  },
-  "what-are-aa-wo": {
-    "message": "Wat zijn Acceptabele advertenties zonder tracking door derden?"
+    "message": "Je kunt deze functie op elk moment uitschakelen:"
   },
   "desktop-criteria": {
     "message": "Criteria voor desktop"
-  },
-  "revenue-1": {
-    "message": "Klik <a>hier</a> voor een gedetailleerd overzicht van onze financiële gegevens."
   },
   "disable-latest": {
     "message": "Adblock Plus voor Chrome, Firefox (versie 3 en hoger), Maxthon, Opera, Yandex Browser"
