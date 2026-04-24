@@ -381,7 +381,7 @@ template=minimal
             srcset="/img/octagon-check-2x.png 2x"
             alt="{{ feature-aa-alt[alt text] Checkmark in an octagon }}">
           <h3>
-            {{ feature-aa-heading[heading] Support fair publishers }}
+            {{ feature-browsers-heading[heading] Works on Every Browser You Use }}
           </h3>
           <p>
             {{ feature-aa-1 Websites need money to stay free. Support them by allowing Acceptable Ads (on by default). }}
@@ -396,8 +396,17 @@ template=minimal
   </div><!-- .container.content -->
 </div><!-- #features -->
 
-<div class="container">
-  <div class="section">
-    <? include footnote ?>
-  </div>
+
+<div id="footnote" class="container content hide-on-ios hide-on-android">
+  <p>
+    <sup>[1]</sup> {{ footnote-headline The following rules <strong>have</strong> and <strong>always will</strong> apply to everyone, without exception: }}
+  </p>
+  <ul>
+    <li>
+      {{ footnote-must-comply Participants cannot pay to avoid the <a href="acceptable-ads#criteria-general">criteria</a>. Every ad must comply. }}
+    </li>
+    <li>
+      {{ footnote-keep-free We are able to keep our open source product free by charging large entities a fee for allowlisting services. For smaller partners, these services are offered free of charge. }}
+    </li>
+  </ul>
 </div>

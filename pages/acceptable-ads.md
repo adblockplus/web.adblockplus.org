@@ -1,4 +1,4 @@
-title=Allowing acceptable ads in Adblock Plus
+title=Your ad-free experience, your choice
 template=fixed-toc
 
 <head>
@@ -13,24 +13,17 @@ template=fixed-toc
   </style>
 </head>
 
-{{ page-under-review[Page under review notice] This page is under review as management of the Acceptable Ads initiative has been transferred to the independent [Acceptable Ads Committee](https://acceptableads.org/). }}
-{: .alert }
-
 ## {{what-are-aa[heading] What are Acceptable Ads?}} {: #what-are-those }
 
-{{ what-are-aa-1 Acceptable Ads are ads that aren’t intrusive or annoying. They are respectful, don’t interfere with content, and are clearly labeled with the word “advertisement” or its equivalent. In order for an ad to be an “Acceptable Ad”, it must adhere to [standards](#criteria) that have been set forth by the [Acceptable Ads Committee](https://acceptableads.com/en/committee/). }}
+{{ what-are-aa-1 Acceptable Ads are ads that aren’t intrusive or annoying. They are respectful, don’t interfere with content, and are clearly labeled with the word “advertisement” or its equivalent. In order for an ad to be an “Acceptable Ad”, it must adhere to [standards](#criteria) that have been set forth by the [Acceptable Ads Committee](https://www.acceptableadscommittee.org/). }}
 
-{{ what-are-aa-2 Ads that abide by Acceptable Ads standards are placed on a allowlist. The ads on the allowlist are then shown to ad-blocking users who allow Acceptable Ads. }}
+{{ what-are-aa-2 Ads that abide by the Acceptable Ads Standard are placed on an allowlist. The ads on the allowlist are then shown to ad-blocking users who allow Acceptable Ads. }}
 
-{{ what-are-aa-3 Most websites use advertising to make money, meaning that you can see these websites for free. However, many websites use too many annoying or intrusive ads to get your attention. Adblock Plus lets you choose to block ads, but we don’t believe websites should be punished. }}
-
-### {{ what-are-aa-wo[heading] What are Acceptable Ads without third-party tracking? }} {: #privacy-friendly-acceptable-ads }
-
-{{ what-are-aa-wo-1 Acceptable Ads without third-party tracking are ads that comply with the Acceptable Ads criteria and that do not allow third-party entities to track any of your browsing behavior. These are ads that comply with [Do Not Track](https://www.eff.org/dnt-policy){: title="Link to the Do Not Track Policy by EFF" }, and / or ads which are served by the domain which is wholly owned by the same company. }}
+{{ what-are-aa-3 Most websites rely on advertising to stay free. Adblock Plus blocks the intrusive ones by default — and gives you the choice to support sites you trust by trading a little bit of your attention for a small number of non-intrusive, clearly labeled ads. }}
 
 ### {{ what-is-aac[heading] What is the Acceptable Ads Committee? }} {: #committee }
 
-{{ what-is-aac-1 As <a href="https://adblockplus.org/blog/campdavid-nyc" title="{{ what-is-aac-1-1[tooltip] Link to blog post announcing the Acceptable Ads Committee }}">previously announced</a>, in 2017 eyeo / Adblock Plus transferred governance of the Acceptable Ads initiative to an independent group, the <a href="https://acceptableads.org/" title="{{ what-is-aac-1-2[tooltip] Link to the Acceptable Ads Committee website }}">Acceptable Ads Committee</a>. The Acceptable Ads Committee consists of interested parties from for-profit companies, industry experts and Internet users like you. }}
+{{ what-is-aac-1 The <a href="https://www.acceptableadscommittee.org/" title="{{ what-is-aac-1-2[tooltip] Link to the Acceptable Ads Committee website }}">Acceptable Ads Committee</a> consists of a diverse mix of online experts – from companies, non-profit organizations, etc. – interested in making better ad standards. }}
 
 ## {{ aa-criteria[heading] Acceptable Ads criteria }} {: #criteria }
 
@@ -120,11 +113,11 @@ template=fixed-toc
 
 ## {{ why-is-aa-enabled[heading] Why is the Acceptable Ads feature enabled by default? }} {: #enabled-by-default }
 
-{{ why-is-aa-enabled-1 We believe that Acceptable Ads are the sustainable middle ground between a user’s choice to use an ad blocker and the continued need to support free online content with advertisements. If the majority of Adblock Plus users have the Acceptable Ads feature enabled, advertisers will have a bigger incentive to produce better, less intrusive ad formats. }}
+{{ why-is-aa-enabled-1 Acceptable Ads is on by default because we believe the best outcome for users is a web with fewer, better ads — not a binary choice between all ads or none. By allowing only ads that meet strict, independently verified criteria, Adblock Plus helps push the entire ad industry toward higher standards. You can turn it off at any time in two clicks. }}
 
-## {{ hate-ads[heading] But I hate all ads! }} {: #optout }
+## {{ hate-ads[heading] Want to block everything? No problem. }} {: #optout }
 
-{{ hate-ads-1 No problem, you can disable this feature at any time: }}
+{{ hate-ads-1 You can disable this feature at any time: }}
 
 #### {{ disable-latest[heading] Adblock Plus for Chrome, Firefox (versions 3 and above), Maxthon, Opera, Yandex Browser }}
 
@@ -166,40 +159,7 @@ template=fixed-toc
 #### {{ disable-samsung[heading] Adblock Plus for Samsung Internet }}
 
 1. {{ disable-samsung-step-1[list item] Open Adblock Plus for Samsung Internet. }}
-1. {{ disable-samsung-step-2[list item] Uncheck **Allow some nonintrusive advertising**. }}
-
-## {{ do-users-want-aa[heading] Do Adblock Plus users really want Acceptable Ads? }} {: #love }
-
-{{ do-users-want-aa-1 Yes! Eighty three percent ([83%](https://blog.hubspot.com/news-trends/why-people-block-ads-and-what-it-means-for-marketers-and-advertisers)) of Adblock Plus users don’t mind seeing Acceptable Ads because their browsing experience isn’t ruined by loud, annoying and irrelevant ads. }}
-
-## {{ are-all-aa-blocked[heading] Are all annoying ads blocked? }} {: #annoying }
-
-{{ are-all-aa-blocked-1 No. It isn't technically possible to automatically recognize ads that don’t meet the Acceptable Ads criteria. We have [agreements](https://adblockplus.org/acceptable-ads-agreements) with some websites and advertisers which stipulate that only advertisements matching the Acceptable Ads criteria will be displayed when Adblock Plus users visit these particular sites. }}
-
-## {{ view-aa-list[heading] Can I view the Acceptable Ads allowlist? }} {: #view-allowlist }
-
-{{ view-aa-list-1 Absolutely. You can view the list by <a href="https://easylist-downloads.adblockplus.org/exceptionrules.txt" title="{{ view-aa-list-1-1[tooltip] Link to filter list with allowlisted websites }}">clicking here</a>. }}
-
-## {{ report-aa[heading] How do I report an ad that doesn’t meet the criteria? }} {: #report }
-
-{{ report-aa-1 Send a message to <a href="#" data-mask='{"href": "bWFpbHRvOnN1cHBvcnRAYWRibG9ja3BsdXMub3Jn", "textContent": "c3VwcG9ydEBhZGJsb2NrcGx1cy5vcmc="}'>email address</a> with the following information: }}
-
-- {{ report-aa-step-1[list item] URL of the page where the ad appears }}
-- {{ report-aa-step-2[list item] Screenshot of the entire page, including the ad OR a detailed description of where the ad is located on the page }}
-- {{ report-aa-step-3[list item] If known, indicate whether a login or VPN is necessary to reproduce issue }}
-
-## {{ get-allowlisted[heading] How can I get ads on my website allowlisted? }} {: #get-allowlisted }
-
-{{ get-allowlisted-1 The process of getting your ads allowlisted takes about 10 working days once the ads adhere to the Acceptable Ads standards: }}
-
-1. {{ get-allowlisted-step-1[list item] If your website has ads that comply with the [Acceptable Ads standards](#criteria), simply fill out <a href="https://acceptableads.com/join/" title="{{ get-allowlisted-step-1-1[tooltip] Get Acceptable Ads Allowlisted }}">this form</a>. }}
-2. {{ get-allowlisted-step-2[list item] Someone from [eyeo](https://www.eyeo.com/), the company behind Adblock Plus, will contact you to determine the exact ads, and check whether they comply with our criteria. }}
-3. {{ get-allowlisted-step-3[list item] After you have made any necessary changes, both sides sign an <a href="https://adblockplus.org/acceptable-ads-agreements" title="{{ get-allowlisted-step-3-1[tooltip] Link to Acceptable Ads agreements page }}">agreement</a>. }}
-4. {{ get-allowlisted-step-4[list item] We submit the allowlisting proposal [in the forum](https://adblockplus.org/forum/viewforum.php?f=12){: title="Link to Adblock Plus Forum" } and the ads are allowlisted at the same time. The topic will stay open in order for the community to declare concerns if or when the candidate does not meet the requirements. }}
-
-## {{revenue[Section header] Is there payment involved?}} {: #revenue }
-
-{{ revenue-1 Click [here](about#monetization) for a detailed overview of our financials. }}
+2. {{ disable-samsung-step-2[list item] Uncheck **Allow some nonintrusive advertising**. }}
 
 [^1]: {{ footnote-1[footnote] The 'Primary Content' is defined as (based on [Mozilla's description](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) of the `<main>` HTML element): The Primary Content consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application. This content should be unique to the document, excluding any content that is repeated across a set of documents such as sidebars, navigation links, copyright information, site logos, and search forms (unless, of course, the document's main function is a search form). }}
 
