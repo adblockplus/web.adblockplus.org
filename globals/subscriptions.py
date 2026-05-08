@@ -48,6 +48,7 @@ subscriptions = {
         "Fanboy's Notifications Blocking List",
         'CPBL Filters for Adblock Plus (Mini)',
         'NoCoin',
+        "Stevo's GenAI Blocklist",
         'EasyPrivacy',
         "Fanboy's Social Blocking List",
         ],
@@ -857,6 +858,25 @@ subscriptions = {
         'type': 'other',
         'variants': [['NoCoin',
                      'https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt'
+                     , False]],
+        },
+    "Stevo's GenAI Blocklist": {
+        'blog': None,
+        'changelog': 'https://github.com/Stevoisiak/Stevos-GenAI-Blocklist/commits/main/GenAI-Blocklist.txt',
+        'contact': 'https://bsky.app/profile/stevoisiak.bsky.social',
+        'deprecated': False,
+        'faq': None,
+        'forum': None,
+        'homepage': 'https://github.com/Stevoisiak/Stevos-GenAI-Blocklist',
+        'maintainer': 'Stevoisiak',
+        'policy': None,
+        'specialization': 'hides specific website features that use or promote Generative AI',
+        'supplemented': [],
+        'supplements': [],
+        'supplementsType': [],
+        'type': 'other',
+        'variants': [["Stevo's GenAI Blocklist",
+                     'https://raw.githubusercontent.com/Stevoisiak/Stevos-GenAI-Blocklist/refs/heads/main/GenAI-Blocklist.txt'
                      , False]],
         },
     "Peter Lowe's list": {
