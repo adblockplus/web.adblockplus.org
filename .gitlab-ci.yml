@@ -184,7 +184,7 @@ deploy_cloud_run:production:
   script:
     - cd services/cloudrun
     - gcloud builds submit --tag europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated
+    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated --service-account $CLOUD_RUN_SERVICE_ACCOUNT
   environment:
     name: production/$CI_COMMIT_REF_SLUG
   only:
