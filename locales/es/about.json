@@ -142,13 +142,13 @@
     "message": "Acerca de Anuncios Aceptables"
   },
   "what-is-abp-1": {
-    "message": "Adblock Plus es una extensión gratuita que te permite personalizar tu experiencia web. Puedes bloquear los anuncios molestos, desactivar el seguimiento y mucho más. Está disponible para todos los navegadores de escritorio y para tu dispositivo móvil."
+    "message": "Adblock Plus es una extensión gratuita para navegadores que bloquea publicidad, solicitudes de seguimiento de terceros y dominios maliciosos utilizando listas de filtros actualizadas regularmente, incluidas EasyList y EasyPrivacy. Está disponible para Chrome, Firefox, Safari, Edge y Opera en escritorio, y para iOS y Android en dispositivos móviles. En la Chrome Web Store tiene una calificación de 4,4 estrellas otorgada por más de 187.000 reseñas y cuenta con la distinción de «Destacado» por parte de Google."
   },
   "what-is-abp-2": {
     "message": "Adblock Plus es un proyecto de código abierto con licencia de <a>GPLv3</a> y sujeto a sus <a>Términos de uso</a>. Algunas versiones de Adblock Plus, incluida la aplicación Adblock Plus para Safari iOS (versión 3.x o superior), son bases de código propietarias no licenciadas bajo GPLv3. Consulta los <a>Términos de uso</a> para obtener detalles sobre la licencia."
   },
   "how-does-abp-work-1": {
-    "message": "Elige qué deseas ver <strong>tú</strong> cuando navegas por la web usando las listas de filtros para bloquear elementos no deseados, como anuncios o seguimiento."
+    "message": "Adblock Plus funciona interceptando las solicitudes de red que tu navegador realiza al cargar una página y bloqueando aquellas que coinciden con las reglas de tus listas de filtros activas. Cuando visitas un sitio web, la extensión verifica cada solicitud según las reglas de la lista de filtros antes de que el navegador obtenga el recurso. Las solicitudes que coinciden con una regla de bloqueo se cancelan, evitando que el anuncio, rastreador u otro elemento se cargue. Ninguna solicitud bloqueada llega al servidor de terceros, lo que también significa que el tercero no puede registrar tu visita."
   },
   "what-are-filter-lists-1": {
     "message": "Las listas de filtros son conjuntos de reglas que le dicen a tu navegador qué elementos bloquear. Puedes bloquear tan poco o tanto como quieras. Elige entre listas de filtros ya preparadas, mantenidas externamente o <a>crea las tuyas (solo en inglés)</a>. Casi todas las listas de filtros ya preparadas son creadas, publicadas y mantenidas por los usuarios <span>para</span> los usuarios bajo licencias de código abierto."
@@ -206,5 +206,11 @@
   },
   "aac-website-label": {
     "message": "Página web del Comité de Anuncios Aceptables"
+  },
+  "what-are-filter-lists-3": {
+    "message": "<strong>EasyPrivacy, otra lista de filtros ampliamente utilizada y disponible en Adblock Plus, se dirige específicamente a dominios de seguimiento de terceros, scripts de huellas digitales y solicitudes de análisis.</strong>"
+  },
+  "what-are-filter-lists-4": {
+    "message": "<strong>Muchos anuncios incluyen scripts de seguimiento de terceros que rastrean tu actividad en sitios web no relacionados. Adblock Plus bloquea estas solicitudes utilizando listas de filtros como EasyPrivacy, que se dirige a scripts de huellas digitales conocidos, rastreadores analíticos y dominios de recopilación de datos de terceros. Bloquear estas solicitudes evita que los anunciantes y los corredores de datos creen un perfil de tu comportamiento de navegación.</strong>"
   }
 }

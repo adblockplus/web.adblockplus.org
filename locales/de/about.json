@@ -146,13 +146,13 @@
     "message": "Informationen über Acceptable Ads"
   },
   "what-is-abp-1": {
-    "message": "Adblock Plus ist eine kostenlose Browser-Erweiterung, die dir das Anpassen deiner Web-Erfahrung ermöglicht. Du kannst lästige Werbung blockieren, Tracking deaktivieren und vieles mehr. Es ist für alle großen Desktopbrowser und für deine mobilen Geräte erhältlich."
+    "message": "Adblock Plus ist eine kostenlose Browser-Erweiterung, die Werbung, Tracking-Anfragen von Drittanbietern und bösartige Domains mithilfe regelmäßig aktualisierter Filterlisten blockiert, einschließlich EasyList und EasyPrivacy. Sie ist für Chrome, Firefox, Safari, Edge und Opera auf dem Desktop sowie für iOS und Android auf Mobilgeräten verfügbar. Im Chrome Web Store hat sie eine Bewertung von 4,4 Sternen von über 187.000 Rezensenten und trägt die Auszeichnung „Empfohlen“ von Google."
   },
   "what-is-abp-2": {
     "message": "Adblock Plus ist ein Open Source-Projekt, das unter <a>GPLv3</a> lizenziert ist und <a>Nutzungsbedingungen</a> unterliegt. Einige Versionen von Adblock Plus, einschließlich der Adblock Plus für Safari iOS App (Version 3.x oder höher), sind proprietäre Codebasen, die nicht unter GPLv3 lizenziert sind. Lizenzdetails finden Sie in den <a>Nutzungsbedingungen</a>."
   },
   "how-does-abp-work-1": {
-    "message": "Du wählst, was <strong>du</strong> beim Surfen sehen willst, indem du Filterlisten zum Blockieren unerwünschter Elemente wie Anzeigen und Tracking nutzt."
+    "message": "Adblock Plus funktioniert, indem es Netzwerkanfragen abfängt, die dein Browser beim Laden einer Seite stellt, und diejenigen blockiert, die mit den Regeln deiner aktiven Filterlisten übereinstimmen. Wenn du eine Website besuchst, prüft die Erweiterung jede Anfrage anhand der Filterlistenregeln, bevor der Browser die Ressource abruft. Anfragen, die einer Blockierungsregel entsprechen, werden abgebrochen, sodass die Anzeige, der Tracker oder ein anderes Element gar nicht erst geladen wird. Keine blockierte Anfrage erreicht den Drittanbieter-Server, was auch bedeutet, dass der Drittanbieter deinen Besuch nicht aufzeichnen kann."
   },
   "what-are-filter-lists-1": {
     "message": "Filterlisten stellen ein Regelwerk dar, das deinem Browser mitteilt, welche Elemente blockiert werden sollen. So kannst du so viel oder wenig blockieren, wie du willst. Wähle aus vordefinierten, extern gepflegten Filterlisten aus oder <a>erstelle deine eigene Liste (nur Englisch)</a>. Fast alle vordefinierten Filterlisten werden von Benutzern <span>für</span> Benutzer unter Open Source-Lizenzen erstellt, veröffentlicht und gepflegt."
@@ -210,5 +210,11 @@
   },
   "aac-website-label": {
     "message": "Acceptable Ads Committee-Website"
+  },
+  "what-are-filter-lists-3": {
+    "message": "<strong>EasyPrivacy, eine weitere weit verbreitete Filterliste, die in Adblock Plus verfügbar ist, zielt speziell auf Tracking-Domains von Drittanbietern, Fingerprinting-Skripte und Analytics-Anfragen ab.</strong>"
+  },
+  "what-are-filter-lists-4": {
+    "message": "<strong>Viele Anzeigen enthalten Tracking-Skripte von Drittanbietern, die deine Aktivitäten über nicht verwandte Websites hinweg verfolgen. Adblock Plus blockiert diese Anfragen mithilfe von Filterlisten wie EasyPrivacy, die bekannte Fingerprinting-Skripte, Analytics-Tracker und Domains zur Datenerfassung von Drittanbietern erfasst. Das Blockieren dieser Anfragen verhindert, dass Werbetreibende und Datenhändler ein Profil deines Surfverhaltens erstellen.</strong>"
   }
 }

@@ -4,7 +4,7 @@ template=fixed-toc
 <h2 id="project">{{ what-is-abp[heading] What is Adblock Plus }}</h2>
 
 <p>
-    {{ what-is-abp-1 Adblock Plus is a free extension that allows you to customize your web experience. You can block annoying ads, disable tracking and lots more. It’s available for all major desktop browsers and for your mobile devices. }}
+    {{ what-is-abp-1 Adblock Plus is a free browser extension that blocks advertising, third-party tracking requests, and malicious domains using regularly updated filter lists including EasyList and EasyPrivacy. It is available for Chrome, Firefox, Safari, Edge, and Opera on desktop, and for iOS and Android on mobile. On the Chrome Web Store it carries a 4.4 star rating from over 187,000 reviewers and holds a Featured designation from Google. }}
 </p>
 
 <p>
@@ -14,18 +14,26 @@ template=fixed-toc
 <h2 id="workings">{{ how-does-abp-work[heading] How does Adblock Plus work? }}</h2>
 
 <p>
-   {{ how-does-abp-work-1 Choose what <strong>you</strong> want to see when browsing the web by using filter lists to block unwanted elements, like ads or tracking. }}
+   {{ how-does-abp-work-1 Adblock Plus works by intercepting network requests your browser makes while loading a page and blocking those that match rules in your active filter lists. When you visit a website, the extension checks each request against the filter list rules before the browser fetches the resource. Requests that match a blocking rule are cancelled, preventing the ad, tracker, or other element from loading at all. No blocked request reaches the third-party server, which also means the third party cannot record your visit. }}
 </p>
 
 <h3 id="filter-lists">{{ what-are-filter-lists-heading[subheading] What are filter lists? }}</h3>
 
 <p>
-    {{ what-are-filter-lists-1 Filter lists are sets of rules that tell your browser which elements to block. You can block as little or as much as you want. Choose from pre-made, externally maintained filter lists, or <a href="https://help.adblockplus.org/hc/articles/360062733293?3910d1c0" title="{{ how-to-write-filters-label[link tooltip text] How to write filters }}">create your own (English only)</a>. Almost all pre-made filter lists are created, published and maintained by users <span
+    {{ what-are-filter-lists-1 Filter lists are sets of rules that tell your browser which elements to block. You can block as little or as much as you want. Choose from pre-made, externally maintained filter lists, or <a href="https://help.adblockplus.org/hc/articles/360062733293?3910d1c0" title="{{ how-to-write-filters-label[link tooltip text] How to write filters }}">create your own (English only)</a>. Almost all pre-made filter lists are created, published, and maintained by users <span
         class="italic">for</span> users under open source licenses. }}
 </p>
 
 <p>
     {{ what-are-filter-lists-2 <strong>Many ads have tracking built in and some may even contain malware. Because of this, Adblock Plus provides certain levels of tracking and malware protection by default. If you want, you can add additional tracking and malware filter lists to increase your protection.</strong> }}
+</p>
+
+<p>
+    {{ what-are-filter-lists-3 <strong>EasyPrivacy, another widely used filter list available in Adblock Plus, specifically targets third-party tracking domains, fingerprinting scripts, and analytics requests.</strong>}}
+</p>
+
+<p>
+  {{ what-are-filter-lists-4 <strong>Many ads include third-party tracking scripts that follow your activity across unrelated websites. Adblock Plus blocks these requests using filter lists like EasyPrivacy, which targets known fingerprinting scripts, analytics trackers, and third-party data collection domains. Blocking these requests prevents advertisers and data brokers from building a profile of your browsing behaviour.</strong> }}
 </p>
 
 <h2 id="default-filter-lists">{{ default-filter-lists[heading] Default filter lists }}</h2>
@@ -55,7 +63,7 @@ template=fixed-toc
 </p>
 
 <p>
-    {{ acceptable-ads-3 These filter lists are enabled to get you started. You can keep them, modify them, remove them and / or add other filter lists – it’s up to you. }}
+    {{ acceptable-ads-3 These filter lists are enabled to get you started. You can keep them, modify them, remove them, and / or add other filter lists – it’s up to you. }}
 </p>
 
 <img src="images/how-adblock-plus-works.png">

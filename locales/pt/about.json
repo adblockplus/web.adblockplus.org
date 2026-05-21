@@ -1,6 +1,6 @@
 {
   "what-is-abp-1": {
-    "message": "O Adblock Plus é uma extensão gratuita que permite que você personalize a sua experiência na web. Você pode bloquear anúncios indesejáveis, desativar o monitoramento e muito mais. Ele está disponível para os principais navegadores desktop e dispositivos móveis."
+    "message": "O Adblock Plus é uma extensão gratuita para navegador que bloqueia publicidade, pedidos de rastreamento de terceiros e domínios maliciosos utilizando listas de filtros atualizadas regularmente, incluindo EasyList e EasyPrivacy. Está disponível para Chrome, Firefox, Safari, Edge e Opera no computador, e para iOS e Android no telemóvel. Na Chrome Web Store tem uma classificação de 4,4 estrelas atribuída por mais de 187.000 avaliadores e ostenta a designação «Em destaque» da Google."
   },
   "what-is-abp-2": {
     "message": "O Adblock Plus é um projeto de código aberto licenciado pela <a>GPLv3</a> e sujeito aos seus <a>Termos de Uso</a>. Algumas versões do Adblock Plus, incluindo o aplicativo Adblock Plus para Safari iOS (versão 3.x ou superior), são bases de código proprietárias não licenciadas sob a GPLv3. Consulte os <a>Termos de Uso</a> para detalhes sobre a licença."
@@ -36,7 +36,7 @@
     "message": "Como O Adblock Plus Funciona?"
   },
   "how-does-abp-work-1": {
-    "message": "Escolha o que  <strong>você</strong> quer ver ao navegar na web usando listas de filtro para bloquear elementos indesejados, como anúncios ou monitoramento."
+    "message": "O Adblock Plus funciona ao intercetar os pedidos de rede que o teu navegador faz ao carregar uma página e ao bloquear os que correspondem a regras nas tuas listas de filtros ativas. Quando visitas um site, a extensão verifica cada pedido em relação às regras da lista de filtros antes de o navegador obter o recurso. Os pedidos que correspondem a uma regra de bloqueio são cancelados, impedindo que o anúncio, rastreador ou outro elemento seja carregado de todo. Nenhum pedido bloqueado chega ao servidor de terceiros, o que também significa que o terceiro não pode registar a tua visita."
   },
   "blocklisted-ads": {
     "message": "Anúncios na Lista negra"
@@ -94,5 +94,11 @@
   },
   "acceptable-ads": {
     "message": "Anúncios aceitáveis"
+  },
+  "what-are-filter-lists-3": {
+    "message": "<strong>O EasyPrivacy, outra lista de filtros amplamente utilizada e disponível no Adblock Plus, visa especificamente domínios de rastreamento de terceiros, scripts de impressão digital e pedidos de análise.</strong>"
+  },
+  "what-are-filter-lists-4": {
+    "message": "<strong>Muitos anúncios incluem scripts de rastreamento de terceiros que seguem a tua atividade em sites não relacionados. O Adblock Plus bloqueia estes pedidos utilizando listas de filtros como o EasyPrivacy, que visa scripts de impressão digital conhecidos, rastreadores de análises e domínios de recolha de dados de terceiros. O bloqueio destes pedidos impede que anunciantes e corretores de dados criem um perfil do teu comportamento de navegação.</strong>"
   }
 }
