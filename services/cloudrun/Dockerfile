@@ -2,6 +2,15 @@
 # https://hub.docker.com/_/node
 FROM node:22-slim
 
+# Apply OS security updates. The upstream node:22-slim tag refreshes on a lag
+# behind Debian point releases, so without this step a fresh build can still
+# ship CVE-vulnerable apt packages (e.g. Wiz finding CVE-2026-3833 on
+# libgnutls30 < 3.7.9-2+deb12u7).
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # Create and change to the app directory.
 WORKDIR /usr/src/app
 
