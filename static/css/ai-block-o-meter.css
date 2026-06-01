@@ -1,0 +1,741 @@
+/* AI Block-o-Meter dashboard styles */
+
+/* ── Page shell ──────────────────────────────────────────────────── */
+
+.abom {
+  background: #f0efe9;
+  min-height: 100vh;
+}
+
+.abom-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3em 1.5em 5em;
+}
+
+/* ── Hero ────────────────────────────────────────────────────────── */
+
+.abom-hero {
+  margin-bottom: 2.5em;
+}
+
+.abom-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 1.25em;
+}
+
+.abom-live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: inline-block;
+  animation: abom-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.abom-live-dot--sm {
+  width: 7px;
+  height: 7px;
+}
+
+@keyframes abom-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.abom-status-bar .abom-sep {
+  color: #bbb;
+}
+
+.abom-hero h1 {
+  font-size: 2.6em;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #111;
+  max-width: 800px;
+  margin: 0 0 0.6em;
+}
+
+.abom-intro {
+  font-size: 1em;
+  color: #555;
+  max-width: 500px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Counter cards ───────────────────────────────────────────────── */
+
+.abom-counters {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 680px) {
+  .abom-counters {
+    grid-template-columns: 1fr;
+  }
+}
+
+.abom-card {
+  border-radius: 16px;
+  padding: 1.75em 1.75em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.abom-card--dark {
+  background: #111;
+  color: #fff;
+}
+
+.abom-card--light {
+  background: #fff;
+  border: 1px solid #e2dfd8;
+  color: #111;
+}
+
+.abom-card-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75em;
+}
+
+.abom-card-label {
+  font-size: 0.67em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+/* Live/coming-soon badges */
+
+.abom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.abom-badge--live {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+
+.abom-card--dark .abom-badge--live {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.abom-badge--soon {
+  background: transparent;
+  border: 1px solid #d1cdc5;
+  color: #888;
+}
+
+/* Digit display */
+
+.abom-digits {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 3px;
+  line-height: 1;
+  min-height: 80px;
+}
+
+.abom-digits--sm {
+  min-height: 68px;
+}
+
+.abom-digit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #232323;
+  color: #fff;
+  font-size: 2.8em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  width: 1.05em;
+  padding: 0.08em 0;
+  border-radius: 6px;
+}
+
+.abom-card--light .abom-digit {
+  background: #1f1f1f;
+}
+
+.abom-digits--sm .abom-digit {
+  font-size: 2.4em;
+}
+
+.abom-digit-sep {
+  font-size: 2em;
+  font-weight: 700;
+  color: #888;
+  padding: 0 0.05em;
+  align-self: flex-end;
+  padding-bottom: 0.15em;
+}
+
+.abom-card--dark .abom-digit-sep {
+  color: #555;
+}
+
+/* Card footer */
+
+.abom-card-ft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.abom-card-ft p {
+  font-size: 0.78em;
+  line-height: 1.45;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.abom-since-open {
+  opacity: 1 !important;
+  color: #22c55e;
+  font-size: 0.78em !important;
+  font-weight: 500;
+}
+
+.abom-card--light .abom-since-open {
+  color: #16a34a;
+}
+
+.abom-wow {
+  opacity: 1 !important;
+  color: #16a34a;
+  font-size: 0.78em !important;
+  font-weight: 600;
+}
+
+/* Data note below counters */
+
+.abom-error-label {
+  font-size: 0.85em;
+  opacity: 0.5;
+}
+
+.abom-data-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.78em;
+  color: #888;
+  margin: 0 0 3.5em;
+  line-height: 1.5;
+}
+
+.abom-data-note svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ── Sections ────────────────────────────────────────────────────── */
+
+.abom-section {
+  margin-bottom: 3.5em;
+}
+
+.abom-section-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2em;
+  margin-bottom: 1.5em;
+}
+
+.abom-section-row h2 {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.abom-section-row p {
+  font-size: 0.82em;
+  color: #777;
+  text-align: right;
+  max-width: 460px;
+  line-height: 1.5;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.abom-section > h2 {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.5em;
+}
+
+.abom-section-intro {
+  font-size: 0.9em;
+  color: #555;
+  max-width: 500px;
+  line-height: 1.6;
+  margin: 0 0 1.5em;
+}
+
+@media (max-width: 600px) {
+  .abom-section-row {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .abom-section-row p {
+    text-align: left;
+  }
+}
+
+/* ── Platform cards ──────────────────────────────────────────────── */
+
+.abom-platforms {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+@media (max-width: 900px) {
+  .abom-platforms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .abom-platforms {
+    grid-template-columns: 1fr;
+  }
+}
+
+.abom-pc {
+  background: #fff;
+  border: 1px solid #e2dfd8;
+  border-radius: 14px;
+  padding: 1.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  overflow: hidden;
+}
+
+.abom-pc-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.abom-pc-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #e2dfd8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.abom-pc-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.abom-pc-name {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.abom-pc-count {
+  font-size: 1.65em;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.abom-pc-meta {
+  font-size: 0.72em;
+  color: #888;
+}
+
+.abom-pc-soon-text {
+  font-size: 0.82em;
+  color: #aaa;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.abom-pc-domain {
+  font-size: 0.72em;
+  color: #aaa;
+}
+
+.abom-pc-chart {
+  margin-top: auto;
+  padding-top: 0.5em;
+  height: 40px;
+}
+
+.abom-pc-chart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Survey section ──────────────────────────────────────────────── */
+
+.abom-survey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  align-items: stretch;
+}
+
+@media (max-width: 750px) {
+  .abom-survey-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.abom-survey-stat,
+.abom-survey-quotes {
+  border-radius: 14px;
+  padding: 1.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.abom-survey-stat--warm {
+  background: #faf5e4;
+}
+
+.abom-survey-stat--cool {
+  background: #f2edf9;
+}
+
+.abom-survey-quotes {
+  background: #fff;
+  border: 1px solid #e2dfd8;
+}
+
+.abom-survey-num {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+
+.abom-survey-num sup {
+  font-size: 0.45em;
+  vertical-align: super;
+}
+
+.abom-survey-stat p {
+  font-size: 0.9em;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.abom-survey-source {
+  font-size: 0.75em !important;
+  color: #888 !important;
+  margin-top: auto !important;
+}
+
+.abom-quotes-label {
+  font-size: 0.65em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e53935;
+  margin: 0;
+}
+
+.abom-survey-quotes blockquote {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  padding-top: 0.75em;
+  border-top: 1px solid #eee;
+}
+
+.abom-survey-quotes blockquote p {
+  font-size: 0.85em;
+  color: #222;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.abom-survey-quotes blockquote cite {
+  font-size: 0.72em;
+  font-style: normal;
+  color: #999;
+}
+
+.abom-quotes-note {
+  font-size: 0.72em;
+  color: #aaa;
+  margin: 0;
+  padding-top: 0.5em;
+  border-top: 1px solid #eee;
+}
+
+/* ── Filter cards ────────────────────────────────────────────────── */
+
+.abom-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75em;
+}
+
+@media (max-width: 600px) {
+  .abom-filters {
+    grid-template-columns: 1fr;
+  }
+}
+
+.abom-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.875em;
+  background: #fff;
+  border: 1px solid #e2dfd8;
+  border-radius: 10px;
+  padding: 1em 1.25em;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.abom-filter:hover {
+  border-color: #bbb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+}
+
+.abom-filter-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: #f5f4f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.abom-filter-icon--code {
+  font-size: 0.7em;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.abom-filter div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.abom-filter strong {
+  font-size: 0.88em;
+  font-weight: 600;
+  color: #111;
+}
+
+.abom-filter span {
+  font-size: 0.72em;
+  color: #999;
+}
+
+.abom-filter-arrow {
+  font-size: 1em;
+  color: #bbb;
+  flex-shrink: 0;
+}
+
+/* ── Methodology accordion ───────────────────────────────────────── */
+
+.abom-methodology details {
+  background: #fff;
+  border: 1px solid #e2dfd8;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.abom-methodology summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em 1.75em;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.abom-methodology summary::-webkit-details-marker {
+  display: none;
+}
+
+.abom-methodology-hd {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.abom-methodology-hd strong {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: #111;
+}
+
+.abom-methodology-sub {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.abom-chevron {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.abom-chevron::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid #666;
+  border-bottom: 1.5px solid #666;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s;
+}
+
+details[open] .abom-chevron::before {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.abom-methodology-body {
+  padding: 0 1.75em 1.75em;
+  border-top: 1px solid #e8e5de;
+}
+
+.abom-methodology-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75em;
+  padding-top: 1.5em;
+}
+
+@media (max-width: 640px) {
+  .abom-methodology-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.abom-methodology-item h3 {
+  font-size: 0.88em;
+  font-weight: 700;
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 0.5em;
+}
+
+.abom-m-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e53935;
+  color: #fff;
+  font-size: 0.78em;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.abom-methodology-item p {
+  font-size: 0.82em;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.abom-methodology-item a {
+  color: #e53935;
+}
+
+.abom-disclosure {
+  display: flex;
+  gap: 0.75em;
+  background: #fffbe6;
+  border: 1px solid #f0e080;
+  border-radius: 8px;
+  padding: 1em 1.25em;
+  margin-top: 1.5em;
+}
+
+.abom-disclosure-icon {
+  font-size: 1em;
+  flex-shrink: 0;
+  color: #b45309;
+  margin-top: 0.1em;
+}
+
+.abom-disclosure p {
+  font-size: 0.8em;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.abom-disclosure strong {
+  color: #111;
+}

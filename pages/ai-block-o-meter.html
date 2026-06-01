@@ -1,0 +1,177 @@
+title=AI Block-o-Meter — Adblock Plus
+template=minimal
+notoc=true
+
+<head>
+  <link rel="stylesheet" href="/css/ai-block-o-meter.css">
+  <meta name="description" content="A real-time counter tracking how many ads Adblock Plus and AdBlock have blocked on ChatGPT and other AI platforms, updated weekly from anonymous filter telemetry.">
+</head>
+
+<div class="abom">
+  <div class="abom-container">
+
+    <header class="abom-hero">
+      <div class="abom-status-bar">
+        <span class="abom-live-dot" aria-hidden="true"></span>
+        <span>LIVE</span>
+        <span class="abom-sep">·</span>
+        <span>AI BLOCK-O-METER</span>
+        <span class="abom-sep">·</span>
+        <span id="abom-updated">Loading…</span>
+      </div>
+      <h1>How many ads has Adblock Plus blocked on AI platforms?</h1>
+      <p class="abom-intro">A running count of ads our community has stopped from reaching you on ChatGPT and other AI tools — measured directly from Adblock Plus and AdBlock filter telemetry.</p>
+    </header>
+
+    <div class="abom-counters" aria-label="Ad blocking totals">
+      <div class="abom-card abom-card--dark">
+        <div class="abom-card-hd">
+          <span class="abom-card-label">ADS BLOCKED ON AI PLATFORMS — ALL TIME</span>
+          <span class="abom-badge abom-badge--live">
+            <span class="abom-live-dot abom-live-dot--sm" aria-hidden="true"></span>LIVE
+          </span>
+        </div>
+        <div class="abom-digits" id="alltime-digits" aria-live="polite" aria-label="Total ads blocked all time">
+          <span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit-sep">,</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit-sep">,</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span>
+        </div>
+        <div class="abom-card-ft">
+          <p>Cumulative since filter coverage for ChatGPT shipped on March 14, 2025.</p>
+          <p class="abom-since-open" id="abom-since-open-row">↑ <strong id="since-open">0</strong> since you opened this page</p>
+        </div>
+      </div>
+      <div class="abom-card abom-card--light">
+        <div class="abom-card-hd">
+          <span class="abom-card-label">THIS WEEK</span>
+          <span class="abom-badge abom-badge--live">
+            <span class="abom-live-dot abom-live-dot--sm" aria-hidden="true"></span>LIVE
+          </span>
+        </div>
+        <div class="abom-digits abom-digits--sm" id="week-digits" aria-live="polite" aria-label="Ads blocked this week">
+          <span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit-sep">,</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span>
+        </div>
+        <div class="abom-card-ft">
+          <p>Rolling 7-day window. Resets every Monday at 00:00 UTC.</p>
+          <p class="abom-wow" id="wow"></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="abom-data-note">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="6.25" stroke="currentColor" stroke-width="1.25"/>
+        <rect x="6.375" y="3.5" width="1.25" height="1.25" rx=".5" fill="currentColor"/>
+        <rect x="6.375" y="5.75" width="1.25" height="4" rx=".5" fill="currentColor"/>
+      </svg>
+      Updated weekly. Data sourced from Adblock Plus and AdBlock filter telemetry — anonymous, aggregated, never linked to you.
+    </p>
+
+    <section class="abom-section" aria-labelledby="abom-platforms-hd">
+      <div class="abom-section-row">
+        <h2 id="abom-platforms-hd">By platform</h2>
+        <p>We track each platform separately. ChatGPT has filter coverage today; others are detected but not yet attributed.</p>
+      </div>
+      <div class="abom-platforms" id="abom-platforms"></div>
+    </section>
+
+    <section class="abom-section" aria-labelledby="abom-survey-hd">
+      <div class="abom-section-row">
+        <h2 id="abom-survey-hd">What people say about AI ads</h2>
+        <p>Survey of 2,140 Adblock Plus users, March 2026. Margin of error ±2.1%.</p>
+      </div>
+      <div class="abom-survey-grid">
+        <div class="abom-survey-stat abom-survey-stat--warm">
+          <div class="abom-survey-num">73<sup>%</sup></div>
+          <p>say ads inside AI tools feel more intrusive than ads on the open web.</p>
+          <p class="abom-survey-source">— Adblock Plus user survey · March 2026</p>
+        </div>
+        <div class="abom-survey-stat abom-survey-stat--cool">
+          <div class="abom-survey-num">61<sup>%</sup></div>
+          <p>would switch to a different AI assistant to get away from ads.</p>
+          <p class="abom-survey-source">— Adblock Plus user survey · March 2026</p>
+        </div>
+        <div class="abom-survey-quotes">
+          <p class="abom-quotes-label">IN THEIR OWN WORDS</p>
+          <blockquote>
+            <p>"I used to love ChatGPT. Now every other answer is a sponsored shoe recommendation."</p>
+            <cite>— Survey respondent · 34, Berlin</cite>
+          </blockquote>
+          <blockquote>
+            <p>"The ads aren't even labeled. I can't tell if it's recommending a product or trying to sell me one."</p>
+            <cite>— Survey respondent · 28, Toronto</cite>
+          </blockquote>
+          <blockquote>
+            <p>"I pay for the Plus tier specifically to avoid this and they still slip in promotions."</p>
+            <cite>— Survey respondent · 41, São Paulo</cite>
+          </blockquote>
+          <p class="abom-quotes-note">— 3 of 1,847 free-text responses · lightly edited</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="abom-section" aria-labelledby="abom-filters-hd">
+      <h2 id="abom-filters-hd">See the filters that power this</h2>
+      <p class="abom-section-intro">Every block above is the result of a public, hand-maintained filter rule. Audit them, fork them, or contribute your own — these lists are open source and community-maintained.</p>
+      <div class="abom-filters">
+        <a class="abom-filter" href="https://github.com/easylist/easylist" target="_blank" rel="noopener noreferrer">
+          <span class="abom-filter-icon" aria-hidden="true">&#8801;</span>
+          <div><strong>EasyList — AI platform rules</strong><span>github.com/easylist/easylist</span></div>
+          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+        <a class="abom-filter" href="https://github.com/AdguardTeam/AdguardFilters" target="_blank" rel="noopener noreferrer">
+          <span class="abom-filter-icon" aria-hidden="true">&#8801;</span>
+          <div><strong>AdGuard AI Filter</strong><span>github.com/AdguardTeam/AdguardFilters</span></div>
+          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+        <a class="abom-filter" href="https://gitlab.com/eyeo/anti-cv/abp-filters-anti-cv" target="_blank" rel="noopener noreferrer">
+          <span class="abom-filter-icon" aria-hidden="true">&#9900;</span>
+          <div><strong>ABP Anti-Circumvention</strong><span>gitlab.com/eyeo/anti-cv/abp-filters-anti-cv</span></div>
+          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+        <a class="abom-filter" href="https://github.com/adblockplus/adblockplusui" target="_blank" rel="noopener noreferrer">
+          <span class="abom-filter-icon abom-filter-icon--code" aria-hidden="true">&lt;/&gt;</span>
+          <div><strong>Adblock Plus filter subscriptions</strong><span>github.com/adblockplus/adblockplusui</span></div>
+          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="abom-section abom-methodology">
+      <details>
+        <summary>
+          <span class="abom-methodology-hd">
+            <strong>How we count</strong>
+            <span class="abom-methodology-sub">Methodology, refresh cadence &amp; honest disclosure</span>
+          </span>
+          <span class="abom-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="abom-methodology-body">
+          <div class="abom-methodology-grid">
+            <div class="abom-methodology-item">
+              <h3><span class="abom-m-num">1</span> What counts as an AI-platform block</h3>
+              <p>An ad is counted when an Adblock Plus or AdBlock filter rule fires on a request originating from a known AI platform domain (e.g. chatgpt.com, openai.com) and matches a creative slot, sponsored card, or third-party ad-tech endpoint.</p>
+            </div>
+            <div class="abom-methodology-item">
+              <h3><span class="abom-m-num">2</span> How we isolate ChatGPT traffic</h3>
+              <p>We attribute requests by the page-context origin reported by the browser's filtering API. Requests fired from a ChatGPT tab are tagged separately from general web browsing — the tag never includes URL paths, prompts, or any user content.</p>
+            </div>
+            <div class="abom-methodology-item">
+              <h3><span class="abom-m-num">3</span> Refresh cadence</h3>
+              <p>Counters above update with anonymised aggregate telemetry on a rolling weekly window. The "this week" tile resets every Monday 00:00 UTC. Backfills for a previous week are sometimes published the following Friday.</p>
+            </div>
+            <div class="abom-methodology-item">
+              <h3><span class="abom-m-num">4</span> What we deliberately don't collect</h3>
+              <p>We never log URLs, page contents, prompts, AI responses, or anything that could identify you. The counter is a sum of <em>events</em>, not a record of <em>sessions</em>. See our <a href="privacy">privacy policy</a>.</p>
+            </div>
+          </div>
+          <div class="abom-disclosure">
+            <span class="abom-disclosure-icon" aria-hidden="true">&#9888;</span>
+            <p><strong>Honest disclosure.</strong> Ads <em>embedded inside AI-generated responses</em> — sponsored phrasing or product placements served as part of the model output rather than a separate ad slot — are not yet measurable by filter-level telemetry. The counters above reflect ad <em>requests</em> blocked, not in-response promotions. We're researching ways to detect the latter; until then, treat this as a floor, not a ceiling.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+  </div>
+</div>
+
+<script src="/js/ai-block-o-meter.js"></script>

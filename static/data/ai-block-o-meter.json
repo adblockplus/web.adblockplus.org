@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-06-01T16:50:30Z",
+  "yesterday": "2026-05-29",
+  "lastFullWeek": {
+    "from": "2026-05-18",
+    "to": "2026-05-24"
+  },
+  "previousFullWeek": {
+    "from": "2026-05-11",
+    "to": "2026-05-17"
+  },
+  "dailyRange": {
+    "from": "2026-04-28",
+    "to": "2026-05-27"
+  },
+  "providers": {
+    "chatgpt": {
+      "name": "ChatGPT",
+      "tracking": true,
+      "adsBlockedYesterday": 45123,
+      "adsBlockedExcludingYesterday": 4192021,
+      "adsBlockedLastFullWeek": 312908,
+      "adsBlockedPreviousFullWeek": 303469,
+      "dailyAdsBlocked": [
+        37842, 38156, 36921, 39287, 38634,
+        41205, 40918, 39562, 40241, 41087,
+        40923, 41456, 43201, 42789, 42134,
+        43287, 43891, 42678, 44123, 44567,
+        43891, 44923, 45234, 44678, 45891,
+        43567, 44724, 45123, 46234, 45123
+      ]
+    },
+    "perplexity": {
+      "name": "Perplexity",
+      "tracking": false,
+      "adsBlockedYesterday": 8,
+      "adsBlockedExcludingYesterday": 46,
+      "adsBlockedLastFullWeek": 41,
+      "adsBlockedPreviousFullWeek": 9,
+      "dailyAdsBlocked": [
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 2, 3, 4,
+        5, 6, 7, 6, 7,
+        7, 6, 8, 7, 8
+      ]
+    },
+    "copilot": {
+      "name": "Microsoft Copilot",
+      "tracking": false,
+      "adsBlockedYesterday": 5,
+      "adsBlockedExcludingYesterday": 40,
+      "adsBlockedLastFullWeek": 25,
+      "adsBlockedPreviousFullWeek": 6,
+      "dailyAdsBlocked": [
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 1, 2, 3,
+        3, 4, 4, 3, 4,
+        4, 3, 5, 4, 5
+      ]
+    },
+    "gemini": {
+      "name": "Google Gemini",
+      "tracking": false,
+      "adsBlockedYesterday": 4,
+      "adsBlockedExcludingYesterday": 34,
+      "adsBlockedLastFullWeek": 23,
+      "adsBlockedPreviousFullWeek": 4,
+      "dailyAdsBlocked": [
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 1, 1, 2,
+        3, 3, 4, 3, 4,
+        3, 3, 4, 3, 4
+      ]
+    }
+  }
+}
