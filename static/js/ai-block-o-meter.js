@@ -169,7 +169,16 @@
       visibilityListener = null;
     }
 
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+      renderDigits('alltime-digits', baseValue, 8);
+      var srStaticEl = document.getElementById('alltime-sr');
+      if (srStaticEl) srStaticEl.textContent = formatNumber(baseValue);
+      return;
+    }
+
     var sinceOpenEl = document.getElementById('since-open');
+    var alltimeSr = document.getElementById('alltime-sr');
     var startTime = Date.now();
     var pausedMs = 0;
     var pausedAt = null;
@@ -185,6 +194,7 @@
 
       if (alltimeVal !== lastAlltime) {
         renderDigits('alltime-digits', alltimeVal, 8);
+        if (alltimeSr) alltimeSr.textContent = formatNumber(alltimeVal);
         lastAlltime = alltimeVal;
       }
       if (sinceOpenEl && sinceOpenVal !== lastSinceOpen) {
@@ -257,6 +267,8 @@
     }
 
     renderDigits('week-digits', weekTotal, 6);
+    var weekSr = document.getElementById('week-sr');
+    if (weekSr) weekSr.textContent = formatNumber(weekTotal);
 
     var wow = calcWowPercent(weekTotal, prevWeekTotal);
     var wowEl = document.getElementById('wow');
@@ -284,8 +296,12 @@
     var updated = document.getElementById('abom-updated');
     var platforms = document.getElementById('abom-platforms');
     var sinceOpen = document.getElementById('abom-since-open-row');
-    if (alltime) alltime.innerHTML = '<span class="abom-error-label">Data unavailable</span>';
-    if (week) week.innerHTML = '<span class="abom-error-label">Data unavailable</span>';
+    if (alltime) alltime.innerHTML = '<span class="abom-error-label" aria-hidden="true">–</span>';
+    if (week) week.innerHTML = '<span class="abom-error-label" aria-hidden="true">–</span>';
+    var alltimeSrErr = document.getElementById('alltime-sr');
+    var weekSrErr = document.getElementById('week-sr');
+    if (alltimeSrErr) alltimeSrErr.textContent = 'Data unavailable';
+    if (weekSrErr) weekSrErr.textContent = 'Data unavailable';
     if (updated) updated.textContent = 'Data temporarily unavailable';
     if (platforms) platforms.innerHTML = '<p class="abom-error-label">Data temporarily unavailable</p>';
     if (sinceOpen) sinceOpen.hidden = true;

@@ -1,5 +1,19 @@
 /* AI Block-o-Meter dashboard styles */
 
+/* ── Visually hidden (screen reader only) ────────────────────────── */
+
+.abom-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ── Page shell ──────────────────────────────────────────────────── */
 
 .abom {
@@ -51,8 +65,14 @@
   50% { opacity: 0.4; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .abom-live-dot {
+    animation: none;
+  }
+}
+
 .abom-status-bar .abom-sep {
-  color: #bbb;
+  color: #666;
 }
 
 .abom-hero h1 {
@@ -102,7 +122,7 @@
 
 .abom-card--light {
   background: #fff;
-  border: 1px solid #e2dfd8;
+  border: 1px solid #888;
   color: #111;
 }
 
@@ -139,7 +159,7 @@
 
 .abom-badge--live {
   background: rgba(34, 197, 94, 0.15);
-  color: #16a34a;
+  color: #166534;
 }
 
 .abom-card--dark .abom-badge--live {
@@ -149,8 +169,8 @@
 
 .abom-badge--soon {
   background: transparent;
-  border: 1px solid #d1cdc5;
-  color: #888;
+  border: 1px solid #888;
+  color: #666;
 }
 
 /* Digit display */
@@ -162,6 +182,7 @@
   gap: 3px;
   line-height: 1;
   min-height: 80px;
+  overflow-x: auto;
 }
 
 .abom-digits--sm {
@@ -193,14 +214,14 @@
 .abom-digit-sep {
   font-size: 2em;
   font-weight: 700;
-  color: #888;
+  color: #666;
   padding: 0 0.05em;
   align-self: flex-end;
   padding-bottom: 0.15em;
 }
 
 .abom-card--dark .abom-digit-sep {
-  color: #555;
+  color: #aaa;
 }
 
 /* Card footer */
@@ -226,12 +247,12 @@
 }
 
 .abom-card--light .abom-since-open {
-  color: #16a34a;
+  color: #166534;
 }
 
 .abom-wow {
   opacity: 1 !important;
-  color: #16a34a;
+  color: #166534;
   font-size: 0.78em !important;
   font-weight: 600;
 }
@@ -248,7 +269,7 @@
   align-items: center;
   gap: 0.5em;
   font-size: 0.78em;
-  color: #888;
+  color: #555;
   margin: 0 0 3.5em;
   line-height: 1.5;
 }
@@ -282,7 +303,7 @@
 
 .abom-section-row p {
   font-size: 0.82em;
-  color: #777;
+  color: #555;
   text-align: right;
   max-width: 460px;
   line-height: 1.5;
@@ -337,7 +358,7 @@
 
 .abom-pc {
   background: #fff;
-  border: 1px solid #e2dfd8;
+  border: 1px solid #888;
   border-radius: 14px;
   padding: 1.25em;
   display: flex;
@@ -357,7 +378,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: 1.5px solid #e2dfd8;
+  border: 1.5px solid #888;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -387,19 +408,19 @@
 
 .abom-pc-meta {
   font-size: 0.72em;
-  color: #888;
+  color: #666;
 }
 
 .abom-pc-soon-text {
   font-size: 0.82em;
-  color: #aaa;
+  color: #666;
   line-height: 1.45;
   margin: 0;
 }
 
 .abom-pc-domain {
   font-size: 0.72em;
-  color: #aaa;
+  color: #666;
 }
 
 .abom-pc-chart {
@@ -448,7 +469,7 @@
 
 .abom-survey-quotes {
   background: #fff;
-  border: 1px solid #e2dfd8;
+  border: 1px solid #888;
 }
 
 .abom-survey-num {
@@ -473,7 +494,7 @@
 
 .abom-survey-source {
   font-size: 0.75em !important;
-  color: #888 !important;
+  color: #555 !important;
   margin-top: auto !important;
 }
 
@@ -482,7 +503,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #e53935;
+  color: #c62828;
   margin: 0;
 }
 
@@ -505,12 +526,12 @@
 .abom-survey-quotes blockquote cite {
   font-size: 0.72em;
   font-style: normal;
-  color: #999;
+  color: #666;
 }
 
 .abom-quotes-note {
   font-size: 0.72em;
-  color: #aaa;
+  color: #666;
   margin: 0;
   padding-top: 0.5em;
   border-top: 1px solid #eee;
@@ -522,6 +543,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 600px) {
@@ -535,7 +559,7 @@
   align-items: center;
   gap: 0.875em;
   background: #fff;
-  border: 1px solid #e2dfd8;
+  border: 1px solid #888;
   border-radius: 10px;
   padding: 1em 1.25em;
   text-decoration: none;
@@ -544,9 +568,15 @@
 }
 
 .abom-filter:hover {
-  border-color: #bbb;
+  border-color: #555;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   text-decoration: none;
+}
+
+.abom-filter:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+  border-color: #005fcc;
 }
 
 .abom-filter-icon {
@@ -583,7 +613,7 @@
 
 .abom-filter span {
   font-size: 0.72em;
-  color: #999;
+  color: #666;
 }
 
 .abom-filter-arrow {
@@ -596,7 +626,7 @@
 
 .abom-methodology details {
   background: #fff;
-  border: 1px solid #e2dfd8;
+  border: 1px solid #888;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -615,6 +645,11 @@
   display: none;
 }
 
+.abom-methodology summary:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: -3px;
+}
+
 .abom-methodology-hd {
   display: flex;
   align-items: baseline;
@@ -629,14 +664,14 @@
 
 .abom-methodology-sub {
   font-size: 0.8em;
-  color: #888;
+  color: #666;
 }
 
 .abom-chevron {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1.5px solid #ccc;
+  border: 1.5px solid #888;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -694,7 +729,7 @@ details[open] .abom-chevron::before {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #e53935;
+  background: #c62828;
   color: #fff;
   font-size: 0.78em;
   font-weight: 700;
@@ -709,14 +744,14 @@ details[open] .abom-chevron::before {
 }
 
 .abom-methodology-item a {
-  color: #e53935;
+  color: #c62828;
 }
 
 .abom-disclosure {
   display: flex;
   gap: 0.75em;
   background: #fffbe6;
-  border: 1px solid #f0e080;
+  border: 1px solid #b45309;
   border-radius: 8px;
   padding: 1em 1.25em;
   margin-top: 1.5em;

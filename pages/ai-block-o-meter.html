@@ -7,6 +7,7 @@ notoc=true
   <meta name="description" content="A real-time counter tracking how many ads Adblock Plus and AdBlock have blocked on ChatGPT and other AI platforms, updated weekly from anonymous filter telemetry.">
 </head>
 
+<main>
 <div class="abom">
   <div class="abom-container">
 
@@ -17,13 +18,13 @@ notoc=true
         <span class="abom-sep">·</span>
         <span>AI BLOCK-O-METER</span>
         <span class="abom-sep">·</span>
-        <span id="abom-updated">Loading…</span>
+        <span id="abom-updated" aria-live="polite">Loading…</span>
       </div>
       <h1>How many ads has Adblock Plus blocked on AI platforms?</h1>
       <p class="abom-intro">A running count of ads our community has stopped from reaching you on ChatGPT and other AI tools — measured directly from Adblock Plus and AdBlock filter telemetry.</p>
     </header>
 
-    <div class="abom-counters" aria-label="Ad blocking totals">
+    <div class="abom-counters" role="group" aria-label="Ad blocking totals">
       <div class="abom-card abom-card--dark">
         <div class="abom-card-hd">
           <span class="abom-card-label">ADS BLOCKED ON AI PLATFORMS — ALL TIME</span>
@@ -31,12 +32,13 @@ notoc=true
             <span class="abom-live-dot abom-live-dot--sm" aria-hidden="true"></span>LIVE
           </span>
         </div>
-        <div class="abom-digits" id="alltime-digits" aria-live="polite" aria-label="Total ads blocked all time">
+        <div class="abom-digits" id="alltime-digits" aria-hidden="true">
           <span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit-sep">,</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit-sep">,</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span>
         </div>
+        <span class="abom-sr-only" id="alltime-sr" aria-live="polite" aria-label="Total ads blocked all time"></span>
         <div class="abom-card-ft">
           <p>Cumulative since filter coverage for ChatGPT shipped on March 14, 2025.</p>
-          <p class="abom-since-open" id="abom-since-open-row">↑ <strong id="since-open">0</strong> since you opened this page</p>
+          <p class="abom-since-open" id="abom-since-open-row" aria-hidden="true">↑ <strong id="since-open">0</strong> since you opened this page</p>
         </div>
       </div>
       <div class="abom-card abom-card--light">
@@ -46,12 +48,13 @@ notoc=true
             <span class="abom-live-dot abom-live-dot--sm" aria-hidden="true"></span>LIVE
           </span>
         </div>
-        <div class="abom-digits abom-digits--sm" id="week-digits" aria-live="polite" aria-label="Ads blocked this week">
+        <div class="abom-digits abom-digits--sm" id="week-digits" aria-hidden="true">
           <span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit-sep">,</span><span class="abom-digit">0</span><span class="abom-digit">0</span><span class="abom-digit">0</span>
         </div>
+        <span class="abom-sr-only" id="week-sr" aria-live="polite" aria-label="Ads blocked this week"></span>
         <div class="abom-card-ft">
           <p>Rolling 7-day window. Resets every Monday at 00:00 UTC.</p>
-          <p class="abom-wow" id="wow"></p>
+          <p class="abom-wow" id="wow" aria-live="polite"></p>
         </div>
       </div>
     </div>
@@ -111,28 +114,36 @@ notoc=true
     <section class="abom-section" aria-labelledby="abom-filters-hd">
       <h2 id="abom-filters-hd">See the filters that power this</h2>
       <p class="abom-section-intro">Every block above is the result of a public, hand-maintained filter rule. Audit them, fork them, or contribute your own — these lists are open source and community-maintained.</p>
-      <div class="abom-filters">
-        <a class="abom-filter" href="https://github.com/easylist/easylist" target="_blank" rel="noopener noreferrer">
-          <span class="abom-filter-icon" aria-hidden="true">&#8801;</span>
-          <div><strong>EasyList — AI platform rules</strong><span>github.com/easylist/easylist</span></div>
-          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
-        </a>
-        <a class="abom-filter" href="https://github.com/AdguardTeam/AdguardFilters" target="_blank" rel="noopener noreferrer">
-          <span class="abom-filter-icon" aria-hidden="true">&#8801;</span>
-          <div><strong>AdGuard AI Filter</strong><span>github.com/AdguardTeam/AdguardFilters</span></div>
-          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
-        </a>
-        <a class="abom-filter" href="https://gitlab.com/eyeo/anti-cv/abp-filters-anti-cv" target="_blank" rel="noopener noreferrer">
-          <span class="abom-filter-icon" aria-hidden="true">&#9900;</span>
-          <div><strong>ABP Anti-Circumvention</strong><span>gitlab.com/eyeo/anti-cv/abp-filters-anti-cv</span></div>
-          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
-        </a>
-        <a class="abom-filter" href="https://github.com/adblockplus/adblockplusui" target="_blank" rel="noopener noreferrer">
-          <span class="abom-filter-icon abom-filter-icon--code" aria-hidden="true">&lt;/&gt;</span>
-          <div><strong>Adblock Plus filter subscriptions</strong><span>github.com/adblockplus/adblockplusui</span></div>
-          <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
-        </a>
-      </div>
+      <ul class="abom-filters">
+        <li>
+          <a class="abom-filter" href="https://github.com/easylist/easylist" target="_blank" rel="noopener noreferrer">
+            <span class="abom-filter-icon" aria-hidden="true">&#8801;</span>
+            <div><strong>EasyList — AI platform rules</strong><span>github.com/easylist/easylist</span></div>
+            <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+        <li>
+          <a class="abom-filter" href="https://github.com/AdguardTeam/AdguardFilters" target="_blank" rel="noopener noreferrer">
+            <span class="abom-filter-icon" aria-hidden="true">&#8801;</span>
+            <div><strong>AdGuard AI Filter</strong><span>github.com/AdguardTeam/AdguardFilters</span></div>
+            <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+        <li>
+          <a class="abom-filter" href="https://gitlab.com/eyeo/anti-cv/abp-filters-anti-cv" target="_blank" rel="noopener noreferrer">
+            <span class="abom-filter-icon" aria-hidden="true">&#9900;</span>
+            <div><strong>ABP Anti-Circumvention</strong><span>gitlab.com/eyeo/anti-cv/abp-filters-anti-cv</span></div>
+            <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+        <li>
+          <a class="abom-filter" href="https://github.com/adblockplus/adblockplusui" target="_blank" rel="noopener noreferrer">
+            <span class="abom-filter-icon abom-filter-icon--code" aria-hidden="true">&lt;/&gt;</span>
+            <div><strong>Adblock Plus filter subscriptions</strong><span>github.com/adblockplus/adblockplusui</span></div>
+            <span class="abom-filter-arrow" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+      </ul>
     </section>
 
     <section class="abom-section abom-methodology">
@@ -173,5 +184,6 @@ notoc=true
 
   </div>
 </div>
+</main>
 
 <script src="/js/ai-block-o-meter.js"></script>
