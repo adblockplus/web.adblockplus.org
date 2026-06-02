@@ -4,7 +4,6 @@
   var PLATFORM_ORDER = ['chatgpt', 'perplexity', 'copilot', 'gemini'];
 
   var rafId = null;
-  var visibilityListener = null;
 
   var PLATFORM_META = {
     chatgpt: {
@@ -164,10 +163,6 @@
       cancelAnimationFrame(rafId);
       rafId = null;
     }
-    if (visibilityListener) {
-      document.removeEventListener('visibilitychange', visibilityListener);
-      visibilityListener = null;
-    }
 
     var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reducedMotion) {
@@ -180,15 +175,13 @@
     var sinceOpenEl = document.getElementById('since-open');
     var alltimeSr = document.getElementById('alltime-sr');
     var startTime = Date.now();
-    var pausedMs = 0;
-    var pausedAt = null;
     var lastAlltime = -1;
     var lastSinceOpen = -1;
 
     var baseRounded = Math.round(baseValue);
 
     function tick() {
-      var elapsed = (Date.now() - startTime - pausedMs) / 1000;
+      var elapsed = (Date.now() - startTime) / 1000;
       var sinceOpenVal = Math.floor(elapsed * perSecond);
       var alltimeVal = baseRounded + sinceOpenVal;
 
@@ -205,21 +198,6 @@
     }
 
     rafId = requestAnimationFrame(tick);
-
-    visibilityListener = function () {
-      if (document.hidden) {
-        pausedAt = Date.now();
-        cancelAnimationFrame(rafId);
-      } else {
-        if (pausedAt !== null) {
-          pausedMs += Date.now() - pausedAt;
-          pausedAt = null;
-        }
-        cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(tick);
-      }
-    };
-    document.addEventListener('visibilitychange', visibilityListener);
   }
 
   function render(data) {
@@ -286,10 +264,6 @@
     if (rafId) {
       cancelAnimationFrame(rafId);
       rafId = null;
-    }
-    if (visibilityListener) {
-      document.removeEventListener('visibilitychange', visibilityListener);
-      visibilityListener = null;
     }
     var alltime = document.getElementById('alltime-digits');
     var week = document.getElementById('week-digits');
