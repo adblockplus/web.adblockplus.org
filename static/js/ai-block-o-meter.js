@@ -3,7 +3,6 @@
 
   var PLATFORM_ORDER = ['chatgpt', 'perplexity', 'copilot', 'gemini'];
 
-  var sinceOpenStarted = false;
   var rafId = null;
   var visibilityListener = null;
 
@@ -140,42 +139,63 @@
     el.textContent = label;
   }
 
-  function calcBlocksPerSecond(providers) {
-    var totalRecent = 0;
+  // 7-day rolling average rate — used as a fallback when data is > 24h old
+  function calcHistoricalRate(providers) {
+    var total = 0;
     var hasTracking = false;
     PLATFORM_ORDER.forEach(function (id) {
       var p = providers[id];
-      if (!p) return;
-      if (p.tracking && p.dailyAdsBlocked && p.dailyAdsBlocked.length > 0) {
+      if (!p || !p.tracking) return;
+      if (p.dailyAdsBlocked && p.dailyAdsBlocked.length > 0) {
         var recent = p.dailyAdsBlocked.slice(-7);
         var avg = recent.reduce(function (a, b) { return a + b; }, 0) / recent.length;
-        totalRecent += avg;
+        total += avg;
         hasTracking = true;
       }
     });
-    return hasTracking ? totalRecent / 86400 : 0;
+    return hasTracking ? total / 86400 : 0;
   }
 
-  function startSinceOpenCounter(perSecond) {
-    if (perSecond <= 0) return;
-    if (sinceOpenStarted) return;
-    var el = document.getElementById('since-open');
-    if (!el) return;
-    sinceOpenStarted = true;
-    var start = Date.now();
-    var pausedAt = null;
+  // Drives both the all-time counter and the since-open counter from a single RAF loop.
+  // baseValue: the starting all-time total at the moment the page loaded.
+  // perSecond: the rate at which ads are being blocked.
+  function startAnimatedCounters(baseValue, perSecond) {
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+    if (visibilityListener) {
+      document.removeEventListener('visibilitychange', visibilityListener);
+      visibilityListener = null;
+    }
+
+    var sinceOpenEl = document.getElementById('since-open');
+    var startTime = Date.now();
     var pausedMs = 0;
-    var last = -1;
+    var pausedAt = null;
+    var lastAlltime = -1;
+    var lastSinceOpen = -1;
+
+    var baseRounded = Math.round(baseValue);
+
     function tick() {
-      var elapsed = (Date.now() - start - pausedMs) / 1000;
-      var count = Math.floor(elapsed * perSecond);
-      if (count !== last) {
-        el.textContent = formatNumber(count);
-        last = count;
+      var elapsed = (Date.now() - startTime - pausedMs) / 1000;
+      var sinceOpenVal = Math.floor(elapsed * perSecond);
+      var alltimeVal = baseRounded + sinceOpenVal;
+
+      if (alltimeVal !== lastAlltime) {
+        renderDigits('alltime-digits', alltimeVal, 8);
+        lastAlltime = alltimeVal;
+      }
+      if (sinceOpenEl && sinceOpenVal !== lastSinceOpen) {
+        sinceOpenEl.textContent = formatNumber(sinceOpenVal);
+        lastSinceOpen = sinceOpenVal;
       }
       rafId = requestAnimationFrame(tick);
     }
+
     rafId = requestAnimationFrame(tick);
+
     visibilityListener = function () {
       if (document.hidden) {
         pausedAt = Date.now();
@@ -199,20 +219,43 @@
     }
     var providers = data.providers;
 
-    var allTimeTotal = 0;
+    var excludingYesterday = 0;
+    var yesterdayTotal = 0;
     var weekTotal = 0;
     var prevWeekTotal = 0;
 
     PLATFORM_ORDER.forEach(function (id) {
       var p = providers[id];
       if (p && p.tracking) {
-        allTimeTotal += (p.adsBlockedYesterday || 0) + (p.adsBlockedExcludingYesterday || 0);
+        excludingYesterday += p.adsBlockedExcludingYesterday || 0;
+        yesterdayTotal += p.adsBlockedYesterday || 0;
         weekTotal += p.adsBlockedLastFullWeek || 0;
         prevWeekTotal += p.adsBlockedPreviousFullWeek || 0;
       }
     });
 
-    renderDigits('alltime-digits', allTimeTotal, 8);
+    var generatedAt = new Date(data.generatedAt);
+    var dataAgeSeconds = isNaN(generatedAt.getTime())
+      ? 0
+      : Math.max(0, (Date.now() - generatedAt.getTime()) / 1000);
+
+    var baseValue;
+    var perSecond;
+
+    if (dataAgeSeconds <= 86400) {
+      // Data is fresh: show how much of yesterday has elapsed since generation,
+      // then continue counting at yesterday's per-second rate.
+      var progress = dataAgeSeconds / 86400;
+      baseValue = excludingYesterday + progress * yesterdayTotal;
+      perSecond = yesterdayTotal > 0 ? yesterdayTotal / 86400 : calcHistoricalRate(providers);
+    } else {
+      // Data is stale (> 24h): yesterday is fully counted. Continue at the
+      // 7-day historical average so the counter stays live while waiting for
+      // a fresh data file. The "Updated X ago" label signals the staleness.
+      baseValue = excludingYesterday + yesterdayTotal;
+      perSecond = calcHistoricalRate(providers);
+    }
+
     renderDigits('week-digits', weekTotal, 6);
 
     var wow = calcWowPercent(weekTotal, prevWeekTotal);
@@ -224,15 +267,14 @@
 
     updateLastUpdated(data.generatedAt);
     renderPlatforms(data);
-
-    var perSecond = calcBlocksPerSecond(providers);
-    startSinceOpenCounter(perSecond);
+    startAnimatedCounters(baseValue, perSecond);
   }
 
   function showError() {
-    cancelAnimationFrame(rafId);
-    rafId = null;
-    sinceOpenStarted = false;
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
     if (visibilityListener) {
       document.removeEventListener('visibilitychange', visibilityListener);
       visibilityListener = null;
