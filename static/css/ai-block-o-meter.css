@@ -232,6 +232,12 @@
   gap: 0.4em;
 }
 
+.abom-card-ft--row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .abom-card-ft p {
   font-size: 0.78em;
   line-height: 1.45;
