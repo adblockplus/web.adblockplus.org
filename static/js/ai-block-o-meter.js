@@ -6,11 +6,15 @@
   var rafId = null;
 
   var PLATFORM_META = {
-    chatgpt: { domain: 'chatgpt.com · openai.com' },
-    perplexity: { domain: 'perplexity.ai' },
-    copilot: { domain: 'copilot.microsoft.com' },
-    gemini: { domain: 'gemini.google.com' }
+    chatgpt:    { displayName: 'ChatGPT',           domain: 'chatgpt.com · openai.com' },
+    perplexity: { displayName: 'Perplexity',        domain: 'perplexity.ai' },
+    copilot:    { displayName: 'Microsoft Copilot', domain: 'copilot.microsoft.com' },
+    gemini:     { displayName: 'Google Gemini',     domain: 'gemini.google.com' }
   };
+
+  // Manually-verified providers whose data is cleared for public display.
+  // Add a provider here only after confirming the data pipeline is clean.
+  var ENABLED_PROVIDERS = ['chatgpt', 'copilot'];
 
   function formatNumber(n) {
     return Math.round(n).toLocaleString('en-US');
@@ -59,24 +63,24 @@
     return previous > 0 ? ((current - previous) / previous) * 100 : null;
   }
 
-  function renderPlatforms(data) {
+  function renderPlatforms(providerMap) {
     var container = document.getElementById('abom-platforms');
     if (!container) return;
     container.innerHTML = '';
     PLATFORM_ORDER.forEach(function (id) {
-      var p = data.providers[id];
-      if (!p) return;
       var meta = PLATFORM_META[id] || {};
-      var allTime = p.tracking ? (p.adsBlockedYesterday || 0) + (p.adsBlockedExcludingYesterday || 0) : 0;
-      var wow = calcWowPercent(p.adsBlockedLastFullWeek || 0, p.adsBlockedPreviousFullWeek);
+      var p = providerMap[id];
+      var enabled = ENABLED_PROVIDERS.indexOf(id) !== -1 && !!p;
+      var allTime = enabled ? (p.adsBlockedYesterday || 0) + (p.adsBlockedExcludingYesterday || 0) : 0;
+      var wow = enabled ? calcWowPercent(p.adsBlockedLastFullWeek || 0, p.adsBlockedPreviousFullWeek) : null;
       var wowRounded = wow !== null ? Math.round(wow) : null;
       var wowText = Number.isFinite(wowRounded)
         ? (wowRounded >= 0 ? '+' : '-') + Math.abs(wowRounded) + '% w/w · ' + (meta.domain || '')
         : (meta.domain || '');
-      var badgeHtml = p.tracking
+      var badgeHtml = enabled
         ? '<span class="abom-badge abom-badge--live"><span class="abom-live-dot abom-live-dot--sm" aria-hidden="true"></span>LIVE</span>'
         : '<span class="abom-badge abom-badge--soon">COMING SOON</span>';
-      var bodyHtml = p.tracking
+      var bodyHtml = enabled
         ? '<div class="abom-pc-count">' + formatNumber(allTime) + '</div>' +
           '<div class="abom-pc-meta">' + wowText + '</div>'
         : '<p class="abom-pc-soon-text">Ads detected — tracking coming soon</p>' +
@@ -89,8 +93,8 @@
         '</div>' +
         '<h3 class="abom-pc-name"></h3>' +
         bodyHtml +
-        '<div class="abom-pc-chart">' + drawSparkline(p.dailyAdsBlocked, p.tracking) + '</div>';
-      card.querySelector('.abom-pc-name').textContent = p.name || id;
+        '<div class="abom-pc-chart">' + drawSparkline(enabled ? p.dailyAdsBlocked : null, enabled) + '</div>';
+      card.querySelector('.abom-pc-name').textContent = meta.displayName || id;
       container.appendChild(card);
     });
   }
@@ -128,20 +132,18 @@
   }
 
   // 7-day rolling average rate — used as a fallback when data is > 24h old
-  function calcHistoricalRate(providers) {
+  function calcHistoricalRate(providerMap) {
     var total = 0;
-    var hasTracking = false;
-    PLATFORM_ORDER.forEach(function (id) {
-      var p = providers[id];
-      if (!p || !p.tracking) return;
-      if (p.dailyAdsBlocked && p.dailyAdsBlocked.length > 0) {
-        var recent = p.dailyAdsBlocked.slice(-7);
-        var avg = recent.reduce(function (a, b) { return a + b; }, 0) / recent.length;
-        total += avg;
-        hasTracking = true;
-      }
+    var hasData = false;
+    ENABLED_PROVIDERS.forEach(function (id) {
+      var p = providerMap[id];
+      if (!p || !p.dailyAdsBlocked || p.dailyAdsBlocked.length === 0) return;
+      var recent = p.dailyAdsBlocked.slice(-7);
+      var avg = recent.reduce(function (a, b) { return a + b; }, 0) / recent.length;
+      total += avg;
+      hasData = true;
     });
-    return hasTracking ? total / 86400 : 0;
+    return hasData ? total / 86400 : 0;
   }
 
   // Drives both the all-time counter and the since-open counter from a single RAF loop.
@@ -196,25 +198,28 @@
   }
 
   function render(data) {
-    if (!data || !data.providers) {
+    if (!data || !Array.isArray(data.providers)) {
       showError();
       return;
     }
-    var providers = data.providers;
+
+    var providerMap = {};
+    data.providers.forEach(function (p) {
+      if (p && p.provider) providerMap[p.provider] = p;
+    });
 
     var excludingYesterday = 0;
     var yesterdayTotal = 0;
     var weekTotal = 0;
     var prevWeekTotal = 0;
 
-    PLATFORM_ORDER.forEach(function (id) {
-      var p = providers[id];
-      if (p && p.tracking) {
-        excludingYesterday += p.adsBlockedExcludingYesterday || 0;
-        yesterdayTotal += p.adsBlockedYesterday || 0;
-        weekTotal += p.adsBlockedLastFullWeek || 0;
-        prevWeekTotal += p.adsBlockedPreviousFullWeek || 0;
-      }
+    ENABLED_PROVIDERS.forEach(function (id) {
+      var p = providerMap[id];
+      if (!p) return;
+      excludingYesterday += p.adsBlockedExcludingYesterday || 0;
+      yesterdayTotal += p.adsBlockedYesterday || 0;
+      weekTotal += p.adsBlockedLastFullWeek || 0;
+      prevWeekTotal += p.adsBlockedPreviousFullWeek || 0;
     });
 
     var generatedAt = data.generatedAt ? new Date(data.generatedAt) : null;
@@ -236,7 +241,7 @@
       // 7-day historical average so the counter stays live while waiting for
       // a fresh data file. The "Updated X ago" label signals the staleness.
       baseValue = excludingYesterday + yesterdayTotal;
-      perSecond = calcHistoricalRate(providers);
+      perSecond = calcHistoricalRate(providerMap);
     }
 
     renderDigits('week-digits', weekTotal, 6);
@@ -251,7 +256,7 @@
     }
 
     updateLastUpdated(data.generatedAt);
-    renderPlatforms(data);
+    renderPlatforms(providerMap);
     startAnimatedCounters(baseValue, perSecond);
   }
 
