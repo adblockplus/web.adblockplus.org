@@ -1,19 +1,5 @@
 /* AI Block-o-Meter dashboard styles */
 
-/* ── Visually hidden (screen reader only) ────────────────────────── */
-
-.abom-sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 /* ── Page shell ──────────────────────────────────────────────────── */
 
 .abom {
@@ -235,7 +221,14 @@
 .abom-card-ft--row {
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+}
+
+.abom-card-ft--row p {
+  min-width: 0;
+}
+
+.abom-card-ft--row p:last-child {
+  margin-left: auto;
 }
 
 .abom-card-ft p {
@@ -248,7 +241,7 @@
 .abom-since-open {
   opacity: 1 !important;
   color: #22c55e;
-  font-size: 0.78em !important;
+  font-size: 0.78em;
   font-weight: 500;
 }
 
@@ -259,7 +252,7 @@
 .abom-wow {
   opacity: 1 !important;
   color: #166534;
-  font-size: 0.78em !important;
+  font-size: 0.78em;
   font-weight: 600;
 }
 
@@ -379,23 +372,6 @@
   justify-content: flex-end;
 }
 
-.abom-pc-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1.5px solid #888;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.abom-pc-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
 .abom-pc-name {
   font-size: 0.9em;
   font-weight: 600;
@@ -489,7 +465,7 @@
   vertical-align: super;
 }
 
-.abom-survey-stat p {
+.abom-survey-body {
   font-size: 0.9em;
   color: #333;
   line-height: 1.5;
@@ -498,9 +474,9 @@
 }
 
 .abom-survey-source {
-  font-size: 0.75em !important;
-  color: #555 !important;
-  margin-top: auto !important;
+  font-size: 0.75em;
+  color: #555;
+  margin-top: auto;
 }
 
 .abom-quotes-label {

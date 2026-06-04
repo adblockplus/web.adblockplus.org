@@ -6,30 +6,20 @@
   var rafId = null;
 
   var PLATFORM_META = {
-    chatgpt: {
-      domain: 'chatgpt.com · openai.com',
-      icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22.28 9.6a5.74 5.74 0 0 0-.49-4.72 5.8 5.8 0 0 0-6.24-2.78A5.74 5.74 0 0 0 11.25 0a5.8 5.8 0 0 0-5.53 4.02 5.74 5.74 0 0 0-3.83 2.79 5.8 5.8 0 0 0 .71 6.8 5.74 5.74 0 0 0 .49 4.71 5.8 5.8 0 0 0 6.24 2.78 5.74 5.74 0 0 0 4.3 2.1 5.8 5.8 0 0 0 5.53-4.02 5.74 5.74 0 0 0 3.83-2.78 5.8 5.8 0 0 0-.71-6.8ZM13.55 21.5a4.3 4.3 0 0 1-2.76-.99l.14-.08 4.57-2.64a.76.76 0 0 0 .38-.66v-6.44l1.93 1.11a.07.07 0 0 1 .04.06v5.34a4.32 4.32 0 0 1-4.3 4.3Zm-9.27-3.96a4.3 4.3 0 0 1-.51-2.88l.13.08 4.58 2.64a.76.76 0 0 0 .76 0L14.5 14l1.93 1.12a.07.07 0 0 1 .03.07l-4.63 2.67a4.32 4.32 0 0 1-5.9-1.57l-.55-.75Zm-1.2-10.02a4.3 4.3 0 0 1 2.25-1.89v5.42a.76.76 0 0 0 .38.66l5.26 3.04-1.93 1.11a.07.07 0 0 1-.07 0L4.4 13.2a4.32 4.32 0 0 1-.71-5.68h-.61Zm15.87 3.7-5.26-3.04 1.93-1.12a.07.07 0 0 1 .07 0l4.57 2.64a4.32 4.32 0 0 1-.67 7.8v-5.41a.76.76 0 0 0-.38-.66l-.26-.21Zm1.92-2.9-.13-.08-4.57-2.64a.76.76 0 0 0-.76 0L9.5 9.97 7.57 8.86a.07.07 0 0 1-.03-.07l4.62-2.67a4.32 4.32 0 0 1 6.42 4.48l-.25.22-.01-.1Zm-10.5 3.45-1.93-1.12a.07.07 0 0 1-.04-.06V5.25a4.32 4.32 0 0 1 7.08-3.32l-.14.08L10.77 4.6a.76.76 0 0 0-.38.66l-.02 6.51Zm1.05-2.26 2.34-1.35 2.34 1.35v2.7l-2.34 1.35-2.34-1.35v-2.7Z" fill="currentColor"/></svg>'
-    },
-    perplexity: {
-      domain: 'perplexity.ai',
-      icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>'
-    },
-    copilot: {
-      domain: 'copilot.microsoft.com',
-      icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.3L12 17l-6.2 4.2 2.4-7.3L2 9.4h7.6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>'
-    },
-    gemini: {
-      domain: 'gemini.google.com',
-      icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2c0 5.52-4.48 10-10 10 5.52 0 10 4.48 10 10 0-5.52 4.48-10 10-10-5.52 0-10-4.48-10-10z" fill="currentColor"/></svg>'
-    }
+    chatgpt: { domain: 'chatgpt.com · openai.com' },
+    perplexity: { domain: 'perplexity.ai' },
+    copilot: { domain: 'copilot.microsoft.com' },
+    gemini: { domain: 'gemini.google.com' }
   };
 
   function formatNumber(n) {
     return Math.round(n).toLocaleString('en-US');
   }
 
-  function renderDigits(containerId, value, minDigits) {
-    var container = document.getElementById(containerId);
+  function renderDigits(containerOrId, value, minDigits) {
+    var container = typeof containerOrId === 'string'
+      ? document.getElementById(containerOrId)
+      : containerOrId;
     if (!container) return;
     if (!isFinite(value)) value = 0;
     var str = String(Math.round(value));
@@ -164,28 +154,34 @@
     }
 
     var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reducedMotion) {
+    if (reducedMotion || perSecond <= 0) {
       renderDigits('alltime-digits', baseValue, 8);
       var srStaticEl = document.getElementById('alltime-sr');
       if (srStaticEl) srStaticEl.textContent = formatNumber(baseValue);
+      var sinceOpenRowEl = document.getElementById('abom-since-open-row');
+      if (sinceOpenRowEl) sinceOpenRowEl.hidden = true;
       return;
     }
 
+    var sinceOpenRowEl = document.getElementById('abom-since-open-row');
+    if (sinceOpenRowEl) sinceOpenRowEl.hidden = false;
     var sinceOpenEl = document.getElementById('since-open');
     var alltimeSr = document.getElementById('alltime-sr');
-    var startTime = Date.now();
+    var alltimeDigitsEl = document.getElementById('alltime-digits');
+    var startTime = null;
     var lastAlltime = -1;
     var lastSinceOpen = -1;
 
     var baseRounded = Math.round(baseValue);
 
-    function tick() {
-      var elapsed = (Date.now() - startTime) / 1000;
+    function tick(timestamp) {
+      if (startTime === null) startTime = timestamp;
+      var elapsed = (timestamp - startTime) / 1000;
       var sinceOpenVal = Math.floor(elapsed * perSecond);
       var alltimeVal = baseRounded + sinceOpenVal;
 
       if (alltimeVal !== lastAlltime) {
-        renderDigits('alltime-digits', alltimeVal, 8);
+        renderDigits(alltimeDigitsEl, alltimeVal, 8);
         if (alltimeSr) alltimeSr.textContent = formatNumber(alltimeVal);
         lastAlltime = alltimeVal;
       }
@@ -221,8 +217,8 @@
       }
     });
 
-    var generatedAt = new Date(data.generatedAt);
-    var dataAgeSeconds = isNaN(generatedAt.getTime())
+    var generatedAt = data.generatedAt ? new Date(data.generatedAt) : null;
+    var dataAgeSeconds = (!generatedAt || isNaN(generatedAt.getTime()))
       ? 0
       : Math.max(0, (Date.now() - generatedAt.getTime()) / 1000);
 
@@ -234,7 +230,7 @@
       // then continue counting at yesterday's per-second rate.
       var progress = dataAgeSeconds / 86400;
       baseValue = excludingYesterday + progress * yesterdayTotal;
-      perSecond = yesterdayTotal > 0 ? yesterdayTotal / 86400 : calcHistoricalRate(providers);
+      perSecond = yesterdayTotal / 86400;
     } else {
       // Data is stale (> 24h): yesterday is fully counted. Continue at the
       // 7-day historical average so the counter stays live while waiting for
@@ -276,12 +272,15 @@
     if (alltimeSrErr) alltimeSrErr.textContent = 'Data unavailable';
     if (weekSrErr) weekSrErr.textContent = 'Data unavailable';
     if (updated) updated.textContent = 'Data temporarily unavailable';
-    if (platforms) platforms.innerHTML = '<p class="abom-error-label">Data temporarily unavailable</p>';
+    if (platforms) platforms.innerHTML = '';
     if (sinceOpen) sinceOpen.hidden = true;
   }
 
-  fetch(DATA_URL)
+  var controller = new AbortController();
+  var timeoutId = setTimeout(function () { controller.abort(); }, 10000);
+  fetch(DATA_URL, { signal: controller.signal })
     .then(function (res) {
+      clearTimeout(timeoutId);
       if (!res.ok) throw new Error('HTTP ' + res.status);
       return res.json();
     })
