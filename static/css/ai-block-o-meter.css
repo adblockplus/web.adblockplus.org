@@ -376,8 +376,7 @@
 .abom-pc-hd {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5em;
+  justify-content: flex-end;
 }
 
 .abom-pc-icon {

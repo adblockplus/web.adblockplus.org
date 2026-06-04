@@ -95,7 +95,6 @@
       card.className = 'abom-pc';
       card.innerHTML =
         '<div class="abom-pc-hd">' +
-          '<span class="abom-pc-icon">' + (meta.icon || '') + '</span>' +
           badgeHtml +
         '</div>' +
         '<h3 class="abom-pc-name"></h3>' +
