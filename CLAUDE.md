@@ -139,6 +139,8 @@ Do not hardcode country/currency/VAT logic in pages — use the settings infrast
 
 **Debugging CI failures**: Download the `test-results/` artifact and open `trace.zip` at https://trace.playwright.dev.
 
+**Assertions**: Always use `expect(value, 'message')` for test failures — pass the reason as the second argument to `expect()`. Avoid `throw new Error` in tests.
+
 ## Supported Query Parameters
 
 ### Sitewide
