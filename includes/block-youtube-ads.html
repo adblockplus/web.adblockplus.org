@@ -14,13 +14,17 @@
           <li>{{ block-youtube-ads-item-3[list item] Works across all your devices }}</li>
         </ul>
         <a
-          class="button download-button block-youtube-ads__cta"
-          href="https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb">
+          class="button download-button block-youtube-ads__cta go-to-download js-install-link"
+          href="download">
           {{ block-youtube-ads-install[button label] Install Adblock Plus }}
         </a>
+        <p class="block-youtube-ads__alternate">
+          <a href="download" class="download-more">
+            {{ block-youtube-ads-download-alt[link text] Block YouTube ads in another browser }}
+          </a>
+        </p>
       </div>
       <div class="column one-half block-youtube-ads__media">
-        <!-- TODO: replace with final asset when delivered -->
         <img
           src="/img/ABP-Youtube.png"
           alt="{{ block-youtube-ads-image-alt[alt text] Adblock Plus blocking ads on YouTube }}">
