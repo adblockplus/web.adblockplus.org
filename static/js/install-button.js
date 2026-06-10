@@ -87,7 +87,18 @@
 
     // Prevent overwriting localized href when browser is not detected
     if (installerHref)
+    {
       installButton.href = installerHref;
+
+      // Secondary install buttons (e.g. the YouTube section CTA) point at the
+      // browser-detected store too, but keep their own label.
+      var extraButtons = document.querySelectorAll(".js-install-link");
+      for (var i = 0; i < extraButtons.length; i++)
+      {
+        extraButtons[i].href = installerHref;
+        extraButtons[i].classList.remove("go-to-download");
+      }
+    }
 
     installTextTemplate = document.getElementById(
       browser == "msedge_chromium" ?

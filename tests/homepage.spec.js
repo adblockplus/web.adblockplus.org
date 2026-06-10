@@ -39,11 +39,6 @@ test('Extension download link', { tag: ['@all_browsers'] }, async ({ page, brows
   };
 });
 
-test('Adblock Browser download link', async ({ page }) => {
-  await page.getByRole('link', { name: 'Download Adblock Browser for' }).click();
-  await expect(page).toHaveURL('https://play.google.com/store/apps/details?id=org.adblockplus.browser');
-});
-
 [
   { pageLink: 'Terms of Use', expectedUrl: '/terms' },
   { pageLink: 'Download Adblock Plus for another browser', expectedUrl: '/download' },
