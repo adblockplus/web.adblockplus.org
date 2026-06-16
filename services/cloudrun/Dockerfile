@@ -12,10 +12,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Patch the bundled npm CLI. node:22-slim ships npm 10.x, whose vendored
-# picomatch (4.0.2) is flagged by Wiz; npm 11.x bundles the fixed picomatch
-# 4.0.4. npm is build-time-only tooling (the app runs via `node`), but it stays
-# in the image filesystem and is scanned, so we upgrade it here.
-RUN npm install -g npm@11 \
+# picomatch is flagged by Wiz. npm is build-time-only tooling (the app runs via
+# `node`), but it stays in the image filesystem and is scanned, so we upgrade
+# it here.
+RUN npm install -g npm@11.17.0 \
     && npm cache clean --force
 
 # Create and change to the app directory.
