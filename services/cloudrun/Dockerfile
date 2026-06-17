@@ -1,36 +1,29 @@
-# Use the official lightweight Node.js 22 image.
-# https://hub.docker.com/_/node
-FROM node:22-slim
+# Build stage: install production dependencies on a full Node.js 22 image.
+# This stage is discarded — nothing from it (npm, apt, perl, shell) ships to
+# the final image.
+FROM node:22-slim AS builder
 
-# Apply OS security updates. The upstream node:22-slim tag refreshes on a lag
-# behind Debian point releases, so without this step a fresh build can still
-# ship CVE-vulnerable apt packages (e.g. Wiz finding CVE-2026-3833 on
-# libgnutls30 < 3.7.9-2+deb12u7).
-RUN apt-get update \
-    && apt-get -y upgrade \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Patch the bundled npm CLI. node:22-slim ships npm 10.x, whose vendored
-# picomatch is flagged by Wiz. npm is build-time-only tooling (the app runs via
-# `node`), but it stays in the image filesystem and is scanned, so we upgrade
-# it here.
-RUN npm install -g npm@11.17.0 \
-    && npm cache clean --force
-
-# Create and change to the app directory.
 WORKDIR /usr/src/app
 
-# Copy application dependency manifests to the container image.
-# A wildcard is used to ensure both package.json AND package-lock.json are copied.
-# Copying this separately prevents re-running npm install on every code change.
+# Copy dependency manifests first so the npm install layer is cached across
+# code-only changes.
 COPY package*.json ./
 
 # Install non-dev dependencies.
 RUN npm install --omit=dev
 
-# Copy local code to the container image.
+# Copy local code.
 COPY . ./
 
-# Run the web service on container startup.
-CMD [ "npm", "start" ]
+# Runtime stage: Google distroless Node.js 22. Contains only the node runtime
+# and glibc/openssl/ca-certificates essentials — NO perl-base, NO apt, NO npm,
+# NO shell.
+FROM gcr.io/distroless/nodejs22-debian12
+
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app ./
+
+# The distroless nodejs image's entrypoint is `node`; CMD supplies the script
+# (equivalent to the previous `node index.js`).
+CMD ["index.js"]
