@@ -3,11 +3,13 @@ const app = express();
 const path = require('path');
 
 const legacyRedirects = require('./handlers/legacy_redirects');
+const { handleAiAdData } = require('./handlers/ai_ad_data');
 const { getQueryString } = require('./utils/utils.js');
 
 // Request handlers
 
 app.use('/redirect', legacyRedirects);
+app.get('/data/ai-ad-data.json', handleAiAdData);
 
 app.get("/robots-function", (req, res) => {
 

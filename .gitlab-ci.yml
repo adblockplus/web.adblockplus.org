@@ -15,7 +15,7 @@ variables:
 
 .images:
   node: &NODE_IMAGE node:16-alpine
-  cloud_sdk: &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:409.0.0
+  cloud_sdk: &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:572.0.0
   build: &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
 
 default:
@@ -133,7 +133,7 @@ deploy_cloud_run:review:
   script:
     - cd services/cloudrun
     - gcloud builds submit --tag europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy b-$CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated --service-account $CLOUD_RUN_SERVICE_ACCOUNT
+    - gcloud run deploy b-$CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated --service-account $CLOUD_RUN_SERVICE_ACCOUNT --update-env-vars AI_STATS_GCS_BUCKET=$AI_STATS_GCS_BUCKET
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     on_stop: teardown_cloud_run:review
@@ -167,7 +167,7 @@ deploy_cloud_run:review:staging:
   script:
     - cd services/cloudrun
     - gcloud builds submit --tag europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated --service-account $CLOUD_RUN_SERVICE_ACCOUNT
+    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated --service-account $CLOUD_RUN_SERVICE_ACCOUNT --update-env-vars AI_STATS_GCS_BUCKET=$AI_STATS_GCS_BUCKET
   environment:
     name: review/staging/$CI_COMMIT_REF_SLUG
   only:
@@ -184,7 +184,7 @@ deploy_cloud_run:production:
   script:
     - cd services/cloudrun
     - gcloud builds submit --tag europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG
-    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated --service-account $CLOUD_RUN_SERVICE_ACCOUNT
+    - gcloud run deploy $CI_COMMIT_REF_SLUG --image europe-west1-docker.pkg.dev/$GCP_PROJECT_ID/$GCP_PROJECT_ID/$CI_COMMIT_REF_SLUG:latest --region europe-west1 --allow-unauthenticated --service-account $CLOUD_RUN_SERVICE_ACCOUNT --update-env-vars AI_STATS_GCS_BUCKET=$AI_STATS_GCS_BUCKET
   environment:
     name: production/$CI_COMMIT_REF_SLUG
   only:
