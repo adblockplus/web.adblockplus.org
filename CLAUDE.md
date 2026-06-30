@@ -122,6 +122,22 @@ Pages load `/settings.js` (via `includes/late-head-scripts.html`) which sets cou
 
 Do not hardcode country/currency/VAT logic in pages — use the settings infrastructure.
 
+## Accessibility
+
+All UI work must meet **WCAG 2.1 AA**. Check the current requirements at https://www.w3.org/WAI/WCAG21/quickref/ rather than relying on remembered thresholds.
+
+**Contrast applies to all visible text, including `aria-hidden` elements.** `aria-hidden="true"` only hides content from assistive technology — sighted users still see it, so WCAG 1.4.3 still applies. When reviewing UI changes, explicitly check contrast for every visually rendered text or icon in the changed files, regardless of its ARIA attributes.
+
+Always verify contrast ratios when introducing or changing colours. Use the Node one-liner below to check a foreground/background pair:
+
+```js
+node -e "
+function lum(h){const[r,g,b]=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255);const l=c=>c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);return 0.2126*l(r)+0.7152*l(g)+0.0722*l(b)}
+function cr(a,b){const[hi,lo]=[lum(a),lum(b)].sort((x,y)=>y-x);return((hi+0.05)/(lo+0.05)).toFixed(2)}
+console.log(cr('#yourFG','#yourBG')+':1')
+"
+```
+
 ## Testing
 
 **Framework**: Playwright — projects: `chromium`, `firefox`, `webkit`, `Google Chrome`, `Microsoft Edge`
@@ -138,6 +154,8 @@ Do not hardcode country/currency/VAT logic in pages — use the settings infrast
 **Visual regression**: Baselines are Linux Chromium only (`tests/snapshots/`). To update after a CI failure: download the `visual_regression_tests:archive` artifact, rename the file to just the browser name, replace the existing file in the `linux/` snapshot folder. Do not update baselines locally on macOS — they will mismatch in CI.
 
 **Debugging CI failures**: Download the `test-results/` artifact and open `trace.zip` at https://trace.playwright.dev.
+
+**Assertions**: Always use `expect(value, 'message')` for test failures — pass the reason as the second argument to `expect()`. Avoid `throw new Error` in tests.
 
 ## Supported Query Parameters
 

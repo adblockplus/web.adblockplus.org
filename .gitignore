@@ -12,6 +12,9 @@ public
 access.log
 error.log
 
+# Local test data (not committed — refresh with: curl -s https://adblockplus.org/data/ai-ad-data.json > static/data/ai-ad-data.json)
+/static/data/ai-ad-data.json
+
 # Playwright
 /test-results/
 /playwright-report/
