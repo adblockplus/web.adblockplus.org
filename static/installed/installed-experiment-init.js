@@ -19,7 +19,8 @@ async function setupExperiment() {
         && ["US", "CA", "AU"].includes(adblock.settings.country)
         && adblock.settings.locale === 'en',
     noParticipateCallback: applyControl,
-    trafficAllocation: 7.5,
+    trafficAllocation: 20,
+    distribution: [50, 0, 50],
     control: {
       script: "/experiments/email-marketing-program/control.js"
     },
