@@ -4,20 +4,20 @@
   //   curl -s https://adblockplus.org/data/ai-ad-data.json > static/data/ai-ad-data.json
   const DATA_URL = '/data/ai-ad-data.json';
 
-  const PLATFORM_ORDER = ['chatgpt', 'perplexity', 'copilot', 'gemini'];
+  const PLATFORM_ORDER = ['chatgpt', 'copilot', 'perplexity', 'gemini'];
 
   let rafId = null;
 
   const PLATFORM_META = {
     chatgpt:    { displayName: 'ChatGPT',           domain: 'chatgpt.com · openai.com' },
     perplexity: { displayName: 'Perplexity',        domain: 'perplexity.ai',           noAds: true, body: 'Tested sponsored answers, but then dropped them in early 2026. Ad-free for now. If that changes again, we block and count them.' },
-    copilot:    { displayName: 'Microsoft Copilot', domain: 'copilot.microsoft.com' },
+    copilot:    { displayName: 'Microsoft Copilot', domain: 'copilot.microsoft.com',   comingSoon: true, body: 'We\'re currently implementing the counting system. Numbers are coming soon.' },
     gemini:     { displayName: 'Google Gemini',     domain: 'gemini.google.com',       noAds: true, body: 'Ad-free for now, though reports suggest ads may be coming. The moment ads show up, we block and count them.' }
   };
 
   // Manually-verified providers whose data is cleared for public display.
   // Add a provider here only after confirming the data pipeline is clean.
-  const ENABLED_PROVIDERS = ['chatgpt', 'copilot'];
+  const ENABLED_PROVIDERS = ['chatgpt'];
 
   const QUOTES = [
     "I hate it and won't use them if it stands",
@@ -79,6 +79,7 @@
     const container = typeof containerOrId === 'string'
       ? document.getElementById(containerOrId)
       : containerOrId;
+
     if (!container) {
       return;
     }
@@ -94,13 +95,16 @@
     }
 
     let html = '';
+
     for (let i = 0; i < str.length; i++) {
-      html += '<span class="abom-digit">' + str[i] + '</span>';
+      html += `<span class="abom-digit">${str[i]}</span>`;
       const posFromRight = str.length - 1 - i;
+
       if (posFromRight > 0 && posFromRight % 3 === 0) {
         html += '<span class="abom-digit-sep">,</span>';
       }
     }
+
     container.innerHTML = html;
   }
 
@@ -135,38 +139,50 @@
       const x = j * slotW + (slotW - barW) / 2;
       const y = h - bh;
       const fill = isLive ? (j >= recentStart ? '#d4623a' : '#e8a98a') : '#ddd';
-      rects += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + barW.toFixed(1) + '" height="' + bh.toFixed(1) + '" rx="1.5" fill="' + fill + '"/>';
+      rects += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${bh.toFixed(1)}" rx="1.5" fill="${fill}"/>`;
     }
-    return '<svg viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" aria-hidden="true">' + rects + '</svg>';
+
+    return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">${rects}</svg>`;
   }
 
   function calcWowPercent(current, previous) {
     return previous > 0 ? ((current - previous) / previous) * 100 : null;
   }
 
-  function renderBadge(enabled) {
+  function renderBadge(enabled, meta) {
     if (enabled) {
       return '<span class="abom-badge abom-badge--live"><span class="abom-live-dot abom-live-dot--sm" aria-hidden="true"></span>LIVE</span>';
     }
+
+    if (meta && meta.comingSoon) {
+      return '<span class="abom-badge abom-badge--coming-soon">Coming soon</span>';
+    }
+
     return '<span class="abom-badge abom-badge--no-ads">No ads currently</span>';
   }
 
   function renderCardBody(enabled, allTime, trendHtml, p, meta) {
     if (enabled) {
-      return '<div class="abom-pc-count">' + formatNumber(allTime) + '</div>' +
-        '<div class="abom-pc-chart-hd">' +
-          '<span class="abom-pc-chart-label">last 30 days</span>' +
-          trendHtml +
-        '</div>' +
-        '<div class="abom-pc-chart">' + drawBarchart(p.dailyAdsBlocked, true) + '</div>' +
-        '<p class="abom-pc-domain">' + (meta.domain || '') + '</p>';
+      const last30 = (p.dailyAdsBlocked || []).reduce(function (sum, v) { return sum + v; }, 0);
+      return `<div class="abom-pc-count-wrap">
+          <span class="abom-pc-count-label">Total blocked</span>
+          <div class="abom-pc-count">${formatNumber(allTime)}</div>
+        </div>
+        <div class="abom-pc-chart-hd">
+          <span class="abom-pc-chart-label">Last 30 days: <strong>${formatNumber(last30)}</strong></span>
+          ${trendHtml}
+        </div>
+        <div class="abom-pc-chart">${drawBarchart(p.dailyAdsBlocked, true)}</div>
+        <p class="abom-pc-domain">${meta.domain || ''}</p>`;
     }
-    return '<p class="abom-pc-soon-text">' + meta.body + '</p>' +
-      '<p class="abom-pc-domain">' + (meta.domain || '') + '</p>';
+
+    return `<p class="abom-pc-soon-text">${meta.body}</p>
+      <p class="abom-pc-domain">${meta.domain || ''}</p>`;
   }
 
   function renderPlatforms(providerMap, progress) {
     const container = document.getElementById('abom-platforms');
+
     if (!container) {
       return;
     }
@@ -184,17 +200,14 @@
 
       if (Number.isFinite(wowRounded)) {
         const arrow = wowRounded >= 0 ? '↑' : '↓';
-        trendHtml = '<span class="abom-pc-trend">' + arrow + ' ' + Math.abs(wowRounded) + '% this week</span>';
+        trendHtml = `<span class="abom-pc-trend">${arrow} ${Math.abs(wowRounded)}% this week</span>`;
       }
 
       const card = document.createElement('div');
       card.className = 'abom-pc';
-      card.innerHTML =
-        '<div class="abom-pc-hd">' +
-          renderBadge(enabled) +
-        '</div>' +
-        '<h3 class="abom-pc-name"></h3>' +
-        renderCardBody(enabled, allTime, trendHtml, p, meta);
+      card.innerHTML = `<div class="abom-pc-hd">${renderBadge(enabled, meta)}</div>
+        <h3 class="abom-pc-name"></h3>
+        ${renderCardBody(enabled, allTime, trendHtml, p, meta)}`;
       card.querySelector('.abom-pc-name').textContent = meta.displayName || id;
       container.appendChild(card);
     });
@@ -215,19 +228,22 @@
       el.textContent = 'Updated recently';
       return;
     }
+
     if (diffDays === 0) {
       const diffHours = Math.floor(diffMs / MS_PER_HOUR);
+
       if (diffHours < 1) {
         const diffMins = Math.floor(diffMs / MS_PER_MIN);
-        label = diffMins < 1 ? 'Updated just now' : 'Updated ' + diffMins + ' minute' + (diffMins !== 1 ? 's' : '') + ' ago';
+        label = diffMins < 1 ? 'Updated just now' : `Updated ${diffMins} minute${diffMins !== 1 ? 's' : ''} ago`;
       } else {
-        label = 'Updated ' + diffHours + ' hour' + (diffHours !== 1 ? 's' : '') + ' ago';
+        label = `Updated ${diffHours} hour${diffHours !== 1 ? 's' : ''} ago`;
       }
     } else if (diffDays === 1) {
       label = 'Updated yesterday';
     } else {
-      label = 'Updated ' + diffDays + ' days ago';
+      label = `Updated ${diffDays} days ago`;
     }
+
     el.textContent = label;
   }
 
@@ -235,14 +251,17 @@
   function calcHistoricalRate(providerMap) {
     let total = 0;
     let hasData = false;
+
     ENABLED_PROVIDERS.forEach(function (id) {
       const p = providerMap[id];
+
       if (!p || !p.dailyAdsBlocked || p.dailyAdsBlocked.length === 0) {
         return;
       }
 
       const recent = p.dailyAdsBlocked.slice(-7);
       const sum = recent.reduce(function (a, b) { return a + b; }, 0);
+
       if (sum <= 0) {
         return;
       }
@@ -250,6 +269,7 @@
       total += sum / recent.length;
       hasData = true;
     });
+
     return hasData ? total / SECS_PER_DAY : 0;
   }
 
@@ -274,12 +294,15 @@
 
     if (reducedMotion || perSecond <= 0) {
       renderDigits('alltime-digits', baseValue, 8);
+
       if (alltimeSr) {
         alltimeSr.textContent = formatNumber(baseValue);
       }
+
       if (sinceOpenRowEl) {
         sinceOpenRowEl.hidden = true;
       }
+
       return;
     }
 
@@ -300,10 +323,12 @@
         renderDigits(alltimeDigitsEl, alltimeVal, 8);
         lastAlltime = alltimeVal;
       }
+
       if (sinceOpenEl && sinceOpenVal !== lastSinceOpen) {
         sinceOpenEl.textContent = formatNumber(sinceOpenVal);
         lastSinceOpen = sinceOpenVal;
       }
+
       rafId = requestAnimationFrame(tick);
     }
 
@@ -322,6 +347,7 @@
 
     Object.keys(data.providers).forEach(function (id) {
       const p = data.providers[id];
+
       if (!p) {
         return;
       }
@@ -354,6 +380,7 @@
 
     ENABLED_PROVIDERS.forEach(function (id) {
       const p = providerMap[id];
+
       if (!p) {
         return;
       }
@@ -371,12 +398,14 @@
 
     let baseValue, perSecond;
     let progress = 1;
+
     if (dataAgeSeconds >= 0 && dataAgeSeconds <= SECS_PER_DAY) {
       // Data is fresh: show how much of yesterday has elapsed since generation,
       // then continue counting at yesterday's per-second rate.
       progress = dataAgeSeconds / SECS_PER_DAY;
       baseValue = excludingYesterday + progress * yesterdayTotal;
       perSecond = yesterdayTotal / SECS_PER_DAY;
+
       if (perSecond <= 0) {
         perSecond = calcHistoricalRate(providerMap);
       }
@@ -398,7 +427,7 @@
     const wowRounded = wow !== null ? Math.round(wow) : null;
 
     if (wowEl && Number.isFinite(wowRounded)) {
-      wowEl.textContent = (wowRounded >= 0 ? '↑ +' : '↓ -') + Math.abs(wowRounded) + '% vs. last week';
+      wowEl.textContent = `${wowRounded >= 0 ? '↑ +' : '↓ -'}${Math.abs(wowRounded)}% vs. last week`;
     }
 
     updateLastUpdated(data.generatedAt);
@@ -423,21 +452,27 @@
     if (alltime) {
       alltime.innerHTML = '<span class="abom-error-label" aria-hidden="true">–</span>';
     }
+
     if (week) {
       week.innerHTML = '<span class="abom-error-label" aria-hidden="true">–</span>';
     }
+
     if (alltimeSrErr) {
       alltimeSrErr.textContent = 'Data unavailable';
     }
+
     if (weekSrErr) {
       weekSrErr.textContent = 'Data unavailable';
     }
+
     if (updated) {
       updated.textContent = 'Data temporarily unavailable';
     }
+
     if (platforms) {
       platforms.innerHTML = '';
     }
+
     if (sinceOpen) {
       sinceOpen.hidden = true;
     }
@@ -445,6 +480,7 @@
 
   function initQuotes() {
     const el = document.getElementById('abom-quotes');
+
     if (!el) {
       return;
     }
@@ -455,8 +491,9 @@
       const j = Math.floor(Math.random() * (i + 1));
       const tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
     }
+
     el.innerHTML = pool.slice(0, 3).map(function (q) {
-      return '<blockquote class="abom-quote" role="listitem">&ldquo;' + q + '&rdquo;</blockquote>';
+      return `<blockquote class="abom-quote" role="listitem">&ldquo;${q}&rdquo;</blockquote>`;
     }).join('');
   }
 
@@ -474,8 +511,9 @@
   fetch(DATA_URL, { signal: controller.signal })
     .then(function (res) {
       if (!res.ok) {
-        throw new Error('HTTP ' + res.status);
+        throw new Error(`HTTP ${res.status}`);
       }
+
       return res.json();
     })
     .then(function (data) {

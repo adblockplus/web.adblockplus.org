@@ -165,6 +165,13 @@
   color: #666;
 }
 
+.abom-badge--coming-soon {
+  background: rgba(234, 179, 8, 0.18);
+  border: 1px solid transparent;
+  color: #6b4a00;
+  text-transform: uppercase;
+}
+
 /* Digit display */
 
 .abom-digits {
@@ -374,6 +381,20 @@
   font-weight: 600;
   color: #111;
   margin: 0;
+}
+
+.abom-pc-count-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.abom-pc-count-label {
+  font-size: 0.67em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #767676;
 }
 
 .abom-pc-count {
