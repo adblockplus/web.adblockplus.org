@@ -148,7 +148,7 @@ List of techniques and tools we use for data collection.
     - Via email sent by you
     - From user reviews in App Stores
     - From Browser Web Store reviews
-    - From social platforms like Facebook and Twitter
+    - From social platforms like Facebook and X
 4. Data you provide to us via social media
 5. In connection with social media:
 {: .has-horizontal-list .semicolon-separated }
@@ -185,13 +185,13 @@ We process your personal data in compliance with the European General Data Prote
     - Data related to uninstalling the extension
 2. For a period of 90 days:
 {: .has-horizontal-list .semicolon-separated }
-    - In our mobile products and Adblock Plus for Safari on macOS crash reporting   
+    - In our mobile products and Adblock Plus for Safari on macOS crash reporting
 3. For a period of two (2) months:
 {: .has-horizontal-list .semicolon-separated }
     - event tracking
 4. Blog data as long as the respective comment exists
 5. All user support data is deleted one (1) year after closing the respective support case.
-6. For a period of three (3) months: 
+6. For a period of three (3) months:
 {: .has-horizontal-list .semicolon-separated }
     - Application data after rejection of a candidate
 7. For a period of 10 years:
@@ -640,7 +640,7 @@ All user support data is deleted one (1) year after closing the respective suppo
 
 #### Our social media presence
 
-In order to communicate with you, and to inform you about our activities and offers on social networks, we are active on Facebook, Instagram, Pinterest, VK, Twitter and LinkedIn. In terms of Facebook, both Facebook and eyeo are jointly responsible for the processing of your personal data (“joint controller”, GDPR Art. 26), even if it is stored exclusively by the respective social network. Therefore, we still inform you about the data processing processes in connection with our presence on the respective social network as follows.
+In order to communicate with you, and to inform you about our activities and offers on social networks, we are active on Facebook, Instagram, Pinterest, X and LinkedIn. In terms of Facebook, both Facebook and eyeo are jointly responsible for the processing of your personal data (“joint controller”, GDPR Art. 26), even if it is stored exclusively by the respective social network. Therefore, we still inform you about the data processing processes in connection with our presence on the respective social network as follows.
 
 If you follow our respective online presence on one or more of the social networks used by us, please note that your data may be processed outside the European Union / the European Economic Area. However, all the networks we use have agreed to comply with EU data protection standards.
 
@@ -651,13 +651,12 @@ For a detailed overview of the respective processing operations and opt-out opti
 - **Facebook**  (Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland), Facebook Fan Page based on a joint controller agreement – Privacy Policy: [https://www.facebook.com/about/privacy/](https://www.facebook.com/about/privacy/), Opt-Out: [https://www.facebook.com](https://www.facebook.com) and [http://www.youronlinechoices.com](http://www.youronlinechoices.com)
 - **Instagram** (Instagram Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA) – Privacy Policy / Opt-Out: [http://instagram.com](http://instagram.com)
 - **Pinterest** (Pinterest Europe Ltd., Palmerston House, 2nd Floor, Fenian Street, Dublin 2, Ireland) – Privacy Policy: [https://policy.pinterest.com/en/privacy-policy](https://policy.pinterest.com/en/privacy-policy), / Opt-Out: [https://policy.pinterest.com/en/privacy-policy#section-your-options](https://policy.pinterest.com/en/privacy-policy#section-your-options)
-- **VK** (VK LLC, 1-N, bld. 12-14, Lit. A, Khersonskaya st., St. Petersburg, Russia, 191024) – Privacy Policy: [https://vk.com/privacy/eu](https://vk.com/privacy/eu)
-- **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA) – Privacy Policy: [https://twitter.com](https://twitter.com), Opt-Out: [https://twitter.com/personalization](https://twitter.com/personalization)
+- **X** (X Corp., 865 FM 1209, Building 2 Bastrop, TX 78602) – Privacy Policy: [https://x.com/privacy](https://x.com/privacy), Opt-Out: [https://x.com/personalization](https://x.com/personalization)
 - **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Ireland) – Privacy Policy: [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Opt-Out: [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out)
 
 #### Links / buttons to social media
 
-The links / buttons to social networks and platforms (Facebook and Twitter) used within Adblock Plus for the purpose to enable you to share the amount of elements you have blocked with Adblock Plus generally only establish contact between social networks or platforms and you when you click on the links / buttons. This function corresponds to the way a regular online link works. If you click on a corresponding link / button, this opens a new page via the servers of the respective social network or platform. Through this, the operator of the social network is informed that our website has been accessed via your IP address. At the same time, the social network can place cookies on your terminal device or read cookies unless you have prohibited the use of cookies in your browser. For further information on any processing of your personal data by the operators of the social networks or platforms, please refer to the privacy policies of Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) and Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)).
+The links / buttons to social networks and platforms (Facebook and X) used within Adblock Plus for the purpose to enable you to share the amount of elements you have blocked with Adblock Plus generally only establish contact between social networks or platforms and you when you click on the links / buttons. This function corresponds to the way a regular online link works. If you click on a corresponding link / button, this opens a new page via the servers of the respective social network or platform. Through this, the operator of the social network is informed that our website has been accessed via your IP address. At the same time, the social network can place cookies on your terminal device or read cookies unless you have prohibited the use of cookies in your browser. For further information on any processing of your personal data by the operators of the social networks or platforms, please refer to the privacy policies of Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) and X ([https://x.com/privacy](https://x.com/privacy)).
 
 ### Application Data {: #application-data}
 
@@ -685,7 +684,7 @@ We may have collected these categories of Personal Information for the following
 * To personalize the Products we provide to you;
 * To evaluate and improve our Products;
 * To provide limited analytic services;
-* To communicate with you; 
+* To communicate with you;
 * To ensure security and functionality of our Products; and
 * To perform other business purposes.
 

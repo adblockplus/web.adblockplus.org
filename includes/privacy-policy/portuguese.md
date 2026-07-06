@@ -150,7 +150,7 @@ Lista de técnicas e ferramentas que utilizamos para a coleta de dados.
     - Via e-mail enviado por você
     - Das avaliações dos usuários nas lojas de aplicativos
     - Revisões da Browser Web Store
-    - De plataformas sociais como Facebook e Twitter
+    - De plataformas sociais como Facebook e X
 4. Dados que você nos fornece por meio de mídia social
 5. Em relação à mídia social:
 {: .has-horizontal-list .semicolon-separated }
@@ -638,7 +638,7 @@ Todos os dados de suporte ao usuário são excluídos um (1) ano após o encerra
 
 #### Nossa presença na mídia social
 
-Para nos comunicarmos com você e para informá-lo sobre nossas atividades e ofertas nas redes sociais, estamos ativos no Facebook, Instagram, Pinterest, VK, Twitter e LinkedIn. Em termos de Facebook, tanto o Facebook quanto a eyeo são responsáveis, conjuntamente, pelo processamento de seus dados pessoais (“controlador conjunto”, GDPR Art. 26), mesmo que os dados sejam armazenados exclusivamente pela respectiva rede social. Portanto, informamos-o ainda sobre os processos de tratamento de dados relacionados à nossa presença na respectiva rede social, da seguinte forma.
+Para nos comunicarmos com você e para informá-lo sobre nossas atividades e ofertas nas redes sociais, estamos ativos no Facebook, Instagram, Pinterest, X e LinkedIn. Em termos de Facebook, tanto o Facebook quanto a eyeo são responsáveis, conjuntamente, pelo processamento de seus dados pessoais (“controlador conjunto”, GDPR Art. 26), mesmo que os dados sejam armazenados exclusivamente pela respectiva rede social. Portanto, informamos-o ainda sobre os processos de tratamento de dados relacionados à nossa presença na respectiva rede social, da seguinte forma.
 
 Se você seguir nossa presença on-line em uma ou mais das redes sociais que usamos, observe que seus dados podem ser processados fora da União Europeia/do Espaço Econômico Europeu. No entanto, todas as redes que usamos concordaram em cumprir as normas de proteção de dados da UE.
 
@@ -649,13 +649,12 @@ Para obter uma visão geral detalhada das respectivas operações de processamen
 - **Facebook** (Facebook Ireland Ltd, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlanda), Fan Page do Facebook com base em um acordo de controlador conjunto \- Política de privacidade: [https://www.facebook.com/about/privacy/](https://www.facebook.com/about/privacy/), Opção de desativação: [https://www.facebook.com](https://www.facebook.com) e [http://www.youronlinechoices.com](http://www.youronlinechoices.com)
 - **Instagram** (Instagram Inc., 1601 Willow Road, Menlo Park, CA, 94025, EUA) - Política de Privacidade/Opção de desativação: [http://instagram.com](http://instagram.com)
 - **Pinterest** (Pinterest Europe Ltd, Palmerston House, 2nd Floor, Fenian Street, Dublin 2, Irlanda) - Política de Privacidade: [https://policy.pinterest.com/en/privacy-policy](https://policy.pinterest.com/en/privacy-policy), / Opção de desativação: [https://policy.pinterest.com/en/privacy-policy\#section-your-options](https://policy.pinterest.com/en/privacy-policy#section-your-options)
-- **VK** (VK LLC, 1-N, bld. 12-14, Lit. A, Khersonskaya st., St. Petersburg, Russia, 191024\) - Política de Privacidade: [https://vk.com/privacy/eu](https://vk.com/privacy/eu)
-- **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, EUA) - Política de Privacidade: [https://twitter.com](https://twitter.com), Opção de desativação: [https://twitter.com/personalization](https://twitter.com/personalization)
+- **X** (X Corp., 865 FM 1209, Building 2 Bastrop, TX 78602) - Política de Privacidade: [https://x.com/privacy](https://x.com/privacy), Opção de desativação: [https://x.com/personalization](https://x.com/personalization)
 - **LinkedIn** (LinkedIn Ireland Unlimited Company Wilton Place, Dublin 2, Irlanda) - Política de privacidade: [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Opção de desativação: [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out)
 
 #### Links/botões para mídia social
 
-Os links/botões para redes sociais e plataformas (Facebook e Twitter) usados no Adblock Plus com a finalidade de permitir que você compartilhe a quantidade de elementos que bloqueou com o Adblock Plus geralmente só estabelecem contato entre as redes sociais ou plataformas e você quando você clica nos links/botões. Essa função corresponde à maneira como um link on-line comum funciona. Se você clicar em um link ou botão correspondente, será aberta uma nova página pelos servidores da respectiva rede social ou plataforma. Com isso, o operador da rede social é informado de que nosso site foi acessado a partir do seu endereço IP. Ao mesmo tempo, a rede social pode colocar cookies em seu dispositivo terminal ou lê-los, a menos que você tenha proibido o uso de cookies em seu navegador. Para obter mais informações sobre qualquer processamento de seus dados pessoais pelos operadores das redes sociais ou plataformas, consulte as políticas de privacidade do Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) e do Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)).
+Os links/botões para redes sociais e plataformas (Facebook e X) usados no Adblock Plus com a finalidade de permitir que você compartilhe a quantidade de elementos que bloqueou com o Adblock Plus geralmente só estabelecem contato entre as redes sociais ou plataformas e você quando você clica nos links/botões. Essa função corresponde à maneira como um link on-line comum funciona. Se você clicar em um link ou botão correspondente, será aberta uma nova página pelos servidores da respectiva rede social ou plataforma. Com isso, o operador da rede social é informado de que nosso site foi acessado a partir do seu endereço IP. Ao mesmo tempo, a rede social pode colocar cookies em seu dispositivo terminal ou lê-los, a menos que você tenha proibido o uso de cookies em seu navegador. Para obter mais informações sobre qualquer processamento de seus dados pessoais pelos operadores das redes sociais ou plataformas, consulte as políticas de privacidade do Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) e do X ([https://x.com/privacy](https://x.com/privacy)).
 
 ### Dados do aplicativo
 

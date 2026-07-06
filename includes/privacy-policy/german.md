@@ -150,7 +150,7 @@ Liste der Techniken und Instrumente, die wir für die Datenerhebung verwenden.
     - Über eine von Ihnen gesendete E-Mail
     - Aus Nutzerbewertungen in App Stores
     - Aus Bewertungen im Browser Web Store
-    - Aus sozialen Plattformen wie Facebook und Twitter
+    - Aus sozialen Plattformen wie Facebook und X
 4. Daten, die Sie uns über soziale Medien zur Verfügung stellen
 5. In Verbindung mit sozialen Medien:
 {: .has-horizontal-list .semicolon-separated }
@@ -334,7 +334,7 @@ Wir verwenden Tools von externen Dienstleistern, um Zahlungen zu empfangen und b
 
 Wir nutzen die Dienste von RevenueCat, um In-App-Käufe zu verwalten. Wir stellen RevenueCat nur die minimale Menge an Daten zur Verfügung, die erforderlich ist, um Ihren Kauf in Übereinstimmung mit dem [Datenverarbeitungszusatz](https://www.revenuecat.com/dpa/), den wir mit RevenueCat Inc. abgeschlossen haben, zu verarbeiten. Weitere Einzelheiten finden Sie unter [Datenschutzerklärung von RevenueCat](https://www.revenuecat.com/privacy/).
 
-Wir verwenden auch Tools von externen Dienstleistern für den Benutzersupport. Diese Dienste werden von Zendesk Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) bereitgestellt. Wir haben mit Zendesk Datenverarbeitungsvereinbarung abgeschlossen, die die EU-Standardvertragsklauseln (für Auftragsverarbeiter) enthalten – Beschluss 2021/914 der Kommission vom 4\. Juni 2021\. 
+Wir verwenden auch Tools von externen Dienstleistern für den Benutzersupport. Diese Dienste werden von Zendesk Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) bereitgestellt. Wir haben mit Zendesk Datenverarbeitungsvereinbarung abgeschlossen, die die EU-Standardvertragsklauseln (für Auftragsverarbeiter) enthalten – Beschluss 2021/914 der Kommission vom 4\. Juni 2021\.
 
 Wir könnten Daten auf Servern in Ländern außerhalb der Europäischen Union speichern, jedoch nur, wenn ein angemessenes Schutzniveau gewährleistet ist und durch einen spezifischen Angemessenheitsbeschluss der Europäischen Kommission (gemäß Art. 45 DSGVO) anerkannt wurde. Die Liste der Länder, die die Europäische Kommission als Länder mit angemessenem Schutzniveau anerkannt hat, können Sie [hier](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) einsehen.
 
@@ -416,25 +416,25 @@ Adblock Plus ermöglicht es Ihnen, Problemberichte zu senden, die vorübergehend
 
 Sie können freiwillig:
 
-- Ihre E-Mail-Adresse angeben, damit wir Sie um weitere Informationen bitten oder Sie über den Stand der Dinge informieren können.  
-- Einen optionalen Kommentar zu dem Problem hinzufügen.  
-- Uns den Zugriff auf die folgenden Browsereinstellungen erlauben:  
-  - Ob Cookies für die angegebene Website erlaubt sind  
-  - Ob JavaScript auf der angegebenen Website aktiviert ist  
-  - Ob der private Modus für die angegebene Website verwendet wird  
-- Uns den Zugriff auf eine Liste Ihrer installierten Plugins erlauben, einschließlich:  
-  - Dateiname  
-  - Name des Plugins  
-- Uns den Zugriff auf eine Liste Ihrer aktivierten Erweiterungen erlauben, einschließlich:  
-  - ID  
-  - Name  
+- Ihre E-Mail-Adresse angeben, damit wir Sie um weitere Informationen bitten oder Sie über den Stand der Dinge informieren können.
+- Einen optionalen Kommentar zu dem Problem hinzufügen.
+- Uns den Zugriff auf die folgenden Browsereinstellungen erlauben:
+  - Ob Cookies für die angegebene Website erlaubt sind
+  - Ob JavaScript auf der angegebenen Website aktiviert ist
+  - Ob der private Modus für die angegebene Website verwendet wird
+- Uns den Zugriff auf eine Liste Ihrer installierten Plugins erlauben, einschließlich:
+  - Dateiname
+  - Name des Plugins
+- Uns den Zugriff auf eine Liste Ihrer aktivierten Erweiterungen erlauben, einschließlich:
+  - ID
+  - Name
   - Version
 
 ##### Zugriff auf die Berichte {: #access-reports }
 
 Die verarbeiteten Berichte können nur von einer Person eingesehen werden, die ihre eindeutige ID kennt. Diese IDs werden nur weitergegeben an:
 
-1. Betreuer der im Bericht genannten Filter-Abonnements, also EasyList-Autoren, die nicht bei eyeo beschäftigt sind.  
+1. Betreuer der im Bericht genannten Filter-Abonnements, also EasyList-Autoren, die nicht bei eyeo beschäftigt sind.
 2. Bestimmte eyeo-Filterlisten-Autoren; eyeo verwendet die Berichte ausschließlich zur Fehlerbehebung und zur Überwachung des Supports.
 
 ##### Notfallbenachrichtigung {: #emergency-notification }
@@ -479,13 +479,13 @@ Im Falle eines unerwarteten Absturzes oder Fehlers erfassen unsere mobilen Produ
 
 ###### Bei einem Absturz werden die folgenden Daten gesendet:
 
-- UUID und Absturzspuren, um es einem Benutzer zu ermöglichen, Absturzdaten mit bestimmten Instanzen unserer mobilen Produkte und Adblock Plus für Safari auf macOS zu verbinden  
-- Instanz-IDS  
-- Gerätetyp  
-- Anwendungs-ID  
-- Version der Anwendung und/oder Erweiterung  
-- Freier Speicherplatz  
-- Freier Arbeitsspeicher (RAM)  
+- UUID und Absturzspuren, um es einem Benutzer zu ermöglichen, Absturzdaten mit bestimmten Instanzen unserer mobilen Produkte und Adblock Plus für Safari auf macOS zu verbinden
+- Instanz-IDS
+- Gerätetyp
+- Anwendungs-ID
+- Version der Anwendung und/oder Erweiterung
+- Freier Speicherplatz
+- Freier Arbeitsspeicher (RAM)
 - Ein Zeitstempel, wann ein Absturz aufgetreten ist
 
 Diese Daten werden nur erfasst, wenn die Anwendung abstürzt oder einen Fehler auslöst. Sie können das Senden solcher Berichte über Einstellungen > Datenschutz deaktivieren.
@@ -498,10 +498,10 @@ Absturzberichte werden für 90 Tage aufbewahrt. Firebase bewahrt Instanz-IDs auf
 
 Wir verfolgen es auch, wenn ein Ereignis ausgelöst wird, z. B. wenn Sie auf die Einstellungen zugreifen. In diesem Fall wird dieses Ereignis an unseren Dienstanbieter Firebase von Google, Inc. gesendet. Firebase macht uns dann die folgenden Daten zugänglich:
 
-- Version der Anwendung und/oder Erweiterung  
-- Gerätetyp  
-- Welche Plattformen Sie verwenden (Android, iOS)  
-- Standortdaten basierend auf Ihrer IP-Adresse (Land)  
+- Version der Anwendung und/oder Erweiterung
+- Gerätetyp
+- Welche Plattformen Sie verwenden (Android, iOS)
+- Standortdaten basierend auf Ihrer IP-Adresse (Land)
 - Anonyme Interaktionsereignisse (wie Tastenklicks)
 
 Diese Daten werden ausschließlich dazu verwendet, unsere mobilen Produkte und Adblock Plus für Safari auf macOS sowie das Nutzererlebnis zu verbessern. Sie können das Senden solcher Berichte über den Abschnitt „Anonymisierte Daten teilen“ im Menü „Einstellungen“ deaktivieren.
@@ -526,10 +526,10 @@ Kontoinformationen werden so lange gespeichert, wie Ihr Konto aktiv ist. Zahlung
 
 ##### DNS-basierter Trackerblocking und Adblocking
 
-* DNS-basierte Trackerblocking- und Adblocking-Funktionen stehen nur Nutzern zur Verfügung, die die DNS-Einstellungen ihres Geräts so ändern, dass sie den Adblock-Plus-DNS verwenden.  
-* Wenn Sie sich für die DNS-Blockierung entscheiden und die DNS-Einstellungen Ihres Geräts ändern, um den Adblock-Plus-DNS zu verwenden, werden die DNS-Anfragen Ihres Geräts über die Cloud-DNS-Server von Adblock Plus verarbeitet. Diese Verarbeitung ist notwendig, um DNS-Anfragen abzufangen und zu blockieren, die von Ihrem Gerät an Werbe- und Tracking-Domains gesendet werden, wodurch wir Werbung und/oder Tracker auf Ihrem Gerät blockieren können.  
-* Die Cloud-DNS-Infrastruktur von Adblock Plus wird von Whalebone s.r.o. bereitgestellt, einem in der EU ansässigen Marktführer für DNS-Cybersicherheitslösungen. Wir haben gemäß den Anforderungen der DSGVO eine Datenverarbeitungsvereinbarung mit Whalebone abgeschlossen.  
-* Obwohl Whalebone keine DNS-Anfragedaten speichert, kann Adblock Plus auf DNS-Anfragedaten zugreifen, während diese von Whalebone verarbeitet werden, um aggregierte Analysen zur Fehleranalyse und Produktverbesserung durchzuführen und um Ihnen gerätespezifische Statistiken über die Wirksamkeit der App zur Verfügung zu stellen. DNS-Anfragen im Zusammenhang mit blockierten Domains werden auf Gerätebasis unter Verwendung der Ihrem Gerät zugewiesenen eindeutigen ID aggregiert.  
+* DNS-basierte Trackerblocking- und Adblocking-Funktionen stehen nur Nutzern zur Verfügung, die die DNS-Einstellungen ihres Geräts so ändern, dass sie den Adblock-Plus-DNS verwenden.
+* Wenn Sie sich für die DNS-Blockierung entscheiden und die DNS-Einstellungen Ihres Geräts ändern, um den Adblock-Plus-DNS zu verwenden, werden die DNS-Anfragen Ihres Geräts über die Cloud-DNS-Server von Adblock Plus verarbeitet. Diese Verarbeitung ist notwendig, um DNS-Anfragen abzufangen und zu blockieren, die von Ihrem Gerät an Werbe- und Tracking-Domains gesendet werden, wodurch wir Werbung und/oder Tracker auf Ihrem Gerät blockieren können.
+* Die Cloud-DNS-Infrastruktur von Adblock Plus wird von Whalebone s.r.o. bereitgestellt, einem in der EU ansässigen Marktführer für DNS-Cybersicherheitslösungen. Wir haben gemäß den Anforderungen der DSGVO eine Datenverarbeitungsvereinbarung mit Whalebone abgeschlossen.
+* Obwohl Whalebone keine DNS-Anfragedaten speichert, kann Adblock Plus auf DNS-Anfragedaten zugreifen, während diese von Whalebone verarbeitet werden, um aggregierte Analysen zur Fehleranalyse und Produktverbesserung durchzuführen und um Ihnen gerätespezifische Statistiken über die Wirksamkeit der App zur Verfügung zu stellen. DNS-Anfragen im Zusammenhang mit blockierten Domains werden auf Gerätebasis unter Verwendung der Ihrem Gerät zugewiesenen eindeutigen ID aggregiert.
 * Wenn Sie sich für die DNS-Blockierung entscheiden, wird Ihrem Gerät eine eindeutige, anonyme ID zugewiesen. Diese ID ermöglicht es uns, Konfigurationen für Ihr Gerät vorzunehmen, um sicherzustellen, dass Sie die von Ihnen ausgewählten Filterdienste erhalten. Diese ID wird auch verwendet, um Statistiken über Tracking- und/oder Werbedomains zu erstellen, die auf Ihrem Gerät blockiert werden. Diese Statistiken werden innerhalb der App angezeigt, um Ihnen die Wirksamkeit der App beim Blockieren zu zeigen.
 
 ##### Push-Benachrichtigungen
@@ -544,19 +544,19 @@ Im Falle eines unerwarteten Absturzes oder Fehlers erfasst Adblock Browser Daten
 
 ###### Bei einem Absturz werden die folgenden Daten gesendet: {: #crash-data-sent }
 
-- Bundle-Bezeichner, Bundle-Version und kurze Bundle-Versionszeichenfolge von Adblock Browser.  
-- Gerätetyp, CPU-Architektur und Version des Betriebssystems.  
-- Zeitstempel, zu dem der Absturz aufgetreten ist  
-- Eine generierte UUID, um doppelte Absturzberichte zu verhindern.  
-- Wenn eine Ausnahme ausgelöst wurde, werden der Klartext-Klassenname und der Meldungstext der Ausnahme gesendet.  
+- Bundle-Bezeichner, Bundle-Version und kurze Bundle-Versionszeichenfolge von Adblock Browser.
+- Gerätetyp, CPU-Architektur und Version des Betriebssystems.
+- Zeitstempel, zu dem der Absturz aufgetreten ist
+- Eine generierte UUID, um doppelte Absturzberichte zu verhindern.
+- Wenn eine Ausnahme ausgelöst wurde, werden der Klartext-Klassenname und der Meldungstext der Ausnahme gesendet.
 - Low-Level-Absturzdaten wie Befehlszeiger, Methoden- oder Funktionsnamen, Signaldaten, Zeigerregister und Informationen über die geladenen Binärbilder
 
 ###### Bei einem Fehler werden die folgenden Daten gesendet: {: #error-data-sent }
 
-- Bundle-Bezeichner, Bundle-Version und kurze Bundle-Versionszeichenfolge von Adblock Browser.  
-- Gerätetyp, CPU-Architektur und Version des Betriebssystems.  
-- Zeitstempel, zu dem der Fehler aufgetreten ist.  
-- Eine generierte UUID zur Unterscheidung von Fehlermeldungen.  
+- Bundle-Bezeichner, Bundle-Version und kurze Bundle-Versionszeichenfolge von Adblock Browser.
+- Gerätetyp, CPU-Architektur und Version des Betriebssystems.
+- Zeitstempel, zu dem der Fehler aufgetreten ist.
+- Eine generierte UUID zur Unterscheidung von Fehlermeldungen.
 - Eine Zeichenkette/ein Funktionsname, der den Fehler identifiziert.
 
 Die Daten werden nur erfasst, wenn die Anwendung abstürzt oder einen Fehler auslöst. Außerdem bittet Adblock Browser ausdrücklich um Erlaubnis, die erfassten Informationen nach dem Absturz oder Fehler zu senden.
@@ -633,11 +633,11 @@ Wenn Sie einen Partnervertrag abschließen, finden Sie hier weitere Informatione
 
 Für den Benutzersupport verwenden wir eine Software zur Verwaltung von Kundenbeziehungen von Zendesk, Inc. (weitere Informationen finden Sie [hier](#international-data-transfers)), die die Integration von Benutzersupportkanälen wie Social Media und E-Mail-Antworten ermöglicht. Wenn Sie uns per E-Mail und/oder über unsere Social-Media-Kanäle um Unterstützung bitten, erheben wir die folgenden Daten, um Ihnen bei der Lösung Ihres Anliegens angemessen helfen zu können:
 
-- Benutzername (Kontakt über soziale Medien) und / oder E-Mail  
-- Geräteinformationen  
-- Version von Adblock Plus und andere anwendbare technische Spezifikationen  
-- URLs, bei denen der Benutzer Probleme hat  
-- Adblock-Plus-Probleme  
+- Benutzername (Kontakt über soziale Medien) und / oder E-Mail
+- Geräteinformationen
+- Version von Adblock Plus und andere anwendbare technische Spezifikationen
+- URLs, bei denen der Benutzer Probleme hat
+- Adblock-Plus-Probleme
 - Adress- und Transaktions-ID-Nummern für Zahlungserstattungen (freiwillig)
 
 Alle Supportdaten der Benutzer werden ein (1) Jahr nach Abschluss des jeweiligen Supportfalls gelöscht.
@@ -646,7 +646,7 @@ Alle Supportdaten der Benutzer werden ein (1) Jahr nach Abschluss des jeweiligen
 
 #### Unsere Präsenz in den sozialen Medien
 
-Um mit Ihnen zu kommunizieren und Sie über unsere Aktivitäten und Angebote in sozialen Netzwerken zu informieren, sind wir auf Facebook, Instagram, Pinterest, VK, Twitter und LinkedIn aktiv. In Bezug auf Facebook sind sowohl Facebook als auch eyeo gemeinsam für die Verarbeitung Ihrer personenbezogenen Daten verantwortlich („gemeinsame Verantwortliche“, DSGVO Art. 26), auch wenn diese ausschließlich von dem jeweiligen sozialen Netzwerk gespeichert werden. Wir informieren Sie daher wie folgt über die Datenverarbeitungsvorgänge im Zusammenhang mit unserer Präsenz im jeweiligen sozialen Netzwerk.
+Um mit Ihnen zu kommunizieren und Sie über unsere Aktivitäten und Angebote in sozialen Netzwerken zu informieren, sind wir auf Facebook, Instagram, Pinterest, X und LinkedIn aktiv. In Bezug auf Facebook sind sowohl Facebook als auch eyeo gemeinsam für die Verarbeitung Ihrer personenbezogenen Daten verantwortlich („gemeinsame Verantwortliche“, DSGVO Art. 26), auch wenn diese ausschließlich von dem jeweiligen sozialen Netzwerk gespeichert werden. Wir informieren Sie daher wie folgt über die Datenverarbeitungsvorgänge im Zusammenhang mit unserer Präsenz im jeweiligen sozialen Netzwerk.
 
 Wenn Sie unserem jeweiligen Online-Auftritt in einem oder mehreren der von uns genutzten sozialen Netzwerke folgen, beachten Sie bitte, dass Ihre Daten möglicherweise außerhalb der Europäischen Union oder des Europäischen Wirtschaftsraums verarbeitet werden. Alle Netzwerke, die wir nutzen, haben sich jedoch zur Einhaltung der EU-Datenschutzstandards verpflichtet.
 
@@ -654,16 +654,15 @@ Auch die von uns genutzten sozialen Netzwerke verarbeiten Ihre Daten regelmäßi
 
 Für einen detaillierten Überblick über die jeweiligen Verarbeitungsvorgänge und Opt-out-Möglichkeiten besuchen Sie bitte die Website des unten aufgeführten sozialen Netzwerks. Für die Geltendmachung Ihrer Rechte und Auskunftsersuchen verweisen wir Sie ebenfalls an die jeweiligen sozialen Netzwerke, wo Sie Ihre Rechte am effektivsten ausüben können. Denn die sozialen Netzwerke haben Zugriff auf Ihre Daten und können daher direkt entsprechende Maßnahmen ergreifen und Ihnen die jeweiligen Informationen zur Verfügung stellen:
 
-* **Facebook** (Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland), Facebook-Fanseite auf der Grundlage einer Vereinbarung über gemeinsame Verantwortlichkeit – Datenschutzerklärung: [https://www.facebook.com/about/privacy/](https://www.facebook.com/about/privacy/), Opt-out: [https://www.facebook.com](https://www.facebook.com) und [http://www.youronlinechoices.com](http://www.youronlinechoices.com)  
-* **Instagram** (Instagram Inc., 1601 Willow Road, Menlo Park, CA 94025, USA) – Datenschutzerklärung / Opt-out: [http://instagram.com](http://instagram.com)  
-* **Pinterest** (Pinterest Europe Ltd., Palmerston House, 2nd Floor, Fenian Street, Dublin 2, Irland) – Datenschutzerklärung: [https://policy.pinterest.com/de/privacy-policy](https://policy.pinterest.com/en/privacy-policy), Opt-out: [https://policy.pinterest.com/de/privacy-policy\#section-your-options](https://policy.pinterest.com/en/privacy-policy%23section-your-options)  
-* **VK** (VK LLC, 1-N, bld. 12-14, Lit. A, Khersonskaya St., St. Petersburg, Russland, 191024) – Datenschutzerklärung: [https://vk.com/privacy/eu](https://vk.com/privacy/eu)  
-* **Twitter** (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA) – Datenschutzerklärung: [https://twitter.com](https://twitter.com), Opt-out: [https://twitter.com/personalization](https://twitter.com/personalization)  
+* **Facebook** (Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland), Facebook-Fanseite auf der Grundlage einer Vereinbarung über gemeinsame Verantwortlichkeit – Datenschutzerklärung: [https://www.facebook.com/about/privacy/](https://www.facebook.com/about/privacy/), Opt-out: [https://www.facebook.com](https://www.facebook.com) und [http://www.youronlinechoices.com](http://www.youronlinechoices.com)
+* **Instagram** (Instagram Inc., 1601 Willow Road, Menlo Park, CA 94025, USA) – Datenschutzerklärung / Opt-out: [http://instagram.com](http://instagram.com)
+* **Pinterest** (Pinterest Europe Ltd., Palmerston House, 2nd Floor, Fenian Street, Dublin 2, Irland) – Datenschutzerklärung: [https://policy.pinterest.com/de/privacy-policy](https://policy.pinterest.com/en/privacy-policy), Opt-out: [https://policy.pinterest.com/de/privacy-policy\#section-your-options](https://policy.pinterest.com/en/privacy-policy%23section-your-options)
+* **X** (X Corp., 865 FM 1209, Building 2 Bastrop, TX 78602) – Datenschutzerklärung: [https://x.com/privacy](https://x.com/privacy), Opt-out: [https://x.com/personalization](https://x.com/personalization)
 * **LinkedIn** (LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Irland) – Datenschutzerklärung: [https://www.linkedin.com/legal/privacy-policy](https://www.linkedin.com/legal/privacy-policy), Opt-out: [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out)
 
 #### Links/Schaltflächen zu sozialen Medien
 
-Die Links/Schaltflächen zu sozialen Netzwerken und Plattformen (Facebook und Twitter), die innerhalb von Adblock Plus verwendet werden, um Ihnen die Möglichkeit zu geben, die Anzahl der von Ihnen mit Adblock Plus blockierten Elemente zu teilen, stellen im Allgemeinen nur dann einen Kontakt zwischen den sozialen Netzwerken oder Plattformen und Ihnen her, wenn Sie auf die Links/Schaltflächen klicken. Diese Funktion entspricht der Arbeitsweise eines normalen Online-Links. Wenn Sie auf einen entsprechenden Link/eine entsprechende Schaltfläche klicken, öffnet sich über die Server des jeweiligen sozialen Netzwerks oder der jeweiligen Plattform eine neue Seite. Hierdurch erhält der Betreiber des sozialen Netzwerks die Information, dass über Ihre IP-Adresse auf unsere Website zugegriffen wurde. Gleichzeitig kann das soziale Netzwerk Cookies auf Ihrem Endgerät ablegen oder auslesen, es sei denn, Sie haben die Verwendung von Cookies in Ihrem Browser untersagt. Weitere Informationen zur Verarbeitung Ihrer personenbezogenen Daten durch die Betreiber der sozialen Netzwerke oder Plattformen finden Sie in den Datenschutzerklärungen von Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) und Twitter ([https://twitter.com/privacy](https://twitter.com/privacy)).
+Die Links/Schaltflächen zu sozialen Netzwerken und Plattformen (Facebook und X), die innerhalb von Adblock Plus verwendet werden, um Ihnen die Möglichkeit zu geben, die Anzahl der von Ihnen mit Adblock Plus blockierten Elemente zu teilen, stellen im Allgemeinen nur dann einen Kontakt zwischen den sozialen Netzwerken oder Plattformen und Ihnen her, wenn Sie auf die Links/Schaltflächen klicken. Diese Funktion entspricht der Arbeitsweise eines normalen Online-Links. Wenn Sie auf einen entsprechenden Link/eine entsprechende Schaltfläche klicken, öffnet sich über die Server des jeweiligen sozialen Netzwerks oder der jeweiligen Plattform eine neue Seite. Hierdurch erhält der Betreiber des sozialen Netzwerks die Information, dass über Ihre IP-Adresse auf unsere Website zugegriffen wurde. Gleichzeitig kann das soziale Netzwerk Cookies auf Ihrem Endgerät ablegen oder auslesen, es sei denn, Sie haben die Verwendung von Cookies in Ihrem Browser untersagt. Weitere Informationen zur Verarbeitung Ihrer personenbezogenen Daten durch die Betreiber der sozialen Netzwerke oder Plattformen finden Sie in den Datenschutzerklärungen von Facebook ([https://www.facebook.com/privacy/explanation](https://www.facebook.com/privacy/explanation)) und X ([https://x.com/privacy](https://x.com/privacy)).
 
 ### Anwendungsdaten {: #application-data}
 
@@ -681,26 +680,26 @@ Dieser Abschnitt gilt nur für Einwohner Kaliforniens. Er erklärt, wie wir pers
 
 Um Ihnen unsere Produkte und Dienstleistungen („Produkte“) anbieten zu können, müssen wir bestimmte personenbezogene Daten über Sie verarbeiten. Wir verkaufen keine Ihrer personenbezogenen Daten und werden dies auch nie tun. Eine ausführliche Erklärung über die Arten von Daten, die wir erfassen und wie wir sie verwenden, finden Sie in den Informationen [oben](#data-processed). Hier finden Sie eine Zusammenfassung der CCPA-Kategorien personenbezogener Daten, die wir in den letzten 12 Monaten über Sie erfasst haben:
 
-* Bezeichner;  
-* Internet- oder andere elektronische Netzaktivitätsdaten, einschließlich Informationen über Ihren Browser, Ihre Erweiterung und Ihr Betriebssystem;  
-* Geolokalisierungsdaten; und  
+* Bezeichner;
+* Internet- oder andere elektronische Netzaktivitätsdaten, einschließlich Informationen über Ihren Browser, Ihre Erweiterung und Ihr Betriebssystem;
+* Geolokalisierungsdaten; und
 * Schlussfolgerungen, die aus den ermittelten Informationen gezogen werden und Ihre Präferenzen und Einstellungen widerspiegeln.
 
 Wir können diese Kategorien personenbezogener Daten für die folgenden Geschäftszwecke erfasst haben:
 
-* Um die Produkte, die wir Ihnen anbieten, zu personalisieren;  
-* Um unsere Produkte zu bewerten und zu verbessern;  
-* Um begrenzte analytische Dienste bereitzustellen;  
-* Um mit Ihnen zu kommunizieren;  
-* Um die Sicherheit und Funktionalität unserer Produkte zu gewährleisten; und  
+* Um die Produkte, die wir Ihnen anbieten, zu personalisieren;
+* Um unsere Produkte zu bewerten und zu verbessern;
+* Um begrenzte analytische Dienste bereitzustellen;
+* Um mit Ihnen zu kommunizieren;
+* Um die Sicherheit und Funktionalität unserer Produkte zu gewährleisten; und
 * Um andere geschäftliche Zwecke zu erfüllen.
 
 #### Wie wir personenbezogene Daten weitergeben
 
 Vorbehaltlich der Einschränkungen in dieser [Datenschutzerklärung](#privacy-policy-long) geben wir Ihre personenbezogenen Daten an externe Anbieter („Dienstleister“) weiter, denen vertraglich untersagt ist, personenbezogene Daten für andere als die im Vertrag beschriebenen Geschäftszwecke zu speichern, zu verwenden oder offenzulegen. Zu diesen Dienstleistern gehören:
 
-* Dienstleister, die Ihre Nutzung unserer Website analysieren und die dazugehörigen Daten prüfen; und  
-* Dienstleister, die unsere mobilen Produkte unterstützen; und  
+* Dienstleister, die Ihre Nutzung unserer Website analysieren und die dazugehörigen Daten prüfen; und
+* Dienstleister, die unsere mobilen Produkte unterstützen; und
 * Dienstleister, die den Benutzersupport unterstützen.
 
 Außerdem können wir Ihre personenbezogenen Daten auch an Strafverfolgungsbehörden oder andere Dritte weitergeben, wenn dies zur Erfüllung gesetzlicher Anforderungen erforderlich ist.
@@ -709,18 +708,18 @@ Außerdem können wir Ihre personenbezogenen Daten auch an Strafverfolgungsbehö
 
 Wir erhalten personenbezogene Daten von Ihnen, unseren Websites, Ihren Geräten und unseren externen Dienstleistern. Zu den Kategorien von Quellen, aus denen wir personenbezogene Daten erhoben oder erhalten haben, gehören unter anderem:
 
-* **Sie**: Wir erheben Informationen, die Sie uns freiwillig zur Verfügung stellen, wie etwa Ihre E-Mail-Adresse, wenn Sie sich für ein Abonnement anmelden, sowie Informationen, die Sie uns im Rahmen von Problemberichten, Benutzersupport-Anfragen, Benutzerbewertungen und Bewerbungen übermitteln.  
-* **Ihr(e) Gerät(e):** Wir erhalten Daten von und über die Computer, Telefone und Browser, die Sie in Verbindung mit unseren Produkten verwenden.  
-* **Unsere Websites**: Wir erfassen Daten darüber, wie Sie mit unseren Websites interagieren und diese nutzen.  
-* **Ihre Social-Media-Profile**: Wir erfassen Daten über Ihre Social-Media-Abonnements, wenn Sie sich dafür entscheiden, auf diese Weise zu Inhalten beizutragen.  
+* **Sie**: Wir erheben Informationen, die Sie uns freiwillig zur Verfügung stellen, wie etwa Ihre E-Mail-Adresse, wenn Sie sich für ein Abonnement anmelden, sowie Informationen, die Sie uns im Rahmen von Problemberichten, Benutzersupport-Anfragen, Benutzerbewertungen und Bewerbungen übermitteln.
+* **Ihr(e) Gerät(e):** Wir erhalten Daten von und über die Computer, Telefone und Browser, die Sie in Verbindung mit unseren Produkten verwenden.
+* **Unsere Websites**: Wir erfassen Daten darüber, wie Sie mit unseren Websites interagieren und diese nutzen.
+* **Ihre Social-Media-Profile**: Wir erfassen Daten über Ihre Social-Media-Abonnements, wenn Sie sich dafür entscheiden, auf diese Weise zu Inhalten beizutragen.
 * **Dienstleister**: Wir beauftragen externe Anbieter damit, bestimmte geschäftliche Aufgaben für uns zu erledigen, wie Analysen zu erstellen, mobilen Produktsupport und Benutzersupport zu erbringen sowie unsere Produkte zu hosten, und übermitteln ihnen dafür die erforderlichen Daten.
 
 #### Was sind Ihre Rechte nach dem CCPA?
 
 Der CCPA gewährt Ihnen die folgenden Rechte:
 
-* **Recht auf Auskunft**: Sie haben das Recht, von uns zu verlangen, dass wir Ihnen die Kategorien der von uns erhobenen personenbezogenen Daten, die Kategorien der Quellen, aus denen wir diese Daten erhoben haben, den geschäftlichen Zweck der Datenerhebung, die Kategorien der Dritten, an die wir personenbezogene Daten weitergegeben haben, sowie die konkreten personenbezogenen Daten, die wir über Sie erhoben haben, offenlegen;  
-* **Recht auf Löschung**: Sie haben das Recht zu verlangen, dass wir alle personenbezogenen Daten löschen, die wir über Sie erhoben haben; und  
+* **Recht auf Auskunft**: Sie haben das Recht, von uns zu verlangen, dass wir Ihnen die Kategorien der von uns erhobenen personenbezogenen Daten, die Kategorien der Quellen, aus denen wir diese Daten erhoben haben, den geschäftlichen Zweck der Datenerhebung, die Kategorien der Dritten, an die wir personenbezogene Daten weitergegeben haben, sowie die konkreten personenbezogenen Daten, die wir über Sie erhoben haben, offenlegen;
+* **Recht auf Löschung**: Sie haben das Recht zu verlangen, dass wir alle personenbezogenen Daten löschen, die wir über Sie erhoben haben; und
 * **Recht auf Nicht-Diskriminierung**: Wir werden Sie nicht diskriminieren, wenn Sie eines dieser Rechte ausüben.
 
 Bitte beachten Sie, dass wir verpflichtet sind, Ihre Identität zu überprüfen, wenn Sie Ihr **Recht auf Auskunft** und/oder Ihr **Recht auf Löschung** ausüben. Zu diesem Zweck fordern wir personenbezogene Daten von Ihnen an, um sie mit den in unseren Unterlagen gespeicherten Daten abzugleichen. In einigen Fällen können wir außerdem zusätzliche Unterlagen anfordern, um Ihre Identität zu bestätigen.
