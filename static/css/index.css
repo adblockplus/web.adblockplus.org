@@ -514,6 +514,85 @@ html[dir="rtl"] #block-youtube-ads ul li
 }
 
 /******************************************************************************
+ * .abom-banner
+ *****************************************************************************/
+
+.abom-banner {
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+}
+
+/* On phone widths, drop the paragraph so the banner stays short enough that
+   it doesn't push the install button below the fold. The heading + button
+   still make sense as a standalone pair without the extra context. */
+@media (max-width: 767px) {
+  .abom-banner .block-cookie-banner-middle-body__text {
+    display: none;
+  }
+}
+
+/* On short mobile viewports, drop the banner entirely so it doesn't push
+   the install button below the fold. Gated on (hover: none) and
+   (pointer: coarse) so this only matches touchscreen devices, not a
+   resized desktop browser window or devtools open at a short height. */
+@media (max-height: 750px) and (hover: none) and (pointer: coarse) {
+  .abom-banner {
+    display: none;
+  }
+}
+
+.abom-banner .block-cookie-banner-middle {
+  flex-grow: 1;
+  margin-left: 0;
+  text-align: center;
+}
+
+.abom-banner .block-cookie-banner__button {
+  background-color: #0679b4;
+}
+
+.abom-banner .block-cookie-banner__button:hover,
+.abom-banner .block-cookie-banner__button:active,
+.abom-banner .block-cookie-banner__button:focus {
+  background-color: #055d8f;
+}
+
+.abom-banner .block-cookie-banner-middle-body__text {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.abom-banner .block-cookie-banner-middle__button {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto 0;
+}
+
+@media (min-width: 992px) {
+  .abom-banner .block-cookie-banner-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    text-align: start;
+  }
+
+  .abom-banner .block-cookie-banner-middle-body__text {
+    max-width: 600px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .abom-banner .block-cookie-banner-middle__button {
+    display: block;
+    flex-shrink: 0;
+    margin: 0;
+    margin-inline-end: 2.25rem;
+  }
+}
+
+/******************************************************************************
  * .block-cookie-banner
  *****************************************************************************/
 
@@ -598,22 +677,55 @@ html[dir="rtl"] #block-youtube-ads ul li
 }
 
 .block-cookie-banner-middle-heading {
+  display: inline-flex;
+  align-items: baseline;
+  max-width: 100%;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  text-align: start;
+}
+
+.block-cookie-banner-middle-heading__text {
+  text-align: center;
+  text-wrap: balance;
 }
 
 .block-cookie-banner-middle-heading__badge {
+  flex-shrink: 0;
   background-color: #FFCA00;
   padding: 0.1rem 0.25rem;
   border-radius: 8px;
   font-size: 90%;
-  margin-inline-end: 0.3rem;
+  margin-inline-end: 0.6rem;
+  text-transform: uppercase;
+}
+
+/* Below this width the heading typically wraps to two lines and the badge
+   would force it off-center. Hide the badge so the heading can center to
+   match the paragraph below. Also drop the flex layout: with no badge to
+   lay out alongside, shrink-to-fit sizing on the heading box can end up
+   hugging the text so tightly that there's no room left for text-align to
+   center it, so use a plain full-width block instead. */
+@media (max-width: 480px) {
+  .block-cookie-banner-middle-heading {
+    display: block;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .block-cookie-banner-middle-heading__badge {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) {
+  .block-cookie-banner-middle-heading__text {
+    text-align: start;
+  }
+
   .block-cookie-banner-middle-heading__badge {
     padding: 0.1rem 0.5rem;
-  } 
+  }
 }
 
 .block-cookie-banner-middle__button {

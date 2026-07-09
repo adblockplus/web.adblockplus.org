@@ -537,7 +537,7 @@ a.icon-button:visited
   border-bottom: 1px solid #d2d2d2;
 }
 
-@media(max-width: 991px)
+@media(max-width: 1099px)
 {
   #navbar
   {
@@ -551,7 +551,7 @@ a.icon-button:visited
   list-style-type: none;
 }
 
-@media(min-width: 991px)
+@media(min-width: 1100px)
 {
   #navbar .active a
   {
@@ -662,7 +662,7 @@ a.icon-button:visited
 }
 
 /* hide on desktop */
-@media(min-width: 992px)
+@media(min-width: 1100px)
 {
   #navbar-menu-toggle
   {
@@ -794,7 +794,7 @@ a.icon-button:visited
 /* #navbar #navbar-menu (desktop)
  ******************************************************************************/
 
-@media(min-width: 992px)
+@media(min-width: 1100px)
 {
   #navbar-menu
   {
@@ -857,7 +857,7 @@ a.icon-button:visited
 /* #navbar #navbar-menu (mobile)
  ******************************************************************************/
 
-@media(max-width: 991px)
+@media(max-width: 1099px)
 {
   #navbar-menu
   {

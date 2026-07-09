@@ -10,10 +10,9 @@ test('Homepage displays as expected', { tag: ['@visual_regression'] }, async ({ 
   await expect(page).toHaveScreenshot(`${snapshotName}.png`, { fullPage: true, maxDiffPixels: 408 });
 });
 
-test('Cookie Banner link', async ({ page, browserName }) => {
-  test.skip(browserName === 'webkit', 'Cookie Banner does not appear on Safari');
-  await page.getByRole('link', { name: 'Learn More', exact: true }).click();
-  expect(page.url()).toContain('/block-cookie-banners?s=hpban');
+test('AI Block-o-Meter link', async ({ page, browserName }) => {
+  await page.locator('#abom-banner-cta').click();
+  expect(page.url()).toContain('/ai-block-o-meter?s=hpban');
 });
 
 test('Extension download link', { tag: ['@all_browsers'] }, async ({ page, browserName, channel }) => {
