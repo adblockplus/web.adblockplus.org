@@ -333,7 +333,7 @@ We use external service provider tools to receive payments and analyze fraudulen
 
 We use the services of RevenueCat to manage in-app purchases. We only provide RevenueCat with the minimum amount of data required to process your purchase in accordance with the [Data Processing Addendum](https://www.revenuecat.com/dpa/) we entered into with RevenueCat, Inc. For more details, please see [RevenueCat’s privacy policy](https://www.revenuecat.com/privacy/).
 
-We also use external service provider tools for user support. These services are provided by Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk). We have entered into data processing agreements with Zendesk including the EU Standard Contractual Clauses (processors) – Commission Decision 2021/914 of 4 June 2021.
+We also use external service provider tools for user support. These services are provided by Atlassian Pty Ltd, 350 Bush St, Floor 13 San Francisco, CA 94104 United States. We have entered into data processing agreements with Atlassian including the EU Standard Contractual Clauses (processors) – Commission Decision 2021/914 of 4 June 2021.
 
 We may store data on servers in countries outside the European Union, but only provided that an adequate level of protection is guaranteed and recognized by a specific adequacy decision of the European Commission (pursuant to Art. 45 GDPR). You can access the list of countries that the European Commission has recognized as providing adequate protection [here](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
 
@@ -625,7 +625,7 @@ In case you are entering into a partner agreement, please find more information 
 
 ### Collection and processing for user support {: #collection-and-processing-for-user-support }
 
-For user support, we use a customer relation management software from Zendesk, Inc. (find more information [here](#international-data-transfers)) that allows for the integration of user support channels, like social media and email responses. In the event that you contact us for support via email and / or our social media channels, we collect the following data in order to help you to solve your issue sufficiently:
+For user support, we use a customer relation management software from Jira, provided by Atlassian (find Atlassian Privacy Policy [here](https://www.atlassian.com/legal/privacy-policy#privacy-policy-overview)) that allows for the integration of user support channels, like social media and email responses. In the event that you contact us for support via email and / or our social media channels, we collect the following data in order to help you to solve your issue sufficiently:
 
 - User name (contact via social media) and / or email
 - Device information

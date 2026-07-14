@@ -334,7 +334,7 @@ Usamos ferramentas de provedores de serviços externos para receber pagamentos e
 
 Utilizamos os serviços do RevenueCat para gerenciar compras no aplicativo. Fornecemos ao RevenueCat apenas a quantidade mínima de dados necessária para processar sua compra de acordo com o [Adicional de Processamento de Dados](https://www.revenuecat.com/dpa/) que celebramos com o RevenueCat, Inc. Para obter mais detalhes, consulte [A política de privacidade da RevenueCat](https://www.revenuecat.com/privacy/).
 
-Também utilizamos ferramentas de provedores de serviços externos para suporte ao usuário. Esses serviços são fornecidos pela Zendesk, Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk). Firmamos acordos de processamento de dados com a Zendesk, incluindo as Cláusulas Contratuais Padrão da UE (processadores) - Decisão da Comissão 2021/914 de 4 de junho de 2021.
+Utilizamos também ferramentas de prestadores de serviços externos para o suporte ao utilizador. Estes serviços são fornecidos pela Atlassian Pty Ltd, 350 Bush St, Floor 13, San Francisco, CA 94104, Estados Unidos. Celebrámos acordos de processamento de dados com a Atlassian, incluindo as Cláusulas Contratuais-Tipo da UE (subcontratantes) – Decisão de Execução (UE) 2021/914 da Comissão, de 4 de junho de 2021.
 
 Podemos armazenar dados em servidores de países fora da União Europeia, mas somente se um nível adequado de proteção for garantido e reconhecido por uma decisão específica de adequação da Comissão Europeia (de acordo com o Art. 45 do GDPR). Você pode acessar a lista de países que a Comissão Europeia reconheceu como fornecendo proteção adequada [aqui](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
 
@@ -623,7 +623,7 @@ Caso esteja firmando um contrato de parceria, encontre mais informações sobre 
 
 ### Coleta e processamento para suporte ao usuário
 
-Para o suporte ao usuário, usamos um software de gerenciamento de relações com o cliente da Zendesk, Inc. (encontre mais informações [aqui](#international-data-transfers)) que permite a integração de canais de suporte ao usuário, como mídias sociais e respostas por e-mail. Caso você entre em contato conosco para obter suporte por e-mail e/ou por nossos canais de mídia social, coletamos os seguintes dados para ajudá-lo a resolver seu problema de maneira suficiente:
+Para o suporte ao utilizador, utilizamos um software de gestão de relacionamento com o cliente da Jira, fornecido pela Atlassian (consulte a Política de Privacidade da Atlassian [aqui](https://www.atlassian.com/legal/privacy-policy#privacy-policy-overview)), que permite a integração de canais de suporte ao utilizador, como redes sociais e respostas por e-mail. Caso nos contacte para suporte por e-mail e/ou através dos nossos canais de redes sociais, recolhemos os seguintes dados para o ajudar a resolver a sua questão de forma satisfatória:
 
 - Nome do usuário (contato via mídia social) e/ou e-mail
 - Informações sobre o dispositivo

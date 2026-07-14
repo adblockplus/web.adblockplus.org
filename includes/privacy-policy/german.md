@@ -334,7 +334,7 @@ Wir verwenden Tools von externen Dienstleistern, um Zahlungen zu empfangen und b
 
 Wir nutzen die Dienste von RevenueCat, um In-App-Käufe zu verwalten. Wir stellen RevenueCat nur die minimale Menge an Daten zur Verfügung, die erforderlich ist, um Ihren Kauf in Übereinstimmung mit dem [Datenverarbeitungszusatz](https://www.revenuecat.com/dpa/), den wir mit RevenueCat Inc. abgeschlossen haben, zu verarbeiten. Weitere Einzelheiten finden Sie unter [Datenschutzerklärung von RevenueCat](https://www.revenuecat.com/privacy/).
 
-Wir verwenden auch Tools von externen Dienstleistern für den Benutzersupport. Diese Dienste werden von Zendesk Inc., 1019 Market Street, San Francisco, CA 94103 (Zendesk) bereitgestellt. Wir haben mit Zendesk Datenverarbeitungsvereinbarung abgeschlossen, die die EU-Standardvertragsklauseln (für Auftragsverarbeiter) enthalten – Beschluss 2021/914 der Kommission vom 4\. Juni 2021\.
+Wir verwenden außerdem externe Dienstleister-Tools für den Nutzer-Support. Diese Dienste werden von Atlassian Pty Ltd, 350 Bush St, Floor 13, San Francisco, CA 94104, USA, bereitgestellt. Wir haben mit Atlassian Datenverarbeitungsvereinbarungen abgeschlossen, einschließlich der EU-Standardvertragsklauseln (Auftragsverarbeiter) – Durchführungsbeschluss (EU) 2021/914 der Kommission vom 4. Juni 2021.
 
 Wir könnten Daten auf Servern in Ländern außerhalb der Europäischen Union speichern, jedoch nur, wenn ein angemessenes Schutzniveau gewährleistet ist und durch einen spezifischen Angemessenheitsbeschluss der Europäischen Kommission (gemäß Art. 45 DSGVO) anerkannt wurde. Die Liste der Länder, die die Europäische Kommission als Länder mit angemessenem Schutzniveau anerkannt hat, können Sie [hier](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) einsehen.
 
@@ -631,7 +631,7 @@ Wenn Sie einen Partnervertrag abschließen, finden Sie hier weitere Informatione
 
 ### Erhebung und Verarbeitung für den Benutzersupport {: #collection-and-processing-for-user-support }
 
-Für den Benutzersupport verwenden wir eine Software zur Verwaltung von Kundenbeziehungen von Zendesk, Inc. (weitere Informationen finden Sie [hier](#international-data-transfers)), die die Integration von Benutzersupportkanälen wie Social Media und E-Mail-Antworten ermöglicht. Wenn Sie uns per E-Mail und/oder über unsere Social-Media-Kanäle um Unterstützung bitten, erheben wir die folgenden Daten, um Ihnen bei der Lösung Ihres Anliegens angemessen helfen zu können:
+Für den Nutzer-Support verwenden wir eine Customer-Relationship-Management-Software von Jira, bereitgestellt von Atlassian (die Datenschutzerklärung von Atlassian finden Sie [hier](https://www.atlassian.com/legal/privacy-policy#privacy-policy-overview)), die die Integration von Support-Kanälen wie sozialen Medien und E-Mail-Antworten ermöglicht. Falls Sie uns per E-Mail und/oder über unsere Social-Media-Kanäle für Support kontaktieren, erfassen wir die folgenden Daten, um Ihnen bei der zufriedenstellenden Lösung Ihres Anliegens zu helfen:
 
 - Benutzername (Kontakt über soziale Medien) und / oder E-Mail
 - Geräteinformationen

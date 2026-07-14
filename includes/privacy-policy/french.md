@@ -335,7 +335,7 @@ Nous utilisons des outils de prestataires de services externes pour recevoir les
 
 Nous utilisons les services de RevenueCat pour gérer les achats intégrés. Nous ne fournissons à RevenueCat que la quantité minimale de données nécessaire au traitement de votre achat conformément à l' [Avenant relatif au traitement des données](https://www.revenuecat.com/dpa/) que nous avons conclu avec RevenueCat, Inc. Pour plus de détails, veuillez consulter [la politique de confidentialité de RevenueCat](https://www.revenuecat.com/privacy/).
 
-Nous utilisons également des outils de prestataires de services externes pour l'assistance aux utilisateurs. Ces services sont fournis par Zendesk, Inc, 1019 Market Street, San Francisco, CA 94103 (Zendesk). Nous avons conclu des accords de traitement des données avec Zendesk, incluant des clauses contractuelles types de l'UE (sous-traitants) - Décision de la Commission 2021/914 du 4 juin 2021.
+Nous utilisons également des outils de prestataires de services externes pour le support utilisateur. Ces services sont fournis par Atlassian Pty Ltd, 350 Bush St, Floor 13, San Francisco, CA 94104, États-Unis. Nous avons conclu des accords de traitement des données avec Atlassian, incluant les clauses contractuelles types de l'UE (sous-traitants) – Décision d'exécution (UE) 2021/914 de la Commission du 4 juin 2021.
 
 Nous pouvons stocker des données sur des serveurs situés dans des pays situés en dehors de l'Union européenne, mais uniquement à condition qu'un niveau de protection adéquat soit garanti et reconnu par une décision d'adéquation spécifique de la Commission européenne (conformément à l'article 45 du RGPD). Vous pouvez consulter la liste des pays reconnus par la Commission européenne comme assurant un niveau de protection adéquat [ici](https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en).
 
@@ -635,7 +635,7 @@ Si vous concluez un accord de partenariat, vous trouverez davantage d'informatio
 
 ### Collecte et traitement pour l'assistance aux utilisateurs {: #collection-and-processing-for-user-support }
 
-Pour l'assistance aux utilisateurs, nous utilisons un logiciel de gestion de la relation client fourni par Zendesk, Inc. (plus d'informations [ici](#international-data-transfers)), qui permet d'intégrer différents canaux d'assistance, tels que les réseaux sociaux et les réponses par courrier électronique. Si vous nous contactez pour obtenir de l'assistance par courrier électronique et/ou par l'intermédiaire de nos réseaux sociaux, nous collectons les données suivantes afin de vous aider à résoudre votre problème de manière adéquate :
+Pour le support utilisateur, nous utilisons un logiciel de gestion de la relation client de Jira, fourni par Atlassian (consultez la politique de confidentialité d'Atlassian [ici](https://www.atlassian.com/legal/privacy-policy#privacy-policy-overview)) qui permet l'intégration de canaux de support utilisateur, comme les réseaux sociaux et les réponses par e-mail. Si vous nous contactez pour obtenir de l'aide par e-mail et/ou via nos réseaux sociaux, nous collectons les données suivantes afin de vous aider à résoudre votre problème de manière satisfaisante :
 
 - Nom d'utilisateur (en cas de contact par les réseaux sociaux) et/ou adresse électronique
 - Informations sur l'appareil
