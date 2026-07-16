@@ -1,0 +1,52 @@
+repos:
+  # Semgrep static analysis. `--error` fails the commit on any finding;
+  # `--metrics=off` keeps it offline-friendly.
+  - repo: https://github.com/semgrep/pre-commit
+    rev: v1.156.0
+    hooks:
+      - id: semgrep
+        args:
+          - --config=p/security-audit
+          - --config=p/r2c
+          - --config=p/owasp-top-ten
+          - --config=p/javascript
+          - --config=p/nodejs
+          - --config=p/golang
+          - --config=p/python
+          - --error
+          - --quiet
+          - --metrics=off
+
+  # Dedicated Gitleaks hooks (one repo block → gitleaks built once). On-commit scan
+  # blocks secrets at commit time; the two manual hooks scan the full disk / full
+  # history — run them explicitly:
+  #   pre-commit run gitleaks-current --hook-stage manual
+  #   pre-commit run gitleaks-history --hook-stage manual
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+      - id: gitleaks
+        alias: gitleaks-current
+        name: Gitleaks (manual) - scan all current files
+        entry: gitleaks dir . --redact --verbose
+        pass_filenames: false
+        always_run: true
+        stages: [manual]
+      - id: gitleaks
+        alias: gitleaks-history
+        name: Gitleaks (manual) - scan full git history
+        entry: gitleaks git . --redact --verbose
+        pass_filenames: false
+        always_run: true
+        stages: [manual]
+
+  # ESLint (OPTIONAL) — JS/TS only. Self-skips when ESLint isn't installed, so it
+  # never blocks commits before the toolchain is in place.
+  - repo: local
+    hooks:
+      - id: eslint
+        name: ESLint (optional)
+        entry: bash -c 'if [ -x ./node_modules/.bin/eslint ]; then exec ./node_modules/.bin/eslint "$@"; else echo "ESLint not installed - skipping optional hook"; fi' --
+        language: system
+        types_or: [javascript, jsx, ts, tsx]

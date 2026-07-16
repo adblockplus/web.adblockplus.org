@@ -1,0 +1,25 @@
+# Firebase web SDK apiKey — Google documents this as safe to expose client-side;
+# access is controlled by Firebase Security Rules, not by keeping this value secret.
+static/abp-for-safari-onboarding/js/analytics.js:gcp-api-key:10
+
+# Stripe publishable keys (pk_live_/pk_test_) — designed to be embedded in client-side
+# code to initialize Stripe.js; only Stripe secret keys (sk_*) are sensitive.
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:257
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:261
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:413
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:417
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:423
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:427
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:604
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:608
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:697
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:701
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:798
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:802
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:897
+static/adblock/js/payment/lib/payment_libs.js:generic-api-key:901
+
+# Paddle client-side checkout tokens (live/test) — Paddle documents these as public
+# client tokens, safe to ship in front-end code (distinct from Paddle API keys).
+static/modules/paddle.js:generic-api-key:5
+static/modules/paddle.js:generic-api-key:6

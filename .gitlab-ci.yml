@@ -1,7 +1,32 @@
 ---
 
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_COMMIT_TAG
+
+# Security scanners: gitleaks, semgrep, trivy. No Terraform in this repo, so
+# checkov/terraform/verify-backend are not included.
+include:
+  - project: eyeo/devops/terraform/utils/ci-templates
+    ref: main
+    file: .gitlab-ci.gitleaks.yml
+  - project: eyeo/devops/terraform/utils/ci-templates
+    ref: main
+    file: .gitlab-ci.semgrep.yml
+  - project: eyeo/devops/terraform/utils/ci-templates
+    ref: main
+    file: .gitlab-ci.trivy.yml
+
 variables:
   DEFAULT_LOCALE: en
+  # Baseline commit for semgrep: only new findings introduced after this commit fail CI;
+  # pre-existing findings in legacy pages are grandfathered in.
+  SEMGREP_EXTRA_ARGS: "--baseline-commit bea9389fdc276906866b6f807caa53a16cbef024"
 
 .staging:
   variables: &staging
@@ -23,6 +48,7 @@ default:
     - "eyeo-small-runner"
 
 stages:
+  - pre_checks
   - prebuild_firebase
   - build_firebase
   - deploy_cloud_run
@@ -305,6 +331,8 @@ deploy_firebase_hosting:production:
     paths:
      - test-results/
      - playwright-report/
+    reports:
+      junit: test-results/junit.xml
     expire_in: 1 week
 
 .playwright-base: &playwright-base

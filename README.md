@@ -30,6 +30,13 @@ This website is hosted on [Firebase](https://console.firebase.google.com/project
    ```sh
    npm install
    ```
+6. Install the pre-commit hooks (runs gitleaks/semgrep/eslint checks before each commit):
+   ```sh
+   pip install pre-commit
+   pre-commit install
+   ```
+
+> **Optional:** [mise](https://mise.jdx.dev/) pins the tool versions this repo expects (see `mise.toml`) — Node, Python, and pre-commit itself. If you use mise, run `mise install` to pick these up; if not, just make sure your own Node/Python/pre-commit versions are reasonably close to what's pinned there.
 
 ### Start the dev server
 

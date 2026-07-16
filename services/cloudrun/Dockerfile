@@ -15,14 +15,16 @@ RUN npm install --omit=dev
 # Copy local code.
 COPY . ./
 
-# Runtime stage: Google distroless Node.js 22. Contains only the node runtime
-# and glibc/openssl/ca-certificates essentials — NO perl-base, NO apt, NO npm,
-# NO shell.
-FROM gcr.io/distroless/nodejs22-debian12
+# Runtime stage: Google distroless Node.js 22, nonroot variant. Contains only the
+# node runtime and glibc/openssl/ca-certificates essentials — NO perl-base, NO apt,
+# NO npm, NO shell — and runs as the unprivileged 'nonroot' user rather than root.
+FROM gcr.io/distroless/nodejs22-debian12:nonroot
 
 WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app ./
+
+USER nonroot
 
 # The distroless nodejs image's entrypoint is `node`; CMD supplies the script
 # (equivalent to the previous `node index.js`).
