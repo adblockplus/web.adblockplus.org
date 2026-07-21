@@ -3,7 +3,7 @@
     "test": "tests"
   },
   "devDependencies": {
-    "@playwright/test": "1.53.2",
+    "@playwright/test": "1.61.1",
     "commander": "^9.4.0",
     "fs-extra": "^11.2.0",
     "glob": "^8.0.3",
@@ -12,7 +12,7 @@
     "prompt-sync": "^4.2.0"
   },
   "overrides": {
-    "brace-expansion": "^2.1.1"
+    "brace-expansion": "^2.1.2"
   },
   "scripts": {
     "fast": "bash -i scripts/run-fast.sh",

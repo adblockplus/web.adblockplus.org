@@ -337,7 +337,7 @@ deploy_firebase_hosting:production:
 
 .playwright-base: &playwright-base
   stage: test
-  image: mcr.microsoft.com/playwright:v1.53.2-jammy
+  image: mcr.microsoft.com/playwright:v1.61.1-jammy
   before_script:
     - npm ci
     - export CI_RUN=1
