@@ -6,7 +6,7 @@
 /** create an object from url params **/
 adblock.URLSearchObject = function URLSearchObject(search) {
   const params = new URLSearchParams(search);
-  return params.entries().reduce((object, entry) => {
+  return [...params.entries()].reduce((object, entry) => {
     const [key, value] = entry;
     if (object.hasOwnProperty(key)) {
       if (Array.isArray(object[key])) object[key].push(value);

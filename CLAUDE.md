@@ -149,6 +149,8 @@ console.log(cr('#yourFG','#yourBG')+':1')
 
 **Page objects**: Use/extend models in `tests/test-pages/` rather than writing raw selectors in spec files.
 
+**Payment page tests**: `premium-payments.spec.js` and `block-multi-subs.spec.js` don't test one payment page each — they loop over the shared page list in `PaymentTestParameters` (`tests/test-helpers/payment-helper.js`). Add any new payment page to that list so it's covered by these tests, rather than writing a dedicated payment spec for it.
+
 **Extension mocking**: Call `await ExtensionHelper.mockExtensionData(page, '4.31.0', false)` (from `tests/test-helpers/extension-helper.js`) before opening a page. Second arg is version string, third is whether Premium is enabled. Prefer mocking over full extension installation for speed.
 
 **Visual regression**: Baselines are Linux Chromium only (`tests/snapshots/`). To update after a CI failure: download the `visual_regression_tests:archive` artifact, rename the file to just the browser name, replace the existing file in the `linux/` snapshot folder. Do not update baselines locally on macOS — they will mismatch in CI.
