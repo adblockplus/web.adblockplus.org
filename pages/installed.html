@@ -11,9 +11,12 @@ nofooter=1
   <? include scripts/frontend-experiments ?>
   <? include hotjar ?>
   <script>
+    // Translation strings below come from eyeo-controlled locale files (Crowdin), not
+    // user input; injecting them into adblock.strings this way is this site's
+    // established i18n pattern (see includes/scripts/namespace.html).
     Object.assign(adblock.strings, {
-      "installed-header-subheading__frequency--monthly": "{{ installed-header-subheading__frequency--monthly a month }}",
-      "installed-header-subheading__frequency--yearly": "{{ installed-header-subheading__frequency--yearly a year }}",
+      "installed-header-subheading__frequency--monthly": "{{ installed-header-subheading__frequency--monthly a month }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "installed-header-subheading__frequency--yearly": "{{ installed-header-subheading__frequency--yearly a year }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
     });
   </script>
 </head>
@@ -50,4 +53,3 @@ nofooter=1
     gtag('event', 'conversion', {'send_to': 'AW-998912317/Qq-yCLuY2uszEL3iqNwD'});
   }
 })()</script>
-<? include aa_snippet ?>

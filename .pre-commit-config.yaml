@@ -1,6 +1,16 @@
 repos:
   # Semgrep static analysis. `--error` fails the commit on any finding;
-  # `--metrics=off` keeps it offline-friendly.
+  # `--metrics=off` keeps it offline-friendly. `--baseline-commit` mirrors the
+  # grandfathering policy in .gitlab-ci.yml: only findings introduced after that
+  # commit block the commit.
+  # NOTE: semgrep's baseline diff checks out the baseline commit into a temp git
+  # worktree; its cleanup has occasionally failed to deregister it with git,
+  # leaving a stale worktree that breaks the *next* commit with "contains
+  # modified or untracked files, use --force to delete it". If that happens:
+  #   git worktree list                 # find the stale entry
+  #   git worktree remove --force <path>
+  # Prefer suppressing individually-accepted findings inline with
+  # `// nosemgrep: <rule-id>` rather than disabling this flag.
   - repo: https://github.com/semgrep/pre-commit
     rev: v1.156.0
     hooks:
@@ -13,6 +23,7 @@ repos:
           - --config=p/nodejs
           - --config=p/golang
           - --config=p/python
+          - --baseline-commit=bea9389fdc276906866b6f807caa53a16cbef024
           - --error
           - --quiet
           - --metrics=off
