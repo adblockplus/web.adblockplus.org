@@ -15,6 +15,10 @@ repos:
     rev: v1.156.0
     hooks:
       - id: semgrep
+        # Pinned because semgrep needs Python >=3.10 and pre-commit otherwise picks
+        # whatever interpreter the invoking shell resolves — on macOS that is often
+        # /usr/bin/python3 (3.9), which fails to install semgrep at all.
+        language_version: python3.12
         args:
           - --config=p/security-audit
           - --config=p/r2c
