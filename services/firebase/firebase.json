@@ -265,6 +265,15 @@
             "value": "max-age=60, must-revalidate"
           }
         ]
+      },
+      {
+        "source": "/modules/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=60, must-revalidate"
+          }
+        ]
       }
     ]
   }
