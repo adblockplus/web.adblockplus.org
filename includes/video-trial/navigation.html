@@ -1,0 +1,27 @@
+<!-- ===== 2. NAVIGATION ===== -->
+<header class="video-trial-nav" id="video-trial-nav">
+  <div class="video-trial-nav__inner">
+    <a class="video-trial-nav__brand" href="/">
+      <img class="video-trial-nav__logo" src="/img/adblockplus-logo-color.svg"
+           alt="Adblock Plus" width="184" height="33">
+      <span class="video-trial-nav__brand-text">{{ video-trial-nav__premium Premium }}</span>
+    </a>
+
+    <nav class="video-trial-nav__links" aria-label="{{ video-trial-nav__aria-label Page sections }}">
+      <!--
+        Two links, one per state: the features section is display:none once the
+        trial expires, so #video-trial-features would scroll nowhere. Same string
+        key both times, so it stays one entry for translation.
+      -->
+      <a href="#video-trial-features" class="video-trial--when-active">{{ video-trial-nav__features Features }}</a>
+      <a href="#video-trial-premium-features" class="video-trial--when-expired">{{ video-trial-nav__features }}</a>
+      <a href="#video-trial-pricing">{{ video-trial-nav__pricing Pricing }}</a>
+      <a href="#video-trial-faq">{{ video-trial-nav__faq FAQ }}</a>
+    </nav>
+
+    <a href="#video-trial-pricing" class="video-trial-button video-trial-button--primary video-trial-nav__cta"
+       data-click='{"type":"video-trial-cta","trigger":"nav"}'>
+      {{ video-trial-nav__cta Upgrade now }}
+    </a>
+  </div>
+</header>

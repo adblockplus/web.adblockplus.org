@@ -2,6 +2,8 @@
 // requires scripts/namespace
 // requires scripts/events
 
+import { paddleEnvironment } from "./environment.js";
+
 const PADDLE_LIVE_TOKEN = "live_d10b49fa5fc207ade026db6535c";
 const PADDLE_TEST_TOKEN = "test_b0e15dc1f1e4f20b0fe6396e893";
 
@@ -719,11 +721,14 @@ const PRODUCT_CONFIG = {
   }
 };
 
-// Paddle uses some non-standard locale codes:
+// Paddle uses some non-standard locale codes, and spells regional variants with
+// a hyphen where the site uses an underscore. A blanket underscore-to-hyphen
+// swap would not work: Paddle wants zh-Hans rather than zh-CN, and only has the
+// bare language for ko and pl, so each variant is listed explicitly.
 const PADDLE_LOCALE_EXCEPTIONS = {
   "zh_CN": "zh-Hans",
-  "sv": "da",
-  "pt_BR": "pt",
+  "zh_TW": "zh-TW",
+  "pt_BR": "pt-BR",
   "ko_KR": "ko",
   "pl_PL": "pl",
   "ca": "en",
@@ -776,10 +781,6 @@ adblock.api.setExperimentId = id => { experimentId = id; isExperiment = true; }
 adblock.api.setExperimentVariantId = variant => { experimentVariantId = variant; isExperiment = true; }
 
 let paddleToken = PADDLE_LIVE_TOKEN;
-
-const paddleEnvironment = location.hostname == "localhost" ? "test"
-  : location.hostname.endsWith(".web.app") ? "test"
-  : adblock.query.has("testmode") ? "test" : "live";
 
 if (paddleEnvironment == "test") {
   paddleToken = PADDLE_TEST_TOKEN;

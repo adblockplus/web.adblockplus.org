@@ -1,0 +1,82 @@
+<!-- ===== BROWSER MOCKUP (inside the features section, active state only) =====
+  Decorative illustration built from empty elements. role="img" plus a label
+  means assistive tech gets one description instead of ~40 meaningless nodes.
+  dir="ltr" because a browser URL bar does not mirror in RTL locales.
+
+  The URL uses the .example TLD, reserved by RFC 2606 for documentation, so it
+  can never resolve to a real site. Do not swap it for a real domain: the mockup
+  describes "a video platform like YouTube" rather than depicting YouTube itself.
+-->
+<div class="video-trial-mockup" data-reveal dir="ltr" role="img"
+     aria-label="{{ video-trial-mockup__alt An illustration of a browser showing a video platform like YouTube with Adblock Plus enabled and ads blocked on the page }}">
+  <div class="video-trial-mockup__window">
+
+    <!-- Browser chrome -->
+    <div class="video-trial-mockup__chrome">
+      <span class="video-trial-mockup__dots">
+        <i></i><i></i><i></i>
+      </span>
+      <span class="video-trial-mockup__url">
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+        </svg>
+        video.example/watch?v=example
+      </span>
+      <span class="video-trial-mockup__ext">
+        <img src="/update/abp-logo.svg" alt="" width="22" height="22">
+        <span class="video-trial-mockup__ext-badge">{{ video-trial-mockup__on ON }}</span>
+      </span>
+    </div>
+
+    <!-- Site chrome -->
+    <div class="video-trial-mockup__topbar">
+      <span class="video-trial-mockup__site">
+        <i class="video-trial-mockup__site-icon"></i>
+        <i class="video-trial-mockup__site-name"></i>
+      </span>
+      <span class="video-trial-mockup__search">
+        <span class="video-trial-mockup__search-field">{{ video-trial-mockup__search Search }}</span>
+        <span class="video-trial-mockup__search-button">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+      </span>
+    </div>
+
+    <!-- Page content -->
+    <div class="video-trial-mockup__body">
+      <div class="video-trial-mockup__main">
+        <div class="video-trial-mockup__player">
+          <span class="video-trial-mockup__play"></span>
+          <span class="video-trial-mockup__progress"><i></i></span>
+        </div>
+        <i class="video-trial-mockup__bar" style="width: 70%"></i>
+        <span class="video-trial-mockup__meta">
+          <i style="width: 25%"></i><i style="width: 15%"></i>
+        </span>
+        <div class="video-trial-mockup__channel">
+          <i class="video-trial-mockup__avatar"></i>
+          <span class="video-trial-mockup__channel-lines">
+            <i style="width: 30%"></i>
+            <i class="video-trial-mockup__rec-line--faint" style="width: 18%"></i>
+          </span>
+          <i class="video-trial-mockup__subscribe"></i>
+        </div>
+      </div>
+
+      <div class="video-trial-mockup__rail">
+        <? include video-trial/rec-skeleton ?>
+        <? include video-trial/rec-skeleton ?>
+        <? include video-trial/rec-skeleton ?>
+        <? include video-trial/rec-skeleton ?>
+      </div>
+    </div>
+
+    <p class="video-trial-mockup__blocked">
+      <span class="video-trial-mockup__blocked-dot"></span>
+      {{ video-trial-mockup__blocked 12 ads blocked on this page }}
+    </p>
+
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<!-- ===== 5. FEATURE HIGHLIGHTS ===== -->
+<section class="video-trial-section video-trial-section--features" id="video-trial-features" data-reveal>
+  <div class="video-trial-container">
+    <h2 class="video-trial-section__heading">
+      {{ video-trial-features__heading Everything you need for }}<br>
+      <span class="video-trial-section__heading-muted">{{ video-trial-features__heading-2 ad-free video experience }}</span>
+    </h2>
+
+    <!--
+      Icons are the AdBlock campaign's own SVGs, copied to /img/video-trial/ so we
+      are not hot-linking. Each keeps its stroke colour and gets a holder tinted
+      to 8% of that same colour. They are decorative — the heading beneath each
+      one carries the meaning — so they are alt="" and aria-hidden.
+    -->
+    <div class="video-trial-features">
+
+      <article class="video-trial-feature">
+        <span class="video-trial-feature__icon video-trial-feature__icon--red">
+          <img src="/img/video-trial/icon-shield.svg" alt="" width="24" height="24" aria-hidden="true">
+        </span>
+        <h3 class="video-trial-feature__heading">
+          {{ video-trial-features__item-1__heading No more interruptions }}
+        </h3>
+        <p class="video-trial-feature__text">
+          {{ video-trial-features__item-1__text Pre-roll, mid-roll, banners, pop-ups. All gone. }}
+        </p>
+      </article>
+
+      <article class="video-trial-feature">
+        <span class="video-trial-feature__icon video-trial-feature__icon--indigo">
+          <img src="/img/video-trial/icon-shield-check.svg" alt="" width="24" height="24" aria-hidden="true">
+        </span>
+        <h3 class="video-trial-feature__heading">
+          {{ video-trial-features__item-2__heading Keeps working even when they’re pushing back }}
+        </h3>
+        <p class="video-trial-feature__text">
+          {{ video-trial-features__item-2__text Stays one step ahead of any attempts to sneak ads back in. }}
+        </p>
+      </article>
+
+      <article class="video-trial-feature">
+        <span class="video-trial-feature__icon video-trial-feature__icon--pink">
+          <img src="/img/video-trial/icon-layers.svg" alt="" width="24" height="24" aria-hidden="true">
+        </span>
+        <h3 class="video-trial-feature__heading">
+          {{ video-trial-features__item-3__heading Works on all your browsers }}
+        </h3>
+        <p class="video-trial-feature__text">
+          {{ video-trial-features__item-3__text Chrome, Firefox, Edge, Opera — we cover them all. }}
+        </p>
+      </article>
+
+    </div>
+
+    <? include video-trial/browser-mockup ?>
+  </div>
+</section>

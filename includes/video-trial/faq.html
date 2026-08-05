@@ -1,0 +1,84 @@
+<!-- ===== 10. FAQ ===== -->
+<section class="video-trial-section video-trial-section--faq" id="video-trial-faq" data-reveal>
+  <div class="video-trial-container video-trial-container--narrow">
+    <h2 class="video-trial-section__heading">
+      {{ video-trial-faq__heading Questions? }}<br>
+      <span class="video-trial-section__heading-muted">{{ video-trial-faq__heading-2 We’ve got answers }}</span>
+    </h2>
+
+    <div class="video-trial-faq">
+
+      <details class="video-trial-faq__item">
+        <summary class="video-trial-faq__question">
+          <!--
+            The id sits on this span, not the summary: video-trial.js writes the
+            trial length into it, and setting textContent on the summary itself
+            would remove the chevron.
+          -->
+          <span id="video-trial-faq-after-trial"></span>
+          <img class="video-trial-faq__chevron" src="/img/video-trial/icon-chevron-down.svg"
+               alt="" width="20" height="20" aria-hidden="true">
+        </summary>
+        <p class="video-trial-faq__answer">
+          {{ video-trial-faq__after-trial-answer Nothing is charged automatically. When the trial ends you go back to free Adblock Plus, and the better YouTube experience stops. Upgrade to Premium at any time to keep it. }}
+        </p>
+      </details>
+
+      <details class="video-trial-faq__item">
+        <summary class="video-trial-faq__question">
+          <span>{{ video-trial-faq__q-2 Will this keep working when YouTube changes? }}</span>
+          <img class="video-trial-faq__chevron" src="/img/video-trial/icon-chevron-down.svg"
+               alt="" width="20" height="20" aria-hidden="true">
+        </summary>
+        <p class="video-trial-faq__answer">
+          {{ video-trial-faq__a-2 Our filter lists are updated continuously. YouTube changes often, and we keep up so you don’t have to think about it. }}
+        </p>
+      </details>
+
+      <details class="video-trial-faq__item">
+        <summary class="video-trial-faq__question">
+          <span>{{ video-trial-faq__q-3 Can I use Premium on more than one device? }}</span>
+          <img class="video-trial-faq__chevron" src="/img/video-trial/icon-chevron-down.svg"
+               alt="" width="20" height="20" aria-hidden="true">
+        </summary>
+        <p class="video-trial-faq__answer">
+          {{ video-trial-faq__a-3 Yes. Sign in with the same email address on any browser where you use Adblock Plus and Premium is enabled there too. }}
+        </p>
+      </details>
+
+      <details class="video-trial-faq__item">
+        <summary class="video-trial-faq__question">
+          <span>{{ video-trial-faq__q-4 Is there a money-back guarantee? }}</span>
+          <img class="video-trial-faq__chevron" src="/img/video-trial/icon-chevron-down.svg"
+               alt="" width="20" height="20" aria-hidden="true">
+        </summary>
+        <p class="video-trial-faq__answer">
+          {{ video-trial-faq__a-4 Yes — 60 days. If Premium is not for you, contact us within 60 days of your purchase for a full refund. You can cancel at any time from your account page. }}
+        </p>
+      </details>
+
+      <details class="video-trial-faq__item">
+        <summary class="video-trial-faq__question">
+          <span>{{ video-trial-faq__q-5 Will Premium slow down my browser? }}</span>
+          <img class="video-trial-faq__chevron" src="/img/video-trial/icon-chevron-down.svg"
+               alt="" width="20" height="20" aria-hidden="true">
+        </summary>
+        <p class="video-trial-faq__answer">
+          {{ video-trial-faq__a-5 No. Premium uses the same efficient filtering engine as free Adblock Plus, and blocking ads usually makes pages load faster. }}
+        </p>
+      </details>
+
+      <details class="video-trial-faq__item">
+        <summary class="video-trial-faq__question">
+          <span>{{ video-trial-faq__q-6 Which payment methods can I use? }}</span>
+          <img class="video-trial-faq__chevron" src="/img/video-trial/icon-chevron-down.svg"
+               alt="" width="20" height="20" aria-hidden="true">
+        </summary>
+        <p class="video-trial-faq__answer">
+          {{ video-trial-faq__a-6 We accept the major credit and debit cards, PayPal and Google Pay. Payments are handled by Paddle. }}
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>

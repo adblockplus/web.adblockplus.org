@@ -1,0 +1,32 @@
+<!-- ===== 1. COUNTDOWN BANNER ===== -->
+<div class="video-trial-banner">
+  <div class="video-trial-banner__inner">
+    <svg class="video-trial-banner__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" aria-hidden="true" width="16" height="16">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </svg>
+
+    <span class="video-trial--when-active">
+      {{ video-trial-banner__ends-in Free trial ends in }}
+    </span>
+    <span class="video-trial--when-expired">
+      {{ video-trial-banner__ended Your free trial has ended }}
+    </span>
+
+    <!--
+      aria-live is off (the default, stated explicitly): a value changing every
+      second would flood a screen reader. The text stays readable on navigation.
+    -->
+    <span class="video-trial-banner__timer video-trial--when-active" id="video-trial-countdown"
+          dir="ltr" aria-live="off">--d --h --m --s</span>
+
+    <span class="video-trial-banner__separator video-trial--when-active" aria-hidden="true">&middot;</span>
+
+    <a href="#video-trial-pricing" class="video-trial-banner__cta"
+       data-click='{"type":"video-trial-cta","trigger":"banner"}'>
+      <span class="video-trial--when-active">{{ video-trial-banner__choose-plan Choose a plan }}</span>
+      <span class="video-trial--when-expired">{{ video-trial-banner__upgrade-now Upgrade now }}</span>
+    </a>
+  </div>
+</div>

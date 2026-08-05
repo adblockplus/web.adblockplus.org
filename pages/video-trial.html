@@ -1,0 +1,66 @@
+title=Adblock Plus Premium — a better experience on platforms like YouTube
+description=Block even more ads on platforms like YouTube with Adblock Plus Premium. Enjoy uninterrupted videos, faster loading, and fewer distractions everywhere you browse.
+template=minimal
+robots=none
+nonavbar=1
+
+<head>
+  <link rel="stylesheet" href="/css/pages/video-trial.css">
+
+  <!--
+    Trial state has to be on <html> before the body paints, or the wrong
+    headline and section order flash first. Computed once here and stashed on
+    the dataset so /js/pages/video-trial.js does not parse the params twice.
+  -->
+  <script>(() => {
+    const trialDays = parseInt(adblock.query.get("trial"), 10) || 7;
+    const started = parseInt(adblock.query.get("trialStarted"), 10) || 0;
+    const endsAt = started ? started + trialDays * 24 * 60 * 60 * 1000 : 0;
+    const remaining = endsAt ? Math.max(0, endsAt - Date.now()) : 0;
+
+    const root = document.documentElement;
+    root.dataset.trialState = remaining > 0 ? "active" : "expired";
+    root.dataset.trialDays = trialDays;
+    root.dataset.trialEndsAt = endsAt;
+    if (adblock.query.has("has-error")) root.dataset.videoTrialError = "1";
+  })()</script>
+
+  <script>
+    // Strings read from JS. These come from eyeo-controlled locale files
+    // (Crowdin), not user input; see includes/scripts/namespace.html.
+    Object.assign(adblock.strings, {
+      "video-trial-countdown__days": "{{ video-trial-countdown__days d }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "video-trial-countdown__hours": "{{ video-trial-countdown__hours h }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "video-trial-countdown__minutes": "{{ video-trial-countdown__minutes m }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "video-trial-countdown__seconds": "{{ video-trial-countdown__seconds s }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "video-trial-pricing__savings": "{{ video-trial-pricing__savings Billed annually — save {savingsPercent}% }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "video-trial-faq__after-trial-question": "{{ video-trial-faq__after-trial-question What happens after my {days} day trial ends? }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+    });
+  </script>
+</head>
+
+<? include video-trial/countdown-banner ?>
+<? include video-trial/navigation ?>
+
+<main class="video-trial-page">
+
+  <? include video-trial/hero ?>
+  <? include video-trial/error ?>
+
+  <!-- Visual order is state dependent; see the `order` rules in video-trial.css -->
+  <div class="video-trial-sections">
+    <? include video-trial/features ?>
+    <? include video-trial/comparison ?>
+    <? include video-trial/premium-features ?>
+    <? include video-trial/pricing ?>
+    <? include video-trial/testimonials ?>
+    <? include video-trial/faq ?>
+    <? include video-trial/final-cta ?>
+  </div>
+
+</main>
+
+<? include prevent-duplicate-subscriptions ?>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script type="module" src="/js/pages/video-trial.js"></script>

@@ -1,0 +1,38 @@
+<!-- ===== 11. FINAL CTA =====
+  This section only renders in the expired state (see the visibility rules in
+  video-trial.css), so there is no active-state variant here — one would never be
+  shown. The `-expired` key names are kept for that reason, not because a
+  counterpart exists.
+-->
+<section class="video-trial-section video-trial-section--final-cta" data-reveal>
+  <div class="video-trial-container video-trial-container--narrow">
+
+    <h2 class="video-trial-final-cta__heading">
+      {{ video-trial-final-cta__heading-expired Don’t miss out on }}<br>
+      <span class="video-trial-final-cta__heading-accent">
+        {{ video-trial-final-cta__heading-expired-2 videos without the ads }}
+      </span>
+    </h2>
+
+    <p class="video-trial-final-cta__text">
+      {{ video-trial-final-cta__text-expired Upgrade to Premium and get the better experience on video platforms like YouTube back, along with everything else Premium unblocks. }}
+    </p>
+
+    <a href="#video-trial-pricing" class="video-trial-button video-trial-button--primary video-trial-button--large"
+       data-click='{"type":"video-trial-cta","trigger":"final"}'>
+      {{ video-trial-final-cta__cta Get Premium }}
+    </a>
+
+    <!--
+      Same string keys as the pricing section, so this is one entry for
+      translation. The default text has to be repeated: the CMS builds a fresh
+      converter per include, so _seen_defaults does not carry across files.
+      video-trial.js sets the href on every .video-trial-sign-in-link.
+    -->
+    <p class="video-trial-final-cta__sign-in">
+      {{ video-trial-pricing__sign-in-text Already purchased Premium? }}
+      <a href="#" class="video-trial-sign-in-link">{{ video-trial-pricing__sign-in-link Click to sign in }}</a>
+    </p>
+
+  </div>
+</section>

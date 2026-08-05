@@ -1,0 +1,23 @@
+<!-- ===== 4. ERROR STATE =====
+  Hidden unless <html data-video-trial-error>, set by the head script (?has-error)
+  or by video-trial.js when price or checkout setup throws.
+
+  Copy is pulled from the premium-checkout section rather than redefined, so it
+  arrives already translated in 16 locales.
+
+  No identifier is shown. /premium's error__paragraph-2 embeds a code span and
+  quotes `email:sid`, but sid is a spoofable, non-unique value that exists for
+  website measurement and is not stored anywhere support can look up, so it is of
+  no use to a user. activated__paragraph-2 is used instead: same locales, no code
+  placeholder, and it points at the Help Center as well as support.
+-->
+<section class="video-trial-error" role="alert">
+  <div class="video-trial-error__inner">
+    <h1 class="video-trial-error__heading">
+      {{ get_string("premium-checkout-error__heading-1", "premium-checkout") }}
+    </h1>
+    <p>{{ get_string("premium-checkout-error__paragraph-1", "premium-checkout") }}</p>
+    <p>{{ get_string("premium-checkout-error__paragraph-3", "premium-checkout") }}</p>
+    <p>{{ get_string("premium-checkout-activated__paragraph-2", "premium-checkout") }}</p>
+  </div>
+</section>

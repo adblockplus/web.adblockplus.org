@@ -1,0 +1,1566 @@
+/*******************************************************************************
+ * Video trial — reverse-trial upsell campaign page
+ *******************************************************************************
+ * Layout follows the AdBlock /video-trial campaign; palette and type are ABP's.
+ *
+ * COLOUR NOTE: the brand red #ED1E45 (taken from the logo) is 4.31:1 against
+ * white — fine for the large gradient headline, just under the 4.5:1 needed for
+ * button and link text. Anything carrying or set in white text therefore uses a
+ * slightly darkened red. #EDA51E is kept only for the "Best value" badge, where
+ * it pairs with black (10.00:1); white on it is 2.10:1 and unusable.
+ * Every pair below was measured; ratios are noted inline.
+ ******************************************************************************/
+
+:root {
+  /* Brand — red taken from /img/adblockplus-logo-color.svg */
+  --vt-red: #ed1e45;              /* brand red — large/decorative use only, 4.31:1 */
+  --vt-red-cta: #d51b3e;          /* white text 5.18:1 — AA normal */
+  --vt-red-cta-hover: #be1837;    /* white text 6.22:1 */
+  --vt-red-text: #c9193b;         /* on white 5.70:1 / on light 5.32:1 — links */
+  --vt-accent-from: #ed1e45;      /* headline gradient, on white 4.31:1 */
+  --vt-accent-to: #d97706;        /* headline gradient, on white 3.19:1 (large text only) */
+  --vt-banner-bg: #c9193b;        /* white text 5.70:1 */
+  --vt-amber: #eda51e;            /* badge background, black text 10.00:1 */
+  /*
+   * Star glyphs. 1.53:1 on white, below the 3:1 that WCAG 1.4.11 asks of a
+   * rating graphic — chosen deliberately for brand warmth. The rating is also
+   * exposed as .sr-only text, so it is not lost to assistive tech; the gap is
+   * for sighted low-vision users. Adding a visible "5.0" beside the stars would
+   * make the glyphs decorative and remove the requirement.
+   */
+  --vt-gold-text: #facc14;
+  --vt-badge-amber: #b45309;      /* Active badge gradient end, white text 5.02:1 */
+  --vt-green: #15803d;            /* mockup "ON" pill, white text 5.02:1 */
+  --vt-skeleton: #e5e5e5;         /* mockup placeholder bars (decorative) */
+  --vt-skeleton-faint: #efefef;
+  --vt-muted-text: #757575;       /* mockup search placeholder, on white 4.61:1 */
+
+  /* Neutrals */
+  --vt-ink: #000;                 /* headings, on white 21:1 */
+  --vt-body: #585858;             /* body, on white 7.11:1 / on light 6.64:1 */
+  --vt-light: #f7f7f7;            /* alternating section background */
+  --vt-divider: #e6e6e6;
+  --vt-white: #fff;
+
+  /* Rhythm */
+  --vt-banner-height: 2.75rem;
+  --vt-nav-height: 4rem;
+  --vt-radius: 0.75rem;
+}
+
+/*******************************************************************************
+ * Page overrides
+ *******************************************************************************
+ * main.css puts `padding-top: 4em` on body to clear the fixed navbar. This page
+ * sets nonavbar=1 and supplies its own sticky banner + nav, so that is reset and
+ * replaced with the real combined height.
+ ******************************************************************************/
+
+/*
+ * main.css sets `html { font-size: 18px }`, dropping to 16px at max-width 768px,
+ * which made every rem on this page 12.5% larger than intended and pushed the
+ * countdown banner to 15.75px against AdBlock's 14px. Pinned to 16px at both
+ * breakpoints so the rem scale is predictable, matching what
+ * static/css/pages/premium.css already does for the same reason.
+ */
+.page-video-trial,
+.page-video-trial body {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .page-video-trial,
+  .page-video-trial body {
+    font-size: 16px;
+  }
+}
+
+.page-video-trial body {
+  padding-top: 0;
+  background: var(--vt-white);
+  color: var(--vt-body);
+}
+
+.page-video-trial h1,
+.page-video-trial h2,
+.page-video-trial h3 {
+  color: var(--vt-ink);
+}
+
+/*
+ * In-page anchors (banner "Choose a plan", nav links, the CTAs) animate rather
+ * than jump. Gated on prefers-reduced-motion: a full-page scroll animation is a
+ * common vestibular trigger, and the links must still work instantly for anyone
+ * who has asked the OS to reduce motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .page-video-trial {
+    scroll-behavior: smooth;
+  }
+}
+
+/*
+ * Anchor targets sit flush under the sticky banner + nav. video-trial.js measures
+ * the real rendered height into --vt-sticky-height, because the banner wraps to a
+ * second line on narrow viewports and a fixed calc would drift. The calc is the
+ * pre-JS fallback; it omits the nav's 1px border, hence the small correction.
+ */
+.page-video-trial [id] {
+  scroll-margin-top: var(--vt-sticky-height, calc(var(--vt-banner-height) + var(--vt-nav-height) + 1px));
+}
+
+/*
+ * min-width: 0 on every link in this flex chain. A flex item defaults to
+ * min-width: auto, which floors it at its own min-content width — so the
+ * comparison table's min-width: 30rem propagated all the way up and gave the
+ * whole page a 439px minimum, producing horizontal scroll on narrow phones even
+ * though the table itself scrolls correctly inside its own container.
+ */
+.video-trial-page,
+.video-trial-sections,
+.video-trial-section {
+  min-width: 0;
+}
+
+.video-trial-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+ * Horizontal padding sits inside the max-width, matching AdBlock's
+ * `max-w-[1100px] mx-auto px-6`. It is what keeps content off the screen edge
+ * below ~1100px, so do not remove it without moving the gutter somewhere else.
+ */
+.video-trial-container {
+  max-width: 68.75rem;   /* 1100px */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.video-trial-container--narrow {
+  max-width: 46.875rem;   /* 750px */
+}
+
+/*******************************************************************************
+ * Trial state visibility
+ *******************************************************************************
+ * `data-trial-state` is set on <html> by the inline head script before paint.
+ ******************************************************************************/
+
+html[data-trial-state="active"] .video-trial--when-expired,
+html[data-trial-state="expired"] .video-trial--when-active {
+  display: none;
+}
+
+/*******************************************************************************
+ * Error state
+ ******************************************************************************/
+
+.video-trial-error {
+  display: none;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+html[data-video-trial-error] .video-trial-error {
+  display: block;
+}
+
+html[data-video-trial-error] .video-trial-hide-on-error,
+html[data-video-trial-error] .video-trial-sections,
+html[data-video-trial-error] .video-trial-banner__cta {
+  display: none;
+}
+
+.video-trial-error__heading {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.video-trial-error__inner p {
+  margin: 0 auto 0.75rem;
+  max-width: 34rem;
+}
+
+/*******************************************************************************
+ * Countdown banner
+ ******************************************************************************/
+
+.video-trial-banner {
+  position: sticky;
+  top: 0;
+  z-index: 110;
+  background: var(--vt-banner-bg);   /* white text 5.70:1 */
+  color: var(--vt-white);
+  font-size: 0.875rem;
+}
+
+.video-trial-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: var(--vt-banner-height);
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.video-trial-banner__icon {
+  flex: none;
+}
+
+.video-trial-banner__timer {
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.16);
+  font-family: monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 480px) {
+  .video-trial-banner {
+    font-size: 0.75rem;
+  }
+
+  .video-trial-banner__timer {
+    font-size: 0.75rem;
+  }
+}
+
+.video-trial-banner__separator {
+  opacity: 0.5;
+}
+
+/* .page-video-trial prefix needed to beat main.css `a:link` — see Buttons note */
+.page-video-trial .video-trial-banner__cta,
+.page-video-trial .video-trial-banner__cta:link,
+.page-video-trial .video-trial-banner__cta:visited,
+.page-video-trial .video-trial-banner__cta:hover,
+.page-video-trial .video-trial-banner__cta:focus,
+.page-video-trial .video-trial-banner__cta:active {
+  color: var(--vt-white);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-video-trial .video-trial-banner__cta {
+  transition: opacity 0.15s ease;
+}
+
+.page-video-trial .video-trial-banner__cta:hover,
+.page-video-trial .video-trial-banner__cta:focus {
+  opacity: 0.85;
+}
+
+/*******************************************************************************
+ * Navigation
+ ******************************************************************************/
+
+.video-trial-nav {
+  position: sticky;
+  top: var(--vt-banner-height);
+  z-index: 100;
+  background: var(--vt-white);
+  border-bottom: 1px solid var(--vt-divider);
+}
+
+.video-trial-nav--scrolled {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.video-trial-nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 75rem;   /* 1200px */
+  min-height: var(--vt-nav-height);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* .page-video-trial prefix needed to beat main.css `a:link` — see Buttons note */
+.page-video-trial .video-trial-nav__brand,
+.page-video-trial .video-trial-nav__brand:link,
+.page-video-trial .video-trial-nav__brand:visited,
+.page-video-trial .video-trial-nav__brand:hover,
+.page-video-trial .video-trial-nav__brand:focus {
+  display: flex;
+  align-items: center;
+  /* Word-space, so "Adblock Plus Premium" reads as one lockup */
+  gap: 0.25rem;
+  margin-right: auto;
+  color: var(--vt-ink);
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+/* Logo is a 184x33 lockup; scale by height so it stays crisp in the nav bar */
+.video-trial-nav__logo {
+  height: 1.5rem;
+  width: auto;
+}
+
+/* "Premium" sits alongside the Adblock Plus lockup */
+.video-trial-nav__brand-text {
+  color: var(--vt-red-text);
+  font-weight: 700;
+}
+
+.video-trial-nav__links {
+  display: none;
+  gap: 1.5rem;
+}
+
+.page-video-trial .video-trial-nav__links a,
+.page-video-trial .video-trial-nav__links a:link,
+.page-video-trial .video-trial-nav__links a:visited {
+  color: var(--vt-body);
+  /* main.css sets body{font-weight:300}; AdBlock uses 500 for these */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+/* Colour-only hover, matching AdBlock's `no-underline hover:text-dark` */
+.page-video-trial .video-trial-nav__links a:hover,
+.page-video-trial .video-trial-nav__links a:focus {
+  color: var(--vt-red-text);
+  text-decoration: none;
+}
+
+/*
+ * Keyboard focus keeps a non-colour indicator. Dropping the underline on hover
+ * is fine for mouse users, but colour alone is not a sufficient focus indicator
+ * (WCAG 2.4.7), and :focus-visible only fires for keyboard traversal.
+ */
+.page-video-trial .video-trial-nav__links a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .video-trial-nav__links {
+    display: flex;
+  }
+}
+
+/*******************************************************************************
+ * Buttons
+ *******************************************************************************
+ * SPECIFICITY: main.css:47 sets `a:link, a:visited { color: #555 }` and
+ * defaults.css:123 underlines `a:hover, a:active, a:focus`. Both are (0,1,1),
+ * which beats a lone class (0,1,0) — so an <a> styled as a button renders grey
+ * and underlined unless the rule carries the extra `.page-video-trial`
+ * qualifier. That prefix is load-bearing here; don't "simplify" it away.
+ ******************************************************************************/
+
+.page-video-trial .video-trial-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  /* Colour-only fade, matching AdBlock's `transition-colors` */
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.page-video-trial .video-trial-button:hover,
+.page-video-trial .video-trial-button:focus,
+.page-video-trial .video-trial-button:active {
+  text-decoration: none;
+}
+
+.page-video-trial .video-trial-button--primary,
+.page-video-trial .video-trial-button--primary:link,
+.page-video-trial .video-trial-button--primary:visited {
+  background: var(--vt-red-cta);
+  color: var(--vt-white);
+}
+
+.page-video-trial .video-trial-button--primary:hover,
+.page-video-trial .video-trial-button--primary:focus,
+.page-video-trial .video-trial-button--primary:active {
+  background: var(--vt-red-cta-hover);
+  color: var(--vt-white);
+}
+
+.page-video-trial .video-trial-button--secondary,
+.page-video-trial .video-trial-button--secondary:link,
+.page-video-trial .video-trial-button--secondary:visited {
+  border-color: var(--vt-divider);
+  background: var(--vt-white);
+  color: var(--vt-red-text);      /* 5.70:1 on white */
+}
+
+.page-video-trial .video-trial-button--secondary:hover,
+.page-video-trial .video-trial-button--secondary:focus,
+.page-video-trial .video-trial-button--secondary:active {
+  border-color: var(--vt-red-text);
+  background: var(--vt-light);
+  color: var(--vt-red-text);
+}
+
+.video-trial-button--large {
+  padding: 0.9rem 2rem;
+  font-size: 1.125rem;
+}
+
+.video-trial-nav__cta {
+  flex: none;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9375rem;
+}
+
+/*******************************************************************************
+ * Hero
+ ******************************************************************************/
+
+.video-trial-hero {
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.video-trial-hero__inner {
+  max-width: 50rem;   /* 800px */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.video-trial-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--vt-divider);
+  border-radius: 2rem;
+  background: var(--vt-light);
+  color: var(--vt-body);
+  font-size: 0.875rem;
+}
+
+.video-trial-hero__badge svg {
+  color: var(--vt-red-text);
+}
+
+.video-trial-hero__heading {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);  /* 36-60px, matches AdBlock */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/*
+ * Gradient text. Both stops clear 4:1 against white so the headline stays
+ * legible across the whole run, and `color` is set first as the fallback for
+ * browsers that ignore background-clip.
+ */
+/*
+ * display:inline is load-bearing. As a block the gradient box spans the full
+ * container (752px), so centred text only samples the middle of the ramp and
+ * reads as a flat colour; fit-content does not help because the text is wider
+ * than the container and wraps. Inline shrinks the box to the glyphs (586px),
+ * widening the visible hue span from 34 to 43 degrees. The line break comes from
+ * an explicit <br> in the markup, as it does on the AdBlock page.
+ */
+.video-trial-hero__heading-accent,
+.video-trial-final-cta__heading-accent {
+  display: inline;
+  color: var(--vt-accent-to);
+  background: linear-gradient(90deg, var(--vt-accent-from), var(--vt-accent-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .video-trial-hero__heading-accent,
+  .video-trial-final-cta__heading-accent {
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.video-trial-hero__lead {
+  margin: 0 auto 2rem;
+  max-width: 36.25rem;   /* 580px */
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/*******************************************************************************
+ * Sections — shared
+ ******************************************************************************/
+
+.video-trial-sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-trial-section {
+  padding: 4rem 0;
+}
+
+.video-trial-section__heading {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);  /* 28-44px, matches AdBlock */
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Second line of the two-line section headings, matching AdBlock's `text-grey` */
+.video-trial-section__heading-muted {
+  color: var(--vt-body);   /* on white 7.11:1 / on light 6.64:1 */
+}
+
+/*******************************************************************************
+ * Section order and alternating backgrounds
+ *******************************************************************************
+ * Done per state in CSS rather than assigned from JS, so there is no repaint
+ * flash. `order` cannot drive :nth-child, hence the explicit rules.
+ *
+ * active  — features first, pricing further down the page
+ * expired — pricing first, close to the fold
+ ******************************************************************************/
+
+/*
+ * Sections are hidden per state, not merely reordered, so each state gets a
+ * focused page. The comparison table is the exception: it earns its place in both
+ * states, so only its position and background change.
+ *
+ *   active   features -> comparison -> pricing -> faq
+ *   expired  pricing -> premium-features -> comparison -> testimonials -> faq
+ *            -> final-cta
+ */
+html[data-trial-state="active"] .video-trial-section--premium-features,
+html[data-trial-state="active"] .video-trial-section--testimonials,
+html[data-trial-state="active"] .video-trial-section--final-cta,
+html[data-trial-state="expired"] .video-trial-section--features {
+  display: none;
+}
+
+html[data-trial-state="active"] .video-trial-section--features   { order: 1; background: var(--vt-light); }
+html[data-trial-state="active"] .video-trial-section--comparison { order: 2; background: var(--vt-white); }
+html[data-trial-state="active"] .video-trial-section--pricing    { order: 3; background: var(--vt-light); }
+html[data-trial-state="active"] .video-trial-section--faq        { order: 4; background: var(--vt-white); }
+
+html[data-trial-state="expired"] .video-trial-section--pricing          { order: 1; background: var(--vt-light); }
+html[data-trial-state="expired"] .video-trial-section--premium-features { order: 2; background: var(--vt-white); }
+html[data-trial-state="expired"] .video-trial-section--comparison       { order: 3; background: var(--vt-light); }
+html[data-trial-state="expired"] .video-trial-section--testimonials     { order: 4; background: var(--vt-white); }
+html[data-trial-state="expired"] .video-trial-section--faq              { order: 5; background: var(--vt-light); }
+html[data-trial-state="expired"] .video-trial-section--final-cta        { order: 6; background: var(--vt-white); }
+
+/*
+ * The pricing section carries no heading, so the cards need their own breathing
+ * room above. 6rem top and bottom matches AdBlock's `pt-24 pb-24`, in both
+ * states — when expired this section sits directly under the sticky nav and the
+ * old 2rem lead-in left the cards crowded against it.
+ */
+.video-trial-section--pricing {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/*******************************************************************************
+ * Feature highlights
+ ******************************************************************************/
+
+.video-trial-features {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .video-trial-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.video-trial-feature {
+  padding: 2rem;
+  border: 1px solid var(--vt-divider);
+  border-radius: 1rem;
+  background: var(--vt-white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-trial-feature:hover {
+  border-color: #dddddd;
+  box-shadow: 0 0.5rem 1.875rem rgba(0, 0, 0, 0.06);
+}
+
+/* 44px tinted holder, each at 8% of its own icon's stroke colour */
+.video-trial-feature__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.75rem;
+}
+
+.video-trial-feature__icon--red {
+  background: rgba(231, 76, 60, 0.08);
+}
+
+.video-trial-feature__icon--indigo {
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.video-trial-feature__icon--pink {
+  background: rgba(236, 72, 153, 0.08);
+}
+
+.video-trial-feature__heading {
+  margin: 0 0 0.625rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.video-trial-feature__text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/*******************************************************************************
+ * Comparison badges
+ *******************************************************************************
+ * AdBlock's equivalents are white on #ed1e45 (4.31:1) and white on a gradient
+ * ending at #f39c12 (2.19:1). At 10px these are normal-size text needing 4.5:1,
+ * so both are reproduced with darker stops that actually pass.
+ ******************************************************************************/
+
+.video-trial-badge {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  color: var(--vt-white);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.video-trial-badge--active {
+  /* both stops carry white text at >=5:1 */
+  background: linear-gradient(90deg, var(--vt-red-cta), var(--vt-badge-amber));
+}
+
+.video-trial-badge--new {
+  background: var(--vt-red-cta);   /* white 5.18:1 */
+}
+
+/*******************************************************************************
+ * Browser mockup
+ *******************************************************************************
+ * Decorative illustration; every bar is an empty <i>. Only three pieces carry
+ * real text — the URL, the search placeholder and the blocked-ads chip — and
+ * those are the only ones with a measured contrast note.
+ ******************************************************************************/
+
+.video-trial-mockup {
+  max-width: 43.75rem;   /* 700px */
+  margin: 2.5rem auto 0;
+}
+
+.video-trial-mockup__window {
+  overflow: hidden;
+  border: 1px solid var(--vt-divider);
+  border-radius: var(--vt-radius);
+  background: var(--vt-white);
+  box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.08);
+}
+
+/* --- browser chrome --------------------------------------------------------- */
+
+.video-trial-mockup__chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--vt-divider);
+  background: var(--vt-light);
+}
+
+.video-trial-mockup__dots {
+  display: flex;
+  flex: none;
+  gap: 0.25rem;
+}
+
+.video-trial-mockup__dots i {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: #cdcdcd;
+}
+
+.video-trial-mockup__url {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--vt-divider);
+  border-radius: 0.4rem;
+  background: var(--vt-white);
+  color: var(--vt-body);           /* 7.11:1 on white */
+  font-size: 0.75rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.video-trial-mockup__ext {
+  position: relative;
+  flex: none;
+  line-height: 0;
+}
+
+.video-trial-mockup__ext-badge {
+  position: absolute;
+  right: -0.35rem;
+  bottom: -0.3rem;
+  padding: 0 0.2rem;
+  border-radius: 0.5rem;
+  background: var(--vt-green);
+  color: var(--vt-white);          /* 5.02:1 */
+  font-size: 0.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* --- site chrome ----------------------------------------------------------- */
+
+.video-trial-mockup__topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.video-trial-mockup__site {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.video-trial-mockup__site-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  background: var(--vt-skeleton);
+}
+
+.video-trial-mockup__site-name {
+  width: 3.5rem;
+  height: 0.6rem;
+  border-radius: 0.15rem;
+  background: var(--vt-skeleton);
+}
+
+.video-trial-mockup__search {
+  display: flex;
+  flex: 1;
+  max-width: 21rem;
+}
+
+.video-trial-mockup__search-field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 0 0.7rem;
+  height: 1.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 1rem 0 0 1rem;
+  color: var(--vt-muted-text);     /* 4.61:1 — AdBlock uses #999 at 2.85:1 */
+  font-size: 0.625rem;
+}
+
+.video-trial-mockup__search-button {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 1.75rem;
+  border: 1px solid #cccccc;
+  border-left: 0;
+  border-radius: 0 1rem 1rem 0;
+  background: var(--vt-light);
+  color: var(--vt-body);
+}
+
+/* --- page body ------------------------------------------------------------- */
+
+.video-trial-mockup__body {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem;
+}
+
+.video-trial-mockup__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.video-trial-mockup__player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  background: linear-gradient(135deg, #1e1b2e, #2d1b4e);
+}
+
+.video-trial-mockup__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* CSS triangle play glyph */
+.video-trial-mockup__play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-top: 0.55rem solid transparent;
+  border-bottom: 0.55rem solid transparent;
+  border-left: 0.9rem solid rgba(255, 255, 255, 0.9);
+}
+
+.video-trial-mockup__progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.2rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.video-trial-mockup__progress i {
+  display: block;
+  width: 35%;
+  height: 100%;
+  background: var(--vt-red);
+}
+
+.video-trial-mockup__bar {
+  display: block;
+  height: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  background: var(--vt-skeleton);
+}
+
+.video-trial-mockup__meta {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.video-trial-mockup__meta i {
+  height: 0.5rem;
+  border-radius: 0.15rem;
+  background: var(--vt-skeleton);
+}
+
+.video-trial-mockup__channel {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.video-trial-mockup__avatar {
+  flex: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--vt-skeleton);
+}
+
+.video-trial-mockup__channel-lines {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.video-trial-mockup__channel-lines i,
+.video-trial-mockup__rec-lines i {
+  height: 0.45rem;
+  border-radius: 0.15rem;
+  background: var(--vt-skeleton);
+}
+
+.video-trial-mockup__rec-line--faint {
+  background: var(--vt-skeleton-faint);
+}
+
+.video-trial-mockup__subscribe {
+  flex: none;
+  width: 4.5rem;
+  height: 1.6rem;
+  border-radius: 1rem;
+  background: var(--vt-skeleton);
+}
+
+/* --- recommendation rail --------------------------------------------------- */
+
+.video-trial-mockup__rail {
+  display: none;
+  flex: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 35%;
+}
+
+@media (min-width: 768px) {
+  .video-trial-mockup__rail {
+    display: flex;
+  }
+}
+
+.video-trial-mockup__rec {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.video-trial-mockup__rec-thumb {
+  flex: none;
+  width: 7.5rem;
+  height: 4.25rem;
+  border-radius: 0.35rem;
+  background: var(--vt-skeleton);
+}
+
+.video-trial-mockup__rec-lines {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: 0.1rem;
+}
+
+/* --- blocked-ads chip ------------------------------------------------------ */
+
+.video-trial-mockup__blocked {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0.9rem 0.9rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--vt-body);           /* 6.36:1 on the composited chip */
+  font-size: 0.75rem;
+}
+
+.video-trial-mockup__blocked-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--vt-green);
+}
+
+/*******************************************************************************
+ * Comparison table
+ *******************************************************************************
+ * Rendered as a bordered card with a tinted header row, matching AdBlock.
+ * ICON CONTRAST: their tick is #22c55e (2.28:1) and their cross is a near-white
+ * grey (1.48:1). Both convey meaning, so 1.4.11 wants 3:1 — reproduced here with
+ * darker equivalents. The .sr-only labels mean the value is never icon-only.
+ ******************************************************************************/
+
+.video-trial-comparison {
+  max-width: 50rem;   /* 800px */
+  margin: 2.5rem auto 0;
+  overflow: hidden;
+  border: 1px solid var(--vt-divider);
+  border-radius: 1rem;
+  background: var(--vt-white);
+}
+
+/* Narrow viewports scroll the table inside the card rather than the page */
+.video-trial-comparison__scroll {
+  overflow-x: auto;
+}
+
+/*
+ * No min-width here on purpose. A min-width on the table leaks into the page's
+ * intrinsic width even though .video-trial-comparison__scroll clips it correctly,
+ * which gave the whole page a 439px floor and horizontal scroll on narrow phones.
+ * The table fits instead: the value columns narrow at small sizes and the feature
+ * labels wrap.
+ */
+.video-trial-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.video-trial-comparison__table thead th {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--vt-divider);
+  background: #fafafa;
+  color: var(--vt-body);          /* 6.82:1 on the tinted header */
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* The column we are selling gets the brand colour */
+.video-trial-comparison__premium {
+  color: var(--vt-red-text) !important;   /* 5.46:1 on #fafafa */
+  font-weight: 700 !important;
+}
+
+.video-trial-comparison__table tbody th {
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid #f1f1f1;
+  color: #333333;                 /* 12.63:1 */
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.video-trial-comparison__table tbody td {
+  width: 6.25rem;                 /* 100px, as AdBlock */
+  padding: 1.1rem 0.5rem;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: center;
+}
+
+.video-trial-comparison__table thead th:not(:first-child) {
+  width: 6.25rem;
+  text-align: center;
+}
+
+/* Last row sits flush against the card edge */
+.video-trial-comparison__table tbody tr:last-child th,
+.video-trial-comparison__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .video-trial-comparison__table thead th,
+  .video-trial-comparison__table tbody th {
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  .video-trial-comparison__table tbody td,
+  .video-trial-comparison__table thead th:not(:first-child) {
+    width: 3.25rem;
+  }
+
+  .video-trial-comparison__table tbody td {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+/*
+ * Tick and cross are /img/video-trial/icon-check.svg and icon-cross.svg. Their
+ * colours are baked into those files because an <img> cannot inherit
+ * currentColor: tick #15803d (5.02:1 on white), cross #949494 (3.03:1). The
+ * cross is muted so the ticks carry the eye, but not below the 3:1 floor —
+ * sighted low-vision users have only the icon to go on, since the matching label
+ * is .sr-only, and #949494 is the last step before it fails. Change these in the
+ * SVG files, not here.
+ */
+.video-trial-comparison__icon {
+  vertical-align: middle;
+}
+
+/*******************************************************************************
+ * Premium features deep dive
+ ******************************************************************************/
+
+/*
+ * Card grid. flex-wrap + justify-center at ~1/3 width is AdBlock's mechanism, so
+ * a row that is not full centres its remainder rather than leaving a gap.
+ */
+.video-trial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.video-trial-card {
+  flex: 1 1 100%;
+  padding: 2rem;
+  border: 1px solid var(--vt-divider);
+  border-radius: 1rem;
+  background: var(--vt-white);
+}
+
+@media (min-width: 768px) {
+  .video-trial-card {
+    flex: 0 1 calc(33.333% - 0.875rem);
+  }
+}
+
+.video-trial-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+/*
+ * Icon holder: a tinted rounded square at 8% of the glyph colour, as on the
+ * AdBlock page. Glyphs are decorative — the heading carries the meaning — but
+ * each pair still clears 4.5:1 so they read clearly.
+ */
+.video-trial-card__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+.video-trial-card__icon--red {
+  background: rgba(213, 27, 62, 0.08);
+  color: #d51b3e;                     /* 4.56:1 on its holder */
+}
+
+.video-trial-card__icon--amber {
+  background: rgba(180, 83, 9, 0.08);
+  color: #b45309;                     /* 4.50:1 */
+}
+
+.video-trial-card__icon--pink {
+  background: rgba(190, 24, 93, 0.08);
+  color: #be185d;                     /* 5.31:1 */
+}
+
+.video-trial-card__icon--indigo {
+  background: rgba(67, 56, 202, 0.08);
+  color: #4338ca;                     /* 6.94:1 */
+}
+
+.video-trial-card__heading {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.video-trial-card__text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/*******************************************************************************
+ * Pricing
+ ******************************************************************************/
+
+.video-trial-plans {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 55rem;   /* 880px */
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .video-trial-plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.video-trial-plan {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem;
+  border: 1px solid var(--vt-divider);
+  border-radius: var(--vt-radius);
+  background: var(--vt-white);
+}
+
+.video-trial-plan--featured {
+  border: 2px solid var(--vt-red-cta);
+}
+
+.video-trial-plan__badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0.2rem 0.9rem;
+  border-radius: 1rem;
+  background: var(--vt-red-cta);
+  color: var(--vt-white);          /* white on red 5.18:1 */
+  font-size: 0.8125rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.video-trial-plan__name {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.video-trial-plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.video-trial-plan__amount {
+  color: var(--vt-ink);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* JPY / RUB / PLN render long amounts; class applied by video-trial.js */
+.video-trial-plan__amount--long {
+  font-size: 1.875rem;
+}
+
+.video-trial-plan__frequency {
+  font-size: 0.9375rem;
+}
+
+.video-trial-plan__tagline {
+  margin: 0.75rem 0 1.25rem;
+  font-size: 0.875rem;
+  min-height: 1.25rem;
+}
+
+.video-trial-plan__text {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+}
+
+.video-trial-plan__benefits {
+  margin: 0 0 1.75rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.video-trial-plan__benefits li {
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+  background: url(/update/green-check.svg) no-repeat 0 0.15rem;
+  background-size: 1rem 1rem;
+}
+
+.video-trial-plan__cta {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* vat-message include renders these; only one shows, driven by <html> classes */
+.video-trial-plan .vat-inclusive__text,
+.video-trial-plan .vat-exclusive__text {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+}
+
+.video-trial-pricing__reassurance,
+.video-trial-pricing__sign-in {
+  margin: 1.75rem 0 0;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+
+.video-trial-pricing__sign-in {
+  margin-top: 0.75rem;
+}
+
+.video-trial-pricing__sign-in a,
+.video-trial-error__inner a {
+  color: var(--vt-red-text);
+  font-weight: 700;
+}
+
+.video-trial-pricing__providers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.video-trial-pricing__providers p {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.video-trial-pricing__providers img {
+  height: 1.25rem;
+  width: auto;
+  max-width: 100%;
+}
+
+/*******************************************************************************
+ * Testimonials
+ ******************************************************************************/
+
+.video-trial-quotes {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .video-trial-quotes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.video-trial-quote {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 2rem;
+  border: 1px solid var(--vt-divider);
+  border-radius: 1rem;
+  background: var(--vt-white);
+}
+
+/*
+ * A star rating carries information, so aria-hidden alone would not do — the
+ * glyphs are paired with .sr-only text in the markup. The ratio and the reason
+ * for accepting it are documented at the --vt-gold-text token.
+ */
+.video-trial-quote__stars {
+  margin: 0 0 1rem;
+  color: var(--vt-gold-text);   /* 1.53:1 on white, deliberate — see the token */
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.video-trial-quote__text {
+  margin: 0 0 1.5rem;
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.video-trial-quote__author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Initial avatar — we do not republish reviewers' profile photos */
+.video-trial-quote__avatar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--vt-white);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.video-trial-quote__avatar--red {
+  background: var(--vt-red-cta);   /* white 5.18:1 */
+}
+
+.video-trial-quote__avatar--blue {
+  background: #0679b4;             /* white 4.77:1 */
+}
+
+.video-trial-quote__avatar--green {
+  background: var(--vt-green);     /* white 5.02:1 */
+}
+
+.video-trial-quote__name {
+  display: block;
+  color: var(--vt-ink);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.video-trial-quote__source {
+  display: block;
+  font-size: 0.8125rem;
+}
+
+/*******************************************************************************
+ * FAQ
+ *******************************************************************************
+ * Each question is its own bordered card rather than a divided list, matching
+ * AdBlock. <details>/<summary> keeps it keyboard operable and exposes the
+ * expanded state to assistive tech without any JS.
+ ******************************************************************************/
+
+.video-trial-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.video-trial-faq__item {
+  overflow: hidden;
+  border: 1px solid var(--vt-divider);
+  border-radius: 0.875rem;   /* 14px */
+  background: var(--vt-white);
+}
+
+.video-trial-faq__item[open] {
+  border-color: #dddddd;
+}
+
+.video-trial-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  color: var(--vt-ink);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+/* Suppress the native disclosure triangle; the chevron replaces it */
+.video-trial-faq__question {
+  list-style: none;
+}
+
+.video-trial-faq__question::-webkit-details-marker,
+.video-trial-faq__question::marker {
+  display: none;
+}
+
+.video-trial-faq__question:hover {
+  background: var(--vt-light);
+}
+
+/* Colour baked into icon-chevron-down.svg (#585858) — see the note above */
+.video-trial-faq__chevron {
+  flex: none;
+  transition: transform 0.3s ease;
+}
+
+.video-trial-faq__item[open] .video-trial-faq__chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-trial-faq__chevron {
+    transition: none;
+  }
+}
+
+.video-trial-faq__answer {
+  margin: 0;
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+/*******************************************************************************
+ * Final CTA
+ ******************************************************************************/
+
+.video-trial-section--final-cta {
+  text-align: center;
+}
+
+/*
+ * AdBlock keeps the closing CTA at 480px, but their accent line is shorter than
+ * ours: "videos without the ads" needs 441px at the 44px heading size and 480px
+ * only leaves 432px of content, so the headline wrapped to three lines. 544px
+ * gives the accent one line with ~55px spare for longer translations.
+ */
+.video-trial-section--final-cta .video-trial-container--narrow {
+  max-width: 34rem;   /* 544px */
+}
+
+.video-trial-final-cta__heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);  /* 28-44px, matches AdBlock */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.video-trial-final-cta__text {
+  margin: 0 auto 2rem;
+  max-width: 32rem;
+  line-height: 1.6;
+}
+
+.video-trial-final-cta__sign-in {
+  margin: 1rem 0 0;
+  font-size: 0.8125rem;
+}
+
+.page-video-trial .video-trial-final-cta__sign-in a {
+  color: var(--vt-red-text);   /* 5.70:1 on white / 5.32:1 on light */
+  font-weight: 700;
+}
+
+/*******************************************************************************
+ * Scroll reveal
+ *******************************************************************************
+ * Opt-in via [data-reveal]; video-trial.js adds the visible class. Users who
+ * prefer reduced motion get the content immediately with no transition.
+ ******************************************************************************/
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  [data-reveal].video-trial--revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  /*
+   * Set by video-trial.js when an in-page anchor is clicked, so every pending
+   * reveal settles in the same frame instead of animating. Without this the
+   * translateY above is still unwinding while the browser scrolls, and the
+   * destination lands under the sticky header. See the note in video-trial.js.
+   */
+  .video-trial--settle-reveals [data-reveal] {
+    transition: none;
+  }
+}

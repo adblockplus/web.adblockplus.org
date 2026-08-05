@@ -1,0 +1,73 @@
+<!-- ===== 8. PRICING ===== -->
+<section class="video-trial-section video-trial-section--pricing" id="video-trial-pricing" data-reveal>
+  <div class="video-trial-container">
+    <div class="video-trial-plans">
+
+      <!-- Monthly -->
+      <article class="video-trial-plan placeholder">
+        <h3 class="video-trial-plan__name">{{ video-trial-pricing__monthly Monthly }}</h3>
+        <p class="video-trial-plan__price" dir="ltr" data-frequency="monthly">
+          <span class="video-trial-plan__amount">&nbsp;</span>
+          <span class="video-trial-plan__frequency">{{ video-trial-pricing__per-month /month }}</span>
+        </p>
+        <? include vat-message ?>
+        <p class="video-trial-plan__tagline">
+          {{ video-trial-pricing__monthly-tagline Perfect for trying Premium }}
+        </p>
+        <p class="video-trial-plan__text">
+          {{ video-trial-pricing__monthly-text All Premium features with the flexibility to cancel anytime. No commitment required. }}
+        </p>
+        <ul class="video-trial-plan__benefits">
+          <li>{{ video-trial-pricing__benefit-1 Every Premium feature included }}</li>
+          <li>{{ video-trial-pricing__benefit-2 60-day money-back guarantee }}</li>
+        </ul>
+        <button type="button" class="video-trial-button video-trial-button--secondary video-trial-plan__cta video-trial-checkout-button"
+                data-frequency="monthly">
+          {{ video-trial-pricing__cta Get Premium }}
+        </button>
+      </article>
+
+      <!-- Yearly (featured) -->
+      <article class="video-trial-plan video-trial-plan--featured placeholder">
+        <p class="video-trial-plan__badge">{{ video-trial-pricing__best-value Best value }}</p>
+        <h3 class="video-trial-plan__name">{{ video-trial-pricing__yearly Yearly }}</h3>
+        <p class="video-trial-plan__price" dir="ltr" data-frequency="yearly">
+          <span class="video-trial-plan__amount">&nbsp;</span>
+          <span class="video-trial-plan__frequency">{{ video-trial-pricing__per-year /year }}</span>
+        </p>
+        <? include vat-message ?>
+        <!-- Populated by video-trial.js from the price table -->
+        <p class="video-trial-plan__tagline" id="video-trial-savings"></p>
+        <p class="video-trial-plan__text">
+          {{ video-trial-pricing__yearly-text Everything in Monthly, plus the best value for long-term ad-free browsing. Most people choose this plan. }}
+        </p>
+        <ul class="video-trial-plan__benefits">
+          <li>{{ video-trial-pricing__benefit-1 Every Premium feature included }}</li>
+          <li>{{ video-trial-pricing__benefit-2 60-day money-back guarantee }}</li>
+        </ul>
+        <button type="button" class="video-trial-button video-trial-button--primary video-trial-plan__cta video-trial-checkout-button"
+                data-frequency="yearly">
+          {{ video-trial-pricing__cta Get Premium }}
+        </button>
+      </article>
+
+    </div>
+
+    <p class="video-trial-pricing__reassurance">
+      {{ video-trial-pricing__reassurance 60-day money-back guarantee · Cancel anytime · No hidden fees }}
+    </p>
+
+    <p class="video-trial-pricing__sign-in">
+      {{ video-trial-pricing__sign-in-text Already purchased Premium? }}
+      <a href="#" class="video-trial-sign-in-link">
+        {{ video-trial-pricing__sign-in-link Click to sign in }}
+      </a>
+    </p>
+
+    <aside class="video-trial-pricing__providers">
+      <p>{{ video-trial-pricing__providers-label Accepted payments: }}</p>
+      <img src="/update/payment-providers.png" width="274" height="24"
+           alt="{{ video-trial-pricing__providers-alt Visa, Mastercard, PayPal, Google Pay, American Express }}">
+    </aside>
+  </div>
+</section>

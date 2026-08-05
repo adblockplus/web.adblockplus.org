@@ -1,0 +1,78 @@
+<!-- ===== 6. FREE VS PREMIUM COMPARISON ===== -->
+<section class="video-trial-section video-trial-section--comparison" id="video-trial-comparison" data-reveal>
+  <div class="video-trial-container">
+    <h2 class="video-trial-section__heading">
+      {{ video-trial-comparison__heading Free vs Premium }}<br>
+      <span class="video-trial-section__heading-muted">{{ video-trial-comparison__heading-2 side by side }}</span>
+    </h2>
+
+    <!--
+      Tick and cross are decorative; the .sr-only text next to each carries the
+      value, so the table is not conveying information by icon alone.
+    -->
+    <div class="video-trial-comparison">
+      <div class="video-trial-comparison__scroll">
+        <table class="video-trial-comparison__table">
+          <thead>
+            <tr>
+              <th scope="col">{{ video-trial-comparison__col-feature Feature }}</th>
+              <th scope="col">{{ video-trial-comparison__col-free Free }}</th>
+              <th scope="col" class="video-trial-comparison__premium">
+                {{ video-trial-comparison__col-premium Premium }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{ video-trial-comparison__row-1 Block ads everywhere you browse }}</th>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes Included }}</span></td>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">{{ video-trial-comparison__row-2 Add your own blocking rules }}</th>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes }}</span></td>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">
+                {{ video-trial-comparison__row-3 A better video experience on e.g. YouTube }}
+                <span class="video-trial-badge video-trial-badge--new">{{ video-trial-badge__new New }}</span>
+                <!-- "Active" means active for this visitor, so it goes once the trial ends -->
+                <span class="video-trial-badge video-trial-badge--active video-trial--when-active">{{ video-trial-badge__active Active }}</span>
+              </th>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-cross.svg"
+                     alt="" width="16" height="16" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__no Not included }}</span></td>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">{{ video-trial-comparison__row-4 No more cookie pop-ups cluttering every page }}</th>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-cross.svg"
+                     alt="" width="16" height="16" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__no }}</span></td>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">{{ video-trial-comparison__row-5 Hide sign-up forms, floating videos and much more }}</th>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-cross.svg"
+                     alt="" width="16" height="16" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__no }}</span></td>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes }}</span></td>
+            </tr>
+            <tr>
+              <th scope="row">{{ video-trial-comparison__row-6 Support Adblock Plus }}</th>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-cross.svg"
+                     alt="" width="16" height="16" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__no }}</span></td>
+              <td><img class="video-trial-comparison__icon" src="/img/video-trial/icon-check.svg"
+                     alt="" width="20" height="20" aria-hidden="true"><span class="sr-only">{{ video-trial-comparison__yes }}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
