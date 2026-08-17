@@ -11,6 +11,7 @@ dist
 public
 access.log
 error.log
+.python-version
 
 # Local test data (not committed — refresh with: curl -s https://adblockplus.org/data/ai-ad-data.json > static/data/ai-ad-data.json)
 /static/data/ai-ad-data.json
