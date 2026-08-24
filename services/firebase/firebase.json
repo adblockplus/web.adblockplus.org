@@ -182,6 +182,16 @@
         "regex": "(?i)^/r/grow-157/ios-v4/?$",
         "destination": "https://apps.apple.com/app/apple-store/id1028871868?pt=117871164&ct=grow-157-v4&mt=8",
         "type": 301
+      },
+      {
+        "regex": "(?i)^/crumbs/?$",
+        "destination": "https://crumbs.com/",
+        "type": 302
+      },
+      {
+        "regex": "(?i)^/crumbs/(.*)$",
+        "destination": "https://crumbs.com/:1",
+        "type": 302
       }
     ],
     "rewrites": [
