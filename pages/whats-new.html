@@ -1,0 +1,119 @@
+title=What’s new in Adblock Plus
+description=See what Adblock Plus has blocked for you, what changed in this version, and what Adblock Plus Premium adds beyond your browser.
+template=minimal
+robots=none
+nonavbar=1
+nofooter=1
+code=WN
+
+<head>
+  <!--
+    The page has two independent axes, and the URL sets each one:
+
+      ?variant=<name>  which presentation — the copy, the heading, the top block
+      ?trial=<days>    which offer — pay now, or a free trial and then pay
+
+    Both are resolved here, in <head>, before the body paints, so the state the
+    visitor did not ask for is never briefly visible. Each axis becomes its own
+    attribute on <html>, and the CSS then needs one rule for each axis rather
+    than one for each combination — a new campaign is a line in PRESETS below,
+    not new CSS. The six states are listed in the Variants block in
+    static/css/pages/whats-new.css.
+
+    No-JS visitors get the default presentation and the pay-now offer, which is
+    the state most of them are meant to see.
+
+    `variant` is also the experiment framework's own parameter, but that one is
+    read as a number inside adblock.experiment() only, and this page never
+    starts an experiment — so a named value here cannot collide with it.
+  -->
+  <script>(() => {
+    const PRESETS = {
+      // The VPN copy on its own. Traffic is already pointed at this one.
+      "vpn": { variant: "vpn" },
+      // The extension's on-page dialog: the VPN copy, its own heading, and an
+      // image where the status block otherwise goes.
+      "vpn-opd": { variant: "vpn", heading: "opd", top: "image" },
+    };
+
+    /*
+     * Trial lengths this page can sell, and the only ones ?trial is allowed to
+     * ask for. Two things have to be true before a length goes in here:
+     *
+     *   - The copy names it. "7 days" is written out in the badge, the hero,
+     *     the pricing heading and the FAQ, in 19 languages, rather than
+     *     substituted from this number: several of those languages inflect the
+     *     noun with the count, which a placeholder cannot do.
+     *   - Paddle has a price for it in every currency the page quotes.
+     *     checkout() resolves the price by trial length and throws when there
+     *     is none, so a length added ahead of its prices gives a CTA that opens
+     *     nothing for the visitors it has no price for.
+     */
+    const TRIAL_DAYS = [7];
+
+    const root = document.documentElement;
+
+    const preset = PRESETS[adblock.query.get("variant")];
+    if (preset) {
+      root.dataset.wnVariant = preset.variant;
+      if (preset.heading) root.dataset.wnHeading = preset.heading;
+      if (preset.top) root.dataset.wnTop = preset.top;
+    }
+
+    const trial = parseInt(adblock.query.get("trial"), 10);
+    if (TRIAL_DAYS.includes(trial)) root.dataset.wnTrial = trial;
+  })()</script>
+
+  <link rel="stylesheet" href="/css/pages/whats-new.css">
+
+  <script>
+    // Strings read from JS. These come from eyeo-controlled locale files, not
+    // user input; see includes/scripts/namespace.html.
+    Object.assign(adblock.strings, {
+      "whats-new-pricing__savings": "{{ whats-new-pricing__savings Save {savingsPercent}% }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "whats-new-pricing__equivalent": "{{ whats-new-pricing__equivalent That’s {amount} a month }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "whats-new-pricing__billed-monthly": "{{ whats-new-pricing__billed-monthly Billed monthly at {amount} }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "whats-new-pricing__billed-yearly": "{{ whats-new-pricing__billed-yearly Billed yearly at {amount} }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "whats-new-pricing__billed-trial-monthly": "{{ whats-new-pricing__billed-trial-monthly Free for 7 days, then billed at {amount} a month }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "whats-new-pricing__billed-trial-yearly": "{{ whats-new-pricing__billed-trial-yearly Free for 7 days, then billed at {amount} a year }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "whats-new-status__headline-count": "{{ whats-new-status__headline-count We’ve blocked {count} ads for you. }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+    });
+  </script>
+</head>
+
+<div class="whats-new-page">
+
+  <? include whats-new/header ?>
+
+  <!--
+    Everything between the brand bar and the footer sits inside one raised card,
+    matching the ABP app surface the design borrows from.
+  -->
+  <div class="whats-new-shell">
+    <? include whats-new/status ?>
+    <? include whats-new/promo ?>
+    <div class="whats-new-divider"></div>
+    <? include whats-new/hero ?>
+    <? include whats-new/pricing ?>
+    <? include whats-new/benefits ?>
+    <? include whats-new/testimonials ?>
+    <? include whats-new/faq ?>
+  </div>
+
+  <? include whats-new/footer ?>
+
+</div>
+
+<? include prevent-duplicate-subscriptions ?>
+
+<!--
+  The stats load first and separately. They import nothing, so a blocked
+  cdn.paddle.com — a live possibility on a page whose every visitor runs a
+  content blocker — takes down the checkout but leaves the page's main content
+  standing. See the header comment in whats-new-stats.js.
+-->
+<script type="module" src="/js/pages/whats-new-stats.js"></script>
+
+<!-- paddle.js must precede the module: modules/paddle.js calls Paddle.Initialize() at top level. -->
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script type="module" src="/js/pages/whats-new.js"></script>

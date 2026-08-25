@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 110" width="600" height="110"
+     fill="none" role="img" aria-label="">
+  <!--
+    The heading it sits above, drawn: one connection, exposed on the left and
+    closed on the right, with the Adblock Plus octagon at the point where it
+    closes. Left to right, that is the open internet, three things it sends that
+    nobody asked for, the octagon that stops them, and the visitor's own devices
+    inside an unbroken line.
+
+    Geometry rather than an illustrated scene, because the block is 110px tall
+    on a dark card and a drawn scene at that size becomes a smudge. Every colour
+    is a token from static/css/pages/whats-new.css: wn-red #e14b57 for what is
+    exposed, wn-green #30d158 for what is covered — the same green the ticks and
+    the trial badge use — and wn-text-2 #cdd4e0 for the devices, which are
+    neither. (Written without their leading dashes, since XML forbids a double
+    hyphen inside a comment.)
+
+    Red against green carries none of the meaning on its own, which matters for
+    the readers who cannot tell those two apart: the line is broken on one side
+    and unbroken on the other, and that is the whole story.
+
+    It carries no text, so it needs no translation; whats-new.css mirrors it for
+    the RTL locales, where the eye travels the other way. aria-label is empty
+    because the heading below already says all of this in words.
+  -->
+  <defs>
+    <radialGradient id="wn-opd-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e14b57" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#e14b57" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== the open internet ===== -->
+  <g stroke="#e14b57" stroke-width="1.6" opacity="0.9">
+    <circle cx="34" cy="55" r="19"/>
+    <ellipse cx="34" cy="55" rx="8" ry="19"/>
+    <path d="M17.5 46.5c9 4.5 24 4.5 33 0M17.5 63.5c9-4.5 24-4.5 33 0" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== what it sends, on a line that is not closed ===== -->
+  <path d="M60 55H252" stroke="#e14b57" stroke-width="2" stroke-linecap="round"
+        stroke-dasharray="9 8" opacity="0.85"/>
+
+  <!-- an ad -->
+  <g stroke="#e14b57" stroke-width="1.6">
+    <rect x="86" y="43" width="24" height="24" rx="6.5" fill="#e14b57" fill-opacity="0.09"/>
+    <path d="M92.5 50.5h11M92.5 55h11M92.5 59.5h6.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- a tracker -->
+  <g stroke="#e14b57" stroke-width="1.6">
+    <rect x="140" y="43" width="24" height="24" rx="6.5" fill="#e14b57" fill-opacity="0.09"/>
+    <path d="M146 55c2.4-3.3 4.6-5 5.9-5s3.5 1.7 5.9 5c-2.4 3.3-4.6 5-5.9 5s-3.5-1.7-5.9-5Z"/>
+    <circle cx="152" cy="55" r="1.8" fill="#e14b57" stroke="none"/>
+  </g>
+
+  <!-- an open network -->
+  <g stroke="#e14b57" stroke-width="1.6" stroke-linecap="round">
+    <rect x="194" y="43" width="24" height="24" rx="6.5" fill="#e14b57" fill-opacity="0.09"/>
+    <path d="M200.5 52.5a7.5 7.5 0 0 1 11 0"/>
+    <path d="M203.5 56.6a3.6 3.6 0 0 1 5 0"/>
+    <circle cx="206" cy="60.6" r="1.5" fill="#e14b57" stroke="none"/>
+  </g>
+
+  <!-- turned back at the edge -->
+  <path d="M245 42c4.6 4.6 4.6 21.4 0 26M253 38.5c5.5 5.5 5.5 28.5 0 34"
+        stroke="#e14b57" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- ===== the octagon, where the line closes ===== -->
+  <circle cx="300" cy="55" r="49" fill="url(#wn-opd-glow)"/>
+  <path d="M287.2 24h25.6L331 42.2v25.6L312.8 86h-25.6L269 67.8V42.2L287.2 24Z" fill="#e14b57"/>
+  <!-- a closed padlock: the one glyph that still says encrypted at 20px -->
+  <g stroke="#ffffff" stroke-width="2.2" stroke-linecap="round">
+    <path d="M294 51v-4a6 6 0 0 1 12 0v4"/>
+    <rect x="290.5" y="51" width="19" height="15" rx="4.5" fill="#ffffff" stroke="none"/>
+    <path d="M300 56.5v4" stroke="#e14b57"/>
+  </g>
+
+  <!-- ===== the same line, unbroken, closed around the devices ===== -->
+  <path d="M331 55h35" stroke="#30d158" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M384 16h184l18 18v42l-18 18H384l-18-18V34l18-18Z"
+        fill="#30d158" fill-opacity="0.06" stroke="#30d158" stroke-width="2.5"
+        stroke-linejoin="round"/>
+
+  <g stroke="#cdd4e0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- phone -->
+    <rect x="398" y="37" width="22" height="40" rx="5"/>
+    <path d="M406 42h6"/>
+    <!-- laptop -->
+    <path d="M442 41h56v26h-56z"/>
+    <path d="M436 72h68"/>
+    <!-- tablet -->
+    <rect x="518" y="32" width="36" height="45" rx="6"/>
+    <path d="M531 71.5h10"/>
+  </g>
+</svg>

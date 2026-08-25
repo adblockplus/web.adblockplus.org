@@ -1,0 +1,99 @@
+<!-- ===== 6. TESTIMONIALS =====
+  The same three Chrome Web Store reviews /video-trial uses, quoted verbatim with
+  the reviewer names and dates as they appear publicly. Do not edit the quotes to
+  read better — if a quote needs shortening, use an ellipsis and keep the meaning
+  intact.
+-->
+<section class="whats-new-inner whats-new-inner--wide whats-new-section whats-new-testimonials">
+  <h2 class="whats-new-section__heading">
+    {{ whats-new-testimonials__heading Join the club. }}
+    <em>{{ whats-new-testimonials__heading-accent Loved by millions of users worldwide. }}</em>
+  </h2>
+  <p class="whats-new-section__text">
+    {{ whats-new-testimonials__text Don’t take it from us — hear it from them. It’s the same reliable Adblock Plus experience you know, now clearing out everything ad blocking leaves behind. }}
+  </p>
+
+  <!-- Aggregate proof above the individual quotes: reach and longevity first,
+       then the voices. -->
+  <ul class="whats-new-proof">
+    <li>
+      <p class="whats-new-proof__value">{{ whats-new-proof__since-value Since 2006 }}</p>
+      <p class="whats-new-proof__label">{{ whats-new-proof__since-label The world’s most downloaded ad blocker }}</p>
+    </li>
+    <li>
+      <p class="whats-new-proof__value">{{ whats-new-proof__downloads-value 10M+ }}</p>
+      <p class="whats-new-proof__label">{{ whats-new-proof__downloads-label Safari downloads }}</p>
+    </li>
+    <li>
+      <!-- The star is decorative; "out of 5" carries the scale for screen readers. -->
+      <p class="whats-new-proof__value">
+        {{ whats-new-proof__rating-value 4.3 }}<span class="whats-new-proof__star" aria-hidden="true">★</span><span class="sr-only">{{ whats-new-proof__rating-scale out of 5 }}</span>
+      </p>
+      <p class="whats-new-proof__label">{{ whats-new-proof__rating-label from 19K App Store ratings }}</p>
+    </li>
+  </ul>
+
+  <!-- The star row is decorative; the rating is carried as .sr-only text so it
+       is not conveyed by glyph alone. -->
+  <div class="whats-new-quotes">
+
+    <figure class="whats-new-quote">
+      <p class="whats-new-quote__stars">
+        <span aria-hidden="true">★★★★★</span>
+        <span class="sr-only">{{ whats-new-testimonials__rating 5 out of 5 stars }}</span>
+      </p>
+      <blockquote class="whats-new-quote__text">
+        {{ whats-new-testimonials__quote-1 “I’ve tried several ad blockers over the years, but I always end up coming back to Adblock Plus. It’s by far the best free option for me. It has saved me from YouTube’s annoying ads, and the browsing experience is so much better. Highly recommended!” }}
+      </blockquote>
+      <figcaption class="whats-new-quote__author">
+        <span class="whats-new-quote__name">Sayed</span>
+        <span class="whats-new-quote__source">
+          {{ whats-new-testimonials__source-1 Chrome Web Store · Jul 2026 }}
+        </span>
+      </figcaption>
+    </figure>
+
+    <figure class="whats-new-quote">
+      <p class="whats-new-quote__stars">
+        <span aria-hidden="true">★★★★★</span>
+        <span class="sr-only">{{ whats-new-testimonials__rating }}</span>
+      </p>
+      <blockquote class="whats-new-quote__text">
+        {{ whats-new-testimonials__quote-2 “I’ve been using it for years and I love it. The free version is good, but the Premium level is well worth the annual fee. Adblock Plus is one of the very few things that I recommend to other people.” }}
+      </blockquote>
+      <figcaption class="whats-new-quote__author">
+        <span class="whats-new-quote__name">Robert</span>
+        <span class="whats-new-quote__source">
+          {{ whats-new-testimonials__source-2 Chrome Web Store · Jun 2026 }}
+        </span>
+      </figcaption>
+    </figure>
+
+    <figure class="whats-new-quote">
+      <p class="whats-new-quote__stars">
+        <span aria-hidden="true">★★★★★</span>
+        <span class="sr-only">{{ whats-new-testimonials__rating }}</span>
+      </p>
+      <blockquote class="whats-new-quote__text">
+        {{ whats-new-testimonials__quote-3 “Blocked ads on all websites including youtube. It had problems with youtube but now they’ve fixed it.” }}
+      </blockquote>
+      <figcaption class="whats-new-quote__author">
+        <span class="whats-new-quote__name">M shuja</span>
+        <span class="whats-new-quote__source">
+          {{ whats-new-testimonials__source-3 Chrome Web Store · Jun 2026 }}
+        </span>
+      </figcaption>
+    </figure>
+
+  </div>
+
+  <!-- Links to the pricing cards rather than opening Paddle on a plan the
+       visitor has not chosen, matching the CTA under the benefits table. -->
+  <p class="whats-new-cta">
+    <a class="whats-new-button" href="#whats-new-pricing"
+       data-click='{"type":"whats-new-cta","trigger":"testimonials"}'>
+      <span data-wn-offer="standard">{{ whats-new-pricing__cta Upgrade Now }}</span>
+      <span data-wn-offer="trial">{{ whats-new-pricing__cta-trial Start free trial }}</span>
+    </a>
+  </p>
+</section>

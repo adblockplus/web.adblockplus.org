@@ -178,6 +178,12 @@ console.log(cr('#yourFG','#yourBG')+':1')
 ### Update page
 - `bc` (number) — show alternate CTA with block count
 
+### What's new page
+Two independent axes; the head script in `pages/whats-new.html` turns each into a `data-wn-*` attribute on `<html>` before first paint, and the Variants block in `static/css/pages/whats-new.css` lists the states.
+- `variant` (name) — presentation preset: `vpn` (VPN copy) or `vpn-opd` (VPN copy, its own heading, a promo image in place of the status block). Note this page reads `variant` as a name, not as the experiment framework's number.
+- `trial` (number of days) — sell a free trial rather than a subscription: copy, CTA labels, FAQ and the Paddle price. Only lengths listed in the page's `TRIAL_DAYS` are honoured, and `whats-new.js` drops the trial again if Paddle has no price for it in the visitor's currency.
+- `bc` (number) — override the blocked count, as on the update page
+
 ### Premium page
 - `premium-checkout__*` — handoff values: `handoff`, `flow`, `page`, `product`, `premiumId`, `currency`, `frequency`, `amount`, `country`, `locale`, `timestamp`
 - `reenroll` (flag) — show re-enroll CTA variant

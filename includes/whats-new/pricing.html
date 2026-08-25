@@ -1,0 +1,128 @@
+<!-- ===== 4. PRICING ===== -->
+<section class="whats-new-inner whats-new-pricing-section" id="whats-new-pricing">
+  <div class="whats-new-pricing">
+    <h2 class="whats-new-pricing__heading" data-wn-offer="standard">
+      {{ whats-new-pricing__heading Get our complete protection }}
+    </h2>
+    <h2 class="whats-new-pricing__heading" data-wn-offer="trial">
+      {{ whats-new-pricing__heading-trial Try our complete protection free for 7 days }}
+    </h2>
+    <p class="whats-new-pricing__lede">
+      {{ whats-new-pricing__lede Two ways to get Adblock Plus Premium. Cancel anytime. }}
+    </p>
+
+    <!--
+      Both cards show a per-month figure so they compare directly, with the real
+      charge spelled out underneath. Every number here is written by whats-new.js
+      from modules/prices.js; the markup ships none of its own.
+    -->
+    <div class="whats-new-plans">
+
+      <article class="whats-new-plan">
+        <h3 class="whats-new-plan__name">{{ whats-new-pricing__monthly Monthly }}</h3>
+        <!--
+          .placeholder sits on the amount, not the card: the shared rules in
+          includes/placeholder-animations.html strip background and border from
+          whatever carries the class, which on a card would blank the whole
+          thing. Only the price is unknown before JS runs, so only the price
+          waits.
+        -->
+        <p class="whats-new-plan__price" dir="ltr" data-frequency="monthly">
+          <span class="whats-new-plan__amount placeholder">&nbsp;</span><span class="whats-new-plan__frequency">{{ whats-new-pricing__per-month /mo }}</span>
+        </p>
+        <? include vat-message ?>
+        <ul class="whats-new-plan__benefits">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-1 All Premium features }}
+          </li>
+          <li data-wn-only="default">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-2 Works in every browser you use }}
+          </li>
+          <li data-wn-only="vpn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-2-vpn Adblock Plus VPN included }}
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-3 60-day money-back guarantee }}
+          </li>
+        </ul>
+        <!--
+          Enabled by whats-new.js once there is a real price to charge. Both
+          labels ship and the CSS hides one, so the label always matches the
+          offer the page is showing, in every language, with no JS.
+        -->
+        <button type="button" class="whats-new-button whats-new-checkout-button" disabled data-frequency="monthly">
+          <span data-wn-offer="standard">{{ whats-new-pricing__cta Upgrade Now }}</span>
+          <span data-wn-offer="trial">{{ whats-new-pricing__cta-trial Start free trial }}</span>
+        </button>
+        <p class="whats-new-plan__billed" data-billed-for="monthly"></p>
+      </article>
+
+      <article class="whats-new-plan whats-new-plan--featured">
+        <p class="whats-new-plan__badge" id="whats-new-savings"></p>
+        <h3 class="whats-new-plan__name">{{ whats-new-pricing__yearly Yearly }}</h3>
+        <p class="whats-new-plan__price" dir="ltr" data-frequency="yearly">
+          <span class="whats-new-plan__amount placeholder">&nbsp;</span><span class="whats-new-plan__frequency">{{ whats-new-pricing__per-month }}</span>
+        </p>
+        <? include vat-message ?>
+        <ul class="whats-new-plan__benefits">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-1 }}
+          </li>
+          <li data-wn-only="default">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-2 }}
+          </li>
+          <li data-wn-only="vpn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-2-vpn }}
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ whats-new-pricing__benefit-3 }}
+          </li>
+        </ul>
+        <!-- Enabled by whats-new.js once there is a real price to charge. -->
+        <button type="button" class="whats-new-button whats-new-checkout-button" disabled data-frequency="yearly">
+          <span data-wn-offer="standard">{{ whats-new-pricing__cta }}</span>
+          <span data-wn-offer="trial">{{ whats-new-pricing__cta-trial }}</span>
+        </button>
+        <p class="whats-new-plan__billed" data-billed-for="yearly"></p>
+      </article>
+
+    </div>
+  </div>
+
+  <p class="whats-new-pricing__reassurance">
+    {{ whats-new-pricing__reassurance 60-day money-back guarantee · Cancel anytime · No hidden fees }}
+  </p>
+
+  <p class="whats-new-pricing__sign-in">
+    {{ whats-new-pricing__sign-in-text Already purchased Premium? }}
+    <a href="#" class="whats-new-sign-in-link">
+      {{ whats-new-pricing__sign-in-link Click to sign in }}
+    </a>
+  </p>
+
+  <aside class="whats-new-providers">
+    <p class="whats-new-providers__label">{{ whats-new-pricing__providers-label Accepted payments }}</p>
+    <img
+      alt="{{ whats-new-pricing__providers-alt Visa, Mastercard, PayPal, Google Pay, American Express }}"
+      class="whats-new-providers__image"
+      height="24"
+      width="274"
+      src="/update/payment-providers.png">
+  </aside>
+</section>

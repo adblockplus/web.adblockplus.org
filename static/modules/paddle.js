@@ -336,6 +336,18 @@ const PADDLE_EXPERIMENT_PRICES = {
           }
         }
       },
+      "EUR": {
+        "monthly": {
+          "350": {
+            "7": "pri_01kzzqcbb0xc14t7ne44pb60x8"
+          }
+        },
+        "yearly": {
+          "3500": {
+            "7": "pri_01kzzqpzbzkjmn644ar4hb63g5"
+          }
+        }
+      },
       "CAD": {
         "monthly": {
           "100": {
@@ -354,6 +366,7 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "500": {
             "0": "pri_01j8m98863gxe8v7f8wse28kg7",
+            "7": "pri_01kzzqwaxyz7s0h375k59c272j",
             "30": "pri_01jp03yrwtznkgdy5kx3sse0m4"
           },
           "600": {
@@ -391,6 +404,7 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "5000": {
             "0": "pri_01j8m98c9exyprbh2t5879qyg9",
+            "7": "pri_01kzzqya904nwj3v1xtrmy1zhw",
             "30": "pri_01jp03zvxskn17dhj9qax0j94e"
           },
           "6000": {
@@ -483,7 +497,19 @@ const PADDLE_EXPERIMENT_PRICES = {
             "0": "pri_01j8m98ng03csz5118jhhg97br"
           }
         }
-      }
+      },
+      "GBP": {
+        "monthly": {
+          "350": {
+            "7": "pri_01kzzrfrghk4nydn5xg51z85zb"
+          }
+        },
+        "yearly": {
+          "3500": {
+            "7": "pri_01kzzrgw6mwf4sh9f433bck4cd"
+          }
+        }
+      },
     }
   },
   "live": {
@@ -562,6 +588,18 @@ const PADDLE_EXPERIMENT_PRICES = {
           }
         }
       },
+      "EUR": {
+        "monthly": {
+          "350": {
+            "7": "pri_01kzzsqa30xm4v3v2krcqd55cm"
+          }
+        },
+        "yearly": {
+          "3500": {
+            "7": "pri_01kzzsrvykh1gqcr2y42p8sn9h"
+          }
+        }
+      },
       "CAD": {
         "monthly": {
           "100": {
@@ -580,6 +618,7 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "500": {
             "0": "pri_01j8m9ax71rz503vc29p33jy9c",
+            "7": "pri_01kzzt2s9q00c0hs5jba09pxff",
             "30": "pri_01jnkvhqz69vx3b7jxkgcefns4"
           },
           "600": {
@@ -617,6 +656,7 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "5000": {
             "0": "pri_01j8m9b18xtf0djqxv3dtbzww8",
+            "7": "pri_01kzzt5fe7wk973q8ycq1t6am8",
             "30": "pri_01jnkvn24ey2fbatm4804jeswc"
           },
           "6000": {
@@ -633,6 +673,18 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "10000": {
             "0": "pri_01j8m9b3d7g3nnpx9qc000nfq8"
+          }
+        }
+      },
+      "GBP": {
+        "monthly": {
+          "350": {
+            "7": "pri_01kzztjfty3j3sgrkpmat9ne3h"
+          }
+        },
+        "yearly": {
+          "3500": {
+            "7": "pri_01kzztkh6xhfs8jd6rrkj2gz4j"
           }
         }
       },
@@ -657,6 +709,7 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "600": {
             "0": "pri_01j8m9b5vy5abphmr46mz6q8cf",
+            "7": "pri_01kzztprpcnst5bv5rzg1db3vh",
             "30": "pri_01jnkw6r7vrt2ddnxxp561ch79"
           },
           "700": {
@@ -694,6 +747,7 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "6000": {
             "0": "pri_01j8m9b9tfzdk8e094b310eydz",
+            "7": "pri_01kzztrjntff31nb9yw8g384qn",
             "30": "pri_01jnkw8gphhcfrsp0b1saxgjep"
           },
           "7000": {
@@ -707,6 +761,66 @@ const PADDLE_EXPERIMENT_PRICES = {
           },
           "10000": {
             "0": "pri_01j8m9bb9s9gn7h9c2nks7ch22"
+          }
+        }
+      },
+      "NZD": {
+        "monthly": {
+          "600": {
+            "7": "pri_01kzzv13eagev9nns6q7epetv5"
+          }
+        },
+        "yearly": {
+          "6000": {
+            "7": "pri_01kzzv2krs8h276btmjn95s0m3"
+          }
+        }
+      },
+      "CHF": {
+        "monthly": {
+          "400": {
+            "7": "pri_01kzzv5n63rgyevyfx4beaqtxt"
+          }
+        },
+        "yearly": {
+          "4000": {
+            "7": "pri_01kzzv6vbxdn5gpt54c98nj23d"
+          }
+        }
+      },
+      "PLN": {
+        "monthly": {
+          "1499": {
+            "7": "pri_01kzzvaxjvpgbdw12r6h9qnq9b"
+          }
+        },
+        "yearly": {
+          "14999": {
+            "7": "pri_01kzzvd7gxn8c7yr1getmqwwhw"
+          }
+        }
+      },
+      "JPY": {
+        "monthly": {
+          "600": {
+            "7": "pri_01kzzvh1je0rynf1nmjw8a475e"
+          }
+        },
+        "yearly": {
+          "6000": {
+            "7": "pri_01kzzvjgrnhqmqbcw93vvp4hr6"
+          }
+        }
+      },
+      "RUB": {
+        "monthly": {
+          "35000": {
+            "7": "pri_01kzzvmw4tmtbxe61v6593rp85"
+          }
+        },
+        "yearly": {
+          "350000": {
+            "7": "pri_01kzzvpmgrfqzgq5r5sfnh0zze"
           }
         }
       }

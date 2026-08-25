@@ -5,6 +5,7 @@ import { InstalledPage } from '../test-pages/installed-page.js';
 import { BlockCookieBannersPage } from '../test-pages/block-cookie-banners-page.js';
 import { AdblockPlusPremiumPage } from '../test-pages/adblock-plus-premium-page.js';
 import { VideoTrialPage } from '../test-pages/video-trial-page.js';
+import { WhatsNewPage } from '../test-pages/whats-new-page.js';
 
 export class PaymentTestParameters {
 
@@ -12,7 +13,7 @@ export class PaymentTestParameters {
   // See premium-payments.spec.js for examples of how to use
 
   get paymentPages() {
-    const paymentPages = [PremiumPage, UpdatePage, InstalledPage, BlockCookieBannersPage, AdblockPlusPremiumPage, VideoTrialPage];
+    const paymentPages = [PremiumPage, UpdatePage, InstalledPage, BlockCookieBannersPage, AdblockPlusPremiumPage, VideoTrialPage, WhatsNewPage];
     return paymentPages;
   }
 
@@ -28,7 +29,7 @@ export class PaymentTestParameters {
   }
 
   get signInParameters() {
-    const paymentPagesWithSignIn = [PremiumPage, BlockCookieBannersPage, AdblockPlusPremiumPage, VideoTrialPage];
+    const paymentPagesWithSignIn = [PremiumPage, BlockCookieBannersPage, AdblockPlusPremiumPage, VideoTrialPage, WhatsNewPage];
     const signInParameters  = paymentPagesWithSignIn.flatMap(paymentPage => ({ paymentPage }));
     return signInParameters;
   }

@@ -1,0 +1,1636 @@
+/*******************************************************************************
+ * What's new — post-update page
+ *******************************************************************************
+ * Dark reskin of the post-update upsell, borrowing the ABP app surface. Layout
+ * follows AdBlock's /whats-new; palette and type are ABP's.
+ *
+ * This page is dark while the rest of the site is light, so it does three things
+ * no other page CSS has to:
+ *   1. Re-tones the shared cookie bar and the duplicate-subscription modal,
+ *      which ship white backgrounds and would otherwise inherit this page's
+ *      light body colour onto white — unreadable, not merely off-theme.
+ *   2. Re-tones the shared .placeholder shimmer, which animates towards
+ *      near-white.
+ *   3. Scopes everything under .page-whats-new so main.css does not leak in.
+ *
+ * COLOUR NOTE: #E14B57 is the design's accent red. White on it is 3.93:1 —
+ * fine for the 38px price and the large headline accent (AA large needs 3:1),
+ * below the 4.5:1 that button labels need. Buttons therefore use #D51B3E, which
+ * gives a white label 5.18:1 and still clears 3:1 against the featured plan
+ * card behind it (3.20:1) so the control's edge is discernible. Every pair below
+ * was measured against the composited background, not the raw token; ratios are
+ * noted inline.
+ ******************************************************************************/
+
+.page-whats-new {
+  /* Surfaces — composited values in the ratios below account for the card
+     gradient over --wn-bg, so they are darker than these raw tokens suggest. */
+  --wn-bg: #05070e;
+  --wn-surface: #0e1220;          /* disclosure panels */
+  --wn-surface-2: #131828;        /* plan cards, FAQ items */
+  --wn-surface-3: #181e31;        /* featured plan card */
+  --wn-line: rgba(255, 255, 255, 0.09);
+  --wn-line-strong: rgba(255, 255, 255, 0.16);
+
+  /* Text — on the card (#0e1016 composited) */
+  --wn-text: #ffffff;             /* 19.68:1 */
+  --wn-text-2: #cdd4e0;           /* 12.76:1 */
+  --wn-text-3: #a6afc2;           /*  8.63:1 */
+
+  /* Accents */
+  --wn-red: #e14b57;              /* large text only — 4.84:1 on card */
+  --wn-red-cta: #d51b3e;          /* white label 5.18:1; vs featured card 3.20:1 */
+  --wn-red-cta-hover: #be1837;    /* white label 6.22:1 */
+  --wn-green: #30d158;            /* ticks 8.74:1 on surface-2; black-ish label 8.43:1 */
+  --wn-green-ink: #06210f;        /* on --wn-green, 8.43:1 */
+  --wn-blue: #4c8dff;             /* focus ring, 5.94:1 on card */
+  --wn-blue-text: #bbd3ff;        /* version pill, 11.80:1 on its own tint */
+  --wn-blue-badge: #a9c8ff;       /* NEW badge, 8.47:1 on its own tint */
+  --wn-absent: #6b7280;           /* comparison "not included" dash, 3.93:1 */
+  --wn-amber: #f5a623;            /* stars, 8.46:1 on the quote tint */
+  --wn-pricing-text: #f7d8dc;     /* pricing lede, 7.51:1 on the red panel */
+
+  --wn-radius: 1.125rem;
+  --wn-radius-sm: 0.875rem;
+}
+
+/*******************************************************************************
+ * Page overrides
+ ******************************************************************************/
+
+/*
+ * main.css sets `html { font-size: 18px }`, dropping to 16px below 768px. Pinned
+ * to 16px at both breakpoints so the rem scale here is predictable, matching what
+ * static/css/pages/video-trial.css and premium.css already do.
+ */
+.page-whats-new,
+.page-whats-new body {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .page-whats-new,
+  .page-whats-new body {
+    font-size: 16px;
+  }
+}
+
+/*
+ * The background belongs on <html>, which is what .page-whats-new is.
+ * defaults.css:287 sets `html { background-color: #fff }`, and because the root
+ * element then has a background of its own, the body background never
+ * propagates to the canvas — so overscrolling past either end of the page
+ * exposed white behind the dark layout.
+ */
+.page-whats-new {
+  background: var(--wn-bg);
+}
+
+/* main.css pads the body to clear the fixed navbar; this page sets nonavbar=1. */
+.page-whats-new body {
+  padding-top: 0;
+  background: var(--wn-bg);
+  color: var(--wn-text-2);
+  overflow-x: hidden;
+}
+
+.page-whats-new h1,
+.page-whats-new h2,
+.page-whats-new h3 {
+  color: var(--wn-text);
+}
+
+/* Beats main.css `a:link, a:visited { color: #555 }` at (0,1,1). */
+.page-whats-new a:link,
+.page-whats-new a:visited {
+  color: var(--wn-text-2);
+}
+
+.page-whats-new a:hover,
+.page-whats-new a:focus {
+  color: var(--wn-text);
+}
+
+.page-whats-new :focus-visible {
+  outline: 2px solid var(--wn-blue);
+  outline-offset: 2px;
+}
+
+.page-whats-new .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*******************************************************************************
+ * Variants
+ *******************************************************************************
+ * Every state ships in the markup and the parts the URL did not ask for are
+ * hidden. The inline script in the page head reads ?variant and ?trial and puts
+ * one attribute on <html> for each axis, so there is one rule below for each
+ * axis rather than one for each combination:
+ *
+ * Root attribute                block attribute it shows or hides
+ *   data-wn-variant="vpn"       [data-wn-only="default|vpn"]
+ *   data-wn-heading="opd"       [data-wn-heading-only="standard|opd"]
+ *   data-wn-top="image"         .whats-new-status / .whats-new-promo
+ *   data-wn-trial="7"           [data-wn-offer="standard|trial"]
+ *
+ * The six states that gives:
+ *
+ *   /whats-new                        stats · standard heading · default copy · pay now
+ *   ?trial=7                          stats · standard heading · default copy · trial
+ *   ?variant=vpn                      stats · standard heading · vpn copy     · pay now
+ *   ?variant=vpn&trial=7              stats · standard heading · vpn copy     · trial
+ *   ?variant=vpn-opd                  image · opd heading      · vpn copy     · pay now
+ *   ?variant=vpn-opd&trial=7          image · opd heading      · vpn copy     · trial
+ *
+ * The offer axis is a promise to charge nothing today, so it needs a Paddle
+ * price with that trial length in the visitor's currency. Every currency the
+ * page quotes needs one before a trial length goes into the head script's
+ * TRIAL_DAYS.
+ *
+ * The rules only ever set display: none, and never restore a display value.
+ * The marked elements are p, li, span, details and tbody, so anything that
+ * switched them off and back on would have to know each one's display type.
+ ******************************************************************************/
+
+/* Copy */
+.page-whats-new:not([data-wn-variant="vpn"]) [data-wn-only="vpn"],
+.page-whats-new[data-wn-variant="vpn"] [data-wn-only="default"] {
+  display: none;
+}
+
+/* Hero heading */
+.page-whats-new:not([data-wn-heading="opd"]) [data-wn-heading-only="opd"],
+.page-whats-new[data-wn-heading="opd"] [data-wn-heading-only="standard"] {
+  display: none;
+}
+
+/*
+ * First block. The rule below the block goes with it: it separates the update
+ * figures from the pitch, which is a change of subject, but under the image it
+ * would cut the picture off from the sentence it introduces.
+ */
+.page-whats-new:not([data-wn-top="image"]) .whats-new-promo,
+.page-whats-new[data-wn-top="image"] .whats-new-status,
+.page-whats-new[data-wn-top="image"] .whats-new-divider {
+  display: none;
+}
+
+/* Offer */
+.page-whats-new:not([data-wn-trial]) [data-wn-offer="trial"],
+.page-whats-new[data-wn-trial] [data-wn-offer="standard"] {
+  display: none;
+}
+
+/*******************************************************************************
+ * Shell
+ ******************************************************************************/
+
+/*
+ * z-index: 0 opens a stacking context so the ambient glow can sit at -1 —
+ * behind the content but still in front of the body background.
+ */
+/*
+ * The gutter lives here rather than on the header and the card separately, so
+ * both resolve their max-width inside the same box and their left edges line up
+ * at every viewport. They used to disagree by 96px on a wide screen and by 24px
+ * on a phone, and the card ran flush to the viewport edge below 1000px.
+ */
+.whats-new-page {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  padding-inline: 1.5rem;
+  padding-bottom: 1px; /* contains the footer's margin */
+}
+
+.whats-new-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 520px at 50% -180px, rgba(76, 141, 255, 0.16), transparent 70%),
+    radial-gradient(720px 460px at 50% 620px, rgba(225, 75, 87, 0.13), transparent 72%);
+}
+
+.whats-new-shell {
+  max-width: 62.5rem;   /* 1000px */
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  border: 1px solid var(--wn-line);
+  border-radius: 1.75rem;
+}
+
+.whats-new-inner {
+  max-width: 51.25rem;  /* 820px */
+  margin: 0 auto;
+}
+
+.whats-new-inner--wide {
+  max-width: 56.25rem;  /* 900px */
+}
+
+/* Bleeds to the shell edge, hence the negative inline margin. */
+.whats-new-divider {
+  height: 1px;
+  margin: 0 -1.5rem;
+  background: var(--wn-line);
+}
+
+/*******************************************************************************
+ * Brand bar
+ ******************************************************************************/
+
+/* Same max-width as .whats-new-shell, and no inline padding of its own, so the
+   logo sits exactly on the card's left edge. */
+.whats-new-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 62.5rem;
+  margin: 0 auto;
+  padding: 1rem 0 1.5rem;
+}
+
+.whats-new-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.whats-new-header__logo {
+  display: block;
+}
+
+.whats-new-header__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--wn-text);
+}
+
+.whats-new-header__version {
+  margin: 0;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--wn-blue-text);
+  background: rgba(76, 141, 255, 0.12);
+  border: 1px solid rgba(76, 141, 255, 0.28);
+  border-radius: 999px;
+}
+
+/*******************************************************************************
+ * Status
+ ******************************************************************************/
+
+.whats-new-status {
+  text-align: center;
+}
+
+.whats-new-status__headline {
+  margin: 0;
+  font-size: 1.375rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.whats-new-status__headline-line {
+  display: block;
+}
+
+/* Stays out of the flow until whats-new.js has a real count to put in it. */
+.whats-new-status__headline-count:empty {
+  display: none;
+}
+
+.whats-new-status__count {
+  color: var(--wn-red);
+}
+
+/*******************************************************************************
+ * Promo
+ *******************************************************************************
+ * ?variant=vpn-opd's first block, where the status block otherwise sits. The
+ * bottom margin is the stat tiles' own, so the gap under the first block is the
+ * same 41px either way.
+ *
+ * HEIGHT IS THE CONSTRAINT, not width. The block stands above the heading, the
+ * pricing panel and the two CTAs, and those CTAs have to stay above the fold at
+ * 1512x828 — see the Hero block below. Measured there: at an image height of
+ * 110, ?variant=vpn-opd&trial=7 lands its CTAs within a pixel of where the
+ * default page lands its own, and every pixel above that pushes them further
+ * past the fold. The trial states are the tight ones, since they spend part of
+ * the room on the badge. Measure again after any change to the hero or the
+ * pricing panel, and do not raise the height by eye.
+ ******************************************************************************/
+
+.whats-new-promo {
+  margin-bottom: 1rem;
+}
+
+/*
+ * display: block, not inline-block, and centred by its own margin: an inline
+ * image sits on a text baseline and takes the descender space under it with it,
+ * which added 6px of nothing to a block whose height is measured to the pixel.
+ *
+ * No aspect-ratio and no width: 100%: the width and height attributes on the
+ * <img> carry the shape, and max-width keeps a wide image inside the card on a
+ * phone. Swapping the artwork for one of another shape therefore needs no CSS.
+ */
+.whats-new-promo__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+/* The picture reads left to right — exposed, then closed. So does the page. */
+[dir="rtl"] .whats-new-promo__image {
+  transform: scaleX(-1);
+}
+
+/*******************************************************************************
+ * Disclosure — the two <details> above and below the divider
+ ******************************************************************************/
+
+.whats-new-disclosure {
+  margin-top: 0.5rem;
+}
+
+/*
+ * width: fit-content keeps the hit area on the label and its chevron. A summary
+ * is a block by default, so it stretched the full width of the section and the
+ * whole empty row toggled the panel.
+ */
+/*
+ * box-sizing is set explicitly because <summary> computes content-box in Chrome
+ * despite defaults.css's `* { box-sizing: inherit }` over a border-box root —
+ * the same quirk already noted at .whats-new-faq__question. Without it, any
+ * height set here renders taller than declared.
+ */
+.whats-new-disclosure__summary,
+.whats-new-jump__link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--wn-text-2);
+}
+
+/*
+ * The hero's jump to the comparison table. It shares the control above it in
+ * everything but behaviour, hence the shared rule; the :link/:visited pair is
+ * needed because `.page-whats-new a:link` is (0,2,1) and would otherwise win.
+ */
+.whats-new-jump {
+  margin: 0.5rem 0 0;
+}
+
+.page-whats-new .whats-new-jump__link:link,
+.page-whats-new .whats-new-jump__link:visited {
+  color: var(--wn-text-2);
+  text-decoration: none;
+}
+
+.page-whats-new .whats-new-jump__link:hover,
+.page-whats-new .whats-new-jump__link:focus {
+  color: var(--wn-text);
+}
+
+.whats-new-jump__chevron {
+  flex: 0 0 auto;
+}
+
+.whats-new-disclosure__summary::-webkit-details-marker {
+  display: none;
+}
+
+.whats-new-disclosure__summary:hover {
+  color: var(--wn-text);
+}
+
+.whats-new-disclosure__chevron {
+  flex: 0 0 auto;
+}
+
+.whats-new-disclosure[open] .whats-new-disclosure__chevron {
+  transform: rotate(180deg);
+}
+
+.whats-new-disclosure__panel {
+  max-width: 40rem;
+  margin: 0.5rem auto;
+  padding: 1.125rem 1.25rem;
+  text-align: start;
+  font-size: 0.90625rem;
+  color: var(--wn-text-2);
+  background: var(--wn-surface);
+  border: 1px solid var(--wn-line);
+  border-radius: var(--wn-radius);
+}
+
+.whats-new-disclosure__panel ul {
+  margin: 0;
+  padding-inline-start: 1.125rem;
+  list-style: disc;
+}
+
+.whats-new-disclosure__panel li {
+  margin: 0.4375rem 0;
+}
+
+.whats-new-disclosure__panel b {
+  color: var(--wn-text);
+  font-weight: 600;
+}
+
+/* --- changelog panel ---------------------------------------------------- */
+
+.whats-new-changelog__heading {
+  margin: 0 0 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--wn-blue-text);   /* 12.32:1 on the panel */
+}
+
+.whats-new-changelog__more {
+  margin: 0.875rem 0 0;
+}
+
+.page-whats-new .whats-new-changelog__more a:link,
+.page-whats-new .whats-new-changelog__more a:visited {
+  font-weight: 600;
+  color: var(--wn-blue-text);   /* 12.32:1 on the panel */
+  text-decoration: none;
+}
+
+.page-whats-new .whats-new-changelog__more a:hover,
+.page-whats-new .whats-new-changelog__more a:focus {
+  color: var(--wn-text);
+  text-decoration: underline;
+}
+
+/*******************************************************************************
+ * Stat tiles
+ ******************************************************************************/
+
+.whats-new-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.875rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.whats-new-stat {
+  padding: 0.4375rem 0.625rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(76, 141, 255, 0.1), rgba(76, 141, 255, 0.03));
+  border: 1px solid rgba(76, 141, 255, 0.18);
+  border-radius: var(--wn-radius);
+}
+
+.whats-new-stat__value {
+  margin: 0;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--wn-text);
+}
+
+.whats-new-stat__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--wn-text-2);
+}
+
+/*
+ * Sized here rather than by width/height attributes, because the ads-blocked
+ * glyph is a detailed hand that closed up at 13px. All three run at the same
+ * 1.5 stroke so they carry equal weight; the opacity is lifted to suit the
+ * thinner line.
+ */
+.whats-new-stat__icon {
+  flex: 0 0 auto;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  opacity: 0.85;
+}
+
+/*******************************************************************************
+ * Hero
+ ******************************************************************************/
+
+/*
+ * The three gaps around this section — above the heading, below it, and below
+ * the jump link — carry about half a CTA's height of extra room between them.
+ * That is deliberate: it lets the fold cut the buttons' lower edge while their
+ * labels stay readable, which reads as "there is more below" rather than as a
+ * page that happens to end there.
+ */
+.whats-new-hero {
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+/*
+ * 2rem, not 2.5rem: at 40px this heading wrapped to three lines and pushed the
+ * plan cards' CTA below the fold on a 14" laptop. See the em rule below.
+ */
+.whats-new-hero__heading {
+  max-width: 45rem;
+  margin: 0 auto;
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/*
+ * display: block gives each sentence its own line, so the two-line break is
+ * deterministic instead of depending on where the accent happens to reflow.
+ * That matters most in translation: a locale can lengthen either sentence
+ * without the heading silently gaining a third line. Reverted to inline on
+ * narrow viewports, where one sentence per line would cost a line instead.
+ */
+.whats-new-hero__heading em {
+  display: block;
+  font-style: normal;
+  color: var(--wn-red);
+}
+
+.whats-new-hero__text {
+  max-width: 37.5rem;
+  margin: 1rem auto 0;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--wn-text-2);
+}
+
+/*
+ * The trial sentence at the end of the paragraph. It is an <em> rather than a
+ * <strong>: it is the offer, not an alarm, and the weight is enough to carry it.
+ */
+.whats-new-hero__trial-line {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--wn-text);
+}
+
+/*
+ * The badge above the heading in the trial states. Green, not the accent red:
+ * red is the buy colour on this page and this is the reassurance, so the two
+ * have to read apart. --wn-green-ink on --wn-green is 8.43:1.
+ *
+ * Set at the version pill's 12px rather than at the body scale, in a tighter
+ * box than the pill's: it is a marker on the heading, not a line of its own,
+ * and one size larger competed with the heading it introduces. Bold, because
+ * 8.43:1 carries it and the words are few.
+ */
+.whats-new-trial-badge {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--wn-green-ink);
+  background: var(--wn-green);
+  border-radius: 999px;
+}
+
+/*******************************************************************************
+ * Pricing
+ ******************************************************************************/
+
+.whats-new-pricing-section {
+  padding-top: 0;
+}
+
+.whats-new-pricing {
+  position: relative;
+  max-width: 40rem;
+  margin: 1.125rem auto 0;
+  padding: 1.25rem 1.375rem 0;
+  border: 1px solid rgba(225, 75, 87, 0.34);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(120% 140% at 50% -20%, rgba(225, 75, 87, 0.34), rgba(225, 75, 87, 0.1) 60%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, rgba(179, 30, 50, 0.3), rgba(179, 30, 50, 0.06));
+  box-shadow: 0 30px 80px -40px rgba(225, 75, 87, 0.55);
+}
+
+.whats-new-pricing__heading {
+  margin: 0;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.whats-new-pricing__lede {
+  margin: 0 0 0.875rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--wn-pricing-text);
+}
+
+/*
+ * The cards overhang the panel's lower edge, as in the design. The overhang is
+ * dropped on narrow viewports where the cards stack.
+ */
+.whats-new-plans {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.whats-new-plan {
+  position: relative;
+  transform: translateY(0.75rem);
+  padding: 1rem 1.125rem;
+  text-align: center;
+  background: var(--wn-surface-2);
+  border: 1px solid var(--wn-line-strong);
+  border-radius: 1.25rem;
+}
+
+.whats-new-plan--featured {
+  background: var(--wn-surface-3);
+  border-color: rgba(225, 75, 87, 0.55);
+}
+
+/* Reserves its own height so filling the text in does not shift the card. */
+.whats-new-plan__badge {
+  position: absolute;
+  top: -0.8125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 1.5rem;
+  margin: 0;
+  padding: 0.3125rem 0.6875rem;
+  white-space: nowrap;
+  font-size: 0.71875rem;
+  font-weight: 700;
+  color: var(--wn-green-ink);
+  background: var(--wn-green);
+  border-radius: 999px;
+}
+
+.whats-new-plan__badge:empty {
+  display: none;
+}
+
+/* The padding also keeps the featured card's overhanging badge off the name. */
+.whats-new-plan__name {
+  margin: 0;
+  padding: 0.375rem 0;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--wn-text-2);
+}
+
+/*
+ * 2.375rem (38px) is a floor, not a preference: --wn-red on the featured card
+ * is 4.21:1, which clears AA only as large text (>=24px). Do not shrink this to
+ * buy vertical space.
+ */
+.whats-new-plan__price {
+  margin: 0.25rem 0 0.125rem;
+  font-size: 2.375rem;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--wn-red);
+}
+
+.whats-new-plan__amount {
+  display: inline-block;
+  min-width: 3rem;
+  border-radius: 0.375rem;
+}
+
+/* JPY, RUB and PLN render four or five digits and overflow the card at 38px. */
+.whats-new-plan__amount--long {
+  font-size: 1.75rem;
+}
+
+.whats-new-plan__frequency {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--wn-text-2);
+}
+
+.page-whats-new .vat-inclusive__text,
+.page-whats-new .vat-exclusive__text {
+  margin: 0;
+  font-size: 0.71875rem;
+  color: var(--wn-text-3);
+}
+
+/*
+ * includes/vat-message.tmpl wraps its text in <small>, which shrinks it a
+ * further ~20% — 9px on top of the 11.5px above, the smallest text on the page
+ * and the only line that was genuinely hard to read. The size is already set on
+ * the paragraph, so the extra reduction is dropped.
+ */
+.page-whats-new .vat-inclusive__text small,
+.page-whats-new .vat-exclusive__text small {
+  font-size: inherit;
+}
+
+.whats-new-plan__benefits {
+  display: inline-block;
+  margin: 0.375rem 0 0.75rem;
+  padding: 0;
+  text-align: start;
+  list-style: none;
+}
+
+.whats-new-plan__benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--wn-text);
+}
+
+.whats-new-plan__benefits svg {
+  flex: 0 0 auto;
+  margin-top: 0.125rem;
+  color: var(--wn-green);
+}
+
+.whats-new-plan__billed {
+  min-height: 1.25rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.78125rem;
+  color: var(--wn-text-3);
+}
+
+.whats-new-pricing__reassurance {
+  /* Clears the cards' 0.75rem overhang. */
+  margin: 2rem auto 0;
+  text-align: center;
+  font-size: 0.78125rem;
+  font-weight: 500;
+  color: var(--wn-text-3);
+}
+
+.whats-new-pricing__sign-in {
+  margin: 0.75rem auto 0;
+  text-align: center;
+  font-size: 0.84375rem;
+  color: var(--wn-text-3);
+}
+
+.page-whats-new .whats-new-sign-in-link:link,
+.page-whats-new .whats-new-sign-in-link:visited {
+  color: var(--wn-text-2);
+  text-decoration: underline;
+}
+
+.whats-new-providers {
+  margin-top: 1.375rem;
+  text-align: center;
+}
+
+.whats-new-providers__label {
+  margin: 0 0 0.75rem;
+  font-size: 0.78125rem;
+  font-weight: 600;
+  color: var(--wn-text-2);
+}
+
+.whats-new-providers__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/*******************************************************************************
+ * Buttons
+ ******************************************************************************/
+
+.page-whats-new .whats-new-button {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--wn-red-cta);
+  border: 0;
+  border-radius: 999px;
+}
+
+/*
+ * The anchor variant needs its own :link/:visited rules: `.page-whats-new
+ * a:link` is (0,2,1) and would otherwise beat the (0,2,0) button rule above,
+ * repainting the label in body grey.
+ */
+.page-whats-new a.whats-new-button:link,
+.page-whats-new a.whats-new-button:visited {
+  color: #ffffff;
+}
+
+.page-whats-new .whats-new-button:hover,
+.page-whats-new .whats-new-button:focus,
+.page-whats-new a.whats-new-button:hover,
+.page-whats-new a.whats-new-button:focus {
+  color: #ffffff;
+  background: var(--wn-red-cta-hover);
+}
+
+.page-whats-new .whats-new-button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/*
+ * Set by the failsafe in whats-new-stats.js when prices never resolved. Hides
+ * everything that depends on a working checkout — the pricing panel, both
+ * secondary CTAs and the sign-in link, whose href is also written by the module
+ * that failed — and leaves the rest of the page intact.
+ */
+html[data-checkout-unavailable] .whats-new-pricing-section,
+html[data-checkout-unavailable] .whats-new-cta {
+  display: none;
+}
+
+.whats-new-cta {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0 0;
+}
+
+.whats-new-cta .whats-new-button {
+  max-width: 14.375rem;
+}
+
+/*******************************************************************************
+ * Sections — shared
+ ******************************************************************************/
+
+.whats-new-section {
+  padding-top: 5.125rem;
+}
+
+.whats-new-section__heading {
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.whats-new-section__heading em {
+  display: block;
+  font-style: normal;
+  color: var(--wn-red);
+}
+
+.whats-new-section__text {
+  max-width: 40rem;
+  margin: 1rem auto 0;
+  text-align: center;
+  font-size: 0.96875rem;
+  color: var(--wn-text-2);
+}
+
+/*******************************************************************************
+ * Free vs Premium comparison
+ ******************************************************************************/
+
+.whats-new-comparison {
+  margin-top: 2.75rem;
+  overflow-x: auto;
+}
+
+.whats-new-comparison__table {
+  width: 100%;
+  min-width: 20rem;
+  border-collapse: separate;
+  border-spacing: 0 0.625rem;
+  text-align: start;
+}
+
+/*
+ * No rule under the header. Each row is its own bordered card, so a full-width
+ * underline landed a few pixels above the first card's top border and read as a
+ * doubled line — and it implied a continuous table body this table does not
+ * have. Colour and size separate the labels well enough on their own.
+ */
+.whats-new-comparison__table thead th {
+  padding: 0 1.125rem 0.5rem;
+  font-size: 0.78125rem;
+  font-weight: 600;
+  color: var(--wn-text-3);
+}
+
+.whats-new-comparison__table thead th:first-child {
+  text-align: start;
+}
+
+.whats-new-comparison__table thead th + th {
+  text-align: center;
+}
+
+/* Qualified so it beats the `thead th` rule above at (0,1,2); on its own the
+   class is (0,1,0) and the header stayed grey. Green ties the column to the
+   ticks underneath it — 9.41:1 on the card. */
+.whats-new-comparison__table thead th.whats-new-comparison__premium {
+  color: var(--wn-green);
+}
+
+/*
+ * border-collapse: separate is what allows the rounded row cards, so the row
+ * border has to be drawn per cell and the corners rounded on the outer two.
+ */
+.whats-new-comparison__table tbody th,
+.whats-new-comparison__table tbody td {
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.028);
+  border-block: 1px solid var(--wn-line);
+  vertical-align: middle;
+}
+
+.whats-new-comparison__table tbody th {
+  padding-inline-start: 1.125rem;
+  text-align: start;
+  font-weight: 400;
+  border-inline-start: 1px solid var(--wn-line);
+  border-start-start-radius: var(--wn-radius-sm);
+  border-end-start-radius: var(--wn-radius-sm);
+}
+
+.whats-new-comparison__table tbody td {
+  width: 4.875rem;
+  text-align: center;
+  line-height: 0;
+}
+
+.whats-new-comparison__table tbody td:last-child {
+  padding-inline-end: 1.125rem;
+  border-inline-end: 1px solid var(--wn-line);
+  border-start-end-radius: var(--wn-radius-sm);
+  border-end-end-radius: var(--wn-radius-sm);
+}
+
+/*
+ * Icon aligned to the first line rather than centred: these titles wrap to two
+ * or three lines on a phone, and a centred glyph then floats beside the middle
+ * of the sentence instead of marking its start.
+ */
+.whats-new-comparison__title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5625rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--wn-text);
+}
+
+.whats-new-comparison__title svg {
+  flex: 0 0 auto;
+  margin-top: 0.15em;
+  color: var(--wn-red);
+  opacity: 0.9;
+}
+
+/*
+ * The badge trails the title text, so the two have to share one inline
+ * formatting context. Without this wrapper the badge would be a third flex item
+ * beside the icon and the text, and on a phone — where these titles run to three
+ * lines — it would float alongside the block rather than follow the last word.
+ * min-width: 0 lets the wrapper shrink below its longest word.
+ */
+.whats-new-comparison__title-text {
+  min-width: 0;
+}
+
+/*
+ * Row-group heading. It is a th like every other row header, so the card
+ * styling has to be undone rather than avoided. Specificity (0,2,2) beats the
+ * `tbody th` rule at (0,1,2).
+ */
+.whats-new-comparison__table tbody th.whats-new-comparison__group {
+  padding: 1.75rem 1.125rem 0.125rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wn-text-3);
+}
+
+/* Footnote to the table, so it sits outside the scroll container. */
+.whats-new-comparison__note {
+  margin: 0.75rem 1.125rem 0;
+  font-size: 0.78125rem;
+  font-style: italic;
+  color: var(--wn-text-3);
+}
+
+.whats-new-comparison__desc {
+  display: block;
+  margin-top: 0.4375rem;
+  font-size: 0.84375rem;
+  line-height: 1.5;
+  color: var(--wn-text-2);
+}
+
+/*
+ * A tick is a filled disc with the check knocked out of it; a cross is an
+ * outline. The colour comes from the column rather than a modifier class,
+ * because that is exactly what it means: grey in Free, green in Premium. The
+ * .sr-only text in each cell carries the value too, so nothing depends on
+ * colour alone.
+ *
+ * As non-text graphics these need 3:1 (WCAG 1.4.11). Measured against the row
+ * background: grey disc 12.02:1, green disc 8.86:1, red cross 4.56:1. The
+ * knocked-out check is the row background showing through, so it carries the
+ * same ratio as its disc.
+ */
+.whats-new-comparison__table tbody td .whats-new-comparison__tick {
+  color: var(--wn-text-2);
+}
+
+.whats-new-comparison__table tbody td:last-child .whats-new-comparison__tick {
+  color: var(--wn-green);
+}
+
+/*
+ * A plain rule rather than a cross in a circle. The filled red X carried more
+ * visual weight than either tick while saying the least, and left three marks
+ * to decode per row instead of two. This reads as absence, not as an error, so
+ * the green column is what draws the eye.
+ *
+ * 3.93:1 clears the 3:1 that WCAG 1.4.11 asks of a graphic that carries
+ * meaning. The "Not included" text in each cell is unchanged, so what a screen
+ * reader announces does not depend on the glyph.
+ */
+.whats-new-comparison__cross {
+  color: var(--wn-absent);
+}
+
+/* Trails the title, so the gap is on the leading edge. Sits on its own line
+   rather than in the markup's whitespace, so the spacing does not depend on a
+   collapsed newline. */
+.whats-new-badge {
+  display: inline-block;
+  margin-inline-start: 0.4375rem;
+  padding: 0.125rem 0.375rem;
+  vertical-align: 2px;
+  font-size: 0.59375rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wn-blue-badge);
+  background: rgba(76, 141, 255, 0.16);
+  border: 1px solid rgba(76, 141, 255, 0.3);
+  border-radius: 0.3125rem;
+}
+
+/*******************************************************************************
+ * Testimonials
+ ******************************************************************************/
+
+/*
+ * Aggregate proof strip: one bordered box split into three by internal rules,
+ * rather than three separate cards, so it reads as a single claim about reach
+ * and stays distinct from the quote cards below it.
+ */
+.whats-new-proof {
+  display: flex;
+  max-width: 38.75rem;
+  margin: 1.875rem auto 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.028);
+  border: 1px solid var(--wn-line);
+  border-radius: var(--wn-radius-sm);
+}
+
+.whats-new-proof > li {
+  flex: 1;
+  padding: 0.875rem 0.75rem;
+  text-align: center;
+}
+
+.whats-new-proof > li + li {
+  border-inline-start: 1px solid var(--wn-line);
+}
+
+.whats-new-proof__value {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--wn-text);
+}
+
+.whats-new-proof__star {
+  margin-inline-start: 0.1875rem;
+}
+
+.whats-new-proof__label {
+  margin: 0.1875rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--wn-text-3);   /* 8.13:1 on the strip */
+}
+
+.whats-new-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2.75rem 0 0;
+}
+
+.whats-new-quote {
+  display: flex;
+  flex-direction: column;
+  padding: 1.375rem 1.125rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(245, 166, 35, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(245, 166, 35, 0.18);
+  border-radius: var(--wn-radius);
+}
+
+.whats-new-quote__stars {
+  margin: 0 0 0.875rem;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--wn-amber);
+}
+
+/* flex: 1 so the attribution lines up across all three cards whatever the
+   quote length. */
+.whats-new-quote__text {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0.90625rem;
+  line-height: 1.55;
+  color: #f0f3f8;
+}
+
+.whats-new-quote__author {
+  margin-top: 1.125rem;
+}
+
+.whats-new-quote__name {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--wn-text);
+}
+
+.whats-new-quote__source {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--wn-text-3);
+}
+
+/*******************************************************************************
+ * FAQ
+ ******************************************************************************/
+
+.whats-new-faq-section {
+  padding-bottom: 4.375rem;
+}
+
+.whats-new-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 46.875rem;
+  margin: 2.75rem auto 0;
+}
+
+.whats-new-faq__item {
+  overflow: hidden;
+  background: var(--wn-surface-2);
+  border: 1px solid var(--wn-line);
+  border-radius: var(--wn-radius-sm);
+}
+
+.whats-new-faq__item[open] {
+  border-color: var(--wn-line-strong);
+}
+
+/*
+ * No `width: 100%` here, and box-sizing set explicitly. <summary> computes
+ * content-box in Chrome even though defaults.css sets `* { box-sizing:
+ * inherit }` over a border-box root, so a declared 100% width became 100% of
+ * the *content* box and the 1.5rem padding was added outside it. That pushed
+ * the chevron ~46px past the card, where `overflow: hidden` on the item clipped
+ * it out of sight entirely. A block-level flex container fills its parent
+ * anyway, so the width was never needed.
+ */
+.whats-new-faq__question {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  list-style: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--wn-text);
+}
+
+.whats-new-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.whats-new-faq__question:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.whats-new-faq__question:focus-visible {
+  outline-offset: -2px;
+}
+
+.whats-new-faq__chevron {
+  flex-shrink: 0;
+  color: var(--wn-text-3);
+}
+
+.whats-new-faq__item[open] .whats-new-faq__chevron {
+  transform: rotate(180deg);
+}
+
+.whats-new-faq__answer {
+  margin: 0;
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--wn-text-2);
+}
+
+/* Inline links sit in a paragraph the same colour as `.page-whats-new a:link`
+   gives them, so they need both a colour of their own and the underline to
+   read as links at all. Specificity beats that rule at (0,3,1). */
+.page-whats-new .whats-new-faq__answer a:link,
+.page-whats-new .whats-new-faq__answer a:visited {
+  color: var(--wn-blue-text);   /* 11.67:1 on the FAQ card */
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.page-whats-new .whats-new-faq__answer a:hover,
+.page-whats-new .whats-new-faq__answer a:focus {
+  color: var(--wn-text);
+}
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+/* Negative inline margin cancels the page gutter so the rule above the footer
+   still runs the full width of the viewport, as the design has it. */
+.whats-new-footer {
+  margin-top: 5.625rem;
+  margin-inline: -1.5rem;
+  padding: 2.125rem 1.25rem 2.875rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--wn-text-3);
+  border-top: 1px solid var(--wn-line);
+}
+
+.whats-new-footer__links {
+  margin-bottom: 0.875rem;
+}
+
+.page-whats-new .whats-new-footer__links a:link,
+.page-whats-new .whats-new-footer__links a:visited {
+  margin: 0 0.625rem;
+  color: var(--wn-text-2);
+  text-decoration: none;
+}
+
+.page-whats-new .whats-new-footer__links a:hover,
+.page-whats-new .whats-new-footer__links a:focus {
+  color: var(--wn-text);
+  text-decoration: underline;
+}
+
+.whats-new-footer__legal {
+  margin: 0;
+}
+
+/*******************************************************************************
+ * Shared components re-toned for dark
+ *******************************************************************************
+ * These three ship light and are pulled in by the template or by
+ * <? include prevent-duplicate-subscriptions ?>. Left alone, each would render
+ * this page's light body colour on its own white background.
+ ******************************************************************************/
+
+/* --- price placeholder ---------------------------------------------------
+ * includes/placeholder-animations.html animates towards hsl(200,20%,95%), a
+ * near-white bar that reads as a flash of light on this surface. The
+ * transparent-text behaviour is left alone; only the shimmer is re-toned.
+ * Specificity (0,3,0) beats the shared rule's (0,2,0).
+ */
+@keyframes whats-new-placeholder {
+  0% { background-color: rgba(255, 255, 255, 0.05); }
+  100% { background-color: rgba(255, 255, 255, 0.11); }
+}
+
+.page-whats-new .animate-placeholders .placeholder {
+  animation-name: whats-new-placeholder;
+}
+
+/* --- cookie bar --------------------------------------------------------- */
+
+.page-whats-new .cookiebar {
+  color: var(--wn-text-2);
+  background-color: var(--wn-surface-2);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.45);
+  border-top: 1px solid var(--wn-line);
+}
+
+.page-whats-new .cookiebar a:link,
+.page-whats-new .cookiebar a:visited,
+.page-whats-new .cookiebar .cookies-settings {
+  color: var(--wn-text);
+}
+
+.page-whats-new .cookiebar .cookies-submit {
+  color: #ffffff;
+  background-color: var(--wn-red-cta);
+  border-color: var(--wn-red-cta);
+}
+
+.page-whats-new .cookiebar .cookies-submit:hover,
+.page-whats-new .cookiebar .cookies-submit:focus {
+  background-color: var(--wn-red-cta-hover);
+  border-color: var(--wn-red-cta-hover);
+}
+
+.page-whats-new .cookies-dropup-menu {
+  color: var(--wn-text-2);
+  background-color: var(--wn-surface);
+  border-color: var(--wn-line-strong);
+}
+
+.page-whats-new .cookies-setting-title,
+.page-whats-new .cookie-heading {
+  color: var(--wn-text);
+}
+
+/* --- duplicate-subscription modal --------------------------------------- */
+
+.page-whats-new .account-restore-loading,
+.page-whats-new .account-restore-found {
+  color: var(--wn-text-2);
+  background-color: var(--wn-surface-2);
+}
+
+.page-whats-new .account-restore-found-logo,
+.page-whats-new .account-restore-found-body__heading {
+  color: var(--wn-text);
+}
+
+/* Ships as a dark-on-light glyph, so it disappears against the dark card. */
+.page-whats-new .account-restore-found__close img {
+  filter: invert(1);
+}
+
+.page-whats-new .account-restore-found-buttons__restore:link,
+.page-whats-new .account-restore-found-buttons__restore:visited {
+  color: #ffffff;
+  background-color: var(--wn-red-cta);
+}
+
+.page-whats-new .account-restore-found-buttons__restore:hover,
+.page-whats-new .account-restore-found-buttons__restore:focus {
+  color: #ffffff;
+  background-color: var(--wn-red-cta-hover);
+}
+
+/*******************************************************************************
+ * Motion
+ *******************************************************************************
+ * Every transition on the page is opt-in. The chevron rotation still happens
+ * for reduced-motion users, it just happens instantly.
+ ******************************************************************************/
+
+@media (prefers-reduced-motion: no-preference) {
+  /* For the in-page CTA that jumps to the pricing cards. A full-page scroll
+     animation is a common vestibular trigger, so it is opt-in. */
+  .page-whats-new {
+    scroll-behavior: smooth;
+  }
+
+  .whats-new-disclosure__chevron,
+  .whats-new-faq__chevron {
+    transition: transform 0.22s ease;
+  }
+
+  /* The colour is the whole hover state. The buttons used to rise a pixel with
+     it, which read as the page twitching rather than as the control answering. */
+  .page-whats-new .whats-new-button {
+    transition: background-color 0.18s ease;
+  }
+
+  /* Benefit rows only. The group heading is a th in a tr of its own, so without
+     the :not() it lit up like a row — and it is a caption, not an entry. */
+  .whats-new-comparison__table tbody tr:hover th:not(.whats-new-comparison__group),
+  .whats-new-comparison__table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .whats-new-faq__question,
+  .whats-new-faq__item {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+}
+
+/*******************************************************************************
+ * Responsive
+ ******************************************************************************/
+
+@media (max-width: 47.5rem) {
+  .whats-new-page {
+    padding-inline: 1rem;
+  }
+
+  .whats-new-footer {
+    margin-inline: -1rem;
+  }
+
+  .whats-new-shell {
+    padding: 1.875rem 1rem 0;
+    border-radius: 1.375rem;
+  }
+
+  .whats-new-divider {
+    margin: 0 -1rem;
+  }
+
+  .whats-new-status__headline {
+    font-size: 1.3125rem;
+  }
+
+  .whats-new-stats {
+    gap: 0.5625rem;
+  }
+
+  .whats-new-stat {
+    padding: 0.8125rem 0.375rem;
+  }
+
+  .whats-new-stat__value {
+    font-size: 1.25rem;
+  }
+
+  .whats-new-stat__label {
+    font-size: 0.71875rem;
+  }
+
+  /*
+   * Phones have no fold to fight, so the hero keeps a more generous run-up than
+   * the desktop 1rem.
+   */
+  .whats-new-hero {
+    padding-top: 2rem;
+  }
+
+  .whats-new-hero__heading {
+    font-size: 1.8125rem;
+  }
+
+  /*
+   * Back to inline. At this width the accent sentence wraps anyway, so forcing
+   * it onto its own line only adds a line.
+   */
+  .whats-new-hero__heading em {
+    display: inline;
+  }
+
+  .whats-new-section__heading {
+    font-size: 1.5625rem;
+  }
+
+  .whats-new-section {
+    padding-top: 3.5rem;
+  }
+
+  /* Stacked cards do not overhang, so the panel closes normally underneath. */
+  .whats-new-pricing {
+    padding: 1.875rem 1rem 1.875rem;
+  }
+
+  .whats-new-plans {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .whats-new-plan {
+    transform: none;
+  }
+
+  .whats-new-pricing__reassurance {
+    margin-top: 1.625rem;
+  }
+
+  .whats-new-quotes {
+    grid-template-columns: 1fr;
+  }
+
+  .whats-new-comparison__table tbody td {
+    width: 3.375rem;
+  }
+
+  .whats-new-comparison__table tbody th,
+  .whats-new-comparison__table tbody td {
+    padding-block: 0.875rem;
+  }
+}
+
+/*
+ * The proof strip stacks rather than shrinking. Three columns on a phone gave
+ * each figure about 100px, which broke "Since 2006" over two lines and its
+ * label over four. Stacked, every figure and label gets one line, and the
+ * dividers turn from vertical to horizontal.
+ */
+@media (max-width: 34rem) {
+  .whats-new-proof {
+    display: block;
+  }
+
+  .whats-new-proof > li + li {
+    border-inline-start: 0;
+    border-top: 1px solid var(--wn-line);
+  }
+}
+
+/*
+ * Below ~416px a third of the row is about 90px, which is just too narrow for
+ * "Days protected" beside its icon — that one tile wrapped to two lines while
+ * the other two did not, which read as a layout bug. The glyphs are decorative
+ * and aria-hidden, so dropping them is the cheapest way to keep all three
+ * labels on one line.
+ */
+@media (max-width: 26rem) {
+  .whats-new-stat__label svg {
+    display: none;
+  }
+
+  .whats-new-stat__label {
+    gap: 0;
+  }
+}

@@ -1,0 +1,21 @@
+<!-- ===== 1. BRAND BAR ===== -->
+<header class="whats-new-header">
+  <div class="whats-new-header__brand">
+    <img
+      alt=""
+      class="whats-new-header__logo"
+      height="30"
+      width="30"
+      src="/update/abp-logo.svg">
+    <span class="whats-new-header__name">Adblock Plus</span>
+  </div>
+
+  <!--
+    Server-rendered with the same v1.0.0 fallback AdBlock's page uses, so the
+    pill never flashes empty and survives a JS failure. whats-new-stats.js
+    replaces it with the real extension version as soon as the payload lands.
+  -->
+  <p class="whats-new-header__version">
+    <span class="whats-new-header__version-number">v1.0.0</span>
+  </p>
+</header>

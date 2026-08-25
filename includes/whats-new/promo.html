@@ -1,0 +1,29 @@
+<!-- ===== 2b. PROMO ===== -->
+<!--
+  The top block for ?variant=vpn-opd, in place of the status block above: the
+  same page without the personal update figures, so it opens on a picture rather
+  than on "your Adblock Plus is up to date".
+
+  loading="lazy" is what keeps this off the wire for everyone else. The section
+  is display: none in every other state, and a lazy image that is never in the
+  viewport is never fetched — so the default page, which is most of the traffic,
+  pays nothing for artwork it does not show.
+
+  HEIGHT IS THE CONSTRAINT if the artwork is ever replaced. Width is free, up to
+  the 820 the card allows. Measured at 1512x828, 110 puts the CTAs of
+  ?variant=vpn-opd&trial=7 exactly where /whats-new puts its own; every pixel
+  above that pushes both buttons further past the fold.
+
+  alt is empty on purpose. The picture is the heading below it in another form —
+  an exposed connection, the octagon, the devices behind it — so a screen reader
+  that read them both would hear the same thing twice.
+-->
+<section class="whats-new-inner whats-new-promo">
+  <img
+    class="whats-new-promo__image"
+    src="/img/whats-new-opd-vpn.svg"
+    alt=""
+    width="600"
+    height="110"
+    loading="lazy">
+</section>

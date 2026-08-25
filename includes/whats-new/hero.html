@@ -1,0 +1,54 @@
+<!-- ===== 3. HERO ===== -->
+<section class="whats-new-inner whats-new-hero">
+  <!--
+    Shown by ?trial=7 only. It is the first thing the trial states say, because
+    "no charge today" is the objection the price answers a moment later.
+  -->
+  <p class="whats-new-trial-badge" data-wn-offer="trial">
+    {{ whats-new-trial__badge Free for 7 days · No charge today }}
+  </p>
+
+  <h2 class="whats-new-hero__heading" data-wn-heading-only="standard">
+    {{ whats-new-hero__heading You’ve been blocking ads in your browser. }}
+    <em>{{ whats-new-hero__heading-accent But what about everything else? }}</em>
+  </h2>
+
+  <!--
+    ?variant=vpn-opd's own heading. It names the gap rather than the product,
+    which is what the dialog the visitor just came from promised them. The plain
+    ?variant=vpn keeps the heading above.
+  -->
+  <h2 class="whats-new-hero__heading" data-wn-heading-only="opd">
+    {{ whats-new-hero__heading-opd Your connection is exposed. }}
+    <em>{{ whats-new-hero__heading-opd-accent Adblock Plus VPN closes the gap. }}</em>
+  </h2>
+
+  <p class="whats-new-hero__text" data-wn-only="default">
+    {{ whats-new-hero__text Cookie banners, sign-up pop-ups, floating videos — Premium clears out everything ad blocking leaves behind. On iPhone and iPad, it clears the ads inside your apps too. }}
+    <!--
+      A sentence of its own, not part of the paragraph above: it is only true
+      while a trial is on offer, and the paragraph has to stand without it.
+    -->
+    <em class="whats-new-hero__trial-line" data-wn-offer="trial">{{ whats-new-hero__text-trial — Try it free for 7 days. }}</em>
+  </p>
+
+  <p class="whats-new-hero__text" data-wn-only="vpn">
+    {{ whats-new-hero__text-vpn Apps on your phone, public Wi-Fi networks, your IP address — Premium extends your protection everywhere, powered by Adblock Plus VPN. }}
+    <em class="whats-new-hero__trial-line" data-wn-offer="trial">{{ whats-new-hero__text-trial }}</em>
+  </p>
+
+  <!--
+    A jump to the comparison table rather than a second, shorter list of the
+    same features. The chevron points down and stays down: it signals where the
+    link goes, not an open or closed state.
+  -->
+  <p class="whats-new-jump">
+    <a class="whats-new-jump__link" href="#whats-new-benefits"
+       data-click='{"type":"whats-new-cta","trigger":"see-included"}'>
+      {{ whats-new-included__summary See what’s included }}
+      <svg class="whats-new-jump__chevron" width="14" height="14" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </p>
+</section>
