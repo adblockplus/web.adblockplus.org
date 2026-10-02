@@ -1408,6 +1408,23 @@ html[data-checkout-unavailable] .whats-new-cta {
   color: var(--wn-text);
 }
 
+/* Both icons ship without a fill, so they render black on the dark bar
+   (1.19:1). currentColor picks up the text beside them. */
+.page-whats-new .cookiebar-text svg,
+.page-whats-new .cookiebar .cookies-settings svg {
+  fill: currentColor;
+}
+
+/* The shared rule greys this button to #efefef on hover, which flashes light
+   on the dark bar. White tint composites to #262a39; white label 14.26:1. */
+@media (min-width: 992px) {
+  .page-whats-new .cookiebar .cookies-settings:hover,
+  .page-whats-new .cookiebar .cookies-settings:active,
+  .page-whats-new .cookiebar .cookies-settings:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
 .page-whats-new .cookiebar .cookies-submit {
   color: #ffffff;
   background-color: var(--wn-red-cta);
