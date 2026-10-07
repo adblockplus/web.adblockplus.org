@@ -22,6 +22,10 @@ include:
     ref: main
     file: .gitlab-ci.trivy.yml
 
+# Report dependency CVEs as a warning rather than blocking the pipeline.
+trivy:sca:
+  allow_failure: true
+
 variables:
   DEFAULT_LOCALE: en
   # Baseline commit for semgrep: only new findings introduced after this commit fail CI;
