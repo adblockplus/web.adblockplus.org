@@ -107,10 +107,6 @@ template=fixed-toc
 
 {{ animations-paragraph-1 Animations are allowed for the 6x1 ad type when placed as a ‘sticky’ ad on the bottom of the screen. Animations have to comply with the LEAN standard for animations, and a close button or some other closing mechanism must be included. }} [^8]
 
-### {{other-acceptable-ads[Subheadline in "Specific criteria"] Other Acceptable Ads formats? }} {: #other-formats }
-
-{{ new-format["Other Acceptable Ads formats" text in "Specific criteria"] Are your ads displayed on alternative screens, or are you convinced that you have an innovative Acceptable Ads format which doesn't fit the ads outlined above? <a href="#" data-mask='{"href": "bWFpbHRvOmFjY2VwdGFibGVhZHNAYWRibG9ja3BsdXMub3Jn"}'>Let us know!</a> }}
-
 ## {{ why-is-aa-enabled[heading] Why is the Acceptable Ads feature enabled by default? }} {: #enabled-by-default }
 
 {{ why-is-aa-enabled-1 Acceptable Ads is on by default because we believe the best outcome for users is a web with fewer, better ads — not a binary choice between all ads or none. By allowing only ads that meet strict, independently verified criteria, Adblock Plus helps push the entire ad industry toward higher standards. You can turn it off at any time in two clicks. }}
