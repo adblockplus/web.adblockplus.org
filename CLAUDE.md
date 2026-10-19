@@ -53,6 +53,9 @@ npm run fast
 # Generate per-country settings.js files (after editing the settings template)
 node scripts/generate-settings.mjs
 
+# Check browser-facing JS against the minimum browser versions (also runs in CI)
+npm run lint
+
 # E2E tests (Playwright)
 npx playwright install                    # Install browsers once
 npx playwright install chrome msedge     # Additional install for Chrome/Edge projects
@@ -77,6 +80,14 @@ npx playwright test --grep @visual_regression --update-snapshots
 - **Line endings**: LF;
 - **Trailing whitespace**: trimmed;
 - **Final newline**: required
+
+### Minimum Browser Versions
+
+The site supports Chrome 124, Edge 124, Firefox 115 and Opera 112 and newer (the minimum versions for the MV3 extension), set under `browserslist` in `package.json`. The `eslint:browser_compat` CI job (`npm run lint`, configured in `eslint.config.mjs`) fails on JS in `static/` and inline `<script>`s that uses newer syntax or APIs:
+- `eslint-plugin-compat` checks web APIs against `browserslist`
+- `eslint-plugin-es-x` bans JavaScript newer than ES2023, the last edition Firefox 115 fully supports. When raising the minimum Firefox version, move its `restrict-to-es20XX` preset forward to match. The Intl API preset is held at ES2022 because Firefox 115 lacks some ES2023 Intl methods; it can move to ES2023 from Firefox 116
+- Third-party code and inline scripts that are mostly Jinja are excluded in `eslint.config.mjs`. Inline `<script type="module">` blocks must be listed there as modules
+- CSS is not checked
 
 ### Page Authoring
 

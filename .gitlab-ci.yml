@@ -44,8 +44,20 @@ variables:
 
 .images:
   node: &NODE_IMAGE node:16-alpine
+  node_22: &NODE_22_IMAGE node:22-alpine
   cloud_sdk: &GOOGLE_CLOUD_SDK_IMAGE google/cloud-sdk:572.0.0
   build: &BUILD_IMAGE registry.gitlab.com/eyeo/websites/docker/adblockinc-cms-202208.1:latest
+
+# npm's download cache, used with `npm ci --cache .npm --prefer-offline`.
+# Refreshes whenever package-lock.json changes. The runners keep caches on
+# local Docker volumes, so jobs on a fresh autoscaled VM start without one
+.npm_cache:
+  cache: &npm_cache
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
 
 default:
   tags:
@@ -58,6 +70,18 @@ stages:
   - deploy_cloud_run
   - deploy_firebase
   - test
+
+# Fails when browser-facing JS uses syntax or APIs missing from the minimum
+# browser versions in package.json's "browserslist" (see eslint.config.mjs)
+eslint:browser_compat:
+  stage: pre_checks
+  except:
+    - schedules
+  image: *NODE_22_IMAGE
+  cache: *npm_cache
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npm run lint
 
 pre_review_build:
   stage: prebuild_firebase
@@ -342,8 +366,9 @@ deploy_firebase_hosting:production:
 .playwright-base: &playwright-base
   stage: test
   image: mcr.microsoft.com/playwright:v1.61.1-jammy
+  cache: *npm_cache
   before_script:
-    - npm ci
+    - npm ci --cache .npm --prefer-offline
     - export CI_RUN=1
   <<: *playwright-artifacts
 
