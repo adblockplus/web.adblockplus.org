@@ -1,0 +1,16 @@
+# Ruff lints the Python ./scripts/, ./cms/ and ./services/firebase/utils/
+# directories (see `include` below).
+#
+# ./scripts/ and ./services/firebase/utils/ get the full ruleset.
+# ./cms/ is linted for correctness and basic style only.
+# Expanding ./cms/ to cover the full ruleset should be a
+# followup in the future.
+include = ["scripts/**/*.py", "cms/**/*.py", "services/firebase/utils/**/*.py"]
+
+[lint]
+# F = pyflakes (real bugs: unused imports, undefined names, etc.)
+# E/W = pycodestyle. I = import sorting. UP = pyupgrade.
+select = ["F", "E", "W", "I", "UP"]
+
+[lint.per-file-ignores]
+"cms/**" = ["I", "UP", "E501"]

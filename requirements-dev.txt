@@ -1,0 +1,8 @@
+# Dependencies for running the Python test suite (cms/tests/ + scripts/tests/).
+-r requirements.txt
+
+pytest==9.1.1
+requests==2.34.2
+# transitive via requests; pinned to a security-fixed release
+urllib3==2.7.0
+ruff==0.8.4

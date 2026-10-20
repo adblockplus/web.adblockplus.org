@@ -24,6 +24,12 @@ services/
   firebase/     # Firebase Hosting config + public/ output dir
   cloudrun/     # Express service (index.js + handlers/)
 scripts/        # Build and utility scripts (Node.js + Python)
+  tests/        # pytest suite for the Python build scripts
+cms/            # Vendored eyeo CMS static-site generator — see cms/VENDOR.md
+  bin/          # Entry points (generate_static_pages, test_server)
+  tests/        # pytest suite for the generator
+docker/
+  local-static/ # Local image: production build served by nginx (preview only)
 tests/          # Playwright E2E test suite
   *.spec.js     # Test specs
   test-pages/   # Page object models
@@ -38,17 +44,28 @@ settings.ini    # CMS configuration: site URL, locales list, RTL settings
 ## Development Setup
 
 **Prerequisites:**
-1. Install and start [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. **Python 3.9** via pyenv: `pyenv install 3.9 && pyenv local 3.9`
-3. **Clone the CMS**: `git clone https://gitlab.com/eyeo/websites/cms.git`
-4. **Set PYTHONPATH** in shell profile: `export PYTHONPATH="$HOME/path/to/cms:$PYTHONPATH"`
-5. Install npm dependencies: `npm install`
+1. **Python 3.11+** via pyenv: `pyenv install 3.12 && pyenv local 3.12`
+2. **Create a venv**: `python3 -m venv .venv && source .venv/bin/activate` (keeps deps isolated and ensures `pip` and `pytest` share an interpreter)
+3. **Install CMS Python deps**: `python -m pip install -r requirements.txt` (the CMS is vendored in `cms/` — no external clone or PYTHONPATH setup needed)
+4. Install npm dependencies: `npm install`
+
+The CMS static-site generator is vendored into `cms/` (modules in `cms/`, `cms/bin/`; tests in `cms/tests/`). It is a trimmed copy of the upstream eyeo CMS — only the generation/dev-server code, with the XTM/Crowdin translation flow removed. **`cms/VENDOR.md` records the fork point (upstream `096286d`) and every local divergence — read it before changing anything under `cms/`, and add an entry there when you do.** The Python test suite (`cms/tests/` plus build-script tests in `scripts/tests/`) runs with `python -m pip install -r requirements-dev.txt && python -m pytest` (bare `pytest` picks up both via `testpaths` in `pytest.ini`; invoke via `python -m` so it resolves to the venv interpreter and not a stray global `pytest`).
 
 ## Development Commands
 
 ```bash
 # Start CMS dev server (http://localhost:8000 — use 127.0.0.1 on macOS if issues)
-npm run fast
+npm start
+
+# Build the production static site locally (into the gitignored services/firebase/public/).
+# Uses the settings.ini siteurl (production by default). CI also sets siteurl per
+# environment and copies the default locale to the web root for Firebase.
+python -m cms.bin.generate_static_pages "$PWD" services/firebase/public
+python services/firebase/utils/html_extender.py services/firebase/public
+python scripts/check_build.py services/firebase/public
+
+# Run the Python test suite (cms/tests + scripts/tests)
+python -m pytest
 
 # Generate per-country settings.js files (after editing the settings template)
 node scripts/generate-settings.mjs
@@ -76,7 +93,8 @@ npx playwright test --grep @visual_regression --update-snapshots
 ## Code Conventions
 
 ### EditorConfig (enforced for all files)
-- **Indentation**: 2 spaces (HTML, JS, CSS, JSON, Markdown, shell)
+
+- **Indentation**: 2 spaces (HTML, JS, CSS, JSON, Markdown, shell); **4 spaces for Python** (`.py`, PEP 8)
 - **Line endings**: LF;
 - **Trailing whitespace**: trimmed;
 - **Final newline**: required
@@ -88,6 +106,13 @@ The site supports Chrome 124, Edge 124, Firefox 115 and Opera 112 and newer (the
 - `eslint-plugin-es-x` bans JavaScript newer than ES2023, the last edition Firefox 115 fully supports. When raising the minimum Firefox version, move its `restrict-to-es20XX` preset forward to match. The Intl API preset is held at ES2022 because Firefox 115 lacks some ES2023 Intl methods; it can move to ES2023 from Firefox 116
 - Third-party code and inline scripts that are mostly Jinja are excluded in `eslint.config.mjs`. Inline `<script type="module">` blocks must be listed there as modules
 - CSS is not checked
+
+### Python linting
+
+Python is linted with `ruff` (config in `ruff.toml`, run via `ruff check .`, also in the CI `test:cms` job):
+
+- `scripts/` and `services/firebase/utils/` full ruleset (`F,E,W,I,UP`).
+- `cms/` correctness + basic style only. Expanding to the full ruleset should be a followup in the future.
 
 ### Page Authoring
 
@@ -202,11 +227,12 @@ Two independent axes; the head script in `pages/whats-new.html` turns each into 
 ## CI/CD
 
 GitLab CI/CD (`.gitlab-ci.yml`). Pipeline stages:
-1. **prebuild_firebase** — generate preview URLs
-2. **build_firebase** — CMS generates static pages
-3. **deploy_cloud_run** — deploy Express service (named `b-<branch-name>` on non-master)
-4. **deploy_firebase** — deploy to Firebase Hosting (preview channel on non-master, expires 30 days)
-5. **test** — Playwright E2E tests against the deployed URL
+1. **unit** (`test:cms`) — `ruff check .` + `pytest`; gates everything below
+2. **prebuild_firebase** — generate preview URLs
+3. **build_firebase** — CMS generates static pages, then `scripts/check_build.py` smoke-checks the output (locales, key pages, no unrendered template markers) and fails the build if it's structurally broken
+4. **deploy_cloud_run** — deploy Express service (named `b-<branch-name>` on non-master)
+5. **deploy_firebase** — deploy to Firebase Hosting (preview channel on non-master, expires 30 days)
+6. **test** — Playwright E2E tests against the deployed URL
 
 **Production**: Merging to `master` auto-deploys immediately — no manual gate. To rollback: `git revert <hash>` + open MR. For static-only emergency rollback: revert a release in the Firebase console (does not revert Cloud Run).
 
@@ -214,6 +240,4 @@ GitLab CI/CD (`.gitlab-ci.yml`). Pipeline stages:
 
 - `services/firebase/public/` is **generated output** — never edit files there directly
 - `.htaccess` files are legacy Apache artifacts, not used in production
-- `npm run slow` is a legacy Apache setup — ignore it
-- `.devcontainer/` exists but is not actively supported; use the local setup
 - `static/js/testing/pre-approved.js` and `includes/pre-approved-analytics.tmpl` are unused legacy files from the old three-tier consent system

@@ -20,8 +20,7 @@
     "brace-expansion@^2": "^2.1.2"
   },
   "scripts": {
-    "fast": "bash -i scripts/run-fast.sh",
-    "slow": "bash -i scripts/run-slow.sh",
+    "start": "bash -i scripts/start.sh",
     "rename-service-ids": "node scripts/rename-service-ids-in-firebase-config.mjs",
     "lint": "eslint static includes pages templates"
   },

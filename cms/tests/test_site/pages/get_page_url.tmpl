@@ -1,0 +1,10 @@
+
+global_canonical_url = {{ get_canonical_url('global') }}
+
+# 'filter' is default page name for the test website, so we check that the
+# link would not include the page name itself.
+filter_canonical_url = {{ get_canonical_url('filter') }}
+
+page_url = {{ get_page_url('translate') }}
+
+page_url_redirect = {{ get_page_url('global', redirect=True) }}

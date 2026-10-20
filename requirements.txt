@@ -1,0 +1,11 @@
+# Runtime dependencies for the vendored CMS static-site generator (cms/).
+# Baseline is upstream 096286d (see cms/VENDOR.md for the fork point and the
+# full list of local divergences), except where bumped for security below
+# (build-path bumps verified byte-identical; werkzeug verified via the dev
+# server + test suite).
+jinja2==3.1.6
+markdown==3.8.1
+markupsafe==2.1.1
+# werkzeug powers the local dev server (cms.bin.test_server / npm start)
+# only; it is not used by the CI build path.
+werkzeug==3.1.6

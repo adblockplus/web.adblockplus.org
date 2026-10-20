@@ -1,0 +1,15 @@
+{{ body|safe }}
+
+Simple TS with default: {{ 'Translate' | translate('simple') }}.
+
+Same TS with no default: doesn't work in templates.
+
+TS with fixed text: {{ 'Fixed <fix>text</fix>' | translate('fix-ts') }}.
+
+Nested translation: {{ '<a href="{{nested-link http://foo.com/}}">Foo</a> and <a href="{{nested-link2 http://baz.com/}}">Baz</a>' | translate('nested-ts') }}.
+
+Link resolving: {{ '<a href="translate">This page</a>' | translate('linked-ts') }}.
+
+Entity escaping: {{ 'Drag&drop' | translate('entity-ts') }}.
+
+Entity escaping in links: {{ '<a href="http://foo.com/?a&b">Foo</a>' | translate('entity-lnk') }}.

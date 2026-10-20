@@ -1,0 +1,9 @@
+global_canonical_url = http://localhost:5000/global
+
+# 'filter' is default page name for the test website, so we check that the
+# link would not include the page name itself.
+filter_canonical_url = http://localhost:5000/
+
+page_url = /en/translate
+
+page_url_redirect = /en/global

@@ -1,0 +1,9 @@
+<p>Simple TS with default: Übersetzen.</p>
+<p>Same TS with no default: Übersetzen.</p>
+<p>Another TS with no default: Deutsche <a href="http://foo.com/">Übersetzung</a>.</p>
+<p>TS with fixed text: Fester text.</p>
+<p>Nested translation: <a href="http://bar.de/">Bar</a> und <a href="http://baz.de/">Baz</a>.</p>
+<p>Link resolving: <a href="/de/translate" hreflang="de">Diese Seite</a>.</p>
+<p>Link to a non-translatable page: <a href="/en/sitemap" hreflang="en">Seitenverzeichnis</a>.</p>
+<p>Entity escaping: Draggen&amp;droppen.</p>
+<p>Entity escaping in links: <a href="http://foo.com/?a&amp;b">Bar</a>.</p>

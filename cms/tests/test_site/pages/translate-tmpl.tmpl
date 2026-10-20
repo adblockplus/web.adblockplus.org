@@ -1,0 +1,21 @@
+<html>
+  <body>
+Simple TS with default: {{ 'Translate' | translate('simple') }}.
+
+Same TS with no default: {{ get_string('simple') }}.
+
+Another TS with no default: {{ get_string('nodefault') }}.
+
+TS with fixed text: {{ 'Fixed <fix>text</fix>' | translate('fix-ts') }}.
+
+Nested translation: {{ '<a href="{{nested-link http://foo.com/}}">Foo</a> and <a href="{{nested-link2 http://baz.com/}}">Baz</a>' | translate('nested-ts') }}.
+
+Link resolving: {{ '<a href="translate">This page</a>' | translate('linked-ts') }}.
+
+Entity escaping: {{ 'Drag&drop' | translate('entity-ts') }}.
+
+Entity escaping in links: {{ '<a href="http://foo.com/?a&b">Foo</a>' | translate('entity-lnk') }}.
+
+Translation string with href: {{ get_string('href_inside') }}.
+  </body>
+</html>

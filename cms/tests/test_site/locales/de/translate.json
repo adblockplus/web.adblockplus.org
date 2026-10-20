@@ -1,0 +1,35 @@
+{
+  "simple": {
+    "description": "test",
+    "message": "Übersetzen"
+  },
+  "nodefault": {
+    "description": "default provided by translation file",
+    "message": "Deutsche <a>Übersetzung</a>"
+  },
+  "fix-ts": {
+    "description": "fix",
+    "message": "Fester {1}"
+  },
+  "nested-ts": {
+    "message": "<a>Bar</a> und <a>Baz</a>"
+  },
+  "nested-link": {
+    "message": "http://bar.de/"
+  },
+  "nested-link2": {
+    "message": "http://baz.de/"
+  },
+  "linked-ts": {
+    "message": "<a>Diese Seite</a>"
+  },
+  "linked-ts2": {
+    "message": "<a>Seitenverzeichnis</a>"
+  },
+  "entity-ts": {
+    "message": "Draggen&droppen"
+  },
+  "entity-lnk": {
+    "message": "<a>Bar</a>"
+  }
+}

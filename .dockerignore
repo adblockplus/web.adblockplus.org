@@ -1,0 +1,13 @@
+# Keep the Docker build context lean and free of host-built artifacts.
+.git
+.venv
+venv
+node_modules
+cache
+services/firebase/public
+tests
+test-results
+playwright-report
+**/__pycache__
+**/*.pyc
+.DS_Store

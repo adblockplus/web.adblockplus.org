@@ -1,0 +1,23 @@
+product = foo
+title = test_metadata
+tags = [popular, bar]
+<h1> Unfiltered </h1>
+<ul>
+{%- for unfiltered_page in get_pages_metadata()|sort(attribute='page') %}
+  <li>title : {{ unfiltered_page['page']}} </li>
+{%- endfor %}
+</ul>
+
+<h1> Filtered </h1>
+<ul>
+    {%- for filtered_page in get_pages_metadata({'tags': ['popular', 'bar']})|sort(attribute='page') -%}
+        <li>title : {{ filtered_page['page'] }} </li>
+{%- endfor %}
+</ul>
+
+<h1> String Filter For Listy Option </h1>
+<ul>
+    {%- for filtered_page in get_pages_metadata({'tags': 'popular'})|sort(attribute='page') -%}
+        <li>title : {{ filtered_page['page'] }} </li>
+{%- endfor %}
+</ul>

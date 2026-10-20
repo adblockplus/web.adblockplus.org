@@ -1,0 +1,36 @@
+
+
+
+<h1> Unfiltered </h1>
+<ul>
+  <li>title : brokenlink </li>
+  <li>title : brokenlink-html </li>
+  <li>title : brokenlink-tmpl </li>
+  <li>title : filter </li>
+  <li>title : foo/bar </li>
+  <li>title : get_page_url </li>
+  <li>title : global </li>
+  <li>title : includer </li>
+  <li>title : metadata_json </li>
+  <li>title : metadata_json_comment </li>
+  <li>title : metadata_old_comment </li>
+  <li>title : rel_path </li>
+  <li>title : sitemap </li>
+  <li>title : siteurl </li>
+  <li>title : translate </li>
+  <li>title : translate-html </li>
+  <li>title : translate-include </li>
+  <li>title : translate-not-enough </li>
+  <li>title : translate-partial </li>
+  <li>title : translate-template </li>
+  <li>title : translate-tmpl </li>
+  <li>title : translate-unicode </li>
+</ul>
+
+<h1> Filtered </h1>
+<ul><li>title : sitemap </li>
+</ul>
+
+<h1> String Filter For Listy Option </h1>
+<ul><li>title : sitemap </li>
+</ul>

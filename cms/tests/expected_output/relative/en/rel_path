@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Page Title</title>
+    <link rel="stylesheet" href="../dist/css/main.min.css">
+    <base href="https://www.example.com/news/index.html">
+    <script src="../scripts/myscript.js"></script>
+  </head>
+
+  <body>
+    Simple TS with default: Translate.
+    Same TS with no default: Translate.
+    Nested translation: <a href="http://foo.com/">Foo</a> and <a href="http://baz.com/">Baz</a>.
+    Link resolving: <a href="translate" hreflang="en">This page</a>.
+    Link to a non-translatable page: <a href="sitemap" hreflang="en">Site map</a>.
+    Entity escaping in links: <a href="http://foo.com/?a&amp;b">Foo</a>.
+    Image link: <img src="../img/icon"></img>
+    Iframe link: <iframe src="../default.asp"></iframe>
+    Script link: <script src="myscripts.js"></script>
+    Input link: <input type="image" src="../img/submit.gif" alt="Submit">
+    Link to external source: <a href="http://bar.de/">Bar</a>
+    Link to self: <a href="rel_path" hreflang="en">
+    Link to self with extension: <a href="rel_path.html" hreflang="en">
+    Relative link to local page: <a href="../en/sitemap">
+    Absolute link to local page: <a href="sitemap">
+    Relative link to different locale: <a href="../de/sitemap">
+    Absolute link to diferent locale: <a href="../de/sitemap">
+    Relative link to page in subfolder: <a href="../foo/bar">
+    Absolute link to page in subfolder: <a href="../foo/bar">
+    Resource URL: <link rel="stylesheet" href="../dist/css/main.min.css">
+  </body>
+
+</html>

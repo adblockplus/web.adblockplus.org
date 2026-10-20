@@ -1,0 +1,21 @@
+<html>
+  <body>
+Simple TS with default: Translate.
+
+Same TS with no default: Translate.
+
+Another TS with no default: the <a href="http://foo.com/">default</a> is provided in EN translation file.
+
+TS with fixed text: Fixed text.
+
+Nested translation: <a href="http://foo.com/">Foo</a> and <a href="http://baz.com/">Baz</a>.
+
+Link resolving: <a href="/en/translate" hreflang="en">This page</a>.
+
+Entity escaping: Drag&amp;drop.
+
+Entity escaping in links: <a href="http://foo.com/?a&amp;b">Foo</a>.
+
+Translation string with href: <sup>s</sup> <a href="http://foo.com/">foo</a>.
+  </body>
+</html>

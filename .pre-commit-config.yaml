@@ -15,6 +15,9 @@ repos:
     rev: v1.156.0
     hooks:
       - id: semgrep
+        # git hands hooks a relative GIT_INDEX_FILE (.git/index), which breaks git
+        # inside semgrep's baseline worktree, where .git is a file: "Not a directory".
+        entry: env -u GIT_INDEX_FILE semgrep
         # Pinned because semgrep needs Python >=3.10 and pre-commit otherwise picks
         # whatever interpreter the invoking shell resolves — on macOS that is often
         # /usr/bin/python3 (3.9), which fails to install semgrep at all.

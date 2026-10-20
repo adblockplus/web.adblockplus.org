@@ -1,0 +1,6 @@
+site_globals('test') = METHOD TEST PASSED
+has_string('temp') = False
+has_string('exists', 'global') = True
+get_string('exists', 'global') = exists
+page_has_locale('global', 'en') = True
+page_has_locale('global', 'de') = False

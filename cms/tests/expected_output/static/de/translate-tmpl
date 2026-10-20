@@ -1,0 +1,21 @@
+<html>
+  <body>
+Simple TS with default: Übersetzen.
+
+Same TS with no default: Übersetzen.
+
+Another TS with no default: Deutsche <a href="http://foo.com/">Übersetzung</a>.
+
+TS with fixed text: Fester text.
+
+Nested translation: <a href="http://bar.de/">Bar</a> und <a href="http://baz.de/">Baz</a>.
+
+Link resolving: <a href="/de/translate" hreflang="de">Diese Seite</a>.
+
+Entity escaping: Draggen&amp;droppen.
+
+Entity escaping in links: <a href="http://foo.com/?a&amp;b">Bar</a>.
+
+Translation string with href: <sup>s</sup> <a href="http://foo.com/">foo</a>.
+  </body>
+</html>

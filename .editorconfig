@@ -12,3 +12,7 @@ indent_style = space
 
 [*.{html,tmpl,md,js,css,svg,json,conf,sh}]
 indent_size = 2
+
+# Python follows PEP 8: 4-space indentation
+[*.py]
+indent_size = 4

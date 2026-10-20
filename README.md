@@ -15,22 +15,26 @@ This website is hosted on [Firebase](https://console.firebase.google.com/project
 
 ### Prerequisites
 
-1. Install and start [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. Install Python 3.9 (required by the CMS). [pyenv](https://github.com/pyenv/pyenv) is recommended:
+1. Install Python 3.11+ ([pyenv](https://github.com/pyenv/pyenv) is recommended):
    ```sh
-   pyenv install 3.9
-   pyenv local 3.9
+   pyenv install 3.12
+   pyenv local 3.12
    ```
-3. Clone the [CMS server](https://gitlab.com/eyeo/websites/cms.git) somewhere on your machine
-4. Add it to your Python path, e.g. in your `.zshrc`:
+2. Create and activate a virtual environment (keeps these deps isolated and ensures `pip` and `pytest` use the same interpreter):
    ```sh
-   export PYTHONPATH="$HOME/path/to/cms:$PYTHONPATH"
+   python3 -m venv .venv
+   source .venv/bin/activate
    ```
-5. Install dependencies:
+   Run `deactivate` to exit the venv. Activation only affects the current shell, so a stale `(.venv)` prompt usually means an old terminal is still open — run `deactivate` there or close it. (In VSCode, the Python extension may auto-activate `.venv` in new terminals.)
+3. Install the CMS Python dependencies (the CMS itself is vendored in `cms/` — no external clone or `PYTHONPATH` setup needed; see [`cms/VENDOR.md`](cms/VENDOR.md) for its upstream fork point and local patches):
+   ```sh
+   python -m pip install -r requirements.txt
+   ```
+4. Install Node dependencies:
    ```sh
    npm install
    ```
-6. Install the pre-commit hooks (runs gitleaks/semgrep/eslint checks before each commit):
+5. Install the pre-commit hooks (runs gitleaks/semgrep/eslint checks before each commit):
    ```sh
    pip install pre-commit
    pre-commit install
@@ -38,17 +42,61 @@ This website is hosted on [Firebase](https://console.firebase.google.com/project
 
 > **Optional:** [mise](https://mise.jdx.dev/) pins the tool versions this repo expects (see `mise.toml`) — Node, Python, and pre-commit itself. If you use mise, run `mise install` to pick these up; if not, just make sure your own Node/Python/pre-commit versions are reasonably close to what's pinned there.
 
-### Start the dev server
+### Running the Python tests
+
+The repo has a `pytest` suite covering the vendored static-site generator (`cms/tests/`) and the build scripts (`scripts/tests/`). With the virtual environment from the prerequisites activated, install the dev dependencies once, then run them:
 
 ```sh
-npm run fast
+python -m pip install -r requirements-dev.txt
+python -m pytest
+```
+
+Invoking via `python -m` ensures `pip` and `pytest` resolve to the same interpreter — if you see `ModuleNotFoundError` for `requests` after installing, a stray global `pytest` is shadowing the venv; activate the venv (or use `python -m pytest`) and re-run.
+
+`pytest` with no arguments picks up both directories (configured via `testpaths` in `pytest.ini`). These also run in CI, in the `test:cms` job, on every merge-request and branch pipeline — scheduled pipelines are excluded.
+
+The Python is also linted with [ruff](https://docs.astral.sh/ruff/) (this runs in CI too, in the same `test:cms` job).
+
+```sh
+ruff check .
+```
+
+- `scripts/` and `services/firebase/utils/` get the full ruleset.
+- `cms/` is linted for correctness and basic style only (see `ruff.toml`). Expanding to the full ruleset should be a followup in the future.
+
+### Start the dev server
+
+From within your virtual env:
+
+```sh
+npm start
 ```
 
 This starts the CMS test server on `http://localhost:8000`. Use `127.0.0.1` instead of `localhost` if you have issues on macOS.
 
-> **Note:** `npm run slow` also exists but relies on a legacy Apache setup that is no longer used. You can mostly ignore it.
+### Building the production site locally
 
-> **VSCode Dev Container:** A dev container config exists in `.devcontainer/` but is not actively supported. See `.devcontainer/Dockerfile` and `.devcontainer/postcreate.sh` if you want to try it.
+To reproduce the static site the way CI builds it for production — generated into the gitignored `services/firebase/public/`:
+
+```sh
+python -m cms.bin.generate_static_pages "$PWD" services/firebase/public
+python services/firebase/utils/html_extender.py services/firebase/public
+python scripts/check_build.py services/firebase/public
+```
+
+This builds with the `siteurl` from `settings.ini` (production — `https://adblockplus.org` — by default), adds `.html` extensions, and runs the smoke check (locales, key pages, no unrendered template markers). In CI the build additionally sets `siteurl` per environment and copies the default locale to the web root for Firebase.
+
+#### In Docker (isolated build + static serve)
+
+To run those same three steps in a container and serve the output with nginx — handy for eyeballing the built files without a local Python setup:
+
+```sh
+docker build -f docker/local-static/Dockerfile -t abp-local-static .
+docker run --rm -p 8080:80 abp-local-static
+# open http://localhost:8080/en/
+```
+
+This is a **convenience for inspecting the generated static output only** — it is not a production replica. It approximates Firebase's `cleanUrls` (extensionless links resolve to the built `.html` files) but reproduces none of the rest of the Hosting layer: no redirects, no i18n per-country `settings.js` selection, no custom headers, and none of the Cloud Run endpoints (`robots`/`url`/`redirect`/`data` and the locale fallback). For faithful routing, use the MR deploy-preview channel.
 
 ## Making changes
 

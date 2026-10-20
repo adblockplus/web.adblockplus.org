@@ -8,9 +8,15 @@ import argparse
 import os
 from pathlib import Path
 
+
 def is_html_file(path):
-    with open(str(path), 'r') as reader:
-        return reader.readline().startswith("<!DOCTYPE html>")
+    try:
+        with open(str(path), encoding="utf-8") as reader:
+            return reader.readline().startswith("<!DOCTYPE html>")
+    except UnicodeDecodeError:
+        # Not a UTF-8 text file (e.g. a binary asset or a macOS .DS_Store),
+        # so it is certainly not an HTML page.
+        return False
 
 def is_html_file_without_ext(path):
     return path.exists() and path.is_file() and path.suffix == '' and is_html_file(path)
@@ -25,13 +31,15 @@ def main(dir_path):
     for p in Path('.').glob('**/*'):
         if is_html_file_without_ext(p):
             add_html_extension(p)
-    
-    print(("{} total `.html` extensions added".format(change_count)))
+            change_count += 1
+
+    print(f"{change_count} total `.html` extensions added")
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="Script that adds `.html` extension to HTML files in a given directory"
+        description="Script that adds `.html` extension to HTML files "
+                    "in a given directory"
     )
 
     parser.add_argument(

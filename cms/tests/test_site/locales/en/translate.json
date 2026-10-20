@@ -1,0 +1,14 @@
+{
+  "simple": {
+    "description": "test",
+    "message": "Translate"
+  },
+  "nodefault": {
+    "description": "default provided by translation file",
+    "message": "the <a href='http://foo.com/'>default</a> is provided in EN translation file"
+  },
+  "href_inside": {
+    "description": "A tranlsation string with some tags inside.",
+    "message": "<sup>s</sup> <a href=\"http://foo.com/\">foo</a>"
+  }
+}
