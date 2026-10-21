@@ -1,7 +1,7 @@
 # Build stage: install production dependencies on a full Node.js 22 image.
 # This stage is discarded — nothing from it (npm, apt, perl, shell) ships to
-# the final image.
-FROM node:22-slim AS builder
+# the final image. Keep its Debian release in step with the runtime stage.
+FROM node:22-trixie-slim AS builder
 
 WORKDIR /usr/src/app
 
@@ -18,7 +18,8 @@ COPY . ./
 # Runtime stage: Google distroless Node.js 22, nonroot variant. Contains only the
 # node runtime and glibc/openssl/ca-certificates essentials — NO perl-base, NO apt,
 # NO npm, NO shell — and runs as the unprivileged 'nonroot' user rather than root.
-FROM gcr.io/distroless/nodejs22-debian12:nonroot
+# Distroless only updates Node on debian13; older Debian tags are frozen.
+FROM gcr.io/distroless/nodejs22-debian13:nonroot
 
 WORKDIR /usr/src/app
 
