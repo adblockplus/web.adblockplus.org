@@ -34,7 +34,7 @@ test('Premium page: ?has-premium Settings link', async ({ page, context }) => {
   await alreadyPremiumPage.openPage('has-premium');
   await alreadyPremiumPage.settingsButton.click();
   // This link should go to the extension Options page (see WEBS-492 in Jira), but for now directs to a Help article
-  await expect(page).toHaveURL('https://help.adblockplus.org/adblock-plus-help-center/get-started-with-adblock-plus-premium', { timeout: 10_000 });
+  await expect(page).toHaveURL('https://help.adblockplus.org/adblock-plus-help-center/unlock-adblock-plus-premium', { timeout: 10_000 });
 });
 
 test('Premium page: ?has-premium Help link', async ({ page }) => {
