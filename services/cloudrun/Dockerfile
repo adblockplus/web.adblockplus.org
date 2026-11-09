@@ -19,6 +19,7 @@ COPY . ./
 # node runtime and glibc/openssl/ca-certificates essentials — NO perl-base, NO apt,
 # NO npm, NO shell — and runs as the unprivileged 'nonroot' user rather than root.
 # Distroless only updates Node on debian13; older Debian tags are frozen.
+# Each CI build pulls this tag fresh, so a redeploy picks up base-image security fixes.
 FROM gcr.io/distroless/nodejs22-debian13:nonroot
 
 WORKDIR /usr/src/app
