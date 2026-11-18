@@ -127,6 +127,24 @@ git push origin my-revert-branch
 # then open an MR in GitLab
 ```
 
+### Updating the Terms of Use or Privacy Policy
+
+Breadcrumb is eyeo's user ID and consent service for Crumbs DNS, the same DNS service as the DNS blocking in Adblock Plus for iOS. It records which Terms of Use and Privacy Policy version each user agreed to, and rejects any version that isn't registered in Breadcrumb with a permanent copy of its text ([ADR-001: Consent Contract, decision 5](https://gitlab.com/eyeo/network-filtering/breadcrumb/-/blob/main/docs/architecture/ADR-001-consent-contract.md#5-policy-version-registry)). So every version has its own dated page that never changes (such as `/terms-2025-12-12`), and every new dated page has to be registered in Breadcrumb.
+
+When you change the English Terms of Use or Privacy Policy, in the same MR:
+
+- Terms of Use: copy the updated `pages/terms.md` to `pages/terms-YYYY-MM-DD.md`, add `robots=noindex` to its page header (so search engines only index the live `/terms`), and point its Privacy Policy link at the dated privacy page in force on that date.
+- Privacy Policy: copy the updated `includes/privacy-policy/english.md` to `includes/privacy-policy/english-YYYY-MM-DD.md` and point its "this Privacy Policy" links at the new dated page (the "current version is available at" link stays on `/privacy`). Then add a `pages/privacy-YYYY-MM-DD.tmpl` that includes it: copy an existing dated one, which already carries `robots=noindex`.
+- Use the date the change reaches production (the merge date); if the merge moves to another day, rename the files to match.
+- Never edit a dated page once it is live: a change is a new dated page.
+
+Once the MR is merged, ask the Breadcrumb team in [#project-breadcrumb](https://eyeo.slack.com/archives/C0BGX97Q2V8) to register the new version ([how a version is registered](https://gitlab.com/eyeo/network-filtering/breadcrumb/-/blob/main/docs/runbooks/bigquery/add-a-policy-version.md)). Give them the dated page's URL and the SHA-256 hash of its dated markdown file (run from the repo root):
+
+```sh
+shasum -a 256 pages/terms-YYYY-MM-DD.md
+shasum -a 256 includes/privacy-policy/english-YYYY-MM-DD.md
+```
+
 ## Help / Support
 
 Firebase status page can be found at https://status.firebase.google.com/

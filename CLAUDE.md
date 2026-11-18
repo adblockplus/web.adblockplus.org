@@ -126,6 +126,10 @@ Available templates: `minimal`, `default`, `fixed-toc`, `raw`. Navbar, header, t
 
 Partials in `includes/` are pulled in via `<? include partial_name ?>`.
 
+### Terms of Use and Privacy Policy
+
+Every English Terms of Use and Privacy Policy version has its own dated page that never changes (such as `pages/terms-2025-12-12.md`). Breadcrumb, eyeo's user ID and consent service for Crumbs DNS (the same DNS service as the DNS blocking in Adblock Plus for iOS), records which version each user agreed to and only accepts versions registered with it ([ADR-001: Consent Contract, decision 5](https://gitlab.com/eyeo/network-filtering/breadcrumb/-/blob/main/docs/architecture/ADR-001-consent-contract.md#5-policy-version-registry)). A change to `pages/terms.md` or `includes/privacy-policy/english.md` adds a new dated page in the same MR, and the new version is then registered in Breadcrumb: follow "Updating the Terms of Use or Privacy Policy" in `README.md`.
+
 ### Translations (27 languages)
 
 - Files: `locales/{locale}/{section}.json` (Chrome i18n JSON format)
