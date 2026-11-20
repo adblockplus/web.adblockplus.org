@@ -1,0 +1,56 @@
+{# Premium offer block (OM-1930, doc part B3). Tells machines Premium is a paid
+   product and what it costs. Prices are the USD amounts shown on the page;
+   premium-checkout-user-accounts.js converts them per currency at runtime.
+   Each price also says how often it is billed (unitCode ANN = per year,
+   MON = per month), so "40" is not read as a one-time price.
+   operatingSystem: Premium runs in the desktop extensions and the iOS app. #}
+{% autoescape false %}
+{% macro t(key, default) %}{{ default | translate(key) | striptags }}{% endmacro %}
+{# Same URL as the page's canonical tag. #}
+{% set url = get_canonical_url(page | ignore_browsers) %}
+{% set seller = {"@type": "Organization", "name": "eyeo GmbH"} %}
+{% set per_year = {"@type": "QuantitativeValue", "value": "1", "unitCode": "ANN"} %}
+{% set per_month = {"@type": "QuantitativeValue", "value": "1", "unitCode": "MON"} %}
+{% set premium = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Adblock Plus Premium",
+  "url": url,
+  "description": t("s6", "Block additional distractions, including floating videos, newsletter pop-ups, and more"),
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Windows, macOS, Linux, iOS",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": t("s3", "YEARLY"),
+      "price": "40",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "40",
+        "priceCurrency": "USD",
+        "referenceQuantity": per_year
+      },
+      "url": url,
+      "seller": seller
+    },
+    {
+      "@type": "Offer",
+      "name": t("s15", "MONTHLY"),
+      "price": "4",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "4",
+        "priceCurrency": "USD",
+        "referenceQuantity": per_month
+      },
+      "url": url,
+      "seller": seller
+    }
+  ]
+} %}
+<script type="application/ld+json">
+{{ premium | tojson(indent=2) }}
+</script>
+{% endautoescape %}

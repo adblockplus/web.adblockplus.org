@@ -124,7 +124,13 @@ template=fixed-toc
 
 Available templates: `minimal`, `default`, `fixed-toc`, `raw`. Navbar, header, toc, and footer can each be suppressed via `no{component}` page attributes.
 
+Other page attributes: `heading` overrides the H1 (defaults to `title`); `subheading` adds a lead paragraph under the H1 (`fixed-toc` only); `robots=none` adds a robots meta tag.
+
 Partials in `includes/` are pulled in via `<? include partial_name ?>`.
+
+### Structured data (JSON-LD)
+
+Schema.org blocks live in `includes/structured-data/*.tmpl`, one per block, pulled into a page's `<head>` with `<? include structured-data/name ?>`. FAQ blocks reuse the page's own translation keys (`translate` + `striptags` + `tojson`), so they localize with the visible text; keep their English defaults in sync with the page. The FAQ sub-pages (`faq_*.html`) already carry FAQPage microdata, so they get no JSON-LD. `scripts/check_build.py` checks every locale's blocks at build time: they parse, and each FAQ question is a heading on its page.
 
 ### Terms of Use and Privacy Policy
 
@@ -233,7 +239,7 @@ Two independent axes; the head script in `pages/whats-new.html` turns each into 
 GitLab CI/CD (`.gitlab-ci.yml`). Pipeline stages:
 1. **unit** (`test:cms`) — `ruff check .` + `pytest`; gates everything below
 2. **prebuild_firebase** — generate preview URLs
-3. **build_firebase** — CMS generates static pages, then `scripts/check_build.py` smoke-checks the output (locales, key pages, no unrendered template markers) and fails the build if it's structurally broken
+3. **build_firebase** — CMS generates static pages, then `scripts/check_build.py` smoke-checks the output (locales, key pages, no unrendered template markers, structured data) and fails the build if it's structurally broken
 4. **deploy_cloud_run** — deploy Express service (named `b-<branch-name>` on non-master)
 5. **deploy_firebase** — deploy to Firebase Hosting (preview channel on non-master, expires 30 days)
 6. **test** — Playwright E2E tests against the deployed URL

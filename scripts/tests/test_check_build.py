@@ -1,6 +1,7 @@
 """Tests for scripts/check_build.py (the post-build smoke check)."""
 
 import importlib.util
+import json
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -92,3 +93,60 @@ def test_flags_unrendered_template_marker(tmp_path):
     settings = _make_settings(tmp_path)
     problems = check_build(str(public), str(settings), min_pages=SMALL_MIN)
     assert any("de/broken" in p for p in problems)
+
+
+def _json_ld(body):
+    return f'<script type="application/ld+json">{body}</script>\n'
+
+
+def _faq_structured_data(question):
+    entry = {"name": question, "acceptedAnswer": {"text": "A."}}
+    return _json_ld(json.dumps({"@type": "FAQPage", "mainEntity": [entry]}))
+
+
+def test_flags_invalid_json_in_structured_data(tmp_path):
+    public = _make_build(tmp_path)
+    (public / "de" / "broken").write_text(_json_ld('{"name": '), encoding="utf-8")
+    settings = _make_settings(tmp_path)
+    problems = check_build(str(public), str(settings), min_pages=SMALL_MIN)
+    assert any("not valid JSON" in p and "de/broken" in p for p in problems)
+
+
+def test_flags_faq_question_missing_from_page_headings(tmp_path):
+    # structured data may only repeat what visitors see on the page
+    public = _make_build(tmp_path)
+    structured_data = _faq_structured_data("Is it free?")
+    reworded_heading = "<h2>Is it free to use?</h2>\n"
+    (public / "de" / "faq").write_text(
+        structured_data + reworded_heading, encoding="utf-8",
+    )
+    settings = _make_settings(tmp_path)
+    problems = check_build(str(public), str(settings), min_pages=SMALL_MIN)
+    assert any("not a heading" in p and "de/faq" in p for p in problems)
+
+
+def test_flags_lone_faq_question_missing_from_page_headings(tmp_path):
+    # mainEntity may hold one question on its own instead of a list
+    public = _make_build(tmp_path)
+    lone_question = {"name": "Is it free?", "acceptedAnswer": {"text": "A."}}
+    structured_data = _json_ld(
+        json.dumps({"@type": "FAQPage", "mainEntity": lone_question})
+    )
+    reworded_heading = "<h2>Is it free to use?</h2>\n"
+    (public / "de" / "faq").write_text(
+        structured_data + reworded_heading, encoding="utf-8",
+    )
+    settings = _make_settings(tmp_path)
+    problems = check_build(str(public), str(settings), min_pages=SMALL_MIN)
+    assert any("not a heading" in p and "de/faq" in p for p in problems)
+
+
+def test_accepts_faq_question_whose_heading_has_markup(tmp_path):
+    public = _make_build(tmp_path)
+    structured_data = _faq_structured_data("Is it free & safe?")
+    same_question_as_html = "<h3>Is it <strong>free</strong>\n  &amp; safe?</h3>\n"
+    (public / "de" / "faq").write_text(
+        structured_data + same_question_as_html, encoding="utf-8",
+    )
+    settings = _make_settings(tmp_path)
+    assert check_build(str(public), str(settings), min_pages=SMALL_MIN) == []

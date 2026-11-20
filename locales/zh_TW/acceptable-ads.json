@@ -1,6 +1,6 @@
 {
   "title": {
-    "message": "在 Adblock Plus 中允許可接受的廣告"
+    "message": "可接受廣告：誰來決定、誰來付費、如何關閉 | Adblock Plus"
   },
   "hate-ads": {
     "description": "Section header",
@@ -23,5 +23,41 @@
   },
   "what-are-aa-3": {
     "message": "大多數網站依靠廣告維持免費運營。Adblock Plus 預設封鎖侵入性廣告——同時也讓您可以選擇支持您信任的網站，以少量注意力換取數量有限、清楚標示的非侵入性廣告。"
+  },
+  "heading": {
+    "message": "可接受廣告",
+    "description": "Visible H1 headline"
+  },
+  "subheading": {
+    "message": "您的無廣告體驗，由您作主",
+    "description": "Subtitle under the H1"
+  },
+  "meta-description": {
+    "message": "可接受廣告是經過標示、不具侵入性且符合獨立委員會所訂標準的廣告。了解誰來決定、誰來付費以及如何關閉。",
+    "description": "Description meta tag content inside head tag"
+  },
+  "aa-who-decides": {
+    "message": "由誰決定哪些廣告是可接受的？",
+    "description": "heading"
+  },
+  "aa-who-decides-1": {
+    "message": "這些標準由可接受廣告委員會（一個獨立組織）制定，而非由 Adblock Plus 制定。委員會匯集了對線上廣告運作方式持有不同立場的各方：數位權利組織、研究人員和學者、使用廣告封鎖工具的使用者，以及廣告主、廣告技術公司、發布商和創意代理商。Adblock Plus 採用委員會制定的標準，並據此審核廣告。您可以在 <a>acceptableadscommittee.org</a> 查看委員會成員及其決策方式。"
+  },
+  "aa-who-pays": {
+    "message": "可接受廣告由誰付費？",
+    "description": "heading"
+  },
+  "aa-who-pays-1": {
+    "message": "希望將自家廣告加入可接受廣告允許清單的大型公司需要為允許清單服務支付費用。對於較小的網站和合作夥伴，該服務是免費的。"
+  },
+  "aa-who-pays-2": {
+    "message": "付費絕不能換來例外。允許清單上的每一則廣告，無論其擁有者是否付費，都必須符合相同的標準。不再符合標準的廣告將被移除。"
+  },
+  "aa-money-funds": {
+    "message": "這些費用用於何處？",
+    "description": "heading"
+  },
+  "aa-money-funds-1": {
+    "message": "這些費用讓我們能夠保持 Adblock Plus 免費且開放原始碼。它們用於在我們支援的每款瀏覽器上開發擴充套件、維護封鎖侵入性廣告的過濾條件，以及依據標準審核廣告。"
   }
 }

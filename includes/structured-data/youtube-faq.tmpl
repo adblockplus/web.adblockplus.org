@@ -1,0 +1,31 @@
+{# FAQPage block for the YouTube page (OM-1930, doc part C): the "Questions"
+   section. Strings reuse the page's translation keys so the block is localized
+   with the visible text; keep the English defaults in sync with pages/youtube.html. #}
+{% autoescape false %}
+{% macro t(key, default) %}{{ default | translate(key) | striptags }}{% endmacro %}
+{% set questions = [
+  ("youtube__faq-1-question", "Does Adblock Plus still work on YouTube?",
+   "youtube__faq-1-answer", "Yes. Adblock Plus blocks YouTube ads, including pre-roll, mid-roll, post-roll, banner and overlay ads. Our team updates Adblock Plus regularly to keep pace with changes YouTube makes to how it delivers ads, so you stay covered."),
+  ("youtube__faq-2-question", "What types of YouTube ads does Adblock Plus block?",
+   "youtube__faq-2-answer", "Adblock Plus blocks the main YouTube ad formats: skippable and unskippable video ads, bumper ads, overlay ads and sponsored cards. It also removes the banner and sidebar ads that appear next to videos."),
+  ("youtube__faq-3-question", "Does Adblock Plus make YouTube faster?",
+   "youtube__faq-3-answer", "Yes. Adblock Plus stops ads and the tracking scripts that come with them before they load, so your browser has less to process on each page. Videos start sooner and playlists play through without ad breaks."),
+  ("youtube__faq-4-question", "Is Adblock Plus free for YouTube?",
+   "youtube__faq-4-answer", "Yes. Adblock Plus is free to download and use, and YouTube ad blocking is included in the free version. Adblock Plus Premium adds extra features on top, including cookie banner blocking."),
+  ("youtube__faq-5-question", "Are YouTube ads part of Acceptable Ads?",
+   "youtube__faq-5-answer", "No. Video ads do not meet the Acceptable Ads standard, so YouTube's pre-roll, mid-roll and post-roll ads can never be on the Acceptable Ads allowlist. Adblock Plus blocks them whether Acceptable Ads is turned on or off. Learn more about Acceptable Ads."),
+  ("youtube__faq-6-question", "Why does YouTube sometimes show me a message about my ad blocker?",
+   "youtube__faq-6-answer", "YouTube regularly changes its site to detect ad blockers, and our team updates Adblock Plus to keep up. If you see a message asking you to turn off your ad blocker, make sure Adblock Plus is up to date and reload the page. If the message continues, you can choose to allow ads on YouTube once or always. Adblock Plus keeps blocking ads on every other site.")
+] %}
+{% set entries = [] %}
+{% for q_key, q, a_key, a in questions %}
+  {% set _ = entries.append({
+    "@type": "Question",
+    "name": t(q_key, q),
+    "acceptedAnswer": {"@type": "Answer", "text": t(a_key, a)}
+  }) %}
+{% endfor %}
+<script type="application/ld+json">
+{{ {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": entries} | tojson(indent=2) }}
+</script>
+{% endautoescape %}

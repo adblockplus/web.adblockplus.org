@@ -295,17 +295,6 @@ template=minimal
       margin: 0;
     }
   }
-
-  /* #footnote
-   ****************************************************************************/
-
-  #footnote
-  {
-    padding-top: 3em;
-    padding-bottom: 2em;
-    font-size: 13px;
-    color: #7d7d7d;
-  }
 </style>
 
 <div id="hero-download" class="container section">
@@ -323,7 +312,7 @@ template=minimal
       <ul>
         <li>{{ hero-item-1[list item] Block annoying ads and pop-ups }}</li>
         <li>{{ hero-item-2[list item] Stop viruses and malware hidden in ads }}</li>
-        <li>{{ hero-item-3[list item] Acceptable Ads are allowed by default to support websites (<a href="acceptable-ads">learn more</a>)<span class="sup">[<a href="#footnote">1</a>]</span> }} </li>
+        <li><? include acceptable-ads-summary ?></li>
       </ul>
 
       <p>
@@ -396,17 +385,3 @@ template=minimal
   </div><!-- .container.content -->
 </div><!-- #features -->
 
-
-<div id="footnote" class="container content hide-on-ios hide-on-android">
-  <p>
-    <sup>[1]</sup> {{ footnote-headline The following rules <strong>have</strong> and <strong>always will</strong> apply to everyone, without exception: }}
-  </p>
-  <ul>
-    <li>
-      {{ footnote-must-comply Participants cannot pay to avoid the <a href="acceptable-ads#criteria-general">criteria</a>. Every ad must comply. }}
-    </li>
-    <li>
-      {{ footnote-keep-free We are able to keep our open source product free by charging large entities a fee for allowlisting services. For smaller partners, these services are offered free of charge. }}
-    </li>
-  </ul>
-</div>

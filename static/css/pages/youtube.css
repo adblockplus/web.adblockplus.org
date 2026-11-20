@@ -1,0 +1,254 @@
+/* YouTube landing page (pages/youtube.html): five full-width bands. */
+
+.youtube section,
+.youtube-hero
+{
+  padding: 3.5em 0;
+}
+
+.youtube h1,
+.youtube h2,
+.youtube h3
+{
+  margin-top: 0;
+}
+
+/* The site's .content class adds clearfix pseudo-elements. Inside a grid or
+   flex box they would count as extra items, so switch them off here. */
+.youtube .content::before,
+.youtube .content::after
+{
+  content: none;
+}
+
+/* Two columns side by side; they stack on narrow screens. */
+.youtube-split
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 2.5em;
+  align-items: center;
+}
+
+/* Install buttons: the site's green .download-button. It reserves space on
+   the left for a browser logo, so only keep that space when the script at the
+   bottom of the page has detected the browser. */
+.youtube .download-button
+{
+  padding-left: 18px;
+}
+
+.youtube-browser-detected .youtube .download-button
+{
+  padding-left: 72px;
+}
+
+/* Hero */
+
+.youtube-hero
+{
+  background-color: #f7f7f7;
+}
+
+.youtube-hero .lead
+{
+  font-size: 1.25em;
+  margin-bottom: 1.5em;
+}
+
+.youtube-hero__image
+{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* What it blocks */
+
+.youtube-blocks h2
+{
+  text-align: center;
+  /* Same gap as the homepage's "Block ads on YouTube" heading. */
+  margin-bottom: 0.75em;
+}
+
+/* ".youtube" in front so these win over the site's ".content ul" rules. */
+.youtube .youtube-cards
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 1 column on phones, 2 on tablets, 4 on desktop, so no card sits alone. */
+@media (min-width: 480px)
+{
+  .youtube .youtube-cards
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px)
+{
+  .youtube .youtube-cards
+  {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Each card: a bold title with one line of text under it. */
+.youtube .youtube-cards li
+{
+  margin: 0;
+  padding: 1.25em;
+  border: 1px solid #d2d2d2;
+  border-top: 4px solid #0779d0;
+  border-radius: 4px;
+}
+
+.youtube .youtube-cards h3
+{
+  margin: 0 0 0.4em;
+  font-size: 1.15em;
+}
+
+.youtube .youtube-cards p
+{
+  margin: 0;
+}
+
+/* Browsers */
+
+/* Heading and sentence centred on top, the browser tiles in a centred row
+   underneath. The row wraps on narrow screens and each line stays centred. */
+.youtube-browsers
+{
+  color: #fff;
+  background-color: #2a2a2a;
+  text-align: center;
+}
+
+.youtube-browsers h2
+{
+  color: #fff;
+}
+
+.youtube .youtube-tiles
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75em;
+  margin: 1.5em 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: start;
+}
+
+/* Every tile is the same width. Five fit in one row on desktop. */
+.youtube .youtube-tiles li
+{
+  flex: 0 0 150px;
+  margin: 0;
+}
+
+/* Below desktop width, cap the row at three tiles so it wraps 3 + 2
+   (2 + 2 + 1 on phones) instead of leaving one tile alone under four. */
+@media (max-width: 899px)
+{
+  .youtube .youtube-tiles
+  {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/* :visited is listed so the site's blue visited-link colour does not win. */
+.youtube-tiles a,
+.youtube-tiles a:visited
+{
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.75em 0.9em;
+  border-radius: 4px;
+  color: #222;
+  background-color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.youtube-tiles a:hover,
+.youtube-tiles a:focus
+{
+  text-decoration: underline;
+}
+
+.youtube-tiles a:focus-visible
+{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Questions */
+
+.youtube-faq__columns
+{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5em;
+}
+
+@media (min-width: 820px)
+{
+  .youtube-faq__columns
+  {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+    gap: 3em;
+  }
+}
+
+.youtube-faq__item
+{
+  padding: 1.25em 0;
+  border-top: 1px solid #d2d2d2;
+}
+
+.youtube-faq__item:last-child
+{
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.youtube-faq__item p
+{
+  margin-bottom: 0;
+}
+
+/* Closing band */
+
+.youtube-closing
+{
+  color: #fff;
+  background-color: #c70d2c;
+}
+
+.youtube-closing .container
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25em 2.5em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.youtube-closing h2
+{
+  margin-bottom: 0;
+  color: #fff;
+}

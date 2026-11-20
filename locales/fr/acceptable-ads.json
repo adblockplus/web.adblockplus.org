@@ -213,7 +213,7 @@
   },
   "meta-description": {
     "description": "Description meta tag content inside head tag",
-    "message": "Adblock Plus lance l’initiative Publicités Acceptables : Soutenez les sites web qui utilisent de la publicité mais choisissent de le faire de manière non-intrusive."
+    "message": "Les publicités acceptables sont des publicités identifiées et non intrusives qui répondent à des critères définis par un comité indépendant. Découvrez qui décide, qui paie et comment les désactiver."
   },
   "meta-title": {
     "description": "Title meta tag content inside head tag",
@@ -352,7 +352,7 @@
     "message": "Publicités textuelles"
   },
   "title": {
-    "message": "Autoriser les publicités acceptables dans Adblock Plus"
+    "message": "Publicités Acceptables : qui décide, qui paie et comment les désactiver | Adblock Plus"
   },
   "total-ad-space": {
     "description": "Paragraph in \"General criteria\"",
@@ -578,5 +578,37 @@
   },
   "disable-ios-safari-step-4": {
     "message": "Désactiver <strong>Autoriser certaines publicités non intrusives</strong>."
+  },
+  "heading": {
+    "message": "Publicités Acceptables",
+    "description": "Visible H1 headline"
+  },
+  "subheading": {
+    "message": "Votre expérience sans publicité, votre choix",
+    "description": "Subtitle under the H1"
+  },
+  "aa-who-decides": {
+    "message": "Qui décide quelles publicités sont acceptables ?",
+    "description": "heading"
+  },
+  "aa-who-decides-1": {
+    "message": "Les critères sont définis par le Comité des publicités acceptables, un groupe indépendant, et non par Adblock Plus. Le Comité réunit des personnes ayant des intérêts différents dans le fonctionnement de la publicité en ligne : organisations de défense des droits numériques, chercheurs et universitaires, utilisateurs de bloqueurs de publicités, aux côtés d’annonceurs, d’entreprises de technologie publicitaire, d’éditeurs et d’agences créatives. Adblock Plus applique les critères du Comité et vérifie que les publicités les respectent. Vous pouvez consulter les membres du Comité et sa manière de prendre des décisions sur <a>acceptableadscommittee.org</a>."
+  },
+  "aa-who-pays": {
+    "message": "Qui paie pour les publicités acceptables ?",
+    "description": "heading"
+  },
+  "aa-who-pays-1": {
+    "message": "Les grandes entreprises qui souhaitent voir leurs publicités figurer dans la liste d’autorisation des publicités acceptables paient des frais pour ce service. Pour les petits sites web et partenaires, le service est gratuit."
+  },
+  "aa-who-pays-2": {
+    "message": "Payer n’achète jamais une exception. Chaque publicité de la liste d’autorisation, que son propriétaire paie ou non, doit respecter les mêmes critères. Les publicités qui cessent de les respecter sont retirées."
+  },
+  "aa-money-funds": {
+    "message": "À quoi sert cet argent ?",
+    "description": "heading"
+  },
+  "aa-money-funds-1": {
+    "message": "Ces frais nous permettent de maintenir Adblock Plus gratuit et en source ouverte. Ils financent le développement de l’extension sur tous les navigateurs que nous prenons en charge, la maintenance des filtres qui bloquent les publicités intrusives et la vérification des publicités par rapport aux critères."
   }
 }

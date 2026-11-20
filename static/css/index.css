@@ -36,14 +36,13 @@
   padding-right: 2em;
 }
 
-.intro-mobile h1 span,
+.intro-mobile .intro-mobile-heading span,
 .intro-mobile .subheading span
 {
   display: block;
 }
 
-.intro-mobile h1,
-.intro-mobile .h1
+.intro-mobile .intro-mobile-heading
 {
   font-size: 2em;
   line-height: 1.2em;
@@ -129,6 +128,28 @@ html[dir="rtl"] #intro-standard ul li
     padding-top: 8em;
     padding-bottom: 8rem;
   }
+}
+
+/* Phones show a mobile intro instead of this one. Keep the page's only <h1>
+   and the definition sentence available to screen readers there: hide the
+   block visually (not with display: none) and drop everything else in it. */
+.android #intro-standard,
+.ios #intro-standard
+{
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.android #intro-standard > :not(h1):not(#intro-standard-definition),
+.ios #intro-standard > :not(h1):not(#intro-standard-definition)
+{
+  display: none;
 }
 
 #intro-standard h1

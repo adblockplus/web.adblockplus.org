@@ -20,7 +20,7 @@
         <nav class="column one-fourth">
           <h5 class="footer-heading">{{ get_string("resources", "menu") }}</h5>
           <ul>
-            {% for pagename in ["acceptable-ads", "documentation", "deployments", "bugs"] %}
+            {% for pagename in ["acceptable-ads", "documentation", "deployments", "bugs", "youtube"] %}
               <li>{{ pagename | linkify }}{{ get_string(pagename, "menu") }}</a></li>
             {% endfor %}
             {% if locale in ("en", "de", "fr", "es") %}

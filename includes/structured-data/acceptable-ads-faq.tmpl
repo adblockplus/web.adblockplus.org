@@ -1,0 +1,116 @@
+{# FAQPage block for the Acceptable Ads page (OM-1930, doc part A3): every question
+   section with its answer. The criteria tables are not questions and stay out.
+   Strings reuse the page's translation keys so the block is localized with the
+   visible text; keep the English defaults in sync with pages/acceptable-ads.md. #}
+{% autoescape false %}
+{% macro t(key, default) %}{{ default | translate(key) | striptags }}{% endmacro %}
+
+{% set what_are -%}
+<p>{{ t("what-are-aa-1", "Acceptable Ads are ads that aren’t intrusive or annoying. They are respectful, don’t interfere with content, and are clearly labeled with the word “advertisement” or its equivalent. In order for an ad to be an “Acceptable Ad”, it must adhere to standards that have been set forth by the Acceptable Ads Committee.") }}</p>
+<p>{{ t("what-are-aa-2", "Ads that abide by the Acceptable Ads Standard are placed on an allowlist. The ads on the allowlist are then shown to ad-blocking users who allow Acceptable Ads.") }}</p>
+<p>{{ t("what-are-aa-3", "Most websites rely on advertising to stay free. Adblock Plus blocks the intrusive ones by default — and gives you the choice to support sites you trust by trading a little bit of your attention for a small number of non-intrusive, clearly labeled ads.") }}</p>
+{%- endset %}
+
+{% set who_decides -%}
+<p>{{ t("aa-who-decides-1", "The criteria are set by the Acceptable Ads Committee, an independent group, not by Adblock Plus. The Committee brings together people with different interests in how online ads work: digital rights organizations, researchers and academics, and ad blocking users, alongside advertisers, ad tech companies, publishers and creative agencies. Adblock Plus applies the Committee's criteria and checks ads against them. You can see the Committee's members and how it makes decisions at acceptableadscommittee.org.") }}</p>
+{%- endset %}
+
+{% set who_pays -%}
+<p>{{ t("aa-who-pays-1", "Large companies that want their ads on the Acceptable Ads allowlist pay a fee for the allowlisting service. For smaller websites and partners, the service is free.") }}</p>
+<p>{{ t("aa-who-pays-2", "Payment never buys an exception. Every ad on the allowlist, whether its owner pays or not, has to meet the same criteria. Ads that stop meeting them are removed.") }}</p>
+{%- endset %}
+
+{% set money_funds -%}
+<p>{{ t("aa-money-funds-1", "The fees allow us to keep Adblock Plus free and open source. They pay for developing the extension on every browser we support, maintaining the filters that block intrusive ads and reviewing ads against the criteria.") }}</p>
+{%- endset %}
+
+{% set why_enabled -%}
+<p>{{ t("why-is-aa-enabled-1", "Acceptable Ads is on by default because we believe the best outcome for users is a web with fewer, better ads — not a binary choice between all ads or none. By allowing only ads that meet strict, independently verified criteria, Adblock Plus helps push the entire ad industry toward higher standards. You can turn it off at any time in two clicks.") }}</p>
+{%- endset %}
+
+{# The opt-out section is a list of steps per product; it goes in verbatim. #}
+{% set products = [
+  ("disable-latest", "Adblock Plus for Chrome, Firefox (versions 3 and above), Maxthon, Opera, Yandex Browser", [
+    ("disable-latest-step-1", "From your browser’s toolbar, click the Adblock Plus icon and select the gear icon in the upper right corner."),
+    ("disable-latest-step-2", "From the General tab, scroll to the Acceptable Ads section."),
+    ("disable-latest-step-3", "Uncheck Allow Acceptable Ads."),
+    ("disable-latest-step-4", "Close the tab.")
+  ]),
+  ("disable-safari", "Adblock Plus for Safari", [
+    ("disable-safari-step-1", "From the Safari toolbar, click the Adblock Plus icon and select Open Adblock Plus."),
+    ("disable-safari-step-2", "Uncheck Allow Acceptable Ads."),
+    ("disable-safari-step-3", "Close the tab.")
+  ]),
+  ("disable-firefox", "Adblock Plus for Firefox (versions 1 and 2)", [
+    ("disable-firefox-step-1", "Click the Adblock Plus icon and select Filter preferences."),
+    ("disable-firefox-step-2", "Uncheck Allow some nonintrusive advertising.")
+  ]),
+  ("disable-ie", "Adblock Plus for Internet Explorer", [
+    ("disable-ie-step-1", "Click the Adblock Plus icon and select Settings."),
+    ("disable-ie-step-2", "Uncheck Allow some nonintrusive advertising.")
+  ]),
+  ("disable-ios-safari", "Adblock Plus for iOS", [
+    ("disable-ios-safari-step-1", "Open Adblock Plus for iOS."),
+    ("disable-ios-safari-step-2", "Tap the Settings icon at the bottom of the page."),
+    ("disable-ios-safari-step-3", "From the Settings page, tap Acceptable Ads."),
+    ("disable-ios-safari-step-4", "Toggle off Allow some nonintrusive ads.")
+  ]),
+  ("disable-android", "Adblock Browser for Android", [
+    ("disable-android-step-1", "Open Adblock Browser for Android."),
+    ("disable-android-step-2", "Tap the menu icon and select Settings."),
+    ("disable-android-step-3", "Tap Ad blocking > Acceptable Ads."),
+    ("disable-android-step-4", "Uncheck Allow some nonintrusive advertising.")
+  ]),
+  ("disable-samsung", "Adblock Plus for Samsung Internet", [
+    ("disable-samsung-step-1", "Open Adblock Plus for Samsung Internet."),
+    ("disable-samsung-step-2", "Uncheck Allow some nonintrusive advertising.")
+  ])
+] %}
+{% set opt_out -%}
+<p>{{ t("hate-ads-1", "You can disable this feature at any time:") }}</p>
+{%- for key, name, steps in products %}
+<h4>{{ t(key, name) }}</h4>
+<ol>{% for step_key, step in steps %}<li>{{ t(step_key, step) }}</li>{% endfor %}</ol>
+{%- endfor %}
+{%- endset %}
+
+{% set faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": t("what-are-aa", "What are Acceptable Ads?"),
+      "acceptedAnswer": {"@type": "Answer", "text": what_are}
+    },
+    {
+      "@type": "Question",
+      "name": t("aa-who-decides", "Who decides which ads are acceptable?"),
+      "acceptedAnswer": {"@type": "Answer", "text": who_decides}
+    },
+    {
+      "@type": "Question",
+      "name": t("aa-who-pays", "Who pays for Acceptable Ads?"),
+      "acceptedAnswer": {"@type": "Answer", "text": who_pays}
+    },
+    {
+      "@type": "Question",
+      "name": t("aa-money-funds", "What does the money fund?"),
+      "acceptedAnswer": {"@type": "Answer", "text": money_funds}
+    },
+    {
+      "@type": "Question",
+      "name": t("why-is-aa-enabled", "Why is the Acceptable Ads feature enabled by default?"),
+      "acceptedAnswer": {"@type": "Answer", "text": why_enabled}
+    },
+    {
+      "@type": "Question",
+      "name": t("hate-ads", "Want to block everything? No problem."),
+      "acceptedAnswer": {"@type": "Answer", "text": opt_out}
+    }
+  ]
+} %}
+<script type="application/ld+json">
+{{ faq | tojson(indent=2) }}
+</script>
+{% endautoescape %}

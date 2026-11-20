@@ -1,33 +1,134 @@
-title=Ad Blocking on YouTube | Adblock Plus
-description=Trying to block YouTube ads? Learn more about why Adblock Plus users are encountering an anti-adblock wall on YouTube.
-robots=none
-noheading=1
+title=Block YouTube ads with Adblock Plus | Free YouTube ad blocker
+description=Adblock Plus is a free ad blocker that blocks YouTube video ads, including pre-roll, mid-roll and post-roll ads, plus banners and overlays. Install it for your browser.
+template=minimal
 
-<header>
-  <img
-    alt=""
-    src="/img/youtube-letter-header__image.svg"
-    width="702"
-    style="margin-top: 2.5rem">
-  <h1>
-    {{ youtube-letter__heading YouTube’s Anti-Ad Block Message }}
-  </h1>
-  <p class="lead">
-    {{ youtube-letter__subheading Ad blocking is getting harder on YouTube. }}
-  </p>
-</header>
-<p>
-  {{ youtube-letter__paragraph-1 As an Adblock Plus user, YouTube may occasionally prevent you from playing videos when your ad blocker is turned on. Sometimes a message will ask you to allow YouTube ads after three videos and other times it won’t let you play anything until Adblock Plus is turned off. }}
-</p>
-<p>
-  {{ youtube-letter__paragraph-2 As we work on keeping our extension up-to-date and effective, YouTube continually works to stop ad blockers on their site. We know this causes you to have an unpredictable and less-than-ideal experience whether you see this message or not. We are doing everything we can to make this experience better for our users. }}
-</p>
-<p>
-  {{ youtube-letter__paragraph-3 To ensure that you’re able to access YouTube with Adblock Plus installed, all you have to do is <a href="https://help.adblockplus.org/hc/en-us/articles/1500002589982">add YouTube to your allowlist</a>. You can choose whether to allow ads once or always allow ads on YouTube. Of course, we’ll continue to block annoying ads everywhere else you browse. Wherever you are on the web, Adblock Plus also gives you the ability to use <a href="https://help.adblockplus.org/hc/en-us/articles/360062859913-Add-a-custom-filter">custom blocking rules</a> to hide distractions on web pages. (This feature is available to Chrome, Edge, and Firefox users.) }}
-</p>
-<p>
-  {{ youtube-letter__paragraph-4 In the meantime, we’ll continue to block pop-ups and other annoying ads for you across the web. }}
-</p>
-<p>
-  {{ youtube-letter__paragraph-5 We appreciate all of your support! }}
-</p>
+<head>
+  <link rel="stylesheet" href="/css/pages/youtube.css">
+  <? include structured-data/youtube-faq ?>
+</head>
+
+<main class="youtube">
+  <header class="youtube-hero">
+    <div class="container content youtube-split">
+      <div class="youtube-hero__copy">
+        <h1>
+          {{ youtube__heading Block YouTube ads with Adblock Plus }}
+        </h1>
+        <p class="lead">
+          {{ youtube__intro Adblock Plus is a free, open source browser extension that blocks video ads on YouTube, so you can watch without interruptions. }}
+        </p>
+        <a class="button download-button" href="download">{{ youtube__install Install Adblock Plus }}</a>
+      </div>
+      <img class="youtube-hero__image" src="/img/ABP-Youtube.png" alt="" width="596" height="384">
+    </div>
+  </header>
+
+  <section class="youtube-blocks">
+    <div class="container content">
+      <h2 id="what-it-blocks">{{ youtube__blocks-heading What Adblock Plus blocks on YouTube }}</h2>
+      <ul class="youtube-cards">
+        <li>
+          <h3>{{ youtube__blocks-card-1-title Pre-roll ads }}</h3>
+          <p>{{ youtube__blocks-card-1-text Ads that play before a video starts }}</p>
+        </li>
+        <li>
+          <h3>{{ youtube__blocks-card-2-title Mid-roll ads }}</h3>
+          <p>{{ youtube__blocks-card-2-text Ads that interrupt a video }}</p>
+        </li>
+        <li>
+          <h3>{{ youtube__blocks-card-3-title Post-roll ads }}</h3>
+          <p>{{ youtube__blocks-card-3-text Ads at the end of a video }}</p>
+        </li>
+        <li>
+          <h3>{{ youtube__blocks-card-4-title Banners &amp; overlays }}</h3>
+          <p>{{ youtube__blocks-card-4-text Ads that appear on top of videos }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="youtube-browsers">
+    <div class="container content">
+      <h2 id="browsers">{{ youtube__browsers-heading Which browsers does it work on? }}</h2>
+      <p>
+        {{ youtube__browsers-1 Adblock Plus blocks YouTube ads on YouTube.com in Chrome, Firefox, Edge, Opera and Safari. }}
+      </p>
+      <ul class="youtube-tiles">
+        <li><a href="adblock-plus-chrome"><img src="/img/chrome-logo.svg" alt="" width="26" height="26">Chrome</a></li>
+        <li><a href="adblock-plus-firefox"><img src="/img/firefox-logo.svg" alt="" width="26" height="26">Firefox</a></li>
+        <li><a href="adblock-plus-edge"><img src="/img/edge-logo.svg" alt="" width="26" height="26">Edge</a></li>
+        <li><a href="adblock-plus-opera"><img src="/img/opera-logo.svg" alt="" width="26" height="26">Opera</a></li>
+        <li><a href="ad-blocker-safari"><img src="/img/ios-safari-logo.svg" alt="" width="26" height="26">Safari</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="youtube-faq">
+    <div class="container content youtube-faq__columns">
+      <h2 id="questions">{{ youtube__questions-heading Questions }}</h2>
+      <div>
+        <div class="youtube-faq__item">
+          <h3 id="still-works">{{ youtube__faq-1-question Does Adblock Plus still work on YouTube? }}</h3>
+          <p>
+            {{ youtube__faq-1-answer Yes. Adblock Plus blocks YouTube ads, including pre-roll, mid-roll, post-roll, banner and overlay ads. Our team updates Adblock Plus regularly to keep pace with changes YouTube makes to how it delivers ads, so you stay covered. }}
+          </p>
+        </div>
+        <div class="youtube-faq__item">
+          <h3 id="ad-types">{{ youtube__faq-2-question What types of YouTube ads does Adblock Plus block? }}</h3>
+          <p>
+            {{ youtube__faq-2-answer Adblock Plus blocks the main YouTube ad formats: skippable and unskippable video ads, bumper ads, overlay ads and sponsored cards. It also removes the banner and sidebar ads that appear next to videos. }}
+          </p>
+        </div>
+        <div class="youtube-faq__item">
+          <h3 id="faster">{{ youtube__faq-3-question Does Adblock Plus make YouTube faster? }}</h3>
+          <p>
+            {{ youtube__faq-3-answer Yes. Adblock Plus stops ads and the tracking scripts that come with them before they load, so your browser has less to process on each page. Videos start sooner and playlists play through without ad breaks. }}
+          </p>
+        </div>
+        <div class="youtube-faq__item">
+          <h3 id="free">{{ youtube__faq-4-question Is Adblock Plus free for YouTube? }}</h3>
+          <p>
+            {{ youtube__faq-4-answer Yes. Adblock Plus is free to download and use, and YouTube ad blocking is included in the free version. Adblock Plus Premium adds extra features on top, including cookie banner blocking. }}
+          </p>
+        </div>
+        <div class="youtube-faq__item">
+          <h3 id="acceptable-ads">{{ youtube__faq-5-question Are YouTube ads part of Acceptable Ads? }}</h3>
+          <p>
+            {{ youtube__faq-5-answer No. Video ads do not meet the Acceptable Ads standard, so YouTube's pre-roll, mid-roll and post-roll ads can never be on the Acceptable Ads allowlist. Adblock Plus blocks them whether Acceptable Ads is turned on or off. <a href="acceptable-ads">Learn more about Acceptable Ads</a>. }}
+          </p>
+        </div>
+        <div class="youtube-faq__item">
+          <h3 id="ad-blocker-message">{{ youtube__faq-6-question Why does YouTube sometimes show me a message about my ad blocker? }}</h3>
+          <p>
+            {{ youtube__faq-6-answer YouTube regularly changes its site to detect ad blockers, and our team updates Adblock Plus to keep up. If you see a message asking you to turn off your ad blocker, make sure Adblock Plus is up to date and reload the page. If the message continues, you can choose to <a href="https://help.adblockplus.org/hc/en-us/articles/1500002589982">allow ads on YouTube once or always</a>. Adblock Plus keeps blocking ads on every other site. }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="youtube-closing">
+    <div class="container content">
+      <h2>{{ youtube__closing-heading YouTube without the interruptions. }}</h2>
+      <a class="button download-button" href="download">{{ youtube__install Install Adblock Plus }}</a>
+    </div>
+  </section>
+</main>
+
+<script src="/js/vendor/bowser.js"></script>
+<script>
+  // Show the visitor's browser logo on the install buttons, like the homepage.
+  // The site's CSS draws the logo when <body> carries the browser's name.
+  (function()
+  {
+    var names = ["chrome", "chromium", "firefox", "msedge", "opera", "safari", "yandexbrowser"];
+    var browser = navigator.userAgent.indexOf("Edg/") != -1 ? "msedge_chromium" : null;
+
+    for (var i = 0; !browser && i < names.length; i++)
+    {
+      if (bowser[names[i]]) browser = names[i];
+    }
+
+    if (browser) document.body.classList.add(browser, "youtube-browser-detected");
+  }());
+</script>

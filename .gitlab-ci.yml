@@ -139,7 +139,8 @@ build:review:
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
     # fail the build if the generated site is structurally broken (missing
-    # locales/key pages, near-empty, or unrendered template markers)
+    # locales/key pages, near-empty, unrendered template markers, or broken
+    # structured data)
     - python scripts/check_build.py services/firebase/public
   artifacts:
     name: $CI_COMMIT_REF_SLUG
@@ -163,7 +164,8 @@ build:review:staging:
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
     # fail the build if the generated site is structurally broken (missing
-    # locales/key pages, near-empty, or unrendered template markers)
+    # locales/key pages, near-empty, unrendered template markers, or broken
+    # structured data)
     - python scripts/check_build.py services/firebase/public
   artifacts:
     name: $CI_COMMIT_REF_SLUG
@@ -189,7 +191,8 @@ build:production:
     # this addresses getting canonical page if no language translation available
     - cp -a services/firebase/public/$DEFAULT_LOCALE/. services/firebase/public/.
     # fail the build if the generated site is structurally broken (missing
-    # locales/key pages, near-empty, or unrendered template markers)
+    # locales/key pages, near-empty, unrendered template markers, or broken
+    # structured data)
     - python scripts/check_build.py services/firebase/public
   artifacts:
     name: $CI_COMMIT_REF_SLUG

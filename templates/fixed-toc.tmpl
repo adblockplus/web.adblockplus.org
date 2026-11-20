@@ -19,6 +19,9 @@
       {% elif title and not noheading %}
         <h1>{{ title | translate("title") }}</h1>
       {% endif %}
+      {% if subheading %}
+        <p class="lead">{{ subheading | translate("subheading", "subheading") }}</p>
+      {% endif %}
       {% if not notoc %}
         {% from "macros/toc" import toc %}
         {% set toclist = body|toclist %}

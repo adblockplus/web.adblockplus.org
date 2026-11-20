@@ -10,6 +10,41 @@ test('Homepage displays as expected', { tag: ['@visual_regression'] }, async ({ 
   await expect(page).toHaveScreenshot(`${snapshotName}.png`, { fullPage: true, maxDiffPixels: 408 });
 });
 
+// Phones show a mobile intro in place of the desktop one, which holds the
+// page's only h1 and the sentence that defines Adblock Plus. On phones,
+// screen readers must still find the h1 and that sentence, and the layout
+// must not change.
+const phones = [
+  {
+    name: 'Android Chrome',
+    bodyClass: /android/,
+    userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+  },
+  {
+    name: 'Samsung Internet',
+    bodyClass: /android.*samsungBrowser|samsungBrowser.*android/,
+    userAgent: 'Mozilla/5.0 (Linux; Android 14; SAMSUNG SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/25.0 Chrome/121.0.0.0 Mobile Safari/537.36',
+  },
+  {
+    name: 'iPhone Safari',
+    bodyClass: /ios/,
+    userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Mobile/15E148 Safari/604.1',
+  },
+];
+
+for (const phone of phones) {
+  test(`Phones still get the main headline: ${phone.name}`, async ({ browser }) => {
+    const context = await browser.newContext({ userAgent: phone.userAgent });
+    const page = await context.newPage();
+    await page.goto('');
+    await expect(page.locator('body'), `detected as ${phone.name}`).toHaveClass(phone.bodyClass);
+    await expect(page.getByRole('heading', { level: 1 }), 'exactly one h1 available to screen readers').toHaveCount(1);
+    await expect(page.locator('#intro-standard-definition'), 'definition sentence is not display: none').not.toHaveCSS('display', 'none');
+    await expect(page.locator('#install-button'), 'desktop install button stays hidden').toBeHidden();
+    await context.close();
+  });
+}
+
 test('AI Block-o-Meter link', async ({ page, browserName }) => {
   await page.locator('#abom-banner-cta').click();
   expect(page.url()).toContain('/ai-block-o-meter?s=hpban');
@@ -41,7 +76,8 @@ test('Extension download link', { tag: ['@all_browsers'] }, async ({ page, brows
 [
   { pageLink: 'Terms of Use', expectedUrl: '/terms' },
   { pageLink: 'Download Adblock Plus for another browser', expectedUrl: '/download' },
-  { pageLink: 'criteria', expectedUrl: '/acceptable-ads#criteria-general' },
+  { pageLink: 'Block YouTube ads in another browser', expectedUrl: '/youtube' },
+  { pageLink: 'Learn more about Acceptable Ads', expectedUrl: '/acceptable-ads' },
 ].forEach(({ pageLink, expectedUrl }) => {
   test('Page links: ' + pageLink, async ({ page }) => {
     await page.getByRole('link', { name: pageLink, exact: true }).click();

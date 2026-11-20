@@ -21,9 +21,93 @@
     "message": "皆様のご協力に心からお礼申し上げます。"
   },
   "title": {
-    "message": "YouTubeにおける広告ブロック | Adblock Plus"
+    "message": "Adblock PlusでYouTube広告をブロック | 無料のYouTube広告ブロッカー"
   },
   "description": {
-    "message": "YouTube広告のブロックをご希望ですか？ YouTubeで広告ブロック無効化の壁に直面する理由をご覧ください。"
+    "message": "Adblock Plusは、プレロール、ミッドロール、ポストロール広告のほか、バナーやオーバーレイを含むYouTubeの動画広告をブロックする無料の広告ブロッカーです。お使いのブラウザにインストールしましょう。"
+  },
+  "youtube__heading": {
+    "message": "Adblock PlusでYouTube広告をブロック"
+  },
+  "youtube__intro": {
+    "message": "Adblock Plusは、YouTubeの動画広告をブロックする無料のオープンソースのブラウザ拡張機能です。中断されることなく動画を視聴できます。"
+  },
+  "youtube__blocks-heading": {
+    "message": "Adblock PlusがYouTubeでブロックするもの"
+  },
+  "youtube__install": {
+    "message": "Adblock Plusをインストール"
+  },
+  "youtube__browsers-heading": {
+    "message": "どのブラウザで利用できますか？"
+  },
+  "youtube__browsers-1": {
+    "message": "Adblock Plusは、Chrome、Firefox、Edge、Opera、SafariでYouTube.com上のYouTube広告をブロックします。"
+  },
+  "youtube__questions-heading": {
+    "message": "よくある質問"
+  },
+  "youtube__faq-1-question": {
+    "message": "Adblock PlusはYouTubeで今も使えますか？"
+  },
+  "youtube__faq-1-answer": {
+    "message": "はい。Adblock Plusは、プレロール、ミッドロール、ポストロール、バナー、オーバーレイ広告を含むYouTube広告をブロックします。YouTubeの広告配信方法の変更に対応するため、当社のチームがAdblock Plusを定期的に更新しているので、安心してご利用いただけます。"
+  },
+  "youtube__faq-2-question": {
+    "message": "Adblock Plusはどの種類のYouTube広告をブロックしますか？"
+  },
+  "youtube__faq-2-answer": {
+    "message": "Adblock Plusは、スキップ可能およびスキップ不可の動画広告、バンパー広告、オーバーレイ広告、スポンサーカードといったYouTubeの主要な広告形式をブロックします。また、動画の横に表示されるバナー広告やサイドバー広告も削除します。"
+  },
+  "youtube__faq-3-question": {
+    "message": "Adblock PlusでYouTubeは速くなりますか？"
+  },
+  "youtube__faq-3-answer": {
+    "message": "はい。Adblock Plusは広告とそれに伴うトラッキングスクリプトを読み込まれる前に止めるため、ブラウザが各ページで処理する量が減ります。動画がより早く再生され始め、再生リストも広告に中断されることなく最後まで再生されます。"
+  },
+  "youtube__faq-4-question": {
+    "message": "YouTubeでAdblock Plusを無料で使えますか？"
+  },
+  "youtube__faq-4-answer": {
+    "message": "はい。Adblock Plusは無料でダウンロードして利用でき、YouTube広告のブロックは無料版に含まれています。Adblock Plus Premiumでは、Cookieバナーのブロックを含む追加機能をご利用いただけます。"
+  },
+  "youtube__faq-5-question": {
+    "message": "YouTube広告は「控えめな広告」に含まれますか？"
+  },
+  "youtube__faq-5-answer": {
+    "message": "いいえ。動画広告は「控えめな広告」の基準を満たさないため、YouTubeのプレロール、ミッドロール、ポストロール広告が「控えめな広告」の許可リストに載ることはありません。Adblock Plusは、「控えめな広告」が有効か無効かにかかわらず、これらの広告をブロックします。<a>「控えめな広告」の詳細はこちら</a>。"
+  },
+  "youtube__faq-6-question": {
+    "message": "YouTubeで広告ブロッカーに関するメッセージが表示されることがあるのはなぜですか？"
+  },
+  "youtube__faq-6-answer": {
+    "message": "YouTubeは広告ブロッカーを検出するためにサイトを定期的に変更しており、当社のチームはそれに対応してAdblock Plusを更新しています。広告ブロッカーを無効にするよう求めるメッセージが表示された場合は、Adblock Plusが最新の状態であることを確認し、ページを再読み込みしてください。それでもメッセージが表示される場合は、<a>YouTubeで広告を一度限り、または常に許可する</a>ことを選択できます。Adblock Plusは、他のすべてのサイトで引き続き広告をブロックします。"
+  },
+  "youtube__closing-heading": {
+    "message": "中断されることのないYouTubeを。"
+  },
+  "youtube__blocks-card-1-title": {
+    "message": "プレロール広告"
+  },
+  "youtube__blocks-card-1-text": {
+    "message": "動画の再生前に流れる広告"
+  },
+  "youtube__blocks-card-2-title": {
+    "message": "ミッドロール広告"
+  },
+  "youtube__blocks-card-2-text": {
+    "message": "動画の途中で割り込む広告"
+  },
+  "youtube__blocks-card-3-title": {
+    "message": "ポストロール広告"
+  },
+  "youtube__blocks-card-3-text": {
+    "message": "動画の終了時に流れる広告"
+  },
+  "youtube__blocks-card-4-title": {
+    "message": "バナー広告とオーバーレイ広告"
+  },
+  "youtube__blocks-card-4-text": {
+    "message": "動画の上に表示される広告"
   }
 }

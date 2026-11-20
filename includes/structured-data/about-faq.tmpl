@@ -1,0 +1,57 @@
+{# FAQPage block for the About page (OM-1930, doc part B2): the question headings
+   that have an answer directly underneath. Strings reuse the page's translation
+   keys so the block is localized with the visible text; keep the English defaults
+   in sync with pages/about.html. #}
+{% autoescape false %}
+{% macro t(key, default) %}{{ default | translate(key) | striptags }}{% endmacro %}
+
+{% set what_is -%}
+<p>{{ t("what-is-abp-1", "Adblock Plus is a free browser extension that blocks advertising, third-party tracking requests, and malicious domains using regularly updated filter lists including EasyList and EasyPrivacy. It is available for Chrome, Firefox, Safari, Edge, and Opera on desktop, and for iOS and Android on mobile. On the Chrome Web Store it carries a 4.4 star rating from over 187,000 reviewers and holds a Featured designation from Google.") }}</p>
+<p>{{ t("what-is-abp-2", "The Adblock Plus web extension is an open source project licensed under GPLv3 and subject to its Terms of Use. Some versions of Adblock Plus, including the Adblock Plus for Safari iOS App (version 3.x or higher), are proprietary codebases not licensed under GPLv3. See the Terms of Use for license details.") }}</p>
+{%- endset %}
+
+{% set how_it_works -%}
+<p>{{ t("how-does-abp-work-1", "Adblock Plus works by intercepting network requests your browser makes while loading a page and blocking those that match rules in your active filter lists. When you visit a website, the extension checks each request against the filter list rules before the browser fetches the resource. Requests that match a blocking rule are cancelled, preventing the ad, tracker, or other element from loading at all. No blocked request reaches the third-party server, which also means the third party cannot record your visit.") }}</p>
+{%- endset %}
+
+{% set filter_lists -%}
+<p>{{ t("what-are-filter-lists-1", "Filter lists are sets of rules that tell your browser which elements to block. You can block as little or as much as you want. Choose from pre-made, externally maintained filter lists, or create your own (English only). Almost all pre-made filter lists are created, published, and maintained by users for users under open source licenses.") }}</p>
+<p>{{ t("what-are-filter-lists-2", "Many ads have tracking built in and some may even contain malware. Because of this, Adblock Plus provides certain levels of tracking and malware protection by default. If you want, you can add additional tracking and malware filter lists to increase your protection.") }}</p>
+<p>{{ t("what-are-filter-lists-3", "EasyPrivacy, another widely used filter list available in Adblock Plus, specifically targets third-party tracking domains, fingerprinting scripts, and analytics requests.") }}</p>
+<p>{{ t("what-are-filter-lists-4", "Many ads include third-party tracking scripts that follow your activity across unrelated websites. Adblock Plus blocks these requests using filter lists like EasyPrivacy, which targets known fingerprinting scripts, analytics trackers, and third-party data collection domains. Blocking these requests prevents advertisers and data brokers from building a profile of your browsing behaviour.") }}</p>
+{%- endset %}
+
+{% set financed -%}
+<p>{{ t("how-is-abp-financed-1", "Adblock Plus is free to use and always will be. For large platforms that benefit commercially from participating in the Acceptable Ads program, we charge a licensing fee — this covers the ongoing work of reviewing and enforcing the criteria. The program itself is governed by an independent committee, not by eyeo.") }}</p>
+{%- endset %}
+
+{% set faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": t("what-is-abp", "What is Adblock Plus"),
+      "acceptedAnswer": {"@type": "Answer", "text": what_is}
+    },
+    {
+      "@type": "Question",
+      "name": t("how-does-abp-work", "How does Adblock Plus work?"),
+      "acceptedAnswer": {"@type": "Answer", "text": how_it_works}
+    },
+    {
+      "@type": "Question",
+      "name": t("what-are-filter-lists-heading", "What are filter lists?"),
+      "acceptedAnswer": {"@type": "Answer", "text": filter_lists}
+    },
+    {
+      "@type": "Question",
+      "name": t("how-is-abp-financed", "How is Adblock Plus financed?"),
+      "acceptedAnswer": {"@type": "Answer", "text": financed}
+    }
+  ]
+} %}
+<script type="application/ld+json">
+{{ faq | tojson(indent=2) }}
+</script>
+{% endautoescape %}

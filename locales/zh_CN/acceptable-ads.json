@@ -45,7 +45,7 @@
   },
   "meta-description": {
     "description": "Description meta tag content inside head tag",
-    "message": "Adblock Plus 引入“可接受广告”计划：支持依赖广告的网站，但选择只允许非侵入式广告。"
+    "message": "可接受广告是经过标注、不具侵入性且符合独立委员会所定标准的广告。了解谁来决定、谁来付费以及如何关闭。"
   },
   "meta-title": {
     "description": "Title meta tag content inside head tag",
@@ -60,7 +60,7 @@
     "message": "广告不能影响用户的流畅阅读。这样的广告必须放置在上方、侧边或主要内容以下<a>1</a> 。"
   },
   "title": {
-    "message": "在 Adblock Plus 中允许“可接受广告”"
+    "message": "可接受广告：谁来决定、谁来付费、如何关闭 | Adblock Plus"
   },
   "transparency": {
     "description": "Fairness rule Bullet point in \"about\" section",
@@ -354,5 +354,37 @@
   },
   "disable-ios-safari-step-4": {
     "message": "关闭<strong>“允许某些非侵入式广告”</strong>。"
+  },
+  "heading": {
+    "message": "可接受广告",
+    "description": "Visible H1 headline"
+  },
+  "subheading": {
+    "message": "您的无广告体验，由您做主",
+    "description": "Subtitle under the H1"
+  },
+  "aa-who-decides": {
+    "message": "由谁决定哪些广告是可接受的？",
+    "description": "heading"
+  },
+  "aa-who-decides-1": {
+    "message": "这些标准由可接受广告委员会（一个独立组织）制定，而非由 Adblock Plus 制定。委员会汇聚了对在线广告运作方式持有不同立场的各方：数字权利组织、研究人员和学者、使用广告屏蔽工具的用户，以及广告主、广告技术公司、发布商和创意机构。Adblock Plus 采用委员会制定的标准，并据此审核广告。您可以在 <a>acceptableadscommittee.org</a> 查看委员会成员及其决策方式。"
+  },
+  "aa-who-pays": {
+    "message": "可接受广告由谁付费？",
+    "description": "heading"
+  },
+  "aa-who-pays-1": {
+    "message": "希望将自家广告加入可接受广告允许列表的大型公司需要为允许列表服务支付费用。对于较小的网站和合作伙伴，该服务是免费的。"
+  },
+  "aa-who-pays-2": {
+    "message": "付费绝不能换来例外。允许列表上的每一条广告，无论其所有者是否付费，都必须符合相同的标准。不再符合标准的广告将被移除。"
+  },
+  "aa-money-funds": {
+    "message": "这些费用用于何处？",
+    "description": "heading"
+  },
+  "aa-money-funds-1": {
+    "message": "这些费用让我们能够保持 Adblock Plus 免费且开源。它们用于在我们支持的每款浏览器上开发扩展、维护屏蔽侵入性广告的过滤规则，以及依据标准审核广告。"
   }
 }

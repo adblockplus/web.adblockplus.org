@@ -1,9 +1,12 @@
-title=Your ad-free experience, your choice
+title=Acceptable Ads: who decides, who pays, and how to turn them off | Adblock Plus
+heading=Acceptable Ads
+subheading=Your ad-free experience, your choice
 template=fixed-toc
 
 <head>
-  <meta content="{{meta-description[Description meta tag content inside head tag] Adblock Plus introduces the Acceptable Ads initiative: Support websites that rely on advertising but choose to do it in a nonintrusive way.}}" name="description" />
+  <meta content="{{meta-description[Description meta tag content inside head tag] Acceptable Ads are labeled, nonintrusive ads that meet criteria set by an independent committee. Learn who decides, who pays and how to turn them off.}}" name="description" />
   <meta content="{{meta-description}}" property="og:description" />
+  <? include structured-data/acceptable-ads-faq ?>
   <style type="text/css">
     img
     {
@@ -21,9 +24,19 @@ template=fixed-toc
 
 {{ what-are-aa-3 Most websites rely on advertising to stay free. Adblock Plus blocks the intrusive ones by default — and gives you the choice to support sites you trust by trading a little bit of your attention for a small number of non-intrusive, clearly labeled ads. }}
 
-### {{ what-is-aac[heading] What is the Acceptable Ads Committee? }} {: #committee }
+### {{ aa-who-decides[heading] Who decides which ads are acceptable? }} {: #committee }
 
-{{ what-is-aac-1 The <a href="https://www.acceptableadscommittee.org/" title="{{ what-is-aac-1-2[tooltip] Link to the Acceptable Ads Committee website }}">Acceptable Ads Committee</a> consists of a diverse mix of online experts – from companies, non-profit organizations, etc. – interested in making better ad standards. }}
+{{ aa-who-decides-1 The criteria are set by the Acceptable Ads Committee, an independent group, not by Adblock Plus. The Committee brings together people with different interests in how online ads work: digital rights organizations, researchers and academics, and ad blocking users, alongside advertisers, ad tech companies, publishers and creative agencies. Adblock Plus applies the Committee's criteria and checks ads against them. You can see the Committee's members and how it makes decisions at <a href="https://www.acceptableadscommittee.org/">acceptableadscommittee.org</a>. }}
+
+## {{ aa-who-pays[heading] Who pays for Acceptable Ads? }} {: #who-pays }
+
+{{ aa-who-pays-1 Large companies that want their ads on the Acceptable Ads allowlist pay a fee for the allowlisting service. For smaller websites and partners, the service is free. }}
+
+{{ aa-who-pays-2 Payment never buys an exception. Every ad on the allowlist, whether its owner pays or not, has to meet the same criteria. Ads that stop meeting them are removed. }}
+
+## {{ aa-money-funds[heading] What does the money fund? }} {: #what-the-money-funds }
+
+{{ aa-money-funds-1 The fees allow us to keep Adblock Plus free and open source. They pay for developing the extension on every browser we support, maintaining the filters that block intrusive ads and reviewing ads against the criteria. }}
 
 ## {{ aa-criteria[heading] Acceptable Ads criteria }} {: #criteria }
 

@@ -209,7 +209,7 @@
   },
   "meta-description": {
     "description": "Description meta tag content inside head tag",
-    "message": "Adblock Plus stellt die Acceptable Ads-initiative vor: Unterstütze Websites, die auf Werbung angewiesen sind, sich aber dafür entscheiden, dies auf eine nicht aufdringliche Weise zu tun."
+    "message": "Acceptable Ads sind gekennzeichnete, nicht aufdringliche Anzeigen, die von einem unabhängigen Komitee festgelegte Kriterien erfüllen. Erfahren Sie, wer entscheidet, wer zahlt und wie man sie deaktiviert."
   },
   "meta-title": {
     "description": "Title meta tag content inside head tag",
@@ -352,7 +352,7 @@
     "message": "Textwerbung"
   },
   "title": {
-    "message": "Acceptable Ads in Adblock Plus zulassen"
+    "message": "Acceptable Ads: Wer entscheidet, wer zahlt und wie man sie deaktiviert | Adblock Plus"
   },
   "total-ad-space": {
     "description": "Paragraph in \"General criteria\"",
@@ -571,12 +571,44 @@
     "message": "Tippe auf das <strong>Einstellungen-Symbol</strong> unten auf der Seite."
   },
   "disable-ios-safari-step-3": {
-    "message": "Tippe auf der Einstellungsseite auf <strong>Acceptable Ads<strong>."
+    "message": "Tippe auf der Einstellungsseite auf <strong>Acceptable Ads</strong>."
   },
   "disable-ios-safari-step-1": {
     "message": "Öffne Adblock Plus für iOS."
   },
   "disable-ios-safari-step-4": {
     "message": "Deaktiviere <strong>Einige nicht aufdringliche Werbung zulassen</strong>."
+  },
+  "heading": {
+    "message": "Acceptable Ads",
+    "description": "Visible H1 headline"
+  },
+  "subheading": {
+    "message": "Ihr werbefreies Interneterlebnis, Ihre Entscheidung",
+    "description": "Subtitle under the H1"
+  },
+  "aa-who-decides": {
+    "message": "Wer entscheidet, welche Anzeigen akzeptabel sind?",
+    "description": "heading"
+  },
+  "aa-who-decides-1": {
+    "message": "Die Kriterien werden vom Acceptable Ads Committee festgelegt, einer unabhängigen Gruppe – nicht von Adblock Plus. Das Komitee bringt Menschen zusammen, die unterschiedliche Interessen daran haben, wie Online-Werbung funktioniert: Organisationen für digitale Rechte, Forscher und Wissenschaftler sowie Adblocker-Nutzer – neben Werbetreibenden, Ad-Tech-Unternehmen, Publishern und Kreativagenturen. Adblock Plus wendet die Kriterien des Komitees an und prüft Anzeigen anhand dieser Kriterien. Wer dem Komitee angehört und wie es Entscheidungen trifft, sehen Sie unter <a>acceptableadscommittee.org</a>."
+  },
+  "aa-who-pays": {
+    "message": "Wer bezahlt für Acceptable Ads?",
+    "description": "heading"
+  },
+  "aa-who-pays-1": {
+    "message": "Große Unternehmen, die ihre Anzeigen auf der Allowlist für Acceptable Ads haben möchten, zahlen eine Gebühr für die Aufnahme in die Allowlist. Für kleinere Websites und Partner ist dieser Service kostenlos."
+  },
+  "aa-who-pays-2": {
+    "message": "Mit einer Zahlung lässt sich keine Ausnahme erkaufen. Jede Anzeige auf der Allowlist muss dieselben Kriterien erfüllen – unabhängig davon, ob ihr Eigentümer dafür zahlt oder nicht. Anzeigen, die die Kriterien nicht mehr erfüllen, werden entfernt."
+  },
+  "aa-money-funds": {
+    "message": "Wofür wird das Geld verwendet?",
+    "description": "heading"
+  },
+  "aa-money-funds-1": {
+    "message": "Die Gebühren ermöglichen es uns, Adblock Plus kostenlos und Open Source zu halten. Sie finanzieren die Entwicklung der Erweiterung für jeden von uns unterstützten Browser, die Pflege der Filter, die aufdringliche Werbung blockieren, und die Prüfung von Anzeigen anhand der Kriterien."
   }
 }

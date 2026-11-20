@@ -3,7 +3,8 @@
 
 Run after `generate_static_pages` (and `html_extender.py`) to catch a build
 that *succeeds* but is structurally broken: a missing locale, a missing key
-page, a near-empty site, or unrendered Jinja markers left in the HTML. Hard
+page, a near-empty site, unrendered Jinja markers left in the HTML, or
+structured data (JSON-LD) that is broken or no longer matches its page. Hard
 template-render errors already fail the build with a non-zero exit; this guards
 the subtler "green but wrong" cases.
 
@@ -12,7 +13,10 @@ Prints each problem and exits non-zero if any check fails.
 """
 
 import configparser
+import html as html_lib
+import json
 import os
+import re
 import sys
 
 # Pages that must always exist in the default (fully translated) locale.
@@ -28,6 +32,14 @@ MIN_DEFAULT_LOCALE_PAGES = 50
 # Generated pages have no extension before html_extender and ".html" after it;
 # only these are scanned for template-marker leakage (skips images, etc.).
 PAGE_SUFFIXES = ("", ".html")
+
+# Structured data (JSON-LD) blocks state facts about a page to search engines
+# and AI assistants. Visitors never see them, so a broken one goes unnoticed.
+JSON_LD_BLOCK = re.compile(
+    r'<script type="application/ld\+json">(.*?)</script>', re.DOTALL
+)
+HEADING = re.compile(r"<h[1-6][^>]*>(.*?)</h[1-6]>", re.DOTALL)
+TAG = re.compile(r"<[^>]+>")
 
 
 def _load_settings(path):
@@ -47,6 +59,45 @@ def _iter_page_files(locale_dir):
         for filename in filenames:
             if os.path.splitext(filename)[1] in PAGE_SUFFIXES:
                 yield os.path.join(dirpath, filename)
+
+
+def _plain_text(markup):
+    """Strip tags and entities and collapse whitespace, for comparing text."""
+    return " ".join(html_lib.unescape(TAG.sub("", markup)).split())
+
+
+def _json_ld_problems(html):
+    """Return what is wrong with a page's JSON-LD blocks (empty = all good)."""
+    problems = []
+    headings = None
+    for text in JSON_LD_BLOCK.findall(html):
+        try:
+            block = json.loads(text)
+        except ValueError:
+            # Machines skip a block they cannot parse.
+            problems.append("structured data is not valid JSON")
+            continue
+        if not isinstance(block, dict) or block.get("@type") != "FAQPage":
+            continue
+        # Google's rule: structured data may only repeat what visitors can
+        # see on the page
+        # (https://developers.google.com/search/docs/appearance/structured-data/sd-policies).
+        # Our pages show every FAQ question as a heading, so each question
+        # in FAQ structured data must have a heading with the same text.
+        if headings is None:
+            headings = {_plain_text(h) for h in HEADING.findall(html)}
+        entries = block.get("mainEntity", [])
+        if isinstance(entries, dict):
+            # schema.org also allows one question on its own, not in a list.
+            entries = [entries]
+        for entry in entries:
+            question = entry.get("name", "")
+            if _plain_text(question) not in headings:
+                problems.append(
+                    "FAQ question in the structured data is not a heading "
+                    f"on the page: {question!r}"
+                )
+    return problems
 
 
 def check_build(public_dir, settings_path="settings.ini",
@@ -77,15 +128,20 @@ def check_build(public_dir, settings_path="settings.ini",
         )
 
     # 4. No unrendered Jinja block markers ({% ... %}) leaked into pages.
+    # 5. Structured data parses, and each question in FAQ structured data
+    #    is also a heading on the same page.
     for locale in locales:
         locale_dir = os.path.join(public_dir, locale)
         if not os.path.isdir(locale_dir):
             continue
         for path in _iter_page_files(locale_dir):
             with open(path, encoding="utf-8", errors="ignore") as f:
-                if "{%" in f.read():
-                    rel = os.path.relpath(path, public_dir)
-                    problems.append(f"unrendered template marker '{{%' in {rel}")
+                html = f.read()
+            rel = os.path.relpath(path, public_dir)
+            if "{%" in html:
+                problems.append(f"unrendered template marker '{{%' in {rel}")
+            for problem in _json_ld_problems(html):
+                problems.append(f"{problem} in {rel}")
 
     return problems
 

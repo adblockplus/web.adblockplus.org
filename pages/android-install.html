@@ -22,8 +22,11 @@ template=minimal
               <span itemprop="name">Adblock Browser</span> }}</h1>
             <h2 class="h3">{{ abb-free Free ad blocker for Android from Adblock Plus }}</h2>
           </hgroup>
-          <p>Block intrusive and malicious advertisements with this FREE Android browser with adblock capabilities. Support fair content creators by allowing non-intrusive
-            <a href="acceptable-ads">Acceptable Ads</a> (on by default, configurable).</p>
+          <!-- From "Adblock Browser allows" on, this is the shared string
+               acceptable-ads-summary (locales/en/shared.json) with the product
+               name swapped. Keep the two in sync. -->
+          <p>Block intrusive and malicious advertisements with this FREE Android browser with adblock capabilities. Adblock Browser allows a small number of nonintrusive, clearly labeled ads by default. They have to meet criteria set by the independent Acceptable Ads Committee. Large companies pay for allowlisting, smaller ones don't, and no one can pay to skip the criteria. You can turn this off in two clicks.
+            <a href="acceptable-ads">Learn more about Acceptable Ads</a>.</p>
           <div class="play-store">
             <? include install-button-android ?>
             <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating" class="rating">

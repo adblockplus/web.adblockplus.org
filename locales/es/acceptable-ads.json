@@ -209,7 +209,7 @@
   },
   "meta-description": {
     "description": "Description meta tag content inside head tag",
-    "message": "Adblock Plus presenta la iniciativa Anuncios Aceptables: Apoya a páginas web que confían en la publicidad pero que prefieren hacerlo de una manera no intrusiva."
+    "message": "Los Anuncios Aceptables son anuncios etiquetados y no intrusivos que cumplen los criterios establecidos por un comité independiente. Descubre quién decide, quién paga y cómo desactivarlos."
   },
   "meta-title": {
     "description": "Title meta tag content inside head tag",
@@ -344,7 +344,7 @@
     "message": "Anuncios de texto"
   },
   "title": {
-    "message": "Permitir anuncios aceptables en Adblock Plus"
+    "message": "Anuncios Aceptables: quién decide, quién paga y cómo desactivarlos | Adblock Plus"
   },
   "total-ad-space": {
     "description": "Paragraph in \"General criteria\"",
@@ -566,5 +566,37 @@
   },
   "disable-ios-safari-step-4": {
     "message": "Desactiva la opción <strong>Permitir alguna publicidad no molesta</strong>."
+  },
+  "heading": {
+    "message": "Anuncios Aceptables",
+    "description": "Visible H1 headline"
+  },
+  "subheading": {
+    "message": "Tu experiencia sin anuncios, tu decisión",
+    "description": "Subtitle under the H1"
+  },
+  "aa-who-decides": {
+    "message": "¿Quién decide qué anuncios son aceptables?",
+    "description": "heading"
+  },
+  "aa-who-decides-1": {
+    "message": "Los criterios los establece el Comité de Anuncios Aceptables, un grupo independiente, no Adblock Plus. El Comité reúne a personas con distintos intereses en el funcionamiento de la publicidad en línea: organizaciones de derechos digitales, investigadores y académicos, y usuarios de bloqueadores de anuncios, junto con anunciantes, empresas de tecnología publicitaria, editores y agencias creativas. Adblock Plus aplica los criterios del Comité y comprueba que los anuncios los cumplan. Puedes ver quiénes son los miembros del Comité y cómo toma sus decisiones en <a>acceptableadscommittee.org</a>."
+  },
+  "aa-who-pays": {
+    "message": "¿Quién paga los Anuncios Aceptables?",
+    "description": "heading"
+  },
+  "aa-who-pays-1": {
+    "message": "Las grandes empresas que quieren que sus anuncios estén en la lista de permitidos de Anuncios Aceptables pagan una tarifa por el servicio de inclusión en la lista. Para los sitios web y socios más pequeños, el servicio es gratuito."
+  },
+  "aa-who-pays-2": {
+    "message": "Pagar nunca compra una excepción. Todos los anuncios de la lista de permitidos, pague su propietario o no, tienen que cumplir los mismos criterios. Los anuncios que dejan de cumplirlos se eliminan."
+  },
+  "aa-money-funds": {
+    "message": "¿A qué se destina el dinero?",
+    "description": "heading"
+  },
+  "aa-money-funds-1": {
+    "message": "Las tarifas nos permiten mantener Adblock Plus gratuito y de código abierto. Con ellas se financia el desarrollo de la extensión en todos los navegadores compatibles, el mantenimiento de los filtros que bloquean los anuncios intrusivos y la revisión de los anuncios según los criterios."
   }
 }
