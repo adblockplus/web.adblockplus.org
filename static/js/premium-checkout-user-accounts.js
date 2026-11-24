@@ -82,6 +82,76 @@ const isPremiumPage = document.documentElement.dataset.page === "premium";
 const premiumPlans = ['monthly', 'yearly'];
 
 ////////////////////////////////////////////////////////////////////////////////
+// BLACK FRIDAY (LOVEAB-49)
+////////////////////////////////////////////////////////////////////////////////
+
+/*
+ * 30% off the first year of the yearly plan, on /premium only: this script is
+ * shared with /block-cookie-banners. Paddle is still asked for the full yearly
+ * price; the discount code takes 30% off. Must match whats-new.js.
+ */
+// Paddle discount: 30% off the first payment only.
+const BLACK_FRIDAY_COUPON = "BF2026";
+const BLACK_FRIDAY_DISCOUNT = 0.3;
+const blackFriday = isPremiumPage;
+
+function blackFridayAmount(currency) {
+  return Math.round(PRICES[currency].yearly * (1 - BLACK_FRIDAY_DISCOUNT));
+}
+
+/** Write a translated template whose placeholders can be nodes. Builds nodes, never HTML. */
+function fill(element, template, values) {
+  element.replaceChildren(...template.split(/(\{\w+\})/).map(part => {
+    const value = values[part.slice(1, -1)];
+    return part.startsWith("{") && value !== undefined ? value : part;
+  }));
+}
+
+function node(tagName, content) {
+  const element = document.createElement(tagName);
+  element.textContent = content;
+  return element;
+}
+
+/** Whole percent in the page's locale, with Latin digits as the prices use. */
+function formatPercent(percent) {
+  try {
+    const locale = `${adblock.settings.locale.replace("_", "-")}-u-nu-latn`;
+    return new Intl.NumberFormat(locale, { style: "percent" }).format(percent / 100);
+  } catch {
+    return `${percent}%`;
+  }
+}
+
+function renderBlackFriday(currency) {
+  const full = PRICES[currency].yearly;
+  const discounted = blackFridayAmount(currency);
+
+  const price = document.querySelector('.premium-plan-price[data-frequency="yearly"]');
+  if (price) {
+    // aria-hidden: screen readers don't announce strikethrough, so it would read
+    // as a second price. The renewal line says it in words.
+    const was = node("s", getDollarString(currency, full));
+    was.className = "premium-plan-price__was";
+    was.setAttribute("aria-hidden", "true");
+    price.replaceChildren(was, " ", getDollarString(currency, discounted));
+  }
+
+  const renewal = document.getElementById("premium-bf-renewal");
+  if (renewal) {
+    renewal.textContent = (adblock.strings["premium-bf__renewal"] || "")
+      .replace("{fullAmount}", getDollarString(currency, full));
+  }
+
+  // Rounded down so the saving is never overstated.
+  const savings = document.getElementById("premium-bf-savings");
+  if (savings) {
+    const percent = Math.floor((1 - discounted / 12 / PRICES[currency].monthly) * 100);
+    fill(savings, adblock.strings["premium-bf__savings"] || "", { savings: node("strong", formatPercent(percent)) });
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // UTILITIES
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -116,6 +186,14 @@ function initGlobalEventHandlers() {
       steps.purchase.fire("checkout-now");
     }
   });
+
+  // The Black Friday strip starts the same checkout as the yearly CTA.
+  const blackFridayStrip = document.querySelector(".premium-bf__inner");
+  if (blackFriday && blackFridayStrip) {
+    blackFridayStrip.addEventListener("click", () => {
+      document.getElementById("get-premium-yearly")?.click();
+    });
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -298,6 +376,7 @@ class Page {
       const amount = PRICES[currency][price.dataset.frequency];
       price.textContent = getDollarString(currency, amount);
     });
+    if (blackFriday) renderBlackFriday(currency);
   }
 
 }
@@ -346,13 +425,16 @@ steps.purchase.on("checkout-now", async () => {
     const currency = steps.purchase.getCurrency();
     const amount = PRICES[currency][frequency];
     const product = "premium";
+    // Left undefined off the offer, so checkout() can still fall back to ?coupon.
+    const coupon = (blackFriday && frequency === "yearly" && BLACK_FRIDAY_COUPON) || undefined;
     await goto(steps.loading);
-    checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount });
+    checkoutLog("premium-checkout__checkout", { product, currency, frequency, amount, coupon });
     checkout({
       product,
       currency,
       frequency,
       amount,
+      coupon,
     });
   } catch (error) {
     adblock.logScriptError("premium.checkout", error);
@@ -392,7 +474,10 @@ adblock.on("checkout.completed", async (data) => {
   try {
     const frequency = data.custom_data.sub_type;
     const currency = data.custom_data.currency;
-    const amount = data.custom_data.amount_cents;
+    // amount_cents is the undiscounted price, which would overstate a Black Friday sale.
+    const amount = blackFriday && frequency === "yearly" && PRICES.hasOwnProperty(currency)
+      ? blackFridayAmount(currency)
+      : data.custom_data.amount_cents;
 
     if (frequency && currency && amount) {
       const value = getDollarNumber(currency, amount) + "";

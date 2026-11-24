@@ -305,6 +305,20 @@ html {
   height: 100%;
 }
 
+/*
+ * height: 100% plus the margin above makes each card overflow its column. Stacked,
+ * that ran the yearly card into the monthly card's tab, so stacked cards size to content.
+ */
+@media (max-width: 991px) {
+  .premium-plan {
+    height: auto;
+  }
+
+  .premium-plans__already-purchased-sign-in {
+    margin-top: 1.5rem;
+  }
+}
+
 .hovered .premium-plan-yearly .premium-button {
   border: 1px solid #EDA51E;
   background-color: #EDA51E;
@@ -1082,4 +1096,164 @@ html {
 
 .premium-page .premium-checkout.visible {
   display: block;
+}
+
+/*******************************************************************************
+ * Black Friday (LOVEAB-49)
+ *******************************************************************************
+ * Gold marks the offer. Remove this block with the rest of the campaign after
+ * 30 Nov. Contrast: gold on the strip 11.59:1, ink on gold 10.67:1, the yearly
+ * heading 3.68:1 (large text), struck price 5.33:1.
+ ******************************************************************************/
+
+.premium-bf {
+  padding: 1rem;
+  background-color: #0b0d12;
+  border-bottom: 3px solid #f5c04a;
+}
+
+.premium-bf__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  text-align: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.premium-bf__inner:hover .premium-bf__headline {
+  text-decoration: underline;
+}
+
+.premium-bf__inner:focus-visible {
+  outline: 2px solid #f5c04a;
+  outline-offset: 4px;
+}
+
+.premium-bf__label {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  background-color: #f5c04a;
+  color: #1f1600;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.premium-bf__headline {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.premium-bf__ends {
+  color: #f5c04a;
+  font-weight: 700;
+}
+
+.premium-page.has-premium .premium-bf,
+.premium-page.has-premium .premium-features__bf-note {
+  display: none;
+}
+
+.premium-plan.premium-plan--bf {
+  border: 2px solid #f5c04a;
+}
+
+/* The tab sits above the card at every width, growing upwards if it wraps. */
+.premium-plan--bf .premium-plan-header {
+  position: static;
+  height: auto;
+  background: none;
+  line-height: normal;
+  color: inherit;
+}
+
+.premium-plan--bf .premium-plan-heading {
+  float: none;
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 1.75rem;
+  color: #b77800;
+}
+
+.premium-plan--bf .premium-plan-bf-tab {
+  position: absolute;
+  bottom: 100%;
+  left: -2px;
+  right: -2px;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px 6px 0 0;
+  background-color: #f5c04a;
+  color: #1f1600;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.premium-plan--bf .premium-plan-price {
+  font-size: 2.5rem;
+}
+
+.premium-plan-price__was {
+  font-size: 1.25rem;
+  color: #6b6b6b;
+  vertical-align: middle;
+}
+
+.premium-plan-bf-renewal {
+  margin: 0.25rem 0 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.premium-plan-bf-savings {
+  margin: 0.5rem 0 0;
+  text-align: center;
+  font-weight: 700;
+  color: #333;
+}
+
+.premium-plan-bf-savings strong {
+  text-decoration: underline;
+  text-decoration-color: #f5c04a;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Takes over the sign-in line's 4rem clearance below the overhanging cards. */
+.premium-plans .premium-plans__bf-disclaimer {
+  margin: 4rem 0 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.premium-plans__bf-disclaimer + .premium-plans__already-purchased-sign-in {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 991px) {
+  .premium-plans .premium-plans__bf-disclaimer {
+    margin-top: 1.5rem;
+  }
+}
+
+.premium-features .premium-features__bf-cta {
+  float: none;
+  margin: 2rem auto 0;
+}
+
+.premium-features__bf-note {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-size: 0.875rem;
 }

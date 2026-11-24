@@ -5,11 +5,13 @@ import { ExtensionHelper } from './test-helpers/extension-helper.js';
 
 // Payment and Premium sign in tests that are relevant to all Premium payment pages can be found in premium-payments.spec.js
 
+// TEMPORARY: the screenshot assertion is commented out while the Black Friday
+// offer (LOVEAB-49) changes the page. Restore it when the offer is reverted.
 test('Premium page displays as expected', { tag: ['@visual_regression'] }, async ({ page, browserName, channel }) => {
   const premiumPage = new PremiumPage(page);
   await premiumPage.openPage('country=DE');
   const snapshotName = await VisualRegressionHelper.PrepareForVisualRegression(test, page, browserName, channel);
-  await expect(page).toHaveScreenshot(`${snapshotName}.png`, { fullPage: true, maxDiffPixels: 61 });
+  // await expect(page).toHaveScreenshot(`${snapshotName}.png`, { fullPage: true, maxDiffPixels: 61 });
 });
 
 test('Premium page: extension already has Premium view', async ({ page }) => {

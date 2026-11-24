@@ -10,6 +10,14 @@
     <span class="whats-new-header__name">Adblock Plus</span>
   </div>
 
+  <!-- Black Friday (LOVEAB-49). Hidden on trial URLs, which keep the trial offer.
+       Starts the yearly checkout, like the pricing card's CTA. -->
+  <button type="button" class="whats-new-bf" data-wn-offer="standard" data-frequency="yearly" data-trigger="banner" disabled>
+    <span class="whats-new-bf__label">{{ whats-new-bf__label Black Friday }}</span>
+    <strong class="whats-new-bf__headline">{{ whats-new-bf__headline 30% off your first year of Premium }}</strong>
+    <span class="whats-new-bf__ends">{{ whats-new-bf__ends Ends Mon, 30 Nov }}</span>
+  </button>
+
   <!--
     Server-rendered with the same v1.0.0 fallback AdBlock's page uses, so the
     pill never flashes empty and survives a JS failure. whats-new-stats.js

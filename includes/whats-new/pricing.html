@@ -66,12 +66,22 @@
       </article>
 
       <article class="whats-new-plan whats-new-plan--featured">
-        <p class="whats-new-plan__badge" id="whats-new-savings"></p>
+        <p class="whats-new-plan__badge" id="whats-new-savings" data-wn-offer="trial"></p>
+        <p class="whats-new-plan__bf-badge" data-wn-offer="standard">
+          {{ whats-new-bf__badge Black Friday · 30% off your first year }}
+        </p>
         <h3 class="whats-new-plan__name">{{ whats-new-pricing__yearly Yearly }}</h3>
+        <!--
+          The struck-out regular price is aria-hidden: screen readers do not
+          announce strikethrough, so it would read as a second price. The billed
+          line underneath spells out both in words.
+        -->
         <p class="whats-new-plan__price" dir="ltr" data-frequency="yearly">
+          <s class="whats-new-plan__was" data-wn-offer="standard" aria-hidden="true"></s>
           <span class="whats-new-plan__amount placeholder">&nbsp;</span><span class="whats-new-plan__frequency">{{ whats-new-pricing__per-month }}</span>
         </p>
         <? include vat-message ?>
+        <p class="whats-new-plan__bf-savings" id="whats-new-bf-savings" data-wn-offer="standard"></p>
         <ul class="whats-new-plan__benefits">
           <li>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -96,7 +106,7 @@
         </ul>
         <!-- Enabled by whats-new.js once there is a real price to charge. -->
         <button type="button" class="whats-new-button whats-new-checkout-button" disabled data-frequency="yearly">
-          <span data-wn-offer="standard">{{ whats-new-pricing__cta }}</span>
+          <span data-wn-offer="standard">{{ whats-new-bf__cta-yearly Get 30% off }}</span>
           <span data-wn-offer="trial">{{ whats-new-pricing__cta-trial }}</span>
         </button>
         <p class="whats-new-plan__billed" data-billed-for="yearly"></p>
@@ -107,6 +117,11 @@
 
   <p class="whats-new-pricing__reassurance">
     {{ whats-new-pricing__reassurance 60-day money-back guarantee · Cancel anytime · No hidden fees }}
+  </p>
+
+  <!-- Required by legal: the end date, and that the discount is first payment only. -->
+  <p class="whats-new-pricing__disclaimer" data-wn-offer="standard">
+    {{ whats-new-bf__disclaimer Offer valid until November 30th. Price discounted for the first year only. }}
   </p>
 
   <p class="whats-new-pricing__sign-in">

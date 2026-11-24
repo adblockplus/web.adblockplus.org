@@ -12,10 +12,25 @@ code=ME
   <link rel="stylesheet" href="/css/premium-checkout.css">
   <link rel="stylesheet" href="/css/outdated-extension-notice.css">
   <? include structured-data/premium ?>
+  <script>
+    // Black Friday (LOVEAB-49) strings read from premium-checkout-user-accounts.js.
+    Object.assign(adblock.strings, {
+      "premium-bf__savings": "{{ premium-bf__savings Save {savings} vs monthly in your first year }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+      "premium-bf__renewal": "{{ premium-bf__renewal First year, then {fullAmount} a year }}", // nosemgrep: generic.html-templates.security.var-in-script-tag.var-in-script-tag
+    });
+  </script>
 </head>
 
 <? include outdated-extension-notice ?>
 <main class="premium-page">
+  <!-- Black Friday (LOVEAB-49) -->
+  <aside class="premium-bf">
+    <button type="button" class="premium-bf__inner" data-click='{"group": "get-premium", "target": "bf-banner"}'>
+      <span class="premium-bf__label">{{ premium-bf__label Black Friday }}</span>
+      <strong class="premium-bf__headline">{{ premium-bf__headline 30% off your first year of Premium }}</strong>
+      <span class="premium-bf__ends">{{ premium-bf__ends Ends Mon, 30 Nov }}</span>
+    </button>
+  </aside>
   <? include cookie-promo-banner ?>
   <div class="premium-background-1">
     <div class="premium-container">
@@ -74,20 +89,14 @@ code=ME
       <div id="premium-plans" class="premium-plans hovered">
         <div class="premium-row">
           <div class="premium-column-4 premium-order-1">
-            <section class="premium-plan premium-plan-yearly premium-plan-highlighted placeholder">
+            <section class="premium-plan premium-plan-yearly premium-plan-highlighted premium-plan--bf placeholder">
               <header class="premium-plan-header">
                 <h2 class="premium-plan-heading">
                   {{ s3 YEARLY }}
                 </h2>
-                <div class="premium-plan-tab-start">
-                  <span class="premium-plan-tab-separator">-</span>
-                  <span class="premium-plan-tab-popular">
-                    {{ s4 MOST POPULAR }}
-                  </span>
-                </div>
-                <div class="premium-plan-tab-end">
-                  {{ s5 SAVE 17% }}
-                </div>
+                <p class="premium-plan-bf-tab">
+                  {{ premium-bf__badge Black Friday · 30% off your first year }}
+                </p>
               </header>
               <div class="premium-plan-body">
                 <p class="premium-plan-price" data-frequency="yearly">$40</p>
@@ -96,8 +105,10 @@ code=ME
                 </p>
               </div>
               <? include vat-message ?>
+              <p class="premium-plan-bf-renewal" id="premium-bf-renewal"></p>
+              <p class="premium-plan-bf-savings" id="premium-bf-savings"></p>
               <a id="get-premium-yearly" class="premium-button premium-cta" data-plan="yearly" data-click='{"group": "get-premium", "target": "yearly"}'>
-                {{ s7 Get Premium }}
+                {{ premium-bf__cta-yearly Get 30% off }}
               </a>
               <hr>
               <div class="premium-plan-list">
@@ -155,6 +166,10 @@ code=ME
             </section>
           </div>
         </div>
+        <!-- Required by legal: the end date, and that the discount is first payment only. -->
+        <p class="premium-plans__bf-disclaimer">
+          {{ premium-bf__disclaimer Offer valid until November 30th. Price discounted for the first year only. }}
+        </p>
         <div class="premium-plans__already-purchased-sign-in placeholder">
           {{ premium-checkout-card-footer__paragraph-1__sign-in }}
         </div>
@@ -249,9 +264,12 @@ code=ME
           <p>{{ s24 Your support allows us to create a distraction-free and worry-free internet experience for everyone. Help us keep Adblock Plus going for years to come and get access to more features as we release them. }}</p>
         </div>
       </section>
-      <a class="premium-button premium-cta" data-scroll-target="premium-plans" data-click='{"group": "get-premium", "target": "support-abp"}'>
-        {{ s7 Get Premium }}
+      <a class="premium-button premium-cta premium-features__bf-cta" data-scroll-target="premium-plans" data-click='{"group": "get-premium", "target": "support-abp"}'>
+        {{ premium-bf__cta Get 30% off Premium }}
       </a>
+      <p class="premium-features__bf-note">
+        {{ premium-bf__cta-note Black Friday price on the yearly plan, first year only. Ends Monday, 30 Nov. }}
+      </p>
     </section>
     <section class="premium-faqs">
       <h2>

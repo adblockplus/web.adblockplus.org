@@ -50,6 +50,64 @@ const currency = getCurrency();
  */
 const trial = parseInt(root.dataset.wnTrial, 10) || 0;
 
+////////////////////////////////////////////////////////////////////////////////
+// BLACK FRIDAY (LOVEAB-49)
+////////////////////////////////////////////////////////////////////////////////
+
+/*
+ * 30% off the first year of the yearly plan, in place of the pay-now offer.
+ * Trial URLs keep the trial and get no discount, and monthly is unchanged.
+ * Paddle is still asked for the full yearly price; the discount code takes 30% off.
+ */
+// Paddle discount: 30% off the first payment only.
+const BLACK_FRIDAY_COUPON = "BF2026";
+const BLACK_FRIDAY_DISCOUNT = 0.3;
+const blackFriday = !trial;
+
+/**
+ * First-year charge for the yearly plan with the Black Friday discount.
+ *
+ * @param {string} code - three letter currency code
+ * @returns {number} minor currency units
+ */
+function blackFridayAmount(code) {
+  return Math.round(PRICES[code].yearly * (1 - BLACK_FRIDAY_DISCOUNT));
+}
+
+/**
+ * Write a translated template into an element, where placeholders can be
+ * nodes (a struck-out price, a bold figure). Builds nodes, never HTML.
+ *
+ * @param {Element} element - element to fill
+ * @param {string} template - e.g. "Save {savings} vs monthly"
+ * @param {Object<string, (Node|string)>} values - placeholder name to content
+ */
+function fill(element, template, values) {
+  element.replaceChildren(...template.split(/(\{\w+\})/).map(part => {
+    const value = values[part.slice(1, -1)];
+    return part.startsWith("{") && value !== undefined ? value : part;
+  }));
+}
+
+function node(tagName, content) {
+  const element = document.createElement(tagName);
+  element.textContent = content;
+  return element;
+}
+
+/**
+ * Whole percent in the page's locale, e.g. "41%", "41 %" or "%41". Latin digits,
+ * since the rest of the page uses them in every locale, Arabic included.
+ */
+function formatPercent(percent) {
+  try {
+    const locale = `${adblock.settings.locale.replace("_", "-")}-u-nu-latn`;
+    return new Intl.NumberFormat(locale, { style: "percent" }).format(percent / 100);
+  } catch {
+    return `${percent}%`;
+  }
+}
+
 /**
  * Per-month figure for a plan, in minor units.
  *
@@ -63,7 +121,8 @@ const trial = parseInt(root.dataset.wnTrial, 10) || 0;
  */
 function monthlyAmount(frequency) {
   const amount = PRICES[currency][frequency];
-  return frequency === "yearly" ? Math.round(amount / 12) : amount;
+  if (frequency !== "yearly") return amount;
+  return Math.round((blackFriday ? blackFridayAmount(currency) : amount) / 12);
 }
 
 try {
@@ -89,14 +148,41 @@ try {
 
   document.querySelectorAll("[data-billed-for]").forEach(billed => {
     const frequency = billed.dataset.billedFor;
-    billed.textContent = text(`${billedKey}-${frequency}`)
-      .replace("{amount}", getDollarString(currency, PRICES[currency][frequency], false));
+    const fullAmount = getDollarString(currency, PRICES[currency][frequency], false);
+
+    if (blackFriday && frequency === "yearly") {
+      // aria-hidden for the same reason as the struck price in the card.
+      const was = node("s", fullAmount);
+      was.setAttribute("aria-hidden", "true");
+      fill(billed, text("whats-new-bf__billed-yearly"), {
+        was,
+        amount: node("strong", getDollarString(currency, blackFridayAmount(currency), false)),
+        fullAmount,
+      });
+      return;
+    }
+
+    billed.textContent = text(`${billedKey}-${frequency}`).replace("{amount}", fullAmount);
   });
 
   const savings = document.getElementById("whats-new-savings");
   if (savings) {
     savings.textContent = text("whats-new-pricing__savings")
       .replace("{savingsPercent}", getYearlySavingsPercent(currency));
+  }
+
+  if (blackFriday) {
+    const was = document.querySelector(".whats-new-plan__was");
+    if (was) {
+      was.textContent = getDollarString(currency, Math.round(PRICES[currency].yearly / 12), false);
+    }
+
+    // Rounded down, like getYearlySavingsPercent(), so it is never overstated.
+    const bfSavings = document.getElementById("whats-new-bf-savings");
+    if (bfSavings) {
+      const percent = Math.floor((1 - blackFridayAmount(currency) / 12 / PRICES[currency].monthly) * 100);
+      fill(bfSavings, text("whats-new-bf__savings"), { savings: node("strong", formatPercent(percent)) });
+    }
   }
 
   document.querySelectorAll(".placeholder").forEach(element => element.classList.remove("placeholder"));
@@ -108,7 +194,7 @@ try {
    * rather than dead: a button that opens nothing is worse than one that
    * plainly says it cannot be used.
    */
-  document.querySelectorAll(".whats-new-checkout-button").forEach(button => {
+  document.querySelectorAll(".whats-new-checkout-button, .whats-new-bf").forEach(button => {
     button.disabled = false;
   });
 } catch (error) {
@@ -125,13 +211,19 @@ try {
  * rather than a DOM index, which would silently re-label a button as soon as a
  * section moved.
  */
-document.querySelectorAll(".whats-new-checkout-button").forEach(button => {
+document.querySelectorAll(".whats-new-checkout-button, .whats-new-bf").forEach(button => {
   const frequency = button.dataset.frequency;
   const amount = PRICES[currency][frequency];
-  // The trial is part of the trigger, not only of the checkout: the two offers
+  const discounted = blackFriday && frequency === "yearly";
+  // Left undefined off the offer, so checkout() can still fall back to ?coupon.
+  const coupon = (discounted && BLACK_FRIDAY_COUPON) || undefined;
+
+  // The offer is part of the trigger, not only of the checkout: the offers
   // convert differently, and the funnel numbers have to be able to tell them
   // apart without joining on the URL parameters.
-  const trigger = trial ? `pricing-${frequency}-trial${trial}` : `pricing-${frequency}`;
+  let trigger = `${button.dataset.trigger || "pricing"}-${frequency}`;
+  if (trial) trigger += `-trial${trial}`;
+  if (discounted) trigger += "-bf";
 
   // Picked up by includes/scripts/click-tracking.html, which binds at
   // DOMContentLoaded — after this module has run, since modules are deferred.
@@ -141,12 +233,13 @@ document.querySelectorAll(".whats-new-checkout-button").forEach(button => {
     frequency,
     amount,
     trial,
+    coupon,
     trigger,
   });
 
   button.addEventListener("click", () => {
     try {
-      checkout({ product: "premium", currency, frequency, amount, trial, trigger });
+      checkout({ product: "premium", currency, frequency, amount, trial, coupon, trigger });
     } catch (error) {
       // The trial is in the message because "Invalid price" on this page is
       // nearly always a trial with no Paddle price in the visitor's currency,
@@ -180,7 +273,11 @@ adblock.on("checkout.completed", data => {
    */
   const frequency = custom.sub_type || custom.subType;
   const paidCurrency = custom.currency;
-  const amount = custom.amount_cents;
+  // amount_cents is the undiscounted price Paddle was asked for, which would
+  // overstate a Black Friday conversion by the 30% the code took off.
+  const amount = blackFriday && frequency === "yearly" && paidCurrency in PRICES
+    ? blackFridayAmount(paidCurrency)
+    : custom.amount_cents;
 
   try {
     if (frequency && paidCurrency && amount) {
